@@ -27,6 +27,12 @@ The following Sekoia.io built-in rules match the intake **Gatewatcher AionIQ**. 
     
     - **Effort:** master
 
+??? abstract "Gatewatcher AionIQ Malware Alert"
+    
+    Forward malware information reported by Gatewatcher AionIQ  
+    
+    - **Effort:** master
+
 ??? abstract "Nimbo-C2 User Agent"
     
     Nimbo-C2 Uses an unusual User-Agent format in its implants.

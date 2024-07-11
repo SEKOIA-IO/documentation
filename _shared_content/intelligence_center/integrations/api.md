@@ -169,7 +169,7 @@ For relationships, use the `GET v2/inthreat/relationships/{relationship_id}` end
 
 ## Looking for an IOC
 
-It is possible to look for a specific indicator of compromise in the Intelligence Center and get its context with the `GET v2/inthreat/indicators/context` endpoint (see [documentation](../../develop/rest_api/intelligence/#tag/Indicators/operation/get_indicator_context_resource)).
+It is possible to look for a specific indicator of compromise in the Intelligence Center and get its context with the `GET v2/inthreat/indicators/context` endpoint (see [documentation](/cti/develop/rest_api/intelligence/#tag/Indicators/operation/get_indicator_context_resource)).
 
 
 ```python

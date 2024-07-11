@@ -39,6 +39,12 @@ The following Sekoia.io built-in rules match the intake **AWS CloudTrail**. This
     
     - **Effort:** advanced
 
+??? abstract "AWS CloudTrail EC2 Enable Serial Console Access"
+    
+    Detects when the EC2 serial console access feature is enabled. This could abused by some attackers to avoid network detection when accessing to EC2 instances.
+    
+    - **Effort:** intermediate
+
 ??? abstract "AWS CloudTrail EC2 Instance Connect SendSSHPublicKey"
     
     Detects when an attacker is pushing an SSH Public Key to an EC2 instance. Then he can establish a connection to the console using SSH.
@@ -297,12 +303,6 @@ The following Sekoia.io built-in rules match the intake **AWS CloudTrail**. This
     
     - **Effort:** master
 
-??? abstract "Failed Logon Source From Public IP Addresses"
-    
-    A login from a public IP can indicate a misconfigured firewall or network boundary. The sekoia.tags are used to filter internal Ipv4 addresses (10.0.0.0/8 172.16.0.0/12 127.0.0.0/8 169.254.0.0/16 192.168.0.0/16).
-    
-    - **Effort:** master
-
 ??? abstract "Microsoft Defender Antivirus History Deleted"
     
     Windows Defender history has been deleted. Could be an attempt by an attacker to remove its traces.
@@ -378,12 +378,6 @@ The following Sekoia.io built-in rules match the intake **AWS CloudTrail**. This
 ??? abstract "TOR Usage Generic Rule"
     
     Detects TOR usage globally, whether the IP is a destination or source. TOR is short for The Onion Router, and it gets its name from how it works. TOR intercepts the network traffic from one or more apps on user’s computer, usually the user web browser, and shuffles it through a number of randomly-chosen computers before passing it on to its destination. This disguises user location, and makes it harder for servers to pick him/her out on repeat visits, or to tie together separate visits to different sites, this making tracking and surveillance more difficult. Before a network packet starts its journey, user’s computer chooses a random list of relays and repeatedly encrypts the data in multiple layers, like an onion. Each relay knows only enough to strip off the outermost layer of encryption, before passing what’s left on to the next relay in the list.
-    
-    - **Effort:** master
-
-??? abstract "User Account Created"
-    
-    Detects user creation on windows servers, which shouldn't happen in an Active Directory environment. Apply this on your windows server logs and not on your DC logs. One default account `defaultuser0` is excluded as only used during Windows set-up. This detection use Security Event ID 4720. 
     
     - **Effort:** master
 

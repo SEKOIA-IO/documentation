@@ -63,7 +63,7 @@ The `intakes.yaml` file is used to tell the concentrator how to bind a port wher
 For each technology, specify:
 
 * a name: it has nothing to do with Sekoia.io, feel free to use the explicite value of your choice
-* the protocol: `tcp` or `udp`
+* the protocol: `tcp`, `udp` or `tls`
 * a port: to process incoming events
 * the Intake key: can be retreived from the Intakes page of your community
 
@@ -120,7 +120,7 @@ Please find below a template of the `docker-compose.yml` file.
 # version: "3.9"
 services:
   rsyslog:
-    image: ghcr.io/sekoia-io/sekoiaio-docker-concentrator:2.5
+    image: ghcr.io/sekoia-io/sekoiaio-docker-concentrator:2.6.0
     environment:
       - MEMORY_MESSAGES=2000000
       - DISK_SPACE=180g
@@ -232,6 +232,98 @@ pull_policy: always
 * `restart: always`: this line indicates to restart the concentrator everytime it stops. That means if it crashes, if you restart Docker or if you restart the host, the concentrator will start automatically.
 * `pull_policy: always`: docker compose will always try to pull the image from the registry and check if a new version is available for the tag specified.
 
+## Configure TLS for an Intake
+
+Sending logs between the forwarder and Sekoia is always encrypted with TLS. However, by default, if you use the `tcp` or `udp` protocol option in your intake configuration, the logs between your devices and the forwarder will not be encrypted. This section shows you how to configure TLS between a source and the forwarder.
+
+### Configuration of the docker-compose.yml
+
+Activating TLS requires setting up an encryption key, a certificate, and a CA certificate. These should be placed in the `./certs` directory within the forwarder's directory.
+Therefore it is necessary to mount this volume. Add the following line to the configuration:
+
+```yaml
+volumes:
+    - ./certs:/certs
+    [...]
+```
+
+### Creating the Key and Certificate
+
+We will now create the key and certificate that will be used for encryption. In this case, we will create a self-signed certificate, meaning that the server certificate and the CA (Certificate Authority) certificate will be the same. If you have expertise in managing certificates, you can create a certificate signed by a real CA.
+
+**Step one**: Create the directory and navigate to it:
+
+```
+mkdir certs && cd certs
+```
+
+**Step two**: Install OpenSSL
+
+=== "Debian, Ubuntu"
+
+    ```bash
+    sudo apt update
+    sudo apt install -y openssl
+    ```
+
+=== "Fedora, Red Hat, CentOS (yum)"
+
+    ```bash
+    sudo yum update
+    sudo yum install -y openssl
+    ```
+
+=== "Fedora, Red Hat, CentOS (dnf)"
+    
+    ```bash
+    sudo dnf update
+    sudo dnf install -y openssl
+    ```
+
+Step three: Create the key and certificate
+
+```
+openssl req -x509 \
+            -sha256 -days 1825 \
+            -nodes \
+            -newkey rsa:4096 \
+            -keyout server.key -out server.crt
+```
+
+- `openssl req`: Launches the process to create a Certificate Signing Request (CSR) or a self-signed certificate.
+- `-x509`: This option tells OpenSSL to generate a self-signed certificate rather than a CSR.
+- `-sha256`: Specifies that the SHA-256 hashing algorithm should be used for the certificate's signature.
+- `-days 1825`: Sets the certificate's validity period to 1825 days, which corresponds 5 years.
+- `-nodes`: This stands for "no DES" and indicates that the private key should not be encrypted, meaning no password will be required to use the private key.
+- `-newkey rsa:4096`: Generates a new RSA key pair of 4096 bits in length, and simultaneously creates a certificate request using this key pair.
+- `-keyout server.key`: Specifies the file where the generated private key should be saved. In this case, it will be saved to `server.key`.
+- `-out server.crt`: Specifies the file where the generated self-signed certificate should be saved. In this case, it will be saved to `server.crt`.
+
+**Step four**: Change permissions on the files
+
+```
+chmod 600 server.key server.crt
+```
+
+### Configuration of the intakes.yaml File
+
+To use TLS, you need to specify `tls` in the protocol definition:
+
+```
+protocol: tls
+```
+
+By default, as soon as you specify the tls protocol, the forwarder will attempt to read the private key and certificate at /certs/server.key and /certs/server.crt.
+If you wish to specify other filenames, you can do so in the intake configuration:
+
+```
+[...]
+protocol: tls
+tls_key_name: server.key
+tls_cert_name: server.crt
+tls_ca_name: server.crt
+```
+
 ## Start the concentrator
 
 To start the concentrator, run the following command in the folder where `docker-compose.yml` and `intakes.yaml` are stored:
@@ -288,7 +380,10 @@ sudo docker compose rm
 
 You can't find the logs in your community? No worries this section will give you an advice to identify what is happening.
 
-### Step 1: check if the events are received by the forwarder
+### Step 1: Verify you are running the latest version of the forwarder
+Sekoia regularly pushes new versions of the forwarder. Be sure you are running the latest version to ensure you have the latest updates.
+
+### Step 2: Check if the events are received by the forwarder
 
 To check if the events are received by the forwarder, you can activate the debug mode for a specific Intake. The debug mode will display all logs that are received and sent by the forwarder associated with a specific Intake, in the standard output of the container (`docker logs`).
 To activate the debug mode, simply add `debug: True` in the definition of the Intake you want, in the `intakes.yaml` file.
@@ -325,32 +420,48 @@ Finally, if you want to check events coming in real time for Intakes with the de
 sudo docker compose logs -f
 ```
 
-**You don't see your events with these commands?** 
+**You don't see your events with these commands?**
 
-1. Check the `intakes.yaml` file to see if you have declared the protocols and ports you wanted. 
+1. Check that the forwarder is correctly configured
 
-2. Verify if this information is taken into account by the concentrator. At start-up, the concentrator always shows the list of Intakes with the protocols and ports.
+    * Check the `intakes.yaml` file to see if you have declared the protocols and ports you wanted. 
+
+    * Verify if this information is taken into account by the concentrator. At start-up, the concentrator always shows the list of Intakes with the protocols and ports.
+        ```bash
+        sudo docker compose logs | more
+        ```
+
+    * Check that you correctly declared the `ports` section in the `docker-compose.yml` file. They MUST be the same as the ports declared in the `intakes.yaml` file. For instance, if you declared 4 technologies on ports `25020`, `25021`, `25022` and `25023`, the ports line the `docker-compose.yml` has to be at least `"25020-25023:25020-25023"` for TCP and `"25020-25023:25020-25023/udp"` if using UDP. 
+
+2. Verify that traffic is incoming from your log source, **meaning no firewall is blocking the events**.
     ```bash
-    sudo docker compose logs | more
+    sudo tcpdump -c10 -nn src <remote_ip> -vv
     ```
 
-3. Check that you correctly declared the `ports` section in the `docker-compose.yml` file. They MUST be the same as the ports declared in the `intakes.yaml` file. For instance, if you declared 4 technologies on ports `25020`, `25021`, `25022` and `25023`, the ports line the `docker-compose.yml` has to be at least `"25020-25023:25020-25023"` for TCP and `"25020-25023:25020-25023/udp"` if using UDP. 
+    `remote_ip`is the IP from which the logs should be incoming.
 
-4. Verify that traffic is incoming from your log source, meaning no firewall is blocking the events.
-    ```bash
-    sudo tcpdump -i <change_with_interface_name> -c10 -nn src <remote_ip> -vv
-    ```
+3. If you are sure that no firewall blocks the events but you still don't see any logs, verify on the source that you are forwarding the logs to the right IP and port using the correct protocol.
+   
+    **Example**
 
-    To find those values:
+    You want to forward your firewall logs to Sekoia. You decided to use the `TCP/20524` port.
 
-    - `change_with_interface_name`use the command `ip addr`
-    - `remote_ip`is the IP from which the logs should be incoming 
+    * Check in the settings of the firewall that you have activated the log forwarding to the IP of the forwarder and the `TCP/20524` port.
+    * Verify in the `docker-compose.ym`l` file of the forwarder that there is a range including the TCP/20524 port like `"25020-25030:25020-25030"`.
+    * Check in the file `intakes.yaml` that there is an entry for this port:
+        ```
+        - name: Firewall_techno
+        protocol: tcp
+        port: 20524
+        intake_key: INTAKE_KEY_FOR_THE_FIREWALL
+        debug: True
+        ```
 
-### Step 2: verify everything is correctly configured to forward events to Sekoia.io
+### Step 3: Verify everything is correctly configured to forward events to Sekoia.io
 
-1. Check the Intake keys you wrote in `intakes.yaml` are correct.
+1. Check the Intake key you wrote in `intakes.yaml` is correct.
 
-2. Check the network flow between the concentrator host and Sekoia.io is opened to the destination `intake.sekoia.io` on protocol `TCP` and port `10514`. You can easily check it with `telnet`:
+2. Check the network flow between the Forwarder host and Sekoia is opened to the destination `intake.sekoia.io` through the protocol `TCP` and port `10514`. You can easily check it with `telnet`:
     ```bash
     sudo apt install telnet && telnet intake.sekoia.io 10514
     ```
@@ -378,10 +489,10 @@ The image used to run the concentrator is maintained on [this github repository]
 Docker uses the notion of tag to identify the version of an image. The tag is always referenced in line starting with `image` in `docker-compose.yml`:
 
 ```
-image: ghcr.io/sekoia-io/sekoiaio-docker-concentrator:2.0
+image: ghcr.io/sekoia-io/sekoiaio-docker-concentrator:2.6.0
 ```
 
-`2.0` means the version used by `docker compose` is 2.0. You can find all the versions available on the GitHub repository [here](https://github.com/SEKOIA-IO/sekoiaio-docker-concentrator/pkgs/container/sekoiaio-docker-concentrator/versions?filters%5Bversion_type%5D=tagged)
+`2.6.0` means the version used by `docker compose` is 2.6.0. You can find all the versions available on the GitHub repository [here](https://github.com/SEKOIA-IO/sekoiaio-docker-concentrator/pkgs/container/sekoiaio-docker-concentrator/versions?filters%5Bversion_type%5D=tagged)
 
 To update the concentrator, just change the tag in `docker-compose.yml`, then recreate the concentrator with the command:
 ```bash
@@ -511,7 +622,7 @@ Connect to the remote server where you would like to install the Sekoia.io Forwa
 
 3. Start the docker
 
-    Follow the process you can find on the section [Start the concentrator](https://docs.sekoia.io/xdr/features/collect/ingestion_methods/syslog/sekoiaio_forwarder/sekoiaio_forwarder.md/#start-the-concentrator) of this page.
+    Follow the process you can find on the section [Start the concentrator](#start-the-concentrator) of this page.
     ```bash
     sudo docker compose up -d
     sudo docker compose ps

@@ -1,76 +1,44 @@
 # Manage users
 
-## Overview
+You can manage users in your workspace from the Workspace section in the Settings. To manage users, you must have the Admin role.
 
-You can manage users from the section Workspace in the Settings. 
-To manage users in a workspace, you need to have the Admin role. 
+## User information
 
-Each user has a name, date of registration, and a role assigned. 
-From the listing of users in a workspace, their role, emails, date of registration and authentication method are displayed. 
+Each user profile includes:
 
-A search bar helps quickly look for a member, and quick actions like Deactivate or delete a user can be done directly from the table. 
+- Name
+- Date of registration
+- Assigned role
+
+In the user listing, you can see:
+
+- Role
+- Email
+- Date of Registration
+- Authentication Method
+
+A search bar allows you to quickly find a member, and quick actions like deactivating or deleting a user can be performed directly from the table.
+
+## Actions 
+
+To access the detailed page of a user: 
+
+1. Go to the Users page in Settings
+2. Click on the name of the user
+
+From this page, there are various actions available to you:
+
+- Add new roles: Assign additional roles to the user
+- View permissions: See the permissions attached to each assigned role
+- Access assigned roles: View the list of roles assigned to the user
+- Delete roles: Remove assigned roles from the user
+- Deactivate account: Temporarily disable the user's account
+- Delete user: Permanently remove the user from the community
+
+Roles have attached permissions that determine a user's access, visibility of pages, and usage of features.
+
+!!! note 
+    To learn more about roles and permissions, see [this section of the documentation](roles.md). 
 
 
-A role has attached permissions allowing a user to access, view pages and use its features.
 
-In the following sections, you will learn how to manage your users.
-
-## Detailed page of a user
-
-To access the detailed page of a user:
-
-1. Go to `Users` page in Settings 
-2. Click on the name of the user 
-
-From this page, you can: 
-
-- Add new roles to the user
-- See attached permissions to each role attributed
-- Access the list of assigned roles
-- Delete assigned roles
-- Deactivate account 
-- Delete user from the community
-
-
-
-## In multi-tenant workspaces 
-
-In a multi-tenant workspace, role management can be tricky. Here is how to handle it: 
-
-When a user is invited to the workspace, the role assigned to this user is the same in all communities. 
-The same behavior happens when a user is added to
-
-In addition to that, external roles can be added in any managed community to the user role set previously in the main MSSP community.
-Roles assigned to a user in a managed community are independent from their roles in other subcommunities.
-
-For example, 
-
-1) A user has been added with the role `IC_viewer` set in the main MSSP community.
-This user will have this role applied in all other managed communities.
-
-2) Then the admin adds the role `IC_writer` to this user in a specific managed community.
-The user will have the role `IC_writer` in this specific managed community in addition to the role `IC_writer` set in the main MSSP community.
-
-To learn more about how to invite users to MSSP communities, please refer to [this documentation](https://docs.sekoia.io/getting_started/invite_users/#in-an-mssp-community). 
-
-## Create custom roles
-
-As an admin of your community, you can control what kind of actions your guests are allowed to do. Our roles’ system is based on permissions already defined by us and we keep them up to date following our latest features.
-
-For example, some users in your community will only be able to view data but cannot interact with it. Others can change the status of an alert, write a content proposal or simply duplicate a dashboard, without being able to access other parts of the app.
-
-To create custom roles for your guests, you’ll have to:
-
-1. Access your `Managed Communities` by clicking on your avatar on the upper right of the screen
-2. Click on the `Roles` tab then on the `+Role` button
-3. Provide a `name` and a `description` to your new role
-4. Select `permissions` you want to give to your users
-5. Save your changes
-
-!!! note
-    You can edit or delete roles by clicking on the icons on the right side of the table that lists all the roles.
-
-## Add permissions
-
-Permissions can be different depending on your job position at your company.
-There are three main categories to all of these permissions: `Admin`, `Manage` or `View`.

@@ -29,7 +29,7 @@ The following Sekoia.io built-in rules match the intake **Crowdstrike Falcon Tel
 
 ??? abstract "Add User to Privileged Group"
     
-    Add user in a potential privileged group which can be used to elevate privileges on the system
+    Add user in a potential privileged group which can be used to elevate privileges on the system.
     
     - **Effort:** advanced
 
@@ -342,6 +342,12 @@ The following Sekoia.io built-in rules match the intake **Crowdstrike Falcon Tel
 ??? abstract "Empire Monkey Activity"
     
     Detects EmpireMonkey APT reported Activity
+    
+    - **Effort:** elementary
+
+??? abstract "Enabling Restricted Admin Mode"
+    
+    Detects when the restricted admin mode is enabled.
     
     - **Effort:** elementary
 
@@ -813,6 +819,12 @@ The following Sekoia.io built-in rules match the intake **Crowdstrike Falcon Tel
     
     - **Effort:** master
 
+??? abstract "Njrat Registry Values"
+    
+    Detects specifis registry values that are related to njRat usage.
+    
+    - **Effort:** intermediate
+
 ??? abstract "NlTest Usage"
     
     Detects attempts to gather information on domain trust relationships that may be used to identify lateral movement opportunities. These command lines were observed in numerous attacks, but also sometimes from legitimate administrators for debugging purposes. The rule does not cover very basics commands but rather the ones that are interesting for attackers to gather information on a domain.
@@ -895,7 +907,13 @@ The following Sekoia.io built-in rules match the intake **Crowdstrike Falcon Tel
     
     Detects Request to amsiInitFailed that can be used to disable AMSI (Antimalware Scan Interface) Scanning. More information about Antimalware Scan Interface https://docs.microsoft.com/en-us/windows/win32/amsi/antimalware-scan-interface-portal.
     
-    - **Effort:** elementary
+    - **Effort:** advanced
+
+??? abstract "PowerShell Commands Invocation"
+    
+    Detects the execution to invoke a powershell command. This was used in an intrusion using Gootloader to access Mimikatz.
+    
+    - **Effort:** advanced
 
 ??? abstract "PowerShell Downgrade Attack"
     
@@ -943,7 +961,7 @@ The following Sekoia.io built-in rules match the intake **Crowdstrike Falcon Tel
     
     Detects the use of comsvcs in command line to dump a specific process memory. This technique is used by attackers for privilege escalation and pivot.
     
-    - **Effort:** elementary
+    - **Effort:** intermediate
 
 ??? abstract "Process Memory Dump Using Rdrleakdiag"
     

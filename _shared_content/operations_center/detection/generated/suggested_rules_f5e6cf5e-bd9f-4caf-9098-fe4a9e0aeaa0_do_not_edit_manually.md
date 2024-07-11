@@ -41,7 +41,7 @@ The following Sekoia.io built-in rules match the intake **Stormshield SES**. Thi
 
 ??? abstract "Add User to Privileged Group"
     
-    Add user in a potential privileged group which can be used to elevate privileges on the system
+    Add user in a potential privileged group which can be used to elevate privileges on the system.
     
     - **Effort:** advanced
 
@@ -351,6 +351,12 @@ The following Sekoia.io built-in rules match the intake **Stormshield SES**. Thi
     
     - **Effort:** elementary
 
+??? abstract "Disable .NET ETW Through COMPlus_ETWEnabled"
+    
+    Detects potential adversaries stopping ETW providers recording loaded .NET assemblies. Prerequisites are logging for Registry events or logging command line parameters (both is better). Careful for registry events, if SwiftOnSecurity's SYSMON default configuration is used, you will need to update the configuration to include the .NETFramework registry key path. Same issue with Windows 4657 EventID logging, the registry path must be specified.
+    
+    - **Effort:** intermediate
+
 ??? abstract "Disable Task Manager Through Registry Key"
     
     Detects commands used to disable the Windows Task Manager by modifying the proper registry key in order to impair security tools. This technique is used by the Agent Tesla RAT, among others.
@@ -438,6 +444,12 @@ The following Sekoia.io built-in rules match the intake **Stormshield SES**. Thi
 ??? abstract "Empire Monkey Activity"
     
     Detects EmpireMonkey APT reported Activity
+    
+    - **Effort:** elementary
+
+??? abstract "Enabling Restricted Admin Mode"
+    
+    Detects when the restricted admin mode is enabled.
     
     - **Effort:** elementary
 
@@ -536,12 +548,6 @@ The following Sekoia.io built-in rules match the intake **Stormshield SES**. Thi
     An IP was ubaned by Fail2ban. It could be use to allow malicous traffic.
     
     - **Effort:** advanced
-
-??? abstract "Failed Logon Source From Public IP Addresses"
-    
-    A login from a public IP can indicate a misconfigured firewall or network boundary. The sekoia.tags are used to filter internal Ipv4 addresses (10.0.0.0/8 172.16.0.0/12 127.0.0.0/8 169.254.0.0/16 192.168.0.0/16).
-    
-    - **Effort:** master
 
 ??? abstract "File Or Folder Permissions Modifications"
     
@@ -951,6 +957,18 @@ The following Sekoia.io built-in rules match the intake **Stormshield SES**. Thi
     
     - **Effort:** intermediate
 
+??? abstract "NjRat Registry Changes"
+    
+    Detects changes for the RUN registry key which happen when a victim is infected by NjRAT. Please note that even if NjRat is well-known for the behavior the rule catches, the rule is a bit larger and could catch other malwares.
+    
+    - **Effort:** master
+
+??? abstract "Njrat Registry Values"
+    
+    Detects specifis registry values that are related to njRat usage.
+    
+    - **Effort:** intermediate
+
 ??? abstract "NlTest Usage"
     
     Detects attempts to gather information on domain trust relationships that may be used to identify lateral movement opportunities. These command lines were observed in numerous attacks, but also sometimes from legitimate administrators for debugging purposes. The rule does not cover very basics commands but rather the ones that are interesting for attackers to gather information on a domain.
@@ -1051,7 +1069,13 @@ The following Sekoia.io built-in rules match the intake **Stormshield SES**. Thi
     
     Detects Request to amsiInitFailed that can be used to disable AMSI (Antimalware Scan Interface) Scanning. More information about Antimalware Scan Interface https://docs.microsoft.com/en-us/windows/win32/amsi/antimalware-scan-interface-portal.
     
-    - **Effort:** elementary
+    - **Effort:** advanced
+
+??? abstract "PowerShell Commands Invocation"
+    
+    Detects the execution to invoke a powershell command. This was used in an intrusion using Gootloader to access Mimikatz.
+    
+    - **Effort:** advanced
 
 ??? abstract "PowerShell Downgrade Attack"
     
@@ -1099,7 +1123,7 @@ The following Sekoia.io built-in rules match the intake **Stormshield SES**. Thi
     
     Detects the use of comsvcs in command line to dump a specific process memory. This technique is used by attackers for privilege escalation and pivot.
     
-    - **Effort:** elementary
+    - **Effort:** intermediate
 
 ??? abstract "Process Memory Dump Using Rdrleakdiag"
     
@@ -1539,6 +1563,12 @@ The following Sekoia.io built-in rules match the intake **Stormshield SES**. Thi
     
     - **Effort:** advanced
 
+??? abstract "Sysmon Windows File Block Executable"
+    
+    Sysmon has blocked an executable file from being written to the disk. This could be a malicious binary to investigate.  
+    
+    - **Effort:** master
+
 ??? abstract "Sysprep On AppData Folder"
     
     Detects suspicious Sysprep process start with AppData folder as target (as used by Trojan Syndicasec in Thrip report by Symantec). Sysprep is a Windows tool used to change Windows images from a generalized state to a specialized state, and then back to a generalized state. It can be used to remove all system-specific information and reset the computer.
@@ -1608,12 +1638,6 @@ The following Sekoia.io built-in rules match the intake **Stormshield SES**. Thi
 ??? abstract "Usage Of Sysinternals Tools"
     
     Detects the usage of Sysinternals Tools due to accepteula key being added to Registry. The rule detects it either from the command line usage or from the regsitry events. For the later prerequisite is logging for registry events in the Sysmon configuration (events 12 and 13).
-    
-    - **Effort:** master
-
-??? abstract "User Account Created"
-    
-    Detects user creation on windows servers, which shouldn't happen in an Active Directory environment. Apply this on your windows server logs and not on your DC logs. One default account `defaultuser0` is excluded as only used during Windows set-up. This detection use Security Event ID 4720. 
     
     - **Effort:** master
 

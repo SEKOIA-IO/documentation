@@ -20,10 +20,8 @@ The Tables below detail the main fields that can be used to narrow down your sea
 
 | name                           | type   | description                                 |
 | ------------------------------ | ------ | ------------------------------------------- |
-| sekoiaio.entity.name           | string | Name of the entity                          |
 | sekoiaio.entity.uuid           | string | Unique identifier of the entity             |
-| sekoiaio.intake.key            | string | The intake key                              |
-| sekoiaio.intake.name           | string | Name of the intake                          |
+| sekoiaio.intake.uuid           | string | Unique identifier of the intake             |
 | sekoiaio.intake.dialect        | string | Name of the intake format                   |
 | sekoiaio.intake.dialect_uuid   | string | UUID of the intake format                   |
 | sekoiaio.intake.parsing_status | string | The parsing status (`success` or `failure`) |

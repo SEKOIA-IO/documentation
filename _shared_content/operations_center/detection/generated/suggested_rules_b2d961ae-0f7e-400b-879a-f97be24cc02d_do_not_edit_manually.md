@@ -23,7 +23,7 @@ The following Sekoia.io built-in rules match the intake **Trend Micro Cloud One 
 
 ??? abstract "Add User to Privileged Group"
     
-    Add user in a potential privileged group which can be used to elevate privileges on the system
+    Add user in a potential privileged group which can be used to elevate privileges on the system.
     
     - **Effort:** advanced
 
@@ -207,6 +207,12 @@ The following Sekoia.io built-in rules match the intake **Trend Micro Cloud One 
     
     - **Effort:** advanced
 
+??? abstract "Cookies Deletion"
+    
+    Detects when cookies are deleted by a suspicious process.
+    
+    - **Effort:** master
+
 ??? abstract "Copying Browser Files With Credentials"
     
     Detects copy of sensitive data (passwords, cookies, credit cards) included in web browsers files.
@@ -336,6 +342,12 @@ The following Sekoia.io built-in rules match the intake **Trend Micro Cloud One 
 ??? abstract "Empire Monkey Activity"
     
     Detects EmpireMonkey APT reported Activity
+    
+    - **Effort:** elementary
+
+??? abstract "Enabling Restricted Admin Mode"
+    
+    Detects when the restricted admin mode is enabled.
     
     - **Effort:** elementary
 
@@ -775,7 +787,13 @@ The following Sekoia.io built-in rules match the intake **Trend Micro Cloud One 
     
     Detects Request to amsiInitFailed that can be used to disable AMSI (Antimalware Scan Interface) Scanning. More information about Antimalware Scan Interface https://docs.microsoft.com/en-us/windows/win32/amsi/antimalware-scan-interface-portal.
     
-    - **Effort:** elementary
+    - **Effort:** advanced
+
+??? abstract "PowerShell Commands Invocation"
+    
+    Detects the execution to invoke a powershell command. This was used in an intrusion using Gootloader to access Mimikatz.
+    
+    - **Effort:** advanced
 
 ??? abstract "PowerShell Downgrade Attack"
     
@@ -823,7 +841,7 @@ The following Sekoia.io built-in rules match the intake **Trend Micro Cloud One 
     
     Detects the use of comsvcs in command line to dump a specific process memory. This technique is used by attackers for privilege escalation and pivot.
     
-    - **Effort:** elementary
+    - **Effort:** intermediate
 
 ??? abstract "Process Memory Dump Using Rdrleakdiag"
     
@@ -1122,6 +1140,24 @@ The following Sekoia.io built-in rules match the intake **Trend Micro Cloud One 
 ??? abstract "TOR Usage Generic Rule"
     
     Detects TOR usage globally, whether the IP is a destination or source. TOR is short for The Onion Router, and it gets its name from how it works. TOR intercepts the network traffic from one or more apps on user’s computer, usually the user web browser, and shuffles it through a number of randomly-chosen computers before passing it on to its destination. This disguises user location, and makes it harder for servers to pick him/her out on repeat visits, or to tie together separate visits to different sites, this making tracking and surveillance more difficult. Before a network packet starts its journey, user’s computer chooses a random list of relays and repeatedly encrypts the data in multiple layers, like an onion. Each relay knows only enough to strip off the outermost layer of encryption, before passing what’s left on to the next relay in the list.
+    
+    - **Effort:** master
+
+??? abstract "Trend Micro Cloud One High Intrusion"
+    
+    Detects when Trend Micro EDR raised an alert for an intrusion with a high severity level.
+    
+    - **Effort:** master
+
+??? abstract "Trend Micro Cloud One Low Intrusion"
+    
+    Detects when Trend Micro EDR raised an alert for an intrusion with a low severity level.
+    
+    - **Effort:** master
+
+??? abstract "Trend Micro Cloud One Medium Intrusion"
+    
+    Detects when Trend Micro EDR raised an alert for an intrusion with a medium severity level.
     
     - **Effort:** master
 

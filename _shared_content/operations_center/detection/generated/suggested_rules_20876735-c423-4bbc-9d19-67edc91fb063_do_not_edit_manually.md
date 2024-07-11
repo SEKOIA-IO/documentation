@@ -183,12 +183,6 @@ The following Sekoia.io built-in rules match the intake **RSA SecurID**. This do
     
     - **Effort:** intermediate
 
-??? abstract "Failed Logon Source From Public IP Addresses"
-    
-    A login from a public IP can indicate a misconfigured firewall or network boundary. The sekoia.tags are used to filter internal Ipv4 addresses (10.0.0.0/8 172.16.0.0/12 127.0.0.0/8 169.254.0.0/16 192.168.0.0/16).
-    
-    - **Effort:** master
-
 ??? abstract "HackTools Suspicious Process Names In Command Line"
     
     Detects the default process name of several HackTools and also check in command line. This rule is here for quickwins as it obviously has many blind spots.
@@ -385,7 +379,13 @@ The following Sekoia.io built-in rules match the intake **RSA SecurID**. This do
     
     Detects Request to amsiInitFailed that can be used to disable AMSI (Antimalware Scan Interface) Scanning. More information about Antimalware Scan Interface https://docs.microsoft.com/en-us/windows/win32/amsi/antimalware-scan-interface-portal.
     
-    - **Effort:** elementary
+    - **Effort:** advanced
+
+??? abstract "PowerShell Commands Invocation"
+    
+    Detects the execution to invoke a powershell command. This was used in an intrusion using Gootloader to access Mimikatz.
+    
+    - **Effort:** advanced
 
 ??? abstract "PowerShell EncodedCommand"
     
@@ -403,7 +403,7 @@ The following Sekoia.io built-in rules match the intake **RSA SecurID**. This do
     
     Detects the use of comsvcs in command line to dump a specific process memory. This technique is used by attackers for privilege escalation and pivot.
     
-    - **Effort:** elementary
+    - **Effort:** intermediate
 
 ??? abstract "Process Memory Dump Using Rdrleakdiag"
     
@@ -554,12 +554,6 @@ The following Sekoia.io built-in rules match the intake **RSA SecurID**. This do
     Detects the usage of Procdump sysinternals tool with some common arguments and followed by common patterns.
     
     - **Effort:** intermediate
-
-??? abstract "User Account Created"
-    
-    Detects user creation on windows servers, which shouldn't happen in an Active Directory environment. Apply this on your windows server logs and not on your DC logs. One default account `defaultuser0` is excluded as only used during Windows set-up. This detection use Security Event ID 4720. 
-    
-    - **Effort:** master
 
 ??? abstract "User Account Deleted"
     

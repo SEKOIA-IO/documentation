@@ -3,6 +3,12 @@
 The following Sekoia.io built-in rules match the intake **Varonis Data Security**. This documentation is updated automatically and is based solely on the fields used by the intake which are checked against our rules. This means that some rules will be listed but might not be relevant with the intake.
 
 [SEKOIA.IO x Varonis Data Security on ATT&CK Navigator](https://mitre-attack.github.io/attack-navigator/#layerURL=https%3A%2F%2Fraw.githubusercontent.com%2FSEKOIA-IO%2Fdocumentation%2Fmain%2F_shared_content%2Foperations_center%2Fdetection%2Fgenerated%2Fattack_7b75d498-4a65-4d44-aa81-31090d723a60_do_not_edit_manually.json){ .md-button }
+??? abstract "Cookies Deletion"
+    
+    Detects when cookies are deleted by a suspicious process.
+    
+    - **Effort:** master
+
 ??? abstract "Cron Files Alteration"
     
     Cron Files and Cron Directory alteration used by attacker for persistency or privilege escalation.
@@ -90,6 +96,12 @@ The following Sekoia.io built-in rules match the intake **Varonis Data Security*
 ??? abstract "Varonis Data Security Email Alert"
     
     Varonis Data Security has raised an alert related to a supervised email account.
+    
+    - **Effort:** master
+
+??? abstract "Varonis Data Security Network Alert"
+    
+    Varonis Data Security has raised an alert related to a network rule
     
     - **Effort:** master
 

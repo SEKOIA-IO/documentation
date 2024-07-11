@@ -387,6 +387,12 @@ The following Sekoia.io built-in rules match the intake **Sekoia.io Endpoint Age
     
     - **Effort:** advanced
 
+??? abstract "Cookies Deletion"
+    
+    Detects when cookies are deleted by a suspicious process.
+    
+    - **Effort:** master
+
 ??? abstract "Copy Of Legitimate System32 Executable"
     
     A script has copied a System32 executable.
@@ -663,6 +669,12 @@ The following Sekoia.io built-in rules match the intake **Sekoia.io Endpoint Age
     
     - **Effort:** elementary
 
+??? abstract "Enabling Restricted Admin Mode"
+    
+    Detects when the restricted admin mode is enabled.
+    
+    - **Effort:** elementary
+
 ??? abstract "Equation Group DLL_U Load"
     
     Detects a specific tool and export used by EquationGroup
@@ -764,12 +776,6 @@ The following Sekoia.io built-in rules match the intake **Sekoia.io Endpoint Age
     Detects the use of fltmc to list and load/unload a filter driver.
     
     - **Effort:** advanced
-
-??? abstract "Failed Logon Source From Public IP Addresses"
-    
-    A login from a public IP can indicate a misconfigured firewall or network boundary. The sekoia.tags are used to filter internal Ipv4 addresses (10.0.0.0/8 172.16.0.0/12 127.0.0.0/8 169.254.0.0/16 192.168.0.0/16).
-    
-    - **Effort:** master
 
 ??? abstract "File Or Folder Permissions Modifications"
     
@@ -1017,7 +1023,7 @@ The following Sekoia.io built-in rules match the intake **Sekoia.io Endpoint Age
     
     - **Effort:** intermediate
 
-??? abstract "Lateral Movement - Remote Named Pipe"
+??? abstract "Lateral Movement Remote Named Pipe"
     
     Detects lateral movement and remote exec using named pipe over network. This requires Windows Security event logging with the File Share enable policy.
     
@@ -1467,6 +1473,12 @@ The following Sekoia.io built-in rules match the intake **Sekoia.io Endpoint Age
     
     - **Effort:** master
 
+??? abstract "Njrat Registry Values"
+    
+    Detects specifis registry values that are related to njRat usage.
+    
+    - **Effort:** intermediate
+
 ??? abstract "NlTest Usage"
     
     Detects attempts to gather information on domain trust relationships that may be used to identify lateral movement opportunities. These command lines were observed in numerous attacks, but also sometimes from legitimate administrators for debugging purposes. The rule does not cover very basics commands but rather the ones that are interesting for attackers to gather information on a domain.
@@ -1597,7 +1609,13 @@ The following Sekoia.io built-in rules match the intake **Sekoia.io Endpoint Age
     
     Detects Request to amsiInitFailed that can be used to disable AMSI (Antimalware Scan Interface) Scanning. More information about Antimalware Scan Interface https://docs.microsoft.com/en-us/windows/win32/amsi/antimalware-scan-interface-portal.
     
-    - **Effort:** elementary
+    - **Effort:** advanced
+
+??? abstract "PowerShell Commands Invocation"
+    
+    Detects the execution to invoke a powershell command. This was used in an intrusion using Gootloader to access Mimikatz.
+    
+    - **Effort:** advanced
 
 ??? abstract "PowerShell Credential Prompt"
     
@@ -1729,7 +1747,7 @@ The following Sekoia.io built-in rules match the intake **Sekoia.io Endpoint Age
     
     Detects the use of comsvcs in command line to dump a specific process memory. This technique is used by attackers for privilege escalation and pivot.
     
-    - **Effort:** elementary
+    - **Effort:** intermediate
 
 ??? abstract "Process Memory Dump Using Createdump"
     

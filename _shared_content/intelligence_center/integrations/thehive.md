@@ -38,7 +38,8 @@ Collect Sekoia.io CTI feed in an existing Cortex instance self-managed, for any 
    3. Edit and Add your Sekoia API key and Base url
 ![Orga_setup_3](/assets/intelligence_center/orga_setup_3.png){: style="width: 60%; max-width: 60%"}
 
-
+!!!Note
+    If your Sekoia community is hosted on FRA1 region, leave the "Base url" field empty.
 
 ### 2. Enable and Setup the Analyzer
 

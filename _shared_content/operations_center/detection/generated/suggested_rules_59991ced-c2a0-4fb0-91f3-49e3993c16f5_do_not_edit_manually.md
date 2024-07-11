@@ -23,7 +23,7 @@ The following Sekoia.io built-in rules match the intake **Tanium**. This documen
 
 ??? abstract "Add User to Privileged Group"
     
-    Add user in a potential privileged group which can be used to elevate privileges on the system
+    Add user in a potential privileged group which can be used to elevate privileges on the system.
     
     - **Effort:** advanced
 
@@ -201,6 +201,12 @@ The following Sekoia.io built-in rules match the intake **Tanium**. This documen
     
     - **Effort:** advanced
 
+??? abstract "Cookies Deletion"
+    
+    Detects when cookies are deleted by a suspicious process.
+    
+    - **Effort:** master
+
 ??? abstract "Copying Browser Files With Credentials"
     
     Detects copy of sensitive data (passwords, cookies, credit cards) included in web browsers files.
@@ -342,6 +348,12 @@ The following Sekoia.io built-in rules match the intake **Tanium**. This documen
 ??? abstract "Empire Monkey Activity"
     
     Detects EmpireMonkey APT reported Activity
+    
+    - **Effort:** elementary
+
+??? abstract "Enabling Restricted Admin Mode"
+    
+    Detects when the restricted admin mode is enabled.
     
     - **Effort:** elementary
 
@@ -837,11 +849,11 @@ The following Sekoia.io built-in rules match the intake **Tanium**. This documen
     
     - **Effort:** intermediate
 
-??? abstract "NjRat Registry Changes"
+??? abstract "Njrat Registry Values"
     
-    Detects changes for the RUN registry key which happen when a victim is infected by NjRAT. Please note that even if NjRat is well-known for the behavior the rule catches, the rule is a bit larger and could catch other malwares.
+    Detects specifis registry values that are related to njRat usage.
     
-    - **Effort:** master
+    - **Effort:** intermediate
 
 ??? abstract "NlTest Usage"
     
@@ -919,7 +931,13 @@ The following Sekoia.io built-in rules match the intake **Tanium**. This documen
     
     Detects Request to amsiInitFailed that can be used to disable AMSI (Antimalware Scan Interface) Scanning. More information about Antimalware Scan Interface https://docs.microsoft.com/en-us/windows/win32/amsi/antimalware-scan-interface-portal.
     
-    - **Effort:** elementary
+    - **Effort:** advanced
+
+??? abstract "PowerShell Commands Invocation"
+    
+    Detects the execution to invoke a powershell command. This was used in an intrusion using Gootloader to access Mimikatz.
+    
+    - **Effort:** advanced
 
 ??? abstract "PowerShell Downgrade Attack"
     
@@ -967,7 +985,7 @@ The following Sekoia.io built-in rules match the intake **Tanium**. This documen
     
     Detects the use of comsvcs in command line to dump a specific process memory. This technique is used by attackers for privilege escalation and pivot.
     
-    - **Effort:** elementary
+    - **Effort:** intermediate
 
 ??? abstract "Process Memory Dump Using Rdrleakdiag"
     
@@ -1430,6 +1448,12 @@ The following Sekoia.io built-in rules match the intake **Tanium**. This documen
     Detects the usage of Procdump sysinternals tool with some common arguments and followed by common patterns.
     
     - **Effort:** intermediate
+
+??? abstract "Usage Of Sysinternals Tools"
+    
+    Detects the usage of Sysinternals Tools due to accepteula key being added to Registry. The rule detects it either from the command line usage or from the regsitry events. For the later prerequisite is logging for registry events in the Sysmon configuration (events 12 and 13).
+    
+    - **Effort:** master
 
 ??? abstract "Userinit Wrong Parent"
     

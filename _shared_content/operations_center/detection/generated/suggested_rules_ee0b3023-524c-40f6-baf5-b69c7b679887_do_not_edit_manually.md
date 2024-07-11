@@ -153,6 +153,12 @@ The following Sekoia.io built-in rules match the intake **SonicWall Firewall**. 
     
     - **Effort:** master
 
+??? abstract "Cookies Deletion"
+    
+    Detects when cookies are deleted by a suspicious process.
+    
+    - **Effort:** master
+
 ??? abstract "Cron Files Alteration"
     
     Cron Files and Cron Directory alteration used by attacker for persistency or privilege escalation.
@@ -198,12 +204,6 @@ The following Sekoia.io built-in rules match the intake **SonicWall Firewall**. 
 ??? abstract "Exfiltration Domain"
     
     Detects traffic toward a domain flagged as a possible exfiltration vector.
-    
-    - **Effort:** master
-
-??? abstract "Failed Logon Source From Public IP Addresses"
-    
-    A login from a public IP can indicate a misconfigured firewall or network boundary. The sekoia.tags are used to filter internal Ipv4 addresses (10.0.0.0/8 172.16.0.0/12 127.0.0.0/8 169.254.0.0/16 192.168.0.0/16).
     
     - **Effort:** master
 
@@ -421,7 +421,7 @@ The following Sekoia.io built-in rules match the intake **SonicWall Firewall**. 
     
     Detects users clicking on Google docs links to download suspicious files. This technique was used a lot by Bazar Loader in the past.
     
-    - **Effort:** elementary
+    - **Effort:** intermediate
 
 ??? abstract "Suspicious URI Used In A Lazarus Campaign"
     
@@ -446,12 +446,6 @@ The following Sekoia.io built-in rules match the intake **SonicWall Firewall**. 
     Detects suspicious DNS queries to api.telegram.org used by Telegram Bots of any kind
     
     - **Effort:** advanced
-
-??? abstract "User Account Created"
-    
-    Detects user creation on windows servers, which shouldn't happen in an Active Directory environment. Apply this on your windows server logs and not on your DC logs. One default account `defaultuser0` is excluded as only used during Windows set-up. This detection use Security Event ID 4720. 
-    
-    - **Effort:** master
 
 ??? abstract "User Account Deleted"
     

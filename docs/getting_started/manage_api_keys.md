@@ -37,14 +37,21 @@ On this view, you can:
 
 ## Create an API key
 
+!!! Note
+    API keys can't be assigned built-in roles.
+
+!!! Note
+    One MUST first create a custom role before creating API keys.
+
+
 To create a new API key, you’ll have to:
 
 1. Click on the `+ API key` button
 2. Give a name and a description to your key (description should be more than 10 characters and less than 100 characters)
-3. Select one or more roles to associate with your key. For instance, if you want to use your key to retrieve information from the Intelligence Center, please select the role `ic_viewer - Intelligence Center Read-Only`
+3. Select one or more **custom roles** to associate with your key depending on your need. For instance, if you want to use your key to retrieve information from the Intelligence Center, please select a custom role using one of the permissions `View Intelligence` or `View Intelligence with limited access`
 4. Click on `Save`
 
-!!! note
+!!! Note
     The key will only be displayed once. We recommend you to save it into a vault.
 
 ## Revoke an API Key

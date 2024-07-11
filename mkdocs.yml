@@ -32,17 +32,17 @@ nav:
 - Getting started:
   - Overview: getting_started/index.md
   - Where to start: getting_started/concepts.md
-  - Workspace setup: 
+  - Workspace setup:
     - Join workspace: getting_started/join_community.md
-    - Create and delete communities: getting_started/create_community.md
-  - Account setup: 
+    - Create and manage communities: getting_started/create_community.md
+  - Account setup:
     - Create account: getting_started/create_account.md
     - Setup account: getting_started/account_settings.md
-  - Security and access: 
+  - Security and access:
     - Account security:
       - Two-Factor Authentication: getting_started/account_security.md
       - Security tokens: getting_started/securitytokens.md
-    - Workspace security: 
+    - Workspace security:
       - Session duration: getting_started/session_duration.md
       - Two-Factor Authentication: getting_started/twofactor_workspace.md
       - SSO with OpenID Connect: getting_started/sso/openid_connect.md
@@ -60,9 +60,8 @@ nav:
     - Notification examples: getting_started/notifications-Examples.md
   - API Keys: getting_started/manage_api_keys.md
   - Sekoia regions: getting_started/regions.md
+  - Best practices: getting_started/best_practices.md
   - Troubleshooting tips: getting_started/get_troubleshooting_tips.md
-
- 
 - Sekoia Defend (XDR):
   - Introduction: xdr/index.md
   - Quick start guide: xdr/xdr_quick_start.md
@@ -127,6 +126,7 @@ nav:
             - Gateway Network: xdr/features/collect/integrations/cloud_and_saas/cloudflare/cloudflare-gateway-network.md
             - HTTP requests: xdr/features/collect/integrations/cloud_and_saas/cloudflare/cloudflare-http-requests.md
           - Broadcom Cloud Secure Web Gateway: xdr/features/collect/integrations/cloud_and_saas/broadcom_cloud_swg.md
+          - Bitsight SPM: xdr/features/collect/integrations/cloud_and_saas/bitsight_spm.md
           - Cato SASE: xdr/features/collect/integrations/cloud_and_saas/cato_sase.md
           - Datadome Protection: xdr/features/collect/integrations/cloud_and_saas/datadome_protection.md
           - Digital Shadows SearchLight: xdr/features/collect/integrations/cloud_and_saas/digital_shadows.md
@@ -175,6 +175,7 @@ nav:
           - Apache Spamassassin: xdr/features/collect/integrations/email/spamassassin.md
           - Cisco ESA: xdr/features/collect/integrations/email/cisco_esa.md
           - Fortinet Fortimail: xdr/features/collect/integrations/email/fortimail.md
+          - Mimecast Email Security: xdr/features/collect/integrations/email/mimecast_email_security.md
           - Postfix: xdr/features/collect/integrations/email/postfix.md
           - Proofpoint:
             - Proofpoint PoD: xdr/features/collect/integrations/email/proofpoint_pod.md
@@ -193,8 +194,11 @@ nav:
           - Cybereason MalOp: xdr/features/collect/integrations/endpoint/cybereason_malop.md
           - Cybereason MalOp activity: xdr/features/collect/integrations/endpoint/cybereason_malop_activity.md
           - Darktrace Threat Visualizer: xdr/features/collect/integrations/endpoint/darktrace_threat_visualizer.md
+          - Daspren Parad: xdr/features/collect/integrations/endpoint/daspren_parad.md
+          - ESET Protect: xdr/features/collect/integrations/endpoint/eset_protect.md
           - HarfangLab: xdr/features/collect/integrations/endpoint/harfanglab.md
           - IBM AIX: xdr/features/collect/integrations/endpoint/ibm_aix.md
+          - IBM iSeries (AS/400): xdr/features/collect/integrations/endpoint/ibm_i.md
           - Linux: xdr/features/collect/integrations/endpoint/linux.md
           - Microsoft Intune: xdr/features/collect/integrations/endpoint/microsoft_intune.md
           - Panda Security Aether: xdr/features/collect/integrations/endpoint/panda_security_aether.md
@@ -297,6 +301,7 @@ nav:
         - AWS: xdr/features/automate/library/aws.md
         - Atlassian JIRA: xdr/features/automate/library/atlassian-jira.md
         - BinaryEdge's API: xdr/features/automate/library/binaryedge-s-api.md
+        - Bitsight: xdr/features/automate/library/bitsight.md
         - Broadcom Cloud Secure Web Gateway: xdr/features/automate/library/broadcom-cloud-secure-web-gateway.md
         - Cato Networks: xdr/features/automate/library/cato-networks.md
         - Censys: xdr/features/automate/library/censys.md
@@ -332,7 +337,9 @@ nav:
         - Microsoft Entra ID: xdr/features/automate/library/microsoft-entra-id.md
         - Microsoft Office365: xdr/features/automate/library/microsoft-office365.md
         - Microsoft Windows Server: xdr/features/automate/library/microsoft-windows-server.md
+        - Mimecast: xdr/features/automate/library/mimecast.md
         - Netskope: xdr/features/automate/library/netskope.md
+        - Nybble: xdr/features/automate/library/nybble.md
         - OSINT: xdr/features/automate/library/osint.md
         - Okta: xdr/features/automate/library/okta.md
         - Onyphe: xdr/features/automate/library/onyphe.md
@@ -408,9 +415,9 @@ nav:
       - Configuration: xdr/develop/rest_api/configuration.md
       - Parser: xdr/develop/rest_api/parser.md
       - Alert: xdr/develop/rest_api/alert.md
-      - Assets: xdr/develop/rest_api/assets.md
-      - Assets v2 [beta]: xdr/develop/rest_api/assets_v2.md
+      - Assets: xdr/develop/rest_api/assets_v2.md
       - Playbooks: xdr/develop/rest_api/playbooks.md
+      - Query Builder: xdr/develop/rest_api/query_builder.md
       - Telemetry: xdr/develop/rest_api/telemetry.md
 - Sekoia Intelligence (CTI):
   - Introduction: cti/index.md
@@ -495,6 +502,7 @@ nav:
         - AWS: tip/features/automate/library/aws.md
         - Atlassian JIRA: tip/features/automate/library/atlassian-jira.md
         - BinaryEdge's API: tip/features/automate/library/binaryedge-s-api.md
+        - Bitsight: tip/features/automate/library/bitsight.md
         - Broadcom Cloud Secure Web Gateway: tip/features/automate/library/broadcom-cloud-secure-web-gateway.md
         - Cato Networks: tip/features/automate/library/cato-networks.md
         - Censys: tip/features/automate/library/censys.md
@@ -530,7 +538,9 @@ nav:
         - Microsoft Entra ID (Azure AD): tip/features/automate/library/microsoft-entra-id.md
         - Microsoft Office365: tip/features/automate/library/microsoft-office365.md
         - Microsoft Windows Server: tip/features/automate/library/microsoft-windows-server.md
+        - Mimecast: tip/features/automate/library/mimecast.md
         - Netskope: tip/features/automate/library/netskope.md
+        - Nybble: tip/features/automate/library/nybble.md
         - OSINT: tip/features/automate/library/osint.md
         - Okta: tip/features/automate/library/okta.md
         - Onyphe: tip/features/automate/library/onyphe.md

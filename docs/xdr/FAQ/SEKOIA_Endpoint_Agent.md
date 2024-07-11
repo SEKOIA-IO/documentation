@@ -63,3 +63,10 @@ We plan to cover all the ANSSI recommendations and SEKOIA rules to the greatest 
 **Do you plan to remove the possibility to select Sysmon option or will we allow users to add a Sysmon configuration?**
 
 We most probably will support Sysmon for users who wish to continue using it. 
+
+## Is the agent useful for monitoring a Docker or Kubernetes host?
+
+The Sekoia agent, based on Auditd, is designed to effectively monitor system activities across various Linux technologies, including machines hosting Docker or Kubernetes. While this agent focuses on system logs from the host machine, it can observe some data related to executions within containers. However, it is not specifically tailored to manage Docker or Kubernetes technologies directly and won't capture specific application logs. Consequently, it may provide a lower level of detail compared to specialized tools designed for these environments.
+
+For instance, if a Docker container makes a DNS request or accesses a file on the host, these activities will be captured by the agent just as they would for any application executed on the host. 
+

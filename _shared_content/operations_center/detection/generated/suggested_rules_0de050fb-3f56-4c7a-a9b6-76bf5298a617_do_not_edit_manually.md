@@ -35,7 +35,7 @@ The following Sekoia.io built-in rules match the intake **Cybereason EDR activit
 
 ??? abstract "Add User to Privileged Group"
     
-    Add user in a potential privileged group which can be used to elevate privileges on the system
+    Add user in a potential privileged group which can be used to elevate privileges on the system.
     
     - **Effort:** advanced
 
@@ -318,6 +318,12 @@ The following Sekoia.io built-in rules match the intake **Cybereason EDR activit
 ??? abstract "Empire Monkey Activity"
     
     Detects EmpireMonkey APT reported Activity
+    
+    - **Effort:** elementary
+
+??? abstract "Enabling Restricted Admin Mode"
+    
+    Detects when the restricted admin mode is enabled.
     
     - **Effort:** elementary
 
@@ -823,7 +829,13 @@ The following Sekoia.io built-in rules match the intake **Cybereason EDR activit
     
     Detects Request to amsiInitFailed that can be used to disable AMSI (Antimalware Scan Interface) Scanning. More information about Antimalware Scan Interface https://docs.microsoft.com/en-us/windows/win32/amsi/antimalware-scan-interface-portal.
     
-    - **Effort:** elementary
+    - **Effort:** advanced
+
+??? abstract "PowerShell Commands Invocation"
+    
+    Detects the execution to invoke a powershell command. This was used in an intrusion using Gootloader to access Mimikatz.
+    
+    - **Effort:** advanced
 
 ??? abstract "PowerShell Downgrade Attack"
     
@@ -871,7 +883,7 @@ The following Sekoia.io built-in rules match the intake **Cybereason EDR activit
     
     Detects the use of comsvcs in command line to dump a specific process memory. This technique is used by attackers for privilege escalation and pivot.
     
-    - **Effort:** elementary
+    - **Effort:** intermediate
 
 ??? abstract "Process Memory Dump Using Rdrleakdiag"
     
@@ -1208,12 +1220,6 @@ The following Sekoia.io built-in rules match the intake **Cybereason EDR activit
     Detects the usage of Procdump sysinternals tool with some common arguments and followed by common patterns.
     
     - **Effort:** intermediate
-
-??? abstract "User Account Created"
-    
-    Detects user creation on windows servers, which shouldn't happen in an Active Directory environment. Apply this on your windows server logs and not on your DC logs. One default account `defaultuser0` is excluded as only used during Windows set-up. This detection use Security Event ID 4720. 
-    
-    - **Effort:** master
 
 ??? abstract "User Account Deleted"
     

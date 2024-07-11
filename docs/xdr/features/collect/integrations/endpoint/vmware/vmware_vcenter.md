@@ -27,3 +27,46 @@ Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a n
 ## Forward logs to Sekoia.io
 
 Please consult the [Syslog Forwarding](../../../../ingestion_methods/sekoiaio_forwarder/) documentation to forward these logs to Sekoia.io.
+
+Create a new configuration file:
+
+```
+sudo vim ./extended_conf/11-vcenter.conf
+```
+
+with the following template:
+
+```
+$DefaultNetstreamDriverCAFile /etc/rsyslog.d/Sekoia-io-intake.pem
+
+input(type="imtcp" port="PORT" ruleset="remoteVmwarevCenter")
+
+template(name="SEKOIAIOTemplate" type="string" string="<%pri%>1 %timestamp:::date-rfc3339% %hostname% %app-name% %procid% LOG [SEKOIA@53288 intake_key=\"YOUR_INTAKE_KEY\"] %msg%\n")
+ruleset(name="remoteVmwarevCenter"){
+  if($programname == "vpxd") {
+    action(
+	type="omfwd"
+	protocol="tcp"
+        target="intake.sekoia.io"
+        port="10514"
+        TCP_Framing="octet-counted"
+        StreamDriver="gtls"
+        StreamDriverMode="1"
+        StreamDriverAuthMode="x509/name"
+        StreamDriverPermittedPeers="intake.sekoia.io"
+        Template="SEKOIAIOTemplate"
+    )
+  }
+}
+```
+
+Please change using the YOUR_INTAKE_KEY accordingly, as well as, the PORT.
+
+Update the `docker-compose.yml` file of the Sekoia.io forwarder to mount the extended conf:
+
+```
+volumes:
+    - ./intakes.yaml:/intakes.yaml
+...
+    - ./extended_conf:/extended_conf
+```

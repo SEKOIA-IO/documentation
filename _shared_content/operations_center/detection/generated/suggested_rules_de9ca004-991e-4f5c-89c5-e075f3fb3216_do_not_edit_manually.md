@@ -33,6 +33,12 @@ The following Sekoia.io built-in rules match the intake **Netskope**. This docum
     
     - **Effort:** intermediate
 
+??? abstract "Cookies Deletion"
+    
+    Detects when cookies are deleted by a suspicious process.
+    
+    - **Effort:** master
+
 ??? abstract "Cron Files Alteration"
     
     Cron Files and Cron Directory alteration used by attacker for persistency or privilege escalation.
@@ -181,7 +187,7 @@ The following Sekoia.io built-in rules match the intake **Netskope**. This docum
     
     Detects users clicking on Google docs links to download suspicious files. This technique was used a lot by Bazar Loader in the past.
     
-    - **Effort:** elementary
+    - **Effort:** intermediate
 
 ??? abstract "Suspicious URI Used In A Lazarus Campaign"
     

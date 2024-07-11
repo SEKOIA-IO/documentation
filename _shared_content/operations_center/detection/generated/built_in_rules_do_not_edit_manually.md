@@ -1,4 +1,4 @@
-Rules catalog includes **881 built-in detection rules** ([_last update on 2024-05-23_](rules_changelog.md)).
+Rules catalog includes **900 built-in detection rules** ([_last update on 2024-07-11_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Identity Information**
 
@@ -11,6 +11,7 @@ Rules catalog includes **881 built-in detection rules** ([_last update on 2024-0
     - **Changelog:**
     
         - 09/04/2024 - major - change field on aggregation
+        - 13/06/2024 - minor - Adding fields to be displayed in alerts.
             
 ??? abstract "Anomaly Possible Sysvol Dump"
     
@@ -21,6 +22,7 @@ Rules catalog includes **881 built-in detection rules** ([_last update on 2024-0
     - **Changelog:**
     
         - 08/04/2024 - minor - change field name on query
+        - 13/06/2024 - minor - Adding fields to be displayed in alerts.
             
 **Gather Victim Network Information**
 
@@ -115,6 +117,12 @@ Rules catalog includes **881 built-in detection rules** ([_last update on 2024-0
 ??? abstract "ExtraHop Reveal(x) 360 Intrusion Detection High Severity"
     
     ExtraHop Reveal(x) 360 raised an intrusion detection alert with high severity.
+    
+    - **Effort:** master
+    
+??? abstract "Fastly Next-Gen WAF Audit Threat Alert"
+    
+    Forward a threat detection made by Fastly Next-Gen WAF Audit Logs
     
     - **Effort:** master
     
@@ -511,6 +519,12 @@ Rules catalog includes **881 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** master
     
+??? abstract "Varonis Data Security Network Alert"
+    
+    Varonis Data Security has raised an alert related to a network rule
+    
+    - **Effort:** master
+    
 **Obtain Capabilities**
 
 ??? abstract "Privilege Escalation Awesome Scripts (PEAS)"
@@ -586,14 +600,15 @@ Rules catalog includes **881 built-in detection rules** ([_last update on 2024-0
         - 19/10/2023 - minor - Minor change in selection to reduce false positives.
         - 26/03/2024 - major - Rule's pattern field changed
             
-??? abstract "Failed Logon Source From Public IP Addresses"
+??? abstract "Failed Logon Followed By A Success From Public IP Addresses"
     
-    A login from a public IP can indicate a misconfigured firewall or network boundary. The sekoia.tags are used to filter internal Ipv4 addresses (10.0.0.0/8 172.16.0.0/12 127.0.0.0/8 169.254.0.0/16 192.168.0.0/16).
+    A login from a public IP can indicate a misconfigured firewall or network boundary. The detection look for 5 or more failed attemps followed by a successfull one. The sekoia.tags are used to filter internal Ipv4 addresses.
     
     - **Effort:** master
     
     - **Changelog:**
     
+        - 29/05/2024 - major - Adding new field and switching to correlation rule.
         - 04/04/2024 - major - Rule's pattern field changed
             
 ??? abstract "Fortinet FortiGate Firewall Successful External Login"
@@ -625,6 +640,12 @@ Rules catalog includes **881 built-in detection rules** ([_last update on 2024-0
     Detects when Google Cloud Audit Logs notify an attack warning such as the famous "Government-backed attack".
     
     - **Effort:** intermediate
+    
+??? abstract "Google Workspace Account Warning"
+    
+    Detects a suspicious login, leaked password, or account disabled following suspicious activity.
+    
+    - **Effort:** elementary
     
 ??? abstract "Google Workspace Admin Creation"
     
@@ -735,14 +756,19 @@ Rules catalog includes **881 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** master
     
-??? abstract "Failed Logon Source From Public IP Addresses"
+    - **Changelog:**
     
-    A login from a public IP can indicate a misconfigured firewall or network boundary. The sekoia.tags are used to filter internal Ipv4 addresses (10.0.0.0/8 172.16.0.0/12 127.0.0.0/8 169.254.0.0/16 192.168.0.0/16).
+        - 11/06/2024 - minor - Adding fields to be displayed in the alert.
+            
+??? abstract "Failed Logon Followed By A Success From Public IP Addresses"
+    
+    A login from a public IP can indicate a misconfigured firewall or network boundary. The detection look for 5 or more failed attemps followed by a successfull one. The sekoia.tags are used to filter internal Ipv4 addresses.
     
     - **Effort:** master
     
     - **Changelog:**
     
+        - 29/05/2024 - major - Adding new field and switching to correlation rule.
         - 04/04/2024 - major - Rule's pattern field changed
             
 ??? abstract "Trend Micro Apex One Intrusion Detection Alert"
@@ -755,6 +781,24 @@ Rules catalog includes **881 built-in detection rules** ([_last update on 2024-0
     
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
             
+??? abstract "Trend Micro Cloud One High Intrusion"
+    
+    Detects when Trend Micro EDR raised an alert for an intrusion with a high severity level.
+    
+    - **Effort:** master
+    
+??? abstract "Trend Micro Cloud One Low Intrusion"
+    
+    Detects when Trend Micro EDR raised an alert for an intrusion with a low severity level.
+    
+    - **Effort:** master
+    
+??? abstract "Trend Micro Cloud One Medium Intrusion"
+    
+    Detects when Trend Micro EDR raised an alert for an intrusion with a medium severity level.
+    
+    - **Effort:** master
+    
 **Exploit Public-Facing Application**
 
 ??? abstract "CVE-2018-11776 Apache Struts2"
@@ -893,14 +937,15 @@ Rules catalog includes **881 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** elementary
     
-??? abstract "Failed Logon Source From Public IP Addresses"
+??? abstract "Failed Logon Followed By A Success From Public IP Addresses"
     
-    A login from a public IP can indicate a misconfigured firewall or network boundary. The sekoia.tags are used to filter internal Ipv4 addresses (10.0.0.0/8 172.16.0.0/12 127.0.0.0/8 169.254.0.0/16 192.168.0.0/16).
+    A login from a public IP can indicate a misconfigured firewall or network boundary. The detection look for 5 or more failed attemps followed by a successfull one. The sekoia.tags are used to filter internal Ipv4 addresses.
     
     - **Effort:** master
     
     - **Changelog:**
     
+        - 29/05/2024 - major - Adding new field and switching to correlation rule.
         - 04/04/2024 - major - Rule's pattern field changed
             
 ??? abstract "GitLab CVE-2021-22205"
@@ -1225,6 +1270,10 @@ Rules catalog includes **881 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 18/06/2024 - minor - Adding filter when whitelisted.
+            
 ??? abstract "Spam Detected By Vade For M365"
     
     Vade Secure product Vade for M365, has detected a spam e-mail.
@@ -1281,8 +1330,12 @@ Rules catalog includes **881 built-in detection rules** ([_last update on 2024-0
     
     Detects users clicking on Google docs links to download suspicious files. This technique was used a lot by Bazar Loader in the past.
     
-    - **Effort:** elementary
+    - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 13/06/2024 - minor - Adding similarity strategy and changing effort level.
+            
 ??? abstract "Suspicious Email Attachment Received"
     
     Detects email containing an .exe|.dll|.ps1|.bat|.hta attachment. Most of the time files send by mail like this are malware.
@@ -1919,6 +1972,12 @@ Rules catalog includes **881 built-in detection rules** ([_last update on 2024-0
     Detects specific command used by the Phorpiex botnet to execute a copy of the loader during its self-spreading stage. As described by Microsoft, this behavior is unique and easily identifiable due to the use of folders named with underscores "__" and the PE name "DriveMgr.exe".
     
     - **Effort:** elementary
+    
+??? abstract "PowerShell Commands Invocation"
+    
+    Detects the execution to invoke a powershell command. This was used in an intrusion using Gootloader to access Mimikatz.
+    
+    - **Effort:** advanced
     
 ??? abstract "PowerShell Credential Prompt"
     
@@ -2567,6 +2626,7 @@ Rules catalog includes **881 built-in detection rules** ([_last update on 2024-0
     
     - **Changelog:**
     
+        - 27/05/2024 - minor - Added new filters to reduce false positives.
         - 21/11/2023 - minor - Added new filters to reduce false positives.
         - 08/11/2023 - minor - Added filter to reduce false positives
             
@@ -2740,8 +2800,12 @@ Rules catalog includes **881 built-in detection rules** ([_last update on 2024-0
     
     Detects a large number of file downloads.
     
-    - **Effort:** advanced
+    - **Effort:** master
     
+    - **Changelog:**
+    
+        - 12/06/2024 - minor - Changing effort level and adding field to alert.
+            
 ??? abstract "HTA Infection Chains"
     
     Detect the creation of a ZIP file and an HTA file as it is often used in infection chains. Furthermore it also detects the use of suspicious processes launched by explorer.exe combined with the creation of an HTA file, since it is also often used in infection chains (LNK - HTA for instance).
@@ -3384,6 +3448,18 @@ Rules catalog includes **881 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** advanced
     
+??? abstract "Zscaler ZIA Malicious Threat"
+    
+    Zscaler Internet Access has detected a network traffic as malicious
+    
+    - **Effort:** master
+    
+??? abstract "Zscaler ZIA Suspicious Threat"
+    
+    Zscaler Internet Access has detected a network traffic as malicious
+    
+    - **Effort:** master
+    
 **System Services**
 
 ??? abstract "Check Point Harmony Mobile Application Forbidden"
@@ -3608,6 +3684,7 @@ Rules catalog includes **881 built-in detection rules** ([_last update on 2024-0
         - 04/07/2023 - major - Added filter to reduce false positives
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
         - 19/03/2024 - major - Added filter to reduce false positives
+        - 07/06/2024 - major - Added filter to reduce false positives
             
 ??? abstract "Lsass Wrong Parent"
     
@@ -4042,6 +4119,10 @@ Rules catalog includes **881 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 21/06/2024 - major - Update detection pattern for ECS fields/value compliance
+            
 ??? abstract "Userinit Wrong Parent"
     
     Userinit.exe is a key process in the Windows operating system. On boot-up it manages the different start up sequences needed, such as establishing network connection and starting up the Windows shell. This rule analyse if the parent of this process is a legitimate one or not.
@@ -4287,6 +4368,10 @@ Rules catalog includes **881 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 21/06/2024 - major - Update detection pattern for ECS fields/value compliance, and filter some FPs
+            
 ??? abstract "Ryuk Ransomware Persistence Registry Key"
     
     Detects registry key used by the Ryuk ransomware in two ways, either the Sysmon registry events, or the command line (reg add).
@@ -4359,14 +4444,15 @@ Rules catalog includes **881 built-in detection rules** ([_last update on 2024-0
         - 19/10/2023 - minor - Minor change in selection to reduce false positives.
         - 26/03/2024 - major - Rule's pattern field changed
             
-??? abstract "Failed Logon Source From Public IP Addresses"
+??? abstract "Failed Logon Followed By A Success From Public IP Addresses"
     
-    A login from a public IP can indicate a misconfigured firewall or network boundary. The sekoia.tags are used to filter internal Ipv4 addresses (10.0.0.0/8 172.16.0.0/12 127.0.0.0/8 169.254.0.0/16 192.168.0.0/16).
+    A login from a public IP can indicate a misconfigured firewall or network boundary. The detection look for 5 or more failed attemps followed by a successfull one. The sekoia.tags are used to filter internal Ipv4 addresses.
     
     - **Effort:** master
     
     - **Changelog:**
     
+        - 29/05/2024 - major - Adding new field and switching to correlation rule.
         - 04/04/2024 - major - Rule's pattern field changed
             
 ??? abstract "Fortinet FortiGate Firewall Successful External Login"
@@ -4398,6 +4484,12 @@ Rules catalog includes **881 built-in detection rules** ([_last update on 2024-0
     Detects when Google Cloud Audit Logs notify an attack warning such as the famous "Government-backed attack".
     
     - **Effort:** intermediate
+    
+??? abstract "Google Workspace Account Warning"
+    
+    Detects a suspicious login, leaked password, or account disabled following suspicious activity.
+    
+    - **Effort:** elementary
     
 ??? abstract "Google Workspace Admin Creation"
     
@@ -4559,9 +4651,15 @@ Rules catalog includes **881 built-in detection rules** ([_last update on 2024-0
             
 ??? abstract "Add User to Privileged Group"
     
-    Add user in a potential privileged group which can be used to elevate privileges on the system
+    Add user in a potential privileged group which can be used to elevate privileges on the system.
     
     - **Effort:** advanced
+    
+??? abstract "Enabling Restricted Admin Mode"
+    
+    Detects when the restricted admin mode is enabled.
+    
+    - **Effort:** elementary
     
 ??? abstract "Google Workspace Admin Modification"
     
@@ -4611,7 +4709,7 @@ Rules catalog includes **881 built-in detection rules** ([_last update on 2024-0
     
 ??? abstract "Okta User Account Deactivated"
     
-    An user account has been deactivated in Okta.
+    A user account has been deactivated in Okta.
     
     - **Effort:** master
     
@@ -4705,14 +4803,19 @@ Rules catalog includes **881 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** master
     
-??? abstract "Failed Logon Source From Public IP Addresses"
+    - **Changelog:**
     
-    A login from a public IP can indicate a misconfigured firewall or network boundary. The sekoia.tags are used to filter internal Ipv4 addresses (10.0.0.0/8 172.16.0.0/12 127.0.0.0/8 169.254.0.0/16 192.168.0.0/16).
+        - 11/06/2024 - minor - Adding fields to be displayed in the alert.
+            
+??? abstract "Failed Logon Followed By A Success From Public IP Addresses"
+    
+    A login from a public IP can indicate a misconfigured firewall or network boundary. The detection look for 5 or more failed attemps followed by a successfull one. The sekoia.tags are used to filter internal Ipv4 addresses.
     
     - **Effort:** master
     
     - **Changelog:**
     
+        - 29/05/2024 - major - Adding new field and switching to correlation rule.
         - 04/04/2024 - major - Rule's pattern field changed
             
 ??? abstract "Trend Micro Apex One Intrusion Detection Alert"
@@ -4725,6 +4828,24 @@ Rules catalog includes **881 built-in detection rules** ([_last update on 2024-0
     
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
             
+??? abstract "Trend Micro Cloud One High Intrusion"
+    
+    Detects when Trend Micro EDR raised an alert for an intrusion with a high severity level.
+    
+    - **Effort:** master
+    
+??? abstract "Trend Micro Cloud One Low Intrusion"
+    
+    Detects when Trend Micro EDR raised an alert for an intrusion with a low severity level.
+    
+    - **Effort:** master
+    
+??? abstract "Trend Micro Cloud One Medium Intrusion"
+    
+    Detects when Trend Micro EDR raised an alert for an intrusion with a medium severity level.
+    
+    - **Effort:** master
+    
 **Create Account**
 
 ??? abstract "AWS Persistence By Creating KeyPair And SecurityGroup"
@@ -4759,7 +4880,7 @@ Rules catalog includes **881 built-in detection rules** ([_last update on 2024-0
     
 ??? abstract "Okta User Account Created"
     
-    An user account has been created in Okta.
+    A user account has been created in Okta.
     
     - **Effort:** master
     
@@ -4788,6 +4909,7 @@ Rules catalog includes **881 built-in detection rules** ([_last update on 2024-0
     - **Changelog:**
     
         - 04/04/2024 - major - Rule's pattern field changed
+        - 10/07/2024 - minor - Adding filter and new elements to reduce false positives.
             
 **Office Application Startup**
 
@@ -5002,6 +5124,7 @@ Rules catalog includes **881 built-in detection rules** ([_last update on 2024-0
         - 04/07/2023 - major - Added filter to reduce false positives
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
         - 19/03/2024 - major - Added filter to reduce false positives
+        - 07/06/2024 - major - Added filter to reduce false positives
             
 ??? abstract "Lsass Wrong Parent"
     
@@ -5331,6 +5454,10 @@ Rules catalog includes **881 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** elementary
     
+    - **Changelog:**
+    
+        - 21/06/2024 - major - Update detection pattern for ECS fields/value compliance
+            
 ??? abstract "Suspicious Netsh DLL Persistence"
     
     Detects persitence via netsh helper. Netsh interacts with other operating system components using dynamic-link library (DLL) files. Adversaries may establish persistence by executing malicious content triggered by Netsh Helper DLLs.
@@ -5385,12 +5512,20 @@ Rules catalog includes **881 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** elementary
     
+    - **Changelog:**
+    
+        - 21/06/2024 - major - Update detection pattern for ECS fields/value compliance
+            
 ??? abstract "Malware Persistence Registry Key"
     
     Detects registry key used by several malware, especially Formbook spyware in two ways, either the Sysmon registry events, or the commands line.
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 21/06/2024 - major - Update detection pattern for ECS fields/value compliance, and filter some FPs
+            
 ??? abstract "Narrator Feedback-Hub Persistence"
     
     The Windows 10 Narrator's Feedback-Hub registry key has been modified which could be done by an attacker for persistence purposes. Prerequisites are logging for Registry events in the Sysmon configuration (events 12 and 13). Careful since the SwiftOnSecurity Sysmon's configuration needs to be changed to log for this specifically.
@@ -5406,7 +5541,14 @@ Rules catalog includes **881 built-in detection rules** ([_last update on 2024-0
     - **Changelog:**
     
         - 29/11/2023 - minor - Update regex pattern to insensitive case
+        - 07/06/2024 - major - Update pattern to reduce false positives
             
+??? abstract "Njrat Registry Values"
+    
+    Detects specifis registry values that are related to njRat usage.
+    
+    - **Effort:** intermediate
+    
 ??? abstract "Powershell Winlogon Helper DLL"
     
     Detects modifications to the Winlogon Registry keys, which may cause Winlogon to load and execute malicious DLLs and/or executables.
@@ -5441,6 +5583,10 @@ Rules catalog includes **881 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** elementary
     
+    - **Changelog:**
+    
+        - 21/06/2024 - major - Update detection pattern for ECS fields/value compliance
+            
 ??? abstract "Suspicious desktop.ini Action"
     
     Detects unusual processes accessing desktop.ini, which can be leveraged to alter how Explorer displays a folder's content (i.e. renaming files) without changing them on disk.
@@ -5477,6 +5623,10 @@ Rules catalog includes **881 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 20/06/2024 - minor - Adding new element to increase detection.
+            
 ??? abstract "KeePass Config XML In Command-Line"
     
     Detects a command-line interaction with the KeePass Config XML file. It could be used to retrieve informations or to be abused for persistence.
@@ -6000,14 +6150,15 @@ Rules catalog includes **881 built-in detection rules** ([_last update on 2024-0
         - 19/10/2023 - minor - Minor change in selection to reduce false positives.
         - 26/03/2024 - major - Rule's pattern field changed
             
-??? abstract "Failed Logon Source From Public IP Addresses"
+??? abstract "Failed Logon Followed By A Success From Public IP Addresses"
     
-    A login from a public IP can indicate a misconfigured firewall or network boundary. The sekoia.tags are used to filter internal Ipv4 addresses (10.0.0.0/8 172.16.0.0/12 127.0.0.0/8 169.254.0.0/16 192.168.0.0/16).
+    A login from a public IP can indicate a misconfigured firewall or network boundary. The detection look for 5 or more failed attemps followed by a successfull one. The sekoia.tags are used to filter internal Ipv4 addresses.
     
     - **Effort:** master
     
     - **Changelog:**
     
+        - 29/05/2024 - major - Adding new field and switching to correlation rule.
         - 04/04/2024 - major - Rule's pattern field changed
             
 ??? abstract "Fortinet FortiGate Firewall Successful External Login"
@@ -6039,6 +6190,12 @@ Rules catalog includes **881 built-in detection rules** ([_last update on 2024-0
     Detects when Google Cloud Audit Logs notify an attack warning such as the famous "Government-backed attack".
     
     - **Effort:** intermediate
+    
+??? abstract "Google Workspace Account Warning"
+    
+    Detects a suspicious login, leaked password, or account disabled following suspicious activity.
+    
+    - **Effort:** elementary
     
 ??? abstract "Google Workspace Admin Creation"
     
@@ -6200,9 +6357,15 @@ Rules catalog includes **881 built-in detection rules** ([_last update on 2024-0
             
 ??? abstract "Add User to Privileged Group"
     
-    Add user in a potential privileged group which can be used to elevate privileges on the system
+    Add user in a potential privileged group which can be used to elevate privileges on the system.
     
     - **Effort:** advanced
+    
+??? abstract "Enabling Restricted Admin Mode"
+    
+    Detects when the restricted admin mode is enabled.
+    
+    - **Effort:** elementary
     
 ??? abstract "Google Workspace Admin Modification"
     
@@ -6252,7 +6415,7 @@ Rules catalog includes **881 built-in detection rules** ([_last update on 2024-0
     
 ??? abstract "Okta User Account Deactivated"
     
-    An user account has been deactivated in Okta.
+    A user account has been deactivated in Okta.
     
     - **Effort:** master
     
@@ -6534,6 +6697,7 @@ Rules catalog includes **881 built-in detection rules** ([_last update on 2024-0
         - 04/07/2023 - major - Added filter to reduce false positives
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
         - 19/03/2024 - major - Added filter to reduce false positives
+        - 07/06/2024 - major - Added filter to reduce false positives
             
 ??? abstract "Lsass Wrong Parent"
     
@@ -6863,6 +7027,10 @@ Rules catalog includes **881 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** elementary
     
+    - **Changelog:**
+    
+        - 21/06/2024 - major - Update detection pattern for ECS fields/value compliance
+            
 ??? abstract "Suspicious Netsh DLL Persistence"
     
     Detects persitence via netsh helper. Netsh interacts with other operating system components using dynamic-link library (DLL) files. Adversaries may establish persistence by executing malicious content triggered by Netsh Helper DLLs.
@@ -6917,12 +7085,20 @@ Rules catalog includes **881 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** elementary
     
+    - **Changelog:**
+    
+        - 21/06/2024 - major - Update detection pattern for ECS fields/value compliance
+            
 ??? abstract "Malware Persistence Registry Key"
     
     Detects registry key used by several malware, especially Formbook spyware in two ways, either the Sysmon registry events, or the commands line.
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 21/06/2024 - major - Update detection pattern for ECS fields/value compliance, and filter some FPs
+            
 ??? abstract "Narrator Feedback-Hub Persistence"
     
     The Windows 10 Narrator's Feedback-Hub registry key has been modified which could be done by an attacker for persistence purposes. Prerequisites are logging for Registry events in the Sysmon configuration (events 12 and 13). Careful since the SwiftOnSecurity Sysmon's configuration needs to be changed to log for this specifically.
@@ -6938,7 +7114,14 @@ Rules catalog includes **881 built-in detection rules** ([_last update on 2024-0
     - **Changelog:**
     
         - 29/11/2023 - minor - Update regex pattern to insensitive case
+        - 07/06/2024 - major - Update pattern to reduce false positives
             
+??? abstract "Njrat Registry Values"
+    
+    Detects specifis registry values that are related to njRat usage.
+    
+    - **Effort:** intermediate
+    
 ??? abstract "Powershell Winlogon Helper DLL"
     
     Detects modifications to the Winlogon Registry keys, which may cause Winlogon to load and execute malicious DLLs and/or executables.
@@ -6973,6 +7156,10 @@ Rules catalog includes **881 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** elementary
     
+    - **Changelog:**
+    
+        - 21/06/2024 - major - Update detection pattern for ECS fields/value compliance
+            
 ??? abstract "Suspicious desktop.ini Action"
     
     Detects unusual processes accessing desktop.ini, which can be leveraged to alter how Explorer displays a folder's content (i.e. renaming files) without changing them on disk.
@@ -6997,6 +7184,10 @@ Rules catalog includes **881 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 28/05/2024 - minor - Add pattern to filter to improve coverage
+            
 ??? abstract "COM Hijack Via Sdclt"
     
     Detects changes to 'HKCU\Software\Classes\Folder\shell\open\command\DelegateExecute', to bypass UAC using 'sdclt.exe'.
@@ -7057,6 +7248,10 @@ Rules catalog includes **881 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 21/06/2024 - major - Update detection pattern for ECS fields/value compliance
+            
 ??? abstract "UAC Bypass Via Sdclt"
     
     Detects changes to HKCU\Software\Classes\exefile\shell\runas\command\isolatedCommand by an attacker in order to bypass User Account Control (UAC)
@@ -7575,6 +7770,12 @@ Rules catalog includes **881 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** advanced
     
+??? abstract "Cookies Deletion"
+    
+    Detects when cookies are deleted by a suspicious process.
+    
+    - **Effort:** master
+    
 ??? abstract "ETW Tampering"
     
     Detects a command that clears or disables any ETW Trace log which could indicate a logging evasion
@@ -7714,14 +7915,15 @@ Rules catalog includes **881 built-in detection rules** ([_last update on 2024-0
         - 19/10/2023 - minor - Minor change in selection to reduce false positives.
         - 26/03/2024 - major - Rule's pattern field changed
             
-??? abstract "Failed Logon Source From Public IP Addresses"
+??? abstract "Failed Logon Followed By A Success From Public IP Addresses"
     
-    A login from a public IP can indicate a misconfigured firewall or network boundary. The sekoia.tags are used to filter internal Ipv4 addresses (10.0.0.0/8 172.16.0.0/12 127.0.0.0/8 169.254.0.0/16 192.168.0.0/16).
+    A login from a public IP can indicate a misconfigured firewall or network boundary. The detection look for 5 or more failed attemps followed by a successfull one. The sekoia.tags are used to filter internal Ipv4 addresses.
     
     - **Effort:** master
     
     - **Changelog:**
     
+        - 29/05/2024 - major - Adding new field and switching to correlation rule.
         - 04/04/2024 - major - Rule's pattern field changed
             
 ??? abstract "Fortinet FortiGate Firewall Successful External Login"
@@ -7753,6 +7955,12 @@ Rules catalog includes **881 built-in detection rules** ([_last update on 2024-0
     Detects when Google Cloud Audit Logs notify an attack warning such as the famous "Government-backed attack".
     
     - **Effort:** intermediate
+    
+??? abstract "Google Workspace Account Warning"
+    
+    Detects a suspicious login, leaked password, or account disabled following suspicious activity.
+    
+    - **Effort:** elementary
     
 ??? abstract "Google Workspace Admin Creation"
     
@@ -7899,6 +8107,10 @@ Rules catalog includes **881 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** elementary
     
+    - **Changelog:**
+    
+        - 21/06/2024 - major - Update detection pattern for ECS fields/value compliance
+            
 ??? abstract "FlowCloud Malware"
     
     Detects FlowCloud malware from threat group TA410. This requires Windows Event registry logging.
@@ -7921,6 +8133,10 @@ Rules catalog includes **881 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 21/06/2024 - major - Update detection pattern for ECS fields/value compliance
+            
 ??? abstract "RDP Port Change Using Powershell"
     
     Detects RDP port configuration change using a PowerShell command such as 'Set-ItemProperty -Path "HKLM:\System\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp" -Name PortNumber -Value XXX Restart-Service termservice -force'. Threat actors can change RDP to another port to bypass protections, avoid detection based on the port, or to take full control of the system. 
@@ -8213,6 +8429,10 @@ Rules catalog includes **881 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 28/05/2024 - minor - Add pattern to filter to improve coverage
+            
 ??? abstract "CVE-2017-11882 Microsoft Office Equation Editor Vulnerability"
     
     Detects the exploitation of CVE-2017-11882 vulnerability. The Microsoft Office Equation Editor has no reason to do a network request or drop an executable file. This requires a sysmon configuration with file and network events.
@@ -8510,6 +8730,10 @@ Rules catalog includes **881 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 28/05/2024 - minor - Add pattern to filter to improve coverage
+            
 ??? abstract "COM Hijack Via Sdclt"
     
     Detects changes to 'HKCU\Software\Classes\Folder\shell\open\command\DelegateExecute', to bypass UAC using 'sdclt.exe'.
@@ -8570,6 +8794,10 @@ Rules catalog includes **881 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 21/06/2024 - major - Update detection pattern for ECS fields/value compliance
+            
 ??? abstract "UAC Bypass Via Sdclt"
     
     Detects changes to HKCU\Software\Classes\exefile\shell\runas\command\isolatedCommand by an attacker in order to bypass User Account Control (UAC)
@@ -8671,6 +8899,10 @@ Rules catalog includes **881 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 20/06/2024 - minor - Adding new element to increase detection.
+            
 ??? abstract "KeePass Config XML In Command-Line"
     
     Detects a command-line interaction with the KeePass Config XML file. It could be used to retrieve informations or to be abused for persistence.
@@ -8860,6 +9092,11 @@ Rules catalog includes **881 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** elementary
     
+    - **Changelog:**
+    
+        - 21/06/2024 - major - Update detection pattern for ECS fields/value compliance
+        - 25/06/2024 - major - Fix pattern selection
+            
 ??? abstract "Disable Windows Defender Credential Guard"
     
     Detects registry keys being changed to disable Windows Defender Credential Guard. The rule requires to log Registry Keys modifications or creations, which can be done using Sysmon Event IDs 12,13 and 14.
@@ -8970,6 +9207,10 @@ Rules catalog includes **881 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 04/07/2024 - minor - Adding new commands to increase detection.
+            
 ??? abstract "Microsoft Defender Antivirus Disable SecurityHealth"
     
     The rule detects attempts to deactivate/disable Windows Defender SecurityHealth through command line, PowerShell scripts, and registry. To fully use this rule Windows Registry logging is recommended.
@@ -9170,8 +9411,12 @@ Rules catalog includes **881 built-in detection rules** ([_last update on 2024-0
     
     Detects Request to amsiInitFailed that can be used to disable AMSI (Antimalware Scan Interface) Scanning. More information about Antimalware Scan Interface https://docs.microsoft.com/en-us/windows/win32/amsi/antimalware-scan-interface-portal.
     
-    - **Effort:** elementary
+    - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 13/06/2024 - minor - Changing effort level and adding similarity strategy to regroup alerts.
+            
 ??? abstract "Powershell AMSI Bypass"
     
     This rule aims to detect attempts to bypass AMSI in powershell using specific techniques.
@@ -9238,6 +9483,7 @@ Rules catalog includes **881 built-in detection rules** ([_last update on 2024-0
     
         - 02/01/2024 - minor - improve selection to avoid FP
         - 21/05/2024 - major - editing pattern to avoid FP
+        - 25/06/2024 - minor - fix pattern following ECS parsing update
             
 ??? abstract "Suspicious Microsoft Defender Antivirus Exclusion Command"
     
@@ -9622,6 +9868,7 @@ Rules catalog includes **881 built-in detection rules** ([_last update on 2024-0
     
     - **Changelog:**
     
+        - 10/06/2024 - minor - Added filter to the rule to reduce false positives.
         - 19/06/2023 - minor - Added filter to the rule to reduce false positives.
             
 ??? abstract "Impacket Secretsdump.py Tool"
@@ -9751,12 +9998,13 @@ Rules catalog includes **881 built-in detection rules** ([_last update on 2024-0
     
     Detects the use of comsvcs in command line to dump a specific process memory. This technique is used by attackers for privilege escalation and pivot.
     
-    - **Effort:** elementary
+    - **Effort:** intermediate
     
     - **Changelog:**
     
         - 26/03/2024 - major - Filter improved to reduce false positives. On the other hand, some selections were added to improve detection.
         - 10/04/2024 - minor - Rule description was changed due to some mistakes
+        - 13/06/2024 - minor - Adding similarity strategy and changing effort level.
             
 ??? abstract "Process Memory Dump Using Createdump"
     
@@ -10017,6 +10265,24 @@ Rules catalog includes **881 built-in detection rules** ([_last update on 2024-0
             
 **Multi-Factor Authentication Interception**
 
+??? abstract "Entra ID Sign-In Via Known AiTM Phishing Kit"
+    
+    Detects a sign-in attempt from an IP address belonging to a known adversary-in-the-middle phishing kit.
+    
+    - **Effort:** elementary
+    
+??? abstract "Entra ID Sign-In Via Known AiTM Phishing Kit (RED0046)"
+    
+    Detects a sign-in attempt with known characteristics of the adversary-in-the-middle phishing kit tracked by Sekoia.io as RED0046.
+    
+    - **Effort:** elementary
+    
+??? abstract "Entra ID Sign-In Via Known AiTM Phishing Kit (Tycoon 2FA)"
+    
+    Detects a sign-in attempt with known characteristics of the adversary-in-the-middle phishing kit Tycoon 2FA.
+    
+    - **Effort:** elementary
+    
 ??? abstract "EvilProxy Phishing Domain"
     
     Detects subdomains potentially generated by the EvilProxy adversary-in-the-middle phishing platform. Inspect the other subdomains of the domain to identify the landing page, and determine if the user submitted credentials. This rule has a small percentage of false positives on legitimate domains.
@@ -10169,6 +10435,7 @@ Rules catalog includes **881 built-in detection rules** ([_last update on 2024-0
     - **Changelog:**
     
         - 08/04/2024 - minor - change field name on query
+        - 12/06/2024 - minor - Adding new fields to be displayed in alerts.
             
 ??? abstract "Credentials Extraction"
     
@@ -10208,6 +10475,10 @@ Rules catalog includes **881 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 20/06/2024 - minor - Adding new element to increase detection.
+            
 ??? abstract "KeePass Config XML In Command-Line"
     
     Detects a command-line interaction with the KeePass Config XML file. It could be used to retrieve informations or to be abused for persistence.
@@ -10222,6 +10493,24 @@ Rules catalog includes **881 built-in detection rules** ([_last update on 2024-0
     
 **Adversary-in-the-Middle**
 
+??? abstract "Entra ID Sign-In Via Known AiTM Phishing Kit"
+    
+    Detects a sign-in attempt from an IP address belonging to a known adversary-in-the-middle phishing kit.
+    
+    - **Effort:** elementary
+    
+??? abstract "Entra ID Sign-In Via Known AiTM Phishing Kit (RED0046)"
+    
+    Detects a sign-in attempt with known characteristics of the adversary-in-the-middle phishing kit tracked by Sekoia.io as RED0046.
+    
+    - **Effort:** elementary
+    
+??? abstract "Entra ID Sign-In Via Known AiTM Phishing Kit (Tycoon 2FA)"
+    
+    Detects a sign-in attempt with known characteristics of the adversary-in-the-middle phishing kit Tycoon 2FA.
+    
+    - **Effort:** elementary
+    
 ??? abstract "EvilProxy Phishing Domain"
     
     Detects subdomains potentially generated by the EvilProxy adversary-in-the-middle phishing platform. Inspect the other subdomains of the domain to identify the landing page, and determine if the user submitted credentials. This rule has a small percentage of false positives on legitimate domains.
@@ -10296,6 +10585,10 @@ Rules catalog includes **881 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 03/07/2024 - major - Add filter to cover a second case to improve rule coverage
+            
 ??? abstract "Suspicious Outbound Kerberos Connection"
     
     Detects suspicious outbound network activity via kerberos default port indicating possible lateral movement or first stage PrivEsc via delegation.
@@ -10321,6 +10614,18 @@ Rules catalog includes **881 built-in detection rules** ([_last update on 2024-0
     - **Changelog:**
     
         - 04/04/2024 - major - Rule's pattern field changed
+            
+**Steal or Forge Authentication Certificates**
+
+??? abstract "Suspicious Kerberos Ticket"
+    
+    Detect suspicious Kerberos ticket based on on their parameters which suggest that it could be forged.
+    
+    - **Effort:** intermediate
+    
+    - **Changelog:**
+    
+        - 03/07/2024 - major - Add filter to cover a second case to improve rule coverage
             
 ## Discovery
 **System Service Discovery**
@@ -10515,12 +10820,21 @@ Rules catalog includes **881 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 12/06/2024 - minor - Adding field to be displayed in the alerts and changing the query.
+        - 04/07/2024 - minor - Reviewing query.
+            
 ??? abstract "Anomaly Multiple Host Port Scan"
     
     Detects multiple port scan from/to a private address, excluding DNS.
     
-    - **Effort:** advanced
+    - **Effort:** master
     
+    - **Changelog:**
+    
+        - 11/06/2024 - minor - Adding fields to be displayed in the alert and changing effort level.
+            
 **System Network Connections Discovery**
 
 ??? abstract "Cmd.exe Used To Run Reconnaissance Commands"
@@ -10880,6 +11194,12 @@ Rules catalog includes **881 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** advanced
     
+??? abstract "AWS CloudTrail EC2 Enable Serial Console Access"
+    
+    Detects when the EC2 serial console access feature is enabled. This could abused by some attackers to avoid network detection when accessing to EC2 instances.
+    
+    - **Effort:** intermediate
+    
 ??? abstract "AWS CloudTrail EC2 Instance Connect SendSSHPublicKey"
     
     Detects when an attacker is pushing an SSH Public Key to an EC2 instance. Then he can establish a connection to the console using SSH.
@@ -10923,7 +11243,7 @@ Rules catalog includes **881 built-in detection rules** ([_last update on 2024-0
         - 19/10/2023 - minor - Minor change in selection to reduce false positives.
         - 26/03/2024 - major - Rule's pattern field changed
             
-??? abstract "Lateral Movement - Remote Named Pipe"
+??? abstract "Lateral Movement Remote Named Pipe"
     
     Detects lateral movement and remote exec using named pipe over network. This requires Windows Security event logging with the File Share enable policy.
     
@@ -10931,8 +11251,9 @@ Rules catalog includes **881 built-in detection rules** ([_last update on 2024-0
     
     - **Changelog:**
     
+        - 12/06/2024 - minor - Fix filter selection
+        - 03/04/2024 - major - Rule's pattern field changed
         - 26/03/2024 - minor - Filter was improved to reduce false positives
-        - 26/03/2024 - major - Rule's pattern field changed
             
 ??? abstract "Lsass Access Through WinRM"
     
@@ -11202,6 +11523,24 @@ Rules catalog includes **881 built-in detection rules** ([_last update on 2024-0
             
 **Adversary-in-the-Middle**
 
+??? abstract "Entra ID Sign-In Via Known AiTM Phishing Kit"
+    
+    Detects a sign-in attempt from an IP address belonging to a known adversary-in-the-middle phishing kit.
+    
+    - **Effort:** elementary
+    
+??? abstract "Entra ID Sign-In Via Known AiTM Phishing Kit (RED0046)"
+    
+    Detects a sign-in attempt with known characteristics of the adversary-in-the-middle phishing kit tracked by Sekoia.io as RED0046.
+    
+    - **Effort:** elementary
+    
+??? abstract "Entra ID Sign-In Via Known AiTM Phishing Kit (Tycoon 2FA)"
+    
+    Detects a sign-in attempt with known characteristics of the adversary-in-the-middle phishing kit Tycoon 2FA.
+    
+    - **Effort:** elementary
+    
 ??? abstract "EvilProxy Phishing Domain"
     
     Detects subdomains potentially generated by the EvilProxy adversary-in-the-middle phishing platform. Inspect the other subdomains of the domain to identify the landing page, and determine if the user submitted credentials. This rule has a small percentage of false positives on legitimate domains.
@@ -11421,6 +11760,10 @@ Rules catalog includes **881 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 20/06/2024 - minor - Adding new elements to increase detection.
+            
 ??? abstract "Koadic MSHTML Command"
     
     Detects Koadic payload using MSHTML module
@@ -11790,6 +12133,10 @@ Rules catalog includes **881 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 20/06/2024 - minor - Added filter to reduce false positives
+            
 ??? abstract "SSH Port Binding"
     
     When a user uses SSH tunneling in Linux, the sshd process binds sockets to communicate with the client machine via a ssh tunnel. With SSH tunneling, the SSH server can be used as a getaway to access internal systems. The traffic will seem to be coming from the SSH server whereas it only acts as a relay for an attacker. By using this technique, an attacker can successfully bypass external firewall rules. This rule is the most basic one (compared to the other one - SSH Tunnel), however it can detect the -D option in the ssh command if the machine is the client. This rule will detect the port binding (port 6010) when X11 forwarding is used. It will detect -R (server side), -D (client side) -X (server side), -Y (server side) and -L (client side) port binding.
@@ -11862,6 +12209,18 @@ Rules catalog includes **881 built-in detection rules** ([_last update on 2024-0
     Execution of well known tools for data exfiltration and tunneling
     
     - **Effort:** advanced
+    
+??? abstract "Gatewatcher AionIQ Malware Alert"
+    
+    Forward malware information reported by Gatewatcher AionIQ  
+    
+    - **Effort:** master
+    
+??? abstract "Gatewatcher AionIQ Network Alert"
+    
+    Forward network alerts reported by Gatewatcher AionIQ  
+    
+    - **Effort:** master
     
 ??? abstract "Netsh Port Forwarding"
     
@@ -11984,6 +12343,10 @@ Rules catalog includes **881 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 28/05/2024 - major - On Fortinet Fortigate intakes, events other than 0000000013 are now ignored.
+            
 ??? abstract "Powershell UploadString Function"
     
     Powershell's `uploadXXX` functions are a category of methods which can be used to exfiltrate data through native means on a Windows host.
@@ -12057,6 +12420,12 @@ Rules catalog includes **881 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** intermediate
     
+??? abstract "Correlation Multi Service Disable"
+    
+    The rule detects a high number of services stopped or de-activated in a short period of time.
+    
+    - **Effort:** master
+    
 ??? abstract "Disabled Service"
     
     Service disabling can be abused by attacker to deny security mecanisms (eg: firewall, EDR, ect) and it is also often used by cryptominer to exploit as much RAM & CPU as possible on infected host.
@@ -12089,6 +12458,7 @@ Rules catalog includes **881 built-in detection rules** ([_last update on 2024-0
     
     - **Changelog:**
     
+        - 21/06/2024 - major - Update detection pattern for ECS fields/value compliance
         - 16/05/2024 - minor - add pattern to extend and improve detection
             
 ??? abstract "Suncrypt Parameters"
