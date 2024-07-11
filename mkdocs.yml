@@ -255,6 +255,7 @@ nav:
           - pfSense: xdr/features/collect/integrations/network/pfsense.md
           - Pulse / Ivanti Secure Connect: xdr/features/collect/integrations/network/pulse.md
           - Rubycat PROVE IT: xdr/features/collect/integrations/network/rubycat_prove_it.md
+          - Sesame it Jizo: xdr/features/collect/integrations/network/sesameit_jizo.md
           - SonicWall Firewall: xdr/features/collect/integrations/network/sonicwall_fw.md
           - SonicWall SMA: xdr/features/collect/integrations/network/sonicwall_sma.md
           - Squid: xdr/features/collect/integrations/network/squid.md
