@@ -244,6 +244,7 @@ nav:
             - Fortinet Fortiproxy: xdr/features/collect/integrations/network/fortiproxy.md
             - Fortinet Fortiweb: xdr/features/collect/integrations/network/fortiweb.md
           - Infoblox DDI: xdr/features/collect/integrations/network/infoblox_ddi.md
+          - Juniper Switches: xdr/features/collect/integrations/network/juniper_switches.md
           - Sophos Firewall: xdr/features/collect/integrations/network/sophos_fw.md
           - Mc Afee/Skyhigh Secure Web Gateway: xdr/features/collect/integrations/network/skyhigh_secure_web_gateway.md
           - Microsoft Always On VPN: xdr/features/collect/integrations/network/microsoft_always_on_vpn.md
