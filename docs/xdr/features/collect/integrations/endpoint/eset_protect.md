@@ -1,17 +1,17 @@
 uuid: 2ffff1fd-fed7-4a24-927a-d619f2bb584a
-name: ESET Protect
+name: ESET Protect / Inspect
 type: intake
 
 ## Overview
 
-ESET Protect is a cybersecurity platform offering advanced threat detection, endpoint protection, and management tools for businesses, ensuring robust defense against malware and cyber threats.
+ESET Protect / Inspect is a cybersecurity platform offering advanced threat detection, endpoint protection, and management tools for businesses, ensuring robust defense against malware and cyber threats.
 
 !!! warning
     Important note - This format is currently in beta. We highly value your feedback to improve its performance.
 
 ## Supported versions
 
-This integration supports the following versions:
+This integration supports `Cloud` and `On-prem` for the following versions:
 
 - 9.x
 - 10.x
