@@ -51,6 +51,12 @@ The following Sekoia.io built-in rules match the intake **Google Report**. This 
     
     - **Effort:** advanced
 
+??? abstract "Google Workspace Blocked Sender"
+    
+    Detects when a user is blocked by google workspace.
+    
+    - **Effort:** advanced
+
 ??? abstract "Google Workspace Bypass 2FA"
     
     Detects when user tries to bypass the 2FA.

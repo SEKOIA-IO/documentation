@@ -421,7 +421,7 @@ The following Sekoia.io built-in rules match the intake **Windows**. This docume
     
     Detects data compressed by specific tools.
     
-    - **Effort:** advanced
+    - **Effort:** master
 
 ??? abstract "Compression Followed By Suppression"
     
@@ -675,6 +675,12 @@ The following Sekoia.io built-in rules match the intake **Windows**. This docume
     
     - **Effort:** advanced
 
+??? abstract "Disabling SmartScreen Via Registry"
+    
+    Detects when a user disables smartscreen.
+    
+    - **Effort:** elementary
+
 ??? abstract "Discord Suspicious Download"
     
     Discord is a messaging application. It allows users to create their own communities to share messages and attachments. Those attachments have little to no overview and can be downloaded by almost anyone, which has been abused by attackers to host malicious payloads.
@@ -745,7 +751,7 @@ The following Sekoia.io built-in rules match the intake **Windows**. This docume
     
     LD_PRELOAD and LD_LIBRARY_PATH are environment variables used by the Operating System at the runtime to load shared objects (library.ies) when executing a new process, attacker can overwrite this variable to attempts a privileges escalation.
     
-    - **Effort:** advanced
+    - **Effort:** master
 
 ??? abstract "Dynwrapx Module Loading"
     
@@ -950,6 +956,12 @@ The following Sekoia.io built-in rules match the intake **Windows**. This docume
     Detects GitLab vulnerability CVE-2021-22205 exploitation success. It allows an attacker to do some remote code execution with user git. The HTTP return code 422 indicates a successfull exploitation.
     
     - **Effort:** intermediate
+
+??? abstract "Gpresult Usage"
+    
+    Detects when an account uses gpresult to get information on gpo.
+    
+    - **Effort:** advanced
 
 ??? abstract "Gpscript Suspicious Parent"
     
@@ -1208,12 +1220,6 @@ The following Sekoia.io built-in rules match the intake **Windows**. This docume
     Adversaries may search for private key on compromised systems
     
     - **Effort:** intermediate
-
-??? abstract "List Shadow Copies"
-    
-    Detects command line used to list shadow copies. An adversary may attempt to get information on shadow volumes to perform deletion or extract password hashes from the ntds.dit file. This rule requires command line logging or Windows PowerShell events (4104).
-    
-    - **Effort:** master
 
 ??? abstract "Listing Systemd Environment"
     
@@ -2268,6 +2274,12 @@ The following Sekoia.io built-in rules match the intake **Windows**. This docume
 ??? abstract "Sekoia.io EICAR Detection"
     
     Detects observables in Sekoia.io CTI tagged as EICAR, which are fake samples meant to test detection.
+    
+    - **Effort:** master
+
+??? abstract "Shadow Copies"
+    
+    Detects command line used to create and list shadow copies. An adversary may attempt to get information on shadow volumes to perform deletion or extract password hashes from the ntds.dit file. This rule requires command line logging or Windows PowerShell events (4104).
     
     - **Effort:** master
 

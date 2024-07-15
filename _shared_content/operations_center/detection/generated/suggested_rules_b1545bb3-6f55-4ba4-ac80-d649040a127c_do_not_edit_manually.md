@@ -1,8 +1,8 @@
 ## Related Built-in Rules
 
-The following Sekoia.io built-in rules match the intake **EfficientIP SOLIDServer DDI**. This documentation is updated automatically and is based solely on the fields used by the intake which are checked against our rules. This means that some rules will be listed but might not be relevant with the intake.
+The following Sekoia.io built-in rules match the intake **Juniper Networks Switches [BETA]**. This documentation is updated automatically and is based solely on the fields used by the intake which are checked against our rules. This means that some rules will be listed but might not be relevant with the intake.
 
-[SEKOIA.IO x EfficientIP SOLIDServer DDI on ATT&CK Navigator](https://mitre-attack.github.io/attack-navigator/#layerURL=https%3A%2F%2Fraw.githubusercontent.com%2FSEKOIA-IO%2Fdocumentation%2Fmain%2F_shared_content%2Foperations_center%2Fdetection%2Fgenerated%2Fattack_f95fea50-533c-4897-9272-2f8361e63644_do_not_edit_manually.json){ .md-button }
+[SEKOIA.IO x Juniper Networks Switches [BETA] on ATT&CK Navigator](https://mitre-attack.github.io/attack-navigator/#layerURL=https%3A%2F%2Fraw.githubusercontent.com%2FSEKOIA-IO%2Fdocumentation%2Fmain%2F_shared_content%2Foperations_center%2Fdetection%2Fgenerated%2Fattack_b1545bb3-6f55-4ba4-ac80-d649040a127c_do_not_edit_manually.json){ .md-button }
 ??? abstract "Cryptomining"
     
     Detection of domain names potentially related to cryptomining activities.
@@ -38,12 +38,6 @@ The following Sekoia.io built-in rules match the intake **EfficientIP SOLIDServe
     Detects observables in Sekoia.io CTI tagged as EICAR, which are fake samples meant to test detection.
     
     - **Effort:** master
-
-??? abstract "Sliver DNS Beaconing"
-    
-    Detects suspicious DNS queries known from Sliver beaconing 
-    
-    - **Effort:** intermediate
 
 ??? abstract "TOR Usage Generic Rule"
     
