@@ -467,6 +467,103 @@ Find below few samples of events and how they are normalized by Sekoia.io.
 	```
 
 
+=== "test_type_104_2.json"
+
+    ```json
+	
+    {
+        "message": "{\"Version\": 1, \"Type\": 104, \"TypeComputedMap\": \"RegistryKeyRead\", \"Severity\": 2, \"ServerReserved\": 0, \"Attributes\": 2, \"AttributesComputedBitMap\": [\"Protection\"], \"EventGuid\": \"{4C8EFA24-0021-49CA-B9F7-CF5A7BF57173}\", \"GenerateIncident\": true, \"Timestamp\": \"2024-07-09T12:08:54.9660242+02:00\", \"TimestampRaw\": 133649933349660242, \"SpecificData\": {\"SourceProcess\": {\"PID\": 3948, \"ProcessGuid\": \"{93158E40-E93F-46CE-BCE0-3FC359B07B75}\", \"ProcessImageName\": \"C:\\\\ProgramData\\\\Microsoft\\\\Windows Defender\\\\Platform\\\\4.18.24050.7-0\\\\MsMpEng.exe\", \"VolumeZone\": 1, \"VolumeZoneComputedBitMap\": [\"Operating system\"], \"ProcessCommandLine\": \"\\\"C:\\\\ProgramData\\\\Microsoft\\\\Windows Defender\\\\Platform\\\\4.18.24050.7-0\\\\MsMpEng.exe\\\"\", \"User\": \"S-1-5-21-2222222-33333333-44444444-555\", \"UserNameLookup\": \"JOHNDOE\", \"UserDomainLookup\": \"TEST\", \"IntegrityLevel\": \"S-1-16-16384\", \"IntegrityLevelNameLookup\": \"Niveau obligatoire syst\\u00e8me\", \"IntegrityLevelDomainLookup\": \"\\u00c9tiquette obligatoire\", \"SessionID\": 0, \"HashMd5\": \"4A4D6E95B693256BCD6E90FDC077194A\", \"HashSha1\": \"2E52FBE255C0CB6C6B27EEE8C28ACAFAA42DB60E\", \"HashSha256\": \"08D69BDE42AEEA0F0ECBF16A84BF74AF47C0EA6C0ADA6DDBD40CDC7F5C2930ED\", \"IsProtectedOrCritical\": true, \"CertificateSignatureState\": 1, \"CertificateSignatureStateComputedMap\": \"SignatureStateTrusted\", \"Certificates\": [{\"Algorithm\": \"SHA256\", \"IssuerCN\": \"Microsoft Windows Production PCA 2011\", \"SubjectCN\": \"Microsoft Windows Publisher\", \"SigningTime\": \"2024-05-11T03:15:15.5120000+02:00\", \"ValidityStart\": \"2024-02-08T21:22:45.0000000+02:00\", \"ValidityEnd\": \"2025-02-07T21:22:45.0000000+02:00\"}], \"ProcessStartTime\": \"2024-07-09T10:03:54.4154623+02:00\", \"ProcessStartTimeRaw\": 133649858344154623}, \"Action\": {\"PolicyGuid\": \"{2042076D-A879-4913-A2C7-E94A9ECE8D79}\", \"PolicyVersion\": 14, \"RuleGuid\": \"{F676C8C4-D8FD-4ED2-89FB-C949EA33951C}\", \"BaseRuleGuid\": \"{508448D3-1872-416D-99D9-A3F64AE24C48}\", \"IdentifierGuid\": \"{6F1EAB4E-60E5-4DA2-8509-768988375E47}\", \"Blocked\": false, \"RequestMoveToQuarantine\": false, \"UserDecision\": false, \"SourceProcessKilled\": false, \"RuleTags\": [\"T1562.001\"]}, \"Path\": \"HKEY_LOCAL_MACHINE\\\\SOFTWARE\\\\Microsoft\\\\Windows Defender\\\\Exclusions\\\\TemporaryPaths\", \"InformationClass\": 4, \"InformationClassComputedMap\": \"KeyCachedInformation\"}, \"AdditionalData\": {\"AgentAddresses\": [\"1.2.3.4\"], \"AgentGroupGuid\": \"{1B24AC36-5218-4F44-A374-80D86475E325}\", \"AgentGroupName\": \"Demo\", \"AgentGuid\": \"{6CA7D1BE-7359-426D-B5B1-D9E742DF69A6}\", \"AgentName\": \"WIN10-A\", \"AttackCVEId\": null, \"AttackMitreTacticId\": [\"TA0005\"], \"AttackMitreTacticName\": [\"Defense Evasion\"], \"AttackMitreTechnicId\": [\"T1562\", \"T1562.001\"], \"AttackMitreTechnicName\": [\"Impair Defenses\", \"Disable or Modify Tools\"], \"AttackSESId\": null, \"AttackTriggerCondition\": \"An untrusted process attempts to add bypass into Windows Defender.\", \"CategoryName\": \"Registry\", \"IncidentGuid\": \"{CE926A32-4461-47C0-BDE8-43C1493E7DF0}\", \"Message\": \"The 'MsMpEng.exe' process read the registry key 'HKEY_LOCAL_MACHINE\\\\SOFTWARE\\\\Microsoft\\\\Windows Defender\\\\Exclusions\\\\TemporaryPaths'\", \"PolicyName\": \"Demo - Protect policy\", \"SeverityName\": \"Critical\"}}",
+        "event": {
+            "category": [
+                "registry"
+            ],
+            "code": "RegistryKeyRead",
+            "reason": "The 'MsMpEng.exe' process read the registry key 'HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows Defender\\Exclusions\\TemporaryPaths'",
+            "severity": 2,
+            "type": [
+                "access"
+            ]
+        },
+        "@timestamp": "2024-07-09T10:08:54.966024Z",
+        "process": {
+            "command_line": "\"C:\\ProgramData\\Microsoft\\Windows Defender\\Platform\\4.18.24050.7-0\\MsMpEng.exe\"",
+            "executable": "C:\\ProgramData\\Microsoft\\Windows Defender\\Platform\\4.18.24050.7-0\\MsMpEng.exe",
+            "hash": {
+                "md5": "4A4D6E95B693256BCD6E90FDC077194A",
+                "sha1": "2E52FBE255C0CB6C6B27EEE8C28ACAFAA42DB60E",
+                "sha256": "08D69BDE42AEEA0F0ECBF16A84BF74AF47C0EA6C0ADA6DDBD40CDC7F5C2930ED"
+            },
+            "name": "MsMpEng.exe",
+            "pid": 3948,
+            "start": "2024-07-09T08:03:54.415462Z",
+            "user": {
+                "id": "S-1-5-21-2222222-33333333-44444444-555",
+                "name": "JOHNDOE"
+            }
+        },
+        "registry": {
+            "hive": "HKEY_LOCAL_MACHINE",
+            "key": "SOFTWARE\\Microsoft\\Windows Defender\\Exclusions\\TemporaryPaths",
+            "path": "HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows Defender\\Exclusions\\TemporaryPaths"
+        },
+        "related": {
+            "hash": [
+                "08D69BDE42AEEA0F0ECBF16A84BF74AF47C0EA6C0ADA6DDBD40CDC7F5C2930ED",
+                "2E52FBE255C0CB6C6B27EEE8C28ACAFAA42DB60E",
+                "4A4D6E95B693256BCD6E90FDC077194A"
+            ]
+        },
+        "rule": {
+            "ruleset": "Demo - Protect policy",
+            "uuid": "F676C8C4-D8FD-4ED2-89FB-C949EA33951C"
+        },
+        "stormshield": {
+            "ses": {
+                "action": {
+                    "blocked": false,
+                    "user_decision": false
+                },
+                "categoryname": "Registry",
+                "incident": {
+                    "id": "{CE926A32-4461-47C0-BDE8-43C1493E7DF0}"
+                },
+                "level": "Critical",
+                "process": {
+                    "user": {
+                        "domain": "TEST"
+                    }
+                },
+                "source_process": {
+                    "killed": false
+                },
+                "type": "104"
+            }
+        },
+        "threat": {
+            "tactic": {
+                "id": [
+                    "TA0005"
+                ],
+                "name": [
+                    "Defense Evasion"
+                ]
+            },
+            "technique": {
+                "id": [
+                    "T1562",
+                    "T1562.001"
+                ],
+                "name": [
+                    "Disable or Modify Tools",
+                    "Impair Defenses"
+                ]
+            }
+        }
+    }
+    	
+	```
+
+
 === "test_type_109.json"
 
     ```json
@@ -926,6 +1023,103 @@ Find below few samples of events and how they are normalized by Sekoia.io.
                     "killed": false
                 },
                 "type": "114"
+            }
+        }
+    }
+    	
+	```
+
+
+=== "test_type_114_2.json"
+
+    ```json
+	
+    {
+        "message": "{\"Version\": 1, \"Type\": 114, \"TypeComputedMap\": \"RegistryValueRead\", \"Severity\": 2, \"ServerReserved\": 0, \"Attributes\": 2, \"AttributesComputedBitMap\": [\"Protection\"], \"EventGuid\": \"{002A9967-5EF2-40CF-911D-7DBA518843A9}\", \"GenerateIncident\": true, \"Timestamp\": \"2024-07-09T12:33:11.2491955+02:00\", \"TimestampRaw\": 133649947912491955, \"SpecificData\": {\"SourceProcess\": {\"PID\": 3948, \"ProcessGuid\": \"{9BC994D7-904B-4C9C-8DC0-A03A36F36276}\", \"ProcessImageName\": \"C:\\\\ProgramData\\\\Microsoft\\\\Windows Defender\\\\Platform\\\\4.18.24050.7-0\\\\MsMpEng.exe\", \"VolumeZone\": 1, \"VolumeZoneComputedBitMap\": [\"Operating system\"], \"ProcessCommandLine\": \"\\\"C:\\\\ProgramData\\\\Microsoft\\\\Windows Defender\\\\Platform\\\\4.18.24050.7-0\\\\MsMpEng.exe\\\"\", \"User\": \"S-1-5-21-2222222-33333333-44444444-555\", \"UserNameLookup\": \"JOHNDOE\", \"UserDomainLookup\": \"TEST\", \"IntegrityLevel\": \"S-1-16-16384\", \"IntegrityLevelNameLookup\": \"Niveau obligatoire syst\\u00e8me\", \"IntegrityLevelDomainLookup\": \"\\u00c9tiquette obligatoire\", \"SessionID\": 0, \"HashMd5\": \"4A4D6E95B693256BCD6E90FDC077194A\", \"HashSha1\": \"2E52FBE255C0CB6C6B27EEE8C28ACAFAA42DB60E\", \"HashSha256\": \"08D69BDE42AEEA0F0ECBF16A84BF74AF47C0EA6C0ADA6DDBD40CDC7F5C2930ED\", \"IsProtectedOrCritical\": true, \"CertificateSignatureState\": 1, \"CertificateSignatureStateComputedMap\": \"SignatureStateTrusted\", \"Certificates\": [{\"Algorithm\": \"SHA256\", \"IssuerCN\": \"Microsoft Windows Production PCA 2011\", \"SubjectCN\": \"Microsoft Windows Publisher\", \"SigningTime\": \"2024-05-11T03:15:15.5120000+02:00\", \"ValidityStart\": \"2024-02-08T21:22:45.0000000+02:00\", \"ValidityEnd\": \"2025-02-07T21:22:45.0000000+02:00\"}], \"ProcessStartTime\": \"2024-07-09T10:03:54.4154623+02:00\", \"ProcessStartTimeRaw\": 133649858344154623}, \"Action\": {\"PolicyGuid\": \"{DDAB1006-337F-4B8C-8486-E5A9619144BB}\", \"PolicyVersion\": 14, \"RuleGuid\": \"{4FAC2120-288B-4B3C-9F77-2E5B6ECBB85E}\", \"BaseRuleGuid\": \"{49A8528E-E749-4A9D-8736-2CF9380DE241}\", \"IdentifierGuid\": \"{0B7EF8C7-FAE0-4890-981A-22FE12F22173}\", \"Blocked\": false, \"RequestMoveToQuarantine\": false, \"UserDecision\": false, \"SourceProcessKilled\": false, \"RuleTags\": [\"T1562.001\"]}, \"Path\": \"HKEY_LOCAL_MACHINE\\\\SOFTWARE\\\\Microsoft\\\\Windows Defender\\\\Exclusions\\\\Processes\", \"ValueName\": \"C:\\\\Program Files\\\\Stormshield\\\\SES Evolution\\\\Agent\\\\Bin\\\\EsInject.exe\"}, \"AdditionalData\": {\"AgentAddresses\": [\"1.2.3.4\"], \"AgentGroupGuid\": \"{8AD24A5D-0B19-45E2-9B28-F584F8A54CBC}\", \"AgentGroupName\": \"Demo\", \"AgentGuid\": \"{CC0772D7-8EBC-4EE6-9FC0-A8B26F5FA7FF}\", \"AgentName\": \"WIN10-A\", \"AttackCVEId\": null, \"AttackMitreTacticId\": [\"TA0005\"], \"AttackMitreTacticName\": [\"Defense Evasion\"], \"AttackMitreTechnicId\": [\"T1562\", \"T1562.001\"], \"AttackMitreTechnicName\": [\"Impair Defenses\", \"Disable or Modify Tools\"], \"AttackSESId\": null, \"AttackTriggerCondition\": \"An untrusted process attempts to add bypass into Windows Defender.\", \"CategoryName\": \"Registry\", \"IncidentGuid\": \"{DA0FA4D3-76B8-4EE0-A8B7-5AFDF9F80071}\", \"Message\": \"The 'MsMpEng.exe' process read the registry value 'C:\\\\Program Files\\\\Stormshield\\\\SES Evolution\\\\Agent\\\\Bin\\\\EsInject.exe'\", \"PolicyName\": \"Demo - Protect policy\", \"SeverityName\": \"Critical\"}}",
+        "event": {
+            "category": [
+                "registry"
+            ],
+            "code": "RegistryValueRead",
+            "reason": "The 'MsMpEng.exe' process read the registry value 'C:\\Program Files\\Stormshield\\SES Evolution\\Agent\\Bin\\EsInject.exe'",
+            "severity": 2,
+            "type": [
+                "access"
+            ]
+        },
+        "@timestamp": "2024-07-09T10:33:11.249195Z",
+        "process": {
+            "command_line": "\"C:\\ProgramData\\Microsoft\\Windows Defender\\Platform\\4.18.24050.7-0\\MsMpEng.exe\"",
+            "executable": "C:\\ProgramData\\Microsoft\\Windows Defender\\Platform\\4.18.24050.7-0\\MsMpEng.exe",
+            "hash": {
+                "md5": "4A4D6E95B693256BCD6E90FDC077194A",
+                "sha1": "2E52FBE255C0CB6C6B27EEE8C28ACAFAA42DB60E",
+                "sha256": "08D69BDE42AEEA0F0ECBF16A84BF74AF47C0EA6C0ADA6DDBD40CDC7F5C2930ED"
+            },
+            "name": "MsMpEng.exe",
+            "pid": 3948,
+            "start": "2024-07-09T08:03:54.415462Z",
+            "user": {
+                "id": "S-1-5-21-2222222-33333333-44444444-555",
+                "name": "JOHNDOE"
+            }
+        },
+        "registry": {
+            "hive": "HKEY_LOCAL_MACHINE",
+            "key": "SOFTWARE\\Microsoft\\Windows Defender\\Exclusions\\Processes",
+            "path": "HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows Defender\\Exclusions\\Processes"
+        },
+        "related": {
+            "hash": [
+                "08D69BDE42AEEA0F0ECBF16A84BF74AF47C0EA6C0ADA6DDBD40CDC7F5C2930ED",
+                "2E52FBE255C0CB6C6B27EEE8C28ACAFAA42DB60E",
+                "4A4D6E95B693256BCD6E90FDC077194A"
+            ]
+        },
+        "rule": {
+            "ruleset": "Demo - Protect policy",
+            "uuid": "4FAC2120-288B-4B3C-9F77-2E5B6ECBB85E"
+        },
+        "stormshield": {
+            "ses": {
+                "action": {
+                    "blocked": false,
+                    "user_decision": false
+                },
+                "categoryname": "Registry",
+                "incident": {
+                    "id": "{DA0FA4D3-76B8-4EE0-A8B7-5AFDF9F80071}"
+                },
+                "level": "Critical",
+                "process": {
+                    "user": {
+                        "domain": "TEST"
+                    }
+                },
+                "source_process": {
+                    "killed": false
+                },
+                "type": "114"
+            }
+        },
+        "threat": {
+            "tactic": {
+                "id": [
+                    "TA0005"
+                ],
+                "name": [
+                    "Defense Evasion"
+                ]
+            },
+            "technique": {
+                "id": [
+                    "T1562",
+                    "T1562.001"
+                ],
+                "name": [
+                    "Disable or Modify Tools",
+                    "Impair Defenses"
+                ]
             }
         }
     }
@@ -6433,8 +6627,13 @@ The following table lists the fields that are extracted, normalized under the EC
 |`stormshield.ses.process.user.domain` | `keyword` | Name of the directory the user is a member of |
 |`stormshield.ses.source_process.killed` | `boolean` | Was the source process killed |
 |`stormshield.ses.type` | `keyword` | Event Type ( it's a number ) |
+|`threat.tactic.id` | `keyword` | Threat tactic id. |
+|`threat.tactic.name` | `keyword` | Threat tactic. |
+|`threat.technique.id` | `keyword` | Threat technique id. |
+|`threat.technique.name` | `keyword` | Threat technique name. |
 |`url.original` | `wildcard` | Unmodified original url as seen in the event source. |
 |`user.domain` | `keyword` | Name of the directory the user is a member of. |
 |`user.id` | `keyword` | Unique identifier of the user. |
 |`user.name` | `keyword` | Short name or login of the user. |
+|`vulnerability.id` | `keyword` | ID of the vulnerability. |
 
