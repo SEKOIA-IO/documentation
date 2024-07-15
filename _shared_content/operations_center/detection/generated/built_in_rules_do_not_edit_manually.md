@@ -1,18 +1,7 @@
-Rules catalog includes **900 built-in detection rules** ([_last update on 2024-07-11_](rules_changelog.md)).
+Rules catalog includes **904 built-in detection rules** ([_last update on 2024-07-15_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Identity Information**
 
-??? abstract "Anomaly Kerberos User Enumeration"
-    
-    The rule detects abnormally high number of TGT failed associate to error code 0x6 (username don't exist) who could indicate user enumeration
-    
-    - **Effort:** master
-    
-    - **Changelog:**
-    
-        - 09/04/2024 - major - change field on aggregation
-        - 13/06/2024 - minor - Adding fields to be displayed in alerts.
-            
 ??? abstract "Anomaly Possible Sysvol Dump"
     
     The rule detects abnormally high access to sysvol files.
@@ -545,6 +534,7 @@ Rules catalog includes **900 built-in detection rules** ([_last update on 2024-0
     - **Changelog:**
     
         - 26/03/2024 - major - Rule's pattern field changed
+        - 12/07/2024 - minor - add similarity strategy
             
 ??? abstract "Account Removed From A Security Enabled Group"
     
@@ -555,6 +545,7 @@ Rules catalog includes **900 built-in detection rules** ([_last update on 2024-0
     - **Changelog:**
     
         - 26/03/2024 - major - Rule's pattern field changed
+        - 12/07/2024 - minor - Add similarity strategy
             
 ??? abstract "Account Tampering - Suspicious Failed Logon Reasons"
     
@@ -997,6 +988,12 @@ Rules catalog includes **900 built-in detection rules** ([_last update on 2024-0
     Detects download of certain file types from hosts in suspicious TLDs
     
     - **Effort:** master
+    
+??? abstract "Google Workspace Blocked Sender"
+    
+    Detects when a user is blocked by google workspace.
+    
+    - **Effort:** advanced
     
 ??? abstract "Malware Detected By Vade For M365"
     
@@ -2526,6 +2523,10 @@ Rules catalog includes **900 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** elementary
     
+    - **Changelog:**
+    
+        - 15/07/2024 - major - review filter and improve similarity
+            
 ??? abstract "Download Files From Non-Legitimate TLDs"
     
     Detects file downloads from non-legitimate TLDs. Additional legitimates TLDs should be filtered according to the business habits.
@@ -4389,6 +4390,7 @@ Rules catalog includes **900 built-in detection rules** ([_last update on 2024-0
     - **Changelog:**
     
         - 26/03/2024 - major - Rule's pattern field changed
+        - 12/07/2024 - minor - add similarity strategy
             
 ??? abstract "Account Removed From A Security Enabled Group"
     
@@ -4399,6 +4401,7 @@ Rules catalog includes **900 built-in detection rules** ([_last update on 2024-0
     - **Changelog:**
     
         - 26/03/2024 - major - Rule's pattern field changed
+        - 12/07/2024 - minor - Add similarity strategy
             
 ??? abstract "Account Tampering - Suspicious Failed Logon Reasons"
     
@@ -4910,6 +4913,7 @@ Rules catalog includes **900 built-in detection rules** ([_last update on 2024-0
     
         - 04/04/2024 - major - Rule's pattern field changed
         - 10/07/2024 - minor - Adding filter and new elements to reduce false positives.
+        - 12/07/2024 - minor - Changing similarity strategy.
             
 **Office Application Startup**
 
@@ -5687,8 +5691,12 @@ Rules catalog includes **900 built-in detection rules** ([_last update on 2024-0
     
     LD_PRELOAD and LD_LIBRARY_PATH are environment variables used by the Operating System at the runtime to load shared objects (library.ies) when executing a new process, attacker can overwrite this variable to attempts a privileges escalation.
     
-    - **Effort:** advanced
+    - **Effort:** master
     
+    - **Changelog:**
+    
+        - 11/07/2024 - minor - Added filter to reduce false positvives
+            
 ??? abstract "Exploiting SetupComplete.cmd CVE-2019-1378"
     
     Detects exploitation attempts of privilege escalation vulnerability via SetupComplete.cmd and PartnerSetupComplete.cmd described in CVE-2019-1378.
@@ -6054,6 +6062,10 @@ Rules catalog includes **900 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** elementary
     
+    - **Changelog:**
+    
+        - 15/07/2024 - major - review filter and improve similarity
+            
 ??? abstract "CVE-2021-4034 Polkit's pkexec"
     
     Detection of Polkit's pkexec exploit
@@ -6095,6 +6107,7 @@ Rules catalog includes **900 built-in detection rules** ([_last update on 2024-0
     - **Changelog:**
     
         - 26/03/2024 - major - Rule's pattern field changed
+        - 12/07/2024 - minor - add similarity strategy
             
 ??? abstract "Account Removed From A Security Enabled Group"
     
@@ -6105,6 +6118,7 @@ Rules catalog includes **900 built-in detection rules** ([_last update on 2024-0
     - **Changelog:**
     
         - 26/03/2024 - major - Rule's pattern field changed
+        - 12/07/2024 - minor - Add similarity strategy
             
 ??? abstract "Account Tampering - Suspicious Failed Logon Reasons"
     
@@ -7323,8 +7337,12 @@ Rules catalog includes **900 built-in detection rules** ([_last update on 2024-0
     
     LD_PRELOAD and LD_LIBRARY_PATH are environment variables used by the Operating System at the runtime to load shared objects (library.ies) when executing a new process, attacker can overwrite this variable to attempts a privileges escalation.
     
-    - **Effort:** advanced
+    - **Effort:** master
     
+    - **Changelog:**
+    
+        - 11/07/2024 - minor - Added filter to reduce false positvives
+            
 ??? abstract "Exploiting SetupComplete.cmd CVE-2019-1378"
     
     Detects exploitation attempts of privilege escalation vulnerability via SetupComplete.cmd and PartnerSetupComplete.cmd described in CVE-2019-1378.
@@ -7860,6 +7878,7 @@ Rules catalog includes **900 built-in detection rules** ([_last update on 2024-0
     - **Changelog:**
     
         - 26/03/2024 - major - Rule's pattern field changed
+        - 12/07/2024 - minor - add similarity strategy
             
 ??? abstract "Account Removed From A Security Enabled Group"
     
@@ -7870,6 +7889,7 @@ Rules catalog includes **900 built-in detection rules** ([_last update on 2024-0
     - **Changelog:**
     
         - 26/03/2024 - major - Rule's pattern field changed
+        - 12/07/2024 - minor - Add similarity strategy
             
 ??? abstract "Account Tampering - Suspicious Failed Logon Reasons"
     
@@ -8111,6 +8131,12 @@ Rules catalog includes **900 built-in detection rules** ([_last update on 2024-0
     
         - 21/06/2024 - major - Update detection pattern for ECS fields/value compliance
             
+??? abstract "Disabling SmartScreen Via Registry"
+    
+    Detects when a user disables smartscreen.
+    
+    - **Effort:** elementary
+    
 ??? abstract "FlowCloud Malware"
     
     Detects FlowCloud malware from threat group TA410. This requires Windows Event registry logging.
@@ -8389,6 +8415,10 @@ Rules catalog includes **900 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** elementary
     
+    - **Changelog:**
+    
+        - 15/07/2024 - major - review filter and improve similarity
+            
 ??? abstract "Microsoft Malware Protection Engine Crash"
     
     Detects a crash of the Microsoft Malware Protection Engine process (MsMpEng.exe), which is suspicious and could be related to an attacker disabling the Windows protection.
@@ -9609,8 +9639,12 @@ Rules catalog includes **900 built-in detection rules** ([_last update on 2024-0
     
     LD_PRELOAD and LD_LIBRARY_PATH are environment variables used by the Operating System at the runtime to load shared objects (library.ies) when executing a new process, attacker can overwrite this variable to attempts a privileges escalation.
     
-    - **Effort:** advanced
+    - **Effort:** master
     
+    - **Changelog:**
+    
+        - 11/07/2024 - minor - Added filter to reduce false positvives
+            
 ??? abstract "Exploiting SetupComplete.cmd CVE-2019-1378"
     
     Detects exploitation attempts of privilege escalation vulnerability via SetupComplete.cmd and PartnerSetupComplete.cmd described in CVE-2019-1378.
@@ -10151,6 +10185,24 @@ Rules catalog includes **900 built-in detection rules** ([_last update on 2024-0
             
 **Brute Force**
 
+??? abstract "Anomaly Bruteforce - User Enumeration"
+    
+    The rule detects abnormally high number of TGT failed or NTLM authent failed associate to error code username don't exist who could indicate user enumeration
+    
+    - **Effort:** advanced
+    
+    - **Changelog:**
+    
+        - 09/04/2024 - major - change field on aggregation
+        - 13/06/2024 - minor - Adding fields to be displayed in alerts.
+        - 12/07/2024 - major - improce coverage, enforce filter and change effort
+            
+??? abstract "Anomaly Bruteforce Disabled Users"
+    
+    The rule detects abnormally high number of TGT failed or NTLM authent failed associate to error code account disabled who could indicate a brute force attack
+    
+    - **Effort:** advanced
+    
 ??? abstract "Authentication Impossible Travel"
     
     Detects impossible travel when performing authentication from a source IP address, grouped by username.
@@ -10331,6 +10383,10 @@ Rules catalog includes **900 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** elementary
     
+    - **Changelog:**
+    
+        - 15/07/2024 - major - review filter and improve similarity
+            
 **Steal Application Access Token**
 
 ??? abstract "Abusing Azure Browser SSO"
@@ -10877,6 +10933,12 @@ Rules catalog includes **900 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** advanced
     
+??? abstract "Gpresult Usage"
+    
+    Detects when an account uses gpresult to get information on gpo.
+    
+    - **Effort:** advanced
+    
 ??? abstract "Permission Discovery Via Wmic"
     
     Detects discovery of permission on local groups via the tool wmic.
@@ -10895,12 +10957,6 @@ Rules catalog includes **900 built-in detection rules** ([_last update on 2024-0
     
         - 16/04/2024 - minor - Adding new elements to increase detection.
             
-??? abstract "List Shadow Copies"
-    
-    Detects command line used to list shadow copies. An adversary may attempt to get information on shadow volumes to perform deletion or extract password hashes from the ntds.dit file. This rule requires command line logging or Windows PowerShell events (4104).
-    
-    - **Effort:** master
-    
 ??? abstract "Listing Systemd Environment"
     
     Detects a listing of systemd environment variables. This command could be used to do reconnaissance on a compromised host.
@@ -10910,6 +10966,16 @@ Rules catalog includes **900 built-in detection rules** ([_last update on 2024-0
     - **Changelog:**
     
         - 06/03/2024 - minor - Effort level was adapted according to the observed hits for the rule
+            
+??? abstract "Shadow Copies"
+    
+    Detects command line used to create and list shadow copies. An adversary may attempt to get information on shadow volumes to perform deletion or extract password hashes from the ntds.dit file. This rule requires command line logging or Windows PowerShell events (4104).
+    
+    - **Effort:** master
+    
+    - **Changelog:**
+    
+        - 11/07/2024 - minor - Adding new elements to detect and adding filter to reduce false positives.
             
 ??? abstract "Suspicious Headless Web Browser Execution To Download File"
     
@@ -11341,6 +11407,10 @@ Rules catalog includes **900 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** elementary
     
+    - **Changelog:**
+    
+        - 15/07/2024 - major - review filter and improve similarity
+            
 ??? abstract "CVE-2019-0708 Scan"
     
     Detects the use of a scanner that discovers targets vulnerable to CVE-2019-0708 RDP RCE aka BlueKeep.
@@ -11585,8 +11655,12 @@ Rules catalog includes **900 built-in detection rules** ([_last update on 2024-0
     
     Detects data compressed by specific tools.
     
-    - **Effort:** advanced
+    - **Effort:** master
     
+    - **Changelog:**
+    
+        - 09/07/2024 - major - Reviewing detection to reduce false positives.
+            
 ??? abstract "Data Compressed With Rar"
     
     An adversary may compress data in order to make it portable and minimize the amount of data sent over the network, this could be done the popular rar command line program.
@@ -12483,6 +12557,10 @@ Rules catalog includes **900 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** elementary
     
+    - **Changelog:**
+    
+        - 15/07/2024 - major - review filter and improve similarity
+            
 **System Shutdown/Reboot**
 
 ??? abstract "Rebooting"

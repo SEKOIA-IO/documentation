@@ -343,7 +343,7 @@ The following Sekoia.io built-in rules match the intake **F5 BIG-IP**. This docu
     
     LD_PRELOAD and LD_LIBRARY_PATH are environment variables used by the Operating System at the runtime to load shared objects (library.ies) when executing a new process, attacker can overwrite this variable to attempts a privileges escalation.
     
-    - **Effort:** advanced
+    - **Effort:** master
 
 ??? abstract "ETW Tampering"
     

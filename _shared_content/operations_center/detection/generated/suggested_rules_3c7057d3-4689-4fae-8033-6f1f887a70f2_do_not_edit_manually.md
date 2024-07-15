@@ -217,7 +217,7 @@ The following Sekoia.io built-in rules match the intake **HarfangLab EDR**. This
     
     Detects data compressed by specific tools.
     
-    - **Effort:** advanced
+    - **Effort:** master
 
 ??? abstract "Compression Followed By Suppression"
     
@@ -403,7 +403,7 @@ The following Sekoia.io built-in rules match the intake **HarfangLab EDR**. This
     
     LD_PRELOAD and LD_LIBRARY_PATH are environment variables used by the Operating System at the runtime to load shared objects (library.ies) when executing a new process, attacker can overwrite this variable to attempts a privileges escalation.
     
-    - **Effort:** advanced
+    - **Effort:** master
 
 ??? abstract "ETW Tampering"
     
@@ -554,6 +554,12 @@ The following Sekoia.io built-in rules match the intake **HarfangLab EDR**. This
     To bypass some security equipement or for a sack of simplicity attackers can open raw reverse shell using shell commands
     
     - **Effort:** intermediate
+
+??? abstract "Gpresult Usage"
+    
+    Detects when an account uses gpresult to get information on gpo.
+    
+    - **Effort:** advanced
 
 ??? abstract "Grabbing Sensitive Hives Via Reg Utility"
     
@@ -746,12 +752,6 @@ The following Sekoia.io built-in rules match the intake **HarfangLab EDR**. This
     Adversaries may search for private key on compromised systems
     
     - **Effort:** intermediate
-
-??? abstract "List Shadow Copies"
-    
-    Detects command line used to list shadow copies. An adversary may attempt to get information on shadow volumes to perform deletion or extract password hashes from the ntds.dit file. This rule requires command line logging or Windows PowerShell events (4104).
-    
-    - **Effort:** master
 
 ??? abstract "Listing Systemd Environment"
     

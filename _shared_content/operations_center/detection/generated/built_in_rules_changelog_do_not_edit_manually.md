@@ -1,9 +1,30 @@
-Changelog _last update on 2024-07-11_
+Changelog _last update on 2024-07-15_
 
 ## Changelog
 
+### Audit CVE Event
+  - 15/07/2024 - major - review filter and improve similarity
+    
+### Account Removed From A Security Enabled Group
+  - 12/07/2024 - minor - Add similarity strategy
+    
+### Account Added To A Security Enabled Group
+  - 12/07/2024 - minor - add similarity strategy
+    
 ### User Account Created
-  - 10/07/2024 - minor - Adding filter and new elements to reduce false positives.
+  - 12/07/2024 - minor - Changing similarity strategy.
+    
+### Anomaly Bruteforce - User Enumeration
+  - 12/07/2024 - major - improce coverage, enforce filter and change effort
+    
+### Dynamic Linker Hijacking From Environment Variable
+  - 11/07/2024 - minor - Added filter to reduce false positvives
+    
+### Shadow Copies
+  - 11/07/2024 - minor - Adding new elements to detect and adding filter to reduce false positives.
+    
+### Compress Data for Exfiltration via Archiver
+  - 09/07/2024 - major - Reviewing detection to reduce false positives.
     
 ### Microsoft Defender Antivirus Disable Scheduled Tasks
   - 04/07/2024 - minor - Adding new commands to increase detection.
@@ -61,9 +82,6 @@ Changelog _last update on 2024-07-11_
     
 ### Process Memory Dump Using Comsvcs
   - 13/06/2024 - minor - Adding similarity strategy and changing effort level.
-    
-### Anomaly Kerberos User Enumeration
-  - 13/06/2024 - minor - Adding fields to be displayed in alerts.
     
 ### PowerShell AMSI Deactivation Bypass Using .NET Reflection
   - 13/06/2024 - minor - Changing effort level and adding similarity strategy to regroup alerts.
@@ -275,9 +293,6 @@ Changelog _last update on 2024-07-11_
 ### CVE-2017-11882 Microsoft Office Equation Editor Vulnerability
   - 26/03/2024 - major - Rule's pattern field changed
     
-### Account Removed From A Security Enabled Group
-  - 26/03/2024 - major - Rule's pattern field changed
-    
 ### Legitimate Process Execution From Unusual Folder
   - 26/03/2024 - major - Rule's pattern field changed
     
@@ -306,9 +321,6 @@ Changelog _last update on 2024-07-11_
   - 26/03/2024 - major - Rule's pattern field changed
     
 ### LSASS Memory Dump
-  - 26/03/2024 - major - Rule's pattern field changed
-    
-### Account Added To A Security Enabled Group
   - 26/03/2024 - major - Rule's pattern field changed
     
 ### Admin Share Access

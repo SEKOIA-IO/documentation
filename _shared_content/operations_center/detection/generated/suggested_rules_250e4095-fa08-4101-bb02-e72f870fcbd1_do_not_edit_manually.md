@@ -367,7 +367,7 @@ The following Sekoia.io built-in rules match the intake **Sekoia.io Endpoint Age
     
     Detects data compressed by specific tools.
     
-    - **Effort:** advanced
+    - **Effort:** master
 
 ??? abstract "Compression Followed By Suppression"
     
@@ -603,6 +603,12 @@ The following Sekoia.io built-in rules match the intake **Sekoia.io Endpoint Age
     
     - **Effort:** advanced
 
+??? abstract "Disabling SmartScreen Via Registry"
+    
+    Detects when a user disables smartscreen.
+    
+    - **Effort:** elementary
+
 ??? abstract "Dism Disabling Windows Defender"
     
     Detects windows defender disabled by dism.
@@ -825,6 +831,12 @@ The following Sekoia.io built-in rules match the intake **Sekoia.io Endpoint Age
     
     - **Effort:** intermediate
 
+??? abstract "Gpresult Usage"
+    
+    Detects when an account uses gpresult to get information on gpo.
+    
+    - **Effort:** advanced
+
 ??? abstract "Gpscript Suspicious Parent"
     
     Gpscript defines GPO scripts for users and applies them to login / logout sessions. This rule checks if the parent of this process is the supposed one (svchost) or not.
@@ -1046,12 +1058,6 @@ The following Sekoia.io built-in rules match the intake **Sekoia.io Endpoint Age
     Detects registry key used by Leviathan APT in Malaysian focused campaign.
     
     - **Effort:** elementary
-
-??? abstract "List Shadow Copies"
-    
-    Detects command line used to list shadow copies. An adversary may attempt to get information on shadow volumes to perform deletion or extract password hashes from the ntds.dit file. This rule requires command line logging or Windows PowerShell events (4104).
-    
-    - **Effort:** master
 
 ??? abstract "Load Of dbghelp/dbgcore DLL From Suspicious Process"
     
@@ -2052,6 +2058,12 @@ The following Sekoia.io built-in rules match the intake **Sekoia.io Endpoint Age
 ??? abstract "Sekoia.io EICAR Detection"
     
     Detects observables in Sekoia.io CTI tagged as EICAR, which are fake samples meant to test detection.
+    
+    - **Effort:** master
+
+??? abstract "Shadow Copies"
+    
+    Detects command line used to create and list shadow copies. An adversary may attempt to get information on shadow volumes to perform deletion or extract password hashes from the ntds.dit file. This rule requires command line logging or Windows PowerShell events (4104).
     
     - **Effort:** master
 
