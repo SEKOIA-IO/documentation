@@ -195,7 +195,7 @@ nav:
           - Cybereason MalOp activity: xdr/features/collect/integrations/endpoint/cybereason_malop_activity.md
           - Darktrace Threat Visualizer: xdr/features/collect/integrations/endpoint/darktrace_threat_visualizer.md
           - Daspren Parad: xdr/features/collect/integrations/endpoint/daspren_parad.md
-          - ESET Protect: xdr/features/collect/integrations/endpoint/eset_protect.md
+          - ESET Protect / Inspect: xdr/features/collect/integrations/endpoint/eset_protect.md
           - HarfangLab: xdr/features/collect/integrations/endpoint/harfanglab.md
           - IBM AIX: xdr/features/collect/integrations/endpoint/ibm_aix.md
           - IBM iSeries (AS/400): xdr/features/collect/integrations/endpoint/ibm_i.md
