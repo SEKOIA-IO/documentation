@@ -32,26 +32,46 @@ Most BIG-IP modules can use Log Publishers, some can directly log messages as CE
 
 Please consult the [Syslog Forwarding](../../../../ingestion_methods/sekoiaio_forwarder/) documentation to set up the concentrator that will forward your logs to Sekoia.io.
 
-### Configure a Log Publisher
+### Configure the forwarding
 
-Before creating a log publisher, you first need a *management port* log destination:
-```
-System -> Logs -> Configuration -> Log Destinations -> Create...
-```
-Give it a name, choose type `Management Port`, fill the address and port of your syslog concentrator and select protocol UDP
-(alternatively you can define a pool of syslog servers and use it as a remote high speed log destination).
+#### Configure the destination
 
-Then you need another log destination to format your logs in CEF:
-```
-System -> Logs -> Configuration -> Log Destinations -> Create...
-```
-Give it a name, choose type `ArcSight`, and forward to the log destination you just created.
+You first need a **management port** log destination:
+
+1. Go to `System` -> `Logs` -> `Configuration` -> `Log Destinations`
+2. Click `Create...`
+3. Type a name
+4. Select `Management Port` as type
+5. Fill the address and the port of your syslog concentrator
+6. Select `UDP` as the protocol
+7. Click `Finished`
+
+!!! note
+	Alternatively you can define a pool of syslog servers and use it as a remote high speed log destination.
+
+
+#### Configure the format of logs
+
+You need another log destination to format your logs in CEF:
+
+1. Go to `System` -> `Logs` -> `Configuration` -> `Log Destinations`
+2. Click `Create...`
+3. Type a name
+4. For AFM, ASM and PSM logs, select `ArcSight` as type
+5. For APM and LTM logs, select `Remote syslog` as type, then select `BSD syslog format` as the **Syslog Format**
+6. Select the **management port** log destination you previously created as destination
+7. Click `Finished`
+
+
+#### Create the log Publishers
 
 You can now create a log publisher:
-```
-System -> Logs -> Configuration -> Log Publishers -> Create...
-```
-Give it a name, and select the ArcSight log destination you just created.
+
+1. Go to `System` -> `Logs` -> `Configuration` -> `Log Publishers` -> `Create...`
+2. Click `Create...`
+3. Type a name
+4. In the *Destinations* setting, move the formatted log destination you just created in the *Selected* list
+5. Click `Finished`
 
 You can now use this log publisher to define logging profiles in your BIG-IP modules. As an example in:
 ```
