@@ -24,7 +24,7 @@ last updated: DD/MM/YYYY
 
 ![consume_azure_logs](/assets/integration/integration_catalog/<techno_name>/image.png)
 
-## Configure Section
+## Specification
 
 ### Prerequisites
 
