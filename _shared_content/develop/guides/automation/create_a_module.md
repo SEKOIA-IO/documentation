@@ -13,6 +13,7 @@ This module will contain one trigger and one action:
 - Install the SEKOIA's automation SDK. This SDK contains various command line utilities that will help us manage    modules. Simply run the following command:
 ``` shell
 pip install sekoia-automation-sdk
+
 ```
 !!! note
     The SDK needs a Python version equal or newer to 3.10.
@@ -204,6 +205,62 @@ class Request(Action):  # (4)!
 6. The base `Action` class provides few helpers like the `log` method. This method makes sure the log is sent to the API so when checking the run of the action we can see a trace of what happened.
 7. The `error` method will mark the action as failed and send back the error to the API.
 8. Finally, if everything went well we can return the results. The base action will take care of sending it back to the playbook API.
+
+## Test your code 
+Make sure you test your code with unitary tests. In the following code, 
+we will test `get request`our previous example's action code . In practice, you have to cover most of the use cases of the module. 
+```python
+import json
+from pathlib import Path
+from shutil import rmtree
+from tempfile import mkdtemp
+from unittest.mock import Mock
+
+import pytest
+import requests_mock
+from requests.exceptions import ConnectionError
+from tenacity import Retrying, wait_none
+
+from http_module.request_action import RequestAction
+
+
+@pytest.fixture(autouse=True, scope="session")
+def symphony_storage():
+    new_storage = Path(mkdtemp())
+
+    yield new_storage
+
+    rmtree(new_storage.as_posix())
+
+
+def test_get_request(symphony_storage):
+    action = RequestAction(data_path=symphony_storage)
+    action.module.configuration = {}
+
+    with requests_mock.Mocker() as mock:
+        mock.get(
+            "https://api.sekoia.io",
+            json={"foo": "bar"},
+            status_code=200,
+            reason="OK",
+            headers={"h1": "foo", "h2": "bar", "Content-Type": "application/json"},
+        )
+
+        result = action.run({"method": "get", "url": "https://api.sekoia.io"})
+        del result["elapsed"]
+        json.dumps(result)
+        assert result == {
+            "encoding": "utf-8",
+            "headers": {"h1": "foo", "h2": "bar", "Content-Type": "application/json"},
+            "json": {"foo": "bar"},
+            "reason": "OK",
+            "status_code": 200,
+            "text": '{"foo": "bar"}',
+            "url": "https://api.sekoia.io/",
+        }
+
+
+```
 
 ## Generate the manifest and update the entrypoint
 
@@ -399,14 +456,13 @@ if __name__ == "__main__":
 
 ## Compliance Validation
 This step will allow to check different components of the module and detect errors.
-Before that you need to run poetry install in the  `/_utils` directory to make sure all dependencies installed:
+Before that you need to run poetry install in the  `/_utils` directory to make sure all dependencies installed :
 ``` shell
 poetry install 
 ```
-To check the correctness of the module you simply run:
+To check the correctness of the module the following command should be run :
 
 ```shell
 python3 _utils/compliance/__main__.py check --module modules\<module_name> 
 ```
-
 That's it! Now you are ready to request module homologation !
