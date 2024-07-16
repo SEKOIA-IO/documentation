@@ -399,7 +399,7 @@ if __name__ == "__main__":
 
 ## Compliance Validation
 This step will allow to check different components of the module and detect errors.
-Before that you need to un poetry install in the  `/_utils` directory to make sure all dependencies installed.  :
+Before that you need to run poetry install in the  `/_utils` directory to make sure all dependencies installed:
 ``` shell
 poetry install 
 ```
