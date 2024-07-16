@@ -409,4 +409,4 @@ To check the correctness of the module you simply run:
 python3 _utils/compliance/__main__.py check --module modules\<module_name> 
 ```
 
-That's it! Now we have a module ready to run !
+That's it! Now you are ready to request module homologation !
