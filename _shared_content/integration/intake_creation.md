@@ -1,15 +1,13 @@
-### Configure Your Playbook
+### Configure Your Intake
 
-This section will assist you in pulling remote logs from Sekoia and sending them to the intake you previously created.
+This section will guide you through creating the intake object in Sekoia, which provides a unique identifier called the "Intake key." The Intake key is essential for later configuration, as it references the Community, Entity, and Parser (Intake Format) used when receiving raw events on Sekoia.
 
-1. Go to the Sekoia playbook page.
-2. Click on the `+ New playbook` button at the top right of the page.
-3. Select `Create a playbook from scratch`, and click `Next`.
-4. Give it a Name and a Description, and click `Next`.
-5. Choose a trigger from the list by searching for the name of the product, and click `Create`.
-6. A new Playbook page will be displayed. Click on the module in the center of the page, then click on the Configure icon.
-7. On the right panel, click on the `Configuration` tab.
-8. Select an existing Trigger Configuration (from the [account menu](https://docs.sekoia.io/xdr/features/automate/manage-accounts/)) or create a new one by clicking on `+ Create new configuration`.
-9. Configure the Trigger based on the Actions Library (for instance, see [here](https://docs.sekoia.io/xdr/features/automate/library/aws/) for AWS modules), then click `Save`.
-10. Click on `Save` at the top right of the playbook page.
-11. Activate the playbook by clicking on the "On / Off" toggle button at the top right corner of the page.
+1. Go to the Sekoia Intake page.
+2. Click on the `+ New Intake` button at the top right of the page.
+3. Search for your Intake by the product name in the search bar.
+4. Give it a Name** and associate it with an Entity (and a Community if using multi-tenant mode).
+5. Click on `Create`.
+6. You will be redirected to the Intake listing page, where you will find a new line with the name you gave to the Intake.
+
+!!! Note
+For more details on how to use the Intake page and to find the Intake key you just created, refer to [this documentation](https://docs.sekoia.io/xdr/features/automate/manage-accounts/).
