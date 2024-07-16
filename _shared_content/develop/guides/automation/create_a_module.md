@@ -10,7 +10,7 @@ This module will contain one trigger and one action:
 ## Technical Requirements
 
 - Clone the Github repository [SEKOIA-IO/automation-library](https://github.com/SEKOIA-IO/automation-library)
-- Install the SEKOIA's automation SDK. This SDK contains various command line utilities that will help us manage    modules.Simply run the following command:
+- Install the SEKOIA's automation SDK. This SDK contains various command line utilities that will help us manage    modules. Simply run the following command:
 ``` shell
 pip install sekoia-automation-sdk
 ```
