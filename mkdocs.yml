@@ -84,7 +84,7 @@ nav:
           - Google Pub/Sub: xdr/features/collect/ingestion_methods/cloud_saas/gcp.md
       - Integrations:
         - Overview: xdr/features/collect/integrations/index.md
-        - Custom Format: xdr/features/collect/integrations/custom_format.md
+        - Custom Format: xdr/develop/guides/formats/create_a_format.md
         - Application:
           - Tenable Identity Exposure / Alsid: xdr/features/collect/integrations/application/alsid.md
           - Apache HTTP Server: xdr/features/collect/integrations/application/apache.md
