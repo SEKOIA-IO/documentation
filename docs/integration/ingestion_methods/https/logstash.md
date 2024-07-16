@@ -6,7 +6,7 @@ To push logs, you have to configure some filters in Logstash that will add the p
 
 ## Example
 
-In the following example, we have multiple inputs to handle logs collected via Syslog (Apache HTTP Server and NGINX logs) and via [Beats (Winlogbeat)](/xdr/features/collect/integrations/endpoint/winlogbeat.md) and forward them to Sekoia.io. 
+In the following example, we have multiple inputs to handle logs collected via Syslog (Apache HTTP Server and NGINX logs) and via [Beats (Winlogbeat)](/integration/integrations/endpoint/winlogbeat.md) and forward them to Sekoia.io. 
 
 In order to filter events effectively, Logstash uses tags as a key component. To ensure proper functionality, make sure to update the intake key value by editing the placeholder `CHANGE_ME_INTAKE_KEY` mentioned below. Additionally, you have the flexibility to incorporate multiple filters within the `filter` section as per your requirements.
 

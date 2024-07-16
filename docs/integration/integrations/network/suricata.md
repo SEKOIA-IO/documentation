@@ -39,9 +39,9 @@ outputs:
 Given this Suricata configuration, your local built-in rsyslog service will handle produced records.
 Once your Suricata is configured to log threw syslog you have many options to forward those logs to Sekoia.io app. All of those solutions have their advantages. You will find more details about the type of events that are handled by each of them and how to set up those solutions on the dedicated documentations that follows:
 
-- [Collect logs in files with Sekoia.io agent and send them directly to Sekoia.io via HTTP](https://docs.sekoia.io/xdr/features/collect/integrations/endpoint/sekoiaio/#collect-logs-in-files)
-- [Forward local logs to a central Sekoia.io Forwarder prior to be transfered to Sekoia.io via Syslog](https://docs.sekoia.io/xdr/features/collect/ingestion_methods/sekoiaio_forwarder/)
-- [Update the local Rsyslog to send updated logs to a central Sekoia.io Forwarder or directly to Sekoia.io via Syslog](https://docs.sekoia.io/xdr/features/collect/ingestion_methods/syslog/rsyslog/)
+- [Collect logs in files with Sekoia.io agent and send them directly to Sekoia.io via HTTP](https://docs.sekoia.io/integration/integrations/endpoint/sekoiaio/#collect-logs-in-files)
+- [Forward local logs to a central Sekoia.io Forwarder prior to be transfered to Sekoia.io via Syslog](https://docs.sekoia.io/integration/ingestion_methods/sekoiaio_forwarder/)
+- [Update the local Rsyslog to send updated logs to a central Sekoia.io Forwarder or directly to Sekoia.io via Syslog](https://docs.sekoia.io/integration/ingestion_methods/syslog/rsyslog/)
 
 ## Further Readings
 - [Suricata User Guide](https://suricata.readthedocs.io/)
