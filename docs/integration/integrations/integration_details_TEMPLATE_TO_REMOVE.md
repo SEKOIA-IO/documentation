@@ -29,24 +29,21 @@ last updated: DD/MM/YYYY
 ### Prerequisites
 
 - **Licence level**:
-    - [ ] Y
-    - [ ] X
+    - Y
+    - X
 
 - **Resource**:
-    - [ ] External Storage
-    - [ ] Self managed syslog forwarder
-    - [ ] None
+    - External Storage
+    - Self managed syslog forwarder
 
 - **Network**:
-    - [ ] Customer Inbound traffic possible opening
-    - [ ] Customer Outbound traffic possible opening
-    - [ ] None
+    - Customer Inbound traffic possible opening
+    - Customer Outbound traffic possible opening
 
 - **Permissions**:
-    - [ ] API Credentials: _TO REPLACE Minimum level of permissions needed for API key or service account._
-    - [ ] Configuration Access:  _ Minimum level of permissions required for the user doing the configuration._
-    - [ ] Service account permission: The service account permission needed  for the configuration of the intake in the Sekoia.io product.
-    - [ ] None
+    - API Credentials: _TO REPLACE Minimum level of permissions needed for API key or service account._
+    - Configuration Access:  _ Minimum level of permissions required for the user doing the configuration._
+    - Service account permission: The service account permission needed  for the configuration of the intake in the Sekoia.io product.
 
 ### Transport Protocol/Method
 
@@ -58,23 +55,23 @@ last updated: DD/MM/YYYY
 ### Logs details
 
 - **Supported type(s) of structure**:
-    - [ ] CEF
-    - [ ] Common Log Format (CLF)
-    - [ ] Delimiter Separated Value (DSV)
-    - [ ] JSON
-    - [ ] Key-Value
-    - [ ] Plain Text
-    - [ ] Multi-line
+    - CEF
+    - Common Log Format (CLF)
+    - Delimiter Separated Value (DSV)
+    - JSON
+    - Key-Value
+    - Plain Text
+    - Multi-line
 
 - **Supported verbosity level**:
-    - [ ] **Emergency**: system is unusable
-    - [ ] **Alert**: action must be taken immediately
-    - [ ] **Critical**: critical conditions
-    - [ ] **Error**: error conditions
-    - [ ] **Warning**: warning conditions
-    - [ ] **Notice**: normal but significant condition
-    - [ ] **Informational**: informational messages
-    - [ ] **Debug**: debug-level messages
+    - **Emergency**: system is unusable
+    - **Alert**: action must be taken immediately
+    - **Critical**: critical conditions
+    - **Error**: error conditions
+    - **Warning**: warning conditions
+    - **Notice**: normal but significant condition
+    - **Informational**: informational messages
+    - **Debug**: debug-level messages
 
 !!! Note
     This is a description of the log level based on the taxonomy of the [RFC5425](https://datatracker.ietf.org/doc/html/rfc5424) for standardization purpose. Please adapt to the wording used by the editor.

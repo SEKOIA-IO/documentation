@@ -590,6 +590,8 @@ nav:
       - Enrichment: tip/develop/rest_api/enrichments.md
       - Dashboard: tip/develop/rest_api/dashboard.md
       - Playbooks: tip/develop/rest_api/playbooks.md
+- Integration:
+  - Introduction: integration/index.md
 plugins:
 - search: null
 - redirects:
