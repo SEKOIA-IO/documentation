@@ -1,7 +1,10 @@
-Changelog _last update on 2024-07-15_
+Changelog _last update on 2024-07-16_
 
 ## Changelog
 
+### Microsoft Entra ID (Azure AD) Malicious IP
+  - 16/07/2024 - minor - Change similarity strategy.
+    
 ### Audit CVE Event
   - 15/07/2024 - major - review filter and improve similarity
     
