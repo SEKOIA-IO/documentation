@@ -13,7 +13,6 @@ last updated: DD/MM/YYYY
 - **Supported application or feature**:
     - A
     - B
-    - C
 
 
 ## High-Level Architecture Diagram
