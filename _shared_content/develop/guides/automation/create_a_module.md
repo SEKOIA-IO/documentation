@@ -403,7 +403,7 @@ Before that you need to run poetry install in the  `/_utils` directory to make s
 ``` shell
 poetry install 
 ```
-To check the correctness of the module you simply run :
+To check the correctness of the module you simply run:
 
 ```shell
 python3 _utils/compliance/__main__.py check --module modules\<module_name> 
