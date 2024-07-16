@@ -1,4 +1,4 @@
-### Configure a forwarder
+#### Configure a forwarder
 
 To forward events using syslog to Sekoia.io, you need to update the syslog header with the intake key you previously created.
 Here is an example of your message before the forwarder
