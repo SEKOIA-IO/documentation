@@ -19,7 +19,7 @@ This setup guide will show you how to forward your Systancia Cleanroom logs to S
 
 ### Forward logs to Sekoia.io
 
-Please consult the [Syslog Forwarding](/xdr/features/collect/ingestion_methods/syslog/sekoiaio_forwarder/) documentation to forward these logs to Sekoia.io.
+Please consult the [Syslog Forwarding](/integration/ingestion_methods/syslog/sekoiaio_forwarder/) documentation to forward these logs to Sekoia.io.
 
 ### Systancia Cleanroom
 

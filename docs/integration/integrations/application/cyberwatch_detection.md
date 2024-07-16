@@ -18,7 +18,7 @@ This setup guide will show you how to forward your Cyberwatch logs to Sekoia.io 
 
 ### Forward logs to Sekoia.io
 
-Please consult the [Syslog Forwarding](https://docs.sekoia.io/xdr/features/collect/ingestion_methods/sekoiaio_forwarder/) documentation to set up a syslog concentrator.
+Please consult the [Syslog Forwarding](https://docs.sekoia.io/integration/ingestion_methods/sekoiaio_forwarder/) documentation to set up a syslog concentrator.
 
 ### Enable Syslog forwarding for Cyberwatch
 
