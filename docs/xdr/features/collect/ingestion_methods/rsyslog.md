@@ -1,1 +1,0 @@
-syslog/rsyslog.md

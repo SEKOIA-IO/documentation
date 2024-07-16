@@ -1,1 +1,0 @@
-syslog/syslog-ng.md
