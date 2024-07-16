@@ -7,20 +7,17 @@ This module will contain one trigger and one action:
 * The trigger will watch for new entries exposed by an HTTP endpoint
 * The action will allow to send an HTTP request and return its response.
 
+## Technical Requirements
 
-## Initialize the module
-
-The first step is to install the SEKOIA's automation SDK.
-This SDK contains various command line utilities that will help us manage modules.
-
-Simply run the following command:
-
-```shell
+- Clone the Github repository [SEKOIA-IO/automation-library](https://github.com/SEKOIA-IO/automation-library)
+- Install the SEKOIA's automation SDK. This SDK contains various command line utilities that will help us manage    modules.Simply run the following command:
+``` shell
 pip install sekoia-automation-sdk
 ```
-
 !!! note
     The SDK needs a Python version equal or newer to 3.10.
+
+## Initialize the module
 
 Once the SDK is installed we can use it to create an empty module:
 
@@ -399,5 +396,17 @@ if __name__ == "__main__":
 2. Our action is imported.
 3. Trigger is registered. The first argument of `module.register` is our action class and the second is the `docker_parameter` that is specified in our trigger's manifest.
 4. Action is registered.
+
+## Compliance Validation
+This step will allow to check different components of the module and detect errors.
+Before that you need to un poetry install in the  `/_utils` directory to make sure all dependencies installed.  :
+``` shell
+poetry install 
+```
+To check the correctness of the module you simply run :
+
+```shell
+python3 _utils/compliance/__main__.py check --module modules\<module_name> 
+```
 
 That's it! Now we have a module ready to run !
