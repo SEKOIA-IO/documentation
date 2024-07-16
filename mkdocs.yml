@@ -84,7 +84,7 @@ nav:
           - Google Pub/Sub: xdr/features/collect/ingestion_methods/cloud_saas/gcp.md
       - Integrations:
         - Overview: xdr/features/collect/integrations/index.md
-        - Custom Format: xdr/features/collect/integrations/custom_format.md
+        - Custom Format: xdr/develop/develop_integration/formats/create_a_format.md
         - Application:
           - Tenable Identity Exposure / Alsid: xdr/features/collect/integrations/application/alsid.md
           - Apache HTTP Server: xdr/features/collect/integrations/application/apache.md
@@ -395,24 +395,24 @@ nav:
     - Sekoia.io Endpoint agent: xdr/FAQ/SEKOIA_Endpoint_Agent.md
     - Datetime representation: xdr/FAQ/datetime.md
   - Develop:
-    - Quickstart: xdr/develop/quickstart.md
-    - Guides:
-      - Filtering: xdr/develop/guides/filtering.md
-      - Automation:
-        - Overview: xdr/develop/guides/automation/overview.md
-        - Create a Module: xdr/develop/guides/automation/create_a_module.md
+    - Develop an integration:
+      - Overview: xdr/develop/develop_integration/overview.md
       - Format:
-        - Overview: xdr/develop/guides/formats/overview.md
-        - Create a Format: xdr/develop/guides/formats/create_a_format.md
-        - Datasources: xdr/develop/guides/formats/datasources.md
-        - Definition of a structured event: xdr/develop/guides/formats/structured_event.md
-        - Definition of the taxonomy: xdr/develop/guides/formats/taxonomy.md
-        - How to write a parser: xdr/develop/guides/formats/parser.md
-        - How to write smart descriptions: xdr/develop/guides/formats/smartdescriptions.md
+        - Overview: xdr/develop/develop_integration/formats/overview.md
+        - Create a Format: xdr/develop/develop_integration/formats/create_a_format.md
+        - Datasources: xdr/develop/develop_integration/formats/datasources.md
+        - Definition of a structured event: xdr/develop/develop_integration/formats/structured_event.md
+        - Definition of the taxonomy: xdr/develop/develop_integration/formats/taxonomy.md
+        - How to write a parser: xdr/develop/develop_integration/formats/parser.md
+        - How to write smart descriptions: xdr/develop/develop_integration/formats/smartdescriptions.md
         - Best Practices:
-          - Overview: xdr/develop/guides/formats/best_practices/overview.md
-          - Authentications: xdr/develop/guides/formats/best_practices/authentications.md
+          - Overview: xdr/develop/develop_integration/formats/best_practices/overview.md
+          - Authentications: xdr/develop/develop_integration/formats/best_practices/authentications.md
+      - Automation:
+        - Overview: xdr/develop/develop_integration/automation/overview.md
+        - Create a Module: xdr/develop/develop_integration/automation/create_a_module.md
     - REST API:
+      - Quickstart: xdr/develop/rest_api/quickstart.md
       - Authentication and Community: xdr/develop/rest_api/community.md
       - Dashboard: xdr/develop/rest_api/dashboard.md
       - Configuration: xdr/develop/rest_api/configuration.md
@@ -452,10 +452,8 @@ nav:
       - PaloAlto Cortex XSOAR: cti/features/integrations/paloalto_xsoar.md
       - ThreatQuotient: cti/features/integrations/threatquotient.md
   - Develop:
-    - Overview: cti/develop/index.md
-    - Guides:
-      - Filtering: cti/develop/guides/filtering.md
     - REST API:
+      - Quickstart: cti/develop/rest_api/quickstart.md
       - Authentication and Community: cti/develop/rest_api/community.md
       - Intelligence: cti/develop/rest_api/intelligence.md
       - Enrichment: cti/develop/rest_api/enrichments.md
@@ -578,13 +576,13 @@ nav:
         - WithSecure: tip/features/automate/library/withsecure.md
         - Zscaler: tip/features/automate/library/zscaler.md
   - Develop:
-    - Overview: tip/develop/index.md
-    - Guides:
-      - Filtering: tip/develop/guides/filtering.md
-      - Playbooks:
-        - Overview: tip/develop/guides/automation/overview.md
-        - Quick start: tip/develop/guides/automation/create_a_module.md
+    - Develop an integration:
+      - Overview: xdr/develop/develop_integration/overview.md
+      - Automation:
+        - Overview: xdr/develop/develop_integration/automation/overview.md
+        - Create a Module: xdr/develop/develop_integration/automation/create_a_module.md
     - REST API:
+      - Quickstart: tip/develop/rest_api/quickstart.md
       - Authentication and Community: tip/develop/rest_api/community.md
       - Intelligence: tip/develop/rest_api/intelligence.md
       - Enrichment: tip/develop/rest_api/enrichments.md
@@ -601,19 +599,18 @@ plugins:
       'api/intelligence center: cyber threat intelligence database': cti/develop/rest_api/intelligence.md
       'api/intelligence center: enrichment': cti/develop/rest_api/enrichments.md
       'api/operation center: alerts & case management': xdr/develop/rest_api/alert.md
-      'api/operation center: asset management': xdr/develop/rest_api/assets.md
+      'api/operation center: asset management': xdr/develop/rest_api/assets_v2.md
       'api/operation center: rules, entities, intakes, events.md': xdr/develop/rest_api/configuration.md
       api/profile & permissions: xdr/develop/rest_api/community.md
       cti/develop/rest_api/identity_and_authentication.md: cti/develop/rest_api/community.md
-      develop/guides/filtering.md: xdr/develop/guides/filtering.md
-      develop/guides/get_started.md: xdr/develop/guides/get_started.md
+      develop/rest_api/quickstart.md: xdr/develop/rest_api/quickstart.md
       develop/rest_api/community.md: xdr/develop/rest_api/community.md
       develop/rest_api/dashboard.md: xdr/develop/rest_api/community.md
       develop/rest_api/identity_and_authentication.md: xdr/develop/rest_api/community.md
       develop/rest_api/intelligence_center/enrichments.md: cti/develop/rest_api/enrichments.md
       develop/rest_api/intelligence_center/intelligence.md: cti/develop/rest_api/intelligence.md
       develop/rest_api/operation_center/alert.md: xdr/develop/rest_api/alert.md
-      develop/rest_api/operation_center/assets.md: xdr/develop/rest_api/assets.md
+      develop/rest_api/operation_center/assets.md: xdr/develop/rest_api/assets_v2.md
       develop/rest_api/operation_center/configuration.md: xdr/develop/rest_api/configuration.md
       develop/rest_api/operation_center/parser.md: xdr/develop/rest_api/parser.md
       develop/rest_api/playbooks.md: xdr/develop/rest_api/playbooks.md
