@@ -207,8 +207,8 @@ class Request(Action):  # (4)!
 8. Finally, if everything went well we can return the results. The base action will take care of sending it back to the playbook API.
 
 ## Test your code 
-Make sure you test your code with unitary tests. In the following code, 
-we will test `get request`our previous example's action code . In practice, you have to cover most of the use cases of the module. 
+Make sure you test your code with unitary and integration tests. In the following code, 
+we will test `get request`our previous example's action code. In practice, you have to cover most of the use cases of the module. 
 ```python
 import json
 from pathlib import Path
@@ -260,6 +260,10 @@ def test_get_request(symphony_storage):
         }
 
 
+```
+To run you test, poetry will be used for depencies installation and you can run the following command:
+```shell
+poetry run test_request.py
 ```
 
 ## Generate the manifest and update the entrypoint
@@ -463,6 +467,8 @@ poetry install
 To check the correctness of the module the following command should be run :
 
 ```shell
-python3 _utils/compliance/__main__.py check --module modules\<module_name> 
+poetry run python _utils/compliance/__main__.py check --module modules\<module_name> 
 ```
+## Homologation request 
+Once you validated your unitary and integration tests and the compliance, you can proceed with homologation request. You can refer to this page in the doc and follow the required steps [section](../develop/guides/develop_integration/#step-3-homologate-your-automation-module).
 That's it! Now you are ready to request module homologation !
