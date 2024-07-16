@@ -18,7 +18,7 @@ You can open the IOC Collection creation modal by clicking on `+ Collection`. Yo
 - (Optional) Add a description to the collection
 - Choose if you want to automatically add IOCs from this collection into your detection by creating a dedicated detection rule. Note that you will be able to manually create a detection rule for this collection later if you want
 
-![ioc_creation](/assets/operation_center/IOCscollections/ioc-create.png){: style="max-width:100%"}
+![ioc_creation](/assets/operation_center/IOCscollections/ioc-create_updated.png){: style="max-width:100%"}
 
 !!! Note
     Inside a MSSP community, you also have to choose the community in which the IOC Collection should be created. If you choose “All communities”, the collection will be readable by all subcommunities.
