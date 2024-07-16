@@ -6,11 +6,12 @@ Some technologies may not have an associated Intake in the official Sekoia.io ca
 
 The "Custom format" feature allows you to easily develop your own Intake. It gives you the tools to parse your events in the Elastic Common Schema (ECS) format to ensure agnostic detection and to index fields for search in the Events page.
 
+## Create a Custom format
+### Custom format creation on the platform
+
 !!!note
     In order to use this feature, you need to have the `SIC_WRITE_INTAKE` permission associated to your Sekoia.io account. This permission also allows you to create an existing Intake.
 
-## Create a Custom format
-### Custom format creation on the platform
 The creation of an empty Custom format is the first step to develop your own Intake.
 
 After that, you will be able to create an instance of this Intake and start sending your logs. No event will be parsed but you will be able to see the evolution of your parser while you are developping it.
