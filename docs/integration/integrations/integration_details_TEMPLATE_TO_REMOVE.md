@@ -98,16 +98,13 @@ __TO ADAPT__
 
 ### Instruction on Sekoia
 
-__TO REMOVE IF NOT RELEVANT__
-
 {!_shared_content/integration/intake_configuration.md!}
 
 __TO REMOVE IF NOT RELEVANT__
 {!_shared_content/integration/connector_configuration.md!}
 
-### Setup a syslog forwarder (if needed)
-
-- Encourage to use the Sekoia.io forwarder
+__TO REMOVE IF NOT RELEVANT__
+{!_shared_content/integration/forwarder_configuration.md!}
 
 ## Detection section
 
@@ -118,7 +115,6 @@ _TO REPLACE by current links about Detection rules available, List of event type
 {!_shared_content/operations_center/integrations/generated/d6d15297-e977-4584-9bb3-f0290b99f014.md!}
 
 ## Further readings
-
 
 - The code of the Intake format is available [here](https://github.com/SEKOIA-IO/intake-formats/tree/main/__CHANGE_ME__).
 - The code of the Playbook connector is available [here](https://github.com/SEKOIA-IO/automation-library/tree/main/__CHANGE_ME__).
