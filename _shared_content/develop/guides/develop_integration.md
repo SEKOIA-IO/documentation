@@ -17,7 +17,8 @@
 
 #### Step 1. Create a new format with the custom parser editor
 
-Requirement: your data can be forwarded into Sekoia XDR platform with the existing [ingestion methods](https://docs.sekoia.io/xdr/features/collect/ingestion_methods/)
+!!! info
+    Requirement: your data can be forwarded into Sekoia XDR platform with the existing [ingestion methods](https://docs.sekoia.io/xdr/features/collect/ingestion_methods/)
 
 You can create a custom format to ingest any unsupported type of data. Follow this documentation page to create a new intake format:
 
@@ -47,6 +48,9 @@ If you have already developed a new format and would like Sekoia to perform the 
 The homologation process is now finished. Your intake will appear in the public intake catalog.
 
 ### I want to create a new automation
+
+!!! warning
+    Please note that all automations are available in the public library of Sekoia XDR platform. Other customers of Sekoia can access your automation module. We are still working on the implementation of private automations.
 
 #### Step 1. Understand the general concepts
 
