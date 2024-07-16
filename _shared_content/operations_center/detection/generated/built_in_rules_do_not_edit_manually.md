@@ -1,4 +1,4 @@
-Rules catalog includes **904 built-in detection rules** ([_last update on 2024-07-15_](rules_changelog.md)).
+Rules catalog includes **906 built-in detection rules** ([_last update on 2024-07-15_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Identity Information**
 
@@ -2442,6 +2442,18 @@ Rules catalog includes **904 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** intermediate
     
+??? abstract "Zscaler ZIA Malicious Threat Outbreak"
+    
+    Spots a peak of malicious threat detection by Zscaler ZIA
+    
+    - **Effort:** master
+    
+??? abstract "Zscaler ZIA Suspicious Threat Outbreak"
+    
+    Spots a peak of malicious threat detection by Zscaler ZIA
+    
+    - **Effort:** master
+    
 **Scripting**
 
 ??? abstract "Suspicious VBS Execution Parameter"
@@ -3455,9 +3467,21 @@ Rules catalog includes **904 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** master
     
+??? abstract "Zscaler ZIA Malicious Threat Outbreak"
+    
+    Spots a peak of malicious threat detection by Zscaler ZIA
+    
+    - **Effort:** master
+    
 ??? abstract "Zscaler ZIA Suspicious Threat"
     
     Zscaler Internet Access has detected a network traffic as malicious
+    
+    - **Effort:** master
+    
+??? abstract "Zscaler ZIA Suspicious Threat Outbreak"
+    
+    Spots a peak of malicious threat detection by Zscaler ZIA
     
     - **Effort:** master
     
@@ -4246,6 +4270,18 @@ Rules catalog includes **904 built-in detection rules** ([_last update on 2024-0
         - 25/10/2023 - minor - Adding filter to reduce false positives.
         - 19/03/2024 - major - Added filter to reduce false positives
             
+??? abstract "Zscaler ZIA Malicious Threat Outbreak"
+    
+    Spots a peak of malicious threat detection by Zscaler ZIA
+    
+    - **Effort:** master
+    
+??? abstract "Zscaler ZIA Suspicious Threat Outbreak"
+    
+    Spots a peak of malicious threat detection by Zscaler ZIA
+    
+    - **Effort:** master
+    
 **Deploy Container**
 
 ??? abstract "Docker Escape Bind Mount"
