@@ -210,54 +210,37 @@ class Request(Action):  # (4)!
 Make sure you test your code with unitary and integration tests. In the following code, 
 we will test `get request`our previous example's action code. In practice, you have to cover most of the use cases of the module. 
 ```python
-import json
-from pathlib import Path
-from shutil import rmtree
-from tempfile import mkdtemp
-from unittest.mock import Mock
-
 import pytest
 import requests_mock
-from requests.exceptions import ConnectionError
-from tenacity import Retrying, wait_none
+from pydantic import HttpUrl
+from your_module import Request, RequestArguments, Response  # Adjust the import according to your module structure
 
-from http_module.request_action import RequestAction
+@requests_mock.Mocker()
+def test_get_request(mock_request):
+    # Mock the HTTP response
+    mock_response = {
+        'status_code': 200,
+        'headers': {'Content-Type': 'application/json'},
+        'text': 'Success'
+    }
+    mock_request.get('http://example.com', status_code=mock_response['status_code'],
+                     headers=mock_response['headers'], text=mock_response['text'])
 
+    # Create the arguments
+    arguments = RequestArguments(
+        url='http://example.com',
+        headers=None,
+        method='get'
+    )
 
-@pytest.fixture(autouse=True, scope="session")
-def symphony_storage():
-    new_storage = Path(mkdtemp())
+    # Instantiate and run the action
+    action = Request()
+    result = action.run(arguments)
 
-    yield new_storage
-
-    rmtree(new_storage.as_posix())
-
-
-def test_get_request(symphony_storage):
-    action = Action(data_path=symphony_storage)
-    action.module.configuration = {}
-
-    with requests_mock.Mocker() as mock:
-        mock.get(
-            "https://api.sekoia.io",
-            json={"foo": "bar"},
-            status_code=200,
-            reason="OK",
-            headers={"h1": "foo", "h2": "bar", "Content-Type": "application/json"},
-        )
-
-        result = action.run({"method": "get", "url": "https://api.sekoia.io"})
-        del result["elapsed"]
-        json.dumps(result)
-        assert result == {
-            "encoding": "utf-8",
-            "headers": {"h1": "foo", "h2": "bar", "Content-Type": "application/json"},
-            "json": {"foo": "bar"},
-            "reason": "OK",
-            "status_code": 200,
-            "text": '{"foo": "bar"}',
-            "url": "https://api.sekoia.io/",
-        }
+    # Assert the response
+    assert result.status_code == mock_response['status_code']
+    assert result.headers == mock_response['headers']
+    assert result.text == mock_response['text']
 
 
 ```
