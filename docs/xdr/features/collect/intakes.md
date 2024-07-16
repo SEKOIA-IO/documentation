@@ -78,7 +78,7 @@ To learn more about how to create a custom intake, please refer to this [section
 
 ---
 
-Do not hesitate to contact your support if:
-
-- The settings’ recommendations provided are not sufficient or not applicable to your system. We can then see with you how to transfer your events in the best conditions.
-- The format of the logs you want to send us is not in the list. We regularly add new formats and we can let you know when yours is available in our catalog.
+!!! note
+    Do not hesitate to contact your support if:
+    - The settings’ recommendations provided are not sufficient or not applicable to your system. We can then see with you how to transfer your events in the best conditions.
+    - The format of the logs you want to send us is not in the list. We regularly add new formats and we can let you know when yours is available in our catalog.
