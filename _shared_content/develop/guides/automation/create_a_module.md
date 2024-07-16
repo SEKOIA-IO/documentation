@@ -234,7 +234,7 @@ def symphony_storage():
 
 
 def test_get_request(symphony_storage):
-    action = RequestAction(data_path=symphony_storage)
+    action = Action(data_path=symphony_storage)
     action.module.configuration = {}
 
     with requests_mock.Mocker() as mock:
