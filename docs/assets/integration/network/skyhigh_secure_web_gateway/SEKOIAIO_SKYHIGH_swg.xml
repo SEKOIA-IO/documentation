@@ -1,0 +1,661 @@
+<libraryContent>
+  <libraryObject>
+    <name>SEKOIA.IO</name>
+    <version>11.1.0-39720</version>
+    <description>forward access log to SEKOIA.IO</description>
+  </libraryObject>
+  <configurations>
+    <configuration version="1.16.0" mwg-version="11.1.0-39720" id="com.scur.engine.filesystemlogging.259" defaultRights="2" templateId="com.scur.template.engine.filesystemlogging" name="SEKOIAIO.log" targetId="com.scur.engine.filesystemlogging">
+      <acElements/>
+      <configurationProperties>
+        <configurationProperty key="LogName" type="com.scur.type.string" encrypted="false" value="sekoiaio_access.log"/>
+        <configurationProperty key="OverrideGlobalSettings" type="com.scur.type.boolean" encrypted="false" value="false"/>
+        <configurationProperty key="AutoDelete" type="com.scur.type.boolean" encrypted="false" value="true"/>
+        <configurationProperty key="AutoDeleteNumber" type="com.scur.type.boolean" encrypted="false" value="true"/>
+        <configurationProperty key="MaxNumberOfOldLogFiles" type="com.scur.type.number" encrypted="false" value="7"/>
+        <configurationProperty key="AutoDeleteDays" type="com.scur.type.boolean" encrypted="false" value="true"/>
+        <configurationProperty key="MaxDaysOfOldLogs" type="com.scur.type.number" encrypted="false" value="7"/>
+        <configurationProperty key="GZip" type="com.scur.type.boolean" encrypted="false" value="false"/>
+        <configurationProperty key="AutoRotate" type="com.scur.type.boolean" encrypted="false" value="true"/>
+        <configurationProperty key="RotateSize" type="com.scur.type.boolean" encrypted="false" value="true"/>
+        <configurationProperty key="MaxFileSize" type="com.scur.type.number" encrypted="false" value="100"/>
+        <configurationProperty key="RotateDaily" type="com.scur.type.boolean" encrypted="false" value="true"/>
+        <configurationProperty key="RotationTime" type="com.scur.type.string" encrypted="false" value="00:00"/>
+        <configurationProperty key="RotateInterval" type="com.scur.type.boolean" encrypted="false" value="false"/>
+        <configurationProperty key="RotationIntervalHours" type="com.scur.type.number" encrypted="false" value="5"/>
+        <configurationProperty key="RotationIntervalMinutes" type="com.scur.type.number" encrypted="false" value="0"/>
+        <configurationProperty key="AutoPush" type="com.scur.type.boolean" encrypted="false" value="false"/>
+        <configurationProperty key="DestinationUrl" type="com.scur.type.string" encrypted="false" value="ftp://myFtpServer"/>
+        <configurationProperty key="PushInterval" type="com.scur.type.number" encrypted="false" value="5"/>
+        <configurationProperty key="PushIntervalMinutes" type="com.scur.type.number" encrypted="false" value="0"/>
+        <configurationProperty key="Username" type="com.scur.type.string" encrypted="false" value=""/>
+        <configurationProperty key="Password" type="com.scur.type.string" encrypted="false" value=""/>
+        <configurationProperty key="PushAfterRotation" type="com.scur.type.boolean" encrypted="false" value="false"/>
+        <configurationProperty key="FileNameId_IP" type="com.scur.type.boolean" encrypted="false" value="true"/>
+        <configurationProperty key="FileNameId_Mac" type="com.scur.type.boolean" encrypted="false" value="false"/>
+        <configurationProperty key="FileNameId_Hostname" type="com.scur.type.boolean" encrypted="false" value="false"/>
+        <configurationProperty key="FileNameId_UUID" type="com.scur.type.boolean" encrypted="false" value="false"/>
+        <configurationProperty key="NextHopProxies" type="com.scur.type.list" listType="com.scur.type.complex.nexthopproxy" encrypted="false" value=""/>
+        <configurationProperty key="Encrypted" type="com.scur.type.boolean" encrypted="false" value="false"/>
+        <configurationProperty key="Password1" type="com.scur.type.string" encrypted="false" value=""/>
+        <configurationProperty key="Password2" type="com.scur.type.string" encrypted="false" value=""/>
+        <configurationProperty key="WriteHeader" type="com.scur.type.boolean" encrypted="false" value="false"/>
+        <configurationProperty key="Header" type="com.scur.type.string" encrypted="false" value=""/>
+        <configurationProperty key="IsBuffered" type="com.scur.type.boolean" encrypted="false" value="true"/>
+      </configurationProperties>
+      <description></description>
+    </configuration>
+  </configurations>
+  <userDefinedPropertys>
+    <userDefinedProperty parentId="81" typeId="com.scur.type.string" name="User-Defined.sekoiaioLogLine" id="260" scope="0" description="" defaultRights="2">
+      <stringValue value="" stringModifier="true" typeId="com.scur.type.string"/>
+    </userDefinedProperty>
+  </userDefinedPropertys>
+  <ruleGroup id="263" defaultRights="2" name="SEKOIA.IO" enabled="true" cycleRequest="true" cycleResponse="true" cycleEmbeddedObject="true" cloudSynced="false">
+    <acElements/>
+    <condition always="true">
+      <expressions/>
+    </condition>
+    <description>forward access log to SEKOIA.IO</description>
+    <rules>
+      <rule id="265" enabled="true" name="prepare log">
+        <description></description>
+        <immediateActionContainers>
+          <setActionContainer propertyId="260">
+            <expressions>
+              <setExpression openingBracketCount="0" closingBracketCount="0">
+                <parameter valueTyp="3">
+                  <value>
+                    <stringValue value="date=&quot;" stringModifier="true" typeId="com.scur.type.string"/>
+                  </value>
+                </parameter>
+              </setExpression>
+              <setExpression operator="+" openingBracketCount="0" closingBracketCount="0">
+                <parameter valueTyp="2">
+                  <value>
+                    <propertyInstance useMostRecentConfiguration="false" propertyId="com.scur.engine.datetimefilter.datetime.toxsdstring"/>
+                  </value>
+                </parameter>
+              </setExpression>
+              <setExpression operator="+" openingBracketCount="0" closingBracketCount="0">
+                <parameter valueTyp="3">
+                  <value>
+                    <stringValue value="&quot; hostname=&quot;" stringModifier="true" typeId="com.scur.type.string"/>
+                  </value>
+                </parameter>
+              </setExpression>
+              <setExpression operator="+" openingBracketCount="0" closingBracketCount="0">
+                <parameter valueTyp="2">
+                  <value>
+                    <propertyInstance useMostRecentConfiguration="false" propertyId="com.scur.engine.system.hostname"/>
+                  </value>
+                </parameter>
+              </setExpression>
+              <setExpression operator="+" openingBracketCount="0" closingBracketCount="0">
+                <parameter valueTyp="3">
+                  <value>
+                    <stringValue value="&quot; username=&quot;" stringModifier="true" typeId="com.scur.type.string"/>
+                  </value>
+                </parameter>
+              </setExpression>
+              <setExpression operator="+" openingBracketCount="0" closingBracketCount="0">
+                <parameter valueTyp="2">
+                  <value>
+                    <propertyInstance useMostRecentConfiguration="false" propertyId="com.scur.engine.auth.username"/>
+                  </value>
+                </parameter>
+              </setExpression>
+              <setExpression operator="+" openingBracketCount="0" closingBracketCount="0">
+                <parameter valueTyp="3">
+                  <value>
+                    <stringValue value="&quot; source_ip=" stringModifier="true" typeId="com.scur.type.string"/>
+                  </value>
+                </parameter>
+              </setExpression>
+              <setExpression operator="+" openingBracketCount="0" closingBracketCount="0">
+                <parameter valueTyp="2">
+                  <value>
+                    <propertyInstance useMostRecentConfiguration="false" propertyId="com.scur.engine.stringfilter.ip.tostring">
+                      <parameters>
+                        <entry>
+                          <string>com.scur.engine.stringfilter.ip.tostring.ip</string>
+                          <parameter valueTyp="2">
+                            <value>
+                              <propertyInstance useMostRecentConfiguration="false" propertyId="com.scur.engine.system.client.ip"/>
+                            </value>
+                          </parameter>
+                        </entry>
+                      </parameters>
+                    </propertyInstance>
+                  </value>
+                </parameter>
+              </setExpression>
+              <setExpression operator="+" openingBracketCount="0" closingBracketCount="0">
+                <parameter valueTyp="3">
+                  <value>
+                    <stringValue value=" destination_ip=" stringModifier="true" typeId="com.scur.type.string"/>
+                  </value>
+                </parameter>
+              </setExpression>
+              <setExpression operator="+" openingBracketCount="0" closingBracketCount="0">
+                <parameter valueTyp="2">
+                  <value>
+                    <propertyInstance useMostRecentConfiguration="false" propertyId="com.scur.engine.stringfilter.ip.tostring">
+                      <parameters>
+                        <entry>
+                          <string>com.scur.engine.stringfilter.ip.tostring.ip</string>
+                          <parameter valueTyp="2">
+                            <value>
+                              <propertyInstance useMostRecentConfiguration="false" propertyId="com.scur.engine.system.destination.ip"/>
+                            </value>
+                          </parameter>
+                        </entry>
+                      </parameters>
+                    </propertyInstance>
+                  </value>
+                </parameter>
+              </setExpression>
+              <setExpression operator="+" openingBracketCount="0" closingBracketCount="0">
+                <parameter valueTyp="3">
+                  <value>
+                    <stringValue value=" destination_host=&quot;" stringModifier="true" typeId="com.scur.type.string"/>
+                  </value>
+                </parameter>
+              </setExpression>
+              <setExpression operator="+" openingBracketCount="0" closingBracketCount="0">
+                <parameter valueTyp="2">
+                  <value>
+                    <propertyInstance useMostRecentConfiguration="false" propertyId="com.scur.engine.system.url.host"/>
+                  </value>
+                </parameter>
+              </setExpression>
+              <setExpression operator="+" openingBracketCount="0" closingBracketCount="0">
+                <parameter valueTyp="3">
+                  <value>
+                    <stringValue value="&quot; http_status_code=" stringModifier="true" typeId="com.scur.type.string"/>
+                  </value>
+                </parameter>
+              </setExpression>
+              <setExpression operator="+" openingBracketCount="0" closingBracketCount="0">
+                <parameter valueTyp="2">
+                  <value>
+                    <propertyInstance useMostRecentConfiguration="false" propertyId="com.scur.engine.stringfilter.number.tostring">
+                      <parameters>
+                        <entry>
+                          <string>com.scur.engine.stringfilter.number.tostring.number</string>
+                          <parameter valueTyp="2">
+                            <value>
+                              <propertyInstance useMostRecentConfiguration="false" propertyId="com.scur.engine.system.response.statuscode"/>
+                            </value>
+                          </parameter>
+                        </entry>
+                      </parameters>
+                    </propertyInstance>
+                  </value>
+                </parameter>
+              </setExpression>
+              <setExpression operator="+" openingBracketCount="0" closingBracketCount="0">
+                <parameter valueTyp="3">
+                  <value>
+                    <stringValue value=" media_type=&quot;" stringModifier="true" typeId="com.scur.type.string"/>
+                  </value>
+                </parameter>
+              </setExpression>
+              <setExpression operator="+" openingBracketCount="0" closingBracketCount="0">
+                <parameter valueTyp="2">
+                  <value>
+                    <propertyInstance useMostRecentConfiguration="false" propertyId="com.scur.engine.stringfilter.mediatype.tostring">
+                      <parameters>
+                        <entry>
+                          <string>com.scur.engine.stringfilter.mediatype.tostring.mediatype</string>
+                          <parameter valueTyp="2">
+                            <value>
+                              <propertyInstance useMostRecentConfiguration="false" propertyId="com.scur.engine.mtfilter.property.bodyheaders"/>
+                            </value>
+                          </parameter>
+                        </entry>
+                      </parameters>
+                    </propertyInstance>
+                  </value>
+                </parameter>
+              </setExpression>
+              <setExpression operator="+" openingBracketCount="0" closingBracketCount="0">
+                <parameter valueTyp="3">
+                  <value>
+                    <stringValue value="&quot; source_bytes=" stringModifier="true" typeId="com.scur.type.string"/>
+                  </value>
+                </parameter>
+              </setExpression>
+              <setExpression operator="+" openingBracketCount="0" closingBracketCount="0">
+                <parameter valueTyp="2">
+                  <value>
+                    <propertyInstance useMostRecentConfiguration="false" propertyId="com.scur.engine.stringfilter.number.tostring">
+                      <parameters>
+                        <entry>
+                          <string>com.scur.engine.stringfilter.number.tostring.number</string>
+                          <parameter valueTyp="2">
+                            <value>
+                              <propertyInstance useMostRecentConfiguration="false" propertyId="com.scur.engine.system.bytesrecvfromclient"/>
+                            </value>
+                          </parameter>
+                        </entry>
+                      </parameters>
+                    </propertyInstance>
+                  </value>
+                </parameter>
+              </setExpression>
+              <setExpression operator="+" openingBracketCount="0" closingBracketCount="0">
+                <parameter valueTyp="3">
+                  <value>
+                    <stringValue value=" destination_bytes=" stringModifier="true" typeId="com.scur.type.string"/>
+                  </value>
+                </parameter>
+              </setExpression>
+              <setExpression operator="+" openingBracketCount="0" closingBracketCount="0">
+                <parameter valueTyp="2">
+                  <value>
+                    <propertyInstance useMostRecentConfiguration="false" propertyId="com.scur.engine.stringfilter.number.tostring">
+                      <parameters>
+                        <entry>
+                          <string>com.scur.engine.stringfilter.number.tostring.number</string>
+                          <parameter valueTyp="2">
+                            <value>
+                              <propertyInstance useMostRecentConfiguration="false" propertyId="com.scur.engine.system.bytesrecvfromserver"/>
+                            </value>
+                          </parameter>
+                        </entry>
+                      </parameters>
+                    </propertyInstance>
+                  </value>
+                </parameter>
+              </setExpression>
+              <setExpression operator="+" openingBracketCount="0" closingBracketCount="0">
+                <parameter valueTyp="3">
+                  <value>
+                    <stringValue value=" http_request_first_line=&quot;" stringModifier="true" typeId="com.scur.type.string"/>
+                  </value>
+                </parameter>
+              </setExpression>
+              <setExpression operator="+" openingBracketCount="0" closingBracketCount="0">
+                <parameter valueTyp="2">
+                  <value>
+                    <propertyInstance useMostRecentConfiguration="false" propertyId="com.scur.engine.system.request.headers.firstline"/>
+                  </value>
+                </parameter>
+              </setExpression>
+              <setExpression operator="+" openingBracketCount="0" closingBracketCount="0">
+                <parameter valueTyp="3">
+                  <value>
+                    <stringValue value="&quot; url_categories=&quot;" stringModifier="true" typeId="com.scur.type.string"/>
+                  </value>
+                </parameter>
+              </setExpression>
+              <setExpression operator="+" openingBracketCount="0" closingBracketCount="0">
+                <parameter valueTyp="2">
+                  <value>
+                    <propertyInstance useMostRecentConfiguration="false" propertyId="com.scur.engine.trustedsource.categorylist.tostring">
+                      <parameters>
+                        <entry>
+                          <string>com.scur.engine.trustedsource.categorylist.tostring.categorylist</string>
+                          <parameter valueTyp="2">
+                            <value>
+                              <propertyInstance useMostRecentConfiguration="true" propertyId="com.scur.engine.trustedsource.url.categories"/>
+                            </value>
+                          </parameter>
+                        </entry>
+                      </parameters>
+                    </propertyInstance>
+                  </value>
+                </parameter>
+              </setExpression>
+              <setExpression operator="+" openingBracketCount="0" closingBracketCount="0">
+                <parameter valueTyp="3">
+                  <value>
+                    <stringValue value="&quot; url_reputation_string=&quot;" stringModifier="true" typeId="com.scur.type.string"/>
+                  </value>
+                </parameter>
+              </setExpression>
+              <setExpression operator="+" openingBracketCount="0" closingBracketCount="0">
+                <parameter valueTyp="2">
+                  <value>
+                    <propertyInstance useMostRecentConfiguration="true" propertyId="com.scur.engine.trustedsource.url.reputationstring"/>
+                  </value>
+                </parameter>
+              </setExpression>
+              <setExpression operator="+" openingBracketCount="0" closingBracketCount="0">
+                <parameter valueTyp="3">
+                  <value>
+                    <stringValue value="&quot; url_reputation_code=" stringModifier="true" typeId="com.scur.type.string"/>
+                  </value>
+                </parameter>
+              </setExpression>
+              <setExpression operator="+" openingBracketCount="0" closingBracketCount="0">
+                <parameter valueTyp="2">
+                  <value>
+                    <propertyInstance useMostRecentConfiguration="false" propertyId="com.scur.engine.stringfilter.number.tostring">
+                      <parameters>
+                        <entry>
+                          <string>com.scur.engine.stringfilter.number.tostring.number</string>
+                          <parameter valueTyp="2">
+                            <value>
+                              <propertyInstance useMostRecentConfiguration="true" propertyId="com.scur.engine.trustedsource.url.reputation"/>
+                            </value>
+                          </parameter>
+                        </entry>
+                      </parameters>
+                    </propertyInstance>
+                  </value>
+                </parameter>
+              </setExpression>
+              <setExpression operator="+" openingBracketCount="0" closingBracketCount="0">
+                <parameter valueTyp="3">
+                  <value>
+                    <stringValue value=" ruleset_name=&quot;" stringModifier="true" typeId="com.scur.type.string"/>
+                  </value>
+                </parameter>
+              </setExpression>
+              <setExpression operator="+" openingBracketCount="0" closingBracketCount="0">
+                <parameter valueTyp="2">
+                  <value>
+                    <propertyInstance useMostRecentConfiguration="false" propertyId="com.scur.engine.system.rules.currentrulesetname"/>
+                  </value>
+                </parameter>
+              </setExpression>
+              <setExpression operator="+" openingBracketCount="0" closingBracketCount="0">
+                <parameter valueTyp="3">
+                  <value>
+                    <stringValue value="&quot; rule_name=&quot;" stringModifier="true" typeId="com.scur.type.string"/>
+                  </value>
+                </parameter>
+              </setExpression>
+              <setExpression operator="+" openingBracketCount="0" closingBracketCount="0">
+                <parameter valueTyp="2">
+                  <value>
+                    <propertyInstance useMostRecentConfiguration="false" propertyId="com.scur.engine.system.rules.currentrulename"/>
+                  </value>
+                </parameter>
+              </setExpression>
+              <setExpression operator="+" openingBracketCount="0" closingBracketCount="0">
+                <parameter valueTyp="3">
+                  <value>
+                    <stringValue value="&quot; block_id=" stringModifier="true" typeId="com.scur.type.string"/>
+                  </value>
+                </parameter>
+              </setExpression>
+              <setExpression operator="+" openingBracketCount="0" closingBracketCount="0">
+                <parameter valueTyp="2">
+                  <value>
+                    <propertyInstance useMostRecentConfiguration="false" propertyId="com.scur.engine.stringfilter.number.tostring">
+                      <parameters>
+                        <entry>
+                          <string>com.scur.engine.stringfilter.number.tostring.number</string>
+                          <parameter valueTyp="2">
+                            <value>
+                              <propertyInstance useMostRecentConfiguration="false" propertyId="com.scur.engine.system.blockreasonid"/>
+                            </value>
+                          </parameter>
+                        </entry>
+                      </parameters>
+                    </propertyInstance>
+                  </value>
+                </parameter>
+              </setExpression>
+              <setExpression operator="+" openingBracketCount="0" closingBracketCount="0">
+                <parameter valueTyp="3">
+                  <value>
+                    <stringValue value=" block_reason=&quot;" stringModifier="true" typeId="com.scur.type.string"/>
+                  </value>
+                </parameter>
+              </setExpression>
+              <setExpression operator="+" openingBracketCount="0" closingBracketCount="0">
+                <parameter valueTyp="2">
+                  <value>
+                    <propertyInstance useMostRecentConfiguration="false" propertyId="com.scur.engine.system.blockreason"/>
+                  </value>
+                </parameter>
+              </setExpression>
+              <setExpression operator="+" openingBracketCount="0" closingBracketCount="0">
+                <parameter valueTyp="3">
+                  <value>
+                    <stringValue value="&quot; body_infected=" stringModifier="true" typeId="com.scur.type.string"/>
+                  </value>
+                </parameter>
+              </setExpression>
+              <setExpression operator="+" openingBracketCount="0" closingBracketCount="0">
+                <parameter valueTyp="2">
+                  <value>
+                    <propertyInstance useMostRecentConfiguration="false" propertyId="com.scur.engine.stringfilter.boolean.tostring">
+                      <parameters>
+                        <entry>
+                          <string>com.scur.engine.stringfilter.boolean.tostring.boolean</string>
+                          <parameter valueTyp="2">
+                            <value>
+                              <propertyInstance useMostRecentConfiguration="true" propertyId="com.scur.engine.antivirus.av.infected"/>
+                            </value>
+                          </parameter>
+                        </entry>
+                      </parameters>
+                    </propertyInstance>
+                  </value>
+                </parameter>
+              </setExpression>
+              <setExpression operator="+" openingBracketCount="0" closingBracketCount="0">
+                <parameter valueTyp="3">
+                  <value>
+                    <stringValue value=" virus_names=&quot;" stringModifier="true" typeId="com.scur.type.string"/>
+                  </value>
+                </parameter>
+              </setExpression>
+              <setExpression operator="+" openingBracketCount="0" closingBracketCount="0">
+                <parameter valueTyp="2">
+                  <value>
+                    <propertyInstance useMostRecentConfiguration="false" propertyId="com.scur.engine.stringfilter.stringlist.tostring">
+                      <parameters>
+                        <entry>
+                          <string>com.scur.engine.stringfilter.stringlist.tostring.stringlist</string>
+                          <parameter valueTyp="2">
+                            <value>
+                              <propertyInstance useMostRecentConfiguration="true" propertyId="com.scur.engine.antivirus.av.virusnames"/>
+                            </value>
+                          </parameter>
+                        </entry>
+                        <entry>
+                          <string>com.scur.engine.stringfilter.stringlist.tostring.delimiter</string>
+                          <parameter valueTyp="3">
+                            <value>
+                              <stringValue value=", " stringModifier="true" typeId="com.scur.type.string"/>
+                            </value>
+                          </parameter>
+                        </entry>
+                      </parameters>
+                    </propertyInstance>
+                  </value>
+                </parameter>
+              </setExpression>
+              <setExpression operator="+" openingBracketCount="0" closingBracketCount="0">
+                <parameter valueTyp="3">
+                  <value>
+                    <stringValue value="&quot; body_modified=" stringModifier="true" typeId="com.scur.type.string"/>
+                  </value>
+                </parameter>
+              </setExpression>
+              <setExpression operator="+" openingBracketCount="0" closingBracketCount="0">
+                <parameter valueTyp="2">
+                  <value>
+                    <propertyInstance useMostRecentConfiguration="false" propertyId="com.scur.engine.stringfilter.boolean.tostring">
+                      <parameters>
+                        <entry>
+                          <string>com.scur.engine.stringfilter.boolean.tostring.boolean</string>
+                          <parameter valueTyp="2">
+                            <value>
+                              <propertyInstance useMostRecentConfiguration="false" propertyId="com.scur.engine.system.body.modified"/>
+                            </value>
+                          </parameter>
+                        </entry>
+                      </parameters>
+                    </propertyInstance>
+                  </value>
+                </parameter>
+              </setExpression>
+              <setExpression operator="+" openingBracketCount="0" closingBracketCount="0">
+                <parameter valueTyp="3">
+                  <value>
+                    <stringValue value=" application_reputation=&quot;" stringModifier="true" typeId="com.scur.type.string"/>
+                  </value>
+                </parameter>
+              </setExpression>
+              <setExpression operator="+" openingBracketCount="0" closingBracketCount="0">
+                <parameter valueTyp="2">
+                  <value>
+                    <propertyInstance useMostRecentConfiguration="false" propertyId="com.scur.engine.applcontrol.reputation"/>
+                  </value>
+                </parameter>
+              </setExpression>
+              <setExpression operator="+" openingBracketCount="0" closingBracketCount="0">
+                <parameter valueTyp="3">
+                  <value>
+                    <stringValue value="&quot; application_name=&quot;" stringModifier="true" typeId="com.scur.type.string"/>
+                  </value>
+                </parameter>
+              </setExpression>
+              <setExpression operator="+" openingBracketCount="0" closingBracketCount="0">
+                <parameter valueTyp="2">
+                  <value>
+                    <propertyInstance useMostRecentConfiguration="false" propertyId="com.scur.engine.applcontrol.tostring">
+                      <parameters>
+                        <entry>
+                          <string>com.scur.engine.applcontrol.tostring.applcontrol</string>
+                          <parameter valueTyp="2">
+                            <value>
+                              <propertyInstance useMostRecentConfiguration="false" propertyId="com.scur.engine.applcontrol.name"/>
+                            </value>
+                          </parameter>
+                        </entry>
+                      </parameters>
+                    </propertyInstance>
+                  </value>
+                </parameter>
+              </setExpression>
+              <setExpression operator="+" openingBracketCount="0" closingBracketCount="0">
+                <parameter valueTyp="3">
+                  <value>
+                    <stringValue value="&quot; http_referer=&quot;" stringModifier="true" typeId="com.scur.type.string"/>
+                  </value>
+                </parameter>
+              </setExpression>
+              <setExpression operator="+" openingBracketCount="0" closingBracketCount="0">
+                <parameter valueTyp="2">
+                  <value>
+                    <propertyInstance useMostRecentConfiguration="false" propertyId="com.scur.engine.headerfilter.request.headers.getheader">
+                      <parameters>
+                        <entry>
+                          <string>com.scur.engine.headerfilter.request.headers.getheader.headername</string>
+                          <parameter valueTyp="3">
+                            <value>
+                              <stringValue value="Referer" stringModifier="true" typeId="com.scur.type.string"/>
+                            </value>
+                          </parameter>
+                        </entry>
+                      </parameters>
+                    </propertyInstance>
+                  </value>
+                </parameter>
+              </setExpression>
+              <setExpression operator="+" openingBracketCount="0" closingBracketCount="0">
+                <parameter valueTyp="3">
+                  <value>
+                    <stringValue value="&quot; user_agent=&quot;" stringModifier="true" typeId="com.scur.type.string"/>
+                  </value>
+                </parameter>
+              </setExpression>
+              <setExpression operator="+" openingBracketCount="0" closingBracketCount="0">
+                <parameter valueTyp="2">
+                  <value>
+                    <propertyInstance useMostRecentConfiguration="false" propertyId="com.scur.engine.headerfilter.request.headers.getheader">
+                      <parameters>
+                        <entry>
+                          <string>com.scur.engine.headerfilter.request.headers.getheader.headername</string>
+                          <parameter valueTyp="3">
+                            <value>
+                              <stringValue value="User-Agent" stringModifier="true" typeId="com.scur.type.string"/>
+                            </value>
+                          </parameter>
+                        </entry>
+                      </parameters>
+                    </propertyInstance>
+                  </value>
+                </parameter>
+              </setExpression>
+              <setExpression operator="+" openingBracketCount="0" closingBracketCount="0">
+                <parameter valueTyp="3">
+                  <value>
+                    <stringValue value="&quot;" stringModifier="true" typeId="com.scur.type.string"/>
+                  </value>
+                </parameter>
+              </setExpression>
+            </expressions>
+          </setActionContainer>
+        </immediateActionContainers>
+        <actionContainer actionId="com.scur.mainaction.continue"/>
+        <condition always="true">
+          <expressions/>
+        </condition>
+      </rule>
+      <rule id="269" enabled="true" name="Forward logs to SEKOIA.IO">
+        <description></description>
+        <immediateActionContainers>
+          <executeActionContainer>
+            <procedureValue procedureId="com.scur.engine.syslog.syslog">
+              <parameters>
+                <entry>
+                  <string>com.scur.engine.syslog.level</string>
+                  <parameter valueTyp="3">
+                    <value>
+                      <stringValue value="6" stringModifier="false" typeId="com.scur.type.number"/>
+                    </value>
+                  </parameter>
+                </entry>
+                <entry>
+                  <string>com.scur.engine.syslog.message</string>
+                  <parameter valueTyp="2">
+                    <value>
+                      <propertyInstance useMostRecentConfiguration="false" propertyId="260"/>
+                    </value>
+                  </parameter>
+                </entry>
+              </parameters>
+            </procedureValue>
+          </executeActionContainer>
+        </immediateActionContainers>
+        <actionContainer actionId="com.scur.mainaction.continue"/>
+        <condition always="true">
+          <expressions/>
+        </condition>
+      </rule>
+      <rule id="273" enabled="true" name="Write to SEKOIAIO_access.log">
+        <description></description>
+        <immediateActionContainers>
+          <executeActionContainer configurationId="com.scur.engine.filesystemlogging.259">
+            <procedureValue procedureId="com.scur.engine.filesystemlogging.writelogentry">
+              <parameters>
+                <entry>
+                  <string>com.scur.engine.filesystemlogging.writelogentry.logstring</string>
+                  <parameter valueTyp="2">
+                    <value>
+                      <propertyInstance useMostRecentConfiguration="false" propertyId="260"/>
+                    </value>
+                  </parameter>
+                </entry>
+              </parameters>
+            </procedureValue>
+          </executeActionContainer>
+        </immediateActionContainers>
+        <actionContainer actionId="com.scur.mainaction.continue"/>
+        <condition always="true">
+          <expressions/>
+        </condition>
+      </rule>
+    </rules>
+    <ruleGroups/>
+  </ruleGroup>
+</libraryContent>
