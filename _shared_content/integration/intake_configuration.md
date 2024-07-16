@@ -1,4 +1,4 @@
-### Configure Your Intake
+#### Configure Your Intake
 
 This section will guide you through creating the intake object in Sekoia, which provides a unique identifier called the "Intake key." The Intake key is essential for later configuration, as it references the Community, Entity, and Parser (Intake Format) used when receiving raw events on Sekoia.
 

@@ -1,4 +1,4 @@
-### Configure Your Playbook
+#### Configure Your Playbook
 
 This section will assist you in pulling remote logs from Sekoia and sending them to the intake you previously created.
 
