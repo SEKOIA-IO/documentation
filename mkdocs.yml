@@ -397,6 +397,7 @@ nav:
   - Develop:
     - Quickstart: xdr/develop/quickstart.md
     - Guides:
+      - Develop a new integration: xdr/develop/guides/develop_integration.md
       - Filtering: xdr/develop/guides/filtering.md
       - Automation:
         - Overview: xdr/develop/guides/automation/overview.md

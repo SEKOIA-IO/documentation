@@ -1,0 +1,1 @@
+# How to develop a new integration
