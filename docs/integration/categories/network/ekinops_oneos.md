@@ -7,7 +7,7 @@ type: intake
 Ekinops OneOS is a comprehensive and flexible network operating system designed to meet the evolving needs of modern telecommunications networks. It provides a unified platform for managing and orchestrating a wide range of network functions, including routing, switching, security, and more. With its modular architecture and open APIs, OneOS enables network operators to easily deploy and scale their networks, while also providing the flexibility to integrate with third-party applications and services. This allows for greater innovation and agility in network operations, ultimately leading to improved service delivery and customer satisfaction.
 
 - **Vendor**: Ekinops
-- **Plan**: Defend Core / Defend Prime
+- **Plan**: Defend Prime
 - **Supported environment**: On Premise / Cloud
 - **Version compatibility, if applicable**:
 - **Detection based on**: Network Telemetry
@@ -21,16 +21,10 @@ Ekinops OneOS is a comprehensive and flexible network operating system designed 
 
 ![ekinops_oneos_architecture](/assets/integration/ekinops_oneos_architecture.png)
 
-!!! Alternative
-
-    This will not be detailed in this documentation, but logs can also be sent directly to Sekoia.io over HTTPS using the Sekoia.io Endpoint Agent and the "Collect logs in files" method. This provides an alternative to the specified syslog collection method and may be preferable in certain environments.
-
 ## Specification
 
 ### Prerequisites
 
-- **Licence level**:
-    - Open Source
 - **Resource**:
     - Self-managed syslog forwarder
 - **Network**:
@@ -46,8 +40,8 @@ Ekinops OneOS is a comprehensive and flexible network operating system designed 
 ### Logs details
 
 - **Supported functionalities**: See section [Overview](#overview)
-- **Supported type(s) of structure**: JSON
-- **Supported verbosity level**: Emergency / Alert / Critical / Error / Warning / Notice / Informational / Debug
+- **Supported type(s) of structure**: Plain Text
+- **Supported verbosity level**: Warning / Notice / Informational
 
 !!! Note
     Log levels are based on the taxonomy of [RFC5425](https://datatracker.ietf.org/doc/html/rfc5424). Adapt according to the terminology used by the editor.
@@ -103,11 +97,14 @@ This setup guide will show you how to forward your Ekinops OneOS logs to Sekoia.
 
 {!_shared_content/integration/forwarder_configuration.md!}
 
+{!_shared_content/operations_center/integrations/generated/4760d0bc-2194-44e5-a876-85102b18d832.md!} Sample
+
 ## Detection section
 
 The following section provides information for those who wish to learn more about the detection capabilities enabled by collecting this intake. It includes details about the built-in rule catalog, event categories, and ECS fields extracted from raw events. This is essential for users aiming to create [custom detection rules](/docs/xdr/features/detect/sigma.md), perform hunting activities, or pivot in the [events page](/docs/xdr/features/investigate/events.md).
 
 {!_shared_content/operations_center/integrations/generated/4760d0bc-2194-44e5-a876-85102b18d832.md!}
+
 {!_shared_content/operations_center/detection/generated/suggested_rules_4760d0bc-2194-44e5-a876-85102b18d832_do_not_edit_manually.md!}
 
 ## Further readings
