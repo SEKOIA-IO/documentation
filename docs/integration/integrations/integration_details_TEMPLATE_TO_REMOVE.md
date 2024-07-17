@@ -5,14 +5,14 @@ last updated: DD/MM/YYYY
 
 ## Overview
 
-- **Vendor**:
+- **Vendor**: HAProxy Technologies
 - **Plan**: Defend Core / Defend Prime
 - **Supported environment**: On Premise / SaaS
 - **Version compatibility, if applicable**:
 
 - **Detection based on**: Telemetry / Security Alerts / Audit
 - **Supported application or feature**:
-- **Coverage Score**:
+- **Coverage Score**: 2
 
 ## High-Level Architecture Diagram
 
