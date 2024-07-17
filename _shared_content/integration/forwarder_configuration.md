@@ -3,11 +3,11 @@
 To forward events using syslog to Sekoia.io, you need to update the syslog header with the intake key you previously created.
 Here is an example of your message before the forwarder
 ```
-<%pri%>1 %timestamp:::date-rfc3339% %hostname% %app-name% %procid% LOG RAW_MESSAGE]
+<%pri%>1 %timestamp:::date-rfc3339% %hostname% %app-name% %procid% LOG RAW_MESSAGE
 ```
 and after
 ```
-<%pri%>1 %timestamp:::date-rfc3339% %hostname% %app-name% %procid% LOG [SEKOIA@53288 intake_key=\"YOUR_INTAKE_KEY\" RAW_MESSAGE]
+<%pri%>1 %timestamp:::date-rfc3339% %hostname% %app-name% %procid% LOG [SEKOIA@53288 intake_key=\"YOUR_INTAKE_KEY\"] RAW_MESSAGE
 ```
 
 To achieve this you can: 
