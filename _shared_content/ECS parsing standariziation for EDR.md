@@ -7,12 +7,12 @@ To ensure consistent recognition and semantic interpretation of EDR (Endpoint De
 
 | **Field**        | **Description**                                | **Examples of values**                          |
 |------------------|------------------------------------------------|-------------------------------------------------|
-| `action.type`    | Specifies the action taken by the EDR system.  | `block`, `allow`, `alert`                       |
-| `event.category` | The high-level category of the event.          | `malware`, `intrusion`, `policy`                |
-| `event.code`     | A unique identifier or code representing the event. | `12345`, `67890`, `ABCDE`                     |
+| `action.type`    | Specifies the action taken by the EDR system  | `block`, `allow`, `alert`                       |
+| `event.category` | The high-level category of the event          | `malware`, `intrusion`, `policy`                |
+| `event.code`     | A unique identifier or code representing the event | `12345`, `67890`, `ABCDE`                     |
 | `event.kind`     | Describes the kind of event                    | `event`, `alert`, `metric`                      |
-| `event.dataset`  | Specifies the dataset used by the EDR system.  | `sentinelone`, `harfanglab`, `crowdstrike`, `cybereason`, `sophos`, `stormshield`, `symantec`, `tehtris`, `trendmicro`, `withsecure` |
-| `event.severity` | The severity level of the event.               | `low`, `medium`, `high`, `critical`             |
+| `event.dataset`  | Specifies the dataset used by the EDR system  | `sentinelone`, `harfanglab`, `crowdstrike`, `cybereason`, `sophos`, `stormshield`, `symantec`, `tehtris`, `trendmicro`, `withsecure` |
+| `event.severity` | The severity level of the event               | `low`, `medium`, `high`, `critical`             |
 
 ## 🛠️ Optional Fields
 
@@ -32,11 +32,11 @@ To provide more context and enhance the description of the events, including add
 | `host.os.full`          | The OS of the host that generated the event     | `Windows 11 Enterprise`, `Ubuntu 22.04`          |
 | `host.domain`           | The domain of the host that generated the event | `Workgroup`                                      |
 ## Examples of event parsing
-In this section, raw events extracted from real use cases are used to show the expected parsing outcome .For each example, the input will be a raw event in json format and the output will be in ECS.
-We will see in the next section examples of EDRs and how examples of ECS fields are parsed.
+In this section, raw events extracted from real use cases are used to show the expected parsing outcome . For each example, the input will be a raw event in json format and the output will be in ECS.
+
     
 ### HarfangLab EDR
-This is a Harfang EDR lab alert that was triggered by Harfang agent in a Windows machine. The related event is the creation of a new local user by a Powershell.
+This is a HarfangLab EDR alert that was triggered by Harfang agent in a Windows machine. The related event is the creation of a new local user by a Powershell.
 
 **Raw Event Before Parsing**    
 ```json
@@ -161,7 +161,7 @@ This is a Harfang EDR lab alert that was triggered by Harfang agent in a Windows
   ```
 For example, the event characteristics are derived from the log_type and alert_subtype(`process.log_type`) fields in the raw message:
 * The fields `event.kind` and `event.dataset` are set to alert because the log_type in the raw event is alert.
-* The field `event.category` is set to 'process' and `event.type` is set to 'start' because the `log_type` in the process field of the raw event is identified as process.
+* The field `event.category` is set to 'process' and `event.type` is set to 'start' because the `process.log_type` field of the raw event is identified as process.
 
 **ECS Fields After Parsing**
     
@@ -317,7 +317,7 @@ Let’s take a look to another EDR example and see how the different ECS fields 
     }
 ```
     
-In this example the fields `event.kind` , `event.type` and `event.category`  are correctly parsed respecively to 'alert', 'info' and 'category' because `metadata.eventType`is 'DetectionSummaryEvent'
+In this example the fields `event.kind` , `event.type` and `event.category`  are correctly parsed respectively to 'alert', 'info' and 'category' because `metadata.eventType`is 'DetectionSummaryEvent'
     
 The result after parsing is as follows :
     
