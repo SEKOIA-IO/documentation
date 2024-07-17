@@ -396,22 +396,24 @@ nav:
     - Datetime representation: xdr/FAQ/datetime.md
   - Develop:
     - Quickstart: xdr/develop/quickstart.md
+    - Filtering: xdr/develop/filtering.md
     - Guides:
-      - Filtering: xdr/develop/guides/filtering.md
-      - Automation:
-        - Overview: xdr/develop/guides/automation/overview.md
-        - Create a Module: xdr/develop/guides/automation/create_a_module.md
-      - Format:
-        - Overview: xdr/develop/guides/formats/overview.md
-        - Create a Format: xdr/develop/guides/formats/create_a_format.md
-        - Datasources: xdr/develop/guides/formats/datasources.md
-        - Definition of a structured event: xdr/develop/guides/formats/structured_event.md
-        - Definition of the taxonomy: xdr/develop/guides/formats/taxonomy.md
-        - How to write a parser: xdr/develop/guides/formats/parser.md
-        - How to write smart descriptions: xdr/develop/guides/formats/smartdescriptions.md
-        - Best Practices:
-          - Overview: xdr/develop/guides/formats/best_practices/overview.md
-          - Authentications: xdr/develop/guides/formats/best_practices/authentications.md
+      - Develop an integration:
+        - Overview: xdr/develop/guides/develop_integration/overview.md
+        - Format:
+          - Overview: xdr/develop/guides/formats/overview.md
+          - Create a Format: xdr/develop/guides/formats/create_a_format.md
+          - Datasources: xdr/develop/guides/formats/datasources.md
+          - Definition of a structured event: xdr/develop/guides/formats/structured_event.md
+          - Definition of the taxonomy: xdr/develop/guides/formats/taxonomy.md
+          - How to write a parser: xdr/develop/guides/formats/parser.md
+          - How to write smart descriptions: xdr/develop/guides/formats/smartdescriptions.md
+          - Best Practices:
+            - Overview: xdr/develop/guides/formats/best_practices/overview.md
+            - Authentications: xdr/develop/guides/formats/best_practices/authentications.md
+        - Automation:
+          - Overview: xdr/develop/guides/automation/overview.md
+          - Create a Module: xdr/develop/guides/automation/create_a_module.md
     - REST API:
       - Authentication and Community: xdr/develop/rest_api/community.md
       - Dashboard: xdr/develop/rest_api/dashboard.md
