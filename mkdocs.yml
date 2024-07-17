@@ -592,6 +592,20 @@ nav:
       - Playbooks: tip/develop/rest_api/playbooks.md
 - Integration:
   - Introduction: integration/index.md
+  - Ingestion methods : integration/ingestion_methods/index.md
+  - List of integrations :
+    - Applicatives: 
+      - Overview : integration/categories/applicative/index.md
+    - Endpoint : 
+      - Overview : integration/categories/endpoint/index.md
+    - Network : 
+      - Overview: integration/categories/network/index.md
+    - Generic : 
+      - Overview: integration/categories/generic/index.md
+    - IAM/SASE : 
+      - Overview: integration/categories/iam_sase/index.md
+    - Network Security : 
+      - Overview: integration/categories/network_security/index.md
 plugins:
 - search: null
 - redirects:
