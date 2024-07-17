@@ -8,8 +8,8 @@
 
 ## What is your usecase?
 
-- You want to create a new format or modify an existing format, go to this [section](#i-want-to-create-a-new-format-or-modify-an-existing-format)
-- You want to create a new automation, go to this [section](#i-want-to-create-a-new-automation)
+- **You want to create a new format or modify an existing format, go to this [section](#i-want-to-create-a-new-format-or-modify-an-existing-format)**
+- **You want to create a new automation, go to this [section](#i-want-to-create-a-new-automation)**
 
 ## Different development usecases
 
