@@ -19,7 +19,7 @@ SpamAssassin is a computer program used for e-mail spam filtering. SpamAssassin 
 - **Type of integration**: Outbound (PUSH to Sekoia.io)
 - **Schema**
 
-![spamassassin_architecture](/docs/assets/integration/apache_spam_assassin_architecture.png){: style="max-width:100%"}
+![spamassassin_architecture](/assets/integration/apache_spam_assassin_architecture.png){: style="max-width:100%"}
 
 !!! Alternative
 

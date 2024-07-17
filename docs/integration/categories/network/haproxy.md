@@ -21,7 +21,7 @@ HAProxy is a free, open-source software that provides a high availability load b
 - **Type of Integration**: Outbound (PUSH to Sekoia.io)
 - **Schema**:
 
-![haproxy_architecture](/docs/assets/integration/haproxy_architecture.png){: style="max-width:100%"}
+![haproxy_architecture](/assets/integration/haproxy_architecture.png){: style="max-width:100%"}
 
 !!! Alternative Log Collection Method
 
@@ -113,6 +113,8 @@ For more information on Rsyslog configuration, please consult the [official webs
 {!_shared_content/integration/intake_configuration.md!}
 
 {!_shared_content/integration/forwarder_configuration.md!}
+
+{!_shared_content/operations_center/integrations/generated/ff1873e7-8757-4b1a-b0ca-b33f9b27f3d9_sample.md!}
 
 ## Detection section
 

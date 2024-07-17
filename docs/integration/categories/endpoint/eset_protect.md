@@ -27,7 +27,7 @@ type: intake
 
 - **Schema**
 
-![eset_protect_architecture](/docs/assets/integration/eset_protect_architecture.png){: style="max-width:100%"}
+![eset_protect_architecture](/assets/integration/eset_protect_architecture.png){: style="max-width:100%"}
 
 ## Specification
 
@@ -98,6 +98,8 @@ To enable Syslog server in ESET Protect on Cloud:
 {!_shared_content/integration/intake_configuration.md!}
 
 {!_shared_content/integration/forwarder_configuration.md!}
+
+{!_shared_content/operations_center/integrations/generated/2ffff1fd-fed7-4a24-927a-d619f2bb584a_sample.md!}
 
 ## Detection section
 

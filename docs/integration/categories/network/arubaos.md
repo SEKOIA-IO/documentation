@@ -19,7 +19,7 @@ Aruba OS is the operating system developed by Aruba Networks, designed for their
 - **Type of integration**: Outbound (PUSH to Sekoia.io)
 - **Schema**
 
-![arubaos_switch_architecture](/docs/assets/integration/arubaos_switch_architecture.png){: style="max-width:100%"}
+![arubaos_switch_architecture](/assets/integration/arubaos_switch_architecture.png){: style="max-width:100%"}
 
 
 ## Specification
@@ -104,6 +104,8 @@ This setup guide will show you how to forward your ArubaOS logs to Sekoia.io by 
 {!_shared_content/integration/intake_configuration.md!}
 
 {!_shared_content/integration/forwarder_configuration.md!}
+
+{!_shared_content/operations_center/integrations/generated/d6d15297-e977-4584-9bb3-f0290b99f014_sample.md!}
 
 ## Detection section
 

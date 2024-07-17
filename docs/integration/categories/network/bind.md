@@ -19,7 +19,7 @@ BIND is an implementation of the Domain Name System (DNS) of the Internet. It pe
 - **Type of integration**: Outbound (PUSH to Sekoia.io)
 - **Schema**
 
-![bind_architecture](/docs/assets/integration/bind_architecture.png){: style="max-width:100%"}
+![bind_architecture](/assets/integration/bind_architecture.png){: style="max-width:100%"}
 
 !!! Alternative
 
@@ -125,6 +125,8 @@ For more informations on [how to configure your BIND instance on its official we
 {!_shared_content/integration/intake_configuration.md!}
 
 {!_shared_content/integration/forwarder_configuration.md!}
+
+{!_shared_content/operations_center/integrations/generated/a199fbde-508e-4cb9-ae37-842703494be0_sample.md!}
 
 ## Detection section
 

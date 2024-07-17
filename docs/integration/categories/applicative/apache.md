@@ -22,7 +22,7 @@ The Apache HTTP Server, colloquially called Apache, is free and open-source cros
 - **Type of integration**: Outbound (PUSH to Sekoia.io)
 - **Schema**
 
-![apache_http_server_architecture](/docs/assets/integration/apache_http_server_architecture.png){: style="max-width:100%"}
+![apache_http_server_architecture](/assets/integration/apache_http_server_architecture.png){: style="max-width:100%"}
 
 !!! Alternative
 

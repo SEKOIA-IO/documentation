@@ -9,7 +9,6 @@ Cisco Meraki MX is a multifunctional security and SD-WAN enterprise appliance wi
 - **Vendor**: Cisco
 - **Plan**: Defend Core
 - **Supported environment**: On Premise
-- **Version compatibility**: Latest version as of now
 - **Detection based on**: Telemetry
 - **Supported application or feature**: Security and SD-WAN
 - **Coverage Score**: 3
@@ -19,18 +18,12 @@ Cisco Meraki MX is a multifunctional security and SD-WAN enterprise appliance wi
 - **Type of integration**: Outbound (PUSH to Sekoia.io)
 - **Schema**
 
-![cisco_meraki_mx_architecture](/assets/integration/cisco_meraki_mx_architecture.png)
-
-!!! Alternative
-
-    This will not be detailed in this documentation, but logs can also be sent directly to Sekoia.io over HTTPS using the Sekoia.io Endpoint Agent and the "Collect logs in files" method. This provides an alternative to the specified syslog collection method and may be preferable in certain environments.
+![cisco_mx_architecture](/assets/integration/cisco_mx_architecture.png){: style="max-width:100%"}
 
 ## Specification
 
 ### Prerequisites
 
-- **Licence level**:
-    - Open Source
 - **Resource**:
     - Self-managed syslog forwarder
 - **Network**:
@@ -46,13 +39,11 @@ Cisco Meraki MX is a multifunctional security and SD-WAN enterprise appliance wi
 ### Logs details
 
 - **Supported functionalities**: See section [Overview](#overview)
-- **Supported type(s) of structure**: JSON
-- **Supported verbosity level**: Emergency / Alert / Critical / Error / Warning / Notice / Informational / Debug
+- **Supported type(s) of structure**: Plain text
+- **Supported verbosity level**: Informational
 
 !!! Note
     Log levels are based on the taxonomy of [RFC5425](https://datatracker.ietf.org/doc/html/rfc5424). Adapt according to the terminology used by the editor.
-
-- **Default Log Location**:
 
 ### Sample of supported raw events
 
@@ -66,11 +57,9 @@ Cisco Meraki MX is a multifunctional security and SD-WAN enterprise appliance wi
 
 This setup guide will show you how to provide an integration between Cisco Meraki MX events and Sekoia.io.
 
-#### Detailed Procedure:
-
-1. **Enable Syslog Forwarding:**
+**Enable Syslog Forwarding:**
    - Log on your Cisco Meraki MX appliance.
-   - Follow [this guide](https://documentation.meraki.com/General_Administration/Monitoring_and_Reporting/Syslog_Server_Overview_and_Configuration#Configure_Dashboard) to enable syslog forwarding.
+   - Follow [this guide](https://documentation.meraki.com/General_Administration/Monitoring_and_Reporting/Syslog_Server_Overview_and_Configuration#Configure_Dashboard) to enable syslog forwarding to a syslog forwarder.
 
 ### Instruction on Sekoia
 
