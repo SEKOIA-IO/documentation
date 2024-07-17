@@ -11,7 +11,7 @@ To contribute to this repository, you will need the following development setup:
 
 ## How to contribute
 
-- Follow this [guide](../parser_python/) to write your parser in Python
+- Follow this [guide](../parser/) to write your parser in Python
 - [Test your format](../testing/)
 
 ## Contribution checklist
