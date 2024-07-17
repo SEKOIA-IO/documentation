@@ -279,6 +279,21 @@ Select the way who develop your parse to find the appropriate documentation: wit
 
     To get for instance the `user_id` in a next stage, you can use `{{stage1.message.user_id}}`
 
+    ## Definitions of parsing warning and parsing error
+
+    A parser can encounter 2 type of issues during parsing.
+
+    ### Parsing warning
+    
+    A parser can generate a parsing warning in 2 scenarios:
+
+    - The parsing of the event was a success but no data were extracted
+    - Some values were incompatibles with their expected data type and could not be extracted
+
+    ### Parsing error
+
+    A parser generates a parsing error when the data does not match the expected format (JSON, Key value, Grok, Date, Delimiter separated value).
+
     ## Filters
 
     Reference to a field can be extended with filters. Filters are separated from the field path by a pipe symbol (|).
@@ -1029,6 +1044,21 @@ Select the way who develop your parse to find the appropriate documentation: wit
         - destination.ip
       filter: '{{stage1.log_type != "network"}}'
     ```
+
+    ## Definitions of parsing warning and parsing error
+
+    A parser can encounter 2 type of issues during parsing.
+
+    ### Parsing warning
+    
+    A parser can generate a parsing warning in 2 scenarios:
+
+    - The parsing of the event was a success but no data were extracted
+    - Some values were incompatibles with their expected data type and could not be extracted
+
+    ### Parsing error
+
+    A parser generates a parsing error when the data does not match the expected format (JSON, Key value, Grok, Date, Delimiter separated value).
 
     ## Inspirations
 

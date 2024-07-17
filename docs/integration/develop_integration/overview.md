@@ -4,7 +4,7 @@
 
 1. Check our [Integration catalog](https://www.sekoia.io/en/integrations-catalog/)
 2. Check also our [roadmap portal](https://roadmap-integrations.sekoia.io/tabs/18-coming-next) for upcoming integrations
-3. If you still have doubts, ask our **Support** for confirmation
+3. If you still have doubts, ask our Support for confirmation
 
 ## What is your usecase?
 
@@ -33,13 +33,13 @@ Once you are done, you can create an intake based on this new format:
 
 #### Step 2. Homologate a new format in the Sekoia catalog (optional)
 
-If you have already developed a new format and would like Sekoia to perform the maintenance this format, you can request an homologation of your custom format. Once homologated, the format will integrate the public catalog of Sekoia.
+If you have already developed a new format and would like Sekoia to perform maintenance of this format, you can request an homologation of your custom format. Once homologated, the format will integrate the public catalog of Sekoia.
 
 !!! info
-    To homologate your format, you will have to need to contribute through our Github repository 
+    To homologate your format, you will need to contribute through our Github repository 
 
 - Fork the Github repository [SEKOIA-IO/intake-formats](https://github.com/SEKOIA-IO/intake-formats)
-- Follow this contributing [guide](../formats/contribute/)
+- Follow this contribution [guide](../formats/contribute/)
 
 ### I want to create a new automation
 
