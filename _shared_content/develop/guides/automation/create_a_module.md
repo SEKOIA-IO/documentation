@@ -7,20 +7,18 @@ This module will contain one trigger and one action:
 * The trigger will watch for new entries exposed by an HTTP endpoint
 * The action will allow to send an HTTP request and return its response.
 
+## Technical Requirements
 
-## Initialize the module
-
-The first step is to install the SEKOIA's automation SDK.
-This SDK contains various command line utilities that will help us manage modules.
-
-Simply run the following command:
-
-```shell
+- Clone the Github repository [SEKOIA-IO/automation-library](https://github.com/SEKOIA-IO/automation-library)
+- Install the SEKOIA's automation SDK. This SDK contains various command line utilities that will help us manage    modules. Simply run the following command:
+``` shell
 pip install sekoia-automation-sdk
-```
 
+```
 !!! note
     The SDK needs a Python version equal or newer to 3.10.
+
+## Initialize the module
 
 Once the SDK is installed we can use it to create an empty module:
 
@@ -207,6 +205,46 @@ class Request(Action):  # (4)!
 6. The base `Action` class provides few helpers like the `log` method. This method makes sure the log is sent to the API so when checking the run of the action we can see a trace of what happened.
 7. The `error` method will mark the action as failed and send back the error to the API.
 8. Finally, if everything went well we can return the results. The base action will take care of sending it back to the playbook API.
+
+## Test your code 
+Make sure you test your code with unitary and integration tests. In the following code, 
+we will test `get request`our previous example's action code. In practice, you have to cover all the use cases of the module. 
+```python
+import pytest
+import requests_mock
+from pydantic import HttpUrl
+from your_module import Request, RequestArguments, Response  # Adjust the import according to your module structure
+
+@requests_mock.Mocker()
+def test_get_request(mock_request):
+    # Mock the HTTP response
+    mock_response = {
+        'status_code': 200,
+        'headers': {'Content-Type': 'application/json'},
+        'text': 'Success'
+    }
+    mock_request.get('http://example.com', status_code=mock_response['status_code'],
+                     headers=mock_response['headers'], text=mock_response['text'])
+
+    # Create the arguments
+    arguments = RequestArguments(
+        url='http://example.com',
+        headers=None,
+        method='get'
+    )
+
+    # Instantiate and run the action
+    action = Request()
+    result = action.run(arguments)
+
+    # Assert the response
+    assert result.status_code == mock_response['status_code']
+    assert result.headers == mock_response['headers']
+    assert result.text == mock_response['text']
+
+
+```
+To effectively manage dependencies and run your tests, you should use Poetry. For more detailed information, you can check the [Poetry documentation](https://python-poetry.org/docs/). Additionally, you can look at the tests in the existing module.
 
 ## Generate the manifest and update the entrypoint
 
@@ -400,4 +438,15 @@ if __name__ == "__main__":
 3. Trigger is registered. The first argument of `module.register` is our action class and the second is the `docker_parameter` that is specified in our trigger's manifest.
 4. Action is registered.
 
-That's it! Now we have a module ready to run !
+## Compliance Validation
+This step will enable you to verify different components of the module and detect any errors. Before proceeding, ensure all test dependencies are installed by running the following command in the /_utils directory:
+``` shell
+poetry install 
+```
+To check the correctness of the module the following command should be run :
+
+```shell
+poetry run python _utils/compliance/__main__.py check --module modules\<module_name> 
+```
+## Homologation request 
+Once you have validated your unit and integration tests, as well as ensured compliance, you can proceed with the homologation request. Refer to this [section](../develop/guides/develop_integration/#step-3-homologate-your-automation-module) in the documentation and follow the required steps.
