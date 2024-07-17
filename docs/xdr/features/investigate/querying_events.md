@@ -6,7 +6,7 @@ The [Events page](https://app.sekoia.io/operations/events) exposes a search capa
 
 ### Fields
 
-The Tables below detail the main fields that can be used to narrow down your search. Events are normalized to use the [Elastic Common Schema (ECS) Reference](https://www.elastic.co/guide/en/ecs/master/index.html). Custom fields can also be used and are listed in the [Integrations section](https://docs.sekoia.io/xdr/features/collect/integrations/).
+The Tables below detail the main fields that can be used to narrow down your search. Events are normalized to use the [Elastic Common Schema (ECS) Reference](https://www.elastic.co/guide/en/ecs/master/index.html). Custom fields can also be used and are listed in the [Integrations section](https://docs.sekoia.io/integration/integrations/).
 
 #### Action
 

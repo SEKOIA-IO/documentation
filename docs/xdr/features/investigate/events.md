@@ -11,7 +11,7 @@ In this documentation, we will dive into the different parts that constitute the
 - The [aggregation](#aggregation) feature and how to create an [anomaly detection rule](#Create-Anomaly-Detection-rule-from-the-aggregation-view) from your query
 
 !!! note
-    To send your logs to Sekoia.io, please refer to this [section](https://docs.sekoia.io/xdr/features/collect/ingestion_methods/).
+    To send your logs to Sekoia.io, please refer to this [section](https://docs.sekoia.io/integration/ingestion_methods/).
 
 ## Search bar
 
