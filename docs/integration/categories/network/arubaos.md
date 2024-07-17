@@ -19,11 +19,8 @@ Aruba OS is the operating system developed by Aruba Networks, designed for their
 - **Type of integration**: Outbound (PUSH to Sekoia.io)
 - **Schema**
 
-![arubaos_switch_architecture](/assets/integration/arubaos_switch_architecture.png)
+![arubaos_switch_architecture](/docs/assets/integration/arubaos_switch_architecture.png){: style="max-width:100%"}
 
-!!! Alternative
-
-    This will not be detailed in this documentation, but logs can also be sent directly to Sekoia.io over HTTPS using the Sekoia.io Endpoint Agent and the "Collect logs in files" method. This provides an alternative to the specified syslog collection method and may be preferable in certain environments.
 
 ## Specification
 
@@ -46,13 +43,11 @@ Aruba OS is the operating system developed by Aruba Networks, designed for their
 ### Logs details
 
 - **Supported functionalities**: See section [Overview](#overview)
-- **Supported type(s) of structure**: JSON
-- **Supported verbosity level**: Emergency / Alert / Critical / Error / Warning / Notice / Informational / Debug
+- **Supported type(s) of structure**: Plain Text
+- **Supported verbosity level**: Informational
 
 !!! Note
     Log levels are based on the taxonomy of [RFC5425](https://datatracker.ietf.org/doc/html/rfc5424). Adapt according to the terminology used by the editor.
-
-- **Default Log Location**:
 
 ### Sample of supported raw events
 
@@ -84,13 +79,11 @@ This setup guide will show you how to forward your ArubaOS logs to Sekoia.io by 
      ```
      Replace `yyyy` with the port number your syslog concentrator is configured to listen on.
 
-3. **Set Log Severity Levels (Optional):**
-   - You can configure the severity level of logs that will be sent to the syslog server.
-     For example, to send logs with severity level `informational` or higher, use the following command:
+3. **Set Log Severity Levels:**
+   - Configure the severity level of logs that will be sent to the syslog server.
      ```bash
      logging level informational
      ```
-     You can adjust the severity level as needed.
 
 4. **Save Configuration Changes:**
    - Save your configuration changes by issuing the appropriate command (e.g., `write memory` or `copy running-config startup-config`) to ensure that the syslog configuration persists across reboots.
@@ -104,7 +97,7 @@ This setup guide will show you how to forward your ArubaOS logs to Sekoia.io by 
      This will generate a test log message that should appear in your syslog server's logs.
 
 6. **Verify Syslog Server Configuration:**
-   - On your syslog server, verify that it is configured to accept syslog messages from the ArubaOS device on the specified port.
+   - On your syslog server, verify that it is configured to accept syslog messages in UDP from the ArubaOS device on the specified port.
 
 ### Instruction on Sekoia
 
@@ -116,10 +109,10 @@ This setup guide will show you how to forward your ArubaOS logs to Sekoia.io by 
 
 The following section provides information for those who wish to learn more about the detection capabilities enabled by collecting this intake. It includes details about the built-in rule catalog, event categories, and ECS fields extracted from raw events. This is essential for users aiming to create [custom detection rules](/docs/xdr/features/detect/sigma.md), perform hunting activities, or pivot in the [events page](/docs/xdr/features/investigate/events.md).
 
-{!_shared_content/operations_center/integrations/generated/d6d15297-e977-4584-9bb3-f0290b99f014.md!}
 {!_shared_content/operations_center/detection/generated/suggested_rules_d6d15297-e977-4584-9bb3-f0290b99f014_do_not_edit_manually.md!}
+
+{!_shared_content/operations_center/integrations/generated/d6d15297-e977-4584-9bb3-f0290b99f014.md!}
 
 ## Further readings
 
-- The code of the Intake format is available [here](https://github.com/SEKOIA-IO/intake-formats/tree/main/Apache).
 - [ArubaOS documentation](https://www.arubanetworks.com/documentation/)
