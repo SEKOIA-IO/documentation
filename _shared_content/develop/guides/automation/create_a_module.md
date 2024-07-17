@@ -442,8 +442,7 @@ if __name__ == "__main__":
 4. Action is registered.
 
 ## Compliance Validation
-This step will allow to check different components of the module and detect errors.
-Before that you need to run poetry install in the  `/_utils` directory to make sure all dependencies installed :
+This step will enable you to verify different components of the module and detect any errors. Before proceeding, ensure all test dependencies are installed by running the following command in the /_utils directory:
 ``` shell
 poetry install 
 ```
