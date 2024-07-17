@@ -67,6 +67,12 @@ def analyze_parser(parser, custom_fields) -> Dict:
         "kind": sorted(kind_values),
     }
 
+def is_valid_json(s):
+    try:
+        json.loads(s)
+        return True
+    except ValueError:
+        return False
 
 def load_intakes(intake_repository: str) -> List[Dict]:
 
@@ -110,6 +116,9 @@ def load_intakes(intake_repository: str) -> List[Dict]:
             # load tests
             intake_tests = intake_path / "tests"
             intake["tests"] = []
+            intake["samples"] = []
+            intake["samples_type"] = ""
+            intake["is_sample_json"] = False
             if intake_tests.exists():
                 for intake_test in sorted(intake_tests.iterdir()):
 
@@ -117,11 +126,19 @@ def load_intakes(intake_repository: str) -> List[Dict]:
                         continue
 
                     with open(intake_test, "r") as fd:
+                        test = json.load(fd)
+                        intake["is_sample_json"] = is_valid_json(test["expected"]["message"])
+                        content = json.dumps(json.loads(test["expected"]["message"]), indent="    ") if intake["is_sample_json"] else test["expected"]["message"]
+                        intake["samples"].append(
+                            {
+                                "name": intake_test.name.split('.')[0],
+                                "content": content
+                            })
                         intake["tests"].append(
                             {
                                 "name": intake_test.name,
                                 "content": json.dumps(
-                                    json.load(fd)["expected"], indent="    "
+                                    test["expected"], indent="    "
                                 ),
                             }
                         )
@@ -148,6 +165,8 @@ def generate_intake_doc(intake: Dict) -> str:
         fields=intake["fields"],
         parser=intake["parser"],
         tests=intake["tests"],
+        is_sample_json = intake["is_sample_json"],
+        samples=intake["samples"],
         repo_path=intake["repo_path"],
     )
 
