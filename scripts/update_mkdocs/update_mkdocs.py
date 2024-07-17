@@ -115,7 +115,6 @@ def load_intakes(intake_repository: str) -> List[Dict]:
             intake_tests = intake_path / "tests"
             intake["tests"] = []
             intake["samples"] = []
-            intake["samples_type"] = ""
             intake["is_sample_json"] = False
             if intake_tests.exists():
                 for intake_test in sorted(intake_tests.iterdir()):
