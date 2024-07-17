@@ -208,7 +208,7 @@ class Request(Action):  # (4)!
 
 ## Test your code 
 Make sure you test your code with unitary and integration tests. In the following code, 
-we will test `get request`our previous example's action code. In practice, you have to cover most of the use cases of the module. 
+we will test `get request`our previous example's action code. In practice, you have to cover all the use cases of the module. 
 ```python
 import pytest
 import requests_mock
