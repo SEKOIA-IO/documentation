@@ -592,6 +592,8 @@ nav:
       - Playbooks: tip/develop/rest_api/playbooks.md
 - Integration:
   - Introduction: integration/index.md
+  - Ingestion methods : integration/ingestion_methods/index.md
+  - List of integrations : integration/integrations/index.md
 plugins:
 - search: null
 - redirects:

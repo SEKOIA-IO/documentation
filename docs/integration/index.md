@@ -1,3 +1,9 @@
 # Integrations
 
-# What's new
+## What's new
+
+##Future integrations
+
+# Ingestion methods
+
+# List of integrations
