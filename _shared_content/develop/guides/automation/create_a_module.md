@@ -452,4 +452,4 @@ To check the correctness of the module the following command should be run :
 poetry run python _utils/compliance/__main__.py check --module modules\<module_name> 
 ```
 ## Homologation request 
-Once you validated your unitary and integration tests and the compliance, you can proceed with homologation request. You can refer to this page in the doc and follow the required steps [section](../develop/guides/develop_integration/#step-3-homologate-your-automation-module).
+Once you have validated your unit and integration tests, as well as ensured compliance, you can proceed with the homologation request. Refer to this [section](../develop/guides/develop_integration/#step-3-homologate-your-automation-module) in the documentation and follow the required steps.
