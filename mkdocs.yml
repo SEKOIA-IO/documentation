@@ -940,6 +940,7 @@ theme:
   - navigation.footer
   - content.code.annotate
   - content.action.edit
+  - content.code.copy
   font: false
   include_search_page: true
   lang: en
