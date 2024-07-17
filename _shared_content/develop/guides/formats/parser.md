@@ -4,7 +4,7 @@ A parser consists of a sequence of stages organized under a pipeline that modifi
 
 Select the way who develop your parse to find the appropriate documentation: with the custom format feature in the product or from the github repository.
 
-=== "parser in the platform"
+=== "In the platform"
 
     ## Stages
     A Custom format consists of a sequence of stages organized under a pipeline that modifies the event on the fly.
@@ -380,7 +380,7 @@ Select the way who develop your parse to find the appropriate documentation: wit
 
     This field will then be available in the [Custom Stage](#custom-stage).
 
-=== "parsers in code"
+=== "In code"
 
     ## Pipeline
 
