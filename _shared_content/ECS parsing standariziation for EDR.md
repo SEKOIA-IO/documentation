@@ -1,7 +1,7 @@
 
 # 🌟 Event Standardization for EDR Systems
 
-To ensure consistent recognition and semantic interpretation of **EDR (Endpoint Detection and Response) events**, we adhere to the following standardization guidelines. The supported EDR systems include **SentinelOne, HarfangLab, CrowdStrike, Cybereason, Sophos, Stormshield, Symantec, Tehtris, TrendMicro, and WithSecure**.
+To ensure consistent recognition and semantic interpretation of EDR (Endpoint Detection and Response) events, we follow the standardization guidelines bellow. We recommend users to adopt the same guidelines for their EDR custom format. The already supported EDR systems include SentinelOne, HarfangLab, CrowdStrike, Cybereason, Sophos, Stormshield, Symantec, Tehtris, TrendMicro, and WithSecure.
 
 ## 📋 Recommended Fields
 
