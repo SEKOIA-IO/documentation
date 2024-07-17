@@ -1,0 +1,121 @@
+uuid: 60af2bd6-7ef0-48a7-a6db-90fcdd7236f1
+name: FortiMail
+type: intake
+
+## Overview
+
+Fortinet cybersecurity solutions sell physical products such as firewalls, plus software and services such as anti-virus protection, intrusion prevention systems, and endpoint security components.
+
+- **Vendor**: Fortinet
+- **Plan**: Defend Core / Defend Prime
+- **Supported environment**: On Premise
+- **Version compatibility, if applicable**:
+- **Detection based on**: Security Alerts / Network Telemetry
+- **Supported application or feature**: Email Security
+- **Coverage Score**: 3
+
+## High-Level Architecture Diagram
+
+- **Type of integration**: Outbound (PUSH to Sekoia.io)
+- **Schema**
+
+![fortinet_fortimail_architecture](/assets/integration/fortinet_fortimail_architecture.png)
+
+!!! Alternative
+
+    This will not be detailed in this documentation, but logs can also be sent directly to Sekoia.io over HTTPS using the Sekoia.io Endpoint Agent and the "Collect logs in files" method. This provides an alternative to the specified syslog collection method and may be preferable in certain environments.
+
+## Specification
+
+### Prerequisites
+
+- **Licence level**:
+    - Open Source
+- **Resource**:
+    - Self-managed syslog forwarder
+- **Network**:
+    - Outbound traffic allowed
+- **Permissions**:
+    - Administrator privileges on the FortiMail appliance
+    - Root access to the Linux server with the syslog forwarder
+
+### Transport Protocol/Method
+
+- **Indirect Syslog**
+
+### Logs details
+
+- **Supported functionalities**: See section [Overview](#overview)
+- **Supported type(s) of structure**: syslog
+- **Supported verbosity level**: Emergency / Alert / Critical / Error / Warning / Notice / Informational / Debug
+
+!!! Note
+    Log levels are based on the taxonomy of [RFC5425](https://datatracker.ietf.org/doc/html/rfc5424). Adapt according to the terminology used by the editor.
+
+- **Default Log Location**:
+
+### Sample of supported raw events
+
+**TODO**: Add a directory with raw event in every integration.
+
+## Step-by-Step Configuration Procedure
+
+### Instructions on the 3rd Party Solution
+
+#### Forward FortiMail Logs to Sekoia.io
+
+This setup guide will show you how to forward your FortiMail logs to Sekoia.io by means of a syslog transport channel.
+
+#### Detailed Procedure:
+
+1. **FortiMail Logs:**
+    - On FortiMail appliances, most of the important hardware and software activities that are relevant for security detection and analysis are logged into six files:
+      - History (statistics): Records all email traffic going through the FortiMail unit.
+      - System Event (kevent): Records system management activities, including changes to the system configuration as well as administrator and user log-ins and log-outs.
+      - Mail Event (event): Records mail activities.
+      - Antispam (spam): Records spam detection events.
+      - Antivirus (virus): Records virus intrusion events.
+      - Encryption (encrypt): Records detection of IBE-related events.
+
+2. **Transport to the Collector:**
+
+    - **Prerequisites:**
+      - Administrator privileges on the FortiMail appliance
+      - Traffic towards the syslog must be open on `UDP 514`
+
+    - **Configure FortiMail:**
+
+      **Configure Logging to a Syslog Server:**
+
+      1. Go to `Log and Report > Log Settings > Remote`.
+      2. Click `New` to create a new entry OR double-click an existing entry to modify it.
+      3. Select `Enable` to allow logging to a remote host.
+      4. In `Profile name`, enter a profile name.
+      5. In `IP`, enter the IP address of the `Syslog server` where the FortiMail unit will store the logs.
+      6. In `Port`, enter the UDP port number on which the Syslog server listens for connections (by default, `UDP 514`).
+      7. From `Level`, select the severity level that a log message must equal or exceed in order to be recorded to this storage location.
+      8. From `Facility`, select the facility identifier that the FortiMail unit will use to identify itself when sending log messages.
+
+         > To easily identify log messages from the FortiMail unit when they are stored on a remote logging server, enter a unique facility identifier, and verify that no other network devices use the same facility identifier.
+
+      9. From `Log protocol`, select `Syslog`.
+      10. In `Logging Policy Configuration`, enable the types of logs you want to record to this storage location.
+      11. Click `Create`.
+
+### Instruction on Sekoia
+
+{!_shared_content/integration/intake_configuration.md!}
+
+{!_shared_content/integration/forwarder_configuration.md!}
+
+## Detection section
+
+{!_shared_content/operations_center/integrations/generated/60af2bd6-7ef0-48a7-a6db-90fcdd7236f1.md!}
+
+The following section provides information for those who wish to learn more about the detection capabilities enabled by collecting this intake. It includes details about the built-in rule catalog, event categories, and ECS fields extracted from raw events. This is essential for users aiming to create [custom detection rules](/docs/xdr/features/detect/sigma.md), perform hunting activities, or pivot in the [events page](/docs/xdr/features/investigate/events.md).
+
+{!_shared_content/operations_center/detection/generated/suggested_rules_60af2bd6-7ef0-48a7-a6db-90fcdd7236f1_do_not_edit_manually.md!}
+
+## Further readings
+
+- [Configure FortiMail Log Forwarding](https://docs.fortinet.com/document/fortimail/6.2.0/administration-guide/332364/configuring-logging#logging_2063907032_1949484)
