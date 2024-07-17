@@ -7,9 +7,8 @@ type: intake
 Auditbeat communicates directly with the Linux audit framework, collects the same data as auditd, then the data can be stored in JSON inside a log file before being sent to a log concentrator.
 
 - **Vendor**: Elastic
-- **Plan**: Defend Core / Defend Prime
+- **Plan**: Defend Prime
 - **Supported environment**: On Premise
-- **Version compatibility, if applicable**:
 - **Detection based on**: Telemetry
 - **Supported application or feature**: System Monitoring and Security
 - **Coverage Score**: 3
@@ -21,16 +20,10 @@ Auditbeat communicates directly with the Linux audit framework, collects the sam
 
 ![linux_auditbeat_architecture](/assets/integration/linux_auditbeat_architecture.png)
 
-!!! Alternative
-
-    This will not be detailed in this documentation, but logs can also be sent directly to Sekoia.io over HTTPS using the Sekoia.io Endpoint Agent and the "Collect logs in files" method. This provides an alternative to the specified syslog collection method and may be preferable in certain environments.
-
 ## Specification
 
 ### Prerequisites
 
-- **Licence level**:
-    - Open Source
 - **Resource**:
     - Self-managed syslog forwarder
 - **Network**:
@@ -184,7 +177,7 @@ This setup guide will show you how to forward your Auditbeat logs to Sekoia.io b
       setup.template.settings:
         index:
           number_of_shards: 1
-          
+
       logging.level: info
       logging.to_files: true
       logging.files:
