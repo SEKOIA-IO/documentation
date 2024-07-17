@@ -9,7 +9,6 @@ This module will contain one trigger and one action:
 
 ## Technical Requirements
 
-- Clone the Github repository [SEKOIA-IO/automation-library](https://github.com/SEKOIA-IO/automation-library)
 - Install the SEKOIA's automation SDK. This SDK contains various command line utilities that will help us manage    modules. Simply run the following command:
 ``` shell
 pip install sekoia-automation-sdk
@@ -453,7 +452,8 @@ poetry run python _utils/compliance/__main__.py check --module modules\<module_n
 
 Once you are done developing and testing your automation, the last step is to request an homologation to Sekoia. Once your automation is homologated, it will appear in the playbook library of **Sekoia XDR platform**:
 
-- Send an email to [team-integration@sekoia.io](mailto:team-integration@sekoia.io)
+- Create a pull request
+- Send an email to [team-integration@sekoia.io](mailto:team-integration@sekoia.io) with the pull request link
 - You will get an acknowledgement from Sekoia Integration team
 - In the following days (5 days max), you will receive feedbacks in your pull request that you must take into account
 - Once all feedbacks are taken into account, Integration team will **validate** your pull request
