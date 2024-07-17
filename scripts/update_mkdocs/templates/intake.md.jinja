@@ -24,9 +24,9 @@ In details, the following table denotes the type of events produced by this inte
 {% endif %}
 
 {% if samples %}
-## Sample events
+## Raw Events Samples
 
-Find below a few sample events for this intake.
+In this section, you will find examples of raw logs as generated natively by the source. These examples are provided to help integrators understand the data format before ingestion into Sekoia.io. It is crucial for setting up the correct parsing stages and ensuring that all relevant information is captured.
 
 {% for sample in samples %}
 === "{{sample['name']}}"
@@ -49,10 +49,9 @@ Find below a few sample events for this intake.
 {% endif %}
 
 {% if tests %}
-## Intake Tests
+## Transformed Events Samples after Ingestion
 
-Find below the tests of this intake based on the sample events.
-
+This section demonstrates how the raw logs will be transformed by our parsers. It shows the extracted fields that will be available for use in the [built-in detection rules](/docs/xdr/features/detect/rules_catalog) and hunting activities in the[events page](/docs/xdr/features/investigate/events). Understanding these transformations is essential for analysts to create effective detection mechanisms with [custom detection rules](/docs/xdr/features/detect/sigma) and to leverage the full potential of the collected data.
 {% for test in tests %}
 === "{{test['name']}}"
 
@@ -75,3 +74,5 @@ The following table lists the fields that are extracted, normalized under the EC
 {% for field in parser['fields'] %}|`{{field['name']}}` | `{{field['type']}}` | {{field['short']}} |
 {% endfor %}
 {% endif %}
+
+For more information on the Intake Format, please find the code of the Parser, Smart Descriptions, and Supported Events [here]().
