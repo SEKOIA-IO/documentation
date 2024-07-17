@@ -47,29 +47,26 @@ Citrix NetScaler / ADC (formerly Citrix NetScaler) is a delivery controller and 
 !!! Note
     Log levels are based on the taxonomy of [RFC5425](https://datatracker.ietf.org/doc/html/rfc5424). Adapt according to the terminology used by the editor.
 
-### Sample of supported raw events
-
-**TODO**: Add a directory with raw event in every integration.
-
 ## Step-by-Step Configuration Procedure
 
 ### Instructions on the 3rd Party Solution
 
-#### Forward Citrix NetScaler / ADC Logs to Sekoia.io
-
 This setup guide will show you how to forward both your access and error logs to Sekoia.io by means of a syslog transport channel.
 
-1. **Forward Audit Logs:**
-   - Follow this [guide](https://docs.netscaler.com/en-us/citrix-adc/current-release/system/audit-logging/configuring-audit-logging.html) to enable syslog forwarding for audit logs.
+#### Forward Audit Logs
 
-   **IMPORTANT:** Make sure `-dateFormat MMDDYYYY` is set and the date is present in logs.
+- Follow this [guide](https://docs.netscaler.com/en-us/citrix-adc/current-release/system/audit-logging/configuring-audit-logging.html) to enable syslog forwarding for audit logs.
 
-2. **Forward Application Firewall Logs:**
-   - To enable application firewall logs forwarding, see this [guide](https://support.citrix.com/article/CTX138973/how-to-send-application-firewall-messages-to-a-separate-syslog-server) and apply the following command to convert Application Firewall logs into CEF events:
+!!! Important
+    Make sure `-dateFormat MMDDYYYY` is set and the date is present in logs.
 
-     ```bash
-     set appfw settings CEFLogging on
-     ```
+#### Forward Application Firewall Logs
+
+- To enable application firewall logs forwarding, see this [guide](https://support.citrix.com/article/CTX138973/how-to-send-application-firewall-messages-to-a-separate-syslog-server) and apply the following command to convert Application Firewall logs into CEF events:
+
+    ```bash
+    set appfw settings CEFLogging on
+    ```
 
 ### Instruction on Sekoia
 

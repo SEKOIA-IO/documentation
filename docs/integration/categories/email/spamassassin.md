@@ -54,10 +54,6 @@ SpamAssassin is a computer program used for e-mail spam filtering. SpamAssassin 
 
 - **Default Log Location**: `/var/log/spamd.log`
 
-### Sample of supported raw events
-
-**TODO**: Add a directory with raw event in every integration.
-
 ## Step-by-Step Configuration Procedure
 
 ### Instructions on the 3rd Party Solution

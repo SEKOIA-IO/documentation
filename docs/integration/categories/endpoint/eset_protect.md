@@ -57,10 +57,6 @@ type: intake
 !!! Note
     This is a description of the log level based on the taxonomy of the [RFC5425](https://datatracker.ietf.org/doc/html/rfc5424) for standardization purpose. Please adapt to the wording used by the editor.
 
-### Sample of supported raw events
-
-**TODO**: Add a directory with raw event in every integration.
-
 ## Step-by-Step Configuration Procedure
 
 ### Instructions on the 3rd party solution

@@ -59,10 +59,6 @@ The Apache HTTP Server, colloquially called Apache, is free and open-source cros
     - Access: `/var/log/apache2/access.log`
     - Error: `/var/log/apache2/error.log`
 
-### Sample of supported raw events
-
-**TODO**: Add a directory with raw event in every integration.
-
 ## Step-by-Step Configuration Procedure
 
 ### Instructions on the 3rd Party Solution
