@@ -595,7 +595,10 @@ nav:
       - How to write smart descriptions: integration/develop_integration/formats/smartdescriptions.md
       - Best Practices:
         - Overview: integration/develop_integration/formats/best_practices/overview.md
-        - Authentications: integration/develop_integration/formats/best_practices/authentications.md  
+        - Authentications: integration/develop_integration/formats/best_practices/authentications.md 
+      - Contribute to intake formats Github: integration/develop_integration/formats/contribute.md
+      - How to write a parser in Python: integration/develop_integration/formats/parser_python.md
+      - Test your Python parser: integration/develop_integration/formats/testing.md
     - Automation:
       - Overview: integration/develop_integration/automation/overview.md
       - Create a Module: integration/develop_integration/automation/create_a_module.md
