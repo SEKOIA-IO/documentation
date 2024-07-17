@@ -22,6 +22,9 @@ Some features within the app require the creation of an API key, including:
 
 By leveraging API keys, users can seamlessly integrate with Sekoia.io and fully exploit its capabilities, ensuring secure and efficient operations.
 
+!!! Note
+    Sekoia API keys are permissions-based, not role-based.
+
 ## API keys listing
 
 To access the list of generated API keys in your community, you have to go to Settings > Workspace > API Keys.
@@ -39,8 +42,6 @@ API keys are listed by creation date (Most recently created).
 
 ## Create an API key
 
-API keys are linked to permissions.
-
 To create a new API key, follow these steps:
 
 1. Click on the `+ API key` button
@@ -51,6 +52,9 @@ To create a new API key, follow these steps:
 
 !!! Note
     The key will only be displayed once. We recommend you to save it into a vault.
+
+!!! Note 
+    The length of the API key will not exceed 100 characters. 
 
 ## Revoke an API Key
 
