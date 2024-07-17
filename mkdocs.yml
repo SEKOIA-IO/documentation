@@ -569,7 +569,26 @@ nav:
       - Playbooks: tip/develop/rest_api/playbooks.md
 - Integration:
   - Introduction: integration/index.md
-  - Ingestion methods : integration/ingestion_methods/index.md
+  - Ingestion methods : 
+      - Overview : integration/ingestion_methods/index.md
+      - Cloud_saas :
+          - Overview : integration/ingestion_methods/cloud_saas/overview.md
+          - AWS : integration/ingestion_methods/cloud_saas/aws.md
+          - Azure : integration/ingestion_methods/cloud_saas/azure.md
+          - GCP : integration/ingestion_methods/cloud_saas/gcp.md
+      - HTTPS :
+          - Overview : integration/ingestion_methods/https/overview.md
+          - Format : integration/ingestion_methods/https/format.md
+          - Graylog : integration/ingestion_methods/https/graylog.md
+          - Logstash : integration/ingestion_methods/https/logstash.md
+          - Third-part : integration/ingestion_methods/https/third_part.md
+      - Syslog :
+          - Overview : integration/ingestion_methods/syslog/overview.md
+          - Rsyslog : integration/ingestion_methods/syslog/rsyslog.md
+          - Secured Forwarded : integration/ingestion_methods/syslog/secured_forwarded.md
+          - Sekoiaio Forwarder : integration/ingestion_methods/syslog/sekoiaio_forwarder.md
+          - Syslog Service : integration/ingestion_methods/syslog/syslog_service.md
+          - Syslog NG : integration/ingestion_methods/syslog/syslog-ng.md
   - List of integrations :
     - Applicatives: 
       - Overview : integration/categories/applicative/index.md
@@ -601,6 +620,10 @@ nav:
     - Automation:
       - Overview: integration/develop_integration/automation/overview.md
       - Create a Module: integration/develop_integration/automation/create_a_module.md
+      - Developement Guideline: integration/develop_integration/automation/developement_guideleine.md
+      - Module: integration/develop_integration/automation/module.md
+      - Action: integration/develop_integration/automation/action.md
+      - Trigger: integration/develop_integration/automation/trigger.md
 plugins:
 - search: null
 - redirects:
