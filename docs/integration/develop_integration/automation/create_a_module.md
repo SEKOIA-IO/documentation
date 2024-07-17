@@ -446,7 +446,7 @@ poetry install
 To check the correctness of the module the following command should be run :
 
 ```shell
-poetry run python _utils/compliance/__main__.py check --module modules\<module_name> 
+poetry run python3 compliance check --module modules\<module_name> 
 ```
 ## Homologation request 
 
