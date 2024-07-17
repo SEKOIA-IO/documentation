@@ -1,6 +1,6 @@
 {#- mode: jinja -#}
 {% if manifest.get('data_sources') or parser['kind'] or parser['category'] or parser['type'] %}
-## Event Categories
+### Event Categories
 
 {% if manifest.get('data_sources') %}
 The following table lists the data source offered by this integration.
@@ -65,7 +65,7 @@ This section demonstrates how the raw logs will be transformed by our parsers. I
 {% endif %}
 
 {% if parser['fields'] %}
-## Extracted Fields
+### Extracted Fields
 
 The following table lists the fields that are extracted, normalized under the ECS format, analyzed and indexed by the parser. It should be noted that infered fields are not listed.
 
