@@ -74,7 +74,11 @@ Here is the needed configuration setup:
 
 ## Create a custom intake
 
+<<<<<<< HEAD
 To learn more about how to create a custom intake, please refer to this [section.](/_shared_content/develop/guides/format/create_a_format.md)
+=======
+To learn more about how to create a custom intake, please refer to this [section.](/../../develop/guides/format/create_a_format.md)
+>>>>>>> e6158201c3f00de481a79c97c55718f7f49226c2
 
 ---
 

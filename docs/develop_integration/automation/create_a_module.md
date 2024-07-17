@@ -9,7 +9,11 @@ This module will contain one trigger and one action:
 
 ## Technical Requirements
 
+<<<<<<< HEAD:_shared_content/develop/guides/automation/create_a_module.md
 - Fork the Github repository [SEKOIA-IO/automation-library](https://github.com/SEKOIA-IO/automation-library)
+=======
+- Clone the Github repository [SEKOIA-IO/automation-library](https://github.com/SEKOIA-IO/automation-library)
+>>>>>>> e6158201c3f00de481a79c97c55718f7f49226c2:docs/develop_integration/automation/create_a_module.md
 - Install the SEKOIA's automation SDK. This SDK contains various command line utilities that will help us manage    modules. Simply run the following command:
 ``` shell
 pip install sekoia-automation-sdk
@@ -439,7 +443,10 @@ if __name__ == "__main__":
 4. Action is registered.
 
 ## Compliance Validation
+<<<<<<< HEAD:_shared_content/develop/guides/automation/create_a_module.md
 
+=======
+>>>>>>> e6158201c3f00de481a79c97c55718f7f49226c2:docs/develop_integration/automation/create_a_module.md
 This step will enable you to verify different components of the module and detect any errors. Before proceeding, ensure all test dependencies are installed by running the following command in the /_utils directory:
 ``` shell
 poetry install 
@@ -449,6 +456,7 @@ To check the correctness of the module the following command should be run :
 ```shell
 poetry run python _utils/compliance/__main__.py check --module modules\<module_name> 
 ```
+<<<<<<< HEAD:_shared_content/develop/guides/automation/create_a_module.md
 
 ## Homologation request 
 
@@ -461,3 +469,7 @@ Once you are done developing and testing your automation module, the last step i
 - Once all feedbacks are taken into account, Integration team will **validate** your pull request
 
 The homologation process is now finished.
+=======
+## Homologation request 
+Once you have validated your unit and integration tests, as well as ensured compliance, you can proceed with the homologation request. Refer to this [section](../develop/guides/develop_integration/#step-3-homologate-your-automation-module) in the documentation and follow the required steps.
+>>>>>>> e6158201c3f00de481a79c97c55718f7f49226c2:docs/develop_integration/automation/create_a_module.md
