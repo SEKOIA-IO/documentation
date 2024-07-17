@@ -23,4 +23,3 @@ docs/getting_started/inactive_users
 *.pyc
 node_modules/
 Icon?
-doc/
