@@ -5,62 +5,56 @@ last updated: DD/MM/YYYY
 
 ## Overview
 
-HAProxy is a free, open source software that provides a high availability load balancer and proxy server for TCP and HTTP-based applications that spreads requests across multiple servers. HAProxy has a lot of features and because it is located between your infrastructure and your clients, it can give you a lot of information about either of them.
+HAProxy is a free, open-source software that provides a high availability load balancer and proxy server for TCP and HTTP-based applications, distributing requests across multiple servers. As it operates between your infrastructure and your clients, HAProxy offers extensive monitoring capabilities.
 
+- **Vendor**:
 - **Plan**: Defend Prime
-- **Supported environment**: On Premise
-- **Version compatibility, if applicable**: 2.9 or highier
-
-- **Detection based on**: Telemetry
-- **Supported application or feature**:
-    - Access Traffic
+- **Supported Environment**: On Premise
+- **Version Compatibility**: 2.9 or higher
+- **Detection Based On**: Telemetry
+- **Supported Application or Feature**: Access Traffic
+- **Coverage Score**:
 
 ## High-Level Architecture Diagram
 
-- **Type of integration**: Outbound: PUSH to Sekoia.io
-
-- **Schema**
+- **Type of Integration**: Outbound (PUSH to Sekoia.io)
+- **Schema**:
 
 ![haproxy_architecture](/assets/integration/haproxy_architecture.png)
+
+!!! Alternative Log Collection Method
+
+    This will not be detailed on this documentation, but logs can also be sent directly to Sekoia.io over HTTPS using the Sekoia.io Endpoint Agent and the "Collect logs in files" method. This provides an alternative to the specified syslog collection method and may be preferable in certain environments.
 
 ## Specification
 
 ### Prerequisites
 
-- **Resource**:
-    - Self managed syslog forwarder
-
-- **Network**:
-    - Customer Outbound traffic possible opening
-
+- **Resource**: Self-managed syslog forwarder
+- **Network**: Outbound traffic allowed
 - **Permissions**:
-    - Configuration Access:
-        - Administrator or Root of the host where HAProxy application is installed.
-        - Root of the Linux server where the syslog forwarder is installed.
+    - Administrator or Root access to the HAProxy host
+    - Root access to the Linux server with the syslog forwarder
 
 ### Transport Protocol/Method
 
 - **Indirect Syslog**
 
-!!! Note
-    One can also choose to directly send those logs to Sekoia.io over HTTPS by instally a Sekoia.io Endpoint Agent and using the "Collect logs in files" methode.
-
 ### Logs details
 
-- **Supported type(s) of structure**:
-    - Plain Text
-
-- **Supported verbosity level**:
-    - **Informational**: informational messages
+- **Supported functionalities**: See section [Overview](#overview)
+- **Supported Structures**: Plain Text
+- **Supported Verbosity Levels**: Informational
 
 !!! Note
-    This is a description of the log level based on the taxonomy of the [RFC5425](https://datatracker.ietf.org/doc/html/rfc5424) for standardization purpose. Please adapt to the wording used by the editor.
+    Log levels are based on the taxonomy of [RFC5425](https://datatracker.ietf.org/doc/html/rfc5424). Adapt according to the terminology used by the editor.
 
-- **Supported functionalities**: See section "Supported application or feature" on top of this page.
-- **Default Log Location**: By default events are forwarded to `/var/lib/haproxy/dev/log` then processed by a local rsyslog to store them on `/var/log/haproxy.log`.
+- **Default Log Location**:
+    - Events forwarded to `/var/lib/haproxy/dev/log`
+    - Processed by a local rsyslog to `/var/log/haproxy.log`
 
 !!! Note
-    HAProxy configuration default file `haproxy.cfg` will be found in the directory `/etc/haproxy`
+    The default HAProxy configuration file `haproxy.cfg` is located in `/etc/haproxy`
 
 ### Sample of supported raw events
 
@@ -111,6 +105,9 @@ if ($programname startswith 'haproxy') then {
 
 For more information on Rsyslog configuration, please consult the [official website](https://www.rsyslog.com/doc/configuration/templates.html).
 
+!!! Note
+    If you encounter any issues during the configuration specified in this section "Instructions on the 3rd Party Solution," please do not hesitate to contact your editor. We also welcome any suggestions for improving our documentation to better serve your needs.
+
 ### Instruction on Sekoia
 
 {!_shared_content/integration/intake_configuration.md!}
@@ -119,7 +116,7 @@ For more information on Rsyslog configuration, please consult the [official webs
 
 ## Detection section
 
-_TO REPLACE by current links about Detection rules available, List of event types, List of extracted fields_
+The following section provides information for those who wish to learn more about the detection capabilities enabled by collecting this intake. It includes details about the built-in rule catalog, event categories, and ECS fields extracted from raw events. This is essential for users aiming to create [custom detection rules](/docs/xdr/features/detect/sigma.md), perform hunting activities, or pivot in the [events page](/docs/xdr/features/investigate/events.md).
 
 {!_shared_content/operations_center/detection/generated/suggested_rules_ff1873e7-8757-4b1a-b0ca-b33f9b27f3d9_do_not_edit_manually.md!}
 

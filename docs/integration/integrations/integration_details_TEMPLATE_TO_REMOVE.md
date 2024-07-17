@@ -5,23 +5,26 @@ last updated: DD/MM/YYYY
 
 ## Overview
 
+- **Vendor**:
 - **Plan**: Defend Core / Defend Prime
 - **Supported environment**: On Premise / SaaS
 - **Version compatibility, if applicable**:
 
 - **Detection based on**: Telemetry / Security Alerts / Audit
 - **Supported application or feature**:
-    - A
-    - B
-
+- **Coverage Score**:
 
 ## High-Level Architecture Diagram
 
-- **Type of integration**: Inbound: PULL from Sekoia.io / Outbound: PUSH to Sekoia.io
+- **Type of integration**: Inbound (PULL from Sekoia.io) / Outbound(PUSH to Sekoia.io)
 
 - **Schema**
 
-![consume_azure_logs](/assets/integration/integration_catalog/<techno_name>/image.png)
+![<technology_name>_architecture](/assets/integration/<technology_name>_architecture.png)
+
+!!! Alternative
+
+    This will not be detailed in this documentation, but logs can also be sent directly to Sekoia.io over HTTPS using the Sekoia.io Endpoint Agent and the "Collect logs in files" method. This provides an alternative to the specified syslog collection method and may be preferable in certain environments.
 
 ## Specification
 
@@ -33,16 +36,16 @@ last updated: DD/MM/YYYY
 
 - **Resource**:
     - External Storage
-    - Self managed syslog forwarder
+    - Self-managed syslog forwarder
 
 - **Network**:
-    - Customer Inbound traffic possible opening
-    - Customer Outbound traffic possible opening
+    - Inbound traffic allowed
+    - Outbound traffic allowed
 
 - **Permissions**:
     - API Credentials: _TO REPLACE Minimum level of permissions needed for API key or service account._
     - Configuration Access:  _ Minimum level of permissions required for the user doing the configuration._
-    - Service account permission: The service account permission needed  for the configuration of the intake in the Sekoia.io product.
+    - Service account permission: The service account permission needed for the configuration of the intake in the Sekoia.io product.
 
 ### Transport Protocol/Method
 
@@ -53,29 +56,14 @@ last updated: DD/MM/YYYY
 
 ### Logs details
 
-- **Supported type(s) of structure**:
-    - CEF
-    - Common Log Format (CLF)
-    - Delimiter Separated Value (DSV)
-    - JSON
-    - Key-Value
-    - Plain Text
-    - Multi-line
+- **Supported functionalities**: See section [Overview](#overview)
+- **Supported type(s) of structure**: CEF / Common Log Format (CLF) / Delimiter Separated Value (DSV) / JSON / Key-Value / Plain Text / Multi-line
 
-- **Supported verbosity level**:
-    - **Emergency**: system is unusable
-    - **Alert**: action must be taken immediately
-    - **Critical**: critical conditions
-    - **Error**: error conditions
-    - **Warning**: warning conditions
-    - **Notice**: normal but significant condition
-    - **Informational**: informational messages
-    - **Debug**: debug-level messages
+- **Supported verbosity level**: Emergency / Alert / Critical / Error / Warning / Notice / Informational / Debug
 
 !!! Note
-    This is a description of the log level based on the taxonomy of the [RFC5425](https://datatracker.ietf.org/doc/html/rfc5424) for standardization purpose. Please adapt to the wording used by the editor.
+    Log levels are based on the taxonomy of [RFC5425](https://datatracker.ietf.org/doc/html/rfc5424). Adapt according to the terminology used by the editor.
 
-- **Supported functionalities**: See section "Supported application or feature" on top of this page.
 - **Default Log Location**:
 
 ### Sample of supported raw events
@@ -92,6 +80,9 @@ __TO ADAPT__
 - Event Selection: Guidance on selecting event types when sending logs.
 ---> Visual Aids: Include screenshots or videos if possible.
 
+!!! Note
+    If you encounter any issues during the configuration specified in this section "Instructions on the 3rd Party Solution," please do not hesitate to contact your editor. We also welcome any suggestions for improving our documentation to better serve your needs.
+
 ### Instruction on Sekoia
 
 {!_shared_content/integration/intake_configuration.md!}
@@ -104,7 +95,7 @@ __TO REMOVE IF NOT RELEVANT__
 
 ## Detection section
 
-_TO REPLACE by current links about Detection rules available, List of event types, List of extracted fields_
+The following section provides information for those who wish to learn more about the detection capabilities enabled by collecting this intake. It includes details about the built-in rule catalog, event categories, and ECS fields extracted from raw events. This is essential for users aiming to create [custom detection rules](/docs/xdr/features/detect/sigma.md), perform hunting activities, or pivot in the [events page](/docs/xdr/features/investigate/events.md).
 
 {!_shared_content/operations_center/detection/generated/suggested_rules_bf8867ee-43b7-444c-9475-a7f43754ab6d_do_not_edit_manually.md!}
 
@@ -114,4 +105,3 @@ _TO REPLACE by current links about Detection rules available, List of event type
 
 - The code of the Intake format is available [here](https://github.com/SEKOIA-IO/intake-formats/tree/main/__CHANGE_ME__).
 - The code of the Playbook connector is available [here](https://github.com/SEKOIA-IO/automation-library/tree/main/__CHANGE_ME__).
-
