@@ -1,15 +1,19 @@
+---
 uuid: 2ffff1fd-fed7-4a24-927a-d619f2bb584a
 name: ESET Protect / Inspect
 type: intake
-last updated: 16/07/2024
+---
 
 ## Overview
 
-- **Plan**: Defend Core / Defend Prime
+!!! Warning
+    Important note - This format is currently in beta. We highly value your feedback to improve its performance.
+
+- **Plan**: Defend Prime
 - **Supported environment**: On Premise / SaaS
 - **Version compatibility, if applicable**: 9.x, 10.x, 11.x
 
-- **Detection based on**: Security Alerts
+- **Detection based on**: Telemetry, Alerts, Audit
 - **Supported application or feature**:
     - Audit Events
     - Firewall aggregated events
@@ -17,67 +21,41 @@ last updated: 16/07/2024
     - Threat events
     - ESET Inspect alerts
 
-
 ## High-Level Architecture Diagram
 
-- **Type of integration**: Outbound: PUSH to Sekoia.io
+- **Type of integration**: Outbound (PUSH to Sekoia.io)
 
 - **Schema**
 
-![consume_azure_logs](/assets/integration/integration_catalog/<techno_name>/image.png)
+![eset_protect_architecture](/docs/assets/integration/eset_protect_architecture.png){: style="max-width:100%"}
 
 ## Specification
 
 ### Prerequisites
 
-- **Licence level**:
-    - Core
-    - Prime
-
 - **Resource**:
-    - Self managed syslog forwarder
+    - Self-managed syslog forwarder
 
 - **Network**:
-    - Customer Outbound traffic possible opening
+    - **On Premise**: Outbound traffic allowed
+    - **SaaS**: Customer Inbound and Outbound traffic possible opening
 
 - **Permissions**:
-    - API Credentials: There's no api key
-    - Configuration Access:  _ Minimum level of permissions required for the user doing the configuration._
-    - Service account permission: The service account permission needed  for the configuration of the intake in the Sekoia.io product.
+    - Administrator access to the ESET instance
+    - Root access to the Linux server with the syslog forwarder
 
 ### Transport Protocol/Method
 
-- **Cloud Storage**: Amazon S3 Bucket / Microsoft Azure Eventhub / Microsoft Azure BlobStorage / Google Pub/Sub
-- **Direct HTTP**
-x **Direct Syslog**
-- **Indirect Syslog**
+- **Indirect Syslog** for On Premise and SaaS
 
 ### Logs details
 
-- **Supported type(s) of structure**:
-    - CEF
-    - Common Log Format (CLF)
-    - Delimiter Separated Value (DSV)
-    x JSON
-    - Key-Value
-    - Plain Text
-    - Multi-line
-
-- **Supported verbosity level**:
-    - **Emergency**: system is unusable
-    X **Alert**: action must be taken immediately
-    - **Critical**: critical conditions
-    - **Error**: error conditions
-    - **Warning**: warning conditions
-    - **Notice**: normal but significant condition
-    - **Informational**: informational messages
-    - **Debug**: debug-level messages
+- **Supported functionalities**: See section [Overview](#overview)
+- **Supported type(s) of structure**: JSON
+- **Supported verbosity level**: Alert, Informational
 
 !!! Note
     This is a description of the log level based on the taxonomy of the [RFC5425](https://datatracker.ietf.org/doc/html/rfc5424) for standardization purpose. Please adapt to the wording used by the editor.
-
-- **Supported functionalities**: See section "Supported application or feature" on top of this page.
-- **Default Log Location**:
 
 ### Sample of supported raw events
 
@@ -87,51 +65,43 @@ x **Direct Syslog**
 
 ### Instructions on the 3rd party solution
 
-__TO ADAPT__
-- Detailed Procedure: 
-    To enable Syslog server in ESET Protect on On-Prem :
-        1. In admin console go to `More` > `Settings`.
-        2. Open `Advanced Settings` tab.
+To enable Syslog server in ESET Protect on On-Prem :
+    1. In admin console go to `More` > `Settings`.
+    2. Open `Advanced Settings` tab.
 
-            ![Advanced Settings](/assets/instructions/eset_protect/enable_syslog_1.png)
+![Advanced Settings](/docs/assets/instructions/eset_protect/enable_syslog_1.png)
 
-        3. Click on `Syslog server` > `Use Syslog server`.
-        4. Then click on `Logging` > `Export logs to Syslog` and choose `JSON` format.
-        5. Save configuration.
+    3. Click on `Syslog server` > `Use Syslog server`.
+    4. Then click on `Logging` > `Export logs to Syslog` and choose `JSON` format.
+    5. Save configuration.
 
-            ![Syslog configuration](/assets/instructions/eset_protect/enable_syslog_2.png)
+![Syslog configuration](/docs/assets/instructions/eset_protect/enable_syslog_2.png)
 
-    To enable Syslog server in ESET Protect on Cloud :
-        1. In admin console go to `More` > `Admin` > `Settings`.
-        2. Click `General` > `Syslog`
-        3. Check `Enable syslog sending`
-        4. Select `JSON` as the format of the payload
-        5. Select `Syslog` as the format of the envelope
-        6. Select `Information` as the minimal log level
-        7. Check all event types
-        8. Type the address of the log concentrator
-        9. Check `Validate CA Root certificates of TLS connections`
-        10. Copy the public certificate of the Certificate Authority in the textarea
-        11. Click `Apply settings`
+To enable Syslog server in ESET Protect on Cloud:
+    1. In admin console go to `More` > `Admin` > `Settings`.
+    2. Click `General` > `Syslog`
+    3. Check `Enable syslog sending`
+    4. Select `JSON` as the format of the payload
+    5. Select `Syslog` as the format of the envelope
+    6. Select `Information` as the minimal log level
+    7. Check all event types
+    8. Type the address of the log concentrator
+    9. Check `Validate CA Root certificates of TLS connections`
+    10. Copy the public certificate of the Certificate Authority in the textarea
+    11. Click `Apply settings`
 
-        ![Advanced Settings](/assets/instructions/eset_protect/cloud_syslog.png)
-        
-- Event Categories: Network device logs, Authentication logs, Host network interface, Web application firewall logs
-- Event Selection: Guidance on selecting event types when sending logs.
----> Visual Aids: Include screenshots or videos if possible.
+
+![Advanced Settings](/docs/assets/instructions/eset_protect/cloud_syslog.png)
 
 ### Instruction on Sekoia
 
 {!_shared_content/integration/intake_configuration.md!}
 
-__TO REMOVE IF NOT RELEVANT__
-{!_shared_content/integration/connector_configuration.md!}
-
-__TO REMOVE IF NOT RELEVANT__
 {!_shared_content/integration/forwarder_configuration.md!}
 
 ## Detection section
 
+The following section provides information for those who wish to learn more about the detection capabilities enabled by collecting this intake. It includes details about the built-in rule catalog, event categories, and ECS fields extracted from raw events. This is essential for users aiming to create [custom detection rules](/docs/xdr/features/detect/sigma.md), perform hunting activities, or pivot in the [events page](/docs/xdr/features/investigate/events.md).
 
 {!_shared_content/operations_center/detection/generated/suggested_rules_2ffff1fd-fed7-4a24-927a-d619f2bb584a_do_not_edit_manually.md!}
 

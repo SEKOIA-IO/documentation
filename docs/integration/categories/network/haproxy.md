@@ -21,7 +21,7 @@ HAProxy is a free, open-source software that provides a high availability load b
 - **Type of Integration**: Outbound (PUSH to Sekoia.io)
 - **Schema**:
 
-![haproxy_architecture](/assets/integration/haproxy_architecture.png){: style="max-width:100%"}
+![haproxy_architecture](/docs/assets/integration/haproxy_architecture.png){: style="max-width:100%"}
 
 !!! Alternative Log Collection Method
 
@@ -59,8 +59,7 @@ HAProxy is a free, open-source software that provides a high availability load b
 
 ### Sample of supported raw events
 
-**TODO**: Add a directory with raw event in every integration.
-
+__TODO_BEFORE_MERGE__
 ## Step-by-Step Configuration Procedure
 
 ### Instructions on the 3rd party solution
@@ -122,9 +121,6 @@ The following section provides information for those who wish to learn more abou
 {!_shared_content/operations_center/detection/generated/suggested_rules_ff1873e7-8757-4b1a-b0ca-b33f9b27f3d9_do_not_edit_manually.md!}
 
 {!_shared_content/operations_center/integrations/generated/ff1873e7-8757-4b1a-b0ca-b33f9b27f3d9.md!}
-
 ## Further readings
 
-- The code of the Intake format is available [here](https://github.com/SEKOIA-IO/intake-formats/tree/main/HAProxy).
 - [HAProxy Official Documentation](http://www.haproxy.org/#docs)
-
