@@ -1,15 +1,14 @@
-uuid: 021e9def-5a55-4369-941e-af269b45bef1
-name: Linux AuditBeat
+uuid: c10307ea-5dd1-45c6-85aa-2a6a900df99b
+name: Winlogbeat
 type: intake
 
 ## Overview
 
-Auditbeat communicates directly with the Linux audit framework, collects the same data as auditd, then the data can be stored in JSON inside a log file before being sent to a log concentrator.
+Winlogbeat is an open-source log collector that ships Windows Event Logs as JSON events to a Losgtash log concentrator before being sent to Sekoia.io.
 
 - **Vendor**: Elastic
-- **Plan**: Defend Core / Defend Prime
+- **Plan**: Defend Prime
 - **Supported environment**: On Premise
-- **Version compatibility, if applicable**:
 - **Detection based on**: Telemetry
 - **Supported application or feature**: System Monitoring and Security
 - **Coverage Score**: 3
@@ -19,262 +18,146 @@ Auditbeat communicates directly with the Linux audit framework, collects the sam
 - **Type of integration**: Outbound (PUSH to Sekoia.io)
 - **Schema**
 
-![linux_auditbeat_architecture](/assets/integration/linux_auditbeat_architecture.png)
-
-!!! Alternative
-
-    This will not be detailed in this documentation, but logs can also be sent directly to Sekoia.io over HTTPS using the Sekoia.io Endpoint Agent and the "Collect logs in files" method. This provides an alternative to the specified syslog collection method and may be preferable in certain environments.
+![winlogbeat_architecture](/assets/integration/winlogbeat_architecture.png)
 
 ## Specification
 
 ### Prerequisites
 
-- **Licence level**:
-    - Open Source
 - **Resource**:
-    - Self-managed syslog forwarder
+    - Self-managed logstash server
 - **Network**:
     - Outbound traffic allowed
 - **Permissions**:
-    - Administrator or Root access to the server
-    - Root access to the Linux server with the syslog forwarder
+    - Administrator access to the Windows server
+    - Root access to the Linux server with the logstash
 
 ### Transport Protocol/Method
 
-- **Indirect Syslog**
+- **Indirect HTTP**
 
 ### Logs details
 
 - **Supported functionalities**: See section [Overview](#overview)
 - **Supported type(s) of structure**: JSON
-- **Supported verbosity level**: Emergency / Alert / Critical / Error / Warning / Notice / Informational / Debug
+- **Supported verbosity level**: Informational
 
 !!! Note
     Log levels are based on the taxonomy of [RFC5425](https://datatracker.ietf.org/doc/html/rfc5424). Adapt according to the terminology used by the editor.
-
-- **Default Log Location**:
-
-### Sample of supported raw events
-
-**TODO**: Add a directory with raw event in every integration.
 
 ## Step-by-Step Configuration Procedure
 
 ### Instructions on the 3rd Party Solution
 
-#### Forward Linux AuditBeat Logs to Sekoia.io
+#### Install and Configure Winlogbeat
 
-This setup guide will show you how to forward your Auditbeat logs to Sekoia.io by means of a syslog transport channel.
+1. Download Winlogbeat zip from the Elastic.co [download page](https://www.elastic.co/downloads/beats/winlogbeat)
+2. Extract the archive into `C:\Program Files\winlogbeat`
+3. Open a PowerShell prompt as an Administrator and run the following commands to install the service
 
-#### Detailed Procedure:
+```powershell
+PS C:\Users\Administrator> cd 'C:\Program Files\winlogbeat'
+PS C:\Program Files\winlogbeat> .\install-service-winlogbeat.ps1
+```
 
-1. **Install and Configure Auditbeat:**
+4. Replace the configuration file `C:\Program Files\winlogbeat\winlogbeat.yml` by the following content:
 
-    - To download and install Auditbeat on a Debian-based distribution (including Ubuntu, Linux Mint, etc.):
+```yaml
+winlogbeat.event_logs:
+  - name: Application
+    ignore_older: 72h
+  - name: System
+  - name: Security
+  - name: ForwardedEvents
+    tags: [forwarded]
+  - name: Windows PowerShell
+    event_id: 400, 403, 600, 800
+  - name: Microsoft-Windows-PowerShell/Operational
+    event_id: 4103, 4104, 4105, 4106
 
-      ```bash
-      curl -L -O https://artifacts.elastic.co/downloads/beats/auditbeat/auditbeat-8.11.4-amd64.deb
-      sudo dpkg -i auditbeat-8.11.4-amd64.deb
-      ```
+# ====================== Elasticsearch template settings =======================
 
-    - To download and install Auditbeat on Fedora, CentOS, or Red Hat Enterprise Linux:
+setup.template.settings:
+  index.number_of_shards: 1
+  #index.codec: best_compression
+  #_source.enabled: false
 
-      ```bash
-      curl -L -O https://artifacts.elastic.co/downloads/beats/auditbeat/auditbeat-8.11.4-x86_64.rpm
-      sudo rpm -vi auditbeat-8.11.4-x86_64.rpm
-      ```
+# ================================== Outputs ===================================
 
-    > Modify the version number with the newest one.
+# Configure what output to use when sending the data collected by the beat.
 
-    - Replace the configuration file `/etc/auditbeat/auditbeat.yml` with the following content:
+# ---------------------------- Elasticsearch Output ----------------------------
+output.elasticsearch:
+  enabled: false
 
-      ```yaml
-      ########################## Auditbeat Configuration #############################
+# ------------------------------ Logstash Output -------------------------------
 
-      # =========================== Modules configuration ============================
-      auditbeat.modules:
+output.logstash:
+  # The Logstash hosts
+  hosts: ["logstash_concentrator:5044"]
 
-      # The auditd module collects events from the audit framework in the Linux
-      # kernel. You need to specify audit rules for the events that you want to audit.
-      - module: auditd
-        resolve_ids: true
-        failure_mode: silent
-        backlog_limit: 8196
-        rate_limit: 0
-        include_raw_message: false
-        include_warnings: false
+  # Optional SSL. By default is off.
+  # List of root certificates for HTTPS server verifications
+  #ssl.certificate_authorities: ["/etc/pki/root/ca.pem"]
 
-        # Load audit rules
-        audit_rules: |
-          ## Example of audit rules here. Comment what is NOT needed
-          ## Executions.
-          -a always,exit -F arch=b64 -S execve,execveat -k exec
+  # Certificate for SSL client authentication
+  #ssl.certificate: "/etc/pki/client/cert.pem"
 
-          ## External access (warning: these can be expensive to audit).
-          -a always,exit -F arch=b64 -S accept,bind,connect -F key=external-access
+  # Client Certificate Key
+  #ssl.key: "/etc/pki/client/cert.key"
 
-          ## Identity changes.
-          -w /etc/group -p wa -k identity
-          -w /etc/passwd -p wa -k identity
-          -w /etc/gshadow -p wa -k identity
+# ================================= Processors =================================
 
-          ## Unauthorized access attempts.
-          -a always,exit -F arch=b64 -S open,creat,truncate,ftruncate,openat,open_by_handle_at -F exit=-EACCES -k access
-          -a always,exit -F arch=b64 -S open,creat,truncate,ftruncate,openat,open_by_handle_at -F exit=-EPERM -k access
+processors:
+  - add_host_metadata:
+      when.not.contains.tags: forwarded
+  - add_cloud_metadata: ~
 
-      # The file integrity module sends events when files are changed (created,
-      # updated, deleted). The events contain file metadata and hashes.
-      - module: file_integrity
-        paths:
-        - /bin
-        - /usr/bin
-        - /sbin
-        - /usr/sbin
-        - /etc
-        - /var/spool/cron/crontabs
-        - /etc/cron.d
-        - /etc/cron.daily
-        - /etc/cron.hourly
-        - /etc/cron.monthly
-        - /etc/cron.weekly
+# ================================== Logging ===================================
 
-        scan_at_start: true
-        scan_rate_per_sec: 50 MiB
-        max_file_size: 100 MiB
-        hash_types: [sha1]
+logging.level: info
+#logging.to_files: true
+#logging.files:
+  #path: C:\ProgramData\winlogbeat\Logs
+  #name: winlogbeat
+  #keepfiles: 7
+  #permissions: 0640
+```
 
-        # Detect changes to files included in subdirectories. Disabled by default.
-        recursive: false
+!!! Warning
+    Don't forget to specify the location of your logstash server in this configuration
 
-      - module: system
-        datasets:
-          - package   # Installed, updated, and removed packages
-        period: 2m
+5. Save and validate the configuration with the command:
 
-      - module: system
-        datasets:
-          - host      # General host information, e.g. uptime, IPs
-          - login     # User logins, logouts, and system boots.
-          - process   # Started and stopped processes
-          - socket    # Opened and closed sockets
-          - user      # User information
+```powershell
+PS C:\Program Files\Winlogbeat> .\winlogbeat.exe test config -c .\winlogbeat.yml -e
+```
 
-        user.detect_password_changes: true
+6. Set up assets:
 
-      # ================================== Outputs ===================================
-      output.elasticsearch:
-        enabled: false
+```powershell
+PS C:\Program Files\Winlogbeat> .\winlogbeat.exe setup -e
+```
 
-      output.file:
-        enabled: true
-        codec.json:
-        path: "/tmp/auditbeat"
-        filename: auditbeat
-        rotate_every_kb: 10000
-        number_of_files: 7
-        permissions: 0600
+7. Start the Winlogbeat service:
 
-      # =================================== Paths ====================================
-      path.home: "/usr/share/auditbeat/bin"
-      path.config: "/etc/auditbeat"
-      path.data: "/var/lib/auditbeat"
-      path.logs: "/var/log/auditbeat"
+```powershell
+PS C:\Program Files\Winlogbeat> Start-Service winlogbeat
+```
 
-      # ================================== Template ==================================
-      setup.template.settings:
-        index:
-          number_of_shards: 1
-          
-      logging.level: info
-      logging.to_files: true
-      logging.files:
-        path: /var/log/auditbeat
-        name: auditbeat
-        rotateeverybytes: 10485760 # = 10MB
-        keepfiles: 7
-        permissions: 0600
-      ```
-
-    - Ensure the permissions for the new `auditbeat.yml` are correct:
-      ```bash
-      sudo chmod 0600 auditbeat.yml
-      sudo chown root:root auditbeat.yml
-      ```
-
-    - Load the predefined assets for parsing, indexing, and visualizing your data:
-      ```bash
-      sudo auditbeat -e
-      ```
-
-    - Start Auditbeat:
-      ```bash
-      sudo systemctl restart auditbeat.service
-      ```
-
-3. **Configure Local Rsyslog Service:**
-
-    - Install rsyslog if it's not already installed:
-      ```bash
-      sudo apt install rsyslog
-      ```
-
-    - Edit the `/etc/rsyslog.conf` file for a light client rsyslog setup:
-      ```bash
-      module(load="imuxsock")                                 # provides support for local system logging
-      module(load="imklog" permitnonkernelfacility="on")      # provides kernel logging support
-
-      $MaxMessageSize 20k
-      $ActionFileDefaultTemplate RSYSLOG_TraditionalFileFormat
-      $FileOwner root
-      $FileGroup adm
-      $FileCreateMode 0640
-      $DirCreateMode 0755
-      $Umask 0022
-      $ActionQueueType LinkedList
-      $ActionQueueFileName sek_fwd
-      $ActionQueueMaxDiskSpace 5g
-      $ActionQueueSaveOnShutdown on
-      $ActionResumeRetryCount -1
-      $WorkDirectory /var/spool/rsyslog
-      $IncludeConfig /etc/rsyslog.d/*.conf
-      *.* -/var/log/syslog
-      ```
-
-    - Add a dedicated configuration file for Auditbeat logs in `/etc/rsyslog.d/8-linux_auditbeat.conf`:
-      ```bash
-      module(load="imfile" PollingInterval="10")
-      input(type="imfile"
-            File="/tmp/auditbeat/auditbeat*.ndjson"
-            Tag="linux_auditbeat"
-            Severity="info"
-            Facility="local7"
-            ruleset="auditbeatSekoia"
-            addMetadata="on"
-            )
-
-      ruleset(name="auditbeatSekoia") {
-          if (re_match($!metadata!filename, "auditbeat-[0-9]{8}(-[0-9]*)?.ndjson")) then {
-            action(
-              type="omfwd"
-              protocol="tcp"
-              target="YOUR_RSYSLOG_DESTINATION_SERVER"
-              port="514"
-              TCP_Framing="octet-counted"
-            )
-          }
-      }
-      ```
-
-    - Ensure the destination server in the rsyslog config is correctly set:
-      ```bash
-      sudo systemctl restart rsyslog.service
-      ```
+!!! Note
+    If you encounter any issues during the configuration specified in this section "Instructions on the 3rd Party Solution," please do not hesitate to contact your editor. We also welcome any suggestions for improving our documentation to better serve your needs.
 
 ### Instruction on Sekoia
 
 {!_shared_content/integration/intake_configuration.md!}
 
-{!_shared_content/integration/forwarder_configuration.md!}
+
+### Forward logs to Sekoia.io
+
+Please consult our [guide](/integration/ingestion_methods/https/logstash.md) to configure logs forwarding from Logstash to Sekoia.io.
+
+{!_shared_content/operations_center/integrations/generated/c10307ea-5dd1-45c6-85aa-2a6a900df99b_sample.md!}
 
 ## Detection section
 
@@ -282,8 +165,10 @@ This setup guide will show you how to forward your Auditbeat logs to Sekoia.io b
 
 The following section provides information for those who wish to learn more about the detection capabilities enabled by collecting this intake. It includes details about the built-in rule catalog, event categories, and ECS fields extracted from raw events. This is essential for users aiming to create [custom detection rules](/docs/xdr/features/detect/sigma.md), perform hunting activities, or pivot in the [events page](/docs/xdr/features/investigate/events.md).
 
-{!_shared_content/operations_center/detection/generated/suggested_rules_021e9def-5a55-4369-941e-af269b45bef1_do_not_edit_manually.md!}
+{!_shared_content/operations_center/detection/generated/suggested_rules_c10307ea-5dd1-45c6-85aa-2a6a900df99b_do_not_edit_manually.md!}
 
-## Further readings
+{!_shared_content/operations_center/integrations/generated/c10307ea-5dd1-45c6-85aa-2a6a900df99b.md!}
 
-- [Configure a remote Syslog server](https://docs.cyberwatch.fr/help/en/administration/remote_syslog_configuration/)
+## Further Readings
+- [Winlogbeat documentation](https://www.elastic.co/guide/en/beats/winlogbeat/current/_winlogbeat_overview.html)
+- [Winlogbeat configuration](https://github.com/elastic/beats/blob/main/winlogbeat/winlogbeat.yml)
