@@ -46,12 +46,6 @@ Cisco Identity Services Engine (ISE) is an intelligent security policy enforceme
 !!! Note
     Log levels are based on the taxonomy of [RFC5425](https://datatracker.ietf.org/doc/html/rfc5424). Adapt according to the terminology used by the editor.
 
-- **Default Log Location**:
-
-### Sample of supported raw events
-
-**TODO**: Add a directory with raw event in every integration.
-
 ## Step-by-Step Configuration Procedure
 
 ### Instructions on the 3rd Party Solution
@@ -69,6 +63,8 @@ This setup guide will show you how to provide an integration between Cisco Ident
 {!_shared_content/integration/intake_configuration.md!}
 
 {!_shared_content/integration/forwarder_configuration.md!}
+
+{!_shared_content/operations_center/integrations/generated/8a9894f8-d7bc-4c06-b96a-8808b3c6cade_sample.md!}
 
 ## Detection section
 

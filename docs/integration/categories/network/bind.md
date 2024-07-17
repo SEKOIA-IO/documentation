@@ -29,8 +29,6 @@ BIND is an implementation of the Domain Name System (DNS) of the Internet. It pe
 
 ### Prerequisites
 
-- **Licence level**:
-    - Open Source
 - **Resource**:
     - Self-managed syslog forwarder
 - **Network**:
