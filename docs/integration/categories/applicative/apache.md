@@ -22,7 +22,7 @@ The Apache HTTP Server, colloquially called Apache, is free and open-source cros
 - **Type of integration**: Outbound (PUSH to Sekoia.io)
 - **Schema**
 
-![apache_http_server_architecture](/docs/assets/integration/apache_http_server_architecture.png){: style="max-width:100%"}
+![apache_http_server_architecture](/assets/integration/apache_http_server_architecture.png){: style="max-width:100%"}
 
 !!! Alternative
 
@@ -58,10 +58,6 @@ The Apache HTTP Server, colloquially called Apache, is free and open-source cros
 - **Default Log Location**:
     - Access: `/var/log/apache2/access.log`
     - Error: `/var/log/apache2/error.log`
-
-### Sample of supported raw events
-
-**TODO**: Add a directory with raw event in every integration.
 
 ## Step-by-Step Configuration Procedure
 
@@ -124,6 +120,8 @@ This setup guide will show you how to forward both your access and error logs to
 {!_shared_content/integration/intake_configuration.md!}
 
 {!_shared_content/integration/forwarder_configuration.md!}
+
+{!_shared_content/operations_center/integrations/generated/6c2a44e3-a86a-4d98-97a6-d575ffcb29f7_sample.md!}
 
 ## Detection section
 

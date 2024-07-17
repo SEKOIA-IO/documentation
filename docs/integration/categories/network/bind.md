@@ -19,7 +19,7 @@ BIND is an implementation of the Domain Name System (DNS) of the Internet. It pe
 - **Type of integration**: Outbound (PUSH to Sekoia.io)
 - **Schema**
 
-![bind_architecture](/docs/assets/integration/bind_architecture.png){: style="max-width:100%"}
+![bind_architecture](/assets/integration/bind_architecture.png){: style="max-width:100%"}
 
 !!! Alternative
 
@@ -29,8 +29,6 @@ BIND is an implementation of the Domain Name System (DNS) of the Internet. It pe
 
 ### Prerequisites
 
-- **Licence level**:
-    - Open Source
 - **Resource**:
     - Self-managed syslog forwarder
 - **Network**:
@@ -51,10 +49,6 @@ BIND is an implementation of the Domain Name System (DNS) of the Internet. It pe
 
 !!! Note
     Log levels are based on the taxonomy of [RFC5425](https://datatracker.ietf.org/doc/html/rfc5424). Adapt according to the terminology used by the editor.
-
-### Sample of supported raw events
-
-**TODO**: Add a directory with raw event in every integration.
 
 ## Step-by-Step Configuration Procedure
 
@@ -125,6 +119,8 @@ For more informations on [how to configure your BIND instance on its official we
 {!_shared_content/integration/intake_configuration.md!}
 
 {!_shared_content/integration/forwarder_configuration.md!}
+
+{!_shared_content/operations_center/integrations/generated/a199fbde-508e-4cb9-ae37-842703494be0_sample.md!}
 
 ## Detection section
 

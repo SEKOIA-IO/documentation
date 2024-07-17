@@ -19,7 +19,7 @@ SpamAssassin is a computer program used for e-mail spam filtering. SpamAssassin 
 - **Type of integration**: Outbound (PUSH to Sekoia.io)
 - **Schema**
 
-![spamassassin_architecture](/docs/assets/integration/apache_spam_assassin_architecture.png){: style="max-width:100%"}
+![spamassassin_architecture](/assets/integration/apache_spam_assassin_architecture.png){: style="max-width:100%"}
 
 !!! Alternative
 
@@ -53,10 +53,6 @@ SpamAssassin is a computer program used for e-mail spam filtering. SpamAssassin 
     Log levels are based on the taxonomy of [RFC5425](https://datatracker.ietf.org/doc/html/rfc5424). Adapt according to the terminology used by the editor.
 
 - **Default Log Location**: `/var/log/spamd.log`
-
-### Sample of supported raw events
-
-**TODO**: Add a directory with raw event in every integration.
 
 ## Step-by-Step Configuration Procedure
 
@@ -108,6 +104,8 @@ This setup guide will show you how to forward logs produced by your SpamAssassin
 {!_shared_content/integration/intake_configuration.md!}
 
 {!_shared_content/integration/forwarder_configuration.md!}
+
+{!_shared_content/operations_center/integrations/generated/7954ae6f-eafa-404d-8e15-4b99a12b754c_sample.md!}
 
 ## Detection section
 
