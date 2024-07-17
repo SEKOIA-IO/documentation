@@ -1,11 +1,12 @@
+---
 uuid: XXXX
 name: YYYY
 type: intake
-last updated: DD/MM/YYYY
+---
 
 ## Overview
 
-- **Vendor**: HAProxy Technologies
+- **Vendor**:
 - **Plan**: Defend Core / Defend Prime
 - **Supported environment**: On Premise / SaaS
 - **Version compatibility, if applicable**:
@@ -20,7 +21,7 @@ last updated: DD/MM/YYYY
 
 - **Schema**
 
-![<technology_name>_architecture](/assets/integration/<technology_name>_architecture.png)
+![<technology_name>_architecture](/assets/integration/<technology_name>_architecture.png){: style="max-width:100%"}
 
 !!! Alternative
 

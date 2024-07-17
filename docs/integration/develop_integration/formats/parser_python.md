@@ -1,8 +1,8 @@
-# How to write a parser
+# How to write a parser in Python
 
 ## General
 
-A parser consists of a sequence of stages organized under a pipeline that modifies the event on the fly. It transforms a raw event into a [structured one](structured_event.md).
+A parser consists in a sequence of stages organized under a pipeline that modifies the event on the fly.
 
 The following pipeline is made of three stages (`stage1`, `stage2` and `stage3`)
 with the execution of `stage2` and `stage3` conditonned to a filter that evaluates the value of the event field `message.log_type` at the end of `stage2`.
@@ -627,15 +627,14 @@ Ingest makes available the [jinja built-in filters](https://jinja.palletsproject
 | `upper`      | returns the value all uppercase                                   |
 
 Ingest extends these built-in filters with a set of custom filters:
-
-| filter        | description                                                            |
-|---------------|------------------------------------------------------------------------|
-|`basename`     | returns the base name of a path (support unix and windows path)        |
-|`dirname`      | returns the directory name of a path (support unix and windows path)   |
-|`to_rfc3339(value: Any, format=None)`| converts and formats any date as rfc3339 string  |
-|`to_iso8601(value: Any, format=None)`| converts and formats any date as iso8601 string  |
-|`re_match`     | tests the value against an regular expression (the whole value)        |
-|`re_search`    | tests if a subset of the value match the regular expression            |
+| filter | description
+|---------------|------------------------------------------------
+|`basename`| returns the base name of a path (support unix and windows path)
+|`dirname`| returns the directory name of a path (support unix and windows path)
+|`to_rfc3339(value: Any, format=None)`| converts and formats any date as rfc3339 string
+|`to_iso8601(value: Any, format=None)`| converts and formats any date as iso8601 string
+|`re_match`| tests the value against an regular expression (the whole value)
+|`re_search`| tests if a subset of the value match the regular expression
 
 ### delete
 

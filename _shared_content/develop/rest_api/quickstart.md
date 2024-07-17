@@ -47,17 +47,6 @@ The documentation offers a few guides:
 ### APIs
 
 Our API documentation is divided according to the different functionalities the platform offers:
-
-* [Authentication and Community](/xdr/develop/rest_api/community/)
-* [Dashboard](/xdr/develop/rest_api/dashboard/)
-* [Configuration](/xdr/develop/rest_api/configuration/)
-* [Parser](/xdr/develop/rest_api/parser/)
-* [Alert](/xdr/develop/rest_api/alert/)
-* [Assets](/xdr/develop/rest_api/assets/)
-* [Playbooks](/xdr/develop/rest_api/playbooks/)
-* [Query Builder](/xdr/develop/rest_api/query_builder/)
-* [Telemetry](/xdr/develop/rest_api/telemetry/)
-
 In each of these categories, you will find the different actions available.
 
 #### Structure
@@ -106,6 +95,25 @@ curl -X POST https://api.sekoia.io/v1/invitations \
 !!! Note
     Such requests that create or update resources on the server may request to **ALSO** add parameters in the URL to specify the object one wants to have action on. With Sekoia.io API you will often pass through the URL the UUID of the specific object you are expecting to be modified.
 
+#### Filtering
+
+Many API methods accept filtering and matching parameters. A client can request specific content from the Sekoia.io API by specifying a set of filters.
+
+##### Match
+
+The `match[<field>]` field parameter can be used to filter documents given the value of a specific `field`. A filter parameter can be specified any number of times, where all filter fields are ANDed together.
+
+It should be noted that each `field` must not occur more than once. Multiple values of a match parameter are separated by a comma (U+002C COMMA, “,”) without any spaces. If multiple values are present, the match is treated as a logical OR.
+
+**Examples of match parameters**
+
+```
+# list alerts triggered on entity entity1 or entity2
+/alerts?match[entity_name]=entity1,entity2
+
+# list alerts triggered on entity1 with rule named rule1 or rule2
+/alerts?match[entity_name]=entity1&match[rule_name]=rule1,rule2
+```
 ## Python scripts
 Python is a language that can be used to interact with the Sekoia.io API. Please find bellow two examples, one with a `GET` request with `query parameters` and another with a `POST` request and an `application/json` body.
 

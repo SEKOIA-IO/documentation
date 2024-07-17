@@ -1,7 +1,8 @@
+---
 uuid: ff1873e7-8757-4b1a-b0ca-b33f9b27f3d9
 name: HAProxy
 type: intake
-last updated: DD/MM/YYYY
+---
 
 ## Overview
 
@@ -20,7 +21,7 @@ HAProxy is a free, open-source software that provides a high availability load b
 - **Type of Integration**: Outbound (PUSH to Sekoia.io)
 - **Schema**:
 
-![haproxy_architecture](/assets/integration/haproxy_architecture.png)
+![haproxy_architecture](/assets/integration/haproxy_architecture.png){: style="max-width:100%"}
 
 !!! Alternative Log Collection Method
 
