@@ -1,73 +1,44 @@
-# Event Standardization for EDR Systems
+
+# 🌟 Event Standardization for EDR Systems
+
+To ensure consistent recognition and semantic interpretation of **EDR (Endpoint Detection and Response) events**, we adhere to the following standardization guidelines. The supported EDR systems include **SentinelOne, HarfangLab, CrowdStrike, Cybereason, Sophos, Stormshield, Symantec, Tehtris, TrendMicro, and WithSecure**.
+
+## 📋 Recommended Fields
+
+| **Field**        | **Description**                                | **Examples of values**                          |
+|------------------|------------------------------------------------|-------------------------------------------------|
+| `action.type`    | Specifies the action taken by the EDR system.  | `block`, `allow`, `alert`                       |
+| `event.category` | The high-level category of the event.          | `malware`, `intrusion`, `policy`                |
+| `event.code`     | A unique identifier or code representing the event. | `12345`, `67890`, `ABCDE`                     |
+| `event.kind`     | Describes the kind of event                    | `event`, `alert`, `metric`                      |
+| `event.dataset`  | Specifies the dataset used by the EDR system.  | `sentinelone`, `harfanglab`, `crowdstrike`, `cybereason`, `sophos`, `stormshield`, `symantec`, `tehtris`, `trendmicro`, `withsecure` |
+| `event.severity` | The severity level of the event.               | `low`, `medium`, `high`, `critical`             |
+
+## 🛠️ Optional Fields
+
+To provide more context and enhance the description of the events, including additional fields is encouraged. The following optional fields can be used:
+
+| **Field**               | **Description**                                 | **Examples**                                     |
+|-------------------------|-------------------------------------------------|--------------------------------------------------|
+| `host.name`             | Name of the host where the event occurred       | `host-123`                                       |
+| `user.id`               | The unique identifier of the user involved in the event | `user-456`                                |
+| `process.name`          | The process name that triggered the event/alert.    | `malware.exe`                                    |
+| `process.pid`           | The process ID that triggered the event/alert.      | `2345`                                           |
+| `process.commandline`   | The command that launched the process.          | `sudo deluser toto`                              |
+| `file.hash`             | The hash of the file related to the event.      | `abcdef1234567890`                               |
+| `agent.id`              | The unique ID of the agent that detected the event | `12313-21341623`                             |
+| `agent.name`            | The name of the agent that detected the event   | `harfanglab`                                     |
+| `host.hostname`         | The hostname that generated the event           | `user admin`                                     |
+| `host.os.full`          | The OS of the host that generated the event     | `Windows 11 Enterprise`, `Ubuntu 22.04`          |
+| `host.domain`           | The domain of the host that generated the event | `Workgroup`                                      |
+## Examples of event parsing
+In this section, raw events extracted from real use cases are used to show the expected parsing outcome .For each example, the input will be a raw event in json format and the output will be the ECS  with the parsed fields.
+We will see in the next section examples of EDRs and how the ECS format fields be parsed.
     
-    To ensure consistent recognition and semantic interpretation of EDR (Endpoint Detection and Response) events, we adhere to the following standardization guidelines. The supported EDR systems include SentinelOne, HarfangLab, CrowdStrike, Cybereason, Sophos, Stormshield, Symantec, Tehtris, TrendMicro, and WithSecure. 
-    
-    ## Recommanded Fields
-    
-    | Field | Description | Examples of values |
-    | --- | --- | --- |
-    | action.type | Specifies the action taken by the EDR system. | block
-    allow
-    alert |
-    | event.category | The high-level category of the event. | malware
-    intrusion
-    policy |
-    | event.code | A unique identifier or code representing the event. | 12345
-    67890 
-    ABCDE |
-    | event.kind | Describes the kind of event | event
-    alert
-    metric |
-    | event.dataset | Specifies the dataset used by the EDR system. | sentinelone harfanglab
-    crowdstrike cybereason
-    sophos
-    stormshield
-    symantec
-    tehtris
-    trendmicro
-    withsecure |
-    | event.severity | The severity level of the event. | low
-    medium
-    high
-    critical |
-    
-    ## Optional Fields
-    
-    To provide more context and enhance the description of the events, inclusion of additional fields is encouraged. The following optional fields can be used:
-    
-    | Field | Description | Examples |
-    | --- | --- | --- |
-    | host.name | Name of the host where the event occured | host-123 |
-    | user.id | The unique identifier of the user involved in the event | user-456 |
-    | process.name
-    process.pid
-    process.commadline | The process that triggered the event/alert. | malware.exe mimikatz 
-    2345
-     sudo deluser toto |
-    | file.hash | The hash of the file related to the event. | abcdef1234567890 |
-    | agent.id
-    agent.name | Describes the agent that the event data | 12313-21341623
-    harfanglab |
-    | host.hostname
-    host.os.full
-    host.domain | The identification of the host that generated the event by hostname, OS version and domain | user admin
-    Windows 11 Entreprise Ubuntu 22.04
-    Workgroup  |
-    |  |  |  |
-    
-    ## Examples of event parsing
-    
-    In this section, raw events extracted from real use cases are used to show the expected parsing outcome .For each example, the input will be a raw event in json format and the output will be the ECS  with the parsed fields.
-    
-    We will see in the next section examples of EDRs and how the ECS format fields be parsed.
-    
-    ### HarfangLab EDR
-    
-    This is a Harfang EDR lab alert that was triggered by Harfang agent in a Windows machine. The related event is the creation of a new Local User by a Powershell.
-    
-    **Raw Event Before Parsing**
-    
-    ```json
+### HarfangLab EDR
+This is a Harfang EDR lab alert that was triggered by Harfang agent in a Windows machine. The related event is the creation of a new Local User by a Powershell.
+**Raw Event Before Parsing**    
+```json
     {
       "maturity": "stable",
       "@version": "1",
@@ -186,96 +157,89 @@
       "alert_type": "sigma",
       "log_type": "alert"
     }
-    ```
+  ```
+For instance, the event caracteristics ( event.kind, event.type and event.category) are parsed based on the log_type field of the raw message that cant take different cateogries of log types.
+
+**ECS Fields After Parsing**
     
-    For instance, the event caracteristics ( event.kind, event.type and event.category) are parsed based on the log_type field of the raw message that cant take different cateogries of log types.
-    
-    **ECS Fields After Parsing**
-    
-    ```json
+```json
     {
-      "event": {
-        "id": "00000000-0000-0000-0000-000000000000",
-        "dataset": "alert",
-        "kind": "alert",
-        "type": "start",
-        "category": "process"
-      },
-    
-      },
-      "agent": {
-        "id": "1553619e-8271-4941-8e10-9153e99cc5dc",
-        "name": "harfanglab"
-      },
-      "@timestamp": "2024-07-12T08:13:14.258000Z",
-      "host": {
-        "domain": "WORKGROUP",
-        "os": {
-          "full": "Windows 11 Enterprise",
-          "version": "10.0.22631"
-        },
-        "hostname": "vm-windows",
-        "name": "vm-windows"
-      },
-      "log": {
-        "hostname": "vm-windows"
-      },
-      "organization": {
-        "id": "448da7f0536dffb4"
-      },
-      "harfanglab": {
-        "groups": [],
-        "process": {
-          "powershell": {
-            "command": "New-LocalUser -Name User9549 -Password (ConvertTo-SecureString -AsPlainText \"Password123\" -Force)"
-          }
-        },
-        "level": "low",
-        "status": "new",
-        "execution": 0,
-        "alert_time": "2024-07-12T08:13:14.430+00:00",
-        "alert_subtype": "process",
-       
-      },
-      "rule": {
-        "id": "742a1f89-039d-459e-b772-50a881353a76",
-        "name": "Local User Created via PowerShell",
-        "category": "sigma",
-        "description": "Detects the usage of PowerShell to create a new local user. Attackers can create new users to achieve persistence."
-      },
-      "user": {
-        "name": "vm-windows\\administrateur"
-      },
-      "process": {
-        "pid": 10880,
-        "name": "powershell.exe",
-        "executable": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
-        "command_line": "powershell.exe -Command New-LocalUser -Name User9549 -Password (ConvertTo-SecureString -AsPlainText \"Password123\" -Force)",
-        "working_directory": "C:\\Users\\administrateur\\"
-      },
-      "file": {
-        "hash": {
-          "md5": "9d8e30daf21108092d5980c931876b7e",
-    
-        }
-      },
-        "hosts": [
-          "vm-windows"
-        ],
-        "user": [
-          "vm-windows\\ad"
-        ]
+  "event": {
+    "id": "00000000-0000-0000-0000-000000000000",
+    "dataset": "alert",
+    "kind": "alert",
+    "type": "start",
+    "category": "process"
+  },
+  "agent": {
+    "id": "1553619e-8271-4941-8e10-9153e99cc5dc",
+    "name": "harfanglab"
+  },
+  "@timestamp": "2024-07-12T08:13:14.258000Z",
+  "host": {
+    "domain": "WORKGROUP",
+    "os": {
+      "full": "Windows 11 Enterprise",
+      "version": "10.0.22631"
+    },
+    "hostname": "vm-windows",
+    "name": "vm-windows"
+  },
+  "log": {
+    "hostname": "vm-windows"
+  },
+  "organization": {
+    "id": "448da7f0536dffb4"
+  },
+  "harfanglab": {
+    "groups": [],
+    "process": {
+      "powershell": {
+        "command": "New-LocalUser -Name User9549 -Password (ConvertTo-SecureString -AsPlainText \"Password123\" -Force)"
       }
+    },
+    "level": "low",
+    "status": "new",
+    "execution": 0,
+    "alert_time": "2024-07-12T08:13:14.430+00:00",
+    "alert_subtype": "process"
+  },
+  "rule": {
+    "id": "742a1f89-039d-459e-b772-50a881353a76",
+    "name": "Local User Created via PowerShell",
+    "category": "sigma",
+    "description": "Detects the usage of PowerShell to create a new local user. Attackers can create new users to achieve persistence."
+  },
+  "user": {
+    "name": "vm-windows\\administrateur"
+  },
+  "process": {
+    "pid": 10880,
+    "name": "powershell.exe",
+    "executable": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+    "command_line": "powershell.exe -Command New-LocalUser -Name User9549 -Password (ConvertTo-SecureString -AsPlainText \"Password123\" -Force)",
+    "working_directory": "C:\\Users\\administrateur\\"
+  },
+  "file": {
+    "hash": {
+      "md5": "9d8e30daf21108092d5980c931876b7e"
     }
-    ```
+  },
+  "hosts": [
+    "vm-windows"
+  ],
+  "user": [
+    "vm-windows\\ad"
+  ]
+}
+```
+  
+### Crowdstrike Falcon
+Let’s take a look to another EDR example and see how the different ECS fields extracted from the raw event.
     
-    ### Crowdstrike Falcon
+**Raw Event Before Parsing**
     
-    Let’s take a look to another EDR example and see how the different ECS fields extracted from the raw event.
-    
-    **Raw Event Before Parsing**
-    
-    ```json
+```json
     {
         "metadata": {
             "customerIDString": "d1f2145b3a034de8ab4183caf2f04fc1",
@@ -348,15 +312,15 @@
             "PatternId": 30115
         }
     }
-    ```
+```
     
-    In this example the fields `event.kind` , `event.type` and `event.category`  are correctly parsed based on the `eventType` in the raw event. Infact, CrowdStrike Falcon offers different kinds of Event Type: *detection_summary_event, user_activity_audit_event, auth_activity_audit_event…*
+In this example the fields `event.kind` , `event.type` and `event.category`  are correctly parsed based on the `eventType` in the raw event. Infact, CrowdStrike Falcon offers different kinds of Event Type: *detection_summary_event, user_activity_audit_event, auth_activity_audit_event…*
     
-    The result after parsing is as follows :
+The result after parsing is as follows :
     
-    **ECS Fields After parsing**
+**ECS Fields After parsing**
     
-    ```json
+```json
     {
       "event": {
         "id": "00000000-0000-0000-0000-000000000000",
@@ -435,10 +399,10 @@
           "root"
         ]
       }
-    }
-    ```
     
-    Following these standards ensures that the EDR event data is consistent and can be easily interpreted and analyzed across different systems. This standardization helps in providing a unified view of security events and enhances the capability to respond to incidents efficiently.
+```
     
-    As for the special fields that might exist from an EDR to another. The adopted parsing is by giving specific ECS field with different subfields that caracterize the EDR. 
+Following these standards ensures that the EDR event data is consistent and can be easily interpreted and analyzed across different systems. This standardization helps in providing a unified view of security events and enhances the capability to respond to incidents efficiently.
+    
+As for the special fields that might exist from an EDR to another. The adopted parsing is by giving specific ECS field with different subfields that caracterize the EDR. 
     
