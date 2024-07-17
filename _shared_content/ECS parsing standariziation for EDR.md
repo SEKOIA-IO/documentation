@@ -32,11 +32,12 @@ To provide more context and enhance the description of the events, including add
 | `host.os.full`          | The OS of the host that generated the event     | `Windows 11 Enterprise`, `Ubuntu 22.04`          |
 | `host.domain`           | The domain of the host that generated the event | `Workgroup`                                      |
 ## Examples of event parsing
-In this section, raw events extracted from real use cases are used to show the expected parsing outcome .For each example, the input will be a raw event in json format and the output will be the ECS  with the parsed fields.
-We will see in the next section examples of EDRs and how the ECS format fields be parsed.
+In this section, raw events extracted from real use cases are used to show the expected parsing outcome .For each example, the input will be a raw event in json format and the output will be in ECS.
+We will see in the next section examples of EDRs and how examples of ECS fields are parsed.
     
 ### HarfangLab EDR
-This is a Harfang EDR lab alert that was triggered by Harfang agent in a Windows machine. The related event is the creation of a new Local User by a Powershell.
+This is a Harfang EDR lab alert that was triggered by Harfang agent in a Windows machine. The related event is the creation of a new local user by a Powershell.
+
 **Raw Event Before Parsing**    
 ```json
     {
@@ -158,7 +159,9 @@ This is a Harfang EDR lab alert that was triggered by Harfang agent in a Windows
       "log_type": "alert"
     }
   ```
-For instance, the event caracteristics ( event.kind, event.type and event.category) are parsed based on the log_type field of the raw message that cant take different cateogries of log types.
+For example, the event characteristics are derived from the log_type and alert_subtype(`process.log_type`) fields in the raw message:
+* The fields `event.kind` and `event.dataset` are set to alert because the log_type in the raw event is alert.
+* The field `event.category` is set to 'process' and `event.type` is set to 'start' because the `log_type` in the process field of the raw event is identified as process.
 
 **ECS Fields After Parsing**
     
@@ -314,7 +317,7 @@ Let’s take a look to another EDR example and see how the different ECS fields 
     }
 ```
     
-In this example the fields `event.kind` , `event.type` and `event.category`  are correctly parsed based on the `eventType` in the raw event. Infact, CrowdStrike Falcon offers different kinds of Event Type: *detection_summary_event, user_activity_audit_event, auth_activity_audit_event…*
+In this example the fields `event.kind` , `event.type` and `event.category`  are correctly parsed respecively to 'alert', 'info' and 'category' because `metadata.eventType`is 'DetectionSummaryEvent'
     
 The result after parsing is as follows :
     
