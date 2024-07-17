@@ -395,9 +395,6 @@ nav:
     - Sekoia.io Endpoint agent: xdr/FAQ/SEKOIA_Endpoint_Agent.md
     - Datetime representation: xdr/FAQ/datetime.md
   - Develop:
-      - Automation:
-        - Overview: develop_integration/automation/overview.md
-        - Create a Module: develop_integration/automation/create_a_module.md
     - REST API:
       - Quickstart: xdr/develop/rest_api/quickstart.md
       - Authentication and Community: xdr/develop/rest_api/community.md
@@ -421,7 +418,10 @@ nav:
     - How to write smart descriptions: develop_integration/formats/smartdescriptions.md
     - Best Practices:
       - Overview: develop_integration/formats/best_practices/overview.md
-      - Authentications: develop_integration/formats/best_practices/authentications.md
+      - Authentications: develop_integration/formats/best_practices/authentications.md  
+  - Automation:
+    - Overview: develop_integration/automation/overview.md
+    - Create a Module: develop_integration/automation/create_a_module.md
 - Sekoia Intelligence (CTI):
   - Introduction: cti/index.md
   - Features:
