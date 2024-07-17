@@ -68,7 +68,7 @@ Redirecting...
                 new_files.append(newfile)
 
         new_files.append(File(
-            path="xdr/features/collect/integrations/index.md",
+            path="integration/integrations/index.md",
             src_dir="operation_center/integration_catalog/",
             dest_dir=config["site_dir"],
             use_directory_urls=True,
@@ -82,7 +82,7 @@ Redirecting...
                     destination=self._redirection_table[page.file.name]
                 )
 
-        if page.file.src_path == "xdr/features/collect/integrations/index.md":
+        if page.file.src_path == "integration/integrations/index.md":
             filename = Path(config["docs_dir"]) / Path(page.file.src_path)
             content = filename.open().read()
 

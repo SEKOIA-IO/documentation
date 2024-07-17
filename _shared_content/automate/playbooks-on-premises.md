@@ -2,7 +2,7 @@
 
 Our clients may find it necessary to execute Playbook actions within a local network that remains isolated from external internet access or rejects inbound connections. To meet this particular need, we enable users to select actions they want to perform on their local network directly from the Playbooks' user interface. 
 
-Clients must undertake a short installation process to harness the full potential of this security-enhancing feature. This involves installing our [dedicated agent](https://docs.sekoia.io/xdr/features/collect/integrations/endpoint/sekoiaio/) and Docker onto a Linux machine within their local network. The meticulous setup ensures that Playbook actions can be executed with the utmost reliability and security, maintaining the integrity of the local network environment. 
+Clients must undertake a short installation process to harness the full potential of this security-enhancing feature. This involves installing our [dedicated agent](https://docs.sekoia.io/integration/integrations/endpoint/sekoiaio/) and Docker onto a Linux machine within their local network. The meticulous setup ensures that Playbook actions can be executed with the utmost reliability and security, maintaining the integrity of the local network environment. 
 
 Below, we provide detailed instructions on how to accomplish the installation process.
 
