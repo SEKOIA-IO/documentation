@@ -6,7 +6,7 @@ type: intake
 
 The Apache HTTP Server, colloquially called Apache, is free and open-source cross-platform web server software, released under the terms of Apache License 2.0. Apache is developed and maintained by an open community of developers under the auspices of the Apache Software Foundation.
 
-!!! info
+!!! Info
     Access logs from Tomcat are compatible with the existing format Apache HTTP server. Catalina logs are not supported.
 
 - **Vendor**: Apache Software Foundation
@@ -14,7 +14,7 @@ The Apache HTTP Server, colloquially called Apache, is free and open-source cros
 - **Supported environment**: On Premise
 - **Version compatibility, if applicable**: 2.4.51 (Latest version as of now)
 - **Detection based on**: Telemetry
-- **Supported application or feature**: Access and error log monitoring
+- **Supported application or feature**: Access and Error log monitoring
 - **Coverage Score**: 1
 
 ## High-Level Architecture Diagram
@@ -22,7 +22,7 @@ The Apache HTTP Server, colloquially called Apache, is free and open-source cros
 - **Type of integration**: Outbound (PUSH to Sekoia.io)
 - **Schema**
 
-![apache_http_server_architecture](/assets/integration/apache_http_server_architecture.png)
+![apache_http_server_architecture](/docs/assets/integration/apache_http_server_architecture.png){: style="max-width:100%"}
 
 !!! Alternative
 
@@ -50,12 +50,14 @@ The Apache HTTP Server, colloquially called Apache, is free and open-source cros
 
 - **Supported functionalities**: See section [Overview](#overview)
 - **Supported type(s) of structure**: Common Log Format (CLF), Combined Log Format (combined)
-- **Supported verbosity level**: Emergency / Alert / Critical / Error / Warning / Notice / Informational / Debug
+- **Supported verbosity level**: Notice, Error
 
 !!! Note
     Log levels are based on the taxonomy of [RFC5425](https://datatracker.ietf.org/doc/html/rfc5424). Adapt according to the terminology used by the editor.
 
 - **Default Log Location**:
+    - Access: `/var/log/apache2/access.log`
+    - Error: `/var/log/apache2/error.log`
 
 ### Sample of supported raw events
 
@@ -127,8 +129,9 @@ This setup guide will show you how to forward both your access and error logs to
 
 The following section provides information for those who wish to learn more about the detection capabilities enabled by collecting this intake. It includes details about the built-in rule catalog, event categories, and ECS fields extracted from raw events. This is essential for users aiming to create [custom detection rules](/docs/xdr/features/detect/sigma.md), perform hunting activities, or pivot in the [events page](/docs/xdr/features/investigate/events.md).
 
-{!_shared_content/operations_center/integrations/generated/6c2a44e3-a86a-4d98-97a6-d575ffcb29f7.md!}
 {!_shared_content/operations_center/detection/generated/suggested_rules_6c2a44e3-a86a-4d98-97a6-d575ffcb29f7_do_not_edit_manually.md!}
+
+{!_shared_content/operations_center/integrations/generated/6c2a44e3-a86a-4d98-97a6-d575ffcb29f7.md!}
 
 ## Further readings
 

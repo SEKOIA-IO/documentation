@@ -19,7 +19,7 @@ BIND is an implementation of the Domain Name System (DNS) of the Internet. It pe
 - **Type of integration**: Outbound (PUSH to Sekoia.io)
 - **Schema**
 
-![bind_architecture](/assets/integration/bind_architecture.png)
+![bind_architecture](/docs/assets/integration/bind_architecture.png){: style="max-width:100%"}
 
 !!! Alternative
 
@@ -46,13 +46,11 @@ BIND is an implementation of the Domain Name System (DNS) of the Internet. It pe
 ### Logs details
 
 - **Supported functionalities**: See section [Overview](#overview)
-- **Supported type(s) of structure**: JSON
-- **Supported verbosity level**: Emergency / Alert / Critical / Error / Warning / Notice / Informational / Debug
+- **Supported type(s) of structure**: Plain Text
+- **Supported verbosity level**: Informational
 
 !!! Note
     Log levels are based on the taxonomy of [RFC5425](https://datatracker.ietf.org/doc/html/rfc5424). Adapt according to the terminology used by the editor.
-
-- **Default Log Location**:
 
 ### Sample of supported raw events
 
@@ -132,10 +130,9 @@ For more informations on [how to configure your BIND instance on its official we
 
 The following section provides information for those who wish to learn more about the detection capabilities enabled by collecting this intake. It includes details about the built-in rule catalog, event categories, and ECS fields extracted from raw events. This is essential for users aiming to create [custom detection rules](/docs/xdr/features/detect/sigma.md), perform hunting activities, or pivot in the [events page](/docs/xdr/features/investigate/events.md).
 
-{!_shared_content/operations_center/integrations/generated/a199fbde-508e-4cb9-ae37-842703494be0.md!}
 {!_shared_content/operations_center/detection/generated/suggested_rules_a199fbde-508e-4cb9-ae37-842703494be0_do_not_edit_manually.md!}
 
+{!_shared_content/operations_center/integrations/generated/a199fbde-508e-4cb9-ae37-842703494be0.md!}
 ## Further readings
 
-- The code of the Intake format is available [here](https://github.com/SEKOIA-IO/intake-formats/tree/main/BIND).
 - [BIND documentation](https://kb.isc.org/docs/aa-01526)
