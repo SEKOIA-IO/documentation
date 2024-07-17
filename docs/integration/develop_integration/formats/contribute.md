@@ -4,15 +4,15 @@ Thank you for contributing to Sekoia.io intake formats. This document describes 
 
 ## Prerequisites
 
-To contribute to this repository, you will need the following development setup:
+To contribute to the repository, you will need the following development setup:
 
 - Python3: We recommend you to use Python3.12 or higher. To ease python version management, you can use [pyenv](https://github.com/pyenv/pyenv#installation)
 - [Poetry](https://python-poetry.org/docs/#installation): To execute helper scripts in the directory `utils/`
 
 ## How to contribute
 
-- Follow this [guide](../parser/) to write your parser in Python
-- [Test your format](../testing/)
+- Follow this [guide](../parser/) (go to the tab `In code`) to write your parser in Python
+- [Test your parser](../testing/)
 
 ## Contribution checklist
 
@@ -27,7 +27,8 @@ To ensure the quality of contribution, the following points will be reviewed in 
 
 Once you are done writing and testing your intake format, the last step is to request an homologation to Sekoia. Once your intake format is homologated, it will appear in the intake catalog of **Sekoia XDR platform**:
 
-- Send an email to [team-integration@sekoia.io](mailto:team-integration@sekoia.io)
+- Create a pull request
+- Send an email to [team-integration@sekoia.io](mailto:team-integration@sekoia.io) with the pull request link
 - You will get an acknowledgement from Sekoia Integration team
 - In the following days (5 days max), you will receive feedbacks in your pull request that you must take into account
 - Once all feedbacks are taken into account, Integration team will **validate** your pull request
