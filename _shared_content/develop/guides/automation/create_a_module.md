@@ -244,7 +244,7 @@ def test_get_request(mock_request):
 
 
 ```
-To run your tests, Poetry will be used for dependency installation. You can install all the necessary dependencies by running the following command:
+To run your tests, Poetry will be used for dependency installation. You can install all the necessary dependencies and run your test with the following command:
 ```shell
 poetry run test_request.py
 ```
