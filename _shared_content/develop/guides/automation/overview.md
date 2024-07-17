@@ -10,7 +10,7 @@ This section provides details on how modules are organized and developed.
 
 ## Overview
 
-A module is a set of triggers and actions covering a specific service.
+A module is a set of triggers and actions covering a specific service. Most of the time, a module is associated to a product vendor.
 
 The module folder contains all the information required to be able to run the triggers and actions:
 

@@ -9,7 +9,7 @@ This module will contain one trigger and one action:
 
 ## Technical Requirements
 
-- Clone the Github repository [SEKOIA-IO/automation-library](https://github.com/SEKOIA-IO/automation-library)
+- Fork the Github repository [SEKOIA-IO/automation-library](https://github.com/SEKOIA-IO/automation-library)
 - Install the SEKOIA's automation SDK. This SDK contains various command line utilities that will help us manage    modules. Simply run the following command:
 ``` shell
 pip install sekoia-automation-sdk
@@ -439,6 +439,7 @@ if __name__ == "__main__":
 4. Action is registered.
 
 ## Compliance Validation
+
 This step will enable you to verify different components of the module and detect any errors. Before proceeding, ensure all test dependencies are installed by running the following command in the /_utils directory:
 ``` shell
 poetry install 
@@ -448,5 +449,15 @@ To check the correctness of the module the following command should be run :
 ```shell
 poetry run python _utils/compliance/__main__.py check --module modules\<module_name> 
 ```
+
 ## Homologation request 
-Once you have validated your unit and integration tests, as well as ensured compliance, you can proceed with the homologation request. Refer to this [section](../develop/guides/develop_integration/#step-3-homologate-your-automation-module) in the documentation and follow the required steps.
+
+Once you are done developing and testing your automation module, the last step is to request an homologation to Sekoia. Once your automation is homologated, it will appear in the automation library of **Sekoia XDR platform**.
+
+- Create a pull request of your automation
+- Once you are done, send an email to [team-integration@sekoia.io](mailto:team-integration@sekoia.io)
+- You will get an acknowledgement from Sekoia Integration team
+- In the following days (5 days max), you will receive feedbacks in your pull request that you must take into account
+- Once all feedbacks are taken into account, Integration team will **validate** your pull request
+
+The homologation process is now finished.

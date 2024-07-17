@@ -408,6 +408,9 @@ nav:
           - Definition of the taxonomy: xdr/develop/guides/formats/taxonomy.md
           - How to write a parser: xdr/develop/guides/formats/parser.md
           - How to write smart descriptions: xdr/develop/guides/formats/smartdescriptions.md
+          - Contribute to intake formats Github: xdr/develop/guides/formats/contribute.md
+          - How to write a parser in python: xdr/develop/guides/formats/parser_python.md
+          - Test your format in python: xdr/develop/guides/formats/testing.md
           - Best Practices:
             - Overview: xdr/develop/guides/formats/best_practices/overview.md
             - Authentications: xdr/develop/guides/formats/best_practices/authentications.md
