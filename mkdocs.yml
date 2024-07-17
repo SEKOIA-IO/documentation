@@ -84,7 +84,7 @@ nav:
           - Google Pub/Sub: integration/ingestion_methods/cloud_saas/gcp.md
       - Integrations:
         - Overview: integration/integrations/index.md
-        - Custom Format: integration/integrations/develop_integration/formats/create_a_format.md
+        - Custom Format: integration/develop_integration/formats/create_a_format/
         - Application:
           - Tenable Identity Exposure / Alsid: integration/integrations/application/alsid.md
           - Apache HTTP Server: integration/integrations/application/apache.md
