@@ -602,6 +602,7 @@ nav:
       - Overview: integration/categories/iam_sase/index.md
     - Network Security : 
       - Overview: integration/categories/network_security/index.md
+    - Sekoia.io Endpoint Agent : integration/categories/endpoint/sekoiaio.md
   - Develop an integration:
     - Overview: integration/develop_integration/overview.md
     - Format:
