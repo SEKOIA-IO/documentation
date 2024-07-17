@@ -16,8 +16,15 @@ with open("ecs_flat.yml", "r") as fd:
     ECS = yaml.safe_load(fd)
 
 
-def analyze_parser(parser, custom_fields) -> Dict:
+def is_valid_json(s):
+    try:
+        json.loads(s)
+        return True
+    except ValueError:
+        return False
 
+
+def analyze_parser(parser, custom_fields) -> Dict:
     taxonomy = ECS.copy()
     taxonomy.update(custom_fields or {})
     # extract all the fields
@@ -27,10 +34,8 @@ def analyze_parser(parser, custom_fields) -> Dict:
     type_values = set()
 
     for stage_name, stage_definition in parser["stages"].items():
-
         for action in stage_definition.get("actions", []):
             for field in action.get("set", {}):
-
                 if not isinstance(action["set"][field], list):
                     field_values = [action["set"][field]]
                 else:
@@ -67,15 +72,8 @@ def analyze_parser(parser, custom_fields) -> Dict:
         "kind": sorted(kind_values),
     }
 
-def is_valid_json(s):
-    try:
-        json.loads(s)
-        return True
-    except ValueError:
-        return False
 
 def load_intakes(intake_repository: str) -> List[Dict]:
-
     intakes: List[Dict] = []
 
     for module_path in Path(intake_repository).iterdir():
@@ -121,25 +119,28 @@ def load_intakes(intake_repository: str) -> List[Dict]:
             intake["is_sample_json"] = False
             if intake_tests.exists():
                 for intake_test in sorted(intake_tests.iterdir()):
-
                     if not intake_test.name.endswith(".json"):
                         continue
 
                     with open(intake_test, "r") as fd:
                         test = json.load(fd)
-                        intake["is_sample_json"] = is_valid_json(test["expected"]["message"])
-                        content = json.dumps(json.loads(test["expected"]["message"]), indent="    ") if intake["is_sample_json"] else test["expected"]["message"]
+                        intake["is_sample_json"] = is_valid_json(
+                            test["expected"]["message"]
+                        )
+                        content = (
+                            json.dumps(
+                                json.loads(test["expected"]["message"]), indent="    "
+                            )
+                            if intake["is_sample_json"]
+                            else test["expected"]["message"]
+                        )
                         intake["samples"].append(
-                            {
-                                "name": intake_test.name.split('.')[0],
-                                "content": content
-                            })
+                            {"name": intake_test.name.split(".")[0], "content": content}
+                        )
                         intake["tests"].append(
                             {
                                 "name": intake_test.name,
-                                "content": json.dumps(
-                                    test["expected"], indent="    "
-                                ),
+                                "content": json.dumps(test["expected"], indent="    "),
                             }
                         )
 
@@ -155,7 +156,6 @@ def load_intakes(intake_repository: str) -> List[Dict]:
 
 
 def generate_intake_doc(intake: Dict) -> str:
-
     file_loader = FileSystemLoader("templates")
     env = Environment(loader=file_loader)
 
@@ -165,14 +165,13 @@ def generate_intake_doc(intake: Dict) -> str:
         fields=intake["fields"],
         parser=intake["parser"],
         tests=intake["tests"],
-        is_sample_json = intake["is_sample_json"],
+        is_sample_json=intake["is_sample_json"],
         samples=intake["samples"],
         repo_path=intake["repo_path"],
     )
 
 
 def update_doc(intake_repository: str, documentation_repository: str):
-
     doc_path = Path(documentation_repository)
 
     # load intakes
@@ -180,7 +179,6 @@ def update_doc(intake_repository: str, documentation_repository: str):
 
     # produce intake documentation
     for intake in intakes:
-
         intake_content = generate_intake_doc(intake)
 
         generated_file_path = (
@@ -197,7 +195,6 @@ def update_doc(intake_repository: str, documentation_repository: str):
 
 
 if __name__ == "__main__":
-
     parser = argparse.ArgumentParser(
         description="Update the documentation with intake formats"
     )
