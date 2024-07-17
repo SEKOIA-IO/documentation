@@ -454,4 +454,3 @@ poetry run python _utils/compliance/__main__.py check --module modules\<module_n
 ```
 ## Homologation request 
 Once you validated your unitary and integration tests and the compliance, you can proceed with homologation request. You can refer to this page in the doc and follow the required steps [section](../develop/guides/develop_integration/#step-3-homologate-your-automation-module).
-That's it! Now you are ready to request module homologation !
