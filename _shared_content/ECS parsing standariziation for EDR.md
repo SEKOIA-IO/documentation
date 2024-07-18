@@ -6,12 +6,12 @@ To ensure consistent recognition and semantic interpretation of EDR (Endpoint De
 
 | **Field**        | **Description**                                | **Examples of values**                          |
 |------------------|------------------------------------------------|-------------------------------------------------|
-| `action.type`    | Specifies the action taken by the EDR system  | `block`, `allow`, `alert`                       |
-| `event.category` | The high-level category of the event          | `malware`, `intrusion`, `policy`                |
-| `event.code`     | A unique identifier or code representing the event | `12345`, `67890`, `ABCDE`                     |
-| `event.kind`     | Describes the kind of event                    | `event`, `alert`, `metric`                      |
-| `event.dataset`  | Specifies the dataset used by the EDR system  | `sentinelone`, `harfanglab`, `crowdstrike`, `cybereason`, `sophos`, `stormshield`, `symantec`, `tehtris`, `trendmicro`, `withsecure` |
-| `event.severity` | The severity level of the event               | `low`, `medium`, `high`, `critical`             |
+| `action.type`    | Specifies the action taken by the EDR system.  | `block`, `allow`, `alert`                       |
+| `event.category` | The high-level category of the event.          | `malware`, `intrusion`, `policy`                |
+| `event.code`     | A unique identifier or code representing the event. | `12345`, `67890`, `ABCDE`                     |
+| `event.kind`     | Describes the kind of event.                    | `event`, `alert`, `metric`                      |
+| `event.dataset`  | Specifies the dataset used by the EDR system.  | `sentinelone`, `harfanglab`, `crowdstrike`, `cybereason`, `sophos`, `stormshield`, `symantec`, `tehtris`, `trendmicro`, `withsecure` |
+| `event.severity` | The severity level of the event.               | `low`, `medium`, `high`, `critical`             |
 
 ## 🛠️ Optional Fields
 
@@ -19,17 +19,17 @@ To provide more context and enhance the description of the events, including add
 
 | **Field**               | **Description**                                 | **Examples**                                     |
 |-------------------------|-------------------------------------------------|--------------------------------------------------|
-| `host.name`             | Name of the host where the event occurred       | `host-123`                                       |
-| `user.id`               | The unique identifier of the user involved in the event | `user-456`                                |
+| `host.name`             | Name of the host where the event occurred.       | `host-123`                                       |
+| `user.id`               | The unique identifier of the user involved in the event. | `user-456`                                |
 | `process.name`          | The process name that triggered the event/alert.    | `malware.exe`                                    |
 | `process.pid`           | The process ID that triggered the event/alert.      | `2345`                                           |
 | `process.commandline`   | The command that launched the process.          | `sudo deluser toto`                              |
 | `file.hash`             | The hash of the file related to the event.      | `abcdef1234567890`                               |
-| `agent.id`              | The unique ID of the agent that detected the event | `12313-21341623`                             |
-| `agent.name`            | The name of the agent that detected the event   | `harfanglab`                                     |
-| `host.hostname`         | The hostname that generated the event           | `user admin`                                     |
-| `host.os.full`          | The OS of the host that generated the event     | `Windows 11 Enterprise`, `Ubuntu 22.04`          |
-| `host.domain`           | The domain of the host that generated the event | `Workgroup`                                      |
+| `agent.id`              | The unique ID of the agent that detected the event. | `12313-21341623`                             |
+| `agent.name`            | The name of the agent that detected the event.  | `harfanglab`                                     |
+| `host.hostname`         | The hostname that generated the event.           | `user admin`                                     |
+| `host.os.full`          | The OS of the host that generated the event.     | `Windows 11 Enterprise`, `Ubuntu 22.04`          |
+| `host.domain`           | The domain of the host that generated the event. | `Workgroup`                                      |
 ## Examples of event parsing
 In this section, raw events extracted from real use cases are used to show the expected parsing outcome . For each example, the input will be a raw event in json format and the output will be in ECS.
 
