@@ -289,7 +289,27 @@ nav:
       - Playbooks: tip/develop/rest_api/playbooks.md
 - Integration:
   - Introduction: integration/index.md
-  - Categories :
+  - Ingestion methods :
+      - Overview : integration/ingestion_methods/index.md
+      - Cloud & SaaS :
+          - Overview : integration/ingestion_methods/cloud_saas/overview.md
+          - AWS S3: integration/ingestion_methods/cloud_saas/aws.md
+          - Azure Event Hub: integration/ingestion_methods/cloud_saas/azure.md
+          - Google Pub/Sub: integration/ingestion_methods/cloud_saas/gcp.md
+      - HTTPS :
+          - Overview : integration/ingestion_methods/https/overview.md
+          - Formatting options: integration/ingestion_methods/https/format.md
+          - Forwarding logs using a third-party application: integration/ingestion_methods/https/third_part.md
+          - Graylog : integration/ingestion_methods/https/graylog.md
+          - Logstash : integration/ingestion_methods/https/logstash.md
+      - Syslog :
+          - Overview : integration/ingestion_methods/syslog/overview.md
+          - Rsyslog : integration/ingestion_methods/syslog/rsyslog.md
+          - Secured Forwarded : integration/ingestion_methods/syslog/secured_forwarded.md
+          - Sekoia.io Forwarder : integration/ingestion_methods/syslog/sekoiaio_forwarder.md
+          - Third-party syslog services: integration/ingestion_methods/syslog/syslog_service.md
+          - Syslog NG : integration/ingestion_methods/syslog/syslog-ng.md
+  - List of intake categories :
       - Overview : integration/categories/overview.md
       - Applicative :
           - Apache HTTP Server : integration/categories/applicative/apache.md
@@ -353,46 +373,6 @@ nav:
           - Fortinet Fortigate: integration/categories/network_security/fortigate.md
           - Fortinet Fortiproxy: integration/categories/network_security/fortiproxy.md
           - Fortinet Fortiweb: integration/categories/network_security/fortiweb.md
-  - How to develop a new Integration :
-      - Overview : integration/develop_integration/overview.md
-      - Automation :
-          - Overview : integration//develop_integration/automation/overview.md
-          - Actions : integration/develop_integration/automation/action.md
-          - Custom Format : integration/develop_integration/automation/create_a_module.md
-          - Development Guidelines : integration//develop_integration/automation/development_guidelines.md
-          - Module : integration/develop_integration/automation/create_a_module.md
-          - Trigger : integration/develop_integration/automation/trigger.md
-      - Formats :
-          - Overview : integration/develop_integration/formats/overview.md
-          - Create a Format : integration/develop_integration/formats/create_a_format.md
-          - Datasources : integration/develop_integration/formats/datasources.md
-          - Definition of a structured event : integration/develop_integration/formats/structured_event.md
-          - Definition of the taxonomy : integration/develop_integration/formats/taxonomy.md
-          - How to write a parser : integration/develop_integration/formats/parser.md
-          - How to write smart descriptions : integration/develop_integration/formats/smartdescriptions.md
-          - Best Practices :
-            - Overview : integration/develop_integration/formats/best_practices/overview.md
-            - Authentications : integration/develop_integration/formats/best_practices/authentications.md
-  - Ingestion methods :
-      - Overview : integration/ingestion_methods/index.md
-      - Cloud & SaaS :
-          - Overview : integration/ingestion_methods/cloud_saas/overview.md
-          - AWS S3: integration/ingestion_methods/cloud_saas/aws.md
-          - Azure Event Hub: integration/ingestion_methods/cloud_saas/azure.md
-          - Google Pub/Sub: integration/ingestion_methods/cloud_saas/gcp.md
-      - HTTPS :
-          - Overview : integration/ingestion_methods/https/overview.md
-          - Formatting options: integration/ingestion_methods/https/format.md
-          - Forwarding logs using a third-party application: integration/ingestion_methods/https/third_part.md
-          - Graylog : integration/ingestion_methods/https/graylog.md
-          - Logstash : integration/ingestion_methods/https/logstash.md
-      - Syslog :
-          - Overview : integration/ingestion_methods/syslog/overview.md
-          - Rsyslog : integration/ingestion_methods/syslog/rsyslog.md
-          - Secured Forwarded : integration/ingestion_methods/syslog/secured_forwarded.md
-          - Sekoia.io Forwarder : integration/ingestion_methods/syslog/sekoiaio_forwarder.md
-          - Third-party syslog services: integration/ingestion_methods/syslog/syslog_service.md
-          - Syslog NG : integration/ingestion_methods/syslog/syslog-ng.md
   - Actions integrations:
     - Overview : integration/action_library/overview.md
     - Applicatives:
@@ -483,26 +463,26 @@ nav:
       - Tranco: integration/action_library/threat_intelligence/tranco.md
       - VirusTotal: integration/action_library/threat_intelligence/virustotal.md
       - Whois: integration/action_library/threat_intelligence/whois.md
-  - Develop an integration:
-    - Overview: integration/develop_integration/overview.md
-    - Format:
-      - Overview: integration/develop_integration/formats/overview.md
-      - Create a Format: integration/develop_integration/formats/create_a_format.md
-      - Datasources: integration/develop_integration/formats/datasources.md
-      - Definition of a structured event: integration/develop_integration/formats/structured_event.md
-      - Definition of the taxonomy: integration/develop_integration/formats/taxonomy.md
-      - How to write a parser: integration/develop_integration/formats/parser.md
-      - How to write smart descriptions: integration/develop_integration/formats/smartdescriptions.md
-      - Best Practices:
-        - Overview: integration/develop_integration/formats/best_practices/overview.md
-        - Authentications: integration/develop_integration/formats/best_practices/authentications.md
-    - Automation:
-      - Overview: integration/develop_integration/automation/overview.md
-      - Create a Module: integration/develop_integration/automation/create_a_module.md
-      - Developement Guideline: integration/develop_integration/automation/developement_guideline.md
-      - Module: integration/develop_integration/automation/module.md
-      - Action: integration/develop_integration/automation/action.md
-      - Trigger: integration/develop_integration/automation/trigger.md
+  - How to develop a new Integration :
+      - Overview : integration/develop_integration/overview.md
+      - Automation :
+          - Overview : integration//develop_integration/automation/overview.md
+          - Action : integration/develop_integration/automation/action.md
+          - Custom Format : integration/develop_integration/automation/create_a_module.md
+          - Development Guidelines : integration//develop_integration/automation/development_guideline.md
+          - Module : integration/develop_integration/automation/create_a_module.md
+          - Trigger : integration/develop_integration/automation/trigger.md
+      - Formats :
+          - Overview : integration/develop_integration/formats/overview.md
+          - Create a Format : integration/develop_integration/formats/create_a_format.md
+          - Datasources : integration/develop_integration/formats/datasources.md
+          - Definition of a structured event : integration/develop_integration/formats/structured_event.md
+          - Definition of the taxonomy : integration/develop_integration/formats/taxonomy.md
+          - How to write a parser : integration/develop_integration/formats/parser.md
+          - How to write smart descriptions : integration/develop_integration/formats/smartdescriptions.md
+          - Best Practices :
+            - Overview : integration/develop_integration/formats/best_practices/overview.md
+            - Authentications : integration/develop_integration/formats/best_practices/authentications.md
 plugins:
 - search: null
 - redirects:
