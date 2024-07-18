@@ -737,43 +737,6 @@ plugins:
       operation_center/threat_exposition.md: xdr/features/report/dashboards.md
       operation_center/triggers.md: xdr/features/automate/triggers.md
       playbooks/actions.md: xdr/features/automate/actions.md
-      playbooks/library/aws.md: xdr/features/automate/library/aws.md
-      playbooks/library/binaryedge-s-api.md: xdr/features/automate/library/binaryedge-s-api.md
-      playbooks/library/censys.md: xdr/features/automate/library/censys.md
-      playbooks/library/certificate-transparency.md: xdr/features/automate/library/certificate-transparency.md
-      playbooks/library/detection-rules.md: xdr/features/automate/library/detection-rules.md
-      playbooks/library/digital-shadows.md: xdr/features/automate/library/digital-shadows.md
-      playbooks/library/fileutils.md: xdr/features/automate/library/fileutils.md
-      playbooks/library/fortigate-fw.md: xdr/features/automate/library/fortigate-fw.md
-      playbooks/library/git.md: xdr/features/automate/library/git.md
-      playbooks/library/glimps.md: xdr/features/automate/library/glimps.md
-      playbooks/library/google.md: xdr/features/automate/library/google.md
-      playbooks/library/harfanglab.md: xdr/features/automate/library/harfanglab.md
-      playbooks/library/http.md: xdr/features/automate/library/http.md
-      playbooks/library/iknowwhatyoudownload.md: xdr/features/automate/library/iknowwhatyoudownload.md
-      playbooks/library/imperva.md: xdr/features/automate/library/imperva.md
-      playbooks/library/iptoasn.md: xdr/features/automate/library/iptoasn.md
-      playbooks/library/mandrill.md: xdr/features/automate/library/mandrill.md
-      playbooks/library/mattermost.md: xdr/features/automate/library/mattermost.md
-      playbooks/library/misp.md: xdr/features/automate/library/misp.md
-      playbooks/library/mwdb.md: xdr/features/automate/library/mwdb.md
-      playbooks/library/onyphe.md: xdr/features/automate/library/onyphe.md
-      playbooks/library/osint.md: xdr/features/automate/library/osint.md
-      playbooks/library/pagerduty.md: xdr/features/automate/library/pagerduty.md
-      playbooks/library/panda-security.md: xdr/features/automate/library/panda-security.md
-      playbooks/library/public-suffix.md: xdr/features/automate/library/public-suffix.md
-      playbooks/library/riskiq.md: xdr/features/automate/library/riskiq.md
-      playbooks/library/rss.md: xdr/features/automate/library/rss.md
-      playbooks/library/sekoia-io.md: xdr/features/automate/library/sekoia-io.md
-      playbooks/library/servicenow.md: xdr/features/automate/library/servicenow.md
-      playbooks/library/shodan.md: xdr/features/automate/library/shodan.md
-      playbooks/library/stix.md: xdr/features/automate/library/stix.md
-      playbooks/library/the-hive.md: xdr/features/automate/library/the-hive.md
-      playbooks/library/tranco.md: xdr/features/automate/library/tranco.md
-      playbooks/library/triage.md: xdr/features/automate/library/triage.md
-      playbooks/library/vade-secure.md: xdr/features/automate/library/vade-secure.md
-      playbooks/library/virustotal.md: xdr/features/automate/library/virustotal.md
-      playbooks/library/whois.md: xdr/features/automate/library/whois.md
       playbooks/operators.md: xdr/features/automate/operators.md
       playbooks/overview.md: xdr/features/automate/index.md
       playbooks/triggers.md: xdr/features/automate/triggers.md

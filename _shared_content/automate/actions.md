@@ -18,11 +18,11 @@ The Actions Library lists all available actions in playbooks with their detailed
 
 | Name | Description |
 | --- | --- |
-| [Get Event Field Common Values](../library/sekoia-io/#get-event-field-common-values) | Retrieve the most common values of an ECS field based on the time window |
-| [List Assets](../library/sekoia-io/#list-assets) | Retrieve detailed information about assets based on a filter |
-| [Search Alerts](../library/sekoia-io/#search-alerts) | Retrieve detailed information about alerts (such as the urgency, name of the rule, etc… except events) based on a filter. |
-| [Get Alert](../library/sekoia-io/#get-alert) | Retrieve detailed alert information such as the urgency, name of the rule, pattern, etc… except events. |
-| [Get Events](../library/sekoia-io/#get-events) | Retrieve events based on a search. This action is equivalent to a search on the event page and takes into consideration 3 parameters: a query with filters (`source.ip=xx.xxx.xx`), and earliest time/latest time: two dates to determine the date range of the search. |
+| [Get Event Field Common Values](/integration/action_library/generic/sekoia-io/#get-event-field-common-values) | Retrieve the most common values of an ECS field based on the time window |
+| [List Assets](/integration/action_library/generic/sekoia-io/#list-assets) | Retrieve detailed information about assets based on a filter |
+| [Search Alerts](/integration/action_library/generic/sekoia-io/#search-alerts) | Retrieve detailed information about alerts (such as the urgency, name of the rule, etc… except events) based on a filter. |
+| [Get Alert](/integration/action_library/generic/sekoia-io/#get-alert) | Retrieve detailed alert information such as the urgency, name of the rule, pattern, etc… except events. |
+| [Get Events](/integration/action_library/generic/sekoia-io/#get-events) | Retrieve events based on a search. This action is equivalent to a search on the event page and takes into consideration 3 parameters: a query with filters (`source.ip=xx.xxx.xx`), and earliest time/latest time: two dates to determine the date range of the search. |
 
 !!!note
 	`Get Events` can be used to retrieve events from an alert. Events associated to an alert contain the key `alert_short_ids` with the value of the ID of the alert.
@@ -31,15 +31,15 @@ The Actions Library lists all available actions in playbooks with their detailed
 
 | Name | Description |
 | --- | --- |
-| [Create an asset](../library/sekoia-io/#create-asset) | Create an asset |
-| [Delete an asset](../library/sekoia-io/#delete-an-asset) | Delete an asset |
-| [Add attribute to asset](../library/sekoia-io/#add-attribute-to-asset) | Add attribute to asset |
-| [Add key to asset](../library/sekoia-io/#add-key-to-asset) | Add key to asset |
-| [Edit alert](../library/sekoia-io/#edit-alert) | Edit an alert details such as the urgency or the alert category |
-| [Comment alert](../library/sekoia-io/#comment-alert) | Add a comment to the alert |
-| [Update alert status](../library/sekoia-io/#update-alert-status) | Change the status of an alert |
-| [Push Events to Intake](../library/sekoia-io/#push-events-to-intake) | Push one or more events to an Intake |
-| [Attach Alerts to Case](../library/sekoia-io/#attach-alerts-to-case) | Attach one or more alerts to a case. |
+| [Create an asset](/integration/action_library/generic/sekoia-io/#create-asset) | Create an asset |
+| [Delete an asset](/integration/action_library/generic/sekoia-io/#delete-an-asset) | Delete an asset |
+| [Add attribute to asset](/integration/action_library/generic/sekoia-io/#add-attribute-to-asset) | Add attribute to asset |
+| [Add key to asset](/integration/action_library/generic/sekoia-io/#add-key-to-asset) | Add key to asset |
+| [Edit alert](/integration/action_library/generic/sekoia-io/#edit-alert) | Edit an alert details such as the urgency or the alert category |
+| [Comment alert](/integration/action_library/generic/sekoia-io/#comment-alert) | Add a comment to the alert |
+| [Update alert status](/integration/action_library/generic/sekoia-io/#update-alert-status) | Change the status of an alert |
+| [Push Events to Intake](/integration/action_library/generic/sekoia-io/#push-events-to-intake) | Push one or more events to an Intake |
+| [Attach Alerts to Case](/integration/action_library/generic/sekoia-io/#attach-alerts-to-case) | Attach one or more alerts to a case. |
 
 
 #### How to update an alert status
