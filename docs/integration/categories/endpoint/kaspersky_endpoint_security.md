@@ -7,11 +7,11 @@ type: intake
 **Kaspersky Endpoint Security** is an advanced security solution designed to safeguard businesses, their networks, and data against a wide array of cyber threats. Employing a multi-layered approach, it integrates various protection technologies including signature-based detection, heuristic analysis, machine learning, and real-time monitoring to detect and thwart malware, ransomware, zero-day attacks, and other threats effectively.
 
 - **Vendor**: Kaspersky
-- **Plan**: Defend Core / Defend Prime
+- **Plan**: Defend Prime
 - **Supported environment**: On Premise
 - **Version compatibility, if applicable**:
 - **Detection based on**: Endpoint Telemetry
-- **Supported application or feature**: Endpoint Security
+- **Supported application or feature**: File monitoring, Web logs, Anti-virus
 - **Coverage Score**: 4
 
 ## High-Level Architecture Diagram
@@ -20,10 +20,6 @@ type: intake
 - **Schema**
 
 ![kaspersky_endpoint_security_architecture](/assets/integration/kaspersky_endpoint_security_architecture.png)
-
-!!! Alternative
-
-    This will not be detailed in this documentation, but logs can also be sent directly to Sekoia.io over HTTPS using the Sekoia.io Endpoint Agent and the "Collect logs in files" method. This provides an alternative to the specified syslog collection method and may be preferable in certain environments.
 
 ## Specification
 
@@ -133,13 +129,15 @@ This setup guide describes how to forward events produced by **Kaspersky Endpoin
 
 {!_shared_content/integration/forwarder_configuration.md!}
 
-## Detection section
+{!_shared_content/operations_center/integrations/generated/255764ef-eaf6-4964-958e-81b9418e6584_sample.md!}
 
-{!_shared_content/operations_center/integrations/generated/255764ef-eaf6-4964-958e-81b9418e6584.md!}
+## Detection section
 
 The following section provides information for those who wish to learn more about the detection capabilities enabled by collecting this intake. It includes details about the built-in rule catalog, event categories, and ECS fields extracted from raw events. This is essential for users aiming to create [custom detection rules](/docs/xdr/features/detect/sigma.md), perform hunting activities, or pivot in the [events page](/docs/xdr/features/investigate/events.md).
 
 {!_shared_content/operations_center/detection/generated/suggested_rules_255764ef-eaf6-4964-958e-81b9418e6584_do_not_edit_manually.md!}
+
+{!_shared_content/operations_center/integrations/generated/255764ef-eaf6-4964-958e-81b9418e6584.md!}
 
 ## Further readings
 
