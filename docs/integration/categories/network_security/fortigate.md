@@ -19,7 +19,7 @@ The range of Fortigate firewalls is a complete appliance solution whose security
 - **Type of integration**: Outbound (PUSH to Sekoia.io)
 - **Schema**
 
-![fortinet_fortigate_architecture](/assets/integration/fortinet_fortigate_architecture.png)
+![fortinet_fortigate_architecture](/assets/integration/fortinet_fortigate_architecture.png){: style="max-width:100%"}
 
 ## Specification
 

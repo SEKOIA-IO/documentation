@@ -19,7 +19,7 @@ Ekinops OneOS is a comprehensive and flexible network operating system designed 
 - **Type of integration**: Outbound (PUSH to Sekoia.io)
 - **Schema**
 
-![ekinops_oneos_architecture](/assets/integration/ekinops_oneos_architecture.png)
+![ekinops_oneos_architecture](assets/integration/ekinops_oneos_architecture.png){: style="max-width:100%"}
 
 ## Specification
 

@@ -21,7 +21,7 @@ In this documentation, you will learn how to collect and send FreeRADIUS logs to
 - **Type of integration**: Outbound (PUSH to Sekoia.io)
 - **Schema**
 
-![freeradius_architecture](/assets/integration/freeradius_architecture.png)
+![freeradius_architecture](/assets/integration/freeradius_architecture.png){: style="max-width:100%"}
 
 ## Specification
 

@@ -19,7 +19,7 @@ Check Point’s Next Generation Firewalls (NGFWs) are trusted by customers for t
 - **Type of integration**: Outbound (PUSH to Sekoia.io)
 - **Schema**
 
-![check_point_ngfw_architecture](/assets/integration/check_point_ngfw_architecture.png)
+![check_point_ngfw_architecture](/assets/check_point_ngfw_architecture.png){: style="max-width:100%"}
 
 ## Specification
 
