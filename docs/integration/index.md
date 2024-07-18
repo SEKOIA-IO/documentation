@@ -10,15 +10,15 @@ In this section, you'll find detailed information on the various methods (pushin
 
 ### Intake Categories
 
-This section offers an organized view of different [intake categories](/integration/categories/overview.md), that are used for log collection and processing purposes. You'll find documentation on various types of data (endpoint, network, email...) and how to configure each one, ensuring you a smooth BUILD phase of Third party logs collection.
+This section offers an organized view of different [intake categories](/integration/categories/overview/), that are used for log collection and processing purposes. You'll find documentation on various types of data (endpoint, network, email...) and how to configure each one, ensuring you a smooth BUILD phase of Third party logs collection.
 
 ### Automation Categories
 
-This section contains a wealth of [automation actions](/integration/action_library/overview.md) to interract with Third party directly from and without leaving the Sekoia.io SOC Platform. These resources are designed to help you streamline your workflows and automate repetitive tasks, allowing you to focus on more strategic activities.
+This section contains a wealth of [automation actions](/integration/action_library/overview/) to interract with Third party directly from and without leaving the Sekoia.io SOC Platform. These resources are designed to help you streamline your workflows and automate repetitive tasks, allowing you to focus on more strategic activities.
 
 ### How to Develop A New Integration
 
-For those looking to extend the capabilities of Sekoia.io SOC Platform, this section provides a [step-by-step guide on how to develop custom integrations](/integration/develop_integration/overview.md). You'll learn about our integration framework, best practices, and how to contribute to our ecosystem.
+For those looking to extend the capabilities of Sekoia.io SOC Platform, this section provides a [step-by-step guide on how to develop custom integrations](/integration/develop_integration/overview/). You'll learn about our integration framework, best practices, and how to contribute to our ecosystem.
 
 ## Valuable Resources
 
