@@ -12,7 +12,6 @@ SpamAssassin is a computer program used for e-mail spam filtering. SpamAssassin 
 - **Version compatibility**: 3.4.6 (Latest version as of now)
 - **Detection based on**: Telemetry
 - **Supported application or feature**: Email spam filtering
-- **Coverage Score**: 2
 
 ## High-Level Architecture Diagram
 

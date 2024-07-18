@@ -10,7 +10,6 @@ Azure Network Watcher provides tools to monitor, diagnose, view metrics, and ena
 - **Supported environment**: SaaS
 - **Detection based on**: Telemetry
 - **Supported application or feature**: Host network interface, Netflow/Enclave netflow, Network device logs, Network protocol analysis	
-- **Coverage Score**: 3
 
 ## Configure
 Please contact your support to discuss about the network security group to monitor in your Azure infrastructure in order to find the appropriate solution to forward your logs to Sekoia.io.

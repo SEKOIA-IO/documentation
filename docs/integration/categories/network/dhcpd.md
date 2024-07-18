@@ -12,7 +12,6 @@ ISC DHCP offers a complete open-source solution for implementing DHCP servers.
 - **Version compatibility, if applicable**:
 - **Detection based on**: Network Telemetry
 - **Supported application or feature**: DHCP Server
-- **Coverage Score**: 2
 
 ## High-Level Architecture Diagram
 

@@ -15,7 +15,6 @@ The Cisco Secure Firewall (formerly Next-Generation Firewall) is a security prod
   - **Adaptive Security Appliance (ASA)**: Combines firewall, antivirus, intrusion prevention, and virtual private network (VPN) capabilities.
   - **Firepower Threat Defense (FTD)**: A unified software image that includes the Cisco ASA features and FirePOWER Services. This unified software offers both ASA and FirePOWER functionalities on one platform, in terms of both hardware and software features.
   - **Next Generation IPS (NGIPS)**: Detects and stops intrusions in your internal network or public cloud. NGIPS helps you to mitigate vulnerabilities and manage patch applications.
-- **Coverage Score**: 3
 
 ## High-Level Architecture Diagram
 

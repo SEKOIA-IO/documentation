@@ -10,7 +10,6 @@ AWS WAF is a web application firewall that lets you monitor the HTTP(S) requests
 - **Supported environment**: SaaS
 - **Detection based on**: Alert, Telemetry
 - **Supported application or feature**: Web application firewall logs	
-- **Coverage Score**: 3
 
 ## Configure
 

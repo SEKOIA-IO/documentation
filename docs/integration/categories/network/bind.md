@@ -12,7 +12,6 @@ BIND is an implementation of the Domain Name System (DNS) of the Internet. It pe
 - **Version compatibility**: 9.18.8 (Latest version as of now)
 - **Detection based on**: Telemetry
 - **Supported application or feature**: DNS server
-- **Coverage Score**: 2
 
 ## High-Level Architecture Diagram
 

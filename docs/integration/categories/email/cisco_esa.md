@@ -12,7 +12,6 @@ Cisco Email Security Appliance (ESA) is an email gateway appliance that provides
 - **Version compatibility**: 14.2 (Latest version as of now)
 - **Detection based on**: Telemetry
 - **Supported application or feature**: Email threat protection
-- **Coverage Score**: 3
 
 ## High-Level Architecture Diagram
 

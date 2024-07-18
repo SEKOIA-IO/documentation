@@ -10,7 +10,6 @@ AWS CloudTrail is a service that enables governance, compliance, and operational
 - **Supported environment**: SaaS
 - **Detection based on**: Telemetry
 - **Supported application or feature**: AWS CloudTrail logs, Services
-- **Coverage Score**: 3
 
 ## Configure
 

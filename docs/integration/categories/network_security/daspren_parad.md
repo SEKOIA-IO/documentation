@@ -14,7 +14,6 @@ type: intake
   - Data loss prevention
   - Kernel drivers
   - File monitoring
-- **Coverage Score**: 1
 
 ## High-Level Architecture Diagram
 

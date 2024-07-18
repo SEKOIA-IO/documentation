@@ -14,7 +14,6 @@ HAProxy is a free, open-source software that provides a high availability load b
 - **Version Compatibility**: 2.9 or higher
 - **Detection Based On**: Telemetry
 - **Supported Application or Feature**: Access Traffic
-- **Coverage Score**: 2
 
 ## High-Level Architecture Diagram
 

@@ -13,7 +13,6 @@ type: intake
 
 - **Detection based on**: Telemetry / Security Alerts / Audit
 - **Supported application or feature**:
-- **Coverage Score**: 2
 
 ## High-Level Architecture Diagram
 

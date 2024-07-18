@@ -14,7 +14,6 @@ In this documentation, you will learn how to collect and send FreeRADIUS logs to
 - **Version compatibility, if applicable**:
 - **Detection based on**: Network Telemetry
 - **Supported application or feature**: Authentication, Authorization, and Accounting
-- **Coverage Score**: 2
 
 ## High-Level Architecture Diagram
 

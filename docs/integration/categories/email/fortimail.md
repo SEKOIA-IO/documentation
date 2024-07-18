@@ -12,7 +12,6 @@ Fortinet cybersecurity solutions sell physical products such as firewalls, plus 
 - **Version compatibility, if applicable**:
 - **Detection based on**: Network Telemetry
 - **Supported application or feature**: Email Security
-- **Coverage Score**: 3
 
 ## High-Level Architecture Diagram
 

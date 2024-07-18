@@ -12,7 +12,6 @@ Infoblox DNS, DHCP, and IP address management (DDI) enables customers to control
 - **Version compatibility, if applicable**:
 - **Detection based on**: Network Telemetry
 - **Supported application or feature**: DNS, DHCP, IP Address Management
-- **Coverage Score**: 3
 
 ## High-Level Architecture Diagram
 

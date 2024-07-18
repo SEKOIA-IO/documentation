@@ -12,7 +12,6 @@ The range of Fortigate firewalls is a complete appliance solution whose security
 - **Version compatibility, if applicable**:
 - **Detection based on**: Security Alerts / Network Telemetry
 - **Supported application or feature**: Traffic, Web, URL Filtering, VPN
-- **Coverage Score**: 3
 
 ## High-Level Architecture Diagram
 

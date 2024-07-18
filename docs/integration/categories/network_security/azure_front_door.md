@@ -11,7 +11,6 @@ Microsoft Azure Front Door is a scalable and secure entry point for fast deliver
 - **Supported environment**: SaaS
 - **Detection based on**: Telemetry
 - **Supported application or feature**: Web logs, Web application firewall logs
-- **Coverage Score**: 3
 
 ## Configure
 

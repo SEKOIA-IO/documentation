@@ -12,7 +12,6 @@ The Cisco Web Security Appliance is a security device that analyzes HTTP(S) traf
 - **Version compatibility, if applicable**:
 - **Detection based on**: Security Alerts / Telemetry
 - **Supported application or feature**: HTTP(S) traffic analysis
-- **Coverage Score**: 3
 
 ## High-Level Architecture Diagram
 

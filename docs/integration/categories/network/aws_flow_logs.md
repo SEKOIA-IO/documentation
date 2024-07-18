@@ -9,7 +9,6 @@ type: intake
 - **Supported environment**: SaaS
 - **Detection based on**: Telemetry
 - **Supported application or feature**: Host network interface, Netflow/Enclave netflow, Network device logs, Network protocol analysis	
-- **Coverage Score**: 3
 
 Amazon VPC Flow Logs is a feature that provides the ability to capture information about IP network traffic as it enters or exits from network interface in your Amazon VPC (Amazon Virtual Private Cloud). VPC Flow Logs can help you with a number of tasks, such as:
 

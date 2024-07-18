@@ -14,7 +14,6 @@ In this documentation, we will explain one way to collect and send FortiProxy lo
 - **Version compatibility, if applicable**:
 - **Detection based on**: Security Alerts / Network Telemetry
 - **Supported application or feature**: Web Proxy
-- **Coverage Score**: 4
 
 ## High-Level Architecture Diagram
 

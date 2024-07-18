@@ -11,7 +11,6 @@ Cisco Meraki MX is a multifunctional security and SD-WAN enterprise appliance wi
 - **Supported environment**: On Premise
 - **Detection based on**: Telemetry
 - **Supported application or feature**: Security and SD-WAN
-- **Coverage Score**: 3
 
 ## High-Level Architecture Diagram
 

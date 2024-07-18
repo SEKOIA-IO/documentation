@@ -12,7 +12,6 @@ This documentation details one way to collect and send FortiWeb logs to Sekoia.i
 - **Version compatibility, if applicable**:
 - **Detection based on**: Network Telemetry
 - **Supported application or feature**: WAF
-- **Coverage Score**: 3
 
 ## High-Level Architecture Diagram
 

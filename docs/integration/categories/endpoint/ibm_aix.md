@@ -12,7 +12,6 @@ AIX (Advanced Interactive eXecutive) is a series of proprietary Unix operating s
 - **Version compatibility, if applicable**:
 - **Detection based on**: Telemetry
 - **Supported application or feature**: File Monitoring, Process monitoring, Authentication
-- **Coverage Score**: 1
 
 ## High-Level Architecture Diagram
 

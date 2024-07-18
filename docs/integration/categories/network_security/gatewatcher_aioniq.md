@@ -12,7 +12,6 @@ Gatewatcher AionIQ is a detection and response platform for your network that id
 - **Version compatibility, if applicable**:
 - **Detection based on**: Network Telemetry
 - **Supported application or feature**: Detection and Response
-- **Coverage Score**: 3
 
 ## High-Level Architecture Diagram
 

@@ -12,7 +12,6 @@ Claroty xDome is an integrated cybersecurity platform designed for industrial co
 - **Version compatibility, if applicable**:
 - **Detection based on**: Alerts / Telemetry
 - **Supported application or feature**: Network protocol analysis
-- **Coverage Score**: 2
 
 ## High-Level Architecture Diagram
 

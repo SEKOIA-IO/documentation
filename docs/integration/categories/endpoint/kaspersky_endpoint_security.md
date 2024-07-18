@@ -11,8 +11,7 @@ type: intake
 - **Supported environment**: On Premise
 - **Version compatibility, if applicable**:
 - **Detection based on**: Endpoint Telemetry
-- **Supported application or feature**: File monitoring, Web logs, Anti-virus
-- **Coverage Score**: 4
+- **Supported application or feature**: Endpoint Security
 
 ## High-Level Architecture Diagram
 

@@ -14,7 +14,6 @@ This integration encompasses the detection logs from Cyberwatch Vulnerability Ma
 - **Version compatibility, if applicable**:
 - **Detection based on**: Vulnerability Scanning
 - **Supported application or feature**: Third-party application logs
-- **Coverage Score**: 3
 
 ## High-Level Architecture Diagram
 

@@ -12,7 +12,6 @@ NGINX is an HTTP and reverse proxy server, a mail proxy server, and a generic TC
 - **Version compatibility, if applicable**:
 - **Detection based on**: Network Telemetry
 - **Supported application or feature**: Access and Error logs
-- **Coverage Score**: 2
 
 ## High-Level Architecture Diagram
 
