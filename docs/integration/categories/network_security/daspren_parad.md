@@ -21,7 +21,7 @@ type: intake
 - **Type of integration**: Outbound (PUSH to Sekoia.io)
 - **Schema**
 
-![consume_azure_logs](/assets/integration/integration_catalog/<techno_name>/image.png)
+![consume_azure_logs](/assets/integration/daspren.png){: style="max-width:100%"}
 
 ## Specification
 

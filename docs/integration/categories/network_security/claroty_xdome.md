@@ -19,7 +19,7 @@ Claroty xDome is an integrated cybersecurity platform designed for industrial co
 - **Type of integration**: Outbound (PUSH to Sekoia.io)
 - **Schema**
 
-![claroty_xdome_architecture](/assets/check_point_ngfw_architecture.png){: style="max-width:100%"}
+![claroty_xdome_architecture](/assets/integration/claroty_xdome_architecture.png){: style="max-width:100%"}
 
 ## Specification
 

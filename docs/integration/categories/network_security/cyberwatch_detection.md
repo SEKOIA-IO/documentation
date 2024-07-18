@@ -21,7 +21,7 @@ This integration encompasses the detection logs from Cyberwatch Vulnerability Ma
 - **Type of integration**: Outbound (PUSH to Sekoia.io)
 - **Schema**
 
-![cyberwatch_detection_architecture](/assets/integration/cyberwatch_detection_architecture.png)
+![cyberwatch_detection_architecture](/assets/integration/cyberwatch_detection_architecture.png){: style="max-width:100%"}
 
 ## Specification
 
@@ -78,9 +78,6 @@ This setup guide will show you how to forward your Cyberwatch logs to Sekoia.io 
    <video controls width="100%">
      <source src="/assets/operation_center/integration_catalog/application/Cyberwatch.webm" type="video/webm">
    </video>
-
-3. **Create the Intake:**
-   - Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a new intake from the format Cyberwatch Detection. Copy the intake key.
 
 ### Instruction on Sekoia
 
