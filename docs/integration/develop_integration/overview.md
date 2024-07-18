@@ -75,7 +75,7 @@ Once you have finished your modifications, [create a custom intake](#step-2-crea
 ### Usecase 3. You want to create a new automation
 
 !!! warning
-    Please note that all automations are available in the public library of Sekoia SOC platform. Other customers of Sekoia can access your automation module. We are still working on the implementation of private automations.
+    Please note that all automations are available in the public library of the Sekoia SOC platform, making them accessible to other Sekoia customers. We are currently working on implementing private automations.
 
 #### Step 1. Understand the general concepts
 
