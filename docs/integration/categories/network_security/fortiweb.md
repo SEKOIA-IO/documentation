@@ -7,11 +7,11 @@ type: intake
 This documentation details one way to collect and send FortiWeb logs to Sekoia.io: from the FortiWeb machine to an internal syslog concentrator, then forwarded to Sekoia.io.
 
 - **Vendor**: Fortinet
-- **Plan**: Defend Core / Defend Prime
+- **Plan**: Defend Prime
 - **Supported environment**: On Premise
 - **Version compatibility, if applicable**:
-- **Detection based on**: Security Alerts / Network Telemetry
-- **Supported application or feature**: Traffic, Event, Attack
+- **Detection based on**: Network Telemetry
+- **Supported application or feature**: WAF
 - **Coverage Score**: 3
 
 ## High-Level Architecture Diagram
@@ -29,8 +29,6 @@ This documentation details one way to collect and send FortiWeb logs to Sekoia.i
 
 ### Prerequisites
 
-- **Licence level**:
-    - Open Source
 - **Resource**:
     - Self-managed syslog forwarder
 - **Network**:
@@ -46,8 +44,8 @@ This documentation details one way to collect and send FortiWeb logs to Sekoia.i
 ### Logs details
 
 - **Supported functionalities**: See section [Overview](#overview)
-- **Supported type(s) of structure**: syslog
-- **Supported verbosity level**: Emergency / Alert / Critical / Error / Warning / Notice / Informational / Debug
+- **Supported type(s) of structure**: Key-Value
+- **Supported verbosity level**: Informational
 
 !!! Note
     Log levels are based on the taxonomy of [RFC5425](https://datatracker.ietf.org/doc/html/rfc5424). Adapt according to the terminology used by the editor.
@@ -110,11 +108,13 @@ This setup guide will show you how to forward your FortiWeb logs to Sekoia.io by
 
 {!_shared_content/integration/forwarder_configuration.md!}
 
+{!_shared_content/operations_center/integrations/generated/2259adc3-9d93-4150-9c1c-46804e636084.md!} Sample
+
 ## Detection section
 
-{!_shared_content/operations_center/integrations/generated/2259adc3-9d93-4150-9c1c-46804e636084.md!}
-
 The following section provides information for those who wish to learn more about the detection capabilities enabled by collecting this intake. It includes details about the built-in rule catalog, event categories, and ECS fields extracted from raw events. This is essential for users aiming to create [custom detection rules](/docs/xdr/features/detect/sigma.md), perform hunting activities, or pivot in the [events page](/docs/xdr/features/investigate/events.md).
+
+{!_shared_content/operations_center/integrations/generated/2259adc3-9d93-4150-9c1c-46804e636084.md!}
 
 {!_shared_content/operations_center/detection/generated/suggested_rules_2259adc3-9d93-4150-9c1c-46804e636084_do_not_edit_manually.md!}
 

@@ -10,7 +10,7 @@ Check Point’s Next Generation Firewalls (NGFWs) are trusted by customers for t
 - **Plan**: Defend Core
 - **Supported environment**: On Premise
 - **Version compatibility**: R81.10 (Latest version as of now)
-- **Detection based on**: Telemetry
+- **Detection based on**: Telemetry, Alert
 - **Supported application or feature**: Firewall and threat prevention
 - **Coverage Score**: 3
 
@@ -21,16 +21,10 @@ Check Point’s Next Generation Firewalls (NGFWs) are trusted by customers for t
 
 ![check_point_ngfw_architecture](/assets/integration/check_point_ngfw_architecture.png)
 
-!!! Alternative
-
-    This will not be detailed in this documentation, but logs can also be sent directly to Sekoia.io over HTTPS using the Sekoia.io Endpoint Agent and the "Collect logs in files" method. This provides an alternative to the specified syslog collection method and may be preferable in certain environments.
-
 ## Specification
 
 ### Prerequisites
 
-- **Licence level**:
-    - Open Source
 - **Resource**:
     - Self-managed syslog forwarder
 - **Network**:
@@ -47,7 +41,7 @@ Check Point’s Next Generation Firewalls (NGFWs) are trusted by customers for t
 
 - **Supported functionalities**: See section [Overview](#overview)
 - **Supported type(s) of structure**: CEF
-- **Supported verbosity level**: Emergency / Alert / Critical / Error / Warning / Notice / Informational / Debug
+- **Supported verbosity level**: Informational
 
 !!! Note
     Log levels are based on the taxonomy of [RFC5425](https://datatracker.ietf.org/doc/html/rfc5424). Adapt according to the terminology used by the editor.
@@ -77,11 +71,14 @@ The solution to collect Check Point logs leverages the [Log Exporter](https://su
 
 {!_shared_content/integration/forwarder_configuration.md!}
 
+{!_shared_content/operations_center/integrations/generated/f0a10c21-37d1-419f-8671-77903dc8de69.md!} Sample
+
 ## Detection section
 
 The following section provides information for those who wish to learn more about the detection capabilities enabled by collecting this intake. It includes details about the built-in rule catalog, event categories, and ECS fields extracted from raw events. This is essential for users aiming to create [custom detection rules](/docs/xdr/features/detect/sigma.md), perform hunting activities, or pivot in the [events page](/docs/xdr/features/investigate/events.md).
 
 {!_shared_content/operations_center/integrations/generated/f0a10c21-37d1-419f-8671-77903dc8de69.md!}
+
 {!_shared_content/operations_center/detection/generated/suggested_rules_f0a10c21-37d1-419f-8671-77903dc8de69_do_not_edit_manually.md!}
 
 ## Further readings

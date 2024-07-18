@@ -7,7 +7,7 @@ type: intake
 The range of Fortigate firewalls is a complete appliance solution whose security functions are highly developed. The firewalls run on the FortiOS operating system.
 
 - **Vendor**: Fortinet
-- **Plan**: Defend Core / Defend Prime
+- **Plan**: Defend Prime
 - **Supported environment**: On Premise
 - **Version compatibility, if applicable**:
 - **Detection based on**: Security Alerts / Network Telemetry
@@ -21,16 +21,10 @@ The range of Fortigate firewalls is a complete appliance solution whose security
 
 ![fortinet_fortigate_architecture](/assets/integration/fortinet_fortigate_architecture.png)
 
-!!! Alternative
-
-    This will not be detailed in this documentation, but logs can also be sent directly to Sekoia.io over HTTPS using the Sekoia.io Endpoint Agent and the "Collect logs in files" method. This provides an alternative to the specified syslog collection method and may be preferable in certain environments.
-
 ## Specification
 
 ### Prerequisites
 
-- **Licence level**:
-    - Open Source
 - **Resource**:
     - Self-managed syslog forwarder
 - **Network**:
@@ -47,7 +41,7 @@ The range of Fortigate firewalls is a complete appliance solution whose security
 
 - **Supported functionalities**: See section [Overview](#overview)
 - **Supported type(s) of structure**: Standard, CSV, CEF (Common Event Format)
-- **Supported verbosity level**: Emergency / Alert / Critical / Error / Warning / Notice / Informational / Debug
+- **Supported verbosity level**: Alert
 
 !!! Note
     Log levels are based on the taxonomy of [RFC5425](https://datatracker.ietf.org/doc/html/rfc5424). Adapt according to the terminology used by the editor.
@@ -133,11 +127,13 @@ This setup guide will show you how to forward your Fortigate logs to Sekoia.io b
 
 {!_shared_content/integration/forwarder_configuration.md!}
 
-## Detection section
-
 {!_shared_content/operations_center/integrations/generated/5702ae4e-7d8a-455f-a47b-ef64dd87c981.md!}
 
+## Detection section
+
 The following section provides information for those who wish to learn more about the detection capabilities enabled by collecting this intake. It includes details about the built-in rule catalog, event categories, and ECS fields extracted from raw events. This is essential for users aiming to create [custom detection rules](/docs/xdr/features/detect/sigma.md), perform hunting activities, or pivot in the [events page](/docs/xdr/features/investigate/events.md).
+
+{!_shared_content/operations_center/integrations/generated/5702ae4e-7d8a-455f-a47b-ef64dd87c981.md!}
 
 {!_shared_content/operations_center/detection/generated/suggested_rules_5702ae4e-7d8a-455f-a47b-ef64dd87c981_do_not_edit_manually.md!}
 
