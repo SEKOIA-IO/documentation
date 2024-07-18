@@ -19,7 +19,7 @@ This documentation details one way to collect and send FortiWeb logs to Sekoia.i
 - **Type of integration**: Outbound (PUSH to Sekoia.io)
 - **Schema**
 
-![fortinet_fortiweb_architecture](/assets/integration/fortinet_fortiweb_architecture.png)
+![fortinet_fortiweb_architecture](/assets/integration/fortinet_fortiweb_architecture.png){: style="max-width:100%"}
 
 !!! Alternative
 
