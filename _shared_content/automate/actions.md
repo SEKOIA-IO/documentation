@@ -58,51 +58,54 @@ To update an alert status, you need to copy the `status_uuid` corresponding to t
 
 To get notified, you can rely on these tools:
 
-- [Mandrill](library/mandrill.md): Send Message
-- [Mattermost](library/mattermost.md): Post message / Post Sekoia.io alert
-- [Pagerduty](library/pagerduty.md): Trigger Alert
-- [The Hive](library/the-hive.md): Create an alert in the Hive
+- [Mandrill](/integration/action_library/applicative/mandrill.md): Send Message
+- [Mattermost](/integration/action_library/applicative/mattermost.md): Post message / Post Sekoia.io alert
+- [Pagerduty](/integration/action_library/applicative/pagerduty.md): Trigger Alert
+- [The Hive](/integration/action_library/collaboration_tools/the-hive.md): Create an alert in the Hive
+- ...
 
 ## Data collection
 
 If you have an account in one of the listed tools below, you can easily extract data from there and import it to Sekoia.io. This is made possible with an API key.
 
-- [BinaryEdge](library/binaryedge-s-api.md)
-- [Censys](library/censys.md)
-- [GLIMPS](library/glimps.md)
-- [IKnowWhatYouDownloaded](library/iknowwhatyoudownload.md)
-- [Onyphe](library/onyphe.md)
-- [Public Suffix](library/public-suffix.md)
-- [RiskIQ](library/riskiq.md)
-- [Shodan](library/shodan.md)
-- [VirusTotal](library/virustotal.md)
-- [Whois](library/whois.md)
+- [BinaryEdge](/integration/action_library/threat_intelligence/binaryedge-s-api.md)
+- [Censys](/integration/action_library/threat_intelligence/censys.md)
+- [GLIMPS](/integration/action_library/threat_intelligence/glimps.md)
+- [IKnowWhatYouDownloaded](/integration/action_library/threat_intelligence/iknowwhatyoudownload.md)
+- [Onyphe](/integration/action_library/threat_intelligence/onyphe.md)
+- [Public Suffix](/integration/action_library/threat_intelligence/public-suffix.md)
+- [RiskIQ](/integration/action_library/threat_intelligence/riskiq.md)
+- [Shodan](/integration/action_library/threat_intelligence/shodan.md)
+- [VirusTotal](/integration/action_library/threat_intelligence/virustotal.md)
+- [Whois](/integration/action_library/threat_intelligence/whois.md)
+- ...
 
 ## Helpers
 
 | Name | Description |
 | --- | --- |
-| [fileutils](library/fileutils.md) | Extract data from XML or JSON files |
-| [http](library/http.md) | Request HTTP resources (download file, request URL) |
-| [STIX](library/stix.md) | Add source, add tags, create relationships, cryptolaemus to STIX, CVE to STIX, filter bundle, JSON objects to observables, VirusTotal LiveHunt to observables, MISP to STIX, observables to contextualized indicators, observables to indicators, remove orphan objects, STIX to MISP, string to observables |
+| [fileutils](/integration/action_library/generic/fileutils.md) | Extract data from XML or JSON files |
+| [http](/integration/action_library/generic/http.md) | Request HTTP resources (download file, request URL) |
+| [STIX](/integration/action_library/threat_intelligence/stix.md) | Add source, add tags, create relationships, cryptolaemus to STIX, CVE to STIX, filter bundle, JSON objects to observables, VirusTotal LiveHunt to observables, MISP to STIX, observables to contextualized indicators, observables to indicators, remove orphan objects, STIX to MISP, string to observables |
 
 These helpers need their associated trigger to function properly:
 
 | Name | Description |
 | --- | --- |
-| [MISP](library/misp.md) | Gather, store, share and correlate threat intelligence. Convert from MISP to STIX, publish MISP event |
-| [MWDB](library/mwdb.md) | Convert a MWDB config to a bundle of observables |
-| [Triage](library/triage.md) | Triage raw results to observables |
+| [MISP](/integration/action_library/threat_intelligence/misp.md) | Gather, store, share and correlate threat intelligence. Convert from MISP to STIX, publish MISP event |
+| [MWDB](/integration/action_library/threat_intelligence/mwdb.md) | Convert a MWDB config to a bundle of observables |
+| [Triage](/integration/action_library/threat_intelligence/triage.md) | Triage raw results to observables |
 
 ## Third-party applications
 
-- [Microsoft Entra ID (Azure AD) ](library/microsoft-entra-id.md)
-- [Microsoft Remote Server](library/microsoft-remote-server.md)
-- [Fortigate Firewalls](library/fortigate-firewalls.md)
-- [HarfangLab](library/harfanglab.md)
-- [Panda Security](library/panda-security.md)
-- [Sentinel One](library/sentinelone.md)
-- [ServiceNow](library/servicenow.md)
+- [Microsoft Entra ID (Azure AD) ](/integration/action_library/iam_sase/microsoft-entra-id.md)
+- [Microsoft Remote Server](/integration/action_library/applicative/microsoft-remote-server.md)
+- [Fortigate Firewalls](/integration/action_library/network/fortigate-firewalls.md)
+- [HarfangLab](/integration/action_library/endpoint/harfanglab.md)
+- [Panda Security](/integration/action_library/endpoint/panda-security.md)
+- [Sentinel One](/integration/action_library/endpoint/sentinelone.md)
+- [ServiceNow](/integration/action_library/collaboration_tools/servicenow.md)
+- ...
 
 More actions are available in the Actions Library. To learn how to set up an action, please refer to its documentation.
 
