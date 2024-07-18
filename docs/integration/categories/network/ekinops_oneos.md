@@ -8,18 +8,17 @@ Ekinops OneOS is a comprehensive and flexible network operating system designed 
 
 - **Vendor**: Ekinops
 - **Plan**: Defend Prime
-- **Supported environment**: On Premise / Cloud
-- **Version compatibility, if applicable**:
+- **Supported environment**: On Premise
 - **Detection based on**: Network Telemetry
 - **Supported application or feature**: Network Management and Security
-- **Coverage Score**: 3
+- **Coverage Score**: 2
 
 ## High-Level Architecture Diagram
 
 - **Type of integration**: Outbound (PUSH to Sekoia.io)
 - **Schema**
 
-![ekinops_oneos_architecture](assets/integration/ekinops_oneos_architecture.png){: style="max-width:100%"}
+![ekinops_oneos_architecture](/assets/integration/ekinops_oneos_architecture.png){: style="max-width:100%"}
 
 ## Specification
 
@@ -41,55 +40,46 @@ Ekinops OneOS is a comprehensive and flexible network operating system designed 
 
 - **Supported functionalities**: See section [Overview](#overview)
 - **Supported type(s) of structure**: Plain Text
-- **Supported verbosity level**: Warning / Notice / Informational
+- **Supported verbosity level**: Warning, Notice, Informational
 
 !!! Note
     Log levels are based on the taxonomy of [RFC5425](https://datatracker.ietf.org/doc/html/rfc5424). Adapt according to the terminology used by the editor.
-
-- **Default Log Location**:
-
-### Sample of supported raw events
-
-**TODO**: Add a directory with raw event in every integration.
 
 ## Step-by-Step Configuration Procedure
 
 ### Instructions on the 3rd Party Solution
 
-#### Forward Ekinops OneOS Logs to Sekoia.io
+#### Enable Syslog Forwarding Logs
 
-This setup guide will show you how to forward your Ekinops OneOS logs to Sekoia.io by means of a syslog transport channel.
+- To enable syslog forwarding logs, follow these steps:
 
-#### Detailed Procedure:
+   1. Connect to the Ekinops OneOS console.
+   2. Add the log concentrator as a new syslog server:
 
-1. **Prerequisites:**
-   - Have an internal log concentrator.
+   ```bash
+   localhost# configure terminal
 
-2. **Enable Syslog Forwarding Logs:**
-   - To enable syslog forwarding logs, follow these steps:
-     1. Connect to the Ekinops OneOS console.
-     2. Add the log concentrator as a new syslog server:
+   // Enter configuration commands, one per line. End with CNTL/Z.
 
-        ```bash
-        localhost#configure terminal
-        Enter configuration commands, one per line. End with CNTL/Z.
-        localhost(config)#syslog server <log concentrator server ip> 23 tcp <log concentrator port>
-        localhost(config)#logging syslog filter all
-        localhost(config)#logging syslog informational
-        localhost(config)#end
-        localhost#write mem
-        ```
-     3. Check the configuration:
+   localhost(config)# syslog server <log concentrator server ip> 23 tcp <log concentrator port>
+   localhost(config)# logging syslog filter all
+   localhost(config)# logging syslog informational
+   localhost(config)# end
+   localhost# write mem
+   ```
 
-        ```bash
-        localhost#show syslog servers
-        S.No Syslog Server                                    Facility VrfName                       Protocol  port    Interface                  Bytes-Sent
-        1    <log concentrator server ip>                     23      default 
-        ```
-     4. Exit the console.
+   3. Check the configuration:
 
-3. **Create the Intake:**
-   - Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a new intake from the format Ekinops OneOS. Copy the intake key.
+   ```bash
+   localhost# show syslog servers
+   ```
+
+   | S.No |         Syslog Server            | Facility | VrfName | Protocol |            Port             | Interface | Bytes-Sent |
+   |------|----------------------------------|----------|---------|----------|-----------------------------|-----------|------------|
+   | 1    |     log concentrator server ip   |    23    | default |   tcp    |    log concentrator port    |           |            |
+
+
+   4. Exit the console.
 
 ### Instruction on Sekoia
 
