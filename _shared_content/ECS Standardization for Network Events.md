@@ -175,4 +175,5 @@ CEF:0|Trellix|MPS|10.0.0.992057|IE|ips-event|7|externalId=3463232 rt=Sep 05 2023
     }
 ```
 
-Following these standards ensures that the EDR event data is consistent and can be easily interpreted and analyzed across different systems. This standardization helps in providing a unified view of security events and enhances the capability to respond to incidents efficiently.
+!!! note
+    Following these standards ensures that the EDR event data is consistent and can be easily interpreted and analyzed across different systems. This standardization helps in providing a unified view of security events and enhances the capability to respond to incidents efficiently.
