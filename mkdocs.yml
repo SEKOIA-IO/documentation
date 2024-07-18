@@ -146,6 +146,7 @@ nav:
           - Lacework Cloud Security: xdr/features/collect/integrations/cloud_and_saas/lacework_cloud_security.md
           - Microsoft Azure:
             - Microsoft Entra ID (Azure AD): xdr/features/collect/integrations/cloud_and_saas/azure/entra_id.md
+            - Azure Application Gateway: xdr/features/collect/integrations/cloud_and_saas/azure/azure_application_gateway.md
             - Azure Front Door: xdr/features/collect/integrations/cloud_and_saas/azure/azure_front_door.md
             - Azure Database for MySQL: xdr/features/collect/integrations/cloud_and_saas/azure/azure_mysql.md
             - Azure Linux: xdr/features/collect/integrations/cloud_and_saas/azure/azure_linux.md
