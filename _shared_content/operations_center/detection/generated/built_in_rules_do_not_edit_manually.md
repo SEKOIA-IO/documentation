@@ -1,4 +1,4 @@
-Rules catalog includes **911 built-in detection rules** ([_last update on 2024-07-18_](rules_changelog.md)).
+Rules catalog includes **912 built-in detection rules** ([_last update on 2024-07-18_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Identity Information**
 
@@ -67,6 +67,12 @@ Rules catalog includes **911 built-in detection rules** ([_last update on 2024-0
     
 **Gather Victim Host Information**
 
+??? abstract "DNS Query For Iplookup"
+    
+    Detects dns query of observables tagged as iplookup.
+    
+    - **Effort:** master
+    
 ??? abstract "Wmic Suspicious Commands"
     
     Detects suspicious commands used by the process wmic to get informations on the system.
