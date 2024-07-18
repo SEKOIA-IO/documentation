@@ -104,8 +104,8 @@ CEF:0|Fortinet|Fortigate|v6.0.3|54802|dns:dns-response pass|3|deviceExternalId=F
         "port": 54621
     }
 ```
-### Trellix Network Security 
 
+### Trellix Network Security 
 The following example is a Trellix log detailing a high-severity IPS event (level 7). It identifies traffic from source IP 1.2.3.4 on port 80 to destination IP 5.6.7.8 on port 1109 as an Exploit Kit Landing Page. The system alerted stakeholders of this potential threat. The detection, associated with signature ID 85305161, was recorded on device cms-nx5600-1.eng.fireeye.com, with further details available via a provided URL. The source and destination MAC addresses were 6c:af:1a:fb:fe:a7 and 00:78:db:db:96:f6, respectively, and the event was categorized as a client attack.
 
 **Raw Event Before Parsing**
