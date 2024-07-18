@@ -1,6 +1,6 @@
 # How to develop a new integration
 
-## Make sure that the integration you want to develop does not exist
+## Before starting, make sure that the integration you want to develop does not exist
 
 1. Check our [Integration catalog](https://www.sekoia.io/en/integrations-catalog/)
 2. Check also our [roadmap portal](https://roadmap-integrations.sekoia.io/tabs/18-coming-next) for upcoming integrations
@@ -8,47 +8,78 @@
 
 ## What is your usecase?
 
-- **You want to create a new format or modify an existing format, go to this [section](#i-want-to-create-a-new-format-or-modify-an-existing-format)**
-- **You want to create a new automation, go to this [section](#i-want-to-create-a-new-automation)**
+- **You want to ingest data from a product not supported by Sekoia, go to this [section](#usecase-1-you-want-to-ingest-data-from-a-product-not-supported-by-sekoia)**
+- **You want to modify an existing intake, go to this [section](#usecase-2-you-want-to-modify-an-existing-intake)**
+- **You want to create a new automation, go to this [section](#usecase-3-you-want-to-create-a-new-automation)**
 
 ## List of development usecases
 
-### I want to create a new format or modify an existing format
+### Usecase 1. You want to ingest data from a product not supported by Sekoia
 
-#### Step 1. Create a new format with the custom parser editor
+#### Step 1. Understand the general concepts
 
-!!! info
-    Requirement: your data can be forwarded into Sekoia XDR platform with the existing [ingestion methods](https://docs.sekoia.io/xdr/features/collect/ingestion_methods/)
+!!! warning
+    For this usecase, you must already be able to forward your data into Sekoia SOC platform with an existing [ingestion methods](https://docs.sekoia.io/xdr/features/collect/ingestion_methods/)
 
-You can create a custom format to ingest any unsupported type of data. Follow this [documentation page](../formats/create_a_format/) to create a new intake format:
+Before starting, read this [overview of intake format](../formats/overview/) to get a grasp of the general concepts.
 
-Additional resources to support development:
+#### Step 2. Create your custom intake
 
-- General concepts of [Intake format](../formats/overview/)
-- [Parser development guide](../formats/parser/)
-- Best practices for [Authentications](../formats/best_practices/authentications/) logs
-- An E-learning module for the development of custom format is available in our training catalog, you can request an access [here](https://www.sekoia.io/en/lets-talk-about-your-training-project/)
+To ingest a format of data, you will first create a custom format with the custom parser editor. A custom format describe the way data are extracted from an event.
 
-Once you are done, you can create an intake based on this new format:
+Create a custom format to describe the format of the data to extract:
 
-#### Step 2. Homologate a new format in the Sekoia catalog (optional)
-
-If you have already developed a new format and would like Sekoia to perform maintenance of this format, you can request an homologation of your custom format. Once homologated, the format will integrate the public catalog of Sekoia.
+- Start by creating a [custom format](../formats/create_a_format/#custom-format-creation-on-the-platform)
+- Write the parser of the custom format by following this [guide](../formats/parser/) 
 
 !!! info
-    To homologate your format, you will need to contribute through our Github repository 
+    Additional resources to support development:
+
+    - Best practices for [Authentications](../formats/best_practices/authentications/) logs
+    - An E-learning module for the development of custom format is available in our training catalog, you can request an access [here](https://www.sekoia.io/en/lets-talk-about-your-training-project/)
+
+Once you are done, you will create a custom intake based using this custom format. A custom intake is an instance of your custom format.
+
+1. Click on the `+ Intake` from the Intakes homepage
+2. Choose the custom format that you have created (you can search for custom format by its name)
+3. Click on the `Create` button of the custom format
+4. Provide an intelligible name
+5. Select the entity to which you want to associate the corresponding data
+6. Click on `Create`
+7. Find your newly created source of events as well as the intake key in the Intakes homepage
+
+You have now successfully ingested data from a new product. If you would like to share your custom format to the cybersecurity community or let Sekoia handle the maintenance of this custom format, proceed to the next step.
+
+#### Step 3. Homologate your custom format in the Sekoia catalog (optional)
+
+If you have created a new format and want Sekoia to manage its maintenance, you can request homologation for your custom format. Once approved, the format will be added to Sekoia's public catalog.
+
+!!! info
+    To homologate your custom format, you will need to contribute through our Github repository 
 
 - Fork the Github repository [SEKOIA-IO/intake-formats](https://github.com/SEKOIA-IO/intake-formats)
 - Follow this contribution [guide](../formats/contribute/)
 
-### I want to create a new automation
+### Usecase 2. You want to modify an existing intake
+
+You would like to parse additional fields in an existing intake or modify the way existing fields are extracted. To do this, you can create a custom format based on an existing intake:
+
+1. Click on the `+ Intake` from the Intakes homepage
+2. Search for the intake you wish to modify
+3. Click on the `See format` button at the top right of the card
+4. Click on the `Duplicate` button at the top right of the custom parser editor
+5. Modify the parser by using this [guide](../formats/parser/) 
+
+Once you have finished your modifications, [create a custom intake](#step-2-create-your-custom-intake) based on this new custom format.
+
+### Usecase 3. You want to create a new automation
 
 !!! warning
-    Please note that all automations are available in the public library of Sekoia XDR platform. Other customers of Sekoia can access your automation module. We are still working on the implementation of private automations.
+    Please note that all automations are available in the public library of the Sekoia SOC platform, making them accessible to other Sekoia customers. We are currently working on implementing private automations.
 
 #### Step 1. Understand the general concepts
 
-Before developing a new playbook trigger or playbook action, read this [introduction](../automation/overview) to get a grasp of the general concepts of automations.
+Before developing a new playbook trigger or playbook action, read this [overview of automations](../automation/overview) to get a grasp of the general concepts of automations.
 
 #### Step 2. Create your automation
 
@@ -56,3 +87,9 @@ Once you have acquired a basic understanding of automations:
 
 - Fork the Github repository [SEKOIA-IO/automation-library](https://github.com/SEKOIA-IO/automation-library)
 - Follow this guide to [create your module](../automation/create_a_module/)
+
+#### Step 3. Homologate your automation in the Sekoia catalog
+
+The last step is to homologate your automation in order to make it available in the automation library.
+
+- Follow these [instructions](../automation/create_a_module/#homologation-request) to homologate your automation

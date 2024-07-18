@@ -25,7 +25,7 @@ To ensure the quality of contribution, the following points will be reviewed in 
 
 ## Homologation request 
 
-Once you are done writing and testing your intake format, the last step is to request an homologation to Sekoia. Once your intake format is homologated, it will appear in the intake catalog of **Sekoia XDR platform**:
+Once you are done writing and testing your intake format, the last step is to request an homologation to Sekoia. Once your intake format is homologated, it will appear in the intake catalog of **Sekoia SOC platform**:
 
 - Create a pull request
 - Send an email to [team-integration@sekoia.io](mailto:team-integration@sekoia.io) with the pull request link

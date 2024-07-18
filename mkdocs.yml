@@ -96,82 +96,6 @@ nav:
       - Triggers: xdr/features/automate/triggers.md
       - Operators: xdr/features/automate/operators.md
       - Actions: xdr/features/automate/actions.md
-      - Actions Library:
-        - AWS: xdr/features/automate/library/aws.md
-        - Atlassian JIRA: xdr/features/automate/library/atlassian-jira.md
-        - BinaryEdge's API: xdr/features/automate/library/binaryedge-s-api.md
-        - Bitsight: xdr/features/automate/library/bitsight.md
-        - Broadcom Cloud Secure Web Gateway: xdr/features/automate/library/broadcom-cloud-secure-web-gateway.md
-        - Cato Networks: xdr/features/automate/library/cato-networks.md
-        - Censys: xdr/features/automate/library/censys.md
-        - Certificate Transparency: xdr/features/automate/library/certificate-transparency.md
-        - Check Point: xdr/features/automate/library/check-point.md
-        - CrowdStrike: xdr/features/automate/library/crowdstrike.md
-        - CrowdStrike Falcon: xdr/features/automate/library/crowdstrike-falcon.md
-        - Cybereason: xdr/features/automate/library/cybereason.md
-        - Darktrace: xdr/features/automate/library/darktrace.md
-        - Detection Rules: xdr/features/automate/library/detection-rules.md
-        - Digital Shadows: xdr/features/automate/library/digital-shadows.md
-        - Duo: xdr/features/automate/library/duo.md
-        - ExtraHop: xdr/features/automate/library/extrahop.md
-        - Fortigate Firewalls: xdr/features/automate/library/fortigate-firewalls.md
-        - GLIMPS: xdr/features/automate/library/glimps.md
-        - Git: xdr/features/automate/library/git.md
-        - Github: xdr/features/automate/library/github.md
-        - Google: xdr/features/automate/library/google.md
-        - HTTP: xdr/features/automate/library/http.md
-        - HarfangLab: xdr/features/automate/library/harfanglab.md
-        - IKnowWhatYouDownload: xdr/features/automate/library/iknowwhatyoudownload.md
-        - IPInfo: xdr/features/automate/library/ipinfo.md
-        - IPtoASN: xdr/features/automate/library/iptoasn.md
-        - Imperva: xdr/features/automate/library/imperva.md
-        - Jumpcloud Directory Insights: xdr/features/automate/library/jumpcloud-directory-insights.md
-        - Lacework: xdr/features/automate/library/lacework.md
-        - MISP: xdr/features/automate/library/misp.md
-        - MWDB: xdr/features/automate/library/mwdb.md
-        - Mandrill: xdr/features/automate/library/mandrill.md
-        - Mattermost: xdr/features/automate/library/mattermost.md
-        - Microsoft Active Directory: xdr/features/automate/library/microsoft-active-directory.md
-        - Microsoft Azure: xdr/features/automate/library/microsoft-azure.md
-        - Microsoft Entra ID: xdr/features/automate/library/microsoft-entra-id.md
-        - Microsoft Office365: xdr/features/automate/library/microsoft-office365.md
-        - Microsoft Windows Server: xdr/features/automate/library/microsoft-windows-server.md
-        - Mimecast: xdr/features/automate/library/mimecast.md
-        - Netskope: xdr/features/automate/library/netskope.md
-        - Nybble: xdr/features/automate/library/nybble.md
-        - OSINT: xdr/features/automate/library/osint.md
-        - Okta: xdr/features/automate/library/okta.md
-        - Onyphe: xdr/features/automate/library/onyphe.md
-        - OpenAI: xdr/features/automate/library/openai.md
-        - PagerDuty: xdr/features/automate/library/pagerduty.md
-        - Panda Security: xdr/features/automate/library/panda-security.md
-        - Proofpoint: xdr/features/automate/library/proofpoint.md
-        - Public Suffix: xdr/features/automate/library/public-suffix.md
-        - RSS: xdr/features/automate/library/rss.md
-        - RiskIQ: xdr/features/automate/library/riskiq.md
-        - STIX: xdr/features/automate/library/stix.md
-        - Salesforce: xdr/features/automate/library/salesforce.md
-        - Sekoia.io: xdr/features/automate/library/sekoia-io.md
-        - SentinelOne: xdr/features/automate/library/sentinelone.md
-        - SentinelOneDeepVisibility: xdr/features/automate/library/sentinelonedeepvisibility.md
-        - ServiceNow: xdr/features/automate/library/servicenow.md
-        - Shodan: xdr/features/automate/library/shodan.md
-        - Skyhigh Security: xdr/features/automate/library/skyhigh-security.md
-        - Sophos: xdr/features/automate/library/sophos.md
-        - TEHTRIS: xdr/features/automate/library/tehtris.md
-        - The Hive: xdr/features/automate/library/the-hive.md
-        - Tranco: xdr/features/automate/library/tranco.md
-        - Trellix: xdr/features/automate/library/trellix.md
-        - Trend Micro: xdr/features/automate/library/trend-micro.md
-        - Triage: xdr/features/automate/library/triage.md
-        - Ubika: xdr/features/automate/library/ubika.md
-        - Utils: xdr/features/automate/library/utils.md
-        - Vade Cloud: xdr/features/automate/library/vade-cloud.md
-        - Vade Secure: xdr/features/automate/library/vade-secure.md
-        - VirusTotal: xdr/features/automate/library/virustotal.md
-        - Whois: xdr/features/automate/library/whois.md
-        - WithSecure: xdr/features/automate/library/withsecure.md
-        - Zscaler: xdr/features/automate/library/zscaler.md
       - Debug playbooks: xdr/features/automate/debug-playbooks.md
     - External integrations:
       - FortiSOAR: xdr/features/integrations/fortisoar.md
@@ -451,6 +375,119 @@ nav:
           - Sekoia.io Forwarder : integration/ingestion_methods/syslog/sekoiaio_forwarder.md
           - Third-party syslog services: integration/ingestion_methods/syslog/syslog_service.md
           - Syslog NG : integration/ingestion_methods/syslog/syslog-ng.md
+  - Actions integrations:
+    - Overview : integration/action_library/overview.md
+    - Applicatives:
+      - Mandrill: integration/action_library/applicative/mandrill.md
+      - Mattermost: integration/action_library/applicative/mattermost.md
+      - Microsoft_Office365: integration/action_library/applicative/microsoft-office365.md
+      - Microsoft_Remote_Server: integration/action_library/applicative/microsoft-remote-server.md
+      - Microsoft_Windows_Server: integration/action_library/applicative/microsoft-windows-server.md
+      - PagerDuty: integration/action_library/applicative/pagerduty.md
+      - Proofpoint: integration/action_library/applicative/proofpoint.md
+      - Salesforce: integration/action_library/applicative/salesforce.md
+    - Cloud_Providers:
+      - AWS: integration/action_library/cloud_providers/aws.md
+      - Google: integration/action_library/cloud_providers/google.md
+      - Microsoft_Azure: integration/action_library/cloud_providers/microsoft-azure.md
+    - Collaboration_Tools:
+      - Atlassian_JIRA: integration/action_library/collaboration_tools/atlassian-jira.md
+      - Git: integration/action_library/collaboration_tools/git.md
+      - Github: integration/action_library/collaboration_tools/github.md
+      - ServiceNow: integration/action_library/collaboration_tools/servicenow.md
+      - TheHive: integration/action_library/collaboration_tools/the-hive.md
+    - Email:
+      - Mimecast: integration/action_library/email/mimecast.md
+      - Vade_Secure: integration/action_library/email/vade-secure.md
+    - Endpoint:
+      - CrowdStrike: integration/action_library/endpoint/crowdstrike.md
+      - CrowdStrike_Falcon: integration/action_library/endpoint/crowdstrike-falcon.md
+      - Cybereason: integration/action_library/endpoint/cybereason.md
+      - HarfangLab: integration/action_library/endpoint/harfanglab.md
+      - Panda_Security: integration/action_library/endpoint/panda-security.md
+      - SentinelOne: integration/action_library/endpoint/sentinelone.md
+      - SentinelOne_Deep_Visibility: integration/action_library/endpoint/sentinelonedeepvisibility.md
+      - Sophos: integration/action_library/endpoint/sophos.md
+      - TEHTRIS: integration/action_library/endpoint/tehtris.md
+      - The_Hive: integration/action_library/endpoint/the-hive.md
+      - Trellix: integration/action_library/endpoint/trellix.md
+      - Trend_Micro: integration/action_library/endpoint/trend-micro.md
+      - WithSecure: integration/action_library/endpoint/withsecure.md
+    - Generic:
+      - HTTP: integration/action_library/generic/http.md
+      - FileUtils: integration/action_library/generic/fileutils.md
+      - OpenAI: integration/action_library/generic/openai.md
+      - RSS: integration/action_library/generic/rss.md
+      - Sekoia_io: integration/action_library/generic/sekoia-io.md
+      - Utils: integration/action_library/generic/utils.md
+    - IAM_SASE:
+      - Duo: integration/action_library/iam_sase/duo.md
+      - Jumpcloud_Directory_Insights: integration/action_library/iam_sase/jumpcloud-directory-insights.md
+      - Microsoft Active Directory : integration/action_library/collaboration_tools/microsoft-active-directory.md
+      - Microsoft_Entra_ID: integration/action_library/collaboration_tools/microsoft-entra-id.md
+      - Microsoft Entra ID (Azure AD) : integration/action_library/collaboration_tools/intra-id.md
+      - Okta: integration/action_library/iam_sase/okta.md
+    - Network:
+      - Broadcom_Cloud_Secure_Web_Gateway: integration/action_library/network/broadcom-cloud-secure-web-gateway.md
+      - Cato_Networks: integration/action_library/network/cato-networks.md
+      - Check_Point: integration/action_library/network/check-point.md
+      - Darktrace: integration/action_library/network/darktrace.md
+      - ExtraHop: integration/action_library/network/extrahop.md
+      - Fortigate_Firewalls: integration/action_library/network/fortigate-firewalls.md
+      - Imperva: integration/action_library/network/imperva.md
+      - Lacework: integration/action_library/network/lacework.md
+      - Netskope: integration/action_library/network/netskope.md
+      - SSkyhigh_Security_Secure_Web_Gateway: integration/action_library/network/skyhigh-security-secure-web-gateway-swg.md
+      - Skyhigh_Security: integration/action_library/network/skyhigh-security.md
+      - Ubika: integration/action_library/network/ubika.md
+      - Vade_Cloud: integration/action_library/network/vade-cloud.md
+      - Zscaler: integration/action_library/network/zscaler.md
+    - Threat_Intelligence:
+      - BinaryEdges_API: integration/action_library/threat_intelligence/binaryedge-s-api.md
+      - Bitsight: integration/action_library/threat_intelligence/bitsight.md
+      - Censys: integration/action_library/threat_intelligence/censys.md
+      - Certificate_Transparency: integration/action_library/threat_intelligence/certificate-transparency.md
+      - Detection_Rules: integration/action_library/threat_intelligence/detection-rules.md
+      - Digital_Shadows: integration/action_library/threat_intelligence/digital-shadows.md
+      - Glimps: integration/action_library/threat_intelligence/glimps.md
+      - IKnowWhatYouDownload: integration/action_library/threat_intelligence/iknowwhatyoudownload.md
+      - IPInfo: integration/action_library/threat_intelligence/ipinfo.md
+      - IPtoASN: integration/action_library/threat_intelligence/iptoasn.md
+      - MISP: integration/action_library/threat_intelligence/misp.md
+      - MWDB: integration/action_library/threat_intelligence/mwdb.md
+      - Nybble: integration/action_library/threat_intelligence/nybble.md
+      - OSINT: integration/action_library/threat_intelligence/osint.md
+      - Onyphe: integration/action_library/threat_intelligence/onyphe.md
+      - Public_Suffix: integration/action_library/threat_intelligence/public-suffix.md
+      - RiskIQ: integration/action_library/threat_intelligence/riskiq.md
+      - Shodan: integration/action_library/threat_intelligence/shodan.md
+      - STIX: integration/action_library/threat_intelligence/stix.md
+      - Triage: integration/action_library/threat_intelligence/triage.md
+      - Tranco: integration/action_library/threat_intelligence/tranco.md
+      - VirusTotal: integration/action_library/threat_intelligence/virustotal.md
+      - Whois: integration/action_library/threat_intelligence/whois.md
+  - Develop an integration:
+    - Overview: integration/develop_integration/overview.md
+    - Format:
+      - Overview: integration/develop_integration/formats/overview.md
+      - Create a Format: integration/develop_integration/formats/create_a_format.md
+      - Datasources: integration/develop_integration/formats/datasources.md
+      - Definition of a structured event: integration/develop_integration/formats/structured_event.md
+      - Definition of the taxonomy: integration/develop_integration/formats/taxonomy.md
+      - How to write a parser: integration/develop_integration/formats/parser.md
+      - How to write smart descriptions: integration/develop_integration/formats/smartdescriptions.md
+      - Contribute to intake formats Github: integration/develop_integration/formats/contribute.md
+      - Test your Python parser: integration/develop_integration/formats/testing.md
+      - Best Practices:
+        - Overview: integration/develop_integration/formats/best_practices/overview.md
+        - Authentications: integration/develop_integration/formats/best_practices/authentications.md
+    - Automation:
+      - Overview: integration/develop_integration/automation/overview.md
+      - Create a Module: integration/develop_integration/automation/create_a_module.md
+      - Developement Guideline: integration/develop_integration/automation/developement_guideline.md
+      - Module: integration/develop_integration/automation/module.md
+      - Action: integration/develop_integration/automation/action.md
+      - Trigger: integration/develop_integration/automation/trigger.md
 plugins:
 - search: null
 - redirects:
@@ -700,43 +737,6 @@ plugins:
       operation_center/threat_exposition.md: xdr/features/report/dashboards.md
       operation_center/triggers.md: xdr/features/automate/triggers.md
       playbooks/actions.md: xdr/features/automate/actions.md
-      playbooks/library/aws.md: xdr/features/automate/library/aws.md
-      playbooks/library/binaryedge-s-api.md: xdr/features/automate/library/binaryedge-s-api.md
-      playbooks/library/censys.md: xdr/features/automate/library/censys.md
-      playbooks/library/certificate-transparency.md: xdr/features/automate/library/certificate-transparency.md
-      playbooks/library/detection-rules.md: xdr/features/automate/library/detection-rules.md
-      playbooks/library/digital-shadows.md: xdr/features/automate/library/digital-shadows.md
-      playbooks/library/fileutils.md: xdr/features/automate/library/fileutils.md
-      playbooks/library/fortigate-fw.md: xdr/features/automate/library/fortigate-fw.md
-      playbooks/library/git.md: xdr/features/automate/library/git.md
-      playbooks/library/glimps.md: xdr/features/automate/library/glimps.md
-      playbooks/library/google.md: xdr/features/automate/library/google.md
-      playbooks/library/harfanglab.md: xdr/features/automate/library/harfanglab.md
-      playbooks/library/http.md: xdr/features/automate/library/http.md
-      playbooks/library/iknowwhatyoudownload.md: xdr/features/automate/library/iknowwhatyoudownload.md
-      playbooks/library/imperva.md: xdr/features/automate/library/imperva.md
-      playbooks/library/iptoasn.md: xdr/features/automate/library/iptoasn.md
-      playbooks/library/mandrill.md: xdr/features/automate/library/mandrill.md
-      playbooks/library/mattermost.md: xdr/features/automate/library/mattermost.md
-      playbooks/library/misp.md: xdr/features/automate/library/misp.md
-      playbooks/library/mwdb.md: xdr/features/automate/library/mwdb.md
-      playbooks/library/onyphe.md: xdr/features/automate/library/onyphe.md
-      playbooks/library/osint.md: xdr/features/automate/library/osint.md
-      playbooks/library/pagerduty.md: xdr/features/automate/library/pagerduty.md
-      playbooks/library/panda-security.md: xdr/features/automate/library/panda-security.md
-      playbooks/library/public-suffix.md: xdr/features/automate/library/public-suffix.md
-      playbooks/library/riskiq.md: xdr/features/automate/library/riskiq.md
-      playbooks/library/rss.md: xdr/features/automate/library/rss.md
-      playbooks/library/sekoia-io.md: xdr/features/automate/library/sekoia-io.md
-      playbooks/library/servicenow.md: xdr/features/automate/library/servicenow.md
-      playbooks/library/shodan.md: xdr/features/automate/library/shodan.md
-      playbooks/library/stix.md: xdr/features/automate/library/stix.md
-      playbooks/library/the-hive.md: xdr/features/automate/library/the-hive.md
-      playbooks/library/tranco.md: xdr/features/automate/library/tranco.md
-      playbooks/library/triage.md: xdr/features/automate/library/triage.md
-      playbooks/library/vade-secure.md: xdr/features/automate/library/vade-secure.md
-      playbooks/library/virustotal.md: xdr/features/automate/library/virustotal.md
-      playbooks/library/whois.md: xdr/features/automate/library/whois.md
       playbooks/operators.md: xdr/features/automate/operators.md
       playbooks/overview.md: xdr/features/automate/index.md
       playbooks/triggers.md: xdr/features/automate/triggers.md
