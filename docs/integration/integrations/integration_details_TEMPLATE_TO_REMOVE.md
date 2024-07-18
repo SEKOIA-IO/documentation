@@ -7,12 +7,13 @@ type: intake
 ## Overview
 
 - **Vendor**:
-- **Plan**: Defend Core / Defend Prime
+- **Plan**: TODO Defend Core / Defend Prime
 - **Supported environment**: On Premise / SaaS
 - **Version compatibility, if applicable**:
 
 - **Detection based on**: Telemetry / Security Alerts / Audit
 - **Supported application or feature**:
+- **Coverage Score**: 2
 
 ## High-Level Architecture Diagram
 
@@ -63,12 +64,6 @@ type: intake
 
 !!! Note
     Log levels are based on the taxonomy of [RFC5425](https://datatracker.ietf.org/doc/html/rfc5424). Adapt according to the terminology used by the editor.
-
-- **Default Log Location**:
-
-### Sample of supported raw events
-
-**TODO**: Add a directory with raw event in every integration.
 
 ## Step-by-Step Configuration Procedure
 

@@ -345,10 +345,9 @@ nav:
           - WithSecure Elements : integration/categories/endpoint/withsecure_element.md
       - Generic :
           - Index : integration/categories/generic/index.md
-      - IAM SASE :
-          - Azure Key Vault: integration/categories/iam_sase/azure_key_vault.md
-          - Cisco Identity Services Engine (ISE): integration/categories/iam_sase/cisco_identity_services_engine_ise.md
-          - FreeRADIUS: integration/categories/iam_sase/freeradius.md
+      - IAM :
+          - Azure Key Vault: integration/categories/iam/azure_key_vault.md
+          - FreeRADIUS: integration/categories/iam/freeradius.md
       - Network :
           - ArubaOS Switch: integration/categories/network/arubaos.md
           - AWS Flow Logs: integration/categories/network/aws_flow_logs.md
@@ -368,6 +367,7 @@ nav:
       - Network Security :
           - Broadcom Edge SWG: integration/categories/network_security/broadcom_edge_swg.md
           - Check Point Firewall: integration/categories/network_security/checkpoint.md
+          - Cisco Identity Services Engine (ISE): integration/categories/network_security/cisco_identity_services_engine_ise.md
           - Cisco Secure Firewall: integration/categories/network_security/cisco_asa.md
           - Cisco Secure Web Appliance: integration/categories/network_security/cisco_wsa.md
           - Claroty xDome: integration/categories/network_security/claroty_xdome.md
