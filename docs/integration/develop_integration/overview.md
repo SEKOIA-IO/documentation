@@ -52,7 +52,7 @@ You have now successfully ingested data from a new product. If you would like to
 
 #### Step 3. Homologate your custom format in the Sekoia catalog (optional)
 
-You have developed a custom format and would like Sekoia to perform maintenance of this custom format, you can request an homologation. Once homologated, the custom format will integrate the public catalog of Sekoia.
+If you have created a new format and want Sekoia to manage its maintenance, you can request homologation for your custom format. Once approved, the format will be added to Sekoia's public catalog.
 
 !!! info
     To homologate your custom format, you will need to contribute through our Github repository 
