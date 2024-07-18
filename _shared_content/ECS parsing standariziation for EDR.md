@@ -158,14 +158,6 @@ This is a HarfangLab EDR alert that was triggered by Harfang agent in a Windows 
       "alert_type": "sigma",
       "log_type": "alert"
     }
-  ```
-For example, the event characteristics are derived from the log_type and alert_subtype(`process.log_type`) fields in the raw message:
-* The fields `event.kind` and `event.dataset` are set to alert because the log_type in the raw event is alert.
-* The field `event.category` is set to 'process' and `event.type` is set to 'start' because the `process.log_type` field of the raw event is identified as process.
-
-**ECS Fields After Parsing**
-    
-```json
     {
   "event": {
     "id": "00000000-0000-0000-0000-000000000000",
