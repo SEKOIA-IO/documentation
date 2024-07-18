@@ -18,7 +18,7 @@ Auditbeat communicates directly with the Linux audit framework, collects the sam
 - **Type of integration**: Outbound (PUSH to Sekoia.io)
 - **Schema**
 
-![linux_auditbeat_architecture](/assets/integration/linux_auditbeat_architecture.png)
+![linux_auditbeat_architecture](/assets/integration/linux_auditbeat_architecture.png){: style="max-width:100%"}
 
 ## Specification
 

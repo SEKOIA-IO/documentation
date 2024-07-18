@@ -9,8 +9,8 @@ F5's BIG-IP is a family of products covering software and hardware designed arou
 - **Vendor**: F5
 - **Plan**: Defend Prime
 - **Supported environment**: On Premise
-- **Version compatibility, if applicable**:
-- **Detection based on**: Security Alerts / Telemetry
+- **Version compatibility**: 11.3 and highier
+- **Detection based on**: Security Alerts, Telemetry
 - **Supported application or feature**: ASM, APM, LTM, AFM, PSM
 - **Coverage Score**: 3
 
@@ -19,7 +19,7 @@ F5's BIG-IP is a family of products covering software and hardware designed arou
 - **Type of integration**: Outbound (PUSH to Sekoia.io)
 - **Schema**
 
-![f5_bigip_architecture](/assets/integration/f5_bigip_architecture.png)
+![f5_bigip_architecture](/assets/integration/f5_bigip_architecture.png){: style="max-width:100%"}
 
 ## Specification
 
@@ -41,71 +41,42 @@ F5's BIG-IP is a family of products covering software and hardware designed arou
 
 - **Supported functionalities**: See section [Overview](#overview)
 - **Supported type(s) of structure**: Common Event Format (CEF), key-value
-- **Supported verbosity level**: Alert / Informational
+- **Supported verbosity level**: Alert, Informational
 
 !!! Note
     Log levels are based on the taxonomy of [RFC5425](https://datatracker.ietf.org/doc/html/rfc5424). Adapt according to the terminology used by the editor.
-
-- **Default Log Location**:
-
-### Sample of supported raw events
-
-**TODO**: Add a directory with raw event in every integration.
 
 ## Step-by-Step Configuration Procedure
 
 ### Instructions on the 3rd Party Solution
 
-#### Forward F5 BIG-IP Logs to Sekoia.io
+To configure an F5 BIG-IP system to send its Common Event Format (CEF) logs via syslog to a remote syslog server, you need to follow these steps.
 
-This setup guide will show you how to forward your BIG-IP logs to Sekoia.io by means of a syslog transport channel.
+#### Configure a log destination
 
-#### Detailed Procedure:
+1. Log in to the Configuration utility.
+2. Go to `System > Logs > Configuration > Remote Logging`.
+3. For Remote IP, enter the destination syslog server IP address, or FQDN. (DNS server configuration required)
+4. For Remote Port, enter the remote syslog server UDP port (default is 514).
 
-1. **Set up the Syslog Concentrator:**
-    - Please consult the [Syslog Forwarding](../../../../ingestion_methods/sekoiaio_forwarder/) documentation to set up the concentrator that will forward your logs to Sekoia.io.
+!!! Note
+  For BIG-IP systems in a high availability (HA) configuration, the non-floating self IP address is recommended if using a Traffic Management Microkernel (TMM) based IP address.
 
-2. **Configure a Log Publisher:**
-    - Before creating a log publisher, you first need a *management port* log destination:
-      ```
-      System -> Logs -> Configuration -> Log Destinations -> Create...
-      ```
-      Give it a name, choose type `Management Port`, fill the address and port of your syslog concentrator, and select protocol UDP
-      (alternatively, you can define a pool of syslog servers and use it as a remote high-speed log destination).
+5. Choose type `ArcSight` (as we expect CEF log format)
+6. Select Add.
+7. Select Update.
 
-    - Then create another log destination to format your logs in CEF:
-      ```
-      System -> Logs -> Configuration -> Log Destinations -> Create...
-      ```
-      Give it a name, choose type `ArcSight`, and forward it to the log destination you just created.
+!!! Note
+  For BIG-IP systems in a high availability (HA) configuration, perform a ConfigSync to synchronize the changes to the other devices in the device group.
 
-    - Now, create a log publisher:
-      ```
-      System -> Logs -> Configuration -> Log Publishers -> Create...
-      ```
-      Give it a name, and select the ArcSight log destination you just created.
+Please find more information on how to configure remote loging [here](https://my.f5.com/manage/s/article/K13080).
 
-    - You can now use this log publisher to define logging profiles in your BIG-IP modules. As an example:
-      ```
-      Access -> Overview -> Event Logs -> Settings -> Create -> Access System Logs -> Publisher
-      ```
-      or
-      ```
-      Security -> Event Logs -> Logging Profiles -> Create... -> Publisher
-      ```
+#### Specifically send only certain types of logs
 
-3. **Direct Configuration:**
-    - Some modules allow direct configuration to the syslog concentrator. As an example:
-      ```
-      Security -> Event Logs -> Logging Profiles -> Create...
-      ```
-      Then choose `Application Security`, select `Remote Storage` as a storage destination, `Common Event Format (ArcSight)` as a logging format, and fill in your syslog concentrator info.
+You can further refine your configuration:
 
-    - The resulting logging profile can be applied to a given virtual server in:
-      ```
-      Local Traffic -> Virtual Servers -> Virtual Server List
-      ```
-      Then choose a virtual server, go to the `Security -> Policies` tab, and apply the log profile.
+- For audit logs only: Use the "audit" facility when configuring remote logging, please use [this documentation](https://my.f5.com/manage/s/article/K56602501).
+- For specific module logs (e.g., LTM, ASM): Configure the system to send only those module logs to the remote syslog server, please use [this documentation](https://my.f5.com/manage/s/article/K10887436).
 
 ### Instruction on Sekoia
 
@@ -117,12 +88,11 @@ This setup guide will show you how to forward your BIG-IP logs to Sekoia.io by m
 
 ## Detection section
 
-
 The following section provides information for those who wish to learn more about the detection capabilities enabled by collecting this intake. It includes details about the built-in rule catalog, event categories, and ECS fields extracted from raw events. This is essential for users aiming to create [custom detection rules](/docs/xdr/features/detect/sigma.md), perform hunting activities, or pivot in the [events page](/docs/xdr/features/investigate/events.md).
 
-{!_shared_content/operations_center/integrations/generated/a14b1141-2d61-414b-bf79-da99b487b1af.md!}
-
 {!_shared_content/operations_center/detection/generated/suggested_rules_a14b1141-2d61-414b-bf79-da99b487b1af_do_not_edit_manually.md!}
+
+{!_shared_content/operations_center/integrations/generated/a14b1141-2d61-414b-bf79-da99b487b1af.md!}
 
 ## Further readings
 
