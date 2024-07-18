@@ -343,15 +343,12 @@ nav:
           - Trigger : integration//develop_integration/automation/trigger.md
       - Formats :
           - Overview : integration//develop_integration/formats/overview.md
-          - Contribute : integration//develop_integration/formats/contribute.md
           - Create a Format : integration//develop_integration/formats/create_a_format.md
           - Datasources : integration//develop_integration/formats/datasources.md
           - Definition of a structured event : integration//develop_integration/formats/structured_event.md
           - Definition of the taxonomy : integration//develop_integration/formats/taxonomy.md
           - How to write a parser : integration//develop_integration/formats/parser.md
           - How to write smart descriptions : integration//develop_integration/formats/smartdescriptions.md
-          - Contribute to intake formats Github : integration//develop_integration/formats/contribute.md
-          - Test your Python parser : integration//develop_integration/formats/testing.md
           - Best Practices :
             - Overview : integration//develop_integration/formats/best_practices/overview.md
             - Authentications : integration//develop_integration/formats/best_practices/authentications.md
@@ -380,75 +377,74 @@ nav:
     - Applicatives:
       - Mandrill: integration/action_library/applicative/mandrill.md
       - Mattermost: integration/action_library/applicative/mattermost.md
-      - Microsoft_Office365: integration/action_library/applicative/microsoft-office365.md
-      - Microsoft_Remote_Server: integration/action_library/applicative/microsoft-remote-server.md
-      - Microsoft_Windows_Server: integration/action_library/applicative/microsoft-windows-server.md
+      - Microsoft Office365: integration/action_library/applicative/microsoft-office365.md
+      - Microsoft Remote Server: integration/action_library/applicative/microsoft-remote-server.md
+      - Microsoft Windows Server: integration/action_library/applicative/microsoft-windows-server.md
       - PagerDuty: integration/action_library/applicative/pagerduty.md
       - Proofpoint: integration/action_library/applicative/proofpoint.md
       - Salesforce: integration/action_library/applicative/salesforce.md
-    - Cloud_Providers:
+    - Cloud Providers:
       - AWS: integration/action_library/cloud_providers/aws.md
       - Google: integration/action_library/cloud_providers/google.md
-      - Microsoft_Azure: integration/action_library/cloud_providers/microsoft-azure.md
-    - Collaboration_Tools:
-      - Atlassian_JIRA: integration/action_library/collaboration_tools/atlassian-jira.md
+      - Microsoft Azure: integration/action_library/cloud_providers/microsoft-azure.md
+    - Collaboration Tools:
+      - Atlassian JIRA: integration/action_library/collaboration_tools/atlassian-jira.md
       - Git: integration/action_library/collaboration_tools/git.md
       - Github: integration/action_library/collaboration_tools/github.md
       - ServiceNow: integration/action_library/collaboration_tools/servicenow.md
       - TheHive: integration/action_library/collaboration_tools/the-hive.md
     - Email:
       - Mimecast: integration/action_library/email/mimecast.md
-      - Vade_Secure: integration/action_library/email/vade-secure.md
+      - Vade Secure: integration/action_library/email/vade-secure.md
     - Endpoint:
       - CrowdStrike: integration/action_library/endpoint/crowdstrike.md
-      - CrowdStrike_Falcon: integration/action_library/endpoint/crowdstrike-falcon.md
+      - CrowdStrike Falcon: integration/action_library/endpoint/crowdstrike-falcon.md
       - Cybereason: integration/action_library/endpoint/cybereason.md
       - HarfangLab: integration/action_library/endpoint/harfanglab.md
-      - Panda_Security: integration/action_library/endpoint/panda-security.md
+      - Panda Security: integration/action_library/endpoint/panda-security.md
       - SentinelOne: integration/action_library/endpoint/sentinelone.md
-      - SentinelOne_Deep_Visibility: integration/action_library/endpoint/sentinelonedeepvisibility.md
+      - SentinelOne DeepVisibility: integration/action_library/endpoint/sentinelonedeepvisibility.md
       - Sophos: integration/action_library/endpoint/sophos.md
       - TEHTRIS: integration/action_library/endpoint/tehtris.md
-      - The_Hive: integration/action_library/endpoint/the-hive.md
       - Trellix: integration/action_library/endpoint/trellix.md
-      - Trend_Micro: integration/action_library/endpoint/trend-micro.md
+      - Trend Micro: integration/action_library/endpoint/trend-micro.md
       - WithSecure: integration/action_library/endpoint/withsecure.md
     - Generic:
       - HTTP: integration/action_library/generic/http.md
       - FileUtils: integration/action_library/generic/fileutils.md
       - OpenAI: integration/action_library/generic/openai.md
       - RSS: integration/action_library/generic/rss.md
-      - Sekoia_io: integration/action_library/generic/sekoia-io.md
+      - Sekoia: integration/action_library/generic/sekoia-io.md
       - Utils: integration/action_library/generic/utils.md
-    - IAM_SASE:
+    - IAM SASE:
       - Duo: integration/action_library/iam_sase/duo.md
-      - Jumpcloud_Directory_Insights: integration/action_library/iam_sase/jumpcloud-directory-insights.md
+      - Jumpcloud Directory Insights: integration/action_library/iam_sase/jumpcloud-directory-insights.md
       - Microsoft Active Directory : integration/action_library/collaboration_tools/microsoft-active-directory.md
-      - Microsoft_Entra_ID: integration/action_library/collaboration_tools/microsoft-entra-id.md
+      - Microsoft Entra ID: integration/action_library/collaboration_tools/microsoft-entra-id.md
       - Microsoft Entra ID (Azure AD) : integration/action_library/collaboration_tools/intra-id.md
       - Okta: integration/action_library/iam_sase/okta.md
     - Network:
-      - Broadcom_Cloud_Secure_Web_Gateway: integration/action_library/network/broadcom-cloud-secure-web-gateway.md
-      - Cato_Networks: integration/action_library/network/cato-networks.md
-      - Check_Point: integration/action_library/network/check-point.md
+      - Broadcom Cloud Secure Web Gateway: integration/action_library/network/broadcom-cloud-secure-web-gateway.md
+      - Cato Networks: integration/action_library/network/cato-networks.md
+      - Chec Point: integration/action_library/network/check-point.md
       - Darktrace: integration/action_library/network/darktrace.md
       - ExtraHop: integration/action_library/network/extrahop.md
-      - Fortigate_Firewalls: integration/action_library/network/fortigate-firewalls.md
+      - Fortigate Firewalls: integration/action_library/network/fortigate-firewalls.md
       - Imperva: integration/action_library/network/imperva.md
       - Lacework: integration/action_library/network/lacework.md
       - Netskope: integration/action_library/network/netskope.md
-      - SSkyhigh_Security_Secure_Web_Gateway: integration/action_library/network/skyhigh-security-secure-web-gateway-swg.md
-      - Skyhigh_Security: integration/action_library/network/skyhigh-security.md
+      - Skyhigh Security Secure Web Gateway: integration/action_library/network/skyhigh-security-secure-web-gateway-swg.md
+      - Skyhigh Security: integration/action_library/network/skyhigh-security.md
       - Ubika: integration/action_library/network/ubika.md
       - Vade_Cloud: integration/action_library/network/vade-cloud.md
       - Zscaler: integration/action_library/network/zscaler.md
-    - Threat_Intelligence:
+    - Threat Intelligence:
       - BinaryEdges_API: integration/action_library/threat_intelligence/binaryedge-s-api.md
       - Bitsight: integration/action_library/threat_intelligence/bitsight.md
       - Censys: integration/action_library/threat_intelligence/censys.md
-      - Certificate_Transparency: integration/action_library/threat_intelligence/certificate-transparency.md
-      - Detection_Rules: integration/action_library/threat_intelligence/detection-rules.md
-      - Digital_Shadows: integration/action_library/threat_intelligence/digital-shadows.md
+      - Certificate Transparency: integration/action_library/threat_intelligence/certificate-transparency.md
+      - Detection Rules: integration/action_library/threat_intelligence/detection-rules.md
+      - Digital Shadows: integration/action_library/threat_intelligence/digital-shadows.md
       - Glimps: integration/action_library/threat_intelligence/glimps.md
       - IKnowWhatYouDownload: integration/action_library/threat_intelligence/iknowwhatyoudownload.md
       - IPInfo: integration/action_library/threat_intelligence/ipinfo.md
@@ -458,7 +454,7 @@ nav:
       - Nybble: integration/action_library/threat_intelligence/nybble.md
       - OSINT: integration/action_library/threat_intelligence/osint.md
       - Onyphe: integration/action_library/threat_intelligence/onyphe.md
-      - Public_Suffix: integration/action_library/threat_intelligence/public-suffix.md
+      - Public Suffix: integration/action_library/threat_intelligence/public-suffix.md
       - RiskIQ: integration/action_library/threat_intelligence/riskiq.md
       - Shodan: integration/action_library/threat_intelligence/shodan.md
       - STIX: integration/action_library/threat_intelligence/stix.md
@@ -476,8 +472,6 @@ nav:
       - Definition of the taxonomy: integration/develop_integration/formats/taxonomy.md
       - How to write a parser: integration/develop_integration/formats/parser.md
       - How to write smart descriptions: integration/develop_integration/formats/smartdescriptions.md
-      - Contribute to intake formats Github: integration/develop_integration/formats/contribute.md
-      - Test your Python parser: integration/develop_integration/formats/testing.md
       - Best Practices:
         - Overview: integration/develop_integration/formats/best_practices/overview.md
         - Authentications: integration/develop_integration/formats/best_practices/authentications.md
