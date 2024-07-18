@@ -409,28 +409,28 @@ nav:
           - Fortinet Fortiproxy: integration/categories/network_security/fortiproxy.md
           - Fortinet Fortiweb: integration/categories/network_security/fortiweb.md
   - How to develop a new Integration :
-      - Overview : integration/categories/develop_integration/overview.md
+      - Overview : integration//develop_integration/overview.md
       - Automation :
-          - Overview : integration/categories/develop_integration/automation/overview.md
-          - Actions : integration/categories/develop_integration/automation/action.md
-          - Custom Format : integration/categories/develop_integration/automation/create_a_module.md
-          - Development Guidelines : integration/categories/develop_integration/automation/development_guidelines.md
-          - Module : integration/categories/develop_integration/automation/create_a_module.md
-          - Trigger : integration/categories/develop_integration/automation/trigger.md
+          - Overview : integration//develop_integration/automation/overview.md
+          - Actions : integration//develop_integration/automation/action.md
+          - Custom Format : integration//develop_integration/automation/create_a_module.md
+          - Development Guidelines : integration//develop_integration/automation/development_guidelines.md
+          - Module : integration//develop_integration/automation/create_a_module.md
+          - Trigger : integration//develop_integration/automation/trigger.md
       - Formats :
-          - Overview : integration/categories/develop_integration/formats/overview.md
-          - Contribute : integration/categories/develop_integration/formats/contribute.md
-          - Create a Format : integration/categories/develop_integration/formats/create_a_format.md
-          - Datasources : integration/categories/develop_integration/formats/datasources.md
-          - Definition of a structured event : integration/categories/develop_integration/formats/structured_event.md
-          - Definition of the taxonomy : integration/categories/develop_integration/formats/taxonomy.md
-          - How to write a parser : integration/categories/develop_integration/formats/parser.md
-          - How to write smart descriptions : integration/categories/develop_integration/formats/smartdescriptions.md
-          - Contribute to intake formats Github : integration/categories/develop_integration/formats/contribute.md
-          - Test your Python parser : integration/categories/develop_integration/formats/testing.md
+          - Overview : integration//develop_integration/formats/overview.md
+          - Contribute : integration//develop_integration/formats/contribute.md
+          - Create a Format : integration//develop_integration/formats/create_a_format.md
+          - Datasources : integration//develop_integration/formats/datasources.md
+          - Definition of a structured event : integration//develop_integration/formats/structured_event.md
+          - Definition of the taxonomy : integration//develop_integration/formats/taxonomy.md
+          - How to write a parser : integration//develop_integration/formats/parser.md
+          - How to write smart descriptions : integration//develop_integration/formats/smartdescriptions.md
+          - Contribute to intake formats Github : integration//develop_integration/formats/contribute.md
+          - Test your Python parser : integration//develop_integration/formats/testing.md
           - Best Practices :
-            - Overview : integration/categories/develop_integration/formats/best_practices/overview.md
-            - Authentications : integration/categories/develop_integration/formats/best_practices/authentications.md
+            - Overview : integration//develop_integration/formats/best_practices/overview.md
+            - Authentications : integration//develop_integration/formats/best_practices/authentications.md
   - Ingestion methods : 
       - Overview : integration/ingestion_methods/index.md
       - Cloud & SaaS :
