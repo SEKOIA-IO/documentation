@@ -19,7 +19,7 @@ AIX (Advanced Interactive eXecutive) is a series of proprietary Unix operating s
 - **Type of integration**: Outbound (PUSH to Sekoia.io)
 - **Schema**
 
-![ibm_aix_architecture](/assets/integration/ibm_aix_architecture.png)
+![ibm_aix_architecture](/assets/integration/ibm_aix_architecture.png){: style="max-width:100%"}
 
 ## Specification
 

@@ -19,7 +19,7 @@ Fortinet cybersecurity solutions sell physical products such as firewalls, plus 
 - **Type of integration**: Outbound (PUSH to Sekoia.io)
 - **Schema**
 
-![fortinet_fortimail_architecture](/assets/integration/fortinet_fortimail_architecture.png)
+![fortinet_fortimail_architecture](/assets/integration/fortinet_fortimail_architecture.png){: style="max-width:100%"}
 
 ## Specification
 

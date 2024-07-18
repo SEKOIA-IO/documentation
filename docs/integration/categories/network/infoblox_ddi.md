@@ -19,7 +19,7 @@ Infoblox DNS, DHCP, and IP address management (DDI) enables customers to control
 - **Type of integration**: Outbound (PUSH to Sekoia.io)
 - **Schema**
 
-![infoblox_ddi_architecture](/assets/integration/infoblox_ddi_architecture.png)
+![infoblox_ddi_architecture](/assets/integration/infoblox_ddi_architecture.png){: style="max-width:100%"}
 
 ## Specification
 
