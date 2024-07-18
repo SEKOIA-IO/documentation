@@ -33,6 +33,12 @@ The following Sekoia.io built-in rules match the intake **Trellix EPO [ALPHA]**.
     
     - **Effort:** master
 
+??? abstract "DNS Query For Iplookup"
+    
+    Detects dns query of observables tagged as iplookup.
+    
+    - **Effort:** master
+
 ??? abstract "Dynamic DNS Contacted"
     
     Detect communication with dynamic dns domain. This kind of domain is often used by attackers. This rule can trigger false positive in non-controlled environment because dynamic dns is not always malicious.
