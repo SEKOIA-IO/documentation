@@ -10,7 +10,6 @@ To ensure consistent recognition and semantic interpretation of network events, 
 | **event.kind**   | Describes the kind of event.                         | `event`, `alert`, `metric`, `state`              |
 | **event.category** | The high-level category of the event.              | `network`, `intrusion_detection`, `firewall`     |
 
-
 ## 🛠️ Additional Fields
 
 To provide more context and enhance the description of the events, the inclusion of additional fields is encouraged. The following additional fields can be used:
