@@ -376,6 +376,7 @@ nav:
           - Third-party syslog services: integration/ingestion_methods/syslog/syslog_service.md
           - Syslog NG : integration/ingestion_methods/syslog/syslog-ng.md
   - Actions integrations:
+    - Overview : integration/action_library/overview.md
     - Applicatives:
       - Mandrill: integration/action_library/applicative/mandrill.md
       - Mattermost: integration/action_library/applicative/mattermost.md
