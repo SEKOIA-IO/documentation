@@ -7,11 +7,11 @@ type: intake
 Claroty xDome is an integrated cybersecurity platform designed for industrial control systems (ICS) and operational technology (OT) environments, providing comprehensive threat detection, asset discovery, and vulnerability management to safeguard critical infrastructure.
 
 - **Vendor**: Claroty
-- **Plan**: Defend Core / Defend Prime
+- **Plan**: Defend Prime
 - **Supported environment**: On Premise / Cloud
 - **Version compatibility, if applicable**:
-- **Detection based on**: Alerts / Communication Events
-- **Supported application or feature**: ICS/OT Security
+- **Detection based on**: Alerts / Telemetry
+- **Supported application or feature**: Network protocol analysis
 - **Coverage Score**: 2
 
 ## High-Level Architecture Diagram
@@ -19,18 +19,12 @@ Claroty xDome is an integrated cybersecurity platform designed for industrial co
 - **Type of integration**: Outbound (PUSH to Sekoia.io)
 - **Schema**
 
-![claroty_xdome_architecture](/assets/integration/claroty_xdome_architecture.png)
-
-!!! Alternative
-
-    This will not be detailed in this documentation, but logs can also be sent directly to Sekoia.io over HTTPS using the Sekoia.io Endpoint Agent and the "Collect logs in files" method. This provides an alternative to the specified syslog collection method and may be preferable in certain environments.
+![claroty_xdome_architecture](/assets/integration/claroty_xdome_architecture.png){: style="max-width:100%"}
 
 ## Specification
 
 ### Prerequisites
 
-- **Licence level**:
-    - Open Source
 - **Resource**:
     - Self-managed syslog forwarder
 - **Network**:
@@ -47,7 +41,7 @@ Claroty xDome is an integrated cybersecurity platform designed for industrial co
 
 - **Supported functionalities**: See section [Overview](#overview)
 - **Supported type(s) of structure**: CEF
-- **Supported verbosity level**: Emergency / Alert / Critical / Error / Warning / Notice / Informational / Debug
+- **Supported verbosity level**: Alert
 
 !!! Note
     Log levels are based on the taxonomy of [RFC5425](https://datatracker.ietf.org/doc/html/rfc5424). Adapt according to the terminology used by the editor.
@@ -122,12 +116,16 @@ This setup guide will show you how to forward both your access and error logs to
 
 {!_shared_content/integration/forwarder_configuration.md!}
 
+{!_shared_content/operations_center/integrations/generated/9f47aa9f-52d7-4849-9462-cf7fc8bcd51a_sample.md!}
+
 ## Detection section
 
 The following section provides information for those who wish to learn more about the detection capabilities enabled by collecting this intake. It includes details about the built-in rule catalog, event categories, and ECS fields extracted from raw events. This is essential for users aiming to create [custom detection rules](/docs/xdr/features/detect/sigma.md), perform hunting activities, or pivot in the [events page](/docs/xdr/features/investigate/events.md).
 
-{!_shared_content/operations_center/integrations/generated/9f47aa9f-52d7-4849-9462-cf7fc8bcd51a.md!}
 {!_shared_content/operations_center/detection/generated/suggested_rules_9f47aa9f-52d7-4849-9462-cf7fc8bcd51a_do_not_edit_manually.md!}
+
+{!_shared_content/operations_center/integrations/generated/9f47aa9f-52d7-4849-9462-cf7fc8bcd51a.md!}
+
 
 ## Further readings
 

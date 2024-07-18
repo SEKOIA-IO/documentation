@@ -8,10 +8,10 @@ NGINX is an HTTP and reverse proxy server, a mail proxy server, and a generic TC
 
 - **Vendor**: F5
 - **Plan**: Defend Prime
-- **Supported environment**: On Premise / Cloud
+- **Supported environment**: On Premise
 - **Version compatibility, if applicable**:
 - **Detection based on**: Network Telemetry
-- **Supported application or feature**: HTTP Proxy, Reverse Proxy
+- **Supported application or feature**: Access and Error logs
 - **Coverage Score**: 2
 
 ## High-Level Architecture Diagram
@@ -19,7 +19,7 @@ NGINX is an HTTP and reverse proxy server, a mail proxy server, and a generic TC
 - **Type of integration**: Outbound (PUSH to Sekoia.io)
 - **Schema**
 
-![nginx_architecture](/assets/integration/nginx_architecture.png)
+![nginx_architecture](/assets/integration/nginx_architecture.png){: style="max-width:100%"}
 
 ## Specification
 
@@ -47,56 +47,27 @@ NGINX is an HTTP and reverse proxy server, a mail proxy server, and a generic TC
     Log levels are based on the taxonomy of [RFC5425](https://datatracker.ietf.org/doc/html/rfc5424). Adapt according to the terminology used by the editor.
 
 - **Default Log Location**:
-
-### Sample of supported raw events
-
-**TODO**: Add a directory with raw event in every integration.
+    - Access: `/var/log/nginx/access.log`
+    - Error: `/var/log/nginx/error.log`
 
 ## Step-by-Step Configuration Procedure
 
-### Instructions on the 3rd Party Solution
-
-#### Forward NGINX Logs to Sekoia.io
-
 This setup guide will show you how to forward your NGINX logs to Sekoia.io by means of a syslog transport channel.
 
-#### Detailed Procedure:
+### Instructions on the 3rd Party Solution
 
-There are two methods to collect NGINX Logs:
+#### Forward NGINX Logs to a syslog forwarder
 
-1. **Local Rsyslog Method:**
-    - The following snippet is an illustration of rsyslog configuration to monitor nginx's `error.log` and `access.log` files.
+To configure NGINX to forward logs to an IP with syslog and the UDP protocol, please add these lines in `/etc/nginx/nginx.conf`:
 
-      ```bash
-      # error log
-      $InputFileName /var/log/nginx/error.log
-      $InputFileTag nginx:
-      $InputFileStateFile stat-nginx-error
-      $InputFileSeverity error
-      $InputFileFacility local5
-      $InputFilePollInterval 1
-      $InputRunFileMonitor
+```
+access_log syslog:server=REMOTE_SERVER_IP:LISTENING_PORT_UDP,tag=nginx;
+error_log syslog:server=REMOTE_SERVER_IP:LISTENING_PORT_UDP,tag=nginx;
+```
 
-      # access log
-      $InputFileName /var/log/nginx/access.log
-      $InputFileTag nginx:
-      $InputFileStateFile stat-nginx-access
-      $InputFileSeverity notice
-      $InputFileFacility local5
-      $InputFilePollInterval 1
-      $InputRunFileMonitor
-      ```
+!!! Note
+    Please replace `REMOTE_SERVER_IP` by you syslog forwarder IP and `LISTENING_PORT_UDP` by the relevant value.
 
-    - The reader can consult the [Rsyslog Transport](../../../ingestion_methods/syslog/overview/) documentation to forward these logs to Sekoia.io.
-
-2. **Configuring NGINX to Forward Logs Using Syslog and the UDP Protocol:**
-    - This method is simpler as you don't need to set up Rsyslog to forward logs.
-    - To configure NGINX to forward logs to an IP with syslog and the UDP protocol, please add these lines in `/etc/nginx/nginx.conf`:
-
-      ```
-      access_log syslog:server=127.0.0.1:20517,tag=nginx;
-      error_log syslog:server=127.0.0.1:20517,tag=nginx;
-      ```
 
 ### Instruction on Sekoia
 
@@ -104,16 +75,16 @@ There are two methods to collect NGINX Logs:
 
 {!_shared_content/integration/forwarder_configuration.md!}
 
-{!_shared_content/operations_center/integrations/generated/ab25af2e-4916-40ba-955c-34d2301c1f51.md!} Sample
+{!_shared_content/operations_center/integrations/generated/ab25af2e-4916-40ba-955c-34d2301c1f51_sample.md!}
 
 ## Detection section
 
 
 The following section provides information for those who wish to learn more about the detection capabilities enabled by collecting this intake. It includes details about the built-in rule catalog, event categories, and ECS fields extracted from raw events. This is essential for users aiming to create [custom detection rules](/docs/xdr/features/detect/sigma.md), perform hunting activities, or pivot in the [events page](/docs/xdr/features/investigate/events.md).
 
-{!_shared_content/operations_center/integrations/generated/ab25af2e-4916-40ba-955c-34d2301c1f51.md!}
-
 {!_shared_content/operations_center/detection/generated/suggested_rules_ab25af2e-4916-40ba-955c-34d2301c1f51_do_not_edit_manually.md!}
+
+{!_shared_content/operations_center/integrations/generated/ab25af2e-4916-40ba-955c-34d2301c1f51.md!}
 
 ## Further readings
 
