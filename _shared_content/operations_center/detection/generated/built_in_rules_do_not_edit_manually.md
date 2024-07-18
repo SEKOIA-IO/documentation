@@ -1,4 +1,4 @@
-Rules catalog includes **910 built-in detection rules** ([_last update on 2024-07-17_](rules_changelog.md)).
+Rules catalog includes **911 built-in detection rules** ([_last update on 2024-07-18_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Identity Information**
 
@@ -159,6 +159,12 @@ Rules catalog includes **910 built-in detection rules** ([_last update on 2024-0
     
         - 28/04/2023 - minor - Support for standard ECS FW fields
             
+??? abstract "Veeam Backup & Replication Malware Detection"
+    
+    Veeam Backup & Replication has detected some malware related activity
+    
+    - **Effort:** master
+    
 ??? abstract "WAF Block Rule"
     
     Detects when one of WAF rule blocked an HTTP request 
