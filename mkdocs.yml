@@ -466,11 +466,11 @@ nav:
   - How to develop a new Integration :
       - Overview : integration/develop_integration/overview.md
       - Automation :
-          - Overview : integration//develop_integration/automation/overview.md
+          - Overview : integration/develop_integration/automation/overview.md
           - Action : integration/develop_integration/automation/action.md
-          - Custom Format : integration/develop_integration/automation/create_a_module.md
-          - Development Guidelines : integration//develop_integration/automation/development_guideline.md
-          - Module : integration/develop_integration/automation/create_a_module.md
+          - Create a Module : integration/develop_integration/automation/create_a_module.md
+          - Development Guidelines : integration/develop_integration/automation/development_guideline.md
+          - Module : integration/develop_integration/automation/module.md
           - Trigger : integration/develop_integration/automation/trigger.md
       - Formats :
           - Overview : integration/develop_integration/formats/overview.md
@@ -483,6 +483,8 @@ nav:
           - Best Practices :
             - Overview : integration/develop_integration/formats/best_practices/overview.md
             - Authentications : integration/develop_integration/formats/best_practices/authentications.md
+            - Networks : integration/develop_integration/formats/best_practices/networks.md
+            - Endpoints : integration/develop_integration/formats/best_practices/endpoints.md
 plugins:
 - search: null
 - redirects:
