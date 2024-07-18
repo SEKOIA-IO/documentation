@@ -9,7 +9,7 @@ This module will contain one trigger and one action:
 
 ## Technical Requirements
 
-- Install the SEKOIA's automation SDK. This SDK contains various command line utilities that will help us manage    modules. Simply run the following command:
+Install the SEKOIA's automation SDK. This SDK contains various command line utilities that will help us manage    modules. Simply run the following command:
 ``` shell
 pip install sekoia-automation-sdk
 
@@ -207,43 +207,51 @@ class Request(Action):  # (4)!
 
 ## Test your code 
 Make sure you test your code with unitary and integration tests. In the following code, 
-we will test `get request`our previous example's action code. In practice, you have to cover all the use cases of the module. 
+we will test `get request`our previous example's action code. In practice, you have to cover all the use cases of the module.
+
 ```python
 import pytest
 import requests_mock
-from pydantic import HttpUrl
-from your_module import Request, RequestArguments, Response  # Adjust the import according to your module structure
+from testhttp_modules.action_request import RequestArguments, Request, Response
 
-@requests_mock.Mocker()
-def test_get_request(mock_request):
-    # Mock the HTTP response
-    mock_response = {
-        'status_code': 200,
-        'headers': {'Content-Type': 'application/json'},
-        'text': 'Success'
-    }
-    mock_request.get('http://example.com', status_code=mock_response['status_code'],
-                     headers=mock_response['headers'], text=mock_response['text'])
+def test_get_request(requests_mock):
+  # Mock the HTTP response
+  mock_response = {
+      'status_code': 200,
+      'headers': {'Content-Type': 'application/json'},
+      'text': 'Success'
+  }
+  requests_mock.get('http://example.com', status_code=mock_response['status_code'],
+                    headers=mock_response['headers'], text=mock_response['text'])
 
-    # Create the arguments
-    arguments = RequestArguments(
-        url='http://example.com',
-        headers=None,
-        method='get'
-    )
+  # Create the arguments
+  arguments = RequestArguments(
+      url='http://example.com',
+      headers=None,
+      method='get'
+  )
 
-    # Instantiate and run the action
-    action = Request()
-    result = action.run(arguments)
+  # Instantiate and run the action
+  action = Request()
+  result = action.run(arguments)
 
-    # Assert the response
-    assert result.status_code == mock_response['status_code']
-    assert result.headers == mock_response['headers']
-    assert result.text == mock_response['text']
+  # Interprete the dict correctly if the response is serialized to a dict:
+  if isinstance(result, dict):
+      result = Response(**result)
 
-
+  # Assert the response
+  assert isinstance(result, Response)
+  assert result.status_code == mock_response['status_code']
+  assert result.headers['Content-Type'] == mock_response['headers']['Content-Type']
+  assert result.text == mock_response['text']
 ```
-To effectively manage dependencies and run your tests, you should use Poetry. For more detailed information, you can check the [Poetry documentation](https://python-poetry.org/docs/). Additionally, you can look at the tests in the existing module.
+
+To effectively manage dependencies and run your tests, you should use Poetry: 
+
+```shell
+poetry run pytest -v -s
+```
+For more detailed information, you can check the [Poetry documentation](https://python-poetry.org/docs/). Additionally, you can look at the tests in the existing module.
 
 ## Generate the manifest and update the entrypoint
 
