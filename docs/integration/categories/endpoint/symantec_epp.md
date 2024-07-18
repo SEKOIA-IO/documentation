@@ -12,7 +12,6 @@ Symantec Endpoint Protection is a client-server solution that protects laptops, 
 - **Version compatibility**: 14.3 RU3
 - **Detection based on**: Telemetry, Alert
 - **Supported application or feature**: Endpoint protection and threat detection
-- **Coverage Score**: 4
 
 ## High-Level Architecture Diagram
 

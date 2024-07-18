@@ -11,7 +11,6 @@ Auditbeat communicates directly with the Linux audit framework, collects the sam
 - **Supported environment**: On Premise
 - **Detection based on**: Telemetry
 - **Supported application or feature**: System Monitoring and Security
-- **Coverage Score**: 3
 
 ## High-Level Architecture Diagram
 

@@ -11,7 +11,6 @@ Winlogbeat is an open-source log collector that ships Windows Event Logs as JSON
 - **Supported environment**: On Premise
 - **Detection based on**: Telemetry
 - **Supported application or feature**: System Monitoring and Security
-- **Coverage Score**: 3
 
 ## High-Level Architecture Diagram
 

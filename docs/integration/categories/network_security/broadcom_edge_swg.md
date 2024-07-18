@@ -12,7 +12,6 @@ Broadcom Edge Security Web Gateway provides comprehensive protection for web tra
 - **Version compatibility**: 7.3
 - **Detection based on**: Telemetry
 - **Supported application or feature**: Access logs
-- **Coverage Score**: 3
 
 ## High-Level Architecture Diagram
 

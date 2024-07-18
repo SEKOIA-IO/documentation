@@ -12,7 +12,6 @@ Ekinops OneOS is a comprehensive and flexible network operating system designed 
 - **Version compatibility, if applicable**:
 - **Detection based on**: Network Telemetry
 - **Supported application or feature**: Network Management and Security
-- **Coverage Score**: 3
 
 ## High-Level Architecture Diagram
 

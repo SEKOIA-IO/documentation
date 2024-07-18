@@ -10,7 +10,6 @@ Amazon CloudFront is a web service that speeds up distribution of your static an
 - **Supported environment**: SaaS
 - **Detection based on**: Telemetry
 - **Supported application or feature**: Web logs
-- **Coverage Score**: 3
 
 ## Configure
 

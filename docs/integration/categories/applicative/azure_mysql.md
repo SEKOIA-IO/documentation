@@ -11,7 +11,6 @@ Azure Database for MySQL provides fully managed, enterprise-ready community MySQ
 - **Supported environment**: SaaS
 - **Detection based on**: Telemetry
 - **Supported application or feature**: Authentication logs, Application logs	
-- **Coverage Score**: 2
 
 ## Configure
 

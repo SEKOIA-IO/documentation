@@ -12,7 +12,6 @@ Check Point’s Next Generation Firewalls (NGFWs) are trusted by customers for t
 - **Version compatibility**: R81.10 (Latest version as of now)
 - **Detection based on**: Telemetry, Alert
 - **Supported application or feature**: Firewall and threat prevention
-- **Coverage Score**: 3
 
 ## High-Level Architecture Diagram
 

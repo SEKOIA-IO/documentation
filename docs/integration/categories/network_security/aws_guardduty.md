@@ -10,7 +10,6 @@ AWS GuardDuty is a service that detects potential security issues within your ne
 - **Supported environment**: SaaS
 - **Detection based on**: Alert
 - **Supported application or feature**: AWS CloudTrail logs, Services
-- **Coverage Score**: 3
 
 ## Configure
 

@@ -12,7 +12,6 @@ Cisco IOS is a network operating system for Cisco ASR routers and Cisco Catalyst
 - **Version compatibility**: 15.5 (Latest version as of now)
 - **Detection based on**: Telemetry
 - **Supported application or feature**: Network management and operation
-- **Coverage Score**: 3
 
 ## High-Level Architecture Diagram
 

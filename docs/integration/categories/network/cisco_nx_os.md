@@ -12,7 +12,6 @@ Cisco NX-OS is a network operating system for Cisco Nexus-series switches.
 - **Version compatibility**: 9.3 (Latest version as of now)
 - **Detection based on**: Telemetry
 - **Supported application or feature**: Network management and operation
-- **Coverage Score**: 3
 
 ## High-Level Architecture Diagram
 

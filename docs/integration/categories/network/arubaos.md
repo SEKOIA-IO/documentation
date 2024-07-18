@@ -12,7 +12,6 @@ Aruba OS is the operating system developed by Aruba Networks, designed for their
 - **Version compatibility**: 16.10 (Latest version as of now)
 - **Detection based on**: Telemetry
 - **Supported application or feature**: Network management and performance monitoring
-- **Coverage Score**: 2
 
 ## High-Level Architecture Diagram
 

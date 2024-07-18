@@ -15,7 +15,6 @@ keys, and certificates. It helps safeguard cryptographic keys and secrets used b
 - **Supported environment**: SaaS
 - **Detection based on**: Telemetry
 - **Supported application or feature**: Application logs	
-- **Coverage Score**: 3
 
 ## Configure
 

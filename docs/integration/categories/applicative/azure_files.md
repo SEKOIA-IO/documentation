@@ -9,7 +9,6 @@ type: intake
 - **Supported environment**: SaaS
 - **Detection based on**: Telemetry
 - **Supported application or feature**: 
-- **Coverage Score**: 3
 
 Azure Files creates monitoring data by using Azure Monitor, which is a full stack monitoring service in Azure.
 Azure Monitor provides a complete set of features to monitor your Azure resources and resources in other clouds and on-premises.

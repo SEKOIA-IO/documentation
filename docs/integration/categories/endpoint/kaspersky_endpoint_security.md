@@ -12,7 +12,6 @@ type: intake
 - **Version compatibility, if applicable**:
 - **Detection based on**: Endpoint Telemetry
 - **Supported application or feature**: Endpoint Security
-- **Coverage Score**: 4
 
 ## High-Level Architecture Diagram
 

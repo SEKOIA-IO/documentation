@@ -12,7 +12,6 @@ F5's BIG-IP is a family of products covering software and hardware designed arou
 - **Version compatibility**: 11.3 and highier
 - **Detection based on**: Security Alerts, Telemetry
 - **Supported application or feature**: ASM, APM, LTM, AFM, PSM
-- **Coverage Score**: 3
 
 ## High-Level Architecture Diagram
 

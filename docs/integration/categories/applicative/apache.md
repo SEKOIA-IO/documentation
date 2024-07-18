@@ -15,7 +15,6 @@ The Apache HTTP Server, colloquially called Apache, is free and open-source cros
 - **Version compatibility, if applicable**: 2.4.51 (Latest version as of now)
 - **Detection based on**: Telemetry
 - **Supported application or feature**: Access and Error log monitoring
-- **Coverage Score**: 1
 
 ## High-Level Architecture Diagram
 
