@@ -6,10 +6,9 @@ type: intake
 
 Cato Networks is a software company providing solutions to protect cloud applications. Cato SASE Cloud provides zero trust network access to on-premises and cloud applications.
 
-- **Vendor**: Cato
+- **Vendor**: Cato Networks
 - **Plan**: Defend Prime
-- **Supported environment**: On Premise
-- **Version compatibility**:
+- **Supported environment**: Cloud
 - **Detection based on**: Telemetry / Alert
 - **Supported application or feature**: Application, Web, Authentication
 - **Coverage Score**: 3
@@ -25,10 +24,10 @@ To collect the events from the Cato Networks platform, an API key is required:
 
 1. Log in our Cato Management Application
 2. Go to the `API Management` section then click on the `Administration` tab
-    ![Administration](/assets/operation_center/integration_catalog/cloud_and_saas/cato/administration.png){: style="max-width:100%"} 
+    ![Administration](/assets/operation_center/integration_catalog/cloud_and_saas/cato/administration.png){: style="max-width:100%"}
 3. Click on the button `New` to generate a new API key
 4. On the panel, give a name to the api key, select the `View` permission
-    ![Administration](/assets/operation_center/integration_catalog/cloud_and_saas/cato/panel.png){: style="max-width:100%"} 
+    ![Administration](/assets/operation_center/integration_catalog/cloud_and_saas/cato/panel.png){: style="max-width:100%"}
 5. Click on apply and copy the API key
 
 In addition to the API key, Cato `account ID` is also required for the Account configuration in Sekoia

@@ -333,29 +333,33 @@ nav:
           - Elastic Auditbeat Linux : integration/categories/endpoint/auditbeat_linux.md
           - ElasticWinlogbeat : integration/categories/endpoint/winlogbeat.md
           - ESET Protect / Inspect : integration/categories/endpoint/eset_protect.md
-          - Sekoia.io Endpoint Agent : integration/categories/endpoint/sekoiaio.md
-          - Symantec/Broadcom Endpoint Security : integration/categories/endpoint/symantec_epp.md
           - Harfanglab : integration/categories/endpoint/harfandlab.md
           - IBM AIX : integration/categories/endpoint/ibm_aix.md
           - Kaspersky Endpoint Seurity : integration/categories/endpoint/kaspersky_endpoint_security.md
           - Palo Alto Cortex EDR : integration/categories/endpoint/paloalto_cortex_edr.md
+          - Sekoia.io Endpoint Agent : integration/categories/endpoint/sekoiaio.md
           - Sophos EDR : integration/categories/endpoint/sophos_edr.md
+          - Symantec/Broadcom Endpoint Security : integration/categories/endpoint/symantec_epp.md
           - Tanium : integration/categories/endpoint/tanium.md
           - TEHTRIS EDR : integration/categories/endpoint/tehtris_edr.md
           - WithSecure Elements : integration/categories/endpoint/withsecure_element.md
-
       - Generic :
           - Index : integration/categories/generic/index.md
       - IAM SASE :
+          - Azure Key Vault: integration/categories/iam_sase/azure_key_vault.md
           - Cisco Identity Services Engine (ISE): integration/categories/iam_sase/cisco_identity_services_engine_ise.md
           - FreeRADIUS: integration/categories/iam_sase/freeradius.md
       - Network :
           - ArubaOS Switch: integration/categories/network/arubaos.md
+          - AWS Flow Logs: integration/categories/network/aws_flow_logs.md
+          - BIND: integration/categories/network/bind.md
+          - Cato Networks SASE: integration/categories/network/cato_sase.md
           - BIND: integration/categories/network/bind.md
           - Cisco IOS: integration/categories/network/cisco_ios.md
           - Cisco Meraki MX: integration/categories/network/cisco_meraki_mx.md
           - Cisco NX-OS: integration/categories/network/cisco_nx_os.md
           - Citrix Netscaler / ADC: integration/categories/network/citrix_netscaler_adc.md
+          - DHCPD: integration/categories/network/dhcpd.md
           - Ekinops OneOS: integration/categories/network/ekinops_oneos.md
           - F5 BIG-IP: integration/categories/network/f5-big-ip.md
           - Forcepoint Secure Web Gateway: integration/categories/network/forcepoint_web_gateway.md
@@ -420,9 +424,9 @@ nav:
     - IAM SASE:
       - Duo: integration/action_library/iam_sase/duo.md
       - Jumpcloud Directory Insights: integration/action_library/iam_sase/jumpcloud-directory-insights.md
-      - Microsoft Active Directory : integration/action_library/collaboration_tools/microsoft-active-directory.md
-      - Microsoft Entra ID: integration/action_library/collaboration_tools/microsoft-entra-id.md
-      - Microsoft Entra ID (Azure AD) : integration/action_library/collaboration_tools/intra-id.md
+      - Microsoft Active Directory : integration/action_library/iam_sase/microsoft-active-directory.md
+      - Microsoft Entra ID: integration/action_library/iam_sase/microsoft-entra-id.md
+      - Microsoft Entra ID (Azure AD) : integration/action_library/iam_sase/intra-id.md
       - Okta: integration/action_library/iam_sase/okta.md
     - Network:
       - Broadcom Cloud Secure Web Gateway: integration/action_library/network/broadcom-cloud-secure-web-gateway.md
@@ -437,10 +441,10 @@ nav:
       - Skyhigh Security Secure Web Gateway: integration/action_library/network/skyhigh-security-secure-web-gateway-swg.md
       - Skyhigh Security: integration/action_library/network/skyhigh-security.md
       - Ubika: integration/action_library/network/ubika.md
-      - Vade_Cloud: integration/action_library/network/vade-cloud.md
+      - Vade Cloud: integration/action_library/network/vade-cloud.md
       - Zscaler: integration/action_library/network/zscaler.md
     - Threat Intelligence:
-      - BinaryEdges_API: integration/action_library/threat_intelligence/binaryedge-s-api.md
+      - BinaryEdges API: integration/action_library/threat_intelligence/binaryedge-s-api.md
       - Bitsight: integration/action_library/threat_intelligence/bitsight.md
       - Censys: integration/action_library/threat_intelligence/censys.md
       - Certificate Transparency: integration/action_library/threat_intelligence/certificate-transparency.md
@@ -466,11 +470,11 @@ nav:
   - How to develop a new Integration :
       - Overview : integration/develop_integration/overview.md
       - Automation :
-          - Overview : integration//develop_integration/automation/overview.md
+          - Overview : integration/develop_integration/automation/overview.md
           - Action : integration/develop_integration/automation/action.md
-          - Custom Format : integration/develop_integration/automation/create_a_module.md
-          - Development Guidelines : integration//develop_integration/automation/development_guideline.md
-          - Module : integration/develop_integration/automation/create_a_module.md
+          - Create a Module : integration/develop_integration/automation/create_a_module.md
+          - Development Guidelines : integration/develop_integration/automation/development_guideline.md
+          - Module : integration/develop_integration/automation/module.md
           - Trigger : integration/develop_integration/automation/trigger.md
       - Formats :
           - Overview : integration/develop_integration/formats/overview.md
@@ -483,6 +487,8 @@ nav:
           - Best Practices :
             - Overview : integration/develop_integration/formats/best_practices/overview.md
             - Authentications : integration/develop_integration/formats/best_practices/authentications.md
+            - Networks : integration/develop_integration/formats/best_practices/networks.md
+            - Endpoints : integration/develop_integration/formats/best_practices/endpoints.md
 plugins:
 - search: null
 - redirects:
