@@ -113,7 +113,7 @@ The following example is a Trellix log detailing a high-severity IPS event (leve
 ```CEF
 CEF:0|Trellix|MPS|10.0.0.992057|IE|ips-event|7|externalId=3463232 rt=Sep 05 2023 16:46:51 UTC proto=tcp src=1.2.3.4 spt=80 smac=6c:af:1a:fb:fe:a7 dst=5.6.7.8 dpt=1109 dmac=00:78:db:db:96:f6 cnt=1 cs1Label=sname cs1=Exploit Kit Landing Page act=notified dvchost=cms-nx5600-1.eng.fireeye.com dvc=3.4.5.6 dvcmac=e3:e9:d0:5e:ba:8e cn2=85305161 cn2Label=sid cfp1=12 cfp1Label=signature revision cs4=https://cms-nx5600-1.eng.fireeye.com/detection/objects?uuid\\=6682a2ba-bf3e-4c12-b7a1-822d648132fd cs4Label=link flexString2=client flexString2Label=attack mode msg=MVX Correlation Status:N/A cn1=0 cn1Label=vlan
 ```
-* `event.action` is mapped directly from the CEF `act` field which is set to 'notified'
+* `event.action` is mapped directly from the CEF `act` field which is set to 'notified'.
 * `event.category`is less intuitive in this example. However, if we check the expert descriptions of the parser, we can see that the default value `event.category` is set to 'intrusion_detection' and it takes another value only and only if `message.name`of our raw event matches 'domain-match', 'malware-object' or 'riskware-object'.
 
 **ECS Fields After Parsing**
