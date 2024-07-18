@@ -95,7 +95,7 @@ To create the parser, follow these steps:
 
 1. In the format directory, go to the `ingest` folder and edit `parser.yml`
 
-2. Follow [this guide](parser.md) to develop the parser
+2. Follow [this guide](parser.md) (go to tab `In code`) to develop the parser
 
 Note that the parser must generate [structured events](structured_event.md) that respect the [taxonomy of the format](taxonomy.md)
 
@@ -135,3 +135,24 @@ To write smart descriptions, follow these steps:
 1. In the format directory, go to the `_meta` folder and edit `smart-descriptions.json`
   
 2. Follow [this guide](smartdescriptions.md) to write smart descriptions for your format
+
+#### Quality checklist
+
+To ensure the quality of contribution, the following points are reviewed in Github pull requests:
+
+- Have clear descriptions for new modules, new formats and taxonomy
+- A logo is provided for any new modules and any new formats
+- Tests should cover at least 75% of parsers
+- At least one smart-description is provide for any new format
+
+#### Homologation request 
+
+Once you are done writing and testing your intake format, the last step is to request an homologation to Sekoia. Once your intake format is homologated, it will appear in the intake catalog of **Sekoia SOC platform**:
+
+- Create a pull request
+- Send an email to [team-integration@sekoia.io](mailto:team-integration@sekoia.io) with the pull request link
+- You will get an acknowledgement from Sekoia Integration team
+- In the following days (5 days max), you will receive feedbacks in your pull request that you must take into account
+- Once all feedbacks are taken into account, Integration team will **validate** your pull request
+
+The homologation process is now finished.

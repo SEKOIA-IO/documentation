@@ -58,7 +58,7 @@ If you have created a new format and want Sekoia to manage its maintenance, you 
     To homologate your custom format, you will need to contribute through our Github repository 
 
 - Fork the Github repository [SEKOIA-IO/intake-formats](https://github.com/SEKOIA-IO/intake-formats)
-- Follow this contribution [guide](../formats/contribute/)
+- Follow this [guide](../formats/create_a_format/#custom-format-creation-with-the-github-repository) to add the custom format in Github and request an homologation
 
 ### Usecase 2. You want to modify an existing intake
 
