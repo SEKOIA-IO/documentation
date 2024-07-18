@@ -1,6 +1,6 @@
  # 🌟Event Standardization for Network Events
 
-To ensure consistent recognition and semantic interpretation of network events, we adhere to the following standardization guidelines. The supported network services include Vade, Varonis, Trellix, Proofpoint, Netskope, Gatewatcher, FortiGate, Darktrace, and Cisco. The key fields used for event standardization follow the ECS (Elastic Common Schema) normalization.
+To ensure consistent recognition and semantic interpretation of network events, we follow the standardization guidelines bellow. We recommend users to adopt the same guidelines for their "network custom format". The supported network services include Vade, Varonis, Trellix, Proofpoint, Netskope, Gatewatcher, FortiGate, Darktrace, and Cisco.
 
 ## 📋 Required Fields
 
