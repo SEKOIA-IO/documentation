@@ -31,8 +31,6 @@ The Apache HTTP Server, colloquially called Apache, is free and open-source cros
 
 ### Prerequisites
 
-- **Licence level**:
-    - Open Source
 - **Resource**:
     - Self-managed syslog forwarder
 - **Network**:

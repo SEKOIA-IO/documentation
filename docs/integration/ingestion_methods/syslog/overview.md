@@ -2,7 +2,7 @@
 
 ## Overview
 
-To push your events to Sekoia.io, you can use also use the syslog protocol. 
+To push your events to Sekoia.io, you can use also use the syslog protocol.
 
 Before processing, you have to:
 
@@ -10,4 +10,4 @@ Before processing, you have to:
 - Add an Intake to the relevant Entity
 - Keep trace of the automatically generated Intake key
 
-{!_shared_content/integration/connector_configuration.md!}
+{!_shared_content/integration/forwarder_configuration.md!}
