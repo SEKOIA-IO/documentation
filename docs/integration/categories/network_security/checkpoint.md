@@ -7,7 +7,7 @@ type: intake
 Check Point’s Next Generation Firewalls (NGFWs) are trusted by customers for their highest security effectiveness and their ability to keep organizations protected from sophisticated fifth-generation cyber-attacks. Check Point’s NGFW includes 23 Firewall models optimized for running all threat prevention technologies simultaneously, including full SSL traffic inspection, without compromising on security or performance.
 
 - **Vendor**: Check Point
-- **Plan**: Defend Core
+- **Plan**: Defend Core & Defend Prime
 - **Supported environment**: On Premise
 - **Version compatibility**: R81.10 (Latest version as of now)
 - **Detection based on**: Telemetry, Alert
@@ -44,12 +44,6 @@ Check Point’s Next Generation Firewalls (NGFWs) are trusted by customers for t
 
 !!! Note
     Log levels are based on the taxonomy of [RFC5425](https://datatracker.ietf.org/doc/html/rfc5424). Adapt according to the terminology used by the editor.
-
-- **Default Log Location**:
-
-### Sample of supported raw events
-
-**TODO**: Add a directory with raw event in every integration.
 
 ## Step-by-Step Configuration Procedure
 

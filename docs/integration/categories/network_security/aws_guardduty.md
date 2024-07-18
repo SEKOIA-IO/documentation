@@ -6,7 +6,7 @@ type: intake
 AWS GuardDuty is a service that detects potential security issues within your network.
 
 - **Vendor**: AWS
-- **Plan**: Defend Core
+- **Plan**: Defend Core & Defend Prime
 - **Supported environment**: SaaS
 - **Detection based on**: Alert
 - **Supported application or feature**: AWS CloudTrail logs, Services
@@ -17,11 +17,11 @@ AWS GuardDuty is a service that detects potential security issues within your ne
 
 #### Forward findings to S3
 
-To export forward findings to S3, please refer [this guide](https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_exportfindings.html). 
+To export forward findings to S3, please refer [this guide](https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_exportfindings.html).
 
 You have to:
 
-1. In your AWS console, navigate to: `Services > GuardDuty > Settings` 
+1. In your AWS console, navigate to: `Services > GuardDuty > Settings`
 2. Go to the `Finding export options` section
 3. Select the bucket you created previously. Ensure your bucket policy allows GuardDuty to add new objects
 4. Select or create a key for the KMS encryption
@@ -33,7 +33,7 @@ Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a n
 
 ### Pull events
 
-To start to pull events, you have to: 
+To start to pull events, you have to:
 
 1. Go to the [playbook page](https://app.sekoia.io/operations/playbooks) and create a new playbook with the [AWS Fetch new logs on S3 connector](../../../../automate/library/aws.md#fetch-new-logs-on-s3)
 2. Set up the module configuration with the [AWS Access Key](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html), the secret key and the region name. Set up the trigger configuration with the name of the SQS queue as well as the intake key from the intake previously created

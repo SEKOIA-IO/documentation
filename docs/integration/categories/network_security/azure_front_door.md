@@ -7,7 +7,7 @@ type: intake
 Microsoft Azure Front Door is a scalable and secure entry point for fast delivery of your global web applications. This setup guide describe how to forward events produced by `Azure Front Door` to Sekoia.io.
 
 - **Vendor**: Microsoft Azure
-- **Plan**: Defend Core
+- **Plan**: Defend Core & Defend Prime
 - **Supported environment**: SaaS
 - **Detection based on**: Telemetry
 - **Supported application or feature**: Web logs, Web application firewall logs
@@ -32,7 +32,7 @@ Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a n
 
 ### Pull events
 
-Go to the [playbook page](https://app.sekoia.io/operations/playbooks) and create a new playbook with the [Consume Eventhub messages](/xdr/features/automate/library/microsoft-azure.md#consume-eventhub-messages). 
+Go to the [playbook page](https://app.sekoia.io/operations/playbooks) and create a new playbook with the [Consume Eventhub messages](/xdr/features/automate/library/microsoft-azure.md#consume-eventhub-messages).
 
 Set up the trigger configuration with the EventHub's `Connection string-primary key`, the hub name, the consumer group, the storage's `Connection string-primary key` and the container name.
 

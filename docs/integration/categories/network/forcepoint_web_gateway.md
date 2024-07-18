@@ -10,7 +10,7 @@ Forcepoint Secure Web Gateway (SWG) is a proxy, installed on the endpoint, apply
     This integration was initially developed for the on-premise product of Forcepoint Secure Web Gateway, specifically for version 8.5.
 
 - **Vendor**: Forcepoint LLC
-- **Plan**: Defend Core / Defend Prime
+- **Plan**: TODO Defend Core / Defend Prime
 - **Supported environment**: On Premise
 - **Version compatibility, if applicable**: Version 8.5
 - **Detection based on**: Network Telemetry
@@ -54,12 +54,6 @@ Forcepoint Secure Web Gateway (SWG) is a proxy, installed on the endpoint, apply
 !!! Note
     Log levels are based on the taxonomy of [RFC5425](https://datatracker.ietf.org/doc/html/rfc5424). Adapt according to the terminology used by the editor.
 
-- **Default Log Location**:
-
-### Sample of supported raw events
-
-**TODO**: Add a directory with raw event in every integration.
-
 ## Step-by-Step Configuration Procedure
 
 ### Instructions on the 3rd Party Solution
@@ -86,7 +80,7 @@ In this guide, you will configure the gateway to forward events to syslog. This 
 
 {!_shared_content/integration/intake_configuration.md!}
 
-{!_shared_content/integration/forwarder_configuration.md!} 
+{!_shared_content/integration/forwarder_configuration.md!}
 
 ## Detection section
 

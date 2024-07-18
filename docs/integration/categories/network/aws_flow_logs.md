@@ -8,7 +8,7 @@ type: intake
 - **Plan**: Defend Prime
 - **Supported environment**: SaaS
 - **Detection based on**: Telemetry
-- **Supported application or feature**: Host network interface, Netflow/Enclave netflow, Network device logs, Network protocol analysis	
+- **Supported application or feature**: Host network interface, Netflow/Enclave netflow, Network device logs, Network protocol analysis
 
 Amazon VPC Flow Logs is a feature that provides the ability to capture information about IP network traffic as it enters or exits from network interface in your Amazon VPC (Amazon Virtual Private Cloud). VPC Flow Logs can help you with a number of tasks, such as:
 
@@ -42,7 +42,7 @@ Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a n
 
 ### Pull events
 
-To start to pull events, you have to: 
+To start to pull events, you have to:
 
 1. Go to the [playbook page](https://app.sekoia.io/operations/playbooks) and create a new playbook with:
     - the [AWS Fetch new Flowlogs on S3 connector](../../../../automate/library/aws.md#fetch-new-flowlogs-on-s3) for plain text files (gzipped included)

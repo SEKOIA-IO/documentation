@@ -5,10 +5,10 @@ type: intake
 ## Overview
 ArcSight's Common Event Format (CEF) is an open log management standard. If one of your applications or devices is not covered by one of the other intakes we support but can produce logs in CEF you can use this intake. Still we recommend using an intake tailored to your specific application or device, even with CEF, in order to ensure you get the most out of your logs. If an intake is missing, please make a formal Integration request to your usual points of contact.
 
-- **Plan**: Defend Core
+- **Plan**: Defend Core & Defend Prime
 - **Supported environment**: SaaS
 - **Detection based on**: Telemetry
-- **Supported application or feature**: File monitoring, Network device logs, Process monitoring, Process use of network, Web logs, Web proxy	
+- **Supported application or feature**: File monitoring, Network device logs, Process monitoring, Process use of network, Web logs, Web proxy
 
 ## Configure
 

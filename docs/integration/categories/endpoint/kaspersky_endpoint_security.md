@@ -47,12 +47,6 @@ type: intake
 !!! Note
     Log levels are based on the taxonomy of [RFC5425](https://datatracker.ietf.org/doc/html/rfc5424). Adapt according to the terminology used by the editor.
 
-- **Default Log Location**:
-
-### Sample of supported raw events
-
-**TODO**: Add a directory with raw event in every integration.
-
 ## Step-by-Step Configuration Procedure
 
 ### Instructions on the 3rd Party Solution
@@ -97,7 +91,7 @@ This setup guide describes how to forward events produced by **Kaspersky Endpoin
          ```
 
      ![SIEM4.png](/assets/operation_center/integration_catalog/endpoint/kaspersky-edr/SIEM4.png)
-        
+
    - Check **Automatically export event to SIEM system database** (point 2):
 
      ![SIEM3.png](/assets/operation_center/integration_catalog/endpoint/kaspersky-edr/SIEM3.png)

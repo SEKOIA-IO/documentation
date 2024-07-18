@@ -9,7 +9,7 @@ Azure Virtual Machines service is developed and managed by Microsoft Corp.
 - **Plan**: Defend Prime
 - **Supported environment**: SaaS
 - **Detection based on**: Telemetry
-- **Supported application or feature**: Access tokens,Authentication logs, File monitoring, PowerShell logs, Process command-line parameters, Process monitoring, Process use of network, Windows event logs, Windows Registry	
+- **Supported application or feature**: Access tokens,Authentication logs, File monitoring, PowerShell logs, Process command-line parameters, Process monitoring, Process use of network, Windows event logs, Windows Registry
 
 ## Configure
 This setup guide will show you how to forward events produced by a Windows Virtual Machine hosted on Azure platform to Sekoia.io.
@@ -22,7 +22,7 @@ As a prerequisite, you need to choose an existing **resource group**, or create 
 
 #### Retrieve your Subscription ID
 
-You also need your **Subscription ID** if you don't have a default one. 
+You also need your **Subscription ID** if you don't have a default one.
 
 In Azure Web Portal:
 
@@ -83,7 +83,7 @@ Finally, you have to retrieve the connection string from Azure Web Portal by goi
 
 You need to activate and configure the diagnostic extension `Microsoft.Insights.VMDiagnosticsSettings`.
 
-1. Navigate to `Home` > `Virtual machines` > `virtual machine name` (e.g. `company-windows`) > `Settings` > `Extensions`. 
+1. Navigate to `Home` > `Virtual machines` > `virtual machine name` (e.g. `company-windows`) > `Settings` > `Extensions`.
     Install it and note the new **StorageAccount** name created (e.g. `company-storage-account`).
 
 3. Navigate to `Home` > `Storage accounts` > `company-storage-account` > `Access keys`.

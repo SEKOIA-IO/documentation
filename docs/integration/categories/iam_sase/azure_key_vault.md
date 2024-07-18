@@ -11,10 +11,10 @@ keys, and certificates. It helps safeguard cryptographic keys and secrets used b
     Important note - This format is currently in beta. We highly value your feedback to improve its performance.
 
 - **Vendor**: Microsoft Azure
-- **Plan**: Defend Core
+- **Plan**: Defend Core & Defend Prime
 - **Supported environment**: SaaS
 - **Detection based on**: Telemetry
-- **Supported application or feature**: Application logs	
+- **Supported application or feature**: Application logs
 
 ## Configure
 
@@ -25,7 +25,7 @@ keys, and certificates. It helps safeguard cryptographic keys and secrets used b
 - The name of the container where the Key Vault logs are stored
 - Properly configured [Azure Key Vault](https://docs.microsoft.com/en-us/azure/key-vault/general/overview) with logging enabled.
 
-### How to enable Azure Key Vault logging 
+### How to enable Azure Key Vault logging
 
 You can enable logging for Key Vault by using the Azure CLI, Azure PowerShell, or the Azure portal.
 

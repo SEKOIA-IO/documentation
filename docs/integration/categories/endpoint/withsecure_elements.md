@@ -37,7 +37,7 @@ In the WithSecure Elements Central Admin console:
 ### Create the playbook that fetches the events
 
 1. Go to the [Playbook page](https://app.sekoia.io/operations/playbooks).
-2. Click on `+ PLAYBOOK` and choose `Create a playbook from scratch`.  
+2. Click on `+ PLAYBOOK` and choose `Create a playbook from scratch`.
 3. Give it a name such as `Collect WithSecure Elements events` and a description and click on `Next`.
 4. In `Choose a trigger`, select the [Fetch security events](../../../../automate/library/withsecure).
 5. Click on the `Fetch security events` trigger and, on the right sidebar, create a new `Module Configuration`. Give it a name  such as `My Organisation WithSecure` and enter your API Client credentials `Client ID`/`Secret`

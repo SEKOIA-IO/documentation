@@ -9,7 +9,7 @@ Cisco Umbrella offers flexible, cloud-delivered security. It combines multiple s
 - **Plan**: Defend Prime
 - **Supported environment**: SaaS
 - **Detection based on**: Telemetry
-- **Supported application or feature**: Host network interface, Netflow/Enclave netflow, Network device logs, Network protocol analysis	
+- **Supported application or feature**: Host network interface, Netflow/Enclave netflow, Network device logs, Network protocol analysis
 
 ## Configure
 
@@ -32,7 +32,7 @@ Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a n
 
 ### Pull events
 
-To start to pull events, you have to: 
+To start to pull events, you have to:
 
 1. Go to the [playbook page](https://app.sekoia.io/operations/playbooks) and create a new playbook with the [AWS Fetch new logs on S3 connector](../../../../automate/library/aws.md#fetch-new-logs-on-s3)
 2. Set up the module configuration with the [AWS Access Key](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html), the secret key and the region name. Set up the trigger configuration with the name of the SQS queue and the intake key, from the intake previously created

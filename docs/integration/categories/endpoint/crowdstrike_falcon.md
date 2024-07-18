@@ -7,7 +7,7 @@ type: intake
 CrowdStrike Falcon is an Endpoint Detection and Response solution. This setup guide explains how to forward and collect the detections and activity logs of your CrowdStrike EDR to Sekoia.io.
 
 - **Vendor**: CrowdStrike
-- **Plan**: Defend Core
+- **Plan**: Defend Core & Defend Prime
 - **Supported environment**: SaaS
 - **Detection based on**: Alert
 - **Supported application or feature**: Authentication logs

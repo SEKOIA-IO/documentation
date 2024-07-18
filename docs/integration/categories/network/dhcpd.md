@@ -7,7 +7,7 @@ type: intake
 ISC DHCP offers a complete open-source solution for implementing DHCP servers.
 
 - **Vendor**: ISC (Internet Systems Consortium)
-- **Plan**: Defend Core / Defend Prime
+- **Plan**: TODO Defend Core / Defend Prime
 - **Supported environment**: On Premise
 - **Version compatibility, if applicable**:
 - **Detection based on**: Network Telemetry
@@ -50,12 +50,6 @@ ISC DHCP offers a complete open-source solution for implementing DHCP servers.
 
 !!! Note
     Log levels are based on the taxonomy of [RFC5425](https://datatracker.ietf.org/doc/html/rfc5424). Adapt according to the terminology used by the editor.
-
-- **Default Log Location**:
-
-### Sample of supported raw events
-
-**TODO**: Add a directory with raw event in every integration.
 
 ## Step-by-Step Configuration Procedure
 

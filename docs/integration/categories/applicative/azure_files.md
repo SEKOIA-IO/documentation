@@ -5,16 +5,16 @@ type: intake
 ## Overview
 
 - **Vendor**: Microsoft Azure
-- **Plan**: Defend Core
+- **Plan**: Defend Core & Defend Prime
 - **Supported environment**: SaaS
 - **Detection based on**: Telemetry
-- **Supported application or feature**: 
+- **Supported application or feature**:
 
 Azure Files creates monitoring data by using Azure Monitor, which is a full stack monitoring service in Azure.
 Azure Monitor provides a complete set of features to monitor your Azure resources and resources in other clouds and on-premises.
 
 This setup guide describe how to forward events produced by `Azure Files` to Sekoia.io.
-    
+
 ## Configure
 
 ### Prerequisites
@@ -23,7 +23,7 @@ This setup guide describe how to forward events produced by `Azure Files` to Sek
 - You should have properly configured [Azure Event Hub](https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-create)
 
 ### How to setup Event Hub
- 
+
 {!_shared_content/operations_center/integrations/event_hub.md!}
 
 ### Monitor Azure Files
@@ -42,7 +42,7 @@ This setup guide describe how to forward events produced by `Azure Files` to Sek
    ![Storage Accounts](/assets/playbooks/library/azurefiles/storage_accounts.png){ align=center }
 
 * Create a new diagnostic setting by clicking `Add diagnostic setting`
-   
+
    ![New Setting](/assets/playbooks/library/azurefiles/new_setting.png){ align=center }
 
 * Type a new for the diagnostic setting

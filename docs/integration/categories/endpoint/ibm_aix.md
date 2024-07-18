@@ -1,5 +1,5 @@
 uuid: e8cb3372-41c8-409f-8e0e-ca4e6cecf7e6
-name: IBM AIX 
+name: IBM AIX
 type: intake
 
 ## Overview
@@ -44,12 +44,6 @@ AIX (Advanced Interactive eXecutive) is a series of proprietary Unix operating s
 
 !!! Note
     Log levels are based on the taxonomy of [RFC5425](https://datatracker.ietf.org/doc/html/rfc5424). Adapt according to the terminology used by the editor.
-
-- **Default Log Location**:
-
-### Sample of supported raw events
-
-**TODO**: Add a directory with raw event in every integration.
 
 ## Step-by-Step Configuration Procedure
 

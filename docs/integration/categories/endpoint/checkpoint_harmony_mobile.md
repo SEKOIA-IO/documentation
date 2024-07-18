@@ -7,7 +7,7 @@ type: intake
 Check Point Harmony Mobile is the industry's first unified security solution for users devices and access.
 
 - **Vendor**: Check Point
-- **Plan**: Defend Core
+- **Plan**: Defend Core & Defend Prime
 - **Supported environment**: SaaS
 - **Detection based on**: Telemetry, Alert
 - **Supported application or feature**:Network device logs, Network protocol analysis, Web logs
@@ -17,7 +17,7 @@ Check Point Harmony Mobile is the industry's first unified security solution for
 ### Create authentication credentials
 
 1. Login to your Check Point Harmony account and navigate to `Profile > Global Settings`
-    
+
     ![Global settings](/assets/instructions/checkpoint/checkpoint_global_settings.png)
 
 2. Go to `API Keys` and click on `New`
@@ -43,7 +43,7 @@ To create the intake, go to the [intake page](https://app.sekoia.io/operations/i
 To start to pull events, you have to:
 
 1. Go to the [playbooks page](https://app.sekoia.io/operations/playbooks) and create a new playbook with the [Check Point Harmony Mobile](../../../automate/library/check-point.md) trigger
-2. Set up the module configuration with the Client ID, Client Secret and Authentication URL. 
+2. Set up the module configuration with the Client ID, Client Secret and Authentication URL.
 3. Set up the trigger configuration with the intake key
 4. Start the playbook and enjoy your events
 

@@ -26,7 +26,7 @@ This setup guide will show you how to provide an integration between Broadcom Cl
 This instruction will share all necessary steps you should follow to generate credentials to interact with API:
 
 - In the Cloud SWG portal, select Account ConfigurationAPI Credentials.
-- Click `Add API Credentials`. 
+- Click `Add API Credentials`.
 - The New API Credential dialog will contain randomly generated characters in the `Username` and `Password` fields. Save them.
 
     ![Broadcom Cloud SWG Credentials](/assets/instructions/broadcom/credentials.png){ align=center width=100% }
@@ -56,7 +56,7 @@ The following section provides information for those who wish to learn more abou
 {!_shared_content/operations_center/detection/generated/suggested_rules_d626fec3-473a-44b3-9e3d-587fdd99a421_do_not_edit_manually.md!}
 
 {!_shared_content/operations_center/integrations/generated/d626fec3-473a-44b3-9e3d-587fdd99a421.md!}
- 
+
 ## Further readings
 
 - [Create API credentials](https://techdocs.broadcom.com/us/en/symantec-security-software/web-and-network-security/cloud-swg/help/cloudswg-api-reference/api-keys.html)

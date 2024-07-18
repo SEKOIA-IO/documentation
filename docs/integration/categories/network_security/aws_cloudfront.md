@@ -6,7 +6,7 @@ type: intake
 Amazon CloudFront is a web service that speeds up distribution of your static and dynamic web content, such as .html, .css, .js, and image files, to your users. CloudFront delivers your content through a worldwide network of data centers called edge locations. When a user requests content that you're serving with CloudFront, the request is routed to the edge location that provides the lowest latency (time delay), so that content is delivered with the best possible performance.
 
 - **Vendor**: Cisco
-- **Plan**: Defend Core
+- **Plan**: Defend Core & Defend Prime
 - **Supported environment**: SaaS
 - **Detection based on**: Telemetry
 - **Supported application or feature**: Web logs
@@ -20,9 +20,9 @@ Amazon CloudFront is a web service that speeds up distribution of your static an
 
 #### CloudFront Logs
 
-You can configure CloudFront to create log files that contain detailed information about every user request that CloudFront receives. These are called standard logs, also known as access logs. 
+You can configure CloudFront to create log files that contain detailed information about every user request that CloudFront receives. These are called standard logs, also known as access logs.
 
-First of all, follow the [regions and s3 buckets requirements](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/AccessLogs.html#access-logs-choosing-s3-bucket) 
+First of all, follow the [regions and s3 buckets requirements](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/AccessLogs.html#access-logs-choosing-s3-bucket)
 
 also your AWS account must have the following permissions for the bucket that you specify for log files - see [this link](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/AccessLogs.html#AccessLogsBucketAndFileOwnership) for more information:
 
@@ -45,7 +45,7 @@ Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a n
 
 ### Pull events
 
-To start to pull events, you have to: 
+To start to pull events, you have to:
 
 1. Go to the [playbook page](https://app.sekoia.io/operations/playbooks) and create a new playbook with the [Fetch new CloudFront logs on S3](../../../../automate/library/aws.md#fetch-new-logs-on-s3).
 2. Set up the module configuration with the [AWS Access Key](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html), the secret key and the region name. Set up the trigger configuration with the name of the SQS queue and the intake key, from the intake previously created.

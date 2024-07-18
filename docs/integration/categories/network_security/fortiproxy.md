@@ -9,7 +9,7 @@ In this documentation, we will explain one way to collect and send FortiProxy lo
 - From the FortiProxy server to an internal syslog concentrator, then forwarded to Sekoia.io.
 
 - **Vendor**: Fortinet
-- **Plan**: Defend Core / Defend Prime
+- **Plan**: TODO Defend Core / Defend Prime
 - **Supported environment**: On Premise
 - **Version compatibility, if applicable**:
 - **Detection based on**: Security Alerts / Network Telemetry
@@ -52,12 +52,6 @@ In this documentation, we will explain one way to collect and send FortiProxy lo
 
 !!! Note
     Log levels are based on the taxonomy of [RFC5425](https://datatracker.ietf.org/doc/html/rfc5424). Adapt according to the terminology used by the editor.
-
-- **Default Log Location**:
-
-### Sample of supported raw events
-
-**TODO**: Add a directory with raw event in every integration.
 
 ## Step-by-Step Configuration Procedure
 

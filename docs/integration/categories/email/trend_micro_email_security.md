@@ -48,7 +48,7 @@ Go to the Sekoia.io [playbook page](https://app.sekoia.io/operations/playbooks),
 
 6. Create a **Trigger configuration** using your `Service URL`, `Username`, `API key` and `Intake key`. All four are required.
 
-* `API key` is created on the first step 
+* `API key` is created on the first step
 * `username` is your `Login ID` entered during account creating
 * The value of `service URL` varies according to your location:
 

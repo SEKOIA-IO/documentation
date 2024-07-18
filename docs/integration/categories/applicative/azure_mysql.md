@@ -7,10 +7,10 @@ type: intake
 Azure Database for MySQL provides fully managed, enterprise-ready community MySQL database as a service. The service is developed and managed by Microsoft Corp.
 
 - **Vendor**: Microsoft Azure
-- **Plan**: Defend Core
+- **Plan**: Defend Core & Defend Prime
 - **Supported environment**: SaaS
 - **Detection based on**: Telemetry
-- **Supported application or feature**: Authentication logs, Application logs	
+- **Supported application or feature**: Authentication logs, Application logs
 
 ## Configure
 
@@ -24,7 +24,7 @@ As a prerequisite, you need to choose an existing **resource group**, or create 
 
 #### Retrieve your Subscription ID
 
-You also need your **Subscription ID** if you don't have a default one. 
+You also need your **Subscription ID** if you don't have a default one.
 
 In Azure Web Portal:
 
@@ -84,7 +84,7 @@ Finally, you have to retrieve the **connection string** from Azure Web Portal by
 ### Azure MySQL
 
 You need to activate and configure the Azure MySQL diagnostic settings (e.g. `company-mysql`).
-To configure these settings, follow these steps: 
+To configure these settings, follow these steps:
 
 1. Navigate to `Home` > `SQL databases` (e.g. `company-mysql`) > `Monitoring` > `Diagnostic settings`
 2. Add a new diagnostic setting, select **Stream to an event hub** and click on Configure

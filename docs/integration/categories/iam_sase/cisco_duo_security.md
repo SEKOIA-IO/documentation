@@ -8,7 +8,7 @@ type: intake
 Cisco Duo Security offers solutions for strong authentication.
 
 - **Vendor**: Cisco
-- **Plan**: Defend Core
+- **Plan**: Defend Core & Defend Prime
 - **Supported environment**: SaaS
 - **Detection based on**: Telemetry
 - **Supported application or feature**: Authentication logs
@@ -19,7 +19,7 @@ Cisco Duo Security offers solutions for strong authentication.
 
 1. [Sign up for a Duo account](https://signup.duo.com/).
 2. Log in to the [Duo Admin Panel](https://admin.duosecurity.com/) and navigate to **Applications**.
-3. Click **Protect an Application** and locate the entry for **Admin API** in the applications list. Click Protect to the far-right to configure the application and get your **integration key, secret key, and API hostname**. You'll need this information to complete your setup. 
+3. Click **Protect an Application** and locate the entry for **Admin API** in the applications list. Click Protect to the far-right to configure the application and get your **integration key, secret key, and API hostname**. You'll need this information to complete your setup.
 4. Check **Grant read log** permission
 5. Click **Save changes**
 

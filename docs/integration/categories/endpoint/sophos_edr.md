@@ -39,7 +39,7 @@ In the Sophos Central Admin console:
 ### Pull events
 
 1. Go to the [Playbook page](https://app.sekoia.io/operations/playbooks).
-2. Click on `+ PLAYBOOK` and choose `Create a playbook from scratch`.  
+2. Click on `+ PLAYBOOK` and choose `Create a playbook from scratch`.
 3. Give it a name and a description and click on `Next`.
 4. In `Choose a trigger`, select the [Get Sophos events](../../../../automate/library/sophos/#get-sophos-events).
 5. Click on the `Get Sophos events` module on the right sidebar and in the `Module Configuration` section, select `Create new configuration`.

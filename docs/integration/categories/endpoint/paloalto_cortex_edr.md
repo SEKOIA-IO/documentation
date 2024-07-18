@@ -16,7 +16,7 @@ This setup guide shows how to forward EDR alerts collected on the Palo Alto Cort
 - **Detection based on**: Telemetry / Alert
 - **Supported application or feature**: Network device logs
 - **Coverage Score**: 4
-    
+
 ## Collected events
 
 This integration collects the following events:
@@ -72,7 +72,7 @@ Before using the **Cortex XDR** connector, you must generate an API key in Corte
 ### Pull events
 
 1. Go to the [Playbook page](https://app.sekoia.io/operations/playbooks).
-2. Click on `+ PLAYBOOK` and choose `Create a playbook from scratch`.  
+2. Click on `+ PLAYBOOK` and choose `Create a playbook from scratch`.
 3. Give it a name and a description and click on `Next`.
 4. In `Choose a trigger`, select the `Fetch Alerts from Cortex`.
 5. Click on the `Fetch Alerts from Cortex` module on the right sidebar and in the `Module Configuration` section, select `Create new configuration`.

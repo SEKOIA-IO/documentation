@@ -7,10 +7,10 @@ type: intake
 Cloudflare is a global network designed to make everything you connect to the Internet secure, private, fast, and reliable. In this documentation, you will learn how to collect and send Cloudflare Access Request logs to Sekoia.io.
 
 - **Vendor**: Cloudflare
-- **Plan**: Defend Core
+- **Plan**: Defend Core & Defend Prime
 - **Supported environment**: SaaS
 - **Detection based on**: Telemetry
-- **Supported application or feature**: Authentication logs	
+- **Supported application or feature**: Authentication logs
 
 ## Configuration
 
@@ -36,9 +36,9 @@ $ curl -X POST 'https://api.cloudflare.com/client/v4/accounts/<CLOUDFLARE_ACCOUN
 -H 'Authorization: Bearer <CLOUDFLARE_API_TOKEN>' \
 -H "Content-Type: application/json" \
 -d '{
-    "dataset": "access_requests",    
-    "enabled": true,     
-    "max_upload_bytes": 5000000,     
+    "dataset": "access_requests",
+    "enabled": true,
+    "max_upload_bytes": 5000000,
     "max_upload_records": 1000,
     "logpull_options":"fields=Action,Allowed,AppDomain,AppUUID,Connection,Country,CreatedAt,Email,IPAddress,PurposeJustificationPrompt,PurposeJustificationResponse,RayID,TemporaryAccessApprovers,TemporaryAccessDuration,UserUID&timestamps=rfc3339",
     "destination_conf": "https://intake.sekoia.io/plain/batch?header_X-SEKOIAIO-INTAKE-KEY=<YOUR_INTAKE_KEY>"
@@ -54,9 +54,9 @@ $ curl -X POST 'https://api.cloudflare.com/client/v4/accounts/<CLOUDFLARE_ACCOUN
     "id": "<ID>",
     "dataset": "access_requests",
     "frequency":"high",
-    "kind":"", 
-    "max_upload_bytes": 5000000,     
-    "max_upload_records": 1000, 
+    "kind":"",
+    "max_upload_bytes": 5000000,
+    "max_upload_records": 1000,
     "enabled": true,
     "name": "<DOMAIN_NAME>",
     "logpull_options": "fields=<LIST_OF_FIELDS>",

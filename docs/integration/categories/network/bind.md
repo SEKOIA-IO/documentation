@@ -7,7 +7,7 @@ type: intake
 BIND is an implementation of the Domain Name System (DNS) of the Internet. It performs both of the main DNS server roles, acting as an authoritative name server for domains, and acting as a recursive resolver in the network.
 
 - **Vendor**: ISC
-- **Plan**: Defend Core
+- **Plan**: Defend Core & Defend Prime
 - **Supported environment**: On Premise
 - **Version compatibility**: 9.18.8 (Latest version as of now)
 - **Detection based on**: Telemetry

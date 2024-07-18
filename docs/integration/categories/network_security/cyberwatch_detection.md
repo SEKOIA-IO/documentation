@@ -47,12 +47,6 @@ This integration encompasses the detection logs from Cyberwatch Vulnerability Ma
 !!! Note
     Log levels are based on the taxonomy of [RFC5425](https://datatracker.ietf.org/doc/html/rfc5424). Adapt according to the terminology used by the editor.
 
-- **Default Log Location**:
-
-### Sample of supported raw events
-
-**TODO**: Add a directory with raw event in every integration.
-
 ## Step-by-Step Configuration Procedure
 
 ### Instructions on the 3rd Party Solution
@@ -71,7 +65,7 @@ This setup guide will show you how to forward your Cyberwatch logs to Sekoia.io 
      1. Click `Administration`.
      2. Click `External tools`.
      3. Click `Remote Syslog server`.
-   
+
    - In the Remote Syslog server configuration, provide the address, the port, and the transport to the syslog concentrator.
 
    <video controls width="100%">

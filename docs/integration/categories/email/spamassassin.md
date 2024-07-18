@@ -7,7 +7,7 @@ type: intake
 SpamAssassin is a computer program used for e-mail spam filtering. SpamAssassin uses a variety of spam-detection techniques, including DNS-based and fuzzy-checksum-based spam detection, Bayesian filtering, external programs, blacklists and online databases. It is released under the Apache License 2.0 and is now part of the Apache Foundation.
 
 - **Vendor**: Apache Software Foundation
-- **Plan**: Defend Core
+- **Plan**: Defend Core & Defend Prime
 - **Supported environment**: On Premise
 - **Version compatibility**: 3.4.6 (Latest version as of now)
 - **Detection based on**: Telemetry
