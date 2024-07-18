@@ -397,4 +397,5 @@ The result after parsing is as follows :
     
 ```
     
-Following these standards ensures that the EDR event data is consistent and can be easily interpreted and analyzed across different systems. This standardization helps in providing a unified view of security events and enhances the capability to respond to incidents efficiently.
+!!! note
+     Following these standards ensures that the EDR event data is consistent and can be easily interpreted and analyzed across different systems. This standardization helps in providing a unified view of security events and enhances the capability to respond to incidents efficiently.
