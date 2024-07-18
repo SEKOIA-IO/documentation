@@ -30,6 +30,7 @@ To provide more context and enhance the description of the events, including add
 | `host.hostname`         | The hostname that generated the event.           | `user admin`                                     |
 | `host.os.full`          | The OS of the host that generated the event.     | `Windows 11 Enterprise`, `Ubuntu 22.04`          |
 | `host.domain`           | The domain of the host that generated the event. | `Workgroup`                                      |
+
 ## Examples of event parsing
 In this section, raw events extracted from real use cases are used to show the expected parsing outcome. For each example, the input will be a raw event in json format and the output will be in ECS.
 
