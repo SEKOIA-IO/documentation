@@ -1,0 +1,1 @@
+{!_shared_content/integration/detection_section.md!}
