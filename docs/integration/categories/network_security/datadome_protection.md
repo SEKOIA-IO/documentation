@@ -1,116 +1,48 @@
 uuid: acd3374a-9738-4650-9d20-bd0a22daac40
 name: Datadome Protection
 type: intake
-last updated: 16/07/2024
 
 ## Overview
-
-- **Plan**: Defend Core / Defend Prime
-- **Supported environment**: On Premise / SaaS
-- **Version compatibility, if applicable**:
-
-- **Detection based on**: Security Alerts
+  - **Vendor**:
+- **Plan**: Core + Prime
+- **Supported environment**: Alert
+- **Version compatibility**:
+- **Detection based on**:
 - **Supported application or feature**:
-    - Web application firewall logs
+
+Datadome offers is a bot protection solution, providing real-time detection and mitigation of malicious bots, safeguarding websites and APIs from fraud, scraping, and other automated threats with advanced security measures.
 
 
-## High-Level Architecture Diagram
 
-- **Type of integration**: Outbound: PUSH to Sekoia.io
+## Configure
 
-- **Schema**
+This setup guide will show you how to forward your Datadome Protection logs to Sekoia.io
 
-![consume_azure_logs](/assets/integration/integration_catalog/<techno_name>/image.png)
+### Create the intake
 
-## Specification
+Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a new intake from the format Datadome Protection.
 
-### Prerequisites
+### Enable forwarding
+1. Connect on the Datadome Dashboard
+2. On the left panel, click `Management`
+3. On the ribbon, go to `Integration` tab
+4. In the `Webhook` section, click `Add Webhook`
+5. Type the name of the integration
+6. As URL, type `https://intake.sekoia.io/plain?intake_key=<YOUR INTAKE KEY>`
+7. Select `Default` as the payload format
+8. Select `All threats` as threats
+9. Click `Save`
 
-- **Licence level**:
-    - Core
-    - Prime
-
-- **Resource**:
-    - External Storage
-    - Self managed syslog forwarder
-
-- **Network**:
-    - Customer Inbound traffic possible opening
-    - Customer Outbound traffic possible opening
-
-- **Permissions**:
-    - API Credentials: _TO REPLACE Minimum level of permissions needed for API key or service account._
-    - Configuration Access:  _ Minimum level of permissions required for the user doing the configuration._
-    - Service account permission: The service account permission needed  for the configuration of the intake in the Sekoia.io product.
-
-### Transport Protocol/Method
-
-- **Cloud Storage**: Amazon S3 Bucket / Microsoft Azure Eventhub / Microsoft Azure BlobStorage / Google Pub/Sub
-- **Direct HTTP**
-- **Direct Syslog**
-- **Indirect Syslog**
-
-### Logs details
-
-- **Supported type(s) of structure**:
-    - CEF
-    - Common Log Format (CLF)
-    - Delimiter Separated Value (DSV)
-    - JSON
-    - Key-Value
-    - Plain Text
-    - Multi-line
-
-- **Supported verbosity level**:
-    - **Emergency**: system is unusable
-    - **Alert**: action must be taken immediately
-    - **Critical**: critical conditions
-    - **Error**: error conditions
-    - **Warning**: warning conditions
-    - **Notice**: normal but significant condition
-    - **Informational**: informational messages
-    - **Debug**: debug-level messages
-
-!!! Note
-    This is a description of the log level based on the taxonomy of the [RFC5425](https://datatracker.ietf.org/doc/html/rfc5424) for standardization purpose. Please adapt to the wording used by the editor.
-
-- **Supported functionalities**: See section "Supported application or feature" on top of this page.
-- **Default Log Location**:
-
-### Sample of supported raw events
-
-**TODO**: Add a directory with raw event in every integration.
-
-## Step-by-Step Configuration Procedure
-
-### Instructions on the 3rd party solution
-
-__TO ADAPT__
-- Detailed Procedure: Provide a detailed step-by-step guide to configure log collection with explicit events types supported by the format if needed.-
-- Event Categories: List explicit event types supported by the format (e.g., Fortigate: forward-traffic, local-traffic, multicast-traffic, vpn, web, url-filter).
-- Event Selection: Guidance on selecting event types when sending logs.
----> Visual Aids: Include screenshots or videos if possible.
-
-### Instruction on Sekoia
-
-{!_shared_content/integration/intake_configuration.md!}
-
-__TO REMOVE IF NOT RELEVANT__
-{!_shared_content/integration/connector_configuration.md!}
-
-__TO REMOVE IF NOT RELEVANT__
-{!_shared_content/integration/forwarder_configuration.md!}
-
-## Detection section
-
-_TO REPLACE by current links about Detection rules available, List of event types, List of extracted fields_
-
-{!_shared_content/operations_center/detection/generated/suggested_rules_bf8867ee-43b7-444c-9475-a7f43754ab6d_do_not_edit_manually.md!}
-
-{!_shared_content/operations_center/integrations/generated/d6d15297-e977-4584-9bb3-f0290b99f014.md!}
+<video controls width="100%">
+  <source src="/assets/operation_center/integration_catalog/cloud_and_saas/datadome/datadome_protection.webm" type="video/webm">
+</video>
 
 ## Further readings
 
-- The code of the Intake format is available [here](https://github.com/SEKOIA-IO/intake-formats/tree/main/__CHANGE_ME__).
-- The code of the Playbook connector is available [here](https://github.com/SEKOIA-IO/automation-library/tree/main/__CHANGE_ME__).
+- [Configure a Custom Integration in the DataDome Dashboard](https://docs.datadome.co/docs/custom)
+## Detection section
+
+The following section provides information for those who wish to learn more about the detection capabilities enabled by collecting this intake. It includes details about the built-in rule catalog, event categories, and ECS fields extracted from raw events. This is essential for users aiming to create [custom detection rules](/docs/xdr/features/detect/sigma.md), perform hunting activities, or pivot in the [events page](/docs/xdr/features/investigate/events.md).
+{!_shared_content/operations_center/detection/generated/suggested_rules_acd3374a-9738-4650-9d20-bd0a22daac40_do_not_edit_manually.md!}
+{!_shared_content/operations_center/integrations/generated/acd3374a-9738-4650-9d20-bd0a22daac40.md!}
 
