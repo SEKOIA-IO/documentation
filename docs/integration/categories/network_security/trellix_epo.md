@@ -14,8 +14,6 @@ Trellix ePO - On-prem monitors and manages your network, collects data on events
 
 !!! warning
     Important note - This format is currently in alpha. We highly value your feedback to improve its performance.
-    
-
 
 ## Configure
 
