@@ -4,8 +4,8 @@ type: intake
 
 ## Overview
   - **Vendor**:
-- **Plan**:
-- **Supported environment**:
+- **Plan**: Core + Prime
+- **Supported environment**: Alert
 - **Version compatibility**:
 - **Detection based on**:
 - **Supported application or feature**:
