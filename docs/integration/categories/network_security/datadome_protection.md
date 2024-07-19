@@ -3,7 +3,7 @@ name: Datadome Protection
 type: intake
 
 ## Overview
-  - **Vendor**:
+- **Vendor**:
 - **Plan**: Core + Prime
 - **Supported environment**: Alert
 - **Version compatibility**:

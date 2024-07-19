@@ -3,7 +3,7 @@ name: RSA SecurID
 type: intake
 
 ## Overview
-  - **Vendor**:
+- **Vendor**:
 - **Plan**: Core + Prime
 - **Supported environment**: Telemetry
 - **Version compatibility**:

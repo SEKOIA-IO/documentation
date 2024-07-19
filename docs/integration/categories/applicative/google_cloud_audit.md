@@ -3,7 +3,7 @@ name: Google Workspace and Google Cloud Audit Logs
 type: intake
 
 ## Overview
-  - **Vendor**:
+- **Vendor**:
 - **Plan**: Core + Prime
 - **Supported environment**: Telemetry
 - **Version compatibility**:

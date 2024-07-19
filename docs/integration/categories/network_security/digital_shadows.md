@@ -3,7 +3,7 @@ name: Digital Shadows SearchLight
 type: intake
 
 ## Overview
-  - **Vendor**:
+- **Vendor**:
 - **Plan**: Core + Prime
 - **Supported environment**: Alert
 - **Version compatibility**:

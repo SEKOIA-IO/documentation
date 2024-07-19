@@ -3,7 +3,7 @@ name: Trend Micro Apex One
 type: intake
 
 ## Overview
-  - **Vendor**:
+- **Vendor**:
 - **Plan**: Core + Prime
 - **Supported environment**: Alert, Telemetry
 - **Version compatibility**:

@@ -3,7 +3,7 @@ name: Ubika Cloud Protector Traffic
 type: intake
 
 ## Overview
-  - **Vendor**:
+- **Vendor**:
 - **Plan**:
 - **Supported environment**:
 - **Version compatibility**:

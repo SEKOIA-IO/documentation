@@ -3,7 +3,7 @@ name: Alsid
 type: intake
 
 ## Overview
-  - **Vendor**:
+- **Vendor**:
 - **Plan**: Core + Prime
 - **Supported environment**: Alert, Telemetry
 - **Version compatibility**:

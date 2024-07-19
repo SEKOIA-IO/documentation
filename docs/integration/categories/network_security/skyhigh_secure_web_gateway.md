@@ -3,7 +3,7 @@ name: McAfee Web Gateway / Skyhigh Secure Web Gateway
 type: intake
 
 ## Overview
-  - **Vendor**:
+- **Vendor**:
 - **Plan**: Core + Prime
 - **Supported environment**: Telemetry
 - **Version compatibility**:

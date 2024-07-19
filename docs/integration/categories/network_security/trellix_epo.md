@@ -3,7 +3,7 @@ name: Trellix ePO
 type: intake
 
 ## Overview
-  - **Vendor**:
+- **Vendor**:
 - **Plan**:
 - **Supported environment**:
 - **Version compatibility**:
