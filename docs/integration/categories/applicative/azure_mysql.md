@@ -43,7 +43,7 @@ PS Azure:\> az eventhubs namespace create --name company-eventhub --resource-gro
 PS Azure:\> az eventhubs eventhub create --resource-group company-resource-group --namespace-name company-eventhub --name mysql-event --message-retention 3 --partition-count 4 --subscription uuid
 ```
 
-!!! info
+!!! Info
     Please replace :
 
     - `company-resource-group` with the name of your **resource group**

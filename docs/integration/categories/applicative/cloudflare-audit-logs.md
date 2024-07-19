@@ -10,7 +10,7 @@ Cloudflare is a global network designed to make everything you connect to the In
 - **Plan**: Defend Core & Defend Prime
 - **Supported environment**: SaaS
 - **Detection based on**: Telemetry
-- **Supported application or feature**: Authentication logs
+- **Supported application or feature**: Web application firewall logs
 
 ## Configuration
 

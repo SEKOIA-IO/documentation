@@ -4,16 +4,16 @@ type: intake
 
 ## Overview
 
-- **Vendor**: Microsoft Azure
-- **Plan**: Defend Core & Defend Prime
-- **Supported environment**: SaaS
-- **Detection based on**: Telemetry
-- **Supported application or feature**:
-
 Azure Files creates monitoring data by using Azure Monitor, which is a full stack monitoring service in Azure.
 Azure Monitor provides a complete set of features to monitor your Azure resources and resources in other clouds and on-premises.
 
 This setup guide describe how to forward events produced by `Azure Files` to Sekoia.io.
+
+- **Vendor**: Microsoft Azure
+- **Plan**: Defend Core & Defend Prime
+- **Supported environment**: SaaS
+- **Detection based on**: Telemetry
+- **Supported application or feature**: Azure Monitor
 
 ## Configure
 
