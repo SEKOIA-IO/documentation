@@ -203,9 +203,7 @@ Please read the dedicated documentation for each concentrator:
 
 !!! Note
     While [Sekoia.io](http://sekoia.io/) docker concentrator is highly recommended, you are free to use the one that you are most comfortable with.
-## Detection section
-
-The following section provides information for those who wish to learn more about the detection capabilities enabled by collecting this intake. It includes details about the built-in rule catalog, event categories, and ECS fields extracted from raw events. This is essential for users aiming to create [custom detection rules](/docs/xdr/features/detect/sigma.md), perform hunting activities, or pivot in the [events page](/docs/xdr/features/investigate/events.md).
+{!_shared_content/integration/detection_section.md!}
 {!_shared_content/operations_center/detection/generated/suggested_rules_63974ce1-2f0a-44f7-a4cf-3e64787c1c39_do_not_edit_manually.md!}
 {!_shared_content/operations_center/integrations/generated/63974ce1-2f0a-44f7-a4cf-3e64787c1c39.md!}
 

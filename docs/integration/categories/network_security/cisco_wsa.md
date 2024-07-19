@@ -61,9 +61,7 @@ The Cisco Web Security Appliance is a security device that analyzes HTTP(S) traf
 
 {!_shared_content/operations_center/integrations/generated/23b75d0c-2026-4d3e-b916-636c27ba4931_sample.md!}
 
-## Detection section
-
-The following section provides information for those who wish to learn more about the detection capabilities enabled by collecting this intake. It includes details about the built-in rule catalog, event categories, and ECS fields extracted from raw events. This is essential for users aiming to create [custom detection rules](/docs/xdr/features/detect/sigma.md), perform hunting activities, or pivot in the [events page](/docs/xdr/features/investigate/events.md).
+{!_shared_content/integration/detection_section.md!}
 
 {!_shared_content/operations_center/detection/generated/suggested_rules_23b75d0c-2026-4d3e-b916-636c27ba4931_do_not_edit_manually.md!}
 

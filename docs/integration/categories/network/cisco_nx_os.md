@@ -65,9 +65,7 @@ This setup guide will show you how to provide an integration between Cisco NX-OS
 
 {!_shared_content/operations_center/integrations/generated/591feb54-1d1f-4453-b780-b225c59e9f99_sample.md!}
 
-## Detection section
-
-The following section provides information for those who wish to learn more about the detection capabilities enabled by collecting this intake. It includes details about the built-in rule catalog, event categories, and ECS fields extracted from raw events. This is essential for users aiming to create [custom detection rules](/docs/xdr/features/detect/sigma.md), perform hunting activities, or pivot in the [events page](/docs/xdr/features/investigate/events.md).
+{!_shared_content/integration/detection_section.md!}
 
 {!_shared_content/operations_center/detection/generated/suggested_rules_591feb54-1d1f-4453-b780-b225c59e9f99_do_not_edit_manually.md!}
 

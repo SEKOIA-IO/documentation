@@ -35,9 +35,7 @@ access_log syslog:local5.info sekoiaio
 
 ## Further Readings
 
-## Detection section
-
-The following section provides information for those who wish to learn more about the detection capabilities enabled by collecting this intake. It includes details about the built-in rule catalog, event categories, and ECS fields extracted from raw events. This is essential for users aiming to create [custom detection rules](/docs/xdr/features/detect/sigma.md), perform hunting activities, or pivot in the [events page](/docs/xdr/features/investigate/events.md).
+{!_shared_content/integration/detection_section.md!}
 {!_shared_content/operations_center/detection/generated/suggested_rules_a0dbb8f3-ca1c-4c6b-aafa-595bd430c0cb_do_not_edit_manually.md!}
 {!_shared_content/operations_center/integrations/generated/a0dbb8f3-ca1c-4c6b-aafa-595bd430c0cb.md!}
 

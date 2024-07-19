@@ -94,9 +94,7 @@ To start to pull events, you have to:
 2. Set up the module configuration with the Github organization and the APIkey. Set up the trigger configuration with the intake key
 3. Start the playbook and enjoy your events
 
-## Detection section
-
-The following section provides information for those who wish to learn more about the detection capabilities enabled by collecting this intake. It includes details about the built-in rule catalog, event categories, and ECS fields extracted from raw events. This is essential for users aiming to create [custom detection rules](/docs/xdr/features/detect/sigma.md), perform hunting activities, or pivot in the [events page](/docs/xdr/features/investigate/events.md).
+{!_shared_content/integration/detection_section.md!}
 {!_shared_content/operations_center/detection/generated/suggested_rules_80de6ccb-7246-40de-bcbb-bc830118c1f9_do_not_edit_manually.md!}
 {!_shared_content/operations_center/integrations/generated/80de6ccb-7246-40de-bcbb-bc830118c1f9.md!}
 

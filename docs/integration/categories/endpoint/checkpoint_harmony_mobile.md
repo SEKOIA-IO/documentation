@@ -49,9 +49,7 @@ To start to pull events, you have to:
 
 {!_shared_content/operations_center/integrations/generated/ff53e0db-059b-4e16-ba90-8c4dbf5cee35_sample.md!}
 
-## Detection section
-
-The following section provides information for those who wish to learn more about the detection capabilities enabled by collecting this intake. It includes details about the built-in rule catalog, event categories, and ECS fields extracted from raw events. This is essential for users aiming to create [custom detection rules](/docs/xdr/features/detect/sigma.md), perform hunting activities, or pivot in the [events page](/docs/xdr/features/investigate/events.md).
+{!_shared_content/integration/detection_section.md!}
 
 {!_shared_content/operations_center/detection/generated/suggested_rules_ff53e0db-059b-4e16-ba90-8c4dbf5cee35_do_not_edit_manually.md!}
 

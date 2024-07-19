@@ -57,9 +57,7 @@ To forward your logs to your log concentrator, in our MWG console:
 
 Please consult the [Syslog Forwarding](../../../ingestion_methods/sekoiaio_forwarder/) documentation to forward these logs to Sekoia.io.
 
-## Detection section
-
-The following section provides information for those who wish to learn more about the detection capabilities enabled by collecting this intake. It includes details about the built-in rule catalog, event categories, and ECS fields extracted from raw events. This is essential for users aiming to create [custom detection rules](/docs/xdr/features/detect/sigma.md), perform hunting activities, or pivot in the [events page](/docs/xdr/features/investigate/events.md).
+{!_shared_content/integration/detection_section.md!}
 {!_shared_content/operations_center/detection/generated/suggested_rules_40bac399-2d8e-40e3-af3b-f73a622c9687_do_not_edit_manually.md!}
 {!_shared_content/operations_center/integrations/generated/40bac399-2d8e-40e3-af3b-f73a622c9687.md!}
 
