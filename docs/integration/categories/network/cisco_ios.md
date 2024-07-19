@@ -24,8 +24,7 @@ Cisco IOS is a network operating system for Cisco ASR routers and Cisco Catalyst
 
 ### Prerequisites
 
-- **Licence level**:
-    - Open Source
+
 - **Resource**:
     - Self-managed syslog forwarder
 - **Network**:

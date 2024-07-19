@@ -24,8 +24,7 @@ Symantec Endpoint Protection is a client-server solution that protects laptops, 
 
 ### Prerequisites
 
-- **Licence level**:
-    - Open Source
+
 - **Resource**:
     - Self-managed syslog forwarder
 - **Network**:

@@ -31,8 +31,7 @@ Forcepoint Secure Web Gateway (SWG) is a proxy, installed on the endpoint, apply
 
 ### Prerequisites
 
-- **Licence level**:
-    - Open Source
+
 - **Resource**:
     - Self-managed syslog forwarder
 - **Network**:

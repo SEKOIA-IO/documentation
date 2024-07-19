@@ -28,8 +28,7 @@ Gatewatcher AionIQ is a detection and response platform for your network that id
 
 ### Prerequisites
 
-- **Licence level**:
-    - Open Source
+
 - **Resource**:
     - Self-managed syslog forwarder
 - **Network**:

@@ -28,8 +28,7 @@ SpamAssassin is a computer program used for e-mail spam filtering. SpamAssassin 
 
 ### Prerequisites
 
-- **Licence level**:
-    - Open Source
+
 - **Resource**:
     - Self-managed syslog forwarder
 - **Network**:

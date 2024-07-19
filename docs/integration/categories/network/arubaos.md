@@ -25,8 +25,7 @@ Aruba OS is the operating system developed by Aruba Networks, designed for their
 
 ### Prerequisites
 
-- **Licence level**:
-    - Open Source
+
 - **Resource**:
     - Self-managed syslog forwarder
 - **Network**:

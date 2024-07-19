@@ -28,8 +28,7 @@ ISC DHCP offers a complete open-source solution for implementing DHCP servers.
 
 ### Prerequisites
 
-- **Licence level**:
-    - Open Source
+
 - **Resource**:
     - Self-managed syslog forwarder
 - **Network**:
