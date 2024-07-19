@@ -36,6 +36,8 @@ To learn more, consult the following resources:
 - [Youtube video - Cloud Forensics 101 (Cloud Next '18)](https://youtu.be/OkjTqlETgMA)
 - [Blog post - A quick GKE logs primer](https://medium.com/google-cloud/a-quick-gke-logs-primer-a978f60daa7)
 
-{!_shared_content/integration/detection_section.md!}
+## Detection section
+
+The following section provides information for those who wish to learn more about the detection capabilities enabled by collecting this intake. It includes details about the built-in rule catalog, event categories, and ECS fields extracted from raw events. This is essential for users aiming to create [custom detection rules](/docs/xdr/features/detect/sigma.md), perform hunting activities, or pivot in the [events page](/docs/xdr/features/investigate/events.md).
 {!_shared_content/operations_center/integrations/generated/00bbde4f-cb17-4c3f-9f5e-a585fc7c8fc0.md!}
 

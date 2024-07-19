@@ -5,9 +5,9 @@ type: intake
 ## Overview
 - **Vendor**:
 - **Plan**: Core + Prime
-- **Supported environment**: Telemetry
+- **Supported environment**:
 - **Version compatibility**:
-- **Detection based on**:
+- **Detection based on**: Telemetry
 - **Supported application or feature**:
 
 The Raw Event Format is a generic format that accepts any format of event. This format can be used to test the collection method of your intake without considering the parsing.

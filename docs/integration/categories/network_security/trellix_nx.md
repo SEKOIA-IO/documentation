@@ -5,9 +5,9 @@ type: intake
 ## Overview
 - **Vendor**:
 - **Plan**: Core + Prime
-- **Supported environment**: Telemetry
+- **Supported environment**:
 - **Version compatibility**:
-- **Detection based on**:
+- **Detection based on**: Telemetry
 - **Supported application or feature**:
 
 Trellix Network Security is an effective cyberthreat protection solution that helps your organization minimize the risk of costly breaches by accurately detecting and immediately stopping advanced, targeted, and other evasive attacks hiding in internet traffic.
@@ -43,7 +43,9 @@ Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a n
 ### Configure the Rsyslog server
 Please consult the [Rsyslog Transport](../../../ingestion_methods/syslog/overview/) documentation to forward these logs to Sekoia.io.
 
-{!_shared_content/integration/detection_section.md!}
+## Detection section
+
+The following section provides information for those who wish to learn more about the detection capabilities enabled by collecting this intake. It includes details about the built-in rule catalog, event categories, and ECS fields extracted from raw events. This is essential for users aiming to create [custom detection rules](/docs/xdr/features/detect/sigma.md), perform hunting activities, or pivot in the [events page](/docs/xdr/features/investigate/events.md).
 {!_shared_content/operations_center/detection/generated/suggested_rules_bae128bb-98c6-45f7-9763-aad3451821e5_do_not_edit_manually.md!}
 {!_shared_content/operations_center/integrations/generated/bae128bb-98c6-45f7-9763-aad3451821e5.md!}
 

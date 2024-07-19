@@ -5,9 +5,9 @@ type: intake
 ## Overview
 - **Vendor**:
 - **Plan**: Core + Prime
-- **Supported environment**: Alert
+- **Supported environment**:
 - **Version compatibility**:
-- **Detection based on**:
+- **Detection based on**: Alert
 - **Supported application or feature**:
 
 Digital Shadows SearchLight continuously searches and identifies any unwanted exposures, and provides contextualised alerts to better understand the associated risks.
@@ -36,7 +36,9 @@ You can also create your own on the same basis. A typical playbook to retrieve a
 - A "Pull alerts from Searchlight" trigger
 - An action that sends events to Sekoia.io
 
-{!_shared_content/integration/detection_section.md!}
+## Detection section
+
+The following section provides information for those who wish to learn more about the detection capabilities enabled by collecting this intake. It includes details about the built-in rule catalog, event categories, and ECS fields extracted from raw events. This is essential for users aiming to create [custom detection rules](/docs/xdr/features/detect/sigma.md), perform hunting activities, or pivot in the [events page](/docs/xdr/features/investigate/events.md).
 {!_shared_content/operations_center/detection/generated/suggested_rules_ccf942fe-c839-42be-a081-5c3f946e80f5_do_not_edit_manually.md!}
 {!_shared_content/operations_center/integrations/generated/ccf942fe-c839-42be-a081-5c3f946e80f5.md!}
 

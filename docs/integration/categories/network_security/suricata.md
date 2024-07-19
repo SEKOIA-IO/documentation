@@ -5,9 +5,9 @@ type: intake
 ## Overview
 - **Vendor**:
 - **Plan**: Core + Prime
-- **Supported environment**: Telemetry
+- **Supported environment**:
 - **Version compatibility**:
-- **Detection based on**:
+- **Detection based on**: Telemetry
 - **Supported application or feature**:
 Suricata is a free and open source, mature, fast and robust network threat detection engine. Suricata inspects the network traffic using a powerful and extensive rules and signature language, and has powerful Lua scripting support for detection of complex threats.
 
@@ -48,7 +48,9 @@ Once your Suricata is configured to log threw syslog you have many options to fo
 - [Update the local Rsyslog to send updated logs to a central Sekoia.io Forwarder or directly to Sekoia.io via Syslog](https://docs.sekoia.io/integration/ingestion_methods/syslog/rsyslog/)
 
 
-{!_shared_content/integration/detection_section.md!}
+## Detection section
+
+The following section provides information for those who wish to learn more about the detection capabilities enabled by collecting this intake. It includes details about the built-in rule catalog, event categories, and ECS fields extracted from raw events. This is essential for users aiming to create [custom detection rules](/docs/xdr/features/detect/sigma.md), perform hunting activities, or pivot in the [events page](/docs/xdr/features/investigate/events.md).
 {!_shared_content/operations_center/detection/generated/suggested_rules_331fa58d-8cf9-454a-a87f-48a3dc07d4d3_do_not_edit_manually.md!}
 {!_shared_content/operations_center/integrations/generated/331fa58d-8cf9-454a-a87f-48a3dc07d4d3.md!}
 

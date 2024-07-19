@@ -5,9 +5,9 @@ type: intake
 ## Overview
 - **Vendor**:
 - **Plan**: Core + Prime
-- **Supported environment**: Alert
+- **Supported environment**:
 - **Version compatibility**:
-- **Detection based on**:
+- **Detection based on**: Alert
 - **Supported application or feature**:
 
 SecurityScorecard's Vulnerability Assessment Scanner is a tool designed to identify and assess vulnerabilities in an 
@@ -44,7 +44,9 @@ Set the destination url to `https://intake.sekoia.io/plain?intake_key=<intake_ke
 * Save the configuration and enjoy your events
 
 
-{!_shared_content/integration/detection_section.md!}
+## Detection section
+
+The following section provides information for those who wish to learn more about the detection capabilities enabled by collecting this intake. It includes details about the built-in rule catalog, event categories, and ECS fields extracted from raw events. This is essential for users aiming to create [custom detection rules](/docs/xdr/features/detect/sigma.md), perform hunting activities, or pivot in the [events page](/docs/xdr/features/investigate/events.md).
 {!_shared_content/operations_center/detection/generated/suggested_rules_8f472113-ba5b-45b9-9a2c-944834396333_do_not_edit_manually.md!}
 {!_shared_content/operations_center/integrations/generated/8f472113-ba5b-45b9-9a2c-944834396333.md!}
 

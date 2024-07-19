@@ -6,9 +6,9 @@ type: intake
 ## Overview
 - **Vendor**:
 - **Plan**: Core + Prime
-- **Supported environment**: Telemetry
+- **Supported environment**:
 - **Version compatibility**:
-- **Detection based on**:
+- **Detection based on**: Telemetry
 - **Supported application or feature**:
 
 ManageEngine ADAudit Plus is a robust Active Directory auditing and compliance solution, empowering organizations to track and monitor changes, detect security threats, and ensure regulatory compliance within their Active Directory environment.
@@ -59,7 +59,9 @@ Please consult the [Syslog Forwarding](/integration/ingestion_methods/syslog/sek
 - [SIEM Integration](https://www.manageengine.com/products/active-directory-audit/help/admin-settings/siem-integration.html)
 - [Collected logs in CEF format](https://pitstop.manageengine.com/portal/en/community/topic/collected-syslog-files-in-cef-format)
 
-{!_shared_content/integration/detection_section.md!}
+## Detection section
+
+The following section provides information for those who wish to learn more about the detection capabilities enabled by collecting this intake. It includes details about the built-in rule catalog, event categories, and ECS fields extracted from raw events. This is essential for users aiming to create [custom detection rules](/docs/xdr/features/detect/sigma.md), perform hunting activities, or pivot in the [events page](/docs/xdr/features/investigate/events.md).
 {!_shared_content/operations_center/detection/generated/suggested_rules_890207d2-4878-440d-9079-3dd25d472e0a_do_not_edit_manually.md!}
 {!_shared_content/operations_center/integrations/generated/890207d2-4878-440d-9079-3dd25d472e0a.md!}
 

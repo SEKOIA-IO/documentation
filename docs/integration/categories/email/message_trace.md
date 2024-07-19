@@ -5,9 +5,9 @@ type: intake
 ## Overview
 - **Vendor**:
 - **Plan**: Core + Prime
-- **Supported environment**: Telemetry
+- **Supported environment**:
 - **Version compatibility**:
-- **Detection based on**:
+- **Detection based on**: Telemetry
 - **Supported application or feature**:
 
 Microsoft 365 Message trace follows email messages as they travel through your Exchange Online organization. You can determine if a message was received, rejected, deferred, or delivered by the service. It also shows what actions were taken on the message before it reached its final status. You can use the information from message trace to efficiently answer user questions about what happened to messages, troubleshoot mail flow issues, and validate policy changes ([More information on microsoft.com](https://docs.microsoft.com/en-us/previous-versions/office/developer/o365-enterprise-developers/jj984335%28v%3Doffice.15%29#rest-uris)).
@@ -138,7 +138,9 @@ Configure the trigger `start_time` parameter to pull events from X hours ago if 
 
 If your user cannot access the MessageTrace API, please visit the [Azure Sign-in Logs dashboard](https://portal.azure.com/#view/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/~/SignIns) and use the `Add filters` button to filter on the username. You can then choose an authentication event to learn about the issue and use the `Launch the Sign-in Diagnostic.` button to go further. 
 
-{!_shared_content/integration/detection_section.md!}
+## Detection section
+
+The following section provides information for those who wish to learn more about the detection capabilities enabled by collecting this intake. It includes details about the built-in rule catalog, event categories, and ECS fields extracted from raw events. This is essential for users aiming to create [custom detection rules](/docs/xdr/features/detect/sigma.md), perform hunting activities, or pivot in the [events page](/docs/xdr/features/investigate/events.md).
 {!_shared_content/operations_center/detection/generated/suggested_rules_8461aabe-6eba-4044-ad7f-a0c39a2b2279_do_not_edit_manually.md!}
 {!_shared_content/operations_center/integrations/generated/8461aabe-6eba-4044-ad7f-a0c39a2b2279.md!}
 

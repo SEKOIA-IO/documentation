@@ -5,9 +5,9 @@ type: intake
 ## Overview
 - **Vendor**:
 - **Plan**: Core + Prime
-- **Supported environment**: Alert, Telemetry
+- **Supported environment**:
 - **Version compatibility**:
-- **Detection based on**:
+- **Detection based on**: Alert, Telemetry
 - **Supported application or feature**:
 
 The Lacework Cloud Security provides continuous cloud security monitoring and automated threat detection, safeguarding cloud environments with real-time insights and compliance enforcement.
@@ -85,7 +85,9 @@ To start to pull events, you have to:
 10. Check on the [Events page](https://app.sekoia.io/operations/events) that the Lacework logs are being received.
 
 
-{!_shared_content/integration/detection_section.md!}
+## Detection section
+
+The following section provides information for those who wish to learn more about the detection capabilities enabled by collecting this intake. It includes details about the built-in rule catalog, event categories, and ECS fields extracted from raw events. This is essential for users aiming to create [custom detection rules](/docs/xdr/features/detect/sigma.md), perform hunting activities, or pivot in the [events page](/docs/xdr/features/investigate/events.md).
 {!_shared_content/operations_center/detection/generated/suggested_rules_5803f97d-b324-4452-b861-0253b15de650_do_not_edit_manually.md!}
 {!_shared_content/operations_center/integrations/generated/5803f97d-b324-4452-b861-0253b15de650.md!}
 

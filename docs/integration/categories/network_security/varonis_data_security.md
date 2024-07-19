@@ -5,9 +5,9 @@ type: intake
 ## Overview
 - **Vendor**:
 - **Plan**: Core + Prime
-- **Supported environment**: Alert
+- **Supported environment**:
 - **Version compatibility**:
-- **Detection based on**:
+- **Detection based on**: Alert
 - **Supported application or feature**:
 
 Varonis offers solutions to track and protect data.
@@ -77,7 +77,9 @@ action(
 !!! Note
     Don't forget to replace the variables $PROTOCOL (tcp or udp) to choose the protocol by which Varonis logs are received, the $PORT of entry, your $APP-NAME syslog, and your $INTAKE-KEY Sekoia.
 
-{!_shared_content/integration/detection_section.md!}
+## Detection section
+
+The following section provides information for those who wish to learn more about the detection capabilities enabled by collecting this intake. It includes details about the built-in rule catalog, event categories, and ECS fields extracted from raw events. This is essential for users aiming to create [custom detection rules](/docs/xdr/features/detect/sigma.md), perform hunting activities, or pivot in the [events page](/docs/xdr/features/investigate/events.md).
 {!_shared_content/operations_center/detection/generated/suggested_rules_7b75d498-4a65-4d44-aa81-31090d723a60_do_not_edit_manually.md!}
 {!_shared_content/operations_center/integrations/generated/7b75d498-4a65-4d44-aa81-31090d723a60.md!}
 
