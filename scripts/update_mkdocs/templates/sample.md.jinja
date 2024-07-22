@@ -10,10 +10,8 @@ In this section, you will find examples of raw logs as generated natively by the
 {% if is_sample_json %}
 
     ```json
-	{% filter indent(width=4) %}
-{{sample['content']}}
-	{% endfilter %}
-	```
+	{% filter indent(width=4) %}{{sample['content']}}{% endfilter %}
+    ```
 {% else %}
     ```
 	{% filter indent(width=4) %}
