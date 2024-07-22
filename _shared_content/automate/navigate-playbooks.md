@@ -19,7 +19,7 @@ From this page, you can:
 
 ## Playbook details
 
-To access the detailed view of a playbook just simply click on the applicable playbook card. Once on the playbook page, you should now see some ‘warning’ icons on tabs and inside configuration panel. These icons are here to guide the user when there are some issues to resolve before the playbook can be activated.
+To access the detailed view of a playbook just simply click on the applicable playbook card. Once on the playbook page, you should now see some ‘warning’ icons on tabs and inside configuration panel. These icons are here to guide you when there are some issues to resolve before the playbook can be activated.
 
 You can also now save your playbook from any tab, the save button is now in the header part of the playbook
 
@@ -116,7 +116,7 @@ You can edit the trigger name directly in the header part.
 | Configuration | Lists the available Trigger Configurations, you can add/edit/delete |
 | Variables | Variables and their values  |
 
-For MSSP, there are is section for each community added into playbook on the Account and Configuration parts for Triggers.
+For MSSP, there is a section for each community added into playbook on the Account and Configuration parts for Triggers.
 
 ![playbooks-account-mssp](/assets/operation_center/playbooks/playbooks-account-mssp.png){: style="max-width:100%"}
 
@@ -170,7 +170,7 @@ You can edit the action name directly in the header part.
 !!! note
     You can manually resize the configuration panel by clicking on the left edge of the panel and dragging the mouse left or right; the width of the panel  will change accordingly. Once your panel is set at a preferable width, let go of the mouse. The chosen size will be remembered for the next configurations.
 
-For MSSP, there are is section for each community added into playbook on the Account tab.
+For MSSP, there is a section for each community added into playbook on the Account tab.
 
 ![playbooks-action-mssp](/assets/operation_center/playbooks/playbooks-action-mssp.png){: style="max-width:100%"}
 
