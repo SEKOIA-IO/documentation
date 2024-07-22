@@ -124,9 +124,8 @@ Go to the [events page](https://app.sekoia.io/operations/events) to watch your i
 {!_shared_content/operations_center/integrations/generated/903ec1b8-f206-4ba5-8563-db21da09cafd_sample.md!}
 
 
-## Detection section
+{!_shared_content/integration/detection_section.md!}
 
-The following section provides information for those who wish to learn more about the detection capabilities enabled by collecting this intake. It includes details about the built-in rule catalog, event categories, and ECS fields extracted from raw events. This is essential for users aiming to create [custom detection rules](/docs/xdr/features/detect/sigma.md), perform hunting activities, or pivot in the [events page](/docs/xdr/features/investigate/events.md).
 {!_shared_content/operations_center/detection/generated/suggested_rules_903ec1b8-f206-4ba5-8563-db21da09cafd_do_not_edit_manually.md!}
 {!_shared_content/operations_center/integrations/generated/903ec1b8-f206-4ba5-8563-db21da09cafd.md!}
 

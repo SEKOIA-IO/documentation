@@ -87,9 +87,8 @@ Please consult the [Syslog Forwarding](/integration/ingestion_methods/syslog/sek
 {!_shared_content/operations_center/integrations/generated/064f7e8b-ce5f-474d-802e-e88fe2193365_sample.md!}
 
 
-## Detection section
+{!_shared_content/integration/detection_section.md!}
 
-The following section provides information for those who wish to learn more about the detection capabilities enabled by collecting this intake. It includes details about the built-in rule catalog, event categories, and ECS fields extracted from raw events. This is essential for users aiming to create [custom detection rules](/docs/xdr/features/detect/sigma.md), perform hunting activities, or pivot in the [events page](/docs/xdr/features/investigate/events.md).
 {!_shared_content/operations_center/detection/generated/suggested_rules_064f7e8b-ce5f-474d-802e-e88fe2193365_do_not_edit_manually.md!}
 {!_shared_content/operations_center/integrations/generated/064f7e8b-ce5f-474d-802e-e88fe2193365.md!}
 
