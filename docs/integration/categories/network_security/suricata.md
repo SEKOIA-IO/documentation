@@ -48,6 +48,9 @@ Once your Suricata is configured to log threw syslog you have many options to fo
 - [Update the local Rsyslog to send updated logs to a central Sekoia.io Forwarder or directly to Sekoia.io via Syslog](https://docs.sekoia.io/integration/ingestion_methods/syslog/rsyslog/)
 
 
+{!_shared_content/operations_center/integrations/generated/331fa58d-8cf9-454a-a87f-48a3dc07d4d3_sample.md!}
+
+
 ## Detection section
 
 The following section provides information for those who wish to learn more about the detection capabilities enabled by collecting this intake. It includes details about the built-in rule catalog, event categories, and ECS fields extracted from raw events. This is essential for users aiming to create [custom detection rules](/docs/xdr/features/detect/sigma.md), perform hunting activities, or pivot in the [events page](/docs/xdr/features/investigate/events.md).

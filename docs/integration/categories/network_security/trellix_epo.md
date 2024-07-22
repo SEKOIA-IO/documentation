@@ -14,6 +14,8 @@ Trellix ePO - On-prem monitors and manages your network, collects data on events
 
 !!! warning
     Important note - This format is currently in alpha. We highly value your feedback to improve its performance.
+    
+
 
 ## Configure
 
@@ -35,6 +37,9 @@ To start to pull events, you have to:
 1. Go to the [playbooks page](https://app.sekoia.io/operations/playbooks) and create a new playbook with the [Trellix](../../../automate/library/trellix.md) trigger
 2. Set up the module configuration with the Client Id and Client Secret. Set up the trigger configuration with the intake key
 3. Start the playbook and enjoy your events
+
+{!_shared_content/operations_center/integrations/generated/ba40ab72-1456-11ee-be56-0242ac120002_sample.md!}
+
 
 ## Detection section
 

@@ -42,6 +42,9 @@ At the end of the playbook, set up the action `Push events to intake` with a Sek
 Start the playbook and enjoy your events.
 
 
+{!_shared_content/operations_center/integrations/generated/d9f337a4-1303-47d4-b15f-1f83807ff3cc_sample.md!}
+
+
 ## Detection section
 
 The following section provides information for those who wish to learn more about the detection capabilities enabled by collecting this intake. It includes details about the built-in rule catalog, event categories, and ECS fields extracted from raw events. This is essential for users aiming to create [custom detection rules](/docs/xdr/features/detect/sigma.md), perform hunting activities, or pivot in the [events page](/docs/xdr/features/investigate/events.md).

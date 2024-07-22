@@ -3,14 +3,16 @@ name: Datadome Protection
 type: intake
 
 ## Overview
+- **Vendor**:
+- **Plan**: Core + Prime
+- **Supported environment**:
+- **Version compatibility**:
+- **Detection based on**: Alert
+- **Supported application or feature**:
 
 Datadome offers is a bot protection solution, providing real-time detection and mitigation of malicious bots, safeguarding websites and APIs from fraud, scraping, and other automated threats with advanced security measures.
 
-- **Vendor**: Datadome
-- **Plan**: Core + Prime
-- **Supported environment**: Cloud
-- **Detection based on**: Alert
-- **Supported application or feature**:
+
 
 ## Configure
 
@@ -21,7 +23,6 @@ This setup guide will show you how to forward your Datadome Protection logs to S
 Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a new intake from the format Datadome Protection.
 
 ### Enable forwarding
-
 1. Connect on the Datadome Dashboard
 2. On the left panel, click `Management`
 3. On the ribbon, go to `Integration` tab
@@ -36,14 +37,15 @@ Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a n
   <source src="/assets/operation_center/integration_catalog/cloud_and_saas/datadome/datadome_protection.webm" type="video/webm">
 </video>
 
-## Detection section
-
-The following section provides information for those who wish to learn more about the detection capabilities enabled by collecting this intake. It includes details about the built-in rule catalog, event categories, and ECS fields extracted from raw events. This is essential for users aiming to create [custom detection rules](/docs/xdr/features/detect/sigma.md), perform hunting activities, or pivot in the [events page](/docs/xdr/features/investigate/events.md).
-
-{!_shared_content/operations_center/detection/generated/suggested_rules_acd3374a-9738-4650-9d20-bd0a22daac40_do_not_edit_manually.md!}
-
-{!_shared_content/operations_center/integrations/generated/acd3374a-9738-4650-9d20-bd0a22daac40.md!}
-
 ## Further readings
 
 - [Configure a Custom Integration in the DataDome Dashboard](https://docs.datadome.co/docs/custom)
+{!_shared_content/operations_center/integrations/generated/acd3374a-9738-4650-9d20-bd0a22daac40_sample.md!}
+
+
+## Detection section
+
+The following section provides information for those who wish to learn more about the detection capabilities enabled by collecting this intake. It includes details about the built-in rule catalog, event categories, and ECS fields extracted from raw events. This is essential for users aiming to create [custom detection rules](/docs/xdr/features/detect/sigma.md), perform hunting activities, or pivot in the [events page](/docs/xdr/features/investigate/events.md).
+{!_shared_content/operations_center/detection/generated/suggested_rules_acd3374a-9738-4650-9d20-bd0a22daac40_do_not_edit_manually.md!}
+{!_shared_content/operations_center/integrations/generated/acd3374a-9738-4650-9d20-bd0a22daac40.md!}
+
