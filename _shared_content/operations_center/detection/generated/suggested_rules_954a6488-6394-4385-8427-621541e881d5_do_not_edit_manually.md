@@ -189,6 +189,12 @@ The following Sekoia.io built-in rules match the intake **Trellix EDR [ALPHA]**.
     
     - **Effort:** intermediate
 
+??? abstract "DNS Query For Iplookup"
+    
+    Detects dns query of observables tagged as iplookup.
+    
+    - **Effort:** master
+
 ??? abstract "Data Compressed With Rar"
     
     An adversary may compress data in order to make it portable and minimize the amount of data sent over the network, this could be done the popular rar command line program.

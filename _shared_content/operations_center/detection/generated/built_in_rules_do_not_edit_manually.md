@@ -1,4 +1,4 @@
-Rules catalog includes **906 built-in detection rules** ([_last update on 2024-07-15_](rules_changelog.md)).
+Rules catalog includes **912 built-in detection rules** ([_last update on 2024-07-18_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Identity Information**
 
@@ -67,6 +67,12 @@ Rules catalog includes **906 built-in detection rules** ([_last update on 2024-0
     
 **Gather Victim Host Information**
 
+??? abstract "DNS Query For Iplookup"
+    
+    Detects dns query of observables tagged as iplookup.
+    
+    - **Effort:** master
+    
 ??? abstract "Wmic Suspicious Commands"
     
     Detects suspicious commands used by the process wmic to get informations on the system.
@@ -75,6 +81,30 @@ Rules catalog includes **906 built-in detection rules** ([_last update on 2024-0
     
 **Active Scanning**
 
+??? abstract "Bitsight SPM Material Vulnerability"
+    
+    Bitsight SPM has raised a material vulnerability finding
+    
+    - **Effort:** master
+    
+??? abstract "Bitsight SPM Minor Vulnerability"
+    
+    Bitsight SPM has raised a minor vulnerability finding
+    
+    - **Effort:** master
+    
+??? abstract "Bitsight SPM Moderate Vulnerability"
+    
+    Bitsight SPM has raised a moderate vulnerability finding
+    
+    - **Effort:** master
+    
+??? abstract "Bitsight SPM Severe Vulnerability"
+    
+    Bitsight SPM has raised a severe vulnerability finding
+    
+    - **Effort:** master
+    
 ??? abstract "Burp Suite Tool Detected"
     
     Burp Suite is a cybersecurity tool. When used as a proxy service, its purpose is to intercept packets and modify them to send them to the server. Burp Collaborator is a network service that Burp Suite uses to help discover many kinds of vulnerabilities (vulnerabilities scanner).
@@ -135,6 +165,12 @@ Rules catalog includes **906 built-in detection rules** ([_last update on 2024-0
     
         - 28/04/2023 - minor - Support for standard ECS FW fields
             
+??? abstract "Veeam Backup & Replication Malware Detection"
+    
+    Veeam Backup & Replication has detected some malware related activity
+    
+    - **Effort:** master
+    
 ??? abstract "WAF Block Rule"
     
     Detects when one of WAF rule blocked an HTTP request 
@@ -242,6 +278,10 @@ Rules catalog includes **906 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 16/07/2024 - minor - Change similarity strategy.
+            
 ??? abstract "Microsoft Entra ID (Azure AD) Password Spray"
     
     Detects when Microsoft Entra ID (Azure AD) indicates that multiple usernames are attacked using common passwords in a unified brute force manner to gain unauthorized access. To use this feature, you must have an Microsoft Entra ID (Azure AD) Premium P2 license (https://docs.microsoft.com/en-us/azure/active-directory/identity-protection/overview-identity-protection).
@@ -382,6 +422,10 @@ Rules catalog includes **906 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 16/07/2024 - minor - Change similarity strategy.
+            
 ??? abstract "Microsoft Entra ID (Azure AD) Password Spray"
     
     Detects when Microsoft Entra ID (Azure AD) indicates that multiple usernames are attacked using common passwords in a unified brute force manner to gain unauthorized access. To use this feature, you must have an Microsoft Entra ID (Azure AD) Premium P2 license (https://docs.microsoft.com/en-us/azure/active-directory/identity-protection/overview-identity-protection).

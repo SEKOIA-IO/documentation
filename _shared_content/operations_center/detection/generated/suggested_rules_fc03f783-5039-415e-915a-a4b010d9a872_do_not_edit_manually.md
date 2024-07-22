@@ -87,6 +87,12 @@ The following Sekoia.io built-in rules match the intake **IBM iSeries [BETA]**. 
     
     - **Effort:** master
 
+??? abstract "DNS Query For Iplookup"
+    
+    Detects dns query of observables tagged as iplookup.
+    
+    - **Effort:** master
+
 ??? abstract "Domain Trust Created Or Removed"
     
     A trust was created or removed to a domain. An attacker could perform that in order to do lateral movement easily between domains or shutdown the ability of two domains to communicate.

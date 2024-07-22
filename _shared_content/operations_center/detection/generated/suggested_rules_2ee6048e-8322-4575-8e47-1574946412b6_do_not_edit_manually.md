@@ -135,6 +135,12 @@ The following Sekoia.io built-in rules match the intake **Cisco ESA**. This docu
     
     - **Effort:** master
 
+??? abstract "DNS Query For Iplookup"
+    
+    Detects dns query of observables tagged as iplookup.
+    
+    - **Effort:** master
+
 ??? abstract "Detect requests to Konni C2 servers"
     
     This rule detects requests to Konni C2 servers. These patterns come from an analysis done in 2022, September.

@@ -16,8 +16,15 @@ with open("ecs_flat.yml", "r") as fd:
     ECS = yaml.safe_load(fd)
 
 
-def analyze_parser(parser, custom_fields) -> Dict:
+def is_valid_json(s):
+    try:
+        json.loads(s)
+        return True
+    except ValueError:
+        return False
 
+
+def analyze_parser(parser, custom_fields) -> Dict:
     taxonomy = ECS.copy()
     taxonomy.update(custom_fields or {})
     # extract all the fields
@@ -27,10 +34,8 @@ def analyze_parser(parser, custom_fields) -> Dict:
     type_values = set()
 
     for stage_name, stage_definition in parser["stages"].items():
-
         for action in stage_definition.get("actions", []):
             for field in action.get("set", {}):
-
                 if not isinstance(action["set"][field], list):
                     field_values = [action["set"][field]]
                 else:
@@ -69,7 +74,6 @@ def analyze_parser(parser, custom_fields) -> Dict:
 
 
 def load_intakes(intake_repository: str) -> List[Dict]:
-
     intakes: List[Dict] = []
 
     for module_path in Path(intake_repository).iterdir():
@@ -110,19 +114,32 @@ def load_intakes(intake_repository: str) -> List[Dict]:
             # load tests
             intake_tests = intake_path / "tests"
             intake["tests"] = []
+            intake["samples"] = []
+            intake["is_sample_json"] = False
             if intake_tests.exists():
                 for intake_test in sorted(intake_tests.iterdir()):
-
                     if not intake_test.name.endswith(".json"):
                         continue
 
                     with open(intake_test, "r") as fd:
+                        test = json.load(fd)
+                        intake["is_sample_json"] = is_valid_json(
+                            test["expected"]["message"]
+                        )
+                        content = (
+                            json.dumps(
+                                json.loads(test["expected"]["message"]), indent="    "
+                            )
+                            if intake["is_sample_json"]
+                            else test["expected"]["message"]
+                        )
+                        intake["samples"].append(
+                            {"name": intake_test.name.split(".")[0], "content": content}
+                        )
                         intake["tests"].append(
                             {
                                 "name": intake_test.name,
-                                "content": json.dumps(
-                                    json.load(fd)["expected"], indent="    "
-                                ),
+                                "content": json.dumps(test["expected"], indent="    "),
                             }
                         )
 
@@ -138,7 +155,6 @@ def load_intakes(intake_repository: str) -> List[Dict]:
 
 
 def generate_intake_doc(intake: Dict) -> str:
-
     file_loader = FileSystemLoader("templates")
     env = Environment(loader=file_loader)
 
@@ -151,8 +167,23 @@ def generate_intake_doc(intake: Dict) -> str:
         repo_path=intake["repo_path"],
     )
 
+# Samples doc generation
 
-def update_doc(intake_repository: str, documentation_repository: str):
+def generate_sample_intake_doc(intake: Dict) -> str:
+    file_loader = FileSystemLoader("templates")
+    env = Environment(loader=file_loader)
+
+    template = env.get_template("sample.md.jinja")
+    return template.render(
+        manifest=intake["manifest"],
+        fields=intake["fields"],
+        parser=intake["parser"],
+        is_sample_json=intake["is_sample_json"],
+        samples=intake["samples"],
+        repo_path=intake["repo_path"],
+    )
+
+def update_doc(intake_repository: str, documentation_repository: str): 
 
     doc_path = Path(documentation_repository)
 
@@ -161,10 +192,10 @@ def update_doc(intake_repository: str, documentation_repository: str):
 
     # produce intake documentation
     for intake in intakes:
-
         intake_content = generate_intake_doc(intake)
+        sample_content = generate_sample_intake_doc(intake)
 
-        generated_file_path = (
+        generated_intake_file_path = (
             doc_path
             / "_shared_content"
             / "operations_center"
@@ -172,13 +203,23 @@ def update_doc(intake_repository: str, documentation_repository: str):
             / "generated"
             / f"{intake['manifest']['uuid']}.md"
         )
-
-        with open(generated_file_path, "w") as fd:
+        
+        generated_samples_file_path = (
+            doc_path
+            / "_shared_content"
+            / "operations_center"
+            / "integrations"
+            / "generated"
+            / f"{intake['manifest']['uuid']}_sample.md"
+        )
+        
+        with open(generated_intake_file_path, "w") as fd:
             fd.write(intake_content)
+        with open(generated_samples_file_path, "w") as fd:
+            fd.write(sample_content)
 
 
 if __name__ == "__main__":
-
     parser = argparse.ArgumentParser(
         description="Update the documentation with intake formats"
     )

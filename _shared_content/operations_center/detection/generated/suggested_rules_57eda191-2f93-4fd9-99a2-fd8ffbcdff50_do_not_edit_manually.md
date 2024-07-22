@@ -9,6 +9,30 @@ The following Sekoia.io built-in rules match the intake **Bitsight SPM [BETA]**.
     
     - **Effort:** elementary
 
+??? abstract "Bitsight SPM Material Vulnerability"
+    
+    Bitsight SPM has raised a material vulnerability finding
+    
+    - **Effort:** master
+
+??? abstract "Bitsight SPM Minor Vulnerability"
+    
+    Bitsight SPM has raised a minor vulnerability finding
+    
+    - **Effort:** master
+
+??? abstract "Bitsight SPM Moderate Vulnerability"
+    
+    Bitsight SPM has raised a moderate vulnerability finding
+    
+    - **Effort:** master
+
+??? abstract "Bitsight SPM Severe Vulnerability"
+    
+    Bitsight SPM has raised a severe vulnerability finding
+    
+    - **Effort:** master
+
 ??? abstract "Cryptomining"
     
     Detection of domain names potentially related to cryptomining activities.
