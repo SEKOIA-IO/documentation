@@ -1,4 +1,4 @@
-Rules catalog includes **912 built-in detection rules** ([_last update on 2024-07-18_](rules_changelog.md)).
+Rules catalog includes **913 built-in detection rules** ([_last update on 2024-07-22_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Identity Information**
 
@@ -9785,6 +9785,10 @@ Rules catalog includes **912 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 22/07/2024 - minor - Update action field for ECS one
+            
 ??? abstract "AWS CloudTrail ECS Cluster Deleted"
     
     Detects when an attacker is destroying an AWS ECS Cluster
@@ -9826,6 +9830,12 @@ Rules catalog includes **912 built-in detection rules** ([_last update on 2024-0
     Detects when the transfer lock feature is disabled on a domain name handled by AWS Route 53 service.
     
     - **Effort:** elementary
+    
+??? abstract "AWS CloudTrail S3 Bucket Replication"
+    
+    Detects a replication rule being enable for a given S3 bucket: it could provide an attacker a way to exfiltrate data.
+    
+    - **Effort:** master
     
 **Network Boundary Bridging**
 

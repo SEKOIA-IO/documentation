@@ -237,6 +237,12 @@ The following Sekoia.io built-in rules match the intake **AWS CloudTrail**. This
     
     - **Effort:** elementary
 
+??? abstract "AWS CloudTrail S3 Bucket Replication"
+    
+    Detects a replication rule being enable for a given S3 bucket: it could provide an attacker a way to exfiltrate data.
+    
+    - **Effort:** master
+
 ??? abstract "Account Added To A Security Enabled Group"
     
     Detection in order to investigate who has added a specific Domain User in Domain Admins or Group Policy Creator Owners (Security event 4728)

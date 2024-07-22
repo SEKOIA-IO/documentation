@@ -1,7 +1,10 @@
-Changelog _last update on 2024-07-18_
+Changelog _last update on 2024-07-22_
 
 ## Changelog
 
+### AWS CloudTrail EC2 Subnet Deleted
+  - 22/07/2024 - minor - Update action field for ECS one
+    
 ### Microsoft Entra ID (Azure AD) Malicious IP
   - 16/07/2024 - minor - Change similarity strategy.
     
