@@ -311,72 +311,162 @@ nav:
           - Syslog NG : integration/ingestion_methods/syslog/syslog-ng.md
   - List of intake categories :
       - Overview : integration/categories/overview.md
-      - Applicative :
-          - Apache HTTP Server : integration/categories/applicative/apache.md
-          - Azure Files : integration/categories/applicative/azure_files.md
-          - Azure MySQL : integration/categories/applicative/azure_mysql.md
-      - Email :
-          - Apache Spamassassin : integration/categories/email/spamassassin.md
-          - Cisco ESA : integration/categories/email/cisco_esa.md
-          - Fortinet Fortimail : integration/categories/email/fortimail.md
-          - Mimecast Email Security : integration/categories/email/mimecast_email_security.md
-          - Postfix  : integration/categories/email/postfix.md
-          - ProofPoint PoD : integration/categories/email/proofpoint_pod.md
-          - ProofPoint TAP : integration/categories/email/proofpoint_tap.md
-          - Retarus Email Security  : integration/categories/email/retarus_email_security.md
-          - Trend Micro Email Security  : integration/categories/email/trend_micro_email_security.md
-          - Vade Cloud  : integration/categories/email/vade_cloud.md
-          - Mimecast  : integration/categories/email/mimecast_email_security.md
-          - Vade M365  : integration/categories/email/vade.md
-      - Endpoint :
-          - Azure Windows : integration/categories/endpoint/azure_windows.md
-          - Elastic Auditbeat Linux : integration/categories/endpoint/auditbeat_linux.md
-          - ElasticWinlogbeat : integration/categories/endpoint/winlogbeat.md
-          - ESET Protect / Inspect : integration/categories/endpoint/eset_protect.md
-          - Harfanglab : integration/categories/endpoint/harfandlab.md
-          - IBM AIX : integration/categories/endpoint/ibm_aix.md
-          - Kaspersky Endpoint Seurity : integration/categories/endpoint/kaspersky_endpoint_security.md
-          - Palo Alto Cortex EDR : integration/categories/endpoint/paloalto_cortex_edr.md
-          - Sekoia.io Endpoint Agent : integration/categories/endpoint/sekoiaio.md
-          - Sophos EDR : integration/categories/endpoint/sophos_edr.md
-          - Symantec/Broadcom Endpoint Security : integration/categories/endpoint/symantec_epp.md
-          - Tanium : integration/categories/endpoint/tanium.md
-          - TEHTRIS EDR : integration/categories/endpoint/tehtris_edr.md
-          - WithSecure Elements : integration/categories/endpoint/withsecure_element.md
-      - Generic :
-          - Index : integration/categories/generic/index.md
+      - Applicative:
+          - Apache HTTP Server: integration/categories/applicative/apache.md
+          - Azure Files: integration/categories/applicative/azure_files.md
+          - Azure MySQL: integration/categories/applicative/azure_mysql.md
+          - Cloudflare Audit Logs: integration/categories/applicative/cloudflare-audit-logs.md
+          - Fastly WAF Audit logs: integration/categories/applicative/fastly_audit_waf.md
+          - Github Audit Logs: integration/categories/applicative/github_audit_logs.md
+          - Google Reports: integration/categories/applicative/google_reports.md
+          - Google Workspace and Google Cloud Audit Logs: integration/categories/applicative/google_cloud_audit.md
+          - Microsoft IIS: integration/categories/applicative/microsoft_iis.md
+          - Salesforce: integration/categories/applicative/salesforce.md
+          - Sekoia.io activity logs: integration/categories/applicative/sekoiaio_activity_logs.md
+          - Systancia Cleanroom: integration/categories/applicative/systancia_cleanroom.md
+          - Veeam Backup: integration/categories/applicative/veeam_backup.md
+      - Email:
+          - Cisco Email Security Appliance: integration/categories/email/cisco_esa.md
+          - FortiMail: integration/categories/email/fortimail.md
+          - Mimecast Email Security: integration/categories/email/mimecast_email_security.md
+          - Office 365: integration/categories/email/o365.md
+          - Office 365 Message Trace: integration/categories/email/message_trace.md
+          - Postfix: integration/categories/email/postfix.md
+          - Proofpoint On Demand: integration/categories/email/proofpoint_pod.md
+          - Proofpoint Targeted Attack Protection: integration/categories/email/proofpoint_tap.md
+          - Retarus Email Security: integration/categories/email/retarus_email_security.md
+          - SpamAssassin: integration/categories/email/spamassassin.md
+          - Trend Micro Email Security: integration/categories/email/trend_micro_email_security.md
+          - Vade Cloud: integration/categories/email/vade_cloud.md
+          - Vade M365: integration/categories/email/vade.md
+      - Endpoint:
+          - Azure Windows: integration/categories/endpoint/azure_windows.md
+          - Check Point Harmony Mobile: integration/categories/endpoint/checkpoint_harmony_mobile.md
+          - CrowdStrike Falcon: integration/categories/endpoint/crowdstrike_falcon.md
+          - CrowdStrike Falcon Telemetry: integration/categories/endpoint/crowdstrike_falcon_telemetry.md
+          - Eset Protect: integration/categories/endpoint/eset_protect.md
+          - Google Kubernetes Engine (GKE): integration/categories/endpoint/google_kubernetes_engine.md
+          - Harfanglab: integration/categories/endpoint/harfanglab.md
+          - IBM AIX: integration/categories/endpoint/ibm_aix.md
+          - Kaspersky Endpoint Security: integration/categories/endpoint/kaspersky_endpoint_security.md
+          - Linux AuditBeat: integration/categories/endpoint/auditbeat_linux.md
+          - Log Insight Windows: integration/categories/endpoint/log_insight_windows.md
+          - Microsoft 365 Defender: integration/categories/endpoint/microsoft_365_defender.md
+          - Microsoft Intune: integration/categories/endpoint/microsoft_intune.md
+          - Palo Alto Cortex XDR (EDR): integration/categories/endpoint/paloalto_cortex_edr.md
+          - Panda Security Aether: integration/categories/endpoint/panda_security_aether.md
+          - Sekoia.io Endpoint Agent: integration/categories/endpoint/sekoiaio.md
+          - Sophos EDR: integration/categories/endpoint/sophos_edr.md
+          - Symantec Endpoint Protection: integration/categories/endpoint/symantec_epp.md
+          - TEHTRIS Endpoint Detection & Reponse: integration/categories/endpoint/tehtris_edr.md
+          - Tanium: integration/categories/endpoint/tanium.md
+          - Trellix EDR: integration/categories/endpoint/trellix_edr.md
+          - Trend Micro Apex One: integration/categories/endpoint/trend_micro_apex_one.md
+          - VMWare ESXi: integration/categories/endpoint/vmware_esxi.md
+          - VMWare VCenter: integration/categories/endpoint/vmware_vcenter.md
+          - Windows: integration/categories/endpoint/windows.md
+          - Winlogbeat: integration/categories/endpoint/winlogbeat.md
+          - WithSecure Elements: integration/categories/endpoint/withsecure_elements.md
+      - Generic:
+          - CEF: integration/categories/generic/cef.md
+          - Raw: integration/categories/generic/raw.md
       - IAM :
+          - Alsid: integration/categories/iam/alsid.md
           - Azure Key Vault: integration/categories/iam/azure_key_vault.md
+          - Cisco Duo Security: integration/categories/iam/cisco_duo_security.md
           - FreeRADIUS: integration/categories/iam/freeradius.md
-      - Network :
+          - Jumpcloud Directory Insights: integration/categories/iam/jumpcloud_directory_insights.md
+          - ManageEngine ADAudit Plus: integration/categories/iam/manageengine_adauditplus.md
+          - Microsoft Entra ID (Azure AD): integration/categories/iam/entra_id.md
+          - Okta System log: integration/categories/iam/okta_system_log.md
+          - OpenLDAP: integration/categories/iam/openldap.md
+          - RSA SecurID: integration/categories/iam/rsa_securid.md
+          - Rubycat PROVE IT: integration/categories/iam/rubycat_prove_it.md
+          - Wallix: integration/categories/iam/wallix.md
+      - Network:
+          - Amazon VPC Flow Logs: integration/categories/network/aws_flow_logs.md
           - ArubaOS Switch: integration/categories/network/arubaos.md
-          - AWS Flow Logs: integration/categories/network/aws_flow_logs.md
           - BIND: integration/categories/network/bind.md
-          - Cato Networks SASE: integration/categories/network/cato_sase.md
-          - BIND: integration/categories/network/bind.md
+          - Cato SASE: integration/categories/network/cato_sase.md
           - Cisco IOS: integration/categories/network/cisco_ios.md
           - Cisco Meraki MX: integration/categories/network/cisco_meraki_mx.md
           - Cisco NX-OS: integration/categories/network/cisco_nx_os.md
-          - Citrix Netscaler / ADC: integration/categories/network/citrix_netscaler_adc.md
-          - DHCPD: integration/categories/network/dhcpd.md
-          - Ekinops OneOS: integration/categories/network/ekinops_oneos.md
+          - Citrix NetScaler / ADC: integration/categories/network/citrix_netscaler_adc.md
+          - Cloudflare Access Request: integration/categories/network/cloudflare-access-requests.md
+          - Cloudflare DNS Gateway: integration/categories/network/cloudflare-gateway-dns.md
+          - Cloudflare DNS logs: integration/categories/network/cloudflare-dns-logs.md
+          - Cloudflare Gateway HTTP: integration/categories/network/cloudflare-gateway-http.md
+          - Cloudflare Gateway Network: integration/categories/network/cloudflare-gateway-network.md
+          - Cloudflare HTTP requests: integration/categories/network/cloudflare-http-requests.md
           - F5 BIG-IP: integration/categories/network/f5-big-ip.md
           - Forcepoint Secure Web Gateway: integration/categories/network/forcepoint_web_gateway.md
+          - Google VPC Flow Logs: integration/categories/network/google_vpc_flow_logs.md
           - HAProxy: integration/categories/network/haproxy.md
-          - Nginx: integration/categories/network/nginx.md
-      - Network Security :
-          - Broadcom Edge SWG: integration/categories/network_security/broadcom_edge_swg.md
-          - Check Point Firewall: integration/categories/network_security/checkpoint.md
+          - ISC DHCP: integration/categories/network/dhcpd.md
+          - Infoblox DDI: integration/categories/network/infoblox_ddi.md
+          - Microsoft Always On VPN: integration/categories/network/microsoft_always_on_vpn.md
+          - NGINX: integration/categories/network/nginx.md
+          - Netfilter: integration/categories/network/netfilter.md
+          - OPNSense: integration/categories/network/opnsense.md
+          - OpenSSH: integration/categories/network/openssh.md
+          - OpenVPN: integration/categories/network/openvpn.md
+          - Pulse Connect Secure: integration/categories/network/pulse.md
+          - Squid: integration/categories/network/squid.md
+          - Umbrella DNS Logs: integration/categories/network/umbrella_dns.md
+          - Unbound: integration/categories/network/unbound.md
+      - Network Security:
+          - AWS CloudTrail: integration/categories/network_security/aws_cloudtrail.md
+          - Amazon CloudFront Logs: integration/categories/network_security/aws_cloudfront.md
+          - Amazon GuardDuty: integration/categories/network_security/aws_guardduty.md
+          - Amazon WAF: integration/categories/network_security/aws_waf.md
+          - Azure Front Door: integration/categories/network_security/azure_front_door.md
+          - Azure Network Watcher (NSG flow logs): integration/categories/network_security/azure_network_watcher.md
+          - Broadcom Cloud Secure Web Gateway: integration/categories/network_security/broadcom_cloud_swg.md
+          - Broadcom Edge Secure Web Gateway: integration/categories/network_security/broadcom_edge_swg.md
+          - Check Point: integration/categories/network_security/checkpoint.md
           - Cisco Identity Services Engine (ISE): integration/categories/network_security/cisco_identity_services_engine_ise.md
           - Cisco Secure Firewall: integration/categories/network_security/cisco_asa.md
-          - Cisco Secure Web Appliance: integration/categories/network_security/cisco_wsa.md
+          - Cisco Web Security Appliance: integration/categories/network_security/cisco_wsa.md
           - Claroty xDome: integration/categories/network_security/claroty_xdome.md
+          - Cloudflare Firewall Events: integration/categories/network_security/cloudflare-firewall-events.md
           - Cyberwatch Detection: integration/categories/network_security/cyberwatch_detection.md
-          - Daspren Parad: integration/categories/network_security/daspren_parad.md
+          - Darktrace Threat Visualizer: integration/categories/network_security/darktrace_threat_visualizer.md
           - Datadome Protection: integration/categories/network_security/datadome_protection.md
-          - Fortinet Fortigate: integration/categories/network_security/fortigate.md
-          - Fortinet Fortiproxy: integration/categories/network_security/fortiproxy.md
-          - Fortinet Fortiweb: integration/categories/network_security/fortiweb.md
+          - Digital Shadows SearchLight: integration/categories/network_security/digital_shadows.md
+          - Fastly Next-Gen WAF: integration/categories/network_security/fastly_waf.md
+          - Forcepoint Secure Web Gateway: integration/categories/network_security/forcepoint_web_gateway.md
+          - FortiProxy: integration/categories/network_security/fortiproxy.md
+          - FortiWeb: integration/categories/network_security/fortiweb.md
+          - Fortigate: integration/categories/network_security/fortigate.md
+          - Gatewatcher AionIQ: integration/categories/network_security/gatewatcher_aioniq.md
+          - Imperva Web Application Firewall: integration/categories/network_security/imperva_waf.md
+          - Lacework Cloud Security: integration/categories/network_security/lacework_cloud_security.md
+          - McAfee Web Gateway / Skyhigh Secure Web Gateway: integration/categories/network_security/skyhigh_secure_web_gateway.md
+          - Netskope Events: integration/categories/network_security/netskope_events.md
+          - Netskope Transaction Events: integration/categories/network_security/netskope_transaction.md
+          - OGO Shield WAF: integration/categories/network_security/ogo_shield.md
+          - Olfeo Secure Web Gateway: integration/categories/network_security/olfeo_secure_web_gateway.md
+          - Palo Alto: integration/categories/network_security/paloalto.md
+          - Security Scorecard Vunerability Assessment Scanner: integration/categories/network_security/securityscorecard_vas.md
+          - SonicWall Firewall: integration/categories/network_security/sonicwall_fw.md
+          - SonicWall SMA: integration/categories/network_security/sonicwall_sma.md
+          - Sophos Firewall: integration/categories/network_security/sophos_fw.md
+          - Sophos Threat Analysis Center: integration/categories/network_security/sophos_threat_analysis_center.md
+          - Stormshield Network Security: integration/categories/network_security/stormshield_network_security.md
+          - Suricata: integration/categories/network_security/suricata.md
+          - Trellix Network Security: integration/categories/network_security/trellix_nx.md
+          - Trellix ePO: integration/categories/network_security/trellix_epo.md
+          - Trend Micro Deep Security / Workload Security: integration/categories/network_security/trend_micro_deep_security.md
+          - Ubika Cloud Protector Alerts: integration/categories/network_security/ubika_cloud_protector_alerts.md
+          - Ubika Cloud Protector Traffic: integration/categories/network_security/ubika_cloud_protector_traffic.md
+          - Ubika WAAP Gateway: integration/categories/network_security/ubika_waap.md
+          - Umbrella IP Logs: integration/categories/network_security/umbrella_ip.md
+          - Umbrella Proxy Logs: integration/categories/network_security/umbrella_proxy.md
+          - Varonis Data Security: integration/categories/network_security/varonis_data_security.md
+          - Vectra Cognito Detect: integration/categories/network_security/vectra.md
+          - WatchGuard Firebox: integration/categories/network_security/watchguard_firebox.md
+          - Zscaler Internet Access: integration/categories/network_security/zscaler_zia.md
+          - Daspren Parad: integration/categories/network_security/daspren_parad.md
   - Actions integrations:
     - Overview : integration/action_library/overview.md
     - Applicatives:
