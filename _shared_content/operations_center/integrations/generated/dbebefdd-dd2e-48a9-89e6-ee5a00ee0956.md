@@ -1,5 +1,5 @@
 
-## Event Categories
+### Event Categories
 
 
 The following table lists the data source offered by this integration.
@@ -18,10 +18,9 @@ The following table lists the data source offered by this integration.
 
 
 
-## Event Samples
+### Transformed Events Samples after Ingestion
 
-Find below few samples of events and how they are normalized by Sekoia.io.
-
+This section demonstrates how the raw logs will be transformed by our parsers. It shows the extracted fields that will be available for use in the [built-in detection rules](/docs/xdr/features/detect/rules_catalog) and hunting activities in the [events page](/docs/xdr/features/investigate/events). Understanding these transformations is essential for analysts to create effective detection mechanisms with [custom detection rules](/docs/xdr/features/detect/sigma) and to leverage the full potential of the collected data.
 
 === "event_01.json"
 
@@ -908,7 +907,7 @@ Find below few samples of events and how they are normalized by Sekoia.io.
 
 
 
-## Extracted Fields
+### Extracted Fields
 
 The following table lists the fields that are extracted, normalized under the ECS format, analyzed and indexed by the parser. It should be noted that infered fields are not listed.
 
@@ -935,3 +934,6 @@ The following table lists the fields that are extracted, normalized under the EC
 |`veeam.protection.group.name` | `keyword` | Name of the protection group |
 |`veeam.vm.ref` | `keyword` | Reference of the used virtual machine |
 
+
+
+For more information on the Intake Format, please find the code of the Parser, Smart Descriptions, and Supported Events [here](https://github.com/SEKOIA-IO/intake-formats/tree/main/Veeam/veeam_backup).
