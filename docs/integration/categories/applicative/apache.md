@@ -129,4 +129,4 @@ This setup guide will show you how to forward both your access and error logs to
 ## Further readings
 
 - The code of the Intake format is available [here](https://github.com/SEKOIA-IO/intake-formats/tree/main/Apache).
-- [Apache documentation](http://httpd.apache.org/docs/)
+- [Apache documentation](http://httpd.apache.org/docs/).
