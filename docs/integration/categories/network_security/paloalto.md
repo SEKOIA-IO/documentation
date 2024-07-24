@@ -63,7 +63,7 @@ The following prerequisites are needed in order to setup efficient log concentra
 3. Select `Policies > Security` and select a policy rule.
 4. Select the `Actions` tab and select the `Log Forwarding` profile you created.
 5. In the `Profile Type` drop-down, select `Profiles` or `Groups`, and then select the security profiles or `Group Profiles` required to trigger log generation and forwarding.
-6. Select both of the `Log at Session Start` and `Log At Session End` check boxes, and click `OK`.
+6. Select `Log At Session End` check boxes, and click `OK`.
 
 For detailed information about configuring a log forwarding profile and assigning the profile to a policy rule, see [Configure Log Forwarding](https://docs.paloaltonetworks.com/pan-os/9-1/pan-os-admin/monitoring/configure-log-forwarding.html#id1443a62b-8a0b-41db-a08d-5df934bf0ffc)
 
