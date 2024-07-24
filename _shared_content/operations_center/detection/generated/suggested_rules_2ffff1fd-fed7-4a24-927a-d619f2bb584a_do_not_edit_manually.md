@@ -75,6 +75,24 @@ The following Sekoia.io built-in rules match the intake **ESET Protect [BETA]**.
     
     - **Effort:** master
 
+??? abstract "ESET Protect Intrusion Detection"
+    
+    Detects when the solution ESET Protect detects an intrusion.
+    
+    - **Effort:** master
+
+??? abstract "ESET Protect Malware"
+    
+    Detects when Eset Protect tagged an event as linked to a malware with infected files.
+    
+    - **Effort:** master
+
+??? abstract "ESET Protect Vulnerability Exploitation Attempt"
+    
+    Detects when an attempt is made to exploit a vulnerability.
+    
+    - **Effort:** master
+
 ??? abstract "Exchange Server Spawning Suspicious Processes"
     
     Look for Microsoft Exchange Server’s Unified Messaging service spawning suspicious sub-processes, suggesting exploitation of CVE-2021-26857 vulnerability.

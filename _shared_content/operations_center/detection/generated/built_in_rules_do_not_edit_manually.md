@@ -1,4 +1,4 @@
-Rules catalog includes **913 built-in detection rules** ([_last update on 2024-07-22_](rules_changelog.md)).
+Rules catalog includes **918 built-in detection rules** ([_last update on 2024-07-24_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Identity Information**
 
@@ -560,6 +560,12 @@ Rules catalog includes **913 built-in detection rules** ([_last update on 2024-0
     
 **Obtain Capabilities**
 
+??? abstract "ESET Protect Vulnerability Exploitation Attempt"
+    
+    Detects when an attempt is made to exploit a vulnerability.
+    
+    - **Effort:** master
+    
 ??? abstract "Privilege Escalation Awesome Scripts (PEAS)"
     
     Detect PEAS privileges escalation scripts and binaries
@@ -1030,6 +1036,12 @@ Rules catalog includes **913 built-in detection rules** ([_last update on 2024-0
 ??? abstract "Download Files From Suspicious TLDs"
     
     Detects download of certain file types from hosts in suspicious TLDs
+    
+    - **Effort:** master
+    
+??? abstract "ESET Protect Malware"
+    
+    Detects when Eset Protect tagged an event as linked to a malware with infected files.
     
     - **Effort:** master
     
@@ -2838,6 +2850,12 @@ Rules catalog includes **913 built-in detection rules** ([_last update on 2024-0
 ??? abstract "Download Files From Suspicious TLDs"
     
     Detects download of certain file types from hosts in suspicious TLDs
+    
+    - **Effort:** master
+    
+??? abstract "ESET Protect Intrusion Detection"
+    
+    Detects when the solution ESET Protect detects an intrusion.
     
     - **Effort:** master
     
@@ -6639,6 +6657,12 @@ Rules catalog includes **913 built-in detection rules** ([_last update on 2024-0
     
         - 26/03/2024 - major - Rule's pattern field changed
             
+??? abstract "ESET Protect Set Policy"
+    
+    Detects when a new policy is set or removed.
+    
+    - **Effort:** master
+    
 ??? abstract "GPO Executable Delivery"
     
     Detects MSI binaries run through GPOs.
@@ -8779,6 +8803,12 @@ Rules catalog includes **913 built-in detection rules** ([_last update on 2024-0
     
         - 26/03/2024 - major - Rule's pattern field changed
             
+??? abstract "ESET Protect Set Policy"
+    
+    Detects when a new policy is set or removed.
+    
+    - **Effort:** master
+    
 ??? abstract "GPO Executable Delivery"
     
     Detects MSI binaries run through GPOs.
@@ -11511,6 +11541,12 @@ Rules catalog includes **913 built-in detection rules** ([_last update on 2024-0
     
         - 04/04/2024 - major - Rule's pattern field changed
             
+??? abstract "ESET Protect Remote Action"
+    
+    Detects when different remote commands are performed on the same hostname is a short amount of time.
+    
+    - **Effort:** master
+    
 ??? abstract "Registry Checked For Lanmanserver DisableCompression Parameter"
     
     Detects registry access for Lanmanserver\Parameters. The check of the value DisableCompression could be a sign of an attack trying to exploit SMBGhost vulnerability (CVE-2020-0796).
