@@ -16,8 +16,6 @@ Fastly Next-Gen WAF is a web application firewall solution designed to protect o
 !!! warning
     Important note - This format is currently in beta. We highly value your feedback to improve its performance.
 
-
-
 ## Configure
 
 ### Creating API access tokens
@@ -50,7 +48,7 @@ Go to the Sekoia.io [playbook page](https://app.sekoia.io/operations/playbooks),
 5. Click **Create**
 
 6. Create a **Module configuration**. Name the module configuration as you wish.
-7. Create a **Trigger configuration** using: 
+7. Create a **Trigger configuration** using:
 7.1. Type the `Intake key` created on the previous step
 7.2 Enter `User's email`, `API token`, `Corporation name` and `Site name` from the Fastly WAF dashboard
 
