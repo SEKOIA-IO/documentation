@@ -6,7 +6,7 @@ To push your events to Sekoia.io, you can use also use the syslog protocol.
 
 Before processing, you have to:
 
-- Connect to [Sekoia.io Operations Center](https://app.sekoia.io/operations/)
+- Connect to [Sekoia.io SOC Platform with a Defend Plan](https://app.sekoia.io/intakes)
 - Add an Intake to the relevant Entity
 - Keep trace of the automatically generated Intake key
 
