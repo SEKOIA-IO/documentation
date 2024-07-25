@@ -3,12 +3,11 @@ name: Salesforce
 type: intake
 
 ## Overview
-- **Vendor**:
-- **Plan**: Core + Prime
-- **Supported environment**:
-- **Version compatibility**:
+- **Vendor**: Salesforce
+- **Plan**: Defend Core & Defend Prime
+- **Supported environment**: SaaS
 - **Detection based on**: Telemetry
-- **Supported application or feature**:
+- **Supported application or feature**: Application Logs
 
 Salesforce provides customer relationship management software and applications focused on sales, customer service, marketing automation, e-commerce, analytics, and application development.
 

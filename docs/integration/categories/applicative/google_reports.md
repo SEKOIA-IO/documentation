@@ -3,12 +3,11 @@ name: Google Reports
 type: intake
 
 ## Overview
-- **Vendor**:
-- **Plan**:
-- **Supported environment**:
-- **Version compatibility**:
-- **Detection based on**:
-- **Supported application or feature**:
+- **Vendor**: Google
+- **Plan**: Defend Prime
+- **Supported environment**: SaaS
+- **Detection based on**: Telemetry
+- **Supported application or feature**: Application Logs
 
 Google Reports is a data reporting and analysis platform offered by Google for Google Workspace services, designed to provide insights and metrics about user activities and interactions within various Google services. It allows organizations to track and visualize user engagement, application usage, and other relevant data points, enabling informed decision-making and optimization of digital experiences. 
 

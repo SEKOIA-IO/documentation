@@ -3,12 +3,11 @@ name: Google Workspace and Google Cloud Audit Logs
 type: intake
 
 ## Overview
-- **Vendor**:
-- **Plan**: Core + Prime
-- **Supported environment**:
-- **Version compatibility**:
-- **Detection based on**: Telemetry
-- **Supported application or feature**:
+- **Vendor**: Google
+- **Plan**: Defend Prime
+- **Supported environment**: SaaS
+- **Detection based on**: Audit
+- **Supported application or feature**: Application Logs
 
 Google Cloud Logging centralizes logs from Google Cloud products.
 

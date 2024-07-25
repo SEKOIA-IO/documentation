@@ -3,12 +3,12 @@ name: Github Audit Logs
 type: intake
 
 ## Overview
-- **Vendor**:
-- **Plan**: Core + Prime
-- **Supported environment**:
-- **Version compatibility**:
-- **Detection based on**: Telemetry
-- **Supported application or feature**:
+- **Vendor**: Microsoft
+- **Plan**: Defend Core & Defend Prime
+- **Supported environment**: SaaS
+- **Detection based on**: Audit
+- **Supported application or feature**: Application Logs
+
 Github audit logs represents activities on your Github organization.
 
 This setup guide describes how to forward audit logs from Github to Sekoia.io.
