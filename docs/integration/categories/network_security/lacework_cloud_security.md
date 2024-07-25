@@ -28,11 +28,11 @@ In the lacework console:
 
 1. Go to `Settings`
 
-    ![step 1](/assets/operation_center/integration_catalog/cloud_and_saas/lacework/step_01.png)
+    ![step 1](/assets/integration/cloud_and_saas/lacework/step_01.png)
 
 2. In the settings, go to `Access Control` > `Users` > `Account level` and click `+ Add New`
 
-    ![step 2](/assets/operation_center/integration_catalog/cloud_and_saas/lacework/step_02.png)
+    ![step 2](/assets/integration/cloud_and_saas/lacework/step_02.png)
 
 3. To create a service user:
 
@@ -40,12 +40,12 @@ In the lacework console:
     2. Give the user a name and an optional description
     3. Click `Next`
 
-        ![step 3](/assets/operation_center/integration_catalog/cloud_and_saas/lacework/step_03.png)
+        ![step 3](/assets/integration/cloud_and_saas/lacework/step_03.png)
 
     4. Select `Read-Only User` as user group 
     5. Click `Save`
 
-        ![step 4](/assets/operation_center/integration_catalog/cloud_and_saas/lacework/step_04.png)
+        ![step 4](/assets/integration/cloud_and_saas/lacework/step_04.png)
 
 #### Create API keys
 
@@ -53,14 +53,14 @@ In the Lacework console:
 
 1. In the `Settings`, go to `Configuration` > `API keys` > `Service User API Keys` and click `+ Add New`
 
-    ![step 5](/assets/operation_center/integration_catalog/cloud_and_saas/lacework/step_05.png)
+    ![step 5](/assets/integration/cloud_and_saas/lacework/step_05.png)
 
 2. To create an API Key:
 
     1. Give the key a name and an optional description.
     2. Click `Save`.
 
-        ![step 6](/assets/operation_center/integration_catalog/cloud_and_saas/lacework/step_06.png)
+        ![step 6](/assets/integration/cloud_and_saas/lacework/step_06.png)
 
 Download the generated API key file and open it in an editor to view and use the key ID and generated secret in your API requests. You can create up to 20 API keys.
 

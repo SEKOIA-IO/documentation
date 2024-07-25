@@ -23,7 +23,7 @@ An internal syslog concentrator is required to collect and forward events to Sek
 
 ### Configure a Rule Set
 
-Prior to the configuration, download the “Rule Set” configuration [`SEKOIAIO_SKYHIGH_swg.xml`](/assets/operation_center/integration_catalog/network/skyhigh_secure_web_gateway/SEKOIAIO_SKYHIGH_swg.xml).
+Prior to the configuration, download the “Rule Set” configuration [`SEKOIAIO_SKYHIGH_swg.xml`](/assets/integration/network/skyhigh_secure_web_gateway/SEKOIAIO_SKYHIGH_swg.xml).
 
 
 In your SWG console:

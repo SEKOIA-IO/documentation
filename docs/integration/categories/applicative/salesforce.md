@@ -30,7 +30,7 @@ This setup guide will show you how to provide an integration between Salesforce 
 7. Click `Save`
 
 <video controls width="100%">
-  <source src="/assets/operation_center/integration_catalog/cloud_and_saas/salesforce_events/create_connected_app.webm" type="video/webm">
+  <source src="/assets/integration/cloud_and_saas/salesforce_events/create_connected_app.webm" type="video/webm">
 </video>
 
 #### Set the client credentials
@@ -41,7 +41,7 @@ This setup guide will show you how to provide an integration between Salesforce 
 4. Click `Save`
 
 <video controls width="100%">
-  <source src="/assets/operation_center/integration_catalog/cloud_and_saas/salesforce_events/run_as.webm" type="video/webm">
+  <source src="/assets/integration/cloud_and_saas/salesforce_events/run_as.webm" type="video/webm">
 </video>
 
 #### Get consumer key and secret
@@ -50,7 +50,7 @@ This setup guide will show you how to provide an integration between Salesforce 
 3. In the `Consumer details` section, copy the consumer key and the consumer secret
 
 <video controls width="100%">
-  <source src="/assets/operation_center/integration_catalog/cloud_and_saas/salesforce_events/consumer_key_and_secret.webm" type="video/webm">
+  <source src="/assets/integration/cloud_and_saas/salesforce_events/consumer_key_and_secret.webm" type="video/webm">
 </video>
 
 ### Create an intake

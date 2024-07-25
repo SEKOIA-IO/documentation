@@ -22,7 +22,7 @@ Ubika Cloud Protector is a cloud-native security solution, providing advanced th
 
 !!! warning
     The following instructions are based on the old interface of Ubika Cloud Protector. Please, switch to the old interface if you use the new one.
-    ![choose old interfaces](/assets/operation_center/integration_catalog/cloud_and_saas/ubika_cloud_protector/switch.png){: style="max-width:100%"}
+    ![choose old interfaces](/assets/integration/cloud_and_saas/ubika_cloud_protector/switch.png){: style="max-width:100%"}
 
 To get API keys info:
 
@@ -30,11 +30,11 @@ To get API keys info:
 1. Log in the Ubika Cloud protector
 2. Go to `Account` > `API Access`
 
-    ![api access](/assets/operation_center/integration_catalog/cloud_and_saas/ubika_cloud_protector/api_access.png){: style="max-width:100%"}
+    ![api access](/assets/integration/cloud_and_saas/ubika_cloud_protector/api_access.png){: style="max-width:100%"}
 
 3. In the `API KEYS INFO` section, please note the `provider name` and the `tenant name`
 
-    ![api info](/assets/operation_center/integration_catalog/cloud_and_saas/ubika_cloud_protector/api_keys_info.png){: style="max-width:100%"}
+    ![api info](/assets/integration/cloud_and_saas/ubika_cloud_protector/api_keys_info.png){: style="max-width:100%"}
 
 4. The documentation to retrieve the `token` is still [under construction]
 

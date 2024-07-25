@@ -33,7 +33,7 @@ Create a new HarfangLab intake on Sekoia.io.
 1. Navigate to `Administration` > `Configuration`, and switch to the `Connectors` tab.
 
 2. In the `Syslog connector` panel, select the logs you want to export:
-![HarfangLab Log categories](/assets/operation_center/integration_catalog/endpoint/harfanglab/harfanglab-log-categories.png)
+![HarfangLab Log categories](/assets/integration/endpoint/harfanglab/harfanglab-log-categories.png)
 
 3. Configure the Syslog information with the following details and by replacing `YOUR_INTAKE_KEY` with the Intake key previously generated in Sekoia.io:
     - Host: `intake.sekoia.io`
@@ -49,7 +49,7 @@ Create a new HarfangLab intake on Sekoia.io.
 !!! warning
     Do not insert spaces in `App name` or `Source host`. These fields are part of the Syslog header and spaces will break the format.
 
-![HarfangLab Configuration](/assets/operation_center/integration_catalog/endpoint/harfanglab/harfanglab_edr.png){: style="max-width:60%"}
+![HarfangLab Configuration](/assets/integration/endpoint/harfanglab/harfanglab_edr.png){: style="max-width:60%"}
 
 {!_shared_content/operations_center/integrations/generated/3c7057d3-4689-4fae-8033-6f1f887a70f2_sample.md!}
 

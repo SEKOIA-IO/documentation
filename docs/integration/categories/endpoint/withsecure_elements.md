@@ -27,7 +27,7 @@ In the WithSecure Elements Central Admin console:
 3. Give it a description, check it is `Read-Only` and click on `Add`.
 4. In the `API client` Summary, copy the `Client ID` and the `Secret` before checking the box `I have copied and stored the secret` and closing the windows. They will be used later in Sekoia.io to retrieve the events.
 
-![WithSecure API Client Creation](/assets/operation_center/integration_catalog/endpoint/withsecure/withsecure_create_api_client.png){: style="max-width:80%"}
+![WithSecure API Client Creation](/assets/integration/endpoint/withsecure/withsecure_create_api_client.png){: style="max-width:80%"}
 
 ### Create the intake
 
@@ -46,7 +46,7 @@ In the WithSecure Elements Central Admin console:
 9. On the top right corner, start the Playbook. You should see monitoring messages in the `Logs` section of your action.
 10. After a couple of minutes check on the Events page that WithSecure Elements logs are being received.
 
-![WithSecure Playbook Example](/assets/operation_center/integration_catalog/endpoint/withsecure/withsecure_playbook_collect.png){: style="max-width:80%"}
+![WithSecure Playbook Example](/assets/integration/endpoint/withsecure/withsecure_playbook_collect.png){: style="max-width:80%"}
 
 {!_shared_content/operations_center/integrations/generated/033cd098-b21b-4c9b-85c4-c8174c307e48_sample.md!}
 

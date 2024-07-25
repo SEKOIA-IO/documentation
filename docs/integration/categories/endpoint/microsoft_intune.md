@@ -19,7 +19,7 @@ This setup guide describe how to forward events produced by **Microsoft Intune**
 
 To forward **Microsoft Intune** events from Microsoft to Sekoia.io you need to send your event to an **Azure Event Hub** where Sekoia.io will collect the events.
 <div style="text-align: center;">
-    <img width="100%" alt="image" src="/assets/operation_center/integration_catalog/cloud_and_saas/event_hub/consume_azure_logs.png">
+    <img width="100%" alt="image" src="/assets/integration/cloud_and_saas/event_hub/consume_azure_logs.png">
 </div>
 
 ### Prerequisite

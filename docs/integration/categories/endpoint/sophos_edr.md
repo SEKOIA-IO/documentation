@@ -54,8 +54,8 @@ In the Sophos Central Admin console:
 9. On the top right corner, start the Playbook. You should see monitoring messages in the `Logs` section.
 10. Check on the Events page that the Sophos logs are being received.
 
-![Sophos Module Configuration](/assets/operation_center/integration_catalog/cloud_and_saas/sophos_edr/sophos_module_configuration.png){: style="max-width:60%"}
-![Sophos Trigger Configuration](/assets/operation_center/integration_catalog/cloud_and_saas/sophos_edr/sophos_trigger_configuration.png){: style="max-width:60%"}
+![Sophos Module Configuration](/assets/integration/cloud_and_saas/sophos_edr/sophos_module_configuration.png){: style="max-width:60%"}
+![Sophos Trigger Configuration](/assets/integration/cloud_and_saas/sophos_edr/sophos_trigger_configuration.png){: style="max-width:60%"}
 
 {!_shared_content/operations_center/integrations/generated/3f330d19-fdea-48ac-96bd-91a447bb26bd_sample.md!}
 

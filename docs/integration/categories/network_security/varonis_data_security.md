@@ -31,7 +31,7 @@ Syslog server address in DatAlert:
 3. In the `Syslog Message Forwarding` section, fill the Syslog server IP address and the Port with the ip address and the port of the log concentrator.
 4. Click OK
 
-![Varonis DatAlert configure syslog](/assets/operation_center/integration_catalog/network/varonis_data_security/configure_syslog.jpg){: style="max-width:100%"}
+![Varonis DatAlert configure syslog](/assets/integration/network/varonis_data_security/configure_syslog.jpg){: style="max-width:100%"}
 
 ### Create a message forwarding template
 
@@ -40,7 +40,7 @@ Syslog server address in DatAlert:
 3. In `Apply to alert methods`, select `Syslog message`
 4. Click OK
 
-![Varonis DatAlert configure template](/assets/operation_center/integration_catalog/network/varonis_data_security/configure_template.png){: style="max-width:100%"}
+![Varonis DatAlert configure template](/assets/integration/network/varonis_data_security/configure_template.png){: style="max-width:100%"}
 
 ### Create the intake
 

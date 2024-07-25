@@ -24,10 +24,10 @@ To collect the events from the Cato Networks platform, an API key is required:
 
 1. Log in our Cato Management Application
 2. Go to the `API Management` section then click on the `Administration` tab
-    ![Administration](/assets/operation_center/integration_catalog/cloud_and_saas/cato/administration.png){: style="max-width:100%"}
+    ![Administration](/assets/integration/cloud_and_saas/cato/administration.png){: style="max-width:100%"}
 3. Click on the button `New` to generate a new API key
 4. On the panel, give a name to the api key, select the `View` permission
-    ![Administration](/assets/operation_center/integration_catalog/cloud_and_saas/cato/panel.png){: style="max-width:100%"}
+    ![Administration](/assets/integration/cloud_and_saas/cato/panel.png){: style="max-width:100%"}
 5. Click on apply and copy the API key
 
 In addition to the API key, Cato `account ID` is also required for the Account configuration in Sekoia

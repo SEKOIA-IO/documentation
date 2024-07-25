@@ -49,7 +49,7 @@ Please follow [this link](https://learn.microsoft.com/en-us/microsoft-365/securi
 
 To forward **Microsoft 365 Defender** events from Microsoft to Sekoia.io you need to send your event to an **Azure Event Hub** where Sekoia.io will collect the events.
 <div style="text-align: center;">
-    <img width="100%" alt="image" src="/assets/operation_center/integration_catalog/cloud_and_saas/event_hub/consume_azure_logs.png">
+    <img width="100%" alt="image" src="/assets/integration/cloud_and_saas/event_hub/consume_azure_logs.png">
 </div>
 
 ### Prerequisite

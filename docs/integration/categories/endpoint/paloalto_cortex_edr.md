@@ -43,17 +43,17 @@ Before using the **Cortex XDR** connector, you must generate an API key in Corte
 1. Within **Cortex XDR**, click **Settings**.
 2. Click **Configurations**.
 
-    ![Configuration Page](/assets/operation_center/integration_catalog/cloud_and_saas/paloalto_cortex_edr/configuration.png){: style="max-width:100%; height: 500px;"}
+    ![Configuration Page](/assets/integration/cloud_and_saas/paloalto_cortex_edr/configuration.png){: style="max-width:100%; height: 500px;"}
 
 3. In the **Configurations** menu, select **API Keys**, which appears in the **Integrations** section.
 4. In the API Keys window, click **+New Key** button to create a new API key. And the **Generate API Key** window will open.
 
-    ![Api Key Page](/assets/operation_center/integration_catalog/cloud_and_saas/paloalto_cortex_edr/api_key.png){: style="max-width:100%"}
+    ![Api Key Page](/assets/integration/cloud_and_saas/paloalto_cortex_edr/api_key.png){: style="max-width:100%"}
 
 5. Select the **Standard** Security Level.
 6. Select a role for the API key. After selecting the role, click **Generate**.
 
-    ![Generation Button](/assets/operation_center/integration_catalog/cloud_and_saas/paloalto_cortex_edr/generate.png){: style="max-width:100%"}
+    ![Generation Button](/assets/integration/cloud_and_saas/paloalto_cortex_edr/generate.png){: style="max-width:100%"}
 
 7. After you’ve generated the key, copy the **API key** value presented and keep it secure.
 8. Return to the **API Keys** window, and select the API key you just generated. Also make note of the **API key ID**, which appears in the API Keys table.

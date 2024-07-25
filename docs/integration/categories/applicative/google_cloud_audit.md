@@ -177,11 +177,11 @@ Go to the Sekoia.io [playbook page](https://app.sekoia.io/operations/playbooks),
 - Select **Use a template**
 - Search for `Google` keywork on the search bar and select the template named `Forward Google Pubsub records to Sekoia.io`
 
-![google-playbook-template](/assets/operation_center/integration_catalog/cloud_and_saas/google/google-template.PNG){: style="max-width:100%"} 
+![google-playbook-template](/assets/integration/cloud_and_saas/google/google-template.PNG){: style="max-width:100%"} 
 
 - Create a **Module configuration** using your service account credentials from your Google Cloud environment extracted on a JSON file. Name the module configuration as you wish
 
-![template-playbook-configuration](/assets/operation_center/integration_catalog/cloud_and_saas/google/template-configuration.png ){: style="max-width:100%"}
+![template-playbook-configuration](/assets/integration/cloud_and_saas/google/template-configuration.png ){: style="max-width:100%"}
 
 -  Create a **Trigger configuration** using:
 

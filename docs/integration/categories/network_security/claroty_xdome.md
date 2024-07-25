@@ -65,19 +65,19 @@ This setup guide will show you how to forward both your access and error logs to
    1. Log in to the Claroty platform.
    2. In the top bar, click `Settings > System Settings`.
 
-      ![step 2](/assets/operation_center/integration_catalog/cloud_and_saas/claroty_xdome/step_01.png){: style="max-width:100%"}
+      ![step 2](/assets/integration/cloud_and_saas/claroty_xdome/step_01.png){: style="max-width:100%"}
 
    3. In the left panel, click `My Integrations`.
 
-      ![step 3](/assets/operation_center/integration_catalog/cloud_and_saas/claroty_xdome/step_02.png){: style="max-width:100%"}
+      ![step 3](/assets/integration/cloud_and_saas/claroty_xdome/step_02.png){: style="max-width:100%"}
 
    4. In the `My Integrations` tab, click `+ Add Integration`.
 
-      ![step 4](/assets/operation_center/integration_catalog/cloud_and_saas/claroty_xdome/step_03.png){: style="max-width:100%"}
+      ![step 4](/assets/integration/cloud_and_saas/claroty_xdome/step_03.png){: style="max-width:100%"}
 
    5. To create the new integration, select the `Internal Services` category and the `Syslog` integration. Click `Add`.
 
-      ![step 5](/assets/operation_center/integration_catalog/cloud_and_saas/claroty_xdome/step_04.png){: style="max-width:100%"}
+      ![step 5](/assets/integration/cloud_and_saas/claroty_xdome/step_04.png){: style="max-width:100%"}
 
    6. In the settings of the integration:
       - Define the concentrator IP address and port as the destination.
@@ -85,21 +85,21 @@ This setup guide will show you how to forward both your access and error logs to
       - Select `CEF` as the message format and `RFC 5424` as the syslog protocol standard.
       - Name the integration and select the collection server to use.
 
-      ![step 6](/assets/operation_center/integration_catalog/cloud_and_saas/claroty_xdome/step_05.png){: style="max-width:100%"}
+      ![step 6](/assets/integration/cloud_and_saas/claroty_xdome/step_05.png){: style="max-width:100%"}
 
    7. In the `Integration Tasks` section:
       - Click `Export Alerts` (1).
       - Enable the Export (2).
       - Click `Select All` (3).
 
-      ![step 7](/assets/operation_center/integration_catalog/cloud_and_saas/claroty_xdome/step_06.png){: style="max-width:100%"}
+      ![step 7](/assets/integration/cloud_and_saas/claroty_xdome/step_06.png){: style="max-width:100%"}
 
    8. In the `Integration Tasks` section:
       - Click `Export Comm. Events` (1).
       - Enable the Export (2).
       - Click `Select All` (3).
 
-      ![step 8](/assets/operation_center/integration_catalog/cloud_and_saas/claroty_xdome/step_07.png){: style="max-width:100%"}
+      ![step 8](/assets/integration/cloud_and_saas/claroty_xdome/step_07.png){: style="max-width:100%"}
 
    9. Click `Apply`.
 

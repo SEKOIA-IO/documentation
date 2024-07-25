@@ -34,7 +34,7 @@ Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a n
 9. Click `Save`
 
 <video controls width="100%">
-  <source src="/assets/operation_center/integration_catalog/cloud_and_saas/datadome/datadome_protection.webm" type="video/webm">
+  <source src="/assets/integration/cloud_and_saas/datadome/datadome_protection.webm" type="video/webm">
 </video>
 
 ## Further readings

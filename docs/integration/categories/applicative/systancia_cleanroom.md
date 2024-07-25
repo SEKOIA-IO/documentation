@@ -29,7 +29,7 @@ Please consult the [Syslog Forwarding](/integration/ingestion_methods/syslog/sek
 
 1. In the Systancia Clearoom system console, go to `Logger settings`
     
-    ![logger_settings.png](/assets/operation_center/integration_catalog/application/systancia-cleanroom/logger_settings.png)
+    ![logger_settings.png](/assets/integration/application/systancia-cleanroom/logger_settings.png)
 
 2. In the `Logger setting` panel:
    1. Select `Send events to a remote syslog`
@@ -37,7 +37,7 @@ Please consult the [Syslog Forwarding](/integration/ingestion_methods/syslog/sek
    3. Select `TCP` (recommended) or `TLS` as the transport protocol
    4. Click Validate
 
-    ![logger_settings_panel.png](/assets/operation_center/integration_catalog/application/systancia-cleanroom/logger_settings_panel.png)
+    ![logger_settings_panel.png](/assets/integration/application/systancia-cleanroom/logger_settings_panel.png)
 
 ### Create the intake
 

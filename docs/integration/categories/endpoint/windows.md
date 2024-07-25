@@ -341,7 +341,7 @@ To configure the Event Log Reader, follow the steps below:
 
 3. Add the Network Service account to the built-in Event Log Readers security group. This will allow the Event Log Reader to access the Windows event logs.
 
-![Sekoia.io Operations Center Windows WEF](/assets/operation_center/integration_catalog/endpoint/windows/wef_client_config.png){: style="max-width:60%"}
+![Sekoia.io Operations Center Windows WEF](/assets/integration/endpoint/windows/wef_client_config.png){: style="max-width:60%"}
 
 Note that these steps are necessary to allow the Event Log Reader to access the Windows event logs.
 

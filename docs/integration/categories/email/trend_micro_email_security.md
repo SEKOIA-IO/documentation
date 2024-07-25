@@ -19,15 +19,15 @@ Trend Micro Email Security is a robust email protection solution that safeguards
 1. Log on to the Trend Micro Email Security administrator console.
 2. Go to **Administration**
 
-![Step 1](/assets/operation_center/integration_catalog/email/trend_micro/step_1.png)
+![Step 1](/assets/integration/email/trend_micro/step_1.png)
 
 4. Click on **Service Integration**. The API Access tab displays by default.
 
-![Click on Service Integration](/assets/operation_center/integration_catalog/email/trend_micro/step_2.png)
+![Click on Service Integration](/assets/integration/email/trend_micro/step_2.png)
 
 6. Click **Add** to generate an API Key.
 
-![Click on Add](/assets/operation_center/integration_catalog/email/trend_micro/step_3.png)
+![Click on Add](/assets/integration/email/trend_micro/step_3.png)
 
 9. Copy the API Key value and save the value. Keep the API Key private
 

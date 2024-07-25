@@ -69,7 +69,7 @@ This setup guide will show you how to forward your Cyberwatch logs to Sekoia.io 
    - In the Remote Syslog server configuration, provide the address, the port, and the transport to the syslog concentrator.
 
    <video controls width="100%">
-     <source src="/assets/operation_center/integration_catalog/application/Cyberwatch.webm" type="video/webm">
+     <source src="/assets/integration/application/Cyberwatch.webm" type="video/webm">
    </video>
 
 ### Instruction on Sekoia
