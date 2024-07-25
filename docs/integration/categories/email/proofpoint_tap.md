@@ -2,7 +2,7 @@ uuid: 46ca6fc8-3d30-434c-92ff-0e1cde564161
 name: Proofpoint Targeted Attack Protection
 type: intake
 
-# ProofPoint Targeted Attack Protection
+## Overview
 
 Proofpoint Targeted Attack Protection (TAP) helps detect, mitigate, and block advanced threats that target people through email.
 

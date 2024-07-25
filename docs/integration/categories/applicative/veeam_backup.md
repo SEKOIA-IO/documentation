@@ -3,12 +3,12 @@ name: Veeam Backup
 type: intake
 
 ## Overview
-- **Vendor**:
-- **Plan**: Core + Prime
-- **Supported environment**:
-- **Version compatibility**:
+- **Vendor**: Veeam
+- **Plan**: Defend Core & Defend Prime
+- **Supported environment**: On-premise
+- **Version compatibility**: 11 and newer
 - **Detection based on**: Telemetry
-- **Supported application or feature**:
+- **Supported application or feature**: Application Logs
 
 Veeam Backup & Replication is a comprehensive data protection solution known for its robust backup, recovery, and replication capabilities, ensuring the secure and efficient management of data across various environments for businesses and organizations.
 

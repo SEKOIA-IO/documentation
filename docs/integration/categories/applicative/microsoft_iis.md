@@ -3,12 +3,12 @@ name: Microsoft IIS
 type: intake
 
 ## Overview
-- **Vendor**:
-- **Plan**: Core + Prime
-- **Supported environment**:
-- **Version compatibility**:
+- **Vendor**: Microsoft
+- **Plan**: Defend Core & Defend Prime
+- **Supported environment**: On Premise
+- **Version compatibility**: 10.0 and newer
 - **Detection based on**: Telemetry
-- **Supported application or feature**:
+- **Supported application or feature**: Application Logs
 Microsoft Internet Information Services (IIS) is a web server software for Windows, providing a secure and scalable platform for hosting and managing websites, applications, and services, widely used in enterprise environments.
 
 

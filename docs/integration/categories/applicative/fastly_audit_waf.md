@@ -4,12 +4,11 @@ type: intake
 
 
 ## Overview
-- **Vendor**:
-- **Plan**:
-- **Supported environment**:
-- **Version compatibility**:
-- **Detection based on**:
-- **Supported application or feature**:
+- **Vendor**: Fastly
+- **Plan**: Defend Core & Defend Prime
+- **Supported environment**: SaaS
+- **Detection based on**: Telemetry
+- **Supported application or feature**: Web application firewall logs
 
 Fastly WAF audit logs tracks activities related to your corp and your sites like user creation, rule creation, site configuration changes.
 

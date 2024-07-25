@@ -3,12 +3,12 @@ name: Systancia Cleanroom
 type: intake
 
 ## Overview
-- **Vendor**:
-- **Plan**: Core + Prime
-- **Supported environment**:
-- **Version compatibility**:
+- **Vendor**: Systancia
+- **Plan**: Defend Core & Defend Prime
+- **Supported environment**: On-premise
+- **Version compatibility**: 4.5 and newer
 - **Detection based on**: Telemetry
-- **Supported application or feature**:
+- **Supported application or feature**: Application Logs
 
 Systancia Cleanroom is a secure and isolated virtualized environment that ensures confidentiality and integrity for sensitive data and applications, offering a controlled and monitored workspace for high-security operations without compromising efficiency or user experience.
 
