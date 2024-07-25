@@ -2,7 +2,7 @@ uuid: e0eaf2f1-02d0-4d1a-be89-f2b8be4baf4e
 name: Proofpoint On Demand
 type: intake
 
-# ProofPoint On Demand
+## Overview
 
 ProofPoint On Demand (PoD) offers a real-time email processing feed to detect, classify and mitigate threats.
 
