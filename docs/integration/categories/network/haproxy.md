@@ -47,7 +47,7 @@ HAProxy is a free, open-source software that provides a high availability load b
 - **Supported Verbosity Levels**: Informational
 
 !!! Note
-    Log levels are based on the taxonomy of [RFC5425](https://datatracker.ietf.org/doc/html/rfc5424). Adapt according to the terminology used by the editor.
+    Log levels are based on the taxonomy of [RFC5424](https://datatracker.ietf.org/doc/html/rfc5424). Adapt according to the terminology used by the editor.
 
 - **Default Log Location**:
     - Events forwarded to `/var/lib/haproxy/dev/log`

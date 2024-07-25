@@ -43,7 +43,7 @@ Cisco NX-OS is a network operating system for Cisco Nexus-series switches.
 - **Supported verbosity level**: Informational
 
 !!! Note
-    Log levels are based on the taxonomy of [RFC5425](https://datatracker.ietf.org/doc/html/rfc5424). Adapt according to the terminology used by the editor.
+    Log levels are based on the taxonomy of [RFC5424](https://datatracker.ietf.org/doc/html/rfc5424). Adapt according to the terminology used by the editor.
 
 ## Step-by-Step Configuration Procedure
 

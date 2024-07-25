@@ -55,7 +55,7 @@ type: intake
 - **Supported verbosity level**: Alert, Informational
 
 !!! Note
-    This is a description of the log level based on the taxonomy of the [RFC5425](https://datatracker.ietf.org/doc/html/rfc5424) for standardization purpose. Please adapt to the wording used by the editor.
+    This is a description of the log level based on the taxonomy of the [RFC5424](https://datatracker.ietf.org/doc/html/rfc5424) for standardization purpose. Please adapt to the wording used by the editor.
 
 ## Step-by-Step Configuration Procedure
 

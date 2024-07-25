@@ -50,7 +50,7 @@ The Apache HTTP Server, colloquially called Apache, is free and open-source cros
 - **Supported verbosity level**: Notice, Error
 
 !!! Note
-    Log levels are based on the taxonomy of [RFC5425](https://datatracker.ietf.org/doc/html/rfc5424). Adapt according to the terminology used by the editor.
+    Log levels are based on the taxonomy of [RFC5424](https://datatracker.ietf.org/doc/html/rfc5424). Adapt according to the terminology used by the editor.
 
 - **Default Log Location**:
     - Access: `/var/log/apache2/access.log`

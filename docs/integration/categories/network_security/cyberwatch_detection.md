@@ -45,7 +45,7 @@ This integration encompasses the detection logs from Cyberwatch Vulnerability Ma
 - **Supported type(s) of structure**: Key-Value
 
 !!! Note
-    Log levels are based on the taxonomy of [RFC5425](https://datatracker.ietf.org/doc/html/rfc5424). Adapt according to the terminology used by the editor.
+    Log levels are based on the taxonomy of [RFC5424](https://datatracker.ietf.org/doc/html/rfc5424). Adapt according to the terminology used by the editor.
 
 ## Step-by-Step Configuration Procedure
 
