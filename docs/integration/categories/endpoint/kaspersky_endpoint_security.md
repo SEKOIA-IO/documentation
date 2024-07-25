@@ -64,15 +64,15 @@ This setup guide describes how to forward events produced by **Kaspersky Endpoin
 
    - In the console, on the left panel, click on the spanner at the right of **Administration server**:
 
-     ![SIEM1.png](/assets/operation_center/integration_catalog/endpoint/kaspersky-edr/SIEM1.png)
+     ![SIEM1.png](/assets/integration/endpoint/kaspersky-edr/SIEM1.png)
 
    - In the **General** tab, click on **SIEM** on the menu:
 
-     ![SIEM2.png](/assets/operation_center/integration_catalog/endpoint/kaspersky-edr/SIEM2.png)
+     ![SIEM2.png](/assets/integration/endpoint/kaspersky-edr/SIEM2.png)
 
    - Click on **settings** to configure the forwarding (point 1):
 
-     ![SIEM3.png](/assets/operation_center/integration_catalog/endpoint/kaspersky-edr/SIEM3.png)
+     ![SIEM3.png](/assets/integration/endpoint/kaspersky-edr/SIEM3.png)
 
    - Configure the forwarding:
      a. Type the address of your log concentrator in the **SIEM system server address**
@@ -90,29 +90,29 @@ This setup guide describes how to forward events produced by **Kaspersky Endpoin
          $ openssl x509 -in cert.crt -noout -fingerprint # copy the output
          ```
 
-     ![SIEM4.png](/assets/operation_center/integration_catalog/endpoint/kaspersky-edr/SIEM4.png)
+     ![SIEM4.png](/assets/integration/endpoint/kaspersky-edr/SIEM4.png)
 
    - Check **Automatically export event to SIEM system database** (point 2):
 
-     ![SIEM3.png](/assets/operation_center/integration_catalog/endpoint/kaspersky-edr/SIEM3.png)
+     ![SIEM3.png](/assets/integration/endpoint/kaspersky-edr/SIEM3.png)
 
 3. **Apply Log Export Configuration on Devices:**
 
    - In the console, on the left menu, click on **Devices** > **Policies & profiles**:
 
-     ![Event1.png](/assets/operation_center/integration_catalog/endpoint/kaspersky-edr/Event1.png)
+     ![Event1.png](/assets/integration/endpoint/kaspersky-edr/Event1.png)
 
    - For each policy **Kaspersky Endpoint Security for X**, click on the policy:
 
-     ![Event2.png](/assets/operation_center/integration_catalog/endpoint/kaspersky-edr/Event2.png)
+     ![Event2.png](/assets/integration/endpoint/kaspersky-edr/Event2.png)
 
    - In the policy, select the **Event configuration** tab:
 
-     ![Event3.png](/assets/operation_center/integration_catalog/endpoint/kaspersky-edr/Event3.png)
+     ![Event3.png](/assets/integration/endpoint/kaspersky-edr/Event3.png)
 
    - On the left panel, select the section **Critical**. Select all event types and click on **Mark for export to SIEM system by using Syslog**:
 
-     ![Event4.png](/assets/operation_center/integration_catalog/endpoint/kaspersky-edr/Event4.png)
+     ![Event4.png](/assets/integration/endpoint/kaspersky-edr/Event4.png)
 
    - Select the section **Warning** and select all event types and click on **Mark for export to SIEM system by using Syslog**.
 
