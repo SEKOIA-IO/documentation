@@ -124,6 +124,9 @@ Find more information on the [official google documentation](https://cloud.googl
 ### Pull the logs to collect them on Sekoia.io
 
 Go to the Sekoia.io [playbook page](https://app.sekoia.io/operations/playbooks), and follow these steps:
+  
+!!! Warning
+    For login events, we observe a delay of about two hours in the availability of the information from Google. We strongly recommend you to set the `Timedelta` parameter to, at least 120, in your trigger configuration, or to use the dedicated `Get login user activities` trigger.
 
 - Click on **+ PLAYBOOK** button to create a new one
 - Select **Create a playbook from scratch**
