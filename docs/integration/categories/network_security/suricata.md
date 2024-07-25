@@ -3,14 +3,15 @@ name: Suricata
 type: intake
 
 ## Overview
-- **Vendor**:
-- **Plan**: Core + Prime
-- **Supported environment**:
-- **Version compatibility**:
-- **Detection based on**: Telemetry
-- **Supported application or feature**:
 Suricata is a free and open source, mature, fast and robust network threat detection engine. Suricata inspects the network traffic using a powerful and extensive rules and signature language, and has powerful Lua scripting support for detection of complex threats.
 
+
+- **Vendor**: OISF fundation
+- **Plan**: Core + Prime
+- **Supported environment**: On prem
+- **Version compatibility**: 6.0.20
+- **Detection based on**: Telemetry
+- **Supported application or feature**: Network device logs, Network intrusion detection system, Network protocol analysis, Web logs, DNS records, SSL/TLS certificates
 
 
 

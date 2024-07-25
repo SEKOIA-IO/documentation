@@ -3,16 +3,18 @@ name: Stormshield Network Security
 type: intake
 
 ## Overview
-- **Vendor**:
-- **Plan**: Core + Prime
-- **Supported environment**:
-- **Version compatibility**:
-- **Detection based on**: Alert, Telemetry
-- **Supported application or feature**:
 
 Stormshield Network Security firewalls provides comprehensive security and high performance network protection. In addition, they offer a high degree of scalability to support the evolution of IT and OT networks
 
 In this documentation we will explain how to collect and send Stormshield Network Security logs to Sekoia.io.
+
+- **Vendor**: Stormshield
+- **Plan**: Core + Prime
+- **Supported environment**: On prem
+- **Version compatibility**:
+- **Detection based on**: Alert, Telemetry
+- **Supported application or feature**: Network device logs, Network protocol analysis, SSL/TLS inspection, Anti-virus
+
 
 
 

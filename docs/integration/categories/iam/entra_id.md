@@ -5,10 +5,9 @@ type: intake
 ## Overview
 - **Vendor**:
 - **Plan**: Core + Prime
-- **Supported environment**:
-- **Version compatibility**:
+- **Supported environment**: SaaS
 - **Detection based on**: Telemetry
-- **Supported application or feature**:
+- **Supported application or feature**: Application logs, Authentication logs	
 
 **Microsoft Entra ID (Azure AD) ** is a cloud-based Identity and Rights management service. The service is developed and managed by Microsoft Corp.
 

@@ -3,15 +3,13 @@ name: Varonis Data Security
 type: intake
 
 ## Overview
-- **Vendor**:
-- **Plan**: Core + Prime
-- **Supported environment**:
-- **Version compatibility**:
-- **Detection based on**: Alert
-- **Supported application or feature**:
-
 Varonis offers solutions to track and protect data.
 
+- **Vendor**: Varonis
+- **Plan**: Core + Prime
+- **Supported environment**: SaaS
+- **Detection based on**: Alert
+- **Supported application or feature**: Data loss prevention
 
 
 ## Configure

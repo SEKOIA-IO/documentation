@@ -3,15 +3,14 @@ name: Vectra Cognito Detect
 type: intake
 
 ## Overview
-- **Vendor**:
-- **Plan**: Core + Prime
-- **Supported environment**:
-- **Version compatibility**:
-- **Detection based on**: Telemetry
-- **Supported application or feature**:
 Vectra provides AI-powered incident detection and resolution support for native and hybrid clouds.
 
 
+- **Vendor**:
+- **Plan**: Core + Prime
+- **Supported environment**: Saas
+- **Detection based on**: Telemetry
+- **Supported application or feature**: Authentication logs	
 
 
 ## Configure

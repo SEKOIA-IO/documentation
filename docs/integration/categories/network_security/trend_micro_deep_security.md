@@ -3,16 +3,16 @@ name: Trend Micro Deep Security / Workload Security
 type: intake
 
 ## Overview
-- **Vendor**:
-- **Plan**: Core + Prime
-- **Supported environment**:
-- **Version compatibility**:
-- **Detection based on**: Telemetry
-- **Supported application or feature**:
 
 Trend Micro Deep Security / Workload Security detect malware, vulnerabilities and some other threats.
 It protect your physical and virtual servers as well as, your cloud and containers instances.
 
+- **Vendor**: Trend Micro
+- **Plan**: Core + Prime
+- **Supported environment**: On prem 
+- **Version compatibility**: 20.0. 0-5953 
+- **Detection based on**: Telemetry
+- **Supported application or feature**: Authentication logs	File monitoring, Network intrusion detection system, Network protocol analysis, Web proxy, 
 
 
 ## Configure

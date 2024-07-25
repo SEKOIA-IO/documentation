@@ -3,17 +3,17 @@ name: WatchGuard Firebox
 type: intake
 
 ## Overview
-- **Vendor**:
-- **Plan**: Core + Prime
-- **Supported environment**:
-- **Version compatibility**:
-- **Detection based on**: Telemetry
-- **Supported application or feature**:
 
 WatchGuard Firebox is a serie of high-performance firewalls to protect computer networks.
 Sending WatchGuard Firebox logs to Sekoia.io enables the discovering of potential network security threats. Spotted threats are contextualized by means of  Sekoia.io's Cyber Threat Intelligence (CTI).
 
 
+- **Vendor** :WatchGuard
+- **Plan**: Core + Prime
+- **Supported environment**: On prem 
+- **Version compatibility**: 12.4.1 
+- **Detection based on**: Telemetry
+- **Supported application or feature**: Network device logs, Network intrusion detection system	
 
 
 ## Configure

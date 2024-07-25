@@ -3,15 +3,14 @@ name: Sophos Firewall
 type: intake
 
 ## Overview
-- **Vendor**:
-- **Plan**: Core + Prime
-- **Supported environment**:
-- **Version compatibility**:
-- **Detection based on**: Telemetry
-- **Supported application or feature**:
 Sophos firewalls offer an integrated software solution that provides superior performance in an all-in-one firewall. Its hardened operating system, stateful packet inspection, content filtering (virus & surf protection), application proxies and IPsec based VPN provides powerful solutions to today's security issues. It is designed to maximise networks security without compromising its performance enabling telecommuters, branch offices, customers and suppliers to safely share critical business information.
 
-
+- **Vendor**: Sophos
+- **Plan**: Core + Prime
+- **Supported environment**: On prem
+- **Version compatibility**: 19.5
+- **Detection based on**: Telemetry
+- **Supported application or feature**: Network device logs, Network protocol analysis
 
 
 ## Configure

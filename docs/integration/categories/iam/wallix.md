@@ -3,15 +3,14 @@ name: Wallix
 type: intake
 
 ## Overview
-- **Vendor**:
-- **Plan**: Core + Prime
-- **Supported environment**:
-- **Version compatibility**:
-- **Detection based on**: Telemetry
-- **Supported application or feature**:
 WALLIX Bastion is a “Privileged Access Management” solution.
 
 
+- **Vendor**: Wallix
+- **Plan**: Core + Prime
+- **Supported environment**: SaaS
+- **Detection based on**: Telemetry
+- **Supported application or feature**: Authentication logs	
 
 
 ## Configure

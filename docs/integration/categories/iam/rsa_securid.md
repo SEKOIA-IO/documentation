@@ -3,14 +3,14 @@ name: RSA SecurID
 type: intake
 
 ## Overview
-- **Vendor**:
-- **Plan**: Core + Prime
-- **Supported environment**:
-- **Version compatibility**:
-- **Detection based on**: Telemetry
-- **Supported application or feature**:
-
 SecurID is a token system, or authenticator, produced by RSA Security and intended to offer strong authentication to its user in the context of access to an information system.
+
+- **Vendor**: RSA Security
+- **Plan**: Core + Prime
+- **Supported environment**: On prem
+- **Version compatibility**: 8,4
+- **Detection based on**: Telemetry
+- **Supported application or feature**: Authentication logs, Application logs
 
 
 

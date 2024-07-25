@@ -3,15 +3,13 @@ name: Ubika WAAP Gateway
 type: intake
 
 ## Overview
-- **Vendor**:
-- **Plan**: Core + Prime
-- **Supported environment**:
-- **Version compatibility**:
-- **Detection based on**: Alert, Telemetry
-- **Supported application or feature**:
-
 Ubika WAAP Gateway detect and prevent threats against your web applications and your APIs.
 
+- **Vendor**: Ubika
+- **Plan**: Prime
+- **Supported environment**: Saas
+- **Detection based on**: Alert, Telemetry
+- **Supported application or feature**: Web application firewall logs
 
 
 ## Configure

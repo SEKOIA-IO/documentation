@@ -3,17 +3,15 @@ name: Security Scorecard Vunerability Assessment Scanner
 type: intake
 
 ## Overview
-- **Vendor**:
-- **Plan**: Core + Prime
-- **Supported environment**:
-- **Version compatibility**:
-- **Detection based on**: Alert
-- **Supported application or feature**:
-
 SecurityScorecard's Vulnerability Assessment Scanner is a tool designed to identify and assess vulnerabilities in an 
 organization's digital infrastructure, offering real-time insights and prioritized recommendations to strengthen 
 security measures and reduce cyber risk.
 
+- **Vendor**: SecurityScorecard
+- **Plan**: Core + Prime
+- **Supported environment**: SaaS
+- **Detection based on**: Alert
+- **Supported application or feature**: Application logs	
 
 
 ## Configure

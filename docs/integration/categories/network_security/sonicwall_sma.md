@@ -3,15 +3,14 @@ name: SonicWall SMA
 type: intake
 
 ## Overview
-- **Vendor**:
-- **Plan**: Core + Prime
-- **Supported environment**:
-- **Version compatibility**:
-- **Detection based on**: Telemetry
-- **Supported application or feature**:
-
 SonicWall Secure Mobile Access offers secure and seamless remote access to corporate resources, applications, and data, enhancing workforce mobility while maintaining robust security and compliance measures.
 
+- **Vendor**: SonicWall
+- **Plan**: Core + Prime
+- **Supported environment**: On prem
+- **Version compatibility**: 10.2
+- **Detection based on**: Telemetry
+- **Supported application or feature**: DNS records	
 
 
 ## Configure

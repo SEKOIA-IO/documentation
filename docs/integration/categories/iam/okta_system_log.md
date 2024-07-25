@@ -4,16 +4,13 @@ type: intake
 
 
 ## Overview
-- **Vendor**:
-- **Plan**: Core + Prime
-- **Supported environment**:
-- **Version compatibility**:
-- **Detection based on**: Telemetry
-- **Supported application or feature**:
-
 Okta System log provides activity records related to your organization.
 
-
+- **Vendor**: Okta
+- **Plan**: Core + Prime
+- **Supported environment**: SaaS
+- **Detection based on**: Telemetry
+- **Supported application or feature**: OAuth audit logs, Authentication logs
 
 
 ## Configure
