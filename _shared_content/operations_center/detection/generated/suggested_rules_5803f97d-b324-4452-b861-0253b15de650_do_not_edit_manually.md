@@ -45,6 +45,30 @@ The following Sekoia.io built-in rules match the intake **Lacework Cloud Securit
     
     - **Effort:** master
 
+??? abstract "Lacework Cloud Security Critical Severity Alert"
+    
+    Detects when a critical alert severity is raised by Lacework. This severity level might indicates a suspicious change in configuration or policy violation.
+    
+    - **Effort:** master
+
+??? abstract "Lacework Cloud Security High Severity Alert"
+    
+    Detects when a high alert severity is raised by Lacework. This severity level might indicates a suspicious change in configuration or policy violation.
+    
+    - **Effort:** master
+
+??? abstract "Lacework Cloud Security Low Severity Alert"
+    
+    Detects when a low alert severity is raised by Lacework. This severity level might indicates a change in configuration that could be malicious or not.
+    
+    - **Effort:** master
+
+??? abstract "Lacework Cloud Security Medium Severity Alert"
+    
+    Detects when a medium alert severity is raised by Lacework. This severity level might indicates a suspicious activity such as new source from user connection.
+    
+    - **Effort:** master
+
 ??? abstract "Password Change On Directory Service Restore Mode (DSRM) Account"
     
     The Directory Service Restore Mode (DSRM) account is a local administrator account on Domain Controllers. Attackers may change the password to gain persistence.
