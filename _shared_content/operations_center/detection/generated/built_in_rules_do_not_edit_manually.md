@@ -1,4 +1,4 @@
-Rules catalog includes **918 built-in detection rules** ([_last update on 2024-07-24_](rules_changelog.md)).
+Rules catalog includes **922 built-in detection rules** ([_last update on 2024-07-25_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Identity Information**
 
@@ -2998,6 +2998,30 @@ Rules catalog includes **918 built-in detection rules** ([_last update on 2024-0
     Detects Excel spawning a process (rundll32 or wmic) running suspicious command-line. This behaviour could correspond to IcedID activity. 
     
     - **Effort:** elementary
+    
+??? abstract "Lacework Cloud Security Critical Severity Alert"
+    
+    Detects when a critical alert severity is raised by Lacework. This severity level might indicates a suspicious change in configuration or policy violation.
+    
+    - **Effort:** master
+    
+??? abstract "Lacework Cloud Security High Severity Alert"
+    
+    Detects when a high alert severity is raised by Lacework. This severity level might indicates a suspicious change in configuration or policy violation.
+    
+    - **Effort:** master
+    
+??? abstract "Lacework Cloud Security Low Severity Alert"
+    
+    Detects when a low alert severity is raised by Lacework. This severity level might indicates a change in configuration that could be malicious or not.
+    
+    - **Effort:** master
+    
+??? abstract "Lacework Cloud Security Medium Severity Alert"
+    
+    Detects when a medium alert severity is raised by Lacework. This severity level might indicates a suspicious activity such as new source from user connection.
+    
+    - **Effort:** master
     
 ??? abstract "Login Brute-Force Successful On SentinelOne EDR Management Console"
     
@@ -9864,6 +9888,30 @@ Rules catalog includes **918 built-in detection rules** ([_last update on 2024-0
 ??? abstract "AWS CloudTrail S3 Bucket Replication"
     
     Detects a replication rule being enable for a given S3 bucket: it could provide an attacker a way to exfiltrate data.
+    
+    - **Effort:** master
+    
+??? abstract "Lacework Cloud Security Critical Severity Alert"
+    
+    Detects when a critical alert severity is raised by Lacework. This severity level might indicates a suspicious change in configuration or policy violation.
+    
+    - **Effort:** master
+    
+??? abstract "Lacework Cloud Security High Severity Alert"
+    
+    Detects when a high alert severity is raised by Lacework. This severity level might indicates a suspicious change in configuration or policy violation.
+    
+    - **Effort:** master
+    
+??? abstract "Lacework Cloud Security Low Severity Alert"
+    
+    Detects when a low alert severity is raised by Lacework. This severity level might indicates a change in configuration that could be malicious or not.
+    
+    - **Effort:** master
+    
+??? abstract "Lacework Cloud Security Medium Severity Alert"
+    
+    Detects when a medium alert severity is raised by Lacework. This severity level might indicates a suspicious activity such as new source from user connection.
     
     - **Effort:** master
     
