@@ -3,9 +3,9 @@ name: Office 365 Message Trace
 type: intake
 
 ## Overview
-- **Vendor**:
+- **Vendor**: Microsoft
 - **Plan**: Core + Prime
-- **Supported environment**:
+- **Supported environment**: Cloud
 - **Version compatibility**:
 - **Detection based on**: Telemetry
 - **Supported application or feature**:
