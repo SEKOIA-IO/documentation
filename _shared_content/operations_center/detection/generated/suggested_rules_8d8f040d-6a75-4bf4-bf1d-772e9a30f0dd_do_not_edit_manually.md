@@ -1,4 +1,4 @@
-## Related Built-in Rules
+### Related Built-in Rules
 
 The following Sekoia.io built-in rules match the intake **TEHTRIS EDR**. This documentation is updated automatically and is based solely on the fields used by the intake which are checked against our rules. This means that some rules will be listed but might not be relevant with the intake.
 
