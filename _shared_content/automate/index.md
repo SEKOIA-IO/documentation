@@ -17,6 +17,7 @@ In this documentation, you will learn how to:
 - Create a playbook from scratch
 - Learn more about the different types of triggers, operators and actions
 - Troubleshoot with playbook runs
+- Create a `Meta-playbook` that works across many communities
 
 ## Prerequisites
 
