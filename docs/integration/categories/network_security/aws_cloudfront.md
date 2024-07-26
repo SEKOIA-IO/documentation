@@ -39,15 +39,13 @@ To turn on standard logging for a CloudFront distribution, follow these steps:
 5. Choose the S3 bucket where you want CloudFront to deliver the log files. You can specify an optional prefix for the file names.
 6. Choose Save changes.
 
-### Create the intake
-
-Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a new intake from the format `AWS CloudFront`
+{!_shared_content/integration/intake_configuration.md!}
 
 ### Pull events
 
 To start to pull events, you have to:
 
-1. Go to the [playbook page](https://app.sekoia.io/operations/playbooks) and create a new playbook with the [Fetch new CloudFront logs on S3](../../../../automate/library/aws.md#fetch-new-logs-on-s3).
+1. Go to the [playbook page](https://app.sekoia.io/operations/playbooks) and create a new playbook with the [Fetch new CloudFront logs on S3](/integration/action_library/cloud_providers/aws.md#fetch-new-logs-on-s3).
 2. Set up the module configuration with the [AWS Access Key](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html), the secret key and the region name. Set up the trigger configuration with the name of the SQS queue and the intake key, from the intake previously created.
 3. Start the playbook and enjoy your events.
 

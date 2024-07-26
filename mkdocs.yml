@@ -211,7 +211,7 @@ nav:
       - Enrichment: tip/develop/rest_api/enrichments.md
       - Dashboard: tip/develop/rest_api/dashboard.md
       - Playbooks: tip/develop/rest_api/playbooks.md
-- Integration:
+- Integrations:
   - Introduction: integration/index.md
   - Ingestion methods :
       - Overview : integration/ingestion_methods/index.md
@@ -233,7 +233,7 @@ nav:
           - Sekoia.io Forwarder : integration/ingestion_methods/syslog/sekoiaio_forwarder.md
           - Third-party syslog services: integration/ingestion_methods/syslog/syslog_service.md
           - Syslog NG : integration/ingestion_methods/syslog/syslog-ng.md
-  - List of intake categories :
+  - List of Intakes :
       - Overview : integration/categories/overview.md
       - Applicative:
           - Apache HTTP Server: integration/categories/applicative/apache.md
@@ -391,7 +391,7 @@ nav:
           - WatchGuard Firebox: integration/categories/network_security/watchguard_firebox.md
           - Zscaler Internet Access: integration/categories/network_security/zscaler_zia.md
           - Daspren Parad: integration/categories/network_security/daspren_parad.md
-  - Actions integrations:
+  - List of Playbooks Actions :
     - Overview : integration/action_library/overview.md
     - Applicatives:
       - Mandrill: integration/action_library/applicative/mandrill.md

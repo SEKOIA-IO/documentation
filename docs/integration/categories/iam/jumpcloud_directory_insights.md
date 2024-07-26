@@ -6,11 +6,11 @@ type: intake
 ## Overview
 Jumpcloud Directory Insights provides activity records related to your organization.
 
-- **Vendor**:
+- **Vendor**: JumpCloud
 - **Plan**: Core + Prime
 - **Supported environment**: SaaS
 - **Detection based on**: Telemetry
-- **Supported application or feature**:OAuth audit logs, Authentication logs	
+- **Supported application or feature**:OAuth audit logs, Authentication logs
 
 
 
@@ -21,13 +21,13 @@ Jumpcloud Directory Insights provides activity records related to your organizat
 ### Generate API token
 
 1. Sign-in in your Jumpcloud tenant with administrator role
-2. Click on your username on the top right of the screen 
+2. Click on your username on the top right of the screen
 3. Select `My API Key`
 
 ### Create the intake in Sekoia.io
 
-1. Go to the [intake page](https://app.sekoia.io/operations/intakes) 
-2. Create a new intake from the format `Jumpcloud Directory Insights`. 
+1. Go to the [intake page](https://app.sekoia.io/operations/intakes)
+2. Create a new intake from the format `Jumpcloud Directory Insights`.
 3. Copy the intake key
 
 ### Pull events

@@ -31,11 +31,13 @@ These instructions are illustrated and more detailled [here](https://docs.micros
 This part should be discussed with Sekoia.io people to find an appropriate solution to forward your flow logs to Sekoia.io.
 
 A possible solution consists of sharing:
+
 - An access key for the Azure Blob Storage
 - A storage token associated with the resources to share
 - The name of the container where the NSG flow logs are stored
 
-From this information, we will be able to retrieve each _PT1h.json_ blob which contains the flow logs.
+!!! Info
+    We will be able to retrieve each **_PT1h.json_** blob which contains the flow logs.
 
 {!_shared_content/operations_center/integrations/generated/340e3bc7-2b76-48e4-9833-e971451b2979_sample.md!}
 
