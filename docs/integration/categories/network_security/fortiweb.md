@@ -95,11 +95,11 @@ This setup guide will show you how to forward your FortiWeb logs to Sekoia.io by
 
       For more information, please refer to the official documentation of [FortiWeb](https://docs.fortinet.com/document/fortiweb/6.1.1/administration-guide/303842/logging).
 
+{!_shared_content/integration/forwarder_configuration.md!}
+
 ### Instruction on Sekoia
 
 {!_shared_content/integration/intake_configuration.md!}
-
-{!_shared_content/integration/forwarder_configuration.md!}
 
 {!_shared_content/operations_center/integrations/generated/2259adc3-9d93-4150-9c1c-46804e636084_sample.md!}
 

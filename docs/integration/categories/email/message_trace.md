@@ -4,7 +4,7 @@ type: intake
 
 ## Overview
 - **Vendor**: Microsoft
-- **Plan**: Core + Prime
+- **Plan**: Defend Core & Defend Prime
 - **Supported environment**: Cloud
 - **Version compatibility**:
 - **Detection based on**: Telemetry
@@ -83,7 +83,7 @@ Once a dedicated service account as been created, you can validate user's rights
 curl --user USERNAME:PASSWORD 'https://reports.office365.com/ecp/reportingwebservice/reporting.svc/MessageTrace?$format=json'
 ```
 
-This command will contact Microsoft Reporting Web Service API with the provided credentials. 
+This command will contact Microsoft Reporting Web Service API with the provided credentials.
 
 The response should look like this one (you can use `| jq` to format the response):
 ```json
@@ -136,7 +136,7 @@ Configure the trigger `start_time` parameter to pull events from X hours ago if 
 
 ## Debug
 
-If your user cannot access the MessageTrace API, please visit the [Azure Sign-in Logs dashboard](https://portal.azure.com/#view/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/~/SignIns) and use the `Add filters` button to filter on the username. You can then choose an authentication event to learn about the issue and use the `Launch the Sign-in Diagnostic.` button to go further. 
+If your user cannot access the MessageTrace API, please visit the [Azure Sign-in Logs dashboard](https://portal.azure.com/#view/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/~/SignIns) and use the `Add filters` button to filter on the username. You can then choose an authentication event to learn about the issue and use the `Launch the Sign-in Diagnostic.` button to go further.
 
 {!_shared_content/operations_center/integrations/generated/8461aabe-6eba-4044-ad7f-a0c39a2b2279_sample.md!}
 

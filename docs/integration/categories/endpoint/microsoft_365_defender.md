@@ -4,7 +4,7 @@ type: intake
 
 ## Overview
 - **Vendor**:
-- **Plan**: Core + Prime
+- **Plan**: Defend Core & Defend Prime
 - **Supported environment**:
 - **Version compatibility**:
 - **Detection based on**: Alert, Telemetry
@@ -43,7 +43,7 @@ Here is a list of all the Microsoft 365 Defender event types supported by this i
 * IdentityDirectoryEvents
 * CloudAppEvents
 
-Please follow [this link](https://learn.microsoft.com/en-us/microsoft-365/security/defender/supported-event-types?view=o365-worldwide) to see all the types provided by Microsoft. 
+Please follow [this link](https://learn.microsoft.com/en-us/microsoft-365/security/defender/supported-event-types?view=o365-worldwide) to see all the types provided by Microsoft.
 
 ## Configure
 
@@ -54,9 +54,9 @@ To forward **Microsoft 365 Defender** events from Microsoft to Sekoia.io you nee
 
 ### Prerequisite
 
-You must have the following rights to perform the installation:  
-- Global Administrator or Security Administrator rights on **Microsoft 365 Defender**  
-- Contributor write on **Azure** 
+You must have the following rights to perform the installation:
+- Global Administrator or Security Administrator rights on **Microsoft 365 Defender**
+- Contributor write on **Azure**
 
 {!_shared_content/operations_center/integrations/event_hub.md!}
 
@@ -88,7 +88,7 @@ When you have an **Event Hub** follow this guide to send your events from **Micr
 {!_shared_content/operations_center/integrations/generated/05e6f36d-cee0-4f06-b575-9e43af779f9f.md!}
 
 #### Further Readings
-- [Estimating initial Event Hub capacity](https://learn.microsoft.com/en-us/microsoft-365/security/defender/streaming-api-event-hub?view=o365-worldwide#estimating-initial-event-hub-capacity) 
+- [Estimating initial Event Hub capacity](https://learn.microsoft.com/en-us/microsoft-365/security/defender/streaming-api-event-hub?view=o365-worldwide#estimating-initial-event-hub-capacity)
 - [Configure Microsoft 365 Defender to stream Advanced Hunting events to your Azure Event Hub](https://docs.microsoft.com/en-us/microsoft-365/security/defender/streaming-api-event-hub)
 
 ### Create the intake

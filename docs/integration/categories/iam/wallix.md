@@ -7,10 +7,10 @@ WALLIX Bastion is a “Privileged Access Management” solution.
 
 
 - **Vendor**: Wallix
-- **Plan**: Core + Prime
+- **Plan**: Defend Core & Defend Prime
 - **Supported environment**: SaaS
 - **Detection based on**: Telemetry
-- **Supported application or feature**: Authentication logs	
+- **Supported application or feature**: Authentication logs
 
 
 ## Configure

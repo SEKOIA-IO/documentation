@@ -12,15 +12,15 @@ The Lacework Cloud Security provides continuous cloud security monitoring and au
 - **Detection based on**: Alert, Telemetry
 - **Supported application or feature**:
 
-## Configure
-
-### Prerequisites
+## Prerequisites
 
 To create API keys, you must have the account admin role or otherwise have write permissions for API keys in the Lacework Console.
+## Step-by-Step Configuration Procedure
 
-### Create Lacework Credentials
+### Instructions on the 3rd Party Solution
+#### Create Lacework Credentials
 
-#### Create a service user
+**Create a service user**
 
 In the lacework console:
 
@@ -45,7 +45,7 @@ In the lacework console:
 
         ![step 4](/assets/integration/cloud_and_saas/lacework/step_04.png)
 
-#### Create API keys
+**Create API keys**
 
 In the Lacework console:
 
@@ -63,11 +63,12 @@ In the Lacework console:
 Download the generated API key file and open it in an editor to view and use the key ID and generated secret in your API requests. You can create up to 20 API keys.
 
 
-### Create an intake
+### Instruction on Sekoia
+#### Create an intake
 
 Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a new intake from the `Lacework Cloud Security` format.
 
-### Pull events
+#### Pull events
 
 To start to pull events, you have to:
 

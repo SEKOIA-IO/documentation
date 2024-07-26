@@ -6,10 +6,10 @@ type: intake
 Zscaler Internet Access is a cloud-native security platform that delivers secure and direct internet access for users and devices, providing real-time protection against cyber threats while enabling secure and efficient web access from anywhere.
 
 - **Vendor**: Zscaler
-- **Plan**: Core + Prime
+- **Plan**: Defend Core & Defend Prime
 - **Supported environment**: Saas
 - **Detection based on**: Telemetry
-- **Supported application or feature**: File monitoring, Process monitoring, Process use of network	
+- **Supported application or feature**: File monitoring, Process monitoring, Process use of network
 
 ### Supported logs
 
@@ -27,7 +27,7 @@ This integration can ingest the following logs:
 
 ## Configure
 
-This section will guide you on how to forward Zscaler ZIA events to Sekoia.io. 
+This section will guide you on how to forward Zscaler ZIA events to Sekoia.io.
 
 ### Create the intake
 
@@ -37,16 +37,16 @@ Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a n
 
 #### Prerequisites
 
-You must have an internal log concentrator to forward events with NSS servers. 
+You must have an internal log concentrator to forward events with NSS servers.
 
 #### Configure the forwarding
 
 In the Zscaler ZIA console:
 
 1. Go to `Administration` > `Cloud Configuration` > `Nanolog Streaming Service`
-   ![menu](/assets/integration/cloud_and_saas/zscaler/zia_menu.png){: style="max-width:100%"} 
+   ![menu](/assets/integration/cloud_and_saas/zscaler/zia_menu.png){: style="max-width:100%"}
 2. Select the `NSS Feeds` tab
-   ![nanolog](/assets/integration/cloud_and_saas/zscaler/zia_nss_feeds.png){: style="max-width:50%"} 
+   ![nanolog](/assets/integration/cloud_and_saas/zscaler/zia_nss_feeds.png){: style="max-width:50%"}
 3. Select `Add NSS Feed` for each log type you want to forward
 4. In the modal, type a name for the feed, select the `NSS Server`, and then select the `Enabled`status
 5. In the `SIEM IP Address` field, enter the IP address of the log concentrator
@@ -107,22 +107,22 @@ For more information on forwarding logs to Sekoia.io, see [Syslog Forwarding](..
 In the Zscaler ZIA console:
 
 1. Go to `Administration` > `Cloud Configuration` > `Nanolog Streaming Service`
-   ![menu](/assets/integration/cloud_and_saas/zscaler/zia_menu.png){: style="max-width:100%"} 
+   ![menu](/assets/integration/cloud_and_saas/zscaler/zia_menu.png){: style="max-width:100%"}
 2. Select the `Cloud NSS Feeds` tab
-   ![nanolog](/assets/integration/cloud_and_saas/zscaler/zia_cloud.png){: style="max-width:100%"} 
+   ![nanolog](/assets/integration/cloud_and_saas/zscaler/zia_cloud.png){: style="max-width:100%"}
 3. Select `Add Clous NSS Feed` for each log type you want to forward
 4. In the modal, in the `General section`, enter a name for the feed, select the status `Enabled`. According to the log type you want to forward, select the `NSS type`
     1. For `Admin Audit`, `SaaS Security`, `SaaS Security Activity` and `Web Log`, select `NSS for web`
-      ![General/web](/assets/integration/cloud_and_saas/zscaler/zia_general_web.png){: style="max-width:100%"} 
+      ![General/web](/assets/integration/cloud_and_saas/zscaler/zia_general_web.png){: style="max-width:100%"}
     2. For `Firewall Logs` or `DNS logs`, select `NSS for firewall`
-      ![General/firewall](/assets/integration/cloud_and_saas/zscaler/zia_general_firewall.png){: style="max-width:100%"} 
+      ![General/firewall](/assets/integration/cloud_and_saas/zscaler/zia_general_firewall.png){: style="max-width:100%"}
 5. In the `SIEM Connectivity` section
     1. Select `Other` as the `SIEM Type`
     2. Turn off the `OAUTH2.0 Authentication`toggle
     3. In the `Max batch size` field, enter `512 kb`
     4. As the API URL, enter `https://intake.sekoia.io/plain/batch?status_code=200`
     5. Select `Add HTTP Header` and add the HTTP header `X-SEKOIAIO-INTAKE-KEY` with our intake key as the value
-    ![Connectivity](/assets/integration/cloud_and_saas/zscaler/zia_siem_connectivity.png){: style="max-width:100%"} 
+    ![Connectivity](/assets/integration/cloud_and_saas/zscaler/zia_siem_connectivity.png){: style="max-width:100%"}
 6. In the `Formatting` section
     1. Select the desired `Log type`
     2. Select `JSON` as the `Feed Output Type`
@@ -130,7 +130,7 @@ In the Zscaler ZIA console:
     4. Keep `Feed Escape Character` with the characters `,\"`
     5. Keep `Feed Output Format` unchanged
     6. Keep `Timezone` to `GMT`
-    ![Formatting](/assets/integration/cloud_and_saas/zscaler/zia_formatting.png){: style="max-width:100%"} 
+    ![Formatting](/assets/integration/cloud_and_saas/zscaler/zia_formatting.png){: style="max-width:100%"}
 7. Select `Save`
 
 

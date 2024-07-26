@@ -3,28 +3,29 @@ name: Netskope Transaction Events
 type: intake
 
 ## Overview
-- **Vendor**:
-- **Plan**: Core + Prime
-- **Supported environment**:
-- **Version compatibility**:
-- **Detection based on**: Telemetry
-- **Supported application or feature**:
 
 [Netskope](https://www.netskope.com/) is a cybersecurity company that provides solutions to protect data in cloud apps and network security while applying zero trust principles.
 
+- **Vendor**: Netskope
+- **Plan**: Defend Prime
+- **Supported environment**: SaaS
+- **Detection based on**: Telemetry
+- **Supported application or feature**: Network
 
+## Prerequisites
 
-## Configure
-
-### Prerequisites
-
-- Access to Sekoia.io Intakes and Playbook pages with write permissions
 - Access to the Netskope Admin console
-- The Event Streaming option activated (Please contact the Netskope Support if not).
+- The **Event Streaming option activated** (Please contact the Netskope Support if not).
+- Access to Sekoia.io Intakes and Playbook pages with write permissions
 
-### Create and download JSON keys
+## Step-by-Step Configuration Procedure
+### Instructions on the 3rd Party Solution
 
-The Netskope Event Streaming rely on [Google Pub/Sub lite](https://cloud.google.com/pubsub/lite/docs).
+!!! Important
+    The Netskope Event Streaming rely on [Google Pub/Sub lite](https://cloud.google.com/pubsub/lite/docs).
+
+#### Create and download JSON keys
+
 To collect transaction events, you will need a subscription key:
 
 1. Connect to the Netskope Admin console
@@ -51,14 +52,14 @@ Find more information about the subscription key on the [official google documen
 }
 ```
 
-## Sekoia.io configuration procedure
+### Instruction on Sekoia
 
-### Create your intake
+!!! Note
+    The intake you would like to configure is nammed `Netskope Transaction Events`. Not `Netskope Events`.
 
-1. Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a new intake from the `Netskope Transaction Events`.
-2. Copy the associated Intake key
+{!_shared_content/integration/intake_configuration.md!}
 
-### Pull the logs to collect them on Sekoia.io
+#### Pull the logs to collect them on Sekoia.io
 
 Go to the Sekoia.io [playbook page](https://app.sekoia.io/operations/playbooks), and follow these steps:
 
@@ -77,21 +78,15 @@ Go to the Sekoia.io [playbook page](https://app.sekoia.io/operations/playbooks),
 - Click on the **Save** button
 - **Activate the playbook** with the toggle button on the top right corner of the page
 
-### Enjoy your events on the [Events page](https://app.sekoia.io/operations/events)
-
-
-## Further readings
-
-- [Configuring Netskope Transaction Events](https://docs.netskope.com/en/netskope-help/data-security/transaction-events/netskope-transaction-events/)
-- [Create a service account](https://support.google.com/a/answer/7378726?hl=en)
-- [Create and delete service account keys](https://cloud.google.com/iam/docs/keys-create-delete)
-
-
 {!_shared_content/operations_center/integrations/generated/a0716ffd-5f9e-4b97-add4-30f1870e3d03_sample.md!}
-
 
 {!_shared_content/integration/detection_section.md!}
 
 {!_shared_content/operations_center/detection/generated/suggested_rules_a0716ffd-5f9e-4b97-add4-30f1870e3d03_do_not_edit_manually.md!}
 {!_shared_content/operations_center/integrations/generated/a0716ffd-5f9e-4b97-add4-30f1870e3d03.md!}
 
+## Further readings
+
+- [Configuring Netskope Transaction Events](https://docs.netskope.com/en/netskope-help/data-security/transaction-events/netskope-transaction-events/)
+- [Create a service account](https://support.google.com/a/answer/7378726?hl=en)
+- [Create and delete service account keys](https://cloud.google.com/iam/docs/keys-create-delete)

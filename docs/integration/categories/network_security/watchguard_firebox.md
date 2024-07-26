@@ -9,11 +9,11 @@ Sending WatchGuard Firebox logs to Sekoia.io enables the discovering of potentia
 
 
 - **Vendor** :WatchGuard
-- **Plan**: Core + Prime
-- **Supported environment**: On prem 
-- **Version compatibility**: 12.4.1 
+- **Plan**: Defend Core & Defend Prime
+- **Supported environment**: On prem
+- **Version compatibility**: 12.4.1
 - **Detection based on**: Telemetry
-- **Supported application or feature**: Network device logs, Network intrusion detection system	
+- **Supported application or feature**: Network device logs, Network intrusion detection system
 
 
 ## Configure

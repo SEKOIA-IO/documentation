@@ -11,11 +11,11 @@ Trellix ePO - On-prem monitors and manages your network, collects data on events
 
 
 - **Vendor**: Trellix
-- **Plan**: Core + Prime
+- **Plan**: Defend Core & Defend Prime
 - **Supported environment**: On prem
 - **Version compatibility**: 5.10
 - **Detection based on**: Telemetry
-- **Supported application or feature**: Application logs	
+- **Supported application or feature**: Application logs
 
 
 ## Configure

@@ -114,11 +114,11 @@ This setup guide will show you how to forward your Fortigate logs to Sekoia.io b
         end
         ```
 
+{!_shared_content/integration/forwarder_configuration.md!}
+
 ### Instruction on Sekoia
 
 {!_shared_content/integration/intake_configuration.md!}
-
-{!_shared_content/integration/forwarder_configuration.md!}
 
 {!_shared_content/operations_center/integrations/generated/5702ae4e-7d8a-455f-a47b-ef64dd87c981_sample.md!}
 

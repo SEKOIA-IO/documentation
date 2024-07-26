@@ -4,7 +4,7 @@ type: intake
 
 ## Overview
 - **Vendor**:
-- **Plan**: Core + Prime
+- **Plan**: Defend Core & Defend Prime
 - **Supported environment**:
 - **Version compatibility**:
 - **Detection based on**: Telemetry
@@ -25,7 +25,7 @@ This setup guide will show you how to forward your OpenVPN logs to Sekoia.io by 
 ### Enable Syslog forwarding
 
 1. Open the OpenVPN server configuration file (commonly found in `/etc/openvpn/server.conf`) using your preferred text editor.
-    
+
     Add or modify the following lines:
 
     ```bash
@@ -49,18 +49,18 @@ This setup guide will show you how to forward your OpenVPN logs to Sekoia.io by 
     Configure the syslog server to send the event to our log concentrator.
 
     If you are using rsyslog, you might need to create a specific configuration file for OpenVPN to tell the syslog daemon where to send the logs.
-    
+
     Create a new file, for instance, `/etc/rsyslog.d/openvpn.conf`, and add the following line:
-    
+
     ```bash
     :programname, isequal, "openvpn" @<ip of the log concentrator>
-    
+
     ```
 
 4. Restart Services
 
     Restart the OpenVPN service to apply the changes to the configuration file:
-    
+
     ```bash
     sudo systemctl restart openvpn
     sudo systemctl restart rsyslog    # Use appropriate command for your syslog daemon

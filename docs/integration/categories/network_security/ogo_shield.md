@@ -3,34 +3,32 @@ name: OGO Shield WAF
 type: intake
 
 ## Overview
-- **Vendor**:
-- **Plan**: Core + Prime
-- **Supported environment**:
-- **Version compatibility**:
-- **Detection based on**: Telemetry
-- **Supported application or feature**:
 
 OGO Shield Web Application Firewall provides protection and performance for your web applications and APIs.
 
+- **Vendor**: OGO
+- **Plan**: Defend Prime
+- **Supported environment**: SaaS
+- **Detection based on**: Telemetry
+- **Supported application or feature**: Site and Cluster traffic
+
+## Prerequisite
+
+- Being an Administrator of the organization or Owner of the organization in OGO.
+
+## Step-by-Step Configuration Procedure
+
 This setup guide describes how to forward security events from OGO to Sekoia.io.
 
+### Instruction on Sekoia
 
+{!_shared_content/integration/intake_configuration.md!}
 
-## Configure
-
-### Create the intake in Sekoia.io
-
-Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a new intake from the format `OGO WAF`. Copy the intake key.
-
-### Configure log export
-
-#### Prerequisite
-
-- Being an Administrator of the organization or Owner of the organization.
+### Instructions on the 3rd Party Solution
 
 #### Set up the export type
 
-In the OGO interface, go to `My Account > My Organization > Log Export`. Select `Sekoia` as the export type and paste the intake key in the form.
+In the OGO interface, go to `My Account > My Organization > Log Export`. Select `Sekoia` as the export type and **paste the Intake key** in the form.
 
 #### Activate export for sites
 
@@ -41,9 +39,7 @@ In the general configuration tab of desired sites, in the `Organization Owner/Ad
 For `OGO Shield Satellite` owners, go to `Admin Cluster > Maintenance` and activate the `Log export`.
 
 
-
 {!_shared_content/operations_center/integrations/generated/cf5c916e-fa26-11ed-a844-f7f4d7348199_sample.md!}
-
 
 {!_shared_content/integration/detection_section.md!}
 

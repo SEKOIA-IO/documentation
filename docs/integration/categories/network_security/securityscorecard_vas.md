@@ -1,22 +1,22 @@
 uuid: 8f472113-ba5b-45b9-9a2c-944834396333
-name: Security Scorecard Vunerability Assessment Scanner 
+name: Security Scorecard Vunerability Assessment Scanner
 type: intake
 
 ## Overview
-SecurityScorecard's Vulnerability Assessment Scanner is a tool designed to identify and assess vulnerabilities in an 
-organization's digital infrastructure, offering real-time insights and prioritized recommendations to strengthen 
+SecurityScorecard's Vulnerability Assessment Scanner is a tool designed to identify and assess vulnerabilities in an
+organization's digital infrastructure, offering real-time insights and prioritized recommendations to strengthen
 security measures and reduce cyber risk.
 
 - **Vendor**: SecurityScorecard
-- **Plan**: Core + Prime
+- **Plan**: Defend Core & Defend Prime
 - **Supported environment**: SaaS
 - **Detection based on**: Alert
-- **Supported application or feature**: Application logs	
+- **Supported application or feature**: Application logs
 
 
 ## Configure
 
-This setup guide will show you how to provide an integration between Security Scorecard Vunerability Assessment Scanner 
+This setup guide will show you how to provide an integration between Security Scorecard Vunerability Assessment Scanner
 events and Sekoia.io.
 
 ### Create an intake

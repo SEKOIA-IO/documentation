@@ -11,10 +11,10 @@ Ubika Cloud Protector is a cloud-native security solution, providing advanced th
 
 
 - **Vendor**:Ubika
-- **Plan**: Core + Prime
+- **Plan**: Defend Core & Defend Prime
 - **Supported environment**: SaaS
 - **Detection based on**: Alert
-- **Supported application or feature**: Web application firewall logs	
+- **Supported application or feature**: Web application firewall logs
 
 
 ## Configure
@@ -61,7 +61,7 @@ Go to the Sekoia.io [playbook page](https://app.sekoia.io/operations/playbooks),
 - Create a **Trigger configuration** using:
 
     * Type the `Intake key` created on the previous step
-    * Type the `provider`, `tenant` and `token` from the `How to get API keys info` step 
+    * Type the `provider`, `tenant` and `token` from the `How to get API keys info` step
 
 - Click on the **Save** button
 - **Activate the playbook** with the toggle button on the top right corner of the page

@@ -47,7 +47,7 @@ In this documentation, we will explain one way to collect and send FortiProxy lo
 ### Logs details
 
 - **Supported functionalities**: See section [Overview](#overview)
-- **Supported type(s) of structure**: syslog
+- **Supported type(s) of structure**: Key-Value
 - **Supported verbosity level**: Informational
 
 !!! Note
@@ -77,11 +77,11 @@ This setup guide will show you how to forward your FortiProxy logs to Sekoia.io 
 
     For more information, please refer to the official documentation of [FortiProxy](https://docs.fortinet.com/document/fortiproxy/7.0.0/administration-guide/707542/log-settings#Log_Settings).
 
+{!_shared_content/integration/forwarder_configuration.md!}
+
 ### Instruction on Sekoia
 
 {!_shared_content/integration/intake_configuration.md!}
-
-{!_shared_content/integration/forwarder_configuration.md!}
 
 {!_shared_content/operations_center/integrations/generated/270777d7-0c5a-42fb-b901-b7fadfb0ba48_sample.md!}
 

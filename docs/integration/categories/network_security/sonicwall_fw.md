@@ -6,11 +6,11 @@ type: intake
 SonicWall firewalls enable you to identify and control all applications that are running on your network. By identifying applications based on their unique signatures rather than ports or protocols, this additional control improves compliance and data leakage prevention.
 
 - **Vendor**: SonicWall
-- **Plan**: Core + Prime
+- **Plan**: Defend Core & Defend Prime
 - **Supported environment**: On prem
 - **Version compatibility**: 7,0,1
 - **Detection based on**: Telemetry
-- **Supported application or feature**: DNS records, Host network interface, Network device logs, Network intrusion detection system, Network protocol, Web logs analysis	
+- **Supported application or feature**: DNS records, Host network interface, Network device logs, Network intrusion detection system, Network protocol, Web logs analysis
 
 
 ## Configure
@@ -31,7 +31,7 @@ to Sekoia.io by means of a syslog transport channel.
     Only the Syslog format `ArcSight` is supported by this integration.
 
 Log on your SonicWall appliance and follow this [guide](https://www.sonicwall.com/support/knowledge-base/how-can-i-configure-a-syslog-server-on-a-sonicwall-firewall/170505984096810/) to enable syslog forwarding,
-except for the step 4 : Select Syslog Format as 'Enhanced', you must select Syslog format 'ArcSight' instead. 
+except for the step 4 : Select Syslog Format as 'Enhanced', you must select Syslog format 'ArcSight' instead.
 
 
 ### Create the intake

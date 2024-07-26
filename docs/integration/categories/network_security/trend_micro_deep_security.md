@@ -8,11 +8,11 @@ Trend Micro Deep Security / Workload Security detect malware, vulnerabilities an
 It protect your physical and virtual servers as well as, your cloud and containers instances.
 
 - **Vendor**: Trend Micro
-- **Plan**: Core + Prime
-- **Supported environment**: On prem 
-- **Version compatibility**: 20.0. 0-5953 
+- **Plan**: Defend Core & Defend Prime
+- **Supported environment**: On prem
+- **Version compatibility**: 20.0. 0-5953
 - **Detection based on**: Telemetry
-- **Supported application or feature**: Authentication logs	File monitoring, Network intrusion detection system, Network protocol analysis, Web proxy, 
+- **Supported application or feature**: Authentication logs	File monitoring, Network intrusion detection system, Network protocol analysis, Web proxy,
 
 
 ## Configure
@@ -28,7 +28,7 @@ An internal syslog concentrator is required to collect and forward events to Sek
 To enable syslog forwarding for Trend Micro Deep Security, please follow [this guide](https://help.deepsecurity.trendmicro.com/20_0/on-premise/event-syslog.html).
 For Trend Micro Workload Security, please refer to [this documentation](https://cloudone.trendmicro.com/docs/workload-security/event-syslog/)
 
-To enable Syslog forwarding, follow these steps: 
+To enable Syslog forwarding, follow these steps:
 
 1. Log on your Security console
 2. Provide the IP and the listening port (`514`) of the log concentrator and select `CEF` as the event format
@@ -37,7 +37,7 @@ To enable Syslog forwarding, follow these steps:
 
 If the concentrator and all your agents are on the same network or could communicate safely (VPN, ...):
 
-1. Select the transport protocol `UDP` and ask your agents to send events `Directly to the syslog server` 
+1. Select the transport protocol `UDP` and ask your agents to send events `Directly to the syslog server`
 2. Apply the changes
 
 #### Indirect forwarding

@@ -356,6 +356,7 @@ nav:
           - Cyberwatch Detection: integration/categories/network_security/cyberwatch_detection.md
           - Darktrace Threat Visualizer: integration/categories/network_security/darktrace_threat_visualizer.md
           - Datadome Protection: integration/categories/network_security/datadome_protection.md
+          - Daspren Parad: integration/categories/network_security/daspren_parad.md
           - Digital Shadows SearchLight: integration/categories/network_security/digital_shadows.md
           - Fastly Next-Gen WAF: integration/categories/network_security/fastly_waf.md
           - Forcepoint Secure Web Gateway: integration/categories/network_security/forcepoint_web_gateway.md
@@ -370,7 +371,7 @@ nav:
           - Netskope Transaction Events: integration/categories/network_security/netskope_transaction.md
           - OGO Shield WAF: integration/categories/network_security/ogo_shield.md
           - Olfeo Secure Web Gateway: integration/categories/network_security/olfeo_secure_web_gateway.md
-          - Palo Alto: integration/categories/network_security/paloalto.md
+          - Palo Alto Next-Generation Firewall: integration/categories/network_security/paloalto.md
           - Security Scorecard Vunerability Assessment Scanner: integration/categories/network_security/securityscorecard_vas.md
           - SonicWall Firewall: integration/categories/network_security/sonicwall_fw.md
           - SonicWall SMA: integration/categories/network_security/sonicwall_sma.md
@@ -390,7 +391,6 @@ nav:
           - Vectra Cognito Detect: integration/categories/network_security/vectra.md
           - WatchGuard Firebox: integration/categories/network_security/watchguard_firebox.md
           - Zscaler Internet Access: integration/categories/network_security/zscaler_zia.md
-          - Daspren Parad: integration/categories/network_security/daspren_parad.md
   - List of Playbooks Actions :
     - Overview : integration/action_library/overview.md
     - Applicatives:

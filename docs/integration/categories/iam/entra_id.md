@@ -1,13 +1,13 @@
 uuid: 19cd2ed6-f90c-47f7-a46b-974354a107bb
-name: Microsoft Entra ID (Azure AD) 
+name: Microsoft Entra ID (Azure AD)
 type: intake
 
 ## Overview
 - **Vendor**:
-- **Plan**: Core + Prime
+- **Plan**: Defend Core & Defend Prime
 - **Supported environment**: SaaS
 - **Detection based on**: Telemetry
-- **Supported application or feature**: Application logs, Authentication logs	
+- **Supported application or feature**: Application logs, Authentication logs
 
 **Microsoft Entra ID (Azure AD) ** is a cloud-based Identity and Rights management service. The service is developed and managed by Microsoft Corp.
 
@@ -30,7 +30,7 @@ You must have Contributor write on Azure to perform the following installation.
 
 When you have an **Event Hub** follow this guide to send your **Microsoft Entra ID (Azure AD) ** events from Azure to the **Event Hub**:
 
-You need to activate and configure the **Microsoft Entra ID (Azure AD) ** diagnostic settings (e.g. `company-ad`), 
+You need to activate and configure the **Microsoft Entra ID (Azure AD) ** diagnostic settings (e.g. `company-ad`),
 to receive logs from the **Microsoft Entra ID (Azure AD) ** into your **Event Hub**.
 
 Navigate to [Home > Microsoft Entra ID (Azure AD)  (e.g. `company-ad`) > Monitoring > Diagnostic settings](https://portal.azure.com/#view/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/~/DiagnosticSettings):
@@ -39,7 +39,7 @@ Navigate to [Home > Microsoft Entra ID (Azure AD)  (e.g. `company-ad`) > Monitor
 2. Select the previously created “Event hubs”, “Event Hub” and “SharedAccessKey” (**see step 3 of the event hub guide**).
 3. In the log section, select all log categories (as shown below).
 4. Choose a name for this configuration and click on “Save”.
-  
+
 ![diag](https://github.com/jdpju/documentation/assets/113444861/b5e55fd3-da86-4f2f-8095-3c1704ae7a20){: style="max-width:100%"}
 
 

@@ -7,7 +7,7 @@ Suricata is a free and open source, mature, fast and robust network threat detec
 
 
 - **Vendor**: OISF fundation
-- **Plan**: Core + Prime
+- **Plan**: Defend Core & Defend Prime
 - **Supported environment**: On prem
 - **Version compatibility**: 6.0.20
 - **Detection based on**: Telemetry
@@ -40,7 +40,7 @@ outputs:
         - tls
 ```
 
-### Forward logs to Sekoia 
+### Forward logs to Sekoia
 Given this Suricata configuration, your local built-in rsyslog service will handle produced records.
 Once your Suricata is configured to log threw syslog you have many options to forward those logs to Sekoia.io app. All of those solutions have their advantages. You will find more details about the type of events that are handled by each of them and how to set up those solutions on the dedicated documentations that follows:
 

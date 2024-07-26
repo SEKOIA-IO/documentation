@@ -6,11 +6,11 @@ type: intake
 PROVE IT by Rubycat is a privileged access management solution.
 
 - **Vendor**: Rubycat
-- **Plan**: Core + Prime
+- **Plan**: Defend Core & Defend Prime
 - **Supported environment**: On prem
 - **Version compatibility**: 5,0
 - **Detection based on**: Telemetry
-- **Supported application or feature**: Authentication logs	
+- **Supported application or feature**: Authentication logs
 
 
 ## Setup
