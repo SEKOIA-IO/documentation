@@ -45,7 +45,7 @@ Go to the Sekoia.io [playbook page](https://app.sekoia.io/operations/playbooks),
 - Open the left panel, click **Thinkst Canary** then select the trigger `Fetch Thinkst Canary Events`
 - Click on **Create**
 - Create a **Module configuration** using:
-    - `Base URL`, which should be "https://<DOMAINHASH>.canary.tools", where <DOMAINHASH> is your domain hash from the `How to create an API Key` step
+    - `Base URL`, which should be `https://DOMAINHASH.canary.tools`, where `DOMAINHASH` is your domain hash from the `How to create an API Key` step
     - `Auth token` from the same step
 - Create a **Trigger configuration** using the `Intake key` created on the previous step
 - Click on the **Save** button
