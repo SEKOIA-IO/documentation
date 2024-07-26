@@ -1551,6 +1551,12 @@ The following Sekoia.io built-in rules match the intake **Windows**. This docume
     
     - **Effort:** intermediate
 
+??? abstract "Netscan Share Access Artefact"
+    
+    Detects netscan artefact on windows network share - indicate network share discovery.
+    
+    - **Effort:** intermediate
+
 ??? abstract "Netsh Allow Command"
     
     Netsh command line to allow a program to pass through firewall.
@@ -2384,6 +2390,12 @@ The following Sekoia.io built-in rules match the intake **Windows**. This docume
     Detects known sensitive file extensions accessed on a network share. This activity could possibly correspond to a malicious one (removing backup, reading sensitive files, etc.).
     
     - **Effort:** master
+
+??? abstract "Suspicious Certificate Request-adcs Abuse"
+    
+    Detects when a new certificate is requested or granted against Active Directory Certificate Services (AD CS) using a Subject Alternative Name (SAN)
+    
+    - **Effort:** elementary
 
 ??? abstract "Suspicious Cmd File Copy Command To Network Share"
     
