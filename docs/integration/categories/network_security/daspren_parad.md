@@ -8,17 +8,15 @@ Daspren is the only Data Detection and Response (DDR) that integrates detection 
 
 - **Vendor**: Daspren
 - **Plan**: Defend Prime
-- **Supported environment**: On Premise / SaaS
-- **Version compatibility, if applicable**:
+- **Supported environment**: SaaS
 - **Detection based on**: Telemetry
 - **Supported application or feature**: Parad is the data protection solution from Daspren. It monitors data activity and use AI to prevent data breaches coming from both the inside and the outside of your organization:
-
-  - File created, opened, deleted, moved or modified,
-  - Access rules breach attempts,
-  - Malicious processes detected.
+    - File created, opened, deleted, moved or modified,
+    - Access rules breach attempts,
+    - Malicious processes detected.
 
 !!! Warning
-  This format is currently in beta. We highly value your feedback to improve its performance.
+    This format is currently in beta. We highly value your feedback to improve its performance.
 
 ## High-Level Architecture Diagram
 
@@ -31,18 +29,11 @@ Daspren is the only Data Detection and Response (DDR) that integrates detection 
 
 ### Prerequisites
 
-- **Resource**:
-  - Self-managed syslog forwarder
-
-- **Network**:
-  - Outbound traffic allowed
-
-- **Permissions**:
-  - Administrator or Root access to the Parad CLI
+- **Permissions**: Administrator or Root access to the Parad CLI
 
 ### Transport Protocol/Method
 
-- **Direct Syslog**
+- **Direct HTTP**
 
 ### Logs details
 
@@ -55,22 +46,21 @@ Daspren is the only Data Detection and Response (DDR) that integrates detection 
 
 ## Step-by-Step Configuration Procedure
 
+### Instruction on Sekoia
+
+{!_shared_content/integration/intake_configuration.md!}
+
 ### Instructions on the 3rd Party Solution
 
   1. **Open the Parad CLI**:
   2. **Create a Sink from the CLI**:
     - Go to `Sinks > Add Sink`.
     - Select the Sekoia Sink Variant.
-    - Type a name and paste the intake key.
+    - Type a `Name` and paste the `Intake key` from the previous step.
   3. **Create a Reporter from the CLI**:
     - Go to `Reporters > Add Reporter`.
   4. **Create a Link**:
     - Link the previously created Sink and Reporter.
-
-### Instruction on Sekoia
-
-{!_shared_content/integration/intake_configuration.md!}
-
 
 {!_shared_content/operations_center/integrations/generated/d6d15297-e977-4584-9bb3-f0290b99f014_sample.md!}
 
@@ -79,7 +69,3 @@ Daspren is the only Data Detection and Response (DDR) that integrates detection 
 {!_shared_content/operations_center/detection/generated/suggested_rules_bf8867ee-43b7-444c-9475-a7f43754ab6d_do_not_edit_manually.md!}
 
 {!_shared_content/operations_center/integrations/generated/d6d15297-e977-4584-9bb3-f0290b99f014.md!}
-
-## Further readings
-
-- [Daspren Documentation](https://www.daspren.com/documentation)

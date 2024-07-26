@@ -3,16 +3,14 @@ name: Lacework Cloud Security
 type: intake
 
 ## Overview
-- **Vendor**:
-- **Plan**: Core + Prime
-- **Supported environment**:
-- **Version compatibility**:
-- **Detection based on**: Alert, Telemetry
-- **Supported application or feature**:
 
 The Lacework Cloud Security provides continuous cloud security monitoring and automated threat detection, safeguarding cloud environments with real-time insights and compliance enforcement.
 
-
+- **Vendor**: Lacework
+- **Plan**: Defend Core & Defend Prime
+- **Supported environment**: SaaS
+- **Detection based on**: Alert, Telemetry
+- **Supported application or feature**:
 
 ## Configure
 
@@ -36,13 +34,13 @@ In the lacework console:
 
 3. To create a service user:
 
-    1. Select `Service user` as user type 
+    1. Select `Service user` as user type
     2. Give the user a name and an optional description
     3. Click `Next`
 
         ![step 3](/assets/integration/cloud_and_saas/lacework/step_03.png)
 
-    4. Select `Read-Only User` as user group 
+    4. Select `Read-Only User` as user group
     5. Click `Save`
 
         ![step 4](/assets/integration/cloud_and_saas/lacework/step_04.png)

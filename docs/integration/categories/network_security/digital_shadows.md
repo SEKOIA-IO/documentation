@@ -19,7 +19,7 @@ In this documenation we will explain how to collect and send SearchLight logs to
 ### Instructions on the 3rd Party Solution
 
 First of all, you will have to retrieve configuration information.
-To do so, connect to the [Digital Shadows portal](https://portal-digitalshadows.com/) to get an API key under the heading "api" > "Stored Objects" > "Portal" > "Searchlight API doc".
+To do so, connect to the [Digital Shadows portal](https://portal-digitalshadows.com/) to get an API key under the heading `api` > "`tored Objects` > `Portal` > `Searchlight API doc`.
 
 Then, you will need to retrieve the following information from the portal:
 
@@ -37,7 +37,6 @@ You now have all information to configure the Digital Shadows Searchlight module
 {!_shared_content/integration/connector_configuration.md!}
 
 {!_shared_content/operations_center/integrations/generated/ccf942fe-c839-42be-a081-5c3f946e80f5_sample.md!}
-
 
 {!_shared_content/integration/detection_section.md!}
 

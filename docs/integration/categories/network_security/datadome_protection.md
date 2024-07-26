@@ -13,9 +13,6 @@ Datadome offers is a bot protection solution, providing real-time detection and 
 - **Supported application or feature**: Web application firewall logs
 
 
-
-
-
 ## Step-by-Step Configuration Procedure
 
 This setup guide will show you how to forward your Datadome Protection logs to Sekoia.io

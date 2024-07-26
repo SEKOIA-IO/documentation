@@ -53,11 +53,9 @@ BIND is an implementation of the Domain Name System (DNS) of the Internet. It pe
 
 ### Instructions on the 3rd Party Solution
 
-#### Forward BIND Logs to Sekoia.io
-
 As of now, the main solution to collect BIND logs leverages the Rsyslog recipe. Please share your experiences with other recipes by editing this documentation.
 
-#### Detailed Procedure:
+#### Detailed Procedure on customer environment
 
 1. **Configure BIND to Log Queries:**
    - First, you need to configure your BIND daemon to log queries and forward them to your rsyslog instance.

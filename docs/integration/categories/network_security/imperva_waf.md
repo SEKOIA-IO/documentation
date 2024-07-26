@@ -3,44 +3,38 @@ name: Imperva Web Application Firewall
 type: intake
 
 ## Overview
-- **Vendor**:
-- **Plan**: Core + Prime
-- **Supported environment**:
-- **Version compatibility**:
-- **Detection based on**: Telemetry
-- **Supported application or feature**:
 
 Imperva Web Application Firewall helps you to protect your web applications and your APIs.
 
-This setup guide describes how to forward security events collected on the Imperva WAF platform to Sekoia.io.
+- **Vendor**: Imperva
+- **Plan**: Defend Prime
+- **Supported environment**: SaaS
+- **Detection based on**: Telemetry
+- **Supported application or feature**: Imperva WAF dataset
 
 
 
+## Step-by-Step Configuration Procedure
 
-## Configure
+### Instructions on the 3rd Party Solution
 
-### In Imperva interface
+- In your Imperva control panel, go to [Account > Account Management > SIEM Logs > WAF Log Setup](https://management.service.imperva.com/my/web-logs/settings).
+- Select `Imperva API`, `CEF format` and `enable compression`.
 
-In your Imperva control panel, go to [Account > Account Management > SIEM Logs > WAF Log Setup](https://management.service.imperva.com/my/web-logs/settings).
-Select Imperva API, CEF format and enable compression.
-Copy the API ID, the API Key and the Log Server URI.
+!!! Note
+    Copy the API ID, the API Key and the Log Server URI.
 
-Then go to [SIEM Logs > Websites Logs Level](https://management.service.imperva.com/my/web-logs/sites-settings) and enable for each website the log level you want to get on Sekoia.io.
+- Then go to [SIEM Logs > Websites Logs Level](https://management.service.imperva.com/my/web-logs/sites-settings)
+- Enable for each website the log level `INFO`
 
-### Create the intake in Sekoia.io
+### Instruction on Sekoia
 
-Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a new intake from the format Imperva WAF. Copy the intake key.
+{!_shared_content/integration/intake_configuration.md!}
 
-### Pull events
+{!_shared_content/integration/connector_configuration.md!}
 
-Go to the [playbook page](https://app.sekoia.io/operations/playbooks) and create a new playbook with the [Imperva WAF logs trigger](../../../automate/library/imperva.md#imperva-waf-logs). You can use the existing template to fasten and ease the creation of your playbook.
-Set up a new module configuration with the information you copied previously.
-Set up the trigger configuration with the frequency of the pull.
-
-At the end of the playbook, set up the action `Push events to intake` with a Sekoia.io API key and the intake key, from the intake previously created.
-
-Start the playbook and enjoy your events.
-
+!!! Important
+    At the end of the playbook, set up the action `Push events to intake` with a Sekoia.io API key and the intake key, from the intake previously created.
 
 {!_shared_content/operations_center/integrations/generated/d9f337a4-1303-47d4-b15f-1f83807ff3cc_sample.md!}
 

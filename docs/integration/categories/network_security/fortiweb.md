@@ -109,7 +109,6 @@ This setup guide will show you how to forward your FortiWeb logs to Sekoia.io by
 
 {!_shared_content/operations_center/integrations/generated/2259adc3-9d93-4150-9c1c-46804e636084.md!}
 
-
 ## Further readings
 
 - [Configuring a remote Syslog server for FortiWeb](https://docs.fortinet.com/document/fortiweb/6.1.1/administration-guide/303842/logging)
