@@ -1,4 +1,4 @@
-Rules catalog includes **922 built-in detection rules** ([_last update on 2024-07-25_](rules_changelog.md)).
+Rules catalog includes **927 built-in detection rules** ([_last update on 2024-07-26_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Identity Information**
 
@@ -2083,6 +2083,10 @@ Rules catalog includes **922 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 26/07/2024 - minor - Removing tools relationships as it was inaccurate
+            
 ??? abstract "PowerShell Malicious PowerShell Commandlets"
     
     Detects Commandlet names from well-known PowerShell exploitation frameworks (PowerSploit...).
@@ -2092,6 +2096,7 @@ Rules catalog includes **922 built-in detection rules** ([_last update on 2024-0
     - **Changelog:**
     
         - 23/01/2024 - minor - Adding exclusion pattern and selection commandlet
+        - 26/07/2024 - minor - Removing tools relationships as it was inaccurate
             
 ??? abstract "PowerShell NTFS Alternate Data Stream"
     
@@ -10383,6 +10388,18 @@ Rules catalog includes **922 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** master
     
+??? abstract "Correlation Internal Kerberos Password Spraying"
+    
+    Detect multiple Kerberos authentication failed on several account from one source
+    
+    - **Effort:** master
+    
+??? abstract "Correlation Internal Ntlm Password Spraying"
+    
+    Detect multiple NTLM authentication failed on several account from one source
+    
+    - **Effort:** master
+    
 ??? abstract "Entra ID Password Compromised By Known Credential Testing Tool"
     
     Detects a sign-in that has a correlation ID known to be used by malicious credential testing scripts. Note that even if the sign-in was blocked by MFA (error 50074) or device authentication (error 50097), these verifications only occur after the correct password was submitted. The account's password must still be considered compromised, and be changed.
@@ -10534,6 +10551,14 @@ Rules catalog includes **922 built-in detection rules** ([_last update on 2024-0
 ??? abstract "Potential Azure AD Phishing Page (Adversary-in-the-Middle)"
     
     Detects an HTTP request to an URL typical of the Azure AD authentication flow, but towards a domain that is not one the legitimate Microsoft domains used for Azure AD authentication.
+    
+    - **Effort:** intermediate
+    
+**Forced Authentication**
+
+??? abstract "Correlation Suspicious Authentication Coercer Behavior"
+    
+    Detect a possible NTLM Relay attack combine with authent coerce
     
     - **Effort:** intermediate
     
@@ -10717,6 +10742,12 @@ Rules catalog includes **922 built-in detection rules** ([_last update on 2024-0
     
 **Adversary-in-the-Middle**
 
+??? abstract "Correlation Suspicious Authentication Coercer Behavior"
+    
+    Detect a possible NTLM Relay attack combine with authent coerce
+    
+    - **Effort:** intermediate
+    
 ??? abstract "Entra ID Sign-In Via Known AiTM Phishing Kit"
     
     Detects a sign-in attempt from an IP address belonging to a known adversary-in-the-middle phishing kit.
@@ -10841,6 +10872,12 @@ Rules catalog includes **922 built-in detection rules** ([_last update on 2024-0
             
 **Steal or Forge Authentication Certificates**
 
+??? abstract "Suspicious Certificate Request-adcs Abuse"
+    
+    Detects when a new certificate is requested or granted against Active Directory Certificate Services (AD CS) using a Subject Alternative Name (SAN)
+    
+    - **Effort:** elementary
+    
 ??? abstract "Suspicious Kerberos Ticket"
     
     Detect suspicious Kerberos ticket based on on their parameters which suggest that it could be forged.
@@ -11277,6 +11314,12 @@ Rules catalog includes **922 built-in detection rules** ([_last update on 2024-0
     
 **Network Share Discovery**
 
+??? abstract "Netscan Share Access Artefact"
+    
+    Detects netscan artefact on windows network share - indicate network share discovery.
+    
+    - **Effort:** intermediate
+    
 ??? abstract "Network Share Discovery"
     
     Adversaries may look for folders and drives shared on remote systems as a means of identifying sources of information to gather as a precursor for Collection and to identify potential systems of interest for Lateral Movement. Networks often contain shared network drives and folders that enable users to access file directories on various systems across a network. File sharing over a Windows network occurs over the SMB protocol. This technique is frequently leveraged by threat actors such as APT32, APT41, Wizard Spider. But also, through the use of some malware such as Cobalt Strike, Empire, PlugX and Ramsay.
@@ -11767,6 +11810,12 @@ Rules catalog includes **922 built-in detection rules** ([_last update on 2024-0
             
 **Adversary-in-the-Middle**
 
+??? abstract "Correlation Suspicious Authentication Coercer Behavior"
+    
+    Detect a possible NTLM Relay attack combine with authent coerce
+    
+    - **Effort:** intermediate
+    
 ??? abstract "Entra ID Sign-In Via Known AiTM Phishing Kit"
     
     Detects a sign-in attempt from an IP address belonging to a known adversary-in-the-middle phishing kit.
