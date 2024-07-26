@@ -9,7 +9,7 @@ Check Point’s Next Generation Firewalls (NGFWs) are trusted by customers for t
 - **Vendor**: Check Point
 - **Plan**: Defend Core & Defend Prime
 - **Supported environment**: On Premise
-- **Version compatibility**: R81.10 (Latest version as of now)
+- **Version compatibility**: R81.10
 - **Detection based on**: Telemetry, Alert
 - **Supported application or feature**: Firewall and threat prevention
 
@@ -49,13 +49,10 @@ Check Point’s Next Generation Firewalls (NGFWs) are trusted by customers for t
 
 ### Instructions on the 3rd Party Solution
 
-#### Forward Check Point Logs to Sekoia.io
-
 The solution to collect Check Point logs leverages the [Log Exporter](https://supportcenter.checkpoint.com/supportcenter/portal?eventSubmit_doGoviewsolutiondetails=&solutionid=sk122323) method and Syslog forwarding.
 
-#### Detailed Procedure:
+#### Configure Log Exporter
 
-1. **Configure Log Exporter:**
    - Set up the Log Exporter to send logs in the **CEF format** by following [this guide](https://supportcenter.checkpoint.com/supportcenter/portal?eventSubmit_doGoviewsolutiondetails=&solutionid=sk122323).
 
 ### Instruction on Sekoia
@@ -71,7 +68,6 @@ The solution to collect Check Point logs leverages the [Log Exporter](https://su
 {!_shared_content/operations_center/detection/generated/suggested_rules_f0a10c21-37d1-419f-8671-77903dc8de69_do_not_edit_manually.md!}
 
 {!_shared_content/operations_center/integrations/generated/f0a10c21-37d1-419f-8671-77903dc8de69.md!}
-
 
 ## Further readings
 

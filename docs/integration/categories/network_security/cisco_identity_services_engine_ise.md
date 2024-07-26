@@ -9,16 +9,16 @@ Cisco Identity Services Engine (ISE) is an intelligent security policy enforceme
 - **Vendor**: Cisco
 - **Plan**: Defend Core & Defend Prime
 - **Supported environment**: On Premise
-- **Version compatibility**: 3.1 (Latest version as of now)
+- **Version compatibility**: 3.1
 - **Detection based on**: Telemetry
-- **Supported application or feature**: Network access control and visibility
+- **Supported application or feature**: Authentication, Network device configuration, Web logs
 
 ## High-Level Architecture Diagram
 
 - **Type of integration**: Outbound (PUSH to Sekoia.io)
 - **Schema**
 
-![cisco_identity_services_engine_architecture](/assets/integration/cisco_ise_architecture.png)
+![cisco_identity_services_engine_architecture](/assets/integration/cisco_ise_architecture.png){: style="max-width:100%"}
 
 ## Specification
 
@@ -49,11 +49,10 @@ Cisco Identity Services Engine (ISE) is an intelligent security policy enforceme
 
 ### Instructions on the 3rd Party Solution
 
-#### Forward Cisco Identity Services Engine Logs to Sekoia.io
-
 This setup guide will show you how to provide an integration between Cisco Identity Services Engine events and Sekoia.io.
 
-**Enable Syslog Forwarding:**
+#### Enable Syslog Forwarding
+
 - Log on your ISE Administration Interface.
 - Follow [this guide](https://www.cisco.com/en/US/docs/security/ise/1.0/user_guide/ise10_logging.html#wp1053250).
 

@@ -35,17 +35,9 @@ Find more information in official [Documentation](https://techdocs.broadcom.com/
 
 ## Sekoia.io configuration procedure
 
-### Create an intake
+{!_shared_content/integration/intake_configuration.md!}
 
-Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a new intake from the format `Broadcom Cloud SWG`. Copy the intake key.
-
-### Pull events
-
-To start to pull events, you have to:
-
-1. Go to the [playbooks page](https://app.sekoia.io/operations/playbooks) and create a new playbook with the `Get Broadcom Cloud SWG events` trigger
-2. Set up the module configuration with the username and the password. Set up the trigger configuration with the intake key
-3. Start the playbook and enjoy your events
+{!_shared_content/integration/connector_configuration.md!}
 
 {!_shared_content/operations_center/integrations/generated/d626fec3-473a-44b3-9e3d-587fdd99a421_sample.md!}
 

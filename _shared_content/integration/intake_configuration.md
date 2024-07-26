@@ -5,7 +5,7 @@ This section will guide you through creating the intake object in Sekoia, which 
 1. Go to the Sekoia Intake page.
 2. Click on the `+ New Intake` button at the top right of the page.
 3. Search for your Intake by the product name in the search bar.
-4. Give it a Name** and associate it with an Entity (and a Community if using multi-tenant mode).
+4. Give it a **Name** and associate it with an **Entity** (and a Community if using multi-tenant mode).
 5. Click on `Create`.
 6. You will be redirected to the Intake listing page, where you will find a new line with the name you gave to the Intake.
 

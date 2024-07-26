@@ -9,16 +9,16 @@ The Cisco Web Security Appliance is a security device that analyzes HTTP(S) traf
 - **Vendor**: Cisco
 - **Plan**: Defend Prime
 - **Supported environment**: On Premise
-- **Version compatibility, if applicable**:
+- **Version compatibility**: AsyncOS 11.0 and newer
 - **Detection based on**: Security Alerts / Telemetry
-- **Supported application or feature**: HTTP(S) traffic analysis
+- **Supported application or feature**: W3C Access log
 
 ## High-Level Architecture Diagram
 
 - **Type of integration**: Outbound (PUSH to Sekoia.io)
 - **Schema**
 
-![cisco_web_security_appliance_architecture](/assets/integration/cisco_web_security_appliance_architecture.png)
+![cisco_web_security_appliance_architecture](/assets/integration/cisco_web_security_appliance_architecture.png){: style="max-width:100%"}
 
 ## Specification
 
@@ -39,7 +39,7 @@ The Cisco Web Security Appliance is a security device that analyzes HTTP(S) traf
 ### Logs details
 
 - **Supported functionalities**: See section [Overview](#overview)
-- **Supported type(s) of structure**: Plain text
+- **Supported type(s) of structure**: Plain text (W3C)
 - **Supported verbosity level**: Alert, Informational
 
 !!! Note
@@ -51,7 +51,8 @@ The Cisco Web Security Appliance is a security device that analyzes HTTP(S) traf
 
 #### Enable Syslog Forwarding
 
-1. **Log on your Cisco Web Security Appliance** and follow [this guide](https://www.cisco.com/c/en/us/td/docs/security/wsa/wsa11-0/user_guide/b_WSA_UserGuide/b_WSA_UserGuide_chapter_010111.html#ariaid-title7) to create a log subscription with the retrieval method `Syslog Push` and the concentrator as the destination.
+- Log on your Cisco Web Security Appliance
+- Follow [this guide](https://www.cisco.com/c/en/us/td/docs/security/wsa/wsa11-0/user_guide/b_WSA_UserGuide/b_WSA_UserGuide_chapter_010111.html#ariaid-title7) to create a log subscription with the retrieval method `Syslog Push` and the concentrator as the destination.
 
 ### Instruction on Sekoia
 

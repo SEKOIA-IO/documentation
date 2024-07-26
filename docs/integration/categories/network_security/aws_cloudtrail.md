@@ -36,7 +36,7 @@ Activate the logging on the trail through the switch button (On/Off) located at 
 
 ### Pull events
 
-Go to the [playbook page](https://app.sekoia.io/operations/playbooks) and create a new playbook with the [Fetch new CloudTrail records on S3 connector](/integration/action_library/cloud_providers/aws.md#fetch-new-cloudtrail-records-on-s3).
+Go to the [playbook page](https://app.sekoia.io/operations/playbooks) and create a new playbook with the [Fetch new CloudTrail records on S3 connector](/integration/action_library/cloud_providers/aws#fetch-new-cloudtrail-records-on-s3).
 
 Set up the module configuration with the [AWS Access Key](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html), the secret key, and the region name. Set up the trigger configuration with the name of the SQS queue and the intake key from the previously created intake.
 

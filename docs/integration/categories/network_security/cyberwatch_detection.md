@@ -10,10 +10,9 @@ This integration encompasses the detection logs from Cyberwatch Vulnerability Ma
 
 - **Vendor**: Cyberwatch
 - **Plan**: Defend Prime
-- **Supported environment**: On Premise / Cloud
-- **Version compatibility, if applicable**:
-- **Detection based on**: Vulnerability Scanning
-- **Supported application or feature**: Third-party application logs
+- **Supported environment**: On Premise
+- **Detection based on**: Alert
+- **Supported application or feature**: Vulnerability report
 
 ## High-Level Architecture Diagram
 
@@ -41,7 +40,7 @@ This integration encompasses the detection logs from Cyberwatch Vulnerability Ma
 ### Logs details
 
 - **Supported functionalities**: See section [Overview](#overview)
-- **Supported verbosity level**: Emergency / Alert / Critical / Error / Warning / Notice / Informational / Debug
+- **Supported verbosity level**: Alert / Informational
 - **Supported type(s) of structure**: Key-Value
 
 !!! Note
@@ -69,7 +68,7 @@ This setup guide will show you how to forward your Cyberwatch logs to Sekoia.io 
    - In the Remote Syslog server configuration, provide the address, the port, and the transport to the syslog concentrator.
 
    <video controls width="100%">
-     <source src="/assets/integration/application/Cyberwatch.webm" type="video/webm">
+     <source src="/assets/integration/application/cyberwatch/Cyberwatch.webm" type="video/webm">
    </video>
 
 ### Instruction on Sekoia

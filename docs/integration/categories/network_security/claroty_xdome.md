@@ -8,9 +8,9 @@ Claroty xDome is an integrated cybersecurity platform designed for industrial co
 
 - **Vendor**: Claroty
 - **Plan**: Defend Prime
-- **Supported environment**: On Premise / Cloud
+- **Supported environment**: On Premise & Cloud
 - **Version compatibility, if applicable**:
-- **Detection based on**: Alerts / Telemetry
+- **Detection based on**: Alerts, Telemetry
 - **Supported application or feature**: Network protocol analysis
 
 ## High-Level Architecture Diagram
@@ -47,21 +47,16 @@ Claroty xDome is an integrated cybersecurity platform designed for industrial co
 
 ## Step-by-Step Configuration Procedure
 
+
+### Instruction on Sekoia
+
+{!_shared_content/integration/intake_configuration.md!}
+
 ### Instructions on the 3rd Party Solution
 
-#### Forward Claroty xDome Logs to Sekoia.io
-
 This setup guide will show you how to forward both your access and error logs to Sekoia.io by means of a syslog transport channel.
+#### Set up the Integration in Claroty Console
 
-#### Detailed Procedure:
-
-1. **Prerequisites:**
-   - Have an internal log concentrator.
-
-2. **Create an Intake:**
-   - Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a new intake from the format Claroty xDome. Copy the intake key.
-
-3. **Set up the Integration in Claroty Console:**
    1. Log in to the Claroty platform.
    2. In the top bar, click `Settings > System Settings`.
 
@@ -103,10 +98,6 @@ This setup guide will show you how to forward both your access and error logs to
 
    9. Click `Apply`.
 
-### Instruction on Sekoia
-
-{!_shared_content/integration/intake_configuration.md!}
-
 {!_shared_content/integration/forwarder_configuration.md!}
 
 {!_shared_content/operations_center/integrations/generated/9f47aa9f-52d7-4849-9462-cf7fc8bcd51a_sample.md!}
@@ -116,7 +107,6 @@ This setup guide will show you how to forward both your access and error logs to
 {!_shared_content/operations_center/detection/generated/suggested_rules_9f47aa9f-52d7-4849-9462-cf7fc8bcd51a_do_not_edit_manually.md!}
 
 {!_shared_content/operations_center/integrations/generated/9f47aa9f-52d7-4849-9462-cf7fc8bcd51a.md!}
-
 
 ## Further readings
 
