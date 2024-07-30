@@ -703,14 +703,6 @@ plugins:
       operation_center/alerts.md: xdr/features/investigate/alerts.md
       operation_center/assets.md: xdr/features/collect/assets.md
       operation_center/cases.md: xdr/features/investigate/cases.md
-      operation_center/data_collection/index.md: integration/ingestion_methods/index.md
-      operation_center/data_collection/ingestion_methods.md: integration/ingestion_methods/index.md
-      operation_center/data_collection/ingestion_methods/graylog.md: integration/ingestion_methods/graylog.md
-      operation_center/data_collection/ingestion_methods/https.md: integration/ingestion_methods/https/format.md
-      operation_center/data_collection/ingestion_methods/logstash.md: integration/ingestion_methods/logstash.md
-      operation_center/data_collection/ingestion_methods/rsyslog.md: integration/ingestion_methods/rsyslog.md
-      operation_center/data_collection/ingestion_methods/sekoiaio.md: integration/integrations/endpoint/sekoiaio.md
-      operation_center/data_collection/ingestion_methods/syslog-ng.md: integration/ingestion_methods/syslog-ng.md
       operation_center/entities.md: xdr/features/collect/entities.md
       operation_center/events.md: xdr/features/investigate/events.md
       operation_center/faq.md: xdr/FAQ.md
