@@ -22,10 +22,10 @@ This setup guide will show you how to provide an integration between Cato SASE e
 
 1. Log in to your Cato Management Application
 2. Click on the `Administration` section then click on `API & Integrations`
-    ![Administration](/assets/operation_center/integration_catalog/cloud_and_saas/cato/administration.png){: style="max-width:100%"} 
+    ![Administration](/assets/integration/cloud_and_saas/cato/administration.png){: style="max-width:100%"} 
 3. Select the tab `Events Integration`
 4. Click on `Enable integration with Cato events`
-    ![Administration](/assets/operation_center/integration_catalog/cloud_and_saas/cato/enable_eventsfeed.png){: style="max-width:100%"}
+    ![Administration](/assets/integration/cloud_and_saas/cato/enable_eventsfeed.png){: style="max-width:100%"}
 
 ### Generate the API key
 
