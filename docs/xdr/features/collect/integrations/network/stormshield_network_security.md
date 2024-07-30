@@ -15,7 +15,7 @@ In this documentation we will explain how to collect and send Stormshield Networ
 
 ## Configure
 
-This section will guide you to forward Stormshield SES logs to SEKOIA.IO
+This section will guide you to forward Stormshield SNS logs to Sekoia.
 
 ### Create the intake
 
