@@ -22,6 +22,10 @@ Trellix ePO - On-prem monitors and manages your network, collects data on events
 
 This setup guide will show you how to forward your Trellix ePO events to Sekoia.io.
 
+### Prerequisites
+
+- You need to have access to the Trellix developer portal to be able to configure API.
+
 ### Configure OAuth
 
 1. Get `client_id`, `client_secret` and `x-api-token` from your Trellix profile. Ensure that the following scopes are associated to your credentials: epo.evt.r, epo.pevt.r, epo.pevt.rp, epo.qery.g, epo.qery.u, epo.reg_token, epo.resp.ra, epo.resp.ru

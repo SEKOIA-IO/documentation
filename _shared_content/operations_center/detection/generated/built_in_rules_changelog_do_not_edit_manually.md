@@ -1,7 +1,13 @@
-Changelog _last update on 2024-07-25_
+Changelog _last update on 2024-07-26_
 
 ## Changelog
 
+### PowerShell Malicious Nishang PowerShell Commandlets
+  - 26/07/2024 - minor - Removing tools relationships as it was inaccurate
+    
+### PowerShell Malicious PowerShell Commandlets
+  - 26/07/2024 - minor - Removing tools relationships as it was inaccurate
+    
 ### AWS CloudTrail EC2 Subnet Deleted
   - 22/07/2024 - minor - Update action field for ECS one
     
@@ -703,9 +709,6 @@ Changelog _last update on 2024-07-25_
     
 ### Microsoft Office Product Spawning Windows Shell
   - 23/01/2024 - minor - Adding elements to increase detection and filters to reduce false positives.
-    
-### PowerShell Malicious PowerShell Commandlets
-  - 23/01/2024 - minor - Adding exclusion pattern and selection commandlet
     
 ### Suspicious Process Requiring DLL Starts Without DLL
   - 22/01/2024 - minor - Added filter to reduce false positives
