@@ -15,29 +15,34 @@ In this documentation we will explain how to collect and send Stormshield Networ
 
 ## Configure
 
-### Sending logs to syslog server
+This section will guide you to forward Stormshield SNS logs to Sekoia.
 
-You need to set some parameters to send your logs via Syslog.
-It is necessary to create a profile using the specific tab named "Syslog" within your Stormshield interface.
+### Create the intake
 
-_Note that you can configure up to 4 different profiles._
+Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a new intake from the format Stormshield Network Security.
 
-You need to specify the following information:
+### Import the intake certificate
 
-- Name
-- Comments
-- Syslog server
-- Protocol
-- Certification authority
-- Server certificate
-- Client certificate
-- Format
+On a device, please download the [Sekoia.io intake certificate](https://app.sekoia.io/assets/files/SEKOIA-IO-intake.pem)
 
-You can find more information using [this documentation](https://stormshield.pl/storage/www_stormshield/doc/dokumentacja/sns-en-user_configuration_manual-v3.pdf) provided by Stormshield.
+1. Log on the UTM administration console
+2. Click `Configuration` tab
+3. On the left panel, Click `Objects` > `Certificats and PKI`
+4. Click `+ Add`
+5. Select the intake certificate
+6. Click `Import`
 
-### Generate the intake_key
+### Configure the log forwarding
 
-You have to go on your Sekoia.io instance to generate an "intake key".
-Everything you need to do for this part of the configuration is described [here](../../../collect/intakes.md).
-
-Finally, to push logs, you have to [configure](../../../collect/ingestion_methods/index.md) some filters and rewrite rules in Syslog that will add the proper “intake key” considering your logs.
+1. Log on the UTM administration console
+2. Click `Configuration` tab
+3. On the left panel, Click `Notification` > `Traces - syslog - IPFX`
+4. Click `syslog` tab
+5. Click `SEKOIA syslog` profile
+6. Type `intake.sekoia.io` as the syslog server
+7. Select `TLS` as the protocol
+8. Select `sekoia_syslog_tls` (10514) as the destination port
+9. Select `ISRG Root X` as the Certificate authority
+10. Select `RFC5424` as the format
+11. In the advanced configuration section, paste the intake key
+12. Click `APPLY`
