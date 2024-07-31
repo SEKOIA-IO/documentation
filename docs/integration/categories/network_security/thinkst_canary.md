@@ -6,21 +6,16 @@ type: intake
 
 Thinkst Canary is a deceptive honeypot device that mimics various systems to lure and detect cyber threats, providing early and accurate breach alerts. Canarytokens are easy-to-deploy digital traps that notify users of unauthorized access to sensitive information.
 
+- **Vendor**: Thinkst Applied Research
+- **Plan**: Defend Core & Defend Prime
+- **Supported environment**: SaaS
+- **Detection based on**: Alert
+- **Supported application or feature**: events associated to the incidents
+
 !!! warning
     Important note - This format is currently in beta. We highly value your feedback to improve its performance.
     
-## Supported events
-
-This integration supports the following events:
-
-- incidents
-- events associated to the incidents
-
-{!_shared_content/operations_center/detection/generated/suggested_rules_89346697-b64b-45d4-a456-72fd8a2be5d8_do_not_edit_manually.md!}
-
-{!_shared_content/operations_center/integrations/generated/89346697-b64b-45d4-a456-72fd8a2be5d8.md!}
-
-## Configure
+## Step-by-Step Configuration Procedure
 
 ### How to create an API Key
 1. Log in the Thinkst Canary console
@@ -62,3 +57,11 @@ Go to the Sekoia.io [playbook page](https://app.sekoia.io/operations/playbooks),
 - **Activate the playbook** with the toggle button on the top right corner of the page
 
 ### Enjoy your events on the [Events page](https://app.sekoia.io/operations/events)
+
+
+{!_shared_content/operations_center/integrations/generated/89346697-b64b-45d4-a456-72fd8a2be5d8_sample.md!}
+
+{!_shared_content/integration/detection_section.md!}
+
+{!_shared_content/operations_center/detection/generated/suggested_rules_89346697-b64b-45d4-a456-72fd8a2be5d8_do_not_edit_manually.md!}
+{!_shared_content/operations_center/integrations/generated/89346697-b64b-45d4-a456-72fd8a2be5d8.md!}

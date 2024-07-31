@@ -5,26 +5,24 @@ type: intake
 ## Overview
 Azure Application Gateway is a web traffic load balancer that manages traffic to your web applications with advanced routing, SSL termination, and Web Application Firewall (WAF) features. It ensures high availability, scalability, and integrates seamlessly with other Azure services for efficient deployment and management. Additionally, it offers insights and diagnostics to monitor and optimize application performance.
 
+- **Vendor**: Azure
+- **Plan**: Defend Prime
+- **Supported environment**: SaaS
+- **Detection based on**: Telemetry
+- **Supported application or feature**: Access logs, Firewall logs
+
+
 !!! warning
     Important note - This format is currently in beta. We highly value your feedback to improve its performance.
 
-## Supported events
-
-This integration supports the following events:
-
-- Access logs
-- Firewall logs
-
-{!_shared_content/operations_center/detection/generated/suggested_rules_6967b0ca-f27e-480a-b124-fa4ab0b9d889_do_not_edit_manually.md!}
-
-{!_shared_content/operations_center/integrations/generated/6967b0ca-f27e-480a-b124-fa4ab0b9d889.md!}
-
-## Configure
+## Specification
 
 ### Prerequisites
 
 - You need to have `Contributor` role in Azure.
 - You should have properly configured [Azure Event Hub](https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-create)
+
+## Step-by-Step Configuration Procedure
 
 ### How to setup Event Hub
  
@@ -54,6 +52,15 @@ To start to pull events, you have to:
 2. Set up the trigger configuration with the EventHub's `Connection string-primary key`, the hub name, the consumer group, the storage's `Connection string-primary key` and the container name.
 3. Start the playbook and enjoy your events
 
+{!_shared_content/operations_center/integrations/generated/6967b0ca-f27e-480a-b124-fa4ab0b9d889_sample.md!}
+
+{!_shared_content/integration/detection_section.md!}
+
+{!_shared_content/operations_center/detection/generated/suggested_rules_6967b0ca-f27e-480a-b124-fa4ab0b9d889_do_not_edit_manually.md!}
+{!_shared_content/operations_center/integrations/generated/6967b0ca-f27e-480a-b124-fa4ab0b9d889.md!}
+
+
 ## Further Readings
 - [Diagnostic logs for Application Gateway](https://learn.microsoft.com/en-us/azure/application-gateway/application-gateway-diagnostics)
 - [Send Azure Monitor activity log data](https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/activity-log?tabs=powershell#send-to-azure-storage)
+
