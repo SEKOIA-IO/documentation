@@ -11,11 +11,10 @@ In this documenation we will explain how to collect and send Vade for M365 logs 
 
 - **Vendor**: Vade
 - **Plan**: Defend Prime
-- **Supported environment**: On Premise
-- **Version compatibility**:
+- **Supported environment**: Cloud
 - **Detection based on**: Telemetry
 - **Supported application or feature**: Email gateway, Anti-virus
-- **Coverage Score**: 4
+
 
 ## Configure
 

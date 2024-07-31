@@ -10,11 +10,10 @@ This setup guide shows how to forward events produced by TEHTRIS EDR to Sekoia.i
 
 - **Vendor**: TEHTRIS
 - **Plan**: Defend Prime
-- **Supported environment**: On Cloud / On Premise
-- **Version compatibility**:
+- **Supported environment**: On Cloud 
 - **Detection based on**: Telemetry / Alert
 - **Supported application or feature**: File monitoring, Process monitoring and Anti-virus
-- **Coverage Score**: 4
+
 
 ## Configure
 

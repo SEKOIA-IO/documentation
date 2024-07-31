@@ -11,7 +11,6 @@ Postfix is a free and open-source mail transfer agent that routes and delivers e
 - **Version compatibility**:
 - **Detection based on**: Telemetry
 - **Supported application or feature**: Email gateway, Mail server
-- **Coverage Score**: 2
 
 ## Configure
 

@@ -9,11 +9,10 @@ This setup guide shows how to forward events produced by HarfangLab EDR to Sekoi
 
 - **Vendor**: Harfanglab
 - **Plan**: Defend Prime
-- **Supported environment**: On Cloud / On Premise
-- **Version compatibility**:
+- **Supported environment**: On Premise
 - **Detection based on**: Telemetry / Alert
 - **Supported application or feature**: Authentication, Driver, Network, Process, Web
-- **Coverage Score**: 4
+
 
 
 ## Configure

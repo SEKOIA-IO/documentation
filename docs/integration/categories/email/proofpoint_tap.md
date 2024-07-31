@@ -8,11 +8,10 @@ Proofpoint Targeted Attack Protection (TAP) helps detect, mitigate, and block ad
 
 - **Vendor**: Proofpoint
 - **Plan**: Defend Prime
-- **Supported environment**: On Cloud / On Premise
-- **Version compatibility**:
+- **Supported environment**: Cloud 
 - **Detection based on**: Telemetry
 - **Supported application or feature**: Email gateway
-- **Coverage Score**: 3
+
 
 ## Configure
 

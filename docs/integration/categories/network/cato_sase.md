@@ -11,7 +11,7 @@ Cato Networks is a software company providing solutions to protect cloud applica
 - **Supported environment**: Cloud
 - **Detection based on**: Telemetry / Alert
 - **Supported application or feature**: Application, Web, Authentication
-- **Coverage Score**: 3
+
 
 
 ## Configure
