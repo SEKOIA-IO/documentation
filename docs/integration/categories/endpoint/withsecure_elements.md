@@ -10,11 +10,9 @@ This setup guide shows how to forward events produced by WithSecures Elements to
 
 - **Vendor**: WithSecure
 - **Plan**: Defend Prime
-- **Supported environment**: On Cloud / On Premise
-- **Version compatibility**:
+- **Supported environment**: Cloud
 - **Detection based on**: Telemetry
 - **Supported application or feature**: File monitoring, Process monitoring
-- **Coverage Score**: 3
 
 ## Configure
 
