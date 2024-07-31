@@ -9,7 +9,7 @@
         - intake_server = `https://intake.sekoia.io`
 
 <div style="text-align: center;">
-    <img width="100%" alt="image" src="/assets/operation_center/integration_catalog/cloud_and_saas/event_hub/playbook_conf.png">
+    <img width="100%" alt="image" src="/assets/integration/cloud_and_saas/event_hub/playbook_conf.png">
 </div>
 
 #### Troubleshoot
@@ -21,5 +21,5 @@ Go to events page and search events in last 5 minutes by intake key    `customer
 
 - It is possible to investigate on the tab Run and see the response by clicking on the module
 <div style="text-align: center;">
-    <img width="100%" alt="image" src="/assets/operation_center/integration_catalog/cloud_and_saas/azure_ad/troubleshoot.png">
+    <img width="100%" alt="image" src="/assets/integration/cloud_and_saas/azure_ad/troubleshoot.png">
 </div>

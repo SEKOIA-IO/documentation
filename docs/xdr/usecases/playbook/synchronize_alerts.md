@@ -77,7 +77,7 @@ Your playbook should look like the following:
 
 ## Bonus
 
-To highlight this specific example, we tested to send a message with alert metadata to a simple [Custom format Intake](../../features/collect/integrations/custom_format.md) of Sekoia.io made for this occasion on a personal Community.
+To highlight this specific example, we tested to send a message with alert metadata to a simple [Custom format Intake](/integration/develop_integration/formats/create_a_format.md) of Sekoia.io made for this occasion on a personal Community.
 With the same playbook logic, we only changed the `Request URL` block configuration parameters as following:
 * **JSON**:
 ```json
