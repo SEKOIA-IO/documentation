@@ -350,7 +350,6 @@ nav:
       - Harfanglab: integration/categories/endpoint/harfanglab.md
       - IBM AIX: integration/categories/endpoint/ibm_aix.md
       - Kaspersky Endpoint Security: integration/categories/endpoint/kaspersky_endpoint_security.md
-      - Linux: integration/categories/endpoint/linux.md
       - Linux AuditBeat: integration/categories/endpoint/auditbeat_linux.md
       - Log Insight Windows: integration/categories/endpoint/log_insight_windows.md
       - Microsoft 365 Defender: integration/categories/endpoint/microsoft_365_defender.md
