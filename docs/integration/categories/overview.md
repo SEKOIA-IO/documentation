@@ -31,17 +31,6 @@ To ensure consistency and ease of use, each detailed page of an integration foll
 6. **Detection**: Information on detection capabilities related to the integration with a list of built-in rules, and the list of extracted fields that can be used for creating your own custom rules or hunting activites.
 7. **Further Readings**: Additional resources and links for further information.
 
-## Coverage Score
-
-To help assess the importance and extent of the integration within an enterprise, we introduce the concept of a Coverage Score:
-
-| Coverage Score | Description |
-| -------------- | ----------- |
-| 1              | Technology installed on a few machines only. It has limited scope and is not used extensively in the enterprise. |
-| 2              | Technology used in several parts of the enterprise, but not universally. It may cover specific departments or services. |
-| 3              | Technology widely deployed and used across a significant portion of the enterprise. It covers many users or systems within the IT infrastructure. |
-| 4              | Technology utilized by the majority of the IT infrastructure of the enterprise. It is essential and generally used by most employees and systems within the company. |
-
 ## Valuable Resources
 
 To enhance your experience and keep you informed about our latest developments, we recommend exploring the following resources:

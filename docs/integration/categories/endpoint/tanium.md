@@ -7,11 +7,11 @@ Tanium solutions manage and protect networks and endpoints.
 
 - **Vendor**: Tanium
 - **Plan**: Defend Prime
-- **Supported environment**: On Cloud / On Premise
-- **Version compatibility**:
+- **Supported environment**: On Premise
+- **Version compatibility**:7.5.6
 - **Detection based on**: Telemetry
 - **Supported application or feature**: File, Network, Process, Registry
-- **Coverage Score**: 4
+
 
 ## Configure
 Tanium logs can be collected under the rsyslog format and then forward to Sekoia.io. Refer to the official documentation of Tanium to forward your logs under rsyslog format and consult the [Rsyslog Transport](../../../ingestion_methods/rsyslog/) documentation to forward these logs to Sekoia.io.

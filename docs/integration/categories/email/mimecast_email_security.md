@@ -7,11 +7,10 @@ A secure email gateway to block spam, viruses, and malware.
 
 - **Vendor**: Mimecast
 - **Plan**: Defend Prime
-- **Supported environment**: On Cloud / On Premise
-- **Version compatibility**:
+- **Supported environment**: Cloud 
 - **Detection based on**: Telemetry
 - **Supported application or feature**: Email gateway
-- **Coverage Score**: 3
+
 
 !!! warning
     Important note - This format is currently in beta. We highly value your feedback to improve its performance.

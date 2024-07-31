@@ -11,11 +11,10 @@ This setup guide shows how to forward EDR alerts collected on the Palo Alto Cort
 
 - **Vendor**: Palo Alto
 - **Plan**: Defend Prime
-- **Supported environment**: On Cloud / On Premise
-- **Version compatibility**: 3.8
+- **Supported environment**: Cloud 
 - **Detection based on**: Telemetry / Alert
 - **Supported application or feature**: Network device logs
-- **Coverage Score**: 4
+
 
 ## Collected events
 

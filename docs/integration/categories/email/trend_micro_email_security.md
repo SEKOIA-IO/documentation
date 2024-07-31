@@ -7,11 +7,10 @@ Trend Micro Email Security is a robust email protection solution that safeguards
 
 - **Vendor**: Trend Micro
 - **Plan**: Defend Prime
-- **Supported environment**: On Cloud / On Premise
-- **Version compatibility**:
+- **Supported environment**: Cloud 
 - **Detection based on**: Telemetry
 - **Supported application or feature**: Email gateway
-- **Coverage Score**: 3
+
 
 ## Configure
 

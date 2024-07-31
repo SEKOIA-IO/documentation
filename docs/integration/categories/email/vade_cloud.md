@@ -10,11 +10,10 @@ In this documentation we will explain how to collect and send Vade Cloud logs to
 
 - **Vendor**: Vade
 - **Plan**: Defend Prime
-- **Supported environment**: On Cloud
-- **Version compatibility**:
+- **Supported environment**: Cloud
 - **Detection based on**: Telemetry
 - **Supported application or feature**: Email gateway, Anti-virus
-- **Coverage Score**: 3
+
 
 ## Configure
 
