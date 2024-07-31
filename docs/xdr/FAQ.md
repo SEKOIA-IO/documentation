@@ -58,9 +58,9 @@ Logs are available and displayed for 30 days in Sekoia.io, for standard contract
 
 **Restoration process**
 
-- The request must be made to [support@sekoia.io](mailto:support@sekoia.io)
+- The request must be made to [support](https://support.sekoia.io)
 
-- We try to restore in less than 48 working hours
+- Rehydratation process will be launched within 48 working hours
 
 - The data requested must be less than 12 months old (the end date of the requested period must be less than 365 days)
 
