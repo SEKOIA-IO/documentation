@@ -7,3 +7,4 @@ This section describes some principles which can help define how to generate the
 - [Authentications](authentications.md)
 - [Networks](networks.md)
 - [Endpoints](endpoints.md)
+
