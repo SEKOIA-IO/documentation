@@ -5,3 +5,5 @@ Raw events may represent information in different ways. For each datasource, the
 This section describes some principles which can help define how to generate the JSON document.
 
 - [Authentications](authentications.md)
+- [Networks](networks.md)
+- [Endpoints](endpoints.md)
