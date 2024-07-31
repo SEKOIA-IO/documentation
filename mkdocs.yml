@@ -350,6 +350,7 @@ nav:
       - Harfanglab: integration/categories/endpoint/harfanglab.md
       - IBM AIX: integration/categories/endpoint/ibm_aix.md
       - Kaspersky Endpoint Security: integration/categories/endpoint/kaspersky_endpoint_security.md
+      - Linux: integration/categories/endpoint/linux.md
       - Linux AuditBeat: integration/categories/endpoint/auditbeat_linux.md
       - Log Insight Windows: integration/categories/endpoint/log_insight_windows.md
       - Microsoft 365 Defender: integration/categories/endpoint/microsoft_365_defender.md
@@ -700,6 +701,7 @@ plugins:
       xdr/features/collect/integrations/endpoint/eset_protect.md: integration/categories/endpoint/eset_protect.md
       xdr/features/collect/integrations/endpoint/harfanglab.md: integration/categories/endpoint/harfanglab.md
       xdr/features/collect/integrations/endpoint/ibm_aix.md: integration/categories/endpoint/ibm_aix.md
+      xdr/features/collect/integrations/endpoint/linux.md: integration/categories/endpoint/linux.md
       xdr/features/collect/integrations/endpoint/kaspersky_endpoint_security.md: integration/categories/endpoint/kaspersky_endpoint_security.md
       xdr/features/collect/integrations/endpoint/log_insight_windows.md: integration/categories/endpoint/log_insight_windows.md
       xdr/features/collect/integrations/endpoint/microsoft_intune.md: integration/categories/endpoint/microsoft_intune.md
