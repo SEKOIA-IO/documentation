@@ -387,6 +387,7 @@ nav:
       - Wallix: integration/categories/iam/wallix.md
     - Network:
       - Amazon VPC Flow Logs: integration/categories/network/aws_flow_logs.md
+      - Azure Application Gateway: integration/categories/network/azure_application_gateway.md
       - ArubaOS Switch: integration/categories/network/arubaos.md
       - BIND: integration/categories/network/bind.md
       - Cato SASE: integration/categories/network/cato_sase.md
@@ -457,6 +458,7 @@ nav:
       - Sophos Threat Analysis Center: integration/categories/network_security/sophos_threat_analysis_center.md
       - Stormshield Network Security: integration/categories/network_security/stormshield_network_security.md
       - Suricata: integration/categories/network_security/suricata.md
+      - Thinkst Canary: integration/categories/network_security/thinkst_canary.md
       - Trellix Network Security: integration/categories/network_security/trellix_nx.md
       - Trellix ePO: integration/categories/network_security/trellix_epo.md
       - Trend Micro Deep Security / Workload Security: integration/categories/network_security/trend_micro_deep_security.md
