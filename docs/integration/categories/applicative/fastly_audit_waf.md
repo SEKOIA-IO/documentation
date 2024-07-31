@@ -12,9 +12,6 @@ type: intake
 
 Fastly WAF audit logs tracks activities related to your corp and your sites like user creation, rule creation, site configuration changes.
 
-!!! warning
-    Important note - This format is currently in beta. We highly value your feedback to improve its performance.
-
 
 
 ## Configure
