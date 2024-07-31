@@ -700,6 +700,7 @@ plugins:
       xdr/features/collect/integrations/endpoint/eset_protect.md: integration/categories/endpoint/eset_protect.md
       xdr/features/collect/integrations/endpoint/harfanglab.md: integration/categories/endpoint/harfanglab.md
       xdr/features/collect/integrations/endpoint/ibm_aix.md: integration/categories/endpoint/ibm_aix.md
+      xdr/features/collect/integrations/endpoint/linux.md: integration/categories/endpoint/linux.md
       xdr/features/collect/integrations/endpoint/kaspersky_endpoint_security.md: integration/categories/endpoint/kaspersky_endpoint_security.md
       xdr/features/collect/integrations/endpoint/log_insight_windows.md: integration/categories/endpoint/log_insight_windows.md
       xdr/features/collect/integrations/endpoint/microsoft_intune.md: integration/categories/endpoint/microsoft_intune.md
