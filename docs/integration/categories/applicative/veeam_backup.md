@@ -6,7 +6,7 @@ type: intake
 - **Vendor**: Veeam
 - **Plan**: Defend Core & Defend Prime
 - **Supported environment**: On-premise
-- **Version compatibility**: 11 and newer
+- **Version compatibility**: 12 and newer
 - **Detection based on**: Telemetry
 - **Supported application or feature**: Application Logs
 
