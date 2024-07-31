@@ -29,7 +29,8 @@ Syslog server address in DatAlert:
 1. In DatAdvantage, select `Tools` > `DatAlert`. DatAlert is displayed.
 2. From the left menu, select `Configuration`.
 3. In the `Syslog Message Forwarding` section, fill the Syslog server IP address and the Port with the ip address and the port of the log concentrator.
-4. Click OK
+4. The expected severity is `info`
+5. Click OK
 
 ![Varonis DatAlert configure syslog](/assets/integration/network/varonis_data_security/configure_syslog.jpg){: style="max-width:100%"}
 
