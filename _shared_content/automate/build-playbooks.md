@@ -61,3 +61,19 @@ To create a playbook from scratch, you will need to create an empty playbook, go
 Please refer to the documentation for each of these types to learn how to use them efficiently.
 
 You can refer to our [playbook templates](https://github.com/SEKOIA-IO/Community/tree/main/playbooks/templates) and [use cases](/xdr/usecases/playbook/synchronize_alerts/) for inspiration.
+
+## Meta-playbook creation
+
+When creating a playbook from a Workspace, user  can decide to which communities the playbook will apply to. User can select multiple communities in list or all communities by clicking “Select all”, it will create a meta-playbook when finalizing all steps of creation form.
+
+![playbooks-meta-new](/assets/operation_center/playbooks/playbooks-meta-new.png){: style="max-width:100%"}
+
+![playbooks-meta-new-empty](/assets/operation_center/playbooks/playbooks-meta-new-empty.png){: style="max-width:100%"}
+
+If the user chooses to include only one child-type community (i.e. a non-parent community), there will be a final step where the user can decide whether the playbook remains a 'single tenant' playbook or becomes a Meta-playbook, allowing additional Communities to be added later.
+
+![playbooks-meta-single](/assets/operation_center/playbooks/playbooks-meta-single.png){: style="max-width:100%"}
+
+![playbooks-meta-access-ok](/assets/operation_center/playbooks/playbooks-meta-access-ok.png){: style="max-width:100%"}
+
+![playbooks-meta-access-ko](/assets/operation_center/playbooks/playbooks-meta-access-ko.png){: style="max-width:100%"}

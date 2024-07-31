@@ -1,4 +1,4 @@
-## Related Built-in Rules
+### Related Built-in Rules
 
 The following Sekoia.io built-in rules match the intake **ESET Protect [BETA]**. This documentation is updated automatically and is based solely on the fields used by the intake which are checked against our rules. This means that some rules will be listed but might not be relevant with the intake.
 
@@ -57,6 +57,12 @@ The following Sekoia.io built-in rules match the intake **ESET Protect [BETA]**.
     
     - **Effort:** intermediate
 
+??? abstract "DNS Query For Iplookup"
+    
+    Detects dns query of observables tagged as iplookup.
+    
+    - **Effort:** master
+
 ??? abstract "Dllhost Wrong Parent"
     
     Dllhost.exe is a process belonging to Microsoft Windows Operating System. The dllhost.exe file manages DLL based applications. This rule analyse if the parent of this process is a legitimate one or not.
@@ -66,6 +72,24 @@ The following Sekoia.io built-in rules match the intake **ESET Protect [BETA]**.
 ??? abstract "Dynamic DNS Contacted"
     
     Detect communication with dynamic dns domain. This kind of domain is often used by attackers. This rule can trigger false positive in non-controlled environment because dynamic dns is not always malicious.
+    
+    - **Effort:** master
+
+??? abstract "ESET Protect Intrusion Detection"
+    
+    Detects when the solution ESET Protect detects an intrusion.
+    
+    - **Effort:** master
+
+??? abstract "ESET Protect Malware"
+    
+    Detects when Eset Protect tagged an event as linked to a malware with infected files.
+    
+    - **Effort:** master
+
+??? abstract "ESET Protect Vulnerability Exploitation Attempt"
+    
+    Detects when an attempt is made to exploit a vulnerability.
     
     - **Effort:** master
 

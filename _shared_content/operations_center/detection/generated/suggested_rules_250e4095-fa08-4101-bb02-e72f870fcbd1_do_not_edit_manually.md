@@ -1,4 +1,4 @@
-## Related Built-in Rules
+### Related Built-in Rules
 
 The following Sekoia.io built-in rules match the intake **Sekoia.io Endpoint Agent**. This documentation is updated automatically and is based solely on the fields used by the intake which are checked against our rules. This means that some rules will be listed but might not be relevant with the intake.
 
@@ -506,6 +506,12 @@ The following Sekoia.io built-in rules match the intake **Sekoia.io Endpoint Age
     Well-known DNS exfiltration tools execution
     
     - **Effort:** intermediate
+
+??? abstract "DNS Query For Iplookup"
+    
+    Detects dns query of observables tagged as iplookup.
+    
+    - **Effort:** master
 
 ??? abstract "DNS Server Error Failed Loading The ServerLevelPluginDLL"
     
@@ -1377,6 +1383,12 @@ The following Sekoia.io built-in rules match the intake **Sekoia.io Endpoint Age
     
     - **Effort:** intermediate
 
+??? abstract "Netscan Share Access Artefact"
+    
+    Detects netscan artefact on windows network share - indicate network share discovery.
+    
+    - **Effort:** intermediate
+
 ??? abstract "Netsh Allow Command"
     
     Netsh command line to allow a program to pass through firewall.
@@ -2162,6 +2174,12 @@ The following Sekoia.io built-in rules match the intake **Sekoia.io Endpoint Age
     Detects known sensitive file extensions accessed on a network share. This activity could possibly correspond to a malicious one (removing backup, reading sensitive files, etc.).
     
     - **Effort:** master
+
+??? abstract "Suspicious Certificate Request-adcs Abuse"
+    
+    Detects when a new certificate is requested or granted against Active Directory Certificate Services (AD CS) using a Subject Alternative Name (SAN)
+    
+    - **Effort:** elementary
 
 ??? abstract "Suspicious Cmd File Copy Command To Network Share"
     

@@ -1,4 +1,4 @@
-## Related Built-in Rules
+### Related Built-in Rules
 
 The following Sekoia.io built-in rules match the intake **AWS CloudTrail**. This documentation is updated automatically and is based solely on the fields used by the intake which are checked against our rules. This means that some rules will be listed but might not be relevant with the intake.
 
@@ -236,6 +236,12 @@ The following Sekoia.io built-in rules match the intake **AWS CloudTrail**. This
     Detects when the transfer lock feature is disabled on a domain name handled by AWS Route 53 service.
     
     - **Effort:** elementary
+
+??? abstract "AWS CloudTrail S3 Bucket Replication"
+    
+    Detects a replication rule being enable for a given S3 bucket: it could provide an attacker a way to exfiltrate data.
+    
+    - **Effort:** master
 
 ??? abstract "Account Added To A Security Enabled Group"
     

@@ -47,7 +47,7 @@ These two ways will create an Azure Event Hub and a Storage Account.
     When the message **Your deployment is complete** is displayed, click on **Outputs**.
 
     <div style="text-align: center;">
-        <img width="90%" alt="image" src="/assets/operation_center/integration_catalog/cloud_and_saas/event_hub/eventhub_template.png">
+        <img width="90%" alt="image" src="/assets/integration/cloud_and_saas/event_hub/eventhub_template.png">
     </div>
 
     Keep these 5 pieces of information displayed carefully, it will used to configure the **Trigger Configuration** of the Sekoia playbook.
@@ -78,7 +78,7 @@ These two ways will create an Azure Event Hub and a Storage Account.
     1. Go to: [Home > Cost Management + Billing > Subscriptions](https://portal.azure.com/#view/Microsoft_Azure_CostManagement/Menu/~/overview).
     2. From there, keep the relevant “Subscription ID” that will be used along the process.
     <div style="text-align: center;">
-        <img width="90%" alt="image" src="/assets/operation_center/integration_catalog/cloud_and_saas/event_hub/subscriptionid.png">
+        <img width="90%" alt="image" src="/assets/integration/cloud_and_saas/event_hub/subscriptionid.png">
     </div>
 
     **Step 2: Create Event Hub Namespace**
@@ -93,7 +93,7 @@ These two ways will create an Azure Event Hub and a Storage Account.
     7. Select the [throughput units](https://learn.microsoft.com/en-us/azure/event-hubs/event-hubs-scalability#throughput-units) number based on your events, or enable the auto inflate mode:
         1 throughput unit can process up to 1 MB per second or 1000 events per second (whichever comes first).
     <div style="text-align: center;">
-        <img width="90%" alt="image" src="/assets/operation_center/integration_catalog/cloud_and_saas/event_hub/eh_namespace.png">
+        <img width="90%" alt="image" src="/assets/integration/cloud_and_saas/event_hub/eh_namespace.png">
     </div>
 
     **Step 3: Create Event Hub Instance**
@@ -108,7 +108,7 @@ These two ways will create an Azure Event Hub and a Storage Account.
     6. Click `Create`
 
     <div style="text-align: center;">
-        <img width="90%" alt="image" src="/assets/operation_center/integration_catalog/cloud_and_saas/event_hub/eh.png">
+        <img width="90%" alt="image" src="/assets/integration/cloud_and_saas/event_hub/eh.png">
     </div>
 
     !!! info
@@ -119,12 +119,12 @@ These two ways will create an Azure Event Hub and a Storage Account.
     1. Navigate to [Home > Event Hubs](https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.EventHub%2Fnamespaces) > company-eventhubnamespace > eventhubname | Shared access policies.
     2. Create a policy (e.g. `sekoiaio`) with the claims `Listen`.
         <div style="text-align: center;">
-            <img width="90%" alt="image" src="/assets/operation_center/integration_catalog/cloud_and_saas/event_hub/shared_access_policies_instance.png">
+            <img width="90%" alt="image" src="/assets/integration/cloud_and_saas/event_hub/shared_access_policies_instance.png">
         </div>
 
     3. Once created, click on the policy.
         <div style="text-align: center;">
-            <img width="90%" alt="image" src="/assets/operation_center/integration_catalog/cloud_and_saas/event_hub/connection_string.png">
+            <img width="90%" alt="image" src="/assets/integration/cloud_and_saas/event_hub/connection_string.png">
         </div>
 
     !!! info
@@ -136,7 +136,7 @@ These two ways will create an Azure Event Hub and a Storage Account.
     1. Navigate to [Home > Event Hubs](https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.EventHub%2Fnamespaces) > company-eventhubnamespace > eventhubname | Consumer groups.
     2. Create a **Consumer group** (e.g. `consumergroup_sekoiaio`).
     <div style="text-align: center;">
-        <img width="90%" alt="image" src="/assets/operation_center/integration_catalog/cloud_and_saas/event_hub/consumer_group.png">
+        <img width="90%" alt="image" src="/assets/integration/cloud_and_saas/event_hub/consumer_group.png">
     </div>
 
     !!! info
@@ -164,7 +164,7 @@ These two ways will create an Azure Event Hub and a Storage Account.
 
 
     <div style="text-align: center;">
-        <img width="90%" alt="image" src="/assets/operation_center/integration_catalog/cloud_and_saas/event_hub/storage_account.png">
+        <img width="90%" alt="image" src="/assets/integration/cloud_and_saas/event_hub/storage_account.png">
     </div>
 
     When your storage account is created you can create an container inside.
@@ -184,7 +184,7 @@ These two ways will create an Azure Event Hub and a Storage Account.
     1. Go to [Home > Storage accounts](https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.Storage%2FStorageAccounts) > storageaccoutname | Access Keys.
     2. Click on "Show Keys" on the first Connection String.
     <div style="text-align: center;">
-        <img width="90%" alt="image" src="/assets/operation_center/integration_catalog/cloud_and_saas/event_hub/access_key.png">
+        <img width="90%" alt="image" src="/assets/integration/cloud_and_saas/event_hub/access_key.png">
     </div>
 
     !!! info

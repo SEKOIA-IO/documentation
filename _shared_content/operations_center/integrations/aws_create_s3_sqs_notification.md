@@ -24,7 +24,7 @@ In order to set up the AWS architecture, you need an administator access to the 
     Once finished, it should be displayed on the left `CREATE_COMPLETE`. Click on the `Outputs` tab in order to retrieve the information needed for Sekoia playbook.
 
     <div style="text-align: center;">
-        <img width="100%" alt="image" src="/assets/operation_center/integration_catalog/cloud_and_saas/aws/aws_cloudformation.png">
+        <img width="100%" alt="image" src="/assets/integration/cloud_and_saas/aws/aws_cloudformation.png">
     </div>
 
 === "Manual"

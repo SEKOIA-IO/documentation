@@ -1,4 +1,4 @@
-Rules catalog includes **911 built-in detection rules** ([_last update on 2024-07-18_](rules_changelog.md)).
+Rules catalog includes **927 built-in detection rules** ([_last update on 2024-07-29_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Identity Information**
 
@@ -67,6 +67,12 @@ Rules catalog includes **911 built-in detection rules** ([_last update on 2024-0
     
 **Gather Victim Host Information**
 
+??? abstract "DNS Query For Iplookup"
+    
+    Detects dns query of observables tagged as iplookup.
+    
+    - **Effort:** master
+    
 ??? abstract "Wmic Suspicious Commands"
     
     Detects suspicious commands used by the process wmic to get informations on the system.
@@ -554,6 +560,12 @@ Rules catalog includes **911 built-in detection rules** ([_last update on 2024-0
     
 **Obtain Capabilities**
 
+??? abstract "ESET Protect Vulnerability Exploitation Attempt"
+    
+    Detects when an attempt is made to exploit a vulnerability.
+    
+    - **Effort:** master
+    
 ??? abstract "Privilege Escalation Awesome Scripts (PEAS)"
     
     Detect PEAS privileges escalation scripts and binaries
@@ -1024,6 +1036,12 @@ Rules catalog includes **911 built-in detection rules** ([_last update on 2024-0
 ??? abstract "Download Files From Suspicious TLDs"
     
     Detects download of certain file types from hosts in suspicious TLDs
+    
+    - **Effort:** master
+    
+??? abstract "ESET Protect Malware"
+    
+    Detects when Eset Protect tagged an event as linked to a malware with infected files.
     
     - **Effort:** master
     
@@ -2065,6 +2083,10 @@ Rules catalog includes **911 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 26/07/2024 - minor - Removing tools relationships as it was inaccurate
+            
 ??? abstract "PowerShell Malicious PowerShell Commandlets"
     
     Detects Commandlet names from well-known PowerShell exploitation frameworks (PowerSploit...).
@@ -2074,6 +2096,7 @@ Rules catalog includes **911 built-in detection rules** ([_last update on 2024-0
     - **Changelog:**
     
         - 23/01/2024 - minor - Adding exclusion pattern and selection commandlet
+        - 26/07/2024 - minor - Removing tools relationships as it was inaccurate
             
 ??? abstract "PowerShell NTFS Alternate Data Stream"
     
@@ -2835,6 +2858,12 @@ Rules catalog includes **911 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** master
     
+??? abstract "ESET Protect Intrusion Detection"
+    
+    Detects when the solution ESET Protect detects an intrusion.
+    
+    - **Effort:** master
+    
 ??? abstract "Exploit For CVE-2015-1641"
     
     Detects Winword process starting uncommon sub process MicroScMgmt.exe as used in exploits for CVE-2015-1641
@@ -2974,6 +3003,30 @@ Rules catalog includes **911 built-in detection rules** ([_last update on 2024-0
     Detects Excel spawning a process (rundll32 or wmic) running suspicious command-line. This behaviour could correspond to IcedID activity. 
     
     - **Effort:** elementary
+    
+??? abstract "Lacework Cloud Security Critical Severity Alert"
+    
+    Detects when a critical alert severity is raised by Lacework. This severity level might indicates a suspicious change in configuration or policy violation.
+    
+    - **Effort:** master
+    
+??? abstract "Lacework Cloud Security High Severity Alert"
+    
+    Detects when a high alert severity is raised by Lacework. This severity level might indicates a suspicious change in configuration or policy violation.
+    
+    - **Effort:** master
+    
+??? abstract "Lacework Cloud Security Low Severity Alert"
+    
+    Detects when a low alert severity is raised by Lacework. This severity level might indicates a change in configuration that could be malicious or not.
+    
+    - **Effort:** master
+    
+??? abstract "Lacework Cloud Security Medium Severity Alert"
+    
+    Detects when a medium alert severity is raised by Lacework. This severity level might indicates a suspicious activity such as new source from user connection.
+    
+    - **Effort:** master
     
 ??? abstract "Login Brute-Force Successful On SentinelOne EDR Management Console"
     
@@ -6633,6 +6686,12 @@ Rules catalog includes **911 built-in detection rules** ([_last update on 2024-0
     
         - 26/03/2024 - major - Rule's pattern field changed
             
+??? abstract "ESET Protect Set Policy"
+    
+    Detects when a new policy is set or removed.
+    
+    - **Effort:** master
+    
 ??? abstract "GPO Executable Delivery"
     
     Detects MSI binaries run through GPOs.
@@ -8773,6 +8832,12 @@ Rules catalog includes **911 built-in detection rules** ([_last update on 2024-0
     
         - 26/03/2024 - major - Rule's pattern field changed
             
+??? abstract "ESET Protect Set Policy"
+    
+    Detects when a new policy is set or removed.
+    
+    - **Effort:** master
+    
 ??? abstract "GPO Executable Delivery"
     
     Detects MSI binaries run through GPOs.
@@ -9779,6 +9844,10 @@ Rules catalog includes **911 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 22/07/2024 - minor - Update action field for ECS one
+            
 ??? abstract "AWS CloudTrail ECS Cluster Deleted"
     
     Detects when an attacker is destroying an AWS ECS Cluster
@@ -9820,6 +9889,36 @@ Rules catalog includes **911 built-in detection rules** ([_last update on 2024-0
     Detects when the transfer lock feature is disabled on a domain name handled by AWS Route 53 service.
     
     - **Effort:** elementary
+    
+??? abstract "AWS CloudTrail S3 Bucket Replication"
+    
+    Detects a replication rule being enable for a given S3 bucket: it could provide an attacker a way to exfiltrate data.
+    
+    - **Effort:** master
+    
+??? abstract "Lacework Cloud Security Critical Severity Alert"
+    
+    Detects when a critical alert severity is raised by Lacework. This severity level might indicates a suspicious change in configuration or policy violation.
+    
+    - **Effort:** master
+    
+??? abstract "Lacework Cloud Security High Severity Alert"
+    
+    Detects when a high alert severity is raised by Lacework. This severity level might indicates a suspicious change in configuration or policy violation.
+    
+    - **Effort:** master
+    
+??? abstract "Lacework Cloud Security Low Severity Alert"
+    
+    Detects when a low alert severity is raised by Lacework. This severity level might indicates a change in configuration that could be malicious or not.
+    
+    - **Effort:** master
+    
+??? abstract "Lacework Cloud Security Medium Severity Alert"
+    
+    Detects when a medium alert severity is raised by Lacework. This severity level might indicates a suspicious activity such as new source from user connection.
+    
+    - **Effort:** master
     
 **Network Boundary Bridging**
 
@@ -10289,6 +10388,18 @@ Rules catalog includes **911 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** master
     
+??? abstract "Correlation Internal Kerberos Password Spraying"
+    
+    Detect multiple Kerberos authentication failed on several account from one source
+    
+    - **Effort:** master
+    
+??? abstract "Correlation Internal Ntlm Password Spraying"
+    
+    Detect multiple NTLM authentication failed on several account from one source
+    
+    - **Effort:** master
+    
 ??? abstract "Entra ID Password Compromised By Known Credential Testing Tool"
     
     Detects a sign-in that has a correlation ID known to be used by malicious credential testing scripts. Note that even if the sign-in was blocked by MFA (error 50074) or device authentication (error 50097), these verifications only occur after the correct password was submitted. The account's password must still be considered compromised, and be changed.
@@ -10440,6 +10551,14 @@ Rules catalog includes **911 built-in detection rules** ([_last update on 2024-0
 ??? abstract "Potential Azure AD Phishing Page (Adversary-in-the-Middle)"
     
     Detects an HTTP request to an URL typical of the Azure AD authentication flow, but towards a domain that is not one the legitimate Microsoft domains used for Azure AD authentication.
+    
+    - **Effort:** intermediate
+    
+**Forced Authentication**
+
+??? abstract "Correlation Suspicious Authentication Coercer Behavior"
+    
+    Detect a possible NTLM Relay attack combine with authent coerce
     
     - **Effort:** intermediate
     
@@ -10623,6 +10742,12 @@ Rules catalog includes **911 built-in detection rules** ([_last update on 2024-0
     
 **Adversary-in-the-Middle**
 
+??? abstract "Correlation Suspicious Authentication Coercer Behavior"
+    
+    Detect a possible NTLM Relay attack combine with authent coerce
+    
+    - **Effort:** intermediate
+    
 ??? abstract "Entra ID Sign-In Via Known AiTM Phishing Kit"
     
     Detects a sign-in attempt from an IP address belonging to a known adversary-in-the-middle phishing kit.
@@ -10747,6 +10872,12 @@ Rules catalog includes **911 built-in detection rules** ([_last update on 2024-0
             
 **Steal or Forge Authentication Certificates**
 
+??? abstract "Suspicious Certificate Request-adcs Abuse"
+    
+    Detects when a new certificate is requested or granted against Active Directory Certificate Services (AD CS) using a Subject Alternative Name (SAN)
+    
+    - **Effort:** elementary
+    
 ??? abstract "Suspicious Kerberos Ticket"
     
     Detect suspicious Kerberos ticket based on on their parameters which suggest that it could be forged.
@@ -11183,6 +11314,12 @@ Rules catalog includes **911 built-in detection rules** ([_last update on 2024-0
     
 **Network Share Discovery**
 
+??? abstract "Netscan Share Access Artefact"
+    
+    Detects netscan artefact on windows network share - indicate network share discovery.
+    
+    - **Effort:** intermediate
+    
 ??? abstract "Network Share Discovery"
     
     Adversaries may look for folders and drives shared on remote systems as a means of identifying sources of information to gather as a precursor for Collection and to identify potential systems of interest for Lateral Movement. Networks often contain shared network drives and folders that enable users to access file directories on various systems across a network. File sharing over a Windows network occurs over the SMB protocol. This technique is frequently leveraged by threat actors such as APT32, APT41, Wizard Spider. But also, through the use of some malware such as Cobalt Strike, Empire, PlugX and Ramsay.
@@ -11495,6 +11632,12 @@ Rules catalog includes **911 built-in detection rules** ([_last update on 2024-0
     
         - 04/04/2024 - major - Rule's pattern field changed
             
+??? abstract "ESET Protect Remote Action"
+    
+    Detects when different remote commands are performed on the same hostname is a short amount of time.
+    
+    - **Effort:** master
+    
 ??? abstract "Registry Checked For Lanmanserver DisableCompression Parameter"
     
     Detects registry access for Lanmanserver\Parameters. The check of the value DisableCompression could be a sign of an attack trying to exploit SMBGhost vulnerability (CVE-2020-0796).
@@ -11667,6 +11810,12 @@ Rules catalog includes **911 built-in detection rules** ([_last update on 2024-0
             
 **Adversary-in-the-Middle**
 
+??? abstract "Correlation Suspicious Authentication Coercer Behavior"
+    
+    Detect a possible NTLM Relay attack combine with authent coerce
+    
+    - **Effort:** intermediate
+    
 ??? abstract "Entra ID Sign-In Via Known AiTM Phishing Kit"
     
     Detects a sign-in attempt from an IP address belonging to a known adversary-in-the-middle phishing kit.

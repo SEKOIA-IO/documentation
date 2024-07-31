@@ -8,35 +8,48 @@ In the playbooks’ homepage are listed all playbooks created within your commun
 
 From this page, you can:
 
-- Create a new playbook
+- Create a new `playbook` or `meta-playbook` (impacting multiple communities)
 - Search for available playbooks
-- Filter available playbooks by status (enabled/disabled)
-- Enable and disable playbooks directly from the listing using the toggle button
-- Access playbook runs
-
-### Details panel
-
-When clicking on a playbook from the list, a side panel appears with the main details about the playbook.
-![details-panel](/assets/operation_center/playbooks/details-panel.png){align=right, style="max-width:50%"}
-
-In this panel, you can:
-
-- Enable or disable the playbook with the toggle at the top
-- Edit playbook using the `edit` button
-- Access the `description` of the playbook
-- See how many runs have been going as well as their status (`in progress`, `succeeded`, `error`)
-- Quickly access last performed runs and filter them by status
-- Restart runs
+- Filter available playbooks by Activation (enabled/disabled)
+- Delete a playbook
+- Access to playbook runs by status: `all`, `in progress`, `error` and `succeeded`
+- Review playbook statuses : `ready to start`, `configuration issues`, `partially activated`, `failed runs`, `trigger crashed`. Status tags also allowed to access to its details directly
 
 ----
 
 ## Playbook details
 
-To access the detailed view of a playbook, you have to open the side panel that details the playbook in the listing page then click on the `Edit` button in the upper right side of the panel.
+To access the detailed view of a playbook just simply click on the applicable playbook card. Once on the playbook page, you should now see some ‘warning’ icons on tabs and inside configuration panel. These icons are here to guide you when there are some issues to resolve before the playbook can be activated.
 
-### Graphical view
+You can also now save your playbook from any tab, the save button is now in the header part of the playbook
 
-The graphical view is composed of three main sections:
+Some badges have been added to have a status about the playbook:
+
+- Configuration issues: some/all communities have some configuration issues detected. By clicking on it you’ll be redirected to the Workflow tab with the issue panel opened
+- Partially activated : some communities are running but not all of them. By clicking on it you’ll be redirected to the overview tab
+- Ready to start: there are no configuration issues on any community, playbook can be activated
+- Failed runs: some runs have failed. By clicking on it you’ll be redirected to the runs tab with a “failed” filter set
+- Trigger crashed: there is a log with criticy level "critical” inside the “Trigger logs” tab. By clicking on it you’ll be redirected to the Trigger logs tab with a “critical” filter set
+
+![playbooks-editing](/assets/operation_center/playbooks/playbook-editing.png){: style="max-width:100%"}
+
+### Overview
+
+This tab `Overview` lists all information related to the playbook:
+
+- The community where the playbook was created
+- The user who created the playbook
+- The user who last updated the playbook
+- Date of creation
+- Date of last update
+- Name of the last user who activated the playbook
+- Date of the last activation of the playbook
+- Description of the playbook
+- Community details, including the ability to add or remove communities, activate or deactivate communities for a given playbook, and review playbook statuses by community (e.g. configuration issues, failed rules or crashed triggers)
+
+### Workflow
+
+The workflow view is composed of three main sections:
 
 #### Actions library
 
@@ -93,10 +106,28 @@ Depending on the type of blocks, the content of the configuration panel changes.
 
 ##### Triggers
 
-| Section | Content |
+You can edit the trigger name directly in the header part.
+
+![playbooks-trigger-name](/assets/operation_center/playbooks/playbook-trigger-name.png){: style="max-width:100%"}
+
+| Tabs | Content |
 | --- | --- |
-| Build | Lists the Module Configuration and the Trigger Configuration as well as Variables and their values |
-| Logs | Lists all logs to help understand errors. Details of the error can be accessed by clicking on a log  |
+| Account | Lists the Module Configuration (possibility to create/edit/delete) - For MSSP : you’ll see one account by community |
+| Configuration | Lists the available Trigger Configurations, you can add/edit/delete |
+| Variables | Variables and their values  |
+
+For MSSP, there is a section for each community added into playbook on the Account and Configuration parts for Triggers.
+
+![playbooks-account-mssp](/assets/operation_center/playbooks/playbooks-account-mssp.png){: style="max-width:100%"}
+
+You can also add a new community with “+ Community” button and choose between your remaining communities.
+
+![playbooks-account-community](/assets/operation_center/playbooks/playbooks-account-community.png){: style="max-width:100%"}
+
+Community selection is made by clicking on it.
+To delete a community from a playbook, a “…” button can be found on community section header. By clicking on it, it will show a “Delete community” option.
+
+![playbooks-account-delete](/assets/operation_center/playbooks/playbooks-account-delete.png){: style="max-width:100%"}
 
 ##### Operator
 
@@ -126,18 +157,32 @@ Depending on the type of blocks, the content of the configuration panel changes.
 
 ##### Action
 
-| Section | Content |
+You can edit the action name directly in the header part.
+
+![playbooks-action-name](/assets/operation_center/playbooks/playbooks-action-name.png){: style="max-width:100%"}
+
+| Tabs | Content |
 | --- | --- |
-| Name | The name of your action that can be edited  |
-| Module Configuration | Lists existing configuration that may apply to your action. If no configuration is available, you can create a new one by clicking on `Create new configuration` OR edit an existing one  |
-| Configuration | Varies depending on the selected action. Contains a search bar as well as all configuration steps. The height of fields in this section can be extended by dragging the mouse on the lower right of the field  |
+| Account | Lists existing configuration that may apply to your action. If no configuration is available, you can create a new one by clicking `on Create new configuration` OR edit an existing one - For MSSP : you’ll see one account by community |
+| Configuration | Varies depending on the selected action. Contains a search bar as well as all configuration steps. The height of fields in this section can be extended by dragging the mouse on the lower right of the field |
 | Variables | Lists all variables related to the action. Contains name and description of the variable as well as a copy button to easily copy the value of the variable  |
 
 !!! note
     You can manually resize the configuration panel by clicking on the left edge of the panel and dragging the mouse left or right; the width of the panel  will change accordingly. Once your panel is set at a preferable width, let go of the mouse. The chosen size will be remembered for the next configurations.
 
+For MSSP, there is a section for each community added into playbook on the Account tab.
 
-### Playbook code
+![playbooks-action-mssp](/assets/operation_center/playbooks/playbooks-action-mssp.png){: style="max-width:100%"}
+
+Please see above “Triggers” part to see how to add or delete a community from a playbook
+
+#### Issue panel
+
+The issue panel has been enhanced to give details about the configuration issues in playbook for each community (in a MSSP context). When clicking on the “Go to issues” button, you’ll redirected directly on the right module and tab (Account/Configuration) to resolve the issue.
+
+![playbooks-issue-panel](/assets/operation_center/playbooks/playbooks-issue-panel.png){: style="max-width:100%"}
+
+### Code
 
 The code section is where you can find your playbook in JSON. You may use [JINJA 3.](https://jinja.palletsprojects.com/en/3.0.x/templates/) to fill variable fields.
 
@@ -163,25 +208,7 @@ print(msg)
 
 ```
 
-### Playbook details
-
-The tab `Details` lists all information related to the playbook.
-
-- The community where the playbook was created
-- The user who created the playbook
-- The user who last updated the playbook
-- Date of creation
-- Date of last update
-- Name of the last user who activated the playbook
-- Date of the last activation of the playbook
-- Description of the playbook
-
-!!! tip
-    You can edit the name and the description of the playbook by clicking on the `Edit` button next to the activation toggle.
-
----
-
-## Playbook runs
+### Runs
 The tab `Playbook runs` lists all runs that happened in the **last week**.
 
 The header points at the total number of playbook runs in the last week, the ones in progress, have succeeded and have failed.
@@ -198,7 +225,9 @@ To access the details of a run, just click on the run and you’ll be redirected
 
 From the graph view, click on the block of interest and the panel `Run results` will show.
 
-### Run results
+This tab includes filters for sorting by Status. Additionally, 'Meta-Playbooks' allows for filtering based on specific Communities.
+
+#### Run results
 
 Run results are accessible either from the tab `Runs` in the playbook or in the panel that details a [playbook's details](#details-panel).
 
@@ -212,3 +241,10 @@ This panel contains the following information:
 To switch to the block’s settings, click on the `edit` button on the top right of the panel.
 
 To switch back to run results, click on the button `Switch to run results` button.
+
+### Trigger logs
+
+This tab allows user to see all logs from a trigger configuration. It is usefull to quickly see configuration errors and to know why playbook is not working properly.
+
+This tab includes filters for sorting by Level (e.g. Critical, Debug, Info, etc.). Additionally, 'Meta-Playbooks' allows for filtering based on specific Communities.
+

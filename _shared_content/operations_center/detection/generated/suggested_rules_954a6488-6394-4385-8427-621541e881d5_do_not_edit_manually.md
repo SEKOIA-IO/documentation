@@ -1,4 +1,4 @@
-## Related Built-in Rules
+### Related Built-in Rules
 
 The following Sekoia.io built-in rules match the intake **Trellix EDR [ALPHA]**. This documentation is updated automatically and is based solely on the fields used by the intake which are checked against our rules. This means that some rules will be listed but might not be relevant with the intake.
 
@@ -188,6 +188,12 @@ The following Sekoia.io built-in rules match the intake **Trellix EDR [ALPHA]**.
     Well-known DNS exfiltration tools execution
     
     - **Effort:** intermediate
+
+??? abstract "DNS Query For Iplookup"
+    
+    Detects dns query of observables tagged as iplookup.
+    
+    - **Effort:** master
 
 ??? abstract "Data Compressed With Rar"
     
