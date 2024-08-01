@@ -526,12 +526,12 @@ nav:
       - Sekoia: integration/action_library/generic/sekoia-io.md
       - Utils: integration/action_library/generic/utils.md
     - IAM SASE:
-      - Duo: integration/action_library/iam_sase/duo.md
-      - Jumpcloud Directory Insights: integration/action_library/iam_sase/jumpcloud-directory-insights.md
-      - Microsoft Active Directory: integration/action_library/iam_sase/microsoft-active-directory.md
-      - Microsoft Entra ID: integration/action_library/iam_sase/microsoft-entra-id.md
-      - Microsoft Entra ID (Azure AD): integration/action_library/iam_sase/intra-id.md
-      - Okta: integration/action_library/iam_sase/okta.md
+      - Duo: integration/action_library/iam/duo.md
+      - Jumpcloud Directory Insights: integration/action_library/iam/jumpcloud-directory-insights.md
+      - Microsoft Active Directory: integration/action_library/iam/microsoft-active-directory.md
+      - Microsoft Entra ID: integration/action_library/iam/microsoft-entra-id.md
+      - Microsoft Entra ID (Azure AD): integration/action_library/iam/intra-id.md
+      - Okta: integration/action_library/iam/okta.md
     - Network:
       - Broadcom Cloud Secure Web Gateway: integration/action_library/network/broadcom-cloud-secure-web-gateway.md
       - Cato Networks: integration/action_library/network/cato-networks.md

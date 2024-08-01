@@ -98,7 +98,7 @@ These helpers need their associated trigger to function properly:
 
 ## Third-party applications
 
-- [Microsoft Entra ID (Azure AD) ](/integration/action_library/iam_sase/microsoft-entra-id.md)
+- [Microsoft Entra ID (Azure AD) ](/integration/action_library/iamosoft-entra-id.md)
 - [Microsoft Remote Server](/integration/action_library/applicative/microsoft-remote-server.md)
 - [Fortigate Firewalls](/integration/action_library/network/fortigate-firewalls.md)
 - [HarfangLab](/integration/action_library/endpoint/harfanglab.md)
