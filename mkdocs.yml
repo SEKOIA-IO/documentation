@@ -447,6 +447,7 @@ nav:
       - Datadome Protection: integration/categories/network_security/datadome_protection.md
       - Daspren Parad: integration/categories/network_security/daspren_parad.md
       - Digital Shadows SearchLight: integration/categories/network_security/digital_shadows.md
+      - ExtraHop Reveal(x) 360: integration/categories/network_security/extrahop_revealx_360.md
       - Fastly Next-Gen WAF: integration/categories/network_security/fastly_waf.md
       - Forcepoint Secure Web Gateway: integration/categories/network_security/forcepoint_web_gateway.md
       - FortiProxy: integration/categories/network_security/fortiproxy.md
@@ -525,7 +526,7 @@ nav:
       - RSS: integration/action_library/generic/rss.md
       - Sekoia: integration/action_library/generic/sekoia-io.md
       - Utils: integration/action_library/generic/utils.md
-    - IAM SASE:
+    - IAM:
       - Duo: integration/action_library/iam/duo.md
       - Jumpcloud Directory Insights: integration/action_library/iam/jumpcloud-directory-insights.md
       - Microsoft Active Directory: integration/action_library/iam/microsoft-active-directory.md
@@ -667,6 +668,7 @@ plugins:
       xdr/features/collect/integrations/cloud_and_saas/cloudflare/cloudflare-http-requests.md: integration/categories/network/cloudflare-http-requests.md
       xdr/features/collect/integrations/cloud_and_saas/datadome_protection.md: integration/categories/network_security/datadome_protection.md
       xdr/features/collect/integrations/cloud_and_saas/digital_shadows.md: integration/categories/network_security/digital_shadows.md
+      xdr/features/collect/integrations/cloud_and_saas/extrahop_revealx_360.md: integration/categories/network_security/extrahop_revealx_360.md
       xdr/features/collect/integrations/cloud_and_saas/fastly/fastly_audit_waf.md: integration/categories/applicative/fastly_audit_waf.md
       xdr/features/collect/integrations/cloud_and_saas/fastly/fastly_waf.md: integration/categories/network_security/fastly_waf.md
       xdr/features/collect/integrations/cloud_and_saas/github_audit_logs.md: integration/categories/applicative/github_audit_logs.md
@@ -779,6 +781,7 @@ plugins:
       xdr/features/collect/integrations/network/watchguard_firebox.md: integration/categories/network_security/watchguard_firebox.md
       xdr/features/collect/integrations/endpoint/sekoiaio/sekoiaio.md: integration/categories/endpoint/sekoiaio.md
       xdr/features/collect/integrations/index.md: integration/categories/index.md
+      xdr/features/collect/integrations/endpoint/sekoiaio.md: integration/categories/endpoint/sekoiaio.md
       getting_started/2fa.md: getting_started/account_security.md
       getting_started/apikey_creation.md: getting_started/manage_api_keys.md
       getting_started/first_steps.md: getting_started/index.md
