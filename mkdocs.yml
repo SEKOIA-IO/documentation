@@ -345,10 +345,13 @@ nav:
       - Check Point Harmony Mobile: integration/categories/endpoint/checkpoint_harmony_mobile.md
       - CrowdStrike Falcon: integration/categories/endpoint/crowdstrike_falcon.md
       - CrowdStrike Falcon Telemetry: integration/categories/endpoint/crowdstrike_falcon_telemetry.md
+      - Cybereason MalOp: integration/categories/endpoint/cybereason_malop.md
+      - Cybereason MalOp activity: integration/categories/endpoint/cybereason_malop_activity.md
       - Eset Protect: integration/categories/endpoint/eset_protect.md
       - Google Kubernetes Engine (GKE): integration/categories/endpoint/google_kubernetes_engine.md
       - Harfanglab: integration/categories/endpoint/harfanglab.md
       - IBM AIX: integration/categories/endpoint/ibm_aix.md
+      - IBM iSeries (AS/400): integration/categories/endpoint/ibm_i.md
       - Kaspersky Endpoint Security: integration/categories/endpoint/kaspersky_endpoint_security.md
       - Linux AuditBeat: integration/categories/endpoint/auditbeat_linux.md
       - Log Insight Windows: integration/categories/endpoint/log_insight_windows.md
@@ -356,9 +359,11 @@ nav:
       - Microsoft Intune: integration/categories/endpoint/microsoft_intune.md
       - Palo Alto Cortex XDR (EDR): integration/categories/endpoint/paloalto_cortex_edr.md
       - Panda Security Aether: integration/categories/endpoint/panda_security_aether.md
+      - SentinelOne: integration/categories/endpoint/sentinelone.md
       - SentinelOne Cloud Funnel 2.0: integration/categories/endpoint/sentinelone_cloudfunnel2.0.md
       - Sekoia.io Endpoint Agent: integration/categories/endpoint/sekoiaio.md
       - Sophos EDR: integration/categories/endpoint/sophos_edr.md
+      - Stormshield SES: docs/integration/categories/endpoint/stormshield_endpoint.md
       - Symantec Endpoint Protection: integration/categories/endpoint/symantec_epp.md
       - TEHTRIS Endpoint Detection & Reponse: integration/categories/endpoint/tehtris_edr.md
       - Tanium: integration/categories/endpoint/tanium.md
@@ -401,12 +406,15 @@ nav:
       - Cloudflare Gateway HTTP: integration/categories/network/cloudflare-gateway-http.md
       - Cloudflare Gateway Network: integration/categories/network/cloudflare-gateway-network.md
       - Cloudflare HTTP requests: integration/categories/network/cloudflare-http-requests.md
+      - EfficientIP SOLIDServer DDI: integration/categories/network/efficientip_solidserver_ddi.md
+      - Ekinops OneOS: integration/categories/network/ekinops_oneos.md
       - F5 BIG-IP: integration/categories/network/f5-big-ip.md
       - Forcepoint Secure Web Gateway: integration/categories/network/forcepoint_web_gateway.md
       - Google VPC Flow Logs: integration/categories/network/google_vpc_flow_logs.md
       - HAProxy: integration/categories/network/haproxy.md
       - ISC DHCP: integration/categories/network/dhcpd.md
       - Infoblox DDI: integration/categories/network/infoblox_ddi.md
+      - Juniper Network Switches: integration/categories/network/juniper_switches.md
       - Microsoft Always On VPN: integration/categories/network/microsoft_always_on_vpn.md
       - NGINX: integration/categories/network/nginx.md
       - Netfilter: integration/categories/network/netfilter.md
@@ -415,6 +423,7 @@ nav:
       - OpenVPN: integration/categories/network/openvpn.md
       - Pulse Connect Secure: integration/categories/network/pulse.md
       - Squid: integration/categories/network/squid.md
+      - Sesame it Jizo NDR: integration/categories/network/sesameit_jizo.md
       - Umbrella DNS Logs: integration/categories/network/umbrella_dns.md
       - Unbound: integration/categories/network/unbound.md
     - Network Security:
@@ -424,6 +433,7 @@ nav:
       - Amazon WAF: integration/categories/network_security/aws_waf.md
       - Azure Front Door: integration/categories/network_security/azure_front_door.md
       - Azure Network Watcher (NSG flow logs): integration/categories/network_security/azure_network_watcher.md
+      - Bitsight SPM: docs/integration/categories/network_security/bitsight_spm.md
       - Broadcom Cloud Secure Web Gateway: integration/categories/network_security/broadcom_cloud_swg.md
       - Broadcom Edge Secure Web Gateway: integration/categories/network_security/broadcom_edge_swg.md
       - Check Point: integration/categories/network_security/checkpoint.md
@@ -639,6 +649,7 @@ plugins:
       xdr/features/collect/integrations/cloud_and_saas/azure/azure_network_watcher.md: integration/categories/network_security/azure_network_watcher.md
       xdr/features/collect/integrations/cloud_and_saas/azure/azure_windows.md: integration/categories/endpoint/azure_windows.md
       xdr/features/collect/integrations/cloud_and_saas/azure/entra_id.md: integration/categories/iam/entra_id.md
+      xdr/features/collect/integrations/cloud_and_saas/bitsight_spm.md: integration/categories/network_security/bitsight_spm.md
       xdr/features/collect/integrations/cloud_and_saas/broadcom_cloud_swg.md: integration/categories/network_security/broadcom_cloud_swg.md
       xdr/features/collect/integrations/cloud_and_saas/cato_sase.md: integration/categories/network/cato_sase.md
       xdr/features/collect/integrations/cloud_and_saas/cisco_duo_security.md: integration/categories/iam/cisco_duo_security.md
@@ -695,18 +706,23 @@ plugins:
       xdr/features/collect/integrations/endpoint/checkpoint_harmony_mobile.md: integration/categories/endpoint/checkpoint_harmony_mobile.md
       xdr/features/collect/integrations/endpoint/crowdstrike_falcon.md: integration/categories/endpoint/crowdstrike_falcon.md
       xdr/features/collect/integrations/endpoint/crowdstrike_falcon_telemetry.md: integration/categories/endpoint/crowdstrike_falcon_telemetry.md
+      xdr/features/collect/integrations/endpoint/cybereason_malop_activity.md: integration/categories/endpoint/cybereason_malop_activity.md
+      xdr/features/collect/integrations/endpoint/cybereason_malop.md: integration/categories/endpoint/cybereason_malop.md
       xdr/features/collect/integrations/endpoint/darktrace_threat_visualizer.md: integration/categories/network_security/darktrace_threat_visualizer.md
       xdr/features/collect/integrations/endpoint/daspren_parad.md: integration/categories/network_security/daspren_parad.md
       xdr/features/collect/integrations/endpoint/eset_protect.md: integration/categories/endpoint/eset_protect.md
       xdr/features/collect/integrations/endpoint/harfanglab.md: integration/categories/endpoint/harfanglab.md
       xdr/features/collect/integrations/endpoint/ibm_aix.md: integration/categories/endpoint/ibm_aix.md
+      xdr/features/collect/integrations/endpoint/ibm_i.md: integration/categories/endpoint/ibm_i.md
       xdr/features/collect/integrations/endpoint/linux.md: integration/categories/endpoint/linux.md
       xdr/features/collect/integrations/endpoint/kaspersky_endpoint_security.md: integration/categories/endpoint/kaspersky_endpoint_security.md
       xdr/features/collect/integrations/endpoint/log_insight_windows.md: integration/categories/endpoint/log_insight_windows.md
       xdr/features/collect/integrations/endpoint/microsoft_intune.md: integration/categories/endpoint/microsoft_intune.md
       xdr/features/collect/integrations/endpoint/paloalto_cortex_edr.md: integration/categories/endpoint/paloalto_cortex_edr.md
       xdr/features/collect/integrations/endpoint/panda_security_aether.md: integration/categories/endpoint/panda_security_aether.md
+      xdr/features/collect/integrations/endpoint/sentinelone.md: integration/categories/endpoint/sentinelone.md
       xdr/features/collect/integrations/endpoint/sophos_edr.md: integration/categories/endpoint/sophos_edr.md
+      xdr/features/collect/integrations/endpoint/stormshield_endpoint.md: docs/integration/categories/endpoint/stormshield_endpoint.md
       xdr/features/collect/integrations/endpoint/symantec_epp.md: integration/categories/endpoint/symantec_epp.md
       xdr/features/collect/integrations/endpoint/tanium.md: integration/categories/endpoint/tanium.md
       xdr/features/collect/integrations/endpoint/tehtris_edr.md: integration/categories/endpoint/tehtris_edr.md
@@ -731,6 +747,8 @@ plugins:
       xdr/features/collect/integrations/network/cisco/cisco_nx_os.md: integration/categories/network/cisco_nx_os.md
       xdr/features/collect/integrations/network/cisco/cisco_wsa.md: integration/categories/network_security/cisco_wsa.md
       xdr/features/collect/integrations/network/citrix_netscaler_adc.md: integration/categories/network/citrix_netscaler_adc.md
+      xdr/features/collect/integrations/network/ekinops_oneos.md: integration/categories/network/ekinops_oneos.md
+      xdr/features/collect/integrations/network/efficientip_solidserver_ddi.md: integration/categories/network/efficientip_solidserver_ddi.md
       xdr/features/collect/integrations/network/f5-big-ip.md: integration/categories/network/f5-big-ip.md
       xdr/features/collect/integrations/network/forcepoint_web_gateway.md: integration/categories/network/forcepoint_web_gateway.md
       xdr/features/collect/integrations/network/fortigate.md: integration/categories/network_security/fortigate.md
@@ -738,6 +756,7 @@ plugins:
       xdr/features/collect/integrations/network/fortiweb.md: integration/categories/network_security/fortiweb.md
       xdr/features/collect/integrations/network/gatewatcher_aioniq.md: integration/categories/network_security/gatewatcher_aioniq.md
       xdr/features/collect/integrations/network/infoblox_ddi.md: integration/categories/network/infoblox_ddi.md
+      xdr/features/collect/integrations/network/juniper_switches.md: integration/categories/network/juniper_switches.md
       xdr/features/collect/integrations/network/microsoft_always_on_vpn.md: integration/categories/network/microsoft_always_on_vpn.md
       xdr/features/collect/integrations/network/netfilter.md: integration/categories/network/netfilter.md
       xdr/features/collect/integrations/network/olfeo_secure_web_gateway.md: integration/categories/network_security/olfeo_secure_web_gateway.md
@@ -745,6 +764,7 @@ plugins:
       xdr/features/collect/integrations/network/paloalto.md: integration/categories/network_security/paloalto.md
       xdr/features/collect/integrations/network/pulse.md: integration/categories/network/pulse.md
       xdr/features/collect/integrations/network/rubycat_prove_it.md: integration/categories/iam/rubycat_prove_it.md
+      xdr/features/collect/integrations/network/sesameit_jizo.md: integration/categories/network/sesameit_jizo.md
       xdr/features/collect/integrations/network/skyhigh_secure_web_gateway.md: integration/categories/network_security/skyhigh_secure_web_gateway.md
       xdr/features/collect/integrations/network/sonicwall_fw.md: integration/categories/network_security/sonicwall_fw.md
       xdr/features/collect/integrations/network/sonicwall_sma.md: integration/categories/network_security/sonicwall_sma.md
