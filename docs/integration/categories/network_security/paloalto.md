@@ -77,12 +77,14 @@ Palo Alto Networks offers an enterprise cybersecurity platform which provides ne
 5. In the `Profile Type` drop-down, select `Profiles` or `Groups`, and then select the security profiles or `Group Profiles` required to trigger log generation and forwarding.
 6. Select `Log At Session End` check boxes, and click `OK`.
 
-For detailed information about configuring a log forwarding profile and assigning the profile to a policy rule, see [Configure Log Forwarding](https://docs.paloaltonetworks.com/pan-os/9-1/pan-os-admin/monitoring/configure-log-forwarding.html#id1443a62b-8a0b-41db-a08d-5df934bf0ffc)
+For detailed information about configuring a log forwarding profile and assigning the profile to a policy rule, see [Configure Log Forwarding](https://docs.paloaltonetworks.com/pan-os/11-1/pan-os-admin/monitoring/configure-log-forwarding#id1443a62b-8a0b-41db-a08d-5df934bf0ffc_idd40c0d1a-7191-4616-9573-f02a99352eae)
 
-##### Configure syslog forwarding for System and User-ID logs
+##### Configure syslog forwarding for System, Configuration, GlobalProtect, HIP Match, and User-ID logs.
 
 1. In the GUI, go to `Device > Log Settings`.
 2. Click each Severity level (High and Critical if also fine), select the `Syslog server` profile, and click `OK`.
+
+Please follow [Configure Log Forwarding](https://docs.paloaltonetworks.com/pan-os/11-1/pan-os-admin/monitoring/configure-log-forwarding#id1443a62b-8a0b-41db-a08d-5df934bf0ffc_idd40c0d1a-7191-4616-9573-f02a99352eae) from the official Palo Alto documentation for more information.
 
 {!_shared_content/integration/forwarder_configuration.md!}
 
