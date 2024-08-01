@@ -782,6 +782,7 @@ plugins:
       xdr/features/collect/integrations/endpoint/sekoiaio/sekoiaio.md: integration/categories/endpoint/sekoiaio.md
       xdr/features/collect/integrations/index.md: integration/categories/index.md
       xdr/features/collect/integrations/endpoint/sekoiaio.md: integration/categories/endpoint/sekoiaio.md
+      xdr/features/collect/ingestion_methods.md: integration/ingestion_methods/index.md
       getting_started/2fa.md: getting_started/account_security.md
       getting_started/apikey_creation.md: getting_started/manage_api_keys.md
       getting_started/first_steps.md: getting_started/index.md
