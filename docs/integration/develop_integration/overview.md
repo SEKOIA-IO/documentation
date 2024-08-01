@@ -19,7 +19,7 @@
 #### Step 1. Understand the general concepts
 
 !!! warning
-    For this usecase, you must already be able to forward your data into Sekoia SOC platform with an existing [ingestion methods](https://docs.sekoia.io/xdr/features/collect/ingestion_methods/)
+    For this usecase, you must already be able to forward your data into Sekoia SOC platform with an existing [ingestion methods](/integration/ingestion_methods/)
 
 Before starting, read this [overview of intake format](../formats/overview/) to get a grasp of the general concepts.
 
