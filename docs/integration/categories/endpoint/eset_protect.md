@@ -65,13 +65,13 @@ To enable Syslog server in ESET Protect on On-Prem :
     1. In admin console go to `More` > `Settings`.
     2. Open `Advanced Settings` tab.
 
-![Advanced Settings](/docs/assets/instructions/eset_protect/enable_syslog_1.png)
+![Advanced Settings](/assets/instructions/eset_protect/enable_syslog_1.png)
 
     3. Click on `Syslog server` > `Use Syslog server`.
     4. Then click on `Logging` > `Export logs to Syslog` and choose `JSON` format.
     5. Save configuration.
 
-![Syslog configuration](/docs/assets/instructions/eset_protect/enable_syslog_2.png)
+![Syslog configuration](/assets/instructions/eset_protect/enable_syslog_2.png)
 
 To enable Syslog server in ESET Protect on Cloud:
     1. In admin console go to `More` > `Admin` > `Settings`.
@@ -87,7 +87,7 @@ To enable Syslog server in ESET Protect on Cloud:
     11. Click `Apply settings`
 
 
-![Advanced Settings](/docs/assets/instructions/eset_protect/cloud_syslog.png)
+![Advanced Settings](/assets/instructions/eset_protect/cloud_syslog.png)
 
 ### Instruction on Sekoia
 

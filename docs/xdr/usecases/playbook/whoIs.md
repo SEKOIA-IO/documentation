@@ -20,7 +20,7 @@ This use case describes how to use Whois module in order to enrich an IP address
 
 You can find the configuration below: 
 
-![Playbook WhoIS](/docs/assets/playbooks/library/UseCases/WhoIS.png)
+![Playbook WhoIS](/assets/playbooks/library/UseCases/WhoIS.png)
 
 | Module | Configuration |
 | --- | --- |
