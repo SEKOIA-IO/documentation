@@ -6,6 +6,12 @@ type: intake
 
 IBM iSeries (AS/400) is a robust, scalable family of midrange business computers running the IBM i operating system, known for its integrated DB2 database and strong security features.
 
+- **Vendor**: IBM
+- **Plan**: Defend Prime
+- **Supported environment**: On prem
+- **Version Compatibility**: 7.5
+- **Detection based on**: Telemetry
+
 !!! warning
 	Important - This integration requires the installation of Syslog Reporting Manager on IBM i, for which a fee is charged.
 

@@ -5,6 +5,11 @@ type: intake
 ## Overview
 Sesame it Jizo NDR is a network observability platform that enables decision-makers to anticipate, identify and block cyber-attacks.
 
+- **Vendor**: Sesame
+- **Plan**:  Defend Core & Defend Prime
+- **Supported environment**: Cloud
+- **Detection based on**: Alert
+
 !!! warning
     Important note - This format is currently in beta. We highly value your feedback to improve its performance.
 

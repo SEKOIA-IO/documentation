@@ -6,6 +6,12 @@ type: intake
 
 EfficientIP SOLIDserver suite of appliances is designed to deliver highly scalable, secure and robust virtual and hardware appliances for critical IPAM-DNS-DHCP-NTP-TFTP services.
 
+- **Vendor**: EfficientIP
+- **Plan**:  Defend Core & Defend Prime
+- **Supported environment**: On prem
+- **Version Compatibility**: 8.0
+- **Detection based on**: Telemetry
+
 !!! warning
     Important note - This format is currently in beta. We highly value your feedback to improve its performance.
 

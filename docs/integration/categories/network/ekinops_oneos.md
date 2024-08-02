@@ -6,6 +6,12 @@ type: intake
 
   Ekinops OneOS is a comprehensive and flexible network operating system designed to meet the evolving needs of modern telecommunications networks. It provides a unified platform for managing and orchestrating a wide range of network functions, including routing, switching, security, and more. With its modular architecture and open APIs, OneOS enables network operators to easily deploy and scale their networks, while also providing the flexibility to integrate with third-party applications and services. This allows for greater innovation and agility in network operations, ultimately leading to improved service delivery and customer satisfaction.
 
+- **Vendor**: Ekinops
+- **Plan**:  Defend Prime
+- **Supported environment**: On prem
+- **Version Compatibility**: 6 R13.0
+- **Detection based on**: Telemetry
+
 ## Configure
 
 This setup guide will show you how to forward your Ekinops OneOS logs to Sekoia.io by means of a syslog transport channel.
