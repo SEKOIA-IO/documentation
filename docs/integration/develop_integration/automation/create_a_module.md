@@ -461,7 +461,7 @@ poetry run python3 compliance check --module modules\<module_name>
 Once you are done developing and testing your automation, the last step is to request an homologation to Sekoia. Once your automation is homologated, it will appear in the playbook library of **Sekoia SOC platform**:
 
 - Create a pull request
-- Send an email to [team-integration@sekoia.io](mailto:team-integration@sekoia.io) with the pull request link
+- Send an email to [homologation-request@sekoia.io](mailto:homologation-request@sekoia.io) with the pull request link
 - You will get an acknowledgement from Sekoia Integration team
 - In the following days (5 days max), you will receive feedbacks in your pull request that you must take into account
 - Once all feedbacks are taken into account, Integration team will **validate** your pull request
