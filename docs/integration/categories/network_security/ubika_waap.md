@@ -7,7 +7,7 @@ Ubika WAAP Gateway detect and prevent threats against your web applications and 
 
 - **Vendor**: Ubika
 - **Plan**: Prime
-- **Supported environment**: Saas
+- **Supported environment**: SaaS
 - **Detection based on**: Alert, Telemetry
 - **Supported application or feature**: Web application firewall logs
 

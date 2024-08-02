@@ -4,7 +4,7 @@ Sekoia is providing an application for Splunk to detect threats in your logs bas
  
 ## Prerequisites
 
-- An operational Splunk instance with administrator privileges (**Enterprise** for OnPrem or **Cloud** for the Saas version)
+- An operational Splunk instance with administrator privileges (**Enterprise** for OnPrem or **Cloud** for the SaaS version)
 - An active Sekoia.io license with access to the CTI
 - An access to Sekoia.io User Center with the role that contains the permission to [create an API key](https://docs.sekoia.io/getting_started/manage_api_keys/) (e.g. Built-in [Analyst Role](https://docs.sekoia.io/getting_started/roles/#functionality-of-built-in-roles) or create a custom role with [ic_viewer permissions](https://docs.sekoia.io/getting_started/roles/#legacy-roles) <a name="api_key"></a>
 

@@ -7,7 +7,7 @@ type: intake
 Vade for M365 offers AI-based protection against dynamic, email-borne cyberattacks targeting Microsoft 365.
 It improves user experience and catches 10x more advanced threats than Microsoft.
 
-In this documenation we will explain how to collect and send Vade for M365 logs to Sekoia.io.
+In this documentation we will explain how to collect and send Vade for M365 logs to Sekoia.io.
 
 - **Vendor**: Vade
 - **Plan**: Defend Prime

@@ -8,7 +8,7 @@ Cybereason offers a set of Endpoint Detection and Response (EDR) solutions. Thro
 
 - **Vendor**: Cybereason
 - **Plan**: Defend Core & Defend Prime
-- **Supported environment**: Saas
+- **Supported environment**: SaaS
 - **Detection based on**: Alert
 
 !!! warning
