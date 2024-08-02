@@ -14,7 +14,7 @@ Digital Shadows SearchLight continuously searches and identifies any unwanted ex
 
 ## Step-by-Step Configuration Procedure
 
-In this documenation we will explain how to collect and send SearchLight logs to Sekoia.io.
+In this documentation we will explain how to collect and send SearchLight logs to Sekoia.io.
 
 ### Instructions on the 3rd Party Solution
 
