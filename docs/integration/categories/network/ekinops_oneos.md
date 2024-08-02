@@ -6,10 +6,6 @@ type: intake
 
   Ekinops OneOS is a comprehensive and flexible network operating system designed to meet the evolving needs of modern telecommunications networks. It provides a unified platform for managing and orchestrating a wide range of network functions, including routing, switching, security, and more. With its modular architecture and open APIs, OneOS enables network operators to easily deploy and scale their networks, while also providing the flexibility to integrate with third-party applications and services. This allows for greater innovation and agility in network operations, ultimately leading to improved service delivery and customer satisfaction.
 
-{!_shared_content/operations_center/detection/generated/suggested_rules_4760d0bc-2194-44e5-a876-85102b18d832_do_not_edit_manually.md!}
-
-{!_shared_content/operations_center/integrations/generated/4760d0bc-2194-44e5-a876-85102b18d832.md!}
-
 ## Configure
 
 This setup guide will show you how to forward your Ekinops OneOS logs to Sekoia.io by means of a syslog transport channel.
@@ -48,3 +44,11 @@ Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a n
 ### Forward logs to Sekoia.io
 
 Please consult the [Syslog Forwarding](../../../ingestion_methods/sekoiaio_forwarder/) documentation to forward these logs to Sekoia.io.
+
+{!_shared_content/operations_center/integrations/generated/4760d0bc-2194-44e5-a876-85102b18d832_sample.md!}
+
+
+{!_shared_content/integration/detection_section.md!}
+
+{!_shared_content/operations_center/detection/generated/suggested_rules_4760d0bc-2194-44e5-a876-85102b18d832_do_not_edit_manually.md!}
+{!_shared_content/operations_center/integrations/generated/4760d0bc-2194-44e5-a876-85102b18d832.md!}

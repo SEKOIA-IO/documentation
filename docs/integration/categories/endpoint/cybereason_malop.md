@@ -6,14 +6,15 @@ type: intake
 
 Cybereason offers a set of Endpoint Detection and Response (EDR) solutions. Through the Cybereason platform, all suspicious operations will be gathered in MalOps, a multi-stage visualizations of device activities.
 
+- **Vendor**: Cybereason
+- **Plan**: Defend Core & Defend Prime
+- **Supported environment**: Saas
+- **Detection based on**: Alert
+
 !!! warning
     If your tenant uses an allowlist to authorize connections, please ensure that Sekoia.io's IPs are allowed.
     See our [FAQ](../../../../FAQ.md) to get our IPs.
 
-
-{!_shared_content/operations_center/detection/generated/suggested_rules_9f89b634-0531-437b-b060-a9d9f2d270db_do_not_edit_manually.md!}
-
-{!_shared_content/operations_center/integrations/generated/9f89b634-0531-437b-b060-a9d9f2d270db.md!}
 
 ## Configure
 
@@ -39,3 +40,12 @@ To start pulling events, you have to:
 2. Set up the module configuration with your Cybereason username and password.
 3. Set up the trigger configuration with your intake key
 4. Start the playbook and enjoy your [events](https://app.sekoia.io/operations/events).
+
+
+{!_shared_content/operations_center/integrations/generated/9f89b634-0531-437b-b060-a9d9f2d270db_sample.md!}
+
+
+{!_shared_content/integration/detection_section.md!}
+
+{!_shared_content/operations_center/detection/generated/suggested_rules_9f89b634-0531-437b-b060-a9d9f2d270db_do_not_edit_manually.md!}
+{!_shared_content/operations_center/integrations/generated/9f89b634-0531-437b-b060-a9d9f2d270db.md!}

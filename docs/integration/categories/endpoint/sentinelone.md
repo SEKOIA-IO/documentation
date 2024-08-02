@@ -22,10 +22,6 @@ Depending on the context of the log, additional content could be available, such
     For advanced log collection, we suggest you use the SentinelOne Cloud Funnel 2.0 option, as described in the [SentinelOne Cloud Funnel 2.0 integration](sentinelone_cloudfunnel2.0.md).
 
 
-{!_shared_content/operations_center/detection/generated/suggested_rules_07c556c0-0675-478c-9803-e7990afe78b6_do_not_edit_manually.md!}
-
-{!_shared_content/operations_center/integrations/generated/07c556c0-0675-478c-9803-e7990afe78b6.md!}
-
 ## Configure
 
 This setup guide will show you how to pull events produced by SentinelOne EDR on [Sekoia.io](https://app.sekoia.io/). To collect the SentinelOne logs, you must generate an API token from the SentinelOne Management Console. We recommend creating a Service User to use a dedicated account for the integration.
@@ -57,3 +53,11 @@ In the [Sekoia.io Operation Center](https://app.sekoia.io/operations/intakes):
 5. Enter the previously downloaded SentinelOne `API token` and the related `URL Domain`:
 
 ![SentinelOne EDR secret](/assets/operation_center/integration_catalog/endpoint/sentinelone/sentinelone_edr_api.png){: style="max-width:60%"}
+
+{!_shared_content/operations_center/integrations/generated/07c556c0-0675-478c-9803-e7990afe78b6_sample.md!}
+
+
+{!_shared_content/integration/detection_section.md!}
+
+{!_shared_content/operations_center/detection/generated/suggested_rules_07c556c0-0675-478c-9803-e7990afe78b6_do_not_edit_manually.md!}
+{!_shared_content/operations_center/integrations/generated/07c556c0-0675-478c-9803-e7990afe78b6.md!}
