@@ -6,6 +6,11 @@ type: intake
 
 Cybereason offers a set of Endpoint Detection and Response (EDR) solutions. Through the Cybereason platform, all suspicious operations will be gathered in MalOps, a multi-stage visualizations of device activities.
 
+- **Vendor**: Cybereason
+- **Plan**: Defend Prime
+- **Supported environment**: Saas
+- **Detection based on**: Telemetry
+
 Please find below information available in MalOp activities:
 
 - the list of affected machines
@@ -13,9 +18,6 @@ Please find below information available in MalOp activities:
 - all suspicious network connections
 - all suspicious executions
 
-{!_shared_content/operations_center/detection/generated/suggested_rules_0de050fb-3f56-4c7a-a9b6-76bf5298a617_do_not_edit_manually.md!}
-
-{!_shared_content/operations_center/integrations/generated/0de050fb-3f56-4c7a-a9b6-76bf5298a617.md!}
 
 ## Configure
 
@@ -51,3 +53,11 @@ $ cybereason-forwarders/scripts/run_forwarder.sh config/<my new configuration>.j
 ### Enjoy your events
 
 Go to the [Events page](https://app.sekoia.io/operations/events) and wait for your incoming events!
+
+{!_shared_content/operations_center/integrations/generated/0de050fb-3f56-4c7a-a9b6-76bf5298a617_sample.md!}
+
+
+{!_shared_content/integration/detection_section.md!}
+
+{!_shared_content/operations_center/detection/generated/suggested_rules_0de050fb-3f56-4c7a-a9b6-76bf5298a617_do_not_edit_manually.md!}
+{!_shared_content/operations_center/integrations/generated/0de050fb-3f56-4c7a-a9b6-76bf5298a617.md!}

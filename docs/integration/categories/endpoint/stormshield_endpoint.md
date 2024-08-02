@@ -6,9 +6,11 @@ type: intake
 
 Stormshield SES is a comprehensive cybersecurity solution designed to protect individual devices, such as computers and servers, from various cyber threats and attacks. It encompasses advanced features like antivirus, firewall, intrusion detection and prevention, application control, and data encryption. This solution aims to safeguard endpoints from malware, ransomware, phishing, and other malicious activities, while providing centralized management and real-time threat visibility for enhanced security posture.
 
-{!_shared_content/operations_center/detection/generated/suggested_rules_f5e6cf5e-bd9f-4caf-9098-fe4a9e0aeaa0_do_not_edit_manually.md!}
-
-{!_shared_content/operations_center/integrations/generated/f5e6cf5e-bd9f-4caf-9098-fe4a9e0aeaa0.md!}
+- **Vendor**: Stormshield
+- **Plan**:  Defend Core & Defend Prime
+- **Supported environment**: On prem
+- **Version Compatibility**: 7,0
+- **Detection based on**: Telemetry
 
 ## Configure
 
@@ -51,6 +53,13 @@ On the SES Agent handler machines:
 3. Import the certificate in the trusted root certification authorities certificate store of the machine
    ![Certificate store](/assets/operation_center/integration_catalog/endpoint/stormshield/stormshield_ses_03.png){: style="max-width:100%"} 
 
+{!_shared_content/operations_center/integrations/generated/f5e6cf5e-bd9f-4caf-9098-fe4a9e0aeaa0_sample.md!}
+
+
+{!_shared_content/integration/detection_section.md!}
+
+{!_shared_content/operations_center/detection/generated/suggested_rules_f5e6cf5e-bd9f-4caf-9098-fe4a9e0aeaa0_do_not_edit_manually.md!}
+{!_shared_content/operations_center/integrations/generated/f5e6cf5e-bd9f-4caf-9098-fe4a9e0aeaa0.md!}
 
 ## Further Readings
 

@@ -4,13 +4,12 @@ type: intake
 
 ## Overview
 
-ExtraHop Reveal(x) 360 is a cloud-based network detection and response platform offering protection and detections for on-premises and cloud environments.
+ExtraHop Reveal(x) 360 is a cloud-based network detection and response platform offering protection and detections for on-premises and cloud environments. In this documenation we will explain how to collect and send Reveal(x) 360 events to Sekoia.io.
 
-In this documenation we will explain how to collect and send Reveal(x) 360 events to Sekoia.io.
-
-{!_shared_content/operations_center/detection/generated/suggested_rules_1df44c62-33d3-41d4-8176-f1fa13589eea_do_not_edit_manually.md!}
-
-{!_shared_content/operations_center/integrations/generated/1df44c62-33d3-41d4-8176-f1fa13589eea.md!}
+- **Vendor**: ExtraHop
+- **Plan**:  Defend Core & Defend Prime
+- **Supported environment**: Cloud
+- **Detection based on**: Telemetry, Alert
 
 ## Configure
 
@@ -65,3 +64,11 @@ Go to the Sekoia.io [playbook page](https://app.sekoia.io/operations/playbooks),
 - **Activate the playbook** with the toggle button on the top right corner of the page
 
 ### Enjoy your events on the [Events page](https://app.sekoia.io/operations/events)
+
+{!_shared_content/operations_center/integrations/generated/1df44c62-33d3-41d4-8176-f1fa13589eea_sample.md!}
+
+
+{!_shared_content/integration/detection_section.md!}
+
+{!_shared_content/operations_center/detection/generated/suggested_rules_1df44c62-33d3-41d4-8176-f1fa13589eea_do_not_edit_manually.md!}
+{!_shared_content/operations_center/integrations/generated/1df44c62-33d3-41d4-8176-f1fa13589eea.md!}

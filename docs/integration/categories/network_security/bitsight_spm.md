@@ -6,6 +6,11 @@ type: intake
 
 Bitsight Security Performance Management enables organizations to continuously monitor, measure, and improve their cybersecurity performance by providing actionable insights and metrics on security posture and risk.
 
+- **Vendor**: BitSight Technologies
+- **Plan**: Defend Core & Defend Prime
+- **Supported environment**: Saas
+- **Detection based on**: Alert
+
 !!! warning
     Important note - This format is currently in beta. We highly value your feedback to improve its performance.
     
@@ -14,10 +19,6 @@ Bitsight Security Performance Management enables organizations to continuously m
 This integration supports the following events:
 
 - Findings (with vulnerability detail and asset detail)
-
-{!_shared_content/operations_center/detection/generated/suggested_rules_57eda191-2f93-4fd9-99a2-fd8ffbcdff50_do_not_edit_manually.md!}
-
-{!_shared_content/operations_center/integrations/generated/57eda191-2f93-4fd9-99a2-fd8ffbcdff50.md!}
 
 ## Configure
 
@@ -46,6 +47,14 @@ To start to pull events, you have to:
 1. Go to the [playbooks page](https://app.sekoia.io/operations/playbooks) and create a new playbook with the `Bitsight SPM` trigger
 2. Set up the module configuration with the Api Token and Company UUIds. Set up the trigger configuration with the intake key
 3. Start the playbook and enjoy your events
+
+{!_shared_content/operations_center/integrations/generated/57eda191-2f93-4fd9-99a2-fd8ffbcdff50_sample.md!}
+
+
+{!_shared_content/integration/detection_section.md!}
+
+{!_shared_content/operations_center/detection/generated/suggested_rules_57eda191-2f93-4fd9-99a2-fd8ffbcdff50_do_not_edit_manually.md!}
+{!_shared_content/operations_center/integrations/generated/57eda191-2f93-4fd9-99a2-fd8ffbcdff50.md!}
 
 ## Further readings
 - [Bitsight API Token Management](https://help.bitsighttech.com/hc/en-us/articles/115014888388-API-Token-Management)
