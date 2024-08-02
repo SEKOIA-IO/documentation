@@ -1,4 +1,4 @@
-# Retrieved logs from a Cloud provider or a Saas platform
+# Retrieved logs from a Cloud provider or a SaaS platform
 
 In addition to the previously documented push modes (HTTPS, Syslog, Relp), Sekoia.io also possesses the capability to ingest data using a pulling mode.
 

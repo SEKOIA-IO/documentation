@@ -8,7 +8,7 @@ Cybereason offers a set of Endpoint Detection and Response (EDR) solutions. Thro
 
 - **Vendor**: Cybereason
 - **Plan**: Defend Prime
-- **Supported environment**: Saas
+- **Supported environment**: SaaS
 - **Detection based on**: Telemetry
 
 Please find below information available in MalOp activities:

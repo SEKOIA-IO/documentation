@@ -8,7 +8,7 @@ Bitsight Security Performance Management enables organizations to continuously m
 
 - **Vendor**: BitSight Technologies
 - **Plan**: Defend Core & Defend Prime
-- **Supported environment**: Saas
+- **Supported environment**: SaaS
 - **Detection based on**: Alert
 
 !!! warning

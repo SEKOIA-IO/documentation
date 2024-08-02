@@ -8,7 +8,7 @@ Vectra provides AI-powered incident detection and resolution support for native 
 
 - **Vendor**:
 - **Plan**: Defend Core & Defend Prime
-- **Supported environment**: Saas
+- **Supported environment**: SaaS
 - **Detection based on**: Telemetry
 - **Supported application or feature**: Authentication logs
 
