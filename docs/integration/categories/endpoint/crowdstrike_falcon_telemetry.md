@@ -48,7 +48,7 @@ Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a n
 
 To start to pull events, you have to:
 
-1. Go to the [playbooks page](https://app.sekoia.io/operations/playbooks) and create a new playbook with the [Fetch new events from CrowdStrike Data replication](../../../automate/library/crowdstrike.md) trigger
+1. Go to the [playbooks page](https://app.sekoia.io/operations/playbooks) and create a new playbook with the [Fetch new events from CrowdStrike Data replication](/integration/action_library/endpoint/crowdstrike) trigger
 2. Set up the module configuration with your client id, the client secret and the region. Set up the trigger configuration with the intake key and the queue name.
 3. Start the playbook and enjoy your events
 

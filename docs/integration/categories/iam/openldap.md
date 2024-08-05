@@ -40,7 +40,7 @@ Below is a couple of suggestions you can follow to configure your system to coll
    ```
 
 ### Forward logs to SEKOIA.IO
-Please consult the [Rsyslog Transport](../../../ingestion_methods/syslog/overview/) documentation to forward these logs to Sekoia.io.
+Please consult the [Rsyslog Transport](/integration/ingestion_methods/syslog/overview) documentation to forward these logs to Sekoia.io.
 
 
 {!_shared_content/integration/detection_section.md!}

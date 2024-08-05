@@ -55,7 +55,7 @@ Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a n
 
 ### Forward logs to Sekoia.io
 
-Please consult the [Syslog Forwarding](../../../ingestion_methods/sekoiaio_forwarder/) documentation to forward these logs to Sekoia.io.
+Please consult the [Syslog Forwarding](/integration/ingestion_methods/syslog/sekoiaio_forwarder) documentation to forward these logs to Sekoia.io.
 
 {!_shared_content/operations_center/integrations/generated/dbebefdd-dd2e-48a9-89e6-ee5a00ee0956_sample.md!}
 

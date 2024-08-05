@@ -39,7 +39,7 @@ Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a n
 
 To start to pull events, you have to:
 
-1. Go to the [playbooks page](https://app.sekoia.io/operations/playbooks) and create a new playbook with the [Azure Key Vault](../../../../../automate/library/microsoft-azure.md#collect-azure-blob-storage-events)
+1. Go to the [playbooks page](https://app.sekoia.io/operations/playbooks) and create a new playbook with the [Azure Key Vault](/integration/action_library/cloud_providers/microsoft-azure/#beta-collect-azure-blob-storage-events)
 2. Set up the trigger configuration with `account_key`, `account_name` and the `container_name`.
 3. Start the playbook and enjoy your events
 

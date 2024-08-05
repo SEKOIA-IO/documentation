@@ -47,9 +47,9 @@ On a device, please download the [Sekoia.io intake certificate](https://app.seko
 ### Configure the log forwarding
 
 You have to go on your Sekoia.io instance to generate an "intake key".
-Everything you need to do for this part of the configuration is described [here](../../../collect/intakes.md).
+Everything you need to do for this part of the configuration is described [here](/xdr/features/collect/intakes).
 
-Finally, to push logs, you have to [configure](../../../collect/ingestion_methods/index.md) some filters and rewrite rules in Syslog that will add the proper “intake key” considering your logs.
+Finally, to push logs, you have to [configure](/integration/ingestion_methods/index) some filters and rewrite rules in Syslog that will add the proper “intake key” considering your logs.
 
 {!_shared_content/operations_center/integrations/generated/79029ef9-e5d3-44f3-b70f-fd3b54ba1fe4_sample.md!}
 
