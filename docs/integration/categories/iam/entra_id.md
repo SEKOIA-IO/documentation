@@ -19,7 +19,7 @@ To forward **Microsoft Entra ID (Azure AD) ** events from Azure to Sekoia.io you
 <div style="text-align: center;">
     <img width="100%" alt="image" src="/assets/integration/cloud_and_saas/event_hub/consume_azure_logs.png">
 </div>
-docs/assets/integration/cloud_and_saas/event_hub/consume_azure_logs.png
+
 ### Prerequisite
 
 You must have Contributor write on Azure to perform the following installation.
@@ -50,7 +50,7 @@ Navigate to [Home > Microsoft Entra ID (Azure AD)  (e.g. `company-ad`) > Monitor
 
 #### Further Readings
 
-- [Microsoft Github diagnostic Active Directory documentation](https://github.com/MicrosoftDocs/azure-docs/blob/master/articles/active-directory/reports-monitoring/tutorial-azure-monitor-stream-logs-to-event-hub.md)
+- [Microsoft Github diagnostic Active Directory documentation](https://github.com/MicrosoftDocs/SupportArticles-docs/blob/main/support/windows-server/active-directory/configure-ad-and-lds-event-logging.md)
 
 
 ### Create the intake
