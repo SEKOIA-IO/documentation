@@ -12,7 +12,7 @@ Sekoia.io supports the following log collecting methods:
 
 - [HTTPS](/integration/ingestion_methods/https/overview/) (`https://intake.sekoia.io`): `POST` your JSON events to Sekoia.io.
 - [Syslog](/integration/ingestion_methods/syslog/overview/) over TLS (`intake.sekoia.io:10514`): forward your events with the Syslog protocol specified in RFC 5424.
-- [RELP](/integration/ingestion_methods/syslog/syslog_service/#how-to-forward-logs-to-sekoiaio-using-relp) over TLS (`relp.intake.sekoia.io:11514`): forward your events with Rsyslog’s reliable protocol called RELP.
+- [RELP](/integration/ingestion_methods/syslog/rsyslog/#how-to-forward-logs-to-sekoiaio-using-relp) over TLS (`relp.intake.sekoia.io:11514`): forward your events with Rsyslog’s reliable protocol called RELP.
 - [Cloud hosting and API polling](/integration/ingestion_methods/cloud_saas/overview/): configure Sekoia.io to regularly retrieve your logs.
 
 If these solutions do not meet your needs, contact our support.
@@ -30,7 +30,7 @@ and after
 <%pri%>1 %timestamp:::date-rfc3339% %hostname% %app-name% %procid% LOG [SEKOIA@53288 intake_key=\"YOUR_INTAKE_KEY\"] RAW_MESSAGE
 ```
 
-We provide [documentation and example configurations](/integration/ingestion_methods/syslog/overview/) on how to configure your log system for Rsyslog, syslog-ng or use our [Sekoia.io Forwarder](/integration/ingestion_methods/syslog/sekoiaio_forwarder/, but it should be easy to configure other log collectors to forward their events to Sekoia.io.
+We provide [documentation and example configurations](/integration/ingestion_methods/syslog/overview/) on how to configure your log system for Rsyslog, syslog-ng or use our [Sekoia.io Forwarder](/integration/ingestion_methods/syslog/sekoiaio_forwarder/), but it should be easy to configure other log collectors to forward their events to Sekoia.io.
 
 ## HTTPS integration
 

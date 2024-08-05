@@ -12,8 +12,8 @@ and after
 
 To achieve this you can: 
 
-- Use the [Sekoia.io forwarder](./sekoiaio_forwarder.md) which is the official supported way to collect data using the syslog protocol in Sekoia.io. In charge of centralizing data coming from many equipments/sources and forwarding them to Sekoia.io with the apporpriated format, it is a prepackaged option. You only have to provide your intake key as parameter.
-- Use your own [Syslog service](./syslog_service.md) instance. Maybe you already have an intance of one of these components on your side and want to reuse it in order to centralize data before forwarding them to Sekoia.io. When using this mode, you have to configure and maintain your component in order to respect the expected Sekoia.io format. 
+- Use the [Sekoia.io forwarder](/integration/ingestion_methods/syslog/sekoiaio_forwarder/) which is the official supported way to collect data using the syslog protocol in Sekoia.io. In charge of centralizing data coming from many equipments/sources and forwarding them to Sekoia.io with the apporpriated format, it is a prepackaged option. You only have to provide your intake key as parameter.
+- Use your own [Syslog service](/integration/ingestion_methods/syslog/syslog_service/) instance. Maybe you already have an intance of one of these components on your side and want to reuse it in order to centralize data before forwarding them to Sekoia.io. When using this mode, you have to configure and maintain your component in order to respect the expected Sekoia.io format. 
 
 
 !!! warning 

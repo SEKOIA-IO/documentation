@@ -305,10 +305,9 @@ nav:
       - Logstash: integration/ingestion_methods/https/logstash.md
     - Syslog:
       - Overview: integration/ingestion_methods/syslog/overview.md
-      - Rsyslog: integration/ingestion_methods/syslog/rsyslog.md
-      - Secured Forwarded: integration/ingestion_methods/syslog/secured_forwarded.md
       - Sekoia.io Forwarder: integration/ingestion_methods/syslog/sekoiaio_forwarder.md
       - Third-party syslog services: integration/ingestion_methods/syslog/syslog_service.md
+      - Rsyslog: integration/ingestion_methods/syslog/rsyslog.md
       - Syslog NG: integration/ingestion_methods/syslog/syslog-ng.md
   - List of Intakes:
     - Overview: integration/categories/overview.md
