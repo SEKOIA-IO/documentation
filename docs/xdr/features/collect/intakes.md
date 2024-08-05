@@ -17,7 +17,7 @@ On this page, you can find:
 - The number of `invalid events`
 - The number of `events in warning`
 
-![intakes_listing](/assets/operation_center/intakes/intakes-card.png){: style="max-width:100%"}
+![intakes_card](/assets/operation_center/intakes/intakes-card.png){: style="max-width:100%"}
 
 ### Definition of an invalid event
 An event is invalid when the data does not match the expected format (JSON, Key value, Grok, Date, Delimiter separated value).
@@ -31,7 +31,7 @@ A warning can be generated in 2 cases:
 ### Events date range
 Use the date range selector to view the number of events in different timeframes (24h, 7 days or 30 days). This date range selector will help you to assess if the volume of ingested logs has the expected behavior.
 
-![intakes_listing](/assets/operation_center/intakes/intakes-date-selector.png){: style="max-width:100%"}
+![intakes_date_selector](/assets/operation_center/intakes/intakes-date-selector.png){: style="max-width:100%"}
 
 ### Intake types
 
@@ -45,11 +45,13 @@ With Push intakes, logs must be forwarded by the user to Sekoia with one of our 
 
 With Pull intakes, logs are collected directly by Sekoia with a connector. The connector usually uses a REST API to collect data. In other words Sekoia SOC platform is fetching the logs for the user this case.
 
+![intakes_list_diff](/assets/operation_center/intakes/intakes-list-diff.png){: style="max-width:100%"}
+
 Pull intakes are distinguishable by their On/Off button and Connect log tab.
 
 ##### Start/Stop a Pull intake
 
-![intakes_listing](/assets/operation_center/intakes/intakes-running.png){: style="max-width:100%"}
+![intakes_running](/assets/operation_center/intakes/intakes-running.png){: style="max-width:100%"}
 
 Pull intakes have a On/Off button which allows you to enable or disable the collection of data. Pull intakes have a `connector` that regularly pulls the logs from your data source.
 
@@ -57,9 +59,9 @@ Pull intakes have a On/Off button which allows you to enable or disable the coll
 
 When a Pull intake is fetching logs, it can encounter different kind of issues. The error status will help you understand the current state of the `connector`.
 
-![intakes_listing](/assets/operation_center/intakes/intakes-error.png){: style="max-width:100%"}
+![intakes_error](/assets/operation_center/intakes/intakes-error.png){: style="max-width:100%"}
 
-![intakes_listing](/assets/operation_center/intakes/intakes-critical.png){: style="max-width:100%"}
+![intakes_critical](/assets/operation_center/intakes/intakes-critical.png){: style="max-width:100%"}
 
 | Status | Description |
 | --- | --- |
@@ -89,11 +91,11 @@ The list of intakes can be ordered by:
 - Error status (in this order: Stopped by critical error, Error during data collection)
 - Name (in alphabetical order)
 
-![intakes_listing](/assets/operation_center/intakes/intakes-list-order.png){: style="max-width:100%"}
+![intakes_list_order](/assets/operation_center/intakes/intakes-list-order.png){: style="max-width:100%"}
 
 ## Create an intake from our integrations catalog
 To configure a new data source in your community, you can rely on our list of continuously growing integrations that are constantly developed and enhanced by Sekoia.io’s team.
-![intakes_types](/assets/operation_center/intakes/intakes-list-card.png){: style="max-width:100%"}
+![intakes_list_card](/assets/operation_center/intakes/intakes-list-card.png){: style="max-width:100%"}
 
 To create an intake, you have to:
 
@@ -130,21 +132,21 @@ To learn more about how to create a custom intake, please refer to this [section
 
 ## Intake details page
 
-The details page of an intake provides key infos to check the health of your data source ingestion. These infos are:
+The details page of an intake provides key infos to check the health state of your data source collection. These infos are:
 
 - The volume of ingested events in a visual graph
 - The volume of events invalid or in warning
 - An event delivery metric which indicates the lag of event delivery
 - The latest ingested events
-- The logs of the connector (for Pull intakes)
+- The logs of the connector (for Pull intakes only)
 
-![intakes_listing](/assets/operation_center/intakes/intakes-details.png){: style="max-width:100%"}
+![intakes_details](/assets/operation_center/intakes/intakes-details.png){: style="max-width:100%"}
 
 ### Events graph
 
-![intakes_listing](/assets/operation_center/intakes/intakes-graph.png){: style="max-width:100%"}
+![intakes_graph](/assets/operation_center/intakes/intakes-graph.png){: style="max-width:100%"}
 
-The events graph provide metrics on the ingestion of your data source. The metrics are calculated on the selected period (24h, 7 days or 30 days).
+The events graph provide metrics on the ingestion of your logs. The metrics are calculated on the selected period (24h, 7 days or 30 days).
 
 !!! warning
     Events are displayed by their **reception date** in the graph. By using the reception date, you are guaranteed to see events received recently in graph and avoid issues with wrongly dated events or events with important lags.
@@ -158,7 +160,7 @@ The events graph provide metrics on the ingestion of your data source. The metri
 !!! tip
     Hover the mouse on the graph to view the number of events per time unit
 
-![intakes_listing](/assets/operation_center/intakes/intakes-graph-hover.png){: style="max-width:100%"}
+![intakes_graph_hover](/assets/operation_center/intakes/intakes-graph-hover.png){: style="max-width:100%"}
 
 #### Event delivery
 
@@ -179,7 +181,7 @@ Below the events graph, you have access to the list of recents events. This list
 
 #### Invalid & Warning messages
 
-![intakes_listing](/assets/operation_center/intakes/intakes-event-filter.png){: style="max-width:100%"}
+![intakes_event_filter](/assets/operation_center/intakes/intakes-event-filter.png){: style="max-width:100%"}
 
 Use the filter above the list of recent events to display the list of invalid or warning messages. This list contains the different type of parsing issues encountered. For each issue is displayed:
 
@@ -189,23 +191,23 @@ Use the filter above the list of recent events to display the list of invalid or
 
 The last occurrence of the event can be consulted to troubleshoot issues.
 
-![intakes_listing](/assets/operation_center/intakes/intakes-details-error.png){: style="max-width:100%"}
+![intakes_details_error](/assets/operation_center/intakes/intakes-details-error.png){: style="max-width:100%"}
 
 !!! info
-    To preserve storage cost, only one occurrence of invalid event is stored in Sekoia.
+    To preserve storage cost, only last occurrence of invalid event is stored in Sekoia.
 
 ### Connector log
 
 The `Connector log` tab is only available for Pull intakes.
 
-![intakes_listing](/assets/operation_center/intakes/intakes-connector.png){: style="max-width:100%"}
+![intakes_connector](/assets/operation_center/intakes/intakes-connector.png){: style="max-width:100%"}
 
 In this tab, you will find the latest logs of the connector. These logs help you check that the connector is functioning properly by checking the `Info` level messages.
 But they also help you troubleshoot issues by checking the `Error` level messages. 
 
 Use the filter button to filter `Error` logs.
 
-![intakes_listing](/assets/operation_center/intakes/intakes-log-error.png){: style="max-width:100%"}
+![intakes_log_error](/assets/operation_center/intakes/intakes-log-error.png){: style="max-width:100%"}
 
 If the error is related to a configuration issue, read the next section to modify the configuration of the connector.
 
@@ -223,7 +225,7 @@ The intake menu allows you to perform different kind of actions:
 - Copy the intake UUID
 - Delete the intake
 
-![intakes_listing](/assets/operation_center/intakes/intakes-details-menu.png){: style="max-width:100%"}
+![intakes_details_menu](/assets/operation_center/intakes/intakes-details-menu.png){: style="max-width:100%"}
 
 #### Edit entity
 
@@ -233,7 +235,7 @@ To modify the entity of the intake:
 - Select a new entity in the list
 - Save your modification
 
-![intakes_listing](/assets/operation_center/intakes/intakes-details-entity.png){: style="max-width:100%"}
+![intakes_details_entity](/assets/operation_center/intakes/intakes-details-entity.png){: style="max-width:100%"}
 
 #### Configure
 
@@ -243,20 +245,10 @@ This menu is only available for Pull intakes. Use this menu to modify the parame
 - Modify the configuration
 - Save your modification
 
-![intakes_listing](/assets/operation_center/intakes/intakes-details-configure.png){: style="max-width:100%"}
+![intakes_details_configure](/assets/operation_center/intakes/intakes-details-configure.png){: style="max-width:100%"}
 
 !!! info
     The modifications are applied instantly. You do not need to restart the connector to take your modifications into account.
-
-#### Edit entity
-
-To modify the entity of the intake: 
-
-- Click on `Edit entity` in the menu
-- Select a new entity in the list
-- Save your modification
-
-![intakes_listing](/assets/operation_center/intakes/intakes-details-entity.png){: style="max-width:100%"}
 
 #### Notifications
 
@@ -274,7 +266,7 @@ To rename the intake:
 - Enter the new name of the intake
 - Save your modification
 
-![intakes_listing](/assets/operation_center/intakes/intakes-details-rename.png){: style="max-width:100%"}
+![intakes_details_rename](/assets/operation_center/intakes/intakes-details-rename.png){: style="max-width:100%"}
 
 #### Delete
 
