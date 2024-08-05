@@ -362,7 +362,7 @@ nav:
       - SentinelOne Cloud Funnel 2.0: integration/categories/endpoint/sentinelone_cloudfunnel2.0.md
       - Sekoia.io Endpoint Agent: integration/categories/endpoint/sekoiaio.md
       - Sophos EDR: integration/categories/endpoint/sophos_edr.md
-      - Stormshield SES: docs/integration/categories/endpoint/stormshield_endpoint.md
+      - Stormshield SES: integration/categories/endpoint/stormshield_endpoint.md
       - Symantec Endpoint Protection: integration/categories/endpoint/symantec_epp.md
       - TEHTRIS Endpoint Detection & Reponse: integration/categories/endpoint/tehtris_edr.md
       - Tanium: integration/categories/endpoint/tanium.md
@@ -723,7 +723,7 @@ plugins:
       xdr/features/collect/integrations/endpoint/panda_security_aether.md: integration/categories/endpoint/panda_security_aether.md
       xdr/features/collect/integrations/endpoint/sentinelone.md: integration/categories/endpoint/sentinelone.md
       xdr/features/collect/integrations/endpoint/sophos_edr.md: integration/categories/endpoint/sophos_edr.md
-      xdr/features/collect/integrations/endpoint/stormshield_endpoint.md: docs/integration/categories/endpoint/stormshield_endpoint.md
+      xdr/features/collect/integrations/endpoint/stormshield_endpoint.md: integration/categories/endpoint/stormshield_endpoint.md
       xdr/features/collect/integrations/endpoint/symantec_epp.md: integration/categories/endpoint/symantec_epp.md
       xdr/features/collect/integrations/endpoint/tanium.md: integration/categories/endpoint/tanium.md
       xdr/features/collect/integrations/endpoint/tehtris_edr.md: integration/categories/endpoint/tehtris_edr.md
