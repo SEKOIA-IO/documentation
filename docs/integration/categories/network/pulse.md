@@ -67,7 +67,7 @@ This setup guide will show you how to forward your Pulse Connect Secure logs to 
    - Please refer to the documentation of Pulse Secure Connect to forward events to your syslog concentrator.
 
 3. **Forward Logs to Sekoia.io:**
-   - The reader can consult the [Syslog Forwarding](../../../ingestion_methods/sekoiaio_forwarder/) documentation to forward these logs to Sekoia.io.
+   - The reader can consult the [Syslog Forwarding](/integration/ingestion_methods/syslog/sekoiaio_forwarder) documentation to forward these logs to Sekoia.io.
 
 ### Instruction on Sekoia
 

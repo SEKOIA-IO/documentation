@@ -37,7 +37,7 @@ To create the intake, go to the [intake page](https://app.sekoia.io/operations/i
 
 To start to pull events, you have to:
 
-1. Go to the [playbook page](https://app.sekoia.io/operations/playbooks) and create a new playbook with the [Fetch new events from TEHTRIS](../../../automate/library/tehtris.md#fetch-new-events-from-tehtris) module
+1. Go to the [playbook page](https://app.sekoia.io/operations/playbooks) and create a new playbook with the [Fetch new events from TEHTRIS](/integration/action_library/endpoint/tehtris/#fetch-new-events-from-tehtris) module
 
 2. Set up the module configuration with your API key and your tenant ID (most of time, your tenant ID is the subdomain of your TEHTRIS instance; eg: `https://{tenant_id}.tehtris.net`)
 

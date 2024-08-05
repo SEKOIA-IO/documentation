@@ -35,7 +35,7 @@ Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a n
 
 ### Pull events
 
-Go to the [playbook page](https://app.sekoia.io/operations/playbooks) and create a new playbook with the [ProofPoint PoD connector](../../../automate/library/proofpoint.md#get-proofpoint-pod-events).
+Go to the [playbook page](https://app.sekoia.io/operations/playbooks) and create a new playbook with the [ProofPoint PoD connector](/integration/action_library/applicative/proofpoint/#get-proofpoint-pod-events).
 
 Set up the trigger configuration with the api key, the cluster id and the intake key. Customize others parameters if needed.
 

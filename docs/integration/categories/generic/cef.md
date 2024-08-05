@@ -16,7 +16,7 @@ As of now, the main solution to collect CEF logs leverages the Rsyslog recipe. P
 
 ### Rsyslog
 
-Please refer to the documentation of your vendor to forward events to your rsyslog server. The reader is also invited to consult the [Rsyslog Transport](../../../ingestion_methods/syslog/overview/) documentation to forward these logs to Sekoia.io.
+Please refer to the documentation of your vendor to forward events to your rsyslog server. The reader is also invited to consult the [Rsyslog Transport](/integration/ingestion_methods/syslog/overview) documentation to forward these logs to Sekoia.io.
 
 {!_shared_content/operations_center/integrations/generated/1d172ee6-cdc0-4713-9cfd-43f7d9595777_sample.md!}
 

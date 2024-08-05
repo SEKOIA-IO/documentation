@@ -19,7 +19,7 @@ As of now, the main solution to collect OpenSSH logs leverages the Rsyslog recip
 
 ### Rsyslog
 
-Please refer to the documentation of OpenSSH to forward events to your rsyslog server. The reader can consult the [Rsyslog Transport](../../../ingestion_methods/syslog/overview/) documentation to forward these logs to Sekoia.io.
+Please refer to the documentation of OpenSSH to forward events to your rsyslog server. The reader can consult the [Rsyslog Transport](/integration/ingestion_methods/syslog/overview) documentation to forward these logs to Sekoia.io.
 
 
 {!_shared_content/operations_center/integrations/generated/b28db14b-e3a7-463e-8659-9bf0e577944f_sample.md!}

@@ -24,7 +24,7 @@ Depending on the context of the log, additional content could be available, such
 - File information
 
 !!! Tip
-    For advanced log collection, we suggest you use the SentinelOne Cloud Funnel 2.0 option, as described in the [SentinelOne Cloud Funnel 2.0 integration](sentinelone_cloudfunnel2.0.md).
+    For advanced log collection, we suggest you use the SentinelOne Cloud Funnel 2.0 option, as described in the [SentinelOne Cloud Funnel 2.0 integration](/integration/categories/endpoint/sentinelone_cloudfunnel2.0).
 
 
 ## Configure
@@ -42,7 +42,7 @@ This setup guide will show you how to pull events produced by SentinelOne EDR on
 4. Select `Create User` and copy the generated API token.
 
 !!! note
-    A `Service User` with the `Site Admin` or `IR Team` role can mitigate threats from [Sekoia.io](https://app.sekoia.io/) using [SentinelOne playbook actions](/xdr/features/automate/library/sentinelone.md). A user with the `Site Viewer` role can view activity events and threats but cannot take action.
+    A `Service User` with the `Site Admin` or `IR Team` role can mitigate threats from [Sekoia.io](https://app.sekoia.io/) using [SentinelOne playbook actions](/xdr/features/automate/library/sentinelone). A user with the `Site Viewer` role can view activity events and threats but cannot take action.
 
 ## Create a SentinelOne intake
 

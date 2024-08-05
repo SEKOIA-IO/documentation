@@ -100,7 +100,7 @@ In the Zscaler ZIA console:
 
 #### Forward logs to Sekoia.io
 
-For more information on forwarding logs to Sekoia.io, see [Syslog Forwarding](../../../ingestion_methods/sekoiaio_forwarder/)
+For more information on forwarding logs to Sekoia.io, see [Syslog Forwarding](/integration/ingestion_methods/syslog/sekoiaio_forwarder)
 
 ### Forward events with Cloud NSS Feed
 

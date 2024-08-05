@@ -154,7 +154,7 @@ PS C:\Program Files\Winlogbeat> Start-Service winlogbeat
 
 ### Forward logs to Sekoia.io
 
-Please consult our [guide](/integration/ingestion_methods/https/logstash.md) to configure logs forwarding from Logstash to Sekoia.io.
+Please consult our [guide](/integration/ingestion_methods/https/logstash) to configure logs forwarding from Logstash to Sekoia.io.
 
 {!_shared_content/operations_center/integrations/generated/c10307ea-5dd1-45c6-85aa-2a6a900df99b_sample.md!}
 

@@ -26,7 +26,7 @@ As of now, the main solution to collect Windows logs with Log Insight leverages 
 
 ### Rsyslog
 
-Please refer to the documentation of Linux to forward events to your rsyslog server. The reader can consult the [Rsyslog Transport](../../../ingestion_methods/syslog/overview/) documentation to forward these logs to Sekoia.io.
+Please refer to the documentation of Linux to forward events to your rsyslog server. The reader can consult the [Rsyslog Transport](/integration/ingestion_methods/syslog/overview) documentation to forward these logs to Sekoia.io.
 
 {!_shared_content/operations_center/integrations/generated/ee54dd8e-4bd4-4fe8-9d9d-1a018cd8c4bb_sample.md!}
 
