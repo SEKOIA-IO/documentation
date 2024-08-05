@@ -578,7 +578,7 @@ nav:
       - Overview: integration/develop_integration/automation/overview.md
       - Action: integration/develop_integration/automation/action.md
       - Create a Module: integration/develop_integration/automation/create_a_module.md
-      - Development Guidelines: integration/develop_integration/automation/developement_guideline.md
+      - Development Guidelines: integration/develop_integration/automation/development_guideline.md
       - Module: integration/develop_integration/automation/module.md
       - Trigger: integration/develop_integration/automation/trigger.md
     - Formats:
