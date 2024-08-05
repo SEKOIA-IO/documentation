@@ -9,7 +9,7 @@ TEHTRIS EDR is a security product to monitor, detect and mitigate threats on end
 This setup guide shows how to forward events produced by TEHTRIS EDR to Sekoia.io.
 
 - **Vendor**: TEHTRIS
-- **Plan**: Defend Prime
+- **Plan**: Defend Core & Defend Prime
 - **Supported environment**: On Cloud 
 - **Detection based on**: Telemetry / Alert
 - **Supported application or feature**: File monitoring, Process monitoring and Anti-virus
