@@ -19,10 +19,12 @@ On this page, you can find:
 
 ![intakes_card](/assets/operation_center/intakes/intakes-card.png){: style="max-width:100%"}
 
-### Definition of an invalid event
+### Event types
+
+#### Invalid event
 An event is invalid when the data does not match the expected format (JSON, Key value, Grok, Date, Delimiter separated value).
 
-### Definition of an event in warning
+#### Event in warning
 A warning can be generated in 2 cases:
 
 - The parsing of the event was a success but no data were extracted
@@ -151,14 +153,14 @@ The events graph provide metrics on the ingestion of your logs. The metrics are 
 !!! warning
     Events are displayed by their **reception date** in the graph. By using the reception date, you are guaranteed to see events received recently in graph and avoid issues with wrongly dated events or events with important lags.
 
-- Events: total number of events ingested in the selected period
-- Events in warning: number of events in warning
-- Invalid events: number of invalid events
-- Valid events: number of valid events
-- Event delivery: represents the average latency between the **creation date** of the original event and the **reception date** of the event at Sekoia
+- **Events**: total number of events ingested in the selected period
+- **Events in warning**: number of events in warning
+- **Invalid events**: number of invalid events
+- **Valid events**: number of valid events
+- **Event delivery**: represents the average latency between the **creation date** of the original event and the **reception date** of the event at Sekoia
 
 !!! tip
-    Hover the mouse on the graph to view the number of events per time unit
+    Hover the mouse on the graph to view the number of events per time unit.
 
 ![intakes_graph_hover](/assets/operation_center/intakes/intakes-graph-hover.png){: style="max-width:100%"}
 
@@ -231,19 +233,19 @@ The intake menu allows you to perform different kind of actions:
 
 To modify the entity of the intake: 
 
-- Click on `Edit entity` in the menu
-- Select a new entity in the list
-- Save your modification
+1. Click on `Edit entity` in the menu
+2. Select a new entity in the list
+3. Save your modification
 
 ![intakes_details_entity](/assets/operation_center/intakes/intakes-details-entity.png){: style="max-width:100%"}
 
-#### Configure
+#### Configure pull intakes
 
 This menu is only available for Pull intakes. Use this menu to modify the parameters of the connector. You can change the account used for authentication or change parameter values.
 
-- Click on `Configure` in the menu
-- Modify the configuration
-- Save your modification
+1. Click on `Configure` in the menu
+2. Modify the configuration
+3. Save your modification
 
 ![intakes_details_configure](/assets/operation_center/intakes/intakes-details-configure.png){: style="max-width:100%"}
 
@@ -254,26 +256,26 @@ This menu is only available for Pull intakes. Use this menu to modify the parame
 
 To create a new notification on the intake: 
 
-- Click on `Notifications` in the menu
-- Configure the notification settings
-- Save your modification
+1. Click on `Notifications` in the menu
+2. Configure the notification settings
+3. Save your modification
 
-#### Rename
+#### Rename intake
 
 To rename the intake: 
 
-- Click on `Rename` in the menu
-- Enter the new name of the intake
-- Save your modification
+1. Click on `Rename` in the menu
+2. Enter the new name of the intake
+3. Save your modification
 
 ![intakes_details_rename](/assets/operation_center/intakes/intakes-details-rename.png){: style="max-width:100%"}
 
-#### Delete
+#### Delete intake
 
 To delete the intake: 
 
-- Click on `Delete` in the menu
-- Confirm the deletion
+1. Click on `Delete` in the menu
+2. Confirm the deletion
 
 !!! warning
     The deletion of an intake do not remove the events already ingested. However, note that the intake key will no longer be usable. You will need to deploy a new intake key in your infrastructure if you wish to restore the same kind of intake.
