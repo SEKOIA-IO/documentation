@@ -1,0 +1,1 @@
+More information about this external integration : [https://turbine-marketplace.swimlane.com/en-US/apps/430566/sekoiaio-xdr](https://turbine-marketplace.swimlane.com/en-US/apps/430566/sekoiaio-xdr)
