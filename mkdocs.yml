@@ -100,6 +100,7 @@ nav:
     - External integrations:
       - FortiSOAR: xdr/features/integrations/fortisoar.md
       - Palo Alto Cortex XSOAR: xdr/features/integrations/interconnect_sekoia_with_xsoar.md
+      - Swimlane Turbine: xdr/features/integrations/swimlane_turbine.md
   - Usecases:
     - Implement a blocklist in Sekoia.io: xdr/usecases/playbook/implement_blocklist.md
     - Synchronize Alerts with an external tool: xdr/usecases/playbook/synchronize_alerts.md
@@ -152,6 +153,7 @@ nav:
       - OpenCTI: cti/features/integrations/opencti.md
       - Splunk: cti/features/integrations/splunk.md
       - Splunk SOAR: cti/features/integrations/splunk_soar.md
+      - Swimlane Turbine: cti/features/integrations/swimlane_turbine.md
       - Anomali ThreatStream: cti/features/integrations/anomali.md
       - PaloAlto Cortex XSOAR: cti/features/integrations/paloalto_xsoar.md
       - ThreatQuotient: cti/features/integrations/threatquotient.md
