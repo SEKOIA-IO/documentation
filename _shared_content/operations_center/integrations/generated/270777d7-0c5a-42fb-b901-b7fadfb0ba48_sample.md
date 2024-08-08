@@ -44,14 +44,6 @@ In this section, you will find examples of raw logs as generated natively by the
 
 
 
-=== "referrlurl"
-
-    ```
-	
-    ```
-
-
-
 === "severity"
 
     ```
