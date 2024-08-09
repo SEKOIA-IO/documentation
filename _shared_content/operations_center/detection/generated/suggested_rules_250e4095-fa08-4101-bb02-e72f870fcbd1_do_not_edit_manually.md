@@ -447,6 +447,12 @@ The following Sekoia.io built-in rules match the intake **Sekoia.io Endpoint Age
     
     - **Effort:** master
 
+??? abstract "Credential Harvesting Via Vaultcmd.exe"
+    
+    Detects when the process vaultcmd is used for credential harvesting.
+    
+    - **Effort:** advanced
+
 ??? abstract "Cryptomining"
     
     Detection of domain names potentially related to cryptomining activities.
@@ -1965,18 +1971,6 @@ The following Sekoia.io built-in rules match the intake **Sekoia.io Endpoint Age
     
     - **Effort:** advanced
 
-??? abstract "Ryuk Ransomware Command Line"
-    
-    Detects Ryuk Ransomware command lines used to stop services.
-    
-    - **Effort:** elementary
-
-??? abstract "Ryuk Ransomware Persistence Registry Key"
-    
-    Detects registry key used by the Ryuk ransomware in two ways, either the Sysmon registry events, or the command line (reg add).
-    
-    - **Effort:** intermediate
-
 ??? abstract "SAM Registry Hive Handle Request"
     
     Detects handles requested to SAM registry hive
@@ -2557,7 +2551,7 @@ The following Sekoia.io built-in rules match the intake **Sekoia.io Endpoint Age
     
     The rule detects attempts to impersonate TrustedInstaller. TrustedInstaller rights could allow a threat actor to delete or modify protected file or create/delete/modify files in protected folders. This technique is used by threat actors to disable Windows Defender.
     
-    - **Effort:** elementary
+    - **Effort:** intermediate
 
 ??? abstract "Turla Named Pipes"
     

@@ -315,6 +315,12 @@ The following Sekoia.io built-in rules match the intake **Elastic Winlogbeat**. 
     
     - **Effort:** elementary
 
+??? abstract "Credential Harvesting Via Vaultcmd.exe"
+    
+    Detects when the process vaultcmd is used for credential harvesting.
+    
+    - **Effort:** advanced
+
 ??? abstract "Cron Files Alteration"
     
     Cron Files and Cron Directory alteration used by attacker for persistency or privilege escalation.
@@ -1921,7 +1927,7 @@ The following Sekoia.io built-in rules match the intake **Elastic Winlogbeat**. 
     
     The rule detects attempts to impersonate TrustedInstaller. TrustedInstaller rights could allow a threat actor to delete or modify protected file or create/delete/modify files in protected folders. This technique is used by threat actors to disable Windows Defender.
     
-    - **Effort:** elementary
+    - **Effort:** intermediate
 
 ??? abstract "UAC Bypass Using Fodhelper"
     

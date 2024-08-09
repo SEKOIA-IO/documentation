@@ -33,6 +33,12 @@ The following Sekoia.io built-in rules match the intake **Cato Networks SASE**. 
     
     - **Effort:** intermediate
 
+??? abstract "Cato Networks SASE High Risk Alert"
+    
+    Cato Networks SASE intrusion detection has detected a high risk alert.
+    
+    - **Effort:** master
+
 ??? abstract "Cryptomining"
     
     Detection of domain names potentially related to cryptomining activities.

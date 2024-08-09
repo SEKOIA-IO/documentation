@@ -1,0 +1,1 @@
+{"name": "SEKOIA.IO x SecurityScorecard Vulnerability Assessment Scanner", "versions": {"attack": "13", "layer": "4.4", "navigator": "4.8.2"}, "domain": "enterprise-attack", "techniques": [{"techniqueID": "T1133", "score": 100, "comment": "Rules: SecurityScorecard Vulnerability Assessment Scanner - New Issues"}]}

@@ -285,6 +285,12 @@ The following Sekoia.io built-in rules match the intake **Microsoft 365 / Office
     
     - **Effort:** master
 
+??? abstract "Microsoft 365 Authenticated Activity From Tor IP Address"
+    
+    Detects authenticated Microsoft 365 activity from an IP address associated with Tor.
+    
+    - **Effort:** advanced
+
 ??? abstract "Microsoft 365 Device Code Authentication"
     
     Authentication via a device code is designed for use with input constrained devices. This method can however be abused, particularly in social engineering attacks. Whitelisting based on the organisation's practices is likely required to make this rule useful (e.g. excluding the public IP ranges of the organisation, excluding authentications attempt from managed devices, etc.). Note: if you collect Entra ID SignInLogs, the rule "Microsoft Entra ID (Azure AD) Device Code Authentication" is a better equivalent to this rule.
