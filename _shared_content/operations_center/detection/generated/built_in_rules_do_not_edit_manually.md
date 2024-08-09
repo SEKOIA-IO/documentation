@@ -1,4 +1,4 @@
-Rules catalog includes **927 built-in detection rules** ([_last update on 2024-07-29_](rules_changelog.md)).
+Rules catalog includes **930 built-in detection rules** ([_last update on 2024-08-09_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Identity Information**
 
@@ -812,6 +812,12 @@ Rules catalog includes **927 built-in detection rules** ([_last update on 2024-0
         - 29/05/2024 - major - Adding new field and switching to correlation rule.
         - 04/04/2024 - major - Rule's pattern field changed
             
+??? abstract "SecurityScorecard Vulnerability Assessment Scanner - New Issues"
+    
+    Raises an alert when SecurityScorecard scanners find new issues.
+    
+    - **Effort:** master
+    
 ??? abstract "Trend Micro Apex One Intrusion Detection Alert"
     
     Trend Micro Apex One has raised an alert for an intrusion detection.
@@ -4500,12 +4506,6 @@ Rules catalog includes **927 built-in detection rules** ([_last update on 2024-0
     
         - 21/06/2024 - major - Update detection pattern for ECS fields/value compliance, and filter some FPs
             
-??? abstract "Ryuk Ransomware Persistence Registry Key"
-    
-    Detects registry key used by the Ryuk ransomware in two ways, either the Sysmon registry events, or the command line (reg add).
-    
-    - **Effort:** intermediate
-    
 **Valid Accounts**
 
 ??? abstract "Account Added To A Security Enabled Group"
@@ -4948,6 +4948,12 @@ Rules catalog includes **927 built-in detection rules** ([_last update on 2024-0
         - 29/05/2024 - major - Adding new field and switching to correlation rule.
         - 04/04/2024 - major - Rule's pattern field changed
             
+??? abstract "SecurityScorecard Vulnerability Assessment Scanner - New Issues"
+    
+    Raises an alert when SecurityScorecard scanners find new issues.
+    
+    - **Effort:** master
+    
 ??? abstract "Trend Micro Apex One Intrusion Detection Alert"
     
     Trend Micro Apex One has raised an alert for an intrusion detection.
@@ -5002,6 +5008,10 @@ Rules catalog includes **927 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 05/08/2024 - major - improve selection to extend detection
+            
 ??? abstract "Net.exe User Account Creation"
     
     Identifies creation of local users via the net.exe command
@@ -5699,12 +5709,6 @@ Rules catalog includes **927 built-in detection rules** ([_last update on 2024-0
 ??? abstract "Registry Key Used By Some Old Agent Tesla Samples"
     
     Detects potential use of the RUN registry key to execute some Agent Tesla samples at boot. Prerequisites are to log for Registry events in the Sysmon configuration (events 12 and 13).
-    
-    - **Effort:** intermediate
-    
-??? abstract "Ryuk Ransomware Persistence Registry Key"
-    
-    Detects registry key used by the Ryuk ransomware in two ways, either the Sysmon registry events, or the command line (reg add).
     
     - **Effort:** intermediate
     
@@ -7288,12 +7292,6 @@ Rules catalog includes **927 built-in detection rules** ([_last update on 2024-0
 ??? abstract "Registry Key Used By Some Old Agent Tesla Samples"
     
     Detects potential use of the RUN registry key to execute some Agent Tesla samples at boot. Prerequisites are to log for Registry events in the Sysmon configuration (events 12 and 13).
-    
-    - **Effort:** intermediate
-    
-??? abstract "Ryuk Ransomware Persistence Registry Key"
-    
-    Detects registry key used by the Ryuk ransomware in two ways, either the Sysmon registry events, or the command line (reg add).
     
     - **Effort:** intermediate
     
@@ -9620,12 +9618,6 @@ Rules catalog includes **927 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** master
     
-??? abstract "Ryuk Ransomware Command Line"
-    
-    Detects Ryuk Ransomware command lines used to stop services.
-    
-    - **Effort:** elementary
-    
 ??? abstract "SELinux Disabling"
     
     An attacker can disable SELinux to make workstation or server compromise easier as it disables several protections.
@@ -9670,8 +9662,12 @@ Rules catalog includes **927 built-in detection rules** ([_last update on 2024-0
     
     The rule detects attempts to impersonate TrustedInstaller. TrustedInstaller rights could allow a threat actor to delete or modify protected file or create/delete/modify files in protected folders. This technique is used by threat actors to disable Windows Defender.
     
-    - **Effort:** elementary
+    - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 05/08/2023 - major - Filters were added to reduce false positives and effort level was modified.
+            
 ??? abstract "WMIC Uninstall Product"
     
     Detects products being uninstalled using WMIC command.
@@ -10490,6 +10486,10 @@ Rules catalog includes **927 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 08/08/2024 - minor - Group-by values were changed to avoid having too much alerts.
+            
 ??? abstract "Successful Brute Force Login From Internet"
     
     Detects a spike of failed login followed by a success one from Internet for a given source and target
@@ -10554,6 +10554,10 @@ Rules catalog includes **927 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 02/08/2024 - minor - Exclude an additionnal legitimate domain.
+            
 **Forced Authentication**
 
 ??? abstract "Correlation Suspicious Authentication Coercer Behavior"
@@ -10686,6 +10690,12 @@ Rules catalog includes **927 built-in detection rules** ([_last update on 2024-0
         - 08/04/2024 - minor - change field name on query
         - 12/06/2024 - minor - Adding new fields to be displayed in alerts.
             
+??? abstract "Credential Harvesting Via Vaultcmd.exe"
+    
+    Detects when the process vaultcmd is used for credential harvesting.
+    
+    - **Effort:** advanced
+    
 ??? abstract "Credentials Extraction"
     
     This rule aims to detect the use of a specific command to access some credentials without using mimikatz or another tool.
@@ -10804,6 +10814,10 @@ Rules catalog includes **927 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 02/08/2024 - minor - Exclude an additionnal legitimate domain.
+            
 **Steal or Forge Kerberos Tickets**
 
 ??? abstract "Kerberos Pre-Auth Disabled in UAC"
@@ -10853,6 +10867,7 @@ Rules catalog includes **927 built-in detection rules** ([_last update on 2024-0
     - **Changelog:**
     
         - 04/04/2024 - major - Rule's pattern field changed
+        - 05/08/2024 - major - Rule reworked to match more intakes and have less false positives (filters were added).
             
 ??? abstract "Suspicious TGS requests (Kerberoasting)"
     
@@ -11727,6 +11742,12 @@ Rules catalog includes **927 built-in detection rules** ([_last update on 2024-0
     
 **Email Collection**
 
+??? abstract "Entra ID Consent Attempt to Suspicious OAuth Application"
+    
+    Detects an attempt to authorize account access to an OAuth application commonly used in business email compromise (BEC) attacks. Investigate the source IP address: unusual countries, RDP hosts and VPN providers are likely indicators of malicious activity.
+    
+    - **Effort:** elementary
+    
 ??? abstract "Exchange Mailbox Export"
     
     Detection of a standard Exchange Mailbox export, which stores all mails from a user in a pst file, from command line or PowerShell script.
@@ -11872,6 +11893,10 @@ Rules catalog includes **927 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 02/08/2024 - minor - Exclude an additionnal legitimate domain.
+            
 **Archive Collected Data**
 
 ??? abstract "Compress Data for Exfiltration via Archiver"
@@ -11928,6 +11953,12 @@ Rules catalog includes **927 built-in detection rules** ([_last update on 2024-0
     Detects Bazar Loader domains based on the Bazar Loader DGA
     
     - **Effort:** elementary
+    
+??? abstract "Cato Networks SASE High Risk Alert"
+    
+    Cato Networks SASE intrusion detection has detected a high risk alert.
+    
+    - **Effort:** master
     
 ??? abstract "Chafer (APT 39) Activity"
     
@@ -12175,6 +12206,12 @@ Rules catalog includes **927 built-in detection rules** ([_last update on 2024-0
     
 **Proxy**
 
+??? abstract "Microsoft 365 Authenticated Activity From Tor IP Address"
+    
+    Detects authenticated Microsoft 365 activity from an IP address associated with Tor.
+    
+    - **Effort:** advanced
+    
 ??? abstract "Netsh Port Forwarding"
     
     Detects netsh commands that enable a port forwarding between to hosts. This can be used by attackers to tunnel RDP or SMB shares for example.
@@ -12217,6 +12254,7 @@ Rules catalog includes **927 built-in detection rules** ([_last update on 2024-0
     
         - 26/01/2024 - minor - Modifying filter to improve rule.
         - 22/11/2023 - minor - Adding filter to improve rule.
+        - 02/08/2024 - minor - Small pattern to change to match only the real tags related to TOR.
             
 **Web Service**
 
@@ -12226,6 +12264,10 @@ Rules catalog includes **927 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 05/08/2023 - minor - Added filters for commonly observed files extensions.
+            
 ??? abstract "Telegram Bot API Request"
     
     Detects suspicious DNS queries to api.telegram.org used by Telegram Bots of any kind
@@ -12277,6 +12319,7 @@ Rules catalog includes **927 built-in detection rules** ([_last update on 2024-0
     - **Changelog:**
     
         - 28/06/2023 - minor - Added filter to the rule to reduce false positives.
+        - 05/08/2024 - major - Edited pattern of the rule to reduce false positives.
             
 ??? abstract "Suspicious Desktopimgdownldr Execution"
     
@@ -12659,6 +12702,7 @@ Rules catalog includes **927 built-in detection rules** ([_last update on 2024-0
     - **Changelog:**
     
         - 28/06/2023 - minor - Added filter to the rule to reduce false positives.
+        - 05/08/2024 - major - Edited pattern of the rule to reduce false positives.
             
 ## Impact
 **Data Destruction**

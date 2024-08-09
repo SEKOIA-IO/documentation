@@ -255,6 +255,12 @@ The following Sekoia.io built-in rules match the intake **Azure Windows**. This 
     
     - **Effort:** elementary
 
+??? abstract "Credential Harvesting Via Vaultcmd.exe"
+    
+    Detects when the process vaultcmd is used for credential harvesting.
+    
+    - **Effort:** advanced
+
 ??? abstract "Cryptomining"
     
     Detection of domain names potentially related to cryptomining activities.

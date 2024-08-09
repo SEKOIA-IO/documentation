@@ -63,6 +63,12 @@ The following Sekoia.io built-in rules match the intake **Kaspersky Endpoint Sec
     
     - **Effort:** advanced
 
+??? abstract "SecurityScorecard Vulnerability Assessment Scanner - New Issues"
+    
+    Raises an alert when SecurityScorecard scanners find new issues.
+    
+    - **Effort:** master
+
 ??? abstract "Suspicious ADSI-Cache Usage By Unknown Tool"
     
     Detects the usage of ADSI (LDAP) operations by tools. This may also detect tools like LDAPFragger. It needs file monitoring capabilities (Sysmon Event ID 11 with .sch file creation logging).

@@ -201,6 +201,12 @@ The following Sekoia.io built-in rules match the intake **Cybereason EDR activit
     
     - **Effort:** elementary
 
+??? abstract "Credential Harvesting Via Vaultcmd.exe"
+    
+    Detects when the process vaultcmd is used for credential harvesting.
+    
+    - **Effort:** advanced
+
 ??? abstract "Cron Files Alteration"
     
     Cron Files and Cron Directory alteration used by attacker for persistency or privilege escalation.
@@ -1010,6 +1016,12 @@ The following Sekoia.io built-in rules match the intake **Cybereason EDR activit
     Detects schtasks started from suspicious and/or unusual processes.
     
     - **Effort:** intermediate
+
+??? abstract "SecurityScorecard Vulnerability Assessment Scanner - New Issues"
+    
+    Raises an alert when SecurityScorecard scanners find new issues.
+    
+    - **Effort:** master
 
 ??? abstract "Sekoia.io EICAR Detection"
     

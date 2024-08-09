@@ -225,6 +225,12 @@ The following Sekoia.io built-in rules match the intake **Trend Micro Cloud One 
     
     - **Effort:** elementary
 
+??? abstract "Credential Harvesting Via Vaultcmd.exe"
+    
+    Detects when the process vaultcmd is used for credential harvesting.
+    
+    - **Effort:** advanced
+
 ??? abstract "Cron Files Alteration"
     
     Cron Files and Cron Directory alteration used by attacker for persistency or privilege escalation.
@@ -974,6 +980,12 @@ The following Sekoia.io built-in rules match the intake **Trend Micro Cloud One 
     Detection of scheduled task with high privileges used by attacker for persistence.
     
     - **Effort:** elementary
+
+??? abstract "SecurityScorecard Vulnerability Assessment Scanner - New Issues"
+    
+    Raises an alert when SecurityScorecard scanners find new issues.
+    
+    - **Effort:** master
 
 ??? abstract "Sekoia.io EICAR Detection"
     
