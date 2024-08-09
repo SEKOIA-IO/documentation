@@ -10,7 +10,7 @@ These two ways will create an Azure Event Hub and a Storage Account.
 
     ** Use the template to create the ressources**
 
-    To get started, click on the button below and fill the form on Azure to set up the required environment for Sekoia [![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw%2Egithubusercontent%2Ecom%2FSEKOIA%2DIO%2Fdocumentation%2Fmain%2Fdocs%2Fassets%2Foperation%5Fcenter%2Fintegration%5Fcatalog%2Fcloud%5Fand%5Fsaas%2Fazure%2Feventhub%5Ftemplate%2Ejson)
+    To get started, click on the button below and fill the form on Azure to set up the required environment for Sekoia [![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw%2Egithubusercontent%2Ecom%2FSEKOIA%2DIO%2Fdocumentation%2Fmain%2Fdocs%2Fassets%2Fintegration%2Fcloud%5Fand%5Fsaas%2Fazure%2Feventhub%5Ftemplate%2Ejson)
 
     Some fields must be filled in.
 
