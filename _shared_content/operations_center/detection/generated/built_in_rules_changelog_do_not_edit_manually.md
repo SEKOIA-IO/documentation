@@ -1,7 +1,10 @@
-Changelog _last update on 2024-08-09_
+Changelog _last update on 2024-08-12_
 
 ## Changelog
 
+### Entra ID Sign-In Via Known AiTM Phishing Kit (RED0046)
+  - 09/08/2024 - major - Update the indicator.
+    
 ### RSA SecurID Failed Authentification
   - 08/08/2024 - minor - Group-by values were changed to avoid having too much alerts.
     
