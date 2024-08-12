@@ -11,7 +11,7 @@ Palo Alto Networks offers an enterprise cybersecurity platform which provides ne
 - **Supported environment**: On Premise
 - **Version compatibility**:
 - **Detection based on**: Telemetry
-- **Supported application or feature**: Traffic, Threat and WileFire Malicious
+- **Supported application or feature**: Traffic, Threat and WildFire Malicious
 
 ## Specification
 
