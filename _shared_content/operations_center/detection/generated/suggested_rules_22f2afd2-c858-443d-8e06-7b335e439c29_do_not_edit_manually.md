@@ -213,6 +213,12 @@ The following Sekoia.io built-in rules match the intake **CrowdStrike Falcon**. 
     
     - **Effort:** elementary
 
+??? abstract "Credential Dump Tools Related Files"
+    
+    Detects processes or file names related to credential dumping tools and the dropped files they generate by default.
+    
+    - **Effort:** advanced
+
 ??? abstract "Credential Harvesting Via Vaultcmd.exe"
     
     Detects when the process vaultcmd is used for credential harvesting.
@@ -930,6 +936,12 @@ The following Sekoia.io built-in rules match the intake **CrowdStrike Falcon**. 
 ??? abstract "Non-Legitimate Executable Using AcceptEula Parameter"
     
     Detects accepteula in command line with non-legitimate executable name. Some attackers are masquerading SysInternals tools with decoy names to prevent detection.
+    
+    - **Effort:** advanced
+
+??? abstract "Openfiles Usage"
+    
+    Detects when the command openfiles, to get information on files opened remotely, is used.
     
     - **Effort:** advanced
 

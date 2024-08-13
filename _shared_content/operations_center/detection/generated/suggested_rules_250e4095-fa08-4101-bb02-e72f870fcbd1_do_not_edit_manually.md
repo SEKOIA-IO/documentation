@@ -423,11 +423,11 @@ The following Sekoia.io built-in rules match the intake **Sekoia.io Endpoint Age
     
     - **Effort:** intermediate
 
-??? abstract "Cred Dump Tools Dropped Files"
+??? abstract "Credential Dump Tools Related Files"
     
-    Process with well-known names (parts of credential dump software or files produced by them) creation.
+    Detects processes or file names related to credential dumping tools and the dropped files they generate by default.
     
-    - **Effort:** intermediate
+    - **Effort:** advanced
 
 ??? abstract "Credential Dumping By LaZagne"
     
@@ -1536,6 +1536,12 @@ The following Sekoia.io built-in rules match the intake **Sekoia.io Endpoint Age
 ??? abstract "OneNote Suspicious Children Process"
     
     In January 2023, a peak of attacks using .one files was observed in the wild. This rule tries to detect the effect of such attempts using this technique.
+    
+    - **Effort:** advanced
+
+??? abstract "Openfiles Usage"
+    
+    Detects when the command openfiles, to get information on files opened remotely, is used.
     
     - **Effort:** advanced
 

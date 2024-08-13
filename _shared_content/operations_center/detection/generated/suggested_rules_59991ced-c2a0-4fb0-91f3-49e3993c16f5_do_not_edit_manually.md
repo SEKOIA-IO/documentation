@@ -219,6 +219,12 @@ The following Sekoia.io built-in rules match the intake **Tanium**. This documen
     
     - **Effort:** elementary
 
+??? abstract "Credential Dump Tools Related Files"
+    
+    Detects processes or file names related to credential dumping tools and the dropped files they generate by default.
+    
+    - **Effort:** advanced
+
 ??? abstract "Credential Harvesting Via Vaultcmd.exe"
     
     Detects when the process vaultcmd is used for credential harvesting.
@@ -888,6 +894,12 @@ The following Sekoia.io built-in rules match the intake **Tanium**. This documen
 ??? abstract "OneNote Suspicious Children Process"
     
     In January 2023, a peak of attacks using .one files was observed in the wild. This rule tries to detect the effect of such attempts using this technique.
+    
+    - **Effort:** advanced
+
+??? abstract "Openfiles Usage"
+    
+    Detects when the command openfiles, to get information on files opened remotely, is used.
     
     - **Effort:** advanced
 
