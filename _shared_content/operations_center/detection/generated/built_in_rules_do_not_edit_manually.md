@@ -1,4 +1,4 @@
-Rules catalog includes **930 built-in detection rules** ([_last update on 2024-08-12_](rules_changelog.md)).
+Rules catalog includes **932 built-in detection rules** ([_last update on 2024-08-13_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Identity Information**
 
@@ -171,6 +171,10 @@ Rules catalog includes **930 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 13/08/2024 - major - Restrict to only one type of event following customer feedback
+            
 ??? abstract "WAF Block Rule"
     
     Detects when one of WAF rule blocked an HTTP request 
@@ -801,6 +805,12 @@ Rules catalog includes **930 built-in detection rules** ([_last update on 2024-0
     
         - 11/06/2024 - minor - Adding fields to be displayed in the alert.
             
+??? abstract "Datadome Protection Intrusion Detection"
+    
+    Detects when Datadome protection raises an alert linked to intrusion. Datadome is used against fraud and bots.
+    
+    - **Effort:** master
+    
 ??? abstract "Failed Logon Followed By A Success From Public IP Addresses"
     
     A login from a public IP can indicate a misconfigured firewall or network boundary. The detection look for 5 or more failed attemps followed by a successfull one. The sekoia.tags are used to filter internal Ipv4 addresses.
@@ -4937,6 +4947,12 @@ Rules catalog includes **930 built-in detection rules** ([_last update on 2024-0
     
         - 11/06/2024 - minor - Adding fields to be displayed in the alert.
             
+??? abstract "Datadome Protection Intrusion Detection"
+    
+    Detects when Datadome protection raises an alert linked to intrusion. Datadome is used against fraud and bots.
+    
+    - **Effort:** master
+    
 ??? abstract "Failed Logon Followed By A Success From Public IP Addresses"
     
     A login from a public IP can indicate a misconfigured firewall or network boundary. The detection look for 5 or more failed attemps followed by a successfull one. The sekoia.tags are used to filter internal Ipv4 addresses.
@@ -8346,6 +8362,10 @@ Rules catalog includes **930 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** elementary
     
+    - **Changelog:**
+    
+        - 08/08/2024 - major - Rule's pattern field changed and pattern improved to cause less false positives.
+            
 **Component Object Model Hijacking**
 
 ??? abstract "Windows Registry Persistence COM Key Linking"
@@ -9993,12 +10013,16 @@ Rules catalog includes **930 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** elementary
     
-??? abstract "Cred Dump Tools Dropped Files"
+??? abstract "Credential Dump Tools Related Files"
     
-    Process with well-known names (parts of credential dump software or files produced by them) creation.
+    Detects processes or file names related to credential dumping tools and the dropped files they generate by default.
     
-    - **Effort:** intermediate
+    - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 07/08/2024 - major - Effort level was changed. Rule pattern initial field was changed to be ECS compliant and match on more intakes. A process was excluded and a filter was added, both to avoid generating too much false positives.
+            
 ??? abstract "Credential Dumping By LaZagne"
     
     Detects LSASS process access by LaZagne for credential dumping. 
@@ -10299,6 +10323,10 @@ Rules catalog includes **930 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** elementary
     
+    - **Changelog:**
+    
+        - 08/08/2024 - major - Rule's pattern field changed and pattern improved to cause less false positives.
+            
 ??? abstract "Windows Credential Editor Registry Key"
     
     Detects the use of Windows Credential Editor (WCE). Prerequisites are logging for Registry events in the Sysmon configuration (events 12 and 13).
@@ -11026,6 +11054,12 @@ Rules catalog includes **930 built-in detection rules** ([_last update on 2024-0
 ??? abstract "Network Scanning and Discovery"
     
     Tools and command lines used for network discovery from current system
+    
+    - **Effort:** advanced
+    
+??? abstract "Openfiles Usage"
+    
+    Detects when the command openfiles, to get information on files opened remotely, is used.
     
     - **Effort:** advanced
     

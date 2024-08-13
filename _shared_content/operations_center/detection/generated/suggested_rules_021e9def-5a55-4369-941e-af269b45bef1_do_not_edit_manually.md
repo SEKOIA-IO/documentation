@@ -657,6 +657,12 @@ The following Sekoia.io built-in rules match the intake **Elastic AuditBeat Linu
     
     - **Effort:** advanced
 
+??? abstract "Openfiles Usage"
+    
+    Detects when the command openfiles, to get information on files opened remotely, is used.
+    
+    - **Effort:** advanced
+
 ??? abstract "Opening Of a Password File"
     
     Command line detection of common office software opening some password related file. It could be a security breach if an unauthorized user access it.

@@ -69,6 +69,12 @@ The following Sekoia.io built-in rules match the intake **Cybereason EDR**. This
     
     - **Effort:** master
 
+??? abstract "Credential Dump Tools Related Files"
+    
+    Detects processes or file names related to credential dumping tools and the dropped files they generate by default.
+    
+    - **Effort:** advanced
+
 ??? abstract "Cron Files Alteration"
     
     Cron Files and Cron Directory alteration used by attacker for persistency or privilege escalation.

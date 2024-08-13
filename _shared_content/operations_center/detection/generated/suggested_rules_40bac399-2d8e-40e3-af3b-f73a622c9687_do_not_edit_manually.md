@@ -219,6 +219,12 @@ The following Sekoia.io built-in rules match the intake **Skyhigh Secure Web Gat
     
     - **Effort:** intermediate
 
+??? abstract "Credential Dump Tools Related Files"
+    
+    Detects processes or file names related to credential dumping tools and the dropped files they generate by default.
+    
+    - **Effort:** advanced
+
 ??? abstract "Cryptomining"
     
     Detection of domain names potentially related to cryptomining activities.

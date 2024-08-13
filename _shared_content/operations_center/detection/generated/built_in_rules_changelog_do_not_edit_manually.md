@@ -1,12 +1,21 @@
-Changelog _last update on 2024-08-12_
+Changelog _last update on 2024-08-13_
 
 ## Changelog
 
+### Veeam Backup & Replication Malware Detection
+  - 13/08/2024 - major - Restrict to only one type of event following customer feedback
+    
 ### Entra ID Sign-In Via Known AiTM Phishing Kit (RED0046)
   - 09/08/2024 - major - Update the indicator.
     
+### Wdigest Enable UseLogonCredential
+  - 08/08/2024 - major - Rule's pattern field changed and pattern improved to cause less false positives.
+    
 ### RSA SecurID Failed Authentification
   - 08/08/2024 - minor - Group-by values were changed to avoid having too much alerts.
+    
+### Credential Dump Tools Related Files
+  - 07/08/2024 - major - Effort level was changed. Rule pattern initial field was changed to be ECS compliant and match on more intakes. A process was excluded and a filter was added, both to avoid generating too much false positives.
     
 ### Impacket Addcomputer
   - 05/08/2024 - major - improve selection to extend detection

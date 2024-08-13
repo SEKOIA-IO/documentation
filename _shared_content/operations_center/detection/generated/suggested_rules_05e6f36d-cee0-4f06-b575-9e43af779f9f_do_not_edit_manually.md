@@ -237,6 +237,12 @@ The following Sekoia.io built-in rules match the intake **Microsoft 365 Defender
     
     - **Effort:** elementary
 
+??? abstract "Credential Dump Tools Related Files"
+    
+    Detects processes or file names related to credential dumping tools and the dropped files they generate by default.
+    
+    - **Effort:** advanced
+
 ??? abstract "Credential Harvesting Via Vaultcmd.exe"
     
     Detects when the process vaultcmd is used for credential harvesting.
@@ -938,6 +944,12 @@ The following Sekoia.io built-in rules match the intake **Microsoft 365 Defender
     Detects registry keys created in OceanLotus (also known as APT32) attack. Logging for Registry events is needed in the Sysmon configuration (events 12 and 13).
     
     - **Effort:** intermediate
+
+??? abstract "Openfiles Usage"
+    
+    Detects when the command openfiles, to get information on files opened remotely, is used.
+    
+    - **Effort:** advanced
 
 ??? abstract "Opening Of a Password File"
     

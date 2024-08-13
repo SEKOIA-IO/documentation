@@ -45,6 +45,12 @@ The following Sekoia.io built-in rules match the intake **Daspren Parad [BETA]**
     
     - **Effort:** intermediate
 
+??? abstract "Credential Dump Tools Related Files"
+    
+    Detects processes or file names related to credential dumping tools and the dropped files they generate by default.
+    
+    - **Effort:** advanced
+
 ??? abstract "Exfiltration And Tunneling Tools Execution"
     
     Execution of well known tools for data exfiltration and tunneling

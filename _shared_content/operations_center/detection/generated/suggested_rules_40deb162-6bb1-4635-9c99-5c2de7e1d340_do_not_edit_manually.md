@@ -1023,6 +1023,12 @@ The following Sekoia.io built-in rules match the intake **SentinelOne Cloud Funn
     
     - **Effort:** advanced
 
+??? abstract "Openfiles Usage"
+    
+    Detects when the command openfiles, to get information on files opened remotely, is used.
+    
+    - **Effort:** advanced
+
 ??? abstract "Opening Of a Password File"
     
     Command line detection of common office software opening some password related file. It could be a security breach if an unauthorized user access it.
@@ -1742,6 +1748,12 @@ The following Sekoia.io built-in rules match the intake **SentinelOne Cloud Funn
     Detects products being uninstalled using WMIC command.
     
     - **Effort:** intermediate
+
+??? abstract "Wdigest Enable UseLogonCredential"
+    
+    Detects modification of the Windows Registry value of HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\WDigest\UseLogonCredential. This technique is used to extract passwords in clear-text using WDigest. The rule requires to log for Registry Events, which can be done using Sysmon Event IDs 12, 13 and 14.
+    
+    - **Effort:** elementary
 
 ??? abstract "Webshell Execution W3WP Process"
     
