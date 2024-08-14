@@ -537,12 +537,6 @@ The following Sekoia.io built-in rules match the intake **Stormshield SNS**. Thi
     
     - **Effort:** elementary
 
-??? abstract "Microsoft Exchange PowerShell Snap-Ins To Export Exchange Mailbox Data"
-    
-    Detects PowerShell SnapIn command line or PowerShell script, often used with Get-Mailbox to export Exchange mailbox data.
-    
-    - **Effort:** intermediate
-
 ??? abstract "Mshta JavaScript Execution"
     
     Identifies suspicious mshta.exe commands that execute JavaScript supplied as a command line argument.

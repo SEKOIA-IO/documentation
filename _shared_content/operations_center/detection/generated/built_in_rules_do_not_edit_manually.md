@@ -1,4 +1,4 @@
-Rules catalog includes **932 built-in detection rules** ([_last update on 2024-08-13_](rules_changelog.md)).
+Rules catalog includes **932 built-in detection rules** ([_last update on 2024-08-14_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Identity Information**
 
@@ -11762,6 +11762,10 @@ Rules catalog includes **932 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 13/08/2024 - minor - Added filter to reduce false positives
+            
 **Data from Network Shared Drive**
 
 ??? abstract "Suspicious Access To Sensitive File Extensions"
