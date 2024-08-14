@@ -645,12 +645,6 @@ The following Sekoia.io built-in rules match the intake **Cybereason EDR activit
     
     - **Effort:** elementary
 
-??? abstract "Microsoft Exchange PowerShell Snap-Ins To Export Exchange Mailbox Data"
-    
-    Detects PowerShell SnapIn command line or PowerShell script, often used with Get-Mailbox to export Exchange mailbox data.
-    
-    - **Effort:** intermediate
-
 ??? abstract "Microsoft Office Product Spawning Windows Shell"
     
     Detects a Windows command or scripting interpreter executable started from Microsoft Word, Excel, Powerpoint, Publisher and Visio. This typically indicates the parent process launched a malicious macro, or run an exploit. This infection vector is very common and could lead to the deployment of harmful malware.

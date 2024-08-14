@@ -369,12 +369,6 @@ The following Sekoia.io built-in rules match the intake **SentinelOne EDR**. Thi
     
     - **Effort:** elementary
 
-??? abstract "Microsoft Exchange PowerShell Snap-Ins To Export Exchange Mailbox Data"
-    
-    Detects PowerShell SnapIn command line or PowerShell script, often used with Get-Mailbox to export Exchange mailbox data.
-    
-    - **Effort:** intermediate
-
 ??? abstract "NTDS.dit File In Suspicious Directory"
     
     The file NTDS.dit is supposed to be located mainly in C:\Windows\NTDS. The rule checks whether the file is in a legitimate directory or not (through file creation events). This is usually really suspicious and could indicate an attacker trying copy the file to then look for users password hashes.

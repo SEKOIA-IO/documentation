@@ -615,12 +615,6 @@ The following Sekoia.io built-in rules match the intake **Trend Micro Cloud One 
     
     - **Effort:** elementary
 
-??? abstract "Microsoft Exchange PowerShell Snap-Ins To Export Exchange Mailbox Data"
-    
-    Detects PowerShell SnapIn command line or PowerShell script, often used with Get-Mailbox to export Exchange mailbox data.
-    
-    - **Effort:** intermediate
-
 ??? abstract "Microsoft Exchange Server Creating Unusual Files"
     
     Look for Microsoft Exchange Server’s Unified Messaging service creating non-standard content on disk, which could indicate web shells or other malicious content, suggesting exploitation of CVE-2021-26858 vulnerability
