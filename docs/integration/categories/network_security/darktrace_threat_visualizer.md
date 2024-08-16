@@ -8,7 +8,7 @@ Darktrace monitors all people and digital assets across your entire ecosystem.
 
 - **Vendor**: Darktrace
 - **Plan**: Defend Core & Defend Prime
-- **Supported environment**: On Premise
+- **Supported environment**: Cloud
 - **Detection based on**: Alert, Telemetry
 - **Supported application or feature**: Darktrace Threat Visualizer
 
