@@ -1,4 +1,4 @@
-Rules catalog includes **932 built-in detection rules** ([_last update on 2024-08-14_](rules_changelog.md)).
+Rules catalog includes **932 built-in detection rules** ([_last update on 2024-08-16_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Identity Information**
 
@@ -217,6 +217,7 @@ Rules catalog includes **932 built-in detection rules** ([_last update on 2024-0
     - **Changelog:**
     
         - 23/03/2023 - minor - The error code 50076 has been excluded as it is not a specific error code related to a login failure that we want to detect and caused several false positives.
+        - 16/08/2024 - minor - The error code 50078 has been excluded as it is not a specific error code related to a login failure that we want to detect and caused several false positives.
             
 ??? abstract "Login Brute-Force Successful On Jumpcloud Portal"
     
@@ -361,6 +362,7 @@ Rules catalog includes **932 built-in detection rules** ([_last update on 2024-0
     - **Changelog:**
     
         - 23/03/2023 - minor - The error code 50076 has been excluded as it is not a specific error code related to a login failure that we want to detect and caused several false positives.
+        - 16/08/2024 - minor - The error code 50078 has been excluded as it is not a specific error code related to a login failure that we want to detect and caused several false positives.
             
 ??? abstract "Login Brute-Force Successful On Jumpcloud Portal"
     

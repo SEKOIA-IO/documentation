@@ -1,7 +1,10 @@
-Changelog _last update on 2024-08-14_
+Changelog _last update on 2024-08-16_
 
 ## Changelog
 
+### Login Brute-Force Successful On AzureAD From Single IP Address
+  - 16/08/2024 - minor - The error code 50078 has been excluded as it is not a specific error code related to a login failure that we want to detect and caused several false positives.
+    
 ### Microsoft Exchange PowerShell Snap-Ins To Export Exchange Mailbox Data
   - 13/08/2024 - minor - Added filter to reduce false positives
     
@@ -919,9 +922,6 @@ Changelog _last update on 2024-08-14_
     
 ### SentinelOne EDR User Logged In To The Management Console
   - 24/03/2023 - minor - Adjusting displayed columns when the rule triggers an alert. Now timestamp and username will be displayed.
-    
-### Login Brute-Force Successful On AzureAD From Single IP Address
-  - 23/03/2023 - minor - The error code 50076 has been excluded as it is not a specific error code related to a login failure that we want to detect and caused several false positives.
     
 ### ISO LNK Infection Chain
   - 13/03/2023 - minor - Extended the list of suspicious process names being spawned from explorer.exe
