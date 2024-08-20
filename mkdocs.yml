@@ -401,6 +401,7 @@ nav:
       - Cisco Meraki MX: integration/categories/network/cisco_meraki_mx.md
       - Cisco NX-OS: integration/categories/network/cisco_nx_os.md
       - Citrix NetScaler / ADC: integration/categories/network/citrix_netscaler_adc.md
+      - Clavister Next-Gen Firewall: integration/categories/network/clavister_ng_fw.md
       - Cloudflare Access Request: integration/categories/network/cloudflare-access-requests.md
       - Cloudflare DNS Gateway: integration/categories/network/cloudflare-gateway-dns.md
       - Cloudflare DNS logs: integration/categories/network/cloudflare-dns-logs.md
@@ -743,6 +744,7 @@ plugins:
       xdr/features/collect/integrations/network/arubaos.md: integration/categories/network/arubaos.md
       xdr/features/collect/integrations/network/broadcom_edge_swg.md: integration/categories/network_security/broadcom_edge_swg.md
       xdr/features/collect/integrations/network/checkpoint.md: integration/categories/network_security/checkpoint.md
+      xdr/features/collect/integrations/network/clavister_ng_fw.md: integration/categories/network/clavister_ng_fw.md
       xdr/features/collect/integrations/network/cisco/cisco_asa.md: integration/categories/network_security/cisco_asa.md
       xdr/features/collect/integrations/network/cisco/cisco_identity_services_engine_ise.md: integration/categories/network_security/cisco_identity_services_engine_ise.md
       xdr/features/collect/integrations/network/cisco/cisco_ios.md: integration/categories/network/cisco_ios.md
