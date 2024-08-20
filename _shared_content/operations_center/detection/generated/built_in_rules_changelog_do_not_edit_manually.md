@@ -1,4 +1,4 @@
-Changelog _last update on 2024-08-16_
+Changelog _last update on 2024-08-20_
 
 ## Changelog
 
@@ -7,6 +7,9 @@ Changelog _last update on 2024-08-16_
     
 ### Microsoft Exchange PowerShell Snap-Ins To Export Exchange Mailbox Data
   - 13/08/2024 - minor - Added filter to reduce false positives
+    
+### Taskhost or Taskhostw Suspicious Child Found
+  - 13/08/2024 - minor - Adding elements to filter to reduce false positives and changing effort level.
     
 ### Veeam Backup & Replication Malware Detection
   - 13/08/2024 - major - Restrict to only one type of event following customer feedback

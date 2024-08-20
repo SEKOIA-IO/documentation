@@ -15,6 +15,12 @@ The following Sekoia.io built-in rules match the intake **EfficientIP SOLIDServe
     
     - **Effort:** master
 
+??? abstract "EfficientIP Suspicious Behavior"
+    
+    Detects when EfficientIP forwards a suspicious behavior related to an IP.
+    
+    - **Effort:** master
+
 ??? abstract "Exfiltration Domain"
     
     Detects traffic toward a domain flagged as a possible exfiltration vector.
