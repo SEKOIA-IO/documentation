@@ -1,4 +1,4 @@
-Rules catalog includes **932 built-in detection rules** ([_last update on 2024-08-16_](rules_changelog.md)).
+Rules catalog includes **933 built-in detection rules** ([_last update on 2024-08-20_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Identity Information**
 
@@ -2882,6 +2882,12 @@ Rules catalog includes **932 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** master
     
+??? abstract "EfficientIP Suspicious Behavior"
+    
+    Detects when EfficientIP forwards a suspicious behavior related to an IP.
+    
+    - **Effort:** master
+    
 ??? abstract "Exploit For CVE-2015-1641"
     
     Detects Winword process starting uncommon sub process MicroScMgmt.exe as used in exploits for CVE-2015-1641
@@ -4202,8 +4208,12 @@ Rules catalog includes **932 built-in detection rules** ([_last update on 2024-0
     
     Task Host manages pop-up windows when users try to close them in a Windows environment. Taskhost.exe triggers the host process for the task. Task Host is a Windows process designed to alert users when dialog boxes close. It is usually launched when restarting and shutting down a PC, and checks if all programs have been properly closed. This process should not create a child process or it is very rare.
     
-    - **Effort:** advanced
+    - **Effort:** master
     
+    - **Changelog:**
+    
+        - 13/08/2024 - minor - Adding elements to filter to reduce false positives and changing effort level.
+            
 ??? abstract "Taskhostw Wrong Parent"
     
     Detects if the Taskhostw process was executed by a non-legitimate parent process. Taskhostw is a software component of Windows service start manager, it starts DLL-based Windows services when the computer boots up.
@@ -5446,8 +5456,12 @@ Rules catalog includes **932 built-in detection rules** ([_last update on 2024-0
     
     Task Host manages pop-up windows when users try to close them in a Windows environment. Taskhost.exe triggers the host process for the task. Task Host is a Windows process designed to alert users when dialog boxes close. It is usually launched when restarting and shutting down a PC, and checks if all programs have been properly closed. This process should not create a child process or it is very rare.
     
-    - **Effort:** advanced
+    - **Effort:** master
     
+    - **Changelog:**
+    
+        - 13/08/2024 - minor - Adding elements to filter to reduce false positives and changing effort level.
+            
 ??? abstract "Taskhostw Wrong Parent"
     
     Detects if the Taskhostw process was executed by a non-legitimate parent process. Taskhostw is a software component of Windows service start manager, it starts DLL-based Windows services when the computer boots up.
@@ -7029,8 +7043,12 @@ Rules catalog includes **932 built-in detection rules** ([_last update on 2024-0
     
     Task Host manages pop-up windows when users try to close them in a Windows environment. Taskhost.exe triggers the host process for the task. Task Host is a Windows process designed to alert users when dialog boxes close. It is usually launched when restarting and shutting down a PC, and checks if all programs have been properly closed. This process should not create a child process or it is very rare.
     
-    - **Effort:** advanced
+    - **Effort:** master
     
+    - **Changelog:**
+    
+        - 13/08/2024 - minor - Adding elements to filter to reduce false positives and changing effort level.
+            
 ??? abstract "Taskhostw Wrong Parent"
     
     Detects if the Taskhostw process was executed by a non-legitimate parent process. Taskhostw is a software component of Windows service start manager, it starts DLL-based Windows services when the computer boots up.

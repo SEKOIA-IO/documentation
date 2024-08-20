@@ -1915,7 +1915,7 @@ The following Sekoia.io built-in rules match the intake **Elastic Winlogbeat**. 
     
     Task Host manages pop-up windows when users try to close them in a Windows environment. Taskhost.exe triggers the host process for the task. Task Host is a Windows process designed to alert users when dialog boxes close. It is usually launched when restarting and shutting down a PC, and checks if all programs have been properly closed. This process should not create a child process or it is very rare.
     
-    - **Effort:** advanced
+    - **Effort:** master
 
 ??? abstract "Taskhostw Wrong Parent"
     
