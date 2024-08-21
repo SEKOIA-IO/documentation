@@ -151,7 +151,7 @@ This rule enriches an existing asset with an `os` contextual property. This prop
 
 ### Discover unique Hosts
 
-This rule creates a new asset for every unseen `host.name`. It attaches the `ipv4` and `ipv6` stored in field `host.ip` of the event as detection properties of the newly created asset.
+This rule creates a new asset for every unseen `host.name`. It also suggests the `ipv4` and `ipv6` stored in field `host.ip` of the event as detection properties of the newly created asset.
 
 ### Discover unique Accounts
 
