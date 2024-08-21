@@ -9,6 +9,12 @@ The following Sekoia.io built-in rules match the intake **Broadcom Edge Secure W
     
     - **Effort:** elementary
 
+??? abstract "Broadcom Edge Secure Web Gateway High Threat"
+    
+    Detects when a high threat is detected by Broadcom Edge Secure Web Gateway.
+    
+    - **Effort:** master
+
 ??? abstract "CVE-2018-11776 Apache Struts2"
     
     Apache Struts versions 2.3 to 2.3.34 and 2.5 to 2.5.16 suffer from possible Remote Code Execution when alwaysSelectFullNamespace is true (either by user or a plugin like Convention Plugin) and then: results are used with no namespace and in same time, its upper package have no or wildcard namespace and similar to results, same possibility when using url tag which doesn't have value and action set and in same time, its upper package have no or wildcard namespace.

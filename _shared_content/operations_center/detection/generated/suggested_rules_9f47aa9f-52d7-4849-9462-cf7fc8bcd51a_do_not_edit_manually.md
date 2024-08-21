@@ -21,6 +21,12 @@ The following Sekoia.io built-in rules match the intake **Claroty xDome**. This 
     
     - **Effort:** intermediate
 
+??? abstract "Claroty xDome Network Threat Detection Alert"
+    
+    Claroty xDome has raised an network threat detection alert.
+    
+    - **Effort:** master
+
 ??? abstract "Computer Account Deleted"
     
     Detects computer account deletion.

@@ -9,6 +9,12 @@ The following Sekoia.io built-in rules match the intake **Cyberwatch Detection**
     
     - **Effort:** master
 
+??? abstract "Cyberwatch Detection Critical Vulnerability"
+    
+    Cyberwatch Detection has detected an asset with a critical vulnerability 
+    
+    - **Effort:** master
+
 ??? abstract "Dynamic DNS Contacted"
     
     Detect communication with dynamic dns domain. This kind of domain is often used by attackers. This rule can trigger false positive in non-controlled environment because dynamic dns is not always malicious.
