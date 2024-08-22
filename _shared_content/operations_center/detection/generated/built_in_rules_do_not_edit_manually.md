@@ -1,4 +1,4 @@
-Rules catalog includes **933 built-in detection rules** ([_last update on 2024-08-20_](rules_changelog.md)).
+Rules catalog includes **937 built-in detection rules** ([_last update on 2024-08-21_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Identity Information**
 
@@ -566,6 +566,12 @@ Rules catalog includes **933 built-in detection rules** ([_last update on 2024-0
     
 **Obtain Capabilities**
 
+??? abstract "Cyberwatch Detection Critical Vulnerability"
+    
+    Cyberwatch Detection has detected an asset with a critical vulnerability 
+    
+    - **Effort:** master
+    
 ??? abstract "ESET Protect Vulnerability Exploitation Attempt"
     
     Detects when an attempt is made to exploit a vulnerability.
@@ -629,6 +635,12 @@ Rules catalog includes **933 built-in detection rules** ([_last update on 2024-0
     Detects impossible travel when performing authentication from a source IP address, grouped by username.
     
     - **Effort:** advanced
+    
+??? abstract "Broadcom Edge Secure Web Gateway High Threat"
+    
+    Detects when a high threat is detected by Broadcom Edge Secure Web Gateway.
+    
+    - **Effort:** master
     
 ??? abstract "Brute-Force On Fortinet Firewall Login"
     
@@ -4579,6 +4591,12 @@ Rules catalog includes **933 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** advanced
     
+??? abstract "Broadcom Edge Secure Web Gateway High Threat"
+    
+    Detects when a high threat is detected by Broadcom Edge Secure Web Gateway.
+    
+    - **Effort:** master
+    
 ??? abstract "Brute-Force On Fortinet Firewall Login"
     
     Spots many failed attempts to log on an administration interface.
@@ -6309,6 +6327,12 @@ Rules catalog includes **933 built-in detection rules** ([_last update on 2024-0
     Detects impossible travel when performing authentication from a source IP address, grouped by username.
     
     - **Effort:** advanced
+    
+??? abstract "Broadcom Edge Secure Web Gateway High Threat"
+    
+    Detects when a high threat is detected by Broadcom Edge Secure Web Gateway.
+    
+    - **Effort:** master
     
 ??? abstract "Brute-Force On Fortinet Firewall Login"
     
@@ -8084,6 +8108,12 @@ Rules catalog includes **933 built-in detection rules** ([_last update on 2024-0
     Detects impossible travel when performing authentication from a source IP address, grouped by username.
     
     - **Effort:** advanced
+    
+??? abstract "Broadcom Edge Secure Web Gateway High Threat"
+    
+    Detects when a high threat is detected by Broadcom Edge Secure Web Gateway.
+    
+    - **Effort:** master
     
 ??? abstract "Brute-Force On Fortinet Firewall Login"
     
@@ -11175,6 +11205,12 @@ Rules catalog includes **933 built-in detection rules** ([_last update on 2024-0
             
 **System Network Connections Discovery**
 
+??? abstract "Broadcom Edge Secure Web Gateway Anomaly TCP Denied"
+    
+    Detects a high number of connection TCP denied.
+    
+    - **Effort:** master
+    
 ??? abstract "Cmd.exe Used To Run Reconnaissance Commands"
     
     Detects command lines with suspicious args
@@ -12614,6 +12650,12 @@ Rules catalog includes **933 built-in detection rules** ([_last update on 2024-0
     
 **Exfiltration Over C2 Channel**
 
+??? abstract "Claroty xDome Network Threat Detection Alert"
+    
+    Claroty xDome has raised an network threat detection alert.
+    
+    - **Effort:** master
+    
 ??? abstract "Exfiltration And Tunneling Tools Execution"
     
     Execution of well known tools for data exfiltration and tunneling
