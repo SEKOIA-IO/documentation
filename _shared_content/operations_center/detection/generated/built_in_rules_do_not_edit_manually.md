@@ -1,4 +1,4 @@
-Rules catalog includes **937 built-in detection rules** ([_last update on 2024-08-21_](rules_changelog.md)).
+Rules catalog includes **937 built-in detection rules** ([_last update on 2024-08-22_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Identity Information**
 
@@ -12879,6 +12879,10 @@ Rules catalog includes **937 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 21/08/2024 - minor - Adding a space to reduce false positives.
+            
 ??? abstract "Disabled Service"
     
     Service disabling can be abused by attacker to deny security mecanisms (eg: firewall, EDR, ect) and it is also often used by cryptominer to exploit as much RAM & CPU as possible on infected host.

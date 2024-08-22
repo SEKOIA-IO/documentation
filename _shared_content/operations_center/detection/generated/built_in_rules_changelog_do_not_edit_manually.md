@@ -1,7 +1,10 @@
-Changelog _last update on 2024-08-21_
+Changelog _last update on 2024-08-22_
 
 ## Changelog
 
+### Correlation Multi Service Disable
+  - 21/08/2024 - minor - Adding a space to reduce false positives.
+    
 ### Login Brute-Force Successful On AzureAD From Single IP Address
   - 16/08/2024 - minor - The error code 50078 has been excluded as it is not a specific error code related to a login failure that we want to detect and caused several false positives.
     
