@@ -1,4 +1,4 @@
-Rules catalog includes **937 built-in detection rules** ([_last update on 2024-08-22_](rules_changelog.md)).
+Rules catalog includes **940 built-in detection rules** ([_last update on 2024-08-23_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Identity Information**
 
@@ -4168,6 +4168,12 @@ Rules catalog includes **937 built-in detection rules** ([_last update on 2024-0
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
         - 19/03/2024 - major - Added filter to reduce false positives
             
+??? abstract "Suspicious Commands From MS SQL Server Shell"
+    
+    Detection of some shell commmands run from a cmd executed by Microsoft MS SQL Server. It could be a sign of xp_cmdshell allowed on the MS-SQL server.
+    
+    - **Effort:** intermediate
+    
 ??? abstract "Suspicious DNS Child Process"
     
     Detects suspicious processes spawned by the dns.exe process. It could be a great indication of the exploitation of the DNS RCE bug reported in CVE-2020-1350 (SIGRED).
@@ -5444,6 +5450,12 @@ Rules catalog includes **937 built-in detection rules** ([_last update on 2024-0
     
         - 26/03/2024 - major - Rule's pattern field changed
             
+??? abstract "Suspicious Commands From MS SQL Server Shell"
+    
+    Detection of some shell commmands run from a cmd executed by Microsoft MS SQL Server. It could be a sign of xp_cmdshell allowed on the MS-SQL server.
+    
+    - **Effort:** intermediate
+    
 ??? abstract "Svchost Wrong Parent"
     
     Detects if the svchost.exe process was executed by a non-legitimate parent process. Svchost (Service Host Process) is a generic host process name for services that run from dynamic-link libraries (DLLs).
@@ -7037,6 +7049,12 @@ Rules catalog includes **937 built-in detection rules** ([_last update on 2024-0
     
         - 26/03/2024 - major - Rule's pattern field changed
             
+??? abstract "Suspicious Commands From MS SQL Server Shell"
+    
+    Detection of some shell commmands run from a cmd executed by Microsoft MS SQL Server. It could be a sign of xp_cmdshell allowed on the MS-SQL server.
+    
+    - **Effort:** intermediate
+    
 ??? abstract "Svchost Wrong Parent"
     
     Detects if the svchost.exe process was executed by a non-legitimate parent process. Svchost (Service Host Process) is a generic host process name for services that run from dynamic-link libraries (DLLs).
@@ -12661,6 +12679,18 @@ Rules catalog includes **937 built-in detection rules** ([_last update on 2024-0
     Execution of well known tools for data exfiltration and tunneling
     
     - **Effort:** advanced
+    
+??? abstract "Forcepoint Secure Web Gateway Compromised Websites"
+    
+    Forcepoint Secure Web Gateway has detected an access to an IP/domain tagged as compromised. Even if it has been blocked, it could be interesting to investigate the source asset.
+    
+    - **Effort:** master
+    
+??? abstract "Forcepoint Secure Web Gateway Malicious Websites"
+    
+    Forcepoint Secure Web Gateway has detected an access to an IP/domain tagged as malicious. Even if it has been blocked, it could be interesting to investigate the source asset.
+    
+    - **Effort:** master
     
 ??? abstract "Gatewatcher AionIQ Malware Alert"
     
