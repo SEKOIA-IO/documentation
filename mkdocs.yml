@@ -833,6 +833,7 @@ plugins:
       user_center/multi_factor_authentication.md: getting_started/account_security.md
       xdr/develop/rest_api/identity_and_authentication.md: xdr/develop/rest_api/community.md
       xdr/features/investigate/dork_language.md: xdr/features/investigate/events_query_language.md
+      operation_center/data_collection/ingestion_methods/sekoiaio.md: integration/categories/endpoint/sekoiaio.md
 - redoc
 - intakes_by_uuid
 repo_url: https://github.com/SEKOIA-IO/documentation
