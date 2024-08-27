@@ -461,6 +461,114 @@ In this section, you will find examples of raw logs as generated natively by the
 
 
 
+=== "test_type_104_2"
+
+
+    ```json
+	{
+        "Version": 1,
+        "Type": 104,
+        "TypeComputedMap": "RegistryKeyRead",
+        "Severity": 2,
+        "ServerReserved": 0,
+        "Attributes": 2,
+        "AttributesComputedBitMap": [
+            "Protection"
+        ],
+        "EventGuid": "{4C8EFA24-0021-49CA-B9F7-CF5A7BF57173}",
+        "GenerateIncident": true,
+        "Timestamp": "2024-07-09T12:08:54.9660242+02:00",
+        "TimestampRaw": 133649933349660242,
+        "SpecificData": {
+            "SourceProcess": {
+                "PID": 3948,
+                "ProcessGuid": "{93158E40-E93F-46CE-BCE0-3FC359B07B75}",
+                "ProcessImageName": "C:\\ProgramData\\Microsoft\\Windows Defender\\Platform\\4.18.24050.7-0\\MsMpEng.exe",
+                "VolumeZone": 1,
+                "VolumeZoneComputedBitMap": [
+                    "Operating system"
+                ],
+                "ProcessCommandLine": "\"C:\\ProgramData\\Microsoft\\Windows Defender\\Platform\\4.18.24050.7-0\\MsMpEng.exe\"",
+                "User": "S-1-5-21-2222222-33333333-44444444-555",
+                "UserNameLookup": "JOHNDOE",
+                "UserDomainLookup": "TEST",
+                "IntegrityLevel": "S-1-16-16384",
+                "IntegrityLevelNameLookup": "Niveau obligatoire syst\u00e8me",
+                "IntegrityLevelDomainLookup": "\u00c9tiquette obligatoire",
+                "SessionID": 0,
+                "HashMd5": "4A4D6E95B693256BCD6E90FDC077194A",
+                "HashSha1": "2E52FBE255C0CB6C6B27EEE8C28ACAFAA42DB60E",
+                "HashSha256": "08D69BDE42AEEA0F0ECBF16A84BF74AF47C0EA6C0ADA6DDBD40CDC7F5C2930ED",
+                "IsProtectedOrCritical": true,
+                "CertificateSignatureState": 1,
+                "CertificateSignatureStateComputedMap": "SignatureStateTrusted",
+                "Certificates": [
+                    {
+                        "Algorithm": "SHA256",
+                        "IssuerCN": "Microsoft Windows Production PCA 2011",
+                        "SubjectCN": "Microsoft Windows Publisher",
+                        "SigningTime": "2024-05-11T03:15:15.5120000+02:00",
+                        "ValidityStart": "2024-02-08T21:22:45.0000000+02:00",
+                        "ValidityEnd": "2025-02-07T21:22:45.0000000+02:00"
+                    }
+                ],
+                "ProcessStartTime": "2024-07-09T10:03:54.4154623+02:00",
+                "ProcessStartTimeRaw": 133649858344154623
+            },
+            "Action": {
+                "PolicyGuid": "{2042076D-A879-4913-A2C7-E94A9ECE8D79}",
+                "PolicyVersion": 14,
+                "RuleGuid": "{F676C8C4-D8FD-4ED2-89FB-C949EA33951C}",
+                "BaseRuleGuid": "{508448D3-1872-416D-99D9-A3F64AE24C48}",
+                "IdentifierGuid": "{6F1EAB4E-60E5-4DA2-8509-768988375E47}",
+                "Blocked": false,
+                "RequestMoveToQuarantine": false,
+                "UserDecision": false,
+                "SourceProcessKilled": false,
+                "RuleTags": [
+                    "T1562.001"
+                ]
+            },
+            "Path": "HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows Defender\\Exclusions\\TemporaryPaths",
+            "InformationClass": 4,
+            "InformationClassComputedMap": "KeyCachedInformation"
+        },
+        "AdditionalData": {
+            "AgentAddresses": [
+                "1.2.3.4"
+            ],
+            "AgentGroupGuid": "{1B24AC36-5218-4F44-A374-80D86475E325}",
+            "AgentGroupName": "Demo",
+            "AgentGuid": "{6CA7D1BE-7359-426D-B5B1-D9E742DF69A6}",
+            "AgentName": "WIN10-A",
+            "AttackCVEId": null,
+            "AttackMitreTacticId": [
+                "TA0005"
+            ],
+            "AttackMitreTacticName": [
+                "Defense Evasion"
+            ],
+            "AttackMitreTechnicId": [
+                "T1562",
+                "T1562.001"
+            ],
+            "AttackMitreTechnicName": [
+                "Impair Defenses",
+                "Disable or Modify Tools"
+            ],
+            "AttackSESId": null,
+            "AttackTriggerCondition": "An untrusted process attempts to add bypass into Windows Defender.",
+            "CategoryName": "Registry",
+            "IncidentGuid": "{CE926A32-4461-47C0-BDE8-43C1493E7DF0}",
+            "Message": "The 'MsMpEng.exe' process read the registry key 'HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows Defender\\Exclusions\\TemporaryPaths'",
+            "PolicyName": "Demo - Protect policy",
+            "SeverityName": "Critical"
+        }
+    }
+    ```
+
+
+
 === "test_type_109"
 
 
@@ -828,6 +936,102 @@ In this section, you will find examples of raw logs as generated natively by the
 
 
 
+=== "test_type_113_1"
+
+
+    ```json
+	{
+        "Version": 1,
+        "Type": 113,
+        "TypeComputedMap": "RegistryValueCreate",
+        "Severity": 5,
+        "ServerReserved": 9,
+        "Attributes": 8,
+        "AttributesComputedBitMap": [
+            "Audit"
+        ],
+        "EventGuid": "{E8B35E85-838F-44E5-B7AB-7635E9C81ECB}",
+        "GenerateIncident": false,
+        "Timestamp": "2024-03-22T12:39:27.6422102+01:00",
+        "TimestampRaw": 133555811676422102,
+        "SpecificData": {
+            "SourceProcess": {
+                "PID": 1196,
+                "ProcessGuid": "{B0E2F52D-8C18-4DF8-8E73-470BB4E5D373}",
+                "ProcessImageName": "C:\\Windows\\regedit.exe",
+                "VolumeZone": 1,
+                "VolumeZoneComputedBitMap": [
+                    "Operatingsystem"
+                ],
+                "ProcessCommandLine": "\"C:\\WINDOWS\\regedit.exe\"",
+                "User": "S-1-5-21-2222222-33333333-44444444-555",
+                "UserNameLookup": "JOHNDOE",
+                "UserDomainLookup": "TEST",
+                "IntegrityLevel": "S-1-16-8192",
+                "IntegrityLevelNameLookup": "MediumMandatoryLevel",
+                "IntegrityLevelDomainLookup": "MandatoryLabel",
+                "SessionID": 2,
+                "HashMd5": "999A30979F6195BF562068639FFC4426",
+                "HashSha1": "D4F2663AABC03478975382B3C69F24B3C6BD2AA9",
+                "HashSha256": "92F24FED2BA2927173AAD58981F6E0643C6B89815B117E8A7C4A0988AC918170",
+                "IsProtectedOrCritical": false,
+                "CertificateSignatureState": 1,
+                "CertificateSignatureStateComputedMap": "SignatureStateTrusted",
+                "Certificates": [
+                    {
+                        "Algorithm": "SHA256",
+                        "IssuerCN": "MicrosoftWindowsProductionPCA2011",
+                        "SubjectCN": "MicrosoftWindows",
+                        "SigningTime": "2023-01-18T02:58:33.2360000+01:00",
+                        "ValidityStart": "2022-05-05T20:23:14.0000000+01:00",
+                        "ValidityEnd": "2023-05-04T20:23:14.0000000+01:00"
+                    }
+                ],
+                "ProcessStartTime": "2023-03-06T16:04:21.8793902+01:00",
+                "ProcessStartTimeRaw": 133225886618793902
+            },
+            "Action": {
+                "PolicyGuid": "{BF0D5FEE-FF2A-4E6B-97DA-A1FC246FE845}",
+                "PolicyVersion": 4,
+                "RuleGuid": "{4CEEDD7A-875D-4C7E-9ABD-A710BD3DD0C0}",
+                "BaseRuleGuid": "{4CEEDD7A-875D-4C7E-9ABD-A710BD3DD0BF}",
+                "IdentifierGuid": "{5C079068-7641-4C9A-8600-BBDC93FBBCDD}",
+                "Blocked": false,
+                "UserDecision": false,
+                "SourceProcessKilled": false
+            },
+            "Path": "HKEY_LOCAL_MACHINE\\BCD00000000\\Objects\\{a5a30fa2-3d06-4e9f-b5f4-a01df9d1fcba}\\Elements\\25000004",
+            "ValueName": "Element",
+            "ValueDataType": 3,
+            "ValueDataTypeComputedMap": "REG_BINARY",
+            "ValueData": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+            ]
+        },
+        "AdditionalData": {
+            "AgentAddresses": [],
+            "AgentGroupGuid": "{61B578F4-289D-4B97-A331-DDDCB80C6427}",
+            "AgentGroupName": "Desktop",
+            "AgentGuid": "{6EF8564D-941A-4377-80FD-78CD3DFEB269}",
+            "AgentName": "DST-001",
+            "CategoryName": "Registry",
+            "IncidentGuid": null,
+            "Message": "The'svchost.exe'processcreatedtheregistryvalue'Element'",
+            "PolicyName": "Stormshield-Mediumpolicy-External",
+            "SeverityName": "Notice"
+        }
+    }
+    ```
+
+
+
 === "test_type_114"
 
 
@@ -895,6 +1099,113 @@ In this section, you will find examples of raw logs as generated natively by the
                 "UserDecision": false,
                 "SourceProcessKilled": false
             }
+        }
+    }
+    ```
+
+
+
+=== "test_type_114_2"
+
+
+    ```json
+	{
+        "Version": 1,
+        "Type": 114,
+        "TypeComputedMap": "RegistryValueRead",
+        "Severity": 2,
+        "ServerReserved": 0,
+        "Attributes": 2,
+        "AttributesComputedBitMap": [
+            "Protection"
+        ],
+        "EventGuid": "{002A9967-5EF2-40CF-911D-7DBA518843A9}",
+        "GenerateIncident": true,
+        "Timestamp": "2024-07-09T12:33:11.2491955+02:00",
+        "TimestampRaw": 133649947912491955,
+        "SpecificData": {
+            "SourceProcess": {
+                "PID": 3948,
+                "ProcessGuid": "{9BC994D7-904B-4C9C-8DC0-A03A36F36276}",
+                "ProcessImageName": "C:\\ProgramData\\Microsoft\\Windows Defender\\Platform\\4.18.24050.7-0\\MsMpEng.exe",
+                "VolumeZone": 1,
+                "VolumeZoneComputedBitMap": [
+                    "Operating system"
+                ],
+                "ProcessCommandLine": "\"C:\\ProgramData\\Microsoft\\Windows Defender\\Platform\\4.18.24050.7-0\\MsMpEng.exe\"",
+                "User": "S-1-5-21-2222222-33333333-44444444-555",
+                "UserNameLookup": "JOHNDOE",
+                "UserDomainLookup": "TEST",
+                "IntegrityLevel": "S-1-16-16384",
+                "IntegrityLevelNameLookup": "Niveau obligatoire syst\u00e8me",
+                "IntegrityLevelDomainLookup": "\u00c9tiquette obligatoire",
+                "SessionID": 0,
+                "HashMd5": "4A4D6E95B693256BCD6E90FDC077194A",
+                "HashSha1": "2E52FBE255C0CB6C6B27EEE8C28ACAFAA42DB60E",
+                "HashSha256": "08D69BDE42AEEA0F0ECBF16A84BF74AF47C0EA6C0ADA6DDBD40CDC7F5C2930ED",
+                "IsProtectedOrCritical": true,
+                "CertificateSignatureState": 1,
+                "CertificateSignatureStateComputedMap": "SignatureStateTrusted",
+                "Certificates": [
+                    {
+                        "Algorithm": "SHA256",
+                        "IssuerCN": "Microsoft Windows Production PCA 2011",
+                        "SubjectCN": "Microsoft Windows Publisher",
+                        "SigningTime": "2024-05-11T03:15:15.5120000+02:00",
+                        "ValidityStart": "2024-02-08T21:22:45.0000000+02:00",
+                        "ValidityEnd": "2025-02-07T21:22:45.0000000+02:00"
+                    }
+                ],
+                "ProcessStartTime": "2024-07-09T10:03:54.4154623+02:00",
+                "ProcessStartTimeRaw": 133649858344154623
+            },
+            "Action": {
+                "PolicyGuid": "{DDAB1006-337F-4B8C-8486-E5A9619144BB}",
+                "PolicyVersion": 14,
+                "RuleGuid": "{4FAC2120-288B-4B3C-9F77-2E5B6ECBB85E}",
+                "BaseRuleGuid": "{49A8528E-E749-4A9D-8736-2CF9380DE241}",
+                "IdentifierGuid": "{0B7EF8C7-FAE0-4890-981A-22FE12F22173}",
+                "Blocked": false,
+                "RequestMoveToQuarantine": false,
+                "UserDecision": false,
+                "SourceProcessKilled": false,
+                "RuleTags": [
+                    "T1562.001"
+                ]
+            },
+            "Path": "HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows Defender\\Exclusions\\Processes",
+            "ValueName": "C:\\Program Files\\Stormshield\\SES Evolution\\Agent\\Bin\\EsInject.exe"
+        },
+        "AdditionalData": {
+            "AgentAddresses": [
+                "1.2.3.4"
+            ],
+            "AgentGroupGuid": "{8AD24A5D-0B19-45E2-9B28-F584F8A54CBC}",
+            "AgentGroupName": "Demo",
+            "AgentGuid": "{CC0772D7-8EBC-4EE6-9FC0-A8B26F5FA7FF}",
+            "AgentName": "WIN10-A",
+            "AttackCVEId": null,
+            "AttackMitreTacticId": [
+                "TA0005"
+            ],
+            "AttackMitreTacticName": [
+                "Defense Evasion"
+            ],
+            "AttackMitreTechnicId": [
+                "T1562",
+                "T1562.001"
+            ],
+            "AttackMitreTechnicName": [
+                "Impair Defenses",
+                "Disable or Modify Tools"
+            ],
+            "AttackSESId": null,
+            "AttackTriggerCondition": "An untrusted process attempts to add bypass into Windows Defender.",
+            "CategoryName": "Registry",
+            "IncidentGuid": "{DA0FA4D3-76B8-4EE0-A8B7-5AFDF9F80071}",
+            "Message": "The 'MsMpEng.exe' process read the registry value 'C:\\Program Files\\Stormshield\\SES Evolution\\Agent\\Bin\\EsInject.exe'",
+            "PolicyName": "Demo - Protect policy",
+            "SeverityName": "Critical"
         }
     }
     ```
@@ -2908,6 +3219,145 @@ In this section, you will find examples of raw logs as generated natively by the
                 "UserDecision": false,
                 "SourceProcessKilled": false
             }
+        }
+    }
+    ```
+
+
+
+=== "test_type_20048_1"
+
+
+    ```json
+	{
+        "Version": 1,
+        "Type": 20048,
+        "TypeComputedMap": "External",
+        "Severity": 4,
+        "ServerReserved": 0,
+        "Attributes": 32,
+        "AttributesComputedBitMap": [
+            "External"
+        ],
+        "EventGuid": "{5838A063-4210-4268-ADB0-39FC5B55A212}",
+        "GenerateIncident": false,
+        "Timestamp": "2024-03-22T14:01:26.6589969+00:00",
+        "TimestampRaw": 133555896866589969,
+        "SpecificData": {
+            "Action": {
+                "PolicyGuid": "{DFDA0F76-10AF-4615-B093-7AA46CC2E7A3}",
+                "PolicyVersion": 5,
+                "RuleGuid": "{63B63F11-7C06-4555-9542-3F7E795B98EE}",
+                "BaseRuleGuid": "{9B076C45-6373-4A4E-9310-F139A66794B4}",
+                "IdentifierGuid": "{00000000-0000-0000-0000-000000000000}",
+                "Blocked": false,
+                "RequestMoveToQuarantine": false,
+                "UserDecision": false,
+                "SourceProcessKilled": false
+            },
+            "Description": "localized:EventForwarding_WinDefender_MalwareProtectionStateMalwareActionTaken",
+            "OriginType": 2,
+            "ExtraData": {
+                "_SourceCategory": 0,
+                "_HideFromUsers": 1,
+                "_OriginalText": "2024 Mar 22 14:01:25 WinEvtLog: Microsoft-Windows-Windows Defender/Operational: INFORMATION(1117): Microsoft-Windows-Windows Defender: SYSTEM: NT AUTHORITY: DESKTOP-001: Microsoft Defender Antivirus has taken action to protect this machine from malware or other potentially unwanted software.   For more information please see the following:  https://go.microsoft.com/fwlink/?linkid=37020&name=Trojan:Win32/BatTamper.A&threatid=2147818424&enterprise=0   \tName: Trojan:Win32/BatTamper.A   \tID: 2147818424   \tSeverity: Severe   \tCategory: Trojan   \tPath: file:_C:\\Users\\Lab\\Downloads\\TurnOffAV.ps1; webfile:_C:\\Users\\Lab\\Downloads\\TurnOffAV.ps1|https://github.com/|pid:13760,ProcessStart:133555896788321048   \tDetection Origin: Internet   \tDetection Type: Concrete   \tDetection Source: Downloads and attachments   \tUser: NT AUTHORITY\\SYSTEM   \tProcess Name: Unknown   \tAction: Quarantine   \tAction Status:  No additional actions required   \tError Code: 0x00000000   \tError description: The operation completed successfully.    \tSecurity intelligence Version: AV: 1.407.619.0, AS: 1.407.619.0, NIS: 1.407.619.0   \tEngine Version: AM: 1.1.24020.9, NIS: 1.1.24020.9",
+                "program_name": "WinEvtLog",
+                "_NormalizerNames": "syslog-1-date-fmt-4, syslog-1-solaris-progname-1",
+                "_NormalizerIds": "4, 6",
+                "_FileType": "windows",
+                "_ExtractorIds": "1",
+                "_ExtractorNames": "windows",
+                "_RuleDescription": "localized:EventForwarding_WinDefender_MalwareProtectionStateMalwareActionTaken",
+                "_RuleId": 13,
+                "_RuleImportedId": 24,
+                "_RuleKeywords": "windows-defender",
+                "_RuleLevel": 6,
+                "__EvtXml": {
+                    "Event": {
+                        "System": {
+                            "Provider": {
+                                "Name": "Microsoft-Windows-Windows Defender",
+                                "Guid": "{11cd958a-c507-4ef3-b3f2-5fd9dfbd2c78}"
+                            },
+                            "EventID": "1117",
+                            "Version": "0",
+                            "Level": "4",
+                            "Task": "0",
+                            "Opcode": "0",
+                            "Keywords": "0x8000000000000000",
+                            "TimeCreated": {
+                                "SystemTime": "2024-03-22T14:01:25.6359716Z"
+                            },
+                            "EventRecordID": "613",
+                            "Correlation": {},
+                            "Execution": {
+                                "ProcessID": "5384",
+                                "ThreadID": "4576"
+                            },
+                            "Channel": "Microsoft-Windows-Windows Defender/Operational",
+                            "Computer": "DESKTOP-001",
+                            "Security": {
+                                "UserID": "S-1-5-18"
+                            }
+                        },
+                        "EventData": {
+                            "Product Name": "Microsoft Defender Antivirus",
+                            "Product Version": "4.18.23110.3",
+                            "Detection ID": "{9C26ADFE-43AA-4884-9765-A2EC223DC7E0}",
+                            "Detection Time": "2024-03-22T14:01:20.550Z",
+                            "Threat ID": "2147818424",
+                            "Threat Name": "Trojan:Win32/BatTamper.A",
+                            "Severity ID": "5",
+                            "Severity Name": "Severe",
+                            "Category ID": "8",
+                            "Category Name": "Trojan",
+                            "FWLink": "https://go.microsoft.com/fwlink/?linkid=37020&name=Trojan:Win32/BatTamper.A&threatid=2147818424&enterprise=0",
+                            "Status Code": "4",
+                            "State": "2",
+                            "Source ID": "4",
+                            "Source Name": "Downloads and attachments",
+                            "Process Name": "Unknown",
+                            "Detection User": "DESKTOP-001\\Lab",
+                            "Path": "file:_C:\\Users\\Lab\\Downloads\\TurnOffAV.ps1; webfile:_C:\\Users\\Lab\\Downloads\\TurnOffAV.ps1|https://github.com/|pid:13760,ProcessStart:133555896788321048",
+                            "Origin ID": "4",
+                            "Origin Name": "Internet",
+                            "Execution ID": "0",
+                            "Execution Name": "Unknown",
+                            "Type ID": "0",
+                            "Type Name": "Concrete",
+                            "Pre Execution Status": "0",
+                            "Action ID": "2",
+                            "Action Name": "Quarantine",
+                            "Error Code": "0x00000000",
+                            "Error Description": "The operation completed successfully. ",
+                            "Post Clean Status": "0",
+                            "Additional Actions ID": "0",
+                            "Additional Actions String": "No additional actions required",
+                            "Remediation User": "NT AUTHORITY\\SYSTEM",
+                            "Security intelligence Version": "AV: 1.407.619.0, AS: 1.407.619.0, NIS: 1.407.619.0",
+                            "Engine Version": "AM: 1.1.24020.9, NIS: 1.1.24020.9"
+                        }
+                    }
+                }
+            },
+            "Fields": {
+                "_RuleGuid": "{63B63F11-7C06-4555-9542-3F7E795B98EE}",
+                "_BaseRuleGuid": "{9B076C45-6373-4A4E-9310-F139A66794B4}"
+            }
+        },
+        "AdditionalData": {
+            "AgentAddresses": [
+                "192.168.0.1"
+            ],
+            "AgentGroupGuid": "{8C2850C0-1A73-4CBC-9831-5AA5D1438AF2}",
+            "AgentGroupName": "Desktop",
+            "AgentGuid": "{0E6DAED4-3505-4F96-9F8D-55FBC85CA4C7}",
+            "AgentName": "DESKTOP-001",
+            "CategoryName": "External",
+            "IncidentGuid": null,
+            "Message": "Windows Defender: The antimalware platform performed an action to protect your system from malware or other potentially unwanted software.",
+            "PolicyName": "Lab Policy",
+            "SeverityName": "Warning"
         }
     }
     ```

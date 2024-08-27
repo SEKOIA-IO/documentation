@@ -28,6 +28,22 @@ In this section, you will find examples of raw logs as generated natively by the
 
 
 
+=== "event_smpt_to_1"
+
+    ```
+	time=18:33:35.615 device_id=xcvfg log_id=0003007072 type=event subtype=smtp pri=information  user=mail ui=mail action=NONE status=N/A session_id="13KGXMHI007058-13KGXMHK007058" msg="to=<contact@example.com>, delay=00:00:06, xdelay=00:00:06, mailer=esmtp, pri=165917, relay= [188.165.36.237], dsn=2.0.0, stat=Sent (Ok: queued as 4T9pxY2qZtz2XPBPX)"
+    ```
+
+
+
+=== "event_smpt_to_2"
+
+    ```
+	time=18:33:35.615 device_id=xcvfg log_id=0003007072 type=event subtype=smtp pri=information  user=mail ui=mail action=NONE status=N/A session_id="13KGXMHI007058-13KGXMHK007058" msg="to=<contact@example.com>, delay=00:00:06, xdelay=00:00:06, mailer=esmtp, pri=165917, relay=smtp.example.org [188.165.36.237], dsn=2.0.0, stat=Sent (Ok: queued as 4T9pxY2qZtz2XPBPX)"
+    ```
+
+
+
 === "event_smtp_STARTTLS"
 
     ```

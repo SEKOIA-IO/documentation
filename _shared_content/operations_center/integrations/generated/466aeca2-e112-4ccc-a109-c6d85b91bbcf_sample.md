@@ -156,6 +156,22 @@ In this section, you will find examples of raw logs as generated natively by the
 
 
 
+=== "test_ASA_302021_3"
+
+    ```
+	%ASA-6-302020: Built inbound ICMP connection for faddr 1.2.3.4/14 gaddr 172.1.1.1/0 laddr 172.1.1.2/0 type 8 code 0
+    ```
+
+
+
+=== "test_ASA_302021_4"
+
+    ```
+	%ASA-6-302021: Teardown ICMP connection for faddr 1.2.3.4/14 gaddr 172.1.1.1/0 laddr 172.1.1.2/0 type 8 code 0
+    ```
+
+
+
 === "test_ASA_305011"
 
     ```
