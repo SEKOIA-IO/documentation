@@ -62,10 +62,10 @@ Daspren is the only Data Detection and Response (DDR) that integrates detection 
   4. **Create a Link**:
     - Link the previously created Sink and Reporter.
 
-{!_shared_content/operations_center/integrations/generated/d6d15297-e977-4584-9bb3-f0290b99f014_sample.md!}
+{!_shared_content/operations_center/integrations/generated/23813540-b658-48dd-b030-e9b92168bbf4_sample.md!}
 
 {!_shared_content/integration/detection_section.md!}
 
-{!_shared_content/operations_center/detection/generated/suggested_rules_bf8867ee-43b7-444c-9475-a7f43754ab6d_do_not_edit_manually.md!}
+{!_shared_content/operations_center/detection/generated/suggested_rules_23813540-b658-48dd-b030-e9b92168bbf4_do_not_edit_manually.md!}
 
-{!_shared_content/operations_center/integrations/generated/d6d15297-e977-4584-9bb3-f0290b99f014.md!}
+{!_shared_content/operations_center/integrations/generated/23813540-b658-48dd-b030-e9b92168bbf4.md!}
