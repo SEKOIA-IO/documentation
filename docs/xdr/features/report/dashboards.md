@@ -98,7 +98,7 @@ To edit an existing widget, click the `three dots` in the upper right corner of 
 
 ### Reorganize widgets 
 
-To reorganize the layout of widgets on your dashboard, click the `Edit button` in the top right corner of the screen. This mode enables you to change both the position and size of each widget. You can easily drag and drop widgets to your preferred locations. Don’t forget to click Save to apply your changes!
+To reorganize the layout of widgets on your dashboard, click the `Edit button` in the top right corner of the screen. This mode enables you to change both the position and size of each widget. You can easily drag and drop widgets to your preferred locations. Don’t forget to click `Save` to apply your changes!
 
 ### Remove widgets 
 To remove widgets from your dashboard, click the `three dots` and select **Delete from dashboard**. 
