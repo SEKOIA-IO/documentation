@@ -1,7 +1,10 @@
-Changelog _last update on 2024-08-23_
+Changelog _last update on 2024-08-28_
 
 ## Changelog
 
+### PowerShell Malicious Nishang PowerShell Commandlets
+  - 27/08/2024 - minor - improve filter to avoid false positive
+    
 ### Correlation Multi Service Disable
   - 21/08/2024 - minor - Adding a space to reduce false positives.
     
@@ -45,9 +48,6 @@ Changelog _last update on 2024-08-23_
   - 02/08/2024 - minor - Exclude an additionnal legitimate domain.
     
 ### PowerShell Malicious PowerShell Commandlets
-  - 26/07/2024 - minor - Removing tools relationships as it was inaccurate
-    
-### PowerShell Malicious Nishang PowerShell Commandlets
   - 26/07/2024 - minor - Removing tools relationships as it was inaccurate
     
 ### AWS CloudTrail EC2 Subnet Deleted

@@ -867,12 +867,6 @@ The following Sekoia.io built-in rules match the intake **Palo Alto Cortex XDR (
     
     - **Effort:** intermediate
 
-??? abstract "PowerShell Malicious Nishang PowerShell Commandlets"
-    
-    Detects Commandlet names and arguments from the Nishang exploitation framework.
-    
-    - **Effort:** advanced
-
 ??? abstract "Powershell UploadString Function"
     
     Powershell's `uploadXXX` functions are a category of methods which can be used to exfiltrate data through native means on a Windows host.
