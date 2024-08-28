@@ -42,8 +42,8 @@ When auto-refresh is enabled, all widgets on the dashboard will automatically re
 
 These options allow you to maintain the most relevant data on your dashboard, whether you prefer manual control or automated updates.
 
+## Create a new dashboard
 
-## Create new Dashboard
 ### Create from scratch
 The default Sekoia.io dashboard cannot be edited. However, you can create your own dashboards to meet your needs.
 To do so, several widgets are available to you with the possibility to configure and add multiple filters to them.
@@ -56,6 +56,7 @@ To create a new dashboard, you have to:
 5. Click on `Add widget` and select a widget from the list in the right panel
 6. Drag the needed widget in the workspace and edit it following your needs
 7. Click on `Save`
+   
 To access your dashboards, you have to click on the name of the dashboard in the upper left of the screen and choose a dashboard from the list.
 
 !!! note
@@ -69,38 +70,38 @@ You can also create a new dashboard by duplicating an existing one. To do so:
 3. Click on `Duplicate this dashboard`
 4. Rename your dashboard and give it a description
 5. Edit the widgets you want and change the layout if needed
-6. Save your changes.
+6. Save your changes
 
-## Edit and add Widgets to a Dashboard
-Dashboards can be easily customized using a variety of widgets, allowing users to tailor the interface to their specific needs. 
-The customization process is intuitive and accessible through the "Edition Mode," where users can modify, add, or remove widgets on their dashboards.
+### Delete a dashboard
 
-To start customizing a dashboard, follow these steps:
-
-1. Click the `Edit Dashboard` Button:
-    Located at the top right corner of the dashboard, this button activates the "Edition Mode."
-
-2. Customize Existing Widgets:
-    Once in "Edition Mode" each widget on the dashboard will display a small edit icon. Click this icon to modify the settings of the widget according to your needs.
-
-3. Adding New Widgets:
-    To add a new widget, click on the `New widget` button. You will be presented with options to choose from a selection of built-in widgets and query builders.
-    After selecting the desired widget or query builder, you can drag and position it anywhere on the dashboard for optimal placement.
-
-4. Removing Widgets:
-    Unwanted widgets can be removed by clicking the delete icon that appears in the widget's options during "Edition Mode"
-
-5. Saving Changes:
-    After making all desired modifications, it is crucial to save your changes. To do this, click on the `Save` button, located at the top right corner of the dashboard. 
-    If changes are not saved, any modifications made during "Edition Mode" will be lost.
-
-## Delete a Dashboard
 To delete a dashboard, you have to:
 
 1. Go to the `Settings` button in the upper right of the screen
 2. Click on `Delete this dashboard`
 
 The Default Dashboard cannot be deleted.
+
+## Add, edit and organize widgets
+
+Dashboards can be easily customized using a variety of widgets, allowing users to tailor the interface to their specific needs. 
+
+### Add widgets 
+
+To add widgets to your dashboard, click on the `Add New Widget` button located in the top right corner of the screen. From the panel, select the desired widgets from the available queries and presets.
+
+### Edit widgets 
+
+To edit an existing widget, click the `three dots` in the upper right corner of the widget, and then select **Edit Widget**.
+
+- If the widget is a **query visualization**, you will be redirected to the query settings page, where you can edit the query parameters as needed.
+- If the widget is a **preset** from the widgets' library, the editing panel will appear, allowing you to adjust options such as the time range or visualization type.
+
+### Reorganize widgets 
+
+To reorganize the layout of widgets on your dashboard, click the `Edit button` in the top right corner of the screen. This mode enables you to change both the position and size of each widget. You can easily drag and drop widgets to your preferred locations. Don’t forget to click Save to apply your changes!
+
+### Remove widgets 
+To remove widgets from your dashboard, click the `three dots` and select **Delete from dashboard**. 
 
 ## Query Builders Widgets
 
