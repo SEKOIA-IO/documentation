@@ -83,6 +83,9 @@ The tables below list the ECS event fields that are verified by IOC detection.
 
 #### Observable type: IPv4 Address & IPv6 Address
 
+!!! Note
+    To avoid false positives, IP addresses that are marked as "Command an Control" are only matched against `destination.ip`.
+
 | STIX path | ECS event field |
 | --- | --- |
 | ipv4-addr:value<br>ipv6-addr:value | client.ip<br>destination.ip<br>host.ip<br>server.ip<br>source.ip |
