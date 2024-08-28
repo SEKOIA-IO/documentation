@@ -636,6 +636,10 @@ Rules catalog includes **940 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 27/07/2024 - major - review filter to avoid false positive
+            
 ??? abstract "Broadcom Edge Secure Web Gateway High Threat"
     
     Detects when a high threat is detected by Broadcom Edge Secure Web Gateway.
@@ -4598,6 +4602,10 @@ Rules catalog includes **940 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 27/07/2024 - major - review filter to avoid false positive
+            
 ??? abstract "Broadcom Edge Secure Web Gateway High Threat"
     
     Detects when a high threat is detected by Broadcom Edge Secure Web Gateway.
@@ -6341,6 +6349,10 @@ Rules catalog includes **940 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 27/07/2024 - major - review filter to avoid false positive
+            
 ??? abstract "Broadcom Edge Secure Web Gateway High Threat"
     
     Detects when a high threat is detected by Broadcom Edge Secure Web Gateway.
@@ -8128,6 +8140,10 @@ Rules catalog includes **940 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 27/07/2024 - major - review filter to avoid false positive
+            
 ??? abstract "Broadcom Edge Secure Web Gateway High Threat"
     
     Detects when a high threat is detected by Broadcom Edge Secure Web Gateway.
@@ -10475,6 +10491,10 @@ Rules catalog includes **940 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 27/07/2024 - major - review filter to avoid false positive
+            
 ??? abstract "Brute-Force On Fortinet Firewall Login"
     
     Spots many failed attempts to log on an administration interface.
