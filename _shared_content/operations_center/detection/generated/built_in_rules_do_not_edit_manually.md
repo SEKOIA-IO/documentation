@@ -1,4 +1,4 @@
-Rules catalog includes **940 built-in detection rules** ([_last update on 2024-08-28_](rules_changelog.md)).
+Rules catalog includes **942 built-in detection rules** ([_last update on 2024-08-29_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Identity Information**
 
@@ -208,6 +208,12 @@ Rules catalog includes **940 built-in detection rules** ([_last update on 2024-0
 ## Resource Development
 **Acquire Infrastructure**
 
+??? abstract "Login Brute-Force Successful On ArubaOS Switch"
+    
+    A user has attempted to login several times (brute-force) on ArubaOS switch and succeeded to login.
+    
+    - **Effort:** advanced
+    
 ??? abstract "Login Brute-Force Successful On AzureAD From Single IP Address"
     
     A user has attempted to login several times (brute-force) on AzureAD and succeeded to login, all from the same source IP address and in a timerange of 5 minutes.
@@ -353,6 +359,12 @@ Rules catalog includes **940 built-in detection rules** ([_last update on 2024-0
     
 **Compromise Infrastructure**
 
+??? abstract "Login Brute-Force Successful On ArubaOS Switch"
+    
+    A user has attempted to login several times (brute-force) on ArubaOS switch and succeeded to login.
+    
+    - **Effort:** advanced
+    
 ??? abstract "Login Brute-Force Successful On AzureAD From Single IP Address"
     
     A user has attempted to login several times (brute-force) on AzureAD and succeeded to login, all from the same source IP address and in a timerange of 5 minutes.
@@ -6072,6 +6084,12 @@ Rules catalog includes **940 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** advanced
     
+??? abstract "Daspren Parad Malicious Behavior"
+    
+    Detects when Daspren Parad kills a process with a malicious behavior.
+    
+    - **Effort:** master
+    
 ??? abstract "Dynwrapx Module Loading"
     
     Detects the loading of DynamicWrapperX (Dynwrapx). It is used by some malware in their infection chain and could help to detect its usage from vbs/wscript/cscript scripts. This is based on Microsoft Windows Sysmon events (Event ID 7).
@@ -7797,6 +7815,12 @@ Rules catalog includes **940 built-in detection rules** ([_last update on 2024-0
     Detects a possible process injection through CreateRemoteThread() which is spotted by EventID 8 from Sysmon and several EDRs. This rule has a list of process commonly being injected by the attackers that should be updated regularly.
     
     - **Effort:** advanced
+    
+??? abstract "Daspren Parad Malicious Behavior"
+    
+    Detects when Daspren Parad kills a process with a malicious behavior.
+    
+    - **Effort:** master
     
 ??? abstract "Dynwrapx Module Loading"
     

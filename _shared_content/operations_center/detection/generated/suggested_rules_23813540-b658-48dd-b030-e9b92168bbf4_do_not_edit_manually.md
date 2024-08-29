@@ -51,6 +51,12 @@ The following Sekoia.io built-in rules match the intake **Daspren Parad [BETA]**
     
     - **Effort:** advanced
 
+??? abstract "Daspren Parad Malicious Behavior"
+    
+    Detects when Daspren Parad kills a process with a malicious behavior.
+    
+    - **Effort:** master
+
 ??? abstract "Exfiltration And Tunneling Tools Execution"
     
     Execution of well known tools for data exfiltration and tunneling
