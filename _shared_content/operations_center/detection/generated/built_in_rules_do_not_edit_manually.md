@@ -1,4 +1,4 @@
-Rules catalog includes **942 built-in detection rules** ([_last update on 2024-08-29_](rules_changelog.md)).
+Rules catalog includes **942 built-in detection rules** ([_last update on 2024-08-30_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Identity Information**
 
@@ -852,9 +852,9 @@ Rules catalog includes **942 built-in detection rules** ([_last update on 2024-0
         - 29/05/2024 - major - Adding new field and switching to correlation rule.
         - 04/04/2024 - major - Rule's pattern field changed
             
-??? abstract "SecurityScorecard Vulnerability Assessment Scanner - New Issues"
+??? abstract "SecurityScorecard Vulnerability Assessment Scanner New Issues"
     
-    Raises an alert when SecurityScorecard scanners find new issues.
+    Raises an alert when SecurityScorecard Vulnerability Assessment Scanner find new issues.
     
     - **Effort:** master
     
@@ -2911,9 +2911,9 @@ Rules catalog includes **942 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** master
     
-??? abstract "EfficientIP Suspicious Behavior"
+??? abstract "EfficientIP SOLIDServer Suspicious Behavior"
     
-    Detects when EfficientIP forwards a suspicious behavior related to an IP.
+    Detects when EfficientIP SOLIDServer forwards a suspicious behavior related to an IP.
     
     - **Effort:** master
     
@@ -5021,9 +5021,9 @@ Rules catalog includes **942 built-in detection rules** ([_last update on 2024-0
         - 29/05/2024 - major - Adding new field and switching to correlation rule.
         - 04/04/2024 - major - Rule's pattern field changed
             
-??? abstract "SecurityScorecard Vulnerability Assessment Scanner - New Issues"
+??? abstract "SecurityScorecard Vulnerability Assessment Scanner New Issues"
     
-    Raises an alert when SecurityScorecard scanners find new issues.
+    Raises an alert when SecurityScorecard Vulnerability Assessment Scanner find new issues.
     
     - **Effort:** master
     
