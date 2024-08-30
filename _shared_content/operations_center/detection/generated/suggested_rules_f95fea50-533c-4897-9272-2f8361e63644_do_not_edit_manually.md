@@ -15,9 +15,9 @@ The following Sekoia.io built-in rules match the intake **EfficientIP SOLIDServe
     
     - **Effort:** master
 
-??? abstract "EfficientIP Suspicious Behavior"
+??? abstract "EfficientIP SOLIDServer Suspicious Behavior"
     
-    Detects when EfficientIP forwards a suspicious behavior related to an IP.
+    Detects when EfficientIP SOLIDServer forwards a suspicious behavior related to an IP.
     
     - **Effort:** master
 
@@ -39,9 +39,9 @@ The following Sekoia.io built-in rules match the intake **EfficientIP SOLIDServe
     
     - **Effort:** elementary
 
-??? abstract "SecurityScorecard Vulnerability Assessment Scanner - New Issues"
+??? abstract "SecurityScorecard Vulnerability Assessment Scanner New Issues"
     
-    Raises an alert when SecurityScorecard scanners find new issues.
+    Raises an alert when SecurityScorecard Vulnerability Assessment Scanner find new issues.
     
     - **Effort:** master
 

@@ -1059,9 +1059,9 @@ The following Sekoia.io built-in rules match the intake **Trend Micro Apex One**
     
     - **Effort:** elementary
 
-??? abstract "SecurityScorecard Vulnerability Assessment Scanner - New Issues"
+??? abstract "SecurityScorecard Vulnerability Assessment Scanner New Issues"
     
-    Raises an alert when SecurityScorecard scanners find new issues.
+    Raises an alert when SecurityScorecard Vulnerability Assessment Scanner find new issues.
     
     - **Effort:** master
 
