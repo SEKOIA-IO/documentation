@@ -1,7 +1,10 @@
-Changelog _last update on 2024-08-30_
+Changelog _last update on 2024-09-02_
 
 ## Changelog
 
+### Authentication Impossible Travel
+  - 30/08/2024 - minor - improve filter to avoid false positive
+    
 ### PowerShell Malicious Nishang PowerShell Commandlets
   - 27/08/2024 - minor - improve filter to avoid false positive
     
@@ -46,9 +49,6 @@ Changelog _last update on 2024-08-30_
     
 ### Potential Azure AD Phishing Page (Adversary-in-the-Middle)
   - 02/08/2024 - minor - Exclude an additionnal legitimate domain.
-    
-### Authentication Impossible Travel
-  - 27/07/2024 - major - review filter to avoid false positive
     
 ### PowerShell Malicious PowerShell Commandlets
   - 26/07/2024 - minor - Removing tools relationships as it was inaccurate
