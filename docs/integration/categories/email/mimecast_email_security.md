@@ -7,7 +7,7 @@ A secure email gateway to block spam, viruses, and malware.
 
 - **Vendor**: Mimecast
 - **Plan**: Defend Prime
-- **Supported environment**: Cloud 
+- **Supported environment**: Cloud
 - **Detection based on**: Telemetry
 - **Supported application or feature**: Email gateway
 
@@ -15,9 +15,41 @@ A secure email gateway to block spam, viruses, and malware.
 !!! warning
     Important note - This format is currently in beta. We highly value your feedback to improve its performance.
 
-## Configure
+## High-Level Architecture Diagram
 
-### Create API credentials
+- **Type of integration**: PULL by Sekoia.io
+- **Schema**
+
+![mimecast_es_architecture](/assets/integration/mimecast_es_architecture.png){: style="max-width:100%"}
+
+## Specification
+
+### Prerequisites
+
+- **Permissions**:
+    - The Mimecast administrator must be assigned a Role with the following criteria.
+        - Read and Edit API Application Permissions under the Service Menu.
+        - Security Permissions setting must permit the Management of Application Roles.
+    - The generated API key must be a Mimecast Administrator with at least the Security Events and Data Retrieval | Threat and Security Events (SIEM)| Read permission.
+
+### Transport Protocol/Method
+
+- **Direct HTTP**
+
+### Logs details
+
+- **Supported functionalities**: See section [Overview](#overview)
+- **Supported type(s) of structure**: JSON
+- **Supported verbosity level**: Informational
+
+!!! Note
+    Log levels are based on the taxonomy of [RFC5424](https://datatracker.ietf.org/doc/html/rfc5424). Adapt according to the terminology used by the editor.
+
+## Step-by-Step Configuration Procedure
+
+### Instructions on the 3rd Party Solution
+
+#### Create API credentials
 
 1. Login to **Mimecast Administration Console**
 2. Navigate to **Services | API and Platform Integrations**
@@ -28,6 +60,7 @@ A secure email gateway to block spam, viruses, and malware.
 7. Review the Summary information for the API application and click on **Add** if you are happy to proceed with creating the application.
 8. The wizard completes and displays a pop-up window including your `Client ID` and `Client Secret` key data.
 
+### Instruction on Sekoia
 ### Create your intake
 
 1. Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a new intake from the `Mimecast Email Security`.
