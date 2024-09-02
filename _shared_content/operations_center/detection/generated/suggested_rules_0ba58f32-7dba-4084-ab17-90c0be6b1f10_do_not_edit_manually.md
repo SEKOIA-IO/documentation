@@ -9,11 +9,29 @@ The following Sekoia.io built-in rules match the intake **Cloudflare HTTP reques
     
     - **Effort:** master
 
+??? abstract "Cloudflare WAF Correlation Alerts"
+    
+    Detection of multiple alerts (more than 5) triggered by the same source by Cloudflare detection rules
+    
+    - **Effort:** master
+
+??? abstract "Covenant Default HTTP Beaconing"
+    
+    Detects potential Covenant communications through the user-agent and specific urls
+    
+    - **Effort:** intermediate
+
 ??? abstract "Cryptomining"
     
     Detection of domain names potentially related to cryptomining activities.
     
     - **Effort:** master
+
+??? abstract "Discord Suspicious Download"
+    
+    Discord is a messaging application. It allows users to create their own communities to share messages and attachments. Those attachments have little to no overview and can be downloaded by almost anyone, which has been abused by attackers to host malicious payloads.
+    
+    - **Effort:** intermediate
 
 ??? abstract "Dynamic DNS Contacted"
     
@@ -26,6 +44,12 @@ The following Sekoia.io built-in rules match the intake **Cloudflare HTTP reques
     Detects traffic toward a domain flagged as a possible exfiltration vector.
     
     - **Effort:** master
+
+??? abstract "Koadic MSHTML Command"
+    
+    Detects Koadic payload using MSHTML module
+    
+    - **Effort:** intermediate
 
 ??? abstract "Nimbo-C2 User Agent"
     
@@ -63,17 +87,17 @@ The following Sekoia.io built-in rules match the intake **Cloudflare HTTP reques
     
     - **Effort:** master
 
+??? abstract "Remote Monitoring and Management Software - AnyDesk"
+    
+    Detect artifacts related to the installation or execution of the Remote Monitoring and Management tool AnyDesk.
+    
+    - **Effort:** master
+
 ??? abstract "SEKOIA.IO Intelligence Feed"
     
     Detect threats based on indicators of compromise (IOCs) collected by SEKOIA's Threat and Detection Research team.
     
     - **Effort:** elementary
-
-??? abstract "SecurityScorecard Vulnerability Assessment Scanner New Issues"
-    
-    Raises an alert when SecurityScorecard Vulnerability Assessment Scanner find new issues.
-    
-    - **Effort:** master
 
 ??? abstract "Sekoia.io EICAR Detection"
     

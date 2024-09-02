@@ -3,6 +3,18 @@
 The following Sekoia.io built-in rules match the intake **Microsoft 365 Defender**. This documentation is updated automatically and is based solely on the fields used by the intake which are checked against our rules. This means that some rules will be listed but might not be relevant with the intake.
 
 [SEKOIA.IO x Microsoft 365 Defender on ATT&CK Navigator](https://mitre-attack.github.io/attack-navigator/#layerURL=https%3A%2F%2Fraw.githubusercontent.com%2FSEKOIA-IO%2Fdocumentation%2Fmain%2F_shared_content%2Foperations_center%2Fdetection%2Fgenerated%2Fattack_05e6f36d-cee0-4f06-b575-9e43af779f9f_do_not_edit_manually.json){ .md-button }
+??? abstract "ACLight Discovering Privileged Accounts"
+    
+    Detects use of ACLight tool. This tool aims to discover privileged accounts by scanning the network.
+    
+    - **Effort:** advanced
+
+??? abstract "AMSI Deactivation Using Registry Key"
+    
+    The rule detects attempts to deactivate/disable the AMSI provider by deleting the associated registry key.
+    
+    - **Effort:** master
+
 ??? abstract "AccCheckConsole Executing Dll"
     
     Detects suspicious LOLBIN AccCheckConsole execution with parameters as used to load an arbitrary DLL.
@@ -39,23 +51,29 @@ The following Sekoia.io built-in rules match the intake **Microsoft 365 Defender
     
     - **Effort:** advanced
 
+??? abstract "Adidnsdump Enumeration"
+    
+    Detects use of the tool adidnsdump for enumeration and discovering DNS records.
+    
+    - **Effort:** advanced
+
 ??? abstract "Advanced IP Scanner"
     
     Detects the use of Advanced IP Scanner. Seems to be a popular tool for ransomware groups.
     
     - **Effort:** master
 
-??? abstract "Aspnet Compiler"
-    
-    Detects the starts of aspnet compiler.
-    
-    - **Effort:** advanced
-
 ??? abstract "Audio Capture via PowerShell"
     
     Detects audio capture via PowerShell Cmdlet
     
     - **Effort:** intermediate
+
+??? abstract "Authentication Impossible Travel"
+    
+    Detects impossible travel when performing authentication from a source IP address, grouped by username.
+    
+    - **Effort:** advanced
 
 ??? abstract "AutoIt3 Execution From Suspicious Folder"
     
@@ -105,11 +123,29 @@ The following Sekoia.io built-in rules match the intake **Microsoft 365 Defender
     
     - **Effort:** elementary
 
+??? abstract "Burp Suite Tool Detected"
+    
+    Burp Suite is a cybersecurity tool. When used as a proxy service, its purpose is to intercept packets and modify them to send them to the server. Burp Collaborator is a network service that Burp Suite uses to help discover many kinds of vulnerabilities (vulnerabilities scanner).
+    
+    - **Effort:** intermediate
+
 ??? abstract "CMSTP Execution"
     
     Detects various indicators of Microsoft Connection Manager Profile Installer execution
     
     - **Effort:** intermediate
+
+??? abstract "COM Hijack Via Sdclt"
+    
+    Detects changes to 'HKCU\Software\Classes\Folder\shell\open\command\DelegateExecute', to bypass UAC using 'sdclt.exe'.
+    
+    - **Effort:** intermediate
+
+??? abstract "CVE-2017-11882 Microsoft Office Equation Editor Vulnerability"
+    
+    Detects the exploitation of CVE-2017-11882 vulnerability. The Microsoft Office Equation Editor has no reason to do a network request or drop an executable file. This requires a sysmon configuration with file and network events.
+    
+    - **Effort:** master
 
 ??? abstract "CVE-2020-0688 Microsoft Exchange Server Exploit"
     
@@ -141,6 +177,12 @@ The following Sekoia.io built-in rules match the intake **Microsoft 365 Defender
     
     - **Effort:** intermediate
 
+??? abstract "CVE-2021-4034 Polkit's pkexec"
+    
+    Detection of Polkit's pkexec exploit
+    
+    - **Effort:** intermediate
+
 ??? abstract "Capture a network trace with netsh.exe"
     
     Detects capture a network trace via netsh.exe trace functionality
@@ -158,6 +200,12 @@ The following Sekoia.io built-in rules match the intake **Microsoft 365 Defender
     Installation of new certificate(s) in the Certificate Authority can be used to trick user when spoofing website or to add trusted destinations.
     
     - **Effort:** master
+
+??? abstract "Certify Or Certipy"
+    
+    Detects the use of certify and certipy which are two different tools used to enumerate and abuse Active Directory Certificate Services.
+    
+    - **Effort:** advanced
 
 ??? abstract "Change Default File Association"
     
@@ -225,6 +273,12 @@ The following Sekoia.io built-in rules match the intake **Microsoft 365 Defender
     
     - **Effort:** advanced
 
+??? abstract "Copy Of Legitimate System32 Executable"
+    
+    A script has copied a System32 executable.
+    
+    - **Effort:** intermediate
+
 ??? abstract "Copying Browser Files With Credentials"
     
     Detects copy of sensitive data (passwords, cookies, credit cards) included in web browsers files.
@@ -236,6 +290,18 @@ The following Sekoia.io built-in rules match the intake **Microsoft 365 Defender
     Detects copy of files with well-known filenames (sensitive files with credential data) using esentutl. This requires Windows Security event log with the Detailed File Share logging policy enabled.
     
     - **Effort:** elementary
+
+??? abstract "Correlation Multi Service Disable"
+    
+    The rule detects a high number of services stopped or de-activated in a short period of time.
+    
+    - **Effort:** master
+
+??? abstract "Covenant Default HTTP Beaconing"
+    
+    Detects potential Covenant communications through the user-agent and specific urls
+    
+    - **Effort:** intermediate
 
 ??? abstract "Credential Dump Tools Related Files"
     
@@ -261,6 +327,18 @@ The following Sekoia.io built-in rules match the intake **Microsoft 365 Defender
     
     - **Effort:** advanced
 
+??? abstract "DHCP Callout DLL Installation"
+    
+    Detects the installation of a Callout DLL via CalloutDlls and CalloutEnabled parameter in Registry, which can be used to execute code in context of the DHCP server (restart required).
+    
+    - **Effort:** intermediate
+
+??? abstract "DLL Load via LSASS Registry Key"
+    
+    Detects a method to load DLL via LSASS process using an undocumented Registry key. Prerequisites are logging for Registry events. This can be done with Sysmon events 12, 13 and 14 and monitor `SYSTEM\CurrentControlSet\Services`.
+    
+    - **Effort:** intermediate
+
 ??? abstract "DNS Exfiltration and Tunneling Tools Execution"
     
     Well-known DNS exfiltration tools execution
@@ -270,6 +348,12 @@ The following Sekoia.io built-in rules match the intake **Microsoft 365 Defender
 ??? abstract "DNS Query For Iplookup"
     
     Detects dns query of observables tagged as iplookup.
+    
+    - **Effort:** master
+
+??? abstract "DNS ServerLevelPluginDll Installation"
+    
+    Detects the installation of a plugin DLL via ServerLevelPluginDll parameter in Windows Registry or in command line, which can be used to execute code in context of the DNS server (restart required). To fully use this rule, prerequesites are logging for Registry events in the Sysmon configuration (events 12, 13 and 14).
     
     - **Effort:** master
 
@@ -321,6 +405,12 @@ The following Sekoia.io built-in rules match the intake **Microsoft 365 Defender
     
     - **Effort:** elementary
 
+??? abstract "Disable Windows Defender Credential Guard"
+    
+    Detects registry keys being changed to disable Windows Defender Credential Guard. The rule requires to log Registry Keys modifications or creations, which can be done using Sysmon Event IDs 12,13 and 14.
+    
+    - **Effort:** intermediate
+
 ??? abstract "Disable Workstation Lock"
     
     Registry change in order to disable the ability to lock the computer by using CTRL+ALT+DELETE or CTRL+L. This registry key does not exist by default. Its creation is suspicious and the value set to "1" means an activation. It has been used by FatalRAT, but other attacker/malware could probably use it. This rule needs Windows Registry changes (add,modification,deletion) logging which can be done through Sysmon Event IDs 12,13,14.
@@ -344,6 +434,18 @@ The following Sekoia.io built-in rules match the intake **Microsoft 365 Defender
     Detects when a user disables smartscreen.
     
     - **Effort:** elementary
+
+??? abstract "Discord Suspicious Download"
+    
+    Discord is a messaging application. It allows users to create their own communities to share messages and attachments. Those attachments have little to no overview and can be downloaded by almost anyone, which has been abused by attackers to host malicious payloads.
+    
+    - **Effort:** intermediate
+
+??? abstract "Discovery Commands Correlation"
+    
+    Detects some frequent discovery commands used by some ransomware operators.
+    
+    - **Effort:** intermediate
 
 ??? abstract "Dism Disabling Windows Defender"
     
@@ -429,6 +531,12 @@ The following Sekoia.io built-in rules match the intake **Microsoft 365 Defender
     
     - **Effort:** advanced
 
+??? abstract "EvilProxy Phishing Domain"
+    
+    Detects subdomains potentially generated by the EvilProxy adversary-in-the-middle phishing platform. Inspect the other subdomains of the domain to identify the landing page, and determine if the user submitted credentials. This rule has a small percentage of false positives on legitimate domains.
+    
+    - **Effort:** intermediate
+
 ??? abstract "Exchange Mailbox Export"
     
     Detection of a standard Exchange Mailbox export, which stores all mails from a user in a pst file, from command line or PowerShell script.
@@ -513,6 +621,18 @@ The following Sekoia.io built-in rules match the intake **Microsoft 365 Defender
     
     - **Effort:** elementary
 
+??? abstract "Formbook Hijacked Process Command"
+    
+    Detects process hijacked by Formbook malware which executes specific commands to delete the dropper or copy browser credentials to the database before sending them to the C2.
+    
+    - **Effort:** intermediate
+
+??? abstract "FromBase64String Command Line"
+    
+    Detects suspicious FromBase64String expressions in command line arguments.
+    
+    - **Effort:** master
+
 ??? abstract "Generic-reverse-shell-oneliner"
     
     To bypass some security equipement or for a sack of simplicity attackers can open raw reverse shell using shell commands
@@ -525,11 +645,35 @@ The following Sekoia.io built-in rules match the intake **Microsoft 365 Defender
     
     - **Effort:** advanced
 
+??? abstract "Gpscript Suspicious Parent"
+    
+    Gpscript defines GPO scripts for users and applies them to login / logout sessions. This rule checks if the parent of this process is the supposed one (svchost) or not.
+    
+    - **Effort:** intermediate
+
 ??? abstract "Grabbing Sensitive Hives Via Reg Utility"
     
     Detects dump of SAM, System or Security hives using reg.exe utility. Adversaries may attempt to dump these Windows Registry to retrieve password hashes and access credentials.
     
     - **Effort:** intermediate
+
+??? abstract "HTA Infection Chains"
+    
+    Detect the creation of a ZIP file and an HTA file as it is often used in infection chains. Furthermore it also detects the use of suspicious processes launched by explorer.exe combined with the creation of an HTA file, since it is also often used in infection chains (LNK - HTA for instance).
+    
+    - **Effort:** intermediate
+
+??? abstract "HTML Smuggling Suspicious Usage"
+    
+    Based on several samples from different botnets, this rule aims at detecting HTML infection chain by looking for HTML created files followed by suspicious files being executed.
+    
+    - **Effort:** intermediate
+
+??? abstract "HackTools Suspicious Names"
+    
+    Quick-win rule to detect the default process names or file names of several HackTools.
+    
+    - **Effort:** elementary
 
 ??? abstract "HackTools Suspicious Process Names In Command Line"
     
@@ -561,6 +705,12 @@ The following Sekoia.io built-in rules match the intake **Microsoft 365 Defender
     
     - **Effort:** intermediate
 
+??? abstract "ISO LNK Infection Chain"
+    
+    Detection of an ISO (or any other similar archive file) downloaded file, followed by a child-process of explorer, which is characteristic of an infection using an ISO containing an LNK file. For events with `host.name`.
+    
+    - **Effort:** intermediate
+
 ??? abstract "IcedID Execution Using Excel"
     
     Detects Excel spawning a process (rundll32 or wmic) running suspicious command-line. This behaviour could correspond to IcedID activity. 
@@ -585,6 +735,12 @@ The following Sekoia.io built-in rules match the intake **Microsoft 365 Defender
     
     - **Effort:** advanced
 
+??? abstract "Invoke-TheHash Commandlets"
+    
+    Detects suspicious Invoke-TheHash PowerShell commandlet used for performing pass the hash WMI and SMB tasks.
+    
+    - **Effort:** elementary
+
 ??? abstract "KeePass Config XML In Command-Line"
     
     Detects a command-line interaction with the KeePass Config XML file. It could be used to retrieve informations or to be abused for persistence.
@@ -608,6 +764,12 @@ The following Sekoia.io built-in rules match the intake **Microsoft 365 Defender
     Detects different loaders used by the Lazarus Group APT
     
     - **Effort:** elementary
+
+??? abstract "Legitimate Process Execution From Unusual Folder"
+    
+    Detects the execution of a legitimate, windows built-in process name from an unusual / suspicious folder. Legitimate folders are c:\windows\system32\, \SystemRoot\system32\, c:\windows\syswow64\ and c:\windows\winsxs\. Many malwares/attackers use legitimate names to masquerade but if they are not Administrator yet, they often can't write file into these legitimate folders.
+    
+    - **Effort:** advanced
 
 ??? abstract "Leviathan Registry Key Activity"
     
@@ -648,6 +810,18 @@ The following Sekoia.io built-in rules match the intake **Microsoft 365 Defender
 ??? abstract "Listing Systemd Environment"
     
     Detects a listing of systemd environment variables. This command could be used to do reconnaissance on a compromised host.
+    
+    - **Effort:** advanced
+
+??? abstract "Login Brute-Force Successful On SentinelOne EDR Management Console"
+    
+    A user has attempted to login several times (brute-force) on the SentinelOne EDR Management Console and succeeded to login.
+    
+    - **Effort:** master
+
+??? abstract "Logon Scripts (UserInitMprLogonScript)"
+    
+    Detects creation or execution of UserInitMprLogonScript persistence method. The rule requires to log for process command lines and registry creations or update, which can be done using Sysmon Event IDs 1, 12, 13 and 14.
     
     - **Effort:** advanced
 
@@ -699,6 +873,18 @@ The following Sekoia.io built-in rules match the intake **Microsoft 365 Defender
     
     - **Effort:** advanced
 
+??? abstract "Malspam Execution Registering Malicious DLL"
+    
+    Detects the creation of a file in the C:\Datop folder, or DLL registering a file in the C:\Datop folder. Files located in the Datop folder are very characteristic of malspam execution related to Qakbot or SquirrelWaffle. Prerequisites are Logging for File Creation events, which can be done in the Sysmon configuration (events 11), for the first part of the pattern (TargetFilename).
+    
+    - **Effort:** elementary
+
+??? abstract "Malware Persistence Registry Key"
+    
+    Detects registry key used by several malware, especially Formbook spyware in two ways, either the Sysmon registry events, or the commands line.
+    
+    - **Effort:** master
+
 ??? abstract "MalwareBytes Uninstallation"
     
     Detects command line being used by attackers to uninstall Malwarebytes.
@@ -723,6 +909,18 @@ The following Sekoia.io built-in rules match the intake **Microsoft 365 Defender
     
     - **Effort:** intermediate
 
+??? abstract "Microsoft Defender Antivirus Disable SecurityHealth"
+    
+    The rule detects attempts to deactivate/disable Windows Defender SecurityHealth through command line, PowerShell scripts, and registry. To fully use this rule Windows Registry logging is recommended.
+    
+    - **Effort:** intermediate
+
+??? abstract "Microsoft Defender Antivirus Disable Services"
+    
+    The rule detects attempts to deactivate/disable Windows Defender through command line and registry.
+    
+    - **Effort:** intermediate
+
 ??? abstract "Microsoft Defender Antivirus Disable Using Registry"
     
     The rule detects attempts to deactivate/disable Microsoft Defender Antivirus using registry modification via command line or PowerShell scripts.
@@ -734,6 +932,12 @@ The following Sekoia.io built-in rules match the intake **Microsoft 365 Defender
     Detects attempts to deactivate/disable Windows Defender through base64 encoded PowerShell command line or scripts.
     
     - **Effort:** intermediate
+
+??? abstract "Microsoft Defender Antivirus Exclusion Configuration"
+    
+    Detects when an exclusion configuration change is made to Microsoft Windows Defender (adding either a path or process bypass)
+    
+    - **Effort:** master
 
 ??? abstract "Microsoft Defender Antivirus History Directory Deleted"
     
@@ -783,6 +987,12 @@ The following Sekoia.io built-in rules match the intake **Microsoft 365 Defender
     
     - **Effort:** master
 
+??? abstract "Microsoft Exchange PowerShell Snap-Ins To Export Exchange Mailbox Data"
+    
+    Detects PowerShell SnapIn command line or PowerShell script, often used with Get-Mailbox to export Exchange mailbox data.
+    
+    - **Effort:** intermediate
+
 ??? abstract "Microsoft Exchange Server Creating Unusual Files"
     
     Look for Microsoft Exchange Server’s Unified Messaging service creating non-standard content on disk, which could indicate web shells or other malicious content, suggesting exploitation of CVE-2021-26858 vulnerability
@@ -801,6 +1011,18 @@ The following Sekoia.io built-in rules match the intake **Microsoft 365 Defender
     
     - **Effort:** intermediate
 
+??? abstract "Mimikatz Basic Commands"
+    
+    Detects Mimikatz most popular commands. 
+    
+    - **Effort:** elementary
+
+??? abstract "Msdt (Follina) File Browse Process Execution"
+    
+    Detects various Follina vulnerability exploitation techniques. This is based on the Compatability Troubleshooter which is abused to do code execution.
+    
+    - **Effort:** elementary
+
 ??? abstract "Mshta JavaScript Execution"
     
     Identifies suspicious mshta.exe commands that execute JavaScript supplied as a command line argument.
@@ -813,6 +1035,12 @@ The following Sekoia.io built-in rules match the intake **Microsoft 365 Defender
     
     - **Effort:** intermediate
 
+??? abstract "Mustang Panda Dropper"
+    
+    Detects specific process parameters as used by Mustang Panda droppers
+    
+    - **Effort:** elementary
+
 ??? abstract "NTDS.dit File Interaction Through Command Line"
     
     Detects interaction with the file NTDS.dit through command line. This is usually really suspicious and could indicate an attacker trying copy the file to then look for users password hashes.
@@ -824,6 +1052,12 @@ The following Sekoia.io built-in rules match the intake **Microsoft 365 Defender
     Identifies creation of local users via the net.exe command
     
     - **Effort:** master
+
+??? abstract "NetNTLM Downgrade Attack"
+    
+    Detects changes in Windows Registry key (LMCompatibilityLevel, NTLMMinClientSec or RestrictSendingNTLMTraffic) which can lead to NetNTLM downgrade attack. The rule requires to log registry keys creation or update, it can be done using Sysmon's Event ID 12,13 and 14.
+    
+    - **Effort:** intermediate
 
 ??? abstract "NetSh Used To Disable Windows Firewall"
     
@@ -872,6 +1106,12 @@ The following Sekoia.io built-in rules match the intake **Microsoft 365 Defender
     Tools and command lines used for network discovery from current system
     
     - **Effort:** advanced
+
+??? abstract "Network Share Discovery"
+    
+    Adversaries may look for folders and drives shared on remote systems as a means of identifying sources of information to gather as a precursor for Collection and to identify potential systems of interest for Lateral Movement. Networks often contain shared network drives and folders that enable users to access file directories on various systems across a network. File sharing over a Windows network occurs over the SMB protocol. This technique is frequently leveraged by threat actors such as APT32, APT41, Wizard Spider. But also, through the use of some malware such as Cobalt Strike, Empire, PlugX and Ramsay.
+    
+    - **Effort:** master
 
 ??? abstract "Network Sniffing"
     
@@ -938,6 +1178,18 @@ The following Sekoia.io built-in rules match the intake **Microsoft 365 Defender
     Detects registry keys created in OceanLotus (also known as APT32) attack. Logging for Registry events is needed in the Sysmon configuration (events 12 and 13).
     
     - **Effort:** intermediate
+
+??? abstract "Office Application Startup Office Test"
+    
+    Detects the addition of office test registry that allows a user to specify an arbitrary DLL that will be executed everytime an Office application is started. An adversaries may abuse the Microsoft Office "Office Test" Registry key to obtain persistence on a compromised system.
+    
+    - **Effort:** elementary
+
+??? abstract "OneNote Suspicious Children Process"
+    
+    In January 2023, a peak of attacks using .one files was observed in the wild. This rule tries to detect the effect of such attempts using this technique.
+    
+    - **Effort:** advanced
 
 ??? abstract "Openfiles Usage"
     
@@ -1023,6 +1275,12 @@ The following Sekoia.io built-in rules match the intake **Microsoft 365 Defender
     
     - **Effort:** advanced
 
+??? abstract "PowerShell Data Compressed"
+    
+    Detects data compression through a PowerShell command (could be used by an adversary for exfiltration).
+    
+    - **Effort:** advanced
+
 ??? abstract "PowerShell Downgrade Attack"
     
     Detects PowerShell downgrade attack by comparing the host versions with the actually used engine version 2.0
@@ -1047,6 +1305,36 @@ The following Sekoia.io built-in rules match the intake **Microsoft 365 Defender
     
     - **Effort:** intermediate
 
+??? abstract "PowerShell Invoke Expression With Registry"
+    
+    Detects keywords from well-known PowerShell techniques to get registry key values
+    
+    - **Effort:** advanced
+
+??? abstract "PowerShell Malicious Nishang PowerShell Commandlets"
+    
+    Detects Commandlet names and arguments from the Nishang exploitation framework.
+    
+    - **Effort:** advanced
+
+??? abstract "PowerView commandlets 1"
+    
+    Detects PowerView commandlets which perform network and Windows domain enumeration and exploitation. It provides replaces for almost all Windows net commands, letting you query users, machines, domain controllers, user descriptions, share, sessions, and more.
+    
+    - **Effort:** advanced
+
+??? abstract "PowerView commandlets 2"
+    
+    Detects PowerView commandlets which perform network and Windows domain enumeration and exploitation. It provides replaces for almost all Windows net commands, letting you query users, machines, domain controllers, user descriptions, share, sessions, and more.
+    
+    - **Effort:** advanced
+
+??? abstract "Powershell AMSI Bypass"
+    
+    This rule aims to detect attempts to bypass AMSI in powershell using specific techniques.
+    
+    - **Effort:** advanced
+
 ??? abstract "Powershell UploadString Function"
     
     Powershell's `uploadXXX` functions are a category of methods which can be used to exfiltrate data through native means on a Windows host.
@@ -1059,11 +1347,29 @@ The following Sekoia.io built-in rules match the intake **Microsoft 365 Defender
     
     - **Effort:** advanced
 
+??? abstract "Powershell Winlogon Helper DLL"
+    
+    Detects modifications to the Winlogon Registry keys, which may cause Winlogon to load and execute malicious DLLs and/or executables.
+    
+    - **Effort:** intermediate
+
+??? abstract "Privilege Escalation Awesome Scripts (PEAS)"
+    
+    Detect PEAS privileges escalation scripts and binaries
+    
+    - **Effort:** elementary
+
 ??? abstract "Process Memory Dump Using Comsvcs"
     
     Detects the use of comsvcs in command line to dump a specific process memory. This technique is used by attackers for privilege escalation and pivot.
     
     - **Effort:** intermediate
+
+??? abstract "Process Memory Dump Using Createdump"
+    
+    Detects the use of createdump.exe in command line to dump the memory of a process. This technique is used by attackers for privilege escalation and pivot.
+    
+    - **Effort:** elementary
 
 ??? abstract "Process Memory Dump Using Rdrleakdiag"
     
@@ -1088,6 +1394,12 @@ The following Sekoia.io built-in rules match the intake **Microsoft 365 Defender
     Detects PsExec execution, command line which contains pstools or installation of the PsExec service. PsExec is a SysInternals which can be used to execute a program on another computer. The tool is as much used by attackers as by administrators. 
     
     - **Effort:** advanced
+
+??? abstract "Putty Sessions Listing"
+    
+    Detects attempts to list Putty sessions through registry. To fully work, this rule requires to log registry accesses, which can be done with the Windows Event ID 4656 or 4663 but for that specific configuration is needed.
+    
+    - **Effort:** master
 
 ??? abstract "Python Exfiltration Tools"
     
@@ -1161,6 +1473,18 @@ The following Sekoia.io built-in rules match the intake **Microsoft 365 Defender
     
     - **Effort:** advanced
 
+??? abstract "Rebooting"
+    
+    Detects when forcing a computer to shutdown.
+    
+    - **Effort:** master
+
+??? abstract "Reconnaissance Commands Activities"
+    
+    Based on Cynet, Microsoft and Kaspersky analysis of Qakbot, this rule tries to detect some discovery TTPs.
+    
+    - **Effort:** intermediate
+
 ??? abstract "RedMimicry Winnti Playbook Registry Manipulation"
     
     Detects actions caused by the RedMimicry Winnti playbook. Logging for Registry events is needed in the Sysmon configuration (events 12 and 13).
@@ -1170,6 +1494,12 @@ The following Sekoia.io built-in rules match the intake **Microsoft 365 Defender
 ??? abstract "Registry Checked For Lanmanserver DisableCompression Parameter"
     
     Detects registry access for Lanmanserver\Parameters. The check of the value DisableCompression could be a sign of an attack trying to exploit SMBGhost vulnerability (CVE-2020-0796).
+    
+    - **Effort:** master
+
+??? abstract "Registry Persistence Using 'Image File Execution' And 'SilentProcessExit' Keys"
+    
+    Detects persistence registry keys. Logging for Registry events is needed, it can be done in the Sysmon configuration (events 12 and 13).
     
     - **Effort:** master
 
@@ -1190,6 +1520,12 @@ The following Sekoia.io built-in rules match the intake **Microsoft 365 Defender
     Detect artifacts related to the installation or execution of the Remote Monitoring and Management tool Atera.
     
     - **Effort:** master
+
+??? abstract "Remote System Discovery Via Telnet"
+    
+    Detects use of the protocol telnet to access information.
+    
+    - **Effort:** advanced
 
 ??? abstract "Rubeus Tool Command-line"
     
@@ -1257,6 +1593,18 @@ The following Sekoia.io built-in rules match the intake **Microsoft 365 Defender
     
     - **Effort:** master
 
+??? abstract "Shadow Copies"
+    
+    Detects command line used to create and list shadow copies. An adversary may attempt to get information on shadow volumes to perform deletion or extract password hashes from the ntds.dit file. This rule requires command line logging or Windows PowerShell events (4104).
+    
+    - **Effort:** master
+
+??? abstract "Shell PID Injection"
+    
+    Detects when shells PID are listed and injected in another process. It can be performed to reuse sudo token related to shell in order to elevate privilege and maintain persistence.
+    
+    - **Effort:** intermediate
+
 ??? abstract "Smss Wrong Parent"
     
     Detects if the Smss process was executed by a non-legitimate parent process. Session Manager Subsystem (smss) process is a component of the Microsoft Windows NT family of operating systems.
@@ -1304,6 +1652,12 @@ The following Sekoia.io built-in rules match the intake **Microsoft 365 Defender
     Detects the usage and installation of a backdoor that uses an option to register a malicious debugger for built-in tools that are accessible in the login screen. Prerequisites are logging for Registry events, which can be done with Sysmon (events 12 and 13).
     
     - **Effort:** elementary
+
+??? abstract "Stop Backup Services"
+    
+    Detects adversaries attempts to stop backups services or disable Windows previous files versions feature. This could be related to ransomware operators or legit administrators. This rule relies Windows command line logging and registry logging, and PowerShell (ID 4103, 4104).
+    
+    - **Effort:** master
 
 ??? abstract "Suncrypt Parameters"
     
@@ -1353,11 +1707,23 @@ The following Sekoia.io built-in rules match the intake **Microsoft 365 Defender
     
     - **Effort:** intermediate
 
+??? abstract "Suspicious Desktopimgdownldr Execution"
+    
+    Detects a suspicious Desktopimgdownldr execution. Desktopimgdownldr.exe is a Windows binary used to configure lockscreen/desktop image and can be abused to download malicious file.
+    
+    - **Effort:** intermediate
+
 ??? abstract "Suspicious Double Extension"
     
     Detects suspicious use of an .exe extension after a non-executable file extension like .pdf.exe, a set of spaces or underlines to cloak the executable file in spearphishing campaigns
     
     - **Effort:** advanced
+
+??? abstract "Suspicious Download Links From Legitimate Services"
+    
+    Detects users clicking on Google docs links to download suspicious files. This technique was used a lot by Bazar Loader in the past.
+    
+    - **Effort:** intermediate
 
 ??? abstract "Suspicious Driver Loaded"
     
@@ -1370,6 +1736,12 @@ The following Sekoia.io built-in rules match the intake **Microsoft 365 Defender
     Detects email containing an .exe|.dll|.ps1|.bat|.hta attachment. Most of the time files send by mail like this are malware.
     
     - **Effort:** elementary
+
+??? abstract "Suspicious File Name"
+    
+    Detects suspicious file name possibly linked to malicious tool.
+    
+    - **Effort:** advanced
 
 ??? abstract "Suspicious Finger Usage"
     
@@ -1419,9 +1791,27 @@ The following Sekoia.io built-in rules match the intake **Microsoft 365 Defender
     
     - **Effort:** intermediate
 
+??? abstract "Suspicious New Printer Ports In Registry"
+    
+    Detects a suspicious printer port creation in Registry that could be an attempt to exploit CVE-2020-1048. The CVE-2020-1048 consists in gaining persistence, privilege by abusing a flaw in the Print Spooler service to execute a payload whose path is stored in the registry key. To fully use this rule, prerequesites are logging for Registry events in the Sysmon configuration (events 12, 13 and 14).
+    
+    - **Effort:** master
+
 ??? abstract "Suspicious Outlook Child Process"
     
     Detects suspicious child processes of Microsoft Outlook. These child processes are often associated with spearphishing activity.
+    
+    - **Effort:** intermediate
+
+??? abstract "Suspicious PROCEXP152.sys File Created In Tmp"
+    
+    Detects the creation of the PROCEXP152.sys file in the application-data local temporary folder. This driver is used by Sysinternals Process Explorer but also by KDU (https://github.com/hfiref0x/KDU) or Ghost-In-The-Logs (https://github.com/bats3c/Ghost-In-The-Logs), which uses KDU. Note - Clever attackers may easily bypass this detection by just renaming the driver filename. Therefore just Medium-level and don't rely on it.
+    
+    - **Effort:** advanced
+
+??? abstract "Suspicious PowerShell Invocations - Generic"
+    
+    Detects suspicious PowerShell invocation command parameters through command line logging or ScriptBlock Logging.
     
     - **Effort:** intermediate
 
@@ -1430,6 +1820,12 @@ The following Sekoia.io built-in rules match the intake **Microsoft 365 Defender
     Detects suspicious PowerShell invocation command parameters.
     
     - **Effort:** intermediate
+
+??? abstract "Suspicious PowerShell Keywords"
+    
+    Detects keywords that could indicate the use of some PowerShell exploitation framework.
+    
+    - **Effort:** advanced
 
 ??? abstract "Suspicious PrinterPorts Creation (CVE-2020-1048)"
     
@@ -1461,6 +1857,12 @@ The following Sekoia.io built-in rules match the intake **Microsoft 365 Defender
     
     - **Effort:** intermediate
 
+??? abstract "Suspicious TOR Gateway"
+    
+    Detects suspicious TOR gateways. Gateways are often used by the victim to pay and decrypt the encrypted files without installing TOR. Tor intercepts the network traffic from one or more apps on user’s computer, usually the user web browser, and shuffles it through a number of randomly-chosen computers before passing it on to its destination. This disguises user location, and makes it harder for servers to pick him/her out on repeat visits, or to tie together separate visits to different sites, this making tracking and surveillance more difficult. Before a network packet starts its journey, user’s computer chooses a random list of relays and repeatedly encrypts the data in multiple layers, like an onion. Each relay knows only enough to strip off the outermost layer of encryption, before passing what’s left on to the next relay in the list.
+    
+    - **Effort:** advanced
+
 ??? abstract "Suspicious Taskkill Command"
     
     Detects rare taskkill command being used. It could be related to Baby Shark malware.
@@ -1491,6 +1893,12 @@ The following Sekoia.io built-in rules match the intake **Microsoft 365 Defender
     
     - **Effort:** intermediate
 
+??? abstract "Suspicious XOR Encoded PowerShell Command Line"
+    
+    Detects suspicious powershell process which includes bxor command, alternative obfuscation  method to b64 encoded commands.
+    
+    - **Effort:** advanced
+
 ??? abstract "Suspicious certutil command"
     
     Detects suspicious certutil command which can be used by threat actors to download and/or decode payload. 
@@ -1500,6 +1908,12 @@ The following Sekoia.io built-in rules match the intake **Microsoft 365 Defender
 ??? abstract "Suspicious desktop.ini Action"
     
     Detects unusual processes accessing desktop.ini, which can be leveraged to alter how Explorer displays a folder's content (i.e. renaming files) without changing them on disk.
+    
+    - **Effort:** advanced
+
+??? abstract "Svchost Modification"
+    
+    Detects the modification of svchost in the registry.
     
     - **Effort:** advanced
 
@@ -1521,6 +1935,12 @@ The following Sekoia.io built-in rules match the intake **Microsoft 365 Defender
     
     - **Effort:** master
 
+??? abstract "System Network Connections Discovery"
+    
+    Detects system network connections discovery via powershell and cmd.
+    
+    - **Effort:** advanced
+
 ??? abstract "TOR Usage Generic Rule"
     
     Detects TOR usage globally, whether the IP is a destination or source. TOR is short for The Onion Router, and it gets its name from how it works. TOR intercepts the network traffic from one or more apps on user’s computer, usually the user web browser, and shuffles it through a number of randomly-chosen computers before passing it on to its destination. This disguises user location, and makes it harder for servers to pick him/her out on repeat visits, or to tie together separate visits to different sites, this making tracking and surveillance more difficult. Before a network packet starts its journey, user’s computer chooses a random list of relays and repeatedly encrypts the data in multiple layers, like an onion. Each relay knows only enough to strip off the outermost layer of encryption, before passing what’s left on to the next relay in the list.
@@ -1539,9 +1959,27 @@ The following Sekoia.io built-in rules match the intake **Microsoft 365 Defender
     
     - **Effort:** advanced
 
+??? abstract "TrevorC2 HTTP Communication"
+    
+    Detects TrevorC2 HTTP communication based on the HTTP request URI and the user-agent. 
+    
+    - **Effort:** elementary
+
 ??? abstract "UAC Bypass Using Fodhelper"
     
     Detects UAC bypass method using Fodhelper after setting the proper registry key, used in particular by Agent Tesla (RAT) or more recently by Earth Luscas. Prerequisites are logging for Registry events in the Sysmon configuration (events 12 and 13).
+    
+    - **Effort:** intermediate
+
+??? abstract "UAC Bypass Via Sdclt"
+    
+    Detects changes to HKCU\Software\Classes\exefile\shell\runas\command\isolatedCommand by an attacker in order to bypass User Account Control (UAC)
+    
+    - **Effort:** elementary
+
+??? abstract "UAC Bypass via Event Viewer"
+    
+    Detects UAC bypass method using Windows event viewer. 
     
     - **Effort:** intermediate
 
@@ -1563,6 +2001,12 @@ The following Sekoia.io built-in rules match the intake **Microsoft 365 Defender
     
     - **Effort:** master
 
+??? abstract "User Account Created"
+    
+    Detects user creation on windows servers, which shouldn't happen in an Active Directory environment. Apply this on your windows server logs and not on your DC logs. One default account `defaultuser0` is excluded as only used during Windows set-up. This detection use Security Event ID 4720. 
+    
+    - **Effort:** master
+
 ??? abstract "Userinit Wrong Parent"
     
     Userinit.exe is a key process in the Windows operating system. On boot-up it manages the different start up sequences needed, such as establishing network connection and starting up the Windows shell. This rule analyse if the parent of this process is a legitimate one or not.
@@ -1578,6 +2022,12 @@ The following Sekoia.io built-in rules match the intake **Microsoft 365 Defender
 ??? abstract "WCE wceaux.dll Creation"
     
     Detects wceaux.dll creation while Windows Credentials Editor (WCE) is executed.
+    
+    - **Effort:** intermediate
+
+??? abstract "WMI Fingerprint Commands"
+    
+    Detects attacker fingerprint activities based on the correlation of specific WMIC commands. This has been observed with Aurora malware.
     
     - **Effort:** intermediate
 
@@ -1598,6 +2048,18 @@ The following Sekoia.io built-in rules match the intake **Microsoft 365 Defender
     Detects products being uninstalled using WMIC command.
     
     - **Effort:** intermediate
+
+??? abstract "WMImplant Hack Tool"
+    
+    WMImplant is a powershell framework used by attacker for reconnaissance and exfiltration, this rule attempts to detect WMimplant arguments and invokes commands. 
+    
+    - **Effort:** intermediate
+
+??? abstract "Wdigest Enable UseLogonCredential"
+    
+    Detects modification of the Windows Registry value of HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\WDigest\UseLogonCredential. This technique is used to extract passwords in clear-text using WDigest. The rule requires to log for Registry Events, which can be done using Sysmon Event IDs 12, 13 and 14.
+    
+    - **Effort:** elementary
 
 ??? abstract "Webshell Execution W3WP Process"
     
@@ -1677,6 +2139,12 @@ The following Sekoia.io built-in rules match the intake **Microsoft 365 Defender
     
     - **Effort:** intermediate
 
+??? abstract "Wmic Suspicious Commands"
+    
+    Detects suspicious commands used by the process wmic to get informations on the system.
+    
+    - **Effort:** advanced
+
 ??? abstract "Wmiprvse Wrong Parent"
     
     Detects if the Wmiprvse process was executed by a non-legitimate parent process. The wmiprvse.exe process (wmiprvse stands for Microsoft Windows Management Instrumentation) is a generic process for managing clients on Windows. It is initialized the first time a client application connects and allows you to monitor system resources. This requires Windows command line logging.
@@ -1700,6 +2168,12 @@ The following Sekoia.io built-in rules match the intake **Microsoft 365 Defender
     Detection of an attack where adversaries may bypass application control and obscure execution of code by embedding scripts inside XSL files. Another variation of this technique, dubbed "Squiblytwo", involves to invoke JScript or VBScript within an XSL file.
     
     - **Effort:** intermediate
+
+??? abstract "ZIP LNK Infection Chain"
+    
+    Detection of an ZIP download followed by a child-process of explorer, followed by multiple Windows processes.This is widely used as an infection chain mechanism.
+    
+    - **Effort:** advanced
 
 ??? abstract "xWizard Execution"
     

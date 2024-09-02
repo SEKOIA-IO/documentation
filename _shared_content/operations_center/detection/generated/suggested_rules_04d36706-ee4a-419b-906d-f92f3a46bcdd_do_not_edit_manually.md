@@ -3,6 +3,24 @@
 The following Sekoia.io built-in rules match the intake **Google Report**. This documentation is updated automatically and is based solely on the fields used by the intake which are checked against our rules. This means that some rules will be listed but might not be relevant with the intake.
 
 [SEKOIA.IO x Google Report on ATT&CK Navigator](https://mitre-attack.github.io/attack-navigator/#layerURL=https%3A%2F%2Fraw.githubusercontent.com%2FSEKOIA-IO%2Fdocumentation%2Fmain%2F_shared_content%2Foperations_center%2Fdetection%2Fgenerated%2Fattack_04d36706-ee4a-419b-906d-f92f3a46bcdd_do_not_edit_manually.json){ .md-button }
+??? abstract "Advanced IP Scanner"
+    
+    Detects the use of Advanced IP Scanner. Seems to be a popular tool for ransomware groups.
+    
+    - **Effort:** master
+
+??? abstract "Certify Or Certipy"
+    
+    Detects the use of certify and certipy which are two different tools used to enumerate and abuse Active Directory Certificate Services.
+    
+    - **Effort:** advanced
+
+??? abstract "Cobalt Strike Default Beacons Names"
+    
+    Detects the default names of Cobalt Strike beacons / payloads.
+    
+    - **Effort:** intermediate
+
 ??? abstract "Credential Dump Tools Related Files"
     
     Detects processes or file names related to credential dumping tools and the dropped files they generate by default.
@@ -20,6 +38,12 @@ The following Sekoia.io built-in rules match the intake **Google Report**. This 
     Detect communication with dynamic dns domain. This kind of domain is often used by attackers. This rule can trigger false positive in non-controlled environment because dynamic dns is not always malicious.
     
     - **Effort:** master
+
+??? abstract "Entra ID Sign-In Via Known AiTM Phishing Kit"
+    
+    Detects a sign-in attempt from an IP address belonging to a known adversary-in-the-middle phishing kit.
+    
+    - **Effort:** elementary
 
 ??? abstract "Exfiltration Domain"
     
@@ -81,6 +105,18 @@ The following Sekoia.io built-in rules match the intake **Google Report**. This 
     
     - **Effort:** advanced
 
+??? abstract "Google Workspace External Sharing"
+    
+    Detects a large number of external sharing.
+    
+    - **Effort:** master
+
+??? abstract "Google Workspace Login Brute-Force"
+    
+    Detects when a user failed to login multiple times before a successful login.
+    
+    - **Effort:** master
+
 ??? abstract "Google Workspace MFA changed"
     
     Detects when the settings for the MFA are modified.
@@ -111,6 +147,30 @@ The following Sekoia.io built-in rules match the intake **Google Report**. This 
     
     - **Effort:** master
 
+??? abstract "HackTools Suspicious Names"
+    
+    Quick-win rule to detect the default process names or file names of several HackTools.
+    
+    - **Effort:** elementary
+
+??? abstract "Internet Scanner"
+    
+    Detects known scanner IP addresses. Alert is only raised when the scan hits an opened port, on TCP or UDP. This could be a very noisy rule, so be careful to check your detection perimeter before activation.
+    
+    - **Effort:** master
+
+??? abstract "Internet Scanner Target"
+    
+    Detects known scanner IP addresses. Alert is only raised when the scan hits an opened port, on TCP or UDP and group by target address. This could be a very noisy rule, so be careful to check your detection perimeter before activation.
+    
+    - **Effort:** master
+
+??? abstract "PasswordDump SecurityXploded Tool"
+    
+    Detects the execution of the PasswordDump SecurityXploded Tool
+    
+    - **Effort:** elementary
+
 ??? abstract "RTLO Character"
     
     Detects RTLO (Right-To-Left character) in file and process names.
@@ -120,6 +180,12 @@ The following Sekoia.io built-in rules match the intake **Google Report**. This 
 ??? abstract "Remote Access Tool Domain"
     
     Detects traffic toward a domain flagged as a Remote Administration Tool (RAT).
+    
+    - **Effort:** master
+
+??? abstract "Remote Monitoring and Management Software - AnyDesk"
+    
+    Detect artifacts related to the installation or execution of the Remote Monitoring and Management tool AnyDesk.
     
     - **Effort:** master
 
@@ -134,6 +200,18 @@ The following Sekoia.io built-in rules match the intake **Google Report**. This 
     Detects observables in Sekoia.io CTI tagged as EICAR, which are fake samples meant to test detection.
     
     - **Effort:** master
+
+??? abstract "Suspicious File Name"
+    
+    Detects suspicious file name possibly linked to malicious tool.
+    
+    - **Effort:** advanced
+
+??? abstract "Suspicious PROCEXP152.sys File Created In Tmp"
+    
+    Detects the creation of the PROCEXP152.sys file in the application-data local temporary folder. This driver is used by Sysinternals Process Explorer but also by KDU (https://github.com/hfiref0x/KDU) or Ghost-In-The-Logs (https://github.com/bats3c/Ghost-In-The-Logs), which uses KDU. Note - Clever attackers may easily bypass this detection by just renaming the driver filename. Therefore just Medium-level and don't rely on it.
+    
+    - **Effort:** advanced
 
 ??? abstract "TOR Usage Generic Rule"
     

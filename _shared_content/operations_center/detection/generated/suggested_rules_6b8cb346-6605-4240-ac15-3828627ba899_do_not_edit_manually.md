@@ -3,11 +3,23 @@
 The following Sekoia.io built-in rules match the intake **WALLIX Bastion**. This documentation is updated automatically and is based solely on the fields used by the intake which are checked against our rules. This means that some rules will be listed but might not be relevant with the intake.
 
 [SEKOIA.IO x WALLIX Bastion on ATT&CK Navigator](https://mitre-attack.github.io/attack-navigator/#layerURL=https%3A%2F%2Fraw.githubusercontent.com%2FSEKOIA-IO%2Fdocumentation%2Fmain%2F_shared_content%2Foperations_center%2Fdetection%2Fgenerated%2Fattack_6b8cb346-6605-4240-ac15-3828627ba899_do_not_edit_manually.json){ .md-button }
+??? abstract "AdFind Usage"
+    
+    Detects the usage of the AdFind tool. AdFind.exe is a free tool that extracts information from Active Directory.  Wizard Spider (Bazar, TrickBot, Ryuk), FIN6 and MAZE operators have used AdFind.exe to collect information about Active Directory organizational units and trust objects 
+    
+    - **Effort:** elementary
+
 ??? abstract "Address Space Layout Randomization (ASLR) Alteration"
     
     ASLR is a security feature used by the Operating System to mitigate memory exploit, attacker might want to disable it
     
     - **Effort:** intermediate
+
+??? abstract "Adidnsdump Enumeration"
+    
+    Detects use of the tool adidnsdump for enumeration and discovering DNS records.
+    
+    - **Effort:** advanced
 
 ??? abstract "Advanced IP Scanner"
     
@@ -21,15 +33,33 @@ The following Sekoia.io built-in rules match the intake **WALLIX Bastion**. This
     
     - **Effort:** intermediate
 
+??? abstract "Autorun Keys Modification"
+    
+    Detects modification of autostart extensibility point (ASEP) in registry. Prerequisites are Logging for Registry events in the Sysmon configuration (events 12 and 13).
+    
+    - **Effort:** master
+
 ??? abstract "AzureEdge in Command Line"
     
     Detects use of azureedge in the command line.
     
     - **Effort:** advanced
 
+??? abstract "BITSAdmin Download"
+    
+    Detects command to download file using BITSAdmin, a built-in tool in Windows. This technique is used by several threat actors to download scripts or payloads on infected system.
+    
+    - **Effort:** advanced
+
 ??? abstract "BazarLoader Persistence Using Schtasks"
     
     Detects possible BazarLoader persistence using schtasks. BazarLoader will create a Scheduled Task using a specific command line to establish its persistence.
+    
+    - **Effort:** intermediate
+
+??? abstract "Bloodhound and Sharphound Tools Usage"
+    
+    Detects default process names and default command line parameters used by Bloodhound and Sharphound tools.
     
     - **Effort:** intermediate
 
@@ -44,6 +74,18 @@ The following Sekoia.io built-in rules match the intake **WALLIX Bastion**. This
     Detects when a user installs certificates by using CertOC.exe to loads the target DLL file.
     
     - **Effort:** intermediate
+
+??? abstract "Certificate Authority Modification"
+    
+    Installation of new certificate(s) in the Certificate Authority can be used to trick user when spoofing website or to add trusted destinations.
+    
+    - **Effort:** master
+
+??? abstract "Certify Or Certipy"
+    
+    Detects the use of certify and certipy which are two different tools used to enumerate and abuse Active Directory Certificate Services.
+    
+    - **Effort:** advanced
 
 ??? abstract "Change Default File Association"
     
@@ -75,11 +117,29 @@ The following Sekoia.io built-in rules match the intake **WALLIX Bastion**. This
     
     - **Effort:** advanced
 
+??? abstract "Container Credential Access"
+    
+    Adversaries could abuse containers tools to obtain credential like Kubernetes secret or Kubernetes service account access token
+    
+    - **Effort:** intermediate
+
 ??? abstract "Control Panel Items"
     
     Detects the malicious use of a control panel item
     
     - **Effort:** advanced
+
+??? abstract "Copy Of Legitimate System32 Executable"
+    
+    A script has copied a System32 executable.
+    
+    - **Effort:** intermediate
+
+??? abstract "Copying Browser Files With Credentials"
+    
+    Detects copy of sensitive data (passwords, cookies, credit cards) included in web browsers files.
+    
+    - **Effort:** elementary
 
 ??? abstract "Cryptomining"
     
@@ -87,11 +147,23 @@ The following Sekoia.io built-in rules match the intake **WALLIX Bastion**. This
     
     - **Effort:** master
 
+??? abstract "DHCP Callout DLL Installation"
+    
+    Detects the installation of a Callout DLL via CalloutDlls and CalloutEnabled parameter in Registry, which can be used to execute code in context of the DHCP server (restart required).
+    
+    - **Effort:** intermediate
+
 ??? abstract "DNS Exfiltration and Tunneling Tools Execution"
     
     Well-known DNS exfiltration tools execution
     
     - **Effort:** intermediate
+
+??? abstract "DNS ServerLevelPluginDll Installation"
+    
+    Detects the installation of a plugin DLL via ServerLevelPluginDll parameter in Windows Registry or in command line, which can be used to execute code in context of the DNS server (restart required). To fully use this rule, prerequesites are logging for Registry events in the Sysmon configuration (events 12, 13 and 14).
+    
+    - **Effort:** master
 
 ??? abstract "Data Compressed With Rar With Password"
     
@@ -110,6 +182,12 @@ The following Sekoia.io built-in rules match the intake **WALLIX Bastion**. This
     Detects PowerShell encoding to UTF-8, which is used by Sliver implants. The command line just sets the default encoding to UTF-8 in PowerShell.
     
     - **Effort:** advanced
+
+??? abstract "Disable .NET ETW Through COMPlus_ETWEnabled"
+    
+    Detects potential adversaries stopping ETW providers recording loaded .NET assemblies. Prerequisites are logging for Registry events or logging command line parameters (both is better). Careful for registry events, if SwiftOnSecurity's SYSMON default configuration is used, you will need to update the configuration to include the .NETFramework registry key path. Same issue with Windows 4657 EventID logging, the registry path must be specified.
+    
+    - **Effort:** intermediate
 
 ??? abstract "Disable Task Manager Through Registry Key"
     
@@ -147,6 +225,12 @@ The following Sekoia.io built-in rules match the intake **WALLIX Bastion**. This
     
     - **Effort:** intermediate
 
+??? abstract "Equation Group DLL_U Load"
+    
+    Detects a specific tool and export used by EquationGroup
+    
+    - **Effort:** elementary
+
 ??? abstract "Exfiltration Domain"
     
     Detects traffic toward a domain flagged as a possible exfiltration vector.
@@ -158,6 +242,12 @@ The following Sekoia.io built-in rules match the intake **WALLIX Bastion**. This
     Detects commands containing a domain linked to http exfiltration.
     
     - **Effort:** intermediate
+
+??? abstract "FromBase64String Command Line"
+    
+    Detects suspicious FromBase64String expressions in command line arguments.
+    
+    - **Effort:** master
 
 ??? abstract "HackTools Suspicious Process Names In Command Line"
     
@@ -177,6 +267,18 @@ The following Sekoia.io built-in rules match the intake **WALLIX Bastion**. This
     
     - **Effort:** elementary
 
+??? abstract "Inhibit System Recovery Deleting Backups"
+    
+    Detects adversaries attempts to delete backups or inhibit system recovery. This rule relies on differents known techniques using Windows events logs from Sysmon (ID 1), and PowerShell (ID 4103, 4104).
+    
+    - **Effort:** intermediate
+
+??? abstract "Invoke-TheHash Commandlets"
+    
+    Detects suspicious Invoke-TheHash PowerShell commandlet used for performing pass the hash WMI and SMB tasks.
+    
+    - **Effort:** elementary
+
 ??? abstract "KeePass Config XML In Command-Line"
     
     Detects a command-line interaction with the KeePass Config XML file. It could be used to retrieve informations or to be abused for persistence.
@@ -186,6 +288,12 @@ The following Sekoia.io built-in rules match the intake **WALLIX Bastion**. This
 ??? abstract "Lazarus Loaders"
     
     Detects different loaders used by the Lazarus Group APT
+    
+    - **Effort:** elementary
+
+??? abstract "Leviathan Registry Key Activity"
+    
+    Detects registry key used by Leviathan APT in Malaysian focused campaign.
     
     - **Effort:** elementary
 
@@ -207,11 +315,29 @@ The following Sekoia.io built-in rules match the intake **WALLIX Bastion**. This
     
     - **Effort:** advanced
 
+??? abstract "Logon Scripts (UserInitMprLogonScript)"
+    
+    Detects creation or execution of UserInitMprLogonScript persistence method. The rule requires to log for process command lines and registry creations or update, which can be done using Sysmon Event IDs 1, 12, 13 and 14.
+    
+    - **Effort:** advanced
+
 ??? abstract "Malicious Browser Extensions"
     
     Detects browser extensions being loaded with the --load-extension and -base-url options, which works on Chromium-based browsers. We are looking for potentially malicious browser extensions. These extensions can get access to informations.
     
     - **Effort:** advanced
+
+??? abstract "Malspam Execution Registering Malicious DLL"
+    
+    Detects the creation of a file in the C:\Datop folder, or DLL registering a file in the C:\Datop folder. Files located in the Datop folder are very characteristic of malspam execution related to Qakbot or SquirrelWaffle. Prerequisites are Logging for File Creation events, which can be done in the Sysmon configuration (events 11), for the first part of the pattern (TargetFilename).
+    
+    - **Effort:** elementary
+
+??? abstract "Malware Persistence Registry Key"
+    
+    Detects registry key used by several malware, especially Formbook spyware in two ways, either the Sysmon registry events, or the commands line.
+    
+    - **Effort:** master
 
 ??? abstract "MalwareBytes Uninstallation"
     
@@ -222,6 +348,12 @@ The following Sekoia.io built-in rules match the intake **WALLIX Bastion**. This
 ??? abstract "MavInject Process Injection"
     
     Detects process injection using the signed Windows tool Mavinject32.exe (which is a LOLBAS)
+    
+    - **Effort:** intermediate
+
+??? abstract "Microsoft Defender Antivirus Disable Services"
+    
+    The rule detects attempts to deactivate/disable Windows Defender through command line and registry.
     
     - **Effort:** intermediate
 
@@ -261,6 +393,30 @@ The following Sekoia.io built-in rules match the intake **WALLIX Bastion**. This
     
     - **Effort:** elementary
 
+??? abstract "Microsoft Exchange PowerShell Snap-Ins To Export Exchange Mailbox Data"
+    
+    Detects PowerShell SnapIn command line or PowerShell script, often used with Get-Mailbox to export Exchange mailbox data.
+    
+    - **Effort:** intermediate
+
+??? abstract "Mimikatz Basic Commands"
+    
+    Detects Mimikatz most popular commands. 
+    
+    - **Effort:** elementary
+
+??? abstract "Msdt (Follina) File Browse Process Execution"
+    
+    Detects various Follina vulnerability exploitation techniques. This is based on the Compatability Troubleshooter which is abused to do code execution.
+    
+    - **Effort:** elementary
+
+??? abstract "Mustang Panda Dropper"
+    
+    Detects specific process parameters as used by Mustang Panda droppers
+    
+    - **Effort:** elementary
+
 ??? abstract "NTDS.dit File Interaction Through Command Line"
     
     Detects interaction with the file NTDS.dit through command line. This is usually really suspicious and could indicate an attacker trying copy the file to then look for users password hashes.
@@ -297,6 +453,24 @@ The following Sekoia.io built-in rules match the intake **WALLIX Bastion**. This
     
     - **Effort:** intermediate
 
+??? abstract "Ngrok Process Execution"
+    
+    Detects possible Ngrok execution, which can be used by attacker for RDP tunneling.
+    
+    - **Effort:** intermediate
+
+??? abstract "NjRat Registry Changes"
+    
+    Detects changes for the RUN registry key which happen when a victim is infected by NjRAT. Please note that even if NjRat is well-known for the behavior the rule catches, the rule is a bit larger and could catch other malwares.
+    
+    - **Effort:** master
+
+??? abstract "Njrat Registry Values"
+    
+    Detects specifis registry values that are related to njRat usage.
+    
+    - **Effort:** intermediate
+
 ??? abstract "NlTest Usage"
     
     Detects attempts to gather information on domain trust relationships that may be used to identify lateral movement opportunities. These command lines were observed in numerous attacks, but also sometimes from legitimate administrators for debugging purposes. The rule does not cover very basics commands but rather the ones that are interesting for attackers to gather information on a domain.
@@ -309,11 +483,23 @@ The following Sekoia.io built-in rules match the intake **WALLIX Bastion**. This
     
     - **Effort:** advanced
 
+??? abstract "Office Application Startup Office Test"
+    
+    Detects the addition of office test registry that allows a user to specify an arbitrary DLL that will be executed everytime an Office application is started. An adversaries may abuse the Microsoft Office "Office Test" Registry key to obtain persistence on a compromised system.
+    
+    - **Effort:** elementary
+
 ??? abstract "Outlook Registry Access"
     
     Detection of accesses to Microsoft Outlook registry hive, which might contain sensitive information.
     
     - **Effort:** master
+
+??? abstract "Pandemic Windows Implant"
+    
+    Detects Pandemic Windows Implant through registry keys or specific command lines. Prerequisites: Logging for Registry events is needed, which can be done in the Sysmon configuration (events 12 and 13).
+    
+    - **Effort:** intermediate
 
 ??? abstract "Phorpiex DriveMgr Command"
     
@@ -339,9 +525,39 @@ The following Sekoia.io built-in rules match the intake **WALLIX Bastion**. This
     
     - **Effort:** advanced
 
+??? abstract "PowerShell Data Compressed"
+    
+    Detects data compression through a PowerShell command (could be used by an adversary for exfiltration).
+    
+    - **Effort:** advanced
+
 ??? abstract "PowerShell EncodedCommand"
     
     Detects popular file extensions in commands obfuscated in base64 run through the EncodedCommand option.
+    
+    - **Effort:** advanced
+
+??? abstract "PowerShell Invoke Expression With Registry"
+    
+    Detects keywords from well-known PowerShell techniques to get registry key values
+    
+    - **Effort:** advanced
+
+??? abstract "PowerView commandlets 1"
+    
+    Detects PowerView commandlets which perform network and Windows domain enumeration and exploitation. It provides replaces for almost all Windows net commands, letting you query users, machines, domain controllers, user descriptions, share, sessions, and more.
+    
+    - **Effort:** advanced
+
+??? abstract "PowerView commandlets 2"
+    
+    Detects PowerView commandlets which perform network and Windows domain enumeration and exploitation. It provides replaces for almost all Windows net commands, letting you query users, machines, domain controllers, user descriptions, share, sessions, and more.
+    
+    - **Effort:** advanced
+
+??? abstract "Powershell AMSI Bypass"
+    
+    This rule aims to detect attempts to bypass AMSI in powershell using specific techniques.
     
     - **Effort:** advanced
 
@@ -350,6 +566,18 @@ The following Sekoia.io built-in rules match the intake **WALLIX Bastion**. This
     Powershell's `uploadXXX` functions are a category of methods which can be used to exfiltrate data through native means on a Windows host.
     
     - **Effort:** intermediate
+
+??? abstract "Powershell Web Request"
+    
+    Detects the use of various web request methods executed remotely via Windows PowerShell.
+    
+    - **Effort:** advanced
+
+??? abstract "Privilege Escalation Awesome Scripts (PEAS)"
+    
+    Detect PEAS privileges escalation scripts and binaries
+    
+    - **Effort:** elementary
 
 ??? abstract "Process Memory Dump Using Comsvcs"
     
@@ -369,9 +597,21 @@ The following Sekoia.io built-in rules match the intake **WALLIX Bastion**. This
     
     - **Effort:** advanced
 
+??? abstract "PsExec Process"
+    
+    Detects PsExec execution, command line which contains pstools or installation of the PsExec service. PsExec is a SysInternals which can be used to execute a program on another computer. The tool is as much used by attackers as by administrators. 
+    
+    - **Effort:** advanced
+
 ??? abstract "Python HTTP Server"
     
     Detects command used to start a Simple HTTP server in Python. Threat actors could use it for data extraction, hosting a webshell or else.
+    
+    - **Effort:** intermediate
+
+??? abstract "QakBot Process Creation"
+    
+    Detects QakBot like process executions
     
     - **Effort:** intermediate
 
@@ -381,11 +621,23 @@ The following Sekoia.io built-in rules match the intake **WALLIX Bastion**. This
     
     - **Effort:** intermediate
 
+??? abstract "RSA SecurID Failed Authentification"
+    
+    Detects many failed attempts to authenticate followed by a successfull login for a super admin account.
+    
+    - **Effort:** advanced
+
 ??? abstract "Raccine Uninstall"
     
     Detects commands that indicate a Raccine removal from an end system. Raccine is a free ransomware protection tool.
     
     - **Effort:** elementary
+
+??? abstract "Rclone Process"
+    
+    Detects Rclone executable or Rclone execution by using the process name, the execution through a command obfuscated or not.
+    
+    - **Effort:** advanced
 
 ??? abstract "RedMimicry Winnti Playbook Registry Manipulation"
     
@@ -423,11 +675,29 @@ The following Sekoia.io built-in rules match the intake **WALLIX Bastion**. This
     
     - **Effort:** master
 
+??? abstract "Socat Relaying Socket"
+    
+    Socat is a linux tool used to relay local socket or internal network connection, this technics is often used by attacker to bypass security equipment such as firewall
+    
+    - **Effort:** advanced
+
+??? abstract "Socat Reverse Shell Detection"
+    
+    Socat is a linux tool used to relay or open reverse shell that is often used by attacker to bypass security equipment.
+    
+    - **Effort:** intermediate
+
 ??? abstract "Spyware Persistence Using Schtasks"
     
     Detects possible Agent Tesla or Formbook persistence using schtasks. The name of the scheduled task used by these malware is very specific (Updates/randomstring).
     
     - **Effort:** intermediate
+
+??? abstract "Stop Backup Services"
+    
+    Detects adversaries attempts to stop backups services or disable Windows previous files versions feature. This could be related to ransomware operators or legit administrators. This rule relies Windows command line logging and registry logging, and PowerShell (ID 4103, 4104).
+    
+    - **Effort:** master
 
 ??? abstract "Suncrypt Parameters"
     
@@ -453,6 +723,12 @@ The following Sekoia.io built-in rules match the intake **WALLIX Bastion**. This
     
     - **Effort:** intermediate
 
+??? abstract "Suspicious Desktopimgdownldr Execution"
+    
+    Detects a suspicious Desktopimgdownldr execution. Desktopimgdownldr.exe is a Windows binary used to configure lockscreen/desktop image and can be abused to download malicious file.
+    
+    - **Effort:** intermediate
+
 ??? abstract "Suspicious Microsoft Defender Antivirus Exclusion Command"
     
     Detects PowerShell commands aiming to exclude path, process, IP address, or extension from scheduled and real-time scanning. These commands can be used by attackers or malware to avoid being detected by Windows Defender. Depending on the environment and the installed software, this detection rule could raise false positives. We recommend customizing this rule by filtering legitimate processes that use Windows Defender exclusion command in your environment.
@@ -465,11 +741,23 @@ The following Sekoia.io built-in rules match the intake **WALLIX Bastion**. This
     
     - **Effort:** elementary
 
+??? abstract "Suspicious PowerShell Invocations - Generic"
+    
+    Detects suspicious PowerShell invocation command parameters through command line logging or ScriptBlock Logging.
+    
+    - **Effort:** intermediate
+
 ??? abstract "Suspicious PowerShell Invocations - Specific"
     
     Detects suspicious PowerShell invocation command parameters.
     
     - **Effort:** intermediate
+
+??? abstract "Suspicious PowerShell Keywords"
+    
+    Detects keywords that could indicate the use of some PowerShell exploitation framework.
+    
+    - **Effort:** advanced
 
 ??? abstract "Suspicious PrinterPorts Creation (CVE-2020-1048)"
     
@@ -489,15 +777,39 @@ The following Sekoia.io built-in rules match the intake **WALLIX Bastion**. This
     
     - **Effort:** intermediate
 
+??? abstract "Suspicious certutil command"
+    
+    Detects suspicious certutil command which can be used by threat actors to download and/or decode payload. 
+    
+    - **Effort:** intermediate
+
 ??? abstract "TOR Usage Generic Rule"
     
     Detects TOR usage globally, whether the IP is a destination or source. TOR is short for The Onion Router, and it gets its name from how it works. TOR intercepts the network traffic from one or more apps on user’s computer, usually the user web browser, and shuffles it through a number of randomly-chosen computers before passing it on to its destination. This disguises user location, and makes it harder for servers to pick him/her out on repeat visits, or to tie together separate visits to different sites, this making tracking and surveillance more difficult. Before a network packet starts its journey, user’s computer chooses a random list of relays and repeatedly encrypts the data in multiple layers, like an onion. Each relay knows only enough to strip off the outermost layer of encryption, before passing what’s left on to the next relay in the list.
     
     - **Effort:** master
 
+??? abstract "UAC Bypass Via Sdclt"
+    
+    Detects changes to HKCU\Software\Classes\exefile\shell\runas\command\isolatedCommand by an attacker in order to bypass User Account Control (UAC)
+    
+    - **Effort:** elementary
+
 ??? abstract "Usage Of Procdump With Common Arguments"
     
     Detects the usage of Procdump sysinternals tool with some common arguments and followed by common patterns.
+    
+    - **Effort:** intermediate
+
+??? abstract "Usage Of Sysinternals Tools"
+    
+    Detects the usage of Sysinternals Tools due to accepteula key being added to Registry. The rule detects it either from the command line usage or from the regsitry events. For the later prerequisite is logging for registry events in the Sysmon configuration (events 12 and 13).
+    
+    - **Effort:** master
+
+??? abstract "Venom Multi-hop Proxy agent detection"
+    
+    Detects Venom Multi-hop Proxy agent.
     
     - **Effort:** intermediate
 
@@ -507,11 +819,29 @@ The following Sekoia.io built-in rules match the intake **WALLIX Bastion**. This
     
     - **Effort:** elementary
 
+??? abstract "WMIC Command To Determine The Antivirus"
+    
+    Detects WMIC command to determine the antivirus on a system, characteristic of the ZLoader malware (and possibly others)
+    
+    - **Effort:** advanced
+
 ??? abstract "WMIC Uninstall Product"
     
     Detects products being uninstalled using WMIC command.
     
     - **Effort:** intermediate
+
+??? abstract "WMImplant Hack Tool"
+    
+    WMImplant is a powershell framework used by attacker for reconnaissance and exfiltration, this rule attempts to detect WMimplant arguments and invokes commands. 
+    
+    - **Effort:** intermediate
+
+??? abstract "Wdigest Enable UseLogonCredential"
+    
+    Detects modification of the Windows Registry value of HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\WDigest\UseLogonCredential. This technique is used to extract passwords in clear-text using WDigest. The rule requires to log for Registry Events, which can be done using Sysmon Event IDs 12, 13 and 14.
+    
+    - **Effort:** elementary
 
 ??? abstract "WiFi Credentials Harvesting Using Netsh"
     
@@ -522,6 +852,12 @@ The following Sekoia.io built-in rules match the intake **WALLIX Bastion**. This
 ??? abstract "Windows Firewall Changes"
     
     Detects changes on Windows Firewall configuration
+    
+    - **Effort:** master
+
+??? abstract "Windows Registry Persistence COM Key Linking"
+    
+    Detects COM object hijacking via TreatAs subkey. Logging for Registry events is needed in the Sysmon configuration with this kind of rule `<TargetObject name="testr12" condition="end with">\TreatAs\(Default)</TargetObject>`.
     
     - **Effort:** master
 

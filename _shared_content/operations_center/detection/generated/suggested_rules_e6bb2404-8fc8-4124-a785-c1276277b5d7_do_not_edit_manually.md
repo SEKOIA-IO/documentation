@@ -15,11 +15,23 @@ The following Sekoia.io built-in rules match the intake **Okta**. This documenta
     
     - **Effort:** master
 
+??? abstract "Entra ID Sign-In Via Known AiTM Phishing Kit"
+    
+    Detects a sign-in attempt from an IP address belonging to a known adversary-in-the-middle phishing kit.
+    
+    - **Effort:** elementary
+
 ??? abstract "Exfiltration Domain"
     
     Detects traffic toward a domain flagged as a possible exfiltration vector.
     
     - **Effort:** master
+
+??? abstract "Login Brute-Force Successful On Okta"
+    
+    A user has attempted to login several times (brute-force) on Okta and succeeded to login.
+    
+    - **Effort:** advanced
 
 ??? abstract "Nimbo-C2 User Agent"
     
@@ -63,6 +75,12 @@ The following Sekoia.io built-in rules match the intake **Okta**. This documenta
     
     - **Effort:** intermediate
 
+??? abstract "Okta MFA Brute-Force Successful"
+    
+    A user has attempted to login several times (brute-force) on Okta and succeeded to login by spamming MFA.
+    
+    - **Effort:** advanced
+
 ??? abstract "Okta MFA Bypass Attempt"
     
     A bypass of MFA may have been attempted.
@@ -74,6 +92,12 @@ The following Sekoia.io built-in rules match the intake **Okta**. This documenta
     A MFA has beed disabled in Okta SSO. This is a common behavior to gain permanent access over a system.
     
     - **Effort:** intermediate
+
+??? abstract "Okta Many Passwords Reset Attempt"
+    
+    This rule identifies a high number of Okta user password reset or account unlock attempts. An adversary may attempt to obtain unauthorized access to Okta user accounts using these methods and attempt to blend in with normal activity in their target's environment and evade detection.
+    
+    - **Effort:** advanced
 
 ??? abstract "Okta Network Zone Deactivated"
     
@@ -159,6 +183,18 @@ The following Sekoia.io built-in rules match the intake **Okta**. This documenta
     
     - **Effort:** advanced
 
+??? abstract "Okta User Logged In From Multiple Countries"
+    
+    Detection of login events from multiple countries.
+    
+    - **Effort:** intermediate
+
+??? abstract "Okta User Logged In Multiple Applications"
+    
+    Detection of login events on multiple application.
+    
+    - **Effort:** intermediate
+
 ??? abstract "Potential Bazar Loader User-Agents"
     
     Detects potential Bazar loader communications through the user-agent
@@ -171,9 +207,21 @@ The following Sekoia.io built-in rules match the intake **Okta**. This documenta
     
     - **Effort:** elementary
 
+??? abstract "RSA SecurID Failed Authentification"
+    
+    Detects many failed attempts to authenticate followed by a successfull login for a super admin account.
+    
+    - **Effort:** advanced
+
 ??? abstract "Remote Access Tool Domain"
     
     Detects traffic toward a domain flagged as a Remote Administration Tool (RAT).
+    
+    - **Effort:** master
+
+??? abstract "Remote Monitoring and Management Software - AnyDesk"
+    
+    Detect artifacts related to the installation or execution of the Remote Monitoring and Management tool AnyDesk.
     
     - **Effort:** master
 
@@ -182,12 +230,6 @@ The following Sekoia.io built-in rules match the intake **Okta**. This documenta
     Detect threats based on indicators of compromise (IOCs) collected by SEKOIA's Threat and Detection Research team.
     
     - **Effort:** elementary
-
-??? abstract "SecurityScorecard Vulnerability Assessment Scanner New Issues"
-    
-    Raises an alert when SecurityScorecard Vulnerability Assessment Scanner find new issues.
-    
-    - **Effort:** master
 
 ??? abstract "Sekoia.io EICAR Detection"
     

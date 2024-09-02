@@ -21,6 +21,12 @@ The following Sekoia.io built-in rules match the intake **Microsoft Intune**. Th
     
     - **Effort:** master
 
+??? abstract "Login Brute-Force Successful On SentinelOne EDR Management Console"
+    
+    A user has attempted to login several times (brute-force) on the SentinelOne EDR Management Console and succeeded to login.
+    
+    - **Effort:** master
+
 ??? abstract "Microsoft Intune Non-Compliant Device"
     
     Detects Microsoft Intune reporting a device in a non-compliant state. This can indicate either a misconfiguration in Intune or a change of configuration on said device.
@@ -33,9 +39,21 @@ The following Sekoia.io built-in rules match the intake **Microsoft Intune**. Th
     
     - **Effort:** intermediate
 
+??? abstract "RSA SecurID Failed Authentification"
+    
+    Detects many failed attempts to authenticate followed by a successfull login for a super admin account.
+    
+    - **Effort:** advanced
+
 ??? abstract "Remote Access Tool Domain"
     
     Detects traffic toward a domain flagged as a Remote Administration Tool (RAT).
+    
+    - **Effort:** master
+
+??? abstract "Remote Monitoring and Management Software - AnyDesk"
+    
+    Detect artifacts related to the installation or execution of the Remote Monitoring and Management tool AnyDesk.
     
     - **Effort:** master
 

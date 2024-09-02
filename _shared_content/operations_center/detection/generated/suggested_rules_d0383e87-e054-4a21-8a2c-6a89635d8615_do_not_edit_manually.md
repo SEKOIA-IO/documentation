@@ -9,6 +9,12 @@ The following Sekoia.io built-in rules match the intake **Ubika Cloud Protector 
     
     - **Effort:** master
 
+??? abstract "Discord Suspicious Download"
+    
+    Discord is a messaging application. It allows users to create their own communities to share messages and attachments. Those attachments have little to no overview and can be downloaded by almost anyone, which has been abused by attackers to host malicious payloads.
+    
+    - **Effort:** intermediate
+
 ??? abstract "Dynamic DNS Contacted"
     
     Detect communication with dynamic dns domain. This kind of domain is often used by attackers. This rule can trigger false positive in non-controlled environment because dynamic dns is not always malicious.
@@ -20,6 +26,12 @@ The following Sekoia.io built-in rules match the intake **Ubika Cloud Protector 
     Detects traffic toward a domain flagged as a possible exfiltration vector.
     
     - **Effort:** master
+
+??? abstract "Koadic MSHTML Command"
+    
+    Detects Koadic payload using MSHTML module
+    
+    - **Effort:** intermediate
 
 ??? abstract "Potential Azure AD Phishing Page (Adversary-in-the-Middle)"
     
