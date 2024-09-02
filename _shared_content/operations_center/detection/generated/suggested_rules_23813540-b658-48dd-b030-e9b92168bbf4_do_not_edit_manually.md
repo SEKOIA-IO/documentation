@@ -21,11 +21,35 @@ The following Sekoia.io built-in rules match the intake **Daspren Parad [BETA]**
     
     - **Effort:** advanced
 
+??? abstract "Adidnsdump Enumeration"
+    
+    Detects use of the tool adidnsdump for enumeration and discovering DNS records.
+    
+    - **Effort:** advanced
+
+??? abstract "Advanced IP Scanner"
+    
+    Detects the use of Advanced IP Scanner. Seems to be a popular tool for ransomware groups.
+    
+    - **Effort:** master
+
 ??? abstract "AutoIt3 Execution From Suspicious Folder"
     
     Detects AutoIt3 execution from an unusual/suspicious folder. Legitimate folders are "Program Files" and "AppData\\Local". AutoIt3.exe is a legitimate process used to execute AutoIt program files, which are used by legitimate software, custom scripts, but also malware. Finding AutoIt3 execution from unusual/suspicious folder can help detect malware activities, such as DarkGate execution. The detection rule can be tailored to your environment and your use of AutoIt3 by filtering out folder's execution of legitimate applications or scripts.
     
     - **Effort:** advanced
+
+??? abstract "Bloodhound and Sharphound Tools Usage"
+    
+    Detects default process names and default command line parameters used by Bloodhound and Sharphound tools.
+    
+    - **Effort:** intermediate
+
+??? abstract "CVE-2017-11882 Microsoft Office Equation Editor Vulnerability"
+    
+    Detects the exploitation of CVE-2017-11882 vulnerability. The Microsoft Office Equation Editor has no reason to do a network request or drop an executable file. This requires a sysmon configuration with file and network events.
+    
+    - **Effort:** master
 
 ??? abstract "CVE-2021-34527 PrintNightmare Suspicious Actions From Spoolsv"
     
@@ -38,6 +62,12 @@ The following Sekoia.io built-in rules match the intake **Daspren Parad [BETA]**
     Installation of new certificate(s) in the Certificate Authority can be used to trick user when spoofing website or to add trusted destinations.
     
     - **Effort:** master
+
+??? abstract "Certify Or Certipy"
+    
+    Detects the use of certify and certipy which are two different tools used to enumerate and abuse Active Directory Certificate Services.
+    
+    - **Effort:** advanced
 
 ??? abstract "Cobalt Strike Default Beacons Names"
     
@@ -69,15 +99,39 @@ The following Sekoia.io built-in rules match the intake **Daspren Parad [BETA]**
     
     - **Effort:** intermediate
 
+??? abstract "HTA Infection Chains"
+    
+    Detect the creation of a ZIP file and an HTA file as it is often used in infection chains. Furthermore it also detects the use of suspicious processes launched by explorer.exe combined with the creation of an HTA file, since it is also often used in infection chains (LNK - HTA for instance).
+    
+    - **Effort:** intermediate
+
+??? abstract "HackTools Suspicious Names"
+    
+    Quick-win rule to detect the default process names or file names of several HackTools.
+    
+    - **Effort:** elementary
+
 ??? abstract "Hijack Legit RDP Session To Move Laterally"
     
     Identifies suspicious file creations in the startup folder of a remote system. An adversary could abuse this to move laterally by dropping a malicious script or executable that will be executed after a reboot or user logon.
     
     - **Effort:** intermediate
 
+??? abstract "ISO LNK Infection Chain"
+    
+    Detection of an ISO (or any other similar archive file) downloaded file, followed by a child-process of explorer, which is characteristic of an infection using an ISO containing an LNK file. For events with `host.name`.
+    
+    - **Effort:** intermediate
+
 ??? abstract "Kernel Module Alteration"
     
     Kernel module installation can be used to configure system settings to automatically execute a program during system boot or logon to maintain persistence or gain higher-level privileges on compromised systems.
+    
+    - **Effort:** advanced
+
+??? abstract "Legitimate Process Execution From Unusual Folder"
+    
+    Detects the execution of a legitimate, windows built-in process name from an unusual / suspicious folder. Legitimate folders are c:\windows\system32\, \SystemRoot\system32\, c:\windows\syswow64\ and c:\windows\winsxs\. Many malwares/attackers use legitimate names to masquerade but if they are not Administrator yet, they often can't write file into these legitimate folders.
     
     - **Effort:** advanced
 
@@ -117,11 +171,23 @@ The following Sekoia.io built-in rules match the intake **Daspren Parad [BETA]**
     
     - **Effort:** intermediate
 
+??? abstract "NlTest Usage"
+    
+    Detects attempts to gather information on domain trust relationships that may be used to identify lateral movement opportunities. These command lines were observed in numerous attacks, but also sometimes from legitimate administrators for debugging purposes. The rule does not cover very basics commands but rather the ones that are interesting for attackers to gather information on a domain.
+    
+    - **Effort:** advanced
+
 ??? abstract "OneNote Embedded File"
     
     Detects creation or uses of OneNote embedded files with unusual extensions.  
     
     - **Effort:** intermediate
+
+??? abstract "OneNote Suspicious Children Process"
+    
+    In January 2023, a peak of attacks using .one files was observed in the wild. This rule tries to detect the effect of such attempts using this technique.
+    
+    - **Effort:** advanced
 
 ??? abstract "PasswordDump SecurityXploded Tool"
     
@@ -134,6 +200,12 @@ The following Sekoia.io built-in rules match the intake **Daspren Parad [BETA]**
     Detects specific process executable path used by the Phorpiex botnet to masquerade its system process network activity. It looks for a pattern of a system process executable name that is not legitimate and running from a folder that is created via a random algorithm 13-15 numbers long.
     
     - **Effort:** elementary
+
+??? abstract "Process Trace Alteration"
+    
+    PTrace syscall provides a means by which one process ("tracer") may observe and control the execution of another process ("tracee") and examine and change the tracee's memory and registers. Attacker might want to abuse ptrace functionnality to analyse memory process. It requires to be admin or set ptrace_scope to 0 to allow all user to trace any process.
+    
+    - **Effort:** advanced
 
 ??? abstract "PsExec Process"
     
@@ -165,11 +237,17 @@ The following Sekoia.io built-in rules match the intake **Daspren Parad [BETA]**
     
     - **Effort:** master
 
-??? abstract "SecurityScorecard Vulnerability Assessment Scanner New Issues"
+??? abstract "Socat Relaying Socket"
     
-    Raises an alert when SecurityScorecard Vulnerability Assessment Scanner find new issues.
+    Socat is a linux tool used to relay local socket or internal network connection, this technics is often used by attacker to bypass security equipment such as firewall
     
-    - **Effort:** master
+    - **Effort:** advanced
+
+??? abstract "Socat Reverse Shell Detection"
+    
+    Socat is a linux tool used to relay or open reverse shell that is often used by attacker to bypass security equipment.
+    
+    - **Effort:** intermediate
 
 ??? abstract "SolarWinds Suspicious File Creation"
     
@@ -183,9 +261,21 @@ The following Sekoia.io built-in rules match the intake **Daspren Parad [BETA]**
     
     - **Effort:** advanced
 
+??? abstract "Suspicious Desktopimgdownldr Execution"
+    
+    Detects a suspicious Desktopimgdownldr execution. Desktopimgdownldr.exe is a Windows binary used to configure lockscreen/desktop image and can be abused to download malicious file.
+    
+    - **Effort:** intermediate
+
 ??? abstract "Suspicious Double Extension"
     
     Detects suspicious use of an .exe extension after a non-executable file extension like .pdf.exe, a set of spaces or underlines to cloak the executable file in spearphishing campaigns
+    
+    - **Effort:** advanced
+
+??? abstract "Suspicious PROCEXP152.sys File Created In Tmp"
+    
+    Detects the creation of the PROCEXP152.sys file in the application-data local temporary folder. This driver is used by Sysinternals Process Explorer but also by KDU (https://github.com/hfiref0x/KDU) or Ghost-In-The-Logs (https://github.com/bats3c/Ghost-In-The-Logs), which uses KDU. Note - Clever attackers may easily bypass this detection by just renaming the driver filename. Therefore just Medium-level and don't rely on it.
     
     - **Effort:** advanced
 

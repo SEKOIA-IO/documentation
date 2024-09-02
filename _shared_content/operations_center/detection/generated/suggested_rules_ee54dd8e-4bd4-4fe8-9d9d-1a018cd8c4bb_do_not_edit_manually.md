@@ -33,11 +33,41 @@ The following Sekoia.io built-in rules match the intake **Windows Log Insight**.
     
     - **Effort:** advanced
 
+??? abstract "Advanced IP Scanner"
+    
+    Detects the use of Advanced IP Scanner. Seems to be a popular tool for ransomware groups.
+    
+    - **Effort:** master
+
+??? abstract "Bloodhound and Sharphound Tools Usage"
+    
+    Detects default process names and default command line parameters used by Bloodhound and Sharphound tools.
+    
+    - **Effort:** intermediate
+
+??? abstract "CVE-2017-11882 Microsoft Office Equation Editor Vulnerability"
+    
+    Detects the exploitation of CVE-2017-11882 vulnerability. The Microsoft Office Equation Editor has no reason to do a network request or drop an executable file. This requires a sysmon configuration with file and network events.
+    
+    - **Effort:** master
+
 ??? abstract "Certificate Authority Modification"
     
     Installation of new certificate(s) in the Certificate Authority can be used to trick user when spoofing website or to add trusted destinations.
     
     - **Effort:** master
+
+??? abstract "Certify Or Certipy"
+    
+    Detects the use of certify and certipy which are two different tools used to enumerate and abuse Active Directory Certificate Services.
+    
+    - **Effort:** advanced
+
+??? abstract "Cobalt Strike Default Beacons Names"
+    
+    Detects the default names of Cobalt Strike beacons / payloads.
+    
+    - **Effort:** intermediate
 
 ??? abstract "Computer Account Deleted"
     
@@ -57,6 +87,12 @@ The following Sekoia.io built-in rules match the intake **Windows Log Insight**.
     
     - **Effort:** advanced
 
+??? abstract "HackTools Suspicious Names"
+    
+    Quick-win rule to detect the default process names or file names of several HackTools.
+    
+    - **Effort:** elementary
+
 ??? abstract "Impacket Addcomputer"
     
     Detects suspicious computer account creation based on impacket default pattern
@@ -68,6 +104,12 @@ The following Sekoia.io built-in rules match the intake **Windows Log Insight**.
     Kernel module installation can be used to configure system settings to automatically execute a program during system boot or logon to maintain persistence or gain higher-level privileges on compromised systems.
     
     - **Effort:** advanced
+
+??? abstract "MSBuild Abuse"
+    
+    Detection of MSBuild uses by attackers to infect an host. Focuses on XML compilation which is a Metasploit payload, and on connections made by this process which is unusual.
+    
+    - **Effort:** intermediate
 
 ??? abstract "Network Scanning and Discovery"
     
@@ -87,6 +129,12 @@ The following Sekoia.io built-in rules match the intake **Windows Log Insight**.
     
     - **Effort:** intermediate
 
+??? abstract "NlTest Usage"
+    
+    Detects attempts to gather information on domain trust relationships that may be used to identify lateral movement opportunities. These command lines were observed in numerous attacks, but also sometimes from legitimate administrators for debugging purposes. The rule does not cover very basics commands but rather the ones that are interesting for attackers to gather information on a domain.
+    
+    - **Effort:** advanced
+
 ??? abstract "Password Change On Directory Service Restore Mode (DSRM) Account"
     
     The Directory Service Restore Mode (DSRM) account is a local administrator account on Domain Controllers. Attackers may change the password to gain persistence.
@@ -105,12 +153,6 @@ The following Sekoia.io built-in rules match the intake **Windows Log Insight**.
     
     - **Effort:** intermediate
 
-??? abstract "Potential RDP Connection To Non-Domain Host"
-    
-    Detects logons using NTLM to hosts that are potentially not part of the domain using RDP (TermSrv). Event ID 8001 corresponds to outgoing NTLM authentication traffic and TermSrv stands for RDP Terminal Services Server. Check if the contacted host is legitimate. To use this detection rule, enable logging of outbound NTLM authentications on all domain controllers, using the following Group Policy (GPO) - Computer Configuration > Policies > Windows Settings > Security Settings > Local Policies > Security Options > Network security: Restrict NTLM: Outgoing NTLM traffic to remote servers -> Define this policy setting: Audit all.
-    
-    - **Effort:** master
-
 ??? abstract "PsExec Process"
     
     Detects PsExec execution, command line which contains pstools or installation of the PsExec service. PsExec is a SysInternals which can be used to execute a program on another computer. The tool is as much used by attackers as by administrators. 
@@ -122,6 +164,12 @@ The following Sekoia.io built-in rules match the intake **Windows Log Insight**.
     Detects use of RDP session discovery via qwinsta or quser. Used by some threat actors to know if someone is working via RDP on a server.
     
     - **Effort:** advanced
+
+??? abstract "RTLO Character"
+    
+    Detects RTLO (Right-To-Left character) in file and process names.
+    
+    - **Effort:** elementary
 
 ??? abstract "Remote Monitoring and Management Software - AnyDesk"
     
@@ -135,6 +183,18 @@ The following Sekoia.io built-in rules match the intake **Windows Log Insight**.
     
     - **Effort:** master
 
+??? abstract "Socat Relaying Socket"
+    
+    Socat is a linux tool used to relay local socket or internal network connection, this technics is often used by attacker to bypass security equipment such as firewall
+    
+    - **Effort:** advanced
+
+??? abstract "Socat Reverse Shell Detection"
+    
+    Socat is a linux tool used to relay or open reverse shell that is often used by attacker to bypass security equipment.
+    
+    - **Effort:** intermediate
+
 ??? abstract "Suspicious Double Extension"
     
     Detects suspicious use of an .exe extension after a non-executable file extension like .pdf.exe, a set of spaces or underlines to cloak the executable file in spearphishing campaigns
@@ -144,6 +204,12 @@ The following Sekoia.io built-in rules match the intake **Windows Log Insight**.
 ??? abstract "System Info Discovery"
     
     System info discovery, attempt to detects basic command use to fingerprint a host.
+    
+    - **Effort:** master
+
+??? abstract "User Account Created"
+    
+    Detects user creation on windows servers, which shouldn't happen in an Active Directory environment. Apply this on your windows server logs and not on your DC logs. One default account `defaultuser0` is excluded as only used during Windows set-up. This detection use Security Event ID 4720. 
     
     - **Effort:** master
 

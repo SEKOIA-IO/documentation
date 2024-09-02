@@ -33,17 +33,53 @@ The following Sekoia.io built-in rules match the intake **VMware vCenter**. This
     
     - **Effort:** advanced
 
+??? abstract "Advanced IP Scanner"
+    
+    Detects the use of Advanced IP Scanner. Seems to be a popular tool for ransomware groups.
+    
+    - **Effort:** master
+
+??? abstract "Bloodhound and Sharphound Tools Usage"
+    
+    Detects default process names and default command line parameters used by Bloodhound and Sharphound tools.
+    
+    - **Effort:** intermediate
+
+??? abstract "CVE-2017-11882 Microsoft Office Equation Editor Vulnerability"
+    
+    Detects the exploitation of CVE-2017-11882 vulnerability. The Microsoft Office Equation Editor has no reason to do a network request or drop an executable file. This requires a sysmon configuration with file and network events.
+    
+    - **Effort:** master
+
 ??? abstract "Certificate Authority Modification"
     
     Installation of new certificate(s) in the Certificate Authority can be used to trick user when spoofing website or to add trusted destinations.
     
     - **Effort:** master
 
+??? abstract "Certify Or Certipy"
+    
+    Detects the use of certify and certipy which are two different tools used to enumerate and abuse Active Directory Certificate Services.
+    
+    - **Effort:** advanced
+
+??? abstract "Cobalt Strike Default Beacons Names"
+    
+    Detects the default names of Cobalt Strike beacons / payloads.
+    
+    - **Effort:** intermediate
+
 ??? abstract "Computer Account Deleted"
     
     Detects computer account deletion.
     
     - **Effort:** master
+
+??? abstract "Covenant Default HTTP Beaconing"
+    
+    Detects potential Covenant communications through the user-agent and specific urls
+    
+    - **Effort:** intermediate
 
 ??? abstract "Cryptomining"
     
@@ -56,6 +92,18 @@ The following Sekoia.io built-in rules match the intake **VMware vCenter**. This
     Detects dns query of observables tagged as iplookup.
     
     - **Effort:** master
+
+??? abstract "Discord Suspicious Download"
+    
+    Discord is a messaging application. It allows users to create their own communities to share messages and attachments. Those attachments have little to no overview and can be downloaded by almost anyone, which has been abused by attackers to host malicious payloads.
+    
+    - **Effort:** intermediate
+
+??? abstract "Discovery Commands Correlation"
+    
+    Detects some frequent discovery commands used by some ransomware operators.
+    
+    - **Effort:** intermediate
 
 ??? abstract "Domain Trust Created Or Removed"
     
@@ -81,11 +129,35 @@ The following Sekoia.io built-in rules match the intake **VMware vCenter**. This
     
     - **Effort:** master
 
+??? abstract "HackTools Suspicious Names"
+    
+    Quick-win rule to detect the default process names or file names of several HackTools.
+    
+    - **Effort:** elementary
+
 ??? abstract "Kernel Module Alteration"
     
     Kernel module installation can be used to configure system settings to automatically execute a program during system boot or logon to maintain persistence or gain higher-level privileges on compromised systems.
     
     - **Effort:** advanced
+
+??? abstract "Koadic MSHTML Command"
+    
+    Detects Koadic payload using MSHTML module
+    
+    - **Effort:** intermediate
+
+??? abstract "MSBuild Abuse"
+    
+    Detection of MSBuild uses by attackers to infect an host. Focuses on XML compilation which is a Metasploit payload, and on connections made by this process which is unusual.
+    
+    - **Effort:** intermediate
+
+??? abstract "Network Connection Via Certutil"
+    
+    Identifies certutil.exe making a network connection. Adversaries could abuse certutil.exe to download a certificate, or malware, from a remote URL. The rule excludes private IP addresses and IPV6. This requires Sysmon logging.
+    
+    - **Effort:** intermediate
 
 ??? abstract "Network Scanning and Discovery"
     
@@ -110,6 +182,12 @@ The following Sekoia.io built-in rules match the intake **VMware vCenter**. This
     Nimbo-C2 Uses an unusual User-Agent format in its implants.
     
     - **Effort:** intermediate
+
+??? abstract "NlTest Usage"
+    
+    Detects attempts to gather information on domain trust relationships that may be used to identify lateral movement opportunities. These command lines were observed in numerous attacks, but also sometimes from legitimate administrators for debugging purposes. The rule does not cover very basics commands but rather the ones that are interesting for attackers to gather information on a domain.
+    
+    - **Effort:** advanced
 
 ??? abstract "Password Change On Directory Service Restore Mode (DSRM) Account"
     
@@ -165,6 +243,18 @@ The following Sekoia.io built-in rules match the intake **VMware vCenter**. This
     
     - **Effort:** advanced
 
+??? abstract "RSA SecurID Failed Authentification"
+    
+    Detects many failed attempts to authenticate followed by a successfull login for a super admin account.
+    
+    - **Effort:** advanced
+
+??? abstract "RTLO Character"
+    
+    Detects RTLO (Right-To-Left character) in file and process names.
+    
+    - **Effort:** elementary
+
 ??? abstract "Remote Access Tool Domain"
     
     Detects traffic toward a domain flagged as a Remote Administration Tool (RAT).
@@ -195,6 +285,18 @@ The following Sekoia.io built-in rules match the intake **VMware vCenter**. This
     
     - **Effort:** master
 
+??? abstract "Socat Relaying Socket"
+    
+    Socat is a linux tool used to relay local socket or internal network connection, this technics is often used by attacker to bypass security equipment such as firewall
+    
+    - **Effort:** advanced
+
+??? abstract "Socat Reverse Shell Detection"
+    
+    Socat is a linux tool used to relay or open reverse shell that is often used by attacker to bypass security equipment.
+    
+    - **Effort:** intermediate
+
 ??? abstract "Suspicious Double Extension"
     
     Detects suspicious use of an .exe extension after a non-executable file extension like .pdf.exe, a set of spaces or underlines to cloak the executable file in spearphishing campaigns
@@ -210,6 +312,12 @@ The following Sekoia.io built-in rules match the intake **VMware vCenter**. This
 ??? abstract "TOR Usage Generic Rule"
     
     Detects TOR usage globally, whether the IP is a destination or source. TOR is short for The Onion Router, and it gets its name from how it works. TOR intercepts the network traffic from one or more apps on user’s computer, usually the user web browser, and shuffles it through a number of randomly-chosen computers before passing it on to its destination. This disguises user location, and makes it harder for servers to pick him/her out on repeat visits, or to tie together separate visits to different sites, this making tracking and surveillance more difficult. Before a network packet starts its journey, user’s computer chooses a random list of relays and repeatedly encrypts the data in multiple layers, like an onion. Each relay knows only enough to strip off the outermost layer of encryption, before passing what’s left on to the next relay in the list.
+    
+    - **Effort:** master
+
+??? abstract "User Account Created"
+    
+    Detects user creation on windows servers, which shouldn't happen in an Active Directory environment. Apply this on your windows server logs and not on your DC logs. One default account `defaultuser0` is excluded as only used during Windows set-up. This detection use Security Event ID 4720. 
     
     - **Effort:** master
 

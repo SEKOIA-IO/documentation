@@ -21,11 +21,35 @@ The following Sekoia.io built-in rules match the intake **Trellix EPO [ALPHA]**.
     
     - **Effort:** advanced
 
+??? abstract "Advanced IP Scanner"
+    
+    Detects the use of Advanced IP Scanner. Seems to be a popular tool for ransomware groups.
+    
+    - **Effort:** master
+
+??? abstract "Bloodhound and Sharphound Tools Usage"
+    
+    Detects default process names and default command line parameters used by Bloodhound and Sharphound tools.
+    
+    - **Effort:** intermediate
+
 ??? abstract "Certificate Authority Modification"
     
     Installation of new certificate(s) in the Certificate Authority can be used to trick user when spoofing website or to add trusted destinations.
     
     - **Effort:** master
+
+??? abstract "Certify Or Certipy"
+    
+    Detects the use of certify and certipy which are two different tools used to enumerate and abuse Active Directory Certificate Services.
+    
+    - **Effort:** advanced
+
+??? abstract "Cobalt Strike Default Beacons Names"
+    
+    Detects the default names of Cobalt Strike beacons / payloads.
+    
+    - **Effort:** intermediate
 
 ??? abstract "Cryptomining"
     
@@ -38,6 +62,12 @@ The following Sekoia.io built-in rules match the intake **Trellix EPO [ALPHA]**.
     Detects dns query of observables tagged as iplookup.
     
     - **Effort:** master
+
+??? abstract "Discovery Commands Correlation"
+    
+    Detects some frequent discovery commands used by some ransomware operators.
+    
+    - **Effort:** intermediate
 
 ??? abstract "Dynamic DNS Contacted"
     
@@ -56,6 +86,12 @@ The following Sekoia.io built-in rules match the intake **Trellix EPO [ALPHA]**.
     Detects traffic toward a domain flagged as a possible exfiltration vector.
     
     - **Effort:** master
+
+??? abstract "HackTools Suspicious Names"
+    
+    Quick-win rule to detect the default process names or file names of several HackTools.
+    
+    - **Effort:** elementary
 
 ??? abstract "Kernel Module Alteration"
     
@@ -81,6 +117,12 @@ The following Sekoia.io built-in rules match the intake **Trellix EPO [ALPHA]**.
     
     - **Effort:** intermediate
 
+??? abstract "NlTest Usage"
+    
+    Detects attempts to gather information on domain trust relationships that may be used to identify lateral movement opportunities. These command lines were observed in numerous attacks, but also sometimes from legitimate administrators for debugging purposes. The rule does not cover very basics commands but rather the ones that are interesting for attackers to gather information on a domain.
+    
+    - **Effort:** advanced
+
 ??? abstract "PasswordDump SecurityXploded Tool"
     
     Detects the execution of the PasswordDump SecurityXploded Tool
@@ -98,6 +140,12 @@ The following Sekoia.io built-in rules match the intake **Trellix EPO [ALPHA]**.
     Detects use of RDP session discovery via qwinsta or quser. Used by some threat actors to know if someone is working via RDP on a server.
     
     - **Effort:** advanced
+
+??? abstract "RTLO Character"
+    
+    Detects RTLO (Right-To-Left character) in file and process names.
+    
+    - **Effort:** elementary
 
 ??? abstract "Remote Access Tool Domain"
     
@@ -128,6 +176,18 @@ The following Sekoia.io built-in rules match the intake **Trellix EPO [ALPHA]**.
     Detects observables in Sekoia.io CTI tagged as EICAR, which are fake samples meant to test detection.
     
     - **Effort:** master
+
+??? abstract "Socat Relaying Socket"
+    
+    Socat is a linux tool used to relay local socket or internal network connection, this technics is often used by attacker to bypass security equipment such as firewall
+    
+    - **Effort:** advanced
+
+??? abstract "Socat Reverse Shell Detection"
+    
+    Socat is a linux tool used to relay or open reverse shell that is often used by attacker to bypass security equipment.
+    
+    - **Effort:** intermediate
 
 ??? abstract "Suspicious Double Extension"
     

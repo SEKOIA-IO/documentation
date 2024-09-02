@@ -3,6 +3,24 @@
 The following Sekoia.io built-in rules match the intake **Netskope**. This documentation is updated automatically and is based solely on the fields used by the intake which are checked against our rules. This means that some rules will be listed but might not be relevant with the intake.
 
 [SEKOIA.IO x Netskope on ATT&CK Navigator](https://mitre-attack.github.io/attack-navigator/#layerURL=https%3A%2F%2Fraw.githubusercontent.com%2FSEKOIA-IO%2Fdocumentation%2Fmain%2F_shared_content%2Foperations_center%2Fdetection%2Fgenerated%2Fattack_de9ca004-991e-4f5c-89c5-e075f3fb3216_do_not_edit_manually.json){ .md-button }
+??? abstract "Adidnsdump Enumeration"
+    
+    Detects use of the tool adidnsdump for enumeration and discovering DNS records.
+    
+    - **Effort:** advanced
+
+??? abstract "Advanced IP Scanner"
+    
+    Detects the use of Advanced IP Scanner. Seems to be a popular tool for ransomware groups.
+    
+    - **Effort:** master
+
+??? abstract "Burp Suite Tool Detected"
+    
+    Burp Suite is a cybersecurity tool. When used as a proxy service, its purpose is to intercept packets and modify them to send them to the server. Burp Collaborator is a network service that Burp Suite uses to help discover many kinds of vulnerabilities (vulnerabilities scanner).
+    
+    - **Effort:** intermediate
+
 ??? abstract "CVE-2020-0688 Microsoft Exchange Server Exploit"
     
     Detects the exploitation of CVE-2020-0688. The POC exploit a .NET serialization vulnerability in the Exchange Control Panel (ECP) web page. The vulnerability is due to Microsoft Exchange Server not randomizing the keys on a per-installation basis resulting in them using the same validationKey and decryptionKey values. With knowledge of these, values an attacker can craft a special viewstate to use an OS command to be executed by NT_AUTHORITY\SYSTEM using .NET deserialization. To exploit this vulnerability, an attacker needs to leverage the credentials of an account it had already compromised to authenticate to OWA.
@@ -33,11 +51,29 @@ The following Sekoia.io built-in rules match the intake **Netskope**. This docum
     
     - **Effort:** intermediate
 
+??? abstract "Certify Or Certipy"
+    
+    Detects the use of certify and certipy which are two different tools used to enumerate and abuse Active Directory Certificate Services.
+    
+    - **Effort:** advanced
+
+??? abstract "Cobalt Strike Default Beacons Names"
+    
+    Detects the default names of Cobalt Strike beacons / payloads.
+    
+    - **Effort:** intermediate
+
 ??? abstract "Cookies Deletion"
     
     Detects when cookies are deleted by a suspicious process.
     
     - **Effort:** master
+
+??? abstract "Covenant Default HTTP Beaconing"
+    
+    Detects potential Covenant communications through the user-agent and specific urls
+    
+    - **Effort:** intermediate
 
 ??? abstract "Credential Dump Tools Related Files"
     
@@ -63,6 +99,12 @@ The following Sekoia.io built-in rules match the intake **Netskope**. This docum
     
     - **Effort:** elementary
 
+??? abstract "Discord Suspicious Download"
+    
+    Discord is a messaging application. It allows users to create their own communities to share messages and attachments. Those attachments have little to no overview and can be downloaded by almost anyone, which has been abused by attackers to host malicious payloads.
+    
+    - **Effort:** intermediate
+
 ??? abstract "Download Files From Suspicious TLDs"
     
     Detects download of certain file types from hosts in suspicious TLDs
@@ -75,11 +117,41 @@ The following Sekoia.io built-in rules match the intake **Netskope**. This docum
     
     - **Effort:** master
 
+??? abstract "Entra ID Sign-In Via Known AiTM Phishing Kit"
+    
+    Detects a sign-in attempt from an IP address belonging to a known adversary-in-the-middle phishing kit.
+    
+    - **Effort:** elementary
+
 ??? abstract "Exfiltration Domain"
     
     Detects traffic toward a domain flagged as a possible exfiltration vector.
     
     - **Effort:** master
+
+??? abstract "HTA Infection Chains"
+    
+    Detect the creation of a ZIP file and an HTA file as it is often used in infection chains. Furthermore it also detects the use of suspicious processes launched by explorer.exe combined with the creation of an HTA file, since it is also often used in infection chains (LNK - HTA for instance).
+    
+    - **Effort:** intermediate
+
+??? abstract "HTML Smuggling Suspicious Usage"
+    
+    Based on several samples from different botnets, this rule aims at detecting HTML infection chain by looking for HTML created files followed by suspicious files being executed.
+    
+    - **Effort:** intermediate
+
+??? abstract "HackTools Suspicious Names"
+    
+    Quick-win rule to detect the default process names or file names of several HackTools.
+    
+    - **Effort:** elementary
+
+??? abstract "ISO LNK Infection Chain"
+    
+    Detection of an ISO (or any other similar archive file) downloaded file, followed by a child-process of explorer, which is characteristic of an infection using an ISO containing an LNK file. For events with `host.name`.
+    
+    - **Effort:** intermediate
 
 ??? abstract "Koadic MSHTML Command"
     
@@ -129,6 +201,12 @@ The following Sekoia.io built-in rules match the intake **Netskope**. This docum
     
     - **Effort:** advanced
 
+??? abstract "PasswordDump SecurityXploded Tool"
+    
+    Detects the execution of the PasswordDump SecurityXploded Tool
+    
+    - **Effort:** elementary
+
 ??? abstract "Possible Malicious File Double Extension"
     
     Detects request to potential malicious file with double extension
@@ -147,11 +225,23 @@ The following Sekoia.io built-in rules match the intake **Netskope**. This docum
     
     - **Effort:** elementary
 
+??? abstract "Process Trace Alteration"
+    
+    PTrace syscall provides a means by which one process ("tracer") may observe and control the execution of another process ("tracee") and examine and change the tracee's memory and registers. Attacker might want to abuse ptrace functionnality to analyse memory process. It requires to be admin or set ptrace_scope to 0 to allow all user to trace any process.
+    
+    - **Effort:** advanced
+
 ??? abstract "ProxyShell Microsoft Exchange Suspicious Paths"
     
     Detects suspicious calls to Microsoft Exchange resources, in locations related to webshells observed in campaigns using this vulnerability.
     
     - **Effort:** elementary
+
+??? abstract "RSA SecurID Failed Authentification"
+    
+    Detects many failed attempts to authenticate followed by a successfull login for a super admin account.
+    
+    - **Effort:** advanced
 
 ??? abstract "RTLO Character"
     
@@ -171,6 +261,18 @@ The following Sekoia.io built-in rules match the intake **Netskope**. This docum
     
     - **Effort:** master
 
+??? abstract "Remote Monitoring and Management Software - AnyDesk"
+    
+    Detect artifacts related to the installation or execution of the Remote Monitoring and Management tool AnyDesk.
+    
+    - **Effort:** master
+
+??? abstract "Remote Monitoring and Management Software - Atera"
+    
+    Detect artifacts related to the installation or execution of the Remote Monitoring and Management tool Atera.
+    
+    - **Effort:** master
+
 ??? abstract "SEKOIA.IO Intelligence Feed"
     
     Detect threats based on indicators of compromise (IOCs) collected by SEKOIA's Threat and Detection Research team.
@@ -182,12 +284,6 @@ The following Sekoia.io built-in rules match the intake **Netskope**. This docum
     The file authorized_keys is used by SSH server to identify SSH keys that are authorized to connect to the host, alteration of one of those files might indicate a user compromision.
     
     - **Effort:** advanced
-
-??? abstract "SecurityScorecard Vulnerability Assessment Scanner New Issues"
-    
-    Raises an alert when SecurityScorecard Vulnerability Assessment Scanner find new issues.
-    
-    - **Effort:** master
 
 ??? abstract "Sekoia.io EICAR Detection"
     
@@ -201,6 +297,24 @@ The following Sekoia.io built-in rules match the intake **Netskope**. This docum
     
     - **Effort:** intermediate
 
+??? abstract "Suspicious File Name"
+    
+    Detects suspicious file name possibly linked to malicious tool.
+    
+    - **Effort:** advanced
+
+??? abstract "Suspicious PROCEXP152.sys File Created In Tmp"
+    
+    Detects the creation of the PROCEXP152.sys file in the application-data local temporary folder. This driver is used by Sysinternals Process Explorer but also by KDU (https://github.com/hfiref0x/KDU) or Ghost-In-The-Logs (https://github.com/bats3c/Ghost-In-The-Logs), which uses KDU. Note - Clever attackers may easily bypass this detection by just renaming the driver filename. Therefore just Medium-level and don't rely on it.
+    
+    - **Effort:** advanced
+
+??? abstract "Suspicious TOR Gateway"
+    
+    Detects suspicious TOR gateways. Gateways are often used by the victim to pay and decrypt the encrypted files without installing TOR. Tor intercepts the network traffic from one or more apps on user’s computer, usually the user web browser, and shuffles it through a number of randomly-chosen computers before passing it on to its destination. This disguises user location, and makes it harder for servers to pick him/her out on repeat visits, or to tie together separate visits to different sites, this making tracking and surveillance more difficult. Before a network packet starts its journey, user’s computer chooses a random list of relays and repeatedly encrypts the data in multiple layers, like an onion. Each relay knows only enough to strip off the outermost layer of encryption, before passing what’s left on to the next relay in the list.
+    
+    - **Effort:** advanced
+
 ??? abstract "Suspicious URI Used In A Lazarus Campaign"
     
     Detects suspicious requests to a specific URI, usually on an .asp page. The website is often compromised.
@@ -213,6 +327,12 @@ The following Sekoia.io built-in rules match the intake **Netskope**. This docum
     
     - **Effort:** master
 
+??? abstract "TrevorC2 HTTP Communication"
+    
+    Detects TrevorC2 HTTP communication based on the HTTP request URI and the user-agent. 
+    
+    - **Effort:** elementary
+
 ??? abstract "WCE wceaux.dll Creation"
     
     Detects wceaux.dll creation while Windows Credentials Editor (WCE) is executed.
@@ -224,3 +344,9 @@ The following Sekoia.io built-in rules match the intake **Netskope**. This docum
     Detects possible webshell file creation. It requires File Creation monitoring, which can be done using Sysmon's Event ID 11. However the recommended SwiftOnSecurity configuration does not fully cover the needs for this rule, it needs to be updated with the proper file names extensions.
     
     - **Effort:** master
+
+??? abstract "ZIP LNK Infection Chain"
+    
+    Detection of an ZIP download followed by a child-process of explorer, followed by multiple Windows processes.This is widely used as an infection chain mechanism.
+    
+    - **Effort:** advanced

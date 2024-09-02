@@ -3,6 +3,12 @@
 The following Sekoia.io built-in rules match the intake **Sekoia.io Endpoint Agent**. This documentation is updated automatically and is based solely on the fields used by the intake which are checked against our rules. This means that some rules will be listed but might not be relevant with the intake.
 
 [SEKOIA.IO x Sekoia.io Endpoint Agent on ATT&CK Navigator](https://mitre-attack.github.io/attack-navigator/#layerURL=https%3A%2F%2Fraw.githubusercontent.com%2FSEKOIA-IO%2Fdocumentation%2Fmain%2F_shared_content%2Foperations_center%2Fdetection%2Fgenerated%2Fattack_250e4095-fa08-4101-bb02-e72f870fcbd1_do_not_edit_manually.json){ .md-button }
+??? abstract "ACLight Discovering Privileged Accounts"
+    
+    Detects use of ACLight tool. This tool aims to discover privileged accounts by scanning the network.
+    
+    - **Effort:** advanced
+
 ??? abstract "AD Object WriteDAC Access"
     
     Detects WRITE_DAC access to a domain object. This requires Windows Event ID 4662.
@@ -249,6 +255,12 @@ The following Sekoia.io built-in rules match the intake **Sekoia.io Endpoint Age
     
     - **Effort:** intermediate
 
+??? abstract "COM Hijack Via Sdclt"
+    
+    Detects changes to 'HKCU\Software\Classes\Folder\shell\open\command\DelegateExecute', to bypass UAC using 'sdclt.exe'.
+    
+    - **Effort:** intermediate
+
 ??? abstract "CVE-2017-11882 Microsoft Office Equation Editor Vulnerability"
     
     Detects the exploitation of CVE-2017-11882 vulnerability. The Microsoft Office Equation Editor has no reason to do a network request or drop an executable file. This requires a sysmon configuration with file and network events.
@@ -411,11 +423,29 @@ The following Sekoia.io built-in rules match the intake **Sekoia.io Endpoint Age
     
     - **Effort:** elementary
 
-??? abstract "CreateRemoteThread Common Process Injection"
+??? abstract "Correlation Internal Kerberos Password Spraying"
     
-    Detects a possible process injection through CreateRemoteThread() which is spotted by EventID 8 from Sysmon and several EDRs. This rule has a list of process commonly being injected by the attackers that should be updated regularly.
+    Detect multiple Kerberos authentication failed on several account from one source
     
-    - **Effort:** advanced
+    - **Effort:** master
+
+??? abstract "Correlation Internal Ntlm Password Spraying"
+    
+    Detect multiple NTLM authentication failed on several account from one source
+    
+    - **Effort:** master
+
+??? abstract "Correlation Multi Service Disable"
+    
+    The rule detects a high number of services stopped or de-activated in a short period of time.
+    
+    - **Effort:** master
+
+??? abstract "Correlation Suspicious Authentication Coercer Behavior"
+    
+    Detect a possible NTLM Relay attack combine with authent coerce
+    
+    - **Effort:** intermediate
 
 ??? abstract "Creation or Modification of a GPO Scheduled Task"
     
@@ -450,6 +480,12 @@ The following Sekoia.io built-in rules match the intake **Sekoia.io Endpoint Age
 ??? abstract "Credential Harvesting Via Vaultcmd.exe"
     
     Detects when the process vaultcmd is used for credential harvesting.
+    
+    - **Effort:** advanced
+
+??? abstract "Credentials Extraction"
+    
+    This rule aims to detect the use of a specific command to access some credentials without using mimikatz or another tool.
     
     - **Effort:** advanced
 
@@ -620,6 +656,12 @@ The following Sekoia.io built-in rules match the intake **Sekoia.io Endpoint Age
     Detects when a user disables smartscreen.
     
     - **Effort:** elementary
+
+??? abstract "Discovery Commands Correlation"
+    
+    Detects some frequent discovery commands used by some ransomware operators.
+    
+    - **Effort:** intermediate
 
 ??? abstract "Dism Disabling Windows Defender"
     
@@ -861,6 +903,18 @@ The following Sekoia.io built-in rules match the intake **Sekoia.io Endpoint Age
     
     - **Effort:** intermediate
 
+??? abstract "HTA Infection Chains"
+    
+    Detect the creation of a ZIP file and an HTA file as it is often used in infection chains. Furthermore it also detects the use of suspicious processes launched by explorer.exe combined with the creation of an HTA file, since it is also often used in infection chains (LNK - HTA for instance).
+    
+    - **Effort:** intermediate
+
+??? abstract "HTML Smuggling Suspicious Usage"
+    
+    Based on several samples from different botnets, this rule aims at detecting HTML infection chain by looking for HTML created files followed by suspicious files being executed.
+    
+    - **Effort:** intermediate
+
 ??? abstract "HackTools Suspicious Names"
     
     Quick-win rule to detect the default process names or file names of several HackTools.
@@ -969,6 +1023,12 @@ The following Sekoia.io built-in rules match the intake **Sekoia.io Endpoint Age
     
     - **Effort:** intermediate
 
+??? abstract "ISO LNK Infection Chain"
+    
+    Detection of an ISO (or any other similar archive file) downloaded file, followed by a child-process of explorer, which is characteristic of an infection using an ISO containing an LNK file. For events with `host.name`.
+    
+    - **Effort:** intermediate
+
 ??? abstract "IcedID Execution Using Excel"
     
     Detects Excel spawning a process (rundll32 or wmic) running suspicious command-line. This behaviour could correspond to IcedID activity. 
@@ -998,6 +1058,12 @@ The following Sekoia.io built-in rules match the intake **Sekoia.io Endpoint Age
     Detects loading of essential DLL used by PowerShell, but not by the process powershell.exe. Detects meterpreter's "load powershell" extension and tool such PowerShDll.
     
     - **Effort:** master
+
+??? abstract "Information Stealer Downloading Legitimate Third-Party DLLs"
+    
+    Detects operations that involved legitimate third-party DLLs used by information-stealing malware for data collection on the infected host. This detection rule correlates at least 7 events including the following DLLs - freebl3.dll, vcruntime140.dll, msvcp140.dll, nss3.dll, sqlite3.dll, softokn3.dll, mozglue.dll and libcurl.dll. This behaviour matches activities of several widespread stealer like Vidar, Raccoon Stealer v2, Mars Stealer, etc.
+    
+    - **Effort:** intermediate
 
 ??? abstract "Inhibit System Recovery Deleting Backups"
     
@@ -1173,6 +1239,12 @@ The following Sekoia.io built-in rules match the intake **Sekoia.io Endpoint Age
     
     - **Effort:** intermediate
 
+??? abstract "Many Downloads From Several Binaries"
+    
+    Threat Actors might use all the binaries to download the payload to make sure at least one is present on the target.
+    
+    - **Effort:** advanced
+
 ??? abstract "MavInject Process Injection"
     
     Detects process injection using the signed Windows tool Mavinject32.exe (which is a LOLBAS)
@@ -1316,6 +1388,12 @@ The following Sekoia.io built-in rules match the intake **Sekoia.io Endpoint Age
     Detects add-ins that load when Microsoft Word or Excel starts (.wll/.xll are simply .dll fit for Word or Excel). The rule requires File Creation logging to work, which can be done using Sysmon Event ID 11.
     
     - **Effort:** elementary
+
+??? abstract "Microsoft Windows Active Directory Module Commandlets"
+    
+    Detects use of commandlets linked to the AD Module.
+    
+    - **Effort:** advanced
 
 ??? abstract "Mimikatz Basic Commands"
     
@@ -1893,6 +1971,18 @@ The following Sekoia.io built-in rules match the intake **Sekoia.io Endpoint Age
     
     - **Effort:** advanced
 
+??? abstract "Rebooting"
+    
+    Detects when forcing a computer to shutdown.
+    
+    - **Effort:** master
+
+??? abstract "Reconnaissance Commands Activities"
+    
+    Based on Cynet, Microsoft and Kaspersky analysis of Qakbot, this rule tries to detect some discovery TTPs.
+    
+    - **Effort:** intermediate
+
 ??? abstract "RedMimicry Winnti Playbook Dropped File"
     
     Detects actions caused by the RedMimicry Winnti playbook
@@ -1929,6 +2019,18 @@ The following Sekoia.io built-in rules match the intake **Sekoia.io Endpoint Age
     
     - **Effort:** master
 
+??? abstract "Remote Enumeration Of Lateral Movement Groups"
+    
+    Detects remote session lists the member of four local groups relevant to lateral movement. This behavior is common in Active Directory mapping tools such as SharpHound.
+    
+    - **Effort:** intermediate
+
+??? abstract "Remote File Copy"
+    
+    Detects the use of remote tools that copy files from or to remote systems
+    
+    - **Effort:** master
+
 ??? abstract "Remote Monitoring and Management Software - AnyDesk"
     
     Detect artifacts related to the installation or execution of the Remote Monitoring and Management tool AnyDesk.
@@ -1958,6 +2060,12 @@ The following Sekoia.io built-in rules match the intake **Sekoia.io Endpoint Age
     Detects remote service activity via remote access to the svcctl named pipe
     
     - **Effort:** master
+
+??? abstract "Remote System Discovery Via Telnet"
+    
+    Detects use of the protocol telnet to access information.
+    
+    - **Effort:** advanced
 
 ??? abstract "Remote Task Creation Via ATSVC Named Pipe"
     
@@ -2073,6 +2181,12 @@ The following Sekoia.io built-in rules match the intake **Sekoia.io Endpoint Age
     
     - **Effort:** master
 
+??? abstract "Setuid Or Setgid Usage"
+    
+    Detects the usage of a setuid or a setgid.
+    
+    - **Effort:** intermediate
+
 ??? abstract "Shadow Copies"
     
     Detects command line used to create and list shadow copies. An adversary may attempt to get information on shadow volumes to perform deletion or extract password hashes from the ntds.dit file. This rule requires command line logging or Windows PowerShell events (4104).
@@ -2096,6 +2210,18 @@ The following Sekoia.io built-in rules match the intake **Sekoia.io Endpoint Age
     Detects if the Smss process was executed by a non-legitimate parent process. Session Manager Subsystem (smss) process is a component of the Microsoft Windows NT family of operating systems.
     
     - **Effort:** advanced
+
+??? abstract "Socat Relaying Socket"
+    
+    Socat is a linux tool used to relay local socket or internal network connection, this technics is often used by attacker to bypass security equipment such as firewall
+    
+    - **Effort:** advanced
+
+??? abstract "Socat Reverse Shell Detection"
+    
+    Socat is a linux tool used to relay or open reverse shell that is often used by attacker to bypass security equipment.
+    
+    - **Effort:** intermediate
 
 ??? abstract "SolarWinds Suspicious File Creation"
     
@@ -2205,6 +2331,12 @@ The following Sekoia.io built-in rules match the intake **Sekoia.io Endpoint Age
     
     - **Effort:** intermediate
 
+??? abstract "Suspicious Commands From MS SQL Server Shell"
+    
+    Detection of some shell commmands run from a cmd executed by Microsoft MS SQL Server. It could be a sign of xp_cmdshell allowed on the MS-SQL server.
+    
+    - **Effort:** intermediate
+
 ??? abstract "Suspicious Control Process"
     
     Detects suspicious execution of control.exe process when used to execute a DLL file.
@@ -2252,6 +2384,12 @@ The following Sekoia.io built-in rules match the intake **Sekoia.io Endpoint Age
     Checks the registry key for suspicious driver names that are vulnerable most of the time and loaded in a specific location by the KDU tool from hfiref0x. Some drivers are used by several SysInternals tools, which should have been whitelisted in the filter condition. The driver named "DBUtilDrv2" has been removed as it caused too many false positives unfortunately. It can be added under "drv_name" if more coverage is wanted. This rule needs registry key monitoring (can be done with Sysmon Event IDs 12,13 and 14).
     
     - **Effort:** intermediate
+
+??? abstract "Suspicious File Name"
+    
+    Detects suspicious file name possibly linked to malicious tool.
+    
+    - **Effort:** advanced
 
 ??? abstract "Suspicious Finger Usage"
     
@@ -2415,6 +2553,12 @@ The following Sekoia.io built-in rules match the intake **Sekoia.io Endpoint Age
     
     - **Effort:** intermediate
 
+??? abstract "Suspicious TGS requests (Kerberoasting)"
+    
+    The rule aims at detecting the Kerberoasting technique, when an attacker requests TGS in order to crack them offline. Toease its task, the attacker requests tickets with weak encryption (such as RC4_HMAC_MD5). The rule therefore detects when an user is requesting 5 TGS for different users in 5 minutes.
+    
+    - **Effort:** advanced
+
 ??? abstract "Suspicious Taskkill Command"
     
     Detects rare taskkill command being used. It could be related to Baby Shark malware.
@@ -2510,6 +2654,12 @@ The following Sekoia.io built-in rules match the intake **Sekoia.io Endpoint Age
     System info discovery, attempt to detects basic command use to fingerprint a host.
     
     - **Effort:** master
+
+??? abstract "System Network Connections Discovery"
+    
+    Detects system network connections discovery via powershell and cmd.
+    
+    - **Effort:** advanced
 
 ??? abstract "TOR Usage Generic Rule"
     
@@ -2660,6 +2810,12 @@ The following Sekoia.io built-in rules match the intake **Sekoia.io Endpoint Age
     Detects creation of WMI event subscription persistence method 
     
     - **Effort:** advanced
+
+??? abstract "WMI Fingerprint Commands"
+    
+    Detects attacker fingerprint activities based on the correlation of specific WMIC commands. This has been observed with Aurora malware.
+    
+    - **Effort:** intermediate
 
 ??? abstract "WMI Install Of Binary"
     
@@ -2823,6 +2979,12 @@ The following Sekoia.io built-in rules match the intake **Sekoia.io Endpoint Age
     
     - **Effort:** intermediate
 
+??? abstract "Wmic Suspicious Commands"
+    
+    Detects suspicious commands used by the process wmic to get informations on the system.
+    
+    - **Effort:** advanced
+
 ??? abstract "Wmiprvse Wrong Parent"
     
     Detects if the Wmiprvse process was executed by a non-legitimate parent process. The wmiprvse.exe process (wmiprvse stands for Microsoft Windows Management Instrumentation) is a generic process for managing clients on Windows. It is initialized the first time a client application connects and allows you to monitor system resources. This requires Windows command line logging.
@@ -2846,6 +3008,12 @@ The following Sekoia.io built-in rules match the intake **Sekoia.io Endpoint Age
     Detection of an attack where adversaries may bypass application control and obscure execution of code by embedding scripts inside XSL files. Another variation of this technique, dubbed "Squiblytwo", involves to invoke JScript or VBScript within an XSL file.
     
     - **Effort:** intermediate
+
+??? abstract "ZIP LNK Infection Chain"
+    
+    Detection of an ZIP download followed by a child-process of explorer, followed by multiple Windows processes.This is widely used as an infection chain mechanism.
+    
+    - **Effort:** advanced
 
 ??? abstract "xWizard Execution"
     

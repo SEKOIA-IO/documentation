@@ -3,6 +3,12 @@
 The following Sekoia.io built-in rules match the intake **IBM AIX**. This documentation is updated automatically and is based solely on the fields used by the intake which are checked against our rules. This means that some rules will be listed but might not be relevant with the intake.
 
 [SEKOIA.IO x IBM AIX on ATT&CK Navigator](https://mitre-attack.github.io/attack-navigator/#layerURL=https%3A%2F%2Fraw.githubusercontent.com%2FSEKOIA-IO%2Fdocumentation%2Fmain%2F_shared_content%2Foperations_center%2Fdetection%2Fgenerated%2Fattack_e8cb3372-41c8-409f-8e0e-ca4e6cecf7e6_do_not_edit_manually.json){ .md-button }
+??? abstract "AMSI Deactivation Using Registry Key"
+    
+    The rule detects attempts to deactivate/disable the AMSI provider by deleting the associated registry key.
+    
+    - **Effort:** master
+
 ??? abstract "AccCheckConsole Executing Dll"
     
     Detects suspicious LOLBIN AccCheckConsole execution with parameters as used to load an arbitrary DLL.
@@ -51,6 +57,12 @@ The following Sekoia.io built-in rules match the intake **IBM AIX**. This docume
     
     - **Effort:** advanced
 
+??? abstract "Adidnsdump Enumeration"
+    
+    Detects use of the tool adidnsdump for enumeration and discovering DNS records.
+    
+    - **Effort:** advanced
+
 ??? abstract "Advanced IP Scanner"
     
     Detects the use of Advanced IP Scanner. Seems to be a popular tool for ransomware groups.
@@ -62,6 +74,12 @@ The following Sekoia.io built-in rules match the intake **IBM AIX**. This docume
     Detects audio capture via PowerShell Cmdlet
     
     - **Effort:** intermediate
+
+??? abstract "Autorun Keys Modification"
+    
+    Detects modification of autostart extensibility point (ASEP) in registry. Prerequisites are Logging for Registry events in the Sysmon configuration (events 12 and 13).
+    
+    - **Effort:** master
 
 ??? abstract "AzureEdge in Command Line"
     
@@ -111,6 +129,12 @@ The following Sekoia.io built-in rules match the intake **IBM AIX**. This docume
     
     - **Effort:** master
 
+??? abstract "CVE-2021-4034 Polkit's pkexec"
+    
+    Detection of Polkit's pkexec exploit
+    
+    - **Effort:** intermediate
+
 ??? abstract "Capture a network trace with netsh.exe"
     
     Detects capture a network trace via netsh.exe trace functionality
@@ -128,6 +152,12 @@ The following Sekoia.io built-in rules match the intake **IBM AIX**. This docume
     Installation of new certificate(s) in the Certificate Authority can be used to trick user when spoofing website or to add trusted destinations.
     
     - **Effort:** master
+
+??? abstract "Certify Or Certipy"
+    
+    Detects the use of certify and certipy which are two different tools used to enumerate and abuse Active Directory Certificate Services.
+    
+    - **Effort:** advanced
 
 ??? abstract "Change Default File Association"
     
@@ -195,11 +225,11 @@ The following Sekoia.io built-in rules match the intake **IBM AIX**. This docume
     
     - **Effort:** advanced
 
-??? abstract "Cookies Deletion"
+??? abstract "Copy Of Legitimate System32 Executable"
     
-    Detects when cookies are deleted by a suspicious process.
+    A script has copied a System32 executable.
     
-    - **Effort:** master
+    - **Effort:** intermediate
 
 ??? abstract "Copying Browser Files With Credentials"
     
@@ -231,6 +261,12 @@ The following Sekoia.io built-in rules match the intake **IBM AIX**. This docume
     
     - **Effort:** master
 
+??? abstract "DHCP Callout DLL Installation"
+    
+    Detects the installation of a Callout DLL via CalloutDlls and CalloutEnabled parameter in Registry, which can be used to execute code in context of the DHCP server (restart required).
+    
+    - **Effort:** intermediate
+
 ??? abstract "DNS Exfiltration and Tunneling Tools Execution"
     
     Well-known DNS exfiltration tools execution
@@ -240,6 +276,12 @@ The following Sekoia.io built-in rules match the intake **IBM AIX**. This docume
 ??? abstract "DNS Query For Iplookup"
     
     Detects dns query of observables tagged as iplookup.
+    
+    - **Effort:** master
+
+??? abstract "DNS ServerLevelPluginDll Installation"
+    
+    Detects the installation of a plugin DLL via ServerLevelPluginDll parameter in Windows Registry or in command line, which can be used to execute code in context of the DNS server (restart required). To fully use this rule, prerequesites are logging for Registry events in the Sysmon configuration (events 12, 13 and 14).
     
     - **Effort:** master
 
@@ -267,11 +309,23 @@ The following Sekoia.io built-in rules match the intake **IBM AIX**. This docume
     
     - **Effort:** advanced
 
+??? abstract "Disable .NET ETW Through COMPlus_ETWEnabled"
+    
+    Detects potential adversaries stopping ETW providers recording loaded .NET assemblies. Prerequisites are logging for Registry events or logging command line parameters (both is better). Careful for registry events, if SwiftOnSecurity's SYSMON default configuration is used, you will need to update the configuration to include the .NETFramework registry key path. Same issue with Windows 4657 EventID logging, the registry path must be specified.
+    
+    - **Effort:** intermediate
+
 ??? abstract "Disable Task Manager Through Registry Key"
     
     Detects commands used to disable the Windows Task Manager by modifying the proper registry key in order to impair security tools. This technique is used by the Agent Tesla RAT, among others.
     
     - **Effort:** elementary
+
+??? abstract "Disable Windows Defender Credential Guard"
+    
+    Detects registry keys being changed to disable Windows Defender Credential Guard. The rule requires to log Registry Keys modifications or creations, which can be done using Sysmon Event IDs 12,13 and 14.
+    
+    - **Effort:** intermediate
 
 ??? abstract "Disabled IE Security Features"
     
@@ -405,6 +459,12 @@ The following Sekoia.io built-in rules match the intake **IBM AIX**. This docume
     
     - **Effort:** advanced
 
+??? abstract "FromBase64String Command Line"
+    
+    Detects suspicious FromBase64String expressions in command line arguments.
+    
+    - **Effort:** master
+
 ??? abstract "Generic-reverse-shell-oneliner"
     
     To bypass some security equipement or for a sack of simplicity attackers can open raw reverse shell using shell commands
@@ -422,6 +482,12 @@ The following Sekoia.io built-in rules match the intake **IBM AIX**. This docume
     Detects dump of SAM, System or Security hives using reg.exe utility. Adversaries may attempt to dump these Windows Registry to retrieve password hashes and access credentials.
     
     - **Effort:** intermediate
+
+??? abstract "HackTools Suspicious Names"
+    
+    Quick-win rule to detect the default process names or file names of several HackTools.
+    
+    - **Effort:** elementary
 
 ??? abstract "HackTools Suspicious Process Names In Command Line"
     
@@ -471,6 +537,12 @@ The following Sekoia.io built-in rules match the intake **IBM AIX**. This docume
     
     - **Effort:** advanced
 
+??? abstract "Invoke-TheHash Commandlets"
+    
+    Detects suspicious Invoke-TheHash PowerShell commandlet used for performing pass the hash WMI and SMB tasks.
+    
+    - **Effort:** elementary
+
 ??? abstract "KeePass Config XML In Command-Line"
     
     Detects a command-line interaction with the KeePass Config XML file. It could be used to retrieve informations or to be abused for persistence.
@@ -486,6 +558,12 @@ The following Sekoia.io built-in rules match the intake **IBM AIX**. This docume
 ??? abstract "Lazarus Loaders"
     
     Detects different loaders used by the Lazarus Group APT
+    
+    - **Effort:** elementary
+
+??? abstract "Leviathan Registry Key Activity"
+    
+    Detects registry key used by Leviathan APT in Malaysian focused campaign.
     
     - **Effort:** elementary
 
@@ -525,6 +603,12 @@ The following Sekoia.io built-in rules match the intake **IBM AIX**. This docume
     
     - **Effort:** advanced
 
+??? abstract "Logon Scripts (UserInitMprLogonScript)"
+    
+    Detects creation or execution of UserInitMprLogonScript persistence method. The rule requires to log for process command lines and registry creations or update, which can be done using Sysmon Event IDs 1, 12, 13 and 14.
+    
+    - **Effort:** advanced
+
 ??? abstract "MSBuild Abuse"
     
     Detection of MSBuild uses by attackers to infect an host. Focuses on XML compilation which is a Metasploit payload, and on connections made by this process which is unusual.
@@ -536,6 +620,18 @@ The following Sekoia.io built-in rules match the intake **IBM AIX**. This docume
     Detects browser extensions being loaded with the --load-extension and -base-url options, which works on Chromium-based browsers. We are looking for potentially malicious browser extensions. These extensions can get access to informations.
     
     - **Effort:** advanced
+
+??? abstract "Malspam Execution Registering Malicious DLL"
+    
+    Detects the creation of a file in the C:\Datop folder, or DLL registering a file in the C:\Datop folder. Files located in the Datop folder are very characteristic of malspam execution related to Qakbot or SquirrelWaffle. Prerequisites are Logging for File Creation events, which can be done in the Sysmon configuration (events 11), for the first part of the pattern (TargetFilename).
+    
+    - **Effort:** elementary
+
+??? abstract "Malware Persistence Registry Key"
+    
+    Detects registry key used by several malware, especially Formbook spyware in two ways, either the Sysmon registry events, or the commands line.
+    
+    - **Effort:** master
 
 ??? abstract "MalwareBytes Uninstallation"
     
@@ -558,6 +654,18 @@ The following Sekoia.io built-in rules match the intake **IBM AIX**. This docume
 ??? abstract "Microsoft Defender Antivirus Disable Scheduled Tasks"
     
     The rule detects attempts to deactivate/disable Windows Defender scheduled tasks via command line or PowerShell scripts.
+    
+    - **Effort:** intermediate
+
+??? abstract "Microsoft Defender Antivirus Disable SecurityHealth"
+    
+    The rule detects attempts to deactivate/disable Windows Defender SecurityHealth through command line, PowerShell scripts, and registry. To fully use this rule Windows Registry logging is recommended.
+    
+    - **Effort:** intermediate
+
+??? abstract "Microsoft Defender Antivirus Disable Services"
+    
+    The rule detects attempts to deactivate/disable Windows Defender through command line and registry.
     
     - **Effort:** intermediate
 
@@ -597,6 +705,12 @@ The following Sekoia.io built-in rules match the intake **IBM AIX**. This docume
     
     - **Effort:** elementary
 
+??? abstract "Microsoft Exchange PowerShell Snap-Ins To Export Exchange Mailbox Data"
+    
+    Detects PowerShell SnapIn command line or PowerShell script, often used with Get-Mailbox to export Exchange mailbox data.
+    
+    - **Effort:** intermediate
+
 ??? abstract "Microsoft Exchange Server Creating Unusual Files"
     
     Look for Microsoft Exchange Server’s Unified Messaging service creating non-standard content on disk, which could indicate web shells or other malicious content, suggesting exploitation of CVE-2021-26858 vulnerability
@@ -609,9 +723,27 @@ The following Sekoia.io built-in rules match the intake **IBM AIX**. This docume
     
     - **Effort:** master
 
+??? abstract "Mimikatz Basic Commands"
+    
+    Detects Mimikatz most popular commands. 
+    
+    - **Effort:** elementary
+
+??? abstract "Msdt (Follina) File Browse Process Execution"
+    
+    Detects various Follina vulnerability exploitation techniques. This is based on the Compatability Troubleshooter which is abused to do code execution.
+    
+    - **Effort:** elementary
+
 ??? abstract "Mshta JavaScript Execution"
     
     Identifies suspicious mshta.exe commands that execute JavaScript supplied as a command line argument.
+    
+    - **Effort:** elementary
+
+??? abstract "Mustang Panda Dropper"
+    
+    Detects specific process parameters as used by Mustang Panda droppers
     
     - **Effort:** elementary
 
@@ -681,6 +813,12 @@ The following Sekoia.io built-in rules match the intake **IBM AIX**. This docume
     
     - **Effort:** advanced
 
+??? abstract "Network Share Discovery"
+    
+    Adversaries may look for folders and drives shared on remote systems as a means of identifying sources of information to gather as a precursor for Collection and to identify potential systems of interest for Lateral Movement. Networks often contain shared network drives and folders that enable users to access file directories on various systems across a network. File sharing over a Windows network occurs over the SMB protocol. This technique is frequently leveraged by threat actors such as APT32, APT41, Wizard Spider. But also, through the use of some malware such as Cobalt Strike, Empire, PlugX and Ramsay.
+    
+    - **Effort:** master
+
 ??? abstract "Network Sniffing"
     
     List of common tools used for network packages sniffing
@@ -711,6 +849,18 @@ The following Sekoia.io built-in rules match the intake **IBM AIX**. This docume
     
     - **Effort:** intermediate
 
+??? abstract "NjRat Registry Changes"
+    
+    Detects changes for the RUN registry key which happen when a victim is infected by NjRAT. Please note that even if NjRat is well-known for the behavior the rule catches, the rule is a bit larger and could catch other malwares.
+    
+    - **Effort:** master
+
+??? abstract "Njrat Registry Values"
+    
+    Detects specifis registry values that are related to njRat usage.
+    
+    - **Effort:** intermediate
+
 ??? abstract "NlTest Usage"
     
     Detects attempts to gather information on domain trust relationships that may be used to identify lateral movement opportunities. These command lines were observed in numerous attacks, but also sometimes from legitimate administrators for debugging purposes. The rule does not cover very basics commands but rather the ones that are interesting for attackers to gather information on a domain.
@@ -723,11 +873,23 @@ The following Sekoia.io built-in rules match the intake **IBM AIX**. This docume
     
     - **Effort:** advanced
 
+??? abstract "Office Application Startup Office Test"
+    
+    Detects the addition of office test registry that allows a user to specify an arbitrary DLL that will be executed everytime an Office application is started. An adversaries may abuse the Microsoft Office "Office Test" Registry key to obtain persistence on a compromised system.
+    
+    - **Effort:** elementary
+
 ??? abstract "OneNote Embedded File"
     
     Detects creation or uses of OneNote embedded files with unusual extensions.  
     
     - **Effort:** intermediate
+
+??? abstract "OneNote Suspicious Children Process"
+    
+    In January 2023, a peak of attacks using .one files was observed in the wild. This rule tries to detect the effect of such attempts using this technique.
+    
+    - **Effort:** advanced
 
 ??? abstract "Openfiles Usage"
     
@@ -746,6 +908,12 @@ The following Sekoia.io built-in rules match the intake **IBM AIX**. This docume
     Detection of accesses to Microsoft Outlook registry hive, which might contain sensitive information.
     
     - **Effort:** master
+
+??? abstract "Pandemic Windows Implant"
+    
+    Detects Pandemic Windows Implant through registry keys or specific command lines. Prerequisites: Logging for Registry events is needed, which can be done in the Sysmon configuration (events 12 and 13).
+    
+    - **Effort:** intermediate
 
 ??? abstract "Password Change On Directory Service Restore Mode (DSRM) Account"
     
@@ -795,6 +963,12 @@ The following Sekoia.io built-in rules match the intake **IBM AIX**. This docume
     
     - **Effort:** advanced
 
+??? abstract "PowerShell Data Compressed"
+    
+    Detects data compression through a PowerShell command (could be used by an adversary for exfiltration).
+    
+    - **Effort:** advanced
+
 ??? abstract "PowerShell Downgrade Attack"
     
     Detects PowerShell downgrade attack by comparing the host versions with the actually used engine version 2.0
@@ -819,6 +993,36 @@ The following Sekoia.io built-in rules match the intake **IBM AIX**. This docume
     
     - **Effort:** intermediate
 
+??? abstract "PowerShell Invoke Expression With Registry"
+    
+    Detects keywords from well-known PowerShell techniques to get registry key values
+    
+    - **Effort:** advanced
+
+??? abstract "PowerShell Malicious Nishang PowerShell Commandlets"
+    
+    Detects Commandlet names and arguments from the Nishang exploitation framework.
+    
+    - **Effort:** advanced
+
+??? abstract "PowerView commandlets 1"
+    
+    Detects PowerView commandlets which perform network and Windows domain enumeration and exploitation. It provides replaces for almost all Windows net commands, letting you query users, machines, domain controllers, user descriptions, share, sessions, and more.
+    
+    - **Effort:** advanced
+
+??? abstract "PowerView commandlets 2"
+    
+    Detects PowerView commandlets which perform network and Windows domain enumeration and exploitation. It provides replaces for almost all Windows net commands, letting you query users, machines, domain controllers, user descriptions, share, sessions, and more.
+    
+    - **Effort:** advanced
+
+??? abstract "Powershell AMSI Bypass"
+    
+    This rule aims to detect attempts to bypass AMSI in powershell using specific techniques.
+    
+    - **Effort:** advanced
+
 ??? abstract "Powershell UploadString Function"
     
     Powershell's `uploadXXX` functions are a category of methods which can be used to exfiltrate data through native means on a Windows host.
@@ -831,11 +1035,23 @@ The following Sekoia.io built-in rules match the intake **IBM AIX**. This docume
     
     - **Effort:** advanced
 
+??? abstract "Privilege Escalation Awesome Scripts (PEAS)"
+    
+    Detect PEAS privileges escalation scripts and binaries
+    
+    - **Effort:** elementary
+
 ??? abstract "Process Memory Dump Using Comsvcs"
     
     Detects the use of comsvcs in command line to dump a specific process memory. This technique is used by attackers for privilege escalation and pivot.
     
     - **Effort:** intermediate
+
+??? abstract "Process Memory Dump Using Createdump"
+    
+    Detects the use of createdump.exe in command line to dump the memory of a process. This technique is used by attackers for privilege escalation and pivot.
+    
+    - **Effort:** elementary
 
 ??? abstract "Process Memory Dump Using Rdrleakdiag"
     
@@ -855,6 +1071,12 @@ The following Sekoia.io built-in rules match the intake **IBM AIX**. This docume
     
     - **Effort:** advanced
 
+??? abstract "Putty Sessions Listing"
+    
+    Detects attempts to list Putty sessions through registry. To fully work, this rule requires to log registry accesses, which can be done with the Windows Event ID 4656 or 4663 but for that specific configuration is needed.
+    
+    - **Effort:** master
+
 ??? abstract "Python Exfiltration Tools"
     
     Python has some built-in modules or library that could be installed and later be used as exflitration tool by an attacker
@@ -872,6 +1094,12 @@ The following Sekoia.io built-in rules match the intake **IBM AIX**. This docume
     Track installation and usage of offensive python packages and project that are used for lateral movement
     
     - **Effort:** master
+
+??? abstract "QakBot Process Creation"
+    
+    Detects QakBot like process executions
+    
+    - **Effort:** intermediate
 
 ??? abstract "Qakbot Persistence Using Schtasks"
     
@@ -957,15 +1185,15 @@ The following Sekoia.io built-in rules match the intake **IBM AIX**. This docume
     
     - **Effort:** elementary
 
-??? abstract "SecurityScorecard Vulnerability Assessment Scanner New Issues"
-    
-    Raises an alert when SecurityScorecard Vulnerability Assessment Scanner find new issues.
-    
-    - **Effort:** master
-
 ??? abstract "Sekoia.io EICAR Detection"
     
     Detects observables in Sekoia.io CTI tagged as EICAR, which are fake samples meant to test detection.
+    
+    - **Effort:** master
+
+??? abstract "Shadow Copies"
+    
+    Detects command line used to create and list shadow copies. An adversary may attempt to get information on shadow volumes to perform deletion or extract password hashes from the ntds.dit file. This rule requires command line logging or Windows PowerShell events (4104).
     
     - **Effort:** master
 
@@ -992,6 +1220,12 @@ The following Sekoia.io built-in rules match the intake **IBM AIX**. This docume
     Detects possible Agent Tesla or Formbook persistence using schtasks. The name of the scheduled task used by these malware is very specific (Updates/randomstring).
     
     - **Effort:** intermediate
+
+??? abstract "Stop Backup Services"
+    
+    Detects adversaries attempts to stop backups services or disable Windows previous files versions feature. This could be related to ransomware operators or legit administrators. This rule relies Windows command line logging and registry logging, and PowerShell (ID 4103, 4104).
+    
+    - **Effort:** master
 
 ??? abstract "Suncrypt Parameters"
     
@@ -1029,9 +1263,21 @@ The following Sekoia.io built-in rules match the intake **IBM AIX**. This docume
     
     - **Effort:** intermediate
 
+??? abstract "Suspicious Desktopimgdownldr Execution"
+    
+    Detects a suspicious Desktopimgdownldr execution. Desktopimgdownldr.exe is a Windows binary used to configure lockscreen/desktop image and can be abused to download malicious file.
+    
+    - **Effort:** intermediate
+
 ??? abstract "Suspicious Double Extension"
     
     Detects suspicious use of an .exe extension after a non-executable file extension like .pdf.exe, a set of spaces or underlines to cloak the executable file in spearphishing campaigns
+    
+    - **Effort:** advanced
+
+??? abstract "Suspicious File Name"
+    
+    Detects suspicious file name possibly linked to malicious tool.
     
     - **Effort:** advanced
 
@@ -1071,11 +1317,29 @@ The following Sekoia.io built-in rules match the intake **IBM AIX**. This docume
     
     - **Effort:** intermediate
 
+??? abstract "Suspicious PROCEXP152.sys File Created In Tmp"
+    
+    Detects the creation of the PROCEXP152.sys file in the application-data local temporary folder. This driver is used by Sysinternals Process Explorer but also by KDU (https://github.com/hfiref0x/KDU) or Ghost-In-The-Logs (https://github.com/bats3c/Ghost-In-The-Logs), which uses KDU. Note - Clever attackers may easily bypass this detection by just renaming the driver filename. Therefore just Medium-level and don't rely on it.
+    
+    - **Effort:** advanced
+
+??? abstract "Suspicious PowerShell Invocations - Generic"
+    
+    Detects suspicious PowerShell invocation command parameters through command line logging or ScriptBlock Logging.
+    
+    - **Effort:** intermediate
+
 ??? abstract "Suspicious PowerShell Invocations - Specific"
     
     Detects suspicious PowerShell invocation command parameters.
     
     - **Effort:** intermediate
+
+??? abstract "Suspicious PowerShell Keywords"
+    
+    Detects keywords that could indicate the use of some PowerShell exploitation framework.
+    
+    - **Effort:** advanced
 
 ??? abstract "Suspicious PrinterPorts Creation (CVE-2020-1048)"
     
@@ -1086,6 +1350,12 @@ The following Sekoia.io built-in rules match the intake **IBM AIX**. This docume
 ??? abstract "Suspicious Regasm Regsvcs Usage"
     
     catch abuse of regsvcs and regasm lolbin by attacker
+    
+    - **Effort:** advanced
+
+??? abstract "Suspicious Regsvr32 Execution"
+    
+    Detects suspicious regsvr32.exe executions, either regsvr32 registering a DLL in an unusual repository (temp/, appdata/ or public/), or regsvr32 executed by an unusual parent process, or regsvr32 executing an unusual process, or regsvr32 registering a media file and not a DLL (as seen in IcedID campaigns), or regsvr32 registering a ocx file in appdata/.
     
     - **Effort:** advanced
 
@@ -1125,6 +1395,12 @@ The following Sekoia.io built-in rules match the intake **IBM AIX**. This docume
     
     - **Effort:** intermediate
 
+??? abstract "Suspicious XOR Encoded PowerShell Command Line"
+    
+    Detects suspicious powershell process which includes bxor command, alternative obfuscation  method to b64 encoded commands.
+    
+    - **Effort:** advanced
+
 ??? abstract "Suspicious certutil command"
     
     Detects suspicious certutil command which can be used by threat actors to download and/or decode payload. 
@@ -1149,11 +1425,29 @@ The following Sekoia.io built-in rules match the intake **IBM AIX**. This docume
     
     - **Effort:** master
 
+??? abstract "UAC Bypass Via Sdclt"
+    
+    Detects changes to HKCU\Software\Classes\exefile\shell\runas\command\isolatedCommand by an attacker in order to bypass User Account Control (UAC)
+    
+    - **Effort:** elementary
+
 ??? abstract "Usage Of Procdump With Common Arguments"
     
     Detects the usage of Procdump sysinternals tool with some common arguments and followed by common patterns.
     
     - **Effort:** intermediate
+
+??? abstract "Usage Of Sysinternals Tools"
+    
+    Detects the usage of Sysinternals Tools due to accepteula key being added to Registry. The rule detects it either from the command line usage or from the regsitry events. For the later prerequisite is logging for registry events in the Sysmon configuration (events 12 and 13).
+    
+    - **Effort:** master
+
+??? abstract "User Account Created"
+    
+    Detects user creation on windows servers, which shouldn't happen in an Active Directory environment. Apply this on your windows server logs and not on your DC logs. One default account `defaultuser0` is excluded as only used during Windows set-up. This detection use Security Event ID 4720. 
+    
+    - **Effort:** master
 
 ??? abstract "User Account Deleted"
     
@@ -1185,11 +1479,29 @@ The following Sekoia.io built-in rules match the intake **IBM AIX**. This docume
     
     - **Effort:** advanced
 
+??? abstract "WMIC Command To Determine The Antivirus"
+    
+    Detects WMIC command to determine the antivirus on a system, characteristic of the ZLoader malware (and possibly others)
+    
+    - **Effort:** advanced
+
 ??? abstract "WMIC Uninstall Product"
     
     Detects products being uninstalled using WMIC command.
     
     - **Effort:** intermediate
+
+??? abstract "WMImplant Hack Tool"
+    
+    WMImplant is a powershell framework used by attacker for reconnaissance and exfiltration, this rule attempts to detect WMimplant arguments and invokes commands. 
+    
+    - **Effort:** intermediate
+
+??? abstract "Wdigest Enable UseLogonCredential"
+    
+    Detects modification of the Windows Registry value of HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\WDigest\UseLogonCredential. This technique is used to extract passwords in clear-text using WDigest. The rule requires to log for Registry Events, which can be done using Sysmon Event IDs 12, 13 and 14.
+    
+    - **Effort:** elementary
 
 ??? abstract "Webshell Creation"
     
@@ -1206,6 +1518,12 @@ The following Sekoia.io built-in rules match the intake **IBM AIX**. This docume
 ??? abstract "Windows Firewall Changes"
     
     Detects changes on Windows Firewall configuration
+    
+    - **Effort:** master
+
+??? abstract "Windows Registry Persistence COM Key Linking"
+    
+    Detects COM object hijacking via TreatAs subkey. Logging for Registry events is needed in the Sysmon configuration with this kind of rule `<TargetObject name="testr12" condition="end with">\TreatAs\(Default)</TargetObject>`.
     
     - **Effort:** master
 

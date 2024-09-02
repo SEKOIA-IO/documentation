@@ -3,6 +3,12 @@
 The following Sekoia.io built-in rules match the intake **Azure Front Door**. This documentation is updated automatically and is based solely on the fields used by the intake which are checked against our rules. This means that some rules will be listed but might not be relevant with the intake.
 
 [SEKOIA.IO x Azure Front Door on ATT&CK Navigator](https://mitre-attack.github.io/attack-navigator/#layerURL=https%3A%2F%2Fraw.githubusercontent.com%2FSEKOIA-IO%2Fdocumentation%2Fmain%2F_shared_content%2Foperations_center%2Fdetection%2Fgenerated%2Fattack_69b52166-b804-4f47-860f-2d3fd0b46987_do_not_edit_manually.json){ .md-button }
+??? abstract "Burp Suite Tool Detected"
+    
+    Burp Suite is a cybersecurity tool. When used as a proxy service, its purpose is to intercept packets and modify them to send them to the server. Burp Collaborator is a network service that Burp Suite uses to help discover many kinds of vulnerabilities (vulnerabilities scanner).
+    
+    - **Effort:** intermediate
+
 ??? abstract "CVE-2018-11776 Apache Struts2"
     
     Apache Struts versions 2.3 to 2.3.34 and 2.5 to 2.5.16 suffer from possible Remote Code Execution when alwaysSelectFullNamespace is true (either by user or a plugin like Convention Plugin) and then: results are used with no namespace and in same time, its upper package have no or wildcard namespace and similar to results, same possibility when using url tag which doesn't have value and action set and in same time, its upper package have no or wildcard namespace.
@@ -141,6 +147,12 @@ The following Sekoia.io built-in rules match the intake **Azure Front Door**. Th
     
     - **Effort:** advanced
 
+??? abstract "Covenant Default HTTP Beaconing"
+    
+    Detects potential Covenant communications through the user-agent and specific urls
+    
+    - **Effort:** intermediate
+
 ??? abstract "Cryptomining"
     
     Detection of domain names potentially related to cryptomining activities.
@@ -152,6 +164,12 @@ The following Sekoia.io built-in rules match the intake **Azure Front Door**. Th
     This rule detects requests to Konni C2 servers. These patterns come from an analysis done in 2022, September.
     
     - **Effort:** elementary
+
+??? abstract "Discord Suspicious Download"
+    
+    Discord is a messaging application. It allows users to create their own communities to share messages and attachments. Those attachments have little to no overview and can be downloaded by almost anyone, which has been abused by attackers to host malicious payloads.
+    
+    - **Effort:** intermediate
 
 ??? abstract "Download Files From Suspicious TLDs"
     
@@ -249,17 +267,17 @@ The following Sekoia.io built-in rules match the intake **Azure Front Door**. Th
     
     - **Effort:** master
 
+??? abstract "Remote Monitoring and Management Software - AnyDesk"
+    
+    Detect artifacts related to the installation or execution of the Remote Monitoring and Management tool AnyDesk.
+    
+    - **Effort:** master
+
 ??? abstract "SEKOIA.IO Intelligence Feed"
     
     Detect threats based on indicators of compromise (IOCs) collected by SEKOIA's Threat and Detection Research team.
     
     - **Effort:** elementary
-
-??? abstract "SecurityScorecard Vulnerability Assessment Scanner New Issues"
-    
-    Raises an alert when SecurityScorecard Vulnerability Assessment Scanner find new issues.
-    
-    - **Effort:** master
 
 ??? abstract "Sekoia.io EICAR Detection"
     
@@ -279,6 +297,12 @@ The following Sekoia.io built-in rules match the intake **Azure Front Door**. Th
     
     - **Effort:** intermediate
 
+??? abstract "Suspicious TOR Gateway"
+    
+    Detects suspicious TOR gateways. Gateways are often used by the victim to pay and decrypt the encrypted files without installing TOR. Tor intercepts the network traffic from one or more apps on user’s computer, usually the user web browser, and shuffles it through a number of randomly-chosen computers before passing it on to its destination. This disguises user location, and makes it harder for servers to pick him/her out on repeat visits, or to tie together separate visits to different sites, this making tracking and surveillance more difficult. Before a network packet starts its journey, user’s computer chooses a random list of relays and repeatedly encrypts the data in multiple layers, like an onion. Each relay knows only enough to strip off the outermost layer of encryption, before passing what’s left on to the next relay in the list.
+    
+    - **Effort:** advanced
+
 ??? abstract "Suspicious URI Used In A Lazarus Campaign"
     
     Detects suspicious requests to a specific URI, usually on an .asp page. The website is often compromised.
@@ -288,5 +312,23 @@ The following Sekoia.io built-in rules match the intake **Azure Front Door**. Th
 ??? abstract "TOR Usage Generic Rule"
     
     Detects TOR usage globally, whether the IP is a destination or source. TOR is short for The Onion Router, and it gets its name from how it works. TOR intercepts the network traffic from one or more apps on user’s computer, usually the user web browser, and shuffles it through a number of randomly-chosen computers before passing it on to its destination. This disguises user location, and makes it harder for servers to pick him/her out on repeat visits, or to tie together separate visits to different sites, this making tracking and surveillance more difficult. Before a network packet starts its journey, user’s computer chooses a random list of relays and repeatedly encrypts the data in multiple layers, like an onion. Each relay knows only enough to strip off the outermost layer of encryption, before passing what’s left on to the next relay in the list.
+    
+    - **Effort:** master
+
+??? abstract "TrevorC2 HTTP Communication"
+    
+    Detects TrevorC2 HTTP communication based on the HTTP request URI and the user-agent. 
+    
+    - **Effort:** elementary
+
+??? abstract "WAF Block Rule"
+    
+    Detects when one of WAF rule blocked an HTTP request 
+    
+    - **Effort:** master
+
+??? abstract "WAF Correlation Block actions"
+    
+    Detection of multiple block actions (more than 30) triggered by the same source by WAF detection rules
     
     - **Effort:** master

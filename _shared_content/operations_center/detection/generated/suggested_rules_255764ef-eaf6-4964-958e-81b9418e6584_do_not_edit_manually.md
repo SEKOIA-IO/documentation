@@ -3,11 +3,29 @@
 The following Sekoia.io built-in rules match the intake **Kaspersky Endpoint Security**. This documentation is updated automatically and is based solely on the fields used by the intake which are checked against our rules. This means that some rules will be listed but might not be relevant with the intake.
 
 [SEKOIA.IO x Kaspersky Endpoint Security on ATT&CK Navigator](https://mitre-attack.github.io/attack-navigator/#layerURL=https%3A%2F%2Fraw.githubusercontent.com%2FSEKOIA-IO%2Fdocumentation%2Fmain%2F_shared_content%2Foperations_center%2Fdetection%2Fgenerated%2Fattack_255764ef-eaf6-4964-958e-81b9418e6584_do_not_edit_manually.json){ .md-button }
-??? abstract "Cookies Deletion"
+??? abstract "Adidnsdump Enumeration"
     
-    Detects when cookies are deleted by a suspicious process.
+    Detects use of the tool adidnsdump for enumeration and discovering DNS records.
+    
+    - **Effort:** advanced
+
+??? abstract "Advanced IP Scanner"
+    
+    Detects the use of Advanced IP Scanner. Seems to be a popular tool for ransomware groups.
     
     - **Effort:** master
+
+??? abstract "Certify Or Certipy"
+    
+    Detects the use of certify and certipy which are two different tools used to enumerate and abuse Active Directory Certificate Services.
+    
+    - **Effort:** advanced
+
+??? abstract "Cobalt Strike Default Beacons Names"
+    
+    Detects the default names of Cobalt Strike beacons / payloads.
+    
+    - **Effort:** intermediate
 
 ??? abstract "Credential Dump Tools Related Files"
     
@@ -15,15 +33,27 @@ The following Sekoia.io built-in rules match the intake **Kaspersky Endpoint Sec
     
     - **Effort:** advanced
 
-??? abstract "Cron Files Alteration"
+??? abstract "Discord Suspicious Download"
     
-    Cron Files and Cron Directory alteration used by attacker for persistency or privilege escalation.
+    Discord is a messaging application. It allows users to create their own communities to share messages and attachments. Those attachments have little to no overview and can be downloaded by almost anyone, which has been abused by attackers to host malicious payloads.
     
-    - **Effort:** advanced
+    - **Effort:** intermediate
 
 ??? abstract "Formbook File Creation DB1"
     
     Detects specific file creation (Users\*\AppData\Local\Temp\DB1) to store data to exfiltrate (Formbook behavior). Logging for Sysmon event 11 is usually used for this detection. 
+    
+    - **Effort:** intermediate
+
+??? abstract "HackTools Suspicious Names"
+    
+    Quick-win rule to detect the default process names or file names of several HackTools.
+    
+    - **Effort:** elementary
+
+??? abstract "Koadic MSHTML Command"
+    
+    Detects Koadic payload using MSHTML module
     
     - **Effort:** intermediate
 
@@ -39,11 +69,11 @@ The following Sekoia.io built-in rules match the intake **Kaspersky Endpoint Sec
     
     - **Effort:** intermediate
 
-??? abstract "Package Manager Alteration"
+??? abstract "PasswordDump SecurityXploded Tool"
     
-    Package manager (eg: apt, yum) can be altered to install malicious software
+    Detects the execution of the PasswordDump SecurityXploded Tool
     
-    - **Effort:** advanced
+    - **Effort:** elementary
 
 ??? abstract "Phorpiex Process Masquerading"
     
@@ -57,27 +87,45 @@ The following Sekoia.io built-in rules match the intake **Kaspersky Endpoint Sec
     
     - **Effort:** intermediate
 
+??? abstract "Process Trace Alteration"
+    
+    PTrace syscall provides a means by which one process ("tracer") may observe and control the execution of another process ("tracee") and examine and change the tracee's memory and registers. Attacker might want to abuse ptrace functionnality to analyse memory process. It requires to be admin or set ptrace_scope to 0 to allow all user to trace any process.
+    
+    - **Effort:** advanced
+
+??? abstract "RSA SecurID Failed Authentification"
+    
+    Detects many failed attempts to authenticate followed by a successfull login for a super admin account.
+    
+    - **Effort:** advanced
+
 ??? abstract "RTLO Character"
     
     Detects RTLO (Right-To-Left character) in file and process names.
     
     - **Effort:** elementary
 
-??? abstract "SSH Authorized Key Alteration"
+??? abstract "Remote Monitoring and Management Software - AnyDesk"
     
-    The file authorized_keys is used by SSH server to identify SSH keys that are authorized to connect to the host, alteration of one of those files might indicate a user compromision.
+    Detect artifacts related to the installation or execution of the Remote Monitoring and Management tool AnyDesk.
     
-    - **Effort:** advanced
+    - **Effort:** master
 
-??? abstract "SecurityScorecard Vulnerability Assessment Scanner New Issues"
+??? abstract "Remote Monitoring and Management Software - Atera"
     
-    Raises an alert when SecurityScorecard Vulnerability Assessment Scanner find new issues.
+    Detect artifacts related to the installation or execution of the Remote Monitoring and Management tool Atera.
     
     - **Effort:** master
 
 ??? abstract "Suspicious ADSI-Cache Usage By Unknown Tool"
     
     Detects the usage of ADSI (LDAP) operations by tools. This may also detect tools like LDAPFragger. It needs file monitoring capabilities (Sysmon Event ID 11 with .sch file creation logging).
+    
+    - **Effort:** advanced
+
+??? abstract "Suspicious PROCEXP152.sys File Created In Tmp"
+    
+    Detects the creation of the PROCEXP152.sys file in the application-data local temporary folder. This driver is used by Sysinternals Process Explorer but also by KDU (https://github.com/hfiref0x/KDU) or Ghost-In-The-Logs (https://github.com/bats3c/Ghost-In-The-Logs), which uses KDU. Note - Clever attackers may easily bypass this detection by just renaming the driver filename. Therefore just Medium-level and don't rely on it.
     
     - **Effort:** advanced
 

@@ -21,6 +21,12 @@ The following Sekoia.io built-in rules match the intake **Azure Database for MyS
     
     - **Effort:** master
 
+??? abstract "Login Brute-Force Successful On SentinelOne EDR Management Console"
+    
+    A user has attempted to login several times (brute-force) on the SentinelOne EDR Management Console and succeeded to login.
+    
+    - **Effort:** master
+
 ??? abstract "Remote Access Tool Domain"
     
     Detects traffic toward a domain flagged as a Remote Administration Tool (RAT).

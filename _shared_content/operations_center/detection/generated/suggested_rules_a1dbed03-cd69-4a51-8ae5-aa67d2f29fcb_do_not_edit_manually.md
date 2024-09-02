@@ -21,17 +21,35 @@ The following Sekoia.io built-in rules match the intake **Jumpcloud Directory In
     
     - **Effort:** advanced
 
-??? abstract "Aspnet Compiler"
+??? abstract "Advanced IP Scanner"
     
-    Detects the starts of aspnet compiler.
+    Detects the use of Advanced IP Scanner. Seems to be a popular tool for ransomware groups.
     
-    - **Effort:** advanced
+    - **Effort:** master
+
+??? abstract "Bloodhound and Sharphound Tools Usage"
+    
+    Detects default process names and default command line parameters used by Bloodhound and Sharphound tools.
+    
+    - **Effort:** intermediate
 
 ??? abstract "Certificate Authority Modification"
     
     Installation of new certificate(s) in the Certificate Authority can be used to trick user when spoofing website or to add trusted destinations.
     
     - **Effort:** master
+
+??? abstract "Certify Or Certipy"
+    
+    Detects the use of certify and certipy which are two different tools used to enumerate and abuse Active Directory Certificate Services.
+    
+    - **Effort:** advanced
+
+??? abstract "Cobalt Strike Default Beacons Names"
+    
+    Detects the default names of Cobalt Strike beacons / payloads.
+    
+    - **Effort:** intermediate
 
 ??? abstract "Cryptomining"
     
@@ -44,6 +62,12 @@ The following Sekoia.io built-in rules match the intake **Jumpcloud Directory In
     Detects dns query of observables tagged as iplookup.
     
     - **Effort:** master
+
+??? abstract "Discovery Commands Correlation"
+    
+    Detects some frequent discovery commands used by some ransomware operators.
+    
+    - **Effort:** intermediate
 
 ??? abstract "Dynamic DNS Contacted"
     
@@ -62,6 +86,12 @@ The following Sekoia.io built-in rules match the intake **Jumpcloud Directory In
     Detects traffic toward a domain flagged as a possible exfiltration vector.
     
     - **Effort:** master
+
+??? abstract "HackTools Suspicious Names"
+    
+    Quick-win rule to detect the default process names or file names of several HackTools.
+    
+    - **Effort:** elementary
 
 ??? abstract "Jumpcloud Account Locked"
     
@@ -87,6 +117,18 @@ The following Sekoia.io built-in rules match the intake **Jumpcloud Directory In
     
     - **Effort:** advanced
 
+??? abstract "Login Brute-Force Successful On Jumpcloud Portal"
+    
+    A user has attempted to login several times (brute-force) on Jumpcloud Portal and succeeded to login.
+    
+    - **Effort:** advanced
+
+??? abstract "Login Brute-Force Successful On Jumpcloud Workstation"
+    
+    A user has attempted to login several times (brute-force) on Jumpcloud monitored workstations (windows, linux, mac) and succeeded to login.
+    
+    - **Effort:** advanced
+
 ??? abstract "Network Scanning and Discovery"
     
     Tools and command lines used for network discovery from current system
@@ -105,6 +147,12 @@ The following Sekoia.io built-in rules match the intake **Jumpcloud Directory In
     
     - **Effort:** intermediate
 
+??? abstract "NlTest Usage"
+    
+    Detects attempts to gather information on domain trust relationships that may be used to identify lateral movement opportunities. These command lines were observed in numerous attacks, but also sometimes from legitimate administrators for debugging purposes. The rule does not cover very basics commands but rather the ones that are interesting for attackers to gather information on a domain.
+    
+    - **Effort:** advanced
+
 ??? abstract "PasswordDump SecurityXploded Tool"
     
     Detects the execution of the PasswordDump SecurityXploded Tool
@@ -122,6 +170,12 @@ The following Sekoia.io built-in rules match the intake **Jumpcloud Directory In
     Detects use of RDP session discovery via qwinsta or quser. Used by some threat actors to know if someone is working via RDP on a server.
     
     - **Effort:** advanced
+
+??? abstract "RTLO Character"
+    
+    Detects RTLO (Right-To-Left character) in file and process names.
+    
+    - **Effort:** elementary
 
 ??? abstract "Remote Access Tool Domain"
     
@@ -147,17 +201,23 @@ The following Sekoia.io built-in rules match the intake **Jumpcloud Directory In
     
     - **Effort:** elementary
 
-??? abstract "SecurityScorecard Vulnerability Assessment Scanner New Issues"
-    
-    Raises an alert when SecurityScorecard Vulnerability Assessment Scanner find new issues.
-    
-    - **Effort:** master
-
 ??? abstract "Sekoia.io EICAR Detection"
     
     Detects observables in Sekoia.io CTI tagged as EICAR, which are fake samples meant to test detection.
     
     - **Effort:** master
+
+??? abstract "Socat Relaying Socket"
+    
+    Socat is a linux tool used to relay local socket or internal network connection, this technics is often used by attacker to bypass security equipment such as firewall
+    
+    - **Effort:** advanced
+
+??? abstract "Socat Reverse Shell Detection"
+    
+    Socat is a linux tool used to relay or open reverse shell that is often used by attacker to bypass security equipment.
+    
+    - **Effort:** intermediate
 
 ??? abstract "Suspicious Double Extension"
     
@@ -174,5 +234,11 @@ The following Sekoia.io built-in rules match the intake **Jumpcloud Directory In
 ??? abstract "TOR Usage Generic Rule"
     
     Detects TOR usage globally, whether the IP is a destination or source. TOR is short for The Onion Router, and it gets its name from how it works. TOR intercepts the network traffic from one or more apps on user’s computer, usually the user web browser, and shuffles it through a number of randomly-chosen computers before passing it on to its destination. This disguises user location, and makes it harder for servers to pick him/her out on repeat visits, or to tie together separate visits to different sites, this making tracking and surveillance more difficult. Before a network packet starts its journey, user’s computer chooses a random list of relays and repeatedly encrypts the data in multiple layers, like an onion. Each relay knows only enough to strip off the outermost layer of encryption, before passing what’s left on to the next relay in the list.
+    
+    - **Effort:** master
+
+??? abstract "WAF Correlation Block actions"
+    
+    Detection of multiple block actions (more than 30) triggered by the same source by WAF detection rules
     
     - **Effort:** master

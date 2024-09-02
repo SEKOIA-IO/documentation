@@ -75,6 +75,12 @@ The following Sekoia.io built-in rules match the intake **AWS CloudTrail**. This
     
     - **Effort:** master
 
+??? abstract "AWS CloudTrail EC2 VM Export Failure"
+    
+    Detects attempt to export an AWS EC2 instance. A VM Export might indicate an attempt to extract information from an instance.
+    
+    - **Effort:** intermediate
+
 ??? abstract "AWS CloudTrail ECS Cluster Deleted"
     
     Detects when an attacker is destroying an AWS ECS Cluster
@@ -243,6 +249,18 @@ The following Sekoia.io built-in rules match the intake **AWS CloudTrail**. This
     
     - **Effort:** master
 
+??? abstract "AWS Persistence By Creating KeyPair And SecurityGroup"
+    
+    Attackers can use AWS credentials to create a KeyPair and a SecurityGroup to have continuous access to the AWS account.
+    
+    - **Effort:** master
+
+??? abstract "AWS Suspicious Discovery Commands"
+    
+    Attackers often use discovery commands such as DescribeInstances or DescribeSecurityGroups, and many others, to find how an AWS tenant is configured.
+    
+    - **Effort:** master
+
 ??? abstract "Account Added To A Security Enabled Group"
     
     Detection in order to investigate who has added a specific Domain User in Domain Admins or Group Policy Creator Owners (Security event 4728)
@@ -309,6 +327,12 @@ The following Sekoia.io built-in rules match the intake **AWS CloudTrail**. This
     
     - **Effort:** master
 
+??? abstract "Login Brute-Force Successful On SentinelOne EDR Management Console"
+    
+    A user has attempted to login several times (brute-force) on the SentinelOne EDR Management Console and succeeded to login.
+    
+    - **Effort:** master
+
 ??? abstract "Microsoft Defender Antivirus History Deleted"
     
     Windows Defender history has been deleted. Could be an attempt by an attacker to remove its traces.
@@ -363,9 +387,21 @@ The following Sekoia.io built-in rules match the intake **AWS CloudTrail**. This
     
     - **Effort:** master
 
+??? abstract "RSA SecurID Failed Authentification"
+    
+    Detects many failed attempts to authenticate followed by a successfull login for a super admin account.
+    
+    - **Effort:** advanced
+
 ??? abstract "Remote Access Tool Domain"
     
     Detects traffic toward a domain flagged as a Remote Administration Tool (RAT).
+    
+    - **Effort:** master
+
+??? abstract "Remote Monitoring and Management Software - AnyDesk"
+    
+    Detect artifacts related to the installation or execution of the Remote Monitoring and Management tool AnyDesk.
     
     - **Effort:** master
 
@@ -384,6 +420,12 @@ The following Sekoia.io built-in rules match the intake **AWS CloudTrail**. This
 ??? abstract "TOR Usage Generic Rule"
     
     Detects TOR usage globally, whether the IP is a destination or source. TOR is short for The Onion Router, and it gets its name from how it works. TOR intercepts the network traffic from one or more apps on user’s computer, usually the user web browser, and shuffles it through a number of randomly-chosen computers before passing it on to its destination. This disguises user location, and makes it harder for servers to pick him/her out on repeat visits, or to tie together separate visits to different sites, this making tracking and surveillance more difficult. Before a network packet starts its journey, user’s computer chooses a random list of relays and repeatedly encrypts the data in multiple layers, like an onion. Each relay knows only enough to strip off the outermost layer of encryption, before passing what’s left on to the next relay in the list.
+    
+    - **Effort:** master
+
+??? abstract "User Account Created"
+    
+    Detects user creation on windows servers, which shouldn't happen in an Active Directory environment. Apply this on your windows server logs and not on your DC logs. One default account `defaultuser0` is excluded as only used during Windows set-up. This detection use Security Event ID 4720. 
     
     - **Effort:** master
 

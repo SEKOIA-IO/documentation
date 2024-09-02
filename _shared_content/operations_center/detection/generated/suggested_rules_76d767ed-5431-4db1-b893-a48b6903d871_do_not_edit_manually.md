@@ -15,6 +15,12 @@ The following Sekoia.io built-in rules match the intake **Cloudflare Audit logs*
     
     - **Effort:** master
 
+??? abstract "Entra ID Sign-In Via Known AiTM Phishing Kit"
+    
+    Detects a sign-in attempt from an IP address belonging to a known adversary-in-the-middle phishing kit.
+    
+    - **Effort:** elementary
+
 ??? abstract "Exfiltration Domain"
     
     Detects traffic toward a domain flagged as a possible exfiltration vector.
@@ -32,12 +38,6 @@ The following Sekoia.io built-in rules match the intake **Cloudflare Audit logs*
     Detect threats based on indicators of compromise (IOCs) collected by SEKOIA's Threat and Detection Research team.
     
     - **Effort:** elementary
-
-??? abstract "SecurityScorecard Vulnerability Assessment Scanner New Issues"
-    
-    Raises an alert when SecurityScorecard Vulnerability Assessment Scanner find new issues.
-    
-    - **Effort:** master
 
 ??? abstract "Sekoia.io EICAR Detection"
     

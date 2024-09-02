@@ -21,6 +21,12 @@ The following Sekoia.io built-in rules match the intake **Systancia Cleanroom [B
     
     - **Effort:** master
 
+??? abstract "RSA SecurID Failed Authentification"
+    
+    Detects many failed attempts to authenticate followed by a successfull login for a super admin account.
+    
+    - **Effort:** advanced
+
 ??? abstract "Remote Access Tool Domain"
     
     Detects traffic toward a domain flagged as a Remote Administration Tool (RAT).

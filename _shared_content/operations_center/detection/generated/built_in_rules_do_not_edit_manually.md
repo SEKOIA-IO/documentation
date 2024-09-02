@@ -650,7 +650,7 @@ Rules catalog includes **942 built-in detection rules** ([_last update on 2024-0
     
     - **Changelog:**
     
-        - 30/08/2024 - minor - improve filter to avoid false positive
+        - 27/07/2024 - major - review filter to avoid false positive
             
 ??? abstract "Broadcom Edge Secure Web Gateway High Threat"
     
@@ -4616,7 +4616,7 @@ Rules catalog includes **942 built-in detection rules** ([_last update on 2024-0
     
     - **Changelog:**
     
-        - 30/08/2024 - minor - improve filter to avoid false positive
+        - 27/07/2024 - major - review filter to avoid false positive
             
 ??? abstract "Broadcom Edge Secure Web Gateway High Threat"
     
@@ -6369,7 +6369,7 @@ Rules catalog includes **942 built-in detection rules** ([_last update on 2024-0
     
     - **Changelog:**
     
-        - 30/08/2024 - minor - improve filter to avoid false positive
+        - 27/07/2024 - major - review filter to avoid false positive
             
 ??? abstract "Broadcom Edge Secure Web Gateway High Threat"
     
@@ -8166,7 +8166,7 @@ Rules catalog includes **942 built-in detection rules** ([_last update on 2024-0
     
     - **Changelog:**
     
-        - 30/08/2024 - minor - improve filter to avoid false positive
+        - 27/07/2024 - major - review filter to avoid false positive
             
 ??? abstract "Broadcom Edge Secure Web Gateway High Threat"
     
@@ -10517,7 +10517,7 @@ Rules catalog includes **942 built-in detection rules** ([_last update on 2024-0
     
     - **Changelog:**
     
-        - 30/08/2024 - minor - improve filter to avoid false positive
+        - 27/07/2024 - major - review filter to avoid false positive
             
 ??? abstract "Brute-Force On Fortinet Firewall Login"
     

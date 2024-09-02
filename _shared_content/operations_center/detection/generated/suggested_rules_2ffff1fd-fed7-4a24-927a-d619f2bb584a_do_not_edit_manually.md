@@ -21,11 +21,11 @@ The following Sekoia.io built-in rules match the intake **ESET Protect [BETA]**.
     
     - **Effort:** advanced
 
-??? abstract "Aspnet Compiler"
+??? abstract "Advanced IP Scanner"
     
-    Detects the starts of aspnet compiler.
+    Detects the use of Advanced IP Scanner. Seems to be a popular tool for ransomware groups.
     
-    - **Effort:** advanced
+    - **Effort:** master
 
 ??? abstract "AutoIt3 Execution From Suspicious Folder"
     
@@ -33,17 +33,29 @@ The following Sekoia.io built-in rules match the intake **ESET Protect [BETA]**.
     
     - **Effort:** advanced
 
+??? abstract "Bloodhound and Sharphound Tools Usage"
+    
+    Detects default process names and default command line parameters used by Bloodhound and Sharphound tools.
+    
+    - **Effort:** intermediate
+
 ??? abstract "Certificate Authority Modification"
     
     Installation of new certificate(s) in the Certificate Authority can be used to trick user when spoofing website or to add trusted destinations.
     
     - **Effort:** master
 
-??? abstract "Cron Files Alteration"
+??? abstract "Certify Or Certipy"
     
-    Cron Files and Cron Directory alteration used by attacker for persistency or privilege escalation.
+    Detects the use of certify and certipy which are two different tools used to enumerate and abuse Active Directory Certificate Services.
     
     - **Effort:** advanced
+
+??? abstract "Cobalt Strike Default Beacons Names"
+    
+    Detects the default names of Cobalt Strike beacons / payloads.
+    
+    - **Effort:** intermediate
 
 ??? abstract "Cryptomining"
     
@@ -62,6 +74,12 @@ The following Sekoia.io built-in rules match the intake **ESET Protect [BETA]**.
     Detects dns query of observables tagged as iplookup.
     
     - **Effort:** master
+
+??? abstract "Discovery Commands Correlation"
+    
+    Detects some frequent discovery commands used by some ransomware operators.
+    
+    - **Effort:** intermediate
 
 ??? abstract "Dllhost Wrong Parent"
     
@@ -84,6 +102,18 @@ The following Sekoia.io built-in rules match the intake **ESET Protect [BETA]**.
 ??? abstract "ESET Protect Malware"
     
     Detects when Eset Protect tagged an event as linked to a malware with infected files.
+    
+    - **Effort:** master
+
+??? abstract "ESET Protect Remote Action"
+    
+    Detects when different remote commands are performed on the same hostname is a short amount of time.
+    
+    - **Effort:** master
+
+??? abstract "ESET Protect Set Policy"
+    
+    Detects when a new policy is set or removed.
     
     - **Effort:** master
 
@@ -129,15 +159,45 @@ The following Sekoia.io built-in rules match the intake **ESET Protect [BETA]**.
     
     - **Effort:** advanced
 
+??? abstract "Gpscript Suspicious Parent"
+    
+    Gpscript defines GPO scripts for users and applies them to login / logout sessions. This rule checks if the parent of this process is the supposed one (svchost) or not.
+    
+    - **Effort:** intermediate
+
+??? abstract "HTA Infection Chains"
+    
+    Detect the creation of a ZIP file and an HTA file as it is often used in infection chains. Furthermore it also detects the use of suspicious processes launched by explorer.exe combined with the creation of an HTA file, since it is also often used in infection chains (LNK - HTA for instance).
+    
+    - **Effort:** intermediate
+
+??? abstract "HackTools Suspicious Names"
+    
+    Quick-win rule to detect the default process names or file names of several HackTools.
+    
+    - **Effort:** elementary
+
 ??? abstract "Hijack Legit RDP Session To Move Laterally"
     
     Identifies suspicious file creations in the startup folder of a remote system. An adversary could abuse this to move laterally by dropping a malicious script or executable that will be executed after a reboot or user logon.
     
     - **Effort:** intermediate
 
+??? abstract "ISO LNK Infection Chain"
+    
+    Detection of an ISO (or any other similar archive file) downloaded file, followed by a child-process of explorer, which is characteristic of an infection using an ISO containing an LNK file. For events with `host.name`.
+    
+    - **Effort:** intermediate
+
 ??? abstract "Kernel Module Alteration"
     
     Kernel module installation can be used to configure system settings to automatically execute a program during system boot or logon to maintain persistence or gain higher-level privileges on compromised systems.
+    
+    - **Effort:** advanced
+
+??? abstract "Legitimate Process Execution From Unusual Folder"
+    
+    Detects the execution of a legitimate, windows built-in process name from an unusual / suspicious folder. Legitimate folders are c:\windows\system32\, \SystemRoot\system32\, c:\windows\syswow64\ and c:\windows\winsxs\. Many malwares/attackers use legitimate names to masquerade but if they are not Administrator yet, they often can't write file into these legitimate folders.
     
     - **Effort:** advanced
 
@@ -195,9 +255,15 @@ The following Sekoia.io built-in rules match the intake **ESET Protect [BETA]**.
     
     - **Effort:** intermediate
 
-??? abstract "Package Manager Alteration"
+??? abstract "NlTest Usage"
     
-    Package manager (eg: apt, yum) can be altered to install malicious software
+    Detects attempts to gather information on domain trust relationships that may be used to identify lateral movement opportunities. These command lines were observed in numerous attacks, but also sometimes from legitimate administrators for debugging purposes. The rule does not cover very basics commands but rather the ones that are interesting for attackers to gather information on a domain.
+    
+    - **Effort:** advanced
+
+??? abstract "OneNote Suspicious Children Process"
+    
+    In January 2023, a peak of attacks using .one files was observed in the wild. This rule tries to detect the effect of such attempts using this technique.
     
     - **Effort:** advanced
 
@@ -212,6 +278,12 @@ The following Sekoia.io built-in rules match the intake **ESET Protect [BETA]**.
     Detects specific process executable path used by the Phorpiex botnet to masquerade its system process network activity. It looks for a pattern of a system process executable name that is not legitimate and running from a folder that is created via a random algorithm 13-15 numbers long.
     
     - **Effort:** elementary
+
+??? abstract "Process Trace Alteration"
+    
+    PTrace syscall provides a means by which one process ("tracer") may observe and control the execution of another process ("tracee") and examine and change the tracee's memory and registers. Attacker might want to abuse ptrace functionnality to analyse memory process. It requires to be admin or set ptrace_scope to 0 to allow all user to trace any process.
+    
+    - **Effort:** advanced
 
 ??? abstract "PsExec Process"
     
@@ -230,6 +302,18 @@ The following Sekoia.io built-in rules match the intake **ESET Protect [BETA]**.
     Detects use of RDP session discovery via qwinsta or quser. Used by some threat actors to know if someone is working via RDP on a server.
     
     - **Effort:** advanced
+
+??? abstract "RSA SecurID Failed Authentification"
+    
+    Detects many failed attempts to authenticate followed by a successfull login for a super admin account.
+    
+    - **Effort:** advanced
+
+??? abstract "RTLO Character"
+    
+    Detects RTLO (Right-To-Left character) in file and process names.
+    
+    - **Effort:** elementary
 
 ??? abstract "Rare Logonui Child Found"
     
@@ -267,12 +351,6 @@ The following Sekoia.io built-in rules match the intake **ESET Protect [BETA]**.
     
     - **Effort:** elementary
 
-??? abstract "SSH Authorized Key Alteration"
-    
-    The file authorized_keys is used by SSH server to identify SSH keys that are authorized to connect to the host, alteration of one of those files might indicate a user compromision.
-    
-    - **Effort:** advanced
-
 ??? abstract "Schtasks Suspicious Parent"
     
     Detects schtasks started from suspicious and/or unusual processes.
@@ -297,12 +375,6 @@ The following Sekoia.io built-in rules match the intake **ESET Protect [BETA]**.
     
     - **Effort:** advanced
 
-??? abstract "SecurityScorecard Vulnerability Assessment Scanner New Issues"
-    
-    Raises an alert when SecurityScorecard Vulnerability Assessment Scanner find new issues.
-    
-    - **Effort:** master
-
 ??? abstract "Sekoia.io EICAR Detection"
     
     Detects observables in Sekoia.io CTI tagged as EICAR, which are fake samples meant to test detection.
@@ -315,6 +387,18 @@ The following Sekoia.io built-in rules match the intake **ESET Protect [BETA]**.
     
     - **Effort:** advanced
 
+??? abstract "Socat Relaying Socket"
+    
+    Socat is a linux tool used to relay local socket or internal network connection, this technics is often used by attacker to bypass security equipment such as firewall
+    
+    - **Effort:** advanced
+
+??? abstract "Socat Reverse Shell Detection"
+    
+    Socat is a linux tool used to relay or open reverse shell that is often used by attacker to bypass security equipment.
+    
+    - **Effort:** intermediate
+
 ??? abstract "SolarWinds Wrong Child Process"
     
     Detects SolarWinds process starting an unusual child process. Process solarwinds.businesslayerhost.exe and solarwinds.businesslayerhostx64.exe created an unexepected child process which doesn't correspond to the legitimate ones.
@@ -324,6 +408,12 @@ The following Sekoia.io built-in rules match the intake **ESET Protect [BETA]**.
 ??? abstract "Suspicious DNS Child Process"
     
     Detects suspicious processes spawned by the dns.exe process. It could be a great indication of the exploitation of the DNS RCE bug reported in CVE-2020-1350 (SIGRED).
+    
+    - **Effort:** intermediate
+
+??? abstract "Suspicious Desktopimgdownldr Execution"
+    
+    Detects a suspicious Desktopimgdownldr execution. Desktopimgdownldr.exe is a Windows binary used to configure lockscreen/desktop image and can be abused to download malicious file.
     
     - **Effort:** intermediate
 
@@ -350,6 +440,18 @@ The following Sekoia.io built-in rules match the intake **ESET Protect [BETA]**.
     Detects suspicious child processes of Microsoft Outlook. These child processes are often associated with spearphishing activity.
     
     - **Effort:** intermediate
+
+??? abstract "Suspicious PROCEXP152.sys File Created In Tmp"
+    
+    Detects the creation of the PROCEXP152.sys file in the application-data local temporary folder. This driver is used by Sysinternals Process Explorer but also by KDU (https://github.com/hfiref0x/KDU) or Ghost-In-The-Logs (https://github.com/bats3c/Ghost-In-The-Logs), which uses KDU. Note - Clever attackers may easily bypass this detection by just renaming the driver filename. Therefore just Medium-level and don't rely on it.
+    
+    - **Effort:** advanced
+
+??? abstract "Suspicious Regsvr32 Execution"
+    
+    Detects suspicious regsvr32.exe executions, either regsvr32 registering a DLL in an unusual repository (temp/, appdata/ or public/), or regsvr32 executed by an unusual parent process, or regsvr32 executing an unusual process, or regsvr32 registering a media file and not a DLL (as seen in IcedID campaigns), or regsvr32 registering a ocx file in appdata/.
+    
+    - **Effort:** advanced
 
 ??? abstract "Svchost Wrong Parent"
     
@@ -432,5 +534,11 @@ The following Sekoia.io built-in rules match the intake **ESET Protect [BETA]**.
 ??? abstract "Wsmprovhost Wrong Parent"
     
     Detects if the Wsmprovhost process was executed by a non-legitimate parent process. The PowerShell host wsmprovhost.exe is a proxy process executed remotely through PowerShell when using Windows Remote Management (WinRM).
+    
+    - **Effort:** advanced
+
+??? abstract "ZIP LNK Infection Chain"
+    
+    Detection of an ZIP download followed by a child-process of explorer, followed by multiple Windows processes.This is widely used as an infection chain mechanism.
     
     - **Effort:** advanced
