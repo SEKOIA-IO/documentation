@@ -232,7 +232,7 @@ $IncludeConfig /etc/rsyslog.d/*.conf
 ```bash
 module(load="imfile" PollingInterval="10")
 input(type="imfile"
-      File="/tmp/auditbeat/auditbeat*.ndjson"
+      File="/var/log/auditbeat/auditbeat*.ndjson"
       Tag="linux_auditbeat"
       Severity="info"
       Facility="local7"
