@@ -62,29 +62,34 @@ type: intake
 ### Instructions on the 3rd party solution
 
 To enable Syslog server in ESET Protect on On-Prem :
-    1. In admin console go to `More` > `Settings`.
-    2. Open `Advanced Settings` tab.
+
+1. In admin console go to `More` > `Settings`.
+2. Open `Advanced Settings` tab.
 
 ![Advanced Settings](/assets/instructions/eset_protect/enable_syslog_1.png)
 
-    3. Click on `Syslog server` > `Use Syslog server`.
-    4. Then click on `Logging` > `Export logs to Syslog` and choose `JSON` format.
-    5. Save configuration.
+3. Click on `Syslog server` > `Use Syslog server`.
+4. Then click on `Logging` > `Export logs to Syslog` and choose `JSON` format.
+5. Save configuration.
 
 ![Syslog configuration](/assets/instructions/eset_protect/enable_syslog_2.png)
 
+!!! warning
+    Important note - For ESET Protect Cloud, you will required a secured syslog forwarder. Please read our article [how to secure data collection to the syslog forwarder](intergration/ingestion_methods/syslog/secured_forwarded.md)
+
 To enable Syslog server in ESET Protect on Cloud:
-    1. In admin console go to `More` > `Admin` > `Settings`.
-    2. Click `General` > `Syslog`
-    3. Check `Enable syslog sending`
-    4. Select `JSON` as the format of the payload
-    5. Select `Syslog` as the format of the envelope
-    6. Select `Information` as the minimal log level
-    7. Check all event types
-    8. Type the address of the log concentrator
-    9. Check `Validate CA Root certificates of TLS connections`
-    10. Copy the public certificate of the Certificate Authority in the textarea
-    11. Click `Apply settings`
+
+1. In admin console go to `More` > `Admin` > `Settings`.
+2. Click `General` > `Syslog`
+3. Check `Enable syslog sending`
+4. Select `JSON` as the format of the payload
+5. Select `Syslog` as the format of the envelope
+6. Select `Information` as the minimal log level
+7. Check all event types
+8. Type the address of the log concentrator
+9. Check `Validate CA Root certificates of TLS connections`
+10. Copy the public certificate of the Certificate Authority in the textarea
+11. Click `Apply settings`
 
 
 ![Advanced Settings](/assets/instructions/eset_protect/cloud_syslog.png)
