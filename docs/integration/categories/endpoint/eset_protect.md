@@ -73,6 +73,9 @@ To enable Syslog server in ESET Protect on On-Prem :
 
 ![Syslog configuration](/assets/instructions/eset_protect/enable_syslog_2.png)
 
+!!! warning
+    Important note - For ESET Protect Cloud, you will required a secured syslog forwarder. Please read our article [how to secure data collection to the syslog forwarder](intergration/ingestion_methods/syslog/secured_forwarded.md)
+
 To enable Syslog server in ESET Protect on Cloud:
     1. In admin console go to `More` > `Admin` > `Settings`.
     2. Click `General` > `Syslog`

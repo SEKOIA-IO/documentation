@@ -308,6 +308,7 @@ nav:
     - Syslog:
       - Overview: integration/ingestion_methods/syslog/overview.md
       - Sekoia.io Forwarder: integration/ingestion_methods/syslog/sekoiaio_forwarder.md
+        - Secured forwarding: integration/ingestion_methods/syslog/secured_forwarding.md
       - Third-party syslog services: integration/ingestion_methods/syslog/syslog_service.md
       - Rsyslog: integration/ingestion_methods/syslog/rsyslog.md
       - Syslog NG: integration/ingestion_methods/syslog/syslog-ng.md
