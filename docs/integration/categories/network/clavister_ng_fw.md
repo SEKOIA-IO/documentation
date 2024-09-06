@@ -29,6 +29,8 @@ Clavister Next-Gen Firewall offers advanced network protection with integrated f
   - **authentication (USERAUTH)**
   - **rule (RULE)**
 
+!!! Warning
+    This format is currently in beta. We highly value your feedback to improve its performance.
 
 ## Configure
 
