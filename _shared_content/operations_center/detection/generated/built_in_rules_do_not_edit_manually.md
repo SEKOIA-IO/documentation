@@ -1,4 +1,4 @@
-Rules catalog includes **942 built-in detection rules** ([_last update on 2024-09-02_](rules_changelog.md)).
+Rules catalog includes **942 built-in detection rules** ([_last update on 2024-09-06_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Identity Information**
 
@@ -10163,6 +10163,7 @@ Rules catalog includes **942 built-in detection rules** ([_last update on 2024-0
     - **Changelog:**
     
         - 26/03/2024 - major - Rule's pattern field changed
+        - 05/09/2024 - minor - Changing name of elements.
             
 ??? abstract "DPAPI Domain Backup Key Extraction"
     
