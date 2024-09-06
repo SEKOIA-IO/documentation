@@ -29,25 +29,24 @@ Clavister Next-Gen Firewall offers advanced network protection with integrated f
   - **authentication (USERAUTH)**
   - **rule (RULE)**
 
-{!_shared_content/operations_center/detection/generated/suggested_rules_64d118f0-84a5-4f46-ab05-7776bd6d0eed_do_not_edit_manually.md!}
-
-{!_shared_content/operations_center/integrations/generated/64d118f0-84a5-4f46-ab05-7776bd6d0eed.md!}
-
 
 ## Configure
 
 This setup guide will show you how to forward your Clavister Next-Gen Firewall events to Sekoia.io.
 
 ### Prerequisites
-* Having an internal log concentrator
+
+- Having an internal log concentrator
 
 ### Configure Clavister cOS to forward logs
 
 There are two ways to configure Configure Clavister cOS to forward logs:
-* Command line interface (CLI)
-* Web interface
+
+- Command line interface (CLI)
+- Web interface
 
 #### Command line interface (CLI)
+
 To configure the Clavister cOS to forward logs using the CLI, follow these steps:
 
 1. Log into the firewall console
@@ -58,6 +57,7 @@ To configure the Clavister cOS to forward logs using the CLI, follow these steps
 3. Exit the console
 
 #### Web interface
+
 To configure the Clavister cOS to forward logs using the web interface, follow these steps:
 
 1. Log into the interface
@@ -75,3 +75,11 @@ Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a n
 ### Forward logs to Sekoia.io
 
 Please consult the [Syslog Forwarding](../../../ingestion_methods/sekoiaio_forwarder/) documentation to forward these logs to Sekoia.io.
+
+{!_shared_content/operations_center/integrations/generated/64d118f0-84a5-4f46-ab05-7776bd6d0eed_sample.md!}
+
+{!_shared_content/integration/detection_section.md!}
+
+{!_shared_content/operations_center/detection/generated/suggested_rules_64d118f0-84a5-4f46-ab05-7776bd6d0eed_do_not_edit_manually.md!}
+
+{!_shared_content/operations_center/integrations/generated/64d118f0-84a5-4f46-ab05-7776bd6d0eed.md!}
