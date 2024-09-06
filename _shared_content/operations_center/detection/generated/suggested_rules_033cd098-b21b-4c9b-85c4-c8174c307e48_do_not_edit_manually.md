@@ -1389,6 +1389,12 @@ The following Sekoia.io built-in rules match the intake **WithSecure Elements**.
     
     - **Effort:** advanced
 
+??? abstract "Suspicious Email Attachment Received"
+    
+    Detects email containing an .exe|.dll|.ps1|.bat|.hta attachment. Most of the time files send by mail like this are malware.
+    
+    - **Effort:** elementary
+
 ??? abstract "Suspicious File Name"
     
     Detects suspicious file name possibly linked to malicious tool.
