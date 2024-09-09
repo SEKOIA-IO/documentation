@@ -444,6 +444,36 @@ In this section, you will find examples of raw logs as generated natively by the
 
 
 
+=== "test_dns_response"
+
+
+    ```json
+	{
+        "VendorName": "test networks",
+        "DeviceSN": "7FD26D6XXXXXXXX",
+        "TimeReceived": "2024-07-08T09:01:10.502737Z",
+        "LogType": "DNS",
+        "Subtype": "realtime_dns_telemetry_response",
+        "SubType": "realtime_dns_telemetry_response",
+        "TimeGenerated": "2024-07-08T09:01:10.000000Z",
+        "RecordType": "a",
+        "DNSResolverIP": "1.2.3.4",
+        "ThreatID": 0,
+        "DNSCategory": "benign",
+        "ThreatName": null,
+        "SourceAddress": "5.6.7.8",
+        "FromZone": "trust",
+        "Action": "Allow",
+        "DNSResponse": [
+            "8.9.1.2"
+        ],
+        "ToZone": null,
+        "DestinationUser": null
+    }
+    ```
+
+
+
 === "test_file_alert_json"
 
 
@@ -578,6 +608,377 @@ In this section, you will find examples of raw logs as generated natively by the
         "DeviceGroup": null,
         "Template": null,
         "TimeGeneratedHighResolution": "2023-02-16T15:48:57.395000Z"
+    }
+    ```
+
+
+
+=== "test_ldap_brute_force"
+
+
+    ```json
+	1,2024/08/03 12:16:42,012001002253,THREAT,vulnerability,2561,2024/08/03 12:17:45,5.6.7.8,1.2.3.4,0.0.0.0,0.0.0.0,IN_VPN-AZURE-ALSID,,paloaltonetwork\\username,ldap,vsys1,VPN,LAN,tunnel.3,ethernet1/4,default,2024/08/03 12:17:45,110079,1,62074,389,0,0,0x80002000,tcp,alert,,LDAP: User Login Brute Force Attempt(40005),any,high,client-to-server,7395125856205392467,0x8000000000000000,192.168.0.0-192.168.255.255,172.16.0.0-172.31.255.255,,,1210225322167894624,,,0,,,,,,,,0,24,315,0,0,,hostname_example,,,,,0,,0,,N/A,brute-force,AppThreat-8877-8886,0x0,0,4294967295,,,2c146dd4-d96a-455f-96fc-7f3e2c37c70d,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0,2024-08-03T12:17:45.360+02:00,,,,auth-service,business-systems,client-server,2,\"has-known-vulnerability,tunnel-other-application,pervasive-use\",,untunneled,no,no,
+    ```
+
+
+
+=== "test_new_file_type"
+
+
+    ```json
+	{
+        "TimeReceived": "2024-07-08T08:33:33.000000Z",
+        "DeviceSN": "007954000XXXXXX",
+        "LogType": "THREAT",
+        "Subtype": "file",
+        "SubType": "file",
+        "ConfigVersion": "10.2",
+        "TimeGenerated": "2024-07-08T15:30:04.000000Z",
+        "SourceAddress": "4.3.2.1",
+        "DestinationAddress": "5.2.1.8",
+        "NATSource": "2.2.1.6",
+        "NATDestination": "5.2.1.8",
+        "Rule": "Guest_Mobile_Internet Access",
+        "SourceUser": null,
+        "DestinationUser": null,
+        "Application": "web-browsing",
+        "VirtualLocation": "vsys1",
+        "FromZone": "DTT",
+        "ToZone": "Untrust",
+        "InboundInterface": "ethernet1/1.111",
+        "OutboundInterface": "ethernet1/1",
+        "LogSetting": "Panorama_CDL",
+        "SessionID": 6111111,
+        "RepeatCount": 1,
+        "SourcePort": 42222,
+        "DestinationPort": 80,
+        "NATSourcePort": 22408,
+        "NATDestinationPort": 80,
+        "Protocol": "tcp",
+        "Action": "alert",
+        "FileName": "test_file.bin",
+        "URLCategory": "business-and-economy",
+        "VendorSeverity": "Low",
+        "DirectionOfAttack": "server to client",
+        "SequenceNo": 73503956876,
+        "SourceLocation": "1.2.0.0-1.2.255.255",
+        "DestinationLocation": "US",
+        "PacketID": 0,
+        "FileHash": null,
+        "ReportID": 0,
+        "DGHierarchyLevel1": 999,
+        "DGHierarchyLevel2": 1111,
+        "DGHierarchyLevel3": 0,
+        "DGHierarchyLevel4": 0,
+        "VirtualSystemName": "",
+        "DeviceName": "DN-TEST-F2",
+        "SourceUUID": null,
+        "DestinationUUID": null,
+        "IMSI": 0,
+        "IMEI": null,
+        "ParentSessionID": 0,
+        "ParentStartTime": "1970-01-01T00:00:00.000000Z",
+        "Tunnel": "N/A",
+        "ContentVersion": "581116536",
+        "SigFlags": 0,
+        "RuleUUID": "6935060f-6443-4257-91f8",
+        "HTTP2Connection": 0,
+        "DynamicUserGroup": null,
+        "X-Forwarded-ForIP": null,
+        "SourceDeviceCategory": null,
+        "SourceDeviceProfile": null,
+        "SourceDeviceModel": null,
+        "SourceDeviceVendor": null,
+        "SourceDeviceOSFamily": null,
+        "SourceDeviceOSVersion": "1.0.0",
+        "SourceDeviceHost": "Test-device",
+        "SourceDeviceMac": "11.22.33.44.55.66",
+        "DestinationDeviceCategory": null,
+        "DestinationDeviceProfile": null,
+        "DestinationDeviceModel": null,
+        "DestinationDeviceVendor": null,
+        "DestinationDeviceOSFamily": null,
+        "DestinationDeviceOSVersion": null,
+        "DestinationDeviceHost": null,
+        "DestinationDeviceMac": null,
+        "ContainerID": null,
+        "ContainerNameSpace": null,
+        "ContainerName": null,
+        "SourceEDL": null,
+        "DestinationEDL": null,
+        "HostID": null,
+        "EndpointSerialNumber": null,
+        "DomainEDL": null,
+        "SourceDynamicAddressGroup": null,
+        "DestinationDynamicAddressGroup": null,
+        "PartialHash": 0,
+        "TimeGeneratedHighResolution": "2024-07-08T15:30:04.855000Z",
+        "ReasonForDataFilteringAction": null,
+        "Justification": null,
+        "NSSAINetworkSliceType": null
+    }
+    ```
+
+
+
+=== "test_new_globalprotect"
+
+
+    ```json
+	{
+        "TimeReceived": "2024-07-08T09:01:14.000000Z",
+        "DeviceSN": "00795700000000",
+        "LogType": "GLOBALPROTECT",
+        "Subtype": "globalprotect",
+        "LogSubtype": "globalprotect",
+        "ConfigVersion": "10.2",
+        "TimeGenerated": "2024-07-08T09:01:14.000000Z",
+        "VirtualSystem": "vsys1",
+        "EventIDValue": "gateway-logout",
+        "Stage": "logout",
+        "AuthMethod": null,
+        "TunnelType": null,
+        "SourceUserName": "joe.doe@test.com",
+        "SourceRegion": "1.0.0.0-1.255.255.255",
+        "EndpointDeviceName": "LNL-test",
+        "PublicIPv4": "1.5.7.3",
+        "PublicIPv6": "",
+        "PrivateIPv4": "1.2.3.4",
+        "PrivateIPv6": "",
+        "HostID": "e4f14dfd-bd3c-40e5-9c4e",
+        "EndpointSN": "5CD4153333",
+        "GlobalProtectClientVersion": "0.0.-1",
+        "EndpointOSType": "Windows",
+        "EndpointOSVersion": "Microsoft Windows 11 Enterprise , 64-bit",
+        "RepeatCount": 1,
+        "CountOfRepeats": 1,
+        "QuarantineReason": null,
+        "ConnectionError": null,
+        "Description": "client logout",
+        "EventStatus": "success",
+        "GlobalProtectGatewayLocation": null,
+        "LoginDuration": 3625,
+        "ConnectionMethod": null,
+        "ConnectionErrorID": 0,
+        "Portal": "Internal_test",
+        "SequenceNo": 7359635570821640000,
+        "TimeGeneratedHighResolution": "2024-07-08T09:01:14.449000Z",
+        "GatewaySelectionType": "",
+        "SSLResponseTime": -1,
+        "GatewayPriority": null,
+        "AttemptedGateways": null,
+        "Gateway": null,
+        "DGHierarchyLevel1": 556,
+        "DGHierarchyLevel2": 0,
+        "DGHierarchyLevel3": 0,
+        "DGHierarchyLevel4": 0,
+        "VirtualSystemName": "",
+        "DeviceName": "DG-test",
+        "VirtualSystemID": 1
+    }
+    ```
+
+
+
+=== "test_new_threat_type"
+
+
+    ```json
+	{
+        "TimeReceived": "2024-07-08T08:55:38.000000Z",
+        "DeviceSN": "007954000370000",
+        "LogType": "THREAT",
+        "Subtype": "vulnerability",
+        "ConfigVersion": "10.2",
+        "TimeGenerated": "2024-07-08T15:52:09.000000Z",
+        "SourceAddress": "1.2.1.3",
+        "DestinationAddress": "2.2.1.4",
+        "NATSource": "",
+        "NATDestination": "",
+        "Rule": "Public_TTT_Mgmt",
+        "SourceUser": null,
+        "DestinationUser": null,
+        "Application": "ssh",
+        "VirtualLocation": "vsys1",
+        "FromZone": "Trust",
+        "ToZone": "TTT",
+        "InboundInterface": "ethernet1/8",
+        "OutboundInterface": "ethernet1/4.124",
+        "LogSetting": "test_setting",
+        "SessionID": 72837,
+        "RepeatCount": 1,
+        "SourcePort": 52000,
+        "DestinationPort": 21,
+        "NATSourcePort": 0,
+        "NATDestinationPort": 0,
+        "Protocol": "tcp",
+        "Action": "reset-both",
+        "FileName": null,
+        "ThreatID": "SSH User Authentication Brute Force Attempt(40015)",
+        "VendorSeverity": "High",
+        "DirectionOfAttack": "client to server",
+        "SequenceNo": 7350395687601,
+        "SourceLocation": "1.0.0.0-1.255.255.255",
+        "DestinationLocation": "ID",
+        "PacketID": 12103464791027,
+        "FileHash": null,
+        "ApplianceOrCloud": null,
+        "URLCounter": 0,
+        "FileType": null,
+        "SenderEmail": null,
+        "EmailSubject": null,
+        "RecipientEmail": null,
+        "ReportID": 0,
+        "DGHierarchyLevel1": 997,
+        "DGHierarchyLevel2": 1169,
+        "DGHierarchyLevel3": 0,
+        "DGHierarchyLevel4": 0,
+        "VirtualSystemName": "",
+        "DeviceName": "DN-TEST",
+        "SourceUUID": null,
+        "DestinationUUID": null,
+        "IMSI": 0,
+        "IMEI": null,
+        "ParentSessionID": 0,
+        "ParentStarttime": "1970-01-01T00:00:00.000000Z",
+        "Tunnel": "N/A",
+        "ThreatCategory": "brute-force",
+        "ContentVersion": "581116536",
+        "SigFlags": "0x0",
+        "RuleUUID": "496a138d-6515-4043-b7c7",
+        "HTTP2Connection": 0,
+        "DynamicUserGroupName": null,
+        "X-Forwarded-ForIP": null,
+        "SourceDeviceCategory": null,
+        "SourceDeviceProfile": null,
+        "SourceDeviceModel": null,
+        "SourceDeviceVendor": null,
+        "SourceDeviceOSFamily": null,
+        "SourceDeviceOSVersion": null,
+        "SourceDeviceHost": null,
+        "SourceDeviceMac": null,
+        "DestinationDeviceCategory": null,
+        "DestinationDeviceProfile": null,
+        "DestinationDeviceModel": null,
+        "DestinationDeviceVendor": null,
+        "DestinationDeviceOSFamily": null,
+        "DestinationDeviceOSVersion": null,
+        "DestinationDeviceHost": null,
+        "DestinationDeviceMac": null,
+        "ContainerID": null,
+        "ContainerNameSpace": null,
+        "ContainerName": null,
+        "SourceEDL": null,
+        "DestinationEDL": null,
+        "HostID": null,
+        "EndpointSerialNumber": null,
+        "DomainEDL": null,
+        "SourceDynamicAddressGroup": null,
+        "DestinationDynamicAddressGroup": null,
+        "PartialHash": 0,
+        "TimeGeneratedHighResolution": "2024-07-08T15:52:09.934000Z",
+        "NSSAINetworkSliceType": null
+    }
+    ```
+
+
+
+=== "test_new_url_type"
+
+
+    ```json
+	{
+        "TimeReceived": "2024-07-08T06:17:04.000000Z",
+        "DeviceSN": "00795400037XXXX",
+        "LogType": "THREAT",
+        "Subtype": "url",
+        "ConfigVersion": "10.2",
+        "TimeGenerated": "2024-07-08T13:13:27.000000Z",
+        "SourceAddress": "19.16.1.6",
+        "DestinationAddress": "17.25.11.9",
+        "NATSource": "210.210.140.61",
+        "NATDestination": "17.25.11.9",
+        "Rule": "Guest_Mobile_Internet Access",
+        "SourceUser": null,
+        "DestinationUser": null,
+        "Application": "ssl",
+        "VirtualLocation": "vsys1",
+        "FromZone": "TTT",
+        "ToZone": "Untrust",
+        "InboundInterface": "ethernet1/6.997",
+        "OutboundInterface": "ethernet1/1",
+        "LogSetting": "Test_setting",
+        "SessionID": 816808,
+        "RepeatCount": 1,
+        "SourcePort": 35000,
+        "DestinationPort": 443,
+        "NATSourcePort": 28500,
+        "NATDestinationPort": 443,
+        "Protocol": "tcp",
+        "Action": "alert",
+        "URL": "test.gstatic.com/",
+        "URLCategory": "computer-and-internet-info",
+        "VendorSeverity": "Informational",
+        "DirectionOfAttack": "client to server",
+        "SequenceNo": 73503956876009,
+        "SourceLocation": "19.18.0.0-19.18.255.255",
+        "DestinationLocation": "US",
+        "ContentType": null,
+        "PacketID": 0,
+        "URLCounter": 0,
+        "UserAgent": null,
+        "X-Forwarded-For": null,
+        "Referer": null,
+        "DGHierarchyLevel1": 997,
+        "DGHierarchyLevel2": 1169,
+        "DGHierarchyLevel3": 0,
+        "DGHierarchyLevel4": 0,
+        "VirtualSystemName": "",
+        "DeviceName": "DN-TEST",
+        "SourceUUID": null,
+        "DestinationUUID": null,
+        "HTTPMethod": "unknown",
+        "IMSI": 0,
+        "IMEI": null,
+        "ParentSessionID": 0,
+        "ParentStarttime": "1970-01-01T00:00:00.000000Z",
+        "Tunnel": "N/A",
+        "InlineMLVerdict": "unknown",
+        "ContentVersion": "0",
+        "SigFlags": 0,
+        "HTTPHeaders": null,
+        "URLCategoryList": "computer-and-internet-info,low-risk",
+        "RuleUUID": "6935060f-6443-4257",
+        "HTTP2Connection": 0,
+        "DynamicUserGroupName": null,
+        "X-Forwarded-ForIP": null,
+        "SourceDeviceCategory": null,
+        "SourceDeviceProfile": null,
+        "SourceDeviceModel": null,
+        "SourceDeviceVendor": null,
+        "SourceDeviceOSFamily": null,
+        "SourceDeviceOSVersion": null,
+        "SourceDeviceHost": null,
+        "SourceDeviceMac": null,
+        "DestinationDeviceCategory": null,
+        "DestinationDeviceProfile": null,
+        "DestinationDeviceModel": null,
+        "DestinationDeviceVendor": null,
+        "DestinationDeviceOSFamily": null,
+        "DestinationDeviceOSVersion": null,
+        "DestinationDeviceHost": null,
+        "DestinationDeviceMac": null,
+        "ContainerID": null,
+        "ContainerNameSpace": null,
+        "ContainerName": null,
+        "SourceEDL": null,
+        "DestinationEDL": null,
+        "HostID": null,
+        "EndpointSerialNumber": null,
+        "SourceDynamicAddressGroup": null,
+        "DestinationDynamicAddressGroup": null,
+        "TimeGeneratedHighResolution": "2024-07-08T13:13:27.233000Z",
+        "NSSAINetworkSliceType": null
     }
     ```
 
@@ -1062,6 +1463,15 @@ In this section, you will find examples of raw logs as generated natively by the
 
     ```json
 	1,2024/01/12 11:21:15,016201000000,THREAT,url,2562,2024/01/12 11:21:15,1.2.3.4,5.6.7.8,9.10.11.12,0.0.0.0,SAAS vers log,,,ssl,vsys1,Outside,test-Externe,a11.30,a11.25,Panorama,2024/01/12 11:21:15,200000,1,58444,2222,58444,2222,0x50b444,tcp,alert,"test.fr:9999/",(9999),test,informational,client-to-server,55555555555555555555,0x8000000000000000,US,France,,,0,,,0,,,,,,,,0,0,0,0,0,,TEST-01,,,,,0,,0,,N/A,N/A,AppThreat-0-0,0x0,0,4294967295,,"test,low-risk",96eeeef8-bd9c-4145,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0,2024-01-12T11:21:15.190+01:00,,,,encrypted-tunnel,networking,browser-based,4,"used-by-malware,able-to-transfer-file,has-known-vulnerability,tunnel-other-application,pervasive-use",,ssl,no,no,
+    ```
+
+
+
+=== "test_threat_02"
+
+
+    ```json
+	1,2024/08/12 15:57:12,012345678910,THREAT,vulnerability,2561,2024/08/12 15:57:04,1.2.3.4,5.6.7.8,1.2.3.4,5.6.7.8,Access_Portal-GW_GP,,,web-browsing,vsys1,INTERNET,INTERNET,ethernet1/3.302,ethernet1/3.302,default,2024/08/12 15:57:04,113535,1,56731,443,56731,20077,0x81402000,tcp,reset-both,"login.esp",Palo Alto Networks GlobalProtect OS Command Injection Vulnerability(95187),business-and-economy,critical,client-to-server,7334683348721844974,0x8000000000000000,United States,France,,,1210223766892439373,,,1,,,,,,,,0,320,90,0,0,,site1-FW01,,,,,0,,0,,N/A,code-execution,AppThreat-8879-8900,0x0,0,4294967295,,,abcdefgh-1234-5678-abcd-01234567890,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0,2024-08-12T15:57:04.614+02:00,,,,internet-utility,general-internet,browser-based,4,"used-by-malware,able-to-transfer-file,has-known-vulnerability,tunnel-other-application,pervasive-use",,web-browsing,no,no,
     ```
 
 
