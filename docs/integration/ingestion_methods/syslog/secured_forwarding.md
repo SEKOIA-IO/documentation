@@ -8,23 +8,23 @@ For security reason, you may require to secure the collect of events between our
 
 ## Generate the certificates
 
-### Install OpenSSL
+### Install OpenSSL and Gnutls-bin
 
 According to your operating system, install `openssl` to generate the certificates.
 
 On Debian-like distributions:
 ```
-$ sudo apt install openssl
+$ sudo apt install openssl && sudo apt install gnutls-bin
 ```
 
 On Redhat-like distributions:
 ```
-$ sudo dnf install openssl
+$ sudo dnf install openssl && sudo apt install gnutls-bin
 ```
 
 On Mac OS X (with homebrew):
 ```
-$ sudo brew install openssl
+$ brew install openssl
 ```
 
 ### Generate the Certificate Autority (CA)
