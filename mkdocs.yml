@@ -105,6 +105,7 @@ nav:
     - Implement a blocklist in Sekoia.io: xdr/usecases/playbook/implement_blocklist.md
     - Synchronize Alerts with an external tool: xdr/usecases/playbook/synchronize_alerts.md
     - Send notifications to a Webhook using a playbook: xdr/usecases/playbook/notifications_using_playbooks.md
+    - Use your own CTI in Sekoia.io: xdr/usecases/use_your_own_cti.md
   - FAQ:
     - General: xdr/FAQ.md
     - Alerts: xdr/FAQ/Alerts_qa.md
@@ -186,7 +187,7 @@ nav:
       - Expiration Rules: tip/features/produce/expiration_rules.md
     - Monitor:
       - Dashboards: tip/features/monitor/dashboard.md
-      - Threat Landscape: cti/features/monitor/threat_landscape.md
+      - Threat Landscape: tip/features/monitor/threat_landscape.md
     - External Integrations:
       - Overview: tip/features/integrations/index.md
       - API: tip/features/integrations/api.md
@@ -199,7 +200,7 @@ nav:
       - PaloAlto Cortex XSOAR: tip/features/integrations/paloalto_xsoar.md
     - Automate:
       - Playbooks: tip/features/automate/index.md
-      - Manage accounts: xdr/features/automate/manage-accounts.md
+      - Manage accounts: tip/features/automate/manage-accounts.md
       - Navigate playbooks: tip/features/automate/navigate-playbooks.md
       - Build playbooks: tip/features/automate/build-playbooks.md
       - Triggers: tip/features/automate/triggers.md
