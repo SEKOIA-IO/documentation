@@ -4,3 +4,4 @@ Many third-party applications have the ability to centralize events and forward 
 
 - [Rsyslog](./rsyslog.md)
 - [Syslog-ng](./syslog-ng.md)
+- [Secured forwarding](integration/ingestion_methods/syslog/secured_forwarding.md)
