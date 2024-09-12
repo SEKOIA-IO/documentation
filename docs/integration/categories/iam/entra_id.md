@@ -3,7 +3,7 @@ name: Microsoft Entra ID (Azure AD)
 type: intake
 
 ## Overview
-- **Vendor**:
+- **Vendor**: Microsoft
 - **Plan**: Defend Core & Defend Prime
 - **Supported environment**: SaaS
 - **Detection based on**: Telemetry

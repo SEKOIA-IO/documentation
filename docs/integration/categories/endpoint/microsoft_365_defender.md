@@ -3,20 +3,18 @@ name: Microsoft 365 Defender
 type: intake
 
 ## Overview
-- **Vendor**:
+- **Vendor**: Microsoft
 - **Plan**: Defend Core & Defend Prime
 - **Supported environment**:
 - **Version compatibility**:
 - **Detection based on**: Alert, Telemetry
-- **Supported application or feature**:
+- **Supported application or feature**: see section below
 
 **This Intake was previously called Microsoft Defender for Endpoints.**
 
 Microsoft 365 Defender is a unified pre- and post-breach enterprise defense suite that natively coordinates detection, prevention, investigation, and response across endpoints, identities, email, and applications to provide integrated protection against sophisticated attacks.
 
 This setup guide describes how to forward events produced by `Microsoft 365 Defender` to Sekoia.io XDR.
-
-
 
 
 ## Microsoft 365 Defender event types supported
