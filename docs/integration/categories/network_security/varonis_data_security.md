@@ -47,6 +47,9 @@ Syslog server address in DatAlert:
 
 Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a new intake from the format Varonis Data Security
 
+!!! Warning
+    Sekoia expects to receive events based on a date in UTC. Be sure to change the Varonis settings accordingly on the appliance. Or create a Custom Format on Sekoia by duplicating our built-in Varonis Intake and adapte the `set_timestamp` Stage accordingly.
+
 ### Forward logs to Sekoia.io
 
 Please consult the [Syslog Forwarding](/integration/ingestion_methods/syslog/sekoiaio_forwarder) documentation to forward these logs to Sekoia.io.
