@@ -30,7 +30,7 @@ A secure email gateway to block spam, viruses, and malware.
     - The Mimecast administrator must be assigned a Role with the following criteria.
         - Read and Edit API Application Permissions under the Service Menu.
         - Security Permissions setting must permit the Management of Application Roles.
-    - The generated API key must be a Mimecast Administrator with at least the Security Events and Data Retrieval | Threat and Security Events (SIEM)| Read permission.
+    - The generated API key must be a Mimecast Administrator with at least the Security Events and Data Retrieval | Threat and Security Events (SIEM) and Threat and security statistics | Read permission.
 
 ### Transport Protocol/Method
 
@@ -52,21 +52,33 @@ A secure email gateway to block spam, viruses, and malware.
 #### Create API credentials
 
 1. Login to **Mimecast Administration Console**
-2. Navigate to **Services | API and Platform Integrations**
-3. Locate the following **Mimecast API 2.0** tile and click on **Generate Keys.**
-4. After reading the **Terms & Conditions**, complete the **I accept** check box to enable the **Next** button to progress onto the next step.
-5. Complete the **Application Details** section.
-6. Please provide details for a **Technical Point of Contact**.
-7. Review the Summary information for the API application and click on **Add** if you are happy to proceed with creating the application.
-8. The wizard completes and displays a pop-up window including your `Client ID` and `Client Secret` key data.
+2. Navigate to **Account** > **Roles** > **New Role**
+3. Name the role as you wish, for instance "Sekoia"
+4. Add the following roles under the section called **Security Events and Data Retrieval**:
+    - **Threat and security svents (SIEM)** with READ permission,
+    - **Threat and security statistics** with READ permission.
+5. Navigate to **Services | API and Platform Integrations**
+6. Locate the following **Mimecast API 2.0** tile and click on **Generate Keys.**
+7. After reading the **Terms & Conditions**, complete the **I accept** check box to enable the **Next** button to progress onto the next step.
+8. Complete the **Application Details** section by providing:
+    - Application Name: Select **SIEM Integration**,
+    - Description (Optional),
+    - Integration Partner (Optional),
+    - Products: Select all products,
+    - Role: Select the "Sekoia" role created above.
+9. Complete the **Notifications** section by providing:
+    - Technical Point of Contact: Write the name of the administrator to be contacted if you encounter any issue with the API,
+    - Email : Write the administrator's email.
+10. Validate the form and Click on **Add and Generate Keys**
+11. The wizard completes and displays a pop-up window including your `Client ID` and `Client Secret` key data.
 
 ### Instruction on Sekoia
-### Create your intake
+#### Create your intake
 
 1. Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a new intake from the `Mimecast Email Security`.
 2. Copy the associated Intake key
 
-### Pull your logs on Sekoia.io
+#### Pull your logs on Sekoia.io
 
 Go to the Sekoia.io [playbook page](https://app.sekoia.io/operations/playbooks), and follow these steps:
 

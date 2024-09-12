@@ -11,25 +11,36 @@ In this documentation we will explain how to collect and send Stormshield Networ
 - **Vendor**: Stormshield
 - **Plan**: Defend Core & Defend Prime
 - **Supported environment**: On prem
-- **Version compatibility**:
+- **Version compatibility**: 4.8.2 and newer
 - **Detection based on**: Alert, Telemetry
 - **Supported application or feature**: Network device logs, Network protocol analysis, SSL/TLS inspection, Anti-virus
 
+## Step-by-Step Configuration Procedure
 
+### Instruction on Sekoia
+#### Create your intake
 
+Everything you need to do for this part of the configuration is described [here](/xdr/features/collect/intakes).
 
+1. Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a new intake from the `Stormshield Network Security`.
+2. Copy the associated Intake key
 
-## Configure
+### Instructions on the 3rd Party Solution
 
 This section will guide you to forward Stormshield SNS logs to Sekoia.
 
-### Create the intake
-
-Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a new intake from the format Stormshield Network Security.
-
-### Import the intake certificate
+#### Import the intake certificate
 
 On a device, please download the [Sekoia.io intake certificate](https://app.sekoia.io/assets/files/SEKOIA-IO-intake.pem)
+
+1. Log on the UTM administration console
+2. Click `Configuration` tab
+3. On the left panel, Click `Objects` > `Certificats and PKI`
+4. Click `+ Add`
+5. Select the intake certificate
+6. Click `Import`
+
+#### Configure the log forwarding
 
 1. Log on the UTM administration console
 2. Click `Configuration` tab
@@ -44,15 +55,8 @@ On a device, please download the [Sekoia.io intake certificate](https://app.seko
 11. In the advanced configuration section, paste the intake key
 12. Click `APPLY`
 
-### Configure the log forwarding
-
-You have to go on your Sekoia.io instance to generate an "intake key".
-Everything you need to do for this part of the configuration is described [here](/xdr/features/collect/intakes).
-
-Finally, to push logs, you have to [configure](/integration/ingestion_methods/index) some filters and rewrite rules in Syslog that will add the proper “intake key” considering your logs.
 
 {!_shared_content/operations_center/integrations/generated/79029ef9-e5d3-44f3-b70f-fd3b54ba1fe4_sample.md!}
-
 
 {!_shared_content/integration/detection_section.md!}
 
