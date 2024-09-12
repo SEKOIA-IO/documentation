@@ -361,6 +361,7 @@ nav:
       - Microsoft Intune: integration/categories/endpoint/microsoft_intune.md
       - Palo Alto Cortex XDR (EDR): integration/categories/endpoint/paloalto_cortex_edr.md
       - Panda Security Aether: integration/categories/endpoint/panda_security_aether.md
+      - Pradeo MTD: integration/categories/endpoint/pradeo_mtd.md
       - SentinelOne: integration/categories/endpoint/sentinelone.md
       - SentinelOne Cloud Funnel 2.0: integration/categories/endpoint/sentinelone_cloudfunnel2.0.md
       - Sekoia.io Endpoint Agent: integration/categories/endpoint/sekoiaio.md
