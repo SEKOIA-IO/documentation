@@ -1,7 +1,10 @@
-Changelog _last update on 2024-09-11_
+Changelog _last update on 2024-09-13_
 
 ## Changelog
 
+### Winword wrong parent
+  - 12/09/2024 - minor - Adding filter to reduce false positives.
+    
 ### DCSync Attack
   - 05/09/2024 - minor - Changing name of elements.
     
@@ -567,9 +570,6 @@ Changelog _last update on 2024-09-11_
   - 19/03/2024 - major - Added filter to reduce false positives
     
 ### Gpscript Suspicious Parent
-  - 19/03/2024 - major - Added filter to reduce false positives
-    
-### Winword wrong parent
   - 19/03/2024 - major - Added filter to reduce false positives
     
 ### Wmiprvse Wrong Parent

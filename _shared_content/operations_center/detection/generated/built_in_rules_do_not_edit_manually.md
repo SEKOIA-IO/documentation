@@ -1,4 +1,4 @@
-Rules catalog includes **942 built-in detection rules** ([_last update on 2024-09-11_](rules_changelog.md)).
+Rules catalog includes **942 built-in detection rules** ([_last update on 2024-09-13_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Identity Information**
 
@@ -4386,6 +4386,7 @@ Rules catalog includes **942 built-in detection rules** ([_last update on 2024-0
         - 04/07/2023 - major - Added filter to reduce false positives
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
         - 19/03/2024 - major - Added filter to reduce false positives
+        - 12/09/2024 - minor - Adding filter to reduce false positives.
             
 ??? abstract "WithSecure Elements Critical Severity"
     
@@ -5594,6 +5595,7 @@ Rules catalog includes **942 built-in detection rules** ([_last update on 2024-0
         - 04/07/2023 - major - Added filter to reduce false positives
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
         - 19/03/2024 - major - Added filter to reduce false positives
+        - 12/09/2024 - minor - Adding filter to reduce false positives.
             
 ??? abstract "Wmiprvse Wrong Parent"
     
@@ -7203,6 +7205,7 @@ Rules catalog includes **942 built-in detection rules** ([_last update on 2024-0
         - 04/07/2023 - major - Added filter to reduce false positives
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
         - 19/03/2024 - major - Added filter to reduce false positives
+        - 12/09/2024 - minor - Adding filter to reduce false positives.
             
 ??? abstract "Wmiprvse Wrong Parent"
     
