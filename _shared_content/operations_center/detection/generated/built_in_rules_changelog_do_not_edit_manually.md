@@ -2,6 +2,12 @@ Changelog _last update on 2024-09-13_
 
 ## Changelog
 
+### Microsoft Defender XDR Alert
+  - 13/09/2024 - major - Update service name value following Microsoft change
+    
+### Microsoft Defender XDR Cloud App Security Alert
+  - 13/09/2024 - major - Update service name value following Microsoft change
+    
 ### Svchost Wrong Parent
   - 13/09/2024 - major - Removed filter for an intake as the parsing has been fixed and the rules therefore works properly for that intake.
     
