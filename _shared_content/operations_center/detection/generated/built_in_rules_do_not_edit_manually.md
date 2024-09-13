@@ -2018,12 +2018,20 @@ Rules catalog includes **942 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 13/09/2024 - major - Update service name value following Microsoft change
+            
 ??? abstract "Microsoft Defender XDR Cloud App Security Alert"
     
     Microsoft Defender XDR has raised an alert for Microsoft Cloud App Security. The alert info and evidence events are grouped with the similarity into the same Sekoia.io alert.
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 13/09/2024 - major - Update service name value following Microsoft change
+            
 ??? abstract "Microsoft Defender XDR Endpoint Alert"
     
     Microsoft Defender XDR has raised an alert for Microsoft Defender for Endpoint. The alert info and evidence events are grouped with the similarity into the same Sekoia.io alert.
@@ -3289,12 +3297,20 @@ Rules catalog includes **942 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 13/09/2024 - major - Update service name value following Microsoft change
+            
 ??? abstract "Microsoft Defender XDR Cloud App Security Alert"
     
     Microsoft Defender XDR has raised an alert for Microsoft Cloud App Security. The alert info and evidence events are grouped with the similarity into the same Sekoia.io alert.
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 13/09/2024 - major - Update service name value following Microsoft change
+            
 ??? abstract "Microsoft Defender XDR Endpoint Alert"
     
     Microsoft Defender XDR has raised an alert for Microsoft Defender for Endpoint. The alert info and evidence events are grouped with the similarity into the same Sekoia.io alert.
@@ -3916,12 +3932,20 @@ Rules catalog includes **942 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 13/09/2024 - major - Update service name value following Microsoft change
+            
 ??? abstract "Microsoft Defender XDR Cloud App Security Alert"
     
     Microsoft Defender XDR has raised an alert for Microsoft Cloud App Security. The alert info and evidence events are grouped with the similarity into the same Sekoia.io alert.
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 13/09/2024 - major - Update service name value following Microsoft change
+            
 ??? abstract "Microsoft Defender XDR Endpoint Alert"
     
     Microsoft Defender XDR has raised an alert for Microsoft Defender for Endpoint. The alert info and evidence events are grouped with the similarity into the same Sekoia.io alert.
