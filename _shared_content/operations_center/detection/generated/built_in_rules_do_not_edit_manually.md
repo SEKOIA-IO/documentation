@@ -1,4 +1,4 @@
-Rules catalog includes **942 built-in detection rules** ([_last update on 2024-09-13_](rules_changelog.md)).
+Rules catalog includes **944 built-in detection rules** ([_last update on 2024-09-13_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Identity Information**
 
@@ -2723,6 +2723,12 @@ Rules catalog includes **942 built-in detection rules** ([_last update on 2024-0
     
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
             
+??? abstract "Alert High Severity Sesame it Jizo NDR"
+    
+    Detects a high severity alert raised by SesameIT.
+    
+    - **Effort:** master
+    
 ??? abstract "Broadcom/Symantec Endpoint Security Event Blocked"
     
     Broadcom/Symantec Endpoint Security blocked an action. Careful when activating this rule, it generates lots of events that are not always relevant for detection.
@@ -12690,6 +12696,12 @@ Rules catalog includes **942 built-in detection rules** ([_last update on 2024-0
     Detect artifacts related to the installation or execution of the Remote Monitoring and Management tool Atera.
     
     - **Effort:** master
+    
+??? abstract "Suspicious Activity Using Quick Assist"
+    
+    Detects when a chat is created (abusing Quick Assist feature) with a user external to the domain, which has been observed as a some phishing attemp by ransomware groups.
+    
+    - **Effort:** elementary
     
 **Non-Standard Port**
 
