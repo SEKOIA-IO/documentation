@@ -3770,6 +3770,7 @@ Rules catalog includes **942 built-in detection rules** ([_last update on 2024-0
         - 04/07/2023 - major - Added filter to reduce false positives
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
         - 19/03/2024 - major - Added filter to reduce false positives
+        - 13/09/2024 - major - Removed filter for an intake as the parsing has been fixed and the rules therefore works properly for that intake.
             
 ??? abstract "Cybereason EDR Alert"
     
@@ -3803,6 +3804,7 @@ Rules catalog includes **942 built-in detection rules** ([_last update on 2024-0
         - 04/07/2023 - major - Added filter to reduce false positives
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
         - 19/03/2024 - major - Added filter to reduce false positives
+        - 13/09/2024 - major - Removed filter for an intake as the parsing has been fixed and the rules therefore works properly for that intake.
             
 ??? abstract "Exfiltration Via Pscp"
     
@@ -3820,6 +3822,7 @@ Rules catalog includes **942 built-in detection rules** ([_last update on 2024-0
     
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
         - 19/03/2024 - major - Added filter to reduce false positives
+        - 13/09/2024 - major - Removed filter for an intake as the parsing has been fixed and the rules therefore works properly for that intake.
             
 ??? abstract "Login Brute-Force Successful On SentinelOne EDR Management Console"
     
@@ -3854,6 +3857,7 @@ Rules catalog includes **942 built-in detection rules** ([_last update on 2024-0
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
         - 19/03/2024 - major - Added filter to reduce false positives
         - 07/06/2024 - major - Added filter to reduce false positives
+        - 13/09/2024 - major - Removed filter for an intake as the parsing has been fixed and the rules therefore works properly for that intake.
             
 ??? abstract "Lsass Wrong Parent"
     
@@ -3867,6 +3871,7 @@ Rules catalog includes **942 built-in detection rules** ([_last update on 2024-0
         - 04/07/2023 - major - Added filter to reduce false positives
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
         - 19/03/2024 - major - Added filter to reduce false positives
+        - 13/09/2024 - major - Removed filter for an intake as the parsing has been fixed and the rules therefore works properly for that intake.
             
 ??? abstract "Malicious Service Installations"
     
@@ -3979,6 +3984,7 @@ Rules catalog includes **942 built-in detection rules** ([_last update on 2024-0
         - 04/07/2023 - major - Added filter to reduce false positives
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
         - 19/03/2024 - major - Added filter to reduce false positives
+        - 13/09/2024 - major - Removed filter for an intake as the parsing has been fixed and the rules therefore works properly for that intake.
             
 ??? abstract "Searchprotocolhost Child Found"
     
@@ -3998,6 +4004,7 @@ Rules catalog includes **942 built-in detection rules** ([_last update on 2024-0
         - 04/07/2023 - major - Added filter to reduce false positives
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
         - 12/03/2024 - minor - Added filter to reduce false positives
+        - 13/09/2024 - major - Removed filter for an intake as the parsing has been fixed and the rules therefore works properly for that intake.
             
 ??? abstract "SentinelOne EDR Agent Disabled"
     
@@ -4154,6 +4161,7 @@ Rules catalog includes **942 built-in detection rules** ([_last update on 2024-0
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
         - 19/03/2024 - major - Added filter to reduce false positives
         - 05/04/2024 - major - Added filter to reduce false positives
+        - 13/09/2024 - major - Removed filter for an intake as the parsing has been fixed and the rules therefore works properly for that intake.
             
 ??? abstract "SolarWinds Suspicious File Creation"
     
@@ -4184,6 +4192,7 @@ Rules catalog includes **942 built-in detection rules** ([_last update on 2024-0
         - 04/07/2023 - major - Added filter to reduce false positives
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
         - 19/03/2024 - major - Added filter to reduce false positives
+        - 13/09/2024 - major - Removed filter for an intake as the parsing has been fixed and the rules therefore works properly for that intake.
             
 ??? abstract "Suspicious Commands From MS SQL Server Shell"
     
@@ -4219,6 +4228,7 @@ Rules catalog includes **942 built-in detection rules** ([_last update on 2024-0
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
         - 31/01/2024 - minor - Adding filters to reduce false positives
         - 19/03/2024 - major - Added filter to reduce false positives
+        - 13/09/2024 - major - Removed filter for an intake as the parsing has been fixed and the rules therefore works properly for that intake.
             
 ??? abstract "TEHTRIS EDR Alert"
     
@@ -4238,6 +4248,7 @@ Rules catalog includes **942 built-in detection rules** ([_last update on 2024-0
         - 04/07/2023 - major - Added filter to reduce false positives
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
         - 19/03/2024 - major - Added filter to reduce false positives
+        - 13/09/2024 - major - Removed filter for an intake as the parsing has been fixed and the rules therefore works properly for that intake.
             
 ??? abstract "Taskhost or Taskhostw Suspicious Child Found"
     
@@ -4261,6 +4272,7 @@ Rules catalog includes **942 built-in detection rules** ([_last update on 2024-0
         - 04/07/2023 - major - Added filter to reduce false positives
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
         - 19/03/2024 - major - Added filter to reduce false positives
+        - 13/09/2024 - major - Removed filter for an intake as the parsing has been fixed and the rules therefore works properly for that intake.
             
 ??? abstract "Trend Micro Apex One Data Loss Prevention Alert"
     
@@ -4314,6 +4326,7 @@ Rules catalog includes **942 built-in detection rules** ([_last update on 2024-0
         - 04/07/2023 - major - Added filter to reduce false positives
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
         - 19/03/2024 - major - Added filter to reduce false positives
+        - 13/09/2024 - major - Removed filter for an intake as the parsing has been fixed and the rules therefore works properly for that intake.
             
 ??? abstract "WMI Persistence Command Line Event Consumer"
     
@@ -4349,6 +4362,7 @@ Rules catalog includes **942 built-in detection rules** ([_last update on 2024-0
         - 04/07/2023 - major - Added filter to reduce false positives
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
         - 19/03/2024 - major - Added filter to reduce false positives
+        - 13/09/2024 - major - Removed filter for an intake as the parsing has been fixed and the rules therefore works properly for that intake.
             
 ??? abstract "Winlogon wrong parent"
     
@@ -4361,6 +4375,7 @@ Rules catalog includes **942 built-in detection rules** ([_last update on 2024-0
         - 04/07/2023 - major - Added filter to reduce false positives
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
         - 19/03/2024 - major - Added filter to reduce false positives
+        - 13/09/2024 - major - Removed filter for an intake as the parsing has been fixed and the rules therefore works properly for that intake.
             
 ??? abstract "Winrshost Wrong Parent"
     
@@ -4374,6 +4389,7 @@ Rules catalog includes **942 built-in detection rules** ([_last update on 2024-0
         - 04/07/2023 - major - Added filter to reduce false positives
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
         - 19/03/2024 - major - Added filter to reduce false positives
+        - 13/09/2024 - major - Removed filter for an intake as the parsing has been fixed and the rules therefore works properly for that intake.
             
 ??? abstract "Winword wrong parent"
     
@@ -4387,6 +4403,7 @@ Rules catalog includes **942 built-in detection rules** ([_last update on 2024-0
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
         - 19/03/2024 - major - Added filter to reduce false positives
         - 12/09/2024 - minor - Adding filter to reduce false positives.
+        - 13/09/2024 - major - Removed filter for an intake as the parsing has been fixed and the rules therefore works properly for that intake.
             
 ??? abstract "WithSecure Elements Critical Severity"
     
@@ -4410,6 +4427,7 @@ Rules catalog includes **942 built-in detection rules** ([_last update on 2024-0
         - 04/07/2023 - major - Added filter to reduce false positives
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
         - 19/03/2024 - major - Added filter to reduce false positives
+        - 13/09/2024 - major - Removed filter for an intake as the parsing has been fixed and the rules therefore works properly for that intake.
             
 ??? abstract "Wsmprovhost Wrong Parent"
     
@@ -4424,6 +4442,7 @@ Rules catalog includes **942 built-in detection rules** ([_last update on 2024-0
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
         - 25/10/2023 - minor - Adding filter to reduce false positives.
         - 19/03/2024 - major - Added filter to reduce false positives
+        - 13/09/2024 - major - Removed filter for an intake as the parsing has been fixed and the rules therefore works properly for that intake.
             
 ??? abstract "Zscaler ZIA Malicious Threat Outbreak"
     
@@ -5289,6 +5308,7 @@ Rules catalog includes **942 built-in detection rules** ([_last update on 2024-0
         - 04/07/2023 - major - Added filter to reduce false positives
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
         - 19/03/2024 - major - Added filter to reduce false positives
+        - 13/09/2024 - major - Removed filter for an intake as the parsing has been fixed and the rules therefore works properly for that intake.
             
 ??? abstract "Dllhost Wrong Parent"
     
@@ -5302,6 +5322,7 @@ Rules catalog includes **942 built-in detection rules** ([_last update on 2024-0
         - 04/07/2023 - major - Added filter to reduce false positives
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
         - 19/03/2024 - major - Added filter to reduce false positives
+        - 13/09/2024 - major - Removed filter for an intake as the parsing has been fixed and the rules therefore works properly for that intake.
             
 ??? abstract "Explorer Wrong Parent"
     
@@ -5315,6 +5336,7 @@ Rules catalog includes **942 built-in detection rules** ([_last update on 2024-0
         - 04/07/2023 - major - Added filter to reduce false positives
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
         - 19/03/2024 - major - Added filter to reduce false positives
+        - 13/09/2024 - major - Removed filter for an intake as the parsing has been fixed and the rules therefore works properly for that intake.
             
 ??? abstract "Gpscript Suspicious Parent"
     
@@ -5326,6 +5348,7 @@ Rules catalog includes **942 built-in detection rules** ([_last update on 2024-0
     
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
         - 19/03/2024 - major - Added filter to reduce false positives
+        - 13/09/2024 - major - Removed filter for an intake as the parsing has been fixed and the rules therefore works properly for that intake.
             
 ??? abstract "Logonui Wrong Parent"
     
@@ -5340,6 +5363,7 @@ Rules catalog includes **942 built-in detection rules** ([_last update on 2024-0
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
         - 19/03/2024 - major - Added filter to reduce false positives
         - 07/06/2024 - major - Added filter to reduce false positives
+        - 13/09/2024 - major - Removed filter for an intake as the parsing has been fixed and the rules therefore works properly for that intake.
             
 ??? abstract "Lsass Wrong Parent"
     
@@ -5353,6 +5377,7 @@ Rules catalog includes **942 built-in detection rules** ([_last update on 2024-0
         - 04/07/2023 - major - Added filter to reduce false positives
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
         - 19/03/2024 - major - Added filter to reduce false positives
+        - 13/09/2024 - major - Removed filter for an intake as the parsing has been fixed and the rules therefore works properly for that intake.
             
 ??? abstract "Malicious Service Installations"
     
@@ -5404,6 +5429,7 @@ Rules catalog includes **942 built-in detection rules** ([_last update on 2024-0
         - 04/07/2023 - major - Added filter to reduce false positives
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
         - 19/03/2024 - major - Added filter to reduce false positives
+        - 13/09/2024 - major - Removed filter for an intake as the parsing has been fixed and the rules therefore works properly for that intake.
             
 ??? abstract "Searchprotocolhost Child Found"
     
@@ -5423,6 +5449,7 @@ Rules catalog includes **942 built-in detection rules** ([_last update on 2024-0
         - 04/07/2023 - major - Added filter to reduce false positives
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
         - 12/03/2024 - minor - Added filter to reduce false positives
+        - 13/09/2024 - major - Removed filter for an intake as the parsing has been fixed and the rules therefore works properly for that intake.
             
 ??? abstract "Smss Wrong Parent"
     
@@ -5437,6 +5464,7 @@ Rules catalog includes **942 built-in detection rules** ([_last update on 2024-0
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
         - 19/03/2024 - major - Added filter to reduce false positives
         - 05/04/2024 - major - Added filter to reduce false positives
+        - 13/09/2024 - major - Removed filter for an intake as the parsing has been fixed and the rules therefore works properly for that intake.
             
 ??? abstract "SolarWinds Wrong Child Process"
     
@@ -5461,6 +5489,7 @@ Rules catalog includes **942 built-in detection rules** ([_last update on 2024-0
         - 04/07/2023 - major - Added filter to reduce false positives
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
         - 19/03/2024 - major - Added filter to reduce false positives
+        - 13/09/2024 - major - Removed filter for an intake as the parsing has been fixed and the rules therefore works properly for that intake.
             
 ??? abstract "StoneDrill Service Install"
     
@@ -5490,6 +5519,7 @@ Rules catalog includes **942 built-in detection rules** ([_last update on 2024-0
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
         - 31/01/2024 - minor - Adding filters to reduce false positives
         - 19/03/2024 - major - Added filter to reduce false positives
+        - 13/09/2024 - major - Removed filter for an intake as the parsing has been fixed and the rules therefore works properly for that intake.
             
 ??? abstract "Taskhost Wrong Parent"
     
@@ -5503,6 +5533,7 @@ Rules catalog includes **942 built-in detection rules** ([_last update on 2024-0
         - 04/07/2023 - major - Added filter to reduce false positives
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
         - 19/03/2024 - major - Added filter to reduce false positives
+        - 13/09/2024 - major - Removed filter for an intake as the parsing has been fixed and the rules therefore works properly for that intake.
             
 ??? abstract "Taskhost or Taskhostw Suspicious Child Found"
     
@@ -5526,6 +5557,7 @@ Rules catalog includes **942 built-in detection rules** ([_last update on 2024-0
         - 04/07/2023 - major - Added filter to reduce false positives
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
         - 19/03/2024 - major - Added filter to reduce false positives
+        - 13/09/2024 - major - Removed filter for an intake as the parsing has been fixed and the rules therefore works properly for that intake.
             
 ??? abstract "Userinit Wrong Parent"
     
@@ -5539,6 +5571,7 @@ Rules catalog includes **942 built-in detection rules** ([_last update on 2024-0
         - 04/07/2023 - major - Added filter to reduce false positives
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
         - 19/03/2024 - major - Added filter to reduce false positives
+        - 13/09/2024 - major - Removed filter for an intake as the parsing has been fixed and the rules therefore works properly for that intake.
             
 ??? abstract "WMI Persistence Command Line Event Consumer"
     
@@ -5558,6 +5591,7 @@ Rules catalog includes **942 built-in detection rules** ([_last update on 2024-0
         - 04/07/2023 - major - Added filter to reduce false positives
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
         - 19/03/2024 - major - Added filter to reduce false positives
+        - 13/09/2024 - major - Removed filter for an intake as the parsing has been fixed and the rules therefore works properly for that intake.
             
 ??? abstract "Winlogon wrong parent"
     
@@ -5570,6 +5604,7 @@ Rules catalog includes **942 built-in detection rules** ([_last update on 2024-0
         - 04/07/2023 - major - Added filter to reduce false positives
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
         - 19/03/2024 - major - Added filter to reduce false positives
+        - 13/09/2024 - major - Removed filter for an intake as the parsing has been fixed and the rules therefore works properly for that intake.
             
 ??? abstract "Winrshost Wrong Parent"
     
@@ -5583,6 +5618,7 @@ Rules catalog includes **942 built-in detection rules** ([_last update on 2024-0
         - 04/07/2023 - major - Added filter to reduce false positives
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
         - 19/03/2024 - major - Added filter to reduce false positives
+        - 13/09/2024 - major - Removed filter for an intake as the parsing has been fixed and the rules therefore works properly for that intake.
             
 ??? abstract "Winword wrong parent"
     
@@ -5596,6 +5632,7 @@ Rules catalog includes **942 built-in detection rules** ([_last update on 2024-0
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
         - 19/03/2024 - major - Added filter to reduce false positives
         - 12/09/2024 - minor - Adding filter to reduce false positives.
+        - 13/09/2024 - major - Removed filter for an intake as the parsing has been fixed and the rules therefore works properly for that intake.
             
 ??? abstract "Wmiprvse Wrong Parent"
     
@@ -5609,6 +5646,7 @@ Rules catalog includes **942 built-in detection rules** ([_last update on 2024-0
         - 04/07/2023 - major - Added filter to reduce false positives
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
         - 19/03/2024 - major - Added filter to reduce false positives
+        - 13/09/2024 - major - Removed filter for an intake as the parsing has been fixed and the rules therefore works properly for that intake.
             
 ??? abstract "Wsmprovhost Wrong Parent"
     
@@ -5623,6 +5661,7 @@ Rules catalog includes **942 built-in detection rules** ([_last update on 2024-0
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
         - 25/10/2023 - minor - Adding filter to reduce false positives.
         - 19/03/2024 - major - Added filter to reduce false positives
+        - 13/09/2024 - major - Removed filter for an intake as the parsing has been fixed and the rules therefore works properly for that intake.
             
 **Event Triggered Execution**
 
@@ -6114,6 +6153,7 @@ Rules catalog includes **942 built-in detection rules** ([_last update on 2024-0
         - 04/07/2023 - major - Added filter to reduce false positives
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
         - 19/03/2024 - major - Added filter to reduce false positives
+        - 13/09/2024 - major - Removed filter for an intake as the parsing has been fixed and the rules therefore works properly for that intake.
             
 ??? abstract "Malicious Named Pipe"
     
@@ -6159,6 +6199,7 @@ Rules catalog includes **942 built-in detection rules** ([_last update on 2024-0
         - 04/07/2023 - major - Added filter to reduce false positives
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
         - 19/03/2024 - major - Added filter to reduce false positives
+        - 13/09/2024 - major - Removed filter for an intake as the parsing has been fixed and the rules therefore works properly for that intake.
             
 ??? abstract "Searchprotocolhost Wrong Parent"
     
@@ -6172,6 +6213,7 @@ Rules catalog includes **942 built-in detection rules** ([_last update on 2024-0
         - 04/07/2023 - major - Added filter to reduce false positives
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
         - 12/03/2024 - minor - Added filter to reduce false positives
+        - 13/09/2024 - major - Removed filter for an intake as the parsing has been fixed and the rules therefore works properly for that intake.
             
 ??? abstract "Smss Wrong Parent"
     
@@ -6186,6 +6228,7 @@ Rules catalog includes **942 built-in detection rules** ([_last update on 2024-0
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
         - 19/03/2024 - major - Added filter to reduce false positives
         - 05/04/2024 - major - Added filter to reduce false positives
+        - 13/09/2024 - major - Removed filter for an intake as the parsing has been fixed and the rules therefore works properly for that intake.
             
 ??? abstract "Spoolsv Wrong Parent"
     
@@ -6199,6 +6242,7 @@ Rules catalog includes **942 built-in detection rules** ([_last update on 2024-0
         - 04/07/2023 - major - Added filter to reduce false positives
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
         - 19/03/2024 - major - Added filter to reduce false positives
+        - 13/09/2024 - major - Removed filter for an intake as the parsing has been fixed and the rules therefore works properly for that intake.
             
 ??? abstract "Suspicious Process Requiring DLL Starts Without DLL"
     
@@ -6222,6 +6266,7 @@ Rules catalog includes **942 built-in detection rules** ([_last update on 2024-0
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
         - 31/01/2024 - minor - Adding filters to reduce false positives
         - 19/03/2024 - major - Added filter to reduce false positives
+        - 13/09/2024 - major - Removed filter for an intake as the parsing has been fixed and the rules therefore works properly for that intake.
             
 ??? abstract "Taskhost Wrong Parent"
     
@@ -6235,6 +6280,7 @@ Rules catalog includes **942 built-in detection rules** ([_last update on 2024-0
         - 04/07/2023 - major - Added filter to reduce false positives
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
         - 19/03/2024 - major - Added filter to reduce false positives
+        - 13/09/2024 - major - Removed filter for an intake as the parsing has been fixed and the rules therefore works properly for that intake.
             
 ??? abstract "Taskhostw Wrong Parent"
     
@@ -6248,6 +6294,7 @@ Rules catalog includes **942 built-in detection rules** ([_last update on 2024-0
         - 04/07/2023 - major - Added filter to reduce false positives
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
         - 19/03/2024 - major - Added filter to reduce false positives
+        - 13/09/2024 - major - Removed filter for an intake as the parsing has been fixed and the rules therefore works properly for that intake.
             
 ??? abstract "Wmiprvse Wrong Parent"
     
@@ -6261,6 +6308,7 @@ Rules catalog includes **942 built-in detection rules** ([_last update on 2024-0
         - 04/07/2023 - major - Added filter to reduce false positives
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
         - 19/03/2024 - major - Added filter to reduce false positives
+        - 13/09/2024 - major - Removed filter for an intake as the parsing has been fixed and the rules therefore works properly for that intake.
             
 ??? abstract "Wsmprovhost Wrong Parent"
     
@@ -6275,6 +6323,7 @@ Rules catalog includes **942 built-in detection rules** ([_last update on 2024-0
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
         - 25/10/2023 - minor - Adding filter to reduce false positives.
         - 19/03/2024 - major - Added filter to reduce false positives
+        - 13/09/2024 - major - Removed filter for an intake as the parsing has been fixed and the rules therefore works properly for that intake.
             
 **Exploitation for Privilege Escalation**
 
@@ -6899,6 +6948,7 @@ Rules catalog includes **942 built-in detection rules** ([_last update on 2024-0
         - 04/07/2023 - major - Added filter to reduce false positives
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
         - 19/03/2024 - major - Added filter to reduce false positives
+        - 13/09/2024 - major - Removed filter for an intake as the parsing has been fixed and the rules therefore works properly for that intake.
             
 ??? abstract "Dllhost Wrong Parent"
     
@@ -6912,6 +6962,7 @@ Rules catalog includes **942 built-in detection rules** ([_last update on 2024-0
         - 04/07/2023 - major - Added filter to reduce false positives
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
         - 19/03/2024 - major - Added filter to reduce false positives
+        - 13/09/2024 - major - Removed filter for an intake as the parsing has been fixed and the rules therefore works properly for that intake.
             
 ??? abstract "Explorer Wrong Parent"
     
@@ -6925,6 +6976,7 @@ Rules catalog includes **942 built-in detection rules** ([_last update on 2024-0
         - 04/07/2023 - major - Added filter to reduce false positives
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
         - 19/03/2024 - major - Added filter to reduce false positives
+        - 13/09/2024 - major - Removed filter for an intake as the parsing has been fixed and the rules therefore works properly for that intake.
             
 ??? abstract "Gpscript Suspicious Parent"
     
@@ -6936,6 +6988,7 @@ Rules catalog includes **942 built-in detection rules** ([_last update on 2024-0
     
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
         - 19/03/2024 - major - Added filter to reduce false positives
+        - 13/09/2024 - major - Removed filter for an intake as the parsing has been fixed and the rules therefore works properly for that intake.
             
 ??? abstract "Logonui Wrong Parent"
     
@@ -6950,6 +7003,7 @@ Rules catalog includes **942 built-in detection rules** ([_last update on 2024-0
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
         - 19/03/2024 - major - Added filter to reduce false positives
         - 07/06/2024 - major - Added filter to reduce false positives
+        - 13/09/2024 - major - Removed filter for an intake as the parsing has been fixed and the rules therefore works properly for that intake.
             
 ??? abstract "Lsass Wrong Parent"
     
@@ -6963,6 +7017,7 @@ Rules catalog includes **942 built-in detection rules** ([_last update on 2024-0
         - 04/07/2023 - major - Added filter to reduce false positives
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
         - 19/03/2024 - major - Added filter to reduce false positives
+        - 13/09/2024 - major - Removed filter for an intake as the parsing has been fixed and the rules therefore works properly for that intake.
             
 ??? abstract "Malicious Service Installations"
     
@@ -7014,6 +7069,7 @@ Rules catalog includes **942 built-in detection rules** ([_last update on 2024-0
         - 04/07/2023 - major - Added filter to reduce false positives
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
         - 19/03/2024 - major - Added filter to reduce false positives
+        - 13/09/2024 - major - Removed filter for an intake as the parsing has been fixed and the rules therefore works properly for that intake.
             
 ??? abstract "Searchprotocolhost Child Found"
     
@@ -7033,6 +7089,7 @@ Rules catalog includes **942 built-in detection rules** ([_last update on 2024-0
         - 04/07/2023 - major - Added filter to reduce false positives
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
         - 12/03/2024 - minor - Added filter to reduce false positives
+        - 13/09/2024 - major - Removed filter for an intake as the parsing has been fixed and the rules therefore works properly for that intake.
             
 ??? abstract "Smss Wrong Parent"
     
@@ -7047,6 +7104,7 @@ Rules catalog includes **942 built-in detection rules** ([_last update on 2024-0
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
         - 19/03/2024 - major - Added filter to reduce false positives
         - 05/04/2024 - major - Added filter to reduce false positives
+        - 13/09/2024 - major - Removed filter for an intake as the parsing has been fixed and the rules therefore works properly for that intake.
             
 ??? abstract "SolarWinds Wrong Child Process"
     
@@ -7071,6 +7129,7 @@ Rules catalog includes **942 built-in detection rules** ([_last update on 2024-0
         - 04/07/2023 - major - Added filter to reduce false positives
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
         - 19/03/2024 - major - Added filter to reduce false positives
+        - 13/09/2024 - major - Removed filter for an intake as the parsing has been fixed and the rules therefore works properly for that intake.
             
 ??? abstract "StoneDrill Service Install"
     
@@ -7100,6 +7159,7 @@ Rules catalog includes **942 built-in detection rules** ([_last update on 2024-0
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
         - 31/01/2024 - minor - Adding filters to reduce false positives
         - 19/03/2024 - major - Added filter to reduce false positives
+        - 13/09/2024 - major - Removed filter for an intake as the parsing has been fixed and the rules therefore works properly for that intake.
             
 ??? abstract "Taskhost Wrong Parent"
     
@@ -7113,6 +7173,7 @@ Rules catalog includes **942 built-in detection rules** ([_last update on 2024-0
         - 04/07/2023 - major - Added filter to reduce false positives
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
         - 19/03/2024 - major - Added filter to reduce false positives
+        - 13/09/2024 - major - Removed filter for an intake as the parsing has been fixed and the rules therefore works properly for that intake.
             
 ??? abstract "Taskhost or Taskhostw Suspicious Child Found"
     
@@ -7136,6 +7197,7 @@ Rules catalog includes **942 built-in detection rules** ([_last update on 2024-0
         - 04/07/2023 - major - Added filter to reduce false positives
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
         - 19/03/2024 - major - Added filter to reduce false positives
+        - 13/09/2024 - major - Removed filter for an intake as the parsing has been fixed and the rules therefore works properly for that intake.
             
 ??? abstract "Userinit Wrong Parent"
     
@@ -7149,6 +7211,7 @@ Rules catalog includes **942 built-in detection rules** ([_last update on 2024-0
         - 04/07/2023 - major - Added filter to reduce false positives
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
         - 19/03/2024 - major - Added filter to reduce false positives
+        - 13/09/2024 - major - Removed filter for an intake as the parsing has been fixed and the rules therefore works properly for that intake.
             
 ??? abstract "WMI Persistence Command Line Event Consumer"
     
@@ -7168,6 +7231,7 @@ Rules catalog includes **942 built-in detection rules** ([_last update on 2024-0
         - 04/07/2023 - major - Added filter to reduce false positives
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
         - 19/03/2024 - major - Added filter to reduce false positives
+        - 13/09/2024 - major - Removed filter for an intake as the parsing has been fixed and the rules therefore works properly for that intake.
             
 ??? abstract "Winlogon wrong parent"
     
@@ -7180,6 +7244,7 @@ Rules catalog includes **942 built-in detection rules** ([_last update on 2024-0
         - 04/07/2023 - major - Added filter to reduce false positives
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
         - 19/03/2024 - major - Added filter to reduce false positives
+        - 13/09/2024 - major - Removed filter for an intake as the parsing has been fixed and the rules therefore works properly for that intake.
             
 ??? abstract "Winrshost Wrong Parent"
     
@@ -7193,6 +7258,7 @@ Rules catalog includes **942 built-in detection rules** ([_last update on 2024-0
         - 04/07/2023 - major - Added filter to reduce false positives
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
         - 19/03/2024 - major - Added filter to reduce false positives
+        - 13/09/2024 - major - Removed filter for an intake as the parsing has been fixed and the rules therefore works properly for that intake.
             
 ??? abstract "Winword wrong parent"
     
@@ -7206,6 +7272,7 @@ Rules catalog includes **942 built-in detection rules** ([_last update on 2024-0
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
         - 19/03/2024 - major - Added filter to reduce false positives
         - 12/09/2024 - minor - Adding filter to reduce false positives.
+        - 13/09/2024 - major - Removed filter for an intake as the parsing has been fixed and the rules therefore works properly for that intake.
             
 ??? abstract "Wmiprvse Wrong Parent"
     
@@ -7219,6 +7286,7 @@ Rules catalog includes **942 built-in detection rules** ([_last update on 2024-0
         - 04/07/2023 - major - Added filter to reduce false positives
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
         - 19/03/2024 - major - Added filter to reduce false positives
+        - 13/09/2024 - major - Removed filter for an intake as the parsing has been fixed and the rules therefore works properly for that intake.
             
 ??? abstract "Wsmprovhost Wrong Parent"
     
@@ -7233,6 +7301,7 @@ Rules catalog includes **942 built-in detection rules** ([_last update on 2024-0
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
         - 25/10/2023 - minor - Adding filter to reduce false positives.
         - 19/03/2024 - major - Added filter to reduce false positives
+        - 13/09/2024 - major - Removed filter for an intake as the parsing has been fixed and the rules therefore works properly for that intake.
             
 **Event Triggered Execution**
 
@@ -7720,6 +7789,7 @@ Rules catalog includes **942 built-in detection rules** ([_last update on 2024-0
         - 04/07/2023 - major - Added filter to reduce false positives
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
         - 19/03/2024 - major - Added filter to reduce false positives
+        - 13/09/2024 - major - Removed filter for an intake as the parsing has been fixed and the rules therefore works properly for that intake.
             
 ??? abstract "Formbook Hijacked Process Command"
     
@@ -7847,6 +7917,7 @@ Rules catalog includes **942 built-in detection rules** ([_last update on 2024-0
         - 04/07/2023 - major - Added filter to reduce false positives
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
         - 19/03/2024 - major - Added filter to reduce false positives
+        - 13/09/2024 - major - Removed filter for an intake as the parsing has been fixed and the rules therefore works properly for that intake.
             
 ??? abstract "Malicious Named Pipe"
     
@@ -7892,6 +7963,7 @@ Rules catalog includes **942 built-in detection rules** ([_last update on 2024-0
         - 04/07/2023 - major - Added filter to reduce false positives
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
         - 19/03/2024 - major - Added filter to reduce false positives
+        - 13/09/2024 - major - Removed filter for an intake as the parsing has been fixed and the rules therefore works properly for that intake.
             
 ??? abstract "Searchprotocolhost Wrong Parent"
     
@@ -7905,6 +7977,7 @@ Rules catalog includes **942 built-in detection rules** ([_last update on 2024-0
         - 04/07/2023 - major - Added filter to reduce false positives
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
         - 12/03/2024 - minor - Added filter to reduce false positives
+        - 13/09/2024 - major - Removed filter for an intake as the parsing has been fixed and the rules therefore works properly for that intake.
             
 ??? abstract "Smss Wrong Parent"
     
@@ -7919,6 +7992,7 @@ Rules catalog includes **942 built-in detection rules** ([_last update on 2024-0
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
         - 19/03/2024 - major - Added filter to reduce false positives
         - 05/04/2024 - major - Added filter to reduce false positives
+        - 13/09/2024 - major - Removed filter for an intake as the parsing has been fixed and the rules therefore works properly for that intake.
             
 ??? abstract "Spoolsv Wrong Parent"
     
@@ -7932,6 +8006,7 @@ Rules catalog includes **942 built-in detection rules** ([_last update on 2024-0
         - 04/07/2023 - major - Added filter to reduce false positives
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
         - 19/03/2024 - major - Added filter to reduce false positives
+        - 13/09/2024 - major - Removed filter for an intake as the parsing has been fixed and the rules therefore works properly for that intake.
             
 ??? abstract "Suspicious Process Requiring DLL Starts Without DLL"
     
@@ -7955,6 +8030,7 @@ Rules catalog includes **942 built-in detection rules** ([_last update on 2024-0
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
         - 31/01/2024 - minor - Adding filters to reduce false positives
         - 19/03/2024 - major - Added filter to reduce false positives
+        - 13/09/2024 - major - Removed filter for an intake as the parsing has been fixed and the rules therefore works properly for that intake.
             
 ??? abstract "Taskhost Wrong Parent"
     
@@ -7968,6 +8044,7 @@ Rules catalog includes **942 built-in detection rules** ([_last update on 2024-0
         - 04/07/2023 - major - Added filter to reduce false positives
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
         - 19/03/2024 - major - Added filter to reduce false positives
+        - 13/09/2024 - major - Removed filter for an intake as the parsing has been fixed and the rules therefore works properly for that intake.
             
 ??? abstract "Taskhostw Wrong Parent"
     
@@ -7981,6 +8058,7 @@ Rules catalog includes **942 built-in detection rules** ([_last update on 2024-0
         - 04/07/2023 - major - Added filter to reduce false positives
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
         - 19/03/2024 - major - Added filter to reduce false positives
+        - 13/09/2024 - major - Removed filter for an intake as the parsing has been fixed and the rules therefore works properly for that intake.
             
 ??? abstract "Wmiprvse Wrong Parent"
     
@@ -7994,6 +8072,7 @@ Rules catalog includes **942 built-in detection rules** ([_last update on 2024-0
         - 04/07/2023 - major - Added filter to reduce false positives
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
         - 19/03/2024 - major - Added filter to reduce false positives
+        - 13/09/2024 - major - Removed filter for an intake as the parsing has been fixed and the rules therefore works properly for that intake.
             
 ??? abstract "Wsmprovhost Wrong Parent"
     
@@ -8008,6 +8087,7 @@ Rules catalog includes **942 built-in detection rules** ([_last update on 2024-0
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
         - 25/10/2023 - minor - Adding filter to reduce false positives.
         - 19/03/2024 - major - Added filter to reduce false positives
+        - 13/09/2024 - major - Removed filter for an intake as the parsing has been fixed and the rules therefore works properly for that intake.
             
 **Scripting**
 
