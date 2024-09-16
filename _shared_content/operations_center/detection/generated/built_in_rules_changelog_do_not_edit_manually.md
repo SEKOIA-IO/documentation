@@ -1,4 +1,4 @@
-Changelog _last update on 2024-09-13_
+Changelog _last update on 2024-09-16_
 
 ## Changelog
 
@@ -25,6 +25,9 @@ Changelog _last update on 2024-09-13_
     
 ### Logonui Wrong Parent
   - 13/09/2024 - major - Removed filter for an intake as the parsing has been fixed and the rules therefore works properly for that intake.
+    
+### Microsoft Office Product Spawning Windows Shell
+  - 13/09/2024 - major - Adding filters to reduce false positives and updated the effort level to master as it is a rule highly dependent on the environment.
     
 ### Searchprotocolhost Wrong Parent
   - 13/09/2024 - major - Removed filter for an intake as the parsing has been fixed and the rules therefore works properly for that intake.
@@ -754,9 +757,6 @@ Changelog _last update on 2024-09-13_
     
 ### Inhibit System Recovery Deleting Backups
   - 31/01/2024 - minor - Improve selection filter
-    
-### Microsoft Office Product Spawning Windows Shell
-  - 23/01/2024 - minor - Adding elements to increase detection and filters to reduce false positives.
     
 ### Suspicious Process Requiring DLL Starts Without DLL
   - 22/01/2024 - minor - Added filter to reduce false positives
