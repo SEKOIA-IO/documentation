@@ -3062,6 +3062,7 @@ Rules catalog includes **944 built-in detection rules** ([_last update on 2024-0
     
     - **Changelog:**
     
+        - 16/09/2024 - minor - File paths added to filter some false positives.
         - 18/09/2023 - minor - File paths added to filter some false positives.
         - 13/03/2023 - minor - Extended the list of suspicious process names being spawned from explorer.exe
             
