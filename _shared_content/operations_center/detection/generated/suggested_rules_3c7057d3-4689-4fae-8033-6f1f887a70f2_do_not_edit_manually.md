@@ -361,7 +361,7 @@ The following Sekoia.io built-in rules match the intake **HarfangLab EDR**. This
     
     The csrss.exe process (csrss stands for Client / Server Runtime Subsystem) is a generic Windows process used to manage windows and Windows graphics. This rule analyse if the parent of this process is a legitimate one or not.
     
-    - **Effort:** advanced
+    - **Effort:** master
 
 ??? abstract "DHCP Callout DLL Installation"
     
@@ -493,7 +493,7 @@ The following Sekoia.io built-in rules match the intake **HarfangLab EDR**. This
     
     Dllhost.exe is a process belonging to Microsoft Windows Operating System. The dllhost.exe file manages DLL based applications. This rule analyse if the parent of this process is a legitimate one or not.
     
-    - **Effort:** advanced
+    - **Effort:** master
 
 ??? abstract "Docker Escape Bind Mount"
     
@@ -643,7 +643,7 @@ The following Sekoia.io built-in rules match the intake **HarfangLab EDR**. This
     
     Detects suspicious spawning of explorer.exe process created by the rundll32.exe or regsvr32.exe. This behaviour is abnormal. Malware injecting itself into the explorer.exe process is quite common, in order to evade process-based defenses.
     
-    - **Effort:** advanced
+    - **Effort:** master
 
 ??? abstract "FLTMC command usage"
     
@@ -955,13 +955,13 @@ The following Sekoia.io built-in rules match the intake **HarfangLab EDR**. This
     
     Logonui.exe is a file associated with the Logon user interface. The login user interface is an essential part of the Windows operating system. It doesn't only make it easy for the user to log in to the PC but also determines whether the user has logged in and logged out correctly and makes it easy to switch between users. This rule checks if the parent of this process is a legitimate one or not.
     
-    - **Effort:** advanced
+    - **Effort:** master
 
 ??? abstract "Lsass Wrong Parent"
     
     Lsass ensures the identification of users (domain users or local users). Domain users are identified based on information in the Active Directory. Local users are identified based on information from the Security Account Manager (SAM) local database. This rule checks if the parent of this process is a legitimate one or not.
     
-    - **Effort:** advanced
+    - **Effort:** master
 
 ??? abstract "MMC Spawning Windows Shell"
     
@@ -1795,7 +1795,7 @@ The following Sekoia.io built-in rules match the intake **HarfangLab EDR**. This
     
     Detects if the Search Indexer was executed by a non-legitimate parent process. Search Indexer is the Windows service that handles indexing of your files for Windows Search.
     
-    - **Effort:** advanced
+    - **Effort:** master
 
 ??? abstract "Searchprotocolhost Child Found"
     
@@ -1807,7 +1807,7 @@ The following Sekoia.io built-in rules match the intake **HarfangLab EDR**. This
     
     Detects if the Search Protocol Host process was executed by a non-legitimate parent process. Search Protocol Host is part of the Windows Indexing Service, a service indexing files on the local drive making them easier to search.
     
-    - **Effort:** advanced
+    - **Effort:** master
 
 ??? abstract "Security Support Provider (SSP) Added to LSA Configuration"
     
@@ -1843,7 +1843,7 @@ The following Sekoia.io built-in rules match the intake **HarfangLab EDR**. This
     
     Detects if the Smss process was executed by a non-legitimate parent process. Session Manager Subsystem (smss) process is a component of the Microsoft Windows NT family of operating systems.
     
-    - **Effort:** advanced
+    - **Effort:** master
 
 ??? abstract "Socat Relaying Socket"
     
@@ -1873,7 +1873,7 @@ The following Sekoia.io built-in rules match the intake **HarfangLab EDR**. This
     
     Detects if the Spoolsv process was executed by a non-legitimate parent process. Printer Spooler Service (Spoolsv) process is responsible for managing spooled print/fax jobs.
     
-    - **Effort:** advanced
+    - **Effort:** master
 
 ??? abstract "Spyware Persistence Using Schtasks"
     
@@ -2167,7 +2167,7 @@ The following Sekoia.io built-in rules match the intake **HarfangLab EDR**. This
     
     Detects if the svchost.exe process was executed by a non-legitimate parent process. Svchost (Service Host Process) is a generic host process name for services that run from dynamic-link libraries (DLLs).
     
-    - **Effort:** advanced
+    - **Effort:** master
 
 ??? abstract "Sysmon Windows File Block Executable"
     
@@ -2203,7 +2203,7 @@ The following Sekoia.io built-in rules match the intake **HarfangLab EDR**. This
     
     Detects if the Taskhost process was executed by a non-legitimate parent process. Taskhost is the process of the Windows Task Manager which lists the processes that are currently running on the computer system.
     
-    - **Effort:** advanced
+    - **Effort:** master
 
 ??? abstract "Taskhost or Taskhostw Suspicious Child Found"
     
@@ -2215,7 +2215,7 @@ The following Sekoia.io built-in rules match the intake **HarfangLab EDR**. This
     
     Detects if the Taskhostw process was executed by a non-legitimate parent process. Taskhostw is a software component of Windows service start manager, it starts DLL-based Windows services when the computer boots up.
     
-    - **Effort:** advanced
+    - **Effort:** master
 
 ??? abstract "Telegram Bot API Request"
     
@@ -2281,7 +2281,7 @@ The following Sekoia.io built-in rules match the intake **HarfangLab EDR**. This
     
     Userinit.exe is a key process in the Windows operating system. On boot-up it manages the different start up sequences needed, such as establishing network connection and starting up the Windows shell. This rule analyse if the parent of this process is a legitimate one or not.
     
-    - **Effort:** advanced
+    - **Effort:** master
 
 ??? abstract "Venom Multi-hop Proxy agent detection"
     
@@ -2395,19 +2395,19 @@ The following Sekoia.io built-in rules match the intake **HarfangLab EDR**. This
     
     Windows Boot is a background application launcher for the Windows operating system. Wininit.exe is responsible for performing the Windows initialization process. This rule analyse if the parent of this process is a legitimate one or not.
     
-    - **Effort:** advanced
+    - **Effort:** master
 
 ??? abstract "Winlogon wrong parent"
     
     Winlogon.exe is a process that performs the Windows login management function, handling user login and logout in Windows. You see this process in action whenever the operating system asks you for your username and password. It is also responsible for loading user profiles after login, this supports automated login (when relevant) and keyboard and mouse inactivity monitoring to decide when to invoke the screen saver. This rule analyse if the parent of this process is a legitimate one or not.
     
-    - **Effort:** advanced
+    - **Effort:** master
 
 ??? abstract "Winrshost Wrong Parent"
     
     Detects if the Winrshosts process was executed by a non-legitimate parent process The winrshost.exe is a Host Process for WinRM's Remote Shell plugin.
     
-    - **Effort:** advanced
+    - **Effort:** master
 
 ??? abstract "Winword Document Droppers"
     
@@ -2419,7 +2419,7 @@ The following Sekoia.io built-in rules match the intake **HarfangLab EDR**. This
     
     Word is a well known Windows process used to read documents. Some malicious process could use it to run malicious code. The rule tries to detect winword.exe launched with a suspect parent process name.
     
-    - **Effort:** advanced
+    - **Effort:** master
 
 ??? abstract "Wmic Process Call Creation"
     
@@ -2443,13 +2443,13 @@ The following Sekoia.io built-in rules match the intake **HarfangLab EDR**. This
     
     Detects if the Wmiprvse process was executed by a non-legitimate parent process. The wmiprvse.exe process (wmiprvse stands for Microsoft Windows Management Instrumentation) is a generic process for managing clients on Windows. It is initialized the first time a client application connects and allows you to monitor system resources. This requires Windows command line logging.
     
-    - **Effort:** advanced
+    - **Effort:** master
 
 ??? abstract "Wsmprovhost Wrong Parent"
     
     Detects if the Wsmprovhost process was executed by a non-legitimate parent process. The PowerShell host wsmprovhost.exe is a proxy process executed remotely through PowerShell when using Windows Remote Management (WinRM).
     
-    - **Effort:** advanced
+    - **Effort:** master
 
 ??? abstract "XCopy Suspicious Usage"
     

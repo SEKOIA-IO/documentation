@@ -553,7 +553,7 @@ The following Sekoia.io built-in rules match the intake **Sophos Analysis Threat
     
     Detects suspicious spawning of explorer.exe process created by the rundll32.exe or regsvr32.exe. This behaviour is abnormal. Malware injecting itself into the explorer.exe process is quite common, in order to evade process-based defenses.
     
-    - **Effort:** advanced
+    - **Effort:** master
 
 ??? abstract "FLTMC command usage"
     
@@ -1963,7 +1963,7 @@ The following Sekoia.io built-in rules match the intake **Sophos Analysis Threat
     
     Word is a well known Windows process used to read documents. Some malicious process could use it to run malicious code. The rule tries to detect winword.exe launched with a suspect parent process name.
     
-    - **Effort:** advanced
+    - **Effort:** master
 
 ??? abstract "Wmic Process Call Creation"
     
