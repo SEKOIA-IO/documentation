@@ -77,6 +77,9 @@ Palo Alto Networks offers an enterprise cybersecurity platform which provides ne
 5. In the `Profile Type` drop-down, select `Profiles` or `Groups`, and then select the security profiles or `Group Profiles` required to trigger log generation and forwarding.
 6. Select `Log At Session End` check boxes, and click `OK`.
 
+!!! Warning
+	Log At Session Start consumes more resources than logging only at the session end. In most cases, you only Log At Session End. Enable both Log At Session Start and Log At Session End only for troubleshooting, for long-lived tunnel sessions such as GRE tunnels (you can't see these sessions in the ACC unless you log at the start of the session), and to gain visibility into Operational Technology/Industrial Control Systems (OT/ICS) sessions, which are also long-lived sessions.
+
 For detailed information about configuring a log forwarding profile and assigning the profile to a policy rule, see [Configure Log Forwarding](https://docs.paloaltonetworks.com/pan-os/11-1/pan-os-admin/monitoring/configure-log-forwarding#id1443a62b-8a0b-41db-a08d-5df934bf0ffc_idd40c0d1a-7191-4616-9573-f02a99352eae)
 
 ##### Configure syslog forwarding for System, Configuration, GlobalProtect, HIP Match, and User-ID logs.
