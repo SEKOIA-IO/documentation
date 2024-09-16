@@ -1033,7 +1033,7 @@ The following Sekoia.io built-in rules match the intake **Stormshield SES**. Thi
     
     Detects a Windows command or scripting interpreter executable started from Microsoft Word, Excel, Powerpoint, Publisher and Visio. This typically indicates the parent process launched a malicious macro, or run an exploit. This infection vector is very common and could lead to the deployment of harmful malware.
     
-    - **Effort:** advanced
+    - **Effort:** master
 
 ??? abstract "Microsoft Office Spawning Script"
     

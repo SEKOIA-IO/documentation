@@ -1,4 +1,4 @@
-Rules catalog includes **944 built-in detection rules** ([_last update on 2024-09-13_](rules_changelog.md)).
+Rules catalog includes **944 built-in detection rules** ([_last update on 2024-09-16_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Identity Information**
 
@@ -3339,11 +3339,12 @@ Rules catalog includes **944 built-in detection rules** ([_last update on 2024-0
     
     Detects a Windows command or scripting interpreter executable started from Microsoft Word, Excel, Powerpoint, Publisher and Visio. This typically indicates the parent process launched a malicious macro, or run an exploit. This infection vector is very common and could lead to the deployment of harmful malware.
     
-    - **Effort:** advanced
+    - **Effort:** master
     
     - **Changelog:**
     
         - 23/01/2024 - minor - Adding elements to increase detection and filters to reduce false positives.
+        - 13/09/2024 - major - Adding filters to reduce false positives and updated the effort level to master as it is a rule highly dependent on the environment.
             
 ??? abstract "Microsoft Office Spawning Script"
     
