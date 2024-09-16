@@ -40,6 +40,26 @@ Block the provided IOC
 | `value` | `string` | The value of the IOC to block |
 | `type` | `string` | Type of the IOC to block: md5, sha256 |
 
+### Deisolate hosts
+
+Deisolate the provided hosts by their agent IDs
+
+**Arguments**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `id` | `array` | The list of identifiers of agents to deisolate |
+
+### Isolate hosts
+
+Isolate the provided hosts by their agent IDs
+
+**Arguments**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `id` | `array` | The list of identifiers of agents to isolate |
+
 ### Monitor IOC
 
 Enable detection for the provided IOC
