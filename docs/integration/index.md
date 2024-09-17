@@ -20,6 +20,10 @@ This section contains a wealth of [automation actions](/integration/action_libra
 
 For those looking to extend the capabilities of Sekoia.io SOC Platform, this section provides a [step-by-step guide on how to develop custom integrations](/integration/develop_integration/overview/). You'll learn about our integration framework, best practices, and how to contribute to our ecosystem.
 
+### FAQ Section
+
+To assist users in quickly finding answers to common questions and issues, we have introduced an FAQ section within our Integrations documentation. This section is categorized to cover a wide range of topics, from general questions and setup guides to troubleshooting tips and best practices. Whether you're new to integrations or seeking advanced configuration guidance, our FAQ section is designed to provide comprehensive support.
+
 ## Valuable Resources
 
 To enhance your experience and keep you informed about our latest developments, we recommend exploring the following resources:

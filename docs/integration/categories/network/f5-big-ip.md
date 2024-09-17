@@ -83,7 +83,7 @@ You can further refine your configuration:
 
 {!_shared_content/integration/forwarder_configuration.md!}
 
-{!_shared_content/operations_center/integrations/generated/a14b1141-2d61-414b-bf79-da99b487b1af.md!} Sample
+{!_shared_content/operations_center/integrations/generated/a14b1141-2d61-414b-bf79-da99b487b1af_sample.md!}
 
 {!_shared_content/integration/detection_section.md!}
 
