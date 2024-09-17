@@ -121,15 +121,17 @@ To get information about them check [the documentation about this endpoint](http
 ### Import indicators from file
 
 In this sample we will import IOC from a file. The formats currently supported along with their mime types are:
+
 - CSV: `text/csv`, `application/csv` or `text/plain`
 - XLS: `application/vnd.ms-excel` or `application/octet-stream`
 - XLSX: `application/zip` or `application/vnd.openxmlformats-officedocument.spreadsheetml.sheet`
 
 The first step consists of uploading the file to obtain a preview. In the response of this requests we will obtain:
- - A file handle that must be used to process the file
- - A preview of the first lines of the file
- - The detected mapping: Which column contains the indicator, the validity dates, the kill chain, the threat, ...
- - Whether the first line has been detected to be ignored or not
+
+- A file handle that must be used to process the file
+- A preview of the first lines of the file
+- The detected mapping: Which column contains the indicator, the validity dates, the kill chain, the threat, ...
+- Whether the first line has been detected to be ignored or not
 
 Once the preview has been generated, if everything seems right the file can be processed.
 The last step is to wait for the file to be completely processed. Depending on the number of indicators it can take a bit of time.
@@ -160,6 +162,7 @@ content = response.json()
 # Then we ask the API to process the file
 # The API guessed the mapping and whether the first line must be ignored or not,
 # but in this case we assume we know it and provide it manually.
+# Update this mapping depending on your files (one type per column).
 payload = {
     "file_handle": content["file_handle"],  # (4)!
     "mapping": [
