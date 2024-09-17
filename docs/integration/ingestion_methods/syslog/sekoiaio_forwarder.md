@@ -367,6 +367,7 @@ The fundamental message flow within an rsyslog instance is as follows: **Message
 At Sekoia, we have configured one input module per intake, each defined in the `intake.yaml` file. Each input module is paired with a corresponding ruleset and a specific action. 
 
 For instance, for one defined intake, there is:
+
 - One input module responsible for collecting events over UDP/TCP on the specified port
 - One ruleset to evaluate conditions
 - One action to forward events to Sekoia with the appropriate intake key.
