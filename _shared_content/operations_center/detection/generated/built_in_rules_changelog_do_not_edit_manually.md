@@ -8,68 +8,11 @@ Changelog _last update on 2024-09-16_
 ### Microsoft Defender XDR Cloud App Security Alert
   - 13/09/2024 - major - Update service name value following Microsoft change
     
-### Svchost Wrong Parent
-  - 13/09/2024 - major - Removed filter for an intake as the parsing has been fixed and the rules therefore works properly for that intake.
-    
-### Spoolsv Wrong Parent
-  - 13/09/2024 - major - Removed filter for an intake as the parsing has been fixed and the rules therefore works properly for that intake.
-    
-### Csrss Wrong Parent
-  - 13/09/2024 - major - Removed filter for an intake as the parsing has been fixed and the rules therefore works properly for that intake.
-    
-### Lsass Wrong Parent
-  - 13/09/2024 - major - Removed filter for an intake as the parsing has been fixed and the rules therefore works properly for that intake.
-    
-### Userinit Wrong Parent
-  - 13/09/2024 - major - Removed filter for an intake as the parsing has been fixed and the rules therefore works properly for that intake.
-    
-### Logonui Wrong Parent
-  - 13/09/2024 - major - Removed filter for an intake as the parsing has been fixed and the rules therefore works properly for that intake.
-    
 ### Microsoft Office Product Spawning Windows Shell
   - 13/09/2024 - major - Adding filters to reduce false positives and updated the effort level to master as it is a rule highly dependent on the environment.
     
-### Searchprotocolhost Wrong Parent
-  - 13/09/2024 - major - Removed filter for an intake as the parsing has been fixed and the rules therefore works properly for that intake.
-    
-### Wininit Wrong Parent
-  - 13/09/2024 - major - Removed filter for an intake as the parsing has been fixed and the rules therefore works properly for that intake.
-    
-### Winrshost Wrong Parent
-  - 13/09/2024 - major - Removed filter for an intake as the parsing has been fixed and the rules therefore works properly for that intake.
-    
-### Explorer Wrong Parent
-  - 13/09/2024 - major - Removed filter for an intake as the parsing has been fixed and the rules therefore works properly for that intake.
-    
-### Searchindexer Wrong Parent
-  - 13/09/2024 - major - Removed filter for an intake as the parsing has been fixed and the rules therefore works properly for that intake.
-    
-### Taskhost Wrong Parent
-  - 13/09/2024 - major - Removed filter for an intake as the parsing has been fixed and the rules therefore works properly for that intake.
-    
-### Smss Wrong Parent
-  - 13/09/2024 - major - Removed filter for an intake as the parsing has been fixed and the rules therefore works properly for that intake.
-    
-### Taskhostw Wrong Parent
-  - 13/09/2024 - major - Removed filter for an intake as the parsing has been fixed and the rules therefore works properly for that intake.
-    
-### Winlogon wrong parent
-  - 13/09/2024 - major - Removed filter for an intake as the parsing has been fixed and the rules therefore works properly for that intake.
-    
-### Dllhost Wrong Parent
-  - 13/09/2024 - major - Removed filter for an intake as the parsing has been fixed and the rules therefore works properly for that intake.
-    
-### Wsmprovhost Wrong Parent
-  - 13/09/2024 - major - Removed filter for an intake as the parsing has been fixed and the rules therefore works properly for that intake.
-    
-### Gpscript Suspicious Parent
-  - 13/09/2024 - major - Removed filter for an intake as the parsing has been fixed and the rules therefore works properly for that intake.
-    
 ### Winword wrong parent
-  - 13/09/2024 - major - Removed filter for an intake as the parsing has been fixed and the rules therefore works properly for that intake.
-    
-### Wmiprvse Wrong Parent
-  - 13/09/2024 - major - Removed filter for an intake as the parsing has been fixed and the rules therefore works properly for that intake.
+  - 12/09/2024 - minor - Adding filter to reduce false positives.
     
 ### DCSync Attack
   - 05/09/2024 - minor - Changing name of elements.
@@ -233,6 +176,9 @@ Changelog _last update on 2024-09-16_
 ### NjRat Registry Changes
   - 07/06/2024 - major - Update pattern to reduce false positives
     
+### Logonui Wrong Parent
+  - 07/06/2024 - major - Added filter to reduce false positives
+    
 ### CMSTP UAC Bypass via COM Object Access
   - 28/05/2024 - minor - Add pattern to filter to improve coverage
     
@@ -283,6 +229,9 @@ Changelog _last update on 2024-09-16_
     
 ### Suspicious Email Attachment Received
   - 15/04/2024 - minor - Update email from field to latest parser format
+    
+### Smss Wrong Parent
+  - 05/04/2024 - major - Added filter to reduce false positives
     
 ### Alternate PowerShell Hosts Pipe
   - 04/04/2024 - major - Rule's pattern field changed
@@ -587,8 +536,59 @@ Changelog _last update on 2024-09-16_
 ### Remote Task Creation Via ATSVC Named Pipe
   - 21/03/2024 - minor - change filter to ACL hex value
     
+### Svchost Wrong Parent
+  - 19/03/2024 - major - Added filter to reduce false positives
+    
+### Spoolsv Wrong Parent
+  - 19/03/2024 - major - Added filter to reduce false positives
+    
+### Csrss Wrong Parent
+  - 19/03/2024 - major - Added filter to reduce false positives
+    
+### Lsass Wrong Parent
+  - 19/03/2024 - major - Added filter to reduce false positives
+    
+### Userinit Wrong Parent
+  - 19/03/2024 - major - Added filter to reduce false positives
+    
+### Wininit Wrong Parent
+  - 19/03/2024 - major - Added filter to reduce false positives
+    
+### Winrshost Wrong Parent
+  - 19/03/2024 - major - Added filter to reduce false positives
+    
+### Explorer Wrong Parent
+  - 19/03/2024 - major - Added filter to reduce false positives
+    
+### Searchindexer Wrong Parent
+  - 19/03/2024 - major - Added filter to reduce false positives
+    
+### Taskhost Wrong Parent
+  - 19/03/2024 - major - Added filter to reduce false positives
+    
+### Taskhostw Wrong Parent
+  - 19/03/2024 - major - Added filter to reduce false positives
+    
+### Winlogon wrong parent
+  - 19/03/2024 - major - Added filter to reduce false positives
+    
+### Dllhost Wrong Parent
+  - 19/03/2024 - major - Added filter to reduce false positives
+    
+### Wsmprovhost Wrong Parent
+  - 19/03/2024 - major - Added filter to reduce false positives
+    
+### Gpscript Suspicious Parent
+  - 19/03/2024 - major - Added filter to reduce false positives
+    
+### Wmiprvse Wrong Parent
+  - 19/03/2024 - major - Added filter to reduce false positives
+    
 ### Microsoft 365 Suspicious Inbox Rule
   - 13/03/2024 - minor - Add another suspicious folder.
+    
+### Searchprotocolhost Wrong Parent
+  - 12/03/2024 - minor - Added filter to reduce false positives
     
 ### Listing Systemd Environment
   - 06/03/2024 - minor - Effort level was adapted according to the observed hits for the rule
