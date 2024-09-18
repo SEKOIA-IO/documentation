@@ -599,6 +599,10 @@ nav:
         - Authentications: integration/develop_integration/formats/best_practices/authentications.md
         - Networks: integration/develop_integration/formats/best_practices/networks.md
         - Endpoints: integration/develop_integration/formats/best_practices/endpoints.md
+  - FAQ:
+    - Overview: integration/faq/overview.md
+    - General Questions:
+      - Bug VS Improvement Requests: integration/faq/general_questions/bug_and_improvement_requests.md
 plugins:
 - search: null
 - redirects:
