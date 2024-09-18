@@ -78,9 +78,13 @@ Go to the Sekoia.io [playbook page](https://app.sekoia.io/operations/playbooks),
 
 -  Create a **Trigger configuration** using:
     * Your service account credentials from your Google Cloud environment extracted on a JSON file
+    * Subscription ID and Cloud Region extracted from the Subscription Endpoint on Netskope Event Streaming section
     * Type the `Intake key` created on the previous
     * Select the `application name` what you to fetch events from
     * Type the `Admin email`
+ 
+!!! Note
+    Please copy past the whole private key value during the procedure, including the begining and ending separators.
 
 - Click on the **Save** button
 - **Activate the playbook** with the toggle button on the top right corner of the page
