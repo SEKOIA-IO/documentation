@@ -52,6 +52,13 @@ Find more information about the subscription key on the [official google documen
 }
 ```
 
+5.  Go to the `Event Streaming` section, and extract two sub-strings of the `Subscription Endpoint` that matchs the following patterns:
+
+| Information to collect | Example of values contained in the Subscription Endpoint |
+| --- | --- |
+| Subscription ID | prod-goskope-euXXX-sub-streaming-XXXXX-XXXXXXXXXX |
+| Cloud Region | europe-west3 |
+
 ### Instruction on Sekoia
 
 !!! Note
