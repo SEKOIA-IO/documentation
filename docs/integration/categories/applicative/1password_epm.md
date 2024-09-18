@@ -61,23 +61,23 @@ Go to your Sekoia.io [Intakes page](https://app.sekoia.io/operations/intakes), a
 
 Go to the Sekoia.io [playbook page](https://app.sekoia.io/operations/playbooks), and follow these steps:
 
-- Click on **+ PLAYBOOK** button to create a new one
-- Select **Use a template**
-- Search for `1Password` keyword on the search bar and select the template named `Fetch new events from 1Password EPM`
-- Create a **Module configuration** using 
+1. Click on **+ PLAYBOOK** button to create a new one
+2. Select **Use a template**
+3. Search for `1Password` keyword on the search bar and select the template named `Fetch new events from 1Password EPM`
+4. Create a **Module configuration** using 
   - API token from `How to create an API token` step. 
   - Base URL depending by the server that hosts your 1Password account:
   
-| If your account is on:	 | Your base URL is:                                                                                          |
-|-------------------------|------------------------------------------------------------------------------------------------------------|
-| 1Password.com           | https://events.1password.com (1Password Business) <br/>https://events.ent.1password.com (1Password Enterprise)  |
-| 1Password.ca            | https://events.1password.ca                                                                                |
-| 1Password.eu            | https://events.1password.eu                                                                                |
+    | If your account is on:	 | Your base URL is:                                                                                          |
+    |-------------------------|------------------------------------------------------------------------------------------------------------|
+    | 1Password.com           | https://events.1password.com (1Password Business) <br/>https://events.ent.1password.com (1Password Enterprise)  |
+    | 1Password.ca            | https://events.1password.ca                                                                                |
+    | 1Password.eu            | https://events.1password.eu                                                                                |
 
-Name the module configuration as you wish
-- Create a **Trigger configuration** using `Intake key` created on the previous step
-- Click on the **Save** button
-- **Activate the playbook** with the toggle button on the top right corner of the page
+    Name the module configuration as you wish
+
+5. Create a **Trigger configuration** using `Intake key` created on the previous step
+6. Click on the **Save** button
+7. Toggle **Activate the playbook** on the top right corner of the page
 
 #### Enjoy your events on the [Events page](https://app.sekoia.io/operations/events)
-
