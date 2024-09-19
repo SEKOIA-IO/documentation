@@ -171,6 +171,24 @@ The following Sekoia.io built-in rules match the intake **Varonis Data Security*
     
     - **Effort:** master
 
+??? abstract "Varonis Many Accounts Disabled"
+    
+    This rule identifies a high number of account disabled.
+    
+    - **Effort:** master
+
+??? abstract "Varonis Many File Created and Deleted"
+    
+    This rule identifies a high number of file created and deleted on the same host. It is a typical ransomware behavior.
+    
+    - **Effort:** master
+
+??? abstract "Varonis Massive Dowloads By A Single User"
+    
+    This rule identifies a high number of File dowloaded by a single user.
+    
+    - **Effort:** master
+
 ??? abstract "WCE wceaux.dll Creation"
     
     Detects wceaux.dll creation while Windows Credentials Editor (WCE) is executed.
