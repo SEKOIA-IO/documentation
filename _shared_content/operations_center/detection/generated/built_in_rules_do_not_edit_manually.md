@@ -1,4 +1,4 @@
-Rules catalog includes **944 built-in detection rules** ([_last update on 2024-09-17_](rules_changelog.md)).
+Rules catalog includes **947 built-in detection rules** ([_last update on 2024-09-19_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Identity Information**
 
@@ -2961,6 +2961,7 @@ Rules catalog includes **944 built-in detection rules** ([_last update on 2024-0
     
     - **Changelog:**
     
+        - 19/09/2024 - minor - File paths added to filter some false positives.
         - 30/11/2023 - minor - Update pattern with new lolbin
             
 ??? abstract "HarfangLab EDR Critical Level Rule Detection"
@@ -3062,7 +3063,7 @@ Rules catalog includes **944 built-in detection rules** ([_last update on 2024-0
     
     - **Changelog:**
     
-        - 16/09/2024 - minor - File paths added to filter some false positives.
+        - 19/09/2024 - minor - File paths added to filter some false positives.
         - 18/09/2023 - minor - File paths added to filter some false positives.
         - 13/03/2023 - minor - Extended the list of suspicious process names being spawned from explorer.exe
             
@@ -3629,6 +3630,10 @@ Rules catalog includes **944 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 19/09/2024 - minor - File paths added to filter some false positives.
+            
 ??? abstract "Zscaler ZIA Malicious Threat"
     
     Zscaler Internet Access has detected a network traffic as malicious
@@ -4997,6 +5002,12 @@ Rules catalog includes **944 built-in detection rules** ([_last update on 2024-0
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
         - 04/04/2024 - major - Rule's pattern field changed
             
+??? abstract "Varonis Many Accounts Disabled"
+    
+    This rule identifies a high number of account disabled.
+    
+    - **Effort:** master
+    
 **Web Shell**
 
 ??? abstract "Antivirus Web Shell Detection"
@@ -6751,6 +6762,12 @@ Rules catalog includes **944 built-in detection rules** ([_last update on 2024-0
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
         - 04/04/2024 - major - Rule's pattern field changed
             
+??? abstract "Varonis Many Accounts Disabled"
+    
+    This rule identifies a high number of account disabled.
+    
+    - **Effort:** master
+    
 **Web Shell**
 
 ??? abstract "Antivirus Web Shell Detection"
@@ -12981,6 +12998,18 @@ Rules catalog includes **944 built-in detection rules** ([_last update on 2024-0
     Detects SunCrypt ransomware's parameters, most of which are unique.
     
     - **Effort:** elementary
+    
+??? abstract "Varonis Many File Created and Deleted"
+    
+    This rule identifies a high number of file created and deleted on the same host. It is a typical ransomware behavior.
+    
+    - **Effort:** master
+    
+??? abstract "Varonis Massive Dowloads By A Single User"
+    
+    This rule identifies a high number of File dowloaded by a single user.
+    
+    - **Effort:** master
     
 **Service Stop**
 
