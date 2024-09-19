@@ -84,6 +84,14 @@ In this section, you will find examples of raw logs as generated natively by the
 
 
 
+=== "relay_ip_only"
+
+    ```
+	time=15:03:24.344 device_id=FFFF log_id=YY type=event subtype=smtp pri=information  user=mail ui=mail action=NONE status=N/A session_id="AAA-BBB" msg="to=<johndoe>, delay=00:00:01, xdelay=00:00:01, mailer=esmtp, pri=2290731, relay= [1.2.3.4], dsn=2.0.0, stat=Sent (ok:  Message 88943067 accepted)"
+    ```
+
+
+
 === "smtp_event_STARTTLS_client_local_certificate"
 
     ```
