@@ -52,11 +52,14 @@ Find more information about the subscription key on the [official google documen
 }
 ```
 
-5.  Also in the `Event Streaming` section, extract two sub-strings of the `Subscription Endpoint` that matchs the following patterns:
+5.  Also in the `Event Streaming` section, extract 4 sub-strings from the `Subscription Endpoint` as explained in the following example:
+
+Example of Subcription Endoint: `projects/1023456728636/locations/europe-west3-a/subscriptions/prod-goskope-eu456-sub-streaming-12345-6706281495`
 
 | Information to collect | Example of values contained in the Subscription Endpoint |
 | --- | --- |
-| Subscription ID | prod-goskope-euXXX-sub-streaming-XXXXX-XXXXXXXXXX |
+| Project ID | 1023456728636 |
+| Subscription ID | prod-goskope-eu456-sub-streaming-12345-6706281495 |
 | Cloud Region | europe-west3 |
 | Zone ID | a |
 
