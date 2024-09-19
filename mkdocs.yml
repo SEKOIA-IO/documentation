@@ -536,7 +536,7 @@ nav:
       - Jumpcloud Directory Insights: integration/action_library/iam/jumpcloud-directory-insights.md
       - Microsoft Active Directory: integration/action_library/iam/microsoft-active-directory.md
       - Microsoft Entra ID: integration/action_library/iam/microsoft-entra-id.md
-      - Microsoft Entra ID (Azure AD): integration/action_library/iam/intra-id.md
+      - Microsoft Entra ID (Azure AD): integration/action_library/iam/intra_id.md
       - Okta: integration/action_library/iam/okta.md
     - Network:
       - Broadcom Cloud Secure Web Gateway: integration/action_library/network/broadcom-cloud-secure-web-gateway.md
