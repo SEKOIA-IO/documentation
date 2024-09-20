@@ -52,6 +52,17 @@ Find more information about the subscription key on the [official google documen
 }
 ```
 
+5.  Also in the `Event Streaming` section, extract 4 sub-strings from the `Subscription Endpoint` as explained in the following example:
+
+Example of Subcription Endoint: `projects/1023456728636/locations/europe-west3-a/subscriptions/prod-goskope-eu456-sub-streaming-12345-6706281495`
+
+| Information to collect | Example of values contained in the Subscription Endpoint |
+| --- | --- |
+| Project ID | 1023456728636 |
+| Subscription ID | prod-goskope-eu456-sub-streaming-12345-6706281495 |
+| Cloud Region | europe-west3 |
+| Zone ID | a |
+
 ### Instruction on Sekoia
 
 !!! Note
@@ -71,9 +82,13 @@ Go to the Sekoia.io [playbook page](https://app.sekoia.io/operations/playbooks),
 
 -  Create a **Trigger configuration** using:
     * Your service account credentials from your Google Cloud environment extracted on a JSON file
+    * Subscription ID, Cloud Region and Zone ID extracted from the Subscription Endpoint on Netskope Event Streaming section
     * Type the `Intake key` created on the previous
     * Select the `application name` what you to fetch events from
     * Type the `Admin email`
+ 
+!!! Note
+    Please copy past the whole private key value during the procedure, including the begining and ending separators.
 
 - Click on the **Save** button
 - **Activate the playbook** with the toggle button on the top right corner of the page
