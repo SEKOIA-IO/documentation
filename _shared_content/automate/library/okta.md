@@ -32,4 +32,4 @@ Get last system logs from the OKTA platform
 
 ## Extra
 
-Module **`Okta` v2.4.1**
+Module **`Okta` v2.8.0**

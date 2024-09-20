@@ -10,6 +10,20 @@ This module accepts no configuration.
 
 ## Triggers
 
+### Office 365 management API
+
+Office 365 management API
+
+**Arguments**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `client_id` | `string` |  |
+| `client_secret` | `string` |  |
+| `tenant_id` | `string` |  |
+| `intake_key` | `string` | Intake key to use when sending events |
+
+
 ### Fetch events from MessageTrace API (deprecated)
 
 Fetch events for MessageTrace API
@@ -49,4 +63,4 @@ Fetch events for MessageTrace API (OAuth)
 
 ## Extra
 
-Module **`Microsoft Office365` v2.11**
+Module **`Microsoft Office365` v2.17.10**

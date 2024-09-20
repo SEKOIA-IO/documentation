@@ -42,23 +42,23 @@ Block the provided IOC
 
 ### Deisolate hosts
 
-Deisolate the provided hosts by their agent IDs
+Lifts containment on the host and returns its network communications to normal.
 
 **Arguments**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
-| `id` | `array` | The list of identifiers of agents to deisolate |
+| `ids` | `array` | List of host agent IDs to apply action to. |
 
 ### Isolate hosts
 
-Isolate the provided hosts by their agent IDs
+Contains the host and stops any network communications to locations other than the CrowdStrike cloud and IPs specified in your containment policy.
 
 **Arguments**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
-| `id` | `array` | The list of identifiers of agents to isolate |
+| `ids` | `array` | List of host agent IDs to apply action to. |
 
 ### Monitor IOC
 
@@ -92,8 +92,9 @@ Enable detections on the provided IOCs: md5 / sha256 file hashes, IPv4/v6 addres
 | --------- | ------- | --------------------------- |
 | `stix_objects_path` | `string` | Filepath of the STIX objects fetched from the collection |
 | `sekoia_base_url` | `string` | [Optional] Sekoia base url, used to generate direct links to IOCs |
+| `valid_for` | `integer` | If set, the playbook will remove IOCs that are older than valid_for days based on the Last modified date in CrowdStrike |
 
 
 ## Extra
 
-Module **`CrowdStrike Falcon` v1.16.1**
+Module **`CrowdStrike Falcon` v1.20.0**

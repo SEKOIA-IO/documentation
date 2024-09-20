@@ -31,4 +31,4 @@ Consume SentinelOne DeepVisibility events from S3 objects based on notifications
 
 ## Extra
 
-Module **`SentinelOneDeepVisibility` v1.0.2**
+Module **`SentinelOneDeepVisibility` v1.1.0**

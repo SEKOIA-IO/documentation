@@ -29,4 +29,4 @@ Mimecast - Email Security
 
 ## Extra
 
-Module **`Mimecast` v0.1.1**
+Module **`Mimecast` v1.0.1**

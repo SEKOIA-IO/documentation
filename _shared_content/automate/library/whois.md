@@ -32,4 +32,4 @@ Provides data enrichment for Domains, URLs, and IP addresses.
 
 ## Extra
 
-Module **`Whois` v1.21**
+Module **`Whois` v1.24.0**

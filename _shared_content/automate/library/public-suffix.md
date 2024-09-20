@@ -1,5 +1,7 @@
 # Public Suffix
 
+![Public Suffix](/assets/playbooks/library/public-suffix.png){ align=right width=150 }
+
 The [Public Suffix List](https://publicsuffix.org/) is an initiative of [Mozilla](https://www.mozilla.org/) to list of all known public suffixes
 
 ## Configuration
@@ -21,4 +23,4 @@ Get the list of private domains
 
 ## Extra
 
-Module **`Public Suffix` v1.18**
+Module **`Public Suffix` v1.21.0**

@@ -26,6 +26,8 @@ Get last M365 Email Events
 | `frequency` | `integer` | Batch frequency in seconds |
 | `tenant_id` | `string` | Identifier of your 365 Tenant |
 | `chunk_size` | `integer` | The max size of chunks for the batch processing |
+| `pagination_limit` | `integer` | Limit of records to fetch from the API per request |
+| `rate_limit` | `integer` | Limit of requests per second to VadeSecure API |
 
 
 **Outputs**
@@ -37,4 +39,4 @@ Get last M365 Email Events
 
 ## Extra
 
-Module **`Vade Secure` v1.44**
+Module **`Vade Secure` v1.51.0**

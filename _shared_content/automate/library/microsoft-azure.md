@@ -10,7 +10,7 @@ This module accepts no configuration.
 
 ## Triggers
 
-### [BETA] Collect Azure Blob Storage events
+### Collect Azure Blob Storage events
 
 Trigger playbook to get Azure Blob Storage events information
 
@@ -45,7 +45,24 @@ Consume messages from Microsoft Azure Eventhub
 | `chunk_size` | `integer` | The max size of chunks for the batch processing |
 
 
-### [BETA] Fetch new Azure Network Watcher events from Blob Storage
+### [BETA] Collect Azure Key Vault events
+
+Trigger playbook to get Azure Key Vault events information
+
+**Arguments**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `container_name` | `string` | Container name to interact with Azure Blob Storage |
+| `account_name` | `string` | Account name of the Azure Blob Storage |
+| `account_key` | `string` | Account key of the Azure Blob Storage |
+| `intake_server` | `string` | Server of the intake server (e.g. 'https://intake.sekoia.io') |
+| `intake_key` | `string` | Intake key to use when sending events |
+| `chunk_size` | `integer` | The max size of chunks for the batch processing |
+| `frequency` | `integer` | Batch frequency in seconds |
+
+
+### Fetch new Azure Network Watcher events from Blob Storage
 
 Trigger playbook to get Azure Network Watcher events information
 
@@ -64,4 +81,4 @@ Trigger playbook to get Azure Network Watcher events information
 
 ## Extra
 
-Module **`Microsoft Azure` v2.4.8**
+Module **`Microsoft Azure` v2.5.3**

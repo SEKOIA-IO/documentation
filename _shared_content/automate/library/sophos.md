@@ -46,4 +46,4 @@ Query last IoCs from the Sophos Data lake
 
 ## Extra
 
-Module **`Sophos` v1.11.7**
+Module **`Sophos` v1.16.5**

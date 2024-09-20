@@ -8,7 +8,6 @@ Microsoft Windows Server is an operating system designed for server-based comput
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
-| `server` | `string` | Remote server dns name or IP address |
 | `username` | `string` | Username to do authentication on remote server |
 | `password` | `string` | Password to do authentication on remote server |
 
@@ -24,6 +23,7 @@ Changes specified user password on remote server
 | --------- | ------- | --------------------------- |
 | `user_to_update` | `string` | Username you want to change password for |
 | `new_password` | `string` | New password for user |
+| `server` | `string` | Remote server dns name or IP address |
 
 ### Disable Users
 
@@ -35,6 +35,7 @@ Disable specified users on remote server
 | --------- | ------- | --------------------------- |
 | `users` | `array` | List of user names to disable. `sids` or `users` must be specified |
 | `sids` | `array` | List of SID`s to disable. `sids` or `users` must be specified |
+| `server` | `string` | Remote server dns name or IP address |
 
 ### Enable Users
 
@@ -46,8 +47,9 @@ Enable specified users on remote server
 | --------- | ------- | --------------------------- |
 | `users` | `array` | List of user names to enable. `sids` or `users` must be specified |
 | `sids` | `array` | List of SID`s to enable. `sids` or `users` must be specified |
+| `server` | `string` | Remote server dns name or IP address |
 
 
 ## Extra
 
-Module **`Microsoft Windows Server` v1.0.3**
+Module **`Microsoft Windows Server` v1.1.0**

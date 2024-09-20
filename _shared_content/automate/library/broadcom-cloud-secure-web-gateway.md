@@ -28,4 +28,4 @@ Trigger playbook to get Broadcom Cloud SWG events
 
 ## Extra
 
-Module **`Broadcom Cloud Secure Web Gateway` v1.0.0**
+Module **`Broadcom Cloud Secure Web Gateway` v1.1.0**

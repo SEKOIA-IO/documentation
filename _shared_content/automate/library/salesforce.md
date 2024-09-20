@@ -16,7 +16,7 @@ Salesforce provides users comprehensive tools to manage customer data, automate 
 
 ## Triggers
 
-### [BETA] Collect Salesforce events
+### Collect Salesforce events
 
 Trigger playbook to get Salesforce information
 
@@ -28,8 +28,9 @@ Trigger playbook to get Salesforce information
 | `intake_key` | `string` | Intake key to use when sending events |
 | `chunk_size` | `integer` | The max size of chunks for the batch processing |
 | `frequency` | `integer` | Batch frequency in seconds |
+| `fetch_daily_logs` | `boolean` | Fetch daily logs. By default, it will fetch Hourly logs |
 
 
 ## Extra
 
-Module **`Salesforce` v1.5.2**
+Module **`Salesforce` v1.6.1**

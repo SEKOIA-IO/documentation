@@ -14,7 +14,7 @@
 
 ## Triggers
 
-### [BETA] Fetch new logs from Lacework
+### Fetch new logs from Lacework
 
 Get last system logs from the Lacework platform
 
@@ -32,4 +32,4 @@ Get last system logs from the Lacework platform
 
 ## Extra
 
-Module **`Lacework` v0.1.5**
+Module **`Lacework` v1.2.3**

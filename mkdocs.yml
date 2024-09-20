@@ -224,6 +224,7 @@ nav:
         - Digital Shadows: tip/features/automate/library/digital-shadows.md
         - Duo: tip/features/automate/library/duo.md
         - ExtraHop: tip/features/automate/library/extrahop.md
+        - Fastly: tip/features/automate/library/fastly.md
         - Fortigate Firewalls: tip/features/automate/library/fortigate-firewalls.md
         - GLIMPS: tip/features/automate/library/glimps.md
         - Git: tip/features/automate/library/git.md
@@ -254,10 +255,12 @@ nav:
         - Onyphe: tip/features/automate/library/onyphe.md
         - OpenAI: tip/features/automate/library/openai.md
         - PagerDuty: tip/features/automate/library/pagerduty.md
+        - Palo Alto Cortex XDR (EDR): tip/features/automate/library/palo-alto-cortex-xdr-edr.md
         - Panda Security: tip/features/automate/library/panda-security.md
         - Proofpoint: tip/features/automate/library/proofpoint.md
         - Public Suffix: tip/features/automate/library/public-suffix.md
         - RSS: tip/features/automate/library/rss.md
+        - Retarus: tip/features/automate/library/retarus.md
         - RiskIQ: tip/features/automate/library/riskiq.md
         - STIX: tip/features/automate/library/stix.md
         - Salesforce: tip/features/automate/library/salesforce.md
@@ -270,6 +273,7 @@ nav:
         - Sophos: tip/features/automate/library/sophos.md
         - TEHTRIS: tip/features/automate/library/tehtris.md
         - The Hive: tip/features/automate/library/the-hive.md
+        - The Hive V5: tip/features/automate/library/the-hive-v5.md
         - Thinkst Canary: tip/features/automate/library/thinkst-canary.md
         - Tranco: tip/features/automate/library/tranco.md
         - Trellix: tip/features/automate/library/trellix.md

@@ -14,7 +14,7 @@ ExtraHop is a leading provider of network detection and response (NDR) solutions
 
 ## Triggers
 
-### [BETA] Fetch new alerts from ExtraHop Reveal(x) 360
+### Fetch new alerts from ExtraHop Reveal(x) 360
 
 Get last logs from the ExtraHop Reveal(x) 360
 
@@ -30,4 +30,4 @@ Get last logs from the ExtraHop Reveal(x) 360
 
 ## Extra
 
-Module **`ExtraHop` v0.1.0**
+Module **`ExtraHop` v1.1.1**

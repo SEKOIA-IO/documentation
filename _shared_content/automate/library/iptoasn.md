@@ -1,5 +1,7 @@
 # IPtoASN
 
+![IPtoASN](/assets/playbooks/library/iptoasn.png){ align=right width=150 }
+
 [IPtoASN](https://iptoasn.com/) is a free, downloadable and frequently updated ASN database. It allow associating IP addresses to ASN
 
 ## Configuration
@@ -31,4 +33,4 @@ Download the IPtoASN database recurrently
 
 ## Extra
 
-Module **`IPtoASN` v1.28**
+Module **`IPtoASN` v1.31.0**

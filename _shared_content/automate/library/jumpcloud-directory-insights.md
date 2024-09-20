@@ -13,7 +13,7 @@ Directory Insights allows you to read event logs, view activity in your director
 
 ## Triggers
 
-### [BETA] Jumpcloud Directory Insights Connector
+### Jumpcloud Directory Insights Connector
 
 
 
@@ -30,4 +30,4 @@ Directory Insights allows you to read event logs, view activity in your director
 
 ## Extra
 
-Module **`Jumpcloud Directory Insights` v1.6.1**
+Module **`Jumpcloud Directory Insights` v1.8.1**

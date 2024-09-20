@@ -29,4 +29,4 @@ Get findings from a Bitsight
 
 ## Extra
 
-Module **`Bitsight` v1.0.0**
+Module **`Bitsight` v1.0.2**

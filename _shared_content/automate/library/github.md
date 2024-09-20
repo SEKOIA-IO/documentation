@@ -31,4 +31,4 @@ Get last audit logs from a Github organization
 
 ## Extra
 
-Module **`Github` v1.5.0**
+Module **`Github` v1.10.2**

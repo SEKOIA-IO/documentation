@@ -75,4 +75,4 @@ Fetch the list IP that can be found in a CIDR notation
 
 ## Extra
 
-Module **`IKnowWhatYouDownload` v1.21**
+Module **`IKnowWhatYouDownload` v1.24.0**

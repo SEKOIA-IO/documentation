@@ -41,4 +41,4 @@ Post message to Mattermost
 
 ## Extra
 
-Module **`Mattermost` v1.18**
+Module **`Mattermost` v1.21.0**

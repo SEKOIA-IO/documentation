@@ -25,7 +25,6 @@ Forward Crowdstrike Falcon Data Replication events to Sekoia.io
 | --------- | ------- | --------------------------- |
 | `chunk_size` | `integer` | The size of max number of messages for the batch processing (default: 20000) |
 | `frequency` | `integer` | Batch frequency in seconds. Should be greater than 0 and lower then 20 (default: 10) |
-| `delete_consumed_messages` | `boolean` | Flag to delete consuming messages (default: true) |
 | `is_fifo` | `boolean` | Flag to determine if the queue is a FIFO queue (default: false) |
 | `queue_name` | `string` | The name of the SQS queue that received messages with files information |
 | `queue_url` | `string` | The URL of the SQS queue that received messages with files information |
@@ -35,4 +34,4 @@ Forward Crowdstrike Falcon Data Replication events to Sekoia.io
 
 ## Extra
 
-Module **`CrowdStrike` v1.8.2**
+Module **`CrowdStrike` v1.10.1**

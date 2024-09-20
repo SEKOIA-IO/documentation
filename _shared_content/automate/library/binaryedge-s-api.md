@@ -296,7 +296,7 @@ IP Risk Score. Scoring is based on all information found on our databases regard
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
-| `normalized_ip_score` | `float` |  |
+| `normalized_ip_score` | `number` |  |
 | `normalized_ip_score_detailed` | `object` |  |
 | `ip_score_detailed` | `object` |  |
 | `results_detailed` | `object` |  |
@@ -500,4 +500,4 @@ Return details about your current subscription package.
 
 ## Extra
 
-Module **`BinaryEdge's API` v1.20**
+Module **`BinaryEdge's API` v1.23.0**

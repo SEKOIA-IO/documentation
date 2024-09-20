@@ -75,4 +75,4 @@ Return the item as a structured data
 
 ## Extra
 
-Module **`Censys` v1.22**
+Module **`Censys` v1.25.0**

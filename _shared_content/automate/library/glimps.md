@@ -110,4 +110,4 @@
 
 ## Extra
 
-Module **`GLIMPS` v1.10**
+Module **`GLIMPS` v1.13.0**

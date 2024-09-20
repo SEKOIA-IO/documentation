@@ -55,4 +55,4 @@ Convert a MWDB config to a bundle of observables
 
 ## Extra
 
-Module **`MWDB` v1.38**
+Module **`MWDB` v1.41.0**

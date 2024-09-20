@@ -129,7 +129,7 @@ Isolates the specified devices. When you isolate a device, communication to and 
 | --------- | ------- | --------------------------- |
 | `device_ids` | `array` | List of IDs of devices to isolate.<br/>Example: "cb509c17-7b88-461a-ba3b-3d43e29e6cd4","2c13685e-7d1f-4726-9ad3-5c8fa7718bab" |
 | `exclusion_programs` | `array` | List of programs to exclude from isolation and allow to communicate normally. |
-| `customized_message` | `str` | Text to show in an alert message on the isolated devices |
+| `customized_message` | `string` | Text to show in an alert message on the isolated devices |
 | `hide_customized_alert` | `boolean` | Indicates whether to hide the customized alert message on isolated devices. |
 
 
@@ -147,7 +147,7 @@ Links devices to a specified configuration.
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
-| `config_id` | `str` | Identifier of the managed configuration to associate with the devices.<br/>Example: 2836d89d-1e98-4377-92b7-0a76ac2a7699 |
+| `config_id` | `string` | Identifier of the managed configuration to associate with the devices.<br/>Example: 2836d89d-1e98-4377-92b7-0a76ac2a7699 |
 | `type` | `integer` | Type of configuration. Currently, only option 2 is supported.<br/>	- 2 — Workstations and servers.<br/>Example: 2 |
 | `device_ids` | `array` | List of IDs of devices to link to the specified managed configuration..<br/>Example: cb509c17-7b88-461a-ba3b-3d43e29e6cd4,2c13685e-7d1f-4726-9ad3-5c8fa7718bab |
 
@@ -161,9 +161,9 @@ Retrieves a list of devices, and additional information, such as the device IP a
 | --------- | ------- | --------------------------- |
 | `$top` | `integer` | Specifies the number of objects to retrieve.<br/>Example: 5 |
 | `$skip` | `integer` | Bypasses the specified number of objects in the results returned.<br/>For example, if you specify 10, the results start at object 11.<br/>Example: 5 |
-| `$search` | `str` | Returns only objects that include the specified text string. For example, "name" returns objects that include "hostname" and "username".<br/>The supported search fields depend on the endpoint:<br/>	- Devices: Host name, description, IP address, logged on user<br/>	- DeviceProtectionStatus: Host name<br/>	- ManagedConfigurations: Name, description<br/>Example: name |
+| `$search` | `string` | Returns only objects that include the specified text string. For example, "name" returns objects that include "hostname" and "username".<br/>The supported search fields depend on the endpoint:<br/>	- Devices: Host name, description, IP address, logged on user<br/>	- DeviceProtectionStatus: Host name<br/>	- ManagedConfigurations: Name, description<br/>Example: name |
 | `$count` | `boolean` | Indicates whether to return a counter that shows the total number of objects in the total_items response parameter.<br/>Example: true |
-| `$orderby` | `str` | Specifies how to order results. You can order by any parameter in the response and sort results in ascending or descending order.<br/>Specify a parameter name with any underscores removed, followed by a + (plus sign) and either asc (ascending) or desc (descending).<br/>For example, to order results by the host_name parameter in descending order, specify hostname+desc. If you do not specify a field to order by, the API will use the order in the database.<br/>Example: hostname+desc |
+| `$orderby` | `string` | Specifies how to order results. You can order by any parameter in the response and sort results in ascending or descending order.<br/>Specify a parameter name with any underscores removed, followed by a + (plus sign) and either asc (ascending) or desc (descending).<br/>For example, to order results by the host_name parameter in descending order, specify hostname+desc. If you do not specify a field to order by, the API will use the order in the database.<br/>Example: hostname+desc |
 | `$config` | `boolean` | Indicates whether the security configuration name and ID are returned. The default value is true.<br/>Example: true |
 
 
@@ -185,9 +185,9 @@ Retrieves a list of the specified type of managed configurations associated with
 | `type` | `integer` | Type of configuration to return. Specify one of these values:<br/>	- 1 — Deployment settings<br/>	- 2 — Workstations and servers<br/>	- 3 — Android<br/>Example: 2 |
 | `$top` | `integer` | Specifies the number of objects to retrieve.<br/>Example: 5 |
 | `$skip` | `integer` | Bypasses the specified number of objects in the results returned.<br/>For example, if you specify 10, the results start at object 11.<br/>Example: 5 |
-| `$search` | `str` | Returns only objects that include the specified text string. For example, "name" returns objects that include "hostname" and "username".<br/>The supported search fields depend on the endpoint:<br/>	- Devices: Host name, description, IP address, logged on user<br/>	- DeviceProtectionStatus: Host name<br/>	- ManagedConfigurations: Name, description<br/>Example: name |
+| `$search` | `string` | Returns only objects that include the specified text string. For example, "name" returns objects that include "hostname" and "username".<br/>The supported search fields depend on the endpoint:<br/>	- Devices: Host name, description, IP address, logged on user<br/>	- DeviceProtectionStatus: Host name<br/>	- ManagedConfigurations: Name, description<br/>Example: name |
 | `$count` | `boolean` | Indicates whether to return a counter that shows the total number of objects in the total_items response parameter.<br/>Example: true |
-| `$orderby` | `str` | Specifies how to order results. You can order by any parameter in the response and sort results in ascending or descending order.<br/>Specify a parameter name with any underscores removed, followed by a + (plus sign) and either asc (ascending) or desc (descending).<br/>For example, to order results by the host_name parameter in descending order, specify hostname+desc. If you do not specify a field to order by, the API will use the order in the database.<br/>Example: hostname+desc |
+| `$orderby` | `string` | Specifies how to order results. You can order by any parameter in the response and sort results in ascending or descending order.<br/>Specify a parameter name with any underscores removed, followed by a + (plus sign) and either asc (ascending) or desc (descending).<br/>For example, to order results by the host_name parameter in descending order, specify hostname+desc. If you do not specify a field to order by, the API will use the order in the database.<br/>Example: hostname+desc |
 
 
 **Outputs**
@@ -207,9 +207,9 @@ Retrieves a list of unmanaged devices discovered on the network.
 | --------- | ------- | --------------------------- |
 | `$top` | `integer` | Specifies the number of objects to retrieve.<br/>Example: 5 |
 | `$skip` | `integer` | Bypasses the specified number of objects in the results returned.<br/>For example, if you specify 10, the results start at object 11.<br/>Example: 5 |
-| `$search` | `str` | Returns only objects that include the specified text string. For example, "name" returns objects that include "hostname" and "username".<br/>The supported search fields depend on the endpoint:<br/>	- Devices: Host name, description, IP address, logged on user<br/>	- DeviceProtectionStatus: Host name<br/>	- ManagedConfigurations: Name, description<br/>Example: name |
+| `$search` | `string` | Returns only objects that include the specified text string. For example, "name" returns objects that include "hostname" and "username".<br/>The supported search fields depend on the endpoint:<br/>	- Devices: Host name, description, IP address, logged on user<br/>	- DeviceProtectionStatus: Host name<br/>	- ManagedConfigurations: Name, description<br/>Example: name |
 | `$count` | `boolean` | Indicates whether to return a counter that shows the total number of objects in the total_items response parameter.<br/>Example: true |
-| `$orderby` | `str` | Specifies how to order results. You can order by any parameter in the response and sort results in ascending or descending order.<br/>Specify a parameter name with any underscores removed, followed by a + (plus sign) and either asc (ascending) or desc (descending).<br/>For example, to order results by the host_name parameter in descending order, specify hostname+desc. If you do not specify a field to order by, the API will use the order in the database.<br/>Example: hostname+desc |
+| `$orderby` | `string` | Specifies how to order results. You can order by any parameter in the response and sort results in ascending or descending order.<br/>Specify a parameter name with any underscores removed, followed by a + (plus sign) and either asc (ascending) or desc (descending).<br/>For example, to order results by the host_name parameter in descending order, specify hostname+desc. If you do not specify a field to order by, the API will use the order in the database.<br/>Example: hostname+desc |
 
 
 **Outputs**
@@ -228,7 +228,7 @@ Retrieves counts of detected security events for the specified types.
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
 | `type` | `integer` | Types of security event counters to retrieve. This parameter is a mask. Add the values of the security event counter types you want to retrieve.<br/>For example, if you want to retrieve only programs blocked, specify 8. If you want to retrieve both PUPs and programs blocked, specify 10 because 8 (programs blocked) + 2 (PUPs) = 10.<br/>	- 1 - Malware<br/>	- 2 PUPs (Potentially Unwanted Programs)<br/>	- 4 - Exploits<br/>	- 8 - Programs Blocked<br/>	- 16 - Threats detected by AV<br/>	- 255 - All counters<br/>Example: 10 |
-| `filter` | `str` | Filters the security event counters by date<br/>Specify the type of security event:<br/>	- 33001 — Antivirus<br/>	- 32001 — Other types<br/>Specify the length of the time period in the format [x, y] where x is the number of units and y is the unit of time:<br/>	- 1 — Years<br/>	- 2 - Months<br/>	- 3 - Days<br/>	- 4 - Hours<br/>For example, this retrieves threats detected by AV for the last 7 days: filter=33001%20AmongTheLast%20[7,3].<br/>This retrieves security event counters for the other types for the last 3 months: filter=32001%20AmongTheLast%20[3,2].<br/>If you do not specify a filter, the API returns all of the security events for the last 30 days.<br/>Example: 33001%20AmongTheLast%20[7,3] |
+| `filter` | `string` | Filters the security event counters by date<br/>Specify the type of security event:<br/>	- 33001 — Antivirus<br/>	- 32001 — Other types<br/>Specify the length of the time period in the format [x, y] where x is the number of units and y is the unit of time:<br/>	- 1 — Years<br/>	- 2 - Months<br/>	- 3 - Days<br/>	- 4 - Hours<br/>For example, this retrieves threats detected by AV for the last 7 days: filter=33001%20AmongTheLast%20[7,3].<br/>This retrieves security event counters for the other types for the last 3 months: filter=32001%20AmongTheLast%20[3,2].<br/>If you do not specify a filter, the API returns all of the security events for the last 30 days.<br/>Example: 33001%20AmongTheLast%20[7,3] |
 
 
 **Outputs**
@@ -241,17 +241,6 @@ Retrieves counts of detected security events for the specified types.
 | `pups_counters` | `object` |  |
 | `threats_by_av_counters` | `object` |  |
 
-### Get DataControl module status
-
-Retrieves a count of files and devices that Data Control identified with each type of Personally Identifiable Information (PII).
-
-**Outputs**
-
-| Name      |  Type   |  Description  |
-| --------- | ------- | --------------------------- |
-| `properties` | `` |  |
-| `type` | `` |  |
-
 ### Retrieve Device Protection Status
 
 Retrieves a list of devices with their protection status and other device information.
@@ -262,9 +251,9 @@ Retrieves a list of devices with their protection status and other device inform
 | --------- | ------- | --------------------------- |
 | `$top` | `integer` | Specifies the number of objects to retrieve.<br/>Example: 5 |
 | `$skip` | `integer` | Bypasses the specified number of objects in the results returned.<br/>For example, if you specify 10, the results start at object 11.<br/>Example: 5 |
-| `$search` | `str` | Returns only objects that include the specified text string. For example, "name" returns objects that include "hostname" and "username".<br/>The supported search fields depend on the endpoint:<br/>	- Devices: Host name, description, IP address, logged on user<br/>	- DeviceProtectionStatus: Host name<br/>	- ManagedConfigurations: Name, description<br/>Example: name |
+| `$search` | `string` | Returns only objects that include the specified text string. For example, "name" returns objects that include "hostname" and "username".<br/>The supported search fields depend on the endpoint:<br/>	- Devices: Host name, description, IP address, logged on user<br/>	- DeviceProtectionStatus: Host name<br/>	- ManagedConfigurations: Name, description<br/>Example: name |
 | `$count` | `boolean` | Indicates whether to return a counter that shows the total number of objects in the total_items response parameter.<br/>Example: true |
-| `$orderby` | `str` | Specifies how to order results. You can order by any parameter in the response and sort results in ascending or descending order.<br/>Specify a parameter name with any underscores removed, followed by a + (plus sign) and either asc (ascending) or desc (descending).<br/>For example, to order results by the host_name parameter in descending order, specify hostname+desc. If you do not specify a field to order by, the API will use the order in the database.<br/>Example: hostname+desc |
+| `$orderby` | `string` | Specifies how to order results. You can order by any parameter in the response and sort results in ascending or descending order.<br/>Specify a parameter name with any underscores removed, followed by a + (plus sign) and either asc (ascending) or desc (descending).<br/>For example, to order results by the host_name parameter in descending order, specify hostname+desc. If you do not specify a field to order by, the API will use the order in the database.<br/>Example: hostname+desc |
 
 
 **Outputs**
@@ -342,18 +331,18 @@ Starts a task to scan the specified devices immediately.
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
 | `device_ids` | `array` | List of IDs of devices to scan.<br/>Example: "cb509c17-7b88-461a-ba3b-3d43e29e6cd4","2c13685e-7d1f-4726-9ad3-5c8fa7718bab" |
-| `task_name` | `str` | Name of the scan task.<br/>Example: Routine scan |
-| `task_description` | `str` | Description of the scan task.<br/>Example: Windows 8 machines only |
+| `task_name` | `string` | Name of the scan task.<br/>Example: Routine scan |
+| `task_description` | `string` | Description of the scan task.<br/>Example: Windows 8 machines only |
 | `scan_scope` | `integer` | Scope of the scan task. Specify one of these values:<br/>	- 0 - Whole computer<br/>	- 1 - Critical areas<br/>	- 2 - Specified items<br/>Example: 0 |
-| `specified_items_to_scan` | `str` | List of specific locations or items to scan. All folders and files in the specified locations are scanned.<br/>Works only when scan_scope is 2.<br/>Example: "C:\Downloads", "C:\Documents" |
+| `specified_items_to_scan` | `string` | List of specific locations or items to scan. All folders and files in the specified locations are scanned.<br/>Works only when scan_scope is 2.<br/>Example: "C:\Downloads", "C:\Documents" |
 | `detect_hacking_tools` | `boolean` | Indicates whether to detect hacking tools. This detects potentially unwanted programs, as well as programs used by hackers.<br/>Example: false |
 | `detect_suspicious_files` | `boolean` | Indicates whether to detect suspicious files. In scheduled scans, the tool scans computer software but does not run it. Some types of threats have a lower chance of detection. Set this option to true to scan with heuristic algorithms and improve detection rates.<br/>Example: true |
 | `scan_compressed_files` | `boolean` | Indicates whether to scan compressed files. This decompresses compressed files and scans their contents.<br/>Example: true |
 | `apply_exclusions_on_scan` | `boolean` | Indicates whether to exclude items from the scan, such as specific files, files with a specific extension, or a specific directory.<br/>Example: false |
-| `extensions_to_exclude` | `str` | List of file extensions to exclude from the scan.<br/>Works only when apply_exclusions_on_scan is true.<br/>Example: "exe","pdf" |
-| `files_to_exclude` | `str` | List of file names (with their extensions) to exclude from the scan.<br/>Works only when apply_exclusions_on_scan is true.<br/>Example: "Chrome.exe", "Explorer.exe" |
-| `folders_to_exclude` | `str` | List of folders to exclude from the scan. You must include the full path.<br/>Works only when apply_exclusions_on_scan is true.<br/>Example: "D:/shared_drive/documents" |
-| `execution_window_expiration` | `str` | Time period in which the scan must run before it times out. The default is 7 days.<br/>Example: 8.07:06:05 specifies 8 days, 7 hours, 6 minutes, and 5 seconds |
+| `extensions_to_exclude` | `string` | List of file extensions to exclude from the scan.<br/>Works only when apply_exclusions_on_scan is true.<br/>Example: "exe","pdf" |
+| `files_to_exclude` | `string` | List of file names (with their extensions) to exclude from the scan.<br/>Works only when apply_exclusions_on_scan is true.<br/>Example: "Chrome.exe", "Explorer.exe" |
+| `folders_to_exclude` | `string` | List of folders to exclude from the scan. You must include the full path.<br/>Works only when apply_exclusions_on_scan is true.<br/>Example: "D:/shared_drive/documents" |
+| `execution_window_expiration` | `string` | Time period in which the scan must run before it times out. The default is 7 days.<br/>Example: 8.07:06:05 specifies 8 days, 7 hours, 6 minutes, and 5 seconds |
 
 
 **Outputs**
@@ -412,4 +401,4 @@ Uninstalls protection from the specified devices.
 
 ## Extra
 
-Module **`Panda Security` v1.19**
+Module **`Panda Security` v1.23.0**

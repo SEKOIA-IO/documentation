@@ -37,6 +37,13 @@ Add comment on Incident.
 | `target` | `string` | Incident identifier to comment. |
 | `comment` | `string` | Comment. |
 
+
+**Outputs**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `items` | `array` |  |
+
 ### Isolate Device From Network
 
 Isolate a device from network connections.
@@ -48,6 +55,14 @@ Isolate a device from network connections.
 | `target` | `string` | Device identifier of the computer to isolate. |
 | `message` | `string` | Optional message that is displayed on isolated device. |
 
+
+**Outputs**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `multistatus` | `array` |  |
+| `transactionId` | `string` |  |
+
 ### List Detections For Incident
 
 List Detections For Incident.
@@ -57,6 +72,13 @@ List Detections For Incident.
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
 | `target` | `string` | Incident identifier to list detections. |
+
+
+**Outputs**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `detections` | `array` |  |
 
 ### List devices
 
@@ -85,6 +107,14 @@ Release a device from network isolation.
 | --------- | ------- | --------------------------- |
 | `target` | `string` | Device identifier of the computer to release. |
 
+
+**Outputs**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `multistatus` | `array` |  |
+| `transactionId` | `string` |  |
+
 ### Scan Device For Malware
 
 Scan Device For Malware.
@@ -95,6 +125,14 @@ Scan Device For Malware.
 | --------- | ------- | --------------------------- |
 | `target` | `string` | Device identifier to scan for malware. |
 
+
+**Outputs**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `multistatus` | `array` |  |
+| `transactionId` | `string` |  |
+
 ### Update status on Incident
 
 Update status on Incident.
@@ -103,11 +141,19 @@ Update status on Incident.
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
-| `target` | `string` | Incident identifier to comment. |
+| `target` | `string` | Incident identifier to update. |
 | `status` | `string` | Status. |
 | `resolution` | `string` | Resolution. |
 
 
+**Outputs**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `multistatus` | `string` |  |
+| `transactionId` | `string` |  |
+
+
 ## Extra
 
-Module **`WithSecure` v2.14.0**
+Module **`WithSecure` v2.15.1**

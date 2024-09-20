@@ -8,13 +8,13 @@ Darktrace monitors and protects all people and digital assets across your entire
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
-| `api_url` | `string` | The url of the Darktrace appliance |
+| `api_url` | `string` | The url of the Darktrace appliance. (e.g. https://example.darktrace.com or https://192.168.0.1) |
 | `public_key` | `string` | The public key to the Darktrace API |
 | `private_key` | `string` | The private key to the Darktrace API |
 
 ## Triggers
 
-### [BETA] Fetch new logs from Darktrace
+### Fetch new logs from Darktrace
 
 Get the newest logs from Darktrace Threat Visualizer
 
@@ -31,4 +31,4 @@ Get the newest logs from Darktrace Threat Visualizer
 
 ## Extra
 
-Module **`Darktrace` v1.5.1**
+Module **`Darktrace` v1.7.1**

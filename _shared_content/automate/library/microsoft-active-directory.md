@@ -51,4 +51,4 @@ Reset a user's password. You will need a strong password for that otherwise enab
 
 ## Extra
 
-Module **`Microsoft Active Directory` v1.0.0**
+Module **`Microsoft Active Directory` v1.3.0**

@@ -30,4 +30,4 @@ Trigger playbooks when new snort rules are detected of a repository
 
 ## Extra
 
-Module **`Detection Rules` v1.22**
+Module **`Detection Rules` v1.25.0**

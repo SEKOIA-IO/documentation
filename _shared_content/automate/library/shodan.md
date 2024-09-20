@@ -42,13 +42,6 @@ Look up the IP address for the provided list of hostnames.
 | --------- | ------- | --------------------------- |
 | `hostnames` | `array` | List of hostnames; example "google.com". |
 
-
-**Outputs**
-
-| Name      |  Type   |  Description  |
-| --------- | ------- | --------------------------- |
-| `type` | `` |  |
-
 ### Lookup DNS
 
 Look up the hostnames that have been defined for the given list of IP addresses.
@@ -58,13 +51,6 @@ Look up the hostnames that have been defined for the given list of IP addresses.
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
 | `ips` | `array` | List of IP addresses; example "74.125.227.230" |
-
-
-**Outputs**
-
-| Name      |  Type   |  Description  |
-| --------- | ------- | --------------------------- |
-| `type` | `` |  |
 
 ### Get Host
 
@@ -93,9 +79,9 @@ Returns all services that have been found for the given host IP.
 | `country_code` | `string` |  |
 | `data` | `array` |  |
 | `city` | `string` |  |
-| `longitude` | `float` |  |
+| `longitude` | `number` |  |
 | `country_code3` | `string` |  |
-| `latitude` | `float` |  |
+| `latitude` | `number` |  |
 | `os` | `string` |  |
 | `ports` | `array` |  |
 
@@ -144,4 +130,4 @@ Search Shodan using the same query syntax as the website and use facets to get s
 
 ## Extra
 
-Module **`Shodan` v1.22**
+Module **`Shodan` v1.25.0**

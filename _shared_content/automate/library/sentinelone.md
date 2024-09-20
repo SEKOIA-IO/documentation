@@ -13,7 +13,7 @@ This module interacts with the SentinelOne
 
 ## Triggers
 
-### Consume events from SentinelOne DeepVisibility
+### [DEPRECATED] Consume events from SentinelOne DeepVisibility
 
 Consume events from SentinelOne DeepVisibility’s Kafka brokers
 
@@ -30,7 +30,50 @@ Consume events from SentinelOne DeepVisibility’s Kafka brokers
 | `group_id` | `string` | Kafka consumer group |
 | `topic` | `string` | Kafka topic |
 
+
+### Collect SentinelOne alerts
+
+Collect activities and threats from SentinelOne
+
+**Arguments**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `frequency` | `integer` | Batch frequency in seconds |
+| `intake_server` | `string` | Server of the intake server (e.g. 'https://intake.sekoia.io') |
+| `intake_key` | `string` | Intake key to use when sending events |
+
 ## Actions
+
+### Create IOCs
+
+Push IOCs in the Threat Intelligence API of SentinelOne
+
+**Arguments**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `sekoia_base_url` | `string` | Sekoia base URL |
+| `stix_objects_path` | `string` | Filepath of the STIX objects fetched from the collection |
+| `filters` | `object` | Filter where to add iocs  |
+
+### Create Threat Note
+
+Create a threat note in SentinelOne
+
+**Arguments**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `text` | `string` | Text to add to the note |
+| `filters` | `object` | Filters to select the threats to which a note will be added |
+
+
+**Outputs**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `affected` | `integer` | The number of threats to which the note was added |
 
 ### Deisolate an endpoint
 
@@ -73,6 +116,26 @@ Fetch the malwares associated to a threat
 | `status` | `string` | The status of the run |
 | `status_reason` | `string` | The reason of the status |
 | `files` | `object` | The list of retrieved files |
+
+### Init a scan
+
+Run a Full Disk Scan on Agents that match the filter
+
+**Arguments**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `uuids` | `array` | The list of Agent uuids to filter by |
+| `account_ids` | `array` | The list of Account IDs to filter by |
+| `group_ids` | `array` | The list of network group to filter by |
+| `site_ids` | `array` | The list of Site IDs to filter by |
+
+
+**Outputs**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `affected` | `integer` | The number of scanned agents |
 
 ### Isolate an endpoint
 
@@ -143,7 +206,25 @@ Execute a remote script and get the results
 | `status_reason` | `string` | The reason of the status |
 | `result_file` | `object` | The url to download the result (for cloud destination) |
 
+### Update Threat Incident
+
+Update a threat incident in SentinelOne
+
+**Arguments**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `status` | `string` | Status applied to the incident |
+| `filters` | `object` | Filters to select the threats to update |
+
+
+**Outputs**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `affected` | `integer` | The number of threats incidents updated |
+
 
 ## Extra
 
-Module **`SentinelOne` v1.12**
+Module **`SentinelOne` v1.18.3**

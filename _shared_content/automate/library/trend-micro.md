@@ -10,7 +10,7 @@ This module accepts no configuration.
 
 ## Triggers
 
-### [BETA] Fetch new logs
+### Fetch new logs
 
 Get last logs from the Trend Micro Email Security platform
 
@@ -29,4 +29,4 @@ Get last logs from the Trend Micro Email Security platform
 
 ## Extra
 
-Module **`Trend Micro` v1.2.0**
+Module **`Trend Micro` v1.4.0**

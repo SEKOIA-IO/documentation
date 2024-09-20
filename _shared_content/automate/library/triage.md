@@ -23,6 +23,7 @@ Get Triage configs
 | --------- | ------- | --------------------------- |
 | `frequency` | `integer` | Frequency at which the script collects IOCs |
 | `malware_list` | `array` | List of malware family |
+| `exclude_signed` | `boolean` | Do not retrieve report with signed binary |
 
 
 **Outputs**
@@ -55,4 +56,4 @@ Triage raw results to observables
 
 ## Extra
 
-Module **`Triage` v1.33**
+Module **`Triage` v1.37.0**

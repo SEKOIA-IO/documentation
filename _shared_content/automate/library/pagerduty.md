@@ -28,4 +28,4 @@ Trigger alert to PagerDuty
 
 ## Extra
 
-Module **`PagerDuty` v1.18**
+Module **`PagerDuty` v1.21.0**

@@ -46,4 +46,4 @@ Get last events from the Cybereason platform from versions 23.1.152 and higher
 
 ## Extra
 
-Module **`Cybereason` v1.9.7**
+Module **`Cybereason` v1.13.2**

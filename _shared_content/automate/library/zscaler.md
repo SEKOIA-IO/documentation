@@ -49,4 +49,4 @@ UnBlock the provided IOCs: IP / domain
 
 ## Extra
 
-Module **`Zscaler` v0.1.3**
+Module **`Zscaler` v1.0.0**

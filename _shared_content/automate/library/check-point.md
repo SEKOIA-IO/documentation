@@ -15,7 +15,7 @@ Check Point Harmony is the industry’s first unified security solution for user
 
 ## Triggers
 
-### [BETA] Collect Checkpoint Harmony Mobile events
+### Collect Checkpoint Harmony Mobile events
 
 Trigger playbook to get Checkpoint Harmony Mobile events
 
@@ -32,4 +32,4 @@ Trigger playbook to get Checkpoint Harmony Mobile events
 
 ## Extra
 
-Module **`Check Point` v1.1.7**
+Module **`Check Point` v1.3.1**

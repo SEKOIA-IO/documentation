@@ -66,4 +66,4 @@ Create issue in JIRA
 
 ## Extra
 
-Module **`Atlassian JIRA` v1.1**
+Module **`Atlassian JIRA` v1.2.0**

@@ -33,4 +33,4 @@ Fetches Tranco list
 
 ## Extra
 
-Module **`Tranco` v1.22**
+Module **`Tranco` v1.25.0**

@@ -85,6 +85,24 @@ Isolate a group of endpoints
 | `requested` | `array` | The list of identifiers of isolated endpoints |
 | `unrequested` | `array` | The list of identifiers of non-isolated endpoints |
 
+### Hostname by IP
+
+Get the hostname of a machine by its IP address
+
+**Arguments**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `target_ip` | `string` | Targeted IP address |
+| `get_only_last_seen` | `boolean` | Get the last seen hostname only |
+
+
+**Outputs**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `hostnames` | `array` | Hostnames |
+
 ### List named pipes
 
 Get the list of named pipe on the systems
@@ -101,8 +119,8 @@ Get the list of named pipe on the systems
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
-| `id` | `str` | Identifier of the job |
-| `action` | `str` | Name of job action |
+| `id` | `string` | Identifier of the job |
+| `action` | `string` | Name of job action |
 | `creationtime` | `string` | Creation date of the job |
 | `parameters` | `object` | Parameters of the job |
 
@@ -125,12 +143,12 @@ Get the list of processes on the systems
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
-| `id` | `str` | Identifier of the job |
-| `action` | `str` | Name of job action |
+| `id` | `string` | Identifier of the job |
+| `action` | `string` | Name of job action |
 | `creationtime` | `string` | Creation date of the job |
 | `parameters` | `object` | Parameters of the job |
 
 
 ## Extra
 
-Module **`HarfangLab` v1.19**
+Module **`HarfangLab` v1.23.1**

@@ -9,7 +9,7 @@ Cato Networks is a software company providing solutions to protect cloud applica
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
 | `api_key` | `string` | Api key to interact with Cato API |
-| `account_id` | `string` | Account Id (4 digits) to work with Cato API |
+| `account_id` | `string` | Account Id (4 or 5 digits) to work with Cato API |
 
 ## Triggers
 
@@ -27,4 +27,4 @@ Trigger playbook to get Cato SASE information
 
 ## Extra
 
-Module **`Cato Networks` v1.3**
+Module **`Cato Networks` v1.5.1**

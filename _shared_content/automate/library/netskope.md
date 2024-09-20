@@ -45,4 +45,4 @@ Get last events from the Netskope platform through the API v2
 
 ## Extra
 
-Module **`Netskope` v1.9.3**
+Module **`Netskope` v1.10.5**

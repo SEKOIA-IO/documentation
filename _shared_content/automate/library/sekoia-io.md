@@ -6,10 +6,7 @@ Sekoia.io
 
 ## Configuration
 
-| Name      |  Type   |  Description  |
-| --------- | ------- | --------------------------- |
-| `api_key` | `string` | Sekoia.io API key |
-| `base_url` | `string` | Sekoia.io base URL (ex. https://api.sekoia.io) |
+This module accepts no configuration.
 
 ## Triggers
 
@@ -150,6 +147,7 @@ Get all non-revoked objects from Sekoia.io Intelligence feed
 | --------- | ------- | --------------------------- |
 | `feed_id` | `string` | ID of the Sekoia.io feed to get data from |
 | `batch_size_limit` | `integer` | Size of the batch of elements to get from the Sekoia.io feed in one time |
+| `modified_after` | `string` | Date from which IOCs should be retrieved. It must be a valid RFC-3339 date-time string (i.e. 2024-04-12T23:20:50.52Z) |
 
 
 **Outputs**
@@ -169,6 +167,7 @@ Get all valid IOCs from Sekoia.io Intelligence feed
 | --------- | ------- | --------------------------- |
 | `feed_id` | `string` | ID of the Sekoia.io feed to get data from |
 | `batch_size_limit` | `integer` | Size of the batch of elements to get from the Sekoia.io feed in one time |
+| `modified_after` | `string` | Date from which IOCs should be retrieved. It must be a valid RFC-3339 date-time string (i.e. 2024-04-12T23:20:50.52Z) |
 
 
 **Outputs**
@@ -338,6 +337,82 @@ Create a notification for a specific tracker
 | --------- | ------- | --------------------------- |
 | `data` | `object` |  |
 
+### Create rule
+
+Create a new rule
+
+**Arguments**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `community_uuid` | `string` |  |
+| `name` | `string` |  |
+| `type` | `string` |  |
+| `description` | `string` |  |
+| `payload` | `string` |  |
+| `severity` | `integer` |  |
+| `effort` | `integer` |  |
+| `alert_type_uuid` | `string` |  |
+| `tags` | `array` |  |
+| `related_object_refs` | `array` |  |
+| `datasources` | `array` |  |
+| `event_fields` | `array` |  |
+| `enabled` | `boolean` |  |
+| `parameters` | `array` |  |
+| `all_entities` | `boolean` |  |
+| `entities` | `array` |  |
+| `all_assets` | `boolean` |  |
+| `assets` | `array` |  |
+| `goal` | `string` |  |
+| `false_positives` | `string` |  |
+| `similarity_strategy` | `array` |  |
+| `available_for_subcommunities` | `boolean` |  |
+
+
+**Outputs**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `uuid` | `string` | The identifier of the rule |
+| `enabled` | `boolean` | Is the rule enabled ? |
+| `community_uuid` | `string` | The community uuid if the rule is attached to one |
+| `parameters` | `array` | The parameters of the rule |
+| `all_entities` | `boolean` | Should the rule be applied on all entities ? |
+| `entities` | `array` | The list of entities the rule should be applied on |
+| `all_assets` | `boolean` | Should the rule be applied on all assets ? |
+| `assets` | `array` | The list of assets identifiers the rule should be applied on |
+| `last_compilation_success` | `boolean` | Did the last compilation succeed ? |
+| `last_compilation_message` | `string` | The message of the last compilation |
+| `last_compilation_at` | `string` | The last compilation date of the rule |
+| `name` | `string` | The name of the rule |
+| `type` | `` | The type of the rule |
+| `private` | `boolean` | Is the rule available only for the community ? |
+| `is_private` | `boolean` | Is the rule available only for the community ? |
+| `description` | `string` | The descrition of the rule |
+| `payload` | `string` | The payload of the rule |
+| `severity` | `integer` | The severity of the rule |
+| `effort` | `integer` | The effort of the rule |
+| `alert_type` | `object` | The alert type associated to the rule |
+| `alert_category` | `object` | The alert category associated to the rule |
+| `tags` | `array` | The list of tags associated to the rule |
+| `source` | `string` | The source of the rule |
+| `verified` | `boolean` | Is the rule verified ? |
+| `related_object_refs` | `array` | The list of reference of objects related to the rule |
+| `datasources` | `array` | The list of datasources of the rule |
+| `event_fields` | `array` | The list of fields to show when displaying a matched event |
+| `similarity_strategy` | `array` | Similarity Strategy used by this rule |
+| `created_at` | `string` | The creation date of the rule |
+| `created_by` | `string` | The profile who created the rule |
+| `created_by_type` | `string` | The profile type who created the rule can be 'avatar', 'application', 'apikey' |
+| `updated_at` | `string` | The modification date of the rule |
+| `updated_by` | `string` | The profile who updated the rule |
+| `updated_by_type` | `string` | The profile type who updated the rule can be 'rule', 'application', 'apikey' |
+| `goal` | `string` | A high-level description explaining the contribution of the rule |
+| `false_positives` | `string` | A possible legitimate usage which can raise a false alert |
+| `references` | `string` | Details on what led to write this rule |
+| `available_for_subcommunities` | `boolean` | Is the rule available for subcommunities (if applicable) ? |
+| `instance_uuid` | `string` | The identifier of the instance of the rule |
+
 ### Create Asset
 
 Create a new asset
@@ -372,6 +447,17 @@ Create a new asset
 | `owners` | `array` |  |
 | `community_uuid` | `string` |  |
 | `category` | `object` |  |
+
+### Delete rule
+
+Delete a rule
+
+**Arguments**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `uuid` | `string` |  |
+| `community_uuid` | `string` |  |
 
 ### Delete an asset
 
@@ -421,6 +507,118 @@ Mark as denied a countermeasure
 | `denied_by` | `string` | UUID of profile that denied the countermeasure |
 | `assignee` | `string` | UUID of the profile assigned to the progress of the countermeasure |
 | `created_at` | `string` | Date the countermeasure was created |
+
+### Disable rule
+
+Disable a rule
+
+**Arguments**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `uuid` | `string` |  |
+| `community_uuid` | `string` |  |
+
+
+**Outputs**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `uuid` | `string` | The identifier of the rule |
+| `enabled` | `boolean` | Is the rule enabled ? |
+| `community_uuid` | `string` | The community uuid if the rule is attached to one |
+| `parameters` | `array` | The parameters of the rule |
+| `all_entities` | `boolean` | Should the rule be applied on all entities ? |
+| `entities` | `array` | The list of entities the rule should be applied on |
+| `all_assets` | `boolean` | Should the rule be applied on all assets ? |
+| `assets` | `array` | The list of assets identifiers the rule should be applied on |
+| `last_compilation_success` | `boolean` | Did the last compilation succeed ? |
+| `last_compilation_message` | `string` | The message of the last compilation |
+| `last_compilation_at` | `string` | The last compilation date of the rule |
+| `name` | `string` | The name of the rule |
+| `type` | `` | The type of the rule |
+| `private` | `boolean` | Is the rule available only for the community ? |
+| `is_private` | `boolean` | Is the rule available only for the community ? |
+| `description` | `string` | The descrition of the rule |
+| `payload` | `string` | The payload of the rule |
+| `severity` | `integer` | The severity of the rule |
+| `effort` | `integer` | The effort of the rule |
+| `alert_type` | `object` | The alert type associated to the rule |
+| `alert_category` | `object` | The alert category associated to the rule |
+| `tags` | `array` | The list of tags associated to the rule |
+| `source` | `string` | The source of the rule |
+| `verified` | `boolean` | Is the rule verified ? |
+| `related_object_refs` | `array` | The list of reference of objects related to the rule |
+| `datasources` | `array` | The list of datasources of the rule |
+| `event_fields` | `array` | The list of fields to show when displaying a matched event |
+| `similarity_strategy` | `array` | Similarity Strategy used by this rule |
+| `created_at` | `string` | The creation date of the rule |
+| `created_by` | `string` | The profile who created the rule |
+| `created_by_type` | `string` | The profile type who created the rule can be 'avatar', 'application', 'apikey' |
+| `updated_at` | `string` | The modification date of the rule |
+| `updated_by` | `string` | The profile who updated the rule |
+| `updated_by_type` | `string` | The profile type who updated the rule can be 'rule', 'application', 'apikey' |
+| `goal` | `string` | A high-level description explaining the contribution of the rule |
+| `false_positives` | `string` | A possible legitimate usage which can raise a false alert |
+| `references` | `string` | Details on what led to write this rule |
+| `available_for_subcommunities` | `boolean` | Is the rule available for subcommunities (if applicable) ? |
+| `instance_uuid` | `string` | The identifier of the instance of the rule |
+
+### Enable rule
+
+Enable a rule
+
+**Arguments**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `uuid` | `string` |  |
+| `community_uuid` | `string` |  |
+
+
+**Outputs**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `uuid` | `string` | The identifier of the rule |
+| `enabled` | `boolean` | Is the rule enabled ? |
+| `community_uuid` | `string` | The community uuid if the rule is attached to one |
+| `parameters` | `array` | The parameters of the rule |
+| `all_entities` | `boolean` | Should the rule be applied on all entities ? |
+| `entities` | `array` | The list of entities the rule should be applied on |
+| `all_assets` | `boolean` | Should the rule be applied on all assets ? |
+| `assets` | `array` | The list of assets identifiers the rule should be applied on |
+| `last_compilation_success` | `boolean` | Did the last compilation succeed ? |
+| `last_compilation_message` | `string` | The message of the last compilation |
+| `last_compilation_at` | `string` | The last compilation date of the rule |
+| `name` | `string` | The name of the rule |
+| `type` | `` | The type of the rule |
+| `private` | `boolean` | Is the rule available only for the community ? |
+| `is_private` | `boolean` | Is the rule available only for the community ? |
+| `description` | `string` | The descrition of the rule |
+| `payload` | `string` | The payload of the rule |
+| `severity` | `integer` | The severity of the rule |
+| `effort` | `integer` | The effort of the rule |
+| `alert_type` | `object` | The alert type associated to the rule |
+| `alert_category` | `object` | The alert category associated to the rule |
+| `tags` | `array` | The list of tags associated to the rule |
+| `source` | `string` | The source of the rule |
+| `verified` | `boolean` | Is the rule verified ? |
+| `related_object_refs` | `array` | The list of reference of objects related to the rule |
+| `datasources` | `array` | The list of datasources of the rule |
+| `event_fields` | `array` | The list of fields to show when displaying a matched event |
+| `similarity_strategy` | `array` | Similarity Strategy used by this rule |
+| `created_at` | `string` | The creation date of the rule |
+| `created_by` | `string` | The profile who created the rule |
+| `created_by_type` | `string` | The profile type who created the rule can be 'avatar', 'application', 'apikey' |
+| `updated_at` | `string` | The modification date of the rule |
+| `updated_by` | `string` | The profile who updated the rule |
+| `updated_by_type` | `string` | The profile type who updated the rule can be 'rule', 'application', 'apikey' |
+| `goal` | `string` | A high-level description explaining the contribution of the rule |
+| `false_positives` | `string` | A possible legitimate usage which can raise a false alert |
+| `references` | `string` | Details on what led to write this rule |
+| `available_for_subcommunities` | `boolean` | Is the rule available for subcommunities (if applicable) ? |
+| `instance_uuid` | `string` | The identifier of the instance of the rule |
 
 ### Get aggregation query
 
@@ -499,6 +697,37 @@ Retrieve the definition of an alert
 | `title` | `string` |  |
 | `target` | `string` |  |
 
+### Get Community
+
+Retrieve a community
+
+**Arguments**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `uuid` | `string` |  |
+
+
+**Outputs**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `uuid` | `string` | The UUID of the community |
+| `name` | `string` | The name of the community |
+| `description` | `string` | The description of the community |
+| `homepage_url` | `string` | URL of the community's homepage |
+| `created_at` | `string` | The date and time the community was created |
+| `created_by` | `string` | The user who created the community |
+| `created_by_type` | `string` | The type of user who created the community |
+| `updated_at` | `string` | The date and time the community was last updated |
+| `is_parent` | `boolean` | Whether the community is a multi-tenant community |
+| `parent_community_uuid` | `string` | The UUID of the parent community (if any) |
+| `subcommunities` | `array` | List of UUIDs of communities that are managed by this multi-tenant community |
+| `is_mfa_enforced` | `boolean` | Whether the community has enforced multi-factor authentication |
+| `session_timeout` | `number` | The session timeout in minutes for the community (if any) |
+| `disable_inactive_avatars` | `boolean` | Whether the community automatically disables inactive avatars (after 90 days) |
+| `disabled` | `boolean` | Whether the community is disabled |
+
 ### Get context
 
 Get reports from a specific term
@@ -509,6 +738,37 @@ Get reports from a specific term
 | --------- | ------- | --------------------------- |
 | `sort` | `string` |  |
 | `term` | `string` |  |
+
+
+**Outputs**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `items` | `array` |  |
+| `has_more` | `boolean` |  |
+
+### Get Entity
+
+Retrieve an entity
+
+**Arguments**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `uuid` | `string` |  |
+
+
+**Outputs**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `uuid` | `string` | The UUID of the entity |
+| `name` | `string` | The name of the entity |
+| `entity_id` | `string` | The chosen ID of the entity |
+| `community_uuid` | `string` | The UUID of the community the entity belongs to |
+| `description` | `string` | The description of the entity |
+| `alerts_generation` | `string` | Whether alerts generated for this entity require analyst approval |
+| `number_of_intakes` | `number` | The number of configured intakes for this entity |
 
 ### Get Event Field Common Values
 
@@ -550,6 +810,92 @@ Query events
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
 | `events` | `array` |  |
+
+### Get Intake
+
+Retrieve an intake
+
+**Arguments**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `uuid` | `string` |  |
+
+
+**Outputs**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `uuid` | `string` | The UUID of the intake |
+| `name` | `string` | The name of the intake |
+| `community_uuid` | `string` | The UUID of the community the intake belongs to |
+| `format_uuid` | `string` | The UUID of the format of the intake |
+| `intake_key` | `string` | The key to use to send events to the intake |
+| `created_at` | `string` | The date and time the intake was created |
+| `created_by` | `string` | The user who created the intake |
+| `created_by_type` | `string` | The type of user who created the intake |
+| `updated_at` | `string` | The date and time the intake was last updated |
+| `updated_by` | `string` | The user who last updated the intake |
+| `updated_by_type` | `string` | The type of user who last updated the intake |
+| `is_custom_format` | `boolean` | Whether the format is custom (not maintained by Sekoia) |
+| `connector_configuration_uuid` | `string` | The UUID of the connector configuration, for pulling intakes |
+| `status` | `string` | A string representation of the status of the intake (mainly for pulling intakes) |
+| `entity` | `` |  |
+
+### Get rule
+
+Get a rule
+
+**Arguments**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `uuid` | `string` |  |
+
+
+**Outputs**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `uuid` | `string` | The identifier of the rule |
+| `enabled` | `boolean` | Is the rule enabled ? |
+| `community_uuid` | `string` | The community uuid if the rule is attached to one |
+| `parameters` | `array` | The parameters of the rule |
+| `all_entities` | `boolean` | Should the rule be applied on all entities ? |
+| `entities` | `array` | The list of entities the rule should be applied on |
+| `all_assets` | `boolean` | Should the rule be applied on all assets ? |
+| `assets` | `array` | The list of assets identifiers the rule should be applied on |
+| `last_compilation_success` | `boolean` | Did the last compilation succeed ? |
+| `last_compilation_message` | `string` | The message of the last compilation |
+| `last_compilation_at` | `string` | The last compilation date of the rule |
+| `name` | `string` | The name of the rule |
+| `type` | `` | The type of the rule |
+| `private` | `boolean` | Is the rule available only for the community ? |
+| `is_private` | `boolean` | Is the rule available only for the community ? |
+| `description` | `string` | The descrition of the rule |
+| `payload` | `string` | The payload of the rule |
+| `severity` | `integer` | The severity of the rule |
+| `effort` | `integer` | The effort of the rule |
+| `alert_type` | `object` | The alert type associated to the rule |
+| `alert_category` | `object` | The alert category associated to the rule |
+| `tags` | `array` | The list of tags associated to the rule |
+| `source` | `string` | The source of the rule |
+| `verified` | `boolean` | Is the rule verified ? |
+| `related_object_refs` | `array` | The list of reference of objects related to the rule |
+| `datasources` | `array` | The list of datasources of the rule |
+| `event_fields` | `array` | The list of fields to show when displaying a matched event |
+| `similarity_strategy` | `array` | Similarity Strategy used by this rule |
+| `created_at` | `string` | The creation date of the rule |
+| `created_by` | `string` | The profile who created the rule |
+| `created_by_type` | `string` | The profile type who created the rule can be 'avatar', 'application', 'apikey' |
+| `updated_at` | `string` | The modification date of the rule |
+| `updated_by` | `string` | The profile who updated the rule |
+| `updated_by_type` | `string` | The profile type who updated the rule can be 'rule', 'application', 'apikey' |
+| `goal` | `string` | A high-level description explaining the contribution of the rule |
+| `false_positives` | `string` | A possible legitimate usage which can raise a false alert |
+| `references` | `string` | Details on what led to write this rule |
+| `available_for_subcommunities` | `boolean` | Is the rule available for subcommunities (if applicable) ? |
+| `instance_uuid` | `string` | The identifier of the instance of the rule |
 
 ### Create Content Proposal
 
@@ -878,7 +1224,84 @@ Triggers an action on an alert to update its status
 | --------- | ------- | --------------------------- |
 | `actions` | `array` |  |
 
+### Update rule
+
+Update a rule
+
+**Arguments**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `uuid` | `string` |  |
+| `community_uuid` | `string` |  |
+| `name` | `string` |  |
+| `type` | `string` |  |
+| `description` | `string` |  |
+| `payload` | `string` |  |
+| `severity` | `integer` |  |
+| `effort` | `integer` |  |
+| `alert_type_uuid` | `string` |  |
+| `tags` | `array` |  |
+| `related_object_refs` | `array` |  |
+| `datasources` | `array` |  |
+| `event_fields` | `array` |  |
+| `enabled` | `boolean` |  |
+| `parameters` | `array` |  |
+| `all_entities` | `boolean` |  |
+| `entities` | `array` |  |
+| `all_assets` | `boolean` |  |
+| `assets` | `array` |  |
+| `goal` | `string` |  |
+| `false_positives` | `string` |  |
+| `similarity_strategy` | `array` |  |
+| `available_for_subcommunities` | `boolean` |  |
+
+
+**Outputs**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `uuid` | `string` | The identifier of the rule |
+| `enabled` | `boolean` | Is the rule enabled ? |
+| `community_uuid` | `string` | The community uuid if the rule is attached to one |
+| `parameters` | `array` | The parameters of the rule |
+| `all_entities` | `boolean` | Should the rule be applied on all entities ? |
+| `entities` | `array` | The list of entities the rule should be applied on |
+| `all_assets` | `boolean` | Should the rule be applied on all assets ? |
+| `assets` | `array` | The list of assets identifiers the rule should be applied on |
+| `last_compilation_success` | `boolean` | Did the last compilation succeed ? |
+| `last_compilation_message` | `string` | The message of the last compilation |
+| `last_compilation_at` | `string` | The last compilation date of the rule |
+| `name` | `string` | The name of the rule |
+| `type` | `` | The type of the rule |
+| `private` | `boolean` | Is the rule available only for the community ? |
+| `is_private` | `boolean` | Is the rule available only for the community ? |
+| `description` | `string` | The descrition of the rule |
+| `payload` | `string` | The payload of the rule |
+| `severity` | `integer` | The severity of the rule |
+| `effort` | `integer` | The effort of the rule |
+| `alert_type` | `object` | The alert type associated to the rule |
+| `alert_category` | `object` | The alert category associated to the rule |
+| `tags` | `array` | The list of tags associated to the rule |
+| `source` | `string` | The source of the rule |
+| `verified` | `boolean` | Is the rule verified ? |
+| `related_object_refs` | `array` | The list of reference of objects related to the rule |
+| `datasources` | `array` | The list of datasources of the rule |
+| `event_fields` | `array` | The list of fields to show when displaying a matched event |
+| `similarity_strategy` | `array` | Similarity Strategy used by this rule |
+| `created_at` | `string` | The creation date of the rule |
+| `created_by` | `string` | The profile who created the rule |
+| `created_by_type` | `string` | The profile type who created the rule can be 'avatar', 'application', 'apikey' |
+| `updated_at` | `string` | The modification date of the rule |
+| `updated_by` | `string` | The profile who updated the rule |
+| `updated_by_type` | `string` | The profile type who updated the rule can be 'rule', 'application', 'apikey' |
+| `goal` | `string` | A high-level description explaining the contribution of the rule |
+| `false_positives` | `string` | A possible legitimate usage which can raise a false alert |
+| `references` | `string` | Details on what led to write this rule |
+| `available_for_subcommunities` | `boolean` | Is the rule available for subcommunities (if applicable) ? |
+| `instance_uuid` | `string` | The identifier of the instance of the rule |
+
 
 ## Extra
 
-Module **`Sekoia.io` v2.58.2**
+Module **`Sekoia.io` v2.64.1**

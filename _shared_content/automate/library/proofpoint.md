@@ -47,4 +47,4 @@ Forward Proofpoint TAP Events
 
 ## Extra
 
-Module **`Proofpoint` v1.12**
+Module **`Proofpoint` v1.16.0**

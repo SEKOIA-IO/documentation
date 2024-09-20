@@ -14,7 +14,7 @@
 
 ## Triggers
 
-### [BETA] Fetch new logs from Vade Cloud
+### Fetch new logs from Vade Cloud
 
 Get last logs from the Vade Cloud platform
 
@@ -30,4 +30,4 @@ Get last logs from the Vade Cloud platform
 
 ## Extra
 
-Module **`Vade Cloud` v1.4.0**
+Module **`Vade Cloud` v1.5.0**

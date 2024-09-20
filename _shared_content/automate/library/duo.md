@@ -30,4 +30,4 @@ Get last logs from the Duo platform
 
 ## Extra
 
-Module **`Duo` v1.3.1**
+Module **`Duo` v1.8.0**
