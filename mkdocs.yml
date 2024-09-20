@@ -316,6 +316,7 @@ nav:
   - List of Intakes:
     - Overview: integration/categories/overview.md
     - Applicative:
+      - 1Password EPM: integration/categories/applicative/1password_epm.md
       - Apache HTTP Server: integration/categories/applicative/apache.md
       - Azure Files: integration/categories/applicative/azure_files.md
       - Azure MySQL: integration/categories/applicative/azure_mysql.md
