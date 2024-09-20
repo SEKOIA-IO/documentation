@@ -152,9 +152,9 @@ This rule enriches an existing asset with an `os` contextual property. This prop
 
 **Set the Contextual Property `edr_agent_id` to Host**
 
-This rule enriches an existing asset with the `edr_agent_id` contextual property (for example `sentinelone_agent_id`). This property is extracted from the values of `agent.id` and `agent.type`. This rule only applies to assets of `Host` category. 
+This rule enriches an existing asset with the `edr_agent_id` contextual property (for example `sentinelone_agent_id`). This property is extracted from the values of `agent.id` and `agent.type`. 
 
-Note that a single host can have multiple EDR agent IDs.
+Note that this rule only applies to assets of `Host` category and that a single host can have multiple EDR agent IDs.
 
 ### Discover unique Hosts
 
