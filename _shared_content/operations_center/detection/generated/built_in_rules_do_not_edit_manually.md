@@ -1,4 +1,4 @@
-Rules catalog includes **947 built-in detection rules** ([_last update on 2024-09-19_](rules_changelog.md)).
+Rules catalog includes **947 built-in detection rules** ([_last update on 2024-09-20_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Identity Information**
 
@@ -2761,6 +2761,7 @@ Rules catalog includes **947 built-in detection rules** ([_last update on 2024-0
     
     - **Changelog:**
     
+        - 20/09/2024 - minor - Added new filters to reduce false positives.
         - 27/05/2024 - minor - Added new filters to reduce false positives.
         - 21/11/2023 - minor - Added new filters to reduce false positives.
         - 08/11/2023 - minor - Added filter to reduce false positives
@@ -2961,6 +2962,7 @@ Rules catalog includes **947 built-in detection rules** ([_last update on 2024-0
     
     - **Changelog:**
     
+        - 20/09/2024 - minor - File paths added to filter some false positives.
         - 19/09/2024 - minor - File paths added to filter some false positives.
         - 30/11/2023 - minor - Update pattern with new lolbin
             
@@ -3063,6 +3065,7 @@ Rules catalog includes **947 built-in detection rules** ([_last update on 2024-0
     
     - **Changelog:**
     
+        - 20/09/2024 - minor - File paths added to filter some false positives.
         - 19/09/2024 - minor - File paths added to filter some false positives.
         - 18/09/2023 - minor - File paths added to filter some false positives.
         - 13/03/2023 - minor - Extended the list of suspicious process names being spawned from explorer.exe
