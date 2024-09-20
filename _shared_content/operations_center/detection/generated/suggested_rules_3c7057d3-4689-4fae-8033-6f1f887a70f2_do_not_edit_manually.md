@@ -9,6 +9,12 @@ The following Sekoia.io built-in rules match the intake **HarfangLab EDR**. This
     
     - **Effort:** advanced
 
+??? abstract "AD User Enumeration"
+    
+    Detects access to a domain user from a non-machine account. This requires Windows Security Event ID 4662 and could be triggered by some administrators configuring new users.
+    
+    - **Effort:** master
+
 ??? abstract "AMSI Deactivation Using Registry Key"
     
     The rule detects attempts to deactivate/disable the AMSI provider by deleting the associated registry key.
@@ -32,6 +38,12 @@ The following Sekoia.io built-in rules match the intake **HarfangLab EDR**. This
     Detection in order to investigate who has removed a specific Domain User in Domain Admins or Group Policy Creator Owners (Security event 4729)
     
     - **Effort:** master
+
+??? abstract "Account Tampering - Suspicious Failed Logon Reasons"
+    
+    This method uses uncommon error codes on failed logons to determine suspicious activity and tampering with accounts that have been disabled or somehow restricted. Depending on the network environment some failed logons Status can be added to the list.
+    
+    - **Effort:** advanced
 
 ??? abstract "Active Directory Data Export Using Csvde"
     
@@ -69,17 +81,47 @@ The following Sekoia.io built-in rules match the intake **HarfangLab EDR**. This
     
     - **Effort:** advanced
 
+??? abstract "Admin Share Access"
+    
+    Detects access to $ADMIN share. The advanced audit policy setting "Object Access > Audit File Share" must be configured for Success/Failure. Also be very cautious to previously check if this is not commonly used by your administrators as to remotely manage your computers.
+    
+    - **Effort:** master
+
+??? abstract "Admin User RDP Remote Logon"
+    
+    Detects remote login through Remote Desktop Protocol (RDP) by Administrator user depending on internal pattern. Check before activation the identifiable administrators usernames (pattern or special unique character ("Admin*") to adapt and add some filtering.
+    
+    - **Effort:** master
+
 ??? abstract "Advanced IP Scanner"
     
     Detects the use of Advanced IP Scanner. Seems to be a popular tool for ransomware groups.
     
     - **Effort:** master
 
+??? abstract "Antivirus Exploitation Framework Detection"
+    
+    Detects a highly relevant Antivirus alert that reports an exploitation framework. This is based on Windows Defender logs (Event ID 1116 and 1117).
+    
+    - **Effort:** elementary
+
+??? abstract "Antivirus Password Dumper Detection"
+    
+    Detects a highly relevant Antivirus alert that reports a password dumper. This detection relies on Windows Defender events logs. This is based on Windows Defender logs (Event ID 1116 and 1117).
+    
+    - **Effort:** elementary
+
 ??? abstract "Antivirus Relevant File Paths Alerts"
     
     Detects an Antivirus alert in a highly relevant file path or with a relevant file name. This is only based on Windows Defender events.
     
     - **Effort:** intermediate
+
+??? abstract "Antivirus Web Shell Detection"
+    
+    Detects a highly relevant Antivirus alert that reports a web shell. This is based on Windows Defender logs (Event ID 1116 and 1117).
+    
+    - **Effort:** elementary
 
 ??? abstract "Aspnet Compiler"
     
@@ -177,6 +219,12 @@ The following Sekoia.io built-in rules match the intake **HarfangLab EDR**. This
     
     - **Effort:** master
 
+??? abstract "CVE-2019-0708 Scan"
+    
+    Detects the use of a scanner that discovers targets vulnerable to CVE-2019-0708 RDP RCE aka BlueKeep.
+    
+    - **Effort:** elementary
+
 ??? abstract "CVE-2021-34527 PrintNightmare Suspicious Actions From Spoolsv"
     
     Detects suspicious image loads and file creations from the spoolsv process which could be a sign of an attacker trying to exploit the PrintNightmare vulnerability, CVE-2021-34527. A remote code execution vulnerability exists when the Windows Print Spooler service improperly performs privileged file operations. An attacker who successfully exploited this vulnerability could run arbitrary code with SYSTEM privileges. This works as well as a Local Privilege escalation vulnerability. To fully work the rule requires to log for Loaded DLLs and File Creations, which can be done respectively using the Sysmon's event IDs 7 and 11.
@@ -206,6 +254,12 @@ The following Sekoia.io built-in rules match the intake **HarfangLab EDR**. This
     Detects the use of certify and certipy which are two different tools used to enumerate and abuse Active Directory Certificate Services.
     
     - **Effort:** advanced
+
+??? abstract "Chafer (APT 39) Activity"
+    
+    Detects previous Chafer (APT 39) activity attributed to OilRig as reported in Nyotron report in March 2018.
+    
+    - **Effort:** intermediate
 
 ??? abstract "Change Default File Association"
     
@@ -303,6 +357,12 @@ The following Sekoia.io built-in rules match the intake **HarfangLab EDR**. This
     
     - **Effort:** elementary
 
+??? abstract "Correlation Internal Ntlm Password Spraying"
+    
+    Detect multiple NTLM authentication failed on several account from one source
+    
+    - **Effort:** master
+
 ??? abstract "Correlation Multi Service Disable"
     
     The rule detects a high number of services stopped or de-activated in a short period of time.
@@ -314,6 +374,12 @@ The following Sekoia.io built-in rules match the intake **HarfangLab EDR**. This
     Detects domain name which is longer than 95 characters. Long domain names are distinctive of DNS tunnels.
     
     - **Effort:** advanced
+
+??? abstract "Correlation Suspicious Authentication Coercer Behavior"
+    
+    Detect a possible NTLM Relay attack combine with authent coerce
+    
+    - **Effort:** intermediate
 
 ??? abstract "Covenant Default HTTP Beaconing"
     
@@ -566,6 +632,12 @@ The following Sekoia.io built-in rules match the intake **HarfangLab EDR**. This
     Malware and attacker try to reduce their fingerprints on compromised host by deleting shell history.
     
     - **Effort:** advanced
+
+??? abstract "Eventlog Cleared"
+    
+    Some threat groups tend to delete local EventLogs (Security being the most common one to be deleted) using certain utilities. The EventID 517 is old and 1102 should be used for this instead on newer Windows versions.
+    
+    - **Effort:** intermediate
 
 ??? abstract "EvilProxy Phishing Domain"
     
@@ -849,6 +921,12 @@ The following Sekoia.io built-in rules match the intake **HarfangLab EDR**. This
     
     - **Effort:** intermediate
 
+??? abstract "Impacket Secretsdump.py Tool"
+    
+    Detects credential dumping via secretdump of impacket suite.
+    
+    - **Effort:** intermediate
+
 ??? abstract "Impacket Wmiexec Module"
     
     Detection of impacket's wmiexec example, used by attackers to execute commands remotely.
@@ -890,6 +968,12 @@ The following Sekoia.io built-in rules match the intake **HarfangLab EDR**. This
     Detects Koadic payload using MSHTML module
     
     - **Effort:** intermediate
+
+??? abstract "Lateral Movement Remote Named Pipe"
+    
+    Detects lateral movement and remote exec using named pipe over network. This requires Windows Security event logging with the File Share enable policy.
+    
+    - **Effort:** advanced
 
 ??? abstract "Lazarus Loaders"
     
@@ -1004,6 +1088,12 @@ The following Sekoia.io built-in rules match the intake **HarfangLab EDR**. This
     Detects keywords from well-known PowerShell exploitation frameworks
     
     - **Effort:** advanced
+
+??? abstract "Malicious Service Installations"
+    
+    Generic and known malicious service installation that appear in cases of lateral movement, credential dumping and other suspicious activity. It detects the use of PAExec, Wannacry commonly used malicious service, APT29 known malicious service name and net user service file name which is known as a sign of persistence.
+    
+    - **Effort:** elementary
 
 ??? abstract "Malspam Execution Registering Malicious DLL"
     
@@ -1125,6 +1215,12 @@ The following Sekoia.io built-in rules match the intake **HarfangLab EDR**. This
     
     - **Effort:** intermediate
 
+??? abstract "Microsoft Malware Protection Engine Crash"
+    
+    Detects a crash of the Microsoft Malware Protection Engine process (MsMpEng.exe), which is suspicious and could be related to an attacker disabling the Windows protection.
+    
+    - **Effort:** intermediate
+
 ??? abstract "Microsoft Office Creating Suspicious File"
     
     Detects Microsoft Office process (word, excel, powerpoint) creating a suspicious file which corresponds to a script or an executable. This behavior highly corresponds to an executed macro which loads an installation script or a malware payload. The rule requires to log for File Creations to work properly, which can be done through Sysmon Event ID 11.
@@ -1200,6 +1296,12 @@ The following Sekoia.io built-in rules match the intake **HarfangLab EDR**. This
 ??? abstract "NetSh Used To Disable Windows Firewall"
     
     Detects NetSh commands used to disable the Windows Firewall
+    
+    - **Effort:** intermediate
+
+??? abstract "Netscan Share Access Artefact"
+    
+    Detects netscan artefact on windows network share - indicate network share discovery.
     
     - **Effort:** intermediate
 
@@ -1383,6 +1485,12 @@ The following Sekoia.io built-in rules match the intake **HarfangLab EDR**. This
     
     - **Effort:** intermediate
 
+??? abstract "Password Dumper Activity On LSASS"
+    
+    Detects process handle on LSASS process with certain access mask and object type SAM_DOMAIN
+    
+    - **Effort:** intermediate
+
 ??? abstract "PasswordDump SecurityXploded Tool"
     
     Detects the execution of the PasswordDump SecurityXploded Tool
@@ -1422,6 +1530,12 @@ The following Sekoia.io built-in rules match the intake **HarfangLab EDR**. This
 ??? abstract "Possible Replay Attack"
     
     This event can be a sign of Kerberos replay attack or, among other things, network device configuration or routing problems.
+    
+    - **Effort:** intermediate
+
+??? abstract "Possible RottenPotato Attack"
+    
+    Detects logon events that have characteristics of events generated during an attack leveraging RottenPotato.
     
     - **Effort:** intermediate
 
@@ -1581,6 +1695,12 @@ The following Sekoia.io built-in rules match the intake **HarfangLab EDR**. This
     
     - **Effort:** elementary
 
+??? abstract "Privileged AD Builtin Group Modified"
+    
+    Detects changes to privileged AD builtin groups in Active Directory that could indicate malicious or unexpected administrative activity. This detection rule detects changes on specific groups that are Administrators (S-1-5-*-500), Domain Admins (S-1-5-*-512), Enterprise Admins (S-1-5-*-519), Schema Admins (S-1-5-*-518), Account Operators (S-1-5-32-548) and Backup Operators (S-1-5-32-551).
+    
+    - **Effort:** master
+
 ??? abstract "Process Memory Dump Using Comsvcs"
     
     Detects the use of comsvcs in command line to dump a specific process memory. This technique is used by attackers for privilege escalation and pivot.
@@ -1604,6 +1724,12 @@ The following Sekoia.io built-in rules match the intake **HarfangLab EDR**. This
     PTrace syscall provides a means by which one process ("tracer") may observe and control the execution of another process ("tracee") and examine and change the tracee's memory and registers. Attacker might want to abuse ptrace functionnality to analyse memory process. It requires to be admin or set ptrace_scope to 0 to allow all user to trace any process.
     
     - **Effort:** advanced
+
+??? abstract "Protected Storage Service Access"
+    
+    Detects access to a protected_storage service over the network. It could identify potential abuse of DPAPI to extract domain backup keys from Domain Controllers.
+    
+    - **Effort:** master
 
 ??? abstract "PsExec Process"
     
@@ -1640,6 +1766,12 @@ The following Sekoia.io built-in rules match the intake **HarfangLab EDR**. This
     Detects possible Qakbot persistence using schtasks.
     
     - **Effort:** intermediate
+
+??? abstract "RDP Login From Localhost"
+    
+    Detects RDP login from localhost source address, which may be a tunnelled login to bypass network restrictions.
+    
+    - **Effort:** advanced
 
 ??? abstract "RDP Port Change Using Powershell"
     
@@ -1731,6 +1863,12 @@ The following Sekoia.io built-in rules match the intake **HarfangLab EDR**. This
     
     - **Effort:** master
 
+??? abstract "Remote Enumeration Of Lateral Movement Groups"
+    
+    Detects remote session lists the member of four local groups relevant to lateral movement. This behavior is common in Active Directory mapping tools such as SharpHound.
+    
+    - **Effort:** intermediate
+
 ??? abstract "Remote Monitoring and Management Software - AnyDesk"
     
     Detect artifacts related to the installation or execution of the Remote Monitoring and Management tool AnyDesk.
@@ -1743,11 +1881,41 @@ The following Sekoia.io built-in rules match the intake **HarfangLab EDR**. This
     
     - **Effort:** master
 
+??? abstract "Remote Privileged Group Enumeration"
+    
+    Detects remote listing of local privileged group. Potential false positives, which should justify alert filters, are service accounts and administrators doing maintenance.
+    
+    - **Effort:** advanced
+
+??? abstract "Remote Registry Management Using Reg Utility"
+    
+    Remote registry management using REG utility from non-admin workstation. This requires Windows Security events logging.
+    
+    - **Effort:** master
+
+??? abstract "Remote Service Activity Via SVCCTL Named Pipe"
+    
+    Detects remote service activity via remote access to the svcctl named pipe
+    
+    - **Effort:** master
+
 ??? abstract "Remote System Discovery Via Telnet"
     
     Detects use of the protocol telnet to access information.
     
     - **Effort:** advanced
+
+??? abstract "Remote Task Creation Via ATSVC Named Pipe"
+    
+    Detects remote task creation via at.exe or API interacting with ATSVC Named Pipe. This requires Windows Security event logging with the File Share policy.
+    
+    - **Effort:** intermediate
+
+??? abstract "Rubeus Register New Logon Process"
+    
+    Detects potential use of Rubeus through registering a new logon process. This rule needs the EventID 4611, which can be configured through Group Policies (Audit Security System Extension)
+    
+    - **Effort:** master
 
 ??? abstract "Rubeus Tool Command-line"
     
@@ -1839,6 +2007,12 @@ The following Sekoia.io built-in rules match the intake **HarfangLab EDR**. This
     
     - **Effort:** intermediate
 
+??? abstract "Smbexec.py Service Installation"
+    
+    Detects the use of smbexec.py tool by detecting a specific service installation
+    
+    - **Effort:** elementary
+
 ??? abstract "Smss Wrong Parent"
     
     Detects if the Smss process was executed by a non-legitimate parent process. Session Manager Subsystem (smss) process is a component of the Microsoft Windows NT family of operating systems.
@@ -1899,6 +2073,18 @@ The following Sekoia.io built-in rules match the intake **HarfangLab EDR**. This
     
     - **Effort:** master
 
+??? abstract "Successful Brute Force Login From Internet"
+    
+    Detects a spike of failed login followed by a success one from Internet for a given source and target
+    
+    - **Effort:** advanced
+
+??? abstract "Successful Overpass The Hash Attempt"
+    
+    Detects successful logon with logon type 9 (NewCredentials) which matches the Overpass the Hash behavior of e.g Mimikatz's sekurlsa::pth module.
+    
+    - **Effort:** intermediate
+
 ??? abstract "Suncrypt Parameters"
     
     Detects SunCrypt ransomware's parameters, most of which are unique.
@@ -1910,6 +2096,12 @@ The following Sekoia.io built-in rules match the intake **HarfangLab EDR**. This
     Detects the usage of ADSI (LDAP) operations by tools. This may also detect tools like LDAPFragger. It needs file monitoring capabilities (Sysmon Event ID 11 with .sch file creation logging).
     
     - **Effort:** advanced
+
+??? abstract "Suspicious Access To Sensitive File Extensions"
+    
+    Detects known sensitive file extensions accessed on a network share. This activity could possibly correspond to a malicious one (removing backup, reading sensitive files, etc.).
+    
+    - **Effort:** master
 
 ??? abstract "Suspicious Cmd File Copy Command To Network Share"
     
@@ -2001,6 +2193,18 @@ The following Sekoia.io built-in rules match the intake **HarfangLab EDR**. This
     
     - **Effort:** elementary
 
+??? abstract "Suspicious Hostname"
+    
+    Detects suspicious hostnames such as ones with kali in it, to detect kali linux default hosts, but also other hostnames commonly used in attacks. List can be improved according to the environment.
+    
+    - **Effort:** intermediate
+
+??? abstract "Suspicious Kerberos Ticket"
+    
+    Detect suspicious Kerberos ticket based on on their parameters which suggest that it could be forged.
+    
+    - **Effort:** intermediate
+
 ??? abstract "Suspicious Microsoft Defender Antivirus Exclusion Command"
     
     Detects PowerShell commands aiming to exclude path, process, IP address, or extension from scheduled and real-time scanning. These commands can be used by attackers or malware to avoid being detected by Windows Defender. Depending on the environment and the installed software, this detection rule could raise false positives. We recommend customizing this rule by filtering legitimate processes that use Windows Defender exclusion command in your environment.
@@ -2078,6 +2282,12 @@ The following Sekoia.io built-in rules match the intake **HarfangLab EDR**. This
     Detects potential process injection and hollowing on processes that usually require a DLL to be launched, but are launched without any argument. 
     
     - **Effort:** intermediate
+
+??? abstract "Suspicious PsExec Execution"
+    
+    Detects execution of PsExec, different from the Sysinternals one. This rule helps to filter out the noise if PsExec is used for legit purposes or if attacker uses a different PsExec client other than Sysinternals one. The prerequisite is to log the Event ID 5145 (by setting "Audit Policy > Object Access > Audit Detailed File Share" to Success/Failure).
+    
+    - **Effort:** master
 
 ??? abstract "Suspicious Regasm Regsvcs Usage"
     
@@ -2223,6 +2433,12 @@ The following Sekoia.io built-in rules match the intake **HarfangLab EDR**. This
     
     - **Effort:** advanced
 
+??? abstract "Transfering Files With Credential Data Via Network Shares"
+    
+    Detects file transfer of sensitive files which contain credential data using network shares.
+    
+    - **Effort:** intermediate
+
 ??? abstract "Trickbot Malware Activity"
     
     Detects Trickbot malware process tree pattern in which rundll32.exe is parent of wermgr.exe.
@@ -2277,6 +2493,12 @@ The following Sekoia.io built-in rules match the intake **HarfangLab EDR**. This
     
     - **Effort:** master
 
+??? abstract "User Added to Local Administrators"
+    
+    Detects when user accounts are added which could be legitimate activity or a sign of privilege escalation activity, Potential False-Positives Legitimate administrative activity WinRM clients
+    
+    - **Effort:** master
+
 ??? abstract "Userinit Wrong Parent"
     
     Userinit.exe is a key process in the Windows operating system. On boot-up it manages the different start up sequences needed, such as establishing network connection and starting up the Windows shell. This rule analyse if the parent of this process is a legitimate one or not.
@@ -2294,6 +2516,12 @@ The following Sekoia.io built-in rules match the intake **HarfangLab EDR**. This
     Detects wceaux.dll creation while Windows Credentials Editor (WCE) is executed.
     
     - **Effort:** intermediate
+
+??? abstract "WMI Event Subscription"
+    
+    Detects creation of WMI event subscription persistence method 
+    
+    - **Effort:** advanced
 
 ??? abstract "WMI Fingerprint Commands"
     

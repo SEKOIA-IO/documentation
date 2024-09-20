@@ -2271,6 +2271,12 @@ The following Sekoia.io built-in rules match the intake **Sekoia.io Endpoint Age
     
     - **Effort:** master
 
+??? abstract "Successful Brute Force Login From Internet"
+    
+    Detects a spike of failed login followed by a success one from Internet for a given source and target
+    
+    - **Effort:** advanced
+
 ??? abstract "Successful Overpass The Hash Attempt"
     
     Detects successful logon with logon type 9 (NewCredentials) which matches the Overpass the Hash behavior of e.g Mimikatz's sekurlsa::pth module.

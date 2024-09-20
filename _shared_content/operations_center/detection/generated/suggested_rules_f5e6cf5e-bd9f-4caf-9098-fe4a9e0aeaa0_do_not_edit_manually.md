@@ -75,6 +75,30 @@ The following Sekoia.io built-in rules match the intake **Stormshield SES**. Thi
     
     - **Effort:** master
 
+??? abstract "Antivirus Exploitation Framework Detection"
+    
+    Detects a highly relevant Antivirus alert that reports an exploitation framework. This is based on Windows Defender logs (Event ID 1116 and 1117).
+    
+    - **Effort:** elementary
+
+??? abstract "Antivirus Password Dumper Detection"
+    
+    Detects a highly relevant Antivirus alert that reports a password dumper. This detection relies on Windows Defender events logs. This is based on Windows Defender logs (Event ID 1116 and 1117).
+    
+    - **Effort:** elementary
+
+??? abstract "Antivirus Relevant File Paths Alerts"
+    
+    Detects an Antivirus alert in a highly relevant file path or with a relevant file name. This is only based on Windows Defender events.
+    
+    - **Effort:** intermediate
+
+??? abstract "Antivirus Web Shell Detection"
+    
+    Detects a highly relevant Antivirus alert that reports a web shell. This is based on Windows Defender logs (Event ID 1116 and 1117).
+    
+    - **Effort:** elementary
+
 ??? abstract "Audio Capture via PowerShell"
     
     Detects audio capture via PowerShell Cmdlet
@@ -561,6 +585,12 @@ The following Sekoia.io built-in rules match the intake **Stormshield SES**. Thi
     
     - **Effort:** advanced
 
+??? abstract "Eventlog Cleared"
+    
+    Some threat groups tend to delete local EventLogs (Security being the most common one to be deleted) using certain utilities. The EventID 517 is old and 1102 should be used for this instead on newer Windows versions.
+    
+    - **Effort:** intermediate
+
 ??? abstract "Exchange Mailbox Export"
     
     Detection of a standard Exchange Mailbox export, which stores all mails from a user in a pst file, from command line or PowerShell script.
@@ -1026,6 +1056,12 @@ The following Sekoia.io built-in rules match the intake **Stormshield SES**. Thi
 ??? abstract "Microsoft Exchange PowerShell Snap-Ins To Export Exchange Mailbox Data"
     
     Detects PowerShell SnapIn command line or PowerShell script, often used with Get-Mailbox to export Exchange mailbox data.
+    
+    - **Effort:** intermediate
+
+??? abstract "Microsoft Malware Protection Engine Crash"
+    
+    Detects a crash of the Microsoft Malware Protection Engine process (MsMpEng.exe), which is suspicious and could be related to an attacker disabling the Windows protection.
     
     - **Effort:** intermediate
 
@@ -2084,6 +2120,12 @@ The following Sekoia.io built-in rules match the intake **Stormshield SES**. Thi
     Detects Venom Multi-hop Proxy agent.
     
     - **Effort:** intermediate
+
+??? abstract "WMI Event Subscription"
+    
+    Detects creation of WMI event subscription persistence method 
+    
+    - **Effort:** advanced
 
 ??? abstract "WMI Fingerprint Commands"
     
