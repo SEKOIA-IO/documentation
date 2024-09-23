@@ -358,46 +358,19 @@ intakes:
 
 ### Understanding concentrator metrics
 
-As you are aware, the concentrator is essentially a Docker container running an instance of rsyslog. To monitor the forwarder, we decided against developing our own metrics. Instead, we opted for leveraging a standard implementation provided by rsyslog: the [impstats module](https://www.rsyslog.com/doc/configuration/modules/impstats.html)
+The concentrator is based on a rsyslog instance so to monitor the forwarder, we decided against developing our own metrics. Instead, we opted for leveraging a standard implementation provided by rsyslog direclty: the [impstats module](https://www.rsyslog.com/doc/configuration/modules/impstats.html)
 
-By enabling this internal module, rsyslog generates numerous low-level metrics, which are essential for us to comprehend in order to understand the forwarder metrics. Therefore, it is crucial to grasp the operational workflow of rsyslog.
+By enabling this internal module, rsyslog generates numerous low-level metrics, which are essential for us to comprehend in order to understand the forwarder metrics. Therefore, it is crucial to grasp the operational workflow of rsyslog. [Here](https://www.rsyslog.com/doc/configuration/basic_structure.html) you can find more details about rsyslog principles.
 
-The fundamental message flow within an rsyslog instance is as follows: **Messages enter rsyslog through input modules. These messages are then processed by a ruleset where conditions are evaluated. Upon meeting a condition, the message gets routed to an action that performs a specific task, such as writing to a file, database, or forwarding it to a remote host.**
+The forwarder is configured with one input module per intake, as specified in the `intake.yaml` file. Each input module is paired with a corresponding ruleset, action, and specific queue. When monitoring is enabled, dedicated metrics for each module will be transferred to Sekoia, identified by a specific name, as shown below:
 
-At Sekoia, we have configured one input module per intake, each defined in the `intake.yaml` file. Each input module is paired with a corresponding ruleset and a specific action. 
-
-For instance, for one defined intake, there is:
-
-- One input module responsible for collecting events over UDP/TCP on the specified port
-- One ruleset to evaluate conditions
-- One action to forward events to Sekoia with the appropriate intake key.
-
-Additionally, we have implemented disk-assisted queues for each intake to ensure resilience in the event of an incident and to efficiently manage a high volume of messages for one specific intake.
-
-By thoroughly understanding this configuration and the flow of messages through rsyslog, we can effectively monitor and optimize the forwarder to meet Sekoia's requirements.
-
-By activating the forwarder monitoring, you will have access to intake-specific metrics, identifiable by filtering on the sekoiaio.forwarder.intake.name field. These metrics include:
-
-- The number of messages received by the forwarder at the point of entry.
-- The number of messages processed by the action (forwarded to Sekoia = forwarder output) and the number of failures.
-- Statistics concerning the memory queue.
-- Statistics related to the disk queue [DA].
-
-Additionally, you will also have access to global metrics that are not specific to any intake. These include:
-
-- Overall resource usage.
-- Statistics about the main memory queue.
-- Statistics concerning the main disk queue [DA].
-- Statistics about internal modules.
-
-!!! Note
-    It is important to note that most of these values are incremental and not the difference between two messages.
-
-For a detailed explanation of each counter, please refer to the rsyslog documentation.
+![image](/assets/operation_center/ingestion_methods/sekoiaio_forwarder/forwarder_monitoring.png){: style="max-width:100%"}
 
 By leveraging these metrics, you can easily define custom rules to detect specific behaviors such as service interruptions, full queues, discarded events, and more. This monitoring capability is crucial for maintaining optimal performance and ensuring the reliability of the forwarder in your system.
 
-
+!!! Note
+    To understand the detailed meaning of each counter, please refer to the [associated rsyslog documentation](https://www.rsyslog.com/doc/configuration/rsyslog_statistic_counter.html).
+    
 ### Extract concentrator metrics in case of outage
 
 In extreme cases, the forwarder may cease to function entirely, and as a result, it will also stop sending its metrics to Sekoia (e.g., a full queue). While an alert from Sekoia will notify you of this issue, you will still need to investigate and understand the root cause to resolve the problem.
