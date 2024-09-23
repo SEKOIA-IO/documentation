@@ -375,16 +375,12 @@ By leveraging these metrics, you can easily define custom rules to detect specif
 
 In extreme cases, the forwarder may cease to function entirely, and as a result, it will also stop sending its metrics to Sekoia (e.g., a full queue). While an alert from Sekoia will notify you of this issue, you will still need to investigate and understand the root cause to resolve the problem.
 
-In addition to continuously sending its metrics to Sekoia, the forwarder also retains a raw copy of its metrics locally. To facilitate the retrieval of these metrics, we recommend configuring your Docker Compose setup as follows:
+In addition to continuously sending its metrics to Sekoia, the forwarder also retains a raw copy of its metrics locally. To retrieve these logs on your host for debugging purpose, you can use the following command:
 
-```yaml
-volumes:
-    - ./intakes.yaml:/intakes.yaml
-    - ./stats/:/var/log/stats
-    - ./disk_queue:/var/spool/rsyslog
+
+```bash
+ sudo docker compose cp rsyslog:/var/log/rsyslog-stats.log  rsyslog-stats.log
 ```
-
-The content of the folder `stats` on your host will be very useful in order to debug the forwarder. 
 
 ## Start the concentrator
 
