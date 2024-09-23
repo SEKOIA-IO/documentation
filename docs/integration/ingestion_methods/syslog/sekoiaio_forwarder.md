@@ -344,10 +344,6 @@ To activate the monitoring mode, simply defined a new intake and add `stats: Tru
 ```yaml
 ---
 intakes:
-- name: Techno1
-  protocol: tcp
-  port: 20516
-  intake_key: INTAKE_KEY_FOR_TECHNO_1
 - name: Monitoring
   stats: True
   intake_key: INTAKE_KEY_FOR_FORWARDER_LOGS
@@ -364,7 +360,7 @@ By enabling this internal module, rsyslog generates numerous low-level metrics, 
 
 The forwarder is configured with one input module per intake, as specified in the `intake.yaml` file. Each input module is paired with a corresponding ruleset, action, and specific queue. When monitoring is enabled, dedicated metrics for each module will be transferred to Sekoia, identified by a specific name, as shown below:
 
-![image](/assets/operation_center/ingestion_methods/sekoiaio_forwarder/forwarder_monitoring.png){: style="max-width:100%"}
+![image](/assets/operation_center/ingestion_methods/sekoiaio_forwarder/forwarder_monitoring_2.png){: style="max-width:100%"}
 
 By leveraging these metrics, you can easily define custom rules to detect specific behaviors such as service interruptions, full queues, discarded events, and more. This monitoring capability is crucial for maintaining optimal performance and ensuring the reliability of the forwarder in your system.
 
