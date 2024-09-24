@@ -107,6 +107,40 @@ Update status on Incident.
 | `status` | `string` | Status. |
 | `resolution` | `string` | Resolution. |
 
+### Enumerate processes
+
+Enumerate running processes.
+
+| Name              | Type       | Description                                   |
+|-------------------|------------|-----------------------------------------------|
+| `target`          | `string`   | Device identifier on which action is created. |
+| `organization_id` | `string`   | UUID of an organization.                      |
+| `thread_id`       | `integer`  | ID of a Thread to kill.                       |
+
+### Kill Thread
+
+Kill thread.
+
+| Name              | Type          | Description                                   |
+|-------------------|---------------|-----------------------------------------------|
+| `target`          | `string`      | Device identifier on which action is created. |
+| `organization_id` | `string`      | UUID of an organization.                      |
+| `thread_id`       | `integer`     | ID of a Thread to kill.                       |
+
+
+### Kill Process
+
+Kill processes matching patterns.
+
+| Name                   | Type            | Description                                                                                                                                                              |
+|------------------------|-----------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `target`               | `string`        | Device identifier on which action is created.                                                                                                                            |
+| `organization_id`      | `string`        | UUID of an organization.                                                                                                                                                 |
+| `match`                | `string`        | Strategy used to match processes<br/>(`processId`,`processName`,`processNameRegex`,`processPath`,`processPathRegex`)                                                     |
+| `process_match_values` | `array`         | List of values that are used to match process to kill. Depending on selected strategy it might be list of identifiers, names or regular expressions. Up to 6 elements.   |
+| `process_memory_dump`  | `boolean`       | Whether to run memory dump on process before killing it. Memory dump can be run only if `processName` or `processId` strategy is used                                    |
+| `memory_dump_flag`     | `string`        | Memory dump flag (`full` - memory dump includes all accessible memory of process, `pmem` - only information necessary to capture process' stack traces)                  |
+
 
 ## Extra
 
