@@ -7,7 +7,7 @@ type: intake
 Pradeo Mobile Threat Defense (MTD) is a comprehensive security solution designed to protect mobile devices from various threats such as malware, phishing, and network attacks. This setup guide explains how to forward and collect the detections and activity logs of your Pradeo MTD to Sekoia.io.
 
 - **Vendor**: Pradeo
-- **Plan**: Defend Prime
+- **Plan**: Defend Core & Defend Prime
 - **Supported environment**: SaaS
 - **Detection based on**: Alert
 - **Supported application or feature**: 
