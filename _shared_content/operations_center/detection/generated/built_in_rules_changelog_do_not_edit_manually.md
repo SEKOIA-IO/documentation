@@ -1,7 +1,10 @@
-Changelog _last update on 2024-09-20_
+Changelog _last update on 2024-09-24_
 
 ## Changelog
 
+### Suspicious URL Requested By Curl Or Wget Commands
+  - 23/09/2024 - major - Fixed an issue with the detection pattern.
+    
 ### ZIP LNK Infection Chain
   - 19/09/2024 - minor - File paths added to filter some false positives.
     
