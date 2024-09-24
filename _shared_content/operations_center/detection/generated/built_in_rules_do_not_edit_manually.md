@@ -1,4 +1,4 @@
-Rules catalog includes **947 built-in detection rules** ([_last update on 2024-09-20_](rules_changelog.md)).
+Rules catalog includes **947 built-in detection rules** ([_last update on 2024-09-24_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Identity Information**
 
@@ -5150,6 +5150,10 @@ Rules catalog includes **947 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 23/09/2024 - major - Fixed an issue with the detection pattern.
+            
 ??? abstract "Suspicious Windows ANONYMOUS LOGON Local Account Created"
     
     Detects the creation of suspicious accounts simliar to ANONYMOUS LOGON, such as using additional spaces. Created as a covering detection for attackers trying to created an ANONYMOUS LOGON account as it is an account named used in internal Windows events and frequently filtered by attackers.
