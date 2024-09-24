@@ -115,7 +115,6 @@ Enumerate running processes.
 |-------------------|------------|-----------------------------------------------|
 | `target`          | `string`   | Device identifier on which action is created. |
 | `organization_id` | `string`   | UUID of an organization.                      |
-| `thread_id`       | `integer`  | ID of a Thread to kill.                       |
 
 ### Kill Thread
 
