@@ -1,6 +1,7 @@
 .idea
 site
 docs/stylesheets/sekoiaio.css
+docs/stylesheets/openapi.css
 venv
 *~
 redoc.egg-info

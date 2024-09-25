@@ -45,7 +45,7 @@ Redirecting...
             with filename.open() as f:
                 _, metadata = get_data(f.read())
 
-                if "uuid" not in metadata or metadata.get("type").lower() !=  "intake":
+                if "uuid" not in metadata or metadata.get("type").lower() != "intake":
                     continue
 
                 dialect_uuid = metadata["uuid"]
@@ -67,13 +67,16 @@ Redirecting...
                 )
                 new_files.append(newfile)
 
-        new_files.append(File(
-            path="integration/categories/index.md",
-            src_dir="operation_center/integration_catalog/",
-            dest_dir=config["site_dir"],
-            use_directory_urls=True,
-        ))
-        files._files += new_files
+        new_files.append(
+            File(
+                path="integration/categories/index.md",
+                src_dir="operation_center/integration_catalog/",
+                dest_dir=config["site_dir"],
+                use_directory_urls=True,
+            )
+        )
+        for f in new_files:
+            files.append(f)
 
     def on_page_read_source(self, page, config):
         if page.file.src_path.startswith("operation_center/integration_catalog/uuid/"):

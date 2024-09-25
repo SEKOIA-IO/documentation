@@ -9,11 +9,14 @@ extra_css:
 - stylesheets/lightgallery.min.css
 - stylesheets/poppins.min.css
 - stylesheets/inter.min.css
+- stylesheets/openapi.css
 extra_javascript:
 - javascript/sekoiaio.js
 - javascript/lightgallery.min.js
 - javascript/hotjar.js
 - javascript/posthog.js
+- javascript/swagger-converter.js
+- javascript/openapi.js
 markdown_extensions:
 - admonition
 - attr_list
@@ -604,6 +607,7 @@ nav:
     - Overview: integration/faq/overview.md
     - General Questions:
       - Bug VS Improvement Requests: integration/faq/general_questions/bug_and_improvement_requests.md
+- API Documentation: developer/api.md
 plugins:
 - search: null
 - redirects:
@@ -844,7 +848,8 @@ plugins:
       xdr/features/investigate/dork_language.md: xdr/features/investigate/events_query_language.md
       operation_center/data_collection/ingestion_methods/sekoiaio.md: integration/categories/endpoint/sekoiaio.md
 - redoc
-- intakes_by_uuid
+#- intakes_by_uuid
+- sass
 repo_url: https://github.com/SEKOIA-IO/documentation
 site_name: Sekoia.io Documentation
 site_url: https://docs.sekoia.io
@@ -858,6 +863,7 @@ theme:
   - content.code.annotate
   - content.action.edit
   - content.code.copy
+  - navigation.sections
   font: false
   include_search_page: true
   lang: en
