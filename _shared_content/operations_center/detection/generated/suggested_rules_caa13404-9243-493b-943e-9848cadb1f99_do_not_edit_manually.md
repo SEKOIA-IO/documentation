@@ -207,9 +207,9 @@ The following Sekoia.io built-in rules match the intake **Microsoft 365 / Office
     
     - **Effort:** elementary
 
-??? abstract "Entra ID Sign-In Via Known AiTM Phishing Kit (RED0046)"
+??? abstract "Entra ID Sign-In Via Known AiTM Phishing Kit (Mamba 2FA)"
     
-    Detects a sign-in attempt with known characteristics of the adversary-in-the-middle phishing kit tracked by Sekoia.io as RED0046.
+    Detects a sign-in attempt with known characteristics of the adversary-in-the-middle phishing kit tracked by Sekoia.io as Mamba 2FA.
     
     - **Effort:** elementary
 

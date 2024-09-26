@@ -1,4 +1,4 @@
-Rules catalog includes **947 built-in detection rules** ([_last update on 2024-09-24_](rules_changelog.md)).
+Rules catalog includes **947 built-in detection rules** ([_last update on 2024-09-26_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Identity Information**
 
@@ -10709,15 +10709,16 @@ Rules catalog includes **947 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** elementary
     
-??? abstract "Entra ID Sign-In Via Known AiTM Phishing Kit (RED0046)"
+??? abstract "Entra ID Sign-In Via Known AiTM Phishing Kit (Mamba 2FA)"
     
-    Detects a sign-in attempt with known characteristics of the adversary-in-the-middle phishing kit tracked by Sekoia.io as RED0046.
+    Detects a sign-in attempt with known characteristics of the adversary-in-the-middle phishing kit tracked by Sekoia.io as Mamba 2FA.
     
     - **Effort:** elementary
     
     - **Changelog:**
     
         - 09/08/2024 - major - Update the indicator.
+        - 25/09/2024 - major - Rename the rule, update the indicators.
             
 ??? abstract "Entra ID Sign-In Via Known AiTM Phishing Kit (Tycoon 2FA)"
     
@@ -10969,15 +10970,16 @@ Rules catalog includes **947 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** elementary
     
-??? abstract "Entra ID Sign-In Via Known AiTM Phishing Kit (RED0046)"
+??? abstract "Entra ID Sign-In Via Known AiTM Phishing Kit (Mamba 2FA)"
     
-    Detects a sign-in attempt with known characteristics of the adversary-in-the-middle phishing kit tracked by Sekoia.io as RED0046.
+    Detects a sign-in attempt with known characteristics of the adversary-in-the-middle phishing kit tracked by Sekoia.io as Mamba 2FA.
     
     - **Effort:** elementary
     
     - **Changelog:**
     
         - 09/08/2024 - major - Update the indicator.
+        - 25/09/2024 - major - Rename the rule, update the indicators.
             
 ??? abstract "Entra ID Sign-In Via Known AiTM Phishing Kit (Tycoon 2FA)"
     
@@ -12068,15 +12070,16 @@ Rules catalog includes **947 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** elementary
     
-??? abstract "Entra ID Sign-In Via Known AiTM Phishing Kit (RED0046)"
+??? abstract "Entra ID Sign-In Via Known AiTM Phishing Kit (Mamba 2FA)"
     
-    Detects a sign-in attempt with known characteristics of the adversary-in-the-middle phishing kit tracked by Sekoia.io as RED0046.
+    Detects a sign-in attempt with known characteristics of the adversary-in-the-middle phishing kit tracked by Sekoia.io as Mamba 2FA.
     
     - **Effort:** elementary
     
     - **Changelog:**
     
         - 09/08/2024 - major - Update the indicator.
+        - 25/09/2024 - major - Rename the rule, update the indicators.
             
 ??? abstract "Entra ID Sign-In Via Known AiTM Phishing Kit (Tycoon 2FA)"
     
