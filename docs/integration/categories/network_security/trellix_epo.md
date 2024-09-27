@@ -4,7 +4,7 @@ type: intake
 
 ## Overview
 
-Trellix ePO - On-prem monitors and manages your network, collects data on events and alerts, creates reports, and automates workflow to streamline product deployments, patch installations, and security updates. As an open and comprehensive platform, Trellix ePO - On-prem integrates more than 150 third-party solutions for faster and more accurate responses.
+Trellix ePO monitors and manages your network, collects data on events and alerts, creates reports, and automates workflow to streamline product deployments, patch installations, and security updates. As an open and comprehensive platform, Trellix ePO integrates more than 150 third-party solutions for faster and more accurate responses.
 
 !!! warning
     Important note - This format is currently in alpha. We highly value your feedback to improve its performance.
@@ -12,7 +12,7 @@ Trellix ePO - On-prem monitors and manages your network, collects data on events
 
 - **Vendor**: Trellix
 - **Plan**: Defend Core & Defend Prime
-- **Supported environment**: On prem
+- **Supported environment**: SaaS
 - **Version compatibility**: 5.10
 - **Detection based on**: Telemetry
 - **Supported application or feature**: Application logs
