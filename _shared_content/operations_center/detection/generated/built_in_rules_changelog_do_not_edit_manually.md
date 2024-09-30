@@ -1,7 +1,10 @@
-Changelog _last update on 2024-09-24_
+Changelog _last update on 2024-09-26_
 
 ## Changelog
 
+### Entra ID Sign-In Via Known AiTM Phishing Kit (Mamba 2FA)
+  - 25/09/2024 - major - Rename the rule, update the indicators.
+    
 ### Suspicious URL Requested By Curl Or Wget Commands
   - 23/09/2024 - major - Fixed an issue with the detection pattern.
     
@@ -40,9 +43,6 @@ Changelog _last update on 2024-09-24_
     
 ### Veeam Backup & Replication Malware Detection
   - 13/08/2024 - major - Restrict to only one type of event following customer feedback
-    
-### Entra ID Sign-In Via Known AiTM Phishing Kit (RED0046)
-  - 09/08/2024 - major - Update the indicator.
     
 ### Wdigest Enable UseLogonCredential
   - 08/08/2024 - major - Rule's pattern field changed and pattern improved to cause less false positives.
