@@ -1,17 +1,16 @@
-# Query Builder (beta)
+# Query Builder
 
-Start exploring your data with the Query Builder. Hunt for threats, get analytics, create reports. The Query Builder is a simple form which allows you to build queries to explore your data. 
-Using this form, you can now aggregate your data to extract new insights. The Query Builder also offers the possibility to visualize data through different kinds of charts.
+Start exploring your data with the Query Builder. Hunt for threats, obtain analytics, and create insightful dashboards and reports. The Query Builder is a simple tool that allows you to build queries to explore your data effectively.
 
-At the moment, only the `Events` table is available but more tables are coming.
+With this form, you can aggregate data to extract new insights, helping you make informed decisions. Additionally, the Query Builder enables the visualization of data through various types of charts, enriching your reporting capabilities.
+
+Currently, the Alerts data source is available, along with the Events source and the Cases source, with plans to introduce more sources in the future. 
 
 ![query builder](/assets/operation_center/events/qb-run.gif){: style="max-width:100%"}
 
 ## Build your query
 
-Select a table to query in the `From` clause and use `Add clause` button to refine your query.
-
-![clauses](/assets/operation_center/events/qb-clauses.gif){: style="max-width:100%"}
+Select a data source to query in the `From` clause and use `Add clause` button to refine your query.
 
 The Query Builder comes with the following clauses:
 
@@ -62,6 +61,31 @@ Use the following operators to define your conditions in the `WHERE` clause.
 | <= | Less than or equal to |
 | > | Strictly more than |
 | >= | More than or equal to |
+
+### Alert properties 
+
+When using the Query Builder with Alerts as a source, users can filter and manipulate queries based on the following alert properties:
+
+| **Alert Property**        | **Description**                                                                              |
+|---------------------------|----------------------------------------------------------------------------------------------|
+| Creation date             | The date and time when the alert was initially created.                                     |
+| Update date               | The date and time when the alert was last updated.                                          |
+| Entity UUID               | A unique identifier representing the entity associated with the alert.                     |
+| Entity name               | The human-readable name of the entity linked to the alert.                                  |
+| Rule UUID                 | A unique identifier for the rule that generated the alert.                                  |
+| Rule name                 | The name assigned to the rule responsible for the alert.                                     |
+| Status                    | The current state of the alert (e.g., open, acknowledged, resolved).                      |
+| Urgency                   | The level of urgency assigned to the alert, indicating its critical nature.                 |
+| Similar                   | Properties related to similar alerts, facilitating comparative analysis.                     |
+| Short ID                  | A concise identifier for quick reference to the alert.                                      |
+| Time to detect            | Duration taken to identify the alert from its occurrence.                                    |
+| Time to acknowledge       | Time elapsed from detection to official acknowledgment of the alert.                        |
+| Time to respond           | Duration taken to take action after acknowledgment.                                          |
+| Time to resolve           | The total time taken to completely resolve the alert.                                        |
+| Time to ingest            | The duration from alert generation to its final ingestion into the system.                  |
+| Detection type            | The method by which the alert was detected (e.g., automated monitoring, manual reporting).  |
+| Community UUID            | A unique identifier for the community or organization the alert belongs to.                 |
+
 
 ## Run your query
 
@@ -124,3 +148,7 @@ You can export your results in JSON Lines format. Export file will have `.jsonl`
 JSON Lines is a convenient format for storing structured data that may be processed one record at a time. It works well with unix-style text processing tools and shell pipelines.
 
 See [JSON Lines documentation](https://jsonlines.org/) for more details.
+
+## Add query to dashboard 
+
+Queries can be added to dashboards. To read more about this feature, check our documentation on [dashboards](/xdr/features/report/dashboards/#query-builders-widgets). 
