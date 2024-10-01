@@ -4,15 +4,15 @@ In the current cybersecurity landscape, organizations face significant challenge
 
 ### Rules Configuration
 
-Our extensive catalog of over 900 rules, each [associated with a TTP from the MITRE ATT&CK framework](https://docs.sekoia.io/xdr/features/detect/built_in_detection_rules/), is categorized by four levels of effort. This enables targeted and effective defense against threats. The normalization of events via [intake formats](https://github.com/SEKOIA-IO/intake-formats/blob/main/doc/structured_event.md) and the use of [ECS taxonomy](https://www.elastic.co/guide/en/ecs/current/ecs-reference.html) allows for technology-agnostic integration, facilitating the production of detection rules based on the [SIGMA models](https://docs.sekoia.io/xdr/features/detect/sigma/), our specific [anomaly detection engine](https://docs.sekoia.io/xdr/features/detect/anomaly/) and even the [IOC Detection](https://docs.sekoia.io/xdr/features/detect/iocdetection/) & [Collections](https://docs.sekoia.io/xdr/features/detect/ioccollections/).
+Our extensive catalog of over 900 rules, each [associated with a TTP from the MITRE ATT&CK framework](../xdr/features/detect/built_in_detection_rules.md), is categorized by four levels of effort. This enables targeted and effective defense against threats. The normalization of events via [intake formats](https://github.com/SEKOIA-IO/intake-formats/blob/main/doc/structured_event.md) and the use of [ECS taxonomy](https://www.elastic.co/guide/en/ecs/current/ecs-reference.html) allows for technology-agnostic integration, facilitating the production of detection rules based on the [SIGMA models](../xdr/features/detect/sigma.md), our specific [anomaly detection engine](../xdr/features/detect/anomaly.md) and even the [IOC Detection](../xdr/features/detect/iocdetection.md) & [Collections](../xdr/features/detect/ioccollections.md).
 
 **Recommendations:**
 
-- **Activate all [effort level](https://docs.sekoia.io/xdr/features/detect/rules_catalog/#effort-level) 1 and 2 rules** during the initial setup of your community.
+- **Activate all [effort level](../xdr/features/detect/rules_catalog.md#effort-level) 1 and 2 rules** during the initial setup of your community.
 
-- **Configure the Rules Settings** to [enable new rules](https://docs.sekoia.io/xdr/features/detect/rules_catalog/#automatically) up to the Intermediate level.
+- **Configure the Rules Settings** to [enable new rules](../xdr/features/detect/rules_catalog.md#automatically) up to the Intermediate level.
 
-- **Fine-tune detection rules** after each false positive alert through the [available options](https://docs.sekoia.io/xdr/features/detect/rules_catalog/#limiting-the-scope-of-a-rule), primarily using alert filters.
+- **Fine-tune detection rules** after each false positive alert through the [available options](../xdr/features/detect/rules_catalog.md#limiting-the-scope-of-a-rule), primarily using alert filters.
 
 - **Activate a new wave of higher effort level rules** after the initial RUN period, representing:
 
@@ -33,10 +33,10 @@ To ensure comprehensive and effective coverage, it is crucial to configure your 
 - **2 company wide Network Based Intake** (e.g., Loadbalancer/Reverse-Proxy, Proxy, DNS). They help monitor internal network traffic and detect anomalies such as lateral movements by attackers and suspicious communications.
 - **1 company wide Email Security Based Intake** (e.g., Office, ProofPoint, Vade) **with security options enabled**. This helps identify phishing attacks, malware transmitted via email, and other email-related threats.
 - **1 Identity and Access Management Based Intake** for **on-premise** environments (e.g., Active Directory, Okta, Wallix) **and 1 for cloud** environments if applicable (e.g., Azure Entra ID, Cloudflare Access Requests, Google Workspace). This helps detect suspicious activities related to user access, such as unauthorized login attempts and privilege changes, and ensures security oversight across both on-premise and cloud environments.
-- **Activity Logs**: Ensure that [Sekoia.io activity logs](https://docs.sekoia.io/integration/integrations/application/sekoiaio_activity_logs/) are activated. This allows monitoring actions and changes within the Sekoia.io platform itself, ensuring complete transparency and traceability.
-- **No intake should have zero events received** in the past 7 days. An intake without events can indicate a configuration or data collection issue, compromising threat detection capability. Ensure that notifications are configured to alert in the case of [an event drop for an intake](https://docs.sekoia.io/getting_started/notifications-Examples/#intakes).
+- **Activity Logs**: Ensure that [Sekoia.io activity logs](../integration/categories/applicative/sekoiaio_activity_logs.md) are activated. This allows monitoring actions and changes within the Sekoia.io platform itself, ensuring complete transparency and traceability.
+- **No intake should have zero events received** in the past 7 days. An intake without events can indicate a configuration or data collection issue, compromising threat detection capability. Ensure that notifications are configured to alert in the case of [an event drop for an intake](./notifications-Examples.md#intakes).
 
-- **Use the [Sekoia.io Forwarder](https://docs.sekoia.io/integration/ingestion_methods/syslog/sekoiaio_forwarder/)** each time you need to forward On Premise events via syslog protocol to Sekoia.io SOC Platform to ease discriminate logs before adding them the relevant Intake Key. It also is the only log forwarder that our Support team will be able to provide you with assistance.
+- **Use the [Sekoia.io Forwarder](../integration/ingestion_methods/syslog/sekoiaio_forwarder.md)** each time you need to forward On Premise events via syslog protocol to Sekoia.io SOC Platform to ease discriminate logs before adding them the relevant Intake Key. It also is the only log forwarder that our Support team will be able to provide you with assistance.
 
 
 ### Events Quality
@@ -51,7 +51,7 @@ The quality of events is crucial for accurate and effective detection. Here are 
 Our product is designed to focus on high-priority threats, enabling expert resources to conduct a manageable number of quality investigations each day. By creating alert filters, you can ensure that alerts are raised for the right reasons, enhancing the efficiency and effectiveness of your security operations.
 
 - **Monitor the average number of Alerts per Intake** to identify intakes generating too many or too few alerts.
-- **Limit the number of Daily New Alerts** at a manageable level for your team (by experience, around 6 to 8 per day per analyst, or 60 per day) and prioritise the [tuning of a rule](https://docs.sekoia.io/xdr/features/investigate/alerts/#create-an-alert-filter) over automating its status change if no defensive action is to be taken.
+- **Limit the number of Daily New Alerts** at a manageable level for your team (by experience, around 6 to 8 per day per analyst, or 60 per day) and prioritise the [tuning of a rule](../xdr/features/investigate/alerts.md#create-an-alert-filter) over automating its status change if no defensive action is to be taken.
 - **Track the Weekly and Monthly volume of New Alerts** to evaluate the evolution of threats and the performance of detection rules.
 - **Assess the number of Daily New Cases** to understand workload and the effectiveness of response processes. In general, the number of case(s) per day does not exceed 1, as it is cconsidered as a very important incident.
 - **Ensure no sleeping alert is older than 1 week** without status "Closed" or "Rejected".
@@ -66,27 +66,27 @@ Playbooks complement operational optimization by automating various types of man
 
 - **Keep the number of playbook executions per day low**: Aim for less than 60 executions per playbook per day, aligning with the number of raised alerts. Each playbook should have a specific objective to meet a particular need.
 - **Design playbooks with simplicity in mind**: On average, each playbook should be composed of less than 15 modules, including:
-    - **1 [Trigger](https://docs.sekoia.io/xdr/features/automate/triggers/)** such as the “Manual trigger” or “Alert created” trigger **with a filter condition** to start the playbook only for relevant cases.
-    - **Some [Operator](https://docs.sekoia.io/xdr/features/automate/operators/) modules** like "[Condition](https://docs.sekoia.io/xdr/features/automate/operators/#condition)" and "[Foreach](https://docs.sekoia.io/xdr/features/automate/operators/#foreach)" to halt the playbook execution if new information gathered during the process indicates that the playbook is unnecessary in the current context.
-    - **A majority of [Action](https://docs.sekoia.io/xdr/features/automate/actions/) modules** making it easily understandable for new team members and maintainable over time. To give you more details on the top 10 most used playbook Actions, here is a list:
+    - **1 [Trigger](../xdr/features/automate/triggers.md)** such as the “Manual trigger” or “Alert created” trigger **with a filter condition** to start the playbook only for relevant cases.
+    - **Some [Operator](../xdr/features/automate/operators.md) modules** like "[Condition](../xdr/features/automate/operators.md#condition)" and "[Foreach](../xdr/features/automate/operators.md#foreach)" to halt the playbook execution if new information gathered during the process indicates that the playbook is unnecessary in the current context.
+    - **A majority of [Action](../xdr/features/automate/actions.md) modules** making it easily understandable for new team members and maintainable over time. To give you more details on the top 10 most used playbook Actions, here is a list:
 
-        1. [Read JSON File](https://docs.sekoia.io/xdr/features/automate/library/fileutils/#read-json-file)
-        2. [Comment Alert](https://docs.sekoia.io/xdr/features/automate/library/sekoia-io/#comment-alert)
-        3. [Get Alert](https://docs.sekoia.io/xdr/features/automate/library/sekoia-io/#get-alert)
-        4. [Request URL](https://docs.sekoia.io/xdr/features/automate/library/http/#request-url)
-        5. [Update Alert Status](https://docs.sekoia.io/xdr/features/automate/library/sekoia-io/#update-alert-status)
-        6. [Get Events](https://docs.sekoia.io/xdr/features/automate/library/sekoia-io/#get-events)
-        7. [VirusTotal Scan URL](https://docs.sekoia.io/xdr/features/automate/library/virustotal/#scan-url)
-        8. [Get Event Field Common Values](https://docs.sekoia.io/xdr/features/automate/library/sekoia-io/#get-event-field-common-values)
-        9. [Edit Alert](https://docs.sekoia.io/xdr/features/automate/library/sekoia-io/#edit-alert)
-        10. [VirusTotal Scan Hash](https://docs.sekoia.io/xdr/features/automate/library/virustotal/#scan-hash)
+        1. [Read JSON File](../integration/action_library/generic/fileutils.md#read-json-file)
+        2. [Comment Alert](../integration/action_library/generic/sekoia-io.md#comment-alert)
+        3. [Get Alert](../integration/action_library/generic/sekoia-io.md#get-alert)
+        4. [Request URL](../integration/action_library/generic/http.md#request-url)
+        5. [Update Alert Status](../integration/action_library/generic/sekoia-io.md#update-alert-status)
+        6. [Get Events](../integration/action_library/generic/sekoia-io.md#get-events)
+        7. [VirusTotal Scan URL](../integration/action_library/threat_intelligence/virustotal.md#scan-url)
+        8. [Get Event Field Common Values](../integration/action_library/generic/sekoia-io.md#get-event-field-common-values)
+        9. [Edit Alert](../integration/action_library/generic/sekoia-io.md#edit-alert)
+        10. [VirusTotal Scan Hash](../integration/action_library/threat_intelligence/virustotal.md#scan-hash)
 
-For instance, the following [playbook template](https://docs.sekoia.io/xdr/features/automate/build-playbooks/#templates) composed of 9 modules (1 Trigger, 1 Operator, 7 Actions) answers the need of adding a domain in a blocklist (IOC Collection).
+For instance, the following [playbook template](../xdr/features/automate/build-playbooks.md#templates) composed of 9 modules (1 Trigger, 1 Operator, 7 Actions) answers the need of adding a domain in a blocklist (IOC Collection).
 
 ![playbook_example](/assets/getting_started/playbook_example.png){: style="max-width:100%"}
 
 - **Ensure the duration of each Action** within playbooks is less than 10 seconds to reduce the chance of a timeout with most third-party tools you interact with.
-- **Track the overall [duration of playbook executions](https://docs.sekoia.io/xdr/features/automate/navigate-playbooks/#playbook-runs)** for each playbook to complete its execution in less than 1 minute.
+- **Track the overall [duration of playbook executions](../xdr/features/automate/navigate-playbooks.md#playbook-runs)** for each playbook to complete its execution in less than 1 minute.
 - **Ensure no playbook is having an issue** that is visible with the status "Trigger crashed" and "Configuration issues".
 - **Keep a low number of "Ready to start" playbooks**, for instance less than 2, to avoid activation issue after a long period of configuration due to confict with recent evolutions of your community.
 

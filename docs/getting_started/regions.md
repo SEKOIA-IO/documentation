@@ -38,19 +38,19 @@ For companies wishing to host their data in France:
         </tr>
         <tr>
             <td>API</td>
-            <td><a href="https://api.sekoia.io">https://api.sekoia.io</a></td>
+            <td><em>https://api.sekoia.io</em></td>
         </tr>
         <tr>
             <td>HTTP Intake</td>
-            <td><a href="https://intake.sekoia.io/">https://intake.sekoia.io</a></td>
+            <td><em>https://intake.sekoia.io</em></td>
         </tr>
         <tr>
             <td>Syslog Intake</td>
-            <td><a href="intake.sekoia.io:10514">intake.sekoia.io:10514</a></td>
+            <td><em>intake.sekoia.io:10514</em></td>
         </tr>
         <tr>
             <td>Syslog RELP Intake</td>
-            <td><a href="app.sekoia.io:11514">app.sekoia.io:11514</a></td>
+            <td><em>app.sekoia.io:11514</em></td>
         </tr>
     </tbody>
 </table>
@@ -79,19 +79,19 @@ SecNumCloud compliant infrastructure - For companies requiring PCI/DSS complianc
         </tr>
         <tr>
             <td>API</td>
-            <td><a href="https://fra2.app.sekoia.io/api/">https://fra2.app.sekoia.io/api/</a></td>
+            <td><em>https://fra2.app.sekoia.io/api/</em></td>
         </tr>
         <tr>
             <td>HTTP Intake</td>
-            <td><a href="https://fra2.app.sekoia.io/api/v1/intake-http/">https://fra2.app.sekoia.io/api/v1/intake-http/</a></td>
+            <td><em>https://fra2.app.sekoia.io/api/v1/intake-http/</em></td>
         </tr>
         <tr>
             <td>Syslog Intake</td>
-            <td><a href="fra2.app.sekoia.io:10514">fra2.app.sekoia.io:10514</a></td>
+            <td><em>fra2.app.sekoia.io:10514</em></td>
         </tr>
         <tr>
             <td>Syslog RELP Intake</td>
-            <td><a href="fra2.app.sekoia.io:11514">fra2.app.sekoia.io:11514</a></td>
+            <td><em>fra2.app.sekoia.io:11514</em></td>
         </tr>
     </tbody>
 </table>
@@ -164,19 +164,19 @@ For companies requiring their data to be hosted in Monaco:
         </tr>
         <tr>
             <td>API</td>
-            <td><a href="https://mco1.app.sekoia.io/api/">https://mco1.app.sekoia.io/api/</a></td>
+            <td><em>https://mco1.app.sekoia.io/api/</em></td>
         </tr>
         <tr>
             <td>HTTP Intake</td>
-            <td><a href="https://mco1.app.sekoia.io/api/v1/intake-http/">https://mco1.app.sekoia.io/api/v1/intake-http/</a></td>
+            <td><em>https://mco1.app.sekoia.io/api/v1/intake-http/</em></td>
         </tr>
         <tr>
             <td>Syslog Intake</td>
-            <td><a href="mco1.app.sekoia.io:10514">mco1.app.sekoia.io:10514</a></td>
+            <td><em>mco1.app.sekoia.io:10514</em></td>
         </tr>
         <tr>
             <td>Syslog RELP Intake</td>
-            <td><a href="mco1.app.sekoia.io:11514">mco1.app.sekoia.io:11514</a></td>
+            <td><em>mco1.app.sekoia.io:11514</em></td>
         </tr>
     </tbody>
 </table>
@@ -205,19 +205,19 @@ UAE1 is our middle eastern region hosted in Azure (UAE North, Dubai).
         </tr>
         <tr>
             <td>API</td>
-            <td><a href="https://app.uae1.sekoia.io/api">https://app.uae1.sekoia.io/api</a></td>
+            <td><em>https://app.uae1.sekoia.io/api</em></td>
         </tr>
         <tr>
             <td>HTTP Intake</td>
-            <td><a href="https://app.uae1.sekoia.io/api/v1/intake-http">https://app.uae1.sekoia.io/api/v1/intake-http</a></td>
+            <td><em>https://app.uae1.sekoia.io/api/v1/intake-http</em></td>
         </tr>
         <tr>
             <td>Syslog Intake</td>
-            <td><a href="app.uae1.sekoia.io:10514">app.uae1.sekoia.io:10514</a></td>
+            <td><em>app.uae1.sekoia.io:10514</em></td>
         </tr>
         <tr>
             <td>Syslog RELP Intake</td>
-            <td><a href="app.uae1.sekoia.io:11514">app.uae1.sekoia.io:11514</a></td>
+            <td><em>app.uae1.sekoia.io:11514</em></td>
         </tr>
     </tbody>
 </table>
