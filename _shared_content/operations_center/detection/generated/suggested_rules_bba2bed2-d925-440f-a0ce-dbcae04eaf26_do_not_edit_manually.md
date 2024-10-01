@@ -15,6 +15,12 @@ The following Sekoia.io built-in rules match the intake **Gatewatcher AionIQ v10
     
     - **Effort:** elementary
 
+??? abstract "Burp Suite Tool Detected"
+    
+    Burp Suite is a cybersecurity tool. When used as a proxy service, its purpose is to intercept packets and modify them to send them to the server. Burp Collaborator is a network service that Burp Suite uses to help discover many kinds of vulnerabilities (vulnerabilities scanner).
+    
+    - **Effort:** intermediate
+
 ??? abstract "Certify Or Certipy"
     
     Detects the use of certify and certipy which are two different tools used to enumerate and abuse Active Directory Certificate Services.
@@ -84,6 +90,12 @@ The following Sekoia.io built-in rules match the intake **Gatewatcher AionIQ v10
 ??? abstract "Gatewatcher AionIQ Malware Alert"
     
     Forward malware information reported by Gatewatcher AionIQ  
+    
+    - **Effort:** master
+
+??? abstract "Gatewatcher AionIQ Network Alert"
+    
+    Forward network alerts reported by Gatewatcher AionIQ  
     
     - **Effort:** master
 
@@ -230,6 +242,12 @@ The following Sekoia.io built-in rules match the intake **Gatewatcher AionIQ v10
     Detects suspicious DNS queries to api.telegram.org used by Telegram Bots of any kind
     
     - **Effort:** advanced
+
+??? abstract "WAF Correlation Block actions"
+    
+    Detection of multiple block actions (more than 30) triggered by the same source by WAF detection rules
+    
+    - **Effort:** master
 
 ??? abstract "WCE wceaux.dll Creation"
     

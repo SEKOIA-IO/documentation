@@ -1959,6 +1959,12 @@ The following Sekoia.io built-in rules match the intake **HarfangLab EDR**. This
     
     - **Effort:** intermediate
 
+??? abstract "SeEnableDelagationPrivilege Granted To User Or Machine In Active Directory"
+    
+    Detects the SeEnableDelegationPrivilege right in Active Directory granted to a user of a computer, it would allow control of other AD user objects
+    
+    - **Effort:** elementary
+
 ??? abstract "Searchindexer Wrong Parent"
     
     Detects if the Search Indexer was executed by a non-legitimate parent process. Search Indexer is the Windows service that handles indexing of your files for Windows Search.
