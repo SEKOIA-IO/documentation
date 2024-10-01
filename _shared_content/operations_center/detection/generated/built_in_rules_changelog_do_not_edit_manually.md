@@ -1,7 +1,10 @@
-Changelog _last update on 2024-09-26_
+Changelog _last update on 2024-10-01_
 
 ## Changelog
 
+### Entra ID Sign-In Via Known AiTM Phishing Kit (Tycoon 2FA)
+  - 01/10/2024 - major - Update the pattern following changes in the phishing kit.
+    
 ### Entra ID Sign-In Via Known AiTM Phishing Kit (Mamba 2FA)
   - 25/09/2024 - major - Rename the rule, update the indicators.
     
