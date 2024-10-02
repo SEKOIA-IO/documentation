@@ -12,6 +12,9 @@ The OCSF (Open Cybersecurity Schema Framework) is an initiative to create a comm
 - **Detection based on**: Telemetry
 - **Supported application or feature**: System Activity, Findings, Identity & Access Management, Network Activity, Discovery application Activity
 
+!!! warning
+    Important note - This format is currently in beta. We highly value your feedback to improve its performance.
+
 ## Configure
 
 ### Deploying the Data Collection Architecture
