@@ -382,6 +382,7 @@ nav:
     - Generic:
       - CEF: integration/categories/generic/cef.md
       - Raw: integration/categories/generic/raw.md
+      - OCSF: integration/categories/generic/ocsf.md
     - IAM:
       - Alsid: integration/categories/iam/alsid.md
       - Azure Key Vault: integration/categories/iam/azure_key_vault.md
