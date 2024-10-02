@@ -42,14 +42,15 @@ To create a subscriber:
 
 ### Pull events
 
-Go to the [playbook page](https://app.sekoia.io/operations/playbooks) and create a new playbook with the [Fetch new S3 records on S3 connector](/integration/action_library/cloud_providers/aws#fetch-new-ocsf-records-on-S3).
+Go to the [intake page](https://app.sekoia.io/intakes/new) and create a new intake with the OCSF format.
 
-Set up the module configuration with the [AWS Access Key](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html), the secret key, and the region name. Set up the trigger configuration with the name of the SQS queue and the intake key from the previously created intake.
+Type the name of the intake, select the entity and click `Next`.
+Select or create an account with the [AWS Access Key](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html), the secret key, and the region name. Set up the configuration with the name of the SQS queue (Keep the last part from the arn of the `subscription endpoint`).
 
 !!!important
-    In the "Trigger Configuration" settings of your OCSF playbook, we recommend using the following configuration by default: chunk_size = `10000` and frequency = `10`.
+    In the configuration settings of your OCSF intake, we recommend using the following configuration by default: chunk_size = `10000` and frequency = `10`.
 
-Start the playbook and enjoy your events.
+[Start the intake](https://docs.sekoia.io/xdr/features/collect/intakes/#startstop-a-pull-intake) and enjoy your events.
 
 {!_shared_content/operations_center/integrations/generated/a9c959ac-78ec-47a4-924e-8156a77cebf5_sample.md!}
 
