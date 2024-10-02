@@ -14,7 +14,7 @@ To invite new users to a workspace, follow these steps:
 2. On the `Users` page, click the `Add new users` button
 3. Enter the email addresses of the users you want to invite, separating each with a comma 
 4. Select the communities you want to add them to
-5. Assign roles to your guests. You can either select the default ones or create custom roles based on chosen permissions. Check this documentation to learn how to [create custom roles](docs/getting_started/roles.md). 
+5. Assign roles to your guests. You can either select the default ones or create custom roles based on chosen permissions. Check this documentation to learn how to [create custom roles](custom_roles.md). 
 
 These steps are the same whether you want to invite new users to a workspace or to a community. 
 In case it's a multi-tenant workspace, the invited user will only have access to the selected community, not the whole workspace. 
