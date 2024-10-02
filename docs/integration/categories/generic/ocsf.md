@@ -9,6 +9,7 @@ The OCSF (Open Cybersecurity Schema Framework) is an initiative to create a comm
 - **Vendor**: OCSF
 - **Plan**: Defend Core & Defend Prime
 - **Supported environment**: SaaS
+- **Version compatibility**: 1.1
 - **Detection based on**: Telemetry
 - **Supported application or feature**: System Activity, Findings, Identity & Access Management, Network Activity, Discovery application Activity
 
