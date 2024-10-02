@@ -17,7 +17,7 @@ In details, the following table denotes the type of events produced by this inte
 
 | Name | Values |
 | ---- | ------ |
-| Kind | `` |
+| Kind | `alert` |
 | Category | `malware`, `network` |
 | Type | `info` |
 
@@ -100,12 +100,14 @@ This section demonstrates how the raw logs will be transformed by our parsers. I
         },
         "@timestamp": "2023-03-22T10:46:08.487000Z",
         "destination": {
-            "address": "2.2.2.2",
+            "address": "pgoadcmgqfacj.com",
+            "domain": "pgoadcmgqfacj.com",
             "ip": "2.2.2.2",
-            "port": 53
+            "port": 53,
+            "registered_domain": "pgoadcmgqfacj.com",
+            "top_level_domain": "com"
         },
         "gatewatcher": {
-            "domain_name": "pgoadcmgqfacj.com",
             "event_type": "dga",
             "flow_id": "729468278572",
             "gcap": "gcap-xxxxxxxx.domain.local",
@@ -122,6 +124,9 @@ This section demonstrates how the raw logs will be transformed by our parsers. I
             "version": "0.2"
         },
         "related": {
+            "hosts": [
+                "pgoadcmgqfacj.com"
+            ],
             "ip": [
                 "1.1.1.1",
                 "2.2.2.2"
@@ -361,6 +366,7 @@ This section demonstrates how the raw logs will be transformed by our parsers. I
             "category": [
                 "network"
             ],
+            "kind": "alert",
             "module": "alert",
             "severity": 1
         },
@@ -631,6 +637,7 @@ The following table lists the fields that are extracted, normalized under the EC
 | ---- | ---- | ---------------------------|
 |`@timestamp` | `date` | Date/time when the event originated. |
 |`destination.bytes` | `long` | Bytes sent from the destination to the source. |
+|`destination.domain` | `keyword` | The domain name of the destination. |
 |`destination.ip` | `ip` | IP address of the destination. |
 |`destination.packets` | `long` | Packets sent from the destination to the source. |
 |`destination.port` | `long` | Port of the destination. |
@@ -640,6 +647,7 @@ The following table lists the fields that are extracted, normalized under the EC
 |`dns.type` | `keyword` | The type of DNS event captured, query or answer. |
 |`event.action` | `keyword` | The action captured by the event. |
 |`event.category` | `keyword` | Event category. The second categorization field in the hierarchy. |
+|`event.kind` | `keyword` | The kind of the event. The highest categorization field in the hierarchy. |
 |`event.module` | `keyword` | Name of the module this data is coming from. |
 |`event.severity` | `long` | Numeric severity of the event. |
 |`event.type` | `keyword` | Event type. The third categorization field in the hierarchy. |
@@ -654,7 +662,6 @@ The following table lists the fields that are extracted, normalized under the EC
 |`gatewatcher.description` | `text` | This field is used for retrohunt alerts |
 |`gatewatcher.dhcp` | `text` | This field represents the dhcp field in a network metadata (used in legacy format log) |
 |`gatewatcher.dnp3` | `text` | This field represents the dnp3 field in a suricata alert (used in legacy format log) |
-|`gatewatcher.domain_name` | `text` | This field represents the domain name found in a dga alert |
 |`gatewatcher.email` | `text` | This field represents the email field |
 |`gatewatcher.encodings` | `text` | This field represents the encodings used in the shellcode |
 |`gatewatcher.event_type` | `keyword` | Type of event |
