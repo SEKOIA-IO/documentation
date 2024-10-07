@@ -9,6 +9,18 @@ The following Sekoia.io built-in rules match the intake **Cloudflare Gateway DNS
     
     - **Effort:** elementary
 
+??? abstract "Cloudflare Gateway DNS Query Allowed to Malicious Domain"
+    
+    A DNS query to a domain categorized by Cloudflare Gateway as malicious was allowed because no blocking policy is configured.
+    
+    - **Effort:** master
+
+??? abstract "Cloudflare Gateway DNS Query Blocked to Malicious Domain"
+    
+    A DNS query to a domain categorized by Cloudflare Gateway as malicious was blocked by policy.
+    
+    - **Effort:** master
+
 ??? abstract "Cobalt Strike DNS Beaconing"
     
     Detects suspicious DNS queries known from Cobalt Strike beacons. The threshold is more than 50 suspicious DNS requests to avoid false positives.

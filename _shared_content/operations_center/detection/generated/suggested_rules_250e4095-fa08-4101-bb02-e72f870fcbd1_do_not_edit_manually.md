@@ -423,6 +423,12 @@ The following Sekoia.io built-in rules match the intake **Sekoia.io Endpoint Age
     
     - **Effort:** elementary
 
+??? abstract "Correlation Impacket Smbexec"
+    
+    This rule detects the execution of smbexec via the relevant share pattern name 
+    
+    - **Effort:** elementary
+
 ??? abstract "Correlation Internal Kerberos Password Spraying"
     
     Detect multiple Kerberos authentication failed on several account from one source
