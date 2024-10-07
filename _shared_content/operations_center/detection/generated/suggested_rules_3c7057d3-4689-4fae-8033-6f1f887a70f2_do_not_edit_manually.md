@@ -357,6 +357,12 @@ The following Sekoia.io built-in rules match the intake **HarfangLab EDR**. This
     
     - **Effort:** elementary
 
+??? abstract "Correlation Impacket Smbexec"
+    
+    This rule detects the execution of smbexec via the relevant share pattern name 
+    
+    - **Effort:** elementary
+
 ??? abstract "Correlation Internal Ntlm Password Spraying"
     
     Detect multiple NTLM authentication failed on several account from one source
@@ -407,7 +413,7 @@ The following Sekoia.io built-in rules match the intake **HarfangLab EDR**. This
 
 ??? abstract "Cron Files Alteration"
     
-    Cron Files and Cron Directory alteration used by attacker for persistency or privilege escalation.
+    Cron Files and Cron Directory alteration used by attacker for persistency or privilege escalation. To ensure full performance on this rule, `auditbeat` intake must be configure with the module `file_integrity` containing path mentionned in the pattern.
     
     - **Effort:** advanced
 
@@ -716,6 +722,12 @@ The following Sekoia.io built-in rules match the intake **HarfangLab EDR**. This
     Detects suspicious spawning of explorer.exe process created by the rundll32.exe or regsvr32.exe. This behaviour is abnormal. Malware injecting itself into the explorer.exe process is quite common, in order to evade process-based defenses.
     
     - **Effort:** master
+
+??? abstract "External Disk Drive Or USB Storage Device"
+    
+    Detects external diskdrives or plugged in USB device.
+    
+    - **Effort:** advanced
 
 ??? abstract "FLTMC command usage"
     
@@ -1469,7 +1481,7 @@ The following Sekoia.io built-in rules match the intake **HarfangLab EDR**. This
 
 ??? abstract "Package Manager Alteration"
     
-    Package manager (eg: apt, yum) can be altered to install malicious software
+    Package manager (eg: apt, yum) can be altered to install malicious software. To ensure full performance on this rule, `auditbeat` intake must be configure with the module `file_integrity` containing path mentionned in the pattern.
     
     - **Effort:** advanced
 
