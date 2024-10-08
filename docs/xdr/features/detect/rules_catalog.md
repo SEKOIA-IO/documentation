@@ -109,9 +109,29 @@ You can click on the name of a rule to display additional details, such as, but 
 - Associated Data Sources
 - Known False Positives
 - The actual detection logic (the pattern)
+- Alert filters
 - [Similarity strategy](../../investigate/alerts/#similarity-strategies) for the produced alerts
 
 ![rule details](/assets/operation_center/rules_catalog/rule_details2.png)
+
+### Alert filters
+
+In the section `Alert filters`, you can consult the list of alert filters that are currently enabled in the `Àctives` tab. The number of alert `muted` in the `last 30 days` is displayed for each alert filter to help you audit its effectiveness.
+
+Click on the `arrow` to expand the alert filter and consult the exclusion pattern.
+
+![alert filters](/assets/operation_center/rules_catalog/alert_filters.png)
+
+The `Expired` tab list all the alert filters that had an `expiration date` set and whose date has been reached. Expired alert filters can be deleted if needed.
+
+### Rules with active alert filter
+
+To search for rules that have at least one active alert filter, use the search `Filters` and select the criteria `Rules with alert filters`.
+All rules with active alert filters will be returned in the list.
+
+![search alert filters](/assets/operation_center/rules_catalog/search_alert_filters.png)
+
+You can also search for rules that no active alert filters with the other search criteria.
 
 ### Enable new rules
 #### Automatically
@@ -209,7 +229,15 @@ For all types of rules, You will be able to limit its applicable scope with the 
 
 When rules have limited scope with selected entities or assets, these rules will not automatically apply to new entities or assets that are later created.
 
+#### Create an alert Filter
 
+To prevent known false positives from raising alerts in the future:
+
+- Click on the `+ Alert filter` button to create an alert filter
+- Enter the `name` of the alert filter (mandatory)
+- Enter the `description` of the alert filter (optional)
+- Enter the `pattern` to exclude events (mandatory)
+- Set an `expiration date` (optional) to define a temporary alert filter
 
 ### Notify on new rules
 
