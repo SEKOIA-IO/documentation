@@ -328,6 +328,7 @@ nav:
       - Microsoft IIS: integration/categories/applicative/microsoft_iis.md
       - Salesforce: integration/categories/applicative/salesforce.md
       - Sekoia.io activity logs: integration/categories/applicative/sekoiaio_activity_logs.md
+      - Sekoia.io forwarder logs: integration/categories/applicative/sekoiaio_forwarder_logs.md
       - Systancia Cleanroom: integration/categories/applicative/systancia_cleanroom.md
       - Veeam Backup: integration/categories/applicative/veeam_backup.md
     - Email:
@@ -646,6 +647,7 @@ plugins:
       xdr/features/collect/integrations/application/openvpn.md: integration/categories/network/openvpn.md
       xdr/features/collect/integrations/application/rsa_securid.md: integration/categories/iam/rsa_securid.md
       xdr/features/collect/integrations/application/sekoiaio_activity_logs.md: integration/categories/applicative/sekoiaio_activity_logs.md
+      xdr/features/collect/integrations/application/sekoiaio_forwarder_logs.md: integration/categories/applicative/sekoiaio_forwarder_logs.md
       xdr/features/collect/integrations/application/systancia_cleanroom.md: integration/categories/applicative/systancia_cleanroom.md
       xdr/features/collect/integrations/application/unbound.md: integration/categories/network/unbound.md
       xdr/features/collect/integrations/application/veeam_backup.md: integration/categories/applicative/veeam_backup.md
