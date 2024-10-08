@@ -7,7 +7,6 @@ type: intake
 ProofPoint On Demand (PoD) offers a real-time email processing feed to detect, classify and mitigate threats.
 
 - **Vendor**: Proofpoint
-- **Plan**: Defend Prime
 - **Supported environment**: Cloud
 - **Detection based on**: Telemetry
 - **Supported application or feature**: Email gateway

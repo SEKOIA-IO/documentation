@@ -10,7 +10,6 @@ It improves user experience and catches 10x more advanced threats than Microsoft
 In this documentation we will explain how to collect and send Vade for M365 logs to Sekoia.io.
 
 - **Vendor**: Vade
-- **Plan**: Defend Prime
 - **Supported environment**: Cloud
 - **Detection based on**: Telemetry
 - **Supported application or feature**: Email gateway, Anti-virus

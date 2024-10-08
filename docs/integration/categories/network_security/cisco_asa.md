@@ -7,7 +7,6 @@ type: intake
 The Cisco Secure Firewall (formerly Next-Generation Firewall) is a security product designed to protect your network, from physical ones to those hosted in the cloud.
 
 - **Vendor**: Cisco
-- **Plan**: Defend Prime
 - **Supported environment**: On Premise
 - **Version compatibility, if applicable**:
 - **Detection based on**: Security Alerts, Telemetry, Admin

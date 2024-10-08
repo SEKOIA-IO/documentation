@@ -7,7 +7,6 @@ type: intake
 Trellix Network Security is an effective cyberthreat protection solution that helps your organization minimize the risk of costly breaches by accurately detecting and immediately stopping advanced, targeted, and other evasive attacks hiding in internet traffic.
 
 - **Vendor**: Trellix
-- **Plan**: Defend Core & Defend Prime
 - **Supported environment**: On prem
 - **Version compatibility**: 10.0.1
 - **Detection based on**: Telemetry

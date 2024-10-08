@@ -7,7 +7,6 @@ type: intake
 Thinkst Canary is a deceptive honeypot device that mimics various systems to lure and detect cyber threats, providing early and accurate breach alerts. Canarytokens are easy-to-deploy digital traps that notify users of unauthorized access to sensitive information.
 
 - **Vendor**: Thinkst Applied Research
-- **Plan**: Defend Core & Defend Prime
 - **Supported environment**: SaaS
 - **Detection based on**: Alert
 - **Supported application or feature**: events associated to the incidents

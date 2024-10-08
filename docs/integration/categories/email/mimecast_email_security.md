@@ -6,7 +6,6 @@ type: intake
 A secure email gateway to block spam, viruses, and malware.
 
 - **Vendor**: Mimecast
-- **Plan**: Defend Prime
 - **Supported environment**: Cloud
 - **Detection based on**: Telemetry
 - **Supported application or feature**: Email gateway

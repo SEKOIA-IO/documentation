@@ -4,7 +4,6 @@ type: intake
 
 ## Overview
 - **Vendor**: Google
-- **Plan**: Defend Prime
 - **Supported environment**: SaaS
 - **Detection based on**: Audit
 - **Supported application or feature**: Application Logs

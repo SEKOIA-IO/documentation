@@ -7,7 +7,6 @@ type: intake
 Gatewatcher AionIQ is a detection and response platform for your network that identifies malicious actions and suspicious behaviors.
 
 - **Vendor**: Gatewatcher
-- **Plan**: Defend Core & Defend Prime
 - **Supported environment**: On Premise
 - **Version compatibility, if applicable**: 2.5.3
 - **Detection based on**: Network Telemetry

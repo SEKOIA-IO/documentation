@@ -6,7 +6,6 @@ type: intake
 AWS GuardDuty is a service that detects potential security issues within your network.
 
 - **Vendor**: AWS
-- **Plan**: Defend Core & Defend Prime
 - **Supported environment**: SaaS
 - **Detection based on**: Alert
 - **Supported application or feature**: GuardDuty alerts

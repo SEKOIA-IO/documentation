@@ -7,7 +7,6 @@ type: intake
 Cisco NX-OS is a network operating system for Cisco Nexus-series switches.
 
 - **Vendor**: Cisco
-- **Plan**: Defend Prime
 - **Supported environment**: On Premise
 - **Version compatibility**: 9.3 (Latest version as of now)
 - **Detection based on**: Telemetry

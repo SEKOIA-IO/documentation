@@ -6,7 +6,6 @@ type: intake
 Varonis offers solutions to track and protect data.
 
 - **Vendor**: Varonis
-- **Plan**: Defend Core & Defend Prime
 - **Supported environment**: SaaS
 - **Detection based on**: Alert
 - **Supported application or feature**: Data loss prevention

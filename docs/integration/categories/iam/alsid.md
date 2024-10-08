@@ -6,7 +6,6 @@ type: intake
 Alsid is an automated security solution that monitors the components of Active Directory infrastructures by detecting attacks in real time, identifying existing weaknesses and vulnerabilities.
 
 - **Vendor**: Alsid
-- **Plan**: Defend Core & Defend Prime
 - **Supported environment**: On prem
 - **Detection based on**: Alert, Telemetry
 - **Supported application or feature**:Application logs, Authentication logs, Network protocol analysis

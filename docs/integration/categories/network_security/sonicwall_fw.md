@@ -6,7 +6,6 @@ type: intake
 SonicWall firewalls enable you to identify and control all applications that are running on your network. By identifying applications based on their unique signatures rather than ports or protocols, this additional control improves compliance and data leakage prevention.
 
 - **Vendor**: SonicWall
-- **Plan**: Defend Core & Defend Prime
 - **Supported environment**: On prem
 - **Version compatibility**: 7,0,1
 - **Detection based on**: Telemetry

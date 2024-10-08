@@ -7,7 +7,6 @@ type: intake
 Bitsight Security Performance Management enables organizations to continuously monitor, measure, and improve their cybersecurity performance by providing actionable insights and metrics on security posture and risk.
 
 - **Vendor**: BitSight Technologies
-- **Plan**: Defend Core & Defend Prime
 - **Supported environment**: SaaS
 - **Detection based on**: Alert
 

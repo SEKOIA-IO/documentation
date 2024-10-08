@@ -8,7 +8,6 @@ Forcepoint Secure Web Gateway (SWG) is a proxy, installed on the endpoint, apply
 This product is supported by Forcepoint LLC.
 
 - **Vendor**: Forcepoint
-- **Plan**: Defenb Prime
 - **Supported environment**: On Premise
 - **Version compatibility**: 8.5
 - **Detection based on**: Telemetry

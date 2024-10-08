@@ -10,7 +10,6 @@ Azure Monitor provides a complete set of features to monitor your Azure resource
 This setup guide describe how to forward events produced by `Azure Files` to Sekoia.io.
 
 - **Vendor**: Microsoft Azure
-- **Plan**: Defend Core & Defend Prime
 - **Supported environment**: SaaS
 - **Detection based on**: Telemetry
 - **Supported application or feature**: Azure Monitor

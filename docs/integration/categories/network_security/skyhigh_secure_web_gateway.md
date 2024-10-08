@@ -6,7 +6,6 @@ type: intake
 Skyhigh Secure Web Gateway (SWG) (previously McAfee Web Gateway (MWG)) is a web gateway offering malware detection, threat prevention and reputation filtering.
 
 - **Vendor**: Skyhigh Security
-- **Plan**: Defend Core & Defend Prime
 - **Supported environment**: On prem
 - **Version compatibility**: 12.2.10
 - **Detection based on**: Telemetry

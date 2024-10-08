@@ -7,7 +7,6 @@ type: intake
 ManageEngine ADAudit Plus is a robust Active Directory auditing and compliance solution, empowering organizations to track and monitor changes, detect security threats, and ensure regulatory compliance within their Active Directory environment.
 
 - **Vendor**: ManageEngine
-- **Plan**: Defend Core & Defend Prime
 - **Supported environment**: On prem
 - **Version compatibility**: 8.1
 - **Detection based on**: Telemetry

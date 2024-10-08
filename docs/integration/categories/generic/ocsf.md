@@ -7,7 +7,6 @@ type: intake
 The OCSF (Open Cybersecurity Schema Framework) is an initiative to create a common, open-source set of data standards and schemas for cybersecurity threat information. It aims to improve interoperability and streamline threat data sharing across different tools and platforms.
 
 - **Vendor**: OCSF
-- **Plan**: Defend Core & Defend Prime
 - **Supported environment**: SaaS
 - **Version compatibility**: 1.1
 - **Detection based on**: Telemetry

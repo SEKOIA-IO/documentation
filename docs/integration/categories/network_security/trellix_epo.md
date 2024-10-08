@@ -11,7 +11,6 @@ Trellix ePO monitors and manages your network, collects data on events and alert
 
 
 - **Vendor**: Trellix
-- **Plan**: Defend Core & Defend Prime
 - **Supported environment**: SaaS
 - **Version compatibility**: 5.10
 - **Detection based on**: Telemetry

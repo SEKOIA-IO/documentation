@@ -4,7 +4,6 @@ type: intake
 
 ## Overview
 - **Vendor**: Microsoft
-- **Plan**: Defend Core & Defend Prime
 - **Supported environment**: SaaS
 - **Detection based on**: Telemetry
 - **Supported application or feature**: Application logs, Authentication logs

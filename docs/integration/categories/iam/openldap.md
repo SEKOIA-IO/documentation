@@ -6,7 +6,6 @@ type: intake
 OpenLDAP (Lightweight Directory Access Protocol) is an open-source implementation of a directory service protocol. It helps organizations to maintain and manage a centralized directory of user information, such as names, addresses, and other attributes.
 
 - **Vendor**: OpenLDAP Foundation
-- **Plan**: Defend Core & Defend Prime
 - **Supported environment**: On prem
 - **Version compatibility**: 2.6
 - **Detection based on**: Telemetry

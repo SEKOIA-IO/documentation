@@ -7,7 +7,6 @@ type: intake
 Claroty xDome is an integrated cybersecurity platform designed for industrial control systems (ICS) and operational technology (OT) environments, providing comprehensive threat detection, asset discovery, and vulnerability management to safeguard critical infrastructure.
 
 - **Vendor**: Claroty
-- **Plan**: Defend Prime
 - **Supported environment**: On Premise & Cloud
 - **Version compatibility, if applicable**:
 - **Detection based on**: Alerts, Telemetry

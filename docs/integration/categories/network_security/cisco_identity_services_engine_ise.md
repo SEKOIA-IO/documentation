@@ -7,7 +7,6 @@ type: intake
 Cisco Identity Services Engine (ISE) is an intelligent security policy enforcement platform that reduces security risks by providing visibility of connections between all users and devices across all network infrastructure. This product provides exceptional control over the information and locations to which users have access on the network. This solution, and all its components, have been approved and rigorously tested as an integrated system.
 
 - **Vendor**: Cisco
-- **Plan**: Defend Core & Defend Prime
 - **Supported environment**: On Premise
 - **Version compatibility**: 3.1
 - **Detection based on**: Telemetry

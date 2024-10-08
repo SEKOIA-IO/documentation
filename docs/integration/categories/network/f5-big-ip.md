@@ -7,7 +7,6 @@ type: intake
 F5's BIG-IP is a family of products covering software and hardware designed around application availability, access control, and security solutions.
 
 - **Vendor**: F5
-- **Plan**: Defend Prime
 - **Supported environment**: On Premise
 - **Version compatibility**: 11.3 and highier
 - **Detection based on**: Security Alerts, Telemetry
