@@ -131,7 +131,7 @@ All rules with active alert filters will be returned in the list.
 
 ![search alert filters](/assets/operation_center/rules_catalog/search_alert_filters.png)
 
-You can also search for rules that no active alert filters with the other search criteria.
+You can also search for rules that have no active alert filters with the other search criteria.
 
 ### Enable new rules
 #### Automatically
