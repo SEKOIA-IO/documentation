@@ -7,7 +7,6 @@ type: intake
 The Cisco Web Security Appliance is a security device that analyzes HTTP(S) traffic with malware detection and reputation filtering. Sending Cisco Web Security Appliance logs to Sekoia.io enables the discovery of potential network security threats, which are contextualized by means of Sekoia.io's Cyber Threat Intelligence (CTI).
 
 - **Vendor**: Cisco
-- **Plan**: Defend Prime
 - **Supported environment**: On Premise
 - **Version compatibility**: AsyncOS 11.0 and newer
 - **Detection based on**: Security Alerts / Telemetry

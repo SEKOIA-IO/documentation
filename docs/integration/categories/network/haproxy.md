@@ -9,7 +9,6 @@ type: intake
 HAProxy is a free, open-source software that provides a high availability load balancer and proxy server for TCP and HTTP-based applications, distributing requests across multiple servers. As it operates between your infrastructure and your clients, HAProxy offers extensive monitoring capabilities.
 
 - **Vendor**: HAProxy Technologies
-- **Plan**: Defend Prime
 - **Supported Environment**: On Premise
 - **Version Compatibility**: 2.9 or higher
 - **Detection Based On**: Telemetry

@@ -10,7 +10,6 @@ The Apache HTTP Server, colloquially called Apache, is free and open-source cros
     Access logs from Tomcat are compatible with the existing format Apache HTTP server. Catalina logs are not supported.
 
 - **Vendor**: Apache Software Foundation
-- **Plan**: Defend Core & Defend Prime
 - **Supported environment**: On Premise
 - **Version compatibility, if applicable**: 2.4.51 and newer
 - **Detection based on**: Telemetry

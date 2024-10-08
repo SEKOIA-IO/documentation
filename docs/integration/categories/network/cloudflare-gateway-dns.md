@@ -7,7 +7,6 @@ type: intake
 Cloudflare is a global network designed to make everything you connect to the Internet secure, private, fast, and reliable. In this documentation, you will learn how to collect and send Cloudflare Gateway DNS logs to Sekoia.io.
 
 - **Vendor**: Cloudflare
-- **Plan**: Defend Prime
 - **Supported environment**: SaaS
 - **Detection based on**: Telemetry
 - **Supported application or feature**: DNS records

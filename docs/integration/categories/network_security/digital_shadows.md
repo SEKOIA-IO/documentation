@@ -7,7 +7,6 @@ type: intake
 Digital Shadows SearchLight continuously searches and identifies any unwanted exposures, and provides contextualised alerts to better understand the associated risks.
 
 - **Vendor**: Digital Shadows
-- **Plan**: Defend Core & Defend Prime
 - **Supported environment**: SaaS
 - **Detection based on**: Alert
 - **Supported application or feature**: Social media monitoring, File monitoring

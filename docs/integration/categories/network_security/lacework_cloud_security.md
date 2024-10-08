@@ -7,7 +7,6 @@ type: intake
 The Lacework Cloud Security provides continuous cloud security monitoring and automated threat detection, safeguarding cloud environments with real-time insights and compliance enforcement.
 
 - **Vendor**: Lacework
-- **Plan**: Defend Core & Defend Prime
 - **Supported environment**: SaaS
 - **Detection based on**: Alert, Telemetry
 - **Supported application or feature**:

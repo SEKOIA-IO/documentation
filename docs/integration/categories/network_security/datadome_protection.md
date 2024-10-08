@@ -7,7 +7,6 @@ type: intake
 Datadome offers is a bot protection solution, providing real-time detection and mitigation of malicious bots, safeguarding websites and APIs from fraud, scraping, and other automated threats with advanced security measures.
 
 - **Vendor**: DataDdome
-- **Plan**: Defend Core & Defend Prime
 - **Supported environment**: SaaS
 - **Detection based on**: Alert
 - **Supported application or feature**: Web application firewall logs

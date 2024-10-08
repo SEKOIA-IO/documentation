@@ -8,7 +8,6 @@ FortiProxy is a web proxy that protects clients against internet threats.
 In this documentation, we will explain one way to collect and send FortiProxy logs to Sekoia.io.
 
 - **Vendor**: Fortinet
-- **Plan**: Defend Core
 - **Supported environment**: On Premise
 - **Version compatibility, if applicable**:
 - **Detection based on**: Security Alerts / Network Telemetry

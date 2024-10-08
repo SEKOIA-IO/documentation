@@ -9,7 +9,6 @@ Cyberwatch is a vulnerability detection and monitoring solution.
 This integration encompasses the detection logs from Cyberwatch Vulnerability Manager.
 
 - **Vendor**: Cyberwatch
-- **Plan**: Defend Prime
 - **Supported environment**: On Premise
 - **Detection based on**: Alert
 - **Supported application or feature**: Vulnerability report

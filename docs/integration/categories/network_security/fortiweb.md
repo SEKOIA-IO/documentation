@@ -7,7 +7,6 @@ type: intake
 This documentation details one way to collect and send FortiWeb logs to Sekoia.io: from the FortiWeb machine to an internal syslog concentrator, then forwarded to Sekoia.io.
 
 - **Vendor**: Fortinet
-- **Plan**: Defend Prime
 - **Supported environment**: On Premise
 - **Version compatibility, if applicable**:
 - **Detection based on**: Network Telemetry

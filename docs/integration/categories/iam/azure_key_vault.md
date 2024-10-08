@@ -11,7 +11,6 @@ keys, and certificates. It helps safeguard cryptographic keys and secrets used b
     Important note - This format is currently in beta. We highly value your feedback to improve its performance.
 
 - **Vendor**: Microsoft Azure
-- **Plan**: Defend Core & Defend Prime
 - **Supported environment**: SaaS
 - **Detection based on**: Telemetry
 - **Supported application or feature**: Application logs

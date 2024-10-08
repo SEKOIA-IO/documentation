@@ -5,7 +5,6 @@ type: intake
 ## Overview
 
 - **Vendor**: AWS
-- **Plan**: Defend Prime
 - **Supported environment**: SaaS
 - **Detection based on**: Telemetry
 - **Supported application or feature**: Host network interface, Netflow/Enclave netflow, Network device logs, Network protocol analysis

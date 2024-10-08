@@ -7,7 +7,6 @@ type: intake
 Imperva Web Application Firewall helps you to protect your web applications and your APIs.
 
 - **Vendor**: Imperva
-- **Plan**: Defend Prime
 - **Supported environment**: SaaS
 - **Detection based on**: Telemetry
 - **Supported application or feature**: Imperva WAF dataset

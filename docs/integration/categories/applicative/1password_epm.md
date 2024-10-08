@@ -9,7 +9,6 @@ type: intake
 !!! Warning
     Important note - This format is currently in beta. We highly value your feedback to improve its performance.
 
-- **Plan**: Defend Core & Defend Prime
 - **Supported environment**: SaaS
 
 - **Detection based on**: Telemetry, Audit

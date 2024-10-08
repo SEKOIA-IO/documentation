@@ -8,7 +8,6 @@ HarfangLab is an Endpoint detection and response (EDR) solution certified by ANS
 This setup guide shows how to forward events produced by HarfangLab EDR to Sekoia.io.
 
 - **Vendor**: Harfanglab
-- **Plan**: Defend Prime
 - **Supported environment**: On Premise
 - **Detection based on**: Telemetry / Alert
 - **Supported application or feature**: Authentication, Driver, Network, Process, Web

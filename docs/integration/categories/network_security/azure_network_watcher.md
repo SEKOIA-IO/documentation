@@ -6,7 +6,6 @@ type: intake
 Azure Network Watcher provides tools to monitor, diagnose, view metrics, and enable or disable logs for resources in an Azure virtual network. It also allows to log information about IP traffic flowing through a network security group: NSG flow logs.
 
 - **Vendor**: Microsoft Azure
-- **Plan**: Defend Prime
 - **Supported environment**: SaaS
 - **Detection based on**: Telemetry
 - **Supported application or feature**: Host network interface, Netflow/Enclave netflow, Network device logs, Network protocol analysis

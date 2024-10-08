@@ -7,7 +7,6 @@ type: intake
 Infoblox DNS, DHCP, and IP address management (DDI) enables customers to control and automate their network. It performs both of the main DNS server roles, acting as an authoritative name server for domains, and acting as a recursive resolver in the network.
 
 - **Vendor**: Infoblox
-- **Plan**: Defend Prime
 - **Supported environment**: On Premise
 - **Version compatibility, if applicable**:
 - **Detection based on**: Network Telemetry

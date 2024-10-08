@@ -4,7 +4,6 @@ type: intake
 
 ## Overview
 - **Vendor**: Veeam
-- **Plan**: Defend Core & Defend Prime
 - **Supported environment**: On-premise
 - **Version compatibility**: 12 and newer
 - **Detection based on**: Telemetry

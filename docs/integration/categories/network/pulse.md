@@ -7,7 +7,6 @@ type: intake
 Pulse Connect Secure is an SSL VPN solution for remote and mobile users.
 
 - **Vendor**: Pulse Secure
-- **Plan**: TODO Defend Core / Defend Prime
 - **Supported environment**: On Premise
 - **Version compatibility, if applicable**:
 - **Detection based on**: VPN Logs

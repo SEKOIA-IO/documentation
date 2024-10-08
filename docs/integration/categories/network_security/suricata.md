@@ -7,7 +7,6 @@ Suricata is a free and open source, mature, fast and robust network threat detec
 
 
 - **Vendor**: OISF fundation
-- **Plan**: Defend Core & Defend Prime
 - **Supported environment**: On prem
 - **Version compatibility**: 6.0.20
 - **Detection based on**: Telemetry

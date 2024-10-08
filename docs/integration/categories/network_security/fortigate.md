@@ -7,7 +7,6 @@ type: intake
 The range of Fortigate firewalls is a complete appliance solution whose security functions are highly developed. The firewalls run on the FortiOS operating system.
 
 - **Vendor**: Fortinet
-- **Plan**: Defend Prime
 - **Supported environment**: On Premise
 - **Version compatibility, if applicable**:
 - **Detection based on**: Security Alerts / Network Telemetry

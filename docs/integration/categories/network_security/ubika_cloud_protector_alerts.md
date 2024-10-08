@@ -11,7 +11,6 @@ Ubika Cloud Protector is a cloud-native security solution, providing advanced th
 
 
 - **Vendor**:Ubika
-- **Plan**: Defend Core & Defend Prime
 - **Supported environment**: SaaS
 - **Detection based on**: Alert
 - **Supported application or feature**: Web application firewall logs

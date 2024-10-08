@@ -10,7 +10,6 @@ This EDR reduces the attack surface and prevent attacks from running with an ant
 This setup guide shows how to forward events produced by Sophos EDR to Sekoia.io.
 
 - **Vendor**: Sophos
-- **Plan**: Defend Prime
 - **Supported environment**: Cloud 
 - **Detection based on**: Telemetry
 - **Supported application or feature**: File monitoring, Process monitoring

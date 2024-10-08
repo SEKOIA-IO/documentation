@@ -7,7 +7,6 @@ type: intake
 SentinelOne Cloud Funnel 2.0 is the state of the art method to collect SentinelOne Deep Visibility data and extend the SentinelOne EDR to provide full visibility into endpoint data. Its patented kernel-based monitoring allows a near real-time search across endpoints for all indicators of compromise (IOC) to empower security teams to augment real-time threat detection capabilities with a powerful tool that enables threat hunting.
 
 - **Vendor**: SentinelOne
-- **Plan**: Defend Prime
 - **Supported environment**: SaaS
 - **Detection based on**: Telemetry
 - **Supported application or feature**: Network intrusion detection system

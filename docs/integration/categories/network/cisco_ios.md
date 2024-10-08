@@ -7,7 +7,6 @@ type: intake
 Cisco IOS is a network operating system for Cisco ASR routers and Cisco Catalyst switches.
 
 - **Vendor**: Cisco
-- **Plan**: Defend Prime
 - **Supported environment**: On Premise
 - **Version compatibility**: 15.5 (Latest version as of now)
 - **Detection based on**: Telemetry
