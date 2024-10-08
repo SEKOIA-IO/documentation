@@ -1,4 +1,4 @@
-Rules catalog includes **950 built-in detection rules** ([_last update on 2024-10-07_](rules_changelog.md)).
+Rules catalog includes **950 built-in detection rules** ([_last update on 2024-10-08_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Identity Information**
 
@@ -10860,6 +10860,7 @@ Rules catalog includes **950 built-in detection rules** ([_last update on 2024-1
     
     - **Changelog:**
     
+        - 07/10/2024 - minor - Modified similarity strategy.
         - 21/03/2024 - minor - Adding similarity strategy to reduce alerts creation.
         - 22/01/2024 - minor - Removing a file extension to allow broader detection.
         - 16/11/2023 - minor - Changing effort level and adding filter to reduce false positives.
