@@ -126,7 +126,7 @@ The `Expired` tab list all the alert filters that had an `expiration date` set a
 
 ### Rules with active alert filter
 
-To search for rules that have at least one active alert filter, use the search `Filters` and select the criteria `Rules with alert filters`.
+To search for rules that have at least one active alert filter, use the search `Alert filter` and select the criteria `Rules with alert filters`.
 All rules with active alert filters will be returned in the list.
 
 ![search alert filters](/assets/operation_center/rules_catalog/search_alert_filters.png)
