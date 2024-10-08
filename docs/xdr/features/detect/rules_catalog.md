@@ -116,7 +116,7 @@ You can click on the name of a rule to display additional details, such as, but 
 
 ### Alert filters
 
-In the section `Alert filters`, you can consult the list of alert filters that are currently enabled in the `Àctives` tab. The number of alert `muted` in the `last 30 days` is displayed for each alert filter to help you audit its effectiveness.
+In the section `Alert filters`, you can consult the list of alert filters that are currently enabled in the `Actives` tab. The number of alert `muted` in the `last 30 days` is displayed for each alert filter to help you audit its effectiveness.
 
 Click on the `arrow` to expand the alert filter and consult the exclusion pattern.
 
