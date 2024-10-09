@@ -407,7 +407,6 @@ nav:
       - Cisco Meraki MX: integration/categories/network/cisco_meraki_mx.md
       - Cisco NX-OS: integration/categories/network/cisco_nx_os.md
       - Citrix NetScaler / ADC: integration/categories/network/citrix_netscaler_adc.md
-      - Clavister Next-Gen Firewall: integration/categories/network/clavister_ng_fw.md
       - Cloudflare Access Request: integration/categories/network/cloudflare-access-requests.md
       - Cloudflare DNS Gateway: integration/categories/network/cloudflare-gateway-dns.md
       - Cloudflare DNS logs: integration/categories/network/cloudflare-dns-logs.md
@@ -449,6 +448,7 @@ nav:
       - Cisco Secure Firewall: integration/categories/network_security/cisco_asa.md
       - Cisco Web Security Appliance: integration/categories/network_security/cisco_wsa.md
       - Claroty xDome: integration/categories/network_security/claroty_xdome.md
+      - Clavister Next-Gen Firewall: integration/categories/network_security/clavister_ng_fw.md
       - Cloudflare Firewall Events: integration/categories/network_security/cloudflare-firewall-events.md
       - Cyberwatch Detection: integration/categories/network_security/cyberwatch_detection.md
       - Darktrace Threat Visualizer: integration/categories/network_security/darktrace_threat_visualizer.md
