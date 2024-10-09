@@ -6,7 +6,11 @@ type: intake
 
 Clavister Next-Gen Firewall offers advanced network protection with integrated features like intrusion prevention, application control, and content filtering, designed to safeguard enterprises from diverse cybersecurity threats.
 
-- **Supported version**: Clavister cOS core 15.10.05
+- **Vendor**: Clavister
+- **Supported environment**: On Premise
+- **Version compatibility**: Clavister cOS Core 15.10.05 (Latest version as of now)
+- **Detection based on**: Telemetry
+- **Supported application or feature**: Network management and operation
 - **Supported events**:
   - **network**:
     - ALG
