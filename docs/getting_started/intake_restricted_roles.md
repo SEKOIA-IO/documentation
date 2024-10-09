@@ -1,5 +1,11 @@
 # Intake Restricted roles
 
+Intake restricted roles allows organizations to segregate user access by datasources.
+
+Not all teams need access to the same data. For example, a network infrastructure team may only require access to network logs, whereas a security team needs broader access across all logs to monitor for threats.
+
+Intake restricted roles enable organizations to compartmentalize data streams so that only users with the appropriate permissions can access specific subsets of data, efficiently manage responsibilities and ensure data confidentiality.
+
 ## Creating an intake restricted role
 
 To create an `intake restricted role`, follow these steps:
