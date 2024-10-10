@@ -88,7 +88,7 @@ The Endpoint Detection Agent is easy to install on Windows or Linux systems once
     Execute the following commands **as an administrator**:
 
     ```shell
-    agent.exe install --intake-key <INTAKE_KEY>
+    .\agent-latest.exe install --intake-key <INTAKE_KEY>
     ```
 
     To make sure the agent is successfully installed as a service, run the following command:
@@ -198,7 +198,7 @@ For example, if the agent must communicate with `fra2`, run the following comman
 === "Windows"
 
     ```shell
-    agent.exe install --intake-key <INTAKE_KEY> --region fra2
+    .\agent-latest.exe install --intake-key <INTAKE_KEY> --region fra2
     ```
 
 === "Linux"
@@ -228,7 +228,7 @@ To update the agent manually, follow the instructions specific to your OS.
     Execute the following command **as an administrator**:
 
     ```shell
-    $ProgramFiles\EndpointAgent\agent.exe update
+    $ProgramFiles\EndpointAgent\agent-latest.exe update
     ```
 
     Where `$ProgramFiles` refers to the path to the `Program Files` folder, usually `c:\Program Files`.
@@ -268,7 +268,7 @@ To uninstall the agent, follow the instructions specific to your OS.
     Execute the following command **as an administrator**:
 
     ```shell
-    agent.exe uninstall
+    agent-latest.exe uninstall
     ```
 === "Linux"
 
@@ -296,8 +296,8 @@ To uninstall the agent, follow the instructions specific to your OS.
     To remove the service, execute the following commands **as an administrator**:
 
     ```shell
-    agent.exe -service stop
-    agent.exe -service uninstall
+    agent-latest.exe -service stop
+    agent-latest.exe -service uninstall
     ```
 
     Then, remove the folders created by the agent:
@@ -607,7 +607,7 @@ Please find options and arguments available for Sekoia Agent by typing
 === "Windows"
 
     ````
-    agent.exe -h
+    agent-latest.exe -h
     ````
 
 === "Linux"
