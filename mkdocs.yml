@@ -53,8 +53,9 @@ nav:
     - Manage users: getting_started/manage_users.md
     - Deactivate inactive users: getting_started/inactive_users.md
     - Roles and permissions:
-      - Build-in roles: getting_started/roles.md
+      - Built-in roles: getting_started/roles.md
       - Custom roles: getting_started/custom_roles.md
+      - Intake Restricted roles: getting_started/intake_restricted_roles.md
   - Notifications:
     - Create and manage notifications: getting_started/notifications-Listing_Creation.md
     - Notification examples: getting_started/notifications-Examples.md
