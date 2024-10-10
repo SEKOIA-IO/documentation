@@ -849,6 +849,12 @@ The following Sekoia.io built-in rules match the intake **Sekoia.io Endpoint Age
     
     - **Effort:** master
 
+??? abstract "File and Directory Permissions Modification"
+    
+    Detects the use of chmod to give high level permissions to file that might be binary files. The prerequisites are to enable monitoring of the fchmodat, chmod and fchmod syscalls using Auditbeat.
+    
+    - **Effort:** advanced
+
 ??? abstract "FlowCloud Malware"
     
     Detects FlowCloud malware from threat group TA410. This requires Windows Event registry logging.
@@ -1097,7 +1103,7 @@ The following Sekoia.io built-in rules match the intake **Sekoia.io Endpoint Age
 
 ??? abstract "Kernel Module Alteration"
     
-    Kernel module installation can be used to configure system settings to automatically execute a program during system boot or logon to maintain persistence or gain higher-level privileges on compromised systems.
+    Kernel module installation can be used to configure system settings to automatically execute a program during system boot or logon to maintain persistence or gain higher-level privileges on compromised systems. The prerequisites are to enable monitoring of the finit_module, init_module, delete_module syscalls using Auditbeat.
     
     - **Effort:** advanced
 
@@ -2189,7 +2195,7 @@ The following Sekoia.io built-in rules match the intake **Sekoia.io Endpoint Age
 
 ??? abstract "Setuid Or Setgid Usage"
     
-    Detects the usage of a setuid or a setgid.
+    Detects the usage of a setuid or a setgid. The prerequisites are to enable monitoring of the setuid and setgid syscalls using Auditbeat.
     
     - **Effort:** intermediate
 

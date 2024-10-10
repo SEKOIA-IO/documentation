@@ -1209,6 +1209,12 @@ The following Sekoia.io built-in rules match the intake **Windows**. This docume
     
     - **Effort:** intermediate
 
+??? abstract "Interactive Terminal Spawned via Python"
+    
+    Identifies when a terminal (tty) is spawned via Python. Attackers may upgrade a simple reverse shell to a fully interactive tty after obtaining initial access to a host.
+    
+    - **Effort:** advanced
+
 ??? abstract "Invoke-TheHash Commandlets"
     
     Detects suspicious Invoke-TheHash PowerShell commandlet used for performing pass the hash WMI and SMB tasks.
@@ -1229,7 +1235,7 @@ The following Sekoia.io built-in rules match the intake **Windows**. This docume
 
 ??? abstract "Kernel Module Alteration"
     
-    Kernel module installation can be used to configure system settings to automatically execute a program during system boot or logon to maintain persistence or gain higher-level privileges on compromised systems.
+    Kernel module installation can be used to configure system settings to automatically execute a program during system boot or logon to maintain persistence or gain higher-level privileges on compromised systems. The prerequisites are to enable monitoring of the finit_module, init_module, delete_module syscalls using Auditbeat.
     
     - **Effort:** advanced
 
@@ -2114,6 +2120,12 @@ The following Sekoia.io built-in rules match the intake **Windows**. This docume
     Detects attempts to list Putty sessions through registry. To fully work, this rule requires to log registry accesses, which can be done with the Windows Event ID 4656 or 4663 but for that specific configuration is needed.
     
     - **Effort:** master
+
+??? abstract "Python Exfiltration Tools"
+    
+    Python has some built-in modules or library that could be installed and later be used as exflitration tool by an attacker
+    
+    - **Effort:** advanced
 
 ??? abstract "Python HTTP Server"
     

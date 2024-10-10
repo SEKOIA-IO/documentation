@@ -1,4 +1,4 @@
-Rules catalog includes **950 built-in detection rules** ([_last update on 2024-10-08_](rules_changelog.md)).
+Rules catalog includes **950 built-in detection rules** ([_last update on 2024-10-10_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Identity Information**
 
@@ -1919,6 +1919,10 @@ Rules catalog includes **950 built-in detection rules** ([_last update on 2024-1
     
     - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 02/10/2024 - major - Rule's pattern changed
+            
 ??? abstract "Invoke-TheHash Commandlets"
     
     Detects suspicious Invoke-TheHash PowerShell commandlet used for performing pass the hash WMI and SMB tasks.
@@ -2171,6 +2175,10 @@ Rules catalog includes **950 built-in detection rules** ([_last update on 2024-1
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 02/10/2024 - major - Rule's pattern changed
+            
 ??? abstract "QakBot Process Creation"
     
     Detects QakBot like process executions
@@ -3065,6 +3073,7 @@ Rules catalog includes **950 built-in detection rules** ([_last update on 2024-1
     
     - **Changelog:**
     
+        - 09/10/2024 - minor - File paths added to filter some false positives.
         - 20/09/2024 - minor - File paths added to filter some false positives.
         - 19/09/2024 - minor - File paths added to filter some false positives.
         - 18/09/2023 - minor - File paths added to filter some false positives.
@@ -5784,7 +5793,7 @@ Rules catalog includes **950 built-in detection rules** ([_last update on 2024-1
     
 ??? abstract "Kernel Module Alteration"
     
-    Kernel module installation can be used to configure system settings to automatically execute a program during system boot or logon to maintain persistence or gain higher-level privileges on compromised systems.
+    Kernel module installation can be used to configure system settings to automatically execute a program during system boot or logon to maintain persistence or gain higher-level privileges on compromised systems. The prerequisites are to enable monitoring of the finit_module, init_module, delete_module syscalls using Auditbeat.
     
     - **Effort:** advanced
     
@@ -7400,7 +7409,7 @@ Rules catalog includes **950 built-in detection rules** ([_last update on 2024-1
     
 ??? abstract "Kernel Module Alteration"
     
-    Kernel module installation can be used to configure system settings to automatically execute a program during system boot or logon to maintain persistence or gain higher-level privileges on compromised systems.
+    Kernel module installation can be used to configure system settings to automatically execute a program during system boot or logon to maintain persistence or gain higher-level privileges on compromised systems. The prerequisites are to enable monitoring of the finit_module, init_module, delete_module syscalls using Auditbeat.
     
     - **Effort:** advanced
     
@@ -7533,7 +7542,7 @@ Rules catalog includes **950 built-in detection rules** ([_last update on 2024-1
     
 ??? abstract "Linux Capabilities Discovery"
     
-    Linux capabilities are special attributes in the Linux kernel that grant processes and binary executables specific privileges that are normally reserved for processes whose effective user ID is 0 (The root user, and only the root user, has UID 0). This rule aims to detect discovery of such capabilities on the Linux system.
+    Linux capabilities are special attributes in the Linux kernel that grant processes and binary executables specific privileges that are normally reserved for processes whose effective user ID is 0 (The root user, and only the root user, has UID 0). This rule aims to detect discovery of such capabilities on the Linux system. The prerequisites are to enable monitoring of the execve and getxattr syscalls using Auditbeat.
     
     - **Effort:** intermediate
     
@@ -7551,7 +7560,7 @@ Rules catalog includes **950 built-in detection rules** ([_last update on 2024-1
     
 ??? abstract "Setuid Or Setgid Usage"
     
-    Detects the usage of a setuid or a setgid.
+    Detects the usage of a setuid or a setgid. The prerequisites are to enable monitoring of the setuid and setgid syscalls using Auditbeat.
     
     - **Effort:** intermediate
     
@@ -7590,7 +7599,7 @@ Rules catalog includes **950 built-in detection rules** ([_last update on 2024-1
             
 ??? abstract "Unusual Process Executed in Temporary Directory"
     
-    Identifies processes running in a temporary folder. This is sometimes done by adversaries to hide malware.
+    Identifies processes running in a temporary folder. This is sometimes done by adversaries to hide malware. The prerequisites are to enable monitoring of the execve syscall using Auditbeat.
     
     - **Effort:** master
     
@@ -7803,7 +7812,7 @@ Rules catalog includes **950 built-in detection rules** ([_last update on 2024-1
             
 ??? abstract "Linux Binary Masquerading"
     
-    Attackers could rename legitimate system bin to evade security mechanisme
+    Attackers could rename legitimate system bin to evade security mechanisme. The prerequisites are to enable monitoring of the execve syscall using Auditbeat.
     
     - **Effort:** elementary
     
@@ -8986,7 +8995,7 @@ Rules catalog includes **950 built-in detection rules** ([_last update on 2024-1
     
 ??? abstract "File and Directory Permissions Modification"
     
-    Detects the use of chmod to give high level permissions to file that might be binary files
+    Detects the use of chmod to give high level permissions to file that might be binary files. The prerequisites are to enable monitoring of the fchmodat, chmod and fchmod syscalls using Auditbeat.
     
     - **Effort:** advanced
     
@@ -9121,7 +9130,7 @@ Rules catalog includes **950 built-in detection rules** ([_last update on 2024-1
     
 ??? abstract "Linux Capabilities Discovery"
     
-    Linux capabilities are special attributes in the Linux kernel that grant processes and binary executables specific privileges that are normally reserved for processes whose effective user ID is 0 (The root user, and only the root user, has UID 0). This rule aims to detect discovery of such capabilities on the Linux system.
+    Linux capabilities are special attributes in the Linux kernel that grant processes and binary executables specific privileges that are normally reserved for processes whose effective user ID is 0 (The root user, and only the root user, has UID 0). This rule aims to detect discovery of such capabilities on the Linux system. The prerequisites are to enable monitoring of the execve and getxattr syscalls using Auditbeat.
     
     - **Effort:** intermediate
     
@@ -9139,7 +9148,7 @@ Rules catalog includes **950 built-in detection rules** ([_last update on 2024-1
     
 ??? abstract "Setuid Or Setgid Usage"
     
-    Detects the usage of a setuid or a setgid.
+    Detects the usage of a setuid or a setgid. The prerequisites are to enable monitoring of the setuid and setgid syscalls using Auditbeat.
     
     - **Effort:** intermediate
     
@@ -9178,7 +9187,7 @@ Rules catalog includes **950 built-in detection rules** ([_last update on 2024-1
             
 ??? abstract "Unusual Process Executed in Temporary Directory"
     
-    Identifies processes running in a temporary folder. This is sometimes done by adversaries to hide malware.
+    Identifies processes running in a temporary folder. This is sometimes done by adversaries to hide malware. The prerequisites are to enable monitoring of the execve syscall using Auditbeat.
     
     - **Effort:** master
     
@@ -9786,7 +9795,7 @@ Rules catalog includes **950 built-in detection rules** ([_last update on 2024-1
     
 ??? abstract "Process Anti Debug Checking"
     
-    Entries in /proc/self/status are used by malware to checks if current process is being debug
+    Entries in /proc/self/status are used by malware to checks if current process is being debug. The prerequisites are to enable monitoring of the openat, openat2, open and open_by_handle_at syscalls using Auditbeat.
     
     - **Effort:** master
     
@@ -10324,7 +10333,7 @@ Rules catalog includes **950 built-in detection rules** ([_last update on 2024-1
     
 ??? abstract "Main Memory Dumping"
     
-    Attacker might want to leverage their permission on the system or steal authentication tokens to third parties software, website, etc. To do so, attacker might try to dump main memory of computer.
+    Attacker might want to leverage their permission on the system or steal authentication tokens to third parties software, website, etc. To do so, attacker might try to dump main memory of computer. The prerequisites are to enable monitoring of the openat and open syscalls using Auditbeat.
     
     - **Effort:** advanced
     
@@ -10422,7 +10431,7 @@ Rules catalog includes **950 built-in detection rules** ([_last update on 2024-1
     
 ??? abstract "Process Memory Dumping From proc Filesystem"
     
-    Attacker might want to leverage their permission on the system or steal authentication to third parties software, website, etc.. To do so, attacker might try to dump memory of interesting process, for instance ftp-server or web server to dig for authentication login and password.
+    Attacker might want to leverage their permission on the system or steal authentication to third parties software, website, etc.. To do so, attacker might try to dump memory of interesting process, for instance ftp-server or web server to dig for authentication login and password. The prerequisites are to enable monitoring of the openat and open syscalls using Auditbeat.
     
     - **Effort:** master
     
@@ -10510,13 +10519,13 @@ Rules catalog includes **950 built-in detection rules** ([_last update on 2024-1
     
 ??? abstract "Write To File In Sudoers.d Folder"
     
-    A user tried to write something to a file in /etc/sudoers.d. It can be used to elevate privilege related to sudo and make it persistent.
+    A user tried to write something to a file in /etc/sudoers.d. It can be used to elevate privilege related to sudo and make it persistent. The prerequisites are to enable monitoring of the openat syscall using Auditbeat.
     
     - **Effort:** advanced
     
 ??? abstract "Write To File In Systemd"
     
-    A user tried to write something to a file in /etc/systemd/system. This repository contains services that are run at start. It can be used to run a malicious programm at start with high privileges.
+    A user tried to write something to a file in /etc/systemd/system. This repository contains services that are run at start. It can be used to run a malicious programm at start with high privileges. The prerequisites are to enable monitoring of the execve openat using Auditbeat.
     
     - **Effort:** intermediate
     
