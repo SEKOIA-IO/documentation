@@ -268,7 +268,7 @@ To uninstall the agent, follow the instructions specific to your OS.
     Execute the following command **as an administrator**:
 
     ```shell
-    agent-latest.exe uninstall
+    .\agent-latest.exe uninstall
     ```
 === "Linux"
 
@@ -296,8 +296,8 @@ To uninstall the agent, follow the instructions specific to your OS.
     To remove the service, execute the following commands **as an administrator**:
 
     ```shell
-    agent-latest.exe -service stop
-    agent-latest.exe -service uninstall
+    .\agent-latest.exe -service stop
+    .\agent-latest.exe -service uninstall
     ```
 
     Then, remove the folders created by the agent:
@@ -607,7 +607,7 @@ Please find options and arguments available for Sekoia Agent by typing
 === "Windows"
 
     ````
-    agent-latest.exe -h
+    .\agent-latest.exe -h
     ````
 
 === "Linux"
@@ -627,7 +627,7 @@ Please find options and arguments available for Sekoia Agent by typing
 === "Windows"
 
     ````
-    agent-latest.exe <command> [<args>]
+    .\agent-latest.exe <command> [<args>]
     ````
 
 === "Linux"
