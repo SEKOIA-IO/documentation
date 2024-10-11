@@ -148,6 +148,14 @@ In this section, you will find examples of raw logs as generated natively by the
 
 
 
+=== "test_flows_with_mac"
+
+    ```
+	1727862163.911654119 FW_MX_01 flows allow src=1.2.3.4 dst=5.6.7.8 mac=00:11:22:33:44:55 protocol=icmp6 type=136
+    ```
+
+
+
 === "test_ip_flow_end"
 
     ```
