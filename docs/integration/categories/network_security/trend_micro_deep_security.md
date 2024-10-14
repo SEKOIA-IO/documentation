@@ -8,7 +8,6 @@ Trend Micro Deep Security / Workload Security detect malware, vulnerabilities an
 It protect your physical and virtual servers as well as, your cloud and containers instances.
 
 - **Vendor**: Trend Micro
-- **Plan**: Defend Core & Defend Prime
 - **Supported environment**: On prem
 - **Version compatibility**: 20.0. 0-5953
 - **Detection based on**: Telemetry

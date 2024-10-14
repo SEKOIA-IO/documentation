@@ -7,7 +7,6 @@ type: intake
 Palo Alto Networks offers an enterprise cybersecurity platform which provides network security, cloud security, endpoint protection, and various cloud-delivered security services.
 
 - **Vendor**: Palo Alto
-- **Plan**: Defend Core & Defend Prime
 - **Supported environment**: On Premise
 - **Version compatibility**:
 - **Detection based on**: Telemetry

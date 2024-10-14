@@ -9,7 +9,6 @@ Stormshield Network Security firewalls provides comprehensive security and high 
 In this documentation we will explain how to collect and send Stormshield Network Security logs to Sekoia.io.
 
 - **Vendor**: Stormshield
-- **Plan**: Defend Core & Defend Prime
 - **Supported environment**: On prem
 - **Version compatibility**: 4.8.2 and newer
 - **Detection based on**: Alert, Telemetry

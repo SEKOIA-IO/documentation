@@ -8,7 +8,6 @@ organization's digital infrastructure, offering real-time insights and prioritiz
 security measures and reduce cyber risk.
 
 - **Vendor**: SecurityScorecard
-- **Plan**: Defend Core & Defend Prime
 - **Supported environment**: SaaS
 - **Detection based on**: Alert
 - **Supported application or feature**: Application logs

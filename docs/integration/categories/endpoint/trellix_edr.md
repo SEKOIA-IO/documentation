@@ -4,7 +4,6 @@ type: intake
 
 ## Overview
 - **Vendor**:
-- **Plan**:
 - **Supported environment**:
 - **Version compatibility**:
 - **Detection based on**:

@@ -10,7 +10,6 @@ Google Cloud Load Balancing is a fully distributed, software-defined managed ser
     Important note - This format is currently in beta. We highly value your feedback to improve its performance.
 
 - **Vendor**: Google Cloud
-- **Plan**: Defend Prime
 - **Supported environment**: SaaS
 - **Detection based on**: Telemetry
 - **Supported application or feature**: Web logs, Web application firewall logs, Googe Cloud Armor

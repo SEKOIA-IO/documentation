@@ -48,24 +48,25 @@ Redirecting...
                 if "uuid" not in metadata or metadata.get("type").lower() !=  "intake":
                     continue
 
-                dialect_uuid = metadata["uuid"]
+                dialect_uuids = (uuid.strip() for uuid in metadata["uuid"].split(","))
 
-                self._redirection_table[dialect_uuid] = source_file.url
-                self._integrations.append(
-                    {
-                        "uuid": dialect_uuid,
-                        "name": metadata.get("name"),
-                        "destination": source_file.url,
-                    }
-                )
+                for dialect_uuid in dialect_uuids:
+                    self._redirection_table[dialect_uuid] = source_file.url
+                    self._integrations.append(
+                        {
+                            "uuid": dialect_uuid,
+                            "name": metadata.get("name"),
+                            "destination": source_file.url,
+                        }
+                    )
 
-                newfile = File(
-                    path=f"operation_center/integration_catalog/uuid/{dialect_uuid}.md",
-                    src_dir="operation_center/integration_catalog/uuid",
-                    dest_dir=config["site_dir"],
-                    use_directory_urls=True,
-                )
-                new_files.append(newfile)
+                    newfile = File(
+                        path=f"operation_center/integration_catalog/uuid/{dialect_uuid}.md",
+                        src_dir="operation_center/integration_catalog/uuid",
+                        dest_dir=config["site_dir"],
+                        use_directory_urls=True,
+                    )
+                    new_files.append(newfile)
 
         new_files.append(File(
             path="integration/categories/index.md",

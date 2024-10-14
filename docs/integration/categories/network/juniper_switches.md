@@ -7,7 +7,6 @@ type: intake
 Juniper Networks' JunOS is an advanced operating system powering Juniper's networking devices, renowned for its reliability, performance, and comprehensive feature set for routing, switching, and security functionalities in enterprise networks.
 
 - **Vendor**: Juniper
-- **Plan**:  Defend Prime
 - **Supported environment**: On prem
 - **Version Compatibility**: 23.2
 - **Detection based on**: Telemetry

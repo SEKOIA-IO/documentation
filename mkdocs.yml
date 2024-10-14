@@ -328,6 +328,7 @@ nav:
       - Microsoft IIS: integration/categories/applicative/microsoft_iis.md
       - Salesforce: integration/categories/applicative/salesforce.md
       - Sekoia.io activity logs: integration/categories/applicative/sekoiaio_activity_logs.md
+      - Sekoia.io forwarder logs: integration/categories/applicative/sekoiaio_forwarder_logs.md
       - Systancia Cleanroom: integration/categories/applicative/systancia_cleanroom.md
       - Veeam Backup: integration/categories/applicative/veeam_backup.md
     - Email:
@@ -382,6 +383,7 @@ nav:
     - Generic:
       - CEF: integration/categories/generic/cef.md
       - Raw: integration/categories/generic/raw.md
+      - OCSF: integration/categories/generic/ocsf.md
     - IAM:
       - Alsid: integration/categories/iam/alsid.md
       - Azure Key Vault: integration/categories/iam/azure_key_vault.md
@@ -446,6 +448,7 @@ nav:
       - Cisco Secure Firewall: integration/categories/network_security/cisco_asa.md
       - Cisco Web Security Appliance: integration/categories/network_security/cisco_wsa.md
       - Claroty xDome: integration/categories/network_security/claroty_xdome.md
+      - Clavister Next-Gen Firewall: integration/categories/network_security/clavister_ng_fw.md
       - Cloudflare Firewall Events: integration/categories/network_security/cloudflare-firewall-events.md
       - Cyberwatch Detection: integration/categories/network_security/cyberwatch_detection.md
       - Darktrace Threat Visualizer: integration/categories/network_security/darktrace_threat_visualizer.md
@@ -645,6 +648,7 @@ plugins:
       xdr/features/collect/integrations/application/openvpn.md: integration/categories/network/openvpn.md
       xdr/features/collect/integrations/application/rsa_securid.md: integration/categories/iam/rsa_securid.md
       xdr/features/collect/integrations/application/sekoiaio_activity_logs.md: integration/categories/applicative/sekoiaio_activity_logs.md
+      xdr/features/collect/integrations/application/sekoiaio_forwarder_logs.md: integration/categories/applicative/sekoiaio_forwarder_logs.md
       xdr/features/collect/integrations/application/systancia_cleanroom.md: integration/categories/applicative/systancia_cleanroom.md
       xdr/features/collect/integrations/application/unbound.md: integration/categories/network/unbound.md
       xdr/features/collect/integrations/application/veeam_backup.md: integration/categories/applicative/veeam_backup.md
@@ -752,6 +756,7 @@ plugins:
       xdr/features/collect/integrations/network/arubaos.md: integration/categories/network/arubaos.md
       xdr/features/collect/integrations/network/broadcom_edge_swg.md: integration/categories/network_security/broadcom_edge_swg.md
       xdr/features/collect/integrations/network/checkpoint.md: integration/categories/network_security/checkpoint.md
+      xdr/features/collect/integrations/network/clavister_ng_fw.md: integration/categories/network/clavister_ng_fw.md
       xdr/features/collect/integrations/network/cisco/cisco_asa.md: integration/categories/network_security/cisco_asa.md
       xdr/features/collect/integrations/network/cisco/cisco_identity_services_engine_ise.md: integration/categories/network_security/cisco_identity_services_engine_ise.md
       xdr/features/collect/integrations/network/cisco/cisco_ios.md: integration/categories/network/cisco_ios.md

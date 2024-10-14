@@ -7,7 +7,6 @@ type: intake
 Winlogbeat is an open-source log collector that ships Windows Event Logs as JSON events to a Losgtash log concentrator before being sent to Sekoia.io.
 
 - **Vendor**: Elastic
-- **Plan**: Defend Prime
 - **Supported environment**: On Premise
 - **Detection based on**: Telemetry
 - **Supported application or feature**: System Monitoring and Security

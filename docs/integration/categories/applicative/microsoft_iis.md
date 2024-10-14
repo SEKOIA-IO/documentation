@@ -4,7 +4,6 @@ type: intake
 
 ## Overview
 - **Vendor**: Microsoft
-- **Plan**: Defend Core & Defend Prime
 - **Supported environment**: On Premise
 - **Version compatibility**: 10.0 and newer
 - **Detection based on**: Telemetry

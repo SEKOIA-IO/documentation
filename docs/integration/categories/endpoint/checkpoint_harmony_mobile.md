@@ -7,7 +7,6 @@ type: intake
 Check Point Harmony Mobile is the industry's first unified security solution for users devices and access.
 
 - **Vendor**: Check Point
-- **Plan**: Defend Core & Defend Prime
 - **Supported environment**: SaaS
 - **Detection based on**: Telemetry, Alert
 - **Supported application or feature**:Network device logs, Network protocol analysis, Web logs

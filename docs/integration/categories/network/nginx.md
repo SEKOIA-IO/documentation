@@ -7,7 +7,6 @@ type: intake
 NGINX is an HTTP and reverse proxy server, a mail proxy server, and a generic TCP/UDP proxy server. It has a lot of features and because it is located between your application and your clients, it can give you a lot of information about either of them.
 
 - **Vendor**: F5
-- **Plan**: Defend Prime
 - **Supported environment**: On Premise
 - **Version compatibility, if applicable**:
 - **Detection based on**: Network Telemetry

@@ -5,7 +5,6 @@ type: intake
 
 ## Overview
 - **Vendor**: Fastly
-- **Plan**: Defend Core & Defend Prime
 - **Supported environment**: SaaS
 - **Detection based on**: Telemetry
 - **Supported application or feature**: Web application firewall logs

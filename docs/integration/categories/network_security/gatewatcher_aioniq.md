@@ -1,4 +1,4 @@
-uuid: bba2bed2-d925-440f-a0ce-dbcae04eaf26
+uuid: bba2bed2-d925-440f-a0ce-dbcae04eaf26,2f28e4f9-a4f3-40a6-9909-b69f3df32535
 name: Gatewatcher AionIQ
 type: intake
 
@@ -7,7 +7,6 @@ type: intake
 Gatewatcher AionIQ is a detection and response platform for your network that identifies malicious actions and suspicious behaviors.
 
 - **Vendor**: Gatewatcher
-- **Plan**: Defend Core & Defend Prime
 - **Supported environment**: On Premise
 - **Version compatibility, if applicable**: 2.5.3
 - **Detection based on**: Network Telemetry

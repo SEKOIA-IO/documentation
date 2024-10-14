@@ -6,7 +6,6 @@ type: intake
 Azure Application Gateway is a web traffic load balancer that manages traffic to your web applications with advanced routing, SSL termination, and Web Application Firewall (WAF) features. It ensures high availability, scalability, and integrates seamlessly with other Azure services for efficient deployment and management. Additionally, it offers insights and diagnostics to monitor and optimize application performance.
 
 - **Vendor**: Azure
-- **Plan**: Defend Prime
 - **Supported environment**: SaaS
 - **Detection based on**: Telemetry
 - **Supported application or feature**: Access logs, Firewall logs
