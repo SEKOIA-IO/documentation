@@ -55,6 +55,7 @@ nav:
     - Roles and permissions:
       - Built-in roles: getting_started/roles.md
       - Custom roles: getting_started/custom_roles.md
+      - Intake Restricted roles: getting_started/intake_restricted_roles.md
   - Notifications:
     - Create and manage notifications: getting_started/notifications-Listing_Creation.md
     - Notification examples: getting_started/notifications-Examples.md
