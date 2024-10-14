@@ -2,6 +2,9 @@ Changelog _last update on 2024-10-14_
 
 ## Changelog
 
+### Login Brute-Force Successful On AzureAD From Single IP Address
+  - 14/10/2024 - minor - The error codes 70043, 50173, 70008, 700082, 9002341 have been excluded as they are not related to login failures that we want to detect and caused several false positives.
+    
 ### Web Application Launching Shell
   - 10/10/2024 - major - Adding new elements and filters to increase detection and reduce false positives.
     
@@ -49,9 +52,6 @@ Changelog _last update on 2024-10-14_
     
 ### Correlation Multi Service Disable
   - 21/08/2024 - minor - Adding a space to reduce false positives.
-    
-### Login Brute-Force Successful On AzureAD From Single IP Address
-  - 16/08/2024 - minor - The error code 50078 has been excluded as it is not a specific error code related to a login failure that we want to detect and caused several false positives.
     
 ### Veeam Backup & Replication Malware Detection
   - 13/08/2024 - major - Restrict to only one type of event following customer feedback
