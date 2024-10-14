@@ -191,7 +191,7 @@ The following Sekoia.io built-in rules match the intake **ESET Protect [BETA]**.
 
 ??? abstract "Kernel Module Alteration"
     
-    Kernel module installation can be used to configure system settings to automatically execute a program during system boot or logon to maintain persistence or gain higher-level privileges on compromised systems.
+    Kernel module installation can be used to configure system settings to automatically execute a program during system boot or logon to maintain persistence or gain higher-level privileges on compromised systems. The prerequisites are to enable monitoring of the finit_module, init_module, delete_module syscalls using Auditbeat.
     
     - **Effort:** advanced
 
@@ -501,11 +501,11 @@ The following Sekoia.io built-in rules match the intake **ESET Protect [BETA]**.
     
     - **Effort:** advanced
 
-??? abstract "Webshell Execution W3WP Process"
+??? abstract "Web Application Launching Shell"
     
-    Detects possible webshell execution on Windows Servers which is usually a w3wp parent process with the user name DefaultAppPool.
+    Detects when a web application launches a shell.
     
-    - **Effort:** advanced
+    - **Effort:** master
 
 ??? abstract "Winlogon wrong parent"
     
