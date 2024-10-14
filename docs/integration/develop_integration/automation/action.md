@@ -11,7 +11,7 @@ In a module, each action consists of 2 elements:
 	- A short description about that the action (field `description`)
 	- The unique command name of the action (field `docker_parameter`)
 	- A description of the arguments of the action (field `arguments`). This description is a [JSON schema model](https://json-schema.org/)
-	- A description of the output of the action (field `results`). This description is a [JSON schema model](https://json-schema.org/) and may be empty in the action returns no data.
+	- A description of the output of the action (field `results`). This description is a [JSON schema model](https://json-schema.org/) and may be empty if the action returns no data.
 
   See [Azure Active Directory «Enable User» action’s manifest](../AzureActiveDirectory/action_enable_user.json)
 
