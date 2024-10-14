@@ -335,7 +335,7 @@ The following Sekoia.io built-in rules match the intake **IBM AIX**. This docume
 
 ??? abstract "Disabled Service"
     
-    Service disabling can be abused by attacker to deny security mecanisms (eg: firewall, EDR, ect) and it is also often used by cryptominer to exploit as much RAM & CPU as possible on infected host.
+    Service disabling can be abused by attacker to deny security mecanisms (eg: firewall, EDR, ect) and it is also often used by cryptominer to exploit as much RAM & CPU as possible on infected host. The prerequisites are to enable monitoring of the truncate, rename and unlink syscalls using Auditbeat.
     
     - **Effort:** advanced
 
@@ -519,12 +519,6 @@ The following Sekoia.io built-in rules match the intake **IBM AIX**. This docume
     
     - **Effort:** elementary
 
-??? abstract "IIS Module Installation Using AppCmd"
-    
-    Detects the installation of a new IIS module from the command line. It can used used to backdoor an IIS/OWA/Sharepoint server.
-    
-    - **Effort:** intermediate
-
 ??? abstract "Inhibit System Recovery Deleting Backups"
     
     Detects adversaries attempts to delete backups or inhibit system recovery. This rule relies on differents known techniques using Windows events logs from Sysmon (ID 1), and PowerShell (ID 4103, 4104).
@@ -551,7 +545,7 @@ The following Sekoia.io built-in rules match the intake **IBM AIX**. This docume
 
 ??? abstract "Kernel Module Alteration"
     
-    Kernel module installation can be used to configure system settings to automatically execute a program during system boot or logon to maintain persistence or gain higher-level privileges on compromised systems.
+    Kernel module installation can be used to configure system settings to automatically execute a program during system boot or logon to maintain persistence or gain higher-level privileges on compromised systems. The prerequisites are to enable monitoring of the finit_module, init_module, delete_module syscalls using Auditbeat.
     
     - **Effort:** advanced
 
@@ -716,6 +710,12 @@ The following Sekoia.io built-in rules match the intake **IBM AIX**. This docume
     Look for Microsoft Exchange Server’s Unified Messaging service creating non-standard content on disk, which could indicate web shells or other malicious content, suggesting exploitation of CVE-2021-26858 vulnerability
     
     - **Effort:** intermediate
+
+??? abstract "Microsoft IIS Module Installation"
+    
+    Detects the installation of a new IIS module from the command line. It can used used to backdoor an IIS/OWA/Sharepoint server.
+    
+    - **Effort:** advanced
 
 ??? abstract "Microsoft Office Creating Suspicious File"
     

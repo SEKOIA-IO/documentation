@@ -1,4 +1,4 @@
-Rules catalog includes **950 built-in detection rules** ([_last update on 2024-10-08_](rules_changelog.md)).
+Rules catalog includes **952 built-in detection rules** ([_last update on 2024-10-14_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Identity Information**
 
@@ -1241,6 +1241,18 @@ Rules catalog includes **950 built-in detection rules** ([_last update on 2024-1
     
         - 09/10/2023 - major - Fix field names to match the current parser.
             
+??? abstract "Microsoft 365 Security and Compliance Center High Severity Alert"
+    
+    A security or compliance-related alert of high severity was raised, based on the policies of the tenant. This rule can be very noisy depending on the configuration of the tenant. Alert filters are likely required. In addition, most alerts don't include any context, and are only useful if the analysts have access to the Microsoft portals to investigate.
+    
+    - **Effort:** master
+    
+??? abstract "Microsoft 365 Security and Compliance Center Medium Severity Alert"
+    
+    A security or compliance-related alert of medium severity was raised, based on the policies of the tenant. This rule can be very noisy depending on the configuration of the tenant. Alert filters are likely required. In addition, most alerts don't include any context, and are only useful if the analysts have access to the Microsoft portals to investigate.
+    
+    - **Effort:** master
+    
 ??? abstract "Microsoft Defender for Office 365 High Severity AIR Alert"
     
     Microsoft Defender for Office 365 includes the capability to run Automated investigation and response (AIR) actions. This rule detects when a High severity alert triggers an automated investigation, such as when a potentially malicious URL click was detected, or when a user is restricted from sending email.
@@ -1715,7 +1727,7 @@ Rules catalog includes **950 built-in detection rules** ([_last update on 2024-1
             
 ??? abstract "Correlation Linux Decode And Exec"
     
-    A Base64 string has been decoded and executed through a pipe
+    A Base64 string has been decoded and executed through a pipe. The prerequisites are to enable monitoring of the execve syscall using Auditbeat.
     
     - **Effort:** intermediate
     
@@ -1919,6 +1931,10 @@ Rules catalog includes **950 built-in detection rules** ([_last update on 2024-1
     
     - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 02/10/2024 - major - Rule's pattern changed
+            
 ??? abstract "Invoke-TheHash Commandlets"
     
     Detects suspicious Invoke-TheHash PowerShell commandlet used for performing pass the hash WMI and SMB tasks.
@@ -2171,6 +2187,10 @@ Rules catalog includes **950 built-in detection rules** ([_last update on 2024-1
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 02/10/2024 - major - Rule's pattern changed
+            
 ??? abstract "QakBot Process Creation"
     
     Detects QakBot like process executions
@@ -2541,6 +2561,16 @@ Rules catalog includes **950 built-in detection rules** ([_last update on 2024-1
     
         - 29/11/2023 - minor - Added a selection to filter some false positives.
         - 26/03/2024 - major - Rule's pattern field changed
+            
+??? abstract "Web Application Launching Shell"
+    
+    Detects when a web application launches a shell.
+    
+    - **Effort:** master
+    
+    - **Changelog:**
+    
+        - 10/10/2024 - major - Adding new elements and filters to increase detection and reduce false positives.
             
 ??? abstract "WithSecure Elements Critical Severity"
     
@@ -3065,6 +3095,7 @@ Rules catalog includes **950 built-in detection rules** ([_last update on 2024-1
     
     - **Changelog:**
     
+        - 09/10/2024 - minor - File paths added to filter some false positives.
         - 20/09/2024 - minor - File paths added to filter some false positives.
         - 19/09/2024 - minor - File paths added to filter some false positives.
         - 18/09/2023 - minor - File paths added to filter some false positives.
@@ -5224,9 +5255,9 @@ Rules catalog includes **950 built-in detection rules** ([_last update on 2024-1
             
 **Traffic Signaling**
 
-??? abstract "Linux Binary List TCP Connections"
+??? abstract "Binary List Tcp"
     
-    A binary is trying to list TCP connections.
+    A binary is trying to list TCP connections. The prerequisites are to enable monitoring of the open and openat syscalls using Auditbeat.
     
     - **Effort:** advanced
     
@@ -5256,18 +5287,22 @@ Rules catalog includes **950 built-in detection rules** ([_last update on 2024-1
     
     - **Effort:** intermediate
     
-??? abstract "IIS Module Installation Using AppCmd"
-    
-    Detects the installation of a new IIS module from the command line. It can used used to backdoor an IIS/OWA/Sharepoint server.
-    
-    - **Effort:** intermediate
-    
 ??? abstract "Microsoft Exchange Server Creating Unusual Files"
     
     Look for Microsoft Exchange Server’s Unified Messaging service creating non-standard content on disk, which could indicate web shells or other malicious content, suggesting exploitation of CVE-2021-26858 vulnerability
     
     - **Effort:** intermediate
     
+??? abstract "Microsoft IIS Module Installation"
+    
+    Detects the installation of a new IIS module from the command line. It can used used to backdoor an IIS/OWA/Sharepoint server.
+    
+    - **Effort:** advanced
+    
+    - **Changelog:**
+    
+        - 10/10/2024 - major - Adding new commands with powershell and changing effort level.
+            
 ??? abstract "PowerCat Function Loading"
     
     Detect a basic execution of PowerCat. PowerCat is a PowerShell function allowing to do basic connections, file transfer, shells, relays, generate payloads.
@@ -5290,12 +5325,6 @@ Rules catalog includes **950 built-in detection rules** ([_last update on 2024-1
     
         - 04/04/2024 - major - Rule's pattern field changed
             
-??? abstract "Webshell Execution W3WP Process"
-    
-    Detects possible webshell execution on Windows Servers which is usually a w3wp parent process with the user name DefaultAppPool.
-    
-    - **Effort:** advanced
-    
 **Create or Modify System Process**
 
 ??? abstract "APT29 Fake Google Update Service Install"
@@ -5784,7 +5813,7 @@ Rules catalog includes **950 built-in detection rules** ([_last update on 2024-1
     
 ??? abstract "Kernel Module Alteration"
     
-    Kernel module installation can be used to configure system settings to automatically execute a program during system boot or logon to maintain persistence or gain higher-level privileges on compromised systems.
+    Kernel module installation can be used to configure system settings to automatically execute a program during system boot or logon to maintain persistence or gain higher-level privileges on compromised systems. The prerequisites are to enable monitoring of the finit_module, init_module, delete_module syscalls using Auditbeat.
     
     - **Effort:** advanced
     
@@ -7400,7 +7429,7 @@ Rules catalog includes **950 built-in detection rules** ([_last update on 2024-1
     
 ??? abstract "Kernel Module Alteration"
     
-    Kernel module installation can be used to configure system settings to automatically execute a program during system boot or logon to maintain persistence or gain higher-level privileges on compromised systems.
+    Kernel module installation can be used to configure system settings to automatically execute a program during system boot or logon to maintain persistence or gain higher-level privileges on compromised systems. The prerequisites are to enable monitoring of the finit_module, init_module, delete_module syscalls using Auditbeat.
     
     - **Effort:** advanced
     
@@ -7533,7 +7562,7 @@ Rules catalog includes **950 built-in detection rules** ([_last update on 2024-1
     
 ??? abstract "Linux Capabilities Discovery"
     
-    Linux capabilities are special attributes in the Linux kernel that grant processes and binary executables specific privileges that are normally reserved for processes whose effective user ID is 0 (The root user, and only the root user, has UID 0). This rule aims to detect discovery of such capabilities on the Linux system.
+    Linux capabilities are special attributes in the Linux kernel that grant processes and binary executables specific privileges that are normally reserved for processes whose effective user ID is 0 (The root user, and only the root user, has UID 0). This rule aims to detect discovery of such capabilities on the Linux system. The prerequisites are to enable monitoring of the execve and getxattr syscalls using Auditbeat.
     
     - **Effort:** intermediate
     
@@ -7551,7 +7580,7 @@ Rules catalog includes **950 built-in detection rules** ([_last update on 2024-1
     
 ??? abstract "Setuid Or Setgid Usage"
     
-    Detects the usage of a setuid or a setgid.
+    Detects the usage of a setuid or a setgid. The prerequisites are to enable monitoring of the setuid and setgid syscalls using Auditbeat.
     
     - **Effort:** intermediate
     
@@ -7590,7 +7619,7 @@ Rules catalog includes **950 built-in detection rules** ([_last update on 2024-1
             
 ??? abstract "Unusual Process Executed in Temporary Directory"
     
-    Identifies processes running in a temporary folder. This is sometimes done by adversaries to hide malware.
+    Identifies processes running in a temporary folder. This is sometimes done by adversaries to hide malware. The prerequisites are to enable monitoring of the execve syscall using Auditbeat.
     
     - **Effort:** master
     
@@ -7803,7 +7832,7 @@ Rules catalog includes **950 built-in detection rules** ([_last update on 2024-1
             
 ??? abstract "Linux Binary Masquerading"
     
-    Attackers could rename legitimate system bin to evade security mechanisme
+    Attackers could rename legitimate system bin to evade security mechanisme. The prerequisites are to enable monitoring of the execve syscall using Auditbeat.
     
     - **Effort:** elementary
     
@@ -8610,7 +8639,7 @@ Rules catalog includes **950 built-in detection rules** ([_last update on 2024-1
 
 ??? abstract "Correlation Linux Decode And Exec"
     
-    A Base64 string has been decoded and executed through a pipe
+    A Base64 string has been decoded and executed through a pipe. The prerequisites are to enable monitoring of the execve syscall using Auditbeat.
     
     - **Effort:** intermediate
     
@@ -8714,9 +8743,9 @@ Rules catalog includes **950 built-in detection rules** ([_last update on 2024-1
             
 **Traffic Signaling**
 
-??? abstract "Linux Binary List TCP Connections"
+??? abstract "Binary List Tcp"
     
-    A binary is trying to list TCP connections.
+    A binary is trying to list TCP connections. The prerequisites are to enable monitoring of the open and openat syscalls using Auditbeat.
     
     - **Effort:** advanced
     
@@ -8986,7 +9015,7 @@ Rules catalog includes **950 built-in detection rules** ([_last update on 2024-1
     
 ??? abstract "File and Directory Permissions Modification"
     
-    Detects the use of chmod to give high level permissions to file that might be binary files
+    Detects the use of chmod to give high level permissions to file that might be binary files. The prerequisites are to enable monitoring of the fchmodat, chmod and fchmod syscalls using Auditbeat.
     
     - **Effort:** advanced
     
@@ -9121,7 +9150,7 @@ Rules catalog includes **950 built-in detection rules** ([_last update on 2024-1
     
 ??? abstract "Linux Capabilities Discovery"
     
-    Linux capabilities are special attributes in the Linux kernel that grant processes and binary executables specific privileges that are normally reserved for processes whose effective user ID is 0 (The root user, and only the root user, has UID 0). This rule aims to detect discovery of such capabilities on the Linux system.
+    Linux capabilities are special attributes in the Linux kernel that grant processes and binary executables specific privileges that are normally reserved for processes whose effective user ID is 0 (The root user, and only the root user, has UID 0). This rule aims to detect discovery of such capabilities on the Linux system. The prerequisites are to enable monitoring of the execve and getxattr syscalls using Auditbeat.
     
     - **Effort:** intermediate
     
@@ -9139,7 +9168,7 @@ Rules catalog includes **950 built-in detection rules** ([_last update on 2024-1
     
 ??? abstract "Setuid Or Setgid Usage"
     
-    Detects the usage of a setuid or a setgid.
+    Detects the usage of a setuid or a setgid. The prerequisites are to enable monitoring of the setuid and setgid syscalls using Auditbeat.
     
     - **Effort:** intermediate
     
@@ -9178,7 +9207,7 @@ Rules catalog includes **950 built-in detection rules** ([_last update on 2024-1
             
 ??? abstract "Unusual Process Executed in Temporary Directory"
     
-    Identifies processes running in a temporary folder. This is sometimes done by adversaries to hide malware.
+    Identifies processes running in a temporary folder. This is sometimes done by adversaries to hide malware. The prerequisites are to enable monitoring of the execve syscall using Auditbeat.
     
     - **Effort:** master
     
@@ -9472,7 +9501,7 @@ Rules catalog includes **950 built-in detection rules** ([_last update on 2024-1
     
 ??? abstract "Disabled Service"
     
-    Service disabling can be abused by attacker to deny security mecanisms (eg: firewall, EDR, ect) and it is also often used by cryptominer to exploit as much RAM & CPU as possible on infected host.
+    Service disabling can be abused by attacker to deny security mecanisms (eg: firewall, EDR, ect) and it is also often used by cryptominer to exploit as much RAM & CPU as possible on infected host. The prerequisites are to enable monitoring of the truncate, rename and unlink syscalls using Auditbeat.
     
     - **Effort:** advanced
     
@@ -9786,7 +9815,7 @@ Rules catalog includes **950 built-in detection rules** ([_last update on 2024-1
     
 ??? abstract "Process Anti Debug Checking"
     
-    Entries in /proc/self/status are used by malware to checks if current process is being debug
+    Entries in /proc/self/status are used by malware to checks if current process is being debug. The prerequisites are to enable monitoring of the openat, openat2, open and open_by_handle_at syscalls using Auditbeat.
     
     - **Effort:** master
     
@@ -10324,7 +10353,7 @@ Rules catalog includes **950 built-in detection rules** ([_last update on 2024-1
     
 ??? abstract "Main Memory Dumping"
     
-    Attacker might want to leverage their permission on the system or steal authentication tokens to third parties software, website, etc. To do so, attacker might try to dump main memory of computer.
+    Attacker might want to leverage their permission on the system or steal authentication tokens to third parties software, website, etc. To do so, attacker might try to dump main memory of computer. The prerequisites are to enable monitoring of the openat and open syscalls using Auditbeat.
     
     - **Effort:** advanced
     
@@ -10422,7 +10451,7 @@ Rules catalog includes **950 built-in detection rules** ([_last update on 2024-1
     
 ??? abstract "Process Memory Dumping From proc Filesystem"
     
-    Attacker might want to leverage their permission on the system or steal authentication to third parties software, website, etc.. To do so, attacker might try to dump memory of interesting process, for instance ftp-server or web server to dig for authentication login and password.
+    Attacker might want to leverage their permission on the system or steal authentication to third parties software, website, etc.. To do so, attacker might try to dump memory of interesting process, for instance ftp-server or web server to dig for authentication login and password. The prerequisites are to enable monitoring of the openat and open syscalls using Auditbeat.
     
     - **Effort:** master
     
@@ -10510,13 +10539,13 @@ Rules catalog includes **950 built-in detection rules** ([_last update on 2024-1
     
 ??? abstract "Write To File In Sudoers.d Folder"
     
-    A user tried to write something to a file in /etc/sudoers.d. It can be used to elevate privilege related to sudo and make it persistent.
+    A user tried to write something to a file in /etc/sudoers.d. It can be used to elevate privilege related to sudo and make it persistent. The prerequisites are to enable monitoring of the openat syscall using Auditbeat.
     
     - **Effort:** advanced
     
 ??? abstract "Write To File In Systemd"
     
-    A user tried to write something to a file in /etc/systemd/system. This repository contains services that are run at start. It can be used to run a malicious programm at start with high privileges.
+    A user tried to write something to a file in /etc/systemd/system. This repository contains services that are run at start. It can be used to run a malicious programm at start with high privileges. The prerequisites are to enable monitoring of the execve openat using Auditbeat.
     
     - **Effort:** intermediate
     
@@ -11637,6 +11666,7 @@ Rules catalog includes **950 built-in detection rules** ([_last update on 2024-1
     - **Changelog:**
     
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+        - 10/10/2024 - minor - Adding new elements and filters to increase detection and reduce false positives.
             
 ??? abstract "Phosphorus Domain Controller Discovery"
     
@@ -12375,7 +12405,7 @@ Rules catalog includes **950 built-in detection rules** ([_last update on 2024-1
     
 ??? abstract "Many Downloads From Several Binaries"
     
-    Threat Actors might use all the binaries to download the payload to make sure at least one is present on the target.
+    Threat Actors might use all the binaries to download the payload to make sure at least one is present on the target. The prerequisites are to enable monitoring of the connect syscall using Auditbeat.
     
     - **Effort:** advanced
     
@@ -12634,9 +12664,9 @@ Rules catalog includes **950 built-in detection rules** ([_last update on 2024-1
     
 **Traffic Signaling**
 
-??? abstract "Linux Binary List TCP Connections"
+??? abstract "Binary List Tcp"
     
-    A binary is trying to list TCP connections.
+    A binary is trying to list TCP connections. The prerequisites are to enable monitoring of the open and openat syscalls using Auditbeat.
     
     - **Effort:** advanced
     
@@ -13078,7 +13108,7 @@ Rules catalog includes **950 built-in detection rules** ([_last update on 2024-1
             
 ??? abstract "Disabled Service"
     
-    Service disabling can be abused by attacker to deny security mecanisms (eg: firewall, EDR, ect) and it is also often used by cryptominer to exploit as much RAM & CPU as possible on infected host.
+    Service disabling can be abused by attacker to deny security mecanisms (eg: firewall, EDR, ect) and it is also often used by cryptominer to exploit as much RAM & CPU as possible on infected host. The prerequisites are to enable monitoring of the truncate, rename and unlink syscalls using Auditbeat.
     
     - **Effort:** advanced
     
