@@ -1,6 +1,6 @@
 # Overview
 
-Role-based access systems are designed to enhance security and improve the user experience by defining user permissions based on their specific roles. These systems typically include built-in roles that are pre-defined and cannot be modified and Custom roles, providing additional options for user access control.
+Role-based access systems are designed to enhance security and improve the user experience by defining user permissions based on their specific roles. These systems typically include built-in roles that are pre-defined and cannot be modified, Custom roles providing additional options for user access control and finally Intakes restricted roles.
 
 ## Built-In roles
 
@@ -23,6 +23,13 @@ Based on user feedback, we plan to introduce more built-in roles to accommodate 
 In addition to built-in roles, each admin may create Custom roles. These allow to select specific permissions for a role, providing even more flexibility for user access control.
 
 Please refer to this section to learn [how to create custom roles](custom_roles.md).  
+
+## Restricted Roles
+
+Restricted roles allows you to restrict access to events per `intake`. It is especially helpful to segregate data access and make sure that sensitive data is accessed only by authorized users. 
+
+Please refer to this section to learn [how to create restricted roles](restricted_roles.md).  
+
 
 ## Intake Restricted Roles
 
