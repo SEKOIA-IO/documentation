@@ -208,6 +208,7 @@ nav:
       - Operators: tip/features/automate/operators.md
       - Actions: tip/features/automate/actions.md
       - Actions Library:
+        - 1Password: tip/features/automate/library/1password.md
         - AWS: tip/features/automate/library/aws.md
         - Atlassian JIRA: tip/features/automate/library/atlassian-jira.md
         - BinaryEdge's API: tip/features/automate/library/binaryedge-s-api.md
