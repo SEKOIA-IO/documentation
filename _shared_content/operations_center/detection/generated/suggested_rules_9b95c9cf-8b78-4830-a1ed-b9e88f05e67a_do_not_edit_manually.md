@@ -275,7 +275,7 @@ The following Sekoia.io built-in rules match the intake **Palo Alto Cortex XDR (
 
 ??? abstract "Cron Files Alteration"
     
-    Cron Files and Cron Directory alteration used by attacker for persistency or privilege escalation.
+    Cron Files and Cron Directory alteration used by attacker for persistency or privilege escalation. To ensure full performance on this rule, `auditbeat` intake must be configure with the module `file_integrity` containing path mentionned in the pattern.
     
     - **Effort:** advanced
 
@@ -579,12 +579,6 @@ The following Sekoia.io built-in rules match the intake **Palo Alto Cortex XDR (
     
     - **Effort:** elementary
 
-??? abstract "IIS Module Installation Using AppCmd"
-    
-    Detects the installation of a new IIS module from the command line. It can used used to backdoor an IIS/OWA/Sharepoint server.
-    
-    - **Effort:** intermediate
-
 ??? abstract "ISO LNK Infection Chain"
     
     Detection of an ISO (or any other similar archive file) downloaded file, followed by a child-process of explorer, which is characteristic of an infection using an ISO containing an LNK file. For events with `host.name`.
@@ -603,6 +597,12 @@ The following Sekoia.io built-in rules match the intake **Palo Alto Cortex XDR (
     
     - **Effort:** intermediate
 
+??? abstract "Interactive Terminal Spawned via Python"
+    
+    Identifies when a terminal (tty) is spawned via Python. Attackers may upgrade a simple reverse shell to a fully interactive tty after obtaining initial access to a host.
+    
+    - **Effort:** advanced
+
 ??? abstract "Invoke-TheHash Commandlets"
     
     Detects suspicious Invoke-TheHash PowerShell commandlet used for performing pass the hash WMI and SMB tasks.
@@ -617,7 +617,7 @@ The following Sekoia.io built-in rules match the intake **Palo Alto Cortex XDR (
 
 ??? abstract "Kernel Module Alteration"
     
-    Kernel module installation can be used to configure system settings to automatically execute a program during system boot or logon to maintain persistence or gain higher-level privileges on compromised systems.
+    Kernel module installation can be used to configure system settings to automatically execute a program during system boot or logon to maintain persistence or gain higher-level privileges on compromised systems. The prerequisites are to enable monitoring of the finit_module, init_module, delete_module syscalls using Auditbeat.
     
     - **Effort:** advanced
 
@@ -794,6 +794,12 @@ The following Sekoia.io built-in rules match the intake **Palo Alto Cortex XDR (
     Look for Microsoft Exchange Server’s Unified Messaging service creating non-standard content on disk, which could indicate web shells or other malicious content, suggesting exploitation of CVE-2021-26858 vulnerability
     
     - **Effort:** intermediate
+
+??? abstract "Microsoft IIS Module Installation"
+    
+    Detects the installation of a new IIS module from the command line. It can used used to backdoor an IIS/OWA/Sharepoint server.
+    
+    - **Effort:** advanced
 
 ??? abstract "Microsoft Office Creating Suspicious File"
     
@@ -995,7 +1001,7 @@ The following Sekoia.io built-in rules match the intake **Palo Alto Cortex XDR (
 
 ??? abstract "Package Manager Alteration"
     
-    Package manager (eg: apt, yum) can be altered to install malicious software
+    Package manager (eg: apt, yum) can be altered to install malicious software. To ensure full performance on this rule, `auditbeat` intake must be configure with the module `file_integrity` containing path mentionned in the pattern.
     
     - **Effort:** advanced
 
@@ -1190,6 +1196,12 @@ The following Sekoia.io built-in rules match the intake **Palo Alto Cortex XDR (
     Detects attempts to list Putty sessions through registry. To fully work, this rule requires to log registry accesses, which can be done with the Windows Event ID 4656 or 4663 but for that specific configuration is needed.
     
     - **Effort:** master
+
+??? abstract "Python Exfiltration Tools"
+    
+    Python has some built-in modules or library that could be installed and later be used as exflitration tool by an attacker
+    
+    - **Effort:** advanced
 
 ??? abstract "Python HTTP Server"
     

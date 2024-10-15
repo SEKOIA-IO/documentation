@@ -10,7 +10,6 @@ Palo Alto Cortex XDR (EDR) is an advanced Endpoint Detection and Response soluti
 This setup guide shows how to forward EDR alerts collected on the Palo Alto Cortex XDR (EDR) platform to Sekoia.io.
 
 - **Vendor**: Palo Alto
-- **Plan**: Defend Prime
 - **Supported environment**: Cloud 
 - **Detection based on**: Telemetry / Alert
 - **Supported application or feature**: Network device logs

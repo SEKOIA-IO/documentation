@@ -9,7 +9,6 @@ FreeRADIUS is an implementation of RADIUS, a protocol for remote user Authentica
 In this documentation, you will learn how to collect and send FreeRADIUS logs to Sekoia.io.
 
 - **Vendor**: FreeRADIUS
-- **Plan**: Defend Prime
 - **Supported environment**: On Premise
 - **Version compatibility, if applicable**:
 - **Detection based on**: Network Telemetry

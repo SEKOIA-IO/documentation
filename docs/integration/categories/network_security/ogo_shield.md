@@ -7,7 +7,6 @@ type: intake
 OGO Shield Web Application Firewall provides protection and performance for your web applications and APIs.
 
 - **Vendor**: OGO
-- **Plan**: Defend Prime
 - **Supported environment**: SaaS
 - **Detection based on**: Telemetry
 - **Supported application or feature**: Site and Cluster traffic

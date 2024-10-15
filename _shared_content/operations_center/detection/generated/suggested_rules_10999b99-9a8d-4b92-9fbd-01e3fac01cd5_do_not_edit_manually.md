@@ -371,7 +371,7 @@ The following Sekoia.io built-in rules match the intake **Crowdstrike Falcon Tel
 
 ??? abstract "Disabled Service"
     
-    Service disabling can be abused by attacker to deny security mecanisms (eg: firewall, EDR, ect) and it is also often used by cryptominer to exploit as much RAM & CPU as possible on infected host.
+    Service disabling can be abused by attacker to deny security mecanisms (eg: firewall, EDR, ect) and it is also often used by cryptominer to exploit as much RAM & CPU as possible on infected host. The prerequisites are to enable monitoring of the truncate, rename and unlink syscalls using Auditbeat.
     
     - **Effort:** advanced
 
@@ -651,12 +651,6 @@ The following Sekoia.io built-in rules match the intake **Crowdstrike Falcon Tel
     
     - **Effort:** elementary
 
-??? abstract "IIS Module Installation Using AppCmd"
-    
-    Detects the installation of a new IIS module from the command line. It can used used to backdoor an IIS/OWA/Sharepoint server.
-    
-    - **Effort:** intermediate
-
 ??? abstract "ISO LNK Infection Chain"
     
     Detection of an ISO (or any other similar archive file) downloaded file, followed by a child-process of explorer, which is characteristic of an infection using an ISO containing an LNK file. For events with `host.name`.
@@ -701,7 +695,7 @@ The following Sekoia.io built-in rules match the intake **Crowdstrike Falcon Tel
 
 ??? abstract "Kernel Module Alteration"
     
-    Kernel module installation can be used to configure system settings to automatically execute a program during system boot or logon to maintain persistence or gain higher-level privileges on compromised systems.
+    Kernel module installation can be used to configure system settings to automatically execute a program during system boot or logon to maintain persistence or gain higher-level privileges on compromised systems. The prerequisites are to enable monitoring of the finit_module, init_module, delete_module syscalls using Auditbeat.
     
     - **Effort:** advanced
 
@@ -914,6 +908,12 @@ The following Sekoia.io built-in rules match the intake **Crowdstrike Falcon Tel
     Detects PowerShell SnapIn command line or PowerShell script, often used with Get-Mailbox to export Exchange mailbox data.
     
     - **Effort:** intermediate
+
+??? abstract "Microsoft IIS Module Installation"
+    
+    Detects the installation of a new IIS module from the command line. It can used used to backdoor an IIS/OWA/Sharepoint server.
+    
+    - **Effort:** advanced
 
 ??? abstract "Microsoft Office Product Spawning Windows Shell"
     
@@ -1911,11 +1911,11 @@ The following Sekoia.io built-in rules match the intake **Crowdstrike Falcon Tel
     
     - **Effort:** elementary
 
-??? abstract "Webshell Execution W3WP Process"
+??? abstract "Web Application Launching Shell"
     
-    Detects possible webshell execution on Windows Servers which is usually a w3wp parent process with the user name DefaultAppPool.
+    Detects when a web application launches a shell.
     
-    - **Effort:** advanced
+    - **Effort:** master
 
 ??? abstract "WiFi Credentials Harvesting Using Netsh"
     

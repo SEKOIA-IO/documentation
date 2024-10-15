@@ -92,10 +92,26 @@ In this section, you will find examples of raw logs as generated natively by the
 
 
 
+=== "test_ASA_111008"
+
+    ```
+	%ASA-5-111008: User 'admintufin' executed the 'login' command
+    ```
+
+
+
 === "test_ASA_113004"
 
     ```
 	%ASA-6-113004: AAA user authentication Successful : server = 10.79.48.28 : user = jdoe001566
+    ```
+
+
+
+=== "test_ASA_113012"
+
+    ```
+	%ASA-6-113012: AAA user authentication Successful : local database : user = admintufin
     ```
 
 
@@ -208,6 +224,22 @@ In this section, you will find examples of raw logs as generated natively by the
 
     ```
 	%ASA-7-609002: Teardown local-host outside:1.2.3.4 duration 0:10:26
+    ```
+
+
+
+=== "test_ASA_611101"
+
+    ```
+	%ASA-6-611101: User authentication succeeded: IP address: 0.0.0.0, Uname: admintufin
+    ```
+
+
+
+=== "test_ASA_611103"
+
+    ```
+	%ASA-5-611103: User logged out: Uname: admintufin
     ```
 
 

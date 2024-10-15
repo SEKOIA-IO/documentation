@@ -108,7 +108,6 @@
                 "[resourceId('Microsoft.EventHub/namespaces', variables('eventHubNamespaceName'))]"
             ]
         },
-        // shared access policy for the eventhub
         {
             "type": "Microsoft.EventHub/namespaces/eventhubs/authorizationRules",
             "apiVersion": "2021-11-01",
@@ -122,7 +121,6 @@
                 "[resourceId('Microsoft.EventHub/namespaces/eventhubs', variables('eventHubNamespaceName'), variables('eventHubName'))]"
             ]
         },
-        // Create a consumer group for the EventHub
         {
             "type": "Microsoft.EventHub/namespaces/eventhubs/consumergroups",
             "apiVersion": "2021-11-01",
@@ -134,8 +132,6 @@
                 "[resourceId('Microsoft.EventHub/namespaces/eventhubs', variables('eventHubNamespaceName'), variables('eventHubName'))]"
             ]
         },
-        // Create a Storage Account with GRS redundancy and container and standard performance
-        // Name must be the project name in lowerCase with sa suffix
         {
             "type": "Microsoft.Storage/storageAccounts",
             "apiVersion": "2021-04-01",
@@ -147,10 +143,10 @@
             },
             "kind": "StorageV2",
             "properties": {
-                "accessTier": "Hot"
+                "accessTier": "Hot",
+                "minimumTlsVersion": "TLS1_2"
             }
         },
-        // Create a container in the Storage Account
         {
             "type": "Microsoft.Storage/storageAccounts/blobServices/containers",
             "apiVersion": "2021-04-01",
@@ -161,27 +157,22 @@
         }
     ],
     "outputs": {
-        // return the connection string-primary key of the shared access policy
         "HubConnectionString": {
             "type": "string",
             "value": "[listKeys(resourceId('Microsoft.EventHub/namespaces/eventhubs/authorizationRules', variables('eventHubNamespaceName'), variables('eventHubName'), variables('sharedAccessPolicyName')), '2017-04-01').primaryConnectionString]"
         },
-        // return the name consumer group
         "HubConsumerGroup": {
             "type": "string",
             "value": "[variables('consumerGroupName')]"
         },
-        // return the name of the eventhub
         "eventHubName": {
             "type": "string",
             "value": "[variables('eventHubName')]"
         },
-        // return the connection string-primary key storage account
         "StorageConnectionString": {
             "type": "string",
             "value": "[concat('DefaultEndpointsProtocol=https;AccountName=', format('{0}sa', parameters('projectName')), ';AccountKey=', listKeys(resourceId('Microsoft.Storage/storageAccounts', variables('storageAccountName')), '2019-06-01').keys[0].value)]"
         },
-        // return the name of the storage container name
         "storageContainerName": {
             "type": "string",
             "value": "sekoiaio"

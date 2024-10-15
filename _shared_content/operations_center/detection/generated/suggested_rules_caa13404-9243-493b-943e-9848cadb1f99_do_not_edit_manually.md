@@ -207,9 +207,9 @@ The following Sekoia.io built-in rules match the intake **Microsoft 365 / Office
     
     - **Effort:** elementary
 
-??? abstract "Entra ID Sign-In Via Known AiTM Phishing Kit (RED0046)"
+??? abstract "Entra ID Sign-In Via Known AiTM Phishing Kit (Mamba 2FA)"
     
-    Detects a sign-in attempt with known characteristics of the adversary-in-the-middle phishing kit tracked by Sekoia.io as RED0046.
+    Detects a sign-in attempt with known characteristics of the adversary-in-the-middle phishing kit tracked by Sekoia.io as Mamba 2FA.
     
     - **Effort:** elementary
 
@@ -257,7 +257,7 @@ The following Sekoia.io built-in rules match the intake **Microsoft 365 / Office
 
 ??? abstract "Kernel Module Alteration"
     
-    Kernel module installation can be used to configure system settings to automatically execute a program during system boot or logon to maintain persistence or gain higher-level privileges on compromised systems.
+    Kernel module installation can be used to configure system settings to automatically execute a program during system boot or logon to maintain persistence or gain higher-level privileges on compromised systems. The prerequisites are to enable monitoring of the finit_module, init_module, delete_module syscalls using Auditbeat.
     
     - **Effort:** advanced
 
@@ -422,6 +422,18 @@ The following Sekoia.io built-in rules match the intake **Microsoft 365 / Office
     An email forwarding rule was created, that automatically forwards incoming emails to an address outside of the organization (most common privacy email services).
     
     - **Effort:** elementary
+
+??? abstract "Microsoft 365 Security and Compliance Center High Severity Alert"
+    
+    A security or compliance-related alert of high severity was raised, based on the policies of the tenant. This rule can be very noisy depending on the configuration of the tenant. Alert filters are likely required. In addition, most alerts don't include any context, and are only useful if the analysts have access to the Microsoft portals to investigate.
+    
+    - **Effort:** master
+
+??? abstract "Microsoft 365 Security and Compliance Center Medium Severity Alert"
+    
+    A security or compliance-related alert of medium severity was raised, based on the policies of the tenant. This rule can be very noisy depending on the configuration of the tenant. Alert filters are likely required. In addition, most alerts don't include any context, and are only useful if the analysts have access to the Microsoft portals to investigate.
+    
+    - **Effort:** master
 
 ??? abstract "Microsoft 365 Sign-in With No User Agent"
     

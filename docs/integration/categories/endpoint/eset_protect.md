@@ -9,7 +9,6 @@ type: intake
 !!! Warning
     Important note - This format is currently in beta. We highly value your feedback to improve its performance.
 
-- **Plan**: Defend Prime
 - **Supported environment**: On Premise / SaaS
 - **Version compatibility, if applicable**: 9.x, 10.x, 11.x
 

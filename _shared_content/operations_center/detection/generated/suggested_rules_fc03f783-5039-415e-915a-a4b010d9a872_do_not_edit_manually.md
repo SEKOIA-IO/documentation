@@ -107,7 +107,7 @@ The following Sekoia.io built-in rules match the intake **IBM iSeries [BETA]**. 
 
 ??? abstract "Cron Files Alteration"
     
-    Cron Files and Cron Directory alteration used by attacker for persistency or privilege escalation.
+    Cron Files and Cron Directory alteration used by attacker for persistency or privilege escalation. To ensure full performance on this rule, `auditbeat` intake must be configure with the module `file_integrity` containing path mentionned in the pattern.
     
     - **Effort:** advanced
 
@@ -191,7 +191,7 @@ The following Sekoia.io built-in rules match the intake **IBM iSeries [BETA]**. 
 
 ??? abstract "Kernel Module Alteration"
     
-    Kernel module installation can be used to configure system settings to automatically execute a program during system boot or logon to maintain persistence or gain higher-level privileges on compromised systems.
+    Kernel module installation can be used to configure system settings to automatically execute a program during system boot or logon to maintain persistence or gain higher-level privileges on compromised systems. The prerequisites are to enable monitoring of the finit_module, init_module, delete_module syscalls using Auditbeat.
     
     - **Effort:** advanced
 
@@ -257,7 +257,7 @@ The following Sekoia.io built-in rules match the intake **IBM iSeries [BETA]**. 
 
 ??? abstract "Package Manager Alteration"
     
-    Package manager (eg: apt, yum) can be altered to install malicious software
+    Package manager (eg: apt, yum) can be altered to install malicious software. To ensure full performance on this rule, `auditbeat` intake must be configure with the module `file_integrity` containing path mentionned in the pattern.
     
     - **Effort:** advanced
 

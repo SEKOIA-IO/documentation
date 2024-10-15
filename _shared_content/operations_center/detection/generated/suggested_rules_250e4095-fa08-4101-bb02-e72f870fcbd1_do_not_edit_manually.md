@@ -423,6 +423,12 @@ The following Sekoia.io built-in rules match the intake **Sekoia.io Endpoint Age
     
     - **Effort:** elementary
 
+??? abstract "Correlation Impacket Smbexec"
+    
+    This rule detects the execution of smbexec via the relevant share pattern name 
+    
+    - **Effort:** elementary
+
 ??? abstract "Correlation Internal Kerberos Password Spraying"
     
     Detect multiple Kerberos authentication failed on several account from one source
@@ -843,6 +849,12 @@ The following Sekoia.io built-in rules match the intake **Sekoia.io Endpoint Age
     
     - **Effort:** master
 
+??? abstract "File and Directory Permissions Modification"
+    
+    Detects the use of chmod to give high level permissions to file that might be binary files. The prerequisites are to enable monitoring of the fchmodat, chmod and fchmod syscalls using Auditbeat.
+    
+    - **Effort:** advanced
+
 ??? abstract "FlowCloud Malware"
     
     Detects FlowCloud malware from threat group TA410. This requires Windows Event registry logging.
@@ -1017,12 +1029,6 @@ The following Sekoia.io built-in rules match the intake **Sekoia.io Endpoint Age
     
     - **Effort:** elementary
 
-??? abstract "IIS Module Installation Using AppCmd"
-    
-    Detects the installation of a new IIS module from the command line. It can used used to backdoor an IIS/OWA/Sharepoint server.
-    
-    - **Effort:** intermediate
-
 ??? abstract "ISO LNK Infection Chain"
     
     Detection of an ISO (or any other similar archive file) downloaded file, followed by a child-process of explorer, which is characteristic of an infection using an ISO containing an LNK file. For events with `host.name`.
@@ -1091,7 +1097,7 @@ The following Sekoia.io built-in rules match the intake **Sekoia.io Endpoint Age
 
 ??? abstract "Kernel Module Alteration"
     
-    Kernel module installation can be used to configure system settings to automatically execute a program during system boot or logon to maintain persistence or gain higher-level privileges on compromised systems.
+    Kernel module installation can be used to configure system settings to automatically execute a program during system boot or logon to maintain persistence or gain higher-level privileges on compromised systems. The prerequisites are to enable monitoring of the finit_module, init_module, delete_module syscalls using Auditbeat.
     
     - **Effort:** advanced
 
@@ -1241,7 +1247,7 @@ The following Sekoia.io built-in rules match the intake **Sekoia.io Endpoint Age
 
 ??? abstract "Many Downloads From Several Binaries"
     
-    Threat Actors might use all the binaries to download the payload to make sure at least one is present on the target.
+    Threat Actors might use all the binaries to download the payload to make sure at least one is present on the target. The prerequisites are to enable monitoring of the connect syscall using Auditbeat.
     
     - **Effort:** advanced
 
@@ -1358,6 +1364,12 @@ The following Sekoia.io built-in rules match the intake **Sekoia.io Endpoint Age
     Look for Microsoft Exchange Server’s Unified Messaging service creating non-standard content on disk, which could indicate web shells or other malicious content, suggesting exploitation of CVE-2021-26858 vulnerability
     
     - **Effort:** intermediate
+
+??? abstract "Microsoft IIS Module Installation"
+    
+    Detects the installation of a new IIS module from the command line. It can used used to backdoor an IIS/OWA/Sharepoint server.
+    
+    - **Effort:** advanced
 
 ??? abstract "Microsoft Malware Protection Engine Crash"
     
@@ -2183,7 +2195,7 @@ The following Sekoia.io built-in rules match the intake **Sekoia.io Endpoint Age
 
 ??? abstract "Setuid Or Setgid Usage"
     
-    Detects the usage of a setuid or a setgid.
+    Detects the usage of a setuid or a setgid. The prerequisites are to enable monitoring of the setuid and setgid syscalls using Auditbeat.
     
     - **Effort:** intermediate
 
@@ -2270,6 +2282,12 @@ The following Sekoia.io built-in rules match the intake **Sekoia.io Endpoint Age
     Detects adversaries attempts to stop backups services or disable Windows previous files versions feature. This could be related to ransomware operators or legit administrators. This rule relies Windows command line logging and registry logging, and PowerShell (ID 4103, 4104).
     
     - **Effort:** master
+
+??? abstract "Successful Brute Force Login From Internet"
+    
+    Detects a spike of failed login followed by a success one from Internet for a given source and target
+    
+    - **Effort:** advanced
 
 ??? abstract "Successful Overpass The Hash Attempt"
     
@@ -2865,17 +2883,17 @@ The following Sekoia.io built-in rules match the intake **Sekoia.io Endpoint Age
     
     - **Effort:** elementary
 
+??? abstract "Web Application Launching Shell"
+    
+    Detects when a web application launches a shell.
+    
+    - **Effort:** master
+
 ??? abstract "Webshell Creation"
     
     Detects possible webshell file creation. It requires File Creation monitoring, which can be done using Sysmon's Event ID 11. However the recommended SwiftOnSecurity configuration does not fully cover the needs for this rule, it needs to be updated with the proper file names extensions.
     
     - **Effort:** master
-
-??? abstract "Webshell Execution W3WP Process"
-    
-    Detects possible webshell execution on Windows Servers which is usually a w3wp parent process with the user name DefaultAppPool.
-    
-    - **Effort:** advanced
 
 ??? abstract "Werfault DLL Injection"
     

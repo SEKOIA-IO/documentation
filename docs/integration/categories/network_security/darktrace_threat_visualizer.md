@@ -7,7 +7,6 @@ type: intake
 Darktrace monitors all people and digital assets across your entire ecosystem.
 
 - **Vendor**: Darktrace
-- **Plan**: Defend Core & Defend Prime
 - **Supported environment**: Cloud and On Premise versions 6.1 or above
 - **Detection based on**: Alert, Telemetry
 - **Supported application or feature**: Darktrace Threat Visualizer

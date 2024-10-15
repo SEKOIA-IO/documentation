@@ -9,7 +9,6 @@ WithSecure Elements is an advanced cloud-based EDR/EPP platform that provides a 
 This setup guide shows how to forward events produced by WithSecures Elements to Sekoia.io.
 
 - **Vendor**: WithSecure
-- **Plan**: Defend Prime
 - **Supported environment**: Cloud
 - **Detection based on**: Telemetry
 - **Supported application or feature**: File monitoring, Process monitoring

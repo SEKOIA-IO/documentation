@@ -1,8 +1,8 @@
 ### Related Built-in Rules
 
-The following Sekoia.io built-in rules match the intake **Gatewatcher AionIQ**. This documentation is updated automatically and is based solely on the fields used by the intake which are checked against our rules. This means that some rules will be listed but might not be relevant with the intake.
+The following Sekoia.io built-in rules match the intake **Gatewatcher AionIQ v102**. This documentation is updated automatically and is based solely on the fields used by the intake which are checked against our rules. This means that some rules will be listed but might not be relevant with the intake.
 
-[SEKOIA.IO x Gatewatcher AionIQ on ATT&CK Navigator](https://mitre-attack.github.io/attack-navigator/#layerURL=https%3A%2F%2Fraw.githubusercontent.com%2FSEKOIA-IO%2Fdocumentation%2Fmain%2F_shared_content%2Foperations_center%2Fdetection%2Fgenerated%2Fattack_bba2bed2-d925-440f-a0ce-dbcae04eaf26_do_not_edit_manually.json){ .md-button }
+[SEKOIA.IO x Gatewatcher AionIQ v102 on ATT&CK Navigator](https://mitre-attack.github.io/attack-navigator/#layerURL=https%3A%2F%2Fraw.githubusercontent.com%2FSEKOIA-IO%2Fdocumentation%2Fmain%2F_shared_content%2Foperations_center%2Fdetection%2Fgenerated%2Fattack_bba2bed2-d925-440f-a0ce-dbcae04eaf26_do_not_edit_manually.json){ .md-button }
 ??? abstract "Advanced IP Scanner"
     
     Detects the use of Advanced IP Scanner. Seems to be a popular tool for ransomware groups.
@@ -14,6 +14,12 @@ The following Sekoia.io built-in rules match the intake **Gatewatcher AionIQ**. 
     Detects Bazar Loader domains based on the Bazar Loader DGA
     
     - **Effort:** elementary
+
+??? abstract "Burp Suite Tool Detected"
+    
+    Burp Suite is a cybersecurity tool. When used as a proxy service, its purpose is to intercept packets and modify them to send them to the server. Burp Collaborator is a network service that Burp Suite uses to help discover many kinds of vulnerabilities (vulnerabilities scanner).
+    
+    - **Effort:** intermediate
 
 ??? abstract "Certify Or Certipy"
     
@@ -84,6 +90,12 @@ The following Sekoia.io built-in rules match the intake **Gatewatcher AionIQ**. 
 ??? abstract "Gatewatcher AionIQ Malware Alert"
     
     Forward malware information reported by Gatewatcher AionIQ  
+    
+    - **Effort:** master
+
+??? abstract "Gatewatcher AionIQ Network Alert"
+    
+    Forward network alerts reported by Gatewatcher AionIQ  
     
     - **Effort:** master
 
@@ -230,6 +242,12 @@ The following Sekoia.io built-in rules match the intake **Gatewatcher AionIQ**. 
     Detects suspicious DNS queries to api.telegram.org used by Telegram Bots of any kind
     
     - **Effort:** advanced
+
+??? abstract "WAF Correlation Block actions"
+    
+    Detection of multiple block actions (more than 30) triggered by the same source by WAF detection rules
+    
+    - **Effort:** master
 
 ??? abstract "WCE wceaux.dll Creation"
     

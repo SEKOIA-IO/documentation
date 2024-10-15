@@ -7,7 +7,6 @@ type: intake
 SentinelOne is an Endpoint Detection and Response (EDR) solution. By using the standard SentinelOne EDR logs collection by API, you will be provided with high-level information on the detection and investigation of your EDR.
 
 - **Vendor**: SentinelOne
-- **Plan**:  Defend Core & Defend Prime
 - **Supported environment**: Cloud
 - **Detection based on**: Alert
 

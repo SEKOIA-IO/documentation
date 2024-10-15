@@ -1,6 +1,6 @@
 # Overview
 
-Role-based access systems are designed to enhance security and improve the user experience by defining user permissions based on their specific roles. These systems typically include built-in roles that are pre-defined and cannot be modified and Custom roles, providing additional options for user access control.
+Role-based access systems are designed to enhance security and improve the user experience by defining user permissions based on their specific roles. These systems typically include built-in roles that are pre-defined and cannot be modified, Custom roles providing additional options for user access control and finally Intakes restricted roles.
 
 ## Built-In roles
 
@@ -20,9 +20,22 @@ Based on user feedback, we plan to introduce more built-in roles to accommodate 
 
 ## Custom Roles
 
-In addition to built-in roles, each admin may create Custom roles. These will work in conjunction with built-in roles, providing even more flexibility for user access control.
+In addition to built-in roles, each admin may create Custom roles. These allow to select specific permissions for a role, providing even more flexibility for user access control.
 
 Please refer to this section to learn [how to create custom roles](custom_roles.md).  
+
+## Restricted Roles
+
+Restricted roles allows you to restrict access to events per `intake`. It is especially helpful to segregate data access and make sure that sensitive data is accessed only by authorized users. 
+
+Please refer to this section to learn [how to create restricted roles](restricted_roles.md).  
+
+
+## Intake Restricted Roles
+
+Admin may also create Intake restricted roles to segregate user access by datasources. These roles enable organizations to compartmentalize data streams so that only users with the appropriate permissions can access specific subsets of data in a read-only mode. However with Intake restricted roles, the list of available permissions is limited due to the nature of the role.
+
+Please refer to this section to learn [how to create intake restricted roles](intake_restricted_roles.md).  
 
 ## Permissions
 

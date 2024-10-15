@@ -7,7 +7,6 @@ type: intake
 Microsoft Azure Front Door is a scalable and secure entry point for fast delivery of your global web applications. This setup guide describe how to forward events produced by `Azure Front Door` to Sekoia.io.
 
 - **Vendor**: Microsoft Azure
-- **Plan**: Defend Core & Defend Prime
 - **Supported environment**: SaaS
 - **Detection based on**: Telemetry
 - **Supported application or feature**: Web logs, Web application firewall logs

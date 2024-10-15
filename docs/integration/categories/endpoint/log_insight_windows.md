@@ -4,7 +4,6 @@ type: intake
 
 ## Overview
 - **Vendor**:
-- **Plan**: Defend Core & Defend Prime
 - **Supported environment**:
 - **Version compatibility**:
 - **Detection based on**: Telemetry

@@ -9,7 +9,6 @@ Vade Cloud offers all protections against threats for any email inbox.
 In this documentation we will explain how to collect and send Vade Cloud logs to SEKOIA.IO.
 
 - **Vendor**: Vade
-- **Plan**: Defend Prime
 - **Supported environment**: Cloud
 - **Detection based on**: Telemetry
 - **Supported application or feature**: Email gateway, Anti-virus

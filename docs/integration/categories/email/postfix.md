@@ -6,7 +6,6 @@ type: intake
 Postfix is a free and open-source mail transfer agent that routes and delivers electronic mail.
 
 - **Vendor**: Postfix
-- **Plan**: Defend Prime
 - **Supported environment**: On Premise
 - **Version compatibility**:
 - **Detection based on**: Telemetry

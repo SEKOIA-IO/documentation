@@ -49,7 +49,7 @@ For companies wishing to host their data in France:
             <td><a href="intake.sekoia.io:10514">intake.sekoia.io:10514</a></td>
         </tr>
         <tr>
-            <td>Syslog REPL Intake</td>
+            <td>Syslog RELP Intake</td>
             <td><a href="app.sekoia.io:11514">app.sekoia.io:11514</a></td>
         </tr>
     </tbody>
@@ -90,7 +90,7 @@ SecNumCloud compliant infrastructure - For companies requiring PCI/DSS complianc
             <td><a href="fra2.app.sekoia.io:10514">fra2.app.sekoia.io:10514</a></td>
         </tr>
         <tr>
-            <td>Syslog REPL Intake</td>
+            <td>Syslog RELP Intake</td>
             <td><a href="fra2.app.sekoia.io:11514">fra2.app.sekoia.io:11514</a></td>
         </tr>
     </tbody>
@@ -134,7 +134,7 @@ For companies requiring their data to be in Europe:
             <td> <i>Coming soon</i></td>
         </tr>
         <tr>
-            <td>Syslog REPL Intake</td>
+            <td>Syslog RELP Intake</td>
             <td> <i>Coming soon</i></td>
         </tr>
     </tbody>
@@ -175,7 +175,7 @@ For companies requiring their data to be hosted in Monaco:
             <td><a href="mco1.app.sekoia.io:10514">mco1.app.sekoia.io:10514</a></td>
         </tr>
         <tr>
-            <td>Syslog REPL Intake</td>
+            <td>Syslog RELP Intake</td>
             <td><a href="mco1.app.sekoia.io:11514">mco1.app.sekoia.io:11514</a></td>
         </tr>
     </tbody>
@@ -216,7 +216,7 @@ UAE1 is our middle eastern region hosted in Azure (UAE North, Dubai).
             <td><a href="app.uae1.sekoia.io:10514">app.uae1.sekoia.io:10514</a></td>
         </tr>
         <tr>
-            <td>Syslog REPL Intake</td>
+            <td>Syslog RELP Intake</td>
             <td><a href="app.uae1.sekoia.io:11514">app.uae1.sekoia.io:11514</a></td>
         </tr>
     </tbody>

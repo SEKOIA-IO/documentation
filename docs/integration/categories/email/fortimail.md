@@ -7,7 +7,6 @@ type: intake
 Fortinet cybersecurity solutions sell physical products such as firewalls, plus software and services such as anti-virus protection, intrusion prevention systems, and endpoint security components.
 
 - **Vendor**: Fortinet
-- **Plan**: Defend Prime
 - **Supported environment**: On Premise
 - **Detection based on**: Telemetry
 - **Supported application or feature**: Email Security

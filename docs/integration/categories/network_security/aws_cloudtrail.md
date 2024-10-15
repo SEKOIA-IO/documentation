@@ -6,7 +6,6 @@ type: intake
 AWS CloudTrail is a service that enables governance, compliance, and operational and risk auditing of your AWS account. With CloudTrail, you can log, continuously monitor, and retain account activity related to actions across your AWS infrastructure. CloudTrail provides the event history of your AWS account activity, including actions taken through the AWS Management Console, AWS SDKs, command line tools, and other AWS services ([source: AWS CloudTrail Overview](https://aws.amazon.com/cloudtrail/)).
 
 - **Vendor**: AWS
-- **Plan**: Defend Prime
 - **Supported environment**: SaaS
 - **Detection based on**: Telemetry
 - **Supported application or feature**: AWS CloudTrail logs, Services

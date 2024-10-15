@@ -3,7 +3,6 @@ name: Raw
 type: intake
 
 ## Overview
-- **Plan**: Defend Core & Defend Prime
 - **Detection based on**: Telemetry
 
 The Raw Event Format is a generic format that accepts any format of event. This format can be used to test the collection method of your intake without considering the parsing.

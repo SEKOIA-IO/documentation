@@ -2708,42 +2708,42 @@ This section demonstrates how the raw logs will be transformed by our parsers. I
         "action": {
             "id": "1117",
             "properties": {
-                "action_id": "2",
-                "action_name": "Quarantine",
-                "additional_actions_id": "0",
-                "additional_actions_string": "No additional actions required",
-                "category_id": "8",
-                "category_name": "Trojan",
-                "detection_id": "{9C26ADFE-43AA-4884-9765-A2EC223DC7E0}",
-                "detection_time": "2024-03-22T14:01:20.550Z",
-                "detection_user": "DESKTOP-001\\Lab",
-                "engine_version": "AM: 1.1.24020.9, NIS: 1.1.24020.9",
-                "error_code": "0x00000000",
-                "error_description": "The operation completed successfully. ",
-                "execution_id": "0",
-                "execution_name": "Unknown",
-                "fwlink": "https://go.microsoft.com/fwlink/?linkid=37020&name=Trojan:Win32/BatTamper.A&threatid=2147818424&enterprise=0",
-                "origin_id": "4",
-                "origin_name": "Internet",
-                "path": "file:_C:\\Users\\Lab\\Downloads\\TurnOffAV.ps1; webfile:_C:\\Users\\Lab\\Downloads\\TurnOffAV.ps1|https://github.com/|pid:13760,ProcessStart:133555896788321048",
-                "post_clean_status": "0",
-                "pre_execution_status": "0",
-                "process_name": "Unknown",
-                "product_name": "Microsoft Defender Antivirus",
-                "product_version": "4.18.23110.3",
-                "remediation_user": "NT AUTHORITY\\SYSTEM",
-                "security_intelligence_version": "AV: 1.407.619.0, AS: 1.407.619.0, NIS: 1.407.619.0",
-                "severity_id": "5",
-                "severity_name": "Severe",
-                "source_id": "4",
-                "source_name": "Downloads and attachments",
-                "state": "2",
-                "status_code": "4",
-                "task": "0",
-                "threat_id": "2147818424",
-                "threat_name": "Trojan:Win32/BatTamper.A",
-                "type_id": "0",
-                "type_name": "Concrete"
+                "ActionId": "2",
+                "ActionName": "Quarantine",
+                "AdditionalActionsId": "0",
+                "AdditionalActionsString": "No additional actions required",
+                "CategoryId": "8",
+                "CategoryName": "Trojan",
+                "DetectionId": "{9C26ADFE-43AA-4884-9765-A2EC223DC7E0}",
+                "DetectionTime": "2024-03-22T14:01:20.550Z",
+                "DetectionUser": "DESKTOP-001\\Lab",
+                "EngineVersion": "AM: 1.1.24020.9, NIS: 1.1.24020.9",
+                "ErrorCode": "0x00000000",
+                "ErrorDescription": "The operation completed successfully. ",
+                "ExecutionId": "0",
+                "ExecutionName": "Unknown",
+                "Fwlink": "https://go.microsoft.com/fwlink/?linkid=37020&name=Trojan:Win32/BatTamper.A&threatid=2147818424&enterprise=0",
+                "OriginId": "4",
+                "OriginName": "Internet",
+                "Path": "file:_C:\\Users\\Lab\\Downloads\\TurnOffAV.ps1; webfile:_C:\\Users\\Lab\\Downloads\\TurnOffAV.ps1|https://github.com/|pid:13760,ProcessStart:133555896788321048",
+                "PostCleanStatus": "0",
+                "PreExecutionStatus": "0",
+                "ProcessName": "Unknown",
+                "ProductName": "Microsoft Defender Antivirus",
+                "ProductVersion": "4.18.23110.3",
+                "RemediationUser": "NT AUTHORITY\\SYSTEM",
+                "SecurityIntelligenceVersion": "AV: 1.407.619.0, AS: 1.407.619.0, NIS: 1.407.619.0",
+                "SeverityId": "5",
+                "SeverityName": "Severe",
+                "SourceId": "4",
+                "SourceName": "Downloads and attachments",
+                "State": "2",
+                "StatusCode": "4",
+                "Task": "0",
+                "ThreatId": "2147818424",
+                "ThreatName": "Trojan:Win32/BatTamper.A",
+                "TypeId": "0",
+                "TypeName": "Concrete"
             },
             "record_id": "613"
         },
@@ -6525,45 +6525,45 @@ The following table lists the fields that are extracted, normalized under the EC
 | ---- | ---- | ---------------------------|
 |`@timestamp` | `date` | Date/time when the event originated. |
 |`action.id` | `keyword` | stormshield action id |
+|`action.properties.ActionId` | `keyword` | stormshield property Action ID |
+|`action.properties.ActionName` | `keyword` | stormshield property Action Name |
+|`action.properties.AdditionalActionsId` | `keyword` | stormshield property Additional Actions ID |
+|`action.properties.AdditionalActionsString` | `keyword` | stormshield property Additional Actions String |
+|`action.properties.CategoryId` | `keyword` | stormshield property Category ID |
+|`action.properties.CategoryName` | `keyword` | stormshield property Category Name |
+|`action.properties.DetectionId` | `keyword` | stormshield property Detection ID |
+|`action.properties.DetectionTime` | `keyword` | stormshield property Detection Time |
+|`action.properties.DetectionUser` | `keyword` | stormshield property Detection User |
+|`action.properties.EngineVersion` | `keyword` | stormshield property Engine Version |
+|`action.properties.ErrorCode` | `keyword` | stormshield property Error Code |
+|`action.properties.ErrorDescription` | `keyword` | stormshield property Error Description |
+|`action.properties.ExecutionId` | `keyword` | stormshield property Execution ID |
+|`action.properties.ExecutionName` | `keyword` | stormshield property Execution Name |
+|`action.properties.Fwlink` | `keyword` | stormshield property FWLink |
+|`action.properties.Opcode` | `keyword` | stormshield action opcode |
+|`action.properties.OriginId` | `keyword` | stormshield property Origin ID |
+|`action.properties.OriginName` | `keyword` | stormshield property Origin Name |
+|`action.properties.Path` | `keyword` | stormshield property Path |
+|`action.properties.PostCleanStatus` | `keyword` | stormshield property Post Clean Status |
+|`action.properties.PreExecutionStatus` | `keyword` | stormshield property Pre Execution Status |
+|`action.properties.ProcessName` | `keyword` | stormshield property Process Name |
+|`action.properties.ProductName` | `keyword` | stormshield property Product Name |
+|`action.properties.ProductVersion` | `keyword` | stormshield property Product Version |
+|`action.properties.RemediationUser` | `keyword` | stormshield property Remediation User |
+|`action.properties.SecurityIntelligenceVersion` | `keyword` | stormshield property Security intelligence Version |
+|`action.properties.SeverityId` | `keyword` | stormshield property Severity ID |
+|`action.properties.SeverityName` | `keyword` | stormshield property Severity Name |
+|`action.properties.SourceId` | `keyword` | stormshield property Source ID |
+|`action.properties.SourceName` | `keyword` | stormshield property Source Name |
+|`action.properties.State` | `keyword` | stormshield property State |
+|`action.properties.StatusCode` | `keyword` | stormshield property Status Code |
 |`action.properties.TargetCommandLine` | `keyword` | stormshield targeted process command line |
 |`action.properties.TargetImage` | `keyword` | stormshield targeted process executable |
-|`action.properties.action_id` | `keyword` | stormshield property Action ID |
-|`action.properties.action_name` | `keyword` | stormshield property Action Name |
-|`action.properties.additional_actions_id` | `keyword` | stormshield property Additional Actions ID |
-|`action.properties.additional_actions_string` | `keyword` | stormshield property Additional Actions String |
-|`action.properties.category_id` | `keyword` | stormshield property Category ID |
-|`action.properties.category_name` | `keyword` | stormshield property Category Name |
-|`action.properties.detection_id` | `keyword` | stormshield property Detection ID |
-|`action.properties.detection_time` | `keyword` | stormshield property Detection Time |
-|`action.properties.detection_user` | `keyword` | stormshield property Detection User |
-|`action.properties.engine_version` | `keyword` | stormshield property Engine Version |
-|`action.properties.error_code` | `keyword` | stormshield property Error Code |
-|`action.properties.error_description` | `keyword` | stormshield property Error Description |
-|`action.properties.execution_id` | `keyword` | stormshield property Execution ID |
-|`action.properties.execution_name` | `keyword` | stormshield property Execution Name |
-|`action.properties.fwlink` | `keyword` | stormshield property FWLink |
-|`action.properties.opcode` | `keyword` | stormshield action opcode |
-|`action.properties.origin_id` | `keyword` | stormshield property Origin ID |
-|`action.properties.origin_name` | `keyword` | stormshield property Origin Name |
-|`action.properties.path` | `keyword` | stormshield property Path |
-|`action.properties.post_clean_status` | `keyword` | stormshield property Post Clean Status |
-|`action.properties.pre_execution_status` | `keyword` | stormshield property Pre Execution Status |
-|`action.properties.process_name` | `keyword` | stormshield property Process Name |
-|`action.properties.product_name` | `keyword` | stormshield property Product Name |
-|`action.properties.product_version` | `keyword` | stormshield property Product Version |
-|`action.properties.remediation_user` | `keyword` | stormshield property Remediation User |
-|`action.properties.security_intelligence_version` | `keyword` | stormshield property Security intelligence Version |
-|`action.properties.severity_id` | `keyword` | stormshield property Severity ID |
-|`action.properties.severity_name` | `keyword` | stormshield property Severity Name |
-|`action.properties.source_id` | `keyword` | stormshield property Source ID |
-|`action.properties.source_name` | `keyword` | stormshield property Source Name |
-|`action.properties.state` | `keyword` | stormshield property State |
-|`action.properties.status_code` | `keyword` | stormshield property Status Code |
-|`action.properties.task` | `keyword` | stormshield action task |
-|`action.properties.threat_id` | `keyword` | stormshield property Threat ID |
-|`action.properties.threat_name` | `keyword` | stormshield property Threat Name |
-|`action.properties.type_id` | `keyword` | stormshield property Type ID |
-|`action.properties.type_name` | `keyword` | stormshield property Type Name |
+|`action.properties.Task` | `keyword` | stormshield action task |
+|`action.properties.ThreatId` | `keyword` | stormshield property Threat ID |
+|`action.properties.ThreatName` | `keyword` | stormshield property Threat Name |
+|`action.properties.TypeId` | `keyword` | stormshield property Type ID |
+|`action.properties.TypeName` | `keyword` | stormshield property Type Name |
 |`action.record_id` | `keyword` | stormshield action record id |
 |`agent.id` | `keyword` | Unique identifier of this agent. |
 |`destination.ip` | `ip` | IP address of the destination. |

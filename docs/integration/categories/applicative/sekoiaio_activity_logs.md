@@ -4,7 +4,6 @@ type: intake
 
 ## Overview
 - **Vendor**: Sekoia
-- **Plan**: Defend Core & Defend Prime
 - **Detection based on**: Audit
 - **Supported application or feature**:
 Sekoia.io activity logs collect operations done, on Sekoia.io, by the members of the community. It helps to monitor activities and detect malicious behavior. The activity logs collect various operations such as:

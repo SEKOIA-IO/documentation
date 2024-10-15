@@ -7,7 +7,6 @@ type: intake
 ISC DHCP offers a complete open-source solution for implementing DHCP servers.
 
 - **Vendor**: ISC (Internet Systems Consortium)
-- **Plan**: TODO Defend Core / Defend Prime
 - **Supported environment**: On Premise
 - **Version compatibility, if applicable**:
 - **Detection based on**: Network Telemetry

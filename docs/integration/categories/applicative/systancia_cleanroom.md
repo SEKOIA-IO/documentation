@@ -4,7 +4,6 @@ type: intake
 
 ## Overview
 - **Vendor**: Systancia
-- **Plan**: Defend Core & Defend Prime
 - **Supported environment**: On-premise
 - **Version compatibility**: 4.5 and newer
 - **Detection based on**: Telemetry

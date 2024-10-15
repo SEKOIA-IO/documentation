@@ -1,4 +1,4 @@
-Rules catalog includes **947 built-in detection rules** ([_last update on 2024-09-19_](rules_changelog.md)).
+Rules catalog includes **952 built-in detection rules** ([_last update on 2024-10-14_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Identity Information**
 
@@ -224,6 +224,7 @@ Rules catalog includes **947 built-in detection rules** ([_last update on 2024-0
     
         - 23/03/2023 - minor - The error code 50076 has been excluded as it is not a specific error code related to a login failure that we want to detect and caused several false positives.
         - 16/08/2024 - minor - The error code 50078 has been excluded as it is not a specific error code related to a login failure that we want to detect and caused several false positives.
+        - 14/10/2024 - minor - The error codes 70043, 50173, 70008, 700082, 9002341 have been excluded as they are not related to login failures that we want to detect and caused several false positives.
             
 ??? abstract "Login Brute-Force Successful On Jumpcloud Portal"
     
@@ -375,6 +376,7 @@ Rules catalog includes **947 built-in detection rules** ([_last update on 2024-0
     
         - 23/03/2023 - minor - The error code 50076 has been excluded as it is not a specific error code related to a login failure that we want to detect and caused several false positives.
         - 16/08/2024 - minor - The error code 50078 has been excluded as it is not a specific error code related to a login failure that we want to detect and caused several false positives.
+        - 14/10/2024 - minor - The error codes 70043, 50173, 70008, 700082, 9002341 have been excluded as they are not related to login failures that we want to detect and caused several false positives.
             
 ??? abstract "Login Brute-Force Successful On Jumpcloud Portal"
     
@@ -1241,6 +1243,18 @@ Rules catalog includes **947 built-in detection rules** ([_last update on 2024-0
     
         - 09/10/2023 - major - Fix field names to match the current parser.
             
+??? abstract "Microsoft 365 Security and Compliance Center High Severity Alert"
+    
+    A security or compliance-related alert of high severity was raised, based on the policies of the tenant. This rule can be very noisy depending on the configuration of the tenant. Alert filters are likely required. In addition, most alerts don't include any context, and are only useful if the analysts have access to the Microsoft portals to investigate.
+    
+    - **Effort:** master
+    
+??? abstract "Microsoft 365 Security and Compliance Center Medium Severity Alert"
+    
+    A security or compliance-related alert of medium severity was raised, based on the policies of the tenant. This rule can be very noisy depending on the configuration of the tenant. Alert filters are likely required. In addition, most alerts don't include any context, and are only useful if the analysts have access to the Microsoft portals to investigate.
+    
+    - **Effort:** master
+    
 ??? abstract "Microsoft Defender for Office 365 High Severity AIR Alert"
     
     Microsoft Defender for Office 365 includes the capability to run Automated investigation and response (AIR) actions. This rule detects when a High severity alert triggers an automated investigation, such as when a potentially malicious URL click was detected, or when a user is restricted from sending email.
@@ -1585,7 +1599,7 @@ Rules catalog includes **947 built-in detection rules** ([_last update on 2024-0
             
 ??? abstract "Cron Files Alteration"
     
-    Cron Files and Cron Directory alteration used by attacker for persistency or privilege escalation.
+    Cron Files and Cron Directory alteration used by attacker for persistency or privilege escalation. To ensure full performance on this rule, `auditbeat` intake must be configure with the module `file_integrity` containing path mentionned in the pattern.
     
     - **Effort:** advanced
     
@@ -1715,7 +1729,7 @@ Rules catalog includes **947 built-in detection rules** ([_last update on 2024-0
             
 ??? abstract "Correlation Linux Decode And Exec"
     
-    A Base64 string has been decoded and executed through a pipe
+    A Base64 string has been decoded and executed through a pipe. The prerequisites are to enable monitoring of the execve syscall using Auditbeat.
     
     - **Effort:** intermediate
     
@@ -1919,6 +1933,10 @@ Rules catalog includes **947 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 02/10/2024 - major - Rule's pattern changed
+            
 ??? abstract "Invoke-TheHash Commandlets"
     
     Detects suspicious Invoke-TheHash PowerShell commandlet used for performing pass the hash WMI and SMB tasks.
@@ -2171,6 +2189,10 @@ Rules catalog includes **947 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 02/10/2024 - major - Rule's pattern changed
+            
 ??? abstract "QakBot Process Creation"
     
     Detects QakBot like process executions
@@ -2542,6 +2564,16 @@ Rules catalog includes **947 built-in detection rules** ([_last update on 2024-0
         - 29/11/2023 - minor - Added a selection to filter some false positives.
         - 26/03/2024 - major - Rule's pattern field changed
             
+??? abstract "Web Application Launching Shell"
+    
+    Detects when a web application launches a shell.
+    
+    - **Effort:** master
+    
+    - **Changelog:**
+    
+        - 10/10/2024 - major - Adding new elements and filters to increase detection and reduce false positives.
+            
 ??? abstract "WithSecure Elements Critical Severity"
     
     WithSecure Elements has several modules. One constant is the severity of a raised event, which can be critical and therefore interesting to look at.
@@ -2761,6 +2793,7 @@ Rules catalog includes **947 built-in detection rules** ([_last update on 2024-0
     
     - **Changelog:**
     
+        - 20/09/2024 - minor - Added new filters to reduce false positives.
         - 27/05/2024 - minor - Added new filters to reduce false positives.
         - 21/11/2023 - minor - Added new filters to reduce false positives.
         - 08/11/2023 - minor - Added filter to reduce false positives
@@ -2961,6 +2994,7 @@ Rules catalog includes **947 built-in detection rules** ([_last update on 2024-0
     
     - **Changelog:**
     
+        - 20/09/2024 - minor - File paths added to filter some false positives.
         - 19/09/2024 - minor - File paths added to filter some false positives.
         - 30/11/2023 - minor - Update pattern with new lolbin
             
@@ -3063,6 +3097,8 @@ Rules catalog includes **947 built-in detection rules** ([_last update on 2024-0
     
     - **Changelog:**
     
+        - 09/10/2024 - minor - File paths added to filter some false positives.
+        - 20/09/2024 - minor - File paths added to filter some false positives.
         - 19/09/2024 - minor - File paths added to filter some false positives.
         - 18/09/2023 - minor - File paths added to filter some false positives.
         - 13/03/2023 - minor - Extended the list of suspicious process names being spawned from explorer.exe
@@ -3665,6 +3701,12 @@ Rules catalog includes **947 built-in detection rules** ([_last update on 2024-0
     Detects when someone attempts to access/use a forbidden application.
     
     - **Effort:** master
+    
+??? abstract "Correlation Impacket Smbexec"
+    
+    This rule detects the execution of smbexec via the relevant share pattern name 
+    
+    - **Effort:** elementary
     
 ??? abstract "Credential Dumping Tools Service Execution"
     
@@ -4527,7 +4569,7 @@ Rules catalog includes **947 built-in detection rules** ([_last update on 2024-0
             
 ??? abstract "Cron Files Alteration"
     
-    Cron Files and Cron Directory alteration used by attacker for persistency or privilege escalation.
+    Cron Files and Cron Directory alteration used by attacker for persistency or privilege escalation. To ensure full performance on this rule, `auditbeat` intake must be configure with the module `file_integrity` containing path mentionned in the pattern.
     
     - **Effort:** advanced
     
@@ -5147,6 +5189,10 @@ Rules catalog includes **947 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 23/09/2024 - major - Fixed an issue with the detection pattern.
+            
 ??? abstract "Suspicious Windows ANONYMOUS LOGON Local Account Created"
     
     Detects the creation of suspicious accounts simliar to ANONYMOUS LOGON, such as using additional spaces. Created as a covering detection for attackers trying to created an ANONYMOUS LOGON account as it is an account named used in internal Windows events and frequently filtered by attackers.
@@ -5211,9 +5257,9 @@ Rules catalog includes **947 built-in detection rules** ([_last update on 2024-0
             
 **Traffic Signaling**
 
-??? abstract "Linux Binary List TCP Connections"
+??? abstract "Binary List Tcp"
     
-    A binary is trying to list TCP connections.
+    A binary is trying to list TCP connections. The prerequisites are to enable monitoring of the open and openat syscalls using Auditbeat.
     
     - **Effort:** advanced
     
@@ -5243,18 +5289,22 @@ Rules catalog includes **947 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** intermediate
     
-??? abstract "IIS Module Installation Using AppCmd"
-    
-    Detects the installation of a new IIS module from the command line. It can used used to backdoor an IIS/OWA/Sharepoint server.
-    
-    - **Effort:** intermediate
-    
 ??? abstract "Microsoft Exchange Server Creating Unusual Files"
     
     Look for Microsoft Exchange Server’s Unified Messaging service creating non-standard content on disk, which could indicate web shells or other malicious content, suggesting exploitation of CVE-2021-26858 vulnerability
     
     - **Effort:** intermediate
     
+??? abstract "Microsoft IIS Module Installation"
+    
+    Detects the installation of a new IIS module from the command line. It can used used to backdoor an IIS/OWA/Sharepoint server.
+    
+    - **Effort:** advanced
+    
+    - **Changelog:**
+    
+        - 10/10/2024 - major - Adding new commands with powershell and changing effort level.
+            
 ??? abstract "PowerCat Function Loading"
     
     Detect a basic execution of PowerCat. PowerCat is a PowerShell function allowing to do basic connections, file transfer, shells, relays, generate payloads.
@@ -5277,12 +5327,6 @@ Rules catalog includes **947 built-in detection rules** ([_last update on 2024-0
     
         - 04/04/2024 - major - Rule's pattern field changed
             
-??? abstract "Webshell Execution W3WP Process"
-    
-    Detects possible webshell execution on Windows Servers which is usually a w3wp parent process with the user name DefaultAppPool.
-    
-    - **Effort:** advanced
-    
 **Create or Modify System Process**
 
 ??? abstract "APT29 Fake Google Update Service Install"
@@ -5771,7 +5815,7 @@ Rules catalog includes **947 built-in detection rules** ([_last update on 2024-0
     
 ??? abstract "Kernel Module Alteration"
     
-    Kernel module installation can be used to configure system settings to automatically execute a program during system boot or logon to maintain persistence or gain higher-level privileges on compromised systems.
+    Kernel module installation can be used to configure system settings to automatically execute a program during system boot or logon to maintain persistence or gain higher-level privileges on compromised systems. The prerequisites are to enable monitoring of the finit_module, init_module, delete_module syscalls using Auditbeat.
     
     - **Effort:** advanced
     
@@ -6047,7 +6091,7 @@ Rules catalog includes **947 built-in detection rules** ([_last update on 2024-0
             
 ??? abstract "Cron Files Alteration"
     
-    Cron Files and Cron Directory alteration used by attacker for persistency or privilege escalation.
+    Cron Files and Cron Directory alteration used by attacker for persistency or privilege escalation. To ensure full performance on this rule, `auditbeat` intake must be configure with the module `file_integrity` containing path mentionned in the pattern.
     
     - **Effort:** advanced
     
@@ -7387,7 +7431,7 @@ Rules catalog includes **947 built-in detection rules** ([_last update on 2024-0
     
 ??? abstract "Kernel Module Alteration"
     
-    Kernel module installation can be used to configure system settings to automatically execute a program during system boot or logon to maintain persistence or gain higher-level privileges on compromised systems.
+    Kernel module installation can be used to configure system settings to automatically execute a program during system boot or logon to maintain persistence or gain higher-level privileges on compromised systems. The prerequisites are to enable monitoring of the finit_module, init_module, delete_module syscalls using Auditbeat.
     
     - **Effort:** advanced
     
@@ -7520,7 +7564,7 @@ Rules catalog includes **947 built-in detection rules** ([_last update on 2024-0
     
 ??? abstract "Linux Capabilities Discovery"
     
-    Linux capabilities are special attributes in the Linux kernel that grant processes and binary executables specific privileges that are normally reserved for processes whose effective user ID is 0 (The root user, and only the root user, has UID 0). This rule aims to detect discovery of such capabilities on the Linux system.
+    Linux capabilities are special attributes in the Linux kernel that grant processes and binary executables specific privileges that are normally reserved for processes whose effective user ID is 0 (The root user, and only the root user, has UID 0). This rule aims to detect discovery of such capabilities on the Linux system. The prerequisites are to enable monitoring of the execve and getxattr syscalls using Auditbeat.
     
     - **Effort:** intermediate
     
@@ -7538,7 +7582,7 @@ Rules catalog includes **947 built-in detection rules** ([_last update on 2024-0
     
 ??? abstract "Setuid Or Setgid Usage"
     
-    Detects the usage of a setuid or a setgid.
+    Detects the usage of a setuid or a setgid. The prerequisites are to enable monitoring of the setuid and setgid syscalls using Auditbeat.
     
     - **Effort:** intermediate
     
@@ -7577,7 +7621,7 @@ Rules catalog includes **947 built-in detection rules** ([_last update on 2024-0
             
 ??? abstract "Unusual Process Executed in Temporary Directory"
     
-    Identifies processes running in a temporary folder. This is sometimes done by adversaries to hide malware.
+    Identifies processes running in a temporary folder. This is sometimes done by adversaries to hide malware. The prerequisites are to enable monitoring of the execve syscall using Auditbeat.
     
     - **Effort:** master
     
@@ -7790,7 +7834,7 @@ Rules catalog includes **947 built-in detection rules** ([_last update on 2024-0
             
 ??? abstract "Linux Binary Masquerading"
     
-    Attackers could rename legitimate system bin to evade security mechanisme
+    Attackers could rename legitimate system bin to evade security mechanisme. The prerequisites are to enable monitoring of the execve syscall using Auditbeat.
     
     - **Effort:** elementary
     
@@ -8597,7 +8641,7 @@ Rules catalog includes **947 built-in detection rules** ([_last update on 2024-0
 
 ??? abstract "Correlation Linux Decode And Exec"
     
-    A Base64 string has been decoded and executed through a pipe
+    A Base64 string has been decoded and executed through a pipe. The prerequisites are to enable monitoring of the execve syscall using Auditbeat.
     
     - **Effort:** intermediate
     
@@ -8701,9 +8745,9 @@ Rules catalog includes **947 built-in detection rules** ([_last update on 2024-0
             
 **Traffic Signaling**
 
-??? abstract "Linux Binary List TCP Connections"
+??? abstract "Binary List Tcp"
     
-    A binary is trying to list TCP connections.
+    A binary is trying to list TCP connections. The prerequisites are to enable monitoring of the open and openat syscalls using Auditbeat.
     
     - **Effort:** advanced
     
@@ -8973,7 +9017,7 @@ Rules catalog includes **947 built-in detection rules** ([_last update on 2024-0
     
 ??? abstract "File and Directory Permissions Modification"
     
-    Detects the use of chmod to give high level permissions to file that might be binary files
+    Detects the use of chmod to give high level permissions to file that might be binary files. The prerequisites are to enable monitoring of the fchmodat, chmod and fchmod syscalls using Auditbeat.
     
     - **Effort:** advanced
     
@@ -9108,7 +9152,7 @@ Rules catalog includes **947 built-in detection rules** ([_last update on 2024-0
     
 ??? abstract "Linux Capabilities Discovery"
     
-    Linux capabilities are special attributes in the Linux kernel that grant processes and binary executables specific privileges that are normally reserved for processes whose effective user ID is 0 (The root user, and only the root user, has UID 0). This rule aims to detect discovery of such capabilities on the Linux system.
+    Linux capabilities are special attributes in the Linux kernel that grant processes and binary executables specific privileges that are normally reserved for processes whose effective user ID is 0 (The root user, and only the root user, has UID 0). This rule aims to detect discovery of such capabilities on the Linux system. The prerequisites are to enable monitoring of the execve and getxattr syscalls using Auditbeat.
     
     - **Effort:** intermediate
     
@@ -9126,7 +9170,7 @@ Rules catalog includes **947 built-in detection rules** ([_last update on 2024-0
     
 ??? abstract "Setuid Or Setgid Usage"
     
-    Detects the usage of a setuid or a setgid.
+    Detects the usage of a setuid or a setgid. The prerequisites are to enable monitoring of the setuid and setgid syscalls using Auditbeat.
     
     - **Effort:** intermediate
     
@@ -9165,7 +9209,7 @@ Rules catalog includes **947 built-in detection rules** ([_last update on 2024-0
             
 ??? abstract "Unusual Process Executed in Temporary Directory"
     
-    Identifies processes running in a temporary folder. This is sometimes done by adversaries to hide malware.
+    Identifies processes running in a temporary folder. This is sometimes done by adversaries to hide malware. The prerequisites are to enable monitoring of the execve syscall using Auditbeat.
     
     - **Effort:** master
     
@@ -9459,7 +9503,7 @@ Rules catalog includes **947 built-in detection rules** ([_last update on 2024-0
     
 ??? abstract "Disabled Service"
     
-    Service disabling can be abused by attacker to deny security mecanisms (eg: firewall, EDR, ect) and it is also often used by cryptominer to exploit as much RAM & CPU as possible on infected host.
+    Service disabling can be abused by attacker to deny security mecanisms (eg: firewall, EDR, ect) and it is also often used by cryptominer to exploit as much RAM & CPU as possible on infected host. The prerequisites are to enable monitoring of the truncate, rename and unlink syscalls using Auditbeat.
     
     - **Effort:** advanced
     
@@ -9751,7 +9795,7 @@ Rules catalog includes **947 built-in detection rules** ([_last update on 2024-0
     
 ??? abstract "Package Manager Alteration"
     
-    Package manager (eg: apt, yum) can be altered to install malicious software
+    Package manager (eg: apt, yum) can be altered to install malicious software. To ensure full performance on this rule, `auditbeat` intake must be configure with the module `file_integrity` containing path mentionned in the pattern.
     
     - **Effort:** advanced
     
@@ -9773,7 +9817,7 @@ Rules catalog includes **947 built-in detection rules** ([_last update on 2024-0
     
 ??? abstract "Process Anti Debug Checking"
     
-    Entries in /proc/self/status are used by malware to checks if current process is being debug
+    Entries in /proc/self/status are used by malware to checks if current process is being debug. The prerequisites are to enable monitoring of the openat, openat2, open and open_by_handle_at syscalls using Auditbeat.
     
     - **Effort:** master
     
@@ -10311,7 +10355,7 @@ Rules catalog includes **947 built-in detection rules** ([_last update on 2024-0
     
 ??? abstract "Main Memory Dumping"
     
-    Attacker might want to leverage their permission on the system or steal authentication tokens to third parties software, website, etc. To do so, attacker might try to dump main memory of computer.
+    Attacker might want to leverage their permission on the system or steal authentication tokens to third parties software, website, etc. To do so, attacker might try to dump main memory of computer. The prerequisites are to enable monitoring of the openat and open syscalls using Auditbeat.
     
     - **Effort:** advanced
     
@@ -10409,7 +10453,7 @@ Rules catalog includes **947 built-in detection rules** ([_last update on 2024-0
     
 ??? abstract "Process Memory Dumping From proc Filesystem"
     
-    Attacker might want to leverage their permission on the system or steal authentication to third parties software, website, etc.. To do so, attacker might try to dump memory of interesting process, for instance ftp-server or web server to dig for authentication login and password.
+    Attacker might want to leverage their permission on the system or steal authentication to third parties software, website, etc.. To do so, attacker might try to dump memory of interesting process, for instance ftp-server or web server to dig for authentication login and password. The prerequisites are to enable monitoring of the openat and open syscalls using Auditbeat.
     
     - **Effort:** master
     
@@ -10497,13 +10541,13 @@ Rules catalog includes **947 built-in detection rules** ([_last update on 2024-0
     
 ??? abstract "Write To File In Sudoers.d Folder"
     
-    A user tried to write something to a file in /etc/sudoers.d. It can be used to elevate privilege related to sudo and make it persistent.
+    A user tried to write something to a file in /etc/sudoers.d. It can be used to elevate privilege related to sudo and make it persistent. The prerequisites are to enable monitoring of the openat syscall using Auditbeat.
     
     - **Effort:** advanced
     
 ??? abstract "Write To File In Systemd"
     
-    A user tried to write something to a file in /etc/systemd/system. This repository contains services that are run at start. It can be used to run a malicious programm at start with high privileges.
+    A user tried to write something to a file in /etc/systemd/system. This repository contains services that are run at start. It can be used to run a malicious programm at start with high privileges. The prerequisites are to enable monitoring of the execve openat using Auditbeat.
     
     - **Effort:** intermediate
     
@@ -10702,15 +10746,16 @@ Rules catalog includes **947 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** elementary
     
-??? abstract "Entra ID Sign-In Via Known AiTM Phishing Kit (RED0046)"
+??? abstract "Entra ID Sign-In Via Known AiTM Phishing Kit (Mamba 2FA)"
     
-    Detects a sign-in attempt with known characteristics of the adversary-in-the-middle phishing kit tracked by Sekoia.io as RED0046.
+    Detects a sign-in attempt with known characteristics of the adversary-in-the-middle phishing kit tracked by Sekoia.io as Mamba 2FA.
     
     - **Effort:** elementary
     
     - **Changelog:**
     
         - 09/08/2024 - major - Update the indicator.
+        - 25/09/2024 - major - Rename the rule, update the indicators.
             
 ??? abstract "Entra ID Sign-In Via Known AiTM Phishing Kit (Tycoon 2FA)"
     
@@ -10718,6 +10763,10 @@ Rules catalog includes **947 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** elementary
     
+    - **Changelog:**
+    
+        - 01/10/2024 - major - Update the pattern following changes in the phishing kit.
+            
 ??? abstract "EvilProxy Phishing Domain"
     
     Detects subdomains potentially generated by the EvilProxy adversary-in-the-middle phishing platform. Inspect the other subdomains of the domain to identify the landing page, and determine if the user submitted credentials. This rule has a small percentage of false positives on legitimate domains.
@@ -10842,6 +10891,7 @@ Rules catalog includes **947 built-in detection rules** ([_last update on 2024-0
     
     - **Changelog:**
     
+        - 07/10/2024 - minor - Modified similarity strategy.
         - 21/03/2024 - minor - Adding similarity strategy to reduce alerts creation.
         - 22/01/2024 - minor - Removing a file extension to allow broader detection.
         - 16/11/2023 - minor - Changing effort level and adding filter to reduce false positives.
@@ -10962,15 +11012,16 @@ Rules catalog includes **947 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** elementary
     
-??? abstract "Entra ID Sign-In Via Known AiTM Phishing Kit (RED0046)"
+??? abstract "Entra ID Sign-In Via Known AiTM Phishing Kit (Mamba 2FA)"
     
-    Detects a sign-in attempt with known characteristics of the adversary-in-the-middle phishing kit tracked by Sekoia.io as RED0046.
+    Detects a sign-in attempt with known characteristics of the adversary-in-the-middle phishing kit tracked by Sekoia.io as Mamba 2FA.
     
     - **Effort:** elementary
     
     - **Changelog:**
     
         - 09/08/2024 - major - Update the indicator.
+        - 25/09/2024 - major - Rename the rule, update the indicators.
             
 ??? abstract "Entra ID Sign-In Via Known AiTM Phishing Kit (Tycoon 2FA)"
     
@@ -10978,6 +11029,10 @@ Rules catalog includes **947 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** elementary
     
+    - **Changelog:**
+    
+        - 01/10/2024 - major - Update the pattern following changes in the phishing kit.
+            
 ??? abstract "EvilProxy Phishing Domain"
     
     Detects subdomains potentially generated by the EvilProxy adversary-in-the-middle phishing platform. Inspect the other subdomains of the domain to identify the landing page, and determine if the user submitted credentials. This rule has a small percentage of false positives on legitimate domains.
@@ -11613,6 +11668,7 @@ Rules catalog includes **947 built-in detection rules** ([_last update on 2024-0
     - **Changelog:**
     
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+        - 10/10/2024 - minor - Adding new elements and filters to increase detection and reduce false positives.
             
 ??? abstract "Phosphorus Domain Controller Discovery"
     
@@ -11738,6 +11794,12 @@ Rules catalog includes **947 built-in detection rules** ([_last update on 2024-0
     
         - 26/03/2024 - major - Rule's pattern field changed
             
+??? abstract "Correlation Impacket Smbexec"
+    
+    This rule detects the execution of smbexec via the relevant share pattern name 
+    
+    - **Effort:** elementary
+    
 ??? abstract "Denied Access To Remote Desktop"
     
     Detects when an authenticated user who is not allowed to log on remotely attempts to connect to this computer through Remote Desktop. This event can be generated by attackers when searching for available windows servers in the network. This rule detects only users from external network.
@@ -12061,15 +12123,16 @@ Rules catalog includes **947 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** elementary
     
-??? abstract "Entra ID Sign-In Via Known AiTM Phishing Kit (RED0046)"
+??? abstract "Entra ID Sign-In Via Known AiTM Phishing Kit (Mamba 2FA)"
     
-    Detects a sign-in attempt with known characteristics of the adversary-in-the-middle phishing kit tracked by Sekoia.io as RED0046.
+    Detects a sign-in attempt with known characteristics of the adversary-in-the-middle phishing kit tracked by Sekoia.io as Mamba 2FA.
     
     - **Effort:** elementary
     
     - **Changelog:**
     
         - 09/08/2024 - major - Update the indicator.
+        - 25/09/2024 - major - Rename the rule, update the indicators.
             
 ??? abstract "Entra ID Sign-In Via Known AiTM Phishing Kit (Tycoon 2FA)"
     
@@ -12077,6 +12140,10 @@ Rules catalog includes **947 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** elementary
     
+    - **Changelog:**
+    
+        - 01/10/2024 - major - Update the pattern following changes in the phishing kit.
+            
 ??? abstract "EvilProxy Phishing Domain"
     
     Detects subdomains potentially generated by the EvilProxy adversary-in-the-middle phishing platform. Inspect the other subdomains of the domain to identify the landing page, and determine if the user submitted credentials. This rule has a small percentage of false positives on legitimate domains.
@@ -12192,6 +12259,18 @@ Rules catalog includes **947 built-in detection rules** ([_last update on 2024-0
     
         - 26/03/2024 - major - Rule's pattern field changed
             
+??? abstract "Cloudflare Gateway DNS Query Allowed to Malicious Domain"
+    
+    A DNS query to a domain categorized by Cloudflare Gateway as malicious was allowed because no blocking policy is configured.
+    
+    - **Effort:** master
+    
+??? abstract "Cloudflare Gateway DNS Query Blocked to Malicious Domain"
+    
+    A DNS query to a domain categorized by Cloudflare Gateway as malicious was blocked by policy.
+    
+    - **Effort:** master
+    
 ??? abstract "Cloudflare Gateway HTTP File Blocked By Anti-Virus Scan"
     
     Cloudflare Gateway allows admins to enable Anti-Virus (AV) scanning of files that are uploaded or downloaded by users as the file passes through Gateway. AV scanning of files requires organizations to enable Proxy mode under Settings > Network > Layer 7 Firewall. TLS decryption is also recommended to enable inspection of HTTPS traffic.
@@ -12328,7 +12407,7 @@ Rules catalog includes **947 built-in detection rules** ([_last update on 2024-0
     
 ??? abstract "Many Downloads From Several Binaries"
     
-    Threat Actors might use all the binaries to download the payload to make sure at least one is present on the target.
+    Threat Actors might use all the binaries to download the payload to make sure at least one is present on the target. The prerequisites are to enable monitoring of the connect syscall using Auditbeat.
     
     - **Effort:** advanced
     
@@ -12587,9 +12666,9 @@ Rules catalog includes **947 built-in detection rules** ([_last update on 2024-0
     
 **Traffic Signaling**
 
-??? abstract "Linux Binary List TCP Connections"
+??? abstract "Binary List Tcp"
     
-    A binary is trying to list TCP connections.
+    A binary is trying to list TCP connections. The prerequisites are to enable monitoring of the open and openat syscalls using Auditbeat.
     
     - **Effort:** advanced
     
@@ -13031,7 +13110,7 @@ Rules catalog includes **947 built-in detection rules** ([_last update on 2024-0
             
 ??? abstract "Disabled Service"
     
-    Service disabling can be abused by attacker to deny security mecanisms (eg: firewall, EDR, ect) and it is also often used by cryptominer to exploit as much RAM & CPU as possible on infected host.
+    Service disabling can be abused by attacker to deny security mecanisms (eg: firewall, EDR, ect) and it is also often used by cryptominer to exploit as much RAM & CPU as possible on infected host. The prerequisites are to enable monitoring of the truncate, rename and unlink syscalls using Auditbeat.
     
     - **Effort:** advanced
     

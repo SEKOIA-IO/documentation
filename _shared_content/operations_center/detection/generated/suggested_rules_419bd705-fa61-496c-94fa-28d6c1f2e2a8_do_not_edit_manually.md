@@ -149,7 +149,7 @@ The following Sekoia.io built-in rules match the intake **Broadcom/Symantec Endp
 
 ??? abstract "Disabled Service"
     
-    Service disabling can be abused by attacker to deny security mecanisms (eg: firewall, EDR, ect) and it is also often used by cryptominer to exploit as much RAM & CPU as possible on infected host.
+    Service disabling can be abused by attacker to deny security mecanisms (eg: firewall, EDR, ect) and it is also often used by cryptominer to exploit as much RAM & CPU as possible on infected host. The prerequisites are to enable monitoring of the truncate, rename and unlink syscalls using Auditbeat.
     
     - **Effort:** advanced
 
@@ -207,12 +207,6 @@ The following Sekoia.io built-in rules match the intake **Broadcom/Symantec Endp
     
     - **Effort:** intermediate
 
-??? abstract "Interactive Terminal Spawned via Python"
-    
-    Identifies when a terminal (tty) is spawned via Python. Attackers may upgrade a simple reverse shell to a fully interactive tty after obtaining initial access to a host.
-    
-    - **Effort:** advanced
-
 ??? abstract "Internet Scanner"
     
     Detects known scanner IP addresses. Alert is only raised when the scan hits an opened port, on TCP or UDP. This could be a very noisy rule, so be careful to check your detection perimeter before activation.
@@ -227,7 +221,7 @@ The following Sekoia.io built-in rules match the intake **Broadcom/Symantec Endp
 
 ??? abstract "Kernel Module Alteration"
     
-    Kernel module installation can be used to configure system settings to automatically execute a program during system boot or logon to maintain persistence or gain higher-level privileges on compromised systems.
+    Kernel module installation can be used to configure system settings to automatically execute a program during system boot or logon to maintain persistence or gain higher-level privileges on compromised systems. The prerequisites are to enable monitoring of the finit_module, init_module, delete_module syscalls using Auditbeat.
     
     - **Effort:** advanced
 
@@ -312,12 +306,6 @@ The following Sekoia.io built-in rules match the intake **Broadcom/Symantec Endp
 ??? abstract "PsExec Process"
     
     Detects PsExec execution, command line which contains pstools or installation of the PsExec service. PsExec is a SysInternals which can be used to execute a program on another computer. The tool is as much used by attackers as by administrators. 
-    
-    - **Effort:** advanced
-
-??? abstract "Python Exfiltration Tools"
-    
-    Python has some built-in modules or library that could be installed and later be used as exflitration tool by an attacker
     
     - **Effort:** advanced
 

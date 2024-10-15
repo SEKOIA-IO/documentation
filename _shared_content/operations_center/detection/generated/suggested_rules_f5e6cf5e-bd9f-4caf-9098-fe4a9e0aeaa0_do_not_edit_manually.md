@@ -75,6 +75,30 @@ The following Sekoia.io built-in rules match the intake **Stormshield SES**. Thi
     
     - **Effort:** master
 
+??? abstract "Antivirus Exploitation Framework Detection"
+    
+    Detects a highly relevant Antivirus alert that reports an exploitation framework. This is based on Windows Defender logs (Event ID 1116 and 1117).
+    
+    - **Effort:** elementary
+
+??? abstract "Antivirus Password Dumper Detection"
+    
+    Detects a highly relevant Antivirus alert that reports a password dumper. This detection relies on Windows Defender events logs. This is based on Windows Defender logs (Event ID 1116 and 1117).
+    
+    - **Effort:** elementary
+
+??? abstract "Antivirus Relevant File Paths Alerts"
+    
+    Detects an Antivirus alert in a highly relevant file path or with a relevant file name. This is only based on Windows Defender events.
+    
+    - **Effort:** intermediate
+
+??? abstract "Antivirus Web Shell Detection"
+    
+    Detects a highly relevant Antivirus alert that reports a web shell. This is based on Windows Defender logs (Event ID 1116 and 1117).
+    
+    - **Effort:** elementary
+
 ??? abstract "Audio Capture via PowerShell"
     
     Detects audio capture via PowerShell Cmdlet
@@ -561,6 +585,12 @@ The following Sekoia.io built-in rules match the intake **Stormshield SES**. Thi
     
     - **Effort:** advanced
 
+??? abstract "Eventlog Cleared"
+    
+    Some threat groups tend to delete local EventLogs (Security being the most common one to be deleted) using certain utilities. The EventID 517 is old and 1102 should be used for this instead on newer Windows versions.
+    
+    - **Effort:** intermediate
+
 ??? abstract "Exchange Mailbox Export"
     
     Detection of a standard Exchange Mailbox export, which stores all mails from a user in a pst file, from command line or PowerShell script.
@@ -741,12 +771,6 @@ The following Sekoia.io built-in rules match the intake **Stormshield SES**. Thi
     
     - **Effort:** elementary
 
-??? abstract "IIS Module Installation Using AppCmd"
-    
-    Detects the installation of a new IIS module from the command line. It can used used to backdoor an IIS/OWA/Sharepoint server.
-    
-    - **Effort:** intermediate
-
 ??? abstract "ISO LNK Infection Chain"
     
     Detection of an ISO (or any other similar archive file) downloaded file, followed by a child-process of explorer, which is characteristic of an infection using an ISO containing an LNK file. For events with `host.name`.
@@ -770,6 +794,12 @@ The following Sekoia.io built-in rules match the intake **Stormshield SES**. Thi
     Detects adversaries attempts to delete backups or inhibit system recovery. This rule relies on differents known techniques using Windows events logs from Sysmon (ID 1), and PowerShell (ID 4103, 4104).
     
     - **Effort:** intermediate
+
+??? abstract "Interactive Terminal Spawned via Python"
+    
+    Identifies when a terminal (tty) is spawned via Python. Attackers may upgrade a simple reverse shell to a fully interactive tty after obtaining initial access to a host.
+    
+    - **Effort:** advanced
 
 ??? abstract "Internet Scanner"
     
@@ -797,7 +827,7 @@ The following Sekoia.io built-in rules match the intake **Stormshield SES**. Thi
 
 ??? abstract "Kernel Module Alteration"
     
-    Kernel module installation can be used to configure system settings to automatically execute a program during system boot or logon to maintain persistence or gain higher-level privileges on compromised systems.
+    Kernel module installation can be used to configure system settings to automatically execute a program during system boot or logon to maintain persistence or gain higher-level privileges on compromised systems. The prerequisites are to enable monitoring of the finit_module, init_module, delete_module syscalls using Auditbeat.
     
     - **Effort:** advanced
 
@@ -1026,6 +1056,18 @@ The following Sekoia.io built-in rules match the intake **Stormshield SES**. Thi
 ??? abstract "Microsoft Exchange PowerShell Snap-Ins To Export Exchange Mailbox Data"
     
     Detects PowerShell SnapIn command line or PowerShell script, often used with Get-Mailbox to export Exchange mailbox data.
+    
+    - **Effort:** intermediate
+
+??? abstract "Microsoft IIS Module Installation"
+    
+    Detects the installation of a new IIS module from the command line. It can used used to backdoor an IIS/OWA/Sharepoint server.
+    
+    - **Effort:** advanced
+
+??? abstract "Microsoft Malware Protection Engine Crash"
+    
+    Detects a crash of the Microsoft Malware Protection Engine process (MsMpEng.exe), which is suspicious and could be related to an attacker disabling the Windows protection.
     
     - **Effort:** intermediate
 
@@ -1436,6 +1478,12 @@ The following Sekoia.io built-in rules match the intake **Stormshield SES**. Thi
     Detects attempts to list Putty sessions through registry. To fully work, this rule requires to log registry accesses, which can be done with the Windows Event ID 4656 or 4663 but for that specific configuration is needed.
     
     - **Effort:** master
+
+??? abstract "Python Exfiltration Tools"
+    
+    Python has some built-in modules or library that could be installed and later be used as exflitration tool by an attacker
+    
+    - **Effort:** advanced
 
 ??? abstract "Python HTTP Server"
     
@@ -2085,6 +2133,12 @@ The following Sekoia.io built-in rules match the intake **Stormshield SES**. Thi
     
     - **Effort:** intermediate
 
+??? abstract "WMI Event Subscription"
+    
+    Detects creation of WMI event subscription persistence method 
+    
+    - **Effort:** advanced
+
 ??? abstract "WMI Fingerprint Commands"
     
     Detects attacker fingerprint activities based on the correlation of specific WMIC commands. This has been observed with Aurora malware.
@@ -2127,11 +2181,11 @@ The following Sekoia.io built-in rules match the intake **Stormshield SES**. Thi
     
     - **Effort:** elementary
 
-??? abstract "Webshell Execution W3WP Process"
+??? abstract "Web Application Launching Shell"
     
-    Detects possible webshell execution on Windows Servers which is usually a w3wp parent process with the user name DefaultAppPool.
+    Detects when a web application launches a shell.
     
-    - **Effort:** advanced
+    - **Effort:** master
 
 ??? abstract "WiFi Credentials Harvesting Using Netsh"
     

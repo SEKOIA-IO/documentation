@@ -7,7 +7,6 @@ type: intake
 Symantec Endpoint Protection is a client-server solution that protects laptops, desktops, and servers in your network against malware, risks, and vulnerabilities. This product is supported by Broadcom.
 
 - **Vendor**: Broadcom
-- **Plan**: Defend Prime
 - **Supported environment**: On Premise
 - **Version compatibility**: 14.3 RU3
 - **Detection based on**: Telemetry, Alert

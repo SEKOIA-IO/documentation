@@ -148,6 +148,13 @@ The following table lists the atom types and their related event fields that are
 
 This rule enriches an existing asset with an `os` contextual property. This property is extracted from the value of all the `os` related fields of an event where its `host.name` field matches the `hostname` detection property of the asset. In addition, this rule categorizes the asset as a Server if the `host.type` contains `server`.
 
+### Attach EDR agent IDs to Host
+
+**Set the Contextual Property `edr_agent_id` to Host**
+
+This rule enriches an existing asset with the `edr_agent_id` contextual property (for example `sentinelone_agent_id`). This property is extracted from the value of `agent.id`. 
+
+Note that this rule only applies to assets of `Host` category and that a single host can have multiple EDR agent IDs.
 
 ### Discover unique Hosts
 

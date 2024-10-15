@@ -8,7 +8,6 @@ type: intake
 Fastly Next-Gen WAF is a web application firewall solution designed to protect online assets by mitigating web application threats, ensuring security, and enhancing application performance with its edge-based, real-time protection capabilities.
 
 - **Vendor**: Fastly
-- **Plan**: Defend Prime
 - **Supported environment**: SaaS
 - **Version compatibility**:
 - **Detection based on**: Alert

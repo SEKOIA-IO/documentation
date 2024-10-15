@@ -7,7 +7,6 @@ type: intake
 ExtraHop Reveal(x) 360 is a cloud-based network detection and response platform offering protection and detections for on-premises and cloud environments. In this documentation we will explain how to collect and send Reveal(x) 360 events to Sekoia.io.
 
 - **Vendor**: ExtraHop
-- **Plan**:  Defend Core & Defend Prime
 - **Supported environment**: Cloud
 - **Detection based on**: Telemetry, Alert
 
