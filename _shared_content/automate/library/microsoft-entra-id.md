@@ -107,25 +107,14 @@ Get information about an user's authentication methods (such as their MFA status
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
-| `id` | `string` | ID of the user. id or userPrincipalName should be specified. |
-| `userPrincipalName` | `string` | Principal Name of the user. id or userPrincipalName should be specified. |
+| `userPrincipalName` | `string` | Principal name of the user, which may correspond to their Azure email address. |
 
 
 **Outputs**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
-| `id` | `string` |  |
-| `userPrincipalName` | `string` |  |
-| `userDisplayName` | `string` |  |
-| `isSsprRegistered` | `boolean` |  |
-| `isSsprEnabled` | `boolean` |  |
-| `isSsprCapable` | `boolean` |  |
-| `isMfaRegistered` | `boolean` |  |
-| `isMfaCapable` | `boolean` |  |
-| `isPasswordlessCapable` | `boolean` |  |
-| `methodsRegistered` | `array` |  |
-| `defaultMfaMethod` | `string` |  |
+| `authenticationResults` | `array` |  |
 
 ### Reset User Password
 
@@ -153,4 +142,4 @@ Invalidates all the refresh tokens issued to applications for a user. Requires t
 
 ## Extra
 
-Module **`Microsoft Entra ID` v2.8.0**
+Module **`Microsoft Entra ID` v2.8.4**

@@ -44,6 +44,24 @@ Add comment on Incident.
 | --------- | ------- | --------------------------- |
 | `items` | `array` |  |
 
+### Enumerate processes
+
+Enumerate processes.
+
+**Arguments**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `organization_id` | `string` | UUID of an organization. |
+| `target` | `string` | Device identifier on which action is created. |
+
+
+**Outputs**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `id` | `string` |  |
+
 ### Isolate Device From Network
 
 Isolate a device from network connections.
@@ -62,6 +80,47 @@ Isolate a device from network connections.
 | --------- | ------- | --------------------------- |
 | `multistatus` | `array` |  |
 | `transactionId` | `string` |  |
+
+### Kill process
+
+Kill process.
+
+**Arguments**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `organization_id` | `string` | UUID of an organization. |
+| `target` | `string` | Device identifier on which action is created. |
+| `match` | `string` | Strategy used to match processes (processId,processName,processNameRegex,processPath,processPathRegex) |
+| `process_match_values` | `array` | List of values that are used to match process to kill. Depending on selected strategy it might be list of identifiers, names or regular expressions. |
+| `process_memory_dump` | `boolean` | Whether to run memory dump on process before killing it. |
+| `memory_dump_flag` | `string` | full - memory dump includes all accessible memory of process, pmem - only information necessary to capture process' stack traces |
+
+
+**Outputs**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `id` | `string` |  |
+
+### Kill thread
+
+Kill thread.
+
+**Arguments**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `organization_id` | `string` | UUID of an organization. |
+| `target` | `string` | Device identifier on which action is created. |
+| `thread_id` | `integer` | Thread ID |
+
+
+**Outputs**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `id` | `string` |  |
 
 ### List Detections For Incident
 
@@ -156,4 +215,4 @@ Update status on Incident.
 
 ## Extra
 
-Module **`WithSecure` v2.15.1**
+Module **`WithSecure` v2.16.0**

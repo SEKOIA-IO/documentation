@@ -45,7 +45,7 @@ Collect activities and threats from SentinelOne
 
 ## Actions
 
-### Create IOCs
+### [BETA] Create IOCs
 
 Push IOCs in the Threat Intelligence API of SentinelOne
 
@@ -227,4 +227,4 @@ Update a threat incident in SentinelOne
 
 ## Extra
 
-Module **`SentinelOne` v1.18.3**
+Module **`SentinelOne` v1.18.5**

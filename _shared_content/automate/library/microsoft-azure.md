@@ -81,4 +81,4 @@ Trigger playbook to get Azure Network Watcher events information
 
 ## Extra
 
-Module **`Microsoft Azure` v2.5.3**
+Module **`Microsoft Azure` v2.5.6**

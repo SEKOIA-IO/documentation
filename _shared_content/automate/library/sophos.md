@@ -43,7 +43,39 @@ Query last IoCs from the Sophos Data lake
 | `intake_server` | `string` | Server of the intake server (e.g. 'https://intake.sekoia.io') |
 | `intake_key` | `string` | Intake key to use when sending events |
 
+## Actions
+
+### [BETA] Deisolate endpoint
+
+Turn off endpoint isolation
+
+**Arguments**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `endpoint_id` | `string` | Endpoint ID |
+
+### [BETA] Isolate endpoint
+
+Turn on endpoint isolation
+
+**Arguments**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `endpoint_id` | `string` | Endpoint ID |
+
+### [BETA] Run scan
+
+
+
+**Arguments**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `endpoint_id` | `string` | Endpoint ID |
+
 
 ## Extra
 
-Module **`Sophos` v1.16.5**
+Module **`Sophos` v1.17.1**

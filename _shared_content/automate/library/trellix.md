@@ -53,4 +53,4 @@ Trigger playbook to get Trellix events information
 
 ## Extra
 
-Module **`Trellix` v1.10.0**
+Module **`Trellix` v1.10.3**

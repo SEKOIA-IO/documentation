@@ -25,6 +25,7 @@ A comment was added to an existing Alert
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
+| `comment` | `object` | Alert comment (object containing comment uuid, content, author, date). |
 | `file_path` | `string` | File path to the alert on disk. |
 | `event_type` | `string` | Action that triggered this Sekoia.io Alert notification (could be for example “alert-created”, “alert-status-changed”, etc.) |
 | `alert_uuid` | `string` | Unique identifier of the Alert (UUID string). |
@@ -1304,4 +1305,4 @@ Update a rule
 
 ## Extra
 
-Module **`Sekoia.io` v2.64.1**
+Module **`Sekoia.io` v2.64.4**

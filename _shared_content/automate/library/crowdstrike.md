@@ -34,4 +34,4 @@ Forward Crowdstrike Falcon Data Replication events to Sekoia.io
 
 ## Extra
 
-Module **`CrowdStrike` v1.10.1**
+Module **`CrowdStrike` v1.10.2**
