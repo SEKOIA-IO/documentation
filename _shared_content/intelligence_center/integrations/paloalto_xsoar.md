@@ -22,7 +22,7 @@ Choose the "SEKOIAIntelligenceCenter" pack to open pack description and use the 
 
 Navigate to "Settings" where "SEKOIAIntelligenceCenter" should have appeared and clic the "Add instance" button to add a new instance.
 
-![!Add a new instance of the integratino](paloalto_xsoar_images/add_instance.png)
+![!Add a new instance of the integration](paloalto_xsoar_images/add_instance.png)
 
 Input a Sekoia.io XDR API KEY and save your configuration.
 
