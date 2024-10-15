@@ -1,4 +1,4 @@
-Rules catalog includes **952 built-in detection rules** ([_last update on 2024-10-14_](rules_changelog.md)).
+Rules catalog includes **951 built-in detection rules** ([_last update on 2024-10-15_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Identity Information**
 
@@ -2713,6 +2713,7 @@ Rules catalog includes **952 built-in detection rules** ([_last update on 2024-1
     
     - **Changelog:**
     
+        - 14/10/2024 - minor - Added filter to the rule to reduce false positives.
         - 19/06/2023 - minor - Added filter to the rule to reduce false positives.
             
 ??? abstract "Suspicious Hangul Word Processor Child Process"
@@ -4909,10 +4910,11 @@ Rules catalog includes **952 built-in detection rules** ([_last update on 2024-1
     
     Backdooring domain object to grant the rights associated with DCSync to regular user or machine account, this technics is often used to give ResetPassword or WriteMembers or DCSync permission(s) for persistency on a domain.
     
-    - **Effort:** advanced
+    - **Effort:** intermediate
     
     - **Changelog:**
     
+        - 15/10/2024 - major - Update pattern to avoid false positives and change rule effort
         - 26/03/2024 - major - Rule's pattern field changed
             
 ??? abstract "Active Directory User Backdoors"
@@ -6671,10 +6673,11 @@ Rules catalog includes **952 built-in detection rules** ([_last update on 2024-1
     
     Backdooring domain object to grant the rights associated with DCSync to regular user or machine account, this technics is often used to give ResetPassword or WriteMembers or DCSync permission(s) for persistency on a domain.
     
-    - **Effort:** advanced
+    - **Effort:** intermediate
     
     - **Changelog:**
     
+        - 15/10/2024 - major - Update pattern to avoid false positives and change rule effort
         - 26/03/2024 - major - Rule's pattern field changed
             
 ??? abstract "Active Directory User Backdoors"
@@ -10174,12 +10177,6 @@ Rules catalog includes **952 built-in detection rules** ([_last update on 2024-1
 ## Credential Access
 **OS Credential Dumping**
 
-??? abstract "Access Denied On Sensitive Files"
-    
-    An access has been denied while opening or editing sensitives files.
-    
-    - **Effort:** advanced
-    
 ??? abstract "Active Directory Database Dump Via Ntdsutil"
     
     Detects the dump of ntdis.dit database by using the utility ntdsutil.exe. NTDS.dit database stores Active Directory data, including passwords hashes for all users in the domain.

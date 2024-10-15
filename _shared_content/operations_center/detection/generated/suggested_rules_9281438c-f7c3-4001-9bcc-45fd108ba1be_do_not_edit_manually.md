@@ -91,7 +91,7 @@ The following Sekoia.io built-in rules match the intake **Windows**. This docume
     
     Backdooring domain object to grant the rights associated with DCSync to regular user or machine account, this technics is often used to give ResetPassword or WriteMembers or DCSync permission(s) for persistency on a domain.
     
-    - **Effort:** advanced
+    - **Effort:** intermediate
 
 ??? abstract "Active Directory Replication from Non Machine Account"
     
