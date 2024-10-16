@@ -1,3 +1,7 @@
+uuid: 0c97d665-e316-48ff-bcba-bbfbd4eaccc7
+name: Zscaler
+type: playbook
+
 # Zscaler
 
 ![Zscaler](/assets/playbooks/library/zscaler.png){ align=right width=150 }

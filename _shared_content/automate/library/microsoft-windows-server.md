@@ -1,3 +1,7 @@
+uuid: 33ea4995-5454-4091-a19f-497cb213346a
+name: Microsoft Windows Server
+type: playbook
+
 # Microsoft Windows Server
 
 ![Microsoft Windows Server](/assets/playbooks/library/microsoft-windows-server.png){ align=right width=150 }

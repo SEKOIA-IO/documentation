@@ -1,3 +1,7 @@
+uuid: ff675e74-e5c1-47c8-a571-d207fc297464
+name: SentinelOne
+type: playbook
+
 # SentinelOne
 
 ![SentinelOne](/assets/playbooks/library/sentinelone.png){ align=right width=150 }
@@ -10,38 +14,6 @@ This module interacts with the SentinelOne
 | --------- | ------- | --------------------------- |
 | `hostname` | `string` | The domain-name to the SentinelOne instance |
 | `api_token` | `string` | The API token to authenticate to SentinelOne |
-
-## Triggers
-
-### [DEPRECATED] Consume events from SentinelOne DeepVisibility
-
-Consume events from SentinelOne DeepVisibility’s Kafka brokers
-
-**Arguments**
-
-| Name      |  Type   |  Description  |
-| --------- | ------- | --------------------------- |
-| `chunk_size` | `integer` | The size of chunks for the batch processing |
-| `intake_server` | `string` | Server of the intake server (e.g. 'https://intake.sekoia.io') |
-| `intake_key` | `string` | Intake key to use when sending events |
-| `bootstrap_servers` | `string` | Kafka bootstrap servers (e.g. 'dv-exporter-kafka-eu-central-1-prod.sentinelone.net:9093') |
-| `username` | `string` | Kafka username |
-| `password` | `string` | Kafka password |
-| `group_id` | `string` | Kafka consumer group |
-| `topic` | `string` | Kafka topic |
-
-
-### Collect SentinelOne alerts
-
-Collect activities and threats from SentinelOne
-
-**Arguments**
-
-| Name      |  Type   |  Description  |
-| --------- | ------- | --------------------------- |
-| `frequency` | `integer` | Batch frequency in seconds |
-| `intake_server` | `string` | Server of the intake server (e.g. 'https://intake.sekoia.io') |
-| `intake_key` | `string` | Intake key to use when sending events |
 
 ## Actions
 

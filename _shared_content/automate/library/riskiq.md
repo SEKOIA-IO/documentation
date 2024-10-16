@@ -1,3 +1,7 @@
+uuid: ab1540c3-1b60-4bad-9f5b-13d86a554826
+name: RiskIQ
+type: playbook
+
 # RiskIQ
 
 ![RiskIQ](/assets/playbooks/library/riskiq.png){ align=right width=150 }

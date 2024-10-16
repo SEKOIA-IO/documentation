@@ -1,3 +1,7 @@
+uuid: e76687ed-db66-482a-8549-f3ef3b248e06
+name: Digital Shadows
+type: playbook
+
 # Digital Shadows
 
 ![Digital Shadows](/assets/playbooks/library/digital-shadows.png){ align=right width=150 }

@@ -1,3 +1,7 @@
+uuid: 3c334ccd-91be-49d5-9267-915db6ab588e
+name: IKnowWhatYouDownload
+type: playbook
+
 # IKnowWhatYouDownload
 
 ![IKnowWhatYouDownload](/assets/playbooks/library/iknowwhatyoudownload.png){ align=right width=150 }

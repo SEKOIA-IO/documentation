@@ -1,3 +1,7 @@
+uuid: 8aa9f86c-f360-4ae7-84f5-b61c6917cf01
+name: WithSecure
+type: playbook
+
 # WithSecure
 
 ![WithSecure](/assets/playbooks/library/withsecure.png){ align=right width=150 }
@@ -10,19 +14,6 @@ Interact with WithSecure Elements
 | --------- | ------- | --------------------------- |
 | `client_id` | `string` | Client identifier |
 | `secret` | `string` | API secret to authenticate |
-
-## Triggers
-
-### Fetch security events
-
-Get last security events
-
-**Arguments**
-
-| Name      |  Type   |  Description  |
-| --------- | ------- | --------------------------- |
-| `intake_server` | `string` | Server of the intake server (e.g. 'https://intake.sekoia.io') |
-| `intake_key` | `string` | Intake key to use when sending events |
 
 ## Actions
 

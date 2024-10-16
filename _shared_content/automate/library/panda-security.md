@@ -1,3 +1,7 @@
+uuid: e2215979-3462-4fb6-8635-57700aada01c
+name: Panda Security
+type: playbook
+
 # Panda Security
 
 ![Panda Security](/assets/playbooks/library/panda-security.png){ align=right width=150 }

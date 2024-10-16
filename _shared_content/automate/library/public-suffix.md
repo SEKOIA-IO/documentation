@@ -1,3 +1,7 @@
+uuid: 735b9f36-50eb-4a36-8d08-0996966ee9aa
+name: Public Suffix
+type: playbook
+
 # Public Suffix
 
 ![Public Suffix](/assets/playbooks/library/public-suffix.png){ align=right width=150 }

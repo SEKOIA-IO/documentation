@@ -1,3 +1,7 @@
+uuid: d023af1d-25d8-465b-b85f-2ed48214d6a5
+name: VirusTotal
+type: playbook
+
 # VirusTotal
 
 ![VirusTotal](/assets/playbooks/library/virustotal.svg){ align=right width=150 }

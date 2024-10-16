@@ -1,3 +1,7 @@
+uuid: 081074fc-240d-437f-a214-fba49691e69e
+name: Tranco
+type: playbook
+
 # Tranco
 
 ![Tranco](/assets/playbooks/library/tranco.svg){ align=right width=150 }

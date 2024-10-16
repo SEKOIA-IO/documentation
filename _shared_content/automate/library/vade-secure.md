@@ -1,3 +1,7 @@
+uuid: 1411df5b-5de1-40bd-a988-725cfe692aff
+name: Vade Secure
+type: playbook
+
 # Vade Secure
 
 ![Vade Secure](/assets/playbooks/library/vade-secure.png){ align=right width=150 }

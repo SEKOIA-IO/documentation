@@ -1,3 +1,7 @@
+uuid: b2d96259-af89-4f7a-ae6e-a0af2d2400f3
+name: Microsoft Active Directory
+type: playbook
+
 # Microsoft Active Directory
 
 ![Microsoft Active Directory](/assets/playbooks/library/microsoft-active-directory.png){ align=right width=150 }

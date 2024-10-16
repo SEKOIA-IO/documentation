@@ -1,3 +1,7 @@
+uuid: a55461dd-cd8b-9e05-f87a-607b574804fd
+name: Whois
+type: playbook
+
 # Whois
 
 ![Whois](/assets/playbooks/library/whois.svg){ align=right width=150 }

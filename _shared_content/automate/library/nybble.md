@@ -1,3 +1,7 @@
+uuid: 0664bc2d-8f09-410f-ab8f-e0e07911a6f4
+name: Nybble
+type: playbook
+
 # Nybble
 
 ![Nybble](/assets/playbooks/library/nybble.png){ align=right width=150 }

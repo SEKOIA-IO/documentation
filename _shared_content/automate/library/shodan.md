@@ -1,3 +1,7 @@
+uuid: 25c9c44e-b3dc-4485-a2cb-4e9a116bc8fd
+name: Shodan
+type: playbook
+
 # Shodan
 
 ![Shodan](/assets/playbooks/library/shodan.png){ align=right width=150 }

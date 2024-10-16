@@ -1,3 +1,7 @@
+uuid: d9ba02ab-cb1e-4c8d-bf60-feebfc3700d6
+name: BinaryEdge's API
+type: playbook
+
 # BinaryEdge's API
 
 ![BinaryEdge's API](/assets/playbooks/library/binaryedge-s-api.png){ align=right width=150 }

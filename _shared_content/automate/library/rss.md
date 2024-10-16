@@ -1,3 +1,7 @@
+uuid: 52686cd0-8636-48d3-a7d6-9c20ee47f111
+name: RSS
+type: playbook
+
 # RSS
 
 ![RSS](/assets/playbooks/library/rss.svg){ align=right width=150 }

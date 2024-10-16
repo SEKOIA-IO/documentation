@@ -1,3 +1,7 @@
+uuid: 3d20c308-bc7f-492f-99b0-211614a58116
+name: Onyphe
+type: playbook
+
 # Onyphe
 
 ![Onyphe](/assets/playbooks/library/onyphe.png){ align=right width=150 }
