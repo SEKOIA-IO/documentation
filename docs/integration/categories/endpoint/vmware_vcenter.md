@@ -40,16 +40,14 @@ sudo vim ./extended_conf/11-vcenter.conf
 with the following template:
 
 ```
-$DefaultNetstreamDriverCAFile /etc/rsyslog.d/Sekoia-io-intake.pem
-
 input(type="imtcp" port="PORT" ruleset="remoteVmwarevCenter")
 
 template(name="SEKOIAIOTemplate" type="string" string="<%pri%>1 %timestamp:::date-rfc3339% %hostname% %app-name% %procid% LOG [SEKOIA@53288 intake_key=\"YOUR_INTAKE_KEY\"] %msg%\n")
 ruleset(name="remoteVmwarevCenter"){
-  if($programname == "vpxd") {
+  if($programname == "vpxd") then {
     action(
-	type="omfwd"
-	protocol="tcp"
+        type="omfwd"
+        protocol="tcp"
         target="intake.sekoia.io"
         port="10514"
         TCP_Framing="octet-counted"
