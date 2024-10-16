@@ -28,6 +28,7 @@ markdown_extensions:
     alternate_style: true
 - markdown_include.include
 - lightgallery
+- pymdownx.snippets
 nav:
 - Getting started:
   - Overview: getting_started/index.md
@@ -98,6 +99,7 @@ nav:
       - Operators: xdr/features/automate/operators.md
       - Actions: xdr/features/automate/actions.md
       - Debug playbooks: xdr/features/automate/debug-playbooks.md
+      - Playbooks JSON Schema: xdr/features/automate/playbooks_format_json_schema.md
     - External integrations:
       - FortiSOAR: xdr/features/integrations/fortisoar.md
       - Palo Alto Cortex XSOAR: xdr/features/integrations/interconnect_sekoia_with_xsoar.md
