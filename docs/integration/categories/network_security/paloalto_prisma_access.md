@@ -7,7 +7,7 @@ type: intake
 Palo Alto Prisma Access is a cloud-delivered security platform that provides secure access to applications and data, using a scalable network to protect users and devices across all locations. It integrates advanced threat prevention and access controls to ensure consistent security policies.
 
 - **Vendor**: Palo Alto
-- **Supported environment**: On Premise
+- **Supported environment**: Cloud
 - **Version compatibility**:
 - **Detection based on**: Telemetry
 - **Supported application or feature**: Traffic, Threat and WildFire Malicious
@@ -18,25 +18,18 @@ Palo Alto Prisma Access is a cloud-delivered security platform that provides sec
 
 - **Resource**:
 	- Palo Alto Strata Logging
-
-- **Network**:
-    - Outbound traffic allowed
 - **Permissions**:
-    - Administrator rights on Palo Alto Firewall
-    - Root access to the Linux server with the syslog forwarder
+    - Administrator rights on Palo Alto Stata Logging
 
 ### Transport Protocol/Method
 
-- **Indirect Syslog**
+- **HTTPS forwarding**
 
 ### Logs details
 
 - **Supported functionalities**: See section [Overview](#overview)
-- **Supported type(s) of structure**: CSV, CEF
+- **Supported type(s) of structure**: JSON
 - **Supported verbosity level**: Informational
-
-!!! Note
-    Log levels are based on the taxonomy of [RFC5424](https://datatracker.ietf.org/doc/html/rfc5424). Adapt according to the terminology used by the editor.
 
 ## Step-by-Step Configuration Procedure
 ### Instruction on Sekoia
@@ -45,15 +38,7 @@ Palo Alto Prisma Access is a cloud-delivered security platform that provides sec
 
 ### Forward events through Palo Alto Strata Logging
 
-#### Configure Palo Alto Prisma Access
-
-1. In the GUI, go to `Objects > Log Forwarding`.
-2. Click `Add`, and enter a `Name` to identify the profile.
-3. For each log type (here Traffic, Threat and WileFire Malicious), check the box `Cortex Data Lake` in the Forward Method and click `OK`.
-4. Select `Policies > Security` and select a policy rule.
-5. Select the `Actions` tab and select the `Log Forwarding` profile you created.
-6. In the `Profile Type` drop-down, select `Profiles` or `Groups`, and then select the security profiles or `Group Profiles` required to trigger log generation and forwarding.
-7. Select both of the `Log at Session Start` and `Log At Session End` check boxes, and click `OK`.
+Palo Alto Prima Access forwards all logs to the Strata Logging Service.
 
 #### Configure Palo Alto Strata Logging
 
