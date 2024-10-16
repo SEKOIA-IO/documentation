@@ -477,6 +477,7 @@ nav:
       - OGO Shield WAF: integration/categories/network_security/ogo_shield.md
       - Olfeo Secure Web Gateway: integration/categories/network_security/olfeo_secure_web_gateway.md
       - Palo Alto Next-Generation Firewall: integration/categories/network_security/paloalto.md
+      - Palo Alto Prisma access: integration/categories/network_security/paloalto_prisma_access.md
       - Security Scorecard Vunerability Assessment Scanner: integration/categories/network_security/securityscorecard_vas.md
       - SonicWall Firewall: integration/categories/network_security/sonicwall_fw.md
       - SonicWall SMA: integration/categories/network_security/sonicwall_sma.md
