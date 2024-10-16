@@ -1,3 +1,7 @@
+uuid: 6d6cfd48-1f93-423c-bc8d-0fe5d3029395
+name: Certificate Transparency
+type: playbook
+
 # Certificate Transparency
 
 ![Certificate Transparency](/assets/playbooks/library/certificate-transparency.png){ align=right width=150 }

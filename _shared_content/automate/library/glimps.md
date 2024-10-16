@@ -1,3 +1,7 @@
+uuid: 3ba4b84b-c323-48ef-93d2-6f3544c783d6
+name: GLIMPS
+type: playbook
+
 # GLIMPS
 
 ![GLIMPS](/assets/playbooks/library/glimps.png){ align=right width=150 }

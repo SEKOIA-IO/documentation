@@ -1,3 +1,7 @@
+uuid: 97864342-32c5-4076-b590-ba0179db9233
+name: PagerDuty
+type: playbook
+
 # PagerDuty
 
 ![PagerDuty](/assets/playbooks/library/pagerduty.svg){ align=right width=150 }

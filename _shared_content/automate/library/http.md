@@ -1,3 +1,7 @@
+uuid: 5894985f-91eb-46db-9306-cc5ac6463d3d
+name: HTTP
+type: playbook
+
 # HTTP
 
 ![HTTP](/assets/playbooks/library/http.svg){ align=right width=150 }

@@ -1,3 +1,7 @@
+uuid: d6c96586-707c-451f-b9f6-d31b3291f87d
+name: The Hive V5
+type: playbook
+
 # The Hive V5
 
 ![The Hive V5](/assets/playbooks/library/the-hive-v5.png){ align=right width=150 }

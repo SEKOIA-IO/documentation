@@ -1,3 +1,7 @@
+uuid: 07cce76b-a319-40ee-a0cf-1ba433431e21
+name: Utils
+type: playbook
+
 # Utils
 
 ![Utils](/assets/playbooks/library/utils.svg){ align=right width=150 }

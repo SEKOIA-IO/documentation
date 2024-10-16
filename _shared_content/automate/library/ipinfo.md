@@ -1,3 +1,7 @@
+uuid: 2f8ad4f8-7740-4ce9-ab1d-9903d79c0739
+name: IPInfo
+type: playbook
+
 # IPInfo
 
 ![IPInfo](/assets/playbooks/library/ipinfo.png){ align=right width=150 }

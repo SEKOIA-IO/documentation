@@ -1,3 +1,7 @@
+uuid: 2b2f877e-6eaa-4d6c-a18e-f3383e52a429
+name: ServiceNow
+type: playbook
+
 # ServiceNow
 
 ![ServiceNow](/assets/playbooks/library/servicenow.png){ align=right width=150 }

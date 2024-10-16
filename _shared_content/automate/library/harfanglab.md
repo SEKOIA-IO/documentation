@@ -1,3 +1,7 @@
+uuid: 8380240b-61a4-48b7-93e4-044a7ee2309b
+name: HarfangLab
+type: playbook
+
 # HarfangLab
 
 ![HarfangLab](/assets/playbooks/library/harfanglab.png){ align=right width=150 }

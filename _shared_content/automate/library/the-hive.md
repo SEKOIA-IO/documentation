@@ -1,3 +1,7 @@
+uuid: 48086812-d709-4eff-b308-e8bf504b8a7a
+name: The Hive
+type: playbook
+
 # The Hive
 
 ![The Hive](/assets/playbooks/library/the-hive.png){ align=right width=150 }

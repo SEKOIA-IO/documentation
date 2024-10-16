@@ -1,3 +1,7 @@
+uuid: 0a0cdc27-5b29-41e0-9a0c-36ee065922e5
+name: Git
+type: playbook
+
 # Git
 
 ![Git](/assets/playbooks/library/git.svg){ align=right width=150 }

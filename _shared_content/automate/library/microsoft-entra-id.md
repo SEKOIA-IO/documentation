@@ -1,3 +1,7 @@
+uuid: 3abf7928-65ef-4a5f-ba3e-5fbe56123d0c
+name: Microsoft Entra ID
+type: playbook
+
 # Microsoft Entra ID
 
 ![Microsoft Entra ID](/assets/playbooks/library/microsoft-entra-id.svg){ align=right width=150 }

@@ -1,3 +1,7 @@
+uuid: d1445e5e-8e3b-417f-ae19-bca67a10affd
+name: Atlassian JIRA
+type: playbook
+
 # Atlassian JIRA
 
 ![Atlassian JIRA](/assets/playbooks/library/atlassian-jira.png){ align=right width=150 }

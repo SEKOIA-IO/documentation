@@ -1,3 +1,7 @@
+uuid: 48a7eb68-f319-4498-b3ed-461d690e6d05
+name: Censys
+type: playbook
+
 # Censys
 
 ![Censys](/assets/playbooks/library/censys.png){ align=right width=150 }

@@ -1,3 +1,7 @@
+uuid: 89c860f0-3e73-4946-a5c9-431deb33b0e8
+name: Mattermost
+type: playbook
+
 # Mattermost
 
 ![Mattermost](/assets/playbooks/library/mattermost.svg){ align=right width=150 }

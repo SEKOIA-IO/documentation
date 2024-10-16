@@ -1,3 +1,7 @@
+uuid: 05fd97a1-43f7-4f47-ae02-63e1d1219040
+name: OpenAI
+type: playbook
+
 # OpenAI
 
 ![OpenAI](/assets/playbooks/library/openai.png){ align=right width=150 }

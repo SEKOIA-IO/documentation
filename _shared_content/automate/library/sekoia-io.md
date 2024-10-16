@@ -1,3 +1,7 @@
+uuid: 92d8bb47-7c51-445d-81de-ae04edbb6f0a
+name: Sekoia.io
+type: playbook
+
 # Sekoia.io
 
 ![Sekoia.io](/assets/playbooks/library/sekoia-io.svg){ align=right width=150 }

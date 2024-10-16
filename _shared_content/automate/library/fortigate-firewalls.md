@@ -1,3 +1,7 @@
+uuid: ca9a9497-bcd2-4d0c-b0c1-72699231feb2
+name: Fortigate Firewalls
+type: playbook
+
 # Fortigate Firewalls
 
 ![Fortigate Firewalls](/assets/playbooks/library/fortigate-firewalls.svg){ align=right width=150 }

@@ -1,3 +1,7 @@
+uuid: df3a0c67-592b-45b2-8465-48473929c7f9
+name: MISP
+type: playbook
+
 # MISP
 
 ![MISP](/assets/playbooks/library/misp.png){ align=right width=150 }

@@ -1,3 +1,7 @@
+uuid: bc2699a6-93e5-4d74-816d-4186d6eb3ce8
+name: Mandrill
+type: playbook
+
 # Mandrill
 
 ![Mandrill](/assets/playbooks/library/mandrill.svg){ align=right width=150 }

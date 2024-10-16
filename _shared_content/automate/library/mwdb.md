@@ -1,3 +1,7 @@
+uuid: 0b8e1ea4-f191-4486-9658-47578a67d046
+name: MWDB
+type: playbook
+
 # MWDB
 
 ![MWDB](/assets/playbooks/library/mwdb.svg){ align=right width=150 }

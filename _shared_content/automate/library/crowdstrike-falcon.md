@@ -1,3 +1,7 @@
+uuid: 4fdbae70-e9cd-492e-9a39-24ce99325e3f
+name: CrowdStrike Falcon
+type: playbook
+
 # CrowdStrike Falcon
 
 ![CrowdStrike Falcon](/assets/playbooks/library/crowdstrike-falcon.png){ align=right width=150 }
@@ -11,21 +15,6 @@ Integrates with CrowdStrike Falcon EDR
 | `client_id` | `string` | Client Identifier |
 | `client_secret` | `string` | Client Secret |
 | `base_url` | `string` | Base URL of the API |
-
-## Triggers
-
-### Fetch CrowdStrike Falcon Events
-
-Get latest events from CrowdStrike Falcon
-
-**Arguments**
-
-| Name      |  Type   |  Description  |
-| --------- | ------- | --------------------------- |
-| `intake_key` | `string` | Intake key to use when sending events |
-| `tg_base_url` | `string` | The base_url for the ThreatGraphAPI |
-| `tg_username` | `['string', 'null']` | The username for the ThreatGraphAPI |
-| `tg_password` | `['string', 'null']` | The password for the ThreatGraphAPI |
 
 ## Actions
 
