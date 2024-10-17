@@ -4,9 +4,9 @@
 
 ### Is the IP behind `intake.sekoia.io` static?
 
-**IP for `intake.sekoia.io` is `213.32.5.228`.**
+**IP for `intake.sekoia.io` is currently `213.32.5.228`.**
 
-`intake.sekoia.io` is the domain name used to send your logs to Sekoia.io, either via Syslog or HTTP protocols. The IP address behind that service is static and stable. You can use that IP to configure your firewalls to allow connections from your forwarding systems to Sekoia.io.
+`intake.sekoia.io` is the domain name used to send your logs to Sekoia.io, either via Syslog or HTTP protocols. The IP address behind that service is mostly static but may change at any time. Please refrain from doing IP filtering to avoid future issues. If you absolutely need to perform IP filtering, please manage your own DNS configuration and keep up with upstream changes. Old IPs will continue working for up to a month after the official DNS modification.
 
 ### Outgoing IP addresses for playbooks runs and connectors
 
