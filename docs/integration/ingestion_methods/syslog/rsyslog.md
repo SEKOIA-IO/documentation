@@ -18,7 +18,7 @@ The following prerequisites are needed in order to setup efficient Rsyslog:
 
 - Administrator privileges of the server: `root`
 - Inbound traffic from the equipment to the Rsyslog must be open on `TCP 514`
-- Outbound traffic from the Rsyslog to the Sekoia.io platform must be open on `TCP 10514` (IP for `intake.sekoia.io` is `51.159.9.95`)
+- Outbound traffic from the Rsyslog to the Sekoia.io platform must be open on `TCP 10514` (IP for `intake.sekoia.io` is `213.32.5.228`)
 
 ## Rsyslog installation procedure
 
