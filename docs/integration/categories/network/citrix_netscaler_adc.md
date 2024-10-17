@@ -66,6 +66,9 @@ This setup guide will show you how to forward both your access and error logs to
     set appfw settings CEFLogging on
     ```
 
+!!! Important
+    Make sure to set the value of "Max Log Data Size To Hold" to 1000 to avoid logs to be truncated, as the default value is 500.
+
 ### Instruction on Sekoia
 
 {!_shared_content/integration/intake_configuration.md!}
