@@ -1,7 +1,58 @@
-Changelog _last update on 2024-10-15_
+Changelog _last update on 2024-10-18_
 
 ## Changelog
 
+### Searchindexer Wrong Parent
+  - 17/10/2024 - major - Removed a filter on a specific intake, the rule now works fine for every intake.
+    
+### Spoolsv Wrong Parent
+  - 17/10/2024 - major - Removed a filter on a specific intake, the rule now works fine for every intake. Added some new filters as well to reduce false positives.
+    
+### Lsass Wrong Parent
+  - 17/10/2024 - major - The rule has been reworked for a specific intake to allow our customers to activate the rule for this intake which was not the case before.
+    
+### Csrss Wrong Parent
+  - 17/10/2024 - major - Removed a filter on a specific intake, the rule now works fine for every intake.
+    
+### Logonui Wrong Parent
+  - 17/10/2024 - major - Removed a filter on a specific intake, the rule now works fine for every intake
+    
+### Wsmprovhost Wrong Parent
+  - 17/10/2024 - major - Removed a filter on a specific intake, the rule now works fine for every intake.
+    
+### Wininit Wrong Parent
+  - 17/10/2024 - major - Removed a filter on a specific intake, the rule now works fine for every intake. A filter was also added to reduce false positives.
+    
+### Svchost Wrong Parent
+  - 17/10/2024 - major - Removed a filter on a specific intake, the rule now works fine for every intake. A filter has also been added to reduce false positives.
+    
+### Suspicious Mshta Execution
+  - 17/10/2024 - minor - Adding similarity_strategy
+    
+### Searchprotocolhost Wrong Parent
+  - 17/10/2024 - major - Removed a filter on a specific intake, the rule now works fine for every intake
+    
+### Mshta Suspicious Child Process
+  - 17/10/2024 - minor - Adding similarity_strategy and enforce selection
+    
+### Dllhost Wrong Parent
+  - 17/10/2024 - major - Removed a filter on a specific intake, the rule now works fine for every intake. Some filters on parent process names were also added to reduce false positives.
+    
+### Taskhostw Wrong Parent
+  - 17/10/2024 - major - Removed a filter on a specific intake, the rule now works fine for every intake. Filters were also added to reduce false positives.
+    
+### Winrshost Wrong Parent
+  - 17/10/2024 - major - Removed a filter on a specific intake, the rule now works fine for every intake. Filters were also added to reduce false positives.
+    
+### Taskhost Wrong Parent
+  - 17/10/2024 - major - Removed a filter on a specific intake, the rule now works fine for every intake.
+    
+### Smss Wrong Parent
+  - 17/10/2024 - major - Removed a filter on a specific intake, the rule now works fine for every intake
+    
+### Winlogon wrong parent
+  - 17/10/2024 - major - Removed a filter on a specific intake, the rule now works fine for every intake. Filter was also added to reduce false positives.
+    
 ### Login Brute-Force Successful On AzureAD From Single IP Address
   - 14/10/2024 - minor - The error codes 70043, 50173, 70008, 700082, 9002341 have been excluded as they are not related to login failures that we want to detect and caused several false positives.
     
@@ -40,9 +91,6 @@ Changelog _last update on 2024-10-15_
     
 ### Microsoft Office Product Spawning Windows Shell
   - 13/09/2024 - major - Adding filters to reduce false positives and updated the effort level to master as it is a rule highly dependent on the environment.
-    
-### Winword wrong parent
-  - 12/09/2024 - minor - Adding filter to reduce false positives.
     
 ### DCSync Attack
   - 05/09/2024 - minor - Changing name of elements.
@@ -200,9 +248,6 @@ Changelog _last update on 2024-10-15_
 ### NjRat Registry Changes
   - 07/06/2024 - major - Update pattern to reduce false positives
     
-### Logonui Wrong Parent
-  - 07/06/2024 - major - Added filter to reduce false positives
-    
 ### Outgoing Bytes Peak
   - 28/05/2024 - major - On Fortinet Fortigate intakes, events other than 0000000013 are now ignored.
     
@@ -253,9 +298,6 @@ Changelog _last update on 2024-10-15_
     
 ### OneNote Suspicious Children Process
   - 15/04/2024 - minor - Changing effort level and adding new filters to reduce false positives.
-    
-### Smss Wrong Parent
-  - 05/04/2024 - major - Added filter to reduce false positives
     
 ### Webshell Creation
   - 04/04/2024 - major - Rule's pattern field changed
@@ -560,59 +602,11 @@ Changelog _last update on 2024-10-15_
 ### Remote Task Creation Via ATSVC Named Pipe
   - 21/03/2024 - minor - change filter to ACL hex value
     
-### Searchindexer Wrong Parent
-  - 19/03/2024 - major - Added filter to reduce false positives
-    
-### Spoolsv Wrong Parent
-  - 19/03/2024 - major - Added filter to reduce false positives
-    
-### Lsass Wrong Parent
-  - 19/03/2024 - major - Added filter to reduce false positives
-    
-### Csrss Wrong Parent
-  - 19/03/2024 - major - Added filter to reduce false positives
-    
-### Wsmprovhost Wrong Parent
-  - 19/03/2024 - major - Added filter to reduce false positives
-    
-### Wininit Wrong Parent
-  - 19/03/2024 - major - Added filter to reduce false positives
-    
-### Svchost Wrong Parent
-  - 19/03/2024 - major - Added filter to reduce false positives
-    
-### Dllhost Wrong Parent
-  - 19/03/2024 - major - Added filter to reduce false positives
-    
-### Taskhostw Wrong Parent
-  - 19/03/2024 - major - Added filter to reduce false positives
-    
-### Winrshost Wrong Parent
-  - 19/03/2024 - major - Added filter to reduce false positives
-    
-### Userinit Wrong Parent
-  - 19/03/2024 - major - Added filter to reduce false positives
-    
-### Explorer Wrong Parent
-  - 19/03/2024 - major - Added filter to reduce false positives
-    
-### Taskhost Wrong Parent
-  - 19/03/2024 - major - Added filter to reduce false positives
-    
 ### Gpscript Suspicious Parent
-  - 19/03/2024 - major - Added filter to reduce false positives
-    
-### Winlogon wrong parent
-  - 19/03/2024 - major - Added filter to reduce false positives
-    
-### Wmiprvse Wrong Parent
   - 19/03/2024 - major - Added filter to reduce false positives
     
 ### Microsoft 365 Suspicious Inbox Rule
   - 13/03/2024 - minor - Add another suspicious folder.
-    
-### Searchprotocolhost Wrong Parent
-  - 12/03/2024 - minor - Added filter to reduce false positives
     
 ### Listing Systemd Environment
   - 06/03/2024 - minor - Effort level was adapted according to the observed hits for the rule

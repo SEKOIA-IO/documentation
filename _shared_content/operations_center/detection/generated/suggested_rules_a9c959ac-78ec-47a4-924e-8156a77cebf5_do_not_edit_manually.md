@@ -705,12 +705,6 @@ The following Sekoia.io built-in rules match the intake **OCSF [BETA]**. This do
     
     - **Effort:** intermediate
 
-??? abstract "Explorer Wrong Parent"
-    
-    Detects suspicious spawning of explorer.exe process created by the rundll32.exe or regsvr32.exe. This behaviour is abnormal. Malware injecting itself into the explorer.exe process is quite common, in order to evade process-based defenses.
-    
-    - **Effort:** master
-
 ??? abstract "FLTMC command usage"
     
     Detects the use of fltmc to list and load/unload a filter driver.
@@ -2096,12 +2090,6 @@ The following Sekoia.io built-in rules match the intake **OCSF [BETA]**. This do
     Detects specific process characteristics of word document droppers. This techniques has been used by Maze ransomware operators.
     
     - **Effort:** elementary
-
-??? abstract "Winword wrong parent"
-    
-    Word is a well known Windows process used to read documents. Some malicious process could use it to run malicious code. The rule tries to detect winword.exe launched with a suspect parent process name.
-    
-    - **Effort:** master
 
 ??? abstract "Wmic Process Call Creation"
     

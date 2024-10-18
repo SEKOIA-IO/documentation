@@ -1,4 +1,4 @@
-Rules catalog includes **951 built-in detection rules** ([_last update on 2024-10-15_](rules_changelog.md)).
+Rules catalog includes **947 built-in detection rules** ([_last update on 2024-10-18_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Identity Information**
 
@@ -2080,6 +2080,10 @@ Rules catalog includes **951 built-in detection rules** ([_last update on 2024-1
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 17/10/2024 - minor - Adding similarity_strategy and enforce selection
+            
 ??? abstract "Mustang Panda Dropper"
     
     Detects specific process parameters as used by Mustang Panda droppers
@@ -3842,6 +3846,7 @@ Rules catalog includes **951 built-in detection rules** ([_last update on 2024-1
         - 04/07/2023 - major - Added filter to reduce false positives
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
         - 19/03/2024 - major - Added filter to reduce false positives
+        - 17/10/2024 - major - Removed a filter on a specific intake, the rule now works fine for every intake.
             
 ??? abstract "Cybereason EDR Alert"
     
@@ -3875,6 +3880,7 @@ Rules catalog includes **951 built-in detection rules** ([_last update on 2024-1
         - 04/07/2023 - major - Added filter to reduce false positives
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
         - 19/03/2024 - major - Added filter to reduce false positives
+        - 17/10/2024 - major - Removed a filter on a specific intake, the rule now works fine for every intake. Some filters on parent process names were also added to reduce false positives.
             
 ??? abstract "Exfiltration Via Pscp"
     
@@ -3926,6 +3932,7 @@ Rules catalog includes **951 built-in detection rules** ([_last update on 2024-1
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
         - 19/03/2024 - major - Added filter to reduce false positives
         - 07/06/2024 - major - Added filter to reduce false positives
+        - 17/10/2024 - major - Removed a filter on a specific intake, the rule now works fine for every intake
             
 ??? abstract "Lsass Wrong Parent"
     
@@ -3939,6 +3946,7 @@ Rules catalog includes **951 built-in detection rules** ([_last update on 2024-1
         - 04/07/2023 - major - Added filter to reduce false positives
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
         - 19/03/2024 - major - Added filter to reduce false positives
+        - 17/10/2024 - major - The rule has been reworked for a specific intake to allow our customers to activate the rule for this intake which was not the case before.
             
 ??? abstract "Malicious Service Installations"
     
@@ -4059,6 +4067,7 @@ Rules catalog includes **951 built-in detection rules** ([_last update on 2024-1
         - 04/07/2023 - major - Added filter to reduce false positives
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
         - 19/03/2024 - major - Added filter to reduce false positives
+        - 17/10/2024 - major - Removed a filter on a specific intake, the rule now works fine for every intake.
             
 ??? abstract "Searchprotocolhost Child Found"
     
@@ -4078,6 +4087,7 @@ Rules catalog includes **951 built-in detection rules** ([_last update on 2024-1
         - 04/07/2023 - major - Added filter to reduce false positives
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
         - 12/03/2024 - minor - Added filter to reduce false positives
+        - 17/10/2024 - major - Removed a filter on a specific intake, the rule now works fine for every intake
             
 ??? abstract "SentinelOne EDR Agent Disabled"
     
@@ -4234,6 +4244,7 @@ Rules catalog includes **951 built-in detection rules** ([_last update on 2024-1
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
         - 19/03/2024 - major - Added filter to reduce false positives
         - 05/04/2024 - major - Added filter to reduce false positives
+        - 17/10/2024 - major - Removed a filter on a specific intake, the rule now works fine for every intake
             
 ??? abstract "SolarWinds Suspicious File Creation"
     
@@ -4264,6 +4275,7 @@ Rules catalog includes **951 built-in detection rules** ([_last update on 2024-1
         - 04/07/2023 - major - Added filter to reduce false positives
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
         - 19/03/2024 - major - Added filter to reduce false positives
+        - 17/10/2024 - major - Removed a filter on a specific intake, the rule now works fine for every intake. Added some new filters as well to reduce false positives.
             
 ??? abstract "Suspicious Commands From MS SQL Server Shell"
     
@@ -4299,6 +4311,7 @@ Rules catalog includes **951 built-in detection rules** ([_last update on 2024-1
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
         - 31/01/2024 - minor - Adding filters to reduce false positives
         - 19/03/2024 - major - Added filter to reduce false positives
+        - 17/10/2024 - major - Removed a filter on a specific intake, the rule now works fine for every intake. A filter has also been added to reduce false positives.
             
 ??? abstract "TEHTRIS EDR Alert"
     
@@ -4318,6 +4331,7 @@ Rules catalog includes **951 built-in detection rules** ([_last update on 2024-1
         - 04/07/2023 - major - Added filter to reduce false positives
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
         - 19/03/2024 - major - Added filter to reduce false positives
+        - 17/10/2024 - major - Removed a filter on a specific intake, the rule now works fine for every intake.
             
 ??? abstract "Taskhost or Taskhostw Suspicious Child Found"
     
@@ -4341,6 +4355,7 @@ Rules catalog includes **951 built-in detection rules** ([_last update on 2024-1
         - 04/07/2023 - major - Added filter to reduce false positives
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
         - 19/03/2024 - major - Added filter to reduce false positives
+        - 17/10/2024 - major - Removed a filter on a specific intake, the rule now works fine for every intake. Filters were also added to reduce false positives.
             
 ??? abstract "Trend Micro Apex One Data Loss Prevention Alert"
     
@@ -4382,19 +4397,6 @@ Rules catalog includes **951 built-in detection rules** ([_last update on 2024-1
     
         - 21/06/2024 - major - Update detection pattern for ECS fields/value compliance
             
-??? abstract "Userinit Wrong Parent"
-    
-    Userinit.exe is a key process in the Windows operating system. On boot-up it manages the different start up sequences needed, such as establishing network connection and starting up the Windows shell. This rule analyse if the parent of this process is a legitimate one or not.
-    
-    - **Effort:** master
-    
-    - **Changelog:**
-    
-        - 20/11/2023 - minor - Rule's effort level has been changed to advanced as it was too dependent on the environment.
-        - 04/07/2023 - major - Added filter to reduce false positives
-        - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
-        - 19/03/2024 - major - Added filter to reduce false positives
-            
 ??? abstract "WMI Persistence Command Line Event Consumer"
     
     Detects WMI command line event consumers.
@@ -4429,6 +4431,7 @@ Rules catalog includes **951 built-in detection rules** ([_last update on 2024-1
         - 04/07/2023 - major - Added filter to reduce false positives
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
         - 19/03/2024 - major - Added filter to reduce false positives
+        - 17/10/2024 - major - Removed a filter on a specific intake, the rule now works fine for every intake. A filter was also added to reduce false positives.
             
 ??? abstract "Winlogon wrong parent"
     
@@ -4441,6 +4444,7 @@ Rules catalog includes **951 built-in detection rules** ([_last update on 2024-1
         - 04/07/2023 - major - Added filter to reduce false positives
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
         - 19/03/2024 - major - Added filter to reduce false positives
+        - 17/10/2024 - major - Removed a filter on a specific intake, the rule now works fine for every intake. Filter was also added to reduce false positives.
             
 ??? abstract "Winrshost Wrong Parent"
     
@@ -4454,19 +4458,7 @@ Rules catalog includes **951 built-in detection rules** ([_last update on 2024-1
         - 04/07/2023 - major - Added filter to reduce false positives
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
         - 19/03/2024 - major - Added filter to reduce false positives
-            
-??? abstract "Winword wrong parent"
-    
-    Word is a well known Windows process used to read documents. Some malicious process could use it to run malicious code. The rule tries to detect winword.exe launched with a suspect parent process name.
-    
-    - **Effort:** master
-    
-    - **Changelog:**
-    
-        - 04/07/2023 - major - Added filter to reduce false positives
-        - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
-        - 19/03/2024 - major - Added filter to reduce false positives
-        - 12/09/2024 - minor - Adding filter to reduce false positives.
+        - 17/10/2024 - major - Removed a filter on a specific intake, the rule now works fine for every intake. Filters were also added to reduce false positives.
             
 ??? abstract "WithSecure Elements Critical Severity"
     
@@ -4477,19 +4469,6 @@ Rules catalog includes **951 built-in detection rules** ([_last update on 2024-1
     - **Changelog:**
     
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
-            
-??? abstract "Wmiprvse Wrong Parent"
-    
-    Detects if the Wmiprvse process was executed by a non-legitimate parent process. The wmiprvse.exe process (wmiprvse stands for Microsoft Windows Management Instrumentation) is a generic process for managing clients on Windows. It is initialized the first time a client application connects and allows you to monitor system resources. This requires Windows command line logging.
-    
-    - **Effort:** master
-    
-    - **Changelog:**
-    
-        - 20/11/2023 - minor - Rule's effort level has been changed to advanced as it was too dependent on the environment.
-        - 04/07/2023 - major - Added filter to reduce false positives
-        - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
-        - 19/03/2024 - major - Added filter to reduce false positives
             
 ??? abstract "Wsmprovhost Wrong Parent"
     
@@ -4504,6 +4483,7 @@ Rules catalog includes **951 built-in detection rules** ([_last update on 2024-1
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
         - 25/10/2023 - minor - Adding filter to reduce false positives.
         - 19/03/2024 - major - Added filter to reduce false positives
+        - 17/10/2024 - major - Removed a filter on a specific intake, the rule now works fine for every intake.
             
 ??? abstract "Zscaler ZIA Malicious Threat Outbreak"
     
@@ -5378,6 +5358,7 @@ Rules catalog includes **951 built-in detection rules** ([_last update on 2024-1
         - 04/07/2023 - major - Added filter to reduce false positives
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
         - 19/03/2024 - major - Added filter to reduce false positives
+        - 17/10/2024 - major - Removed a filter on a specific intake, the rule now works fine for every intake.
             
 ??? abstract "Dllhost Wrong Parent"
     
@@ -5391,19 +5372,7 @@ Rules catalog includes **951 built-in detection rules** ([_last update on 2024-1
         - 04/07/2023 - major - Added filter to reduce false positives
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
         - 19/03/2024 - major - Added filter to reduce false positives
-            
-??? abstract "Explorer Wrong Parent"
-    
-    Detects suspicious spawning of explorer.exe process created by the rundll32.exe or regsvr32.exe. This behaviour is abnormal. Malware injecting itself into the explorer.exe process is quite common, in order to evade process-based defenses.
-    
-    - **Effort:** master
-    
-    - **Changelog:**
-    
-        - 20/11/2023 - minor - Rule's effort level has been changed to advanced as it was too dependent on the environment.
-        - 04/07/2023 - major - Added filter to reduce false positives
-        - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
-        - 19/03/2024 - major - Added filter to reduce false positives
+        - 17/10/2024 - major - Removed a filter on a specific intake, the rule now works fine for every intake. Some filters on parent process names were also added to reduce false positives.
             
 ??? abstract "Gpscript Suspicious Parent"
     
@@ -5429,6 +5398,7 @@ Rules catalog includes **951 built-in detection rules** ([_last update on 2024-1
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
         - 19/03/2024 - major - Added filter to reduce false positives
         - 07/06/2024 - major - Added filter to reduce false positives
+        - 17/10/2024 - major - Removed a filter on a specific intake, the rule now works fine for every intake
             
 ??? abstract "Lsass Wrong Parent"
     
@@ -5442,6 +5412,7 @@ Rules catalog includes **951 built-in detection rules** ([_last update on 2024-1
         - 04/07/2023 - major - Added filter to reduce false positives
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
         - 19/03/2024 - major - Added filter to reduce false positives
+        - 17/10/2024 - major - The rule has been reworked for a specific intake to allow our customers to activate the rule for this intake which was not the case before.
             
 ??? abstract "Malicious Service Installations"
     
@@ -5493,6 +5464,7 @@ Rules catalog includes **951 built-in detection rules** ([_last update on 2024-1
         - 04/07/2023 - major - Added filter to reduce false positives
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
         - 19/03/2024 - major - Added filter to reduce false positives
+        - 17/10/2024 - major - Removed a filter on a specific intake, the rule now works fine for every intake.
             
 ??? abstract "Searchprotocolhost Child Found"
     
@@ -5512,6 +5484,7 @@ Rules catalog includes **951 built-in detection rules** ([_last update on 2024-1
         - 04/07/2023 - major - Added filter to reduce false positives
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
         - 12/03/2024 - minor - Added filter to reduce false positives
+        - 17/10/2024 - major - Removed a filter on a specific intake, the rule now works fine for every intake
             
 ??? abstract "Smss Wrong Parent"
     
@@ -5526,6 +5499,7 @@ Rules catalog includes **951 built-in detection rules** ([_last update on 2024-1
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
         - 19/03/2024 - major - Added filter to reduce false positives
         - 05/04/2024 - major - Added filter to reduce false positives
+        - 17/10/2024 - major - Removed a filter on a specific intake, the rule now works fine for every intake
             
 ??? abstract "SolarWinds Wrong Child Process"
     
@@ -5550,6 +5524,7 @@ Rules catalog includes **951 built-in detection rules** ([_last update on 2024-1
         - 04/07/2023 - major - Added filter to reduce false positives
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
         - 19/03/2024 - major - Added filter to reduce false positives
+        - 17/10/2024 - major - Removed a filter on a specific intake, the rule now works fine for every intake. Added some new filters as well to reduce false positives.
             
 ??? abstract "StoneDrill Service Install"
     
@@ -5579,6 +5554,7 @@ Rules catalog includes **951 built-in detection rules** ([_last update on 2024-1
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
         - 31/01/2024 - minor - Adding filters to reduce false positives
         - 19/03/2024 - major - Added filter to reduce false positives
+        - 17/10/2024 - major - Removed a filter on a specific intake, the rule now works fine for every intake. A filter has also been added to reduce false positives.
             
 ??? abstract "Taskhost Wrong Parent"
     
@@ -5592,6 +5568,7 @@ Rules catalog includes **951 built-in detection rules** ([_last update on 2024-1
         - 04/07/2023 - major - Added filter to reduce false positives
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
         - 19/03/2024 - major - Added filter to reduce false positives
+        - 17/10/2024 - major - Removed a filter on a specific intake, the rule now works fine for every intake.
             
 ??? abstract "Taskhost or Taskhostw Suspicious Child Found"
     
@@ -5615,19 +5592,7 @@ Rules catalog includes **951 built-in detection rules** ([_last update on 2024-1
         - 04/07/2023 - major - Added filter to reduce false positives
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
         - 19/03/2024 - major - Added filter to reduce false positives
-            
-??? abstract "Userinit Wrong Parent"
-    
-    Userinit.exe is a key process in the Windows operating system. On boot-up it manages the different start up sequences needed, such as establishing network connection and starting up the Windows shell. This rule analyse if the parent of this process is a legitimate one or not.
-    
-    - **Effort:** master
-    
-    - **Changelog:**
-    
-        - 20/11/2023 - minor - Rule's effort level has been changed to advanced as it was too dependent on the environment.
-        - 04/07/2023 - major - Added filter to reduce false positives
-        - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
-        - 19/03/2024 - major - Added filter to reduce false positives
+        - 17/10/2024 - major - Removed a filter on a specific intake, the rule now works fine for every intake. Filters were also added to reduce false positives.
             
 ??? abstract "WMI Persistence Command Line Event Consumer"
     
@@ -5647,6 +5612,7 @@ Rules catalog includes **951 built-in detection rules** ([_last update on 2024-1
         - 04/07/2023 - major - Added filter to reduce false positives
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
         - 19/03/2024 - major - Added filter to reduce false positives
+        - 17/10/2024 - major - Removed a filter on a specific intake, the rule now works fine for every intake. A filter was also added to reduce false positives.
             
 ??? abstract "Winlogon wrong parent"
     
@@ -5659,6 +5625,7 @@ Rules catalog includes **951 built-in detection rules** ([_last update on 2024-1
         - 04/07/2023 - major - Added filter to reduce false positives
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
         - 19/03/2024 - major - Added filter to reduce false positives
+        - 17/10/2024 - major - Removed a filter on a specific intake, the rule now works fine for every intake. Filter was also added to reduce false positives.
             
 ??? abstract "Winrshost Wrong Parent"
     
@@ -5672,32 +5639,7 @@ Rules catalog includes **951 built-in detection rules** ([_last update on 2024-1
         - 04/07/2023 - major - Added filter to reduce false positives
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
         - 19/03/2024 - major - Added filter to reduce false positives
-            
-??? abstract "Winword wrong parent"
-    
-    Word is a well known Windows process used to read documents. Some malicious process could use it to run malicious code. The rule tries to detect winword.exe launched with a suspect parent process name.
-    
-    - **Effort:** master
-    
-    - **Changelog:**
-    
-        - 04/07/2023 - major - Added filter to reduce false positives
-        - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
-        - 19/03/2024 - major - Added filter to reduce false positives
-        - 12/09/2024 - minor - Adding filter to reduce false positives.
-            
-??? abstract "Wmiprvse Wrong Parent"
-    
-    Detects if the Wmiprvse process was executed by a non-legitimate parent process. The wmiprvse.exe process (wmiprvse stands for Microsoft Windows Management Instrumentation) is a generic process for managing clients on Windows. It is initialized the first time a client application connects and allows you to monitor system resources. This requires Windows command line logging.
-    
-    - **Effort:** master
-    
-    - **Changelog:**
-    
-        - 20/11/2023 - minor - Rule's effort level has been changed to advanced as it was too dependent on the environment.
-        - 04/07/2023 - major - Added filter to reduce false positives
-        - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
-        - 19/03/2024 - major - Added filter to reduce false positives
+        - 17/10/2024 - major - Removed a filter on a specific intake, the rule now works fine for every intake. Filters were also added to reduce false positives.
             
 ??? abstract "Wsmprovhost Wrong Parent"
     
@@ -5712,6 +5654,7 @@ Rules catalog includes **951 built-in detection rules** ([_last update on 2024-1
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
         - 25/10/2023 - minor - Adding filter to reduce false positives.
         - 19/03/2024 - major - Added filter to reduce false positives
+        - 17/10/2024 - major - Removed a filter on a specific intake, the rule now works fine for every intake.
             
 **Event Triggered Execution**
 
@@ -6191,19 +6134,6 @@ Rules catalog includes **951 built-in detection rules** ([_last update on 2024-1
     
         - 26/03/2024 - major - Rule's pattern field changed
             
-??? abstract "Explorer Wrong Parent"
-    
-    Detects suspicious spawning of explorer.exe process created by the rundll32.exe or regsvr32.exe. This behaviour is abnormal. Malware injecting itself into the explorer.exe process is quite common, in order to evade process-based defenses.
-    
-    - **Effort:** master
-    
-    - **Changelog:**
-    
-        - 20/11/2023 - minor - Rule's effort level has been changed to advanced as it was too dependent on the environment.
-        - 04/07/2023 - major - Added filter to reduce false positives
-        - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
-        - 19/03/2024 - major - Added filter to reduce false positives
-            
 ??? abstract "Malicious Named Pipe"
     
     Detects the creation of a named pipe used by known malware. Prerequisites are logging for PipeEvents in Sysmon config (Event ID 17 and 18).
@@ -6248,6 +6178,7 @@ Rules catalog includes **951 built-in detection rules** ([_last update on 2024-1
         - 04/07/2023 - major - Added filter to reduce false positives
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
         - 19/03/2024 - major - Added filter to reduce false positives
+        - 17/10/2024 - major - Removed a filter on a specific intake, the rule now works fine for every intake.
             
 ??? abstract "Searchprotocolhost Wrong Parent"
     
@@ -6261,6 +6192,7 @@ Rules catalog includes **951 built-in detection rules** ([_last update on 2024-1
         - 04/07/2023 - major - Added filter to reduce false positives
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
         - 12/03/2024 - minor - Added filter to reduce false positives
+        - 17/10/2024 - major - Removed a filter on a specific intake, the rule now works fine for every intake
             
 ??? abstract "Smss Wrong Parent"
     
@@ -6275,6 +6207,7 @@ Rules catalog includes **951 built-in detection rules** ([_last update on 2024-1
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
         - 19/03/2024 - major - Added filter to reduce false positives
         - 05/04/2024 - major - Added filter to reduce false positives
+        - 17/10/2024 - major - Removed a filter on a specific intake, the rule now works fine for every intake
             
 ??? abstract "Spoolsv Wrong Parent"
     
@@ -6288,6 +6221,7 @@ Rules catalog includes **951 built-in detection rules** ([_last update on 2024-1
         - 04/07/2023 - major - Added filter to reduce false positives
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
         - 19/03/2024 - major - Added filter to reduce false positives
+        - 17/10/2024 - major - Removed a filter on a specific intake, the rule now works fine for every intake. Added some new filters as well to reduce false positives.
             
 ??? abstract "Suspicious Process Requiring DLL Starts Without DLL"
     
@@ -6311,6 +6245,7 @@ Rules catalog includes **951 built-in detection rules** ([_last update on 2024-1
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
         - 31/01/2024 - minor - Adding filters to reduce false positives
         - 19/03/2024 - major - Added filter to reduce false positives
+        - 17/10/2024 - major - Removed a filter on a specific intake, the rule now works fine for every intake. A filter has also been added to reduce false positives.
             
 ??? abstract "Taskhost Wrong Parent"
     
@@ -6324,6 +6259,7 @@ Rules catalog includes **951 built-in detection rules** ([_last update on 2024-1
         - 04/07/2023 - major - Added filter to reduce false positives
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
         - 19/03/2024 - major - Added filter to reduce false positives
+        - 17/10/2024 - major - Removed a filter on a specific intake, the rule now works fine for every intake.
             
 ??? abstract "Taskhostw Wrong Parent"
     
@@ -6337,19 +6273,7 @@ Rules catalog includes **951 built-in detection rules** ([_last update on 2024-1
         - 04/07/2023 - major - Added filter to reduce false positives
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
         - 19/03/2024 - major - Added filter to reduce false positives
-            
-??? abstract "Wmiprvse Wrong Parent"
-    
-    Detects if the Wmiprvse process was executed by a non-legitimate parent process. The wmiprvse.exe process (wmiprvse stands for Microsoft Windows Management Instrumentation) is a generic process for managing clients on Windows. It is initialized the first time a client application connects and allows you to monitor system resources. This requires Windows command line logging.
-    
-    - **Effort:** master
-    
-    - **Changelog:**
-    
-        - 20/11/2023 - minor - Rule's effort level has been changed to advanced as it was too dependent on the environment.
-        - 04/07/2023 - major - Added filter to reduce false positives
-        - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
-        - 19/03/2024 - major - Added filter to reduce false positives
+        - 17/10/2024 - major - Removed a filter on a specific intake, the rule now works fine for every intake. Filters were also added to reduce false positives.
             
 ??? abstract "Wsmprovhost Wrong Parent"
     
@@ -6364,6 +6288,7 @@ Rules catalog includes **951 built-in detection rules** ([_last update on 2024-1
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
         - 25/10/2023 - minor - Adding filter to reduce false positives.
         - 19/03/2024 - major - Added filter to reduce false positives
+        - 17/10/2024 - major - Removed a filter on a specific intake, the rule now works fine for every intake.
             
 **Exploitation for Privilege Escalation**
 
@@ -6995,6 +6920,7 @@ Rules catalog includes **951 built-in detection rules** ([_last update on 2024-1
         - 04/07/2023 - major - Added filter to reduce false positives
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
         - 19/03/2024 - major - Added filter to reduce false positives
+        - 17/10/2024 - major - Removed a filter on a specific intake, the rule now works fine for every intake.
             
 ??? abstract "Dllhost Wrong Parent"
     
@@ -7008,19 +6934,7 @@ Rules catalog includes **951 built-in detection rules** ([_last update on 2024-1
         - 04/07/2023 - major - Added filter to reduce false positives
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
         - 19/03/2024 - major - Added filter to reduce false positives
-            
-??? abstract "Explorer Wrong Parent"
-    
-    Detects suspicious spawning of explorer.exe process created by the rundll32.exe or regsvr32.exe. This behaviour is abnormal. Malware injecting itself into the explorer.exe process is quite common, in order to evade process-based defenses.
-    
-    - **Effort:** master
-    
-    - **Changelog:**
-    
-        - 20/11/2023 - minor - Rule's effort level has been changed to advanced as it was too dependent on the environment.
-        - 04/07/2023 - major - Added filter to reduce false positives
-        - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
-        - 19/03/2024 - major - Added filter to reduce false positives
+        - 17/10/2024 - major - Removed a filter on a specific intake, the rule now works fine for every intake. Some filters on parent process names were also added to reduce false positives.
             
 ??? abstract "Gpscript Suspicious Parent"
     
@@ -7046,6 +6960,7 @@ Rules catalog includes **951 built-in detection rules** ([_last update on 2024-1
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
         - 19/03/2024 - major - Added filter to reduce false positives
         - 07/06/2024 - major - Added filter to reduce false positives
+        - 17/10/2024 - major - Removed a filter on a specific intake, the rule now works fine for every intake
             
 ??? abstract "Lsass Wrong Parent"
     
@@ -7059,6 +6974,7 @@ Rules catalog includes **951 built-in detection rules** ([_last update on 2024-1
         - 04/07/2023 - major - Added filter to reduce false positives
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
         - 19/03/2024 - major - Added filter to reduce false positives
+        - 17/10/2024 - major - The rule has been reworked for a specific intake to allow our customers to activate the rule for this intake which was not the case before.
             
 ??? abstract "Malicious Service Installations"
     
@@ -7110,6 +7026,7 @@ Rules catalog includes **951 built-in detection rules** ([_last update on 2024-1
         - 04/07/2023 - major - Added filter to reduce false positives
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
         - 19/03/2024 - major - Added filter to reduce false positives
+        - 17/10/2024 - major - Removed a filter on a specific intake, the rule now works fine for every intake.
             
 ??? abstract "Searchprotocolhost Child Found"
     
@@ -7129,6 +7046,7 @@ Rules catalog includes **951 built-in detection rules** ([_last update on 2024-1
         - 04/07/2023 - major - Added filter to reduce false positives
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
         - 12/03/2024 - minor - Added filter to reduce false positives
+        - 17/10/2024 - major - Removed a filter on a specific intake, the rule now works fine for every intake
             
 ??? abstract "Smss Wrong Parent"
     
@@ -7143,6 +7061,7 @@ Rules catalog includes **951 built-in detection rules** ([_last update on 2024-1
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
         - 19/03/2024 - major - Added filter to reduce false positives
         - 05/04/2024 - major - Added filter to reduce false positives
+        - 17/10/2024 - major - Removed a filter on a specific intake, the rule now works fine for every intake
             
 ??? abstract "SolarWinds Wrong Child Process"
     
@@ -7167,6 +7086,7 @@ Rules catalog includes **951 built-in detection rules** ([_last update on 2024-1
         - 04/07/2023 - major - Added filter to reduce false positives
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
         - 19/03/2024 - major - Added filter to reduce false positives
+        - 17/10/2024 - major - Removed a filter on a specific intake, the rule now works fine for every intake. Added some new filters as well to reduce false positives.
             
 ??? abstract "StoneDrill Service Install"
     
@@ -7196,6 +7116,7 @@ Rules catalog includes **951 built-in detection rules** ([_last update on 2024-1
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
         - 31/01/2024 - minor - Adding filters to reduce false positives
         - 19/03/2024 - major - Added filter to reduce false positives
+        - 17/10/2024 - major - Removed a filter on a specific intake, the rule now works fine for every intake. A filter has also been added to reduce false positives.
             
 ??? abstract "Taskhost Wrong Parent"
     
@@ -7209,6 +7130,7 @@ Rules catalog includes **951 built-in detection rules** ([_last update on 2024-1
         - 04/07/2023 - major - Added filter to reduce false positives
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
         - 19/03/2024 - major - Added filter to reduce false positives
+        - 17/10/2024 - major - Removed a filter on a specific intake, the rule now works fine for every intake.
             
 ??? abstract "Taskhost or Taskhostw Suspicious Child Found"
     
@@ -7232,19 +7154,7 @@ Rules catalog includes **951 built-in detection rules** ([_last update on 2024-1
         - 04/07/2023 - major - Added filter to reduce false positives
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
         - 19/03/2024 - major - Added filter to reduce false positives
-            
-??? abstract "Userinit Wrong Parent"
-    
-    Userinit.exe is a key process in the Windows operating system. On boot-up it manages the different start up sequences needed, such as establishing network connection and starting up the Windows shell. This rule analyse if the parent of this process is a legitimate one or not.
-    
-    - **Effort:** master
-    
-    - **Changelog:**
-    
-        - 20/11/2023 - minor - Rule's effort level has been changed to advanced as it was too dependent on the environment.
-        - 04/07/2023 - major - Added filter to reduce false positives
-        - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
-        - 19/03/2024 - major - Added filter to reduce false positives
+        - 17/10/2024 - major - Removed a filter on a specific intake, the rule now works fine for every intake. Filters were also added to reduce false positives.
             
 ??? abstract "WMI Persistence Command Line Event Consumer"
     
@@ -7264,6 +7174,7 @@ Rules catalog includes **951 built-in detection rules** ([_last update on 2024-1
         - 04/07/2023 - major - Added filter to reduce false positives
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
         - 19/03/2024 - major - Added filter to reduce false positives
+        - 17/10/2024 - major - Removed a filter on a specific intake, the rule now works fine for every intake. A filter was also added to reduce false positives.
             
 ??? abstract "Winlogon wrong parent"
     
@@ -7276,6 +7187,7 @@ Rules catalog includes **951 built-in detection rules** ([_last update on 2024-1
         - 04/07/2023 - major - Added filter to reduce false positives
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
         - 19/03/2024 - major - Added filter to reduce false positives
+        - 17/10/2024 - major - Removed a filter on a specific intake, the rule now works fine for every intake. Filter was also added to reduce false positives.
             
 ??? abstract "Winrshost Wrong Parent"
     
@@ -7289,32 +7201,7 @@ Rules catalog includes **951 built-in detection rules** ([_last update on 2024-1
         - 04/07/2023 - major - Added filter to reduce false positives
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
         - 19/03/2024 - major - Added filter to reduce false positives
-            
-??? abstract "Winword wrong parent"
-    
-    Word is a well known Windows process used to read documents. Some malicious process could use it to run malicious code. The rule tries to detect winword.exe launched with a suspect parent process name.
-    
-    - **Effort:** master
-    
-    - **Changelog:**
-    
-        - 04/07/2023 - major - Added filter to reduce false positives
-        - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
-        - 19/03/2024 - major - Added filter to reduce false positives
-        - 12/09/2024 - minor - Adding filter to reduce false positives.
-            
-??? abstract "Wmiprvse Wrong Parent"
-    
-    Detects if the Wmiprvse process was executed by a non-legitimate parent process. The wmiprvse.exe process (wmiprvse stands for Microsoft Windows Management Instrumentation) is a generic process for managing clients on Windows. It is initialized the first time a client application connects and allows you to monitor system resources. This requires Windows command line logging.
-    
-    - **Effort:** master
-    
-    - **Changelog:**
-    
-        - 20/11/2023 - minor - Rule's effort level has been changed to advanced as it was too dependent on the environment.
-        - 04/07/2023 - major - Added filter to reduce false positives
-        - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
-        - 19/03/2024 - major - Added filter to reduce false positives
+        - 17/10/2024 - major - Removed a filter on a specific intake, the rule now works fine for every intake. Filters were also added to reduce false positives.
             
 ??? abstract "Wsmprovhost Wrong Parent"
     
@@ -7329,6 +7216,7 @@ Rules catalog includes **951 built-in detection rules** ([_last update on 2024-1
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
         - 25/10/2023 - minor - Adding filter to reduce false positives.
         - 19/03/2024 - major - Added filter to reduce false positives
+        - 17/10/2024 - major - Removed a filter on a specific intake, the rule now works fine for every intake.
             
 **Event Triggered Execution**
 
@@ -7804,19 +7692,6 @@ Rules catalog includes **951 built-in detection rules** ([_last update on 2024-1
     
     - **Effort:** advanced
     
-??? abstract "Explorer Wrong Parent"
-    
-    Detects suspicious spawning of explorer.exe process created by the rundll32.exe or regsvr32.exe. This behaviour is abnormal. Malware injecting itself into the explorer.exe process is quite common, in order to evade process-based defenses.
-    
-    - **Effort:** master
-    
-    - **Changelog:**
-    
-        - 20/11/2023 - minor - Rule's effort level has been changed to advanced as it was too dependent on the environment.
-        - 04/07/2023 - major - Added filter to reduce false positives
-        - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
-        - 19/03/2024 - major - Added filter to reduce false positives
-            
 ??? abstract "Formbook Hijacked Process Command"
     
     Detects process hijacked by Formbook malware which executes specific commands to delete the dropper or copy browser credentials to the database before sending them to the C2.
@@ -7931,19 +7806,6 @@ Rules catalog includes **951 built-in detection rules** ([_last update on 2024-1
     
         - 26/03/2024 - major - Rule's pattern field changed
             
-??? abstract "Explorer Wrong Parent"
-    
-    Detects suspicious spawning of explorer.exe process created by the rundll32.exe or regsvr32.exe. This behaviour is abnormal. Malware injecting itself into the explorer.exe process is quite common, in order to evade process-based defenses.
-    
-    - **Effort:** master
-    
-    - **Changelog:**
-    
-        - 20/11/2023 - minor - Rule's effort level has been changed to advanced as it was too dependent on the environment.
-        - 04/07/2023 - major - Added filter to reduce false positives
-        - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
-        - 19/03/2024 - major - Added filter to reduce false positives
-            
 ??? abstract "Malicious Named Pipe"
     
     Detects the creation of a named pipe used by known malware. Prerequisites are logging for PipeEvents in Sysmon config (Event ID 17 and 18).
@@ -7988,6 +7850,7 @@ Rules catalog includes **951 built-in detection rules** ([_last update on 2024-1
         - 04/07/2023 - major - Added filter to reduce false positives
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
         - 19/03/2024 - major - Added filter to reduce false positives
+        - 17/10/2024 - major - Removed a filter on a specific intake, the rule now works fine for every intake.
             
 ??? abstract "Searchprotocolhost Wrong Parent"
     
@@ -8001,6 +7864,7 @@ Rules catalog includes **951 built-in detection rules** ([_last update on 2024-1
         - 04/07/2023 - major - Added filter to reduce false positives
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
         - 12/03/2024 - minor - Added filter to reduce false positives
+        - 17/10/2024 - major - Removed a filter on a specific intake, the rule now works fine for every intake
             
 ??? abstract "Smss Wrong Parent"
     
@@ -8015,6 +7879,7 @@ Rules catalog includes **951 built-in detection rules** ([_last update on 2024-1
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
         - 19/03/2024 - major - Added filter to reduce false positives
         - 05/04/2024 - major - Added filter to reduce false positives
+        - 17/10/2024 - major - Removed a filter on a specific intake, the rule now works fine for every intake
             
 ??? abstract "Spoolsv Wrong Parent"
     
@@ -8028,6 +7893,7 @@ Rules catalog includes **951 built-in detection rules** ([_last update on 2024-1
         - 04/07/2023 - major - Added filter to reduce false positives
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
         - 19/03/2024 - major - Added filter to reduce false positives
+        - 17/10/2024 - major - Removed a filter on a specific intake, the rule now works fine for every intake. Added some new filters as well to reduce false positives.
             
 ??? abstract "Suspicious Process Requiring DLL Starts Without DLL"
     
@@ -8051,6 +7917,7 @@ Rules catalog includes **951 built-in detection rules** ([_last update on 2024-1
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
         - 31/01/2024 - minor - Adding filters to reduce false positives
         - 19/03/2024 - major - Added filter to reduce false positives
+        - 17/10/2024 - major - Removed a filter on a specific intake, the rule now works fine for every intake. A filter has also been added to reduce false positives.
             
 ??? abstract "Taskhost Wrong Parent"
     
@@ -8064,6 +7931,7 @@ Rules catalog includes **951 built-in detection rules** ([_last update on 2024-1
         - 04/07/2023 - major - Added filter to reduce false positives
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
         - 19/03/2024 - major - Added filter to reduce false positives
+        - 17/10/2024 - major - Removed a filter on a specific intake, the rule now works fine for every intake.
             
 ??? abstract "Taskhostw Wrong Parent"
     
@@ -8077,19 +7945,7 @@ Rules catalog includes **951 built-in detection rules** ([_last update on 2024-1
         - 04/07/2023 - major - Added filter to reduce false positives
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
         - 19/03/2024 - major - Added filter to reduce false positives
-            
-??? abstract "Wmiprvse Wrong Parent"
-    
-    Detects if the Wmiprvse process was executed by a non-legitimate parent process. The wmiprvse.exe process (wmiprvse stands for Microsoft Windows Management Instrumentation) is a generic process for managing clients on Windows. It is initialized the first time a client application connects and allows you to monitor system resources. This requires Windows command line logging.
-    
-    - **Effort:** master
-    
-    - **Changelog:**
-    
-        - 20/11/2023 - minor - Rule's effort level has been changed to advanced as it was too dependent on the environment.
-        - 04/07/2023 - major - Added filter to reduce false positives
-        - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
-        - 19/03/2024 - major - Added filter to reduce false positives
+        - 17/10/2024 - major - Removed a filter on a specific intake, the rule now works fine for every intake. Filters were also added to reduce false positives.
             
 ??? abstract "Wsmprovhost Wrong Parent"
     
@@ -8104,6 +7960,7 @@ Rules catalog includes **951 built-in detection rules** ([_last update on 2024-1
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
         - 25/10/2023 - minor - Adding filter to reduce false positives.
         - 19/03/2024 - major - Added filter to reduce false positives
+        - 17/10/2024 - major - Removed a filter on a specific intake, the rule now works fine for every intake.
             
 **Scripting**
 
@@ -8682,6 +8539,10 @@ Rules catalog includes **951 built-in detection rules** ([_last update on 2024-1
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 17/10/2024 - minor - Adding similarity_strategy
+            
 ??? abstract "Suspicious XOR Encoded PowerShell Command Line"
     
     Detects suspicious powershell process which includes bxor command, alternative obfuscation  method to b64 encoded commands.
@@ -8938,6 +8799,10 @@ Rules catalog includes **951 built-in detection rules** ([_last update on 2024-1
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 17/10/2024 - minor - Adding similarity_strategy
+            
 ??? abstract "Suspicious Regasm Regsvcs Usage"
     
     catch abuse of regsvcs and regasm lolbin by attacker
