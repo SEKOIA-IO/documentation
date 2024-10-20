@@ -198,10 +198,10 @@ from jinja2 import Template
 file_json = open("file.json", "r")
 loading = json.load(file_json)
 
-# The JINJA partern to be tested
-jinja_patern = "{{urgency.value}}"
+# The JINJA pattern to be tested
+jinja_pattern = "{{urgency.value}}"
 
-tm = Template(jinja_patern)
+tm = Template(jinja_pattern)
 
 msg = tm.render(urgency=loading["urgency"])
 print(msg)
