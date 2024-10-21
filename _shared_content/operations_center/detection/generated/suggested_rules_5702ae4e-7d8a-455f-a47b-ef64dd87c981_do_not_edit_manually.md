@@ -237,15 +237,27 @@ The following Sekoia.io built-in rules match the intake **Fortinet FortiGate**. 
     
     - **Effort:** advanced
 
-??? abstract "Fortinet FortiGate Firewall Login In Failure"
+??? abstract "Fortigate Firewall Login In Failure"
     
     Detects failed login attemps on firewall administration rule. Prerequisites, check that the firewall logs format corresponds to the rule
     
     - **Effort:** master
 
-??? abstract "Fortinet FortiGate Firewall Successful External Login"
+??? abstract "Fortigate Firewall Successful External Login"
     
     Detects succesfull access to administration console of firewall from another IP address than 127.0.0.1. Prerequisites, check that the firewall logs format corresponds to the rule
+    
+    - **Effort:** master
+
+??? abstract "Fortigate IPS Critical Alert"
+    
+    Fortigate intrusion detection alert with critical severity.
+    
+    - **Effort:** master
+
+??? abstract "Fortigate IPS High Severity Alert"
+    
+    Fortigate intrusion detection alert with high severity.
     
     - **Effort:** master
 

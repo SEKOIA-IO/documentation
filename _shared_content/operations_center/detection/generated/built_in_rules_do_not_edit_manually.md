@@ -1,4 +1,4 @@
-Rules catalog includes **947 built-in detection rules** ([_last update on 2024-10-18_](rules_changelog.md)).
+Rules catalog includes **950 built-in detection rules** ([_last update on 2024-10-21_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Identity Information**
 
@@ -81,6 +81,12 @@ Rules catalog includes **947 built-in detection rules** ([_last update on 2024-1
     
 **Active Scanning**
 
+??? abstract "Anomaly Fortigate IPS Alert Peak"
+    
+    The rule detects abnormally high number of Fortigate IPS alert
+    
+    - **Effort:** master
+    
 ??? abstract "Bitsight SPM Material Vulnerability"
     
     Bitsight SPM has raised a material vulnerability finding
@@ -142,6 +148,18 @@ Rules catalog includes **947 built-in detection rules** ([_last update on 2024-1
 ??? abstract "Fastly Next-Gen WAF Audit Threat Alert"
     
     Forward a threat detection made by Fastly Next-Gen WAF Audit Logs
+    
+    - **Effort:** master
+    
+??? abstract "Fortigate IPS Critical Alert"
+    
+    Fortigate intrusion detection alert with critical severity.
+    
+    - **Effort:** master
+    
+??? abstract "Fortigate IPS High Severity Alert"
+    
+    Fortigate intrusion detection alert with high severity.
     
     - **Effort:** master
     
@@ -688,7 +706,7 @@ Rules catalog includes **947 built-in detection rules** ([_last update on 2024-1
         - 29/05/2024 - major - Adding new field and switching to correlation rule.
         - 04/04/2024 - major - Rule's pattern field changed
             
-??? abstract "Fortinet FortiGate Firewall Successful External Login"
+??? abstract "Fortigate Firewall Successful External Login"
     
     Detects succesfull access to administration console of firewall from another IP address than 127.0.0.1. Prerequisites, check that the firewall logs format corresponds to the rule
     
@@ -4713,7 +4731,7 @@ Rules catalog includes **947 built-in detection rules** ([_last update on 2024-1
         - 29/05/2024 - major - Adding new field and switching to correlation rule.
         - 04/04/2024 - major - Rule's pattern field changed
             
-??? abstract "Fortinet FortiGate Firewall Successful External Login"
+??? abstract "Fortigate Firewall Successful External Login"
     
     Detects succesfull access to administration console of firewall from another IP address than 127.0.0.1. Prerequisites, check that the firewall logs format corresponds to the rule
     
@@ -6421,7 +6439,7 @@ Rules catalog includes **947 built-in detection rules** ([_last update on 2024-1
         - 29/05/2024 - major - Adding new field and switching to correlation rule.
         - 04/04/2024 - major - Rule's pattern field changed
             
-??? abstract "Fortinet FortiGate Firewall Successful External Login"
+??? abstract "Fortigate Firewall Successful External Login"
     
     Detects succesfull access to administration console of firewall from another IP address than 127.0.0.1. Prerequisites, check that the firewall logs format corresponds to the rule
     
@@ -8158,7 +8176,7 @@ Rules catalog includes **947 built-in detection rules** ([_last update on 2024-1
         - 29/05/2024 - major - Adding new field and switching to correlation rule.
         - 04/04/2024 - major - Rule's pattern field changed
             
-??? abstract "Fortinet FortiGate Firewall Successful External Login"
+??? abstract "Fortigate Firewall Successful External Login"
     
     Detects succesfull access to administration console of firewall from another IP address than 127.0.0.1. Prerequisites, check that the firewall logs format corresponds to the rule
     
@@ -10508,13 +10526,13 @@ Rules catalog includes **947 built-in detection rules** ([_last update on 2024-1
         - 09/04/2024 - minor - Error code 500532 added
         - 16/04/2024 - minor - Add more correlation IDs and error code 50052
             
-??? abstract "Fortinet FortiGate Firewall Login In Failure"
+??? abstract "Fortigate Firewall Login In Failure"
     
     Detects failed login attemps on firewall administration rule. Prerequisites, check that the firewall logs format corresponds to the rule
     
     - **Effort:** master
     
-??? abstract "Fortinet FortiGate Firewall Successful External Login"
+??? abstract "Fortigate Firewall Successful External Login"
     
     Detects succesfull access to administration console of firewall from another IP address than 127.0.0.1. Prerequisites, check that the firewall logs format corresponds to the rule
     
