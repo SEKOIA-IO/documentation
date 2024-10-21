@@ -1,0 +1,55 @@
+name: Check Broken Links
+
+on:
+  pull_request:
+
+jobs:
+  check-broken-links:
+    name: Check Broken Links
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        id: setup-python
+        with:
+          python-version: '3.11'
+
+      - name: Find Comment
+        uses: peter-evans/find-comment@v3
+        id: fc
+        with:
+          issue-number: 2034
+          comment-author: github-actions[bot]
+          body-includes: Found broken links        
+
+      # install linkchecker
+      - name: Install linkchecker
+        run: sudo apt-get install linkchecker
+
+      # execute linkchecker on docs.sekoia.io
+      - name: Check broken links
+        run: linkchecker --check-extern --no-follow-url="!://storage.gra.cloud.ovh.net/v1/AUTH_741841e1c7da4c50a76152cbc2609bd1/sekoiaio-documentation-previews" --ignore-url="github.com/SEKOIA-IO" --ignore-url="https://storage.gra.cloud.ovh.net/v1/AUTH_741841e1c7da4c50a76152cbc2609bd1/sekoiaio-documentation-previews/${{ steps.pr_number.outputs.pr_number }}/tip/" -o csv -F csv "https://storage.gra.cloud.ovh.net/v1/AUTH_741841e1c7da4c50a76152cbc2609bd1/sekoiaio-documentation-previews/2034/getting_started/"
+
+      # execute python script to parse the csv file and get the broken links
+      - name: Parse broken links
+        run: python scripts/broken_links/create_issues.py linkchecker-out.csv
+
+      - name: Add comment to PR
+        uses: peter-evans/create-or-update-comment@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          issue-number: 2034
+          comment-id: ${{ steps.fc.outputs.comment-id }}
+          edit-mode: replace
+          body: |
+            Found broken links in preview environment !
+
+
+
+
+      
+
