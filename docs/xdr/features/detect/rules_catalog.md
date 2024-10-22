@@ -13,7 +13,6 @@ Sekoia.io supports the following rule types:
 - **Sigma**: signature rules using the [Sigma detection language](sigma.md)
 - **CTI**: rules based on Indicators Of Compromise (IOCs) coming from a Threat Intelligence feed. These rules automatically detect thousands of known malicious indicators (such as domain names, URLs, IP addresses, etc.). A CTI rule "SEKOIA Intelligence Feed" is already built-in to detect malicious activity based on a list of indicators from Sekoia.io's own Intelligence feed, continuously updated by our Threat & Detection Research team
 - **Anomaly**: [univariate anomaly detection rules](anomaly.md).
-- **STIX** (deprecated): signature rules using the STIX Patterning language
 
 ## Rules Catalog
 The Rules Catalog page can be used to list and manage all detection rules. Many filters are available and can be combined to easily find the rules you are looking for.
@@ -31,12 +30,8 @@ The Rules Catalog page can be used to list and manage all detection rules. Many 
 The Rules Catalog lists all detection rules available to your organization: 
 <figure markdown>![available_verified_rules](/assets/operation_center/rules_catalog/available_verified.png){ width=300 }</figure>. 
 
-- **Verified Rules**: rules with the following logo ![verified_logo](/assets/operation_center/rules_catalog/verified_logo.PNG) are verified. These rules are created for you by Sekoia.io's Threat & Detection Research team and already built-in. Verified rules are constantly updated to improve detection. Furthermore, they follow a specific process to test them and be certain they won't cause many false positives. This process is described in our blogpost [XDR detection engineering at scale: crafting detection rules for SecOps efficiency](https://blog.sekoia.io/xdr-detection-rules-at-scale/). This set of more than 550 rules can be used to detect known threats, attack patterns, etc.
+- **Verified Rules**: rules with the following logo ![verified_logo](/assets/operation_center/rules_catalog/verified_logo.PNG) are verified. These rules are created for you by Sekoia.io's Threat & Detection Research team and already built-in. Verified rules are constantly updated to improve detection. Furthermore, they follow a specific process to test them and be certain they won't cause many false positives. This process is described in our blogpost [XDR detection engineering at scale: crafting detection rules for SecOps efficiency](https://blog.sekoia.io/xdr-detection-rules-at-scale/). This set of more than 900+ rules can be used to detect known threats, attack patterns, etc.
 - **Your Rules**: rules created by your team that are specific to your organization.
-
-The Available Rules counter displays the total number of rules (verified + custom). You can click on the `Verified counter` to list only Verified rules.
-
-You can then click on the `Verified filter` if you would rather see only Custom rules.
 
 #### Effort level
 
@@ -53,16 +48,25 @@ Description of each effort level:
 - `Advanced`: rule could require more effort to be enabled and could raise alerts frequently depending on the IT configuration
 - `Master`: rule could require a specific configuration to be enabled and/or could raise a high number of alerts, but is designed to detect weaker signals. `Master` rules usually require an additional customization effort, depending on the IT context and configuration. They are designed for more mature organizations. 
 
-#### Capabilities
+#### Intake formats
 
-The rules are also associated with different capabilities:
+Rules are associated with Intake formats that they are compatible with. Detection rules can be enabled when they have a compatible intake format configured that provide the necessary data to detect suspicious activites.
 
-- Offensive Capabilities: `threats` or `attack patterns` that they can detect
-- Defensive Capabilities: `data sources` on which they operate
+Select an intake format in the left panel to list rules compatible with the intake format.
 
-![capabilities](/assets/operation_center/rules_catalog/rules_capabilities.png)
+![intakes](/assets/operation_center/rules_catalog/filter_by_intake.png)
 
-Capabilities that have associated rules inside the catalog are listed on the left of the page. You can click on any Threat, Attack Pattern, or Datasource to list only rules that are associated with it.
+You can also filter by intake formats that you have already configured with the associated filter.
+
+![filter](/assets/operation_center/rules_catalog/intake_configured.png)
+
+#### Threats
+
+Rules are associated with Threats or Attack Pattern that they can detect.
+
+Use the associated search filter to list rules associated to specific threats.
+
+![threats](/assets/operation_center/rules_catalog/search_filters.png)
 
 #### Tags
 
@@ -86,17 +90,17 @@ To filter rules using tags, there are two ways:
 
 The MITRE ATT&CK framework is a comprehensive matrix of **tactics** and **techniques** used by threat hunters and defenders to better classify attacks and assess an organization's risk.
 
-Every time you enable a rule, it appears in blue on the matrix in one or many cells. Each cell represents an attack technique. The cells are clickable and enable you to see or disable the rules activated in each one.
+Whenever you filter the Rules Catalog, the matrix will update and rules will appear in blue on the matrix in one or many cells. Each cell represents an attack technique. The cells are clickable and allow you to consult or enable missing rules.
 
 ![security_profile](/assets/operation_center/rules_catalog/security_profilev2.png){: style="max-width:100%"}
 
-You can see how many rules are enabled in a cell by hovering over it. 
+You can see how many rules are available in a cell by hovering over it.
 
-The color changes depending on the number of rules activated in one cell: 
+The color changes depending on the number of rules contained in one cell:
 
-- Blue cells means rules are enabled. Darker cells mean there are multiple rules enabled for this technique and lighter cells mean there are only few rules enabled for this tactic. 
+- Colored cells means they contain rules. Darker cells mean there are many rules for this technique and lighter cells mean there are only few rules enabled
 
-- A white cell means that no rules are activated in it. 
+- A white cell means that no rules available in it
 
 ---
 
@@ -113,6 +117,18 @@ You can click on the name of a rule to display additional details, such as, but 
 - [Similarity strategy](../../investigate/alerts/#similarity-strategies) for the produced alerts
 
 ![rule details](/assets/operation_center/rules_catalog/rule_details2.png)
+
+### Compatible intake formats
+
+This section list the compatible intake formats you can use with the detection rule. Configuring one of these intake formats allow the detection rule to receive compatible events to perform detection.
+
+In the list, the `configured` badge indicates intake formats that are already configured. You can click on the configured intake to go the intake page.
+
+![configured intake](/assets/operation_center/rules_catalog/configured_intake.png)
+
+!!! tip
+    You can use this feature to run simulations with the MITRE matrix to improve your security posture.
+    Select a new intake to have a preview of the techniques that will be covered by configuring this datasource.
 
 ### Alert filters
 
