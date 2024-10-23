@@ -3,14 +3,14 @@
 To forward logs to Sekoia.io, several options format are available:
 
 - Send your events as line-oriented records
-- Send your events in a JSON array
-- Send your events as a structured JSON payload
+- Send your events as a JSON object
+- Send your events as a structured payload
 
 For each option, we will have to supply an intake key. The collector endpoint of Sekoia.io will provide event identifiers within the Sekoia.io detection workflow in the form of a JSON payload.
 
 ### Push our events to Sekoia.io as line-oriented records
 
-To forward events, you can use the `/plain` endpoint.
+To forward events as plain records, you can use the `/plain` endpoint.
 
 The following headers are handled by Sekoia.io’S HTTPS log collector:
 
@@ -20,7 +20,7 @@ The following headers are handled by Sekoia.io’S HTTPS log collector:
 | `X-SEKOIAIO-EVENT-TIMESTAMP` | No         | Datetime | Event date if you want to push your own date (fallback is to use the reception’s date) |
 
 
-Supply the intake key as the header `X-SEKOIAIO-INTAKE-KEY` or as password in the HTTP Basic authentication mechanism.
+Supply the intake key as the header `X-SEKOIAIO-INTAKE-KEY`, as password in the HTTP Basic authentication mechanism or as a parameter in the querystring.
 
 To push one event, just POST content to `https://intake.sekoia.io/plain`
 
@@ -63,7 +63,7 @@ To push one event, just POST content to `https://intake.sekoia.io/plain`
 
     1. Will print  `{"event_id": "uuid"}`
 
-For numerous events, you can use the alternative endpoint `/batch`. The events should be separated by the line feed character (`U+000A` or `\n`):
+For numerous events, you can use the alternative endpoint `/plain/batch`. The events should be separated by the line feed character (`U+000A` or `\n`):
 
 === "With the intake key as header"
 
@@ -126,7 +126,7 @@ The following headers are handled by Sekoia.io’S HTTPS log collector:
 | `X-SEKOIAIO-EVENT-TIMESTAMP` | No         | Datetime | Event date if you want to push your own date (fallback is to use the reception’s date) |
 
 
-Supply the intake key as the header `X-SEKOIAIO-INTAKE-KEY` or as password in the HTTP Basic authentication mechanism.
+Supply the intake key as the header `X-SEKOIAIO-INTAKE-KEY`, as password in the HTTP Basic authentication mechanism or as a parameter in the querystring.
 
 Use the endpoint `/jsons`. This endpoint accepts a set of events:
 
