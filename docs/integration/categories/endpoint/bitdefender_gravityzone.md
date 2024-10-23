@@ -4,11 +4,12 @@ type: intake
 
 ## Overview
 
-!!! Warning
-    Important note - This format is currently in beta. We highly value your feedback to improve its performance.
-
 Bitdefender GravityZone is an enterprise-level cybersecurity solution offering advanced threat prevention, detection, and response for endpoints, networks, and cloud environments. It features centralized management for streamlined security oversight.
 
+- **Vendor**: Bitdefender
+- **Supported environment**: Cloud
+- **Version compatibility**: 6.55, 6.56 (Latest version as of now)
+- **Detection based on**: Telemetry / Alert
 - **Supported application or feature**:
     - Antiphishing
     - Application Control
@@ -30,6 +31,9 @@ Bitdefender GravityZone is an enterprise-level cybersecurity solution offering a
     - SMTP Connection
     - Internet Connection
     - Malware Outbreak
+
+!!! Warning
+    Important note - This format is currently in beta. We highly value your feedback to improve its performance.
 
 ## Configure
 
