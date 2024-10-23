@@ -330,6 +330,7 @@ nav:
       - Vade M365: integration/categories/email/vade.md
     - Endpoint:
       - Azure Windows: integration/categories/endpoint/azure_windows.md
+      - Bitdefender GravityZone: integration/categories/endpoint/bitdefender_gravityzone.md
       - Check Point Harmony Mobile: integration/categories/endpoint/checkpoint_harmony_mobile.md
       - CrowdStrike Falcon: integration/categories/endpoint/crowdstrike_falcon.md
       - CrowdStrike Falcon Telemetry: integration/categories/endpoint/crowdstrike_falcon_telemetry.md
@@ -722,6 +723,7 @@ plugins:
       xdr/features/collect/integrations/email/vade.md: integration/categories/email/vade.md
       xdr/features/collect/integrations/email/vade_cloud.md: integration/categories/email/vade_cloud.md
       xdr/features/collect/integrations/endpoint/auditbeat_linux.md: integration/categories/endpoint/auditbeat_linux.md
+      xdr/features/collect/integrations/endpoint/bitdefender_gravityzone.md: integration/categories/endpoint/bitdefender_gravityzone.md
       xdr/features/collect/integrations/endpoint/checkpoint_harmony_mobile.md: integration/categories/endpoint/checkpoint_harmony_mobile.md
       xdr/features/collect/integrations/endpoint/crowdstrike_falcon.md: integration/categories/endpoint/crowdstrike_falcon.md
       xdr/features/collect/integrations/endpoint/crowdstrike_falcon_telemetry.md: integration/categories/endpoint/crowdstrike_falcon_telemetry.md
