@@ -112,7 +112,7 @@ So you can setup it in two ways:
               "status": 1,
               "serviceType": "cef",
               "serviceSettings": {
-                "url": "https://intake.sekoia.io/many?path=%24.events",
+                "url": "https://intake.sekoia.io/many?path=%24.events&status_code=200",
                 "requireValidSslCertificate": True,
                 "authorization": f"Basic {key}"
               },
@@ -199,7 +199,7 @@ So you can setup it in two ways:
           "status": 1,
           "serviceType": "cef",
           "serviceSettings": {
-            "url": "https://intake.sekoia.io/many?path=%24.events",
+            "url": "https://intake.sekoia.io/many?path=%24.events&status_code=200",
             "authorization": "Basic <base64_intake_key>",
             "requireValidSslCertificate": true
           },
