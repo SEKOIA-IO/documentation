@@ -6,10 +6,6 @@ While IOCs produced by Sekoia’s own Threat & Detection Research team are direc
 
 You can then easily see telemetry on these collections and use them inside detection rules.
 
-Inside the Intelligence Center, you can access IOC Collections directly from the menu. Be sure you have a role with the permission `View IOC Collections`, `View IOC collections telemetry` and `Manage IOC collections`.
-
-![collection_menu](/assets/operation_center/IOCscollections/collections_menu.png){: style="max-width:100%"}
-
 ## Create an IOC Collection
 
 You can open the IOC Collection creation modal by clicking on `+ Collection`. You will then have to fill out the form:
@@ -29,15 +25,18 @@ You can add indicators to a collection by clicking on the `Import` button. You w
 
 Each indicator inside the collection can have the following properties:
 
-- Observable: this is the actual IOC value (can be an IP address, a domain name, a URL, a file hash or an email address)
-- Related Threats: a list of threats that are related to this indicator. These threats have to exist inside the Intelligence Center
-- Valid From: the date from which this indicator should be considered valid
-- Valid Until: the date from which this indicator should no longer be considered valid
-- Kill Chain Phases: steps of the attack this indicator belongs to
-- Description: any text that would add additional context. It is limited to **500 characters**
+| Field                 | Description                                                                                                          |
+|-----------------------|----------------------------------------------------------------------------------------------------------------------|
+| Observable            | This is the actual IOC value (can be an IP address, a domain name, a URL, a file hash (MD5, SHA-1, SHA-256, SHA-512) or an email address) |
+| Related Threats       | A list of threats that are related to this indicator. These threats have to exist inside the Intelligence Center        |
+| Valid From            | The date from which this indicator should be considered valid                                                       |
+| Valid Until           | The date from which this indicator should no longer be considered valid                                              |
+| Kill Chain Phases     | Steps of the attack this indicator belongs to                                                                        |
+| Description           | Any text that would add additional context. It is limited to **500 characters**                                      |
+
 
 !!! warning
-	If you select the kill chain phase 'Command and Control' when importing IP addresses in an IOC collection, our detection engines will only look into `destination.ip`. This is meant to reduce false positives, such as network scans.
+	If you select the kill chain phase '**Command and Control**' when importing IP addresses in an IOC collection, our detection engines will only look into `destination.ip`. This is meant to reduce false positives, such as network scans.
 
 ### Limitations 
 
