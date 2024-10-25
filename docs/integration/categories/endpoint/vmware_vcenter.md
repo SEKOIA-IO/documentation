@@ -61,7 +61,8 @@ ruleset(name="remoteVmwarevCenter"){
 }
 ```
 
-Please change using the YOUR_INTAKE_KEY accordingly, as well as, the PORT.
+!!! Note
+    Please change using the `YOUR_INTAKE_KEY` accordingly, as well as, the `PORT`.
 
 Update the `docker-compose.yml` file of the Sekoia.io forwarder to mount the extended conf:
 
