@@ -117,7 +117,7 @@ curl -X POST -H "X-SEKOIAIO-INTAKE-KEY: REPLACE_BY_INTAKE_KEY" --data-binary @ev
 
 ### As JSON List
 
-To send us events as JSON list, you should set `Content-Type` HTTP header to `application/json`.
+To send us events as a JSON list, you should set `Content-Type` HTTP header to `application/json`.
 
 The following headers are handled by Sekoia.io’S HTTPS log collector:
 
@@ -173,17 +173,7 @@ Use the endpoint `/jsons`. This endpoint accepts a set of events:
 
 ### Enclosed in a JSON object
 
-If your events are enclosed in a JSON object, use the endpoint `/many` and provide the `path` to the property where our events are located. You should set `Content-Type` HTTP header to `application/json`.
-
-The following headers are handled by Sekoia.io’S HTTPS log collector:
-
-| Header                       | Mandatory? | Type     | Description                                                                            |
-|------------------------------|------------|----------|----------------------------------------------------------------------------------------|
-| `X-SEKOIAIO-INTAKE-KEY`      | No         | String   | Intake to which you would like to push events to                                       |
-| `X-SEKOIAIO-EVENT-TIMESTAMP` | No         | Datetime | Event date if you want to push your own date (fallback is to use the reception’s date) |
-
-
-Supply the intake key as the header `X-SEKOIAIO-INTAKE-KEY`, as password in the HTTP Basic authentication mechanism or as a parameter in the querystring.
+If your events are enclosed in a JSON object, use the endpoint `/jsons` and provide the `path` to the property where our events are located. 
 
 === "With the intake key as header"
     ```python
@@ -192,7 +182,7 @@ Supply the intake key as the header `X-SEKOIAIO-INTAKE-KEY`, as password in the 
     headers = {"X-SEKOIAIO-INTAKE-KEY": "YOUR_INTAKE_KEY"}
     events = ["[764008:0] info: 198.51.100.10 example.org. A IN", "[764023:0] info: 2.34.100.56 text.org. A IN"]
     content = {"path": {"to": {"events": events}}}
-    response = requests.post("https://intake.sekoia.io/many?path=$.path.to.events", json=content, headers=headers)
+    response = requests.post("https://intake.sekoia.io/jsons?path=$.path.to.events", json=content, headers=headers)
     print(response.text) # (1)
     ```
 
@@ -206,7 +196,7 @@ Supply the intake key as the header `X-SEKOIAIO-INTAKE-KEY`, as password in the 
     auth = request.auth.HTTPBasicAuth(None, "YOUR_INTAKE_KEY")
     events = ["[764008:0] info: 198.51.100.10 example.org. A IN", "[764023:0] info: 2.34.100.56 text.org. A IN"]
     content = {"path": {"to": {"events": events}}}
-    response = requests.post("https://intake.sekoia.io/many?path=$.path.to.events", json=content, auth=auth)
+    response = requests.post("https://intake.sekoia.io/jsons?path=$.path.to.events", json=content, auth=auth)
     print(response.text) # (1)
     ```
 
@@ -220,7 +210,7 @@ Supply the intake key as the header `X-SEKOIAIO-INTAKE-KEY`, as password in the 
     params = {"intake_key": "YOUR_INTAKE_KEY"}
     events = ["[764008:0] info: 198.51.100.10 example.org. A IN", "[764023:0] info: 2.34.100.56 text.org. A IN"]
     content = {"path": {"to": {"events": events}}}
-    response = requests.post("https://intake.sekoia.io/many?path=$.path.to.events", json=content, params=params)
+    response = requests.post("https://intake.sekoia.io/jsons?path=$.path.to.events", json=content, params=params)
     print(response.text) # (1)
     ```
 
