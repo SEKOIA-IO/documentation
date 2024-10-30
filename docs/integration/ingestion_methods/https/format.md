@@ -3,14 +3,14 @@
 To forward logs to Sekoia.io, several options format are available:
 
 - Send your events as line-oriented records
-- Send your events in a JSON array
-- Send your events as a structured JSON payload
+- Send your events as a JSON object
+- Send your events as a structured payload
 
 For each option, we will have to supply an intake key. The collector endpoint of Sekoia.io will provide event identifiers within the Sekoia.io detection workflow in the form of a JSON payload.
 
-### Push our events to Sekoia.io as line-oriented records
+## Push our events to Sekoia.io as line-oriented records
 
-To forward events, you can use the `/plain` endpoint.
+To forward events as plain records, you can use the `/plain` endpoint.
 
 The following headers are handled by Sekoia.io’S HTTPS log collector:
 
@@ -20,7 +20,7 @@ The following headers are handled by Sekoia.io’S HTTPS log collector:
 | `X-SEKOIAIO-EVENT-TIMESTAMP` | No         | Datetime | Event date if you want to push your own date (fallback is to use the reception’s date) |
 
 
-Supply the intake key as the header `X-SEKOIAIO-INTAKE-KEY` or as password in the HTTP Basic authentication mechanism.
+Supply the intake key as the header `X-SEKOIAIO-INTAKE-KEY`, as password in the HTTP Basic authentication mechanism or as a parameter in the querystring.
 
 To push one event, just POST content to `https://intake.sekoia.io/plain`
 
@@ -63,7 +63,7 @@ To push one event, just POST content to `https://intake.sekoia.io/plain`
 
     1. Will print  `{"event_id": "uuid"}`
 
-For numerous events, you can use the alternative endpoint `/batch`. The events should be separated by the line feed character (`U+000A` or `\n`):
+For numerous events, you can use the alternative endpoint `/plain/batch`. The events should be separated by the line feed character (`U+000A` or `\n`):
 
 === "With the intake key as header"
 
@@ -113,10 +113,11 @@ You can also upload multiple events contained in a single file, with one event p
 curl -X POST -H "X-SEKOIAIO-INTAKE-KEY: REPLACE_BY_INTAKE_KEY" --data-binary @events.txt https://intake.sekoia.io/plain/batch
 ```
 
+## Push our events to Sekoia.io as JSON object
 
-### Push our events to Sekoia.io as JSON List
+### As JSON List
 
-To send us events as JSON list, you should set `Content-Type` HTTP header to `application/json`.
+To send us events as a JSON list, you should set `Content-Type` HTTP header to `application/json`.
 
 The following headers are handled by Sekoia.io’S HTTPS log collector:
 
@@ -126,7 +127,7 @@ The following headers are handled by Sekoia.io’S HTTPS log collector:
 | `X-SEKOIAIO-EVENT-TIMESTAMP` | No         | Datetime | Event date if you want to push your own date (fallback is to use the reception’s date) |
 
 
-Supply the intake key as the header `X-SEKOIAIO-INTAKE-KEY` or as password in the HTTP Basic authentication mechanism.
+Supply the intake key as the header `X-SEKOIAIO-INTAKE-KEY`, as password in the HTTP Basic authentication mechanism or as a parameter in the querystring.
 
 Use the endpoint `/jsons`. This endpoint accepts a set of events:
 
@@ -170,34 +171,53 @@ Use the endpoint `/jsons`. This endpoint accepts a set of events:
     1. Will print  `{"event_ids": ["uuid1", "uuid2"]}`
 
 
-### Push our events to Sekoia.io as JSON Array
+### Enclosed in a JSON object
 
-To send us events as JSON array, with the ability to send in the same batch several events from distinct intake keys, you should set `Content-Type` HTTP header to `application/json`. Intake key can only be sent in the JSON payload.
+If your events are enclosed in a JSON object, use the endpoint `/jsons` and provide the `path` to the property where our events are located. 
 
-Use the endpoint `/array`. This endpoint accepts a set of events:
+=== "With the intake key as header"
+    ```python
+    import requests
 
-```python
-import requests
+    headers = {"X-SEKOIAIO-INTAKE-KEY": "YOUR_INTAKE_KEY"}
+    events = ["[764008:0] info: 198.51.100.10 example.org. A IN", "[764023:0] info: 2.34.100.56 text.org. A IN"]
+    content = {"path": {"to": {"events": events}}}
+    response = requests.post("https://intake.sekoia.io/jsons?path=$.path.to.events", json=content, headers=headers)
+    print(response.text) # (1)
+    ```
 
-events = [
-    {
-        "timestamp": "2021-04-05T21:33:31+02:00", # (1)
-        "intake_key": "YOUR_INTAKE_KEY",
-        "json": "[764008:0] info: 198.51.100.10 example.org. A IN",
-    },
-    {
-        "intake_key": "ANOTHER_INTAKE_KEY",
-        "json": "[764023:0] info: 2.34.100.56 text.org. A IN",
-    },
-]
-response = requests.post("https://intake.sekoia.io/array", json=events)
-print(response.text) # (2)
-```
+    1. Will print  `{"event_ids": ["uuid1", "uuid2"]}`
 
-1. Optional.
-2. Will print `{"event_ids":["ba2098cc-5fcf-4ad1-8d1d-af55750220ec","921b214c-fb89-4e27-a1fd-266f1837ea31"]}`
+=== "With the intake key through the HTTP Basic Auth"
 
-### Push our events to Sekoia.io as structured content
+    ```python
+    import requests
+
+    auth = request.auth.HTTPBasicAuth(None, "YOUR_INTAKE_KEY")
+    events = ["[764008:0] info: 198.51.100.10 example.org. A IN", "[764023:0] info: 2.34.100.56 text.org. A IN"]
+    content = {"path": {"to": {"events": events}}}
+    response = requests.post("https://intake.sekoia.io/jsons?path=$.path.to.events", json=content, auth=auth)
+    print(response.text) # (1)
+    ```
+
+    1. Will print  `{"event_ids": ["uuid1", "uuid2"]}`
+
+=== "With the intake key through query string"
+
+    ```python
+    import requests
+
+    params = {"intake_key": "YOUR_INTAKE_KEY"}
+    events = ["[764008:0] info: 198.51.100.10 example.org. A IN", "[764023:0] info: 2.34.100.56 text.org. A IN"]
+    content = {"path": {"to": {"events": events}}}
+    response = requests.post("https://intake.sekoia.io/jsons?path=$.path.to.events", json=content, params=params)
+    print(response.text) # (1)
+    ```
+
+    1. Will print  `{"event_ids": ["uuid1", "uuid2"]}`
+
+
+## Push our events to Sekoia.io as structured content
 
 To send us events, you should set `Content-Type` HTTP header to `application/json`.
 
@@ -247,3 +267,26 @@ print(response.text) # (1)
 ```
 
 1. Will print  `{"event_ids": ["uuid1", "uuid2"]}`
+
+Or, you can use the endpoint `/array`:
+
+```python
+import requests
+
+events = [
+    {
+        "timestamp": "2021-04-05T21:33:31+02:00", # (1)
+        "intake_key": "YOUR_INTAKE_KEY",
+        "json": "[764008:0] info: 198.51.100.10 example.org. A IN",
+    },
+    {
+        "intake_key": "ANOTHER_INTAKE_KEY",
+        "json": "[764023:0] info: 2.34.100.56 text.org. A IN",
+    },
+]
+response = requests.post("https://intake.sekoia.io/array", json=events)
+print(response.text) # (2)
+```
+
+1. Optional.
+2. Will print `{"event_ids":["ba2098cc-5fcf-4ad1-8d1d-af55750220ec","921b214c-fb89-4e27-a1fd-266f1837ea31"]}`
