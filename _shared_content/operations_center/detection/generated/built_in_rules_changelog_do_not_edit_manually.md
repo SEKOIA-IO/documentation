@@ -1,4 +1,4 @@
-Changelog _last update on 2024-10-21_
+Changelog _last update on 2024-11-04_
 
 ## Changelog
 
@@ -52,6 +52,9 @@ Changelog _last update on 2024-10-21_
     
 ### Winlogon wrong parent
   - 17/10/2024 - major - Removed a filter on a specific intake, the rule now works fine for every intake. Filter was also added to reduce false positives.
+    
+### Suspicious Download Links From Legitimate Services
+  - 15/10/2024 - minor - Adding filter to reduce false positives.
     
 ### Login Brute-Force Successful On AzureAD From Single IP Address
   - 14/10/2024 - minor - The error codes 70043, 50173, 70008, 700082, 9002341 have been excluded as they are not related to login failures that we want to detect and caused several false positives.
@@ -220,9 +223,6 @@ Changelog _last update on 2024-10-21_
     
 ### Scam Detected By Vade For M365 And Not Blocked
   - 18/06/2024 - minor - Adding filter when whitelisted.
-    
-### Suspicious Download Links From Legitimate Services
-  - 13/06/2024 - minor - Adding similarity strategy and changing effort level.
     
 ### PowerShell AMSI Deactivation Bypass Using .NET Reflection
   - 13/06/2024 - minor - Changing effort level and adding similarity strategy to regroup alerts.
