@@ -1,4 +1,4 @@
-Rules catalog includes **950 built-in detection rules** ([_last update on 2024-11-04_](rules_changelog.md)).
+Rules catalog includes **951 built-in detection rules** ([_last update on 2024-11-05_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Identity Information**
 
@@ -926,6 +926,10 @@ Rules catalog includes **950 built-in detection rules** ([_last update on 2024-1
     
     - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 04/11/2024 - minor - Added filter to reduce false positives
+            
 ??? abstract "CVE-2019-11510 Pulse Secure Exploit"
     
     Detects the successful exploitation of the Pulse Secure vulnerability CVE-2019-11510. This CVE is one of the most exploited CVEs since 2019. It is exploited by diverse threat actors, leading sometimes in ransomware deployement among these groups: Maze, Conti, Egregor, DoppelPaymer, NetWalker and REvil. But also APT actors such as APT29. The exploitation of this CVE allows a remote, unauthenticated attacker to compromise a vulnerable VPN server. The attacker may be able to gain access to all active users and their plain-text credentials. It may also be possible for the attacker to execute arbitrary commands on each VPN client as it successfully connects to the VPN server. The exploit reads /etc/passwd file to get access to login and passwords in (clear/text). An HTTP response status code = 200, means the file was successfully accessed. This vulnerability affects 8.1R15.1, 8.2 before 8.2R12.1, 8.3 before 8.3R7.1, and 9.0 before 9.0R3.4 products.
@@ -2607,6 +2611,12 @@ Rules catalog includes **950 built-in detection rules** ([_last update on 2024-1
     
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
             
+??? abstract "WithSecure Elements Warning Severity"
+    
+    Detects when WithSecure Elements raised an event with a warning (and is not blocked or quarantined).
+    
+    - **Effort:** master
+    
 ??? abstract "XSL Script Processing And SquiblyTwo Attack"
     
     Detection of an attack where adversaries may bypass application control and obscure execution of code by embedding scripts inside XSL files. Another variation of this technique, dubbed "Squiblytwo", involves to invoke JScript or VBScript within an XSL file.
@@ -3684,6 +3694,12 @@ Rules catalog includes **950 built-in detection rules** ([_last update on 2024-1
     
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
             
+??? abstract "WithSecure Elements Warning Severity"
+    
+    Detects when WithSecure Elements raised an event with a warning (and is not blocked or quarantined).
+    
+    - **Effort:** master
+    
 ??? abstract "ZIP LNK Infection Chain"
     
     Detection of an ZIP download followed by a child-process of explorer, followed by multiple Windows processes.This is widely used as an infection chain mechanism.
@@ -4489,6 +4505,12 @@ Rules catalog includes **950 built-in detection rules** ([_last update on 2024-1
     
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
             
+??? abstract "WithSecure Elements Warning Severity"
+    
+    Detects when WithSecure Elements raised an event with a warning (and is not blocked or quarantined).
+    
+    - **Effort:** master
+    
 ??? abstract "Wsmprovhost Wrong Parent"
     
     Detects if the Wsmprovhost process was executed by a non-legitimate parent process. The PowerShell host wsmprovhost.exe is a proxy process executed remotely through PowerShell when using Windows Remote Management (WinRM).
