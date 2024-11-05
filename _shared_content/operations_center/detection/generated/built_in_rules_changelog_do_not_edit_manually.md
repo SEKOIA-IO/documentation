@@ -1,7 +1,10 @@
-Changelog _last update on 2024-11-04_
+Changelog _last update on 2024-11-05_
 
 ## Changelog
 
+### CVE-2019-0604 SharePoint
+  - 04/11/2024 - minor - Added filter to reduce false positives
+    
 ### Searchindexer Wrong Parent
   - 17/10/2024 - major - Removed a filter on a specific intake, the rule now works fine for every intake.
     
