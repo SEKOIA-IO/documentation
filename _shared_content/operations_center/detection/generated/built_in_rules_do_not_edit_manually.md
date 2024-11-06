@@ -1,4 +1,4 @@
-Rules catalog includes **951 built-in detection rules** ([_last update on 2024-11-05_](rules_changelog.md)).
+Rules catalog includes **953 built-in detection rules** ([_last update on 2024-11-06_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Identity Information**
 
@@ -8396,6 +8396,12 @@ Rules catalog includes **951 built-in detection rules** ([_last update on 2024-1
     
     - **Effort:** elementary
     
+??? abstract "LanManServer Registry Modify"
+    
+    Detects when the LanManServer registry sub-key MaxMpxCt is modified. An attacker can modified this value to increase the maximum number of outstanding client requests supported. 
+    
+    - **Effort:** elementary
+    
 ??? abstract "NetNTLM Downgrade Attack"
     
     Detects changes in Windows Registry key (LMCompatibilityLevel, NTLMMinClientSec or RestrictSendingNTLMTraffic) which can lead to NetNTLM downgrade attack. The rule requires to log registry keys creation or update, it can be done using Sysmon's Event ID 12,13 and 14.
@@ -10519,6 +10525,12 @@ Rules catalog includes **951 built-in detection rules** ([_last update on 2024-1
     
         - 27/07/2024 - major - review filter to avoid false positive
             
+??? abstract "Brute Force WALLIX Bastion"
+    
+    Detects a successful login after many failed attempts by the same user.
+    
+    - **Effort:** master
+    
 ??? abstract "Brute-Force On Fortinet Firewall Login"
     
     Spots many failed attempts to log on an administration interface.
