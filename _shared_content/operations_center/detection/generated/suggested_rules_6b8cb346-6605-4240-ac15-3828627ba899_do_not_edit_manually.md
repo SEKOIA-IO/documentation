@@ -69,6 +69,12 @@ The following Sekoia.io built-in rules match the intake **WALLIX Bastion**. This
     
     - **Effort:** elementary
 
+??? abstract "Brute Force WALLIX Bastion"
+    
+    Detects a successful login after many failed attempts by the same user.
+    
+    - **Effort:** master
+
 ??? abstract "CertOC Loading Dll"
     
     Detects when a user installs certificates by using CertOC.exe to loads the target DLL file.
