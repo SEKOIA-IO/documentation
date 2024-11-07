@@ -25,6 +25,9 @@ An internal log concentrator (Rsyslog) is required to collect and forward events
 
 Log on your Firebox appliance and follow [this guide](https://www.watchguard.com/help/docs/help-center/en-US/Content/Integration-Guides/General/ubuntu_rsyslog.html) to enable syslog forwarding.
 
+!!! warning
+	Make sure that you didn't check the "time stamp" box in your Syslog Server configuration.
+
 Configure the event forwarding to use the IBM LEEF format (for more information, please read the [associated documentation](http://www.watchguard.com/help/docs/fireware/12/en-us/Content/en-US/logging/send_logs_to_syslog_c.html)).
 
 ## Create the intake
