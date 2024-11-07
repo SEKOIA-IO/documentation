@@ -5,7 +5,7 @@
 [Docker](https://docs.docker.com/get-started/overview/) is a tool that can be used to run packaged applications in an isolated environment on a host.
 Packaged applications are stored in an object called an image, which includes an OS, the dependencies and the configuration. With that, the application will have the same behaviour whatever the OS used on the host as long as it's a x86-64 Linux host.
 
-Sekoia.io offers a preconfigured concentrator based on Docker to forward events on the platform.
+Sekoia.io offers a preconfigured collector / concentrator based on Docker to forward events on the platform.
 
 This method simplifies as much as possible the configuration needed to set up a concentrator in order to collect logs and send them on each relevant Intakes.
 
