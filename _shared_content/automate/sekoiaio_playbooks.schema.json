@@ -1,0 +1,97 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "description": "JSON format of a Sekoia.io Playbook (also known as SPL, Symphony Playbook Language). A playbook is a graph of nodes (of type 'action', 'trigger' or 'operator') found under the 'nodes' property, keyed by integer strings. Nodes can be connected to eachother via arguments and outputs, who can take JINJA 3 template values to refer to other nodes' data",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Name of the playbook template"
+    },
+    "uuid": {
+      "type": "string",
+      "format": "uuid",
+      "description": "A globally unique template identifier"
+    },
+    "nodes": {
+      "type": "object",
+      "patternProperties": {
+        "^[0-9]+$": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string",
+              "description": "User-defined node name"
+            },
+            "type": {
+              "type": "string",
+              "enum": ["trigger", "action", "operator"],
+              "description": "Type of the node, see https://docs.sekoia.io/xdr/features/automate/"
+            },
+            "icon": {
+              "type": "string",
+              "description": "Node icon's URI (can use Data URIs here)"
+            },
+            "outputs": {
+              "type": "object",
+              "properties": {
+                "default": {
+                  "type": "object",
+                  "description": "Default node output"
+                }
+              },
+              "description": "Node outputs, each output is a nested property"
+            },
+            "loop": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "description": "The number of loop iterations for Foreach-like operators"
+            },
+            "subtype": {
+              "type": "string",
+              "enum": ["foreach"],
+              "description": "When type is 'operator', this is the operator's type (e.g., foreach)"
+            },
+            "items": {
+              "type": "string",
+              "description": "For Foreach-like operators, a jinja expression to an array of items to iterate through"
+            },
+            "module_uuid": {
+              "type": "string",
+              "format": "uuid",
+              "description": "The UUID of a sekoia-automation-library module (see https://github.com/SEKOIA-IO/automation-library under */manifest.json to find your desired module's UUID)"
+            },
+            "trigger_uuid": {
+              "type": "string",
+              "format": "uuid",
+              "description": "(for triggers only) the UUID of the sekoia-automation-library trigger (ex: https://github.com/SEKOIA-IO/automation-library/blob/main/Sekoia.io/trigger_sekoiaio_alert_created.json#L90)"
+            },
+            "action_uuid": {
+              "type": "string",
+              "format": "uuid",
+              "description": "(for actions only) the UUID of the sekoia-automation-library action (ex: https://github.com/SEKOIA-IO/automation-library/blob/main/Sekoia.io/action_get_an_alert.json#L2)"
+            },
+            "arguments": {
+              "type": "object",
+              "properties": {
+              },
+              "additionalProperties": true,
+              "description": "Input arguments to the action or trigger, conforming to the action's own arguments JSON schema (ex: https://github.com/SEKOIA-IO/automation-library/blob/main/Sekoia.io/action_get_an_alert.json#L7)"
+            }
+          },
+          "required": ["name", "type", "outputs"]
+        }
+      }
+    },
+    "workspace": {
+      "type": "string",
+      "description": "A user-defined category of automation this template is made for, see https://github.com/SEKOIA-IO/Community/tree/main/playbooks/templates for inspiration"
+    },
+    "description": {
+      "type": "string",
+      "description": "A comprehensive description of the process automated by this playbook"
+    }
+  },
+  "required": ["name", "uuid", "nodes", "workspace", "description"]
+}
