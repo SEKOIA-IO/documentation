@@ -523,7 +523,7 @@ The proxy URL should follow the format `http://user:pass@host:port`.
 
     A proper security log auditing configuration will allow the agent to collect different security-related events.
     
-    This document can be followed for an optimal configuration: [Configuring Security Log Audit Settings](https://github.com/Yamato-Security/EnableWindowsLogSettings/blob/main/ConfiguringSecurityLogAuditPolicies).
+    This document can be followed for an optimal configuration: [Configuring Security Log Audit Settings](https://github.com/Yamato-Security/EnableWindowsLogSettings/blob/main/ConfiguringSecurityLogAuditPolicies.md).
 
 === "Linux"
 
