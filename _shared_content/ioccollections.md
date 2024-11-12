@@ -89,15 +89,14 @@ If you realize that an indicator is bad and produces false positive detections, 
 
 #### How to Request the Revocation of an IoC
 
-1. Log in to your [Sekoia.io](http://sekoia.io/) account.
-2. Go to the **Intelligence** section in the left menu.
-3. Search for and select the object you believe is a false positive.
-4. Before reporting a false positive, make sure to carefully review the details associated with the object, including:
-   - The **pattern**
-   - The **source**
-   - The **threat context**
-   - Linked **observables**
-5. Click the **Request revocation** button available at the top right.
+- Go to the **Intelligence** section in the left menu.
+- Search for and select the object you believe is a false positive.
+- Before reporting a false positive, make sure to carefully review the details associated with the object, including:
+    - The **pattern**
+    - The **source**
+    - The **threat context**
+    - Linked **observables**
+- Click the **Request revocation** button available at the top right.
 
 !!! warning
     Revoking an indicator cannot be undone.
