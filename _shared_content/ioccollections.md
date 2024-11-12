@@ -87,5 +87,16 @@ When inside a collection, buttons are available at the end of each line to updat
 
 If you realize that an indicator is bad and produces false positive detections, you can use the revoke button to remove it from detection.
 
+#### How to Request the Revocation of an IoC
+
+- Go to the **Intelligence** section in the left menu.
+- Search for and select the object you believe is a false positive.
+- Before reporting a false positive, make sure to carefully review the details associated with the object, including:
+    - The **pattern**
+    - The **source**
+    - The **threat context**
+    - Linked **observables**
+- Click the **Request revocation** button available at the top right.
+
 !!! warning
     Revoking an indicator cannot be undone.
