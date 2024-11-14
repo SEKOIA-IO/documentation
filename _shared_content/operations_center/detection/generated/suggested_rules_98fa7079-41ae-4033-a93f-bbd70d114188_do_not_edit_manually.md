@@ -9,15 +9,27 @@ The following Sekoia.io built-in rules match the intake **Darktrace Threat Visua
     
     - **Effort:** master
 
-??? abstract "Darktrace Threat Visualizer Model Breach Critical Alert"
+??? abstract "Darktrace Threat Visualizer Model Breach Critical Activity"
     
     Darktrace Threat Visualizer has detected a network critical activity related to one supervised device
     
     - **Effort:** master
 
-??? abstract "Darktrace Threat Visualizer Model Breach Suspicious Alert"
+??? abstract "Darktrace Threat Visualizer Model Breach Suspicious Activity"
     
     Darktrace Threat Visualizer has detected a network critical activity related to one supervised device
+    
+    - **Effort:** master
+
+??? abstract "Darktrace Threat Visualizer Threat Critical Alert"
+    
+    Darktrace Threat Visualizer has raised a threat critical alert related to one supervised device
+    
+    - **Effort:** master
+
+??? abstract "Darktrace Threat Visualizer Threat Suspicious Alert"
+    
+    Darktrace Threat Visualizer has raised a threat suspicious alert related to one supervised device
     
     - **Effort:** master
 
