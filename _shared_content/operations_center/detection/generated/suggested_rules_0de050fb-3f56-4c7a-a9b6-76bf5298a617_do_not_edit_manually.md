@@ -1185,6 +1185,12 @@ The following Sekoia.io built-in rules match the intake **Cybereason EDR activit
     
     - **Effort:** intermediate
 
+??? abstract "RDP Configuration File From Mail Process"
+    
+    Detects RDP configuration file being created or executed by a Mail-related process like Outlook. RDP configuration file will allow, when opened, an user to connect to the configured server easily. Attackers use this to trick victims in order to get a shared drive and potentially retrieve the data from that drive, but also drop a malicious file on the drive to establish persistence. Using RDP can also expose the victim's credential and clipboard data on some cases.
+    
+    - **Effort:** advanced
+
 ??? abstract "RDP Session Discovery"
     
     Detects use of RDP session discovery via qwinsta or quser. Used by some threat actors to know if someone is working via RDP on a server.

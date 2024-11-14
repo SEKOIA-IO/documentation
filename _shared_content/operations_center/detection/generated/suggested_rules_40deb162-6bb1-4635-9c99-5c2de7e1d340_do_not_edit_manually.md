@@ -1533,6 +1533,12 @@ The following Sekoia.io built-in rules match the intake **SentinelOne Cloud Funn
     
     - **Effort:** intermediate
 
+??? abstract "RDP Configuration File From Mail Process"
+    
+    Detects RDP configuration file being created or executed by a Mail-related process like Outlook. RDP configuration file will allow, when opened, an user to connect to the configured server easily. Attackers use this to trick victims in order to get a shared drive and potentially retrieve the data from that drive, but also drop a malicious file on the drive to establish persistence. Using RDP can also expose the victim's credential and clipboard data on some cases.
+    
+    - **Effort:** advanced
+
 ??? abstract "RDP Port Change Using Powershell"
     
     Detects RDP port configuration change using a PowerShell command such as 'Set-ItemProperty -Path "HKLM:\System\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp" -Name PortNumber -Value XXX Restart-Service termservice -force'. Threat actors can change RDP to another port to bypass protections, avoid detection based on the port, or to take full control of the system. 

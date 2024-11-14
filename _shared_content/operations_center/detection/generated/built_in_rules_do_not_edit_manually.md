@@ -1,4 +1,4 @@
-Rules catalog includes **953 built-in detection rules** ([_last update on 2024-11-12_](rules_changelog.md)).
+Rules catalog includes **956 built-in detection rules** ([_last update on 2024-11-14_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Identity Information**
 
@@ -1369,6 +1369,12 @@ Rules catalog includes **953 built-in detection rules** ([_last update on 2024-1
     
     - **Effort:** advanced
     
+??? abstract "RDP Configuration File From Mail Process"
+    
+    Detects RDP configuration file being created or executed by a Mail-related process like Outlook. RDP configuration file will allow, when opened, an user to connect to the configured server easily. Attackers use this to trick victims in order to get a shared drive and potentially retrieve the data from that drive, but also drop a malicious file on the drive to establish persistence. Using RDP can also expose the victim's credential and clipboard data on some cases.
+    
+    - **Effort:** advanced
+    
 ??? abstract "Retarus Email Security Threat Detected (CxO Or Patient Zero Detection)"
     
     Cx0 fraud and Patient Zero Detection alerts detected by Retarus Email Security. CxO Fraud Detection uses algorithms that identify from-spoofing and domain-spoofing, to detect falsified sender addresses (e.g. from high level executives - CEO, CFO...). Patient Zero Detection® uses a digital fingerprint to identify emails containing malware that have already been delivered.
@@ -1474,13 +1480,14 @@ Rules catalog includes **953 built-in detection rules** ([_last update on 2024-1
             
 ??? abstract "Suspicious Email Attachment Received"
     
-    Detects email containing an .exe|.dll|.ps1|.bat|.hta attachment. Most of the time files send by mail like this are malware.
+    Detects email containing a suspicious file as an attachment, based on its extension.
     
-    - **Effort:** elementary
+    - **Effort:** advanced
     
     - **Changelog:**
     
         - 15/04/2024 - minor - Update email from field to latest parser format
+        - 14/11/2024 - major - Adding new file extension and new condition to make the rule broader as it can now match on more intakes.
             
 ??? abstract "Suspicious Hangul Word Processor Child Process"
     
@@ -2962,15 +2969,35 @@ Rules catalog includes **953 built-in detection rules** ([_last update on 2024-1
     
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
             
-??? abstract "Darktrace Threat Visualizer Model Breach Critical Alert"
+??? abstract "Darktrace Threat Visualizer Model Breach Critical Activity"
     
     Darktrace Threat Visualizer has detected a network critical activity related to one supervised device
     
     - **Effort:** master
     
-??? abstract "Darktrace Threat Visualizer Model Breach Suspicious Alert"
+    - **Changelog:**
+    
+        - 12/11/2024 - minor - Update name, description, similarity and severity
+            
+??? abstract "Darktrace Threat Visualizer Model Breach Suspicious Activity"
     
     Darktrace Threat Visualizer has detected a network critical activity related to one supervised device
+    
+    - **Effort:** master
+    
+    - **Changelog:**
+    
+        - 12/11/2024 - minor - Update name, description, similarity and severity
+            
+??? abstract "Darktrace Threat Visualizer Threat Critical Alert"
+    
+    Darktrace Threat Visualizer has raised a threat critical alert related to one supervised device
+    
+    - **Effort:** master
+    
+??? abstract "Darktrace Threat Visualizer Threat Suspicious Alert"
+    
+    Darktrace Threat Visualizer has raised a threat suspicious alert related to one supervised device
     
     - **Effort:** master
     
@@ -11917,6 +11944,12 @@ Rules catalog includes **953 built-in detection rules** ([_last update on 2024-1
             
 **Data from Network Shared Drive**
 
+??? abstract "RDP Configuration File From Mail Process"
+    
+    Detects RDP configuration file being created or executed by a Mail-related process like Outlook. RDP configuration file will allow, when opened, an user to connect to the configured server easily. Attackers use this to trick victims in order to get a shared drive and potentially retrieve the data from that drive, but also drop a malicious file on the drive to establish persistence. Using RDP can also expose the victim's credential and clipboard data on some cases.
+    
+    - **Effort:** advanced
+    
 ??? abstract "Suspicious Access To Sensitive File Extensions"
     
     Detects known sensitive file extensions accessed on a network share. This activity could possibly correspond to a malicious one (removing backup, reading sensitive files, etc.).
@@ -11926,6 +11959,17 @@ Rules catalog includes **953 built-in detection rules** ([_last update on 2024-1
     - **Changelog:**
     
         - 04/04/2024 - major - Rule's pattern field changed
+            
+??? abstract "Suspicious Email Attachment Received"
+    
+    Detects email containing a suspicious file as an attachment, based on its extension.
+    
+    - **Effort:** advanced
+    
+    - **Changelog:**
+    
+        - 15/04/2024 - minor - Update email from field to latest parser format
+        - 14/11/2024 - major - Adding new file extension and new condition to make the rule broader as it can now match on more intakes.
             
 **Data Staged**
 
