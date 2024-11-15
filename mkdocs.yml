@@ -498,6 +498,7 @@ nav:
     - Endpoint:
       - CrowdStrike Falcon: integration/action_library/crowdstrike-falcon.md
       - HarfangLab: integration/action_library/harfanglab.md
+      - Microsoft Defender: integration/action_library/microsoftdefender.md
       - Panda Security: integration/action_library/panda-security.md
       - SentinelOne: integration/action_library/sentinelone.md
       - Sophos: integration/action_library/sophos.md
