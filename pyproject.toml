@@ -10,6 +10,7 @@ packages = [
 [tool.poetry.plugins."mkdocs.plugins"]
 redoc = "plugins.redoc:RedocPlugin"
 integration_by_uuid = "plugins.integration_by_uuid:IntegrationByUUIDPlugin"
+sass = "plugins.sass:CompileSCSSPlugin"
 
 [tool.poetry.dependencies]
 python = "^3.11"
@@ -19,6 +20,7 @@ mkdocs-redirects = "^1.2.1"
 markdown-include = "^0.8.1"
 lightgallery = "^0.5"
 markdown = "^3.7"
+libsass = "^0.23.0"
 
 [build-system]
 requires = [ "poetry-core>=1.0.0",]
