@@ -210,7 +210,6 @@ nav:
       - Operators: tip/features/automate/operators.md
       - Actions: tip/features/automate/actions.md
       - Actions Library:
-        - Overview: tip/features/automate/library/overview.md
         - Applicative:
           - Mandrill: tip/features/automate/library/mandrill.md
           - Mattermost: tip/features/automate/library/mattermost.md
@@ -246,6 +245,7 @@ nav:
         - Network:
           - Fortigate Firewalls: tip/features/automate/library/fortigate-firewalls.md
           - Zscaler: tip/features/automate/library/zscaler.md
+        - Overview: tip/features/automate/library/overview.md
         - Threat Intelligence:
           - BinaryEdge's API: tip/features/automate/library/binaryedge-s-api.md
           - Censys: tip/features/automate/library/censys.md
@@ -479,7 +479,6 @@ nav:
       - WatchGuard Firebox: integration/categories/network_security/watchguard_firebox.md
       - Zscaler Internet Access: integration/categories/network_security/zscaler_zia.md
   - List of Playbooks Actions:
-    - Overview: integration/action_library/overview.md
     - Applicative:
       - Mandrill: integration/action_library/mandrill.md
       - Mattermost: integration/action_library/mattermost.md
@@ -515,6 +514,7 @@ nav:
     - Network:
       - Fortigate Firewalls: integration/action_library/fortigate-firewalls.md
       - Zscaler: integration/action_library/zscaler.md
+    - Overview: integration/action_library/overview.md
     - Threat Intelligence:
       - BinaryEdge's API: integration/action_library/binaryedge-s-api.md
       - Censys: integration/action_library/censys.md
