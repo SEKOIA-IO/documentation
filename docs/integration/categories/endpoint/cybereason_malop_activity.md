@@ -29,7 +29,7 @@ Keep aside the intake key.
 
 ### Setup the Syslog collector
 
-Check the [Syslog Forwarding](/integration/ingestion_methods/syslog/sekoiaio_forwarder) documentation to install and set up the syslog collector.
+Check the [Syslog Forwarding](/integration/ingestion_methods/syslog/sekoiaio_forwarder.md) documentation to install and set up the syslog collector.
 
 Once the setup has completed, write down the IP address and port. This information will be used in the next step.
 

@@ -35,7 +35,10 @@ Redirecting...
     _integrations: list[dict[str, str]] = []
 
     def on_files(self, files: Files, config: Config):
-        new_files = []
+        new_files: list[File] = []
+        source_files = [
+            source_file for source_file in files if source_file.src_path.endswith(".md")
+        ]
 
         for source_file in files:
             if not source_file.src_path.endswith(".md"):
@@ -45,7 +48,7 @@ Redirecting...
             with filename.open() as f:
                 _, metadata = get_data(f.read())
 
-                if "uuid" not in metadata or metadata.get("type").lower() !=  "intake":
+                if "uuid" not in metadata or metadata.get("type").lower() != "intake":
                     continue
 
                 dialect_uuids = (uuid.strip() for uuid in metadata["uuid"].split(","))
@@ -68,13 +71,18 @@ Redirecting...
                     )
                     new_files.append(newfile)
 
-        new_files.append(File(
-            path="integration/categories/index.md",
-            src_dir="operation_center/integration_catalog/",
-            dest_dir=config["site_dir"],
-            use_directory_urls=True,
-        ))
-        files._files += new_files
+        new_files.append(
+            File(
+                path="integration/categories/index.md",
+                src_dir="operation_center/integration_catalog/",
+                dest_dir=config["site_dir"],
+                use_directory_urls=True,
+            )
+        )
+        for file in new_files:
+            if file.src_uri in files._src_uris:
+                files.remove(file)
+            files.append(file)
 
     def on_page_read_source(self, page, config):
         if page.file.src_path.startswith("operation_center/integration_catalog/uuid/"):
@@ -88,6 +96,12 @@ Redirecting...
             content = filename.open().read()
 
             for page in sorted(self._integrations, key=lambda x: x["name"]):
-                content += f"- [{page['name']}](/{page['destination']})\n"
+                href = (
+                    f"/{page['destination']}".replace(
+                        "/integration/categories/", ""
+                    ).rstrip("/")
+                    + ".md"
+                )
+                content += f"- [{page['name']}]({href})\n"
 
             return content

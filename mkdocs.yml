@@ -29,6 +29,10 @@ markdown_extensions:
 - markdown_include.include
 - lightgallery
 - pymdownx.snippets
+validation:
+  omitted_files: ignore
+  links:
+    absolute_links: relative_to_docs
 nav:
 - Getting started:
   - Overview: getting_started/index.md
@@ -775,7 +779,7 @@ plugins:
       xdr/features/collect/integrations/network/cisco/cisco_nx_os.md: integration/categories/network/cisco_nx_os.md
       xdr/features/collect/integrations/network/cisco/cisco_wsa.md: integration/categories/network_security/cisco_wsa.md
       xdr/features/collect/integrations/network/citrix_netscaler_adc.md: integration/categories/network/citrix_netscaler_adc.md
-      xdr/features/collect/integrations/network/clavister_ng_fw.md: integration/categories/network/clavister_ng_fw.md
+      xdr/features/collect/integrations/network/clavister_ng_fw.md: integration/categories/network_security/clavister_ng_fw.md
       xdr/features/collect/integrations/network/efficientip_solidserver_ddi.md: integration/categories/network/efficientip_solidserver_ddi.md
       xdr/features/collect/integrations/network/ekinops_oneos.md: integration/categories/network/ekinops_oneos.md
       xdr/features/collect/integrations/network/f5-big-ip.md: integration/categories/network/f5-big-ip.md

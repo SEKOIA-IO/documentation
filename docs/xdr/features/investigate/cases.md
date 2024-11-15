@@ -78,7 +78,7 @@ The Events tab lists the events that are associated with the case in a display s
 Events associated with the case are:
 
 - Events that raised an alert that was added to the case.
-- Events that were [directly added to the case](../events/#adding-events-to-cases).
+- Events that were [directly added to the case](events.md#adding-events-to-cases).
 
 When interacting with individual values, it is possible to:
 
@@ -97,11 +97,11 @@ The "Search Events with this value" feature can be used to perform a search into
 
 ![search-events](/assets/operation_center/alerts/search-events.png){align=right}
 
-The search query is automatically created from selected values. 
+The search query is automatically created from selected values.
 
-To search events with a value: 
+To search events with a value:
 
-- On the `case` page, go to `events` tab 
+- On the `case` page, go to `events` tab
 - Click on `Toggle value selection` button in the upper right of the logs list
 - Select `values` you want to search for by clicking on them in the logs list
 - Click on the button `Perform a search` as shown in the screenshot
@@ -117,7 +117,7 @@ The Graph Investigation Tab is presenting the analyst with a graphical visualiza
 The following items appear on the graph:
 
 - `Observables`: these are automatically extracted from events (IP addresses, Domain Names, URLs, User Account, etc.)
-- `Observable Relationships`: relationships between observables are represented by arrows linking them on the graph. Relationships are extracted from events using the [Smart Description](../../collect/intakes/#smart-descriptions) definitions
+- `Observable Relationships`: relationships between observables are represented by arrows linking them on the graph. Relationships are extracted from events using the [Smart Description](../collect/intakes.md) definitions
 - `CTI Objects`: STIX objects from the Intelligence Center that provide additional context
 - `STIX relationships` between Threat Objects
 

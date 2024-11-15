@@ -74,7 +74,7 @@ To enable Syslog server in ESET Protect on On-Prem :
 ![Syslog configuration](/assets/instructions/eset_protect/enable_syslog_2.png)
 
 !!! warning
-    Important note - For ESET Protect Cloud, you will required a secured syslog forwarder. Please read our article [how to secure data collection to the syslog forwarder](intergration/ingestion_methods/syslog/secured_forwarded.md)
+    Important note - For ESET Protect Cloud, you will required a secured syslog forwarder. Please read our article [how to secure data collection to the syslog forwarder](/integration/ingestion_methods/syslog/secured_forwarding.md)
 
 To enable Syslog server in ESET Protect on Cloud:
 
@@ -113,4 +113,3 @@ To enable Syslog server in ESET Protect on Cloud:
 - [Export logs to Syslog server from ESET PROTECT (8.x–10.x)](https://techcenter.eset.nl/en-US/kb/articles/export-logs-to-syslog-server-from-eset-protect-8x-10x)
 - [Collect logs from ESET PROTECT with Elastic Agent](https://docs.elastic.co/integrations/eset_protect#to-collect-data-from-eset-protect-via-syslog-follow-the-below-steps)
 - [Support: Export logs to Syslog server from ESET PROTECT On-Prem](https://support.eset.com/en/kb8022-export-logs-to-syslog-server-from-eset-protect)
-

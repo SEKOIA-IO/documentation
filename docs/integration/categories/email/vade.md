@@ -36,7 +36,7 @@ Lastly, you must add the Sekoia's action `Push Events to intake` to the graph an
 - the Sekoia.io `api_key` generated within the user center
 - the `base_url` (`https://intake.sekoia.io`)
 - the `events_path` to push on Intake (your logs, you will probably fill it with `{{ node.0['emails_path'] }}`)
-- the `intake_key` of the intake you have previously created (documentation can be found [here](/xdr/features/collect/intakes))
+- the `intake_key` of the intake you have previously created (documentation can be found [here](/xdr/features/collect/intakes.md))
 
 {!_shared_content/operations_center/integrations/generated/e4a758fc-7620-49e6-b8ed-b7fb3d7fa232_sample.md!}
 
