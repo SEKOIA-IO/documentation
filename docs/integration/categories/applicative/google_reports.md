@@ -27,10 +27,11 @@ This integration can collect activities from the following GSuite applications:
 - `token` for authentication supervision
 - `user_accounts` to monitor Users accounts activities
 - `keep` to supervices Google Keep activities
-- `vault` to collect vault activities.
-- `rules` to collect Rules activities.
-- `saml` to collect SAML activities.
-- `context_aware_access` to collect Context-aware access activities.
+- `vault` to collect vault activities
+- `rules` to collect Rules activities
+- `saml` to collect SAML activities
+- `context_aware_access` to collect Context-aware access activities
+- `chrome` lists various types of Chrome Audit activity events
 
 
 ### Limitation
