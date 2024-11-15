@@ -9,8 +9,8 @@ packages = [
 
 [tool.poetry.plugins."mkdocs.plugins"]
 redoc = "plugins.redoc:RedocPlugin"
-intakes_by_uuid = "plugins.intakes_by_uuid:IntakesByUUIDPlugin"
-modules_by_uuid = "plugins.modules_by_uuid:ModulesByUUIDPlugin"
+integration_by_uuid = "plugins.integration_by_uuid:IntegrationByUUIDPlugin"
+sass = "plugins.sass:CompileSCSSPlugin"
 
 [tool.poetry.dependencies]
 python = "^3.11"
