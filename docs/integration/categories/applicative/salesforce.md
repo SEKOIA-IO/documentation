@@ -60,7 +60,7 @@ Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a n
 
 To start to pull events, you have to:
 
-1. Go to the [playbooks page](https://app.sekoia.io/operations/playbooks) and create a new playbook with the [Salesforce](/integration/action_library/applicative/salesforce) trigger
+1. Go to the [playbooks page](https://app.sekoia.io/operations/playbooks) and create a new playbook with the [Salesforce](/integration/action_library/salesforce.md) trigger
 2. Set up the module configuration with the consumer key and consumer secret. Set up the trigger configuration with the intake key
 3. Start the playbook and enjoy your events
 

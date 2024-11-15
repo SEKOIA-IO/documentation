@@ -4,7 +4,7 @@ Welcome to the Intake Categories section of our documentation! This section prov
 
 ## Structure of the Intake Categories Section
 
-The Intake Categories section is organized into several sub-categories as explained in the [Best Practices for Using Sekoia SOC Platform page](getting_started/best_practices/), each representing a different type of data source. Below is the structure of the folder:
+The Intake Categories section is organized into several sub-categories as explained in the [Best Practices for Using Sekoia SOC Platform page](/getting_started/best_practices.md), each representing a different type of data source. Below is the structure of the folder:
 
 - **Applicative**: This category includes documentation on various application-level technologies  like Apache HTTP Server, Salesforce, JumpCloud.
 - **Email**: Documentation related to email data sources can be found here.
