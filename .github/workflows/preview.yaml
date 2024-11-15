@@ -46,7 +46,7 @@ jobs:
 
       - name: Build site
         run: |
-          poetry run python -m mkdocs build
+          poetry run python -m mkdocs build --strict
 
       - name: Save PR number
         run: |
