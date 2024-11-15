@@ -14,6 +14,8 @@ extra_javascript:
 - javascript/lightgallery.min.js
 - javascript/hotjar.js
 - javascript/posthog.js
+- javascript/swagger-converter.js
+- javascript/openapi.js
 markdown_extensions:
 - admonition
 - attr_list
@@ -123,18 +125,6 @@ nav:
     - Assets: xdr/FAQ/Assets_qa.md
     - Sekoia.io Endpoint agent: xdr/FAQ/SEKOIA_Endpoint_Agent.md
     - Datetime representation: xdr/FAQ/datetime.md
-  - Develop:
-    - REST API:
-      - Quickstart: xdr/develop/rest_api/quickstart.md
-      - Authentication and Community: xdr/develop/rest_api/community.md
-      - Dashboard: xdr/develop/rest_api/dashboard.md
-      - Configuration: xdr/develop/rest_api/configuration.md
-      - Parser: xdr/develop/rest_api/parser.md
-      - Alert: xdr/develop/rest_api/alert.md
-      - Assets: xdr/develop/rest_api/assets_v2.md
-      - Playbooks: xdr/develop/rest_api/playbooks.md
-      - Query Builder: xdr/develop/rest_api/query_builder.md
-      - Telemetry: xdr/develop/rest_api/telemetry.md
 - Sekoia Intelligence (CTI):
   - Introduction: cti/index.md
   - Features:
@@ -165,121 +155,6 @@ nav:
       - Anomali ThreatStream: cti/features/integrations/anomali.md
       - PaloAlto Cortex XSOAR: cti/features/integrations/paloalto_xsoar.md
       - ThreatQuotient: cti/features/integrations/threatquotient.md
-  - Develop:
-    - REST API:
-      - Quickstart: cti/develop/rest_api/quickstart.md
-      - Authentication and Community: cti/develop/rest_api/community.md
-      - Intelligence: cti/develop/rest_api/intelligence.md
-      - Enrichment: cti/develop/rest_api/enrichments.md
-      - Telemetry: cti/develop/rest_api/telemetry.md
-      - Dashboard: cti/develop/rest_api/dashboard.md
-      - Playbooks: cti/develop/rest_api/playbooks.md
-      - External Dynamic List: cti/develop/rest_api/edl-gateway.md
-- Sekoia.io TIP:
-  - Introduction: tip/index.md
-  - Features:
-    - Data Models: tip/features/data_model.md
-    - Consume:
-      - Intelligence: tip/features/consume/intelligence.md
-      - Observables: tip/features/consume/observables.md
-      - Outgoing Feeds: tip/features/consume/feeds.md
-      - Graph Explorations: tip/features/consume/graph_explorations.md
-      - Enrichers: tip/features/consume/enrichers.md
-      - Export: tip/features/consume/export.md
-      - IOCs Collections: tip/features/consume/ioccollections.md
-    - Produce and investigate:
-      - Content Proposals: tip/features/produce/content_proposals.md
-      - Incoming Feeds: tip/features/produce/incoming_feeds.md
-      - Warning Rules: tip/features/produce/warning_rules.md
-      - Expiration Rules: tip/features/produce/expiration_rules.md
-    - Monitor:
-      - Dashboards: tip/features/monitor/dashboard.md
-      - Threat Landscape: tip/features/monitor/threat_landscape.md
-    - External Integrations:
-      - Overview: tip/features/integrations/index.md
-      - API: tip/features/integrations/api.md
-      - TAXII: tip/features/integrations/taxii.md
-      - Cortex Analyzer: tip/features/integrations/thehive.md
-      - MISP Feed: tip/features/integrations/misp.md
-      - Microsoft Sentinel: tip/features/integrations/microsoft-sentinel.md
-      - OpenCTI: tip/features/integrations/opencti.md
-      - Splunk: tip/features/integrations/splunk.md
-      - PaloAlto Cortex XSOAR: tip/features/integrations/paloalto_xsoar.md
-    - Automate:
-      - Playbooks: tip/features/automate/index.md
-      - Manage accounts: tip/features/automate/manage-accounts.md
-      - Navigate playbooks: tip/features/automate/navigate-playbooks.md
-      - Build playbooks: tip/features/automate/build-playbooks.md
-      - Triggers: tip/features/automate/triggers.md
-      - Operators: tip/features/automate/operators.md
-      - Actions: tip/features/automate/actions.md
-      - Actions Library:
-        - Applicative:
-          - Mandrill: tip/features/automate/library/mandrill.md
-          - Mattermost: tip/features/automate/library/mattermost.md
-          - Microsoft Windows Server: tip/features/automate/library/microsoft-windows-server.md
-          - PagerDuty: tip/features/automate/library/pagerduty.md
-        - Cloud Providers:
-          - AWS: tip/features/automate/library/aws.md
-          - Google: tip/features/automate/library/google.md
-        - Collaboration Tools:
-          - Atlassian JIRA: tip/features/automate/library/atlassian-jira.md
-          - Git: tip/features/automate/library/git.md
-          - ServiceNow: tip/features/automate/library/servicenow.md
-          - The Hive: tip/features/automate/library/the-hive.md
-          - The Hive V5: tip/features/automate/library/the-hive-v5.md
-        - Email:
-          - Vade Secure: tip/features/automate/library/vade-secure.md
-        - Endpoint:
-          - CrowdStrike Falcon: tip/features/automate/library/crowdstrike-falcon.md
-          - HarfangLab: tip/features/automate/library/harfanglab.md
-          - Panda Security: tip/features/automate/library/panda-security.md
-          - SentinelOne: tip/features/automate/library/sentinelone.md
-          - Sophos: tip/features/automate/library/sophos.md
-          - WithSecure: tip/features/automate/library/withsecure.md
-        - Generic:
-          - HTTP: tip/features/automate/library/http.md
-          - OpenAI: tip/features/automate/library/openai.md
-          - RSS: tip/features/automate/library/rss.md
-          - Sekoia.io: tip/features/automate/library/sekoia-io.md
-          - Utils: tip/features/automate/library/utils.md
-        - IAM:
-          - Microsoft Active Directory: tip/features/automate/library/microsoft-active-directory.md
-          - Microsoft Entra ID: tip/features/automate/library/microsoft-entra-id.md
-        - Network:
-          - Fortigate Firewalls: tip/features/automate/library/fortigate-firewalls.md
-          - Zscaler: tip/features/automate/library/zscaler.md
-        - Overview: tip/features/automate/library/overview.md
-        - Threat Intelligence:
-          - BinaryEdge's API: tip/features/automate/library/binaryedge-s-api.md
-          - Censys: tip/features/automate/library/censys.md
-          - Certificate Transparency: tip/features/automate/library/certificate-transparency.md
-          - Detection Rules: tip/features/automate/library/detection-rules.md
-          - Digital Shadows: tip/features/automate/library/digital-shadows.md
-          - GLIMPS: tip/features/automate/library/glimps.md
-          - IKnowWhatYouDownload: tip/features/automate/library/iknowwhatyoudownload.md
-          - IPInfo: tip/features/automate/library/ipinfo.md
-          - IPtoASN: tip/features/automate/library/iptoasn.md
-          - MISP: tip/features/automate/library/misp.md
-          - MWDB: tip/features/automate/library/mwdb.md
-          - Nybble: tip/features/automate/library/nybble.md
-          - OSINT: tip/features/automate/library/osint.md
-          - Onyphe: tip/features/automate/library/onyphe.md
-          - Public Suffix: tip/features/automate/library/public-suffix.md
-          - RiskIQ: tip/features/automate/library/riskiq.md
-          - Shodan: tip/features/automate/library/shodan.md
-          - Tranco: tip/features/automate/library/tranco.md
-          - Triage: tip/features/automate/library/triage.md
-          - VirusTotal: tip/features/automate/library/virustotal.md
-          - Whois: tip/features/automate/library/whois.md
-  - Develop:
-    - REST API:
-      - Quickstart: tip/develop/rest_api/quickstart.md
-      - Authentication and Community: tip/develop/rest_api/community.md
-      - Intelligence: tip/develop/rest_api/intelligence.md
-      - Enrichment: tip/develop/rest_api/enrichments.md
-      - Dashboard: tip/develop/rest_api/dashboard.md
-      - Playbooks: tip/develop/rest_api/playbooks.md
 - Integrations:
   - Introduction: integration/index.md
   - Ingestion methods:
@@ -568,29 +443,16 @@ nav:
     - Overview: integration/faq/overview.md
     - General Questions:
       - Bug VS Improvement Requests: integration/faq/general_questions/bug_and_improvement_requests.md
+- API Documentation: developer/api.md
 plugins:
 - search: null
 - redirects:
     redirect_maps:
-      'api/operation center: rules, entities, intakes, events.md': xdr/develop/rest_api/configuration.md
-      cti/develop/rest_api/identity_and_authentication.md: cti/develop/rest_api/community.md
-      develop/rest_api/community.md: xdr/develop/rest_api/community.md
-      develop/rest_api/dashboard.md: xdr/develop/rest_api/community.md
-      develop/rest_api/identity_and_authentication.md: xdr/develop/rest_api/community.md
-      develop/rest_api/intelligence_center/enrichments.md: cti/develop/rest_api/enrichments.md
-      develop/rest_api/intelligence_center/intelligence.md: cti/develop/rest_api/intelligence.md
-      develop/rest_api/operation_center/alert.md: xdr/develop/rest_api/alert.md
-      develop/rest_api/operation_center/assets.md: xdr/develop/rest_api/assets_v2.md
-      develop/rest_api/operation_center/configuration.md: xdr/develop/rest_api/configuration.md
-      develop/rest_api/operation_center/parser.md: xdr/develop/rest_api/parser.md
-      develop/rest_api/playbooks.md: xdr/develop/rest_api/playbooks.md
-      develop/rest_api/quickstart.md: xdr/develop/rest_api/quickstart.md
       getting_started/2fa.md: getting_started/account_security.md
       getting_started/apikey_creation.md: getting_started/manage_api_keys.md
       getting_started/first_steps.md: getting_started/index.md
       getting_started/inviting_users_to_join_your_community.md: getting_started/invite_users.md
       intelligence_center.md: cti/index.md
-      intelligence_center/api.md: cti/develop/index.md
       intelligence_center/dashboard.md: cti/features/monitor/dashboard.md
       intelligence_center/data_export.md: cti/features/consume/export.md
       intelligence_center/data_model.md: cti/features/data_model.md
@@ -627,11 +489,9 @@ plugins:
       playbooks/overview.md: xdr/features/automate/index.md
       playbooks/triggers.md: xdr/features/automate/triggers.md
       searching/search_events.md: xdr/features/investigate/events.md
-      tip/develop/rest_api/identity_and_authentication.md: tip/develop/rest_api/community.md
       user_center.md: getting_started/index.md
       user_center/apikeys.md: getting_started/manage_api_keys.md
       user_center/multi_factor_authentication.md: getting_started/account_security.md
-      xdr/develop/rest_api/identity_and_authentication.md: xdr/develop/rest_api/community.md
       xdr/features/collect/ingestion_methods/https/format.md: integration/ingestion_methods/https/format.md
       xdr/features/collect/ingestion_methods/index.md: integration/ingestion_methods/index.md
       xdr/features/collect/ingestion_methods/sekoiaio_forwarder.md: integration/ingestion_methods/syslog/sekoiaio_forwarder.md
@@ -803,6 +663,7 @@ plugins:
       xdr/features/investigate/dork_language.md: xdr/features/investigate/events_query_language.md
 - redoc
 - integration_by_uuid
+- sass
 repo_url: https://github.com/SEKOIA-IO/documentation
 site_name: Sekoia.io Documentation
 site_url: https://docs.sekoia.io
@@ -816,6 +677,7 @@ theme:
   - content.code.annotate
   - content.action.edit
   - content.code.copy
+  - navigation.sections
   font: false
   include_search_page: true
   lang: en

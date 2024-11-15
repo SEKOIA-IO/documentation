@@ -20,12 +20,6 @@ jobs:
       - name: Make destination directory for compiled CSS
         run: mkdir -vp docs/stylesheets/
 
-      - name: Compile CSS from SCSS files
-        uses: gha-utilities/sass-build@v0.5.1
-        with:
-          source: src/sekoiaio.scss
-          destination: docs/stylesheets/sekoiaio.css
-
       - name: Install Poetry
         run: |
           pip install poetry
