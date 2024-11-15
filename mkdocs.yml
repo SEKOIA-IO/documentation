@@ -811,8 +811,8 @@ plugins:
       xdr/features/collect/integrations/network/watchguard_firebox.md: integration/categories/network_security/watchguard_firebox.md
       xdr/features/investigate/dork_language.md: xdr/features/investigate/events_query_language.md
 - redoc
-- intakes_by_uuid
-- modules_by_uuid
+- integration_by_uuid
+- sass
 repo_url: https://github.com/SEKOIA-IO/documentation
 site_name: Sekoia.io Documentation
 site_url: https://docs.sekoia.io
