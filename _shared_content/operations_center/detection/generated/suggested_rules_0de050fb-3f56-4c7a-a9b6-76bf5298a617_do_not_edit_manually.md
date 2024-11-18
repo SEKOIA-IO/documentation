@@ -1299,6 +1299,12 @@ The following Sekoia.io built-in rules match the intake **Cybereason EDR activit
     
     - **Effort:** intermediate
 
+??? abstract "Screenconnect Remote Execution"
+    
+    Detect cmd or powershell remote execution cmdline via ScreenConnect
+    
+    - **Effort:** intermediate
+
 ??? abstract "SecurityScorecard Vulnerability Assessment Scanner New Issues"
     
     Raises an alert when SecurityScorecard Vulnerability Assessment Scanner find new issues.

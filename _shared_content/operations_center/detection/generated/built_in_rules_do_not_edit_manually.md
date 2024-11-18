@@ -1,4 +1,4 @@
-Rules catalog includes **956 built-in detection rules** ([_last update on 2024-11-14_](rules_changelog.md)).
+Rules catalog includes **958 built-in detection rules** ([_last update on 2024-11-18_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Identity Information**
 
@@ -1763,6 +1763,12 @@ Rules catalog includes **956 built-in detection rules** ([_last update on 2024-1
     
     - **Effort:** intermediate
     
+??? abstract "Correlation Supicious Powershell Drop and Exec"
+    
+    Detects a PowerShell process that download and exec a payload
+    
+    - **Effort:** intermediate
+    
 ??? abstract "CrowdStrike Falcon Identity Protection Detection Critical Severity"
     
     CrowdStrike Falcon raised an alert for an Identity-based detection with critical severity
@@ -2238,6 +2244,12 @@ Rules catalog includes **956 built-in detection rules** ([_last update on 2024-1
     To bypass some security equipement or for a sack of simplicity attackers can open raw reverse shell using sh and or bash commands
     
     - **Effort:** master
+    
+??? abstract "Screenconnect Remote Execution"
+    
+    Detect cmd or powershell remote execution cmdline via ScreenConnect
+    
+    - **Effort:** intermediate
     
 ??? abstract "Sekoia.io EICAR Detection"
     
@@ -3158,6 +3170,7 @@ Rules catalog includes **956 built-in detection rules** ([_last update on 2024-1
     
     - **Changelog:**
     
+        - 18/11/2024 - minor - Updating filter on file change and deletion
         - 09/10/2024 - minor - File paths added to filter some false positives.
         - 20/09/2024 - minor - File paths added to filter some false positives.
         - 19/09/2024 - minor - File paths added to filter some false positives.
@@ -3735,6 +3748,7 @@ Rules catalog includes **956 built-in detection rules** ([_last update on 2024-1
     
     - **Changelog:**
     
+        - 18/11/2024 - minor - Filter modified to avoid some false positives.
         - 19/09/2024 - minor - File paths added to filter some false positives.
             
 ??? abstract "Zscaler ZIA Malicious Threat"

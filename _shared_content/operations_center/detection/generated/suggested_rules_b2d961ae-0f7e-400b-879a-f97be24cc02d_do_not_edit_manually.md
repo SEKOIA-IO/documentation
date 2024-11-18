@@ -1635,12 +1635,6 @@ The following Sekoia.io built-in rules match the intake **Trend Micro Cloud One 
     
     - **Effort:** intermediate
 
-??? abstract "ZIP LNK Infection Chain"
-    
-    Detection of an ZIP download followed by a child-process of explorer, followed by multiple Windows processes.This is widely used as an infection chain mechanism.
-    
-    - **Effort:** advanced
-
 ??? abstract "xWizard Execution"
     
     Detects the execution of Xwizard tool with specific arguments which utilized to run custom class properties.
