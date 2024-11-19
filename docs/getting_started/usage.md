@@ -1,33 +1,36 @@
 # Usage overview
 
 The Usage page provides users with a comprehensive overview of their data consumption and performance metrics associated with their communities. This feature is essential for understanding resource allocation and ensuring compliance with the fair use policy. Users can access detailed analytics regarding their analyzed bytes by community, as well as all executed playbook actions, facilitating efficient monitoring of usage and prevention of service degradation.
-How It Works
 
-Upon accessing the Usage page, users are presented with a dashboard that displays their data usage for the current month. The dashboard consists of key sections:
+## How it works
+
+Upon accessing the Usage page, you are presented with a dashboard that displays their data usage for the current month. The dashboard consists of key sections:
 
 - **Analyzed Bytes**: Visualizes the total data analyzed by the community and indicates whether the usage is within acceptable limits.
 - **Executed Playbook Actions**: Summarizes automation actions taken based on user-defined playbooks. 
 
 As a member of a workspace, you can quickly review consumption metrics across all your communities. The summary table includes:
-- Community name
-- Number of subscribed assets: Total subscribed assets in each community (based on what has been defined in your contract with Sekoia). 
-- Type of subscription: The subscription plan type.
-- Analyzed bytes: The amount of data analyzed, applicable to your plan.
+- **Community name**
+- **Number of subscribed assets**: Total subscribed assets in each community (based on what has been defined in your contract with Sekoia). 
+- **Type of subscription**: The subscription plan type.
+- **Analyzed bytes**: The amount of data analyzed, applicable to your plan.
 
 You can also have a look at your previous consumption by clicking on the date selector in the upper right of the screen. 
 
 ## Sections
 
-### Analyzed Bytes
+### Analyzed bytes
 
-In the Analyzed Bytes section, users can view a detailed breakdown of their monthly data usage in relation to the Fair Use Policy.
+In the Analyzed bytes section, users can view a detailed breakdown of their monthly data usage in relation to the Fair Use Policy.
 
 - **Current usage**: Displays the total bytes analyzed (e.g., 100 GB) and highlights any excess usage against the predefined fair use limit (e.g., 210 GB).
 - **Fair use indicator**: A visual marker shows whether current consumption exceeds the fair use threshold.
 
-### Fair Use Policy
+### Fair use policy
 
-The Fair Use Policy ensures equitable access to platform resources for all users. If a user exceeds their allocated usage, they may experience degraded performance or incur additional charges. Key components include:
+The Fair Use Policy ensures equitable access to platform resources for all users. If a user exceeds their allocated usage, they may experience degraded performance or incur additional charges. 
+
+Key components include:
 - **Threshold:** Each user has a set limit on total analyzed bytes allowed within a specified period (e.g., 200 GB per month).
 - **Excessive use consequences**: Regularly exceeding the limit may result in:
   - Notifications about potential performance degradation.
@@ -49,9 +52,9 @@ The Executed Playbook Actions section displays the total number of actions compl
 
 An asset refers to any equipment that produces logs, including user workstations, servers, and virtual machines. Customers subscribe based on the number of assets they wish to monitor, which directly influences their data usage and associated costs.
 
-## Plans and Usage
+## Plans and usage
 
-### Defend CORE and PRIME Plans
+### Defend CORE and PRIME plans
 
 Depending on the plan you are subscribed to, you may have different thresholds for data usage:
 
