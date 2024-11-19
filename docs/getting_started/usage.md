@@ -35,6 +35,7 @@ Key components include:
 
 - **Threshold:** Each user has a set limit on total analyzed bytes allowed within a specified period (e.g., 200 GB per month).
 - **Excessive use consequences**: Regularly exceeding the limit may result in:
+  
   - Notifications about potential performance degradation.
   - Adjusted fees for exceeding the limit.
   - Recommendations for upgrading to plans with higher allowances.
