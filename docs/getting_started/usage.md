@@ -31,6 +31,7 @@ In the Analyzed bytes section, users can view a detailed breakdown of their mont
 The Fair Use Policy ensures equitable access to platform resources for all users. If a user exceeds their allocated usage, they may experience degraded performance or incur additional charges. 
 
 Key components include:
+
 - **Threshold:** Each user has a set limit on total analyzed bytes allowed within a specified period (e.g., 200 GB per month).
 - **Excessive use consequences**: Regularly exceeding the limit may result in:
   - Notifications about potential performance degradation.
@@ -39,12 +40,13 @@ Key components include:
 
 Tracking consumption empowers users to proactively adjust their data usage and consider upgrading their plans if necessary.
 
-!!!note
-  If you are on an **Intelligence pla**n only, please note that you will not see any analyzed bytes, as there are none associated with this plan.
+!!! note
+    If you are on an **Intelligence pla**n only, please note that you will not see any analyzed bytes, as there are none associated with this plan.
 
 ### Playbook Actions
 
 The Executed Playbook Actions section displays the total number of actions completed within the selected month. This is calculated by:
+
 - **Number of actions**: Each automated task initiated by the user within their playbooks is logged. The total actions executed by the user are aggregated and presented accordingly.
 - **Usage patterns**: Users can identify trends in their automation efforts. 
 
