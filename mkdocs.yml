@@ -61,6 +61,7 @@ nav:
     - Create and manage notifications: getting_started/notifications-Listing_Creation.md
     - Notification examples: getting_started/notifications-Examples.md
   - API Keys: getting_started/manage_api_keys.md
+  - Usage: getting_started/usage.md
   - Sekoia regions: getting_started/regions.md
   - Best practices: getting_started/best_practices.md
   - Troubleshooting tips: getting_started/get_troubleshooting_tips.md
