@@ -10,6 +10,7 @@ Upon accessing the Usage page, you are presented with a dashboard that displays 
 - **Executed Playbook Actions**: Summarizes automation actions taken based on user-defined playbooks. 
 
 As a member of a workspace, you can quickly review consumption metrics across all your communities. The summary table includes:
+
 - **Community name**
 - **Number of subscribed assets**: Total subscribed assets in each community (based on what has been defined in your contract with Sekoia). 
 - **Type of subscription**: The subscription plan type.
