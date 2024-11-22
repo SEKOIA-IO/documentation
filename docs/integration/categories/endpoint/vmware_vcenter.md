@@ -21,7 +21,13 @@ An internal log concentrator is required to collect and forward events to Sekoia
 
 ### Enable Syslog forwarding
 
-Follow [this guide](https://kb.vmware.com/s/article/2003322) to enable the log forwarding to the log concentrator.
+- Log in to the vCenter Server Management, with the administrative rights
+- On the left panel, click `Syslog`
+- In the Forwarding configuration, create a new configuration by clicking `CONFIGURE` or edit an existing one by clicking `EDIT`
+- Click `+ ADD` to create an additional remote servers (up to 3) in the configuration if one already exists
+- Type the ip address, the port of the log concentrator and select the protocol (we recommend TCP)
+- Click `SAVE`
+- Click `SEND TEST MESSAGE` to validate the status of the connection.
 
 ## Create the intake
 
@@ -81,3 +87,6 @@ volumes:
 {!_shared_content/operations_center/detection/generated/suggested_rules_0642b03a-9d4a-4c88-a5e2-4597e366b8c4_do_not_edit_manually.md!}
 {!_shared_content/operations_center/integrations/generated/0642b03a-9d4a-4c88-a5e2-4597e366b8c4.md!}
 
+## Further Readings
+
+- [Forward vCenter Server Log Files to Remote Syslog Server](https://docs.vmware.com/en/VMware-vSphere/7.0/com.vmware.vsphere.monitoring.doc/GUID-9633A961-A5C3-4658-B099-B81E0512DC21.html)
