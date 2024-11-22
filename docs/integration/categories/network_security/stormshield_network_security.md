@@ -19,7 +19,7 @@ In this documentation we will explain how to collect and send Stormshield Networ
 ### Instruction on Sekoia
 #### Create your intake
 
-Everything you need to do for this part of the configuration is described [here](/xdr/features/collect/intakes).
+Everything you need to do for this part of the configuration is described [here](/xdr/features/collect/intakes.md).
 
 1. Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a new intake from the `Stormshield Network Security`.
 2. Copy the associated Intake key

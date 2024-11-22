@@ -210,11 +210,11 @@ Restart-Service nxlog
 ### Configure the concentrator to forward events to Sekoia.io
 Please read the dedicated documentation for each concentrator:
 
-* [Rsyslog](/integration/ingestion_methods/syslog/overview)
-* [Logstash](/integration/ingestion_methods/logstash)
-* [Syslog-ng](/integration/ingestion_methods/syslog-ng)
-* [Graylog](/integration/ingestion_methods/https/graylog)
-* [Sekoia.io docker concentrator](/integration/ingestion_methods/syslog/sekoiaio_forwarder)
+* [Rsyslog](/integration/ingestion_methods/syslog/overview.md)
+* [Logstash](/integration/ingestion_methods/logstash.md)
+* [Syslog-ng](/integration/ingestion_methods/syslog-ng.md)
+* [Graylog](/integration/ingestion_methods/https/graylog.md)
+* [Sekoia.io docker concentrator](/integration/ingestion_methods/syslog/sekoiaio_forwarder.md)
 
 !!! Note
     While Sekoia.io docker concentrator is highly recommended, you are free to use the one that you are most comfortable with.

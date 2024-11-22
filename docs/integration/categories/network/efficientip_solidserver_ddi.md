@@ -40,22 +40,22 @@ An internal syslog concentrator is required to collect and forward events to Sek
 1. Log in SOLIDServer console
 2. On the left panel, click `Administration`
 
-    ![Adminstation](/assets/operation_center/integration_catalog/network/efficientip_solidserver/01 - administration.png)
+    ![Adminstation](/assets/integration/network/efficientip_solidserver/01 - administration.png)
 
 3. In the `monitoring` section, click `Configuration`
 
-    ![Configuration](/assets/operation_center/integration_catalog/network/efficientip_solidserver/02 - configuration.png)
+    ![Configuration](/assets/integration/network/efficientip_solidserver/02 - configuration.png)
 
 4. In the menu, click `+ Add`
 
-    ![syslog](/assets/operation_center/integration_catalog/network/efficientip_solidserver/03 - syslog.png)
+    ![syslog](/assets/integration/network/efficientip_solidserver/03 - syslog.png)
 
 5. In the `Services` drop-dwon, select the following services:
 	- `named`
 
 6. In the `Target server`, fill the ip address and the port of the log concentrator.
 
-    ![target](/assets/operation_center/integration_catalog/network/efficientip_solidserver/04 - target.png)
+    ![target](/assets/integration/network/efficientip_solidserver/04 - target.png)
 
 7. Click `OK`
 
@@ -67,7 +67,7 @@ Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a n
 
 ## Forward logs to Sekoia.io
 
-Please consult the [Syslog Forwarding](/integration/ingestion_methods/syslog/sekoiaio_forwarder) documentation to forward these logs to Sekoia.io.
+Please consult the [Syslog Forwarding](/integration/ingestion_methods/syslog/sekoiaio_forwarder.md) documentation to forward these logs to Sekoia.io.
 
 {!_shared_content/operations_center/integrations/generated/f95fea50-533c-4897-9272-2f8361e63644_sample.md!}
 

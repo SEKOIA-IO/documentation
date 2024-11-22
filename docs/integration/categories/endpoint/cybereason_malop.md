@@ -12,7 +12,7 @@ Cybereason offers a set of Endpoint Detection and Response (EDR) solutions. Thro
 
 !!! warning
     If your tenant uses an allowlist to authorize connections, please ensure that Sekoia.io's IPs are allowed.
-    See our [FAQ](/xdr/FAQ) to get our IPs.
+    See our [FAQ](/xdr/FAQ.md) to get our IPs.
 
 
 ## Configure
@@ -21,7 +21,7 @@ This setup guide will lead you into forwarding all MalOp activities to Sekoia.io
 
 ### Prerequisites
 
-To forward events produced by Cybereason to Sekoia.io, you will need your Cybereason username and password. 
+To forward events produced by Cybereason to Sekoia.io, you will need your Cybereason username and password.
 
 !!! warning
     Please ensure the user has, at least, `Analyst L2` rights granted.
@@ -33,9 +33,9 @@ Keep aside the intake key.
 
 ### Pull events
 
-To start pulling events, you have to: 
+To start pulling events, you have to:
 
-1. Go to the [playbook page](https://app.sekoia.io/operations/playbooks) and create a new playbook with the [Fetch new events from Cybereason](/integration/action_library/endpoint/cybereason.md) module. 
+1. Go to the [playbook page](https://app.sekoia.io/operations/playbooks) and create a new playbook with the [Fetch new events from Cybereason](/integration/action_library/cybereason.md) module.
 2. Set up the module configuration with your Cybereason username and password.
 3. Set up the trigger configuration with your intake key
 4. Start the playbook and enjoy your [events](https://app.sekoia.io/operations/events).

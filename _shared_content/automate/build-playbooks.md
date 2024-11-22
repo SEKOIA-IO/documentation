@@ -60,7 +60,7 @@ To create a playbook from scratch, you will need to create an empty playbook, go
 
 Please refer to the documentation for each of these types to learn how to use them efficiently.
 
-You can refer to our [playbook templates](https://github.com/SEKOIA-IO/Community/tree/main/playbooks/templates) and [use cases](/xdr/usecases/playbook/synchronize_alerts/) for inspiration.
+You can refer to our [playbook templates](https://github.com/SEKOIA-IO/Community/tree/main/playbooks/templates) and [use cases](/xdr/usecases/playbook/synchronize_alerts.md) for inspiration.
 
 ## Meta-playbook creation
 

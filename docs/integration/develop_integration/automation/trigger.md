@@ -27,12 +27,9 @@ A Connector is a class based on [`Connector`](https://github.com/SEKOIA-IO/sekoi
 
 It must implement the method `run` and call the method `publish_events_to_intake` to forward events.
 
-(See [OKTA system log connector](../Okta/okta_modules/system_log_trigger.py))
 
 ## Entrypoint
 
 To expose a trigger of the module, the trigger must be declared in `main.py` at the root of the module.
 
 Import the class in `main.py` and register the class, against the module, with the unique command name of the trigger as second argument.
-
-(See [Okta main.py](../Okta/main.py))

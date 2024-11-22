@@ -14,7 +14,7 @@ This use case describes how to get the MAC address of events associated with an 
 	* `SIC_READ_EVENT_STATS`
 
 !!! note 
-    To create your API Key, follow this [documentation](/getting_started/manage_api_keys).
+    To create your API Key, follow this [documentation](/getting_started/manage_api_keys.md).
     
 ## Playbook configuration
 

@@ -112,8 +112,8 @@ To create an intake, you have to:
 ![intakes_creation](/assets/operation_center/intakes/modal-intake-creation.png){: style="max-width:100%"}
 
 !!! Note
-    The documentation about the integration of your data sources is also available in the [integrations](integrations/index.md) page.
-
+    The documentation about the integration of your data sources is also available in the [integrations](/integration/index.md) page.
+Pin
 ## Configure a notification to report on inactive intake
 An inactive intake may have devastating consequences on your security monitoring. To prevent incidents from happening, you can set up notifications to get alerted when an intake stops sending events to Sekoia.io.
 
@@ -121,7 +121,7 @@ To set up your notification, you can:
 
 1. Go to the Intakes listing page and click on:  ![Card menu](/assets/operation_center/intakes/intakes-card-menu.png){: style="max-width:10%"} on the right side of the card and click on the `Notifications` menu
 2. Specify how long the intake should be inactive before sending a notification. The duration can go from 15 min to 24 hours.
-3. Select how you want to be notified. Triggered actions that are available are mentioned in the page [Turn on notifications](/getting_started/notifications-Listing_Creation).
+3. Select how you want to be notified. Triggered actions that are available are mentioned in the page [Turn on notifications](/getting_started/notifications-Listing_Creation.md).
 
 !!! note
      You can also set up this notification from the **intake details page** or the **User Center** > Notifications by selecting the trigger `No events are received`.
@@ -130,7 +130,7 @@ To set up your notification, you can:
 
 ## Create a custom intake
 
-To learn more about how to create a custom intake, please refer to this [section.](/../../../integration/develop_integration/formats/create_a_format/)
+To learn more about how to create a custom intake, please refer to this [section.](/integration/develop_integration/formats/create_a_format.md)
 
 ## Intake details page
 
@@ -205,7 +205,7 @@ The `Connector log` tab is only available for Pull intakes.
 ![intakes_connector](/assets/operation_center/intakes/intakes-connector.png){: style="max-width:100%"}
 
 In this tab, you will find the latest logs of the connector. These logs help you check that the connector is functioning properly by checking the `Info` level messages.
-But they also help you troubleshoot issues by checking the `Error` level messages. 
+But they also help you troubleshoot issues by checking the `Error` level messages.
 
 Use the filter button to filter `Error` logs.
 
@@ -231,7 +231,7 @@ The intake menu allows you to perform different kind of actions:
 
 #### Edit entity
 
-To modify the entity of the intake: 
+To modify the entity of the intake:
 
 1. Click on `Edit entity` in the menu
 2. Select a new entity in the list
@@ -254,7 +254,7 @@ This menu is only available for Pull intakes. Use this menu to modify the parame
 
 #### Notifications
 
-To create a new notification on the intake: 
+To create a new notification on the intake:
 
 1. Click on `Notifications` in the menu
 2. Configure the notification settings
@@ -262,7 +262,7 @@ To create a new notification on the intake:
 
 #### Rename intake
 
-To rename the intake: 
+To rename the intake:
 
 1. Click on `Rename` in the menu
 2. Enter the new name of the intake
@@ -272,7 +272,7 @@ To rename the intake:
 
 #### Delete intake
 
-To delete the intake: 
+To delete the intake:
 
 1. Click on `Delete` in the menu
 2. Confirm the deletion

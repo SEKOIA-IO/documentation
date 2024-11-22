@@ -474,6 +474,42 @@ In this section, you will find examples of raw logs as generated natively by the
 
 
 
+=== "test_event_reason"
+
+
+    ```json
+	1,2024/10/25 16:04:52,024101011111,SYSTEM,userid,2522,2024/10/25 16:04:52,,connect-server-monitor-failure,,0,0,general,high,"User-ID server monitor test05(vsystest) Access denied",7389706522298800000,0x0,0,0,0,0,,FFFFF01,0,0,2024-10-25T16:04:52.574+02:00
+    ```
+
+
+
+=== "test_event_reason1"
+
+
+    ```json
+	1,2024/10/25 16:10:48,024101010000,SYSTEM,userid,2562,2024/10/25 16:10:48,,connect-ldap-sever,1.2.3.4,0,0,general,informational,"ldap cfg joe_done connected to server 5.6.7.8:333, initiated by: 0.0.1.1",73897065222988700000,0x0,0,0,0,0,,FFFFFF01,0,0,2024-10-25T16:10:48.575+02:00
+    ```
+
+
+
+=== "test_event_reason2"
+
+
+    ```json
+	1,2024/10/22 08:54:16,024101011111,SYSTEM,auth,2511,2024/10/22 08:54:17,,auth-success,FFFF,0,0,general,informational,"When authenticating user joe1595 from 1.2.3.4, a less secure authentication method PAP is used. Please migrate to PEAP or EAP-TTLS. Authentication Profile FFFF, vsys shared, Server Profile SERVER_TEST, Server Address 5.6.7.8",7389706522298800000,0x0,0,0,0,0,,FWPAN01,0,0,2024-10-22T08:54:17.012+02:0
+    ```
+
+
+
+=== "test_event_reason3"
+
+
+    ```json
+	1,2024/10/22 09:29:30,024101011111,SYSTEM,auth,2562,2024/10/22 09:29:30,,auth-success,FFFF,0,0,general,informational,"authenticated for user joe979.   auth profile FFFF, vsys shared, server profile server-test, server address 1.7.4.4, auth protocol PAP, admin role superuser, From: 1.2.2.7.",738970652229833333,0x0,0,0,0,0,,FFFF01,0,0,2024-10-22T09:29:30.605+02:00
+    ```
+
+
+
 === "test_file_alert_json"
 
 

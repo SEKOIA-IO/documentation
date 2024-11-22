@@ -13,7 +13,7 @@ Tanium solutions manage and protect networks and endpoints.
 
 
 ## Configure
-Tanium logs can be collected under the rsyslog format and then forward to Sekoia.io. Refer to the official documentation of Tanium to forward your logs under rsyslog format and consult the [Rsyslog Transport](/integration/ingestion_methods/rsyslog) documentation to forward these logs to Sekoia.io.
+Tanium logs can be collected under the rsyslog format and then forward to Sekoia.io. Refer to the official documentation of Tanium to forward your logs under rsyslog format and consult the [Rsyslog Transport](/integration/ingestion_methods/rsyslog.md) documentation to forward these logs to Sekoia.io.
 
 {!_shared_content/operations_center/integrations/generated/59991ced-c2a0-4fb0-91f3-49e3993c16f5_sample.md!}
 

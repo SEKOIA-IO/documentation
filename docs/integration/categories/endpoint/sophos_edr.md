@@ -10,7 +10,7 @@ This EDR reduces the attack surface and prevent attacks from running with an ant
 This setup guide shows how to forward events produced by Sophos EDR to Sekoia.io.
 
 - **Vendor**: Sophos
-- **Supported environment**: Cloud 
+- **Supported environment**: Cloud
 - **Detection based on**: Telemetry
 - **Supported application or feature**: File monitoring, Process monitoring
 
@@ -39,7 +39,7 @@ In the Sophos Central Admin console:
 1. Go to the [Playbook page](https://app.sekoia.io/operations/playbooks).
 2. Click on `+ PLAYBOOK` and choose `Create a playbook from scratch`.
 3. Give it a name and a description and click on `Next`.
-4. In `Choose a trigger`, select the [Get Sophos events](/integration/action_library/endpoint/sophos/#get-sophos-events).
+4. In `Choose a trigger`, select the [Get Sophos events](/integration/action_library/sophos.md).
 5. Click on the `Get Sophos events` module on the right sidebar and in the `Module Configuration` section, select `Create new configuration`.
 6. Write a `name` and paste the `client_id` and `client_secret` from the Sophos console and click on `Save`.
 

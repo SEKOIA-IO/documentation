@@ -10,4 +10,4 @@ This section will guide you through creating the intake object in Sekoia, which 
 6. You will be redirected to the Intake listing page, where you will find a new line with the name you gave to the Intake.
 
 !!! Note
-    For more details on how to use the Intake page and to find the Intake key you just created, refer to [this documentation](https://docs.sekoia.io/xdr/features/automate/manage-accounts/).
+    For more details on how to use the Intake page and to find the Intake key you just created, refer to [this documentation](/xdr/features/automate/manage-accounts.md).

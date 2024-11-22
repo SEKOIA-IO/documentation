@@ -1,6 +1,6 @@
 # Dashboards
 
-Dashboards provide a powerful and intuitive way to visualize and monitor key metrics and data in real-time. 
+Dashboards provide a powerful and intuitive way to visualize and monitor key metrics and data in real-time.
 Users can create customized views by combining various widgets, offering insights into different aspects of their operations, security posture, or other critical areas.
 
 A key aspect of dashboards is the ability to use query builders, which enable users to create custom data queries directly within the dashboard. This allows for highly tailored data analysis and visualization, empowering users to explore specific datasets and derive insights that are most relevant to their needs.
@@ -11,7 +11,7 @@ With features like time range configuration, manual and automatic data refresh, 
 Accounts on Sekoia.io come with a preconfigured dashboard that gives a synthetic view of the current community activity, either from an operational security perspective (risk level, number of alerts, etc.) or from an activity perspective (list of last posted comments, last created alerts, etc.).
 
 ## Time Range
-Managing the time range for data displayed in your dashboard is essential for analyzing trends and patterns over specific periods. 
+Managing the time range for data displayed in your dashboard is essential for analyzing trends and patterns over specific periods.
 The dashboard offers flexible options for configuring the time range for each widget and the overall dashboard.
 
 **Widget-Specific Time Range**
@@ -27,7 +27,7 @@ The dashboard's overall date range can be set using the range selector, which is
 By configuring these settings, you can ensure that your dashboard provides the most relevant and consistent view of data, tailored to the specific time periods that matter most to your analysis.
 
 ## Refreshing Data
-Ensuring that the data displayed on your dashboard is up-to-date is critical for accurate monitoring and analysis. 
+Ensuring that the data displayed on your dashboard is up-to-date is critical for accurate monitoring and analysis.
 The dashboard provides several options for refreshing the data presented in the widgets.
 
 By default, the dashboard shows data that was computed during the last refresh. This means that when you first view a dashboard, the information is based on the most recent refresh that occurred.
@@ -56,7 +56,7 @@ To create a new dashboard, you have to:
 5. Click on `Add widget` and select a widget from the list in the right panel
 6. Drag the needed widget in the workspace and edit it following your needs
 7. Click on `Save`
-   
+
 To access your dashboards, you have to click on the name of the dashboard in the upper left of the screen and choose a dashboard from the list.
 
 !!! note
@@ -83,31 +83,31 @@ The Default Dashboard cannot be deleted.
 
 ## Add, edit and organize widgets
 
-Dashboards can be easily customized using a variety of widgets, allowing users to tailor the interface to their specific needs. 
+Dashboards can be easily customized using a variety of widgets, allowing users to tailor the interface to their specific needs.
 
-### Add widgets 
+### Add widgets
 
 To add widgets to your dashboard, click on the `Add New Widget` button located in the top right corner of the screen. From the panel, select the desired widgets from the available queries and presets.
 
-### Edit widgets 
+### Edit widgets
 
 To edit an existing widget, click the `three dots` in the upper right corner of the widget, and then select **Edit Widget**.
 
 - If the widget is a **query visualization**, you will be redirected to the query settings page, where you can edit the query parameters as needed.
 - If the widget is a **preset** from the widgets' library, the editing panel will appear, allowing you to adjust options such as the time range or visualization type.
 
-### Reorganize widgets 
+### Reorganize widgets
 
 To reorganize the layout of widgets on your dashboard, click the `Edit button` in the top right corner of the screen. This mode enables you to change both the position and size of each widget. You can easily drag and drop widgets to your preferred locations. Don’t forget to click `Save` to apply your changes!
 
-### Remove widgets 
-To remove widgets from your dashboard, click the `three dots` and select **Delete from dashboard**. 
+### Remove widgets
+To remove widgets from your dashboard, click the `three dots` and select **Delete from dashboard**.
 
 ## Query Builders Widgets
 
 Query builders can be inserted into dashboards to streamline data visualization and management. It allows you to easily integrate existing query builders into multiple dashboards, ensuring that any updates made to a query on the query page are automatically reflected across all dashboards where it is used. By leveraging this integration, you maintain consistency and reduce the need for manual updates, enhancing the efficiency and accuracy of your data visualizations.
 
-The Query widget in the dashboard utilizes the visualization settings saved with the query builder on the query page. For detailed information on how visualizations are managed, refer to the [documentation of Query Builders](/xdr/features/investigate/query_builder/).
+The Query widget in the dashboard utilizes the visualization settings saved with the query builder on the query page. For detailed information on how visualizations are managed, refer to the [documentation of Query Builders](/xdr/features/investigate/query_builder.md).
 
 Changes made to a query builder on the query builder page are automatically propagated to all dashboards that use that query builder. It ensures that updates are reflected without requiring manual intervention.
 On the query builder’s edit page, you can view a list of all dashboards utilizing the query builder. This helps track where changes will take effect.
@@ -117,7 +117,7 @@ On the query builder’s edit page, you can view a list of all dashboards utiliz
 
 ## Built-in Widgets
 
-Dashboards come equipped with a variety of built-in widgets designed to provide immediate access to critical data and insights. 
+Dashboards come equipped with a variety of built-in widgets designed to provide immediate access to critical data and insights.
 These widgets are pre-configured for common use cases, allowing users to quickly add valuable information to their dashboards without the need for custom queries or extensive configuration.
 
 The built-in widgets are organized into categories to help users easily find the tools they need:

@@ -15,9 +15,6 @@ Gatewatcher AionIQ is a detection and response platform for your network that id
 ## High-Level Architecture Diagram
 
 - **Type of integration**: Outbound (PUSH to Sekoia.io)
-- **Schema**
-
-![gatewatcher_aioniq_architecture](/assets/integration/gatewatcher_aioniq_architecture.png)
 
 ## Specification
 

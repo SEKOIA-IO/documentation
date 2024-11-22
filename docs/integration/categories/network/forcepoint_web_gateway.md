@@ -18,9 +18,6 @@ Forcepoint Secure Web Gateway (SWG) is a proxy, installed on the endpoint, apply
 ## High-Level Architecture Diagram
 
 - **Type of integration**: Outbound (PUSH to Sekoia.io)
-- **Schema**
-
-![forcepoint_swg_architecture](/assets/integration/forcepoint_swg_architecture.png)
 
 !!! Alternative
 
@@ -63,7 +60,7 @@ In this guide, you will configure the gateway to forward events to syslog. This 
 #### Detailed Procedure:
 
 1. **Internal Syslog Concentrator Requirement:**
-   - An internal syslog concentrator is required to collect and forward events to Sekoia.io. We highly recommend using the [Sekoia.io Forwarder](/integration/ingestion_methods/syslog/sekoiaio_forwarder/).
+   - An internal syslog concentrator is required to collect and forward events to Sekoia.io. We highly recommend using the [Sekoia.io Forwarder](/integration/ingestion_methods/syslog/sekoiaio_forwarder.md).
 
 2. **Enable SIEM Integration:**
    - Log on to the Web Security module of the Forcepoint Security Manager and navigate to `Settings > General > SIEM Integration`.

@@ -37,7 +37,7 @@ The easiest way to create feed configurations is to use the Intelligence Center 
 
 ![Sekoia.io Intelligence Center Feeds](/assets/intelligence_center/feeds.png){: style="width: 100%; max-width: 100%"}
 
-If you would prefer creating the feed with the API, you can use the [feeds](/cti/develop/rest_api/intelligence/#operation/post_feeds_resource) endpoint.
+If you would prefer creating the feed with the API, you can use the `POST v2/inthreat/feeds` endpoint.
 
 The result should contain the feed `id` that may be used to consume the feed.
 
@@ -169,7 +169,7 @@ For relationships, use the `GET v2/inthreat/relationships/{relationship_id}` end
 
 ## Looking for an IOC
 
-It is possible to look for a specific indicator of compromise in the Intelligence Center and get its context with the `GET v2/inthreat/indicators/context` endpoint (see [documentation](/cti/develop/rest_api/intelligence/#tag/Indicators/operation/get_indicator_context_resource)).
+It is possible to look for a specific indicator of compromise in the Intelligence Center and get its context with the `GET v2/inthreat/indicators/context` endpoint.
 
 
 ```python

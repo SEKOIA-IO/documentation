@@ -6,14 +6,14 @@ To push logs, you have to configure some filters in Logstash that will add the p
 
 ## Example
 
-In the following example, we have multiple inputs to handle logs collected via Syslog (Apache HTTP Server and NGINX logs) and via [Beats (Winlogbeat)](/integration/integrations/endpoint/winlogbeat.md) and forward them to Sekoia.io. 
+In the following example, we have multiple inputs to handle logs collected via Syslog (Apache HTTP Server and NGINX logs) and via [Beats (Winlogbeat)](/integration/categories/endpoint/winlogbeat.md) and forward them to Sekoia.io.
 
 In order to filter events effectively, Logstash uses tags as a key component. To ensure proper functionality, make sure to update the intake key value by editing the placeholder `CHANGE_ME_INTAKE_KEY` mentioned below. Additionally, you have the flexibility to incorporate multiple filters within the `filter` section as per your requirements.
 
-!!! tip 
+!!! tip
     By adding additional filters, you can enhance the filtering capabilities of Logstash and customize the processing of events to suit your requirements.
 
-!!! note    
+!!! note
     Beats agents require a specific output configuration as you need to forward the complete JSON event to Sekoia.io.
 
 ```
@@ -77,7 +77,7 @@ The above configuration will send your logs one at a time (one HTTP request per 
 
 For more advanced use cases, where you want to send logs to Sekoia.io and to an Elasticsearch instance for example, a more advanced Logstash configuration is recommended to achieve higher throughput. This configuration uses multiple pipelines and pipeline-to-pipeline communications to duplicate events and format them to the expected payload format required by Sekoia.io. Events will be sent in batch mode, providing better performance.
 
-!!! note    
+!!! note
     Beats events do not need to be duplicated into a second pipeline as the complete JSON event is sent to Sekoia.io.
 
 *pipelines.yml*

@@ -37,10 +37,10 @@ In the context of an intake or automation, an improvement is defined by the foll
 In the functional category, distinguishing between a bug and an improvement request can sometimes be nuanced, particularly concerning the extraction of new fields in the context of an intake. Here is a more precise explanation:
 
 - **Bug**: A new field extraction request will be considered a bug if the field is part of the list of ECS fields present in the sections "Required Fields" or "Required Fields depending on context" of the documentation pages found in the section "How to develop a new Integration" > "Formats" > "Best Practices". For instance:
-    - For technologies of type Endpoints, see the [Required Fields](/integration/develop_integration/formats/best_practices/endpoints#required-fields).
-    - For network technologies, see the [Required Fields](/integration/develop_integration/formats/best_practices/networks#required-fields).
+    - For technologies of type Endpoints, see the [Required Fields](/integration/develop_integration/formats/best_practices/endpoints.md#required-fields).
+    - For network technologies, see the [Required Fields](/integration/develop_integration/formats/best_practices/networks.md#required-fields).
 
 - **Improvement**: A request to add a field that does not fall under the aforementioned mandatory ECS fields will be considered an improvement. This can include optional fields or new fields that enhance the functionality but are not strictly required by the ECS standard.
-    - Clients have the flexibility to create custom formats to meet their specific needs. Additionally, they can be supported by our Professional Services team. Furthermore, clients can request the homologation of their custom format by following the process described in our documentation: [Homologate Your Custom Format in the SEKOIA Catalog](/integration/develop_integration/overview#step-3-homologate-your-custom-format-in-the-sekoia-catalog-optional)
+    - Clients have the flexibility to create custom formats to meet their specific needs. Additionally, they can be supported by our Professional Services team. Furthermore, clients can request the homologation of their custom format by following the process described in our documentation: [Homologate Your Custom Format in the SEKOIA Catalog](/integration/develop_integration/overview.md#step-3-homologate-your-custom-format-in-the-sekoia-catalog-optional)
 
 Understanding whether an issue is a bug or an improvement request is crucial for effective problem resolution and enhancement planning. Should you encounter issues or have suggestions, please consult this guide and reach out to our support team if needed.

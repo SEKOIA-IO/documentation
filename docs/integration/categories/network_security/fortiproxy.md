@@ -19,9 +19,6 @@ In this documentation, we will explain one way to collect and send FortiProxy lo
 ## High-Level Architecture Diagram
 
 - **Type of integration**: Outbound (PUSH to Sekoia.io)
-- **Schema**
-
-![fortinet_fortiproxy_architecture](/assets/integration/fortinet_fortiproxy_architecture.png)
 
 !!! Alternative
 

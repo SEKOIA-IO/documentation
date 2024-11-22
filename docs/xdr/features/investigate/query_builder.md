@@ -4,7 +4,7 @@ Start exploring your data with the Query Builder. Hunt for threats, obtain analy
 
 With this form, you can aggregate data to extract new insights, helping you make informed decisions. Additionally, the Query Builder enables the visualization of data through various types of charts, enriching your reporting capabilities.
 
-Currently, the Alerts data source is available, along with the Events source and the Cases source, with plans to introduce more sources in the future. 
+Currently, the Alerts data source is available, along with the Events source and the Cases source, with plans to introduce more sources in the future.
 
 ![query builder](/assets/operation_center/events/qb-run.gif){: style="max-width:100%"}
 
@@ -62,7 +62,7 @@ Use the following operators to define your conditions in the `WHERE` clause.
 | > | Strictly more than |
 | >= | More than or equal to |
 
-### Alert properties 
+### Alert properties
 
 When using the Query Builder with Alerts as a source, users can filter and manipulate queries based on the following alert properties:
 
@@ -187,10 +187,10 @@ The Line Chart is designed to visualize data points over a continuous range, mak
 - In the **`X-axis`**, select the column you want to use for the time or continuous variable. This column can be of any data type.
 - In the **`Y-axis`**, select the column that contains the numeric values. This column must consist of numeric data.
 
-### Options 
+### Options
 #### Breakdown by
 
-The **Breakdown By** feature allows you to analyze your data in more depth across multiple visualization types, including Bar Charts, Column Charts, and Line Charts. 
+The **Breakdown By** feature allows you to analyze your data in more depth across multiple visualization types, including Bar Charts, Column Charts, and Line Charts.
 
 When you include a **Group By** clause in your query, you can break down your data by a specific attribute. This enables you to visualize how different categories or values contribute to the overall dataset.
 
@@ -220,7 +220,7 @@ Choose a title for your query and click on the `Save` button.
 
 Your last result is also saved and will be displayed when you open your saved query.
 
-!!! note 
+!!! note
     - Saved queries are visible to all users of your community.<br/>
     - In MSSP multi-tenancy, saved queries are not visible in sub-communities.
 
@@ -234,6 +234,6 @@ JSON Lines is a convenient format for storing structured data that may be proces
 
 See [JSON Lines documentation](https://jsonlines.org/) for more details.
 
-## Add query to dashboard 
+## Add query to dashboard
 
-Queries can be added to dashboards. To read more about this feature, check our documentation on [dashboards](/xdr/features/report/dashboards/#query-builders-widgets). 
+Queries can be added to dashboards. To read more about this feature, check our documentation on [dashboards](/xdr/features/report/dashboards.md#query-builders-widgets).

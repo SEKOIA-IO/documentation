@@ -6,19 +6,19 @@ Welcome to the Integrations section of our documentation! This section is design
 
 ### Ingestion Methods
 
-In this section, you'll find detailed information on the various methods (pushing on [HTTPS](/integration/ingestion_methods/https/overview/) or [Syslog](/integration/ingestion_methods/syslog/overview/), or pulling a [remote external cloud storage](/integration/ingestion_methods/cloud_saas/overview/)) you can use to ingest data into Sekoia.io SOC Platform. We provide [comprehensive guides and examples](/integration/ingestion_methods/) to help you set up and manage your data ingestion processes efficiently.
+In this section, you'll find detailed information on the various methods (pushing on [HTTPS](/integration/ingestion_methods/https/overview.md) or [Syslog](/integration/ingestion_methods/syslog/overview.md), or pulling a [remote external cloud storage](/integration/ingestion_methods/cloud_saas/overview.md)) you can use to ingest data into Sekoia.io SOC Platform. We provide [comprehensive guides and examples](/integration/ingestion_methods/index.md) to help you set up and manage your data ingestion processes efficiently.
 
 ### Intake Categories
 
-This section offers an organized view of different [intake categories](/integration/categories/overview/), that are used for log collection and processing purposes. You'll find documentation on various types of data (endpoint, network, email...) and how to configure each one, ensuring you a smooth BUILD phase of Third party logs collection.
+This section offers an organized view of different [intake categories](/integration/categories/overview.md), that are used for log collection and processing purposes. You'll find documentation on various types of data (endpoint, network, email...) and how to configure each one, ensuring you a smooth BUILD phase of Third party logs collection.
 
 ### Automation Categories
 
-This section contains a wealth of [automation actions](/integration/action_library/overview/) to interract with Third party directly from and without leaving the Sekoia.io SOC Platform. These resources are designed to help you streamline your workflows and automate repetitive tasks, allowing you to focus on more strategic activities.
+This section contains a wealth of [automation actions](/integration/action_library/overview.md) to interract with Third party directly from and without leaving the Sekoia.io SOC Platform. These resources are designed to help you streamline your workflows and automate repetitive tasks, allowing you to focus on more strategic activities.
 
 ### How to Develop A New Integration
 
-For those looking to extend the capabilities of Sekoia.io SOC Platform, this section provides a [step-by-step guide on how to develop custom integrations](/integration/develop_integration/overview/). You'll learn about our integration framework, best practices, and how to contribute to our ecosystem.
+For those looking to extend the capabilities of Sekoia.io SOC Platform, this section provides a [step-by-step guide on how to develop custom integrations](/integration/develop_integration/overview.md). You'll learn about our integration framework, best practices, and how to contribute to our ecosystem.
 
 ### FAQ Section
 

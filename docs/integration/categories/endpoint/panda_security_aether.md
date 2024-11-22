@@ -34,7 +34,7 @@ Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a n
 
 ### Pull events
 
-Go to the [playbook page](https://app.sekoia.io/operations/playbooks) and create a new playbook with the [Panda Security trigger](/integration/action_library/endpoint/panda-security/#fetch-security-events). You can use the existing template to fasten and ease the creation of your playbook.
+Go to the [playbook page](https://app.sekoia.io/operations/playbooks) and create a new playbook with the [Panda Security trigger](/integration/action_library/panda-security.md#fetch-security-events). You can use the existing template to fasten and ease the creation of your playbook.
 
 Set up the module configuration with an access ID, the password of the access ID (`access_secret`), your WatchGuard Cloud account ID (`account_id`), the API Key (`api_key`).
 Set the `base_url` with the domain part of the API Url (e.g: for the API URL `https://api.usa.cloud.watchguard.com/rest/`, the `base_url` is `https://api.usa.cloud.watchguard.com`).

@@ -58,7 +58,7 @@ Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a n
 
 To start to pull events, you have to:
 
-1. Go to the [playbooks page](https://app.sekoia.io/operations/playbooks) and create a new playbook with the [Consume Eventhub messages](/xdr/feature/automate/library/microsoft-azure/#consume-eventhub-messages)
+1. Go to the [playbooks page](https://app.sekoia.io/operations/playbooks) and create a new playbook with the [Consume Eventhub messages](/xdr/features/automate/library/microsoft-azure.md#consume-eventhub-messages)
 2. Set up the trigger configuration with the EventHub's `Connection string-primary key`, the hub name, the consumer group, the storage's `Connection string-primary key` and the container name.
 3. Start the playbook and enjoy your events
 

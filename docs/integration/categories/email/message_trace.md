@@ -21,7 +21,7 @@ According to [docs.microsoft.com](https://docs.microsoft.com/en-us/microsoft-365
 - Microsoft Defender for Office 365 plan 1 and plan 2
 - Microsoft 365 Defender
 
-In Sekoia.io XDR, [create a new intake key](/xdr/features/collect/intakes/#create-an-intake-from-our-integrations-catalog) using the "Message Trace" format.
+In Sekoia.io XDR, [create a new intake key](/xdr/features/collect/intakes.md#create-an-intake-from-our-integrations-catalog) using the "Message Trace" format.
 
 ## Configure OAuth
 
@@ -144,4 +144,3 @@ If your user cannot access the MessageTrace API, please visit the [Azure Sign-in
 
 {!_shared_content/operations_center/detection/generated/suggested_rules_8461aabe-6eba-4044-ad7f-a0c39a2b2279_do_not_edit_manually.md!}
 {!_shared_content/operations_center/integrations/generated/8461aabe-6eba-4044-ad7f-a0c39a2b2279.md!}
-
