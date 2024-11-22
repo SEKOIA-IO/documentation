@@ -71,5 +71,3 @@ Both plans implement a soft violation policy. If a user exceeds the set threshol
 
 The FLOW plan establishes threshold metrics for data usage based on a predefined number of GB per month. 
 
-#### Soft and hard limits
-The FLOW plan includes both soft and hard limits for data usage. Soft limits provide flexibility, allowing users to be notified upon exceeding their limits, while hard limits enforce stricter controls.
