@@ -22,7 +22,7 @@ You can also have a look at your previous consumption by clicking on the date se
 
 ### Analyzed bytes
 
-In the Analyzed bytes section, users can view a detailed breakdown of their monthly data usage in relation to the Fair Use Policy.
+In the Analyzed bytes section, users can view a detailed breakdown of their monthly data usage in relation to their usage policy.
 
 - **Current usage**: Displays the total bytes analyzed (e.g., 100 GB) and highlights any excess usage against the predefined fair use limit (e.g., 210 GB).
 - **Fair use indicator**: A visual marker shows whether current consumption exceeds the fair use threshold.
