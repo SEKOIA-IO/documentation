@@ -6,7 +6,7 @@ The Usage page provides users with a comprehensive overview of their data consum
 
 Upon accessing the Usage page, you are presented with a dashboard that displays current month data usage. The dashboard consists of key sections:
 
-- **Analyzed Bytes**: Visualizes the total data analyzed by the community and indicates whether the usage is within acceptable limits.
+- **Analyzed Bytes**: Visualizes the total data analyzed by the community.
 - **Executed Playbook Actions**: Summarizes automation actions taken based on user-defined playbooks. 
 
 As a member of a workspace, you can quickly review consumption metrics across all your communities. The summary table includes:
