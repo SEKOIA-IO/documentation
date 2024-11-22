@@ -4,7 +4,7 @@ The Usage page provides users with a comprehensive overview of their data consum
 
 ## How it works
 
-Upon accessing the Usage page, you are presented with a dashboard that displays their data usage for the current month. The dashboard consists of key sections:
+Upon accessing the Usage page, you are presented with a dashboard that displays current month data usage. The dashboard consists of key sections:
 
 - **Analyzed Bytes**: Visualizes the total data analyzed by the community and indicates whether the usage is within acceptable limits.
 - **Executed Playbook Actions**: Summarizes automation actions taken based on user-defined playbooks. 
