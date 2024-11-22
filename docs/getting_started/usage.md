@@ -1,6 +1,6 @@
 # Usage overview
 
-The Usage page provides users with a comprehensive overview of their data consumption and performance metrics associated with their communities. This feature is essential for understanding resource allocation and ensuring compliance with the fair use policy. Users can access detailed analytics regarding their analyzed bytes by community, as well as all executed playbook actions, facilitating efficient monitoring of usage and prevention of service degradation.
+The Usage page provides users with a comprehensive overview of their data consumption and performance metrics associated with their communities. This feature is essential for understanding resource allocation and ensuring compliance with the usage policy. Users can access detailed analytics regarding their analyzed bytes by community, as well as all executed playbook actions, facilitating efficient monitoring of usage and prevention of service degradation.
 
 ## How it works
 
