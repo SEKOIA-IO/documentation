@@ -75,6 +75,66 @@ The following Sekoia.io built-in rules match the intake **Gatewatcher AionIQ V10
     
     - **Effort:** master
 
+??? abstract "Gatewatcher AionIQ V103 Active CTI"
+    
+    Detects whan an event related to CTI is raised by Gatewatcher V103. An attacker may be gathering information with this event.
+    
+    - **Effort:** master
+
+??? abstract "Gatewatcher AionIQ V103 Beacon Detect"
+    
+    Detects a suspicious beacon.
+    
+    - **Effort:** master
+
+??? abstract "Gatewatcher AionIQ V103 Dga Detect"
+    
+    Detects when an event related to dga is raised by gatewatcher. An attacker can use this to generate a new domain for C2.
+    
+    - **Effort:** master
+
+??? abstract "Gatewatcher AionIQ V103 Malcore"
+    
+    Detects a malcore alert by Gatewatcher AionIQ V103 related to documents with passwords.
+    
+    - **Effort:** master
+
+??? abstract "Gatewatcher AionIQ V103 Malicious Powershell Detect"
+    
+    Detects malicious powershell by Gatewatcher V103.
+    
+    - **Effort:** master
+
+??? abstract "Gatewatcher AionIQ V103 Network Behavior Analytics"
+    
+    Detects when network behavior analytics were requested.
+    
+    - **Effort:** master
+
+??? abstract "Gatewatcher AionIQ V103 Ransomware Detect"
+    
+    Detects when a ransomware is detected by gatewatcherV103.
+    
+    - **Effort:** master
+
+??? abstract "Gatewatcher AionIQ V103 Retrohunt"
+    
+    Detects when a retrohunt event is raised by GatewatcherV103.
+    
+    - **Effort:** master
+
+??? abstract "Gatewatcher AionIQ V103 Shellcode Detect"
+    
+    Detects when a suspicious shellcode is used.
+    
+    - **Effort:** master
+
+??? abstract "Gatewatcher AionIQ V103 Sigflow Alert"
+    
+    Detects a sigflow alert by Gatewatcher AionIQ V103.
+    
+    - **Effort:** master
+
 ??? abstract "HackTools Suspicious Names"
     
     Quick-win rule to detect the default process names or file names of several HackTools.

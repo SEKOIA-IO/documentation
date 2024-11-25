@@ -1,4 +1,4 @@
-Rules catalog includes **958 built-in detection rules** ([_last update on 2024-11-20_](rules_changelog.md)).
+Rules catalog includes **968 built-in detection rules** ([_last update on 2024-11-25_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Identity Information**
 
@@ -26,6 +26,12 @@ Rules catalog includes **958 built-in detection rules** ([_last update on 2024-1
     Detects use of the tool adidnsdump for enumeration and discovering DNS records.
     
     - **Effort:** advanced
+    
+??? abstract "Gatewatcher AionIQ V103 Network Behavior Analytics"
+    
+    Detects when network behavior analytics were requested.
+    
+    - **Effort:** master
     
 ??? abstract "Internet Scanner"
     
@@ -223,6 +229,20 @@ Rules catalog includes **958 built-in detection rules** ([_last update on 2024-1
     
         - 28/03/2024 - minor - Rule effort was updated to master
             
+**Phishing for Information**
+
+??? abstract "Gatewatcher AionIQ V103 Active CTI"
+    
+    Detects whan an event related to CTI is raised by Gatewatcher V103. An attacker may be gathering information with this event.
+    
+    - **Effort:** master
+    
+??? abstract "Gatewatcher AionIQ V103 Retrohunt"
+    
+    Detects when a retrohunt event is raised by GatewatcherV103.
+    
+    - **Effort:** master
+    
 ## Resource Development
 **Acquire Infrastructure**
 
@@ -1951,6 +1971,12 @@ Rules catalog includes **958 built-in detection rules** ([_last update on 2024-1
     
     - **Effort:** master
     
+??? abstract "Gatewatcher AionIQ V103 Shellcode Detect"
+    
+    Detects when a suspicious shellcode is used.
+    
+    - **Effort:** master
+    
 ??? abstract "Generic-reverse-shell-oneliner"
     
     To bypass some security equipement or for a sack of simplicity attackers can open raw reverse shell using shell commands
@@ -3048,6 +3074,12 @@ Rules catalog includes **958 built-in detection rules** ([_last update on 2024-1
     Detects a suspicious execution of an HTA file by the explorer.exe process. This unusual activity was observed when running IcedID malspam.
     
     - **Effort:** intermediate
+    
+??? abstract "Gatewatcher AionIQ V103 Malcore"
+    
+    Detects a malcore alert by Gatewatcher AionIQ V103 related to documents with passwords.
+    
+    - **Effort:** master
     
 ??? abstract "Google Workspace Anomaly File Downloads"
     
@@ -12694,6 +12726,14 @@ Rules catalog includes **958 built-in detection rules** ([_last update on 2024-1
     
     - **Effort:** elementary
     
+**Dynamic Resolution**
+
+??? abstract "Gatewatcher AionIQ V103 Dga Detect"
+    
+    Detects when an event related to dga is raised by gatewatcher. An attacker can use this to generate a new domain for C2.
+    
+    - **Effort:** master
+    
 **Non-Standard Port**
 
 ??? abstract "RDP Port Change Using Powershell"
@@ -12822,6 +12862,14 @@ Rules catalog includes **958 built-in detection rules** ([_last update on 2024-1
     
     - **Effort:** advanced
     
+**Scheduled Transfer**
+
+??? abstract "Gatewatcher AionIQ V103 Malicious Powershell Detect"
+    
+    Detects malicious powershell by Gatewatcher V103.
+    
+    - **Effort:** master
+    
 **Exfiltration Over C2 Channel**
 
 ??? abstract "Claroty xDome Network Threat Detection Alert"
@@ -12857,6 +12905,18 @@ Rules catalog includes **958 built-in detection rules** ([_last update on 2024-1
 ??? abstract "Gatewatcher AionIQ Network Alert"
     
     Forward network alerts reported by Gatewatcher AionIQ  
+    
+    - **Effort:** master
+    
+??? abstract "Gatewatcher AionIQ V103 Beacon Detect"
+    
+    Detects a suspicious beacon.
+    
+    - **Effort:** master
+    
+??? abstract "Gatewatcher AionIQ V103 Sigflow Alert"
+    
+    Detects a sigflow alert by Gatewatcher AionIQ V103.
     
     - **Effort:** master
     
@@ -13045,6 +13105,12 @@ Rules catalog includes **958 built-in detection rules** ([_last update on 2024-1
             
 **Data Encrypted for Impact**
 
+??? abstract "Gatewatcher AionIQ V103 Ransomware Detect"
+    
+    Detects when a ransomware is detected by gatewatcherV103.
+    
+    - **Effort:** master
+    
 ??? abstract "Suncrypt Parameters"
     
     Detects SunCrypt ransomware's parameters, most of which are unique.
