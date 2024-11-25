@@ -362,11 +362,22 @@ The forwarder is configured with one input module per intake, as specified in th
 
 ![image](/assets/operation_center/ingestion_methods/sekoiaio_forwarder/forwarder_monitoring_2.png){: style="max-width:100%"}
 
-By leveraging these metrics, you can easily define custom rules to detect specific behaviors such as service interruptions, full queues, discarded events, and more. This monitoring capability is crucial for maintaining optimal performance and ensuring the reliability of the forwarder in your system.
+By leveraging these metrics, you can easily define custom rules to detect specific behaviors such as service interruptions, full queues, discarded events, and more. This monitoring capability is crucial for maintaining optimal performance and ensuring the reliability of the forwarder in your system. 
+
+Below is an example of a rule pattern designed to identify if queues are full on the forwarder, which may lead to log loss. The cause of a full queue can be attributed to several factors, such as an under-provisioned machine unable to handle the load, a sudden increase in events per second (EPS), or infrastructure issues. In any case, this type of alert indicates the need for further investigation into the behavior of the forwarder to understand the root cause of the problem.
+
+```yaml
+detection:
+  selection:
+    - sekoiaio.forwarder.queue.discarded.full|gt: 0
+    - sekoiaio.forwarder.queue.discarded.nf|gt: 0
+    - sekoiaio.forwarder.queue.full|gt: 0
+  condition: selection
+```
 
 !!! Note
-    To understand the detailed meaning of each counter, please refer to the [associated rsyslog documentation](https://www.rsyslog.com/doc/configuration/rsyslog_statistic_counter.html).
-    
+    To understand the detailed meaning of each counter, please refer to the [associated rsyslog documentation](https://www.rsyslog.com/doc/configuration/rsyslog_statistic_counter.html) and be free to implement your own rules based on these metrics.
+
 ### Extract concentrator metrics in case of outage
 
 In extreme cases, the forwarder may cease to function entirely, and as a result, it will also stop sending its metrics to Sekoia (e.g., a full queue). While an alert from Sekoia will notify you of this issue, you will still need to investigate and understand the root cause to resolve the problem.
