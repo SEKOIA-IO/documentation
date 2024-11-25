@@ -5,6 +5,8 @@ type: intake
 
 ## Overview
 
+Trend Micro Vision One is an extended detection and response (XDR) platform that enhances threat detection, investigation, and response across multiple security layers. It provides a centralized view for improved security posture and faster threat remediation.
+
 !!! Warning
     Important note - This format is currently in beta. We highly value your feedback to improve its performance.
 
@@ -12,9 +14,7 @@ type: intake
 - **Detection based on**: Alerts
 - **Supported application or feature**:
     - Alerts
-
-Trend Micro Vision One is an extended detection and response (XDR) platform that enhances threat detection, investigation, and response across multiple security layers. It provides a centralized view for improved security posture and faster threat remediation.
-
+    
 ## Configure
 
 ### How to create an API token
