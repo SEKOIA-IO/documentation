@@ -31,15 +31,6 @@ In the Analyzed bytes section, users can view a detailed breakdown of their mont
 
 The Fair Use Policy ensures equitable access to platform resources for all users. If a user exceeds their allocated usage, they may experience degraded performance or incur additional charges. 
 
-Key components include:
-
-- **Threshold:** Each user has a set limit on total analyzed bytes allowed within a specified period (e.g., 200 GB per month).
-- **Excessive use consequences**: Regularly exceeding the limit may result in:
-  
-  - Notifications about potential performance degradation.
-  - Adjusted fees for exceeding the limit.
-  - Recommendations for upgrading to plans with higher allowances.
-
 Tracking consumption empowers users to proactively adjust their data usage and consider upgrading their plans if necessary.
 
 !!! note
