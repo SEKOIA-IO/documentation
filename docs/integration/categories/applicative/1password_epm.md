@@ -17,10 +17,6 @@ type: intake
     - Item Usages
     - Sign-in Attempts
 
-{!_shared_content/operations_center/detection/generated/suggested_rules_09754cc4-e247-4712-9a76-25529ba11b8b_do_not_edit_manually.md!}
-
-{!_shared_content/operations_center/integrations/generated/09754cc4-e247-4712-9a76-25529ba11b8b.md!}
-
 ## Configure
 
 ### How to create an API token
@@ -80,3 +76,11 @@ Go to the Sekoia.io [playbook page](https://app.sekoia.io/operations/playbooks),
 7. Toggle **Activate the playbook** on the top right corner of the page
 
 #### Enjoy your events on the [Events page](https://app.sekoia.io/operations/events)
+
+{!_shared_content/operations_center/integrations/generated/09754cc4-e247-4712-9a76-25529ba11b8b_sample.md!}
+
+{!_shared_content/integration/detection_section.md!}
+
+{!_shared_content/operations_center/detection/generated/suggested_rules_09754cc4-e247-4712-9a76-25529ba11b8b_do_not_edit_manually.md!}
+
+{!_shared_content/operations_center/integrations/generated/09754cc4-e247-4712-9a76-25529ba11b8b.md!}

@@ -39,10 +39,6 @@ Bitdefender GravityZone is an enterprise-level cybersecurity solution offering a
 
 This setup guide will show you how to forward your Bitdefender GravityZone events to Sekoia.io.
 
-{!_shared_content/operations_center/detection/generated/suggested_rules_d11df984-840d-4c29-a6dc-b9195c3a24e3_do_not_edit_manually.md!}
-
-{!_shared_content/operations_center/integrations/generated/d11df984-840d-4c29-a6dc-b9195c3a24e3.md!}
-
 ### Steps to follow
 - [Create a BitDefender GravityZone API key](#create-a-bitdefender-gravityzone-api-key)
 - [Create an intake](#create-an-intake)
@@ -249,3 +245,13 @@ So you can setup it in two ways:
       -H 'content-type: application/json' \
       -d @payload.json
       ```
+
+#### Enjoy your events on the [Events page](https://app.sekoia.io/operations/events)
+
+{!_shared_content/operations_center/integrations/generated/d11df984-840d-4c29-a6dc-b9195c3a24e3_sample.md!}
+
+{!_shared_content/integration/detection_section.md!}
+
+{!_shared_content/operations_center/detection/generated/suggested_rules_d11df984-840d-4c29-a6dc-b9195c3a24e3_do_not_edit_manually.md!}
+
+{!_shared_content/operations_center/integrations/generated/d11df984-840d-4c29-a6dc-b9195c3a24e3.md!}
