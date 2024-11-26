@@ -1,4 +1,4 @@
-Rules catalog includes **968 built-in detection rules** ([_last update on 2024-11-25_](rules_changelog.md)).
+Rules catalog includes **970 built-in detection rules** ([_last update on 2024-11-26_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Identity Information**
 
@@ -627,6 +627,12 @@ Rules catalog includes **968 built-in detection rules** ([_last update on 2024-1
 ??? abstract "ESET Protect Vulnerability Exploitation Attempt"
     
     Detects when an attempt is made to exploit a vulnerability.
+    
+    - **Effort:** master
+    
+??? abstract "Elevated Shell Launched By Browser"
+    
+    Detects when openwith.exe is launched with privileges followed by a browser launching an elevated shell. Related to the CVE-2024-38014.
     
     - **Effort:** master
     
@@ -2449,11 +2455,12 @@ Rules catalog includes **968 built-in detection rules** ([_last update on 2024-1
     
     Detection on suspicious cmd.exe command line seen being used by some attackers (e.g. Lazarus with Word macros). This requires Windows process command line logging.
     
-    - **Effort:** advanced
+    - **Effort:** master
     
     - **Changelog:**
     
         - 30/05/2023 - minor - Adding the Intellij IDEA to filter list
+        - 22/11/2024 - major - Adding new elements for detection and filters.
             
 ??? abstract "Suspicious CodePage Switch with CHCP"
     
@@ -3202,6 +3209,7 @@ Rules catalog includes **968 built-in detection rules** ([_last update on 2024-1
     
     - **Changelog:**
     
+        - 25/11/2024 - minor - Updating filter on file change and deletion
         - 18/11/2024 - minor - Updating filter on file change and deletion
         - 09/10/2024 - minor - File paths added to filter some false positives.
         - 20/09/2024 - minor - File paths added to filter some false positives.
@@ -6059,6 +6067,12 @@ Rules catalog includes **968 built-in detection rules** ([_last update on 2024-1
     
         - 11/07/2024 - minor - Added filter to reduce false positvives
             
+??? abstract "Elevated Shell Launched By Browser"
+    
+    Detects when openwith.exe is launched with privileges followed by a browser launching an elevated shell. Related to the CVE-2024-38014.
+    
+    - **Effort:** master
+    
 ??? abstract "Exploiting SetupComplete.cmd CVE-2019-1378"
     
     Detects exploitation attempts of privilege escalation vulnerability via SetupComplete.cmd and PartnerSetupComplete.cmd described in CVE-2019-1378.
@@ -7684,6 +7698,12 @@ Rules catalog includes **968 built-in detection rules** ([_last update on 2024-1
     
         - 11/07/2024 - minor - Added filter to reduce false positvives
             
+??? abstract "Elevated Shell Launched By Browser"
+    
+    Detects when openwith.exe is launched with privileges followed by a browser launching an elevated shell. Related to the CVE-2024-38014.
+    
+    - **Effort:** master
+    
 ??? abstract "Exploiting SetupComplete.cmd CVE-2019-1378"
     
     Detects exploitation attempts of privilege escalation vulnerability via SetupComplete.cmd and PartnerSetupComplete.cmd described in CVE-2019-1378.
@@ -7878,12 +7898,19 @@ Rules catalog includes **968 built-in detection rules** ([_last update on 2024-1
     
     Detection on suspicious cmd.exe command line seen being used by some attackers (e.g. Lazarus with Word macros). This requires Windows process command line logging.
     
-    - **Effort:** advanced
+    - **Effort:** master
     
     - **Changelog:**
     
         - 30/05/2023 - minor - Adding the Intellij IDEA to filter list
+        - 22/11/2024 - major - Adding new elements for detection and filters.
             
+??? abstract "Unsigned Driver Loaded From Suspicious Location"
+    
+    Detects when a driver is unsigned and loaded from a suspicious directory.
+    
+    - **Effort:** advanced
+    
 **Process Injection**
 
 ??? abstract "Address Space Layout Randomization (ASLR) Alteration"
@@ -9993,6 +10020,12 @@ Rules catalog includes **968 built-in detection rules** ([_last update on 2024-1
     
         - 11/07/2024 - minor - Added filter to reduce false positvives
             
+??? abstract "Elevated Shell Launched By Browser"
+    
+    Detects when openwith.exe is launched with privileges followed by a browser launching an elevated shell. Related to the CVE-2024-38014.
+    
+    - **Effort:** master
+    
 ??? abstract "Exploiting SetupComplete.cmd CVE-2019-1378"
     
     Detects exploitation attempts of privilege escalation vulnerability via SetupComplete.cmd and PartnerSetupComplete.cmd described in CVE-2019-1378.

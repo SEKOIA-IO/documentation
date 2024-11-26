@@ -93,6 +93,12 @@ The following Sekoia.io built-in rules match the intake **Cybereason EDR**. This
     
     - **Effort:** intermediate
 
+??? abstract "Elevated Shell Launched By Browser"
+    
+    Detects when openwith.exe is launched with privileges followed by a browser launching an elevated shell. Related to the CVE-2024-38014.
+    
+    - **Effort:** master
+
 ??? abstract "Exfiltration And Tunneling Tools Execution"
     
     Execution of well known tools for data exfiltration and tunneling

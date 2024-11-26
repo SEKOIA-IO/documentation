@@ -1299,6 +1299,12 @@ The following Sekoia.io built-in rules match the intake **Trend Micro Cloud One 
     
     - **Effort:** intermediate
 
+??? abstract "Suspicious Cmd.exe Command Line"
+    
+    Detection on suspicious cmd.exe command line seen being used by some attackers (e.g. Lazarus with Word macros). This requires Windows process command line logging.
+    
+    - **Effort:** master
+
 ??? abstract "Suspicious CodePage Switch with CHCP"
     
     Detects a code page switch in command line

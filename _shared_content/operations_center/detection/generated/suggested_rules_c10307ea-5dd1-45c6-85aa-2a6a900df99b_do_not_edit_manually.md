@@ -1873,7 +1873,7 @@ The following Sekoia.io built-in rules match the intake **Elastic Winlogbeat**. 
     
     Detection on suspicious cmd.exe command line seen being used by some attackers (e.g. Lazarus with Word macros). This requires Windows process command line logging.
     
-    - **Effort:** advanced
+    - **Effort:** master
 
 ??? abstract "Suspicious CodePage Switch with CHCP"
     
@@ -2204,6 +2204,12 @@ The following Sekoia.io built-in rules match the intake **Elastic Winlogbeat**. 
     Detects UAC bypass method using Windows event viewer. 
     
     - **Effort:** intermediate
+
+??? abstract "Unsigned Driver Loaded From Suspicious Location"
+    
+    Detects when a driver is unsigned and loaded from a suspicious directory.
+    
+    - **Effort:** advanced
 
 ??? abstract "Ursnif Registry Key"
     
