@@ -387,6 +387,7 @@ nav:
       - OpenLDAP: integration/categories/iam/openldap.md
       - RSA SecurID: integration/categories/iam/rsa_securid.md
       - Rubycat PROVE IT: integration/categories/iam/rubycat_prove_it.md
+      - SentinelOne Singularity Identity: integration/categories/iam/sentinelone_identity.md
       - Wallix: integration/categories/iam/wallix.md
     - Network:
       - Amazon VPC Flow Logs: integration/categories/network/aws_flow_logs.md
