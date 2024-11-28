@@ -1,7 +1,10 @@
-Changelog _last update on 2024-11-25_
+Changelog _last update on 2024-11-26_
 
 ## Changelog
 
+### Suspicious Cmd.exe Command Line
+  - 22/11/2024 - major - Adding new elements for detection and filters.
+    
 ### Suspicious Email Attachment Received
   - 14/11/2024 - major - Adding new file extension and new condition to make the rule broader as it can now match on more intakes.
     
@@ -931,9 +934,6 @@ Changelog _last update on 2024-11-25_
     
 ### Raccoon Stealer 2.0 Legitimate Third-Party DLL Download URL
   - 13/06/2023 - minor - Adding private IPs as sources
-    
-### Suspicious Cmd.exe Command Line
-  - 30/05/2023 - minor - Adding the Intellij IDEA to filter list
     
 ### Suspicious PowerShell Invocations - Specific
   - 26/05/2023 - minor - Added a filter to the rule as some false positives were observed.

@@ -189,6 +189,12 @@ The following Sekoia.io built-in rules match the intake **Microsoft 365 / Office
     
     - **Effort:** master
 
+??? abstract "Elevated Shell Launched By Browser"
+    
+    Detects when openwith.exe is launched with privileges followed by a browser launching an elevated shell. Related to the CVE-2024-38014.
+    
+    - **Effort:** master
+
 ??? abstract "Entra ID Consent Attempt to Suspicious OAuth Application"
     
     Detects an attempt to authorize account access to an OAuth application commonly used in business email compromise (BEC) attacks. Investigate the source IP address: unusual countries, RDP hosts and VPN providers are likely indicators of malicious activity.

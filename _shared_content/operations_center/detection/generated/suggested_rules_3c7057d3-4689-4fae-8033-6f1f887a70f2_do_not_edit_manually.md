@@ -615,6 +615,12 @@ The following Sekoia.io built-in rules match the intake **HarfangLab EDR**. This
     
     - **Effort:** intermediate
 
+??? abstract "Elevated Shell Launched By Browser"
+    
+    Detects when openwith.exe is launched with privileges followed by a browser launching an elevated shell. Related to the CVE-2024-38014.
+    
+    - **Effort:** master
+
 ??? abstract "Elise Backdoor"
     
     Detects Elise backdoor activity as used by Lotus Blossom
@@ -2161,7 +2167,7 @@ The following Sekoia.io built-in rules match the intake **HarfangLab EDR**. This
     
     Detection on suspicious cmd.exe command line seen being used by some attackers (e.g. Lazarus with Word macros). This requires Windows process command line logging.
     
-    - **Effort:** advanced
+    - **Effort:** master
 
 ??? abstract "Suspicious CodePage Switch with CHCP"
     
