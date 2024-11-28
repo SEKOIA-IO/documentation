@@ -10,12 +10,12 @@ type: intake
 
 There are different types of logs produced by GKE:
 
-**Auditd logs**: Most important logs from a security point of view. We recommend that you use [Auditbeat](/integration/categories/endpoint/auditbeat_linux) to collect Auditd logs.
+**Auditd logs**: Most important logs from a security point of view. We recommend that you use [Auditbeat](/integration/categories/endpoint/auditbeat_linux.md) to collect Auditd logs.
 
 **Flow Logs**: From [Google VPC FLow Logs documentation](https://cloud.google.com/vpc/docs/using-flow-logs):
 > VPC Flow Logs records a sample of network flows sent from and received by VM instances, including instances used as GKE nodes. These logs can be used for network monitoring, forensics, real-time security analysis, and expense optimization.
 
-Please read the [dedicated documentation](/integration/categories/network/google_vpc_flow_logs).
+Please read the [dedicated documentation](/integration/categories/network/google_vpc_flow_logs.md).
 (*Intake type: Google VPC Flow Logs*)
 
 **Activity logs** (*Intake type: Google Cloud Audit log*):

@@ -13,8 +13,14 @@ Once your pull request is created, a SEKOIA.IO reviewer will take responsibility
 The service relies on the [MkDocs](https://www.mkdocs.org/) Python framework helped by a customized [Material theme](https://squidfunk.github.io/mkdocs-material/). To serve the documentation on the port `8000` of your computer, you should create a Python virtual environment, install the few requirements detailed in `pyproject.toml` and trigger the execution of the MkDocs server:
 
 ```shell
-$ mkdir -p docs/stylesheets/ && sassc src/sekoiaio.scss docs/stylesheets/sekoiaio.css
 $ pip install poetry
 $ poetry install
-$ poetry run mkdocs serve
+$ poetry run mkdocs serve --strict
 ```
+
+## Guidelines
+
+* You may use absolute links and images such as `[caption](/folder/page.md#anchor)` or `![!someimage](/folder/image.png)`, they will be interpreted as relative to the `docs/` folder. So the example link would point to `docs/folder/page.md` which must exist in the repo. `mkdocs serve --strict` will help you catching any broken link
+* When you want to point to the developer documentation, please use full URLs, such as `[delete_playbook_endpoint](https://docs.sekoia.io/xdr/develop/rest_api/playbooks/#tag/Playbooks/operation/delete_playbook_resource)`, because the API documentation is rendered client-side via ReDoc out of OpenAPI specs retrieved from app.sekoia.io platform's API
+* Always include the `.md` extension when linking to markdown files in the repo: `[link](/integration/example/index.md)` is okay, whereas `[link](/integration/example/)` or `[link](/integration/example/index)` won't work.
+* All links to internal pages and anchors are strictly validated by the CI (via `mkdocs build --strict`) to spot any broken link. Therefore, please refrain as much as possible from using full URLs to point to internal pages, as they won't be covered by automated broken link verification.

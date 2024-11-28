@@ -61,7 +61,7 @@ There are three possibilities to define the similarity strategy to use. By order
 
 Rules written by Sekoia.io and available in the Rules Catalog may define specific similarity strategies.
 
-Similarity strategies by rule can be defined during the rule creation process. Learn more about how to do it in [this section](../../detect/rules_catalog/#custom-similarity-strategy).
+Similarity strategies by rule can be defined during the rule creation process. Learn more about how to do it in [this section](../detect/rules_catalog.md#custom-similarity-strategy).
 
 
 #### Similarity by event

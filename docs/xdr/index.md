@@ -11,8 +11,8 @@ It allows you to easily integrate and analyze the events produced by your applic
 To defend your business, you need to know what's going on. Monitoring your assets is a prerequisite for their security.
 Sekoia.io is able to collect logs via various mechanisms, setting it up on your end is easy!
 
-1. Find out the supported [ingestion methods](/integration/ingestion_methods/).
-2. Take a look at our pre-defined [Integrations](/integration/categories/)' list that keeps growing to suit all of your needs.
+1. Find out the supported [ingestion methods](/integration/ingestion_methods/index.md).
+2. Take a look at our pre-defined [Integrations](/integration/categories/index.md)' list that keeps growing to suit all of your needs.
 3. Configure your [Intakes](features/collect/intakes.md) to collect your logs.
 4. Organize your intakes in [Entities](features/collect/entities.md).
 5. Enrich your events with your [Assets](features/collect/assets.md).

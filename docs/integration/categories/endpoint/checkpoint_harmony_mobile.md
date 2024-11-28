@@ -41,7 +41,7 @@ To create the intake, go to the [intake page](https://app.sekoia.io/operations/i
 
 To start to pull events, you have to:
 
-1. Go to the [playbooks page](https://app.sekoia.io/operations/playbooks) and create a new playbook with the [Check Point Harmony Mobile](/integration/action_library/network/check-point) trigger
+1. Go to the [playbooks page](https://app.sekoia.io/operations/playbooks) and create a new playbook with the [Check Point Harmony Mobile](/integration/action_library/check-point.md) trigger
 2. Set up the module configuration with the Client ID, Client Secret and Authentication URL.
 3. Set up the trigger configuration with the intake key
 4. Start the playbook and enjoy your events

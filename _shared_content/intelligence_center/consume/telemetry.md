@@ -87,7 +87,7 @@ The telemetry data provides a valuable resource to scrutinize the observable's h
 
 In this case, the telemetry heatmap serves as a dynamic timeline, allowing security analysts to efficiently assess the observable's credibility.
 
-Since you can import external IOCs to the platform by using the [IOC collections](/xdr/features/detect/ioccollections) feature, it's possible to generate a `telemetry report` to help verify the viability of the imported IOCs. 
+Since you can import external IOCs to the platform by using the [IOC collections](/xdr/features/detect/ioccollections.md) feature, it's possible to generate a `telemetry report` to help verify the viability of the imported IOCs. 
 
 !!! Warning
     The generated telemetry report contains the associated observable telemetry, not the threat telemetry. This telemetry is calculated based on the occurence of a value, not a threat ID. 

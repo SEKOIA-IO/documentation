@@ -1,12 +1,12 @@
 # External Integrations: Splunk
 
 Sekoia is providing an application for Splunk to detect threats in your logs based on Sekoia.io CTI feed.
- 
+
 ## Prerequisites
 
 - An operational Splunk instance with administrator privileges (**Enterprise** for OnPrem or **Cloud** for the SaaS version)
 - An active Sekoia.io license with access to the CTI
-- An access to Sekoia.io User Center with the role that contains the permission to [create an API key](https://docs.sekoia.io/getting_started/manage_api_keys/) (e.g. Built-in [Analyst Role](https://docs.sekoia.io/getting_started/roles/#functionality-of-built-in-roles) or create a custom role with [ic_viewer permissions](https://docs.sekoia.io/getting_started/roles/#legacy-roles) <a name="api_key"></a>
+- An access to Sekoia.io User Center with the role that contains the permission to [create an API key](/getting_started/manage_api_keys.md) (e.g. Built-in [Analyst Role](/getting_started/roles.md#functionality-of-built-in-roles) or create a custom role with [ic_viewer permissions](/getting_started/roles.md#legacy-roles) <a name="api_key"></a>
 
 !!!note
     This following guide is for Splunk solutions (**Enterprise** (OnPrem) or Splunk **Cloud** (Cloud)).
@@ -18,7 +18,7 @@ Sekoia is providing an application for Splunk to detect threats in your logs bas
 
    !!!note
        For Cloud version, only the next step is required
-   
+
    2. Enter your login and password of your Splunk Enterprise instance
 ![Splunk-Login](/assets/intelligence_center/Splunk/Splunk-Login.png){: style="width: 60%; max-width: 60%"}
 
@@ -26,10 +26,10 @@ Sekoia is providing an application for Splunk to detect threats in your logs bas
 
 1. Go to Application Setup Page by clicking on `Apps` > `Find more Apps`
 ![Splunk_Applications_access](/assets/intelligence_center/Splunk/Splunk_Applications_access.png){: style="width: 40%; max-width: 40%"}
-   
+
 2. Search for `Sekoia.io` application and install it
 ![Splunk-Sekoia_in_App](/assets/intelligence_center/Splunk/Splunk-Sekoia_in_App.png)
-   
+
 3. Configure your Sekoia application for Splunk by completing fields
 ![Splunk-Sekoia_API_key_in_Sekoia_application](/assets/intelligence_center/Splunk/Splunk-Sekoia_API_key_in_Sekoia_application.png)
 
@@ -63,11 +63,11 @@ In the following section, here are the Sekoia IOC types available in Splunk: <a 
 |sha1	| Hash function which takes an input and produces a 160-bit (20-byte) 	|
 |sha256| Secure Hash Algorithm 256-bit	|
 
-An IOC is an observable that represents a malicious activity. For more information, please consult [this page](https://docs.sekoia.io/cti/features/consume/observables/).
+An IOC is an observable that represents a malicious activity. For more information, please consult [this page](/cti/features/consume/observables.md).
 
 !!! note
      Only these Sekoia Indicator types will be updated.
-     
+
      Update is **scheduled every night** to ensure that valid IOCs are used to detect threats.
 
 ## 4. Search Sekoia Intelligence and match with IOCs in Splunk
@@ -85,7 +85,7 @@ An IOC is an observable that represents a malicious activity. For more informati
      Logs have to be collected in Splunk. Please consult [Splunk documentation](https://www.splunk.com/en_us/blog/learn/centralized-logging.html).
 
 1. Setup a lookup table
- 
+
     A typical query would be `index=* sourcetype=<YOUR_SOURCETYPE>` (`<YOUR_SOURCETYPE>` is to be replaced by the **Sekoia IOCs types** listed [above](#sourcetype)).
 
     When installing Sekoia application for Splunk, a message will be displayed requesting to configure the lookup table.
@@ -119,4 +119,4 @@ Search in the Internal logs for errors. Please consult [Splunk documentation](ht
 
 [https://docs.splunk.com/Documentation/SplunkCloud/9.1.2308/SearchTutorial/InstallSplunk](https://docs.splunk.com/Documentation/SplunkCloud/9.1.2308/SearchTutorial/InstallSplunk)
 
-[https://docs.splunk.com/Documentation/SplunkCloud/9.1.2308/SearchTutorial/NavigatingSplunk](https://docs.splunk.com/Documentation/SplunkCloud/9.1.2308/SearchTutorial/NavigatingSplunk) 
+[https://docs.splunk.com/Documentation/SplunkCloud/9.1.2308/SearchTutorial/NavigatingSplunk](https://docs.splunk.com/Documentation/SplunkCloud/9.1.2308/SearchTutorial/NavigatingSplunk)
