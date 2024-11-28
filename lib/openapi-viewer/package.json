@@ -1,0 +1,30 @@
+{
+  "name": "openapi-viewer",
+  "version": "1.0.0",
+  "license": "MIT",
+  "scripts": {
+    "start": "vue-cli-service serve --host 127.0.0.1",
+    "build": "vue-cli-service build && cp -f dist/javascript/openapi-viewer.min.js ../../docs/javascript/openapi-viewer.min.js",
+    "lint": "vue-cli-service lint"
+  },
+  "dependencies": {
+    "@babel/core": "^7.19.3",
+    "@highlightjs/vue-plugin": "^2.1.0",
+    "@vue/babel-plugin-jsx": "^1.1.1",
+    "chartjs-adapter-moment": "^1.0.1",
+    "codemirror": "^5.49.2",
+    "dompurify": "^3.2.1",
+    "marked": "^15.0.2",
+    "moment": "^2.30.1",
+    "vue": "^3.2.41",
+    "vue-router": "^4.1.5",
+    "vue-tippy": "^6.5.0"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "^5.0.8",
+    "@vue/cli-service": "^5.0.8",
+    "@vue/compiler-sfc": "^3.2.41",
+    "sass": "^1.55.0",
+    "sass-loader": "^13.1.0"
+  }
+}
