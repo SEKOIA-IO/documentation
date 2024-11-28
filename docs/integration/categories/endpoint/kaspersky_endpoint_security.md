@@ -15,9 +15,6 @@ type: intake
 ## High-Level Architecture Diagram
 
 - **Type of integration**: Outbound (PUSH to Sekoia.io)
-- **Schema**
-
-![kaspersky_endpoint_security_architecture](/assets/integration/kaspersky_endpoint_security_architecture.png)
 
 ## Specification
 

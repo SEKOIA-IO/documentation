@@ -12,7 +12,7 @@ If Sekoia.io can't maintain WebSocket connections on the browser, the web applic
 
 **Step 1: Contact your network administrator**
 
-Contact your network administrator to make sure they support WebSocket connections. Also ask it to review login attempts to the following URL: [app.sekoia.io/live](app.sekoia.io/live)
+Contact your network administrator to make sure they support WebSocket connections. Also ask it to review login attempts to the following URL: [app.sekoia.io/live](wss://app.sekoia.io/live)
 
 **Step 2: Collect and send us network logs**
 

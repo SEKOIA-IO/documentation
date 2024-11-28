@@ -30,19 +30,12 @@ Authentication is done by Bearer Token which means that in all requests, the hea
 curl -XGET -H "Authorization: Bearer YOUR_API_KEY" https://api.sekoia.io/v1/sic/conf/rules-catalog/rules
 ```
 
-To create an API key, follow our guide [here](https://docs.sekoia.io/getting_started/manage_api_keys/).
+To create an API key, follow our guide [here](/getting_started/manage_api_keys.md).
 The roles needed for your key will depend on what you want to achieve. If you plan to only get information from Sekoia.io, read only permissions will be enough. If you want to perform actions on Sekoia.io, you will also need to add write permissions.
 
 Our documentation provides information on each endpoint and specifies the required permissions.
 
 ## Documentation organization
-
-### Guides
-
-The documentation offers a few guides:
-
-* A small page on [filtering](/xdr/develop/guides/filtering/)
-* A guide on [how to create automation modules](/xdr/develop/guides/automation/overview/)
 
 ### APIs
 

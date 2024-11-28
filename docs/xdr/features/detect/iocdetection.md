@@ -2,11 +2,11 @@
 
 IOC detection is a critical mechanism in detecting attacks that are trying to harm your system or have already breached it. The Sekoia SOC platform is powered by our Threat Detection & Research (TDR) team, which constantly enriches our IOC database with its state-of-the-art investigations and extensive expertise in Intelligence.
 
-With IOC detection, you can automatically identify potential threats in your past and future events by monitoring active IOCs. 
+With IOC detection, you can automatically identify potential threats in your past and future events by monitoring active IOCs.
 
 ## How does IOC detection at Sekoia work?
 
-Sekoia Threat Detection & Research (TDR) team maintains the CTI database with millions of IOCs through their investigation and dedicated expertise. 
+Sekoia Threat Detection & Research (TDR) team maintains the CTI database with millions of IOCs through their investigation and dedicated expertise.
 All this incredible work benefits Sekoia XDR clients, who can consult the number of IOCs available on the Rules catalog page in the section `Active IOCs`.
 
 ![verified iocs](/assets/operation_center/rules_catalog/verified_iocs.gif){: style="max-width:100%"}
@@ -25,7 +25,7 @@ On the Alerts page, look for the Detection type of the alert. `CTI Retrohunt` al
 
 #### Would your SOC team like to scan a specific list of IOCs to perform retrohunt?
 That’s possible via the IOC collections. You can import a specific list of IOCs to perform retrohunting.
-Please see the dedicated documentation on [IOC Collections](../ioccollections).
+Please see the dedicated documentation on [IOC Collections](ioccollections.md).
 
 ## Technical dive into IOC detection
 
@@ -55,7 +55,7 @@ The tables below list the ECS event fields that are verified by IOC detection.
 
 #### Observable type: Domain Name
 
-| STIX path | ECS event field | 
+| STIX path | ECS event field |
 | --- | --- |
 | domain-name:value | client.domain<br>client.registered_domain<br>destination.domain<br>destination.registered_domain<br>dns.question.name<br>dns.question.registered_domain<br>server.domain<br>server.registered_domain<br>source.domain<br>source.registered_domain<br>tls.[*client/server*].x509.alternative_names<br>tls.[*client/server*].x509.subject.common_name<br>url.domain<br>url.registered_domain |
 
@@ -75,8 +75,8 @@ The tables below list the ECS event fields that are verified by IOC detection.
 | file:hashes.SSDEEP | file.hash.ssdeep |
 | file.hash.SHA-1 | file.hash.sha1<br>dll.hash.sha1<br>email.attachments.file.hash.sha1<br>process.hash.sha1 |
 | file.hash.SHA-256 | file.hash.sha256<br>dll.hash.sha256<br>email.attachments.file.hash.sha256<br>process.hash.sha256 |
-| file.hash.SHA-512 | file.hash.sha512<br>dll.hash.sha512<br>email.attachments.file.hash.sha512<br>process.hash.sha512 | 
-| file:mime_type | file.mime_type | 
+| file.hash.SHA-512 | file.hash.sha512<br>dll.hash.sha512<br>email.attachments.file.hash.sha512<br>process.hash.sha512 |
+| file:mime_type | file.mime_type |
 | file:mtime | file.ctime |
 | file:name | file.name |
 | file:size | file.size |
@@ -97,7 +97,7 @@ The tables below list the ECS event fields that are verified by IOC detection.
 | network-traffic:dst_port | destination.port |
 | network-traffic:dst_ref.value | destination.ip |
 | network-traffic:extensions.http-request-ext.request_header.User-Agent | user_agent.original |
-| network-traffic:src_port | source.port | 
+| network-traffic:src_port | source.port |
 | network-traffic:src_ref.value | source.ip |
 
 #### Observable type: URL
@@ -110,18 +110,18 @@ The tables below list the ECS event fields that are verified by IOC detection.
 
 | STIX path | ECS event field |
 | --- | --- |
-| windows-registry-key:key | registry.key | 
+| windows-registry-key:key | registry.key |
 | windows-registry-key:values | registry.value |
 
 #### Observable type: X.509 Certificate
 
 | STIX path | ECS event field |
 | --- | --- |
-| x509-certificate:issuer | x509.issuer.common_name<br>x509.issuer.distinguished_name | 
-| x509-certificate:serial_number | x509.serial_number | 
+| x509-certificate:issuer | x509.issuer.common_name<br>x509.issuer.distinguished_name |
+| x509-certificate:serial_number | x509.serial_number |
 | x509-certificate:signature_algorithm | x509.signature_algorithm |
 | x509-certificate:subject | x509.subject.common_name<br>x509.subject.distinguished_name |
-| x509-certificate:subject_public_key_algorithm | x509.public_key_algorithm | 
+| x509-certificate:subject_public_key_algorithm | x509.public_key_algorithm |
 | x509-certificate:subject_public_key_exponent | x509.public_key_exponent |
-| x509-certificate:validity_not_before | x509.not_before | 
-| x509-certificate:validity_not_after | x509.not_after | 
+| x509-certificate:validity_not_before | x509.not_before |
+| x509-certificate:validity_not_after | x509.not_after |

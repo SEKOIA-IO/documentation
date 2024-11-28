@@ -15,9 +15,6 @@ ISC DHCP offers a complete open-source solution for implementing DHCP servers.
 ## High-Level Architecture Diagram
 
 - **Type of integration**: Outbound (PUSH to Sekoia.io)
-- **Schema**
-
-![isc_dhcp_architecture](/assets/integration/isc_dhcp_architecture.png)
 
 !!! Alternative
 

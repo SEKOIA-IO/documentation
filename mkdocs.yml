@@ -27,8 +27,12 @@ markdown_extensions:
 - pymdownx.tabbed:
     alternate_style: true
 - markdown_include.include
-- lightgallery
 - pymdownx.snippets
+- plugins.custom_lightgallery
+validation:
+  omitted_files: ignore
+  links:
+    absolute_links: relative_to_docs
 nav:
 - Getting started:
   - Overview: getting_started/index.md
@@ -569,16 +573,7 @@ plugins:
 - search: null
 - redirects:
     redirect_maps:
-      'api/automation: symphony orchestrator': xdr/develop/rest_api/playbooks.md
-      api/dashboards: xdr/develop/rest_api/dashboard.md
-      api/identity & authentication: xdr/develop/rest_api/community.md
-      'api/ingest: manage and test event parsers': xdr/develop/rest_api/parser.md
-      'api/intelligence center: cyber threat intelligence database': cti/develop/rest_api/intelligence.md
-      'api/intelligence center: enrichment': cti/develop/rest_api/enrichments.md
-      'api/operation center: alerts & case management': xdr/develop/rest_api/alert.md
-      'api/operation center: asset management': xdr/develop/rest_api/assets_v2.md
       'api/operation center: rules, entities, intakes, events.md': xdr/develop/rest_api/configuration.md
-      api/profile & permissions: xdr/develop/rest_api/community.md
       cti/develop/rest_api/identity_and_authentication.md: cti/develop/rest_api/community.md
       develop/rest_api/community.md: xdr/develop/rest_api/community.md
       develop/rest_api/dashboard.md: xdr/develop/rest_api/community.md
@@ -775,7 +770,7 @@ plugins:
       xdr/features/collect/integrations/network/cisco/cisco_nx_os.md: integration/categories/network/cisco_nx_os.md
       xdr/features/collect/integrations/network/cisco/cisco_wsa.md: integration/categories/network_security/cisco_wsa.md
       xdr/features/collect/integrations/network/citrix_netscaler_adc.md: integration/categories/network/citrix_netscaler_adc.md
-      xdr/features/collect/integrations/network/clavister_ng_fw.md: integration/categories/network/clavister_ng_fw.md
+      xdr/features/collect/integrations/network/clavister_ng_fw.md: integration/categories/network_security/clavister_ng_fw.md
       xdr/features/collect/integrations/network/efficientip_solidserver_ddi.md: integration/categories/network/efficientip_solidserver_ddi.md
       xdr/features/collect/integrations/network/ekinops_oneos.md: integration/categories/network/ekinops_oneos.md
       xdr/features/collect/integrations/network/f5-big-ip.md: integration/categories/network/f5-big-ip.md
@@ -808,8 +803,7 @@ plugins:
       xdr/features/collect/integrations/network/watchguard_firebox.md: integration/categories/network_security/watchguard_firebox.md
       xdr/features/investigate/dork_language.md: xdr/features/investigate/events_query_language.md
 - redoc
-- intakes_by_uuid
-- modules_by_uuid
+- integration_by_uuid
 repo_url: https://github.com/SEKOIA-IO/documentation
 site_name: Sekoia.io Documentation
 site_url: https://docs.sekoia.io
