@@ -1095,6 +1095,12 @@ The following Sekoia.io built-in rules match the intake **Sophos Analysis Threat
     
     - **Effort:** advanced
 
+??? abstract "Ntfsinfo Usage"
+    
+    Detects when the command ntfsinfo is used. An attacker can access to information on the volume from NTFS and have a directory dump of NTFS files.
+    
+    - **Effort:** advanced
+
 ??? abstract "OceanLotus Registry Activity"
     
     Detects registry keys created in OceanLotus (also known as APT32) attack. Logging for Registry events is needed in the Sysmon configuration (events 12 and 13).

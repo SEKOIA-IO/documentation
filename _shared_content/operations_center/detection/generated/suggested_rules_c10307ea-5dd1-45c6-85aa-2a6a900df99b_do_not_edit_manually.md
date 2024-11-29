@@ -825,6 +825,12 @@ The following Sekoia.io built-in rules match the intake **Elastic Winlogbeat**. 
     
     - **Effort:** elementary
 
+??? abstract "Language Discovery"
+    
+    Detects when a user makes a query on the language of the system.
+    
+    - **Effort:** advanced
+
 ??? abstract "Lazarus Loaders"
     
     Detects different loaders used by the Lazarus Group APT
@@ -1266,6 +1272,12 @@ The following Sekoia.io built-in rules match the intake **Elastic Winlogbeat**. 
 ??? abstract "Non-Legitimate Executable Using AcceptEula Parameter"
     
     Detects accepteula in command line with non-legitimate executable name. Some attackers are masquerading SysInternals tools with decoy names to prevent detection.
+    
+    - **Effort:** advanced
+
+??? abstract "Ntfsinfo Usage"
+    
+    Detects when the command ntfsinfo is used. An attacker can access to information on the volume from NTFS and have a directory dump of NTFS files.
     
     - **Effort:** advanced
 

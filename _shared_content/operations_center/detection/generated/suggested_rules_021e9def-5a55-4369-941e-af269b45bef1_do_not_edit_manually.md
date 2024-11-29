@@ -837,6 +837,12 @@ The following Sekoia.io built-in rules match the intake **Elastic AuditBeat Linu
     
     - **Effort:** advanced
 
+??? abstract "Ntfsinfo Usage"
+    
+    Detects when the command ntfsinfo is used. An attacker can access to information on the volume from NTFS and have a directory dump of NTFS files.
+    
+    - **Effort:** advanced
+
 ??? abstract "Office Application Startup Office Test"
     
     Detects the addition of office test registry that allows a user to specify an arbitrary DLL that will be executed everytime an Office application is started. An adversaries may abuse the Microsoft Office "Office Test" Registry key to obtain persistence on a compromised system.
