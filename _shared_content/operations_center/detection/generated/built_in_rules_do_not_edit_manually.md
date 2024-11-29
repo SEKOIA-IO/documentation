@@ -1,4 +1,4 @@
-Rules catalog includes **975 built-in detection rules** ([_last update on 2024-11-29_](rules_changelog.md)).
+Rules catalog includes **977 built-in detection rules** ([_last update on 2024-11-29_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Identity Information**
 
@@ -11801,6 +11801,14 @@ Rules catalog includes **975 built-in detection rules** ([_last update on 2024-1
     
     - **Effort:** master
     
+**System Location Discovery**
+
+??? abstract "Language Discovery"
+    
+    Detects when a user makes a query on the language of the system.
+    
+    - **Effort:** advanced
+    
 **Cloud Storage Object Discovery**
 
 ??? abstract "AWS Suspicious Discovery Commands"
@@ -12068,6 +12076,12 @@ Rules catalog includes **975 built-in detection rules** ([_last update on 2024-1
     
         - 13/08/2024 - minor - Added filter to reduce false positives
             
+??? abstract "Ntfsinfo Usage"
+    
+    Detects when the command ntfsinfo is used. An attacker can access to information on the volume from NTFS and have a directory dump of NTFS files.
+    
+    - **Effort:** advanced
+    
 **Data from Network Shared Drive**
 
 ??? abstract "RDP Configuration File From Mail Process"
