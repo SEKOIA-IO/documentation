@@ -161,7 +161,7 @@ The following Sekoia.io built-in rules match the intake **Windows**. This docume
 
 ??? abstract "Alternate PowerShell Hosts Pipe"
     
-    Detects alternate PowerShell hosts potentially bypassing detections looking for powershell.exe. Prerequisites are logging for PipeEvents in Sysmon config
+    Detects alternate PowerShell hosts potentially bypassing detections looking for powershell.exe. Prerequisites are logging for PipeEvents in Sysmon config.
     
     - **Effort:** advanced
 

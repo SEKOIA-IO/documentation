@@ -1,4 +1,4 @@
-Rules catalog includes **970 built-in detection rules** ([_last update on 2024-11-26_](rules_changelog.md)).
+Rules catalog includes **975 built-in detection rules** ([_last update on 2024-11-29_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Identity Information**
 
@@ -263,6 +263,7 @@ Rules catalog includes **970 built-in detection rules** ([_last update on 2024-1
         - 23/03/2023 - minor - The error code 50076 has been excluded as it is not a specific error code related to a login failure that we want to detect and caused several false positives.
         - 16/08/2024 - minor - The error code 50078 has been excluded as it is not a specific error code related to a login failure that we want to detect and caused several false positives.
         - 14/10/2024 - minor - The error codes 70043, 50173, 70008, 700082, 9002341 have been excluded as they are not related to login failures that we want to detect and caused several false positives.
+        - 28/11/2024 - minor - Adding error codes as filters to reduce false positives.
             
 ??? abstract "Login Brute-Force Successful On Jumpcloud Portal"
     
@@ -285,6 +286,12 @@ Rules catalog includes **970 built-in detection rules** ([_last update on 2024-1
 ??? abstract "Login Brute-Force Successful On Rubycat PROVE IT"
     
     A user has attempted to login several times (brute-force) through Rubycat PROVE IT protected devices and succeeded to login.
+    
+    - **Effort:** advanced
+    
+??? abstract "Login Brute-Force Successful On WatchGuard Firebox"
+    
+    A user has attempted to login several times (brute-force) on WatchGuard Firebox and succeeded to login.
     
     - **Effort:** advanced
     
@@ -415,6 +422,7 @@ Rules catalog includes **970 built-in detection rules** ([_last update on 2024-1
         - 23/03/2023 - minor - The error code 50076 has been excluded as it is not a specific error code related to a login failure that we want to detect and caused several false positives.
         - 16/08/2024 - minor - The error code 50078 has been excluded as it is not a specific error code related to a login failure that we want to detect and caused several false positives.
         - 14/10/2024 - minor - The error codes 70043, 50173, 70008, 700082, 9002341 have been excluded as they are not related to login failures that we want to detect and caused several false positives.
+        - 28/11/2024 - minor - Adding error codes as filters to reduce false positives.
             
 ??? abstract "Login Brute-Force Successful On Jumpcloud Portal"
     
@@ -437,6 +445,12 @@ Rules catalog includes **970 built-in detection rules** ([_last update on 2024-1
 ??? abstract "Login Brute-Force Successful On Rubycat PROVE IT"
     
     A user has attempted to login several times (brute-force) through Rubycat PROVE IT protected devices and succeeded to login.
+    
+    - **Effort:** advanced
+    
+??? abstract "Login Brute-Force Successful On WatchGuard Firebox"
+    
+    A user has attempted to login several times (brute-force) on WatchGuard Firebox and succeeded to login.
     
     - **Effort:** advanced
     
@@ -1753,13 +1767,14 @@ Rules catalog includes **970 built-in detection rules** ([_last update on 2024-1
             
 ??? abstract "Alternate PowerShell Hosts Pipe"
     
-    Detects alternate PowerShell hosts potentially bypassing detections looking for powershell.exe. Prerequisites are logging for PipeEvents in Sysmon config
+    Detects alternate PowerShell hosts potentially bypassing detections looking for powershell.exe. Prerequisites are logging for PipeEvents in Sysmon config.
     
     - **Effort:** advanced
     
     - **Changelog:**
     
         - 04/04/2024 - major - Rule's pattern field changed
+        - 25/11/2024 - minor - improve filter to avoid false positives.
             
 ??? abstract "Aspnet Compiler"
     
@@ -2461,6 +2476,7 @@ Rules catalog includes **970 built-in detection rules** ([_last update on 2024-1
     
         - 30/05/2023 - minor - Adding the Intellij IDEA to filter list
         - 22/11/2024 - major - Adding new elements for detection and filters.
+        - 27/11/2024 - minor - Adding new filters to reduce false positives.
             
 ??? abstract "Suspicious CodePage Switch with CHCP"
     
@@ -5979,6 +5995,12 @@ Rules catalog includes **970 built-in detection rules** ([_last update on 2024-1
     
 **Modify Authentication Process**
 
+??? abstract "1Password EPM MFA Disable"
+    
+    Detects when the MFA for 1Password is disabled.
+    
+    - **Effort:** master
+    
 ??? abstract "Active Directory Shadow Credentials"
     
     Detects alternative credentials material adding. Attackers can abuse msDS-KeyCredentialLink and create a key pair to obtain a persistent and stealthy access to the target user or computer.
@@ -7904,6 +7926,7 @@ Rules catalog includes **970 built-in detection rules** ([_last update on 2024-1
     
         - 30/05/2023 - minor - Adding the Intellij IDEA to filter list
         - 22/11/2024 - major - Adding new elements for detection and filters.
+        - 27/11/2024 - minor - Adding new filters to reduce false positives.
             
 ??? abstract "Unsigned Driver Loaded From Suspicious Location"
     
@@ -9288,6 +9311,12 @@ Rules catalog includes **970 built-in detection rules** ([_last update on 2024-1
             
 **Modify Authentication Process**
 
+??? abstract "1Password EPM MFA Disable"
+    
+    Detects when the MFA for 1Password is disabled.
+    
+    - **Effort:** master
+    
 ??? abstract "Active Directory Shadow Credentials"
     
     Detects alternative credentials material adding. Attackers can abuse msDS-KeyCredentialLink and create a key pair to obtain a persistent and stealthy access to the target user or computer.
@@ -10603,6 +10632,12 @@ Rules catalog includes **970 built-in detection rules** ([_last update on 2024-1
             
 **Brute Force**
 
+??? abstract "1Password EPM Brute Force"
+    
+    Detects multiple failed login followed by a success from the same user.
+    
+    - **Effort:** master
+    
 ??? abstract "Anomaly Bruteforce - User Enumeration"
     
     The rule detects abnormally high number of TGT failed or NTLM authent failed associate to error code username don't exist who could indicate user enumeration
@@ -10948,6 +10983,12 @@ Rules catalog includes **970 built-in detection rules** ([_last update on 2024-1
     
 **Credentials from Password Stores**
 
+??? abstract "1Password EPM Grant Access Vault"
+    
+    Detects when a group is granted access to a 1Password vault.
+    
+    - **Effort:** master
+    
 ??? abstract "Anomaly Secret Store Access"
     
     The rule detects abnormally high access to secrets store folder
@@ -10985,6 +11026,12 @@ Rules catalog includes **970 built-in detection rules** ([_last update on 2024-1
     
 **Modify Authentication Process**
 
+??? abstract "1Password EPM MFA Disable"
+    
+    Detects when the MFA for 1Password is disabled.
+    
+    - **Effort:** master
+    
 ??? abstract "Active Directory Shadow Credentials"
     
     Detects alternative credentials material adding. Attackers can abuse msDS-KeyCredentialLink and create a key pair to obtain a persistent and stealthy access to the target user or computer.
@@ -12987,6 +13034,12 @@ Rules catalog includes **970 built-in detection rules** ([_last update on 2024-1
     
 **Exfiltration Over Alternative Protocol**
 
+??? abstract "1Password EPM Share Externally"
+    
+    Detects when an item from 1Password is shared externally.
+    
+    - **Effort:** master
+    
 ??? abstract "DNS Exfiltration and Tunneling Tools Execution"
     
     Well-known DNS exfiltration tools execution

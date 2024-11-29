@@ -99,6 +99,12 @@ The following Sekoia.io built-in rules match the intake **WatchGuard Firebox**. 
     
     - **Effort:** intermediate
 
+??? abstract "Login Brute-Force Successful On WatchGuard Firebox"
+    
+    A user has attempted to login several times (brute-force) on WatchGuard Firebox and succeeded to login.
+    
+    - **Effort:** advanced
+
 ??? abstract "Password Change On Directory Service Restore Mode (DSRM) Account"
     
     The Directory Service Restore Mode (DSRM) account is a local administrator account on Domain Controllers. Attackers may change the password to gain persistence.
