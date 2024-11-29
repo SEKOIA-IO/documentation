@@ -1,9 +1,15 @@
-Changelog _last update on 2024-11-26_
+Changelog _last update on 2024-11-29_
 
 ## Changelog
 
+### Login Brute-Force Successful On AzureAD From Single IP Address
+  - 28/11/2024 - minor - Adding error codes as filters to reduce false positives.
+    
 ### Suspicious Cmd.exe Command Line
-  - 22/11/2024 - major - Adding new elements for detection and filters.
+  - 27/11/2024 - minor - Adding new filters to reduce false positives.
+    
+### Alternate PowerShell Hosts Pipe
+  - 25/11/2024 - minor - improve filter to avoid false positives.
     
 ### Suspicious Email Attachment Received
   - 14/11/2024 - major - Adding new file extension and new condition to make the rule broader as it can now match on more intakes.
@@ -70,9 +76,6 @@ Changelog _last update on 2024-11-26_
     
 ### Suspicious Download Links From Legitimate Services
   - 15/10/2024 - minor - Adding filter to reduce false positives.
-    
-### Login Brute-Force Successful On AzureAD From Single IP Address
-  - 14/10/2024 - minor - The error codes 70043, 50173, 70008, 700082, 9002341 have been excluded as they are not related to login failures that we want to detect and caused several false positives.
     
 ### Web Application Launching Shell
   - 10/10/2024 - major - Adding new elements and filters to increase detection and reduce false positives.
@@ -315,9 +318,6 @@ Changelog _last update on 2024-11-26_
   - 04/04/2024 - major - Rule's pattern field changed
     
 ### Suspicious Access To Sensitive File Extensions
-  - 04/04/2024 - major - Rule's pattern field changed
-    
-### Alternate PowerShell Hosts Pipe
   - 04/04/2024 - major - Rule's pattern field changed
     
 ### Suspicious PsExec Execution
