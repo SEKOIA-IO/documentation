@@ -90,17 +90,24 @@ To filter rules using tags, there are two ways:
 
 The MITRE ATT&CK framework is a comprehensive matrix of **tactics** and **techniques** used by threat hunters and defenders to better classify attacks and assess an organization's risk.
 
-Whenever you filter the Rules Catalog, the matrix will update and rules will appear in blue on the matrix in one or many cells. Each cell represents an attack technique. The cells are clickable and allow you to consult or enable missing rules.
+Whenever you filter the Rules Catalog, the matrix will update and rules will appear in blue on the matrix in one or many cells. Each cell represents an attack technique.
 
-![security_profile](/assets/operation_center/rules_catalog/security_profilev2.png){: style="max-width:100%"}
-
-You can see how many rules are available in a cell by hovering over it.
+![security_profile](/assets/operation_center/rules_catalog/security_profilev3.png){: style="max-width:100%"}
 
 The color changes depending on the number of rules contained in one cell:
 
 - Colored cells means they contain rules. Darker cells mean there are many rules for this technique and lighter cells mean there are only few rules enabled
-
 - A white cell means that no rules available in it
+
+![mitre_details](/assets/operation_center/rules_catalog/mitre_details.gif){: style="max-width:100%"}
+
+Click on the MITRE preview to explore the distribution of rules across each technique and sub-technique.
+
+To view the MITRE framework in fullscreen, click the fullscreen button in the top-right corner of the modal.
+
+Use the "Sub-techniques" button to expand or collapse all sub-techniques.
+
+You can scroll through the MITRE details both horizontally and vertically.
 
 ---
 
