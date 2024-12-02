@@ -41,7 +41,7 @@ This section demonstrates how the raw logs will be transformed by our parsers. I
             "module": "powershell",
             "severity": 1
         },
-        "@timestamp": "2023-03-22T10:32:50.269000Z",
+        "@timestamp": "2023-03-22T10:30:37.145000Z",
         "destination": {
             "address": "2.2.2.2",
             "ip": "2.2.2.2",
@@ -98,7 +98,7 @@ This section demonstrates how the raw logs will be transformed by our parsers. I
             "module": "dga",
             "severity": 1
         },
-        "@timestamp": "2023-03-22T10:46:08.487000Z",
+        "@timestamp": "2023-03-22T10:25:54.903000Z",
         "destination": {
             "address": "pgoadcmgqfacj.com",
             "domain": "pgoadcmgqfacj.com",
@@ -158,7 +158,7 @@ This section demonstrates how the raw logs will be transformed by our parsers. I
                 "info"
             ]
         },
-        "@timestamp": "2023-03-22T10:53:13.408000Z",
+        "@timestamp": "2023-03-22T10:35:22.615000Z",
         "destination": {
             "address": "2.2.2.2",
             "ip": "2.2.2.2",
@@ -263,7 +263,7 @@ This section demonstrates how the raw logs will be transformed by our parsers. I
             "module": "retrohunt",
             "severity": 1
         },
-        "@timestamp": "2023-06-12T10:12:39.001000Z",
+        "@timestamp": "2023-06-09T14:08:46.845000Z",
         "destination": {
             "address": "2.2.2.2",
             "ip": "2.2.2.2",
@@ -370,7 +370,7 @@ This section demonstrates how the raw logs will be transformed by our parsers. I
             "module": "alert",
             "severity": 1
         },
-        "@timestamp": "2023-03-22T10:44:08.001000Z",
+        "@timestamp": "2023-03-22T10:25:55.690000Z",
         "destination": {
             "address": "2.2.2.2",
             "bytes": 90364,
@@ -454,7 +454,7 @@ This section demonstrates how the raw logs will be transformed by our parsers. I
             ],
             "module": "fileinfo"
         },
-        "@timestamp": "2023-03-22T10:44:07.998000Z",
+        "@timestamp": "2023-03-22T10:25:55.469000Z",
         "destination": {
             "address": "2.2.2.2",
             "ip": "2.2.2.2",
@@ -551,7 +551,7 @@ This section demonstrates how the raw logs will be transformed by our parsers. I
             ],
             "module": "http"
         },
-        "@timestamp": "2023-03-22T10:44:07.997000Z",
+        "@timestamp": "2023-03-22T10:25:55.377000Z",
         "destination": {
             "address": "2.2.2.2",
             "ip": "2.2.2.2",
@@ -620,6 +620,71 @@ This section demonstrates how the raw logs will be transformed by our parsers. I
                 "version": "7"
             },
             "version": "11.0"
+        }
+    }
+    	
+	```
+
+
+=== "sigflow-tls.json"
+
+    ```json
+	
+    {
+        "message": "{\"uuid\":\"b96777f9-6409-4864-b8a1-452094a93c5d\",\"host\":\"gcap-xxxxxxxxx.domain.local\",\"ether\":{\"dest_mac\":\"e6:43:7e:91:1b:92\",\"src_mac\":\"82:df:ee:4f:81:af\"},\"type\":\"suricata\",\"dest_ip\":\"5.6.7.8\",\"src_port\":64809,\"flow_id\":1366008699485799,\"timestamp_analyzed\":\"2024-11-21T13:02:44.291Z\",\"timestamp\":\"2024-11-21T13:02:02.870913+0000\",\"gcenter\":\"gcenter-xxxxxxxx.domain.local\",\"event_type\":\"tls\",\"src_ip\":\"1.2.3.4\",\"dest_port\":443,\"in_iface\":\"mon2\",\"tls\":{\"sni\":\"www.microsoft.com\",\"version\":\"TLS 1.3\",\"ja3s\":{\"string\":\"771,4866,43-51\",\"hash\":\"15af977ce25de452b96affa2addb1036\"}},\"@version\":\"1\",\"proto\":\"TCP\",\"gcap\":\"gcap-xxxxxxxxx.domain.local\",\"@timestamp\":\"2024-11-21T13:02:44.291Z\"}\n",
+        "event": {
+            "category": [
+                "network"
+            ],
+            "module": "tls"
+        },
+        "destination": {
+            "address": "5.6.7.8",
+            "ip": "5.6.7.8",
+            "port": 443
+        },
+        "gatewatcher": {
+            "event_type": "tls",
+            "flow_id": "1366008699485799",
+            "gcap": "gcap-xxxxxxxxx.domain.local",
+            "gcenter": "gcenter-xxxxxxxx.domain.local",
+            "timestamp_analyzed": "2024-11-21T13:02:44.291Z",
+            "tls": "{\"ja3s\": {\"hash\": \"15af977ce25de452b96affa2addb1036\", \"string\": \"771,4866,43-51\"}, \"sni\": \"www.microsoft.com\", \"version\": \"TLS 1.3\"}",
+            "tls_sni": "www.microsoft.com",
+            "type": "suricata"
+        },
+        "network": {
+            "transport": "TCP"
+        },
+        "observer": {
+            "hostname": "gcap-xxxxxxxxx.domain.local",
+            "mac": [
+                "82:df:ee:4f:81:af",
+                "e6:43:7e:91:1b:92"
+            ],
+            "name": "gcap-xxxxxxxxx.domain.local",
+            "type": "ids",
+            "version": "0.2"
+        },
+        "related": {
+            "hosts": [
+                "gcap-xxxxxxxxx.domain.local"
+            ],
+            "ip": [
+                "1.2.3.4",
+                "5.6.7.8"
+            ]
+        },
+        "source": {
+            "address": "1.2.3.4",
+            "ip": "1.2.3.4",
+            "port": 64809
+        },
+        "tls": {
+            "server": {
+                "ja3s": "15af977ce25de452b96affa2addb1036"
+            },
+            "version": "TLS 1.3"
         }
     }
     	
@@ -728,7 +793,9 @@ The following table lists the fields that are extracted, normalized under the EC
 |`gatewatcher.timestamp_detected` | `keyword` | Timestamp of the file collection by gcap |
 |`gatewatcher.timestamp_package` | `text` | This field is used for retrohunt alerts |
 |`gatewatcher.tlp` | `text` | This field is used for retrohunt alerts |
-|`gatewatcher.tls` | `text` | This field represents the tls field in a network metadata (used in legacy format log) |
+|`gatewatcher.tls` | `text` | This field contains all TLS data fields in a TLS metadata |
+|`gatewatcher.tls_fingerprint` | `text` | This field represents the TLS server fingerprint field in a TLS metadata |
+|`gatewatcher.tls_sni` | `text` | This field represents the TLS SNI field in a TLS metadata |
 |`gatewatcher.ttp` | `text` | This field is used for retrohunt alerts |
 |`gatewatcher.type` | `keyword` | Type of analysis |
 |`gatewatcher.usage_mode` | `text` | This field is used for retrohunt alerts |
@@ -751,6 +818,13 @@ The following table lists the fields that are extracted, normalized under the EC
 |`source.ip` | `ip` | IP address of the source. |
 |`source.packets` | `long` | Packets sent from the source to the destination. |
 |`source.port` | `long` | Port of the source. |
+|`tls.server.certificate_chain` | `keyword` | Array of PEM-encoded certificates that make up the certificate chain offered by the server. |
+|`tls.server.issuer` | `keyword` | Subject of the issuer of the x.509 certificate presented by the server. |
+|`tls.server.ja3s` | `keyword` | A hash that identifies servers based on how they perform an SSL/TLS handshake. |
+|`tls.server.not_after` | `date` | Timestamp indicating when server certificate is no longer considered valid. |
+|`tls.server.not_before` | `date` | Timestamp indicating when server certificate is first considered valid. |
+|`tls.server.subject` | `keyword` | Subject of the x.509 certificate presented by the server. |
+|`tls.version` | `keyword` | Numeric part of the version parsed from the original string. |
 |`url.domain` | `keyword` | Domain of the url. |
 |`url.path` | `wildcard` | Path of the request, such as "/search". |
 |`user_agent.original` | `keyword` | Unparsed user_agent string. |
