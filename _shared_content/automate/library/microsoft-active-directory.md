@@ -52,7 +52,26 @@ Reset a user's password. You will need a strong password for that otherwise enab
 | `basedn` | `string` | The starting point an LDAP server uses when searching for users authentication within your Directory. (e.g DC=example-domain,DC=com) |
 | `new_password` | `string` | New password, required to reset the old one of course. |
 
+### Search in AD
+
+Search in AD
+
+**Arguments**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `search_filter` | `string` | LDAP filter to run your query on  see https://ldap3.readthedocs.io/en/latest/searches.html#the-ldap-filter) |
+| `basedn` | `string` | The starting point an LDAP server uses when searching for users authentication within your Directory. (e.g DC=example-domain,DC=com) |
+| `attributes` | `` | Attributes you want to retrieve (default will be ALL)  |
+
+
+**Outputs**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `search_result` | `array` |  |
+
 
 ## Extra
 
-Module **`Microsoft Active Directory` v1.3.0**
+Module **`Microsoft Active Directory` v1.3.7**

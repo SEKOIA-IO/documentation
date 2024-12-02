@@ -134,4 +134,4 @@ Search Shodan using the same query syntax as the website and use facets to get s
 
 ## Extra
 
-Module **`Shodan` v1.25.0**
+Module **`Shodan` v1.26.1**

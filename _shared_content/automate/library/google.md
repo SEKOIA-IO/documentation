@@ -37,4 +37,4 @@ Execute the given query and return the results
 
 ## Extra
 
-Module **`Google` v1.20.9**
+Module **`Google` v1.21.3**

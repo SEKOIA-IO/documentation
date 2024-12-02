@@ -29,6 +29,13 @@ Push IOCs in the Threat Intelligence API of SentinelOne
 | `stix_objects_path` | `string` | Filepath of the STIX objects fetched from the collection |
 | `filters` | `object` | Filter where to add iocs  |
 
+
+**Outputs**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `indicators` | `array` | All indicators pushed |
+
 ### Create Threat Note
 
 Create a threat note in SentinelOne
@@ -199,4 +206,4 @@ Update a threat incident in SentinelOne
 
 ## Extra
 
-Module **`SentinelOne` v1.18.5**
+Module **`SentinelOne` v1.18.6**
