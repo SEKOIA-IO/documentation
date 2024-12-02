@@ -1,11 +1,12 @@
 uuid: 9844ea0a-de7f-45d4-9a9b-b07651f0630e
-name: Trend Micro Vision One [BETA]
+name: Trend Micro Vision One Workbench Alerts [BETA]
 type: intake
 
 
 ## Overview
 
 Trend Micro Vision One is an extended detection and response (XDR) platform that enhances threat detection, investigation, and response across multiple security layers. It provides a centralized view for improved security posture and faster threat remediation.
+This integration will ingest Workbench Alerts from Trend Micro Vision One.
 
 !!! Warning
     Important note - This format is currently in beta. We highly value your feedback to improve its performance.
