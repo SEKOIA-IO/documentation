@@ -74,23 +74,11 @@ A secure email gateway to block spam, viruses, and malware.
 ### Instruction on Sekoia
 #### Create your intake
 
-1. Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a new intake from the `Mimecast Email Security`.
-2. Copy the associated Intake key
+1. Navigate to the [intake page](https://app.sekoia.io/operations/intakes) and create a new intake using the `Mimecast Email Security` integration.  
+2. If you do not already have one, create an account by entering your `Client ID` and `Client Secret`. If you have an existing account, simply select it from the list.  
+3. Configure the settings by choosing your preferred `Chunk Size` and `Frequency`.  
+4. Copy the newly created Intake Key for use in your setup.  
 
-#### Pull your logs on Sekoia.io
-
-Go to the Sekoia.io [playbook page](https://app.sekoia.io/operations/playbooks), and follow these steps:
-
-- Click on **+ PLAYBOOK** button to create a new one
-- Select **Create a playbook from scratch**
-- Give it a name in the field **Name**
-- Open the left panel, click **Mimecast** then select the trigger `[BETA] Fetch new email events from Mimecast`
-- Click on **Create**
-
-- Create a **Module configuration** using your `Client ID` and `Client Secret` created on the *How to create API credentials* step. Name the module configuration as you wish
-- Create a **Trigger configuration** and Type the `Intake key` created on the previous step
-- Click on the **Save** button
-- **Activate the playbook** with the toggle button on the top right corner of the page
 
 ### Enjoy your events on the [Events page](https://app.sekoia.io/operations/events)
 
