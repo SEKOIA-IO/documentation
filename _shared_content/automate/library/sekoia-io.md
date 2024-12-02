@@ -307,6 +307,26 @@ Adds a key to an asset
 | `uuid` | `string` |  |
 | `name` | `string` |  |
 
+### Merge Assets
+
+Merge a list of assets into a targeted asset
+
+**Arguments**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `destination` | `string` |  |
+| `sources` | `array` |  |
+
+
+**Outputs**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `status_code` | `integer` |  |
+| `headers` | `object` |  |
+| `text` | `string` |  |
+
 ### Attach Alerts to Case
 
 Attach one or more alerts to a specific case
@@ -453,6 +473,64 @@ Create a new asset
 | `community_uuid` | `string` |  |
 | `category` | `object` |  |
 
+### Create Asset (V2)
+
+Create a new asset
+
+**Arguments**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `uuid` | `` |  |
+| `community_uuid` | `string` |  |
+| `entity_uuid` | `` |  |
+| `name` | `string` |  |
+| `description` | `string` |  |
+| `type` | `string` |  |
+| `category` | `['string', 'null']` |  |
+| `criticality` | `integer` |  |
+| `props` | `['object', 'null']` | Attach contextual properties |
+| `atoms` | `['object', 'null']` | Attach detection properties |
+| `tags` | `array` |  |
+| `reviewed` | `boolean` | Mark the asset as reviewed |
+| `source` | `string` |  |
+
+
+**Outputs**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `uuid` | `string` | The identifier of the asset |
+| `entity_uuid` | `` |  |
+| `community_uuid` | `string` | The community of the asset |
+| `name` | `string` | The name of the asset |
+| `type` | `string` | The type of the asset |
+| `category` | `['object', 'string', 'null']` | The category of the asset |
+| `criticality` | `['integer', 'null']` |  |
+| `created_at` | `` | The creation date of the asset |
+| `created_by` | `` |  |
+| `created_by_type` | `['string', 'null']` |  |
+| `updated_at` | `` | The modification date of the asset |
+| `first_seen` | `` |  |
+| `last_seen` | `` |  |
+| `nb_events` | `['integer', 'null']` |  |
+| `nb_alerts` | `['integer', 'null']` |  |
+| `nb_atoms` | `integer` |  |
+| `atoms` | `['object', 'null']` |  |
+| `props` | `['object', 'null']` |  |
+| `tags` | `array` |  |
+| `revoked` | `boolean` |  |
+| `revoked_at` | `` |  |
+| `revoked_by` | `` |  |
+| `reviewed` | `boolean` |  |
+| `reviewed_at` | `` |  |
+| `reviewed_by` | `` |  |
+| `source` | `string` |  |
+| `rule_uuid` | `` |  |
+| `rule_version` | `['string', 'null']` |  |
+| `criticity` | `['object', 'null']` | The criticality of the asset |
+| `asset_type` | `['object', 'null']` | The type of the asset |
+
 ### Delete rule
 
 Delete a rule
@@ -473,6 +551,52 @@ Delete the requested asset
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
 | `uuid` | `string` | The identifier of the asset |
+
+### Delete an asset (V2)
+
+Delete the requested asset
+
+**Arguments**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `uuid` | `string` | The identifier of the asset |
+
+
+**Outputs**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `uuid` | `string` | The identifier of the asset |
+| `entity_uuid` | `` |  |
+| `community_uuid` | `string` | The community of the asset |
+| `name` | `string` | The name of the asset |
+| `type` | `string` | The type of the asset |
+| `category` | `['object', 'string', 'null']` | The category of the asset |
+| `criticality` | `['integer', 'null']` |  |
+| `created_at` | `` | The creation date of the asset |
+| `created_by` | `` |  |
+| `created_by_type` | `['string', 'null']` |  |
+| `updated_at` | `` | The modification date of the asset |
+| `first_seen` | `` |  |
+| `last_seen` | `` |  |
+| `nb_events` | `['integer', 'null']` |  |
+| `nb_alerts` | `['integer', 'null']` |  |
+| `nb_atoms` | `integer` |  |
+| `atoms` | `['object', 'null']` |  |
+| `props` | `['object', 'null']` |  |
+| `tags` | `array` |  |
+| `revoked` | `boolean` |  |
+| `revoked_at` | `` |  |
+| `revoked_by` | `` |  |
+| `reviewed` | `boolean` |  |
+| `reviewed_at` | `` |  |
+| `reviewed_by` | `` |  |
+| `source` | `string` |  |
+| `rule_uuid` | `` |  |
+| `rule_version` | `['string', 'null']` |  |
+| `criticity` | `['object', 'null']` | The criticality of the asset |
+| `asset_type` | `['object', 'null']` | The type of the asset |
 
 ### Deny Countermeasure
 
@@ -1011,6 +1135,37 @@ Return a list of assets according to the filters
 | `items` | `array` |  |
 | `total` | `integer` |  |
 
+### List Assets (V2)
+
+Return a list of assets according to the filters
+
+**Arguments**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `search` | `['string', 'null']` | Search assets by name |
+| `uuids` | `` | Filter by comma-separated list of asset UUIDs |
+| `community_uuids` | `` | Filter by comma-separated list of community UUIDs |
+| `type` | `` | Filter by comma-separated list of asset types |
+| `category` | `` | Filter by comma-separated list of asset categories |
+| `source` | `` | Filter by comma-separated list of asset sources |
+| `reviewed` | `['boolean', 'null']` | Filter reviewed assets only |
+| `criticality` | `['integer', 'null']` | Filter assets with higher criticality |
+| `sort` | `` | Sort criterion |
+| `direction` | `` | Sort order |
+| `rule_uuid` | `` | Rule Uuid |
+| `rule_version` | `` | Rule Version |
+| `offset` | `integer` | The position of the first asset to return |
+| `limit` | `integer` | The number of assets to return |
+
+
+**Outputs**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `items` | `array` |  |
+| `total` | `integer` |  |
+
 ### Edit Alert
 
 Edit the details of an alert
@@ -1210,6 +1365,73 @@ Return an asset according its identifier
 | `community_uuid` | `string` |  |
 | `category` | `object` |  |
 
+### Get Asset (V2)
+
+Return an asset according to its identifier
+
+**Arguments**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `uuid` | `string` | The identifier of the asset |
+
+
+**Outputs**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `uuid` | `string` | The identifier of the asset |
+| `entity_uuid` | `` |  |
+| `community_uuid` | `string` | The community of the asset |
+| `name` | `string` | The name of the asset |
+| `type` | `string` | The type of the asset |
+| `category` | `['object', 'string', 'null']` | The category of the asset |
+| `criticality` | `['integer', 'null']` |  |
+| `created_at` | `` | The creation date of the asset |
+| `created_by` | `` |  |
+| `created_by_type` | `['string', 'null']` |  |
+| `updated_at` | `` | The modification date of the asset |
+| `first_seen` | `` |  |
+| `last_seen` | `` |  |
+| `nb_events` | `['integer', 'null']` |  |
+| `nb_alerts` | `['integer', 'null']` |  |
+| `nb_atoms` | `integer` |  |
+| `atoms` | `['object', 'null']` |  |
+| `props` | `['object', 'null']` |  |
+| `tags` | `array` |  |
+| `revoked` | `boolean` |  |
+| `revoked_at` | `` |  |
+| `revoked_by` | `` |  |
+| `reviewed` | `boolean` |  |
+| `reviewed_at` | `` |  |
+| `reviewed_by` | `` |  |
+| `source` | `string` |  |
+| `rule_uuid` | `` |  |
+| `rule_version` | `['string', 'null']` |  |
+| `criticity` | `['object', 'null']` | The criticality of the asset |
+| `asset_type` | `['object', 'null']` | The type of the asset |
+
+### Synchronize Assets with AD
+
+Create, merge and edit asset to synchronize asset with ad
+
+**Arguments**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `community_uuid` | `string` |  |
+| `user_ad_data` | `object` |  |
+| `asset_synchronization_configuration` | `object` |  |
+
+
+**Outputs**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `found_assets` | `object` |  |
+| `created_asset` | `boolean` |  |
+| `destination_asset` | `string` |  |
+
 ### Update Alert Status
 
 Triggers an action on an alert to update its status
@@ -1309,4 +1531,4 @@ Update a rule
 
 ## Extra
 
-Module **`Sekoia.io` v2.64.4**
+Module **`Sekoia.io` v2.65.4**
