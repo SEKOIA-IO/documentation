@@ -74,8 +74,10 @@ A secure email gateway to block spam, viruses, and malware.
 ### Instruction on Sekoia
 #### Create your intake
 
-1. Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a new intake from the `Mimecast Email Security`.
-2. Copy the associated Intake key
+1. Navigate to the [intake page](https://app.sekoia.io/operations/intakes) and create a new intake using the `Mimecast Email Security` integration.  
+2. If you do not already have one, create an account by entering your `Client ID` and `Client Secret`. If you have an existing account, simply select it from the list.  
+3. Configure the settings by choosing your preferred `Chunk Size` and `Frequency`.  
+4. Copy the newly created Intake Key for use in your setup.  
 
 
 ### Enjoy your events on the [Events page](https://app.sekoia.io/operations/events)
