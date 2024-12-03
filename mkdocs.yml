@@ -346,7 +346,7 @@ nav:
       - Kaspersky Endpoint Security: integration/categories/endpoint/kaspersky_endpoint_security.md
       - Linux AuditBeat: integration/categories/endpoint/auditbeat_linux.md
       - Log Insight Windows: integration/categories/endpoint/log_insight_windows.md
-      - Microsoft 365 Defender: integration/categories/endpoint/microsoft_365_defender.md
+      - Microsoft Defender XDR (Microsoft 365 Defender): integration/categories/endpoint/microsoft_365_defender.md
       - Microsoft Intune: integration/categories/endpoint/microsoft_intune.md
       - Palo Alto Cortex XDR (EDR): integration/categories/endpoint/paloalto_cortex_edr.md
       - Panda Security Aether: integration/categories/endpoint/panda_security_aether.md
