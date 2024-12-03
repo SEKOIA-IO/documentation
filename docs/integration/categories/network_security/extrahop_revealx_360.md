@@ -45,22 +45,7 @@ ExtraHop Reveal(x) 360 is a cloud-based network detection and response platform 
 ### Create your intake
 
 1. Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a new intake from the `ExtraHop Reveal(x) 360`.
-2. Copy the associated Intake key
-
-### Pull the logs to collect them on Sekoia.io
-
-Go to the Sekoia.io [playbook page](https://app.sekoia.io/operations/playbooks), and follow these steps:
-
-- Click on **+ PLAYBOOK** button to create a new one
-- Select **Create a playbook from scratch**
-- Give it a name in the field **Name**
-- Open the left panel, click **ExtraHop** then select the trigger `Fetch new alerts from ExtraHop Reveal(x) 360`
-- Click on **Create**
-
-- Create a **Module configuration** using your REST API credentials created on the *How to create REST API credentials* step. Name the module configuration as you wish
-- Create a **Trigger configuration** and Type the `Intake key` created on the previous step
-- Click on the **Save** button
-- **Activate the playbook** with the toggle button on the top right corner of the page
+2. Set the intake account configuration using your REST API credentials created on the *How to create REST API credentials* step.
 
 ### Enjoy your events on the [Events page](https://app.sekoia.io/operations/events)
 

@@ -47,19 +47,6 @@ Go to your Sekoia.io [Intakes page](https://app.sekoia.io/operations/intakes), a
 1. Click on **+ Intake** button to create a new one
 2. Choose **1Password EPM**, give it a name and choose the relevant Entity
 3. Click on **Create** button
-4. Copy the **Intake key**
-
-!!! Note
-	Save the `Intake key` on a block note. It will be used in the next step.
-
-### Pull the logs to collect them on Sekoia.io
-
-Go to the Sekoia.io [playbook page](https://app.sekoia.io/operations/playbooks), and follow these steps:
-
-1. Click on **+ PLAYBOOK** button to create a new one
-2. Select **Use a template**
-3. Search for `1Password` keyword on the search bar and select the template named `Fetch new events from 1Password EPM`
-4. Create a **Module configuration** using 
   - API token from `How to create an API token` step. 
   - Base URL depending by the server that hosts your 1Password account:
   
@@ -69,11 +56,11 @@ Go to the Sekoia.io [playbook page](https://app.sekoia.io/operations/playbooks),
     | 1Password.ca            | https://events.1password.ca                                                                                |
     | 1Password.eu            | https://events.1password.eu                                                                                |
 
-    Name the module configuration as you wish
+4. Copy the **Intake key**
 
-5. Create a **Trigger configuration** using `Intake key` created on the previous step
-6. Click on the **Save** button
-7. Toggle **Activate the playbook** on the top right corner of the page
+!!! Note
+	Save the `Intake key` on a block note. It will be used in the next step.
+
 
 #### Enjoy your events on the [Events page](https://app.sekoia.io/operations/events)
 

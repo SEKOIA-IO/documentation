@@ -28,18 +28,8 @@ To forward events produced by Cybereason to Sekoia.io, you will need your Cybere
 
 ### Create your intake
 
-On Sekoia.io, go to the [Intakes page](https://app.sekoia.io/operations/intakes/new) and generate a new intake with the `Cybereason MalOp` format.
-Keep aside the intake key.
-
-### Pull events
-
-To start pulling events, you have to:
-
-1. Go to the [playbook page](https://app.sekoia.io/operations/playbooks) and create a new playbook with the [Fetch new events from Cybereason](/integration/action_library/cybereason.md) module.
-2. Set up the module configuration with your Cybereason username and password.
-3. Set up the trigger configuration with your intake key
-4. Start the playbook and enjoy your [events](https://app.sekoia.io/operations/events).
-
+1. On Sekoia.io, go to the [Intakes page](https://app.sekoia.io/operations/intakes/new) and generate a new intake with the `Cybereason MalOp` format.
+2. Set up the intake configuration with your Cybereason username and password.
 
 {!_shared_content/operations_center/integrations/generated/9f89b634-0531-437b-b060-a9d9f2d270db_sample.md!}
 

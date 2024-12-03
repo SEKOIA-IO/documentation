@@ -54,13 +54,8 @@ This setup guide describe how to forward events produced by `Azure Files` to Sek
 
 Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a new intake from the format `Azure Files`. Copy the intake key.
 
-### Pull events
+Set up the intake configuration with the EventHub's `Connection string-primary key`, the hub name, the consumer group, the storage's `Connection string-primary key` and the container name.
 
-To start to pull events, you have to:
-
-1. Go to the [playbooks page](https://app.sekoia.io/operations/playbooks) and create a new playbook with the [Consume Eventhub messages](/xdr/features/automate/library/microsoft-azure.md#consume-eventhub-messages)
-2. Set up the trigger configuration with the EventHub's `Connection string-primary key`, the hub name, the consumer group, the storage's `Connection string-primary key` and the container name.
-3. Start the playbook and enjoy your events
 
 {!_shared_content/operations_center/integrations/generated/70c5c3db-fae8-4825-8d8b-08d6315e1ef6_sample.md!}
 

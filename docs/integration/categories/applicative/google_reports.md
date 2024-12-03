@@ -126,32 +126,12 @@ Find more information on the [official google documentation](https://cloud.googl
 ### Create your intake
 
 1. Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a new intake from the `Google Report`.
-2. Copy the associated Intake key
-
-### Pull the logs to collect them on Sekoia.io
-
-Go to the Sekoia.io [playbook page](https://app.sekoia.io/operations/playbooks), and follow these steps:
-
-- Click on **+ PLAYBOOK** button to create a new one
-- Select **Create a playbook from scratch**
-- Give it a name in the field **Name**
-- Open the left panel, click **Google** then select the trigger `Get user activities`
-- Click on **Create**
-
-- Create a **Module configuration** using your service account credentials from your Google Cloud environment extracted on a JSON file. Name the module configuration as you wish
-
-
--  Create a **Trigger configuration** using:
-
-    * Type the `Intake key` created on the previous
+2. Edit the intake configuration with the following attribut:
     * Select the `application name` what you to fetch events from
     * Type the `an Google workspace admin email`.
   
 !!! Important
     This Google workspace admin email is any user part of the domain **that has** the right to view de Data of Google Workspace 
-
-- Click on the **Save** button
-- **Activate the playbook** with the toggle button on the top right corner of the page
 
 ### Enjoy your events on the [Events page](https://app.sekoia.io/operations/events)
 

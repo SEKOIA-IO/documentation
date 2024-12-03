@@ -32,15 +32,8 @@ Detailed instructions can be found in official docs [here](https://learn.microso
 
 ### Create the intake in Sekoia.io
 
-Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a new intake from the format `Azure Key Vault`. Copy the intake key.
-
-### Pull events
-
-To start to pull events, you have to:
-
-1. Go to the [playbooks page](https://app.sekoia.io/operations/playbooks) and create a new playbook with the [Azure Key Vault](/integration/action_library/microsoft-azure.md)
-2. Set up the trigger configuration with `account_key`, `account_name` and the `container_name`.
-3. Start the playbook and enjoy your events
+1. Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a new intake from the format `Azure Key Vault`. Copy the intake key.
+2. Set up the intake configuration with `account_key`, `account_name` and the `container_name`.
 
 {!_shared_content/operations_center/integrations/generated/ae62a8c4-11f8-4aea-af5b-6968f8ac04ba_sample.md!}
 
