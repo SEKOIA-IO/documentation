@@ -1,4 +1,4 @@
-Rules catalog includes **977 built-in detection rules** ([_last update on 2024-12-02_](rules_changelog.md)).
+Rules catalog includes **981 built-in detection rules** ([_last update on 2024-12-04_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Identity Information**
 
@@ -139,6 +139,18 @@ Rules catalog includes **977 built-in detection rules** ([_last update on 2024-1
     
         - 28/03/2024 - minor - Rule effort was updated to master
             
+??? abstract "Correlation Fortigate Multi Alert From One Internal Ip"
+    
+    This rule detect an internal asset that targets a destination IP address with several threat
+    
+    - **Effort:** master
+    
+??? abstract "Correlation Fortigate Multi Dest From One Internal Ip"
+    
+    This rule detect an internal asset that targets several destination IP address with the same threat
+    
+    - **Effort:** master
+    
 ??? abstract "ExtraHop Reveal(x) 360 Intrusion Detection Critical Severity"
     
     ExtraHop Reveal(x) 360 raised an intrusion detection alert with critical severity.
@@ -4149,6 +4161,12 @@ Rules catalog includes **977 built-in detection rules** ([_last update on 2024-1
     
     - **Effort:** master
     
+??? abstract "Mshta Command From A Scheduled Task"
+    
+    Detects when an attacker leverage the Microsoft Windows Scheduled task feature to run the mshta.exe process. This is a common usage of a living-off-the-land binary, frequently abused for malicous purposes and not common nowadays in IT administration.
+    
+    - **Effort:** intermediate
+    
 ??? abstract "Okta Security Threat Detected"
     
     Detects when a security threat is detected in Okta.
@@ -5562,6 +5580,12 @@ Rules catalog includes **977 built-in detection rules** ([_last update on 2024-1
     
         - 26/03/2024 - major - Rule's pattern field changed
             
+??? abstract "Mshta Command From A Scheduled Task"
+    
+    Detects when an attacker leverage the Microsoft Windows Scheduled task feature to run the mshta.exe process. This is a common usage of a living-off-the-land binary, frequently abused for malicous purposes and not common nowadays in IT administration.
+    
+    - **Effort:** intermediate
+    
 ??? abstract "New Service Creation"
     
     Detects creation of a new service from command line
@@ -5922,6 +5946,12 @@ Rules catalog includes **977 built-in detection rules** ([_last update on 2024-1
     
         - 21/06/2024 - major - Update detection pattern for ECS fields/value compliance, and filter some FPs
             
+??? abstract "Microsoft Office Macro Security Registry Modifications"
+    
+    Detects registry changes allowing an attacker to make Microsoft Office products runs Macros without warning. Events are collected either from ETW/Sysmon/EDR depending of the integration.
+    
+    - **Effort:** master
+    
 ??? abstract "Narrator Feedback-Hub Persistence"
     
     The Windows 10 Narrator's Feedback-Hub registry key has been modified which could be done by an attacker for persistence purposes. Prerequisites are logging for Registry events in the Sysmon configuration (events 12 and 13). Careful since the SwiftOnSecurity Sysmon's configuration needs to be changed to log for this specifically.
@@ -6293,6 +6323,12 @@ Rules catalog includes **977 built-in detection rules** ([_last update on 2024-1
 ??? abstract "MavInject Process Injection"
     
     Detects process injection using the signed Windows tool Mavinject32.exe (which is a LOLBAS)
+    
+    - **Effort:** intermediate
+    
+??? abstract "Mshta Command From A Scheduled Task"
+    
+    Detects when an attacker leverage the Microsoft Windows Scheduled task feature to run the mshta.exe process. This is a common usage of a living-off-the-land binary, frequently abused for malicous purposes and not common nowadays in IT administration.
     
     - **Effort:** intermediate
     
@@ -7136,6 +7172,12 @@ Rules catalog includes **977 built-in detection rules** ([_last update on 2024-1
     
         - 26/03/2024 - major - Rule's pattern field changed
             
+??? abstract "Mshta Command From A Scheduled Task"
+    
+    Detects when an attacker leverage the Microsoft Windows Scheduled task feature to run the mshta.exe process. This is a common usage of a living-off-the-land binary, frequently abused for malicous purposes and not common nowadays in IT administration.
+    
+    - **Effort:** intermediate
+    
 ??? abstract "New Service Creation"
     
     Detects creation of a new service from command line
@@ -7496,6 +7538,12 @@ Rules catalog includes **977 built-in detection rules** ([_last update on 2024-1
     
         - 21/06/2024 - major - Update detection pattern for ECS fields/value compliance, and filter some FPs
             
+??? abstract "Microsoft Office Macro Security Registry Modifications"
+    
+    Detects registry changes allowing an attacker to make Microsoft Office products runs Macros without warning. Events are collected either from ETW/Sysmon/EDR depending of the integration.
+    
+    - **Effort:** master
+    
 ??? abstract "Narrator Feedback-Hub Persistence"
     
     The Windows 10 Narrator's Feedback-Hub registry key has been modified which could be done by an attacker for persistence purposes. Prerequisites are logging for Registry events in the Sysmon configuration (events 12 and 13). Careful since the SwiftOnSecurity Sysmon's configuration needs to be changed to log for this specifically.
@@ -7979,6 +8027,12 @@ Rules catalog includes **977 built-in detection rules** ([_last update on 2024-1
 ??? abstract "MavInject Process Injection"
     
     Detects process injection using the signed Windows tool Mavinject32.exe (which is a LOLBAS)
+    
+    - **Effort:** intermediate
+    
+??? abstract "Mshta Command From A Scheduled Task"
+    
+    Detects when an attacker leverage the Microsoft Windows Scheduled task feature to run the mshta.exe process. This is a common usage of a living-off-the-land binary, frequently abused for malicous purposes and not common nowadays in IT administration.
     
     - **Effort:** intermediate
     
