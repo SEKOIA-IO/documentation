@@ -32,25 +32,9 @@ Fastly WAF audit logs tracks activities related to your corp and your sites like
 #### Create your intake
 
 1. Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a new intake from the `Fastly Audit`.
-2. Copy the associated Intake key
+2. Enter `User's email`, `API token`, `Corporation name` and `Site name` (if needed) from the Fastly WAF dashboard
 
-#### Pull the logs to collect them on Sekoia.io
 
-Go to the Sekoia.io [playbook page](https://app.sekoia.io/operations/playbooks), and follow these steps:
-
-1. Click **+ PLAYBOOK** button to create a new one
-2. Select **Create a playbook from scratch**
-3. Give it a name in the field **Name**
-4. Open the left panel, click **Fastly** then select the trigger `Fetch new audit logs from Fastly WAF`
-5. Click **Create**
-
-6. Create a **Module configuration**. Name the module configuration as you wish.
-7. Create a **Trigger configuration** using: 
-7.1. Type the `Intake key` created on the previous step
-7.2 Enter `User's email`, `API token`, `Corporation name` and `Site name` (if needed) from the Fastly WAF dashboard
-
-- Click the **Save** button
-- **Activate the playbook** with the toggle button in the top right corner of the page
 
 #### Enjoy your events on the [Events page](https://app.sekoia.io/operations/events)
 

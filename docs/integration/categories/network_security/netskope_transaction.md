@@ -63,34 +63,18 @@ Example of Subcription Endoint: `projects/1023456728636/locations/europe-west3-a
 | Zone ID | a |
 
 ### Instruction on Sekoia
+#### Create your intake
 
-!!! Note
-    The intake you would like to configure is nammed `Netskope Transaction Events`. Not `Netskope Events`.
-
-{!_shared_content/integration/intake_configuration.md!}
-
-#### Pull the logs to collect them on Sekoia.io
-
-Go to the Sekoia.io [playbook page](https://app.sekoia.io/operations/playbooks), and follow these steps:
-
-- Click on **+ PLAYBOOK** button to create a new one
-- Select **Create a playbook from scratch**
-- Give it a name in the field **Name**
-- Open the left panel, click **Google** then select the trigger `Fetch new transaction events from Netskope`
-- Click on **Create**
-
--  Create a **Trigger configuration** using:
+1. Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a new intake from the `Netskope Transaction Events`.
+2. Set the intake configuration using:
     * Your service account credentials from your Google Cloud environment extracted on a JSON file
     * Subscription ID, Cloud Region and Zone ID extracted from the Subscription Endpoint on Netskope Event Streaming section
-    * Type the `Intake key` created on the previous
     * Select the `application name` what you to fetch events from
     * Type the `Admin email`
  
 !!! Note
     Please copy past the whole private key value during the procedure, including the begining and ending separators.
 
-- Click on the **Save** button
-- **Activate the playbook** with the toggle button on the top right corner of the page
 
 {!_shared_content/operations_center/integrations/generated/a0716ffd-5f9e-4b97-add4-30f1870e3d03_sample.md!}
 

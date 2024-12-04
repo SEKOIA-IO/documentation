@@ -41,15 +41,8 @@ These instructions are illustrated and more detailed [here](https://learn.micros
 
 ### Create the intake in Sekoia.io
 
-Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a new intake from the format `Azure Application Gateway`. Copy the intake key.
-
-### Pull events
-
-To start to pull events, you have to:
-
-1. Go to the [playbooks page](https://app.sekoia.io/operations/playbooks) and create a new playbook with the [Consume Eventhub messages](/xdr/features/automate/library/microsoft-azure.md#consume-eventhub-messages)
-2. Set up the trigger configuration with the EventHub's `Connection string-primary key`, the hub name, the consumer group, the storage's `Connection string-primary key` and the container name.
-3. Start the playbook and enjoy your events
+1. Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a new intake from the format `Azure Application Gateway`.
+2. Set up the intake configuration with the EventHub's `Connection string-primary key`, the hub name, the consumer group, the storage's `Connection string-primary key` and the container name.
 
 {!_shared_content/operations_center/integrations/generated/6967b0ca-f27e-480a-b124-fa4ab0b9d889_sample.md!}
 

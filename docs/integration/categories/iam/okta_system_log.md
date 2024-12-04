@@ -20,15 +20,8 @@ Sign in your Okta organization with administrator role and follow [this guide](h
 
 ### Create the intake in Sekoia.io
 
-Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a new intake from the format `Okta System logs`. Copy the intake key.
-
-### Pull events
-
-To start to pull events, you have to:
-
-1. Go to the [playbooks page](https://app.sekoia.io/operations/playbooks) and create a new playbook with the [Fetch new system logs from OKTA](/integration/action_library/okta.md) trigger
-2. Set up the module configuration with your API Key and the base url of your Okta instance. Set up the trigger configuration with the intake key
-3. Start the playbook and enjoy your events
+1. Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a new intake from the format `Okta System logs`. 
+2. Set up the intake configuration with your API Key and the base url of your Okta instance. 
 
     !!! note
 
