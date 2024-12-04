@@ -189,6 +189,12 @@ The following Sekoia.io built-in rules match the intake **HarfangLab EDR**. This
     
     - **Effort:** elementary
 
+??? abstract "Burp Suite Tool Detected"
+    
+    Burp Suite is a cybersecurity tool. When used as a proxy service, its purpose is to intercept packets and modify them to send them to the server. Burp Collaborator is a network service that Burp Suite uses to help discover many kinds of vulnerabilities (vulnerabilities scanner).
+    
+    - **Effort:** intermediate
+
 ??? abstract "CMSTP Execution"
     
     Detects various indicators of Microsoft Connection Manager Profile Installer execution
@@ -219,17 +225,143 @@ The following Sekoia.io built-in rules match the intake **HarfangLab EDR**. This
     
     - **Effort:** master
 
+??? abstract "CVE-2018-11776 Apache Struts2"
+    
+    Apache Struts versions 2.3 to 2.3.34 and 2.5 to 2.5.16 suffer from possible Remote Code Execution when alwaysSelectFullNamespace is true (either by user or a plugin like Convention Plugin) and then: results are used with no namespace and in same time, its upper package have no or wildcard namespace and similar to results, same possibility when using url tag which doesn't have value and action set and in same time, its upper package have no or wildcard namespace.
+    
+    - **Effort:** intermediate
+
+??? abstract "CVE-2018-13379 Fortinet Exploit"
+    
+    Detects the successful exploitation of the Fortinet FortiOS CVE-2018-13379. This CVE is one of the most exploited CVEs since 2018. It is exploited by APT threat actors as well as cybercriminals. The exploitation of this CVE lead an unauthenticated user to get full access to FortiOS system file through SSL VPN via specially crafted HTTP resource requests. The exploit read /dev/cmdb/sslvpn_websession file, that contains login and passwords in (clear/text). An HTTP response status code = 200, means the file was successfully accessed. This vulnerability affects FortiOS 5.6.3 to 5.6.7 and FortiOS 6.0.0 to 6.0.4.
+    
+    - **Effort:** advanced
+
+??? abstract "CVE-2019-0604 SharePoint"
+    
+    Detects the exploitation of the SharePoint vulnerability (CVE-2019-0604).
+    
+    - **Effort:** advanced
+
 ??? abstract "CVE-2019-0708 Scan"
     
     Detects the use of a scanner that discovers targets vulnerable to CVE-2019-0708 RDP RCE aka BlueKeep.
     
     - **Effort:** elementary
 
+??? abstract "CVE-2019-11510 Pulse Secure Exploit"
+    
+    Detects the successful exploitation of the Pulse Secure vulnerability CVE-2019-11510. This CVE is one of the most exploited CVEs since 2019. It is exploited by diverse threat actors, leading sometimes in ransomware deployement among these groups: Maze, Conti, Egregor, DoppelPaymer, NetWalker and REvil. But also APT actors such as APT29. The exploitation of this CVE allows a remote, unauthenticated attacker to compromise a vulnerable VPN server. The attacker may be able to gain access to all active users and their plain-text credentials. It may also be possible for the attacker to execute arbitrary commands on each VPN client as it successfully connects to the VPN server. The exploit reads /etc/passwd file to get access to login and passwords in (clear/text). An HTTP response status code = 200, means the file was successfully accessed. This vulnerability affects 8.1R15.1, 8.2 before 8.2R12.1, 8.3 before 8.3R7.1, and 9.0 before 9.0R3.4 products.
+    
+    - **Effort:** elementary
+
+??? abstract "CVE-2019-19781 Citrix NetScaler (ADC)"
+    
+    Detects CVE-2019-19781 exploitation attempt against Citrix NetScaler (ADC), Application Delivery Controller and Citrix Gateway Attack.
+    
+    - **Effort:** elementary
+
+??? abstract "CVE-2019-2725 Oracle Weblogic Exploit"
+    
+    Detects the successful exploitation of a deserialization vulnerability in Oracle Weblogic Server, CVE-2019-2725. This vulnerability affects versions 10.X and 12.1.3 of WebLogic that have the components wls9_async_response.war and wls-wsat.war enabled. It is a remote code execution which can be exploited without authentication via HTTP. An HTTP response status code = 202, means the target is vulnerable, the analyst then has to look in depth to check if a webshell has been uploaded or something else has been done.
+    
+    - **Effort:** elementary
+
+??? abstract "CVE-2020-0688 Microsoft Exchange Server Exploit"
+    
+    Detects the exploitation of CVE-2020-0688. The POC exploit a .NET serialization vulnerability in the Exchange Control Panel (ECP) web page. The vulnerability is due to Microsoft Exchange Server not randomizing the keys on a per-installation basis resulting in them using the same validationKey and decryptionKey values. With knowledge of these, values an attacker can craft a special viewstate to use an OS command to be executed by NT_AUTHORITY\SYSTEM using .NET deserialization. To exploit this vulnerability, an attacker needs to leverage the credentials of an account it had already compromised to authenticate to OWA.
+    
+    - **Effort:** elementary
+
+??? abstract "CVE-2020-1147 SharePoint"
+    
+    Detection of SharePoint vulnerability CVE-2020-1147.
+    
+    - **Effort:** advanced
+
+??? abstract "CVE-2020-14882 Oracle WebLogic Server"
+    
+    Detects the exploitation of the Oracle WebLogic Server vulnerability (CVE-2020-16952).
+    
+    - **Effort:** advanced
+
+??? abstract "CVE-2020-17530 Apache Struts RCE"
+    
+    Detects the exploitation of the Apache Struts RCE vulnerability (CVE-2020-17530).
+    
+    - **Effort:** intermediate
+
+??? abstract "CVE-2020-5902 F5 BIG-IP Exploitation Attempts"
+    
+    Detects the exploitation attempt of the vulnerability found in F5 BIG-IP and described in CVE-2020-5902.
+    
+    - **Effort:** elementary
+
+??? abstract "CVE-2021-20021 SonicWall Unauthenticated Administrator Access"
+    
+    Detects the exploitation of SonicWall Unauthenticated Admin Access.
+    
+    - **Effort:** advanced
+
+??? abstract "CVE-2021-20023 SonicWall Arbitrary File Read"
+    
+    Detects Arbitrary File Read, which can be used with other vulnerabilities as a mean to obtain outputs generated by attackers, or sensitive data.
+    
+    - **Effort:** advanced
+
+??? abstract "CVE-2021-21972 VMware vCenter"
+    
+    The vSphere Client (HTML5) contains a remote code execution vulnerability in a vCenter Server plugin. A malicious actor with network access to port 443 may exploit this issue to execute commands with unrestricted privileges on the underlying operating system that hosts vCenter Server. This affects VMware vCenter Server (7.x before 7.0 U1c, 6.7 before 6.7 U3l and 6.5 before 6.5 U3n) and VMware Cloud Foundation (4.x before 4.2 and 3.x before 3.10.1.2). POST request on the following PATH "/ui/vropspluginui/rest/services/uploadova". If in response body (500) the words it has "uploadFile", that means the vCenter is available to accept files via POST without any restrictions.
+    
+    - **Effort:** intermediate
+
+??? abstract "CVE-2021-21985 VMware vCenter"
+    
+    The VMware vSphere Client (HTML5) contains a remote code execution vulnerability due to lack of input validation in the Virtual SAN Health Check plug-in which is enabled by default in vCenter Server. A malicious actor with network access to port 443 may exploit this issue to execute commands with unrestricted privileges on the underlying operating system that hosts vCenter Server. This affects VMware vCenter Server (7.0 before 7.0 U2b, 6.7 before 6.7 U3n and 6.5 before 6.5 U3p) and VMware Cloud Foundation (4.x before 4.2.1 and 3.x before 3.10.2.1).
+    
+    - **Effort:** advanced
+
+??? abstract "CVE-2021-22123 Fortinet FortiWeb OS Command Injection"
+    
+    Detects Fortinet FortiWeb OS Command Injection (August 2021) vulnerability exploitation attempt. A remote, authenticated attacker can execute arbitrary commands on the system hosting a vulnerable FortiWeb WAF by sending a POST request with the command in the name field. At the time of writing this rule, it would appear that the request would respond in code 500 for a successful exploitation attempt.
+    
+    - **Effort:** advanced
+
+??? abstract "CVE-2021-22893 Pulse Connect Secure RCE Vulnerability"
+    
+    Detects potential exploitation of the authentication by-pass vulnerability that can allow an unauthenticated user to perform remote arbitrary file execution on the Pulse Connect Secure gateway. It is highly recommended to apply the Pulse Secure mitigations and seach for indicators of compromise on affected servers if you are in doubt over the integrity of your Pulse Connect Secure product.
+    
+    - **Effort:** intermediate
+
+??? abstract "CVE-2021-26855 Exchange SSRF"
+    
+    Detects the exploitation of ProyxLogon vulerability on Exchange servers.
+    
+    - **Effort:** advanced
+
+??? abstract "CVE-2021-34473 ProxyShell Attempt"
+    
+    Detects CVE-2021-34473 ProxyShell attempt against Microsoft Exchange Server, Remote Code Execution Vulnerability.
+    
+    - **Effort:** advanced
+
 ??? abstract "CVE-2021-34527 PrintNightmare Suspicious Actions From Spoolsv"
     
     Detects suspicious image loads and file creations from the spoolsv process which could be a sign of an attacker trying to exploit the PrintNightmare vulnerability, CVE-2021-34527. A remote code execution vulnerability exists when the Windows Print Spooler service improperly performs privileged file operations. An attacker who successfully exploited this vulnerability could run arbitrary code with SYSTEM privileges. This works as well as a Local Privilege escalation vulnerability. To fully work the rule requires to log for Loaded DLLs and File Creations, which can be done respectively using the Sysmon's event IDs 7 and 11.
     
     - **Effort:** master
+
+??? abstract "CVE-2021-41773 Apache 2.4.49 Path Traversal"
+    
+    Detects successful exploitation of the Apache Path Traversal CVE-2021-41773.
+    
+    - **Effort:** advanced
+
+??? abstract "CVE-2021-43798 Grafana Directory Traversal"
+    
+    Grafana version 8.x has a 0day arbitrary file read (with no fix yet) based on a directory traversal vulnerability
+    
+    - **Effort:** intermediate
 
 ??? abstract "Capture a network trace with netsh.exe"
     
@@ -519,6 +651,12 @@ The following Sekoia.io built-in rules match the intake **HarfangLab EDR**. This
     
     - **Effort:** advanced
 
+??? abstract "Detect requests to Konni C2 servers"
+    
+    This rule detects requests to Konni C2 servers. These patterns come from an analysis done in 2022, September.
+    
+    - **Effort:** elementary
+
 ??? abstract "Disable .NET ETW Through COMPlus_ETWEnabled"
     
     Detects potential adversaries stopping ETW providers recording loaded .NET assemblies. Prerequisites are logging for Registry events or logging command line parameters (both is better). Careful for registry events, if SwiftOnSecurity's SYSMON default configuration is used, you will need to update the configuration to include the .NETFramework registry key path. Same issue with Windows 4657 EventID logging, the registry path must be specified.
@@ -596,6 +734,12 @@ The following Sekoia.io built-in rules match the intake **HarfangLab EDR**. This
     Detects attempts to gather information on domain trust relationships that may be used to identify lateral movement opportunities. "trustedDomain" which is detected here is a Microsoft Active Directory ObjectClass Type that represents a domain that is trusted by, or trusting, the local AD DOMAIN. Several tools are using LDAP queries in the end to get the information (DSQuery, sometimes ADFind as well, etc.)
     
     - **Effort:** elementary
+
+??? abstract "Download Files From Suspicious TLDs"
+    
+    Detects download of certain file types from hosts in suspicious TLDs
+    
+    - **Effort:** master
 
 ??? abstract "Dynamic DNS Contacted"
     
@@ -759,6 +903,12 @@ The following Sekoia.io built-in rules match the intake **HarfangLab EDR**. This
     
     - **Effort:** elementary
 
+??? abstract "FoggyWeb HTTP Default GET/POST Requests"
+    
+    Detects GET or POST request pattern observed within the first FoggyWeb campaign detected by Microsoft.
+    
+    - **Effort:** advanced
+
 ??? abstract "Formbook File Creation DB1"
     
     Detects specific file creation (Users\*\AppData\Local\Temp\DB1) to store data to exfiltrate (Formbook behavior). Logging for Sysmon event 11 is usually used for this detection. 
@@ -780,6 +930,12 @@ The following Sekoia.io built-in rules match the intake **HarfangLab EDR**. This
 ??? abstract "Generic-reverse-shell-oneliner"
     
     To bypass some security equipement or for a sack of simplicity attackers can open raw reverse shell using shell commands
+    
+    - **Effort:** intermediate
+
+??? abstract "GitLab CVE-2021-22205"
+    
+    Detects GitLab vulnerability CVE-2021-22205 exploitation success. It allows an attacker to do some remote code execution with user git. The HTTP return code 422 indicates a successfull exploitation.
     
     - **Effort:** intermediate
 
@@ -1071,6 +1227,12 @@ The following Sekoia.io built-in rules match the intake **HarfangLab EDR**. This
     
     - **Effort:** master
 
+??? abstract "LokiBot Default C2 URL"
+    
+    Detects default C2 URL for trojan LokiBot
+    
+    - **Effort:** elementary
+
 ??? abstract "Lsass Wrong Parent"
     
     Lsass ensures the identification of users (domain users or local users). Domain users are identified based on information in the Active Directory. Local users are identified based on information from the Security Account Manager (SAM) local database. This rule checks if the parent of this process is a legitimate one or not.
@@ -1263,6 +1425,12 @@ The following Sekoia.io built-in rules match the intake **HarfangLab EDR**. This
     
     - **Effort:** master
 
+??? abstract "Microsoft Office Macro Security Registry Modifications"
+    
+    Detects registry changes allowing an attacker to make Microsoft Office products runs Macros without warning. Events are collected either from ETW/Sysmon/EDR depending of the integration.
+    
+    - **Effort:** master
+
 ??? abstract "Microsoft Office Product Spawning Windows Shell"
     
     Detects a Windows command or scripting interpreter executable started from Microsoft Word, Excel, Powerpoint, Publisher and Visio. This typically indicates the parent process launched a malicious macro, or run an exploit. This infection vector is very common and could lead to the deployment of harmful malware.
@@ -1292,6 +1460,12 @@ The following Sekoia.io built-in rules match the intake **HarfangLab EDR**. This
     Detects various Follina vulnerability exploitation techniques. This is based on the Compatability Troubleshooter which is abused to do code execution.
     
     - **Effort:** elementary
+
+??? abstract "Mshta Command From A Scheduled Task"
+    
+    Detects when an attacker leverage the Microsoft Windows Scheduled task feature to run the mshta.exe process. This is a common usage of a living-off-the-land binary, frequently abused for malicous purposes and not common nowadays in IT administration.
+    
+    - **Effort:** intermediate
 
 ??? abstract "Mshta JavaScript Execution"
     
@@ -1569,6 +1743,12 @@ The following Sekoia.io built-in rules match the intake **HarfangLab EDR**. This
     
     - **Effort:** intermediate
 
+??? abstract "Possible Malicious File Double Extension"
+    
+    Detects request to potential malicious file with double extension
+    
+    - **Effort:** elementary
+
 ??? abstract "Possible Replay Attack"
     
     This event can be a sign of Kerberos replay attack or, among other things, network device configuration or routing problems.
@@ -1773,6 +1953,12 @@ The following Sekoia.io built-in rules match the intake **HarfangLab EDR**. This
     
     - **Effort:** master
 
+??? abstract "ProxyShell Microsoft Exchange Suspicious Paths"
+    
+    Detects suspicious calls to Microsoft Exchange resources, in locations related to webshells observed in campaigns using this vulnerability.
+    
+    - **Effort:** elementary
+
 ??? abstract "PsExec Process"
     
     Detects PsExec execution, command line which contains pstools or installation of the PsExec service. PsExec is a SysInternals which can be used to execute a program on another computer. The tool is as much used by attackers as by administrators. 
@@ -1866,6 +2052,12 @@ The following Sekoia.io built-in rules match the intake **HarfangLab EDR**. This
 ??? abstract "Raccine Uninstall"
     
     Detects commands that indicate a Raccine removal from an end system. Raccine is a free ransomware protection tool.
+    
+    - **Effort:** elementary
+
+??? abstract "Raccoon Stealer 2.0 Legitimate Third-Party DLL Download URL"
+    
+    Detects Raccoon Stealer 2.0 malware downloading legitimate third-party DLLs from its C2 server. These legitimate DLLs are used by the information stealer to collect data on the compromised hosts.
     
     - **Effort:** elementary
 
@@ -2061,6 +2253,12 @@ The following Sekoia.io built-in rules match the intake **HarfangLab EDR**. This
     
     - **Effort:** master
 
+??? abstract "SharePoint Authenticated SSRF"
+    
+    Detects succesful SSRF from an authenticated SharePoint user.
+    
+    - **Effort:** elementary
+
 ??? abstract "Shell PID Injection"
     
     Detects when shells PID are listed and injected in another process. It can be performed to reuse sudo token related to shell in order to elevate privilege and maintain persistence.
@@ -2229,6 +2427,12 @@ The following Sekoia.io built-in rules match the intake **HarfangLab EDR**. This
     
     - **Effort:** advanced
 
+??? abstract "Suspicious Download Links From Legitimate Services"
+    
+    Detects users clicking on Google docs links to download suspicious files. This technique was used a lot by Bazar Loader in the past.
+    
+    - **Effort:** intermediate
+
 ??? abstract "Suspicious Driver Loaded"
     
     Checks the registry key for suspicious driver names that are vulnerable most of the time and loaded in a specific location by the KDU tool from hfiref0x. Some drivers are used by several SysInternals tools, which should have been whitelisted in the filter condition. The driver named "DBUtilDrv2" has been removed as it caused too many false positives unfortunately. It can be added under "drv_name" if more coverage is wanted. This rule needs registry key monitoring (can be done with Sysmon Event IDs 12,13 and 14).
@@ -2391,6 +2595,12 @@ The following Sekoia.io built-in rules match the intake **HarfangLab EDR**. This
     
     - **Effort:** intermediate
 
+??? abstract "Suspicious URI Used In A Lazarus Campaign"
+    
+    Detects suspicious requests to a specific URI, usually on an .asp page. The website is often compromised.
+    
+    - **Effort:** intermediate
+
 ??? abstract "Suspicious VBS Execution Parameter"
     
     Detects suspicious VBS file execution with a specific parameter by cscript. It was observed in the Operation CloudHopper.
@@ -2504,6 +2714,12 @@ The following Sekoia.io built-in rules match the intake **HarfangLab EDR**. This
     Detects file transfer of sensitive files which contain credential data using network shares.
     
     - **Effort:** intermediate
+
+??? abstract "TrevorC2 HTTP Communication"
+    
+    Detects TrevorC2 HTTP communication based on the HTTP request URI and the user-agent. 
+    
+    - **Effort:** elementary
 
 ??? abstract "Trickbot Malware Activity"
     

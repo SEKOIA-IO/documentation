@@ -141,6 +141,18 @@ The following Sekoia.io built-in rules match the intake **Fortinet FortiGate**. 
     
     - **Effort:** master
 
+??? abstract "Correlation Fortigate Multi Alert From One Internal Ip"
+    
+    This rule detect an internal asset that targets a destination IP address with several threat
+    
+    - **Effort:** master
+
+??? abstract "Correlation Fortigate Multi Dest From One Internal Ip"
+    
+    This rule detect an internal asset that targets several destination IP address with the same threat
+    
+    - **Effort:** master
+
 ??? abstract "Correlation Potential DNS Tunnel"
     
     Detects domain name which is longer than 95 characters. Long domain names are distinctive of DNS tunnels.

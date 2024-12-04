@@ -591,6 +591,12 @@ The following Sekoia.io built-in rules match the intake **SentinelOne EDR**. Thi
     
     - **Effort:** intermediate
 
+??? abstract "Microsoft Office Macro Security Registry Modifications"
+    
+    Detects registry changes allowing an attacker to make Microsoft Office products runs Macros without warning. Events are collected either from ETW/Sysmon/EDR depending of the integration.
+    
+    - **Effort:** master
+
 ??? abstract "Mimikatz Basic Commands"
     
     Detects Mimikatz most popular commands. 

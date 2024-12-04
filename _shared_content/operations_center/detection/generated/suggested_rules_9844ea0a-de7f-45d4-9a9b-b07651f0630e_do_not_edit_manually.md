@@ -561,6 +561,12 @@ The following Sekoia.io built-in rules match the intake **Trend Micro Vision One
     
     - **Effort:** advanced
 
+??? abstract "Microsoft Office Macro Security Registry Modifications"
+    
+    Detects registry changes allowing an attacker to make Microsoft Office products runs Macros without warning. Events are collected either from ETW/Sysmon/EDR depending of the integration.
+    
+    - **Effort:** master
+
 ??? abstract "Microsoft Windows Active Directory Module Commandlets"
     
     Detects use of commandlets linked to the AD Module.
