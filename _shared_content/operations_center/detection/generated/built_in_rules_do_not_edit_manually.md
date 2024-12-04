@@ -3130,10 +3130,11 @@ Rules catalog includes **981 built-in detection rules** ([_last update on 2024-1
     
     Detect the creation of a ZIP file and an HTA file as it is often used in infection chains. Furthermore it also detects the use of suspicious processes launched by explorer.exe combined with the creation of an HTA file, since it is also often used in infection chains (LNK - HTA for instance).
     
-    - **Effort:** intermediate
+    - **Effort:** advanced
     
     - **Changelog:**
     
+        - 04/12/2024 - minor - Event type fields and file paths added to filter some false positives, and effort level changed.
         - 20/09/2024 - minor - File paths added to filter some false positives.
         - 19/09/2024 - minor - File paths added to filter some false positives.
         - 30/11/2023 - minor - Update pattern with new lolbin
