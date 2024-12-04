@@ -20,7 +20,7 @@ Sign in your Okta organization with administrator role and follow [this guide](h
 
 ### Create the intake in Sekoia.io
 
-1. Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a new intake from the format `Okta System logs`. Copy the intake key.
+1. Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a new intake from the format `Okta System logs`. 
 2. Set up the intake configuration with your API Key and the base url of your Okta instance. 
 
     !!! note

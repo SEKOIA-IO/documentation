@@ -32,7 +32,7 @@ This setup guide will show you how to forward your Trellix ePO events to Sekoia.
 
 ### Create an intake
 
-1. Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a new intake from the format Trellix. Copy the intake key.
+1. Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a new intake from the format Trellix.
 2. Set up the intake configuration with the Client Id and Client Secret. 
 
 {!_shared_content/operations_center/integrations/generated/ba40ab72-1456-11ee-be56-0242ac120002_sample.md!}

@@ -56,11 +56,6 @@ Go to your Sekoia.io [Intakes page](https://app.sekoia.io/operations/intakes), a
     | 1Password.ca            | https://events.1password.ca                                                                                |
     | 1Password.eu            | https://events.1password.eu                                                                                |
 
-4. Copy the **Intake key**
-
-!!! Note
-	Save the `Intake key` on a block note. It will be used in the next step.
-
 
 #### Enjoy your events on the [Events page](https://app.sekoia.io/operations/events)
 

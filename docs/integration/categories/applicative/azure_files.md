@@ -52,7 +52,7 @@ This setup guide describe how to forward events produced by `Azure Files` to Sek
 
 ### Create the intake in Sekoia.io
 
-Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a new intake from the format `Azure Files`. Copy the intake key.
+Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a new intake from the format `Azure Files`.
 
 Set up the intake configuration with the EventHub's `Connection string-primary key`, the hub name, the consumer group, the storage's `Connection string-primary key` and the container name.
 

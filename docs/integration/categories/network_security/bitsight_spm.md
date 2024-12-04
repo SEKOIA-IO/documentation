@@ -37,7 +37,7 @@ To collect the events from the Cato Networks platform, an API token is required:
 
 ### Create an intake
 
-1. Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a new intake from the format `Bitsight SPM`. Copy the intake key.
+1. Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a new intake from the format `Bitsight SPM`.
 2. Set up the intake configuration with the Api Token and Company UUIds. 
 
 {!_shared_content/operations_center/integrations/generated/57eda191-2f93-4fd9-99a2-fd8ffbcdff50_sample.md!}
