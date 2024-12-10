@@ -6,7 +6,7 @@ type: intake
 
 CrowdStrike provides cloud workload and endpoint security, threat intelligence, and cyberattack response services and products.
 
-- **Vendor**: Cloudflare
+- **Vendor**: CrowdStrike
 - **Supported environment**: SaaS
 - **Detection based on**: Telemetry
 - **Supported application or feature**: Process monitoring
