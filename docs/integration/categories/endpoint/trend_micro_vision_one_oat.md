@@ -1,12 +1,12 @@
-uuid: 9844ea0a-de7f-45d4-9a9b-b07651f0630e
-name: Trend Micro Vision One Workbench Alerts [BETA]
+uuid: 2345b987-a94a-4363-b7bc-a6e4a9efd98a
+name: Trend Micro Vision One Observed Attack Techniques [BETA]
 type: intake
 
 
 ## Overview
 
 Trend Micro Vision One is an extended detection and response (XDR) platform that enhances threat detection, investigation, and response across multiple security layers. It provides a centralized view for improved security posture and faster threat remediation.
-This integration will ingest Workbench Alerts from Trend Micro Vision One.
+This intake format will ingest Observed Attack Techniques from Trend Micro Vision One.
 
 !!! Warning
     Important note - This format is currently in beta. We highly value your feedback to improve its performance.
@@ -14,7 +14,7 @@ This integration will ingest Workbench Alerts from Trend Micro Vision One.
 - **Supported environment**: SaaS
 - **Detection based on**: Alerts
 - **Supported application or feature**:
-    - Alerts
+    - Observed Attack Techniques
     
 ## Configure
 
@@ -24,10 +24,10 @@ This integration will ingest Workbench Alerts from Trend Micro Vision One.
 
 {!_shared_content/integration/intake_configuration.md!}
 
-{!_shared_content/operations_center/integrations/generated/9844ea0a-de7f-45d4-9a9b-b07651f0630e.md!}
+{!_shared_content/operations_center/integrations/generated/2345b987-a94a-4363-b7bc-a6e4a9efd98a.md!}
 
 {!_shared_content/integration/detection_section.md!}
 
-{!_shared_content/operations_center/detection/generated/suggested_rules_9844ea0a-de7f-45d4-9a9b-b07651f0630e_do_not_edit_manually.md!}
+{!_shared_content/operations_center/detection/generated/suggested_rules_2345b987-a94a-4363-b7bc-a6e4a9efd98a_do_not_edit_manually.md!}
 
-{!_shared_content/operations_center/integrations/generated/9844ea0a-de7f-45d4-9a9b-b07651f0630e.md!}
+{!_shared_content/operations_center/integrations/generated/2345b987-a94a-4363-b7bc-a6e4a9efd98a.md!}
