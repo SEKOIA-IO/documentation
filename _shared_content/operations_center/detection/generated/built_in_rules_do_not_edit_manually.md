@@ -1,4 +1,4 @@
-Rules catalog includes **981 built-in detection rules** ([_last update on 2024-12-04_](rules_changelog.md)).
+Rules catalog includes **981 built-in detection rules** ([_last update on 2024-12-11_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Identity Information**
 
@@ -1808,6 +1808,7 @@ Rules catalog includes **981 built-in detection rules** ([_last update on 2024-1
     
     - **Changelog:**
     
+        - 11/12/2024 - minor - Added a default similarity based on host name and user name to avoid too many alerts.
         - 26/03/2024 - minor - Adapted the rule to remove false positives.
             
 ??? abstract "Correlation Linux Decode And Exec"
@@ -10392,6 +10393,10 @@ Rules catalog includes **981 built-in detection rules** ([_last update on 2024-1
     
     - **Effort:** elementary
     
+    - **Changelog:**
+    
+        - 11/12/2024 - minor - Added a default similarity based on host name and user name to avoid too many alerts.
+            
 ??? abstract "HackTools Suspicious Process Names In Command Line"
     
     Detects the default process name of several HackTools and also check in command line. This rule is here for quickwins as it obviously has many blind spots.
@@ -10400,6 +10405,7 @@ Rules catalog includes **981 built-in detection rules** ([_last update on 2024-1
     
     - **Changelog:**
     
+        - 11/12/2024 - minor - Added a default similarity based on host name and user name to avoid too many alerts.
         - 10/06/2024 - minor - Added filter to the rule to reduce false positives.
         - 19/06/2023 - minor - Added filter to the rule to reduce false positives.
             
@@ -11537,6 +11543,7 @@ Rules catalog includes **981 built-in detection rules** ([_last update on 2024-1
     
     - **Changelog:**
     
+        - 11/12/2024 - minor - Added a default similarity based on host name and user name to avoid too many alerts.
         - 26/03/2024 - minor - Adapted the rule to remove false positives.
             
 ??? abstract "Domain Group And Permission Enumeration"
@@ -11655,6 +11662,7 @@ Rules catalog includes **981 built-in detection rules** ([_last update on 2024-1
     
     - **Changelog:**
     
+        - 11/12/2024 - minor - Added a default similarity based on host name and user name to avoid too many alerts.
         - 26/03/2024 - minor - Adapted the rule to remove false positives.
             
 ??? abstract "Discovery Commands Correlation"
@@ -11770,6 +11778,7 @@ Rules catalog includes **981 built-in detection rules** ([_last update on 2024-1
     
     - **Changelog:**
     
+        - 11/12/2024 - minor - Added a default similarity based on host name and user name to avoid too many alerts.
         - 26/03/2024 - minor - Adapted the rule to remove false positives.
             
 ??? abstract "Domain Trust Discovery Through LDAP"
