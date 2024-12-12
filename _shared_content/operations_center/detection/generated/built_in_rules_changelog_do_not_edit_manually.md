@@ -1,7 +1,10 @@
-Changelog _last update on 2024-12-04_
+Changelog _last update on 2024-12-11_
 
 ## Changelog
 
+### HackTools Suspicious Names
+  - 11/12/2024 - minor - Added a default similarity based on host name and user name to avoid too many alerts.
+    
 ### Login Brute-Force Successful On AzureAD From Single IP Address
   - 28/11/2024 - minor - Adding error codes as filters to reduce false positives.
     
