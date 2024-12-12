@@ -99,12 +99,6 @@ The following Sekoia.io built-in rules match the intake **Cato Networks SASE**. 
     
     - **Effort:** master
 
-??? abstract "Entra ID Sign-In Via Known AiTM Phishing Kit"
-    
-    Detects a sign-in attempt from an IP address belonging to a known adversary-in-the-middle phishing kit.
-    
-    - **Effort:** elementary
-
 ??? abstract "Exfiltration Domain"
     
     Detects traffic toward a domain flagged as a possible exfiltration vector.
@@ -206,6 +200,12 @@ The following Sekoia.io built-in rules match the intake **Cato Networks SASE**. 
     Detects observables in Sekoia.io CTI tagged as EICAR, which are fake samples meant to test detection.
     
     - **Effort:** master
+
+??? abstract "Sign-In Via Known AiTM Phishing Kit"
+    
+    Detects a sign-in attempt from an IP address belonging to a known adversary-in-the-middle phishing kit.
+    
+    - **Effort:** elementary
 
 ??? abstract "Suspicious Download Links From Legitimate Services"
     

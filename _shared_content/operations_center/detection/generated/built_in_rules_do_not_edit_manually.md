@@ -1,4 +1,4 @@
-Rules catalog includes **981 built-in detection rules** ([_last update on 2024-12-11_](rules_changelog.md)).
+Rules catalog includes **981 built-in detection rules** ([_last update on 2024-12-12_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Identity Information**
 
@@ -10857,12 +10857,6 @@ Rules catalog includes **981 built-in detection rules** ([_last update on 2024-1
             
 **Multi-Factor Authentication Interception**
 
-??? abstract "Entra ID Sign-In Via Known AiTM Phishing Kit"
-    
-    Detects a sign-in attempt from an IP address belonging to a known adversary-in-the-middle phishing kit.
-    
-    - **Effort:** elementary
-    
 ??? abstract "Entra ID Sign-In Via Known AiTM Phishing Kit (Mamba 2FA)"
     
     Detects a sign-in attempt with known characteristics of the adversary-in-the-middle phishing kit tracked by Sekoia.io as Mamba 2FA.
@@ -10921,6 +10915,16 @@ Rules catalog includes **981 built-in detection rules** ([_last update on 2024-1
     - **Changelog:**
     
         - 02/08/2024 - minor - Exclude an additionnal legitimate domain.
+            
+??? abstract "Sign-In Via Known AiTM Phishing Kit"
+    
+    Detects a sign-in attempt from an IP address belonging to a known adversary-in-the-middle phishing kit.
+    
+    - **Effort:** elementary
+    
+    - **Changelog:**
+    
+        - 12/12/2024 - minor - Update the selections to use a more appropriate ECS field. The rule now matches on more intakes. The name of the rule has been modified as well.
             
 **Forced Authentication**
 
@@ -11135,12 +11139,6 @@ Rules catalog includes **981 built-in detection rules** ([_last update on 2024-1
     
     - **Effort:** intermediate
     
-??? abstract "Entra ID Sign-In Via Known AiTM Phishing Kit"
-    
-    Detects a sign-in attempt from an IP address belonging to a known adversary-in-the-middle phishing kit.
-    
-    - **Effort:** elementary
-    
 ??? abstract "Entra ID Sign-In Via Known AiTM Phishing Kit (Mamba 2FA)"
     
     Detects a sign-in attempt with known characteristics of the adversary-in-the-middle phishing kit tracked by Sekoia.io as Mamba 2FA.
@@ -11203,6 +11201,16 @@ Rules catalog includes **981 built-in detection rules** ([_last update on 2024-1
     - **Changelog:**
     
         - 02/08/2024 - minor - Exclude an additionnal legitimate domain.
+            
+??? abstract "Sign-In Via Known AiTM Phishing Kit"
+    
+    Detects a sign-in attempt from an IP address belonging to a known adversary-in-the-middle phishing kit.
+    
+    - **Effort:** elementary
+    
+    - **Changelog:**
+    
+        - 12/12/2024 - minor - Update the selections to use a more appropriate ECS field. The rule now matches on more intakes. The name of the rule has been modified as well.
             
 **Steal or Forge Kerberos Tickets**
 
@@ -12280,12 +12288,6 @@ Rules catalog includes **981 built-in detection rules** ([_last update on 2024-1
     
     - **Effort:** intermediate
     
-??? abstract "Entra ID Sign-In Via Known AiTM Phishing Kit"
-    
-    Detects a sign-in attempt from an IP address belonging to a known adversary-in-the-middle phishing kit.
-    
-    - **Effort:** elementary
-    
 ??? abstract "Entra ID Sign-In Via Known AiTM Phishing Kit (Mamba 2FA)"
     
     Detects a sign-in attempt with known characteristics of the adversary-in-the-middle phishing kit tracked by Sekoia.io as Mamba 2FA.
@@ -12348,6 +12350,16 @@ Rules catalog includes **981 built-in detection rules** ([_last update on 2024-1
     - **Changelog:**
     
         - 02/08/2024 - minor - Exclude an additionnal legitimate domain.
+            
+??? abstract "Sign-In Via Known AiTM Phishing Kit"
+    
+    Detects a sign-in attempt from an IP address belonging to a known adversary-in-the-middle phishing kit.
+    
+    - **Effort:** elementary
+    
+    - **Changelog:**
+    
+        - 12/12/2024 - minor - Update the selections to use a more appropriate ECS field. The rule now matches on more intakes. The name of the rule has been modified as well.
             
 **Archive Collected Data**
 
