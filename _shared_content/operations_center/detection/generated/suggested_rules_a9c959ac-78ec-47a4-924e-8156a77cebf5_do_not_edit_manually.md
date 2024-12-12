@@ -615,12 +615,6 @@ The following Sekoia.io built-in rules match the intake **OCSF [BETA]**. This do
     
     - **Effort:** elementary
 
-??? abstract "Entra ID Sign-In Via Known AiTM Phishing Kit"
-    
-    Detects a sign-in attempt from an IP address belonging to a known adversary-in-the-middle phishing kit.
-    
-    - **Effort:** elementary
-
 ??? abstract "Equation Group DLL_U Load"
     
     Detects a specific tool and export used by EquationGroup

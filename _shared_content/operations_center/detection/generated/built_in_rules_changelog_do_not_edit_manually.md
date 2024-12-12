@@ -1,7 +1,10 @@
-Changelog _last update on 2024-12-11_
+Changelog _last update on 2024-12-12_
 
 ## Changelog
 
+### Sign-In Via Known AiTM Phishing Kit
+  - 12/12/2024 - minor - Update the selections to use a more appropriate ECS field. The rule now matches on more intakes. The name of the rule has been modified as well.
+    
 ### HackTools Suspicious Names
   - 11/12/2024 - minor - Added a default similarity based on host name and user name to avoid too many alerts.
     
