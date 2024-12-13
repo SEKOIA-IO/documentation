@@ -113,6 +113,7 @@ nav:
   - FAQ:
     - General: xdr/FAQ.md
     - Alerts: xdr/FAQ/Alerts_qa.md
+    - Agent: xdr/FAQ/Agent/agent.md
     - Events:
       - Events QA: xdr/FAQ/Events_qa.md
       - Facing issues with logs collection: xdr/FAQ/Log_collection_Troubleshoot.md
