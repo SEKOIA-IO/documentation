@@ -1,7 +1,10 @@
-Changelog _last update on 2024-12-12_
+Changelog _last update on 2024-12-16_
 
 ## Changelog
 
+### Csrss Child Found
+  - 16/12/2024 - minor - Improve pattern mandatory fields and add filter to reduce false positives
+    
 ### Sign-In Via Known AiTM Phishing Kit
   - 12/12/2024 - minor - Update the selections to use a more appropriate ECS field. The rule now matches on more intakes. The name of the rule has been modified as well.
     

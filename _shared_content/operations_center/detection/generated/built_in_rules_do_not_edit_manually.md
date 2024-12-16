@@ -1,4 +1,4 @@
-Rules catalog includes **981 built-in detection rules** ([_last update on 2024-12-12_](rules_changelog.md)).
+Rules catalog includes **981 built-in detection rules** ([_last update on 2024-12-16_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Identity Information**
 
@@ -3981,6 +3981,10 @@ Rules catalog includes **981 built-in detection rules** ([_last update on 2024-1
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 16/12/2024 - minor - Improve pattern mandatory fields and add filter to reduce false positives
+            
 ??? abstract "Csrss Wrong Parent"
     
     The csrss.exe process (csrss stands for Client / Server Runtime Subsystem) is a generic Windows process used to manage windows and Windows graphics. This rule analyse if the parent of this process is a legitimate one or not.
@@ -5505,6 +5509,10 @@ Rules catalog includes **981 built-in detection rules** ([_last update on 2024-1
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 16/12/2024 - minor - Improve pattern mandatory fields and add filter to reduce false positives
+            
 ??? abstract "Csrss Wrong Parent"
     
     The csrss.exe process (csrss stands for Client / Server Runtime Subsystem) is a generic Windows process used to manage windows and Windows graphics. This rule analyse if the parent of this process is a legitimate one or not.
@@ -7097,6 +7105,10 @@ Rules catalog includes **981 built-in detection rules** ([_last update on 2024-1
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 16/12/2024 - minor - Improve pattern mandatory fields and add filter to reduce false positives
+            
 ??? abstract "Csrss Wrong Parent"
     
     The csrss.exe process (csrss stands for Client / Server Runtime Subsystem) is a generic Windows process used to manage windows and Windows graphics. This rule analyse if the parent of this process is a legitimate one or not.

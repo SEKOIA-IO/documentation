@@ -303,12 +303,6 @@ The following Sekoia.io built-in rules match the intake **Sophos Analysis Threat
     
     - **Effort:** master
 
-??? abstract "Csrss Child Found"
-    
-    The csrss.exe process (csrss stands for Client / Server Runtime Subsystem) is a generic Windows process used to manage windows and Windows graphics. This process  should not create a child process or it is very rare.
-    
-    - **Effort:** intermediate
-
 ??? abstract "DHCP Callout DLL Installation"
     
     Detects the installation of a Callout DLL via CalloutDlls and CalloutEnabled parameter in Registry, which can be used to execute code in context of the DHCP server (restart required).
