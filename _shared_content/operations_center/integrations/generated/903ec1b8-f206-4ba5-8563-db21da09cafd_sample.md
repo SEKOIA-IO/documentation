@@ -1379,6 +1379,15 @@ In this section, you will find examples of raw logs as generated natively by the
 
 
 
+=== "test_system_event_13"
+
+
+    ```json
+	1,2024/11/26 22:10:01,02410100000000,SYSTEM,auth,2555,2024/11/26 22:10:01,,auth-success,FWPA,0,0,general,informational,"When authenticating user 'test000555' from '1.2.5.5', a less secure authentication method PAP is used. Please migrate to PEAP or EAP-TTLS. Authentication Profile 'FWPA', vsys 'shared', Server Profile 'RADIUS_RSA', Server Address '1.7.4.2'",738970652229900000000,0x0,0,0,0,0,,FWPAN00,0,0,2024-11-26T22:10:01.627+01:00
+    ```
+
+
+
 === "test_system_event_1_json"
 
 
