@@ -7,7 +7,6 @@ This section will guide you through creating the intake object in Sekoia, which 
 3. Search for your Intake by the product name in the search bar.
 4. Give it a **Name** and associate it with an **Entity** (and a Community if using multi-tenant mode).
 5. Click on `Create`.
-6. You will be redirected to the Intake listing page, where you will find a new line with the name you gave to the Intake.
 
 !!! Note
     For more details on how to use the Intake page and to find the Intake key you just created, refer to [this documentation](/xdr/features/automate/manage-accounts.md).
