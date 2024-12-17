@@ -1179,6 +1179,30 @@ The following Sekoia.io built-in rules match the intake **Trend Micro Vision One
     
     - **Effort:** master
 
+??? abstract "Trend Micro Vision One Workbench Critical Severity Alert"
+    
+    Detects when a critical alert severity is raised by Trend Micro Vision One Workbench.
+    
+    - **Effort:** master
+
+??? abstract "Trend Micro Vision One Workbench Low Severity Alert"
+    
+    Detects when a low alert severity is raised by Trend Micro Vision One Workbench.
+    
+    - **Effort:** master
+
+??? abstract "Trend Micro Vision One Workbench Medium Severity Alert"
+    
+    Detects when a medium alert severity is raised by Trend Micro Vision One Workbench.
+    
+    - **Effort:** master
+
+??? abstract "Trend Micro Vision One Workbench high Severity Alert"
+    
+    Detects when a high alert severity is raised by Trend Micro Vision One Workbench.
+    
+    - **Effort:** master
+
 ??? abstract "TrustedInstaller Impersonation"
     
     The rule detects attempts to impersonate TrustedInstaller. TrustedInstaller rights could allow a threat actor to delete or modify protected file or create/delete/modify files in protected folders. This technique is used by threat actors to disable Windows Defender.

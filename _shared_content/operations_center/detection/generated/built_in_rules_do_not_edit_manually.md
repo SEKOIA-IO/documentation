@@ -1,4 +1,4 @@
-Rules catalog includes **981 built-in detection rules** ([_last update on 2024-12-16_](rules_changelog.md)).
+Rules catalog includes **986 built-in detection rules** ([_last update on 2024-12-17_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Identity Information**
 
@@ -1800,6 +1800,12 @@ Rules catalog includes **981 built-in detection rules** ([_last update on 2024-1
     
     - **Effort:** advanced
     
+??? abstract "Bitdefender GravityZone Endpoint Detection"
+    
+    Bitdefender GravityZone detected a malicious activity on an endpoint
+    
+    - **Effort:** master
+    
 ??? abstract "Bloodhound and Sharphound Tools Usage"
     
     Detects default process names and default command line parameters used by Bloodhound and Sharphound tools.
@@ -2627,6 +2633,30 @@ Rules catalog includes **981 built-in detection rules** ([_last update on 2024-1
     
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
             
+??? abstract "Trend Micro Vision One Workbench Critical Severity Alert"
+    
+    Detects when a critical alert severity is raised by Trend Micro Vision One Workbench.
+    
+    - **Effort:** master
+    
+??? abstract "Trend Micro Vision One Workbench Low Severity Alert"
+    
+    Detects when a low alert severity is raised by Trend Micro Vision One Workbench.
+    
+    - **Effort:** master
+    
+??? abstract "Trend Micro Vision One Workbench Medium Severity Alert"
+    
+    Detects when a medium alert severity is raised by Trend Micro Vision One Workbench.
+    
+    - **Effort:** master
+    
+??? abstract "Trend Micro Vision One Workbench high Severity Alert"
+    
+    Detects when a high alert severity is raised by Trend Micro Vision One Workbench.
+    
+    - **Effort:** master
+    
 ??? abstract "Trickbot Malware Activity"
     
     Detects Trickbot malware process tree pattern in which rundll32.exe is parent of wermgr.exe.
@@ -2873,6 +2903,12 @@ Rules catalog includes **981 built-in detection rules** ([_last update on 2024-1
 ??? abstract "Alert High Severity Sesame it Jizo NDR"
     
     Detects a high severity alert raised by SesameIT.
+    
+    - **Effort:** master
+    
+??? abstract "Bitdefender GravityZone Endpoint Detection"
+    
+    Bitdefender GravityZone detected a malicious activity on an endpoint
     
     - **Effort:** master
     
@@ -3782,6 +3818,30 @@ Rules catalog includes **981 built-in detection rules** ([_last update on 2024-1
     
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
             
+??? abstract "Trend Micro Vision One Workbench Critical Severity Alert"
+    
+    Detects when a critical alert severity is raised by Trend Micro Vision One Workbench.
+    
+    - **Effort:** master
+    
+??? abstract "Trend Micro Vision One Workbench Low Severity Alert"
+    
+    Detects when a low alert severity is raised by Trend Micro Vision One Workbench.
+    
+    - **Effort:** master
+    
+??? abstract "Trend Micro Vision One Workbench Medium Severity Alert"
+    
+    Detects when a medium alert severity is raised by Trend Micro Vision One Workbench.
+    
+    - **Effort:** master
+    
+??? abstract "Trend Micro Vision One Workbench high Severity Alert"
+    
+    Detects when a high alert severity is raised by Trend Micro Vision One Workbench.
+    
+    - **Effort:** master
+    
 ??? abstract "Vectra General Threat Detection"
     
     Vectra Cognito detected a potential threat. This is a very generic rule to raise as much alerts as possible from Vectra detections however RECONNAISSANCE and INFO categories have been removed to avoid spamming.
@@ -3847,6 +3907,12 @@ Rules catalog includes **981 built-in detection rules** ([_last update on 2024-1
     
 **System Services**
 
+??? abstract "Bitdefender GravityZone Endpoint Detection"
+    
+    Bitdefender GravityZone detected a malicious activity on an endpoint
+    
+    - **Effort:** master
+    
 ??? abstract "Check Point Harmony Mobile Application Forbidden"
     
     Detects when someone attempts to access/use a forbidden application.
@@ -4533,6 +4599,30 @@ Rules catalog includes **981 built-in detection rules** ([_last update on 2024-1
     
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
             
+??? abstract "Trend Micro Vision One Workbench Critical Severity Alert"
+    
+    Detects when a critical alert severity is raised by Trend Micro Vision One Workbench.
+    
+    - **Effort:** master
+    
+??? abstract "Trend Micro Vision One Workbench Low Severity Alert"
+    
+    Detects when a low alert severity is raised by Trend Micro Vision One Workbench.
+    
+    - **Effort:** master
+    
+??? abstract "Trend Micro Vision One Workbench Medium Severity Alert"
+    
+    Detects when a medium alert severity is raised by Trend Micro Vision One Workbench.
+    
+    - **Effort:** master
+    
+??? abstract "Trend Micro Vision One Workbench high Severity Alert"
+    
+    Detects when a high alert severity is raised by Trend Micro Vision One Workbench.
+    
+    - **Effort:** master
+    
 ??? abstract "Usage Of Procdump With Common Arguments"
     
     Detects the usage of Procdump sysinternals tool with some common arguments and followed by common patterns.
