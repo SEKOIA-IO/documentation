@@ -38,13 +38,13 @@ AI Cases correlates alerts based on two main criteria:
 
 **Asset-based Correlation:**
 
-* Alerts targeting the same assets or hosts
+* Alerts targeting the same asset (account or host)
 * Related infrastructure impacts
 
 **Threat-based Correlation:**
 
 * Same malware
-* Same tools
+* Same tool
 * Same intrusion-set
 * Same threat actor
 * Same campaign
@@ -59,7 +59,7 @@ The case description is automatically generated using:
 * Related alert context
 
 ## AI Case Priority System
-Cases are automatically assigned priority levels based on the highest alert urgency value in the case:
+Cases are automatically assigned priority levels based on the highest alert urgency value in the case. The case priority is recalculated whenever a new alert is added:
 
 | Highest Alert Urgency | Case Priority |
 |------------------------|---------------|
