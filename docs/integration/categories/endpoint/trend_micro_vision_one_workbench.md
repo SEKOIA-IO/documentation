@@ -43,6 +43,11 @@ This integration will ingest Workbench Alerts from Trend Micro Vision One.
 
 {!_shared_content/integration/intake_configuration.md!}
 
+After completing those steps, you will have to fill in the fields `API key`and `Base_url`
+
+Be careful to chose the base_url corresponding to your tenant as follow:
+    ![step 1](/assets/integration/cloud_and_saas/trend_micro_vision_one/05_base_url.png)
+
 {!_shared_content/operations_center/integrations/generated/9844ea0a-de7f-45d4-9a9b-b07651f0630e.md!}
 
 {!_shared_content/integration/detection_section.md!}
