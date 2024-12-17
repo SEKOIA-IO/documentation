@@ -4,10 +4,9 @@
 1. [Overview](#overview)
 2. [Feature Benefits](#feature-benefits)
 3. [How AI Cases Work](#how-ai-cases-work)
-4. [Case Creation and Alert Correlation](#case-creation-and-alert-correlation)
-5. [Case Priority System](#case-priority-system)
-6. [Case Updates and Maintenance](#case-updates-and-maintenance)
-7. [Technical Specifications](#technical-specifications)
+4. [AI Case Creation and Alert Correlation](#ai-case-creation-and-alert-correlation)
+5. [AI Case Priority System](#ai-case-priority-system)
+6. [AI Case Updates](#ai-case-updates)
 
 ## Overview
 AI Cases is an intelligent case management feature that automatically creates and manages security incidents by correlating related alerts. This feature streamlines the incident response process by providing SOC analysts with automated case creation, alert correlation, and contextual information.
@@ -25,6 +24,7 @@ AI Cases is an intelligent case management feature that automatically creates an
 
 ## How AI Cases Work
 AI Cases automatically processes security alerts and creates cases based on related incidents. Each case includes:
+
 * Auto-generated title summarizing the incident
 * Detailed description with threat context
 * Correlated alerts from the same incident (up to 1000 alerts per case)
@@ -36,20 +36,23 @@ AI Cases automatically processes security alerts and creates cases based on rela
 ### Alert Correlation Criteria
 AI Cases correlates alerts based on two main criteria:
 
-1. **Asset-based Correlation:**
-   * Alerts targeting the same assets or hosts
-   * Related infrastructure impacts
+**Asset-based Correlation:**
 
-2. **Threat-based Correlation:**
-   * Same malware
-   * Same tools
-   * Same intrusion-set
-   * Same threat actor
-   * Same campaign
-   * Same vulnerability
+* Alerts targeting the same assets or hosts
+* Related infrastructure impacts
+
+**Threat-based Correlation:**
+
+* Same malware
+* Same tools
+* Same intrusion-set
+* Same threat actor
+* Same campaign
+* Same vulnerability
 
 ### AI Case Description Generation
 The case description is automatically generated using:
+
 * Sekoia Cyber Threat Intelligence (CTI)
 * Detection rule information
 * Affected asset details
