@@ -83,7 +83,7 @@ nav:
     - Investigate:
       - Alerts: xdr/features/investigate/alerts.md
       - Events: xdr/features/investigate/events.md
-      - AI Cases: xdr/features/investigate/ai_cases.md
+      - AI Cases (coming soon): xdr/features/investigate/ai_cases.md
       - Cases: xdr/features/investigate/cases.md
       - Events Query Language: xdr/features/investigate/events_query_language.md
       - Querying Events: xdr/features/investigate/querying_events.md
