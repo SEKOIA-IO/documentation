@@ -18,6 +18,28 @@ Integrates with CrowdStrike Falcon EDR
 
 ## Actions
 
+### Add new comment to alert
+
+Appends a new comment to any existing comments for the specified alerts.
+
+**Arguments**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `ids` | `array` | List of alert IDs to apply action to. |
+| `comment` | `string` | New comment to add to the alert. |
+
+### Update alert status
+
+Update the status for the specified alerts..
+
+**Arguments**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `ids` | `array` | List of alert IDs to apply action to. |
+| `new_status` | `string` | The new status to apply to the alerts. |
+
 ### Block IOC
 
 Block the provided IOC
@@ -86,4 +108,4 @@ Enable detections on the provided IOCs: md5 / sha256 file hashes, IPv4/v6 addres
 
 ## Extra
 
-Module **`CrowdStrike Falcon` v1.21.0**
+Module **`CrowdStrike Falcon` v1.22.0**

@@ -129,6 +129,53 @@ In this section, you will find examples of raw logs as generated natively by the
 
 
 
+=== "email_02"
+
+
+    ```json
+	{
+        "id": "cs72a9b6r0glddhdfh7g",
+        "date": "2024-10-15T08:17:41.776Z",
+        "sender_ip": "1.2.3.4",
+        "from": "jd@doe.fr",
+        "from_header": "John Doe<jd@doe.fr>",
+        "to": "alan.smithee@doe.fr",
+        "to_header": "Alan.smithee@doe.fr",
+        "subject": "Informations",
+        "message_id": "<d0a5da95-4028-439b-b9d5-a4f220c59022@protection.outlook.com>",
+        "urls": [],
+        "attachments": [],
+        "status": "LEGIT",
+        "substatus": "",
+        "last_report": "none",
+        "last_report_date": "0001-01-01T00:00:00Z",
+        "remediation_type": "none",
+        "remediation_ids": [],
+        "action": "NOTHING",
+        "folder": "",
+        "size": 26875,
+        "current_events": [],
+        "whitelisted": false,
+        "direction": "incoming",
+        "remediation_message_read": false,
+        "geo": {
+            "country_name": "United States",
+            "country_iso_code": "US",
+            "city_name": ""
+        },
+        "malware_bypass": false,
+        "reply_to_header": "user@company.com",
+        "overdict": "clean",
+        "auth_results_details": {
+            "dkim": "none",
+            "spf": "temperror",
+            "dmarc": "fail"
+        }
+    }
+    ```
+
+
+
 === "email_action_move"
 
 
@@ -251,6 +298,70 @@ In this section, you will find examples of raw logs as generated natively by the
             "city_name": ""
         },
         "malware_bypass": true
+    }
+    ```
+
+
+
+=== "email_with_attachment_02"
+
+
+    ```json
+	{
+        "id": "csb6q1pgfisg9knp1l5g",
+        "date": "2024-10-21T15:02:31.64Z",
+        "sender_ip": "1.2.3.4",
+        "from": "john.doe@mail.fr",
+        "from_header": "John DOE <john.doe@mail.fr>",
+        "to": "alan.smithee@company.fr",
+        "to_header": "Alan Smithee <alan.smithee@company.fr>",
+        "subject": "Re: Your mail",
+        "message_id": "<D0a5da95-4028-439b-b9d5-a4f220c59022@protection.outlook.com>",
+        "urls": [
+            {
+                "url": "http://www.company.fr/"
+            }
+        ],
+        "attachments": [
+            {
+                "id": "12345678901234567890",
+                "filename": "image001.jpg",
+                "extension": "jpg",
+                "size": 5130,
+                "hashes": {
+                    "md5": "7bc2b146a309acbff2da55e6b4124a82",
+                    "sha1": "299d5bf95adb52e640f9723c5f58b5a8e880be9b",
+                    "sha256": "288093f2981e53222135c94d1d6179a069d6e539daa86f10d65f86958f793368",
+                    "sha512": "7808b91ddf218cd9da382d42b2c5d07816964019976550f69aefe26182f6c324a5df8bafc9cd79167e09d4a339cfd33d5e7ba87342f459aae8e125fc64d42423"
+                }
+            }
+        ],
+        "status": "LEGIT",
+        "substatus": "",
+        "last_report": "none",
+        "last_report_date": "0001-01-01T00:00:00Z",
+        "remediation_type": "none",
+        "remediation_ids": [],
+        "action": "NOTHING",
+        "folder": "",
+        "size": 93072,
+        "current_events": [],
+        "whitelisted": false,
+        "direction": "incoming",
+        "remediation_message_read": false,
+        "geo": {
+            "country_name": "United States",
+            "country_iso_code": "US",
+            "city_name": ""
+        },
+        "malware_bypass": false,
+        "reply_to_header": "",
+        "overdict": "clean",
+        "auth_results_details": {
+            "dkim": "fail",
+            "spf": "temperror",
+            "dmarc": "none"
+        }
     }
     ```
 

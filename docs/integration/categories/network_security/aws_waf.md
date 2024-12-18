@@ -32,12 +32,10 @@ To forward events produced by AWS WAF to S3, you have to:
 {!_shared_content/integration/intake_configuration.md!}
 
 ### Pull events
+#### Create your intake
 
-To start to pull events, you have to:
-
-1. Go to the [playbook page](https://app.sekoia.io/operations/playbooks) and create a new playbook with the [AWS Fetch new logs on S3 connector](/integration/action_library/aws.md)
-2. Set up the module configuration with the [AWS Access Key](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html), the secret key and the region name. Set up the trigger configuration with the name of the SQS queue and the intake key, from the intake previously created
-3. Start the playbook and enjoy your events
+1. Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a new intake from the `AWS WAF`.
+2. Set up the intake account configuration with the [AWS Access Key](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html), the secret key and the region name. Set up the intake configuration with the name of the SQS queue
 
 {!_shared_content/operations_center/integrations/generated/46e45417-187b-45bb-bf81-30df7b1963a0_sample.md!}
 

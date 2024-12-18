@@ -30,17 +30,8 @@ To forward events produced by TEHTRIS EDR to Sekoia.io, you have to:
 
 ### Create the intake
 
-To create the intake, go to the [intake page](https://app.sekoia.io/operations/intakes) and create a new intake from the format `TEHTRIS Endpoint Detection & Reponse`.
-
-### Pull events
-
-To start to pull events, you have to:
-
-1. Go to the [playbook page](https://app.sekoia.io/operations/playbooks) and create a new playbook with the [Fetch new events from TEHTRIS](/integration/action_library/tehtris.md#fetch-new-events-from-tehtris) module
-
-2. Set up the module configuration with your API key and your tenant ID (most of time, your tenant ID is the subdomain of your TEHTRIS instance; eg: `https://{tenant_id}.tehtris.net`)
-
-3. Start the playbook and enjoy your [events](https://app.sekoia.io/operations/events)
+1. To create the intake, go to the [intake page](https://app.sekoia.io/operations/intakes) and create a new intake from the format `TEHTRIS Endpoint Detection & Reponse`.
+2. Set up the intake configuration with your API key and your tenant ID (most of time, your tenant ID is the subdomain of your TEHTRIS instance; eg: `https://{tenant_id}.tehtris.net`)
 
 {!_shared_content/operations_center/integrations/generated/8d8f040d-6a75-4bf4-bf1d-772e9a30f0dd_sample.md!}
 

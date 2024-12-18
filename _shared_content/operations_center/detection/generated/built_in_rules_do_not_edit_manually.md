@@ -1,4 +1,4 @@
-Rules catalog includes **970 built-in detection rules** ([_last update on 2024-11-26_](rules_changelog.md)).
+Rules catalog includes **986 built-in detection rules** ([_last update on 2024-12-17_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Identity Information**
 
@@ -139,6 +139,18 @@ Rules catalog includes **970 built-in detection rules** ([_last update on 2024-1
     
         - 28/03/2024 - minor - Rule effort was updated to master
             
+??? abstract "Correlation Fortigate Multi Alert From One Internal Ip"
+    
+    This rule detect an internal asset that targets a destination IP address with several threat
+    
+    - **Effort:** master
+    
+??? abstract "Correlation Fortigate Multi Dest From One Internal Ip"
+    
+    This rule detect an internal asset that targets several destination IP address with the same threat
+    
+    - **Effort:** master
+    
 ??? abstract "ExtraHop Reveal(x) 360 Intrusion Detection Critical Severity"
     
     ExtraHop Reveal(x) 360 raised an intrusion detection alert with critical severity.
@@ -263,6 +275,7 @@ Rules catalog includes **970 built-in detection rules** ([_last update on 2024-1
         - 23/03/2023 - minor - The error code 50076 has been excluded as it is not a specific error code related to a login failure that we want to detect and caused several false positives.
         - 16/08/2024 - minor - The error code 50078 has been excluded as it is not a specific error code related to a login failure that we want to detect and caused several false positives.
         - 14/10/2024 - minor - The error codes 70043, 50173, 70008, 700082, 9002341 have been excluded as they are not related to login failures that we want to detect and caused several false positives.
+        - 28/11/2024 - minor - Adding error codes as filters to reduce false positives.
             
 ??? abstract "Login Brute-Force Successful On Jumpcloud Portal"
     
@@ -285,6 +298,12 @@ Rules catalog includes **970 built-in detection rules** ([_last update on 2024-1
 ??? abstract "Login Brute-Force Successful On Rubycat PROVE IT"
     
     A user has attempted to login several times (brute-force) through Rubycat PROVE IT protected devices and succeeded to login.
+    
+    - **Effort:** advanced
+    
+??? abstract "Login Brute-Force Successful On WatchGuard Firebox"
+    
+    A user has attempted to login several times (brute-force) on WatchGuard Firebox and succeeded to login.
     
     - **Effort:** advanced
     
@@ -415,6 +434,7 @@ Rules catalog includes **970 built-in detection rules** ([_last update on 2024-1
         - 23/03/2023 - minor - The error code 50076 has been excluded as it is not a specific error code related to a login failure that we want to detect and caused several false positives.
         - 16/08/2024 - minor - The error code 50078 has been excluded as it is not a specific error code related to a login failure that we want to detect and caused several false positives.
         - 14/10/2024 - minor - The error codes 70043, 50173, 70008, 700082, 9002341 have been excluded as they are not related to login failures that we want to detect and caused several false positives.
+        - 28/11/2024 - minor - Adding error codes as filters to reduce false positives.
             
 ??? abstract "Login Brute-Force Successful On Jumpcloud Portal"
     
@@ -437,6 +457,12 @@ Rules catalog includes **970 built-in detection rules** ([_last update on 2024-1
 ??? abstract "Login Brute-Force Successful On Rubycat PROVE IT"
     
     A user has attempted to login several times (brute-force) through Rubycat PROVE IT protected devices and succeeded to login.
+    
+    - **Effort:** advanced
+    
+??? abstract "Login Brute-Force Successful On WatchGuard Firebox"
+    
+    A user has attempted to login several times (brute-force) on WatchGuard Firebox and succeeded to login.
     
     - **Effort:** advanced
     
@@ -1753,13 +1779,14 @@ Rules catalog includes **970 built-in detection rules** ([_last update on 2024-1
             
 ??? abstract "Alternate PowerShell Hosts Pipe"
     
-    Detects alternate PowerShell hosts potentially bypassing detections looking for powershell.exe. Prerequisites are logging for PipeEvents in Sysmon config
+    Detects alternate PowerShell hosts potentially bypassing detections looking for powershell.exe. Prerequisites are logging for PipeEvents in Sysmon config.
     
     - **Effort:** advanced
     
     - **Changelog:**
     
         - 04/04/2024 - major - Rule's pattern field changed
+        - 25/11/2024 - minor - improve filter to avoid false positives.
             
 ??? abstract "Aspnet Compiler"
     
@@ -1773,6 +1800,12 @@ Rules catalog includes **970 built-in detection rules** ([_last update on 2024-1
     
     - **Effort:** advanced
     
+??? abstract "Bitdefender GravityZone Endpoint Detection"
+    
+    Bitdefender GravityZone detected a malicious activity on an endpoint
+    
+    - **Effort:** master
+    
 ??? abstract "Bloodhound and Sharphound Tools Usage"
     
     Detects default process names and default command line parameters used by Bloodhound and Sharphound tools.
@@ -1781,6 +1814,7 @@ Rules catalog includes **970 built-in detection rules** ([_last update on 2024-1
     
     - **Changelog:**
     
+        - 11/12/2024 - minor - Added a default similarity based on host name and user name to avoid too many alerts.
         - 26/03/2024 - minor - Adapted the rule to remove false positives.
             
 ??? abstract "Correlation Linux Decode And Exec"
@@ -2461,6 +2495,7 @@ Rules catalog includes **970 built-in detection rules** ([_last update on 2024-1
     
         - 30/05/2023 - minor - Adding the Intellij IDEA to filter list
         - 22/11/2024 - major - Adding new elements for detection and filters.
+        - 27/11/2024 - minor - Adding new filters to reduce false positives.
             
 ??? abstract "Suspicious CodePage Switch with CHCP"
     
@@ -2598,6 +2633,30 @@ Rules catalog includes **970 built-in detection rules** ([_last update on 2024-1
     
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
             
+??? abstract "Trend Micro Vision One Workbench Critical Severity Alert"
+    
+    Detects when a critical alert severity is raised by Trend Micro Vision One Workbench.
+    
+    - **Effort:** master
+    
+??? abstract "Trend Micro Vision One Workbench Low Severity Alert"
+    
+    Detects when a low alert severity is raised by Trend Micro Vision One Workbench.
+    
+    - **Effort:** master
+    
+??? abstract "Trend Micro Vision One Workbench Medium Severity Alert"
+    
+    Detects when a medium alert severity is raised by Trend Micro Vision One Workbench.
+    
+    - **Effort:** master
+    
+??? abstract "Trend Micro Vision One Workbench high Severity Alert"
+    
+    Detects when a high alert severity is raised by Trend Micro Vision One Workbench.
+    
+    - **Effort:** master
+    
 ??? abstract "Trickbot Malware Activity"
     
     Detects Trickbot malware process tree pattern in which rundll32.exe is parent of wermgr.exe.
@@ -2844,6 +2903,12 @@ Rules catalog includes **970 built-in detection rules** ([_last update on 2024-1
 ??? abstract "Alert High Severity Sesame it Jizo NDR"
     
     Detects a high severity alert raised by SesameIT.
+    
+    - **Effort:** master
+    
+??? abstract "Bitdefender GravityZone Endpoint Detection"
+    
+    Bitdefender GravityZone detected a malicious activity on an endpoint
     
     - **Effort:** master
     
@@ -3102,10 +3167,11 @@ Rules catalog includes **970 built-in detection rules** ([_last update on 2024-1
     
     Detect the creation of a ZIP file and an HTA file as it is often used in infection chains. Furthermore it also detects the use of suspicious processes launched by explorer.exe combined with the creation of an HTA file, since it is also often used in infection chains (LNK - HTA for instance).
     
-    - **Effort:** intermediate
+    - **Effort:** advanced
     
     - **Changelog:**
     
+        - 04/12/2024 - minor - Event type fields and file paths added to filter some false positives, and effort level changed.
         - 20/09/2024 - minor - File paths added to filter some false positives.
         - 19/09/2024 - minor - File paths added to filter some false positives.
         - 30/11/2023 - minor - Update pattern with new lolbin
@@ -3752,6 +3818,30 @@ Rules catalog includes **970 built-in detection rules** ([_last update on 2024-1
     
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
             
+??? abstract "Trend Micro Vision One Workbench Critical Severity Alert"
+    
+    Detects when a critical alert severity is raised by Trend Micro Vision One Workbench.
+    
+    - **Effort:** master
+    
+??? abstract "Trend Micro Vision One Workbench Low Severity Alert"
+    
+    Detects when a low alert severity is raised by Trend Micro Vision One Workbench.
+    
+    - **Effort:** master
+    
+??? abstract "Trend Micro Vision One Workbench Medium Severity Alert"
+    
+    Detects when a medium alert severity is raised by Trend Micro Vision One Workbench.
+    
+    - **Effort:** master
+    
+??? abstract "Trend Micro Vision One Workbench high Severity Alert"
+    
+    Detects when a high alert severity is raised by Trend Micro Vision One Workbench.
+    
+    - **Effort:** master
+    
 ??? abstract "Vectra General Threat Detection"
     
     Vectra Cognito detected a potential threat. This is a very generic rule to raise as much alerts as possible from Vectra detections however RECONNAISSANCE and INFO categories have been removed to avoid spamming.
@@ -3817,6 +3907,12 @@ Rules catalog includes **970 built-in detection rules** ([_last update on 2024-1
     
 **System Services**
 
+??? abstract "Bitdefender GravityZone Endpoint Detection"
+    
+    Bitdefender GravityZone detected a malicious activity on an endpoint
+    
+    - **Effort:** master
+    
 ??? abstract "Check Point Harmony Mobile Application Forbidden"
     
     Detects when someone attempts to access/use a forbidden application.
@@ -3951,6 +4047,10 @@ Rules catalog includes **970 built-in detection rules** ([_last update on 2024-1
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 16/12/2024 - minor - Improve pattern mandatory fields and add filter to reduce false positives
+            
 ??? abstract "Csrss Wrong Parent"
     
     The csrss.exe process (csrss stands for Client / Server Runtime Subsystem) is a generic Windows process used to manage windows and Windows graphics. This rule analyse if the parent of this process is a legitimate one or not.
@@ -4132,6 +4232,12 @@ Rules catalog includes **970 built-in detection rules** ([_last update on 2024-1
     Microsoft Defender XDR for Office 365 has raised an alert. The alert info and evidence events are grouped with the similarity into the same Sekoia.io alert.
     
     - **Effort:** master
+    
+??? abstract "Mshta Command From A Scheduled Task"
+    
+    Detects when an attacker leverage the Microsoft Windows Scheduled task feature to run the mshta.exe process. This is a common usage of a living-off-the-land binary, frequently abused for malicous purposes and not common nowadays in IT administration.
+    
+    - **Effort:** intermediate
     
 ??? abstract "Okta Security Threat Detected"
     
@@ -4493,6 +4599,30 @@ Rules catalog includes **970 built-in detection rules** ([_last update on 2024-1
     
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
             
+??? abstract "Trend Micro Vision One Workbench Critical Severity Alert"
+    
+    Detects when a critical alert severity is raised by Trend Micro Vision One Workbench.
+    
+    - **Effort:** master
+    
+??? abstract "Trend Micro Vision One Workbench Low Severity Alert"
+    
+    Detects when a low alert severity is raised by Trend Micro Vision One Workbench.
+    
+    - **Effort:** master
+    
+??? abstract "Trend Micro Vision One Workbench Medium Severity Alert"
+    
+    Detects when a medium alert severity is raised by Trend Micro Vision One Workbench.
+    
+    - **Effort:** master
+    
+??? abstract "Trend Micro Vision One Workbench high Severity Alert"
+    
+    Detects when a high alert severity is raised by Trend Micro Vision One Workbench.
+    
+    - **Effort:** master
+    
 ??? abstract "Usage Of Procdump With Common Arguments"
     
     Detects the usage of Procdump sysinternals tool with some common arguments and followed by common patterns.
@@ -5469,6 +5599,10 @@ Rules catalog includes **970 built-in detection rules** ([_last update on 2024-1
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 16/12/2024 - minor - Improve pattern mandatory fields and add filter to reduce false positives
+            
 ??? abstract "Csrss Wrong Parent"
     
     The csrss.exe process (csrss stands for Client / Server Runtime Subsystem) is a generic Windows process used to manage windows and Windows graphics. This rule analyse if the parent of this process is a legitimate one or not.
@@ -5546,6 +5680,12 @@ Rules catalog includes **970 built-in detection rules** ([_last update on 2024-1
     
         - 26/03/2024 - major - Rule's pattern field changed
             
+??? abstract "Mshta Command From A Scheduled Task"
+    
+    Detects when an attacker leverage the Microsoft Windows Scheduled task feature to run the mshta.exe process. This is a common usage of a living-off-the-land binary, frequently abused for malicous purposes and not common nowadays in IT administration.
+    
+    - **Effort:** intermediate
+    
 ??? abstract "New Service Creation"
     
     Detects creation of a new service from command line
@@ -5906,6 +6046,12 @@ Rules catalog includes **970 built-in detection rules** ([_last update on 2024-1
     
         - 21/06/2024 - major - Update detection pattern for ECS fields/value compliance, and filter some FPs
             
+??? abstract "Microsoft Office Macro Security Registry Modifications"
+    
+    Detects registry changes allowing an attacker to make Microsoft Office products runs Macros without warning. Events are collected either from ETW/Sysmon/EDR depending of the integration.
+    
+    - **Effort:** master
+    
 ??? abstract "Narrator Feedback-Hub Persistence"
     
     The Windows 10 Narrator's Feedback-Hub registry key has been modified which could be done by an attacker for persistence purposes. Prerequisites are logging for Registry events in the Sysmon configuration (events 12 and 13). Careful since the SwiftOnSecurity Sysmon's configuration needs to be changed to log for this specifically.
@@ -5979,6 +6125,12 @@ Rules catalog includes **970 built-in detection rules** ([_last update on 2024-1
     
 **Modify Authentication Process**
 
+??? abstract "1Password EPM MFA Disable"
+    
+    Detects when the MFA for 1Password is disabled.
+    
+    - **Effort:** master
+    
 ??? abstract "Active Directory Shadow Credentials"
     
     Detects alternative credentials material adding. Attackers can abuse msDS-KeyCredentialLink and create a key pair to obtain a persistent and stealthy access to the target user or computer.
@@ -6271,6 +6423,12 @@ Rules catalog includes **970 built-in detection rules** ([_last update on 2024-1
 ??? abstract "MavInject Process Injection"
     
     Detects process injection using the signed Windows tool Mavinject32.exe (which is a LOLBAS)
+    
+    - **Effort:** intermediate
+    
+??? abstract "Mshta Command From A Scheduled Task"
+    
+    Detects when an attacker leverage the Microsoft Windows Scheduled task feature to run the mshta.exe process. This is a common usage of a living-off-the-land binary, frequently abused for malicous purposes and not common nowadays in IT administration.
     
     - **Effort:** intermediate
     
@@ -7037,6 +7195,10 @@ Rules catalog includes **970 built-in detection rules** ([_last update on 2024-1
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 16/12/2024 - minor - Improve pattern mandatory fields and add filter to reduce false positives
+            
 ??? abstract "Csrss Wrong Parent"
     
     The csrss.exe process (csrss stands for Client / Server Runtime Subsystem) is a generic Windows process used to manage windows and Windows graphics. This rule analyse if the parent of this process is a legitimate one or not.
@@ -7114,6 +7276,12 @@ Rules catalog includes **970 built-in detection rules** ([_last update on 2024-1
     
         - 26/03/2024 - major - Rule's pattern field changed
             
+??? abstract "Mshta Command From A Scheduled Task"
+    
+    Detects when an attacker leverage the Microsoft Windows Scheduled task feature to run the mshta.exe process. This is a common usage of a living-off-the-land binary, frequently abused for malicous purposes and not common nowadays in IT administration.
+    
+    - **Effort:** intermediate
+    
 ??? abstract "New Service Creation"
     
     Detects creation of a new service from command line
@@ -7474,6 +7642,12 @@ Rules catalog includes **970 built-in detection rules** ([_last update on 2024-1
     
         - 21/06/2024 - major - Update detection pattern for ECS fields/value compliance, and filter some FPs
             
+??? abstract "Microsoft Office Macro Security Registry Modifications"
+    
+    Detects registry changes allowing an attacker to make Microsoft Office products runs Macros without warning. Events are collected either from ETW/Sysmon/EDR depending of the integration.
+    
+    - **Effort:** master
+    
 ??? abstract "Narrator Feedback-Hub Persistence"
     
     The Windows 10 Narrator's Feedback-Hub registry key has been modified which could be done by an attacker for persistence purposes. Prerequisites are logging for Registry events in the Sysmon configuration (events 12 and 13). Careful since the SwiftOnSecurity Sysmon's configuration needs to be changed to log for this specifically.
@@ -7904,6 +8078,7 @@ Rules catalog includes **970 built-in detection rules** ([_last update on 2024-1
     
         - 30/05/2023 - minor - Adding the Intellij IDEA to filter list
         - 22/11/2024 - major - Adding new elements for detection and filters.
+        - 27/11/2024 - minor - Adding new filters to reduce false positives.
             
 ??? abstract "Unsigned Driver Loaded From Suspicious Location"
     
@@ -7956,6 +8131,12 @@ Rules catalog includes **970 built-in detection rules** ([_last update on 2024-1
 ??? abstract "MavInject Process Injection"
     
     Detects process injection using the signed Windows tool Mavinject32.exe (which is a LOLBAS)
+    
+    - **Effort:** intermediate
+    
+??? abstract "Mshta Command From A Scheduled Task"
+    
+    Detects when an attacker leverage the Microsoft Windows Scheduled task feature to run the mshta.exe process. This is a common usage of a living-off-the-land binary, frequently abused for malicous purposes and not common nowadays in IT administration.
     
     - **Effort:** intermediate
     
@@ -9288,6 +9469,12 @@ Rules catalog includes **970 built-in detection rules** ([_last update on 2024-1
             
 **Modify Authentication Process**
 
+??? abstract "1Password EPM MFA Disable"
+    
+    Detects when the MFA for 1Password is disabled.
+    
+    - **Effort:** master
+    
 ??? abstract "Active Directory Shadow Credentials"
     
     Detects alternative credentials material adding. Attackers can abuse msDS-KeyCredentialLink and create a key pair to obtain a persistent and stealthy access to the target user or computer.
@@ -10308,6 +10495,10 @@ Rules catalog includes **970 built-in detection rules** ([_last update on 2024-1
     
     - **Effort:** elementary
     
+    - **Changelog:**
+    
+        - 11/12/2024 - minor - Added a default similarity based on host name and user name to avoid too many alerts.
+            
 ??? abstract "HackTools Suspicious Process Names In Command Line"
     
     Detects the default process name of several HackTools and also check in command line. This rule is here for quickwins as it obviously has many blind spots.
@@ -10316,6 +10507,7 @@ Rules catalog includes **970 built-in detection rules** ([_last update on 2024-1
     
     - **Changelog:**
     
+        - 11/12/2024 - minor - Added a default similarity based on host name and user name to avoid too many alerts.
         - 10/06/2024 - minor - Added filter to the rule to reduce false positives.
         - 19/06/2023 - minor - Added filter to the rule to reduce false positives.
             
@@ -10603,6 +10795,12 @@ Rules catalog includes **970 built-in detection rules** ([_last update on 2024-1
             
 **Brute Force**
 
+??? abstract "1Password EPM Brute Force"
+    
+    Detects multiple failed login followed by a success from the same user.
+    
+    - **Effort:** master
+    
 ??? abstract "Anomaly Bruteforce - User Enumeration"
     
     The rule detects abnormally high number of TGT failed or NTLM authent failed associate to error code username don't exist who could indicate user enumeration
@@ -10761,12 +10959,6 @@ Rules catalog includes **970 built-in detection rules** ([_last update on 2024-1
             
 **Multi-Factor Authentication Interception**
 
-??? abstract "Entra ID Sign-In Via Known AiTM Phishing Kit"
-    
-    Detects a sign-in attempt from an IP address belonging to a known adversary-in-the-middle phishing kit.
-    
-    - **Effort:** elementary
-    
 ??? abstract "Entra ID Sign-In Via Known AiTM Phishing Kit (Mamba 2FA)"
     
     Detects a sign-in attempt with known characteristics of the adversary-in-the-middle phishing kit tracked by Sekoia.io as Mamba 2FA.
@@ -10825,6 +11017,16 @@ Rules catalog includes **970 built-in detection rules** ([_last update on 2024-1
     - **Changelog:**
     
         - 02/08/2024 - minor - Exclude an additionnal legitimate domain.
+            
+??? abstract "Sign-In Via Known AiTM Phishing Kit"
+    
+    Detects a sign-in attempt from an IP address belonging to a known adversary-in-the-middle phishing kit.
+    
+    - **Effort:** elementary
+    
+    - **Changelog:**
+    
+        - 12/12/2024 - minor - Update the selections to use a more appropriate ECS field. The rule now matches on more intakes. The name of the rule has been modified as well.
             
 **Forced Authentication**
 
@@ -10948,6 +11150,12 @@ Rules catalog includes **970 built-in detection rules** ([_last update on 2024-1
     
 **Credentials from Password Stores**
 
+??? abstract "1Password EPM Grant Access Vault"
+    
+    Detects when a group is granted access to a 1Password vault.
+    
+    - **Effort:** master
+    
 ??? abstract "Anomaly Secret Store Access"
     
     The rule detects abnormally high access to secrets store folder
@@ -10985,6 +11193,12 @@ Rules catalog includes **970 built-in detection rules** ([_last update on 2024-1
     
 **Modify Authentication Process**
 
+??? abstract "1Password EPM MFA Disable"
+    
+    Detects when the MFA for 1Password is disabled.
+    
+    - **Effort:** master
+    
 ??? abstract "Active Directory Shadow Credentials"
     
     Detects alternative credentials material adding. Attackers can abuse msDS-KeyCredentialLink and create a key pair to obtain a persistent and stealthy access to the target user or computer.
@@ -11026,12 +11240,6 @@ Rules catalog includes **970 built-in detection rules** ([_last update on 2024-1
     Detect a possible NTLM Relay attack combine with authent coerce
     
     - **Effort:** intermediate
-    
-??? abstract "Entra ID Sign-In Via Known AiTM Phishing Kit"
-    
-    Detects a sign-in attempt from an IP address belonging to a known adversary-in-the-middle phishing kit.
-    
-    - **Effort:** elementary
     
 ??? abstract "Entra ID Sign-In Via Known AiTM Phishing Kit (Mamba 2FA)"
     
@@ -11095,6 +11303,16 @@ Rules catalog includes **970 built-in detection rules** ([_last update on 2024-1
     - **Changelog:**
     
         - 02/08/2024 - minor - Exclude an additionnal legitimate domain.
+            
+??? abstract "Sign-In Via Known AiTM Phishing Kit"
+    
+    Detects a sign-in attempt from an IP address belonging to a known adversary-in-the-middle phishing kit.
+    
+    - **Effort:** elementary
+    
+    - **Changelog:**
+    
+        - 12/12/2024 - minor - Update the selections to use a more appropriate ECS field. The rule now matches on more intakes. The name of the rule has been modified as well.
             
 **Steal or Forge Kerberos Tickets**
 
@@ -11435,6 +11653,7 @@ Rules catalog includes **970 built-in detection rules** ([_last update on 2024-1
     
     - **Changelog:**
     
+        - 11/12/2024 - minor - Added a default similarity based on host name and user name to avoid too many alerts.
         - 26/03/2024 - minor - Adapted the rule to remove false positives.
             
 ??? abstract "Domain Group And Permission Enumeration"
@@ -11553,6 +11772,7 @@ Rules catalog includes **970 built-in detection rules** ([_last update on 2024-1
     
     - **Changelog:**
     
+        - 11/12/2024 - minor - Added a default similarity based on host name and user name to avoid too many alerts.
         - 26/03/2024 - minor - Adapted the rule to remove false positives.
             
 ??? abstract "Discovery Commands Correlation"
@@ -11668,6 +11888,7 @@ Rules catalog includes **970 built-in detection rules** ([_last update on 2024-1
     
     - **Changelog:**
     
+        - 11/12/2024 - minor - Added a default similarity based on host name and user name to avoid too many alerts.
         - 26/03/2024 - minor - Adapted the rule to remove false positives.
             
 ??? abstract "Domain Trust Discovery Through LDAP"
@@ -11753,6 +11974,14 @@ Rules catalog includes **970 built-in detection rules** ([_last update on 2024-1
     Attackers often use discovery commands such as DescribeInstances or DescribeSecurityGroups, and many others, to find how an AWS tenant is configured.
     
     - **Effort:** master
+    
+**System Location Discovery**
+
+??? abstract "Language Discovery"
+    
+    Detects when a user makes a query on the language of the system.
+    
+    - **Effort:** advanced
     
 **Cloud Storage Object Discovery**
 
@@ -12021,6 +12250,12 @@ Rules catalog includes **970 built-in detection rules** ([_last update on 2024-1
     
         - 13/08/2024 - minor - Added filter to reduce false positives
             
+??? abstract "Ntfsinfo Usage"
+    
+    Detects when the command ntfsinfo is used. An attacker can access to information on the volume from NTFS and have a directory dump of NTFS files.
+    
+    - **Effort:** advanced
+    
 **Data from Network Shared Drive**
 
 ??? abstract "RDP Configuration File From Mail Process"
@@ -12155,12 +12390,6 @@ Rules catalog includes **970 built-in detection rules** ([_last update on 2024-1
     
     - **Effort:** intermediate
     
-??? abstract "Entra ID Sign-In Via Known AiTM Phishing Kit"
-    
-    Detects a sign-in attempt from an IP address belonging to a known adversary-in-the-middle phishing kit.
-    
-    - **Effort:** elementary
-    
 ??? abstract "Entra ID Sign-In Via Known AiTM Phishing Kit (Mamba 2FA)"
     
     Detects a sign-in attempt with known characteristics of the adversary-in-the-middle phishing kit tracked by Sekoia.io as Mamba 2FA.
@@ -12223,6 +12452,16 @@ Rules catalog includes **970 built-in detection rules** ([_last update on 2024-1
     - **Changelog:**
     
         - 02/08/2024 - minor - Exclude an additionnal legitimate domain.
+            
+??? abstract "Sign-In Via Known AiTM Phishing Kit"
+    
+    Detects a sign-in attempt from an IP address belonging to a known adversary-in-the-middle phishing kit.
+    
+    - **Effort:** elementary
+    
+    - **Changelog:**
+    
+        - 12/12/2024 - minor - Update the selections to use a more appropriate ECS field. The rule now matches on more intakes. The name of the rule has been modified as well.
             
 **Archive Collected Data**
 
@@ -12987,6 +13226,12 @@ Rules catalog includes **970 built-in detection rules** ([_last update on 2024-1
     
 **Exfiltration Over Alternative Protocol**
 
+??? abstract "1Password EPM Share Externally"
+    
+    Detects when an item from 1Password is shared externally.
+    
+    - **Effort:** master
+    
 ??? abstract "DNS Exfiltration and Tunneling Tools Execution"
     
     Well-known DNS exfiltration tools execution

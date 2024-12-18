@@ -35,16 +35,8 @@ Check Point Harmony Mobile is the industry's first unified security solution for
 
 ### Create the intake
 
-To create the intake, go to the [intake page](https://app.sekoia.io/operations/intakes) and create a new intake from the format `Check Point Harmony Mobile`.
-
-### Pull events
-
-To start to pull events, you have to:
-
-1. Go to the [playbooks page](https://app.sekoia.io/operations/playbooks) and create a new playbook with the [Check Point Harmony Mobile](/integration/action_library/check-point.md) trigger
-2. Set up the module configuration with the Client ID, Client Secret and Authentication URL.
-3. Set up the trigger configuration with the intake key
-4. Start the playbook and enjoy your events
+1. To create the intake, go to the [intake page](https://app.sekoia.io/operations/intakes) and create a new intake from the format `Check Point Harmony Mobile`.
+2. Set up the intake configuration with the Client ID, Client Secret and Authentication URL.
 
 {!_shared_content/operations_center/integrations/generated/ff53e0db-059b-4e16-ba90-8c4dbf5cee35_sample.md!}
 

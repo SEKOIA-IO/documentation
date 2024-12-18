@@ -3,6 +3,30 @@
 The following Sekoia.io built-in rules match the intake **1Password EPM [BETA]**. This documentation is updated automatically and is based solely on the fields used by the intake which are checked against our rules. This means that some rules will be listed but might not be relevant with the intake.
 
 [SEKOIA.IO x 1Password EPM [BETA] on ATT&CK Navigator](https://mitre-attack.github.io/attack-navigator/#layerURL=https%3A%2F%2Fraw.githubusercontent.com%2FSEKOIA-IO%2Fdocumentation%2Fmain%2F_shared_content%2Foperations_center%2Fdetection%2Fgenerated%2Fattack_09754cc4-e247-4712-9a76-25529ba11b8b_do_not_edit_manually.json){ .md-button }
+??? abstract "1Password EPM Brute Force"
+    
+    Detects multiple failed login followed by a success from the same user.
+    
+    - **Effort:** master
+
+??? abstract "1Password EPM Grant Access Vault"
+    
+    Detects when a group is granted access to a 1Password vault.
+    
+    - **Effort:** master
+
+??? abstract "1Password EPM MFA Disable"
+    
+    Detects when the MFA for 1Password is disabled.
+    
+    - **Effort:** master
+
+??? abstract "1Password EPM Share Externally"
+    
+    Detects when an item from 1Password is shared externally.
+    
+    - **Effort:** master
+
 ??? abstract "Cryptomining"
     
     Detection of domain names potentially related to cryptomining activities.

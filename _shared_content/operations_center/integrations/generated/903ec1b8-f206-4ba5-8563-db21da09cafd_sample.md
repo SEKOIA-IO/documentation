@@ -382,6 +382,114 @@ In this section, you will find examples of raw logs as generated natively by the
 
 
 
+=== "test_decryption_csv"
+
+
+    ```json
+	1,2024/11/03 19:09:43,111111111111,DECRYPTION,0,2562,2024/11/03 19:09:43,1.2.3.4,5.6.7.8,4.3.2.1,8.7.6.5,URL Filtering - Chrome Profile,jdoe,,ssl,vsys1,VPN-SSL,INTERNET,tunnel.16,ae2.1111,Forward-Syslog,2024/11/03 19:09:43,2020391,1,55107,443,22814,443,0x400400,tcp,allow,N/A,,,,,25185364-4f1b-46b5-a376-a96a9438d665,Unknown,Unknown,TLS1.3,ECDHE,AES_256_GCM,SHA384,NoDecrypt-rule,,None,uninspected,Uninspected,No Decrypt,,,,,V1,0,0,0,0,0,:::::NONE,,,,,,,,,,,,,2024-11-03T19:09:43.654+01:00,,,,,,,,,,,,,,,,,1111111111111111111,0x8000000000000000,53,0,0,0,,NFW-OUT-DCA,1,encrypted-tunnel,networking,browser-based,4,"used-by-malware,able-to-transfer-file,has-known-vulnerability,tunnel-other-application,pervasive-use",,ssl,no,no
+
+    ```
+
+
+
+=== "test_decryption_json"
+
+
+    ```json
+	{
+        "TimeReceived": "2024-11-20T16:40:01.000000Z",
+        "DeviceSN": "no-serial",
+        "LogType": "DECRYPTION",
+        "Subtype": "start",
+        "SubType": "start",
+        "ConfigVersion": "10.2",
+        "TimeGenerated": "2024-11-20T16:39:51.000000Z",
+        "SourceAddress": "1.2.3.4",
+        "DestinationAddress": "5.6.7.8",
+        "NATSource": "4.3.2.1",
+        "NATDestination": "8.7.6.5",
+        "Rule": "URL Filtering - Chrome Profile",
+        "SourceUser": "example\\jdoe",
+        "DestinationUser": null,
+        "Application": "incomplete",
+        "VirtualLocation": "vsys1",
+        "FromZone": "VPN-SSL",
+        "ToZone": "INTERNET",
+        "InboundInterface": "tunnel.16",
+        "OutboundInterface": "ethernet1/1",
+        "LogSetting": "Forward-Syslog",
+        "TimeReceivedManagementPlane": "2024-11-20T16:39:51.000000Z",
+        "SessionID": 2222222,
+        "RepeatCount": 1,
+        "CountOfRepeat": 1,
+        "SourcePort": 58877,
+        "DestinationPort": 443,
+        "NATSourcePort": 1042,
+        "NATDestinationPort": 443,
+        "Protocol": "tcp",
+        "Action": "allow",
+        "Tunnel": "N/A",
+        "SourceUUID": null,
+        "DestinationUUID": null,
+        "RuleUUID": "eaf45b26-01ef-496c-990d-bbd1d89f2ed5",
+        "ClientToFirewall": "Finished",
+        "FirewallToClient": "Client_Hello",
+        "TLSVersion": "TLS1.2",
+        "TLSKeyExchange": "ECDHE",
+        "TLSEncryptionAlgorithm": "AES_256_GCM",
+        "TLSAuth": "SHA384",
+        "PolicyName": "TLS - https inspection - default rule",
+        "EllipticCurve": "secp256r1",
+        "ErrorIndex": "Protocol",
+        "RootStatus": "trusted",
+        "ChainStatus": "Trusted",
+        "ProxyType": "Forward",
+        "CertificateSerial": "059125d73c34a73fca9",
+        "Fingerprint": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+        "TimeNotBefore": 1730875569,
+        "TimeNotAfter": 1765176368,
+        "CertificateVersion": "V3",
+        "CertificateSize": 256,
+        "CommonNameLength": 13,
+        "IssuerNameLength": 29,
+        "RootCNLength": 10,
+        "SNILength": 23,
+        "CertificateFlags": 4,
+        "CommonName": "example.org",
+        "IssuerCommonName": "GlobalSign ECC OV SSL CA 2018",
+        "RootCommonName": "GlobalSign",
+        "ServerNameIndication": "static.files.example.org",
+        "ErrorMessage": "General TLS protocol error. Received fatal alert DecodeError from server",
+        "ContainerID": null,
+        "ContainerNameSpace": null,
+        "ContainerName": null,
+        "SourceEDL": null,
+        "DestinationEDL": null,
+        "SourceDynamicAddressGroup": null,
+        "DestinationDynamicAddressGroup": null,
+        "TimeGeneratedHighResolution": "2024-11-20T16:39:51.441000Z",
+        "SourceDeviceCategory": null,
+        "SourceDeviceProfile": null,
+        "SourceDeviceModel": null,
+        "SourceDeviceVendor": null,
+        "SourceDeviceOSFamily": null,
+        "SourceDeviceOSVersion": null,
+        "SourceDeviceHost": null,
+        "SourceDeviceMac": null,
+        "DestinationDeviceCategory": null,
+        "DestinationDeviceProfile": null,
+        "DestinationDeviceModel": null,
+        "DestinationDeviceVendor": null,
+        "DestinationDeviceOSFamily": null,
+        "DestinationDeviceOSVersion": null,
+        "DestinationDeviceHost": null,
+        "DestinationDeviceMac": null,
+        "SequenceNo": 1111111111111111111
+    }
+    ```
+
+
+
 === "test_dhcp_renew_json"
 
 
@@ -614,6 +722,62 @@ In this section, you will find examples of raw logs as generated natively by the
 
     ```json
 	1,2024/01/12 11:41:42,015451000023232323,GLOBALPROTECT,0,2562,2024/01/12 11:41:42,vsys1,gateway-switch-to-ssl,tunnel,,SSLVPN,test.fr\JDOE,FR,2023-01724,1.2.3.4,0.0.0.0,1.2.3.4,0.0.0.0,662f0b44-e024-4a70,PF000000,6.0.4,Windows,"Microsoft Windows 10 Enterprise , 64-bit",1,,,,success,,0,,0,CD78_VPN_GP_GATEWAY,5555555555555555555,0x8000000000000000,2024-01-12T11:41:43.895+02:00,,,,,,0,0,0,0,,test-01-01,1
+    ```
+
+
+
+=== "test_hipmatch_csv"
+
+
+    ```json
+	1,2024/11/03 18:50:04,111111111111,HIPMATCH,0,1111,2024/11/03 18:50:04,jdoe,vsys1,DESKTOP-01,Windows,1.2.3.4,VPN Compliant,1,profile,,,1111111111111111111,0x8000000000000000,28,99,38,0,,FW-CIV1,1,0.0.0.0,3a7393a4-997f-4e5b-b6e4-4ebff71dacf4,aefee8,,2024-11-03T18:50:04.310+01:00,
+    ```
+
+
+
+=== "test_hipmatch_json"
+
+
+    ```json
+	{
+        "TimeReceived": "2024-11-20T16:30:32.000000Z",
+        "DeviceSN": "no-serial",
+        "LogType": "HIPMATCH",
+        "Subtype": "hipmatch",
+        "ConfigVersion": "10.2",
+        "TimeGenerated": "2024-11-20T16:30:28.000000Z",
+        "SourceUser": "jdoe@example.org",
+        "VirtualLocation": "vsys1",
+        "EndpointDeviceName": "DESKTOP-01",
+        "EndpointOSType": "Windows",
+        "SourceIP": "1.2.3.4",
+        "HipMatchName": "VPN Compliant",
+        "RepeatCount": 1,
+        "CountOfRepeats": 1,
+        "HipMatchType": "profile",
+        "SequenceNo": 1111111111111111111,
+        "DGHierarchyLevel1": 12,
+        "DGHierarchyLevel2": 22,
+        "DGHierarchyLevel3": 0,
+        "DGHierarchyLevel4": 0,
+        "VirtualSystemName": "",
+        "DeviceName": "FW-ALK01",
+        "VirtualSystemID": 1,
+        "SourceIPv6": "",
+        "HostID": "3a7393a4-997f-4e5b-b6e4-4ebff71dacf4",
+        "EndpointSerialNumber": "aefee8",
+        "SourceDeviceCategory": null,
+        "SourceDeviceProfile": null,
+        "SourceDeviceModel": null,
+        "SourceDeviceVendor": null,
+        "SourceDeviceOSFamily": null,
+        "SourceDeviceOSVersion": null,
+        "SourceDeviceMac": null,
+        "SourceDeviceHost": null,
+        "Source": null,
+        "TimestampDeviceIdentification": null,
+        "TimeGeneratedHighResolution": "2024-11-20T16:30:28.904000Z"
+    }
     ```
 
 
@@ -1211,6 +1375,15 @@ In this section, you will find examples of raw logs as generated natively by the
         "VirtualLocation": null,
         "VirtualSystemName": null
     }
+    ```
+
+
+
+=== "test_system_event_13"
+
+
+    ```json
+	1,2024/11/26 22:10:01,02410100000000,SYSTEM,auth,2555,2024/11/26 22:10:01,,auth-success,FWPA,0,0,general,informational,"When authenticating user 'test000555' from '1.2.5.5', a less secure authentication method PAP is used. Please migrate to PEAP or EAP-TTLS. Authentication Profile 'FWPA', vsys 'shared', Server Profile 'RADIUS_RSA', Server Address '1.7.4.2'",738970652229900000000,0x0,0,0,0,0,,FWPAN00,0,0,2024-11-26T22:10:01.627+01:00
     ```
 
 

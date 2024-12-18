@@ -17,6 +17,50 @@ HarfangLab is an Endpoint detection and response (EDR) solution certified by ANS
 
 ## Actions
 
+### Add comment to Threat
+
+Add comment to Threat
+
+**Arguments**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `id` | `string` | Threat IDs |
+| `comment` | `string` | Comment to add |
+
+### Create IOCs
+
+Create IOCs
+
+**Arguments**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `stix_objects_path` | `string` | Filepath of the STIX objects fetched from the collection |
+| `sekoia_base_url` | `string` | [Optional] Sekoia base url, used to generate direct links to IOCs |
+| `source_id` | `string` | Source ID |
+| `block_on_agent` | `boolean` | Block on agent |
+| `quarantine_on_agent` | `boolean` | Quarantine on agent |
+| `detect_on_agent` | `boolean` | Endpoint detection |
+
+### Download File from Endpoint
+
+Download an arbitrary file from an HarfangLab endpoint
+
+**Arguments**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `id` | `string` | Identifier of the endpoint agent |
+| `path` | `string` | Absolute path to the file to download from the endpoint |
+
+
+**Outputs**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `path` | `string` | Downloaded file's path |
+
 ### Deisolate an agent
 
 Deisolate an agent
@@ -152,7 +196,19 @@ Get the list of processes on the systems
 | `creationtime` | `string` | Creation date of the job |
 | `parameters` | `object` | Parameters of the job |
 
+### Update Threat status
+
+Update Threat status
+
+**Arguments**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `threat_ids` | `array` | Threats IDs |
+| `new_status` | `string` | New status |
+| `update_by_query` | `boolean` | Update by query |
+
 
 ## Extra
 
-Module **`HarfangLab` v1.23.1**
+Module **`HarfangLab` v1.24.0**

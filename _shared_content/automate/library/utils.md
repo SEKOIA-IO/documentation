@@ -59,6 +59,26 @@ Read the XML file and return its content evaluated against specified xpath
 | `output` | `object` | Content read from file |
 | `output_path` | `object` | Path to the file with the content |
 
+### GroupBy
+
+GroupBy
+
+**Arguments**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `group_key` | `string` | GroupBy element by value for a specific key |
+| `filter_key` | `string` | GroupBy element with filter for a specific key |
+| `filter_value` | `string` | GroupBy element with a filter for a specific value on a specific key |
+| `input` | `array` | Input Data to sort |
+
+
+**Outputs**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `results` | `array` |  |
+
 ### Password Generator
 
 Generate a password securely based on specified parameters
@@ -109,4 +129,4 @@ Wait
 
 ## Extra
 
-Module **`Utils` v1.4.0**
+Module **`Utils` v1.4.3**

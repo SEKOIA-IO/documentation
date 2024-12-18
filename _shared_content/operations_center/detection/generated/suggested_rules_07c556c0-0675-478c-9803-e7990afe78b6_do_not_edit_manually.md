@@ -385,7 +385,7 @@ The following Sekoia.io built-in rules match the intake **SentinelOne EDR**. Thi
     
     Detect the creation of a ZIP file and an HTA file as it is often used in infection chains. Furthermore it also detects the use of suspicious processes launched by explorer.exe combined with the creation of an HTA file, since it is also often used in infection chains (LNK - HTA for instance).
     
-    - **Effort:** intermediate
+    - **Effort:** advanced
 
 ??? abstract "HTML Smuggling Suspicious Usage"
     
@@ -590,6 +590,12 @@ The following Sekoia.io built-in rules match the intake **SentinelOne EDR**. Thi
     Detects PowerShell SnapIn command line or PowerShell script, often used with Get-Mailbox to export Exchange mailbox data.
     
     - **Effort:** intermediate
+
+??? abstract "Microsoft Office Macro Security Registry Modifications"
+    
+    Detects registry changes allowing an attacker to make Microsoft Office products runs Macros without warning. Events are collected either from ETW/Sysmon/EDR depending of the integration.
+    
+    - **Effort:** master
 
 ??? abstract "Mimikatz Basic Commands"
     

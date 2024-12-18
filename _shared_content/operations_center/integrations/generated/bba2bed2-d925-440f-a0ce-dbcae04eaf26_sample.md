@@ -536,3 +536,42 @@ In this section, you will find examples of raw logs as generated natively by the
 
 
 
+=== "sigflow-tls"
+
+
+    ```json
+	{
+        "uuid": "b96777f9-6409-4864-b8a1-452094a93c5d",
+        "host": "gcap-xxxxxxxxx.domain.local",
+        "ether": {
+            "dest_mac": "e6:43:7e:91:1b:92",
+            "src_mac": "82:df:ee:4f:81:af"
+        },
+        "type": "suricata",
+        "dest_ip": "5.6.7.8",
+        "src_port": 64809,
+        "flow_id": 1366008699485799,
+        "timestamp_analyzed": "2024-11-21T13:02:44.291Z",
+        "timestamp": "2024-11-21T13:02:02.870913+0000",
+        "gcenter": "gcenter-xxxxxxxx.domain.local",
+        "event_type": "tls",
+        "src_ip": "1.2.3.4",
+        "dest_port": 443,
+        "in_iface": "mon2",
+        "tls": {
+            "sni": "www.microsoft.com",
+            "version": "TLS 1.3",
+            "ja3s": {
+                "string": "771,4866,43-51",
+                "hash": "15af977ce25de452b96affa2addb1036"
+            }
+        },
+        "@version": "1",
+        "proto": "TCP",
+        "gcap": "gcap-xxxxxxxxx.domain.local",
+        "@timestamp": "2024-11-21T13:02:44.291Z"
+    }
+    ```
+
+
+

@@ -52,4 +52,4 @@ Turn on endpoint isolation
 
 ## Extra
 
-Module **`Sophos` v1.17.1**
+Module **`Sophos` v1.17.2**

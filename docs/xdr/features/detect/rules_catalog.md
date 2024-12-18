@@ -17,8 +17,6 @@ Sekoia.io supports the following rule types:
 ## Rules Catalog
 The Rules Catalog page can be used to list and manage all detection rules. Many filters are available and can be combined to easily find the rules you are looking for.
 
-![rules_catalog](/assets/operation_center/rules_catalog/rules-catalog-layout.png){: style="max-width:100%"}
-
 !!! tip
     You can enable or disable rules one by one or all at once according to current filters.
 
@@ -54,11 +52,11 @@ Rules are associated with Intake formats that they are compatible with. Detectio
 
 Select an intake format in the left panel to list rules compatible with the intake format.
 
-![intakes](/assets/operation_center/rules_catalog/filter_by_intake.png)
+![intakes](/assets/operation_center/rules_catalog/filter_by_intake.png){: style="max-width:50%", align=right}
 
 You can also filter by intake formats that you have already configured with the associated filter.
 
-![filter](/assets/operation_center/rules_catalog/intake_configured.png)
+![filter](/assets/operation_center/rules_catalog/intake_configured.png){: style="max-width:50%", align=right}
 
 #### Threats
 
@@ -66,7 +64,7 @@ Rules are associated with Threats or Attack Pattern that they can detect.
 
 Use the associated search filter to list rules associated to specific threats.
 
-![threats](/assets/operation_center/rules_catalog/search_filters.png)
+![threats](/assets/operation_center/rules_catalog/search_filters.png){: style="max-width:50%", align=right}
 
 #### Tags
 
@@ -77,12 +75,7 @@ These tags are defined by Sekoia.io analysts to help make searching for a rule e
 To filter rules using tags, there are two ways:
 
 - Select a tag under a rule and it will filter all rules to show only those with the same tag
-- Use the select `Filter by tag` next to the search bar and choose a category from the list
-
-![tag_selector](/assets/operation_center/rules_catalog/tag_selector1.png){: style="max-width:100%"}
-
-!!! tip
-    To remove filters, simply click on `Clear all filters` next to the tags' list or deselect one tag at a time by clicking on the close icon inside the tag.
+- Click the filter button and select "Tags" 
 
 ----
 
@@ -90,17 +83,24 @@ To filter rules using tags, there are two ways:
 
 The MITRE ATT&CK framework is a comprehensive matrix of **tactics** and **techniques** used by threat hunters and defenders to better classify attacks and assess an organization's risk.
 
-Whenever you filter the Rules Catalog, the matrix will update and rules will appear in blue on the matrix in one or many cells. Each cell represents an attack technique. The cells are clickable and allow you to consult or enable missing rules.
+Whenever you filter the Rules Catalog, the matrix will update and rules will appear in blue on the matrix in one or many cells. Each cell represents an attack technique.
 
-![security_profile](/assets/operation_center/rules_catalog/security_profilev2.png){: style="max-width:100%"}
-
-You can see how many rules are available in a cell by hovering over it.
+![security_profile](/assets/operation_center/rules_catalog/security_profilev3.png){: style="max-width:100%"}
 
 The color changes depending on the number of rules contained in one cell:
 
-- Colored cells means they contain rules. Darker cells mean there are many rules for this technique and lighter cells mean there are only few rules enabled
+- Colored cells signify the presence of rules. **Darker cells** indicate a higher number of rules available for that specific technique. **Lighter cells** suggest that there are fewer enabled rules for the technique.
+- A white cell means that no rule is available for that technique. 
 
-- A white cell means that no rules available in it
+![mitre_details](/assets/operation_center/rules_catalog/mitre_details.gif){: style="max-width:100%"}
+
+Click on the MITRE preview to explore the distribution of rules across each technique and sub-technique.
+
+To view the MITRE framework in fullscreen, click the fullscreen button in the top-right corner of the modal.
+
+Use the "Sub-techniques" button to expand or collapse all sub-techniques.
+
+You can scroll through the MITRE details both horizontally and vertically.
 
 ---
 

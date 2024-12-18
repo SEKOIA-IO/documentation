@@ -89,16 +89,8 @@ In the [Sekoia.io Operations Center](https://app.sekoia.io/operations/intakes):
 2. Search for `SentinelOne Cloud Funnel 2.0` by navigating the page or using the search bar
 3. Click `Create` on the relevant object
 4. Specify the `Name` of your intake that will be displayed and select the `Entity` needed
-
-### Pull events
-
-To start pulling events, follow these steps:
-
-1. Go to the [playbook page](https://app.sekoia.io/operations/playbooks)
-2. Create a new playbook with the [AWS Fetch new logs on S3 connector](/integration/action_library/aws.md)
-3. Set up the module configuration with the [AWS Access Key](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html), the secret key and the region name
-4. Set up the trigger configuration with the name of the SQS queue and the intake key (from the intake previously created)
-5. Start the playbook and enjoy your events
+5. Set up the intake account configuration with the [AWS Access Key](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html), the secret key and the region name
+6. Set up the intake configuration with the name of the SQS queue
 
 {!_shared_content/operations_center/integrations/generated/40deb162-6bb1-4635-9c99-5c2de7e1d340_sample.md!}
 

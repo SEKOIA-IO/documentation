@@ -83,15 +83,8 @@ To create an API key on [Github](https://github.com/):
 
 ### Create the intake in Sekoia.io
 
-Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a new intake from the format `Github  audit logs`. Copy the intake key.
-
-### Pull events
-
-To start to pull events, you have to:
-
-1. Go to the [playbooks page](https://app.sekoia.io/operations/playbooks) and create a new playbook with the [Fetch new audit logs from Github](/integration/action_library/github.md) trigger
-2. Set up the module configuration with the Github organization and the APIkey. Set up the trigger configuration with the intake key
-3. Start the playbook and enjoy your events
+1. Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a new intake from the format `Github  audit logs`.
+2. Edit the intake configuration with the Github organization and the APIkey.
 
 {!_shared_content/operations_center/integrations/generated/80de6ccb-7246-40de-bcbb-bc830118c1f9_sample.md!}
 

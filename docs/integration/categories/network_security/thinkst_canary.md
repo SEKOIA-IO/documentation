@@ -37,23 +37,10 @@ Thinkst Canary is a deceptive honeypot device that mimics various systems to lur
 ### Create your intake
 
 1. Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a new intake from the `Thinkst Canary`.
-2. Copy the associated Intake key
-
-### Pull the logs to collect them on Sekoia.io
-
-Go to the Sekoia.io [playbook page](https://app.sekoia.io/operations/playbooks), and follow these steps:
-  
-- Click on **+ PLAYBOOK** button to create a new one
-- Select **Create a playbook from scratch**
-- Give it a name in the field **Name**
-- Open the left panel, click **Thinkst Canary** then select the trigger `Fetch Thinkst Canary Events`
-- Click on **Create**
-- Create a **Module configuration** using:
+2. Set the intake configuration with the following parameters:
     - `Base URL`, which should be `https://DOMAINHASH.canary.tools`, where `DOMAINHASH` is your domain hash from the `How to create an API Key` step
     - `Auth token` from the same step
-- Create a **Trigger configuration** using the `Intake key` created on the previous step
-- Click on the **Save** button
-- **Activate the playbook** with the toggle button on the top right corner of the page
+
 
 ### Enjoy your events on the [Events page](https://app.sekoia.io/operations/events)
 

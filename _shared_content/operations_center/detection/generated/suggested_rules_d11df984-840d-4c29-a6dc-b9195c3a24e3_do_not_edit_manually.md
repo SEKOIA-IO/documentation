@@ -3,6 +3,12 @@
 The following Sekoia.io built-in rules match the intake **Bitdefender GravityZone [BETA]**. This documentation is updated automatically and is based solely on the fields used by the intake which are checked against our rules. This means that some rules will be listed but might not be relevant with the intake.
 
 [SEKOIA.IO x Bitdefender GravityZone [BETA] on ATT&CK Navigator](https://mitre-attack.github.io/attack-navigator/#layerURL=https%3A%2F%2Fraw.githubusercontent.com%2FSEKOIA-IO%2Fdocumentation%2Fmain%2F_shared_content%2Foperations_center%2Fdetection%2Fgenerated%2Fattack_d11df984-840d-4c29-a6dc-b9195c3a24e3_do_not_edit_manually.json){ .md-button }
+??? abstract "Bitdefender GravityZone Endpoint Detection"
+    
+    Bitdefender GravityZone detected a malicious activity on an endpoint
+    
+    - **Effort:** master
+
 ??? abstract "Burp Suite Tool Detected"
     
     Burp Suite is a cybersecurity tool. When used as a proxy service, its purpose is to intercept packets and modify them to send them to the server. Burp Collaborator is a network service that Burp Suite uses to help discover many kinds of vulnerabilities (vulnerabilities scanner).
