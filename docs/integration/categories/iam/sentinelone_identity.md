@@ -12,6 +12,8 @@ SentinelOne Singularity Identity is a cybersecurity solution that provides ident
 
 ## Configure
 
+This setup guide will show you how to pull events produced by SentinelOne Singularity Identity on [Sekoia.io](https://app.sekoia.io/).
+
 ### Generate API token
 
 1. Log in the SentinelOne Singularity console
