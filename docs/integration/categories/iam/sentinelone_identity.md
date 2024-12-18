@@ -5,8 +5,10 @@ type: intake
 ## Overview
 SentinelOne Singularity Identity is a cybersecurity solution that provides identity protection and zero-trust security by continuously monitoring and analyzing user behaviors to detect and prevent potential threats.
 
-- **Supported Events**:
-    - Alerts
+- **Vendor**: SentinelOne
+- **Supported environment**: Cloud
+- **Detection based on**: Telemetry
+- **Detection based on**: Alert
 
 ## Configure
 
