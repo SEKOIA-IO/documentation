@@ -231,7 +231,6 @@ nav:
           - MicrosoftDefender: tip/features/automate/library/microsoftdefender.md
           - Panda Security: tip/features/automate/library/panda-security.md
           - SentinelOne: tip/features/automate/library/sentinelone.md
-          - SentinelOne: tip/features/automate/library/sentinelone.md
           - Sophos: tip/features/automate/library/sophos.md
           - WithSecure: tip/features/automate/library/withsecure.md
         - Generic:
@@ -500,7 +499,6 @@ nav:
       - HarfangLab: integration/action_library/harfanglab.md
       - MicrosoftDefender: integration/action_library/microsoftdefender.md
       - Panda Security: integration/action_library/panda-security.md
-      - SentinelOne: integration/action_library/sentinelone.md
       - SentinelOne: integration/action_library/sentinelone.md
       - Sophos: integration/action_library/sophos.md
       - WithSecure: integration/action_library/withsecure.md
