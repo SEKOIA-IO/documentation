@@ -35,7 +35,13 @@ Select the way who develop your parse to find the appropriate documentation: wit
 
     was previously used to parse the following event:
     ```
-    {'protocol':'tcp','traffic':{'source':'127.0.0.1','target':'8.8.8.8'}}
+    {
+      "protocol":"tcp",
+      "traffic":{
+          "source":"127.0.0.1",
+          "target":"8.8.8.8"
+      }
+    }
     ```
 
     To put the `source` and the `target` IP in the final version of the parsed event, the `Set` action can be used:
