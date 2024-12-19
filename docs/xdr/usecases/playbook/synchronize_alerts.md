@@ -8,7 +8,7 @@ This use case describes how to automatically push new Alerts in an external secu
 - The user that configures the Playbook should have a Role that contains:
 	* The SYMPHONY permissions
 - An API Key with a Role that contains at least the following permission:
-	* SIC_READ_ALERTS
+	* View alerts
 
 > To create your API Key, follow this [documentation](../../../getting_started/manage_api_keys.md).
 

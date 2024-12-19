@@ -8,8 +8,8 @@ This use case describes how to enrich the comments of an alert with the User age
 - The user that configures the Playbook should have a role that contains:
 	* The SYMPHONY permissions
 - An API Key with a role that contains at least the following permission:
-	* `SIC_READ_ALERTS`
-	* `SIC_WRITE_ALERTS_COMMENT`
+	* `View alerts`
+	* `Comment alerts`
 
 !!!note
     To create your API Key, follow this [documentation](/getting_started/manage_api_keys.md#create-an-api-key).

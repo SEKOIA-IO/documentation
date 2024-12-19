@@ -8,8 +8,8 @@ This section will show how to programmatically add your CTI inside the platform 
 
 - A Sekoia.io XDR license
 - An API Key with that contains at least the following permissions:
-    * INTHREAT_READ_IOC_COLLECTIONS
-    * INTHREAT_WRITE_IOC_COLLECTIONS
+    * View IOC collections
+    * Manage IOC collections
 
 ## Detect threats using your CTI
 

@@ -8,10 +8,10 @@ This use case describes how to use Whois module in order to enrich an IP address
 - The user that configures the Playbook should have a role that contains:
 	* The [SYMPHONY permissions](https://docs.sekoia.io/getting_started/roles_permissions/#playbooks)
 - An API Key with a role that contains at least the following permissions:
-	* `SIC_READ_ALERTS`
-	* `EVENTS_READ_STATS`
-	* `EVENTS_READ_DATASETS`
-	* `SIC_READ_EVENT_STATS`
+	* `View alerts`
+	* `View anomaly stats`
+	* `View anomaly dataset`
+	* `View event stats in asset listing`
 
 !!!note
     To create your API Key, follow this [documentation](../../../getting_started/manage_api_keys.md).
