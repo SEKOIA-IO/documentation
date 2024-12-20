@@ -22,6 +22,8 @@ The implementation of a blocklist in Sekoia.io is based on the [IOC Collections]
     * View intakes
     * View IOC collections
     * Manage IOC collections
+    * View observables
+    * View intelligence
 - An API Key with the **Guest** role or a custom role that contains the following permission to authenticate the network security solutions:
     * View IOC collections
 
