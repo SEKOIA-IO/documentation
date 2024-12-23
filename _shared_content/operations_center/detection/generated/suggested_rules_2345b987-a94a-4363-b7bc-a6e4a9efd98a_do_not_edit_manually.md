@@ -1,8 +1,8 @@
 ### Related Built-in Rules
 
-The following Sekoia.io built-in rules match the intake **SentinelOne Singularity Identity [BETA]**. This documentation is updated automatically and is based solely on the fields used by the intake which are checked against our rules. This means that some rules will be listed but might not be relevant with the intake.
+The following Sekoia.io built-in rules match the intake **Trend Micro Vision One OAT [BETA]**. This documentation is updated automatically and is based solely on the fields used by the intake which are checked against our rules. This means that some rules will be listed but might not be relevant with the intake.
 
-[SEKOIA.IO x SentinelOne Singularity Identity [BETA] on ATT&CK Navigator](https://mitre-attack.github.io/attack-navigator/#layerURL=https%3A%2F%2Fraw.githubusercontent.com%2FSEKOIA-IO%2Fdocumentation%2Fmain%2F_shared_content%2Foperations_center%2Fdetection%2Fgenerated%2Fattack_b502e522-6996-4b12-9538-f69326b68243_do_not_edit_manually.json){ .md-button }
+[SEKOIA.IO x Trend Micro Vision One OAT [BETA] on ATT&CK Navigator](https://mitre-attack.github.io/attack-navigator/#layerURL=https%3A%2F%2Fraw.githubusercontent.com%2FSEKOIA-IO%2Fdocumentation%2Fmain%2F_shared_content%2Foperations_center%2Fdetection%2Fgenerated%2Fattack_2345b987-a94a-4363-b7bc-a6e4a9efd98a_do_not_edit_manually.json){ .md-button }
 ??? abstract "AMSI Deactivation Using Registry Key"
     
     The rule detects attempts to deactivate/disable the AMSI provider by deleting the associated registry key.
@@ -111,6 +111,18 @@ The following Sekoia.io built-in rules match the intake **SentinelOne Singularit
     
     - **Effort:** intermediate
 
+??? abstract "COM Hijack Via Sdclt"
+    
+    Detects changes to 'HKCU\Software\Classes\Folder\shell\open\command\DelegateExecute', to bypass UAC using 'sdclt.exe'.
+    
+    - **Effort:** intermediate
+
+??? abstract "CVE 2022-1292"
+    
+    The c_rehash script does not properly sanitise shell metacharacters to prevent command injection. This script is distributed by some operating systems in a manner where it is automatically executed. On such operating systems, an attacker could execute arbitrary commands with the privileges of the script.
+    
+    - **Effort:** advanced
+
 ??? abstract "Capture a network trace with netsh.exe"
     
     Detects capture a network trace via netsh.exe trace functionality
@@ -146,12 +158,6 @@ The following Sekoia.io built-in rules match the intake **SentinelOne Singularit
     Detects a command that clears event logs which could indicate an attempt from an attacker to erase its previous traces.
     
     - **Effort:** intermediate
-
-??? abstract "Cmd.exe Used To Run Reconnaissance Commands"
-    
-    Detects command lines with suspicious args
-    
-    - **Effort:** advanced
 
 ??? abstract "Cmdkey Cached Credentials Recon"
     
@@ -219,15 +225,21 @@ The following Sekoia.io built-in rules match the intake **SentinelOne Singularit
     
     - **Effort:** elementary
 
+??? abstract "Correlation Multi Service Disable"
+    
+    The rule detects a high number of services stopped or de-activated in a short period of time.
+    
+    - **Effort:** master
+
 ??? abstract "Credential Harvesting Via Vaultcmd.exe"
     
     Detects when the process vaultcmd is used for credential harvesting.
     
     - **Effort:** advanced
 
-??? abstract "Csrss Wrong Parent"
+??? abstract "Cryptomining"
     
-    The csrss.exe process (csrss stands for Client / Server Runtime Subsystem) is a generic Windows process used to manage windows and Windows graphics. This rule analyse if the parent of this process is a legitimate one or not.
+    Detection of domain names potentially related to cryptomining activities.
     
     - **Effort:** master
 
@@ -243,17 +255,17 @@ The following Sekoia.io built-in rules match the intake **SentinelOne Singularit
     
     - **Effort:** intermediate
 
+??? abstract "DNS Query For Iplookup"
+    
+    Detects dns query of observables tagged as iplookup.
+    
+    - **Effort:** master
+
 ??? abstract "DNS ServerLevelPluginDll Installation"
     
     Detects the installation of a plugin DLL via ServerLevelPluginDll parameter in Windows Registry or in command line, which can be used to execute code in context of the DNS server (restart required). To fully use this rule, prerequesites are logging for Registry events in the Sysmon configuration (events 12, 13 and 14).
     
     - **Effort:** master
-
-??? abstract "DNS Tunnel Technique From MuddyWater"
-    
-    Detecting DNS Tunnel Activity For Muddywater intrusion set. This is the loading of a specific DLL from an Excel macro which is detected.
-    
-    - **Effort:** elementary
 
 ??? abstract "Data Compressed With Rar"
     
@@ -303,17 +315,17 @@ The following Sekoia.io built-in rules match the intake **SentinelOne Singularit
     
     - **Effort:** advanced
 
+??? abstract "Discovery Commands Correlation"
+    
+    Detects some frequent discovery commands used by some ransomware operators.
+    
+    - **Effort:** intermediate
+
 ??? abstract "Dism Disabling Windows Defender"
     
     Detects windows defender disabled by dism.
     
     - **Effort:** advanced
-
-??? abstract "Dllhost Wrong Parent"
-    
-    Dllhost.exe is a process belonging to Microsoft Windows Operating System. The dllhost.exe file manages DLL based applications. This rule analyse if the parent of this process is a legitimate one or not.
-    
-    - **Effort:** master
 
 ??? abstract "Docker Escape Bind Mount"
     
@@ -333,6 +345,12 @@ The following Sekoia.io built-in rules match the intake **SentinelOne Singularit
     
     - **Effort:** elementary
 
+??? abstract "Dynamic DNS Contacted"
+    
+    Detect communication with dynamic dns domain. This kind of domain is often used by attackers. This rule can trigger false positive in non-controlled environment because dynamic dns is not always malicious.
+    
+    - **Effort:** master
+
 ??? abstract "Dynamic Linker Hijacking From Environment Variable"
     
     LD_PRELOAD and LD_LIBRARY_PATH are environment variables used by the Operating System at the runtime to load shared objects (library.ies) when executing a new process, attacker can overwrite this variable to attempts a privileges escalation.
@@ -344,6 +362,12 @@ The following Sekoia.io built-in rules match the intake **SentinelOne Singularit
     Detects a command that clears or disables any ETW Trace log which could indicate a logging evasion
     
     - **Effort:** intermediate
+
+??? abstract "Elevated Shell Launched By Browser"
+    
+    Detects when openwith.exe is launched with privileges followed by a browser launching an elevated shell. Related to the CVE-2024-38014.
+    
+    - **Effort:** master
 
 ??? abstract "Elise Backdoor"
     
@@ -381,17 +405,17 @@ The following Sekoia.io built-in rules match the intake **SentinelOne Singularit
     
     - **Effort:** intermediate
 
-??? abstract "Exchange Server Spawning Suspicious Processes"
-    
-    Look for Microsoft Exchange Server’s Unified Messaging service spawning suspicious sub-processes, suggesting exploitation of CVE-2021-26857 vulnerability.
-    
-    - **Effort:** intermediate
-
 ??? abstract "Exfiltration And Tunneling Tools Execution"
     
     Execution of well known tools for data exfiltration and tunneling
     
     - **Effort:** advanced
+
+??? abstract "Exfiltration Domain"
+    
+    Detects traffic toward a domain flagged as a possible exfiltration vector.
+    
+    - **Effort:** master
 
 ??? abstract "Exfiltration Domain In Command Line"
     
@@ -405,17 +429,23 @@ The following Sekoia.io built-in rules match the intake **SentinelOne Singularit
     
     - **Effort:** advanced
 
-??? abstract "Exploit For CVE-2015-1641"
-    
-    Detects Winword process starting uncommon sub process MicroScMgmt.exe as used in exploits for CVE-2015-1641
-    
-    - **Effort:** elementary
-
 ??? abstract "Exploit For CVE-2017-0261 Or CVE-2017-0262"
     
     Detects Winword starting uncommon sub process FLTLDR.exe as used in exploits for CVE-2017-0261 and CVE-2017-0262 through command line or PowerShell script. This is a very basic detection method relying on the rare usage of EPS files from Winword.
     
     - **Effort:** advanced
+
+??? abstract "Exploited CVE-2020-10189 Zoho ManageEngine"
+    
+    Detects the exploitation of Zoho ManageEngine Desktop Central Java Deserialization vulnerability reported as CVE-2020-10189.
+    
+    - **Effort:** elementary
+
+??? abstract "Exploiting SetupComplete.cmd CVE-2019-1378"
+    
+    Detects exploitation attempts of privilege escalation vulnerability via SetupComplete.cmd and PartnerSetupComplete.cmd described in CVE-2019-1378.
+    
+    - **Effort:** intermediate
 
 ??? abstract "Explorer Process Executing HTA File"
     
@@ -423,23 +453,11 @@ The following Sekoia.io built-in rules match the intake **SentinelOne Singularit
     
     - **Effort:** intermediate
 
-??? abstract "FLTMC command usage"
-    
-    Detects the use of fltmc to list and load/unload a filter driver.
-    
-    - **Effort:** advanced
-
 ??? abstract "Fail2ban Unban IP"
     
     An IP was ubaned by Fail2ban. It could be use to allow malicous traffic.
     
     - **Effort:** advanced
-
-??? abstract "File Or Folder Permissions Modifications"
-    
-    Adversaries may modify file or directory permissions/attributes to evade access control lists (ACLs) and access protected files.
-    
-    - **Effort:** master
 
 ??? abstract "Formbook Hijacked Process Command"
     
@@ -465,15 +483,15 @@ The following Sekoia.io built-in rules match the intake **SentinelOne Singularit
     
     - **Effort:** advanced
 
-??? abstract "Gpscript Suspicious Parent"
-    
-    Gpscript defines GPO scripts for users and applies them to login / logout sessions. This rule checks if the parent of this process is the supposed one (svchost) or not.
-    
-    - **Effort:** intermediate
-
 ??? abstract "Grabbing Sensitive Hives Via Reg Utility"
     
     Detects dump of SAM, System or Security hives using reg.exe utility. Adversaries may attempt to dump these Windows Registry to retrieve password hashes and access credentials.
+    
+    - **Effort:** intermediate
+
+??? abstract "HTML Smuggling Suspicious Usage"
+    
+    Based on several samples from different botnets, this rule aims at detecting HTML infection chain by looking for HTML created files followed by suspicious files being executed.
     
     - **Effort:** intermediate
 
@@ -507,18 +525,6 @@ The following Sekoia.io built-in rules match the intake **SentinelOne Singularit
     
     - **Effort:** elementary
 
-??? abstract "IcedID Execution Using Excel"
-    
-    Detects Excel spawning a process (rundll32 or wmic) running suspicious command-line. This behaviour could correspond to IcedID activity. 
-    
-    - **Effort:** elementary
-
-??? abstract "Impacket Wmiexec Module"
-    
-    Detection of impacket's wmiexec example, used by attackers to execute commands remotely.
-    
-    - **Effort:** elementary
-
 ??? abstract "Inhibit System Recovery Deleting Backups"
     
     Detects adversaries attempts to delete backups or inhibit system recovery. This rule relies on differents known techniques using Windows events logs from Sysmon (ID 1), and PowerShell (ID 4103, 4104).
@@ -546,6 +552,12 @@ The following Sekoia.io built-in rules match the intake **SentinelOne Singularit
 ??? abstract "Kernel Module Alteration"
     
     Kernel module installation can be used to configure system settings to automatically execute a program during system boot or logon to maintain persistence or gain higher-level privileges on compromised systems. The prerequisites are to enable monitoring of the finit_module, init_module, delete_module syscalls using Auditbeat.
+    
+    - **Effort:** advanced
+
+??? abstract "Language Discovery"
+    
+    Detects when a user makes a query on the language of the system.
     
     - **Effort:** advanced
 
@@ -609,42 +621,6 @@ The following Sekoia.io built-in rules match the intake **SentinelOne Singularit
     
     - **Effort:** advanced
 
-??? abstract "Logonui Wrong Parent"
-    
-    Logonui.exe is a file associated with the Logon user interface. The login user interface is an essential part of the Windows operating system. It doesn't only make it easy for the user to log in to the PC but also determines whether the user has logged in and logged out correctly and makes it easy to switch between users. This rule checks if the parent of this process is a legitimate one or not.
-    
-    - **Effort:** master
-
-??? abstract "Lsass Wrong Parent"
-    
-    Lsass ensures the identification of users (domain users or local users). Domain users are identified based on information in the Active Directory. Local users are identified based on information from the Security Account Manager (SAM) local database. This rule checks if the parent of this process is a legitimate one or not.
-    
-    - **Effort:** master
-
-??? abstract "MMC Spawning Windows Shell"
-    
-    Detects a Windows command line executable started from MMC process
-    
-    - **Effort:** intermediate
-
-??? abstract "MMC20 Lateral Movement"
-    
-    Detects MMC20.Application Lateral Movement; specifically looks for the spawning of the parent MMC.exe with a command line of "-Embedding" as a child of svchost.exe.
-    
-    - **Effort:** intermediate
-
-??? abstract "MOFComp Execution"
-    
-    Detects rare usage of the Managed Object Format (MOF) compiler on Microsoft Windows. This could be abused by some attackers to load WMI classes.
-    
-    - **Effort:** intermediate
-
-??? abstract "MS Office Product Spawning Exe in User Dir"
-    
-    Detects an executable in the users directory started from Microsoft Word, Excel, Powerpoint, Publisher or Visio. This is a common technique used by attackers with documents embedding macros. It requires Windows command line logging events.
-    
-    - **Effort:** master
-
 ??? abstract "MSBuild Abuse"
     
     Detection of MSBuild uses by attackers to infect an host. Focuses on XML compilation which is a Metasploit payload, and on connections made by this process which is unusual.
@@ -654,6 +630,12 @@ The following Sekoia.io built-in rules match the intake **SentinelOne Singularit
 ??? abstract "Malicious Browser Extensions"
     
     Detects browser extensions being loaded with the --load-extension and -base-url options, which works on Chromium-based browsers. We are looking for potentially malicious browser extensions. These extensions can get access to informations.
+    
+    - **Effort:** advanced
+
+??? abstract "Malicious PowerShell Keywords"
+    
+    Detects keywords from well-known PowerShell exploitation frameworks
     
     - **Effort:** advanced
 
@@ -759,17 +741,11 @@ The following Sekoia.io built-in rules match the intake **SentinelOne Singularit
     
     - **Effort:** master
 
-??? abstract "Microsoft Office Product Spawning Windows Shell"
+??? abstract "Microsoft Windows Active Directory Module Commandlets"
     
-    Detects a Windows command or scripting interpreter executable started from Microsoft Word, Excel, Powerpoint, Publisher and Visio. This typically indicates the parent process launched a malicious macro, or run an exploit. This infection vector is very common and could lead to the deployment of harmful malware.
+    Detects use of commandlets linked to the AD Module.
     
-    - **Effort:** master
-
-??? abstract "Microsoft Office Spawning Script"
-    
-    Detects Microsoft Office process (word, excel, powerpoint) spawning wscript.exe or cscript.exe. This typically indicates the parent process launched a malicious macro, or run an exploit. This infection vector is very common and could lead to the deployment of harmful malware. 
-    
-    - **Effort:** intermediate
+    - **Effort:** advanced
 
 ??? abstract "Mimikatz Basic Commands"
     
@@ -836,6 +812,12 @@ The following Sekoia.io built-in rules match the intake **SentinelOne Singularit
     Detects netsh commands that opens a specific port. Can be used by malware or attackers for lateralisation/exfiltration (e.g. SMB/RDP opening).
     
     - **Effort:** master
+
+??? abstract "Netsh Program Allowed With Suspicious Location"
+    
+    Detects Netsh commands that allow a suspcious application location on Windows Firewall, seen on kasidet worm. Last part of the existing rule (commandline startwith) was not added to this rule because it is not relevant.
+    
+    - **Effort:** advanced
 
 ??? abstract "Netsh RDP Port Forwarding"
     
@@ -927,12 +909,6 @@ The following Sekoia.io built-in rules match the intake **SentinelOne Singularit
     
     - **Effort:** elementary
 
-??? abstract "OneNote Suspicious Children Process"
-    
-    In January 2023, a peak of attacks using .one files was observed in the wild. This rule tries to detect the effect of such attempts using this technique.
-    
-    - **Effort:** advanced
-
 ??? abstract "Openfiles Usage"
     
     Detects when the command openfiles, to get information on files opened remotely, is used.
@@ -981,6 +957,18 @@ The following Sekoia.io built-in rules match the intake **SentinelOne Singularit
     
     - **Effort:** elementary
 
+??? abstract "Phosphorus (APT35) Exchange Discovery"
+    
+    According to the Miscosoft's report, the group Phosphorus (part of APT35) uses a specific PowerShell command to collect information about its the environment of compromised Microsoft Exchange servers. The command is the following: Get-Recipient | Select Name -ExpandProperty EmailAddresses -first 1 | Select SmtpAddress |  ft -hidetableheaders
+    
+    - **Effort:** elementary
+
+??? abstract "Phosphorus Domain Controller Discovery"
+    
+    According to the Miscosoft's report, the group Phosphorus (part of APT35) uses a specific PowerShell command to collect information about the Domain Controller. The command is the following: "powershell.exe" /c Get-WMIObject Win32_NTDomain | findstr DomainController
+    
+    - **Effort:** intermediate
+
 ??? abstract "PowerCat Function Loading"
     
     Detect a basic execution of PowerCat. PowerCat is a PowerShell function allowing to do basic connections, file transfer, shells, relays, generate payloads.
@@ -996,6 +984,12 @@ The following Sekoia.io built-in rules match the intake **SentinelOne Singularit
 ??? abstract "PowerShell Commands Invocation"
     
     Detects the execution to invoke a powershell command. This was used in an intrusion using Gootloader to access Mimikatz.
+    
+    - **Effort:** advanced
+
+??? abstract "PowerShell Credential Prompt"
+    
+    Detects PowerShell calling a credential prompt (using PromptForCredential), like $Credential = $host.ui.PromptForCredential("Need credentials", "Please enter your user name and password.", "", "NetBiosUserName"). The same result can be obtained by using the Get-Credential function but detecting it will trigger a lot of FP.
     
     - **Effort:** advanced
 
@@ -1035,9 +1029,27 @@ The following Sekoia.io built-in rules match the intake **SentinelOne Singularit
     
     - **Effort:** advanced
 
+??? abstract "PowerShell Invoke-Obfuscation Obfuscated IEX Invocation"
+    
+    Detects all variations of obfuscated powershell IEX invocation code generated by Invoke-Obfuscation framework
+    
+    - **Effort:** advanced
+
 ??? abstract "PowerShell Malicious Nishang PowerShell Commandlets"
     
     Detects Commandlet names and arguments from the Nishang exploitation framework.
+    
+    - **Effort:** advanced
+
+??? abstract "PowerShell Malicious PowerShell Commandlets"
+    
+    Detects Commandlet names from well-known PowerShell exploitation frameworks (PowerSploit...).
+    
+    - **Effort:** master
+
+??? abstract "PowerShell NTFS Alternate Data Stream"
+    
+    Detects writing data into NTFS alternate data streams from PowerShell. Needs Script Block Logging (Event ID 4104)
     
     - **Effort:** advanced
 
@@ -1137,11 +1149,11 @@ The following Sekoia.io built-in rules match the intake **SentinelOne Singularit
     
     - **Effort:** intermediate
 
-??? abstract "RDP Configuration File From Mail Process"
+??? abstract "RDP Port Change Using Powershell"
     
-    Detects RDP configuration file being created or executed by a Mail-related process like Outlook. RDP configuration file will allow, when opened, an user to connect to the configured server easily. Attackers use this to trick victims in order to get a shared drive and potentially retrieve the data from that drive, but also drop a malicious file on the drive to establish persistence. Using RDP can also expose the victim's credential and clipboard data on some cases.
+    Detects RDP port configuration change using a PowerShell command such as 'Set-ItemProperty -Path "HKLM:\System\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp" -Name PortNumber -Value XXX Restart-Service termservice -force'. Threat actors can change RDP to another port to bypass protections, avoid detection based on the port, or to take full control of the system. 
     
-    - **Effort:** advanced
+    - **Effort:** intermediate
 
 ??? abstract "RDP Session Discovery"
     
@@ -1167,11 +1179,23 @@ The following Sekoia.io built-in rules match the intake **SentinelOne Singularit
     
     - **Effort:** advanced
 
+??? abstract "Reconnaissance Commands Activities"
+    
+    Based on Cynet, Microsoft and Kaspersky analysis of Qakbot, this rule tries to detect some discovery TTPs.
+    
+    - **Effort:** intermediate
+
 ??? abstract "RedMimicry Winnti Playbook Registry Manipulation"
     
     Detects actions caused by the RedMimicry Winnti playbook. Logging for Registry events is needed in the Sysmon configuration (events 12 and 13).
     
     - **Effort:** elementary
+
+??? abstract "Remote Access Tool Domain"
+    
+    Detects traffic toward a domain flagged as a Remote Administration Tool (RAT).
+    
+    - **Effort:** master
 
 ??? abstract "Remote Monitoring and Management Software - AnyDesk"
     
@@ -1185,6 +1209,12 @@ The following Sekoia.io built-in rules match the intake **SentinelOne Singularit
     
     - **Effort:** master
 
+??? abstract "Remote System Discovery Via Telnet"
+    
+    Detects use of the protocol telnet to access information.
+    
+    - **Effort:** advanced
+
 ??? abstract "Rubeus Tool Command-line"
     
     Detects command line parameters used by Rubeus, a toolset to interact with Kerberos and abuse it.
@@ -1197,39 +1227,15 @@ The following Sekoia.io built-in rules match the intake **SentinelOne Singularit
     
     - **Effort:** intermediate
 
-??? abstract "STRRAT Scheduled Task"
-    
-    Detect STRRAT when it achieves persistence by creating a scheduled task. STRRAT is a Java-based stealer and remote backdoor, it establishes persistence using this specific command line: 'cmd /c schtasks /create /sc minute /mo 30 /tn Skype /tr "C:\Users\Admin\AppData\Roaming\SAMPLENAME.jar"'
-    
-    - **Effort:** intermediate
-
 ??? abstract "Schtasks Persistence With High Privileges"
     
     Detection of scheduled task with high privileges used by attacker for persistence.
     
     - **Effort:** elementary
 
-??? abstract "Schtasks Suspicious Parent"
+??? abstract "Sekoia.io EICAR Detection"
     
-    Detects schtasks started from suspicious and/or unusual processes.
-    
-    - **Effort:** intermediate
-
-??? abstract "Screenconnect Remote Execution"
-    
-    Detect cmd or powershell remote execution cmdline via ScreenConnect
-    
-    - **Effort:** intermediate
-
-??? abstract "Searchindexer Wrong Parent"
-    
-    Detects if the Search Indexer was executed by a non-legitimate parent process. Search Indexer is the Windows service that handles indexing of your files for Windows Search.
-    
-    - **Effort:** master
-
-??? abstract "Searchprotocolhost Wrong Parent"
-    
-    Detects if the Search Protocol Host process was executed by a non-legitimate parent process. Search Protocol Host is part of the Windows Indexing Service, a service indexing files on the local drive making them easier to search.
+    Detects observables in Sekoia.io CTI tagged as EICAR, which are fake samples meant to test detection.
     
     - **Effort:** master
 
@@ -1239,11 +1245,11 @@ The following Sekoia.io built-in rules match the intake **SentinelOne Singularit
     
     - **Effort:** master
 
-??? abstract "Smss Wrong Parent"
+??? abstract "Shell PID Injection"
     
-    Detects if the Smss process was executed by a non-legitimate parent process. Session Manager Subsystem (smss) process is a component of the Microsoft Windows NT family of operating systems.
+    Detects when shells PID are listed and injected in another process. It can be performed to reuse sudo token related to shell in order to elevate privilege and maintain persistence.
     
-    - **Effort:** master
+    - **Effort:** intermediate
 
 ??? abstract "Socat Relaying Socket"
     
@@ -1257,21 +1263,9 @@ The following Sekoia.io built-in rules match the intake **SentinelOne Singularit
     
     - **Effort:** intermediate
 
-??? abstract "SolarWinds Wrong Child Process"
-    
-    Detects SolarWinds process starting an unusual child process. Process solarwinds.businesslayerhost.exe and solarwinds.businesslayerhostx64.exe created an unexepected child process which doesn't correspond to the legitimate ones.
-    
-    - **Effort:** intermediate
-
 ??? abstract "Spyware Persistence Using Schtasks"
     
     Detects possible Agent Tesla or Formbook persistence using schtasks. The name of the scheduled task used by these malware is very specific (Updates/randomstring).
-    
-    - **Effort:** intermediate
-
-??? abstract "SquirrelWaffle Malspam Execution Loading DLL"
-    
-    Detects cscript running suspicious command to load a DLL. This behavior has been detected in SquirrelWaffle campaign.
     
     - **Effort:** intermediate
 
@@ -1323,12 +1317,6 @@ The following Sekoia.io built-in rules match the intake **SentinelOne Singularit
     
     - **Effort:** intermediate
 
-??? abstract "Suspicious DNS Child Process"
-    
-    Detects suspicious processes spawned by the dns.exe process. It could be a great indication of the exploitation of the DNS RCE bug reported in CVE-2020-1350 (SIGRED).
-    
-    - **Effort:** intermediate
-
 ??? abstract "Suspicious Desktopimgdownldr Execution"
     
     Detects a suspicious Desktopimgdownldr execution. Desktopimgdownldr.exe is a Windows binary used to configure lockscreen/desktop image and can be abused to download malicious file.
@@ -1346,12 +1334,6 @@ The following Sekoia.io built-in rules match the intake **SentinelOne Singularit
     Detects suspicious aged finger.exe tool execution often used in malware attacks nowadays. An attacker can use finger to silently retrieve a command, a script or a payload from a remote server. For example, the tool Darkfinger-C2 uses this technique to download files from the C2 channel.
     
     - **Effort:** intermediate
-
-??? abstract "Suspicious Hangul Word Processor Child Process"
-    
-    Detects suspicious Hangul Word Processor (HWP) child process that could indicate an exploitation as used by the Lazarus APT during the Operation Ghost Puppet (2018). This activity could correspond to a maldoc execution related to a .hwp file. Hangul is a proprietary word processing application that supports the Korean written language.
-    
-    - **Effort:** elementary
 
 ??? abstract "Suspicious Headless Web Browser Execution To Download File"
     
@@ -1371,12 +1353,6 @@ The following Sekoia.io built-in rules match the intake **SentinelOne Singularit
     
     - **Effort:** intermediate
 
-??? abstract "Suspicious Mshta Execution From Wmi"
-    
-    Detects mshta executed by wmiprvse as parent. It has been used by TA505 with some malicious documents.
-    
-    - **Effort:** intermediate
-
 ??? abstract "Suspicious Netsh DLL Persistence"
     
     Detects persitence via netsh helper. Netsh interacts with other operating system components using dynamic-link library (DLL) files. Adversaries may establish persistence by executing malicious content triggered by Netsh Helper DLLs.
@@ -1386,12 +1362,6 @@ The following Sekoia.io built-in rules match the intake **SentinelOne Singularit
 ??? abstract "Suspicious Network Args In Command Line"
     
     Detection on some commonly observed suspicious processes command lines using HTTP schema with port 443.
-    
-    - **Effort:** intermediate
-
-??? abstract "Suspicious Outlook Child Process"
-    
-    Detects suspicious child processes of Microsoft Outlook. These child processes are often associated with spearphishing activity.
     
     - **Effort:** intermediate
 
@@ -1418,6 +1388,12 @@ The following Sekoia.io built-in rules match the intake **SentinelOne Singularit
     Detects new commands that add new printer port which point to suspicious file
     
     - **Effort:** advanced
+
+??? abstract "Suspicious Process Requiring DLL Starts Without DLL"
+    
+    Detects potential process injection and hollowing on processes that usually require a DLL to be launched, but are launched without any argument. 
+    
+    - **Effort:** intermediate
 
 ??? abstract "Suspicious Regasm Regsvcs Usage"
     
@@ -1473,12 +1449,6 @@ The following Sekoia.io built-in rules match the intake **SentinelOne Singularit
     
     - **Effort:** intermediate
 
-??? abstract "Svchost Wrong Parent"
-    
-    Detects if the svchost.exe process was executed by a non-legitimate parent process. Svchost (Service Host Process) is a generic host process name for services that run from dynamic-link libraries (DLLs).
-    
-    - **Effort:** master
-
 ??? abstract "Sysprep On AppData Folder"
     
     Detects suspicious Sysprep process start with AppData folder as target (as used by Trojan Syndicasec in Thrip report by Symantec). Sysprep is a Windows tool used to change Windows images from a generalized state to a specialized state, and then back to a generalized state. It can be used to remove all system-specific information and reset the computer.
@@ -1491,17 +1461,23 @@ The following Sekoia.io built-in rules match the intake **SentinelOne Singularit
     
     - **Effort:** master
 
-??? abstract "Taskhost Wrong Parent"
+??? abstract "System Network Connections Discovery"
     
-    Detects if the Taskhost process was executed by a non-legitimate parent process. Taskhost is the process of the Windows Task Manager which lists the processes that are currently running on the computer system.
+    Detects system network connections discovery via powershell and cmd.
+    
+    - **Effort:** advanced
+
+??? abstract "TOR Usage Generic Rule"
+    
+    Detects TOR usage globally, whether the IP is a destination or source. TOR is short for The Onion Router, and it gets its name from how it works. TOR intercepts the network traffic from one or more apps on user’s computer, usually the user web browser, and shuffles it through a number of randomly-chosen computers before passing it on to its destination. This disguises user location, and makes it harder for servers to pick him/her out on repeat visits, or to tie together separate visits to different sites, this making tracking and surveillance more difficult. Before a network packet starts its journey, user’s computer chooses a random list of relays and repeatedly encrypts the data in multiple layers, like an onion. Each relay knows only enough to strip off the outermost layer of encryption, before passing what’s left on to the next relay in the list.
     
     - **Effort:** master
 
-??? abstract "Taskhostw Wrong Parent"
+??? abstract "TrustedInstaller Impersonation"
     
-    Detects if the Taskhostw process was executed by a non-legitimate parent process. Taskhostw is a software component of Windows service start manager, it starts DLL-based Windows services when the computer boots up.
+    The rule detects attempts to impersonate TrustedInstaller. TrustedInstaller rights could allow a threat actor to delete or modify protected file or create/delete/modify files in protected folders. This technique is used by threat actors to disable Windows Defender.
     
-    - **Effort:** master
+    - **Effort:** intermediate
 
 ??? abstract "UAC Bypass Via Sdclt"
     
@@ -1524,6 +1500,12 @@ The following Sekoia.io built-in rules match the intake **SentinelOne Singularit
 ??? abstract "Venom Multi-hop Proxy agent detection"
     
     Detects Venom Multi-hop Proxy agent.
+    
+    - **Effort:** intermediate
+
+??? abstract "WMI Fingerprint Commands"
+    
+    Detects attacker fingerprint activities based on the correlation of specific WMIC commands. This has been observed with Aurora malware.
     
     - **Effort:** intermediate
 
@@ -1557,17 +1539,17 @@ The following Sekoia.io built-in rules match the intake **SentinelOne Singularit
     
     - **Effort:** elementary
 
-??? abstract "Web Application Launching Shell"
-    
-    Detects when a web application launches a shell.
-    
-    - **Effort:** master
-
 ??? abstract "WiFi Credentials Harvesting Using Netsh"
     
     Detects the harvesting of WiFi credentials using netsh.exe.
     
     - **Effort:** advanced
+
+??? abstract "Windows Defender Deactivation Using PowerShell Script"
+    
+    Detects attempts to deactivate Windows Defender with PowerShell using ScriptBlockLogging.
+    
+    - **Effort:** master
 
 ??? abstract "Windows Firewall Changes"
     
@@ -1581,24 +1563,6 @@ The following Sekoia.io built-in rules match the intake **SentinelOne Singularit
     
     - **Effort:** master
 
-??? abstract "Windows Update LolBins"
-    
-    This rule try to detect a suspicious behavior of wuauclt.exe (windows update client) that could be a lolbins. Wuauctl.exe could be used to execute a malicious program.
-    
-    - **Effort:** elementary
-
-??? abstract "Winlogon wrong parent"
-    
-    Winlogon.exe is a process that performs the Windows login management function, handling user login and logout in Windows. You see this process in action whenever the operating system asks you for your username and password. It is also responsible for loading user profiles after login, this supports automated login (when relevant) and keyboard and mouse inactivity monitoring to decide when to invoke the screen saver. This rule analyse if the parent of this process is a legitimate one or not.
-    
-    - **Effort:** master
-
-??? abstract "Winword Document Droppers"
-    
-    Detects specific process characteristics of word document droppers. This techniques has been used by Maze ransomware operators.
-    
-    - **Effort:** elementary
-
 ??? abstract "Wmic Process Call Creation"
     
     The WMI command-line (WMIC) utility provides a command-line interface for Windows Management Instrumentation (WMI). WMIC is compatible with existing shells and utility commands. Although WMI is supposed to be an administration tool, it is wildy abused by threat actors. One of the reasons is WMI is quite stealthy. This rule detects the wmic command line launching a process on a remote or local host.
@@ -1611,11 +1575,11 @@ The following Sekoia.io built-in rules match the intake **SentinelOne Singularit
     
     - **Effort:** intermediate
 
-??? abstract "Wsmprovhost Wrong Parent"
+??? abstract "Wmic Suspicious Commands"
     
-    Detects if the Wsmprovhost process was executed by a non-legitimate parent process. The PowerShell host wsmprovhost.exe is a proxy process executed remotely through PowerShell when using Windows Remote Management (WinRM).
+    Detects suspicious commands used by the process wmic to get informations on the system.
     
-    - **Effort:** master
+    - **Effort:** advanced
 
 ??? abstract "XCopy Suspicious Usage"
     
@@ -1628,6 +1592,12 @@ The following Sekoia.io built-in rules match the intake **SentinelOne Singularit
     Detection of an attack where adversaries may bypass application control and obscure execution of code by embedding scripts inside XSL files. Another variation of this technique, dubbed "Squiblytwo", involves to invoke JScript or VBScript within an XSL file.
     
     - **Effort:** intermediate
+
+??? abstract "ZIP LNK Infection Chain"
+    
+    Detection of an ZIP download followed by a child-process of explorer, followed by multiple Windows processes.This is widely used as an infection chain mechanism.
+    
+    - **Effort:** advanced
 
 ??? abstract "xWizard Execution"
     

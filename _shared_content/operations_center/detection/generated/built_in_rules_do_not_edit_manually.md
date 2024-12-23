@@ -1,4 +1,4 @@
-Rules catalog includes **986 built-in detection rules** ([_last update on 2024-12-17_](rules_changelog.md)).
+Rules catalog includes **986 built-in detection rules** ([_last update on 2024-12-23_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Identity Information**
 
@@ -3192,6 +3192,10 @@ Rules catalog includes **986 built-in detection rules** ([_last update on 2024-1
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 23/12/2024 - minor - Change alert severity
+            
 ??? abstract "HarfangLab EDR High Level Rule Detection"
     
     HarfangLab EDR has raised an alert based on a high level rule (not using hlai engine)
@@ -3208,6 +3212,10 @@ Rules catalog includes **986 built-in detection rules** ([_last update on 2024-1
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 23/12/2024 - minor - Change alert severity
+            
 ??? abstract "HarfangLab EDR Hlai Engine Detection"
     
     HarfangLab EDR has raised an alert based on its hlai engine
@@ -3561,6 +3569,7 @@ Rules catalog includes **986 built-in detection rules** ([_last update on 2024-1
     
     - **Changelog:**
     
+        - 20/12/2024 - minor - Adding minor filter on a process parent name.
         - 23/01/2024 - minor - Adding elements to increase detection and filters to reduce false positives.
         - 13/09/2024 - major - Adding filters to reduce false positives and updated the effort level to master as it is a rule highly dependent on the environment.
             
@@ -10969,6 +10978,7 @@ Rules catalog includes **986 built-in detection rules** ([_last update on 2024-1
     
         - 09/08/2024 - major - Update the indicator.
         - 25/09/2024 - major - Rename the rule, update the indicators.
+        - 23/12/2024 - major - Update the indicators.
             
 ??? abstract "Entra ID Sign-In Via Known AiTM Phishing Kit (Tycoon 2FA)"
     
@@ -11251,6 +11261,7 @@ Rules catalog includes **986 built-in detection rules** ([_last update on 2024-1
     
         - 09/08/2024 - major - Update the indicator.
         - 25/09/2024 - major - Rename the rule, update the indicators.
+        - 23/12/2024 - major - Update the indicators.
             
 ??? abstract "Entra ID Sign-In Via Known AiTM Phishing Kit (Tycoon 2FA)"
     
@@ -12400,6 +12411,7 @@ Rules catalog includes **986 built-in detection rules** ([_last update on 2024-1
     
         - 09/08/2024 - major - Update the indicator.
         - 25/09/2024 - major - Rename the rule, update the indicators.
+        - 23/12/2024 - major - Update the indicators.
             
 ??? abstract "Entra ID Sign-In Via Known AiTM Phishing Kit (Tycoon 2FA)"
     
