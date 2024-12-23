@@ -1,7 +1,16 @@
-Changelog _last update on 2024-12-17_
+Changelog _last update on 2024-12-23_
 
 ## Changelog
 
+### Entra ID Sign-In Via Known AiTM Phishing Kit (Mamba 2FA)
+  - 23/12/2024 - major - Update the indicators.
+    
+### HarfangLab EDR High Threat
+  - 23/12/2024 - minor - Change alert severity
+    
+### HarfangLab EDR Critical Threat
+  - 23/12/2024 - minor - Change alert severity
+    
 ### Csrss Child Found
   - 16/12/2024 - minor - Improve pattern mandatory fields and add filter to reduce false positives
     
@@ -103,9 +112,6 @@ Changelog _last update on 2024-12-17_
     
 ### Entra ID Sign-In Via Known AiTM Phishing Kit (Tycoon 2FA)
   - 01/10/2024 - major - Update the pattern following changes in the phishing kit.
-    
-### Entra ID Sign-In Via Known AiTM Phishing Kit (Mamba 2FA)
-  - 25/09/2024 - major - Rename the rule, update the indicators.
     
 ### Suspicious URL Requested By Curl Or Wget Commands
   - 23/09/2024 - major - Fixed an issue with the detection pattern.
