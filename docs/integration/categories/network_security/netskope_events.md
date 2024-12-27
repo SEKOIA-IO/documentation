@@ -37,9 +37,13 @@ To the API token, add the following scopes with the privilege `Read`:
 
 ### Instruction on Sekoia
 
-{!_shared_content/integration/intake_configuration.md!}
+#### Create your intake
 
-{!_shared_content/integration/connector_configuration.md!}
+1. Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a new intake from the `Netskope`.
+2. Set the intake configuration using:
+    * Your Netskope base url 
+    * Your API Token
+    * A consumer group (optional)
 
 {!_shared_content/operations_center/integrations/generated/de9ca004-991e-4f5c-89c5-e075f3fb3216_sample.md!}
 
