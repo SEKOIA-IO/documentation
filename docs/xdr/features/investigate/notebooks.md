@@ -31,25 +31,25 @@ Notebooks is a powerful incident response feature that allows SOC analysts to ce
 **Standalone Notebooks**
 
 * Independent notebooks for general use (threat hunting, custom reporting)
-* Accessible from the `Notebooks` menu
+* Accessible from the `Notebooks menu`
 
 **Context-linked Notebooks**
 
-* Attached to specific cases or alerts for incident response
-* Directly accessible from the `Notebooks` tab within cases or alerts
+* Attached to specific `cases` or `alerts` for incident response
+* Directly accessible from the `Notebooks tab` within cases or alerts
 * Provides centralized investigation context
 
 ## Creating and Managing Notebooks
 
 ### Creating a New Notebook
-1. Navigate to the Notebooks tab
+1. Navigate to the `Notebooks tab` within a case or an alert
 2. Click `New Notebook`
 3. Edit blank notebook or use an existing template
 
 ![notebook_blank](/assets/operation_center/notebook_case.png){: style="max-width:100%"}
 
 !!! Warning
-    In a multi-tenant environment, notebooks are created in the **parent** workspace by default. They are not visible to child tenants unless you explicitly share the notebook with them.
+    In a **multi-tenant** environment, notebooks are created in the **parent** workspace by default. They are not visible to child tenants unless you explicitly share the notebook with them.
 
 ### Basic Features
 * Markdown syntax support
@@ -71,7 +71,7 @@ Notebooks is a powerful incident response feature that allows SOC analysts to ce
 ## Notebook Templates
 
 ### Template Management
-Leverage the power of Notebooks in incident response by creating templates for different threat types:
+Enhance incident response capabilities by creating template notebooks tailored to different threat types:
 
 * Phishing investigations
 * Malware analysis
@@ -87,9 +87,9 @@ Leverage the power of Notebooks in incident response by creating templates for d
 ### Setting Default Notebook Template For Cases/Alerts
 1. Navigate to Notebook templates
 2. Select desired template
-3. Set as default for cases and alerts
+3. Set as `default` for cases and alerts
 
-The default notebook template will be suggested for use in cases and alerts, enabling the SOC team to standardize their response processes.
+The `default` notebook template will be suggested for use in cases and alerts, enabling the SOC team to standardize their response processes.
 
 ![notebook_template](/assets/operation_center/notebook_template.gif){: style="max-width:100%"}
 
@@ -119,7 +119,7 @@ The default notebook template will be suggested for use in cases and alerts, ena
 
 ### Query Builder Editor
 * Display data in tables
-* Create data visualizations: pie chart, line chart, bar chart, column chart, number
+* Create various data visualizations, including pie charts, line charts, bar charts, column charts, and numeric displays
 
 ![notebook_viz](/assets/operation_center/notebook_viz.png){: style="max-width:100%"}
 
@@ -136,14 +136,14 @@ Convert notebooks into PDF files to efficiently share incident, threat hunting, 
 * Customer-specific reporting
 * Secure information distribution
 
-Share notebooks directly with child tenants.
+Share notebooks and templates directly with child tenants to ensure secure information distribution, provide incident reports, and share best practices with customers.
 
 ![notebook_share](/assets/operation_center/notebook_share.gif){: style="max-width:100%"}
 
 ## Notebook Management
 
 ### Organization
-* Search notebooks by title
+* Use the search bar to find notebooks by their titles
 
 ### Deletion and Recovery
 * Soft delete notebooks to trash
@@ -151,7 +151,7 @@ Share notebooks directly with child tenants.
 * Permanent deletion after 30 days
 * Restore option available
 
-![notebook_share](/assets/operation_center/notebook_management.png){: style="max-width:100%"}
+![notebook_share](/assets/operation_center/notebook_delete.gif){: style="max-width:100%"}
 
 ## Best Practices
 1. Use templates for standardized investigations
