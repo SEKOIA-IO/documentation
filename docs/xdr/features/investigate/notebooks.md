@@ -31,25 +31,25 @@ Notebooks is a powerful incident response feature that allows SOC analysts to ce
 **Standalone Notebooks**
 
 * Independent notebooks for general use (threat hunting, custom reporting)
-* Accessible from the Notebooks menu
+* Accessible from the `Notebooks` menu
 
 **Context-linked Notebooks**
 
 * Attached to specific cases or alerts for incident response
-* Directly accessible from the Notebooks tab within cases or alerts
+* Directly accessible from the `Notebooks` tab within cases or alerts
 * Provides centralized investigation context
 
 ## Creating and Managing Notebooks
 
 ### Creating a New Notebook
 1. Navigate to the Notebooks tab
-2. Click "New Notebook"
+2. Click `New Notebook`
 3. Edit blank notebook or use an existing template
 
 ![notebook_blank](/assets/operation_center/notebook_case.png){: style="max-width:100%"}
 
 !!! Warning
-    In a multi-tenant environment, notebooks are created in the parent workspace by default. They are not visible to child tenants unless you explicitly share the notebook with them.
+    In a multi-tenant environment, notebooks are created in the **parent** workspace by default. They are not visible to child tenants unless you explicitly share the notebook with them.
 
 ### Basic Features
 * Markdown syntax support
