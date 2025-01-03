@@ -2,6 +2,9 @@ Changelog _last update on 2025-01-03_
 
 ## Changelog
 
+### Entra ID Password Compromised By Known Credential Testing Tool
+  - 03/01/2025 - minor - Add more correlation IDs
+    
 ### Entra ID Sign-In Via Known AiTM Phishing Kit (Mamba 2FA)
   - 23/12/2024 - major - Update the indicators.
     
@@ -319,9 +322,6 @@ Changelog _last update on 2025-01-03_
     
 ### Microsoft 365 Email Forwarding To Consumer Email Address
   - 22/04/2024 - minor - Add zohomail.com
-    
-### Entra ID Password Compromised By Known Credential Testing Tool
-  - 16/04/2024 - minor - Add more correlation IDs and error code 50052
     
 ### Discovery Commands Correlation
   - 16/04/2024 - minor - Adding new elements to increase detection.
