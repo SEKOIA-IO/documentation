@@ -309,6 +309,12 @@ The following Sekoia.io built-in rules match the intake **Microsoft Defender XDR
     
     - **Effort:** master
 
+??? abstract "Correlation Priv Esc Via Remote Thread"
+    
+    Detect a process that obtains system privilege via a remote thread
+    
+    - **Effort:** intermediate
+
 ??? abstract "Correlation Supicious Powershell Drop and Exec"
     
     Detects a PowerShell process that download and exec a payload

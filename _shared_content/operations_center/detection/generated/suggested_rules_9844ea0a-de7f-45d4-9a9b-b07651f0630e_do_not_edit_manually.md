@@ -165,6 +165,12 @@ The following Sekoia.io built-in rules match the intake **Trend Micro Vision One
     
     - **Effort:** master
 
+??? abstract "Correlation Priv Esc Via Remote Thread"
+    
+    Detect a process that obtains system privilege via a remote thread
+    
+    - **Effort:** intermediate
+
 ??? abstract "Credential Dump Tools Related Files"
     
     Detects processes or file names related to credential dumping tools and the dropped files they generate by default.

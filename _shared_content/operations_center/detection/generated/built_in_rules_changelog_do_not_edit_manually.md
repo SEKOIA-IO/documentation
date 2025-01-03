@@ -1,4 +1,4 @@
-Changelog _last update on 2024-12-26_
+Changelog _last update on 2025-01-03_
 
 ## Changelog
 
