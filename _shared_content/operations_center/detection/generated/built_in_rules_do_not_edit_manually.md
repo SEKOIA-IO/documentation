@@ -1,4 +1,4 @@
-Rules catalog includes **986 built-in detection rules** ([_last update on 2024-12-26_](rules_changelog.md)).
+Rules catalog includes **987 built-in detection rules** ([_last update on 2025-01-03_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Identity Information**
 
@@ -7045,6 +7045,12 @@ Rules catalog includes **986 built-in detection rules** ([_last update on 2024-1
     
 **Access Token Manipulation**
 
+??? abstract "Correlation Priv Esc Via Remote Thread"
+    
+    Detect a process that obtains system privilege via a remote thread
+    
+    - **Effort:** intermediate
+    
 ??? abstract "Jumpcloud Api Key Updated"
     
     An API Token has been updated on Jumplcoud portal.
@@ -8794,6 +8800,12 @@ Rules catalog includes **986 built-in detection rules** ([_last update on 2024-1
             
 **Access Token Manipulation**
 
+??? abstract "Correlation Priv Esc Via Remote Thread"
+    
+    Detect a process that obtains system privilege via a remote thread
+    
+    - **Effort:** intermediate
+    
 ??? abstract "Jumpcloud Api Key Updated"
     
     An API Token has been updated on Jumplcoud portal.
