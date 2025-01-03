@@ -10885,6 +10885,7 @@ Rules catalog includes **987 built-in detection rules** ([_last update on 2025-0
         - 05/03/2024 - minor - Rule name error was fixed
         - 09/04/2024 - minor - Error code 500532 added
         - 16/04/2024 - minor - Add more correlation IDs and error code 50052
+        - 03/01/2025 - minor - Add more correlation IDs
             
 ??? abstract "Fortigate Firewall Login In Failure"
     
