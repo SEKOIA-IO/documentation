@@ -120,6 +120,7 @@ nav:
     - Intelligence:
       - Detection: xdr/FAQ/intelligence/Detection_qa.md
       - Questions about IoC revokation: /xdr/FAQ/intelligence/revoke_ioc.md
+      - Questions about detection rules: /xdr/FAQ/intelligence/detection_rules.md
     - Assets: xdr/FAQ/Assets_qa.md
     - Sekoia.io Endpoint agent: xdr/FAQ/SEKOIA_Endpoint_Agent.md
     - Datetime representation: xdr/FAQ/datetime.md
