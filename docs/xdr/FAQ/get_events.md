@@ -26,8 +26,7 @@
 - **Playbooks:**
     - Use the **Get Events** module in a playbook to automate event retrieval based on a custom query.
     - This module simplifies the creation of automated queries to monitor specific events.
-    - Refer to our [documentation for more details](/integration/action_library/generic/sekoia-io.md#get-events).
-
+    
 
 ### 4. **How to Find Events Related to a Specific Alert or Case?**
 
