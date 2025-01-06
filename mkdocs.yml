@@ -122,6 +122,8 @@ nav:
       - Questions about IoC revokation: /xdr/FAQ/intelligence/revoke_ioc.md
       - Questions about detection rules: /xdr/FAQ/intelligence/detection_rules.md
     - Assets: xdr/FAQ/Assets_qa.md
+    - Ingestion:
+      - Delay with event ingestion or alert creation: /xdr/FAQ/ingestion/ingestion_delay.md
     - Sekoia.io Endpoint agent: xdr/FAQ/SEKOIA_Endpoint_Agent.md
     - Datetime representation: xdr/FAQ/datetime.md
   - Develop:
