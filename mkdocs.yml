@@ -119,11 +119,11 @@ nav:
       - Extract my events: xdr/FAQ/get_events.md
     - Intelligence:
       - Detection: xdr/FAQ/intelligence/Detection_qa.md
-      - Questions about IoC revokation: /xdr/FAQ/intelligence/revoke_ioc.md
-      - Questions about detection rules: /xdr/FAQ/intelligence/detection_rules.md
+      - Questions about IoC revokation: xdr/FAQ/intelligence/revoke_ioc.md
+      - Questions about detection rules: xdr/FAQ/intelligence/detection_rules.md
     - Assets: xdr/FAQ/Assets_qa.md
     - Ingestion:
-      - Delay with event ingestion or alert creation: /xdr/FAQ/ingestion/ingestion_delay.md
+      - Delay with event ingestion or alert creation: xdr/FAQ/ingestion/ingestion_delay.md
     - Sekoia.io Endpoint agent: xdr/FAQ/SEKOIA_Endpoint_Agent.md
     - Datetime representation: xdr/FAQ/datetime.md
   - Develop:
