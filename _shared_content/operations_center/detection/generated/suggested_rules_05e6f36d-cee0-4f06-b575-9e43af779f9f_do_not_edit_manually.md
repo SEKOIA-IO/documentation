@@ -531,6 +531,12 @@ The following Sekoia.io built-in rules match the intake **Microsoft Defender XDR
     
     - **Effort:** intermediate
 
+??? abstract "Elevated Msiexec Via Repair Functionality"
+    
+    Detects when msiexec.exe is used with the repair functionality. The process gains elevated privileges. Attackers can use this to exploit the CVE-2024-38014.
+    
+    - **Effort:** master
+
 ??? abstract "Elevated Shell Launched By Browser"
     
     Detects when openwith.exe is launched with privileges followed by a browser launching an elevated shell. Related to the CVE-2024-38014.
@@ -2196,6 +2202,12 @@ The following Sekoia.io built-in rules match the intake **Microsoft Defender XDR
 ??? abstract "Windows Credential Editor Registry Key"
     
     Detects the use of Windows Credential Editor (WCE). Prerequisites are logging for Registry events in the Sysmon configuration (events 12 and 13).
+    
+    - **Effort:** elementary
+
+??? abstract "Windows Defender Logging Modification Via Registry"
+    
+    Detects when the logging for defender is disabled in the registry.
     
     - **Effort:** elementary
 

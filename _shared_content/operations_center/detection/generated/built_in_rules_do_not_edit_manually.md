@@ -1,4 +1,4 @@
-Rules catalog includes **987 built-in detection rules** ([_last update on 2025-01-03_](rules_changelog.md)).
+Rules catalog includes **990 built-in detection rules** ([_last update on 2025-01-07_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Identity Information**
 
@@ -653,6 +653,12 @@ Rules catalog includes **987 built-in detection rules** ([_last update on 2025-0
 ??? abstract "ESET Protect Vulnerability Exploitation Attempt"
     
     Detects when an attempt is made to exploit a vulnerability.
+    
+    - **Effort:** master
+    
+??? abstract "Elevated Msiexec Via Repair Functionality"
+    
+    Detects when msiexec.exe is used with the repair functionality. The process gains elevated privileges. Attackers can use this to exploit the CVE-2024-38014.
     
     - **Effort:** master
     
@@ -6228,6 +6234,12 @@ Rules catalog includes **987 built-in detection rules** ([_last update on 2025-0
     
         - 11/07/2024 - minor - Added filter to reduce false positvives
             
+??? abstract "Elevated Msiexec Via Repair Functionality"
+    
+    Detects when msiexec.exe is used with the repair functionality. The process gains elevated privileges. Attackers can use this to exploit the CVE-2024-38014.
+    
+    - **Effort:** master
+    
 ??? abstract "Elevated Shell Launched By Browser"
     
     Detects when openwith.exe is launched with privileges followed by a browser launching an elevated shell. Related to the CVE-2024-38014.
@@ -7887,6 +7899,12 @@ Rules catalog includes **987 built-in detection rules** ([_last update on 2025-0
     
         - 11/07/2024 - minor - Added filter to reduce false positvives
             
+??? abstract "Elevated Msiexec Via Repair Functionality"
+    
+    Detects when msiexec.exe is used with the repair functionality. The process gains elevated privileges. Attackers can use this to exploit the CVE-2024-38014.
+    
+    - **Effort:** master
+    
 ??? abstract "Elevated Shell Launched By Browser"
     
     Detects when openwith.exe is launched with privileges followed by a browser launching an elevated shell. Related to the CVE-2024-38014.
@@ -8774,6 +8792,12 @@ Rules catalog includes **987 built-in detection rules** ([_last update on 2025-0
     
         - 08/08/2024 - major - Rule's pattern field changed and pattern improved to cause less false positives.
             
+??? abstract "Windows Defender Logging Modification Via Registry"
+    
+    Detects when the logging for defender is disabled in the registry.
+    
+    - **Effort:** elementary
+    
 **Component Object Model Hijacking**
 
 ??? abstract "Windows Registry Persistence COM Key Linking"
@@ -10228,6 +10252,12 @@ Rules catalog includes **987 built-in detection rules** ([_last update on 2025-0
     
         - 11/07/2024 - minor - Added filter to reduce false positvives
             
+??? abstract "Elevated Msiexec Via Repair Functionality"
+    
+    Detects when msiexec.exe is used with the repair functionality. The process gains elevated privileges. Attackers can use this to exploit the CVE-2024-38014.
+    
+    - **Effort:** master
+    
 ??? abstract "Elevated Shell Launched By Browser"
     
     Detects when openwith.exe is launched with privileges followed by a browser launching an elevated shell. Related to the CVE-2024-38014.
@@ -10993,6 +11023,12 @@ Rules catalog includes **987 built-in detection rules** ([_last update on 2025-0
         - 25/09/2024 - major - Rename the rule, update the indicators.
         - 23/12/2024 - major - Update the indicators.
             
+??? abstract "Entra ID Sign-In Via Known AiTM Phishing Kit (Sneaky 2FA)"
+    
+    Detects a sign-in attempt with an impossible device shift characteristic of the adversary-in-the-middle phishing kit Sneaky 2FA.
+    
+    - **Effort:** elementary
+    
 ??? abstract "Entra ID Sign-In Via Known AiTM Phishing Kit (Tycoon 2FA)"
     
     Detects a sign-in attempt with known characteristics of the adversary-in-the-middle phishing kit Tycoon 2FA.
@@ -11276,6 +11312,12 @@ Rules catalog includes **987 built-in detection rules** ([_last update on 2025-0
         - 25/09/2024 - major - Rename the rule, update the indicators.
         - 23/12/2024 - major - Update the indicators.
             
+??? abstract "Entra ID Sign-In Via Known AiTM Phishing Kit (Sneaky 2FA)"
+    
+    Detects a sign-in attempt with an impossible device shift characteristic of the adversary-in-the-middle phishing kit Sneaky 2FA.
+    
+    - **Effort:** elementary
+    
 ??? abstract "Entra ID Sign-In Via Known AiTM Phishing Kit (Tycoon 2FA)"
     
     Detects a sign-in attempt with known characteristics of the adversary-in-the-middle phishing kit Tycoon 2FA.
@@ -12426,6 +12468,12 @@ Rules catalog includes **987 built-in detection rules** ([_last update on 2025-0
         - 25/09/2024 - major - Rename the rule, update the indicators.
         - 23/12/2024 - major - Update the indicators.
             
+??? abstract "Entra ID Sign-In Via Known AiTM Phishing Kit (Sneaky 2FA)"
+    
+    Detects a sign-in attempt with an impossible device shift characteristic of the adversary-in-the-middle phishing kit Sneaky 2FA.
+    
+    - **Effort:** elementary
+    
 ??? abstract "Entra ID Sign-In Via Known AiTM Phishing Kit (Tycoon 2FA)"
     
     Detects a sign-in attempt with known characteristics of the adversary-in-the-middle phishing kit Tycoon 2FA.
