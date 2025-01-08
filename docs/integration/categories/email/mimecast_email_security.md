@@ -71,6 +71,13 @@ A secure email gateway to block spam, viruses, and malware.
 10. Validate the form and Click on **Add and Generate Keys**
 11. The wizard completes and displays a pop-up window including your `Client ID` and `Client Secret` key data.
 
+#### Activate logging
+
+1. Login to **Mimecast Administration Console**
+2. Navigate to **Account** > **Account Settings** > **Enhanced Logging**
+3. Select the Enhanced Logging option that you want:
+![mimecast_logging](/assets/integration/mimecast_logging.png){: style="max-width:100%"}
+
 ### Instruction on Sekoia
 #### Create your intake
 
