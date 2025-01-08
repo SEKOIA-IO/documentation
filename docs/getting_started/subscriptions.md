@@ -4,8 +4,9 @@ From there, they can easily track active and inactive subscriptions, allocate su
 
 To access the Subscriptions page, the pre-requisites are:
 
-- Admin role
-- Permissions: Manage the licenses of a community
+- Admins, analysts and guests can have access to the page
+- Only `Admin roles` can allocate trial and subscriptions 
+- Permissions: Read community licenses, Manage community licenses
 
 ## Single-tenant communities
 
