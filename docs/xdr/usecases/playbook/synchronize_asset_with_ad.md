@@ -38,6 +38,8 @@ Here's a screenshot of the playbook structure:
 
 ![Playbook SynchronizeAD](../../../assets/operation_center/playbooks/synchronize_with_ad.png)
 
+!!! Note
+    The manual trigger can be replaced by a Cron module for a regular execution once one confirmed it is correcly answering one's need.
 
 ### Configure the Synchronize Assets with AD Action
 
