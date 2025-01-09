@@ -35,7 +35,7 @@ To understand and test this action, you can start with a basic playbook comprisi
 
 Here's a screenshot of the playbook structure:
 
-![Playbook SynchronizeAD](../../../assets/operation_center/playbooks/synchronize_with_ad.PNG)
+![Playbook SynchronizeAD](../../../assets/operation_center/playbooks/synchronize_with_ad.png)
 
 
 ### Configure the Synchronize Assets with AD Action
