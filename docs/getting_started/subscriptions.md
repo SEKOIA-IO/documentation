@@ -58,8 +58,8 @@ A **trial** is a temporary subscription that allows users to access the platform
 
 - **Duration**: 45 days
 - **Plan**: Defend Prime
-- **Number of assets**: Up to 100 assets
-- **Retention duration**: 30 days
+- **Number of assets**: Up to 1000 assets
+- **Hot storage**: 7 days
 - **Archiving duration**: 0 days
 
 When creating a new community, a trial subscription is **automatically made available**.
