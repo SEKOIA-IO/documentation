@@ -3,6 +3,7 @@
 Sekoia's asset discovery functionality automatically creates assets based on information visible in events. Depending on your configuration or intake sources, you might have multiple assets in Sekoia corresponding to the same real user, host or account. 
 
 For example, consider the following scenarios:
+
 - **Source Log 1:** Users are identified by an ID.
 - **Source Log 2:** Users are identified by a name.
 - **Source Log 3:** Users are identified by an email address.
@@ -87,11 +88,11 @@ Using the above `Asset Synchronization Configuration`, Sekoia will create or upd
 
 - **Asset Name:** `John Doe` (from `displayName`)
 - **Detection Properties:**
-  - **Email:** `john.doe@example.com` (from `mail`)
-  - **Username:** `jdoe`, `John`, `John Doe` (from `cn`, `name`, `displayName`)
+    - **Email:** `john.doe@example.com` (from `mail`)
+    - **Username:** `jdoe`, `John`, `John Doe` (from `cn`, `name`, `displayName`)
 - **Contextual Properties:**
-  - **Title:** `Senior Developer` (from `title`)
-  - **Division:** `Engineering` (from `division`)
+    - **Title:** `Senior Developer` (from `title`)
+    - **Division:** `Engineering` (from `division`)
 
 This configuration ensures that all relevant information about "John Doe" is consolidated into a single asset in Sekoia, regardless of how the user is identified across different data sources.
 
