@@ -18,13 +18,20 @@ ProofPoint On Demand (PoD) offers a real-time email processing feed to detect, c
 
 As a prerequisite, you need to create an APIKey and to get your cluster id:
 
-Copy your cluster id. It is diplayed on the upper-right corner of your management interface, next to the release number.
-
-To create an APIKey, from our dashboard:
+To create an APIKey, from [admin.proofpoint.com](admin.proofpoint.com):
 
 - Open the menu, unfold the `Settings` section and go to `API Key Management`.
+- Select the `PoD Logging` tab
+
+![API Key creation](/assets/integration/email/proofpoint/create_api_key.png)
+
 - Click on the button `Create New` to display the `Create New API Key` dialog box.
-- Type a name and generate the API Key.
+- Type a name
+- Copy the Cluster ID
+
+![Cluster ID](/assets/integration/email/proofpoint/copy_cluster_id.png)
+
+- Click `Generate Key`
 - Select `View Details` from the ellipsis menu on the fresh API Key and copy the key.
 
 
