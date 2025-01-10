@@ -89,6 +89,7 @@ nav:
       - Events Query Language: xdr/features/investigate/events_query_language.md
       - Querying Events: xdr/features/investigate/querying_events.md
       - Query Builder (beta): xdr/features/investigate/query_builder.md
+      - Notebooks (coming soon): xdr/features/investigate/notebooks.md
     - Report:
       - Dashboards: xdr/features/report/dashboards.md
       - Threat Landscape: xdr/features/report/threat_landscape.md
@@ -616,6 +617,7 @@ plugins:
       operation_center/events.md: xdr/features/investigate/events.md
       operation_center/faq.md: xdr/FAQ.md
       operation_center/intakes.md: xdr/features/collect/intakes.md
+      operation_center/notebooks.md: xdr/features/investigate/notebooks.md
       operation_center/operators.md: xdr/features/automate/operators.md
       operation_center/playbook_overview.md: xdr/features/automate/index.md
       operation_center/rules.md: xdr/features/detect/rules_catalog.md
