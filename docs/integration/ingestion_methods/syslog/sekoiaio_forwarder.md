@@ -120,7 +120,7 @@ Please find below a template of the `docker-compose.yml` file.
 # version: "3.9"
 services:
   rsyslog:
-    image: ghcr.io/sekoia-io/sekoiaio-docker-concentrator:2.6.0
+    image: ghcr.io/sekoia-io/sekoiaio-docker-concentrator:2.7.0
     environment:
       - MEMORY_MESSAGES=2000000
       - DISK_SPACE=180g
