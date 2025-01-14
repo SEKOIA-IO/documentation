@@ -117,12 +117,6 @@ The following Sekoia.io built-in rules match the intake **Sophos EDR**. This doc
     
     - **Effort:** elementary
 
-??? abstract "RSA SecurID Failed Authentification"
-    
-    Detects many failed attempts to authenticate followed by a successfull login for a super admin account.
-    
-    - **Effort:** advanced
-
 ??? abstract "Remote Monitoring and Management Software - AnyDesk"
     
     Detect artifacts related to the installation or execution of the Remote Monitoring and Management tool AnyDesk.

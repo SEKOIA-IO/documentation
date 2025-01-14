@@ -723,12 +723,6 @@ The following Sekoia.io built-in rules match the intake **VMware ESXi**. This do
     
     - **Effort:** intermediate
 
-??? abstract "RSA SecurID Failed Authentification"
-    
-    Detects many failed attempts to authenticate followed by a successfull login for a super admin account.
-    
-    - **Effort:** advanced
-
 ??? abstract "RTLO Character"
     
     Detects RTLO (Right-To-Left character) in file and process names.

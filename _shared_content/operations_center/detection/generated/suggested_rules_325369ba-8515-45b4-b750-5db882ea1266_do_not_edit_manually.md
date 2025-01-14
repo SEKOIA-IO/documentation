@@ -261,12 +261,6 @@ The following Sekoia.io built-in rules match the intake **Sophos Firewall**. Thi
     
     - **Effort:** elementary
 
-??? abstract "RSA SecurID Failed Authentification"
-    
-    Detects many failed attempts to authenticate followed by a successfull login for a super admin account.
-    
-    - **Effort:** advanced
-
 ??? abstract "Raccoon Stealer 2.0 Legitimate Third-Party DLL Download URL"
     
     Detects Raccoon Stealer 2.0 malware downloading legitimate third-party DLLs from its C2 server. These legitimate DLLs are used by the information stealer to collect data on the compromised hosts.
