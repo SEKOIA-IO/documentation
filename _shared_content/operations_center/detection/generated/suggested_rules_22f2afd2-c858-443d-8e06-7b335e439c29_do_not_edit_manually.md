@@ -1425,12 +1425,6 @@ The following Sekoia.io built-in rules match the intake **CrowdStrike Falcon**. 
     
     - **Effort:** advanced
 
-??? abstract "RSA SecurID Failed Authentification"
-    
-    Detects many failed attempts to authenticate followed by a successfull login for a super admin account.
-    
-    - **Effort:** advanced
-
 ??? abstract "RTLO Character"
     
     Detects RTLO (Right-To-Left character) in file and process names.

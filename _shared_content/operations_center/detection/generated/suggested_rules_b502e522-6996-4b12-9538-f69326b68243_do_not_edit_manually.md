@@ -3,6 +3,12 @@
 The following Sekoia.io built-in rules match the intake **SentinelOne Singularity Identity [BETA]**. This documentation is updated automatically and is based solely on the fields used by the intake which are checked against our rules. This means that some rules will be listed but might not be relevant with the intake.
 
 [SEKOIA.IO x SentinelOne Singularity Identity [BETA] on ATT&CK Navigator](https://mitre-attack.github.io/attack-navigator/#layerURL=https%3A%2F%2Fraw.githubusercontent.com%2FSEKOIA-IO%2Fdocumentation%2Fmain%2F_shared_content%2Foperations_center%2Fdetection%2Fgenerated%2Fattack_b502e522-6996-4b12-9538-f69326b68243_do_not_edit_manually.json){ .md-button }
+??? abstract "ACLight Discovering Privileged Accounts"
+    
+    Detects use of ACLight tool. This tool aims to discover privileged accounts by scanning the network.
+    
+    - **Effort:** advanced
+
 ??? abstract "AMSI Deactivation Using Registry Key"
     
     The rule detects attempts to deactivate/disable the AMSI provider by deleting the associated registry key.
@@ -105,9 +111,21 @@ The following Sekoia.io built-in rules match the intake **SentinelOne Singularit
     
     - **Effort:** elementary
 
+??? abstract "Burp Suite Tool Detected"
+    
+    Burp Suite is a cybersecurity tool. When used as a proxy service, its purpose is to intercept packets and modify them to send them to the server. Burp Collaborator is a network service that Burp Suite uses to help discover many kinds of vulnerabilities (vulnerabilities scanner).
+    
+    - **Effort:** intermediate
+
 ??? abstract "CMSTP Execution"
     
     Detects various indicators of Microsoft Connection Manager Profile Installer execution
+    
+    - **Effort:** intermediate
+
+??? abstract "COM Hijack Via Sdclt"
+    
+    Detects changes to 'HKCU\Software\Classes\Folder\shell\open\command\DelegateExecute', to bypass UAC using 'sdclt.exe'.
     
     - **Effort:** intermediate
 
@@ -219,11 +237,35 @@ The following Sekoia.io built-in rules match the intake **SentinelOne Singularit
     
     - **Effort:** elementary
 
+??? abstract "Correlation Multi Service Disable"
+    
+    The rule detects a high number of services stopped or de-activated in a short period of time.
+    
+    - **Effort:** master
+
+??? abstract "Correlation Potential DNS Tunnel"
+    
+    Detects domain name which is longer than 95 characters. Long domain names are distinctive of DNS tunnels.
+    
+    - **Effort:** advanced
+
+??? abstract "Correlation Priv Esc Via Remote Thread"
+    
+    Detect a process that obtains system privilege via a remote thread
+    
+    - **Effort:** intermediate
+
 ??? abstract "Credential Harvesting Via Vaultcmd.exe"
     
     Detects when the process vaultcmd is used for credential harvesting.
     
     - **Effort:** advanced
+
+??? abstract "Cryptomining"
+    
+    Detection of domain names potentially related to cryptomining activities.
+    
+    - **Effort:** master
 
 ??? abstract "Csrss Wrong Parent"
     
@@ -242,6 +284,12 @@ The following Sekoia.io built-in rules match the intake **SentinelOne Singularit
     Well-known DNS exfiltration tools execution
     
     - **Effort:** intermediate
+
+??? abstract "DNS Query For Iplookup"
+    
+    Detects dns query of observables tagged as iplookup.
+    
+    - **Effort:** master
 
 ??? abstract "DNS ServerLevelPluginDll Installation"
     
@@ -303,6 +351,12 @@ The following Sekoia.io built-in rules match the intake **SentinelOne Singularit
     
     - **Effort:** advanced
 
+??? abstract "Discovery Commands Correlation"
+    
+    Detects some frequent discovery commands used by some ransomware operators.
+    
+    - **Effort:** intermediate
+
 ??? abstract "Dism Disabling Windows Defender"
     
     Detects windows defender disabled by dism.
@@ -333,6 +387,12 @@ The following Sekoia.io built-in rules match the intake **SentinelOne Singularit
     
     - **Effort:** elementary
 
+??? abstract "Dynamic DNS Contacted"
+    
+    Detect communication with dynamic dns domain. This kind of domain is often used by attackers. This rule can trigger false positive in non-controlled environment because dynamic dns is not always malicious.
+    
+    - **Effort:** master
+
 ??? abstract "Dynamic Linker Hijacking From Environment Variable"
     
     LD_PRELOAD and LD_LIBRARY_PATH are environment variables used by the Operating System at the runtime to load shared objects (library.ies) when executing a new process, attacker can overwrite this variable to attempts a privileges escalation.
@@ -344,6 +404,12 @@ The following Sekoia.io built-in rules match the intake **SentinelOne Singularit
     Detects a command that clears or disables any ETW Trace log which could indicate a logging evasion
     
     - **Effort:** intermediate
+
+??? abstract "Elevated Msiexec Via Repair Functionality"
+    
+    Detects when msiexec.exe is used with the repair functionality. The process gains elevated privileges. Attackers can use this to exploit the CVE-2024-38014.
+    
+    - **Effort:** master
 
 ??? abstract "Elise Backdoor"
     
@@ -375,6 +441,12 @@ The following Sekoia.io built-in rules match the intake **SentinelOne Singularit
     
     - **Effort:** advanced
 
+??? abstract "EvilProxy Phishing Domain"
+    
+    Detects subdomains potentially generated by the EvilProxy adversary-in-the-middle phishing platform. Inspect the other subdomains of the domain to identify the landing page, and determine if the user submitted credentials. This rule has a small percentage of false positives on legitimate domains.
+    
+    - **Effort:** intermediate
+
 ??? abstract "Exchange Mailbox Export"
     
     Detection of a standard Exchange Mailbox export, which stores all mails from a user in a pst file, from command line or PowerShell script.
@@ -392,6 +464,12 @@ The following Sekoia.io built-in rules match the intake **SentinelOne Singularit
     Execution of well known tools for data exfiltration and tunneling
     
     - **Effort:** advanced
+
+??? abstract "Exfiltration Domain"
+    
+    Detects traffic toward a domain flagged as a possible exfiltration vector.
+    
+    - **Effort:** master
 
 ??? abstract "Exfiltration Domain In Command Line"
     
@@ -477,6 +555,18 @@ The following Sekoia.io built-in rules match the intake **SentinelOne Singularit
     
     - **Effort:** intermediate
 
+??? abstract "HTA Infection Chains"
+    
+    Detect the creation of a ZIP file and an HTA file as it is often used in infection chains. Furthermore it also detects the use of suspicious processes launched by explorer.exe combined with the creation of an HTA file, since it is also often used in infection chains (LNK - HTA for instance).
+    
+    - **Effort:** advanced
+
+??? abstract "HTML Smuggling Suspicious Usage"
+    
+    Based on several samples from different botnets, this rule aims at detecting HTML infection chain by looking for HTML created files followed by suspicious files being executed.
+    
+    - **Effort:** intermediate
+
 ??? abstract "HackTools Suspicious Names"
     
     Quick-win rule to detect the default process names or file names of several HackTools.
@@ -506,6 +596,12 @@ The following Sekoia.io built-in rules match the intake **SentinelOne Singularit
     Detects suspicious icacls command granting access to all, used by the ransomware Ryuk to delete every access-based restrictions on files and directories. ICacls is a built-in Windows command to interact with the Discretionary Access Control Lists (DACLs) which can grand adversaries higher permissions on specific files and folders.
     
     - **Effort:** elementary
+
+??? abstract "ISO LNK Infection Chain"
+    
+    Detection of an ISO (or any other similar archive file) downloaded file, followed by a child-process of explorer, which is characteristic of an infection using an ISO containing an LNK file. For events with `host.name`.
+    
+    - **Effort:** intermediate
 
 ??? abstract "IcedID Execution Using Excel"
     
@@ -981,6 +1077,12 @@ The following Sekoia.io built-in rules match the intake **SentinelOne Singularit
     
     - **Effort:** elementary
 
+??? abstract "Potential DNS Tunnel"
+    
+    Detects domain name which is longer than 95 characters. Long domain names are distinctive of DNS tunnels.
+    
+    - **Effort:** advanced
+
 ??? abstract "PowerCat Function Loading"
     
     Detect a basic execution of PowerCat. PowerCat is a PowerShell function allowing to do basic connections, file transfer, shells, relays, generate payloads.
@@ -1167,11 +1269,29 @@ The following Sekoia.io built-in rules match the intake **SentinelOne Singularit
     
     - **Effort:** advanced
 
+??? abstract "Rebooting"
+    
+    Detects when forcing a computer to shutdown.
+    
+    - **Effort:** master
+
+??? abstract "Reconnaissance Commands Activities"
+    
+    Based on Cynet, Microsoft and Kaspersky analysis of Qakbot, this rule tries to detect some discovery TTPs.
+    
+    - **Effort:** intermediate
+
 ??? abstract "RedMimicry Winnti Playbook Registry Manipulation"
     
     Detects actions caused by the RedMimicry Winnti playbook. Logging for Registry events is needed in the Sysmon configuration (events 12 and 13).
     
     - **Effort:** elementary
+
+??? abstract "Remote Access Tool Domain"
+    
+    Detects traffic toward a domain flagged as a Remote Administration Tool (RAT).
+    
+    - **Effort:** master
 
 ??? abstract "Remote Monitoring and Management Software - AnyDesk"
     
@@ -1185,11 +1305,23 @@ The following Sekoia.io built-in rules match the intake **SentinelOne Singularit
     
     - **Effort:** master
 
+??? abstract "Remote System Discovery Via Telnet"
+    
+    Detects use of the protocol telnet to access information.
+    
+    - **Effort:** advanced
+
 ??? abstract "Rubeus Tool Command-line"
     
     Detects command line parameters used by Rubeus, a toolset to interact with Kerberos and abuse it.
     
     - **Effort:** advanced
+
+??? abstract "SEKOIA.IO Intelligence Feed"
+    
+    Detect threats based on indicators of compromise (IOCs) collected by SEKOIA's Threat and Detection Research team.
+    
+    - **Effort:** elementary
 
 ??? abstract "SOCKS Tunneling Tool"
     
@@ -1233,11 +1365,23 @@ The following Sekoia.io built-in rules match the intake **SentinelOne Singularit
     
     - **Effort:** master
 
+??? abstract "Sekoia.io EICAR Detection"
+    
+    Detects observables in Sekoia.io CTI tagged as EICAR, which are fake samples meant to test detection.
+    
+    - **Effort:** master
+
 ??? abstract "Shadow Copies"
     
     Detects command line used to create and list shadow copies. An adversary may attempt to get information on shadow volumes to perform deletion or extract password hashes from the ntds.dit file. This rule requires command line logging or Windows PowerShell events (4104).
     
     - **Effort:** master
+
+??? abstract "Shell PID Injection"
+    
+    Detects when shells PID are listed and injected in another process. It can be performed to reuse sudo token related to shell in order to elevate privilege and maintain persistence.
+    
+    - **Effort:** intermediate
 
 ??? abstract "Smss Wrong Parent"
     
@@ -1437,6 +1581,12 @@ The following Sekoia.io built-in rules match the intake **SentinelOne Singularit
     
     - **Effort:** intermediate
 
+??? abstract "Suspicious TOR Gateway"
+    
+    Detects suspicious TOR gateways. Gateways are often used by the victim to pay and decrypt the encrypted files without installing TOR. Tor intercepts the network traffic from one or more apps on user’s computer, usually the user web browser, and shuffles it through a number of randomly-chosen computers before passing it on to its destination. This disguises user location, and makes it harder for servers to pick him/her out on repeat visits, or to tie together separate visits to different sites, this making tracking and surveillance more difficult. Before a network packet starts its journey, user’s computer chooses a random list of relays and repeatedly encrypts the data in multiple layers, like an onion. Each relay knows only enough to strip off the outermost layer of encryption, before passing what’s left on to the next relay in the list.
+    
+    - **Effort:** advanced
+
 ??? abstract "Suspicious Taskkill Command"
     
     Detects rare taskkill command being used. It could be related to Baby Shark malware.
@@ -1448,6 +1598,12 @@ The following Sekoia.io built-in rules match the intake **SentinelOne Singularit
     Detects suspicious VBS file execution with a specific parameter by cscript. It was observed in the Operation CloudHopper.
     
     - **Effort:** elementary
+
+??? abstract "Suspicious Windows DNS Queries"
+    
+    Detects a suspicious Windows command-line process making a DNS query via known abuse text paste web services. This is based on Microsoft Windows Sysmon events (Event ID 22).
+    
+    - **Effort:** advanced
 
 ??? abstract "Suspicious Windows Installer Execution"
     
@@ -1491,6 +1647,18 @@ The following Sekoia.io built-in rules match the intake **SentinelOne Singularit
     
     - **Effort:** master
 
+??? abstract "System Network Connections Discovery"
+    
+    Detects system network connections discovery via powershell and cmd.
+    
+    - **Effort:** advanced
+
+??? abstract "TOR Usage Generic Rule"
+    
+    Detects TOR usage globally, whether the IP is a destination or source. TOR is short for The Onion Router, and it gets its name from how it works. TOR intercepts the network traffic from one or more apps on user’s computer, usually the user web browser, and shuffles it through a number of randomly-chosen computers before passing it on to its destination. This disguises user location, and makes it harder for servers to pick him/her out on repeat visits, or to tie together separate visits to different sites, this making tracking and surveillance more difficult. Before a network packet starts its journey, user’s computer chooses a random list of relays and repeatedly encrypts the data in multiple layers, like an onion. Each relay knows only enough to strip off the outermost layer of encryption, before passing what’s left on to the next relay in the list.
+    
+    - **Effort:** master
+
 ??? abstract "Taskhost Wrong Parent"
     
     Detects if the Taskhost process was executed by a non-legitimate parent process. Taskhost is the process of the Windows Task Manager which lists the processes that are currently running on the computer system.
@@ -1502,6 +1670,12 @@ The following Sekoia.io built-in rules match the intake **SentinelOne Singularit
     Detects if the Taskhostw process was executed by a non-legitimate parent process. Taskhostw is a software component of Windows service start manager, it starts DLL-based Windows services when the computer boots up.
     
     - **Effort:** master
+
+??? abstract "Telegram Bot API Request"
+    
+    Detects suspicious DNS queries to api.telegram.org used by Telegram Bots of any kind
+    
+    - **Effort:** advanced
 
 ??? abstract "UAC Bypass Via Sdclt"
     
@@ -1524,6 +1698,12 @@ The following Sekoia.io built-in rules match the intake **SentinelOne Singularit
 ??? abstract "Venom Multi-hop Proxy agent detection"
     
     Detects Venom Multi-hop Proxy agent.
+    
+    - **Effort:** intermediate
+
+??? abstract "WMI Fingerprint Commands"
+    
+    Detects attacker fingerprint activities based on the correlation of specific WMIC commands. This has been observed with Aurora malware.
     
     - **Effort:** intermediate
 
@@ -1617,6 +1797,12 @@ The following Sekoia.io built-in rules match the intake **SentinelOne Singularit
     
     - **Effort:** intermediate
 
+??? abstract "Wmic Suspicious Commands"
+    
+    Detects suspicious commands used by the process wmic to get informations on the system.
+    
+    - **Effort:** advanced
+
 ??? abstract "Wsmprovhost Wrong Parent"
     
     Detects if the Wsmprovhost process was executed by a non-legitimate parent process. The PowerShell host wsmprovhost.exe is a proxy process executed remotely through PowerShell when using Windows Remote Management (WinRM).
@@ -1634,6 +1820,12 @@ The following Sekoia.io built-in rules match the intake **SentinelOne Singularit
     Detection of an attack where adversaries may bypass application control and obscure execution of code by embedding scripts inside XSL files. Another variation of this technique, dubbed "Squiblytwo", involves to invoke JScript or VBScript within an XSL file.
     
     - **Effort:** intermediate
+
+??? abstract "ZIP LNK Infection Chain"
+    
+    Detection of an ZIP download followed by a child-process of explorer, followed by multiple Windows processes.This is widely used as an infection chain mechanism.
+    
+    - **Effort:** advanced
 
 ??? abstract "xWizard Execution"
     

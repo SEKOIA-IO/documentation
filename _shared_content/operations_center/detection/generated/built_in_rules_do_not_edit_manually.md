@@ -1,4 +1,4 @@
-Rules catalog includes **990 built-in detection rules** ([_last update on 2025-01-10_](rules_changelog.md)).
+Rules catalog includes **990 built-in detection rules** ([_last update on 2025-01-14_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Identity Information**
 
@@ -10997,6 +10997,7 @@ Rules catalog includes **990 built-in detection rules** ([_last update on 2025-0
     
     - **Changelog:**
     
+        - 14/01/2025 - minor - Adding format field to improve rules mapping
         - 08/08/2024 - minor - Group-by values were changed to avoid having too much alerts.
             
 ??? abstract "Successful Brute Force Login From Internet"
