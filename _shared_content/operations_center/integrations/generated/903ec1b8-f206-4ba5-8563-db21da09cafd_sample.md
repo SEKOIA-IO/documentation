@@ -1388,6 +1388,15 @@ In this section, you will find examples of raw logs as generated natively by the
 
 
 
+=== "test_system_event_14"
+
+
+    ```json
+	1,2024/12/16 20:19:04,016301013072,SYSTEM,auth,2561,2024/12/16 20:19:04,,auth-fail,ESA-AUTH,0,0,general,medium,"failed authentication for user john.doe. Reason: Authentication request is timed out. auth profile ESA-AUTH, vsys vsys1, server profile ESA, server address 1.2.3.4, auth protocol PAP, From: 5.6.7.8.",7439393285273531690,0x0,0,0,0,0,,FWPADC1,0,0,2024-12-16T20:19:04.851+01:00
+    ```
+
+
+
 === "test_system_event_1_json"
 
 
