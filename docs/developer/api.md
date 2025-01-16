@@ -18,18 +18,19 @@ template: overrides/openapi.html
                 "UAE1",
             ],
             urls: [
-                "https://app.sekoia.io/api/v1/dashboard/swagger.json?context=public",
-                "https://app.sekoia.io/api/v1/telemetry/openapi.json?context=public",
-                "https://app.sekoia.io/api/v1/notebooks/openapi.json?context=public",
-                "https://app.sekoia.io/api/v1/sic/conf/swagger.json?context=public",
-                "https://app.sekoia.io/api/v1/swagger.json?context=public",
-                "https://app.sekoia.io/api/v1/ingest/swagger.json?context=public",
-                "https://app.sekoia.io/api/v1/sic/swagger.json?context=public",
-                "https://app.sekoia.io/api/v1/symphony/swagger.json?context=public",
-                "https://app.sekoia.io/api/v1/enricher/swagger.json?context=tip",
-                "https://app.sekoia.io/api/v2/asset-management/openapi.json?context=public",
-                "https://app.sekoia.io/api/v1/edl-gateway/openapi.json",
-                "https://app.sekoia.io/api/v2/inthreat/swagger.json?context=public",
+                // "https://app.sekoia.io/api/v1/dashboard/swagger.json?context=public",
+                // "https://app.sekoia.io/api/v1/telemetry/openapi.json?context=public",
+                // "https://app.sekoia.io/api/v1/notebooks/openapi.json?context=public",
+                // "https://app.sekoia.io/api/v1/sic/conf/swagger.json?context=public",
+                // "https://app.sekoia.io/api/v1/swagger.json?context=public",
+                // "https://app.sekoia.io/api/v1/ingest/swagger.json?context=public",
+                // "https://app.sekoia.io/api/v1/sic/swagger.json?context=public",
+                // "https://app.sekoia.io/api/v1/symphony/swagger.json?context=public",
+                // "https://app.sekoia.io/api/v1/enricher/swagger.json?context=tip",
+                // "https://app.sekoia.io/api/v2/asset-management/openapi.json?context=public",
+                // "https://app.sekoia.io/api/v1/edl-gateway/openapi.json",
+                // "https://app.sekoia.io/api/v2/inthreat/swagger.json?context=public",
+                "/javascript/schema.json"
             ],
             menu:[
                 {
@@ -59,21 +60,19 @@ template: overrides/openapi.html
                 {
                     name: "Intelligence",
                     tags: [
-                        "Observables",
-                        "CTI Objects",
-                        "Bundles",
-                        "Collections",
-                        "Exports",
-                        "Outgoing Feeds",
-                        "Graphs",
-                        "MISP",
                         "Objects",
-                        "Observable relationships",
                         "Indicators",
-                        "Images",
-                        "support",
-                        "Labels",
+                        "Observables",
+                        "Observable relationships",
+                        "Exports",
                         "Kill Chains",
+                        "Outgoing Feeds",
+                        "Collections",
+                        "MISP",
+                        "TAXII",
+                        "Bundles",
+                        "Images",
+                        "Labels",
                     ],
                 },
                 {
@@ -86,18 +85,18 @@ template: overrides/openapi.html
                         "Intakes errors and warnings",
                         "Intakes lag and processing lag",
                         "formats",
-                        "IOC Collections",
                     ],
                 },
 
                 {
-                    name: "Detection rules",
+                    name: "Detection",
                     tags: [
                         "Rules",
                         "datasources",
                         "generation-modes",
                         "rules-catalog",
                         "alert-filter", // TODO: to create, this tag doesn't exist yet
+                        "IOC Collections",
                     ],
                 },
                 {
@@ -119,7 +118,6 @@ template: overrides/openapi.html
                     tags: [
                         "Case",
                         "Comments",
-                        "Statistics",
                         "Enrichers",
                         "Callbacks",
                         "Services",
@@ -151,6 +149,13 @@ template: overrides/openapi.html
                         "Roy tokens use telemetry",
                     ],
                 },
+                {
+                    name:"Reporting",
+                    tags: [
+                        "Intelligence statistics",
+                        "Statistics",
+                    ]
+                }
             ]
         })
     };

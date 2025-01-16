@@ -132,7 +132,7 @@ export const Property = (prop, override = {}, stack = null, level = 0) => {
             {p.maximum !== undefined && <span class='bound max'>≤ {p.maximum}</span>}
             {p.minLength !== undefined && <span class='bound min'>len ≥ {p.minLength}</span>}
             {p.maxLength !== undefined && <span class='bound max'>len ≤ {p.maxLength}</span>}
-            {p.enum?.[0] && p.enum.map(v => <span class='bound'>{v}</span>)}
+            {p.enum?.[0] && <div class='constraints'>{p.enum.map(v => <span class='bound'>{v}</span>)}</div>}
         </td>
         <td>{p.default !== undefined && `${p.default}` !== "[object Object]" && p.default} </td>
         <td class="description" width="100%">{p.description}</td>

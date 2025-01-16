@@ -313,6 +313,17 @@
                     }
                 }
 
+                .constraints {
+                    display: flex;
+                    flex-wrap: wrap;
+                    width: 23vw;
+                    white-space: normal !important;
+
+                    >* {
+                        white-space: nowrap;
+                    }
+                }
+
 
 
             }
@@ -356,7 +367,7 @@
         }
 
         td.constraints {
-            >* {
+            span {
                 background: #e6e6f1;
                 color: #12005e;
                 border-radius: 4px;
