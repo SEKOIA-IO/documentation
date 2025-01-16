@@ -1,4 +1,4 @@
-Rules catalog includes **990 built-in detection rules** ([_last update on 2025-01-15_](rules_changelog.md)).
+Rules catalog includes **990 built-in detection rules** ([_last update on 2025-01-16_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Identity Information**
 
@@ -936,6 +936,10 @@ Rules catalog includes **990 built-in detection rules** ([_last update on 2025-0
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 15/01/2025 - minor - Adding format field to improve rules mapping
+            
 ??? abstract "Trend Micro Apex One Intrusion Detection Alert"
     
     Trend Micro Apex One has raised an alert for an intrusion detection.
@@ -3191,6 +3195,7 @@ Rules catalog includes **990 built-in detection rules** ([_last update on 2025-0
     - **Changelog:**
     
         - 23/05/2024 - minor - Added filter to exclude threat dataset
+        - 16/01/2025 - minor - Adding format field to improve rules mapping
             
 ??? abstract "HarfangLab EDR Critical Threat"
     
@@ -3201,6 +3206,7 @@ Rules catalog includes **990 built-in detection rules** ([_last update on 2025-0
     - **Changelog:**
     
         - 23/12/2024 - minor - Change alert severity
+        - 16/01/2025 - minor - Adding format field to improve rules mapping
             
 ??? abstract "HarfangLab EDR High Level Rule Detection"
     
@@ -3211,6 +3217,7 @@ Rules catalog includes **990 built-in detection rules** ([_last update on 2025-0
     - **Changelog:**
     
         - 23/05/2024 - minor - Added filter to exclude threat dataset
+        - 16/01/2025 - minor - Adding format field to improve rules mapping
             
 ??? abstract "HarfangLab EDR High Threat"
     
@@ -3221,6 +3228,7 @@ Rules catalog includes **990 built-in detection rules** ([_last update on 2025-0
     - **Changelog:**
     
         - 23/12/2024 - minor - Change alert severity
+        - 16/01/2025 - minor - Adding format field to improve rules mapping
             
 ??? abstract "HarfangLab EDR Hlai Engine Detection"
     
@@ -3231,6 +3239,7 @@ Rules catalog includes **990 built-in detection rules** ([_last update on 2025-0
     - **Changelog:**
     
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+        - 16/01/2025 - minor - Adding format field to improve rules mapping
             
 ??? abstract "HarfangLab EDR Low Level Rule Detection"
     
@@ -3241,6 +3250,7 @@ Rules catalog includes **990 built-in detection rules** ([_last update on 2025-0
     - **Changelog:**
     
         - 23/05/2024 - minor - Added filter to exclude threat dataset
+        - 16/01/2025 - minor - Adding format field to improve rules mapping
             
 ??? abstract "HarfangLab EDR Low Threat"
     
@@ -3248,6 +3258,10 @@ Rules catalog includes **990 built-in detection rules** ([_last update on 2025-0
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 16/01/2025 - minor - Adding format field to improve rules mapping
+            
 ??? abstract "HarfangLab EDR Medium Level Rule Detection"
     
     HarfangLab EDR has raised an alert based on a medium level rule (not using hlai engine)
@@ -3257,6 +3271,7 @@ Rules catalog includes **990 built-in detection rules** ([_last update on 2025-0
     - **Changelog:**
     
         - 23/05/2024 - minor - Added filter to exclude threat dataset
+        - 16/01/2025 - minor - Adding format field to improve rules mapping
             
 ??? abstract "HarfangLab EDR Medium Threat"
     
@@ -3264,6 +3279,10 @@ Rules catalog includes **990 built-in detection rules** ([_last update on 2025-0
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 16/01/2025 - minor - Adding format field to improve rules mapping
+            
 ??? abstract "HarfangLab EDR Process Execution Blocked (HL-AI engine)"
     
     HarfangLab EDR's machine learning malware detection module (HL-AI) has detected a suspicious binary and blocked its execution. To know more on what caused this alert, you should check the value of the process name and the concerned computer and user.
@@ -3274,6 +3293,7 @@ Rules catalog includes **990 built-in detection rules** ([_last update on 2025-0
     
         - 10/01/2024 - major - Account for all blocks instead of only "Startup blocked". Rule name explicitly mentions HL-AI engine.
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+        - 16/01/2025 - minor - Adding format field to improve rules mapping
             
 ??? abstract "HarfangLab EDR Suspicious Process Behavior Has Been Detected"
     
@@ -3281,6 +3301,10 @@ Rules catalog includes **990 built-in detection rules** ([_last update on 2025-0
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 16/01/2025 - minor - Adding format field to improve rules mapping
+            
 ??? abstract "ISO LNK Infection Chain"
     
     Detection of an ISO (or any other similar archive file) downloaded file, followed by a child-process of explorer, which is characteristic of an infection using an ISO containing an LNK file. For events with `host.name`.
@@ -5362,6 +5386,10 @@ Rules catalog includes **990 built-in detection rules** ([_last update on 2025-0
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 15/01/2025 - minor - Adding format field to improve rules mapping
+            
 ??? abstract "Trend Micro Apex One Intrusion Detection Alert"
     
     Trend Micro Apex One has raised an alert for an intrusion detection.
