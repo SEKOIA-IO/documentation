@@ -1,18 +1,48 @@
-Changelog _last update on 2025-01-15_
+Changelog _last update on 2025-01-16_
 
 ## Changelog
 
+### HarfangLab EDR Low Level Rule Detection
+  - 16/01/2025 - minor - Adding format field to improve rules mapping
+    
+### HarfangLab EDR Medium Threat
+  - 16/01/2025 - minor - Adding format field to improve rules mapping
+    
+### HarfangLab EDR Process Execution Blocked (HL-AI engine)
+  - 16/01/2025 - minor - Adding format field to improve rules mapping
+    
+### HarfangLab EDR High Threat
+  - 16/01/2025 - minor - Adding format field to improve rules mapping
+    
+### HarfangLab EDR Low Threat
+  - 16/01/2025 - minor - Adding format field to improve rules mapping
+    
+### HarfangLab EDR High Level Rule Detection
+  - 16/01/2025 - minor - Adding format field to improve rules mapping
+    
+### HarfangLab EDR Critical Threat
+  - 16/01/2025 - minor - Adding format field to improve rules mapping
+    
+### HarfangLab EDR Critical Level Rule Detection
+  - 16/01/2025 - minor - Adding format field to improve rules mapping
+    
+### HarfangLab EDR Medium Level Rule Detection
+  - 16/01/2025 - minor - Adding format field to improve rules mapping
+    
+### HarfangLab EDR Suspicious Process Behavior Has Been Detected
+  - 16/01/2025 - minor - Adding format field to improve rules mapping
+    
+### HarfangLab EDR Hlai Engine Detection
+  - 16/01/2025 - minor - Adding format field to improve rules mapping
+    
+### SecurityScorecard Vulnerability Assessment Scanner New Issues
+  - 15/01/2025 - minor - Adding format field to improve rules mapping
+    
 ### Entra ID Password Compromised By Known Credential Testing Tool
   - 03/01/2025 - minor - Add more correlation IDs
     
 ### Entra ID Sign-In Via Known AiTM Phishing Kit (Mamba 2FA)
   - 23/12/2024 - major - Update the indicators.
-    
-### HarfangLab EDR High Threat
-  - 23/12/2024 - minor - Change alert severity
-    
-### HarfangLab EDR Critical Threat
-  - 23/12/2024 - minor - Change alert severity
     
 ### Csrss Child Found
   - 16/12/2024 - minor - Improve pattern mandatory fields and add filter to reduce false positives
@@ -289,18 +319,6 @@ Changelog _last update on 2025-01-15_
     
 ### CMSTP UAC Bypass via COM Object Access
   - 28/05/2024 - minor - Add pattern to filter to improve coverage
-    
-### HarfangLab EDR Low Level Rule Detection
-  - 23/05/2024 - minor - Added filter to exclude threat dataset
-    
-### HarfangLab EDR High Level Rule Detection
-  - 23/05/2024 - minor - Added filter to exclude threat dataset
-    
-### HarfangLab EDR Critical Level Rule Detection
-  - 23/05/2024 - minor - Added filter to exclude threat dataset
-    
-### HarfangLab EDR Medium Level Rule Detection
-  - 23/05/2024 - minor - Added filter to exclude threat dataset
     
 ### Suspicious PowerShell Keywords
   - 23/05/2024 - minor - Added filter to reduce false positives and new suspicious keywords.
@@ -695,9 +713,6 @@ Changelog _last update on 2025-01-15_
 ### Cybereason EDR Alert
   - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
     
-### HarfangLab EDR Process Execution Blocked (HL-AI engine)
-  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
-    
 ### Login Failed Brute-Force On SentinelOne EDR Management Console
   - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
     
@@ -771,9 +786,6 @@ Changelog _last update on 2025-01-15_
   - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
     
 ### SentinelOne EDR Malicious Threat Detected And Mitigated Preemptively
-  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
-    
-### HarfangLab EDR Hlai Engine Detection
   - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
     
 ### SentinelOne EDR Threat Mitigation Report Quarantine Failed
