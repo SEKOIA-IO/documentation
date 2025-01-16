@@ -19,9 +19,9 @@ jobs:
           run-id: ${{ github.event.workflow_run.id }}
 
       - run: |
-          unzip site.tar.gz.zip
           mkdir site
           tar zxvf site.tar.gz -C ./site
+          
 
       - name: Get PR number
         id: pr_number
