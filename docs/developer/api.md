@@ -30,7 +30,7 @@ template: overrides/openapi.html
                 // "https://app.sekoia.io/api/v2/asset-management/openapi.json?context=public",
                 // "https://app.sekoia.io/api/v1/edl-gateway/openapi.json",
                 // "https://app.sekoia.io/api/v2/inthreat/swagger.json?context=public",
-                "/javascript/schema.json"
+                "../../javascript/schema.json"
             ],
             menu:[
                 {
