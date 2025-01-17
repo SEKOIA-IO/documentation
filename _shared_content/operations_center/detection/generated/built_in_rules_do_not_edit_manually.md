@@ -1,4 +1,4 @@
-Rules catalog includes **990 built-in detection rules** ([_last update on 2025-01-16_](rules_changelog.md)).
+Rules catalog includes **990 built-in detection rules** ([_last update on 2025-01-17_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Identity Information**
 
@@ -2478,16 +2478,18 @@ Rules catalog includes **990 built-in detection rules** ([_last update on 2025-0
     - **Changelog:**
     
         - 14/06/2023 - minor - Added filter to the rule to reduce false positives.
+        - 17/01/2025 - major - Significant rewrite of the rule to reduce false positives.
             
 ??? abstract "Socat Reverse Shell Detection"
     
     Socat is a linux tool used to relay or open reverse shell that is often used by attacker to bypass security equipment.
     
-    - **Effort:** intermediate
+    - **Effort:** elementary
     
     - **Changelog:**
     
         - 14/06/2023 - minor - Added filter to the rule to reduce false positives.
+        - 17/01/2025 - major - Complete rewrite of the rule to reduce false positives.
             
 ??? abstract "SquirrelWaffle Malspam Execution Loading DLL"
     
@@ -6057,6 +6059,10 @@ Rules catalog includes **990 built-in detection rules** ([_last update on 2025-0
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 16/01/2025 - minor - Added filters to reduce false positives.
+            
 ??? abstract "DLL Load via LSASS Registry Key"
     
     Detects a method to load DLL via LSASS process using an undocumented Registry key. Prerequisites are logging for Registry events. This can be done with Sysmon events 12, 13 and 14 and monitor `SYSTEM\CurrentControlSet\Services`.
@@ -7665,6 +7671,10 @@ Rules catalog includes **990 built-in detection rules** ([_last update on 2025-0
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 16/01/2025 - minor - Added filters to reduce false positives.
+            
 ??? abstract "DLL Load via LSASS Registry Key"
     
     Detects a method to load DLL via LSASS process using an undocumented Registry key. Prerequisites are logging for Registry events. This can be done with Sysmon events 12, 13 and 14 and monitor `SYSTEM\CurrentControlSet\Services`.
@@ -8361,6 +8371,10 @@ Rules catalog includes **990 built-in detection rules** ([_last update on 2025-0
     
     - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 16/01/2025 - minor - Similarity strategy was changed to have better alerts grouping.
+            
 ??? abstract "Clear EventLogs Through CommandLine"
     
     Detects a command that clears event logs which could indicate an attempt from an attacker to erase its previous traces.
@@ -13198,16 +13212,18 @@ Rules catalog includes **990 built-in detection rules** ([_last update on 2025-0
     - **Changelog:**
     
         - 14/06/2023 - minor - Added filter to the rule to reduce false positives.
+        - 17/01/2025 - major - Significant rewrite of the rule to reduce false positives.
             
 ??? abstract "Socat Reverse Shell Detection"
     
     Socat is a linux tool used to relay or open reverse shell that is often used by attacker to bypass security equipment.
     
-    - **Effort:** intermediate
+    - **Effort:** elementary
     
     - **Changelog:**
     
         - 14/06/2023 - minor - Added filter to the rule to reduce false positives.
+        - 17/01/2025 - major - Complete rewrite of the rule to reduce false positives.
             
 ??? abstract "Venom Multi-hop Proxy agent detection"
     

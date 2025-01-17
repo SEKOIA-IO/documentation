@@ -183,18 +183,6 @@ The following Sekoia.io built-in rules match the intake **Windows Log Insight**.
     
     - **Effort:** master
 
-??? abstract "Socat Relaying Socket"
-    
-    Socat is a linux tool used to relay local socket or internal network connection, this technics is often used by attacker to bypass security equipment such as firewall
-    
-    - **Effort:** advanced
-
-??? abstract "Socat Reverse Shell Detection"
-    
-    Socat is a linux tool used to relay or open reverse shell that is often used by attacker to bypass security equipment.
-    
-    - **Effort:** intermediate
-
 ??? abstract "Suspicious Double Extension"
     
     Detects suspicious use of an .exe extension after a non-executable file extension like .pdf.exe, a set of spaces or underlines to cloak the executable file in spearphishing campaigns
