@@ -387,18 +387,6 @@ The following Sekoia.io built-in rules match the intake **ESET Protect [BETA]**.
     
     - **Effort:** master
 
-??? abstract "Socat Relaying Socket"
-    
-    Socat is a linux tool used to relay local socket or internal network connection, this technics is often used by attacker to bypass security equipment such as firewall
-    
-    - **Effort:** advanced
-
-??? abstract "Socat Reverse Shell Detection"
-    
-    Socat is a linux tool used to relay or open reverse shell that is often used by attacker to bypass security equipment.
-    
-    - **Effort:** intermediate
-
 ??? abstract "SolarWinds Wrong Child Process"
     
     Detects SolarWinds process starting an unusual child process. Process solarwinds.businesslayerhost.exe and solarwinds.businesslayerhostx64.exe created an unexepected child process which doesn't correspond to the legitimate ones.

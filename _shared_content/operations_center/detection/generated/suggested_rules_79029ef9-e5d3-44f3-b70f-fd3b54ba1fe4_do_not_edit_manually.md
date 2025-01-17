@@ -1141,7 +1141,7 @@ The following Sekoia.io built-in rules match the intake **Stormshield SNS**. Thi
     
     Socat is a linux tool used to relay or open reverse shell that is often used by attacker to bypass security equipment.
     
-    - **Effort:** intermediate
+    - **Effort:** elementary
 
 ??? abstract "Spyware Persistence Using Schtasks"
     

@@ -369,18 +369,6 @@ The following Sekoia.io built-in rules match the intake **Broadcom/Symantec Endp
     
     - **Effort:** master
 
-??? abstract "Socat Relaying Socket"
-    
-    Socat is a linux tool used to relay local socket or internal network connection, this technics is often used by attacker to bypass security equipment such as firewall
-    
-    - **Effort:** advanced
-
-??? abstract "Socat Reverse Shell Detection"
-    
-    Socat is a linux tool used to relay or open reverse shell that is often used by attacker to bypass security equipment.
-    
-    - **Effort:** intermediate
-
 ??? abstract "Suspicious Desktopimgdownldr Execution"
     
     Detects a suspicious Desktopimgdownldr execution. Desktopimgdownldr.exe is a Windows binary used to configure lockscreen/desktop image and can be abused to download malicious file.

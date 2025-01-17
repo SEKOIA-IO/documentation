@@ -1,7 +1,16 @@
-Changelog _last update on 2025-01-16_
+Changelog _last update on 2025-01-17_
 
 ## Changelog
 
+### Socat Reverse Shell Detection
+  - 17/01/2025 - major - Complete rewrite of the rule to reduce false positives.
+    
+### Socat Relaying Socket
+  - 17/01/2025 - major - Significant rewrite of the rule to reduce false positives.
+    
+### AWS CloudTrail KMS CMK Key Deleted
+  - 16/01/2025 - minor - Similarity strategy was changed to have better alerts grouping.
+    
 ### HarfangLab EDR Low Level Rule Detection
   - 16/01/2025 - minor - Adding format field to improve rules mapping
     
@@ -34,6 +43,9 @@ Changelog _last update on 2025-01-16_
     
 ### HarfangLab EDR Hlai Engine Detection
   - 16/01/2025 - minor - Adding format field to improve rules mapping
+    
+### Autorun Keys Modification
+  - 16/01/2025 - minor - Added filters to reduce false positives.
     
 ### SecurityScorecard Vulnerability Assessment Scanner New Issues
   - 15/01/2025 - minor - Adding format field to improve rules mapping
@@ -952,12 +964,6 @@ Changelog _last update on 2025-01-16_
     
 ### Msdt (Follina) File Browse Process Execution
   - 19/06/2023 - minor - Added filter to the rule to reduce false positives.
-    
-### Socat Reverse Shell Detection
-  - 14/06/2023 - minor - Added filter to the rule to reduce false positives.
-    
-### Socat Relaying Socket
-  - 14/06/2023 - minor - Added filter to the rule to reduce false positives.
     
 ### Raccoon Stealer 2.0 Legitimate Third-Party DLL Download URL
   - 13/06/2023 - minor - Adding private IPs as sources
