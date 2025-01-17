@@ -125,20 +125,18 @@ template: overrides/openapi.html
                     ],
                 },
                 {
-                    name: "Playbooks",
+                    name: "Automations",
                     tags: [
+                        "Playbooks",
                         "Playbook actions telemetry",
                         "modules",
                         "Action Runs",
                         "Actions",
-                        "Changes",
                         "Connector Configurations",
                         "Connectors",
                         "Module Configurations",
                         "Modules",
-                        "Node Runs",
-                        "Playbooks Runs",
-                        "Playbooks",
+                        "Runs",
                         "Trigger Configurations",
                         "Triggers",
                     ],
@@ -153,6 +151,7 @@ template: overrides/openapi.html
                     name:"Reporting",
                     tags: [
                         "Intelligence statistics",
+                        "Automation statistics",
                         "Statistics",
                     ]
                 }
