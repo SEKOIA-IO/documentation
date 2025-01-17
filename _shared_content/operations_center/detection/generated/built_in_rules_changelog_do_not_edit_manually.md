@@ -11,6 +11,9 @@ Changelog _last update on 2025-01-17_
 ### AWS CloudTrail KMS CMK Key Deleted
   - 16/01/2025 - minor - Similarity strategy was changed to have better alerts grouping.
     
+### Phishing Detected By Vade For M365 And Not Blocked
+  - 16/01/2025 - minor - Adding filter to reduce false positives.
+    
 ### HarfangLab EDR Low Level Rule Detection
   - 16/01/2025 - minor - Adding format field to improve rules mapping
     
