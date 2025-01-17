@@ -1403,10 +1403,14 @@ Rules catalog includes **990 built-in detection rules** ([_last update on 2025-0
     
 ??? abstract "Phishing Detected By Vade For M365 And Not Blocked"
     
-    Vade Secure product Vade for M365 has detected a phishing attempt and didn't move it to junk folder.
+    Vade Secure product Vade for M365 has detected a phishing attempt from an email that is not whitelisted and didn't move the email to the junk folder.
     
     - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 16/01/2025 - minor - Adding filter to reduce false positives.
+            
 ??? abstract "Possible Malicious File Double Extension"
     
     Detects request to potential malicious file with double extension
