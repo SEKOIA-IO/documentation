@@ -3319,6 +3319,7 @@ Rules catalog includes **990 built-in detection rules** ([_last update on 2025-0
     
     - **Changelog:**
     
+        - 17/01/2025 - minor - Cmdline exclusion added to filter some false positives.
         - 25/11/2024 - minor - Updating filter on file change and deletion
         - 18/11/2024 - minor - Updating filter on file change and deletion
         - 09/10/2024 - minor - File paths added to filter some false positives.
@@ -4316,6 +4317,10 @@ Rules catalog includes **990 built-in detection rules** ([_last update on 2025-0
     
     - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 17/01/2025 - minor - Adding filter to reduce false positives.
+            
 ??? abstract "Rare Lsass Child Found"
     
     Lsass ensures the identification of users (domain users or local users). Domain users are identified based on information in the Active Directory. Local users are identified based on information from the Security Account Manager (SAM) local database. This process should not create a child process or it is very rare.
@@ -5757,6 +5762,10 @@ Rules catalog includes **990 built-in detection rules** ([_last update on 2025-0
     
     - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 17/01/2025 - minor - Adding filter to reduce false positives.
+            
 ??? abstract "Rare Lsass Child Found"
     
     Lsass ensures the identification of users (domain users or local users). Domain users are identified based on information in the Active Directory. Local users are identified based on information from the Security Account Manager (SAM) local database. This process should not create a child process or it is very rare.
@@ -7369,6 +7378,10 @@ Rules catalog includes **990 built-in detection rules** ([_last update on 2025-0
     
     - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 17/01/2025 - minor - Adding filter to reduce false positives.
+            
 ??? abstract "Rare Lsass Child Found"
     
     Lsass ensures the identification of users (domain users or local users). Domain users are identified based on information in the Active Directory. Local users are identified based on information from the Security Account Manager (SAM) local database. This process should not create a child process or it is very rare.

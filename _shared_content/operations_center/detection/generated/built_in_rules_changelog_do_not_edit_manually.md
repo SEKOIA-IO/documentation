@@ -2,6 +2,9 @@ Changelog _last update on 2025-01-17_
 
 ## Changelog
 
+### Rare Logonui Child Found
+  - 17/01/2025 - minor - Adding filter to reduce false positives.
+    
 ### Socat Reverse Shell Detection
   - 17/01/2025 - major - Complete rewrite of the rule to reduce false positives.
     
