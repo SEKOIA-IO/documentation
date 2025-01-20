@@ -23,6 +23,7 @@ The Endpoint Detection Agent supports the following operating systems, **on 64-b
     * Windows Server 2016
     * Windows Server 2019
     * Windows Server 2022
+    * Windows Server 2025
 
 === "Linux"
 
