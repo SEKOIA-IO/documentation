@@ -1,4 +1,4 @@
-Rules catalog includes **990 built-in detection rules** ([_last update on 2025-01-17_](rules_changelog.md)).
+Rules catalog includes **990 built-in detection rules** ([_last update on 2025-01-21_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Identity Information**
 
@@ -2305,13 +2305,14 @@ Rules catalog includes **990 built-in detection rules** ([_last update on 2025-0
     
 ??? abstract "Python Offensive Tools and Packages"
     
-    Track installation and usage of offensive python packages and project that are used for lateral movement
+    Track installation and usage of offensive python packages and project that are used for lateral movement.
     
     - **Effort:** master
     
     - **Changelog:**
     
         - 02/10/2024 - major - Rule's pattern changed
+        - 20/01/2025 - major - Rule's pattern changed to reduce false positives.
             
 ??? abstract "QakBot Process Creation"
     
@@ -12707,13 +12708,14 @@ Rules catalog includes **990 built-in detection rules** ([_last update on 2025-0
     
 ??? abstract "Correlation Potential DNS Tunnel"
     
-    Detects domain name which is longer than 95 characters. Long domain names are distinctive of DNS tunnels.
+    Detects domain name which is longer than 62 characters and requested at least 50 times in a 10 minutes range time. Long domain names are distinctive of DNS tunnels.
     
     - **Effort:** advanced
     
     - **Changelog:**
     
         - 19/07/2023 - major - New regex pattern and new filters.
+        - 20/01/2025 - major - Update regex pattern to improve detection, decrease count number, and add more filters to avoid false positives
             
 ??? abstract "Covenant Default HTTP Beaconing"
     
@@ -13183,7 +13185,7 @@ Rules catalog includes **990 built-in detection rules** ([_last update on 2025-0
     
 ??? abstract "Potential DNS Tunnel"
     
-    Detects domain name which is longer than 95 characters. Long domain names are distinctive of DNS tunnels.
+    Detects domain name which is longer than 62 characters. Long domain names are distinctive of DNS tunnels.
     
     - **Effort:** advanced
     
@@ -13191,6 +13193,7 @@ Rules catalog includes **990 built-in detection rules** ([_last update on 2025-0
     
         - 22/06/2023 - minor - Filter some domains to reduce false positives.
         - 19/07/2023 - major - New regex pattern and new filters.
+        - 20/01/2025 - major - Update regex pattern to improve detection, and add more filters to avoid false positives
             
 ??? abstract "SOCKS Tunneling Tool"
     
@@ -13391,7 +13394,7 @@ Rules catalog includes **990 built-in detection rules** ([_last update on 2025-0
     
 ??? abstract "Potential DNS Tunnel"
     
-    Detects domain name which is longer than 95 characters. Long domain names are distinctive of DNS tunnels.
+    Detects domain name which is longer than 62 characters. Long domain names are distinctive of DNS tunnels.
     
     - **Effort:** advanced
     
@@ -13399,6 +13402,7 @@ Rules catalog includes **990 built-in detection rules** ([_last update on 2025-0
     
         - 22/06/2023 - minor - Filter some domains to reduce false positives.
         - 19/07/2023 - major - New regex pattern and new filters.
+        - 20/01/2025 - major - Update regex pattern to improve detection, and add more filters to avoid false positives
             
 ??? abstract "Powershell UploadString Function"
     
