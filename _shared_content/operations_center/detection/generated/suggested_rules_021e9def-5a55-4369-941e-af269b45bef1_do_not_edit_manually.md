@@ -1049,7 +1049,7 @@ The following Sekoia.io built-in rules match the intake **Elastic AuditBeat Linu
 
 ??? abstract "Python Offensive Tools and Packages"
     
-    Track installation and usage of offensive python packages and project that are used for lateral movement
+    Track installation and usage of offensive python packages and project that are used for lateral movement.
     
     - **Effort:** master
 

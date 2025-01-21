@@ -1,7 +1,16 @@
-Changelog _last update on 2025-01-17_
+Changelog _last update on 2025-01-21_
 
 ## Changelog
 
+### Correlation Potential DNS Tunnel
+  - 20/01/2025 - major - Update regex pattern to improve detection, decrease count number, and add more filters to avoid false positives
+    
+### Potential DNS Tunnel
+  - 20/01/2025 - major - Update regex pattern to improve detection, and add more filters to avoid false positives
+    
+### Python Offensive Tools and Packages
+  - 20/01/2025 - major - Rule's pattern changed to reduce false positives.
+    
 ### Rare Logonui Child Found
   - 17/01/2025 - minor - Adding filter to reduce false positives.
     
@@ -154,9 +163,6 @@ Changelog _last update on 2025-01-17_
     
 ### NlTest Usage
   - 10/10/2024 - minor - Adding new elements and filters to increase detection and reduce false positives.
-    
-### Python Offensive Tools and Packages
-  - 02/10/2024 - major - Rule's pattern changed
     
 ### Interactive Terminal Spawned via Python
   - 02/10/2024 - major - Rule's pattern changed
@@ -958,12 +964,6 @@ Changelog _last update on 2025-01-17_
     
 ### Wmic Process Call Creation
   - 01/08/2023 - major - Rewritten as a regex to reduce false positives
-    
-### Correlation Potential DNS Tunnel
-  - 19/07/2023 - major - New regex pattern and new filters.
-    
-### Potential DNS Tunnel
-  - 19/07/2023 - major - New regex pattern and new filters.
     
 ### HackTools Suspicious Process Names In Command Line
   - 19/06/2023 - minor - Added filter to the rule to reduce false positives.
