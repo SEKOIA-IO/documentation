@@ -83,9 +83,10 @@ const X_TAG_GROUPS = [
       "Stats",
       "Alert Status",
       "Alert Type",
-    ]
-  },{
-    name:"Cases",
+    ],
+  },
+  {
+    name: "Cases",
     tags: [
       "Case",
       "Comments",
@@ -94,7 +95,7 @@ const X_TAG_GROUPS = [
       "Callbacks",
       "Services",
       "Tasks",
-    ]
+    ],
   },
   {
     name: "Playbooks",
@@ -726,6 +727,13 @@ print(json.dumps(result, indent=4))
       ).toLowerCase() || "fra1") === (e.innerText.toLowerCase() || "fra1")
     )
       e.setAttribute("selected", true);
+  });
+
+  // Incorporate quickstart guide
+  const elApiInfo = document.querySelector(".api-content .api-info");
+  document.querySelectorAll("main article > *").forEach((x) => {
+    if (x.classList.contains("ui-spinner")) x.remove();
+    else if (x.id !== "openapi") elApiInfo.appendChild(x);
   });
 }
 
