@@ -41,6 +41,9 @@ AI Cases correlates alerts based on two main criteria:
 * Alerts targeting the same asset (account or host)
 * Related infrastructure impacts
 
+!!! Warning
+    For the moment, `unverified` assets are excluded from the Correlation criteria. We are working to remove this limitation.
+
 **Threat-based Correlation:**
 
 * Same malware

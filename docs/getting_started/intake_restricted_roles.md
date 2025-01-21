@@ -38,7 +38,7 @@ Once the `intake restricted role` is created, you can assign it to existing user
 
 ### Limited permissions
 
-With Intake restricted roles, permissions selection is limited to `alerts`, `CTI`, `Dashboards` and `events` due to the nature of this role.
+With Intake restricted roles, permissions selection is limited to `alerts`, `queries` and `events` due to the nature of this role.
 
 ### Disabling built-in roles
 
