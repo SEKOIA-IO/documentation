@@ -33,12 +33,6 @@ The following Sekoia.io built-in rules match the intake **Palo Alto NGFW**. This
     
     - **Effort:** advanced
 
-??? abstract "Bazar Loader DGA (Domain Generation Algorithm)"
-    
-    Detects Bazar Loader domains based on the Bazar Loader DGA
-    
-    - **Effort:** elementary
-
 ??? abstract "Burp Suite Tool Detected"
     
     Burp Suite is a cybersecurity tool. When used as a proxy service, its purpose is to intercept packets and modify them to send them to the server. Burp Collaborator is a network service that Burp Suite uses to help discover many kinds of vulnerabilities (vulnerabilities scanner).
@@ -300,12 +294,6 @@ The following Sekoia.io built-in rules match the intake **Palo Alto NGFW**. This
 ??? abstract "Possible Replay Attack"
     
     This event can be a sign of Kerberos replay attack or, among other things, network device configuration or routing problems.
-    
-    - **Effort:** intermediate
-
-??? abstract "Potential Azure AD Phishing Page (Adversary-in-the-Middle)"
-    
-    Detects an HTTP request to an URL typical of the Azure AD authentication flow, but towards a domain that is not one the legitimate Microsoft domains used for Azure AD authentication.
     
     - **Effort:** intermediate
 

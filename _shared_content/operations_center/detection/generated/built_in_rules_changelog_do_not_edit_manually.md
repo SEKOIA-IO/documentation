@@ -1,15 +1,45 @@
-Changelog _last update on 2025-01-21_
+Changelog _last update on 2025-01-22_
 
 ## Changelog
 
+### Tenable Identity Exposure / Alsid Critical Severity Alert
+  - 20/01/2025 - minor - Removing event fields to use the smart description
+    
+### Tenable Identity Exposure / Alsid High Severity Alert
+  - 20/01/2025 - minor - Removing event fields to use the smart description
+    
+### Microsoft Entra ID (Azure AD) Self Service Password Reset In Failure
+  - 20/01/2025 - minor - Update pattern to ECS field and specific intake field
+    
 ### Correlation Potential DNS Tunnel
   - 20/01/2025 - major - Update regex pattern to improve detection, decrease count number, and add more filters to avoid false positives
     
 ### Potential DNS Tunnel
   - 20/01/2025 - major - Update regex pattern to improve detection, and add more filters to avoid false positives
     
+### Brute-Force On Fortinet Firewall Login
+  - 20/01/2025 - minor - Update pattern to ECS field and add intake field format
+    
+### Fortigate Firewall Successful External Login
+  - 20/01/2025 - minor - Update pattern to ECS field only
+    
+### Fortigate Firewall Login In Failure
+  - 20/01/2025 - minor - Update pattern to ECS field only
+    
+### File and Directory Permissions Modification
+  - 20/01/2025 - minor - Update pattern to ECS field only
+    
+### Write To File In Systemd
+  - 20/01/2025 - minor - Update pattern to ECS field only and filter some false positives.
+    
 ### Python Offensive Tools and Packages
   - 20/01/2025 - major - Rule's pattern changed to reduce false positives.
+    
+### Write To File In Sudoers.d Folder
+  - 20/01/2025 - minor - Update pattern to ECS field only
+    
+### Setuid Or Setgid Usage
+  - 20/01/2025 - minor - Update pattern to ECS field only
     
 ### Rare Logonui Child Found
   - 17/01/2025 - minor - Adding filter to reduce false positives.
@@ -1009,7 +1039,4 @@ Changelog _last update on 2025-01-21_
     
 ### OneNote Embedded File
   - 09/02/2023 - minor - Adding other suspicious file extensions (.cmd, .img, .iso, .msi, .vhd, .vhdx) for file opened from a OneNote.
-    
-### Write To File In Systemd
-  - 04/01/2023 - minor - Added filter to reduce false positives.
     
