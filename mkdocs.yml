@@ -64,6 +64,7 @@ nav:
   - Subscriptions: getting_started/subscriptions.md
   - Usage: getting_started/usage.md
   - Sekoia regions: getting_started/regions.md
+  - Roy AI Assistant: getting_started/ai_assistant.md
   - Best practices: getting_started/best_practices.md
   - Troubleshooting tips: getting_started/get_troubleshooting_tips.md
 - Sekoia Defend (XDR):
@@ -88,8 +89,8 @@ nav:
       - Cases: xdr/features/investigate/cases.md
       - Events Query Language: xdr/features/investigate/events_query_language.md
       - Querying Events: xdr/features/investigate/querying_events.md
-      - Query Builder (beta): xdr/features/investigate/query_builder.md
-      - Notebooks (coming soon): xdr/features/investigate/notebooks.md
+      - Query Builder: xdr/features/investigate/query_builder.md
+      - Notebooks: xdr/features/investigate/notebooks.md
     - Report:
       - Dashboards: xdr/features/report/dashboards.md
       - Threat Landscape: xdr/features/report/threat_landscape.md
