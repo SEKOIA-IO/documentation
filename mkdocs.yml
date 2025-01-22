@@ -64,6 +64,7 @@ nav:
   - Subscriptions: getting_started/subscriptions.md
   - Usage: getting_started/usage.md
   - Sekoia regions: getting_started/regions.md
+  - Roy AI Assistant: getting_started/ai_assistant.md
   - Best practices: getting_started/best_practices.md
   - Troubleshooting tips: getting_started/get_troubleshooting_tips.md
 - Sekoia Defend (XDR):
