@@ -1,0 +1,4274 @@
+{
+    "openapi": "3.1.0",
+    "info": {
+        "title": "SEKOIA.IO Asset management API",
+        "description": "\n        Enumerate, manage, recognize and enrich your computers, networks, users and their behavioral activity\n        ",
+        "version": "2.0.0",
+        "x-logo": {
+            "url": "https://www.sekoia.io/wp-content/uploads/2023/02/logo-sekoia-blanc.svg"
+        }
+    },
+    "paths": {
+        "/v2/asset-management/assets": {
+            "get": {
+                "tags": [
+                    "Assets"
+                ],
+                "summary": "Search assets",
+                "description": "Search assets, returning a paginated, sorted, filtered list",
+                "operationId": "search_assets_v2_asset_management_assets_get",
+                "parameters": [
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "maximum": 100,
+                            "exclusiveMinimum": 0,
+                            "description": "Limit a number of items (allowed range is 1-100), default is 20.",
+                            "default": 20,
+                            "title": "Limit"
+                        },
+                        "description": "Limit a number of items (allowed range is 1-100), default is 20."
+                    },
+                    {
+                        "name": "offset",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "minimum": 0,
+                            "description": "A number of items to skip, default is 0.",
+                            "default": 0,
+                            "title": "Offset"
+                        },
+                        "description": "A number of items to skip, default is 0."
+                    },
+                    {
+                        "name": "search",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "anyOf": [
+                                {
+                                    "type": "string"
+                                },
+                                {
+                                    "type": "null"
+                                }
+                            ],
+                            "description": "Search assets by name",
+                            "title": "Search"
+                        },
+                        "description": "Search assets by name"
+                    },
+                    {
+                        "name": "also_search_in_detection_properties",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "boolean",
+                            "description": "Search by attached detection property too",
+                            "default": false,
+                            "title": "Also Search In Detection Properties"
+                        },
+                        "description": "Search by attached detection property too"
+                    },
+                    {
+                        "name": "also_search_in_tags",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "boolean",
+                            "description": "Search by asset tags too",
+                            "default": false,
+                            "title": "Also Search In Tags"
+                        },
+                        "description": "Search by asset tags too"
+                    },
+                    {
+                        "name": "uuids",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "anyOf": [
+                                {
+                                    "type": "string"
+                                },
+                                {
+                                    "type": "null"
+                                }
+                            ],
+                            "description": "Filter by comma-separated list of asset UUIDs",
+                            "title": "Uuids"
+                        },
+                        "description": "Filter by comma-separated list of asset UUIDs"
+                    },
+                    {
+                        "name": "community_uuids",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "anyOf": [
+                                {
+                                    "type": "string"
+                                },
+                                {
+                                    "type": "null"
+                                }
+                            ],
+                            "description": "Filter by comma-separated list of community UUIDs",
+                            "title": "Community Uuids"
+                        },
+                        "description": "Filter by comma-separated list of community UUIDs"
+                    },
+                    {
+                        "name": "type",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "anyOf": [
+                                {
+                                    "type": "string"
+                                },
+                                {
+                                    "type": "null"
+                                }
+                            ],
+                            "description": "Filter by comma-separated list of asset types",
+                            "title": "Type"
+                        },
+                        "description": "Filter by comma-separated list of asset types"
+                    },
+                    {
+                        "name": "category",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "anyOf": [
+                                {
+                                    "type": "string"
+                                },
+                                {
+                                    "type": "null"
+                                }
+                            ],
+                            "description": "Filter by comma-separated list of asset categories",
+                            "title": "Category"
+                        },
+                        "description": "Filter by comma-separated list of asset categories"
+                    },
+                    {
+                        "name": "source",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "anyOf": [
+                                {
+                                    "type": "string"
+                                },
+                                {
+                                    "type": "null"
+                                }
+                            ],
+                            "description": "Filter by comma-separated list of asset sources",
+                            "title": "Source"
+                        },
+                        "description": "Filter by comma-separated list of asset sources"
+                    },
+                    {
+                        "name": "reviewed",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "anyOf": [
+                                {
+                                    "type": "boolean"
+                                },
+                                {
+                                    "type": "null"
+                                }
+                            ],
+                            "description": "Filter reviewed assets only",
+                            "title": "Reviewed"
+                        },
+                        "description": "Filter reviewed assets only"
+                    },
+                    {
+                        "name": "criticality",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "anyOf": [
+                                {
+                                    "type": "integer"
+                                },
+                                {
+                                    "type": "null"
+                                }
+                            ],
+                            "description": "Filter assets with higher criticality",
+                            "title": "Criticality"
+                        },
+                        "description": "Filter assets with higher criticality"
+                    },
+                    {
+                        "name": "sort",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "anyOf": [
+                                {
+                                    "enum": [
+                                        "name",
+                                        "type",
+                                        "created_at",
+                                        "criticality"
+                                    ],
+                                    "type": "string"
+                                },
+                                {
+                                    "type": "null"
+                                }
+                            ],
+                            "description": "Sort criterion",
+                            "title": "Sort"
+                        },
+                        "description": "Sort criterion"
+                    },
+                    {
+                        "name": "direction",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "anyOf": [
+                                {
+                                    "enum": [
+                                        "desc",
+                                        "asc"
+                                    ],
+                                    "type": "string"
+                                },
+                                {
+                                    "type": "null"
+                                }
+                            ],
+                            "description": "Sort order",
+                            "title": "Direction"
+                        },
+                        "description": "Sort order"
+                    },
+                    {
+                        "name": "with_telemetry",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "boolean",
+                            "description": "Enrich returned assets with their telemetry statistics",
+                            "default": false,
+                            "title": "With Telemetry"
+                        },
+                        "description": "Enrich returned assets with their telemetry statistics"
+                    },
+                    {
+                        "name": "incorporate_atoms",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "boolean",
+                            "description": "Enrich returned assets with their detection properties",
+                            "default": false,
+                            "title": "Incorporate Atoms"
+                        },
+                        "description": "Enrich returned assets with their detection properties"
+                    },
+                    {
+                        "name": "include_revoked",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "boolean",
+                            "description": "Include revoked assets in the search results",
+                            "default": false,
+                            "title": "Include Revoked"
+                        },
+                        "description": "Include revoked assets in the search results"
+                    },
+                    {
+                        "name": "rule_uuid",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "anyOf": [
+                                {
+                                    "type": "string"
+                                },
+                                {
+                                    "type": "null"
+                                }
+                            ],
+                            "description": "Filter by comma-separated list of asset discovery rules UUIDs",
+                            "title": "Rule Uuid"
+                        },
+                        "description": "Filter by comma-separated list of asset discovery rules UUIDs"
+                    },
+                    {
+                        "name": "rule_version",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "anyOf": [
+                                {
+                                    "type": "string"
+                                },
+                                {
+                                    "type": "null"
+                                }
+                            ],
+                            "description": "Filter by comma-separated list of asset discovery rules versions",
+                            "title": "Rule Version"
+                        },
+                        "description": "Filter by comma-separated list of asset discovery rules versions"
+                    },
+                    {
+                        "name": "format",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "anyOf": [
+                                {
+                                    "const": "v1",
+                                    "type": "string"
+                                },
+                                {
+                                    "type": "null"
+                                }
+                            ],
+                            "description": "Format return assets using legacy Assets API v1.0 format",
+                            "title": "Format"
+                        },
+                        "description": "Format return assets using legacy Assets API v1.0 format"
+                    },
+                    {
+                        "name": "authorization",
+                        "in": "header",
+                        "required": false,
+                        "schema": {
+                            "anyOf": [
+                                {
+                                    "type": "string"
+                                },
+                                {
+                                    "type": "null"
+                                }
+                            ],
+                            "title": "Authorization"
+                        }
+                    },
+                    {
+                        "name": "access_token_cookie",
+                        "in": "cookie",
+                        "required": false,
+                        "schema": {
+                            "anyOf": [
+                                {
+                                    "type": "string"
+                                },
+                                {
+                                    "type": "null"
+                                }
+                            ],
+                            "title": "Access Token Cookie"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Paginated_AssetShortDTO_"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "User unauthorized"
+                    },
+                    "403": {
+                        "description": "Permissions required"
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Assets"
+                ],
+                "summary": "Create an asset",
+                "description": "Creates a new asset",
+                "operationId": "create_asset_v2_asset_management_assets_post",
+                "parameters": [
+                    {
+                        "name": "authorization",
+                        "in": "header",
+                        "required": false,
+                        "schema": {
+                            "anyOf": [
+                                {
+                                    "type": "string"
+                                },
+                                {
+                                    "type": "null"
+                                }
+                            ],
+                            "title": "Authorization"
+                        }
+                    },
+                    {
+                        "name": "access_token_cookie",
+                        "in": "cookie",
+                        "required": false,
+                        "schema": {
+                            "anyOf": [
+                                {
+                                    "type": "string"
+                                },
+                                {
+                                    "type": "null"
+                                }
+                            ],
+                            "title": "Access Token Cookie"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/AssetCreateDTO"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Asset successfully created",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/AssetDTO"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "User unauthorized"
+                    },
+                    "403": {
+                        "description": "Permissions required"
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v2/asset-management/assets/{uuid}": {
+            "get": {
+                "tags": [
+                    "Assets"
+                ],
+                "summary": "Get an asset",
+                "description": "Get an asset by its UUID",
+                "operationId": "get_asset_v2_asset_management_assets__uuid__get",
+                "parameters": [
+                    {
+                        "name": "uuid",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "format": "uuid",
+                            "description": "Asset's UUID",
+                            "title": "Uuid"
+                        },
+                        "description": "Asset's UUID"
+                    },
+                    {
+                        "name": "with_telemetry",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "boolean",
+                            "default": false,
+                            "title": "With Telemetry"
+                        }
+                    },
+                    {
+                        "name": "authorization",
+                        "in": "header",
+                        "required": false,
+                        "schema": {
+                            "anyOf": [
+                                {
+                                    "type": "string"
+                                },
+                                {
+                                    "type": "null"
+                                }
+                            ],
+                            "title": "Authorization"
+                        }
+                    },
+                    {
+                        "name": "access_token_cookie",
+                        "in": "cookie",
+                        "required": false,
+                        "schema": {
+                            "anyOf": [
+                                {
+                                    "type": "string"
+                                },
+                                {
+                                    "type": "null"
+                                }
+                            ],
+                            "title": "Access Token Cookie"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/AssetDTO"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "User unauthorized"
+                    },
+                    "403": {
+                        "description": "Permissions required"
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "Assets"
+                ],
+                "summary": "Edit an asset",
+                "description": "Edit the given asset's attributes",
+                "operationId": "update_asset_v2_asset_management_assets__uuid__put",
+                "parameters": [
+                    {
+                        "name": "uuid",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "format": "uuid",
+                            "description": "Asset's UUID",
+                            "title": "Uuid"
+                        },
+                        "description": "Asset's UUID"
+                    },
+                    {
+                        "name": "authorization",
+                        "in": "header",
+                        "required": false,
+                        "schema": {
+                            "anyOf": [
+                                {
+                                    "type": "string"
+                                },
+                                {
+                                    "type": "null"
+                                }
+                            ],
+                            "title": "Authorization"
+                        }
+                    },
+                    {
+                        "name": "access_token_cookie",
+                        "in": "cookie",
+                        "required": false,
+                        "schema": {
+                            "anyOf": [
+                                {
+                                    "type": "string"
+                                },
+                                {
+                                    "type": "null"
+                                }
+                            ],
+                            "title": "Access Token Cookie"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/AssetUpdateDTO"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Asset successfully updated",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/AssetDTO"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "User unauthorized"
+                    },
+                    "403": {
+                        "description": "Permissions required"
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v2/asset-management/assets/{uuid}/history": {
+            "get": {
+                "tags": [
+                    "Assets"
+                ],
+                "summary": "Get an asset's timeline",
+                "description": "Get an asset's timeline by its UUID",
+                "operationId": "get_asset_timeline_v2_asset_management_assets__uuid__history_get",
+                "parameters": [
+                    {
+                        "name": "uuid",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "format": "uuid",
+                            "description": "Asset's UUID",
+                            "title": "Uuid"
+                        },
+                        "description": "Asset's UUID"
+                    },
+                    {
+                        "name": "search",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "anyOf": [
+                                {
+                                    "type": "string"
+                                },
+                                {
+                                    "type": "null"
+                                }
+                            ],
+                            "title": "Search"
+                        }
+                    },
+                    {
+                        "name": "earliest",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "anyOf": [
+                                {
+                                    "type": "string",
+                                    "format": "date-time"
+                                },
+                                {
+                                    "type": "null"
+                                }
+                            ],
+                            "title": "Earliest"
+                        }
+                    },
+                    {
+                        "name": "latest",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "anyOf": [
+                                {
+                                    "type": "string",
+                                    "format": "date-time"
+                                },
+                                {
+                                    "type": "null"
+                                }
+                            ],
+                            "title": "Latest"
+                        }
+                    },
+                    {
+                        "name": "offset",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "default": 0,
+                            "title": "Offset"
+                        }
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "default": 100,
+                            "title": "Limit"
+                        }
+                    },
+                    {
+                        "name": "order",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "enum": [
+                                "asc",
+                                "desc"
+                            ],
+                            "type": "string",
+                            "default": "desc",
+                            "title": "Order"
+                        }
+                    },
+                    {
+                        "name": "authorization",
+                        "in": "header",
+                        "required": false,
+                        "schema": {
+                            "anyOf": [
+                                {
+                                    "type": "string"
+                                },
+                                {
+                                    "type": "null"
+                                }
+                            ],
+                            "title": "Authorization"
+                        }
+                    },
+                    {
+                        "name": "access_token_cookie",
+                        "in": "cookie",
+                        "required": false,
+                        "schema": {
+                            "anyOf": [
+                                {
+                                    "type": "string"
+                                },
+                                {
+                                    "type": "null"
+                                }
+                            ],
+                            "title": "Access Token Cookie"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Paginated_dict_date__list_AssetHistoryDTO___"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "User unauthorized"
+                    },
+                    "403": {
+                        "description": "Permissions required"
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v2/asset-management/assets/{uuid}/revoke": {
+            "put": {
+                "tags": [
+                    "Assets"
+                ],
+                "summary": "Revoke an asset",
+                "description": "Revokes the given asset",
+                "operationId": "revoke_asset_v2_asset_management_assets__uuid__revoke_put",
+                "parameters": [
+                    {
+                        "name": "uuid",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "format": "uuid",
+                            "description": "Asset's UUID",
+                            "title": "Uuid"
+                        },
+                        "description": "Asset's UUID"
+                    },
+                    {
+                        "name": "authorization",
+                        "in": "header",
+                        "required": false,
+                        "schema": {
+                            "anyOf": [
+                                {
+                                    "type": "string"
+                                },
+                                {
+                                    "type": "null"
+                                }
+                            ],
+                            "title": "Authorization"
+                        }
+                    },
+                    {
+                        "name": "access_token_cookie",
+                        "in": "cookie",
+                        "required": false,
+                        "schema": {
+                            "anyOf": [
+                                {
+                                    "type": "string"
+                                },
+                                {
+                                    "type": "null"
+                                }
+                            ],
+                            "title": "Access Token Cookie"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Asset successfully revoked",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/AssetDTO"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "User unauthorized"
+                    },
+                    "403": {
+                        "description": "Permissions required"
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v2/asset-management/assets/{uuid}/restore": {
+            "put": {
+                "tags": [
+                    "Assets"
+                ],
+                "summary": "Restore an asset",
+                "description": "Restore the given revoked asset",
+                "operationId": "restore_asset_v2_asset_management_assets__uuid__restore_put",
+                "parameters": [
+                    {
+                        "name": "uuid",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "format": "uuid",
+                            "description": "Asset's UUID",
+                            "title": "Uuid"
+                        },
+                        "description": "Asset's UUID"
+                    },
+                    {
+                        "name": "authorization",
+                        "in": "header",
+                        "required": false,
+                        "schema": {
+                            "anyOf": [
+                                {
+                                    "type": "string"
+                                },
+                                {
+                                    "type": "null"
+                                }
+                            ],
+                            "title": "Authorization"
+                        }
+                    },
+                    {
+                        "name": "access_token_cookie",
+                        "in": "cookie",
+                        "required": false,
+                        "schema": {
+                            "anyOf": [
+                                {
+                                    "type": "string"
+                                },
+                                {
+                                    "type": "null"
+                                }
+                            ],
+                            "title": "Access Token Cookie"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Asset successfully restored",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/AssetDTO"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "User unauthorized"
+                    },
+                    "403": {
+                        "description": "Permissions required"
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v2/asset-management/assets/merge": {
+            "post": {
+                "tags": [
+                    "Assets"
+                ],
+                "summary": "Merge assets",
+                "description": "Merge a list of source assets into a destination asset,\n    by attaching all source detection/contextual properties to the destination asset\n    before revoking the source assets",
+                "operationId": "merge_assets_v2_asset_management_assets_merge_post",
+                "parameters": [
+                    {
+                        "name": "authorization",
+                        "in": "header",
+                        "required": false,
+                        "schema": {
+                            "anyOf": [
+                                {
+                                    "type": "string"
+                                },
+                                {
+                                    "type": "null"
+                                }
+                            ],
+                            "title": "Authorization"
+                        }
+                    },
+                    {
+                        "name": "access_token_cookie",
+                        "in": "cookie",
+                        "required": false,
+                        "schema": {
+                            "anyOf": [
+                                {
+                                    "type": "string"
+                                },
+                                {
+                                    "type": "null"
+                                }
+                            ],
+                            "title": "Access Token Cookie"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Body_merge_assets_v2_asset_management_assets_merge_post"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Assets successfully merged",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/AssetDTO"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "User unauthorized"
+                    },
+                    "403": {
+                        "description": "Permissions required"
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v2/asset-management/assets/{uuid}/attach": {
+            "post": {
+                "tags": [
+                    "Assets"
+                ],
+                "summary": "Attach a detection property",
+                "description": "Attach a single detection property to an asset",
+                "operationId": "attach_detection_property_v2_asset_management_assets__uuid__attach_post",
+                "parameters": [
+                    {
+                        "name": "uuid",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "format": "uuid",
+                            "description": "Asset's UUID",
+                            "title": "Uuid"
+                        },
+                        "description": "Asset's UUID"
+                    },
+                    {
+                        "name": "authorization",
+                        "in": "header",
+                        "required": false,
+                        "schema": {
+                            "anyOf": [
+                                {
+                                    "type": "string"
+                                },
+                                {
+                                    "type": "null"
+                                }
+                            ],
+                            "title": "Authorization"
+                        }
+                    },
+                    {
+                        "name": "access_token_cookie",
+                        "in": "cookie",
+                        "required": false,
+                        "schema": {
+                            "anyOf": [
+                                {
+                                    "type": "string"
+                                },
+                                {
+                                    "type": "null"
+                                }
+                            ],
+                            "title": "Access Token Cookie"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Body_attach_detection_property_v2_asset_management_assets__uuid__attach_post"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "boolean",
+                                    "title": "Response Attach Detection Property V2 Asset Management Assets  Uuid  Attach Post"
+                                }
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v2/asset-management/assets/{uuid}/detach": {
+            "post": {
+                "tags": [
+                    "Assets"
+                ],
+                "summary": "Detach a detection property",
+                "description": "Detach a single detection property from an asset",
+                "operationId": "detach_detection_property_v2_asset_management_assets__uuid__detach_post",
+                "parameters": [
+                    {
+                        "name": "uuid",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "format": "uuid",
+                            "description": "Asset's UUID",
+                            "title": "Uuid"
+                        },
+                        "description": "Asset's UUID"
+                    },
+                    {
+                        "name": "authorization",
+                        "in": "header",
+                        "required": false,
+                        "schema": {
+                            "anyOf": [
+                                {
+                                    "type": "string"
+                                },
+                                {
+                                    "type": "null"
+                                }
+                            ],
+                            "title": "Authorization"
+                        }
+                    },
+                    {
+                        "name": "access_token_cookie",
+                        "in": "cookie",
+                        "required": false,
+                        "schema": {
+                            "anyOf": [
+                                {
+                                    "type": "string"
+                                },
+                                {
+                                    "type": "null"
+                                }
+                            ],
+                            "title": "Access Token Cookie"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Body_detach_detection_property_v2_asset_management_assets__uuid__detach_post"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "boolean",
+                                    "title": "Response Detach Detection Property V2 Asset Management Assets  Uuid  Detach Post"
+                                }
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v2/asset-management/assets/{uuid}/tag/{tag}": {
+            "post": {
+                "tags": [
+                    "Assets"
+                ],
+                "summary": "Add an asset tag",
+                "description": "Add an arbitrary tag to an asset",
+                "operationId": "add_asset_tag_v2_asset_management_assets__uuid__tag__tag__post",
+                "parameters": [
+                    {
+                        "name": "uuid",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "format": "uuid",
+                            "description": "Asset's UUID",
+                            "title": "Uuid"
+                        },
+                        "description": "Asset's UUID"
+                    },
+                    {
+                        "name": "tag",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "description": "Tag to add",
+                            "title": "Tag"
+                        },
+                        "description": "Tag to add"
+                    },
+                    {
+                        "name": "authorization",
+                        "in": "header",
+                        "required": false,
+                        "schema": {
+                            "anyOf": [
+                                {
+                                    "type": "string"
+                                },
+                                {
+                                    "type": "null"
+                                }
+                            ],
+                            "title": "Authorization"
+                        }
+                    },
+                    {
+                        "name": "access_token_cookie",
+                        "in": "cookie",
+                        "required": false,
+                        "schema": {
+                            "anyOf": [
+                                {
+                                    "type": "string"
+                                },
+                                {
+                                    "type": "null"
+                                }
+                            ],
+                            "title": "Access Token Cookie"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Tag successfully added",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "boolean",
+                                    "title": "Response Add Asset Tag V2 Asset Management Assets  Uuid  Tag  Tag  Post"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "User unauthorized"
+                    },
+                    "403": {
+                        "description": "Permissions required"
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "Assets"
+                ],
+                "summary": "Remove an asset tag",
+                "description": "Remove a tag from an asset",
+                "operationId": "remove_asset_tag_v2_asset_management_assets__uuid__tag__tag__delete",
+                "parameters": [
+                    {
+                        "name": "uuid",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "format": "uuid",
+                            "description": "Asset's UUID",
+                            "title": "Uuid"
+                        },
+                        "description": "Asset's UUID"
+                    },
+                    {
+                        "name": "tag",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "description": "Tag to remove",
+                            "title": "Tag"
+                        },
+                        "description": "Tag to remove"
+                    },
+                    {
+                        "name": "authorization",
+                        "in": "header",
+                        "required": false,
+                        "schema": {
+                            "anyOf": [
+                                {
+                                    "type": "string"
+                                },
+                                {
+                                    "type": "null"
+                                }
+                            ],
+                            "title": "Authorization"
+                        }
+                    },
+                    {
+                        "name": "access_token_cookie",
+                        "in": "cookie",
+                        "required": false,
+                        "schema": {
+                            "anyOf": [
+                                {
+                                    "type": "string"
+                                },
+                                {
+                                    "type": "null"
+                                }
+                            ],
+                            "title": "Access Token Cookie"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Tag successfully removed",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "boolean",
+                                    "title": "Response Remove Asset Tag V2 Asset Management Assets  Uuid  Tag  Tag  Delete"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "User unauthorized"
+                    },
+                    "403": {
+                        "description": "Permissions required"
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v2/asset-management/assets/{uuid}/prop/{prop}": {
+            "get": {
+                "tags": [
+                    "Assets"
+                ],
+                "summary": "Get an asset's contextual property",
+                "description": "Get an asset's given contextual property",
+                "operationId": "get_asset_contextual_property_v2_asset_management_assets__uuid__prop__prop__get",
+                "parameters": [
+                    {
+                        "name": "uuid",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "format": "uuid",
+                            "description": "Asset's UUID",
+                            "title": "Uuid"
+                        },
+                        "description": "Asset's UUID"
+                    },
+                    {
+                        "name": "prop",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "description": "Contextual property name",
+                            "title": "Prop"
+                        },
+                        "description": "Contextual property name"
+                    },
+                    {
+                        "name": "authorization",
+                        "in": "header",
+                        "required": false,
+                        "schema": {
+                            "anyOf": [
+                                {
+                                    "type": "string"
+                                },
+                                {
+                                    "type": "null"
+                                }
+                            ],
+                            "title": "Authorization"
+                        }
+                    },
+                    {
+                        "name": "access_token_cookie",
+                        "in": "cookie",
+                        "required": false,
+                        "schema": {
+                            "anyOf": [
+                                {
+                                    "type": "string"
+                                },
+                                {
+                                    "type": "null"
+                                }
+                            ],
+                            "title": "Access Token Cookie"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "anyOf": [
+                                        {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "string"
+                                            }
+                                        },
+                                        {
+                                            "type": "string"
+                                        },
+                                        {
+                                            "type": "null"
+                                        }
+                                    ],
+                                    "title": "Response Get Asset Contextual Property V2 Asset Management Assets  Uuid  Prop  Prop  Get"
+                                }
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Assets"
+                ],
+                "summary": "Set an asset's contextual property",
+                "description": "Set an asset's given contextual property",
+                "operationId": "set_asset_contextual_property_v2_asset_management_assets__uuid__prop__prop__post",
+                "parameters": [
+                    {
+                        "name": "uuid",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "format": "uuid",
+                            "description": "Asset's UUID",
+                            "title": "Uuid"
+                        },
+                        "description": "Asset's UUID"
+                    },
+                    {
+                        "name": "prop",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "description": "Contextual property name",
+                            "title": "Prop"
+                        },
+                        "description": "Contextual property name"
+                    },
+                    {
+                        "name": "authorization",
+                        "in": "header",
+                        "required": false,
+                        "schema": {
+                            "anyOf": [
+                                {
+                                    "type": "string"
+                                },
+                                {
+                                    "type": "null"
+                                }
+                            ],
+                            "title": "Authorization"
+                        }
+                    },
+                    {
+                        "name": "access_token_cookie",
+                        "in": "cookie",
+                        "required": false,
+                        "schema": {
+                            "anyOf": [
+                                {
+                                    "type": "string"
+                                },
+                                {
+                                    "type": "null"
+                                }
+                            ],
+                            "title": "Access Token Cookie"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "string",
+                                "title": "Value"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Prop successfully set",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "boolean",
+                                    "title": "Response Set Asset Contextual Property V2 Asset Management Assets  Uuid  Prop  Prop  Post"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "User unauthorized"
+                    },
+                    "403": {
+                        "description": "Permissions required"
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "Assets"
+                ],
+                "summary": "Remove an asset's contextual property",
+                "description": "Remove a contextual property from an asset",
+                "operationId": "remove_asset_contextual_property_v2_asset_management_assets__uuid__prop__prop__delete",
+                "parameters": [
+                    {
+                        "name": "uuid",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "format": "uuid",
+                            "description": "Asset's UUID",
+                            "title": "Uuid"
+                        },
+                        "description": "Asset's UUID"
+                    },
+                    {
+                        "name": "prop",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "description": "Contextual property name",
+                            "title": "Prop"
+                        },
+                        "description": "Contextual property name"
+                    },
+                    {
+                        "name": "authorization",
+                        "in": "header",
+                        "required": false,
+                        "schema": {
+                            "anyOf": [
+                                {
+                                    "type": "string"
+                                },
+                                {
+                                    "type": "null"
+                                }
+                            ],
+                            "title": "Authorization"
+                        }
+                    },
+                    {
+                        "name": "access_token_cookie",
+                        "in": "cookie",
+                        "required": false,
+                        "schema": {
+                            "anyOf": [
+                                {
+                                    "type": "string"
+                                },
+                                {
+                                    "type": "null"
+                                }
+                            ],
+                            "title": "Access Token Cookie"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Prop successfully removed",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "boolean",
+                                    "title": "Response Remove Asset Contextual Property V2 Asset Management Assets  Uuid  Prop  Prop  Delete"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "User unauthorized"
+                    },
+                    "403": {
+                        "description": "Permissions required"
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v2/asset-management/assets/{uuid}/recommendation": {
+            "post": {
+                "tags": [
+                    "Assets"
+                ],
+                "summary": "Add an asset recommendation",
+                "description": "Add a recommendation to an asset",
+                "operationId": "add_asset_recommendation_v2_asset_management_assets__uuid__recommendation_post",
+                "parameters": [
+                    {
+                        "name": "uuid",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "format": "uuid",
+                            "description": "Asset's UUID",
+                            "title": "Uuid"
+                        },
+                        "description": "Asset's UUID"
+                    },
+                    {
+                        "name": "authorization",
+                        "in": "header",
+                        "required": false,
+                        "schema": {
+                            "anyOf": [
+                                {
+                                    "type": "string"
+                                },
+                                {
+                                    "type": "null"
+                                }
+                            ],
+                            "title": "Authorization"
+                        }
+                    },
+                    {
+                        "name": "access_token_cookie",
+                        "in": "cookie",
+                        "required": false,
+                        "schema": {
+                            "anyOf": [
+                                {
+                                    "type": "string"
+                                },
+                                {
+                                    "type": "null"
+                                }
+                            ],
+                            "title": "Access Token Cookie"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "anyOf": [
+                                    {
+                                        "$ref": "#/components/schemas/AssetAddPropRecommendationDTO"
+                                    },
+                                    {
+                                        "$ref": "#/components/schemas/AssetAddAtomRecommendationDTO"
+                                    }
+                                ],
+                                "title": "Recommendation"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Recommendation successfully added or updated",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "anyOf": [
+                                        {
+                                            "$ref": "#/components/schemas/AssetAtomRecommendationDTO"
+                                        },
+                                        {
+                                            "$ref": "#/components/schemas/AssetPropRecommendationDTO"
+                                        }
+                                    ],
+                                    "title": "Response Add Asset Recommendation V2 Asset Management Assets  Uuid  Recommendation Post"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "User unauthorized"
+                    },
+                    "403": {
+                        "description": "Permissions required"
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v2/asset-management/assets/{uuid}/recommendation/{recommendation_uuid}": {
+            "put": {
+                "tags": [
+                    "Assets"
+                ],
+                "summary": "Edit an asset recommendation",
+                "description": "Update an asset recommendation",
+                "operationId": "update_asset_recommendation_v2_asset_management_assets__uuid__recommendation__recommendation_uuid__put",
+                "parameters": [
+                    {
+                        "name": "uuid",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "format": "uuid",
+                            "description": "Asset's UUID",
+                            "title": "Uuid"
+                        },
+                        "description": "Asset's UUID"
+                    },
+                    {
+                        "name": "recommendation_uuid",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "format": "uuid",
+                            "description": "Recommendation UUID",
+                            "title": "Recommendation Uuid"
+                        },
+                        "description": "Recommendation UUID"
+                    },
+                    {
+                        "name": "authorization",
+                        "in": "header",
+                        "required": false,
+                        "schema": {
+                            "anyOf": [
+                                {
+                                    "type": "string"
+                                },
+                                {
+                                    "type": "null"
+                                }
+                            ],
+                            "title": "Authorization"
+                        }
+                    },
+                    {
+                        "name": "access_token_cookie",
+                        "in": "cookie",
+                        "required": false,
+                        "schema": {
+                            "anyOf": [
+                                {
+                                    "type": "string"
+                                },
+                                {
+                                    "type": "null"
+                                }
+                            ],
+                            "title": "Access Token Cookie"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Body_update_asset_recommendation_v2_asset_management_assets__uuid__recommendation__recommendation_uuid__put"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Recommendation successfully updated",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "anyOf": [
+                                        {
+                                            "$ref": "#/components/schemas/AssetPropRecommendationDTO"
+                                        },
+                                        {
+                                            "$ref": "#/components/schemas/AssetAtomRecommendationDTO"
+                                        }
+                                    ],
+                                    "title": "Response Update Asset Recommendation V2 Asset Management Assets  Uuid  Recommendation  Recommendation Uuid  Put"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "User unauthorized"
+                    },
+                    "403": {
+                        "description": "Permissions required"
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "Assets"
+                ],
+                "summary": "Remove an asset recommendation",
+                "description": "Remove an asset recommendation",
+                "operationId": "remove_asset_recommendation_v2_asset_management_assets__uuid__recommendation__recommendation_uuid__delete",
+                "parameters": [
+                    {
+                        "name": "uuid",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "format": "uuid",
+                            "description": "Asset's UUID",
+                            "title": "Uuid"
+                        },
+                        "description": "Asset's UUID"
+                    },
+                    {
+                        "name": "recommendation_uuid",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "format": "uuid",
+                            "description": "Recommendation UUID",
+                            "title": "Recommendation Uuid"
+                        },
+                        "description": "Recommendation UUID"
+                    },
+                    {
+                        "name": "authorization",
+                        "in": "header",
+                        "required": false,
+                        "schema": {
+                            "anyOf": [
+                                {
+                                    "type": "string"
+                                },
+                                {
+                                    "type": "null"
+                                }
+                            ],
+                            "title": "Authorization"
+                        }
+                    },
+                    {
+                        "name": "access_token_cookie",
+                        "in": "cookie",
+                        "required": false,
+                        "schema": {
+                            "anyOf": [
+                                {
+                                    "type": "string"
+                                },
+                                {
+                                    "type": "null"
+                                }
+                            ],
+                            "title": "Access Token Cookie"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Asset recommendation successfully removed",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "integer",
+                                    "title": "Response Remove Asset Recommendation V2 Asset Management Assets  Uuid  Recommendation  Recommendation Uuid  Delete"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "User unauthorized"
+                    },
+                    "403": {
+                        "description": "Permissions required"
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v2/asset-management/assets/{uuid}/recommendations": {
+            "delete": {
+                "tags": [
+                    "Assets"
+                ],
+                "summary": "Bulk-remove asset recommendations",
+                "description": "Remove multiple recommendations from an asset",
+                "operationId": "remove_asset_recommendations_v2_asset_management_assets__uuid__recommendations_delete",
+                "parameters": [
+                    {
+                        "name": "uuid",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "format": "uuid",
+                            "description": "Asset's UUID",
+                            "title": "Uuid"
+                        },
+                        "description": "Asset's UUID"
+                    },
+                    {
+                        "name": "recommendation_uuids",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "anyOf": [
+                                {
+                                    "type": "string",
+                                    "format": "uuid"
+                                },
+                                {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "string",
+                                        "format": "uuid"
+                                    }
+                                }
+                            ],
+                            "description": "list of recommendations UUID to remove",
+                            "title": "Recommendation Uuids"
+                        },
+                        "description": "list of recommendations UUID to remove"
+                    },
+                    {
+                        "name": "authorization",
+                        "in": "header",
+                        "required": false,
+                        "schema": {
+                            "anyOf": [
+                                {
+                                    "type": "string"
+                                },
+                                {
+                                    "type": "null"
+                                }
+                            ],
+                            "title": "Authorization"
+                        }
+                    },
+                    {
+                        "name": "access_token_cookie",
+                        "in": "cookie",
+                        "required": false,
+                        "schema": {
+                            "anyOf": [
+                                {
+                                    "type": "string"
+                                },
+                                {
+                                    "type": "null"
+                                }
+                            ],
+                            "title": "Access Token Cookie"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Asset recommendation successfully removed",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "integer",
+                                    "title": "Response Remove Asset Recommendations V2 Asset Management Assets  Uuid  Recommendations Delete"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "User unauthorized"
+                    },
+                    "403": {
+                        "description": "Permissions required"
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v2/asset-management/atoms": {
+            "get": {
+                "tags": [
+                    "Assets",
+                    "Atoms"
+                ],
+                "summary": "Search atoms",
+                "description": "Search atoms, returning a paginated, sorted, filtered list",
+                "operationId": "search_atoms_v2_asset_management_atoms_get",
+                "parameters": [
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "maximum": 100,
+                            "exclusiveMinimum": 0,
+                            "description": "Limit a number of items (allowed range is 1-100), default is 20.",
+                            "default": 20,
+                            "title": "Limit"
+                        },
+                        "description": "Limit a number of items (allowed range is 1-100), default is 20."
+                    },
+                    {
+                        "name": "offset",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "minimum": 0,
+                            "description": "A number of items to skip, default is 0.",
+                            "default": 0,
+                            "title": "Offset"
+                        },
+                        "description": "A number of items to skip, default is 0."
+                    },
+                    {
+                        "name": "search",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "anyOf": [
+                                {
+                                    "type": "string"
+                                },
+                                {
+                                    "type": "null"
+                                }
+                            ],
+                            "description": "Search atoms by value",
+                            "title": "Search"
+                        },
+                        "description": "Search atoms by value"
+                    },
+                    {
+                        "name": "community_uuids",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "anyOf": [
+                                {
+                                    "type": "string"
+                                },
+                                {
+                                    "type": "null"
+                                }
+                            ],
+                            "description": "Filter by comma-separated list of community UUIDs",
+                            "title": "Community Uuids"
+                        },
+                        "description": "Filter by comma-separated list of community UUIDs"
+                    },
+                    {
+                        "name": "type",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "anyOf": [
+                                {
+                                    "type": "string"
+                                },
+                                {
+                                    "type": "null"
+                                }
+                            ],
+                            "description": "Filter by comma-separated list of atom types",
+                            "title": "Type"
+                        },
+                        "description": "Filter by comma-separated list of atom types"
+                    },
+                    {
+                        "name": "sort",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "anyOf": [
+                                {
+                                    "enum": [
+                                        "name",
+                                        "type",
+                                        "created_at"
+                                    ],
+                                    "type": "string"
+                                },
+                                {
+                                    "type": "null"
+                                }
+                            ],
+                            "description": "Sort criterion",
+                            "title": "Sort"
+                        },
+                        "description": "Sort criterion"
+                    },
+                    {
+                        "name": "direction",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "anyOf": [
+                                {
+                                    "enum": [
+                                        "desc",
+                                        "asc"
+                                    ],
+                                    "type": "string"
+                                },
+                                {
+                                    "type": "null"
+                                }
+                            ],
+                            "description": "Sort order",
+                            "title": "Direction"
+                        },
+                        "description": "Sort order"
+                    },
+                    {
+                        "name": "with_telemetry",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "boolean",
+                            "description": "Include atoms telemetry statistics in the response",
+                            "default": false,
+                            "title": "With Telemetry"
+                        },
+                        "description": "Include atoms telemetry statistics in the response"
+                    },
+                    {
+                        "name": "authorization",
+                        "in": "header",
+                        "required": false,
+                        "schema": {
+                            "anyOf": [
+                                {
+                                    "type": "string"
+                                },
+                                {
+                                    "type": "null"
+                                }
+                            ],
+                            "title": "Authorization"
+                        }
+                    },
+                    {
+                        "name": "access_token_cookie",
+                        "in": "cookie",
+                        "required": false,
+                        "schema": {
+                            "anyOf": [
+                                {
+                                    "type": "string"
+                                },
+                                {
+                                    "type": "null"
+                                }
+                            ],
+                            "title": "Access Token Cookie"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Paginated_AtomShortDTO_"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "User unauthorized"
+                    },
+                    "403": {
+                        "description": "Permissions required"
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "AssetAddAtomRecommendationDTO": {
+                "properties": {
+                    "confidence": {
+                        "anyOf": [
+                            {
+                                "type": "number"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "Confidence"
+                    },
+                    "source": {
+                        "type": "string",
+                        "title": "Source",
+                        "default": "manual"
+                    },
+                    "atom_type": {
+                        "type": "string",
+                        "title": "Atom Type"
+                    },
+                    "atom_name": {
+                        "type": "string",
+                        "title": "Atom Name"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "atom_type",
+                    "atom_name"
+                ],
+                "title": "AssetAddAtomRecommendationDTO"
+            },
+            "AssetAddPropRecommendationDTO": {
+                "properties": {
+                    "confidence": {
+                        "anyOf": [
+                            {
+                                "type": "number"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "Confidence"
+                    },
+                    "source": {
+                        "type": "string",
+                        "title": "Source",
+                        "default": "manual"
+                    },
+                    "prop": {
+                        "type": "string",
+                        "title": "Prop"
+                    },
+                    "value": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "number"
+                            },
+                            {
+                                "type": "integer"
+                            }
+                        ],
+                        "title": "Value"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "prop",
+                    "value"
+                ],
+                "title": "AssetAddPropRecommendationDTO"
+            },
+            "AssetAtomRecommendationDTO": {
+                "properties": {
+                    "confidence": {
+                        "anyOf": [
+                            {
+                                "type": "number"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "Confidence"
+                    },
+                    "created_at": {
+                        "type": "string",
+                        "format": "date-time",
+                        "title": "Created At"
+                    },
+                    "updated_at": {
+                        "type": "string",
+                        "format": "date-time",
+                        "title": "Updated At"
+                    },
+                    "source": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "Source"
+                    },
+                    "uuid": {
+                        "type": "string",
+                        "format": "uuid",
+                        "title": "Uuid"
+                    },
+                    "rule_uuid": {
+                        "anyOf": [
+                            {
+                                "type": "string",
+                                "format": "uuid"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "Rule Uuid"
+                    },
+                    "rule_version": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "Rule Version"
+                    },
+                    "status": {
+                        "type": "string",
+                        "enum": [
+                            "pending",
+                            "applied",
+                            "dismissed"
+                        ],
+                        "title": "Status"
+                    },
+                    "atom_type": {
+                        "type": "string",
+                        "title": "Atom Type"
+                    },
+                    "atom_name": {
+                        "type": "string",
+                        "title": "Atom Name"
+                    },
+                    "atom_uuid": {
+                        "type": "string",
+                        "format": "uuid",
+                        "title": "Atom Uuid"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "created_at",
+                    "updated_at",
+                    "uuid",
+                    "status",
+                    "atom_type",
+                    "atom_name",
+                    "atom_uuid"
+                ],
+                "title": "AssetAtomRecommendationDTO"
+            },
+            "AssetCreateDTO": {
+                "properties": {
+                    "uuid": {
+                        "anyOf": [
+                            {
+                                "type": "string",
+                                "format": "uuid"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "Uuid"
+                    },
+                    "community_uuid": {
+                        "type": "string",
+                        "format": "uuid",
+                        "title": "Community Uuid"
+                    },
+                    "entity_uuid": {
+                        "anyOf": [
+                            {
+                                "type": "string",
+                                "format": "uuid"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "Entity Uuid"
+                    },
+                    "name": {
+                        "type": "string",
+                        "minLength": 2,
+                        "title": "Name"
+                    },
+                    "description": {
+                        "type": "string",
+                        "title": "Description",
+                        "default": ""
+                    },
+                    "type": {
+                        "type": "string",
+                        "enum": [
+                            "host",
+                            "account",
+                            "network"
+                        ],
+                        "title": "Type"
+                    },
+                    "category": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "Category"
+                    },
+                    "criticality": {
+                        "type": "integer",
+                        "maximum": 100.0,
+                        "minimum": 0.0,
+                        "title": "Criticality",
+                        "default": 0
+                    },
+                    "props": {
+                        "anyOf": [
+                            {
+                                "type": "object"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "Props",
+                        "description": "Attach contextual properties"
+                    },
+                    "atoms": {
+                        "anyOf": [
+                            {
+                                "type": "object"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "Atoms",
+                        "description": "Attach detection properties"
+                    },
+                    "tags": {
+                        "items": {
+                            "type": "string"
+                        },
+                        "type": "array",
+                        "title": "Tags",
+                        "default": []
+                    },
+                    "reviewed": {
+                        "type": "boolean",
+                        "title": "Reviewed",
+                        "description": "Mark the asset as reviewed",
+                        "default": false
+                    },
+                    "source": {
+                        "type": "string",
+                        "enum": [
+                            "manual",
+                            "automatic",
+                            "import"
+                        ],
+                        "title": "Source",
+                        "default": "manual"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "community_uuid",
+                    "name",
+                    "type"
+                ],
+                "title": "AssetCreateDTO"
+            },
+            "AssetDTO": {
+                "properties": {
+                    "uuid": {
+                        "type": "string",
+                        "format": "uuid",
+                        "title": "Uuid"
+                    },
+                    "entity_uuid": {
+                        "anyOf": [
+                            {
+                                "type": "string",
+                                "format": "uuid"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "Entity Uuid"
+                    },
+                    "community_uuid": {
+                        "type": "string",
+                        "format": "uuid",
+                        "title": "Community Uuid"
+                    },
+                    "name": {
+                        "type": "string",
+                        "title": "Name"
+                    },
+                    "type": {
+                        "type": "string",
+                        "title": "Type"
+                    },
+                    "category": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "object"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "Category"
+                    },
+                    "criticality": {
+                        "anyOf": [
+                            {
+                                "type": "integer"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "Criticality"
+                    },
+                    "created_at": {
+                        "anyOf": [
+                            {
+                                "type": "string",
+                                "format": "date-time"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "Created At"
+                    },
+                    "created_by": {
+                        "anyOf": [
+                            {
+                                "type": "string",
+                                "format": "uuid"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "Created By"
+                    },
+                    "created_by_type": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "Created By Type"
+                    },
+                    "updated_at": {
+                        "anyOf": [
+                            {
+                                "type": "string",
+                                "format": "date-time"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "Updated At"
+                    },
+                    "first_seen": {
+                        "anyOf": [
+                            {
+                                "type": "string",
+                                "format": "date-time"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "First Seen"
+                    },
+                    "last_seen": {
+                        "anyOf": [
+                            {
+                                "type": "string",
+                                "format": "date-time"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "Last Seen"
+                    },
+                    "nb_events": {
+                        "anyOf": [
+                            {
+                                "type": "integer"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "Nb Events"
+                    },
+                    "nb_alerts": {
+                        "anyOf": [
+                            {
+                                "type": "integer"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "Nb Alerts"
+                    },
+                    "nb_atoms": {
+                        "type": "integer",
+                        "title": "Nb Atoms",
+                        "default": 0
+                    },
+                    "atoms": {
+                        "type": "object",
+                        "title": "Atoms",
+                        "default": {}
+                    },
+                    "props": {
+                        "type": "object",
+                        "title": "Props",
+                        "default": {}
+                    },
+                    "tags": {
+                        "items": {
+                            "type": "string"
+                        },
+                        "type": "array",
+                        "title": "Tags",
+                        "default": []
+                    },
+                    "revoked": {
+                        "type": "boolean",
+                        "title": "Revoked",
+                        "default": false
+                    },
+                    "revoked_at": {
+                        "anyOf": [
+                            {
+                                "type": "string",
+                                "format": "date-time"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "Revoked At"
+                    },
+                    "revoked_by": {
+                        "anyOf": [
+                            {
+                                "type": "string",
+                                "format": "uuid"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "Revoked By"
+                    },
+                    "reviewed": {
+                        "type": "boolean",
+                        "title": "Reviewed",
+                        "default": false
+                    },
+                    "reviewed_at": {
+                        "anyOf": [
+                            {
+                                "type": "string",
+                                "format": "date-time"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "Reviewed At"
+                    },
+                    "reviewed_by": {
+                        "anyOf": [
+                            {
+                                "type": "string",
+                                "format": "uuid"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "Reviewed By"
+                    },
+                    "source": {
+                        "type": "string",
+                        "enum": [
+                            "manual",
+                            "automatic",
+                            "import"
+                        ],
+                        "title": "Source",
+                        "default": "automatic"
+                    },
+                    "rule_uuid": {
+                        "anyOf": [
+                            {
+                                "type": "string",
+                                "format": "uuid"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "Rule Uuid"
+                    },
+                    "rule_version": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "Rule Version"
+                    },
+                    "criticity": {
+                        "anyOf": [
+                            {
+                                "type": "object"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "Criticity",
+                        "description": "Asset criticality (legacy compatibility with API v1.0)"
+                    },
+                    "asset_type": {
+                        "anyOf": [
+                            {
+                                "type": "object"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "Asset Type",
+                        "description": "Asset type (legacy compatibility with API v1.0)"
+                    },
+                    "description": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "Description"
+                    },
+                    "pending_recommendations": {
+                        "anyOf": [
+                            {
+                                "items": {
+                                    "anyOf": [
+                                        {
+                                            "$ref": "#/components/schemas/ShortAssetPropRecommendationDTO"
+                                        },
+                                        {
+                                            "$ref": "#/components/schemas/ShortAssetAtomRecommendationDTO"
+                                        }
+                                    ]
+                                },
+                                "type": "array"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "Pending Recommendations"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "uuid",
+                    "community_uuid",
+                    "name",
+                    "type"
+                ],
+                "title": "AssetDTO"
+            },
+            "AssetHistoryDTO": {
+                "properties": {
+                    "created_at": {
+                        "type": "string",
+                        "format": "date-time",
+                        "title": "Created At"
+                    },
+                    "created_by": {
+                        "anyOf": [
+                            {
+                                "type": "string",
+                                "format": "uuid"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "Created By"
+                    },
+                    "created_by_type": {
+                        "type": "string",
+                        "title": "Created By Type",
+                        "default": "avatar"
+                    },
+                    "message": {
+                        "type": "string",
+                        "title": "Message",
+                        "default": ""
+                    },
+                    "event_uuid": {
+                        "anyOf": [
+                            {
+                                "type": "string",
+                                "format": "uuid"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "Event Uuid",
+                        "description": "UUID of the event that generated the timeline entry"
+                    },
+                    "atom_name": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "Atom Name"
+                    },
+                    "atom_uuid": {
+                        "anyOf": [
+                            {
+                                "type": "string",
+                                "format": "uuid"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "Atom Uuid"
+                    },
+                    "atom_type": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "Atom Type"
+                    },
+                    "action": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "Action"
+                    },
+                    "fields": {
+                        "anyOf": [
+                            {
+                                "type": "object"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "Fields"
+                    },
+                    "confidence": {
+                        "anyOf": [
+                            {
+                                "type": "number"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "Confidence"
+                    },
+                    "rule_uuid": {
+                        "anyOf": [
+                            {
+                                "type": "string",
+                                "format": "uuid"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "Rule Uuid",
+                        "description": "UUID of the asset discovery rule that triggered the timeline entry"
+                    },
+                    "rule_version": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "Rule Version",
+                        "description": "Version of the asset discovery rule that triggered the timeline entry"
+                    },
+                    "rule_name": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "Rule Name"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "created_at"
+                ],
+                "title": "AssetHistoryDTO"
+            },
+            "AssetPropRecommendationDTO": {
+                "properties": {
+                    "confidence": {
+                        "anyOf": [
+                            {
+                                "type": "number"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "Confidence"
+                    },
+                    "created_at": {
+                        "type": "string",
+                        "format": "date-time",
+                        "title": "Created At"
+                    },
+                    "updated_at": {
+                        "type": "string",
+                        "format": "date-time",
+                        "title": "Updated At"
+                    },
+                    "source": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "Source"
+                    },
+                    "uuid": {
+                        "type": "string",
+                        "format": "uuid",
+                        "title": "Uuid"
+                    },
+                    "rule_uuid": {
+                        "anyOf": [
+                            {
+                                "type": "string",
+                                "format": "uuid"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "Rule Uuid"
+                    },
+                    "rule_version": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "Rule Version"
+                    },
+                    "status": {
+                        "type": "string",
+                        "enum": [
+                            "pending",
+                            "applied",
+                            "dismissed"
+                        ],
+                        "title": "Status"
+                    },
+                    "prop": {
+                        "type": "string",
+                        "title": "Prop"
+                    },
+                    "value": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "number"
+                            },
+                            {
+                                "type": "integer"
+                            }
+                        ],
+                        "title": "Value"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "created_at",
+                    "updated_at",
+                    "uuid",
+                    "status",
+                    "prop",
+                    "value"
+                ],
+                "title": "AssetPropRecommendationDTO"
+            },
+            "AssetShortDTO": {
+                "properties": {
+                    "uuid": {
+                        "type": "string",
+                        "format": "uuid",
+                        "title": "Uuid"
+                    },
+                    "entity_uuid": {
+                        "anyOf": [
+                            {
+                                "type": "string",
+                                "format": "uuid"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "Entity Uuid"
+                    },
+                    "community_uuid": {
+                        "type": "string",
+                        "format": "uuid",
+                        "title": "Community Uuid"
+                    },
+                    "name": {
+                        "type": "string",
+                        "title": "Name"
+                    },
+                    "type": {
+                        "type": "string",
+                        "title": "Type"
+                    },
+                    "category": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "object"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "Category"
+                    },
+                    "criticality": {
+                        "anyOf": [
+                            {
+                                "type": "integer"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "Criticality"
+                    },
+                    "created_at": {
+                        "anyOf": [
+                            {
+                                "type": "string",
+                                "format": "date-time"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "Created At"
+                    },
+                    "created_by": {
+                        "anyOf": [
+                            {
+                                "type": "string",
+                                "format": "uuid"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "Created By"
+                    },
+                    "created_by_type": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "Created By Type"
+                    },
+                    "updated_at": {
+                        "anyOf": [
+                            {
+                                "type": "string",
+                                "format": "date-time"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "Updated At"
+                    },
+                    "first_seen": {
+                        "anyOf": [
+                            {
+                                "type": "string",
+                                "format": "date-time"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "First Seen"
+                    },
+                    "last_seen": {
+                        "anyOf": [
+                            {
+                                "type": "string",
+                                "format": "date-time"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "Last Seen"
+                    },
+                    "nb_events": {
+                        "anyOf": [
+                            {
+                                "type": "integer"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "Nb Events"
+                    },
+                    "nb_alerts": {
+                        "anyOf": [
+                            {
+                                "type": "integer"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "Nb Alerts"
+                    },
+                    "nb_atoms": {
+                        "type": "integer",
+                        "title": "Nb Atoms",
+                        "default": 0
+                    },
+                    "atoms": {
+                        "anyOf": [
+                            {
+                                "type": "object"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "Atoms"
+                    },
+                    "props": {
+                        "anyOf": [
+                            {
+                                "type": "object"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "Props"
+                    },
+                    "tags": {
+                        "items": {
+                            "type": "string"
+                        },
+                        "type": "array",
+                        "title": "Tags",
+                        "default": []
+                    },
+                    "revoked": {
+                        "type": "boolean",
+                        "title": "Revoked",
+                        "default": false
+                    },
+                    "revoked_at": {
+                        "anyOf": [
+                            {
+                                "type": "string",
+                                "format": "date-time"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "Revoked At"
+                    },
+                    "revoked_by": {
+                        "anyOf": [
+                            {
+                                "type": "string",
+                                "format": "uuid"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "Revoked By"
+                    },
+                    "reviewed": {
+                        "type": "boolean",
+                        "title": "Reviewed",
+                        "default": false
+                    },
+                    "reviewed_at": {
+                        "anyOf": [
+                            {
+                                "type": "string",
+                                "format": "date-time"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "Reviewed At"
+                    },
+                    "reviewed_by": {
+                        "anyOf": [
+                            {
+                                "type": "string",
+                                "format": "uuid"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "Reviewed By"
+                    },
+                    "source": {
+                        "type": "string",
+                        "enum": [
+                            "manual",
+                            "automatic",
+                            "import"
+                        ],
+                        "title": "Source",
+                        "default": "automatic"
+                    },
+                    "rule_uuid": {
+                        "anyOf": [
+                            {
+                                "type": "string",
+                                "format": "uuid"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "Rule Uuid"
+                    },
+                    "rule_version": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "Rule Version"
+                    },
+                    "criticity": {
+                        "anyOf": [
+                            {
+                                "type": "object"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "Criticity",
+                        "description": "Asset criticality (legacy compatibility with API v1.0)"
+                    },
+                    "asset_type": {
+                        "anyOf": [
+                            {
+                                "type": "object"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "Asset Type",
+                        "description": "Asset type (legacy compatibility with API v1.0)"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "uuid",
+                    "community_uuid",
+                    "name",
+                    "type"
+                ],
+                "title": "AssetShortDTO"
+            },
+            "AssetUpdateDTO": {
+                "properties": {
+                    "entity_uuid": {
+                        "anyOf": [
+                            {
+                                "type": "string",
+                                "format": "uuid"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "Entity Uuid"
+                    },
+                    "name": {
+                        "anyOf": [
+                            {
+                                "type": "string",
+                                "minLength": 2
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "Name"
+                    },
+                    "description": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "Description"
+                    },
+                    "type": {
+                        "anyOf": [
+                            {
+                                "type": "string",
+                                "enum": [
+                                    "host",
+                                    "account",
+                                    "network"
+                                ]
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "Type"
+                    },
+                    "category": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "Category"
+                    },
+                    "criticality": {
+                        "anyOf": [
+                            {
+                                "type": "integer",
+                                "maximum": 100.0,
+                                "minimum": 0.0
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "Criticality"
+                    },
+                    "props": {
+                        "anyOf": [
+                            {
+                                "type": "object"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "Props",
+                        "description": "Attach contextual properties"
+                    },
+                    "atoms": {
+                        "anyOf": [
+                            {
+                                "type": "object"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "Atoms",
+                        "description": "Attach detection properties"
+                    },
+                    "tags": {
+                        "anyOf": [
+                            {
+                                "items": {
+                                    "type": "string"
+                                },
+                                "type": "array"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "Tags"
+                    },
+                    "revoked": {
+                        "anyOf": [
+                            {
+                                "type": "boolean"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "Revoked",
+                        "description": "Mark the asset as revoked"
+                    },
+                    "reviewed": {
+                        "anyOf": [
+                            {
+                                "type": "boolean"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "Reviewed",
+                        "description": "Mark the asset as reviewed"
+                    }
+                },
+                "type": "object",
+                "title": "AssetUpdateDTO"
+            },
+            "AtomShortDTO": {
+                "properties": {
+                    "uuid": {
+                        "type": "string",
+                        "format": "uuid",
+                        "title": "Uuid"
+                    },
+                    "community_uuid": {
+                        "anyOf": [
+                            {
+                                "type": "string",
+                                "format": "uuid"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "Community Uuid"
+                    },
+                    "entity_uuid": {
+                        "anyOf": [
+                            {
+                                "type": "string",
+                                "format": "uuid"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "Entity Uuid"
+                    },
+                    "name": {
+                        "type": "string",
+                        "title": "Name"
+                    },
+                    "type": {
+                        "type": "string",
+                        "title": "Type"
+                    },
+                    "created_at": {
+                        "anyOf": [
+                            {
+                                "type": "string",
+                                "format": "date-time"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "Created At"
+                    },
+                    "first_seen": {
+                        "anyOf": [
+                            {
+                                "type": "string",
+                                "format": "date-time"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "First Seen"
+                    },
+                    "last_seen": {
+                        "anyOf": [
+                            {
+                                "type": "string",
+                                "format": "date-time"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "Last Seen"
+                    },
+                    "nb_events": {
+                        "anyOf": [
+                            {
+                                "type": "integer"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "Nb Events"
+                    },
+                    "asset_uuid": {
+                        "anyOf": [
+                            {
+                                "type": "string",
+                                "format": "uuid"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "Asset Uuid"
+                    },
+                    "asset_name": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "Asset Name"
+                    },
+                    "asset_type": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "Asset Type"
+                    },
+                    "asset_criticality": {
+                        "anyOf": [
+                            {
+                                "type": "integer"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "Asset Criticality"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "uuid",
+                    "name",
+                    "type"
+                ],
+                "title": "AtomShortDTO"
+            },
+            "Body_attach_detection_property_v2_asset_management_assets__uuid__attach_post": {
+                "properties": {
+                    "atom_type": {
+                        "type": "string",
+                        "title": "Atom Type",
+                        "description": "Detection property type"
+                    },
+                    "atom": {
+                        "type": "string",
+                        "title": "Atom",
+                        "description": "Detection property value"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "atom_type",
+                    "atom"
+                ],
+                "title": "Body_attach_detection_property_v2_asset_management_assets__uuid__attach_post"
+            },
+            "Body_detach_detection_property_v2_asset_management_assets__uuid__detach_post": {
+                "properties": {
+                    "atom_type": {
+                        "type": "string",
+                        "title": "Atom Type",
+                        "description": "Detection property type"
+                    },
+                    "atom": {
+                        "type": "string",
+                        "title": "Atom",
+                        "description": "Detection property value"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "atom_type",
+                    "atom"
+                ],
+                "title": "Body_detach_detection_property_v2_asset_management_assets__uuid__detach_post"
+            },
+            "Body_merge_assets_v2_asset_management_assets_merge_post": {
+                "properties": {
+                    "destination": {
+                        "type": "string",
+                        "format": "uuid",
+                        "title": "Destination",
+                        "description": "UUID of the asset that will receive all source assets' properties"
+                    },
+                    "sources": {
+                        "items": {
+                            "type": "string",
+                            "format": "uuid"
+                        },
+                        "type": "array",
+                        "title": "Sources",
+                        "description": "A list of asset UUIDs whose properties will be merged into the destination asset"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "destination",
+                    "sources"
+                ],
+                "title": "Body_merge_assets_v2_asset_management_assets_merge_post"
+            },
+            "Body_update_asset_recommendation_v2_asset_management_assets__uuid__recommendation__recommendation_uuid__put": {
+                "properties": {
+                    "status": {
+                        "anyOf": [
+                            {
+                                "type": "string",
+                                "enum": [
+                                    "pending",
+                                    "applied",
+                                    "dismissed"
+                                ]
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "Status"
+                    }
+                },
+                "type": "object",
+                "title": "Body_update_asset_recommendation_v2_asset_management_assets__uuid__recommendation__recommendation_uuid__put"
+            },
+            "HTTPValidationError": {
+                "properties": {
+                    "detail": {
+                        "items": {
+                            "$ref": "#/components/schemas/ValidationError"
+                        },
+                        "type": "array",
+                        "title": "Detail"
+                    }
+                },
+                "type": "object",
+                "title": "HTTPValidationError"
+            },
+            "Paginated_AssetShortDTO_": {
+                "properties": {
+                    "total": {
+                        "type": "integer",
+                        "title": "Total"
+                    },
+                    "items": {
+                        "items": {
+                            "$ref": "#/components/schemas/AssetShortDTO"
+                        },
+                        "type": "array",
+                        "title": "Items"
+                    }
+                },
+                "additionalProperties": false,
+                "type": "object",
+                "required": [
+                    "total",
+                    "items"
+                ],
+                "title": "Paginated[AssetShortDTO]"
+            },
+            "Paginated_AtomShortDTO_": {
+                "properties": {
+                    "total": {
+                        "type": "integer",
+                        "title": "Total"
+                    },
+                    "items": {
+                        "items": {
+                            "$ref": "#/components/schemas/AtomShortDTO"
+                        },
+                        "type": "array",
+                        "title": "Items"
+                    }
+                },
+                "additionalProperties": false,
+                "type": "object",
+                "required": [
+                    "total",
+                    "items"
+                ],
+                "title": "Paginated[AtomShortDTO]"
+            },
+            "Paginated_dict_date__list_AssetHistoryDTO___": {
+                "properties": {
+                    "total": {
+                        "type": "integer",
+                        "title": "Total"
+                    },
+                    "items": {
+                        "items": {
+                            "additionalProperties": {
+                                "items": {
+                                    "$ref": "#/components/schemas/AssetHistoryDTO"
+                                },
+                                "type": "array"
+                            },
+                            "propertyNames": {
+                                "format": "date"
+                            },
+                            "type": "object"
+                        },
+                        "type": "array",
+                        "title": "Items"
+                    }
+                },
+                "additionalProperties": false,
+                "type": "object",
+                "required": [
+                    "total",
+                    "items"
+                ],
+                "title": "Paginated[dict[date, list[AssetHistoryDTO]]]"
+            },
+            "ShortAssetAtomRecommendationDTO": {
+                "properties": {
+                    "confidence": {
+                        "anyOf": [
+                            {
+                                "type": "number"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "Confidence"
+                    },
+                    "created_at": {
+                        "type": "string",
+                        "format": "date-time",
+                        "title": "Created At"
+                    },
+                    "updated_at": {
+                        "type": "string",
+                        "format": "date-time",
+                        "title": "Updated At"
+                    },
+                    "source": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "Source"
+                    },
+                    "uuid": {
+                        "type": "string",
+                        "format": "uuid",
+                        "title": "Uuid"
+                    },
+                    "rule_uuid": {
+                        "anyOf": [
+                            {
+                                "type": "string",
+                                "format": "uuid"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "Rule Uuid"
+                    },
+                    "rule_version": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "Rule Version"
+                    },
+                    "atom_type": {
+                        "type": "string",
+                        "title": "Atom Type"
+                    },
+                    "atom_name": {
+                        "type": "string",
+                        "title": "Atom Name"
+                    },
+                    "atom_uuid": {
+                        "type": "string",
+                        "format": "uuid",
+                        "title": "Atom Uuid"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "created_at",
+                    "updated_at",
+                    "uuid",
+                    "atom_type",
+                    "atom_name",
+                    "atom_uuid"
+                ],
+                "title": "ShortAssetAtomRecommendationDTO"
+            },
+            "ShortAssetPropRecommendationDTO": {
+                "properties": {
+                    "confidence": {
+                        "anyOf": [
+                            {
+                                "type": "number"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "Confidence"
+                    },
+                    "created_at": {
+                        "type": "string",
+                        "format": "date-time",
+                        "title": "Created At"
+                    },
+                    "updated_at": {
+                        "type": "string",
+                        "format": "date-time",
+                        "title": "Updated At"
+                    },
+                    "source": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "Source"
+                    },
+                    "uuid": {
+                        "type": "string",
+                        "format": "uuid",
+                        "title": "Uuid"
+                    },
+                    "rule_uuid": {
+                        "anyOf": [
+                            {
+                                "type": "string",
+                                "format": "uuid"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "Rule Uuid"
+                    },
+                    "rule_version": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "Rule Version"
+                    },
+                    "prop": {
+                        "type": "string",
+                        "title": "Prop"
+                    },
+                    "value": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "number"
+                            },
+                            {
+                                "type": "integer"
+                            }
+                        ],
+                        "title": "Value"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "created_at",
+                    "updated_at",
+                    "uuid",
+                    "prop",
+                    "value"
+                ],
+                "title": "ShortAssetPropRecommendationDTO"
+            },
+            "ValidationError": {
+                "properties": {
+                    "loc": {
+                        "items": {
+                            "anyOf": [
+                                {
+                                    "type": "string"
+                                },
+                                {
+                                    "type": "integer"
+                                }
+                            ]
+                        },
+                        "type": "array",
+                        "title": "Location"
+                    },
+                    "msg": {
+                        "type": "string",
+                        "title": "Message"
+                    },
+                    "type": {
+                        "type": "string",
+                        "title": "Error Type"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "loc",
+                    "msg",
+                    "type"
+                ],
+                "title": "ValidationError"
+            }
+        }
+    }
+}
