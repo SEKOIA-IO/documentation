@@ -22,7 +22,7 @@ To help you get started, the product includes a variety of examples showcasing p
 
 We strongly encourage you to use the thumbs up and down feedback options to rate the answers provided by Roy. This feedback mechanism is crucial for the assistant's learning process and will help us improve its responses over time.
 
-While Roy is designed to assist you, it's important to remember that the AI assistant is not infallible. We recommend double-checking any critical information before acting on it to ensure accuracy and reliability in your security operations.
+While Roy can assist you, it's important to remember that the AI assistant is not infallible. We recommend double-checking any critical information before acting on it to ensure accuracy and reliability in your security operations.
 
 ## Roy can assit with writing Sigma rules
 
