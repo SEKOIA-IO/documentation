@@ -86,6 +86,9 @@ A secure email gateway to block spam, viruses, and malware.
 3. Configure the settings by choosing your preferred `Chunk Size` and `Frequency`.  
 4. Copy the newly created Intake Key for use in your setup.  
 
+!!! Note
+    Mimecast provides events in batches every 15 minutes. In order to comply with the Mimecast ratelimiting (50 calls per 15 minutes), the default frequency is set to 8 minutes.
+
 
 ### Enjoy your events on the [Events page](https://app.sekoia.io/operations/events)
 
