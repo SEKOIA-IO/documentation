@@ -129,12 +129,6 @@ The following Sekoia.io built-in rules match the intake **Microsoft Entra ID / A
     
     - **Effort:** intermediate
 
-??? abstract "Microsoft Entra ID (Azure AD) Self Service Password Reset In Failure"
-    
-    Detects self-service password reset in failure for various reasons (except licence or policy ones)
-    
-    - **Effort:** master
-
 ??? abstract "Microsoft Entra ID (Azure AD) Sign-in From Unlikely Country"
     
     Detects when Microsoft Entra ID (Azure AD) identifies sign-ins originating from geographically distant locations, where at least one of the locations may also be atypical for the user, given past behavior. To use this feature, you must have an Microsoft Entra ID (Azure AD) Premium P2 license (https://docs.microsoft.com/en-us/azure/active-directory/identity-protection/overview-identity-protection).

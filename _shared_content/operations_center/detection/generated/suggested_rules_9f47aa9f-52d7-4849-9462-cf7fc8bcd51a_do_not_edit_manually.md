@@ -15,17 +15,35 @@ The following Sekoia.io built-in rules match the intake **Claroty xDome**. This 
     
     - **Effort:** master
 
+??? abstract "Advanced IP Scanner"
+    
+    Detects the use of Advanced IP Scanner. Seems to be a popular tool for ransomware groups.
+    
+    - **Effort:** master
+
 ??? abstract "Burp Suite Tool Detected"
     
     Burp Suite is a cybersecurity tool. When used as a proxy service, its purpose is to intercept packets and modify them to send them to the server. Burp Collaborator is a network service that Burp Suite uses to help discover many kinds of vulnerabilities (vulnerabilities scanner).
     
     - **Effort:** intermediate
 
+??? abstract "Certify Or Certipy"
+    
+    Detects the use of certify and certipy which are two different tools used to enumerate and abuse Active Directory Certificate Services.
+    
+    - **Effort:** advanced
+
 ??? abstract "Claroty xDome Network Threat Detection Alert"
     
     Claroty xDome has raised an network threat detection alert.
     
     - **Effort:** master
+
+??? abstract "Cobalt Strike Default Beacons Names"
+    
+    Detects the default names of Cobalt Strike beacons / payloads.
+    
+    - **Effort:** intermediate
 
 ??? abstract "Computer Account Deleted"
     
@@ -36,6 +54,12 @@ The following Sekoia.io built-in rules match the intake **Claroty xDome**. This 
 ??? abstract "Correlation Potential DNS Tunnel"
     
     Detects domain name which is longer than 62 characters and requested at least 50 times in a 10 minutes range time. Long domain names are distinctive of DNS tunnels.
+    
+    - **Effort:** advanced
+
+??? abstract "Credential Dump Tools Related Files"
+    
+    Detects processes or file names related to credential dumping tools and the dropped files they generate by default.
     
     - **Effort:** advanced
 
@@ -69,11 +93,23 @@ The following Sekoia.io built-in rules match the intake **Claroty xDome**. This 
     
     - **Effort:** master
 
+??? abstract "HackTools Suspicious Names"
+    
+    Quick-win rule to detect the default process names or file names of several HackTools.
+    
+    - **Effort:** elementary
+
 ??? abstract "Password Change On Directory Service Restore Mode (DSRM) Account"
     
     The Directory Service Restore Mode (DSRM) account is a local administrator account on Domain Controllers. Attackers may change the password to gain persistence.
     
     - **Effort:** intermediate
+
+??? abstract "PasswordDump SecurityXploded Tool"
+    
+    Detects the execution of the PasswordDump SecurityXploded Tool
+    
+    - **Effort:** elementary
 
 ??? abstract "Possible Replay Attack"
     
@@ -86,6 +122,12 @@ The following Sekoia.io built-in rules match the intake **Claroty xDome**. This 
     Detects domain name which is longer than 62 characters. Long domain names are distinctive of DNS tunnels.
     
     - **Effort:** advanced
+
+??? abstract "RTLO Character"
+    
+    Detects RTLO (Right-To-Left character) in file and process names.
+    
+    - **Effort:** elementary
 
 ??? abstract "Remote Access Tool Domain"
     
@@ -117,6 +159,18 @@ The following Sekoia.io built-in rules match the intake **Claroty xDome**. This 
     
     - **Effort:** master
 
+??? abstract "Suspicious File Name"
+    
+    Detects suspicious file name possibly linked to malicious tool.
+    
+    - **Effort:** advanced
+
+??? abstract "Suspicious PROCEXP152.sys File Created In Tmp"
+    
+    Detects the creation of the PROCEXP152.sys file in the application-data local temporary folder. This driver is used by Sysinternals Process Explorer but also by KDU (https://github.com/hfiref0x/KDU) or Ghost-In-The-Logs (https://github.com/bats3c/Ghost-In-The-Logs), which uses KDU. Note - Clever attackers may easily bypass this detection by just renaming the driver filename. Therefore just Medium-level and don't rely on it.
+    
+    - **Effort:** advanced
+
 ??? abstract "Suspicious TOR Gateway"
     
     Detects suspicious TOR gateways. Gateways are often used by the victim to pay and decrypt the encrypted files without installing TOR. Tor intercepts the network traffic from one or more apps on user’s computer, usually the user web browser, and shuffles it through a number of randomly-chosen computers before passing it on to its destination. This disguises user location, and makes it harder for servers to pick him/her out on repeat visits, or to tie together separate visits to different sites, this making tracking and surveillance more difficult. Before a network packet starts its journey, user’s computer chooses a random list of relays and repeatedly encrypts the data in multiple layers, like an onion. Each relay knows only enough to strip off the outermost layer of encryption, before passing what’s left on to the next relay in the list.
@@ -146,3 +200,9 @@ The following Sekoia.io built-in rules match the intake **Claroty xDome**. This 
     Detects local user deletion
     
     - **Effort:** master
+
+??? abstract "WCE wceaux.dll Creation"
+    
+    Detects wceaux.dll creation while Windows Credentials Editor (WCE) is executed.
+    
+    - **Effort:** intermediate
