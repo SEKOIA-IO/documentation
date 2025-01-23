@@ -14,6 +14,21 @@ A secure email gateway to block spam, viruses, and malware.
 !!! warning
     Important note - This format is currently in beta. We highly value your feedback to improve its performance.
 
+### Supported datasets
+
+This integration can collect the following datasets from Mimecast:
+
+- Attachment protect
+- Antivirus
+- Delivery
+- Impersonation protect
+- Internal email protect
+- Journal
+- Process
+- Receipt
+- Spam
+- URL protect
+
 ## High-Level Architecture Diagram
 
 - **Type of integration**: PULL by Sekoia.io
