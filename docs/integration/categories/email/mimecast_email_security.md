@@ -14,6 +14,21 @@ A secure email gateway to block spam, viruses, and malware.
 !!! warning
     Important note - This format is currently in beta. We highly value your feedback to improve its performance.
 
+### Supported datasets
+
+This integration can collect the following datasets from Mimecast:
+
+- Attachment protect
+- Antivirus
+- Delivery
+- Impersonation protect
+- Internal email protect
+- Journal
+- Process
+- Receipt
+- Spam
+- URL protect
+
 ## High-Level Architecture Diagram
 
 - **Type of integration**: PULL by Sekoia.io
@@ -85,6 +100,9 @@ A secure email gateway to block spam, viruses, and malware.
 2. If you do not already have one, create an account by entering your `Client ID` and `Client Secret`. If you have an existing account, simply select it from the list.  
 3. Configure the settings by choosing your preferred `Chunk Size` and `Frequency`.  
 4. Copy the newly created Intake Key for use in your setup.  
+
+!!! Note
+    Mimecast provides events in batches every 15 minutes. In order to comply with the Mimecast ratelimiting (50 calls per 15 minutes), the default frequency is set to 8 minutes.
 
 
 ### Enjoy your events on the [Events page](https://app.sekoia.io/operations/events)
