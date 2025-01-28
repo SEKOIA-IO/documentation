@@ -112,7 +112,7 @@ nav:
   - Usecases:
     - Implement a blocklist in Sekoia.io: xdr/usecases/playbook/implement_blocklist.md
     - Synchronize Alerts with an external tool: xdr/usecases/playbook/synchronize_alerts.md
-    - Synchronize Assets with an Active Directory : xdr/usecases/playbook/synchronize_asset_with_ad.md
+    - Synchronize Assets with an Active Directory: xdr/usecases/playbook/synchronize_asset_with_ad.md
     - Send notifications to a Webhook using a playbook: xdr/usecases/playbook/notifications_using_playbooks.md
     - Use your own CTI in Sekoia.io: xdr/usecases/use_your_own_cti.md
   - FAQ:
@@ -615,9 +615,9 @@ plugins:
       intelligence_center/observables.md: cti/features/consume/observables.md
       operation_center.md: xdr/index.md
       operation_center/actions.md: xdr/features/automate/actions.md
+      operation_center/ai_cases.md: xdr/features/investigate/ai_cases.md
       operation_center/alerts.md: xdr/features/investigate/alerts.md
       operation_center/assets.md: xdr/features/collect/assets.md
-      operation_center/ai_cases.md: xdr/features/investigate/ai_cases.md
       operation_center/cases.md: xdr/features/investigate/cases.md
       operation_center/data_collection/ingestion_methods/sekoiaio.md: integration/categories/endpoint/sekoiaio.md
       operation_center/entities.md: xdr/features/collect/entities.md
