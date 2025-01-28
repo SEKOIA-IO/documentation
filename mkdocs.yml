@@ -320,6 +320,7 @@ nav:
       - Github Audit Logs: integration/categories/applicative/github_audit_logs.md
       - Google Reports: integration/categories/applicative/google_reports.md
       - Google Workspace and Google Cloud Audit Logs: integration/categories/applicative/google_cloud_audit.md
+      - LockSelf: integration/categories/applicative/lockself.md
       - Microsoft IIS: integration/categories/applicative/microsoft_iis.md
       - Salesforce: integration/categories/applicative/salesforce.md
       - Sekoia.io activity logs: integration/categories/applicative/sekoiaio_activity_logs.md
