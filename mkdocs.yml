@@ -238,6 +238,7 @@ nav:
           - The Hive V5: tip/features/automate/library/the-hive-v5.md
         - Endpoint:
           - CrowdStrike Falcon: tip/features/automate/library/crowdstrike-falcon.md
+          - Eset: tip/features/automate/library/eset.md
           - HarfangLab: tip/features/automate/library/harfanglab.md
           - MicrosoftDefender: tip/features/automate/library/microsoftdefender.md
           - Panda Security: tip/features/automate/library/panda-security.md
@@ -510,6 +511,7 @@ nav:
       - The Hive V5: integration/action_library/the-hive-v5.md
     - Endpoint:
       - CrowdStrike Falcon: integration/action_library/crowdstrike-falcon.md
+      - Eset: integration/action_library/eset.md
       - HarfangLab: integration/action_library/harfanglab.md
       - MicrosoftDefender: integration/action_library/microsoftdefender.md
       - Panda Security: integration/action_library/panda-security.md
