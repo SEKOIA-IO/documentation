@@ -165,21 +165,39 @@ The following Sekoia.io built-in rules match the intake **Netskope**. This docum
     
     - **Effort:** advanced
 
-??? abstract "Netskope Admin Audit"
+??? abstract "Netskope Admin Audit High Severity"
     
-    Audit events for admin activites, from Logins to policies' changes.
+    Audit events detection for admin activites that differ from authentications, with high severity level according to Netskope.
     
     - **Effort:** master
 
-??? abstract "Netskope Alert"
+??? abstract "Netskope Alerts Compliance"
     
-    Forward alerts reported by Netskope.  
+    Forward alerts reported by Netskope related to compliance issues.
     
     - **Effort:** master
 
 ??? abstract "Netskope DLP Alert"
     
     Detects DLP alerts which are not allowed.  
+    
+    - **Effort:** master
+
+??? abstract "Netskope Malware Detected"
+    
+    Netskope identified a malware with a high severity (excluding Patient Zero here)
+    
+    - **Effort:** master
+
+??? abstract "Netskope Malware Patient Zero Detected"
+    
+    Netskope identified a malware as Patient Zero.
+    
+    - **Effort:** master
+
+??? abstract "Netskope Web Isolation On Suspicious Domain"
+    
+    Netskope identified a suspicious domain and triggered web sandboxing (RBI)
     
     - **Effort:** master
 
