@@ -18,18 +18,7 @@ template: overrides/openapi.html
                 "UAE1",
             ],
             urls: [
-                "https://app.sekoia.io/api/v1/dashboard/swagger.json?context=public",
-                "https://app.sekoia.io/api/v1/telemetry/openapi.json?context=public",
-                "https://app.sekoia.io/api/v1/notebooks/openapi.json?context=public",
-                "https://app.sekoia.io/api/v1/sic/conf/swagger.json?context=public",
-                "https://app.sekoia.io/api/v1/swagger.json?context=public",
-                "https://app.sekoia.io/api/v1/ingest/swagger.json?context=public",
-                "https://app.sekoia.io/api/v1/sic/swagger.json?context=public",
-                "https://app.sekoia.io/api/v1/symphony/swagger.json?context=public",
-                "https://app.sekoia.io/api/v1/enricher/swagger.json?context=tip",
-                "https://app.sekoia.io/api/v2/asset-management/openapi.json?context=public",
-                "https://app.sekoia.io/api/v1/edl-gateway/openapi.json",
-                "https://app.sekoia.io/api/v2/inthreat/swagger.json?context=public",
+                "../../javascript/schema.json",
             ],
             menu:[
                 {
@@ -57,6 +46,33 @@ template: overrides/openapi.html
                     ],
                 },
                 {
+                    name: "Event Monitoring",
+                    tags: [
+                        "Events",
+                        "Intakes by status",
+                        "Intakes errors and warnings",
+                        "Intakes lag and processing lag"
+                    ]
+                },
+                {
+                    name: "Getting started",
+                    tags: [
+                        "UEBA"
+                    ]
+                },
+                {
+                    name: "Identification",
+                    tags: [
+                        "Assets"
+                    ]
+                },
+                {
+                    name: "Automated Response",
+                    tags: [
+                        "Playbook actions telemetry"
+                    ]
+                },
+                {
                     name: "Intelligence",
                     tags: [
                         "Objects",
@@ -72,21 +88,20 @@ template: overrides/openapi.html
                         "Bundles",
                         "Images",
                         "Labels",
+                        "CTI Objects",
                     ],
                 },
                 {
-                    name: "Collect",
+                    name: "Configuration",
                     tags: [
                         "Intakes",
                         "Assets",
-                        "Atoms",
                         "Intakes by status",
                         "Intakes errors and warnings",
                         "Intakes lag and processing lag",
                         "formats",
                     ],
                 },
-
                 {
                     name: "Detection",
                     tags: [
@@ -96,6 +111,7 @@ template: overrides/openapi.html
                         "rules-catalog",
                         "alert-filter", // TODO: to create, this tag doesn't exist yet
                         "IOC Collections",
+                        "Alert filters telemetry"
                     ],
                 },
                 {
@@ -141,7 +157,7 @@ template: overrides/openapi.html
                     ],
                 },
                 {
-                    name: "AI assistant", // TODO: Make that private
+                    name: "AI assistant",
                     tags: [
                         "Roy tokens use telemetry",
                     ],
