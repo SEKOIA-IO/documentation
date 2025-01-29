@@ -1,0 +1,4626 @@
+{
+    "swagger": "2.0",
+    "basePath": "/v1/symphony",
+    "paths": {
+        "/actions": {
+            "get": {
+                "responses": {
+                    "401": {
+                        "description": "Authentication failed"
+                    },
+                    "403": {
+                        "description": "Insufficient permissions"
+                    },
+                    "200": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/ActionsSchema"
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid parameters"
+                    }
+                },
+                "summary": "List available actions",
+                "description": "List all actions available to build automation playbooks.\n\nThe following permissions are required:\n - **SYMPHONY_READ_MODULES** (`b7413c71-cec8-49ec-9b9c-327ee328a383`): View integration modules.",
+                "operationId": "get_actions_resource",
+                "parameters": [
+                    {
+                        "in": "query",
+                        "name": "limit",
+                        "required": false,
+                        "type": "integer",
+                        "default": 20,
+                        "minimum": 1,
+                        "maximum": 100,
+                        "description": "limit a number of items (allowed range is 1-100), default is 20."
+                    },
+                    {
+                        "in": "query",
+                        "name": "offset",
+                        "required": false,
+                        "type": "integer",
+                        "default": 0,
+                        "minimum": 0,
+                        "description": "a number of items to skip, default is 0."
+                    },
+                    {
+                        "in": "query",
+                        "name": "match[name]",
+                        "required": false,
+                        "type": "string",
+                        "description": "Action's name."
+                    },
+                    {
+                        "in": "query",
+                        "name": "match[docker]",
+                        "required": false,
+                        "type": "string",
+                        "description": "Match actions by their docker image name."
+                    },
+                    {
+                        "in": "query",
+                        "name": "match[uuid]",
+                        "required": false,
+                        "type": "string",
+                        "description": "Match actions by their uuid."
+                    },
+                    {
+                        "in": "query",
+                        "name": "sort",
+                        "required": false,
+                        "type": "string",
+                        "default": "name",
+                        "enum": [
+                            "name",
+                            "module_name"
+                        ],
+                        "description": "Sort returned actions (accepted values: 'name', module_name')"
+                    },
+                    {
+                        "in": "query",
+                        "name": "direction",
+                        "required": false,
+                        "type": "string",
+                        "default": "desc",
+                        "enum": [
+                            "asc",
+                            "desc"
+                        ],
+                        "description": "Direction of the sort (accepted values: ('asc', 'desc'))"
+                    },
+                    {
+                        "in": "query",
+                        "name": "extended",
+                        "required": false,
+                        "type": "boolean",
+                        "default": false,
+                        "description": "Returns the extended version of the actions"
+                    }
+                ],
+                "tags": [
+                    "Actions"
+                ]
+            }
+        },
+        "/actions/{uuid}": {
+            "parameters": [
+                {
+                    "name": "uuid",
+                    "in": "path",
+                    "required": true,
+                    "type": "string"
+                }
+            ],
+            "get": {
+                "responses": {
+                    "401": {
+                        "description": "Authentication failed"
+                    },
+                    "403": {
+                        "description": "Insufficient permissions"
+                    },
+                    "200": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/ActionSchema"
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid parameters"
+                    },
+                    "404": {
+                        "description": "Unknown Action"
+                    }
+                },
+                "summary": "Get an action",
+                "description": "Retrieves an action from Sekoia.io automations catalog.\n\nThe following permissions are required:\n - **SYMPHONY_READ_MODULES** (`b7413c71-cec8-49ec-9b9c-327ee328a383`): View integration modules.",
+                "operationId": "get_action_resource",
+                "tags": [
+                    "Actions"
+                ]
+            }
+        },
+        "/actions/{uuid}/run": {
+            "parameters": [
+                {
+                    "name": "uuid",
+                    "in": "path",
+                    "required": true,
+                    "type": "string"
+                }
+            ],
+            "post": {
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/NodeRunUUIDSchema"
+                        }
+                    },
+                    "401": {
+                        "description": "Authentication failed"
+                    },
+                    "403": {
+                        "description": "Insufficient permissions"
+                    },
+                    "204": {
+                        "description": "Success"
+                    },
+                    "400": {
+                        "description": "Invalid parameters"
+                    },
+                    "404": {
+                        "description": "Action not found"
+                    },
+                    "409": {
+                        "description": "Invalid Action Docker image"
+                    }
+                },
+                "summary": "Run a standalone action",
+                "description": "The following permissions are required:\n - **SYMPHONY_RUN_SINGLE_ACTION** (`eea32165-d596-4673-8ac5-2941e073b59b`): Execute in standalone a single playbook action",
+                "operationId": "post_action_run_resource",
+                "parameters": [
+                    {
+                        "in": "query",
+                        "name": "module_configuration_uuid",
+                        "required": false,
+                        "type": "string",
+                        "format": "uuid",
+                        "x-nullable": true,
+                        "description": "UUID of the module configuration to use to run the action"
+                    },
+                    {
+                        "in": "query",
+                        "name": "arguments",
+                        "required": true,
+                        "type": "object",
+                        "description": "Arguments to use to execute the action"
+                    }
+                ],
+                "tags": [
+                    "Actions"
+                ]
+            }
+        },
+        "/connector-configurations": {
+            "get": {
+                "responses": {
+                    "401": {
+                        "description": "Authentication failed"
+                    },
+                    "403": {
+                        "description": "Insufficient permissions"
+                    },
+                    "200": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/ConnectorConfigurationListSchema"
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid parameters"
+                    }
+                },
+                "summary": "List connector configurations",
+                "description": "The following permissions are required:\n - **SIC_READ_INTAKES** (`2f0da527-2cf1-4a00-8f4c-033bfb43ddeb`): View intakes listing and details.",
+                "operationId": "get_connector_configurations_resource",
+                "parameters": [
+                    {
+                        "in": "query",
+                        "name": "match[community_uuid]",
+                        "required": false,
+                        "type": "string",
+                        "description": "Communities to match (separated by commas)."
+                    },
+                    {
+                        "in": "query",
+                        "name": "limit",
+                        "required": false,
+                        "type": "integer",
+                        "default": 20,
+                        "minimum": 1,
+                        "maximum": 100,
+                        "description": "limit a number of items (allowed range is 1-100), default is 20."
+                    },
+                    {
+                        "in": "query",
+                        "name": "offset",
+                        "required": false,
+                        "type": "integer",
+                        "default": 0,
+                        "minimum": 0,
+                        "description": "a number of items to skip, default is 0."
+                    },
+                    {
+                        "in": "query",
+                        "name": "match[uuid]",
+                        "required": false,
+                        "type": "string",
+                        "description": "Filter connector configuration by their uuid"
+                    },
+                    {
+                        "in": "query",
+                        "name": "date[created_at]",
+                        "required": false,
+                        "type": "string",
+                        "description": "Match node configurations by their last updater (separated by commas)."
+                    },
+                    {
+                        "in": "query",
+                        "name": "date[updated_at]",
+                        "required": false,
+                        "type": "string",
+                        "description": "Filter node configurations by their update date (see rfc3339)."
+                    },
+                    {
+                        "in": "query",
+                        "name": "sort",
+                        "required": false,
+                        "type": "string",
+                        "default": "display_status",
+                        "enum": [
+                            "display_status",
+                            "updated_at",
+                            "created_at",
+                            "connector_id",
+                            "name"
+                        ],
+                        "description": "Sort connector configurations by one of their attributes"
+                    },
+                    {
+                        "in": "query",
+                        "name": "direction",
+                        "required": false,
+                        "type": "string",
+                        "default": "desc",
+                        "enum": [
+                            "asc",
+                            "desc"
+                        ],
+                        "description": "Direction of the sort."
+                    }
+                ],
+                "tags": [
+                    "Automations",
+                    "Connectors"
+                ]
+            },
+            "post": {
+                "responses": {
+                    "201": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/ConnectorConfigurationSchema"
+                        }
+                    },
+                    "401": {
+                        "description": "Authentication failed"
+                    },
+                    "403": {
+                        "description": "Insufficient permissions"
+                    },
+                    "400": {
+                        "description": "Invalid parameters"
+                    }
+                },
+                "summary": "Create connector configuration",
+                "description": "The connector will be started automatically once created\n\nThe following permissions are required:\n - **SIC_WRITE_INTAKES** (`efde546e-06db-4355-b2e5-84de1f66511b`): Create, edit, delete intakes.",
+                "operationId": "post_connector_configurations_resource",
+                "parameters": [
+                    {
+                        "in": "query",
+                        "name": "name",
+                        "required": true,
+                        "type": "string",
+                        "description": "The name of the node configuration"
+                    },
+                    {
+                        "in": "query",
+                        "name": "value",
+                        "required": false,
+                        "type": "object",
+                        "description": "The value of the configuration for the node configuration"
+                    },
+                    {
+                        "in": "query",
+                        "name": "module_configuration_uuid",
+                        "required": false,
+                        "type": "string",
+                        "description": "The uuid from the module configuration"
+                    },
+                    {
+                        "in": "query",
+                        "name": "community_uuid",
+                        "required": false,
+                        "type": "string",
+                        "description": "UUID of the community"
+                    },
+                    {
+                        "in": "query",
+                        "name": "connector_uuid",
+                        "required": true,
+                        "type": "string",
+                        "description": "The uuid from the connector which owns the connector configuration"
+                    }
+                ],
+                "tags": [
+                    "Automations",
+                    "Connectors"
+                ]
+            }
+        },
+        "/connector-configurations/{uuid}": {
+            "parameters": [
+                {
+                    "name": "uuid",
+                    "in": "path",
+                    "required": true,
+                    "type": "string"
+                }
+            ],
+            "patch": {
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/ConnectorConfigurationSchema"
+                        }
+                    },
+                    "401": {
+                        "description": "Authentication failed"
+                    },
+                    "403": {
+                        "description": "Insufficient permissions"
+                    },
+                    "204": {
+                        "description": "Success"
+                    },
+                    "400": {
+                        "description": "Invalid parameters"
+                    },
+                    "404": {
+                        "description": "Connector configuration not found"
+                    }
+                },
+                "summary": "Edit connector configuration",
+                "description": "The following permissions are required:\n - **SIC_WRITE_INTAKES** (`efde546e-06db-4355-b2e5-84de1f66511b`): Create, edit, delete intakes.",
+                "operationId": "patch_connector_configuration_resource",
+                "parameters": [
+                    {
+                        "in": "query",
+                        "name": "name",
+                        "required": false,
+                        "type": "string",
+                        "description": "Name of the node configuration"
+                    },
+                    {
+                        "in": "query",
+                        "name": "value",
+                        "required": false,
+                        "type": "object",
+                        "description": "The node's configuration"
+                    },
+                    {
+                        "in": "query",
+                        "name": "module_configuration_uuid",
+                        "required": false,
+                        "type": "string",
+                        "description": "The uuid from the module configuration"
+                    }
+                ],
+                "tags": [
+                    "Automations",
+                    "Connectors"
+                ]
+            },
+            "get": {
+                "responses": {
+                    "401": {
+                        "description": "Authentication failed"
+                    },
+                    "403": {
+                        "description": "Insufficient permissions"
+                    },
+                    "200": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/ConnectorConfigurationSchema"
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid parameters"
+                    }
+                },
+                "summary": "Get connector configuration",
+                "description": "Retrieves a connector configuration given its UUID\n\nThe following permissions are required:\n - **SIC_READ_INTAKES** (`2f0da527-2cf1-4a00-8f4c-033bfb43ddeb`): View intakes listing and details.",
+                "operationId": "get_connector_configuration_resource",
+                "tags": [
+                    "Automations",
+                    "Connectors"
+                ]
+            },
+            "delete": {
+                "responses": {
+                    "401": {
+                        "description": "Authentication failed"
+                    },
+                    "403": {
+                        "description": "Insufficient permissions"
+                    },
+                    "204": {
+                        "description": "Success"
+                    },
+                    "400": {
+                        "description": "Invalid parameters"
+                    },
+                    "404": {
+                        "description": "Connector configuration not found"
+                    }
+                },
+                "summary": "Delete connector configuration",
+                "description": "The following permissions are required:\n - **SIC_WRITE_INTAKES** (`efde546e-06db-4355-b2e5-84de1f66511b`): Create, edit, delete intakes.",
+                "operationId": "delete_connector_configuration_resource",
+                "tags": [
+                    "Automations",
+                    "Connectors"
+                ]
+            }
+        },
+        "/connector-configurations/{uuid}/start": {
+            "parameters": [
+                {
+                    "name": "uuid",
+                    "in": "path",
+                    "required": true,
+                    "type": "string"
+                }
+            ],
+            "post": {
+                "responses": {
+                    "401": {
+                        "description": "Authentication failed"
+                    },
+                    "403": {
+                        "description": "Insufficient permissions"
+                    },
+                    "404": {
+                        "description": "ConnectorConfiguration not found"
+                    }
+                },
+                "summary": "Start connector",
+                "description": "Start a specific connector given its connector configuration UUID\n\nThe following permissions are required:\n - **SIC_WRITE_INTAKES** (`efde546e-06db-4355-b2e5-84de1f66511b`): Create, edit, delete intakes.",
+                "operationId": "post_connector_configuration_start",
+                "tags": [
+                    "Automations",
+                    "Connectors"
+                ]
+            }
+        },
+        "/connector-configurations/{uuid}/stop": {
+            "parameters": [
+                {
+                    "name": "uuid",
+                    "in": "path",
+                    "required": true,
+                    "type": "string"
+                }
+            ],
+            "post": {
+                "responses": {
+                    "401": {
+                        "description": "Authentication failed"
+                    },
+                    "403": {
+                        "description": "Insufficient permissions"
+                    },
+                    "404": {
+                        "description": "ConnectorConfiguration not found"
+                    }
+                },
+                "summary": "Stop connector",
+                "description": "Stop a specific connector given its connector configuration UUID\n\nThe following permissions are required:\n - **SIC_WRITE_INTAKES** (`efde546e-06db-4355-b2e5-84de1f66511b`): Create, edit, delete intakes.",
+                "operationId": "post_connector_configuration_stop",
+                "tags": [
+                    "Automations",
+                    "Connectors"
+                ]
+            }
+        },
+        "/connectors": {
+            "get": {
+                "responses": {
+                    "401": {
+                        "description": "Authentication failed"
+                    },
+                    "403": {
+                        "description": "Insufficient permissions"
+                    },
+                    "200": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/NodesSchema"
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid parameters"
+                    }
+                },
+                "summary": "List connectors",
+                "description": "The following permissions are required:\n - **SYMPHONY_READ_MODULES** (`b7413c71-cec8-49ec-9b9c-327ee328a383`): View integration modules.",
+                "operationId": "get_connectors_resource",
+                "parameters": [
+                    {
+                        "in": "query",
+                        "name": "limit",
+                        "required": false,
+                        "type": "integer",
+                        "default": 20,
+                        "minimum": 1,
+                        "maximum": 100,
+                        "description": "limit a number of items (allowed range is 1-100), default is 20."
+                    },
+                    {
+                        "in": "query",
+                        "name": "offset",
+                        "required": false,
+                        "type": "integer",
+                        "default": 0,
+                        "minimum": 0,
+                        "description": "a number of items to skip, default is 0."
+                    },
+                    {
+                        "in": "query",
+                        "name": "match[name]",
+                        "required": false,
+                        "type": "string",
+                        "description": "Match node or module name."
+                    },
+                    {
+                        "in": "query",
+                        "name": "match[docker]",
+                        "required": false,
+                        "type": "string",
+                        "description": "Match Nodes by their docker image name."
+                    },
+                    {
+                        "in": "query",
+                        "name": "sort",
+                        "required": false,
+                        "type": "string",
+                        "default": "name",
+                        "enum": [
+                            "name",
+                            "module_name"
+                        ],
+                        "description": "Sort returned Nodes (accepted values: 'name', module_name')"
+                    },
+                    {
+                        "in": "query",
+                        "name": "direction",
+                        "required": false,
+                        "type": "string",
+                        "default": "desc",
+                        "enum": [
+                            "asc",
+                            "desc"
+                        ],
+                        "description": "Direction of the sort (accepted values: ('asc', 'desc'))"
+                    }
+                ],
+                "tags": [
+                    "Connectors"
+                ]
+            }
+        },
+        "/connectors/{uuid}": {
+            "parameters": [
+                {
+                    "name": "uuid",
+                    "in": "path",
+                    "required": true,
+                    "type": "string"
+                }
+            ],
+            "get": {
+                "responses": {
+                    "401": {
+                        "description": "Authentication failed"
+                    },
+                    "403": {
+                        "description": "Insufficient permissions"
+                    },
+                    "200": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/NodeSchema"
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid parameters"
+                    },
+                    "404": {
+                        "description": "Unknown Connector"
+                    }
+                },
+                "summary": "Get a connector",
+                "description": "The following permissions are required:\n - **SYMPHONY_READ_MODULES** (`b7413c71-cec8-49ec-9b9c-327ee328a383`): View integration modules.",
+                "operationId": "get_connector_resource",
+                "tags": [
+                    "Connectors"
+                ]
+            }
+        },
+        "/module-configurations": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/ModuleConfigurationListWithModuleSchema"
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid parameters"
+                    },
+                    "401": {
+                        "description": "Authentication failed"
+                    },
+                    "403": {
+                        "description": "Insufficient permissions"
+                    }
+                },
+                "summary": "List module configurations",
+                "description": "The following permissions are required:\n - **SYMPHONY_READ_PLAYBOOKS** (`e75117b9-bb99-4248-8e1d-77c0914b15bd`): View playbook listing and details",
+                "operationId": "get_module_configurations_resource",
+                "parameters": [
+                    {
+                        "in": "query",
+                        "name": "match[community_uuid]",
+                        "required": false,
+                        "type": "string",
+                        "description": "Communities to match (separated by commas)."
+                    },
+                    {
+                        "in": "query",
+                        "name": "limit",
+                        "required": false,
+                        "type": "integer",
+                        "default": 20,
+                        "minimum": 1,
+                        "maximum": 100,
+                        "description": "limit a number of items (allowed range is 1-100), default is 20."
+                    },
+                    {
+                        "in": "query",
+                        "name": "offset",
+                        "required": false,
+                        "type": "integer",
+                        "default": 0,
+                        "minimum": 0,
+                        "description": "a number of items to skip, default is 0."
+                    },
+                    {
+                        "in": "query",
+                        "name": "date[created_at]",
+                        "required": false,
+                        "type": "string",
+                        "description": "Match module configurations by their last updater (separated by commas)."
+                    },
+                    {
+                        "in": "query",
+                        "name": "date[updated_at]",
+                        "required": false,
+                        "type": "string",
+                        "description": "Filter module configurations by their update date (see rfc3339)."
+                    },
+                    {
+                        "in": "query",
+                        "name": "match[name]",
+                        "required": false,
+                        "type": "string",
+                        "description": "filter by module configuration names."
+                    },
+                    {
+                        "in": "query",
+                        "name": "match[module_uuid]",
+                        "required": false,
+                        "type": "string",
+                        "description": "filter by module uuid."
+                    },
+                    {
+                        "in": "query",
+                        "name": "sort",
+                        "required": false,
+                        "type": "string",
+                        "default": "updated_at",
+                        "enum": [
+                            "updated_at",
+                            "created_at",
+                            "name"
+                        ],
+                        "description": "Sort module configurations by one of their attributes"
+                    },
+                    {
+                        "in": "query",
+                        "name": "direction",
+                        "required": false,
+                        "type": "string",
+                        "default": "desc",
+                        "enum": [
+                            "asc",
+                            "desc"
+                        ],
+                        "description": "Direction of the sort."
+                    },
+                    {
+                        "in": "query",
+                        "name": "with_module",
+                        "required": false,
+                        "type": "boolean",
+                        "default": false,
+                        "description": "Also return the module of the configuration"
+                    },
+                    {
+                        "in": "query",
+                        "name": "community_uuid",
+                        "required": false,
+                        "type": "string",
+                        "description": "UUID of the community"
+                    }
+                ],
+                "tags": [
+                    "Automations",
+                    "Modules"
+                ]
+            },
+            "post": {
+                "responses": {
+                    "201": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/ModuleConfigurationSchema"
+                        }
+                    },
+                    "401": {
+                        "description": "Authentication failed"
+                    },
+                    "403": {
+                        "description": "Insufficient permissions"
+                    },
+                    "400": {
+                        "description": "Invalid parameters"
+                    }
+                },
+                "summary": "Create a module configuration",
+                "description": "The following permissions are required:\n - **SYMPHONY_WRITE_PLAYBOOKS** (`1d231a6b-9010-4fa1-a9cc-9fafeabb60a0`): Create, edit, delete playbook and playbook settings. Manage playbook activation.",
+                "operationId": "post_module_configurations_resource",
+                "parameters": [
+                    {
+                        "in": "query",
+                        "name": "name",
+                        "required": true,
+                        "type": "string",
+                        "description": "The name of the module configuration"
+                    },
+                    {
+                        "in": "query",
+                        "name": "value",
+                        "required": false,
+                        "type": "object",
+                        "description": "The value of the configuration for the module configuration"
+                    },
+                    {
+                        "in": "query",
+                        "name": "module_uuid",
+                        "required": true,
+                        "type": "string",
+                        "description": "The uuid from the module which owns the module configuration"
+                    },
+                    {
+                        "in": "query",
+                        "name": "community_uuid",
+                        "required": false,
+                        "type": "string",
+                        "description": "UUID of the community"
+                    }
+                ],
+                "tags": [
+                    "Automations",
+                    "Modules"
+                ]
+            }
+        },
+        "/module-configurations/{uuid}": {
+            "parameters": [
+                {
+                    "name": "uuid",
+                    "in": "path",
+                    "required": true,
+                    "type": "string"
+                }
+            ],
+            "patch": {
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/ModuleConfigurationSchema"
+                        }
+                    },
+                    "401": {
+                        "description": "Authentication failed"
+                    },
+                    "403": {
+                        "description": "Insufficient permissions"
+                    },
+                    "204": {
+                        "description": "Success"
+                    },
+                    "400": {
+                        "description": "Invalid parameters"
+                    },
+                    "404": {
+                        "description": "Module configuration not found"
+                    }
+                },
+                "summary": "Update a module configuration",
+                "description": "The following permissions are required:\n - **SYMPHONY_WRITE_PLAYBOOKS** (`1d231a6b-9010-4fa1-a9cc-9fafeabb60a0`): Create, edit, delete playbook and playbook settings. Manage playbook activation.",
+                "operationId": "patch_module_configuration_resource",
+                "parameters": [
+                    {
+                        "in": "query",
+                        "name": "name",
+                        "required": false,
+                        "type": "string",
+                        "description": "Name of the module configuration"
+                    },
+                    {
+                        "in": "query",
+                        "name": "value",
+                        "required": false,
+                        "type": "object",
+                        "description": "The module's configuration"
+                    }
+                ],
+                "tags": [
+                    "Automations",
+                    "Modules"
+                ]
+            },
+            "get": {
+                "responses": {
+                    "401": {
+                        "description": "Authentication failed"
+                    },
+                    "403": {
+                        "description": "Insufficient permissions"
+                    },
+                    "200": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/ModuleConfigurationSchema"
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid parameters"
+                    },
+                    "404": {
+                        "description": "Unknown Module Configuration"
+                    }
+                },
+                "summary": "Get a module configuration",
+                "description": "The following permissions are required:\n - **SYMPHONY_READ_PLAYBOOKS** (`e75117b9-bb99-4248-8e1d-77c0914b15bd`): View playbook listing and details",
+                "operationId": "get_module_configuration_resource",
+                "tags": [
+                    "Automations",
+                    "Modules"
+                ]
+            },
+            "delete": {
+                "responses": {
+                    "204": {
+                        "description": "Success"
+                    },
+                    "400": {
+                        "description": "Invalid parameters"
+                    },
+                    "404": {
+                        "description": "Unknown Module Configuration"
+                    },
+                    "401": {
+                        "description": "Authentication failed"
+                    },
+                    "403": {
+                        "description": "Insufficient permissions"
+                    }
+                },
+                "summary": "Delete a module configuration",
+                "description": "The following permissions are required:\n - **SYMPHONY_WRITE_PLAYBOOKS** (`1d231a6b-9010-4fa1-a9cc-9fafeabb60a0`): Create, edit, delete playbook and playbook settings. Manage playbook activation.",
+                "operationId": "delete_module_configuration_resource",
+                "tags": [
+                    "Automations",
+                    "Modules"
+                ]
+            }
+        },
+        "/module-configurations/{uuid}/usage": {
+            "parameters": [
+                {
+                    "name": "uuid",
+                    "in": "path",
+                    "required": true,
+                    "type": "string"
+                }
+            ],
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/ModuleConfigurationUsageSchema"
+                        }
+                    },
+                    "404": {
+                        "description": "Unknown Module Configuration"
+                    },
+                    "401": {
+                        "description": "Authentication failed"
+                    },
+                    "403": {
+                        "description": "Insufficient permissions"
+                    }
+                },
+                "summary": "Module usage statistics",
+                "description": "The following permissions are required:\n - **SYMPHONY_READ_PLAYBOOKS** (`e75117b9-bb99-4248-8e1d-77c0914b15bd`): View playbook listing and details",
+                "operationId": "get_module_configuration_usage_resource",
+                "tags": [
+                    "Reporting",
+                    "Automation statistics"
+                ]
+            }
+        },
+        "/modules": {
+            "get": {
+                "responses": {
+                    "401": {
+                        "description": "Authentication failed"
+                    },
+                    "403": {
+                        "description": "Insufficient permissions"
+                    },
+                    "200": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/modules_d_t_o"
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid parameters"
+                    }
+                },
+                "summary": "List modules",
+                "description": "List all modules available to build automation playbooks.\n\nThe following permissions are required:\n - **SYMPHONY_READ_MODULES** (`b7413c71-cec8-49ec-9b9c-327ee328a383`): View integration modules.",
+                "operationId": "get_modules_resource",
+                "parameters": [
+                    {
+                        "in": "query",
+                        "name": "limit",
+                        "required": false,
+                        "type": "integer",
+                        "default": 20,
+                        "minimum": 1,
+                        "maximum": 100,
+                        "description": "limit a number of items (allowed range is 1-100), default is 20."
+                    },
+                    {
+                        "in": "query",
+                        "name": "offset",
+                        "required": false,
+                        "type": "integer",
+                        "default": 0,
+                        "minimum": 0,
+                        "description": "a number of items to skip, default is 0."
+                    },
+                    {
+                        "in": "query",
+                        "name": "match[name]",
+                        "required": false,
+                        "type": "string",
+                        "description": "Module's name."
+                    },
+                    {
+                        "in": "query",
+                        "name": "match[uuid]",
+                        "required": false,
+                        "type": "string",
+                        "description": "Match modules by their uuid."
+                    },
+                    {
+                        "in": "query",
+                        "name": "kind",
+                        "required": false,
+                        "default": "both",
+                        "description": "Filter for kind of modules"
+                    },
+                    {
+                        "in": "query",
+                        "name": "match[category]",
+                        "required": false,
+                        "type": "string",
+                        "description": "Only return modules that match a given category"
+                    },
+                    {
+                        "in": "query",
+                        "name": "match[content_type]",
+                        "required": false,
+                        "type": "string",
+                        "description": "Only return modules that match a given content type"
+                    },
+                    {
+                        "in": "query",
+                        "name": "match[release_status]",
+                        "required": false,
+                        "type": "string",
+                        "description": "Only return modules that match a given release status"
+                    },
+                    {
+                        "in": "query",
+                        "name": "sort",
+                        "required": false,
+                        "default": "name",
+                        "description": "Order modules."
+                    },
+                    {
+                        "in": "query",
+                        "name": "direction",
+                        "required": false,
+                        "default": "asc",
+                        "description": "Direction of the sort (accepted values: ('asc', 'desc'))"
+                    }
+                ],
+                "tags": [
+                    "Modules"
+                ]
+            }
+        },
+        "/modules/categories": {
+            "get": {
+                "responses": {
+                    "401": {
+                        "description": "Authentication failed"
+                    },
+                    "403": {
+                        "description": "Insufficient permissions"
+                    },
+                    "200": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/module_categories_d_t_o"
+                        }
+                    }
+                },
+                "summary": "List module categories",
+                "description": "The following permissions are required:\n - **SYMPHONY_READ_MODULES** (`b7413c71-cec8-49ec-9b9c-327ee328a383`): View integration modules.",
+                "operationId": "get_module_categories_resource",
+                "tags": [
+                    "Modules"
+                ]
+            }
+        },
+        "/modules/{module_uuid}": {
+            "parameters": [
+                {
+                    "name": "module_uuid",
+                    "in": "path",
+                    "required": true,
+                    "type": "string"
+                }
+            ],
+            "get": {
+                "responses": {
+                    "401": {
+                        "description": "Authentication failed"
+                    },
+                    "403": {
+                        "description": "Insufficient permissions"
+                    },
+                    "200": {
+                        "description": "Success"
+                    },
+                    "400": {
+                        "description": "Invalid parameters"
+                    },
+                    "404": {
+                        "description": "Unknown Module"
+                    }
+                },
+                "summary": "Get a module",
+                "description": "The following permissions are required:\n - **SYMPHONY_READ_MODULES** (`b7413c71-cec8-49ec-9b9c-327ee328a383`): View integration modules.",
+                "operationId": "get_module_resource",
+                "parameters": [
+                    {
+                        "in": "query",
+                        "name": "detailed",
+                        "required": false,
+                        "type": "boolean",
+                        "default": false,
+                        "description": "Return the fully detailed module"
+                    }
+                ],
+                "tags": [
+                    "Modules"
+                ]
+            },
+            "delete": {
+                "responses": {
+                    "401": {
+                        "description": "Authentication failed"
+                    },
+                    "403": {
+                        "description": "Insufficient permissions"
+                    },
+                    "204": {
+                        "description": "Success"
+                    },
+                    "400": {
+                        "description": "Invalid parameters"
+                    },
+                    "404": {
+                        "description": "Unknown Module"
+                    }
+                },
+                "summary": "Delete a module",
+                "description": "Only custom integration modules can be deleted\n\nThe following permissions are required:\n - **SYMPHONY_WRITE_CUSTOM_MODULES** (`f98b60dc-49e9-4587-8732-4ab2a1fa5723`): Create, update or delete a custom integration module",
+                "operationId": "delete_module_resource",
+                "tags": [
+                    "Modules"
+                ]
+            }
+        },
+        "/node-runs/{uuid}": {
+            "parameters": [
+                {
+                    "name": "uuid",
+                    "in": "path",
+                    "required": true,
+                    "type": "string"
+                }
+            ],
+            "get": {
+                "responses": {
+                    "401": {
+                        "description": "Authentication failed"
+                    },
+                    "403": {
+                        "description": "Insufficient permissions"
+                    },
+                    "200": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/NodeRunSchema"
+                        }
+                    },
+                    "404": {
+                        "description": "Unknown Node Run"
+                    }
+                },
+                "summary": "Get a node run's details",
+                "description": "The following permissions are required:\n - **SYMPHONY_READ_PLAYBOOK_RUNS** (`9648daab-0c06-4624-b610-0b69a06d95df`): View playbook runs, node runs and associated logs.",
+                "operationId": "get_node_run_resource",
+                "tags": [
+                    "Node Runs"
+                ]
+            }
+        },
+        "/playbook-runs": {
+            "get": {
+                "responses": {
+                    "401": {
+                        "description": "Authentication failed"
+                    },
+                    "403": {
+                        "description": "Insufficient permissions"
+                    },
+                    "200": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/PlaybookRunsSchema"
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid parameters"
+                    }
+                },
+                "summary": "List playbook runs",
+                "description": "The following permissions are required:\n - **SYMPHONY_READ_PLAYBOOK_RUNS** (`9648daab-0c06-4624-b610-0b69a06d95df`): View playbook runs, node runs and associated logs.",
+                "operationId": "get_playbook_runs_resource",
+                "parameters": [
+                    {
+                        "in": "query",
+                        "name": "match[community_uuid]",
+                        "required": false,
+                        "type": "string",
+                        "description": "Communities to match (separated by commas)."
+                    },
+                    {
+                        "in": "query",
+                        "name": "limit",
+                        "required": false,
+                        "type": "integer",
+                        "default": 20,
+                        "minimum": 1,
+                        "maximum": 100,
+                        "description": "limit a number of items (allowed range is 1-100), default is 20."
+                    },
+                    {
+                        "in": "query",
+                        "name": "offset",
+                        "required": false,
+                        "type": "integer",
+                        "default": 0,
+                        "minimum": 0,
+                        "description": "a number of items to skip, default is 0."
+                    },
+                    {
+                        "in": "query",
+                        "name": "match[event]",
+                        "required": false,
+                        "type": "string",
+                        "description": "Match playbook runs by their event name (separated by commas)."
+                    },
+                    {
+                        "in": "query",
+                        "name": "match[status]",
+                        "required": false,
+                        "type": "string",
+                        "description": "Match playbook runs by their status name (separated by commas)."
+                    },
+                    {
+                        "in": "query",
+                        "name": "match[playbook_uuid]",
+                        "required": false,
+                        "type": "string",
+                        "description": "Match playbook runs by playbook (separated by commas)."
+                    },
+                    {
+                        "in": "query",
+                        "name": "date[started_at]",
+                        "required": false,
+                        "type": "string",
+                        "description": "Match playbook runs by their starting date (separated by commas)."
+                    },
+                    {
+                        "in": "query",
+                        "name": "sort",
+                        "required": false,
+                        "type": "string",
+                        "default": "started_at",
+                        "enum": [
+                            "started_at",
+                            "event",
+                            "status"
+                        ],
+                        "description": "Sort returned playbook runs (accepted values: 'started_at, 'event', 'status'"
+                    },
+                    {
+                        "in": "query",
+                        "name": "direction",
+                        "required": false,
+                        "type": "string",
+                        "default": "desc",
+                        "enum": [
+                            "asc",
+                            "desc"
+                        ],
+                        "description": "Direction of the sort (accepted values: ('asc', 'desc'))"
+                    }
+                ],
+                "tags": [
+                    "Automations",
+                    "Runs"
+                ]
+            }
+        },
+        "/playbook-runs/{uuid}": {
+            "parameters": [
+                {
+                    "name": "uuid",
+                    "in": "path",
+                    "required": true,
+                    "type": "string"
+                }
+            ],
+            "get": {
+                "responses": {
+                    "400": {
+                        "description": "Invalid parameters"
+                    },
+                    "404": {
+                        "description": "Playbook run not found"
+                    },
+                    "401": {
+                        "description": "Authentication failed"
+                    },
+                    "403": {
+                        "description": "Insufficient permissions"
+                    },
+                    "200": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/PlaybookRunSchema"
+                        }
+                    }
+                },
+                "summary": "Get a playbook run",
+                "description": "The following permissions are required:\n - **SYMPHONY_READ_PLAYBOOK_RUNS** (`9648daab-0c06-4624-b610-0b69a06d95df`): View playbook runs, node runs and associated logs.",
+                "operationId": "get_playbook_run_resource",
+                "tags": [
+                    "Automations",
+                    "Runs"
+                ]
+            }
+        },
+        "/playbook-runs/{uuid}/details": {
+            "parameters": [
+                {
+                    "name": "uuid",
+                    "in": "path",
+                    "required": true,
+                    "type": "string"
+                }
+            ],
+            "get": {
+                "responses": {
+                    "400": {
+                        "description": "Invalid parameters"
+                    },
+                    "404": {
+                        "description": "Playbook run not found"
+                    },
+                    "401": {
+                        "description": "Authentication failed"
+                    },
+                    "403": {
+                        "description": "Insufficient permissions"
+                    },
+                    "200": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/PlaybookRunDetailsSchema"
+                        }
+                    }
+                },
+                "summary": "Get a playbook run's details",
+                "description": "Get full details about a playbook run by its UUID.\n\nThe following permissions are required:\n - **SYMPHONY_READ_PLAYBOOK_RUNS** (`9648daab-0c06-4624-b610-0b69a06d95df`): View playbook runs, node runs and associated logs.",
+                "operationId": "get_playbook_run_details_resource",
+                "tags": [
+                    "Automations",
+                    "Runs"
+                ]
+            }
+        },
+        "/playbook-runs/{uuid}/re-run": {
+            "parameters": [
+                {
+                    "name": "uuid",
+                    "in": "path",
+                    "required": true,
+                    "type": "string"
+                }
+            ],
+            "post": {
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    },
+                    "401": {
+                        "description": "Authentication failed"
+                    },
+                    "403": {
+                        "description": "Insufficient permissions"
+                    }
+                },
+                "summary": "Re-run a playbook",
+                "description": "The following permissions are required:\n - **SYMPHONY_WRITE_PLAYBOOK_RUNS** (`d3791fbf-0752-4a50-ab67-0eb8345d1762`): Re-run playbook and playbook runs.",
+                "operationId": "post_re_run_playbook",
+                "parameters": [
+                    {
+                        "in": "query",
+                        "name": "only_failed_actions",
+                        "required": false,
+                        "type": "boolean",
+                        "default": false,
+                        "description": "Whether only the failed actions should be re-run instead of the whole playbook"
+                    }
+                ],
+                "tags": [
+                    "Automations",
+                    "Runs"
+                ]
+            }
+        },
+        "/playbooks": {
+            "get": {
+                "responses": {
+                    "401": {
+                        "description": "Authentication failed"
+                    },
+                    "403": {
+                        "description": "Insufficient permissions"
+                    },
+                    "200": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/PlaybookListSchema"
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid parameters"
+                    }
+                },
+                "summary": "List available playbooks",
+                "description": "This endpoint does not include the playbooks\u2019 content in the\nresults.\n\nThe following permissions are required:\n - **SYMPHONY_READ_PLAYBOOKS** (`e75117b9-bb99-4248-8e1d-77c0914b15bd`): View playbook listing and details",
+                "operationId": "get_playbooks_resource",
+                "parameters": [
+                    {
+                        "in": "query",
+                        "name": "match[community_uuid]",
+                        "required": false,
+                        "type": "string",
+                        "description": "Communities to match (separated by commas)."
+                    },
+                    {
+                        "in": "query",
+                        "name": "limit",
+                        "required": false,
+                        "type": "integer",
+                        "default": 20,
+                        "minimum": 1,
+                        "maximum": 100,
+                        "description": "limit a number of items (allowed range is 1-100), default is 20."
+                    },
+                    {
+                        "in": "query",
+                        "name": "offset",
+                        "required": false,
+                        "type": "integer",
+                        "default": 0,
+                        "minimum": 0,
+                        "description": "a number of items to skip, default is 0."
+                    },
+                    {
+                        "in": "query",
+                        "name": "match[status]",
+                        "required": false,
+                        "type": "string",
+                        "description": "Match playbooks by their status (separated by commas)."
+                    },
+                    {
+                        "in": "query",
+                        "name": "match[name]",
+                        "required": false,
+                        "type": "string",
+                        "description": "Match playbooks by their name (separated by commas)."
+                    },
+                    {
+                        "in": "query",
+                        "name": "match[trigger_uuid]",
+                        "required": false,
+                        "type": "string",
+                        "description": "Match playbooks by their trigger UUID."
+                    },
+                    {
+                        "in": "query",
+                        "name": "match[module_uuid]",
+                        "required": false,
+                        "type": "string",
+                        "description": "Match playbooks by their module UUID."
+                    },
+                    {
+                        "in": "query",
+                        "name": "meta_playbook",
+                        "required": false,
+                        "type": "boolean",
+                        "default": true,
+                        "description": "Exclude meta-playbooks from the response and display child playbooks instead"
+                    },
+                    {
+                        "in": "query",
+                        "name": "date[updated_at]",
+                        "required": false,
+                        "type": "string",
+                        "description": "Filter playbooks by their update date (see rfc3339)."
+                    },
+                    {
+                        "in": "query",
+                        "name": "sort",
+                        "required": false,
+                        "type": "string",
+                        "default": "updated_at",
+                        "enum": [
+                            "updated_at",
+                            "name",
+                            "status"
+                        ],
+                        "description": "Sort playbooks by one of their attributes"
+                    },
+                    {
+                        "in": "query",
+                        "name": "direction",
+                        "required": false,
+                        "type": "string",
+                        "default": "desc",
+                        "enum": [
+                            "asc",
+                            "desc"
+                        ],
+                        "description": "Direction of the sort."
+                    }
+                ],
+                "tags": [
+                    "Playbooks"
+                ]
+            },
+            "post": {
+                "responses": {
+                    "201": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/PlaybookInfoSchema"
+                        }
+                    },
+                    "401": {
+                        "description": "Authentication failed"
+                    },
+                    "403": {
+                        "description": "Insufficient permissions"
+                    },
+                    "400": {
+                        "description": "Invalid parameters"
+                    }
+                },
+                "summary": "Create a playbook",
+                "description": "The provided playbook definition must follow the Symphony\nPlaybook Language.\n\nThe following permissions are required:\n - **SYMPHONY_WRITE_PLAYBOOKS** (`1d231a6b-9010-4fa1-a9cc-9fafeabb60a0`): Create, edit, delete playbook and playbook settings. Manage playbook activation.",
+                "operationId": "post_playbooks_resource",
+                "parameters": [
+                    {
+                        "in": "query",
+                        "name": "playbook",
+                        "required": [
+                            "name"
+                        ],
+                        "description": "Definition of the playbook under the Symphony Playbook Language (SPL)",
+                        "type": "object",
+                        "properties": {
+                            "name": {
+                                "type": "string",
+                                "description": "Playbook name"
+                            },
+                            "description": {
+                                "type": "string",
+                                "description": "Playbook description"
+                            },
+                            "community_uuid": {
+                                "type": "string",
+                                "description": "Playbook community UUID"
+                            },
+                            "meta_community_uuids": {
+                                "type": "array",
+                                "description": "Playbook community UUIDs",
+                                "items": {
+                                    "type": "string"
+                                }
+                            },
+                            "nodes": {
+                                "type": "object",
+                                "description": "Definition of the playbook"
+                            },
+                            "meta_playbook": {
+                                "type": "boolean",
+                                "description": "Whether this is a meta playbook"
+                            }
+                        },
+                        "additionalProperties": true
+                    }
+                ],
+                "tags": [
+                    "Playbooks"
+                ]
+            }
+        },
+        "/playbooks/statistics": {
+            "get": {
+                "responses": {
+                    "401": {
+                        "description": "Authentication failed"
+                    },
+                    "403": {
+                        "description": "Insufficient permissions"
+                    },
+                    "200": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/PlaybookStatisticsSchema"
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid parameters"
+                    }
+                },
+                "summary": "Retrieve playbook statistics",
+                "description": "The following permissions are required:\n - **SYMPHONY_READ_PLAYBOOKS** (`e75117b9-bb99-4248-8e1d-77c0914b15bd`): View playbook listing and details",
+                "operationId": "get_playbook_statistics_resource",
+                "parameters": [
+                    {
+                        "in": "query",
+                        "name": "match[community_uuid]",
+                        "required": false,
+                        "type": "string",
+                        "description": "Communities to match (separated by commas)."
+                    },
+                    {
+                        "in": "query",
+                        "name": "limit",
+                        "required": false,
+                        "type": "integer",
+                        "default": 20,
+                        "minimum": 1,
+                        "maximum": 100,
+                        "description": "limit a number of items (allowed range is 1-100), default is 20."
+                    },
+                    {
+                        "in": "query",
+                        "name": "offset",
+                        "required": false,
+                        "type": "integer",
+                        "default": 0,
+                        "minimum": 0,
+                        "description": "a number of items to skip, default is 0."
+                    },
+                    {
+                        "in": "query",
+                        "name": "match[status]",
+                        "required": false,
+                        "type": "string",
+                        "description": "Match playbooks by their status (separated by commas)."
+                    },
+                    {
+                        "in": "query",
+                        "name": "match[name]",
+                        "required": false,
+                        "type": "string",
+                        "description": "Match playbooks by their name (separated by commas)."
+                    },
+                    {
+                        "in": "query",
+                        "name": "match[trigger_uuid]",
+                        "required": false,
+                        "type": "string",
+                        "description": "Match playbooks by their trigger UUID."
+                    },
+                    {
+                        "in": "query",
+                        "name": "match[module_uuid]",
+                        "required": false,
+                        "type": "string",
+                        "description": "Match playbooks by their module UUID."
+                    },
+                    {
+                        "in": "query",
+                        "name": "meta_playbook",
+                        "required": false,
+                        "type": "boolean",
+                        "default": true,
+                        "description": "Exclude meta-playbooks from the response and display child playbooks instead"
+                    },
+                    {
+                        "in": "query",
+                        "name": "date[updated_at]",
+                        "required": false,
+                        "type": "string",
+                        "description": "Filter playbooks by their update date (see rfc3339)."
+                    },
+                    {
+                        "in": "query",
+                        "name": "sort",
+                        "required": false,
+                        "type": "string",
+                        "default": "updated_at",
+                        "enum": [
+                            "updated_at",
+                            "name",
+                            "status"
+                        ],
+                        "description": "Sort playbooks by one of their attributes"
+                    },
+                    {
+                        "in": "query",
+                        "name": "direction",
+                        "required": false,
+                        "type": "string",
+                        "default": "desc",
+                        "enum": [
+                            "asc",
+                            "desc"
+                        ],
+                        "description": "Direction of the sort."
+                    }
+                ],
+                "tags": [
+                    "Playbooks"
+                ]
+            }
+        },
+        "/playbooks/{uuid}": {
+            "parameters": [
+                {
+                    "name": "uuid",
+                    "in": "path",
+                    "required": true,
+                    "type": "string"
+                }
+            ],
+            "patch": {
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/PlaybookSchema"
+                        }
+                    },
+                    "401": {
+                        "description": "Authentication failed"
+                    },
+                    "403": {
+                        "description": "Insufficient permissions"
+                    },
+                    "204": {
+                        "description": "Success"
+                    },
+                    "400": {
+                        "description": "Invalid parameters"
+                    },
+                    "404": {
+                        "description": "Playbook not found"
+                    },
+                    "409": {
+                        "description": "Invalid Action Docker image"
+                    }
+                },
+                "summary": "Update a playbook",
+                "description": "The following permissions are required:\n - **SYMPHONY_WRITE_PLAYBOOKS** (`1d231a6b-9010-4fa1-a9cc-9fafeabb60a0`): Create, edit, delete playbook and playbook settings. Manage playbook activation.",
+                "operationId": "patch_playbook_resource",
+                "parameters": [
+                    {
+                        "in": "query",
+                        "name": "playbook",
+                        "required": [
+                            "name"
+                        ],
+                        "description": "Definition of the playbook under the Symphony Playbook Language (SPL)",
+                        "type": "object",
+                        "properties": {
+                            "name": {
+                                "type": "string",
+                                "description": "Playbook name"
+                            },
+                            "description": {
+                                "type": "string",
+                                "description": "Playbook description"
+                            },
+                            "community_uuid": {
+                                "type": "string",
+                                "description": "Playbook community UUID"
+                            },
+                            "meta_community_uuids": {
+                                "type": "array",
+                                "description": "Playbook community UUIDs",
+                                "items": {
+                                    "type": "string"
+                                }
+                            },
+                            "nodes": {
+                                "type": "object",
+                                "description": "Definition of the playbook"
+                            },
+                            "meta_playbook": {
+                                "type": "boolean",
+                                "description": "Whether this is a meta playbook"
+                            }
+                        },
+                        "additionalProperties": true
+                    }
+                ],
+                "tags": [
+                    "Playbooks"
+                ]
+            },
+            "get": {
+                "responses": {
+                    "401": {
+                        "description": "Authentication failed"
+                    },
+                    "403": {
+                        "description": "Insufficient permissions"
+                    },
+                    "200": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/PlaybookSchema"
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid parameters"
+                    },
+                    "404": {
+                        "description": "Unknown Playbook"
+                    }
+                },
+                "summary": "Get a playbook",
+                "description": "Get a specific playbook given its UUID.\n\nThe following permissions are required:\n - **SYMPHONY_READ_PLAYBOOKS** (`e75117b9-bb99-4248-8e1d-77c0914b15bd`): View playbook listing and details",
+                "operationId": "get_playbook_resource",
+                "parameters": [
+                    {
+                        "in": "query",
+                        "name": "version",
+                        "required": false,
+                        "type": "integer",
+                        "description": "Specific Playbook version to retrieve"
+                    }
+                ],
+                "tags": [
+                    "Playbooks"
+                ]
+            },
+            "delete": {
+                "responses": {
+                    "204": {
+                        "description": "Success"
+                    },
+                    "401": {
+                        "description": "Authentication failed"
+                    },
+                    "403": {
+                        "description": "Insufficient permissions"
+                    },
+                    "404": {
+                        "description": "Playbook not found"
+                    },
+                    "409": {
+                        "description": "Playbook is activated"
+                    }
+                },
+                "summary": "Delete a playbook",
+                "description": "The following permissions are required:\n - **SYMPHONY_WRITE_PLAYBOOKS** (`1d231a6b-9010-4fa1-a9cc-9fafeabb60a0`): Create, edit, delete playbook and playbook settings. Manage playbook activation.",
+                "operationId": "delete_playbook_resource",
+                "tags": [
+                    "Playbooks"
+                ]
+            }
+        },
+        "/playbooks/{uuid}/activate": {
+            "parameters": [
+                {
+                    "name": "uuid",
+                    "in": "path",
+                    "required": true,
+                    "type": "string"
+                }
+            ],
+            "post": {
+                "responses": {
+                    "204": {
+                        "description": "Success"
+                    },
+                    "401": {
+                        "description": "Authentication failed"
+                    },
+                    "403": {
+                        "description": "Insufficient permissions"
+                    },
+                    "200": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/PlaybookSchema"
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid parameters"
+                    },
+                    "404": {
+                        "description": "Unknown Playbook"
+                    }
+                },
+                "summary": "Activate a playbook",
+                "description": "The following permissions are required:\n - **SYMPHONY_WRITE_PLAYBOOKS** (`1d231a6b-9010-4fa1-a9cc-9fafeabb60a0`): Create, edit, delete playbook and playbook settings. Manage playbook activation.",
+                "operationId": "post_playbook_activate_resource",
+                "tags": [
+                    "Playbooks"
+                ]
+            }
+        },
+        "/playbooks/{uuid}/deactivate": {
+            "parameters": [
+                {
+                    "name": "uuid",
+                    "in": "path",
+                    "required": true,
+                    "type": "string"
+                }
+            ],
+            "post": {
+                "responses": {
+                    "204": {
+                        "description": "Success"
+                    },
+                    "401": {
+                        "description": "Authentication failed"
+                    },
+                    "403": {
+                        "description": "Insufficient permissions"
+                    },
+                    "200": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/PlaybookSchema"
+                        }
+                    },
+                    "404": {
+                        "description": "Unknown Playbook"
+                    }
+                },
+                "summary": "Deactivate a playbook",
+                "description": "The following permissions are required:\n - **SYMPHONY_WRITE_PLAYBOOKS** (`1d231a6b-9010-4fa1-a9cc-9fafeabb60a0`): Create, edit, delete playbook and playbook settings. Manage playbook activation.",
+                "operationId": "post_playbook_deactivate_resource",
+                "tags": [
+                    "Playbooks"
+                ]
+            }
+        },
+        "/playbooks/{uuid}/logs": {
+            "parameters": [
+                {
+                    "name": "uuid",
+                    "in": "path",
+                    "required": true,
+                    "type": "string"
+                }
+            ],
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    },
+                    "401": {
+                        "description": "Authentication failed"
+                    },
+                    "403": {
+                        "description": "Insufficient permissions"
+                    },
+                    "404": {
+                        "description": "Playbook Not Found"
+                    }
+                },
+                "summary": "Get a playbook's logs",
+                "description": "The following permissions are required:\n - **SYMPHONY_READ_PLAYBOOKS** (`e75117b9-bb99-4248-8e1d-77c0914b15bd`): View playbook listing and details",
+                "operationId": "get_playbook_logs_resource",
+                "parameters": [
+                    {
+                        "in": "query",
+                        "name": "match[community_uuid]",
+                        "required": false,
+                        "type": "string",
+                        "description": "Communities to match (separated by commas)."
+                    },
+                    {
+                        "in": "query",
+                        "name": "limit",
+                        "required": false,
+                        "type": "integer",
+                        "default": 20
+                    },
+                    {
+                        "in": "query",
+                        "name": "offset",
+                        "required": false,
+                        "type": "integer",
+                        "default": 0
+                    },
+                    {
+                        "in": "query",
+                        "name": "match[log_level]",
+                        "required": false,
+                        "type": "string",
+                        "description": "Match logs by their log level"
+                    },
+                    {
+                        "in": "query",
+                        "name": "match[message]",
+                        "required": false,
+                        "type": "string",
+                        "description": "Match logs the content of the message"
+                    }
+                ],
+                "tags": [
+                    "Playbooks"
+                ]
+            }
+        },
+        "/playbooks/{uuid}/re-run-failed": {
+            "parameters": [
+                {
+                    "name": "uuid",
+                    "in": "path",
+                    "required": true,
+                    "type": "string"
+                }
+            ],
+            "post": {
+                "responses": {
+                    "401": {
+                        "description": "Authentication failed"
+                    },
+                    "403": {
+                        "description": "Insufficient permissions"
+                    },
+                    "202": {
+                        "description": "Accepted"
+                    },
+                    "404": {
+                        "description": "Playbook Not Found"
+                    }
+                },
+                "summary": "Re-run failed playbook runs",
+                "description": "The following permissions are required:\n - **SYMPHONY_WRITE_PLAYBOOK_RUNS** (`d3791fbf-0752-4a50-ab67-0eb8345d1762`): Re-run playbook and playbook runs.",
+                "operationId": "post_re_run_failed_playbook_runs_resource",
+                "tags": [
+                    "Automations",
+                    "Runs"
+                ]
+            }
+        },
+        "/ssh-keys": {
+            "post": {
+                "responses": {
+                    "201": {
+                        "description": "Created",
+                        "schema": {
+                            "$ref": "#/definitions/s_s_h_public_key"
+                        }
+                    },
+                    "401": {
+                        "description": "Authentication failed"
+                    },
+                    "403": {
+                        "description": "Insufficient permissions"
+                    }
+                },
+                "summary": "Generate a new SSH key pair",
+                "description": "The following permissions are required:\n - **SYMPHONY_WRITE_CUSTOM_MODULES** (`f98b60dc-49e9-4587-8732-4ab2a1fa5723`): Create, update or delete a custom integration module",
+                "operationId": "post_actions_resource",
+                "tags": [
+                    "SSH Keys"
+                ]
+            }
+        },
+        "/statistics/playbook-runs/per-playbook/counters": {
+            "get": {
+                "responses": {
+                    "401": {
+                        "description": "Authentication failed"
+                    },
+                    "403": {
+                        "description": "Insufficient permissions"
+                    },
+                    "200": {
+                        "description": "Request fulfilled, document follows",
+                        "schema": {
+                            "$ref": "#/definitions/PlaybookRunsCountersPerPlaybookSchema"
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid Parameters"
+                    }
+                },
+                "summary": "Playbook runs statistics",
+                "description": "List statistics of playbook runs per playbook uuid.\n\nThe following permissions are required:\n - **SYMPHONY_READ_PLAYBOOK_RUNS_STATS** (`ae0bc327-8f27-419e-890f-3083c4c56f0b`): View playbook runs statistics in playbook listing.",
+                "operationId": "get_playbook_runs_counters_per_playbook_resource",
+                "parameters": [
+                    {
+                        "in": "query",
+                        "name": "match[community_uuid]",
+                        "required": false,
+                        "type": "string",
+                        "description": "Communities to match (separated by commas)."
+                    },
+                    {
+                        "in": "query",
+                        "name": "limit",
+                        "required": false,
+                        "type": "integer",
+                        "default": 20,
+                        "minimum": 1,
+                        "maximum": 100,
+                        "description": "limit a number of items (allowed range is 1-100), default is 20."
+                    },
+                    {
+                        "in": "query",
+                        "name": "offset",
+                        "required": false,
+                        "type": "integer",
+                        "default": 0,
+                        "minimum": 0,
+                        "description": "a number of items to skip, default is 0."
+                    },
+                    {
+                        "in": "query",
+                        "name": "match[playbook_uuid]",
+                        "required": true,
+                        "type": "string",
+                        "minLength": 1,
+                        "description": "Match statistics by the playbook's uuid (separated by commas)."
+                    },
+                    {
+                        "in": "query",
+                        "name": "date[started_at]",
+                        "required": false,
+                        "type": "string",
+                        "description": "Match playbook runs by their started and finished dates (separated by commas)."
+                    }
+                ],
+                "tags": [
+                    "Reporting",
+                    "Automation statistics"
+                ]
+            }
+        },
+        "/trigger-configurations": {
+            "get": {
+                "responses": {
+                    "401": {
+                        "description": "Authentication failed"
+                    },
+                    "403": {
+                        "description": "Insufficient permissions"
+                    },
+                    "200": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/TriggerConfigurationListSchema"
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid parameters"
+                    }
+                },
+                "summary": "List trigger configurations",
+                "description": "The following permissions are required:\n - **SYMPHONY_READ_PLAYBOOKS** (`e75117b9-bb99-4248-8e1d-77c0914b15bd`): View playbook listing and details",
+                "operationId": "get_trigger_configurations_resource",
+                "parameters": [
+                    {
+                        "in": "query",
+                        "name": "match[community_uuid]",
+                        "required": false,
+                        "type": "string",
+                        "description": "Communities to match (separated by commas)."
+                    },
+                    {
+                        "in": "query",
+                        "name": "limit",
+                        "required": false,
+                        "type": "integer",
+                        "default": 20,
+                        "minimum": 1,
+                        "maximum": 100,
+                        "description": "limit a number of items (allowed range is 1-100), default is 20."
+                    },
+                    {
+                        "in": "query",
+                        "name": "offset",
+                        "required": false,
+                        "type": "integer",
+                        "default": 0,
+                        "minimum": 0,
+                        "description": "a number of items to skip, default is 0."
+                    },
+                    {
+                        "in": "query",
+                        "name": "date[created_at]",
+                        "required": false,
+                        "type": "string",
+                        "description": "Match node configurations by their last updater (separated by commas)."
+                    },
+                    {
+                        "in": "query",
+                        "name": "date[updated_at]",
+                        "required": false,
+                        "type": "string",
+                        "description": "Filter node configurations by their update date (see rfc3339)."
+                    },
+                    {
+                        "in": "query",
+                        "name": "direction",
+                        "required": false,
+                        "type": "string",
+                        "default": "desc",
+                        "enum": [
+                            "asc",
+                            "desc"
+                        ],
+                        "description": "Direction of the sort."
+                    },
+                    {
+                        "in": "query",
+                        "name": "community_uuid",
+                        "required": false,
+                        "type": "string",
+                        "description": "UUID of the community"
+                    },
+                    {
+                        "in": "query",
+                        "name": "sort",
+                        "required": false,
+                        "type": "string",
+                        "default": "updated_at",
+                        "enum": [
+                            "updated_at",
+                            "created_at",
+                            "trigger_id",
+                            "name"
+                        ],
+                        "description": "Sort trigger configurations by one of their attributes"
+                    }
+                ],
+                "tags": [
+                    "Automations",
+                    "Triggers"
+                ]
+            },
+            "post": {
+                "responses": {
+                    "201": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/TriggerConfigurationSchema"
+                        }
+                    },
+                    "401": {
+                        "description": "Authentication failed"
+                    },
+                    "403": {
+                        "description": "Insufficient permissions"
+                    },
+                    "400": {
+                        "description": "Invalid parameters"
+                    }
+                },
+                "summary": "Create a trigger configuration",
+                "description": "The following permissions are required:\n - **SYMPHONY_WRITE_PLAYBOOKS** (`1d231a6b-9010-4fa1-a9cc-9fafeabb60a0`): Create, edit, delete playbook and playbook settings. Manage playbook activation.",
+                "operationId": "post_trigger_configurations_resource",
+                "parameters": [
+                    {
+                        "in": "query",
+                        "name": "name",
+                        "required": true,
+                        "type": "string",
+                        "description": "The name of the node configuration"
+                    },
+                    {
+                        "in": "query",
+                        "name": "value",
+                        "required": false,
+                        "type": "object",
+                        "description": "The value of the configuration for the node configuration"
+                    },
+                    {
+                        "in": "query",
+                        "name": "module_configuration_uuid",
+                        "required": false,
+                        "type": "string",
+                        "description": "The uuid from the module configuration"
+                    },
+                    {
+                        "in": "query",
+                        "name": "community_uuid",
+                        "required": false,
+                        "type": "string",
+                        "description": "UUID of the community"
+                    },
+                    {
+                        "in": "query",
+                        "name": "trigger_uuid",
+                        "required": true,
+                        "type": "string",
+                        "description": "The uuid from the trigger which owns the trigger configuration"
+                    }
+                ],
+                "tags": [
+                    "Automations",
+                    "Triggers"
+                ]
+            }
+        },
+        "/trigger-configurations/{uuid}": {
+            "parameters": [
+                {
+                    "name": "uuid",
+                    "in": "path",
+                    "required": true,
+                    "type": "string"
+                }
+            ],
+            "patch": {
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/TriggerConfigurationSchema"
+                        }
+                    },
+                    "401": {
+                        "description": "Authentication failed"
+                    },
+                    "403": {
+                        "description": "Insufficient permissions"
+                    },
+                    "204": {
+                        "description": "Success"
+                    },
+                    "400": {
+                        "description": "Invalid parameters"
+                    },
+                    "404": {
+                        "description": "Trigger configuration not found"
+                    }
+                },
+                "summary": "Edit trigger configuration event",
+                "description": "Edit an event for a specific trigger configuration\n\nThe following permissions are required:\n - **SYMPHONY_WRITE_PLAYBOOKS** (`1d231a6b-9010-4fa1-a9cc-9fafeabb60a0`): Create, edit, delete playbook and playbook settings. Manage playbook activation.",
+                "operationId": "patch_trigger_configuration_resource",
+                "parameters": [
+                    {
+                        "in": "query",
+                        "name": "name",
+                        "required": false,
+                        "type": "string",
+                        "description": "Name of the node configuration"
+                    },
+                    {
+                        "in": "query",
+                        "name": "value",
+                        "required": false,
+                        "type": "object",
+                        "description": "The node's configuration"
+                    },
+                    {
+                        "in": "query",
+                        "name": "module_configuration_uuid",
+                        "required": false,
+                        "type": "string",
+                        "description": "The uuid from the module configuration"
+                    }
+                ],
+                "tags": [
+                    "Automations",
+                    "Triggers"
+                ]
+            },
+            "get": {
+                "responses": {
+                    "401": {
+                        "description": "Authentication failed"
+                    },
+                    "403": {
+                        "description": "Insufficient permissions"
+                    },
+                    "200": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/TriggerConfigurationSchema"
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid parameters"
+                    },
+                    "404": {
+                        "description": "Unknown Playbook"
+                    }
+                },
+                "summary": "Get trigger configuration",
+                "description": "Get a specific trigger configuration given its UUID\n\nThe following permissions are required:\n - **SYMPHONY_READ_PLAYBOOKS** (`e75117b9-bb99-4248-8e1d-77c0914b15bd`): View playbook listing and details",
+                "operationId": "get_trigger_configuration_resource",
+                "tags": [
+                    "Automations",
+                    "Triggers"
+                ]
+            },
+            "delete": {
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/TriggerConfigurationSchema"
+                        }
+                    },
+                    "401": {
+                        "description": "Authentication failed"
+                    },
+                    "403": {
+                        "description": "Insufficient permissions"
+                    },
+                    "204": {
+                        "description": "Success"
+                    },
+                    "400": {
+                        "description": "Invalid parameters"
+                    },
+                    "404": {
+                        "description": "Trigger configuration not found"
+                    }
+                },
+                "summary": "Delete a trigger configuration",
+                "description": "The following permissions are required:\n - **SYMPHONY_WRITE_PLAYBOOKS** (`1d231a6b-9010-4fa1-a9cc-9fafeabb60a0`): Create, edit, delete playbook and playbook settings. Manage playbook activation.",
+                "operationId": "delete_trigger_configuration_resource",
+                "tags": [
+                    "Automations",
+                    "Triggers"
+                ]
+            }
+        },
+        "/trigger-configurations/{uuid}/logs": {
+            "parameters": [
+                {
+                    "name": "uuid",
+                    "in": "path",
+                    "required": true,
+                    "type": "string"
+                }
+            ],
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Request fulfilled, document follows",
+                        "schema": {
+                            "$ref": "#/definitions/RetrieveLogsSchema"
+                        }
+                    },
+                    "401": {
+                        "description": "Authentication failed"
+                    },
+                    "403": {
+                        "description": "Insufficient permissions"
+                    }
+                },
+                "summary": "Retrieve a trigger's logs",
+                "description": "The following permissions are required:\n - **SYMPHONY_READ_PLAYBOOK_RUNS** (`9648daab-0c06-4624-b610-0b69a06d95df`): View playbook runs, node runs and associated logs.",
+                "operationId": "get_trigger_logs",
+                "parameters": [
+                    {
+                        "in": "query",
+                        "name": "limit",
+                        "required": false,
+                        "type": "integer",
+                        "default": 20
+                    },
+                    {
+                        "in": "query",
+                        "name": "offset",
+                        "required": false,
+                        "type": "integer",
+                        "default": 0
+                    },
+                    {
+                        "in": "query",
+                        "name": "match[log_level]",
+                        "required": false,
+                        "type": "string",
+                        "description": "Match logs by their log level"
+                    },
+                    {
+                        "in": "query",
+                        "name": "match[message]",
+                        "required": false,
+                        "type": "string",
+                        "description": "Match logs the content of the message"
+                    }
+                ],
+                "tags": [
+                    "Automations",
+                    "Triggers"
+                ]
+            }
+        },
+        "/triggers": {
+            "get": {
+                "responses": {
+                    "401": {
+                        "description": "Authentication failed"
+                    },
+                    "403": {
+                        "description": "Insufficient permissions"
+                    },
+                    "200": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/NodesSchema"
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid parameters"
+                    }
+                },
+                "summary": "List triggers",
+                "description": "The following permissions are required:\n - **SYMPHONY_READ_MODULES** (`b7413c71-cec8-49ec-9b9c-327ee328a383`): View integration modules.",
+                "operationId": "get_triggers_resource",
+                "parameters": [
+                    {
+                        "in": "query",
+                        "name": "limit",
+                        "required": false,
+                        "type": "integer",
+                        "default": 20,
+                        "minimum": 1,
+                        "maximum": 100,
+                        "description": "limit a number of items (allowed range is 1-100), default is 20."
+                    },
+                    {
+                        "in": "query",
+                        "name": "offset",
+                        "required": false,
+                        "type": "integer",
+                        "default": 0,
+                        "minimum": 0,
+                        "description": "a number of items to skip, default is 0."
+                    },
+                    {
+                        "in": "query",
+                        "name": "match[name]",
+                        "required": false,
+                        "type": "string",
+                        "description": "Match node or module name."
+                    },
+                    {
+                        "in": "query",
+                        "name": "match[docker]",
+                        "required": false,
+                        "type": "string",
+                        "description": "Match Nodes by their docker image name."
+                    },
+                    {
+                        "in": "query",
+                        "name": "sort",
+                        "required": false,
+                        "type": "string",
+                        "default": "name",
+                        "enum": [
+                            "name",
+                            "module_name"
+                        ],
+                        "description": "Sort returned Nodes (accepted values: 'name', module_name')"
+                    },
+                    {
+                        "in": "query",
+                        "name": "direction",
+                        "required": false,
+                        "type": "string",
+                        "default": "desc",
+                        "enum": [
+                            "asc",
+                            "desc"
+                        ],
+                        "description": "Direction of the sort (accepted values: ('asc', 'desc'))"
+                    }
+                ],
+                "tags": [
+                    "Triggers"
+                ]
+            }
+        },
+        "/triggers/{uuid}": {
+            "parameters": [
+                {
+                    "name": "uuid",
+                    "in": "path",
+                    "required": true,
+                    "type": "string"
+                }
+            ],
+            "get": {
+                "responses": {
+                    "401": {
+                        "description": "Authentication failed"
+                    },
+                    "403": {
+                        "description": "Insufficient permissions"
+                    },
+                    "200": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/TriggerSchema"
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid parameters"
+                    },
+                    "404": {
+                        "description": "Unknown Trigger"
+                    }
+                },
+                "summary": "Get a trigger",
+                "description": "Get a specific Trigger given its UUID\n\nThe following permissions are required:\n - **SYMPHONY_READ_MODULES** (`b7413c71-cec8-49ec-9b9c-327ee328a383`): View integration modules.",
+                "operationId": "get_trigger_resource",
+                "tags": [
+                    "Triggers"
+                ]
+            }
+        }
+    },
+    "info": {
+        "title": "API Symphony",
+        "version": "0",
+        "description": "Symphony Application API"
+    },
+    "produces": [
+        "application/json"
+    ],
+    "consumes": [
+        "application/json"
+    ],
+    "securityDefinitions": {
+        "accessToken": {
+            "type": "apiKey",
+            "in": "header",
+            "name": "Authorization"
+        }
+    },
+    "security": [
+        {
+            "accessToken": []
+        }
+    ],
+    "tags": [
+        {
+            "name": "Playbooks",
+            "description": "Manage Playbooks (list, create, activate, etc.)"
+        },
+        {
+            "name": "Playbooks Runs",
+            "description": "Retrieve information about executions of Playbook (a.k.a. \u201cPlaybook Runs\u201d)."
+        },
+        {
+            "name": "Trigger Configurations",
+            "description": "Manage Trigger Configurations"
+        },
+        {
+            "name": "Actions",
+            "description": "List actions available to create playbooks and get information about specific ones.\n\nThis namespace also contains some admin level endpoints to manage\navailable actions (which requires the `SYMPHONY_ADMIN_WRITE_MODULES` permission)."
+        },
+        {
+            "name": "Triggers",
+            "description": "Triggers management endpoint"
+        },
+        {
+            "name": "Modules",
+            "description": "Modules management endpoint"
+        },
+        {
+            "name": "Module Configurations",
+            "description": "Manage Module Configurations"
+        },
+        {
+            "name": "Node Runs",
+            "description": "Access Node Runs"
+        },
+        {
+            "name": "Statistics",
+            "description": "Counters of resources in Symphony"
+        },
+        {
+            "name": "Connectors",
+            "description": "Connectors management endpoint"
+        },
+        {
+            "name": "Connector Configurations",
+            "description": "Manage Connector Configurations"
+        },
+        {
+            "name": "SSH Keys",
+            "description": "Manage SSH keys used for integrations"
+        }
+    ],
+    "definitions": {
+        "PlaybookListSchema": {
+            "type": "object",
+            "properties": {
+                "items": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "uuid": {
+                                "type": "string",
+                                "format": "uuid",
+                                "description": "The unique identifier of the playbook"
+                            },
+                            "version": {
+                                "type": "integer",
+                                "description": "The version number for this revision"
+                            },
+                            "community_uuid": {
+                                "type": "string",
+                                "format": "uuid",
+                                "description": "The unique identifier of the community this playbook belongs to"
+                            },
+                            "meta_community_uuids": {
+                                "type": "array",
+                                "description": "The unique identifiers of the communities having an instance of the playbook",
+                                "items": {
+                                    "type": "string",
+                                    "format": "uuid"
+                                }
+                            },
+                            "status": {
+                                "type": "string",
+                                "description": "The status of the playbook"
+                            },
+                            "status_message": {
+                                "type": "string",
+                                "x-nullable": true,
+                                "description": "The reason of the status of the playbook"
+                            },
+                            "name": {
+                                "type": "string",
+                                "description": "The name of the playbook"
+                            },
+                            "description": {
+                                "type": "string",
+                                "description": "The description of the playbook"
+                            },
+                            "meta_playbook": {
+                                "type": "boolean",
+                                "description": "Whether it is a meta playbook"
+                            },
+                            "parent_uuid": {
+                                "type": "string",
+                                "description": "The unique identifier of the parent playbook"
+                            },
+                            "created_at": {
+                                "type": "string",
+                                "format": "date-time",
+                                "description": "The creation date of the playbook"
+                            },
+                            "created_by": {
+                                "type": "string",
+                                "description": "The unique identifier of the creator of the playbook"
+                            },
+                            "created_by_type": {
+                                "type": "string",
+                                "description": "The account type of the creator of the playbook"
+                            },
+                            "updated_at": {
+                                "type": "string",
+                                "format": "date-time",
+                                "description": "The last modification date of the playbook"
+                            },
+                            "updated_by": {
+                                "type": "string",
+                                "description": "The unique identifier of the last account to update the playbook"
+                            },
+                            "updated_by_type": {
+                                "type": "string",
+                                "description": "The type of the last account to update the playbook"
+                            },
+                            "activated_at": {
+                                "type": "string",
+                                "format": "date-time",
+                                "description": "The last activation date of the playbook"
+                            },
+                            "activated_by": {
+                                "type": "string",
+                                "description": "The unique identifier of the last account to activate the playbook"
+                            },
+                            "activated_by_type": {
+                                "type": "string",
+                                "description": "The type of the last account to activate the playbook"
+                            },
+                            "trigger_configurations": {
+                                "type": "array",
+                                "items": {
+                                    "type": "object",
+                                    "properties": {
+                                        "uuid": {
+                                            "type": "string",
+                                            "format": "uuid",
+                                            "description": "The unique identifier of the trigger configuration"
+                                        },
+                                        "trigger_uuid": {
+                                            "type": "string",
+                                            "format": "uuid",
+                                            "description": "The unique identifier of the trigger"
+                                        }
+                                    },
+                                    "required": [
+                                        "trigger_uuid",
+                                        "uuid"
+                                    ]
+                                }
+                            },
+                            "status_tags": {
+                                "type": "array",
+                                "description": "The status tags of the playbook",
+                                "items": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "required": [
+                            "community_uuid",
+                            "created_at",
+                            "created_by",
+                            "created_by_type",
+                            "name",
+                            "status",
+                            "status_message",
+                            "updated_at",
+                            "updated_by",
+                            "updated_by_type",
+                            "uuid",
+                            "version"
+                        ]
+                    }
+                },
+                "total": {
+                    "type": "integer"
+                }
+            }
+        },
+        "PlaybookInfoSchema": {
+            "type": "object",
+            "properties": {
+                "uuid": {
+                    "type": "string",
+                    "format": "uuid",
+                    "description": "The unique identifier of the playbook"
+                },
+                "version": {
+                    "type": "integer",
+                    "description": "The version number for this revision"
+                },
+                "community_uuid": {
+                    "type": "string",
+                    "format": "uuid",
+                    "description": "The unique identifier of the community this playbook belongs to"
+                },
+                "meta_community_uuids": {
+                    "type": "array",
+                    "description": "The unique identifiers of the communities having an instance of the playbook",
+                    "items": {
+                        "type": "string",
+                        "format": "uuid"
+                    }
+                },
+                "status": {
+                    "type": "string",
+                    "description": "The status of the playbook"
+                },
+                "status_message": {
+                    "type": "string",
+                    "x-nullable": true,
+                    "description": "The reason of the status of the playbook"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "The name of the playbook"
+                },
+                "description": {
+                    "type": "string",
+                    "description": "The description of the playbook"
+                },
+                "meta_playbook": {
+                    "type": "boolean",
+                    "description": "Whether it is a meta playbook"
+                },
+                "parent_uuid": {
+                    "type": "string",
+                    "description": "The unique identifier of the parent playbook"
+                },
+                "created_at": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "The creation date of the playbook"
+                },
+                "created_by": {
+                    "type": "string",
+                    "description": "The unique identifier of the creator of the playbook"
+                },
+                "created_by_type": {
+                    "type": "string",
+                    "description": "The account type of the creator of the playbook"
+                },
+                "updated_at": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "The last modification date of the playbook"
+                },
+                "updated_by": {
+                    "type": "string",
+                    "description": "The unique identifier of the last account to update the playbook"
+                },
+                "updated_by_type": {
+                    "type": "string",
+                    "description": "The type of the last account to update the playbook"
+                },
+                "activated_at": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "The last activation date of the playbook"
+                },
+                "activated_by": {
+                    "type": "string",
+                    "description": "The unique identifier of the last account to activate the playbook"
+                },
+                "activated_by_type": {
+                    "type": "string",
+                    "description": "The type of the last account to activate the playbook"
+                },
+                "trigger_configurations": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "uuid": {
+                                "type": "string",
+                                "format": "uuid",
+                                "description": "The unique identifier of the trigger configuration"
+                            },
+                            "trigger_uuid": {
+                                "type": "string",
+                                "format": "uuid",
+                                "description": "The unique identifier of the trigger"
+                            }
+                        },
+                        "required": [
+                            "trigger_uuid",
+                            "uuid"
+                        ]
+                    }
+                },
+                "status_tags": {
+                    "type": "array",
+                    "description": "The status tags of the playbook",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "community_uuid",
+                "created_at",
+                "created_by",
+                "created_by_type",
+                "name",
+                "status",
+                "status_message",
+                "updated_at",
+                "updated_by",
+                "updated_by_type",
+                "uuid",
+                "version"
+            ]
+        },
+        "PlaybookSchema": {
+            "type": "object",
+            "properties": {
+                "uuid": {
+                    "type": "string",
+                    "format": "uuid",
+                    "description": "The unique identifier of the playbook"
+                },
+                "version": {
+                    "type": "integer",
+                    "description": "The version number for this revision"
+                },
+                "community_uuid": {
+                    "type": "string",
+                    "format": "uuid",
+                    "description": "The unique identifier of the community this playbook belongs to"
+                },
+                "meta_community_uuids": {
+                    "type": "array",
+                    "description": "The unique identifiers of the communities having an instance of the playbook",
+                    "items": {
+                        "type": "string",
+                        "format": "uuid"
+                    }
+                },
+                "status": {
+                    "type": "string",
+                    "description": "The status of the playbook"
+                },
+                "status_message": {
+                    "type": "string",
+                    "x-nullable": true,
+                    "description": "The reason of the status of the playbook"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "The name of the playbook"
+                },
+                "description": {
+                    "type": "string",
+                    "description": "The description of the playbook"
+                },
+                "meta_playbook": {
+                    "type": "boolean",
+                    "description": "Whether it is a meta playbook"
+                },
+                "parent_uuid": {
+                    "type": "string",
+                    "description": "The unique identifier of the parent playbook"
+                },
+                "created_at": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "The creation date of the playbook"
+                },
+                "created_by": {
+                    "type": "string",
+                    "description": "The unique identifier of the creator of the playbook"
+                },
+                "created_by_type": {
+                    "type": "string",
+                    "description": "The account type of the creator of the playbook"
+                },
+                "updated_at": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "The last modification date of the playbook"
+                },
+                "updated_by": {
+                    "type": "string",
+                    "description": "The unique identifier of the last account to update the playbook"
+                },
+                "updated_by_type": {
+                    "type": "string",
+                    "description": "The type of the last account to update the playbook"
+                },
+                "activated_at": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "The last activation date of the playbook"
+                },
+                "activated_by": {
+                    "type": "string",
+                    "description": "The unique identifier of the last account to activate the playbook"
+                },
+                "activated_by_type": {
+                    "type": "string",
+                    "description": "The type of the last account to activate the playbook"
+                },
+                "trigger_configurations": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "uuid": {
+                                "type": "string",
+                                "format": "uuid",
+                                "description": "The unique identifier of the trigger configuration"
+                            },
+                            "trigger_uuid": {
+                                "type": "string",
+                                "format": "uuid",
+                                "description": "The unique identifier of the trigger"
+                            }
+                        },
+                        "required": [
+                            "trigger_uuid",
+                            "uuid"
+                        ]
+                    }
+                },
+                "status_tags": {
+                    "type": "array",
+                    "description": "The status tags of the playbook",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "content": {
+                    "type": "object",
+                    "description": "Detailed playbook content"
+                }
+            },
+            "required": [
+                "community_uuid",
+                "content",
+                "created_at",
+                "created_by",
+                "created_by_type",
+                "name",
+                "status",
+                "status_message",
+                "updated_at",
+                "updated_by",
+                "updated_by_type",
+                "uuid",
+                "version"
+            ]
+        },
+        "PlaybookStatisticsSchema": {
+            "type": "object",
+            "properties": {
+                "statuses": {
+                    "type": "object",
+                    "description": "Statistics about the statuses of the playbooks"
+                }
+            }
+        },
+        "PlaybookRunsSchema": {
+            "type": "object",
+            "properties": {
+                "items": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "uuid": {
+                                "type": "string",
+                                "description": "The playbook run uuid"
+                            },
+                            "playbook_content": {
+                                "type": "object",
+                                "description": "Content of the playbook for this run"
+                            },
+                            "playbook_uuid": {
+                                "type": "string",
+                                "description": "UUID of the Playbook"
+                            },
+                            "playbook_name": {
+                                "type": "string",
+                                "description": "Name of the Playbook"
+                            },
+                            "community_uuid": {
+                                "type": "string",
+                                "description": "The playbook run community uuid"
+                            },
+                            "event": {
+                                "type": "string",
+                                "description": "The event name of the playbook run"
+                            },
+                            "status": {
+                                "type": "string",
+                                "description": "Status of the playbook run"
+                            },
+                            "store": {
+                                "type": "object",
+                                "description": "Store of the playbook run"
+                            },
+                            "started_at": {
+                                "type": "string",
+                                "format": "date-time",
+                                "description": "Starting date of the playbook run"
+                            },
+                            "started_by": {
+                                "type": "string",
+                                "description": "Entity that started the playbook run"
+                            },
+                            "started_by_type": {
+                                "type": "string",
+                                "description": "Type of the entity that started the the playbook run"
+                            },
+                            "pending_at": {
+                                "type": "string",
+                                "format": "date-time",
+                                "description": "Pending date of the playbook run"
+                            },
+                            "running_at": {
+                                "type": "string",
+                                "format": "date-time",
+                                "description": "Running date of the playbook run"
+                            },
+                            "finished_at": {
+                                "type": "string",
+                                "format": "date-time",
+                                "description": "Finished date of the playbook run"
+                            }
+                        },
+                        "required": [
+                            "community_uuid",
+                            "event",
+                            "playbook_name",
+                            "playbook_uuid",
+                            "started_at",
+                            "started_by",
+                            "started_by_type",
+                            "status",
+                            "uuid"
+                        ]
+                    }
+                },
+                "total": {
+                    "type": "integer"
+                }
+            }
+        },
+        "PlaybookRunSchema": {
+            "type": "object",
+            "properties": {
+                "uuid": {
+                    "type": "string",
+                    "description": "The playbook run uuid"
+                },
+                "playbook_content": {
+                    "type": "object",
+                    "description": "Content of the playbook for this run"
+                },
+                "playbook_uuid": {
+                    "type": "string",
+                    "description": "UUID of the Playbook"
+                },
+                "playbook_name": {
+                    "type": "string",
+                    "description": "Name of the Playbook"
+                },
+                "community_uuid": {
+                    "type": "string",
+                    "description": "The playbook run community uuid"
+                },
+                "event": {
+                    "type": "string",
+                    "description": "The event name of the playbook run"
+                },
+                "status": {
+                    "type": "string",
+                    "description": "Status of the playbook run"
+                },
+                "store": {
+                    "type": "object",
+                    "description": "Store of the playbook run"
+                },
+                "started_at": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Starting date of the playbook run"
+                },
+                "started_by": {
+                    "type": "string",
+                    "description": "Entity that started the playbook run"
+                },
+                "started_by_type": {
+                    "type": "string",
+                    "description": "Type of the entity that started the the playbook run"
+                },
+                "pending_at": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Pending date of the playbook run"
+                },
+                "running_at": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Running date of the playbook run"
+                },
+                "finished_at": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Finished date of the playbook run"
+                }
+            },
+            "required": [
+                "community_uuid",
+                "event",
+                "playbook_name",
+                "playbook_uuid",
+                "started_at",
+                "started_by",
+                "started_by_type",
+                "status",
+                "uuid"
+            ]
+        },
+        "PlaybookRunDetailsSchema": {
+            "type": "object",
+            "properties": {
+                "playbook_run": {
+                    "type": "object",
+                    "properties": {
+                        "uuid": {
+                            "type": "string",
+                            "description": "The playbook run uuid"
+                        },
+                        "playbook_content": {
+                            "type": "object",
+                            "description": "Content of the playbook for this run"
+                        },
+                        "playbook_uuid": {
+                            "type": "string",
+                            "description": "UUID of the Playbook"
+                        },
+                        "playbook_name": {
+                            "type": "string",
+                            "description": "Name of the Playbook"
+                        },
+                        "community_uuid": {
+                            "type": "string",
+                            "description": "The playbook run community uuid"
+                        },
+                        "event": {
+                            "type": "string",
+                            "description": "The event name of the playbook run"
+                        },
+                        "status": {
+                            "type": "string",
+                            "description": "Status of the playbook run"
+                        },
+                        "store": {
+                            "type": "object",
+                            "description": "Store of the playbook run"
+                        },
+                        "started_at": {
+                            "type": "string",
+                            "format": "date-time",
+                            "description": "Starting date of the playbook run"
+                        },
+                        "started_by": {
+                            "type": "string",
+                            "description": "Entity that started the playbook run"
+                        },
+                        "started_by_type": {
+                            "type": "string",
+                            "description": "Type of the entity that started the the playbook run"
+                        },
+                        "pending_at": {
+                            "type": "string",
+                            "format": "date-time",
+                            "description": "Pending date of the playbook run"
+                        },
+                        "running_at": {
+                            "type": "string",
+                            "format": "date-time",
+                            "description": "Running date of the playbook run"
+                        },
+                        "finished_at": {
+                            "type": "string",
+                            "format": "date-time",
+                            "description": "Finished date of the playbook run"
+                        }
+                    },
+                    "required": [
+                        "community_uuid",
+                        "event",
+                        "playbook_name",
+                        "playbook_uuid",
+                        "started_at",
+                        "started_by",
+                        "started_by_type",
+                        "status",
+                        "uuid"
+                    ]
+                },
+                "playbook": {
+                    "type": "object",
+                    "description": "Detailed playbook content"
+                },
+                "node_runs": {
+                    "type": "object",
+                    "description": "Node Runs"
+                }
+            },
+            "required": [
+                "node_runs",
+                "playbook"
+            ]
+        },
+        "TriggerConfigurationListSchema": {
+            "type": "object",
+            "properties": {
+                "items": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "uuid": {
+                                "type": "string",
+                                "format": "uuid",
+                                "description": "The unique identifier of the Node Configuration"
+                            },
+                            "community_uuid": {
+                                "type": "string",
+                                "format": "uuid",
+                                "description": "The unique identifier of the community this Node Configuration belongs to"
+                            },
+                            "module_configuration_uuid": {
+                                "type": "string",
+                                "format": "uuid",
+                                "description": "UUID of the Module Configuration"
+                            },
+                            "name": {
+                                "type": "string",
+                                "description": "The name of the Node Configuration"
+                            },
+                            "created_at": {
+                                "type": "string",
+                                "format": "date-time",
+                                "description": "The creation date of the Node Configuration"
+                            },
+                            "created_by": {
+                                "type": "string",
+                                "description": "The unique identifier of the creator of the Node Configuration"
+                            },
+                            "created_by_type": {
+                                "type": "string",
+                                "description": "The account type of the creator of the Node Configuration"
+                            },
+                            "updated_at": {
+                                "type": "string",
+                                "format": "date-time",
+                                "description": "The last modification date of the Node Configuration"
+                            },
+                            "updated_by": {
+                                "type": "string",
+                                "description": "The unique identifier of the last account to update the Node Configuration"
+                            },
+                            "updated_by_type": {
+                                "type": "string",
+                                "description": "The type of the last account to update the Node Configuration"
+                            },
+                            "deleted": {
+                                "type": "boolean",
+                                "description": "Determine if the Node Configuration is set at \"deleted\""
+                            },
+                            "deleted_at": {
+                                "type": "string",
+                                "format": "date-time",
+                                "description": "The last activation date of the Node Configuration"
+                            },
+                            "deleted_by": {
+                                "type": "string",
+                                "description": "The unique identifier of the last account to activate the Node Configuration"
+                            },
+                            "deleted_by_type": {
+                                "type": "string",
+                                "description": "The type of the last account to activate the Node Configuration"
+                            },
+                            "value": {
+                                "type": "object",
+                                "description": "The Node Configuration value"
+                            },
+                            "trigger_uuid": {
+                                "type": "string",
+                                "format": "uuid",
+                                "description": "UUID of the Node"
+                            }
+                        },
+                        "required": [
+                            "community_uuid",
+                            "created_at",
+                            "created_by",
+                            "created_by_type",
+                            "module_configuration_uuid",
+                            "name",
+                            "trigger_uuid",
+                            "updated_at",
+                            "updated_by",
+                            "updated_by_type",
+                            "uuid"
+                        ]
+                    }
+                },
+                "total": {
+                    "type": "integer"
+                }
+            }
+        },
+        "TriggerConfigurationSchema": {
+            "type": "object",
+            "properties": {
+                "uuid": {
+                    "type": "string",
+                    "format": "uuid",
+                    "description": "The unique identifier of the Node Configuration"
+                },
+                "community_uuid": {
+                    "type": "string",
+                    "format": "uuid",
+                    "description": "The unique identifier of the community this Node Configuration belongs to"
+                },
+                "module_configuration_uuid": {
+                    "type": "string",
+                    "format": "uuid",
+                    "description": "UUID of the Module Configuration"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "The name of the Node Configuration"
+                },
+                "created_at": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "The creation date of the Node Configuration"
+                },
+                "created_by": {
+                    "type": "string",
+                    "description": "The unique identifier of the creator of the Node Configuration"
+                },
+                "created_by_type": {
+                    "type": "string",
+                    "description": "The account type of the creator of the Node Configuration"
+                },
+                "updated_at": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "The last modification date of the Node Configuration"
+                },
+                "updated_by": {
+                    "type": "string",
+                    "description": "The unique identifier of the last account to update the Node Configuration"
+                },
+                "updated_by_type": {
+                    "type": "string",
+                    "description": "The type of the last account to update the Node Configuration"
+                },
+                "deleted": {
+                    "type": "boolean",
+                    "description": "Determine if the Node Configuration is set at \"deleted\""
+                },
+                "deleted_at": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "The last activation date of the Node Configuration"
+                },
+                "deleted_by": {
+                    "type": "string",
+                    "description": "The unique identifier of the last account to activate the Node Configuration"
+                },
+                "deleted_by_type": {
+                    "type": "string",
+                    "description": "The type of the last account to activate the Node Configuration"
+                },
+                "value": {
+                    "type": "object",
+                    "description": "The Node Configuration value"
+                },
+                "trigger_uuid": {
+                    "type": "string",
+                    "format": "uuid",
+                    "description": "UUID of the Node"
+                }
+            },
+            "required": [
+                "community_uuid",
+                "created_at",
+                "created_by",
+                "created_by_type",
+                "module_configuration_uuid",
+                "name",
+                "trigger_uuid",
+                "updated_at",
+                "updated_by",
+                "updated_by_type",
+                "uuid"
+            ]
+        },
+        "RetrieveLogsSchema": {
+            "type": "object",
+            "properties": {
+                "items": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "uuid": {
+                                "type": "string",
+                                "format": "uuid"
+                            },
+                            "level": {
+                                "type": "string"
+                            },
+                            "message": {
+                                "type": "string"
+                            },
+                            "date": {
+                                "type": "string",
+                                "format": "date-time"
+                            }
+                        }
+                    }
+                },
+                "total": {
+                    "type": "integer"
+                },
+                "errors": {
+                    "type": "integer"
+                }
+            },
+            "required": [
+                "total"
+            ]
+        },
+        "ActionsSchema": {
+            "type": "object",
+            "properties": {
+                "items": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "uuid": {
+                                "type": "string",
+                                "description": "The action uuid"
+                            },
+                            "name": {
+                                "type": "string",
+                                "description": "Name of the action"
+                            },
+                            "description": {
+                                "type": "string",
+                                "description": "Description of the action"
+                            },
+                            "docker": {
+                                "type": "string",
+                                "description": "The action's docker image"
+                            },
+                            "docker_parameters": {
+                                "type": "string",
+                                "description": "The parameters of the action's docker image"
+                            },
+                            "outputs": {
+                                "type": "object",
+                                "description": "Pending date of the action"
+                            },
+                            "module_uuid": {
+                                "type": "string",
+                                "description": "UUID of the module this action belongs to"
+                            },
+                            "arguments": {
+                                "type": "object",
+                                "description": "Type of the entity that started the the action"
+                            },
+                            "results": {
+                                "type": "object",
+                                "description": "Finished date of the action"
+                            },
+                            "template": {
+                                "type": "string",
+                                "description": "The template to display the result of an action execution"
+                            }
+                        },
+                        "required": [
+                            "docker",
+                            "module_uuid",
+                            "name",
+                            "uuid"
+                        ]
+                    }
+                },
+                "total": {
+                    "type": "integer"
+                }
+            }
+        },
+        "ActionSchema": {
+            "type": "object",
+            "properties": {
+                "uuid": {
+                    "type": "string",
+                    "description": "The action uuid"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "Name of the action"
+                },
+                "description": {
+                    "type": "string",
+                    "description": "Description of the action"
+                },
+                "docker": {
+                    "type": "string",
+                    "description": "The action's docker image"
+                },
+                "docker_parameters": {
+                    "type": "string",
+                    "description": "The parameters of the action's docker image"
+                },
+                "outputs": {
+                    "type": "object",
+                    "description": "Pending date of the action"
+                },
+                "module_uuid": {
+                    "type": "string",
+                    "description": "UUID of the module this action belongs to"
+                },
+                "arguments": {
+                    "type": "object",
+                    "description": "Type of the entity that started the the action"
+                },
+                "results": {
+                    "type": "object",
+                    "description": "Finished date of the action"
+                },
+                "template": {
+                    "type": "string",
+                    "description": "The template to display the result of an action execution"
+                }
+            },
+            "required": [
+                "docker",
+                "module_uuid",
+                "name",
+                "uuid"
+            ]
+        },
+        "NodeRunUUIDSchema": {
+            "type": "object",
+            "properties": {
+                "node_run_uuid": {
+                    "type": "string",
+                    "description": "The node run uuid"
+                }
+            },
+            "required": [
+                "node_run_uuid"
+            ]
+        },
+        "NodesSchema": {
+            "type": "object",
+            "properties": {
+                "items": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "uuid": {
+                                "type": "string",
+                                "description": "The node uuid"
+                            },
+                            "name": {
+                                "type": "string",
+                                "description": "Name of the node"
+                            },
+                            "description": {
+                                "type": "string",
+                                "description": "Description of the node"
+                            },
+                            "docker": {
+                                "type": "string",
+                                "description": "The node's docker image"
+                            },
+                            "docker_parameters": {
+                                "type": "string",
+                                "description": "The parameters of the node's docker image"
+                            },
+                            "module_uuid": {
+                                "type": "string",
+                                "description": "UUID of the node's module"
+                            },
+                            "community_uuid": {
+                                "type": "string",
+                                "description": "UUID of the module's community"
+                            }
+                        }
+                    }
+                },
+                "total": {
+                    "type": "integer"
+                }
+            }
+        },
+        "TriggerSchema": {
+            "type": "object",
+            "properties": {
+                "uuid": {
+                    "type": "string",
+                    "description": "The node uuid"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "Name of the node"
+                },
+                "description": {
+                    "type": "string",
+                    "description": "Description of the node"
+                },
+                "docker": {
+                    "type": "string",
+                    "description": "The node's docker image"
+                },
+                "docker_parameters": {
+                    "type": "string",
+                    "description": "The parameters of the node's docker image"
+                },
+                "module_uuid": {
+                    "type": "string",
+                    "description": "UUID of the node's module"
+                },
+                "community_uuid": {
+                    "type": "string",
+                    "description": "UUID of the module's community"
+                },
+                "arguments": {
+                    "type": "object",
+                    "description": "The node's arguments"
+                },
+                "webhook": {
+                    "type": "boolean",
+                    "description": "The Trigger is a webhook (push)"
+                },
+                "outputs": {
+                    "type": "object",
+                    "description": "The trigger's outputs"
+                },
+                "results": {
+                    "type": "object",
+                    "description": "The trigger's results"
+                }
+            }
+        },
+        "modules_d_t_o": {
+            "required": [
+                "total"
+            ],
+            "properties": {
+                "items": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/module_simple_d_t_o"
+                    }
+                },
+                "total": {
+                    "type": "integer"
+                }
+            },
+            "type": "object"
+        },
+        "module_simple_d_t_o": {
+            "required": [
+                "created_at",
+                "name",
+                "release_status",
+                "supports_validation",
+                "uuid"
+            ],
+            "properties": {
+                "uuid": {
+                    "type": "string",
+                    "description": "The module's uuid"
+                },
+                "community_uuid": {
+                    "type": "string",
+                    "description": "The community's uuid"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "Module's name"
+                },
+                "docker": {
+                    "type": "string",
+                    "description": "Module's docker image"
+                },
+                "description": {
+                    "type": "string",
+                    "description": "Description of the module"
+                },
+                "image": {
+                    "type": "string",
+                    "description": "Module's logo (as a Data URI)"
+                },
+                "configuration": {
+                    "type": "string",
+                    "description": "Module's configuration"
+                },
+                "version": {
+                    "type": "string",
+                    "description": "The module's version"
+                },
+                "categories": {
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "description": "The categories of the module"
+                    }
+                },
+                "release_status": {
+                    "type": "string",
+                    "description": "Release status of the module"
+                },
+                "popularity_score": {
+                    "type": "integer",
+                    "description": "Popularity score of the module",
+                    "default": 0
+                },
+                "nb_related_actions": {
+                    "type": "integer",
+                    "description": "Number of Actions linked to this Module",
+                    "default": 0
+                },
+                "nb_related_triggers": {
+                    "type": "integer",
+                    "description": "Number of Triggers linked to this Module",
+                    "default": 0
+                },
+                "created_at": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Creation date of the module"
+                },
+                "created_by": {
+                    "type": "string",
+                    "description": "Identity that created the module"
+                },
+                "created_by_type": {
+                    "type": "string",
+                    "description": "Identity type that created the module"
+                },
+                "updated_at": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Update date of the module"
+                },
+                "updated_by": {
+                    "type": "string",
+                    "description": "Identity that updated the module"
+                },
+                "updated_by_type": {
+                    "type": "string",
+                    "description": "Identity type that updated the module"
+                },
+                "supports_validation": {
+                    "type": "boolean",
+                    "description": "Module supports account validation"
+                }
+            },
+            "type": "object"
+        },
+        "module_categories_d_t_o": {
+            "required": [
+                "total"
+            ],
+            "properties": {
+                "items": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "total": {
+                    "type": "integer"
+                }
+            },
+            "type": "object"
+        },
+        "ModuleConfigurationListWithModuleSchema": {
+            "type": "object",
+            "properties": {
+                "items": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "uuid": {
+                                "type": "string",
+                                "format": "uuid",
+                                "description": "The unique identifier of the Module Configuration"
+                            },
+                            "community_uuid": {
+                                "type": "string",
+                                "format": "uuid",
+                                "description": "The unique identifier of the community this Module Configuration belongs to"
+                            },
+                            "module_uuid": {
+                                "type": "string",
+                                "format": "uuid",
+                                "description": "UUID of the Module"
+                            },
+                            "name": {
+                                "type": "string",
+                                "description": "The name of the Module Configuration"
+                            },
+                            "created_at": {
+                                "type": "string",
+                                "format": "date-time",
+                                "description": "The creation date of the Module Configuration"
+                            },
+                            "created_by": {
+                                "type": "string",
+                                "description": "The unique identifier of the creator of the Module Configuration"
+                            },
+                            "created_by_type": {
+                                "type": "string",
+                                "description": "The account type of the creator of the Module Configuration"
+                            },
+                            "updated_at": {
+                                "type": "string",
+                                "format": "date-time",
+                                "description": "The last modification date of the Module Configuration"
+                            },
+                            "updated_by": {
+                                "type": "string",
+                                "description": "The unique identifier of the last account to update the Module Configuration"
+                            },
+                            "updated_by_type": {
+                                "type": "string",
+                                "description": "The type of the last account to update the Module Configuration"
+                            },
+                            "deleted": {
+                                "type": "boolean",
+                                "description": "Determine if the Module Configuration is set at \"deleted\""
+                            },
+                            "deleted_at": {
+                                "type": "string",
+                                "format": "date-time",
+                                "description": "The last activation date of the Module Configuration"
+                            },
+                            "deleted_by": {
+                                "type": "string",
+                                "description": "The unique identifier of the last account to activate the Module Configuration"
+                            },
+                            "deleted_by_type": {
+                                "type": "string",
+                                "description": "The type of the last account to activate the Module Configuration"
+                            },
+                            "module": {
+                                "type": "object",
+                                "properties": {
+                                    "uuid": {
+                                        "type": "string",
+                                        "description": "The module's uuid"
+                                    },
+                                    "name": {
+                                        "type": "string",
+                                        "description": "Module's name"
+                                    },
+                                    "description": {
+                                        "type": "string",
+                                        "description": "Description of the module"
+                                    },
+                                    "image": {
+                                        "type": "string",
+                                        "description": "Module's logo (as a Data URI)"
+                                    },
+                                    "configuration": {
+                                        "type": "object",
+                                        "description": "Module's configuration"
+                                    },
+                                    "changelog": {
+                                        "type": "string",
+                                        "description": "The changelog of the module"
+                                    },
+                                    "categories": {
+                                        "type": "array",
+                                        "description": "The categories of the module",
+                                        "items": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "nb_related_actions": {
+                                        "type": "integer",
+                                        "description": "Number of Actions linked to this Module"
+                                    },
+                                    "nb_related_triggers": {
+                                        "type": "integer",
+                                        "description": "Number of Triggers linked to this Module"
+                                    },
+                                    "supports_validation": {
+                                        "type": "boolean",
+                                        "description": "Module supports validation"
+                                    }
+                                }
+                            }
+                        },
+                        "required": [
+                            "community_uuid",
+                            "created_at",
+                            "created_by",
+                            "created_by_type",
+                            "module_uuid",
+                            "name",
+                            "updated_at",
+                            "updated_by",
+                            "updated_by_type",
+                            "uuid"
+                        ]
+                    }
+                },
+                "total": {
+                    "type": "integer"
+                }
+            }
+        },
+        "ModuleConfigurationSchema": {
+            "type": "object",
+            "properties": {
+                "uuid": {
+                    "type": "string",
+                    "format": "uuid",
+                    "description": "The unique identifier of the Module Configuration"
+                },
+                "community_uuid": {
+                    "type": "string",
+                    "format": "uuid",
+                    "description": "The unique identifier of the community this Module Configuration belongs to"
+                },
+                "module_uuid": {
+                    "type": "string",
+                    "format": "uuid",
+                    "description": "UUID of the Module"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "The name of the Module Configuration"
+                },
+                "created_at": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "The creation date of the Module Configuration"
+                },
+                "created_by": {
+                    "type": "string",
+                    "description": "The unique identifier of the creator of the Module Configuration"
+                },
+                "created_by_type": {
+                    "type": "string",
+                    "description": "The account type of the creator of the Module Configuration"
+                },
+                "updated_at": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "The last modification date of the Module Configuration"
+                },
+                "updated_by": {
+                    "type": "string",
+                    "description": "The unique identifier of the last account to update the Module Configuration"
+                },
+                "updated_by_type": {
+                    "type": "string",
+                    "description": "The type of the last account to update the Module Configuration"
+                },
+                "deleted": {
+                    "type": "boolean",
+                    "description": "Determine if the Module Configuration is set at \"deleted\""
+                },
+                "deleted_at": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "The last activation date of the Module Configuration"
+                },
+                "deleted_by": {
+                    "type": "string",
+                    "description": "The unique identifier of the last account to activate the Module Configuration"
+                },
+                "deleted_by_type": {
+                    "type": "string",
+                    "description": "The type of the last account to activate the Module Configuration"
+                },
+                "value": {
+                    "type": "object",
+                    "description": "The Module Configuration value"
+                }
+            },
+            "required": [
+                "community_uuid",
+                "created_at",
+                "created_by",
+                "created_by_type",
+                "module_uuid",
+                "name",
+                "updated_at",
+                "updated_by",
+                "updated_by_type",
+                "uuid",
+                "value"
+            ]
+        },
+        "ModuleConfigurationUsageSchema": {
+            "type": "object",
+            "properties": {
+                "actions": {
+                    "type": "integer",
+                    "description": "Number of actions associated to the module configuration"
+                },
+                "triggers": {
+                    "type": "integer",
+                    "description": "Number of triggers associated to the module configuration"
+                },
+                "playbooks": {
+                    "type": "integer",
+                    "description": "Number of playbooks associated to the module configuration"
+                },
+                "connectors": {
+                    "type": "integer",
+                    "description": "Number of connectors associated to the module configuration"
+                }
+            }
+        },
+        "NodeRunSchema": {
+            "type": "object",
+            "properties": {
+                "uuid": {
+                    "type": "string",
+                    "format": "uuid",
+                    "description": "The unique identifier of the Node Run"
+                },
+                "node_type": {
+                    "type": "string",
+                    "description": "The node's type (trigger, action, operator)"
+                },
+                "node_id": {
+                    "type": "integer",
+                    "description": "The node ID in the playbook's context"
+                },
+                "parent_node_run_id": {
+                    "type": "integer",
+                    "description": "The ID of the parent node run"
+                },
+                "iteration": {
+                    "type": "integer",
+                    "description": "The iteration of the loop"
+                },
+                "status": {
+                    "type": "string",
+                    "description": "The status of the action run"
+                },
+                "error": {
+                    "type": "string",
+                    "description": "Error message raised by the action run"
+                },
+                "started_at": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "The start date of the action run"
+                },
+                "pending_at": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Date at which the action run was queued"
+                },
+                "running_at": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Date at which the action run was launched"
+                },
+                "finished_at": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Date at which the action run was finished"
+                },
+                "arguments": {
+                    "type": "object",
+                    "description": "Action Run Arguments"
+                },
+                "outputs": {
+                    "type": "object",
+                    "description": "Action Run Outputs"
+                },
+                "results": {
+                    "type": "object",
+                    "description": "Action Run Results"
+                },
+                "logs": {
+                    "type": "string",
+                    "description": "Action Run Logs"
+                }
+            },
+            "required": [
+                "iteration",
+                "node_id",
+                "node_type",
+                "parent_node_run_id",
+                "started_at",
+                "status",
+                "uuid"
+            ]
+        },
+        "PlaybookRunsCountersPerPlaybookSchema": {
+            "type": "object",
+            "properties": {
+                "items": {
+                    "type": "object",
+                    "description": "Statistics for each playbook"
+                },
+                "total": {
+                    "type": "integer",
+                    "description": "Number of counters that matched the criteria"
+                }
+            },
+            "required": [
+                "items",
+                "total"
+            ]
+        },
+        "NodeSchema": {
+            "type": "object",
+            "properties": {
+                "uuid": {
+                    "type": "string",
+                    "description": "The node uuid"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "Name of the node"
+                },
+                "description": {
+                    "type": "string",
+                    "description": "Description of the node"
+                },
+                "docker": {
+                    "type": "string",
+                    "description": "The node's docker image"
+                },
+                "docker_parameters": {
+                    "type": "string",
+                    "description": "The parameters of the node's docker image"
+                },
+                "module_uuid": {
+                    "type": "string",
+                    "description": "UUID of the node's module"
+                },
+                "community_uuid": {
+                    "type": "string",
+                    "description": "UUID of the module's community"
+                },
+                "arguments": {
+                    "type": "object",
+                    "description": "The node's arguments"
+                }
+            }
+        },
+        "ConnectorConfigurationListSchema": {
+            "type": "object",
+            "properties": {
+                "items": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "uuid": {
+                                "type": "string",
+                                "format": "uuid",
+                                "description": "The unique identifier of the Node Configuration"
+                            },
+                            "community_uuid": {
+                                "type": "string",
+                                "format": "uuid",
+                                "description": "The unique identifier of the community this Node Configuration belongs to"
+                            },
+                            "module_configuration_uuid": {
+                                "type": "string",
+                                "format": "uuid",
+                                "description": "UUID of the Module Configuration"
+                            },
+                            "name": {
+                                "type": "string",
+                                "description": "The name of the Node Configuration"
+                            },
+                            "created_at": {
+                                "type": "string",
+                                "format": "date-time",
+                                "description": "The creation date of the Node Configuration"
+                            },
+                            "created_by": {
+                                "type": "string",
+                                "description": "The unique identifier of the creator of the Node Configuration"
+                            },
+                            "created_by_type": {
+                                "type": "string",
+                                "description": "The account type of the creator of the Node Configuration"
+                            },
+                            "updated_at": {
+                                "type": "string",
+                                "format": "date-time",
+                                "description": "The last modification date of the Node Configuration"
+                            },
+                            "updated_by": {
+                                "type": "string",
+                                "description": "The unique identifier of the last account to update the Node Configuration"
+                            },
+                            "updated_by_type": {
+                                "type": "string",
+                                "description": "The type of the last account to update the Node Configuration"
+                            },
+                            "deleted": {
+                                "type": "boolean",
+                                "description": "Determine if the Node Configuration is set at \"deleted\""
+                            },
+                            "deleted_at": {
+                                "type": "string",
+                                "format": "date-time",
+                                "description": "The last activation date of the Node Configuration"
+                            },
+                            "deleted_by": {
+                                "type": "string",
+                                "description": "The unique identifier of the last account to activate the Node Configuration"
+                            },
+                            "deleted_by_type": {
+                                "type": "string",
+                                "description": "The type of the last account to activate the Node Configuration"
+                            },
+                            "value": {
+                                "type": "object",
+                                "description": "The Node Configuration value"
+                            },
+                            "connector_uuid": {
+                                "type": "string",
+                                "format": "uuid",
+                                "description": "UUID of the Connector Configuration"
+                            },
+                            "display_status": {
+                                "type": "string",
+                                "enum": [
+                                    "RUNNING",
+                                    "STOPPED",
+                                    "ERROR",
+                                    "CRITICAL_ERROR",
+                                    "STARTING",
+                                    "STOPPING"
+                                ],
+                                "description": "Current status of the Connector Configuration"
+                            }
+                        },
+                        "required": [
+                            "community_uuid",
+                            "connector_uuid",
+                            "created_at",
+                            "created_by",
+                            "created_by_type",
+                            "module_configuration_uuid",
+                            "name",
+                            "updated_at",
+                            "updated_by",
+                            "updated_by_type",
+                            "uuid"
+                        ]
+                    }
+                },
+                "total": {
+                    "type": "integer"
+                }
+            }
+        },
+        "ConnectorConfigurationSchema": {
+            "type": "object",
+            "properties": {
+                "uuid": {
+                    "type": "string",
+                    "format": "uuid",
+                    "description": "The unique identifier of the Node Configuration"
+                },
+                "community_uuid": {
+                    "type": "string",
+                    "format": "uuid",
+                    "description": "The unique identifier of the community this Node Configuration belongs to"
+                },
+                "module_configuration_uuid": {
+                    "type": "string",
+                    "format": "uuid",
+                    "description": "UUID of the Module Configuration"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "The name of the Node Configuration"
+                },
+                "created_at": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "The creation date of the Node Configuration"
+                },
+                "created_by": {
+                    "type": "string",
+                    "description": "The unique identifier of the creator of the Node Configuration"
+                },
+                "created_by_type": {
+                    "type": "string",
+                    "description": "The account type of the creator of the Node Configuration"
+                },
+                "updated_at": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "The last modification date of the Node Configuration"
+                },
+                "updated_by": {
+                    "type": "string",
+                    "description": "The unique identifier of the last account to update the Node Configuration"
+                },
+                "updated_by_type": {
+                    "type": "string",
+                    "description": "The type of the last account to update the Node Configuration"
+                },
+                "deleted": {
+                    "type": "boolean",
+                    "description": "Determine if the Node Configuration is set at \"deleted\""
+                },
+                "deleted_at": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "The last activation date of the Node Configuration"
+                },
+                "deleted_by": {
+                    "type": "string",
+                    "description": "The unique identifier of the last account to activate the Node Configuration"
+                },
+                "deleted_by_type": {
+                    "type": "string",
+                    "description": "The type of the last account to activate the Node Configuration"
+                },
+                "value": {
+                    "type": "object",
+                    "description": "The Node Configuration value"
+                },
+                "connector_uuid": {
+                    "type": "string",
+                    "format": "uuid",
+                    "description": "UUID of the Connector Configuration"
+                },
+                "display_status": {
+                    "type": "string",
+                    "enum": [
+                        "RUNNING",
+                        "STOPPED",
+                        "ERROR",
+                        "CRITICAL_ERROR",
+                        "STARTING",
+                        "STOPPING"
+                    ],
+                    "description": "Current status of the Connector Configuration"
+                }
+            },
+            "required": [
+                "community_uuid",
+                "connector_uuid",
+                "created_at",
+                "created_by",
+                "created_by_type",
+                "module_configuration_uuid",
+                "name",
+                "updated_at",
+                "updated_by",
+                "updated_by_type",
+                "uuid"
+            ]
+        },
+        "s_s_h_public_key": {
+            "required": [
+                "id",
+                "public_key"
+            ],
+            "properties": {
+                "id": {
+                    "type": "string"
+                },
+                "public_key": {
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        }
+    },
+    "responses": {
+        "ParseError": {
+            "description": "When a mask can't be parsed"
+        },
+        "MaskError": {
+            "description": "When any error occurs on mask"
+        },
+        "PlatformError": {}
+    }
+}
