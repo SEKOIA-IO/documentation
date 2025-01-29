@@ -1,4 +1,4 @@
-Rules catalog includes **990 built-in detection rules** ([_last update on 2025-01-22_](rules_changelog.md)).
+Rules catalog includes **993 built-in detection rules** ([_last update on 2025-01-29_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Identity Information**
 
@@ -858,16 +858,35 @@ Rules catalog includes **990 built-in detection rules** ([_last update on 2025-0
     
     - **Effort:** master
     
-??? abstract "Netskope Admin Audit"
+??? abstract "Netskope Admin Audit High Severity"
     
-    Audit events for admin activites, from Logins to policies' changes.
+    Audit events detection for admin activites that differ from authentications, with high severity level according to Netskope.
     
     - **Effort:** master
     
     - **Changelog:**
     
+        - 29/01/2025 - minor - Rework pattern for high severity events only and filter out authentication events.
         - 28/03/2024 - minor - Rule effort was updated to master
             
+??? abstract "Netskope Malware Detected"
+    
+    Netskope identified a malware with a high severity (excluding Patient Zero here)
+    
+    - **Effort:** master
+    
+??? abstract "Netskope Malware Patient Zero Detected"
+    
+    Netskope identified a malware as Patient Zero.
+    
+    - **Effort:** master
+    
+??? abstract "Netskope Web Isolation On Suspicious Domain"
+    
+    Netskope identified a suspicious domain and triggered web sandboxing (RBI)
+    
+    - **Effort:** master
+    
 ??? abstract "Okta Many Passwords Reset Attempt"
     
     This rule identifies a high number of Okta user password reset or account unlock attempts. An adversary may attempt to obtain unauthorized access to Okta user accounts using these methods and attempt to blend in with normal activity in their target's environment and evade detection.
@@ -3178,6 +3197,11 @@ Rules catalog includes **990 built-in detection rules** ([_last update on 2025-0
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 24/01/2025 - minor - Adding filter to reduce false positives.
+        - 27/01/2025 - minor - Changing field and adding filter to reduce false positives.
+            
 ??? abstract "Google Workspace Anomaly File Downloads"
     
     Detects a large number of file downloads.
@@ -5118,16 +5142,35 @@ Rules catalog includes **990 built-in detection rules** ([_last update on 2025-0
     
     - **Effort:** master
     
-??? abstract "Netskope Admin Audit"
+??? abstract "Netskope Admin Audit High Severity"
     
-    Audit events for admin activites, from Logins to policies' changes.
+    Audit events detection for admin activites that differ from authentications, with high severity level according to Netskope.
     
     - **Effort:** master
     
     - **Changelog:**
     
+        - 29/01/2025 - minor - Rework pattern for high severity events only and filter out authentication events.
         - 28/03/2024 - minor - Rule effort was updated to master
             
+??? abstract "Netskope Malware Detected"
+    
+    Netskope identified a malware with a high severity (excluding Patient Zero here)
+    
+    - **Effort:** master
+    
+??? abstract "Netskope Malware Patient Zero Detected"
+    
+    Netskope identified a malware as Patient Zero.
+    
+    - **Effort:** master
+    
+??? abstract "Netskope Web Isolation On Suspicious Domain"
+    
+    Netskope identified a suspicious domain and triggered web sandboxing (RBI)
+    
+    - **Effort:** master
+    
 ??? abstract "Okta Many Passwords Reset Attempt"
     
     This rule identifies a high number of Okta user password reset or account unlock attempts. An adversary may attempt to obtain unauthorized access to Okta user accounts using these methods and attempt to blend in with normal activity in their target's environment and evade detection.
@@ -6890,16 +6933,35 @@ Rules catalog includes **990 built-in detection rules** ([_last update on 2025-0
     
     - **Effort:** master
     
-??? abstract "Netskope Admin Audit"
+??? abstract "Netskope Admin Audit High Severity"
     
-    Audit events for admin activites, from Logins to policies' changes.
+    Audit events detection for admin activites that differ from authentications, with high severity level according to Netskope.
     
     - **Effort:** master
     
     - **Changelog:**
     
+        - 29/01/2025 - minor - Rework pattern for high severity events only and filter out authentication events.
         - 28/03/2024 - minor - Rule effort was updated to master
             
+??? abstract "Netskope Malware Detected"
+    
+    Netskope identified a malware with a high severity (excluding Patient Zero here)
+    
+    - **Effort:** master
+    
+??? abstract "Netskope Malware Patient Zero Detected"
+    
+    Netskope identified a malware as Patient Zero.
+    
+    - **Effort:** master
+    
+??? abstract "Netskope Web Isolation On Suspicious Domain"
+    
+    Netskope identified a suspicious domain and triggered web sandboxing (RBI)
+    
+    - **Effort:** master
+    
 ??? abstract "Okta Many Passwords Reset Attempt"
     
     This rule identifies a high number of Okta user password reset or account unlock attempts. An adversary may attempt to obtain unauthorized access to Okta user accounts using these methods and attempt to blend in with normal activity in their target's environment and evade detection.
@@ -8711,16 +8773,35 @@ Rules catalog includes **990 built-in detection rules** ([_last update on 2025-0
     
     - **Effort:** master
     
-??? abstract "Netskope Admin Audit"
+??? abstract "Netskope Admin Audit High Severity"
     
-    Audit events for admin activites, from Logins to policies' changes.
+    Audit events detection for admin activites that differ from authentications, with high severity level according to Netskope.
     
     - **Effort:** master
     
     - **Changelog:**
     
+        - 29/01/2025 - minor - Rework pattern for high severity events only and filter out authentication events.
         - 28/03/2024 - minor - Rule effort was updated to master
             
+??? abstract "Netskope Malware Detected"
+    
+    Netskope identified a malware with a high severity (excluding Patient Zero here)
+    
+    - **Effort:** master
+    
+??? abstract "Netskope Malware Patient Zero Detected"
+    
+    Netskope identified a malware as Patient Zero.
+    
+    - **Effort:** master
+    
+??? abstract "Netskope Web Isolation On Suspicious Domain"
+    
+    Netskope identified a suspicious domain and triggered web sandboxing (RBI)
+    
+    - **Effort:** master
+    
 ??? abstract "Okta Many Passwords Reset Attempt"
     
     This rule identifies a high number of Okta user password reset or account unlock attempts. An adversary may attempt to obtain unauthorized access to Okta user accounts using these methods and attempt to blend in with normal activity in their target's environment and evade detection.
@@ -13425,14 +13506,15 @@ Rules catalog includes **990 built-in detection rules** ([_last update on 2025-0
     
         - 15/02/2024 - minor - Added filter to reduce false positives
             
-??? abstract "Netskope Alert"
+??? abstract "Netskope Alerts Compliance"
     
-    Forward alerts reported by Netskope.  
+    Forward alerts reported by Netskope related to compliance issues.
     
     - **Effort:** master
     
     - **Changelog:**
     
+        - 29/01/2024 - minor - Rework detection pattern to focus on compliance issues
         - 28/03/2024 - minor - Rule effort was updated to master
             
 ??? abstract "Remote File Copy"
