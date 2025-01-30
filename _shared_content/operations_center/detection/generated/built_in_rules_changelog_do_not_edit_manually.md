@@ -5,6 +5,12 @@ Changelog _last update on 2025-01-30_
 ### Authentication Impossible Travel
   - 30/01/2025 - major - Pattern rework with ECS fields only and simple authentication success use case
     
+### SOCKS Tunneling Tool
+  - 30/01/2025 - minor - Similarity strategy was modified to have more relevant alerts.
+    
+### Microsoft Windows Active Directory Module Commandlets
+  - 30/01/2025 - minor - Adding filters to reduce false positives.
+    
 ### Gatewatcher AionIQ V103 Malcore
   - 27/01/2025 - minor - Changing field and adding filter to reduce false positives.
     
@@ -340,9 +346,6 @@ Changelog _last update on 2025-01-30_
     
 ### Google Workspace External Sharing
   - 20/06/2024 - minor - Adding new elements to increase detection.
-    
-### SOCKS Tunneling Tool
-  - 20/06/2024 - minor - Added filter to reduce false positives
     
 ### Scam Detected By Vade For M365 And Not Blocked
   - 18/06/2024 - minor - Adding filter when whitelisted.

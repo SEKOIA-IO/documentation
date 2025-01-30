@@ -59,6 +59,10 @@ Rules catalog includes **993 built-in detection rules** ([_last update on 2025-0
     
     - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 30/01/2025 - minor - Adding filters to reduce false positives.
+            
 ??? abstract "Remote System Discovery Via Telnet"
     
     Detects use of the protocol telnet to access information.
@@ -13380,6 +13384,7 @@ Rules catalog includes **993 built-in detection rules** ([_last update on 2025-0
     - **Changelog:**
     
         - 20/06/2024 - minor - Added filter to reduce false positives
+        - 30/01/2025 - minor - Similarity strategy was modified to have more relevant alerts.
             
 ??? abstract "SSH Port Binding"
     
