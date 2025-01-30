@@ -15,6 +15,12 @@ The following Sekoia.io built-in rules match the intake **WatchGuard Firebox**. 
     
     - **Effort:** master
 
+??? abstract "Authentication Impossible Travel"
+    
+    Detects impossible travel when performing authentication from a source IP address, grouped by user name. This could require some alert filtering for some user generic accounts, and known IP address range.
+    
+    - **Effort:** master
+
 ??? abstract "Bazar Loader DGA (Domain Generation Algorithm)"
     
     Detects Bazar Loader domains based on the Bazar Loader DGA
