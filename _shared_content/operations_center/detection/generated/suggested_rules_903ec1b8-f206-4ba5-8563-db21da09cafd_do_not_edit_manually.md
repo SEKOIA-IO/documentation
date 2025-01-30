@@ -27,12 +27,6 @@ The following Sekoia.io built-in rules match the intake **Palo Alto NGFW**. This
     
     - **Effort:** master
 
-??? abstract "Authentication Impossible Travel"
-    
-    Detects impossible travel when performing authentication from a source IP address, grouped by username.
-    
-    - **Effort:** advanced
-
 ??? abstract "Burp Suite Tool Detected"
     
     Burp Suite is a cybersecurity tool. When used as a proxy service, its purpose is to intercept packets and modify them to send them to the server. Burp Collaborator is a network service that Burp Suite uses to help discover many kinds of vulnerabilities (vulnerabilities scanner).

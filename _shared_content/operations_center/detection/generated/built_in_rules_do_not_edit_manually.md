@@ -1,4 +1,4 @@
-Rules catalog includes **993 built-in detection rules** ([_last update on 2025-01-29_](rules_changelog.md)).
+Rules catalog includes **993 built-in detection rules** ([_last update on 2025-01-30_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Identity Information**
 
@@ -722,13 +722,15 @@ Rules catalog includes **993 built-in detection rules** ([_last update on 2025-0
             
 ??? abstract "Authentication Impossible Travel"
     
-    Detects impossible travel when performing authentication from a source IP address, grouped by username.
+    Detects impossible travel when performing authentication from a source IP address, grouped by user name. This could require some alert filtering for some user generic accounts, and known IP address range.
     
-    - **Effort:** advanced
+    - **Effort:** master
     
     - **Changelog:**
     
         - 27/07/2024 - major - review filter to avoid false positive
+        - 30/08/2024 - minor - improve filter to avoid false positive
+        - 30/01/2025 - major - Pattern rework with ECS fields only and simple authentication success use case
             
 ??? abstract "Broadcom Edge Secure Web Gateway High Threat"
     
@@ -5006,13 +5008,15 @@ Rules catalog includes **993 built-in detection rules** ([_last update on 2025-0
             
 ??? abstract "Authentication Impossible Travel"
     
-    Detects impossible travel when performing authentication from a source IP address, grouped by username.
+    Detects impossible travel when performing authentication from a source IP address, grouped by user name. This could require some alert filtering for some user generic accounts, and known IP address range.
     
-    - **Effort:** advanced
+    - **Effort:** master
     
     - **Changelog:**
     
         - 27/07/2024 - major - review filter to avoid false positive
+        - 30/08/2024 - minor - improve filter to avoid false positive
+        - 30/01/2025 - major - Pattern rework with ECS fields only and simple authentication success use case
             
 ??? abstract "Broadcom Edge Secure Web Gateway High Threat"
     
@@ -6797,13 +6801,15 @@ Rules catalog includes **993 built-in detection rules** ([_last update on 2025-0
             
 ??? abstract "Authentication Impossible Travel"
     
-    Detects impossible travel when performing authentication from a source IP address, grouped by username.
+    Detects impossible travel when performing authentication from a source IP address, grouped by user name. This could require some alert filtering for some user generic accounts, and known IP address range.
     
-    - **Effort:** advanced
+    - **Effort:** master
     
     - **Changelog:**
     
         - 27/07/2024 - major - review filter to avoid false positive
+        - 30/08/2024 - minor - improve filter to avoid false positive
+        - 30/01/2025 - major - Pattern rework with ECS fields only and simple authentication success use case
             
 ??? abstract "Broadcom Edge Secure Web Gateway High Threat"
     
@@ -8637,13 +8643,15 @@ Rules catalog includes **993 built-in detection rules** ([_last update on 2025-0
             
 ??? abstract "Authentication Impossible Travel"
     
-    Detects impossible travel when performing authentication from a source IP address, grouped by username.
+    Detects impossible travel when performing authentication from a source IP address, grouped by user name. This could require some alert filtering for some user generic accounts, and known IP address range.
     
-    - **Effort:** advanced
+    - **Effort:** master
     
     - **Changelog:**
     
         - 27/07/2024 - major - review filter to avoid false positive
+        - 30/08/2024 - minor - improve filter to avoid false positive
+        - 30/01/2025 - major - Pattern rework with ECS fields only and simple authentication success use case
             
 ??? abstract "Broadcom Edge Secure Web Gateway High Threat"
     
@@ -11086,13 +11094,15 @@ Rules catalog includes **993 built-in detection rules** ([_last update on 2025-0
     
 ??? abstract "Authentication Impossible Travel"
     
-    Detects impossible travel when performing authentication from a source IP address, grouped by username.
+    Detects impossible travel when performing authentication from a source IP address, grouped by user name. This could require some alert filtering for some user generic accounts, and known IP address range.
     
-    - **Effort:** advanced
+    - **Effort:** master
     
     - **Changelog:**
     
         - 27/07/2024 - major - review filter to avoid false positive
+        - 30/08/2024 - minor - improve filter to avoid false positive
+        - 30/01/2025 - major - Pattern rework with ECS fields only and simple authentication success use case
             
 ??? abstract "Brute Force WALLIX Bastion"
     
