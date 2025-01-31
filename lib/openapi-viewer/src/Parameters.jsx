@@ -84,7 +84,7 @@ export const Property = (prop, override = {}, stack = null, level = 0) => {
 
     if (prop.anyOf?.length > 0 || prop.schema?.anyOf?.length > 0) {
         for (const alt of (prop.anyOf || prop.schema.anyOf)) {
-            if (alt.type !== 'null') return Property(alt, { name }, stack, level)
+            if (alt.type !== 'null') return Property(alt, { name, description: prop.description, title: prop.title, }, stack, level)
         }
     }
 

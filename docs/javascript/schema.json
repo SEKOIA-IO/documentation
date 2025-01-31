@@ -1,0 +1,3374 @@
+{
+    "openapi": "3.1.0",
+    "info": {
+        "title": "Telemetry API",
+        "description": "\n    Access Sekoia.io telemetry and heatmaps related to events,\n    alerts, assets, observables, threats and behaviors\n    ",
+        "version": "0.1.0"
+    },
+    "servers": [
+        {
+            "url": "https://api.sekoia.io",
+            "description": "Sekoia.io API"
+        }
+    ],
+    "paths": {
+        "/v1/telemetry/events": {
+            "post": {
+                "tags": [
+                    "Event Monitoring",
+                    "Events",
+                    "Telemetry"
+                ],
+                "summary": "Get events telemetry (timeseries)",
+                "description": "Get events telemetry timeseries, grouped by the given fields",
+                "operationId": "_get_events_telemetry_timeseries_v1_telemetry_events_post",
+                "parameters": [],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/EventRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Search successfully performed",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/EventHistogramResponse"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "User unauthorized"
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v1/telemetry/events/counters": {
+            "post": {
+                "tags": [
+                    "Event Monitoring",
+                    "Events",
+                    "Telemetry"
+                ],
+                "summary": "Get events telemetry",
+                "description": "Get events telemetry, grouped by the given fields",
+                "operationId": "_get_events_telemetry_v1_telemetry_events_counters_post",
+                "parameters": [],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/EventRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Search successfully performed",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/EventCountersResponse"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "User unauthorized"
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v1/telemetry/intakes/report": {
+            "get": {
+                "tags": [
+                    "Event Monitoring",
+                    "Events",
+                    "Telemetry"
+                ],
+                "summary": "Get intakes telemetry report",
+                "description": "Downloads a report of all or selected intakes and intake formats activity for the\n    given community_uuid(s) and the given period\n    If the period is smaller than 30 days the report's time resolution is daily\n    Otherwise time resolution is per calendar month",
+                "operationId": "_get_intakes_report_v1_telemetry_intakes_report_get",
+                "parameters": [
+                    {
+                        "name": "community_uuids",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "description": "Filter by comma-separated list of community UUID(s)",
+                            "type": "string"
+                        },
+                        "description": "Filter by comma-separated list of community UUID(s)"
+                    },
+                    {
+                        "name": "intake_uuids",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "description": "Filter by comma-separated list of intake UUID(s)",
+                            "type": "string"
+                        },
+                        "description": "Filter by comma-separated list of intake UUID(s)"
+                    },
+                    {
+                        "name": "intake_format_uuids",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "description": "Filter by comma-separated list of dialect UUID(s)",
+                            "type": "string"
+                        },
+                        "description": "Filter by comma-separated list of dialect UUID(s)"
+                    },
+                    {
+                        "name": "latest",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "format": "date"
+                        }
+                    },
+                    {
+                        "name": "earliest",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "format": "date"
+                        }
+                    },
+                    {
+                        "name": "format",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "enum": [
+                                "csv",
+                                "json",
+                                "xls"
+                            ],
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Search successfully performed",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "User unauthorized"
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v1/telemetry/observables": {
+            "post": {
+                "tags": [
+                    "Intelligence",
+                    "Indicators",
+                    "Telemetry"
+                ],
+                "summary": "Get an observable's telemetry",
+                "description": "Get telemetry for a single observable, by supplying the full observable's bundle,\n    or for a list of observables",
+                "operationId": "_get_observables_telemetry_v1_telemetry_observables_post",
+                "parameters": [],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/ObservablesRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Search successfully performed",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "anyOf": [
+                                        {
+                                            "$ref": "#/components/schemas/ObservablesResponse"
+                                        },
+                                        {
+                                            "$ref": "#/components/schemas/ObservableResponse"
+                                        }
+                                    ],
+                                    "title": "Response  Get Observables Telemetry V1 Telemetry Observables Post"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "User unauthorized"
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "get": {
+                "tags": [
+                    "Intelligence",
+                    "Indicators",
+                    "Telemetry"
+                ],
+                "summary": "Get an observable's telemetry (by ID)",
+                "description": "Get telemetry for a single observable ID",
+                "operationId": "_get_observable_telemetry_v1_telemetry_observables_get",
+                "parameters": [
+                    {
+                        "name": "observable_id",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "latest",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "format": "date"
+                        }
+                    },
+                    {
+                        "name": "earliest",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "format": "date"
+                        }
+                    },
+                    {
+                        "name": "community_uuids",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "description": "Filter by comma-separated list of community UUID(s)",
+                            "type": "string"
+                        },
+                        "description": "Filter by comma-separated list of community UUID(s)"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Search successfully performed",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ObservableResponse"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "User unauthorized"
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v1/telemetry/observables/report": {
+            "post": {
+                "tags": [
+                    "Intelligence",
+                    "Indicators",
+                    "Telemetry"
+                ],
+                "summary": "Get observables telemetry report",
+                "description": "Downloads a report of selected observables activity for the given community_uuid(s) and the given period\n    If the period is smaller than 30 days the report's default time resolution is daily\n    Otherwise time resolution is per calendar month",
+                "operationId": "_get_observables_report_v1_telemetry_observables_report_post",
+                "parameters": [],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/ObservablesReportRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Search successfully performed",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "User unauthorized"
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v1/telemetry/rules": {
+            "get": {
+                "tags": [
+                    "Detection",
+                    "Rules",
+                    "Telemetry"
+                ],
+                "summary": "Get a detection rule's telemetry",
+                "description": "Get telemetry for the given detection rule",
+                "operationId": "_get_detection_rule_telemetry_v1_telemetry_rules_get",
+                "parameters": [
+                    {
+                        "name": "rule_uuid",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "format": "uuid"
+                        }
+                    },
+                    {
+                        "name": "latest",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "format": "date-time"
+                        }
+                    },
+                    {
+                        "name": "earliest",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "format": "date-time"
+                        }
+                    },
+                    {
+                        "name": "community_uuids",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "description": "Filter by comma-separated list of community UUID(s)",
+                            "type": "string"
+                        },
+                        "description": "Filter by comma-separated list of community UUID(s)"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Search successfully performed",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/RuleResponse"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "User unauthorized"
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v1/telemetry/cti-objects": {
+            "get": {
+                "tags": [
+                    "Intelligence",
+                    "CTI Objects",
+                    "Telemetry"
+                ],
+                "summary": "Get a CTI object's telemetry",
+                "description": "Get a single CTI object's telemetry, nested by date and hour of day",
+                "operationId": "_get_cti_object_telemetry_v1_telemetry_cti_objects_get",
+                "parameters": [
+                    {
+                        "name": "object_id",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "object_ids",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            },
+                            "minItems": 1
+                        }
+                    },
+                    {
+                        "name": "latest",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "format": "date"
+                        }
+                    },
+                    {
+                        "name": "earliest",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "format": "date"
+                        }
+                    },
+                    {
+                        "name": "community_uuids",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "description": "Filter by comma-separated list of community UUID(s)",
+                            "type": "string"
+                        },
+                        "description": "Filter by comma-separated list of community UUID(s)"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Search successfully performed",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/CTIObjectResponse"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "User unauthorized"
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Intelligence",
+                    "CTI Objects",
+                    "Telemetry"
+                ],
+                "summary": "Search CTI objects telemetry",
+                "description": "Get telemetry for multiple CTI objects, nested by date and hour of day",
+                "operationId": "_get_cti_objects_telemetry_v1_telemetry_cti_objects_post",
+                "parameters": [],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/CTIObjectsRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Search successfully performed",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/CTIObjectsResponse"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "User unauthorized"
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v1/telemetry/cti-objects/top": {
+            "get": {
+                "tags": [
+                    "Intelligence",
+                    "CTI Objects",
+                    "Telemetry"
+                ],
+                "summary": "Get most sighted CTI objects",
+                "description": "Get the CTI objects with most sightings for the given object type",
+                "operationId": "_get_top_cti_object_telemetry_v1_telemetry_cti_objects_top_get",
+                "parameters": [
+                    {
+                        "name": "object_type",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "enum": [
+                                "indicator",
+                                "attack-pattern",
+                                "campaign",
+                                "infrastructure",
+                                "intrusion-set",
+                                "malware",
+                                "threat-actor",
+                                "tool",
+                                "vulnerability"
+                            ],
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "size",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "exclusiveMaximum": 101,
+                            "exclusiveMinimum": 0,
+                            "default": 10
+                        }
+                    },
+                    {
+                        "name": "latest",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "format": "date"
+                        }
+                    },
+                    {
+                        "name": "earliest",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "format": "date"
+                        }
+                    },
+                    {
+                        "name": "community_uuids",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "description": "Filter by comma-separated list of community UUID(s)",
+                            "type": "string"
+                        },
+                        "description": "Filter by comma-separated list of community UUID(s)"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Search successfully performed",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/TopCTIObjectResponse"
+                                    },
+                                    "title": "Response  Get Top Cti Object Telemetry V1 Telemetry Cti Objects Top Get"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "User unauthorized"
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v1/telemetry/assets": {
+            "post": {
+                "tags": [
+                    "Identification",
+                    "Assets",
+                    "Telemetry"
+                ],
+                "summary": "Get an asset's telemetry",
+                "description": "Get a single asset's telemetry, nested by date and hour of day",
+                "operationId": "_get_asset_telemetry_v1_telemetry_assets_post",
+                "parameters": [],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/AssetRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Search successfully performed",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/AssetResponse"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "User unauthorized"
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "get": {
+                "tags": [
+                    "Identification",
+                    "Assets",
+                    "Telemetry"
+                ],
+                "summary": "Get assets telemetry",
+                "description": "Get the number of events seen during the specified interval for the given assets,\n    nested by date and hour of day",
+                "operationId": "_get_assets_telemetry_v1_telemetry_assets_get",
+                "parameters": [
+                    {
+                        "name": "asset_uuids",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "description": "Filter by comma-separated list of asset UUID(s)",
+                            "type": "string"
+                        },
+                        "description": "Filter by comma-separated list of asset UUID(s)"
+                    },
+                    {
+                        "name": "latest",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "format": "date"
+                        }
+                    },
+                    {
+                        "name": "earliest",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "format": "date"
+                        }
+                    },
+                    {
+                        "name": "community_uuids",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "description": "Filter by comma-separated list of community UUID(s)",
+                            "type": "string"
+                        },
+                        "description": "Filter by comma-separated list of community UUID(s)"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Search successfully performed",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/AssetsResponse"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "User unauthorized"
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v1/telemetry/assets/heatmap": {
+            "get": {
+                "tags": [
+                    "Identification",
+                    "Assets",
+                    "Telemetry"
+                ],
+                "summary": "Get an asset's heatmap",
+                "description": "Get an hourly heatmap of number of events seen during the specified interval for the given asset",
+                "operationId": "_get_asset_heatmap_v1_telemetry_assets_heatmap_get",
+                "parameters": [
+                    {
+                        "name": "uuid",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "format": "uuid"
+                        }
+                    },
+                    {
+                        "name": "community_uuids",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "description": "Filter by comma-separated list of community UUID(s)",
+                            "type": "string"
+                        },
+                        "description": "Filter by comma-separated list of community UUID(s)"
+                    },
+                    {
+                        "name": "latest",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "format": "date-time"
+                        }
+                    },
+                    {
+                        "name": "earliest",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "format": "date-time"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Search successfully performed",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/AssetHeatmapResponse"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "User unauthorized"
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v1/telemetry/assets/{asset_uuid}/hosts": {
+            "get": {
+                "tags": [
+                    "Identification",
+                    "Assets",
+                    "Telemetry"
+                ],
+                "summary": "Get target hosts for a given asset",
+                "description": "Get the number of target hosts a given asset successfully authenticated to",
+                "operationId": "_get_asset_hosts_v1_telemetry_assets__asset_uuid__hosts_get",
+                "parameters": [
+                    {
+                        "name": "asset_uuid",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "format": "uuid"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Search successfully performed",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "integer",
+                                    "title": "Response  Get Asset Hosts V1 Telemetry Assets  Asset Uuid  Hosts Get"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "User unauthorized"
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v1/telemetry/assets/{asset_uuid}/accounts": {
+            "get": {
+                "tags": [
+                    "Identification",
+                    "Assets",
+                    "Telemetry"
+                ],
+                "summary": "Get target accounts for given asset",
+                "description": "If asset_uuid is a host, get the number of distinct target accounts that were\n    successfully authenticated as on this host\n    If asset_uuid is an account, get the number of distinct target accounts that were\n    successfully authenticated as from this account",
+                "operationId": "_get_asset_accounts_v1_telemetry_assets__asset_uuid__accounts_get",
+                "parameters": [
+                    {
+                        "name": "asset_uuid",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "format": "uuid"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Search successfully performed",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "integer",
+                                    "title": "Response  Get Asset Accounts V1 Telemetry Assets  Asset Uuid  Accounts Get"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "User unauthorized"
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v1/telemetry/events-by-status/counters": {
+            "post": {
+                "tags": [
+                    "Event Monitoring",
+                    "Intakes by status",
+                    "Telemetry"
+                ],
+                "summary": "Get events telemetry by parsing outcome",
+                "description": "Get events telemetry by parsing statuses, grouped by the given fields",
+                "operationId": "_get_events_telemetry_by_parsing_status_v1_telemetry_events_by_status_counters_post",
+                "parameters": [],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/EventsByStatusRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Search successfully performed",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/EventByParsingStatusCountersResponse"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "User unauthorized"
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v1/telemetry/events-by-status": {
+            "post": {
+                "tags": [
+                    "Event Monitoring",
+                    "Intakes by status",
+                    "Telemetry"
+                ],
+                "summary": "Get events telemetry by parsing status (timeseries)",
+                "description": "Get events telemetry timeseries by parsing status",
+                "operationId": "_get_events_by_parsing_status_histogram_v1_telemetry_events_by_status_post",
+                "parameters": [],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/EventsByStatusHistogramRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Search successfully performed",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/EventsByStatusHistogramResponse"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "User unauthorized"
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v1/telemetry/parsing-issues/counters": {
+            "post": {
+                "tags": [
+                    "Event Monitoring",
+                    "Intakes errors and warnings",
+                    "Telemetry"
+                ],
+                "summary": "Get invalid and in warning events telemetry",
+                "description": "Get events telemetry for non-valid events",
+                "operationId": "_get_events_aggregation_by_parsing_status_v1_telemetry_parsing_issues_counters_post",
+                "parameters": [],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/EventAggRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Search successfully performed",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/EventAggCountersResponse"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "User unauthorized"
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v1/telemetry/intakes/counters": {
+            "post": {
+                "tags": [
+                    "Event Monitoring",
+                    "Intakes lag and processing lag",
+                    "Telemetry"
+                ],
+                "summary": "Get intakes statistics (lag and size)",
+                "description": "Get min, max and average values for lag, processing lag, message size and event size",
+                "operationId": "_get_intake_stats_v1_telemetry_intakes_counters_post",
+                "parameters": [],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/IntakeStatsRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Search successfully performed",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/IntakeLagCounterResponse"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "User unauthorized"
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v1/telemetry/intakes": {
+            "post": {
+                "tags": [
+                    "Event Monitoring",
+                    "Intakes lag and processing lag",
+                    "Telemetry"
+                ],
+                "summary": "Get intakes statistics as timeseries",
+                "description": "Get timeseries of lag, processing lag, message size and event size",
+                "operationId": "_get_intake_lag_histogram_v1_telemetry_intakes_post",
+                "parameters": [],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/IntakeStatisticsHistogramRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Search successfully performed",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/IntakeStatisticsHistogramResponse"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "User unauthorized"
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v1/telemetry/playbooks/action-runs": {
+            "post": {
+                "tags": [
+                    "Automated Response",
+                    "Playbook actions telemetry",
+                    "Telemetry"
+                ],
+                "summary": "Get playbook action runs histogram",
+                "description": "Get histogram of playbook action runs",
+                "operationId": "_get_playbook_actions_runs_histogram_v1_telemetry_playbooks_action_runs_post",
+                "parameters": [],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/PlaybookHistogramRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Search successfully performed",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/PlaybookHistogramResponse"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "User unauthorized"
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v1/telemetry/playbooks/action-runs/counters": {
+            "post": {
+                "tags": [
+                    "Automated Response",
+                    "Playbook actions telemetry",
+                    "Telemetry"
+                ],
+                "summary": "Get playbook action counter",
+                "description": "Get playbook action counter",
+                "operationId": "_get_playbook_counters_v1_telemetry_playbooks_action_runs_counters_post",
+                "parameters": [],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/PlaybookCounterRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Search successfully performed",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/PlaybookCountersResponse"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "User unauthorized"
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v1/telemetry/alert-filter/counters": {
+            "post": {
+                "tags": [
+                    "Detection",
+                    "Alert filters telemetry",
+                    "Telemetry"
+                ],
+                "summary": "Get alert filters counter",
+                "description": "Get alert filters counter",
+                "operationId": "_get_alert_filters_counters_v1_telemetry_alert_filter_counters_post",
+                "parameters": [],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/AlertFiltersCountersRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Search successfully performed",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/AlertFiltersCountersResponse"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "User unauthorized"
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v1/telemetry/tokens": {
+            "post": {
+                "tags": [
+                    "AI Assistant",
+                    "Roy tokens use telemetry",
+                    "Telemetry"
+                ],
+                "summary": "Get Roy tokens usage histogram",
+                "description": "Get histogram of total tokens, prompt tokens and completion tokens used by roy",
+                "operationId": "_get_roy_tokens_usage_histogram_v1_telemetry_tokens_post",
+                "parameters": [],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/RoyTokensHistogramRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Search successfully performed",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/RoyTokensHistogramResponse"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "User unauthorized"
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v1/telemetry/tokens/counters": {
+            "post": {
+                "tags": [
+                    "AI Assistant",
+                    "Roy tokens use telemetry",
+                    "Telemetry"
+                ],
+                "summary": "Get Roy tokens usage counter",
+                "description": "Get counter of total tokens, prompt tokens and completion tokens used",
+                "operationId": "_get_roy_tokens_usage_counters_v1_telemetry_tokens_counters_post",
+                "parameters": [],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/RoyTokensCounterRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Search successfully performed",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/RoyTokensCounterResponse"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "User unauthorized"
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "AlertFiltersBucket": {
+                "properties": {
+                    "filter": {
+                        "$ref": "#/components/schemas/BucketFilter"
+                    },
+                    "groups": {
+                        "items": {
+                            "$ref": "#/components/schemas/AlertFiltersBucket"
+                        },
+                        "type": "array"
+                    },
+                    "total": {
+                        "type": "integer"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "filter",
+                    "groups",
+                    "total"
+                ],
+                "title": "AlertFiltersBucket"
+            },
+            "AlertFiltersCountersFilter": {
+                "properties": {
+                    "alert_filter_uuid": {
+                        "items": {
+                            "type": "string",
+                            "format": "uuid"
+                        },
+                        "type": "array"
+                    },
+                    "community_uuid": {
+                        "items": {
+                            "type": "string",
+                            "format": "uuid"
+                        },
+                        "type": "array"
+                    }
+                },
+                "type": "object",
+                "title": "AlertFiltersCountersFilter"
+            },
+            "AlertFiltersCountersRequest": {
+                "properties": {
+                    "latest": {
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "earliest": {
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "groups": {
+                        "items": {
+                            "type": "string",
+                            "enum": [
+                                "alert_filter_uuid",
+                                "community_uuid"
+                            ]
+                        },
+                        "type": "array",
+                        "default": []
+                    },
+                    "filters": {
+                        "$ref": "#/components/schemas/AlertFiltersCountersFilter"
+                    }
+                },
+                "type": "object",
+                "title": "AlertFiltersCountersRequest"
+            },
+            "AlertFiltersCountersResponse": {
+                "properties": {
+                    "total": {
+                        "type": "integer"
+                    },
+                    "groups": {
+                        "items": {
+                            "$ref": "#/components/schemas/AlertFiltersBucket"
+                        },
+                        "type": "array"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "total"
+                ],
+                "title": "AlertFiltersCountersResponse"
+            },
+            "AssetHeatmapResponse": {
+                "properties": {
+                    "total": {
+                        "type": "number",
+                        "default": 0
+                    },
+                    "occurrences": {
+                        "additionalProperties": {
+                            "additionalProperties": {
+                                "type": "number"
+                            },
+                            "type": "object"
+                        },
+                        "propertyNames": {
+                            "format": "date"
+                        },
+                        "type": "object",
+                        "default": {}
+                    },
+                    "available_since": {
+                        "type": "string",
+                        "format": "date",
+                        "default": "2023-07-04"
+                    }
+                },
+                "type": "object",
+                "title": "AssetHeatmapResponse"
+            },
+            "AssetRequest": {
+                "properties": {
+                    "asset_uuid": {
+                        "type": "string"
+                    },
+                    "latest": {
+                        "type": "string",
+                        "format": "date"
+                    },
+                    "earliest": {
+                        "type": "string",
+                        "format": "date"
+                    },
+                    "community_uuids": {
+                        "items": {
+                            "type": "string",
+                            "format": "uuid"
+                        },
+                        "type": "array"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "asset_uuid"
+                ],
+                "title": "AssetRequest"
+            },
+            "AssetResponse": {
+                "properties": {
+                    "first_seen": {
+                        "type": "string",
+                        "format": "date"
+                    },
+                    "last_seen": {
+                        "type": "string",
+                        "format": "date"
+                    },
+                    "total": {
+                        "type": "integer",
+                        "default": 0
+                    },
+                    "occurrences": {
+                        "additionalProperties": {
+                            "type": "integer"
+                        },
+                        "propertyNames": {
+                            "format": "date"
+                        },
+                        "type": "object"
+                    },
+                    "available_since": {
+                        "type": "string",
+                        "format": "date"
+                    },
+                    "asset_uuid": {
+                        "type": "string"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "asset_uuid"
+                ],
+                "title": "AssetResponse"
+            },
+            "AssetTelemetry": {
+                "properties": {
+                    "asset_uuid": {
+                        "type": "string",
+                        "format": "uuid"
+                    },
+                    "first_seen": {
+                        "type": "string",
+                        "format": "date"
+                    },
+                    "last_seen": {
+                        "type": "string",
+                        "format": "date"
+                    },
+                    "occurrences": {
+                        "type": "number",
+                        "default": 0
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "asset_uuid"
+                ],
+                "title": "AssetTelemetry"
+            },
+            "AssetsResponse": {
+                "properties": {
+                    "first_seen": {
+                        "type": "string",
+                        "format": "date"
+                    },
+                    "last_seen": {
+                        "type": "string",
+                        "format": "date"
+                    },
+                    "total": {
+                        "type": "number",
+                        "default": 0
+                    },
+                    "assets": {
+                        "additionalProperties": {
+                            "$ref": "#/components/schemas/AssetTelemetry"
+                        },
+                        "propertyNames": {
+                            "format": "uuid"
+                        },
+                        "type": "object",
+                        "default": {}
+                    },
+                    "available_since": {
+                        "type": "string",
+                        "format": "date"
+                    }
+                },
+                "type": "object",
+                "title": "AssetsResponse"
+            },
+            "BucketFilter": {
+                "properties": {
+                    "attribute": {
+                        "type": "string"
+                    },
+                    "value": {}
+                },
+                "type": "object",
+                "required": [
+                    "attribute"
+                ],
+                "title": "BucketFilter"
+            },
+            "BucketTelemetry": {
+                "properties": {
+                    "total": {
+                        "type": "integer"
+                    },
+                    "filter": {
+                        "$ref": "#/components/schemas/BucketFilter"
+                    },
+                    "groups": {
+                        "items": {
+                            "$ref": "#/components/schemas/BucketTelemetry"
+                        },
+                        "type": "array"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "total",
+                    "filter",
+                    "groups"
+                ],
+                "title": "BucketTelemetry"
+            },
+            "CTIObjectResponse": {
+                "properties": {
+                    "first_seen": {
+                        "type": "string",
+                        "format": "date"
+                    },
+                    "last_seen": {
+                        "type": "string",
+                        "format": "date"
+                    },
+                    "total": {
+                        "type": "integer",
+                        "default": 0
+                    },
+                    "occurrences": {
+                        "additionalProperties": {
+                            "type": "integer"
+                        },
+                        "propertyNames": {
+                            "format": "date"
+                        },
+                        "type": "object"
+                    },
+                    "available_since": {
+                        "type": "string",
+                        "format": "date"
+                    },
+                    "object_id": {
+                        "type": "string"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "object_id"
+                ],
+                "title": "CTIObjectResponse"
+            },
+            "CTIObjectsRequest": {
+                "properties": {
+                    "object_ids": {
+                        "items": {
+                            "type": "string"
+                        },
+                        "type": "array",
+                        "minItems": 1
+                    },
+                    "latest": {
+                        "type": "string",
+                        "format": "date"
+                    },
+                    "earliest": {
+                        "type": "string",
+                        "format": "date"
+                    },
+                    "community_uuids": {
+                        "items": {
+                            "type": "string",
+                            "format": "uuid"
+                        },
+                        "type": "array"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "object_ids"
+                ],
+                "title": "CTIObjectsRequest"
+            },
+            "CTIObjectsResponse": {
+                "properties": {
+                    "total": {
+                        "type": "number",
+                        "default": 0
+                    },
+                    "objects": {
+                        "items": {
+                            "$ref": "#/components/schemas/CTIObjectResponse"
+                        },
+                        "type": "array",
+                        "default": []
+                    }
+                },
+                "type": "object",
+                "title": "CTIObjectsResponse"
+            },
+            "EventAggCountersResponse": {
+                "properties": {
+                    "total": {
+                        "type": "integer"
+                    },
+                    "last_seen": {
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "last_event": {
+                        "type": "object"
+                    },
+                    "groups": {
+                        "items": {
+                            "$ref": "#/components/schemas/telemetry__api__dtos__invalid_events_aggregate__Bucket"
+                        },
+                        "type": "array"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "total"
+                ],
+                "title": "EventAggCountersResponse"
+            },
+            "EventAggFilter": {
+                "properties": {
+                    "community_uuid": {
+                        "items": {
+                            "type": "string",
+                            "format": "uuid"
+                        },
+                        "type": "array"
+                    },
+                    "intake_uuid": {
+                        "items": {
+                            "type": "string",
+                            "format": "uuid"
+                        },
+                        "type": "array"
+                    },
+                    "intake_dialect_uuid": {
+                        "items": {
+                            "type": "string",
+                            "format": "uuid"
+                        },
+                        "type": "array"
+                    },
+                    "parsing_status": {
+                        "items": {
+                            "type": "string",
+                            "enum": [
+                                "invalid",
+                                "warning"
+                            ]
+                        },
+                        "type": "array",
+                        "default": [
+                            "invalid",
+                            "warning"
+                        ]
+                    },
+                    "message": {
+                        "items": {
+                            "type": "string"
+                        },
+                        "type": "array"
+                    }
+                },
+                "type": "object",
+                "title": "EventAggFilter"
+            },
+            "EventAggRequest": {
+                "properties": {
+                    "filters": {
+                        "$ref": "#/components/schemas/EventAggFilter"
+                    },
+                    "groups": {
+                        "items": {
+                            "type": "string",
+                            "enum": [
+                                "community_uuid",
+                                "intake_uuid",
+                                "intake_dialect_uuid",
+                                "parsing_status",
+                                "message"
+                            ]
+                        },
+                        "type": "array",
+                        "default": [
+                            "parsing_status",
+                            "message"
+                        ]
+                    },
+                    "latest": {
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "earliest": {
+                        "type": "string",
+                        "format": "date-time"
+                    }
+                },
+                "type": "object",
+                "title": "EventAggRequest"
+            },
+            "EventByParsingStatusCountersResponse": {
+                "properties": {
+                    "valid_events_occurrences": {
+                        "type": "integer"
+                    },
+                    "warning_events_occurences": {
+                        "type": "integer"
+                    },
+                    "invalid_events_occurrences": {
+                        "type": "integer"
+                    },
+                    "total": {
+                        "type": "integer"
+                    },
+                    "groups": {
+                        "items": {
+                            "$ref": "#/components/schemas/telemetry__api__dtos__events_by_status__Bucket"
+                        },
+                        "type": "array"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "valid_events_occurrences",
+                    "warning_events_occurences",
+                    "invalid_events_occurrences",
+                    "total"
+                ],
+                "title": "EventByParsingStatusCountersResponse"
+            },
+            "EventByStatusFilter": {
+                "properties": {
+                    "intake_uuid": {
+                        "items": {
+                            "type": "string",
+                            "format": "uuid"
+                        },
+                        "type": "array"
+                    },
+                    "intake_dialect_uuid": {
+                        "items": {
+                            "type": "string",
+                            "format": "uuid"
+                        },
+                        "type": "array"
+                    },
+                    "entity_uuid": {
+                        "items": {
+                            "type": "string",
+                            "format": "uuid"
+                        },
+                        "type": "array"
+                    },
+                    "community_uuid": {
+                        "items": {
+                            "type": "string",
+                            "format": "uuid"
+                        },
+                        "type": "array"
+                    }
+                },
+                "type": "object",
+                "title": "EventByStatusFilter"
+            },
+            "EventCountersResponse": {
+                "properties": {
+                    "total": {
+                        "type": "integer"
+                    },
+                    "groups": {
+                        "items": {
+                            "$ref": "#/components/schemas/BucketTelemetry"
+                        },
+                        "type": "array"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "total"
+                ],
+                "title": "EventCountersResponse"
+            },
+            "EventFilter": {
+                "properties": {
+                    "intake_uuid": {
+                        "items": {
+                            "type": "string",
+                            "format": "uuid"
+                        },
+                        "type": "array"
+                    },
+                    "intake_dialect_uuid": {
+                        "items": {
+                            "type": "string",
+                            "format": "uuid"
+                        },
+                        "type": "array"
+                    },
+                    "in_error": {
+                        "items": {
+                            "type": "boolean"
+                        },
+                        "type": "array"
+                    },
+                    "entity_uuid": {
+                        "items": {
+                            "type": "string",
+                            "format": "uuid"
+                        },
+                        "type": "array"
+                    },
+                    "community_uuid": {
+                        "items": {
+                            "type": "string",
+                            "format": "uuid"
+                        },
+                        "type": "array"
+                    },
+                    "created_at": {
+                        "items": {
+                            "type": "string"
+                        },
+                        "type": "array"
+                    }
+                },
+                "type": "object",
+                "title": "EventFilter"
+            },
+            "EventHistogramResponse": {
+                "properties": {
+                    "first_seen": {
+                        "type": "string",
+                        "format": "date"
+                    },
+                    "last_seen": {
+                        "type": "string",
+                        "format": "date"
+                    },
+                    "total": {
+                        "type": "integer"
+                    },
+                    "buckets": {
+                        "additionalProperties": {
+                            "$ref": "#/components/schemas/BucketTelemetry"
+                        },
+                        "propertyNames": {
+                            "format": "date-time"
+                        },
+                        "type": "object"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "total",
+                    "buckets"
+                ],
+                "title": "EventHistogramResponse"
+            },
+            "EventRequest": {
+                "properties": {
+                    "latest": {
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "earliest": {
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "filters": {
+                        "$ref": "#/components/schemas/EventFilter"
+                    },
+                    "groups": {
+                        "items": {
+                            "type": "string",
+                            "enum": [
+                                "intake_uuid",
+                                "intake_dialect_uuid",
+                                "in_error",
+                                "entity_uuid",
+                                "community_uuid"
+                            ]
+                        },
+                        "type": "array",
+                        "default": []
+                    },
+                    "bin_size": {
+                        "type": "string",
+                        "enum": [
+                            "hour",
+                            "day",
+                            "month",
+                            "week"
+                        ],
+                        "default": "day"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "latest",
+                    "earliest"
+                ],
+                "title": "EventRequest"
+            },
+            "EventsByStatusHistogramRequest": {
+                "properties": {
+                    "latest": {
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "earliest": {
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "groups": {
+                        "items": {
+                            "type": "string",
+                            "enum": [
+                                "intake_uuid",
+                                "intake_dialect_uuid",
+                                "entity_uuid",
+                                "community_uuid"
+                            ]
+                        },
+                        "type": "array",
+                        "default": []
+                    },
+                    "filters": {
+                        "$ref": "#/components/schemas/EventByStatusFilter"
+                    },
+                    "bin_size": {
+                        "type": "string",
+                        "enum": [
+                            "hour",
+                            "day"
+                        ],
+                        "default": "day"
+                    }
+                },
+                "type": "object",
+                "title": "EventsByStatusHistogramRequest"
+            },
+            "EventsByStatusHistogramResponse": {
+                "properties": {
+                    "valid_events_occurrences": {
+                        "type": "integer"
+                    },
+                    "warning_events_occurences": {
+                        "type": "integer"
+                    },
+                    "invalid_events_occurrences": {
+                        "type": "integer"
+                    },
+                    "total": {
+                        "type": "integer"
+                    },
+                    "buckets": {
+                        "additionalProperties": {
+                            "$ref": "#/components/schemas/telemetry__api__dtos__events_by_status__HistogramBucket"
+                        },
+                        "propertyNames": {
+                            "format": "date-time"
+                        },
+                        "type": "object"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "valid_events_occurrences",
+                    "warning_events_occurences",
+                    "invalid_events_occurrences",
+                    "total",
+                    "buckets"
+                ],
+                "title": "EventsByStatusHistogramResponse"
+            },
+            "EventsByStatusRequest": {
+                "properties": {
+                    "latest": {
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "earliest": {
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "groups": {
+                        "items": {
+                            "type": "string",
+                            "enum": [
+                                "intake_uuid",
+                                "intake_dialect_uuid",
+                                "entity_uuid",
+                                "community_uuid"
+                            ]
+                        },
+                        "type": "array",
+                        "default": []
+                    },
+                    "filters": {
+                        "$ref": "#/components/schemas/EventByStatusFilter"
+                    }
+                },
+                "type": "object",
+                "title": "EventsByStatusRequest"
+            },
+            "HTTPValidationError": {
+                "properties": {
+                    "detail": {
+                        "items": {
+                            "$ref": "#/components/schemas/ValidationError"
+                        },
+                        "type": "array"
+                    }
+                },
+                "type": "object",
+                "title": "HTTPValidationError"
+            },
+            "History": {
+                "properties": {
+                    "first_seen": {
+                        "type": "string"
+                    },
+                    "last_seen": {
+                        "type": "string"
+                    },
+                    "description": {
+                        "type": "string"
+                    }
+                },
+                "type": "object",
+                "title": "History"
+            },
+            "IntakeLagBucket": {
+                "properties": {
+                    "total": {
+                        "type": "integer"
+                    },
+                    "total_lag": {
+                        "type": "number"
+                    },
+                    "average_lag": {
+                        "type": "number"
+                    },
+                    "min_lag": {
+                        "type": "number"
+                    },
+                    "max_lag": {
+                        "type": "number"
+                    },
+                    "total_processing_lag": {
+                        "type": "number"
+                    },
+                    "average_processing_lag": {
+                        "type": "number"
+                    },
+                    "max_processing_lag": {
+                        "type": "number"
+                    },
+                    "min_processing_lag": {
+                        "type": "number"
+                    },
+                    "total_message_size": {
+                        "type": "number"
+                    },
+                    "average_message_size": {
+                        "type": "number"
+                    },
+                    "max_message_size": {
+                        "type": "number"
+                    },
+                    "min_message_size": {
+                        "type": "number"
+                    },
+                    "total_event_size": {
+                        "type": "number"
+                    },
+                    "average_event_size": {
+                        "type": "number"
+                    },
+                    "max_event_size": {
+                        "type": "number"
+                    },
+                    "min_event_size": {
+                        "type": "number"
+                    },
+                    "filter": {
+                        "$ref": "#/components/schemas/BucketFilter"
+                    },
+                    "groups": {
+                        "items": {
+                            "$ref": "#/components/schemas/IntakeLagBucket"
+                        },
+                        "type": "array"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "total",
+                    "total_lag",
+                    "average_lag",
+                    "min_lag",
+                    "max_lag",
+                    "total_processing_lag",
+                    "average_processing_lag",
+                    "max_processing_lag",
+                    "min_processing_lag",
+                    "total_message_size",
+                    "average_message_size",
+                    "max_message_size",
+                    "min_message_size",
+                    "total_event_size",
+                    "average_event_size",
+                    "max_event_size",
+                    "min_event_size",
+                    "filter",
+                    "groups"
+                ],
+                "title": "IntakeLagBucket"
+            },
+            "IntakeLagCounterResponse": {
+                "properties": {
+                    "total": {
+                        "type": "integer"
+                    },
+                    "total_lag": {
+                        "type": "number"
+                    },
+                    "average_lag": {
+                        "type": "number"
+                    },
+                    "min_lag": {
+                        "type": "number"
+                    },
+                    "max_lag": {
+                        "type": "number"
+                    },
+                    "total_processing_lag": {
+                        "type": "number"
+                    },
+                    "average_processing_lag": {
+                        "type": "number"
+                    },
+                    "max_processing_lag": {
+                        "type": "number"
+                    },
+                    "min_processing_lag": {
+                        "type": "number"
+                    },
+                    "total_message_size": {
+                        "type": "number"
+                    },
+                    "average_message_size": {
+                        "type": "number"
+                    },
+                    "max_message_size": {
+                        "type": "number"
+                    },
+                    "min_message_size": {
+                        "type": "number"
+                    },
+                    "total_event_size": {
+                        "type": "number"
+                    },
+                    "average_event_size": {
+                        "type": "number"
+                    },
+                    "max_event_size": {
+                        "type": "number"
+                    },
+                    "min_event_size": {
+                        "type": "number"
+                    },
+                    "groups": {
+                        "items": {
+                            "$ref": "#/components/schemas/IntakeLagBucket"
+                        },
+                        "type": "array"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "total",
+                    "total_lag",
+                    "average_lag",
+                    "min_lag",
+                    "max_lag",
+                    "total_processing_lag",
+                    "average_processing_lag",
+                    "max_processing_lag",
+                    "min_processing_lag",
+                    "total_message_size",
+                    "average_message_size",
+                    "max_message_size",
+                    "min_message_size",
+                    "total_event_size",
+                    "average_event_size",
+                    "max_event_size",
+                    "min_event_size"
+                ],
+                "title": "IntakeLagCounterResponse"
+            },
+            "IntakeStatisticFilter": {
+                "properties": {
+                    "intake_uuid": {
+                        "items": {
+                            "type": "string",
+                            "format": "uuid"
+                        },
+                        "type": "array"
+                    },
+                    "intake_dialect_uuid": {
+                        "items": {
+                            "type": "string",
+                            "format": "uuid"
+                        },
+                        "type": "array"
+                    },
+                    "community_uuid": {
+                        "items": {
+                            "type": "string",
+                            "format": "uuid"
+                        },
+                        "type": "array"
+                    }
+                },
+                "type": "object",
+                "title": "IntakeStatisticFilter"
+            },
+            "IntakeStatisticsHistogramRequest": {
+                "properties": {
+                    "latest": {
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "earliest": {
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "groups": {
+                        "items": {
+                            "type": "string",
+                            "enum": [
+                                "intake_uuid",
+                                "intake_dialect_uuid",
+                                "community_uuid"
+                            ]
+                        },
+                        "type": "array",
+                        "default": []
+                    },
+                    "filters": {
+                        "$ref": "#/components/schemas/IntakeStatisticFilter"
+                    },
+                    "bin_size": {
+                        "type": "string",
+                        "enum": [
+                            "hour",
+                            "day"
+                        ],
+                        "default": "day"
+                    }
+                },
+                "type": "object",
+                "title": "IntakeStatisticsHistogramRequest"
+            },
+            "IntakeStatisticsHistogramResponse": {
+                "properties": {
+                    "total": {
+                        "type": "integer"
+                    },
+                    "lag": {
+                        "type": "number"
+                    },
+                    "processing_lag": {
+                        "type": "number"
+                    },
+                    "event_size": {
+                        "type": "integer"
+                    },
+                    "message_size": {
+                        "type": "integer"
+                    },
+                    "buckets": {
+                        "additionalProperties": {
+                            "$ref": "#/components/schemas/telemetry__api__dtos__intakes__HistogramBucket"
+                        },
+                        "propertyNames": {
+                            "format": "date-time"
+                        },
+                        "type": "object"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "total",
+                    "lag",
+                    "processing_lag",
+                    "event_size",
+                    "message_size",
+                    "buckets"
+                ],
+                "title": "IntakeStatisticsHistogramResponse"
+            },
+            "IntakeStatsRequest": {
+                "properties": {
+                    "latest": {
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "earliest": {
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "groups": {
+                        "items": {
+                            "type": "string",
+                            "enum": [
+                                "intake_uuid",
+                                "intake_dialect_uuid",
+                                "community_uuid"
+                            ]
+                        },
+                        "type": "array",
+                        "default": []
+                    },
+                    "filters": {
+                        "$ref": "#/components/schemas/IntakeStatisticFilter"
+                    }
+                },
+                "type": "object",
+                "title": "IntakeStatsRequest"
+            },
+            "Observable": {
+                "properties": {
+                    "id": {
+                        "type": "string"
+                    },
+                    "type": {
+                        "$ref": "#/components/schemas/ObservableType"
+                    },
+                    "created": {
+                        "type": "string"
+                    },
+                    "modified": {
+                        "type": "string"
+                    },
+                    "spec_version": {
+                        "type": "string",
+                        "default": "2.1"
+                    },
+                    "extensions": {
+                        "type": "object"
+                    },
+                    "x_inthreat_history": {
+                        "items": {
+                            "$ref": "#/components/schemas/History"
+                        },
+                        "type": "array"
+                    },
+                    "x_inthreat_sources_refs": {
+                        "items": {
+                            "type": "string"
+                        },
+                        "type": "array"
+                    },
+                    "x_inthreat_tags": {
+                        "items": {
+                            "$ref": "#/components/schemas/Tag"
+                        },
+                        "type": "array"
+                    },
+                    "x_inthreat_short_display": {
+                        "type": "string"
+                    },
+                    "x_ic_indicated_threats": {
+                        "items": {
+                            "$ref": "#/components/schemas/ObservableIndicatedThreat"
+                        },
+                        "type": "array"
+                    }
+                },
+                "additionalProperties": true,
+                "type": "object",
+                "required": [
+                    "type"
+                ],
+                "title": "Observable"
+            },
+            "ObservableIndicatedThreat": {
+                "properties": {
+                    "id": {
+                        "type": "string"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "type": {
+                        "type": "string"
+                    }
+                },
+                "type": "object",
+                "title": "ObservableIndicatedThreat"
+            },
+            "ObservableResponse": {
+                "properties": {
+                    "first_seen": {
+                        "type": "string",
+                        "format": "date"
+                    },
+                    "last_seen": {
+                        "type": "string",
+                        "format": "date"
+                    },
+                    "total": {
+                        "type": "integer",
+                        "default": 0
+                    },
+                    "occurrences": {
+                        "additionalProperties": {
+                            "type": "integer"
+                        },
+                        "propertyNames": {
+                            "format": "date"
+                        },
+                        "type": "object"
+                    },
+                    "available_since": {
+                        "type": "string",
+                        "format": "date"
+                    },
+                    "errors": {
+                        "items": {
+                            "type": "string"
+                        },
+                        "type": "array"
+                    },
+                    "observable_id": {
+                        "type": "string"
+                    }
+                },
+                "type": "object",
+                "title": "ObservableResponse"
+            },
+            "ObservableType": {
+                "type": "string",
+                "enum": [
+                    "x509-certificate",
+                    "address",
+                    "filename",
+                    "mutex",
+                    "email-addr",
+                    "file",
+                    "directory",
+                    "user-account",
+                    "phone-number",
+                    "software",
+                    "ipv4-addr",
+                    "ipv6-addr",
+                    "process",
+                    "text",
+                    "individual",
+                    "autonomous-system",
+                    "artifact",
+                    "observable-relationship",
+                    "email-message",
+                    "organization",
+                    "windows-registry-key",
+                    "domain-name",
+                    "url",
+                    "mac-addr"
+                ],
+                "title": "ObservableType"
+            },
+            "ObservablesReportRequest": {
+                "properties": {
+                    "community_uuids": {
+                        "items": {
+                            "type": "string",
+                            "format": "uuid"
+                        },
+                        "type": "array"
+                    },
+                    "observables": {
+                        "items": {
+                            "anyOf": [
+                                {
+                                    "$ref": "#/components/schemas/Observable"
+                                },
+                                {
+                                    "type": "string"
+                                }
+                            ]
+                        },
+                        "type": "array",
+                        "minItems": 1
+                    },
+                    "latest": {
+                        "type": "string",
+                        "format": "date"
+                    },
+                    "earliest": {
+                        "type": "string",
+                        "format": "date"
+                    },
+                    "format": {
+                        "type": "string",
+                        "enum": [
+                            "csv",
+                            "json",
+                            "xls"
+                        ],
+                        "default": "json"
+                    },
+                    "resolution": {
+                        "type": "string",
+                        "enum": [
+                            "day",
+                            "month"
+                        ]
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "observables"
+                ],
+                "title": "ObservablesReportRequest"
+            },
+            "ObservablesRequest": {
+                "properties": {
+                    "observable": {
+                        "$ref": "#/components/schemas/Observable"
+                    },
+                    "observables": {
+                        "items": {
+                            "anyOf": [
+                                {
+                                    "$ref": "#/components/schemas/Observable"
+                                },
+                                {
+                                    "type": "string"
+                                }
+                            ]
+                        },
+                        "type": "array",
+                        "minItems": 1
+                    },
+                    "latest": {
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "earliest": {
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "community_uuids": {
+                        "items": {
+                            "type": "string",
+                            "format": "uuid"
+                        },
+                        "type": "array"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "latest",
+                    "earliest"
+                ],
+                "title": "ObservablesRequest"
+            },
+            "ObservablesResponse": {
+                "properties": {
+                    "total": {
+                        "type": "number",
+                        "default": 0
+                    },
+                    "observables": {
+                        "items": {
+                            "$ref": "#/components/schemas/ObservableResponse"
+                        },
+                        "type": "array",
+                        "default": []
+                    }
+                },
+                "type": "object",
+                "title": "ObservablesResponse"
+            },
+            "PlaybookBucket": {
+                "properties": {
+                    "filter": {
+                        "$ref": "#/components/schemas/BucketFilter"
+                    },
+                    "groups": {
+                        "items": {
+                            "$ref": "#/components/schemas/PlaybookBucket"
+                        },
+                        "type": "array"
+                    },
+                    "total": {
+                        "type": "integer"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "filter",
+                    "groups",
+                    "total"
+                ],
+                "title": "PlaybookBucket"
+            },
+            "PlaybookCounterRequest": {
+                "properties": {
+                    "latest": {
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "earliest": {
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "groups": {
+                        "items": {
+                            "type": "string",
+                            "enum": [
+                                "playbook_uuid",
+                                "community_uuid"
+                            ]
+                        },
+                        "type": "array",
+                        "default": []
+                    },
+                    "filters": {
+                        "$ref": "#/components/schemas/PlaybookRunFilter"
+                    }
+                },
+                "type": "object",
+                "title": "PlaybookCounterRequest"
+            },
+            "PlaybookCountersResponse": {
+                "properties": {
+                    "total": {
+                        "type": "integer"
+                    },
+                    "groups": {
+                        "items": {
+                            "$ref": "#/components/schemas/PlaybookBucket"
+                        },
+                        "type": "array"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "total"
+                ],
+                "title": "PlaybookCountersResponse"
+            },
+            "PlaybookHistogramRequest": {
+                "properties": {
+                    "latest": {
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "earliest": {
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "groups": {
+                        "items": {
+                            "type": "string",
+                            "enum": [
+                                "playbook_uuid",
+                                "community_uuid"
+                            ]
+                        },
+                        "type": "array",
+                        "default": []
+                    },
+                    "filters": {
+                        "$ref": "#/components/schemas/PlaybookRunFilter"
+                    },
+                    "bin_size": {
+                        "type": "string",
+                        "enum": [
+                            "hour",
+                            "day"
+                        ],
+                        "default": "day"
+                    }
+                },
+                "type": "object",
+                "title": "PlaybookHistogramRequest"
+            },
+            "PlaybookHistogramResponse": {
+                "properties": {
+                    "buckets": {
+                        "additionalProperties": {
+                            "$ref": "#/components/schemas/PlaybookBucket"
+                        },
+                        "propertyNames": {
+                            "format": "date-time"
+                        },
+                        "type": "object"
+                    },
+                    "total": {
+                        "type": "integer"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "buckets",
+                    "total"
+                ],
+                "title": "PlaybookHistogramResponse"
+            },
+            "PlaybookRunFilter": {
+                "properties": {
+                    "playbook_uuid": {
+                        "items": {
+                            "type": "string",
+                            "format": "uuid"
+                        },
+                        "type": "array"
+                    },
+                    "community_uuid": {
+                        "items": {
+                            "type": "string",
+                            "format": "uuid"
+                        },
+                        "type": "array"
+                    }
+                },
+                "type": "object",
+                "title": "PlaybookRunFilter"
+            },
+            "RoyTokensBucket": {
+                "properties": {
+                    "filter": {
+                        "$ref": "#/components/schemas/BucketFilter"
+                    },
+                    "groups": {
+                        "items": {
+                            "$ref": "#/components/schemas/RoyTokensBucket"
+                        },
+                        "type": "array"
+                    },
+                    "total_tokens": {
+                        "type": "integer"
+                    },
+                    "prompt_tokens": {
+                        "type": "integer"
+                    },
+                    "completion_tokens": {
+                        "type": "integer"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "filter",
+                    "groups",
+                    "total_tokens",
+                    "prompt_tokens",
+                    "completion_tokens"
+                ],
+                "title": "RoyTokensBucket"
+            },
+            "RoyTokensCounterRequest": {
+                "properties": {
+                    "latest": {
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "earliest": {
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "groups": {
+                        "items": {
+                            "type": "string",
+                            "enum": [
+                                "user_uuid",
+                                "community_uuid"
+                            ]
+                        },
+                        "type": "array",
+                        "default": []
+                    },
+                    "filters": {
+                        "$ref": "#/components/schemas/RoyTokensFilter"
+                    }
+                },
+                "type": "object",
+                "title": "RoyTokensCounterRequest"
+            },
+            "RoyTokensCounterResponse": {
+                "properties": {
+                    "total_tokens": {
+                        "type": "integer"
+                    },
+                    "prompt_tokens": {
+                        "type": "integer"
+                    },
+                    "completion_tokens": {
+                        "type": "integer"
+                    },
+                    "groups": {
+                        "items": {
+                            "$ref": "#/components/schemas/RoyTokensBucket"
+                        },
+                        "type": "array"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "total_tokens",
+                    "prompt_tokens",
+                    "completion_tokens"
+                ],
+                "title": "RoyTokensCounterResponse"
+            },
+            "RoyTokensFilter": {
+                "properties": {
+                    "user_uuid": {
+                        "items": {
+                            "type": "string",
+                            "format": "uuid"
+                        },
+                        "type": "array"
+                    },
+                    "community_uuid": {
+                        "items": {
+                            "type": "string",
+                            "format": "uuid"
+                        },
+                        "type": "array"
+                    }
+                },
+                "type": "object",
+                "title": "RoyTokensFilter"
+            },
+            "RoyTokensHistogramRequest": {
+                "properties": {
+                    "latest": {
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "earliest": {
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "groups": {
+                        "items": {
+                            "type": "string",
+                            "enum": [
+                                "user_uuid",
+                                "community_uuid"
+                            ]
+                        },
+                        "type": "array",
+                        "default": []
+                    },
+                    "filters": {
+                        "$ref": "#/components/schemas/RoyTokensFilter"
+                    },
+                    "bin_size": {
+                        "type": "string",
+                        "enum": [
+                            "hour",
+                            "day"
+                        ],
+                        "default": "day"
+                    }
+                },
+                "type": "object",
+                "title": "RoyTokensHistogramRequest"
+            },
+            "RoyTokensHistogramResponse": {
+                "properties": {
+                    "buckets": {
+                        "additionalProperties": {
+                            "$ref": "#/components/schemas/RoyTokensBucket"
+                        },
+                        "propertyNames": {
+                            "format": "date-time"
+                        },
+                        "type": "object"
+                    },
+                    "total_tokens": {
+                        "type": "integer"
+                    },
+                    "prompt_tokens": {
+                        "type": "integer"
+                    },
+                    "completion_tokens": {
+                        "type": "integer"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "buckets",
+                    "total_tokens",
+                    "prompt_tokens",
+                    "completion_tokens"
+                ],
+                "title": "RoyTokensHistogramResponse"
+            },
+            "RuleResponse": {
+                "properties": {
+                    "first_seen": {
+                        "type": "string",
+                        "format": "date"
+                    },
+                    "last_seen": {
+                        "type": "string",
+                        "format": "date"
+                    },
+                    "total": {
+                        "type": "integer",
+                        "default": 0
+                    },
+                    "occurrences": {
+                        "additionalProperties": {
+                            "type": "integer"
+                        },
+                        "propertyNames": {
+                            "format": "date"
+                        },
+                        "type": "object"
+                    },
+                    "available_since": {
+                        "type": "string",
+                        "format": "date"
+                    },
+                    "rule_uuid": {
+                        "type": "string"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "rule_uuid"
+                ],
+                "title": "RuleResponse"
+            },
+            "Tag": {
+                "properties": {
+                    "name": {
+                        "type": "string"
+                    },
+                    "valid_from": {
+                        "type": "string"
+                    },
+                    "valid_until": {
+                        "type": "string"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "name"
+                ],
+                "title": "Tag"
+            },
+            "TopCTIObjectResponse": {
+                "properties": {
+                    "id": {
+                        "type": "string"
+                    },
+                    "total": {
+                        "type": "integer"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "id",
+                    "total"
+                ],
+                "title": "TopCTIObjectResponse"
+            },
+            "ValidationError": {
+                "properties": {
+                    "loc": {
+                        "items": {
+                            "anyOf": [
+                                {
+                                    "type": "string"
+                                },
+                                {
+                                    "type": "integer"
+                                }
+                            ]
+                        },
+                        "type": "array"
+                    },
+                    "msg": {
+                        "type": "string"
+                    },
+                    "type": {
+                        "type": "string"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "loc",
+                    "msg",
+                    "type"
+                ],
+                "title": "ValidationError"
+            },
+            "telemetry__api__dtos__events_by_status__Bucket": {
+                "properties": {
+                    "total": {
+                        "type": "integer"
+                    },
+                    "valid_events_occurrences": {
+                        "type": "integer"
+                    },
+                    "warning_events_occurences": {
+                        "type": "integer"
+                    },
+                    "invalid_events_occurrences": {
+                        "type": "integer"
+                    },
+                    "filter": {
+                        "$ref": "#/components/schemas/BucketFilter"
+                    },
+                    "groups": {
+                        "items": {
+                            "$ref": "#/components/schemas/telemetry__api__dtos__events_by_status__Bucket"
+                        },
+                        "type": "array"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "total",
+                    "valid_events_occurrences",
+                    "warning_events_occurences",
+                    "invalid_events_occurrences",
+                    "filter",
+                    "groups"
+                ],
+                "title": "Bucket"
+            },
+            "telemetry__api__dtos__events_by_status__HistogramBucket": {
+                "properties": {
+                    "total": {
+                        "type": "integer"
+                    },
+                    "valid_events_occurrences": {
+                        "type": "integer"
+                    },
+                    "warning_events_occurences": {
+                        "type": "integer"
+                    },
+                    "invalid_events_occurrences": {
+                        "type": "integer"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "total",
+                    "valid_events_occurrences",
+                    "warning_events_occurences",
+                    "invalid_events_occurrences"
+                ],
+                "title": "HistogramBucket"
+            },
+            "telemetry__api__dtos__intakes__HistogramBucket": {
+                "properties": {
+                    "total": {
+                        "type": "integer"
+                    },
+                    "lag": {
+                        "type": "number"
+                    },
+                    "processing_lag": {
+                        "type": "number"
+                    },
+                    "event_size": {
+                        "type": "integer"
+                    },
+                    "message_size": {
+                        "type": "integer"
+                    },
+                    "filter": {
+                        "$ref": "#/components/schemas/BucketFilter"
+                    },
+                    "groups": {
+                        "items": {
+                            "$ref": "#/components/schemas/telemetry__api__dtos__intakes__HistogramBucket"
+                        },
+                        "type": "array"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "total",
+                    "lag",
+                    "processing_lag",
+                    "event_size",
+                    "message_size",
+                    "filter",
+                    "groups"
+                ],
+                "title": "HistogramBucket"
+            },
+            "telemetry__api__dtos__invalid_events_aggregate__Bucket": {
+                "properties": {
+                    "total": {
+                        "type": "integer"
+                    },
+                    "last_seen": {
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "last_event": {
+                        "type": "object"
+                    },
+                    "filter": {
+                        "$ref": "#/components/schemas/BucketFilter"
+                    },
+                    "groups": {
+                        "items": {
+                            "$ref": "#/components/schemas/telemetry__api__dtos__invalid_events_aggregate__Bucket"
+                        },
+                        "type": "array"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "total",
+                    "filter",
+                    "groups"
+                ],
+                "title": "Bucket"
+            }
+        }
+    }
+}
