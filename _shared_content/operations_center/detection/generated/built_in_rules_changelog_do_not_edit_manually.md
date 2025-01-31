@@ -1,7 +1,10 @@
-Changelog _last update on 2025-01-30_
+Changelog _last update on 2025-01-31_
 
 ## Changelog
 
+### PowerShell Malicious Nishang PowerShell Commandlets
+  - 31/01/2025 - major - update keywords to improve detection coverage and remove false positives
+    
 ### Authentication Impossible Travel
   - 30/01/2025 - major - Pattern rework with ECS fields only and simple authentication success use case
     
@@ -229,9 +232,6 @@ Changelog _last update on 2025-01-30_
     
 ### DCSync Attack
   - 05/09/2024 - minor - Changing name of elements.
-    
-### PowerShell Malicious Nishang PowerShell Commandlets
-  - 27/08/2024 - minor - improve filter to avoid false positive
     
 ### Correlation Multi Service Disable
   - 21/08/2024 - minor - Adding a space to reduce false positives.
