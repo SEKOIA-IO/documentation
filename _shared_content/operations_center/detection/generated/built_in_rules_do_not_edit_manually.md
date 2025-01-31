@@ -1,4 +1,4 @@
-Rules catalog includes **993 built-in detection rules** ([_last update on 2025-01-30_](rules_changelog.md)).
+Rules catalog includes **993 built-in detection rules** ([_last update on 2025-01-31_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Identity Information**
 
@@ -2312,6 +2312,7 @@ Rules catalog includes **993 built-in detection rules** ([_last update on 2025-0
     
         - 26/07/2024 - minor - Removing tools relationships as it was inaccurate
         - 27/08/2024 - minor - improve filter to avoid false positive
+        - 31/01/2025 - major - update keywords to improve detection coverage and remove false positives
             
 ??? abstract "PowerShell Malicious PowerShell Commandlets"
     
