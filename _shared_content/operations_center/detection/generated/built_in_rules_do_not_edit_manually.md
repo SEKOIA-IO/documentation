@@ -1,4 +1,4 @@
-Rules catalog includes **993 built-in detection rules** ([_last update on 2025-01-31_](rules_changelog.md)).
+Rules catalog includes **993 built-in detection rules** ([_last update on 2025-02-03_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Identity Information**
 
@@ -287,12 +287,20 @@ Rules catalog includes **993 built-in detection rules** ([_last update on 2025-0
     
     - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 03/02/2025 - minor - Update pattern to ECS field only
+            
 ??? abstract "Login Brute-Force Successful On Jumpcloud Workstation"
     
     A user has attempted to login several times (brute-force) on Jumpcloud monitored workstations (windows, linux, mac) and succeeded to login.
     
     - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 03/02/2025 - minor - Update pattern to ECS field only
+            
 ??? abstract "Login Brute-Force Successful On Okta"
     
     A user has attempted to login several times (brute-force) on Okta and succeeded to login.
@@ -446,12 +454,20 @@ Rules catalog includes **993 built-in detection rules** ([_last update on 2025-0
     
     - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 03/02/2025 - minor - Update pattern to ECS field only
+            
 ??? abstract "Login Brute-Force Successful On Jumpcloud Workstation"
     
     A user has attempted to login several times (brute-force) on Jumpcloud monitored workstations (windows, linux, mac) and succeeded to login.
     
     - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 03/02/2025 - minor - Update pattern to ECS field only
+            
 ??? abstract "Login Brute-Force Successful On Okta"
     
     A user has attempted to login several times (brute-force) on Okta and succeeded to login.
@@ -592,6 +608,10 @@ Rules catalog includes **993 built-in detection rules** ([_last update on 2025-0
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 03/02/2025 - minor - Update pattern to ECS field only
+            
 ??? abstract "Microsoft Defender for Office 365 High Severity AIR Alert"
     
     Microsoft Defender for Office 365 includes the capability to run Automated investigation and response (AIR) actions. This rule detects when a High severity alert triggers an automated investigation, such as when a potentially malicious URL click was detected, or when a user is restricted from sending email.
@@ -830,12 +850,16 @@ Rules catalog includes **993 built-in detection rules** ([_last update on 2025-0
     
     - **Effort:** master
     
-??? abstract "Login Brute-Force On Firewall"
+??? abstract "Login Brute-Force On Fortinet Firewall From Internet"
     
-    Detects successful access to administration console of a firewall after several failure.
+    Detects successful access to administration console of a firewall after several failure from Internet.
     
     - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 03/02/2025 - minor - Update pattern to ECS field only and intake format
+            
 ??? abstract "Login Brute-Force On FreeRadius"
     
     A user has attempted to login several times (brute-force) with error then one success.
@@ -5117,12 +5141,16 @@ Rules catalog includes **993 built-in detection rules** ([_last update on 2025-0
     
     - **Effort:** master
     
-??? abstract "Login Brute-Force On Firewall"
+??? abstract "Login Brute-Force On Fortinet Firewall From Internet"
     
-    Detects successful access to administration console of a firewall after several failure.
+    Detects successful access to administration console of a firewall after several failure from Internet.
     
     - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 03/02/2025 - minor - Update pattern to ECS field only and intake format
+            
 ??? abstract "Login Brute-Force On FreeRadius"
     
     A user has attempted to login several times (brute-force) with error then one success.
@@ -6910,12 +6938,16 @@ Rules catalog includes **993 built-in detection rules** ([_last update on 2025-0
     
     - **Effort:** master
     
-??? abstract "Login Brute-Force On Firewall"
+??? abstract "Login Brute-Force On Fortinet Firewall From Internet"
     
-    Detects successful access to administration console of a firewall after several failure.
+    Detects successful access to administration console of a firewall after several failure from Internet.
     
     - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 03/02/2025 - minor - Update pattern to ECS field only and intake format
+            
 ??? abstract "Login Brute-Force On FreeRadius"
     
     A user has attempted to login several times (brute-force) with error then one success.
@@ -8752,12 +8784,16 @@ Rules catalog includes **993 built-in detection rules** ([_last update on 2025-0
     
     - **Effort:** master
     
-??? abstract "Login Brute-Force On Firewall"
+??? abstract "Login Brute-Force On Fortinet Firewall From Internet"
     
-    Detects successful access to administration console of a firewall after several failure.
+    Detects successful access to administration console of a firewall after several failure from Internet.
     
     - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 03/02/2025 - minor - Update pattern to ECS field only and intake format
+            
 ??? abstract "Login Brute-Force On FreeRadius"
     
     A user has attempted to login several times (brute-force) with error then one success.
@@ -11182,12 +11218,16 @@ Rules catalog includes **993 built-in detection rules** ([_last update on 2025-0
     
     - **Effort:** master
     
-??? abstract "Login Brute-Force On Firewall"
+??? abstract "Login Brute-Force On Fortinet Firewall From Internet"
     
-    Detects successful access to administration console of a firewall after several failure.
+    Detects successful access to administration console of a firewall after several failure from Internet.
     
     - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 03/02/2025 - minor - Update pattern to ECS field only and intake format
+            
 ??? abstract "Login Brute-Force On FreeRadius"
     
     A user has attempted to login several times (brute-force) with error then one success.
@@ -11204,15 +11244,16 @@ Rules catalog includes **993 built-in detection rules** ([_last update on 2025-0
     
         - 22/05/2024 - minor - Switch the group-by clause to a sekoiaio uuid field.
             
-??? abstract "Login Brute-Force Successful"
+??? abstract "Login Brute-Force Successful Linux"
     
-    A user has attempted to login several times (brute-force) and succeeded to login.
+    A user has attempted to login several times (brute-force) and succeeded to login on the linux monitored endpoint.
     
     - **Effort:** advanced
     
     - **Changelog:**
     
         - 06/10/2023 - minor - renaming and tunn filters to limit False Positive
+        - 03/02/2025 - minor - Update pattern to ECS field only
             
 ??? abstract "Password Change Brute-Force On AzureAD"
     
@@ -13120,7 +13161,7 @@ Rules catalog includes **993 built-in detection rules** ([_last update on 2025-0
     
     Detects suspicious hostnames such as ones with kali in it, to detect kali linux default hosts, but also other hostnames commonly used in attacks. List can be improved according to the environment.
     
-    - **Effort:** intermediate
+    - **Effort:** advanced
     
     - **Changelog:**
     

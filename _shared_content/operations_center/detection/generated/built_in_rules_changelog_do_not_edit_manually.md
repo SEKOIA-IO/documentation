@@ -1,7 +1,22 @@
-Changelog _last update on 2025-01-31_
+Changelog _last update on 2025-02-03_
 
 ## Changelog
 
+### Login Brute-Force Successful On Jumpcloud Portal
+  - 03/02/2025 - minor - Update pattern to ECS field only
+    
+### Login Brute-Force Successful On Jumpcloud Workstation
+  - 03/02/2025 - minor - Update pattern to ECS field only
+    
+### Correlation Jumpcloud User Logged In From Multiple Countries
+  - 03/02/2025 - minor - Update pattern to ECS field only
+    
+### Login Brute-Force Successful Linux
+  - 03/02/2025 - minor - Update pattern to ECS field only
+    
+### Login Brute-Force On Fortinet Firewall From Internet
+  - 03/02/2025 - minor - Update pattern to ECS field only and intake format
+    
 ### PowerShell Malicious Nishang PowerShell Commandlets
   - 31/01/2025 - major - update keywords to improve detection coverage and remove false positives
     
@@ -964,9 +979,6 @@ Changelog _last update on 2025-01-31_
     
 ### Microsoft 365 (Office 365) Mass Download By A Single User
   - 09/10/2023 - major - Fix field names to match the current parser.
-    
-### Login Brute-Force Successful
-  - 06/10/2023 - minor - renaming and tunn filters to limit False Positive
     
 ### Suspicious Regasm Regsvcs Usage
   - 27/09/2023 - major - Rule creation

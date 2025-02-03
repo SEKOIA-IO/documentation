@@ -2713,7 +2713,7 @@ The following Sekoia.io built-in rules match the intake **Windows**. This docume
     
     Detects suspicious hostnames such as ones with kali in it, to detect kali linux default hosts, but also other hostnames commonly used in attacks. List can be improved according to the environment.
     
-    - **Effort:** intermediate
+    - **Effort:** advanced
 
 ??? abstract "Suspicious Kerberos Ticket"
     
