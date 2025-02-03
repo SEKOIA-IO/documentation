@@ -25,7 +25,7 @@ This section describes the different operators supported by Sekoia Operating Lan
 
 ### Count rows
     
-#### Description
+**Description**
 
 Use the `count` operator to count the number of rows returned by the statement.
 
@@ -35,7 +35,7 @@ Use the `count` operator to count the number of rows returned by the statement.
 
 ```
     
-#### Example
+**Example**
 
 - Count the number of rows in the `events` table
 
@@ -47,7 +47,7 @@ events
 
 ### Select columns
     
-#### Description
+**Description**
 
 Use the `select` operator to define the columns to retrieve from the table. The order of the columns defined in the query will define the order of the columns in the results.
 
@@ -57,7 +57,7 @@ Use the `select` operator to define the columns to retrieve from the table. The 
 
 ```
 
-#### Example
+**Example**
 
 - Select the columns host.name and source.ip from the `events` table
 
@@ -70,7 +70,7 @@ events
 
 ### Distinct
     
-#### Description
+**Description**
 
 Use the `distinct` operator to list all the unique values of a column.
 
@@ -80,7 +80,7 @@ Use the `distinct` operator to list all the unique values of a column.
 
 ```
 
-#### Example
+**Example**
 
 - List the unique values of client.ip from the events table
 
@@ -93,7 +93,7 @@ events
 
 ### Where
     
-#### Description
+**Description**
 
 Use the `where` operator to filter rows by a list of conditions. Use parenthesis and keywords `and`, `or` to define complex conditions.
 
@@ -103,7 +103,7 @@ Use the `where` operator to filter rows by a list of conditions. Use parenthesis
 
 ```
 
-#### Example 1
+**Example 1**
 
 - Filter the query by excluding events older than `5 days` and retrieving only user agent from `Mac`
 
@@ -113,7 +113,7 @@ events
 
 ```
 
-#### Example 2
+**Example 2**
 
 - Filter the query by excluding events older than `5 days` and retrieving only user agent from `Mac` or `Android`
 
@@ -125,7 +125,7 @@ events
 
 ### Sort results
     
-#### Description
+**Description**
 
 Use the `order by` operator to sort rows by a column. The default sort order is descending.
 
@@ -135,7 +135,7 @@ Use the `order by` operator to sort rows by a column. The default sort order is 
 
 ```
 
-#### Example
+**Example**
 
 - Order the rows by the timestamp column in ascending order
 
@@ -148,7 +148,7 @@ events
 
 ### Limit results
     
-#### Description
+**Description**
 
 Use the `limit` operator to retrieve the last n number of rows based on the current sort order.
 
@@ -158,7 +158,7 @@ Use the `limit` operator to retrieve the last n number of rows based on the curr
 
 ```
 
-#### Example
+**Example**
 
 - Get `1000` events from `events` table
 
@@ -170,7 +170,7 @@ events
 
 ### Get the Top n rows 
     
-#### Description
+**Description**
 
 Use the `top` operator to returns the first n rows sorted by the specified column.
 
@@ -180,7 +180,7 @@ Use the `top` operator to returns the first n rows sorted by the specified col
 
 ```
 
-#### Example
+**Example**
 
 - Get the top `5` alerts with the most occurrences from `alerts` table
 
@@ -201,7 +201,7 @@ alerts
 
 ### Create calculated columns
     
-#### Description
+**Description**
 
 You can use `select` or `extend` operators to create calculated columns.
 Use `select` to specify the columns to display. When using `extend`, the calculated column is appended to the end of the table.
@@ -212,7 +212,7 @@ Use `select` to specify the columns to display. When using `extend`, the calcula
 
 ```
 
-#### Example
+**Example**
 
 - Create a calculated column named total that sums the `time_to_detect`, `time_to_respond` and `time_to_resolve` values
 
@@ -224,7 +224,7 @@ alerts
 
 ### Aggregate rows
     
-#### Description
+**Description**
 
 Use the `aggregate` operator to group rows by a column and perform aggregations with a chosen function: `count`, `sum`, `min`, `max`, `avg`, `uniquecount`.
 
@@ -234,7 +234,7 @@ Use the `aggregate` operator to group rows by a column and perform aggregations 
 
 ```
 
-#### Example
+**Example**
 
 - Count the number of events per asset in the `events` table
 
@@ -254,7 +254,7 @@ events
 
 ### Render results in chart
     
-#### Description
+**Description**
 
 Use the `render` operator to display results in a chart to identify more easily anomalies or outliers. Supported charts are:
 
@@ -271,7 +271,7 @@ Use the `render` operator to display results in a chart to identify more easily 
 
 ```
 
-#### Example
+**Example**
 
 - Count the number of events per asset in the events table and render it in a bar chart.
 
@@ -284,7 +284,7 @@ events
 
 ### Join tables
     
-#### Description
+**Description**
 
 Use the `join` operator to combine data from multiple tables, enriching the data context, filtering more accurately data.
 
@@ -307,7 +307,7 @@ This `model` object (similar to a class Object in code development) contains a s
 !!! info
     By convention, we consider that when using `join`, the **left part** of the statement represents the column of the **left table** and the **right part** of the statement represents the column of the **right table**.
 
-#### Example 1
+**Example 1**
 
 - Join the tables events and intakes
 
@@ -320,7 +320,7 @@ events
 
 The `model` object default name is related to the table name it is originating from. In this case, the model name is `intake` since the join was performed on the `intakes` table.
 
-#### Example 2
+**Example 2**
 
 - Join the tables alerts and entities
 
@@ -345,7 +345,7 @@ alerts
 
 ### Lookup
     
-#### Description
+**Description**
 
 Use the `lookup` operator to extend a table. Extends the current table with values looked-up in another table.
 
@@ -365,7 +365,7 @@ Similarly to `join` operator, `lookup` will inject the right table into a `model
 
 ### In
     
-#### Description
+**Description**
 
 Use the `in` operator to filter the rows based on a set of case-sensitive strings.
 
@@ -377,7 +377,7 @@ Use the `in` operator to filter the rows based on a set of case-sensitive string
 
 ### Contains
     
-#### Description
+**Description**
 
 Use the `contains` operator to filter the rows that contains a case-sensitive string.
 
@@ -389,7 +389,7 @@ Use the `contains` operator to filter the rows that contains a case-sensitive st
 
 ### Starts with
     
-#### Description
+**Description**
 
 Use the `startswith` operator to filter rows that starts with a case-sensitive string.
 
@@ -401,7 +401,7 @@ Use the `startswith` operator to filter rows that starts with a case-sensitive s
 
 ### Ends with
     
-#### Description
+**Description**
 
 Use the `endswith` operator to filter rows that ends with a case-sensitive string.
 
@@ -413,7 +413,7 @@ Use the `endswith` operator to filter rows that ends with a case-sensitive strin
 
 ### Variables
     
-#### Description
+**Description**
 
 Use the `let` operator to define variables.
 
@@ -427,7 +427,7 @@ let <variable name> = <string | integer | function()>;
 
 ### Comments
     
-#### Description
+**Description**
 
 Use `//` to add comments in the query.
 Use `Ctrl+K+C` to comment current line or selected lines.
@@ -443,7 +443,7 @@ let <variable name> = <string | integer | function()>;
 
 ### Datetime: now()
     
-#### Description
+**Description**
 
 Returns the current **UTC** time, optionally offset by a given timespan.
 
@@ -456,7 +456,7 @@ let time_earlier = now(-2d);
 
 ### Datetime: ago()
     
-#### Description
+**Description**
 
 Returns a datetime value equal to the current UTC time minus the timespan.
 
@@ -467,7 +467,7 @@ let time = ago(1h);
 
 ### Timestamp: bin()
 
-#### Description
+**Description**
 
 Rounds values down to an integer multiple of a given bin size.
 
