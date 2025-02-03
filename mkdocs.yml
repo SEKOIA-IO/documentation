@@ -90,6 +90,7 @@ nav:
       - Events Query Language: xdr/features/investigate/events_query_language.md
       - Querying Events: xdr/features/investigate/querying_events.md
       - Query Builder: xdr/features/investigate/query_builder.md
+      - Sekoia Operating Language (coming soon): xdr/features/investigate/sekoia_operating_language.md
       - Notebooks: xdr/features/investigate/notebooks.md
     - Report:
       - Dashboards: xdr/features/report/dashboards.md
