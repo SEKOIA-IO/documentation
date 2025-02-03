@@ -21,9 +21,9 @@ Sekoia Operating Language (`SOL`) is a powerful, pipe-based query language desig
 
 ## Operators
 
-This section describes the different operators supported by Sekoia Operating Language (`SOL`).
+The next sections describe the different operators supported by Sekoia Operating Language (`SOL`).
 
-### Count rows
+## Count rows
     
 **Description**
 
@@ -45,7 +45,7 @@ events
 
 ```
 
-### Select columns
+## Select columns
     
 **Description**
 
@@ -68,7 +68,7 @@ events
 
 ```
 
-### Distinct
+## Distinct
     
 **Description**
 
@@ -91,7 +91,7 @@ events
 
 ```
 
-### Where
+## Where
     
 **Description**
 
@@ -123,7 +123,7 @@ events
 
 ```
 
-### Sort results
+## Sort results
     
 **Description**
 
@@ -146,7 +146,7 @@ events
 
 ```
 
-### Limit results
+## Limit results
     
 **Description**
 
@@ -168,7 +168,7 @@ events
 
 ```
 
-### Get the Top n rows 
+## Get the Top n rows 
     
 **Description**
 
@@ -199,7 +199,7 @@ alerts
 
 ```
 
-### Create calculated columns
+## Create calculated columns
     
 **Description**
 
@@ -222,7 +222,7 @@ alerts
 
 ```
 
-### Aggregate rows
+## Aggregate rows
     
 **Description**
 
@@ -252,7 +252,7 @@ events
 
 ```
 
-### Render results in chart
+## Render results in chart
     
 **Description**
 
@@ -282,7 +282,7 @@ events
 
 ```
 
-### Join tables
+## Join tables
     
 **Description**
 
@@ -343,7 +343,7 @@ alerts
 | select my_entity.name
 ```
 
-### Lookup
+## Lookup
     
 **Description**
 
@@ -363,7 +363,7 @@ Use the `lookup` operator to extend a table. Extends the current table with valu
 
 Similarly to `join` operator, `lookup` will inject the right table into a `model` object.
 
-### In
+## In
     
 **Description**
 
@@ -385,7 +385,7 @@ events
 
 ```
 
-### Contains
+## Contains
     
 **Description**
 
@@ -407,7 +407,7 @@ events
 
 ```
 
-### Starts with
+## Starts with
     
 **Description**
 
@@ -429,7 +429,7 @@ events
 
 ```
 
-### Ends with
+## Ends with
     
 **Description**
 
@@ -451,7 +451,7 @@ events
 
 ```
 
-### Variables
+## Variables
     
 **Description**
 
@@ -479,7 +479,7 @@ events
 
 ```
 
-### Comments
+## Comments
     
 **Description**
 
@@ -497,7 +497,7 @@ let <variable name> = <string | integer | function()>;
 
 ```
 
-### Datetime: now()
+## Datetime: now()
     
 **Description**
 
@@ -512,7 +512,7 @@ let time_earlier = now(-2d);
 
 ```
 
-### Datetime: ago()
+## Datetime: ago()
     
 **Description**
 
@@ -525,7 +525,7 @@ let time = ago(1h);
 
 ```
 
-### Timestamp: bin()
+## Timestamp: bin()
 
 **Description**
 
