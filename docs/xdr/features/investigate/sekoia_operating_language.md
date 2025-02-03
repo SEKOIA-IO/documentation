@@ -37,7 +37,7 @@ Use the `count` operator to count the number of rows returned by the statement.
     
 **Example**
 
-- Count the number of rows in the `events` table
+Count the number of rows in the `events` table
 
 ``` shell
 events
@@ -59,7 +59,7 @@ Use the `select` operator to define the columns to retrieve from the table. The 
 
 **Example**
 
-- Select the columns host.name and source.ip from the `events` table
+Select the columns host.name and source.ip from the `events` table
 
 ``` shell
 events
@@ -82,7 +82,7 @@ Use the `distinct` operator to list all the unique values of a column.
 
 **Example**
 
-- List the unique values of client.ip from the events table
+List the unique values of client.ip from the events table
 
 ``` shell
 events
@@ -105,7 +105,7 @@ Use the `where` operator to filter rows by a list of conditions. Use parenthesis
 
 **Example 1**
 
-- Filter the query by excluding events older than `5 days` and retrieving only user agent from `Mac`
+Filter the query by excluding events older than `5 days` and retrieving only user agent from `Mac`
 
 ``` shell
 events
@@ -115,7 +115,7 @@ events
 
 **Example 2**
 
-- Filter the query by excluding events older than `5 days` and retrieving only user agent from `Mac` or `Android`
+Filter the query by excluding events older than `5 days` and retrieving only user agent from `Mac` or `Android`
 
 ``` shell
 events
@@ -137,7 +137,7 @@ Use the `order by` operator to sort rows by a column. The default sort order is 
 
 **Example**
 
-- Order the rows by the timestamp column in ascending order
+Order the rows by the timestamp column in ascending order
 
 ``` shell
 events
@@ -160,7 +160,7 @@ Use the `limit` operator to retrieve the last n number of rows based on the curr
 
 **Example**
 
-- Get `1000` events from `events` table
+Get `1000` events from `events` table
 
 ``` shell
 events
@@ -182,7 +182,7 @@ Use the `top` operator to returns the first n rows sorted by the specified col
 
 **Example**
 
-- Get the top `5` alerts with the most occurrences from `alerts` table
+Get the top `5` alerts with the most occurrences from `alerts` table
 
 ``` shell
 alerts
@@ -214,7 +214,7 @@ Use `select` to specify the columns to display. When using `extend`, the calcula
 
 **Example**
 
-- Create a calculated column named total that sums the `time_to_detect`, `time_to_respond` and `time_to_resolve` values
+Create a calculated column named total that sums the `time_to_detect`, `time_to_respond` and `time_to_resolve` values
 
 ``` shell
 alerts
@@ -236,7 +236,7 @@ Use the `aggregate` operator to group rows by a column and perform aggregations 
 
 **Example**
 
-- Count the number of events per asset in the `events` table
+Count the number of events per asset in the `events` table
 
 ``` shell
 events
@@ -273,7 +273,7 @@ Use the `render` operator to display results in a chart to identify more easily 
 
 **Example**
 
-- Count the number of events per asset in the events table and render it in a bar chart.
+Count the number of events per asset in the events table and render it in a bar chart.
 
 ``` shell
 events
@@ -309,7 +309,7 @@ This `model` object (similar to a class Object in code development) contains a s
 
 **Example 1**
 
-- Join the tables events and intakes
+Join the tables events and intakes
 
 ``` shell
 events
@@ -322,7 +322,7 @@ The `model` object default name is related to the table name it is originating f
 
 **Example 2**
 
-- Join the tables alerts and entities
+Join the tables alerts and entities
 
 ``` shell
 alerts
@@ -333,9 +333,9 @@ alerts
 
 The `model` object default name is related to the table name it is originating from. In this case, the model name is `entity` since the join was performed on the `entities` table.
 
-#### Define model object name
+**Define model object name**
 
-- In this example, we define a specific name for the model object with the into operator.
+In this example, we define a specific name for the model object with the into operator.
 
 ``` shell
 alerts
@@ -375,6 +375,16 @@ Use the `in` operator to filter the rows based on a set of case-sensitive string
 
 ```
 
+**Example**
+
+Find events where `client.ip` equals to theses values: 192.168.0.1, 192.168.0.2.
+
+``` shell
+events
+| where client.ip in ('192.168.0.1', '192.168.0.2')
+
+```
+
 ### Contains
     
 **Description**
@@ -384,6 +394,16 @@ Use the `contains` operator to filter the rows that contains a case-sensitive st
 ``` shell
 <table name>
 | where <column name> contains <value 1>
+
+```
+
+**Example**
+
+Find events where `user.full_name` contains the string `Admin`.
+
+``` shell
+events
+| where user.full_name contains 'Admin'
 
 ```
 
@@ -399,6 +419,16 @@ Use the `startswith` operator to filter rows that starts with a case-sensitive s
 
 ```
 
+**Example**
+
+Find events where `url.domain` starts with the string `api.prod`.
+
+``` shell
+events
+| where url.domain startswith 'api.prod'
+
+```
+
 ### Ends with
     
 **Description**
@@ -408,6 +438,16 @@ Use the `endswith` operator to filter rows that ends with a case-sensitive strin
 ``` shell
 <table name>
 | where <column name> endswith <pattern>
+
+```
+
+**Example**
+
+Find events where `url.path` ends with the string `/admin`.
+
+``` shell
+events
+| where url.path endswith '/admin'
 
 ```
 
@@ -425,6 +465,20 @@ let <variable name> = <string | integer | function()>;
 
 ```
 
+**Example**
+
+Count the number of events in the last 30 days.
+
+``` shell
+let StartTime = ago(30d);
+let EndTime = now();
+
+events
+| where event.created > StartTime and event.created <= EndTime
+| count
+
+```
+
 ### Comments
     
 **Description**
@@ -432,6 +486,8 @@ let <variable name> = <string | integer | function()>;
 Use `//` to add comments in the query.
 Use `Ctrl+K+C` to comment current line or selected lines.
 Use `Ctrl+K+U` to uncomment current line or selected lines.
+
+**Example**
 
 ``` shell
 let <variable name> = <string | integer | function()>;
@@ -447,6 +503,8 @@ let <variable name> = <string | integer | function()>;
 
 Returns the current **UTC** time, optionally offset by a given timespan.
 
+**Example**
+
 ``` shell
 let time = now();
 
@@ -460,6 +518,8 @@ let time_earlier = now(-2d);
 
 Returns a datetime value equal to the current UTC time minus the timespan.
 
+**Example**
+
 ``` shell
 let time = ago(1h);
 
@@ -470,6 +530,8 @@ let time = ago(1h);
 **Description**
 
 Rounds values down to an integer multiple of a given bin size.
+
+**Example**
 
 ``` shell
 events
