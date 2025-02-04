@@ -17,7 +17,7 @@ The following Sekoia.io built-in rules match the intake **WatchGuard Firebox**. 
 
 ??? abstract "Authentication Impossible Travel"
     
-    Detects impossible travel when performing authentication from a source IP address, grouped by user name. This could require some alert filtering for some user generic accounts, and known IP address range.
+    Detects impossible travel when performing authentication from a source IP address, grouped by user name. This could require some alert filtering for some user generic accounts, and known IP address range. Microsoft / Office 365 format is not covered by this rule.
     
     - **Effort:** master
 

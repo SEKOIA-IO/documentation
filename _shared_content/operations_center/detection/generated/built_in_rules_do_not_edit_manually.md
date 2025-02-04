@@ -1,4 +1,4 @@
-Rules catalog includes **993 built-in detection rules** ([_last update on 2025-02-03_](rules_changelog.md)).
+Rules catalog includes **993 built-in detection rules** ([_last update on 2025-02-04_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Identity Information**
 
@@ -746,15 +746,16 @@ Rules catalog includes **993 built-in detection rules** ([_last update on 2025-0
             
 ??? abstract "Authentication Impossible Travel"
     
-    Detects impossible travel when performing authentication from a source IP address, grouped by user name. This could require some alert filtering for some user generic accounts, and known IP address range.
+    Detects impossible travel when performing authentication from a source IP address, grouped by user name. This could require some alert filtering for some user generic accounts, and known IP address range. Microsoft / Office 365 format is not covered by this rule.
     
     - **Effort:** master
     
     - **Changelog:**
     
-        - 27/07/2024 - major - review filter to avoid false positive
-        - 30/08/2024 - minor - improve filter to avoid false positive
+        - 27/07/2024 - major - review filter to avoid false positives
+        - 30/08/2024 - minor - improve filter to avoid false positives
         - 30/01/2025 - major - Pattern rework with ECS fields only and simple authentication success use case
+        - 04/02/2025 - major - Excluding Microsoft 365 format to avoid false positives
             
 ??? abstract "Broadcom Edge Secure Web Gateway High Threat"
     
@@ -5037,15 +5038,16 @@ Rules catalog includes **993 built-in detection rules** ([_last update on 2025-0
             
 ??? abstract "Authentication Impossible Travel"
     
-    Detects impossible travel when performing authentication from a source IP address, grouped by user name. This could require some alert filtering for some user generic accounts, and known IP address range.
+    Detects impossible travel when performing authentication from a source IP address, grouped by user name. This could require some alert filtering for some user generic accounts, and known IP address range. Microsoft / Office 365 format is not covered by this rule.
     
     - **Effort:** master
     
     - **Changelog:**
     
-        - 27/07/2024 - major - review filter to avoid false positive
-        - 30/08/2024 - minor - improve filter to avoid false positive
+        - 27/07/2024 - major - review filter to avoid false positives
+        - 30/08/2024 - minor - improve filter to avoid false positives
         - 30/01/2025 - major - Pattern rework with ECS fields only and simple authentication success use case
+        - 04/02/2025 - major - Excluding Microsoft 365 format to avoid false positives
             
 ??? abstract "Broadcom Edge Secure Web Gateway High Threat"
     
@@ -6834,15 +6836,16 @@ Rules catalog includes **993 built-in detection rules** ([_last update on 2025-0
             
 ??? abstract "Authentication Impossible Travel"
     
-    Detects impossible travel when performing authentication from a source IP address, grouped by user name. This could require some alert filtering for some user generic accounts, and known IP address range.
+    Detects impossible travel when performing authentication from a source IP address, grouped by user name. This could require some alert filtering for some user generic accounts, and known IP address range. Microsoft / Office 365 format is not covered by this rule.
     
     - **Effort:** master
     
     - **Changelog:**
     
-        - 27/07/2024 - major - review filter to avoid false positive
-        - 30/08/2024 - minor - improve filter to avoid false positive
+        - 27/07/2024 - major - review filter to avoid false positives
+        - 30/08/2024 - minor - improve filter to avoid false positives
         - 30/01/2025 - major - Pattern rework with ECS fields only and simple authentication success use case
+        - 04/02/2025 - major - Excluding Microsoft 365 format to avoid false positives
             
 ??? abstract "Broadcom Edge Secure Web Gateway High Threat"
     
@@ -8680,15 +8683,16 @@ Rules catalog includes **993 built-in detection rules** ([_last update on 2025-0
             
 ??? abstract "Authentication Impossible Travel"
     
-    Detects impossible travel when performing authentication from a source IP address, grouped by user name. This could require some alert filtering for some user generic accounts, and known IP address range.
+    Detects impossible travel when performing authentication from a source IP address, grouped by user name. This could require some alert filtering for some user generic accounts, and known IP address range. Microsoft / Office 365 format is not covered by this rule.
     
     - **Effort:** master
     
     - **Changelog:**
     
-        - 27/07/2024 - major - review filter to avoid false positive
-        - 30/08/2024 - minor - improve filter to avoid false positive
+        - 27/07/2024 - major - review filter to avoid false positives
+        - 30/08/2024 - minor - improve filter to avoid false positives
         - 30/01/2025 - major - Pattern rework with ECS fields only and simple authentication success use case
+        - 04/02/2025 - major - Excluding Microsoft 365 format to avoid false positives
             
 ??? abstract "Broadcom Edge Secure Web Gateway High Threat"
     
@@ -11135,15 +11139,16 @@ Rules catalog includes **993 built-in detection rules** ([_last update on 2025-0
     
 ??? abstract "Authentication Impossible Travel"
     
-    Detects impossible travel when performing authentication from a source IP address, grouped by user name. This could require some alert filtering for some user generic accounts, and known IP address range.
+    Detects impossible travel when performing authentication from a source IP address, grouped by user name. This could require some alert filtering for some user generic accounts, and known IP address range. Microsoft / Office 365 format is not covered by this rule.
     
     - **Effort:** master
     
     - **Changelog:**
     
-        - 27/07/2024 - major - review filter to avoid false positive
-        - 30/08/2024 - minor - improve filter to avoid false positive
+        - 27/07/2024 - major - review filter to avoid false positives
+        - 30/08/2024 - minor - improve filter to avoid false positives
         - 30/01/2025 - major - Pattern rework with ECS fields only and simple authentication success use case
+        - 04/02/2025 - major - Excluding Microsoft 365 format to avoid false positives
             
 ??? abstract "Brute Force WALLIX Bastion"
     
