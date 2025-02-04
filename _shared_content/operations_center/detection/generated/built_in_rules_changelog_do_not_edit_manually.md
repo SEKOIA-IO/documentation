@@ -1,7 +1,10 @@
-Changelog _last update on 2025-02-03_
+Changelog _last update on 2025-02-04_
 
 ## Changelog
 
+### Authentication Impossible Travel
+  - 04/02/2025 - major - Excluding Microsoft 365 format to avoid false positives
+    
 ### Login Brute-Force Successful On Jumpcloud Portal
   - 03/02/2025 - minor - Update pattern to ECS field only
     
@@ -19,9 +22,6 @@ Changelog _last update on 2025-02-03_
     
 ### PowerShell Malicious Nishang PowerShell Commandlets
   - 31/01/2025 - major - update keywords to improve detection coverage and remove false positives
-    
-### Authentication Impossible Travel
-  - 30/01/2025 - major - Pattern rework with ECS fields only and simple authentication success use case
     
 ### SOCKS Tunneling Tool
   - 30/01/2025 - minor - Similarity strategy was modified to have more relevant alerts.
