@@ -35,8 +35,8 @@ Sekoia Operating Language (`SOL`) is a powerful, pipe-based query language desig
 | urgency                   | The level of urgency assigned to the alert.                                                  |
 | created_at                | The date and time when the alert was initially created.                                      |
 | update_at                 | The date and time when the alert was last updated.                                           |
-| first_seen_at             | The date and time of the first alert occurence.                                              |
-| last_seen_at              | The date and time of the last alert occurence.                                               |
+| first_seen_at             | The date and time of the first alert occurrence.                                              |
+| last_seen_at              | The date and time of the last alert occurrence.                                               |
 | time_to_detect            | Duration taken to identify the alert from its occurrence in seconds.                         |
 | time_to_acknowledge       | Time elapsed from detection to official acknowledgment of the alert in seconds.              |
 | time_to_respond           | Duration taken to take action after acknowledgment in seconds.                               |
@@ -308,7 +308,7 @@ Get the top `5` alerts with the most occurrences from `alerts` table in the last
 ``` shell
 alerts
 | where created_at > ago(7d)
-| top 5 by occurences
+| top 5 by occurrences
 
 ```
 
@@ -316,7 +316,7 @@ Note that the query below is equivalent.
 
 ``` shell
 alerts
-| order by occurences desc
+| order by occurrences desc
 | limit 5
 
 ```
@@ -699,7 +699,7 @@ Use the `let` operator to define variables.
 let <variable name> = <string | integer>;
 
 <table name>
-| where <column name> = <variable name>
+| where <column name> == <variable name>
 
 ```
 
@@ -828,3 +828,194 @@ Returns the year and month by a given date in the following format: `YYYY - Week
 let time = week(now());
 
 ```
+
+## Join examples
+
+### Join between events and communities tables (for Multi-tenant)
+
+``` shell
+events
+| where timestamp > ago(5m)
+| join communities on sekoiaio.customer.community_uuid == uuid
+| select timestamp, sekoiaio.customer.community_uuid, community.name
+
+```
+
+---
+
+### Join between events and entities tables
+
+``` shell
+events
+| limit 100
+| lookup entities on sekoiaio.entity.uuid == uuid
+| aggregate count=count() by entity.name
+| select entity.name, count
+
+```
+
+---
+
+### Join between alerts and communities tables (for Multi-tenant)
+
+``` shell
+alerts
+| aggregate count=count() by community_uuid
+| join communities on community_uuid == uuid
+| select community.name, community_uuid, count
+| limit 100
+
+```
+
+## Alerts query examples
+
+### Detection rules ranked by number of alerts
+
+``` shell
+alerts 
+| where created_at > ago(30d)
+| order by occurrences desc
+| select rule_name, occurrences
+
+```
+
+---
+
+### Assets ranked by number of alerts
+
+``` shell
+alerts
+| aggregate count=count() by assets.uuid
+| order by count desc
+| limit 100
+
+```
+
+---
+
+### Threats ranked by number of alerts
+
+``` shell
+alerts
+| aggregate count=count() by threats.name
+| order by count desc
+| limit 100
+
+```
+
+### Alerts per detection type
+
+``` shell
+alerts
+| where created_at > ago(30d)
+| aggregate count() by detection_type
+
+```
+
+---
+
+### Average time to detect in last 30 days
+
+``` shell
+alerts
+| where created_at > ago(30d)
+| aggregate avg(time_to_detect)
+
+```
+
+---
+
+## Events query examples
+
+### Number of unique command lines per host.name
+
+``` shell
+events
+| where timestamp > ago(24h)
+| aggregate count=count_distinct(process.command_line) by host.name
+| order by count desc
+
+```
+
+---
+
+### Number of unique hostname per month
+
+``` shell
+events
+| where timestamp > ago(90d)
+| aggregate count=count_distinct(log.hostname) by month(timestamp)
+
+```
+
+---
+
+### Top 10 visited URL
+
+``` shell
+events
+| where timestamp >= ago(24h)
+| aggregate count=count() by url.domain
+| top 10 by count
+
+```
+
+---
+
+### Top 10 blocked URL
+
+``` shell
+events
+| where timestamp >= ago(24h) and event.action == 'blocked' and user.name != null and url.domain != null
+| aggregate count=count() by url.domain
+| top 10 by count
+
+```
+
+---
+
+### Top 10 login failures
+
+``` shell
+events
+| where timestamp > ago(24h) and event.code == 4625
+| aggregate failed_login_count=count() by user.target.name
+| top 10 by failed_login_count
+
+```
+
+---
+
+### Sekoia.io endpoint agents per version
+
+``` shell
+events
+| where timestamp >= ago(24h) and sekoiaio.intake.dialect == 'sekoia.io endpoint agent' and event.action == 'stats'
+| aggregate count_distinct(agent.id) by agent.version
+
+```
+
+---
+
+### List unique user.name
+
+``` shell
+events
+| where timestamp >= ago(24h)
+| distinct(user.name)
+
+```
+
+---
+
+### Number of events per IP address
+
+``` shell
+events
+| where timestamp > ago(30d)
+| aggregate count=count() by client.ip
+| order by count desc
+
+```
+
+---
