@@ -2,8 +2,6 @@
 
 ## Power and Simplicity in Security Analytics
 
-## Overview
-
 Sekoia Operating Language (`SOL`) is a powerful, pipe-based query language designed specifically for modern security operations. Built with similarities to `KQL` (Kusto Query Language) and `SQL`, `SOL` combines familiar syntax with advanced security-focused capabilities to deliver exceptional performance when analyzing massive security datasets.
 
 ## Datasources
@@ -19,11 +17,119 @@ Sekoia Operating Language (`SOL`) is a powerful, pipe-based query language desig
 | `entities` | Company entities | Entity tracking, detailed reporting |
 | `communities` | Multi-tenant communities (if applicable) | Cross-organization analysis |
 
+### Alerts properties
+
+| **Alert Property**        | **Description**                                                                              |
+|---------------------------|----------------------------------------------------------------------------------------------|
+| uuid                      | A unique identifier for the alert.                                                           |
+| short_ID                  | A concise identifier for quick reference to the alert.                                       |
+| community_uuid            | A unique identifier for the community the alert belongs to.                                  |
+| entity_uuid               | A unique identifier representing the entity associated with the alert.                       |
+| entity_name               | The name of the entity linked to the alert.                                                  |
+| rule_name                 | The name assigned to the rule that triggered the alert.                                      |
+| rule_pattern              | The detection pattern of the alert.                                                          |
+| detection_type            | The method by which the alert was detected.                                                  |
+| alert_type_category       | The category of the alert.                                                                   |
+| alert_type_value          | The type of the alert.                                                                       |
+| status                    | The current state of the alert (e.g., open, acknowledged, resolved).                         |
+| urgency                   | The level of urgency assigned to the alert.                                                  |
+| created_at                | The date and time when the alert was initially created.                                      |
+| update_at                 | The date and time when the alert was last updated.                                           |
+| first_seen_at             | The date and time of the first alert occurence.                                              |
+| last_seen_at              | The date and time of the last alert occurence.                                               |
+| time_to_detect            | Duration taken to identify the alert from its occurrence in seconds.                         |
+| time_to_acknowledge       | Time elapsed from detection to official acknowledgment of the alert in seconds.              |
+| time_to_respond           | Duration taken to take action after acknowledgment in seconds.                               |
+| time_to_resolve           | The total time taken to completely resolve the alert in seconds.                             |
+| time_to_ingest            | The duration from alert generation to its final ingestion into the system in seconds.        |
+| occurrences               | The number of alert occurrences                                                              |
+| rule_instance_uuid        | A unique identifier for the rule that generated the alert.                                   |
+| cases                     | List of cases associated to the alert.                                                       |
+| assets                    | List of assets associated to the alert.                                                      |
+| threats                   | List of threats associated the alert.                                                        |
+
+## Cases properties
+
+| **Property**              | **Description**                                                                            |
+|---------------------------|--------------------------------------------------------------------------------------------|
+| uuid                      | A unique identifier for the case.                                                          |
+| short_id                  | A concise identifier for quick reference to the case.                                      |
+| community_uuid            | A unique identifier for the community related to the case.                                 |
+| title                     | The title or subject line of the case.                                                     |
+| description               | A detailed description outlining the case's context or issues.                             |
+| priority                  | The importance level assigned to the case, indicating its urgency.                         |
+| created_at                | The date and time when the case was created.                                               |
+| created_by                | The user or system that created the case.                                                  |
+| created_by_type           | The type of entity that created the case (e.g., user, automated system).                   |
+| updated_at                | The date and time when the case was last updated.                                          |
+| updated_by                | The user or system that last updated the case.                                             |
+| updated_by_type           | The type of user that last updated the case.                                               |
+| first_seen_at             | The date and time when the case was first detected.                                        |
+| last_seen_at              | The date and time when the case was last observed or updated.                              |
+
+## Entities properties
+
+| **Property**              | **Description**                                                                            |
+|---------------------------|--------------------------------------------------------------------------------------------|
+| uuid                      | A unique identifier for the entity.                                                        |
+| name                      | The name of the entity.                                                                    |
+| alerts_generation         | The alert generation mode of the entity.                                                   |
+| description               | The description of the entity.                                                             |
+| entity_id                 | The ID of the entity.                                                                      |
+| community_uuid            | A unique identifier for the community related to the entity.                               |
+| created_at                | The date and time when the entity was created.                                             |
+| updated_at                | The date and time when the entity was last updated.                                        |
+
+## Intakes properties
+
+| **Property**              | **Description**                                                                            |
+|---------------------------|--------------------------------------------------------------------------------------------|
+| uuid                      | A unique identifier for the intake.                                                        |
+| name                      | The name of the intake.                                                                    |
+| community_uuid            | A unique identifier for the community related to the intake.                               |
+| entity_uuid               | A unique identifier for the entity related to the intake.                                  |
+| format_uuid               | A unique identifier for the format related to the intake.                                  |
+| intake_key                | The intake key of the intake.                                                              |
+| created_at                | The date and time when the intake was created.                                             |
+| created_by                | The user or system that created the intake.                                                |
+| created_by_type           | The type of entity that created the intake (e.g., avatar, apikey).                         |
+| updated_at                | The date and time when the intake was last updated.                                        |
+| updated_by                | The user or system that last updated the intake.                                           |
+| updated_by_type           | The type of user that last updated the intake.                                             |
+| is_custom_format          | Indicate if the intake uses a custom format.                                               |
+| connector_configuration_uuid    | A unique identifier for the connector configuration related to the intake.           |
+
+## Communities properties
+
+| **Property**              | **Description**                                                                            |
+|---------------------------|--------------------------------------------------------------------------------------------|
+| uuid                      | A unique identifier for the community.                                                     |
+| name                      | The name of the community.                                                                 |
+| description               | The description of the community.                                                          |
+| homepage_url              | The homepage url of the community.                                                         |
+| picture_mode              | The picture mode of the community.                                                         |
+| intake_key                | The intake key of the community.                                                           |
+| created_at                | The date and time when the community was created.                                          |
+| created_by                | The user or system that created the community.                                             |
+| created_by_type           | The type of entity that created the community (e.g., avatar, apikey).                      |
+| updated_at                | The date and time when the community was last updated.                                     |
+| company_size              | The size of the company.                                                                   |
+| company_security_team_size  | The size of the security team.                                                           |
+| company_sector            | The sector of the company.                                                                 |
+| company_location          | The location of the company.                                                               |
+| is_parent                 | Indicate if the community is a parent community.                                           |
+| parent_uuid               | A unique identifier of the parent community.                                               |
+| subcommunities            | Indicate if the community has subcommunities.                                              |
+| is_mfa_enforced           | Indicate if MFA is enforced at the community level.                                        |
+| session_timeout           | The duration before users are automatically logged after inactivity.                       |
+| disable_inactive_avatars  | Indicate if users are disabled after 90 days of inactivity.                                |
+| disabled                  | Indicate if the community is disabled.                                                     |
+
 ## Operators
 
 The next sections describe the different operators supported by Sekoia Operating Language (`SOL`).
 
-## Count rows
+### Count rows
     
 **Description**
 
@@ -41,11 +147,14 @@ Count the number of rows in the `events` table
 
 ``` shell
 events
+| where timestamp > ago(30m)
 | count
 
 ```
 
-## Select columns
+---
+
+### Select columns
     
 **Description**
 
@@ -68,7 +177,9 @@ events
 
 ```
 
-## Distinct
+---
+
+### Distinct
     
 **Description**
 
@@ -91,7 +202,9 @@ events
 
 ```
 
-## Where
+---
+
+### Where
     
 **Description**
 
@@ -110,6 +223,7 @@ Filter the query by excluding events older than `5 days` and retrieving only use
 ``` shell
 events
 | where timestamp > ago(5d) and user_agent.device.name == “Mac”
+| limit 100
 
 ```
 
@@ -120,10 +234,13 @@ Filter the query by excluding events older than `5 days` and retrieving only use
 ``` shell
 events
 | where timestamp > ago(5d) and (user_agent.device.name == “Mac” or user_agent.device.name == “Android”)
+| limit 100
 
 ```
 
-## Sort results
+---
+
+### Sort results
     
 **Description**
 
@@ -146,8 +263,10 @@ events
 
 ```
 
-## Limit results
-    
+---
+
+### Limit results
+
 **Description**
 
 Use the `limit` operator to retrieve the last n number of rows based on the current sort order.
@@ -168,8 +287,10 @@ events
 
 ```
 
-## Get the Top n rows 
-    
+---
+
+### Get the Top n rows 
+
 **Description**
 
 Use the `top` operator to returns the first n rows sorted by the specified column.
@@ -182,10 +303,11 @@ Use the `top` operator to returns the first n rows sorted by the specified col
 
 **Example**
 
-Get the top `5` alerts with the most occurrences from `alerts` table
+Get the top `5` alerts with the most occurrences from `alerts` table in the last 7 days
 
 ``` shell
 alerts
+| where created_at > ago(7d)
 | top 5 by occurences
 
 ```
@@ -199,8 +321,10 @@ alerts
 
 ```
 
-## Create calculated columns
-    
+---
+
+### Create calculated columns
+
 **Description**
 
 You can use `select` or `extend` operators to create calculated columns.
@@ -219,14 +343,17 @@ Create a calculated column named total that sums the `time_to_detect`, `time_to_
 ``` shell
 alerts
 | select total = time_to_detect + time_to_respond + time_to_resolve
+| limit 100
 
 ```
 
-## Aggregate rows
-    
+---
+
+### Aggregate rows
+
 **Description**
 
-Use the `aggregate` operator to group rows by a column and perform aggregations with a chosen function: `count`, `sum`, `min`, `max`, `avg`, `uniquecount`.
+Use the `aggregate` operator to group rows by a column and perform aggregations with a chosen function: `count`, `sum`, `min`, `max`, `avg`, `count_distinct`, `make_set`.
 
 ``` shell
 <table name>
@@ -234,13 +361,14 @@ Use the `aggregate` operator to group rows by a column and perform aggregations 
 
 ```
 
-**Example**
+**Example 1**
 
 Count the number of events per asset in the `events` table
 
 ``` shell
 events
 | aggregate count() by sekoiaio.any_asset.name
+| limit 100
 
 ```
 
@@ -249,11 +377,81 @@ Note that you can specify a column name for the aggregation. In the example belo
 ``` shell
 events
 | aggregate total = count() by sekoiaio.any_asset.name
+| limit 100
 
 ```
 
-## Render results in chart
-    
+**Example 2**
+
+Sum the values of 'time_to_detect' column in the `alerts` table
+
+``` shell
+alerts
+| aggregate sum(time_to_detect)
+| limit 100
+
+```
+
+**Example 3**
+
+Retrieve the minimum value of 'time_to_detect' column in the `alerts` table
+
+``` shell
+alerts
+| aggregate min(time_to_detect)
+| limit 100
+
+```
+
+**Example 4**
+
+Retrieve the maximum value of 'time_to_detect' column in the `alerts` table
+
+``` shell
+alerts
+| aggregate max(time_to_detect)
+| limit 100
+
+```
+
+**Example 5**
+
+Calculate the average value of 'time_to_detect' column in the `alerts` table
+
+``` shell
+alerts
+| aggregate avg(time_to_detect)
+| limit 100
+
+```
+
+**Example 6**
+
+Count unique values of 'source.ip' column in the `events` table
+
+``` shell
+events
+| aggregate count_distinct(source.ip)
+| limit 100
+
+```
+
+**Example 7**
+
+Create an array of the set of distinct values of 'source.ip' column in the `events` table.
+Note that `null` values are ignored.
+
+``` shell
+events
+| aggregate make_set(source.ip)
+| limit 100
+
+```
+
+---
+
+### Render results in chart
+
 **Description**
 
 Use the `render` operator to display results in a chart to identify more easily anomalies or outliers. Supported charts are:
@@ -279,11 +477,14 @@ Count the number of events per asset in the events table and render it in a bar 
 events
 | aggregate count() by sekoiaio.any_asset.name
 | render barchart with (y=sekoiaio.any_asset.name)
+| limit 100
 
 ```
 
-## Join tables
-    
+---
+
+### Join tables
+
 **Description**
 
 Use the `join` operator to combine data from multiple tables, enriching the data context, filtering more accurately data.
@@ -313,6 +514,7 @@ Join the tables events and intakes
 
 ``` shell
 events
+| where timestamp > ago(24h)
 | inner join intakes on sekoiaio.intake.uuid == uuid   // sekoiaio.intake.uuid belongs to events table and uuid belongs to intakes table
 | select intake.name
 
@@ -326,6 +528,7 @@ Join the tables alerts and entities
 
 ``` shell
 alerts
+| where created_at > ago(24h)
 | inner join entities on entity_uuid == uuid   // entity_uuid belongs to alerts table and uuid belongs to entities table
 | select entity.name
 
@@ -339,15 +542,19 @@ In this example, we define a specific name for the model object with the into op
 
 ``` shell
 alerts
+| where created_at > ago(24h)
 | inner join entities on entity_uuid == uuid into my_entity
 | select my_entity.name
 ```
 
-## Lookup
-    
+---
+
+### Lookup
+
 **Description**
 
 Use the `lookup` operator to extend a table. Extends the current table with values looked-up in another table.
+Prefer the `lookup` operator over `join` when the right table is small enough to fit into memory to improve query performance.
 
 !!! info
     The result doesn't repeat columns from the `right` table that are the basis for the join operation.
@@ -363,8 +570,27 @@ Use the `lookup` operator to extend a table. Extends the current table with valu
 
 Similarly to `join` operator, `lookup` will inject the right table into a `model` object.
 
-## In
-    
+---
+
+### Compare
+
+**Description**
+
+Use the following operators to compare values.
+
+| Comparator | Description | Examples |
+| --- | --- | --- |
+| == | Equals | `1 == 1` |
+| != | Not equals | `1 != 0` |
+| < | Less | `1 < 10` |
+| <= | Less or equals | `4 <= 5` |
+| > | Greater | `20 > 10` |
+| >= | Greater or equals | `5 >= 4` |
+
+---
+
+### In
+
 **Description**
 
 Use the `in` operator to filter the rows based on a set of case-sensitive strings.
@@ -382,11 +608,14 @@ Find events where `client.ip` equals to theses values: 192.168.0.1, 192.168.0.2.
 ``` shell
 events
 | where client.ip in ('192.168.0.1', '192.168.0.2')
+| limit 100
 
 ```
 
-## Contains
-    
+---
+
+### Contains
+
 **Description**
 
 Use the `contains` operator to filter the rows that contains a case-sensitive string.
@@ -404,11 +633,14 @@ Find events where `user.full_name` contains the string `Admin`.
 ``` shell
 events
 | where user.full_name contains 'Admin'
+| limit 100
 
 ```
 
-## Starts with
-    
+---
+
+### Starts with
+
 **Description**
 
 Use the `startswith` operator to filter rows that starts with a case-sensitive string.
@@ -426,11 +658,14 @@ Find events where `url.domain` starts with the string `api.prod`.
 ``` shell
 events
 | where url.domain startswith 'api.prod'
+| limit 100
 
 ```
 
-## Ends with
-    
+---
+
+### Ends with
+
 **Description**
 
 Use the `endswith` operator to filter rows that ends with a case-sensitive string.
@@ -448,17 +683,20 @@ Find events where `url.path` ends with the string `/admin`.
 ``` shell
 events
 | where url.path endswith '/admin'
+| limit 100
 
 ```
 
-## Variables
-    
+---
+
+### Variables
+
 **Description**
 
 Use the `let` operator to define variables.
 
 ``` shell
-let <variable name> = <string | integer | function()>;
+let <variable name> = <string | integer>;
 
 <table name>
 | where <column name> = <variable name>
@@ -467,10 +705,10 @@ let <variable name> = <string | integer | function()>;
 
 **Example**
 
-Count the number of events in the last 30 days.
+Count the number of events in the last 24 hours.
 
 ``` shell
-let StartTime = ago(30d);
+let StartTime = ago(24h);
 let EndTime = now();
 
 events
@@ -479,26 +717,29 @@ events
 
 ```
 
-## Comments
-    
+---
+
+### Comments
+
 **Description**
 
 Use `//` to add comments in the query.
-Use `Ctrl+K+C` to comment current line or selected lines.
-Use `Ctrl+K+U` to uncomment current line or selected lines.
 
 **Example**
 
 ``` shell
-let <variable name> = <string | integer | function()>;
+// Comment the filtering condition
 
 <table name>
-| where <column name> = <variable name>
+//| where <column name> = <variable name>
+| limit 100
 
 ```
 
-## Datetime: now()
-    
+## Functions
+
+### Datetime: now()
+
 **Description**
 
 Returns the current **UTC** time, optionally offset by a given timespan.
@@ -512,8 +753,10 @@ let time_earlier = now(-2d);
 
 ```
 
-## Datetime: ago()
-    
+---
+
+### Datetime: ago()
+
 **Description**
 
 Returns a datetime value equal to the current UTC time minus the timespan.
@@ -525,7 +768,9 @@ let time = ago(1h);
 
 ```
 
-## Timestamp: bin()
+---
+
+### Timestamp: bin()
 
 **Description**
 
@@ -536,5 +781,50 @@ Rounds values down to an integer multiple of a given bin size.
 ``` shell
 events
 | aggregate count() by bin(timestamp, 1d)
+
+```
+
+---
+
+### Year
+    
+**Description**
+
+Returns the year by a given date in the following format: `YYYY`.
+
+**Example**
+
+``` shell
+let time = year(now());
+
+```
+
+---
+
+### Month
+    
+**Description**
+
+Returns the year and month by a given date in the following format: `YYYY-MM`.
+
+**Example**
+
+``` shell
+let time = month(now());
+
+```
+
+---
+
+### Week
+    
+**Description**
+
+Returns the year and month by a given date in the following format: `YYYY - Week {week number}`.
+
+**Example**
+
+``` shell
+let time = week(now());
 
 ```
