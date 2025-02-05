@@ -18,20 +18,7 @@ template: overrides/openapi.html
                 "UAE1",
             ],
             urls: [
-                "https://app.sekoia.io/api/v1/dashboard/swagger.json?context=public",
-                "https://app.sekoia.io/api/v1/telemetry/openapi.json?context=public",
-                "https://app.sekoia.io/api/v1/notebooks/openapi.json?context=public",
-                "https://app.sekoia.io/api/v1/sic/conf/swagger.json?context=public",
-                "https://app.sekoia.io/api/v1/swagger.json?context=public",
-                "https://app.sekoia.io/api/v1/ingest/swagger.json?context=public",
-                "https://app.sekoia.io/api/v1/sic/swagger.json?context=public",
-                "https://app.sekoia.io/api/v1/symphony/swagger.json?context=public",
-                "https://app.sekoia.io/api/v1/enricher/swagger.json?context=tip",
-                "https://app.sekoia.io/api/v2/asset-management/openapi.json?context=public",
-                "https://app.sekoia.io/api/v1/edl-gateway/openapi.json",
-                "https://app.sekoia.io/api/v2/inthreat/swagger.json?context=public",
-                "https://app.sekoia.io/api/v1/events/openapi.json",
-                "
+                "../../javascript/schema.json"
             ],
             menu:[
                 {
@@ -57,6 +44,9 @@ template: overrides/openapi.html
                         "users", // TODO set this tag on all user administration stuff
                         "roles",
                     ],
+                },
+                {name:"Investigation",
+                    tags:["Archives"]
                 },
                 {
                     name: "Intelligence",
@@ -93,27 +83,32 @@ template: overrides/openapi.html
                     name: "Detection",
                     tags: [
                         "Rules",
-                        "datasources",
-                        "generation-modes",
-                        "rules-catalog",
-                        "alert-filter", // TODO: to create, this tag doesn't exist yet
+                        "Alerts",
+                        "Entities",
+                        "Datasources",
+                        "Generation-modes",
+                        "Rules-catalog",
+                        "Alert-filter", // TODO: to create, this tag doesn't exist yet
                         "IOC Collections",
+                        "Alert type",
+                        "Countermeasures"
                     ],
                 },
-                {
-                    name: "Alerts",
-                    tags: [
-                        "Alert",
-                        "Alert Entities",
-                        "Alert Rules",
-                        "Alert Sources and Targets",
-                        "Countermeasures",
-                        "Cyber Kill Chain",
-                        "Stats",
-                        "Alert Status",
-                        "Alert Type",
-                    ],
-                },
+                // {
+                //     name: "alerts",
+                //     tags: [
+                //         "alert type",
+                //         "Alert Entities",
+                //         "Alert Rules",
+                //         "Alert Sources and Targets",
+                //         "Countermeasures",
+                //         "Cyber Kill Chain",
+                //         "Stats",
+                //         "Alert Status",
+                //         "Alert Type",
+                //         "Alert Categorie"
+                //     ],
+                // },
                 {
                     name: "Cases",
                     tags: [
@@ -124,6 +119,11 @@ template: overrides/openapi.html
                         "Services",
                         "Tasks",
                     ],
+                },
+                {name: "Configuration",
+                    tags:["Intakes",
+                        "Formats"
+                    ]
                 },
                 {
                     name: "Automations",
@@ -153,7 +153,7 @@ template: overrides/openapi.html
                     tags: [
                         "Intelligence statistics",
                         "Automation statistics",
-                        "Statistics",
+                        "Statistics"
                     ]
                 }
             ]
