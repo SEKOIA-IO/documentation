@@ -1,3 +1,7 @@
+uuid: 5fdf8838-1529-4243-8fbc-e6bfa7b52e30
+name: STIX
+type: playbook
+
 # STIX
 
 ![STIX](/assets/playbooks/library/stix.png){ align=right width=150 }
@@ -75,6 +79,10 @@ Add Tags to Observables
 ### Create Relationships
 
 Create STIX Relationships
+
+**Configuration**
+
+{'type': 'string', 'description': 'Description of generated STIX relationships'}
 
 **Arguments**
 
@@ -355,4 +363,4 @@ Convert a list of strings into a list of observables
 
 ## Extra
 
-Module **`STIX` v1.72**
+Module **`STIX` v1.72.1**
