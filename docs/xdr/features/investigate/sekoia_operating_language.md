@@ -197,6 +197,7 @@ List the unique values of client.ip from the events table
 
 ``` shell
 events
+| where timestamp > ago(24h)
 | distinct client.ip
 | limit 100
 
