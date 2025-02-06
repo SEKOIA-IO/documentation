@@ -35,8 +35,8 @@ Sekoia Operating Language (`SOL`) is a powerful, pipe-based query language desig
 | urgency                   | The level of urgency assigned to the alert.                                                  |
 | created_at                | The date and time when the alert was initially created.                                      |
 | update_at                 | The date and time when the alert was last updated.                                           |
-| first_seen_at             | The date and time of the first alert occurrence.                                              |
-| last_seen_at              | The date and time of the last alert occurrence.                                               |
+| first_seen_at             | The date and time of the first alert occurrence.                                             |
+| last_seen_at              | The date and time of the last alert occurrence.                                              |
 | time_to_detect            | Duration taken to identify the alert from its occurrence in seconds.                         |
 | time_to_acknowledge       | Time elapsed from detection to official acknowledgment of the alert in seconds.              |
 | time_to_respond           | Duration taken to take action after acknowledgment in seconds.                               |
@@ -239,6 +239,18 @@ events
 
 ```
 
+**Example 3**
+
+Same as example 2 but with multiple `where` statements
+
+``` shell
+events
+| where timestamp > ago(5d)
+| where user_agent.device.name == 'Mac' or user_agent.device.name == 'Android'
+| limit 100
+
+```
+
 ---
 
 ### Sort results
@@ -253,13 +265,27 @@ Use the `order by` operator to sort rows by a column. The default sort order is 
 
 ```
 
-**Example**
+**Example 1**
 
 Order the rows by the timestamp column in ascending order
 
 ``` shell
 events
 | order by timestamp asc
+| limit 100
+
+```
+
+---
+
+**Example 2**
+
+Order alerts by descending urgency and ascending first_seen_at
+
+``` shell
+alerts 
+| order by urgency desc, first_seen_at asc
+| select short_id, rule_name, urgency, first_seen_at
 | limit 100
 
 ```
@@ -384,6 +410,17 @@ events
 
 **Example 2**
 
+Count the number of events per source.ip and per action.outcome in the `events` table
+
+``` shell
+events
+| where timestamp >= ago(24h) and event.category == "authentication"
+| aggregate count() by source.ip, action.outcome
+
+```
+
+**Example 3**
+
 Sum the values of 'time_to_detect' column in the `alerts` table
 
 ``` shell
@@ -393,7 +430,7 @@ alerts
 
 ```
 
-**Example 3**
+**Example 4**
 
 Retrieve the minimum value of 'time_to_detect' column in the `alerts` table
 
@@ -404,7 +441,7 @@ alerts
 
 ```
 
-**Example 4**
+**Example 5**
 
 Retrieve the maximum value of 'time_to_detect' column in the `alerts` table
 
@@ -415,7 +452,7 @@ alerts
 
 ```
 
-**Example 5**
+**Example 6**
 
 Calculate the average value of 'time_to_detect' column in the `alerts` table
 
@@ -426,7 +463,7 @@ alerts
 
 ```
 
-**Example 6**
+**Example 7**
 
 Count unique values of 'source.ip' column in the `events` table
 
@@ -437,7 +474,7 @@ events
 
 ```
 
-**Example 7**
+**Example 8**
 
 Create an array of the set of distinct values of 'source.ip' column in the `events` table.
 Note that `null` values are ignored.
@@ -762,6 +799,13 @@ let time_earlier = now(-2d);
 
 Returns a datetime value equal to the current UTC time minus the timespan.
 
+| Syntax | Description | Example | Length of time |
+| --- | --- | --- | --- |
+| d | day time interval | `2d` | 2 days |
+| h | hour time interval | `1h` | 1 hour |
+| m | minute time interval | `30m` | 30 minutes |
+| s | second time interval | `10s` | 10 seconds |
+
 **Example**
 
 ``` shell
@@ -837,6 +881,7 @@ let time = week(now());
 ``` shell
 events
 | where timestamp > ago(5m)
+| limit 100
 | join communities on sekoiaio.customer.community_uuid == uuid
 | select timestamp, sekoiaio.customer.community_uuid, community.name
 
@@ -928,6 +973,44 @@ alerts
 
 ---
 
+### Rename columns and convert time_to_detect in minutes
+
+``` shell
+alerts
+| where time_to_detect != null
+| select entity = entity_name, rule = rule_name, ttd = time_to_detect/60
+| limit 10
+
+```
+
+---
+
+### Ranking of communities by alerts
+
+``` shell
+alerts
+| aggregate AlertCount = count() by community_uuid
+| left join communities on community_uuid == uuid
+| order by AlertCount desc
+| select community.name, AlertCount
+
+```
+
+---
+
+### Ranking of communities by intakes
+
+``` shell
+alerts
+| aggregate AlertCount = count() by community_uuid
+| left join communities on community_uuid == uuid
+| order by AlertCount desc
+| select community.name, AlertCount
+
+```
+
+---
+
 ## Events query examples
 
 ### Number of unique command lines per host.name
@@ -993,7 +1076,9 @@ events
 
 ``` shell
 events
-| where timestamp >= ago(24h) and sekoiaio.intake.dialect == 'sekoia.io endpoint agent' and event.action == 'stats'
+| where timestamp >= ago(24h)
+| where sekoiaio.intake.dialect == 'sekoia.io endpoint agent' 
+| where event.action == 'stats'
 | aggregate count_distinct(agent.id) by agent.version
 
 ```
@@ -1018,6 +1103,68 @@ events
 | where timestamp > ago(30d)
 | aggregate count=count() by client.ip
 | order by count desc
+
+```
+
+---
+
+### Aggregate events by source.ip and action.outcome
+
+``` shell
+events
+| where timestamp >= ago(24h) and event.category == "authentication"
+| aggregate count() by source.ip, action.outcome
+
+```
+
+---
+
+### Events where process.name starts with 'chrome'
+
+``` shell
+events
+| where timestamp > ago(24h) and process.name startswith('chrome')
+| limit 100
+
+```
+
+---
+
+### Events of specific intake
+
+``` shell
+events
+| left join intakes on sekoiaio.intake.uuid == uuid
+| where timestamp >= ago(24h) and intake.name == '<intake name>'
+| limit 100
+
+```
+
+---
+
+### Number of defended assets: unique host.name with more than 10 events during 2 weeks in the last 30 days
+
+``` shell
+events
+| where timestamp > ago(30d) 
+| aggregate events_count = count() by host.name, week = week(timestamp)
+| where events_count > 10 
+| aggregate week_count = count(), total_count = sum(events_count) by host.name
+| where week_count >= 2
+| order by total_count
+| project host.name, total_count
+
+```
+
+---
+
+### host.os.type per Sekoia endpoint agent
+
+``` shell
+events
+| where sekoiaio.intake.dialect == "sekoia.io endpoint agent"
+| aggregate count() by host.os.type
+| limit 100
 
 ```
 
