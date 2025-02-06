@@ -67,7 +67,7 @@ Sekoia Operating Language (`SOL`) is a powerful, pipe-based query language desig
 | first_seen_at             | The date and time when the case was first detected.                                        |
 | last_seen_at              | The date and time when the case was last observed or updated.                              |
 
-## Entities properties
+### Entities properties
 
 | **Property**              | **Description**                                                                            |
 |---------------------------|--------------------------------------------------------------------------------------------|
