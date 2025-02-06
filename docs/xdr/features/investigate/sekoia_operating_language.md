@@ -977,7 +977,7 @@ events
 
 ---
 
-### Top 10 login failures
+### Top 10 login failures on Windows
 
 ``` shell
 events
