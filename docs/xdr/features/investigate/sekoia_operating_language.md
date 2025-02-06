@@ -48,7 +48,7 @@ Sekoia Operating Language (`SOL`) is a powerful, pipe-based query language desig
 | assets                    | List of assets associated to the alert.                                                      |
 | threats                   | List of threats associated the alert.                                                        |
 
-## Cases properties
+### Cases properties
 
 | **Property**              | **Description**                                                                            |
 |---------------------------|--------------------------------------------------------------------------------------------|
