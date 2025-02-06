@@ -886,6 +886,7 @@ alerts
 
 ``` shell
 alerts
+| where created_at > ago(30d)
 | aggregate count=count() by assets.uuid
 | order by count desc
 | limit 100
