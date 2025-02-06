@@ -80,7 +80,7 @@ Sekoia Operating Language (`SOL`) is a powerful, pipe-based query language desig
 | created_at                | The date and time when the entity was created.                                             |
 | updated_at                | The date and time when the entity was last updated.                                        |
 
-## Intakes properties
+### Intakes properties
 
 | **Property**              | **Description**                                                                            |
 |---------------------------|--------------------------------------------------------------------------------------------|
