@@ -99,7 +99,7 @@ Sekoia Operating Language (`SOL`) is a powerful, pipe-based query language desig
 | is_custom_format          | Indicate if the intake uses a custom format.                                               |
 | connector_configuration_uuid    | A unique identifier for the connector configuration related to the intake.           |
 
-## Communities properties
+### Communities properties
 
 | **Property**              | **Description**                                                                            |
 |---------------------------|--------------------------------------------------------------------------------------------|
