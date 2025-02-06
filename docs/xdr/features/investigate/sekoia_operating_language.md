@@ -958,7 +958,7 @@ events
 ``` shell
 events
 | where timestamp >= ago(24h)
-| aggregate count=count() by url.domain
+| aggregate count() by url.domain
 | top 10 by count
 
 ```
