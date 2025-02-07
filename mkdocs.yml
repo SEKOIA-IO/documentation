@@ -320,8 +320,8 @@ nav:
       - Cloudflare Audit Logs: integration/categories/applicative/cloudflare-audit-logs.md
       - Fastly WAF Audit logs: integration/categories/applicative/fastly_audit_waf.md
       - Github Audit Logs: integration/categories/applicative/github_audit_logs.md
-      - Google Reports: integration/categories/applicative/google_reports.md
-      - Google Workspace and Google Cloud Audit Logs: integration/categories/applicative/google_cloud_audit.md
+      - Google Workspace / ChromeOS: integration/categories/applicative/google_reports.md
+      - Google Cloud Audit Logs: integration/categories/applicative/google_cloud_audit.md
       - LockSelf: integration/categories/applicative/lockself.md
       - Microsoft IIS: integration/categories/applicative/microsoft_iis.md
       - Salesforce: integration/categories/applicative/salesforce.md
