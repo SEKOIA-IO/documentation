@@ -18,20 +18,7 @@ template: overrides/openapi.html
                 "UAE1",
             ],
             urls: [
-                "https://app.sekoia.io/api/v1/dashboard/swagger.json?context=public",
-                "https://app.sekoia.io/api/v1/telemetry/openapi.json?context=public",
-                "https://app.sekoia.io/api/v1/notebooks/openapi.json?context=public",
-                "https://app.sekoia.io/api/v1/sic/conf/swagger.json?context=public",
-                "https://app.sekoia.io/api/v1/swagger.json?context=public",
-                "https://app.sekoia.io/api/v1/ingest/swagger.json?context=public",
-                "https://app.sekoia.io/api/v1/sic/swagger.json?context=public",
-                "https://app.sekoia.io/api/v1/symphony/swagger.json?context=public",
-                "https://app.sekoia.io/api/v1/enricher/swagger.json?context=tip",
-                "https://app.sekoia.io/api/v2/asset-management/openapi.json?context=public",
-                "https://app.sekoia.io/api/v1/edl-gateway/openapi.json",
-                "https://app.sekoia.io/api/v2/inthreat/swagger.json?context=public",
-                "https://app.sekoia.io/api/v1/events/openapi.json",
-                "
+                "/javascript/schema.json"
             ],
             menu:[
                 {
@@ -115,14 +102,15 @@ template: overrides/openapi.html
                     ],
                 },
                 {
-                    name: "Cases",
+                    name: "Investigation",
                     tags: [
-                        "Case",
+                        "Cases",
                         "Comments",
                         "Enrichers",
                         "Callbacks",
                         "Services",
                         "Tasks",
+                        "Notebooks",
                     ],
                 },
                 {
