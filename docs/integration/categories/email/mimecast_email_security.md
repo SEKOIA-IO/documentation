@@ -71,20 +71,22 @@ This integration can collect the following datasets from Mimecast:
 4. Add the following roles under the section called **Security Events and Data Retrieval**:
     - **Threat and security svents (SIEM)** with READ permission,
     - **Threat and security statistics** with READ permission.
-5. Navigate to **Services | API and Platform Integrations**
-6. Locate the following **Mimecast API 2.0** tile and click on **Generate Keys.**
-7. After reading the **Terms & Conditions**, complete the **I accept** check box to enable the **Next** button to progress onto the next step.
-8. Complete the **Application Details** section by providing:
+5. Add the following roles under the section called **Event Streaming Service**
+    - **Event Streaming** with READ permission
+6. Navigate to **Services | API and Platform Integrations**
+7. Locate the following **Mimecast API 2.0** tile and click on **Generate Keys.**
+8. After reading the **Terms & Conditions**, complete the **I accept** check box to enable the **Next** button to progress onto the next step.
+9. Complete the **Application Details** section by providing:
     - Application Name: Select **SIEM Integration**,
     - Description (Optional),
     - Integration Partner (Optional),
     - Products: Select all products,
     - Role: Select the "Sekoia" role created above.
-9. Complete the **Notifications** section by providing:
+10. Complete the **Notifications** section by providing:
     - Technical Point of Contact: Write the name of the administrator to be contacted if you encounter any issue with the API,
     - Email : Write the administrator's email.
-10. Validate the form and Click on **Add and Generate Keys**
-11. The wizard completes and displays a pop-up window including your `Client ID` and `Client Secret` key data.
+11. Validate the form and Click on **Add and Generate Keys**
+12. The wizard completes and displays a pop-up window including your `Client ID` and `Client Secret` key data.
 
 #### Activate logging
 
