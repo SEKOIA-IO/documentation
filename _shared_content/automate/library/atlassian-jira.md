@@ -44,6 +44,10 @@ Add comment to an issue in JIRA
 
 Create issue in JIRA
 
+**Configuration**
+
+{'title': 'Description', 'description': 'Description text in ADF (Atlassian Document Format)', 'type': 'object'}
+
 **Arguments**
 
 | Name      |  Type   |  Description  |
@@ -70,4 +74,4 @@ Create issue in JIRA
 
 ## Extra
 
-Module **`Atlassian JIRA` v1.2.0**
+Module **`Atlassian JIRA` v1.3.0**

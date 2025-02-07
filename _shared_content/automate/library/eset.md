@@ -96,4 +96,4 @@ Initialize a scan on a list of endpoints
 
 ## Extra
 
-Module **`Eset` v0.1.0**
+Module **`Eset` v1.0.0**
