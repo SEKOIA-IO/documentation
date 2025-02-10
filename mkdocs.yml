@@ -64,6 +64,7 @@ nav:
   - Subscriptions: getting_started/subscriptions.md
   - Usage: getting_started/usage.md
   - Sekoia regions: getting_started/regions.md
+  - Roy AI Assistant: getting_started/ai_assistant.md
   - Best practices: getting_started/best_practices.md
   - Troubleshooting tips: getting_started/get_troubleshooting_tips.md
 - Sekoia Defend (XDR):
@@ -88,8 +89,8 @@ nav:
       - Cases: xdr/features/investigate/cases.md
       - Events Query Language: xdr/features/investigate/events_query_language.md
       - Querying Events: xdr/features/investigate/querying_events.md
-      - Query Builder (beta): xdr/features/investigate/query_builder.md
-      - Notebooks (coming soon): xdr/features/investigate/notebooks.md
+      - Query Builder: xdr/features/investigate/query_builder.md
+      - Notebooks: xdr/features/investigate/notebooks.md
     - Report:
       - Dashboards: xdr/features/report/dashboards.md
       - Threat Landscape: xdr/features/report/threat_landscape.md
@@ -111,7 +112,7 @@ nav:
   - Usecases:
     - Implement a blocklist in Sekoia.io: xdr/usecases/playbook/implement_blocklist.md
     - Synchronize Alerts with an external tool: xdr/usecases/playbook/synchronize_alerts.md
-    - Synchronize Assets with an Active Directory : xdr/usecases/playbook/synchronize_asset_with_ad.md
+    - Synchronize Assets with an Active Directory: xdr/usecases/playbook/synchronize_asset_with_ad.md
     - Send notifications to a Webhook using a playbook: xdr/usecases/playbook/notifications_using_playbooks.md
     - Use your own CTI in Sekoia.io: xdr/usecases/use_your_own_cti.md
   - FAQ:
@@ -192,8 +193,9 @@ nav:
       - Cloudflare Audit Logs: integration/categories/applicative/cloudflare-audit-logs.md
       - Fastly WAF Audit logs: integration/categories/applicative/fastly_audit_waf.md
       - Github Audit Logs: integration/categories/applicative/github_audit_logs.md
-      - Google Reports: integration/categories/applicative/google_reports.md
-      - Google Workspace and Google Cloud Audit Logs: integration/categories/applicative/google_cloud_audit.md
+      - Google Workspace / ChromeOS: integration/categories/applicative/google_reports.md
+      - Google Cloud Audit Logs: integration/categories/applicative/google_cloud_audit.md
+      - LockSelf: integration/categories/applicative/lockself.md
       - Microsoft IIS: integration/categories/applicative/microsoft_iis.md
       - Salesforce: integration/categories/applicative/salesforce.md
       - Sekoia.io activity logs: integration/categories/applicative/sekoiaio_activity_logs.md
@@ -366,10 +368,10 @@ nav:
       - WatchGuard Firebox: integration/categories/network_security/watchguard_firebox.md
       - Zscaler Internet Access: integration/categories/network_security/zscaler_zia.md
   - List of Playbooks Actions:
+    - Overview: integration/action_library/overview.md
     - Applicative:
       - Mandrill: integration/action_library/mandrill.md
       - Mattermost: integration/action_library/mattermost.md
-      - Microsoft Windows Server: integration/action_library/microsoft-windows-server.md
       - PagerDuty: integration/action_library/pagerduty.md
     - Cloud Providers:
       - AWS: integration/action_library/aws.md
@@ -377,16 +379,20 @@ nav:
     - Collaboration Tools:
       - Atlassian JIRA: integration/action_library/atlassian-jira.md
       - Git: integration/action_library/git.md
+      - Nybble: integration/action_library/nybble.md
       - ServiceNow: integration/action_library/servicenow.md
       - The Hive: integration/action_library/the-hive.md
       - The Hive V5: integration/action_library/the-hive-v5.md
     - Endpoint:
       - CrowdStrike Falcon: integration/action_library/crowdstrike-falcon.md
+      - Eset: integration/action_library/eset.md
       - HarfangLab: integration/action_library/harfanglab.md
-      - MicrosoftDefender: integration/action_library/microsoftdefender.md
+      - Microsoft Windows Server: integration/action_library/microsoft-windows-server.md
+      - MicrosoftDefenderXDR: integration/action_library/microsoftdefenderxdr.md
       - Panda Security: integration/action_library/panda-security.md
       - SentinelOne: integration/action_library/sentinelone.md
       - Sophos: integration/action_library/sophos.md
+      - Stormshield: integration/action_library/stormshield.md
       - WithSecure: integration/action_library/withsecure.md
     - Generic:
       - HTTP: integration/action_library/http.md
@@ -399,8 +405,8 @@ nav:
       - Microsoft Entra ID: integration/action_library/microsoft-entra-id.md
     - Network:
       - Fortigate Firewalls: integration/action_library/fortigate-firewalls.md
+      - Sophos: integration/action_library/sophos.md
       - Zscaler: integration/action_library/zscaler.md
-    - Overview: integration/action_library/overview.md
     - Threat Intelligence:
       - BinaryEdge's API: integration/action_library/binaryedge-s-api.md
       - Censys: integration/action_library/censys.md
@@ -413,7 +419,6 @@ nav:
       - IPtoASN: integration/action_library/iptoasn.md
       - MISP: integration/action_library/misp.md
       - MWDB: integration/action_library/mwdb.md
-      - Nybble: integration/action_library/nybble.md
       - OSINT: integration/action_library/osint.md
       - Onyphe: integration/action_library/onyphe.md
       - Public Suffix: integration/action_library/public-suffix.md
@@ -475,9 +480,9 @@ plugins:
       intelligence_center/observables.md: cti/features/consume/observables.md
       operation_center.md: xdr/index.md
       operation_center/actions.md: xdr/features/automate/actions.md
+      operation_center/ai_cases.md: xdr/features/investigate/ai_cases.md
       operation_center/alerts.md: xdr/features/investigate/alerts.md
       operation_center/assets.md: xdr/features/collect/assets.md
-      operation_center/ai_cases.md: xdr/features/investigate/ai_cases.md
       operation_center/cases.md: xdr/features/investigate/cases.md
       operation_center/data_collection/ingestion_methods/sekoiaio.md: integration/categories/endpoint/sekoiaio.md
       operation_center/entities.md: xdr/features/collect/entities.md

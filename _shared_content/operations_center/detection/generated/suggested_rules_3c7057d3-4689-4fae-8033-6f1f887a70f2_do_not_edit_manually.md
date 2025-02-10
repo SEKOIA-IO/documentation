@@ -509,7 +509,7 @@ The following Sekoia.io built-in rules match the intake **HarfangLab EDR**. This
 
 ??? abstract "Correlation Potential DNS Tunnel"
     
-    Detects domain name which is longer than 95 characters. Long domain names are distinctive of DNS tunnels.
+    Detects domain name which is longer than 62 characters and requested at least 50 times in a 10 minutes range time. Long domain names are distinctive of DNS tunnels.
     
     - **Effort:** advanced
 
@@ -1787,7 +1787,7 @@ The following Sekoia.io built-in rules match the intake **HarfangLab EDR**. This
 
 ??? abstract "Potential DNS Tunnel"
     
-    Detects domain name which is longer than 95 characters. Long domain names are distinctive of DNS tunnels.
+    Detects domain name which is longer than 62 characters. Long domain names are distinctive of DNS tunnels.
     
     - **Effort:** advanced
 
@@ -1997,7 +1997,7 @@ The following Sekoia.io built-in rules match the intake **HarfangLab EDR**. This
 
 ??? abstract "Python Offensive Tools and Packages"
     
-    Track installation and usage of offensive python packages and project that are used for lateral movement
+    Track installation and usage of offensive python packages and project that are used for lateral movement.
     
     - **Effort:** master
 
@@ -2468,12 +2468,6 @@ The following Sekoia.io built-in rules match the intake **HarfangLab EDR**. This
     Detects a suspicious command used to execute a Chromium-based web browser (Chrome or Edge) using the headless mode, meaning that the browser window wouldn't be visible, and the dump mode to download a file. This technique can be used to fingerprint the compromised host, in particular by the Ducktail infostealer.
     
     - **Effort:** elementary
-
-??? abstract "Suspicious Hostname"
-    
-    Detects suspicious hostnames such as ones with kali in it, to detect kali linux default hosts, but also other hostnames commonly used in attacks. List can be improved according to the environment.
-    
-    - **Effort:** intermediate
 
 ??? abstract "Suspicious Kerberos Ticket"
     

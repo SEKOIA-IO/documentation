@@ -27,18 +27,6 @@ The following Sekoia.io built-in rules match the intake **Palo Alto NGFW**. This
     
     - **Effort:** master
 
-??? abstract "Authentication Impossible Travel"
-    
-    Detects impossible travel when performing authentication from a source IP address, grouped by username.
-    
-    - **Effort:** advanced
-
-??? abstract "Bazar Loader DGA (Domain Generation Algorithm)"
-    
-    Detects Bazar Loader domains based on the Bazar Loader DGA
-    
-    - **Effort:** elementary
-
 ??? abstract "Burp Suite Tool Detected"
     
     Burp Suite is a cybersecurity tool. When used as a proxy service, its purpose is to intercept packets and modify them to send them to the server. Burp Collaborator is a network service that Burp Suite uses to help discover many kinds of vulnerabilities (vulnerabilities scanner).
@@ -143,7 +131,7 @@ The following Sekoia.io built-in rules match the intake **Palo Alto NGFW**. This
 
 ??? abstract "Correlation Potential DNS Tunnel"
     
-    Detects domain name which is longer than 95 characters. Long domain names are distinctive of DNS tunnels.
+    Detects domain name which is longer than 62 characters and requested at least 50 times in a 10 minutes range time. Long domain names are distinctive of DNS tunnels.
     
     - **Effort:** advanced
 
@@ -249,18 +237,6 @@ The following Sekoia.io built-in rules match the intake **Palo Alto NGFW**. This
     
     - **Effort:** intermediate
 
-??? abstract "Login Brute-Force On Firewall"
-    
-    Detects successful access to administration console of a firewall after several failure.
-    
-    - **Effort:** advanced
-
-??? abstract "Login Brute-Force Successful On Jumpcloud Portal"
-    
-    A user has attempted to login several times (brute-force) on Jumpcloud Portal and succeeded to login.
-    
-    - **Effort:** advanced
-
 ??? abstract "Login Brute-Force Successful On SentinelOne EDR Management Console"
     
     A user has attempted to login several times (brute-force) on the SentinelOne EDR Management Console and succeeded to login.
@@ -303,15 +279,9 @@ The following Sekoia.io built-in rules match the intake **Palo Alto NGFW**. This
     
     - **Effort:** intermediate
 
-??? abstract "Potential Azure AD Phishing Page (Adversary-in-the-Middle)"
-    
-    Detects an HTTP request to an URL typical of the Azure AD authentication flow, but towards a domain that is not one the legitimate Microsoft domains used for Azure AD authentication.
-    
-    - **Effort:** intermediate
-
 ??? abstract "Potential DNS Tunnel"
     
-    Detects domain name which is longer than 95 characters. Long domain names are distinctive of DNS tunnels.
+    Detects domain name which is longer than 62 characters. Long domain names are distinctive of DNS tunnels.
     
     - **Effort:** advanced
 

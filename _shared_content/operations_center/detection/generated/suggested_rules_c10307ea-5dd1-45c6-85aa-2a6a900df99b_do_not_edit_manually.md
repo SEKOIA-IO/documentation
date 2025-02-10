@@ -335,7 +335,7 @@ The following Sekoia.io built-in rules match the intake **Elastic Winlogbeat**. 
 
 ??? abstract "Correlation Potential DNS Tunnel"
     
-    Detects domain name which is longer than 95 characters. Long domain names are distinctive of DNS tunnels.
+    Detects domain name which is longer than 62 characters and requested at least 50 times in a 10 minutes range time. Long domain names are distinctive of DNS tunnels.
     
     - **Effort:** advanced
 
@@ -885,12 +885,6 @@ The following Sekoia.io built-in rules match the intake **Elastic Winlogbeat**. 
     
     - **Effort:** advanced
 
-??? abstract "Login Brute-Force Successful On Jumpcloud Portal"
-    
-    A user has attempted to login several times (brute-force) on Jumpcloud Portal and succeeded to login.
-    
-    - **Effort:** advanced
-
 ??? abstract "Logon Scripts (UserInitMprLogonScript)"
     
     Detects creation or execution of UserInitMprLogonScript persistence method. The rule requires to log for process command lines and registry creations or update, which can be done using Sysmon Event IDs 1, 12, 13 and 14.
@@ -1397,7 +1391,7 @@ The following Sekoia.io built-in rules match the intake **Elastic Winlogbeat**. 
 
 ??? abstract "Potential DNS Tunnel"
     
-    Detects domain name which is longer than 95 characters. Long domain names are distinctive of DNS tunnels.
+    Detects domain name which is longer than 62 characters. Long domain names are distinctive of DNS tunnels.
     
     - **Effort:** advanced
 
@@ -1577,7 +1571,7 @@ The following Sekoia.io built-in rules match the intake **Elastic Winlogbeat**. 
 
 ??? abstract "Python Offensive Tools and Packages"
     
-    Track installation and usage of offensive python packages and project that are used for lateral movement
+    Track installation and usage of offensive python packages and project that are used for lateral movement.
     
     - **Effort:** master
 

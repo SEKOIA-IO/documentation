@@ -155,7 +155,7 @@ The following Sekoia.io built-in rules match the intake **Fortinet FortiGate**. 
 
 ??? abstract "Correlation Potential DNS Tunnel"
     
-    Detects domain name which is longer than 95 characters. Long domain names are distinctive of DNS tunnels.
+    Detects domain name which is longer than 62 characters and requested at least 50 times in a 10 minutes range time. Long domain names are distinctive of DNS tunnels.
     
     - **Effort:** advanced
 
@@ -249,18 +249,6 @@ The following Sekoia.io built-in rules match the intake **Fortinet FortiGate**. 
     
     - **Effort:** advanced
 
-??? abstract "Fortigate Firewall Login In Failure"
-    
-    Detects failed login attemps on firewall administration rule. Prerequisites, check that the firewall logs format corresponds to the rule
-    
-    - **Effort:** master
-
-??? abstract "Fortigate Firewall Successful External Login"
-    
-    Detects succesfull access to administration console of firewall from another IP address than 127.0.0.1. Prerequisites, check that the firewall logs format corresponds to the rule
-    
-    - **Effort:** master
-
 ??? abstract "Fortigate IPS Critical Alert"
     
     Fortigate intrusion detection alert with critical severity.
@@ -314,18 +302,6 @@ The following Sekoia.io built-in rules match the intake **Fortinet FortiGate**. 
     Detects Koadic payload using MSHTML module
     
     - **Effort:** intermediate
-
-??? abstract "Login Brute-Force On Firewall"
-    
-    Detects successful access to administration console of a firewall after several failure.
-    
-    - **Effort:** advanced
-
-??? abstract "Login Brute-Force Successful On Jumpcloud Portal"
-    
-    A user has attempted to login several times (brute-force) on Jumpcloud Portal and succeeded to login.
-    
-    - **Effort:** advanced
 
 ??? abstract "Login Brute-Force Successful On SentinelOne EDR Management Console"
     
@@ -389,7 +365,7 @@ The following Sekoia.io built-in rules match the intake **Fortinet FortiGate**. 
 
 ??? abstract "Potential DNS Tunnel"
     
-    Detects domain name which is longer than 95 characters. Long domain names are distinctive of DNS tunnels.
+    Detects domain name which is longer than 62 characters. Long domain names are distinctive of DNS tunnels.
     
     - **Effort:** advanced
 

@@ -239,7 +239,7 @@ The following Sekoia.io built-in rules match the intake **Broadcom Edge Secure W
 
 ??? abstract "Potential DNS Tunnel"
     
-    Detects domain name which is longer than 95 characters. Long domain names are distinctive of DNS tunnels.
+    Detects domain name which is longer than 62 characters. Long domain names are distinctive of DNS tunnels.
     
     - **Effort:** advanced
 

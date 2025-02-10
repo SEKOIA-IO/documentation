@@ -1,4 +1,4 @@
-# Notebooks (coming soon)
+# Notebooks
 
 ## Table of Contents
 1. [Overview](#overview)

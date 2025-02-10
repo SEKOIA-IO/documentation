@@ -27,12 +27,6 @@ The following Sekoia.io built-in rules match the intake **Palo Alto Prisma acces
     
     - **Effort:** master
 
-??? abstract "Authentication Impossible Travel"
-    
-    Detects impossible travel when performing authentication from a source IP address, grouped by username.
-    
-    - **Effort:** advanced
-
 ??? abstract "Bazar Loader DGA (Domain Generation Algorithm)"
     
     Detects Bazar Loader domains based on the Bazar Loader DGA
@@ -143,7 +137,7 @@ The following Sekoia.io built-in rules match the intake **Palo Alto Prisma acces
 
 ??? abstract "Correlation Potential DNS Tunnel"
     
-    Detects domain name which is longer than 95 characters. Long domain names are distinctive of DNS tunnels.
+    Detects domain name which is longer than 62 characters and requested at least 50 times in a 10 minutes range time. Long domain names are distinctive of DNS tunnels.
     
     - **Effort:** advanced
 
@@ -249,18 +243,6 @@ The following Sekoia.io built-in rules match the intake **Palo Alto Prisma acces
     
     - **Effort:** intermediate
 
-??? abstract "Login Brute-Force On Firewall"
-    
-    Detects successful access to administration console of a firewall after several failure.
-    
-    - **Effort:** advanced
-
-??? abstract "Login Brute-Force Successful On Jumpcloud Portal"
-    
-    A user has attempted to login several times (brute-force) on Jumpcloud Portal and succeeded to login.
-    
-    - **Effort:** advanced
-
 ??? abstract "Login Brute-Force Successful On SentinelOne EDR Management Console"
     
     A user has attempted to login several times (brute-force) on the SentinelOne EDR Management Console and succeeded to login.
@@ -311,7 +293,7 @@ The following Sekoia.io built-in rules match the intake **Palo Alto Prisma acces
 
 ??? abstract "Potential DNS Tunnel"
     
-    Detects domain name which is longer than 95 characters. Long domain names are distinctive of DNS tunnels.
+    Detects domain name which is longer than 62 characters. Long domain names are distinctive of DNS tunnels.
     
     - **Effort:** advanced
 

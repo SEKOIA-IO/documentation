@@ -15,6 +15,12 @@ The following Sekoia.io built-in rules match the intake **WatchGuard Firebox**. 
     
     - **Effort:** master
 
+??? abstract "Authentication Impossible Travel"
+    
+    Detects impossible travel when performing authentication from a source IP address, grouped by user name. This could require some alert filtering for some user generic accounts, and known IP address range. Microsoft / Office 365 format is not covered by this rule.
+    
+    - **Effort:** master
+
 ??? abstract "Bazar Loader DGA (Domain Generation Algorithm)"
     
     Detects Bazar Loader domains based on the Bazar Loader DGA
@@ -35,7 +41,7 @@ The following Sekoia.io built-in rules match the intake **WatchGuard Firebox**. 
 
 ??? abstract "Correlation Potential DNS Tunnel"
     
-    Detects domain name which is longer than 95 characters. Long domain names are distinctive of DNS tunnels.
+    Detects domain name which is longer than 62 characters and requested at least 50 times in a 10 minutes range time. Long domain names are distinctive of DNS tunnels.
     
     - **Effort:** advanced
 
@@ -119,7 +125,7 @@ The following Sekoia.io built-in rules match the intake **WatchGuard Firebox**. 
 
 ??? abstract "Potential DNS Tunnel"
     
-    Detects domain name which is longer than 95 characters. Long domain names are distinctive of DNS tunnels.
+    Detects domain name which is longer than 62 characters. Long domain names are distinctive of DNS tunnels.
     
     - **Effort:** advanced
 

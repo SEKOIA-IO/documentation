@@ -3,11 +3,35 @@
 The following Sekoia.io built-in rules match the intake **Cisco Umbrella Proxy**. This documentation is updated automatically and is based solely on the fields used by the intake which are checked against our rules. This means that some rules will be listed but might not be relevant with the intake.
 
 [SEKOIA.IO x Cisco Umbrella Proxy on ATT&CK Navigator](https://mitre-attack.github.io/attack-navigator/#layerURL=https%3A%2F%2Fraw.githubusercontent.com%2FSEKOIA-IO%2Fdocumentation%2Fmain%2F_shared_content%2Foperations_center%2Fdetection%2Fgenerated%2Fattack_5a8ef52f-d143-4735-8546-98539fc07725_do_not_edit_manually.json){ .md-button }
+??? abstract "Advanced IP Scanner"
+    
+    Detects the use of Advanced IP Scanner. Seems to be a popular tool for ransomware groups.
+    
+    - **Effort:** master
+
 ??? abstract "Burp Suite Tool Detected"
     
     Burp Suite is a cybersecurity tool. When used as a proxy service, its purpose is to intercept packets and modify them to send them to the server. Burp Collaborator is a network service that Burp Suite uses to help discover many kinds of vulnerabilities (vulnerabilities scanner).
     
     - **Effort:** intermediate
+
+??? abstract "CVE-2018-11776 Apache Struts2"
+    
+    Apache Struts versions 2.3 to 2.3.34 and 2.5 to 2.5.16 suffer from possible Remote Code Execution when alwaysSelectFullNamespace is true (either by user or a plugin like Convention Plugin) and then: results are used with no namespace and in same time, its upper package have no or wildcard namespace and similar to results, same possibility when using url tag which doesn't have value and action set and in same time, its upper package have no or wildcard namespace.
+    
+    - **Effort:** intermediate
+
+??? abstract "CVE-2018-13379 Fortinet Exploit"
+    
+    Detects the successful exploitation of the Fortinet FortiOS CVE-2018-13379. This CVE is one of the most exploited CVEs since 2018. It is exploited by APT threat actors as well as cybercriminals. The exploitation of this CVE lead an unauthenticated user to get full access to FortiOS system file through SSL VPN via specially crafted HTTP resource requests. The exploit read /dev/cmdb/sslvpn_websession file, that contains login and passwords in (clear/text). An HTTP response status code = 200, means the file was successfully accessed. This vulnerability affects FortiOS 5.6.3 to 5.6.7 and FortiOS 6.0.0 to 6.0.4.
+    
+    - **Effort:** advanced
+
+??? abstract "CVE-2019-0604 SharePoint"
+    
+    Detects the exploitation of the SharePoint vulnerability (CVE-2019-0604).
+    
+    - **Effort:** advanced
 
 ??? abstract "CVE-2019-11510 Pulse Secure Exploit"
     
@@ -33,6 +57,18 @@ The following Sekoia.io built-in rules match the intake **Cisco Umbrella Proxy**
     
     - **Effort:** elementary
 
+??? abstract "CVE-2020-1147 SharePoint"
+    
+    Detection of SharePoint vulnerability CVE-2020-1147.
+    
+    - **Effort:** advanced
+
+??? abstract "CVE-2020-14882 Oracle WebLogic Server"
+    
+    Detects the exploitation of the Oracle WebLogic Server vulnerability (CVE-2020-16952).
+    
+    - **Effort:** advanced
+
 ??? abstract "CVE-2020-17530 Apache Struts RCE"
     
     Detects the exploitation of the Apache Struts RCE vulnerability (CVE-2020-17530).
@@ -57,11 +93,47 @@ The following Sekoia.io built-in rules match the intake **Cisco Umbrella Proxy**
     
     - **Effort:** advanced
 
+??? abstract "CVE-2021-21972 VMware vCenter"
+    
+    The vSphere Client (HTML5) contains a remote code execution vulnerability in a vCenter Server plugin. A malicious actor with network access to port 443 may exploit this issue to execute commands with unrestricted privileges on the underlying operating system that hosts vCenter Server. This affects VMware vCenter Server (7.x before 7.0 U1c, 6.7 before 6.7 U3l and 6.5 before 6.5 U3n) and VMware Cloud Foundation (4.x before 4.2 and 3.x before 3.10.1.2). POST request on the following PATH "/ui/vropspluginui/rest/services/uploadova". If in response body (500) the words it has "uploadFile", that means the vCenter is available to accept files via POST without any restrictions.
+    
+    - **Effort:** intermediate
+
+??? abstract "CVE-2021-21985 VMware vCenter"
+    
+    The VMware vSphere Client (HTML5) contains a remote code execution vulnerability due to lack of input validation in the Virtual SAN Health Check plug-in which is enabled by default in vCenter Server. A malicious actor with network access to port 443 may exploit this issue to execute commands with unrestricted privileges on the underlying operating system that hosts vCenter Server. This affects VMware vCenter Server (7.0 before 7.0 U2b, 6.7 before 6.7 U3n and 6.5 before 6.5 U3p) and VMware Cloud Foundation (4.x before 4.2.1 and 3.x before 3.10.2.1).
+    
+    - **Effort:** advanced
+
+??? abstract "CVE-2021-22123 Fortinet FortiWeb OS Command Injection"
+    
+    Detects Fortinet FortiWeb OS Command Injection (August 2021) vulnerability exploitation attempt. A remote, authenticated attacker can execute arbitrary commands on the system hosting a vulnerable FortiWeb WAF by sending a POST request with the command in the name field. At the time of writing this rule, it would appear that the request would respond in code 500 for a successful exploitation attempt.
+    
+    - **Effort:** advanced
+
 ??? abstract "CVE-2021-22893 Pulse Connect Secure RCE Vulnerability"
     
     Detects potential exploitation of the authentication by-pass vulnerability that can allow an unauthenticated user to perform remote arbitrary file execution on the Pulse Connect Secure gateway. It is highly recommended to apply the Pulse Secure mitigations and seach for indicators of compromise on affected servers if you are in doubt over the integrity of your Pulse Connect Secure product.
     
     - **Effort:** intermediate
+
+??? abstract "CVE-2021-26855 Exchange SSRF"
+    
+    Detects the exploitation of ProyxLogon vulerability on Exchange servers.
+    
+    - **Effort:** advanced
+
+??? abstract "CVE-2021-34473 ProxyShell Attempt"
+    
+    Detects CVE-2021-34473 ProxyShell attempt against Microsoft Exchange Server, Remote Code Execution Vulnerability.
+    
+    - **Effort:** advanced
+
+??? abstract "CVE-2021-41773 Apache 2.4.49 Path Traversal"
+    
+    Detects successful exploitation of the Apache Path Traversal CVE-2021-41773.
+    
+    - **Effort:** advanced
 
 ??? abstract "CVE-2021-43798 Grafana Directory Traversal"
     
@@ -69,9 +141,33 @@ The following Sekoia.io built-in rules match the intake **Cisco Umbrella Proxy**
     
     - **Effort:** intermediate
 
+??? abstract "Certify Or Certipy"
+    
+    Detects the use of certify and certipy which are two different tools used to enumerate and abuse Active Directory Certificate Services.
+    
+    - **Effort:** advanced
+
+??? abstract "Cobalt Strike Default Beacons Names"
+    
+    Detects the default names of Cobalt Strike beacons / payloads.
+    
+    - **Effort:** intermediate
+
+??? abstract "Cobalt Strike HTTP Default GET beaconing"
+    
+    Detects GET HTTP queries from known Cobalt Strike beacons (source code 4.3)
+    
+    - **Effort:** advanced
+
+??? abstract "Cobalt Strike HTTP Default POST Beaconing"
+    
+    Detects POST HTTP queries from known Cobalt Strike beacons (source code 4.3)
+    
+    - **Effort:** advanced
+
 ??? abstract "Correlation Potential DNS Tunnel"
     
-    Detects domain name which is longer than 95 characters. Long domain names are distinctive of DNS tunnels.
+    Detects domain name which is longer than 62 characters and requested at least 50 times in a 10 minutes range time. Long domain names are distinctive of DNS tunnels.
     
     - **Effort:** advanced
 
@@ -80,6 +176,12 @@ The following Sekoia.io built-in rules match the intake **Cisco Umbrella Proxy**
     Detects potential Covenant communications through the user-agent and specific urls
     
     - **Effort:** intermediate
+
+??? abstract "Credential Dump Tools Related Files"
+    
+    Detects processes or file names related to credential dumping tools and the dropped files they generate by default.
+    
+    - **Effort:** advanced
 
 ??? abstract "Cryptomining"
     
@@ -129,6 +231,36 @@ The following Sekoia.io built-in rules match the intake **Cisco Umbrella Proxy**
     
     - **Effort:** master
 
+??? abstract "FoggyWeb HTTP Default GET/POST Requests"
+    
+    Detects GET or POST request pattern observed within the first FoggyWeb campaign detected by Microsoft.
+    
+    - **Effort:** advanced
+
+??? abstract "GitLab CVE-2021-22205"
+    
+    Detects GitLab vulnerability CVE-2021-22205 exploitation success. It allows an attacker to do some remote code execution with user git. The HTTP return code 422 indicates a successfull exploitation.
+    
+    - **Effort:** intermediate
+
+??? abstract "HTA Infection Chains"
+    
+    Detect the creation of a ZIP file and an HTA file as it is often used in infection chains. Furthermore it also detects the use of suspicious processes launched by explorer.exe combined with the creation of an HTA file, since it is also often used in infection chains (LNK - HTA for instance).
+    
+    - **Effort:** advanced
+
+??? abstract "HackTools Suspicious Names"
+    
+    Quick-win rule to detect the default process names or file names of several HackTools.
+    
+    - **Effort:** elementary
+
+??? abstract "ISO LNK Infection Chain"
+    
+    Detection of an ISO (or any other similar archive file) downloaded file, followed by a child-process of explorer, which is characteristic of an infection using an ISO containing an LNK file. For events with `host.name`.
+    
+    - **Effort:** intermediate
+
 ??? abstract "Koadic MSHTML Command"
     
     Detects Koadic payload using MSHTML module
@@ -146,6 +278,12 @@ The following Sekoia.io built-in rules match the intake **Cisco Umbrella Proxy**
     Nimbo-C2 Uses an unusual User-Agent format in its implants.
     
     - **Effort:** intermediate
+
+??? abstract "PasswordDump SecurityXploded Tool"
+    
+    Detects the execution of the PasswordDump SecurityXploded Tool
+    
+    - **Effort:** elementary
 
 ??? abstract "Possible Malicious File Double Extension"
     
@@ -167,7 +305,7 @@ The following Sekoia.io built-in rules match the intake **Cisco Umbrella Proxy**
 
 ??? abstract "Potential DNS Tunnel"
     
-    Detects domain name which is longer than 95 characters. Long domain names are distinctive of DNS tunnels.
+    Detects domain name which is longer than 62 characters. Long domain names are distinctive of DNS tunnels.
     
     - **Effort:** advanced
 
@@ -177,9 +315,27 @@ The following Sekoia.io built-in rules match the intake **Cisco Umbrella Proxy**
     
     - **Effort:** elementary
 
+??? abstract "Potential LokiBot User-Agent"
+    
+    Detects potential LokiBot communications through the user-agent
+    
+    - **Effort:** intermediate
+
+??? abstract "Privilege Escalation Awesome Scripts (PEAS)"
+    
+    Detect PEAS privileges escalation scripts and binaries
+    
+    - **Effort:** elementary
+
 ??? abstract "ProxyShell Microsoft Exchange Suspicious Paths"
     
     Detects suspicious calls to Microsoft Exchange resources, in locations related to webshells observed in campaigns using this vulnerability.
+    
+    - **Effort:** elementary
+
+??? abstract "RTLO Character"
+    
+    Detects RTLO (Right-To-Left character) in file and process names.
     
     - **Effort:** elementary
 
@@ -219,11 +375,29 @@ The following Sekoia.io built-in rules match the intake **Cisco Umbrella Proxy**
     
     - **Effort:** master
 
+??? abstract "SharePoint Authenticated SSRF"
+    
+    Detects succesful SSRF from an authenticated SharePoint user.
+    
+    - **Effort:** elementary
+
 ??? abstract "Suspicious Download Links From Legitimate Services"
     
     Detects users clicking on Google docs links to download suspicious files. This technique was used a lot by Bazar Loader in the past.
     
     - **Effort:** intermediate
+
+??? abstract "Suspicious File Name"
+    
+    Detects suspicious file name possibly linked to malicious tool.
+    
+    - **Effort:** advanced
+
+??? abstract "Suspicious PROCEXP152.sys File Created In Tmp"
+    
+    Detects the creation of the PROCEXP152.sys file in the application-data local temporary folder. This driver is used by Sysinternals Process Explorer but also by KDU (https://github.com/hfiref0x/KDU) or Ghost-In-The-Logs (https://github.com/bats3c/Ghost-In-The-Logs), which uses KDU. Note - Clever attackers may easily bypass this detection by just renaming the driver filename. Therefore just Medium-level and don't rely on it.
+    
+    - **Effort:** advanced
 
 ??? abstract "Suspicious TOR Gateway"
     
@@ -254,3 +428,9 @@ The following Sekoia.io built-in rules match the intake **Cisco Umbrella Proxy**
     Detects TrevorC2 HTTP communication based on the HTTP request URI and the user-agent. 
     
     - **Effort:** elementary
+
+??? abstract "WCE wceaux.dll Creation"
+    
+    Detects wceaux.dll creation while Windows Credentials Editor (WCE) is executed.
+    
+    - **Effort:** intermediate
