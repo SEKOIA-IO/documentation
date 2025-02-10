@@ -18,7 +18,7 @@ template: overrides/openapi.html
                 "UAE1",
             ],
             urls: [
-                "/javascript/schema.json"
+                "../../javascript/schema.json"
             ],
             menu:[
                 {
