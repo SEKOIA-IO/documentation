@@ -14,3 +14,11 @@ export function debounce(func, wait) {
         }, wait);
     };
 }
+
+export function scrollToAnchor(hash) {
+    const el = document.getElementById(hash.substring(1))
+    if (el) window.scrollTo({
+        top: document.getElementById(hash.substring(1)).getBoundingClientRect().top + window.scrollY,
+        behavior: 'smooth'
+    });
+}
