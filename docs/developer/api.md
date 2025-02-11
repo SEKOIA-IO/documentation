@@ -13,20 +13,20 @@ template: overrides/openapi.html
             title:"Sekoia.io API Documentation",
             regions: [
                 "FRA1",
-                "FRA2",
-                "MCO1",
-                "UAE1",
+                // "FRA2",
+                // "MCO1",
+                // "UAE1",
             ],
             urls: [
                 "https://app.sekoia.io/api/v1/dashboard/swagger.json?context=public",
                 "https://app.sekoia.io/api/v1/telemetry/openapi.json?context=public",
+                "https://app.sekoia.io/api/v1/events/openapi.json?context=public",
                 "https://app.sekoia.io/api/v1/notebooks/openapi.json?context=public",
                 "https://app.sekoia.io/api/v1/sic/conf/swagger.json?context=public",
                 "https://app.sekoia.io/api/v1/swagger.json?context=public",
                 "https://app.sekoia.io/api/v1/ingest/swagger.json?context=public",
                 "https://app.sekoia.io/api/v1/sic/swagger.json?context=public",
                 "https://app.sekoia.io/api/v1/symphony/swagger.json?context=public",
-                "https://app.sekoia.io/api/v1/enricher/swagger.json?context=tip",
                 "https://app.sekoia.io/api/v2/asset-management/openapi.json?context=public",
                 "https://app.sekoia.io/api/v1/edl-gateway/openapi.json",
                 "https://app.sekoia.io/api/v2/inthreat/swagger.json?context=public",
@@ -54,12 +54,25 @@ template: overrides/openapi.html
                         "avatars",
                         "users", // TODO set this tag on all user administration stuff
                         "roles",
+                        "counters", // TODO => +Avatars
                     ],
+                },
+                {
+                    name: "Configuration",
+                    tags: [
+                        "Entities",
+                        "Enrichers",
+                        "Callbacks",
+                        "Services",
+                        "Archives",
+                        "Views", // TODO => + Archives
+                    ]
                 },
                 {
                     name: "Intelligence",
                     tags: [
                         "Objects",
+                        "CTI Objects", // TODO fix telemetry => Objects
                         "Indicators",
                         "Observables",
                         "Observable relationships",
@@ -72,6 +85,12 @@ template: overrides/openapi.html
                         "Bundles",
                         "Images",
                         "Labels",
+                        "Graphs",
+                        "Relationships",
+                        "Reports",
+                        "Support",
+                        "Sources",
+                        "Vulnerabilities",
                     ],
                 },
                 {
@@ -84,44 +103,47 @@ template: overrides/openapi.html
                         "Intakes errors and warnings",
                         "Intakes lag and processing lag",
                         "formats",
+                        "Intake Optimization Rules",
                     ],
                 },
-
                 {
                     name: "Detection",
                     tags: [
                         "Rules",
+                            "compilation-reports", // TODO sicconf => Rules
+                            "rules-catalog-multi-tenant", // TODO sicconf => Rules
+                            "rules-catalog", // TODO sicconf => Rules
+                        "Alerts",
                         "datasources",
-                        "generation-modes",
-                        "rules-catalog",
-                        "alert-filter", // TODO: to create, this tag doesn't exist yet
+                        "generation-modes", // TODO sicconf => Generation modes
+                        "Alert filters",
                         "IOC Collections",
-                    ],
-                },
-                {
-                    name: "Alerts",
-                    tags: [
-                        "Alert",
-                        "Alert Entities",
-                        "Alert Rules",
-                        "Alert Sources and Targets",
+                        "Alerts",
+                            "Alert", // TODO sicalert => Detection+Alerts
+                            "Alert Entities", // TODO sicalert => Detection+Alerts
+                            "Alert Rules", // TODO sicalert => Detection+Alerts
+                            "Alert Sources and Targets", // TODO sicalert => Detection+Alerts
+                            "Stats", // TODO sicalert => Detection+Alerts+Alert stats
+                            "Alert Status", // TODO sicalert => Detection+Alerts
+                            "Alert Type", // TODO sicalert => Detection+Alerts
                         "Countermeasures",
                         "Cyber Kill Chain",
-                        "Stats",
-                        "Alert Status",
-                        "Alert Type",
+                        "UEBA",
                     ],
                 },
                 {
-                    name: "Cases",
+                    name: "Investigation",
                     tags: [
-                        "Case",
-                        "Comments",
-                        "Enrichers",
-                        "Callbacks",
-                        "Services",
+                        "Cases",
+                            "Case", // TODO => Cases
+                            "Comments", // TODO => + Cases
+                        "Notebooks",
+                        "Events",
                         "Tasks",
                     ],
+                },
+                {name:"Configuration",
+                    tags:["Entities"]
                 },
                 {
                     name: "Automations",
@@ -129,6 +151,9 @@ template: overrides/openapi.html
                         "Playbooks",
                         "Playbook actions telemetry",
                         "modules",
+                        "Playbook runs",
+                            "Playbooks runs", // TODO: Fix symphony => Playbook runs
+                        "Node runs",
                         "Action Runs",
                         "Actions",
                         "Connector Configurations",
@@ -138,20 +163,23 @@ template: overrides/openapi.html
                         "Runs",
                         "Trigger Configurations",
                         "Triggers",
-                    ],
-                },
-                {
-                    name: "AI assistant", // TODO: Make that private
-                    tags: [
-                        "Roy tokens use telemetry",
+                        "SSH Keys",
                     ],
                 },
                 {
                     name:"Reporting",
                     tags: [
-                        "Intelligence statistics",
-                        "Automation statistics",
-                        "Statistics",
+                        "dashboards",
+                        "Intelligence",
+                            "Intelligence statistics", // => Intelligence
+                        "Events",
+                        "Rules",
+                        "Alert filters",
+                        "Assets",
+                        "Playbooks",
+                            "Automation statistics", // => Playbooks
+                        "AI assistant",
+                        "Statistics", // ?
                     ]
                 }
             ]
