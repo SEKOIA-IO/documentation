@@ -1,7 +1,7 @@
 import { Teleport, capitalize, createApp, reactive } from "vue";
 import { fetch_and_merge_openapi_schemas } from "./openapi/openapi"
 import { Examples } from "./Examples";
-import { tagEncode, Chevron, debounce } from "./utils"
+import { tagEncode, Chevron, debounce, scrollToAnchor } from "./utils"
 import { Markdown } from "./Markdown"
 import { Parameters } from "./Parameters"
 import { Response } from "./Response"
@@ -37,7 +37,7 @@ export const data = reactive({
 
 export const OpenAPIViewer = {
 
-    /** Gather all openapi.json/swagger.json manifests from {urls} and render it OpenAPIViewer Vue component */
+    /** Gather all openapi.json/swagger.json manifests from {urls} and render as OpenAPIViewer Vue component */
     async init({ title, urls, menu, regions }) {
         const hash = location.hash
         data.title = title
@@ -72,51 +72,87 @@ export const OpenAPIViewer = {
         if (data.region !== "fra1")
             data.schema.servers[0].url = `https://app.${data.region}.sekoia.io/api`;
 
-        // Collect menu tags and filter tags
-        function update() {
-            console.log(data.search, data.selectedTags)
-            data.loading = true
-            const selectedTags = new Set(data.selectedTags)
-            data.endpoints_by_tag = {}
-            data.tags = new Set()
-            for (const tagGroup of menu) {
-                for (const tag of tagGroup.tags) data.endpoints_by_tag[tag] = []
+        // Flatten endpoints list
+        data.endpoints = []
+        Object.entries(data.schema.paths).forEach(([path, endpoints]) => {
+            Object.entries(endpoints).forEach(([method, endpoint]) => {
+                if (method === "parameters") return;
+                data.endpoints.push({ ...endpoint, path, method })
+            })
+        })
+
+        // Organize endpoints according to the menu tree
+        // and collect non-menu tags as filtering candidates
+        data.tags = new Set()
+        data.tagLevel = {}
+        data.tree = []
+        for (const tagGroup of menu) {
+            const node = { name: tagGroup.name, children: [] }
+            data.tree.push(node)
+            for (const tag of tagGroup.tags) {
+                node.children.push({ name: tag, endpoints: [] })
             }
+        }
 
-            Object.entries(data.schema.paths).forEach(([path, endpoints]) => {
-                Object.entries(endpoints).forEach(([method, endpoint]) => {
-                    if (method === "parameters") return;
+        console.log(data.tree)
 
-                    if (endpoint.tags.length >= 2) {
-                        for (const tag of endpoint.tags) {
-                            if (!data.endpoints_by_tag[tag]) data.tags.add(tag)
+        for (const endpoint of data.endpoints) {
+            endpoint.menu0 = data.tree.find(({ name }) => endpoint.tags.find(t => name.toLowerCase() === t.toLowerCase()))
+            endpoint.menu1 = endpoint.menu0?.children.find(({ name }) => endpoint.tags.find(t => name.toLowerCase() === t.toLowerCase()))
+            // If we couldn't a menu entry with a top-level tag, fallback to the first matching level-1 entry
+            if (!endpoint.menu0 || !endpoint.menu1)
+                data.tree.forEach(l0 => {
+                    for (const l1 of l0.children) {
+                        if (endpoint.tags.find(t => l1.name.toLowerCase() === t.toLowerCase())) {
+                            endpoint.menu0 = l0
+                            endpoint.menu1 = l1
+                            return;
                         }
                     }
-
-                    // Search filtering
-                    if (data.search) {
-                        if (!endpoint.summary?.toLowerCase()?.includes(data.search)
-                            && !endpoint.description?.toLowerCase()?.includes(data.search)
-                            && !endpoint.title?.toLowerCase()?.includes(data.search)
-                            && !endpoint.name?.toLowerCase()?.includes(data.search)
-                            && !endpoint.path?.toLowerCase()?.includes(data.search))
-                            return;
-                    }
-
-                    // Tag filtering
-                    if (selectedTags.size > 0) {
-                        if (!endpoint.tags?.length > 0 || selectedTags.isDisjointFrom(new Set(endpoint.tags)))
-                            return;
-                    }
-
-
-                    for (const tag of endpoint.tags) {
-                        if (data.endpoints_by_tag[tag]) data.endpoints_by_tag[tag].push({ ...endpoint, path, method })
-                    }
                 })
-            })
+            // If even the fallback level1 fails, raise a warning and skip the endpoint
+            if (!endpoint.menu0 || !endpoint.menu1) {
+                console.warn(`No menu entry for ${endpoint.tags}`, endpoint)
+                continue
+            }
+            endpoint.menu1.endpoints.push(endpoint)
+            endpoint.otherTags = new Set(endpoint.tags.filter(t => (
+                t.toLowerCase() !== endpoint.menu0.name.toLowerCase() &&
+                t.toLowerCase() !== endpoint.menu1.name.toLowerCase()
+            )))
+            endpoint.otherTags.forEach(t => data.tags.add(t))
+        }
+        data.tags = Array.from(data.tags).sort()
 
-            data.tags = Array.from(data.tags).sort()
+
+        // Apply filters
+        function update() {
+            data.loading = true
+            const selectedTags = new Set(data.selectedTags)
+
+            for (const endpoint of data.endpoints) {
+                endpoint.visible = true;
+
+                // Search filtering
+                if (data.search && ![
+                    endpoint.summary,
+                    endpoint.description,
+                    endpoint.title,
+                    endpoint.name,
+                    endpoint.path,
+                ].some(x => x?.toLowerCase()?.includes(data.search))) {
+                    endpoint.visible = false
+                    return;
+                }
+
+                // Tag filtering
+                if (selectedTags.size > 0) {
+                    if (!endpoint.otherTags?.length > 0 || selectedTags.isDisjointFrom(endpoint.otherTags))
+                        endpoint.visible = false;
+                    return;
+                }
+            }
+
             setTimeout(() => data.loading = false, 10)
         }
         OpenAPIViewer.updateAsap = debounce(update, 500)
@@ -125,39 +161,43 @@ export const OpenAPIViewer = {
 
         /** Called when the window is scrolled to sync the selected menu item */
         function updateScroll() {
-            let el = document.elementFromPoint(window.innerWidth * 0.6, 150)
-            while (!el.id && el.parentElement) el = el.parentElement
+            const el = getVisibleEndpoint()
             const [_, tag, ep] = el.id.split("/")
             if (el.id.includes("/") && tag) {
-                data.curTag = tag
-                data.curEp = el.id
-                data.curTagGroup = data.menu?.find(tg => tg.tags?.includes(tag))?.name
+                data.cur1 = tag
+                data.cur2 = el.id
+                data.cur0 = data.menu?.find(tg => tg.tags?.includes(tag))?.name
                 const hash = "#" + el.id
                 if (hash !== location.hash) history.replaceState(null, '', window.location.href.split('#')[0] + hash)
-                setImmediate(() => {
-                    document.querySelectorAll("#openapi-viewer .menu li.accordion").forEach(e => {
-                        const ul = e.querySelector("&>ul")
-                        if (e.classList.contains("active")) ul.style.maxHeight = `${ul.children[ul.children.length - 1].getBoundingClientRect().bottom - ul.getBoundingClientRect().top}px`
-                        else ul.style.maxHeight = "0px"
-                    })
-                })
+                setImmediate(animateAccordion)
             } else {
-                data.curEp = location.hash.substring(1)
-                const [_, tag] = data.curEp.split("/")
-                data.curTag = tag
-                data.curTagGroup = data.menu?.find(tg => tg.tags?.includes(tag))?.name
+                data.cur2 = location.hash.substring(1)
+                const [_, tag] = data.cur2.split("/")
+                data.cur1 = tag
+                data.cur0 = data.menu?.find(tg => tg.tags?.includes(tag))?.name
             }
+        }
+
+        function getVisibleEndpoint() {
+            let el = document.elementFromPoint(window.innerWidth * 0.6, 150)
+            while (!el.id && el.parentElement) el = el.parentElement
+            return el
+        }
+
+        /** Expand active menu items and collapse inactive ones */
+        function animateAccordion() {
+            document.querySelectorAll("#openapi-viewer .menu li.accordion").forEach(e => {
+                const ul = e.querySelector("&>ul")
+                if (e.classList.contains("active")) ul.style.maxHeight = `${ul.children[ul.children.length - 1]?.getBoundingClientRect()?.bottom || 0 - ul?.getBoundingClientRect()?.top || 0}px`
+                else ul.style.maxHeight = "0px"
+            })
         }
 
         // Called after the whole API doc's DOM has been rendered
         function afterRender() {
             // Scroll to the hash passed in the URL (after full rendering of the API doc)
             location.hash = hash
-            const el = document.getElementById(hash.substring(1))
-            if (el) window.scrollTo({
-                top: document.getElementById(hash.substring(1)).getBoundingClientRect().top + window.scrollY,
-                behavior: 'smooth'
-            });
+            scrollToAnchor(location.hash)
             data.loading = false;
             console.log("Doc rendered in", (new Date() - started_at) + "ms")
 
@@ -233,21 +273,21 @@ export const OpenAPIViewer = {
                         {data.loading && <div class="loader"><div class="ui-spinner" /> Loading APIs ...</div>}
 
                         <ul class="scroll-container md-nav__list" class={{ loading: data.loading }}>
-                            {data.menu?.map(({ name, tags }) => <li class="md-nav__item md-nav__item--nested" class={{
-                                active: data.curTagGroup === tagEncode(name),
+                            {data.tree?.map(({ name, children }) => <li class="md-nav__item md-nav__item--nested" class={{
+                                active: data.cur0 === tagEncode(name),
                             }}>
                                 <a href={`#tag/${tagEncode(name)}`}>{name}</a>
                                 <ul class='md-nav__list'>
-                                    {tags?.map(t => <li class='md-nav__item md-nav__item--nested accordion' class={{
-                                        active: data.curTag === tagEncode(t),
-                                        empty: !data.endpoints_by_tag?.[t]?.length > 0
+                                    {children?.map(({ name, endpoints }) => <li class='md-nav__item md-nav__item--nested accordion' class={{
+                                        active: data.cur1 === tagEncode(name),
+                                        empty: !endpoints?.length > 0
                                     }}>
-                                        <a href={`#tag/${tagEncode(t)}`} >{capitalize(t)} {Chevron}</a>
+                                        <a href={`#tag/${tagEncode(name)}`} >{capitalize(name)} {Chevron}</a>
                                         <ul class='md-nav__list'>
-                                            {data.endpoints_by_tag?.[t]?.map(({ operationId, method, summary }) => <li class='md-nav__item md-nav__item--nested' class={{
-                                                active: data.curEp === `tag/${tagEncode(t)}/${operationId}`
+                                            {endpoints?.map(({ operationId, method, summary }) => <li class='md-nav__item md-nav__item--nested' class={{
+                                                active: data.cur2 === `tag/${tagEncode(name)}/${operationId}`
                                             }}>
-                                                <a href={`#tag/${tagEncode(t)}/${operationId}`} onClick={closeMenu}>
+                                                <a href={`#tag/${tagEncode(name)}/${operationId}`} onClick={closeMenu}>
                                                     <span class='method' class={method}>{method}</span>
                                                     <span>{summary || operationId}</span>
                                                 </a>
@@ -266,24 +306,24 @@ export const OpenAPIViewer = {
                         <h2 id="quickstart" class="sc-jXbUNg copjkU">Quickstart</h2>
                         <div class="quickstart" v-embed={data.quickStart} />
 
-                        {data.menu?.map(({ name, tags }) => !!tags.find(t => data.endpoints_by_tag?.[t]?.length > 0) && <>
+                        {data.tree?.map(({ name, children }) => <>
                             <a href={`#tag/${tagEncode(name)}`}>
                                 <h2 id={`tag/${tagEncode(name)}`}>
                                     {name}
                                     <span class='alink' />
                                 </h2>
                             </a>
-                            {tags?.map(t => <>
-                                <a href={`#tag/${tagEncode(t)}`} class={{ empty: !data.endpoints_by_tag?.[t]?.length > 0 }}>
-                                    <h3 id={`tag/${tagEncode(t)}`}>
-                                        {t}
+                            {children?.map(({ name, endpoints }) => <>
+                                <a href={`#tag/${tagEncode(name)}`} class={{ empty: !endpoints?.length > 0 }}>
+                                    <h3 id={`tag/${tagEncode(name)}`}>
+                                        {name}
                                         <span class='alink' />
                                     </h3>
                                 </a>
-                                {data.endpoints_by_tag?.[t]?.map(endpoint => Endpoint(
-                                    `tag/${tagEncode(t)}/${endpoint.operationId}`,
+                                {endpoints?.map(endpoint => Endpoint(
+                                    `tag/${tagEncode(name)}/${endpoint.operationId}`,
                                     endpoint,
-                                    t
+                                    name,
                                 ))}
                             </>)}
                         </>)}
