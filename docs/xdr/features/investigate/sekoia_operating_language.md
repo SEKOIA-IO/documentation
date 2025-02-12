@@ -344,6 +344,7 @@ Note that the query below is equivalent.
 
 ``` shell
 alerts
+| where created_at > ago(7d)
 | order by occurrences desc
 | limit 5
 
@@ -370,6 +371,7 @@ Create a calculated column named total that sums the `time_to_detect`, `time_to_
 
 ``` shell
 alerts
+| where time_to_detect != null and time_to_respond != null and time_to_resolve != null
 | select total = time_to_detect + time_to_respond + time_to_resolve
 | limit 100
 
@@ -514,9 +516,10 @@ Count the number of events per asset in the events table and render it in a bar 
 
 ``` shell
 events
+| limit 10
 | aggregate count() by sekoiaio.any_asset.name
-| render barchart with (y=sekoiaio.any_asset.name)
-| limit 100
+| render columnchart with (x=sekoiaio.any_asset.name, y=count)
+| select sekoiaio.any_asset.name, count
 
 ```
 
@@ -638,7 +641,7 @@ Use the `in` operator to filter the rows based on a set of case-sensitive string
 
 ``` shell
 <table name>
-| where <column name> in [<value 1>, <value 2>]
+| where <column name> in ["<value 1>", "<value 2>"]
 
 ```
 
@@ -648,7 +651,7 @@ Find events where `client.ip` equals to theses values: 192.168.0.1, 192.168.0.2.
 
 ``` shell
 events
-| where client.ip in ['192.168.0.1', '192.168.0.2']
+| where client.ip in ["192.168.0.1", "192.168.0.2"]
 | limit 100
 
 ```
@@ -698,7 +701,7 @@ Find events where `url.domain` starts with the string `api.prod`.
 
 ``` shell
 events
-| where url.domain startswith 'api.prod'
+| where url.domain startswith 'www.'
 | limit 100
 
 ```
@@ -771,7 +774,7 @@ Use `//` to add comments in the query.
 ``` shell
 // Comment the filtering condition
 
-<table name>
+events
 //| where <column name> = <variable name>
 | limit 100
 
@@ -896,6 +899,7 @@ events
 
 ``` shell
 events
+| where timestamp > ago(5m)
 | limit 100
 | lookup entities on sekoiaio.entity.uuid == uuid
 | aggregate count=count() by entity.name
@@ -992,19 +996,7 @@ alerts
 
 ``` shell
 alerts
-| aggregate AlertCount = count() by community_uuid
-| left join communities on community_uuid == uuid
-| order by AlertCount desc
-| select community.name, AlertCount
-
-```
-
----
-
-### Ranking of communities by intakes
-
-``` shell
-alerts
+| where created_at > ago(30d)
 | aggregate AlertCount = count() by community_uuid
 | left join communities on community_uuid == uuid
 | order by AlertCount desc
@@ -1137,8 +1129,8 @@ events
 
 ``` shell
 events
-| left join intakes on sekoiaio.intake.uuid == uuid
 | where timestamp >= ago(24h) and intake.name == '<intake name>'
+| lookup intakes on sekoiaio.intake.uuid == uuid
 | limit 100
 
 ```
