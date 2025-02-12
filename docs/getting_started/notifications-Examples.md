@@ -160,7 +160,7 @@ from typing import Literal, Optional
 
 import httpx
 from fastapi import BackgroundTasks, FastAPI
-from pydantic import BaseModel, BaseSettings
+from pydantic.v1 import BaseModel, BaseSettings
 
 
 class WebHookSettings(BaseSettings): # (4)
