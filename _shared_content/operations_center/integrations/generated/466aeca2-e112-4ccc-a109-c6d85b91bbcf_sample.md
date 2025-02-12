@@ -124,10 +124,18 @@ In this section, you will find examples of raw logs as generated natively by the
 
 
 
-=== "test_ASA_302013"
+=== "test_ASA_302013_1"
 
     ```
 	%ASA-6-302013: Built inbound TCP connection 1800234408 for TTA-ACME-VDO_CAM:10.1.7.248/40454 (10.1.7.248/40454) to TTA-ACME-SRV_INFRA:10.1.0.10/53 (10.1.0.10/53)
+    ```
+
+
+
+=== "test_ASA_302013_2"
+
+    ```
+	%ASA-6-302013: Built inbound TCP connection 79601067 for internet:1.2.3.4/62197 (1.2.3.4/62197)(LOCAL\john.doe@company.fr) to transit:5.6.7.8/88 (5.6.7.8/88)
     ```
 
 
@@ -380,6 +388,14 @@ In this section, you will find examples of raw logs as generated natively by the
 
 
 
+=== "test_ASA_750003"
+
+    ```
+	%ASA-4-750003: Local:1.2.3.4:500 Remote:peer-aws-GIPN:500 Username:5.6.7.8 IKEv2 Negotiation aborted due to ERROR: There was no IPSEC policy found for received TS
+    ```
+
+
+
 === "test_ASA_852001"
 
     ```
@@ -456,6 +472,38 @@ In this section, you will find examples of raw logs as generated natively by the
 
     ```
 	%FTD-1-430003: EventPriority: Low, DeviceUUID: deyyyyy-844d-11e7-b104-8d1450667052, InstanceID: 1, FirstPacketSecond: 2023-08-23T12:59:00Z, ConnectionID: 55087, AccessControlRuleAction: Allow, SrcIP: 10.55.21.168, DstIP: 142.55.179.67, SrcPort: 77777, DstPort: 80, Protocol: tcp, IngressInterface: LAN, EgressInterface: WAN, IngressZone: LAN, EgressZone: OUT, IngressVRF: Global, EgressVRF: Global, ACPolicy: ACPolicy, AccessControlRuleName: SORTIE_INTERNET_ALL, Prefilter Policy: LALALAND L3-L4 Policy, User: Not Found, UserAgent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.32 Safari/537.36, Client: Chrome, ClientVersion: 60.0.3112.32, ApplicationProtocol: HTTP, WebApplication: Google, ConnectionDuration: 0, InitiatorPackets: 5, ResponderPackets: 5, InitiatorBytes: 565, ResponderBytes: 484, NAPPolicy: Balanced Security and Connectivity, ReferencedHost: connectivitycheck.gstatic.com, URLCategory: Infrastructure and Content Delivery Networks, URLReputation: Favorable, URL: http://connectivitycheck.gstatic.com/generate_204, NAT_InitiatorPort: 77777, NAT_ResponderPort: 80, NAT_InitiatorIP: 194.55.57.195, NAT_ResponderIP: 142.55.179.67
+    ```
+
+
+
+=== "test_FTD_722051_1"
+
+    ```
+	%FTD-4-722051: Group <GroupPolicy> User <johndoe> IP <1.2.3.4> IPv4 Address <5.6.7.8> IPv6 address <::> assigned to session
+    ```
+
+
+
+=== "test_FTD_722051_2"
+
+    ```
+	%FTD-4-722051: Group <GP_SSL_Desktop> User <johndoe> IP <1.2.3.4> IPv4 Address <5.6.7.8> IPv6 address <::> assigned to session
+    ```
+
+
+
+=== "test_FTD_750003"
+
+    ```
+	%FTD-4-750003 Local:1.2.3.4:500 Remote:5.6.7.8:500 Username:User IKEv2 Negotiation aborted due to ERROR: Failed to authenticate the IKE SA
+    ```
+
+
+
+=== "test_FTD_750003_2"
+
+    ```
+	%FTD-4-750003: Local:1.2.3.4:500 Remote:5.6.7.8:500 Username:5.6.7.8 IKEv2 Negotiation aborted due to ERROR: There was no IPSEC policy found for received TS
     ```
 
 

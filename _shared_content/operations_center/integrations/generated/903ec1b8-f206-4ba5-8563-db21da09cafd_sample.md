@@ -1388,6 +1388,24 @@ In this section, you will find examples of raw logs as generated natively by the
 
 
 
+=== "test_system_event_14"
+
+
+    ```json
+	1,2024/12/16 20:19:04,016301013072,SYSTEM,auth,2561,2024/12/16 20:19:04,,auth-fail,ESA-AUTH,0,0,general,medium,"failed authentication for user john.doe. Reason: Authentication request is timed out. auth profile ESA-AUTH, vsys vsys1, server profile ESA, server address 1.2.3.4, auth protocol PAP, From: 5.6.7.8.",7439393285273531690,0x0,0,0,0,0,,FWPADC1,0,0,2024-12-16T20:19:04.851+01:00
+    ```
+
+
+
+=== "test_system_event_15"
+
+
+    ```json
+	1,2025/01/21 11:57:22,016301013072,SYSTEM,auth,2561,2025/01/21 11:57:23,,auth-fail,ESA-AUTH,0,0,general,medium,"failed authentication for user 'john.doe'. Reason: Authentication request is timed out. auth profile 'ESA-AUTH', vsys 'vsys1', server profile 'ESA', server address '1.2.3.4', auth protocol 'PAP', From: 5.6.7.8.",7439393285299734188,0x0,0,0,0,0,,FWPADC1,0,0,2025-01-21T11:57:23.294+01:00
+    ```
+
+
+
 === "test_system_event_1_json"
 
 
@@ -1907,6 +1925,82 @@ In this section, you will find examples of raw logs as generated natively by the
         "VirtualLocation": "vsys1",
         "VirtualSystemName": "",
         "X-Forwarded-ForIP": null
+    }
+    ```
+
+
+
+=== "test_traffic_event_3_json"
+
+
+    ```json
+	{
+        "TimeReceived": "2025-01-28T17:00:36.000000Z",
+        "DeviceSN": "007057000103158",
+        "LogType": "TRAFFIC",
+        "Subtype": "start",
+        "ConfigVersion": "11.1",
+        "TimeGenerated": "2025-01-28T17:01:01.000000Z",
+        "SourceAddress": "1.2.3.4",
+        "DestinationAddress": "5.6.7.8",
+        "NATSource": "",
+        "NATDestination": "",
+        "Rule": "intrazone-default",
+        "SourceUser": null,
+        "DestinationUser": null,
+        "Application": "paloalto-updates",
+        "FromZone": "OUTSIDE",
+        "ToZone": "OUTSIDE",
+        "InboundInterface": "ethernet1/1",
+        "OutboundInterface": "ethernet1/1",
+        "LogSetting": "Panorama_CDL",
+        "SessionID": 117195,
+        "RepeatCount": 1,
+        "SourcePort": 45483,
+        "DestinationPort": 443,
+        "NATSourcePort": 0,
+        "NATDestinationPort": 0,
+        "Protocol": "tcp",
+        "Action": "allow",
+        "Bytes": 797,
+        "BytesSent": 723,
+        "BytesReceived": 74,
+        "PacketsTotal": 4,
+        "SessionStartTime": "2025-01-28T17:01:02.000000Z",
+        "SessionDuration": 0,
+        "URLCategory": "computer-and-internet-info",
+        "SourceLocation": "TEST_INFRA",
+        "DestinationLocation": "US",
+        "PacketsSent": 3,
+        "PacketsReceived": 1,
+        "SessionEndReason": "n-a",
+        "DeviceName": "PC-01",
+        "ActionSource": "from-policy",
+        "RuleUUID": "6c2be47e-4724-4212-9902-26ba054fe2a9",
+        "SourceDeviceCategory": null,
+        "SourceDeviceProfile": null,
+        "SourceDeviceModel": null,
+        "SourceDeviceVendor": null,
+        "SourceDeviceOSFamily": null,
+        "SourceDeviceOSVersion": null,
+        "SourceDeviceHost": null,
+        "SourceDeviceMac": null,
+        "DestinationDeviceCategory": null,
+        "DestinationDeviceProfile": null,
+        "DestinationDeviceModel": null,
+        "DestinationDeviceVendor": null,
+        "DestinationDeviceOSFamily": null,
+        "DestinationDeviceOSVersion": null,
+        "DestinationDeviceHost": null,
+        "DestinationDeviceMac": null,
+        "SourceEDL": null,
+        "DestinationEDL": null,
+        "TimeGeneratedHighResolution": "2025-01-28T17:01:02.738000Z",
+        "DestinationUserName": null,
+        "SourceUserDomain": null,
+        "Users": "1.2.3.4",
+        "IsPacketCapture": false,
+        "IsPhishing": false
     }
     ```
 

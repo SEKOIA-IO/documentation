@@ -55,7 +55,7 @@ This section demonstrates how the raw logs will be transformed by our parsers. I
             "sample_id": "03-22-2023T10:32:45_772669089795425e9ad63823ea1e7ac3_gcap-xxxxxxxx.domain.local",
             "scores": {
                 "analysis": 1890,
-                "analysis_detailed": "{\"AddContent\": 0, \"Base64\": 1520, \"CharInt\": 0, \"FmtStr\": 0, \"GetContent\": 0, \"InvokeExpression\": 0, \"InvokeRestMethod\": 0, \"InvokeWebRequest\": 0, \"SetContent\": 0, \"StartBitsTransfer\": 0, \"StrCat\": 370, \"StrJoin\": 0, \"StrReplace\": 0, \"StreamReader\": 0, \"StreamWriter\": 0, \"SystemIOFile\": 0, \"WebClientInvokation\": 0}",
+                "analysis_detailed": "{\"AddContent\":0,\"Base64\":1520,\"CharInt\":0,\"FmtStr\":0,\"GetContent\":0,\"InvokeExpression\":0,\"InvokeRestMethod\":0,\"InvokeWebRequest\":0,\"SetContent\":0,\"StartBitsTransfer\":0,\"StrCat\":370,\"StrJoin\":0,\"StrReplace\":0,\"StreamReader\":0,\"StreamWriter\":0,\"SystemIOFile\":0,\"WebClientInvokation\":0}",
                 "proba_obfuscated": 1.0
             },
             "state": "Exploit",
@@ -174,7 +174,7 @@ This section demonstrates how the raw logs will be transformed by our parsers. I
         },
         "gatewatcher": {
             "event_type": "malware",
-            "fileinfo": "{\"file_id\": 379, \"filename\": \"/6SuCHKKkf8Sf1aFXJPqD0R6r3oEDCrbwHFm23EU-Af2zwWdHgpn6mEGu5XlxFust\", \"gaps\": false, \"magic\": \"Macromedia Flash data (compressed), version 14\", \"md5\": \"67ca9a31f220bc7b68f203c07ad668b9\", \"sha256\": \"350836364013549b6a76aab79d57d109df6acc143759e24a952d3ff5d6a76ec4\", \"sid\": [1100020], \"size\": 77068, \"state\": \"CLOSED\", \"stored\": true, \"tx_id\": 1}",
+            "fileinfo": "{\"file_id\":379,\"filename\":\"/6SuCHKKkf8Sf1aFXJPqD0R6r3oEDCrbwHFm23EU-Af2zwWdHgpn6mEGu5XlxFust\",\"gaps\":false,\"magic\":\"Macromedia Flash data (compressed), version 14\",\"md5\":\"67ca9a31f220bc7b68f203c07ad668b9\",\"sha256\":\"350836364013549b6a76aab79d57d109df6acc143759e24a952d3ff5d6a76ec4\",\"sid\":[1100020],\"size\":77068,\"state\":\"CLOSED\",\"stored\":true,\"tx_id\":1}",
             "filemagic": "Macromedia Flash data (compressed), version 14",
             "flow_id": "1910314914537014",
             "gcap": "gcap-xxxxxxxx.domain.local",
@@ -278,7 +278,7 @@ This section demonstrates how the raw logs will be transformed by our parsers. I
             "description": "IOC matching first tests",
             "event_type": "retrohunt",
             "external_links": [
-                "{\"source_name\": \"URLHaus Abuse.ch\", \"url\": \"https://urlhaus.abuse.ch/url/2269068/\"}"
+                "{\"source_name\":\"URLHaus Abuse.ch\",\"url\":\"https://urlhaus.abuse.ch/url/2269068/\"}"
             ],
             "families": [
                 "Hajime"
@@ -309,7 +309,7 @@ This section demonstrates how the raw logs will be transformed by our parsers. I
             "kill_chain_phases": [],
             "matched_event": "bd7686c8-20db-427e-941d-844a5ecfe559",
             "matched_event_type": "alert",
-            "meta_data": "{\"cwe\": [], \"descriptions\": [], \"filetype\": \"ELF 32-bit LSB executable, ARM, EABI5 version 1 (GNU/Linux)\", \"size\": 78.3984375, \"ssdeep\": \"1536:87vbq1lGAXSEYQjbChaAU2yU23M51DjZgSQAvcYkFtZTjzBht5:8D+CAXFYQChaAUk5ljnQssL\", \"tslh\": \"T16D7312E017B517CC1371A8353BED205E9128223972AE35302E97528DF957703BAB2DBE\", \"usageMode\": \"hunting\"}",
+            "meta_data": "{\"cwe\":[],\"descriptions\":[],\"filetype\":\"ELF 32-bit LSB executable, ARM, EABI5 version 1 (GNU/Linux)\",\"size\":78.3984375,\"ssdeep\":\"1536:87vbq1lGAXSEYQjbChaAU2yU23M51DjZgSQAvcYkFtZTjzBht5:8D+CAXFYQChaAUk5ljnQssL\",\"tslh\":\"T16D7312E017B517CC1371A8353BED205E9128223972AE35302E97528DF957703BAB2DBE\",\"usageMode\":\"hunting\"}",
             "probability": 0.5,
             "relations": [
                 "0e3cc27b-7999-48ce-8484-dc12b325a355"
@@ -649,7 +649,7 @@ This section demonstrates how the raw logs will be transformed by our parsers. I
             "gcap": "gcap-xxxxxxxxx.domain.local",
             "gcenter": "gcenter-xxxxxxxx.domain.local",
             "timestamp_analyzed": "2024-11-21T13:02:44.291Z",
-            "tls": "{\"ja3s\": {\"hash\": \"15af977ce25de452b96affa2addb1036\", \"string\": \"771,4866,43-51\"}, \"sni\": \"www.microsoft.com\", \"version\": \"TLS 1.3\"}",
+            "tls": "{\"ja3s\":{\"hash\":\"15af977ce25de452b96affa2addb1036\",\"string\":\"771,4866,43-51\"},\"sni\":\"www.microsoft.com\",\"version\":\"TLS 1.3\"}",
             "tls_sni": "www.microsoft.com",
             "type": "suricata"
         },
