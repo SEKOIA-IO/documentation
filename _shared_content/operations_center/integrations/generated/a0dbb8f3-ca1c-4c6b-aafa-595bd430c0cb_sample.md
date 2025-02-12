@@ -28,6 +28,22 @@ In this section, you will find examples of raw logs as generated natively by the
 
 
 
+=== "connect4"
+
+    ```
+	1737983758.627 207 1.2.3.4 TCP_TUNNEL/200 4047 CONNECT test.domain.org:443 - HIER_DIRECT/5.6.7.8 - 
+    ```
+
+
+
+=== "connect5"
+
+    ```
+	1737983750.078 61 1.2.3.4 TCP_TUNNEL/200 8811 CONNECT safebrowsing.googleapis.com:443 - HIER_DIRECT/5.6.7.8 -
+    ```
+
+
+
 === "connect_ip"
 
     ```

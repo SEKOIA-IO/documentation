@@ -74,6 +74,9 @@ This section demonstrates how the raw logs will be transformed by our parsers. I
                 "192.168.0.1"
             ]
         },
+        "server": {
+            "domain": "example.org"
+        },
         "source": {
             "address": "192.168.0.1",
             "ip": "192.168.0.1"
@@ -133,6 +136,9 @@ This section demonstrates how the raw logs will be transformed by our parsers. I
             "ip": [
                 "192.168.0.1"
             ]
+        },
+        "server": {
+            "domain": "api42-api.example.com"
         },
         "source": {
             "address": "192.168.0.1",
@@ -194,9 +200,140 @@ This section demonstrates how the raw logs will be transformed by our parsers. I
                 "192.168.224.39"
             ]
         },
+        "server": {
+            "domain": "193-164-229-102_s-2-18-244-11_ts-1587042594-clienttons-s.akamaihd.net"
+        },
         "source": {
             "address": "192.168.224.39",
             "ip": "192.168.224.39"
+        },
+        "squid": {
+            "hierarchy_code": "HIER_DIRECT"
+        }
+    }
+    	
+	```
+
+
+=== "connect4.json"
+
+    ```json
+	
+    {
+        "message": "1737983758.627 207 1.2.3.4 TCP_TUNNEL/200 4047 CONNECT test.domain.org:443 - HIER_DIRECT/5.6.7.8 - ",
+        "event": {
+            "category": [
+                "network",
+                "web"
+            ],
+            "duration": 207
+        },
+        "@timestamp": "2025-01-27T13:15:58.627000Z",
+        "destination": {
+            "address": "test.domain.org",
+            "domain": "test.domain.org",
+            "port": 443,
+            "registered_domain": "domain.org",
+            "subdomain": "test",
+            "top_level_domain": "org"
+        },
+        "http": {
+            "request": {
+                "method": "CONNECT"
+            },
+            "response": {
+                "bytes": 4047,
+                "status_code": 200
+            }
+        },
+        "network": {
+            "direction": "egress",
+            "transport": "tcp"
+        },
+        "observer": {
+            "product": "Squid",
+            "type": "proxy",
+            "vendor": "Squid"
+        },
+        "related": {
+            "hosts": [
+                "test.domain.org"
+            ],
+            "ip": [
+                "1.2.3.4",
+                "5.6.7.8"
+            ]
+        },
+        "server": {
+            "ip": "5.6.7.8"
+        },
+        "source": {
+            "address": "1.2.3.4",
+            "ip": "1.2.3.4"
+        },
+        "squid": {
+            "hierarchy_code": "HIER_DIRECT"
+        }
+    }
+    	
+	```
+
+
+=== "connect5.json"
+
+    ```json
+	
+    {
+        "message": "1737983750.078 61 1.2.3.4 TCP_TUNNEL/200 8811 CONNECT safebrowsing.googleapis.com:443 - HIER_DIRECT/5.6.7.8 -",
+        "event": {
+            "category": [
+                "network",
+                "web"
+            ],
+            "duration": 61
+        },
+        "@timestamp": "2025-01-27T13:15:50.078000Z",
+        "destination": {
+            "address": "safebrowsing.googleapis.com",
+            "domain": "safebrowsing.googleapis.com",
+            "port": 443,
+            "registered_domain": "googleapis.com",
+            "subdomain": "safebrowsing",
+            "top_level_domain": "com"
+        },
+        "http": {
+            "request": {
+                "method": "CONNECT"
+            },
+            "response": {
+                "bytes": 8811,
+                "status_code": 200
+            }
+        },
+        "network": {
+            "direction": "egress",
+            "transport": "tcp"
+        },
+        "observer": {
+            "product": "Squid",
+            "type": "proxy",
+            "vendor": "Squid"
+        },
+        "related": {
+            "hosts": [
+                "safebrowsing.googleapis.com"
+            ],
+            "ip": [
+                "1.2.3.4",
+                "5.6.7.8"
+            ]
+        },
+        "server": {
+            "ip": "5.6.7.8"
+        },
+        "source": {
+            "address": "1.2.3.4",
+            "ip": "1.2.3.4"
         },
         "squid": {
             "hierarchy_code": "HIER_DIRECT"
@@ -724,6 +861,8 @@ The following table lists the fields that are extracted, normalized under the EC
 |`observer.product` | `keyword` | The product name of the observer. |
 |`observer.type` | `keyword` | The type of the observer the data is coming from. |
 |`observer.vendor` | `keyword` | Vendor name of the observer. |
+|`server.domain` | `keyword` | The domain name of the server. |
+|`server.ip` | `ip` | IP address of the server. |
 |`source.ip` | `ip` | IP address of the source. |
 |`squid.cache_status` | `keyword` | Cache status for the request |
 |`squid.hierarchy_code` | `keyword` | Hierarchy used by Squid for this connection. |
