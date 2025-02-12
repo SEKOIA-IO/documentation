@@ -11,6 +11,7 @@ Sekoia Operating Language (`SOL`) is a powerful, pipe-based query language desig
 | Data Source | Description | Use Cases |
 |-------------|-------------|-----------|
 | `events` | Security events | Threat hunting, incident investigation, SOC reporting |
+| `eternal_events` | Security events related to alerts or cases | Extract metrics from events related to alerts/cases |
 | `alerts` | Security alerts and detections | SOC monitoring, alert pattern analysis |
 | `cases` | Security incidents and cases | Case management, incident correlation |
 | `intakes` | Data sources | Data source management, volume monitoring |
@@ -553,8 +554,9 @@ Join the tables events and intakes
 ``` shell
 events
 | where timestamp > ago(24h)
+| limit 100
 | inner join intakes on sekoiaio.intake.uuid == uuid   // sekoiaio.intake.uuid belongs to events table and uuid belongs to intakes table
-| select intake.name
+| distinct intake.name
 
 ```
 
@@ -567,8 +569,9 @@ Join the tables alerts and entities
 ``` shell
 alerts
 | where created_at > ago(24h)
+| limit 100
 | inner join entities on entity_uuid == uuid   // entity_uuid belongs to alerts table and uuid belongs to entities table
-| select entity.name
+| distinct entity.name
 
 ```
 
@@ -635,7 +638,7 @@ Use the `in` operator to filter the rows based on a set of case-sensitive string
 
 ``` shell
 <table name>
-| where <column name> in (<value 1>, <value 2>)
+| where <column name> in [<value 1>, <value 2>]
 
 ```
 
@@ -645,7 +648,7 @@ Find events where `client.ip` equals to theses values: 192.168.0.1, 192.168.0.2.
 
 ``` shell
 events
-| where client.ip in ('192.168.0.1', '192.168.0.2')
+| where client.ip in ['192.168.0.1', '192.168.0.2']
 | limit 100
 
 ```
