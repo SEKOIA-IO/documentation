@@ -224,7 +224,7 @@ Filter the query by excluding events older than `5 days` and retrieving only use
 
 ``` shell
 events
-| where timestamp > ago(5d) and user_agent.device.name == “Mac”
+| where timestamp > ago(5d) and user_agent.device.name == 'Mac'
 | limit 100
 
 ```
