@@ -224,7 +224,7 @@ Filter the query by excluding events older than `5 days` and retrieving only use
 
 ``` shell
 events
-| where timestamp > ago(5d) and user_agent.device.name == “Mac”
+| where timestamp > ago(5d) and user_agent.device.name == 'Mac'
 | limit 100
 
 ```
@@ -235,7 +235,7 @@ Filter the query by excluding events older than `5 days` and retrieving only use
 
 ``` shell
 events
-| where timestamp > ago(5d) and (user_agent.device.name == “Mac” or user_agent.device.name == “Android”)
+| where timestamp > ago(5d) and (user_agent.device.name == 'Mac' or user_agent.device.name == 'Android')
 | limit 100
 
 ```
@@ -415,7 +415,7 @@ Count the number of events per source.ip and per action.outcome in the `events` 
 
 ``` shell
 events
-| where timestamp >= ago(24h) and event.category == "authentication"
+| where timestamp >= ago(24h) and event.category == 'authentication'
 | aggregate count() by source.ip, action.outcome
 
 ```
@@ -1115,7 +1115,7 @@ events
 
 ``` shell
 events
-| where timestamp >= ago(24h) and event.category == "authentication"
+| where timestamp >= ago(24h) and event.category == 'authentication'
 | aggregate count() by source.ip, action.outcome
 
 ```
@@ -1165,7 +1165,7 @@ events
 
 ``` shell
 events
-| where sekoiaio.intake.dialect == "sekoia.io endpoint agent"
+| where sekoiaio.intake.dialect == 'sekoia.io endpoint agent'
 | aggregate count() by host.os.type
 | limit 100
 
