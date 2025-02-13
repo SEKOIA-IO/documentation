@@ -486,6 +486,9 @@ This section demonstrates how the raw logs will be transformed by our parsers. I
         "related": {
             "ip": [
                 "1.2.3.4"
+            ],
+            "user": [
+                "jane.doe"
             ]
         },
         "source": {
@@ -556,6 +559,9 @@ This section demonstrates how the raw logs will be transformed by our parsers. I
         "related": {
             "ip": [
                 "4.5.6.7"
+            ],
+            "user": [
+                "jane.doe"
             ]
         },
         "source": {
@@ -637,6 +643,9 @@ This section demonstrates how the raw logs will be transformed by our parsers. I
         "related": {
             "ip": [
                 "10.11.12.13"
+            ],
+            "user": [
+                "john.wick"
             ]
         },
         "source": {

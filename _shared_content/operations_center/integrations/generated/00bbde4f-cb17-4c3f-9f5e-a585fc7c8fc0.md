@@ -397,7 +397,7 @@ This section demonstrates how the raw logs will be transformed by our parsers. I
             "category": [
                 "process"
             ],
-            "reason": "{\"unmanaged\": {\"net.netfilter.nf_conntrack_buckets\": \"32768\"}}",
+            "reason": "{\"unmanaged\":{\"net.netfilter.nf_conntrack_buckets\":\"32768\"}}",
             "type": [
                 "change"
             ]
