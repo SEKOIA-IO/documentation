@@ -281,6 +281,7 @@ nav:
           - Shodan: tip/features/automate/library/shodan.md
           - Tranco: tip/features/automate/library/tranco.md
           - Triage: tip/features/automate/library/triage.md
+          - Triage: tip/features/automate/library/triage.md
           - VirusTotal: tip/features/automate/library/virustotal.md
           - Whois: tip/features/automate/library/whois.md
   - Develop:
@@ -555,6 +556,7 @@ nav:
       - RiskIQ: integration/action_library/riskiq.md
       - Shodan: integration/action_library/shodan.md
       - Tranco: integration/action_library/tranco.md
+      - Triage: integration/action_library/triage.md
       - Triage: integration/action_library/triage.md
       - VirusTotal: integration/action_library/virustotal.md
       - Whois: integration/action_library/whois.md
