@@ -223,7 +223,6 @@ nav:
       - Operators: tip/features/automate/operators.md
       - Actions: tip/features/automate/actions.md
       - Actions Library:
-        - Overview: tip/features/automate/library/overview.md
         - Applicative:
           - Mandrill: tip/features/automate/library/mandrill.md
           - Mattermost: tip/features/automate/library/mattermost.md
@@ -238,6 +237,8 @@ nav:
           - ServiceNow: tip/features/automate/library/servicenow.md
           - The Hive: tip/features/automate/library/the-hive.md
           - The Hive V5: tip/features/automate/library/the-hive-v5.md
+        - Email:
+          - Microsoft Outlook: tip/features/automate/library/microsoft-outlook.md
         - Endpoint:
           - CrowdStrike Falcon: tip/features/automate/library/crowdstrike-falcon.md
           - Eset: tip/features/automate/library/eset.md
@@ -262,6 +263,7 @@ nav:
           - Fortigate Firewalls: tip/features/automate/library/fortigate-firewalls.md
           - Sophos: tip/features/automate/library/sophos.md
           - Zscaler: tip/features/automate/library/zscaler.md
+        - Overview: tip/features/automate/library/overview.md
         - Threat Intelligence:
           - BinaryEdge's API: tip/features/automate/library/binaryedge-s-api.md
           - Censys: tip/features/automate/library/censys.md
@@ -499,7 +501,6 @@ nav:
       - WatchGuard Firebox: integration/categories/network_security/watchguard_firebox.md
       - Zscaler Internet Access: integration/categories/network_security/zscaler_zia.md
   - List of Playbooks Actions:
-    - Overview: integration/action_library/overview.md
     - Applicative:
       - Mandrill: integration/action_library/mandrill.md
       - Mattermost: integration/action_library/mattermost.md
@@ -514,6 +515,8 @@ nav:
       - ServiceNow: integration/action_library/servicenow.md
       - The Hive: integration/action_library/the-hive.md
       - The Hive V5: integration/action_library/the-hive-v5.md
+    - Email:
+      - Microsoft Outlook: integration/action_library/microsoft-outlook.md
     - Endpoint:
       - CrowdStrike Falcon: integration/action_library/crowdstrike-falcon.md
       - Eset: integration/action_library/eset.md
@@ -538,6 +541,7 @@ nav:
       - Fortigate Firewalls: integration/action_library/fortigate-firewalls.md
       - Sophos: integration/action_library/sophos.md
       - Zscaler: integration/action_library/zscaler.md
+    - Overview: integration/action_library/overview.md
     - Threat Intelligence:
       - BinaryEdge's API: integration/action_library/binaryedge-s-api.md
       - Censys: integration/action_library/censys.md
