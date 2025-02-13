@@ -1,18 +1,18 @@
 ---
 uuid: de3bfaa0-8ed4-4b5a-b3fa-bd82b7744a9a
-name: Wiz
+name: Wiz Issues
 type: intake
 ---
 
 ## Overview
 
-!!! Warning
-    Important note - This format is currently in beta. We highly value your feedback to improve its performance.
-
-- **Supported environment**: On Premise / SaaS
-- **Detection based on**: Telemetry, Alerts, Audit
+- **Supported environment**: SaaS
+- **Detection based on**: Alerts
 - **Supported application or feature**:
     - Issues
+
+!!! Warning
+    Important note - This format is currently in beta. We highly value your feedback to improve its performance.
 
 ## Configure
 
@@ -33,7 +33,7 @@ To setup the integration, you need to have access to `Wiz Console`.
 
 Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a new intake from the format **Wiz Issues**.
 
-{!_shared_content/operations_center/integrations/generated/de3bfaa0-8ed4-4b5a-b3fa-bd82b7744a9a.md!}
+{!_shared_content/operations_center/integrations/generated/de3bfaa0-8ed4-4b5a-b3fa-bd82b7744a9a_sample.md!}
 
 {!_shared_content/integration/detection_section.md!}
 
