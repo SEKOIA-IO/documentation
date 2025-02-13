@@ -9,10 +9,6 @@ Sesame it Jizo NDR is a network observability platform that enables decision-mak
 - **Supported environment**: Cloud
 - **Detection based on**: Alert
 
-!!! warning
-    Important note - This format is currently in beta. We highly value your feedback to improve its performance.
-
-
 ## Configure
 
 In this guide, you will configure the Jizo NDR to forward events to syslog.

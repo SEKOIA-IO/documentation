@@ -12,12 +12,112 @@ type: playbook
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
-| `base_url` | `string` | Glimps base URL (ex. https://gmalware.ggp.glimps.re) |
-| `api_key` | `string` | APIKEY for the Glimps's API |
+| `api_key` | `string` | Glimps detect token |
+| `base_url` | `string` | Glimps detect url |
 
 ## Actions
 
-### Get the results of an analysis
+### [TEST] Analyse a file
+
+Submit file to Glimps Detect to be analysed
+
+**Configuration**
+
+{'title': 'Description', 'description': 'Description added to the analysis', 'type': 'string'}
+
+**Arguments**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `file_name` | `string` | Name of submitted file |
+| `bypass_cache` | `boolean` | If true, file is analyzed, even if a result already exists |
+| `user_tags` | `array` | Analysis will be tagged with those tags |
+| `description` | `string` | Description added to the analysis |
+| `archive_pwd` | `string` | Password used to extract archive |
+| `push_timeout` | `number` | Maximum time (in seconds) to wait for a response when submitting file |
+
+
+**Outputs**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `status` | `boolean` | False means that an error occured |
+| `uuid` | `string` | UUID of the submitted analysis |
+
+### [TEST] Analyse a file and wait for result
+
+Submit file to Glimps Detect to be analysed and wait for its results
+
+**Configuration**
+
+{'title': 'Description', 'description': 'Description added to the analysis', 'type': 'string'}
+
+**Arguments**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `file_name` | `string` | Name of submitted file |
+| `bypass_cache` | `boolean` | If true, file is analyzed, even if a result already exists |
+| `user_tags` | `array` | Analysis will be tagged with those tags |
+| `description` | `string` | Description added to the analysis |
+| `archive_pwd` | `string` | Password used to extract archive |
+| `push_timeout` | `number` | Maximum time (in seconds) to wait for a response when submitting file |
+| `pull_time` | `number` | Time to wait (in seconds) between each requests to get a result |
+| `timeout` | `number` | Maximum time (in seconds) to wait for the analysis to end |
+
+
+**Outputs**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `analysis` | `` | Analysis response details |
+| `view_url` | `string` | Analysis URL |
+
+### [TEST] Export analysis result
+
+Export analysis result with the requested layout and format
+
+**Arguments**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `uuid` | `string` | Unique analysis identifier |
+| `format` | `string` | Export format |
+| `layout` | `string` | Export layout |
+| `is_full` | `string` | Export full analysis or summarized |
+
+### [TEST] Get profile status
+
+Get Glimps detect profile status, it includes quotas, eastimated analysis duration and cache
+
+**Outputs**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `daily_quota` | `integer` | Number of submissions authorized for the profile within 24h |
+| `available_daily_quota` | `integer` | Number of submissions still available within 24h. It's a sliding window, so a new slot will be released 24h after each submission |
+| `cache` | `boolean` | If True, the profile is configured to use cached result by default |
+| `estimated_analysis_duration` | `integer` | Estimation of the duration for the next submissions in milliseconds. It's based on the average time of submissions and the submission queue state. The real duration could differ from the estimation |
+
+### [TEST] Retrieve analysis
+
+Retrieve the analysis matching the given uuid
+
+**Arguments**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `uuid` | `string` | UUID of the analysis |
+
+
+**Outputs**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `analysis` | `` | Analysis response details |
+| `view_url` | `string` | Analysis URL |
+
+### [Deprecated] Get the results of an analysis
 
 
 
@@ -54,7 +154,7 @@ type: playbook
 | `token` | `string` | token that can be used to view analysis result in expert view |
 | `uuid` | `string` | Unique analysis identifier |
 
-### Search previous analysis
+### [Deprecated] Search previous analysis
 
 
 
@@ -91,7 +191,25 @@ type: playbook
 | `token` | `string` | token that can be used to view analysis result in expert view |
 | `uuid` | `string` | Unique analysis identifier<br/> |
 
-### Analyse a file
+### Search analysis
+
+Search an analysis for a given sha256 input file
+
+**Arguments**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `sha256` | `string` | SHA256 of file to search |
+
+
+**Outputs**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `analysis` | `` | Analysis response details |
+| `view_url` | `string` | Analysis URL |
+
+### [Deprecated] Analyse a file
 
 
 
@@ -114,4 +232,4 @@ type: playbook
 
 ## Extra
 
-Module **`GLIMPS` v1.13.0**
+Module **`GLIMPS` v1.14.2**

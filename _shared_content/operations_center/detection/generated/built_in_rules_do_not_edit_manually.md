@@ -1,4 +1,4 @@
-Rules catalog includes **990 built-in detection rules** ([_last update on 2025-01-22_](rules_changelog.md)).
+Rules catalog includes **996 built-in detection rules** ([_last update on 2025-02-10_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Identity Information**
 
@@ -59,6 +59,10 @@ Rules catalog includes **990 built-in detection rules** ([_last update on 2025-0
     
     - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 30/01/2025 - minor - Adding filters to reduce false positives.
+            
 ??? abstract "Remote System Discovery Via Telnet"
     
     Detects use of the protocol telnet to access information.
@@ -283,12 +287,20 @@ Rules catalog includes **990 built-in detection rules** ([_last update on 2025-0
     
     - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 03/02/2025 - minor - Update pattern to ECS field only
+            
 ??? abstract "Login Brute-Force Successful On Jumpcloud Workstation"
     
     A user has attempted to login several times (brute-force) on Jumpcloud monitored workstations (windows, linux, mac) and succeeded to login.
     
     - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 03/02/2025 - minor - Update pattern to ECS field only
+            
 ??? abstract "Login Brute-Force Successful On Okta"
     
     A user has attempted to login several times (brute-force) on Okta and succeeded to login.
@@ -442,12 +454,20 @@ Rules catalog includes **990 built-in detection rules** ([_last update on 2025-0
     
     - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 03/02/2025 - minor - Update pattern to ECS field only
+            
 ??? abstract "Login Brute-Force Successful On Jumpcloud Workstation"
     
     A user has attempted to login several times (brute-force) on Jumpcloud monitored workstations (windows, linux, mac) and succeeded to login.
     
     - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 03/02/2025 - minor - Update pattern to ECS field only
+            
 ??? abstract "Login Brute-Force Successful On Okta"
     
     A user has attempted to login several times (brute-force) on Okta and succeeded to login.
@@ -588,6 +608,10 @@ Rules catalog includes **990 built-in detection rules** ([_last update on 2025-0
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 03/02/2025 - minor - Update pattern to ECS field only
+            
 ??? abstract "Microsoft Defender for Office 365 High Severity AIR Alert"
     
     Microsoft Defender for Office 365 includes the capability to run Automated investigation and response (AIR) actions. This rule detects when a High severity alert triggers an automated investigation, such as when a potentially malicious URL click was detected, or when a user is restricted from sending email.
@@ -722,13 +746,16 @@ Rules catalog includes **990 built-in detection rules** ([_last update on 2025-0
             
 ??? abstract "Authentication Impossible Travel"
     
-    Detects impossible travel when performing authentication from a source IP address, grouped by username.
+    Detects impossible travel when performing authentication from a source IP address, grouped by user name. This could require some alert filtering for some user generic accounts, and known IP address range. Microsoft / Office 365 format is not covered by this rule.
     
-    - **Effort:** advanced
+    - **Effort:** master
     
     - **Changelog:**
     
-        - 27/07/2024 - major - review filter to avoid false positive
+        - 27/07/2024 - major - review filter to avoid false positives
+        - 30/08/2024 - minor - improve filter to avoid false positives
+        - 30/01/2025 - major - Pattern rework with ECS fields only and simple authentication success use case
+        - 04/02/2025 - major - Excluding Microsoft 365 format to avoid false positives
             
 ??? abstract "Broadcom Edge Secure Web Gateway High Threat"
     
@@ -824,12 +851,16 @@ Rules catalog includes **990 built-in detection rules** ([_last update on 2025-0
     
     - **Effort:** master
     
-??? abstract "Login Brute-Force On Firewall"
+??? abstract "Login Brute-Force On Fortinet Firewall From Internet"
     
-    Detects successful access to administration console of a firewall after several failure.
+    Detects successful access to administration console of a firewall after several failure from Internet.
     
     - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 03/02/2025 - minor - Update pattern to ECS field only and intake format
+            
 ??? abstract "Login Brute-Force On FreeRadius"
     
     A user has attempted to login several times (brute-force) with error then one success.
@@ -858,16 +889,53 @@ Rules catalog includes **990 built-in detection rules** ([_last update on 2025-0
     
     - **Effort:** master
     
-??? abstract "Netskope Admin Audit"
+??? abstract "Netskope Admin Audit High Severity"
     
-    Audit events for admin activites, from Logins to policies' changes.
+    Audit events detection for admin activites that differ from authentications, with high severity level according to Netskope.
     
     - **Effort:** master
     
     - **Changelog:**
     
+        - 29/01/2025 - minor - Rework pattern for high severity events only and filter out authentication events.
         - 28/03/2024 - minor - Rule effort was updated to master
             
+??? abstract "Netskope Malware Detected"
+    
+    Netskope identified a malware with a high severity (excluding Patient Zero here)
+    
+    - **Effort:** master
+    
+??? abstract "Netskope Malware Patient Zero Detected"
+    
+    Netskope identified a malware as Patient Zero.
+    
+    - **Effort:** master
+    
+??? abstract "Netskope Potential Brute Force On Protected Applications"
+    
+    Detects potential brute force on Netskope protected applications with more than 10 failures in 5 minutes for the same user name and application.
+    
+    - **Effort:** master
+    
+??? abstract "Netskope Successful Brute Force On Protected Applications"
+    
+    Detects successful brute force on Netskope protected applications after more than 5 failures in 5 minutes and one success for the same user name and application.
+    
+    - **Effort:** master
+    
+??? abstract "Netskope Successful Brute-Force On Management Console"
+    
+    Detects successful access to Netskope management console after more than 10 failures in 5 minutes for the same user name.
+    
+    - **Effort:** master
+    
+??? abstract "Netskope Web Isolation On Suspicious Domain"
+    
+    Netskope identified a suspicious domain and triggered web sandboxing (RBI)
+    
+    - **Effort:** master
+    
 ??? abstract "Okta Many Passwords Reset Attempt"
     
     This rule identifies a high number of Okta user password reset or account unlock attempts. An adversary may attempt to obtain unauthorized access to Okta user accounts using these methods and attempt to blend in with normal activity in their target's environment and evade detection.
@@ -2287,6 +2355,7 @@ Rules catalog includes **990 built-in detection rules** ([_last update on 2025-0
     
         - 26/07/2024 - minor - Removing tools relationships as it was inaccurate
         - 27/08/2024 - minor - improve filter to avoid false positive
+        - 31/01/2025 - major - update keywords to improve detection coverage and remove false positives
             
 ??? abstract "PowerShell Malicious PowerShell Commandlets"
     
@@ -3178,6 +3247,11 @@ Rules catalog includes **990 built-in detection rules** ([_last update on 2025-0
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 24/01/2025 - minor - Adding filter to reduce false positives.
+        - 27/01/2025 - minor - Changing field and adding filter to reduce false positives.
+            
 ??? abstract "Google Workspace Anomaly File Downloads"
     
     Detects a large number of file downloads.
@@ -4982,13 +5056,16 @@ Rules catalog includes **990 built-in detection rules** ([_last update on 2025-0
             
 ??? abstract "Authentication Impossible Travel"
     
-    Detects impossible travel when performing authentication from a source IP address, grouped by username.
+    Detects impossible travel when performing authentication from a source IP address, grouped by user name. This could require some alert filtering for some user generic accounts, and known IP address range. Microsoft / Office 365 format is not covered by this rule.
     
-    - **Effort:** advanced
+    - **Effort:** master
     
     - **Changelog:**
     
-        - 27/07/2024 - major - review filter to avoid false positive
+        - 27/07/2024 - major - review filter to avoid false positives
+        - 30/08/2024 - minor - improve filter to avoid false positives
+        - 30/01/2025 - major - Pattern rework with ECS fields only and simple authentication success use case
+        - 04/02/2025 - major - Excluding Microsoft 365 format to avoid false positives
             
 ??? abstract "Broadcom Edge Secure Web Gateway High Threat"
     
@@ -5084,12 +5161,16 @@ Rules catalog includes **990 built-in detection rules** ([_last update on 2025-0
     
     - **Effort:** master
     
-??? abstract "Login Brute-Force On Firewall"
+??? abstract "Login Brute-Force On Fortinet Firewall From Internet"
     
-    Detects successful access to administration console of a firewall after several failure.
+    Detects successful access to administration console of a firewall after several failure from Internet.
     
     - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 03/02/2025 - minor - Update pattern to ECS field only and intake format
+            
 ??? abstract "Login Brute-Force On FreeRadius"
     
     A user has attempted to login several times (brute-force) with error then one success.
@@ -5118,16 +5199,53 @@ Rules catalog includes **990 built-in detection rules** ([_last update on 2025-0
     
     - **Effort:** master
     
-??? abstract "Netskope Admin Audit"
+??? abstract "Netskope Admin Audit High Severity"
     
-    Audit events for admin activites, from Logins to policies' changes.
+    Audit events detection for admin activites that differ from authentications, with high severity level according to Netskope.
     
     - **Effort:** master
     
     - **Changelog:**
     
+        - 29/01/2025 - minor - Rework pattern for high severity events only and filter out authentication events.
         - 28/03/2024 - minor - Rule effort was updated to master
             
+??? abstract "Netskope Malware Detected"
+    
+    Netskope identified a malware with a high severity (excluding Patient Zero here)
+    
+    - **Effort:** master
+    
+??? abstract "Netskope Malware Patient Zero Detected"
+    
+    Netskope identified a malware as Patient Zero.
+    
+    - **Effort:** master
+    
+??? abstract "Netskope Potential Brute Force On Protected Applications"
+    
+    Detects potential brute force on Netskope protected applications with more than 10 failures in 5 minutes for the same user name and application.
+    
+    - **Effort:** master
+    
+??? abstract "Netskope Successful Brute Force On Protected Applications"
+    
+    Detects successful brute force on Netskope protected applications after more than 5 failures in 5 minutes and one success for the same user name and application.
+    
+    - **Effort:** master
+    
+??? abstract "Netskope Successful Brute-Force On Management Console"
+    
+    Detects successful access to Netskope management console after more than 10 failures in 5 minutes for the same user name.
+    
+    - **Effort:** master
+    
+??? abstract "Netskope Web Isolation On Suspicious Domain"
+    
+    Netskope identified a suspicious domain and triggered web sandboxing (RBI)
+    
+    - **Effort:** master
+    
 ??? abstract "Okta Many Passwords Reset Attempt"
     
     This rule identifies a high number of Okta user password reset or account unlock attempts. An adversary may attempt to obtain unauthorized access to Okta user accounts using these methods and attempt to blend in with normal activity in their target's environment and evade detection.
@@ -6754,13 +6872,16 @@ Rules catalog includes **990 built-in detection rules** ([_last update on 2025-0
             
 ??? abstract "Authentication Impossible Travel"
     
-    Detects impossible travel when performing authentication from a source IP address, grouped by username.
+    Detects impossible travel when performing authentication from a source IP address, grouped by user name. This could require some alert filtering for some user generic accounts, and known IP address range. Microsoft / Office 365 format is not covered by this rule.
     
-    - **Effort:** advanced
+    - **Effort:** master
     
     - **Changelog:**
     
-        - 27/07/2024 - major - review filter to avoid false positive
+        - 27/07/2024 - major - review filter to avoid false positives
+        - 30/08/2024 - minor - improve filter to avoid false positives
+        - 30/01/2025 - major - Pattern rework with ECS fields only and simple authentication success use case
+        - 04/02/2025 - major - Excluding Microsoft 365 format to avoid false positives
             
 ??? abstract "Broadcom Edge Secure Web Gateway High Threat"
     
@@ -6856,12 +6977,16 @@ Rules catalog includes **990 built-in detection rules** ([_last update on 2025-0
     
     - **Effort:** master
     
-??? abstract "Login Brute-Force On Firewall"
+??? abstract "Login Brute-Force On Fortinet Firewall From Internet"
     
-    Detects successful access to administration console of a firewall after several failure.
+    Detects successful access to administration console of a firewall after several failure from Internet.
     
     - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 03/02/2025 - minor - Update pattern to ECS field only and intake format
+            
 ??? abstract "Login Brute-Force On FreeRadius"
     
     A user has attempted to login several times (brute-force) with error then one success.
@@ -6890,16 +7015,53 @@ Rules catalog includes **990 built-in detection rules** ([_last update on 2025-0
     
     - **Effort:** master
     
-??? abstract "Netskope Admin Audit"
+??? abstract "Netskope Admin Audit High Severity"
     
-    Audit events for admin activites, from Logins to policies' changes.
+    Audit events detection for admin activites that differ from authentications, with high severity level according to Netskope.
     
     - **Effort:** master
     
     - **Changelog:**
     
+        - 29/01/2025 - minor - Rework pattern for high severity events only and filter out authentication events.
         - 28/03/2024 - minor - Rule effort was updated to master
             
+??? abstract "Netskope Malware Detected"
+    
+    Netskope identified a malware with a high severity (excluding Patient Zero here)
+    
+    - **Effort:** master
+    
+??? abstract "Netskope Malware Patient Zero Detected"
+    
+    Netskope identified a malware as Patient Zero.
+    
+    - **Effort:** master
+    
+??? abstract "Netskope Potential Brute Force On Protected Applications"
+    
+    Detects potential brute force on Netskope protected applications with more than 10 failures in 5 minutes for the same user name and application.
+    
+    - **Effort:** master
+    
+??? abstract "Netskope Successful Brute Force On Protected Applications"
+    
+    Detects successful brute force on Netskope protected applications after more than 5 failures in 5 minutes and one success for the same user name and application.
+    
+    - **Effort:** master
+    
+??? abstract "Netskope Successful Brute-Force On Management Console"
+    
+    Detects successful access to Netskope management console after more than 10 failures in 5 minutes for the same user name.
+    
+    - **Effort:** master
+    
+??? abstract "Netskope Web Isolation On Suspicious Domain"
+    
+    Netskope identified a suspicious domain and triggered web sandboxing (RBI)
+    
+    - **Effort:** master
+    
 ??? abstract "Okta Many Passwords Reset Attempt"
     
     This rule identifies a high number of Okta user password reset or account unlock attempts. An adversary may attempt to obtain unauthorized access to Okta user accounts using these methods and attempt to blend in with normal activity in their target's environment and evade detection.
@@ -8575,13 +8737,16 @@ Rules catalog includes **990 built-in detection rules** ([_last update on 2025-0
             
 ??? abstract "Authentication Impossible Travel"
     
-    Detects impossible travel when performing authentication from a source IP address, grouped by username.
+    Detects impossible travel when performing authentication from a source IP address, grouped by user name. This could require some alert filtering for some user generic accounts, and known IP address range. Microsoft / Office 365 format is not covered by this rule.
     
-    - **Effort:** advanced
+    - **Effort:** master
     
     - **Changelog:**
     
-        - 27/07/2024 - major - review filter to avoid false positive
+        - 27/07/2024 - major - review filter to avoid false positives
+        - 30/08/2024 - minor - improve filter to avoid false positives
+        - 30/01/2025 - major - Pattern rework with ECS fields only and simple authentication success use case
+        - 04/02/2025 - major - Excluding Microsoft 365 format to avoid false positives
             
 ??? abstract "Broadcom Edge Secure Web Gateway High Threat"
     
@@ -8677,12 +8842,16 @@ Rules catalog includes **990 built-in detection rules** ([_last update on 2025-0
     
     - **Effort:** master
     
-??? abstract "Login Brute-Force On Firewall"
+??? abstract "Login Brute-Force On Fortinet Firewall From Internet"
     
-    Detects successful access to administration console of a firewall after several failure.
+    Detects successful access to administration console of a firewall after several failure from Internet.
     
     - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 03/02/2025 - minor - Update pattern to ECS field only and intake format
+            
 ??? abstract "Login Brute-Force On FreeRadius"
     
     A user has attempted to login several times (brute-force) with error then one success.
@@ -8711,16 +8880,53 @@ Rules catalog includes **990 built-in detection rules** ([_last update on 2025-0
     
     - **Effort:** master
     
-??? abstract "Netskope Admin Audit"
+??? abstract "Netskope Admin Audit High Severity"
     
-    Audit events for admin activites, from Logins to policies' changes.
+    Audit events detection for admin activites that differ from authentications, with high severity level according to Netskope.
     
     - **Effort:** master
     
     - **Changelog:**
     
+        - 29/01/2025 - minor - Rework pattern for high severity events only and filter out authentication events.
         - 28/03/2024 - minor - Rule effort was updated to master
             
+??? abstract "Netskope Malware Detected"
+    
+    Netskope identified a malware with a high severity (excluding Patient Zero here)
+    
+    - **Effort:** master
+    
+??? abstract "Netskope Malware Patient Zero Detected"
+    
+    Netskope identified a malware as Patient Zero.
+    
+    - **Effort:** master
+    
+??? abstract "Netskope Potential Brute Force On Protected Applications"
+    
+    Detects potential brute force on Netskope protected applications with more than 10 failures in 5 minutes for the same user name and application.
+    
+    - **Effort:** master
+    
+??? abstract "Netskope Successful Brute Force On Protected Applications"
+    
+    Detects successful brute force on Netskope protected applications after more than 5 failures in 5 minutes and one success for the same user name and application.
+    
+    - **Effort:** master
+    
+??? abstract "Netskope Successful Brute-Force On Management Console"
+    
+    Detects successful access to Netskope management console after more than 10 failures in 5 minutes for the same user name.
+    
+    - **Effort:** master
+    
+??? abstract "Netskope Web Isolation On Suspicious Domain"
+    
+    Netskope identified a suspicious domain and triggered web sandboxing (RBI)
+    
+    - **Effort:** master
+    
 ??? abstract "Okta Many Passwords Reset Attempt"
     
     This rule identifies a high number of Okta user password reset or account unlock attempts. An adversary may attempt to obtain unauthorized access to Okta user accounts using these methods and attempt to blend in with normal activity in their target's environment and evade detection.
@@ -11005,13 +11211,16 @@ Rules catalog includes **990 built-in detection rules** ([_last update on 2025-0
     
 ??? abstract "Authentication Impossible Travel"
     
-    Detects impossible travel when performing authentication from a source IP address, grouped by username.
+    Detects impossible travel when performing authentication from a source IP address, grouped by user name. This could require some alert filtering for some user generic accounts, and known IP address range. Microsoft / Office 365 format is not covered by this rule.
     
-    - **Effort:** advanced
+    - **Effort:** master
     
     - **Changelog:**
     
-        - 27/07/2024 - major - review filter to avoid false positive
+        - 27/07/2024 - major - review filter to avoid false positives
+        - 30/08/2024 - minor - improve filter to avoid false positives
+        - 30/01/2025 - major - Pattern rework with ECS fields only and simple authentication success use case
+        - 04/02/2025 - major - Excluding Microsoft 365 format to avoid false positives
             
 ??? abstract "Brute Force WALLIX Bastion"
     
@@ -11086,12 +11295,16 @@ Rules catalog includes **990 built-in detection rules** ([_last update on 2025-0
     
     - **Effort:** master
     
-??? abstract "Login Brute-Force On Firewall"
+??? abstract "Login Brute-Force On Fortinet Firewall From Internet"
     
-    Detects successful access to administration console of a firewall after several failure.
+    Detects successful access to administration console of a firewall after several failure from Internet.
     
     - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 03/02/2025 - minor - Update pattern to ECS field only and intake format
+            
 ??? abstract "Login Brute-Force On FreeRadius"
     
     A user has attempted to login several times (brute-force) with error then one success.
@@ -11108,16 +11321,35 @@ Rules catalog includes **990 built-in detection rules** ([_last update on 2025-0
     
         - 22/05/2024 - minor - Switch the group-by clause to a sekoiaio uuid field.
             
-??? abstract "Login Brute-Force Successful"
+??? abstract "Login Brute-Force Successful Linux"
     
-    A user has attempted to login several times (brute-force) and succeeded to login.
+    A user has attempted to login several times (brute-force) and succeeded to login on the linux monitored endpoint.
     
     - **Effort:** advanced
     
     - **Changelog:**
     
         - 06/10/2023 - minor - renaming and tunn filters to limit False Positive
+        - 03/02/2025 - minor - Update pattern to ECS field only
             
+??? abstract "Netskope Potential Brute Force On Protected Applications"
+    
+    Detects potential brute force on Netskope protected applications with more than 10 failures in 5 minutes for the same user name and application.
+    
+    - **Effort:** master
+    
+??? abstract "Netskope Successful Brute Force On Protected Applications"
+    
+    Detects successful brute force on Netskope protected applications after more than 5 failures in 5 minutes and one success for the same user name and application.
+    
+    - **Effort:** master
+    
+??? abstract "Netskope Successful Brute-Force On Management Console"
+    
+    Detects successful access to Netskope management console after more than 10 failures in 5 minutes for the same user name.
+    
+    - **Effort:** master
+    
 ??? abstract "Password Change Brute-Force On AzureAD"
     
     A change of password has failed on Azure Active Directory, 5 times for the same user
@@ -13024,7 +13256,7 @@ Rules catalog includes **990 built-in detection rules** ([_last update on 2025-0
     
     Detects suspicious hostnames such as ones with kali in it, to detect kali linux default hosts, but also other hostnames commonly used in attacks. List can be improved according to the environment.
     
-    - **Effort:** intermediate
+    - **Effort:** advanced
     
     - **Changelog:**
     
@@ -13289,6 +13521,7 @@ Rules catalog includes **990 built-in detection rules** ([_last update on 2025-0
     - **Changelog:**
     
         - 20/06/2024 - minor - Added filter to reduce false positives
+        - 30/01/2025 - minor - Similarity strategy was modified to have more relevant alerts.
             
 ??? abstract "SSH Port Binding"
     
@@ -13425,14 +13658,15 @@ Rules catalog includes **990 built-in detection rules** ([_last update on 2025-0
     
         - 15/02/2024 - minor - Added filter to reduce false positives
             
-??? abstract "Netskope Alert"
+??? abstract "Netskope Alerts Compliance"
     
-    Forward alerts reported by Netskope.  
+    Forward alerts reported by Netskope related to compliance issues.
     
     - **Effort:** master
     
     - **Changelog:**
     
+        - 29/01/2024 - minor - Rework detection pattern to focus on compliance issues
         - 28/03/2024 - minor - Rule effort was updated to master
             
 ??? abstract "Remote File Copy"

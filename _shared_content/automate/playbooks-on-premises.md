@@ -9,9 +9,6 @@ Below, we provide detailed instructions on how to accomplish the installation pr
 !!! warning
     The Playbook runner supports only action, not trigger, execution on-premises.
 
-!!! INFO
-    This feature is currently in public beta. If you would like to try it, please get in touch with us.
-
 ## Prerequisites
 
 ### Host requirements
