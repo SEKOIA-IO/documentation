@@ -498,6 +498,7 @@ nav:
       - Vectra Cognito Detect: integration/categories/network_security/vectra.md
       - WatchGuard Firebox: integration/categories/network_security/watchguard_firebox.md
       - Wiz Issues: integration/categories/network_security/wiz_issues.md
+      - Wiz Vulnerability Findings: integration/categories/network_security/wiz_vulnerability_findings.md
       - Zscaler Internet Access: integration/categories/network_security/zscaler_zia.md
   - List of Playbooks Actions:
     - Overview: integration/action_library/overview.md
