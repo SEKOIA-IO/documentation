@@ -438,7 +438,7 @@ nav:
       - OpenVPN: integration/categories/network/openvpn.md
       - Pulse Connect Secure: integration/categories/network/pulse.md
       - Squid: integration/categories/network/squid.md
-      - Sesame it Jizo NDR: integration/categories/network/sesameit_jizo.md
+      - Jizo AI / Sesame Jizo NDR: integration/categories/network/sesameit_jizo.md
       - Umbrella DNS Logs: integration/categories/network/umbrella_dns.md
       - Unbound: integration/categories/network/unbound.md
     - Network Security:
