@@ -11,10 +11,6 @@ Juniper Networks' JunOS is an advanced operating system powering Juniper's netwo
 - **Version Compatibility**: 23.2
 - **Detection based on**: Telemetry
 
-!!! warning
-    Important note - This format is currently in beta. We highly value your feedback to improve its performance.
-
-
 ## Supported events
 
 This integration supports the following events:

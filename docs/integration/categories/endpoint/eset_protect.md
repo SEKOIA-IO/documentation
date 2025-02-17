@@ -6,9 +6,6 @@ type: intake
 
 ## Overview
 
-!!! Warning
-    Important note - This format is currently in beta. We highly value your feedback to improve its performance.
-
 - **Supported environment**: On Premise / SaaS
 - **Version compatibility, if applicable**: 9.x, 10.x, 11.x
 
