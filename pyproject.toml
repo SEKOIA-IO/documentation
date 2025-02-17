@@ -1,27 +1,30 @@
-[tool.poetry]
+[project]
 name = "sekoiaio-documentation"
 description = "An MkDocs server for SEKOIA.IO public Markdown documentation"
 version = "1.0"
 authors = []
+requires-python = ">=3.11,<4.0.0"
+
+dependencies = [
+    "mkdocs (>=1.6.0,<2.0.0)",
+    "mkdocs-material (>=9.6.4,<10.0.0)",
+    "mkdocs-redirects (>=1.2.1,<2.0.0)",
+    "markdown-include (>=0.8.1,<0.9.0)",
+    "lightgallery (>=0.5,<0.6.0)",
+    "markdown (>=3.7,<4.0.0)",
+    "libsass (>=0.23.0,<0.24.0.0)",
+]
+
+[tool.poetry]
 packages = [
     { include = "plugins" }
 ]
 
-[tool.poetry.plugins."mkdocs.plugins"]
+[project.entry-points."mkdocs.plugins"]
 redoc = "plugins.redoc:RedocPlugin"
 integration_by_uuid = "plugins.integration_by_uuid:IntegrationByUUIDPlugin"
 sass = "plugins.sass:CompileSCSSPlugin"
 
-[tool.poetry.dependencies]
-python = "^3.11"
-mkdocs = "^1.6.0"
-mkdocs-material = "^9.1.21"
-mkdocs-redirects = "^1.2.1"
-markdown-include = "^0.8.1"
-lightgallery = "^0.5"
-markdown = "^3.7"
-libsass = "^0.23.0"
-
 [build-system]
-requires = [ "poetry-core>=1.0.0",]
+requires = [ "poetry-core>=2.0.0",]
 build-backend = "poetry.core.masonry.api"
