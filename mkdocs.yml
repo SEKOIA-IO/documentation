@@ -497,6 +497,7 @@ nav:
       - Varonis Data Security: integration/categories/network_security/varonis_data_security.md
       - Vectra Cognito Detect: integration/categories/network_security/vectra.md
       - WatchGuard Firebox: integration/categories/network_security/watchguard_firebox.md
+      - Wiz Cloud Configuration Findings: integration/categories/network_security/wiz_cloud_configuration_findings.md
       - Wiz Issues: integration/categories/network_security/wiz_issues.md
       - Zscaler Internet Access: integration/categories/network_security/zscaler_zia.md
   - List of Playbooks Actions:
