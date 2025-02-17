@@ -1,4 +1,4 @@
-Rules catalog includes **996 built-in detection rules** ([_last update on 2025-02-10_](rules_changelog.md)).
+Rules catalog includes **996 built-in detection rules** ([_last update on 2025-02-17_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Identity Information**
 
@@ -4697,6 +4697,7 @@ Rules catalog includes **996 built-in detection rules** ([_last update on 2025-0
     - **Changelog:**
     
         - 13/08/2024 - minor - Adding elements to filter to reduce false positives and changing effort level.
+        - 13/02/2025 - minor - Adding new filters to reduce false positives.
             
 ??? abstract "Taskhostw Wrong Parent"
     
@@ -6038,6 +6039,7 @@ Rules catalog includes **996 built-in detection rules** ([_last update on 2025-0
     - **Changelog:**
     
         - 13/08/2024 - minor - Adding elements to filter to reduce false positives and changing effort level.
+        - 13/02/2025 - minor - Adding new filters to reduce false positives.
             
 ??? abstract "Taskhostw Wrong Parent"
     
@@ -7718,6 +7720,7 @@ Rules catalog includes **996 built-in detection rules** ([_last update on 2025-0
     - **Changelog:**
     
         - 13/08/2024 - minor - Adding elements to filter to reduce false positives and changing effort level.
+        - 13/02/2025 - minor - Adding new filters to reduce false positives.
             
 ??? abstract "Taskhostw Wrong Parent"
     
