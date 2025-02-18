@@ -10,10 +10,6 @@ A secure email gateway to block spam, viruses, and malware.
 - **Detection based on**: Telemetry
 - **Supported application or feature**: Email gateway
 
-
-!!! warning
-    Important note - This format is currently in beta. We highly value your feedback to improve its performance.
-
 ### Supported datasets
 
 This integration can collect the following datasets from Mimecast:

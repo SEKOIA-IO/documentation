@@ -7,9 +7,6 @@ type: intake
 Azure Key Vault is a cloud service that securely stores and manages sensitive information such as passwords, encryption
 keys, and certificates. It helps safeguard cryptographic keys and secrets used by cloud applications and services. This setup guide describe how to forward events produced by `Azure Key Vault` to Sekoia.io.
 
-!!! warning
-    Important note - This format is currently in beta. We highly value your feedback to improve its performance.
-
 - **Vendor**: Microsoft Azure
 - **Supported environment**: SaaS
 - **Detection based on**: Telemetry
