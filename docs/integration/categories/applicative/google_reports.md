@@ -131,7 +131,8 @@ Find more information on the [official google documentation](https://cloud.googl
     * Type the `an Google workspace admin email`.
   
 !!! Important
-    This Google workspace admin email is any user part of the domain **that has** the right to view de Data of Google Workspace 
+    * This Google workspace admin email is any user part of the domain **that has** the right to view de Data of Google Workspace
+    * If you are uncertain whether to use a super admin or admin email, ensure that you possess the appropriate permissions in the email for the service you are requesting. For example, if you need to access logs on Google Vault, you need the Access all logs permission.
 
 ### Enjoy your events on the [Events page](https://app.sekoia.io/operations/events)
 
