@@ -4,6 +4,22 @@
 In this section, you will find examples of raw logs as generated natively by the source. These examples are provided to help integrators understand the data format before ingestion into Sekoia.io. It is crucial for setting up the correct parsing stages and ensuring that all relevant information is captured.
 
 
+=== "common_log_format_1"
+
+    ```
+	1.2.3.4 - johndoe [05/02/2025 11:30:29] "GET https://sub.example.com/1.png HTTP/1.1" 200 - - 1000 Business Services
+    ```
+
+
+
+=== "common_log_format_2"
+
+    ```
+	5.6.7.8 - janedoe [05/02/2025 11:31:06] "CONNECT https://example.com:443 HTTP/1.1" 200 -
+    ```
+
+
+
 === "connect"
 
     ```

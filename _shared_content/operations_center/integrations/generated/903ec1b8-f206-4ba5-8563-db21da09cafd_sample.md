@@ -582,6 +582,46 @@ In this section, you will find examples of raw logs as generated natively by the
 
 
 
+=== "test_dns_response_complicated"
+
+
+    ```json
+	{
+        "VendorName": "palo alto networks",
+        "DeviceSN": "xxxxxxxxxxxxx",
+        "TimeReceived": "2025-02-11T10:51:15.456002Z",
+        "LogType": "DNS",
+        "Subtype": "realtime_dns_telemetry_response",
+        "SubType": "realtime_dns_telemetry_response",
+        "TimeGenerated": "2025-02-11T10:51:15.000000Z",
+        "RecordType": "cname,cname,cname,a,a,a,a,a,a,a,a",
+        "DNSResolverIP": "1.2.3.4",
+        "ThreatID": 0,
+        "DNSCategory": "benign",
+        "ThreatName": null,
+        "SourceAddress": "5.6.7.8",
+        "FromZone": "RN-USDAA-1",
+        "Action": "Allow",
+        "DNSResponse": [
+            "sub1.example.com.",
+            "sub2.example.com.",
+            "example2.net.",
+            "9.10.11.9",
+            "12.13.14.11",
+            "9.10.11.11",
+            "12.13.14.15",
+            "9.10.11.12",
+            "12.13.14.10",
+            "9.10.11.14",
+            "9.10.11.4"
+        ],
+        "ToZone": null,
+        "DestinationUser": null
+    }
+    ```
+
+
+
 === "test_event_reason"
 
 
