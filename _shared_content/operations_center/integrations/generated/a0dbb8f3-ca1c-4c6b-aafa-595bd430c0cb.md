@@ -27,6 +27,125 @@ In details, the following table denotes the type of events produced by this inte
 
 This section demonstrates how the raw logs will be transformed by our parsers. It shows the extracted fields that will be available for use in the [built-in detection rules](/xdr/features/detect/rules_catalog.md) and hunting activities in the [events page](/xdr/features/investigate/events.md). Understanding these transformations is essential for analysts to create effective detection mechanisms with [custom detection rules](/xdr/features/detect/sigma.md) and to leverage the full potential of the collected data.
 
+=== "common_log_format_1.json"
+
+    ```json
+	
+    {
+        "message": "1.2.3.4 - johndoe [05/02/2025 11:30:29] \"GET https://sub.example.com/1.png HTTP/1.1\" 200 - - 1000 Business Services",
+        "event": {
+            "category": [
+                "network",
+                "web"
+            ]
+        },
+        "@timestamp": "2025-05-02T11:30:29Z",
+        "http": {
+            "request": {
+                "method": "GET"
+            },
+            "response": {
+                "status_code": 200
+            }
+        },
+        "network": {
+            "direction": "egress"
+        },
+        "observer": {
+            "product": "Squid",
+            "type": "proxy",
+            "vendor": "Squid"
+        },
+        "related": {
+            "ip": [
+                "1.2.3.4"
+            ],
+            "user": [
+                "johndoe"
+            ]
+        },
+        "source": {
+            "address": "1.2.3.4",
+            "ip": "1.2.3.4"
+        },
+        "url": {
+            "domain": "sub.example.com",
+            "full": "https://sub.example.com/1.png",
+            "original": "https://sub.example.com/1.png",
+            "path": "/1.png",
+            "port": 443,
+            "registered_domain": "example.com",
+            "scheme": "https",
+            "subdomain": "sub",
+            "top_level_domain": "com"
+        },
+        "user": {
+            "name": "johndoe"
+        }
+    }
+    	
+	```
+
+
+=== "common_log_format_2.json"
+
+    ```json
+	
+    {
+        "message": "5.6.7.8 - janedoe [05/02/2025 11:31:06] \"CONNECT https://example.com:443 HTTP/1.1\" 200 -",
+        "event": {
+            "category": [
+                "network",
+                "web"
+            ]
+        },
+        "@timestamp": "2025-05-02T11:31:06Z",
+        "destination": {
+            "address": "https://example.com",
+            "domain": "https://example.com",
+            "port": 443,
+            "registered_domain": "example.com",
+            "top_level_domain": "com"
+        },
+        "http": {
+            "request": {
+                "method": "CONNECT"
+            },
+            "response": {
+                "status_code": 200
+            }
+        },
+        "network": {
+            "direction": "egress"
+        },
+        "observer": {
+            "product": "Squid",
+            "type": "proxy",
+            "vendor": "Squid"
+        },
+        "related": {
+            "hosts": [
+                "https://example.com"
+            ],
+            "ip": [
+                "5.6.7.8"
+            ],
+            "user": [
+                "janedoe"
+            ]
+        },
+        "source": {
+            "address": "5.6.7.8",
+            "ip": "5.6.7.8"
+        },
+        "user": {
+            "name": "janedoe"
+        }
+    }
+    	
+	```
+
+
 === "connect.json"
 
     ```json
