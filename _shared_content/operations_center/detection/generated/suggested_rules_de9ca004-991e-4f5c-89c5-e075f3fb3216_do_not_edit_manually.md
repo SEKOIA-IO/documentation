@@ -189,6 +189,24 @@ The following Sekoia.io built-in rules match the intake **Netskope**. This docum
     
     - **Effort:** master
 
+??? abstract "Netskope Potential Brute Force On Protected Applications"
+    
+    Detects potential brute force on Netskope protected applications with more than 10 failures in 5 minutes for the same user name and application.
+    
+    - **Effort:** master
+
+??? abstract "Netskope Successful Brute Force On Protected Applications"
+    
+    Detects successful brute force on Netskope protected applications after more than 5 failures in 5 minutes and one success for the same user name and application.
+    
+    - **Effort:** master
+
+??? abstract "Netskope Successful Brute-Force On Management Console"
+    
+    Detects successful access to Netskope management console after more than 10 failures in 5 minutes for the same user name.
+    
+    - **Effort:** master
+
 ??? abstract "Netskope Web Isolation On Suspicious Domain"
     
     Netskope identified a suspicious domain and triggered web sandboxing (RBI)

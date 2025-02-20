@@ -4,6 +4,22 @@
 In this section, you will find examples of raw logs as generated natively by the source. These examples are provided to help integrators understand the data format before ingestion into Sekoia.io. It is crucial for setting up the correct parsing stages and ensuring that all relevant information is captured.
 
 
+=== "common_log_format_1"
+
+    ```
+	1.2.3.4 - johndoe [05/02/2025 11:30:29] "GET https://sub.example.com/1.png HTTP/1.1" 200 - - 1000 Business Services
+    ```
+
+
+
+=== "common_log_format_2"
+
+    ```
+	5.6.7.8 - janedoe [05/02/2025 11:31:06] "CONNECT https://example.com:443 HTTP/1.1" 200 -
+    ```
+
+
+
 === "connect"
 
     ```
@@ -24,6 +40,22 @@ In this section, you will find examples of raw logs as generated natively by the
 
     ```
 	1587042596.494   1717 192.168.224.39 TCP_TUNNEL/200 3512 CONNECT 193-164-229-102_s-2-18-244-11_ts-1587042594-clienttons-s.akamaihd.net:443 - HIER_DIRECT/193-164-229-102_s-2-18-244-11_ts-1587042594-clienttons-s.akamaihd.net -
+    ```
+
+
+
+=== "connect4"
+
+    ```
+	1737983758.627 207 1.2.3.4 TCP_TUNNEL/200 4047 CONNECT test.domain.org:443 - HIER_DIRECT/5.6.7.8 - 
+    ```
+
+
+
+=== "connect5"
+
+    ```
+	1737983750.078 61 1.2.3.4 TCP_TUNNEL/200 8811 CONNECT safebrowsing.googleapis.com:443 - HIER_DIRECT/5.6.7.8 -
     ```
 
 

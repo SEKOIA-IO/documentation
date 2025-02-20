@@ -1,7 +1,10 @@
-Changelog _last update on 2025-02-04_
+Changelog _last update on 2025-02-17_
 
 ## Changelog
 
+### Taskhost or Taskhostw Suspicious Child Found
+  - 13/02/2025 - minor - Adding new filters to reduce false positives.
+    
 ### Authentication Impossible Travel
   - 04/02/2025 - major - Excluding Microsoft 365 format to avoid false positives
     
@@ -256,9 +259,6 @@ Changelog _last update on 2025-02-04_
     
 ### Microsoft Exchange PowerShell Snap-Ins To Export Exchange Mailbox Data
   - 13/08/2024 - minor - Added filter to reduce false positives
-    
-### Taskhost or Taskhostw Suspicious Child Found
-  - 13/08/2024 - minor - Adding elements to filter to reduce false positives and changing effort level.
     
 ### RSA SecurID Failed Authentification
   - 08/08/2024 - minor - Group-by values were changed to avoid having too much alerts.

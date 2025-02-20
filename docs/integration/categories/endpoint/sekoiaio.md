@@ -38,9 +38,6 @@ The Endpoint Detection Agent supports the following operating systems, **on 64-b
 
 === "MacOs"
 
-    !!! note
-        The Sekoia.io agent is currently in beta for Mac OS.
-
     * macOS 13 Ventura and newer
 
 ## New features

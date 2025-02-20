@@ -1,4 +1,4 @@
-Rules catalog includes **993 built-in detection rules** ([_last update on 2025-02-04_](rules_changelog.md)).
+Rules catalog includes **996 built-in detection rules** ([_last update on 2025-02-17_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Identity Information**
 
@@ -909,6 +909,24 @@ Rules catalog includes **993 built-in detection rules** ([_last update on 2025-0
 ??? abstract "Netskope Malware Patient Zero Detected"
     
     Netskope identified a malware as Patient Zero.
+    
+    - **Effort:** master
+    
+??? abstract "Netskope Potential Brute Force On Protected Applications"
+    
+    Detects potential brute force on Netskope protected applications with more than 10 failures in 5 minutes for the same user name and application.
+    
+    - **Effort:** master
+    
+??? abstract "Netskope Successful Brute Force On Protected Applications"
+    
+    Detects successful brute force on Netskope protected applications after more than 5 failures in 5 minutes and one success for the same user name and application.
+    
+    - **Effort:** master
+    
+??? abstract "Netskope Successful Brute-Force On Management Console"
+    
+    Detects successful access to Netskope management console after more than 10 failures in 5 minutes for the same user name.
     
     - **Effort:** master
     
@@ -4679,6 +4697,7 @@ Rules catalog includes **993 built-in detection rules** ([_last update on 2025-0
     - **Changelog:**
     
         - 13/08/2024 - minor - Adding elements to filter to reduce false positives and changing effort level.
+        - 13/02/2025 - minor - Adding new filters to reduce false positives.
             
 ??? abstract "Taskhostw Wrong Parent"
     
@@ -5201,6 +5220,24 @@ Rules catalog includes **993 built-in detection rules** ([_last update on 2025-0
 ??? abstract "Netskope Malware Patient Zero Detected"
     
     Netskope identified a malware as Patient Zero.
+    
+    - **Effort:** master
+    
+??? abstract "Netskope Potential Brute Force On Protected Applications"
+    
+    Detects potential brute force on Netskope protected applications with more than 10 failures in 5 minutes for the same user name and application.
+    
+    - **Effort:** master
+    
+??? abstract "Netskope Successful Brute Force On Protected Applications"
+    
+    Detects successful brute force on Netskope protected applications after more than 5 failures in 5 minutes and one success for the same user name and application.
+    
+    - **Effort:** master
+    
+??? abstract "Netskope Successful Brute-Force On Management Console"
+    
+    Detects successful access to Netskope management console after more than 10 failures in 5 minutes for the same user name.
     
     - **Effort:** master
     
@@ -6002,6 +6039,7 @@ Rules catalog includes **993 built-in detection rules** ([_last update on 2025-0
     - **Changelog:**
     
         - 13/08/2024 - minor - Adding elements to filter to reduce false positives and changing effort level.
+        - 13/02/2025 - minor - Adding new filters to reduce false positives.
             
 ??? abstract "Taskhostw Wrong Parent"
     
@@ -7002,6 +7040,24 @@ Rules catalog includes **993 built-in detection rules** ([_last update on 2025-0
     
     - **Effort:** master
     
+??? abstract "Netskope Potential Brute Force On Protected Applications"
+    
+    Detects potential brute force on Netskope protected applications with more than 10 failures in 5 minutes for the same user name and application.
+    
+    - **Effort:** master
+    
+??? abstract "Netskope Successful Brute Force On Protected Applications"
+    
+    Detects successful brute force on Netskope protected applications after more than 5 failures in 5 minutes and one success for the same user name and application.
+    
+    - **Effort:** master
+    
+??? abstract "Netskope Successful Brute-Force On Management Console"
+    
+    Detects successful access to Netskope management console after more than 10 failures in 5 minutes for the same user name.
+    
+    - **Effort:** master
+    
 ??? abstract "Netskope Web Isolation On Suspicious Domain"
     
     Netskope identified a suspicious domain and triggered web sandboxing (RBI)
@@ -7664,6 +7720,7 @@ Rules catalog includes **993 built-in detection rules** ([_last update on 2025-0
     - **Changelog:**
     
         - 13/08/2024 - minor - Adding elements to filter to reduce false positives and changing effort level.
+        - 13/02/2025 - minor - Adding new filters to reduce false positives.
             
 ??? abstract "Taskhostw Wrong Parent"
     
@@ -8846,6 +8903,24 @@ Rules catalog includes **993 built-in detection rules** ([_last update on 2025-0
 ??? abstract "Netskope Malware Patient Zero Detected"
     
     Netskope identified a malware as Patient Zero.
+    
+    - **Effort:** master
+    
+??? abstract "Netskope Potential Brute Force On Protected Applications"
+    
+    Detects potential brute force on Netskope protected applications with more than 10 failures in 5 minutes for the same user name and application.
+    
+    - **Effort:** master
+    
+??? abstract "Netskope Successful Brute Force On Protected Applications"
+    
+    Detects successful brute force on Netskope protected applications after more than 5 failures in 5 minutes and one success for the same user name and application.
+    
+    - **Effort:** master
+    
+??? abstract "Netskope Successful Brute-Force On Management Console"
+    
+    Detects successful access to Netskope management console after more than 10 failures in 5 minutes for the same user name.
     
     - **Effort:** master
     
@@ -11260,6 +11335,24 @@ Rules catalog includes **993 built-in detection rules** ([_last update on 2025-0
         - 06/10/2023 - minor - renaming and tunn filters to limit False Positive
         - 03/02/2025 - minor - Update pattern to ECS field only
             
+??? abstract "Netskope Potential Brute Force On Protected Applications"
+    
+    Detects potential brute force on Netskope protected applications with more than 10 failures in 5 minutes for the same user name and application.
+    
+    - **Effort:** master
+    
+??? abstract "Netskope Successful Brute Force On Protected Applications"
+    
+    Detects successful brute force on Netskope protected applications after more than 5 failures in 5 minutes and one success for the same user name and application.
+    
+    - **Effort:** master
+    
+??? abstract "Netskope Successful Brute-Force On Management Console"
+    
+    Detects successful access to Netskope management console after more than 10 failures in 5 minutes for the same user name.
+    
+    - **Effort:** master
+    
 ??? abstract "Password Change Brute-Force On AzureAD"
     
     A change of password has failed on Azure Active Directory, 5 times for the same user

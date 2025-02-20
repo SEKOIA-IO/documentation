@@ -71,7 +71,7 @@ Inside our Python package `testhttp_modules` we can create a new file `trigger_n
 ```python
 import time
 
-from pydantic import BaseModel, HttpUrl
+from pydantic.v1 import BaseModel, HttpUrl
 import requests
 from requests import HTTPError
 from sekoia_automation.trigger import Trigger  # (1)!
@@ -149,7 +149,7 @@ Inside our Python package `testhttp_modules` we can create a new file `action_re
 ```python
 from typing import Literal
 
-from pydantic import BaseModel, HttpUrl
+from pydantic.v1 import BaseModel, HttpUrl
 import requests
 from sekoia_automation.action import Action  # (1)!
 
