@@ -33,9 +33,6 @@ Clavister Next-Gen Firewall offers advanced network protection with integrated f
   - **authentication (USERAUTH)**
   - **rule (RULE)**
 
-!!! Warning
-    This format is currently in beta. We highly value your feedback to improve its performance.
-
 ## Configure
 
 This setup guide will show you how to forward your Clavister Next-Gen Firewall events to Sekoia.io.

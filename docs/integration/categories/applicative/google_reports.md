@@ -1,5 +1,5 @@
 uuid: 04d36706-ee4a-419b-906d-f92f3a46bcdd
-name: Google Reports
+name: Google Workspace / ChromeOS
 type: intake
 
 ## Overview
@@ -8,7 +8,7 @@ type: intake
 - **Detection based on**: Telemetry
 - **Supported application or feature**: Application Logs
 
-Google Reports is a data reporting and analysis platform offered by Google for Google Workspace services, designed to provide insights and metrics about user activities and interactions within various Google services. It allows organizations to track and visualize user engagement, application usage, and other relevant data points, enabling informed decision-making and optimization of digital experiences. 
+Google Workspace, formerly known as G Suite, is a cloud-based productivity and collaboration platform developed by Google, featuring tools like Gmail, Google Drive, and Google Docs. It allows users to create, communicate, and collaborate in real-time from any location, promoting efficient teamwork and secure file management. Complementing this, ChromeOS is a Linux-based operating system designed for Chromebooks, focusing on delivering a fast and secure user experience centered around web applications and cloud services. Together, Google Workspace and ChromeOS provide an integrated environment that enhances productivity and collaboration in the digital age.
 
 ### Supported applications
 

@@ -57,6 +57,208 @@ print(f"Collection created with id {res.json()['id']}")
         - For which sub-community the collection must be created for by providing the `community_uuid` attribute
         - If the collection must be made available to sub-communities by  setting `available_for_sub_communities` to  `true`.
 
+### Import indicators
+!!! note
+    This is the prefered way for API integration.
+
+A dedicated endpoint allows to import indicators by sending them as the payload of a POST request. It supports batch creation of indicators, **up to 100 at once**.
+
+**1. Endpoint URL**
+
+`POST https://api.sekoia.io/v2/inthreat/ioc-collections/{collection_id}/indicators`
+
+**2. Payload specification**
+
+```json
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "IOC upload payload",
+    "description": "Parameters schema",
+    "type": "object",
+    "proprties": {
+        "default_fields": {
+            "type": "object",
+            "desription": "Default data that will be used for all IOCs of the batch",
+            "properties": {
+                "description": {
+                    "description": "Description of the IOCs",
+                    "type": "string"
+                },
+                "valid_from": {
+                    "description": "Validity start date",
+                    "type": "date-time",
+                    "default": "to_rfc3339(datetime.now(UTC))"
+                },
+                "valid_until": {
+                    "description": "Limit of validity",
+                    "type": "date-time"
+                },
+                "kill_chain_phases": {
+                    "description": "List of kill chain phases",
+                    "type": "array",
+                    "items": {
+                        "description": "Valid STIX kill chain phase",
+                        "type": "string"
+                    }
+                },
+                "x_ic_related_threat_refs": {
+                    "description": "List of related threats",
+                    "type": "array",
+                    "items": {
+                        "description": "Valid STIX ID",
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        "indicators": {
+            "description": "Particular data for each IOC of the batch",
+            "type": "array",
+            "minItems": 1,
+            "maxItems": 100,
+            "items": {
+                "type": "object",
+                "properties": {
+                    "value": {
+                        "description": "Value of the IOC",
+                        "type": "string"
+                    },
+                    "valid_from": {
+                        "description": "Validity start date",
+                        "type": "date-time"
+                    }
+                },
+                "required": [
+                    "value"
+                ]
+            }
+        },
+        "required": [
+            "indicators",
+            "default_fields"
+        ]
+    }
+}
+```
+
+<a name="upload-ioc-dict-example"></a>
+
+**3. Usage example**
+
+```py
+import json
+
+import requests
+from websockets.sync.client import connect
+
+
+# 1. Build the indicators' payload
+payload = { # (1)!
+    "indicators": [
+        {"value": "94.24.86.201"},
+        {"value": "152.10.13.131"},
+    ],
+    "default_fields": {
+        "valid_from": "2015-05-07T00:00:00Z",
+        "valid_until": "2045-05-07T00:00:00Z",
+        "kill_chain_phases": [
+            {"kill_chain_name": "lockheed-martin-cyber-kill-chain", "phase_name": "reconnaissance"}
+        ],
+        "x_ic_related_threat_refs": ["threat-actor--xxx"],
+    },
+}
+
+# 2. Use your API key for authentication
+api_key = "{Your API Key}"  # (2)!
+headers = {
+    "authorization": f"Bearer {api_key}"
+}
+
+# 3. Send the upload request
+collection_id = "ioc-collection--xxx"  # (3)!
+res = requests.post(
+    f"https://api.sekoia.io/v2/inthreat/ioc-collections/{collection_id}/indicators/",
+    headers=headers,
+    json=payload,
+)
+res.raise_for_status()
+nb_uploaded_IOCs = res.json()["total"]
+
+print(f"Imported {nb_uploaded_IOCs} successfully")
+```
+
+1. Replace with your own values/threat refs/etc
+2. Replace the content of this string with your API Key
+3. Replace the content of this string with the id of the collection the IOC must be added to
+
+**4. Response example**
+
+```json
+{
+    "items": [
+        {
+            "id": "indicator--xxx",
+            "type": "indicator",
+            "created": "2025-01-31T13:38:58.897795Z",
+            "modified": "2025-01-31T13:38:58.897795Z",
+            "revoked": false,
+            "lang": "en",
+            "spec_version": "2.1",
+            "x_ic_is_in_flint": false,
+            "x_ic_deprecated": false,
+            "name": "94.24.86.201",
+            "pattern": "[ipv4-addr:value = '94.24.86.201']",
+            "valid_from": "2015-05-07T00:00:00Z",
+            "valid_until": "2045-05-07T00:00:00Z",
+            "kill_chain_phases": [
+                {
+                    "kill_chain_name": "lockheed-martin-cyber-kill-chain",
+                    "phase_name": "reconnaissance"
+                }
+            ],
+            "pattern_type": "stix",
+            "x_ic_observable_types": [
+                "ipv4-addr"
+            ],
+            "x_ic_collection_ref": "ioc-collection--xxx",
+            "x_ic_related_threat_refs": [
+                "threat-actor--xxx"
+            ]
+        },
+        {
+            "id": "indicator--xxx",
+            "type": "indicator",
+            "created": "2025-01-31T13:38:58.897795Z",
+            "modified": "2025-01-31T13:38:58.897795Z",
+            "revoked": false,
+            "lang": "en",
+            "spec_version": "2.1",
+            "x_ic_is_in_flint": false,
+            "x_ic_deprecated": false,
+            "name": "152.10.13.131",
+            "pattern": "[ipv4-addr:value = '152.10.13.131']",
+            "valid_from": "2015-05-07T00:00:00Z",
+            "valid_until": "2045-05-07T00:00:00Z",
+            "kill_chain_phases": [
+                {
+                    "kill_chain_name": "lockheed-martin-cyber-kill-chain",
+                    "phase_name": "reconnaissance"
+                }
+            ],
+            "pattern_type": "stix",
+            "x_ic_observable_types": [
+                "ipv4-addr"
+            ],
+            "x_ic_collection_ref": "ioc-collection--xxx",
+            "x_ic_related_threat_refs": [
+                "threat-actor--xxx"
+            ]
+        }
+    ],
+    "total": 2
+}
+```
+
 ### Import indicators from text
 
 The first way to import indicators is to do it providing a raw text format where each line contains one indicator.
@@ -116,7 +318,6 @@ print("Import finished")
 To get information about them check [the documentation about this endpoint](https://docs.sekoia.io/cti/develop/rest_api/intelligence/#tag/IOC-Collections/operation/post_collection_indicators_text_resource)
 6. Connect to `LiveAPI` using a websocket to be notified in real time of events happening in the community
 7. Keep only messages that are about our task
-
 
 ### Import indicators from file
 

@@ -10,9 +10,6 @@ Thinkst Canary is a deceptive honeypot device that mimics various systems to lur
 - **Supported environment**: SaaS
 - **Detection based on**: Alert
 - **Supported application or feature**: events associated to the incidents
-
-!!! warning
-    Important note - This format is currently in beta. We highly value your feedback to improve its performance.
     
 ## Step-by-Step Configuration Procedure
 

@@ -46,6 +46,11 @@ This section demonstrates how the raw logs will be transformed by our parsers. I
             "family": "windows",
             "platform": "windows"
         },
+        "related": {
+            "user": [
+                "CORPDOMAIN$"
+            ]
+        },
         "user": {
             "target": {
                 "domain": "CORPDOMAIN",
@@ -82,6 +87,11 @@ This section demonstrates how the raw logs will be transformed by our parsers. I
         "os": {
             "family": "windows",
             "platform": "windows"
+        },
+        "related": {
+            "user": [
+                "username"
+            ]
         },
         "user": {
             "target": {
@@ -135,6 +145,11 @@ This section demonstrates how the raw logs will be transformed by our parsers. I
         "process": {
             "id": "0x5df8",
             "name": "C:\\ABSciex\\drm\\xGate.exe"
+        },
+        "related": {
+            "user": [
+                "username"
+            ]
         },
         "sekoiaio": {
             "authentication": {
@@ -201,6 +216,11 @@ This section demonstrates how the raw logs will be transformed by our parsers. I
             "id": "0x1d0",
             "name": "C:\\Windows\\System32\\services.exe"
         },
+        "related": {
+            "user": [
+                "USERNAME$"
+            ]
+        },
         "sekoiaio": {
             "authentication": {
                 "process": {
@@ -251,6 +271,11 @@ This section demonstrates how the raw logs will be transformed by our parsers. I
         "os": {
             "family": "windows",
             "platform": "windows"
+        },
+        "related": {
+            "user": [
+                "USERNAME$"
+            ]
         },
         "user": {
             "target": {

@@ -2469,12 +2469,6 @@ The following Sekoia.io built-in rules match the intake **HarfangLab EDR**. This
     
     - **Effort:** elementary
 
-??? abstract "Suspicious Hostname"
-    
-    Detects suspicious hostnames such as ones with kali in it, to detect kali linux default hosts, but also other hostnames commonly used in attacks. List can be improved according to the environment.
-    
-    - **Effort:** intermediate
-
 ??? abstract "Suspicious Kerberos Ticket"
     
     Detect suspicious Kerberos ticket based on on their parameters which suggest that it could be forged.

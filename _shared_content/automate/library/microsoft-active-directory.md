@@ -74,4 +74,4 @@ Search in AD
 
 ## Extra
 
-Module **`Microsoft Active Directory` v1.3.7**
+Module **`Microsoft Active Directory` v1.3.8**

@@ -117,18 +117,6 @@ The following Sekoia.io built-in rules match the intake **Jumpcloud Directory In
     
     - **Effort:** advanced
 
-??? abstract "Login Brute-Force Successful On Jumpcloud Portal"
-    
-    A user has attempted to login several times (brute-force) on Jumpcloud Portal and succeeded to login.
-    
-    - **Effort:** advanced
-
-??? abstract "Login Brute-Force Successful On Jumpcloud Workstation"
-    
-    A user has attempted to login several times (brute-force) on Jumpcloud monitored workstations (windows, linux, mac) and succeeded to login.
-    
-    - **Effort:** advanced
-
 ??? abstract "Network Scanning and Discovery"
     
     Tools and command lines used for network discovery from current system

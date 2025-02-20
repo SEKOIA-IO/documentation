@@ -58,6 +58,9 @@ This section demonstrates how the raw logs will be transformed by our parsers. I
             "ip": [
                 "0.0.0.0",
                 "1.1.1.1"
+            ],
+            "user": [
+                "Administrateur"
             ]
         },
         "sophos": {
@@ -176,7 +179,7 @@ This section demonstrates how the raw logs will be transformed by our parsers. I
         "sophos": {
             "threat_center": {
                 "aggressive_activity": "False",
-                "analysis": "{\"dep_alwayson\": 0, \"dep_opt_in\": 1, \"dep_opt_out\": 0}",
+                "analysis": "{\"dep_alwayson\":0,\"dep_opt_in\":1,\"dep_opt_out\":0}",
                 "detection_id_dedup": "azeifazeiofuhapizefhapzieofhazeufh",
                 "endpoint": {
                     "type": "computer"
@@ -296,7 +299,7 @@ This section demonstrates how the raw logs will be transformed by our parsers. I
         "sophos": {
             "threat_center": {
                 "aggressive_activity": "False",
-                "analysis": "{\"os_compatibility_target\": \"test\"}",
+                "analysis": "{\"os_compatibility_target\":\"test\"}",
                 "detection_id_dedup": "432025a1cb38ad65dc6azefazef",
                 "endpoint": {
                     "type": "computer"
@@ -507,7 +510,8 @@ This section demonstrates how the raw logs will be transformed by our parsers. I
                 "1.2.3.4"
             ],
             "user": [
-                "AC000TEST0011"
+                "AC000TEST0011",
+                "Administrateur"
             ]
         },
         "server": {
@@ -643,6 +647,9 @@ This section demonstrates how the raw logs will be transformed by our parsers. I
             ],
             "ip": [
                 "1.2.3.4"
+            ],
+            "user": [
+                "Administrateur"
             ]
         },
         "server": {
@@ -1045,6 +1052,9 @@ This section demonstrates how the raw logs will be transformed by our parsers. I
             "ip": [
                 "1.2.3.1",
                 "1.2.3.4"
+            ],
+            "user": [
+                "TestUser"
             ]
         },
         "sophos": {

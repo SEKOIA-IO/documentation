@@ -1,5 +1,5 @@
 uuid: 44439212-c2d8-4645-ad60-8fd5e39140b3
-name: Google Workspace and Google Cloud Audit Logs
+name: Google Cloud Audit Logs
 type: intake
 
 ## Overview
@@ -10,7 +10,7 @@ type: intake
 
 Google Cloud Logging centralizes logs from Google Cloud products.
 
-In this documentation, you will learn how to collect and send Google Workspace and Google Cloud audit logs to Sekoia.io.
+In this documentation, you will learn how to collect and send Google Cloud audit logs to Sekoia.io.
 
 
 
@@ -25,7 +25,7 @@ In this documentation, you will learn how to collect and send Google Workspace a
 !!! Warning
 	The administrator that proceeds to the configuration MUST explicitly have the role "Logging Admin" activated. This is not the case by default even for administrator users.
 
-### Centralise Google Workspace logs on your Google Cloud
+### Centralise Google logs on your Google Cloud
 
 #### Create a topic
 

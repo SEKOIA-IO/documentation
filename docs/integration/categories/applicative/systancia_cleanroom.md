@@ -11,9 +11,6 @@ type: intake
 
 Systancia Cleanroom is a secure and isolated virtualized environment that ensures confidentiality and integrity for sensitive data and applications, offering a controlled and monitored workspace for high-security operations without compromising efficiency or user experience.
 
-!!! warning
-    Important note - This format is currently in beta. We highly value your feedback to improve its performance.
-
 
 
 ## Configure

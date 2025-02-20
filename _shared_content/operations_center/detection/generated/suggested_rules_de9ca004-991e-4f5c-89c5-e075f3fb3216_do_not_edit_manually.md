@@ -15,12 +15,6 @@ The following Sekoia.io built-in rules match the intake **Netskope**. This docum
     
     - **Effort:** master
 
-??? abstract "Authentication Impossible Travel"
-    
-    Detects impossible travel when performing authentication from a source IP address, grouped by username.
-    
-    - **Effort:** advanced
-
 ??? abstract "Burp Suite Tool Detected"
     
     Burp Suite is a cybersecurity tool. When used as a proxy service, its purpose is to intercept packets and modify them to send them to the server. Burp Collaborator is a network service that Burp Suite uses to help discover many kinds of vulnerabilities (vulnerabilities scanner).
@@ -165,21 +159,57 @@ The following Sekoia.io built-in rules match the intake **Netskope**. This docum
     
     - **Effort:** advanced
 
-??? abstract "Netskope Admin Audit"
+??? abstract "Netskope Admin Audit High Severity"
     
-    Audit events for admin activites, from Logins to policies' changes.
+    Audit events detection for admin activites that differ from authentications, with high severity level according to Netskope.
     
     - **Effort:** master
 
-??? abstract "Netskope Alert"
+??? abstract "Netskope Alerts Compliance"
     
-    Forward alerts reported by Netskope.  
+    Forward alerts reported by Netskope related to compliance issues.
     
     - **Effort:** master
 
 ??? abstract "Netskope DLP Alert"
     
     Detects DLP alerts which are not allowed.  
+    
+    - **Effort:** master
+
+??? abstract "Netskope Malware Detected"
+    
+    Netskope identified a malware with a high severity (excluding Patient Zero here)
+    
+    - **Effort:** master
+
+??? abstract "Netskope Malware Patient Zero Detected"
+    
+    Netskope identified a malware as Patient Zero.
+    
+    - **Effort:** master
+
+??? abstract "Netskope Potential Brute Force On Protected Applications"
+    
+    Detects potential brute force on Netskope protected applications with more than 10 failures in 5 minutes for the same user name and application.
+    
+    - **Effort:** master
+
+??? abstract "Netskope Successful Brute Force On Protected Applications"
+    
+    Detects successful brute force on Netskope protected applications after more than 5 failures in 5 minutes and one success for the same user name and application.
+    
+    - **Effort:** master
+
+??? abstract "Netskope Successful Brute-Force On Management Console"
+    
+    Detects successful access to Netskope management console after more than 10 failures in 5 minutes for the same user name.
+    
+    - **Effort:** master
+
+??? abstract "Netskope Web Isolation On Suspicious Domain"
+    
+    Netskope identified a suspicious domain and triggered web sandboxing (RBI)
     
     - **Effort:** master
 

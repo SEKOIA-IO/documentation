@@ -6,7 +6,7 @@ type: playbook
 
 ![Sekoia.io](/assets/playbooks/library/sekoia-io.svg){ align=right width=150 }
 
-Sekoia.io
+Sekoia.io is a European Cybertech, expert in intelligence-based eXtended Detection and Response solutions. Our Sekoia SOC platform provides a unified view and full control of the perimeter to be defended. Our mission is to empower security operations teams with a flexible and easy-to-use platform. We protect large companies, technology scaleups, governments, and Tier One MSSP partners worldwide. 
 
 ## Configuration
 
@@ -251,6 +251,17 @@ Mark as active a countermeasure
 | `assignee` | `string` | UUID of the profile assigned to the progress of the countermeasure |
 | `created_at` | `string` | Date the countermeasure was created |
 
+### Add events to a case
+
+Add events to a case
+
+**Arguments**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `uuid` | `string` | UUID of the case |
+| `event_ids` | `array` | List of event identifiers (__event_id) to add to the case. Do not use event.id which is a different identifier. |
+
 ### Add IOC to IOC Collection
 
 Add indicators to an IOC Collection
@@ -362,9 +373,71 @@ Create a notification for a specific tracker
 | --------- | ------- | --------------------------- |
 | `data` | `object` |  |
 
+### Create case
+
+Creates a new case
+
+**Configuration**
+
+{'description': 'description of the case', 'type': 'string', 'in': 'body'}
+
+**Arguments**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `title` | `string` | title of the case |
+| `description` | `string` | description of the case |
+| `status_uuid` | `string` | identifier of case’s status |
+| `priority` | `string` | priority of the case |
+| `tags` | `array` | tags to associate to the case |
+| `subscribers` | `array` | avatars to associate to the case |
+| `community_uuid` | `string` | the identifier of the community to which the case is associated |
+| `verdict_uuid` | `string` | Verdict of the case |
+| `custom_status_uuid` | `string` | Custom status of the case |
+| `custom_priority_uuid` | `string` | Custom priority of the case |
+
+
+**Outputs**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `uuid` | `string` |  |
+| `short_id` | `string` |  |
+| `created_at` | `string` |  |
+| `created_by` | `string` |  |
+| `created_by_type` | `string` |  |
+| `updated_at` | `string` |  |
+| `updated_by` | `string` |  |
+| `updated_by_type` | `string` |  |
+| `title` | `string` |  |
+| `description` | `string` |  |
+| `priority` | `` | low|medium|high |
+| `status` | `string` |  |
+| `status_uuid` | `string` |  |
+| `community_uuid` | `string` |  |
+| `subscribers` | `array` |  |
+| `tags` | `array` | List of tags associated to the case |
+| `number_of_comments` | `integer` |  |
+| `first_seen_at` | `string` | Date and time of the first case event |
+| `last_seen_at` | `string` | Date and time of the last case event |
+| `manual` | `boolean` | if True, indicates that the case was created manually |
+| `is_supplied` | `boolean` | if True, indicates that alerts can be automatically added to the case |
+| `verdict_uuid` | `string` | UUID of the verdict associated to the case |
+| `verdict` | `object` |  |
+| `custom_status_uuid` | `string` | UUID of the custom status associated to the case |
+| `custom_status` | `object` |  |
+| `custom_priority_uuid` | `string` | UUID of the priority associated to the case |
+| `custom_priority` | `object` |  |
+| `number_of_alerts` | `integer` |  |
+| `alerts` | `array` |  |
+
 ### Create rule
 
 Create a new rule
+
+**Configuration**
+
+{'type': 'string', 'maxLength': 1000, 'in': 'body'}
 
 **Arguments**
 
@@ -442,6 +515,10 @@ Create a new rule
 
 Create a new asset
 
+**Configuration**
+
+{'type': 'string', 'in': 'body'}
+
 **Arguments**
 
 | Name      |  Type   |  Description  |
@@ -476,6 +553,10 @@ Create a new asset
 ### Create Asset (V2)
 
 Create a new asset
+
+**Configuration**
+
+{'default': '', 'in': 'body', 'type': 'string'}
 
 **Arguments**
 
@@ -786,6 +867,7 @@ Retrieve the definition of an alert
 | --------- | ------- | --------------------------- |
 | `uuid` | `string` |  |
 | `stix` | `boolean` |  |
+| `cases` | `boolean` | Get the cases associated with this alert |
 
 
 **Outputs**
@@ -825,6 +907,53 @@ Retrieve the definition of an alert
 | `updated_by_type` | `string` |  |
 | `title` | `string` |  |
 | `target` | `string` |  |
+| `cases` | `array` |  |
+
+### Get case
+
+Retrieve the properties of a case
+
+**Arguments**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `uuid` | `string` | UUID of the case |
+| `community_uuid` | `string` | (Optional) Identifier of the community |
+
+
+**Outputs**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `uuid` | `string` |  |
+| `short_id` | `string` |  |
+| `created_at` | `string` |  |
+| `created_by` | `string` |  |
+| `created_by_type` | `string` |  |
+| `updated_at` | `string` |  |
+| `updated_by` | `string` |  |
+| `updated_by_type` | `string` |  |
+| `title` | `string` |  |
+| `description` | `string` |  |
+| `priority` | `` | low|medium|high |
+| `status` | `string` |  |
+| `status_uuid` | `string` |  |
+| `community_uuid` | `string` |  |
+| `subscribers` | `array` |  |
+| `tags` | `array` | List of tags associated to the case |
+| `number_of_comments` | `integer` |  |
+| `first_seen_at` | `string` | Date and time of the first case event |
+| `last_seen_at` | `string` | Date and time of the last case event |
+| `manual` | `boolean` | if True, indicates that the case was created manually |
+| `is_supplied` | `boolean` | if True, indicates that alerts can be automatically added to the case |
+| `verdict_uuid` | `string` | UUID of the verdict associated to the case |
+| `verdict` | `object` |  |
+| `custom_status_uuid` | `string` | UUID of the custom status associated to the case |
+| `custom_status` | `object` |  |
+| `custom_priority_uuid` | `string` | UUID of the priority associated to the case |
+| `custom_priority` | `object` |  |
+| `number_of_alerts` | `integer` |  |
+| `alerts` | `array` |  |
 
 ### Get Community
 
@@ -1144,17 +1273,17 @@ Return a list of assets according to the filters
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
 | `search` | `['string', 'null']` | Search assets by name |
-| `uuids` | `` | Filter by comma-separated list of asset UUIDs |
-| `community_uuids` | `` | Filter by comma-separated list of community UUIDs |
-| `type` | `` | Filter by comma-separated list of asset types |
-| `category` | `` | Filter by comma-separated list of asset categories |
-| `source` | `` | Filter by comma-separated list of asset sources |
+| `uuids` | `['string', 'null']` | Filter by comma-separated list of asset UUIDs |
+| `community_uuids` | `['string', 'null']` | Filter by comma-separated list of community UUIDs |
+| `type` | `['string', 'null']` | Filter by comma-separated list of asset types |
+| `category` | `['string', 'null']` | Filter by comma-separated list of asset categories |
+| `source` | `['string', 'null']` | Filter by comma-separated list of asset sources |
 | `reviewed` | `['boolean', 'null']` | Filter reviewed assets only |
 | `criticality` | `['integer', 'null']` | Filter assets with higher criticality |
 | `sort` | `` | Sort criterion |
 | `direction` | `` | Sort order |
-| `rule_uuid` | `` | Rule Uuid |
-| `rule_version` | `` | Rule Version |
+| `rule_uuid` | `['string', 'null']` | Rule Uuid |
+| `rule_version` | `['string', 'null']` | Rule Version |
 | `offset` | `integer` | The position of the first asset to return |
 | `limit` | `integer` | The number of assets to return |
 
@@ -1217,6 +1346,29 @@ Edit the details of an alert
 | `updated_by_type` | `string` |  |
 | `title` | `string` |  |
 | `target` | `string` |  |
+
+### Comment case
+
+Add a new comment to a case
+
+**Arguments**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `uuid` | `string` | UUID of the case |
+| `content` | `string` | Content of the comment |
+
+
+**Outputs**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `uuid` | `string` |  |
+| `content` | `string` |  |
+| `created_at` | `string` |  |
+| `created_by` | `string` |  |
+| `created_by_type` | `string` |  |
+| `updated_at` | `string` |  |
 
 ### Comment Alert
 
@@ -1428,7 +1580,7 @@ Create, merge and edit asset to synchronize asset with ad
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
-| `found_assets` | `object` |  |
+| `found_assets` | `array` |  |
 | `created_asset` | `boolean` |  |
 | `destination_asset` | `string` |  |
 
@@ -1451,9 +1603,90 @@ Triggers an action on an alert to update its status
 | --------- | ------- | --------------------------- |
 | `actions` | `array` |  |
 
+### Update Alert Status by name
+
+Triggers an action on an alert to update its status by name
+
+**Arguments**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `uuid` | `string` | The UUID of the alert to update |
+| `status` | `string` | Name of the status to update the alert to |
+| `comment` | `string` | A comment to describe why the alert status has changed |
+
+
+**Outputs**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `actions` | `array` |  |
+
+### Edit case
+
+Edit the properties of a case
+
+**Configuration**
+
+{'description': 'description of the case', 'type': 'string', 'in': 'body'}
+
+**Arguments**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `uuid` | `string` | UUID of the case |
+| `title` | `string` | title of the case |
+| `description` | `string` | description of the case |
+| `status_uuid` | `string` | identifier of case’s status |
+| `priority` | `string` | priority of the case |
+| `tags` | `array` | tags to associate to the case |
+| `subscribers` | `array` | avatars to associate to the case |
+| `verdict_uuid` | `string` | Verdict of the case |
+| `custom_status_uuid` | `string` | Custom status of the case |
+| `custom_priority_uuid` | `string` | Custom priority of the case |
+
+
+**Outputs**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `uuid` | `string` |  |
+| `short_id` | `string` |  |
+| `created_at` | `string` |  |
+| `created_by` | `string` |  |
+| `created_by_type` | `string` |  |
+| `updated_at` | `string` |  |
+| `updated_by` | `string` |  |
+| `updated_by_type` | `string` |  |
+| `title` | `string` |  |
+| `description` | `string` |  |
+| `priority` | `` | low|medium|high |
+| `status` | `string` |  |
+| `status_uuid` | `string` |  |
+| `community_uuid` | `string` |  |
+| `subscribers` | `array` |  |
+| `tags` | `array` | List of tags associated to the case |
+| `number_of_comments` | `integer` |  |
+| `first_seen_at` | `string` | Date and time of the first case event |
+| `last_seen_at` | `string` | Date and time of the last case event |
+| `manual` | `boolean` | if True, indicates that the case was created manually |
+| `is_supplied` | `boolean` | if True, indicates that alerts can be automatically added to the case |
+| `verdict_uuid` | `string` | UUID of the verdict associated to the case |
+| `verdict` | `object` |  |
+| `custom_status_uuid` | `string` | UUID of the custom status associated to the case |
+| `custom_status` | `object` |  |
+| `custom_priority_uuid` | `string` | UUID of the priority associated to the case |
+| `custom_priority` | `object` |  |
+| `number_of_alerts` | `integer` |  |
+| `alerts` | `array` |  |
+
 ### Update rule
 
 Update a rule
+
+**Configuration**
+
+{'in': 'body', 'type': 'string', 'maxLength': 1000}
 
 **Arguments**
 
@@ -1531,4 +1764,4 @@ Update a rule
 
 ## Extra
 
-Module **`Sekoia.io` v2.65.4**
+Module **`Sekoia.io` v2.67.3**

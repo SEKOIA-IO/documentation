@@ -15,7 +15,7 @@ jobs:
         uses: actions/setup-python@v5
         id: setup-python
         with:
-          python-version: '3.11'
+          python-version: '3.13'
 
       - name: Make destination directory for compiled CSS
         run: mkdir -vp docs/stylesheets/

@@ -69,12 +69,6 @@ The following Sekoia.io built-in rules match the intake **Microsoft Defender XDR
     
     - **Effort:** intermediate
 
-??? abstract "Authentication Impossible Travel"
-    
-    Detects impossible travel when performing authentication from a source IP address, grouped by username.
-    
-    - **Effort:** advanced
-
 ??? abstract "AutoIt3 Execution From Suspicious Folder"
     
     Detects AutoIt3 execution from an unusual/suspicious folder. Legitimate folders are "Program Files" and "AppData\\Local". AutoIt3.exe is a legitimate process used to execute AutoIt program files, which are used by legitimate software, custom scripts, but also malware. Finding AutoIt3 execution from unusual/suspicious folder can help detect malware activities, such as DarkGate execution. The detection rule can be tailored to your environment and your use of AutoIt3 by filtering out folder's execution of legitimate applications or scripts.

@@ -6,7 +6,7 @@
     - Click **Export events** at the top right of the logs table.
     - Select the fields to export or choose to export all fields.
     - **Available Formats:** CSV (ideal for spreadsheets) and JSON (useful for technical integration).
-    - **Export Limits:** Maximum of 1,000 events per export. Refine your search to get complete results if this limit is reached.
+    - **Export Limits:** Maximum of 500 events per export. Refine your search to get complete results if this limit is reached.
 
 - **Via API:**
     - Use the [Event Search API](/xdr/develop/rest_api/configuration.md) to automate event exports through jobs.

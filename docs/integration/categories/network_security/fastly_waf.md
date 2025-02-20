@@ -13,9 +13,6 @@ Fastly Next-Gen WAF is a web application firewall solution designed to protect o
 - **Detection based on**: Alert
 - **Supported application or feature**: WAF Alerts
 
-!!! warning
-    Important note - This format is currently in beta. We highly value your feedback to improve its performance.
-
 ## Step-by-Step Configuration Procedure
 
 ### Instructions on the 3rd Party Solution

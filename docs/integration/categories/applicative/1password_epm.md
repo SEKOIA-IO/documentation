@@ -6,9 +6,6 @@ type: intake
 
 1Password's Enterprise Password Manager offers robust security features for businesses, enabling secure sharing and management of passwords and sensitive data across teams, with advanced admin controls and seamless integration into existing workflows.
 
-!!! Warning
-    Important note - This format is currently in beta. We highly value your feedback to improve its performance.
-
 - **Supported environment**: SaaS
 
 - **Detection based on**: Telemetry, Audit

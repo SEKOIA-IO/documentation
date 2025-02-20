@@ -14,9 +14,6 @@ Daspren is the only Data Detection and Response (DDR) that integrates detection 
     - Access rules breach attempts,
     - Malicious processes detected.
 
-!!! Warning
-    This format is currently in beta. We highly value your feedback to improve its performance.
-
 ## High-Level Architecture Diagram
 
 - **Type of integration**: Outbound (PUSH to Sekoia.io)
