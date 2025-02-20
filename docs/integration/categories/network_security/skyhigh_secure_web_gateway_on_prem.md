@@ -1,5 +1,5 @@
 uuid: 40bac399-2d8e-40e3-af3b-f73a622c9687
-name: McAfee Web Gateway / Skyhigh Secure Web Gateway
+name: McAfee Web Gateway / Skyhigh Secure Web Gateway - On Prem
 type: intake
 
 ## Overview
