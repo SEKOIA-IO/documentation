@@ -31,13 +31,18 @@ template: overrides/openapi.html
                 "https://app.sekoia.io/api/v1/edl-gateway/openapi.json",
                 "https://app.sekoia.io/api/v2/inthreat/swagger.json?context=public",
             ],
+            tag_mappings:{
+                "mfa": "MFA",
+                "me": "User profile",
+                "automations": "Automation",
+            },
             menu:[
                 {
                     name: "User",
                     tags: [
                         "User Authentication",
-                        "me",
-                        "mfa", // TODO: split 'mfa' into administration and self
+                        "User profile",
+                        "MFA",
                         "permissions",
                     ],
                 },
@@ -64,8 +69,14 @@ template: overrides/openapi.html
                         "Enrichers",
                         "Callbacks",
                         "Services",
-                        "Archives",
-                        "Views", // TODO => + Archives
+                        "Intakes",
+                        "Assets",
+                        "Atoms",
+                        "Intakes by status",
+                        "Intakes errors and warnings",
+                        "Intakes lag and processing lag",
+                        "formats",
+                        "Intake Optimization Rules",
                     ]
                 },
                 {
@@ -91,19 +102,6 @@ template: overrides/openapi.html
                         "Support",
                         "Sources",
                         "Vulnerabilities",
-                    ],
-                },
-                {
-                    name: "Collect",
-                    tags: [
-                        "Intakes",
-                        "Assets",
-                        "Atoms",
-                        "Intakes by status",
-                        "Intakes errors and warnings",
-                        "Intakes lag and processing lag",
-                        "formats",
-                        "Intake Optimization Rules",
                     ],
                 },
                 {
@@ -142,11 +140,8 @@ template: overrides/openapi.html
                         "Tasks",
                     ],
                 },
-                {name:"Configuration",
-                    tags:["Entities"]
-                },
                 {
-                    name: "Automations",
+                    name: "Automation",
                     tags: [
                         "Playbooks",
                         "Playbook actions telemetry",

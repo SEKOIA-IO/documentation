@@ -1,7 +1,7 @@
-import { Teleport, capitalize, createApp, reactive } from "vue";
+import { Teleport, createApp, reactive } from "vue";
 import { fetch_and_merge_openapi_schemas } from "./openapi/openapi"
 import { Examples } from "./Examples";
-import { tagEncode, Chevron, debounce, scrollToAnchor } from "./utils"
+import { tagEncode, Chevron, debounce, scrollToAnchor, capitalize } from "./utils"
 import { Markdown } from "./Markdown"
 import { Parameters } from "./Parameters"
 import { Response } from "./Response"
@@ -38,7 +38,7 @@ export const data = reactive({
 export const OpenAPIViewer = {
 
     /** Gather all openapi.json/swagger.json manifests from {urls} and render as OpenAPIViewer Vue component */
-    async init({ title, urls, menu, regions }) {
+    async init({ title, urls, menu, regions, tag_mappings = {} }) {
         const hash = location.hash
         data.title = title
 
@@ -81,6 +81,20 @@ export const OpenAPIViewer = {
             })
         })
 
+        // Translate tags via tag_mappings defined in developer/api.md
+        // e.g. { "User": "Account" } will replace all "User" tags with "Account"
+        // e.g. { ["User", "Account"]: ["bla", "blu"] } will replace replace the ["User", "Account"] tags pair with ["bla", "blu"]
+        //        (only if both tags are present in the endpoint)
+        data.endpoints.forEach(endpoint => {
+            Object.entries(tag_mappings || {}).forEach(([tag, mapping]) => {
+                mapping = Array.isArray(mapping) ? mapping : [mapping]
+                const tags = new Set(Array.isArray(tag) ? tag : [tag])
+                if (endpoint.tags.every(t => tags.has(t))) {
+                    endpoint.tags = Array.from(new Set([...endpoint.tags.filter(t => !tags.has(t)), ...mapping]))
+                }
+            })
+        })
+
         // Organize endpoints according to the menu tree
         // and collect non-menu tags as filtering candidates
         data.tags = new Set()
@@ -93,8 +107,6 @@ export const OpenAPIViewer = {
                 node.children.push({ name: tag, endpoints: [] })
             }
         }
-
-        console.log(data.tree)
 
         for (const endpoint of data.endpoints) {
             endpoint.menu0 = data.tree.find(({ name }) => endpoint.tags.find(t => name.toLowerCase() === t.toLowerCase()))
@@ -276,6 +288,7 @@ export const OpenAPIViewer = {
                             {data.tree?.map(({ name, children }) => <li class="md-nav__item md-nav__item--nested" class={{
                                 active: data.cur0 === tagEncode(name),
                             }}>
+                                {console.log(name)}
                                 <a href={`#tag/${tagEncode(name)}`}>{name}</a>
                                 <ul class='md-nav__list'>
                                     {children?.map(({ name, endpoints }) => <li class='md-nav__item md-nav__item--nested accordion' class={{
