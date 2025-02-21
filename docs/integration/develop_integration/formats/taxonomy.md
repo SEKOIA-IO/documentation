@@ -16,6 +16,9 @@ The taxonomy of [structured events](structured_event.md) is based on the [ECS](h
 - `email.to.address`, `email.from.address` and `email.cc.address` are arrays
 - As documented in the ECS specification, [`host.hostname`](https://www.elastic.co/guide/en/ecs/current/ecs-host.html#field-host-hostname) must contain the hostname as return by the command **hostname** on the host. [`host.name`](https://www.elastic.co/guide/en/ecs/current/ecs-host.html#field-host-name) is more permissive
 
+!!! note
+    The `related` field aggregate various pieces of information, like IP addresses, into an array to facilitate searching, regardless of their location within an ECS event. With our custom module called `ingest`, additional fields like `source.user.name` or `user.target.name` can also be included in this field.
+
 ## Custom Taxomony
 
 When a valuable information is present in the raw event, and no ECS fields is suitable to host the information, a custom field may be defined.
