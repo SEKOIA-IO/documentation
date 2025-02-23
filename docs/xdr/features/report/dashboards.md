@@ -114,6 +114,8 @@ On the query builder’s edit page, you can view a list of all dashboards utiliz
 
 ![insert_qb_in_dashboard](/assets/xdr/dashboards/insert_qb_in_dashboard.gif){: style="max-width:100%"}
 
+!!! Note
+    The time period in a query is defined by the Query itself, which is influenced by the retention period of the data. If no specific time filter is applied in the Query, it will default to 'all time'.
 
 ## Built-in Widgets
 
