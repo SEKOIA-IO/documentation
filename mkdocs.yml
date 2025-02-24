@@ -330,6 +330,7 @@ nav:
       - Google Cloud Audit Logs: integration/categories/applicative/google_cloud_audit.md
       - LockSelf: integration/categories/applicative/lockself.md
       - Microsoft IIS: integration/categories/applicative/microsoft_iis.md
+      - Microsoft Sentinel: integration/categories/applicative/microsoft_sentinel.md
       - Salesforce: integration/categories/applicative/salesforce.md
       - Sekoia.io activity logs: integration/categories/applicative/sekoiaio_activity_logs.md
       - Sekoia.io forwarder logs: integration/categories/applicative/sekoiaio_forwarder_logs.md
