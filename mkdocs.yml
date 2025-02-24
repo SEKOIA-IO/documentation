@@ -372,7 +372,7 @@ nav:
       - TEHTRIS Endpoint Detection & Reponse: integration/categories/endpoint/tehtris_edr.md
       - Tanium: integration/categories/endpoint/tanium.md
       - Trellix EDR: integration/categories/endpoint/trellix_edr.md
-      - Trend Micro Apex One: integration/categories/endpoint/trend_micro_apex_one.md
+      - Trend Micro Apex One / Vision One Endpoint: integration/categories/endpoint/trend_micro_apex_one.md
       - Trend Micro Vision One Workbench: integration/categories/endpoint/trend_micro_vision_one_workbench.md
       - Trend Micro Vision One Observed Attack Techniques: integration/categories/endpoint/trend_micro_vision_one_oat.md
       - VMWare ESXi: integration/categories/endpoint/vmware_esxi.md
