@@ -21,7 +21,6 @@ jobs:
       - run: |
           mkdir site
           tar zxvf site.tar.gz -C ./site
-          
 
       - name: Get PR number
         id: pr_number
