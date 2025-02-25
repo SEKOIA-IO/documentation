@@ -48,22 +48,31 @@ Microsoft Sentinel is a cloud-native security information and event management (
 #### Create an Azure application
 
 1. On the Azure Portal, in the search bar, go to `App registrations`
-![App registrations button](/assets/operation_center/integration_catalog/cloud_and_saas/microsoft_sentinel/app_registration_button.png){ align=center }
+
+![App registrations button](/assets/operation_center/integration_catalog/cloud_and_saas/microsoft_sentinel/app_registration_button.png){: style="max-width:100%"}
+
 2. Click [`+ New registration`](https://portal.azure.com/#view/Microsoft_AAD_RegisteredApps/CreateApplicationBlade/quickStartType~/null/isMSAApp~/false)
 3. Type a name
 4. Select `Accounts in this organizational directory only` option as account type
 5. Click `Register`
 6. From the `Overview` page, copy `Application (client) ID` and `Directory (tenant) ID`
-![IDs](/assets/operation_center/integration_catalog/cloud_and_saas/microsoft_sentinel/ids.png){ align=center }
+
+![IDs](/assets/operation_center/integration_catalog/cloud_and_saas/microsoft_sentinel/ids.png){: style="max-width:100%"}
 
 #### Create a client secret
 
 1. Go to `Manage` > `Certificates & secrets`
-![Certificats and secrets](/assets/operation_center/integration_catalog/cloud_and_saas/microsoft_sentinel/certificats_secrets.png){ align=center }
+
+![Certificats and secrets](/assets/operation_center/integration_catalog/cloud_and_saas/microsoft_sentinel/certificats_secrets.png){: style="max-width:100%"}
+
 2. Click `+ New client secret`
-![Client secret button](/assets/operation_center/integration_catalog/cloud_and_saas/microsoft_sentinel/button_create_new_button.png){ align=center }
+
+![Client secret button](/assets/operation_center/integration_catalog/cloud_and_saas/microsoft_sentinel/button_create_new_button.png){: style="max-width:100%"}
+
 3. Type a description and select the desirated expiration period
-![Client secret configuration](/assets/operation_center/integration_catalog/cloud_and_saas/microsoft_sentinel/add_client_secret.png){ align=center }
+
+![Client secret configuration](/assets/operation_center/integration_catalog/cloud_and_saas/microsoft_sentinel/add_client_secret.png){: style="max-width:100%"}
+
 4. Click `Add`
 5. Copy the `Value` of the client secret
 
@@ -80,13 +89,14 @@ Microsoft Sentinel is a cloud-native security information and event management (
 9. Type the name of the Azure application created previously, select it and click `Select`
 10. Click `Review + assign`
 11. In the `Overview` part, you can find the `Subscription ID`
-![Subscription ID](/assets/operation_center/integration_catalog/cloud_and_saas/microsoft_sentinel/subscription_id.png){ align=center }
+
+![Subscription ID](/assets/operation_center/integration_catalog/cloud_and_saas/microsoft_sentinel/subscription_id.png){: style="max-width:100%"}
 
 
 !!! note
     - You can find the `workspacename` on the `Overview` page under name when you create your `Microsoft Sentinel` instance.
     - The `resourcegroup` depends on the resource group in which you placed your instance. You can also find this on the `Overview page` under `Resource Group`.
-    ![Microsoft Sentinel Overview page](/assets/operation_center/integration_catalog/cloud_and_saas/microsoft_sentinel/microsoft_sentinel_overview.png){ align=center }
+    ![Microsoft Sentinel Overview page](/assets/operation_center/integration_catalog/cloud_and_saas/microsoft_sentinel/microsoft_sentinel_overview.png){: style="max-width:100%"}
 
 ### Instruction on Sekoia
 
