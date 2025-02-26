@@ -249,6 +249,7 @@ nav:
           - SentinelOne: tip/features/automate/library/sentinelone.md
           - Sophos: tip/features/automate/library/sophos.md
           - Stormshield SES: tip/features/automate/library/stormshield-ses.md
+          - Stormshield SES: tip/features/automate/library/stormshield-ses.md
           - WithSecure: tip/features/automate/library/withsecure.md
         - Generic:
           - HTTP: tip/features/automate/library/http.md
@@ -529,6 +530,7 @@ nav:
       - Panda Security: integration/action_library/panda-security.md
       - SentinelOne: integration/action_library/sentinelone.md
       - Sophos: integration/action_library/sophos.md
+      - Stormshield SES: integration/action_library/stormshield-ses.md
       - Stormshield SES: integration/action_library/stormshield-ses.md
       - WithSecure: integration/action_library/withsecure.md
     - Generic:
