@@ -8,17 +8,15 @@ type: intake
 
 - **Vendor**: Microsoft
 - **Supported environment**: SaaS
-- **Detection based on**: Telemetry, Alerts
+- **Detection based on**: Alerts
 - **Supported application or feature**:
-    - Office 365 account logs
-    - Office 365 audit logs
-    - Office 365 trace logs
-    - Third-party application logs
-    - Windows event logs
-    - Web application firewall logs
+    - Incidents
 
 
 Microsoft Sentinel is a cloud-native security information and event management (SIEM) service that provides intelligent security analytics for your entire enterprise at cloud scale. Get immediate visibility into your cloud, on-premises, and hybrid environments. Detect and respond to threats with built-in machine learning and artificial intelligence.
+
+!!! Warning
+    Important note - This format is currently in beta. We highly value your feedback to improve its performance.
 
 ## Specification
 
