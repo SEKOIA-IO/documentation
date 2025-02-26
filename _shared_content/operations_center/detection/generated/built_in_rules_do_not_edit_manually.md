@@ -1,4 +1,4 @@
-Rules catalog includes **996 built-in detection rules** ([_last update on 2025-02-25_](rules_changelog.md)).
+Rules catalog includes **996 built-in detection rules** ([_last update on 2025-02-26_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Identity Information**
 
@@ -11410,6 +11410,10 @@ Rules catalog includes **996 built-in detection rules** ([_last update on 2025-0
     
     - **Effort:** elementary
     
+    - **Changelog:**
+    
+        - 25/02/2025 - major - Update the indicator.
+            
 ??? abstract "Entra ID Sign-In Via Known AiTM Phishing Kit (Tycoon 2FA)"
     
     Detects a sign-in attempt with known characteristics of the adversary-in-the-middle phishing kit Tycoon 2FA.
@@ -11699,6 +11703,10 @@ Rules catalog includes **996 built-in detection rules** ([_last update on 2025-0
     
     - **Effort:** elementary
     
+    - **Changelog:**
+    
+        - 25/02/2025 - major - Update the indicator.
+            
 ??? abstract "Entra ID Sign-In Via Known AiTM Phishing Kit (Tycoon 2FA)"
     
     Detects a sign-in attempt with known characteristics of the adversary-in-the-middle phishing kit Tycoon 2FA.
@@ -12855,6 +12863,10 @@ Rules catalog includes **996 built-in detection rules** ([_last update on 2025-0
     
     - **Effort:** elementary
     
+    - **Changelog:**
+    
+        - 25/02/2025 - major - Update the indicator.
+            
 ??? abstract "Entra ID Sign-In Via Known AiTM Phishing Kit (Tycoon 2FA)"
     
     Detects a sign-in attempt with known characteristics of the adversary-in-the-middle phishing kit Tycoon 2FA.
