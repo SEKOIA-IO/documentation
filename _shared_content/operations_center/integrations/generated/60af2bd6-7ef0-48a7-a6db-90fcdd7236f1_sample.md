@@ -28,6 +28,14 @@ In this section, you will find examples of raw logs as generated natively by the
 
 
 
+=== "event_smpt_from_1"
+
+    ```
+	time=05:25:47.932 device_id=TestDeviceId log_id=0003014907 type=event subtype=smtp pri=information  user=mail ui=mail action=NONE status=N/A session_id="testsessionid" msg="from=<info@testtest-error.art>, size=0, class=0, nrcpts=0, proto=SMTP, daemon=SMTP_MTA, relay=[1.2.3.4]"
+    ```
+
+
+
 === "event_smpt_to_1"
 
     ```
