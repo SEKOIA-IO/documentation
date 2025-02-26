@@ -27,6 +27,7 @@ Deisolate an agent
 | --------- | ------- | --------------------------- |
 | `id` | `string` | Name or identifier of the agent |
 | `comment` | `string` | Comment |
+| `verify_certificate` | `boolean` | Is the server certificate verified |
 
 
 **Outputs**
@@ -52,6 +53,7 @@ Isolate an agent
 | `id` | `string` | Name or identifier of the agent |
 | `forceServerIsolation` | `boolean` | Boolean to force the isolation |
 | `comment` | `string` | Comment |
+| `verify_certificate` | `boolean` | Is the server certificate verified |
 
 
 **Outputs**
@@ -77,6 +79,7 @@ Quarantine a file
 | `id` | `string` | Name or identifier of the agent |
 | `filePath` | `string` | Path to the file to quarantine |
 | `bypassExcludedDirectories` | `boolean` | Boolean to bypass excluded directories |
+| `verify_certificate` | `boolean` | Is the server certificate verified |
 
 
 **Outputs**
@@ -102,6 +105,7 @@ Restore stormshield quarantined file
 | `id` | `string` | Name or identifier of the agent |
 | `fileHashSha256` | `string` | File hash sha256 |
 | `overwriteExistingFile` | `boolean` | Boolean to overwrite any existing file |
+| `verify_certificate` | `boolean` | Is the server certificate verified |
 
 
 **Outputs**
@@ -127,6 +131,7 @@ Terminate a Stormshield process
 | `id` | `string` | Name or identifier of the agent |
 | `processPath` | `string` | Executable path of the process to kill on the computer |
 | `terminateProcessTree` | `boolean` | Boolean to terminate the process tree |
+| `verify_certificate` | `boolean` | Is the server certificate verified |
 
 
 **Outputs**
@@ -150,6 +155,7 @@ Wait until the status of the task is Succeeded or Failed
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
 | `task_id` | `string` | Task ID |
+| `verify_certificate` | `boolean` | Is the server certificate verified |
 
 
 **Outputs**
@@ -167,4 +173,4 @@ Wait until the status of the task is Succeeded or Failed
 
 ## Extra
 
-Module **`Stormshield` v1.0.0**
+Module **`Stormshield` v1.0.1**
