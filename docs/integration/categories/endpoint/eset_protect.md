@@ -55,7 +55,7 @@ type: intake
 
 ## Step-by-Step Configuration Procedure
 
-### Instructions on the 3rd party solution
+### Create an api key
 
 To enable Syslog server in ESET Protect on On-Prem :
 
