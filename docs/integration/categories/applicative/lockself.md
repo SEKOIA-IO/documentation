@@ -1,5 +1,5 @@
-uuid: c3725f97-0c7b-4942-a847-983f38efb8ff
-name: LockSelf
+uuid: 59912cb4-2eef-4987-ad9a-cb657e29b929
+name: LockSelf LockPass/LockTransfer/LockFiles
 type: intake
 
 ## Overview
