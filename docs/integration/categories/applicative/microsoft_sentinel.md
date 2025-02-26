@@ -96,9 +96,11 @@ Microsoft Sentinel is a cloud-native security information and event management (
     - The `resourcegroup` depends on the resource group in which you placed your instance. You can also find this on the `Overview page` under `Resource Group`.
     ![Microsoft Sentinel Overview page](/assets/operation_center/integration_catalog/cloud_and_saas/microsoft_sentinel/microsoft_sentinel_overview.png){: style="max-width:100%"}
 
-### Instruction on Sekoia
+### Create the intake
 
-{!_shared_content/operations_center/integrations/generated/23d06c74-9311-4d56-b2ac-5d70c0b322fc.md!}
+Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a new intake from the format **Microsoft Sentinel**.
+
+{!_shared_content/operations_center/integrations/generated/23d06c74-9311-4d56-b2ac-5d70c0b322fc_sample.md!}
 
 {!_shared_content/integration/detection_section.md!}
 
