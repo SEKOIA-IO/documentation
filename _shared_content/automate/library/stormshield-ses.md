@@ -120,9 +120,9 @@ Restore stormshield quarantined file
 | `errorCode` | `integer` | Error code |
 | `errorMessage` | `string` | Error message |
 
-### Terminate Stormshield process
+### Terminate process
 
-Terminate a Stormshield process
+Terminate a process
 
 **Arguments**
 
