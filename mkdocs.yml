@@ -286,6 +286,7 @@ nav:
           - Triage: tip/features/automate/library/triage.md
           - VirusTotal: tip/features/automate/library/virustotal.md
           - Whois: tip/features/automate/library/whois.md
+          - Whois: tip/features/automate/library/whois.md
   - Develop:
     - REST API:
       - Quickstart: tip/develop/rest_api/quickstart.md
@@ -566,6 +567,7 @@ nav:
       - Triage: integration/action_library/triage.md
       - Triage: integration/action_library/triage.md
       - VirusTotal: integration/action_library/virustotal.md
+      - Whois: integration/action_library/whois.md
       - Whois: integration/action_library/whois.md
   - How to develop a new Integration:
     - Overview: integration/develop_integration/overview.md
