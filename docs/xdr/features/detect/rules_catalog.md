@@ -238,8 +238,8 @@ For an MSSP communty, when you edit this part and your rule is multi-communities
 For all types of rules, You will be able to limit its applicable scope with the following filters. For an MSSP community, these filters will be applied only on the community selected:
 
 - **Alert Filters**: are additional patterns that you can add to any rule to exclude matching events. This is useful to exclude known false positives so that your detections are always spot on. It is often easier to create Alert Filters [directly from an Alert](../investigate/alerts.md#create-an-alert-filter).
-- **Entities**: select the entities this rule should apply to. By default, rules apply to all entities. To ease the selection of entities, users can include or exlude specific entities.
-- **Assets**: select the assets this rule should apply to. By default, rules apply to all assets. To ease the selection of assets, users can include or exlude specific entities.
+- **Entities**: select the entities this rule should apply to. By default, rules apply to all entities. To ease the selection of entities, users can include or exlude specific entities. Use the filter on top of the table to include or exclude. Have a quick look at your selection by clicking on `selected entities`. 
+- **Assets**: select the assets this rule should apply to. By default, rules apply to all assets. To ease the selection of assets, users can include or exlude specific entities. To ease the selection of entities, users can include or exlude specific entities. Use the filter on top of the table to include or exclude. Have a quick look at your selection by clicking on `selected assets`. 
 
 ![limit-scope](/assets/operation_center/rules_catalog/rules_catalog_filters.png)
 
