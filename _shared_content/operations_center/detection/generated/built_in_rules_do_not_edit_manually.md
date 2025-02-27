@@ -1,4 +1,4 @@
-Rules catalog includes **996 built-in detection rules** ([_last update on 2025-02-26_](rules_changelog.md)).
+Rules catalog includes **997 built-in detection rules** ([_last update on 2025-02-27_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Identity Information**
 
@@ -11392,6 +11392,12 @@ Rules catalog includes **996 built-in detection rules** ([_last update on 2025-0
             
 **Multi-Factor Authentication Interception**
 
+??? abstract "Entra ID Sign-In Via Known AiTM Phishing Kit (Greatness)"
+    
+    Detects a sign-in attempt with known characteristics of the adversary-in-the-middle phishing kit Greatness.
+    
+    - **Effort:** elementary
+    
 ??? abstract "Entra ID Sign-In Via Known AiTM Phishing Kit (Mamba 2FA)"
     
     Detects a sign-in attempt with known characteristics of the adversary-in-the-middle phishing kit tracked by Sekoia.io as Mamba 2FA.
@@ -11684,6 +11690,12 @@ Rules catalog includes **996 built-in detection rules** ([_last update on 2025-0
     Detect a possible NTLM Relay attack combine with authent coerce
     
     - **Effort:** intermediate
+    
+??? abstract "Entra ID Sign-In Via Known AiTM Phishing Kit (Greatness)"
+    
+    Detects a sign-in attempt with known characteristics of the adversary-in-the-middle phishing kit Greatness.
+    
+    - **Effort:** elementary
     
 ??? abstract "Entra ID Sign-In Via Known AiTM Phishing Kit (Mamba 2FA)"
     
@@ -12844,6 +12856,12 @@ Rules catalog includes **996 built-in detection rules** ([_last update on 2025-0
     Detect a possible NTLM Relay attack combine with authent coerce
     
     - **Effort:** intermediate
+    
+??? abstract "Entra ID Sign-In Via Known AiTM Phishing Kit (Greatness)"
+    
+    Detects a sign-in attempt with known characteristics of the adversary-in-the-middle phishing kit Greatness.
+    
+    - **Effort:** elementary
     
 ??? abstract "Entra ID Sign-In Via Known AiTM Phishing Kit (Mamba 2FA)"
     
