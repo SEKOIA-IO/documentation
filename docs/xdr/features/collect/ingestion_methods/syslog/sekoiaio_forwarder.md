@@ -34,7 +34,8 @@ Please find our English tutorial video below to see how to configure the forward
   * **FRA1** intake.sekoia.io on port 10514 
   * **FRA2** fra2.app.sekoia.io on port 10514 
   * **MCO1** mco1.app.sekoia.io on port 10514 
-  * **EUA1** app.uae1.sekoia.io on port 10514 
+  * **UAE1** app.uae1.sekoia.io on port 10514 
+  * **USA1** app.usa1.sekoia.io on port 10514 
 
   !!! note 
       The disk choice (SSD or HDD type) has no impact on the performance of Sekoia.io Forwarder.
@@ -152,7 +153,7 @@ Two environment variables are used to customize the container. These variables a
 
 * `MEMORY_MESSAGES=2000000` means the queue is allowed to store up to 2,000,000 messages in memory. If we consider a message size is 1.2KB, then you will use 2,4GB of RAM memory (2000000 * 1.2KB = 2.4GB).
 * `DISK_SPACE=180g` means the queue is allowed to store on disk up to 180giga of messages.
-* `REGION=FRA1` is the region where to send the logs. Currently 4 options are available: `FRA1`, `FRA2`, `MCO1` and `UAE1`
+* `REGION=FRA1` is the region where to send the logs. Currently 5 options are available: `FRA1`, `FRA2`, `MCO1`, `UAE1` and `USA1`
 
 [Here](#prerequisites) you will find recommendations to set these variables based on the number of assets. You can also define your own values, which should be chosen according to your virtual machine's template.
 
