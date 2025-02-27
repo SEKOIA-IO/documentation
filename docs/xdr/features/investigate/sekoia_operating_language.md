@@ -637,7 +637,8 @@ Use the following operators to compare values.
 
 **Description**
 
-Use the `in` operator to filter the rows based on a set of case-sensitive strings.
+Use the `in` operator to filter the rows based on a set of case-sensitive strings. 
+The value equals to one of the elements.
 
 ``` shell
 <table name>
@@ -652,6 +653,32 @@ Find events where `client.ip` equals to theses values: 192.168.0.1, 192.168.0.2.
 ``` shell
 events
 | where client.ip in ["192.168.0.1", "192.168.0.2"]
+| limit 100
+
+```
+
+---
+
+### Not in
+
+**Description**
+
+Use the `!in` operator to filter the rows based on a set of case-sensitive strings.
+The value does not equals to any of the elements.
+
+``` shell
+<table name>
+| where <column name> !in ["<value 1>", "<value 2>"]
+
+```
+
+**Example**
+
+Exclude events where `client.ip` equals to any theses values: 192.168.0.1, 192.168.0.2.
+
+``` shell
+events
+| where client.ip !in ["192.168.0.1", "192.168.0.2"]
 | limit 100
 
 ```
