@@ -1,10 +1,10 @@
 uuid: 16676d72-463e-4b8a-b13a-f8dd48cddc8c
-name: Cloudflare Firewall Events
+name: Cloudflare WAF / Firewall Events
 type: intake
 
 ## Overview
 
-Cloudflare is a global network designed to make everything you connect to the Internet secure, private, fast, and reliable. In this documentation, you will learn how to collect and send Cloudflare Firewall events to Sekoia.io.
+Cloudflare is a global network designed to make everything you connect to the Internet secure, private, fast, and reliable. In this documentation, you will learn how to collect and send Cloudflare WAF / Firewall events to Sekoia.io.
 
 - **Vendor**: Cloudflare
 - **Supported environment**: SaaS

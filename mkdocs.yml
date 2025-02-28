@@ -458,7 +458,7 @@ nav:
       - Cisco Web Security Appliance: integration/categories/network_security/cisco_wsa.md
       - Claroty xDome: integration/categories/network_security/claroty_xdome.md
       - Clavister Next-Gen Firewall: integration/categories/network_security/clavister_ng_fw.md
-      - Cloudflare Firewall Events: integration/categories/network_security/cloudflare-firewall-events.md
+      - Cloudflare WAF / Firewall Events: integration/categories/network_security/cloudflare-firewall-events.md
       - Cyberwatch Detection: integration/categories/network_security/cyberwatch_detection.md
       - Darktrace Threat Visualizer: integration/categories/network_security/darktrace_threat_visualizer.md
       - Datadome Protection: integration/categories/network_security/datadome_protection.md
