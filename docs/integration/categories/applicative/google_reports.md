@@ -14,7 +14,23 @@ Google Workspace, formerly known as G Suite, is a cloud-based productivity and c
 
 This integration can collect activities from the following GSuite applications:
 
-- `admin` to collect activities on the Admin console 
+- `admin` to collect activities, on the Admin console, including:
+    - [application settings](https://developers.google.com/admin-sdk/reports/v1/reference/activity-ref-appendix-a/admin-application-events)
+    - [calendar settings](https://developers.google.com/admin-sdk/reports/v1/reference/activity-ref-appendix-a/admin-cal-events)
+    - [chat settings](https://developers.google.com/admin-sdk/reports/v1/reference/activity-ref-appendix-a/admin-chat-events)
+    - [chrome os settings](https://developers.google.com/admin-sdk/reports/v1/reference/activity-ref-appendix-a/admin-chromeos-events)
+    - [contacts settings](https://developers.google.com/admin-sdk/reports/v1/reference/activity-ref-appendix-a/admin-contacts-events)
+    - [delegated admin](https://developers.google.com/admin-sdk/reports/v1/reference/activity-ref-appendix-a/admin-deladmin-events)
+    - [docs settings](https://developers.google.com/admin-sdk/reports/v1/reference/activity-ref-appendix-a/admin-docs-events)
+    - [domain settings](https://developers.google.com/admin-sdk/reports/v1/reference/activity-ref-appendix-a/admin-domain-events)
+    - [email settings](https://developers.google.com/admin-sdk/reports/v1/reference/activity-ref-appendix-a/admin-gmail-events)
+    - [group settings](https://developers.google.com/admin-sdk/reports/v1/reference/activity-ref-appendix-a/admin-groups-events)
+    - [licenses settings](https://developers.google.com/admin-sdk/reports/v1/reference/activity-ref-appendix-a/admin-licenses-events)
+    - [mobile settings](https://developers.google.com/admin-sdk/reports/v1/reference/activity-ref-appendix-a/admin-mobile-events)
+    - [organization settings](https://developers.google.com/admin-sdk/reports/v1/reference/activity-ref-appendix-a/admin-org-events)
+    - [security settings](https://developers.google.com/admin-sdk/reports/v1/reference/activity-ref-appendix-a/admin-security-events)
+    - [sites settings](https://developers.google.com/admin-sdk/reports/v1/reference/activity-ref-appendix-a/admin-sites-events)
+    - [user settings](https://developers.google.com/admin-sdk/reports/v1/reference/activity-ref-appendix-a/admin-user-events)
 - `calendar` to collect events from Google calendar
 - `chat` to collect Chat activities
 - `drive` to supervise Google Drive events
@@ -38,7 +54,6 @@ This integration can collect activities from the following GSuite applications:
 
 Only activities from one applications can be collected from one playbook.
 To collect activities from several Google Application, create as many playbooks as applications to collect.
-
 
 
 ## Configure
@@ -133,6 +148,12 @@ Find more information on the [official google documentation](https://cloud.googl
 !!! Important
     * This Google workspace admin email is any user part of the domain **that has** the right to view de Data of Google Workspace
     * If you are uncertain whether to use a super admin or admin email, make sure you have the appropriate permissions in the email for the service you are requesting. For example, if you need to access logs on Google Vault, you will need the Access all logs permission.
+
+!!! Important
+    Google Workspace events may be available in the Admin console and the Google Report API with delay.
+    This delay can be from a couple of minutes up to several hours (see [documentation](https://support.google.com/a/answer/7061566?hl=en)).
+    Please adjust the timedelta parameter in the configuration accordingly.
+
 
 ### Enjoy your events on the [Events page](https://app.sekoia.io/operations/events)
 
