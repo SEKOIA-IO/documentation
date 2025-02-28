@@ -23,6 +23,10 @@ Palo Alto Networks offers an enterprise cybersecurity platform which provides ne
    - Threat
    - UserId
    - WildFire Malicious
+- **Supported series**: 
+   - VM-series
+   - CN-series
+   - PA-series
 
 ## Specification
 
@@ -53,7 +57,6 @@ Palo Alto Networks offers an enterprise cybersecurity platform which provides ne
 
 !!! Note
     - Log levels are based on the taxonomy of [RFC5424](https://datatracker.ietf.org/doc/html/rfc5424). Adapt according to the terminology used by the editor.
-	- Palo Alto Next-Generation Firewall is compatible with any appliance running PanOS, including the VM-series, CN-series, PA-series, and even the Cloud NGFW.
 
 ## Step-by-Step Configuration Procedure
 ### Instruction on Sekoia
