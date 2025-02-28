@@ -306,6 +306,7 @@ nav:
     - HTTPS:
       - Overview: integration/ingestion_methods/https/overview.md
       - Formatting options: integration/ingestion_methods/https/format.md
+      - Compression: integration/ingestion_methods/https/compression.md
       - Forwarding logs using a third-party application: integration/ingestion_methods/https/third_part.md
       - Graylog: integration/ingestion_methods/https/graylog.md
       - Logstash: integration/ingestion_methods/https/logstash.md
