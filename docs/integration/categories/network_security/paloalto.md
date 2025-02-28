@@ -10,7 +10,7 @@ Palo Alto Networks offers an enterprise cybersecurity platform which provides ne
 - **Supported environment**: On Premise
 - **Version compatibility**:
 - **Detection based on**: Telemetry
-- **Supported application or feature**: Traffic, Threat and WildFire Malicious
+- **Supported application or feature**: Traffic, Threat, PanOS and WildFire Malicious
 
 ## Specification
 
@@ -40,7 +40,8 @@ Palo Alto Networks offers an enterprise cybersecurity platform which provides ne
 - **Supported verbosity level**: Informational
 
 !!! Note
-    Log levels are based on the taxonomy of [RFC5424](https://datatracker.ietf.org/doc/html/rfc5424). Adapt according to the terminology used by the editor.
+    - Log levels are based on the taxonomy of [RFC5424](https://datatracker.ietf.org/doc/html/rfc5424). Adapt according to the terminology used by the editor.
+	- Palo Alto Next-Generation Firewall is compatible with any appliance running PanOS, including the VM-series, CN-series, PA-series, and even the Cloud NGFW.
 
 ## Step-by-Step Configuration Procedure
 ### Instruction on Sekoia
