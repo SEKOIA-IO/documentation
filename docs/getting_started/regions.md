@@ -205,3 +205,40 @@ UAE1 is our middle eastern region hosted in Azure (UAE North, Dubai)
         </tr>
     </tbody>
 </table>
+
+## United States of America - USA1
+
+USA1 is our northern america region hosted in OVH (USA East, Virginia)
+
+<table style="width:100%">
+    <tbody>
+        <tr>
+            <td><strong>Name</strong></td>
+            <td><strong>USA1</strong></td>
+        </tr>
+        <tr>
+            <td>Location</td>
+            <td>🇦🇪 United States of America / East</td>
+        </tr>
+        <tr>
+            <td>Infrastructure</td>
+            <td>OVH</td>
+        </tr>
+        <tr>
+            <td>URL</td>
+            <td><a href="https://app.usa1.sekoia.io">https://app.usa1.sekoia.io</a></td>
+        </tr>
+        <tr>
+            <td>API</td>
+            <td><a href="https://api.usa1.sekoia.io">https://api.usa1.sekoia.io</a></td>
+        </tr>
+        <tr>
+            <td>HTTP Intake</td>
+            <td><a href="https://app.usa1.sekoia.io/api/v1/intake-http">https://app.usa1.sekoia.io/api/v1/intake-http</a></td>
+        </tr>
+        <tr>
+            <td>Syslog Intake</td>
+            <td><a href="app.usa1.sekoia.io:10514">app.usa1.sekoia.io:10514</a></td>
+        </tr>
+    </tbody>
+</table>
