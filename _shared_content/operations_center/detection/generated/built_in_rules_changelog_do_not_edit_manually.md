@@ -1,7 +1,10 @@
-Changelog _last update on 2025-02-27_
+Changelog _last update on 2025-03-03_
 
 ## Changelog
 
+### Okta Suspicious Use of a Session Cookie
+  - 03/03/2025 - minor - Improve detection pattern group-by, value field and timespan, update rule name
+    
 ### Entra ID Sign-In Via Known AiTM Phishing Kit (Sneaky 2FA)
   - 25/02/2025 - major - Update the indicator.
     

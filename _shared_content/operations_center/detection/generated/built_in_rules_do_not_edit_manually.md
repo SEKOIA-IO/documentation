@@ -1,4 +1,4 @@
-Rules catalog includes **997 built-in detection rules** ([_last update on 2025-02-27_](rules_changelog.md)).
+Rules catalog includes **997 built-in detection rules** ([_last update on 2025-03-03_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Identity Information**
 
@@ -632,12 +632,16 @@ Rules catalog includes **997 built-in detection rules** ([_last update on 2025-0
     
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
             
-??? abstract "Okta Reuse Device Token"
+??? abstract "Okta Suspicious Use of a Session Cookie"
     
-    Detection of the reusing of Device Token.
+    Suspicious use of a session cookie by detecting multiple client values (IP, User Agent, etc.) changing for the same Device Token associated with a specific user.
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 03/03/2025 - minor - Improve detection pattern group-by, value field and timespan, update rule name
+            
 ??? abstract "Okta User Logged In From Multiple Countries"
     
     Detection of login events from multiple countries.
