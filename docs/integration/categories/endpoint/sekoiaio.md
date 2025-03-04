@@ -61,6 +61,9 @@ The Sekoia.io Endpoint Agent uses the HTTPS protocol to send its events and has 
 === "UAE1"
     * <https://app.uae1.sekoia.io/>
 
+=== "USA1"
+    * <https://app.usa1.sekoia.io/>
+
 
 ## Installation
 
