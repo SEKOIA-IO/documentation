@@ -1,4 +1,4 @@
-Rules catalog includes **996 built-in detection rules** ([_last update on 2025-02-17_](rules_changelog.md)).
+Rules catalog includes **997 built-in detection rules** ([_last update on 2025-03-03_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Identity Information**
 
@@ -632,12 +632,16 @@ Rules catalog includes **996 built-in detection rules** ([_last update on 2025-0
     
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
             
-??? abstract "Okta Reuse Device Token"
+??? abstract "Okta Suspicious Use of a Session Cookie"
     
-    Detection of the reusing of Device Token.
+    Suspicious use of a session cookie by detecting multiple client values (IP, User Agent, etc.) changing for the same Device Token associated with a specific user.
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 03/03/2025 - minor - Improve detection pattern group-by, value field and timespan, update rule name
+            
 ??? abstract "Okta User Logged In From Multiple Countries"
     
     Detection of login events from multiple countries.
@@ -11392,6 +11396,12 @@ Rules catalog includes **996 built-in detection rules** ([_last update on 2025-0
             
 **Multi-Factor Authentication Interception**
 
+??? abstract "Entra ID Sign-In Via Known AiTM Phishing Kit (Greatness)"
+    
+    Detects a sign-in attempt with known characteristics of the adversary-in-the-middle phishing kit Greatness.
+    
+    - **Effort:** elementary
+    
 ??? abstract "Entra ID Sign-In Via Known AiTM Phishing Kit (Mamba 2FA)"
     
     Detects a sign-in attempt with known characteristics of the adversary-in-the-middle phishing kit tracked by Sekoia.io as Mamba 2FA.
@@ -11410,6 +11420,10 @@ Rules catalog includes **996 built-in detection rules** ([_last update on 2025-0
     
     - **Effort:** elementary
     
+    - **Changelog:**
+    
+        - 25/02/2025 - major - Update the indicator.
+            
 ??? abstract "Entra ID Sign-In Via Known AiTM Phishing Kit (Tycoon 2FA)"
     
     Detects a sign-in attempt with known characteristics of the adversary-in-the-middle phishing kit Tycoon 2FA.
@@ -11681,6 +11695,12 @@ Rules catalog includes **996 built-in detection rules** ([_last update on 2025-0
     
     - **Effort:** intermediate
     
+??? abstract "Entra ID Sign-In Via Known AiTM Phishing Kit (Greatness)"
+    
+    Detects a sign-in attempt with known characteristics of the adversary-in-the-middle phishing kit Greatness.
+    
+    - **Effort:** elementary
+    
 ??? abstract "Entra ID Sign-In Via Known AiTM Phishing Kit (Mamba 2FA)"
     
     Detects a sign-in attempt with known characteristics of the adversary-in-the-middle phishing kit tracked by Sekoia.io as Mamba 2FA.
@@ -11699,6 +11719,10 @@ Rules catalog includes **996 built-in detection rules** ([_last update on 2025-0
     
     - **Effort:** elementary
     
+    - **Changelog:**
+    
+        - 25/02/2025 - major - Update the indicator.
+            
 ??? abstract "Entra ID Sign-In Via Known AiTM Phishing Kit (Tycoon 2FA)"
     
     Detects a sign-in attempt with known characteristics of the adversary-in-the-middle phishing kit Tycoon 2FA.
@@ -12837,6 +12861,12 @@ Rules catalog includes **996 built-in detection rules** ([_last update on 2025-0
     
     - **Effort:** intermediate
     
+??? abstract "Entra ID Sign-In Via Known AiTM Phishing Kit (Greatness)"
+    
+    Detects a sign-in attempt with known characteristics of the adversary-in-the-middle phishing kit Greatness.
+    
+    - **Effort:** elementary
+    
 ??? abstract "Entra ID Sign-In Via Known AiTM Phishing Kit (Mamba 2FA)"
     
     Detects a sign-in attempt with known characteristics of the adversary-in-the-middle phishing kit tracked by Sekoia.io as Mamba 2FA.
@@ -12855,6 +12885,10 @@ Rules catalog includes **996 built-in detection rules** ([_last update on 2025-0
     
     - **Effort:** elementary
     
+    - **Changelog:**
+    
+        - 25/02/2025 - major - Update the indicator.
+            
 ??? abstract "Entra ID Sign-In Via Known AiTM Phishing Kit (Tycoon 2FA)"
     
     Detects a sign-in attempt with known characteristics of the adversary-in-the-middle phishing kit Tycoon 2FA.

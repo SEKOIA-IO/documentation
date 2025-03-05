@@ -248,7 +248,7 @@ nav:
           - Panda Security: tip/features/automate/library/panda-security.md
           - SentinelOne: tip/features/automate/library/sentinelone.md
           - Sophos: tip/features/automate/library/sophos.md
-          - Stormshield: tip/features/automate/library/stormshield.md
+          - Stormshield SES: tip/features/automate/library/stormshield-ses.md
           - WithSecure: tip/features/automate/library/withsecure.md
         - Generic:
           - HTTP: tip/features/automate/library/http.md
@@ -306,6 +306,7 @@ nav:
     - HTTPS:
       - Overview: integration/ingestion_methods/https/overview.md
       - Formatting options: integration/ingestion_methods/https/format.md
+      - Compression: integration/ingestion_methods/https/compression.md
       - Forwarding logs using a third-party application: integration/ingestion_methods/https/third_part.md
       - Graylog: integration/ingestion_methods/https/graylog.md
       - Logstash: integration/ingestion_methods/https/logstash.md
@@ -328,8 +329,9 @@ nav:
       - Github Audit Logs: integration/categories/applicative/github_audit_logs.md
       - Google Workspace / ChromeOS: integration/categories/applicative/google_reports.md
       - Google Cloud Audit Logs: integration/categories/applicative/google_cloud_audit.md
-      - LockSelf: integration/categories/applicative/lockself.md
+      - LockSelf LockPass/LockTransfer/LockFiles: integration/categories/applicative/lockself.md
       - Microsoft IIS: integration/categories/applicative/microsoft_iis.md
+      - Microsoft Sentinel: integration/categories/applicative/microsoft_sentinel.md
       - Salesforce: integration/categories/applicative/salesforce.md
       - Sekoia.io activity logs: integration/categories/applicative/sekoiaio_activity_logs.md
       - Sekoia.io forwarder logs: integration/categories/applicative/sekoiaio_forwarder_logs.md
@@ -458,7 +460,7 @@ nav:
       - Cisco Web Security Appliance: integration/categories/network_security/cisco_wsa.md
       - Claroty xDome: integration/categories/network_security/claroty_xdome.md
       - Clavister Next-Gen Firewall: integration/categories/network_security/clavister_ng_fw.md
-      - Cloudflare Firewall Events: integration/categories/network_security/cloudflare-firewall-events.md
+      - Cloudflare WAF / Firewall Events: integration/categories/network_security/cloudflare-firewall-events.md
       - Cyberwatch Detection: integration/categories/network_security/cyberwatch_detection.md
       - Darktrace Threat Visualizer: integration/categories/network_security/darktrace_threat_visualizer.md
       - Datadome Protection: integration/categories/network_security/datadome_protection.md
@@ -529,7 +531,7 @@ nav:
       - Panda Security: integration/action_library/panda-security.md
       - SentinelOne: integration/action_library/sentinelone.md
       - Sophos: integration/action_library/sophos.md
-      - Stormshield: integration/action_library/stormshield.md
+      - Stormshield SES: integration/action_library/stormshield-ses.md
       - WithSecure: integration/action_library/withsecure.md
     - Generic:
       - HTTP: integration/action_library/http.md

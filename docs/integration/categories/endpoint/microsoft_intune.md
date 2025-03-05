@@ -7,7 +7,7 @@ type: intake
 - **Supported environment**:
 - **Version compatibility**:
 - **Detection based on**: Telemetry
-- **Supported application or feature**:
+- **Supported application or feature**: AuditLogs, OperationalLogs, Devices, DeviceComplianceOrg
 
 **Microsoft Intune** helps you protect your workforce's corporate data by managing devices and apps. **Intune** provides mobile device management (MDM) and mobile app management (MAM) from a secure cloud-based service that is administered using the Microsoft Endpoint Manager admin center. Using **Intune**, you ensure your workforce's corporate resources (data, devices, and apps) are correctly configured, accessed, and updated, meeting your company's compliance policies and requirements.
 
