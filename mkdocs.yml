@@ -423,6 +423,7 @@ nav:
       - Cloudflare Gateway HTTP: integration/categories/network/cloudflare-gateway-http.md
       - Cloudflare Gateway Network: integration/categories/network/cloudflare-gateway-network.md
       - Cloudflare HTTP requests: integration/categories/network/cloudflare-http-requests.md
+      - CyberArk Identity Audit Logs: integration/categories/network/cyberark_identity_audit_logs.md
       - EfficientIP SOLIDServer DDI: integration/categories/network/efficientip_solidserver_ddi.md
       - Ekinops OneOS: integration/categories/network/ekinops_oneos.md
       - F5 BIG-IP: integration/categories/network/f5-big-ip.md
