@@ -1,5 +1,5 @@
 uuid: 064f7e8b-ce5f-474d-802e-e88fe2193365
-name: Trend Micro Apex One
+name: Trend Micro Apex One / Vision One Endpoint
 type: intake
 
 ## Overview
@@ -9,7 +9,7 @@ type: intake
 - **Detection based on**: Alert, Telemetry
 - **Supported application or feature**:
 
-Trend Micro Apex One is Endpoint Detection and Response (EDR) solution that detects and protects your endpoints against threats.
+Trend Micro Apex One / Vision One Endpoint is Endpoint Detection and Response (EDR) solution that detects and protects your endpoints against threats.
 
 This integration supports the following log types:
 
