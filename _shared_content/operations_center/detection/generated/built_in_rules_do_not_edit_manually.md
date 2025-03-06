@@ -1,4 +1,4 @@
-Rules catalog includes **997 built-in detection rules** ([_last update on 2025-03-03_](rules_changelog.md)).
+Rules catalog includes **998 built-in detection rules** ([_last update on 2025-03-06_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Identity Information**
 
@@ -13607,6 +13607,14 @@ Rules catalog includes **997 built-in detection rules** ([_last update on 2025-0
     - **Effort:** intermediate
     
 ## Exfiltration
+**Exfiltration Over Other Network Medium**
+
+??? abstract "Zscaler Internet Access Data Exfiltration"
+    
+    Detects request of 100000000 bytes or more from Zscaler Internet Access monitored hosts.
+    
+    - **Effort:** master
+    
 **Automated Exfiltration**
 
 ??? abstract "AWS CloudTrail RDS Change Master Password"
