@@ -10,7 +10,23 @@ Palo Alto Networks offers an enterprise cybersecurity platform which provides ne
 - **Supported environment**: On Premise
 - **Version compatibility**:
 - **Detection based on**: Telemetry
-- **Supported application or feature**: Traffic, Threat and WildFire Malicious
+- **Supported application or feature**:
+   - Authentication
+   - Decryption
+   - DNS
+   - GlobalProtect
+   - HIP match
+   - IP Tag
+   - SCTP
+   - System
+   - Traffic
+   - Threat
+   - UserId
+   - WildFire Malicious
+- **Supported series**: 
+   - VM-series
+   - CN-series
+   - PA-series
 
 ## Specification
 
