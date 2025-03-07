@@ -298,20 +298,20 @@ aliases:
     new_network_connection: destination.ip
 ```
 
-## Detection on specific time windows
+## Detection on specific time range
 
-Use `time-based` modifiers below to detect suspicious activites that occur outside of normal business hours or to reduce alert fatigue through intelligent time-based filtering.
+Use `time-based` modifiers below to detect suspicious activites that occur outside of normal business hours or reduce alert fatigue through intelligent time-based filtering.
 
 Time-based modifiers can be used in:
 
-- SIGMA detection rules
-- SIGMA alert filters
+- **SIGMA detection rules**
+- **SIGMA alert filters**
 
 !!! Warning
     By default, all `time-based` modifiers are UTC based.
     To specify a local time, use the `timezone` metadata.
 
-### Hour timerange
+### Hour
 
 Use the `timerange` modifier to detect events during non-working hours on a time range (in `UTC` by default).
 
@@ -381,7 +381,7 @@ detection:
 Use the `public_holiday_in` modifier to detect events during public holidays.
 If not specifed, the days of the year are `UTC` based.
 
-Use the ISO 3166 country code to specify the corresponding country public holidays.
+Use the `ISO 3166` country code to specify the corresponding country public holidays:
 [https://en.wikipedia.org/wiki/List_of_ISO_3166_country_codes](https://en.wikipedia.org/wiki/List_of_ISO_3166_country_codes)
 
 Example: Detect during France and United States public holidays
@@ -401,7 +401,7 @@ detection:
 
 The `timezone` metadata enables user to specify a local time.
 
-Use the `TZ identifier` column from `tz database` to specify the timezone 
+Use the `TZ identifier` column from `tz database` to specify the timezone:
 [https://en.wikipedia.org/wiki/List_of_tz_database_time_zones](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones)
 
 This metadata applies only to the following `modifiers`:
