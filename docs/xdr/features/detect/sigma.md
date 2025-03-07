@@ -381,7 +381,8 @@ detection:
 Use the `public_holiday_in` modifier to detect events during public holidays.
 If not specifed, the days of the year are `UTC` based.
 
-Use the country code ([ISO 3166](https://en.wikipedia.org/wiki/List_of_ISO_3166_country_codes)) to specify the corresponding country public holidays.
+Use the ISO 3166 country code to specify the corresponding country public holidays.
+[https://en.wikipedia.org/wiki/List_of_ISO_3166_country_codes](https://en.wikipedia.org/wiki/List_of_ISO_3166_country_codes)
 
 Example: Detect during France and United States public holidays
 
@@ -399,7 +400,9 @@ detection:
 ### Timezone
 
 The `timezone` metadata enables user to specify a local time.
-Use the `TZ identifier` column from [tz database](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones) to specify the timezone 
+
+Use the `TZ identifier` column from `tz database` to specify the timezone 
+[https://en.wikipedia.org/wiki/List_of_tz_database_time_zones](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones)
 
 This metadata applies only to the following `modifiers`:
 
