@@ -313,9 +313,9 @@ Time-based modifiers can be used in:
 
 ### Hour timerange
 
-Use the `timerange` modifier to detect events during non-working hours on a time range (in UTC by default).
+Use the `timerange` modifier to detect events during non-working hours on a time range (in `UTC` by default).
 
-Example: Detect from 20:00pm to 09:00am
+Example: Detect from 20:00pm to 09:00am (`UTC`)
 
 ```yaml
 detection:
@@ -383,7 +383,7 @@ If not specifed, the days of the year are `UTC` based.
 
 Use the country code ([ISO 3166](https://en.wikipedia.org/wiki/List_of_ISO_3166_country_codes)) to specify the corresponding country public holidays.
 
-Example: Detect on French and United States public holidays
+Example: Detect during France and United States public holidays
 
 ```yaml
 detection:
@@ -398,7 +398,7 @@ detection:
 
 ### Timezone
 
-The `timezone` metadata enables user to specify a local time. If not specified, the `UTC` timezone is applied by default.
+The `timezone` metadata enables user to specify a local time.
 Use the `TZ identifier` column from [tz database](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones) to specify the timezone 
 
 This metadata applies only to the following `modifiers`:
@@ -424,6 +424,30 @@ Example: Detect from 19:00 to 08:00 in local time America/Los_Angeles
 
 ```yaml
 timezone: America/Los_Angeles
+detection:
+  selection:
+    event.code: 4720
+  non_working_hours_local:
+	  @timestamp|timerange: 19:00-08:00
+	condition: selection and non_working_hours_local
+```
+
+Example: Detect from 19:00 to 08:00 in local time Asia/Dubai
+
+```yaml
+timezone: Asia/Dubai
+detection:
+  selection:
+    event.code: 4720
+  non_working_hours_local:
+	  @timestamp|timerange: 19:00-08:00
+	condition: selection and non_working_hours_local
+```
+
+Example: Detect from 19:00 to 08:00 in local time Europe/Warsaw
+
+```yaml
+timezone: Europe/Warsaw
 detection:
   selection:
     event.code: 4720
