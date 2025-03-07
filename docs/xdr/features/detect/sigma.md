@@ -307,9 +307,12 @@ Time-based modifiers can be used in:
 - **SIGMA detection rules**
 - **SIGMA alert filters**
 
+!!! Info
+    Theses time-based modifiers are not part of Sigma standard. They are only available in Sekoia SOC platform.
+
 !!! Warning
-    By default, all `time-based` modifiers are UTC based.
-    To specify a local time, use the `timezone` metadata.
+    By default, all `time-based` modifiers are `UTC` based. To specify a local time, use the `timezone` metadata. 
+    We recommend using `timezone` rather than `UTC` to automatically account for Daylight Savings.
 
 ### Hour
 
@@ -322,7 +325,7 @@ detection:
   selection:
     event.code: 4720
   non_working_hours_utc:
-	  @timestamp|timerange: 20:00-09:00
+	  timestamp|timerange: 20:00-09:00
 	condition: selection and non_working_hours_utc
 ```
 
@@ -348,7 +351,7 @@ detection:
   selection:
     event.code: 4720
   non_working_days:
-	  @timestamp|day_of_week:
+	  timestamp|day_of_week:
 		  - saturday
 		  - sunday
 	condition: selection and non_working_days
@@ -368,7 +371,7 @@ detection:
   selection:
     event.code: 4720
   non_working_dates:
-	  @timestamp|day_of_year:
+	  timestamp|day_of_year:
 		  - 01-01
 		  - 07-14
 		  - 12-23
@@ -391,7 +394,7 @@ detection:
   selection:
     event.code: 4720
   non_working_dates:
-	  @timestamp|public_holiday_in:
+	  timestamp|public_holiday_in:
 		  - FR
 		  - US
 	condition: selection and non_working_dates
@@ -419,7 +422,7 @@ detection:
   selection:
     event.code: 4720
   non_working_hours_local:
-	  @timestamp|timerange: 19:00-08:00
+	  timestamp|timerange: 19:00-08:00
 	condition: selection and non_working_hours_local
 ```
 
@@ -431,7 +434,7 @@ detection:
   selection:
     event.code: 4720
   non_working_hours_local:
-	  @timestamp|timerange: 19:00-08:00
+	  timestamp|timerange: 19:00-08:00
 	condition: selection and non_working_hours_local
 ```
 
@@ -443,7 +446,7 @@ detection:
   selection:
     event.code: 4720
   non_working_hours_local:
-	  @timestamp|timerange: 19:00-08:00
+	  timestamp|timerange: 19:00-08:00
 	condition: selection and non_working_hours_local
 ```
 
@@ -455,6 +458,6 @@ detection:
   selection:
     event.code: 4720
   non_working_hours_local:
-	  @timestamp|timerange: 19:00-08:00
+	  timestamp|timerange: 19:00-08:00
 	condition: selection and non_working_hours_local
 ```
