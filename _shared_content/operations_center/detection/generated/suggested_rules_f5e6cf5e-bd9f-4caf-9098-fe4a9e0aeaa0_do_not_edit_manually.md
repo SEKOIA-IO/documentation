@@ -333,6 +333,12 @@ The following Sekoia.io built-in rules match the intake **Stormshield SES**. Thi
     
     - **Effort:** elementary
 
+??? abstract "Correlation Admin Files Checked On Network Share"
+    
+    Detects requests to multiple admin files on a network share. This could be an attacker performing reconnaissance steps on the system.
+    
+    - **Effort:** advanced
+
 ??? abstract "Correlation Multi Service Disable"
     
     The rule detects a high number of services stopped or de-activated in a short period of time.
