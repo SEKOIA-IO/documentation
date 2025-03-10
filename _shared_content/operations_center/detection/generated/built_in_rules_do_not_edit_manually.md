@@ -1,4 +1,4 @@
-Rules catalog includes **998 built-in detection rules** ([_last update on 2025-03-06_](rules_changelog.md)).
+Rules catalog includes **999 built-in detection rules** ([_last update on 2025-03-10_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Identity Information**
 
@@ -12310,6 +12310,12 @@ Rules catalog includes **998 built-in detection rules** ([_last update on 2025-0
     
 **Network Share Discovery**
 
+??? abstract "Correlation Admin Files Checked On Network Share"
+    
+    Detects requests to multiple admin files on a network share. This could be an attacker performing reconnaissance steps on the system.
+    
+    - **Effort:** advanced
+    
 ??? abstract "Netscan Share Access Artefact"
     
     Detects netscan artefact on windows network share - indicate network share discovery.
