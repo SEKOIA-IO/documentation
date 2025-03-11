@@ -51,6 +51,12 @@ The following Sekoia.io built-in rules match the intake **Sophos EDR**. This doc
     
     - **Effort:** master
 
+??? abstract "Correlation Admin Files Checked On Network Share"
+    
+    Detects requests to multiple admin files on a network share. This could be an attacker performing reconnaissance steps on the system.
+    
+    - **Effort:** advanced
+
 ??? abstract "Detect requests to Konni C2 servers"
     
     This rule detects requests to Konni C2 servers. These patterns come from an analysis done in 2022, September.

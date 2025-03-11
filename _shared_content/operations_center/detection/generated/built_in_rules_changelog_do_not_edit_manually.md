@@ -1,7 +1,16 @@
-Changelog _last update on 2025-03-06_
+Changelog _last update on 2025-03-11_
 
 ## Changelog
 
+### Palo Alto Cortex XDR (EDR) Alert Not Blocked (Low Severity)
+  - 10/03/2025 - minor - Update severity to match the severity level from the editor
+    
+### Palo Alto Cortex XDR (EDR) Alert Not Blocked (High Severity)
+  - 10/03/2025 - minor - Update severity to match the severity level from the editor
+    
+### Palo Alto Cortex XDR (EDR) Alert Not Blocked (Medium Severity)
+  - 10/03/2025 - minor - Update severity to match the severity level from the editor
+    
 ### Okta Suspicious Use of a Session Cookie
   - 03/03/2025 - minor - Improve detection pattern group-by, value field and timespan, update rule name
     
