@@ -1,4 +1,4 @@
-Rules catalog includes **998 built-in detection rules** ([_last update on 2025-03-06_](rules_changelog.md)).
+Rules catalog includes **999 built-in detection rules** ([_last update on 2025-03-11_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Identity Information**
 
@@ -3715,18 +3715,30 @@ Rules catalog includes **998 built-in detection rules** ([_last update on 2025-0
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 10/03/2025 - minor - Update severity to match the severity level from the editor
+            
 ??? abstract "Palo Alto Cortex XDR (EDR) Alert Not Blocked (Low Severity)"
     
     A Palo Alto Cortex XDR (EDR) agent has raised an alert of low severity that was not blocked.
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 10/03/2025 - minor - Update severity to match the severity level from the editor
+            
 ??? abstract "Palo Alto Cortex XDR (EDR) Alert Not Blocked (Medium Severity)"
     
     A Palo Alto Cortex XDR (EDR) agent has raised an alert of medium severity that was not blocked.
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 10/03/2025 - minor - Update severity to match the severity level from the editor
+            
 ??? abstract "SentinelOne EDR Agent Disabled"
     
     A SentinelOne EDR agent has been disabled according to SentinelOne logs.
@@ -12310,6 +12322,12 @@ Rules catalog includes **998 built-in detection rules** ([_last update on 2025-0
     
 **Network Share Discovery**
 
+??? abstract "Correlation Admin Files Checked On Network Share"
+    
+    Detects requests to multiple admin files on a network share. This could be an attacker performing reconnaissance steps on the system.
+    
+    - **Effort:** advanced
+    
 ??? abstract "Netscan Share Access Artefact"
     
     Detects netscan artefact on windows network share - indicate network share discovery.
