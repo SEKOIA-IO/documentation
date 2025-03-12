@@ -7,7 +7,7 @@ type: intake
 The range of Fortigate firewalls is a complete appliance solution whose security functions are highly developed. The firewalls run on the FortiOS operating system.
 
 - **Vendor**: Fortinet
-- **Supported environment**: On Premise
+- **Supported environment**: On Premise, Cloud
 - **Version compatibility, if applicable**:
 - **Detection based on**: Security Alerts / Network Telemetry
 - **Supported application or feature**: Traffic, Web, URL Filtering, VPN
