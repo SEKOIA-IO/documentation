@@ -55,11 +55,24 @@ Add required permission:
 Add required role:
 
 1. From the `Microsoft Entra ID (Azure AD) ` page
-2. Open `Roles and administrators`
-3. Search and open `Global Reader`
-4. Use the `+ Add assignments` to add this role to your application
+![Microsoft Entra ID home page](/assets/operation_center/integration_catalog/email/office365_message_trace/home_page.png){: style="max-width:100%"}
 
-For a detailed explanation, please read the related documentation [Azure portal - Assign a role](https://learn.microsoft.com/en-us/azure/active-directory/roles/manage-roles-portal).
+2. Open `Roles and administrators`
+![Roles button](/assets/operation_center/integration_catalog/email/office365_message_trace/role_button.png){: style="max-width:50%"}
+
+3. Search and open `Global Reader`
+![App registrations button](/assets/operation_center/integration_catalog/email/office365_message_trace/role_and_admin_page.png){: style="max-width:100%"}
+
+4. Use the `+ Add assignments` to add this role to your application
+![App registrations button](/assets/operation_center/integration_catalog/email/office365_message_trace/global_reader_page.png){: style="max-width:100%"}
+
+5. Open `No member select` to select your application
+![App registrations button](/assets/operation_center/integration_catalog/email/office365_message_trace/add_assignments.png){: style="max-width:100%"}
+
+6. Search for your application by name
+![App registrations button](/assets/operation_center/integration_catalog/email/office365_message_trace/select_app.png){: style="max-width:100%"}
+
+7. click on `Next` and add a `Comment`
 
 You can now create the playbook "Create a new playbook > Create a playbook from scratch" and add the "Office 365 Message Trace OAuth" trigger.
 
