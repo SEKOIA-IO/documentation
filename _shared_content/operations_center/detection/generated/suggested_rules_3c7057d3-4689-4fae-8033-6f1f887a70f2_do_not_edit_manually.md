@@ -2533,7 +2533,7 @@ The following Sekoia.io built-in rules match the intake **HarfangLab EDR**. This
     
     Detects suspicious PowerShell invocation command parameters through command line logging or ScriptBlock Logging.
     
-    - **Effort:** intermediate
+    - **Effort:** advanced
 
 ??? abstract "Suspicious PowerShell Invocations - Specific"
     

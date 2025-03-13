@@ -1345,7 +1345,7 @@ The following Sekoia.io built-in rules match the intake **IBM AIX**. This docume
     
     Detects suspicious PowerShell invocation command parameters through command line logging or ScriptBlock Logging.
     
-    - **Effort:** intermediate
+    - **Effort:** advanced
 
 ??? abstract "Suspicious PowerShell Invocations - Specific"
     
