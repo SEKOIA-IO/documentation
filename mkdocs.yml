@@ -230,6 +230,7 @@ nav:
         - Cloud Providers:
           - AWS: tip/features/automate/library/aws.md
           - Google: tip/features/automate/library/google.md
+          - Google Cloud: tip/features/automate/library/google-cloud.md
         - Collaboration Tools:
           - Atlassian JIRA: tip/features/automate/library/atlassian-jira.md
           - Git: tip/features/automate/library/git.md
@@ -513,6 +514,7 @@ nav:
     - Cloud Providers:
       - AWS: integration/action_library/aws.md
       - Google: integration/action_library/google.md
+      - Google Cloud: integration/action_library/google-cloud.md
     - Collaboration Tools:
       - Atlassian JIRA: integration/action_library/atlassian-jira.md
       - Git: integration/action_library/git.md
