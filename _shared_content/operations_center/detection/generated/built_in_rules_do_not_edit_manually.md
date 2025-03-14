@@ -1,4 +1,4 @@
-Rules catalog includes **999 built-in detection rules** ([_last update on 2025-03-13_](rules_changelog.md)).
+Rules catalog includes **999 built-in detection rules** ([_last update on 2025-03-14_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Identity Information**
 
@@ -2638,6 +2638,7 @@ Rules catalog includes **999 built-in detection rules** ([_last update on 2025-0
     - **Changelog:**
     
         - 28/03/2023 - minor - Excluded some commonly observed false positives.
+        - 13/03/2025 - major - Change effort and excluded some commonly observed false positives.
             
 ??? abstract "Suspicious PowerShell Invocations - Specific"
     
@@ -7409,6 +7410,10 @@ Rules catalog includes **999 built-in detection rules** ([_last update on 2025-0
     
     - **Effort:** elementary
     
+    - **Changelog:**
+    
+        - 14/03/2025 - minor - Rule's pattern update following o365 parser change
+            
 ??? abstract "Okta Policy Modified or Deleted"
     
     Detects when an Okta policy is modified or deleted.
@@ -9661,6 +9666,10 @@ Rules catalog includes **999 built-in detection rules** ([_last update on 2025-0
     
     - **Effort:** elementary
     
+    - **Changelog:**
+    
+        - 14/03/2025 - minor - Rule's pattern update following o365 parser change
+            
 ??? abstract "Okta Policy Modified or Deleted"
     
     Detects when an Okta policy is modified or deleted.

@@ -1,9 +1,15 @@
-Changelog _last update on 2025-03-13_
+Changelog _last update on 2025-03-14_
 
 ## Changelog
 
+### Microsoft Entra ID (Azure AD) Domain Trust Modification
+  - 14/03/2025 - minor - Rule's pattern update following o365 parser change
+    
 ### TrustedInstaller Impersonation
   - 13/03/2025 - major - Adding fitlers to reduce false positives and adding similarity.
+    
+### Suspicious PowerShell Invocations - Generic
+  - 13/03/2025 - major - Change effort and excluded some commonly observed false positives.
     
 ### Palo Alto Cortex XDR (EDR) Alert Not Blocked (Low Severity)
   - 10/03/2025 - minor - Update severity to match the severity level from the editor
@@ -1051,9 +1057,6 @@ Changelog _last update on 2025-03-13_
     
 ### Mimikatz Basic Commands
   - 06/04/2023 - minor - Added a filter to the rule as many false positives were observed.
-    
-### Suspicious PowerShell Invocations - Generic
-  - 28/03/2023 - minor - Excluded some commonly observed false positives.
     
 ### Adexplorer Usage
   - 27/03/2023 - minor - Modify pattern to avoid false positive and detect usage of either / or - character for snapshot parameter
