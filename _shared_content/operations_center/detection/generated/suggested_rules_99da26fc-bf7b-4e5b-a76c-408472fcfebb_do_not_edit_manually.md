@@ -1297,7 +1297,7 @@ The following Sekoia.io built-in rules match the intake **Sophos Analysis Threat
     
     Detects modifications to the Winlogon Registry keys, which may cause Winlogon to load and execute malicious DLLs and/or executables.
     
-    - **Effort:** intermediate
+    - **Effort:** master
 
 ??? abstract "Privilege Escalation Awesome Scripts (PEAS)"
     
