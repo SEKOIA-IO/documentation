@@ -102,6 +102,7 @@ The colors of the EventIDs in this page should be interpreted as follow:
 | Process Hollowing Detection | master | <span style="color:#5865d3"><a href='https://learn.microsoft.com/en-us/sysinternals/downloads/sysmon#events' style='color: inherit;'>25</a></span> | Microsoft-Windows-Sysmon |
 | Microsoft 365 Security and Compliance Center High Severity Alert | master | 40 |  |
 | WMI DLL Loaded Via Office | master | <span style="color:#5865d3"><a href='https://learn.microsoft.com/en-us/sysinternals/downloads/sysmon#events' style='color: inherit;'>7</a></span> | Microsoft-Windows-Sysmon |
+| Powershell Winlogon Helper DLL | master | <span style="color:#5865d3"><a href='https://learn.microsoft.com/en-us/sysinternals/downloads/sysmon#events' style='color: inherit;'>13</a></span>, <span style="color:#D89462">4104</span> | Microsoft-Windows-PowerShell, Microsoft-Windows-Sysmon |
 | Microsoft 365 (Office 365) Potential Ransomware Activity Detected | master | 40 |  |
 | Sysmon Windows File Block Executable | master | <span style="color:#5865d3"><a href='https://learn.microsoft.com/en-us/sysinternals/downloads/sysmon#events' style='color: inherit;'>27</a></span> | Microsoft-Windows-Sysmon |
 | Wininit Wrong Parent | master | <span style="color:#5865d3"><a href='https://learn.microsoft.com/en-us/sysinternals/downloads/sysmon#events' style='color: inherit;'>1</a></span> | Microsoft-Windows-Sysmon |
@@ -364,7 +365,6 @@ The colors of the EventIDs in this page should be interpreted as follow:
 | UAC Bypass via Event Viewer | intermediate | <span style="color:#5865d3"><a href='https://learn.microsoft.com/en-us/sysinternals/downloads/sysmon#events' style='color: inherit;'>13</a></span> | Microsoft-Windows-Sysmon |
 | Microsoft Defender Antivirus Restoration Abuse | intermediate | <span style="color:#5865d3"><a href='https://learn.microsoft.com/en-us/sysinternals/downloads/sysmon#events' style='color: inherit;'>1</a></span> | Microsoft-Windows-Sysmon |
 | Suspicious CommandLine Lsassy Pattern | intermediate | <span style="color:#5865d3"><a href='https://learn.microsoft.com/en-us/sysinternals/downloads/sysmon#events' style='color: inherit;'>5</a></span> | Kernel-Process |
-| Powershell Winlogon Helper DLL | intermediate | <span style="color:#5865d3"><a href='https://learn.microsoft.com/en-us/sysinternals/downloads/sysmon#events' style='color: inherit;'>13</a></span>, <span style="color:#D89462">4104</span> | Microsoft-Windows-PowerShell, Microsoft-Windows-Sysmon |
 | Suspicious DLL side loading from ProgramData | intermediate | <span style="color:#5865d3"><a href='https://learn.microsoft.com/en-us/sysinternals/downloads/sysmon#events' style='color: inherit;'>7</a></span> | Microsoft-Windows-Sysmon |
 | Suspicious SAM Dump | intermediate | <span style="color:#5865d3"><a href='https://learn.microsoft.com/en-us/sysinternals/downloads/sysmon#events' style='color: inherit;'>16</a></span> | Microsoft-Windows-Kernel-General |
 | Creation or Modification of a GPO Scheduled Task | intermediate | <span style="color:#B60016"><a href='https://learn.microsoft.com/en-us/windows/security/threat-protection/auditing/event-5145' style='color: inherit;'>5145</a></span> | Microsoft-Windows-Security-Auditing |
@@ -622,7 +622,7 @@ The colors of the EventIDs in this page should be interpreted as follow:
 ## EffortLevel x EventIDs
 | Effort Level | EventIDs | Number of related rules | Percentage of related rules (Total rules: 499 |
 | ------------ | -------- | ----------------------- | ------------------------------------------------------- |
-| master | 1, 10, 1013, 11, 12, 13, 15, 150, 17, 22, 25, 27, 3, 40, 4104, 4611, 4624, 4625, 4656, 4661, 4662, 4663, 4673, 4674, 4688, 4720, 4726, 4728, 4729, 4732, 4740, 4743, 4768, 5, 5007, 5140, 5145, 64, 7, 79016668, 8001, 83820799, 98 | 121 | 24.25 % |
+| master | 1, 10, 1013, 11, 12, 13, 15, 150, 17, 22, 25, 27, 3, 40, 4104, 4611, 4624, 4625, 4656, 4661, 4662, 4663, 4673, 4674, 4688, 4720, 4726, 4728, 4729, 4732, 4740, 4743, 4768, 5, 5007, 5140, 5145, 64, 7, 79016668, 8001, 83820799, 98 | 122 | 24.45 % |
 | advanced | 1, 10, 11, 1116, 1127, 13, 15, 17, 21, 22, 23, 25, 3, 4103, 4104, 4624, 4625, 4656, 4662, 4688, 4706, 4707, 4799, 5, 5145, 5154, 5156, 6, 6416, 7, 7045, 8 | 108 | 21.64 % |
-| intermediate | 1, 10, 1000, 1033, 1034, 11, 1102, 1116, 12, 13, 15, 16, 17, 20, 22, 3, 30, 4103, 4104, 4624, 4649, 4656, 4657, 4662, 4663, 4688, 4697, 4698, 47, 4703, 4720, 4738, 4741, 4768, 4794, 4825, 5, 5136, 5145, 524, 6, 7, 7045, 8 | 175 | 35.07 % |
+| intermediate | 1, 10, 1000, 1033, 1034, 11, 1102, 1116, 12, 13, 15, 16, 17, 20, 22, 3, 30, 4103, 4104, 4624, 4649, 4656, 4657, 4662, 4663, 4688, 4697, 4698, 47, 4703, 4720, 4738, 4741, 4768, 4794, 4825, 5, 5136, 5145, 524, 6, 7, 7045, 8 | 174 | 34.87 % |
 | elementary | 1, 10, 11, 1116, 13, 15, 17, 25, 325, 4103, 4104, 4625, 4663, 4688, 4697, 4704, 4720, 4738, 4887, 5, 5136, 5145, 7, 7045, 8 | 95 | 19.04 % |

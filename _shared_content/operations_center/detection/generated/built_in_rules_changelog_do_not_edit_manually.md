@@ -6,7 +6,10 @@ Changelog _last update on 2025-03-14_
   - 14/03/2025 - minor - Rule's pattern update following o365 parser change
     
 ### TrustedInstaller Impersonation
-  - 13/03/2025 - major - Adding fitlers to reduce false positives and adding similarity.
+  - 13/03/2025 - major - Adding filters to reduce false positives and adding similarity.
+    
+### Powershell Winlogon Helper DLL
+  - 13/03/2025 - major - Adding new filter and similarity strategy to reduce false positives. Changing effort level.
     
 ### Suspicious PowerShell Invocations - Generic
   - 13/03/2025 - major - Change effort and excluded some commonly observed false positives.
@@ -501,9 +504,6 @@ Changelog _last update on 2025-03-14_
   - 04/04/2024 - major - Rule's pattern field changed
     
 ### DPAPI Domain Backup Key Extraction
-  - 04/04/2024 - major - Rule's pattern field changed
-    
-### Powershell Winlogon Helper DLL
   - 04/04/2024 - major - Rule's pattern field changed
     
 ### TUN/TAP Driver Installation

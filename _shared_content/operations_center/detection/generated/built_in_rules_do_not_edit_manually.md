@@ -6299,11 +6299,12 @@ Rules catalog includes **999 built-in detection rules** ([_last update on 2025-0
     
     Detects modifications to the Winlogon Registry keys, which may cause Winlogon to load and execute malicious DLLs and/or executables.
     
-    - **Effort:** intermediate
+    - **Effort:** master
     
     - **Changelog:**
     
         - 04/04/2024 - major - Rule's pattern field changed
+        - 13/03/2025 - major - Adding new filter and similarity strategy to reduce false positives. Changing effort level.
             
 ??? abstract "RUN Registry Key Created From Suspicious Folder"
     
@@ -7984,11 +7985,12 @@ Rules catalog includes **999 built-in detection rules** ([_last update on 2025-0
     
     Detects modifications to the Winlogon Registry keys, which may cause Winlogon to load and execute malicious DLLs and/or executables.
     
-    - **Effort:** intermediate
+    - **Effort:** master
     
     - **Changelog:**
     
         - 04/04/2024 - major - Rule's pattern field changed
+        - 13/03/2025 - major - Adding new filter and similarity strategy to reduce false positives. Changing effort level.
             
 ??? abstract "RUN Registry Key Created From Suspicious Folder"
     
@@ -10501,7 +10503,7 @@ Rules catalog includes **999 built-in detection rules** ([_last update on 2025-0
     - **Changelog:**
     
         - 05/08/2023 - major - Filters were added to reduce false positives and effort level was modified.
-        - 13/03/2025 - major - Adding fitlers to reduce false positives and adding similarity.
+        - 13/03/2025 - major - Adding filters to reduce false positives and adding similarity.
             
 ??? abstract "WMIC Uninstall Product"
     
