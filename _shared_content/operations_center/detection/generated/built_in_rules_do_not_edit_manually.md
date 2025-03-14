@@ -1,4 +1,4 @@
-Rules catalog includes **999 built-in detection rules** ([_last update on 2025-03-11_](rules_changelog.md)).
+Rules catalog includes **999 built-in detection rules** ([_last update on 2025-03-13_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Identity Information**
 
@@ -2633,7 +2633,7 @@ Rules catalog includes **999 built-in detection rules** ([_last update on 2025-0
     
     Detects suspicious PowerShell invocation command parameters through command line logging or ScriptBlock Logging.
     
-    - **Effort:** intermediate
+    - **Effort:** advanced
     
     - **Changelog:**
     
@@ -10492,6 +10492,7 @@ Rules catalog includes **999 built-in detection rules** ([_last update on 2025-0
     - **Changelog:**
     
         - 05/08/2023 - major - Filters were added to reduce false positives and effort level was modified.
+        - 13/03/2025 - major - Adding fitlers to reduce false positives and adding similarity.
             
 ??? abstract "WMIC Uninstall Product"
     

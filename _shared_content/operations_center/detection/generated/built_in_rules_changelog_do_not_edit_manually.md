@@ -1,7 +1,10 @@
-Changelog _last update on 2025-03-11_
+Changelog _last update on 2025-03-13_
 
 ## Changelog
 
+### TrustedInstaller Impersonation
+  - 13/03/2025 - major - Adding fitlers to reduce false positives and adding similarity.
+    
 ### Palo Alto Cortex XDR (EDR) Alert Not Blocked (Low Severity)
   - 10/03/2025 - minor - Update severity to match the severity level from the editor
     
@@ -1015,9 +1018,6 @@ Changelog _last update on 2025-03-11_
     
 ### Discord Suspicious Download
   - 05/08/2023 - minor - Added filters for commonly observed files extensions.
-    
-### TrustedInstaller Impersonation
-  - 05/08/2023 - major - Filters were added to reduce false positives and effort level was modified.
     
 ### Potential LokiBot User-Agent
   - 04/08/2023 - minor - Added a condition to only match on internal IP as source
