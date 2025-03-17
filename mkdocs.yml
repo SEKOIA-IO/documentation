@@ -476,7 +476,8 @@ nav:
       - Google Cloud Load Balancing: integration/categories/network_security/google_cloud_load_balancing.md
       - Imperva Web Application Firewall: integration/categories/network_security/imperva_waf.md
       - Lacework Cloud Security: integration/categories/network_security/lacework_cloud_security.md
-      - McAfee Web Gateway / Skyhigh Secure Web Gateway: integration/categories/network_security/skyhigh_secure_web_gateway.md
+      - McAfee Web Gateway / Skyhigh Secure Web Gateway - On Prem: integration/categories/network_security/skyhigh_secure_web_gateway_on_prem.md
+      - McAfee Web Gateway / Skyhigh Secure Web Gateway - SaaS: integration/categories/network_security/skyhigh_secure_web_gateway_saas.md
       - Netskope Events: integration/categories/network_security/netskope_events.md
       - Netskope Transaction Events: integration/categories/network_security/netskope_transaction.md
       - OGO Shield WAF: integration/categories/network_security/ogo_shield.md
@@ -818,7 +819,7 @@ plugins:
       xdr/features/collect/integrations/network/pulse.md: integration/categories/network/pulse.md
       xdr/features/collect/integrations/network/rubycat_prove_it.md: integration/categories/iam/rubycat_prove_it.md
       xdr/features/collect/integrations/network/sesameit_jizo.md: integration/categories/network/sesameit_jizo.md
-      xdr/features/collect/integrations/network/skyhigh_secure_web_gateway.md: integration/categories/network_security/skyhigh_secure_web_gateway.md
+      xdr/features/collect/integrations/network/skyhigh_secure_web_gateway.md: integration/categories/network_security/skyhigh_secure_web_gateway_on_prem.md
       xdr/features/collect/integrations/network/sonicwall_fw.md: integration/categories/network_security/sonicwall_fw.md
       xdr/features/collect/integrations/network/sonicwall_sma.md: integration/categories/network_security/sonicwall_sma.md
       xdr/features/collect/integrations/network/sophos_fw.md: integration/categories/network_security/sophos_fw.md
