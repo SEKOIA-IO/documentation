@@ -7,7 +7,7 @@ type: intake
 ## Overview
 
 - **Supported environment**: SaaS
-- **Detection based on**: Alerts
+- **Detection based on**: Audit
 - **Supported application or feature**:
     - Audit Logs
 
