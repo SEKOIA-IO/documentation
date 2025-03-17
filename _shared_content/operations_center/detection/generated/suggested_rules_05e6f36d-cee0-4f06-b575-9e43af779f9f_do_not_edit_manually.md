@@ -1675,7 +1675,7 @@ The following Sekoia.io built-in rules match the intake **Microsoft Defender XDR
     
     SearchProtocolHost.exe is part of the Windows Indexing Service, an application that indexes files from the local drive making them easier to search. This is a crucial part of the Windows operating system. This process should not create a child process or it is very rare.
     
-    - **Effort:** intermediate
+    - **Effort:** master
 
 ??? abstract "Searchprotocolhost Wrong Parent"
     

@@ -1,7 +1,10 @@
-Changelog _last update on 2025-03-14_
+Changelog _last update on 2025-03-17_
 
 ## Changelog
 
+### Searchprotocolhost Child Found
+  - 17/03/2025 - major - Rule changed to effort master, and filter added to reduce false positives.
+    
 ### Microsoft Entra ID (Azure AD) Domain Trust Modification
   - 14/03/2025 - minor - Rule's pattern update following o365 parser change
     
