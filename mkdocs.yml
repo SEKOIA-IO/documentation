@@ -503,6 +503,7 @@ nav:
       - Varonis Data Security: integration/categories/network_security/varonis_data_security.md
       - Vectra Cognito Detect: integration/categories/network_security/vectra.md
       - WatchGuard Firebox: integration/categories/network_security/watchguard_firebox.md
+      - Wiz Audit Logs: integration/categories/network_security/wiz_audit_logs.md
       - Wiz Cloud configuration findings: integration/categories/network_security/wiz_cloud_configuration_findings.md
       - Wiz Issues: integration/categories/network_security/wiz_issues.md
       - Wiz Vulnerability Findings: integration/categories/network_security/wiz_vulnerability_findings.md
