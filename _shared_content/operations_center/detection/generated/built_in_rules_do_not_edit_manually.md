@@ -1,4 +1,4 @@
-Rules catalog includes **999 built-in detection rules** ([_last update on 2025-03-14_](rules_changelog.md)).
+Rules catalog includes **999 built-in detection rules** ([_last update on 2025-03-17_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Identity Information**
 
@@ -4445,8 +4445,12 @@ Rules catalog includes **999 built-in detection rules** ([_last update on 2025-0
     
     SearchProtocolHost.exe is part of the Windows Indexing Service, an application that indexes files from the local drive making them easier to search. This is a crucial part of the Windows operating system. This process should not create a child process or it is very rare.
     
-    - **Effort:** intermediate
+    - **Effort:** master
     
+    - **Changelog:**
+    
+        - 17/03/2025 - major - Rule changed to effort master, and filter added to reduce false positives.
+            
 ??? abstract "Searchprotocolhost Wrong Parent"
     
     Detects if the Search Protocol Host process was executed by a non-legitimate parent process. Search Protocol Host is part of the Windows Indexing Service, a service indexing files on the local drive making them easier to search.
@@ -5947,8 +5951,12 @@ Rules catalog includes **999 built-in detection rules** ([_last update on 2025-0
     
     SearchProtocolHost.exe is part of the Windows Indexing Service, an application that indexes files from the local drive making them easier to search. This is a crucial part of the Windows operating system. This process should not create a child process or it is very rare.
     
-    - **Effort:** intermediate
+    - **Effort:** master
     
+    - **Changelog:**
+    
+        - 17/03/2025 - major - Rule changed to effort master, and filter added to reduce false positives.
+            
 ??? abstract "Searchprotocolhost Wrong Parent"
     
     Detects if the Search Protocol Host process was executed by a non-legitimate parent process. Search Protocol Host is part of the Windows Indexing Service, a service indexing files on the local drive making them easier to search.
@@ -7633,8 +7641,12 @@ Rules catalog includes **999 built-in detection rules** ([_last update on 2025-0
     
     SearchProtocolHost.exe is part of the Windows Indexing Service, an application that indexes files from the local drive making them easier to search. This is a crucial part of the Windows operating system. This process should not create a child process or it is very rare.
     
-    - **Effort:** intermediate
+    - **Effort:** master
     
+    - **Changelog:**
+    
+        - 17/03/2025 - major - Rule changed to effort master, and filter added to reduce false positives.
+            
 ??? abstract "Searchprotocolhost Wrong Parent"
     
     Detects if the Search Protocol Host process was executed by a non-legitimate parent process. Search Protocol Host is part of the Windows Indexing Service, a service indexing files on the local drive making them easier to search.
