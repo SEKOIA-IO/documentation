@@ -321,12 +321,6 @@ The following Sekoia.io built-in rules match the intake **SonicWall Firewall**. 
     
     - **Effort:** intermediate
 
-??? abstract "MSBuild Abuse"
-    
-    Detection of MSBuild uses by attackers to infect an host. Focuses on XML compilation which is a Metasploit payload, and on connections made by this process which is unusual.
-    
-    - **Effort:** intermediate
-
 ??? abstract "Microsoft Exchange Server Creating Unusual Files"
     
     Look for Microsoft Exchange Server’s Unified Messaging service creating non-standard content on disk, which could indicate web shells or other malicious content, suggesting exploitation of CVE-2021-26858 vulnerability

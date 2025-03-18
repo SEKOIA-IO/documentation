@@ -663,12 +663,6 @@ The following Sekoia.io built-in rules match the intake **Trend Micro Cloud One 
     
     - **Effort:** advanced
 
-??? abstract "MSBuild Abuse"
-    
-    Detection of MSBuild uses by attackers to infect an host. Focuses on XML compilation which is a Metasploit payload, and on connections made by this process which is unusual.
-    
-    - **Effort:** intermediate
-
 ??? abstract "Malicious Browser Extensions"
     
     Detects browser extensions being loaded with the --load-extension and -base-url options, which works on Chromium-based browsers. We are looking for potentially malicious browser extensions. These extensions can get access to informations.

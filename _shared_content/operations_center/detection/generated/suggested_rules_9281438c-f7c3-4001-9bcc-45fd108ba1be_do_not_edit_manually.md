@@ -1415,7 +1415,7 @@ The following Sekoia.io built-in rules match the intake **Windows**. This docume
 
 ??? abstract "MSBuild Abuse"
     
-    Detection of MSBuild uses by attackers to infect an host. Focuses on XML compilation which is a Metasploit payload, and on connections made by this process which is unusual.
+    Detection of MSBuild uses by attackers to infect an host. Focuses on XML compilation which is a Metasploit payload.
     
     - **Effort:** intermediate
 

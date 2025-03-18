@@ -291,12 +291,6 @@ The following Sekoia.io built-in rules match the intake **Microsoft 365 / Office
     
     - **Effort:** intermediate
 
-??? abstract "MSBuild Abuse"
-    
-    Detection of MSBuild uses by attackers to infect an host. Focuses on XML compilation which is a Metasploit payload, and on connections made by this process which is unusual.
-    
-    - **Effort:** intermediate
-
 ??? abstract "Microsoft 365 (Office 365) Anti-Phishing Policy Deletion"
     
     Detects when the anti-phishing policy is removed from Microsoft 365 (Office 365). By default, Microsoft 365 (Office 365) includes built-in features that help protect users from phishing attacks. This policy specifies the phishing protections to enable or disable, and the actions to apply options.
