@@ -247,6 +247,7 @@ nav:
           - MicrosoftDefenderXDR: tip/features/automate/library/microsoftdefenderxdr.md
           - Panda Security: tip/features/automate/library/panda-security.md
           - SentinelOne: tip/features/automate/library/sentinelone.md
+          - SentinelOne: tip/features/automate/library/sentinelone.md
           - Sophos: tip/features/automate/library/sophos.md
           - Stormshield SES: tip/features/automate/library/stormshield-ses.md
           - WithSecure: tip/features/automate/library/withsecure.md
@@ -532,6 +533,7 @@ nav:
       - Microsoft Windows Server: integration/action_library/microsoft-windows-server.md
       - MicrosoftDefenderXDR: integration/action_library/microsoftdefenderxdr.md
       - Panda Security: integration/action_library/panda-security.md
+      - SentinelOne: integration/action_library/sentinelone.md
       - SentinelOne: integration/action_library/sentinelone.md
       - Sophos: integration/action_library/sophos.md
       - Stormshield SES: integration/action_library/stormshield-ses.md
