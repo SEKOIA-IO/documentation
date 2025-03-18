@@ -1,4 +1,4 @@
-Rules catalog includes **1000 built-in detection rules** ([_last update on 2025-03-17_](rules_changelog.md)).
+Rules catalog includes **1000 built-in detection rules** ([_last update on 2025-03-18_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Identity Information**
 
@@ -3407,6 +3407,7 @@ Rules catalog includes **1000 built-in detection rules** ([_last update on 2025-
     
     - **Changelog:**
     
+        - 18/03/2025 - minor - File path exclusion added to filter some false positives.
         - 17/01/2025 - minor - Cmdline exclusion added to filter some false positives.
         - 25/11/2024 - minor - Updating filter on file change and deletion
         - 18/11/2024 - minor - Updating filter on file change and deletion
@@ -6621,6 +6622,10 @@ Rules catalog includes **1000 built-in detection rules** ([_last update on 2025-
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 14/03/2025 - minor - Excluded some commonly observed false positives.
+            
 ??? abstract "Cobalt Strike Named Pipes"
     
     Detects the pipes established by Cobalt Strike to allow a communication between its beacons.
@@ -8427,6 +8432,10 @@ Rules catalog includes **1000 built-in detection rules** ([_last update on 2025-
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 14/03/2025 - minor - Excluded some commonly observed false positives.
+            
 ??? abstract "Cobalt Strike Named Pipes"
     
     Detects the pipes established by Cobalt Strike to allow a communication between its beacons.
@@ -9170,7 +9179,7 @@ Rules catalog includes **1000 built-in detection rules** ([_last update on 2025-
 
 ??? abstract "MSBuild Abuse"
     
-    Detection of MSBuild uses by attackers to infect an host. Focuses on XML compilation which is a Metasploit payload, and on connections made by this process which is unusual.
+    Detection of MSBuild uses by attackers to infect an host. Focuses on XML compilation which is a Metasploit payload.
     
     - **Effort:** intermediate
     
@@ -10077,6 +10086,10 @@ Rules catalog includes **1000 built-in detection rules** ([_last update on 2025-
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 14/03/2025 - minor - Excluded some commonly observed false positives.
+            
 ??? abstract "Clear EventLogs Through CommandLine"
     
     Detects a command that clears event logs which could indicate an attempt from an attacker to erase its previous traces.

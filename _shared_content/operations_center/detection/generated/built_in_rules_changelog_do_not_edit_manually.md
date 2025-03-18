@@ -1,4 +1,4 @@
-Changelog _last update on 2025-03-17_
+Changelog _last update on 2025-03-18_
 
 ## Changelog
 
@@ -7,6 +7,9 @@ Changelog _last update on 2025-03-17_
     
 ### Microsoft Entra ID (Azure AD) Domain Trust Modification
   - 14/03/2025 - minor - Rule's pattern update following o365 parser change
+    
+### Address Space Layout Randomization (ASLR) Alteration
+  - 14/03/2025 - minor - Excluded some commonly observed false positives.
     
 ### TrustedInstaller Impersonation
   - 13/03/2025 - major - Adding filters to reduce false positives and adding similarity.

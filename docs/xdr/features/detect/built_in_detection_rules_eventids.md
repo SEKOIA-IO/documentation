@@ -1,6 +1,6 @@
 # Built-in detection rules, EventIDs and EventProviders relations
 SEKOIA.IO provides built-in detection rules to illuminate intrusions, adversarial behaviours and suspicious activity escalation chains so you can immediately take steps to remediate. Built-in rules can be customized to your context and according to your security posture.
-This page aims at helping partners & customers in having their detection coverage by knowing which Event IDs and [Event Providers](https://learn.microsoft.com/en-us/windows/win32/etw/providing-events) are used by rule. **Please note this was retrieved automatically from our tests samples when generating attacks that triggered the rules. It might not be exhaustive and concerns mostly Windows-related rules.** _Last update on 2025-03-17_
+This page aims at helping partners & customers in having their detection coverage by knowing which Event IDs and [Event Providers](https://learn.microsoft.com/en-us/windows/win32/etw/providing-events) are used by rule. **Please note this was retrieved automatically from our tests samples when generating attacks that triggered the rules. It might not be exhaustive and concerns mostly Windows-related rules.** _Last update on 2025-03-18_
 
 The colors of the EventIDs in this page should be interpreted as follow:
 
@@ -293,7 +293,7 @@ The colors of the EventIDs in this page should be interpreted as follow:
 | DNS Exfiltration and Tunneling Tools Execution | intermediate | <span style="color:#5865d3"><a href='https://learn.microsoft.com/en-us/sysinternals/downloads/sysmon#events' style='color: inherit;'>1</a></span>, <span style="color:#D89462">4104</span> | Microsoft-Windows-PowerShell, Microsoft-Windows-Sysmon |
 | Formbook File Creation DB1 | intermediate | <span style="color:#5865d3"><a href='https://learn.microsoft.com/en-us/sysinternals/downloads/sysmon#events' style='color: inherit;'>11</a></span> | Microsoft-Windows-Sysmon |
 | Suspicious Outlook Child Process | intermediate | <span style="color:#D89462"><a href='https://learn.microsoft.com/en-us/windows/security/threat-protection/auditing/event-4688' style='color: inherit;'>4688</a></span> | Microsoft-Windows-Security-Auditing |
-| MSBuild Abuse | intermediate | <span style="color:#5865d3"><a href='https://learn.microsoft.com/en-us/sysinternals/downloads/sysmon#events' style='color: inherit;'>1</a></span>, <span style="color:#5865d3"><a href='https://learn.microsoft.com/en-us/sysinternals/downloads/sysmon#events' style='color: inherit;'>3</a></span> | Microsoft-Windows-Sysmon |
+| MSBuild Abuse | intermediate | <span style="color:#5865d3"><a href='https://learn.microsoft.com/en-us/sysinternals/downloads/sysmon#events' style='color: inherit;'>1</a></span> | Kernel-Process |
 | GPO Executable Delivery | intermediate | <span style="color:#B60016"><a href='https://learn.microsoft.com/en-us/windows/security/threat-protection/auditing/event-5136' style='color: inherit;'>5136</a></span> | Microsoft-Windows-Security-Auditing |
 | MMC Spawning Windows Shell | intermediate | <span style="color:#5865d3"><a href='https://learn.microsoft.com/en-us/sysinternals/downloads/sysmon#events' style='color: inherit;'>1</a></span> | Microsoft-Windows-Sysmon |
 | CMSTP UAC Bypass via COM Object Access | intermediate | <span style="color:#5865d3"><a href='https://learn.microsoft.com/en-us/sysinternals/downloads/sysmon#events' style='color: inherit;'>1</a></span> | Microsoft-Windows-Sysmon |
@@ -526,13 +526,13 @@ The colors of the EventIDs in this page should be interpreted as follow:
 | 5145 | 14 | 2.8 % |
 | 7045 | 11 | 2.2 % |
 | 4688 | 9 | 1.8 % |
-| 3 | 7 | 1.4 % |
 | 22 | 6 | 1.2 % |
 | 4624 | 6 | 1.2 % |
 | 98 | 6 | 1.2 % |
 | 17 | 6 | 1.2 % |
 | 5136 | 6 | 1.2 % |
 | 10 | 6 | 1.2 % |
+| 3 | 6 | 1.2 % |
 | 1116 | 5 | 1.0 % |
 | 4662 | 5 | 1.0 % |
 | 4625 | 4 | 0.8 % |
@@ -599,9 +599,9 @@ The colors of the EventIDs in this page should be interpreted as follow:
 ## EventProviders occurences in rules
 | EventProvider | Number of rules concerned | Percentage of rules concerned (Total rules: 500) |
 | ------- | ------------------------- | ------------------------------------------------------ |
-| Microsoft-Windows-Sysmon | 292 | 58.4 % |
+| Microsoft-Windows-Sysmon | 291 | 58.2 % |
 | Microsoft-Windows-Security-Auditing | 87 | 17.4 % |
-| Kernel-Process | 53 | 10.6 % |
+| Kernel-Process | 54 | 10.8 % |
 | Microsoft-Windows-PowerShell | 48 | 9.6 % |
 | Service Control Manager | 11 | 2.2 % |
 | Microsoft-Windows-Kernel-File | 9 | 1.8 % |

@@ -159,12 +159,6 @@ The following Sekoia.io built-in rules match the intake **VMware vCenter**. This
     
     - **Effort:** intermediate
 
-??? abstract "MSBuild Abuse"
-    
-    Detection of MSBuild uses by attackers to infect an host. Focuses on XML compilation which is a Metasploit payload, and on connections made by this process which is unusual.
-    
-    - **Effort:** intermediate
-
 ??? abstract "Network Connection Via Certutil"
     
     Identifies certutil.exe making a network connection. Adversaries could abuse certutil.exe to download a certificate, or malware, from a remote URL. The rule excludes private IP addresses and IPV6. This requires Sysmon logging.
