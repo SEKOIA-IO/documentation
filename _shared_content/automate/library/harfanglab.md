@@ -211,4 +211,4 @@ Update Threat status
 
 ## Extra
 
-Module **`HarfangLab` v1.24.0**
+Module **`HarfangLab` v1.25.0**
