@@ -468,6 +468,15 @@ In this section, you will find examples of raw logs as generated natively by the
 
 
 
+=== "test_auth_success_2"
+
+
+    ```json
+	1,2025/03/06 17:43:12,1111111111,SYSTEM,auth,2561,2025/03/06 17:43:12,,auth-success,ESA-AUTH,0,0,general,informational,"authenticated for user 'jane.doe'.   auth profile 'ESA-AUTH', vsys 'vsys1', server profile 'ESA', server address '1.2.3.4', auth protocol 'PAP', From: 5.6.7.8.",7473081312223375061,0x0,0,0,0,0,,FWPADC1,0,0,2025-03-06T17:43:12.834+01:00
+    ```
+
+
+
 === "test_cloud_election_json"
 
 
