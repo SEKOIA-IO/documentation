@@ -121,7 +121,7 @@ Please find below a template of the `docker-compose.yml` file.
 # version: "3.9"
 services:
   rsyslog:
-    image: ghcr.io/sekoia-io/sekoiaio-docker-concentrator:2.7.0
+    image: ghcr.io/sekoia-io/sekoiaio-docker-concentrator:2.7.1
     environment:
       - MEMORY_MESSAGES=2000000
       - DISK_SPACE=180g
@@ -320,9 +320,9 @@ If you wish to specify other filenames, you can do so in the intake configuratio
 ```
 [...]
 protocol: tls
-tls_key_name: server.key
-tls_cert_name: server.crt
-tls_ca_name: server.crt
+tls_key_name: server
+tls_cert_name: server
+tls_ca_name: server
 ```
 
 ## Monitor your concentrator
