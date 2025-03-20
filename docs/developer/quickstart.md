@@ -1,5 +1,6 @@
 # Quickstart
-API stands for Application Programming Interface and is the code that governs the server's access point.
+
+Sekoia.io offers a public REST API to interact with the platform.
 
 When to use the Sekoia.io API?
 
@@ -7,12 +8,10 @@ When to use the Sekoia.io API?
 * **Integration**: when you want an application to perform actions on Sekoia.io
 * **Automation**: when you want to build a script to automate actions with Sekoia.io
 
-Sekoia.io offers a public REST API to interact with the platform.
-
 !!!note
     The Sekoia.io GUI is based on that API
 
-Here are some characteristics of a REST API:
+Here are some characteristics of our REST API:
 
 * **Client/Server architecture**: based on HTTP requests (GET, POST, PUT, DELETE...)
 * **Stateless**: no connection is maintained between two requests
@@ -107,8 +106,8 @@ It should be noted that each `field` must not occur more than once. Multiple val
 # list alerts triggered on entity1 with rule named rule1 or rule2
 /alerts?match[entity_name]=entity1&match[rule_name]=rule1,rule2
 ```
-## Python scripts
-Python is a language that can be used to interact with the Sekoia.io API. Please find bellow two examples, one with a `GET` request with `query parameters` and another with a `POST` request and an `application/json` body.
+## Code examples
+Please find below two python code examples, one with a `GET` request with `query parameters` and another with a `POST` request and an `application/json` body.
 
 
 ### Get request with query parameters

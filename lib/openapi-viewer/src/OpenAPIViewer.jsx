@@ -1,7 +1,7 @@
-import { Teleport, capitalize, createApp, reactive } from "vue";
+import { Teleport, createApp, reactive } from "vue";
 import { fetch_and_merge_openapi_schemas } from "./openapi/openapi"
 import { Examples } from "./Examples";
-import { tagEncode, Chevron, debounce, scrollToAnchor } from "./utils"
+import { tagEncode, Chevron, debounce, scrollToAnchor, capitalize } from "./utils"
 import { Markdown } from "./Markdown"
 import { Parameters } from "./Parameters"
 import { Response } from "./Response"
@@ -38,7 +38,7 @@ export const data = reactive({
 export const OpenAPIViewer = {
 
     /** Gather all openapi.json/swagger.json manifests from {urls} and render as OpenAPIViewer Vue component */
-    async init({ title, urls, menu, regions }) {
+    async init({ title, urls, menu, intro, regions, tag_mappings = {} }) {
         const hash = location.hash
         data.title = title
 
@@ -55,6 +55,7 @@ export const OpenAPIViewer = {
 
         const started_at = new Date()
         data.menu = menu;
+        data.intro = intro;
         data.regions = regions;
 
         // Replace URLs with the selected region's URLs
@@ -81,6 +82,20 @@ export const OpenAPIViewer = {
             })
         })
 
+        // Translate tags via tag_mappings defined in developer/api.md
+        // e.g. { "User": "Account" } will replace all "User" tags with "Account"
+        // e.g. { ["User", "Account"]: ["bla", "blu"] } will replace replace the ["User", "Account"] tags pair with ["bla", "blu"]
+        //        (only if both tags are present in the endpoint)
+        data.endpoints.forEach(endpoint => {
+            Object.entries(tag_mappings || {}).forEach(([tag, mapping]) => {
+                mapping = Array.isArray(mapping) ? mapping : [mapping]
+                const tags = new Set(Array.isArray(tag) ? tag : [tag])
+                if (endpoint.tags.every(t => tags.has(t))) {
+                    endpoint.tags = Array.from(new Set([...endpoint.tags.filter(t => !tags.has(t)), ...mapping]))
+                }
+            })
+        })
+
         // Organize endpoints according to the menu tree
         // and collect non-menu tags as filtering candidates
         data.tags = new Set()
@@ -93,8 +108,6 @@ export const OpenAPIViewer = {
                 node.children.push({ name: tag, endpoints: [] })
             }
         }
-
-        console.log(data.tree)
 
         for (const endpoint of data.endpoints) {
             endpoint.menu0 = data.tree.find(({ name }) => endpoint.tags.find(t => name.toLowerCase() === t.toLowerCase()))
@@ -142,21 +155,20 @@ export const OpenAPIViewer = {
                     endpoint.path,
                 ].some(x => x?.toLowerCase()?.includes(data.search))) {
                     endpoint.visible = false
-                    return;
+                    continue;
                 }
 
                 // Tag filtering
                 if (selectedTags.size > 0) {
-                    if (!endpoint.otherTags?.length > 0 || selectedTags.isDisjointFrom(endpoint.otherTags))
+                    if (!endpoint.otherTags?.size > 0 || selectedTags.isDisjointFrom(endpoint.otherTags))
                         endpoint.visible = false;
-                    return;
                 }
             }
 
             setTimeout(() => data.loading = false, 10)
         }
         OpenAPIViewer.updateAsap = debounce(update, 500)
-        watch(() => data.search, () => { data.loading = true; setImmediate(OpenAPIViewer.updateAsap) })
+        watch(() => data.search, OpenAPIViewer.updateAsap)
         update()
 
         /** Called when the window is scrolled to sync the selected menu item */
@@ -268,11 +280,22 @@ export const OpenAPIViewer = {
                             <input class='doc-input' name="search-api" onInput={({ target }) => data.search = target.value} value={data.search} placeholder="Search API" />
                         </div>
 
-                        <Filter items={data.tags} selection={data.selectedTags} onClick={toggleTag} separator=" - " placeholder="Search tags">Filters</Filter>
+                        <Filter items={data.tags} selection={data.selectedTags} onClick={toggleTag} separator=" - " placeholder="Search tags">Filter tags</Filter>
 
-                        {data.loading && <div class="loader"><div class="ui-spinner" /> Loading APIs ...</div>}
+
+
 
                         <ul class="scroll-container md-nav__list" class={{ loading: data.loading }}>
+                            <ul class="menu-intro">
+                                {data.intro?.map(name => <li class='md-nav__item' class={{
+                                    active: data.cur1 === tagEncode(name),
+                                }}>
+                                    <a href={`#${tagEncode(name.toLowerCase())}`} >{capitalize(name)}</a>
+                                </li>)}
+                            </ul>
+
+                            {data.loading && <div class="loader"><div class="ui-spinner" /> Loading APIs ...</div>}
+
                             {data.tree?.map(({ name, children }) => <li class="md-nav__item md-nav__item--nested" class={{
                                 active: data.cur0 === tagEncode(name),
                             }}>
@@ -280,11 +303,11 @@ export const OpenAPIViewer = {
                                 <ul class='md-nav__list'>
                                     {children?.map(({ name, endpoints }) => <li class='md-nav__item md-nav__item--nested accordion' class={{
                                         active: data.cur1 === tagEncode(name),
-                                        empty: !endpoints?.length > 0
+                                        empty: !endpoints?.filter(e => e.visible)?.length > 0
                                     }}>
                                         <a href={`#tag/${tagEncode(name)}`} >{capitalize(name)} {Chevron}</a>
                                         <ul class='md-nav__list'>
-                                            {endpoints?.map(({ operationId, method, summary }) => <li class='md-nav__item md-nav__item--nested' class={{
+                                            {endpoints?.map(({ operationId, method, summary, visible = true }) => !!visible && <li class='md-nav__item md-nav__item--nested' class={{
                                                 active: data.cur2 === `tag/${tagEncode(name)}/${operationId}`
                                             }}>
                                                 <a href={`#tag/${tagEncode(name)}/${operationId}`} onClick={closeMenu}>
@@ -314,13 +337,13 @@ export const OpenAPIViewer = {
                                 </h2>
                             </a>
                             {children?.map(({ name, endpoints }) => <>
-                                <a href={`#tag/${tagEncode(name)}`} class={{ empty: !endpoints?.length > 0 }}>
+                                <a href={`#tag/${tagEncode(name)}`} class={{ empty: !endpoints?.filter(e => e.visible)?.length > 0 }}>
                                     <h3 id={`tag/${tagEncode(name)}`}>
-                                        {name}
+                                        {capitalize(name)}
                                         <span class='alink' />
                                     </h3>
                                 </a>
-                                {endpoints?.map(endpoint => Endpoint(
+                                {endpoints?.map(endpoint => !!endpoint.visible && Endpoint(
                                     `tag/${tagEncode(name)}/${endpoint.operationId}`,
                                     endpoint,
                                     name,

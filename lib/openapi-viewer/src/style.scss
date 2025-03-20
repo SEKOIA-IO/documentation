@@ -89,7 +89,7 @@
 
 
             ul.scroll-container {
-                margin: 36px 0px;
+                margin: 16px 0px;
                 list-style-type: none;
                 overflow-y: auto;
                 max-height: calc(100vh - 340px);
@@ -165,6 +165,7 @@
                             ul {
                                 list-style-type: none;
                                 margin-top: 0;
+                                margin-bottom: 0px;
 
                                 li {
                                     margin: 0;
@@ -292,12 +293,4 @@ main {
     100% {
         background-position: -200% 0;
     }
-}
-
-
-
-
-// TODO: REMOVE ME WHEN ALL REGIONS WILL BE DEPLOYED WITH APPROPRIATE TAGS
-.select-region {
-    display: none !important;
 }

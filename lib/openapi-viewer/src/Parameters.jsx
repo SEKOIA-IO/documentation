@@ -89,7 +89,7 @@ export const Property = (prop, override = {}, stack = null, level = 0) => {
     }
 
     const p = { ...prop, ...override }
-    const isExpandable = (p.type === 'array' && p.items?.type === 'object') || p.type === "object"
+    let isExpandable = (p.type === 'array' && p.items?.type === 'object') || p.type === "object"
 
     let type = p.type
     if (type === "array") {
@@ -111,6 +111,14 @@ export const Property = (prop, override = {}, stack = null, level = 0) => {
     if (isExpandable) {
         if (p.items?.properties) subProperties = p.items?.properties
         else if (p.items?.$ref) subProperties = resolveSchema(p.items?.$ref)?.properties
+    }
+
+    // If the property is expandable but has no sub-properties, display it
+    // as a non-expandable JSON object/array
+    if (isExpandable && !subProperties?.length) {
+        isExpandable = false
+        if (type === "object") type = "json"
+        else type = "json array"
     }
 
     return <><tr
