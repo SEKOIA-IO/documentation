@@ -3,18 +3,23 @@ name: Salesforce
 type: intake
 
 ## Overview
+
+Salesforce provides customer relationship management software and applications focused on sales, customer service, marketing automation, e-commerce, analytics, and application development.
+
 - **Vendor**: Salesforce
 - **Supported environment**: SaaS
 - **Detection based on**: Telemetry
 - **Supported application or feature**: Application Logs
-
-Salesforce provides customer relationship management software and applications focused on sales, customer service, marketing automation, e-commerce, analytics, and application development.
 
 
 
 ## Configure
 
 This setup guide will show you how to provide an integration between Salesforce events and Sekoia.io.
+
+!!! note
+    To provide a quick detection on malicious activities, this integration requires to get the event log files on a hourly basis.
+    Please see [the Salesforce documentation](https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/event_log_file_hourly_overview.htm) to enable hourly Event Log Files.
 
 ### Configure OAuth
 
