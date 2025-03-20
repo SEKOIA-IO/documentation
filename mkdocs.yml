@@ -413,6 +413,7 @@ nav:
       - Amazon VPC Flow Logs: integration/categories/network/aws_flow_logs.md
       - Azure Application Gateway: integration/categories/network/azure_application_gateway.md
       - ArubaOS Switch: integration/categories/network/arubaos.md
+      - BeyondTrust PRA: integration/categories/network/beyondtrust_pra.md
       - BIND: integration/categories/network/bind.md
       - Cato SASE: integration/categories/network/cato_sase.md
       - Cisco IOS: integration/categories/network/cisco_ios.md
