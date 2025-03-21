@@ -2,6 +2,9 @@ Changelog _last update on 2025-03-21_
 
 ## Changelog
 
+### Network Connection Via Certutil
+  - 21/03/2025 - major - Review rule to reduce false positives and increases detection scope.
+    
 ### Microsoft Entra ID (Azure AD) Unfamiliar Features
   - 20/03/2025 - major - Change effort level
     
