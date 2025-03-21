@@ -11874,7 +11874,7 @@ Rules catalog includes **1001 built-in detection rules** ([_last update on 2025-
     
     This event can be a sign of Kerberos replay attack or, among other things, network device configuration or routing problems.
     
-    - **Effort:** intermediate
+    - **Effort:** master
     
     - **Changelog:**
     

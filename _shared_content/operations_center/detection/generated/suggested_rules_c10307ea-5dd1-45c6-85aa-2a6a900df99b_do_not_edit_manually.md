@@ -1393,7 +1393,7 @@ The following Sekoia.io built-in rules match the intake **Elastic Winlogbeat**. 
     
     This event can be a sign of Kerberos replay attack or, among other things, network device configuration or routing problems.
     
-    - **Effort:** intermediate
+    - **Effort:** master
 
 ??? abstract "Potential DNS Tunnel"
     
