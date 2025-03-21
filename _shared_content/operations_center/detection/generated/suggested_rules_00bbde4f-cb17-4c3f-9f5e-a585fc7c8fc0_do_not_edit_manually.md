@@ -499,7 +499,7 @@ The following Sekoia.io built-in rules match the intake **Google Kubernetes Engi
     
     Detects Pandemic Windows Implant through registry keys or specific command lines. Prerequisites: Logging for Registry events is needed, which can be done in the Sysmon configuration (events 12 and 13).
     
-    - **Effort:** intermediate
+    - **Effort:** master
 
 ??? abstract "Phorpiex DriveMgr Command"
     
@@ -571,7 +571,7 @@ The following Sekoia.io built-in rules match the intake **Google Kubernetes Engi
     
     Powershell's `uploadXXX` functions are a category of methods which can be used to exfiltrate data through native means on a Windows host.
     
-    - **Effort:** intermediate
+    - **Effort:** advanced
 
 ??? abstract "Powershell Web Request"
     

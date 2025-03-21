@@ -63,6 +63,12 @@ The following Sekoia.io built-in rules match the intake **Tanium**. This documen
     
     - **Effort:** advanced
 
+??? abstract "Attempt to Disable Gatekeeper Execution Control"
+    
+    Detects attempts to disable Gatekeeper through the command line. Gatekeeper is a macOS feature designed to ensure that only trusted, signed software can be executed.
+    
+    - **Effort:** elementary
+
 ??? abstract "Audio Capture via PowerShell"
     
     Detects audio capture via PowerShell Cmdlet
@@ -589,7 +595,7 @@ The following Sekoia.io built-in rules match the intake **Tanium**. This documen
     
     Detects dump of SAM, System or Security hives using reg.exe utility. Adversaries may attempt to dump these Windows Registry to retrieve password hashes and access credentials.
     
-    - **Effort:** intermediate
+    - **Effort:** master
 
 ??? abstract "HackTools Suspicious Names"
     
@@ -1123,7 +1129,7 @@ The following Sekoia.io built-in rules match the intake **Tanium**. This documen
     
     Detects Pandemic Windows Implant through registry keys or specific command lines. Prerequisites: Logging for Registry events is needed, which can be done in the Sysmon configuration (events 12 and 13).
     
-    - **Effort:** intermediate
+    - **Effort:** master
 
 ??? abstract "PasswordDump SecurityXploded Tool"
     
@@ -1237,7 +1243,7 @@ The following Sekoia.io built-in rules match the intake **Tanium**. This documen
     
     Powershell's `uploadXXX` functions are a category of methods which can be used to exfiltrate data through native means on a Windows host.
     
-    - **Effort:** intermediate
+    - **Effort:** advanced
 
 ??? abstract "Powershell Web Request"
     

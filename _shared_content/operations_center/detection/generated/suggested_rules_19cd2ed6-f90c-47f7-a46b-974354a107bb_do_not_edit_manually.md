@@ -361,7 +361,7 @@ The following Sekoia.io built-in rules match the intake **Microsoft Entra ID / A
     
     Detects when Microsoft Entra ID (Azure AD) identifies sign-ins with characteristics that deviate from past sign-in properties. To use this feature, you must have an Microsoft Entra ID (Azure AD) Premium P2 license (https://docs.microsoft.com/en-us/azure/active-directory/identity-protection/overview-identity-protection).
     
-    - **Effort:** intermediate
+    - **Effort:** master
 
 ??? abstract "Nimbo-C2 User Agent"
     
