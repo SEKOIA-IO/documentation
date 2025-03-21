@@ -13,21 +13,24 @@ Trend Micro Email Security is a robust email protection solution that safeguards
 
 ## Configure
 
-### How to get an API key
-1. Log on to the Trend Micro Email Security administrator console.
-2. Go to **Administration**
+### How to create an API token
 
-![Step 1](/assets/integration/email/trend_micro/step_1.png)
+1. Log in the Trend Vision One console
+2. On the left panel, click `Administration` then click `API keys`
 
-4. Click on **Service Integration**. The API Access tab displays by default.
+    ![step 1](/assets/integration/cloud_and_saas/trend_micro_vision_one/01_administration.png)
 
-![Click on Service Integration](/assets/integration/email/trend_micro/step_2.png)
+3. Click `Add API key`
 
-6. Click **Add** to generate an API Key.
+    ![step 2](/assets/integration/cloud_and_saas/trend_micro_vision_one/02_create_api_key.png)
 
-![Click on Add](/assets/integration/email/trend_micro/step_3.png)
+4. Type a name for the API key
+5. Select the `Email administrator` role and an expiration time
+6. Check `status` to enable the API key
+7. Copy the API key and click `Close`
 
-9. Copy the API Key value and save the value. Keep the API Key private
+    ![step 4](/assets/integration/cloud_and_saas/trend_micro_vision_one/04_save_api_key.png)
+
 
 ### Create your intake
 
