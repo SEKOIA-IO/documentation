@@ -1,4 +1,4 @@
-Rules catalog includes **1000 built-in detection rules** ([_last update on 2025-03-18_](rules_changelog.md)).
+Rules catalog includes **1001 built-in detection rules** ([_last update on 2025-03-21_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Identity Information**
 
@@ -419,8 +419,12 @@ Rules catalog includes **1000 built-in detection rules** ([_last update on 2025-
     
     Detects when Microsoft Entra ID (Azure AD) identifies sign-ins with characteristics that deviate from past sign-in properties. To use this feature, you must have an Microsoft Entra ID (Azure AD) Premium P2 license (https://docs.microsoft.com/en-us/azure/active-directory/identity-protection/overview-identity-protection).
     
-    - **Effort:** intermediate
+    - **Effort:** master
     
+    - **Changelog:**
+    
+        - 20/03/2025 - major - Change effort level
+            
 ??? abstract "Okta MFA Brute-Force Successful"
     
     A user has attempted to login several times (brute-force) on Okta and succeeded to login by spamming MFA.
@@ -586,8 +590,12 @@ Rules catalog includes **1000 built-in detection rules** ([_last update on 2025-
     
     Detects when Microsoft Entra ID (Azure AD) identifies sign-ins with characteristics that deviate from past sign-in properties. To use this feature, you must have an Microsoft Entra ID (Azure AD) Premium P2 license (https://docs.microsoft.com/en-us/azure/active-directory/identity-protection/overview-identity-protection).
     
-    - **Effort:** intermediate
+    - **Effort:** master
     
+    - **Changelog:**
+    
+        - 20/03/2025 - major - Change effort level
+            
 ??? abstract "Okta MFA Brute-Force Successful"
     
     A user has attempted to login several times (brute-force) on Okta and succeeded to login by spamming MFA.
@@ -3403,10 +3411,11 @@ Rules catalog includes **1000 built-in detection rules** ([_last update on 2025-
     
     Detection of an ISO (or any other similar archive file) downloaded file, followed by a child-process of explorer, which is characteristic of an infection using an ISO containing an LNK file. For events with `host.name`.
     
-    - **Effort:** intermediate
+    - **Effort:** master
     
     - **Changelog:**
     
+        - 20/03/2025 - major - Change effort level
         - 18/03/2025 - minor - File path exclusion added to filter some false positives.
         - 17/01/2025 - minor - Cmdline exclusion added to filter some false positives.
         - 25/11/2024 - minor - Updating filter on file change and deletion
@@ -10090,6 +10099,12 @@ Rules catalog includes **1000 built-in detection rules** ([_last update on 2025-
     
         - 14/03/2025 - minor - Excluded some commonly observed false positives.
             
+??? abstract "Attempt to Disable Gatekeeper Execution Control"
+    
+    Detects attempts to disable Gatekeeper through the command line. Gatekeeper is a macOS feature designed to ensure that only trusted, signed software can be executed.
+    
+    - **Effort:** elementary
+    
 ??? abstract "Clear EventLogs Through CommandLine"
     
     Detects a command that clears event logs which could indicate an attempt from an attacker to erase its previous traces.
@@ -10924,10 +10939,11 @@ Rules catalog includes **1000 built-in detection rules** ([_last update on 2025-
     
     Detects dump of SAM, System or Security hives using reg.exe utility. Adversaries may attempt to dump these Windows Registry to retrieve password hashes and access credentials.
     
-    - **Effort:** intermediate
+    - **Effort:** master
     
     - **Changelog:**
     
+        - 20/03/2025 - major - Effort level changed, similarity strategy added, and filters improved to reduce false positives.
         - 02/01/2024 - minor - Rule was improved to have broader detection and filters were added.
             
 ??? abstract "HackTools Suspicious Names"
@@ -13438,8 +13454,12 @@ Rules catalog includes **1000 built-in detection rules** ([_last update on 2025-
     
     Detects Pandemic Windows Implant through registry keys or specific command lines. Prerequisites: Logging for Registry events is needed, which can be done in the Sysmon configuration (events 12 and 13).
     
-    - **Effort:** intermediate
+    - **Effort:** master
     
+    - **Changelog:**
+    
+        - 20/03/2025 - major - Rule's effort level has been changed to master, similarity and filter added.
+            
 ??? abstract "Raccoon Stealer 2.0 Legitimate Third-Party DLL Download URL"
     
     Detects Raccoon Stealer 2.0 malware downloading legitimate third-party DLLs from its C2 server. These legitimate DLLs are used by the information stealer to collect data on the compromised hosts.
@@ -13845,8 +13865,12 @@ Rules catalog includes **1000 built-in detection rules** ([_last update on 2025-
     
     Powershell's `uploadXXX` functions are a category of methods which can be used to exfiltrate data through native means on a Windows host.
     
-    - **Effort:** intermediate
+    - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 20/03/2025 - major - Change effort level and add filter to reduce false positives
+            
 ??? abstract "TUN/TAP Driver Installation"
     
     Detects the installation of the TUN or TAP driver service, this activity could be related to data exfiltration using tunneling techniques. The TUN/TAP Windows Adapter is a network driver that enables some VPN providers to facilitate a VPN connection to their server. TUN/TAP driver is only used by specific VPNs (e.g. OpenVPN, Wireguard), not by thoses based on IKE protocols (e.g. IPsec).
@@ -13903,8 +13927,12 @@ Rules catalog includes **1000 built-in detection rules** ([_last update on 2025-
     
     Powershell's `uploadXXX` functions are a category of methods which can be used to exfiltrate data through native means on a Windows host.
     
-    - **Effort:** intermediate
+    - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 20/03/2025 - major - Change effort level and add filter to reduce false positives
+            
 ??? abstract "Rclone Process"
     
     Detects Rclone executable or Rclone execution by using the process name, the execution through a command obfuscated or not.

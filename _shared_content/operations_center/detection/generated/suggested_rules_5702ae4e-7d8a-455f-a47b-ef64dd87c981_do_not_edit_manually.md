@@ -283,7 +283,7 @@ The following Sekoia.io built-in rules match the intake **Fortinet FortiGate**. 
     
     Detection of an ISO (or any other similar archive file) downloaded file, followed by a child-process of explorer, which is characteristic of an infection using an ISO containing an LNK file. For events with `host.name`.
     
-    - **Effort:** intermediate
+    - **Effort:** master
 
 ??? abstract "Internet Scanner"
     

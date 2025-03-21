@@ -391,7 +391,7 @@ The following Sekoia.io built-in rules match the intake **Trend Micro Vision One
     
     Detection of an ISO (or any other similar archive file) downloaded file, followed by a child-process of explorer, which is characteristic of an infection using an ISO containing an LNK file. For events with `host.name`.
     
-    - **Effort:** intermediate
+    - **Effort:** master
 
 ??? abstract "Inhibit System Recovery Deleting Backups"
     
@@ -721,7 +721,7 @@ The following Sekoia.io built-in rules match the intake **Trend Micro Vision One
     
     Detects Pandemic Windows Implant through registry keys or specific command lines. Prerequisites: Logging for Registry events is needed, which can be done in the Sysmon configuration (events 12 and 13).
     
-    - **Effort:** intermediate
+    - **Effort:** master
 
 ??? abstract "PasswordDump SecurityXploded Tool"
     
@@ -847,7 +847,7 @@ The following Sekoia.io built-in rules match the intake **Trend Micro Vision One
     
     Powershell's `uploadXXX` functions are a category of methods which can be used to exfiltrate data through native means on a Windows host.
     
-    - **Effort:** intermediate
+    - **Effort:** advanced
 
 ??? abstract "Powershell Web Request"
     

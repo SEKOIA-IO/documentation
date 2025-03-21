@@ -1,7 +1,16 @@
-Changelog _last update on 2025-03-18_
+Changelog _last update on 2025-03-21_
 
 ## Changelog
 
+### Microsoft Entra ID (Azure AD) Unfamiliar Features
+  - 20/03/2025 - major - Change effort level
+    
+### Pandemic Windows Implant
+  - 20/03/2025 - major - Rule's effort level has been changed to master, similarity and filter added.
+    
+### Powershell UploadString Function
+  - 20/03/2025 - major - Change effort level and add filter to reduce false positives
+    
 ### Searchprotocolhost Child Found
   - 17/03/2025 - major - Rule changed to effort master, and filter added to reduce false positives.
     
