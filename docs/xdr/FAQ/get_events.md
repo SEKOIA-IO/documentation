@@ -9,7 +9,7 @@
     - **Export Limits:** Maximum of 500 events per export. Refine your search to get complete results if this limit is reached.
 
 - **Via API:**
-    - Use the [Event Search API](/xdr/develop/rest_api/configuration.md) to automate event exports through jobs.
+    - Use the Event Search API to automate event exports through jobs.
     - Events are retrieved in JSON format.
     - **API Limits:** Please refer to [API recommendations and best practices](/xdr/FAQ.md#4-recommendations-and-best-practices).
 
@@ -26,14 +26,14 @@
 - **Playbooks:**
     - Use the **Get Events** module in a playbook to automate event retrieval based on a custom query.
     - This module simplifies the creation of automated queries to monitor specific events.
-    
+
 
 ### 4. **How to Find Events Related to a Specific Alert or Case?**
 
 - **Via API:**
-    - Filter events associated with an alert or case using the [Event Search API](/xdr/develop/rest_api/configuration.md) with appropriate criteria.
+    - Filter events associated with an alert or case using the Event Search API with appropriate criteria.
     - For instance, to filter by an alert’s short ID, use the following query:
-        
+
         ```json
         {
             "term": "",
@@ -54,5 +54,5 @@
             ]
         }
         ```
-        
+
     - Adapt the filters in this query to specifically target events related to your alerts or cases.
