@@ -375,12 +375,6 @@ The following Sekoia.io built-in rules match the intake **Skyhigh Secure Web Gat
     
     - **Effort:** intermediate
 
-??? abstract "Network Connection Via Certutil"
-    
-    Identifies certutil.exe making a network connection. Adversaries could abuse certutil.exe to download a certificate, or malware, from a remote URL. The rule excludes private IP addresses and IPV6. This requires Sysmon logging.
-    
-    - **Effort:** intermediate
-
 ??? abstract "Network Scanning and Discovery"
     
     Tools and command lines used for network discovery from current system

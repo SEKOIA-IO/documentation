@@ -358,7 +358,7 @@ The colors of the EventIDs in this page should be interpreted as follow:
 | Screenconnect Remote Execution | intermediate | <span style="color:#5865d3"><a href='https://learn.microsoft.com/en-us/sysinternals/downloads/sysmon#events' style='color: inherit;'>1</a></span>, <span style="color:#5865d3"><a href='https://learn.microsoft.com/en-us/sysinternals/downloads/sysmon#events' style='color: inherit;'>5</a></span> | Kernel-Process |
 | Remote Task Creation Via ATSVC Named Pipe | intermediate | <span style="color:#B60016"><a href='https://learn.microsoft.com/en-us/windows/security/threat-protection/auditing/event-5145' style='color: inherit;'>5145</a></span> | Microsoft-Windows-Security-Auditing |
 | XSL Script Processing And SquiblyTwo Attack | intermediate | <span style="color:#5865d3"><a href='https://learn.microsoft.com/en-us/sysinternals/downloads/sysmon#events' style='color: inherit;'>1</a></span> | Microsoft-Windows-Sysmon |
-| Network Connection Via Certutil | intermediate | <span style="color:#5865d3"><a href='https://learn.microsoft.com/en-us/sysinternals/downloads/sysmon#events' style='color: inherit;'>3</a></span> | Microsoft-Windows-Sysmon |
+| Network Connection Via Certutil | intermediate | <span style="color:#5865d3"><a href='https://learn.microsoft.com/en-us/sysinternals/downloads/sysmon#events' style='color: inherit;'>1</a></span> | Kernel-Process |
 | Netsh Port Forwarding | intermediate | <span style="color:#5865d3"><a href='https://learn.microsoft.com/en-us/sysinternals/downloads/sysmon#events' style='color: inherit;'>1</a></span> | Microsoft-Windows-Sysmon |
 | Correlation Priv Esc Via Remote Thread | intermediate | <span style="color:#5865d3"><a href='https://learn.microsoft.com/en-us/sysinternals/downloads/sysmon#events' style='color: inherit;'>1</a></span>, <span style="color:#5865d3"><a href='https://learn.microsoft.com/en-us/sysinternals/downloads/sysmon#events' style='color: inherit;'>8</a></span>, 4703 | Kernel-Process, Microsoft-Windows-Kernel-Process, Microsoft-Windows-Security-Auditing |
 | Suspicious PowerShell Invocations - Specific | intermediate | <span style="color:#5865d3"><a href='https://learn.microsoft.com/en-us/sysinternals/downloads/sysmon#events' style='color: inherit;'>1</a></span> | Microsoft-Windows-Sysmon |
@@ -516,7 +516,7 @@ The colors of the EventIDs in this page should be interpreted as follow:
 ## EventIDs occurences in rules
 | EventID | Number of rules concerned | Percentage of rules concerned (Total rules: 500) |
 | ------- | ------------------------- | ------------------------------------------------------ |
-| 1 | 234 | 46.8 % |
+| 1 | 235 | 47.0 % |
 | 13 | 50 | 10.0 % |
 | 4104 | 45 | 9.0 % |
 | 5 | 27 | 5.4 % |
@@ -532,9 +532,9 @@ The colors of the EventIDs in this page should be interpreted as follow:
 | 17 | 6 | 1.2 % |
 | 5136 | 6 | 1.2 % |
 | 10 | 6 | 1.2 % |
-| 3 | 6 | 1.2 % |
 | 1116 | 5 | 1.0 % |
 | 4662 | 5 | 1.0 % |
+| 3 | 5 | 1.0 % |
 | 4625 | 4 | 0.8 % |
 | 64 | 4 | 0.8 % |
 | 25 | 4 | 0.8 % |
@@ -599,9 +599,9 @@ The colors of the EventIDs in this page should be interpreted as follow:
 ## EventProviders occurences in rules
 | EventProvider | Number of rules concerned | Percentage of rules concerned (Total rules: 500) |
 | ------- | ------------------------- | ------------------------------------------------------ |
-| Microsoft-Windows-Sysmon | 291 | 58.2 % |
+| Microsoft-Windows-Sysmon | 290 | 58.0 % |
 | Microsoft-Windows-Security-Auditing | 87 | 17.4 % |
-| Kernel-Process | 54 | 10.8 % |
+| Kernel-Process | 55 | 11.0 % |
 | Microsoft-Windows-PowerShell | 48 | 9.6 % |
 | Service Control Manager | 11 | 2.2 % |
 | Microsoft-Windows-Kernel-File | 9 | 1.8 % |
