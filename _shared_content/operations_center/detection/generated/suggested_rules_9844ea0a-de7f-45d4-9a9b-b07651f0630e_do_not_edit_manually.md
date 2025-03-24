@@ -625,7 +625,7 @@ The following Sekoia.io built-in rules match the intake **Trend Micro Vision One
     
     Detects NetSh commands used to disable the Windows Firewall
     
-    - **Effort:** intermediate
+    - **Effort:** advanced
 
 ??? abstract "Netsh Allowed Python Program"
     

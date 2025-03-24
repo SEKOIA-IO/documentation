@@ -439,7 +439,7 @@ The following Sekoia.io built-in rules match the intake **WALLIX Bastion**. This
     
     Detects NetSh commands used to disable the Windows Firewall
     
-    - **Effort:** intermediate
+    - **Effort:** advanced
 
 ??? abstract "Netsh Allowed Python Program"
     

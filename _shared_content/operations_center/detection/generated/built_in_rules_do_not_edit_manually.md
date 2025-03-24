@@ -1,4 +1,4 @@
-Rules catalog includes **1001 built-in detection rules** ([_last update on 2025-03-21_](rules_changelog.md)).
+Rules catalog includes **1001 built-in detection rules** ([_last update on 2025-03-24_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Identity Information**
 
@@ -8066,7 +8066,8 @@ Rules catalog includes **1001 built-in detection rules** ([_last update on 2025-
     
     - **Changelog:**
     
-        - 28/05/2024 - minor - Add pattern to filter to improve coverage
+        - 28/05/2024 - minor - Add pattern to selection to improve coverage
+        - 13/03/2025 - minor - Adding filters to reduce false positives and adding similarity.
             
 ??? abstract "COM Hijack Via Sdclt"
     
@@ -9428,7 +9429,8 @@ Rules catalog includes **1001 built-in detection rules** ([_last update on 2025-
     
     - **Changelog:**
     
-        - 28/05/2024 - minor - Add pattern to filter to improve coverage
+        - 28/05/2024 - minor - Add pattern to selection to improve coverage
+        - 13/03/2025 - minor - Adding filters to reduce false positives and adding similarity.
             
 ??? abstract "CVE-2017-11882 Microsoft Office Equation Editor Vulnerability"
     
@@ -9755,7 +9757,8 @@ Rules catalog includes **1001 built-in detection rules** ([_last update on 2025-
     
     - **Changelog:**
     
-        - 28/05/2024 - minor - Add pattern to filter to improve coverage
+        - 28/05/2024 - minor - Add pattern to selection to improve coverage
+        - 13/03/2025 - minor - Adding filters to reduce false positives and adding similarity.
             
 ??? abstract "COM Hijack Via Sdclt"
     
@@ -10352,8 +10355,12 @@ Rules catalog includes **1001 built-in detection rules** ([_last update on 2025-
     
     Detects NetSh commands used to disable the Windows Firewall
     
-    - **Effort:** intermediate
+    - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 20/03/2025 - minor - Adding similarity and change effort level.
+            
 ??? abstract "Netsh Allow Command"
     
     Netsh command line to allow a program to pass through firewall.
@@ -11874,7 +11881,7 @@ Rules catalog includes **1001 built-in detection rules** ([_last update on 2025-
     
     This event can be a sign of Kerberos replay attack or, among other things, network device configuration or routing problems.
     
-    - **Effort:** intermediate
+    - **Effort:** master
     
     - **Changelog:**
     
