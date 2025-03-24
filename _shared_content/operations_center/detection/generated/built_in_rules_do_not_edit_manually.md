@@ -10147,8 +10147,12 @@ Rules catalog includes **1001 built-in detection rules** ([_last update on 2025-
     
     Detects registry keys being changed to disable Windows Defender Credential Guard. The rule requires to log Registry Keys modifications or creations, which can be done using Sysmon Event IDs 12,13 and 14.
     
-    - **Effort:** intermediate
+    - **Effort:** master
     
+    - **Changelog:**
+    
+        - 24/05/2025 - minor - Adding similarity and changing effort level.
+            
 ??? abstract "Disabled IE Security Features"
     
     Detects from the command lines or the registry, changes that indicate unwanted modifications to registry keys that disable important Internet Explorer security features. This has been used by attackers during Operation Ke3chang.
@@ -11224,13 +11228,14 @@ Rules catalog includes **1001 built-in detection rules** ([_last update on 2025-
     
     A user tried to write something to a file in /etc/systemd/system. This repository contains services that are run at start. It can be used to run a malicious programm at start with high privileges. The prerequisites are to enable monitoring of the execve openat using Auditbeat.
     
-    - **Effort:** intermediate
+    - **Effort:** advanced
     
     - **Changelog:**
     
         - 26/10/2023 - minor - Added filter to reduce false positives.
         - 04/01/2023 - minor - Added filter to reduce false positives.
         - 20/01/2025 - minor - Update pattern to ECS field only and filter some false positives.
+        - 24/03/2025 - major - Added filter to reduce false positives, change effort and add similarity strategy.
             
 **Network Sniffing**
 
