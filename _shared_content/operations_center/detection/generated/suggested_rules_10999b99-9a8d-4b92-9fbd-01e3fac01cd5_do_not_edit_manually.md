@@ -1003,7 +1003,7 @@ The following Sekoia.io built-in rules match the intake **Crowdstrike Falcon Tel
     
     Detects NetSh commands used to disable the Windows Firewall
     
-    - **Effort:** intermediate
+    - **Effort:** advanced
 
 ??? abstract "Netsh Allow Command"
     

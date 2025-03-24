@@ -727,7 +727,7 @@ The following Sekoia.io built-in rules match the intake **F5 BIG-IP**. This docu
     
     Detects NetSh commands used to disable the Windows Firewall
     
-    - **Effort:** intermediate
+    - **Effort:** advanced
 
 ??? abstract "Netsh Allowed Python Program"
     
@@ -829,7 +829,7 @@ The following Sekoia.io built-in rules match the intake **F5 BIG-IP**. This docu
     
     This event can be a sign of Kerberos replay attack or, among other things, network device configuration or routing problems.
     
-    - **Effort:** intermediate
+    - **Effort:** master
 
 ??? abstract "Potential Azure AD Phishing Page (Adversary-in-the-Middle)"
     

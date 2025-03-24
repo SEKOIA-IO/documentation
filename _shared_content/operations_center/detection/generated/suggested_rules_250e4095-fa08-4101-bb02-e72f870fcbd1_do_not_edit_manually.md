@@ -1519,7 +1519,7 @@ The following Sekoia.io built-in rules match the intake **Sekoia.io Endpoint Age
     
     Detects NetSh commands used to disable the Windows Firewall
     
-    - **Effort:** intermediate
+    - **Effort:** advanced
 
 ??? abstract "Netscan Share Access Artefact"
     
@@ -1753,7 +1753,7 @@ The following Sekoia.io built-in rules match the intake **Sekoia.io Endpoint Age
     
     This event can be a sign of Kerberos replay attack or, among other things, network device configuration or routing problems.
     
-    - **Effort:** intermediate
+    - **Effort:** master
 
 ??? abstract "Possible RottenPotato Attack"
     

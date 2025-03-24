@@ -1,4 +1,4 @@
-Changelog _last update on 2025-03-21_
+Changelog _last update on 2025-03-24_
 
 ## Changelog
 
@@ -14,6 +14,9 @@ Changelog _last update on 2025-03-21_
 ### Powershell UploadString Function
   - 20/03/2025 - major - Change effort level and add filter to reduce false positives
     
+### NetSh Used To Disable Windows Firewall
+  - 20/03/2025 - minor - Adding similarity and change effort level.
+    
 ### Searchprotocolhost Child Found
   - 17/03/2025 - major - Rule changed to effort master, and filter added to reduce false positives.
     
@@ -25,6 +28,9 @@ Changelog _last update on 2025-03-21_
     
 ### TrustedInstaller Impersonation
   - 13/03/2025 - major - Adding filters to reduce false positives and adding similarity.
+    
+### CMSTP UAC Bypass via COM Object Access
+  - 13/03/2025 - minor - Adding filters to reduce false positives and adding similarity.
     
 ### Powershell Winlogon Helper DLL
   - 13/03/2025 - major - Adding new filter and similarity strategy to reduce false positives. Changing effort level.
@@ -436,9 +442,6 @@ Changelog _last update on 2025-03-21_
     
 ### Outgoing Bytes Peak
   - 28/05/2024 - major - On Fortinet Fortigate intakes, events other than 0000000013 are now ignored.
-    
-### CMSTP UAC Bypass via COM Object Access
-  - 28/05/2024 - minor - Add pattern to filter to improve coverage
     
 ### Suspicious PowerShell Keywords
   - 23/05/2024 - minor - Added filter to reduce false positives and new suspicious keywords.

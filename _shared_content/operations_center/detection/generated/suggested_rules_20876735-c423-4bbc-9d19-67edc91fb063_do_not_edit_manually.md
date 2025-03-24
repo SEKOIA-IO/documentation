@@ -463,7 +463,7 @@ The following Sekoia.io built-in rules match the intake **RSA SecurID**. This do
     
     Detects NetSh commands used to disable the Windows Firewall
     
-    - **Effort:** intermediate
+    - **Effort:** advanced
 
 ??? abstract "Netsh Allowed Python Program"
     
@@ -553,7 +553,7 @@ The following Sekoia.io built-in rules match the intake **RSA SecurID**. This do
     
     This event can be a sign of Kerberos replay attack or, among other things, network device configuration or routing problems.
     
-    - **Effort:** intermediate
+    - **Effort:** master
 
 ??? abstract "PowerCat Function Loading"
     

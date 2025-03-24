@@ -817,7 +817,7 @@ The following Sekoia.io built-in rules match the intake **Cisco NX-OS**. This do
     
     Detects NetSh commands used to disable the Windows Firewall
     
-    - **Effort:** intermediate
+    - **Effort:** advanced
 
 ??? abstract "Netsh Allow Command"
     
@@ -1009,7 +1009,7 @@ The following Sekoia.io built-in rules match the intake **Cisco NX-OS**. This do
     
     This event can be a sign of Kerberos replay attack or, among other things, network device configuration or routing problems.
     
-    - **Effort:** intermediate
+    - **Effort:** master
 
 ??? abstract "Potential DNS Tunnel"
     

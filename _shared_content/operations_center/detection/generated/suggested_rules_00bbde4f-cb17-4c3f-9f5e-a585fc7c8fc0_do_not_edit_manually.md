@@ -427,7 +427,7 @@ The following Sekoia.io built-in rules match the intake **Google Kubernetes Engi
     
     Detects NetSh commands used to disable the Windows Firewall
     
-    - **Effort:** intermediate
+    - **Effort:** advanced
 
 ??? abstract "Netsh Allowed Python Program"
     

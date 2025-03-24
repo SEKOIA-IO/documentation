@@ -1177,7 +1177,7 @@ The following Sekoia.io built-in rules match the intake **SentinelOne Cloud Funn
     
     Detects NetSh commands used to disable the Windows Firewall
     
-    - **Effort:** intermediate
+    - **Effort:** advanced
 
 ??? abstract "Netsh Allow Command"
     
