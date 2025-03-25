@@ -2,6 +2,12 @@ Changelog _last update on 2025-03-24_
 
 ## Changelog
 
+### Disable Windows Defender Credential Guard
+  - 24/05/2025 - minor - Adding similarity and changing effort level.
+    
+### Write To File In Systemd
+  - 24/03/2025 - major - Added filter to reduce false positives, change effort and add similarity strategy.
+    
 ### Network Connection Via Certutil
   - 21/03/2025 - major - Review rule to reduce false positives and increases detection scope.
     
@@ -121,9 +127,6 @@ Changelog _last update on 2025-03-24_
     
 ### Setuid Or Setgid Usage
   - 20/01/2025 - minor - Update pattern to ECS field only
-    
-### Write To File In Systemd
-  - 20/01/2025 - minor - Update pattern to ECS field only and filter some false positives.
     
 ### Socat Relaying Socket
   - 17/01/2025 - major - Significant rewrite of the rule to reduce false positives.

@@ -691,7 +691,7 @@ The following Sekoia.io built-in rules match the intake **HarfangLab EDR**. This
     
     Detects registry keys being changed to disable Windows Defender Credential Guard. The rule requires to log Registry Keys modifications or creations, which can be done using Sysmon Event IDs 12,13 and 14.
     
-    - **Effort:** intermediate
+    - **Effort:** master
 
 ??? abstract "Disable Workstation Lock"
     
