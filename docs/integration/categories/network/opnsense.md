@@ -3,9 +3,9 @@ name: OPNSense
 type: intake
 
 ## Overview
-- **Vendor**:
+- **Vendor**: OPNSense
 - **Supported environment**:
-- **Version compatibility**:
+- **Version compatibility**:  23.1, 23.7, 24.1
 - **Detection based on**: Telemetry
 - **Supported application or feature**:
 
@@ -41,7 +41,7 @@ To enable syslog forwarding:
 
 ### Create the intake
 
-Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a new intake from the format `OpenBSD Packet Filter`.
+Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a new intake from the format `OpenBSD Packet Filter /OPNSense / PfSense`.
 
 ### Forward logs to Sekoia.io
 
