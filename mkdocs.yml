@@ -255,6 +255,7 @@ nav:
           - OpenAI: tip/features/automate/library/openai.md
           - RSS: tip/features/automate/library/rss.md
           - Sekoia.io: tip/features/automate/library/sekoia-io.md
+          - Sekoia.io: tip/features/automate/library/sekoia-io.md
           - Utils: tip/features/automate/library/utils.md
         - IAM:
           - Microsoft Active Directory: tip/features/automate/library/microsoft-active-directory.md
@@ -541,6 +542,7 @@ nav:
       - HTTP: integration/action_library/http.md
       - OpenAI: integration/action_library/openai.md
       - RSS: integration/action_library/rss.md
+      - Sekoia.io: integration/action_library/sekoia-io.md
       - Sekoia.io: integration/action_library/sekoia-io.md
       - Utils: integration/action_library/utils.md
     - IAM:

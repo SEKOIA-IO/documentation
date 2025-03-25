@@ -4,7 +4,7 @@ type: playbook
 
 # Sekoia.io
 
-![Sekoia.io](/assets/playbooks/library/sekoia-io.svg){ align=right width=150 }
+![Sekoia.io](/assets/playbooks/library/sekoia-io.png){ align=right width=150 }
 
 Sekoia.io is a European Cybertech, expert in intelligence-based eXtended Detection and Response solutions. Our Sekoia SOC platform provides a unified view and full control of the perimeter to be defended. Our mission is to empower security operations teams with a flexible and easy-to-use platform. We protect large companies, technology scaleups, governments, and Tier One MSSP partners worldwide. 
 
@@ -23,6 +23,7 @@ A comment was added to an existing Alert
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
 | `rule_filter` | `string` | Create a run only for alerts matching a rule name |
+| `rule_names_filter` | `array` | Create a run only for alerts matching a list of rule name |
 
 
 **Outputs**
@@ -53,6 +54,7 @@ A new Alert was created in the Operation Center
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
 | `rule_filter` | `string` | Create a run only for alerts matching a rule name |
+| `rule_names_filter` | `array` | Create a run only for alerts matching a list of rule name |
 
 
 **Outputs**
@@ -82,6 +84,7 @@ The status of an existing alert was changed
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
 | `rule_filter` | `string` | Create a run only for alerts matching a rule name |
+| `rule_names_filter` | `array` | Create a run only for alerts matching a list of rule name |
 
 
 **Outputs**
@@ -111,6 +114,7 @@ An existing alert was updated
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
 | `rule_filter` | `string` | Create a run only for alerts matching a rule name |
+| `rule_names_filter` | `array` | Create a run only for alerts matching a list of rule name |
 
 
 **Outputs**
@@ -191,6 +195,7 @@ Create an event for each alert creation or modification
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
 | `rule_filter` | `string` | Create a run only for alerts matching a rule name |
+| `rule_names_filter` | `array` | Create a run only for alerts matching a list of rule name |
 
 
 **Outputs**
@@ -1573,6 +1578,7 @@ Create, merge and edit asset to synchronize asset with ad
 | --------- | ------- | --------------------------- |
 | `community_uuid` | `string` |  |
 | `user_ad_data` | `object` |  |
+| `user_ad_data_path` | `object` | File name to the User AD file to read. |
 | `asset_synchronization_configuration` | `object` |  |
 
 
@@ -1764,4 +1770,4 @@ Update a rule
 
 ## Extra
 
-Module **`Sekoia.io` v2.67.3**
+Module **`Sekoia.io` v2.67.6**
