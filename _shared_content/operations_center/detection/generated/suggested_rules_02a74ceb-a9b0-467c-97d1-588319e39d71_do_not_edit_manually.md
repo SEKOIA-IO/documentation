@@ -325,7 +325,7 @@ The following Sekoia.io built-in rules match the intake **Citrix NetScaler / ADC
     
     Discord is a messaging application. It allows users to create their own communities to share messages and attachments. Those attachments have little to no overview and can be downloaded by almost anyone, which has been abused by attackers to host malicious payloads.
     
-    - **Effort:** intermediate
+    - **Effort:** advanced
 
 ??? abstract "Domain Trust Created Or Removed"
     
@@ -1015,7 +1015,7 @@ The following Sekoia.io built-in rules match the intake **Citrix NetScaler / ADC
     
     Detects suspicious execution of the Windows Installer service (msiexec.exe) which could be used to install a malicious MSI package hosted on a remote server.
     
-    - **Effort:** intermediate
+    - **Effort:** master
 
 ??? abstract "Suspicious certutil command"
     

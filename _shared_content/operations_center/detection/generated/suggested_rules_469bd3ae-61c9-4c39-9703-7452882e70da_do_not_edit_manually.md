@@ -85,7 +85,7 @@ The following Sekoia.io built-in rules match the intake **Cato Networks SASE**. 
     
     Discord is a messaging application. It allows users to create their own communities to share messages and attachments. Those attachments have little to no overview and can be downloaded by almost anyone, which has been abused by attackers to host malicious payloads.
     
-    - **Effort:** intermediate
+    - **Effort:** advanced
 
 ??? abstract "Download Files From Suspicious TLDs"
     
