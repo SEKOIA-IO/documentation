@@ -1,9 +1,12 @@
-Changelog _last update on 2025-03-24_
+Changelog _last update on 2025-03-26_
 
 ## Changelog
 
 ### Disable Windows Defender Credential Guard
   - 24/05/2025 - minor - Adding similarity and changing effort level.
+    
+### Suspicious Windows Installer Execution
+  - 25/03/2025 - major - Adding many filters and a similarity strategy. Effort was also updated to master.
     
 ### Write To File In Systemd
   - 24/03/2025 - major - Added filter to reduce false positives, change effort and add similarity strategy.

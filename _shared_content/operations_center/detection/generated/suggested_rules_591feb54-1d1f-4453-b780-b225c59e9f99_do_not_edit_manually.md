@@ -1471,7 +1471,7 @@ The following Sekoia.io built-in rules match the intake **Cisco NX-OS**. This do
     
     Detects suspicious execution of the Windows Installer service (msiexec.exe) which could be used to install a malicious MSI package hosted on a remote server.
     
-    - **Effort:** intermediate
+    - **Effort:** master
 
 ??? abstract "Suspicious Windows Script Execution"
     

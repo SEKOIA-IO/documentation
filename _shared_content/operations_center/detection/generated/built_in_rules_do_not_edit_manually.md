@@ -1,4 +1,4 @@
-Rules catalog includes **1001 built-in detection rules** ([_last update on 2025-03-24_](rules_changelog.md)).
+Rules catalog includes **1001 built-in detection rules** ([_last update on 2025-03-26_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Identity Information**
 
@@ -9592,8 +9592,12 @@ Rules catalog includes **1001 built-in detection rules** ([_last update on 2025-
     
     Detects suspicious execution of the Windows Installer service (msiexec.exe) which could be used to install a malicious MSI package hosted on a remote server.
     
-    - **Effort:** intermediate
+    - **Effort:** master
     
+    - **Changelog:**
+    
+        - 25/03/2025 - major - Adding many filters and a similarity strategy. Effort was also updated to master.
+            
 ??? abstract "xWizard Execution"
     
     Detects the execution of Xwizard tool with specific arguments which utilized to run custom class properties.
@@ -13430,10 +13434,11 @@ Rules catalog includes **1001 built-in detection rules** ([_last update on 2025-
     
     Discord is a messaging application. It allows users to create their own communities to share messages and attachments. Those attachments have little to no overview and can be downloaded by almost anyone, which has been abused by attackers to host malicious payloads.
     
-    - **Effort:** intermediate
+    - **Effort:** advanced
     
     - **Changelog:**
     
+        - 25/03/2025 - major - Change the rule effort and similarity strategy.
         - 05/08/2023 - minor - Added filters for commonly observed files extensions.
             
 ??? abstract "Telegram Bot API Request"
