@@ -241,7 +241,7 @@ The following Sekoia.io built-in rules match the intake **Cisco Secure Web Appli
     
     Quick-win rule to detect the default process names or file names of several HackTools.
     
-    - **Effort:** elementary
+    - **Effort:** advanced
 
 ??? abstract "Koadic MSHTML Command"
     

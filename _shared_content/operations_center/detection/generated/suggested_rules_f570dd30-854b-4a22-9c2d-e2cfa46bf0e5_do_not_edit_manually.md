@@ -235,7 +235,7 @@ The following Sekoia.io built-in rules match the intake **Cloudflare Gateway HTT
     
     Quick-win rule to detect the default process names or file names of several HackTools.
     
-    - **Effort:** elementary
+    - **Effort:** advanced
 
 ??? abstract "Koadic MSHTML Command"
     

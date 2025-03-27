@@ -181,7 +181,7 @@ The following Sekoia.io built-in rules match the intake **ESET Protect**. This d
     
     Quick-win rule to detect the default process names or file names of several HackTools.
     
-    - **Effort:** elementary
+    - **Effort:** advanced
 
 ??? abstract "Hijack Legit RDP Session To Move Laterally"
     
