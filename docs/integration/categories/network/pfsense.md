@@ -1,17 +1,17 @@
 uuid: 8510051d-c7cf-4b0c-a398-031afe91faa0
-name: OPNSense
+name: PfSense
 type: intake
 
 ## Overview
-- **Vendor**: OPNSense
-- **Supported environment**:
-- **Version compatibility**:  23.1, 23.7, 24.1
+- **Vendor**: Netgate
+- **Supported environment**: 
+- **Version compatibility**: 23.01, 23.05, 23.09, 24.03, 24.11
 - **Detection based on**: Telemetry
 - **Supported application or feature**:
 
-OPNSense is a firewall software distribution based on FreeBSD.
+PfSense is a firewall software distribution based on FreeBSD.
 
-This intake ingest filterlog from OPNSense.
+This intake ingest filterlog from PfSense.
 
 
 
@@ -28,20 +28,14 @@ to Sekoia.io by means of a syslog transport channel.
 
 To enable syslog forwarding:
 
-1. Log in your OPNSense web interface.
-2. Go to `System > Settings > Logging / targets`.
-3. In the `Destinations` tab, click on the `+` button to add a new destination.
-4. In the modal, check the `Enabled` checkbox.
-5. Select `UDP(4)` as the transport.
-6. Select `filter (filterlog)` as `Applications`.
-7. Set the hostname/ip and the port of the log concentrator.
-8. Click on the `RFC5424` checkbox
-9. Click the `Save` button
+1. Follow the [official guide](https://docs.netgate.com/pfsense/en/latest/monitoring/logs/remote.html) to enable syslog forwarding from your pfSense firewall to the internal log concentrator.
+2. Define your log concentrator as a remote syslog server and select `Firewall Events` as the remote syslog content.
+3. Save your changes.
 
 
 ### Create the intake
 
-Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a new intake from the format `OpenBSD Packet Filter /OPNSense / PfSense`.
+Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a new intake from the format `OpenBSD Packet Filter / OPNSense / PfSense`.
 
 ### Forward logs to Sekoia.io
 

@@ -441,6 +441,7 @@ nav:
       - OPNSense: integration/categories/network/opnsense.md
       - OpenSSH: integration/categories/network/openssh.md
       - OpenVPN: integration/categories/network/openvpn.md
+      - PfSense: integration/categories/network/pfsense.md
       - Pulse Connect Secure: integration/categories/network/pulse.md
       - Squid: integration/categories/network/squid.md
       - Jizo AI / Sesame Jizo NDR: integration/categories/network/sesameit_jizo.md
