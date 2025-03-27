@@ -508,6 +508,14 @@ In this section, you will find examples of raw logs as generated natively by the
 
 
 
+=== "test_FTD_75006"
+
+    ```
+	%FTD-5-750006: Local:1.2.3.4:4500 Remote:5.6.7.8:55543 Username:toto IKEv2 SA UP. Reason: New Connection Established
+    ```
+
+
+
 === "test_group_1"
 
     ```
