@@ -91,7 +91,7 @@ The following Sekoia.io built-in rules match the intake **Windows Log Insight**.
     
     Quick-win rule to detect the default process names or file names of several HackTools.
     
-    - **Effort:** elementary
+    - **Effort:** advanced
 
 ??? abstract "Impacket Addcomputer"
     

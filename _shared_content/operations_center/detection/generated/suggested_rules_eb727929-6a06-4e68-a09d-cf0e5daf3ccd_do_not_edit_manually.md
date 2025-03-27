@@ -67,7 +67,7 @@ The following Sekoia.io built-in rules match the intake **Postfix**. This docume
     
     Quick-win rule to detect the default process names or file names of several HackTools.
     
-    - **Effort:** elementary
+    - **Effort:** advanced
 
 ??? abstract "Login Brute-Force Successful On SentinelOne EDR Management Console"
     

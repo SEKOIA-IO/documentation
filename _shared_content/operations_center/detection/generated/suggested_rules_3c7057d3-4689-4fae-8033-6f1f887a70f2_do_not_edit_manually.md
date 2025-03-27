@@ -997,7 +997,7 @@ The following Sekoia.io built-in rules match the intake **HarfangLab EDR**. This
     
     Quick-win rule to detect the default process names or file names of several HackTools.
     
-    - **Effort:** elementary
+    - **Effort:** advanced
 
 ??? abstract "HackTools Suspicious Process Names In Command Line"
     

@@ -1,4 +1,4 @@
-Rules catalog includes **1001 built-in detection rules** ([_last update on 2025-03-26_](rules_changelog.md)).
+Rules catalog includes **1001 built-in detection rules** ([_last update on 2025-03-27_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Identity Information**
 
@@ -1640,6 +1640,7 @@ Rules catalog includes **1001 built-in detection rules** ([_last update on 2025-
     
     - **Changelog:**
     
+        - 27/03/2025 - minor - Adding new extension
         - 15/04/2024 - minor - Update email from field to latest parser format
         - 14/11/2024 - major - Adding new file extension and new condition to make the rule broader as it can now match on more intakes.
             
@@ -10965,10 +10966,11 @@ Rules catalog includes **1001 built-in detection rules** ([_last update on 2025-
     
     Quick-win rule to detect the default process names or file names of several HackTools.
     
-    - **Effort:** elementary
+    - **Effort:** advanced
     
     - **Changelog:**
     
+        - 26/03/2025 - major - Change effort level and added filters.
         - 11/12/2024 - minor - Added a default similarity based on host name and user name to avoid too many alerts.
             
 ??? abstract "HackTools Suspicious Process Names In Command Line"
@@ -12852,6 +12854,7 @@ Rules catalog includes **1001 built-in detection rules** ([_last update on 2025-
     
     - **Changelog:**
     
+        - 27/03/2025 - minor - Adding new extension
         - 15/04/2024 - minor - Update email from field to latest parser format
         - 14/11/2024 - major - Adding new file extension and new condition to make the rule broader as it can now match on more intakes.
             

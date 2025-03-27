@@ -67,7 +67,7 @@ The following Sekoia.io built-in rules match the intake **Varonis Data Security*
     
     Quick-win rule to detect the default process names or file names of several HackTools.
     
-    - **Effort:** elementary
+    - **Effort:** advanced
 
 ??? abstract "ISO LNK Infection Chain"
     

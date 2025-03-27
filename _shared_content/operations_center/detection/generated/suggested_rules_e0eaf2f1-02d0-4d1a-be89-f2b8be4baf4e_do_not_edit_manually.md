@@ -103,7 +103,7 @@ The following Sekoia.io built-in rules match the intake **Proofpoint PoD**. This
     
     Quick-win rule to detect the default process names or file names of several HackTools.
     
-    - **Effort:** elementary
+    - **Effort:** advanced
 
 ??? abstract "Internet Scanner"
     
