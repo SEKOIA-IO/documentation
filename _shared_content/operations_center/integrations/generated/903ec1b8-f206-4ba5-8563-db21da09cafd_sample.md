@@ -4,6 +4,34 @@
 In this section, you will find examples of raw logs as generated natively by the source. These examples are provided to help integrators understand the data format before ingestion into Sekoia.io. It is crucial for setting up the correct parsing stages and ensuring that all relevant information is captured.
 
 
+=== "DNS_json"
+
+
+    ```json
+	{
+        "VendorName": "palo alto networks",
+        "DeviceSN": "111111111111111",
+        "TimeReceived": "2025-03-20T13:18:03.483814Z",
+        "LogType": "DNS",
+        "Subtype": "realtime_dns_telemetry_response",
+        "SubType": "realtime_dns_telemetry_response",
+        "TimeGenerated": "2025-03-20T13:18:03.000000Z",
+        "RecordType": null,
+        "DNSResolverIP": "8.8.8.8",
+        "ThreatID": 0,
+        "DNSCategory": "benign",
+        "ThreatName": null,
+        "SourceAddress": "1.2.3.4",
+        "FromZone": "INTERNAL",
+        "Action": "Allow",
+        "DNSResponse": null,
+        "ToZone": null,
+        "DestinationUser": null
+    }
+    ```
+
+
+
 === "User_id_1_csv"
 
 
