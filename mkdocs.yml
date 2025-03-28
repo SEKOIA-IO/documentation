@@ -14,8 +14,6 @@ extra_javascript:
 - javascript/lightgallery.min.js
 - javascript/hotjar.js
 - javascript/posthog.js
-- javascript/swagger-converter.js
-- javascript/openapi.js
 markdown_extensions:
 - admonition
 - attr_list
@@ -691,7 +689,6 @@ plugins:
       xdr/features/collect/integrations/network/wallix.md: integration/categories/iam/wallix.md
       xdr/features/collect/integrations/network/watchguard_firebox.md: integration/categories/network_security/watchguard_firebox.md
       xdr/features/investigate/dork_language.md: xdr/features/investigate/events_query_language.md
-- redoc
 - integration_by_uuid
 - sass
 repo_url: https://github.com/SEKOIA-IO/documentation

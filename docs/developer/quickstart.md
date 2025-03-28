@@ -1,80 +1,72 @@
 # Quickstart
-API stands for Application Programming Interface and is the code that governs the server's access point.
 
-When to use the Sekoia.io API?
+Welcome to Sekoia.io's public REST API. Note that Sekoia.io GUI is built upon this API.
 
-* **Data sharing**: when you want an application to get data from Sekoia.io
-* **Integration**: when you want an application to perform actions on Sekoia.io
-* **Automation**: when you want to build a script to automate actions with Sekoia.io
+### When to use the Sekoia.io API?
 
-Sekoia.io offers a public REST API to interact with the platform.
+* **Data sharing**: Access Sekoia.io data in your application.
+* **Integration**: Enable third-party applications to execute actions within Sekoia.io.
+* **Automation**: Automate actions and tasks via your own scripts.
 
-!!!note
-    The Sekoia.io GUI is based on that API
+Here are some characteristics of our REST API:
 
-Here are some characteristics of a REST API:
-
-* **Client/Server architecture**: based on HTTP requests (GET, POST, PUT, DELETE...)
-* **Stateless**: no connection is maintained between two requests
-* **Identification of actions**: each action corresponds to a specific url
+* **Client/Server architecture**: Operates through HTTP requests (GET, POST, PUT, DELETE...)
+* **Stateless design**: No persistent connection maintained between consecutive requests.
+* **Action identification**: Each specific action correlates with a unique URL endpoint.
 
 ![API Overview](/assets/develop/api_overview.png){: style="max-width:100%"}
 
 ## Authentication
-The whole API is available through `https://api.sekoia.io`.
 
-Authentication is done by Bearer Token which means that in all requests, the header `Authorization: Bearer <YOUR_API_KEY>` is needed.
+Access the complete Sekoia.io API through `https://api.sekoia.io`.
+
+To authenticate, use a Bearer Token in all requests by including the header `Authorization: Bearer <YOUR_API_KEY>`.
 
 **Example using curl**:
 ```bash
 curl -XGET -H "Authorization: Bearer YOUR_API_KEY" https://api.sekoia.io/v1/sic/conf/rules-catalog/rules
 ```
-
-To create an API key, follow our guide [here](/getting_started/manage_api_keys.md).
-The roles needed for your key will depend on what you want to achieve. If you plan to only get information from Sekoia.io, read only permissions will be enough. If you want to perform actions on Sekoia.io, you will also need to add write permissions.
+Create your unique API key following the guidelines provided [here](/getting_started/manage_api_keys.md).
+The permissions required for your key depend on what you want to achieve. For accessing information from Sekoia.io, read-only permissions are adequate; however, executing operations on Sekoia.io necessitates additional write permissions.
 
 Our documentation provides information on each endpoint and specifies the required permissions.
 
-## Documentation organization
+### Regions
+Sekoia operates in various European and Middle-Eastern regions. Each region is designed to meet specific legal and safety requirements.
+Sekoia API's base URL depends on the hosting region of your subscription (FRA1, USA1, UAE1, ...). For instance, if you access the Sekoia application via `https://app.mco1.sekoia.io/`, you shall use our API via `https://app.mco1.sekoia.io/api`.
 
-### APIs
+## Organization
 
-Our API documentation is divided according to the different functionalities the platform offers:
-In each of these categories, you will find the different actions available.
+Our API documentation is categorized based on the diverse features provided by the platform.
 
 #### Structure
 Each action is described and contains the following information:
 
 * Action name
-* Permission required
-* Data required and optional
+* Required permissions
+* Mandatory and optional data parameters
 * Endpoint URL
-* Query and response example
+* Query and response examples
 
-![Documentation overview](/assets/develop/documentation_overview.png){: style="max-width:100%"}
+The method of passing data through the API varies based on the endpoint. Data may be transmitted as `query parameters` or within an `application/json` body. Query parameters means that data is encoded within the URL.
 
-Depending of the endpoint, the data passed through the API is done as `query parameters` or in an `application/json` body. `Query parameters` means the data is passed in the URL.
+### Some use-cases
 
-**Two differents uses cases**
-
-1. URL parameters are a way to pass data directly in the URL.
-
-They come after the question mark (?) in the URL and are separated by an ampersand (&).
-For example, in the following request, "match[name]=Suspicious%20Windows%20Defender%20Exclusion%20Command" and "limit=10" are the URL parameters.
+#### URL parameters
+URL parameters provide a direct method to convey data within the URL. Positioned after the question mark (?) and separated by an ampersand (&), these parameters are essential for transmitting information effectively.
+For instance, in the following request, "match[name]=Suspicious%20Windows%20Defender%20Exclusion%20Command" and "limit=10" are the URL parameters.
 
 ```bash
 curl -XGET -H "Authorization: Bearer YOUR_API_KEY" https://api.sekoia.io/v1/sic/conf/rules-catalog/rules?match[name]=Suspicious%20Windows%20Defender%20Exclusion%20Command&limit=10
 ```
 
-These parameters are often used for simple requests like **search queries**, where the data being passed is short and simple, such as **`GET`  requests**.
+URL parameters are typically used in simple requests, particularly search queries, where concise and uncomplicated data needs to be conveyed, commonly associated with `GET` requests.
 
-2. Use the request body to send JSON payload.
+#### Request Body with JSON Payload
+Use the request body to transmit data in JSON format, known for its readability and compatibility for both humans and machines. Ensure to include the "Content-Type" header in your request, with the request body formatted as a JSON object.
 
-JSON is a data format that is easy for both humans and machines to read and write. To send data as JSON, you will need to include a "Content-Type" header in your request, and the request body should be a JSON object.
+This approach is ideal for more complex requests, such as creating or updating resources on the server, often executed with POST or PUT requests. The example below demonstrates the "Invite a user" action involving a POST request with an application/json body:
 
-This is often used for more complex requests like **creating or updating resources on the server**, such as **`POST` or `PUT` requests** for instance.
-
-The following example uses the action `Invite a user` which is a `POST` request with an `application/json` body:
 ```bash
 curl -X POST https://api.sekoia.io/v1/invitations \
    -H "Content-Type: application/json" \
@@ -86,7 +78,7 @@ curl -X POST https://api.sekoia.io/v1/invitations \
 ```
 
 !!! Note
-    Such requests that create or update resources on the server may request to **ALSO** add parameters in the URL to specify the object one wants to have action on. With Sekoia.io API you will often pass through the URL the UUID of the specific object you are expecting to be modified.
+    In requests involving the creation or edition of server resources, it may be necessary to include parameters in the URL to specify the targeted object. The Sekoia.io API often requires passing the UUID of the specific object intended for modification through the URL.
 
 #### Filtering
 
@@ -107,14 +99,17 @@ It should be noted that each `field` must not occur more than once. Multiple val
 # list alerts triggered on entity1 with rule named rule1 or rule2
 /alerts?match[entity_name]=entity1&match[rule_name]=rule1,rule2
 ```
-## Python scripts
-Python is a language that can be used to interact with the Sekoia.io API. Please find bellow two examples, one with a `GET` request with `query parameters` and another with a `POST` request and an `application/json` body.
+## Code examples
+Please find below two python code examples, one with a `GET` request with `query parameters` and another with a `POST` request and an `application/json` body.
 
+### Retrieving information with Query Parameters
 
-### Get request with query parameters
-In this example, we want to get information about the rule "Suspicious Windows Defender Exclusion Command".
-We can get this information using the endpoint [List Rules](https://docs.sekoia.io/develop/rest_api/operation_center/configuration/#tag/rules-catalog/operation/get_rules_resource). As you can see in this documentation no parameter is mandatory (otherwise it will explicitly be written "required" in red color) for this request to be successfully executed but to fit our need we chose to use the `match[name]` parameter defined as "Match rules by their name (separated by commas).".
-The following script will try to retrieve this information and print the result to STDOUT.
+Let's delve into an example where we retrieve details about the rule titled "Suspicious Windows Defender Exclusion Command." To find this information, we can leverage the [List Rules](https://docs.sekoia.io/develop/rest_api/operation_center/configuration/#tag/rules-catalog/operation/get_rules_resource) endpoint.
+
+The documentation means that no parameters are mandatory for this request to execute successfully. However, to fulfill our specific requirement, we opt to use the `match[name]` parameter, designed to "Match rules by their name (separated by commas)."
+
+The following script has been crafted to fetch this information and display the results on the standard output (STDOUT).
+
 
 ```python
 import json
@@ -154,9 +149,12 @@ if __name__ == '__main__':
     get_request()
 ```
 
-### Post request with JSON body
+### Create a SIGMA Rule with a POST Request and JSON Body
 
 In this example, we will create a simple SIGMA rule nammed "My custom SIGMA rule", so it will be a `POST` request. According to [this documentation](https://docs.sekoia.io/xdr/develop/rest_api/configuration/#tag/rules-catalog/operation/post_rules_resource) in order to create a new rule we must provide the request with a minimum of mandatory fields. You will find in the following table what we will use in the Python script:
+
+
+In this scenario, we aim to create a SIGMA rule named "My custom SIGMA rule" through a **POST request**. Referring to the relevant documentation, some mandatory fields must be provided to successfully create a new rule. Below, you will find a summary of the key fields used in the Python script:
 
 | Fields | Value for the example |
 | --- | --- |
@@ -209,15 +207,15 @@ if __name__ == '__main__':
     post_request()
 ```
 
-### Another example - Search events
+### Advanced Example - Searching Events with Sekoia.io API
 It is possible to search in your events by using the Sekoia.io API. Search for events can request some time to be processed and as a reminder, the API is stateless, that means no connection is maintained between two requests.
 
-For this reason, Sekoia.io offers a solution to answer to this asynchronous problematic: the notion of search job.
+To address the asynchronous nature of event searches, Sekoia.io introduces the concept of a search job, which offers a structured solution to manage this process effectively.
 
-3 steps are needed:
+We outline three essential steps involved in executing a search job:
 
-* [Create an event search job](https://docs.sekoia.io/xdr/develop/rest_api/configuration/#tag/events/operation/post_event_search_resource) - This step requires to provide the search query and the time window. The endpoint return a `job UUID` which will be used in the next steps.
-* [Get an event search job](https://docs.sekoia.io/xdr/develop/rest_api/configuration/#tag/events/operation/get_event_search_job_info_resource) - This step is used to get information about the status of a job by providing its UUID. Jobs can have 5 statuses:
+* [Create an event search job](https://docs.sekoia.io/xdr/develop/rest_api/configuration/#tag/events/operation/post_event_search_resource) - This step requires to provide the search query and the time window. The endpoint returns a `job UUID` which will be used in the next steps.
+* [Get an event search job](https://docs.sekoia.io/xdr/develop/rest_api/configuration/#tag/events/operation/get_event_search_job_info_resource) - This step is used to get information about the status of a job by providing its UUID. Jobs can have five statuses:
     * `0`: the job is not started
     * `1`: the job is in progress
     * `2`: the job is done (events can be retrieved)

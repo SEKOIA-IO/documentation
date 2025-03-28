@@ -1,0 +1,89 @@
+.try-it {
+    clear: both;
+
+    code {
+        background: initial;
+        padding: initial;
+        margin: initial;
+
+    }
+
+    .field {
+        display: flex;
+        align-items: center;
+
+        label {
+            display: inline-block;
+            font-size: 14px;
+            font-weight: bold;
+            min-width: 85px;
+            color: #11171a;
+        }
+
+        input {
+            padding: 4px;
+            font-size: 15px;
+            border: 1px solid #12005e;
+            border-radius: 4px;
+            margin: 2px 12px;
+            flex: 1;
+
+            &::placeholder {
+                color: rgb(212, 31, 28);
+            }
+
+            &.error {
+                border-color: rgb(212, 31, 28);
+                background-color: rgba(212, 31, 28, 0.1);
+            }
+        }
+    }
+
+    footer {
+        display: flex;
+        justify-content: flex-end;
+        text-align: right;
+        margin: 0px;
+        margin-top: 12px;
+        margin-bottom: -6px;
+
+        button {
+            display: inline-block;
+            background: #5d4ff2;
+            color: white;
+            height: 36px;
+            font-weight: 600;
+            font-family: 'Inter', sans-serif;
+            border-radius: 8px;
+            padding: 0px 16px;
+            cursor: pointer;
+            transition: background 6e2ms;
+            margin: 8px 0px;
+
+            &:disabled {
+                opacity: 0.5;
+                cursor: not-allowed;
+            }
+        }
+    }
+
+    code,
+    pre {
+        font-family: Consolas, Söhne Mono, Monaco, Andale Mono, Ubuntu Mono, monospace !important;
+        color: white !important;
+        font-size: 14px;
+    }
+
+    .results {
+        >pre {
+            border-radius: 8px !important;
+            scrollbar-width: thin;
+            scrollbar-color: transparent transparent;
+
+            &:hover {
+                scrollbar-color: #ddd transparent;
+            }
+
+        }
+    }
+}
