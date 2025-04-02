@@ -815,7 +815,6 @@ events
 **Description**
 
 Use the `not` operator to negate any comparaison.
-This operator can be used with `in`, `contains`, `startswith` and `endswith`.
 
 ``` shell
 <table name>
