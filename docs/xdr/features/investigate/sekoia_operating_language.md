@@ -814,7 +814,7 @@ events
 
 **Description**
 
-Use the `not` operator to negate any comparaison.
+Use the `not` operator to negate any comparison.
 
 ``` shell
 <table name>
