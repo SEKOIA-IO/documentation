@@ -26,11 +26,12 @@ Once created:
 3. As the destination, choose the SQS service
 4. Select the queue you created in the previous section
 
-### Create the intake
+{!_shared_content/integration/intake_configuration.md!}
 
-1. Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a new intake from the format `Cisco Umbrella DNS`.
-2. Set up the intake account configuration with the [AWS Access Key](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html), the secret key and the region name. 
-3. Set up the intake configuration with the name of the SQS queue.
+{!_shared_content/integration/connector_configuration.md!}
+
+!!! Info
+    Please find here the official documentation related to [AWS Access Key](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html).
 
 {!_shared_content/operations_center/integrations/generated/90179796-f949-490c-8729-8cbc9c65be55_sample.md!}
 
