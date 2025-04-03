@@ -6,8 +6,8 @@ type: intake
 Vectra provides AI-powered incident detection and resolution support for native and hybrid clouds.
 
 
-- **Vendor**:
-- **Supported environment**: SaaS
+- **Vendor**: Vectra
+- **Supported environment**: On Premise
 - **Detection based on**: Telemetry
 - **Supported application or feature**: Authentication logs
 
