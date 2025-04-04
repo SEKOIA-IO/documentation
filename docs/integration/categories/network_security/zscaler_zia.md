@@ -99,45 +99,45 @@ In the Zscaler ZIA console:
 
 	For RFC5424 format:
 
-		=== "Web Log"
+	=== "Web Log"
 
 		```
-		<PRI>1 %d{yyyy}-%02d{mm}-%02d{dd}T%02d{hh}:%02d{mm}:%02d{ss}Z zscaler-nss NSS - - - event=datetime="%d{yyyy}-%02d{mm}-%02d{dd}T%02d{hh}:%02d{mm}:%02d{ss}Z" reason="%s{reason}" event_id="%d{recordid}" protocol="%s{proto}" action="%s{action}" transactionsize="%d{totalsize}" responsesize="%d{respsize}" requestsize="%d{reqsize}" urlcategory="%s{urlcat}" serverip="%s{sip}" requestmethod="%s{reqmethod}" refererURL="%s{ereferer}" useragent="%s{eua}" product="NSS" location="%s{elocation}" ClientIP="%s{cip}" status="%s{respcode}" user="%s{elogin}" url="%s{eurl}" vendor="Zscaler" hostname="%s{ehost}" clientpublicIP="%s{cintip}" threatcategory="%s{malwarecat}" threatname="%s{threatname}" filetype="%s{filetype}" appname="%s{appname}" pagerisk="%d{riskscore}" department="%s{edepartment}" urlsupercategory="%s{urlsupercat}" appclass="%s{appclass}" dlpengine="%s{dlpeng}" urlclass="%s{urlclass}" threatclass="%s{malwareclass}" dlpdictionaries="%s{dlpdict}" fileclass="%s{fileclass}" bwthrottle="%s{bwthrottle}" contenttype="%s{contenttype}" unscannabletype="%s{unscannabletype}" deviceowner="%s{deviceowner}" devicehostname="%s{devicehostname}" keyprotectiontype="%s{keyprotectiontype}"
+		<134>1 %d{yyyy}-%02d{mm}-%02d{dd}T%02d{hh}:%02d{mm}:%02d{ss}Z zscaler-nss NSS - - - event=\{"sourcetype":"zscalernss-web","event":\{"datetime":"%d{yy}-%02d{mth}-%02d{dd} %02d{hh}:%02d{mm}:%02d{ss}","reason":"%s{reason}","event_id":"%d{recordid}","protocol":"%s{proto}","action":"%s{action}","transactionsize":"%d{totalsize}","responsesize":"%d{respsize}","requestsize":"%d{reqsize}","urlcategory":"%s{urlcat}","serverip":"%s{sip}","requestmethod":"%s{reqmethod}","refererURL":"%s{ereferer}","useragent":"%s{eua}","product":"NSS","location":"%s{elocation}","ClientIP":"%s{cip}","status":"%s{respcode}","user":"%s{elogin}","url":"%s{eurl}","vendor":"Zscaler","hostname":"%s{ehost}","clientpublicIP":"%s{cintip}","threatcategory":"%s{malwarecat}","threatname":"%s{threatname}","filetype":"%s{filetype}","appname":"%s{appname}","pagerisk":"%d{riskscore}","department":"%s{edepartment}","urlsupercategory":"%s{urlsupercat}","appclass":"%s{appclass}","dlpengine":"%s{dlpeng}","urlclass":"%s{urlclass}","threatclass":"%s{malwareclass}","dlpdictionaries":"%s{dlpdict}","fileclass":"%s{fileclass}","bwthrottle":"%s{bwthrottle}","contenttype":"%s{contenttype}","unscannabletype":"%s{unscannabletype}","deviceowner":"%s{deviceowner}","devicehostname":"%s{devicehostname}","keyprotectiontype":"%s{keyprotectiontype}"\}\}
 		```
 
 	=== "SaaS Security"
 
 		```
-		<PRI>1 %d{yyyy}-%02d{mm}-%02d{dd}T%02d{hh}:%02d{mm}:%02d{ss}Z zscaler-nss NSS - - - event=datetime="%s{time}" recordid="%d{recordid}" company="%s{company}" tenant="%s{tenant}" login="%s{user}" dept="%s{department}" applicationname="%s{applicationname}" filename="%s{filename}" filesource="%s{filesource}" filemd5="%s{filemd5}" threatname="%s{threatname}" policy="%s{policy}" dlpdictnames="%s{dlpdictnames}" dlpdictcount="%s{dlpdictcount}" dlpenginenames="%s{dlpenginenames}" fullurl="%s{fullurl}" lastmodtime="%s{lastmodtime}" filescantimems="%d{filescantimems}" filedownloadtimems="%d{filedownloadtimems}"
+		<134>1 %d{yyyy}-%02d{mm}-%02d{dd}T%02d{hh}:%02d{mm}:%02d{ss}Z zscaler-nss NSS - - - event=\{"sourcetype":"zscalernss-casb","event":\{"datetime":"%s{time}","recordid":"%d{recordid}","company":"%s{company}","tenant":"%s{tenant}","login":"%s{user}","dept":"%s{department}","applicationname":"%s{applicationname}","filename":"%s{filename}","filesource":"%s{filesource}","filemd5":"%s{filemd5}","threatname":"%s{threatname}","policy":"%s{policy}","dlpdictnames":"%s{dlpdictnames}","dlpdictcount":"%s{dlpdictcount}","dlpenginenames":"%s{dlpenginenames}","fullurl":"%s{fullurl}","lastmodtime":"%s{lastmodtime}","filescantimems":"%d{filescantimems}","filedownloadtimems":"%d{filedownloadtimems}"\}\}
 		```
 
 	=== "SaaS Security Activity"
 
 		```
-		<PRI>1 %d{yyyy}-%02d{mm}-%02d{dd}T%02d{hh}:%02d{mm}:%02d{ss}Z zscaler-nss NSS - - - event=login="%s{username}" tenant="%s{tenant}" object_type="%d{objtype1}" applicationname="%s{appname}" object_name_1="%s{objnames1}" object_name_2="%s{objnames2}"
+		<134>1 %d{yyyy}-%02d{mm}-%02d{dd}T%02d{hh}:%02d{mm}:%02d{ss}Z zscaler-nss NSS - - - event=\{"sourcetype":"zscalernss-casb","event":\{"login":"%s{username}","tenant":"%s{tenant}","object_type":"%d{objtype1}","applicationname":"%s{appname}","object_name_1":"%s{objnames1}","object_name_2":"%s{objnames2}"\}\}
 		```
 
 	=== "Tunnel IKE Phase 1"
 		```
-		<PRI>1 %d{yyyy}-%02d{mm}-%02d{dd}T%02d{hh}:%02d{mm}:%02d{ss}Z zscaler-nss NSS - - - event=datetime="%s{datetime}" Recordtype="%s{tunnelactionname}" tunneltype="IPSEC IKEV %d{ikeversion}" user="%s{vpncredentialname}" location="%s{elocationname}" sourceip="%s{sourceip}" destinationip="%s{destvip}" sourceport="%d{srcport}" destinationport="%d{dstport}" lifetime="%d{lifetime}" ikeversion="%d{ikeversion}" spi_in="%lu{spi_in}" spi_out="%lu{spi_out}" algo="%s{algo}" authentication="%s{authentication}" authtype="%s{authtype}" recordid="%d{recordid}"
+		<134>1 %d{yyyy}-%02d{mm}-%02d{dd}T%02d{hh}:%02d{mm}:%02d{ss}Z zscaler-nss NSS - - - event=\{"sourcetype":"zscalernss-tunnel","event":\{"datetime":"%s{datetime}","Recordtype":"%s{tunnelactionname}","tunneltype":"IPSEC IKEV %d{ikeversion}","user":"%s{vpncredentialname}","location":"%s{elocationname}","sourceip":"%s{sourceip}","destinationip":"%s{destvip}","sourceport":"%d{srcport}","destinationport":"%d{dstport}","lifetime":"%d{lifetime}","ikeversion":"%d{ikeversion}","spi_in":"%lu{spi_in}","spi_out":"%lu{spi_out}","algo":"%s{algo}","authentication":"%s{authentication}","authtype":"%s{authtype}","recordid":"%d{recordid}"\}\}
 		```
 
 	=== "Tunnel IKE Phase 2"
 
 		```
-		<PRI>1 %d{yyyy}-%02d{mm}-%02d{dd}T%02d{hh}:%02d{mm}:%02d{ss}Z zscaler-nss NSS - - - event=datetime="%s{datetime}" Recordtype="%s{tunnelactionname}" tunneltype="IPSEC IKEV %d{ikeversion}" user="%s{vpncredentialname}" location="%s{elocationname}" sourceip="%s{sourceip}" destinationip="%s{destvip}" sourceport="%d{srcport}" sourceportstart="%d{srcportstart}" destinationportstart="%d{destportstart}" srcipstart="%s{srcipstart}" srcipend="%s{srcipend}" destinationipstart="%s{destipstart}" destinationipend="%s{destipend}" lifetime="%d{lifetime}" ikeversion="%d{ikeversion}" lifebytes="%d{lifebytes}" spi="%d{spi}" algo="%s{algo}" authentication="%s{authentication}" authtype="%s{authtype}" protocol="%s{protocol}" tunnelprotocol="%s{tunnelprotocol}" policydirection="%s{policydirection}" recordid="%d{recordid}"
+		<134>1 %d{yyyy}-%02d{mm}-%02d{dd}T%02d{hh}:%02d{mm}:%02d{ss}Z zscaler-nss NSS - - - event=\{"sourcetype":"zscalernss-tunnel","event":\{"datetime":"%s{datetime}","Recordtype":"%s{tunnelactionname}","tunneltype":"IPSEC IKEV %d{ikeversion}","user":"%s{vpncredentialname}","location":"%s{elocationname}","sourceip":"%s{sourceip}","destinationip":"%s{destvip}","sourceport":"%d{srcport}","sourceportstart":"%d{srcportstart}","destinationportstart":"%d{destportstart}","srcipstart":"%s{srcipstart}","srcipend":"%s{srcipend}","destinationipstart":"%s{destipstart}","destinationipend":"%s{destipend}","lifetime":"%d{lifetime}","ikeversion":"%d{ikeversion}","lifebytes":"%d{lifebytes}","spi":"%d{spi}","algo":"%s{algo}","authentication":"%s{authentication}","authtype":"%s{authtype}","protocol":"%s{protocol}","tunnelprotocol":"%s{tunnelprotocol}","policydirection":"%s{policydirection}","recordid":"%d{recordid}"\}\}
 		```
 
 	=== "Tunnel"
 
 		```
-		<PRI>1 %d{yyyy}-%02d{mm}-%02d{dd}T%02d{hh}:%02d{mm}:%02d{ss}Z zscaler-nss NSS - - - event=datetime="%s{datetime}" Recordtype="%s{tunnelactionname}" tunneltype="%s{tunneltype}" user="%s{vpncredentialname}"
+		<134>1 %d{yyyy}-%02d{mm}-%02d{dd}T%02d{hh}:%02d{mm}:%02d{ss}Z zscaler-nss NSS - - - event=\{"sourcetype":"zscalernss-tunnel","event":\{"datetime":"%s{datetime}","Recordtype":"%s{tunnelactionname}","tunneltype":"%s{tunneltype}","user":"%s{vpncredentialname}","location":"%s{elocationname}","sourceip":"%s{sourceip}","destinationip":"%s{destvip}","sourceport":"%d{srcport}","event":"%s{event}","eventreason":"%s{eventreason}","recordid":"%d{recordid}"\}\}
 		```
 
 	=== "Admin Audit"
 
 		```
-		<PRI>1 %d{yyyy}-%02d{mth}-%02d{dd}T%02d{hh}:%02d{mm}:%02d{ss}Z zscaler-nss NSS - [event time="%s{time}" recordid="%d{recordid}" action="%s{action}" category="%s{category}" subcategory="%s{subcategory}" resource="%s{resource}" interface="%s{interface}" adminid="%s{adminid}" clientip="%s{clientip}" result="%s{result}" errorcode="%s{errorcode}" auditlogtype="%s{auditlogtype}" preaction="%s{epreaction}" postaction="%s{epostaction}"]
+		<134>1 %d{yyyy}-%02d{mth}-%02d{dd}T%02d{hh}:%02d{mm}:%02d{ss}Z zscaler-nss NSS - - - event=\{"sourcetype":"zscalernss-audit","event":\{"time":"%s{time}","recordid":"%d{recordid}","action":"%s{action}","category":"%s{category}","subcategory":"%s{subcategory}","resource":"%s{resource}","interface":"%s{interface}","adminid":"%s{adminid}","clientip":"%s{clientip}","result":"%s{result}","errorcode":"%s{errorcode}","auditlogtype":"%s{auditlogtype}","preaction":"%s{epreaction}","postaction":"%s{epostaction}"\}\}
 		```
 
 10. Select `Save`
