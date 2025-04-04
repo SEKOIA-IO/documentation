@@ -2333,7 +2333,7 @@ The following Sekoia.io built-in rules match the intake **Windows**. This docume
 
 ??? abstract "Remote Enumeration Of Lateral Movement Groups"
     
-    Detects remote session lists the member of four local groups relevant to lateral movement. This behavior is common in Active Directory mapping tools such as SharpHound.
+    Detects remote sessions that list the members of four local groups relevant to lateral movement. This behavior is common in Active Directory mapping tools such as SharpHound. Legitimate Active Directory auditing and monitoring tools (e.g. Varonis, Netwrix) will also be detected, and can by excluded by applying an alert filter on the SID of the service account (user.id).
     
     - **Effort:** intermediate
 
@@ -2581,7 +2581,7 @@ The following Sekoia.io built-in rules match the intake **Windows**. This docume
     
     Detects successful logon with logon type 9 (NewCredentials) which matches the Overpass the Hash behavior of e.g Mimikatz's sekurlsa::pth module.
     
-    - **Effort:** intermediate
+    - **Effort:** advanced
 
 ??? abstract "Suncrypt Parameters"
     
