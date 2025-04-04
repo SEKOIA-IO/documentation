@@ -1867,7 +1867,7 @@ The following Sekoia.io built-in rules match the intake **Elastic Winlogbeat**. 
     
     Detects successful logon with logon type 9 (NewCredentials) which matches the Overpass the Hash behavior of e.g Mimikatz's sekurlsa::pth module.
     
-    - **Effort:** intermediate
+    - **Effort:** advanced
 
 ??? abstract "Suncrypt Parameters"
     
