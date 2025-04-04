@@ -1,4 +1,4 @@
-Rules catalog includes **1001 built-in detection rules** ([_last update on 2025-03-27_](rules_changelog.md)).
+Rules catalog includes **1002 built-in detection rules** ([_last update on 2025-04-04_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Identity Information**
 
@@ -9884,11 +9884,12 @@ Rules catalog includes **1001 built-in detection rules** ([_last update on 2025-
     
     Detects successful logon with logon type 9 (NewCredentials) which matches the Overpass the Hash behavior of e.g Mimikatz's sekurlsa::pth module.
     
-    - **Effort:** intermediate
+    - **Effort:** advanced
     
     - **Changelog:**
     
         - 26/03/2024 - major - Rule's pattern field changed
+        - 25/03/2025 - minor - Changing pattern, adding similarity and changing effort level.
             
 **Subvert Trust Controls**
 
@@ -11477,6 +11478,12 @@ Rules catalog includes **1001 built-in detection rules** ([_last update on 2025-
     
         - 04/04/2024 - major - Rule's pattern field changed
             
+??? abstract "Systancia Cleanroom Brute Force"
+    
+    Detects a successful brute force attempt to access systancia cleanroom web portal.
+    
+    - **Effort:** master
+    
 **Multi-Factor Authentication Interception**
 
 ??? abstract "Entra ID Sign-In Via Known AiTM Phishing Kit (Gabagool)"
@@ -12382,10 +12389,14 @@ Rules catalog includes **1001 built-in detection rules** ([_last update on 2025-
     
 ??? abstract "Remote Enumeration Of Lateral Movement Groups"
     
-    Detects remote session lists the member of four local groups relevant to lateral movement. This behavior is common in Active Directory mapping tools such as SharpHound.
+    Detects remote sessions that list the members of four local groups relevant to lateral movement. This behavior is common in Active Directory mapping tools such as SharpHound. Legitimate Active Directory auditing and monitoring tools (e.g. Varonis, Netwrix) will also be detected, and can by excluded by applying an alert filter on the SID of the service account (user.id).
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 02/04/2025 - minor - Use chained correlation to group alerts by source account.
+            
 ??? abstract "Remote Privileged Group Enumeration"
     
     Detects remote listing of local privileged group. Potential false positives, which should justify alert filters, are service accounts and administrators doing maintenance.
@@ -12785,11 +12796,12 @@ Rules catalog includes **1001 built-in detection rules** ([_last update on 2025-
     
     Detects successful logon with logon type 9 (NewCredentials) which matches the Overpass the Hash behavior of e.g Mimikatz's sekurlsa::pth module.
     
-    - **Effort:** intermediate
+    - **Effort:** advanced
     
     - **Changelog:**
     
         - 26/03/2024 - major - Rule's pattern field changed
+        - 25/03/2025 - minor - Changing pattern, adding similarity and changing effort level.
             
 ## Collection
 **Data from Local System**
