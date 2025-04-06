@@ -407,13 +407,15 @@ const Endpoint = (id, endpoint, tag) => {
 
             {permissions?.length > 0 && <>
                 <h5>Required permissions</h5>
-                <table class='permissions'>
-                    {permissions?.map(({ name, uuid, description }) => <tr>
-                        <td class='identifier'>{name}</td>
-                        <td class='uuid'>{uuid}</td>
-                        <td width="100%">{description}</td>
-                    </tr>)}
-                </table>
+                <div class="permissions-overflow-table">
+                    <table class='permissions'>
+                        {permissions?.map(({ name, uuid, description }) => <tr>
+                            <td class='identifier'>{name}</td>
+                            <td class='uuid'>{uuid}</td>
+                            <td width="100%">{description}</td>
+                        </tr>)}
+                    </table>
+                </div>
             </>}
 
             <h5>Parameters</h5>

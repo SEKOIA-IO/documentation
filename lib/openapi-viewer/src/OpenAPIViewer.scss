@@ -261,12 +261,15 @@
         overflow: hidden;
         width: 100%;
         box-sizing: border-box;
-        flex-wrap: wrap;
         padding-left: 8px;
+
+        @media screen and (max-width: 1260px) {
+            flex-direction: column;
+        }
 
         >.content {
             flex: 1;
-            min-width: 700px;
+            overflow: hidden;
         }
 
         >.right {}
@@ -564,6 +567,12 @@
         top: 40vh;
         position: static;
         margin: 0px 206px;
+    }
+
+    .response-overflow-table, 
+    .parameter-overflow-table,
+    .permissions-overflow-table {
+        overflow-x: auto;
     }
 
     .response-model {

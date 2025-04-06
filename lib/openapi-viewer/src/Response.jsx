@@ -23,7 +23,7 @@ export const Response = ({ code, response }) => <div class="response ok">
 export const ResponseModel = (schema) => {
     const { properties = {}, required } = resolveSchema(schema)
     if (!Object.entries(properties)?.length > 0) return null;
-    return <table class="response-model">
+    return <div class="response-overflow-table"><table class="response-model">
         <tr>
             <th>Name</th>
             <th></th>
@@ -33,5 +33,5 @@ export const ResponseModel = (schema) => {
             <th width="100%">{Object.values(properties)?.filter(p => !!p.description) && "Description"}</th>
         </tr>
         {Object.entries(properties).map(([name, p]) => Property(p, { name, required: required?.includes(name) }))}
-    </table>
+    </table></div>
 }

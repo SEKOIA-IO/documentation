@@ -50,7 +50,7 @@ export function hasConstraints(p) {
 }
 
 /** Vue component to render a table of OpenAPI properties */
-export const Properties = (p) => <table>
+export const Properties = (p) => <div class="parameter-overflow-table"><table>
     <tr>
         <th>Name</th>
         <th></th>
@@ -60,7 +60,7 @@ export const Properties = (p) => <table>
         <th width="100%">{p?.filter(p => !!p.description) && "Description"}</th>
     </tr>
     {p?.map(Property)}
-</table>
+</table></div>
 
 
 /**
