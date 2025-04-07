@@ -513,22 +513,24 @@
             }
         }
 
-        &.ok>div:not(.with-model) {
-            display: flex;
-            align-items: center;
+        &.ok {
+            .with-model {
+                display: flex;
+                align-items: center;
 
-            .status-code-ok {
-                background: rgb(29, 129, 39);
-                color: white;
-                padding: 2px 8px;
-                font-weight: bold;
-                border-radius: 4px;
-                margin: 8px;
-                margin-right: 8px;
-                font-size: 12px;
+                .status-code-ok {
+                    background: rgb(29, 129, 39);
+                    color: white;
+                    padding: 2px 8px;
+                    font-weight: bold;
+                    border-radius: 4px;
+                    margin: 8px;
+                    margin-right: 8px;
+                    font-size: 12px;
+                }
+
+                color: rgb(29, 129, 39);
             }
-
-            color: rgb(29, 129, 39);
         }
 
         .optional {
