@@ -1,4 +1,4 @@
-Rules catalog includes **1002 built-in detection rules** ([_last update on 2025-04-08_](rules_changelog.md)).
+Rules catalog includes **1005 built-in detection rules** ([_last update on 2025-04-08_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Identity Information**
 
@@ -3718,6 +3718,24 @@ Rules catalog includes **1002 built-in detection rules** ([_last update on 2025-
     Detects Microsoft Office process (word, excel, powerpoint) spawning wscript.exe or cscript.exe. This typically indicates the parent process launched a malicious macro, or run an exploit. This infection vector is very common and could lead to the deployment of harmful malware. 
     
     - **Effort:** intermediate
+    
+??? abstract "Mimecast Email Security Malicious QRCode Not Denied"
+    
+    Detects a malicious qrcode in an email not denied by Mimecast.
+    
+    - **Effort:** master
+    
+??? abstract "Mimecast Email Security Spam Not Denied"
+    
+    Detects when a spam has been detected by Mimecast and was not denied.
+    
+    - **Effort:** master
+    
+??? abstract "Mimecast Email Security Virus Not Denied"
+    
+    Detects when a virus signature has been detected by Mimecast and was not denied.
+    
+    - **Effort:** master
     
 ??? abstract "Okta Security Threat Detected"
     
@@ -10185,7 +10203,7 @@ Rules catalog includes **1002 built-in detection rules** ([_last update on 2025-
     
     - **Changelog:**
     
-        - 24/05/2025 - minor - Adding similarity and changing effort level.
+        - 24/03/2025 - minor - Adding similarity and changing effort level.
             
 ??? abstract "Disabled IE Security Features"
     

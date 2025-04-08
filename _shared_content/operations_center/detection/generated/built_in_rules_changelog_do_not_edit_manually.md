@@ -2,9 +2,6 @@ Changelog _last update on 2025-04-08_
 
 ## Changelog
 
-### Disable Windows Defender Credential Guard
-  - 24/05/2025 - minor - Adding similarity and changing effort level.
-    
 ### HTML Smuggling Suspicious Usage
   - 08/04/2025 - minor - Change effort level and add filter to reduce false positives.
     
@@ -31,6 +28,9 @@ Changelog _last update on 2025-04-08_
     
 ### Write To File In Systemd
   - 24/03/2025 - major - Added filter to reduce false positives, change effort and add similarity strategy.
+    
+### Disable Windows Defender Credential Guard
+  - 24/03/2025 - minor - Adding similarity and changing effort level.
     
 ### Network Connection Via Certutil
   - 21/03/2025 - major - Review rule to reduce false positives and increases detection scope.
