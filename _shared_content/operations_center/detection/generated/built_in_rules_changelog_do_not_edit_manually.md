@@ -5,6 +5,9 @@ Changelog _last update on 2025-04-08_
 ### Disable Windows Defender Credential Guard
   - 24/05/2025 - minor - Adding similarity and changing effort level.
     
+### HTML Smuggling Suspicious Usage
+  - 08/04/2025 - minor - Change effort level and add filter to reduce false positives.
+    
 ### PowerView commandlets 2
   - 07/04/2025 - minor - Changed similarity strategy and effort level.
     
