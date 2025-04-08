@@ -1,4 +1,4 @@
-# AI Cases (coming soon)
+# AI Cases
 
 ## Table of Contents
 1. [Overview](#overview)
