@@ -37,7 +37,8 @@ template: overrides/openapi.html
                 "me": "User profile",
                 "automations": "Automation",
                 "Observables relationships": "Observable relationships",
-                "Object relationships": "Relationships"
+                "Object relationships": "Relationships",
+                "api-keys": "API Keys"
             },
             intro: [
                 "Quickstart",
@@ -60,7 +61,7 @@ template: overrides/openapi.html
                     tags: [
                         "customers", // TODO deprecated, get rid of it
                         "communities",
-                        "api-keys",
+                        "API Keys",
                         "licenses",
                         "invitations",
                         "plans",
