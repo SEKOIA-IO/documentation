@@ -19,7 +19,6 @@ This setup guide will show you how to provide an integration between Salesforce 
 
 !!! note
     To provide a quick detection on malicious activities, this integration requires to get the event log files on a hourly basis.
-    We do not support the daily integration.
     Please see [the Salesforce documentation](https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/event_log_file_hourly_overview.htm) to enable hourly Event Log Files.
 
 ### Configure OAuth
