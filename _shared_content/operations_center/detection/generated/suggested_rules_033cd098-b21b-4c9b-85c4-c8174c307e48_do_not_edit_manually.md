@@ -1153,7 +1153,7 @@ The following Sekoia.io built-in rules match the intake **WithSecure Elements**.
     
     Detects PowerView commandlets which perform network and Windows domain enumeration and exploitation. It provides replaces for almost all Windows net commands, letting you query users, machines, domain controllers, user descriptions, share, sessions, and more.
     
-    - **Effort:** advanced
+    - **Effort:** master
 
 ??? abstract "Powershell AMSI Bypass"
     
