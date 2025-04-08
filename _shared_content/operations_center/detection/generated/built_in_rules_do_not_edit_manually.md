@@ -1,4 +1,4 @@
-Rules catalog includes **1002 built-in detection rules** ([_last update on 2025-04-04_](rules_changelog.md)).
+Rules catalog includes **1002 built-in detection rules** ([_last update on 2025-04-08_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Identity Information**
 
@@ -2836,6 +2836,10 @@ Rules catalog includes **1002 built-in detection rules** ([_last update on 2025-
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 07/04/2025 - minor - Similarity strategy changed to avoid too much grouping
+            
 ??? abstract "XSL Script Processing And SquiblyTwo Attack"
     
     Detection of an attack where adversaries may bypass application control and obscure execution of code by embedding scripts inside XSL files. Another variation of this technique, dubbed "Squiblytwo", involves to invoke JScript or VBScript within an XSL file.
@@ -4027,6 +4031,10 @@ Rules catalog includes **1002 built-in detection rules** ([_last update on 2025-
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 07/04/2025 - minor - Similarity strategy changed to avoid too much grouping
+            
 ??? abstract "ZIP LNK Infection Chain"
     
     Detection of an ZIP download followed by a child-process of explorer, followed by multiple Windows processes.This is widely used as an infection chain mechanism.
@@ -4888,6 +4896,10 @@ Rules catalog includes **1002 built-in detection rules** ([_last update on 2025-
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 07/04/2025 - minor - Similarity strategy changed to avoid too much grouping
+            
 ??? abstract "Wsmprovhost Wrong Parent"
     
     Detects if the Wsmprovhost process was executed by a non-legitimate parent process. The PowerShell host wsmprovhost.exe is a proxy process executed remotely through PowerShell when using Windows Remote Management (WinRM).
@@ -11987,16 +11999,21 @@ Rules catalog includes **1002 built-in detection rules** ([_last update on 2025-
     
     - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 07/04/2025 - minor - Removed a keyword to reduce false positives and changed similarity strategy.
+            
 ??? abstract "PowerView commandlets 2"
     
     Detects PowerView commandlets which perform network and Windows domain enumeration and exploitation. It provides replaces for almost all Windows net commands, letting you query users, machines, domain controllers, user descriptions, share, sessions, and more.
     
-    - **Effort:** advanced
+    - **Effort:** master
     
     - **Changelog:**
     
         - 04/10/2023 - major - Removed an option from the ScriptBlockText selection to reduce false positives.
         - 26/03/2024 - major - Rule's pattern field changed
+        - 07/04/2025 - minor - Changed similarity strategy and effort level.
             
 ??? abstract "SCM Database Handle Failure"
     
@@ -12102,16 +12119,21 @@ Rules catalog includes **1002 built-in detection rules** ([_last update on 2025-
     
     - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 07/04/2025 - minor - Removed a keyword to reduce false positives and changed similarity strategy.
+            
 ??? abstract "PowerView commandlets 2"
     
     Detects PowerView commandlets which perform network and Windows domain enumeration and exploitation. It provides replaces for almost all Windows net commands, letting you query users, machines, domain controllers, user descriptions, share, sessions, and more.
     
-    - **Effort:** advanced
+    - **Effort:** master
     
     - **Changelog:**
     
         - 04/10/2023 - major - Removed an option from the ScriptBlockText selection to reduce false positives.
         - 26/03/2024 - major - Rule's pattern field changed
+        - 07/04/2025 - minor - Changed similarity strategy and effort level.
             
 ??? abstract "Shell PID Injection"
     
@@ -12370,16 +12392,21 @@ Rules catalog includes **1002 built-in detection rules** ([_last update on 2025-
     
     - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 07/04/2025 - minor - Removed a keyword to reduce false positives and changed similarity strategy.
+            
 ??? abstract "PowerView commandlets 2"
     
     Detects PowerView commandlets which perform network and Windows domain enumeration and exploitation. It provides replaces for almost all Windows net commands, letting you query users, machines, domain controllers, user descriptions, share, sessions, and more.
     
-    - **Effort:** advanced
+    - **Effort:** master
     
     - **Changelog:**
     
         - 04/10/2023 - major - Removed an option from the ScriptBlockText selection to reduce false positives.
         - 26/03/2024 - major - Rule's pattern field changed
+        - 07/04/2025 - minor - Changed similarity strategy and effort level.
             
 ??? abstract "Reconnaissance Commands Activities"
     
@@ -12440,16 +12467,21 @@ Rules catalog includes **1002 built-in detection rules** ([_last update on 2025-
     
     - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 07/04/2025 - minor - Removed a keyword to reduce false positives and changed similarity strategy.
+            
 ??? abstract "PowerView commandlets 2"
     
     Detects PowerView commandlets which perform network and Windows domain enumeration and exploitation. It provides replaces for almost all Windows net commands, letting you query users, machines, domain controllers, user descriptions, share, sessions, and more.
     
-    - **Effort:** advanced
+    - **Effort:** master
     
     - **Changelog:**
     
         - 04/10/2023 - major - Removed an option from the ScriptBlockText selection to reduce false positives.
         - 26/03/2024 - major - Rule's pattern field changed
+        - 07/04/2025 - minor - Changed similarity strategy and effort level.
             
 **Domain Trust Discovery**
 
@@ -12507,16 +12539,21 @@ Rules catalog includes **1002 built-in detection rules** ([_last update on 2025-
     
     - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 07/04/2025 - minor - Removed a keyword to reduce false positives and changed similarity strategy.
+            
 ??? abstract "PowerView commandlets 2"
     
     Detects PowerView commandlets which perform network and Windows domain enumeration and exploitation. It provides replaces for almost all Windows net commands, letting you query users, machines, domain controllers, user descriptions, share, sessions, and more.
     
-    - **Effort:** advanced
+    - **Effort:** master
     
     - **Changelog:**
     
         - 04/10/2023 - major - Removed an option from the ScriptBlockText selection to reduce false positives.
         - 26/03/2024 - major - Rule's pattern field changed
+        - 07/04/2025 - minor - Changed similarity strategy and effort level.
             
 ??? abstract "Trickbot Malware Activity"
     
@@ -12666,8 +12703,12 @@ Rules catalog includes **1002 built-in detection rules** ([_last update on 2025-
     
     Detects a Windows command line executable started from MMC process
     
-    - **Effort:** intermediate
+    - **Effort:** master
     
+    - **Changelog:**
+    
+        - 26/03/2025 - minor - Adding similarity and changing effort level.
+            
 ??? abstract "MMC20 Lateral Movement"
     
     Detects MMC20.Application Lateral Movement; specifically looks for the spawning of the parent MMC.exe with a command line of "-Embedding" as a child of svchost.exe.

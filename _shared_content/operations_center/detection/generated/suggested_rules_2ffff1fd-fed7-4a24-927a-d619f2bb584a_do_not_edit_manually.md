@@ -223,7 +223,7 @@ The following Sekoia.io built-in rules match the intake **ESET Protect**. This d
     
     Detects a Windows command line executable started from MMC process
     
-    - **Effort:** intermediate
+    - **Effort:** master
 
 ??? abstract "MS Office Product Spawning Exe in User Dir"
     

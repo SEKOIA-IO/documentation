@@ -4,7 +4,7 @@ This section will guide you through creating all the AWS resources needed to col
 
 #### Prerequisites
 
-In order to set up the AWS architecture, you need an administator access to the [Amazon console]( https://console.aws.amazon.com) with the permissions to create and manage S3 buckets, SQS queues, S3 notifications and users.
+In order to set up the AWS architecture, you need an administrator access to the [Amazon console]( https://console.aws.amazon.com) with the permissions to create and manage S3 buckets, SQS queues, S3 notifications and users.
 
 Ensure that the IAM user dedicated to accessing the S3 bucket and SQS Queue has the following permissions:
 

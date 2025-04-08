@@ -1,12 +1,24 @@
-Changelog _last update on 2025-04-04_
+Changelog _last update on 2025-04-08_
 
 ## Changelog
 
 ### Disable Windows Defender Credential Guard
   - 24/05/2025 - minor - Adding similarity and changing effort level.
     
+### PowerView commandlets 2
+  - 07/04/2025 - minor - Changed similarity strategy and effort level.
+    
+### PowerView commandlets 1
+  - 07/04/2025 - minor - Removed a keyword to reduce false positives and changed similarity strategy.
+    
+### WithSecure Elements Warning Severity
+  - 07/04/2025 - minor - Similarity strategy changed to avoid too much grouping
+    
 ### Remote Enumeration Of Lateral Movement Groups
   - 02/04/2025 - minor - Use chained correlation to group alerts by source account.
+    
+### MMC Spawning Windows Shell
+  - 26/03/2025 - minor - Adding similarity and changing effort level.
     
 ### Suspicious Windows Installer Execution
   - 25/03/2025 - major - Adding many filters and a similarity strategy. Effort was also updated to master.
@@ -660,9 +672,6 @@ Changelog _last update on 2025-04-04_
   - 26/03/2024 - major - Rule's pattern field changed
     
 ### DC Shadow via Service Principal Name (SPN) creation
-  - 26/03/2024 - major - Rule's pattern field changed
-    
-### PowerView commandlets 2
   - 26/03/2024 - major - Rule's pattern field changed
     
 ### Creation or Modification of a GPO Scheduled Task
