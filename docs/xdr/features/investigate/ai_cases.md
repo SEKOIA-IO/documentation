@@ -1,4 +1,4 @@
-# AI Cases (coming soon)
+# AI Cases
 
 ## Table of Contents
 1. [Overview](#overview)
@@ -39,10 +39,6 @@ AI Cases correlates alerts based on two main criteria:
 **Asset-based Correlation:**
 
 * Alerts targeting the same asset (account or host)
-* Related infrastructure impacts
-
-!!! Warning
-    For the moment, `unverified` assets are excluded from the Correlation criteria. We are working to remove this limitation.
 
 **Threat-based Correlation:**
 
