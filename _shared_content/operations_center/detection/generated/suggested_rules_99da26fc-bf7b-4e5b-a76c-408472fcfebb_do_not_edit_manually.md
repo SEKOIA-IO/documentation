@@ -787,7 +787,7 @@ The following Sekoia.io built-in rules match the intake **Sophos Analysis Threat
     
     Detects a Windows command line executable started from MMC process
     
-    - **Effort:** intermediate
+    - **Effort:** master
 
 ??? abstract "MMC20 Lateral Movement"
     
@@ -1279,7 +1279,7 @@ The following Sekoia.io built-in rules match the intake **Sophos Analysis Threat
     
     Detects PowerView commandlets which perform network and Windows domain enumeration and exploitation. It provides replaces for almost all Windows net commands, letting you query users, machines, domain controllers, user descriptions, share, sessions, and more.
     
-    - **Effort:** advanced
+    - **Effort:** master
 
 ??? abstract "Powershell AMSI Bypass"
     
