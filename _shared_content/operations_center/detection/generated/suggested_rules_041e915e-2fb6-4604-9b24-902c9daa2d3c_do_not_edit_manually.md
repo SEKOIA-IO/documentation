@@ -81,6 +81,24 @@ The following Sekoia.io built-in rules match the intake **Mimecast Email Securit
     
     - **Effort:** intermediate
 
+??? abstract "Mimecast Email Security Malicious QRCode Not Denied"
+    
+    Detects a malicious qrcode in an email not denied by Mimecast.
+    
+    - **Effort:** master
+
+??? abstract "Mimecast Email Security Spam Not Denied"
+    
+    Detects when a spam has been detected by Mimecast and was not denied.
+    
+    - **Effort:** master
+
+??? abstract "Mimecast Email Security Virus Not Denied"
+    
+    Detects when a virus signature has been detected by Mimecast and was not denied.
+    
+    - **Effort:** master
+
 ??? abstract "Possible Malicious File Double Extension"
     
     Detects request to potential malicious file with double extension
