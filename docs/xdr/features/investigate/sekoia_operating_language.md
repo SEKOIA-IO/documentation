@@ -1055,15 +1055,17 @@ let time = week(now());
     
 **Description**
 
-Use the `toscalar` function to return a scalar constant value of a previous query.
+Use the `toscalar` function to return a constant value of a statement.
 
 **Example**
 
 ``` shell
-let unique_domain_name_from_notepad = toscalar(events
-| where timestamp >= ago(24h)
-| where dns.question.name != null and process.args contains "notepad.exe"
-| distinct dns.question.name);
+let total = toscalar(alerts | where created_at >= ago(30d) | count);
+
+alerts
+| where created_at >= ago(30d)
+| aggregate count() by detection_type
+| extend percentage = (count / total) * 100
 
 ```
 
