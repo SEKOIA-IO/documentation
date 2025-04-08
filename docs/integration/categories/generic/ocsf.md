@@ -21,7 +21,7 @@ This section will guide you through creating all the AWS resources needed to col
 
 #### Prerequisites
 
-In order to set up the AWS architecture, you need an administator access to the Amazon console with the permissions to create and manage users, Security Lake subscribers, S3 notifications, SQS queues and resource accesses (RAM).
+In order to set up the AWS architecture, you need an administrator access to the Amazon console with the permissions to create and manage users, Security Lake subscribers, S3 notifications, SQS queues and resource accesses (RAM).
 
 ### Create a Security DataLake subscriber
 
