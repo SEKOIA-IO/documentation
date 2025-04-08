@@ -2,7 +2,7 @@
 
 To make it easier for employees to access Sekoia.io, you can enable SSO in your Sekoia.io community.
 
-{!_shared_content/sso_multiple_business.md}
+{!_shared_content/sso_multiple_business.md!}
 
 ## Prerequisites for OpenID Connect
 
