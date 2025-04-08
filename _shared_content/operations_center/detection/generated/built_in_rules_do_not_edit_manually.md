@@ -6195,8 +6195,12 @@ Rules catalog includes **1002 built-in detection rules** ([_last update on 2025-
     
     Based on several samples from different botnets, this rule aims at detecting HTML infection chain by looking for HTML created files followed by suspicious files being executed.
     
-    - **Effort:** intermediate
+    - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 08/04/2025 - minor - Change effort level and add filter to reduce false positives.
+            
 ??? abstract "New DLL Added To AppCertDlls Registry Key"
     
     Dynamic-link libraries (DLLs) that are specified in the AppCertDLLs value in the Registry key can be abused to obtain persistence and privilege escalation by causing a malicious DLL to be loaded and run in the context of separate processes on the computer. Logging for Registry events is needed in the Sysmon configuration (events 12 and 13).
@@ -7889,8 +7893,12 @@ Rules catalog includes **1002 built-in detection rules** ([_last update on 2025-
     
     Based on several samples from different botnets, this rule aims at detecting HTML infection chain by looking for HTML created files followed by suspicious files being executed.
     
-    - **Effort:** intermediate
+    - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 08/04/2025 - minor - Change effort level and add filter to reduce false positives.
+            
 ??? abstract "New DLL Added To AppCertDlls Registry Key"
     
     Dynamic-link libraries (DLLs) that are specified in the AppCertDLLs value in the Registry key can be abused to obtain persistence and privilege escalation by causing a malicious DLL to be loaded and run in the context of separate processes on the computer. Logging for Registry events is needed in the Sysmon configuration (events 12 and 13).
@@ -8104,8 +8112,12 @@ Rules catalog includes **1002 built-in detection rules** ([_last update on 2025-
     
     Based on several samples from different botnets, this rule aims at detecting HTML infection chain by looking for HTML created files followed by suspicious files being executed.
     
-    - **Effort:** intermediate
+    - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 08/04/2025 - minor - Change effort level and add filter to reduce false positives.
+            
 ??? abstract "Linux Capabilities Discovery"
     
     Linux capabilities are special attributes in the Linux kernel that grant processes and binary executables specific privileges that are normally reserved for processes whose effective user ID is 0 (The root user, and only the root user, has UID 0). This rule aims to detect discovery of such capabilities on the Linux system. The prerequisites are to enable monitoring of the execve and getxattr syscalls using Auditbeat.
@@ -9799,8 +9811,12 @@ Rules catalog includes **1002 built-in detection rules** ([_last update on 2025-
     
     Based on several samples from different botnets, this rule aims at detecting HTML infection chain by looking for HTML created files followed by suspicious files being executed.
     
-    - **Effort:** intermediate
+    - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 08/04/2025 - minor - Change effort level and add filter to reduce false positives.
+            
 ??? abstract "Linux Capabilities Discovery"
     
     Linux capabilities are special attributes in the Linux kernel that grant processes and binary executables specific privileges that are normally reserved for processes whose effective user ID is 0 (The root user, and only the root user, has UID 0). This rule aims to detect discovery of such capabilities on the Linux system. The prerequisites are to enable monitoring of the execve and getxattr syscalls using Auditbeat.

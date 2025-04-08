@@ -769,7 +769,7 @@ The following Sekoia.io built-in rules match the intake **SentinelOne Cloud Funn
     
     Based on several samples from different botnets, this rule aims at detecting HTML infection chain by looking for HTML created files followed by suspicious files being executed.
     
-    - **Effort:** intermediate
+    - **Effort:** advanced
 
 ??? abstract "HackTools Suspicious Names"
     
