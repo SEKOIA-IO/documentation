@@ -418,6 +418,7 @@ nav:
       - Microsoft Entra ID: integration/action_library/microsoft-entra-id.md
     - Network:
       - Fortigate Firewalls: integration/action_library/fortigate-firewalls.md
+      - Fortigate Firewalls: integration/action_library/fortigate-firewalls.md
       - Sophos: integration/action_library/sophos.md
       - Zscaler: integration/action_library/zscaler.md
     - Overview: integration/action_library/overview.md
