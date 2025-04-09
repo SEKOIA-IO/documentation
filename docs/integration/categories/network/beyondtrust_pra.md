@@ -48,3 +48,7 @@ BeyondTrust Privileged Remote Access enables secure, controlled remote access to
 {!_shared_content/operations_center/detection/generated/suggested_rules_f6cfddb4-543a-41fe-9802-c66b7c90366d_do_not_edit_manually.md!}
 
 {!_shared_content/operations_center/integrations/generated/f6cfddb4-543a-41fe-9802-c66b7c90366d.md!}
+
+## Further readings
+
+- [BeyondTrust Integrations](https://docs.beyondtrust.com/bt-docs/docs/integrations)
