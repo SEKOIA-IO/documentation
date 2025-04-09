@@ -67,3 +67,7 @@ As a result, for a rule that aims to monitor the volume of services installed on
 The anomaly identified raises an alert that you can visualize as follows.
 
 ![!](/assets/xdr/rules/anomaly/172631385-a6054d11-3b42-45ff-b4ca-7f98b3a1ec9e.png){: style="max-width:100%"}
+
+## Known Limitations
+
+Anomaly detection relies on UTC time. During a time change (transition to/from daylight saving time), the UTC-based patterns may shift by one hour, potentially triggering abnormal behavior alerts. It may take a few days for the anomaly detection engine to adjust to this new pattern.
