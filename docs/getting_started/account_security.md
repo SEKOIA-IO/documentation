@@ -1,14 +1,14 @@
-# Two-factor authentication
+# Two-factor Authentication
 
-Two-Factor Authentication (2FA) provides an extra layer of security for your Sekoia.io account by introducing an additional step during the login process. In addition to your username and password, you will be required to provide a 6-digit verification code generated on your phone. This ensures enhanced protection against unauthorized access to your account.
+Two-factor authentication (MFA) provides an extra layer of security for your Sekoia.io account by introducing an additional step during the login process. In addition to your username and password, you can set up other factors like Authentication apps and Security devices. This ensures enhanced protection against unauthorized access to your account.
 
 ## Enabling Two-Factor Authentication
 
 To enhance the security of your Sekoia account, you can enable Two-Factor Authentication (2FA) by following these instructions:
 
 1. Begin by logging in to app.sekoia.io 
-2. Click on your name in the navigation menu and select `Profile and security` 
-3. Within your profile page, scroll down until you find the section labeled `Register Two-Factor Authentication`. Click on the `Enable` button associated with it
+2. Click on your name in the navigation menu and select `Security` 
+3. Within your Security page, you'll find a list of methods you can choose from
 4. You will be asked to enter your password for verification purposes
 5. Follow the steps below to complete the setup process for 2FA on your account:
    1. Visit either the App Store (for iOS) or the Play Store (for Android) to download and install an Authenticator app such as Lastpass, Authenticator, or Authy. Follow the instructions provided by the app to set up an account
@@ -35,6 +35,10 @@ To log in with your backup codes, you will need to:
 3. Enter your `username` and `password`
 4. When asked for your verification code, enter the backup code and select `verify`
 
+## Preferred login methods 
+
+From your `Security` page, you can select your preferred authentication method. 
+
 ## How to disable two-factor authentication
 
 To disable two-factor authentication on your Sekoia account:
@@ -44,5 +48,22 @@ To disable two-factor authentication on your Sekoia account:
 3. Within your profile page, scroll down to the section `Register Two-Factor Authentication` and click on `Enable`
 4. Enter your current password and select `disable`
 
-!!! Note
-    In case your two-factor authentication and recovery codes have been lost, please follow this [process](https://support.sekoia.io/hc/en-gb/articles/10904006738845-Request-a-2FA-reset).
+## Reset Two-Factor Authentication (2FA) 
+
+If you lose access to your Authentication apps or your security token, you can always ask the admin of your community to reset your account 2FA. 
+The admin will share a single-use recovery code to you that you can use to connect to the platform. 
+This code is available for 24 hours only. 
+After entering the code, you will have to set up new 2FA methods. 
+
+### How to reset a 2FA (for Admins only) 
+
+Admins of a community can easily reset the two-factor authentication of users in their community. Here is how to do it: 
+
+1. Go to the Settings > Workspace > Users 
+2. Click on the `...` on the right of the user name 
+3. Click on `Reset user 2FA`
+4. Read the requirements on the modal then click on `Reset`
+5. Enter your password for verification
+6. Copy the single-use recovery code and send it to the user who requested the reset via a secured app 
+7. They will receive an email to let them know you reset their 2FA 
+
