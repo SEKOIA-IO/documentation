@@ -38,7 +38,14 @@ template: overrides/openapi.html
                 "automations": "Automation",
                 "Observables relationships": "Observable relationships",
                 "Object relationships": "Relationships",
-                "api-keys": "API Keys"
+                "api-keys": "API Keys",
+                "content-proposals": "Content proposals",
+                "content-proposals-comments": "Content proposals",
+                "content-proposals-relationships": "Content proposals",
+                "content-proposals-objects": "Content proposals",
+                "content-proposals-observables": "Content proposals",
+                "content-proposals-observables-relationships": "Content proposals",
+                "content-proposals-objects-relationships": "Content proposals"
             },
             intro: [
                 "Quickstart",
@@ -185,6 +192,15 @@ template: overrides/openapi.html
                             "Automation statistics", // => Playbooks
                         "AI assistant",
                         "Statistics", // ?
+                    ]
+                },
+                { name: "TIP",
+                    tags:[
+                        "Content proposals",
+                        "Content proposals relationships",
+                        "Expiration rules",
+                        "Incoming synchronization",
+                        "Warning rules"
                     ]
                 }
             ]
