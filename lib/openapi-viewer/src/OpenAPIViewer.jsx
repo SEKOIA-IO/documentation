@@ -64,6 +64,8 @@ export const OpenAPIViewer = {
                 url.replace("https://app.sekoia.io/", `https://app.${data.region}.sekoia.io/`)
             );
         }
+        // Incorporate context queryparam
+        urls = urls.map(url => url.replace("context=public", `context=${(new URLSearchParams(location.search).get('context') || 'public').toLowerCase()}`))
         data.openapi_urls = urls;
 
         // Retrieve and merge the OpenAPI 3.1 schemas
