@@ -880,22 +880,27 @@ Use the `matches regex` operator to filter the rows based on a regex pattern.
 
 ```
 
-| Pattern | Description |
-| --- | --- |
-| `.` | Any character |
-| `[0-9]` | Any digit |
-| `[^0-9]` | Any character that isn't a digit. |
-| `\d` | Digit |
-| `\D` | Not a digit |
-| [a-z] | Character class matching any character in range a-z. |
+| Pattern | Description | Example |
+| --- | --- | --- |
+| `.` | Matches any character | `ab.` matches 'aba', 'abb', 'abz' |
+| `?` | Repeat the preceding character zero or one times | `abc?` matches 'ab' and 'abc' |
+| `+` | Repeat the preceding character one or more times | `ab+` matches 'ab', 'abb', 'abbb' |
+| `*` | Repeat the preceding character zero or more times | `ab*` matches 'a', 'ab', 'abb', 'abbb' |
+| `{}` | Minimum and maximum number of times the preceding character can repeat | `a{2}` matches 'aa'<br>`a{2,5}` matches 'aa', 'aaa' and 'aaaa'<br>`a{2,}` matches 'a' repeated two or more times |
+| `|` | OR operator | `abc|xyz` matches 'abc' and 'xyz' |
+| `(...)` | Forms a group. You can use a group to treat part of the expression as a single character | `abc(def)?` matches 'abc' and 'abcdef' but not 'abcd' |
+| `[...]` | Match one of the character in the brackets<br>Inside the brackets, `-` indicates a range unless `-` is the first character or escaped<br>A `^` before a character in the brackets negates the character or range  | `[abc]` matches 'a', 'b', 'c'<br>`[-abc]` matches '-', 'a', 'b', 'c'<br>`[^abc]` matches any character except 'a', 'b', or 'c' |
+
+!!! info
+    Some characters are reserved as operators: `.` `?` `+` `*` `|` `{` `}` `[` `]` `(` `)` `"` `\` . Escape it with a preceding backslash `\` or surround it with double quotes `""`.<br>`\@` renders as a literal '@'<br>`\\` renders as a literal '\'<br>`"john@smith.com"` renders as 'john@smith.com'
 
 **Example**
 
-Find events where `file.name` contains an MD5.
+Find events where `file.name` contains '.sh'.
 
 ``` shell
 events
-| where file.name matches regex '[a-f0-9]{32}'
+| where file.name matches regex '\.sh'
 | limit 100
 
 ```
