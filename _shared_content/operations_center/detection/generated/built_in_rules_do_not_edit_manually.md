@@ -1,4 +1,4 @@
-Rules catalog includes **1005 built-in detection rules** ([_last update on 2025-04-08_](rules_changelog.md)).
+Rules catalog includes **1006 built-in detection rules** ([_last update on 2025-04-10_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Identity Information**
 
@@ -11399,7 +11399,14 @@ Rules catalog includes **1005 built-in detection rules** ([_last update on 2025-
         - 09/04/2024 - minor - Error code 500532 added
         - 16/04/2024 - minor - Add more correlation IDs and error code 50052
         - 03/01/2025 - minor - Add more correlation IDs
+        - 09/04/2025 - minor - Add more correlation IDs, change similarity strategy to user.id to workaround email capitalisation inconsistencies.
             
+??? abstract "Entra ID Password Compromised Via Seamless SSO Credential Testing"
+    
+    Detects a sign-in using the Entra ID Seamless SSO `usernamemixed` endpoint. This endpoint is rarely used legitimately, and often abused by credential testing tools. Note that even if the sign-in was blocked by MFA (error 50074) or device authentication (error 50097), these verifications only occur after the correct password was submitted. The account's password must still be considered compromised, and be changed.
+    
+    - **Effort:** elementary
+    
 ??? abstract "Fortigate Firewall Login In Failure"
     
     Detects failed login attemps on firewall administration rule. Prerequisites, check that the firewall logs format corresponds to the rule

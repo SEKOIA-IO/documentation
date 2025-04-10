@@ -1,7 +1,10 @@
-Changelog _last update on 2025-04-08_
+Changelog _last update on 2025-04-10_
 
 ## Changelog
 
+### Entra ID Password Compromised By Known Credential Testing Tool
+  - 09/04/2025 - minor - Add more correlation IDs, change similarity strategy to user.id to workaround email capitalisation inconsistencies.
+    
 ### HTML Smuggling Suspicious Usage
   - 08/04/2025 - minor - Change effort level and add filter to reduce false positives.
     
@@ -205,9 +208,6 @@ Changelog _last update on 2025-04-08_
     
 ### SecurityScorecard Vulnerability Assessment Scanner New Issues
   - 15/01/2025 - minor - Adding format field to improve rules mapping
-    
-### Entra ID Password Compromised By Known Credential Testing Tool
-  - 03/01/2025 - minor - Add more correlation IDs
     
 ### Entra ID Sign-In Via Known AiTM Phishing Kit (Mamba 2FA)
   - 23/12/2024 - major - Update the indicators.
