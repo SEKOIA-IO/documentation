@@ -412,6 +412,7 @@ nav:
       - OpenAI: integration/action_library/openai.md
       - RSS: integration/action_library/rss.md
       - Sekoia.io: integration/action_library/sekoia-io.md
+      - Sekoia.io: integration/action_library/sekoia-io.md
       - Utils: integration/action_library/utils.md
     - IAM:
       - Microsoft Active Directory: integration/action_library/microsoft-active-directory.md

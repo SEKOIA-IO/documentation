@@ -4,7 +4,7 @@ type: playbook
 
 # Sekoia.io
 
-![Sekoia.io](/assets/playbooks/library/sekoia-io.svg){ align=right width=150 }
+![Sekoia.io](/assets/playbooks/library/sekoia-io.png){ align=right width=150 }
 
 Sekoia.io is a European Cybertech, expert in intelligence-based eXtended Detection and Response solutions. Our Sekoia SOC platform provides a unified view and full control of the perimeter to be defended. Our mission is to empower security operations teams with a flexible and easy-to-use platform. We protect large companies, technology scaleups, governments, and Tier One MSSP partners worldwide. 
 
@@ -23,6 +23,7 @@ A comment was added to an existing Alert
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
 | `rule_filter` | `string` | Create a run only for alerts matching a rule name |
+| `rule_names_filter` | `array` | Create a run only for alerts matching a list of rule name |
 
 
 **Outputs**
@@ -53,6 +54,7 @@ A new Alert was created in the Operation Center
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
 | `rule_filter` | `string` | Create a run only for alerts matching a rule name |
+| `rule_names_filter` | `array` | Create a run only for alerts matching a list of rule name |
 
 
 **Outputs**
@@ -82,6 +84,7 @@ The status of an existing alert was changed
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
 | `rule_filter` | `string` | Create a run only for alerts matching a rule name |
+| `rule_names_filter` | `array` | Create a run only for alerts matching a list of rule name |
 
 
 **Outputs**
@@ -111,6 +114,7 @@ An existing alert was updated
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
 | `rule_filter` | `string` | Create a run only for alerts matching a rule name |
+| `rule_names_filter` | `array` | Create a run only for alerts matching a list of rule name |
 
 
 **Outputs**
@@ -140,6 +144,93 @@ Webhook Trigger to receive specific Sekoia.io Alerts
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
 | `alert_uuid` | `string` | Unique identifier of the Alert (UUID string). |
+
+
+### Case Alerts Updated
+
+Alerts have been added to or removed from a case
+
+**Arguments**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `mode_filter` | `string` | Create a run only for cases matching a mode (automatic or manual) |
+| `priority_uuids_filter` | `array` | Create a run only for cases matching a list of priority uuids |
+| `assignees_filter` | `array` | Create a run only for cases matching a list of assignees |
+| `case_uuids_filter` | `array` | Create a run only for cases matching a list of case uuids/short ids |
+
+
+**Outputs**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `uuid` | `string` | Unique identifier of the Case (UUID string). |
+| `short_id` | `string` | Unique short identifier of the Case. |
+| `added_alerts` | `array` | List of Unique identifier of new alerts (UUID string). |
+| `deleted_alerts` | `array` | List of Unique identifier of removed alerts (UUID string). |
+
+
+### Case Created
+
+A new Case was created in the Operation Center
+
+**Arguments**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `mode_filter` | `string` | Create a run only for cases matching a mode (automatic or manual) |
+| `priority_uuids_filter` | `array` | Create a run only for cases matching a list of priority uuids |
+| `assignees_filter` | `array` | Create a run only for cases matching a list of assignees |
+
+
+**Outputs**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `uuid` | `string` | Unique identifier of the Case (UUID string). |
+| `short_id` | `string` | Unique short identifier of the Case. |
+| `created_at` | `string` | Creation date of the Case. |
+| `created_by` | `string` | User who created the Case. |
+| `mode` | `string` | Mode of the Case (automatic or manual). |
+| `title` | `string` | Title of the Case. |
+| `description` | `string` | Description of the Case. |
+| `community_uuid` | `string` | Unique identifier of the Community (UUID string). |
+| `assignees` | `array` | List of assignees of the Case. |
+| `priority_uuid` | `string` | Unique identifier of the Priority (UUID string). |
+| `status_uuid` | `string` | Unique identifier of the Status (UUID string). |
+| `tags` | `array` | List of tags of the Case. |
+
+
+### Case Updated
+
+An existing case was updated
+
+**Arguments**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `mode_filter` | `string` | Create a run only for cases matching a mode (automatic or manual) |
+| `priority_uuids_filter` | `array` | Create a run only for cases matching a list of priority uuids |
+| `assignees_filter` | `array` | Create a run only for cases matching a list of assignees |
+| `case_uuids_filter` | `array` | Create a run only for cases matching a list of case uuids/short ids |
+
+
+**Outputs**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `uuid` | `string` | Unique identifier of the Case (UUID string). |
+| `short_id` | `string` | Unique short identifier of the Case. |
+| `created_at` | `string` | Creation date of the Case. |
+| `updated_at` | `string` | Updated date of the Case. |
+| `updated_by` | `string` | User who updated the Case. |
+| `title` | `string` | Title of the Case. |
+| `description` | `string` | Description of the Case. |
+| `assignees` | `array` | List of assignees of the Case. |
+| `tags` | `array` | List of tags of the Case. |
+| `status_uuid` | `string` | Unique identifier of the Status (UUID string). |
+| `priority_uuid` | `string` | Unique identifier of the Priority (UUID string). |
+| `verdict_uuid` | `string` | Unique identifier of the Verdict (UUID string). |
 
 
 ### Feed Consumption
@@ -191,6 +282,7 @@ Create an event for each alert creation or modification
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
 | `rule_filter` | `string` | Create a run only for alerts matching a rule name |
+| `rule_names_filter` | `array` | Create a run only for alerts matching a list of rule name |
 
 
 **Outputs**
@@ -612,6 +704,16 @@ Create a new asset
 | `criticity` | `['object', 'null']` | The criticality of the asset |
 | `asset_type` | `['object', 'null']` | The type of the asset |
 
+### Delete Case
+
+Delete a case
+
+**Arguments**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `case_uuid` | `string` |  |
+
 ### Delete rule
 
 Delete a rule
@@ -919,6 +1021,7 @@ Retrieve the properties of a case
 | --------- | ------- | --------------------------- |
 | `uuid` | `string` | UUID of the case |
 | `community_uuid` | `string` | (Optional) Identifier of the community |
+| `render` | `boolean` | (Optional) Render boolean |
 
 
 **Outputs**
@@ -1004,6 +1107,93 @@ Get reports from a specific term
 | --------- | ------- | --------------------------- |
 | `items` | `array` |  |
 | `has_more` | `boolean` |  |
+
+### Get custom priority
+
+Get a single custom priority based on its UUID
+
+**Arguments**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `priority_uuid` | `string` |  |
+
+
+**Outputs**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `uuid` | `string` |  |
+| `community_uuid` | `string` |  |
+| `level` | `integer` |  |
+| `created_at` | `string` |  |
+| `created_by` | `string` |  |
+| `created_by_type` | `string` |  |
+| `updated_at` | `string` |  |
+| `updated_by` | `string` |  |
+| `updated_by_type` | `string` |  |
+| `color` | `string` |  |
+| `label` | `string` |  |
+| `description` | `string` |  |
+| `is_used` | `boolean` |  |
+
+### Get custom status
+
+Get a single custom status based on its UUID
+
+**Arguments**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `status_uuid` | `string` |  |
+
+
+**Outputs**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `uuid` | `string` |  |
+| `community_uuid` | `string` |  |
+| `level` | `integer` |  |
+| `created_at` | `string` |  |
+| `created_by` | `string` |  |
+| `created_by_type` | `string` |  |
+| `updated_at` | `string` |  |
+| `updated_by` | `string` |  |
+| `updated_by_type` | `string` |  |
+| `stage` | `string` |  |
+| `label` | `string` |  |
+| `description` | `string` |  |
+| `is_used` | `boolean` |  |
+
+### Get custom verdict
+
+Get a single custom verdict based on its UUID
+
+**Arguments**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `verdict_uuid` | `string` |  |
+
+
+**Outputs**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `uuid` | `string` |  |
+| `community_uuid` | `string` |  |
+| `level` | `integer` |  |
+| `created_at` | `string` |  |
+| `created_by` | `string` |  |
+| `created_by_type` | `string` |  |
+| `updated_at` | `string` |  |
+| `updated_by` | `string` |  |
+| `updated_by_type` | `string` |  |
+| `stage` | `string` |  |
+| `label` | `string` |  |
+| `description` | `string` |  |
+| `is_used` | `boolean` |  |
 
 ### Get Entity
 
@@ -1472,6 +1662,17 @@ Predict the state of an alert
 | --------- | ------- | --------------------------- |
 | `event_ids` | `array` |  |
 
+### Remove event from case
+
+Remove an event from a case
+
+**Arguments**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `case_uuid` | `string` |  |
+| `event_id` | `string` |  |
+
 ### Get CTI Report
 
 Retrieve the details of a report
@@ -1573,6 +1774,7 @@ Create, merge and edit asset to synchronize asset with ad
 | --------- | ------- | --------------------------- |
 | `community_uuid` | `string` |  |
 | `user_ad_data` | `object` |  |
+| `user_ad_data_path` | `object` | File name to the User AD file to read. |
 | `asset_synchronization_configuration` | `object` |  |
 
 
@@ -1580,9 +1782,7 @@ Create, merge and edit asset to synchronize asset with ad
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
-| `found_assets` | `array` |  |
-| `created_asset` | `boolean` |  |
-| `destination_asset` | `string` |  |
+| `data` | `array` |  |
 
 ### Update Alert Status
 
@@ -1764,4 +1964,4 @@ Update a rule
 
 ## Extra
 
-Module **`Sekoia.io` v2.67.3**
+Module **`Sekoia.io` v2.67.13**
