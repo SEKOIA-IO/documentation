@@ -315,6 +315,7 @@ nav:
       - Umbrella DNS Logs: integration/categories/network/umbrella_dns.md
       - Unbound: integration/categories/network/unbound.md
     - Network Security:
+      - Akamai WAF: integration/categories/network_security/akamai_waf.md
       - AWS CloudTrail: integration/categories/network_security/aws_cloudtrail.md
       - Amazon CloudFront Logs: integration/categories/network_security/aws_cloudfront.md
       - Amazon GuardDuty: integration/categories/network_security/aws_guardduty.md
