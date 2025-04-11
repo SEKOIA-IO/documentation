@@ -38,7 +38,7 @@ When you have an **Event Hub** follow [this guide](https://learn.microsoft.com/e
 
 ### Create your intake
 
-1. Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a new intake from the `Microsoft Entra ID / Azure AD`.
+1. Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a new intake from the `Microsoft Intune`.
 2. To fill the form, use the table completed during the creation of the **Event Hub**.
 
 
