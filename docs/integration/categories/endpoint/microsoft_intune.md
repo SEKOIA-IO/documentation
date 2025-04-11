@@ -35,11 +35,14 @@ To send **Microsoft Intune** logs to Sekoia.io, there are some prerequisites:
 
 When you have an **Event Hub** follow [this guide](https://learn.microsoft.com/en-us/mem/intune/fundamentals/review-logs-using-azure-monitor) to send your events from **Microsoft Intune** to the **Event Hub**.
 
-### Create the intake
 
-Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a new intake from the format **Microsoft Intune**.
+### Create your intake
 
-{!_shared_content/operations_center/integrations/configure_consume_event_hub.md!}
+1. Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a new intake from the `Microsoft Entra ID / Azure AD`.
+2. To fill the form, use the table completed during the creation of the **Event Hub**.
+
+
+#### Enjoy your events on the [Events page](https://app.sekoia.io/operations/events)
 
 {!_shared_content/operations_center/integrations/generated/c20528c1-621e-4959-83ba-652eca2e8ed0_sample.md!}
 
