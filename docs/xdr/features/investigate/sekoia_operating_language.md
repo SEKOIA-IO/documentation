@@ -892,7 +892,7 @@ Use the `matches regex` operator to filter the rows based on a regex pattern.
 | `[...]` | Match one of the character in the brackets<br>Inside the brackets, `-` indicates a range unless `-` is the first character or escaped<br>A `^` before a character in the brackets negates the character or range  | `[abc]` matches 'a', 'b', 'c'<br>`[-abc]` matches '-', 'a', 'b', 'c'<br>`[^abc]` matches any character except 'a', 'b', or 'c' |
 
 !!! info
-    Some characters are reserved as operators: `.` `?` `+` `*` `|` `{` `}` `[` `]` `(` `)` `"` `\` . Escape it with a preceding backslash `\` or surround it with double quotes `""`.<br>`\@` renders as a literal '@'<br>`\\` renders as a literal '\'<br>`"john@smith.com"` renders as 'john@smith.com'
+    Some characters are reserved as operators: `.` `?` `+` `*` `|` `{` `}` `[` `]` `(` `)` `"` `\` .<br>Escape reserved operators with a preceding backslash `\` or surround them with double quotes `""`.<br>`\@` renders as a literal '@'.<br>`\\` renders as a literal '\'.<br>`"john@smith.com"` renders as 'john@smith.com'.
 
 **Example**
 
