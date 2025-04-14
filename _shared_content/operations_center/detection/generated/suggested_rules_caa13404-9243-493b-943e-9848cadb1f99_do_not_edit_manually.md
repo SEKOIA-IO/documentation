@@ -207,6 +207,12 @@ The following Sekoia.io built-in rules match the intake **Microsoft 365 / Office
     
     - **Effort:** elementary
 
+??? abstract "Entra ID Password Compromised Via Seamless SSO Credential Testing"
+    
+    Detects a sign-in using the Entra ID Seamless SSO `usernamemixed` endpoint. This endpoint is rarely used legitimately, and often abused by credential testing tools. Note that even if the sign-in was blocked by MFA (error 50074) or device authentication (error 50097), these verifications only occur after the correct password was submitted. The account's password must still be considered compromised, and be changed.
+    
+    - **Effort:** elementary
+
 ??? abstract "Entra ID Sign-In Via Known AiTM Phishing Kit (Gabagool)"
     
     Detects a sign-in attempt with known characteristics of the adversary-in-the-middle phishing kit Gabagool. The `filter_password_spraying` exclusion corresponds to a password spraying tool which is already detected by the rule `Entra ID Password Compromised By Known Credential Testing Tool`.
