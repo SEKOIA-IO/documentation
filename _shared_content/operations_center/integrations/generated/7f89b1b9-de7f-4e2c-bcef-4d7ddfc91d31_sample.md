@@ -266,6 +266,46 @@ In this section, you will find examples of raw logs as generated natively by the
 
 
 
+=== "test_service_account"
+
+
+    ```json
+	{
+        "id": "11111111-1111-1111-1111-111111111111",
+        "action": "Login",
+        "requestId": "11111111-1111-1111-1111-111111111111",
+        "status": "SUCCESS",
+        "timestamp": "2025-04-09T14:09:11.559605Z",
+        "actionParameters": {
+            "clientID": "aaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "error": "",
+            "groups": null,
+            "name": "user_name",
+            "products": [
+                ""
+            ],
+            "role": "",
+            "scopes": [
+                ""
+            ],
+            "sourceIP": "1.2.3.4",
+            "userEmail": "john.doe@company.fr",
+            "userID": "1111111111111111111111111111111111111111111111111111",
+            "userPoolType": "sa",
+            "userpoolID": "eu-west-1_AAAAAAAAA"
+        },
+        "userAgent": "wiz-sensor/1.0.6349",
+        "sourceIP": "1.2.3.4",
+        "serviceAccount": {
+            "id": "1111111111111111111111111111111111111111111111111111",
+            "name": "user_name"
+        },
+        "user": null
+    }
+    ```
+
+
+
 === "tokenrefresh"
 
 

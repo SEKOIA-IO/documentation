@@ -78,7 +78,10 @@ This section demonstrates how the raw logs will be transformed by our parsers. I
         },
         "wiz": {
             "audit": {
-                "status": "SUCCESS"
+                "status": "SUCCESS",
+                "user": {
+                    "type": "service_account"
+                }
             }
         }
     }
@@ -144,7 +147,10 @@ This section demonstrates how the raw logs will be transformed by our parsers. I
                     "read:issues",
                     "read:vulnerabilities"
                 ],
-                "status": "SUCCESS"
+                "status": "SUCCESS",
+                "user": {
+                    "type": "service_account"
+                }
             }
         }
     }
@@ -187,13 +193,20 @@ This section demonstrates how the raw logs will be transformed by our parsers. I
             "ip": "1.2.3.4"
         },
         "user": {
-            "email": "test@test.test",
             "id": "service_account_id",
             "name": "service_account_id"
         },
         "wiz": {
             "audit": {
-                "status": "FAILED"
+                "service_account": {
+                    "creator": {
+                        "email": "test@test.test"
+                    }
+                },
+                "status": "FAILED",
+                "user": {
+                    "type": "service_account"
+                }
             }
         }
     }
@@ -251,7 +264,10 @@ This section demonstrates how the raw logs will be transformed by our parsers. I
         },
         "wiz": {
             "audit": {
-                "status": "SUCCESS"
+                "status": "SUCCESS",
+                "user": {
+                    "type": "service_account"
+                }
             }
         }
     }
@@ -309,7 +325,10 @@ This section demonstrates how the raw logs will be transformed by our parsers. I
         },
         "wiz": {
             "audit": {
-                "status": "SUCCESS"
+                "status": "SUCCESS",
+                "user": {
+                    "type": "service_account"
+                }
             }
         }
     }
@@ -367,7 +386,81 @@ This section demonstrates how the raw logs will be transformed by our parsers. I
         },
         "wiz": {
             "audit": {
-                "status": "SUCCESS"
+                "status": "SUCCESS",
+                "user": {
+                    "type": "service_account"
+                }
+            }
+        }
+    }
+    	
+	```
+
+
+=== "test_service_account.json"
+
+    ```json
+	
+    {
+        "message": "{\"id\":\"11111111-1111-1111-1111-111111111111\",\"action\":\"Login\",\"requestId\":\"11111111-1111-1111-1111-111111111111\",\"status\":\"SUCCESS\",\"timestamp\":\"2025-04-09T14:09:11.559605Z\",\"actionParameters\":{\"clientID\":\"aaaaaaaaaaaaaaaaaaaaaaaaaa\",\"error\":\"\",\"groups\":null,\"name\":\"user_name\",\"products\":[\"\"],\"role\":\"\",\"scopes\":[\"\"],\"sourceIP\":\"1.2.3.4\",\"userEmail\":\"john.doe@company.fr\",\"userID\":\"1111111111111111111111111111111111111111111111111111\",\"userPoolType\":\"sa\",\"userpoolID\":\"eu-west-1_AAAAAAAAA\"},\"userAgent\":\"wiz-sensor/1.0.6349\",\"sourceIP\":\"1.2.3.4\",\"serviceAccount\":{\"id\":\"1111111111111111111111111111111111111111111111111111\",\"name\":\"user_name\"},\"user\":null}",
+        "event": {
+            "action": "Login",
+            "category": [
+                "authentication"
+            ],
+            "dataset": "Audit Logs",
+            "outcome": "success",
+            "type": [
+                "start"
+            ]
+        },
+        "@timestamp": "2025-04-09T14:09:11.559605Z",
+        "observer": {
+            "vendor": "Wiz"
+        },
+        "related": {
+            "ip": [
+                "1.2.3.4"
+            ],
+            "user": [
+                "user_name"
+            ]
+        },
+        "source": {
+            "address": "1.2.3.4",
+            "ip": "1.2.3.4"
+        },
+        "user": {
+            "id": "1111111111111111111111111111111111111111111111111111",
+            "name": "user_name"
+        },
+        "user_agent": {
+            "device": {
+                "name": "Other"
+            },
+            "name": "Other",
+            "original": "wiz-sensor/1.0.6349",
+            "os": {
+                "name": "Other"
+            }
+        },
+        "wiz": {
+            "audit": {
+                "products": [
+                    ""
+                ],
+                "scopes": [
+                    ""
+                ],
+                "service_account": {
+                    "creator": {
+                        "email": "john.doe@company.fr"
+                    }
+                },
+                "status": "SUCCESS",
+                "user": {
+                    "type": "service_account"
+                }
             }
         }
     }
@@ -425,7 +518,10 @@ This section demonstrates how the raw logs will be transformed by our parsers. I
         },
         "wiz": {
             "audit": {
-                "status": "SUCCESS"
+                "status": "SUCCESS",
+                "user": {
+                    "type": "service_account"
+                }
             }
         }
     }
@@ -483,7 +579,10 @@ This section demonstrates how the raw logs will be transformed by our parsers. I
         },
         "wiz": {
             "audit": {
-                "status": "SUCCESS"
+                "status": "SUCCESS",
+                "user": {
+                    "type": "service_account"
+                }
             }
         }
     }
@@ -541,7 +640,10 @@ This section demonstrates how the raw logs will be transformed by our parsers. I
         },
         "wiz": {
             "audit": {
-                "status": "SUCCESS"
+                "status": "SUCCESS",
+                "user": {
+                    "type": "service_account"
+                }
             }
         }
     }
@@ -573,7 +675,9 @@ The following table lists the fields that are extracted, normalized under the EC
 |`wiz.audit.products` | `array` |  |
 |`wiz.audit.role` | `keyword` |  |
 |`wiz.audit.scopes` | `array` |  |
+|`wiz.audit.service_account.creator.email` | `keyword` | The email of the user who created the service account |
 |`wiz.audit.status` | `keyword` |  |
+|`wiz.audit.user.type` | `keyword` | The nature of the user |
 
 
 

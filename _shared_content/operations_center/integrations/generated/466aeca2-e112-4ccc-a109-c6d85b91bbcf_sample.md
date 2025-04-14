@@ -444,6 +444,14 @@ In this section, you will find examples of raw logs as generated natively by the
 
 
 
+=== "test_FTD_113039_2"
+
+    ```
+	%FTD-6-113039: Group <CLIENT-VPN> User <user-name> IP <1.2.3.4> AnyConnect parent session started.
+    ```
+
+
+
 === "test_FTD_430002_1"
 
     ```
