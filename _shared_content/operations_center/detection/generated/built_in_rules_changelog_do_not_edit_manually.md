@@ -3,7 +3,7 @@ Changelog _last update on 2025-04-14_
 ## Changelog
 
 ### Commonly Used Commands To Stop Services And Remove Backups
-  - 14/04/2025 - major - Reviewing pattern, adding similarity strategy and changing effort level.
+  - 14/04/2025 - major - Reviewing pattern and condition to reduce false positives, adding similarity strategy and changing effort level.
     
 ### Suspicious DLL Loading By Ordinal
   - 14/04/2025 - minor - Adding similarity.

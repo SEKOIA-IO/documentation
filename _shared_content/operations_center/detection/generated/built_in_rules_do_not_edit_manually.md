@@ -14102,7 +14102,7 @@ Rules catalog includes **1006 built-in detection rules** ([_last update on 2025-
     
     - **Changelog:**
     
-        - 14/04/2025 - major - Reviewing pattern, adding similarity strategy and changing effort level.
+        - 14/04/2025 - major - Reviewing pattern and condition to reduce false positives, adding similarity strategy and changing effort level.
             
 ??? abstract "Secure Deletion With SDelete"
     
@@ -14150,7 +14150,7 @@ Rules catalog includes **1006 built-in detection rules** ([_last update on 2025-
     
     - **Changelog:**
     
-        - 14/04/2025 - major - Reviewing pattern, adding similarity strategy and changing effort level.
+        - 14/04/2025 - major - Reviewing pattern and condition to reduce false positives, adding similarity strategy and changing effort level.
             
 ??? abstract "Correlation Multi Service Disable"
     
@@ -14178,7 +14178,7 @@ Rules catalog includes **1006 built-in detection rules** ([_last update on 2025-
     
     - **Changelog:**
     
-        - 14/04/2025 - major - Reviewing pattern, adding similarity strategy and changing effort level.
+        - 14/04/2025 - major - Reviewing pattern and condition to reduce false positives, adding similarity strategy and changing effort level.
             
 ??? abstract "Inhibit System Recovery Deleting Backups"
     
