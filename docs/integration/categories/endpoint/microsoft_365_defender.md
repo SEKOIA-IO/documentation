@@ -72,9 +72,15 @@ When you have an **Event Hub** follow this guide to send your events from **Micr
 8. Go to the supported **Microsoft Defender XDR** event types in event streaming API to review the support status of event types in the Microsoft 365 Streaming API.
 9. Choose the events you want to stream and click Save.
 
-!!! Disclamer
-    Be sure to size your eventhub ressources accordingly to the number of EPS you have (number of eventhubs, throughput, partitions...) See the Further readings section in order to estimate the number of event per second **Microsoft Defender xDR** can be on your instance.
+!!! Disclaimer
+    Be sure to size your eventhub resources accordingly to the number of EPS you have (number of eventhubs, throughput, partitions...) See the Further readings section in order to estimate the number of event per second **Microsoft Defender xDR** can be on your instance.
 
+### Create your intake
+
+1. Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a new intake from the `Microsoft Defender XDR / Microsoft 365 Defender`
+2. To fill the form, use the table completed during the creation of the **Event Hub**.
+
+#### Enjoy your events on the [Events page](https://app.sekoia.io/operations/events)
 
 {!_shared_content/operations_center/integrations/generated/05e6f36d-cee0-4f06-b575-9e43af779f9f_sample.md!}
 
@@ -87,9 +93,3 @@ When you have an **Event Hub** follow this guide to send your events from **Micr
 #### Further Readings
 - [Estimating initial Event Hub capacity](https://learn.microsoft.com/en-us/microsoft-365/security/defender/streaming-api-event-hub?view=o365-worldwide#estimating-initial-event-hub-capacity)
 - [Configure Microsoft Defender XDR to stream Advanced Hunting events to your Azure Event Hub](https://docs.microsoft.com/en-us/microsoft-365/security/defender/streaming-api-event-hub)
-
-### Create the intake
-
-Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a new intake from the format `Microsoft 365 Defender`.
-
-{!_shared_content/operations_center/integrations/configure_consume_event_hub.md!}
