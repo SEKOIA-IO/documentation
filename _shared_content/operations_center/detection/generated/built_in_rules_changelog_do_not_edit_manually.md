@@ -1,7 +1,19 @@
-Changelog _last update on 2025-04-08_
+Changelog _last update on 2025-04-14_
 
 ## Changelog
 
+### Commonly Used Commands To Stop Services And Remove Backups
+  - 14/04/2025 - major - Reviewing pattern, adding similarity strategy and changing effort level.
+    
+### Suspicious DLL Loading By Ordinal
+  - 14/04/2025 - minor - Adding similarity.
+    
+### Microsoft 365 Sign-in With No User Agent
+  - 10/04/2025 - minor - Exclude more error codes to reduce false positives
+    
+### Entra ID Password Compromised By Known Credential Testing Tool
+  - 09/04/2025 - minor - Add more correlation IDs, change similarity strategy to user.id to workaround email capitalisation inconsistencies.
+    
 ### HTML Smuggling Suspicious Usage
   - 08/04/2025 - minor - Change effort level and add filter to reduce false positives.
     
@@ -205,9 +217,6 @@ Changelog _last update on 2025-04-08_
     
 ### SecurityScorecard Vulnerability Assessment Scanner New Issues
   - 15/01/2025 - minor - Adding format field to improve rules mapping
-    
-### Entra ID Password Compromised By Known Credential Testing Tool
-  - 03/01/2025 - minor - Add more correlation IDs
     
 ### Entra ID Sign-In Via Known AiTM Phishing Kit (Mamba 2FA)
   - 23/12/2024 - major - Update the indicators.
@@ -979,9 +988,6 @@ Changelog _last update on 2025-04-08_
     
 ### BITSAdmin Download
   - 06/12/2023 - minor - Adding key words to increase detection.
-    
-### Microsoft 365 Sign-in With No User Agent
-  - 04/12/2023 - major - Added `Login:login` request type with a filter for codes indicating failure
     
 ### HTA Infection Chains
   - 30/11/2023 - minor - Update pattern with new lolbin

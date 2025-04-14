@@ -367,7 +367,7 @@ The following Sekoia.io built-in rules match the intake **Sekoia.io Endpoint Age
     
     Detects specific commands used regularly by ransomwares to stop services or remove backups
     
-    - **Effort:** intermediate
+    - **Effort:** master
 
 ??? abstract "Component Object Model Hijacking"
     

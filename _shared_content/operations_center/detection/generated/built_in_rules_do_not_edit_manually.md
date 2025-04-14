@@ -1,4 +1,4 @@
-Rules catalog includes **1005 built-in detection rules** ([_last update on 2025-04-08_](rules_changelog.md)).
+Rules catalog includes **1006 built-in detection rules** ([_last update on 2025-04-14_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Identity Information**
 
@@ -9579,6 +9579,10 @@ Rules catalog includes **1005 built-in detection rules** ([_last update on 2025-
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 14/04/2025 - minor - Adding similarity.
+            
 ??? abstract "Suspicious Desktopimgdownldr Execution"
     
     Detects a suspicious Desktopimgdownldr execution. Desktopimgdownldr.exe is a Windows binary used to configure lockscreen/desktop image and can be abused to download malicious file.
@@ -11399,7 +11403,14 @@ Rules catalog includes **1005 built-in detection rules** ([_last update on 2025-
         - 09/04/2024 - minor - Error code 500532 added
         - 16/04/2024 - minor - Add more correlation IDs and error code 50052
         - 03/01/2025 - minor - Add more correlation IDs
+        - 09/04/2025 - minor - Add more correlation IDs, change similarity strategy to user.id to workaround email capitalisation inconsistencies.
             
+??? abstract "Entra ID Password Compromised Via Seamless SSO Credential Testing"
+    
+    Detects a sign-in using the Entra ID Seamless SSO `usernamemixed` endpoint. This endpoint is rarely used legitimately, and often abused by credential testing tools. Note that even if the sign-in was blocked by MFA (error 50074) or device authentication (error 50097), these verifications only occur after the correct password was submitted. The account's password must still be considered compromised, and be changed.
+    
+    - **Effort:** elementary
+    
 ??? abstract "Fortigate Firewall Login In Failure"
     
     Detects failed login attemps on firewall administration rule. Prerequisites, check that the firewall logs format corresponds to the rule
@@ -11591,6 +11602,7 @@ Rules catalog includes **1005 built-in detection rules** ([_last update on 2025-
     - **Changelog:**
     
         - 04/12/2023 - major - Added `Login:login` request type with a filter for codes indicating failure
+        - 10/04/2025 - minor - Exclude more error codes to reduce false positives
             
 ??? abstract "Multiple Authentication On Microsoft 365 (Office 365) Portal From Two IP Addresses"
     
@@ -11896,6 +11908,7 @@ Rules catalog includes **1005 built-in detection rules** ([_last update on 2025-
     - **Changelog:**
     
         - 04/12/2023 - major - Added `Login:login` request type with a filter for codes indicating failure
+        - 10/04/2025 - minor - Exclude more error codes to reduce false positives
             
 ??? abstract "Multiple Authentication On Microsoft 365 (Office 365) Portal From Two IP Addresses"
     
@@ -13109,6 +13122,7 @@ Rules catalog includes **1005 built-in detection rules** ([_last update on 2025-
     - **Changelog:**
     
         - 04/12/2023 - major - Added `Login:login` request type with a filter for codes indicating failure
+        - 10/04/2025 - minor - Exclude more error codes to reduce false positives
             
 ??? abstract "Multiple Authentication On Microsoft 365 (Office 365) Portal From Two IP Addresses"
     
@@ -14084,8 +14098,12 @@ Rules catalog includes **1005 built-in detection rules** ([_last update on 2025-
     
     Detects specific commands used regularly by ransomwares to stop services or remove backups
     
-    - **Effort:** intermediate
+    - **Effort:** master
     
+    - **Changelog:**
+    
+        - 14/04/2025 - major - Reviewing pattern, adding similarity strategy and changing effort level.
+            
 ??? abstract "Secure Deletion With SDelete"
     
     Detects renaming of file while deletion with SDelete tool. SDelete is a tool that permits to securely delete files by overwriting them (no recovery possible). Few threat actors are using it to delete traces of their malware.
@@ -14128,8 +14146,12 @@ Rules catalog includes **1005 built-in detection rules** ([_last update on 2025-
     
     Detects specific commands used regularly by ransomwares to stop services or remove backups
     
-    - **Effort:** intermediate
+    - **Effort:** master
     
+    - **Changelog:**
+    
+        - 14/04/2025 - major - Reviewing pattern, adding similarity strategy and changing effort level.
+            
 ??? abstract "Correlation Multi Service Disable"
     
     The rule detects a high number of services stopped or de-activated in a short period of time.
@@ -14152,8 +14174,12 @@ Rules catalog includes **1005 built-in detection rules** ([_last update on 2025-
     
     Detects specific commands used regularly by ransomwares to stop services or remove backups
     
-    - **Effort:** intermediate
+    - **Effort:** master
     
+    - **Changelog:**
+    
+        - 14/04/2025 - major - Reviewing pattern, adding similarity strategy and changing effort level.
+            
 ??? abstract "Inhibit System Recovery Deleting Backups"
     
     Detects adversaries attempts to delete backups or inhibit system recovery. This rule relies on differents known techniques using Windows events logs from Sysmon (ID 1), and PowerShell (ID 4103, 4104).
