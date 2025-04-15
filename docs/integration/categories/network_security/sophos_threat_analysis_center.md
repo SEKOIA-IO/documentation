@@ -21,7 +21,7 @@ The Sophos Threat Analysis Center (STAC), is a dedicated tool for research and a
 You can find the system requirements for each respective platform below : <br />
 
 - [Windows Requirements](https://support.sophos.com/support/s/article/KB-000035144?language=en_US)
-- [Windows Server Requirements](https://support.sophos.com/support/s/article/KB-000034074?language=en_US)
+- [Windows Server Requirements](https://support.sophos.com/support/s/article/KBA-000003024?language=en_US)
 - [MacOS Requirements](https://support.sophos.com/support/s/article/KB-000034670?language=en_US)
 
 !!! Warning
