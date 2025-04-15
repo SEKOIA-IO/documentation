@@ -2,7 +2,7 @@
 
 This domain-specific language can be used to generate search queries that integrate advanded search operators.
 
-Please refer to [Elastic Common Schema (ECS) Reference](https://www.elastic.co/guide/en/ecs/master/index.html) if you need to look up a field available in Sekoia.io. 
+Please refer to [Elastic Common Schema (ECS) Reference](https://www.elastic.co/docs/reference/ecs/ecs-field-reference) if you need to look up a field available in Sekoia.io. 
 
 ## Example
 
