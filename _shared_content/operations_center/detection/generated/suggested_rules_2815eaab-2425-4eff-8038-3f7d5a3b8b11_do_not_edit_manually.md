@@ -1389,6 +1389,18 @@ The following Sekoia.io built-in rules match the intake **Azure Windows**. This 
     
     - **Effort:** elementary
 
+??? abstract "Process Herpaderping"
+    
+    Detection of process herpaderping using Sysmon Event ID 25. It detects that an image has been locked for access. Several processes have been excluded to avoid FPs.
+    
+    - **Effort:** master
+
+??? abstract "Process Hollowing Detection"
+    
+    Detection of process hollowing using Sysmon Event ID 25. It detects that an image has been replaced in a process memory.
+    
+    - **Effort:** master
+
 ??? abstract "Process Memory Dump Using Comsvcs"
     
     Detects the use of comsvcs in command line to dump a specific process memory. This technique is used by attackers for privilege escalation and pivot.
