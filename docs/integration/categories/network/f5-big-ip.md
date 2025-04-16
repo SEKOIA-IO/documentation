@@ -92,4 +92,5 @@ You can further refine your configuration:
 
 ## Further readings
 
-- [Configuring a remote Syslog server for F5 BIG-IP](https://support.f5.com/)
+- [Configuring the BIG-IP system to log to a remote syslog server](https://my.f5.com/manage/s/article/K13080)
+- [Logging Application Security Events](https://techdocs.f5.com/en-us/bigip-15-0-0/big-ip-asm-implementations/logging-application-security-events.html#GUID-E0742D0B-9829-4210-AD70-EAFFD58B9767)
