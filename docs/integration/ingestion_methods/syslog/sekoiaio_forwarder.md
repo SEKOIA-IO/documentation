@@ -121,7 +121,7 @@ Please find below a template of the `docker-compose.yml` file.
 # version: "3.9"
 services:
   rsyslog:
-    image: ghcr.io/sekoia-io/sekoiaio-docker-concentrator:2.7.1
+    image: ghcr.io/sekoia-io/sekoiaio-docker-concentrator:2.7.2
     environment:
       - MEMORY_MESSAGES=2000000
       - DISK_SPACE=180g
@@ -148,15 +148,28 @@ environment:
     - MEMORY_MESSAGES=2000000
     - DISK_SPACE=180g
     - REGION=FRA1
+    - RELP_OUTPUT=True
 ```
 
 Two environment variables are used to customize the container. These variables are used to define a queue for incoming logs in case there is a temporarily issue in transmitting events to Sekoia.io. The queue stores messages in memory up to a certain number of events and then store them on disk. When the issue is fixed, events stored are retrieved from the queue and forward to the plateform.
 
-* `MEMORY_MESSAGES=2000000` means the queue is allowed to store up to 2,000,000 messages in memory. If we consider a message size is 1.2KB, then you will use 2,4GB of RAM memory (2000000 * 1.2KB = 2.4GB).
-* `DISK_SPACE=180g` means the queue is allowed to store on disk up to 180giga of messages.
+* `MEMORY_MESSAGES=2000000` means queues are allowed to store up to 2,000,000 messages in memory. If we consider a message size is 1.2KB, then you will use 2,4GB of RAM memory (2000000 * 1.2KB = 2.4GB). Note that this value is distributed among the configured intakes. For example, if 10 intakes are configured, each queue will have a retention capacity of 200,000 messages.
+* `DISK_SPACE=180g` means that the total of all queues is allowed to store up to 180 gigabytes of messages on disk.
 * `REGION=FRA1` is the region where to send the logs. Currently 5 options are available: `FRA1`, `FRA2`, `MCO1`, `UAE1` and `USA1`
+* `RELP_OUTPUT=True` it is an optional environment variable. If the value is set to true, it allows sending all logs to Sekoia via the relp protocol instead of the default tcp syslog mode.
 
 [Here](#prerequisites) you will find recommendations to set these variables based on the number of assets. You can also define your own values, which should be chosen according to your virtual machine's template.
+
+!!! Info
+    In case you want to set a specific retention size in memory for a particular intake, you can define it using this type of configuration:
+    ```yaml
+    - name: Techno1
+      protocol: tcp
+      port: 20516
+      intake_key: INTAKE_KEY_FOR_TECHNO_1
+      queue_size: 100000
+    ```
+    Note that other intakes will retain their default values, which is MEMORY_MESSAGES divided by the total number of intakes.
 
 #### Ports
 
