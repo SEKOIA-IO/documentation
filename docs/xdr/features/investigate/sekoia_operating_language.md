@@ -1065,10 +1065,10 @@ Use the `toscalar` function to return a constant value of a statement.
 **Example**
 
 ``` shell
-let total = toscalar(alerts | where created_at >= ago(30d) | count);
+let total = toscalar(alerts | where created_at >= ago(7d) | count);
 
 alerts
-| where created_at >= ago(30d)
+| where created_at >= ago(7d)
 | aggregate count() by detection_type
 | extend percentage = (count / total) * 100
 
