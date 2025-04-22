@@ -1,4 +1,4 @@
-Rules catalog includes **1006 built-in detection rules** ([_last update on 2025-04-16_](rules_changelog.md)).
+Rules catalog includes **1006 built-in detection rules** ([_last update on 2025-04-22_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Identity Information**
 
@@ -2926,12 +2926,13 @@ Rules catalog includes **1006 built-in detection rules** ([_last update on 2025-
     
     Detects an Antivirus alert in a highly relevant file path or with a relevant file name. This is only based on Windows Defender events.
     
-    - **Effort:** intermediate
+    - **Effort:** master
     
     - **Changelog:**
     
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
         - 26/03/2024 - major - Rule's pattern field changed
+        - 22/04/2025 - major - Change effort level and similarity strategy
             
 ??? abstract "Audit CVE Event"
     
@@ -4819,11 +4820,12 @@ Rules catalog includes **1006 built-in detection rules** ([_last update on 2025-
     
     Detects the usage of Procdump sysinternals tool with some common arguments and followed by common patterns.
     
-    - **Effort:** intermediate
+    - **Effort:** advanced
     
     - **Changelog:**
     
         - 15/01/2024 - minor - Added filter to reduce false positives.
+        - 22/04/2025 - minor - Added filter to reduce false positives and change effort level.
             
 ??? abstract "Usage Of Sysinternals Tools"
     
@@ -5544,6 +5546,158 @@ Rules catalog includes **1006 built-in detection rules** ([_last update on 2025-
     
     - **Effort:** elementary
     
+**Modify Registry**
+
+??? abstract "Blue Mockingbird Malware"
+    
+    Attempts to detect system changes made by Blue Mockingbird
+    
+    - **Effort:** elementary
+    
+??? abstract "Chafer (APT 39) Activity"
+    
+    Detects previous Chafer (APT 39) activity attributed to OilRig as reported in Nyotron report in March 2018.
+    
+    - **Effort:** intermediate
+    
+    - **Changelog:**
+    
+        - 26/03/2024 - major - Rule's pattern field changed
+            
+??? abstract "DHCP Callout DLL Installation"
+    
+    Detects the installation of a Callout DLL via CalloutDlls and CalloutEnabled parameter in Registry, which can be used to execute code in context of the DHCP server (restart required).
+    
+    - **Effort:** intermediate
+    
+??? abstract "DNS ServerLevelPluginDll Installation"
+    
+    Detects the installation of a plugin DLL via ServerLevelPluginDll parameter in Windows Registry or in command line, which can be used to execute code in context of the DNS server (restart required). To fully use this rule, prerequesites are logging for Registry events in the Sysmon configuration (events 12, 13 and 14).
+    
+    - **Effort:** master
+    
+??? abstract "Disable .NET ETW Through COMPlus_ETWEnabled"
+    
+    Detects potential adversaries stopping ETW providers recording loaded .NET assemblies. Prerequisites are logging for Registry events or logging command line parameters (both is better). Careful for registry events, if SwiftOnSecurity's SYSMON default configuration is used, you will need to update the configuration to include the .NETFramework registry key path. Same issue with Windows 4657 EventID logging, the registry path must be specified.
+    
+    - **Effort:** intermediate
+    
+??? abstract "Disable Security Events Logging Adding Reg Key MiniNt"
+    
+    Detects the addition of a key 'MiniNt' to the registry. Upon a reboot, Windows Event Log service will stopped write events.  Prerequisites: Logging for Registry events for this specific registry key is needed in the Sysmon configuration (events 12, 13 and 14).
+    
+    - **Effort:** master
+    
+??? abstract "Disable Workstation Lock"
+    
+    Registry change in order to disable the ability to lock the computer by using CTRL+ALT+DELETE or CTRL+L. This registry key does not exist by default. Its creation is suspicious and the value set to "1" means an activation. It has been used by FatalRAT, but other attacker/malware could probably use it. This rule needs Windows Registry changes (add,modification,deletion) logging which can be done through Sysmon Event IDs 12,13,14.
+    
+    - **Effort:** elementary
+    
+    - **Changelog:**
+    
+        - 21/06/2024 - major - Update detection pattern for ECS fields/value compliance
+            
+??? abstract "Disabling SmartScreen Via Registry"
+    
+    Detects when a user disables smartscreen.
+    
+    - **Effort:** elementary
+    
+??? abstract "FlowCloud Malware"
+    
+    Detects FlowCloud malware from threat group TA410. This requires Windows Event registry logging.
+    
+    - **Effort:** elementary
+    
+??? abstract "LanManServer Registry Modify"
+    
+    Detects when the LanManServer registry sub-key MaxMpxCt is modified. An attacker can modified this value to increase the maximum number of outstanding client requests supported. 
+    
+    - **Effort:** elementary
+    
+??? abstract "NetNTLM Downgrade Attack"
+    
+    Detects changes in Windows Registry key (LMCompatibilityLevel, NTLMMinClientSec or RestrictSendingNTLMTraffic) which can lead to NetNTLM downgrade attack. The rule requires to log registry keys creation or update, it can be done using Sysmon's Event ID 12,13 and 14.
+    
+    - **Effort:** intermediate
+    
+    - **Changelog:**
+    
+        - 26/03/2024 - major - Rule's pattern field changed
+            
+??? abstract "OceanLotus Registry Activity"
+    
+    Detects registry keys created in OceanLotus (also known as APT32) attack. Logging for Registry events is needed in the Sysmon configuration (events 12 and 13).
+    
+    - **Effort:** intermediate
+    
+    - **Changelog:**
+    
+        - 21/06/2024 - major - Update detection pattern for ECS fields/value compliance
+            
+??? abstract "RDP Port Change Using Powershell"
+    
+    Detects RDP port configuration change using a PowerShell command such as 'Set-ItemProperty -Path "HKLM:\System\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp" -Name PortNumber -Value XXX Restart-Service termservice -force'. Threat actors can change RDP to another port to bypass protections, avoid detection based on the port, or to take full control of the system. 
+    
+    - **Effort:** intermediate
+    
+??? abstract "RDP Sensitive Settings Changed"
+    
+    Detects changes to RDP terminal service sensitive settings. Logging for registry events is needed in the Sysmon configuration (events 12 and 13).
+    
+    - **Effort:** advanced
+    
+??? abstract "RedMimicry Winnti Playbook Registry Manipulation"
+    
+    Detects actions caused by the RedMimicry Winnti playbook. Logging for Registry events is needed in the Sysmon configuration (events 12 and 13).
+    
+    - **Effort:** elementary
+    
+??? abstract "Remote Registry Management Using Reg Utility"
+    
+    Remote registry management using REG utility from non-admin workstation. This requires Windows Security events logging.
+    
+    - **Effort:** master
+    
+    - **Changelog:**
+    
+        - 04/04/2024 - major - Rule's pattern field changed
+            
+??? abstract "Suspicious Desktopimgdownldr Execution"
+    
+    Detects a suspicious Desktopimgdownldr execution. Desktopimgdownldr.exe is a Windows binary used to configure lockscreen/desktop image and can be abused to download malicious file.
+    
+    - **Effort:** intermediate
+    
+??? abstract "Suspicious New Printer Ports In Registry"
+    
+    Detects a suspicious printer port creation in Registry that could be an attempt to exploit CVE-2020-1048. The CVE-2020-1048 consists in gaining persistence, privilege by abusing a flaw in the Print Spooler service to execute a payload whose path is stored in the registry key. To fully use this rule, prerequesites are logging for Registry events in the Sysmon configuration (events 12, 13 and 14).
+    
+    - **Effort:** master
+    
+??? abstract "Ursnif Registry Key"
+    
+    Detects a new registry key created by Ursnif malware. The rule requires to log for Registry Events, which can be done using SYsmon's Event IDs 12,13 and 14.
+    
+    - **Effort:** elementary
+    
+??? abstract "Wdigest Enable UseLogonCredential"
+    
+    Detects modification of the Windows Registry value of HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\WDigest\UseLogonCredential. This technique is used to extract passwords in clear-text using WDigest. The rule requires to log for Registry Events, which can be done using Sysmon Event IDs 12, 13 and 14.
+    
+    - **Effort:** elementary
+    
+    - **Changelog:**
+    
+        - 08/08/2024 - major - Rule's pattern field changed and pattern improved to cause less false positives.
+            
+??? abstract "Windows Defender Logging Modification Via Registry"
+    
+    Detects when the logging for defender is disabled in the registry.
+    
+    - **Effort:** elementary
+    
 **Component Object Model Hijacking**
 
 ??? abstract "Windows Registry Persistence COM Key Linking"
@@ -5725,7 +5879,7 @@ Rules catalog includes **1006 built-in detection rules** ([_last update on 2025-
     
     - **Effort:** elementary
     
-**Browser Extensions**
+**Software Extensions**
 
 ??? abstract "Malicious Browser Extensions"
     
@@ -13656,7 +13810,7 @@ Rules catalog includes **1006 built-in detection rules** ([_last update on 2025-
     
     - **Effort:** advanced
     
-**Remote Access Software**
+**Remote Access Tools**
 
 ??? abstract "Antivirus Exploitation Framework Detection"
     
@@ -13674,12 +13828,13 @@ Rules catalog includes **1006 built-in detection rules** ([_last update on 2025-
     
     Detects an Antivirus alert in a highly relevant file path or with a relevant file name. This is only based on Windows Defender events.
     
-    - **Effort:** intermediate
+    - **Effort:** master
     
     - **Changelog:**
     
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
         - 26/03/2024 - major - Rule's pattern field changed
+        - 22/04/2025 - major - Change effort level and similarity strategy
             
 ??? abstract "Remote Access Tool Domain"
     

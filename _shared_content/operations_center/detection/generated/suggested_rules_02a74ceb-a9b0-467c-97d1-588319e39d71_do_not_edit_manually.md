@@ -27,6 +27,12 @@ The following Sekoia.io built-in rules match the intake **Citrix NetScaler / ADC
     
     - **Effort:** intermediate
 
+??? abstract "Adexplorer Usage"
+    
+    Detects the usage of Adexplorer, a legitimate tool from the Sysinternals suite that could be abused by attackers as it can saves snapshots of the Active Directory Database.
+    
+    - **Effort:** advanced
+
 ??? abstract "Adidnsdump Enumeration"
     
     Detects use of the tool adidnsdump for enumeration and discovering DNS records.
@@ -272,6 +278,12 @@ The following Sekoia.io built-in rules match the intake **Citrix NetScaler / ADC
     Well-known DNS exfiltration tools execution
     
     - **Effort:** intermediate
+
+??? abstract "DNS Query For Iplookup"
+    
+    Detects dns query of observables tagged as iplookup.
+    
+    - **Effort:** master
 
 ??? abstract "DNS ServerLevelPluginDll Installation"
     
@@ -813,6 +825,12 @@ The following Sekoia.io built-in rules match the intake **Citrix NetScaler / ADC
     
     - **Effort:** advanced
 
+??? abstract "Putty Sessions Listing"
+    
+    Detects attempts to list Putty sessions through registry. To fully work, this rule requires to log registry accesses, which can be done with the Windows Event ID 4656 or 4663 but for that specific configuration is needed.
+    
+    - **Effort:** master
+
 ??? abstract "Python HTTP Server"
     
     Detects command used to start a Simple HTTP server in Python. Threat actors could use it for data extraction, hosting a webshell or else.
@@ -1045,7 +1063,7 @@ The following Sekoia.io built-in rules match the intake **Citrix NetScaler / ADC
     
     Detects the usage of Procdump sysinternals tool with some common arguments and followed by common patterns.
     
-    - **Effort:** intermediate
+    - **Effort:** advanced
 
 ??? abstract "Usage Of Sysinternals Tools"
     
