@@ -365,6 +365,7 @@ nav:
       - Thinkst Canary: integration/categories/network_security/thinkst_canary.md
       - Trellix Network Security: integration/categories/network_security/trellix_nx.md
       - Trellix ePO: integration/categories/network_security/trellix_epo.md
+      - Trellix ePO - On Prem: integration/categories/network_security/trellix_epo_on_prem.md
       - Trend Micro Deep Security / Workload Security: integration/categories/network_security/trend_micro_deep_security.md
       - Ubika Cloud Protector Alerts: integration/categories/network_security/ubika_cloud_protector_alerts.md
       - Ubika Cloud Protector Traffic: integration/categories/network_security/ubika_cloud_protector_traffic.md
