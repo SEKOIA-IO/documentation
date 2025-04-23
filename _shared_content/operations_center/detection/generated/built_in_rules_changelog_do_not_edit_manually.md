@@ -1,7 +1,13 @@
-Changelog _last update on 2025-04-16_
+Changelog _last update on 2025-04-22_
 
 ## Changelog
 
+### Antivirus Relevant File Paths Alerts
+  - 22/04/2025 - major - Change effort level and similarity strategy
+    
+### Usage Of Procdump With Common Arguments
+  - 22/04/2025 - minor - Added filter to reduce false positives and change effort level.
+    
 ### Commonly Used Commands To Stop Services And Remove Backups
   - 14/04/2025 - major - Reviewing pattern and condition to reduce false positives, adding similarity strategy and changing effort level.
     
@@ -707,9 +713,6 @@ Changelog _last update on 2025-04-16_
 ### Password Change On Directory Service Restore Mode (DSRM) Account
   - 26/03/2024 - major - Rule's pattern field changed
     
-### Antivirus Relevant File Paths Alerts
-  - 26/03/2024 - major - Rule's pattern field changed
-    
 ### Process Herpaderping
   - 26/03/2024 - major - Rule's pattern field changed
     
@@ -967,9 +970,6 @@ Changelog _last update on 2025-04-16_
     
 ### Suspicious CodePage Switch with CHCP
   - 16/01/2024 - minor - Rename rule to fit with behavior
-    
-### Usage Of Procdump With Common Arguments
-  - 15/01/2024 - minor - Added filter to reduce false positives.
     
 ### Windows Registry Persistence COM Search Order Hijacking
   - 11/01/2024 - minor - Adding filtering for some FPs

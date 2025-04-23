@@ -91,7 +91,7 @@ The following Sekoia.io built-in rules match the intake **Stormshield SES**. Thi
     
     Detects an Antivirus alert in a highly relevant file path or with a relevant file name. This is only based on Windows Defender events.
     
-    - **Effort:** intermediate
+    - **Effort:** master
 
 ??? abstract "Antivirus Web Shell Detection"
     
@@ -2161,7 +2161,7 @@ The following Sekoia.io built-in rules match the intake **Stormshield SES**. Thi
     
     Detects the usage of Procdump sysinternals tool with some common arguments and followed by common patterns.
     
-    - **Effort:** intermediate
+    - **Effort:** advanced
 
 ??? abstract "Usage Of Sysinternals Tools"
     

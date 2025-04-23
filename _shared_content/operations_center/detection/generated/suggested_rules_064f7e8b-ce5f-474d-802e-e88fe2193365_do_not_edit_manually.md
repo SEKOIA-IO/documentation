@@ -1753,7 +1753,7 @@ The following Sekoia.io built-in rules match the intake **Trend Micro Apex One /
     
     Detects the usage of Procdump sysinternals tool with some common arguments and followed by common patterns.
     
-    - **Effort:** intermediate
+    - **Effort:** advanced
 
 ??? abstract "Usage Of Sysinternals Tools"
     
