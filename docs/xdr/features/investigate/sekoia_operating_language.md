@@ -887,7 +887,7 @@ Use the `matches regex` operator to filter the rows based on a regex pattern.
 | `+` | Repeat the preceding character one or more times | `ab+` matches 'ab', 'abb', 'abbb' |
 | `*` | Repeat the preceding character zero or more times | `ab*` matches 'a', 'ab', 'abb', 'abbb' |
 | `{}` | Minimum and maximum number of times the preceding character can repeat | `a{2}` matches 'aa'<br>`a{2,5}` matches 'aa', 'aaa' and 'aaaa'<br>`a{2,}` matches 'a' repeated two or more times |
-| `|` | OR operator | `abc|xyz` matches 'abc' and 'xyz' |
+| `|` | OR operator. The match will succeed if the longest pattern on either the left side OR the right side matches | `abc|xyz` matches 'abc' and 'xyz' |
 | `(...)` | Forms a group. You can use a group to treat part of the expression as a single character | `abc(def)?` matches 'abc' and 'abcdef' but not 'abcd' |
 | `[...]` | Match one of the character in the brackets<br>Inside the brackets, `-` indicates a range unless `-` is the first character or escaped<br>A `^` before a character in the brackets negates the character or range  | `[abc]` matches 'a', 'b', 'c'<br>`[-abc]` matches '-', 'a', 'b', 'c'<br>`[^abc]` matches any character except 'a', 'b', or 'c' |
 
