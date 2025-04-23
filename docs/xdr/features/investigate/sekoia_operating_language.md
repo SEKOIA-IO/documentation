@@ -254,6 +254,37 @@ events
 
 ---
 
+### Nested query
+    
+**Description**
+
+Use the `in` operator to use the results of a previous query.
+
+``` shell
+let query = <table name> | select <column name>;
+
+<table name>
+| where <column name> in query
+
+```
+
+**Example**
+
+``` shell
+let chromium_browsers =  events
+| where timestamp > ago(30d)
+| where process.command_line contains " --type=renderer " and process.command_line contains " --extension-process "
+| distinct process.command_line;
+
+events
+| where process.command_line in chromium_browsers
+| aggregate count_agents=count_distinct(agent.id), executables=make_set(process.executable) by process.name
+| order by count_agents
+
+```
+
+---
+
 ### Sort results
     
 **Description**
@@ -622,6 +653,7 @@ Use the following operators to compare values.
 | Comparator | Description | Examples |
 | --- | --- | --- |
 | == | Equals | `1 == 1` |
+| =~ | Equals (case insensitive) | `'.exe' == '.EXE'` |
 | != | Not equals | `1 != 0` |
 | < | Less | `1 < 10` |
 | <= | Less or equals | `4 <= 5` |
@@ -635,6 +667,7 @@ Use the following operators to compare values.
 **Description**
 
 Use the `in` operator to filter the rows based on a set of case-sensitive strings.
+Use `in~` to filter on a set of case-insensitive strings.
 
 ``` shell
 <table name>
@@ -642,13 +675,24 @@ Use the `in` operator to filter the rows based on a set of case-sensitive string
 
 ```
 
-**Example**
+**Example 1**
 
 Find events where `client.ip` equals to theses values: 192.168.0.1, 192.168.0.2.
 
 ``` shell
 events
 | where client.ip in ['192.168.0.1', '192.168.0.2']
+| limit 100
+
+```
+
+**Example 2**
+
+Find events where `process.name` equals to theses values ignoring case-sensitivity: powershell.exe, powershell_ise.exe.
+
+``` shell
+events
+| where process.name in~ ['powershell.exe', 'powershell_ise.exe']
 | limit 100
 
 ```
@@ -660,6 +704,7 @@ events
 **Description**
 
 Use the `contains` operator to filter the rows that contains a case-sensitive string.
+Use `contains~` to switch to case-insensitive strings.
 
 ``` shell
 <table name>
@@ -667,13 +712,24 @@ Use the `contains` operator to filter the rows that contains a case-sensitive st
 
 ```
 
-**Example**
+**Example 1**
 
-Find events where `user.full_name` contains the string `Admin`.
+Find events where `user.full_name` contains the string `Admin` (case sensitive).
 
 ``` shell
 events
 | where user.full_name contains 'Admin'
+| limit 100
+
+```
+
+**Example 2**
+
+Find events where `user.full_name` contains the string `ADMIN` (case insensitive).
+
+``` shell
+events
+| where user.full_name contains~ 'ADMIN'
 | limit 100
 
 ```
@@ -685,6 +741,7 @@ events
 **Description**
 
 Use the `startswith` operator to filter rows that starts with a case-sensitive string.
+Use `startswith~` to switch to case-insensitive strings.
 
 ``` shell
 <table name>
@@ -692,13 +749,24 @@ Use the `startswith` operator to filter rows that starts with a case-sensitive s
 
 ```
 
-**Example**
+**Example 1**
 
 Find events where `url.domain` starts with the string `api.prod`.
 
 ``` shell
 events
 | where url.domain startswith 'api.prod'
+| limit 100
+
+```
+
+**Example 2**
+
+Find events where `process.command_line` starts with the string `Invoke` ignoring case-sensitivity.
+
+``` shell
+events
+| where process.command_line startswith~ 'Invoke'
 | limit 100
 
 ```
@@ -710,6 +778,7 @@ events
 **Description**
 
 Use the `endswith` operator to filter rows that ends with a case-sensitive string.
+Use `endswith~` to switch to case-insensitive strings.
 
 ``` shell
 <table name>
@@ -717,13 +786,121 @@ Use the `endswith` operator to filter rows that ends with a case-sensitive strin
 
 ```
 
-**Example**
+**Example 1**
 
 Find events where `url.path` ends with the string `/admin`.
 
 ``` shell
 events
 | where url.path endswith '/admin'
+| limit 100
+
+```
+
+**Example 2**
+
+Find events where `process.command_line` ends with the string `.DLl` ignoring case-sensitivity.
+
+``` shell
+events
+| where process.command_line endswith~ '.DLl'
+| limit 100
+
+```
+
+---
+
+### Not
+
+**Description**
+
+Use the `not` operator to negate any comparison.
+
+``` shell
+<table name>
+| where not <column name> <comparaison operator> <pattern>
+
+```
+
+**Example 1**
+
+Find events where `client.ip` does not equal to theses values: 192.168.0.1, 192.168.0.2.
+
+``` shell
+events
+| where not client.ip in ['192.168.0.1', '192.168.0.2']
+| limit 100
+
+```
+
+**Example 2**
+
+Find events where `user.full_name` does not contain the string `Admin` (case sensitive).
+
+``` shell
+events
+| where not user.full_name contains 'Admin'
+| limit 100
+
+```
+
+**Example 3**
+
+Find events where `process.command_line` does not start with the string `Invoke` ignoring case-sensitivity.
+
+``` shell
+events
+| where not process.command_line startswith~ 'Invoke'
+| limit 100
+
+```
+
+**Example 4**
+
+Find events where `process.command_line` does not end with the string `.DLl` ignoring case-sensitivity.
+
+``` shell
+events
+| where not process.command_line endswith~ '.DLl'
+| limit 100
+
+```
+
+---
+
+### Regex
+
+**Description**
+
+Use the `matches regex` operator to filter the rows based on a regex pattern.
+
+``` shell
+<table name>
+| where <column name> matches regex <pattern>
+
+```
+
+| Pattern | Description | Example |
+| --- | --- | --- |
+| `.` | Matches any character | `ab.` matches 'aba', 'abb', 'abz' |
+| `?` | Repeat the preceding character zero or one times | `abc?` matches 'ab' and 'abc' |
+| `+` | Repeat the preceding character one or more times | `ab+` matches 'ab', 'abb', 'abbb' |
+| `*` | Repeat the preceding character zero or more times | `ab*` matches 'a', 'ab', 'abb', 'abbb' |
+| `{}` | Minimum and maximum number of times the preceding character can repeat | `a{2}` matches 'aa'<br>`a{2,5}` matches 'aa', 'aaa' and 'aaaa'<br>`a{2,}` matches 'a' repeated two or more times |
+| `|` | OR operator. The match will succeed if the longest pattern on either the left side OR the right side matches | `abc|xyz` matches 'abc' and 'xyz' |
+| `(...)` | Forms a group. You can use a group to treat part of the expression as a single character | `abc(def)?` matches 'abc' and 'abcdef' but not 'abcd' |
+| `[...]` | Match one of the character in the brackets<br>Inside the brackets, `-` indicates a range unless `-` is the first character or escaped<br>A `^` before a character in the brackets negates the character or range  | `[abc]` matches 'a', 'b', 'c'<br>`[-abc]` matches '-', 'a', 'b', 'c'<br>`[^abc]` matches any character except 'a', 'b', or 'c' |
+
+!!! info
+    Some characters are reserved as operators: `.` `?` `+` `*` `|` `{` `}` `[` `]` `(` `)` `"` `\` .<br>Escape reserved operators with a preceding backslash `\` or surround them with double quotes `""`.<br>`\@` renders as a literal '@'.<br>`\\` renders as a literal '\'.<br>`"john@smith.com"` renders as 'john@smith.com'.
+
+**Example**
+
+Find events where `file.name` contains '.sh'.
+
+``` shell
+events
+| where file.name matches regex '\.sh'
 | limit 100
 
 ```
@@ -874,6 +1051,26 @@ Returns the year and month by a given date in the following format: `YYYY - Week
 
 ``` shell
 let time = week(now());
+
+```
+
+---
+
+### To scalar
+    
+**Description**
+
+Use the `toscalar` function to return a constant value of a statement.
+
+**Example**
+
+``` shell
+let total = toscalar(alerts | where created_at >= ago(7d) | count);
+
+alerts
+| where created_at >= ago(7d)
+| aggregate count() by detection_type
+| extend percentage = (count / total) * 100
 
 ```
 
