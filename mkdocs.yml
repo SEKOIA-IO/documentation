@@ -296,6 +296,7 @@ nav:
       - EfficientIP SOLIDServer DDI: integration/categories/network/efficientip_solidserver_ddi.md
       - Ekinops OneOS: integration/categories/network/ekinops_oneos.md
       - F5 BIG-IP: integration/categories/network/f5-big-ip.md
+      - F5 Distributed Cloud: integration/categories/network/f5-distributed-cloud.md
       - Forcepoint Secure Web Gateway: integration/categories/network/forcepoint_web_gateway.md
       - Google VPC Flow Logs: integration/categories/network/google_vpc_flow_logs.md
       - HAProxy: integration/categories/network/haproxy.md
