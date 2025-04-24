@@ -121,7 +121,7 @@ The following Sekoia.io built-in rules match the intake **Trellix EDR [ALPHA]**.
     
     Detects capture a network trace via netsh.exe trace functionality
     
-    - **Effort:** intermediate
+    - **Effort:** advanced
 
 ??? abstract "CertOC Loading Dll"
     

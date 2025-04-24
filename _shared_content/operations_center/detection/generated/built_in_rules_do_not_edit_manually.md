@@ -1,4 +1,4 @@
-Rules catalog includes **1006 built-in detection rules** ([_last update on 2025-04-22_](rules_changelog.md)).
+Rules catalog includes **1006 built-in detection rules** ([_last update on 2025-04-24_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Identity Information**
 
@@ -1846,6 +1846,10 @@ Rules catalog includes **1006 built-in detection rules** ([_last update on 2025-
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 24/04/2025 - minor - Adding similarity strategy.
+            
 **Command and Scripting Interpreter**
 
 ??? abstract "AWS CloudTrail EC2 Startup Script Changed"
@@ -5062,6 +5066,10 @@ Rules catalog includes **1006 built-in detection rules** ([_last update on 2025-
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 24/04/2025 - minor - Adding similarity strategy.
+            
 **Registry Run Keys / Startup Folder**
 
 ??? abstract "Malware Persistence Registry Key"
@@ -6812,6 +6820,10 @@ Rules catalog includes **1006 built-in detection rules** ([_last update on 2025-
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 24/04/2025 - minor - Adding similarity strategy.
+            
 **Process Injection**
 
 ??? abstract "Address Space Layout Randomization (ASLR) Alteration"
@@ -11454,8 +11466,12 @@ Rules catalog includes **1006 built-in detection rules** ([_last update on 2025-
     
     Detects capture a network trace via netsh.exe trace functionality
     
-    - **Effort:** intermediate
+    - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 24/04/2025 - minor - Adding similarity strategy and filters to reduce false positives and changing effort level.
+            
 ??? abstract "Network Sniffing"
     
     List of common tools used for network packages sniffing
@@ -12356,8 +12372,12 @@ Rules catalog includes **1006 built-in detection rules** ([_last update on 2025-
     
     Detects capture a network trace via netsh.exe trace functionality
     
-    - **Effort:** intermediate
+    - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 24/04/2025 - minor - Adding similarity strategy and filters to reduce false positives and changing effort level.
+            
 ??? abstract "Network Sniffing"
     
     List of common tools used for network packages sniffing

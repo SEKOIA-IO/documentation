@@ -181,7 +181,7 @@ The following Sekoia.io built-in rules match the intake **VMware ESXi**. This do
     
     Detects capture a network trace via netsh.exe trace functionality
     
-    - **Effort:** intermediate
+    - **Effort:** advanced
 
 ??? abstract "CertOC Loading Dll"
     
