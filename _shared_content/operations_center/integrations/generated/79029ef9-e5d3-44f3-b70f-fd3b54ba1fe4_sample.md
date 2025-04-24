@@ -28,6 +28,22 @@ In this section, you will find examples of raw logs as generated natively by the
 
 
 
+=== "auth2"
+
+    ```
+	id=firewall time="2025-04-22 16:05:17" fw="SN12345678912345" tz=+0200 startime="2025-04-22 16:05:17" src=1.2.3.4 user="admin" domain="" msg="SSH authentication success on the firewall" logtype="auth"
+    ```
+
+
+
+=== "auth3"
+
+    ```
+	id=firewall time="2025-04-23 12:03:28" fw="FWCLIENT" tz=+0200 startime="2025-04-23 12:03:28" src=192.168.1.1 user="admin" domain="" msg="SSH authentication success on the firewall" totp="no" logtype="auth"
+    ```
+
+
+
 === "auth_failed"
 
     ```
