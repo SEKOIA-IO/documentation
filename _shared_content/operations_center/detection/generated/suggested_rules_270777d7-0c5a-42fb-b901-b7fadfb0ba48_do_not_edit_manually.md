@@ -159,29 +159,11 @@ The following Sekoia.io built-in rules match the intake **Fortinet FortiProxy**.
     
     - **Effort:** master
 
-??? abstract "HTA Infection Chains"
-    
-    Detect the creation of a ZIP file and an HTA file as it is often used in infection chains. Furthermore it also detects the use of suspicious processes launched by explorer.exe combined with the creation of an HTA file, since it is also often used in infection chains (LNK - HTA for instance).
-    
-    - **Effort:** advanced
-
-??? abstract "HTML Smuggling Suspicious Usage"
-    
-    Based on several samples from different botnets, this rule aims at detecting HTML infection chain by looking for HTML created files followed by suspicious files being executed.
-    
-    - **Effort:** advanced
-
 ??? abstract "HackTools Suspicious Names"
     
     Quick-win rule to detect the default process names or file names of several HackTools.
     
     - **Effort:** advanced
-
-??? abstract "ISO LNK Infection Chain"
-    
-    Detection of an ISO (or any other similar archive file) downloaded file, followed by a child-process of explorer, which is characteristic of an infection using an ISO containing an LNK file. For events with `host.name`.
-    
-    - **Effort:** master
 
 ??? abstract "Koadic MSHTML Command"
     
@@ -338,9 +320,3 @@ The following Sekoia.io built-in rules match the intake **Fortinet FortiProxy**.
     Detects wceaux.dll creation while Windows Credentials Editor (WCE) is executed.
     
     - **Effort:** intermediate
-
-??? abstract "ZIP LNK Infection Chain"
-    
-    Detection of an ZIP download followed by a child-process of explorer, followed by multiple Windows processes.This is widely used as an infection chain mechanism.
-    
-    - **Effort:** advanced
