@@ -45,7 +45,13 @@ ExtraHop Reveal(x) 360 is a cloud-based network detection and response platform 
 ### Create your intake
 
 1. Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a new intake from the `ExtraHop Reveal(x) 360`.
-2. Set the intake account configuration using your REST API credentials created on the *How to create REST API credentials* step.
+2. Set the intake account configuration using your REST API credentials created on the *How to create REST API credentials* step:
+
+| Field         | Description                                                                                                                                                                                                             |
+|---------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| API base URL  | The hostname of the RevealX 360 API. This hostname is displayed in the RevealX 360 API Access page under API Endpoint. The hostname does not include the /oauth2/token. (e.g. `https://example.api.cloud.extrahop.com`) |
+| Client ID     | The ID of the REST API credentials.                                                                                                                                                                                     |
+| Client Secret | The secret of the REST API credentials.                                                                                                                                                                                 |
 
 ### Enjoy your events on the [Events page](https://app.sekoia.io/operations/events)
 
