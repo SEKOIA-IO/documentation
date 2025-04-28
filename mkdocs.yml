@@ -381,6 +381,7 @@ nav:
       - Zscaler Internet Access: integration/categories/network_security/zscaler_zia.md
   - List of Playbooks Actions:
     - Applicative:
+      - ElasticSearch: integration/action_library/elasticsearch.md
       - Mandrill: integration/action_library/mandrill.md
       - Mattermost: integration/action_library/mattermost.md
       - PagerDuty: integration/action_library/pagerduty.md
