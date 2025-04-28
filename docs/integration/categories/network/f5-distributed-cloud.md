@@ -6,6 +6,9 @@ type: intake
 
 F5 Distributed Cloud is a cloud-native platform that provides integrated solutions for application delivery, security, and multi-cloud networking. The platform combines capabilities like API security, DDoS protection, bot defense, load balancing, and global traffic management with centralized visibility and control.
 
+!!! Warning
+    Important note - This format is currently in beta. We highly value your feedback to improve its performance.
+
 - **Vendor**: F5
 - **Supported environment**: SaaS
 - **Detection based on**: Security Alerts, Telemetry
