@@ -38,6 +38,10 @@ F5 Distributed Cloud is a cloud-native platform that provides integrated solutio
 
 ## Step-by-Step Configuration Procedure
 
+### Instruction on Sekoia
+
+{!_shared_content/integration/intake_configuration.md!}
+
 ### Instructions on the 3rd Party Solution
 
 To configure F5 Distributed Cloud to send Security, Request, DNS or Audit logs, you need to follow these steps.
@@ -53,7 +57,7 @@ To configure F5 Distributed Cloud to send Security, Request, DNS or Audit logs, 
         - HTTP Uri: https://intake.sekoia.io/plain/batch
         - Authentication: `BASIC`
             - Username: `None`
-            - Password: YOUR_SEKOIA_KEY
+            - Password: YOUR_INTAKE_KEY
 4. Save your Global Log Receiver object.
 
 Please find more information on how to configure remote loging [here](https://docs.cloud.f5.com/docs-v2/multi-cloud-network-connect/how-tos/others/global-log-streaming?searchQuery=global%20log%20receiver).
@@ -61,10 +65,6 @@ Please find more information on how to configure remote loging [here](https://do
 #### Specifically send only certain types of logs
 
 You can create another Global Log Receiver object for each kind of log (Request, DNS and Audit)
-
-### Instruction on Sekoia
-
-{!_shared_content/integration/intake_configuration.md!}
 
 {!_shared_content/operations_center/integrations/generated/d1d24b7a-c6a7-482d-8334-affc0a11dedd_sample.md!}
 
