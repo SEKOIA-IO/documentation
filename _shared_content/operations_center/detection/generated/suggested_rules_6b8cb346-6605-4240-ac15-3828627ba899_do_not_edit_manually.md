@@ -3,6 +3,12 @@
 The following Sekoia.io built-in rules match the intake **WALLIX Bastion**. This documentation is updated automatically and is based solely on the fields used by the intake which are checked against our rules. This means that some rules will be listed but might not be relevant with the intake.
 
 [SEKOIA.IO x WALLIX Bastion on ATT&CK Navigator](https://mitre-attack.github.io/attack-navigator/#layerURL=https%3A%2F%2Fraw.githubusercontent.com%2FSEKOIA-IO%2Fdocumentation%2Fmain%2F_shared_content%2Foperations_center%2Fdetection%2Fgenerated%2Fattack_6b8cb346-6605-4240-ac15-3828627ba899_do_not_edit_manually.json){ .md-button }
+??? abstract "ACLight Discovering Privileged Accounts"
+    
+    Detects use of ACLight tool. This tool aims to discover privileged accounts by scanning the network.
+    
+    - **Effort:** advanced
+
 ??? abstract "AdFind Usage"
     
     Detects the usage of the AdFind tool. AdFind.exe is a free tool that extracts information from Active Directory.  Wizard Spider (Bazar, TrickBot, Ryuk), FIN6 and MAZE operators have used AdFind.exe to collect information about Active Directory organizational units and trust objects 
@@ -74,6 +80,12 @@ The following Sekoia.io built-in rules match the intake **WALLIX Bastion**. This
     Detects a successful login after many failed attempts by the same user.
     
     - **Effort:** master
+
+??? abstract "COM Hijack Via Sdclt"
+    
+    Detects changes to 'HKCU\Software\Classes\Folder\shell\open\command\DelegateExecute', to bypass UAC using 'sdclt.exe'.
+    
+    - **Effort:** intermediate
 
 ??? abstract "CertOC Loading Dll"
     
@@ -147,6 +159,12 @@ The following Sekoia.io built-in rules match the intake **WALLIX Bastion**. This
     
     - **Effort:** elementary
 
+??? abstract "Correlation Multi Service Disable"
+    
+    The rule detects a high number of services stopped or de-activated in a short period of time.
+    
+    - **Effort:** master
+
 ??? abstract "Cryptomining"
     
     Detection of domain names potentially related to cryptomining activities.
@@ -207,6 +225,12 @@ The following Sekoia.io built-in rules match the intake **WALLIX Bastion**. This
     
     - **Effort:** advanced
 
+??? abstract "Discovery Commands Correlation"
+    
+    Detects some frequent discovery commands used by some ransomware operators.
+    
+    - **Effort:** intermediate
+
 ??? abstract "Domain Trust Discovery Through LDAP"
     
     Detects attempts to gather information on domain trust relationships that may be used to identify lateral movement opportunities. "trustedDomain" which is detected here is a Microsoft Active Directory ObjectClass Type that represents a domain that is trusted by, or trusting, the local AD DOMAIN. Several tools are using LDAP queries in the end to get the information (DSQuery, sometimes ADFind as well, etc.)
@@ -254,6 +278,12 @@ The following Sekoia.io built-in rules match the intake **WALLIX Bastion**. This
     Detects suspicious FromBase64String expressions in command line arguments.
     
     - **Effort:** master
+
+??? abstract "HTML Smuggling Suspicious Usage"
+    
+    Based on several samples from different botnets, this rule aims at detecting HTML infection chain by looking for HTML created files followed by suspicious files being executed.
+    
+    - **Effort:** advanced
 
 ??? abstract "HackTools Suspicious Process Names In Command Line"
     
@@ -645,6 +675,12 @@ The following Sekoia.io built-in rules match the intake **WALLIX Bastion**. This
     
     - **Effort:** advanced
 
+??? abstract "Reconnaissance Commands Activities"
+    
+    Based on Cynet, Microsoft and Kaspersky analysis of Qakbot, this rule tries to detect some discovery TTPs.
+    
+    - **Effort:** intermediate
+
 ??? abstract "RedMimicry Winnti Playbook Registry Manipulation"
     
     Detects actions caused by the RedMimicry Winnti playbook. Logging for Registry events is needed in the Sysmon configuration (events 12 and 13).
@@ -822,6 +858,12 @@ The following Sekoia.io built-in rules match the intake **WALLIX Bastion**. This
 ??? abstract "Venom Multi-hop Proxy agent detection"
     
     Detects Venom Multi-hop Proxy agent.
+    
+    - **Effort:** intermediate
+
+??? abstract "WMI Fingerprint Commands"
+    
+    Detects attacker fingerprint activities based on the correlation of specific WMIC commands. This has been observed with Aurora malware.
     
     - **Effort:** intermediate
 
