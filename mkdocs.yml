@@ -338,6 +338,7 @@ nav:
       - Daspren Parad: integration/categories/network_security/daspren_parad.md
       - Digital Shadows SearchLight: integration/categories/network_security/digital_shadows.md
       - ExtraHop Reveal(x) 360: integration/categories/network_security/extrahop_revealx_360.md
+      - F5 Distributed Cloud: integration/categories/network_security/f5-distributed-cloud.md
       - Fastly Next-Gen WAF: integration/categories/network_security/fastly_waf.md
       - Forcepoint Secure Web Gateway: integration/categories/network_security/forcepoint_web_gateway.md
       - FortiProxy: integration/categories/network_security/fortiproxy.md
