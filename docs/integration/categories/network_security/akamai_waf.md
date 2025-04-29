@@ -8,7 +8,7 @@ Akamai Web Application Firewall (WAF) is a cloud-based security solution designe
  
 - **Vendor**: Akamai
 - **Supported environment**: SaaS
-- **Detection based on**: Alert, Telemetry
+- **Detection based on**: Alert
 - **Supported application or feature**: Web application firewall logs
 
 !!! warning
