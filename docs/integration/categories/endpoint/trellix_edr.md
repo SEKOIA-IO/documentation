@@ -3,8 +3,8 @@ name: Trellix EDR
 type: intake
 
 ## Overview
-- **Vendor**:
-- **Supported environment**:
+- **Vendor**: Trellix
+- **Supported environment**: SaaS
 - **Version compatibility**:
 - **Detection based on**:
 - **Supported application or feature**:
