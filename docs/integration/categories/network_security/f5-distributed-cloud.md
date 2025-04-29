@@ -11,8 +11,13 @@ F5 Distributed Cloud is a cloud-native platform that provides integrated solutio
 
 - **Vendor**: F5
 - **Supported environment**: SaaS
-- **Detection based on**: Security Alerts, Telemetry
-- **Supported application or feature**: Security, Request, DNS and Audit event logs
+- **Detection based on**: Alerts, Telemetry (API validation failures)
+- **Supported application or feature**: 
+    - WAF events
+    - Bot detections
+    - Malicious user detections
+    - Service policy violations
+    - API Validation failures
 
 ## High-Level Architecture Diagram
 
