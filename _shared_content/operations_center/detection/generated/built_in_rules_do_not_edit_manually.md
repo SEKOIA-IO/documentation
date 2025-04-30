@@ -1,4 +1,4 @@
-Rules catalog includes **1006 built-in detection rules** ([_last update on 2025-04-29_](rules_changelog.md)).
+Rules catalog includes **1012 built-in detection rules** ([_last update on 2025-04-30_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Identity Information**
 
@@ -205,6 +205,24 @@ Rules catalog includes **1006 built-in detection rules** ([_last update on 2025-
     
         - 28/04/2023 - minor - Support for standard ECS FW fields
             
+??? abstract "Varonis Data Security Intrusion Detection High Severity Alert"
+    
+    Varonis Data Security has raised a high severity alert for its intrusion detection engine.
+    
+    - **Effort:** master
+    
+??? abstract "Varonis Data Security Intrusion Detection Low Severity Alert"
+    
+    Varonis Data Security has raised a low severity alert for its intrusion detection engine.
+    
+    - **Effort:** master
+    
+??? abstract "Varonis Data Security Intrusion Detection Medium Severity Alert"
+    
+    Varonis Data Security has raised a medium severity alert for its intrusion detection engine.
+    
+    - **Effort:** master
+    
 ??? abstract "Veeam Backup & Replication Malware Detection"
     
     Veeam Backup & Replication has detected some malware related activity
@@ -666,15 +684,33 @@ Rules catalog includes **1006 built-in detection rules** ([_last update on 2025-
     
         - 07/08/2023 - major - Switching type from event_count to value_count | Adding Target in order to match only on different Apps
             
-??? abstract "Varonis Data Security Email Alert"
+??? abstract "Varonis Data Security Email High Severity Alert"
     
-    Varonis Data Security has raised an alert related to a supervised email account.
+    Varonis Data Security has raised a high severity alert related to a supervised email account.
     
     - **Effort:** master
     
-??? abstract "Varonis Data Security Network Alert"
+??? abstract "Varonis Data Security Email Medium Severity Alert"
     
-    Varonis Data Security has raised an alert related to a network rule
+    Varonis Data Security has raised a medium severity alert related to a supervised email account.
+    
+    - **Effort:** master
+    
+??? abstract "Varonis Data Security Network High Severity Alert"
+    
+    Varonis Data Security has raised a high severity  alert related to a network rule
+    
+    - **Effort:** master
+    
+??? abstract "Varonis Data Security Network Low Severity Alert"
+    
+    Varonis Data Security has raised a low severity alert related to a network rule
+    
+    - **Effort:** master
+    
+??? abstract "Varonis Data Security Network Medium Severity Alert"
+    
+    Varonis Data Security has raised a medium severity alert related to a network rule
     
     - **Effort:** master
     
