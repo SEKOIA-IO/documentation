@@ -41,7 +41,7 @@ Go to the [intake page](https://app.sekoia.io/operations/intakes), create a new 
 
 ### Pull events
 
-Go to the [playbook page](https://app.sekoia.io/operations/playbooks) and create a new playbook with the [Consume Eventhub messages](../../../../automate/library/microsoft-azure.md#consume-eventhub-messages). 
+Go to the [playbook page](https://app.sekoia.io/operations/playbooks) and create a new playbook with the `Consume Eventhub messages`. 
 
 Set up the trigger configuration with the EventHub's `Connection string-primary key`, the hub name, the consumer group, the storage's `Connection string-primary key` and the storage's container.
 
