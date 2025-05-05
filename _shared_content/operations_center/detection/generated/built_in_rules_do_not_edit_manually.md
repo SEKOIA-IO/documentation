@@ -9893,6 +9893,7 @@ Rules catalog includes **1012 built-in detection rules** ([_last update on 2025-
     
     - **Changelog:**
     
+        - 30/04/2025 - minor - Update pattern to reduce false positives and similarity strategy to raise less alerts.
         - 20/01/2025 - minor - Update pattern to ECS field only
             
 ??? abstract "ICacls Granting Access To All"
