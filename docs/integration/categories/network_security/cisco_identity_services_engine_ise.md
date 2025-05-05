@@ -10,7 +10,10 @@ Cisco Identity Services Engine (ISE) is an intelligent security policy enforceme
 - **Supported environment**: On Premise
 - **Version compatibility**: 3.1
 - **Detection based on**: Telemetry
-- **Supported application or feature**: Authentication, Network device configuration, Web logs
+- **Supported application or feature**:
+    - **AAA audit**
+    - **AAA diagnostics**
+    - **Profiler**
 
 ## High-Level Architecture Diagram
 
