@@ -28,12 +28,6 @@ This integration was tested against the following versions:
 
 - Palo Alto Cortex XDR (EDR) 3.8
 
-{!_shared_content/operations_center/detection/generated/suggested_rules_9b95c9cf-8b78-4830-a1ed-b9e88f05e67a_do_not_edit_manually.md!}
-
-{!_shared_content/operations_center/integrations/generated/9b95c9cf-8b78-4830-a1ed-b9e88f05e67a.md!}
-
-
-
 ## Create API Key
 
 Before using the **Cortex XDR** connector, you must generate an API key in Cortex XDR. For that you need to follow steps bellow :
