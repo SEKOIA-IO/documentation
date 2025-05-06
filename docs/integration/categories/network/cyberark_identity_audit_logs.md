@@ -91,7 +91,7 @@ type: intake
 25. Click on the user and go to the section `Application Settings`
 26. Click `Add`
 
-    ![step5c](/assets/operation_center/integration_catalog/cloud_and_saas/cyberark_audit/Step5l.png){: style="max-width:100%"}
+    ![step5c](/assets/operation_center/integration_catalog/cloud_and_saas/cyberark_audit/Step05l.png){: style="max-width:100%"}
    
 27. Select the Web application previous created
 
