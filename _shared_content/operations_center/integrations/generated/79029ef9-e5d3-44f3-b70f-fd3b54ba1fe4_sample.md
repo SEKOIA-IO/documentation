@@ -116,3 +116,27 @@ In this section, you will find examples of raw logs as generated natively by the
 
 
 
+=== "xvpn1"
+
+    ```
+	id=firewall time="2025-04-23 07:41:56" fw="FWCLIENT" tz=+0200 startime="2025-04-23 07:41:56" ipproto="TCP" user="user1" domain="client.com" src=1.2.3.4 msg="Error during authentication : authentication failed, bad password" logtype="xvpn"
+    ```
+
+
+
+=== "xvpn2"
+
+    ```
+	id=firewall time="2024-08-26 23:53:57" fw="IJM" tz=+0200 startime="2024-08-26 23:53:57" ipproto="UDP" user="johndoe" domain="example.com" src=1.2.3.4 remotenet=10.0.1.6 localnet=10.0.1.5 msg="User authenticated in ASQ" logtype="xvpn"
+    ```
+
+
+
+=== "xvpn3"
+
+    ```
+	id=firewall time="2024-08-26 23:53:57" fw="IJM" tz=+0200 startime="2024-08-26 23:53:57" ipproto="UDP" user="johndoe" domain="example.com" src=1.2.3.4 remotenet=10.0.1.6 localnet=10.0.1.5 port=59505 msg="SSL tunnel created" logtype="xvpn"
+    ```
+
+
+
