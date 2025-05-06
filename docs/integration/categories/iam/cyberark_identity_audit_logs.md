@@ -130,6 +130,6 @@ type: intake
 
 ## Further readings
 
-- https://docs.cyberark.com/audit/latest/en/content/audit/isp_siem-integration.htm
+- [Integrate Audit with third-party SIEM applications](https://docs.cyberark.com/audit/latest/en/content/audit/isp_siem-integration.htm)
 - [Add Service Users](https://docs.cyberark.com/identity-administration/latest/en/content/ispss/ispss-add-service-user.htm)
-- https://api-docs.cyberark.com/docs/ispss-api-auth/2c297daca8a97-api-token-authentication-for-cyber-ark-identity-security-platform-shared-services
+- [API token authentication for CyberArk Identity Security Platform Shared Services](https://api-docs.cyberark.com/docs/ispss-api-auth/2c297daca8a97-api-token-authentication-for-cyber-ark-identity-security-platform-shared-services)
