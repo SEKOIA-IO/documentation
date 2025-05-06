@@ -266,6 +266,7 @@ nav:
       - Tenable Identity Exposure / Alsid: integration/categories/iam/alsid.md
       - Azure Key Vault: integration/categories/iam/azure_key_vault.md
       - Cisco Duo Security: integration/categories/iam/cisco_duo_security.md
+      - CyberArk Identity Audit Logs: integration/categories/iam/cyberark_identity_audit_logs.md
       - FreeRADIUS: integration/categories/iam/freeradius.md
       - Jumpcloud Directory Insights: integration/categories/iam/jumpcloud_directory_insights.md
       - ManageEngine ADAudit Plus: integration/categories/iam/manageengine_adauditplus.md
@@ -293,7 +294,6 @@ nav:
       - Cloudflare Gateway HTTP: integration/categories/network/cloudflare-gateway-http.md
       - Cloudflare Gateway Network: integration/categories/network/cloudflare-gateway-network.md
       - Cloudflare HTTP requests: integration/categories/network/cloudflare-http-requests.md
-      - CyberArk Identity Audit Logs: integration/categories/network/cyberark_identity_audit_logs.md
       - EfficientIP SOLIDServer DDI: integration/categories/network/efficientip_solidserver_ddi.md
       - Ekinops OneOS: integration/categories/network/ekinops_oneos.md
       - F5 BIG-IP: integration/categories/network/f5-big-ip.md
