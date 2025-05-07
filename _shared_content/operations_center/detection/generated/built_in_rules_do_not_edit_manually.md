@@ -1,4 +1,4 @@
-Rules catalog includes **1012 built-in detection rules** ([_last update on 2025-04-30_](rules_changelog.md)).
+Rules catalog includes **1014 built-in detection rules** ([_last update on 2025-05-07_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Identity Information**
 
@@ -10769,6 +10769,18 @@ Rules catalog includes **1012 built-in detection rules** ([_last update on 2025-
     An attacker can disable SELinux to make workstation or server compromise easier as it disables several protections.
     
     - **Effort:** intermediate
+    
+??? abstract "Sekoia.io Endpoint Agent Inactivity"
+    
+    Detects multiple hostnames with inactived Sekoia.io Endpoint Agent for at least one hour.
+    
+    - **Effort:** master
+    
+??? abstract "Sekoia.io Endpoint Agent Uninstalled"
+    
+    Detects when the Sekoia.io Endpoint Agent is uninstalled. This could be an attacker impairing the defenses.
+    
+    - **Effort:** advanced
     
 ??? abstract "Suspect Svchost Memory Access"
     
