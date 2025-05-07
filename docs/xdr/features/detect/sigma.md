@@ -387,6 +387,9 @@ If not specifed, the days of the year are `UTC` based.
 Use the `ISO 3166` country code to specify the corresponding country public holidays:
 [https://en.wikipedia.org/wiki/List_of_ISO_3166_country_codes](https://en.wikipedia.org/wiki/List_of_ISO_3166_country_codes)
 
+The list of available countries is available [here](https://holidays.readthedocs.io/en/latest/#available-countries).
+You can explore the full list of available countries for holiday data in the holidays [library documentation](https://holidays.readthedocs.io/en/latest/#available-countries).
+
 Example: Detect during France and United States public holidays
 
 ```yaml
