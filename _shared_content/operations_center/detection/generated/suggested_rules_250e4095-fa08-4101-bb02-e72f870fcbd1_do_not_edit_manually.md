@@ -2253,6 +2253,12 @@ The following Sekoia.io built-in rules match the intake **Sekoia.io Endpoint Age
     
     - **Effort:** master
 
+??? abstract "Sekoia.io Endpoint Agent Uninstalled"
+    
+    Detects when the Sekoia.io Endpoint Agent is uninstalled. This could be an attacker impairing the defenses.
+    
+    - **Effort:** advanced
+
 ??? abstract "Shadow Copies"
     
     Detects command line used to create and list shadow copies. An adversary may attempt to get information on shadow volumes to perform deletion or extract password hashes from the ntds.dit file. This rule requires command line logging or Windows PowerShell events (4104).

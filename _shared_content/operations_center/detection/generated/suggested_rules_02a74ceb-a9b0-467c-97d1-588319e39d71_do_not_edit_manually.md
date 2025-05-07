@@ -99,11 +99,35 @@ The following Sekoia.io built-in rules match the intake **Citrix NetScaler / ADC
     
     - **Effort:** intermediate
 
+??? abstract "CVE-2018-13379 Fortinet Exploit"
+    
+    Detects the successful exploitation of the Fortinet FortiOS CVE-2018-13379. This CVE is one of the most exploited CVEs since 2018. It is exploited by APT threat actors as well as cybercriminals. The exploitation of this CVE lead an unauthenticated user to get full access to FortiOS system file through SSL VPN via specially crafted HTTP resource requests. The exploit read /dev/cmdb/sslvpn_websession file, that contains login and passwords in (clear/text). An HTTP response status code = 200, means the file was successfully accessed. This vulnerability affects FortiOS 5.6.3 to 5.6.7 and FortiOS 6.0.0 to 6.0.4.
+    
+    - **Effort:** advanced
+
 ??? abstract "CVE-2019-0604 SharePoint"
     
     Detects the exploitation of the SharePoint vulnerability (CVE-2019-0604).
     
     - **Effort:** advanced
+
+??? abstract "CVE-2019-11510 Pulse Secure Exploit"
+    
+    Detects the successful exploitation of the Pulse Secure vulnerability CVE-2019-11510. This CVE is one of the most exploited CVEs since 2019. It is exploited by diverse threat actors, leading sometimes in ransomware deployement among these groups: Maze, Conti, Egregor, DoppelPaymer, NetWalker and REvil. But also APT actors such as APT29. The exploitation of this CVE allows a remote, unauthenticated attacker to compromise a vulnerable VPN server. The attacker may be able to gain access to all active users and their plain-text credentials. It may also be possible for the attacker to execute arbitrary commands on each VPN client as it successfully connects to the VPN server. The exploit reads /etc/passwd file to get access to login and passwords in (clear/text). An HTTP response status code = 200, means the file was successfully accessed. This vulnerability affects 8.1R15.1, 8.2 before 8.2R12.1, 8.3 before 8.3R7.1, and 9.0 before 9.0R3.4 products.
+    
+    - **Effort:** elementary
+
+??? abstract "CVE-2019-19781 Citrix NetScaler (ADC)"
+    
+    Detects CVE-2019-19781 exploitation attempt against Citrix NetScaler (ADC), Application Delivery Controller and Citrix Gateway Attack.
+    
+    - **Effort:** elementary
+
+??? abstract "CVE-2019-2725 Oracle Weblogic Exploit"
+    
+    Detects the successful exploitation of a deserialization vulnerability in Oracle Weblogic Server, CVE-2019-2725. This vulnerability affects versions 10.X and 12.1.3 of WebLogic that have the components wls9_async_response.war and wls-wsat.war enabled. It is a remote code execution which can be exploited without authentication via HTTP. An HTTP response status code = 202, means the target is vulnerable, the analyst then has to look in depth to check if a webshell has been uploaded or something else has been done.
+    
+    - **Effort:** elementary
 
 ??? abstract "CVE-2020-0688 Microsoft Exchange Server Exploit"
     
@@ -128,6 +152,12 @@ The following Sekoia.io built-in rules match the intake **Citrix NetScaler / ADC
     Detects the exploitation of the Apache Struts RCE vulnerability (CVE-2020-17530).
     
     - **Effort:** intermediate
+
+??? abstract "CVE-2020-5902 F5 BIG-IP Exploitation Attempts"
+    
+    Detects the exploitation attempt of the vulnerability found in F5 BIG-IP and described in CVE-2020-5902.
+    
+    - **Effort:** elementary
 
 ??? abstract "CVE-2021-20021 SonicWall Unauthenticated Administrator Access"
     
@@ -170,6 +200,24 @@ The following Sekoia.io built-in rules match the intake **Citrix NetScaler / ADC
     Detects the exploitation of ProyxLogon vulerability on Exchange servers.
     
     - **Effort:** advanced
+
+??? abstract "CVE-2021-34473 ProxyShell Attempt"
+    
+    Detects CVE-2021-34473 ProxyShell attempt against Microsoft Exchange Server, Remote Code Execution Vulnerability.
+    
+    - **Effort:** advanced
+
+??? abstract "CVE-2021-41773 Apache 2.4.49 Path Traversal"
+    
+    Detects successful exploitation of the Apache Path Traversal CVE-2021-41773.
+    
+    - **Effort:** advanced
+
+??? abstract "CVE-2021-43798 Grafana Directory Traversal"
+    
+    Grafana version 8.x has a 0day arbitrary file read (with no fix yet) based on a directory traversal vulnerability
+    
+    - **Effort:** intermediate
 
 ??? abstract "CertOC Loading Dll"
     
@@ -405,6 +453,12 @@ The following Sekoia.io built-in rules match the intake **Citrix NetScaler / ADC
     
     - **Effort:** master
 
+??? abstract "GitLab CVE-2021-22205"
+    
+    Detects GitLab vulnerability CVE-2021-22205 exploitation success. It allows an attacker to do some remote code execution with user git. The HTTP return code 422 indicates a successfull exploitation.
+    
+    - **Effort:** intermediate
+
 ??? abstract "HackTools Suspicious Process Names In Command Line"
     
     Detects the default process name of several HackTools and also check in command line. This rule is here for quickwins as it obviously has many blind spots.
@@ -482,6 +536,12 @@ The following Sekoia.io built-in rules match the intake **Citrix NetScaler / ADC
     Detects creation or execution of UserInitMprLogonScript persistence method. The rule requires to log for process command lines and registry creations or update, which can be done using Sysmon Event IDs 1, 12, 13 and 14.
     
     - **Effort:** advanced
+
+??? abstract "LokiBot Default C2 URL"
+    
+    Detects default C2 URL for trojan LokiBot
+    
+    - **Effort:** elementary
 
 ??? abstract "Malicious Browser Extensions"
     
@@ -908,6 +968,12 @@ The following Sekoia.io built-in rules match the intake **Citrix NetScaler / ADC
     Detects observables in Sekoia.io CTI tagged as EICAR, which are fake samples meant to test detection.
     
     - **Effort:** master
+
+??? abstract "SharePoint Authenticated SSRF"
+    
+    Detects succesful SSRF from an authenticated SharePoint user.
+    
+    - **Effort:** elementary
 
 ??? abstract "Socat Relaying Socket"
     
