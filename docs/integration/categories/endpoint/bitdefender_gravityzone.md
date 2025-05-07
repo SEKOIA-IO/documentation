@@ -102,8 +102,10 @@ So you can setup it in two ways:
       BITDEFENDER_PUSH_URL = "https://cloudgz.gravityzone.bitdefender.com/api/v1.0/jsonrpc/push"
       
       def activate_forwarding(apikey: str, intake_key: str):
-          key = base64.b64encode(b':'+intake_key.encode('utf-8'))
+          # Convert the API key to base64 for the Basic Authorization header
+          key = base64.b64encode(b':'+intake_key.encode('utf-8')).decode('utf-8')
       
+          # Prepare the payload
           payload = {
             "id": "be630db8-24c2-481c-b150-a79807dd6f7d",
             "jsonrpc": "2.0",
@@ -149,12 +151,15 @@ So you can setup it in two ways:
             }
           }
       
+          # Create the push setting against the Bitdefender API
           response = requests.post(
               url=BITDEFENDER_PUSH_URL,
               auth=requests.auth.HTTPBasicAuth(apikey,""),
               json=payload,
           )
-          if response.status_code == 200:
+
+          # Check the result of the creation
+          if response.status_code == 200 and response.json().get("result") == True:
               setting_id = response.json().get("id")
               print(f"The push setting was successfully created. ID: {setting_id}")
           else:
