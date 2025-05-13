@@ -6,7 +6,7 @@ type: playbook
 
 ![SentinelOne](/assets/playbooks/library/sentinelone.png){ align=right width=150 }
 
-This module interacts with the SentinelOne
+SentinelOne is a cybersecurity company that provides autonomous endpoint protection through AI-powered threat detection and response. Its platform offers real-time prevention, detection, and remediation of cyber threats across networks.
 
 ## Configuration
 
@@ -194,6 +194,7 @@ Update a threat incident in SentinelOne
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
 | `status` | `string` | Status applied to the incident |
+| `new_analyst_verdict` | `string` | New verdict of the analyst to set |
 | `filters` | `object` | Filters to select the threats to update |
 
 
@@ -206,4 +207,4 @@ Update a threat incident in SentinelOne
 
 ## Extra
 
-Module **`SentinelOne` v1.20.1**
+Module **`SentinelOne` v1.20.5**
