@@ -135,6 +135,12 @@ The following Sekoia.io built-in rules match the intake **ESET Protect**. This d
     
     - **Effort:** master
 
+??? abstract "Enable Root Account With Dsenableroot"
+    
+    Detects when root is enabled. Attackers can use this as a mean of persistence since root is disabled by default.
+    
+    - **Effort:** elementary
+
 ??? abstract "Exchange Server Spawning Suspicious Processes"
     
     Look for Microsoft Exchange Server’s Unified Messaging service spawning suspicious sub-processes, suggesting exploitation of CVE-2021-26857 vulnerability.

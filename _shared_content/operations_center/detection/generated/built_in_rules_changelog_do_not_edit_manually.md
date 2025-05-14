@@ -1,7 +1,13 @@
-Changelog _last update on 2025-05-12_
+Changelog _last update on 2025-05-13_
 
 ## Changelog
 
+### Microsoft Defender Antivirus Exclusion Configuration
+  - 09/05/2025 - minor - Adding similarity to regroup alerts.
+    
+### Protected Storage Service Access
+  - 09/05/2025 - minor - Adding similarity to regroup alerts.
+    
 ### Capture a network trace with netsh.exe
   - 24/04/2025 - minor - Adding similarity strategy and filters to reduce false positives and changing effort level.
     
@@ -642,12 +648,6 @@ Changelog _last update on 2025-05-12_
   - 26/03/2024 - major - Rule's pattern field changed
     
 ### Privileged AD Builtin Group Modified
-  - 26/03/2024 - major - Rule's pattern field changed
-    
-### Microsoft Defender Antivirus Exclusion Configuration
-  - 26/03/2024 - major - Rule's pattern field changed
-    
-### Protected Storage Service Access
   - 26/03/2024 - major - Rule's pattern field changed
     
 ### Process Herpaderping

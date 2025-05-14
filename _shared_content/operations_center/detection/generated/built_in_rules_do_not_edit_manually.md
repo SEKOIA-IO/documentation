@@ -1,4 +1,4 @@
-Rules catalog includes **1014 built-in detection rules** ([_last update on 2025-05-12_](rules_changelog.md)).
+Rules catalog includes **1016 built-in detection rules** ([_last update on 2025-05-13_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Identity Information**
 
@@ -832,6 +832,12 @@ Rules catalog includes **1014 built-in detection rules** ([_last update on 2025-
         - 19/10/2023 - minor - Minor change in selection to reduce false positives.
         - 26/03/2024 - major - Rule's pattern field changed
             
+??? abstract "Enable Root Account With Dsenableroot"
+    
+    Detects when root is enabled. Attackers can use this as a mean of persistence since root is disabled by default.
+    
+    - **Effort:** elementary
+    
 ??? abstract "Failed Logon Followed By A Success From Public IP Addresses"
     
     A login from a public IP can indicate a misconfigured firewall or network boundary. The detection look for 5 or more failed attemps followed by a successfull one. The sekoia.tags are used to filter internal Ipv4 addresses.
@@ -5203,6 +5209,12 @@ Rules catalog includes **1014 built-in detection rules** ([_last update on 2025-
         - 19/10/2023 - minor - Minor change in selection to reduce false positives.
         - 26/03/2024 - major - Rule's pattern field changed
             
+??? abstract "Enable Root Account With Dsenableroot"
+    
+    Detects when root is enabled. Attackers can use this as a mean of persistence since root is disabled by default.
+    
+    - **Effort:** elementary
+    
 ??? abstract "Failed Logon Followed By A Success From Public IP Addresses"
     
     A login from a public IP can indicate a misconfigured firewall or network boundary. The detection look for 5 or more failed attemps followed by a successfull one. The sekoia.tags are used to filter internal Ipv4 addresses.
@@ -7189,6 +7201,12 @@ Rules catalog includes **1014 built-in detection rules** ([_last update on 2025-
         - 19/10/2023 - minor - Minor change in selection to reduce false positives.
         - 26/03/2024 - major - Rule's pattern field changed
             
+??? abstract "Enable Root Account With Dsenableroot"
+    
+    Detects when root is enabled. Attackers can use this as a mean of persistence since root is disabled by default.
+    
+    - **Effort:** elementary
+    
 ??? abstract "Failed Logon Followed By A Success From Public IP Addresses"
     
     A login from a public IP can indicate a misconfigured firewall or network boundary. The detection look for 5 or more failed attemps followed by a successfull one. The sekoia.tags are used to filter internal Ipv4 addresses.
@@ -9077,6 +9095,12 @@ Rules catalog includes **1014 built-in detection rules** ([_last update on 2025-
         - 19/10/2023 - minor - Minor change in selection to reduce false positives.
         - 26/03/2024 - major - Rule's pattern field changed
             
+??? abstract "Enable Root Account With Dsenableroot"
+    
+    Detects when root is enabled. Attackers can use this as a mean of persistence since root is disabled by default.
+    
+    - **Effort:** elementary
+    
 ??? abstract "Failed Logon Followed By A Success From Public IP Addresses"
     
     A login from a public IP can indicate a misconfigured firewall or network boundary. The detection look for 5 or more failed attemps followed by a successfull one. The sekoia.tags are used to filter internal Ipv4 addresses.
@@ -10361,6 +10385,12 @@ Rules catalog includes **1014 built-in detection rules** ([_last update on 2025-
     
         - 14/03/2025 - minor - Excluded some commonly observed false positives.
             
+??? abstract "Agent Stopped"
+    
+    Detects when the agent is stopped. Could be an attacker impairing defenses to evade detection.
+    
+    - **Effort:** advanced
+    
 ??? abstract "Attempt to Disable Gatekeeper Execution Control"
     
     Detects attempts to disable Gatekeeper through the command line. Gatekeeper is a macOS feature designed to ensure that only trusted, signed software can be executed.
@@ -10559,6 +10589,7 @@ Rules catalog includes **1014 built-in detection rules** ([_last update on 2025-
     
         - 07/08/2023 - major - Considering the amount of false positives the rule effort has been changed to master. Furthermore a filter has been added.
         - 26/03/2024 - major - Rule's pattern field changed
+        - 09/05/2025 - minor - Adding similarity to regroup alerts.
             
 ??? abstract "Microsoft Defender Antivirus Restoration Abuse"
     
@@ -12995,6 +13026,7 @@ Rules catalog includes **1014 built-in detection rules** ([_last update on 2025-
     - **Changelog:**
     
         - 26/03/2024 - major - Rule's pattern field changed
+        - 09/05/2025 - minor - Adding similarity to regroup alerts.
             
 ??? abstract "RDP Login From Localhost"
     

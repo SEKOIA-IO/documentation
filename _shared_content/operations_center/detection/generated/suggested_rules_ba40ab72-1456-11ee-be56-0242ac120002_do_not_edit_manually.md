@@ -75,6 +75,12 @@ The following Sekoia.io built-in rules match the intake **Trellix EPO [ALPHA]**.
     
     - **Effort:** master
 
+??? abstract "Enable Root Account With Dsenableroot"
+    
+    Detects when root is enabled. Attackers can use this as a mean of persistence since root is disabled by default.
+    
+    - **Effort:** elementary
+
 ??? abstract "Exfiltration And Tunneling Tools Execution"
     
     Execution of well known tools for data exfiltration and tunneling
