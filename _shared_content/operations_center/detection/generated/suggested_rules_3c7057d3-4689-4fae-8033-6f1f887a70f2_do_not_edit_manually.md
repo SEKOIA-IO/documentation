@@ -759,6 +759,12 @@ The following Sekoia.io built-in rules match the intake **HarfangLab EDR**. This
     
     - **Effort:** master
 
+??? abstract "Dumpert LSASS Process Dumper"
+    
+    Detects the use of Dumpert process dumper, which dumps the lsass.exe process memory
+    
+    - **Effort:** elementary
+
 ??? abstract "Dynamic DNS Contacted"
     
     Detect communication with dynamic dns domain. This kind of domain is often used by attackers. This rule can trigger false positive in non-controlled environment because dynamic dns is not always malicious.
@@ -1242,6 +1248,12 @@ The following Sekoia.io built-in rules match the intake **HarfangLab EDR**. This
 ??? abstract "Listing Systemd Environment"
     
     Detects a listing of systemd environment variables. This command could be used to do reconnaissance on a compromised host.
+    
+    - **Effort:** advanced
+
+??? abstract "Load Of dbghelp/dbgcore DLL From Suspicious Process"
+    
+    Detects the load of dbghelp/dbgcore DLL (used to make memory dumps) by suspicious processes. Many tools import dbghelp.dll and / or dbgcore.dll to use the MiniDumpWriteDump function. As an example, SilentTrynity C2 Framework has a module that leverages this API to dump the contents of Lsass.exe and transfer it over the network back to the attacker's machine. Dumpert from OUTFLANK also uses this.
     
     - **Effort:** advanced
 
@@ -2703,6 +2715,12 @@ The following Sekoia.io built-in rules match the intake **HarfangLab EDR**. This
     
     - **Effort:** master
 
+??? abstract "Tactical RMM Installation"
+    
+    Detection of common Tactical RMM installation arguments that could be abused by some attackers.
+    
+    - **Effort:** elementary
+
 ??? abstract "Taskhost Wrong Parent"
     
     Detects if the Taskhost process was executed by a non-legitimate parent process. Taskhost is the process of the Windows Task Manager which lists the processes that are currently running on the computer system.
@@ -2826,6 +2844,12 @@ The following Sekoia.io built-in rules match the intake **HarfangLab EDR**. This
 ??? abstract "WMI Install Of Binary"
     
     Detection of WMI used to install a binary on the host. It is often used by attackers as a signed binary to infect an host.
+    
+    - **Effort:** elementary
+
+??? abstract "WMI Persistence Command Line Event Consumer"
+    
+    Detects WMI command line event consumers.
     
     - **Effort:** elementary
 

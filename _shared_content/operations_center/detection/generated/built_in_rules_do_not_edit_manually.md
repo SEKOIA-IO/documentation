@@ -1,4 +1,4 @@
-Rules catalog includes **1016 built-in detection rules** ([_last update on 2025-05-13_](rules_changelog.md)).
+Rules catalog includes **1017 built-in detection rules** ([_last update on 2025-05-14_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Identity Information**
 
@@ -1728,6 +1728,12 @@ Rules catalog includes **1016 built-in detection rules** ([_last update on 2025-
     Detects mshta executed by wmiprvse as parent. It has been used by TA505 with some malicious documents.
     
     - **Effort:** intermediate
+    
+??? abstract "Tactical RMM Installation"
+    
+    Detection of common Tactical RMM installation arguments that could be abused by some attackers.
+    
+    - **Effort:** elementary
     
 ??? abstract "WMI DLL Loaded Via Office"
     

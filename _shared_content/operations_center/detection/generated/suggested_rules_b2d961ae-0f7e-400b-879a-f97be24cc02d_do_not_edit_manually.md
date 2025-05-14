@@ -1533,6 +1533,12 @@ The following Sekoia.io built-in rules match the intake **Trend Micro Cloud One 
     
     - **Effort:** master
 
+??? abstract "Tactical RMM Installation"
+    
+    Detection of common Tactical RMM installation arguments that could be abused by some attackers.
+    
+    - **Effort:** elementary
+
 ??? abstract "Trend Micro Cloud One High Intrusion"
     
     Detects when Trend Micro EDR raised an alert for an intrusion with a high severity level.
