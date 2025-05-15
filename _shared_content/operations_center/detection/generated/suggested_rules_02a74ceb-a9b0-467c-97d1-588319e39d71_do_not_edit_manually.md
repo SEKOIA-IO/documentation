@@ -1113,6 +1113,12 @@ The following Sekoia.io built-in rules match the intake **Citrix NetScaler / ADC
     
     - **Effort:** master
 
+??? abstract "Tactical RMM Installation"
+    
+    Detection of common Tactical RMM installation arguments that could be abused by some attackers.
+    
+    - **Effort:** elementary
+
 ??? abstract "TrevorC2 HTTP Communication"
     
     Detects TrevorC2 HTTP communication based on the HTTP request URI and the user-agent. 

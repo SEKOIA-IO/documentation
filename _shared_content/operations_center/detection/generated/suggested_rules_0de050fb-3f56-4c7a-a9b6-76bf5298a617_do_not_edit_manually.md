@@ -1611,6 +1611,12 @@ The following Sekoia.io built-in rules match the intake **Cybereason EDR activit
     
     - **Effort:** master
 
+??? abstract "Tactical RMM Installation"
+    
+    Detection of common Tactical RMM installation arguments that could be abused by some attackers.
+    
+    - **Effort:** elementary
+
 ??? abstract "UAC Bypass Via Sdclt"
     
     Detects changes to HKCU\Software\Classes\exefile\shell\runas\command\isolatedCommand by an attacker in order to bypass User Account Control (UAC)

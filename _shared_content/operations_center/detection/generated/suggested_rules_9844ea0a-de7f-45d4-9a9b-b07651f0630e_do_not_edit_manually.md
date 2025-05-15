@@ -1185,6 +1185,12 @@ The following Sekoia.io built-in rules match the intake **Trend Micro Vision One
     
     - **Effort:** master
 
+??? abstract "Tactical RMM Installation"
+    
+    Detection of common Tactical RMM installation arguments that could be abused by some attackers.
+    
+    - **Effort:** elementary
+
 ??? abstract "Trend Micro Vision One Workbench Critical Severity Alert"
     
     Detects when a critical alert severity is raised by Trend Micro Vision One Workbench.

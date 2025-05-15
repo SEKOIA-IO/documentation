@@ -1725,6 +1725,12 @@ The following Sekoia.io built-in rules match the intake **Trend Micro Apex One /
     
     - **Effort:** master
 
+??? abstract "Tactical RMM Installation"
+    
+    Detection of common Tactical RMM installation arguments that could be abused by some attackers.
+    
+    - **Effort:** elementary
+
 ??? abstract "Telegram Bot API Request"
     
     Detects suspicious DNS queries to api.telegram.org used by Telegram Bots of any kind

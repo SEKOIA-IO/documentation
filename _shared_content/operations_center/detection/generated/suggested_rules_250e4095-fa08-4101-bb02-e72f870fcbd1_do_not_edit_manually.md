@@ -879,6 +879,12 @@ The following Sekoia.io built-in rules match the intake **Sekoia.io Endpoint Age
     
     - **Effort:** master
 
+??? abstract "File and Directory Permissions Modification"
+    
+    Detects the use of chmod to give high level permissions to file that might be binary files. The prerequisites are to enable monitoring of the fchmodat, chmod and fchmod syscalls using Auditbeat.
+    
+    - **Effort:** advanced
+
 ??? abstract "FlowCloud Malware"
     
     Detects FlowCloud malware from threat group TA410. This requires Windows Event registry logging.
@@ -2265,6 +2271,12 @@ The following Sekoia.io built-in rules match the intake **Sekoia.io Endpoint Age
     
     - **Effort:** advanced
 
+??? abstract "Setuid Or Setgid Usage"
+    
+    Detects the usage of a setuid or a setgid. The prerequisites are to enable monitoring of the setuid and setgid syscalls using Auditbeat.
+    
+    - **Effort:** intermediate
+
 ??? abstract "Shadow Copies"
     
     Detects command line used to create and list shadow copies. An adversary may attempt to get information on shadow volumes to perform deletion or extract password hashes from the ntds.dit file. This rule requires command line logging or Windows PowerShell events (4104).
@@ -2744,6 +2756,12 @@ The following Sekoia.io built-in rules match the intake **Sekoia.io Endpoint Age
     Detects the installation of the TUN or TAP driver service, this activity could be related to data exfiltration using tunneling techniques. The TUN/TAP Windows Adapter is a network driver that enables some VPN providers to facilitate a VPN connection to their server. TUN/TAP driver is only used by specific VPNs (e.g. OpenVPN, Wireguard), not by thoses based on IKE protocols (e.g. IPsec).
     
     - **Effort:** intermediate
+
+??? abstract "Tactical RMM Installation"
+    
+    Detection of common Tactical RMM installation arguments that could be abused by some attackers.
+    
+    - **Effort:** elementary
 
 ??? abstract "Taskhost Wrong Parent"
     
