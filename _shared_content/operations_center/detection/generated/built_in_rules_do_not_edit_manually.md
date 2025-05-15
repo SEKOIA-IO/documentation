@@ -1,4 +1,4 @@
-Rules catalog includes **1017 built-in detection rules** ([_last update on 2025-05-14_](rules_changelog.md)).
+Rules catalog includes **1017 built-in detection rules** ([_last update on 2025-05-15_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Identity Information**
 
@@ -708,6 +708,10 @@ Rules catalog includes **1017 built-in detection rules** ([_last update on 2025-
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 14/05/2025 - major - Fix pattern where severity level was missing
+            
 ??? abstract "Varonis Data Security Network Medium Severity Alert"
     
     Varonis Data Security has raised a medium severity alert related to a network rule
@@ -10391,12 +10395,6 @@ Rules catalog includes **1017 built-in detection rules** ([_last update on 2025-
     
         - 14/03/2025 - minor - Excluded some commonly observed false positives.
             
-??? abstract "Agent Stopped"
-    
-    Detects when the agent is stopped. Could be an attacker impairing defenses to evade detection.
-    
-    - **Effort:** advanced
-    
 ??? abstract "Attempt to Disable Gatekeeper Execution Control"
     
     Detects attempts to disable Gatekeeper through the command line. Gatekeeper is a macOS feature designed to ensure that only trusted, signed software can be executed.
@@ -10814,6 +10812,16 @@ Rules catalog includes **1017 built-in detection rules** ([_last update on 2025-
     
     - **Effort:** master
     
+??? abstract "Sekoia.io Endpoint Agent Stopped"
+    
+    Detects when the Sekoia.io Endpoint Agent is stopped. This could be an attacker impairing defenses to evade detection.
+    
+    - **Effort:** advanced
+    
+    - **Changelog:**
+    
+        - 15/05/2025 - minor - Changing name and adding dialect to be more precise.
+            
 ??? abstract "Sekoia.io Endpoint Agent Uninstalled"
     
     Detects when the Sekoia.io Endpoint Agent is uninstalled. This could be an attacker impairing the defenses.
