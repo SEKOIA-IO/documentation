@@ -1,9 +1,9 @@
-Changelog _last update on 2025-05-15_
+Changelog _last update on 2025-05-16_
 
 ## Changelog
 
 ### Sekoia.io Endpoint Agent Stopped
-  - 15/05/2025 - minor - Changing name and adding dialect to be more precise.
+  - 16/05/2025 - minor - Changing effort level.
     
 ### Varonis Data Security Network Low Severity Alert
   - 14/05/2025 - major - Fix pattern where severity level was missing

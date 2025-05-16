@@ -1,4 +1,4 @@
-Rules catalog includes **1017 built-in detection rules** ([_last update on 2025-05-15_](rules_changelog.md)).
+Rules catalog includes **1017 built-in detection rules** ([_last update on 2025-05-16_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Identity Information**
 
@@ -10816,11 +10816,12 @@ Rules catalog includes **1017 built-in detection rules** ([_last update on 2025-
     
     Detects when the Sekoia.io Endpoint Agent is stopped. This could be an attacker impairing defenses to evade detection.
     
-    - **Effort:** advanced
+    - **Effort:** master
     
     - **Changelog:**
     
         - 15/05/2025 - minor - Changing name and adding dialect to be more precise.
+        - 16/05/2025 - minor - Changing effort level.
             
 ??? abstract "Sekoia.io Endpoint Agent Uninstalled"
     
