@@ -102,3 +102,32 @@ In this section, you will find examples of raw logs as generated natively by the
 
 
 
+=== "test_http_2"
+
+
+    ```json
+	{
+        "AccountID": "11111111111111111111111111111111",
+        "Action": "allowedOnNoRuleMatch",
+        "Datetime": "2025-04-30T06:41:33Z",
+        "DestinationIP": "1.2.3.4",
+        "DestinationPort": 443,
+        "DeviceID": "11111111-1111-1111-1111-111111111111",
+        "DeviceName": "Device01",
+        "Email": "john.doe@mail.com",
+        "OverrideIP": "",
+        "OverridePort": 0,
+        "PolicyID": "",
+        "PolicyName": "",
+        "SNI": "1234.something.com",
+        "SessionID": "272706f9f70000fddab4381400000001",
+        "SourceIP": "5.6.7.8",
+        "SourceInternalIP": "",
+        "SourcePort": 54494,
+        "Transport": "tcp",
+        "UserID": "22222222-2222-2222-2222-222222222222"
+    }
+    ```
+
+
+
