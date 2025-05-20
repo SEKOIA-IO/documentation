@@ -12,7 +12,26 @@ BeyondTrust Privileged Remote Access enables secure, controlled remote access to
 - **Vendor**: BeyondTrust
 - **Supported environment**: SaaS
 - **Detection based on**: Telemetry
-- **Supported application or feature**: Authentication logs, Application logs
+- **Supported application or feature**:
+    - Authentication logs:
+        - Session Start
+        - Session End
+    - Application logs
+        - Chat Message
+        - Conference Member Added
+        - Conference Member Departed
+        - Conference Member State Changed
+        - Conference Member State Changed
+        - Conference Owner Changed
+        - Directory Created
+        - File Deleted
+        - File Download
+        - File Upload
+        - Session Foreground Window Changed
+        - Session Mouse Left Clicked
+        - Session Mouse Left Clicked
+        - Session Window Closed
+        - Special Action Executed
 
 ## Configure
 
