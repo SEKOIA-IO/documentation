@@ -1964,4 +1964,4 @@ Update a rule
 
 ## Extra
 
-Module **`Sekoia.io` v2.67.13**
+Module **`Sekoia.io` v2.67.15**
