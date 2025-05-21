@@ -3,9 +3,64 @@
 Dashboards provide a powerful and intuitive way to visualize and monitor key metrics and data in real-time.
 Users can create customized views by combining various widgets, offering insights into different aspects of their operations, security posture, or other critical areas.
 
-A key aspect of dashboards is the ability to use query builders, which enable users to create custom data queries directly within the dashboard. This allows for highly tailored data analysis and visualization, empowering users to explore specific datasets and derive insights that are most relevant to their needs.
+A key aspect of dashboards within Sekoia is the ability to use queries, which enable users to create custom data queries directly within the dashboard. This allows for highly tailored data analysis and visualization, empowering users to explore specific datasets and derive insights that are most relevant to their needs.
 
 With features like time range configuration, manual and automatic data refresh, and the flexibility to add and customize widgets, dashboards are designed to deliver actionable information at a glance. Whether you need to track trends, spot anomalies, or perform detailed data analysis, dashboards offer a versatile and user-friendly solution.
+
+## Dashboards listing 
+The Dashboards Listing page is your central hub for managing and accessing all your dashboards. Designed for clarity and efficiency, it provides a comprehensive overview of every dashboard you or your community has created.
+On this page, you'll see a table with the following information for each dashboard:
+
+- Name: The title of the dashboard
+- Last Edition: The date and time the dashboard was last modified
+- Modified By: The user who last made changes to the dashboard
+- Created By: The user who originally created the dashboard
+- Number of Widgets: The total count of widgets included in the dashboard
+
+### Filtering and sorting
+To help you quickly find the dashboards you need, the Dashboards Listing page offers robust filtering and sorting options:
+
+**Filters**
+
+- All community dashboards: View every dashboard accessible within your Sekoia community
+- Personal dashboards (Created by me): Filter to only display dashboards you have personally created
+
+**Sort**
+
+- A-Z: Arrange dashboards alphabetically by name
+- Last edition: Sort dashboards by their most recent modification date (newest to oldest)
+
+### Create new dashboard 
+You can easily create a new dashboard directly from the Dashboards Listing page. Look for a `+New Dashboard` button and start building your custom view. 
+
+Note that dashboards you create will be available to all members of your community.
+
+### Duplicate dashboard 
+To duplicate a dashboard:
+
+1. Navigate to the Dashboards Listing page
+2. Locate the dashboard you wish to duplicate
+3. Click on `...` button and select "Duplicate" action associated with that dashboard
+4. This will automatically duplicate the dashboard with all the queries within it
+
+### Delete dashboard 
+To delete a dashboard:
+
+1. Navigate to the Dashboards Listing page
+2. Locate the dashboard you wish to delete
+3. Click on `...` button and select "Delete" action associated with that dashboard
+4. This will automatically the dashboard for all members of the community
+
+
+### Set dashboard as homepage 
+You can set any dashboard from your listing as your default Sekoia homepage. This means that every time you log in, you'll land directly on your preferred dashboard, giving you instant access to the information most critical to your role.
+
+To set a dashboard as your homepage:
+
+1. Navigate to the Dashboards Listing page
+2. Locate the dashboard you wish to set as your homepage
+3. Click on `...` button and select "Set as Homepage" action associated with that dashboard
+4. Once set, this dashboard will load automatically upon your next login. You can change your default homepage at any time
 
 ## Default Dashboard
 Accounts on Sekoia.io come with a preconfigured dashboard that gives a synthetic view of the current community activity, either from an operational security perspective (risk level, number of alerts, etc.) or from an activity perspective (list of last posted comments, last created alerts, etc.).
@@ -42,44 +97,7 @@ When auto-refresh is enabled, all widgets on the dashboard will automatically re
 
 These options allow you to maintain the most relevant data on your dashboard, whether you prefer manual control or automated updates.
 
-## Create a new dashboard
 
-### Create from scratch
-The default Sekoia.io dashboard cannot be edited. However, you can create your own dashboards to meet your needs.
-To do so, several widgets are available to you with the possibility to configure and add multiple filters to them.
-To create a new dashboard, you have to:
-
-1. Go to the `Settings` button in the upper right of the screen
-2. Click on `Create a new dashboard`
-3. Give your dashboard a name and a description
-4. Save
-5. Click on `Add widget` and select a widget from the list in the right panel
-6. Drag the needed widget in the workspace and edit it following your needs
-7. Click on `Save`
-
-To access your dashboards, you have to click on the name of the dashboard in the upper left of the screen and choose a dashboard from the list.
-
-!!! note
-    Dashboards you create will be available to all members of your community.
-
-### Duplicate an existing dashboard
-You can also create a new dashboard by duplicating an existing one. To do so:
-
-1. Select the dashboard you want to duplicate
-2. Click on the `Settings` button on the top right of the screen
-3. Click on `Duplicate this dashboard`
-4. Rename your dashboard and give it a description
-5. Edit the widgets you want and change the layout if needed
-6. Save your changes
-
-### Delete a dashboard
-
-To delete a dashboard, you have to:
-
-1. Go to the `Settings` button in the upper right of the screen
-2. Click on `Delete this dashboard`
-
-The Default Dashboard cannot be deleted.
 
 ## Add, edit and organize widgets
 
