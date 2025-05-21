@@ -20,15 +20,15 @@ On this page, you'll see a table with the following information for each dashboa
 ### Filtering and sorting
 To help you quickly find the dashboards you need, the Dashboards Listing page offers robust filtering and sorting options:
 
-**Filters:**
+**Filters**
 
-- All Community Dashboards: View every dashboard accessible within your Sekoia community
-- Personal Dashboards (Created by Me): Filter to only display dashboards you have personally created
+- All community dashboards: View every dashboard accessible within your Sekoia community
+- Personal dashboards (Created by me): Filter to only display dashboards you have personally created
 
-**Sort:**
+**Sort**
 
 - A-Z: Arrange dashboards alphabetically by name
-- Last Edition: Sort dashboards by their most recent modification date (newest to oldest)
+- Last edition: Sort dashboards by their most recent modification date (newest to oldest)
 
 ### Create new dashboard 
 You can easily create a new dashboard directly from the Dashboards Listing page. Look for a `+New Dashboard` button and start building your custom view. 
