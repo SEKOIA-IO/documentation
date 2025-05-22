@@ -24,7 +24,7 @@ Go to your Sekoia.io [Intakes page](https://app.sekoia.io/operations/intakes), a
 
 ### Private cloud
 
-Contact us on the [support page](https://support.lockself.com/hc/fr) to create an interconnection between LockSelf and Sekoia applications. We need the provided intake key from `Create your intake` step.
+Contact the LockSelf Support Team on the [support page](https://support.lockself.com/hc/fr) to create an interconnection between LockSelf and Sekoia applications. They need the provided intake key from `Create your intake` step.
 
 ### On Premise
 
