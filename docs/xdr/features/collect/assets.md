@@ -70,13 +70,34 @@ Our asset management system comes with a default set of contextual properties ta
 5. **Integration:** Leverage the power of contextual properties to integrate with other systems or modules, such as incident management, reporting, and compliance.
 
 
-
-
 ## Your Asset Inventory
 
-Your asset inventory refers to the comprehensive and up-to-date list of all the hosts, accounts and networks manually created, imported and automatically discovered from your organization's infrastructure.
+Your Asset Inventory refers to the comprehensive and up-to-date list of all the hosts, accounts and networks manually created, imported and automatically discovered from your organization's infrastructure.
 
+The Assets page provides a centralized view and robust tools for managing your asset inventory in a detailed table format. Each row represents a unique asset, and the columns provide key information about that asset.
 
+The page also includes powerful filtering options to help you efficiently locate and manage specific assets. You can filter assets based on the following criteria:
+
+- Criticality: Filter assets by their assigned criticality level
+- Tags: Filter assets by specific tags applied to them
+- Types: Filter assets by their classification (e.g., Account, Host, Network)
+- Source: Filter assets by how they were added to the inventory (Automatic discovery or Manual creation/import)
+- Status: Filter assets by their review status (Reviewed or Not Reviewed)
+
+You can use multiple filters simultaneously to refine your view. The number next to the `Filters` button indicates the total number of assets that match your applied filter criteria.
+
+### Bulk Actions 
+
+The Asset Listing page supports bulk actions, allowing you to perform operations on multiple selected assets simultaneously. This significantly improves efficiency when managing your inventory. Available bulk actions include:
+
+- Add tags: Apply one or more tags to multiple selected assets
+- Revoke assets: Remove multiple selected assets from your inventory
+- Change criticality: Update the criticality level for a group of selected assets
+- Change status: Edit the review status (Reviewed or Not Reviewed) for multiple selected assets
+
+!!! note
+    Applying an action to a large number of assets (e.g., 10,000 assets) might take some time to process in the background. While the results won't appear instantly, the system is working, and changes will reflect gradually.
+    
 ### Manual Asset Creation
 
 ![Assets-list](/assets/operation_center/assets_v2/assets-list.png){align="center", style="max-width:100%"}
