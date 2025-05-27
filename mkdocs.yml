@@ -410,6 +410,7 @@ nav:
       - MicrosoftDefenderXDR: integration/action_library/microsoftdefenderxdr.md
       - Panda Security: integration/action_library/panda-security.md
       - SentinelOne: integration/action_library/sentinelone.md
+      - SentinelOne: integration/action_library/sentinelone.md
       - Sophos: integration/action_library/sophos.md
       - Stormshield SES: integration/action_library/stormshield-ses.md
       - WithSecure: integration/action_library/withsecure.md
