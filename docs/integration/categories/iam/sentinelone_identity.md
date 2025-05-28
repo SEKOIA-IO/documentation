@@ -10,9 +10,6 @@ SentinelOne Singularity Identity is a cybersecurity solution that provides ident
 - **Detection based on**: Telemetry
 - **Detection based on**: Alert
 
-!!! Warning
-    Important note - This format is currently in beta. We highly value your feedback to improve its performance.
-
 ## Configure
 
 This setup guide will show you how to pull events produced by SentinelOne Singularity Identity on [Sekoia.io](https://app.sekoia.io/).

@@ -9,9 +9,6 @@ Bitsight Security Performance Management enables organizations to continuously m
 - **Vendor**: BitSight Technologies
 - **Supported environment**: SaaS
 - **Detection based on**: Alert
-
-!!! warning
-    Important note - This format is currently in beta. We highly value your feedback to improve its performance.
     
 ## Supported events
 
