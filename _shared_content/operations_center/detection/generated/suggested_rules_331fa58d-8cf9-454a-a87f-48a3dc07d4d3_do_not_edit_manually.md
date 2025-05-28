@@ -345,6 +345,24 @@ The following Sekoia.io built-in rules match the intake **Suricata**. This docum
     
     - **Effort:** intermediate
 
+??? abstract "Suricata Attempted Administrator Privilege Gain High Severity Alert"
+    
+    Detects a high severity alert triggered from Suricata Attempted Administrator Privilege Gain category.
+    
+    - **Effort:** master
+
+??? abstract "Suricata Exploit Kit Activity Detected High Severity Alert"
+    
+    Detects a high severity alert triggered from Suricata Exploit Kit Activity Detected category.
+    
+    - **Effort:** master
+
+??? abstract "Suricata Web Application Attack High Severity Alert"
+    
+    Detects a high severity alert triggered from Suricata Web Application Attack category.
+    
+    - **Effort:** master
+
 ??? abstract "Suspicious Download Links From Legitimate Services"
     
     Detects users clicking on Google docs links to download suspicious files. This technique was used a lot by Bazar Loader in the past.
