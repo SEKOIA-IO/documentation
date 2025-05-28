@@ -1,4 +1,4 @@
-Rules catalog includes **1017 built-in detection rules** ([_last update on 2025-05-16_](rules_changelog.md)).
+Rules catalog includes **1020 built-in detection rules** ([_last update on 2025-05-28_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Identity Information**
 
@@ -4007,6 +4007,24 @@ Rules catalog includes **1017 built-in detection rules** ([_last update on 2025-
 ??? abstract "Stormshield Ses Emergency Block"
     
     Stormshield Endpoint Security block execution with emergency severity
+    
+    - **Effort:** master
+    
+??? abstract "Suricata Attempted Administrator Privilege Gain High Severity Alert"
+    
+    Detects a high severity alert triggered from Suricata Attempted Administrator Privilege Gain category.
+    
+    - **Effort:** master
+    
+??? abstract "Suricata Exploit Kit Activity Detected High Severity Alert"
+    
+    Detects a high severity alert triggered from Suricata Exploit Kit Activity Detected category.
+    
+    - **Effort:** master
+    
+??? abstract "Suricata Web Application Attack High Severity Alert"
+    
+    Detects a high severity alert triggered from Suricata Web Application Attack category.
     
     - **Effort:** master
     
