@@ -4,6 +4,22 @@
 In this section, you will find examples of raw logs as generated natively by the source. These examples are provided to help integrators understand the data format before ingestion into Sekoia.io. It is crucial for setting up the correct parsing stages and ensuring that all relevant information is captured.
 
 
+=== "test_ad_connector_1"
+
+    ```
+	0003360952 1 0 2025-05-07 14:27:57.047 +02:00 0051005548 25002 INFO  AD-Connector: ISE server TGT refresh succeeded,  AD-Account-Name=JOHNDOE$@EXAMPLE.LOCAL, AD-Domain=EXAMPLE.LOCAL, AD-Log-Id=1234567890/1234567,
+    ```
+
+
+
+=== "test_admin_and_oper_audit_1"
+
+    ```
+	0003901877 1 0 2025-05-07 14:29:46.982 +02:00 0723317473 61026 NOTICE EAP-TLS: Shutdown secure connection with TLS peer, ConfigVersionId=360, PeerAddress=AA-BB-CC-DD-EE-FF, PeerName=CN=SITE.example.local, UniqueConnectionIdentifier =2ce4ef7a-0575-482b-8ed5-b3b068e873a1, ShutdownReason =ClosedByISE,
+    ```
+
+
+
 === "test_authentication"
 
     ```
@@ -112,6 +128,14 @@ In this section, you will find examples of raw logs as generated natively by the
 
     ```
 	WARN: TrustSec deploy verification failed to reach NAD.: Device Name=device005.internal.example.org; Device Ip=1.2.3.4; Device login username=admin
+    ```
+
+
+
+=== "test_profiler_1"
+
+    ```
+	0003361015 2 0 2025-05-07 14:29:08.974 +02:00 0051006044 80002 INFO  Profiler: Profiler EndPoint profiling event occurred, ConfigVersionId=183, OperatingSystem=Windows 11 Entreprise, EndpointCertainityMetric=50, EndpointIPAddress=1.2.3.4, EndpointMacAddress=AA:BB:CC:DD:EE:FF, EndpointMatchedPolicy=Windows11-Workstation, EndpointOUI=Intel Corporate, EndpointPolicy=Windows11-Workstation, EndpointProperty=chaddr=AA:BB:CC:DD:EE:FF,dhcp-class-identifier=MSFT 5.0,PolicyVersion=24,dhcp-message-type=DHCPREQUEST,EndPointPolicyID=57f40927-3b0a-46b8-9f03-78d47e1383c4,LogicalProfile=,client-fqdn=abcdef.example.local,EndPointVersion=340,FirstCollection=1744718839328,CacheUpdateTime=1746620948973,StaticAssignment=false,NmapScanCount=0,PostureExpiry=,hlen=6,AD-Operating-System=Windows 11 Entreprise,AD-Join-Point=EXAMPLE.LOCAL,PortalUser=,ciaddr=0.0.0.0,BYODRegistration=Unknown,dhcp-requested-address=1.2.3.4,Total Certainty Factor=50,MDMServerID=,
     ```
 
 
