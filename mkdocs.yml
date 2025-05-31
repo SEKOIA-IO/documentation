@@ -353,6 +353,7 @@ nav:
       - Lacework Cloud Security: integration/categories/network_security/lacework_cloud_security.md
       - McAfee Web Gateway / Skyhigh Secure Web Gateway - On Prem: integration/categories/network_security/skyhigh_secure_web_gateway_on_prem.md
       - McAfee Web Gateway / Skyhigh Secure Web Gateway - SaaS: integration/categories/network_security/skyhigh_secure_web_gateway_saas.md
+      - NeroSwarm Honeypot: integration/categories/network_security/neroswarm_honeypot.md
       - Netskope Events: integration/categories/network_security/netskope_events.md
       - Netskope Transaction Events: integration/categories/network_security/netskope_transaction.md
       - OGO Shield WAF: integration/categories/network_security/ogo_shield.md
