@@ -1,7 +1,7 @@
 
 ## Overview
 
-[NeroSwarm Honeypot](https://neroswarm.com/) is a Deception-as-a-Service platform designed to deploy decoy systems across a network. By detecting and monitoring malicious activity at the earliest stages of an attack, NeroSwarm lures adversaries into revealing tactics and techniques before critical assets are reached. This approach significantly reduces false positives and alert fatigue, providing security teams with real-time, high-fidelity insights into internal threats.
+[NeroSwarm Honeypot](https://neroswarm.com/) is a Deception-as-a-Service platform designed to deploy decoy systems across networks. By detecting and monitoring malicious activity at the earliest stages of an attack, NeroSwarm lures adversaries into revealing tactics and techniques before critical assets are reached. This approach significantly reduces false positives and alert fatigue, providing security teams with real-time, high-fidelity insights into internal threats.
 
 - **Vendor:** NeroSwarm Honeypot  
 - **Supported environment:** SaaS  
