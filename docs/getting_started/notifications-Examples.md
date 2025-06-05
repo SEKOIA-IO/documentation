@@ -82,6 +82,9 @@ The Email notification will let you send an e-mail to a specified address with t
 - By default, simple notification content will be sent with a link to Sekoia.io page corresponding of the Condition(s) set up
 - If you enable the `Enrich email with contextual infos` toggle, the email will include more detailed contextual information related to your alert.
 
+!!! Warning 
+    Each recipient can receive up to 10 emails per hour for each notification rule.
+
 ### Mattermost Notification
 
 Mattermost is a popular professional chat service. The Mattermost Notification action allows you to send messages to any Mattermost instance. To set this up, you'll need to configure a new Incoming Webhook on your Mattermost instance and specify the Mattermost channel where the message should be sent.
