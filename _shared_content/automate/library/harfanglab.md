@@ -133,6 +133,26 @@ Isolate a group of endpoints
 | `requested` | `array` | The list of identifiers of isolated endpoints |
 | `unrequested` | `array` | The list of identifiers of non-isolated endpoints |
 
+### Get agent telemetry
+
+Get telemetry of an agent by its agentid
+
+**Arguments**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `agent_id` | `string` | HarfangLab agent id |
+| `event_types` | `array` | A list of telemetry event types to collect. Available event types: processes, windows_authentications, linux_authentications, macos_authentications, binary, network, dns, eventlog |
+| `alert_created` | `string` | Reference timestamp used to retrieve telemetry data |
+| `timerange` | `integer` | Number of minutes before and after the reference timestamp used to define the data-collection time window |
+
+
+**Outputs**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `data` | `array` | Telemetry results |
+
 ### Hostname by IP
 
 Get the hostname of a machine by its IP address
@@ -211,4 +231,4 @@ Update Threat status
 
 ## Extra
 
-Module **`HarfangLab` v1.24.0**
+Module **`HarfangLab` v1.27.1**
