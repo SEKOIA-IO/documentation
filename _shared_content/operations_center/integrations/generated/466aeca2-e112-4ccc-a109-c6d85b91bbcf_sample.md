@@ -340,6 +340,14 @@ In this section, you will find examples of raw logs as generated natively by the
 
 
 
+=== "test_ASA_722051"
+
+    ```
+	%ASA-6-722051: (WebVPN-Primary) WebVPN session for client user test-test, IP 1.2.3.4 has been created.
+    ```
+
+
+
 === "test_ASA_725001"
 
     ```
