@@ -83,7 +83,7 @@ The Email notification will let you send an e-mail to a specified address with t
 - If you enable the `Enrich email with contextual infos` toggle, the email will include more detailed contextual information related to your alert.
 
 !!! Warning 
-    Each recipient can receive up to 10 emails per hour for each notification rule.
+    Each email recipient can receive up to 10 emails per hour for each notification rule.
 
 ### Mattermost Notification
 
