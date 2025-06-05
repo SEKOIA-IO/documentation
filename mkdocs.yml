@@ -407,6 +407,7 @@ nav:
       - CrowdStrike Falcon: integration/action_library/crowdstrike-falcon.md
       - Eset: integration/action_library/eset.md
       - HarfangLab: integration/action_library/harfanglab.md
+      - HarfangLab: integration/action_library/harfanglab.md
       - Microsoft Windows Server: integration/action_library/microsoft-windows-server.md
       - MicrosoftDefenderXDR: integration/action_library/microsoftdefenderxdr.md
       - Panda Security: integration/action_library/panda-security.md
