@@ -1906,6 +1906,77 @@ In this section, you will find examples of raw logs as generated natively by the
 
 
 
+=== "test_threat_03_json"
+
+
+    ```json
+	{
+        "TimeReceived": "2025-05-20T06:59:20.000000Z",
+        "DeviceSN": "111111111111",
+        "LogType": "THREAT",
+        "Subtype": "wildfire",
+        "TimeGenerated": "2025-05-20T06:59:14.000000Z",
+        "SourceAddress": "1.2.3.4",
+        "DestinationAddress": "5.6.7.8",
+        "NATSource": "",
+        "NATDestination": "",
+        "Rule": "Active Directory",
+        "SourceUser": "john.doe@example.org",
+        "DestinationUser": null,
+        "Application": "ms-ds-smbv3",
+        "VirtualLocation": "vsys1",
+        "FromZone": "SDWAN-VWIRE",
+        "ToZone": "SDWAN-VWIRE",
+        "InboundInterface": "ethernet1/9",
+        "OutboundInterface": "ethernet1/10",
+        "SessionID": 2575234,
+        "RepeatCount": 1,
+        "SourcePort": 51240,
+        "DestinationPort": 445,
+        "NATSourcePort": 0,
+        "NATDestinationPort": 0,
+        "Protocol": "tcp",
+        "Action": "allow",
+        "FileName": "add-helpdesk-localadmins.vbs",
+        "ThreatID": "VBScript File(52205)",
+        "VendorSeverity": "Informational",
+        "DirectionOfAttack": "server to client",
+        "SequenceNo": 7490912032519653792,
+        "SourceLocation": "Azure-EU-WEST-CBS-BELLEM",
+        "DestinationLocation": "US",
+        "FileHash": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+        "ApplianceOrCloud": "eu.wildfire.paloaltonetworks.com",
+        "URLCounter": 0,
+        "FileType": "script",
+        "SenderEmail": null,
+        "EmailSubject": null,
+        "RecipientEmail": null,
+        "DeviceName": "DC-FRMPL-F2",
+        "ThreatCategory": "unknown",
+        "ContentVersion": "0",
+        "RuleUUID": "b96b3d8a-7d15-4b1a-9d7e-2e121f0f91fb",
+        "HTTP2Connection": 0,
+        "SourceDeviceOSFamily": null,
+        "SourceDeviceHost": null,
+        "SourceDeviceMac": null,
+        "DestinationDeviceOSFamily": null,
+        "DestinationDeviceHost": null,
+        "DestinationDeviceMac": null,
+        "DomainEDL": null,
+        "PartialHash": 0,
+        "TimeGeneratedHighResolution": "2025-05-20T06:59:15.165000Z",
+        "ApplicationCategory": "business-systems",
+        "ApplicationContainer": "ms-ds-smb",
+        "ApplicationSubcategory": "storage-backup",
+        "IsPacketCapture": false,
+        "Users": "john.doe@example.org",
+        "TunneledApplication": "untunneled",
+        "ThreatNameFirewall": "VBScript File"
+    }
+    ```
+
+
+
 === "test_timestamp_palo"
 
 
