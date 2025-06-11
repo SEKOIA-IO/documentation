@@ -373,6 +373,7 @@ nav:
       - Trellix ePO - On Prem: integration/categories/network_security/trellix_epo_on_prem.md
       - Trend Micro Deep Security / Workload Security: integration/categories/network_security/trend_micro_deep_security.md
       - Ubika Cloud Protector Alerts: integration/categories/network_security/ubika_cloud_protector_alerts.md
+      - Ubika Cloud Protector Next Generation: integration/categories/network_security/ubika_cloud_protector_next_gen.md
       - Ubika Cloud Protector Traffic: integration/categories/network_security/ubika_cloud_protector_traffic.md
       - Ubika WAAP Gateway: integration/categories/network_security/ubika_waap.md
       - Umbrella IP Logs: integration/categories/network_security/umbrella_ip.md
