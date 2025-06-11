@@ -1141,7 +1141,7 @@ The following Sekoia.io built-in rules match the intake **TEHTRIS EDR**. This do
     
     Detects the use of various web request methods executed remotely via Windows PowerShell.
     
-    - **Effort:** advanced
+    - **Effort:** master
 
 ??? abstract "Privilege Escalation Awesome Scripts (PEAS)"
     

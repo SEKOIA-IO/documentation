@@ -1513,7 +1513,7 @@ The following Sekoia.io built-in rules match the intake **SentinelOne Cloud Funn
     
     Detects the use of various web request methods executed remotely via Windows PowerShell.
     
-    - **Effort:** advanced
+    - **Effort:** master
 
 ??? abstract "Powershell Winlogon Helper DLL"
     

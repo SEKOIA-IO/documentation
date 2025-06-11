@@ -849,12 +849,6 @@ The following Sekoia.io built-in rules match the intake **Trend Micro Vision One
     
     - **Effort:** advanced
 
-??? abstract "Powershell Web Request"
-    
-    Detects the use of various web request methods executed remotely via Windows PowerShell.
-    
-    - **Effort:** advanced
-
 ??? abstract "Powershell Winlogon Helper DLL"
     
     Detects modifications to the Winlogon Registry keys, which may cause Winlogon to load and execute malicious DLLs and/or executables.

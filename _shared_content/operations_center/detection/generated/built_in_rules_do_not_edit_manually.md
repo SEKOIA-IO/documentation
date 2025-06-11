@@ -1,4 +1,4 @@
-Rules catalog includes **1020 built-in detection rules** ([_last update on 2025-05-28_](rules_changelog.md)).
+Rules catalog includes **1021 built-in detection rules** ([_last update on 2025-06-11_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Identity Information**
 
@@ -991,6 +991,12 @@ Rules catalog includes **1020 built-in detection rules** ([_last update on 2025-
 ??? abstract "Netskope Web Isolation On Suspicious Domain"
     
     Netskope identified a suspicious domain and triggered web sandboxing (RBI)
+    
+    - **Effort:** master
+    
+??? abstract "Okta Access To Admin Console Denied"
+    
+    Detects when an attempt was made to access the Okta Admin Console from an interactive user account but failed.
     
     - **Effort:** master
     
@@ -2447,8 +2453,12 @@ Rules catalog includes **1020 built-in detection rules** ([_last update on 2025-
     
     Detects the use of various web request methods executed remotely via Windows PowerShell.
     
-    - **Effort:** advanced
+    - **Effort:** master
     
+    - **Changelog:**
+    
+        - 06/06/2025 - major - Review heuristic and change level effort
+            
 ??? abstract "Python Offensive Tools and Packages"
     
     Track installation and usage of offensive python packages and project that are used for lateral movement.
@@ -5395,6 +5405,12 @@ Rules catalog includes **1020 built-in detection rules** ([_last update on 2025-
     
     - **Effort:** master
     
+??? abstract "Okta Access To Admin Console Denied"
+    
+    Detects when an attempt was made to access the Okta Admin Console from an interactive user account but failed.
+    
+    - **Effort:** master
+    
 ??? abstract "Okta Many Passwords Reset Attempt"
     
     This rule identifies a high number of Okta user password reset or account unlock attempts. An adversary may attempt to obtain unauthorized access to Okta user accounts using these methods and attempt to blend in with normal activity in their target's environment and evade detection.
@@ -7387,6 +7403,12 @@ Rules catalog includes **1020 built-in detection rules** ([_last update on 2025-
     
     - **Effort:** master
     
+??? abstract "Okta Access To Admin Console Denied"
+    
+    Detects when an attempt was made to access the Okta Admin Console from an interactive user account but failed.
+    
+    - **Effort:** master
+    
 ??? abstract "Okta Many Passwords Reset Attempt"
     
     This rule identifies a high number of Okta user password reset or account unlock attempts. An adversary may attempt to obtain unauthorized access to Okta user accounts using these methods and attempt to blend in with normal activity in their target's environment and evade detection.
@@ -9278,6 +9300,12 @@ Rules catalog includes **1020 built-in detection rules** ([_last update on 2025-
 ??? abstract "Netskope Web Isolation On Suspicious Domain"
     
     Netskope identified a suspicious domain and triggered web sandboxing (RBI)
+    
+    - **Effort:** master
+    
+??? abstract "Okta Access To Admin Console Denied"
+    
+    Detects when an attempt was made to access the Okta Admin Console from an interactive user account but failed.
     
     - **Effort:** master
     
@@ -13749,6 +13777,7 @@ Rules catalog includes **1020 built-in detection rules** ([_last update on 2025-
     
     - **Changelog:**
     
+        - 11/06/2025 - minor - Added filters to reduce false positives.
         - 02/08/2023 - minor - Added a new field and filters to reduce false positives.
             
 ??? abstract "Trellix Network Security Threat Blocked"
