@@ -1,7 +1,10 @@
-Changelog _last update on 2025-05-28_
+Changelog _last update on 2025-06-11_
 
 ## Changelog
 
+### Powershell Web Request
+  - 06/06/2025 - major - Review heuristic and change level effort
+    
 ### Sekoia.io Endpoint Agent Stopped
   - 16/05/2025 - minor - Changing effort level.
     

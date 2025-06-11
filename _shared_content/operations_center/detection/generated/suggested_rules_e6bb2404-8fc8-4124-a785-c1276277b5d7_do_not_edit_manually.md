@@ -45,6 +45,12 @@ The following Sekoia.io built-in rules match the intake **Okta**. This documenta
     
     - **Effort:** advanced
 
+??? abstract "Okta Access To Admin Console Denied"
+    
+    Detects when an attempt was made to access the Okta Admin Console from an interactive user account but failed.
+    
+    - **Effort:** master
+
 ??? abstract "Okta Admin Privilege Granted"
     
     Administrator privilege granted to an user or account. This can be privilege escalation, persistance over system or account takedown.
