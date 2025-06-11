@@ -653,7 +653,7 @@ Use the following operators to compare values.
 | Comparator | Description | Examples |
 | --- | --- | --- |
 | == | Equals | `1 == 1` |
-| =~ | Equals (case insensitive) | `'.exe' == '.EXE'` |
+| =~ | Equals (case insensitive) | `'.exe' =~ '.EXE'` |
 | != | Not equals | `1 != 0` |
 | < | Less | `1 < 10` |
 | <= | Less or equals | `4 <= 5` |
