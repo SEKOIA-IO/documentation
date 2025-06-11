@@ -410,6 +410,7 @@ nav:
       - HarfangLab: integration/action_library/harfanglab.md
       - Microsoft Windows Server: integration/action_library/microsoft-windows-server.md
       - MicrosoftDefenderXDR: integration/action_library/microsoftdefenderxdr.md
+      - Palo Alto Cortex XSIAM: integration/action_library/palo-alto-cortex-xsiam.md
       - Panda Security: integration/action_library/panda-security.md
       - SentinelOne: integration/action_library/sentinelone.md
       - Sophos: integration/action_library/sophos.md
