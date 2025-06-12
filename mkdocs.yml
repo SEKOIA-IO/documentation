@@ -72,6 +72,7 @@ nav:
   - Quick start guide: xdr/xdr_quick_start.md
   - Features:
     - Collect:
+      - Integrations: xdr/features/collect/integrations.md 
       - Intakes: xdr/features/collect/intakes.md
       - Entities: xdr/features/collect/entities.md
       - Assets: xdr/features/collect/assets.md
