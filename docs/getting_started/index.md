@@ -3,7 +3,7 @@ Sekoia.io seeks to make cyberattacks painless. We connect the dots and empower e
 
 We make cybersecurity simpler, smarter, together. And we are passionate about it.
 
-On this website, you’ll find the documentation for the three award-winning products that make Sekoia.io:
+On this website, you’ll find the documentation for the two award-winning products that make Sekoia.io:
 
 - [Sekoia Defend (XDR)](https://www.sekoia.io/en/sekoia-io-xdr/): The intelligence-powered EXtended Detection & Response solution to protect your organisation across silos, deployed under one day.
 - [Sekoia Intelligence (CTI)](https://www.sekoia.io/en/sekoia-io-cti/): Fully contextualized & actionable Cyber Threat intelligence knowledge portal for experts, decision-makers, and machines.
