@@ -7,7 +7,6 @@ On this website, you’ll find the documentation for the three award-winning pro
 
 - [Sekoia Defend (XDR)](https://www.sekoia.io/en/sekoia-io-xdr/): The intelligence-powered EXtended Detection & Response solution to protect your organisation across silos, deployed under one day.
 - [Sekoia Intelligence (CTI)](https://www.sekoia.io/en/sekoia-io-cti/): Fully contextualized & actionable Cyber Threat intelligence knowledge portal for experts, decision-makers, and machines.
-- [Sekoia.io TIP](https://www.sekoia.io/en/sekoia-io-tip/): The one-stop-shop to build and disseminate your own threat intelligence and manage your intelligence community.
 
 In addition to a web interface, Sekoia.io provides **REST/API** for external apps for almost all of its features, and it’s free!
 
