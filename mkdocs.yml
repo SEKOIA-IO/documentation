@@ -380,6 +380,7 @@ nav:
       - Umbrella Proxy Logs: integration/categories/network_security/umbrella_proxy.md
       - Varonis Data Security: integration/categories/network_security/varonis_data_security.md
       - Vectra Cognito Detect: integration/categories/network_security/vectra.md
+      - WatchGuard EPDR: integration/categories/network_security/watchguard_epdr.md
       - WatchGuard Firebox: integration/categories/network_security/watchguard_firebox.md
       - Wiz Cloud configuration findings: integration/categories/network_security/wiz_cloud_configuration_findings.md
       - Wiz Issues: integration/categories/network_security/wiz_issues.md
@@ -697,6 +698,7 @@ plugins:
       xdr/features/collect/integrations/network/varonis_data_security.md: integration/categories/network_security/varonis_data_security.md
       xdr/features/collect/integrations/network/vectra.md: integration/categories/network_security/vectra.md
       xdr/features/collect/integrations/network/wallix.md: integration/categories/iam/wallix.md
+      xdr/features/collect/integrations/network/watchguard_epdr.md: integration/categories/network_security/watchguard_epdr.md
       xdr/features/collect/integrations/network/watchguard_firebox.md: integration/categories/network_security/watchguard_firebox.md
       xdr/features/investigate/dork_language.md: xdr/features/investigate/events_query_language.md
 - integration_by_uuid
