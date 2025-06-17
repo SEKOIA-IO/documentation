@@ -4,9 +4,9 @@ type: playbook
 
 # AWS
 
-![AWS](/assets/playbooks/library/aws.svg){ align=right width=150 }
+![AWS](/assets/playbooks/library/aws.png){ align=right width=150 }
 
-[AWS](https://aws.amazon.com/) is a one of the main cloud provider, supported by Amazon. It offers services for storage (S3, Glacier, EBS, ...), for networking (Snowball, CloudFront, ...), for computing (EC2, ECS, EKS, ...) and others.
+AWS is a one of the main cloud provider, supported by Amazon. It offers services for storage (S3, Glacier, EBS, ...), for networking (Snowball, CloudFront, ...), for computing (EC2, ECS, EKS, ...) and others.
 This module provides triggers to collect events from AWS
 
 ## Configuration
@@ -65,4 +65,4 @@ Get the last records from FlowLog (deprecated in flavor of Fetch new logs on S3)
 
 ## Extra
 
-Module **`AWS` v1.32.2**
+Module **`AWS` v1.33.1**

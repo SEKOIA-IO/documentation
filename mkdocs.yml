@@ -387,6 +387,7 @@ nav:
       - Wiz Vulnerability Findings: integration/categories/network_security/wiz_vulnerability_findings.md
       - Zscaler Internet Access: integration/categories/network_security/zscaler_zia.md
   - List of Playbooks Actions:
+    - Overview: integration/action_library/overview.md
     - Applicative:
       - ElasticSearch: integration/action_library/elasticsearch.md
       - Mandrill: integration/action_library/mandrill.md
@@ -395,7 +396,7 @@ nav:
     - Cloud Providers:
       - AWS: integration/action_library/aws.md
       - Azure Monitor: integration/action_library/azure-monitor.md
-      - Google: integration/action_library/google.md
+      - Google Cloud: integration/action_library/google-cloud.md
     - Collaboration Tools:
       - Atlassian JIRA: integration/action_library/atlassian-jira.md
       - Git: integration/action_library/git.md
@@ -411,6 +412,7 @@ nav:
       - HarfangLab: integration/action_library/harfanglab.md
       - Microsoft Windows Server: integration/action_library/microsoft-windows-server.md
       - MicrosoftDefenderXDR: integration/action_library/microsoftdefenderxdr.md
+      - Palo Alto Cortex XDR (EDR): integration/action_library/palo-alto-cortex-xdr-edr.md
       - Palo Alto Cortex XSIAM: integration/action_library/palo-alto-cortex-xsiam.md
       - Panda Security: integration/action_library/panda-security.md
       - SentinelOne: integration/action_library/sentinelone.md
@@ -430,7 +432,6 @@ nav:
       - Fortigate Firewalls: integration/action_library/fortigate-firewalls.md
       - Sophos: integration/action_library/sophos.md
       - Zscaler: integration/action_library/zscaler.md
-    - Overview: integration/action_library/overview.md
     - Threat Intelligence:
       - BinaryEdge's API: integration/action_library/binaryedge-s-api.md
       - Censys: integration/action_library/censys.md
@@ -450,9 +451,7 @@ nav:
       - Shodan: integration/action_library/shodan.md
       - Tranco: integration/action_library/tranco.md
       - Triage: integration/action_library/triage.md
-      - Triage: integration/action_library/triage.md
       - VirusTotal: integration/action_library/virustotal.md
-      - Whois: integration/action_library/whois.md
       - Whois: integration/action_library/whois.md
   - How to develop a new Integration:
     - Overview: integration/develop_integration/overview.md

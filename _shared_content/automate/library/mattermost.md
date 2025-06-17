@@ -4,9 +4,9 @@ type: playbook
 
 # Mattermost
 
-![Mattermost](/assets/playbooks/library/mattermost.svg){ align=right width=150 }
+![Mattermost](/assets/playbooks/library/mattermost.png){ align=right width=150 }
 
-[Mattermost](https://mattermost.com/) is a secure, open and flexible collaboration platform
+Mattermost is a secure, open and flexible collaboration platform
 
 ## Configuration
 

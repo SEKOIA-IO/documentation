@@ -38,12 +38,11 @@ Query data from ElasticSearch with ES|QL
 | --------- | ------- | --------------------------- |
 | `data` | `array` | Query results |
 
-
 ## Set up
 
 ## Configuration
 
-To create credentials for the `ElasticSearch` integration please follow these steps:
+To create credentials for the `ElasticSearch` integration please follow next steps:
 
 1. Log in to your Kibana console
 2. Go to `Management` > `Stack Management`
@@ -65,7 +64,7 @@ To create credentials for the `ElasticSearch` integration please follow these st
 
 7. Use the following template to define the control security privileges of the API Key
    
-   ```json
+   ```json> 
    {
       "read-only-role": {
         "cluster": ["all"],
@@ -86,6 +85,7 @@ To create credentials for the `ElasticSearch` integration please follow these st
 9. Use your API key token
 
      ![Step 5](/assets/playbooks/library/setup/elasticsearch/step05.png){: style="max-width:100%"}
+
 
 ## Extra
 

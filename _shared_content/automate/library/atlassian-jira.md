@@ -6,7 +6,7 @@ type: playbook
 
 ![Atlassian JIRA](/assets/playbooks/library/atlassian-jira.png){ align=right width=150 }
 
-Integrates with JIRA
+Atlassian JIRA is a popular project management and issue-tracking software designed to help teams plan, track, and manage agile software development projects efficiently. It offers customizable workflows and integrates seamlessly with other Atlassian products.
 
 ## Configuration
 

@@ -4,9 +4,9 @@ type: playbook
 
 # Microsoft Entra ID
 
-![Microsoft Entra ID](/assets/playbooks/library/microsoft-entra-id.svg){ align=right width=150 }
+![Microsoft Entra ID](/assets/playbooks/library/microsoft-entra-id.png){ align=right width=150 }
 
-[Microsoft Entra ID (formely Azure Active Directory)](https://azure.microsoft.com/en-us/services/active-directory/#overview) is an enterprise identity service that provides single sign-on, multifactor authentication, and conditional access to guard against 99.9 percent of cybersecurity attacks.
+Microsoft Entra ID (formely Azure Active Directory) is an enterprise identity service that provides single sign-on, multifactor authentication, and conditional access to guard against 99.9 percent of cybersecurity attacks.
 
 ## Configuration
 

@@ -6,9 +6,9 @@ type: playbook
 
 ![Panda Security](/assets/playbooks/library/panda-security.png){ align=right width=150 }
 
-[PandaSecurity](https://www.pandasecurity.com/), a [WatchGuard](https://www.watchguard.com/) company, is a cybsersecurity vendor, delivering products designed to protect endpoints against outside threats.
+PandaSecurity, a WatchGuard company, is a cybsersecurity vendor, delivering products designed to protect endpoints against outside threats.
 
-This module provides actions and triggers to interact with the [Watchguard Panda Aether platform](https://www.watchguard.com/wgrd-products/panda-endpoint-security) to act on AD360 and EPP devices
+This module provides actions and triggers to interact with the Watchguard Panda Aether platform to act on AD360 and EPP devices
 
 ## Configuration
 

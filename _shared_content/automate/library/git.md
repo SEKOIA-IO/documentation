@@ -4,9 +4,9 @@ type: playbook
 
 # Git
 
-![Git](/assets/playbooks/library/git.svg){ align=right width=150 }
+![Git](/assets/playbooks/library/git.png){ align=right width=150 }
 
-[Git](https://git-scm.com/) is a free and open source distributed version control system designed to handle projects with speed and efficiency.
+Git is a free and open source distributed version control system designed to handle projects with speed and efficiency.
 
 ## Configuration
 
