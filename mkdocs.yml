@@ -381,6 +381,7 @@ nav:
       - Umbrella Proxy Logs: integration/categories/network_security/umbrella_proxy.md
       - Varonis Data Security: integration/categories/network_security/varonis_data_security.md
       - Vectra Cognito Detect: integration/categories/network_security/vectra.md
+      - Vectra Respond UX - Entity Scoring: integration/categories/network_security/vectra_respond_ux_entity_scoring.md
       - WatchGuard Firebox: integration/categories/network_security/watchguard_firebox.md
       - Wiz Cloud configuration findings: integration/categories/network_security/wiz_cloud_configuration_findings.md
       - Wiz Issues: integration/categories/network_security/wiz_issues.md
