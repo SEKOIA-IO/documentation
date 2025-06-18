@@ -1,5 +1,5 @@
 uuid: 21bb5b9b-dc0e-4941-8932-262005a2789c
-name: Hornetsecurity 365 TotlaProtection
+name: Hornetsecurity 365 TotalProtection
 type: intake
 
 ## Overview
