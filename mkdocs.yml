@@ -210,6 +210,7 @@ nav:
     - Email:
       - Cisco Email Security Appliance: integration/categories/email/cisco_esa.md
       - FortiMail: integration/categories/email/fortimail.md
+      - HornetSecurity Spam and Malware Protection: integration/categories/email/hornetsecurity_spam_malware_protection.md
       - Mimecast Email Security: integration/categories/email/mimecast_email_security.md
       - Office 365: integration/categories/email/o365.md
       - Office 365 Message Trace: integration/categories/email/message_trace.md
