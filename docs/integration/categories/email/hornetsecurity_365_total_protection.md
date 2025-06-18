@@ -52,7 +52,7 @@ Hornetsecurity is a leading provider of cloud-based email security and data prot
 
 ### Create your intake
 
-1. Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a new intake from the `HornetSecurity 365 Total Protection`.
+1. Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a new intake from the `Hornetsecurity 365 Total Protection`.
 2. Set the intake account configuration with the `api_token` and the `base_url` from the previous step.
 
 ### Enjoy your events on the [Events page](https://app.sekoia.io/operations/events)
