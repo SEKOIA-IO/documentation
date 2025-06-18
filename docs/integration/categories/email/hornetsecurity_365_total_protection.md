@@ -1,5 +1,5 @@
 uuid: 21bb5b9b-dc0e-4941-8932-262005a2789c
-name: Hornetsecurity Spam and Malware Protection
+name: Hornetsecurity 365 TotlaProtection
 type: intake
 
 ## Overview
@@ -52,7 +52,7 @@ Hornetsecurity is a leading provider of cloud-based email security and data prot
 
 ### Create your intake
 
-1. Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a new intake from the `HornetSecurity Spam and Malware Protection`.
+1. Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a new intake from the `HornetSecurity 365 Total Protection`.
 2. Set the intake account configuration with the `api_token` and the `base_url` from the previous step.
 
 ### Enjoy your events on the [Events page](https://app.sekoia.io/operations/events)
