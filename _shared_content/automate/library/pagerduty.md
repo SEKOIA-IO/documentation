@@ -4,9 +4,9 @@ type: playbook
 
 # PagerDuty
 
-![PagerDuty](/assets/playbooks/library/pagerduty.svg){ align=right width=150 }
+![PagerDuty](/assets/playbooks/library/pagerduty.png){ align=right width=150 }
 
-[PagerDuty](https://www.pagerduty.com/) is an incident response platform for IT departments it allows triggering alerts and managing incidents.
+PagerDuty is an incident response platform for IT departments it allows triggering alerts and managing incidents.
 
 ## Configuration
 

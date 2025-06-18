@@ -6,7 +6,7 @@ type: playbook
 
 ![Triage](/assets/playbooks/library/triage.svg){ align=right width=150 }
 
-[Triage](https://tria.ge/) is a malware analysis sandbox as a service, brought by [Hatching](https://hatching.io/)
+Triage is a malware analysis sandbox as a service, brought by Hatching
 
 ## Configuration
 

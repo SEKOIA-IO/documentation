@@ -4,7 +4,7 @@ type: playbook
 
 # Mandrill
 
-![Mandrill](/assets/playbooks/library/mandrill.svg){ align=right width=150 }
+![Mandrill](/assets/playbooks/library/mandrill.png){ align=right width=150 }
 
 Mandrill is a transactional email platform from Mailchimp.
 

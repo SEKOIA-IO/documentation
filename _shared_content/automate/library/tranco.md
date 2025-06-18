@@ -4,9 +4,9 @@ type: playbook
 
 # Tranco
 
-![Tranco](/assets/playbooks/library/tranco.svg){ align=right width=150 }
+![Tranco](/assets/playbooks/library/tranco.png){ align=right width=150 }
 
-[Tranco](https://tranco-list.eu/) is an top sites ranking list hardened against manipulation.
+Tranco is an top sites ranking list hardened against manipulation.
 
 ## Configuration
 

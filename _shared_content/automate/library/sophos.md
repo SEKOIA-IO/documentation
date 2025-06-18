@@ -6,7 +6,7 @@ type: playbook
 
 ![Sophos](/assets/playbooks/library/sophos.png){ align=right width=150 }
 
-Sophos Module
+Sophos is a cybersecurity company that provides a range of security solutions, including endpoint protection, firewall, and encryption services. It focuses on delivering advanced threat protection to businesses through simplified and integrated security management.
 
 ## Configuration
 
@@ -52,4 +52,4 @@ Turn on endpoint isolation
 
 ## Extra
 
-Module **`Sophos` v1.17.2**
+Module **`Sophos` v1.17.3**

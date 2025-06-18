@@ -4,9 +4,9 @@ type: playbook
 
 # VirusTotal
 
-![VirusTotal](/assets/playbooks/library/virustotal.svg){ align=right width=150 }
+![VirusTotal](/assets/playbooks/library/virustotal.png){ align=right width=150 }
 
-[VirusTotal](https://www.virustotal.com) is a cybersecurity company specialized in malware analysis.
+VirusTotal is a cybersecurity company specialized in malware analysis.
 
 ## Configuration
 

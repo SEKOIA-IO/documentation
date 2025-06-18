@@ -4,7 +4,7 @@ type: playbook
 
 # HTTP
 
-![HTTP](/assets/playbooks/library/http.svg){ align=right width=150 }
+![HTTP](/assets/playbooks/library/http.png){ align=right width=150 }
 
 This module exposes actions to request HTTP resources
 

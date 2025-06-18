@@ -4,9 +4,9 @@ type: playbook
 
 # Fortigate Firewalls
 
-![Fortigate Firewalls](/assets/playbooks/library/fortigate-firewalls.svg){ align=right width=150 }
+![Fortigate Firewalls](/assets/playbooks/library/fortigate-firewalls.png){ align=right width=150 }
 
-Fortigate is a firewall appliance from [Fortinet](http://www.fortinet.com/) with anti-spam and anti-virus features. Initially distributed as a physical, rack-mounted product, Fortigate can now be installed as a virtual appliance that could run on virtualization platforms such as VMware vSphere
+Fortigate is a firewall appliance from Fortinet with anti-spam and anti-virus features. Initially distributed as a physical, rack-mounted product, Fortigate can now be installed as a virtual appliance that could run on virtualization platforms such as VMware vSphere
 
 ## Configuration
 
@@ -26,6 +26,13 @@ Add a new Address Group to a Fortigate Firewall
 | --------- | ------- | --------------------------- |
 | `name` | `string` | The name of the Address Group. |
 | `member` | `array` | The Object LIST to be added in the Address Group (can be an IP address, a FQDN or event a Group), for example Address1 |
+
+
+**Outputs**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `objects` | `array` | The OBJECT list added to the Address Group. |
 
 ### Post Fortigate FQDN Address
 
@@ -56,4 +63,4 @@ Add a new IP Address object to a Fortigate Firewall
 
 ## Extra
 
-Module **`Fortigate Firewalls` v1.29.0**
+Module **`Fortigate Firewalls` v1.29.1**

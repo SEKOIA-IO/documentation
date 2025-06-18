@@ -6,7 +6,7 @@ type: playbook
 
 ![BinaryEdge's API](/assets/playbooks/library/binaryedge-s-api.png){ align=right width=150 }
 
-[BinaryEdge](https://www.binaryedge.io/) is Cybersecurity/Data Science company that focuses its effort on acquiring, analyzing and classifying internet wide data. We have developed a platform - [40fy](https://app.binaryedge.io/) that allows us and our customers to gather several data points from exposed servers online.
+BinaryEdge is Cybersecurity/Data Science company that focuses its effort on acquiring, analyzing and classifying internet wide data. Their platform allows their customers to gather several data points from exposed servers online.
 
  The API provides access to that scanning platform, for your own usage, along with access to our curated databases so that you can do querying and analytics on our worldwide (constantly updated) collected data.
 

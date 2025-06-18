@@ -244,6 +244,7 @@ Get all non-revoked objects from Sekoia.io Intelligence feed
 | `feed_id` | `string` | ID of the Sekoia.io feed to get data from |
 | `batch_size_limit` | `integer` | Size of the batch of elements to get from the Sekoia.io feed in one time |
 | `modified_after` | `string` | Date from which IOCs should be retrieved. It must be a valid RFC-3339 date-time string (i.e. 2024-04-12T23:20:50.52Z) |
+| `resolve_sources` | `boolean` | Adding x_inthreat_sources field in all objects with the resolved names and confidences of the sources |
 
 
 **Outputs**
@@ -264,6 +265,7 @@ Get all valid IOCs from Sekoia.io Intelligence feed
 | `feed_id` | `string` | ID of the Sekoia.io feed to get data from |
 | `batch_size_limit` | `integer` | Size of the batch of elements to get from the Sekoia.io feed in one time |
 | `modified_after` | `string` | Date from which IOCs should be retrieved. It must be a valid RFC-3339 date-time string (i.e. 2024-04-12T23:20:50.52Z) |
+| `resolve_sources` | `boolean` | Adding x_inthreat_sources field in all objects with the resolved names and confidences of the sources |
 
 
 **Outputs**
@@ -1964,4 +1966,4 @@ Update a rule
 
 ## Extra
 
-Module **`Sekoia.io` v2.67.13**
+Module **`Sekoia.io` v2.68.2**
