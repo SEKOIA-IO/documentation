@@ -27,12 +27,6 @@ The following Sekoia.io built-in rules match the intake **Palo Alto Prisma acces
     
     - **Effort:** master
 
-??? abstract "Bazar Loader DGA (Domain Generation Algorithm)"
-    
-    Detects Bazar Loader domains based on the Bazar Loader DGA
-    
-    - **Effort:** elementary
-
 ??? abstract "Burp Suite Tool Detected"
     
     Burp Suite is a cybersecurity tool. When used as a proxy service, its purpose is to intercept packets and modify them to send them to the server. Burp Collaborator is a network service that Burp Suite uses to help discover many kinds of vulnerabilities (vulnerabilities scanner).
@@ -135,6 +129,12 @@ The following Sekoia.io built-in rules match the intake **Palo Alto Prisma acces
     
     - **Effort:** master
 
+??? abstract "Correlation Admin Files Checked On Network Share"
+    
+    Detects requests to multiple admin files on a network share. This could be an attacker performing reconnaissance steps on the system.
+    
+    - **Effort:** advanced
+
 ??? abstract "Correlation Potential DNS Tunnel"
     
     Detects domain name which is longer than 62 characters and requested at least 50 times in a 10 minutes range time. Long domain names are distinctive of DNS tunnels.
@@ -163,7 +163,7 @@ The following Sekoia.io built-in rules match the intake **Palo Alto Prisma acces
     
     Discord is a messaging application. It allows users to create their own communities to share messages and attachments. Those attachments have little to no overview and can be downloaded by almost anyone, which has been abused by attackers to host malicious payloads.
     
-    - **Effort:** intermediate
+    - **Effort:** advanced
 
 ??? abstract "Domain Trust Created Or Removed"
     
@@ -211,19 +211,19 @@ The following Sekoia.io built-in rules match the intake **Palo Alto Prisma acces
     
     Based on several samples from different botnets, this rule aims at detecting HTML infection chain by looking for HTML created files followed by suspicious files being executed.
     
-    - **Effort:** intermediate
+    - **Effort:** advanced
 
 ??? abstract "HackTools Suspicious Names"
     
     Quick-win rule to detect the default process names or file names of several HackTools.
     
-    - **Effort:** elementary
+    - **Effort:** advanced
 
 ??? abstract "ISO LNK Infection Chain"
     
     Detection of an ISO (or any other similar archive file) downloaded file, followed by a child-process of explorer, which is characteristic of an infection using an ISO containing an LNK file. For events with `host.name`.
     
-    - **Effort:** intermediate
+    - **Effort:** master
 
 ??? abstract "Internet Scanner"
     
@@ -283,13 +283,7 @@ The following Sekoia.io built-in rules match the intake **Palo Alto Prisma acces
     
     This event can be a sign of Kerberos replay attack or, among other things, network device configuration or routing problems.
     
-    - **Effort:** intermediate
-
-??? abstract "Potential Azure AD Phishing Page (Adversary-in-the-Middle)"
-    
-    Detects an HTTP request to an URL typical of the Azure AD authentication flow, but towards a domain that is not one the legitimate Microsoft domains used for Azure AD authentication.
-    
-    - **Effort:** intermediate
+    - **Effort:** master
 
 ??? abstract "Potential DNS Tunnel"
     
