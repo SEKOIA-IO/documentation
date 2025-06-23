@@ -1,4 +1,4 @@
-Rules catalog includes **1021 built-in detection rules** ([_last update on 2025-06-17_](rules_changelog.md)).
+Rules catalog includes **1021 built-in detection rules** ([_last update on 2025-06-23_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Identity Information**
 
@@ -2767,6 +2767,7 @@ Rules catalog includes **1021 built-in detection rules** ([_last update on 2025-
     
     - **Changelog:**
     
+        - 23/06/2025 - minor - Adding filter for false positives.
         - 19/10/2023 - major - Review of the rule to reduce false positives.
             
 ??? abstract "Suspicious XOR Encoded PowerShell Command Line"
