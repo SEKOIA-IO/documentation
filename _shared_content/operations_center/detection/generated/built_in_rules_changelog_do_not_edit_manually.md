@@ -3,7 +3,7 @@ Changelog _last update on 2025-06-23_
 ## Changelog
 
 ### Powershell Web Request
-  - 06/06/2025 - major - Review heuristic and change level effort
+  - 23/06/2025 - minor - improve filter
     
 ### Sekoia.io Endpoint Agent Stopped
   - 16/05/2025 - minor - Changing effort level.
