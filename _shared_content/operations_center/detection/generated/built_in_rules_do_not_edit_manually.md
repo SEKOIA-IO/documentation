@@ -2458,6 +2458,7 @@ Rules catalog includes **1021 built-in detection rules** ([_last update on 2025-
     - **Changelog:**
     
         - 06/06/2025 - major - Review heuristic and change level effort
+        - 23/06/2025 - minor - improve filter
             
 ??? abstract "Python Offensive Tools and Packages"
     
