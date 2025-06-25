@@ -326,9 +326,6 @@ To uninstall the agent, follow the instructions specific to your OS.
 
 ## Collect logs in files
 
-!!! WARNING
-    This feature is currently in beta.
-
 !!! INFO
     This feature allows you to monitor and collect logs from applications like NGINX. The agent automatically collects logs for all system-related events.
 
