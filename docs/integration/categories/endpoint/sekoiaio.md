@@ -239,7 +239,7 @@ To update the agent manually, follow the instructions specific to your OS.
     The following command must be executed:
 
     ```shell
-    sudo /opt/endpoint-agent update
+    sudo /opt/endpoint-agent/agent update
     ```
 
 === "MacOs"
