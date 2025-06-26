@@ -2113,7 +2113,7 @@ The following Sekoia.io built-in rules match the intake **SentinelOne EDR**. Thi
     
     WMImplant is a powershell framework used by attacker for reconnaissance and exfiltration, this rule attempts to detect WMimplant arguments and invokes commands. 
     
-    - **Effort:** intermediate
+    - **Effort:** advanced
 
 ??? abstract "Wdigest Enable UseLogonCredential"
     

@@ -1,7 +1,10 @@
-Changelog _last update on 2025-06-23_
+Changelog _last update on 2025-06-26_
 
 ## Changelog
 
+### WMImplant Hack Tool
+  - 26/06/2025 - major - Pattern updated to avoid false positives and effort level changed to be coherent.
+    
 ### Powershell Web Request
   - 23/06/2025 - minor - improve filter
     
@@ -760,9 +763,6 @@ Changelog _last update on 2025-06-23_
     
 ### Lateral Movement Remote Named Pipe
   - 26/03/2024 - minor - Filter was improved to reduce false positives
-    
-### WMImplant Hack Tool
-  - 26/03/2024 - major - Rule's pattern field changed
     
 ### Chafer (APT 39) Activity
   - 26/03/2024 - major - Rule's pattern field changed

@@ -1,4 +1,4 @@
-Rules catalog includes **1021 built-in detection rules** ([_last update on 2025-06-23_](rules_changelog.md)).
+Rules catalog includes **1022 built-in detection rules** ([_last update on 2025-06-26_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Identity Information**
 
@@ -1777,12 +1777,13 @@ Rules catalog includes **1021 built-in detection rules** ([_last update on 2025-
     
     WMImplant is a powershell framework used by attacker for reconnaissance and exfiltration, this rule attempts to detect WMimplant arguments and invokes commands. 
     
-    - **Effort:** intermediate
+    - **Effort:** advanced
     
     - **Changelog:**
     
         - 29/11/2023 - minor - Added a selection to filter some false positives.
-        - 26/03/2024 - major - Rule's pattern field changed
+        - 26/03/2024 - major - Rule's pattern field changed.
+        - 26/06/2025 - major - Pattern updated to avoid false positives and effort level changed to be coherent.
             
 ??? abstract "Wmic Process Call Creation"
     
@@ -2871,12 +2872,13 @@ Rules catalog includes **1021 built-in detection rules** ([_last update on 2025-
     
     WMImplant is a powershell framework used by attacker for reconnaissance and exfiltration, this rule attempts to detect WMimplant arguments and invokes commands. 
     
-    - **Effort:** intermediate
+    - **Effort:** advanced
     
     - **Changelog:**
     
         - 29/11/2023 - minor - Added a selection to filter some false positives.
-        - 26/03/2024 - major - Rule's pattern field changed
+        - 26/03/2024 - major - Rule's pattern field changed.
+        - 26/06/2025 - major - Pattern updated to avoid false positives and effort level changed to be coherent.
             
 ??? abstract "Web Application Launching Shell"
     
@@ -11881,6 +11883,12 @@ Rules catalog includes **1021 built-in detection rules** ([_last update on 2025-
         - 25/09/2024 - major - Rename the rule, update the indicators.
         - 23/12/2024 - major - Update the indicators.
             
+??? abstract "Entra ID Sign-In Via Known AiTM Phishing Kit (Rockstar 2FA)"
+    
+    Detects a sign-in attempt with known characteristics of the adversary-in-the-middle phishing kit Rockstar 2FA.
+    
+    - **Effort:** elementary
+    
 ??? abstract "Entra ID Sign-In Via Known AiTM Phishing Kit (Sneaky 2FA)"
     
     Detects a sign-in attempt with an impossible device shift characteristic of the adversary-in-the-middle phishing kit Sneaky 2FA.
@@ -12187,6 +12195,12 @@ Rules catalog includes **1021 built-in detection rules** ([_last update on 2025-
         - 25/09/2024 - major - Rename the rule, update the indicators.
         - 23/12/2024 - major - Update the indicators.
             
+??? abstract "Entra ID Sign-In Via Known AiTM Phishing Kit (Rockstar 2FA)"
+    
+    Detects a sign-in attempt with known characteristics of the adversary-in-the-middle phishing kit Rockstar 2FA.
+    
+    - **Effort:** elementary
+    
 ??? abstract "Entra ID Sign-In Via Known AiTM Phishing Kit (Sneaky 2FA)"
     
     Detects a sign-in attempt with an impossible device shift characteristic of the adversary-in-the-middle phishing kit Sneaky 2FA.
@@ -13406,6 +13420,12 @@ Rules catalog includes **1021 built-in detection rules** ([_last update on 2025-
         - 25/09/2024 - major - Rename the rule, update the indicators.
         - 23/12/2024 - major - Update the indicators.
             
+??? abstract "Entra ID Sign-In Via Known AiTM Phishing Kit (Rockstar 2FA)"
+    
+    Detects a sign-in attempt with known characteristics of the adversary-in-the-middle phishing kit Rockstar 2FA.
+    
+    - **Effort:** elementary
+    
 ??? abstract "Entra ID Sign-In Via Known AiTM Phishing Kit (Sneaky 2FA)"
     
     Detects a sign-in attempt with an impossible device shift characteristic of the adversary-in-the-middle phishing kit Sneaky 2FA.
