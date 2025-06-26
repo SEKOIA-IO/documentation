@@ -222,7 +222,8 @@ Host Hygiene collection can be enabled during the initial installation of the Se
 
 To enable Host Hygiene collection during the agent installation, append the `--compliance-collector` flag to your installation command.
 
-For example, 
+For example,
+
 === "Windows"
 
     ```shell
@@ -264,11 +265,12 @@ If the Sekoia Agent is already installed, you can enable Host Hygiene collection
         ```
 
 2. Add the following configuration:
-```yaml
-	roles:
-	    - event-collector
-	    - compliance-collector
-	```
+
+        ```
+        roles:
+        - event-collector
+        - compliance-collector
+        ```
 
 ### Update
 
