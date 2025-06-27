@@ -248,29 +248,29 @@ If the Sekoia Agent is already installed, you can enable Host Hygiene collection
 
 === "Windows"
 
-        ```
-        C:\Windows\System32\config\systemprofile\AppData\Local\Sekoia.io\EndpointAgent\config.yaml
-        ```
+    ```shell
+    C:\Windows\System32\config\systemprofile\AppData\Local\Sekoia.io\EndpointAgent\config.yaml
+    ```
 
-    === "Linux"
+=== "Linux"
 
-        ```
-        /etc/endpoint-agent/config.yaml
-        ```
+    ```shell
+    /etc/endpoint-agent/config.yaml
+    ```
 
-    === "MacOs"
+=== "MacOs"
     
-        ```
-        /etc/endpoint-agent/config.yaml
-        ```
+    ```shell
+    /etc/endpoint-agent/config.yaml
+    ```
 
-2. Add the following configuration:
+Add the following configuration:
 
-        ```
-        roles:
-        - event-collector
-        - compliance-collector
-        ```
+    ```yaml
+    roles:
+    - event-collector
+    - compliance-collector
+    ```
 
 ### Update
 
