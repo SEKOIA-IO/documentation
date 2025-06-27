@@ -16,7 +16,12 @@ Sekoia Operating Language (`SOL`) is a powerful, pipe-based query language desig
 | `cases` | Security incidents and cases | Case management, incident correlation |
 | `intakes` | Data sources | Data source management, volume monitoring |
 | `entities` | Company entities | Entity tracking, detailed reporting |
-| `communities` | Multi-tenant communities (if applicable) | Cross-organization analysis |
+| `assets` | Known Assets | Asset Investigations |
+| `asset_properties` | Listing known properties related to the Asset | Asset Investigations |
+| `asset_partitions` | Partitions on a per Asset basis and Hygiene related to these | Understand and improve Hygiene state Note: Part of the Reveal plan |
+| `asset_accounts` | Listing local users accounts related to the Asset | Impact analysis and incident correlation Note: Part of the Reveal plan |
+
+
 
 ### Alerts properties
 
@@ -125,6 +130,57 @@ Sekoia Operating Language (`SOL`) is a powerful, pipe-based query language desig
 | session_timeout           | The duration before users are automatically logged after inactivity.                       |
 | disable_inactive_avatars  | Indicate if users are disabled after 90 days of inactivity.                                |
 | disabled                  | Indicate if the community is disabled.                                                     |
+
+### Assets 
+
+| **Property**              | **Description**                                                                            |
+|---------------------------|--------------------------------------------------------------------------------------------|
+| uuid                      | A unique identifier for the community.                                                     |
+| community_uuid            | A unique identifier for the community related to the entity.                               |
+| name                      | The name of the Asset                                                                      |
+| type                      | Type of asset (host, account or  network.)                                                 |
+| category                  | Category of the asset                                                                      |
+| criticality               | Criticality of the asset                                                                   |
+| created_at                | Timestamp of asset creation in the Sekoia.io                                               |
+| updated_at                | Timestamp of last update                                                                   |
+| revoked                   | Indicates whether the asset is revoked                                                     |
+| reviewed                  | Indicates if the asset has been reviewed                                                   |
+| atoms                     | List of related names/identifiers (e.g., hostname, IPs, etc.)                              |
+
+### Asset Properties
+
+| **Property**              | **Description**                                                                            |
+|---------------------------|--------------------------------------------------------------------------------------------|
+| asset_uuid                | UUID of the asset to which the property is associated                                      |
+| value                     | The value of the property (e.g., darwin)                                                   |
+| name                      | The name of the property (e.g., os)                                                        |
+
+### Asset Partitions
+
+| **Property**              | **Description**                                                                            |
+|---------------------------|--------------------------------------------------------------------------------------------|
+| asset_uuid                | UUID of the asset to which the partitions is associated                                    |
+| community_uuid            | UUID of the community the asset belongs to                                                 |
+| asset_name                | The name of the asset that the partitions is associated with                               |
+| last_seen                 | Last time the asset was seen                                                               |
+| mountpoint                | Partition mount point (e.g., C:)                                                           |
+| encrypted                 | Whether the partition is encrypted (true/false)                                            |
+
+### Asset Accounts
+
+| **Property**              | **Description**                                                                            |
+|---------------------------|--------------------------------------------------------------------------------------------|
+| asset_uuid                | UUID of the asset to which the partitions is associated                                    |
+| community_uuid            | UUID of the community the asset belongs to                                                 |
+| asset_name                | The name of the asset that the partitions is associated with                               |
+| last_seen                 | Last time the asset was seen                                                               |
+| username                  | Name of the local user account                                                             |
+| is_enabled                | Whether the account is enabled                                                             |
+| is_admin                  | Whether the account has administrative privileges                                          |
+| last_logon                | Last time the account was used to log in                                                   |
+| bad_password_count        | Number of failed logon attempts                                                            |
+| number_of_logons          | Total number of logons recorded                                                            |
+| account_type              | Type of account (LocalUser, MicrosoftAccount, …)                                           |
 
 ## Operators
 
