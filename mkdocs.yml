@@ -358,6 +358,7 @@ nav:
       - Netskope Events: integration/categories/network_security/netskope_events.md
       - Netskope Transaction Events: integration/categories/network_security/netskope_transaction.md
       - OGO Shield WAF: integration/categories/network_security/ogo_shield.md
+      - Olfeo SAAS: integration/categories/network_security/olfeo_saas.md
       - Olfeo Secure Web Gateway: integration/categories/network_security/olfeo_secure_web_gateway.md
       - Palo Alto Next-Generation Firewall: integration/categories/network_security/paloalto.md
       - Palo Alto Prisma access: integration/categories/network_security/paloalto_prisma_access.md
