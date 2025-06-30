@@ -1,4 +1,4 @@
-Rules catalog includes **1022 built-in detection rules** ([_last update on 2025-06-26_](rules_changelog.md)).
+Rules catalog includes **1023 built-in detection rules** ([_last update on 2025-06-30_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Identity Information**
 
@@ -277,6 +277,10 @@ Rules catalog includes **1022 built-in detection rules** ([_last update on 2025-
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 30/06/2025 - minor - Changing similarity on threat name.
+            
 ## Resource Development
 **Acquire Infrastructure**
 
@@ -2461,6 +2465,12 @@ Rules catalog includes **1022 built-in detection rules** ([_last update on 2025-
         - 06/06/2025 - major - Review heuristic and change level effort
         - 23/06/2025 - minor - improve filter
             
+??? abstract "Powershell Web Request And Windows Script"
+    
+    Detects the use of PowerShell web request method combined with Windows Script utilities. This has been observed being used by some malware loaders.
+    
+    - **Effort:** intermediate
+    
 ??? abstract "Python Offensive Tools and Packages"
     
     Track installation and usage of offensive python packages and project that are used for lateral movement.

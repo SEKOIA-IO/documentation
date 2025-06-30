@@ -1,7 +1,10 @@
-Changelog _last update on 2025-06-26_
+Changelog _last update on 2025-06-30_
 
 ## Changelog
 
+### Gatewatcher AionIQ V103 Retrohunt
+  - 30/06/2025 - minor - Changing similarity on threat name.
+    
 ### WMImplant Hack Tool
   - 26/06/2025 - major - Pattern updated to avoid false positives and effort level changed to be coherent.
     
