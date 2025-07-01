@@ -154,7 +154,7 @@ In the Zscaler ZIA console:
    ![menu](/assets/integration/cloud_and_saas/zscaler/zia_menu.png){: style="max-width:100%"}
 2. Select the `Cloud NSS Feeds` tab
    ![nanolog](/assets/integration/cloud_and_saas/zscaler/zia_cloud.png){: style="max-width:100%"}
-3. Select `Add Clous NSS Feed` for each log type you want to forward
+3. Select `Add Cloud NSS Feed` for each log type you want to forward
 4. In the modal, in the `General section`, enter a name for the feed, select the status `Enabled`. According to the log type you want to forward, select the `NSS type`
     1. For `Admin Audit`, `SaaS Security`, `SaaS Security Activity` and `Web Log`, select `NSS for web`
       ![General/web](/assets/integration/cloud_and_saas/zscaler/zia_general_web.png){: style="max-width:100%"}
