@@ -1,7 +1,13 @@
-Changelog _last update on 2025-06-30_
+Changelog _last update on 2025-07-02_
 
 ## Changelog
 
+### Darktrace Threat Visualizer Model Breach Suspicious Activity
+  - 02/07/2025 - minor - Update similarity
+    
+### Darktrace Threat Visualizer Model Breach Critical Activity
+  - 02/07/2025 - minor - Update similarity
+    
 ### Gatewatcher AionIQ V103 Retrohunt
   - 30/06/2025 - minor - Changing similarity on threat name.
     
@@ -274,12 +280,6 @@ Changelog _last update on 2025-06-30_
     
 ### Suspicious Email Attachment Received
   - 14/11/2024 - major - Adding new file extension and new condition to make the rule broader as it can now match on more intakes.
-    
-### Darktrace Threat Visualizer Model Breach Suspicious Activity
-  - 12/11/2024 - minor - Update name, description, similarity and severity
-    
-### Darktrace Threat Visualizer Model Breach Critical Activity
-  - 12/11/2024 - minor - Update name, description, similarity and severity
     
 ### CVE-2019-0604 SharePoint
   - 04/11/2024 - minor - Added filter to reduce false positives
