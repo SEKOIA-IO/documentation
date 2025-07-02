@@ -1,4 +1,4 @@
-Rules catalog includes **1023 built-in detection rules** ([_last update on 2025-06-30_](rules_changelog.md)).
+Rules catalog includes **1023 built-in detection rules** ([_last update on 2025-07-02_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Identity Information**
 
@@ -3281,6 +3281,7 @@ Rules catalog includes **1023 built-in detection rules** ([_last update on 2025-
     - **Changelog:**
     
         - 12/11/2024 - minor - Update name, description, similarity and severity
+        - 02/07/2025 - minor - Update similarity
             
 ??? abstract "Darktrace Threat Visualizer Model Breach Suspicious Activity"
     
@@ -3291,6 +3292,7 @@ Rules catalog includes **1023 built-in detection rules** ([_last update on 2025-
     - **Changelog:**
     
         - 12/11/2024 - minor - Update name, description, similarity and severity
+        - 02/07/2025 - minor - Update similarity
             
 ??? abstract "Darktrace Threat Visualizer Threat Critical Alert"
     
