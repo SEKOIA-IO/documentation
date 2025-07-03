@@ -6,7 +6,7 @@ type: playbook
 
 ![CrowdStrike Falcon](/assets/playbooks/library/crowdstrike-falcon.png){ align=right width=150 }
 
-Integrates with CrowdStrike Falcon EDR
+CrowdStrike Falcon is a cloud-native cybersecurity platform known for its advanced threat detection, endpoint protection, and real-time response capabilities. It leverages AI and machine learning to protect against malware and sophisticated cyberattacks.
 
 ## Configuration
 
@@ -108,4 +108,4 @@ Enable detections on the provided IOCs: md5 / sha256 file hashes, IPv4/v6 addres
 
 ## Extra
 
-Module **`CrowdStrike Falcon` v1.22.0**
+Module **`CrowdStrike Falcon` v1.22.1**
