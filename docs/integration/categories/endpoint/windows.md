@@ -23,15 +23,15 @@ Additionally, this documentation will offer guidance on collecting and forwardin
     Please be advised that this documentation assumes the use of the 64-bit version of NXLog. If you are using the 32-bit version, it is crucial that you replace all references to `C:\Program Files\nxlog\` in the commands and configuration files with `C:\Program Files (x86)\nxlog\`. Failure to make this adjustment may result in errors.
 
 !!! Warning
-    Please be advised that collecting Windows events with NXLog on certain Windows languages that contain accents (such as French for "Système" keyword), are not correctly encoded by NXLog and results in an error of interpreation on our product. In such case, please consider the installation of our [agent](https://docs.sekoia.io/integration/integrations/endpoint/sekoiaio/) on the supported OS).
+    Please be advised that collecting Windows events with NXLog on certain Windows languages that contain accents (such as French for "Système" keyword), are not correctly encoded by NXLog and results in an error of interpretation on our product. In such case, please consider the installation of our [agent](https://docs.sekoia.io/integration/integrations/endpoint/sekoiaio/) on the supported OS.
 
 ## Windows Event logs
 
-On Microsoft Windows workstations and servers, most of the important hardward and software activities that are relevant for security detection and analysis, are logged into three files:
+On Microsoft Windows workstations and servers, most of the important hardware and software activities that are relevant for security detection and analysis, are logged into three files:
 
 - `Application`: for Windows components such as drivers and built-in interface elements
 - `System`: records events related to programs installed on a system
-- `Security`: records events related to security (such as logon attempts and ressource access)
+- `Security`: records events related to security (such as logon attempts and resource access)
 
 Those logs a readable locally in the Windows Event Viewer, in the section Windows Logs.
 
@@ -221,7 +221,7 @@ Please read the dedicated documentation for each concentrator:
 
 ## Windows Event Forwarder to Windows Event Collector to a concentrator
 
-Most of the following commands are to be run as Administrator in a Powershell interpretor.
+Most of the following commands are to be run as Administrator in a Powershell interpreter.
 
 ### Windows Event Collector (WEC) setup
 The Windows Event Collector, also known as WEC, is a Microsoft service that can be enabled and configured to aggregate logs from the Windows Event Forwarders (WEF).
@@ -296,7 +296,7 @@ Ensure the file is correctly saved, then close it.
 
 ** 3. Configure the Windows Remote Management**
 
-On the WEC server, open a command interpretor as Administrator, and run the following command:
+On the WEC server, open a command interpreter as Administrator, and run the following command:
 ```powershell
 winrm qc -q
 ```
@@ -346,7 +346,7 @@ Note that these steps are necessary to allow the Event Log Reader to access the 
 
 **Configure the Windows Remote Management**
 
-On the AD admin console, open a command interpretor as Administrator and run the following command:
+On the AD admin console, open a command interpreter as Administrator and run the following command:
 ```powershell
 winrm qc -q
 ```
@@ -364,7 +364,7 @@ Server=http://FQDN_WEC_SERVER:5985/wsman/SubscriptionManager/WEC,Refresh=60
 
 **Apply the GPO**
 
-On the AD admin console, open a command interpretor as Administrator and run the following command:
+On the AD admin console, open a command interpreter as Administrator and run the following command:
 ```powershell
 gpupdate /force
 ```
