@@ -267,6 +267,12 @@ The following Sekoia.io built-in rules match the intake **Trend Micro Vision One
     
     - **Effort:** master
 
+??? abstract "Correlation Netcat Infection Chain"
+    
+    Detect netcat connection to download et execute payload via piped bash
+    
+    - **Effort:** elementary
+
 ??? abstract "Correlation Priv Esc Via Remote Thread"
     
     Detect a process that obtains system privilege via a remote thread
@@ -614,6 +620,12 @@ The following Sekoia.io built-in rules match the intake **Trend Micro Vision One
     Detects suspicious Invoke-TheHash PowerShell commandlet used for performing pass the hash WMI and SMB tasks.
     
     - **Effort:** elementary
+
+??? abstract "JS PowerShell Infection Chains"
+    
+    Detect JS script execution who run a PowerShell download and exec command_line
+    
+    - **Effort:** intermediate
 
 ??? abstract "KeePass Config XML In Command-Line"
     
