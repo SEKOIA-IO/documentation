@@ -115,7 +115,7 @@ So you can setup it in two ways:
               "serviceType": "cef",
               "serviceSettings": {
                 "url": "https://intake.sekoia.io/jsons?path=%24.events&status_code=200",
-                "requireValidSslCertificate": True,
+                "requireValidSslCertificate": False,
                 "authorization": f"Basic {key}"
               },
               "subscribeToEventTypes": {
@@ -206,7 +206,7 @@ So you can setup it in two ways:
           "serviceSettings": {
             "url": "https://intake.sekoia.io/jsons?path=%24.events&status_code=200",
             "authorization": "Basic <base64_intake_key>",
-            "requireValidSslCertificate": true
+            "requireValidSslCertificate": false
           },
           "subscribeToEventTypes": {
             "adcloud": false,
