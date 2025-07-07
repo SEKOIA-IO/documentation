@@ -1,4 +1,4 @@
-Rules catalog includes **1023 built-in detection rules** ([_last update on 2025-07-02_](rules_changelog.md)).
+Rules catalog includes **1025 built-in detection rules** ([_last update on 2025-07-07_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Identity Information**
 
@@ -1993,6 +1993,12 @@ Rules catalog includes **1023 built-in detection rules** ([_last update on 2025-
     
     - **Effort:** intermediate
     
+??? abstract "Correlation Netcat Infection Chain"
+    
+    Detect netcat connection to download et execute payload via piped bash
+    
+    - **Effort:** elementary
+    
 ??? abstract "Correlation Supicious Powershell Drop and Exec"
     
     Detects a PowerShell process that download and exec a payload
@@ -2214,6 +2220,12 @@ Rules catalog includes **1023 built-in detection rules** ([_last update on 2025-
     Detects suspicious Invoke-TheHash PowerShell commandlet used for performing pass the hash WMI and SMB tasks.
     
     - **Effort:** elementary
+    
+??? abstract "JS PowerShell Infection Chains"
+    
+    Detect JS script execution who run a PowerShell download and exec command_line
+    
+    - **Effort:** intermediate
     
 ??? abstract "Lazarus Loaders"
     
@@ -13910,6 +13922,12 @@ Rules catalog includes **1023 built-in detection rules** ([_last update on 2025-
     Cloudflare Gateway allows admins to enable Anti-Virus (AV) scanning of files that are uploaded or downloaded by users as the file passes through Gateway. AV scanning of files requires organizations to enable Proxy mode under Settings > Network > Layer 7 Firewall. TLS decryption is also recommended to enable inspection of HTTPS traffic.
     
     - **Effort:** advanced
+    
+??? abstract "Correlation Netcat Infection Chain"
+    
+    Detect netcat connection to download et execute payload via piped bash
+    
+    - **Effort:** elementary
     
 ??? abstract "Information Stealer Downloading Legitimate Third-Party DLLs"
     
