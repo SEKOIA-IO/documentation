@@ -108,6 +108,14 @@ In this section, you will find examples of raw logs as generated natively by the
 
 
 
+=== "test_ASA_113005"
+
+    ```
+	Jun 07 2025 17:31:57: %ASA-6-113005: AAA user authentication Rejected : reason = Unspecified : server = 1.2.3.4 : user = ***** : user IP = 5.6.7.8
+    ```
+
+
+
 === "test_ASA_113012"
 
     ```
@@ -248,6 +256,14 @@ In this section, you will find examples of raw logs as generated natively by the
 
     ```
 	%ASA-5-611103: User logged out: Uname: admintufin
+    ```
+
+
+
+=== "test_ASA_716039"
+
+    ```
+	Jun 07 2025 16:16:20: %ASA-6-716039: Group <GrpPolicy> User <*****> IP <1.2.3.4> Authentication: rejected, Session Type: WebVPN.
     ```
 
 
