@@ -514,7 +514,7 @@ Select the way who develop your parse to find the appropriate documentation: wit
     pipeline:
       - name: parsed_event
         external:
-          name: kv.parseKV
+          name: kv.parse-kv
           properties:
             item_sep: ',\s'
       - name: email

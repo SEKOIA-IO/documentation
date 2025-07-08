@@ -843,6 +843,12 @@ The following Sekoia.io built-in rules match the intake **Citrix NetScaler / ADC
     
     - **Effort:** advanced
 
+??? abstract "Powershell Web Request And Windows Script"
+    
+    Detects the use of PowerShell web request method combined with Windows Script utilities. This has been observed being used by some malware loaders.
+    
+    - **Effort:** intermediate
+
 ??? abstract "Privilege Escalation Awesome Scripts (PEAS)"
     
     Detect PEAS privileges escalation scripts and binaries
@@ -1177,7 +1183,7 @@ The following Sekoia.io built-in rules match the intake **Citrix NetScaler / ADC
     
     WMImplant is a powershell framework used by attacker for reconnaissance and exfiltration, this rule attempts to detect WMimplant arguments and invokes commands. 
     
-    - **Effort:** intermediate
+    - **Effort:** advanced
 
 ??? abstract "Wdigest Enable UseLogonCredential"
     

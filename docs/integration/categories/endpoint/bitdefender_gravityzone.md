@@ -92,91 +92,104 @@ So you can setup it in two ways:
       ```
     4. Create python script with the following content:
       ```python
-      import base64
-      import sys
-      import argparse
-      
-      import requests
-      
-      
-      BITDEFENDER_PUSH_URL = "https://cloudgz.gravityzone.bitdefender.com/api/v1.0/jsonrpc/push"
-      
-      def activate_forwarding(apikey: str, intake_key: str):
-          # Convert the API key to base64 for the Basic Authorization header
-          key = base64.b64encode(b':'+intake_key.encode('utf-8')).decode('utf-8')
-      
-          # Prepare the payload
-          payload = {
-            "id": "be630db8-24c2-481c-b150-a79807dd6f7d",
-            "jsonrpc": "2.0",
-            "method": "setPushEventSettings",
-            "params": {
-              "status": 1,
-              "serviceType": "cef",
-              "serviceSettings": {
-                "url": "https://intake.sekoia.io/jsons?path=%24.events&status_code=200",
-                "requireValidSslCertificate": True,
-                "authorization": f"Basic {key}"
-              },
-              "subscribeToEventTypes": {
-                "adcloud": True,
-                "antiexploit": True,
-                "aph": True,
-                "av": True,
-                "avc": True,
-                "dp": True,
-                "endpoint-moved-in": True,
-                "endpoint-moved-out": True,
-                "exchange-malware": True,
-                "exchange-user-credentials": True,
-                "fw": True,
-                "hd": True,
-                "hwid-change": True,
-                "install": False,
-                "modules": False,
-                "network-monitor": True,
-                "network-sandboxing": True,
-                "new-incident": True,
-                "ransomware-mitigation": True,
-                "registration": True,
-                "security-container-update-available": False,
-                "supa-update-status": False,
-                "sva": False,
-                "sva-load": False,
-                "task-status": False,
-                "troubleshooting-activity": True,
-                "uc": True,
-                "uninstall": False
+        from posixpath import join as urljoin
+        import base64
+        import sys
+        import argparse
+
+        import requests
+
+
+        BITDEFENDER_PUSH_URL = "https://cloudgz.gravityzone.bitdefender.com/api/v1.0/jsonrpc/push"
+
+
+        def activate_forwarding(apikey: str, intake_key: str, base_url: str):
+            # Convert the API key to base64 for the Basic Authorization header
+            key = base64.b64encode(b':'+intake_key.encode('utf-8')).decode('utf-8')
+
+            # compute the endpoint URL
+            endpoint_url = urljoin(base_url.rstrip("/"), "jsons?path=%24.events&status_code=200")
+
+            # Prepare the payload
+            payload = {
+              "id": "be630db8-24c2-481c-b150-a79807dd6f7d",
+              "jsonrpc": "2.0",
+              "method": "setPushEventSettings",
+              "params": {
+                "status": 1,
+                "serviceType": "cef",
+                "serviceSettings": {
+                  "url": endpoint_url,
+                  "requireValidSslCertificate": True,
+                  "authorization": f"Basic {key}"
+                },
+                "subscribeToEventTypes": {
+                  "adcloud": True,
+                  "antiexploit": True,
+                  "aph": True,
+                  "av": True,
+                  "avc": True,
+                  "dp": True,
+                  "endpoint-moved-in": True,
+                  "endpoint-moved-out": True,
+                  "exchange-malware": True,
+                  "exchange-user-credentials": True,
+                  "fw": True,
+                  "hd": True,
+                  "hwid-change": True,
+                  "install": False,
+                  "modules": False,
+                  "network-monitor": True,
+                  "network-sandboxing": True,
+                  "new-incident": True,
+                  "ransomware-mitigation": True,
+                  "registration": True,
+                  "security-container-update-available": False,
+                  "supa-update-status": False,
+                  "sva": False,
+                  "sva-load": False,
+                  "task-status": False,
+                  "troubleshooting-activity": True,
+                  "uc": True,
+                  "uninstall": False
+                }
               }
             }
-          }
-      
-          # Create the push setting against the Bitdefender API
-          response = requests.post(
-              url=BITDEFENDER_PUSH_URL,
-              auth=requests.auth.HTTPBasicAuth(apikey,""),
-              json=payload,
-          )
 
-          # Check the result of the creation
-          if response.status_code == 200 and response.json().get("result") == True:
-              setting_id = response.json().get("id")
-              print(f"The push setting was successfully created. ID: {setting_id}")
-          else:
-              print(f"The creation of the forwarding failed. Reason: {response.content}")
-      
-      
-      if __name__ == '__main__':
-          parser = argparse.ArgumentParser(prog=sys.argv[0], description='activate the forwarding of events to Sekoia.io')
-          parser.add_argument('apikey')
-          parser.add_argument('intake_key')
-          args = parser.parse_args()
-          activate_forwarding(args.apikey, args.intake_key)
+            # Create the push setting against the Bitdefender API
+            response = requests.post(
+                url=BITDEFENDER_PUSH_URL,
+                auth=requests.auth.HTTPBasicAuth(apikey,""),
+                json=payload,
+            )
+
+            # Check the result of the creation
+            if response.status_code == 200 and response.json().get("result") == True:
+                setting_id = response.json().get("id")
+                print(f"The push setting was successfully created. ID: {setting_id}")
+            else:
+                print(f"The creation of the forwarding failed. Reason: {response.content}")
+
+
+        if __name__ == '__main__':
+            parser = argparse.ArgumentParser(prog=sys.argv[0], description='activate the forwarding of events to Sekoia.io')
+            parser.add_argument('apikey')
+            parser.add_argument('intake_key')
+            parser.add_argument('--base-url', default='https://intake.sekoia.io', help='The base URL to the Sekoia.io region (see https://docs.sekoia.io/getting_started/regions/ for more information; default to FRA1)')
+            args = parser.parse_args()
+            activate_forwarding(args.apikey, args.intake_key, args.base_url)
       ```
     5. Run the script with the following command:
       ```bash
         $ /tmp/venv/bin/python3 bitdefender_activate_forwarding.py "${BITDEFENDER_APIKEY}" "${SEKOIAIO_INTAKE_KEY}"
       ```
+
+    !!! note
+        For other regions, you have to specify the `--base-url` parameter when running the script. For example, for the US region, you can run:
+        ```bash
+        $ /tmp/venv/bin/python3 bitdefender_activate_forwarding.py "${BITDEFENDER_APIKEY}" "${SEKOIAIO_INTAKE_KEY}" --base-url "https://app.usa1.sekoia.io/api/v1/intake-http"
+        ```
+        See [Regions documentation](https://docs.sekoia.io/getting_started/regions/) for more information about the regions.
 
 === "Manual"
 
@@ -185,6 +198,7 @@ So you can setup it in two ways:
       ```bash
         $ export BITDEFENDER_APIKEY="your_api_key"
         $ export SEKOIAIO_INTAKE_KEY="your_intake_key"
+        $ export SEKOIA_BASE_URL="https://intake.sekoia.io" # adapt according to your region, see https://docs.sekoia.io/getting_started/regions/
       ```
     3. Convert the Bitdefender APIKey into base64: 
       ```bash
@@ -204,9 +218,9 @@ So you can setup it in two ways:
           "status": 1,
           "serviceType": "cef",
           "serviceSettings": {
-            "url": "https://intake.sekoia.io/jsons?path=%24.events&status_code=200",
+            "url": "${SEKOIA_BASE_URL}/jsons?path=%24.events&status_code=200",
             "authorization": "Basic <base64_intake_key>",
-            "requireValidSslCertificate": true
+            "requireValidSslCertificate": false
           },
           "subscribeToEventTypes": {
             "adcloud": false,

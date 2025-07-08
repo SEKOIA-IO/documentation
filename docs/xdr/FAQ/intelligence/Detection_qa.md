@@ -97,4 +97,13 @@ Here are the main steps involved in crafting Sekoia.io's verified detection rule
 - **Staging**: Once a rule has been successfully tested, it is moved to a staging environment. This is a production-like environment where the rule can be monitored for false positives before it is deployed to production.
 - **Approval**: If a rule performs well in staging, it is then approved for production deployment.
 
-For more insights on how we create rules and how we test them, check our blogpost on that matter: [XDR detection engineering at scale: crafting detection rules for SecOps efficiency](https://blog.sekoia.io/xdr-detection-rules-at-scale/). 
+## Detection Engineering references
+
+For more insights on how we create rules and how we test them, check our blogposts on that matter:
+
+- [XDR detection engineering at scale: crafting detection rules for SecOps efficiency](https://blog.sekoia.io/xdr-detection-rules-at-scale/).
+- [Detection engineering at scale: one step closer (part one)](https://blog.sekoia.io/detection-engineering-at-scale-one-step-closer-part-one/).
+- [Detection engineering at scale: one step closer (part two)](https://blog.sekoia.io/detection-engineering-at-scale-one-step-closer-part-two/).
+- [Detection engineering at scale: one step closer (part three)](https://blog.sekoia.io/detection-engineering-at-scale-one-step-closer-part-three/).
+
+A [full PDF version](/assets/detection_engineering_at_scale_one_step_closer.pdf) of our three parts blogpost above is also available.

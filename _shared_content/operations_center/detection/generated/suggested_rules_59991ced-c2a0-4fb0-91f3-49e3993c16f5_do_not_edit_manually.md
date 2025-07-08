@@ -1263,6 +1263,12 @@ The following Sekoia.io built-in rules match the intake **Tanium**. This documen
     
     - **Effort:** master
 
+??? abstract "Powershell Web Request And Windows Script"
+    
+    Detects the use of PowerShell web request method combined with Windows Script utilities. This has been observed being used by some malware loaders.
+    
+    - **Effort:** intermediate
+
 ??? abstract "Powershell Winlogon Helper DLL"
     
     Detects modifications to the Winlogon Registry keys, which may cause Winlogon to load and execute malicious DLLs and/or executables.
@@ -1927,7 +1933,7 @@ The following Sekoia.io built-in rules match the intake **Tanium**. This documen
     
     WMImplant is a powershell framework used by attacker for reconnaissance and exfiltration, this rule attempts to detect WMimplant arguments and invokes commands. 
     
-    - **Effort:** intermediate
+    - **Effort:** advanced
 
 ??? abstract "Wdigest Enable UseLogonCredential"
     

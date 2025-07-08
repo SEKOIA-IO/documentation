@@ -333,6 +333,12 @@ The following Sekoia.io built-in rules match the intake **F5 BIG-IP**. This docu
     
     - **Effort:** master
 
+??? abstract "Correlation Netcat Infection Chain"
+    
+    Detect netcat connection to download et execute payload via piped bash
+    
+    - **Effort:** elementary
+
 ??? abstract "Correlation Potential DNS Tunnel"
     
     Detects domain name which is longer than 62 characters and requested at least 50 times in a 10 minutes range time. Long domain names are distinctive of DNS tunnels.
@@ -927,6 +933,12 @@ The following Sekoia.io built-in rules match the intake **F5 BIG-IP**. This docu
     
     - **Effort:** advanced
 
+??? abstract "Powershell Web Request And Windows Script"
+    
+    Detects the use of PowerShell web request method combined with Windows Script utilities. This has been observed being used by some malware loaders.
+    
+    - **Effort:** intermediate
+
 ??? abstract "Privilege Escalation Awesome Scripts (PEAS)"
     
     Detect PEAS privileges escalation scripts and binaries
@@ -1297,7 +1309,7 @@ The following Sekoia.io built-in rules match the intake **F5 BIG-IP**. This docu
     
     WMImplant is a powershell framework used by attacker for reconnaissance and exfiltration, this rule attempts to detect WMimplant arguments and invokes commands. 
     
-    - **Effort:** intermediate
+    - **Effort:** advanced
 
 ??? abstract "Wdigest Enable UseLogonCredential"
     

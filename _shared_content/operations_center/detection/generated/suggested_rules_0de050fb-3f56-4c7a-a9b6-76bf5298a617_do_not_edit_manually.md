@@ -261,6 +261,12 @@ The following Sekoia.io built-in rules match the intake **Cybereason EDR activit
     
     - **Effort:** master
 
+??? abstract "Correlation Netcat Infection Chain"
+    
+    Detect netcat connection to download et execute payload via piped bash
+    
+    - **Effort:** elementary
+
 ??? abstract "Credential Harvesting Via Vaultcmd.exe"
     
     Detects when the process vaultcmd is used for credential harvesting.
@@ -1155,6 +1161,12 @@ The following Sekoia.io built-in rules match the intake **Cybereason EDR activit
     
     - **Effort:** master
 
+??? abstract "Powershell Web Request And Windows Script"
+    
+    Detects the use of PowerShell web request method combined with Windows Script utilities. This has been observed being used by some malware loaders.
+    
+    - **Effort:** intermediate
+
 ??? abstract "Privilege Escalation Awesome Scripts (PEAS)"
     
     Detect PEAS privileges escalation scripts and binaries
@@ -1687,7 +1699,7 @@ The following Sekoia.io built-in rules match the intake **Cybereason EDR activit
     
     WMImplant is a powershell framework used by attacker for reconnaissance and exfiltration, this rule attempts to detect WMimplant arguments and invokes commands. 
     
-    - **Effort:** intermediate
+    - **Effort:** advanced
 
 ??? abstract "Wdigest Enable UseLogonCredential"
     

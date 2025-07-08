@@ -213,6 +213,64 @@ For example, if the agent must communicate with `fra2`, run the following comman
     ```shell
     sudo /Applications/SekoiaEndpointAgent.app/Contents/MacOs/SekoiaEndpointAgent install --intake-key <INTAKE_KEY> --region fra2
     ```
+#### Enabling Host Hygiene Collection
+**Note:** Collection of Hygiene telemetry are a feature of the Reveal module.
+
+Host Hygiene collection can be enabled during the initial installation of the Sekoia Agent or by modifying the agent's configuration file.
+
+##### Method 1: During Agent Installation
+
+To enable Host Hygiene collection during the agent installation, append the `--compliance-collector` flag to your installation command.
+
+For example,
+
+=== "Windows"
+
+    ```shell
+    .\agent-latest.exe install --intake-key <INTAKE_KEY> --compliance-collector
+    ```
+
+=== "Linux"
+
+    ```shell
+    ./agent-latest install --intake-key <INTAKE_KEY> ---compliance-collector
+    ```
+
+=== "MacOs"
+
+    ```shell
+    sudo /Applications/SekoiaEndpointAgent.app/Contents/MacOs/SekoiaEndpointAgent install --intake-key <INTAKE_KEY> --compliance-collector
+    ```
+
+##### Method 2: Editing the Configuration File
+
+If the Sekoia Agent is already installed, you can enable Host Hygiene collection by editing its configuration file. Locate the configuration file and add `compliance-collector` to the `roles` section.
+
+=== "Windows"
+
+    ```shell
+    C:\Windows\System32\config\systemprofile\AppData\Local\Sekoia.io\EndpointAgent\config.yaml
+    ```
+
+=== "Linux"
+
+    ```shell
+    /etc/endpoint-agent/config.yaml
+    ```
+
+=== "MacOs"
+    
+    ```shell
+    /etc/endpoint-agent/config.yaml
+    ```
+
+Add the following configuration:
+
+    ```yaml
+    roles:
+    - event-collector
+    - compliance-collector
+    ```
 
 ### Update
 
@@ -239,7 +297,7 @@ To update the agent manually, follow the instructions specific to your OS.
     The following command must be executed:
 
     ```shell
-    sudo /opt/endpoint-agent update
+    sudo /opt/endpoint-agent/agent update
     ```
 
 === "MacOs"
@@ -325,9 +383,6 @@ To uninstall the agent, follow the instructions specific to your OS.
     ```
 
 ## Collect logs in files
-
-!!! WARNING
-    This feature is currently in beta.
 
 !!! INFO
     This feature allows you to monitor and collect logs from applications like NGINX. The agent automatically collects logs for all system-related events.

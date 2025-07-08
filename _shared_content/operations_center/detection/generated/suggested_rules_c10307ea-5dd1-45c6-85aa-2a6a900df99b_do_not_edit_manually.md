@@ -903,6 +903,12 @@ The following Sekoia.io built-in rules match the intake **Elastic Winlogbeat**. 
     
     - **Effort:** advanced
 
+??? abstract "Login Brute-Force Successful On Jumpcloud Portal"
+    
+    A user has attempted to login several times (brute-force) on Jumpcloud Portal and succeeded to login.
+    
+    - **Effort:** advanced
+
 ??? abstract "Login Brute-Force Successful On SentinelOne EDR Management Console"
     
     A user has attempted to login several times (brute-force) on the SentinelOne EDR Management Console and succeeded to login.
@@ -1544,6 +1550,12 @@ The following Sekoia.io built-in rules match the intake **Elastic Winlogbeat**. 
     Detects the use of various web request methods executed remotely via Windows PowerShell.
     
     - **Effort:** master
+
+??? abstract "Powershell Web Request And Windows Script"
+    
+    Detects the use of PowerShell web request method combined with Windows Script utilities. This has been observed being used by some malware loaders.
+    
+    - **Effort:** intermediate
 
 ??? abstract "Powershell Winlogon Helper DLL"
     
@@ -2353,7 +2365,7 @@ The following Sekoia.io built-in rules match the intake **Elastic Winlogbeat**. 
     
     WMImplant is a powershell framework used by attacker for reconnaissance and exfiltration, this rule attempts to detect WMimplant arguments and invokes commands. 
     
-    - **Effort:** intermediate
+    - **Effort:** advanced
 
 ??? abstract "Wdigest Enable UseLogonCredential"
     

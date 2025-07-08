@@ -267,6 +267,12 @@ The following Sekoia.io built-in rules match the intake **CrowdStrike Falcon**. 
     
     - **Effort:** master
 
+??? abstract "Correlation Netcat Infection Chain"
+    
+    Detect netcat connection to download et execute payload via piped bash
+    
+    - **Effort:** elementary
+
 ??? abstract "Correlation Potential DNS Tunnel"
     
     Detects domain name which is longer than 62 characters and requested at least 50 times in a 10 minutes range time. Long domain names are distinctive of DNS tunnels.
@@ -282,6 +288,12 @@ The following Sekoia.io built-in rules match the intake **CrowdStrike Falcon**. 
 ??? abstract "Correlation Supicious Powershell Drop and Exec"
     
     Detects a PowerShell process that download and exec a payload
+    
+    - **Effort:** intermediate
+
+??? abstract "Covenant Default HTTP Beaconing"
+    
+    Detects potential Covenant communications through the user-agent and specific urls
     
     - **Effort:** intermediate
 
@@ -486,6 +498,12 @@ The following Sekoia.io built-in rules match the intake **CrowdStrike Falcon**. 
 ??? abstract "Disabled IE Security Features"
     
     Detects from the command lines or the registry, changes that indicate unwanted modifications to registry keys that disable important Internet Explorer security features. This has been used by attackers during Operation Ke3chang.
+    
+    - **Effort:** advanced
+
+??? abstract "Discord Suspicious Download"
+    
+    Discord is a messaging application. It allows users to create their own communities to share messages and attachments. Those attachments have little to no overview and can be downloaded by almost anyone, which has been abused by attackers to host malicious payloads.
     
     - **Effort:** advanced
 
@@ -795,6 +813,12 @@ The following Sekoia.io built-in rules match the intake **CrowdStrike Falcon**. 
     
     - **Effort:** elementary
 
+??? abstract "JS PowerShell Infection Chains"
+    
+    Detect JS script execution who run a PowerShell download and exec command_line
+    
+    - **Effort:** intermediate
+
 ??? abstract "KeePass Config XML In Command-Line"
     
     Detects a command-line interaction with the KeePass Config XML file. It could be used to retrieve informations or to be abused for persistence.
@@ -806,6 +830,12 @@ The following Sekoia.io built-in rules match the intake **CrowdStrike Falcon**. 
     Kernel module installation can be used to configure system settings to automatically execute a program during system boot or logon to maintain persistence or gain higher-level privileges on compromised systems. The prerequisites are to enable monitoring of the finit_module, init_module, delete_module syscalls using Auditbeat.
     
     - **Effort:** advanced
+
+??? abstract "Koadic MSHTML Command"
+    
+    Detects Koadic payload using MSHTML module
+    
+    - **Effort:** intermediate
 
 ??? abstract "Lazarus Loaders"
     
@@ -1179,6 +1209,12 @@ The following Sekoia.io built-in rules match the intake **CrowdStrike Falcon**. 
     
     - **Effort:** intermediate
 
+??? abstract "Nimbo-C2 User Agent"
+    
+    Nimbo-C2 Uses an unusual User-Agent format in its implants.
+    
+    - **Effort:** intermediate
+
 ??? abstract "NjRat Registry Changes"
     
     Detects changes for the RUN registry key which happen when a victim is infected by NjRAT. Please note that even if NjRat is well-known for the behavior the rule catches, the rule is a bit larger and could catch other malwares.
@@ -1269,11 +1305,35 @@ The following Sekoia.io built-in rules match the intake **CrowdStrike Falcon**. 
     
     - **Effort:** elementary
 
+??? abstract "Potential Azure AD Phishing Page (Adversary-in-the-Middle)"
+    
+    Detects an HTTP request to an URL typical of the Azure AD authentication flow, but towards a domain that is not one the legitimate Microsoft domains used for Azure AD authentication.
+    
+    - **Effort:** intermediate
+
+??? abstract "Potential Bazar Loader User-Agents"
+    
+    Detects potential Bazar loader communications through the user-agent
+    
+    - **Effort:** elementary
+
 ??? abstract "Potential DNS Tunnel"
     
     Detects domain name which is longer than 62 characters. Long domain names are distinctive of DNS tunnels.
     
     - **Effort:** advanced
+
+??? abstract "Potential Lemon Duck User-Agent"
+    
+    Detects LemonDuck user agent. The format used two sets of alphabetical characters separated by dashes, for example "User-Agent: Lemon-Duck-[A-Z]-[A-Z]".
+    
+    - **Effort:** elementary
+
+??? abstract "Potential LokiBot User-Agent"
+    
+    Detects potential LokiBot communications through the user-agent
+    
+    - **Effort:** intermediate
 
 ??? abstract "PowerCat Function Loading"
     
@@ -1364,6 +1424,12 @@ The following Sekoia.io built-in rules match the intake **CrowdStrike Falcon**. 
     Detects the use of various web request methods executed remotely via Windows PowerShell.
     
     - **Effort:** master
+
+??? abstract "Powershell Web Request And Windows Script"
+    
+    Detects the use of PowerShell web request method combined with Windows Script utilities. This has been observed being used by some malware loaders.
+    
+    - **Effort:** intermediate
 
 ??? abstract "Privilege Escalation Awesome Scripts (PEAS)"
     
@@ -2005,7 +2071,7 @@ The following Sekoia.io built-in rules match the intake **CrowdStrike Falcon**. 
     
     WMImplant is a powershell framework used by attacker for reconnaissance and exfiltration, this rule attempts to detect WMimplant arguments and invokes commands. 
     
-    - **Effort:** intermediate
+    - **Effort:** advanced
 
 ??? abstract "Wdigest Enable UseLogonCredential"
     

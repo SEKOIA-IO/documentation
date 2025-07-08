@@ -3,6 +3,12 @@
 The following Sekoia.io built-in rules match the intake **Mimecast Email Security**. This documentation is updated automatically and is based solely on the fields used by the intake which are checked against our rules. This means that some rules will be listed but might not be relevant with the intake.
 
 [SEKOIA.IO x Mimecast Email Security on ATT&CK Navigator](https://mitre-attack.github.io/attack-navigator/#layerURL=https%3A%2F%2Fraw.githubusercontent.com%2FSEKOIA-IO%2Fdocumentation%2Fmain%2F_shared_content%2Foperations_center%2Fdetection%2Fgenerated%2Fattack_041e915e-2fb6-4604-9b24-902c9daa2d3c_do_not_edit_manually.json){ .md-button }
+??? abstract "Advanced IP Scanner"
+    
+    Detects the use of Advanced IP Scanner. Seems to be a popular tool for ransomware groups.
+    
+    - **Effort:** master
+
 ??? abstract "Burp Suite Tool Detected"
     
     Burp Suite is a cybersecurity tool. When used as a proxy service, its purpose is to intercept packets and modify them to send them to the server. Burp Collaborator is a network service that Burp Suite uses to help discover many kinds of vulnerabilities (vulnerabilities scanner).
@@ -38,6 +44,24 @@ The following Sekoia.io built-in rules match the intake **Mimecast Email Securit
     Detects potential exploitation of the authentication by-pass vulnerability that can allow an unauthenticated user to perform remote arbitrary file execution on the Pulse Connect Secure gateway. It is highly recommended to apply the Pulse Secure mitigations and seach for indicators of compromise on affected servers if you are in doubt over the integrity of your Pulse Connect Secure product.
     
     - **Effort:** intermediate
+
+??? abstract "Certify Or Certipy"
+    
+    Detects the use of certify and certipy which are two different tools used to enumerate and abuse Active Directory Certificate Services.
+    
+    - **Effort:** advanced
+
+??? abstract "Cobalt Strike Default Beacons Names"
+    
+    Detects the default names of Cobalt Strike beacons / payloads.
+    
+    - **Effort:** intermediate
+
+??? abstract "Credential Dump Tools Related Files"
+    
+    Detects processes or file names related to credential dumping tools and the dropped files they generate by default.
+    
+    - **Effort:** advanced
 
 ??? abstract "Cryptomining"
     
@@ -75,6 +99,12 @@ The following Sekoia.io built-in rules match the intake **Mimecast Email Securit
     
     - **Effort:** master
 
+??? abstract "HackTools Suspicious Names"
+    
+    Quick-win rule to detect the default process names or file names of several HackTools.
+    
+    - **Effort:** advanced
+
 ??? abstract "Koadic MSHTML Command"
     
     Detects Koadic payload using MSHTML module
@@ -99,6 +129,12 @@ The following Sekoia.io built-in rules match the intake **Mimecast Email Securit
     
     - **Effort:** master
 
+??? abstract "PasswordDump SecurityXploded Tool"
+    
+    Detects the execution of the PasswordDump SecurityXploded Tool
+    
+    - **Effort:** elementary
+
 ??? abstract "Possible Malicious File Double Extension"
     
     Detects request to potential malicious file with double extension
@@ -108,6 +144,12 @@ The following Sekoia.io built-in rules match the intake **Mimecast Email Securit
 ??? abstract "ProxyShell Microsoft Exchange Suspicious Paths"
     
     Detects suspicious calls to Microsoft Exchange resources, in locations related to webshells observed in campaigns using this vulnerability.
+    
+    - **Effort:** elementary
+
+??? abstract "RTLO Character"
+    
+    Detects RTLO (Right-To-Left character) in file and process names.
     
     - **Effort:** elementary
 
@@ -141,6 +183,24 @@ The following Sekoia.io built-in rules match the intake **Mimecast Email Securit
     
     - **Effort:** intermediate
 
+??? abstract "Suspicious Email Attachment Received"
+    
+    Detects email containing a suspicious file as an attachment, based on its extension.
+    
+    - **Effort:** advanced
+
+??? abstract "Suspicious File Name"
+    
+    Detects suspicious file name possibly linked to malicious tool.
+    
+    - **Effort:** advanced
+
+??? abstract "Suspicious PROCEXP152.sys File Created In Tmp"
+    
+    Detects the creation of the PROCEXP152.sys file in the application-data local temporary folder. This driver is used by Sysinternals Process Explorer but also by KDU (https://github.com/hfiref0x/KDU) or Ghost-In-The-Logs (https://github.com/bats3c/Ghost-In-The-Logs), which uses KDU. Note - Clever attackers may easily bypass this detection by just renaming the driver filename. Therefore just Medium-level and don't rely on it.
+    
+    - **Effort:** advanced
+
 ??? abstract "Suspicious TOR Gateway"
     
     Detects suspicious TOR gateways. Gateways are often used by the victim to pay and decrypt the encrypted files without installing TOR. Tor intercepts the network traffic from one or more apps on user’s computer, usually the user web browser, and shuffles it through a number of randomly-chosen computers before passing it on to its destination. This disguises user location, and makes it harder for servers to pick him/her out on repeat visits, or to tie together separate visits to different sites, this making tracking and surveillance more difficult. Before a network packet starts its journey, user’s computer chooses a random list of relays and repeatedly encrypts the data in multiple layers, like an onion. Each relay knows only enough to strip off the outermost layer of encryption, before passing what’s left on to the next relay in the list.
@@ -158,3 +218,9 @@ The following Sekoia.io built-in rules match the intake **Mimecast Email Securit
     Detects TOR usage globally, whether the IP is a destination or source. TOR is short for The Onion Router, and it gets its name from how it works. TOR intercepts the network traffic from one or more apps on user’s computer, usually the user web browser, and shuffles it through a number of randomly-chosen computers before passing it on to its destination. This disguises user location, and makes it harder for servers to pick him/her out on repeat visits, or to tie together separate visits to different sites, this making tracking and surveillance more difficult. Before a network packet starts its journey, user’s computer chooses a random list of relays and repeatedly encrypts the data in multiple layers, like an onion. Each relay knows only enough to strip off the outermost layer of encryption, before passing what’s left on to the next relay in the list.
     
     - **Effort:** master
+
+??? abstract "WCE wceaux.dll Creation"
+    
+    Detects wceaux.dll creation while Windows Credentials Editor (WCE) is executed.
+    
+    - **Effort:** intermediate
