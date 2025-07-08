@@ -256,6 +256,7 @@ nav:
       - Trend Micro Apex One / Vision One Endpoint: integration/categories/endpoint/trend_micro_apex_one.md
       - Trend Micro Vision One Workbench: integration/categories/endpoint/trend_micro_vision_one_workbench.md
       - Trend Micro Vision One Observed Attack Techniques: integration/categories/endpoint/trend_micro_vision_one_oat.md
+      - WatchGuard EPDR: integration/categories/endpoint/watchguard_epdr.md
       - VMWare ESXi: integration/categories/endpoint/vmware_esxi.md
       - VMWare VCenter: integration/categories/endpoint/vmware_vcenter.md
       - Windows: integration/categories/endpoint/windows.md
@@ -653,6 +654,7 @@ plugins:
       xdr/features/collect/integrations/endpoint/trellix_epo.md: integration/categories/network_security/trellix_epo.md
       xdr/features/collect/integrations/endpoint/trend_micro/trend_micro_apex_one.md: integration/categories/endpoint/trend_micro_apex_one.md
       xdr/features/collect/integrations/endpoint/trend_micro/trend_micro_deep_security.md: integration/categories/network_security/trend_micro_deep_security.md
+      xdr/features/collect/integrations/endpoint/watchguard_epdr.md: integration/categories/endpoint/watchguard_epdr.md
       xdr/features/collect/integrations/endpoint/vmware/vmware_esxi.md: integration/categories/endpoint/vmware_esxi.md
       xdr/features/collect/integrations/endpoint/vmware/vmware_vcenter.md: integration/categories/endpoint/vmware_vcenter.md
       xdr/features/collect/integrations/endpoint/windows.md: integration/categories/endpoint/windows.md
