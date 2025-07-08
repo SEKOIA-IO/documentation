@@ -4,7 +4,7 @@ type: intake
 
 ## Overview
 
-WatchGuard EPDR (Endpoint Detection and Request) is a robust cybersecurity solution designed to protect against advanced threats. 
+WatchGuard EPDR (Endpoint Protection Detection and Response) is a robust cybersecurity solution designed to protect against advanced threats. 
 It provides real-time monitoring and automated response capabilities, ensuring comprehensive endpoint security for organizations of all sizes. With its intuitive management interface, businesses can easily detect, investigate, and remediate potential security incidents.
 
 - **Vendor**: WatchGuard
