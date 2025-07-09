@@ -135,14 +135,14 @@ Sekoia Operating Language (`SOL`) is a powerful, pipe-based query language desig
 
 | **Property**              | **Description**                                                                            |
 |---------------------------|--------------------------------------------------------------------------------------------|
-| uuid                      | A unique identifier for the community.                                                     |
-| community_uuid            | A unique identifier for the community related to the entity.                               |
+| uuid                      | A unique identifier for the asset.                                                         |
+| community_uuid            | A unique identifier for the community related to the asset.                                |
 | name                      | The name of the Asset                                                                      |
 | type                      | Type of asset (host, account or  network.)                                                 |
 | category                  | Category of the asset                                                                      |
 | criticality               | Criticality of the asset                                                                   |
-| created_at                | Timestamp of asset creation in the Sekoia.io                                               |
-| updated_at                | Timestamp of last update                                                                   |
+| created_at                | The date and time when the asset was created.                                              |
+| updated_at                | The date and time when the asset was last updated.                                         |
 | revoked                   | Indicates whether the asset is revoked                                                     |
 | reviewed                  | Indicates if the asset has been reviewed                                                   |
 | atoms                     | List of related names/identifiers (e.g., hostname, IPs, etc.)                              |
@@ -170,7 +170,7 @@ Sekoia Operating Language (`SOL`) is a powerful, pipe-based query language desig
 
 | **Property**              | **Description**                                                                            |
 |---------------------------|--------------------------------------------------------------------------------------------|
-| asset_uuid                | UUID of the asset to which the partitions is associated                                    |
+| asset_uuid                | UUID of the asset to which the accounts is associated                                      |
 | community_uuid            | UUID of the community the asset belongs to                                                 |
 | asset_name                | The name of the asset that the partitions is associated with                               |
 | last_seen                 | Last time the asset was seen                                                               |
