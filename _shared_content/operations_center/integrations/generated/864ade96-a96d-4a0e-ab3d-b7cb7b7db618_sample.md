@@ -36,6 +36,14 @@ In this section, you will find examples of raw logs as generated natively by the
 
 
 
+=== "query_log_dhcp_10"
+
+    ```
+	DHCPOFFER on 1.2.3.4 to 11:22:33:44:55:66 via eth2 relay 5.6.7.8 lease-duration 119 offered-duration 3600
+    ```
+
+
+
 === "query_log_dhcp_2"
 
     ```
@@ -88,6 +96,14 @@ In this section, you will find examples of raw logs as generated natively by the
 
     ```
 	r-l-e:192.168.1.113,Fixed,P76984,c4:d0:e3:b4:08:4d,1732119022,1732291822,,$
+    ```
+
+
+
+=== "query_log_dhcp_9"
+
+    ```
+	DHCPREQUEST for 1.2.3.4 from 11:22:33:44:55:66 (ABCDEFGHI) via eth2 TransID 1234abcd (RENEW)
     ```
 
 
