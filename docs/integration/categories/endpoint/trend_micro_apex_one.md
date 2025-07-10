@@ -31,11 +31,6 @@ This integration supports the following log types:
 - Pattern Update Status
 
 
-!!! warning
-    This format is in beta
-
-
-
 ## Configure
 
 In this guide, you will configure your Apex Central to forward detection through syslog.
