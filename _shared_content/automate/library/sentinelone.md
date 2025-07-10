@@ -207,4 +207,4 @@ Update a threat incident in SentinelOne
 
 ## Extra
 
-Module **`SentinelOne` v1.20.7**
+Module **`SentinelOne` v1.20.9**
