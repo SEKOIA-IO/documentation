@@ -55,7 +55,7 @@ env:
       value: 'true'
 ```
 
-- Mount the audit log directory in a path where the Sekoia Agent collect the log file. For that you need to update your daemonset: 
+- Mount the audit log directory in a path where the [Sekoia Agent](https://docs.sekoia.io/integration/categories/endpoint/sekoiaio/) collect the log file. For that you need to update your daemonset: 
 
 ```yaml
  # (...)
@@ -93,4 +93,4 @@ logfiles:
 
 ## Support
 
-If you need assistance with this integration, please contact our support team at www.support.sekoia.io. 
+If you need assistance with this integration, please contact our support team at support.sekoia.io. 
