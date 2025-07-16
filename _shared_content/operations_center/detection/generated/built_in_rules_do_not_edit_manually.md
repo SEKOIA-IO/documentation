@@ -1,4 +1,4 @@
-Rules catalog includes **1025 built-in detection rules** ([_last update on 2025-07-10_](rules_changelog.md)).
+Rules catalog includes **1028 built-in detection rules** ([_last update on 2025-07-16_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Identity Information**
 
@@ -14577,6 +14577,24 @@ Rules catalog includes **1025 built-in detection rules** ([_last update on 2025-
     Detects SunCrypt ransomware's parameters, most of which are unique.
     
     - **Effort:** elementary
+    
+??? abstract "Tmutil Delete Backups"
+    
+    Detects when the utility tmutil is used to delete backups. The Time Machine utility is used to restore data from backups, add or remove exclusions, and compare backups.
+    
+    - **Effort:** elementary
+    
+??? abstract "Tmutil Disabled"
+    
+    Detects when the utility tmutil is disabled. The Time Machine utility is used to restore data from backups, add or remove exclusions, and compare backups.
+    
+    - **Effort:** elementary
+    
+??? abstract "Tmutil Exclude File From Backups"
+    
+    Detects when the utility tmutil is used to exclude paths from backups.
+    
+    - **Effort:** master
     
 **Network Denial of Service**
 
