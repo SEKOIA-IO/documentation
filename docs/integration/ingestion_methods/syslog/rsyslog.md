@@ -452,6 +452,10 @@ Follow these steps to forward logs using RELP Protocol:
 	}
 	```
 
+!!!note
+    If selinux is enabled and set to enforcing, port 11514 needs to be added to 'syslog_tls_port_t'. Run `sudo semanage port -a -t syslog_tls_port_t -p tcp 11514`
+
+
 ## Troubleshooting
 
 After setting up your Rsyslog, you may encounter errors due to the contextual environment or omissions while copying and pasting information.
