@@ -697,7 +697,7 @@ Connect to the remote server where you would like to install the Sekoia.io Forwa
 2. Edit the configuration files
 
     - `sekoiaio-concentrator/intakes.yaml` by replacing the `name`, `protocol`, `port` and `intake_key` for each intake you would like to collect
-    - `sekoiaio-concentrator/docker-compose.yml` by remplacing the value `"20516-20518:20516-20518"` by a relevant content according to the `sekoiaio-concentrator/intakes.yaml` previously edited
+    - `sekoiaio-concentrator/docker-compose.yml` by replacing the value `"20516-20518:20516-20518"` by a relevant content according to the `sekoiaio-concentrator/intakes.yaml` previously edited
 
 3. Start the docker
 
