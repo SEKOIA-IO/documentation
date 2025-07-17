@@ -11,7 +11,8 @@ type: intake
 - **Detection based on:** Alerts  
 - **Supported feature:** Events associated with incidents  
 
----
+!!! Warning
+    Important note - This format is currently in beta. We highly value your feedback to improve its performance.
 
 ## Step-by-Step Configuration Procedure
 
@@ -43,10 +44,6 @@ type: intake
       ![NeroSwarm Log Management](/assets/operation_center/integration_catalog/cloud_and_saas/neroswarm_honeypot/neroswarm_step03.png)
 
     > **Note:** It takes around 2 minutes for the changes to be reflected.
-
-
-
-
 
 ### Verify Inbound Events
 
