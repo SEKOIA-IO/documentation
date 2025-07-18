@@ -11,6 +11,7 @@ Sekoia Operating Language (`SOL`) is a powerful, pipe-based query language desig
 | Data Source | Description | Use Cases |
 |-------------|-------------|-----------|
 | `events` | Security events | Threat hunting, incident investigation, SOC reporting |
+| `event_telemetry` | Telemetry on events | Analytics on your ingestion pipelines |
 | `eternal_events` | Security events related to alerts or cases | Extract metrics from events related to alerts/cases |
 | `alerts` | Security alerts and detections | SOC monitoring, alert pattern analysis |
 | `cases` | Security incidents and cases | Case management, incident correlation |
@@ -181,6 +182,50 @@ Sekoia Operating Language (`SOL`) is a powerful, pipe-based query language desig
 | bad_password_count        | Number of failed logon attempts                                                            |
 | number_of_logons          | Total number of logons recorded                                                            |
 | account_type              | Type of account (LocalUser, MicrosoftAccount, …)                                           |
+
+### Event Telemetry
+
+The **event_telemetry** data source provides aggregated metrics about the events processed by your intakes. 
+It allows you to monitor, report, and troubleshoot data ingestion across your Sekoia.io tenant.
+
+Each record in **event_telemetry** represents a time-bucketed summary of event activity for a given intake, including the number of events, total data volume, event sizes, and processing lags. 
+This makes it easy to:
+
+* Analyze your data usage over time, per intake
+* Identify anomalies such as sudden spikes in data volume or processing delays
+* Detect potential misconfigurations that could lead to unexpected data costs or ingestion issues
+
+Typical Use Cases:
+
+* Usage reporting: Track how much data each intake is sending over specific timeframes.
+* Performance monitoring: Observe event size distributions and processing lags to ensure optimal pipeline performance.
+* Root cause analysis: Investigate policy violations or overages by drilling down into intake-level telemetry.
+
+You can query **event_telemetry** in the SOL query builder and combine it with other sources (e.g., intakes) to enrich your reports with intake names and configurations.
+
+
+| **Property**            | **Description**                                                                              |
+|-------------------------|----------------------------------------------------------------------------------------------|
+| community_uuid          | UUID of the community the events belongs to                                                  |
+| intake_uuid             | UUID of the intake source generating the events                                              |
+| intake_dialect_uuid     | UUID representing the dialect used for the intake                                            |
+| bucket_start_date       | UTC timestamp representing the beginning of the aggregation window                           |
+| bucket_end_date         | UTC timestamp representing the end of the aggregation windows                                |
+| occurrences             | Number of events in the aggregation                                                          |
+| total_message_size      | Total size (in bytes) of raw events in the bucket                                            |
+| max_message_size        | Size (in bytes) of the largest raw event in the bucket                                       |
+| min_message_size        | Size (in bytes) of the smallest raw event in the bucket                                      |
+| total_event_size        | Total size (in bytes) of all events in the bucket                                            |
+| max_event_size          | Size (in bytes) of the largest event in the bucket                                           |
+| min_event_size          | Size (in bytes) of the smallest event in the bucket                                          |
+| max_lag                 | Maximum observed delay (in seconds) between the event's timestamp and its reception date.    |
+| min_lag                 | Minimum observed delay (in seconds) between the event's timestamp and its reception date.    |
+| total_lag               | Total accumulated lag (in seconds) across all events in the bucket.                          |
+| max_processing_lag      | Maximum processing time (in seconds) taken by Sekoia.io to process an event.                 |
+| min_processing_lag      | Minimum processing time (in seconds) taken by Sekoia.io to process an event.                 |
+| total_processing_lag    | Total accumulated processing time (in seconds) for all events in the bucket.                 |
+
+
 
 ## Operators
 
@@ -1425,3 +1470,16 @@ events
 ```
 
 ---
+
+
+### Received Kbytes per hour per intake
+
+``` shell
+event_telemetry
+| where bucket_start_date > ago(30d)
+| aggregate volume = sum(total_message_size) / 1024 by intake_uuid, date = bin(bucket_start_date, 1h)
+| lookup intakes on intake_uuid == uuid
+| order by date asc
+| render linechart with(x=date, y=volume, breakdown_by=intake.name)
+
+```
