@@ -236,7 +236,7 @@ nav:
       - IBM AIX: integration/categories/endpoint/ibm_aix.md
       - IBM iSeries (AS/400): integration/categories/endpoint/ibm_i.md
       - Kaspersky Endpoint Security: integration/categories/endpoint/kaspersky_endpoint_security.md
-      - Kubernetes: integration/categories/endpoint/kubernetes.md
+      - Kubernetes Audit Logs: integration/categories/endpoint/kubernetes.md
       - Linux AuditBeat: integration/categories/endpoint/auditbeat_linux.md
       - Log Insight Windows: integration/categories/endpoint/log_insight_windows.md
       - Lookout Mobile Endpoint Security: integration/categories/endpoint/lookout_mes.md
