@@ -1,6 +1,6 @@
 # Built-in detection rules, EventIDs and EventProviders relations
 SEKOIA.IO provides built-in detection rules to illuminate intrusions, adversarial behaviours and suspicious activity escalation chains so you can immediately take steps to remediate. Built-in rules can be customized to your context and according to your security posture.
-This page aims at helping partners & customers in having their detection coverage by knowing which Event IDs and [Event Providers](https://learn.microsoft.com/en-us/windows/win32/etw/providing-events) are used by rule. **Please note this was retrieved automatically from our tests samples when generating attacks that triggered the rules. It might not be exhaustive and concerns mostly Windows-related rules.** _Last update on 2025-07-17_
+This page aims at helping partners & customers in having their detection coverage by knowing which Event IDs and [Event Providers](https://learn.microsoft.com/en-us/windows/win32/etw/providing-events) are used by rule. **Please note this was retrieved automatically from our tests samples when generating attacks that triggered the rules. It might not be exhaustive and concerns mostly Windows-related rules.** _Last update on 2025-07-21_
 
 The colors of the EventIDs in this page should be interpreted as follow:
 
@@ -210,7 +210,7 @@ The colors of the EventIDs in this page should be interpreted as follow:
 | NetSh Used To Disable Windows Firewall | advanced | <span style="color:#5865d3"><a href='https://learn.microsoft.com/en-us/sysinternals/downloads/sysmon#events' style='color: inherit;'>1</a></span> | Microsoft-Windows-Sysmon |
 | WiFi Credentials Harvesting Using Netsh | advanced | <span style="color:#5865d3"><a href='https://learn.microsoft.com/en-us/sysinternals/downloads/sysmon#events' style='color: inherit;'>1</a></span> | Microsoft-Windows-Sysmon |
 | Suspicious ADSI-Cache Usage By Unknown Tool | advanced | <span style="color:#5865d3"><a href='https://learn.microsoft.com/en-us/sysinternals/downloads/sysmon#events' style='color: inherit;'>11</a></span> | Microsoft-Windows-Sysmon |
-| Suspicious Windows DNS Queries | advanced | <span style="color:#5865d3"><a href='https://learn.microsoft.com/en-us/sysinternals/downloads/sysmon#events' style='color: inherit;'>22</a></span> | Microsoft-Windows-Sysmon |
+| Suspicious Windows DNS Queries | advanced | <span style="color:#5865d3"><a href='https://learn.microsoft.com/en-us/sysinternals/downloads/sysmon#events' style='color: inherit;'>5</a></span>, <span style="color:#5865d3"><a href='https://learn.microsoft.com/en-us/sysinternals/downloads/sysmon#events' style='color: inherit;'>22</a></span> | Kernel-Process, Microsoft-Windows-Sysmon |
 | Rclone Process | advanced | <span style="color:#5865d3"><a href='https://learn.microsoft.com/en-us/sysinternals/downloads/sysmon#events' style='color: inherit;'>1</a></span> | Microsoft-Windows-Sysmon |
 | Suspicious Double Extension | advanced | <span style="color:#5865d3"><a href='https://learn.microsoft.com/en-us/sysinternals/downloads/sysmon#events' style='color: inherit;'>5</a></span> | Microsoft-Windows-Sysmon |
 | HackTools Suspicious Names | advanced | <span style="color:#5865d3"><a href='https://learn.microsoft.com/en-us/sysinternals/downloads/sysmon#events' style='color: inherit;'>5</a></span>, <span style="color:#5865d3"><a href='https://learn.microsoft.com/en-us/sysinternals/downloads/sysmon#events' style='color: inherit;'>11</a></span> | Microsoft-Windows-Kernel-File, Microsoft-Windows-Sysmon |
@@ -527,7 +527,7 @@ The colors of the EventIDs in this page should be interpreted as follow:
 | 1 | 236 | 46.46 % |
 | 13 | 50 | 9.84 % |
 | 4104 | 45 | 8.86 % |
-| 5 | 29 | 5.71 % |
+| 5 | 30 | 5.91 % |
 | 11 | 24 | 4.72 % |
 | 15 | 20 | 3.94 % |
 | 7 | 15 | 2.95 % |
@@ -609,7 +609,7 @@ The colors of the EventIDs in this page should be interpreted as follow:
 | ------- | ------------------------- | ------------------------------------------------------ |
 | Microsoft-Windows-Sysmon | 291 | 57.28 % |
 | Microsoft-Windows-Security-Auditing | 87 | 17.13 % |
-| Kernel-Process | 58 | 11.42 % |
+| Kernel-Process | 59 | 11.61 % |
 | Microsoft-Windows-PowerShell | 48 | 9.45 % |
 | Service Control Manager | 11 | 2.17 % |
 | Microsoft-Windows-Windows Defender | 9 | 1.77 % |

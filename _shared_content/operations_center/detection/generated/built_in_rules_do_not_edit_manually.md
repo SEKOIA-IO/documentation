@@ -1,4 +1,4 @@
-Rules catalog includes **1028 built-in detection rules** ([_last update on 2025-07-17_](rules_changelog.md)).
+Rules catalog includes **1028 built-in detection rules** ([_last update on 2025-07-21_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Identity Information**
 
@@ -13823,6 +13823,7 @@ Rules catalog includes **1028 built-in detection rules** ([_last update on 2025-
     
     - **Changelog:**
     
+        - 21/07/2025 - minor - Updating pattern with new field and new filter to avoid false positives.
         - 11/06/2025 - minor - Added filters to reduce false positives.
         - 02/08/2023 - minor - Added a new field and filters to reduce false positives.
             
