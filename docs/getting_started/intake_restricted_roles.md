@@ -38,7 +38,12 @@ Once the `intake restricted role` is created, you can assign it to existing user
 
 ### Limited permissions
 
-With Intake restricted roles, permissions selection is limited to `alerts`, `queries` and `events` due to the nature of this role.
+With Intake restricted roles, permissions selection is limited to `dashboard`, `events`, `alerts`, `queries` and `intakes` due to the nature of this role.
+
+### Access to saved queries and dashboards
+
+Users with Intake restricted roles have read-only access to all saved queries and dashboards.
+However, they can only modify or delete content they have personally created.
 
 ### Disabling built-in roles
 
