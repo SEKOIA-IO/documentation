@@ -9,6 +9,8 @@ Vectra Respond UX delivers an intuitive, AI-driven interface for seamless threat
 - **Supported environment**: SaaS
 - **Supported application or feature**: Entities scoring
 
+!!! Warning
+    Important note - This format is currently in beta. We highly value your feedback to improve its performance.
 
 ## Configure
 This setup guide will show you how to forward logs produced by your Vectra Appliance server to Sekoia.io by means of an rsyslog transport channel.
