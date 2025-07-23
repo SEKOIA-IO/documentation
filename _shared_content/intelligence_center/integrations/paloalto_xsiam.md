@@ -26,7 +26,7 @@ The playbook has **3 nodes**:
 3. **Send Batch to XSIAM** (Action)
    Calls the XSIAM `indicators/insert_jsons` API to inject indicators into a Collection.
 
-![xsiam_playbook_workflow](/assets/intelligence_center/XSIAM/xsiam_playbook_workflow.png){:style="max-width:100%"}
+![xsiam_playbook_workflow](/assets/intelligence_center/XSIAM/xsiam_playbook_workflow.png){:style="max-width:80%"}
 
 ---
 
@@ -50,7 +50,7 @@ The playbook has **3 nodes**:
 8. In the feed details view, click **Copy Feed ID**.
    You will need this in the playbook configuration.
 
-![xsiam_custom_feed_copy_id](/assets/intelligence_center/XSIAM/xsiam_custom_feed_copy_id.png){:style="max-width:100%"}
+![xsiam_custom_feed_copy_id](/assets/intelligence_center/XSIAM/xsiam_custom_feed_copy_id.png){:style="max-width:50%"}
 
 ---
 
@@ -140,7 +140,7 @@ You can override these arguments in the node’s UI:
 
 - Force all severities to LOW (i.e. all Confidence values highier than 0 will be traduced in "LOW"):
 
-![xsiam_override_severity](/assets/intelligence_center/XSIAM/xsiam_override_severity.png){:style="max-width:100%"}
+![xsiam_override_severity](/assets/intelligence_center/XSIAM/xsiam_override_severity.png){:style="max-width:80%"}
 
 - Custom reliability bands:
 
@@ -151,7 +151,7 @@ You can override these arguments in the node’s UI:
    | 0–49       | C           |
    | —          | D / E / F / G (unused) |
 
-![xsiam_override_reliability](/assets/intelligence_center/XSIAM/xsiam_override_reliability.png){:style="max-width:100%"}
+![xsiam_override_reliability](/assets/intelligence_center/XSIAM/xsiam_override_reliability.png){:style="max-width:80%"}
 
 > After running, `{{ node.1.data }}` contains a list of XSIAM-ready JSON objects.
 
