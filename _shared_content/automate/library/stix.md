@@ -127,14 +127,15 @@ Parse Cryptolaemus content
 
 ### CVE to STIX
 
-Convert CVE JSON to STIX 2.1
+Convert CVE JSON to STIX
 
 **Arguments**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
-| `cve_list` | `array` | CVE Objects to convert to STIX |
-| `cve_list_paths` | `array` | CVE Objects to convert to STIX, from file paths |
+| `cve_list` | `array` | CVE Objects to convert to STIX. Format version accepted: 4.0 or 5.1 |
+| `cve_list_paths` | `array` | CVE Objects to convert to STIX, from file paths. Format version accepted: 4.0 or 5.1 |
+| `confidence` | `integer` | Confidence that the creator has in the correctness of their data |
 
 
 **Outputs**
@@ -363,4 +364,4 @@ Convert a list of strings into a list of observables
 
 ## Extra
 
-Module **`STIX` v1.72.1**
+Module **`STIX` v1.73.1**
