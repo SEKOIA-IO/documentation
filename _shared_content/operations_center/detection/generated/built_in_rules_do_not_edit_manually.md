@@ -1,4 +1,4 @@
-Rules catalog includes **1028 built-in detection rules** ([_last update on 2025-07-21_](rules_changelog.md)).
+Rules catalog includes **1029 built-in detection rules** ([_last update on 2025-07-23_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Identity Information**
 
@@ -2463,6 +2463,12 @@ Rules catalog includes **1028 built-in detection rules** ([_last update on 2025-
 ??? abstract "PowerShell NTFS Alternate Data Stream"
     
     Detects writing data into NTFS alternate data streams from PowerShell. Needs Script Block Logging (Event ID 4104)
+    
+    - **Effort:** advanced
+    
+??? abstract "PowerShell Suspicious Context Changes"
+    
+    Detects some PowerShell context changes that could be used to create an interactive shell and bypass some security measures in terms of logging and execution.
     
     - **Effort:** advanced
     
