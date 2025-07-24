@@ -6,6 +6,9 @@ type: intake
 
 Nozomi Vantage is a comprehensive SaaS-based platform that delivers real-time visibility, threat detection, and incident response for industrial environments. Designed for operational technology (OT) security, it enables organizations to monitor critical infrastructure and IoT devices effectively. With advanced analytics and intuitive dashboards, Nozomi Vantage helps ensure the safety and resilience of connected systems against cyber threats.
  
+!!! Warning
+    Important note - This format is currently in beta. We highly value your feedback to improve its performance.
+
 - **Vendor**: Nozomi Networks
 
 ## Configure
