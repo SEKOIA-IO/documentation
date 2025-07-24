@@ -60,6 +60,14 @@ In this section, you will find examples of raw logs as generated natively by the
 
 
 
+=== "test_file_name"
+
+    ```
+	time=09:26:55 devname="fortiprxweb02" devid="TESTDEVID" eventtime=1752564415129694112 tz="+0200" logid="1059028704" type="utm" subtype="app-ctrl" eventtype="signature" level="information" vd="root" appid=11111 user="P002211" group="GGA_PROXY_STANDARD" srcip=1.2.3.4 srccountry="Reserved" dstip=2.3.4.5 dstcountry="United States" srcport=64846 dstport=443 srcintf="port1" srcintfrole="undefined" dstintf="port1" dstintfrole="undefined" proto=6 service="HTTPS" direction="outgoing" policyid=5 poluuid="000000-f99e-51ed-1e58-8ced3bccf4b9" policytype="policy" sessionid=692225337 applist="standard" action="pass" appcat="GenAI" app="OpenAI.ChatGPT_File.Upload" hostname="test.test" incidentserialno=191129845 url="/backend-api/files" msg="GenAI: OpenAI.ChatGPT_File.Upload" clouduser="1.2.3.4" filename="Test file name.docx" apprisk="low" filesize=33980 cloudaction="upload"
+    ```
+
+
+
 === "test_forward_1"
 
     ```
