@@ -1,10 +1,12 @@
 uuid: f6cfddb4-543a-41fe-9802-c66b7c90366d
-name: BeyondTrust PRA
+name: BeyondTrust PRA Sessions
 type: intake
 
 ## Overview
 
 BeyondTrust Privileged Remote Access enables secure, controlled remote access to critical systems for employees and vendors, focusing on protecting privileged credentials and sessions.
+
+This integration allows you to ingest BeyondTrust Privileged Remote Access session logs into Sekoia.io, enabling you to monitor and analyze privileged access activities.
 
 !!! Warning
     Important note - This format is currently in beta. We highly value your feedback to improve its performance.
