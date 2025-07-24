@@ -10,6 +10,13 @@ Nozomi Vantage is a comprehensive SaaS-based platform that delivers real-time vi
     Important note - This format is currently in beta. We highly value your feedback to improve its performance.
 
 - **Vendor**: Nozomi Networks
+- **Supported environment**: SaaS
+- **Detection based on**: Alerts, Telemetry
+- **Supported application or feature**:
+    - Alerts
+    - Assets
+    - Vulnerabilities
+    - Wireless Networks
 
 ## Configure
 
