@@ -1,4 +1,4 @@
-Rules catalog includes **1029 built-in detection rules** ([_last update on 2025-07-23_](rules_changelog.md)).
+Rules catalog includes **1030 built-in detection rules** ([_last update on 2025-07-25_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Identity Information**
 
@@ -3160,6 +3160,12 @@ Rules catalog includes **1029 built-in detection rules** ([_last update on 2025-
         - 21/11/2023 - minor - Added new filters to reduce false positives.
         - 08/11/2023 - minor - Added filter to reduce false positives
             
+??? abstract "Correlation PowerShell Suspicious DLL Loading"
+    
+    Detect some suspicious Windows DLL Loading where some PowerShell activity from the binary itself, followed by the same DLL process spawning other process. This is related to the usage of a PowerShell Named Pipe IPC from the DLL.
+    
+    - **Effort:** intermediate
+    
 ??? abstract "CrowdStrike Falcon Identity Protection Detection Critical Severity"
     
     CrowdStrike Falcon raised an alert for an Identity-based detection with critical severity
