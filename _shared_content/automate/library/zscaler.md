@@ -6,7 +6,7 @@ type: playbook
 
 ![Zscaler](/assets/playbooks/library/zscaler.png){ align=right width=150 }
 
-Integrates with Zscaler
+Zscaler is a cloud security company providing secure internet access and zero trust network access to protect enterprise data and applications. Its platform offers scalable, cloud-native solutions for secure browsing, data protection, and threat prevention.
 
 ## Configuration
 
@@ -53,4 +53,4 @@ UnBlock the provided IOCs: IP / domain
 
 ## Extra
 
-Module **`Zscaler` v1.0.0**
+Module **`Zscaler` v1.0.1**

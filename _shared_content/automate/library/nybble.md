@@ -6,7 +6,7 @@ type: playbook
 
 ![Nybble](/assets/playbooks/library/nybble.png){ align=right width=150 }
 
-[Nybble Hub](https://nybble-security.io) is the worldwide first blue team community which handles your alerts at a glance.
+Nybble Hub is the worldwide first blue team community which handles your alerts at a glance.
 
 ## Configuration
 

@@ -6,7 +6,7 @@ type: playbook
 
 ![Public Suffix](/assets/playbooks/library/public-suffix.png){ align=right width=150 }
 
-The [Public Suffix List](https://publicsuffix.org/) is an initiative of [Mozilla](https://www.mozilla.org/) to list of all known public suffixes
+The Public Suffix List is an initiative of Mozilla to list of all known public suffixes
 
 ## Configuration
 

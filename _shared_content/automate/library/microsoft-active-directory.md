@@ -63,6 +63,7 @@ Search in AD
 | `search_filter` | `string` | LDAP filter to run your query on  see https://ldap3.readthedocs.io/en/latest/searches.html#the-ldap-filter) |
 | `basedn` | `string` | The starting point an LDAP server uses when searching for users authentication within your Directory. (e.g DC=example-domain,DC=com) |
 | `attributes` | `` | Attributes you want to retrieve (default will be ALL)  |
+| `to_file` | `boolean` | Whether the event should be saved in a file or sent directly |
 
 
 **Outputs**
@@ -70,8 +71,9 @@ Search in AD
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
 | `search_result` | `array` |  |
+| `output_path` | `object` | Path to the file with the content |
 
 
 ## Extra
 
-Module **`Microsoft Active Directory` v1.3.8**
+Module **`Microsoft Active Directory` v1.3.9**
