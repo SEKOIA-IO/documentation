@@ -531,6 +531,12 @@ The following Sekoia.io built-in rules match the intake **Windows**. This docume
     
     - **Effort:** advanced
 
+??? abstract "Correlation PowerShell Suspicious DLL Loading"
+    
+    Detect some suspicious Windows DLL Loading where some PowerShell activity from the binary itself, followed by the same DLL process spawning other process. This is related to the usage of a PowerShell Named Pipe IPC from the DLL.
+    
+    - **Effort:** intermediate
+
 ??? abstract "Correlation Priv Esc Via Remote Thread"
     
     Detect a process that obtains system privilege via a remote thread
