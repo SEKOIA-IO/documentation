@@ -573,6 +573,12 @@ The following Sekoia.io built-in rules match the intake **Google Kubernetes Engi
     
     - **Effort:** advanced
 
+??? abstract "Powershell Web Request And Windows Script"
+    
+    Detects the use of PowerShell web request method combined with Windows Script utilities. This has been observed being used by some malware loaders.
+    
+    - **Effort:** intermediate
+
 ??? abstract "Privilege Escalation Awesome Scripts (PEAS)"
     
     Detect PEAS privileges escalation scripts and binaries
@@ -783,6 +789,24 @@ The following Sekoia.io built-in rules match the intake **Google Kubernetes Engi
     
     - **Effort:** elementary
 
+??? abstract "Tmutil Delete Backups"
+    
+    Detects when the utility tmutil is used to delete backups. The Time Machine utility is used to restore data from backups, add or remove exclusions, and compare backups.
+    
+    - **Effort:** elementary
+
+??? abstract "Tmutil Disabled"
+    
+    Detects when the utility tmutil is disabled. The Time Machine utility is used to restore data from backups, add or remove exclusions, and compare backups.
+    
+    - **Effort:** elementary
+
+??? abstract "Tmutil Exclude File From Backups"
+    
+    Detects when the utility tmutil is used to exclude paths from backups.
+    
+    - **Effort:** master
+
 ??? abstract "UAC Bypass Via Sdclt"
     
     Detects changes to HKCU\Software\Classes\exefile\shell\runas\command\isolatedCommand by an attacker in order to bypass User Account Control (UAC)
@@ -829,7 +853,7 @@ The following Sekoia.io built-in rules match the intake **Google Kubernetes Engi
     
     WMImplant is a powershell framework used by attacker for reconnaissance and exfiltration, this rule attempts to detect WMimplant arguments and invokes commands. 
     
-    - **Effort:** intermediate
+    - **Effort:** advanced
 
 ??? abstract "Wdigest Enable UseLogonCredential"
     

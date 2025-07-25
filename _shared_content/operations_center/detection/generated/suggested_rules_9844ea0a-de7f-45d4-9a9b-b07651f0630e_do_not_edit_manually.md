@@ -825,6 +825,12 @@ The following Sekoia.io built-in rules match the intake **Trend Micro Vision One
     
     - **Effort:** advanced
 
+??? abstract "PowerShell Suspicious Context Changes"
+    
+    Detects some PowerShell context changes that could be used to create an interactive shell and bypass some security measures in terms of logging and execution.
+    
+    - **Effort:** advanced
+
 ??? abstract "PowerView commandlets 1"
     
     Detects PowerView commandlets which perform network and Windows domain enumeration and exploitation. It provides replaces for almost all Windows net commands, letting you query users, machines, domain controllers, user descriptions, share, sessions, and more.
@@ -848,6 +854,12 @@ The following Sekoia.io built-in rules match the intake **Trend Micro Vision One
     Powershell's `uploadXXX` functions are a category of methods which can be used to exfiltrate data through native means on a Windows host.
     
     - **Effort:** advanced
+
+??? abstract "Powershell Web Request And Windows Script"
+    
+    Detects the use of PowerShell web request method combined with Windows Script utilities. This has been observed being used by some malware loaders.
+    
+    - **Effort:** intermediate
 
 ??? abstract "Powershell Winlogon Helper DLL"
     
@@ -1185,6 +1197,24 @@ The following Sekoia.io built-in rules match the intake **Trend Micro Vision One
     
     - **Effort:** elementary
 
+??? abstract "Tmutil Delete Backups"
+    
+    Detects when the utility tmutil is used to delete backups. The Time Machine utility is used to restore data from backups, add or remove exclusions, and compare backups.
+    
+    - **Effort:** elementary
+
+??? abstract "Tmutil Disabled"
+    
+    Detects when the utility tmutil is disabled. The Time Machine utility is used to restore data from backups, add or remove exclusions, and compare backups.
+    
+    - **Effort:** elementary
+
+??? abstract "Tmutil Exclude File From Backups"
+    
+    Detects when the utility tmutil is used to exclude paths from backups.
+    
+    - **Effort:** master
+
 ??? abstract "Trend Micro Vision One Workbench Critical Severity Alert"
     
     Detects when a critical alert severity is raised by Trend Micro Vision One Workbench.
@@ -1291,7 +1321,7 @@ The following Sekoia.io built-in rules match the intake **Trend Micro Vision One
     
     WMImplant is a powershell framework used by attacker for reconnaissance and exfiltration, this rule attempts to detect WMimplant arguments and invokes commands. 
     
-    - **Effort:** intermediate
+    - **Effort:** advanced
 
 ??? abstract "Wdigest Enable UseLogonCredential"
     

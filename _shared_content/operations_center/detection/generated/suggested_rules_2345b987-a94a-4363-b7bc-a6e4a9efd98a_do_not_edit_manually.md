@@ -267,6 +267,12 @@ The following Sekoia.io built-in rules match the intake **Trend Micro Vision One
     
     - **Effort:** master
 
+??? abstract "Correlation Netcat Infection Chain"
+    
+    Detect netcat connection to download et execute payload via piped bash
+    
+    - **Effort:** elementary
+
 ??? abstract "Correlation Priv Esc Via Remote Thread"
     
     Detect a process that obtains system privilege via a remote thread
@@ -614,6 +620,12 @@ The following Sekoia.io built-in rules match the intake **Trend Micro Vision One
     Detects suspicious Invoke-TheHash PowerShell commandlet used for performing pass the hash WMI and SMB tasks.
     
     - **Effort:** elementary
+
+??? abstract "JS PowerShell Infection Chains"
+    
+    Detect JS script execution who run a PowerShell download and exec command_line
+    
+    - **Effort:** intermediate
 
 ??? abstract "KeePass Config XML In Command-Line"
     
@@ -1143,6 +1155,12 @@ The following Sekoia.io built-in rules match the intake **Trend Micro Vision One
     
     - **Effort:** advanced
 
+??? abstract "PowerShell Suspicious Context Changes"
+    
+    Detects some PowerShell context changes that could be used to create an interactive shell and bypass some security measures in terms of logging and execution.
+    
+    - **Effort:** advanced
+
 ??? abstract "PowerView commandlets 1"
     
     Detects PowerView commandlets which perform network and Windows domain enumeration and exploitation. It provides replaces for almost all Windows net commands, letting you query users, machines, domain controllers, user descriptions, share, sessions, and more.
@@ -1166,6 +1184,12 @@ The following Sekoia.io built-in rules match the intake **Trend Micro Vision One
     Powershell's `uploadXXX` functions are a category of methods which can be used to exfiltrate data through native means on a Windows host.
     
     - **Effort:** advanced
+
+??? abstract "Powershell Web Request And Windows Script"
+    
+    Detects the use of PowerShell web request method combined with Windows Script utilities. This has been observed being used by some malware loaders.
+    
+    - **Effort:** intermediate
 
 ??? abstract "Privilege Escalation Awesome Scripts (PEAS)"
     
@@ -1593,6 +1617,24 @@ The following Sekoia.io built-in rules match the intake **Trend Micro Vision One
     
     - **Effort:** elementary
 
+??? abstract "Tmutil Delete Backups"
+    
+    Detects when the utility tmutil is used to delete backups. The Time Machine utility is used to restore data from backups, add or remove exclusions, and compare backups.
+    
+    - **Effort:** elementary
+
+??? abstract "Tmutil Disabled"
+    
+    Detects when the utility tmutil is disabled. The Time Machine utility is used to restore data from backups, add or remove exclusions, and compare backups.
+    
+    - **Effort:** elementary
+
+??? abstract "Tmutil Exclude File From Backups"
+    
+    Detects when the utility tmutil is used to exclude paths from backups.
+    
+    - **Effort:** master
+
 ??? abstract "TrustedInstaller Impersonation"
     
     The rule detects attempts to impersonate TrustedInstaller. TrustedInstaller rights could allow a threat actor to delete or modify protected file or create/delete/modify files in protected folders. This technique is used by threat actors to disable Windows Defender.
@@ -1651,7 +1693,7 @@ The following Sekoia.io built-in rules match the intake **Trend Micro Vision One
     
     WMImplant is a powershell framework used by attacker for reconnaissance and exfiltration, this rule attempts to detect WMimplant arguments and invokes commands. 
     
-    - **Effort:** intermediate
+    - **Effort:** advanced
 
 ??? abstract "Wdigest Enable UseLogonCredential"
     

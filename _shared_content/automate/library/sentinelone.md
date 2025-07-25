@@ -226,4 +226,5 @@ For the action `Update Threat Incident`, there are two arguments `status` and `f
 
 ## Extra
 
-Module **`SentinelOne` v1.20.8**
+
+Module **`SentinelOne` v1.20.9**

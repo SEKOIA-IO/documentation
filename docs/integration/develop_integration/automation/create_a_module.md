@@ -206,8 +206,9 @@ class Request(Action):  # (4)!
 8. Finally, if everything went well we can return the results. The base action will take care of sending it back to the playbook API.
 
 ## Test your code 
-Make sure you test your code with unitary and integration tests. In the following code, 
-we will test `get request`our previous example's action code. In practice, you have to cover all the use cases of the module.
+Make sure you test your code with unitary and integration tests. In this section, we will test `get request` our previous example's action code.
+In the `tests/` directory, create a test file named `test_action_request.py`. This file will contain the tests for our action.
+In practice, you have to cover all the use cases of the module.
 
 ```python
 import pytest
@@ -249,7 +250,7 @@ def test_get_request(requests_mock):
 To effectively manage dependencies and run your tests, you should use Poetry: 
 
 ```shell
-poetry run pytest -v -s
+poetry run pytest -v -s tests/
 ```
 For more detailed information, you can check the [Poetry documentation](https://python-poetry.org/docs/). Additionally, you can look at the tests in the existing module.
 
@@ -445,7 +446,12 @@ if __name__ == "__main__":
 3. Trigger is registered. The first argument of `module.register` is our action class and the second is the `docker_parameter` that is specified in our trigger's manifest.
 4. Action is registered.
 
-## Compliance Validation
+
+## Homologate your module (optional)
+
+To publish a new automation in the Sekoia.io integration catalog, you must follow the homologation process. This process ensures that your automation is compliant with Sekoia's standards and can be used effectively by the community.
+
+### Compliance Validation
 
 This step will enable you to verify different components of the module and detect any errors. Before proceeding, ensure all test dependencies are installed by running the following command in the /_utils directory:
 ``` shell
@@ -456,7 +462,8 @@ To check the correctness of the module the following command should be run :
 ```shell
 poetry run python3 compliance check --module modules\<module_name> 
 ```
-## Homologation request 
+
+### Homologation request 
 
 Once you are done developing and testing your automation, the last step is to request an homologation to Sekoia. Once your automation is homologated, it will appear in the playbook library of **Sekoia SOC platform**:
 

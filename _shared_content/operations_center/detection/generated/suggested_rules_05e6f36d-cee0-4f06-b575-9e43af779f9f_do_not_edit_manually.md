@@ -309,6 +309,12 @@ The following Sekoia.io built-in rules match the intake **Microsoft Defender XDR
     
     - **Effort:** master
 
+??? abstract "Correlation Netcat Infection Chain"
+    
+    Detect netcat connection to download et execute payload via piped bash
+    
+    - **Effort:** elementary
+
 ??? abstract "Correlation Priv Esc Via Remote Thread"
     
     Detect a process that obtains system privilege via a remote thread
@@ -788,6 +794,12 @@ The following Sekoia.io built-in rules match the intake **Microsoft Defender XDR
     Detects suspicious Invoke-TheHash PowerShell commandlet used for performing pass the hash WMI and SMB tasks.
     
     - **Effort:** elementary
+
+??? abstract "JS PowerShell Infection Chains"
+    
+    Detect JS script execution who run a PowerShell download and exec command_line
+    
+    - **Effort:** intermediate
 
 ??? abstract "KeePass Config XML In Command-Line"
     
@@ -1436,6 +1448,12 @@ The following Sekoia.io built-in rules match the intake **Microsoft Defender XDR
     Detects the use of various web request methods executed remotely via Windows PowerShell.
     
     - **Effort:** master
+
+??? abstract "Powershell Web Request And Windows Script"
+    
+    Detects the use of PowerShell web request method combined with Windows Script utilities. This has been observed being used by some malware loaders.
+    
+    - **Effort:** intermediate
 
 ??? abstract "Powershell Winlogon Helper DLL"
     
@@ -2103,6 +2121,24 @@ The following Sekoia.io built-in rules match the intake **Microsoft Defender XDR
     
     - **Effort:** master
 
+??? abstract "Tmutil Delete Backups"
+    
+    Detects when the utility tmutil is used to delete backups. The Time Machine utility is used to restore data from backups, add or remove exclusions, and compare backups.
+    
+    - **Effort:** elementary
+
+??? abstract "Tmutil Disabled"
+    
+    Detects when the utility tmutil is disabled. The Time Machine utility is used to restore data from backups, add or remove exclusions, and compare backups.
+    
+    - **Effort:** elementary
+
+??? abstract "Tmutil Exclude File From Backups"
+    
+    Detects when the utility tmutil is used to exclude paths from backups.
+    
+    - **Effort:** master
+
 ??? abstract "TrevorC2 HTTP Communication"
     
     Detects TrevorC2 HTTP communication based on the HTTP request URI and the user-agent. 
@@ -2197,7 +2233,7 @@ The following Sekoia.io built-in rules match the intake **Microsoft Defender XDR
     
     WMImplant is a powershell framework used by attacker for reconnaissance and exfiltration, this rule attempts to detect WMimplant arguments and invokes commands. 
     
-    - **Effort:** intermediate
+    - **Effort:** advanced
 
 ??? abstract "Wdigest Enable UseLogonCredential"
     

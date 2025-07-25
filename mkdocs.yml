@@ -1,4 +1,4 @@
-copyright: Copyright &copy; 2023 - Sekoia.io
+copyright: Copyright &copy; 2025 - Sekoia.io
 edit_uri: edit/main/docs/
 extra:
   social:
@@ -210,6 +210,7 @@ nav:
     - Email:
       - Cisco Email Security Appliance: integration/categories/email/cisco_esa.md
       - FortiMail: integration/categories/email/fortimail.md
+      - Hornetsecurity 365 Total Protection: integration/categories/email/hornetsecurity_365_total_protection.md
       - Mimecast Email Security: integration/categories/email/mimecast_email_security.md
       - Office 365: integration/categories/email/o365.md
       - Office 365 Message Trace: integration/categories/email/message_trace.md
@@ -235,6 +236,7 @@ nav:
       - IBM AIX: integration/categories/endpoint/ibm_aix.md
       - IBM iSeries (AS/400): integration/categories/endpoint/ibm_i.md
       - Kaspersky Endpoint Security: integration/categories/endpoint/kaspersky_endpoint_security.md
+      - Kubernetes Audit Logs: integration/categories/endpoint/kubernetes.md
       - Linux AuditBeat: integration/categories/endpoint/auditbeat_linux.md
       - Log Insight Windows: integration/categories/endpoint/log_insight_windows.md
       - Lookout Mobile Endpoint Security: integration/categories/endpoint/lookout_mes.md
@@ -255,6 +257,7 @@ nav:
       - Trend Micro Apex One / Vision One Endpoint: integration/categories/endpoint/trend_micro_apex_one.md
       - Trend Micro Vision One Workbench: integration/categories/endpoint/trend_micro_vision_one_workbench.md
       - Trend Micro Vision One Observed Attack Techniques: integration/categories/endpoint/trend_micro_vision_one_oat.md
+      - WatchGuard EPDR: integration/categories/endpoint/watchguard_epdr.md
       - VMWare ESXi: integration/categories/endpoint/vmware_esxi.md
       - VMWare VCenter: integration/categories/endpoint/vmware_vcenter.md
       - Windows: integration/categories/endpoint/windows.md
@@ -283,7 +286,7 @@ nav:
       - Amazon VPC Flow Logs: integration/categories/network/aws_flow_logs.md
       - Azure Application Gateway: integration/categories/network/azure_application_gateway.md
       - ArubaOS Switch: integration/categories/network/arubaos.md
-      - BeyondTrust PRA: integration/categories/network/beyondtrust_pra.md
+      - BeyondTrust PRA Sessions: integration/categories/network/beyondtrust_pra_sessions.md
       - BIND: integration/categories/network/bind.md
       - Cato SASE: integration/categories/network/cato_sase.md
       - Cisco IOS: integration/categories/network/cisco_ios.md
@@ -354,9 +357,12 @@ nav:
       - Lacework Cloud Security: integration/categories/network_security/lacework_cloud_security.md
       - McAfee Web Gateway / Skyhigh Secure Web Gateway - On Prem: integration/categories/network_security/skyhigh_secure_web_gateway_on_prem.md
       - McAfee Web Gateway / Skyhigh Secure Web Gateway - SaaS: integration/categories/network_security/skyhigh_secure_web_gateway_saas.md
+      - NeroSwarm Honeypot: integration/categories/network_security/neroswarm_honeypot.md
       - Netskope Events: integration/categories/network_security/netskope_events.md
       - Netskope Transaction Events: integration/categories/network_security/netskope_transaction.md
+      - Nozomi Vantage: integration/categories/network_security/nozomi_vantage.md
       - OGO Shield WAF: integration/categories/network_security/ogo_shield.md
+      - Olfeo SAAS: integration/categories/network_security/olfeo_saas.md
       - Olfeo Secure Web Gateway: integration/categories/network_security/olfeo_secure_web_gateway.md
       - Palo Alto Next-Generation Firewall: integration/categories/network_security/paloalto.md
       - Palo Alto Prisma access: integration/categories/network_security/paloalto_prisma_access.md
@@ -381,6 +387,7 @@ nav:
       - Umbrella Proxy Logs: integration/categories/network_security/umbrella_proxy.md
       - Varonis Data Security: integration/categories/network_security/varonis_data_security.md
       - Vectra Cognito Detect: integration/categories/network_security/vectra.md
+      - Vectra Respond UX - Entity Scoring: integration/categories/network_security/vectra_respond_ux_entity_scoring.md
       - WatchGuard Firebox: integration/categories/network_security/watchguard_firebox.md
       - Wiz Cloud configuration findings: integration/categories/network_security/wiz_cloud_configuration_findings.md
       - Wiz Issues: integration/categories/network_security/wiz_issues.md
@@ -415,6 +422,7 @@ nav:
       - Palo Alto Cortex XDR (EDR): integration/action_library/palo-alto-cortex-xdr-edr.md
       - Palo Alto Cortex XSIAM: integration/action_library/palo-alto-cortex-xsiam.md
       - Panda Security: integration/action_library/panda-security.md
+      - SentinelOne: integration/action_library/sentinelone.md
       - SentinelOne: integration/action_library/sentinelone.md
       - Sophos: integration/action_library/sophos.md
       - Stormshield SES: integration/action_library/stormshield-ses.md
@@ -595,6 +603,7 @@ plugins:
       xdr/features/collect/integrations/cloud_and_saas/lacework_cloud_security.md: integration/categories/network_security/lacework_cloud_security.md
       xdr/features/collect/integrations/cloud_and_saas/netskope/netskope_events.md: integration/categories/network_security/netskope_events.md
       xdr/features/collect/integrations/cloud_and_saas/netskope/netskope_transaction.md: integration/categories/network_security/netskope_transaction.md
+      xdr/features/collect/integrations/cloud_and_saas/nozomi/nozomi_vantage.md: integration/categories/network_security/nozomi_vantage.md
       xdr/features/collect/integrations/cloud_and_saas/office365/message_trace.md: integration/categories/email/message_trace.md
       xdr/features/collect/integrations/cloud_and_saas/office365/microsoft_365_defender.md: integration/categories/endpoint/microsoft_365_defender.md
       xdr/features/collect/integrations/cloud_and_saas/office365/o365.md: integration/categories/email/o365.md
@@ -632,6 +641,7 @@ plugins:
       xdr/features/collect/integrations/endpoint/ibm_aix.md: integration/categories/endpoint/ibm_aix.md
       xdr/features/collect/integrations/endpoint/ibm_i.md: integration/categories/endpoint/ibm_i.md
       xdr/features/collect/integrations/endpoint/kaspersky_endpoint_security.md: integration/categories/endpoint/kaspersky_endpoint_security.md
+      xdr/features/collect/integrations/endpoint/kubernetes.md: integration/categories/endpoint/kubernetes.md
       xdr/features/collect/integrations/endpoint/linux.md: integration/categories/endpoint/linux.md
       xdr/features/collect/integrations/endpoint/log_insight_windows.md: integration/categories/endpoint/log_insight_windows.md
       xdr/features/collect/integrations/endpoint/microsoft_intune.md: integration/categories/endpoint/microsoft_intune.md
@@ -651,6 +661,7 @@ plugins:
       xdr/features/collect/integrations/endpoint/trend_micro/trend_micro_deep_security.md: integration/categories/network_security/trend_micro_deep_security.md
       xdr/features/collect/integrations/endpoint/vmware/vmware_esxi.md: integration/categories/endpoint/vmware_esxi.md
       xdr/features/collect/integrations/endpoint/vmware/vmware_vcenter.md: integration/categories/endpoint/vmware_vcenter.md
+      xdr/features/collect/integrations/endpoint/watchguard_epdr.md: integration/categories/endpoint/watchguard_epdr.md
       xdr/features/collect/integrations/endpoint/windows.md: integration/categories/endpoint/windows.md
       xdr/features/collect/integrations/endpoint/winlogbeat.md: integration/categories/endpoint/winlogbeat.md
       xdr/features/collect/integrations/endpoint/withsecure_elements.md: integration/categories/endpoint/withsecure_elements.md

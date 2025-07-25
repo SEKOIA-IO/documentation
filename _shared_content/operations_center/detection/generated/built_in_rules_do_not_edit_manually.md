@@ -1,4 +1,4 @@
-Rules catalog includes **1021 built-in detection rules** ([_last update on 2025-06-16_](rules_changelog.md)).
+Rules catalog includes **1029 built-in detection rules** ([_last update on 2025-07-23_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Identity Information**
 
@@ -277,6 +277,10 @@ Rules catalog includes **1021 built-in detection rules** ([_last update on 2025-
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 30/06/2025 - minor - Changing similarity on threat name.
+            
 ## Resource Development
 **Acquire Infrastructure**
 
@@ -1777,12 +1781,13 @@ Rules catalog includes **1021 built-in detection rules** ([_last update on 2025-
     
     WMImplant is a powershell framework used by attacker for reconnaissance and exfiltration, this rule attempts to detect WMimplant arguments and invokes commands. 
     
-    - **Effort:** intermediate
+    - **Effort:** advanced
     
     - **Changelog:**
     
         - 29/11/2023 - minor - Added a selection to filter some false positives.
-        - 26/03/2024 - major - Rule's pattern field changed
+        - 26/03/2024 - major - Rule's pattern field changed.
+        - 26/06/2025 - major - Pattern updated to avoid false positives and effort level changed to be coherent.
             
 ??? abstract "Wmic Process Call Creation"
     
@@ -1987,6 +1992,12 @@ Rules catalog includes **1021 built-in detection rules** ([_last update on 2025-
     A Base64 string has been decoded and executed through a pipe. The prerequisites are to enable monitoring of the execve syscall using Auditbeat.
     
     - **Effort:** intermediate
+    
+??? abstract "Correlation Netcat Infection Chain"
+    
+    Detect netcat connection to download et execute payload via piped bash
+    
+    - **Effort:** elementary
     
 ??? abstract "Correlation Supicious Powershell Drop and Exec"
     
@@ -2209,6 +2220,12 @@ Rules catalog includes **1021 built-in detection rules** ([_last update on 2025-
     Detects suspicious Invoke-TheHash PowerShell commandlet used for performing pass the hash WMI and SMB tasks.
     
     - **Effort:** elementary
+    
+??? abstract "JS PowerShell Infection Chains"
+    
+    Detect JS script execution who run a PowerShell download and exec command_line
+    
+    - **Effort:** intermediate
     
 ??? abstract "Lazarus Loaders"
     
@@ -2449,6 +2466,12 @@ Rules catalog includes **1021 built-in detection rules** ([_last update on 2025-
     
     - **Effort:** advanced
     
+??? abstract "PowerShell Suspicious Context Changes"
+    
+    Detects some PowerShell context changes that could be used to create an interactive shell and bypass some security measures in terms of logging and execution.
+    
+    - **Effort:** advanced
+    
 ??? abstract "Powershell Web Request"
     
     Detects the use of various web request methods executed remotely via Windows PowerShell.
@@ -2458,7 +2481,14 @@ Rules catalog includes **1021 built-in detection rules** ([_last update on 2025-
     - **Changelog:**
     
         - 06/06/2025 - major - Review heuristic and change level effort
+        - 23/06/2025 - minor - improve filter
             
+??? abstract "Powershell Web Request And Windows Script"
+    
+    Detects the use of PowerShell web request method combined with Windows Script utilities. This has been observed being used by some malware loaders.
+    
+    - **Effort:** intermediate
+    
 ??? abstract "Python Offensive Tools and Packages"
     
     Track installation and usage of offensive python packages and project that are used for lateral movement.
@@ -2767,6 +2797,7 @@ Rules catalog includes **1021 built-in detection rules** ([_last update on 2025-
     
     - **Changelog:**
     
+        - 23/06/2025 - minor - Adding filter for false positives.
         - 19/10/2023 - major - Review of the rule to reduce false positives.
             
 ??? abstract "Suspicious XOR Encoded PowerShell Command Line"
@@ -2869,12 +2900,13 @@ Rules catalog includes **1021 built-in detection rules** ([_last update on 2025-
     
     WMImplant is a powershell framework used by attacker for reconnaissance and exfiltration, this rule attempts to detect WMimplant arguments and invokes commands. 
     
-    - **Effort:** intermediate
+    - **Effort:** advanced
     
     - **Changelog:**
     
         - 29/11/2023 - minor - Added a selection to filter some false positives.
-        - 26/03/2024 - major - Rule's pattern field changed
+        - 26/03/2024 - major - Rule's pattern field changed.
+        - 26/06/2025 - major - Pattern updated to avoid false positives and effort level changed to be coherent.
             
 ??? abstract "Web Application Launching Shell"
     
@@ -3267,6 +3299,7 @@ Rules catalog includes **1021 built-in detection rules** ([_last update on 2025-
     - **Changelog:**
     
         - 12/11/2024 - minor - Update name, description, similarity and severity
+        - 02/07/2025 - minor - Update similarity
             
 ??? abstract "Darktrace Threat Visualizer Model Breach Suspicious Activity"
     
@@ -3277,6 +3310,7 @@ Rules catalog includes **1021 built-in detection rules** ([_last update on 2025-
     - **Changelog:**
     
         - 12/11/2024 - minor - Update name, description, similarity and severity
+        - 02/07/2025 - minor - Update similarity
             
 ??? abstract "Darktrace Threat Visualizer Threat Critical Alert"
     
@@ -11879,6 +11913,12 @@ Rules catalog includes **1021 built-in detection rules** ([_last update on 2025-
         - 25/09/2024 - major - Rename the rule, update the indicators.
         - 23/12/2024 - major - Update the indicators.
             
+??? abstract "Entra ID Sign-In Via Known AiTM Phishing Kit (Rockstar 2FA)"
+    
+    Detects a sign-in attempt with known characteristics of the adversary-in-the-middle phishing kit Rockstar 2FA.
+    
+    - **Effort:** elementary
+    
 ??? abstract "Entra ID Sign-In Via Known AiTM Phishing Kit (Sneaky 2FA)"
     
     Detects a sign-in attempt with an impossible device shift characteristic of the adversary-in-the-middle phishing kit Sneaky 2FA.
@@ -12185,6 +12225,12 @@ Rules catalog includes **1021 built-in detection rules** ([_last update on 2025-
         - 25/09/2024 - major - Rename the rule, update the indicators.
         - 23/12/2024 - major - Update the indicators.
             
+??? abstract "Entra ID Sign-In Via Known AiTM Phishing Kit (Rockstar 2FA)"
+    
+    Detects a sign-in attempt with known characteristics of the adversary-in-the-middle phishing kit Rockstar 2FA.
+    
+    - **Effort:** elementary
+    
 ??? abstract "Entra ID Sign-In Via Known AiTM Phishing Kit (Sneaky 2FA)"
     
     Detects a sign-in attempt with an impossible device shift characteristic of the adversary-in-the-middle phishing kit Sneaky 2FA.
@@ -13404,6 +13450,12 @@ Rules catalog includes **1021 built-in detection rules** ([_last update on 2025-
         - 25/09/2024 - major - Rename the rule, update the indicators.
         - 23/12/2024 - major - Update the indicators.
             
+??? abstract "Entra ID Sign-In Via Known AiTM Phishing Kit (Rockstar 2FA)"
+    
+    Detects a sign-in attempt with known characteristics of the adversary-in-the-middle phishing kit Rockstar 2FA.
+    
+    - **Effort:** elementary
+    
 ??? abstract "Entra ID Sign-In Via Known AiTM Phishing Kit (Sneaky 2FA)"
     
     Detects a sign-in attempt with an impossible device shift characteristic of the adversary-in-the-middle phishing kit Sneaky 2FA.
@@ -13777,6 +13829,7 @@ Rules catalog includes **1021 built-in detection rules** ([_last update on 2025-
     
     - **Changelog:**
     
+        - 21/07/2025 - minor - Updating pattern with new field and new filter to avoid false positives.
         - 11/06/2025 - minor - Added filters to reduce false positives.
         - 02/08/2023 - minor - Added a new field and filters to reduce false positives.
             
@@ -13876,6 +13929,12 @@ Rules catalog includes **1021 built-in detection rules** ([_last update on 2025-
     Cloudflare Gateway allows admins to enable Anti-Virus (AV) scanning of files that are uploaded or downloaded by users as the file passes through Gateway. AV scanning of files requires organizations to enable Proxy mode under Settings > Network > Layer 7 Firewall. TLS decryption is also recommended to enable inspection of HTTPS traffic.
     
     - **Effort:** advanced
+    
+??? abstract "Correlation Netcat Infection Chain"
+    
+    Detect netcat connection to download et execute payload via piped bash
+    
+    - **Effort:** elementary
     
 ??? abstract "Information Stealer Downloading Legitimate Third-Party DLLs"
     
@@ -14525,6 +14584,24 @@ Rules catalog includes **1021 built-in detection rules** ([_last update on 2025-
     Detects SunCrypt ransomware's parameters, most of which are unique.
     
     - **Effort:** elementary
+    
+??? abstract "Tmutil Delete Backups"
+    
+    Detects when the utility tmutil is used to delete backups. The Time Machine utility is used to restore data from backups, add or remove exclusions, and compare backups.
+    
+    - **Effort:** elementary
+    
+??? abstract "Tmutil Disabled"
+    
+    Detects when the utility tmutil is disabled. The Time Machine utility is used to restore data from backups, add or remove exclusions, and compare backups.
+    
+    - **Effort:** elementary
+    
+??? abstract "Tmutil Exclude File From Backups"
+    
+    Detects when the utility tmutil is used to exclude paths from backups.
+    
+    - **Effort:** master
     
 **Network Denial of Service**
 

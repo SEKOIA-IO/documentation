@@ -18,3 +18,7 @@ You can easily request an event search on IP range. For instance, with an IP add
 
 ## What is the timestamp based on?
 The event timestamp is based on the event timestamp (when it's created in the machine), not on the ingestion timestamp in Sekoia.io. 
+
+## What is the maximum value of an integer field ?
+
+The fields of type integer have a max value of 2^63-1 (9223372036854775807). Any input field exceeding this value will be capted to the max value.

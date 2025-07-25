@@ -59,6 +59,15 @@ In this section, you will find examples of raw logs as generated natively by the
 
 
 
+=== "auth_events_dsv"
+
+
+    ```json
+	1,2025/07/04 19:10:17,026709003121,AUTH,Unknown,2817,2025/07/04 19:10:17,vsys1,1.2.3.4,,,EXAMPLE,Example,1,1234567890,,EXAMPLE_LogFwd,,No user activity after prompted for credentials from AUTH-PORTAL.,Authentication Portal,Authentication Timeout,1,123456,0x0,0,0,0,0,,HOSTNAME,1,,30700717-0688-43fd-b76f-cf9c9a4a7f03,2025-07-04T19:10:18.043+11:00,,,
+    ```
+
+
+
 === "decryption_cef"
 
 

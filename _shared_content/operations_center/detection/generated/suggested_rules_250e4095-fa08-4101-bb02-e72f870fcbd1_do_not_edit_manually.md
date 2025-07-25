@@ -1113,6 +1113,12 @@ The following Sekoia.io built-in rules match the intake **Sekoia.io Endpoint Age
     
     - **Effort:** elementary
 
+??? abstract "JS PowerShell Infection Chains"
+    
+    Detect JS script execution who run a PowerShell download and exec command_line
+    
+    - **Effort:** intermediate
+
 ??? abstract "KeePass Config XML In Command-Line"
     
     Detects a command-line interaction with the KeePass Config XML file. It could be used to retrieve informations or to be abused for persistence.
@@ -1863,6 +1869,12 @@ The following Sekoia.io built-in rules match the intake **Sekoia.io Endpoint Age
     
     - **Effort:** advanced
 
+??? abstract "PowerShell Suspicious Context Changes"
+    
+    Detects some PowerShell context changes that could be used to create an interactive shell and bypass some security measures in terms of logging and execution.
+    
+    - **Effort:** advanced
+
 ??? abstract "PowerView commandlets 1"
     
     Detects PowerView commandlets which perform network and Windows domain enumeration and exploitation. It provides replaces for almost all Windows net commands, letting you query users, machines, domain controllers, user descriptions, share, sessions, and more.
@@ -1892,6 +1904,12 @@ The following Sekoia.io built-in rules match the intake **Sekoia.io Endpoint Age
     Detects the use of various web request methods executed remotely via Windows PowerShell.
     
     - **Effort:** master
+
+??? abstract "Powershell Web Request And Windows Script"
+    
+    Detects the use of PowerShell web request method combined with Windows Script utilities. This has been observed being used by some malware loaders.
+    
+    - **Effort:** intermediate
 
 ??? abstract "Powershell Winlogon Helper DLL"
     
@@ -2947,7 +2965,7 @@ The following Sekoia.io built-in rules match the intake **Sekoia.io Endpoint Age
     
     WMImplant is a powershell framework used by attacker for reconnaissance and exfiltration, this rule attempts to detect WMimplant arguments and invokes commands. 
     
-    - **Effort:** intermediate
+    - **Effort:** advanced
 
 ??? abstract "Wdigest Enable UseLogonCredential"
     

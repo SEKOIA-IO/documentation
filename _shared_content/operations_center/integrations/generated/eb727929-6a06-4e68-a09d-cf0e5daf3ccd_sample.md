@@ -220,6 +220,14 @@ In this section, you will find examples of raw logs as generated natively by the
 
 
 
+=== "message_id3"
+
+    ```
+	ABA141A0109: message-id=<CA+Os9Jhu1rkDJCREmGWt+M2bTfgAP0LYhxGoW=Sus4Pbu7cWgA@mail.gmail.com>
+    ```
+
+
+
 === "noqueue"
 
     ```
@@ -792,6 +800,14 @@ In this section, you will find examples of raw logs as generated natively by the
 
     ```
 	connect to mx.example.org[5.6.7.8]:25: No route to host
+    ```
+
+
+
+=== "smtp7"
+
+    ```
+	ABA141A0109: to=<destination@domain.com>, orig_to=<john.doe@domain.com>, relay=1.2.3.4[1.2.3.4]:10024, delay=1.6, delays=1.2/0.03/0.03/0.28, dsn=2.0.0, status=sent (250 2.0.0 from MTA(smtp:[1.2.3.4]:10025): 250 2.0.0 Ok: queued as 300581A89B8)
     ```
 
 

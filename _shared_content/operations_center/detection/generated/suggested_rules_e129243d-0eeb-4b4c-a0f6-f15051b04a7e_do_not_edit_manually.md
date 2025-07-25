@@ -27,6 +27,12 @@ The following Sekoia.io built-in rules match the intake **CyberArk Audit Logs [B
     
     - **Effort:** master
 
+??? abstract "Authentication Impossible Travel"
+    
+    Detects impossible travel when performing authentication from a source IP address, grouped by user name. This could require some alert filtering for some user generic accounts, and known IP address range. Microsoft / Office 365 format is not covered by this rule.
+    
+    - **Effort:** master
+
 ??? abstract "Backup Catalog Deleted"
     
     The rule detects when the Backup Catalog has been deleted. It means the administrators will not be able to access any backups that were created earlier to perform recoveries. This is often being done using the wbadmin.exe tool.
@@ -48,6 +54,12 @@ The following Sekoia.io built-in rules match the intake **CyberArk Audit Logs [B
 ??? abstract "Computer Account Deleted"
     
     Detects computer account deletion.
+    
+    - **Effort:** master
+
+??? abstract "Cookies Deletion"
+    
+    Detects when cookies are deleted by a suspicious process.
     
     - **Effort:** master
 

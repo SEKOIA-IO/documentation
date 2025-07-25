@@ -165,6 +165,12 @@ The following Sekoia.io built-in rules match the intake **WALLIX Bastion**. This
     
     - **Effort:** master
 
+??? abstract "Correlation Netcat Infection Chain"
+    
+    Detect netcat connection to download et execute payload via piped bash
+    
+    - **Effort:** elementary
+
 ??? abstract "Cryptomining"
     
     Detection of domain names potentially related to cryptomining activities.
@@ -609,6 +615,12 @@ The following Sekoia.io built-in rules match the intake **WALLIX Bastion**. This
     
     - **Effort:** advanced
 
+??? abstract "Powershell Web Request And Windows Script"
+    
+    Detects the use of PowerShell web request method combined with Windows Script utilities. This has been observed being used by some malware loaders.
+    
+    - **Effort:** intermediate
+
 ??? abstract "Privilege Escalation Awesome Scripts (PEAS)"
     
     Detect PEAS privileges escalation scripts and binaries
@@ -807,6 +819,12 @@ The following Sekoia.io built-in rules match the intake **WALLIX Bastion**. This
     
     - **Effort:** advanced
 
+??? abstract "Suspicious Scheduled Task Creation"
+    
+    Detects suspicious scheduled task creation, either executed by a non-system user or a user who is not administrator (the user ID is not S-1-5-18 or S-1-5-18-*). This detection rule doesn't match Sysmon EventID 1 because the user SID is always set to S-1-5-18. 
+    
+    - **Effort:** intermediate
+
 ??? abstract "Suspicious Taskkill Command"
     
     Detects rare taskkill command being used. It could be related to Baby Shark malware.
@@ -836,6 +854,24 @@ The following Sekoia.io built-in rules match the intake **WALLIX Bastion**. This
     Detection of common Tactical RMM installation arguments that could be abused by some attackers.
     
     - **Effort:** elementary
+
+??? abstract "Tmutil Delete Backups"
+    
+    Detects when the utility tmutil is used to delete backups. The Time Machine utility is used to restore data from backups, add or remove exclusions, and compare backups.
+    
+    - **Effort:** elementary
+
+??? abstract "Tmutil Disabled"
+    
+    Detects when the utility tmutil is disabled. The Time Machine utility is used to restore data from backups, add or remove exclusions, and compare backups.
+    
+    - **Effort:** elementary
+
+??? abstract "Tmutil Exclude File From Backups"
+    
+    Detects when the utility tmutil is used to exclude paths from backups.
+    
+    - **Effort:** master
 
 ??? abstract "UAC Bypass Via Sdclt"
     
@@ -889,7 +925,7 @@ The following Sekoia.io built-in rules match the intake **WALLIX Bastion**. This
     
     WMImplant is a powershell framework used by attacker for reconnaissance and exfiltration, this rule attempts to detect WMimplant arguments and invokes commands. 
     
-    - **Effort:** intermediate
+    - **Effort:** advanced
 
 ??? abstract "Wdigest Enable UseLogonCredential"
     
