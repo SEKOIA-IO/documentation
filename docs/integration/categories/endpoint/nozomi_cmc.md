@@ -4,16 +4,17 @@ type: intake
 
 ## Overview
 
-- **Supported application or feature**:
-    - Alerts
-    - Health
-    - Audit
-
 Nozomi Central Management Console is a centralized platform that streamlines the management of cybersecurity across 
 industrial networks. It enables users to monitor, configure, and respond to threats in real-time, ensuring enhanced 
 visibility and control over operational technology environments. With its user-friendly interface and powerful 
 analytics, the console simplifies security operations and strengthens defense against cyber risks.
 
+- **Supported environment**:
+- **Detection based on**:
+- **Supported application or feature**:
+    - Alerts
+    - Health
+    - Audit
 
 ## Configure
 
