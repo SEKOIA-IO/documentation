@@ -43,7 +43,7 @@ With Intake restricted roles, permissions selection is limited to `dashboard`, `
 ### Access to saved queries and dashboards
 
 Users with Intake restricted roles have read-only access to all saved queries and dashboards.
-However, they can only modify or delete content they have personally created.
+However, they can modify or delete content they have personally created.
 
 ### Disabling built-in roles
 
