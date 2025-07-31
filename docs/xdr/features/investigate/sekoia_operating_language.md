@@ -1005,7 +1005,7 @@ let EndTime = now();
 
 events
 | where timestamp between (StartTime .. EndTime)
-| where file.name matches regex '.*.sh'
+| where file.name matches regex '.*\.sh'
 | limit 100
 
 ```
