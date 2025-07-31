@@ -1000,8 +1000,12 @@ Use the `matches regex` operator to filter the rows based on a regex pattern.
 Find events where `file.name` contains '.sh'.
 
 ``` shell
+let StartTime = ago(1h);
+let EndTime = now();
+
 events
-| where file.name matches regex '\.sh'
+| where timestamp between (StartTime .. EndTime)
+| where file.name matches regex '.*.sh'
 | limit 100
 
 ```
