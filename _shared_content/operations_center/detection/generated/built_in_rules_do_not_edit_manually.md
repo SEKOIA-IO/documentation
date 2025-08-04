@@ -1,4 +1,4 @@
-Rules catalog includes **1029 built-in detection rules** ([_last update on 2025-07-23_](rules_changelog.md)).
+Rules catalog includes **1036 built-in detection rules** ([_last update on 2025-08-04_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Identity Information**
 
@@ -1309,12 +1309,20 @@ Rules catalog includes **1029 built-in detection rules** ([_last update on 2025-
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 28/07/2025 - major - Improve filter and similarity strategy.
+            
 ??? abstract "Download Files From Suspicious TLDs"
     
     Detects download of certain file types from hosts in suspicious TLDs
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 28/07/2025 - major - Improve filter and similarity strategy.
+            
 ??? abstract "ESET Protect Malware"
     
     Detects when Eset Protect tagged an event as linked to a malware with infected files.
@@ -2075,6 +2083,18 @@ Rules catalog includes **1029 built-in detection rules** ([_last update on 2025-
     
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
             
+??? abstract "CrowdStrike Falcon Intrusion Detection Critical Severity EppDetection"
+    
+    CrowdStrike Falcon agent raised an alert for an intrusion detection with critical severity with the new EppDetectionSummaryEvent.
+    
+    - **Effort:** master
+    
+??? abstract "CrowdStrike Falcon Intrusion Detection EppDetection"
+    
+    CrowdStrike Falcon agent raised an alert for an intrusion detection with the new EppDetectionSummaryEvent type.
+    
+    - **Effort:** master
+    
 ??? abstract "CrowdStrike Falcon Intrusion Detection High Severity"
     
     CrowdStrike Falcon agent raised an alert for an intrusion detection with high severity
@@ -2085,6 +2105,12 @@ Rules catalog includes **1029 built-in detection rules** ([_last update on 2025-
     
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
             
+??? abstract "CrowdStrike Falcon Intrusion Detection High Severity EppDetection"
+    
+    CrowdStrike Falcon agent raised an alert for an intrusion detection with high severity with the new EppDetectionSummaryEvent.
+    
+    - **Effort:** master
+    
 ??? abstract "CrowdStrike Falcon Intrusion Detection Informational Severity"
     
     CrowdStrike Falcon agent raised an alert for an intrusion detection with informational severity
@@ -2095,6 +2121,12 @@ Rules catalog includes **1029 built-in detection rules** ([_last update on 2025-
     
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
             
+??? abstract "CrowdStrike Falcon Intrusion Detection Informational Severity EppDetection"
+    
+    CrowdStrike Falcon agent raised an alert for an intrusion detection with informational severity with the new EppDetectionSummaryEvent.
+    
+    - **Effort:** master
+    
 ??? abstract "CrowdStrike Falcon Intrusion Detection Low Severity"
     
     CrowdStrike Falcon agent raised an alert for an intrusion detection with low severity
@@ -2105,6 +2137,12 @@ Rules catalog includes **1029 built-in detection rules** ([_last update on 2025-
     
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
             
+??? abstract "CrowdStrike Falcon Intrusion Detection Low Severity EppDetection"
+    
+    CrowdStrike Falcon agent raised an alert for an intrusion detection with low severity with the new EppDetectionSummaryEvent.
+    
+    - **Effort:** master
+    
 ??? abstract "CrowdStrike Falcon Intrusion Detection Medium Severity"
     
     CrowdStrike Falcon agent raised an alert for an intrusion detection with medium severity
@@ -2115,6 +2153,12 @@ Rules catalog includes **1029 built-in detection rules** ([_last update on 2025-
     
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
             
+??? abstract "CrowdStrike Falcon Intrusion Detection Medium Severity EppDetection"
+    
+    CrowdStrike Falcon agent raised an alert for an intrusion detection with medium severity with the new EppDetectionSummaryEvent.
+    
+    - **Effort:** master
+    
 ??? abstract "Cybereason EDR Alert"
     
     Cybereason EDR telemetry has raised an alert
@@ -3048,12 +3092,20 @@ Rules catalog includes **1029 built-in detection rules** ([_last update on 2025-
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 28/07/2025 - major - Improve filter and similarity strategy.
+            
 ??? abstract "Download Files From Suspicious TLDs"
     
     Detects download of certain file types from hosts in suspicious TLDs
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 28/07/2025 - major - Improve filter and similarity strategy.
+            
 ??? abstract "Exploit For CVE-2015-1641"
     
     Detects Winword process starting uncommon sub process MicroScMgmt.exe as used in exploits for CVE-2015-1641
@@ -3160,6 +3212,12 @@ Rules catalog includes **1029 built-in detection rules** ([_last update on 2025-
         - 21/11/2023 - minor - Added new filters to reduce false positives.
         - 08/11/2023 - minor - Added filter to reduce false positives
             
+??? abstract "Correlation PowerShell Suspicious DLL Loading"
+    
+    Detect some suspicious Windows DLL Loading where some PowerShell activity from the binary itself, followed by the same DLL process spawning other process. This is related to the usage of a PowerShell Named Pipe IPC from the DLL.
+    
+    - **Effort:** intermediate
+    
 ??? abstract "CrowdStrike Falcon Identity Protection Detection Critical Severity"
     
     CrowdStrike Falcon raised an alert for an Identity-based detection with critical severity
@@ -3230,6 +3288,18 @@ Rules catalog includes **1029 built-in detection rules** ([_last update on 2025-
     
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
             
+??? abstract "CrowdStrike Falcon Intrusion Detection Critical Severity EppDetection"
+    
+    CrowdStrike Falcon agent raised an alert for an intrusion detection with critical severity with the new EppDetectionSummaryEvent.
+    
+    - **Effort:** master
+    
+??? abstract "CrowdStrike Falcon Intrusion Detection EppDetection"
+    
+    CrowdStrike Falcon agent raised an alert for an intrusion detection with the new EppDetectionSummaryEvent type.
+    
+    - **Effort:** master
+    
 ??? abstract "CrowdStrike Falcon Intrusion Detection High Severity"
     
     CrowdStrike Falcon agent raised an alert for an intrusion detection with high severity
@@ -3240,6 +3310,12 @@ Rules catalog includes **1029 built-in detection rules** ([_last update on 2025-
     
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
             
+??? abstract "CrowdStrike Falcon Intrusion Detection High Severity EppDetection"
+    
+    CrowdStrike Falcon agent raised an alert for an intrusion detection with high severity with the new EppDetectionSummaryEvent.
+    
+    - **Effort:** master
+    
 ??? abstract "CrowdStrike Falcon Intrusion Detection Informational Severity"
     
     CrowdStrike Falcon agent raised an alert for an intrusion detection with informational severity
@@ -3250,6 +3326,12 @@ Rules catalog includes **1029 built-in detection rules** ([_last update on 2025-
     
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
             
+??? abstract "CrowdStrike Falcon Intrusion Detection Informational Severity EppDetection"
+    
+    CrowdStrike Falcon agent raised an alert for an intrusion detection with informational severity with the new EppDetectionSummaryEvent.
+    
+    - **Effort:** master
+    
 ??? abstract "CrowdStrike Falcon Intrusion Detection Low Severity"
     
     CrowdStrike Falcon agent raised an alert for an intrusion detection with low severity
@@ -3260,6 +3342,12 @@ Rules catalog includes **1029 built-in detection rules** ([_last update on 2025-
     
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
             
+??? abstract "CrowdStrike Falcon Intrusion Detection Low Severity EppDetection"
+    
+    CrowdStrike Falcon agent raised an alert for an intrusion detection with low severity with the new EppDetectionSummaryEvent.
+    
+    - **Effort:** master
+    
 ??? abstract "CrowdStrike Falcon Intrusion Detection Medium Severity"
     
     CrowdStrike Falcon agent raised an alert for an intrusion detection with medium severity
@@ -3270,6 +3358,12 @@ Rules catalog includes **1029 built-in detection rules** ([_last update on 2025-
     
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
             
+??? abstract "CrowdStrike Falcon Intrusion Detection Medium Severity EppDetection"
+    
+    CrowdStrike Falcon agent raised an alert for an intrusion detection with medium severity with the new EppDetectionSummaryEvent.
+    
+    - **Effort:** master
+    
 ??? abstract "Cybereason EDR Alert"
     
     Cybereason EDR telemetry has raised an alert
@@ -3330,12 +3424,20 @@ Rules catalog includes **1029 built-in detection rules** ([_last update on 2025-
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 28/07/2025 - major - Improve filter and similarity strategy.
+            
 ??? abstract "Download Files From Suspicious TLDs"
     
     Detects download of certain file types from hosts in suspicious TLDs
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 28/07/2025 - major - Improve filter and similarity strategy.
+            
 ??? abstract "ESET Protect Intrusion Detection"
     
     Detects when the solution ESET Protect detects an intrusion.
@@ -4303,6 +4405,18 @@ Rules catalog includes **1029 built-in detection rules** ([_last update on 2025-
     
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
             
+??? abstract "CrowdStrike Falcon Intrusion Detection Critical Severity EppDetection"
+    
+    CrowdStrike Falcon agent raised an alert for an intrusion detection with critical severity with the new EppDetectionSummaryEvent.
+    
+    - **Effort:** master
+    
+??? abstract "CrowdStrike Falcon Intrusion Detection EppDetection"
+    
+    CrowdStrike Falcon agent raised an alert for an intrusion detection with the new EppDetectionSummaryEvent type.
+    
+    - **Effort:** master
+    
 ??? abstract "CrowdStrike Falcon Intrusion Detection High Severity"
     
     CrowdStrike Falcon agent raised an alert for an intrusion detection with high severity
@@ -4313,6 +4427,12 @@ Rules catalog includes **1029 built-in detection rules** ([_last update on 2025-
     
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
             
+??? abstract "CrowdStrike Falcon Intrusion Detection High Severity EppDetection"
+    
+    CrowdStrike Falcon agent raised an alert for an intrusion detection with high severity with the new EppDetectionSummaryEvent.
+    
+    - **Effort:** master
+    
 ??? abstract "CrowdStrike Falcon Intrusion Detection Informational Severity"
     
     CrowdStrike Falcon agent raised an alert for an intrusion detection with informational severity
@@ -4323,6 +4443,12 @@ Rules catalog includes **1029 built-in detection rules** ([_last update on 2025-
     
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
             
+??? abstract "CrowdStrike Falcon Intrusion Detection Informational Severity EppDetection"
+    
+    CrowdStrike Falcon agent raised an alert for an intrusion detection with informational severity with the new EppDetectionSummaryEvent.
+    
+    - **Effort:** master
+    
 ??? abstract "CrowdStrike Falcon Intrusion Detection Low Severity"
     
     CrowdStrike Falcon agent raised an alert for an intrusion detection with low severity
@@ -4333,6 +4459,12 @@ Rules catalog includes **1029 built-in detection rules** ([_last update on 2025-
     
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
             
+??? abstract "CrowdStrike Falcon Intrusion Detection Low Severity EppDetection"
+    
+    CrowdStrike Falcon agent raised an alert for an intrusion detection with low severity with the new EppDetectionSummaryEvent.
+    
+    - **Effort:** master
+    
 ??? abstract "CrowdStrike Falcon Intrusion Detection Medium Severity"
     
     CrowdStrike Falcon agent raised an alert for an intrusion detection with medium severity
@@ -4343,6 +4475,12 @@ Rules catalog includes **1029 built-in detection rules** ([_last update on 2025-
     
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
             
+??? abstract "CrowdStrike Falcon Intrusion Detection Medium Severity EppDetection"
+    
+    CrowdStrike Falcon agent raised an alert for an intrusion detection with medium severity with the new EppDetectionSummaryEvent.
+    
+    - **Effort:** master
+    
 ??? abstract "Csrss Child Found"
     
     The csrss.exe process (csrss stands for Client / Server Runtime Subsystem) is a generic Windows process used to manage windows and Windows graphics. This process  should not create a child process or it is very rare.

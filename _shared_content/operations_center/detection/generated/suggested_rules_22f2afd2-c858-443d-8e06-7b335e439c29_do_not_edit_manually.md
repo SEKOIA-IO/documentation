@@ -279,6 +279,12 @@ The following Sekoia.io built-in rules match the intake **CrowdStrike Falcon**. 
     
     - **Effort:** advanced
 
+??? abstract "Correlation PowerShell Suspicious DLL Loading"
+    
+    Detect some suspicious Windows DLL Loading where some PowerShell activity from the binary itself, followed by the same DLL process spawning other process. This is related to the usage of a PowerShell Named Pipe IPC from the DLL.
+    
+    - **Effort:** intermediate
+
 ??? abstract "Correlation Priv Esc Via Remote Thread"
     
     Detect a process that obtains system privilege via a remote thread
@@ -351,9 +357,27 @@ The following Sekoia.io built-in rules match the intake **CrowdStrike Falcon**. 
     
     - **Effort:** master
 
+??? abstract "CrowdStrike Falcon Intrusion Detection Critical Severity EppDetection"
+    
+    CrowdStrike Falcon agent raised an alert for an intrusion detection with critical severity with the new EppDetectionSummaryEvent.
+    
+    - **Effort:** master
+
+??? abstract "CrowdStrike Falcon Intrusion Detection EppDetection"
+    
+    CrowdStrike Falcon agent raised an alert for an intrusion detection with the new EppDetectionSummaryEvent type.
+    
+    - **Effort:** master
+
 ??? abstract "CrowdStrike Falcon Intrusion Detection High Severity"
     
     CrowdStrike Falcon agent raised an alert for an intrusion detection with high severity
+    
+    - **Effort:** master
+
+??? abstract "CrowdStrike Falcon Intrusion Detection High Severity EppDetection"
+    
+    CrowdStrike Falcon agent raised an alert for an intrusion detection with high severity with the new EppDetectionSummaryEvent.
     
     - **Effort:** master
 
@@ -363,15 +387,33 @@ The following Sekoia.io built-in rules match the intake **CrowdStrike Falcon**. 
     
     - **Effort:** master
 
+??? abstract "CrowdStrike Falcon Intrusion Detection Informational Severity EppDetection"
+    
+    CrowdStrike Falcon agent raised an alert for an intrusion detection with informational severity with the new EppDetectionSummaryEvent.
+    
+    - **Effort:** master
+
 ??? abstract "CrowdStrike Falcon Intrusion Detection Low Severity"
     
     CrowdStrike Falcon agent raised an alert for an intrusion detection with low severity
     
     - **Effort:** master
 
+??? abstract "CrowdStrike Falcon Intrusion Detection Low Severity EppDetection"
+    
+    CrowdStrike Falcon agent raised an alert for an intrusion detection with low severity with the new EppDetectionSummaryEvent.
+    
+    - **Effort:** master
+
 ??? abstract "CrowdStrike Falcon Intrusion Detection Medium Severity"
     
     CrowdStrike Falcon agent raised an alert for an intrusion detection with medium severity
+    
+    - **Effort:** master
+
+??? abstract "CrowdStrike Falcon Intrusion Detection Medium Severity EppDetection"
+    
+    CrowdStrike Falcon agent raised an alert for an intrusion detection with medium severity with the new EppDetectionSummaryEvent.
     
     - **Effort:** master
 

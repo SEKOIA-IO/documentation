@@ -75,12 +75,6 @@ The following Sekoia.io built-in rules match the intake **Sophos EDR**. This doc
     
     - **Effort:** advanced
 
-??? abstract "Download Files From Suspicious TLDs"
-    
-    Detects download of certain file types from hosts in suspicious TLDs
-    
-    - **Effort:** master
-
 ??? abstract "Koadic MSHTML Command"
     
     Detects Koadic payload using MSHTML module

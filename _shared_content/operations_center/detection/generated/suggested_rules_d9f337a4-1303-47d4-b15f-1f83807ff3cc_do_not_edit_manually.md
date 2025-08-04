@@ -171,12 +171,6 @@ The following Sekoia.io built-in rules match the intake **Imperva WAF**. This do
     
     - **Effort:** master
 
-??? abstract "Download Files From Suspicious TLDs"
-    
-    Detects download of certain file types from hosts in suspicious TLDs
-    
-    - **Effort:** master
-
 ??? abstract "Dynamic DNS Contacted"
     
     Detect communication with dynamic dns domain. This kind of domain is often used by attackers. This rule can trigger false positive in non-controlled environment because dynamic dns is not always malicious.
