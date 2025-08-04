@@ -9,7 +9,7 @@ industrial networks. It enables users to monitor, configure, and respond to thre
 visibility and control over operational technology environments. With its user-friendly interface and powerful 
 analytics, the console simplifies security operations and strengthens defense against cyber risks.
 
-- **Supported environment**:
+- **Supported environment**: On prem
 - **Detection based on**:
 - **Supported application or feature**:
     - Alerts
