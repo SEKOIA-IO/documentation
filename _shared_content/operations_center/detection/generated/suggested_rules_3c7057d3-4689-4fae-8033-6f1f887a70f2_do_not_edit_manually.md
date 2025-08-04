@@ -477,6 +477,12 @@ The following Sekoia.io built-in rules match the intake **HarfangLab EDR**. This
     
     - **Effort:** advanced
 
+??? abstract "Cookies Deletion"
+    
+    Detects when cookies are deleted by a suspicious process.
+    
+    - **Effort:** master
+
 ??? abstract "Copy Of Legitimate System32 Executable"
     
     A script has copied a System32 executable.
@@ -530,6 +536,12 @@ The following Sekoia.io built-in rules match the intake **HarfangLab EDR**. This
     Detects domain name which is longer than 62 characters and requested at least 50 times in a 10 minutes range time. Long domain names are distinctive of DNS tunnels.
     
     - **Effort:** advanced
+
+??? abstract "Correlation PowerShell Suspicious DLL Loading"
+    
+    Detect some suspicious Windows DLL Loading where some PowerShell activity from the binary itself, followed by the same DLL process spawning other process. This is related to the usage of a PowerShell Named Pipe IPC from the DLL.
+    
+    - **Effort:** intermediate
 
 ??? abstract "Correlation Priv Esc Via Remote Thread"
     
@@ -758,12 +770,6 @@ The following Sekoia.io built-in rules match the intake **HarfangLab EDR**. This
     Detects attempts to gather information on domain trust relationships that may be used to identify lateral movement opportunities. "trustedDomain" which is detected here is a Microsoft Active Directory ObjectClass Type that represents a domain that is trusted by, or trusting, the local AD DOMAIN. Several tools are using LDAP queries in the end to get the information (DSQuery, sometimes ADFind as well, etc.)
     
     - **Effort:** elementary
-
-??? abstract "Download Files From Suspicious TLDs"
-    
-    Detects download of certain file types from hosts in suspicious TLDs
-    
-    - **Effort:** master
 
 ??? abstract "Dumpert LSASS Process Dumper"
     

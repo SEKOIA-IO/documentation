@@ -1,7 +1,13 @@
-Changelog _last update on 2025-07-23_
+Changelog _last update on 2025-08-04_
 
 ## Changelog
 
+### Download Files From Suspicious TLDs
+  - 28/07/2025 - major - Improve filter and similarity strategy.
+    
+### Download Files From Non-Legitimate TLDs
+  - 28/07/2025 - major - Improve filter and similarity strategy.
+    
 ### Darktrace Threat Visualizer Model Breach Critical Activity
   - 02/07/2025 - minor - Update similarity
     

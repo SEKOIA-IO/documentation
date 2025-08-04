@@ -309,6 +309,12 @@ The following Sekoia.io built-in rules match the intake **SentinelOne EDR**. Thi
     
     - **Effort:** elementary
 
+??? abstract "Correlation PowerShell Suspicious DLL Loading"
+    
+    Detect some suspicious Windows DLL Loading where some PowerShell activity from the binary itself, followed by the same DLL process spawning other process. This is related to the usage of a PowerShell Named Pipe IPC from the DLL.
+    
+    - **Effort:** intermediate
+
 ??? abstract "Correlation Priv Esc Via Remote Thread"
     
     Detect a process that obtains system privilege via a remote thread
@@ -476,12 +482,6 @@ The following Sekoia.io built-in rules match the intake **SentinelOne EDR**. Thi
     Detects attempts to gather information on domain trust relationships that may be used to identify lateral movement opportunities. "trustedDomain" which is detected here is a Microsoft Active Directory ObjectClass Type that represents a domain that is trusted by, or trusting, the local AD DOMAIN. Several tools are using LDAP queries in the end to get the information (DSQuery, sometimes ADFind as well, etc.)
     
     - **Effort:** elementary
-
-??? abstract "Download Files From Suspicious TLDs"
-    
-    Detects download of certain file types from hosts in suspicious TLDs
-    
-    - **Effort:** master
 
 ??? abstract "Dynamic DNS Contacted"
     

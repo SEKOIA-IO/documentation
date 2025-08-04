@@ -1,8 +1,8 @@
 ### Related Built-in Rules
 
-The following Sekoia.io built-in rules match the intake **BeyondTrust Priviledged Remote Access [BETA]**. This documentation is updated automatically and is based solely on the fields used by the intake which are checked against our rules. This means that some rules will be listed but might not be relevant with the intake.
+The following Sekoia.io built-in rules match the intake **BeyondTrust Privileged Remote Access Session [BETA]**. This documentation is updated automatically and is based solely on the fields used by the intake which are checked against our rules. This means that some rules will be listed but might not be relevant with the intake.
 
-[SEKOIA.IO x BeyondTrust Priviledged Remote Access [BETA] on ATT&CK Navigator](https://mitre-attack.github.io/attack-navigator/#layerURL=https%3A%2F%2Fraw.githubusercontent.com%2FSEKOIA-IO%2Fdocumentation%2Fmain%2F_shared_content%2Foperations_center%2Fdetection%2Fgenerated%2Fattack_f6cfddb4-543a-41fe-9802-c66b7c90366d_do_not_edit_manually.json){ .md-button }
+[SEKOIA.IO x BeyondTrust Privileged Remote Access Session [BETA] on ATT&CK Navigator](https://mitre-attack.github.io/attack-navigator/#layerURL=https%3A%2F%2Fraw.githubusercontent.com%2FSEKOIA-IO%2Fdocumentation%2Fmain%2F_shared_content%2Foperations_center%2Fdetection%2Fgenerated%2Fattack_f6cfddb4-543a-41fe-9802-c66b7c90366d_do_not_edit_manually.json){ .md-button }
 ??? abstract "ACLight Discovering Privileged Accounts"
     
     Detects use of ACLight tool. This tool aims to discover privileged accounts by scanning the network.
@@ -356,12 +356,6 @@ The following Sekoia.io built-in rules match the intake **BeyondTrust Priviledge
     Detects attempts to gather information on domain trust relationships that may be used to identify lateral movement opportunities. "trustedDomain" which is detected here is a Microsoft Active Directory ObjectClass Type that represents a domain that is trusted by, or trusting, the local AD DOMAIN. Several tools are using LDAP queries in the end to get the information (DSQuery, sometimes ADFind as well, etc.)
     
     - **Effort:** elementary
-
-??? abstract "Download Files From Suspicious TLDs"
-    
-    Detects download of certain file types from hosts in suspicious TLDs
-    
-    - **Effort:** master
 
 ??? abstract "Dynamic DNS Contacted"
     
