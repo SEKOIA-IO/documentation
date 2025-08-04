@@ -10,7 +10,7 @@ visibility and control over operational technology environments. With its user-f
 analytics, the console simplifies security operations and strengthens defense against cyber risks.
 
 - **Supported environment**: On prem
-- **Detection based on**:
+- **Detection based on**: Alerts, Audit
 - **Supported application or feature**:
     - Alerts
     - Health
