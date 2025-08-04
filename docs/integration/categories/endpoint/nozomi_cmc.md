@@ -25,7 +25,7 @@ analytics, the console simplifies security operations and strengthens defense ag
 
   <img width="100%" alt="Configuration" src="/assets/integration/cloud_and_saas/nozomi_cmc/configuration.png">
 
-5. Enter the details as necessary.  ( Enable logs types as you wish )
+5. Enter the necessary details and enable whichever log types you prefer.
 
   <img width="100%" alt="Details" src="/assets/integration/cloud_and_saas/nozomi_cmc/details.png">
 
