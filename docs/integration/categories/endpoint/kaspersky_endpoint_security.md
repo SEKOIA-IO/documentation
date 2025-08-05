@@ -7,7 +7,7 @@ type: intake
 **Kaspersky Endpoint Security** is an advanced security solution designed to safeguard businesses, their networks, and data against a wide array of cyber threats. Employing a multi-layered approach, it integrates various protection technologies including signature-based detection, heuristic analysis, machine learning, and real-time monitoring to detect and thwart malware, ransomware, zero-day attacks, and other threats effectively.
 
 - **Vendor**: Kaspersky
-- **Supported environment**: On Premise
+- **Supported environment**: On Premise, Saas
 - **Version compatibility, if applicable**:
 - **Detection based on**: Endpoint Telemetry
 - **Supported application or feature**: Endpoint Security
