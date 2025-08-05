@@ -1,11 +1,26 @@
-Changelog _last update on 2025-08-04_
+Changelog _last update on 2025-08-05_
 
 ## Changelog
 
-### Download Files From Suspicious TLDs
-  - 28/07/2025 - major - Improve filter and similarity strategy.
+### CrowdStrike Falcon Intrusion Detection EppDetection
+  - 05/08/2025 - minor - Alert severity updated to match Crowdstrike's values
+    
+### CrowdStrike Falcon Intrusion Detection Informational Severity EppDetection
+  - 05/08/2025 - minor - Alert severity updated to match Crowdstrike's values
+    
+### CrowdStrike Falcon Intrusion Detection High Severity EppDetection
+  - 05/08/2025 - minor - Alert severity updated to match Crowdstrike's values
+    
+### CrowdStrike Falcon Intrusion Detection Low Severity EppDetection
+  - 05/08/2025 - minor - Alert severity updated to match Crowdstrike's values
+    
+### CrowdStrike Falcon Intrusion Detection Medium Severity EppDetection
+  - 05/08/2025 - minor - Alert severity updated to match Crowdstrike's values
     
 ### Download Files From Non-Legitimate TLDs
+  - 05/08/2025 - minor - Improve filter to avoid false positives
+    
+### Download Files From Suspicious TLDs
   - 28/07/2025 - major - Improve filter and similarity strategy.
     
 ### Darktrace Threat Visualizer Model Breach Critical Activity
