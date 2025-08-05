@@ -201,12 +201,6 @@ The following Sekoia.io built-in rules match the intake **Cisco Umbrella Proxy**
     
     - **Effort:** advanced
 
-??? abstract "Download Files From Non-Legitimate TLDs"
-    
-    Detects file downloads from non-legitimate TLDs. Additional legitimates TLDs should be filtered according to the business habits.
-    
-    - **Effort:** master
-
 ??? abstract "Dynamic DNS Contacted"
     
     Detect communication with dynamic dns domain. This kind of domain is often used by attackers. This rule can trigger false positive in non-controlled environment because dynamic dns is not always malicious.

@@ -1,4 +1,4 @@
-Rules catalog includes **1036 built-in detection rules** ([_last update on 2025-08-04_](rules_changelog.md)).
+Rules catalog includes **1036 built-in detection rules** ([_last update on 2025-08-05_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Identity Information**
 
@@ -1312,6 +1312,7 @@ Rules catalog includes **1036 built-in detection rules** ([_last update on 2025-
     - **Changelog:**
     
         - 28/07/2025 - major - Improve filter and similarity strategy.
+        - 05/08/2025 - minor - Improve filter to avoid false positives
             
 ??? abstract "Download Files From Suspicious TLDs"
     
@@ -2095,6 +2096,10 @@ Rules catalog includes **1036 built-in detection rules** ([_last update on 2025-
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 05/08/2025 - minor - Alert severity updated to match Crowdstrike's values
+            
 ??? abstract "CrowdStrike Falcon Intrusion Detection High Severity"
     
     CrowdStrike Falcon agent raised an alert for an intrusion detection with high severity
@@ -2111,6 +2116,10 @@ Rules catalog includes **1036 built-in detection rules** ([_last update on 2025-
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 05/08/2025 - minor - Alert severity updated to match Crowdstrike's values
+            
 ??? abstract "CrowdStrike Falcon Intrusion Detection Informational Severity"
     
     CrowdStrike Falcon agent raised an alert for an intrusion detection with informational severity
@@ -2127,6 +2136,10 @@ Rules catalog includes **1036 built-in detection rules** ([_last update on 2025-
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 05/08/2025 - minor - Alert severity updated to match Crowdstrike's values
+            
 ??? abstract "CrowdStrike Falcon Intrusion Detection Low Severity"
     
     CrowdStrike Falcon agent raised an alert for an intrusion detection with low severity
@@ -2143,6 +2156,10 @@ Rules catalog includes **1036 built-in detection rules** ([_last update on 2025-
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 05/08/2025 - minor - Alert severity updated to match Crowdstrike's values
+            
 ??? abstract "CrowdStrike Falcon Intrusion Detection Medium Severity"
     
     CrowdStrike Falcon agent raised an alert for an intrusion detection with medium severity
@@ -2159,6 +2176,10 @@ Rules catalog includes **1036 built-in detection rules** ([_last update on 2025-
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 05/08/2025 - minor - Alert severity updated to match Crowdstrike's values
+            
 ??? abstract "Cybereason EDR Alert"
     
     Cybereason EDR telemetry has raised an alert
@@ -3095,6 +3116,7 @@ Rules catalog includes **1036 built-in detection rules** ([_last update on 2025-
     - **Changelog:**
     
         - 28/07/2025 - major - Improve filter and similarity strategy.
+        - 05/08/2025 - minor - Improve filter to avoid false positives
             
 ??? abstract "Download Files From Suspicious TLDs"
     
@@ -3300,6 +3322,10 @@ Rules catalog includes **1036 built-in detection rules** ([_last update on 2025-
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 05/08/2025 - minor - Alert severity updated to match Crowdstrike's values
+            
 ??? abstract "CrowdStrike Falcon Intrusion Detection High Severity"
     
     CrowdStrike Falcon agent raised an alert for an intrusion detection with high severity
@@ -3316,6 +3342,10 @@ Rules catalog includes **1036 built-in detection rules** ([_last update on 2025-
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 05/08/2025 - minor - Alert severity updated to match Crowdstrike's values
+            
 ??? abstract "CrowdStrike Falcon Intrusion Detection Informational Severity"
     
     CrowdStrike Falcon agent raised an alert for an intrusion detection with informational severity
@@ -3332,6 +3362,10 @@ Rules catalog includes **1036 built-in detection rules** ([_last update on 2025-
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 05/08/2025 - minor - Alert severity updated to match Crowdstrike's values
+            
 ??? abstract "CrowdStrike Falcon Intrusion Detection Low Severity"
     
     CrowdStrike Falcon agent raised an alert for an intrusion detection with low severity
@@ -3348,6 +3382,10 @@ Rules catalog includes **1036 built-in detection rules** ([_last update on 2025-
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 05/08/2025 - minor - Alert severity updated to match Crowdstrike's values
+            
 ??? abstract "CrowdStrike Falcon Intrusion Detection Medium Severity"
     
     CrowdStrike Falcon agent raised an alert for an intrusion detection with medium severity
@@ -3364,6 +3402,10 @@ Rules catalog includes **1036 built-in detection rules** ([_last update on 2025-
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 05/08/2025 - minor - Alert severity updated to match Crowdstrike's values
+            
 ??? abstract "Cybereason EDR Alert"
     
     Cybereason EDR telemetry has raised an alert
@@ -3427,6 +3469,7 @@ Rules catalog includes **1036 built-in detection rules** ([_last update on 2025-
     - **Changelog:**
     
         - 28/07/2025 - major - Improve filter and similarity strategy.
+        - 05/08/2025 - minor - Improve filter to avoid false positives
             
 ??? abstract "Download Files From Suspicious TLDs"
     
@@ -4417,6 +4460,10 @@ Rules catalog includes **1036 built-in detection rules** ([_last update on 2025-
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 05/08/2025 - minor - Alert severity updated to match Crowdstrike's values
+            
 ??? abstract "CrowdStrike Falcon Intrusion Detection High Severity"
     
     CrowdStrike Falcon agent raised an alert for an intrusion detection with high severity
@@ -4433,6 +4480,10 @@ Rules catalog includes **1036 built-in detection rules** ([_last update on 2025-
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 05/08/2025 - minor - Alert severity updated to match Crowdstrike's values
+            
 ??? abstract "CrowdStrike Falcon Intrusion Detection Informational Severity"
     
     CrowdStrike Falcon agent raised an alert for an intrusion detection with informational severity
@@ -4449,6 +4500,10 @@ Rules catalog includes **1036 built-in detection rules** ([_last update on 2025-
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 05/08/2025 - minor - Alert severity updated to match Crowdstrike's values
+            
 ??? abstract "CrowdStrike Falcon Intrusion Detection Low Severity"
     
     CrowdStrike Falcon agent raised an alert for an intrusion detection with low severity
@@ -4465,6 +4520,10 @@ Rules catalog includes **1036 built-in detection rules** ([_last update on 2025-
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 05/08/2025 - minor - Alert severity updated to match Crowdstrike's values
+            
 ??? abstract "CrowdStrike Falcon Intrusion Detection Medium Severity"
     
     CrowdStrike Falcon agent raised an alert for an intrusion detection with medium severity
@@ -4481,6 +4540,10 @@ Rules catalog includes **1036 built-in detection rules** ([_last update on 2025-
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 05/08/2025 - minor - Alert severity updated to match Crowdstrike's values
+            
 ??? abstract "Csrss Child Found"
     
     The csrss.exe process (csrss stands for Client / Server Runtime Subsystem) is a generic Windows process used to manage windows and Windows graphics. This process  should not create a child process or it is very rare.
