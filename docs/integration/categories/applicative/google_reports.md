@@ -142,7 +142,7 @@ Find more information on the [official google documentation](https://cloud.googl
 
 1. Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a new intake from the `Google Report`.
 2. Edit the intake configuration with the following attribut:
-    * Select the `application name` what you to fetch events from
+    * Select the `application name` you want to fetch the events from
     * Type the `an Google workspace admin email`.
   
 !!! Important
