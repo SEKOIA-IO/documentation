@@ -1,4 +1,4 @@
-Rules catalog includes **1036 built-in detection rules** ([_last update on 2025-08-05_](rules_changelog.md)).
+Rules catalog includes **1036 built-in detection rules** ([_last update on 2025-08-12_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Identity Information**
 
@@ -3240,6 +3240,10 @@ Rules catalog includes **1036 built-in detection rules** ([_last update on 2025-
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 18/08/2025 - minor - Add filter to reduce false positives
+            
 ??? abstract "CrowdStrike Falcon Identity Protection Detection Critical Severity"
     
     CrowdStrike Falcon raised an alert for an Identity-based detection with critical severity
