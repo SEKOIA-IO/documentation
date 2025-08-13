@@ -1,9 +1,12 @@
-Changelog _last update on 2025-08-12_
+Changelog _last update on 2025-08-13_
 
 ## Changelog
 
 ### Correlation PowerShell Suspicious DLL Loading
   - 18/08/2025 - minor - Add filter to reduce false positives
+    
+### Potential Azure AD Phishing Page (Adversary-in-the-Middle)
+  - 13/08/2025 - minor - Exclude additional legitimate domains and common benign positives.
     
 ### CrowdStrike Falcon Intrusion Detection Informational Severity EppDetection
   - 05/08/2025 - minor - Alert severity updated to match Crowdstrike's values
@@ -421,9 +424,6 @@ Changelog _last update on 2025-08-12_
     
 ### Suspicious Outbound Kerberos Connection
   - 05/08/2024 - major - Rule reworked to match more intakes and have less false positives (filters were added).
-    
-### Potential Azure AD Phishing Page (Adversary-in-the-Middle)
-  - 02/08/2024 - minor - Exclude an additionnal legitimate domain.
     
 ### TOR Usage Generic Rule
   - 02/08/2024 - minor - Small pattern to change to match only the real tags related to TOR.
