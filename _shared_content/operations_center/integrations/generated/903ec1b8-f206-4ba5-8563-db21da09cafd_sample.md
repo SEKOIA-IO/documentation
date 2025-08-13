@@ -132,6 +132,71 @@ In this section, you will find examples of raw logs as generated natively by the
 
 
 
+=== "hash_in_filename"
+
+
+    ```json
+	{
+        "Action": "alert",
+        "Application": "jira-uploading",
+        "ApplicationCategory": "saas",
+        "ApplicationContainer": "jira",
+        "ApplicationSubcategory": "general-business",
+        "DestinationAddress": "1.2.3.4",
+        "DestinationDeviceHost": null,
+        "DestinationDeviceMac": null,
+        "DestinationDeviceOSFamily": null,
+        "DestinationLocation": "IN",
+        "DestinationPort": 443,
+        "DestinationUser": null,
+        "DeviceName": "MYDEVICE",
+        "DeviceSN": "no-serial",
+        "DirectionOfAttack": "client to server",
+        "DomainEDL": null,
+        "FileHash": null,
+        "FileName": "sha256-9f86d081884c7d659a2feaa0c55ad015a3bf4f1b2b0b822cd15d6c15",
+        "FileType": "PNG File Upload",
+        "FromZone": "trust",
+        "HTTP2Connection": 0,
+        "InboundInterface": "tunnel.1",
+        "IsPacketCapture": false,
+        "Justification": null,
+        "LogType": "THREAT",
+        "NATDestination": "1.2.3.4",
+        "NATDestinationPort": 443,
+        "NATSource": "5.6.7.8",
+        "NATSourcePort": 51468,
+        "OutboundInterface": "ethernet1/1",
+        "PartialHash": 0,
+        "Protocol": "tcp",
+        "ReasonForDataFilteringAction": null,
+        "RepeatCount": 1,
+        "Rule": "Global_Outbound_internet_access",
+        "RuleUUID": "2ad91ec3-e3eb-474d-b4ac-efc0d893440c",
+        "SequenceNo": 123456789,
+        "SessionID": 123,
+        "SourceAddress": "9.10.11.12",
+        "SourceDeviceHost": null,
+        "SourceDeviceMac": null,
+        "SourceDeviceOSFamily": null,
+        "SourceLocation": "LOCATION",
+        "SourcePort": 58786,
+        "SourceUser": "john.doe@example.com",
+        "SubType": "file",
+        "Subtype": "file",
+        "TimeGenerated": "2025-07-25T14:33:36.000000Z",
+        "TimeGeneratedHighResolution": "2025-07-25T14:33:36.205000Z",
+        "TimeReceived": "2025-07-25T14:33:43.000000Z",
+        "ToZone": "untrust",
+        "TunneledApplication": "jira-uploading",
+        "URLCategory": "computer-and-internet-info",
+        "Users": "john.doe@example.com",
+        "VendorSeverity": "Low"
+    }
+    ```
+
+
+
 === "hip_match_cef"
 
 
