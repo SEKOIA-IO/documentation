@@ -1,4 +1,4 @@
-Rules catalog includes **1036 built-in detection rules** ([_last update on 2025-08-12_](rules_changelog.md)).
+Rules catalog includes **1036 built-in detection rules** ([_last update on 2025-08-13_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Identity Information**
 
@@ -3229,6 +3229,7 @@ Rules catalog includes **1036 built-in detection rules** ([_last update on 2025-
     
     - **Changelog:**
     
+        - 13/08/2025 - minor - Added new filters to reduce false positives.
         - 20/09/2024 - minor - Added new filters to reduce false positives.
         - 27/05/2024 - minor - Added new filters to reduce false positives.
         - 21/11/2023 - minor - Added new filters to reduce false positives.
@@ -12182,6 +12183,7 @@ Rules catalog includes **1036 built-in detection rules** ([_last update on 2025-
     - **Changelog:**
     
         - 02/08/2024 - minor - Exclude an additionnal legitimate domain.
+        - 13/08/2025 - minor - Exclude additional legitimate domains and common benign positives.
             
 ??? abstract "Sign-In Via Known AiTM Phishing Kit"
     
@@ -12498,6 +12500,7 @@ Rules catalog includes **1036 built-in detection rules** ([_last update on 2025-
     - **Changelog:**
     
         - 02/08/2024 - minor - Exclude an additionnal legitimate domain.
+        - 13/08/2025 - minor - Exclude additional legitimate domains and common benign positives.
             
 ??? abstract "Sign-In Via Known AiTM Phishing Kit"
     
@@ -13723,6 +13726,7 @@ Rules catalog includes **1036 built-in detection rules** ([_last update on 2025-
     - **Changelog:**
     
         - 02/08/2024 - minor - Exclude an additionnal legitimate domain.
+        - 13/08/2025 - minor - Exclude additional legitimate domains and common benign positives.
             
 ??? abstract "Sign-In Via Known AiTM Phishing Kit"
     
