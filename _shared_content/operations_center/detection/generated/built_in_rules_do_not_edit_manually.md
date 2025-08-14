@@ -1931,6 +1931,10 @@ Rules catalog includes **1036 built-in detection rules** ([_last update on 2025-
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 14/08/2025 - minor - Similarity strategy modified to group alerts by user ID and instance ID
+            
 ??? abstract "AWS GuardDuty High Severity Alert"
     
     GuardDuty has detected a threat with a high severity level. A High severity level indicates that the resource in question (an EC2 instance or a set of IAM user sign-in credentials) is compromised and is actively being used for unauthorized purposes.
@@ -10566,6 +10570,10 @@ Rules catalog includes **1036 built-in detection rules** ([_last update on 2025-
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 14/08/2025 - minor - Similarity strategy modified to group alerts by user ID and instance ID
+            
 ??? abstract "AWS CloudTrail EventBridge Rule Disabled Or Deleted"
     
     Detects when an attacker is trying to evade defenses by deleting or disabling EventBridge rules
@@ -11342,6 +11350,10 @@ Rules catalog includes **1036 built-in detection rules** ([_last update on 2025-
     
     - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 14/08/2025 - minor - Similarity strategy modified to group alerts by user ID and instance ID
+            
 ??? abstract "AWS CloudTrail EC2 Subnet Deleted"
     
     Detects when an attacker is destroying an EC2 subnet.
@@ -13242,30 +13254,50 @@ Rules catalog includes **1036 built-in detection rules** ([_last update on 2025-
     
     - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 14/08/2025 - minor - Similarity strategy modified to group alerts by user ID and instance ID.
+            
 ??? abstract "AWS CloudTrail EC2 DeleteKeyPair"
     
     Detects when a specific key pair is deleted. This means the public key was removed from EC2.
     
     - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 14/08/2025 - minor - Similarity strategy modified to group alerts by user ID and instance ID
+            
 ??? abstract "AWS CloudTrail EC2 Enable Serial Console Access"
     
     Detects when the EC2 serial console access feature is enabled. This could abused by some attackers to avoid network detection when accessing to EC2 instances.
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 14/08/2025 - minor - Similarity strategy modified to group alerts by user ID and instance ID
+            
 ??? abstract "AWS CloudTrail EC2 Instance Connect SendSSHPublicKey"
     
     Detects when an attacker is pushing an SSH Public Key to an EC2 instance. Then he can establish a connection to the console using SSH.
     
     - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 14/08/2025 - minor - Similarity strategy modified to group alerts by user ID and instance ID
+            
 ??? abstract "AWS CloudTrail EC2 Instance Connect SendSerialConsoleSSHPublicKey"
     
     Detects when an attacker is pushing an SSH Public Key to an EC2 instance. Then he can establish a serial connection to the console using SSH.
     
     - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 14/08/2025 - minor - Similarity strategy modified to group alerts by user ID and instance ID
+            
 ??? abstract "Admin Share Access"
     
     Detects access to $ADMIN share. The advanced audit policy setting "Object Access > Audit File Share" must be configured for Success/Failure. Also be very cautious to previously check if this is not commonly used by your administrators as to remotely manage your computers.
@@ -13476,6 +13508,10 @@ Rules catalog includes **1036 built-in detection rules** ([_last update on 2025-
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 14/08/2025 - minor - Similarity strategy modified to group alerts by user ID and instance ID
+            
 ??? abstract "Formbook File Creation DB1"
     
     Detects specific file creation (Users\*\AppData\Local\Temp\DB1) to store data to exfiltrate (Formbook behavior). Logging for Sysmon event 11 is usually used for this detection. 
@@ -14606,6 +14642,10 @@ Rules catalog includes **1036 built-in detection rules** ([_last update on 2025-
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 14/08/2025 - minor - Similarity strategy modified to group alerts by user ID and instance ID
+            
 ??? abstract "Google Cloud Audit Logs Drive Ownership Transferred"
     
     Detects when Drive/Docs user files ownership is transferred. The legit use case is when a user is being removed, but this could also be abused by an attacker for exfiltration.
