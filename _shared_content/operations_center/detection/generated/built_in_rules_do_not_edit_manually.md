@@ -1,4 +1,4 @@
-Rules catalog includes **1036 built-in detection rules** ([_last update on 2025-08-13_](rules_changelog.md)).
+Rules catalog includes **1036 built-in detection rules** ([_last update on 2025-08-14_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Identity Information**
 
@@ -812,6 +812,7 @@ Rules catalog includes **1036 built-in detection rules** ([_last update on 2025-
         - 30/08/2024 - minor - improve filter to avoid false positives
         - 30/01/2025 - major - Pattern rework with ECS fields only and simple authentication success use case
         - 04/02/2025 - major - Excluding Microsoft 365 format to avoid false positives
+        - 14/08/2025 - major - Excluding Wiz Audit Logs format to avoid false positives
             
 ??? abstract "Broadcom Edge Secure Web Gateway High Threat"
     
@@ -5459,6 +5460,7 @@ Rules catalog includes **1036 built-in detection rules** ([_last update on 2025-
         - 30/08/2024 - minor - improve filter to avoid false positives
         - 30/01/2025 - major - Pattern rework with ECS fields only and simple authentication success use case
         - 04/02/2025 - major - Excluding Microsoft 365 format to avoid false positives
+        - 14/08/2025 - major - Excluding Wiz Audit Logs format to avoid false positives
             
 ??? abstract "Broadcom Edge Secure Web Gateway High Threat"
     
@@ -7457,6 +7459,7 @@ Rules catalog includes **1036 built-in detection rules** ([_last update on 2025-
         - 30/08/2024 - minor - improve filter to avoid false positives
         - 30/01/2025 - major - Pattern rework with ECS fields only and simple authentication success use case
         - 04/02/2025 - major - Excluding Microsoft 365 format to avoid false positives
+        - 14/08/2025 - major - Excluding Wiz Audit Logs format to avoid false positives
             
 ??? abstract "Broadcom Edge Secure Web Gateway High Threat"
     
@@ -9357,6 +9360,7 @@ Rules catalog includes **1036 built-in detection rules** ([_last update on 2025-
         - 30/08/2024 - minor - improve filter to avoid false positives
         - 30/01/2025 - major - Pattern rework with ECS fields only and simple authentication success use case
         - 04/02/2025 - major - Excluding Microsoft 365 format to avoid false positives
+        - 14/08/2025 - major - Excluding Wiz Audit Logs format to avoid false positives
             
 ??? abstract "Broadcom Edge Secure Web Gateway High Threat"
     
@@ -11914,6 +11918,7 @@ Rules catalog includes **1036 built-in detection rules** ([_last update on 2025-
         - 30/08/2024 - minor - improve filter to avoid false positives
         - 30/01/2025 - major - Pattern rework with ECS fields only and simple authentication success use case
         - 04/02/2025 - major - Excluding Microsoft 365 format to avoid false positives
+        - 14/08/2025 - major - Excluding Wiz Audit Logs format to avoid false positives
             
 ??? abstract "Brute Force WALLIX Bastion"
     

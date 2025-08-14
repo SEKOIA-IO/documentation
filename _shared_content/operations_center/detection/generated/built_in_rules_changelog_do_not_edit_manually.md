@@ -1,9 +1,12 @@
-Changelog _last update on 2025-08-13_
+Changelog _last update on 2025-08-14_
 
 ## Changelog
 
 ### Correlation PowerShell Suspicious DLL Loading
   - 18/08/2025 - minor - Add filter to reduce false positives
+    
+### Authentication Impossible Travel
+  - 14/08/2025 - major - Excluding Wiz Audit Logs format to avoid false positives
     
 ### Potential Azure AD Phishing Page (Adversary-in-the-Middle)
   - 13/08/2025 - minor - Exclude additional legitimate domains and common benign positives.
@@ -163,9 +166,6 @@ Changelog _last update on 2025-08-13_
     
 ### Taskhost or Taskhostw Suspicious Child Found
   - 13/02/2025 - minor - Adding new filters to reduce false positives.
-    
-### Authentication Impossible Travel
-  - 04/02/2025 - major - Excluding Microsoft 365 format to avoid false positives
     
 ### Correlation Jumpcloud User Logged In From Multiple Countries
   - 03/02/2025 - minor - Update pattern to ECS field only
