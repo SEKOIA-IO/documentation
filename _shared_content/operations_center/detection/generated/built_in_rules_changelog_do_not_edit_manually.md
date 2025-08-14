@@ -5,6 +5,33 @@ Changelog _last update on 2025-08-14_
 ### Correlation PowerShell Suspicious DLL Loading
   - 18/08/2025 - minor - Add filter to reduce false positives
     
+### AWS CloudTrail EC2 Enable Serial Console Access
+  - 14/08/2025 - minor - Similarity strategy modified to group alerts by user ID and instance ID
+    
+### AWS CloudTrail EC2 Startup Script Changed
+  - 14/08/2025 - minor - Similarity strategy modified to group alerts by user ID and instance ID
+    
+### AWS CloudTrail EC2 Instance Connect SendSSHPublicKey
+  - 14/08/2025 - minor - Similarity strategy modified to group alerts by user ID and instance ID
+    
+### AWS CloudTrail EC2 CreateVPC
+  - 14/08/2025 - minor - Similarity strategy modified to group alerts by user ID and instance ID
+    
+### AWS CloudTrail EC2 Instance Connect SendSerialConsoleSSHPublicKey
+  - 14/08/2025 - minor - Similarity strategy modified to group alerts by user ID and instance ID
+    
+### AWS CloudTrail EC2 CreateKeyPair
+  - 14/08/2025 - minor - Similarity strategy modified to group alerts by user ID and instance ID.
+    
+### AWS CloudTrail EC2 VM Export Failure
+  - 14/08/2025 - minor - Similarity strategy modified to group alerts by user ID and instance ID
+    
+### AWS CloudTrail EC2 Security Group Modified
+  - 14/08/2025 - minor - Similarity strategy modified to group alerts by user ID and instance ID
+    
+### AWS CloudTrail EC2 DeleteKeyPair
+  - 14/08/2025 - minor - Similarity strategy modified to group alerts by user ID and instance ID
+    
 ### Authentication Impossible Travel
   - 14/08/2025 - major - Excluding Wiz Audit Logs format to avoid false positives
     
