@@ -2814,6 +2814,7 @@ Rules catalog includes **1036 built-in detection rules** ([_last update on 2025-
     
         - 28/03/2023 - minor - Excluded some commonly observed false positives.
         - 13/03/2025 - major - Change effort and excluded some commonly observed false positives.
+        - 14/08/2025 - minor - Excluded new paths to reduce false positives.
             
 ??? abstract "Suspicious PowerShell Invocations - Specific"
     
@@ -14152,6 +14153,7 @@ Rules catalog includes **1036 built-in detection rules** ([_last update on 2025-
         - 26/01/2024 - minor - Modifying filter to improve rule.
         - 22/11/2023 - minor - Adding filter to improve rule.
         - 02/08/2024 - minor - Small pattern to change to match only the real tags related to TOR.
+        - 14/08/2025 - minor - Adding NTP filter to reduce false positives.
             
 **Web Service**
 

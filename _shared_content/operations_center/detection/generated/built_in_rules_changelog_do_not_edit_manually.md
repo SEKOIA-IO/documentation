@@ -5,6 +5,9 @@ Changelog _last update on 2025-08-14_
 ### Correlation PowerShell Suspicious DLL Loading
   - 18/08/2025 - minor - Add filter to reduce false positives
     
+### Suspicious PowerShell Invocations - Generic
+  - 14/08/2025 - minor - Excluded new paths to reduce false positives.
+    
 ### AWS CloudTrail EC2 Enable Serial Console Access
   - 14/08/2025 - minor - Similarity strategy modified to group alerts by user ID and instance ID
     
@@ -34,6 +37,9 @@ Changelog _last update on 2025-08-14_
     
 ### Authentication Impossible Travel
   - 14/08/2025 - major - Excluding Wiz Audit Logs format to avoid false positives
+    
+### TOR Usage Generic Rule
+  - 14/08/2025 - minor - Adding NTP filter to reduce false positives.
     
 ### Potential Azure AD Phishing Page (Adversary-in-the-Middle)
   - 13/08/2025 - minor - Exclude additional legitimate domains and common benign positives.
@@ -172,9 +178,6 @@ Changelog _last update on 2025-08-14_
     
 ### Powershell Winlogon Helper DLL
   - 13/03/2025 - major - Adding new filter and similarity strategy to reduce false positives. Changing effort level.
-    
-### Suspicious PowerShell Invocations - Generic
-  - 13/03/2025 - major - Change effort and excluded some commonly observed false positives.
     
 ### Palo Alto Cortex XDR (EDR) Alert Not Blocked (High Severity)
   - 10/03/2025 - minor - Update severity to match the severity level from the editor
@@ -451,9 +454,6 @@ Changelog _last update on 2025-08-14_
     
 ### Suspicious Outbound Kerberos Connection
   - 05/08/2024 - major - Rule reworked to match more intakes and have less false positives (filters were added).
-    
-### TOR Usage Generic Rule
-  - 02/08/2024 - minor - Small pattern to change to match only the real tags related to TOR.
     
 ### PowerShell Malicious PowerShell Commandlets
   - 26/07/2024 - minor - Removing tools relationships as it was inaccurate
