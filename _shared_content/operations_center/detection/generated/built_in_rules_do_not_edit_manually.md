@@ -1,4 +1,4 @@
-Rules catalog includes **1036 built-in detection rules** ([_last update on 2025-08-14_](rules_changelog.md)).
+Rules catalog includes **1036 built-in detection rules** ([_last update on 2025-08-18_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Identity Information**
 
@@ -7044,13 +7044,14 @@ Rules catalog includes **1036 built-in detection rules** ([_last update on 2025-
     
 ??? abstract "Windows Registry Persistence COM Search Order Hijacking"
     
-    Detects potential COM object hijacking leveraging the COM Search Order. Logging for Registry events is needed, it can be done with Sysmon's Event IDs 12 and 13.
+    Detects potential COM object hijacking leveraging the COM Search Order. Logging for Registry events is needed, it can be done with Sysmon's Event IDs 12 and 13. Alert filters are highly encouraged for such kind of rule.
     
-    - **Effort:** advanced
+    - **Effort:** master
     
     - **Changelog:**
     
         - 11/01/2024 - minor - Adding filtering for some FPs
+        - 18/08/2025 - major - Effort level moved to master. Pattern changed to enhance the detection scope. Filters were added to reduce false positives.
             
 ## Privilege Execution
 **Boot or Logon Initialization Scripts**
@@ -8825,13 +8826,14 @@ Rules catalog includes **1036 built-in detection rules** ([_last update on 2025-
     
 ??? abstract "Windows Registry Persistence COM Search Order Hijacking"
     
-    Detects potential COM object hijacking leveraging the COM Search Order. Logging for Registry events is needed, it can be done with Sysmon's Event IDs 12 and 13.
+    Detects potential COM object hijacking leveraging the COM Search Order. Logging for Registry events is needed, it can be done with Sysmon's Event IDs 12 and 13. Alert filters are highly encouraged for such kind of rule.
     
-    - **Effort:** advanced
+    - **Effort:** master
     
     - **Changelog:**
     
         - 11/01/2024 - minor - Adding filtering for some FPs
+        - 18/08/2025 - major - Effort level moved to master. Pattern changed to enhance the detection scope. Filters were added to reduce false positives.
             
 **Escape to Host**
 
@@ -11335,13 +11337,14 @@ Rules catalog includes **1036 built-in detection rules** ([_last update on 2025-
     
 ??? abstract "Windows Registry Persistence COM Search Order Hijacking"
     
-    Detects potential COM object hijacking leveraging the COM Search Order. Logging for Registry events is needed, it can be done with Sysmon's Event IDs 12 and 13.
+    Detects potential COM object hijacking leveraging the COM Search Order. Logging for Registry events is needed, it can be done with Sysmon's Event IDs 12 and 13. Alert filters are highly encouraged for such kind of rule.
     
-    - **Effort:** advanced
+    - **Effort:** master
     
     - **Changelog:**
     
         - 11/01/2024 - minor - Adding filtering for some FPs
+        - 18/08/2025 - major - Effort level moved to master. Pattern changed to enhance the detection scope. Filters were added to reduce false positives.
             
 **Modify Cloud Compute Infrastructure**
 
