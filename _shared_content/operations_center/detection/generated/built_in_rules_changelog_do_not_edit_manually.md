@@ -1,7 +1,10 @@
-Changelog _last update on 2025-08-14_
+Changelog _last update on 2025-08-18_
 
 ## Changelog
 
+### Windows Registry Persistence COM Search Order Hijacking
+  - 18/08/2025 - major - Effort level moved to master. Pattern changed to enhance the detection scope. Filters were added to reduce false positives.
+    
 ### Correlation PowerShell Suspicious DLL Loading
   - 18/08/2025 - minor - Add filter to reduce false positives
     
@@ -1039,9 +1042,6 @@ Changelog _last update on 2025-08-14_
     
 ### Suspicious CodePage Switch with CHCP
   - 16/01/2024 - minor - Rename rule to fit with behavior
-    
-### Windows Registry Persistence COM Search Order Hijacking
-  - 11/01/2024 - minor - Adding filtering for some FPs
     
 ### Grabbing Sensitive Hives Via Reg Utility
   - 02/01/2024 - minor - Rule was improved to have broader detection and filters were added.

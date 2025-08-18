@@ -3335,9 +3335,9 @@ The following Sekoia.io built-in rules match the intake **Windows**. This docume
 
 ??? abstract "Windows Registry Persistence COM Search Order Hijacking"
     
-    Detects potential COM object hijacking leveraging the COM Search Order. Logging for Registry events is needed, it can be done with Sysmon's Event IDs 12 and 13.
+    Detects potential COM object hijacking leveraging the COM Search Order. Logging for Registry events is needed, it can be done with Sysmon's Event IDs 12 and 13. Alert filters are highly encouraged for such kind of rule.
     
-    - **Effort:** advanced
+    - **Effort:** master
 
 ??? abstract "Windows Suspicious Scheduled Task Creation"
     
