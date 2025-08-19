@@ -1725,6 +1725,12 @@ The following Sekoia.io built-in rules match the intake **WithSecure Elements**.
     
     - **Effort:** master
 
+??? abstract "Windows Sandbox Start"
+    
+    Detection of Windows Sandbox started from the command line with a config file or interactively using a WSB file.
+    
+    - **Effort:** master
+
 ??? abstract "WithSecure Elements Critical Severity"
     
     WithSecure Elements has several modules. One constant is the severity of a raised event, which can be critical and therefore interesting to look at.

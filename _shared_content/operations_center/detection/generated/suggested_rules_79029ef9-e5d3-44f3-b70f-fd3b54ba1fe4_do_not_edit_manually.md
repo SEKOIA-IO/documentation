@@ -1467,6 +1467,12 @@ The following Sekoia.io built-in rules match the intake **Stormshield SNS**. Thi
     
     - **Effort:** master
 
+??? abstract "Windows Sandbox Start"
+    
+    Detection of Windows Sandbox started from the command line with a config file or interactively using a WSB file.
+    
+    - **Effort:** master
+
 ??? abstract "Wmic Process Call Creation"
     
     The WMI command-line (WMIC) utility provides a command-line interface for Windows Management Instrumentation (WMI). WMIC is compatible with existing shells and utility commands. Although WMI is supposed to be an administration tool, it is wildy abused by threat actors. One of the reasons is WMI is quite stealthy. This rule detects the wmic command line launching a process on a remote or local host.

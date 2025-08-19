@@ -452,3 +452,9 @@ The following Sekoia.io built-in rules match the intake **Broadcom/Symantec Endp
     Detects file writes through WMI script event consumer.
     
     - **Effort:** advanced
+
+??? abstract "Windows Sandbox Start"
+    
+    Detection of Windows Sandbox started from the command line with a config file or interactively using a WSB file.
+    
+    - **Effort:** master

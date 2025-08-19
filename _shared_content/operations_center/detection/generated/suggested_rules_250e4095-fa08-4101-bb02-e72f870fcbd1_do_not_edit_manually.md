@@ -2929,7 +2929,7 @@ The following Sekoia.io built-in rules match the intake **Sekoia.io Endpoint Age
     
     Detects attacker fingerprint activities based on the correlation of specific WMIC commands. This has been observed with Aurora malware.
     
-    - **Effort:** intermediate
+    - **Effort:** advanced
 
 ??? abstract "WMI Install Of Binary"
     
@@ -3036,6 +3036,12 @@ The following Sekoia.io built-in rules match the intake **Sekoia.io Endpoint Age
 ??? abstract "Windows Registry Persistence COM Search Order Hijacking"
     
     Detects potential COM object hijacking leveraging the COM Search Order. Logging for Registry events is needed, it can be done with Sysmon's Event IDs 12 and 13. Alert filters are highly encouraged for such kind of rule.
+    
+    - **Effort:** master
+
+??? abstract "Windows Sandbox Start"
+    
+    Detection of Windows Sandbox started from the command line with a config file or interactively using a WSB file.
     
     - **Effort:** master
 
