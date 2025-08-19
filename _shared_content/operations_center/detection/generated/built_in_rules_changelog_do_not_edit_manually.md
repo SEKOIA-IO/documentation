@@ -1,7 +1,10 @@
-Changelog _last update on 2025-08-18_
+Changelog _last update on 2025-08-19_
 
 ## Changelog
 
+### WMI Fingerprint Commands
+  - 19/08/2025 - major - Changing effort level.
+    
 ### Windows Registry Persistence COM Search Order Hijacking
   - 18/08/2025 - major - Effort level moved to master. Pattern changed to enhance the detection scope. Filters were added to reduce false positives.
     

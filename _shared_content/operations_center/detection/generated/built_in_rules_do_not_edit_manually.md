@@ -1,4 +1,4 @@
-Rules catalog includes **1036 built-in detection rules** ([_last update on 2025-08-18_](rules_changelog.md)).
+Rules catalog includes **1038 built-in detection rules** ([_last update on 2025-08-19_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Identity Information**
 
@@ -1769,8 +1769,12 @@ Rules catalog includes **1036 built-in detection rules** ([_last update on 2025-
     
     Detects attacker fingerprint activities based on the correlation of specific WMIC commands. This has been observed with Aurora malware.
     
-    - **Effort:** intermediate
+    - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 19/08/2025 - major - Changing effort level.
+            
 ??? abstract "WMI Install Of Binary"
     
     Detection of WMI used to install a binary on the host. It is often used by attackers as a signed binary to infect an host.
@@ -1799,6 +1803,12 @@ Rules catalog includes **1036 built-in detection rules** ([_last update on 2025-
         - 26/03/2024 - major - Rule's pattern field changed.
         - 26/06/2025 - major - Pattern updated to avoid false positives and effort level changed to be coherent.
             
+??? abstract "Windows Sandbox Start"
+    
+    Detection of Windows Sandbox started from the command line with a config file or interactively using a WSB file.
+    
+    - **Effort:** master
+    
 ??? abstract "Wmic Process Call Creation"
     
     The WMI command-line (WMIC) utility provides a command-line interface for Windows Management Instrumentation (WMI). WMIC is compatible with existing shells and utility commands. Although WMI is supposed to be an administration tool, it is wildy abused by threat actors. One of the reasons is WMI is quite stealthy. This rule detects the wmic command line launching a process on a remote or local host.
@@ -5284,6 +5294,14 @@ Rules catalog includes **1036 built-in detection rules** ([_last update on 2025-
     Catch Docker escape via mount escape followed by chroot 
     
     - **Effort:** intermediate
+    
+**Cloud Administration Command**
+
+??? abstract "WIZ Issues Critical Alert Raised"
+    
+    Detects when a critical alert from WIZ Issues is raised.
+    
+    - **Effort:** master
     
 ## Persistence
 **Boot or Logon Initialization Scripts**
@@ -12955,8 +12973,12 @@ Rules catalog includes **1036 built-in detection rules** ([_last update on 2025-
     
     Detects attacker fingerprint activities based on the correlation of specific WMIC commands. This has been observed with Aurora malware.
     
-    - **Effort:** intermediate
+    - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 19/08/2025 - major - Changing effort level.
+            
 **File and Directory Discovery**
 
 ??? abstract "Netskope DLP Alert"
