@@ -266,7 +266,8 @@ If the Sekoia Agent is already installed, you can enable Host Hygiene collection
 
 Add the following configuration:
 
-    ```yaml
+    ```
+	yaml
     roles:
     - event-collector
     - compliance-collector
