@@ -1,4 +1,4 @@
-Rules catalog includes **1038 built-in detection rules** ([_last update on 2025-08-19_](rules_changelog.md)).
+Rules catalog includes **1038 built-in detection rules** ([_last update on 2025-08-20_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Identity Information**
 
@@ -8946,6 +8946,7 @@ Rules catalog includes **1038 built-in detection rules** ([_last update on 2025-
         - 22/01/2024 - minor - Extending filter to avoid FPs
         - 04/01/2024 - major - Rework filter selection with contains instead of re modifier
         - 26/03/2024 - major - Rule's pattern field changed
+        - 20/08/2025 - minor - Extending filter to avoid FPs on Windows on ARM architectures
             
 ??? abstract "Linux Binary Masquerading"
     
