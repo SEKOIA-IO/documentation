@@ -1,7 +1,10 @@
-Changelog _last update on 2025-08-19_
+Changelog _last update on 2025-08-20_
 
 ## Changelog
 
+### Legitimate Process Execution From Unusual Folder
+  - 20/08/2025 - minor - Extending filter to avoid FPs on Windows on ARM architectures
+    
 ### WMI Fingerprint Commands
   - 19/08/2025 - major - Changing effort level.
     
@@ -774,9 +777,6 @@ Changelog _last update on 2025-08-19_
   - 26/03/2024 - major - Rule's pattern field changed
     
 ### Cobalt Strike Default Service Creation Usage
-  - 26/03/2024 - major - Rule's pattern field changed
-    
-### Legitimate Process Execution From Unusual Folder
   - 26/03/2024 - major - Rule's pattern field changed
     
 ### Potential RDP Connection To Non-Domain Host
