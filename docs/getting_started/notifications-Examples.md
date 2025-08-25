@@ -95,12 +95,12 @@ You can refer to the Mattermost documentation on how to [create a new Mattermost
 
 You can now send notifications directly to your Teams or Slack channels, making it easy to keep your team informed about important activity.
 
-1. Navigate to **Settings** > **Notifications** from the main menu.
-2. Click the **"Create new notification"** button.
-3. Choose the **event** or **metric** you want to receive an alert for.
-4. In the **"Actions to perform"** section, select **Teams** or **Slack** from the dropdown menu.
-5. Paste your incoming webhook URL into the field provided.
-6. Click **Save** to activate the notification.
+1. Navigate to **Settings** > **Notifications** from the main menu
+2. Click the **"Create new notification"** button
+3. Choose the **event** or **metric** you want to receive an alert for
+4. In the **"Actions to perform"** section, select **Teams** or **Slack** from the dropdown menu
+5. Paste your incoming webhook URL into the field provided
+6. Click **Save** to activate the notification
 
 Once saved, any future notifications triggered by your selected event or metric will automatically be sent to the designated Teams or Slack channel.
 
