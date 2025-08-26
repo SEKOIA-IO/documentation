@@ -395,7 +395,6 @@ nav:
       - Wiz Vulnerability Findings: integration/categories/network_security/wiz_vulnerability_findings.md
       - Zscaler Internet Access: integration/categories/network_security/zscaler_zia.md
   - List of Playbooks Actions:
-    - Overview: integration/action_library/overview.md
     - Applicative:
       - ElasticSearch: integration/action_library/elasticsearch.md
       - Mandrill: integration/action_library/mandrill.md
@@ -415,6 +414,7 @@ nav:
     - Email:
       - Microsoft Outlook: integration/action_library/microsoft-outlook.md
     - Endpoint:
+      - Bitdefender GravityZone: integration/action_library/bitdefender-gravityzone.md
       - CrowdStrike Falcon: integration/action_library/crowdstrike-falcon.md
       - Eset: integration/action_library/eset.md
       - HarfangLab: integration/action_library/harfanglab.md
@@ -441,6 +441,7 @@ nav:
       - Fortigate Firewalls: integration/action_library/fortigate-firewalls.md
       - Sophos: integration/action_library/sophos.md
       - Zscaler: integration/action_library/zscaler.md
+    - Overview: integration/action_library/overview.md
     - Threat Intelligence:
       - BinaryEdge's API: integration/action_library/binaryedge-s-api.md
       - Censys: integration/action_library/censys.md
