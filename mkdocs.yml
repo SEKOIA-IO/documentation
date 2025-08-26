@@ -328,6 +328,7 @@ nav:
       - Azure Front Door: integration/categories/network_security/azure_front_door.md
       - Azure Network Watcher (NSG flow logs): integration/categories/network_security/azure_network_watcher.md
       - Azure Network Watcher (Virtual Network Flow Logs): integration/categories/network_security/azure_network_watcher_flow_logs.md
+      - Barracuda CloudGen Firewall: integration/categories/network_security/barracuda_cloudgen_firewall.md
       - Bitsight SPM: integration/categories/network_security/bitsight_spm.md
       - Broadcom Cloud Secure Web Gateway: integration/categories/network_security/broadcom_cloud_swg.md
       - Broadcom Edge Secure Web Gateway: integration/categories/network_security/broadcom_edge_swg.md
