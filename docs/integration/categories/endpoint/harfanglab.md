@@ -32,6 +32,8 @@ Create a new HarfangLab intake on Sekoia.io.
 
 2. In the `Syslog connector` panel, select the logs you want to export:
 ![HarfangLab Log categories](/assets/integration/endpoint/harfanglab/harfanglab-log-categories.png)
+!!! warning
+    Please note that Authentication dataset is not to be activated in the forwarding, as the events are duplicates of Eventlog events.
 
 3. Configure the Syslog information with the following details and by replacing `YOUR_INTAKE_KEY` with the Intake key previously generated in Sekoia.io:
     - Host: `intake.sekoia.io`
