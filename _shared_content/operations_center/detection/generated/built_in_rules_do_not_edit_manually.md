@@ -1,4 +1,4 @@
-Rules catalog includes **1038 built-in detection rules** ([_last update on 2025-08-20_](rules_changelog.md)).
+Rules catalog includes **1038 built-in detection rules** ([_last update on 2025-08-28_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Identity Information**
 
@@ -5424,6 +5424,7 @@ Rules catalog includes **1038 built-in detection rules** ([_last update on 2025-
     
     - **Changelog:**
     
+        - 28/08/2025 - minor - Filter some FPs on key values
         - 21/06/2024 - major - Update detection pattern for ECS fields/value compliance, and filter some FPs
             
 **Valid Accounts**
@@ -6836,6 +6837,7 @@ Rules catalog includes **1038 built-in detection rules** ([_last update on 2025-
     
     - **Changelog:**
     
+        - 28/08/2025 - minor - Filter some FPs on key values
         - 21/06/2024 - major - Update detection pattern for ECS fields/value compliance, and filter some FPs
             
 ??? abstract "Microsoft Office Macro Security Registry Modifications"
@@ -8552,6 +8554,7 @@ Rules catalog includes **1038 built-in detection rules** ([_last update on 2025-
     
     - **Changelog:**
     
+        - 28/08/2025 - minor - Filter some FPs on key values
         - 21/06/2024 - major - Update detection pattern for ECS fields/value compliance, and filter some FPs
             
 ??? abstract "Microsoft Office Macro Security Registry Modifications"
