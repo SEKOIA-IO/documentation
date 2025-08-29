@@ -72,7 +72,7 @@ Here is the list of supported modifiers:
 - `base64`: match the value encoded with Base64
 - `endswith`: the value is expected at the end of the field's content (replaces e.g. `*\cmd.exe`)
 - `startswith`: the value is expected at the beginning of the field's content. (replaces e.g. `adm*`)
-- `re`: the value is a [regular expression](https://github.com/andreasvc/pyre2). Regular expressions are case sensitive by default
+- `re`: the value is a [regular expression](https://github.com/andreasvc/pyre2). Regular expressions are case sensitive by default, and must match the **entire** field (full match).
 - `cidr`: the value is a subnet in CIDR notation (e.g. `192.168.1.0/24`) the IP address should belong to
 - `lt`: less than this value
 - `lte`: less than or equal to this value
