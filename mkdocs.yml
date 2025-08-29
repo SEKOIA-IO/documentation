@@ -194,6 +194,7 @@ nav:
       - Azure Files: integration/categories/applicative/azure_files.md
       - Azure MySQL: integration/categories/applicative/azure_mysql.md
       - Cloudflare Audit Logs: integration/categories/applicative/cloudflare-audit-logs.md
+      - Delinea PRA: integration/categories/applicative/delinea_pra.md
       - Fastly WAF Audit logs: integration/categories/applicative/fastly_audit_waf.md
       - Github Audit Logs: integration/categories/applicative/github_audit_logs.md
       - Google Workspace / ChromeOS: integration/categories/applicative/google_reports.md
@@ -548,6 +549,7 @@ plugins:
       xdr/features/collect/integrations/application/apache.md: integration/categories/applicative/apache.md
       xdr/features/collect/integrations/application/bind.md: integration/categories/network/bind.md
       xdr/features/collect/integrations/application/cyberwatch_detection.md: integration/categories/network_security/cyberwatch_detection.md
+      xdr/features/collect/integrations/application/delinea-pra.md: integration/categories/applicative/delinea_pra.md
       xdr/features/collect/integrations/application/dhcpd.md: integration/categories/network/dhcpd.md
       xdr/features/collect/integrations/application/freeradius.md: integration/categories/iam/freeradius.md
       xdr/features/collect/integrations/application/haproxy.md: integration/categories/network/haproxy.md
