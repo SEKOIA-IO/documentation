@@ -1,4 +1,4 @@
-Rules catalog includes **1038 built-in detection rules** ([_last update on 2025-08-28_](rules_changelog.md)).
+Rules catalog includes **1038 built-in detection rules** ([_last update on 2025-08-29_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Identity Information**
 
@@ -2008,6 +2008,7 @@ Rules catalog includes **1038 built-in detection rules** ([_last update on 2025-
     
     - **Changelog:**
     
+        - 29/08/2025 - minor - Filtering some command line false positives.
         - 11/12/2024 - minor - Added a default similarity based on host name and user name to avoid too many alerts.
         - 26/03/2024 - minor - Adapted the rule to remove false positives.
             
@@ -12908,6 +12909,7 @@ Rules catalog includes **1038 built-in detection rules** ([_last update on 2025-
     
     - **Changelog:**
     
+        - 29/08/2025 - minor - Filtering some command line false positives.
         - 11/12/2024 - minor - Added a default similarity based on host name and user name to avoid too many alerts.
         - 26/03/2024 - minor - Adapted the rule to remove false positives.
             
@@ -13031,6 +13033,7 @@ Rules catalog includes **1038 built-in detection rules** ([_last update on 2025-
     
     - **Changelog:**
     
+        - 29/08/2025 - minor - Filtering some command line false positives.
         - 11/12/2024 - minor - Added a default similarity based on host name and user name to avoid too many alerts.
         - 26/03/2024 - minor - Adapted the rule to remove false positives.
             
@@ -13167,6 +13170,7 @@ Rules catalog includes **1038 built-in detection rules** ([_last update on 2025-
     
     - **Changelog:**
     
+        - 29/08/2025 - minor - Filtering some command line false positives.
         - 11/12/2024 - minor - Added a default similarity based on host name and user name to avoid too many alerts.
         - 26/03/2024 - minor - Adapted the rule to remove false positives.
             
