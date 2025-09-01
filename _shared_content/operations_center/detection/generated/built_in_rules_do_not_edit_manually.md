@@ -1,4 +1,4 @@
-Rules catalog includes **1038 built-in detection rules** ([_last update on 2025-08-29_](rules_changelog.md)).
+Rules catalog includes **1043 built-in detection rules** ([_last update on 2025-09-01_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Identity Information**
 
@@ -841,6 +841,12 @@ Rules catalog includes **1038 built-in detection rules** ([_last update on 2025-
         - 19/10/2023 - minor - Minor change in selection to reduce false positives.
         - 26/03/2024 - major - Rule's pattern field changed
             
+??? abstract "Dscl Authonly"
+    
+    Detects the use of the command dscl with authonly used to verify the password of a user and for authentification. An attacker can abuse this command to gain credentials.
+    
+    - **Effort:** advanced
+    
 ??? abstract "Enable Root Account With Dsenableroot"
     
     Detects when root is enabled. Attackers can use this as a mean of persistence since root is disabled by default.
@@ -1022,6 +1028,12 @@ Rules catalog includes **1038 built-in detection rules** ([_last update on 2025-
     An user tries to access an unauthorized application.
     
     - **Effort:** master
+    
+??? abstract "User Added To Admin Group Via Cmd"
+    
+    Detects the use of different commands to add a user to an admin group.
+    
+    - **Effort:** advanced
     
 ??? abstract "User Added to Local Administrators"
     
@@ -1219,6 +1231,10 @@ Rules catalog includes **1038 built-in detection rules** ([_last update on 2025-
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 01/09/2025 - major - switch selection to regex to avoid false positive.
+            
 ??? abstract "CVE-2021-22986 F5 BIG-IP iControl REST Unauthenticated RCE"
     
     Detects successful exploitation of the F5 BIG-IP vulnerability CVE-2021-22986.
@@ -5313,6 +5329,12 @@ Rules catalog includes **1038 built-in detection rules** ([_last update on 2025-
     
     - **Effort:** advanced
     
+??? abstract "Startup Item Created"
+    
+    Detects when a item is added to the startup directory. An attacker can use this establish persistence.
+    
+    - **Effort:** intermediate
+    
 **Scheduled Task/Job**
 
 ??? abstract "BazarLoader Persistence Using Schtasks"
@@ -5514,6 +5536,12 @@ Rules catalog includes **1038 built-in detection rules** ([_last update on 2025-
         - 19/10/2023 - minor - Minor change in selection to reduce false positives.
         - 26/03/2024 - major - Rule's pattern field changed
             
+??? abstract "Dscl Authonly"
+    
+    Detects the use of the command dscl with authonly used to verify the password of a user and for authentification. An attacker can abuse this command to gain credentials.
+    
+    - **Effort:** advanced
+    
 ??? abstract "Enable Root Account With Dsenableroot"
     
     Detects when root is enabled. Attackers can use this as a mean of persistence since root is disabled by default.
@@ -5695,6 +5723,12 @@ Rules catalog includes **1038 built-in detection rules** ([_last update on 2025-
     An user tries to access an unauthorized application.
     
     - **Effort:** master
+    
+??? abstract "User Added To Admin Group Via Cmd"
+    
+    Detects the use of different commands to add a user to an admin group.
+    
+    - **Effort:** advanced
     
 ??? abstract "User Added to Local Administrators"
     
@@ -7083,6 +7117,12 @@ Rules catalog includes **1038 built-in detection rules** ([_last update on 2025-
     
     - **Effort:** advanced
     
+??? abstract "Startup Item Created"
+    
+    Detects when a item is added to the startup directory. An attacker can use this establish persistence.
+    
+    - **Effort:** intermediate
+    
 **Scheduled Task/Job**
 
 ??? abstract "BazarLoader Persistence Using Schtasks"
@@ -7515,6 +7555,12 @@ Rules catalog includes **1038 built-in detection rules** ([_last update on 2025-
         - 19/10/2023 - minor - Minor change in selection to reduce false positives.
         - 26/03/2024 - major - Rule's pattern field changed
             
+??? abstract "Dscl Authonly"
+    
+    Detects the use of the command dscl with authonly used to verify the password of a user and for authentification. An attacker can abuse this command to gain credentials.
+    
+    - **Effort:** advanced
+    
 ??? abstract "Enable Root Account With Dsenableroot"
     
     Detects when root is enabled. Attackers can use this as a mean of persistence since root is disabled by default.
@@ -7696,6 +7742,12 @@ Rules catalog includes **1038 built-in detection rules** ([_last update on 2025-
     An user tries to access an unauthorized application.
     
     - **Effort:** master
+    
+??? abstract "User Added To Admin Group Via Cmd"
+    
+    Detects the use of different commands to add a user to an admin group.
+    
+    - **Effort:** advanced
     
 ??? abstract "User Added to Local Administrators"
     
@@ -9419,6 +9471,12 @@ Rules catalog includes **1038 built-in detection rules** ([_last update on 2025-
         - 19/10/2023 - minor - Minor change in selection to reduce false positives.
         - 26/03/2024 - major - Rule's pattern field changed
             
+??? abstract "Dscl Authonly"
+    
+    Detects the use of the command dscl with authonly used to verify the password of a user and for authentification. An attacker can abuse this command to gain credentials.
+    
+    - **Effort:** advanced
+    
 ??? abstract "Enable Root Account With Dsenableroot"
     
     Detects when root is enabled. Attackers can use this as a mean of persistence since root is disabled by default.
@@ -9600,6 +9658,12 @@ Rules catalog includes **1038 built-in detection rules** ([_last update on 2025-
     An user tries to access an unauthorized application.
     
     - **Effort:** master
+    
+??? abstract "User Added To Admin Group Via Cmd"
+    
+    Detects the use of different commands to add a user to an admin group.
+    
+    - **Effort:** advanced
     
 ??? abstract "User Added to Local Administrators"
     
@@ -11222,6 +11286,12 @@ Rules catalog includes **1038 built-in detection rules** ([_last update on 2025-
     
 **Hide Artifacts**
 
+??? abstract "Chflags Hidden"
+    
+    Detects the use of the hidden flag by the utility chflags to hide files and directories.
+    
+    - **Effort:** advanced
+    
 ??? abstract "Hiding Files With Attrib.exe"
     
     Detects usage of attrib.exe to hide files from users.
@@ -12387,6 +12457,12 @@ Rules catalog includes **1038 built-in detection rules** ([_last update on 2025-
 ??? abstract "Credentials Extraction"
     
     This rule aims to detect the use of a specific command to access some credentials without using mimikatz or another tool.
+    
+    - **Effort:** advanced
+    
+??? abstract "Generic Password Discovery"
+    
+    Detects when the security utility is used to access passwords in a keychain.
     
     - **Effort:** advanced
     

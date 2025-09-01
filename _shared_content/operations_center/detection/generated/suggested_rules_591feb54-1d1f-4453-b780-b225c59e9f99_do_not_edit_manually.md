@@ -195,6 +195,12 @@ The following Sekoia.io built-in rules match the intake **Cisco NX-OS**. This do
     
     - **Effort:** advanced
 
+??? abstract "Chflags Hidden"
+    
+    Detects the use of the hidden flag by the utility chflags to hide files and directories.
+    
+    - **Effort:** advanced
+
 ??? abstract "Clear EventLogs Through CommandLine"
     
     Detects a command that clears event logs which could indicate an attempt from an attacker to erase its previous traces.
@@ -440,6 +446,12 @@ The following Sekoia.io built-in rules match the intake **Cisco NX-OS**. This do
     Detects attempts to gather information on domain trust relationships that may be used to identify lateral movement opportunities. "trustedDomain" which is detected here is a Microsoft Active Directory ObjectClass Type that represents a domain that is trusted by, or trusting, the local AD DOMAIN. Several tools are using LDAP queries in the end to get the information (DSQuery, sometimes ADFind as well, etc.)
     
     - **Effort:** elementary
+
+??? abstract "Dscl Authonly"
+    
+    Detects the use of the command dscl with authonly used to verify the password of a user and for authentification. An attacker can abuse this command to gain credentials.
+    
+    - **Effort:** advanced
 
 ??? abstract "Dynamic DNS Contacted"
     
@@ -1401,6 +1413,12 @@ The following Sekoia.io built-in rules match the intake **Cisco NX-OS**. This do
     
     - **Effort:** intermediate
 
+??? abstract "Startup Item Created"
+    
+    Detects when a item is added to the startup directory. An attacker can use this establish persistence.
+    
+    - **Effort:** intermediate
+
 ??? abstract "Stop Backup Services"
     
     Detects adversaries attempts to stop backups services or disable Windows previous files versions feature. This could be related to ransomware operators or legit administrators. This rule relies Windows command line logging and registry logging, and PowerShell (ID 4103, 4104).
@@ -1694,6 +1712,12 @@ The following Sekoia.io built-in rules match the intake **Cisco NX-OS**. This do
     Detects local user deletion
     
     - **Effort:** master
+
+??? abstract "User Added To Admin Group Via Cmd"
+    
+    Detects the use of different commands to add a user to an admin group.
+    
+    - **Effort:** advanced
 
 ??? abstract "Venom Multi-hop Proxy agent detection"
     

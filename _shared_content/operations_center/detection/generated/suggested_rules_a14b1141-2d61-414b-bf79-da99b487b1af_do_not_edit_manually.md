@@ -1101,6 +1101,12 @@ The following Sekoia.io built-in rules match the intake **F5 BIG-IP**. This docu
     
     - **Effort:** intermediate
 
+??? abstract "Startup Item Created"
+    
+    Detects when a item is added to the startup directory. An attacker can use this establish persistence.
+    
+    - **Effort:** intermediate
+
 ??? abstract "Stop Backup Services"
     
     Detects adversaries attempts to stop backups services or disable Windows previous files versions feature. This could be related to ransomware operators or legit administrators. This rule relies Windows command line logging and registry logging, and PowerShell (ID 4103, 4104).
