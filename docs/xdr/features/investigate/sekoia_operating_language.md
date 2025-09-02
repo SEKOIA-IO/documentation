@@ -1208,8 +1208,8 @@ Normalize user names to lowercase for consistent analysis:
 ``` shell
 events
 | where timestamp > ago(24h) and user.name != null
-| select normalized_user = tolower(user.name)
-| aggregate count() by normalized_user
+| aggregate count_by_user = count() by user.name
+| aggregate sum(count_by_user) by normalized_user = tolower(user.name)
 | limit 100
 ```
 
@@ -1242,8 +1242,8 @@ Normalize command lines to uppercase for consistent analysis:
 ``` shell
 events
 | where timestamp > ago(24h) and process.command_line != null
-| select normalized_cmd = toupper(process.command_line)
-| aggregate count() by normalized_cmd
+| aggregate count_by_cmd = count() by process.command_line
+| aggregate sum(count_by_cmd) by normalized_cmd = toupper(process.command_line)
 | limit 100
 ```
 
@@ -1312,9 +1312,8 @@ Categorize alerts based on urgency and time to detect:
 ``` shell
 alerts
 | where created_at > ago(7d)
-| select severity_category = iff(urgency >= 80, "Critical", 
+| aggregate count() by severity_category = iff(urgency >= 80, "Critical", 
     iff(urgency >= 50, "High", "Medium"))
-| aggregate count() by severity_category
 | limit 100
 ```
 
@@ -1347,8 +1346,7 @@ Provide fallback values for user identification when some fields might be null:
 ``` shell
 events
 | where timestamp > ago(24h)
-| select user_identifier = coalesce(user.name, user.email, "Unknown")
-| aggregate count() by user_identifier
+| aggregate count() by user_identifier = coalesce(user.name, user.email, "Unknown")
 | limit 100
 ```
 
@@ -1395,7 +1393,7 @@ Format timestamps for cleaner reporting:
 
 ``` shell
 alerts
-| where created_at > ago(7d)
+| where created_at > ago(24h)
 | extend date_only = format_datetime(created_at, '%Y-%m-%d')
 | extend readable_time = format_datetime(created_at, '%B %d, %Y at %H:%M')
 | extend eu_format = format_datetime(created_at, '%d-%m-%Y')
