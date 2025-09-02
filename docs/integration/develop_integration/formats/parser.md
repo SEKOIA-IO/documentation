@@ -469,7 +469,7 @@ Select the way who develop your parse to find the appropriate documentation: wit
     pipeline:
       - name: parsed_event
         external:
-          name: json.parseJSON
+          name: json.parse-json
       - name: network
     stages:
       network:
