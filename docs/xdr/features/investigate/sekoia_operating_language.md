@@ -1179,6 +1179,230 @@ alerts
 
 ```
 
+---
+
+### String: tolower()
+
+**Description**
+
+Converts a string to lowercase. This function is useful for normalizing text data for case-insensitive comparisons and analysis.
+
+**Syntax**
+
+``` shell
+tolower(<string>)
+```
+
+**Parameters**
+
+- `string`: A string value to be converted to lowercase
+
+**Return Value**
+
+Returns the lowercase version of the input string.
+
+**Example**
+
+Normalize user names to lowercase for consistent analysis:
+
+``` shell
+events
+| where timestamp > ago(24h) and user.name != null
+| aggregate count_by_user = count() by user.name
+| aggregate sum(count_by_user) by normalized_user = tolower(user.name)
+| limit 100
+```
+
+---
+
+### String: toupper()
+
+**Description**
+
+Converts a string to uppercase. This function is useful for normalizing text data for case-insensitive comparisons and analysis.
+
+**Syntax**
+
+``` shell
+toupper(<string>)
+```
+
+**Parameters**
+
+- `string`: A string value to be converted to uppercase
+
+**Return Value**
+
+Returns the uppercase version of the input string.
+
+**Example**
+
+Normalize command lines to uppercase for consistent analysis:
+
+``` shell
+events
+| where timestamp > ago(24h) and process.command_line != null
+| aggregate count_by_cmd = count() by process.command_line
+| aggregate sum(count_by_cmd) by normalized_cmd = toupper(process.command_line)
+| limit 100
+```
+
+---
+
+### Math: round()
+
+**Description**
+
+Rounds a number to a specified precision (number of decimal places). This function is useful for formatting numerical results and creating cleaner reports with rounded values.
+
+**Syntax**
+
+``` shell
+round(<number> [, <precision>])
+```
+
+**Parameters**
+
+- `number`: The number to round (required)
+- `precision`: Number of decimal places to round to (optional, defaults to 0)
+
+**Return Value**
+
+Returns the rounded number to the specified precision.
+
+**Example**
+
+Round time_to_detect values to 2 decimal places for cleaner reporting:
+
+``` shell
+alerts
+| where created_at > ago(7d)
+| select ttd_minutes = round(time_to_detect / 60.0, 2)
+| limit 100
+```
+
+---
+
+### Conditional: iff()
+
+**Description**
+
+Returns a value based on a conditional expression. Evaluates a boolean condition and returns one value if the condition is true, another value if the condition is false. This function is useful for data categorization and conditional transformations.
+
+**Syntax**
+
+``` shell
+iff(<condition>, <then_value>, <else_value>)
+```
+
+**Parameters**
+
+- `condition`: A boolean expression to evaluate (required)
+- `then_value`: Value returned if condition is true (required)
+- `else_value`: Value returned if condition is false (required)
+
+**Return Value**
+
+Returns the `then_value` when condition is true, otherwise returns `else_value`.
+
+**Example**
+
+Categorize alerts based on urgency and time to detect:
+
+``` shell
+alerts
+| where created_at > ago(7d)
+| aggregate count() by severity_category = iff(urgency >= 80, "Critical", 
+    iff(urgency >= 50, "High", "Medium"))
+| limit 100
+```
+
+---
+
+### Null handling: coalesce()
+
+**Description**
+
+Returns the first non-null value from a list of expressions. This function is useful for providing fallback values when dealing with potentially null data, ensuring queries can handle missing or incomplete information gracefully.
+
+**Syntax**
+
+``` shell
+coalesce(<arg1>, <arg2>, [<arg3>, ...])
+```
+
+**Parameters**
+
+- `arg1, arg2, ...`: A list of expressions of the same type to evaluate (at least 2 arguments required)
+
+**Return Value**
+
+Returns the first non-null value from the argument list, or null if all arguments are null.
+
+**Example**
+
+Provide fallback values for user identification when some fields might be null:
+
+``` shell
+events
+| where timestamp > ago(24h)
+| aggregate count() by user_identifier = coalesce(user.name, user.email, "Unknown")
+| limit 100
+```
+
+---
+
+### Datetime: format_datetime()
+
+**Description**
+
+Formats datetime values using Python strftime format specifiers, enabling flexible datetime representation in SOL queries. Supports both datetime objects and ISO format datetime strings.
+
+**Syntax**
+
+``` shell
+format_datetime(<datetime>, <format>)
+```
+
+**Parameters**
+
+- `datetime`: Datetime object (from functions like `now()`) or ISO format string to format (required)
+- `format`: String specifying the output format using Python strftime specifiers (required)
+
+**Return Value**
+
+Returns a formatted string representation of the datetime.
+
+**Common Format Specifiers**
+
+| Specifier | Description | Example |
+|-----------|-------------|---------|
+| `%Y` | 4-digit year | 2025 |
+| `%m` | Month (01-12) | 12 |
+| `%d` | Day of month (01-31) | 25 |
+| `%H` | Hour (00-23) | 14 |
+| `%M` | Minutes (00-59) | 30 |
+| `%S` | Seconds (00-59) | 45 |
+| `%B` | Full month name | December |
+| `%b` | Abbreviated month | Dec |
+| `%A` | Full weekday name | Monday |
+
+**Example**
+
+Format timestamps for cleaner reporting:
+
+``` shell
+alerts
+| where created_at > ago(24h)
+| extend date_only = format_datetime(created_at, '%Y-%m-%d')
+| extend readable_time = format_datetime(created_at, '%B %d, %Y at %H:%M')
+| extend eu_format = format_datetime(created_at, '%d-%m-%Y')
+| aggregate count() by date_only, readable_time, eu_format, detection_type
+| limit 100
+```
+
+---
+
 ## Join examples
 
 ### Join between events and communities tables (for Multi-tenant)
