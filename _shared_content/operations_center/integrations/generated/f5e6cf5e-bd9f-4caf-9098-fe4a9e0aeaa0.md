@@ -2706,7 +2706,7 @@ This section demonstrates how the raw logs will be transformed by our parsers. I
         },
         "@timestamp": "2024-03-22T14:01:26.658996Z",
         "action": {
-            "id": "1117",
+            "id": 1117,
             "properties": {
                 "ActionId": "2",
                 "ActionName": "Quarantine",
@@ -2745,7 +2745,7 @@ This section demonstrates how the raw logs will be transformed by our parsers. I
                 "TypeId": "0",
                 "TypeName": "Concrete"
             },
-            "record_id": "613"
+            "record_id": 613
         },
         "process": {
             "pid": 5384,
@@ -6524,7 +6524,6 @@ The following table lists the fields that are extracted, normalized under the EC
 | Name | Type | Description                |
 | ---- | ---- | ---------------------------|
 |`@timestamp` | `date` | Date/time when the event originated. |
-|`action.id` | `keyword` | stormshield action id |
 |`action.properties.ActionId` | `keyword` | stormshield property Action ID |
 |`action.properties.ActionName` | `keyword` | stormshield property Action Name |
 |`action.properties.AdditionalActionsId` | `keyword` | stormshield property Additional Actions ID |
@@ -6564,7 +6563,6 @@ The following table lists the fields that are extracted, normalized under the EC
 |`action.properties.ThreatName` | `keyword` | stormshield property Threat Name |
 |`action.properties.TypeId` | `keyword` | stormshield property Type ID |
 |`action.properties.TypeName` | `keyword` | stormshield property Type Name |
-|`action.record_id` | `keyword` | stormshield action record id |
 |`agent.id` | `keyword` | Unique identifier of this agent. |
 |`destination.ip` | `ip` | IP address of the destination. |
 |`destination.mac` | `keyword` | MAC address of the destination. |
