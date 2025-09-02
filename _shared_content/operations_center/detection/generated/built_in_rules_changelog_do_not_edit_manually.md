@@ -1,7 +1,10 @@
-Changelog _last update on 2025-08-29_
+Changelog _last update on 2025-09-01_
 
 ## Changelog
 
+### CVE-2021-22893 Pulse Connect Secure RCE Vulnerability
+  - 01/09/2025 - major - switch selection to regex to avoid false positive.
+    
 ### Legitimate Process Execution From Unusual Folder
   - 20/08/2025 - minor - Extending filter to avoid FPs on Windows on ARM architectures
     

@@ -225,6 +225,12 @@ The following Sekoia.io built-in rules match the intake **Microsoft Defender XDR
     
     - **Effort:** advanced
 
+??? abstract "Chflags Hidden"
+    
+    Detects the use of the hidden flag by the utility chflags to hide files and directories.
+    
+    - **Effort:** advanced
+
 ??? abstract "Clear EventLogs Through CommandLine"
     
     Detects a command that clears event logs which could indicate an attempt from an attacker to erase its previous traces.
@@ -525,6 +531,12 @@ The following Sekoia.io built-in rules match the intake **Microsoft Defender XDR
     
     - **Effort:** master
 
+??? abstract "Dscl Authonly"
+    
+    Detects the use of the command dscl with authonly used to verify the password of a user and for authentification. An attacker can abuse this command to gain credentials.
+    
+    - **Effort:** advanced
+
 ??? abstract "Dynamic DNS Contacted"
     
     Detect communication with dynamic dns domain. This kind of domain is often used by attackers. This rule can trigger false positive in non-controlled environment because dynamic dns is not always malicious.
@@ -698,6 +710,12 @@ The following Sekoia.io built-in rules match the intake **Microsoft Defender XDR
     Detects suspicious FromBase64String expressions in command line arguments.
     
     - **Effort:** master
+
+??? abstract "Generic Password Discovery"
+    
+    Detects when the security utility is used to access passwords in a keychain.
+    
+    - **Effort:** advanced
 
 ??? abstract "Generic-reverse-shell-oneliner"
     
@@ -1797,6 +1815,12 @@ The following Sekoia.io built-in rules match the intake **Microsoft Defender XDR
     
     - **Effort:** intermediate
 
+??? abstract "Startup Item Created"
+    
+    Detects when a item is added to the startup directory. An attacker can use this establish persistence.
+    
+    - **Effort:** intermediate
+
 ??? abstract "Sticky Key Like Backdoor Usage"
     
     Detects the usage and installation of a backdoor that uses an option to register a malicious debugger for built-in tools that are accessible in the login screen. Prerequisites are logging for Registry events, which can be done with Sysmon (events 12 and 13).
@@ -2198,6 +2222,12 @@ The following Sekoia.io built-in rules match the intake **Microsoft Defender XDR
     Detects user creation on windows servers, which shouldn't happen in an Active Directory environment. Apply this on your windows server logs and not on your DC logs. One default account `defaultuser0` is excluded as only used during Windows set-up. This detection use Security Event ID 4720. 
     
     - **Effort:** master
+
+??? abstract "User Added To Admin Group Via Cmd"
+    
+    Detects the use of different commands to add a user to an admin group.
+    
+    - **Effort:** advanced
 
 ??? abstract "Venom Multi-hop Proxy agent detection"
     

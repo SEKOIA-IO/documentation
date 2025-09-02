@@ -267,6 +267,12 @@ The following Sekoia.io built-in rules match the intake **SentinelOne Cloud Funn
     
     - **Effort:** advanced
 
+??? abstract "Chflags Hidden"
+    
+    Detects the use of the hidden flag by the utility chflags to hide files and directories.
+    
+    - **Effort:** advanced
+
 ??? abstract "Clear EventLogs Through CommandLine"
     
     Detects a command that clears event logs which could indicate an attempt from an attacker to erase its previous traces.
@@ -561,6 +567,12 @@ The following Sekoia.io built-in rules match the intake **SentinelOne Cloud Funn
     
     - **Effort:** elementary
 
+??? abstract "Dscl Authonly"
+    
+    Detects the use of the command dscl with authonly used to verify the password of a user and for authentification. An attacker can abuse this command to gain credentials.
+    
+    - **Effort:** advanced
+
 ??? abstract "Dumpert LSASS Process Dumper"
     
     Detects the use of Dumpert process dumper, which dumps the lsass.exe process memory
@@ -746,6 +758,12 @@ The following Sekoia.io built-in rules match the intake **SentinelOne Cloud Funn
     Detects suspicious FromBase64String expressions in command line arguments.
     
     - **Effort:** master
+
+??? abstract "Generic Password Discovery"
+    
+    Detects when the security utility is used to access passwords in a keychain.
+    
+    - **Effort:** advanced
 
 ??? abstract "Generic-reverse-shell-oneliner"
     
@@ -1875,6 +1893,12 @@ The following Sekoia.io built-in rules match the intake **SentinelOne Cloud Funn
     
     - **Effort:** intermediate
 
+??? abstract "Startup Item Created"
+    
+    Detects when a item is added to the startup directory. An attacker can use this establish persistence.
+    
+    - **Effort:** intermediate
+
 ??? abstract "Sticky Key Like Backdoor Usage"
     
     Detects the usage and installation of a backdoor that uses an option to register a malicious debugger for built-in tools that are accessible in the login screen. Prerequisites are logging for Registry events, which can be done with Sysmon (events 12 and 13).
@@ -2270,6 +2294,12 @@ The following Sekoia.io built-in rules match the intake **SentinelOne Cloud Funn
     Detects the usage of Sysinternals Tools due to accepteula key being added to Registry. The rule detects it either from the command line usage or from the regsitry events. For the later prerequisite is logging for registry events in the Sysmon configuration (events 12 and 13).
     
     - **Effort:** master
+
+??? abstract "User Added To Admin Group Via Cmd"
+    
+    Detects the use of different commands to add a user to an admin group.
+    
+    - **Effort:** advanced
 
 ??? abstract "Venom Multi-hop Proxy agent detection"
     

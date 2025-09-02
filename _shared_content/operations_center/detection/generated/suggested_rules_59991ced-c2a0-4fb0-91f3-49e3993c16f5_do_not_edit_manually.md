@@ -183,6 +183,12 @@ The following Sekoia.io built-in rules match the intake **Tanium**. This documen
     
     - **Effort:** advanced
 
+??? abstract "Chflags Hidden"
+    
+    Detects the use of the hidden flag by the utility chflags to hide files and directories.
+    
+    - **Effort:** advanced
+
 ??? abstract "Clear EventLogs Through CommandLine"
     
     Detects a command that clears event logs which could indicate an attempt from an attacker to erase its previous traces.
@@ -417,6 +423,12 @@ The following Sekoia.io built-in rules match the intake **Tanium**. This documen
     
     - **Effort:** elementary
 
+??? abstract "Dscl Authonly"
+    
+    Detects the use of the command dscl with authonly used to verify the password of a user and for authentification. An attacker can abuse this command to gain credentials.
+    
+    - **Effort:** advanced
+
 ??? abstract "Dynamic DNS Contacted"
     
     Detect communication with dynamic dns domain. This kind of domain is often used by attackers. This rule can trigger false positive in non-controlled environment because dynamic dns is not always malicious.
@@ -578,6 +590,12 @@ The following Sekoia.io built-in rules match the intake **Tanium**. This documen
     Detects suspicious FromBase64String expressions in command line arguments.
     
     - **Effort:** master
+
+??? abstract "Generic Password Discovery"
+    
+    Detects when the security utility is used to access passwords in a keychain.
+    
+    - **Effort:** advanced
 
 ??? abstract "Generic-reverse-shell-oneliner"
     
@@ -1551,6 +1569,12 @@ The following Sekoia.io built-in rules match the intake **Tanium**. This documen
     
     - **Effort:** intermediate
 
+??? abstract "Startup Item Created"
+    
+    Detects when a item is added to the startup directory. An attacker can use this establish persistence.
+    
+    - **Effort:** intermediate
+
 ??? abstract "Stop Backup Services"
     
     Detects adversaries attempts to stop backups services or disable Windows previous files versions feature. This could be related to ransomware operators or legit administrators. This rule relies Windows command line logging and registry logging, and PowerShell (ID 4103, 4104).
@@ -1910,6 +1934,12 @@ The following Sekoia.io built-in rules match the intake **Tanium**. This documen
     Detects the usage of Sysinternals Tools due to accepteula key being added to Registry. The rule detects it either from the command line usage or from the regsitry events. For the later prerequisite is logging for registry events in the Sysmon configuration (events 12 and 13).
     
     - **Effort:** master
+
+??? abstract "User Added To Admin Group Via Cmd"
+    
+    Detects the use of different commands to add a user to an admin group.
+    
+    - **Effort:** advanced
 
 ??? abstract "Venom Multi-hop Proxy agent detection"
     
