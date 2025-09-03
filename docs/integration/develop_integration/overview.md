@@ -19,8 +19,9 @@
 #### Step 1. Understand the general concepts
 
 Before starting, read these resources:
-- [overview of intake format](formats/overview.md) to get a grasp of event parsing.
-- [overview of ingestion methods](/integration/ingestion_methods/index.md) to get a grasp of event ingestion.
+
+- [Overview of intake format](formats/overview.md) to get a grasp of event parsing.
+- [Overview of ingestion methods](/integration/ingestion_methods/index.md) to get a grasp of event ingestion.
 
 #### Step 2. Create your custom intake
 
