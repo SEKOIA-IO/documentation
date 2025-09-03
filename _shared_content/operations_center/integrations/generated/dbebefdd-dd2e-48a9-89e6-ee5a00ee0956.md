@@ -889,7 +889,14 @@ This section demonstrates how the raw logs will be transformed by our parsers. I
         "related": {
             "ip": [
                 "127.0.0.1"
+            ],
+            "user": [
+                "jdoe"
             ]
+        },
+        "user": {
+            "domain": "MyMachine",
+            "name": "jdoe"
         },
         "veeam": {
             "instance": {
