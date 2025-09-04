@@ -428,6 +428,7 @@ nav:
       - SentinelOne: integration/action_library/sentinelone.md
       - Sophos: integration/action_library/sophos.md
       - Stormshield SES: integration/action_library/stormshield-ses.md
+      - TrendMicro VisionOne: integration/action_library/trendmicro-visionone.md
       - WithSecure: integration/action_library/withsecure.md
     - Generic:
       - HTTP: integration/action_library/http.md
