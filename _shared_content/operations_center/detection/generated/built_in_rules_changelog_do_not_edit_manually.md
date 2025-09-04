@@ -1,7 +1,10 @@
-Changelog _last update on 2025-09-03_
+Changelog _last update on 2025-09-04_
 
 ## Changelog
 
+### Inhibit System Recovery Deleting Backups
+  - 04/09/2025 - minor - Adding similarity strategy.
+    
 ### CVE-2021-22893 Pulse Connect Secure RCE Vulnerability
   - 01/09/2025 - major - switch selection to regex to avoid false positive.
     
@@ -1039,9 +1042,6 @@ Changelog _last update on 2025-09-03_
     
 ### High Privileges Network Share Removal
   - 02/02/2024 - major - changing current pattern and adding another one
-    
-### Inhibit System Recovery Deleting Backups
-  - 31/01/2024 - minor - Improve selection filter
     
 ### Suspicious Process Requiring DLL Starts Without DLL
   - 22/01/2024 - minor - Added filter to reduce false positives

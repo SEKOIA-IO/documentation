@@ -1,4 +1,4 @@
-Rules catalog includes **1043 built-in detection rules** ([_last update on 2025-09-03_](rules_changelog.md)).
+Rules catalog includes **1043 built-in detection rules** ([_last update on 2025-09-04_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Identity Information**
 
@@ -14932,6 +14932,7 @@ Rules catalog includes **1043 built-in detection rules** ([_last update on 2025-
     - **Changelog:**
     
         - 31/01/2024 - minor - Improve selection filter
+        - 04/09/2025 - minor - Adding similarity strategy.
             
 ??? abstract "Stop Backup Services"
     
