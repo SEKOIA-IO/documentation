@@ -1,7 +1,10 @@
-Changelog _last update on 2025-09-04_
+Changelog _last update on 2025-09-05_
 
 ## Changelog
 
+### In-memory PowerShell
+  - 05/09/2025 - minor - Filter some FPs
+    
 ### Inhibit System Recovery Deleting Backups
   - 04/09/2025 - minor - Adding similarity strategy.
     
