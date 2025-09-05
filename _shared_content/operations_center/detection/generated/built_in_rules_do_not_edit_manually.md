@@ -1,4 +1,4 @@
-Rules catalog includes **1043 built-in detection rules** ([_last update on 2025-09-04_](rules_changelog.md)).
+Rules catalog includes **1043 built-in detection rules** ([_last update on 2025-09-05_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Identity Information**
 
@@ -2302,6 +2302,10 @@ Rules catalog includes **1043 built-in detection rules** ([_last update on 2025-
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 05/09/2025 - minor - Filter some FPs
+            
 ??? abstract "Interactive Terminal Spawned via Python"
     
     Identifies when a terminal (tty) is spawned via Python. Attackers may upgrade a simple reverse shell to a fully interactive tty after obtaining initial access to a host.
@@ -3078,6 +3082,10 @@ Rules catalog includes **1043 built-in detection rules** ([_last update on 2025-
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 05/09/2025 - minor - Filter some FPs
+            
 **Shared Modules**
 
 ??? abstract "FoggyWeb Backdoor DLL Loading"

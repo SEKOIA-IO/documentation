@@ -69,6 +69,12 @@ The following Sekoia.io built-in rules match the intake **WithSecure Elements**.
     
     - **Effort:** master
 
+??? abstract "Aspnet Compiler"
+    
+    Detects the starts of aspnet compiler.
+    
+    - **Effort:** advanced
+
 ??? abstract "Attempt to Disable Gatekeeper Execution Control"
     
     Detects attempts to disable Gatekeeper through the command line. Gatekeeper is a macOS feature designed to ensure that only trusted, signed software can be executed.
@@ -596,6 +602,12 @@ The following Sekoia.io built-in rules match the intake **WithSecure Elements**.
     Detects suspicious icacls command granting access to all, used by the ransomware Ryuk to delete every access-based restrictions on files and directories. ICacls is a built-in Windows command to interact with the Discretionary Access Control Lists (DACLs) which can grand adversaries higher permissions on specific files and folders.
     
     - **Effort:** elementary
+
+??? abstract "Impacket Addcomputer"
+    
+    Detects suspicious computer account creation based on impacket default pattern
+    
+    - **Effort:** intermediate
 
 ??? abstract "Inhibit System Recovery Deleting Backups"
     
