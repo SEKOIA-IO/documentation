@@ -1700,14 +1700,14 @@ events
 ---
 
 
-### Received Kbytes per hour per intake
+### Received Kbytes per month per intake
 
 ``` shell
 event_telemetry
-| where bucket_start_date > ago(30d)
-| aggregate volume = sum(total_message_size) / 1024 by intake_uuid, date = bin(bucket_start_date, 1h)
+| where bucket_start_date >= ago(30d)
+| summarize sum_bytes = sum(total_message_size) by intake_uuid
 | lookup intakes on intake_uuid == uuid
-| order by date asc
-| render linechart with(x=date, y=volume, breakdown_by=intake.name)
+| select sum_gb = sum_bytes / (1000*1000*1000), intake.name
+| order by sum_gb desc
 
 ```
