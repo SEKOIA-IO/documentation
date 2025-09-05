@@ -16,7 +16,7 @@ Sekoia.io forwarder logs collect all statictics coming from Sekoia forwarder ins
 
 ## Configure
 
-To monitor forwarder health, create a new intake `Sekoia.io forwarer logs` in your community. Once the intake is enabled, please follow [this documentation](/integration/ingestion_methods/syslog/sekoiaio_forwarder.md#monitor-your-concentrator) in order to activate metrics on the forwarder side. You can find also details about the generated metrics
+To monitor forwarder health, create a new intake `Sekoia.io forwarder logs` in your community. Once the intake is enabled, please follow [this documentation](/integration/ingestion_methods/syslog/sekoiaio_forwarder.md#monitor-your-concentrator) in order to activate metrics on the forwarder side. You can find also details about the generated metrics
 
 {!_shared_content/operations_center/integrations/generated/915a119c-2ec8-4482-a3c6-4d4cae62b671_sample.md!}
 
