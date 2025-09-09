@@ -14,7 +14,7 @@ To proceed, you can execute the following commands in your favorite shell:
 sudo mkdir -p /etc/syslog-ng/ca.d
 
 # Retrieve Certificate Authority (Let’s Encrypt)
-sudo wget -O /etc/syslog-ng/ca.d/isgrootx1.pem https://letsencrypt.org/certs/isrgrootx1.pem
+sudo wget -O /etc/syslog-ng/ca.d/isrgrootx1.pem https://letsencrypt.org/certs/isrgrootx1.pem
 
 # Ask OpenSSL to create a hash for each PEM file.
 sudo openssl rehash /etc/syslog-ng/ca.d

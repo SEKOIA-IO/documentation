@@ -582,7 +582,7 @@ The Sekoia.io syslog endpoint is secured with a [Letsencrypt](https://letsencryp
 
 According to our installation, it may be necessary to install `ISRG ROOT X1` certificate in our **trusted root certification authorities certificate store**:
 
-1. Download the `IRG ROOT X1` certificate: <https://letsencrypt.org/certs/isrgrootx1.pem>
+1. Download the `ISRG ROOT X1` certificate: <https://letsencrypt.org/certs/isrgrootx1.pem>
 
 ```bash
 $ wget https://letsencrypt.org/certs/isrgrootx1.pem -O /tmp/isrgrootx1.pem

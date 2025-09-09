@@ -96,13 +96,13 @@ To get started with NXLog, follow these steps:
 
 #### Download the certificate
 
-To enable the connection between your events forwarder and the [Sekoia.io](http://sekoia.io/) intake, it is necessary to download the [`IRG ROOT X1` certificate](https://letsencrypt.org/certs/isrgrootx1.pem). Please follow these steps:
+To enable the connection between your events forwarder and the [Sekoia.io](http://sekoia.io/) intake, it is necessary to download the [`ISRG ROOT X1` certificate](https://letsencrypt.org/certs/isrgrootx1.pem). Please follow these steps:
 
 1. Open a PowerShell console as an administrator.
 2. Use the following command to retrieve the certificate and save it to the appropriate directory:
     
     ```powershell
-     Invoke-WebRequest -Uri https://letsencrypt.org/certs/isrgrootx1.pem -OutFile 'C:\\Program Files\\nxlog\\cert\\isgrootx1.pem'
+     Invoke-WebRequest -Uri https://letsencrypt.org/certs/isrgrootx1.pem -OutFile 'C:\\Program Files\\nxlog\\cert\\isrgrootx1.pem'
     ```
     
 3. Restart the NXLog service through the Services tool as an administrator or use the following PowerShell command line as an administrator:
