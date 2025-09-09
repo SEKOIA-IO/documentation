@@ -379,21 +379,88 @@ A side panel opens with the search results, allowing you to investigate an alert
 
 ### Graph Investigation
 
-The Graph Tab is presenting the analyst with a graphical visualization of the Alert.
+The Graph Investigation tab provides analysts with an interactive graphical visualization of the alert, enabling comprehensive threat analysis through visual correlation of security events and intelligence data.
 
-![graph](/assets/operation_center/alerts/alert-graph.png){: style="max-width:100%"}
+!!! note
+    All changes performed within the Graph Investigation are automatically saved. The graph updates dynamically with each visit based on the events associated with the alert. Any new objects discovered through additional events are automatically integrated into the existing graph structure.
 
-The following items appear on the graph:
+#### Graph Elements
 
-- `Observables`: these are automatically extracted from events (IP addresses, Domain Names, URLs, User Account, etc.)
-- `Observable Relationships`: relationships between observables are represented by arrows linking them on the graph. Relationships are extracted from events using the [Smart Description](https://github.com/Sekoia-io/Community/tree/main/events) definitions
-- `CTI Objects`: STIX objects from the Intelligence Center that provide additional context
-- `STIX relationships` between Threat Objects
+The graph displays the following interconnected elements:
+
+- **Observables**: Security artifacts automatically extracted from events, including IP addresses, domain names, URLs, user accounts, file hashes, and other indicators of compromise
+  
+- **Observable Relationships**: Visual connections between observables represented by directional arrows. These relationships are intelligently extracted from events using Smart Description definitions that parse event data to identify logical connections
+  
+- **CTI Objects**: STIX-compliant threat intelligence objects from the Intelligence Center that enrich the analysis with contextual threat information
+  
+- **STIX Relationships**: Standardized connections between threat intelligence objects that reveal the broader threat landscape
 
 **Threat Intelligence**
 
-You can access Threat Intelligence by clicking on any CTI object on the graph. The left panel will display its description and lists all known relationships. Related objects can then be added on the graph to pivot into the Threat Intelligence database.
+Access comprehensive threat intelligence by clicking on any CTI object within the graph. The left panel immediately displays:
 
-**Observables**
+- Detailed object descriptions and threat context
 
-You can access Observable Details by clicking on any Observable on the graph. The left panel will display all events inside the alert related to this observable, with their “Smart Description”. Full Events can be accessed into the right side panel by clicking on "Full Events". It is also possible to [Search events with this value](#search-events-with-this-value) by clicking on the button next to the name of the observable.
+- Complete relationship mappings with other intelligence objects
+
+- Interactive options to expand the graph by adding related objects
+
+This functionality enables seamless pivoting through the threat intelligence database, allowing analysts to explore the full scope of related threats and campaigns.
+
+**Observable Analysis**
+
+Investigate specific observables by clicking on any observable node in the graph. The left panel provides:
+
+- **Event Context**: All events within the alert that contain the selected observable, presented with Smart Description summaries for quick comprehension
+
+- **Full Event Details**: Complete event information accessible through the right-side panel via the "Full Events" button
+
+- **Extended Search**: Direct access to search for additional events containing the same observable value across your entire environment
+
+This multi-layered approach ensures analysts can quickly understand both the immediate context and broader implications of each observable.
+
+#### Layers Management
+
+Layers enhance analytical efficiency by organizing complex graphs into manageable, focused sections that can be viewed independently or in combination.
+
+**Understanding Layers**
+
+Layers represent logical groupings within your graph that can be selectively displayed or hidden. This feature transforms complex visualizations into organized, digestible sections while maintaining the ability to view the complete picture when needed.
+
+**Default Layer Behavior**
+
+Every graph investigation automatically creates a default layer upon first access. This foundational layer:
+
+- Serves as the primary container for initial graph elements
+- Automatically incorporates new objects as additional events are processed
+- Maintains continuity across investigation sessions
+
+**Active Layer Management**
+
+The layer control interface, located in the top-left corner adjacent to the main panel, provides:
+
+- Layer Panel Access: One-click access to the complete layer management interface
+- Active Layer Indicator: Clear identification of the currently selected layer where new additions will be placed
+- Seamless Layer Switching: Instant transitions between different analytical perspectives
+
+#### Strategic Layer Usage for Alerts
+
+Optimize your alert investigation by implementing these layer organization strategies:
+
+- **Observable Type Segregation**: Create separate layers for different observable categories (network indicators, file artifacts, user activities) to isolate analysis domains
+- **Temporal Analysis**: Organize layers by time periods to understand attack progression and identify patterns across different phases
+- **Threat Actor Attribution**: Separate layers for different suspected threat actors or attack techniques when multiple threats are identified
+
+**Advanced Layer Features**
+    
+- Visibility Control: Toggle individual layer visibility to focus analytical attention on specific aspects while temporarily hiding others
+
+- Cross-Layer Movement: Relocate misplaced objects between layers to maintain optimal organization as your investigation evolves
+
+- Dynamic Renaming: Update layer names throughout the investigation to reflect evolving understanding and maintain clear organization
+
+- Intelligent Search: Utilize the built-in search functionality to quickly locate specific objects within large, multi-layered graphs, essential for complex investigations with extensive observable networks
+
+These enhanced capabilities ensure that even the most complex alert investigations remain manageable and analytically productive.
+
