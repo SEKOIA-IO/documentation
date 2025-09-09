@@ -30,7 +30,7 @@ This section will guide you to forward Stormshield SNS logs to Sekoia.
 
 #### Import the intake certificate
 
-On a device, please download the [Sekoia.io intake certificate](https://app.sekoia.io/assets/files/SEKOIA-IO-intake.pem)
+On a device, please download the `ISRG ROOT X1` certificate: <https://letsencrypt.org/certs/isrgrootx1.pem>
 
 1. Log on the UTM administration console
 2. Click `Configuration` tab
