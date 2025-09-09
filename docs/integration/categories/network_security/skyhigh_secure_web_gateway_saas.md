@@ -50,7 +50,7 @@ Go to the Sekoia.io [playbook page](https://app.sekoia.io/operations/playbooks),
       - `customer Id` (from "Find your Customer ID" step), 
       - `account name`
       - `account password`
-      - `api domain name` (`<region>.logapi.skyhigh.cloud`; e.g. Germany: de.logapi.skyhihg.cloud, North America: us.logapi.skyhigh.cloud, ...)
+      - `api domain name` (`<region>.logapi.skyhigh.cloud`; e.g. Germany: de.logapi.skyhigh.cloud, North America: us.logapi.skyhigh.cloud, ...)
 
 8. Click the **Save** button
 9. **Activate the playbook** with the toggle button
