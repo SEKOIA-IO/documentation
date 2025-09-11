@@ -56,7 +56,26 @@ The layer management interface, positioned in the top-left corner adjacent to th
 - **Active Layer Display**: Clear indication of the currently selected layer where new intelligence additions are placed
 - **Dynamic Layer Switching**: Seamless transitions between different analytical perspectives and threat domains
 
-### Strategic Layer Applications for CTI
+### Saving Graph Explorations
+
+Preserve valuable threat intelligence work by clicking the `Save` button in the toolbar inside an Object page. 
+
+When in other contexts (Graph explorations page), changes are saved automatically. 
+
+New explorations require naming for organizational purposes, while updates to existing explorations are saved directly. 
+
+### Graphical Investigations Applications for CTI 
+
+Access your community's complete library of saved threat intelligence explorations through the `Graph Explorations` menu item. This centralized repository enables:
+
+- **Knowledge Sharing**: Team access to collective threat intelligence research and analysis
+- **Analytical Continuity**: Resumption of complex investigations across multiple sessions
+- **Intelligence Production**: Foundation material for threat reports, briefings, and strategic assessments
+- **Collaborative Research**: Shared starting points for team-based threat hunting and attribution analysis
+
+These enhanced capabilities transform graph explorations from simple visualization tools into comprehensive threat intelligence platforms that support sophisticated analytical workflows, collaborative research initiatives, and professional intelligence reporting requirements.
+
+### Why Use Layers in Your Graphs 
 
 Optimize threat intelligence explorations through strategic layer organization:
 
@@ -80,32 +99,4 @@ Optimize threat intelligence explorations through strategic layer organization:
 
     **Geographic Analysis**: Structure layers by target regions, threat origins, or operational territories
 
-#### Professional Layer Features
-
-- **Visibility Management**: Control individual layer display to focus analytical attention on specific threat domains while maintaining access to the complete intelligence picture.
-
-- **Strategic Reorganization**: Relocate intelligence objects between layers as analysis evolves and new relationships become apparent, ensuring optimal organization throughout extended research projects.
-
-- **Dynamic Documentation**: Update layer names throughout the exploration process to reflect evolving threat understanding and maintain clear organization for team collaboration and reporting purposes.
-
-- **Advanced Search Capabilities**: Leverage sophisticated search functionality to rapidly locate specific intelligence objects within complex, multi-layered explorations containing extensive threat actor networks, malware ecosystems, or campaign infrastructures.
-
-### Saving Graph Explorations
-
-Preserve valuable threat intelligence work by clicking the `Save` button in the toolbar inside an Object page. 
-
-When in other contexts (Graph explorations page), changes are saved automatically. 
-
-New explorations require naming for organizational purposes, while updates to existing explorations are saved directly. 
-
-### Graphs use-cases 
-
-Access your community's complete library of saved threat intelligence explorations through the `Graph Explorations` menu item. This centralized repository enables:
-
-- **Knowledge Sharing**: Team access to collective threat intelligence research and analysis
-- **Analytical Continuity**: Resumption of complex investigations across multiple sessions
-- **Intelligence Production**: Foundation material for threat reports, briefings, and strategic assessments
-- **Collaborative Research**: Shared starting points for team-based threat hunting and attribution analysis
-
-These enhanced capabilities transform graph explorations from simple visualization tools into comprehensive threat intelligence platforms that support sophisticated analytical workflows, collaborative research initiatives, and professional intelligence reporting requirements.
 
