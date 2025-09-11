@@ -173,7 +173,24 @@ The layer control interface, located in the top-left corner adjacent to the main
 - **Active Layer Indicator**: Clear identification of the currently selected layer where new additions will be placed
 - **Layer Switching**: Instant transitions between different analytical perspectives
 
-**Strategic Layer Usage for Cases**
+##### Creating and Managing Layers
+
+To create and organize layers:
+
+- Click the name of the default layer in the top-left of the graph (e.g. Event Layer #1)
+- Select the “+” button to add a new layer
+- Enter a name for your layer.
+- Drag and drop objects or observables into the layer of your choice.
+
+All changes are saved automatically—no manual action required.
+
+**Viewing Layer Content**
+
+- To focus only on the contents of a specific layer, toggle visibility by clicking the Eye icon.
+
+Use this functionality to reduce visual clutter and isolate relevant data for deeper analysis.
+
+##### Strategic Layer Usage for Cases**
 
 Optimize your case investigation by implementing these layer organization strategies:
 
