@@ -119,9 +119,9 @@ The graph displays the following interconnected elements:
 
 - **Observables**: Security artifacts automatically extracted from events, including IP addresses, domain names, URLs, user accounts, file hashes, and other indicators of compromise
 
-- **Observable Relationships**: Visual connections between observables represented by directional arrows. These relationships are intelligently extracted from events using Smart Description definitions that parse event data to identify logical connections
+- **Observable Relationships**: Visual connections between observables represented by directional arrows. These relationships are extracted from events using Smart Description definitions that parse event data to identify logical connections
 
-- **CTI Objects**: STIX-compliant threat intelligence objects from the Intelligence Center that enrich the analysis with contextual threat information
+- **CTI Objects**: STIX-compliant threat intelligence objects from the Intelligence database that enrich the analysis with contextual threat information
 
 - **STIX Relationships**: Standardized connections between threat intelligence objects that reveal the broader threat landscape
 
@@ -135,7 +135,7 @@ Access comprehensive threat intelligence by clicking on any CTI object within th
 
 - Interactive options to expand the graph by adding related objects
 
-This functionality enables seamless pivoting through the threat intelligence database, allowing analysts to explore the full scope of related threats and campaigns.
+This functionality enables quick pivoting through the threat intelligence database, allowing analysts to explore the full scope of related threats and campaigns.
 
 **Observable Analysis**
 
@@ -169,9 +169,9 @@ Every graph investigation automatically creates a default layer upon first acces
 
 The layer control interface, located in the top-left corner adjacent to the main panel, provides:
 
-- Layer Panel Access: One-click access to the complete layer management interface
-- Active Layer Indicator: Clear identification of the currently selected layer where new additions will be placed
-- Seamless Layer Switching: Instant transitions between different analytical perspectives
+- **Layer Panel Access**: One-click access to the complete layer management interface
+- **Active Layer Indicator**: Clear identification of the currently selected layer where new additions will be placed
+- **Layer Switching**: Instant transitions between different analytical perspectives
 
 **Strategic Layer Usage for Cases**
 
