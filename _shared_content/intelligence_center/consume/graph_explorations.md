@@ -14,7 +14,7 @@ Sekoia's graphical investigation capabilities serve distinct analytical purposes
 ## Starting Graph Explorations
 ### From Intelligence Objects
 
-Initiate a graph exploration from any object within the Sekoia app by clicking the New Graph Exploration button located in the top-right corner of an object page. This approach enables focused analysis beginning with a specific threat actor, malware family, attack technique, or other intelligence entity.
+Initiate a graph exploration from any object within the Sekoia app by clicking the New Graph Exploration tab of an object page. This approach enables focused analysis beginning with a specific threat actor, malware family, attack technique, or other intelligence entity.
 
 ### From Threat Reports
 
