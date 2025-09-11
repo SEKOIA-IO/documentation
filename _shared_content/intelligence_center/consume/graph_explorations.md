@@ -24,8 +24,9 @@ Launch explorations directly from existing threat report graphs, leveraging pre-
 
 ### Adding Relationships
 
-Clicking on any object within the graph reveals related intelligence in the side panel, providing immediate access to contextual threat information. Navigate to the "Relationships" tab to view comprehensive relationship mappings with other intelligence objects. Add any relationship to your exploration by clicking the "Add relationship to graph" button that appears when hovering over relationship entries, enabling systematic expansion of your threat landscape understanding.
-Removing Graph Elements
+Clicking on any object within the graph reveals related intelligence in the side panel, providing immediate access to contextual threat information. Navigate to the `Relationships` tab to view comprehensive relationship mappings with other intelligence objects. Add any relationship to your exploration by clicking the `Add relationship to graph` button that appears when hovering over relationship entries, enabling systematic expansion of your threat landscape understanding.
+
+### Removing Graph Elements
 
 Maintain graph clarity and focus by removing unnecessary elements:
 
@@ -91,9 +92,15 @@ Optimize threat intelligence explorations through strategic layer organization:
 
 ### Saving Graph Explorations
 
-Preserve valuable threat intelligence work by clicking the `Save` button in the exploration toolbar. New explorations require naming for organizational purposes, while updates to existing explorations are saved directly. This functionality ensures that analytical investments are retained and can be referenced for future intelligence production or collaborative analysis.
+Preserve valuable threat intelligence work by clicking the `Save` button in the toolbar inside an Object page. 
 
-Access your community's complete library of saved threat intelligence explorations through the Graph Explorations menu item. This centralized repository enables:
+When in other contexts (Graph explorations page), changes are saved automatically. 
+
+New explorations require naming for organizational purposes, while updates to existing explorations are saved directly. 
+
+### Graphs use-cases 
+
+Access your community's complete library of saved threat intelligence explorations through the `Graph Explorations` menu item. This centralized repository enables:
 
 - **Knowledge Sharing**: Team access to collective threat intelligence research and analysis
 - **Analytical Continuity**: Resumption of complex investigations across multiple sessions
@@ -102,7 +109,3 @@ Access your community's complete library of saved threat intelligence exploratio
 
 These enhanced capabilities transform graph explorations from simple visualization tools into comprehensive threat intelligence platforms that support sophisticated analytical workflows, collaborative research initiatives, and professional intelligence reporting requirements.
 
-
-## List saved explorations
-
-At any time, it is possible to list saved explorations from your community by clicking on the `Graph Explorations` item of the menu. From there, you will be able to dive into saved explorations by clicking on any of them.
