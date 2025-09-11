@@ -390,9 +390,9 @@ The graph displays the following interconnected elements:
 
 - **Observables**: Security artifacts automatically extracted from events, including IP addresses, domain names, URLs, user accounts, file hashes, and other indicators of compromise
   
-- **Observable Relationships**: Visual connections between observables represented by directional arrows. These relationships are intelligently extracted from events using Smart Description definitions that parse event data to identify logical connections
+- **Observable Relationships**: Visual connections between observables represented by directional arrows. These relationships are extracted from events using Smart Description definitions that parse event data to identify logical connections
   
-- **CTI Objects**: STIX-compliant threat intelligence objects from the Intelligence Center that enrich the analysis with contextual threat information
+- **CTI Objects**: STIX-compliant threat intelligence objects from the Intelligence Database that enrich the analysis with contextual threat information
   
 - **STIX Relationships**: Standardized connections between threat intelligence objects that reveal the broader threat landscape
 
@@ -406,7 +406,7 @@ Access comprehensive threat intelligence by clicking on any CTI object within th
 
 - Interactive options to expand the graph by adding related objects
 
-This functionality enables seamless pivoting through the threat intelligence database, allowing analysts to explore the full scope of related threats and campaigns.
+This functionality enables pivoting through the threat intelligence database, allowing analysts to explore the full scope of related threats and campaigns.
 
 **Observable Analysis**
 
@@ -443,6 +443,24 @@ The layer control interface, located in the top-left corner adjacent to the main
 - Layer Panel Access: One-click access to the complete layer management interface
 - Active Layer Indicator: Clear identification of the currently selected layer where new additions will be placed
 - Seamless Layer Switching: Instant transitions between different analytical perspectives
+
+##### Creating and Managing Layers
+
+To create and organize layers:
+
+- Click the name of the default layer in the top-left of the graph (e.g. Event Layer #1)
+- Select the “+” button to add a new layer
+- Enter a name for your layer.
+- Drag and drop objects or observables into the layer of your choice.
+
+All changes are saved automatically—no manual action required.
+
+**Viewing Layer Content**
+
+- To focus only on the contents of a specific layer, toggle visibility by clicking the Eye icon.
+
+Use this functionality to reduce visual clutter and isolate relevant data for deeper analysis.
+
 
 #### Strategic Layer Usage for Alerts
 
