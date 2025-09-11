@@ -403,6 +403,7 @@ nav:
       - PagerDuty: integration/action_library/pagerduty.md
     - Cloud Providers:
       - AWS: integration/action_library/aws.md
+      - AWS: integration/action_library/aws.md
       - Azure Monitor: integration/action_library/azure-monitor.md
       - Google Cloud: integration/action_library/google-cloud.md
     - Collaboration Tools:
