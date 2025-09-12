@@ -82,7 +82,3 @@ systemctl restart syslog-ng
 {!_shared_content/integration/detection_section.md!}
 
 {!_shared_content/operations_center/integrations/generated/6a740c4b-468b-45b4-9982-3903abf9fc54.md!}
-
-## Further readings
-
-- [Configure a remote Syslog server](https://docs.cyberwatch.fr/help/en/administration/remote_syslog_configuration/)
