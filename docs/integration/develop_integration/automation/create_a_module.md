@@ -55,7 +55,7 @@ TestHTTP
     └── __init__.py
 ```
 
-## Specify the requirements
+### Specify the requirements
 
 Our connector, trigger, and action will use the `requests` library to send HTTP requests.
 The first step is to add this package to our requirements.
@@ -71,12 +71,20 @@ poetry add requests
 
 As a result you should see the `requests` package added in the dependencies section of the `pyproject.toml` file. 
 
+### Add a .gitignore file to ignore temporary files
+
+Open your terminal or command prompt and navigate to the root folder containing your module. Once you're in the correct folder, run the following command:
+
+```shell
+curl https://raw.githubusercontent.com/github/gitignore/main/Python.gitignore -o .gitignore
+```
+
 ## Sync your module code with Github
 
 In order to import your custom module in Sekoia, you need to store it in a Github or GitLab instance accessible by Sekoia platform.
 In this documentation we give examples with GitHub, but this can be easily adapted with GitLab following their documentation.
 
-### Step 1: Create a new GitHub repository
+1. Create a new GitHub repository
 First, you'll need a new repository on GitHub to push your code to. Go to github.com, log in, and click the **"+"** icon in the top right corner, then select New repository.
 Give your repository a name and an optional description.
 !!! note
@@ -84,14 +92,7 @@ Give your repository a name and an optional description.
 
 Once created, GitHub will show you a page with instructions on how to connect your local repository.
 
-### Step 2: Add a .gitignore file to ignore temporary files.
-
-Open your terminal or command prompt and navigate to the root folder containing your module. Once you're in the correct folder, run the following command:
-```shell
-curl https://raw.githubusercontent.com/github/gitignore/main/Python.gitignore -o .gitignore
-```
-
-### Step 3: Initialize Git in your local folder
+2. Initialize Git in your local folder
 
 Run the following command to initialize a new Git repository:
 ```shell
@@ -99,7 +100,7 @@ git init
 ```
 This creates a hidden `.git` directory in your folder, which tracks all changes.
 
-### Step 4: Add and commit your files
+3. Add and commit your files
 
 Now, you need to stage and commit your files. Staging is the process of telling Git which files you want to include in your next commit. Add all files in the current directory with this command:
 ```shell
@@ -111,7 +112,7 @@ After adding the files, you need to create a commit, which is like a snapshot of
 git commit -m "Initial commit of module TestHTTP"
 ```
 
-### Step 5: Link your local repository to GitHub
+4. Link your local repository to GitHub
 
 Next, you need to connect your local Git repository to the remote one you created on GitHub. Use the URL of your new GitHub repository, which you can find on the repository's main page. Run the following command, replacing [URL] with your repository's URL:
 ```shell
@@ -119,7 +120,7 @@ git remote add origin [URL]
 ```
 For example: `git remote add origin https://github.com/your-username/your-repo-name.git`
 
-### Step 6: Push your code to GitHub
+5. Push your code to GitHub
 Finally, push your committed changes from your local machine to the `main` branch of your GitHub repository. The `-u` flag sets the upstream branch, so you can just use `git push` in the future.
 ```shell
 git push -u origin main
