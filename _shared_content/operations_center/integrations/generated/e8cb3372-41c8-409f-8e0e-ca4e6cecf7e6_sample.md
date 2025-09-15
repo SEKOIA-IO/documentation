@@ -228,6 +228,14 @@ In this section, you will find examples of raw logs as generated natively by the
 
 
 
+=== "USER_1"
+
+    ```
+	from hostname: unix: The privilege command /usr/sbin/lspath, is executed by user with id 501
+    ```
+
+
+
 === "USER_Login"
 
     ```
