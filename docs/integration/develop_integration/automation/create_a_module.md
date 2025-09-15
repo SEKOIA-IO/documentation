@@ -4,9 +4,9 @@ In this section we will see how to develop a simple module from scratch.
 
 A module can contain several components of the following types:
 
-* Action: custom code executed by Sekoia in a Playbook.
-* Connector: custom code executed by Sekoia to collect and ingest events.
-* Trigger: custom code executed by Sekoia as an entrypoint of a Playbook.
+* **Action**: custom code executed by Sekoia in a Playbook.
+* **Connector**: custom code executed by Sekoia to collect and ingest events.
+* **Trigger**: custom code executed by Sekoia as an entrypoint of a Playbook.
 
 
 ## Technical Requirements
@@ -31,7 +31,7 @@ sekoia-automation update-sdk-version
 Once the SDK is installed we can use it to create an empty module:
 
 ``` shell
-sekoia-automation new-module
+sekoia-automation new-module .
 ```
 
 The command will ask for various info about the module:
@@ -66,6 +66,7 @@ The first step is to add this package to our requirements.
 Poetry can be used to add the requirements by simply running in the `TestHTTP` root directory:
 
 ```shell
+cd TestHTTP
 poetry add requests
 ```
 
@@ -131,6 +132,8 @@ You may be prompted to enter your GitHub username and password or a Personal Acc
 
 
 ## Create your component
+
+Depending on your needs, you can choose to create an **Action**, a **Connector**, or a **Trigger**. Each section below provides detailed instructions for implementing the respective component. Select the one that best fits your use case and follow the steps provided.
 
 === "Action"
     Our action will take three arguments:
@@ -327,7 +330,7 @@ You may be prompted to enter your GitHub username and password or a Personal Acc
 
 === "Connector"
     A connector is a Python code file executed by Sekoia to collect and ingest events.
-    In this example the connector will regularly pull an external API and ingest the received events in Sekoia
+    In this example the connector will regularly pull an external API and ingest the received events in Sekoia.
 
     The main logic is presented here:
 
@@ -336,7 +339,7 @@ You may be prompted to enter your GitHub username and password or a Personal Acc
     from sekoia_automation.connector import Connector
 
     # Our connector inherits from the Connector class of the sekoia automation sdk
-    class TestHTTPConnector(Connector):
+    class TesthttpConnector(Connector):
 
         # The run method is called by Sekoia when launching the connector
         def run(self) -> None:
@@ -347,6 +350,7 @@ You may be prompted to enter your GitHub username and password or a Personal Acc
             while self.running:
                 # Complete with your custom code collecting events
                 collected_events = []
+                ...
 
                 # Ingest the collected events in Sekoia
                 self.push_events_to_intakes(events=collected_events)
@@ -357,38 +361,91 @@ You may be prompted to enter your GitHub username and password or a Personal Acc
 
     Additionnaly, you can **define parameters that will be set during the instanciation of the Intake in Sekoia**. For that you have 2 options depending of the type of parameter you want to define.
 
-    * **Option 1.** Define parameters in the Module
+    * **Option 1*: Define parameters in the Module
 
     Defining a parameter in the module is useful if the parameter is reused between several components of the module, such as between the connector and other actions.
     This is where we typically define **API credentials** and **API Base URLs**.
 
     Once set these parameters can be seen and modified in the `Connected accounts` menu of the Integration and Playbooks pages in Sekoia.
 
-    * **Option 2.** Define parameters in the Connector
+    * **Option 2**: Define parameters in the Connector
 
     In that case the parameter is only accessible by the connector, and not by the other components of the module. This is where we define connector specific settings, such as the **connector batch frequency**.
 
     Once set these parameters can be seen and modifed in the `Configure` option in the Intake page in Sekoia.
 
-
     In the next example we will use both options for our connector.
 
     **Add the example code**
 
-    To create the parameter `api_key` in the module, modify the file named `models.py` with the following content:
+    To create the parameter `api_key` in the module, modify the file named `models.py` located in the  `testhttp_modules` directory with the following content:
     ```python
     from pydantic.v1 import BaseModel, Field
 
-    class TestHTTPModuleConfiguration(BaseModel):
+
+    class TesthttpModuleConfiguration(BaseModel):
         api_key: str = Field(..., description="API Key", secret=True)
     ```
+
+    The `api_key` parameter is a required string. The `...` (ellipsis) signifies that a value for this field must be provided. `secret=True` ensures its value isn't exposed in logs,
+    and `description` provides a helpful explanation.
 
     To create the connector, create a new file named `connector.py` in the `testhttp_modules` directory.
 
     Copy and paste in this file the following code:
     ```python
-    ToDo
-    ``` 
+    import json
+    import time
+    from pydantic.v1 import Field
+    from sekoia_automation.connector import Connector, DefaultConnectorConfiguration
+    import requests
+
+    from . import TesthttpModule
+
+
+    class TesthttpConnectorConfiguration(DefaultConnectorConfiguration):
+        polling_interval: int = Field(5, description="Polling interval in minutes")
+
+
+    class TesthttpConnector(Connector):
+        module: TesthttpModule
+        configuration: TesthttpConnectorConfiguration
+
+        def run(self):
+            self.log(message="Start fetching events", level="info")
+
+            while self.running:
+                self.log("Polling Testhttp API...", level="info")
+
+                # Fetch data from the Testhttp API
+                data = []
+                try:
+                    response = requests.get(
+                        "https://jsonplaceholder.typicode.com/posts",
+                        headers={"Authorization": f"Bearer {self.module.configuration.api_key}"},
+                    )
+                    response.raise_for_status()
+                    data = response.json()
+                except requests.RequestException as error:
+                    self.log_exception(error, message="Error fetching data from Testhttp API")
+
+                # Process collected data (if needed)
+                batch_of_events = []
+                for item in data:
+                    item["source"] = "testhttp"
+                    batch_of_events.append(json.dumps(item))
+                
+                # Push events to Sekoia platform
+                if batch_of_events:
+                    self.log(
+                        message=f"{len(batch_of_events)} events collected",
+                        level="info",
+                    )
+                    self.push_events_to_intakes(events=batch_of_events)
+
+                # Wait for the next polling interval
+                time.sleep(self.configuration.polling_interval * 60)
+    ```
 
     **Generate the manifest and entrypoint**
 
@@ -654,7 +711,7 @@ To do so, proceed as follows:
   git push
   ```
 
-Your latest code will now be available in GitHub or GitLab for Sekoia to import from the default branch (usually `main` or `master`). Make sure your changes are pushed to this branch, as Sekoia will only import from there.
+Your latest code will now be available in GitHub or GitLab for Sekoia to import.
 
 Once your code is finalized and available in GitHub or GitLab, go to the Integrations page in the Sekoia platform and click on **"Import my custom integration"**, then follow the steps given to import your code from your Github or Gitlab repository.
 
