@@ -84,7 +84,7 @@ curl https://raw.githubusercontent.com/github/gitignore/main/Python.gitignore -o
 In order to import your custom module in Sekoia, you need to store it in a Github or GitLab instance accessible by Sekoia platform.
 In this documentation we give examples with GitHub, but this can be easily adapted with GitLab following their documentation.
 
-1. Create a new GitHub repository
+**Step 1: Create a new GitHub repository**
 First, you'll need a new repository on GitHub to push your code to. Go to github.com, log in, and click the **"+"** icon in the top right corner, then select New repository.
 Give your repository a name and an optional description.
 !!! note
@@ -92,7 +92,7 @@ Give your repository a name and an optional description.
 
 Once created, GitHub will show you a page with instructions on how to connect your local repository.
 
-2. Initialize Git in your local folder
+**Step 2: Initialize Git in your local folder**
 
 Run the following command to initialize a new Git repository:
 ```shell
@@ -100,7 +100,7 @@ git init
 ```
 This creates a hidden `.git` directory in your folder, which tracks all changes.
 
-3. Add and commit your files
+**Step 3: Add and commit your files**
 
 Now, you need to stage and commit your files. Staging is the process of telling Git which files you want to include in your next commit. Add all files in the current directory with this command:
 ```shell
@@ -112,7 +112,7 @@ After adding the files, you need to create a commit, which is like a snapshot of
 git commit -m "Initial commit of module TestHTTP"
 ```
 
-4. Link your local repository to GitHub
+**Step 4: Link your local repository to GitHub**
 
 Next, you need to connect your local Git repository to the remote one you created on GitHub. Use the URL of your new GitHub repository, which you can find on the repository's main page. Run the following command, replacing [URL] with your repository's URL:
 ```shell
@@ -120,7 +120,8 @@ git remote add origin [URL]
 ```
 For example: `git remote add origin https://github.com/your-username/your-repo-name.git`
 
-5. Push your code to GitHub
+**Step 5: Push your code to GitHub**
+
 Finally, push your committed changes from your local machine to the `main` branch of your GitHub repository. The `-u` flag sets the upstream branch, so you can just use `git push` in the future.
 ```shell
 git push -u origin main
@@ -210,6 +211,17 @@ You may be prompted to enter your GitHub username and password or a Personal Acc
     7. The `error` method will mark the action as failed and send back the error to the API.
     8. Finally, if everything went well we can return the results. The base action will take care of sending it back to the playbook API.
 
+**Generate the manifest and entrypoint**
+
+    Now that the code has been created, generate the manifest and update the entrypoint by calling
+
+    ```
+    sekoia-automation generate-files-from-code
+    ```
+
+    !!! note
+        The command must be executed from the root of the module which is `modules/TestHTTP` in this example.
+
     **Generated manifests**
 
     The previous step generated the following manifest file for us:
@@ -282,6 +294,7 @@ You may be prompted to enter your GitHub username and password or a Personal Acc
       }
     }
     ```
+
     1.  Arguments is a JSON Schema that describes the expected arguments. 
         It was generated based on the `RequestArguments` class we defined
     2.  Required arguments have been specified in the schema
@@ -341,16 +354,16 @@ You may be prompted to enter your GitHub username and password or a Personal Acc
                 time.sleep(60)
     ```
 
-    Additionnaly, you can define parameters that will be set during the instanciation of the Intake in Sekoia. For that you have 2 options depending of the type of parameter you want to define.
+    Additionnaly, you can **define parameters that will be set during the instanciation of the Intake in Sekoia**. For that you have 2 options depending of the type of parameter you want to define.
 
-    *Option 1. Define parameters in the Module
+    * **Option 1.** Define parameters in the Module
 
     Defining a parameter in the module is useful if the parameter is reused between several components of the module, such as between the connector and other actions.
     This is where we typically define **API credentials** and **API Base URLs**.
 
     Once set these parameters can be seen and modified in the `Connected accounts` menu of the Integration and Playbooks pages in Sekoia.
 
-    *Option 2. Define parameters in the Connector
+    * **Option 2.** Define parameters in the Connector
 
     In that case the parameter is only accessible by the connector, and not by the other components of the module. This is where we define connector specific settings, such as the **connector batch frequency**.
 
@@ -536,10 +549,10 @@ You may be prompted to enter your GitHub username and password or a Personal Acc
     }
     ```
 
-    1.  Arguments is a JSON Schema that describes the expected arguments. 
+    1. Arguments is a JSON Schema that describes the expected arguments. 
         It was generated based on the `TriggerConfiguration` class we defined
-    2.  Required arguments have been specified in the schema
-    3.  Results is a JSON Schema describing the output of the trigger.
+    2. Required arguments have been specified in the schema
+    3. Results is a JSON Schema describing the output of the trigger.
         It was generated based on the `NewEntries` class we defined
 
 
