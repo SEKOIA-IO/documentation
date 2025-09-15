@@ -60,7 +60,7 @@ Sekoia will trigger this connector on a recurring basis to connect to your produ
 
 If you're all set, then:
 1. Click on `+ New Integration` in the **Integrations** page, then click on `Get Started` and follow the steps given to set up your development environment
-2. Follow the [indications](/integration/develop_integration/automation/create_a_module.md) given to develop your module with a connector (no need to follow the trigger and action sections)
+2. Follow the [indications](/integration/develop_integration/automation/create_a_module.md) given to develop your module with a connector
 3. Once your code is finalized, click on `Import my custom integration`, then follow the steps given to import your code from your Github or Gitlab repository
 
 Once you have created your custom connector, return to Step 2 and edit your custom format.
