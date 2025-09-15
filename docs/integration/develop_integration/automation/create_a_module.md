@@ -14,16 +14,14 @@ A module can contain several components of the following types:
 If not already done, install the Sekoia's automation SDK. This SDK contains various command line utilities that will help us manage modules. Simply run the following command:
 ```shell
 pip install sekoia-automation-sdk
-
 ```
 !!! note
     The SDK needs a Python version equal or newer to 3.10.
     You can check the installed version on your system with the command `python -V`.
 
-If needed you can update to the latest Sekoia's automation SDK using this command:
+If you previously installed Sekoia's automation SDK, please make sure you are running the latest version by using this command:
 ```shell
 sekoia-automation update-sdk-version
-
 ```
 
 ## Initialize the module
@@ -361,13 +359,13 @@ Depending on your needs, you can choose to create an **Action**, a **Connector**
     * **Option 1**: Define parameters in the Module
 
     Defining a parameter in the module is useful if the parameter is reused between several components of the module, such as between the connector and other actions.
-    This is where we typically define **API credentials** and **API Base URLs**.
+    This is where we typically define *API credentials* and *API Base URLs*.
 
     Once set these parameters can be seen and modified in the `Connected accounts` menu of the Integration and Playbooks pages in Sekoia.
 
     * **Option 2**: Define parameters in the Connector
 
-    In that case the parameter is only accessible by the connector, and not by the other components of the module. This is where we define connector specific settings, such as the **connector batch frequency**.
+    In that case the parameter is only accessible by the connector, and not by the other components of the module. This is where we define connector specific settings, such as the *connector polling frequency*.
 
     Once set these parameters can be seen and modifed in the `Configure` option in the Intake page in Sekoia.
 
