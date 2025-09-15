@@ -59,6 +59,7 @@ Sekoia will trigger this connector on a recurring basis to connect to your produ
     A custom connector requires Python development skills, as connectors are custom Python code developped using sekoia-automation SDK.
 
 If you're all set, then:
+
 1. Click on `+ New Integration` in the **Integrations** page, then click on `Get Started` and follow the steps given to set up your development environment
 2. Follow the [indications](/integration/develop_integration/automation/create_a_module.md) given to develop your module with a connector
 3. Once your code is finalized, click on `Import my custom integration`, then follow the steps given to import your code from your Github or Gitlab repository
