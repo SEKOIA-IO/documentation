@@ -619,9 +619,29 @@ For more detailed information, you can check the [Poetry documentation](https://
 ## Deploy your module
 
 To deploy your module, you first need to make sure the module version is unique and has not already been imported in Sekoia.
-To update the module version, you must edit the `version` parameter in both the `manifest.json` file (e.g., `"version": "1.0.1"`) and the `CHANGELOG.md` file to ensure they match.
+To update the module version, you must edit the `version` parameter in both the `manifest.json` file and the `CHANGELOG.md` file to ensure they match.
+It is recommended to use semantic versioning (e.g., `1.0.1`) for your module versions to maintain consistency and traceability.
 
-Once your code is finalized, go to the Integrations page in the Sekoia platform and click on **"Import my custom integration"**, then follow the steps given to import your code from your Github or Gitlab repository.
+Then make sure all your code, including any untracked files, is staged and committed in git, as Sekoia will import the code from there.
+To do so, proceed as follows:
+
+1. Open your terminal and navigate to your module's root directory.
+2. Stage all files for commit:
+  ```shell
+  git add .
+  ```
+3. Commit your changes with a descriptive message:
+  ```shell
+  git commit -m "Finalize module for Sekoia import"
+  ```
+4. Push your code to the remote repository:
+  ```shell
+  git push
+  ```
+
+Your latest code will now be available in GitHub or GitLab for Sekoia to import from the default branch (usually `main` or `master`). Make sure your changes are pushed to this branch, as Sekoia will only import from there.
+
+Once your code is finalized and available in GitHub or GitLab, go to the Integrations page in the Sekoia platform and click on **"Import my custom integration"**, then follow the steps given to import your code from your Github or Gitlab repository.
 
 ## Homologate your module (optional)
 
