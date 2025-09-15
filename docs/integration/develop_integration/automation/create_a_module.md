@@ -223,9 +223,6 @@ Depending on your needs, you can choose to create an **Action**, a **Connector**
     sekoia-automation generate-files-from-code
     ```
 
-    !!! note
-        The command must be executed from the root of the module which is `modules/TestHTTP` in this example.
-
     **Generated manifests**
 
     The previous step generated the following manifest file for us:
@@ -359,9 +356,9 @@ Depending on your needs, you can choose to create an **Action**, a **Connector**
                 time.sleep(60)
     ```
 
-    Additionnaly, you can **define parameters that will be set during the instanciation of the Intake in Sekoia**. For that you have 2 options depending of the type of parameter you want to define.
+    Additionnaly, you can define parameters that will be set during the instanciation of the Intake in Sekoia. For that you have 2 options depending of the type of parameter you want to define.
 
-    * **Option 1*: Define parameters in the Module
+    * **Option 1**: Define parameters in the Module
 
     Defining a parameter in the module is useful if the parameter is reused between several components of the module, such as between the connector and other actions.
     This is where we typically define **API credentials** and **API Base URLs**.
@@ -455,8 +452,6 @@ Depending on your needs, you can choose to create an **Action**, a **Connector**
     sekoia-automation generate-files-from-code
     ```
 
-    !!! note
-        The command must be executed from the root of the module which is `modules/TestHTTP` in this example.
 
 
 === "Trigger"
@@ -529,9 +524,6 @@ Depending on your needs, you can choose to create an **Action**, a **Connector**
     ```shell
     sekoia-automation generate-files-from-code
     ```
-
-    !!! note
-        The command must be executed from the root of the module which is `modules/TestHTTP` in this example.
 
     **Generated manifests**
 
