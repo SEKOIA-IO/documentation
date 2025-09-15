@@ -32,11 +32,11 @@ It provides real-time monitoring and automated response capabilities, ensuring c
 
 1. Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a new intake from the format WatchGuard EPDR.
 2. Set up the intake with the following parameters:
-   - **username**: The Access ID (read-only) you copied when you created the credentials.
-   - **password**: The password of the  Access ID (read-only)
-   - **base url**: The scheme and the domain name of the API URL (base) (without the path; for example, `https://api.<region>.cloud.watchguard.com`).
-   - **application key**: The API Key you copied when you created the credentials.
-   - **account id**: The account ID of your WatchGuard Cloud account ID. You can find it on the My Account page in WatchGuard Cloud.
+    - **username**: The Access ID (read-only) you copied when you created the credentials.
+    - **password**: The password of the  Access ID (read-only)
+    - **base url**: The scheme and the domain name of the API URL (base) (without the path; for example, `https://api.<region>.cloud.watchguard.com`).
+    - **application key**: The API Key you copied when you created the credentials.
+    - **account id**: The account ID of your WatchGuard Cloud account ID. You can find it on the My Account page in WatchGuard Cloud.
 
 {!_shared_content/operations_center/integrations/generated/4f9ea4fb-e8b8-4001-822a-4c7a547c31d6_sample.md!}
 
