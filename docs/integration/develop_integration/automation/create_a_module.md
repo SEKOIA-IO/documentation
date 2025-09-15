@@ -3,7 +3,8 @@
 In this section we will see how to develop a simple module from scratch.
 
 A module can contain several components of the following types:
-* Action: custom code executed by Sekoia in a Playbook 
+
+* Action: custom code executed by Sekoia in a Playbook.
 * Connector: custom code executed by Sekoia to collect and ingest events.
 * Trigger: custom code executed by Sekoia as an entrypoint of a Playbook.
 
@@ -76,7 +77,7 @@ In order to import your custom module in Sekoia, you need to store it in a Githu
 In this documentation we give examples with GitHub, but this can be easily adapted with GitLab following their documentation.
 
 ### Step 1: Create a new GitHub repository
-First, you'll need a new repository on GitHub to push your code to. Go to github.com, log in, and click the "+" icon in the top right corner, then select New repository.
+First, you'll need a new repository on GitHub to push your code to. Go to github.com, log in, and click the **"+"** icon in the top right corner, then select New repository.
 Give your repository a name and an optional description.
 !!! note
     Do not initialize it with a README, .gitignore, or license file. A blank repository is crucial for this method.
@@ -143,7 +144,7 @@ You may be prompted to enter your GitHub username and password or a Personal Acc
     * The response body as text
     * The response headers
 
-    ***Add the code***
+    **Add the code**
 
     Now that we have a manifest describing our action we can add the code!
 
@@ -208,7 +209,7 @@ You may be prompted to enter your GitHub username and password or a Personal Acc
     7. The `error` method will mark the action as failed and send back the error to the API.
     8. Finally, if everything went well we can return the results. The base action will take care of sending it back to the playbook API.
 
-    ***Generated manifests***
+    **Generated manifests**
 
     The previous step generated the following manifest file for us:
 
@@ -288,7 +289,7 @@ You may be prompted to enter your GitHub username and password or a Personal Acc
 
 
 
-    ***Generated entrypoint***
+    **Generated entrypoint**
 
     The `main.py` entrypoint file has been updated as well. It now contains our action.
 
@@ -341,13 +342,15 @@ You may be prompted to enter your GitHub username and password or a Personal Acc
 
     Additionnaly, you can define parameters that will be set during the instanciation of the Intake in Sekoia. For that you have 2 options depending of the type of parameter you want to define.
 
-    ***Option 1. Define parameters in the Module***
+    *Option 1. Define parameters in the Module
+
     Defining a parameter in the module is useful if the parameter is reused between several components of the module, such as between the connector and other actions.
     This is where we typically define **API credentials** and **API Base URLs**.
 
     Once set these parameters can be seen and modified in the `Connected accounts` menu of the Integration and Playbooks pages in Sekoia.
 
-    ***Option 2. Define parameters in the Connector***
+    *Option 2. Define parameters in the Connector
+
     In that case the parameter is only accessible by the connector, and not by the other components of the module. This is where we define connector specific settings, such as the **connector batch frequency**.
 
     Once set these parameters can be seen and modifed in the `Configure` option in the Intake page in Sekoia.
@@ -355,7 +358,7 @@ You may be prompted to enter your GitHub username and password or a Personal Acc
 
     In the next example we will use both options for our connector.
 
-    ***Add the example code***
+    **Add the example code**
 
     To create the parameter `api_key` in the module, modify the file named `models.py` with the following content:
     ```python
@@ -372,7 +375,7 @@ You may be prompted to enter your GitHub username and password or a Personal Acc
     ToDo
     ``` 
 
-    ***Generate the manifest and entrypoint***
+    **Generate the manifest and entrypoint**
 
     Now that the code has been created, generate the manifest and update the entrypoint by calling
 
@@ -388,7 +391,7 @@ You may be prompted to enter your GitHub username and password or a Personal Acc
     Our trigger will take one argument, the URL that exposed the objects we want to handle with our module.
     This argument will be required.
 
-    ***Add the code***
+    **Add the code**
 
     Inside our Python package `testhttp_modules` we can create a new file `trigger_new_entries.py` that will contain the logic of our trigger:
 
@@ -447,7 +450,7 @@ You may be prompted to enter your GitHub username and password or a Personal Acc
     1. The base `Trigger` class provides a `send_event` method that allows to trigger a new event. For each playbook having this trigger a new run will be started with `event` as argument.
     2. The `log` method allows to log errors and informations. Those logs are visible in the UI.
 
-    ***Generate the manifest and entrypoint***
+    **Generate the manifest and entrypoint**
 
     Now that the code has been created, generate the manifest and update the entrypoint by calling
 
@@ -458,7 +461,7 @@ You may be prompted to enter your GitHub username and password or a Personal Acc
     !!! note
         The command must be executed from the root of the module which is `modules/TestHTTP` in this example.
 
-    ***Generated manifests***
+    **Generated manifests**
 
     The previous step generated the following manifest file for us:
 
@@ -539,7 +542,7 @@ You may be prompted to enter your GitHub username and password or a Personal Acc
         It was generated based on the `NewEntries` class we defined
 
 
-    ***Generated entrypoint***
+    **Generated entrypoint**
 
     The `main.py` entrypoint file has been updated as well. It now contains our trigger.
 
