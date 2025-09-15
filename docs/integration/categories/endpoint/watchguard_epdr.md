@@ -48,3 +48,4 @@ It provides real-time monitoring and automated response capabilities, ensuring c
 
 ## Further Readings
 - [Get Started with WatchGuard APIs](https://www.watchguard.com/help/docs/API/Content/en-US/api_get_started/get_started.html)
+- [WatchGuard EPDR API authentication](https://www.watchguard.com/help/docs/API/Content/en-US/api_get_started/authentication.html)
