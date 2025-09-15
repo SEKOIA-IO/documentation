@@ -223,11 +223,11 @@ Depending on your needs, you can choose to create an **Action**, a **Connector**
     sekoia-automation generate-files-from-code
     ```
 
-    **Generated manifests**
+    **Generated manifest**
 
     The previous step generated the following manifest file for us:
 
-    * `action_request.json` for the action
+    * `action_request.json` describing the action
 
     We can edit the manifest to add a description:
 
@@ -452,6 +452,70 @@ Depending on your needs, you can choose to create an **Action**, a **Connector**
     sekoia-automation generate-files-from-code
     ```
 
+    **Generated manifest**
+
+    The previous step generated the following manifest file for us:
+
+    * `connector_testhttpconnector.json` describing the connector
+
+    We can edit the manifest to add a description:
+
+    ```json
+    {
+      "name": "TesthttpConnector",
+      "description": "TesthttpConnector",
+      "uuid": "8a7acb0b-0004-5e17-9ab0-4c110cea795b",
+      "docker_parameters": "TesthttpConnector",
+      "arguments": {  // (1)!
+        "title": "TesthttpConnectorConfiguration",
+        "type": "object",
+        "properties": {
+          "intake_server": {
+            "title": "Intake Server",
+            "type": "string"
+          },
+          "intake_key": {
+            "title": "Intake Key",
+            "type": "string"
+          },
+          "polling_interval": {
+            "title": "Polling Interval",
+            "description": "Polling interval in minutes",
+            "default": 5,
+            "type": "integer"
+          }
+        },
+        "required": [  // (2)!
+          "intake_key"
+        ]
+      }
+    }
+    ```
+
+    1.  Arguments is a JSON Schema that describes the expected arguments. 
+        It was generated based on the `TesthttpConnectorConfiguration` class we defined
+    2.  Required arguments have been specified in the schema
+
+
+    **Generated entrypoint**
+
+    The `main.py` entrypoint file has been updated as well. It now contains our connector.
+
+    ```python
+    from testhttp_modules import TesthttpModule
+
+    from testhttp_modules.connector import TesthttpConnector  // (1)!
+
+
+    if __name__ == "__main__":
+        module = TesthttpModule()
+        module.register(TesthttpConnector, "TesthttpConnector")  // (2)!
+        module.run()
+
+    ```
+
+    1. Our connector is imported.
+    2. The connector is registered.
 
 
 === "Trigger"
@@ -525,7 +589,7 @@ Depending on your needs, you can choose to create an **Action**, a **Connector**
     sekoia-automation generate-files-from-code
     ```
 
-    **Generated manifests**
+    **Generated manifest**
 
     The previous step generated the following manifest file for us:
 
