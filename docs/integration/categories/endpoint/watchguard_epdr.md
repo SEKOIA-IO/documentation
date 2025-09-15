@@ -36,7 +36,7 @@ It provides real-time monitoring and automated response capabilities, ensuring c
    - **password**: The password of the  Access ID (read-only)
    - **base url**: The scheme and the domain name of the API URL (base) (without the path; for example, `https://api.<region>.cloud.watchguard.com`).
    - **application key**: The API Key you copied when you created the credentials.
-   - **account id**: The account ID of your WatchGuard Cloud account ID. You can find it on the My Account page in WatchGaurd Cloud.
+   - **account id**: The account ID of your WatchGuard Cloud account ID. You can find it on the My Account page in WatchGuard Cloud.
 
 {!_shared_content/operations_center/integrations/generated/4f9ea4fb-e8b8-4001-822a-4c7a547c31d6_sample.md!}
 
