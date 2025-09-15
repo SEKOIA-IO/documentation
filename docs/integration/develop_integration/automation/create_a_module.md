@@ -85,6 +85,7 @@ In order to import your custom module in Sekoia, you need to store it in a Githu
 In this documentation we give examples with GitHub, but this can be easily adapted with GitLab following their documentation.
 
 **Step 1: Create a new GitHub repository**
+
 First, you'll need a new repository on GitHub to push your code to. Go to github.com, log in, and click the **"+"** icon in the top right corner, then select New repository.
 Give your repository a name and an optional description.
 !!! note
@@ -211,11 +212,11 @@ You may be prompted to enter your GitHub username and password or a Personal Acc
     7. The `error` method will mark the action as failed and send back the error to the API.
     8. Finally, if everything went well we can return the results. The base action will take care of sending it back to the playbook API.
 
-**Generate the manifest and entrypoint**
+    **Generate the manifest and entrypoint**
 
     Now that the code has been created, generate the manifest and update the entrypoint by calling
 
-    ```
+    ```shell
     sekoia-automation generate-files-from-code
     ```
 
@@ -393,7 +394,7 @@ You may be prompted to enter your GitHub username and password or a Personal Acc
 
     Now that the code has been created, generate the manifest and update the entrypoint by calling
 
-    ```
+    ```shell
     sekoia-automation generate-files-from-code
     ```
 
@@ -468,7 +469,7 @@ You may be prompted to enter your GitHub username and password or a Personal Acc
 
     Now that the code has been created, generate the manifest and update the entrypoint by calling
 
-    ```
+    ```shell
     sekoia-automation generate-files-from-code
     ```
 
