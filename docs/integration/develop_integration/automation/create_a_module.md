@@ -456,7 +456,7 @@ Depending on your needs, you can choose to create an **Action**, a **Connector**
 
     * `connector_testhttpconnector.json` describing the connector
 
-    We can edit the manifest to add a description:
+    We can edit the manifest to customize the description:
 
     ```json
     {
@@ -502,12 +502,12 @@ Depending on your needs, you can choose to create an **Action**, a **Connector**
     ```python
     from testhttp_modules import TesthttpModule
 
-    from testhttp_modules.connector import TesthttpConnector  // (1)!
+    from testhttp_modules.connector import TesthttpConnector  # (1)!
 
 
     if __name__ == "__main__":
         module = TesthttpModule()
-        module.register(TesthttpConnector, "TesthttpConnector")  // (2)!
+        module.register(TesthttpConnector, "TesthttpConnector")  # (2)!
         module.run()
 
     ```
