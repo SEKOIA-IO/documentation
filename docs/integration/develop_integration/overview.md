@@ -55,8 +55,13 @@ You have now successfully ingested data from a new product. If you would like to
 If there are no compatible methods in Sekoia to collect events from your product, you can create a custom connector that will handle the collection process.
 Sekoia will trigger this connector on a recurring basis to connect to your product and collect new events.
 
-!!! note "Development in Progress"
-    Custom connector development documentation is currently being prepared. Please contact support for guidance on creating custom connectors.
+!!! Prerequisites
+    A custom connector requires Python development skills, as connectors are custom Python code developped using sekoia-automation SDK.
+
+If you're all set, then:
+1. Click on `+ New Integration` in the **Integrations** page, then click on `Get Started` and follow the steps given to set up your development environment
+2. Follow the [indications](/integration/develop_integration/automation/create_a_module/) given to develop your module with a connector (no need to follow the trigger and action sections)
+3. Once your code is finalized, click on `Import my custom integration`, then follow the steps given to import your code from your Github or Gitlab repository
 
 Once you have created your custom connector, return to Step 2 and edit your custom format.
 In the top right of the screen, select your custom connector to associate it with your custom format. When creating an intake using this format, the selected custom connector will be used to collect events.
