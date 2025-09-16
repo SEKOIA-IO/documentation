@@ -1,4 +1,4 @@
-Rules catalog includes **1043 built-in detection rules** ([_last update on 2025-09-12_](rules_changelog.md)).
+Rules catalog includes **1044 built-in detection rules** ([_last update on 2025-09-16_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Identity Information**
 
@@ -6288,6 +6288,12 @@ Rules catalog includes **1043 built-in detection rules** ([_last update on 2025-
     
     - **Effort:** elementary
     
+??? abstract "Potential Persistence Via Outlook LoadMacroProviderOnBoot Setting"
+    
+    Detects the modification of Outlook setting "LoadMacroProviderOnBoot" which if enabled allows the automatic loading of any configured VBA project/module. Logging for Registry events is needed, it can be done in the Sysmon configuration (events 12 and 13).
+    
+    - **Effort:** master
+    
 **Software Extensions**
 
 ??? abstract "Malicious Browser Extensions"
@@ -6787,6 +6793,12 @@ Rules catalog includes **1043 built-in detection rules** ([_last update on 2025-
     Dynamic-link libraries (DLLs) that are specified in the AppCertDLLs value in the Registry key can be abused to obtain persistence and privilege escalation by causing a malicious DLL to be loaded and run in the context of separate processes on the computer. Logging for Registry events is needed in the Sysmon configuration (events 12 and 13).
     
     - **Effort:** intermediate
+    
+??? abstract "Potential Persistence Via Outlook LoadMacroProviderOnBoot Setting"
+    
+    Detects the modification of Outlook setting "LoadMacroProviderOnBoot" which if enabled allows the automatic loading of any configured VBA project/module. Logging for Registry events is needed, it can be done in the Sysmon configuration (events 12 and 13).
+    
+    - **Effort:** master
     
 ??? abstract "Reconnaissance Commands Activities"
     
@@ -8522,6 +8534,12 @@ Rules catalog includes **1043 built-in detection rules** ([_last update on 2025-
     Dynamic-link libraries (DLLs) that are specified in the AppCertDLLs value in the Registry key can be abused to obtain persistence and privilege escalation by causing a malicious DLL to be loaded and run in the context of separate processes on the computer. Logging for Registry events is needed in the Sysmon configuration (events 12 and 13).
     
     - **Effort:** intermediate
+    
+??? abstract "Potential Persistence Via Outlook LoadMacroProviderOnBoot Setting"
+    
+    Detects the modification of Outlook setting "LoadMacroProviderOnBoot" which if enabled allows the automatic loading of any configured VBA project/module. Logging for Registry events is needed, it can be done in the Sysmon configuration (events 12 and 13).
+    
+    - **Effort:** master
     
 ??? abstract "Reconnaissance Commands Activities"
     
