@@ -1684,6 +1684,7 @@ events
 | project host.name, total_count
 
 ```
+`project` and `select` are aliases. They are exactly the same command
 
 ---
 
