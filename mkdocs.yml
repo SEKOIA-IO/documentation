@@ -332,6 +332,7 @@ nav:
       - Bitsight SPM: integration/categories/network_security/bitsight_spm.md
       - Broadcom Cloud Secure Web Gateway: integration/categories/network_security/broadcom_cloud_swg.md
       - Broadcom Edge Secure Web Gateway: integration/categories/network_security/broadcom_edge_swg.md
+      - Broadcom Siteminder: integration/categories/network_security/broadcom_siteminder.md
       - Check Point: integration/categories/network_security/checkpoint.md
       - Cisco Identity Services Engine (ISE): integration/categories/network_security/cisco_identity_services_engine_ise.md
       - Cisco Secure Firewall: integration/categories/network_security/cisco_asa.md
