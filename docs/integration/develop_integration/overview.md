@@ -18,10 +18,10 @@
 
 #### Step 1. Understand the general concepts
 
-!!! warning
-    For this usecase, you must already be able to forward your data into Sekoia SOC platform with an existing [ingestion methods](/integration/ingestion_methods/index.md)
+Before starting, read these resources:
 
-Before starting, read this [overview of intake format](formats/overview.md) to get a grasp of the general concepts.
+- [Overview of intake format](formats/overview.md) to get a grasp of event parsing.
+- [Overview of ingestion methods](/integration/ingestion_methods/index.md) to get a grasp of event ingestion.
 
 #### Step 2. Create your custom intake
 
@@ -50,7 +50,26 @@ Once you are done, you will create a custom intake based using this custom forma
 
 You have now successfully ingested data from a new product. If you would like to share your custom format to the cybersecurity community or let Sekoia handle the maintenance of this custom format, proceed to the next step.
 
-#### Step 3. Homologate your custom format in the Sekoia catalog (optional)
+#### Step 3. Create your custom connector (optional)
+
+If there are no compatible methods in Sekoia to collect events from your product, you can create a custom connector that will handle the collection process.
+Sekoia will trigger this connector on a recurring basis to connect to your product and collect new events.
+
+!!! Prerequisites
+    A custom connector requires Python development skills, as connectors are custom Python code developped using sekoia-automation SDK.
+
+If you're all set, then:
+
+1. Click on `+ New Integration` in the **Integrations** page, then click on `Get Started` and follow the steps given to set up your development environment
+2. Follow the [indications](/integration/develop_integration/automation/create_a_module.md) given to develop your module with a connector
+3. Once your code is finalized, click on `Import my custom integration`, then follow the steps given to import your code from your Github or Gitlab repository
+
+Once you have created your custom connector, return to Step 2 and edit your custom format.
+In the top right of the screen, select your custom connector to associate it with your custom format. When creating an intake using this format, the selected custom connector will be used to collect events.
+
+![intake_connector](/assets/operation_center/intakes/custom_intake_connector.png){: style="max-width:100%"}
+
+#### Step 4. Homologate your custom format in the Sekoia catalog (optional)
 
 If you have created a new format and want Sekoia to manage its maintenance, you can request homologation for your custom format. Once approved, the format will be added to Sekoia's public catalog.
 
