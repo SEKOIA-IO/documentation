@@ -22,7 +22,7 @@ Sekoia Operating Language (`SOL`) is a powerful, pipe-based query language desig
 | `asset_partitions` | Partitions on a per Asset basis and Hygiene related to these | Understand and improve Hygiene state Note: Part of the Reveal plan |
 | `asset_accounts` | Listing local users accounts related to the Asset | Impact analysis and incident correlation Note: Part of the Reveal plan |
 
-
+With the `events` dataset, you will receive events that are retained for the duration of your hot storage. Use the `eternal_events` input if you need to access events related to an alert that are beyond your hot storage retention period.
 
 ### Alerts properties
 
