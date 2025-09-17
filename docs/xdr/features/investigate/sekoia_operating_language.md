@@ -1684,8 +1684,7 @@ events
 | project host.name, total_count
 
 ```
-`project` and `select` are aliases. They are exactly the same command
-
+Please note: the `select` command can also be used. `select` and `project` are aliases and both return the same results.
 ---
 
 ### host.os.type per Sekoia endpoint agent
