@@ -1,7 +1,10 @@
-Changelog _last update on 2025-09-16_
+Changelog _last update on 2025-09-18_
 
 ## Changelog
 
+### Advanced IP Scanner
+  - 18/09/2025 - minor - Similarity strategy updated.
+    
 ### In-memory PowerShell
   - 05/09/2025 - minor - Filter some FPs
     
