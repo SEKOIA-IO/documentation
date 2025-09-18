@@ -10,9 +10,9 @@ Sekoia Operating Language (`SOL`) is a powerful, pipe-based query language desig
 
 | Data Source | Description | Use Cases |
 |-------------|-------------|-----------|
-| `events` | Security events | Threat hunting, incident investigation, SOC reporting |
+| `events` | Security events | Threat hunting, incident investigation, SOC reporting. You will receive events that are retained for the duration of your hot storage |
 | `event_telemetry` | Telemetry on events | Analytics on your ingestion pipelines |
-| `eternal_events` | Security events related to alerts or cases | Extract metrics from events related to alerts/cases |
+| `eternal_events` | Security events related to alerts or cases | Extract metrics from events related to alerts/cases. Access events related to an alert that are beyond your hot storage retention period |
 | `alerts` | Security alerts and detections | SOC monitoring, alert pattern analysis |
 | `cases` | Security incidents and cases | Case management, incident correlation |
 | `intakes` | Data sources | Data source management, volume monitoring |
@@ -21,8 +21,6 @@ Sekoia Operating Language (`SOL`) is a powerful, pipe-based query language desig
 | `asset_properties` | Listing known properties related to the Asset | Asset Investigations |
 | `asset_partitions` | Partitions on a per Asset basis and Hygiene related to these | Understand and improve Hygiene state Note: Part of the Reveal plan |
 | `asset_accounts` | Listing local users accounts related to the Asset | Impact analysis and incident correlation Note: Part of the Reveal plan |
-
-
 
 ### Alerts properties
 
