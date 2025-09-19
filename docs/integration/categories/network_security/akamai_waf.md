@@ -11,9 +11,6 @@ Akamai Web Application Firewall (WAF) is a cloud-based security solution designe
 - **Detection based on**: Alert
 - **Supported application or feature**: Web application firewall logs
 
-!!! warning
-    Important note - This format is currently in beta. We highly value your feedback to improve its performance.
-
 ## Configure
 
 ### Create EdgeGrid authentication credentials

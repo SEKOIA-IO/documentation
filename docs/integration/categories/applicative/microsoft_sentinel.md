@@ -15,9 +15,6 @@ type: intake
 
 Microsoft Sentinel is a cloud-native security information and event management (SIEM) service that provides intelligent security analytics for your entire enterprise at cloud scale. Get immediate visibility into your cloud, on-premises, and hybrid environments. Detect and respond to threats with built-in machine learning and artificial intelligence.
 
-!!! Warning
-    Important note - This format is currently in beta. We highly value your feedback to improve its performance.
-
 ## Specification
 
 ### Prerequisites

@@ -32,9 +32,6 @@ Bitdefender GravityZone is an enterprise-level cybersecurity solution offering a
     - Internet Connection
     - Malware Outbreak
 
-!!! Warning
-    Important note - This format is currently in beta. We highly value your feedback to improve its performance.
-
 ## Configure
 
 This setup guide will show you how to forward your Bitdefender GravityZone events to Sekoia.io.

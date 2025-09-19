@@ -12,9 +12,6 @@ Olfeo SaaS is a suite of cybersecurity features for analyzing, filtering and sec
 - **Detection based on**: Telemetry
 - **Supported application or feature**: Network web traffic
 
-!!! Warning
-    Important note - This format is currently in beta. We highly value your feedback to improve its performance.
-
 
 ## Specification
 

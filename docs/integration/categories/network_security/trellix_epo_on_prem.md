@@ -6,10 +6,6 @@ type: intake
 
 Trellix ePO is a centralized security management platform to orchestrate and manage all endpoints.
 
-!!! warning
-    Important note - This format is currently in beta. We highly value your feedback to improve its performance.
-
-
 - **Vendor**: Trellix
 - **Supported environment**: On Prem
 - **Version compatibility**: 5.10

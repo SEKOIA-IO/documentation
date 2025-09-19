@@ -11,9 +11,6 @@ type: intake
 - **Supported application or feature**:
     - Cloud Configuration Findings
 
-!!! Warning
-    Important note - This format is currently in beta. We highly value your feedback to improve its performance.
-
 ## Configure
 
 ### Pre-requisite

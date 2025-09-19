@@ -11,9 +11,6 @@ type: intake
 - **Supported application or feature**:
     - Audit Events
 
-!!! Warning
-    Important note - This format is currently in beta. We highly value your feedback to improve its performance.
-
 ## Configure
 
 ### How to create credentials

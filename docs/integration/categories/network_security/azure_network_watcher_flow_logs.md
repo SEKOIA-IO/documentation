@@ -5,9 +5,6 @@ type: intake
 ## Overview
 Azure Network Watcher provide insights into the traffic flowing within and out of your Azure Virtual Network. Virtual Network flow logs capture detailed information about allowed and denied network traffic, helping to enhance security and network monitoring. Sending flow logs to Sekoia.io will allow you to detect threats from the IP traffic, thanks to daily contextualized and actionable cyber threat indicators.
 
-!!! Warning
-    Important note - This format is currently in beta. We highly value your feedback to improve its performance.
-
 - **Vendor**: Microsoft Azure
 - **Supported environment**: SaaS
 - **Detection based on**: Telemetry
