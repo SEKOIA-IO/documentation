@@ -2456,6 +2456,15 @@ In this section, you will find examples of raw logs as generated natively by the
 
 
 
+=== "test_username"
+
+
+    ```json
+	1,2025/08/06 15:11:22,016301005120,SYSTEM,auth,2817,2025/08/06 15:11:23,,auth-success,Auth_Seq_RAH,0,0,general,informational,"Kerberos SSO authenticated for user 'toto'. realm 'RXX-R.XXXX', auth profile 'Auth_Seq_RAL', vsys 'shared',",7512418093042533211,0x0,0,0,0,0,,HOST_01,0,0,2025-08-06T15:11:23.221+02:00
+    ```
+
+
+
 === "test_web_authentication_json"
 
 
