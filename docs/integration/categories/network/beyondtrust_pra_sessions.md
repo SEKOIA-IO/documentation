@@ -8,9 +8,6 @@ BeyondTrust Privileged Remote Access enables secure, controlled remote access to
 
 This integration allows you to ingest BeyondTrust Privileged Remote Access session logs into Sekoia.io, enabling you to monitor and analyze privileged access activities.
 
-!!! Warning
-    Important note - This format is currently in beta. We highly value your feedback to improve its performance.
-
 - **Vendor**: BeyondTrust
 - **Supported environment**: SaaS
 - **Detection based on**: Telemetry
