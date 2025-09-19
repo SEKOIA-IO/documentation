@@ -21,7 +21,7 @@ pip install sekoia-automation-sdk
 
 If you previously installed Sekoia's automation SDK, please make sure you are running the latest version by using this command:
 ```shell
-sekoia-automation update-sdk-version
+pip install --upgrade sekoia-automation-sdk
 ```
 
 ## Initialize the module
