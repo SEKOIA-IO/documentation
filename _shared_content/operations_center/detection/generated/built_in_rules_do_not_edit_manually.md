@@ -1,4 +1,4 @@
-Rules catalog includes **1044 built-in detection rules** ([_last update on 2025-09-16_](rules_changelog.md)).
+Rules catalog includes **1044 built-in detection rules** ([_last update on 2025-09-18_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Identity Information**
 
@@ -12950,6 +12950,10 @@ Rules catalog includes **1044 built-in detection rules** ([_last update on 2025-
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 18/09/2025 - minor - Similarity strategy updated.
+            
 ??? abstract "Anomaly Internal Port Connection"
     
     Detects multiple scan of different ports on internal network.
