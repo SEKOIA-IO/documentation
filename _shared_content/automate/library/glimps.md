@@ -17,7 +17,7 @@ Glimps offers a DeepLearning solution to detect, analyze and classify malwares. 
 
 ## Actions
 
-### [TEST] Analyse a file
+### Analyse a file
 
 Submit file to Glimps Detect to be analysed
 
@@ -44,7 +44,7 @@ Submit file to Glimps Detect to be analysed
 | `status` | `boolean` | False means that an error occured |
 | `uuid` | `string` | UUID of the submitted analysis |
 
-### [TEST] Analyse a file and wait for result
+### Analyse a file and wait for result
 
 Submit file to Glimps Detect to be analysed and wait for its results
 
@@ -73,7 +73,7 @@ Submit file to Glimps Detect to be analysed and wait for its results
 | `analysis` | `` | Analysis response details |
 | `view_url` | `string` | Analysis URL |
 
-### [TEST] Export analysis result
+### Export analysis result
 
 Export analysis result with the requested layout and format
 
@@ -86,7 +86,7 @@ Export analysis result with the requested layout and format
 | `layout` | `string` | Export layout |
 | `is_full` | `string` | Export full analysis or summarized |
 
-### [TEST] Get profile status
+### Get profile status
 
 Get Glimps detect profile status, it includes quotas, eastimated analysis duration and cache
 
@@ -99,7 +99,7 @@ Get Glimps detect profile status, it includes quotas, eastimated analysis durati
 | `cache` | `boolean` | If True, the profile is configured to use cached result by default |
 | `estimated_analysis_duration` | `integer` | Estimation of the duration for the next submissions in milliseconds. It's based on the average time of submissions and the submission queue state. The real duration could differ from the estimation |
 
-### [TEST] Retrieve analysis
+### Retrieve analysis
 
 Retrieve the analysis matching the given uuid
 
@@ -232,4 +232,4 @@ Search an analysis for a given sha256 input file
 
 ## Extra
 
-Module **`GLIMPS` v1.14.2**
+Module **`GLIMPS` v1.14.3**
