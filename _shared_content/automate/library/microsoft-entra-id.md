@@ -163,7 +163,7 @@ Invalidates all the refresh tokens issued to applications for a user. Requires t
 
 1. Go to `Manage` > `Certificates & secrets`
 2. Click `+ New client secret`
-3. Type a description and select the desirated expiration period
+3. Type a description and select the desired expiration period
 4. Click `Add`
 5. Copy the `Value` of the client secret
 
