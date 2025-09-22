@@ -146,4 +146,4 @@ Invalidates all the refresh tokens issued to applications for a user. Requires t
 
 ## Extra
 
-Module **`Microsoft Entra ID` v2.8.5**
+Module **`Microsoft Entra ID` v2.9.0**
