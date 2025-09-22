@@ -6,9 +6,6 @@ type: intake
 
 Seckiot Citadelle is an integrated cybersecurity platform designed for industrial control systems (ICS) and operational technology (OT) environments, providing comprehensive threat detection, asset discovery, and vulnerability management to safeguard critical infrastructure.
 
-!!! Warning
-    Important note - This format is currently in beta. We highly value your feedback to improve its performance.
-
 - **Vendor**: Seckiot
 - **Supported environment**: On Premise & Cloud
 - **Version compatibility, if applicable**: 25.5 and more
