@@ -1,4 +1,4 @@
-Rules catalog includes **1044 built-in detection rules** ([_last update on 2025-09-22_](rules_changelog.md)).
+Rules catalog includes **1044 built-in detection rules** ([_last update on 2025-09-23_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Identity Information**
 
@@ -11809,6 +11809,7 @@ Rules catalog includes **1044 built-in detection rules** ([_last update on 2025-
         - 06/04/2023 - minor - Whitelisted another SourceImage as it triggered too many false positives.
         - 21/06/2023 - minor - Whitelisted lsm.exe that triggered too many false positives.
         - 26/03/2024 - major - Rule's pattern field changed
+        - 23/09/2025 - minor - Adding filters to avoid false positives.
             
 ??? abstract "NTDS.dit File In Suspicious Directory"
     
@@ -13267,6 +13268,7 @@ Rules catalog includes **1044 built-in detection rules** ([_last update on 2025-
     - **Changelog:**
     
         - 12/10/2023 - minor - Slight change to a condition in order to reduce false positives.
+        - 23/09/2025 - minor - Improving selection in order to reduce false positives.
             
 ??? abstract "Bloodhound and Sharphound Tools Usage"
     

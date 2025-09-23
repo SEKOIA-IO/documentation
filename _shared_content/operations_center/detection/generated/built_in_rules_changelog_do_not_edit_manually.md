@@ -1,7 +1,13 @@
-Changelog _last update on 2025-09-22_
+Changelog _last update on 2025-09-23_
 
 ## Changelog
 
+### Mimikatz LSASS Memory Access
+  - 23/09/2025 - minor - Adding filters to avoid false positives.
+    
+### AdFind Usage
+  - 23/09/2025 - minor - Improving selection in order to reduce false positives.
+    
 ### Advanced IP Scanner
   - 18/09/2025 - minor - Similarity strategy updated.
     
@@ -740,9 +746,6 @@ Changelog _last update on 2025-09-22_
 ### Python Opening Ports
   - 26/03/2024 - major - Rule's pattern field changed
     
-### Mimikatz LSASS Memory Access
-  - 26/03/2024 - major - Rule's pattern field changed
-    
 ### AD Privileged Users Or Groups Reconnaissance
   - 26/03/2024 - major - Rule's pattern field changed
     
@@ -1120,9 +1123,6 @@ Changelog _last update on 2025-09-22_
     
 ### Transfering Files With Credential Data Via Network Shares
   - 17/10/2023 - minor - Improve selection to reduce false positives
-    
-### AdFind Usage
-  - 12/10/2023 - minor - Slight change to a condition in order to reduce false positives.
     
 ### Microsoft 365 (Office 365) Potential Ransomware Activity Detected
   - 09/10/2023 - major - Fix field names to match the current parser.
