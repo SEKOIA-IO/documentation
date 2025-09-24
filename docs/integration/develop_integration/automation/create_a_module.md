@@ -16,7 +16,7 @@ If not already done, install the Sekoia's automation SDK. This SDK contains vari
 pip install sekoia-automation-sdk
 ```
 !!! note
-    The SDK needs a Python version equal or newer to 3.10.
+    The SDK needs a Python version equal or newer to 3.11.
     You can check the installed version on your system with the command `python -V`.
 
 If you previously installed Sekoia's automation SDK, please make sure you are running the latest version by using this command:
@@ -57,9 +57,6 @@ TestHTTP
 
 Our connector, trigger, and action will use the `requests` library to send HTTP requests.
 The first step is to add this package to our requirements.
-
-!!! note
-    If poetry is not installed on your system you may need to run `pip install poetry` before going further.
 
 Poetry can be used to add the requirements by simply running in the `TestHTTP` root directory:
 
