@@ -1,7 +1,10 @@
-Changelog _last update on 2025-09-23_
+Changelog _last update on 2025-09-24_
 
 ## Changelog
 
+### Okta User Logged In From Multiple Countries
+  - 24/09/2025 - minor - Improving selection in order to reduce false positives
+    
 ### Mimikatz LSASS Memory Access
   - 23/09/2025 - minor - Adding filters to avoid false positives.
     

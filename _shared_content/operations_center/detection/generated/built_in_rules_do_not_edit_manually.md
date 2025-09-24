@@ -1,4 +1,4 @@
-Rules catalog includes **1044 built-in detection rules** ([_last update on 2025-09-23_](rules_changelog.md)).
+Rules catalog includes **1044 built-in detection rules** ([_last update on 2025-09-24_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Identity Information**
 
@@ -678,6 +678,10 @@ Rules catalog includes **1044 built-in detection rules** ([_last update on 2025-
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 24/09/2025 - minor - Improving selection in order to reduce false positives
+            
 ??? abstract "Okta User Logged In Multiple Applications"
     
     Detection of login events on multiple application.
