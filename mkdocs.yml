@@ -43,6 +43,7 @@ nav:
     - Account security:
       - Two-Factor Authentication: getting_started/account_security.md
       - Security tokens: getting_started/securitytokens.md
+      - Password Management Policy: getting_started/password_management_policy.md
     - Workspace security:
       - Session duration: getting_started/session_duration.md
       - Two-Factor Authentication: getting_started/twofactor_workspace.md
