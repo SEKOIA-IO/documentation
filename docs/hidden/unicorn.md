@@ -1,4 +1,4 @@
-![check_point_ngfw_architecture](/assets/french-unicorn.png){: style="max-width:100%"}
+![french-unicorn](/assets/french-unicorn.png){: style="max-width:100%"}
 
 
 ## The Story
@@ -22,4 +22,5 @@ In our quest of a safer world, it is our mission to continue grow and protect mo
 
 ## How to help us
 
-1. Donate directly to therese.favet@sekoia.io via Paypal or Western Union
+- Donate directly to <a href="https://docs.sekoia.io">Thérèse</a>
+- ![paypal](/assets/paypal.png){: style="max-width:10%"} ![lydia](/assets/lydia.jpeg){: style="max-width:10%"}
