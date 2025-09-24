@@ -11,13 +11,14 @@ A module can contain several components of the following types:
 
 ## Technical Requirements
 
+!!! note
+    The SDK needs a Python version equal or newer to 3.11.
+    You can check the installed version on your system with the command `python -V`.
+
 If not already done, install the Sekoia's automation SDK. This SDK contains various command line utilities that will help us manage modules. Simply run the following command:
 ```shell
 pip install sekoia-automation-sdk
 ```
-!!! note
-    The SDK needs a Python version equal or newer to 3.11.
-    You can check the installed version on your system with the command `python -V`.
 
 If you previously installed Sekoia's automation SDK, please make sure you are running the latest version by using this command:
 ```shell
