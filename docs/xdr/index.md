@@ -42,3 +42,14 @@ Automating your security improves your cybersecurity operations by consolidating
 ### Report
 
 - Review your Security with dedicated [Dashboards](features/report/dashboards.md) or build your own control center.
+
+### Reveal (Asset Visibility & Inventory)
+
+Reveal is an add-on module that continuously discovers, **unifies**, and contextualizes your assets (hosts, accounts, networks). It merges data from **third-party asset inventories**, **vulnerability management** tools, the **Sekoia Endpoint Agent** and **passive asset identication** through analysis of intakes into a single, unified Asset Inventory.  
+
+Each asset is enriched with a **Timeline**, **Hygiene** posture, **Vulnerabilities**, and **Points of Interest**. Open the **Asset Context Panel** from **Alerts**, **Cases**, **Events**, or **Assets** to see identity, activity, and risk in place — speeding up triage and decisions.  
+
+#### Get started
+1. **Connect sources:** Deploy the [Sekoia Endpoint Agent](https://docs.sekoia.io/integration/categories/endpoint/sekoiaio/#enabling-host-hygiene-collection) and integrate your [asset inventory](https://docs.sekoia.io/xdr/features/collect/integrations_hub/) and [vulnerability management](https://docs.sekoia.io/xdr/features/collect/integrations_hub/) tools.  
+2. **Curate inventory:** Assign **criticality**, **tags**, and owners; resolve duplicates and address coverage gaps through your [asset inventory](https://docs.sekoia.io/xdr/features/collect/assets/#your-asset-inventory).  
+3. **Investigate:** Use the [Asset Context Panel](/xdr/reveal/asset-panel) anywhere to act on context.
