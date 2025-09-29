@@ -1,4 +1,4 @@
-Rules catalog includes **1044 built-in detection rules** ([_last update on 2025-09-24_](rules_changelog.md)).
+Rules catalog includes **1045 built-in detection rules** ([_last update on 2025-09-29_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Identity Information**
 
@@ -1823,6 +1823,12 @@ Rules catalog includes **1044 built-in detection rules** ([_last update on 2025-
         - 26/03/2024 - major - Rule's pattern field changed.
         - 26/06/2025 - major - Pattern updated to avoid false positives and effort level changed to be coherent.
             
+??? abstract "WerFaultSecure Abuse"
+    
+    Detect usage of the software vulnerability of WerFaultSecure to suspend the processes of EDRs, and bypass detection. It has been implemented in the tool EDR-Freeze.
+    
+    - **Effort:** advanced
+    
 ??? abstract "Windows Sandbox Start"
     
     Detection of Windows Sandbox started from the command line with a config file or interactively using a WSB file.
