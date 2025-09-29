@@ -35,7 +35,6 @@ For each category, there are additional sub-categories to add an optional additi
 | Host | Desktop, server, mobile |
 | Network | IPv4, IPv6 |
 
-
 ### Criticality
 
 The asset criticality value is a numerical indicator that represents the level of criticality or importance of each asset within the organization's IT infrastructure. It ranges from 0 to 100, where 0 indicates that the asset has no criticality or minimal importance, and 100 signifies maximum criticality, denoting assets crucial for the organization's operations.
@@ -98,24 +97,44 @@ The Asset Listing page supports bulk actions, allowing you to perform operations
 !!! note
     Applying an action to a large number of assets (e.g., 10,000 assets) might take some time to process in the background. While the results won't appear instantly, the system is working, and changes will reflect gradually.
     
-### Manual Asset Creation
-
-![Assets-list](/assets/operation_center/assets_v2/assets-list.png){align="center", style="max-width:100%"}
 
 
-To create an asset from our UI, you have to:
+### Asset Discovery
 
-1. Click on `Assets` in the principal menu on the left
-2. Click on the `+ New Asset` button and selects the category of the asset you want to create,
-3. Give it a name and mark it as reviewed if you believe your new asset is qualified
-4. Determine its sub-category
-5. Define a set of optional tags you want to attach to your asset
-6. Give it a description along with all the `Contextual Properties` you want
-7. Don't forget to define its criticality
-8. Define all the `Detection Properties` that will be used to recognize the asset among your events
+Reveal supports *multi-source asset discovery*, combining several complementary methods to build a unified, contextualized Asset Inventory.  
+This approach ensures maximum coverage of your environment, reduces blind spots, and provides redundancy when a single source of truth is incomplete.  
+By correlating multiple identifiers and data feeds, Reveal helps analysts quickly understand what assets exist, their context, and their security posture.  
 
+The three supported discovery methods are:  
 
-### Automatic Asset Discovery
+1. **Asset Collection via Asset Connectors** *(Reveal add-on module capability)*  
+2. **Automatic Asset Discovery (via Events)**  
+3. **Manual Asset Creation**  
+
+Each method has unique strengths. Together, they deliver complete asset visibility.
+
+#### Asset Collection via Asset Connectors (Reveal add-On module) - Coming soon!
+
+**How it works:**  
+- Asset Connectors pull structured asset data directly from external systems like:  
+  - Endpoint Detection & Response (EDR) platforms  
+  - Vulnerability Management tools  
+  - Cloud/CMDB sources  
+- Each connector continuously synchronizes assets into Reveal, keeping the inventory current.  
+- Collected assets can override or enrich attributes discovered automatically (e.g., “OS = Windows 11” from the EDR is authoritative).  
+- Duplicates from multiple connectors are merged into a single asset record.  
+- Admins can manage connectors in **Configure → Asset Connectors**: add, test, enable/disable, or delete.  
+
+**When to use it:**  
+- Recommended for critical systems where authoritative data is available (e.g., EDR agent data for all endpoints).  
+- Complements automatic discovery by ensuring attributes are correct and complete.  
+
+**Why it matters:**  
+- Provides **trusted data** from security controls (less noise than event-only discovery).  
+- Ensures consistency across security tools (same asset metadata shared across Sekoia, EDR, VM).  
+- Reduces reliance on logs alone, especially for assets with limited event coverage.  
+
+#### Automatic Asset Discovery
 
 In Sekoia.io, **Asset Discovery is the live process of passively finding and consolidating assets from your events**.
 
@@ -126,7 +145,16 @@ It is based on the idea that events contain two kinds of fields :
 
 In Sekoia.io, event field values that implicitly map to an asset are called **“atoms”**.
 
-### What is an Atom?
+**When to use it:**  
+- Always active if event ingestion is configured.  
+- Best for environments where log coverage is strong but external CMDBs or scanners aren’t integrated.  
+
+**Why it matters:**  
+- Ensures no asset is missed, even if not registered elsewhere.  
+- Detects “shadow IT” or rogue devices purely from event traces.  
+- Provides forensic depth by retaining historical identity–asset mappings. 
+
+##### What is an Atom?
 
 Atoms are unambiguous but non-trivial identifiers of real world assets.
 
@@ -146,7 +174,7 @@ Although these assets are not yet fully qualified, tracking atoms is still valua
 
 Atoms may be seen as the Operation Center equivalent of **observables** in the Intelligence Center. Although very similar, those concepts have been worded differently because observables in an threat-intelligence context may be understood as external indicators candidate to be tagged as Indicators of Compromise (IoC). Atoms primarily serve as internal observables, specifically related to the supervised network, rather than functioning as global threat-intelligence objects.
 
-#### Tracked Atoms and their related event fields
+###### Tracked Atoms and their related event fields
 
 The following table lists the atom types and their related event fields that are currently tracked by Sekoia.io:
 
@@ -161,15 +189,15 @@ The following table lists the atom types and their related event fields that are
 | sid | `user.id`, `related.user`, `client.user.id` |
 
 
-## Asset Discovery Rules
+#### Asset Discovery Rules
 
-### Attach Operating System (OS) to Host
+##### Attach Operating System (OS) to Host
 
 **Set the Contextual Property `os` to Host**
 
 This rule enriches an existing asset with an `os` contextual property. This property is extracted from the value of all the `os` related fields of an event where its `host.name` field matches the `hostname` detection property of the asset. In addition, this rule categorizes the asset as a Server if the `host.type` contains `server`.
 
-### Attach EDR agent IDs to Host
+##### Attach EDR agent IDs to Host
 
 **Set the Contextual Property `edr_agent_id` to Host**
 
@@ -177,21 +205,21 @@ This rule enriches an existing asset with the `edr_agent_id` contextual property
 
 Note that this rule only applies to assets of `Host` category and that a single host can have multiple EDR agent IDs.
 
-### Discover unique Hosts
+##### Discover unique Hosts
 
 This rule creates a new asset for every unseen `host.name`. It also suggests the `ipv4` and `ipv6` stored in field `host.ip` of the event as detection properties of the newly created asset.
 
-### Discover unique Accounts
+##### Discover unique Accounts
 
 This rule creates a new asset for every unseen `user.name`. It attaches the `user.email` and `user.id` event field values as detection property of the newly created asset.
 
 Questions? Please read our [FAQ](../../FAQ/Assets_qa.md).
 
-## Asset based detections
+#### Asset based detections
 
 The Sekoia.io SOC platform supports the creation of detection patterns for rules or alert-filters that can be customized to apply to specific groups of assets. This feature allows you to enhance the scope of detection by targeting groups of assets that share certain attributes, such as critical servers, or by tuning the detection rules to exclude certain assets, like administrator accounts. This is accomplished by leveraging various asset attributes, as detailed below.
 
-### Asset fields
+##### Asset fields
 
 The following table lists the available fields for defining asset-based detection patterns, along with their types and example values:
 
@@ -206,11 +234,11 @@ The following table lists the available fields for defining asset-based detectio
 !!! Warning
     Some of the fields listed above are removed from the events before indexing them, but they can be used in detection and filtering patterns. Indexed events will thus only contain `sekoia.assets.*.uuid`, `sekoia.assets.*.name`, `sekoia.assets.*.criticality_value`, `sekoia.any_asset.uuid`, `sekoia.any_asset.name` and `sekoia.any_asset.criticality_value`.
 
-### Use Case Example
+##### Use Case Example
 
 To demonstrate the capabilities of asset-based detections, consider the following use case. You can create custom tags and apply them to a list of assets manually or by using a script and available APIs. Once tagged, these assets can be used in detection rules or alert filters to fine-tune the detection scope.
 
-#### Example 1: Detection Rule
+###### Example 1: Detection Rule
 
 The following Sigma pattern demonstrates how to create a detection rule that targets assets tagged with "my_custom_tag_for_critical_servers":
 
@@ -223,7 +251,7 @@ detection:
   condition: selection
 ```
 
-#### Example 2: Alert Filter
+###### Example 2: Alert Filter
 
 The following Sigma pattern demonstrates how to create an alert filter that excludes assets tagged with "my_custom_tag_for_admin_assets":
 
@@ -240,15 +268,28 @@ By using custom tags, you can precisely control which assets are included in or 
     !!! Note
     There is no need to add the `contains` modifier when referring to a tag. Because the `sekoiaio.any_asset.tags` field is a list, `sekoiaio.any_asset.tags: mytag` already means "match if any of the tags is mytag".
 
+### Manual Asset Creation
 
+![Assets-list](/assets/operation_center/assets_v2/assets-list.png){align="center", style="max-width:100%"}
 
-## Asset Based Investigation
+To create an asset from our UI, you have to:
+
+1. Click on `Assets` in the principal menu on the left
+2. Click on the `+ New Asset` button and selects the category of the asset you want to create,
+3. Give it a name and mark it as reviewed if you believe your new asset is qualified
+4. Determine its sub-category
+5. Define a set of optional tags you want to attach to your asset
+6. Give it a description along with all the `Contextual Properties` you want
+7. Don't forget to define its criticality
+8. Define all the `Detection Properties` that will be used to recognize the asset among your events
+
+### Asset Based Investigation
 
 In addition to their role in managing security risks, assets in Sekoia.io support investigation based on analytics on their past behaviors. By analyzing asset activity and behavior patterns, you can identify potential patterns of malicious activity or security breaches. This information can be used to investigate and identify potential security risks.
 
 The asset investigation feature provides a detailed view of an asset's history, including past events for a specific set of activities. This allows you to quickly identify any unusual activity and take appropriate action.
 
-### Authentications
+#### Authentications
 
 Authentications are an essential part of securing a perimeter. Analyzing all the authentications of an asset provides a comprehensive view of its security posture. In this view, the user can easily spot all the authentications of an asset.
 
@@ -269,7 +310,7 @@ This page also shows the trend of the top 10 target accounts of the authenticati
 
 By leveraging this detailed authentication data, users can enhance their understanding of the asset's security posture and take proactive measures to mitigate potential security threats.
 
-#### Pivoting for Detailed Investigation
+##### Pivoting for Detailed Investigation
 
 Each entry in the authentication logs supports pivoting to the detailed view of the source and target hosts and accounts. 
 
