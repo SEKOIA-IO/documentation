@@ -1,4 +1,4 @@
-Changelog _last update on 2025-09-29_
+Changelog _last update on 2025-09-30_
 
 ## Changelog
 
@@ -914,6 +914,9 @@ Changelog _last update on 2025-09-29_
 ### Non-Legitimate Executable Using AcceptEula Parameter
   - 19/02/2024 - minor - Update filter and effort level according to the observed hits for the rule.
     
+### AWS GuardDuty High Severity Alert
+  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+    
 ### SentinelOne EDR Suspicious Threat Not Mitigated (Medium Confidence)
   - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
     
@@ -1020,9 +1023,6 @@ Changelog _last update on 2025-09-29_
   - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
     
 ### AWS CloudTrail GuardDuty Detector Deleted
-  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
-    
-### AWS GuardDuty High Severity Alert
   - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
     
 ### Okta Phishing Detection with FastPass Origin Check
