@@ -179,6 +179,147 @@ In addition to the verified rules that are already built-in, you can create your
 
 The Rule creation form has the following sections:
 
+### Rule testing
+
+The Sigma Pattern Testing feature allows SOC analysts to validate detection rules against historical data before production deployment, reducing alert noise and improving detection accuracy. This capability addresses critical operational challenges by enabling thorough rule validation without disrupting production.
+
+#### Testing overview
+
+Pattern testing provides two distinct testing modes:
+
+- **Rule Testing**: Validate new or existing Sigma detection patterns against historical event data
+- **Alert Filter Testing**: Test alert exclusion patterns to optimize filtering and reduce false positives
+
+Both testing modes help prevent non-relevant alerts, increase detection accuracy, and enable rule threshold tuning in a controlled environment.
+
+#### When to use pattern testing
+
+Use pattern testing in the following scenarios:
+
+- Before deploying new Sigma rules
+- When optimizing existing detection rules
+- Before implementing alert filters for noise reduction
+- When analyzing rule performance over different time periods
+
+#### Rule testing
+
+Rule testing allows you to evaluate how a Sigma pattern performs against historical data, providing insights into detection frequency and event distribution patterns.
+
+##### Accessing rule testing
+
+1. Navigate to the Rules Catalog page
+2. Create a new rule
+3. Click the **Test pattern** button to open the testing modal
+
+![test-pattern](/assets/operation_center/rules_catalog/rules-test-pattern.gif){: style="max-width:100%"}
+
+##### Testing interface
+
+The testing modal displays the following components:
+
+- **Sigma Pattern**: The detection pattern to be tested
+- **Time Range Selector**: Choose from 7, 30, or 60 days of historical data
+- **Test Pattern Button**: Launches the pattern testing process
+
+![test-modal](/assets/operation_center/rules_catalog/rule-test-modal.png){: style="max-width:100%"}
+
+##### Running a test
+
+1. **Select Time Range**: Choose the historical data period (7, 30, or 60 days)
+2. **Review Pattern**: Verify the Sigma pattern is correct
+3. **Launch Test**: Click **Test pattern** to begin testing
+4. **Analyze Results**: Review the dual visualization output
+
+##### Test results visualization
+
+Test results are presented in two complementary formats:
+
+![test-results](/assets/operation_center/rules_catalog/rule-test-results.png){: style="max-width:100%"}
+
+**1. Chronological Bar Graph**
+- Displays event distribution over time period
+- Helps identify temporal patterns and detection frequency
+- Useful for understanding rule behavior across different time periods
+- Shows number of matched events
+
+**2. Detailed Event List**
+- Provides drill-down access to individual matching events
+- **Show fields** component to select relevant event property to display
+- **Show more** button for progressive loading of additional results
+
+![test-results-values](/assets/operation_center/rules_catalog/rule-test-results-values.gif){: style="max-width:100%"}
+
+**3. Event Property Analysis**
+- Top 10 value distribution analysis for each event property
+- Percentage-based breakdown of property values
+- Helps identify patterns and potential tuning opportunities
+
+##### Interpreting results
+
+- **High Event Count**: May indicate overly broad detection criteria
+- **Temporal Clustering**: Events concentrated in specific time periods may suggest targeted attacks or system behavior
+- **Property Distribution**: Uneven distribution may indicate opportunities for rule refinement
+
+#### Alert filter testing
+
+Alert filter testing provides enhanced capabilities for validating exclusion patterns, with additional context about existing alerts and their relationship to the filter being tested.
+
+##### Enhanced testing interface
+
+Alert filter testing includes all rule testing components plus:
+
+**Alert Correlation Table**
+- Lists existing alerts related to the same detection rule
+- Visual indicator highlight the current alert context
+- Displays alert metadata: ID, rule name, creation date, and status
+- **Matches Filter**: Boolean indicator showing whether the pattern fully excludes the alert. Helps verify filter effectiveness and coverage
+
+![test-rule-alerts](/assets/operation_center/rules_catalog/rule-test-alerts.png){: style="max-width:100%"}
+
+##### Alert filter testing process
+
+1. **Access Filter Testing**: Click **Test pattern** when creating an alert filter
+2. **Review Alert Context**: Examine the alert correlation table to understand current alert landscape
+3. **Configure Filter Pattern**: Define or modify the exclusion pattern
+4. **Select View Mode**: Use segmented control to toggle between:
+   - **Matching Events**: Events that match the filter pattern (will be excluded)
+   - **Non-matching Events**: Events that don't match the filter pattern (will still generate alerts)
+5. **Analyze Coverage**: Review both matching and non-matching events to ensure proper filter scope
+
+![test-rule-matching](/assets/operation_center/rules_catalog/rule-test-matching.png){: style="max-width:100%"}
+
+##### Alert filter testing best practices
+
+**Pattern Refinement**
+- Review non-matching events to identify gaps in filter coverage
+- Adjust filter patterns to achieve desired exclusion scope
+- Balance between noise reduction and detection sensitivity
+
+**Validation Workflow**
+1. Test with **Matching Events** view to confirm intended exclusions
+2. Switch to **Non-matching Events** view to verify legitimate alerts remain
+3. Iterate pattern adjustments based on both views
+4. Validate filter effectiveness using the **Matches Filter** indicator
+
+#### Testing best practices
+
+##### Pattern development
+- Start with broader patterns and refine based on test results
+- Use multiple time ranges to validate pattern consistency
+- Consider seasonal or business cycle impacts on detection patterns
+
+##### Performance considerations
+- Longer time ranges provide more comprehensive data but take longer to process
+- Focus on recent time periods (7-30 days) for current threat landscape validation
+- Use 60-day ranges for comprehensive historical analysis
+
+##### Threshold tuning
+- Analyze event frequency to set appropriate detection thresholds
+- Consider normal business operations when setting alert frequency expectations
+- Use temporal patterns to identify optimal detection windows
+
+This comprehensive testing framework ensures detection rules are thoroughly validated before production deployment, maintaining high detection accuracy while minimizing operational disruption.
+
 #### General definition of the rule
 - The rule name is mandatory during the creation, it will be used to name the corresponding raised alerts by default. You can add an optional description below.
 - Select the effort level required and the threats detected with this rule if any, by selecting it from the MITRE ATT&CK or by using the search bar through keywords or the drop-down list.
