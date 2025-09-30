@@ -1,4 +1,4 @@
-Rules catalog includes **1045 built-in detection rules** ([_last update on 2025-09-29_](rules_changelog.md)).
+Rules catalog includes **1045 built-in detection rules** ([_last update on 2025-09-30_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Identity Information**
 
@@ -5465,6 +5465,7 @@ Rules catalog includes **1045 built-in detection rules** ([_last update on 2025-
     
     - **Changelog:**
     
+        - 30/09/2025 - minor - Update selection to improve detection
         - 28/08/2025 - minor - Filter some FPs on key values
         - 21/06/2024 - major - Update detection pattern for ECS fields/value compliance, and filter some FPs
             
@@ -6902,6 +6903,7 @@ Rules catalog includes **1045 built-in detection rules** ([_last update on 2025-
     
     - **Changelog:**
     
+        - 30/09/2025 - minor - Update selection to improve detection
         - 28/08/2025 - minor - Filter some FPs on key values
         - 21/06/2024 - major - Update detection pattern for ECS fields/value compliance, and filter some FPs
             
@@ -8643,6 +8645,7 @@ Rules catalog includes **1045 built-in detection rules** ([_last update on 2025-
     
     - **Changelog:**
     
+        - 30/09/2025 - minor - Update selection to improve detection
         - 28/08/2025 - minor - Filter some FPs on key values
         - 21/06/2024 - major - Update detection pattern for ECS fields/value compliance, and filter some FPs
             
