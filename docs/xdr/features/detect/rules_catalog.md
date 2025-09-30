@@ -237,12 +237,14 @@ Test results are presented in two complementary formats:
 ![test-results](/assets/operation_center/rules_catalog/rule-test-results.png){: style="max-width:100%"}
 
 **1. Chronological Bar Graph**
+
 - Displays event distribution over time period
 - Helps identify temporal patterns and detection frequency
 - Useful for understanding rule behavior across different time periods
 - Shows number of matched events
 
 **2. Detailed Event List**
+
 - Provides drill-down access to individual matching events
 - **Show fields** component to select relevant event property to display
 - **Show more** button for progressive loading of additional results
@@ -250,6 +252,7 @@ Test results are presented in two complementary formats:
 ![test-results-values](/assets/operation_center/rules_catalog/rule-test-results-values.gif){: style="max-width:100%"}
 
 **3. Event Property Analysis**
+
 - Top 10 value distribution analysis for each event property
 - Percentage-based breakdown of property values
 - Helps identify patterns and potential tuning opportunities
@@ -269,6 +272,7 @@ Alert filter testing provides enhanced capabilities for validating exclusion pat
 Alert filter testing includes all rule testing components plus:
 
 **Alert Correlation Table**
+
 - Lists existing alerts related to the same detection rule
 - Visual indicator highlight the current alert context
 - Displays alert metadata: ID, rule name, creation date, and status
@@ -282,8 +286,8 @@ Alert filter testing includes all rule testing components plus:
 2. **Review Alert Context**: Examine the alert correlation table to understand current alert landscape
 3. **Configure Filter Pattern**: Define or modify the exclusion pattern
 4. **Select View Mode**: Use segmented control to toggle between:
-   - **Matching Events**: Events that match the filter pattern (will be excluded)
-   - **Non-matching Events**: Events that don't match the filter pattern (will still generate alerts)
+    - **Matching Events**: Events that match the filter pattern (will be excluded)
+    - **Non-matching Events**: Events that don't match the filter pattern (will still generate alerts)
 5. **Analyze Coverage**: Review both matching and non-matching events to ensure proper filter scope
 
 ![test-rule-matching](/assets/operation_center/rules_catalog/rule-test-matching.png){: style="max-width:100%"}
@@ -291,11 +295,13 @@ Alert filter testing includes all rule testing components plus:
 ##### Alert filter testing best practices
 
 **Pattern Refinement**
+
 - Review non-matching events to identify gaps in filter coverage
 - Adjust filter patterns to achieve desired exclusion scope
 - Balance between noise reduction and detection sensitivity
 
 **Validation Workflow**
+
 1. Test with **Matching Events** view to confirm intended exclusions
 2. Switch to **Non-matching Events** view to verify legitimate alerts remain
 3. Iterate pattern adjustments based on both views
@@ -304,16 +310,19 @@ Alert filter testing includes all rule testing components plus:
 #### Testing best practices
 
 ##### Pattern development
+
 - Start with broader patterns and refine based on test results
 - Use multiple time ranges to validate pattern consistency
 - Consider seasonal or business cycle impacts on detection patterns
 
 ##### Performance considerations
+
 - Longer time ranges provide more comprehensive data but take longer to process
 - Focus on recent time periods (7-30 days) for current threat landscape validation
 - Use 60-day ranges for comprehensive historical analysis
 
 ##### Threshold tuning
+
 - Analyze event frequency to set appropriate detection thresholds
 - Consider normal business operations when setting alert frequency expectations
 - Use temporal patterns to identify optimal detection windows
