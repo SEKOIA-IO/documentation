@@ -354,7 +354,8 @@ nav:
       - FortiProxy: integration/categories/network_security/fortiproxy.md
       - FortiWeb: integration/categories/network_security/fortiweb.md
       - Fortigate: integration/categories/network_security/fortigate.md
-      - Gatewatcher AionIQ: integration/categories/network_security/gatewatcher_aioniq.md
+      - Gatewatcher AionIQ (<=v102): integration/categories/network_security/gatewatcher_aioniq.md
+      - Gatewatcher AionIQ (>=v103): integration/categories/network_security/gatewatcher_aioniq_ecs.md
       - Google Cloud Load Balancing: integration/categories/network_security/google_cloud_load_balancing.md
       - Imperva Web Application Firewall: integration/categories/network_security/imperva_waf.md
       - Lacework Cloud Security: integration/categories/network_security/lacework_cloud_security.md
