@@ -57,7 +57,7 @@ This setup guide will show you how to forward your Gatewatcher AionIQ logs to Se
    - Click `Enable` to activate the data exports
    - Click `Save` to save the configuration
 
-See Gcenter documentation for more details:
+See GCenter documentation for more details:
 
 - [Syslog configuration for v101](https://docs.gatewatcher.com/en/gcenter/2.5.3/101/itg-ext/syslog.html)
 - [Syslog configuration for v102](https://docs.gatewatcher.com/en/gcenter/2.5.3/102/08_use_cases_administrator/05_gcenter_admin/01_data_management.html)
