@@ -1,4 +1,4 @@
-Rules catalog includes **1045 built-in detection rules** ([_last update on 2025-09-30_](rules_changelog.md)).
+Rules catalog includes **1047 built-in detection rules** ([_last update on 2025-10-02_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Identity Information**
 
@@ -2445,9 +2445,21 @@ Rules catalog includes **1045 built-in detection rules** ([_last update on 2025-
     
         - 13/09/2024 - major - Update service name value following Microsoft change
             
+??? abstract "Microsoft Defender XDR Data Loss Prevention Alert"
+    
+    Microsoft Defender XDR has raised an alert for Data Loss Prevention. The alert info and evidence events are grouped with the similarity into the same Sekoia.io alert.
+    
+    - **Effort:** master
+    
 ??? abstract "Microsoft Defender XDR Endpoint Alert"
     
     Microsoft Defender XDR has raised an alert for Microsoft Defender for Endpoint. The alert info and evidence events are grouped with the similarity into the same Sekoia.io alert.
+    
+    - **Effort:** master
+    
+??? abstract "Microsoft Defender XDR Entra ID Protection Alert"
+    
+    Microsoft Defender XDR has raised an alert for Microsoft Entra ID Protection. The alert info and evidence events are grouped with the similarity into the same Sekoia.io alert.
     
     - **Effort:** master
     
@@ -3985,9 +3997,21 @@ Rules catalog includes **1045 built-in detection rules** ([_last update on 2025-
     
         - 13/09/2024 - major - Update service name value following Microsoft change
             
+??? abstract "Microsoft Defender XDR Data Loss Prevention Alert"
+    
+    Microsoft Defender XDR has raised an alert for Data Loss Prevention. The alert info and evidence events are grouped with the similarity into the same Sekoia.io alert.
+    
+    - **Effort:** master
+    
 ??? abstract "Microsoft Defender XDR Endpoint Alert"
     
     Microsoft Defender XDR has raised an alert for Microsoft Defender for Endpoint. The alert info and evidence events are grouped with the similarity into the same Sekoia.io alert.
+    
+    - **Effort:** master
+    
+??? abstract "Microsoft Defender XDR Entra ID Protection Alert"
+    
+    Microsoft Defender XDR has raised an alert for Microsoft Entra ID Protection. The alert info and evidence events are grouped with the similarity into the same Sekoia.io alert.
     
     - **Effort:** master
     
@@ -4780,9 +4804,21 @@ Rules catalog includes **1045 built-in detection rules** ([_last update on 2025-
     
         - 13/09/2024 - major - Update service name value following Microsoft change
             
+??? abstract "Microsoft Defender XDR Data Loss Prevention Alert"
+    
+    Microsoft Defender XDR has raised an alert for Data Loss Prevention. The alert info and evidence events are grouped with the similarity into the same Sekoia.io alert.
+    
+    - **Effort:** master
+    
 ??? abstract "Microsoft Defender XDR Endpoint Alert"
     
     Microsoft Defender XDR has raised an alert for Microsoft Defender for Endpoint. The alert info and evidence events are grouped with the similarity into the same Sekoia.io alert.
+    
+    - **Effort:** master
+    
+??? abstract "Microsoft Defender XDR Entra ID Protection Alert"
+    
+    Microsoft Defender XDR has raised an alert for Microsoft Entra ID Protection. The alert info and evidence events are grouped with the similarity into the same Sekoia.io alert.
     
     - **Effort:** master
     
