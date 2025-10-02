@@ -34,10 +34,14 @@ This section demonstrates how the raw logs will be transformed by our parsers. I
     {
         "message": "Connexion au portail web org:example, user:jdoe@local, ip:1.2.3.4",
         "event": {
-            "category": "session",
+            "category": [
+                "session"
+            ],
             "outcome": "success",
             "reason": "Connexion au portail web",
-            "type": "start"
+            "type": [
+                "start"
+            ]
         },
         "observer": {
             "product": "Systancia Cleanroom",
@@ -74,10 +78,14 @@ This section demonstrates how the raw logs will be transformed by our parsers. I
     {
         "message": "Connexion d'un plugin utilisateur org:example, user:jdoe@local, ip:1.2.3.4",
         "event": {
-            "category": "session",
+            "category": [
+                "session"
+            ],
             "outcome": "success",
             "reason": "Connexion d'un plugin utilisateur",
-            "type": "start"
+            "type": [
+                "start"
+            ]
         },
         "observer": {
             "product": "Systancia Cleanroom",
@@ -107,6 +115,87 @@ This section demonstrates how the raw logs will be transformed by our parsers. I
 	```
 
 
+=== "connexion3.json"
+
+    ```json
+	
+    {
+        "message": "Connexion au portail web org:example, user:toto@ORGANIZATION, ip:1.1.1.1",
+        "event": {
+            "category": [
+                "session"
+            ],
+            "outcome": "success",
+            "reason": "Connexion au portail web",
+            "type": [
+                "start"
+            ]
+        },
+        "observer": {
+            "product": "Systancia Cleanroom",
+            "vendor": "Systancia"
+        },
+        "organization": {
+            "name": "example"
+        },
+        "related": {
+            "ip": [
+                "1.1.1.1"
+            ],
+            "user": [
+                "toto"
+            ]
+        },
+        "source": {
+            "address": "1.1.1.1",
+            "ip": "1.1.1.1"
+        },
+        "user": {
+            "domain": "ORGANIZATION",
+            "name": "toto"
+        }
+    }
+    	
+	```
+
+
+=== "connexion4.json"
+
+    ```json
+	
+    {
+        "message": "Connexion d&#39;une passerelle org:example, user:@local, ip:1.1.1.1",
+        "event": {
+            "category": [
+                "session"
+            ],
+            "outcome": "success",
+            "reason": "Connexion d&#39;une passerelle",
+            "type": [
+                "end"
+            ]
+        },
+        "observer": {
+            "product": "Systancia Cleanroom",
+            "vendor": "Systancia"
+        },
+        "organization": {
+            "name": "example"
+        },
+        "related": {
+            "ip": [
+                "1.1.1.1"
+            ]
+        },
+        "source": {
+            "address": "1.1.1.1",
+            "ip": "1.1.1.1"
+        }
+    }
+    	
+	```
+
+
 === "deconnexion1.json"
 
     ```json
@@ -114,10 +203,14 @@ This section demonstrates how the raw logs will be transformed by our parsers. I
     {
         "message": "D\u00e9connexion du portail web org:example, user:jdoe@EXAMPLE, ip:1.2.3.4",
         "event": {
-            "category": "session",
+            "category": [
+                "session"
+            ],
             "outcome": "success",
             "reason": "D\u00e9connexion du portail web",
-            "type": "end"
+            "type": [
+                "end"
+            ]
         },
         "observer": {
             "product": "Systancia Cleanroom",
@@ -154,10 +247,14 @@ This section demonstrates how the raw logs will be transformed by our parsers. I
     {
         "message": "D\u00e9connexion d'un plugin utilisateur org:example, user:jdoe@local, ip:10.48.178.33",
         "event": {
-            "category": "session",
+            "category": [
+                "session"
+            ],
             "outcome": "success",
             "reason": "D\u00e9connexion d'un plugin utilisateur",
-            "type": "end"
+            "type": [
+                "end"
+            ]
         },
         "observer": {
             "product": "Systancia Cleanroom",
@@ -187,6 +284,219 @@ This section demonstrates how the raw logs will be transformed by our parsers. I
 	```
 
 
+=== "deconnexion3.json"
+
+    ```json
+	
+    {
+        "message": "D\u00e9connexion du portail web org:example, user:toto@ORGANIZATION, ip:1.1.1.1",
+        "event": {
+            "category": [
+                "session"
+            ],
+            "outcome": "success",
+            "reason": "D\u00e9connexion du portail web",
+            "type": [
+                "end"
+            ]
+        },
+        "observer": {
+            "product": "Systancia Cleanroom",
+            "vendor": "Systancia"
+        },
+        "organization": {
+            "name": "example"
+        },
+        "related": {
+            "ip": [
+                "1.1.1.1"
+            ],
+            "user": [
+                "toto"
+            ]
+        },
+        "source": {
+            "address": "1.1.1.1",
+            "ip": "1.1.1.1"
+        },
+        "user": {
+            "domain": "ORGANIZATION",
+            "name": "toto"
+        }
+    }
+    	
+	```
+
+
+=== "deconnexion4.json"
+
+    ```json
+	
+    {
+        "message": "D&#233;connexion d&#39;une passerelle org:example, user:@local, ip:1.1.1.1",
+        "event": {
+            "category": [
+                "session"
+            ],
+            "outcome": "success",
+            "reason": "D&#233;connexion d&#39;une passerelle",
+            "type": [
+                "end"
+            ]
+        },
+        "observer": {
+            "product": "Systancia Cleanroom",
+            "vendor": "Systancia"
+        },
+        "organization": {
+            "name": "example"
+        },
+        "related": {
+            "ip": [
+                "1.1.1.1"
+            ]
+        },
+        "source": {
+            "address": "1.1.1.1",
+            "ip": "1.1.1.1"
+        }
+    }
+    	
+	```
+
+
+=== "echec1.json"
+
+    ```json
+	
+    {
+        "message": "Echec de la connexion &#224; la console d&#39;administration org:example, user:toto@example, ip:1.1.1.1 17b82585-3f88-4500-baf4-bb95ca7c3344",
+        "event": {
+            "category": [
+                "session"
+            ],
+            "outcome": "success",
+            "reason": "Echec de la connexion &#224; la console d&#39;administration",
+            "type": [
+                "end"
+            ]
+        },
+        "observer": {
+            "product": "Systancia Cleanroom",
+            "vendor": "Systancia"
+        },
+        "organization": {
+            "name": "example"
+        },
+        "related": {
+            "ip": [
+                "1.1.1.1"
+            ],
+            "user": [
+                "toto"
+            ]
+        },
+        "source": {
+            "address": "1.1.1.1",
+            "ip": "1.1.1.1"
+        },
+        "user": {
+            "domain": "example",
+            "name": "toto"
+        }
+    }
+    	
+	```
+
+
+=== "fermeture1.json"
+
+    ```json
+	
+    {
+        "message": "Fermeture d'une application SSH (Secure Shell) : MultiTOTOAPP org:example, user:titi@ORGANIZATION, ip:1.1.1.1",
+        "event": {
+            "category": [
+                "process"
+            ],
+            "outcome": "success",
+            "reason": "Fermeture d'une application SSH (Secure Shell) : MultiTOTOAPP",
+            "type": [
+                "end"
+            ]
+        },
+        "observer": {
+            "product": "Systancia Cleanroom",
+            "vendor": "Systancia"
+        },
+        "organization": {
+            "name": "example"
+        },
+        "related": {
+            "ip": [
+                "1.1.1.1"
+            ],
+            "user": [
+                "titi"
+            ]
+        },
+        "source": {
+            "address": "1.1.1.1",
+            "ip": "1.1.1.1"
+        },
+        "user": {
+            "domain": "ORGANIZATION",
+            "name": "titi"
+        }
+    }
+    	
+	```
+
+
+=== "lancement1.json"
+
+    ```json
+	
+    {
+        "message": "Lancement d'une application Web : MultiTOTOAPP org:example, user:toto@ORGANIZATION, ip:1.1.1.1",
+        "event": {
+            "category": [
+                "process"
+            ],
+            "outcome": "success",
+            "reason": "Lancement d'une application Web : MultiTOTOAPP",
+            "type": [
+                "start"
+            ]
+        },
+        "observer": {
+            "product": "Systancia Cleanroom",
+            "vendor": "Systancia"
+        },
+        "organization": {
+            "name": "example"
+        },
+        "related": {
+            "ip": [
+                "1.1.1.1"
+            ],
+            "user": [
+                "toto"
+            ]
+        },
+        "source": {
+            "address": "1.1.1.1",
+            "ip": "1.1.1.1"
+        },
+        "user": {
+            "domain": "ORGANIZATION",
+            "name": "toto"
+        }
+    }
+    	
+	```
+
+
 === "process1.json"
 
     ```json
@@ -194,10 +504,14 @@ This section demonstrates how the raw logs will be transformed by our parsers. I
     {
         "message": "Fermeture d'une application  RDS  : DETECTION CENTRAL (RDP) AGENT CLIENT org:example, user:jdoe@EXAMPLE, ip:1.2.3.4",
         "event": {
-            "category": "process",
+            "category": [
+                "process"
+            ],
             "outcome": "success",
             "reason": "Fermeture d'une application  RDS  : DETECTION CENTRAL (RDP) AGENT CLIENT",
-            "type": "end"
+            "type": [
+                "end"
+            ]
         },
         "observer": {
             "product": "Systancia Cleanroom",
@@ -234,10 +548,14 @@ This section demonstrates how the raw logs will be transformed by our parsers. I
     {
         "message": "Lancement d'une application RDS  : DETECTION CENTRAL (RDP) AGENT CLIENT org:example, user:jdoe@EXAMPLE, ip:1.2.3.4",
         "event": {
-            "category": "process",
+            "category": [
+                "process"
+            ],
             "outcome": "success",
             "reason": "Lancement d'une application RDS  : DETECTION CENTRAL (RDP) AGENT CLIENT",
-            "type": "start"
+            "type": [
+                "start"
+            ]
         },
         "observer": {
             "product": "Systancia Cleanroom",
@@ -274,10 +592,14 @@ This section demonstrates how the raw logs will be transformed by our parsers. I
     {
         "message": "Echec de la connexion au portail web : erreur d'authentification d'un utilisateur org:example, user:jdoe@EXAMPLE, ip:1.2.3.4",
         "event": {
-            "category": "session",
+            "category": [
+                "session"
+            ],
             "outcome": "failure",
             "reason": "Echec de la connexion au portail web : erreur d'authentification d'un utilisateur",
-            "type": "start"
+            "type": [
+                "start"
+            ]
         },
         "observer": {
             "product": "Systancia Cleanroom",
