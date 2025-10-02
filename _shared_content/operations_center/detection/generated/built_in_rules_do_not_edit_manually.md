@@ -2160,6 +2160,7 @@ Rules catalog includes **1047 built-in detection rules** ([_last update on 2025-
     
     - **Changelog:**
     
+        - 02/10/2025 - minor - Alert severity updated to match Crowdstrike's values and sekoia rule CrowdStrike Falcon Intrusion Detection High Severity
         - 05/08/2025 - minor - Alert severity updated to match Crowdstrike's values
             
 ??? abstract "CrowdStrike Falcon Intrusion Detection Informational Severity"
@@ -3412,6 +3413,7 @@ Rules catalog includes **1047 built-in detection rules** ([_last update on 2025-
     
     - **Changelog:**
     
+        - 02/10/2025 - minor - Alert severity updated to match Crowdstrike's values and sekoia rule CrowdStrike Falcon Intrusion Detection High Severity
         - 05/08/2025 - minor - Alert severity updated to match Crowdstrike's values
             
 ??? abstract "CrowdStrike Falcon Intrusion Detection Informational Severity"
@@ -4562,6 +4564,7 @@ Rules catalog includes **1047 built-in detection rules** ([_last update on 2025-
     
     - **Changelog:**
     
+        - 02/10/2025 - minor - Alert severity updated to match Crowdstrike's values and sekoia rule CrowdStrike Falcon Intrusion Detection High Severity
         - 05/08/2025 - minor - Alert severity updated to match Crowdstrike's values
             
 ??? abstract "CrowdStrike Falcon Intrusion Detection Informational Severity"
