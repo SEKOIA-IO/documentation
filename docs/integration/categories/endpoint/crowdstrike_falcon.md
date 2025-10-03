@@ -47,7 +47,7 @@ The following prerequisites are needed in order to setup efficient events handli
 3. In the `OAuth2 API Clients` tab, create an new OAuth2 API Client with the `Read` permission for the scopes `Event Stream` and `Detection`.
 
 !!! Info
-    To collect `Vertex`, add the `Threat Graph` scope with `Read` permission.
+    To collect `Vertex`, add the `Threat Graph` scope with `Read` permission to the same OAuth2 API Client you are creating in step 3 above.
 
 
 ### Create the intake
