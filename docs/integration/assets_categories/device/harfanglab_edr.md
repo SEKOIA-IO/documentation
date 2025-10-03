@@ -14,7 +14,7 @@ HarfangLab EDR is a European EDR for Windows, macOS, and Linux that delivers rea
 To connect Harfanglab to Sekoia.io, you need to create an API key pair (Access Key and Secret Key) in your
 HarfangLab console. Follow these steps:
 
-1. Click on **Users** under administration pannel.
+1. Click on **Users** under administration panel.
 
     ![Account page showing navigation to API Keys tab in Harfanglab](/assets/operation_center/asset_connectors/device/users_button.png)
 
