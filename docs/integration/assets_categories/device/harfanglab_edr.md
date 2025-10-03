@@ -3,7 +3,7 @@
 
 HarfangLab EDR is a European EDR for Windows, macOS, and Linux that delivers real-time telemetry, ATT&CK-mapped detections, and rapid response (host isolation, process kill, quarantine). This setup guide shows how to forward assets monitored by HarfangLab EDR to Sekoia.io.
 
-- **Vendort**: Harfanglab
+- **Vendor**: Harfanglab
 - **Product**: Harfanglab EDR
 - **Supported environment**: SaaS
 
