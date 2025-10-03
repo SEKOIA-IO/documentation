@@ -27,7 +27,7 @@ HarfangLab console. Follow these steps:
 4. Copy the api key in a safe place. And start using it in Sekoia.io.
 
 !!! important
-    - User must be created before generating api token.
+    - A user must exist before generating an API token.
 
 
 ### Create your asset
