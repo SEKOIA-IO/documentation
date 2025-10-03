@@ -1,5 +1,5 @@
-uuid: bba2bed2-d925-440f-a0ce-dbcae04eaf26,2f28e4f9-a4f3-40a6-9909-b69f3df32535
-name: Gatewatcher AionIQ (Legacy)
+uuid: 2f28e4f9-a4f3-40a6-9909-b69f3df32535
+name: Gatewatcher AionIQ
 type: intake
 
 ## Overview
@@ -8,7 +8,7 @@ Gatewatcher AionIQ is a detection and response platform for your network that id
 
 - **Vendor**: Gatewatcher
 - **Supported environment**: On Premise
-- **Version compatibility, if applicable**: 2.5.3.101, 2.5.3.102
+- **Version compatibility, if applicable**: 2.5.3.103
 - **Detection based on**: Network Telemetry
 - **Supported application or feature**: Malware and Network events
 
@@ -50,17 +50,15 @@ This setup guide will show you how to forward your Gatewatcher AionIQ logs to Se
 #### Setup syslog forwarding on GCenter
 
    - Log on your GCenter
-   - Go to  `Administrators` > `GCenter` > `Data export`
-   - Click `Configure` on the primary or secondary data exports
-   - Set the hostname to your log concentrator and the port number to `514`
-   - Select `json` as the codec, `5424` as RFC and `tcp` as the protocol.
-   - Click `Enable` to activate the data exports
-   - Click `Save` to save the configuration
+   - Go to  `Administrators` > `Data` > `Log export`
+   - Click `Data export #1` or `Data export #2`
+   - Click `Enabled` to activate the data export
+   - In the `Logging server` section, set the hostname to your log concentrator and the port number to `514`
+   - Select `5424` as Syslog RFC and `tcp` as the protocol.
+   - Select `ECS log format 1.0.0` as formatting 
+   - Click `Save changes` to save the configuration
 
-See GCenter documentation for more details:
-
-- [Syslog configuration for v101](https://docs.gatewatcher.com/en/gcenter/2.5.3/101/itg-ext/syslog.html)
-- [Syslog configuration for v102](https://docs.gatewatcher.com/en/gcenter/2.5.3/102/08_use_cases_administrator/05_gcenter_admin/01_data_management.html)
+See [GCenter documentation](https://docs.gatewatcher.com/en/gcenter/2.5.3/103/08_use_cases_administrator/05_gcenter_admin/01_data_management.html) for more details.
 
 {!_shared_content/integration/forwarder_configuration.md!}
 
@@ -68,15 +66,14 @@ See GCenter documentation for more details:
 
 {!_shared_content/integration/intake_configuration.md!}
 
-{!_shared_content/operations_center/integrations/generated/bba2bed2-d925-440f-a0ce-dbcae04eaf26_sample.md!}
+{!_shared_content/operations_center/integrations/generated/2f28e4f9-a4f3-40a6-9909-b69f3df32535_sample.md!}
 
 {!_shared_content/integration/detection_section.md!}
 
-{!_shared_content/operations_center/detection/generated/suggested_rules_bba2bed2-d925-440f-a0ce-dbcae04eaf26_do_not_edit_manually.md!}
+{!_shared_content/operations_center/detection/generated/suggested_rules_2f28e4f9-a4f3-40a6-9909-b69f3df32535_do_not_edit_manually.md!}
 
-{!_shared_content/operations_center/integrations/generated/bba2bed2-d925-440f-a0ce-dbcae04eaf26.md!}
+{!_shared_content/operations_center/integrations/generated/2f28e4f9-a4f3-40a6-9909-b69f3df32535.md!}
 
 ## Further readings
 
-- [GCenter 2.5.3v101 Documentation](https://docs.gatewatcher.com/en/gcenter/2.5.3/101)
-- [GCenter 2.5.3v102 Documentation](https://docs.gatewatcher.com/en/gcenter/2.5.3/102)
+- [GCenter 2.5.3v103 Documentation](https://docs.gatewatcher.com/en/gcenter/2.5.3/103)
