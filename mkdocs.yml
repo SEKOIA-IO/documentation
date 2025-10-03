@@ -465,6 +465,13 @@ nav:
       - Triage: integration/action_library/triage.md
       - VirusTotal: integration/action_library/virustotal.md
       - Whois: integration/action_library/whois.md
+  - List of Asset Connectors:
+      - Vulnerability:
+          - Tenable.io: integration/assets_categories/vulnerability/tenable_io.md
+      - Device:
+          - Crowdstrike Falcon: integration/assets_categories/device/crowdstrike_falcon_device.md
+      - User:
+          - Crowdstrike Falcon: integration/assets_categories/user/crowdstrike_falcon_user.md
   - How to develop a new Integration:
     - Overview: integration/develop_integration/overview.md
     - Automation:
