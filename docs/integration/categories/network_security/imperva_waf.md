@@ -33,7 +33,7 @@ Imperva Web Application Firewall helps you to protect your web applications and 
 - Select the default website log level (at least, a log level with `Access logs`)
 - Select `CEF` as format
 - Enable `Compress logs`
-- Drop a public key if needed
+- If you wish to enable log encryption, upload your public key (see [Imperva documentation](https://docs-cybersec.thalesgroup.com/bundle/cloud-application-security/page/settings/log-integration.htm#EnableEncryption) for more details)
 - Enable the state `Enabled`
 - Click `Save`
 
