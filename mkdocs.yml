@@ -470,6 +470,7 @@ nav:
           - Tenable.io: integration/assets_categories/vulnerability/tenable_io.md
       - Device:
           - Crowdstrike Falcon: integration/assets_categories/device/crowdstrike_falcon_device.md
+          - Harfanglab EDR: integration/assets_categories/device/harfanglab_edr.md
       - User:
           - Crowdstrike Falcon: integration/assets_categories/user/crowdstrike_falcon_user.md
   - How to develop a new Integration:
