@@ -472,9 +472,12 @@ nav:
       - Device:
           - Harfanglab EDR: integration/assets_categories/device/harfanglab_edr.md
           - AWS EC2: integration/assets_categories/device/aws_ec2_device.md
+          - Okta: integration/assets_categories/device/okta_device.md
       - User:
           - Crowdstrike Falcon: integration/assets_categories/user/crowdstrike_falcon_user.md
-          - AWS IAM User: integration/assets_categories/user/aws_iam_user.md
+          - AWS IAM: integration/assets_categories/user/aws_iam_user.md
+          - Okta: integration/assets_categories/user/okta_user.md
+          - Microsoft Entra ID: integration/assets_categories/user/microsoft_entra_id.md
   - How to develop a new Integration:
     - Overview: integration/develop_integration/overview.md
     - Automation:
