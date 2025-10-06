@@ -4379,6 +4379,10 @@ Rules catalog includes **1047 built-in detection rules** ([_last update on 2025-
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 06/10/2025 - minor - Update sources link
+            
 ??? abstract "Winword Document Droppers"
     
     Detects specific process characteristics of word document droppers. This techniques has been used by Maze ransomware operators.
