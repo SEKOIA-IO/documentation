@@ -1334,6 +1334,7 @@ Rules catalog includes **1047 built-in detection rules** ([_last update on 2025-
     
         - 28/07/2025 - major - Improve filter and similarity strategy.
         - 05/08/2025 - minor - Improve filter to avoid false positives
+        - 06/10/2025 - minor - Improve filter to avoid false positives
             
 ??? abstract "Download Files From Suspicious TLDs"
     
@@ -3182,6 +3183,7 @@ Rules catalog includes **1047 built-in detection rules** ([_last update on 2025-
     
         - 28/07/2025 - major - Improve filter and similarity strategy.
         - 05/08/2025 - minor - Improve filter to avoid false positives
+        - 06/10/2025 - minor - Improve filter to avoid false positives
             
 ??? abstract "Download Files From Suspicious TLDs"
     
@@ -3542,6 +3544,7 @@ Rules catalog includes **1047 built-in detection rules** ([_last update on 2025-
     
         - 28/07/2025 - major - Improve filter and similarity strategy.
         - 05/08/2025 - minor - Improve filter to avoid false positives
+        - 06/10/2025 - minor - Improve filter to avoid false positives
             
 ??? abstract "Download Files From Suspicious TLDs"
     
