@@ -474,6 +474,7 @@ nav:
           - AWS EC2: integration/assets_categories/device/aws_ec2_device.md
       - User:
           - Crowdstrike Falcon: integration/assets_categories/user/crowdstrike_falcon_user.md
+          - AWS IAM User: integration/assets_categories/user/aws_iam_user.md
   - How to develop a new Integration:
     - Overview: integration/develop_integration/overview.md
     - Automation:
