@@ -39,7 +39,7 @@ jobs:
           OS_REGION_NAME: "GRA"
 
       - name: Find Comment
-        uses: peter-evans/find-comment@v3
+        uses: peter-evans/find-comment@v4
         id: fc
         with:
           issue-number: ${{ steps.pr_number.outputs.pr_number }}
