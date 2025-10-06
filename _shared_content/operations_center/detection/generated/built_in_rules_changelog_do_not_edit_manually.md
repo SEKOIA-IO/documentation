@@ -2,8 +2,17 @@ Changelog _last update on 2025-10-06_
 
 ## Changelog
 
+### Varonis Data Security Network Low Severity Alert
+  - 06/10/2025 - minor - Update similarity strategy for more granularity
+    
+### Varonis Data Security Network High Severity Alert
+  - 06/10/2025 - minor - Update similarity strategy for more granularity
+    
 ### Vectra General Threat Detection
   - 06/10/2025 - minor - Update sources link
+    
+### Varonis Data Security Network Medium Severity Alert
+  - 06/10/2025 - minor - Update similarity strategy for more granularity
     
 ### Download Files From Suspicious TLDs
   - 06/10/2025 - minor - Improve filter to reduce false positives.
@@ -115,9 +124,6 @@ Changelog _last update on 2025-10-06_
     
 ### Sekoia.io Endpoint Agent Stopped
   - 16/05/2025 - minor - Changing effort level.
-    
-### Varonis Data Security Network Low Severity Alert
-  - 14/05/2025 - major - Fix pattern where severity level was missing
     
 ### Protected Storage Service Access
   - 09/05/2025 - minor - Adding similarity to regroup alerts.

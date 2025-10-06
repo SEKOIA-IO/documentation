@@ -710,6 +710,10 @@ Rules catalog includes **1047 built-in detection rules** ([_last update on 2025-
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 06/10/2025 - minor - Update similarity strategy for more granularity
+            
 ??? abstract "Varonis Data Security Network Low Severity Alert"
     
     Varonis Data Security has raised a low severity alert related to a network rule
@@ -719,6 +723,7 @@ Rules catalog includes **1047 built-in detection rules** ([_last update on 2025-
     - **Changelog:**
     
         - 14/05/2025 - major - Fix pattern where severity level was missing
+        - 06/10/2025 - minor - Update similarity strategy for more granularity
             
 ??? abstract "Varonis Data Security Network Medium Severity Alert"
     
@@ -726,6 +731,10 @@ Rules catalog includes **1047 built-in detection rules** ([_last update on 2025-
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 06/10/2025 - minor - Update similarity strategy for more granularity
+            
 **Obtain Capabilities**
 
 ??? abstract "Cyberwatch Detection Critical Vulnerability"
