@@ -14,21 +14,21 @@ To connect AWS EC2 to Sekoia.io, you need to create an IAM user with the necessa
 
 1. Sign in to the AWS Management Console and navigate to the IAM service.
 
-    ![AWS Console IAM service selection](/assets/operation_center/asset_connectors/device/aws_create_user_1.png)
+    ![AWS Console IAM service selection](/assets/operation_center/asset_connectors/device/aws/aws_create_user_1.png)
 
 2. Click **Users** in the left navigation pane, then click **Create user**.
 
-    ![IAM Users page with Create user button highlighted](/assets/operation_center/asset_connectors/device/aws_create_user_2.png)
+    ![IAM Users page with Create user button highlighted](/assets/operation_center/asset_connectors/device/aws/aws_create_user_2.png)
 
 3. Enter a username for the IAM user (e.g., `sekoia-ec2-reader`) and click **Next**.
 
-    ![Create user form with username field](/assets/operation_center/asset_connectors/device/aws_create_user_3.png)
+    ![Create user form with username field](/assets/operation_center/asset_connectors/device/aws/aws_create_user_3.png)
 
 4. In the **Set permissions** step, select **Attach policies directly** and search for the following policies:
    - `AmazonEC2ReadOnlyAccess` (for basic EC2 read access)
    - `AmazonEC2FullAccess` (if you need full EC2 access)
 
-    ![Policy attachment page with EC2 policies selected](/assets/operation_center/asset_connectors/device/aws_create_user_4.png)
+    ![Policy attachment page with EC2 policies selected](/assets/operation_center/asset_connectors/device/aws/aws_create_user_4.png)
 
 5. Click **Next** to review, then click **Create user**.
 
@@ -40,19 +40,19 @@ After creating the IAM user, you need to generate access keys for programmatic a
 
 2. Click the **Create an access key** button.
 
-    ![Access keys section with Create access key button](/assets/operation_center/asset_connectors/device/aws_create_user_5.png)
+    ![Access keys section with Create access key button](/assets/operation_center/asset_connectors/device/aws/aws_create_user_5.png)
 
 3. Select **Application running outside AWS** as the use case and click **Next**.
 
-    ![Access key use case selection](/assets/operation_center/asset_connectors/device/aws_create_user_6.png)
+    ![Access key use case selection](/assets/operation_center/asset_connectors/device/aws/aws_create_user_6.png)
 
 4. Add a description tag (optional) and click **Create access key**.
 
-    ![Access key creation with description tag](/assets/operation_center/asset_connectors/device/aws_create_user_7.png)
+    ![Access key creation with description tag](/assets/operation_center/asset_connectors/device/aws/aws_create_user_7.png)
 
 5. Copy the **Access key ID** and **Secret access key** to a safe location. You'll need these credentials to configure the connector in Sekoia.io.
 
-    ![Access key credentials display](/assets/operation_center/asset_connectors/device/aws_create_user_8.png)
+    ![Access key credentials display](/assets/operation_center/asset_connectors/device/aws/aws_create_user_8.png)
 
 !!! Warning
     - The secret access key is only shown when you create it. If you lose it, you must create a new access key.
@@ -104,15 +104,15 @@ To start getting your AWS EC2 instances into Sekoia.io, you need to create an as
 
 1. Click the **Asset connectors** button to create a new connector.
 
-    ![Asset connectors button highlighted](/assets/operation_center/asset_connectors/device/create_asset_connector_button.png)
+    ![Asset connectors button highlighted](/assets/operation_center/asset_connectors/device/common/create_asset_connector_button.png)
 
 2. Click the **+ New connector** button.
     
-    ![New connector button highlighted](/assets/operation_center/asset_connectors/device/create_asset_connector_1.png)
+    ![New connector button highlighted](/assets/operation_center/asset_connectors/device/common/create_asset_connector_1.png)
 
 3. Choose **AWS devices**, give it a name, and fill the required fields:
 
-    ![AWS EC2 Device connector configuration form](/assets/operation_center/asset_connectors/device/create_aws_asset_connector_1.png)
+    ![AWS EC2 Device connector configuration form](/assets/operation_center/asset_connectors/device/aws/create_aws_asset_connector_1.png)
 
 4. Enter the following information:
    - **Access Key ID**: The access key ID from your IAM user
@@ -121,7 +121,7 @@ To start getting your AWS EC2 instances into Sekoia.io, you need to create an as
 
 5. Test the connection by clicking the **Test connector** button.
 
-    ![Connector test result and Create asset connector button highlighted](/assets/operation_center/asset_connectors/device/create_aws_asset_connector_2.png)
+    ![Connector test result and Create asset connector button highlighted](/assets/operation_center/asset_connectors/device/aws/create_aws_asset_connector_2.png)
 
 6. Click the **Create asset connector** button.
 
