@@ -5,6 +5,9 @@ Changelog _last update on 2025-10-06_
 ### Download Files From Suspicious TLDs
   - 06/10/2025 - minor - Improve filter to reduce false positives.
     
+### Download Files From Non-Legitimate TLDs
+  - 06/10/2025 - minor - Improve filter to avoid false positives
+    
 ### Okta User Logged In From Multiple Countries
   - 24/09/2025 - minor - Improving selection in order to reduce false positives
     
@@ -91,9 +94,6 @@ Changelog _last update on 2025-10-06_
     
 ### CrowdStrike Falcon Intrusion Detection Informational Severity EppDetection
   - 05/08/2025 - minor - Alert severity updated to match Crowdstrike's values
-    
-### Download Files From Non-Legitimate TLDs
-  - 05/08/2025 - minor - Improve filter to avoid false positives
     
 ### Darktrace Threat Visualizer Model Breach Suspicious Activity
   - 02/07/2025 - minor - Update similarity
