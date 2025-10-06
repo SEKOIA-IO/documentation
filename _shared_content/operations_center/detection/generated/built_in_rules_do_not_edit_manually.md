@@ -1,4 +1,4 @@
-Rules catalog includes **1047 built-in detection rules** ([_last update on 2025-10-03_](rules_changelog.md)).
+Rules catalog includes **1047 built-in detection rules** ([_last update on 2025-10-06_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Identity Information**
 
@@ -1344,6 +1344,7 @@ Rules catalog includes **1047 built-in detection rules** ([_last update on 2025-
     - **Changelog:**
     
         - 28/07/2025 - major - Improve filter and similarity strategy.
+        - 06/10/2025 - minor - Improve filter to reduce false positives.
             
 ??? abstract "ESET Protect Malware"
     
@@ -3191,6 +3192,7 @@ Rules catalog includes **1047 built-in detection rules** ([_last update on 2025-
     - **Changelog:**
     
         - 28/07/2025 - major - Improve filter and similarity strategy.
+        - 06/10/2025 - minor - Improve filter to reduce false positives.
             
 ??? abstract "Exploit For CVE-2015-1641"
     
@@ -3550,6 +3552,7 @@ Rules catalog includes **1047 built-in detection rules** ([_last update on 2025-
     - **Changelog:**
     
         - 28/07/2025 - major - Improve filter and similarity strategy.
+        - 06/10/2025 - minor - Improve filter to reduce false positives.
             
 ??? abstract "ESET Protect Intrusion Detection"
     
