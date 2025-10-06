@@ -2,6 +2,9 @@ Changelog _last update on 2025-10-06_
 
 ## Changelog
 
+### Vectra General Threat Detection
+  - 06/10/2025 - minor - Update sources link
+    
 ### Download Files From Suspicious TLDs
   - 06/10/2025 - minor - Improve filter to reduce false positives.
     
