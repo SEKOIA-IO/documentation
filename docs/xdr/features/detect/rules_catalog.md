@@ -249,7 +249,7 @@ Test results are presented in two complementary formats:
 **2. Detailed event list**
 
 - Provides drill-down access to individual matching events
-- **Show fields** component to select relevant event property to display
+- **Show fields** component to select relevant event properties to display
 - **Show more** button for progressive loading of additional results
 
 ![test-results-values](/assets/operation_center/rules_catalog/rule-test-results-values.gif){: style="max-width:100%"}
