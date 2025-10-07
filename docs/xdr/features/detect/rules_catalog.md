@@ -277,7 +277,7 @@ Alert filter testing includes all rule testing components plus:
 **Alert correlation table**
 
 - Lists existing alerts related to the same detection rule
-- Visual indicator highlight the current alert context
+- Visual indicator highlights the current alert context
 - Displays alert metadata: ID, rule name, creation date, and status
 - **Matches filter**: Boolean indicator showing whether the pattern fully excludes the alert. Helps verify filter effectiveness and coverage
 
