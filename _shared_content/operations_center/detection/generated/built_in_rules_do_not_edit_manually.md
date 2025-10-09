@@ -1,4 +1,4 @@
-Rules catalog includes **1047 built-in detection rules** ([_last update on 2025-10-06_](rules_changelog.md)).
+Rules catalog includes **1048 built-in detection rules** ([_last update on 2025-10-09_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Identity Information**
 
@@ -1789,6 +1789,12 @@ Rules catalog includes **1047 built-in detection rules** ([_last update on 2025-
     Detection of common Tactical RMM installation arguments that could be abused by some attackers.
     
     - **Effort:** elementary
+    
+??? abstract "VSCode Tunnel Shell Exec"
+    
+    Using VSCode and its remote tunnel access feature to run a terminal and execute commands. This could be a legit use, but also has been observed being used by some attackers.
+    
+    - **Effort:** advanced
     
 ??? abstract "WMI DLL Loaded Via Office"
     
