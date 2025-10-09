@@ -2,6 +2,12 @@ Changelog _last update on 2025-10-09_
 
 ## Changelog
 
+### Exploiting SetupComplete.cmd CVE-2019-1378
+  - 09/10/2025 - minor - Added filter for a new field to reduce false positvives.
+    
+### Unusual Process Executed in Temporary Directory
+  - 09/10/2025 - minor - Added filter to reduce false positvives.
+    
 ### Varonis Data Security Network Low Severity Alert
   - 06/10/2025 - minor - Update similarity strategy for more granularity
     
