@@ -2306,6 +2306,10 @@ Rules catalog includes **1048 built-in detection rules** ([_last update on 2025-
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 09/10/2025 - minor - Added filter for a new field to reduce false positvives.
+            
 ??? abstract "FromBase64String Command Line"
     
     Detects suspicious FromBase64String expressions in command line arguments.
@@ -7163,6 +7167,10 @@ Rules catalog includes **1048 built-in detection rules** ([_last update on 2025-
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 09/10/2025 - minor - Added filter for a new field to reduce false positvives.
+            
 ??? abstract "Hijack Legit RDP Session To Move Laterally"
     
     Identifies suspicious file creations in the startup folder of a remote system. An adversary could abuse this to move laterally by dropping a malicious script or executable that will be executed after a reboot or user logon.
@@ -7553,6 +7561,10 @@ Rules catalog includes **1048 built-in detection rules** ([_last update on 2025-
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 09/10/2025 - minor - Added filter for a new field to reduce false positvives.
+            
 ??? abstract "Okta Admin Privilege Granted"
     
     Administrator privilege granted to an user or account. This can be privilege escalation, persistance over system or account takedown.
@@ -8899,6 +8911,10 @@ Rules catalog includes **1048 built-in detection rules** ([_last update on 2025-
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 09/10/2025 - minor - Added filter to reduce false positvives.
+            
 **Hijack Execution Flow**
 
 ??? abstract "DHCP Callout DLL Installation"
@@ -8971,6 +8987,10 @@ Rules catalog includes **1048 built-in detection rules** ([_last update on 2025-
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 09/10/2025 - minor - Added filter for a new field to reduce false positvives.
+            
 ??? abstract "Hijack Legit RDP Session To Move Laterally"
     
     Identifies suspicious file creations in the startup folder of a remote system. An adversary could abuse this to move laterally by dropping a malicious script or executable that will be executed after a reboot or user logon.
@@ -10630,6 +10650,10 @@ Rules catalog includes **1048 built-in detection rules** ([_last update on 2025-
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 09/10/2025 - minor - Added filter to reduce false positvives.
+            
 **Use Alternate Authentication Material**
 
 ??? abstract "Abusing Azure Browser SSO"
@@ -11501,6 +11525,10 @@ Rules catalog includes **1048 built-in detection rules** ([_last update on 2025-
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 09/10/2025 - minor - Added filter for a new field to reduce false positvives.
+            
 ??? abstract "Hijack Legit RDP Session To Move Laterally"
     
     Identifies suspicious file creations in the startup folder of a remote system. An adversary could abuse this to move laterally by dropping a malicious script or executable that will be executed after a reboot or user logon.
