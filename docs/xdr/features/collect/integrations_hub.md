@@ -1,6 +1,6 @@
 # Integrations Catalog 
 
-This page provides a centralized overview of all available integrations that connect your essential tools and services to Sekoia.io. Explore a range of integrations, including intake formats, connectors, and playbook triggers and actions, designed to streamline your operations and extend platform capabilities.
+This page provides a centralized overview of all available integrations that connect your essential tools and services to Sekoia.io. Explore a range of integrations, including intake formats, event connectors, asset connectors, and playbook triggers and actions, designed to streamline your operations and extend platform capabilities.
 
 ## Explore Integrations
 
@@ -23,7 +23,7 @@ Refine your search and find the perfect integration using our filters:
 
 - **Featured:** Filter by Built-in and custom integrations
 - **Categories:** Narrow down integrations by their primary domain or purpose (Cloud Providers, Email, Network, Threat Intelligence, etc…)
-- **Content Types:** Identify integrations based on the type of content (Intake formats, connectors, triggers, actions)
+- **Content Types:** Identify integrations based on the type of content (Intake formats, event connectors, asset connectors, triggers, actions)
 
 ### Quick Access
 
@@ -34,15 +34,15 @@ Quickly access our **[Integrations roadmap](https://roadmap-integrations.sekoia.
 Each integration has its own detailed page, providing comprehensive information. On this page, you'll find:
 
 - A description of the integration
-- Information on where it is used, allowing you to directly pivot to the playbooks or intakes where the integration is active
-- An overview of its content (Event collection, playbook actions and triggers) 
+- Information on where it is used, allowing you to directly pivot to the playbooks intakes or asset connectors where the integration is active
+- An overview of its content (Event collection, asset collection, playbook actions and triggers) 
 - A changelog to track latest updates
 
 From this detailed listing, you can also create intakes or try playbook triggers and actions related to the integration.
 
 ## Create Your Own Integration
 
-Can't find an integration that perfectly fits your unique needs? No problem! Unlock unlimited potential and effortlessly create custom integrations tailored specifically for you. With this capability, your integration possibilities are now boundless. Build your own playbook actions, triggers, connectors, intake formats, and more.
+Can't find an integration that perfectly fits your unique needs? No problem! Unlock unlimited potential and effortlessly create custom integrations tailored specifically for you. With this capability, your integration possibilities are now boundless. Build your own playbook actions, triggers, event connectors, asset connector**(Coming soon)**  intake formats, and more.
 
 ### Pre-requisites
 
