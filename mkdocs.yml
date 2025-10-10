@@ -398,13 +398,13 @@ nav:
       - Wiz Vulnerability Findings: integration/categories/network_security/wiz_vulnerability_findings.md
       - Zscaler Internet Access: integration/categories/network_security/zscaler_zia.md
   - List of Playbooks Actions:
-    - Overview: integration/action_library/overview.md
     - Applicative:
       - ElasticSearch: integration/action_library/elasticsearch.md
       - Mandrill: integration/action_library/mandrill.md
       - Mattermost: integration/action_library/mattermost.md
       - PagerDuty: integration/action_library/pagerduty.md
     - Cloud Providers:
+      - AWS: integration/action_library/aws.md
       - AWS: integration/action_library/aws.md
       - Azure Monitor: integration/action_library/azure-monitor.md
       - Google Cloud: integration/action_library/google-cloud.md
@@ -445,6 +445,7 @@ nav:
       - Fortigate Firewalls: integration/action_library/fortigate-firewalls.md
       - Sophos: integration/action_library/sophos.md
       - Zscaler: integration/action_library/zscaler.md
+    - Overview: integration/action_library/overview.md
     - Threat Intelligence:
       - BinaryEdge's API: integration/action_library/binaryedge-s-api.md
       - Censys: integration/action_library/censys.md
