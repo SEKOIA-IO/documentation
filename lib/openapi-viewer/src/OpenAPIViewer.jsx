@@ -114,6 +114,7 @@ export const OpenAPIViewer = {
             }
         }
 
+        // Assign each endpoint to a menu entry according to its tags
         for (const endpoint of data.endpoints) {
             endpoint.menu0 = data.tree.find(({ name }) => endpoint.tags.find(t => name.toLowerCase() === t.toLowerCase()))
             endpoint.menu1 = endpoint.menu0?.children.find(({ name }) => endpoint.tags.find(t => name.toLowerCase() === t.toLowerCase()))
@@ -142,7 +143,6 @@ export const OpenAPIViewer = {
         }
         data.tags = Array.from(data.tags).sort()
 
-
         // Apply filters
         function update() {
             data.loading = true
@@ -170,6 +170,15 @@ export const OpenAPIViewer = {
                 }
             }
 
+            // Mark empty menu entries
+            for (const l0 of data.tree) {
+                l0.empty = true;
+                for (const l1 of l0.children) {
+                    l1.empty = !l1.endpoints?.some(e => e.visible)
+                    if (!l1.empty) l0.empty = false
+                }
+            }
+
             setTimeout(() => data.loading = false, 10)
         }
         OpenAPIViewer.updateAsap = debounce(update, 500)
@@ -177,7 +186,7 @@ export const OpenAPIViewer = {
         update()
 
         /** Called when the window is scrolled to sync the selected menu item */
-        function updateScroll() {
+        function onScroll() {
             const el = getVisibleEndpoint()
             const [_, tag, ep] = el.id.split("/")
             if (el.id.includes("/") && tag) {
@@ -193,6 +202,7 @@ export const OpenAPIViewer = {
                 data.cur1 = tag
                 data.cur0 = data.menu?.find(tg => tg.tags?.includes(tag))?.name
             }
+            updateVisibility()
         }
 
         function getVisibleEndpoint() {
@@ -220,12 +230,22 @@ export const OpenAPIViewer = {
 
             // Register scroll listener
             setTimeout(() => {
-                updateScroll()
-                document.addEventListener("scroll", updateScroll)
+                onScroll()
+                document.addEventListener("scroll", onScroll)
             }, 500)
         }
 
+        // Set visible levels when the hash changes
+        function updateVisibility() {
+            const tag = location.hash.replace("#tag/", "").split("/")[0]
+            data.cur1 = tag
+            data.cur0 = data.menu?.find(({ tags, name }) => name.replace(" ", "-") === tag || tags?.map(x => x.replace(" ", "-"))?.includes(tag))?.name
+        }
+
         setTimeout(afterRender, 50)
+
+        window.addEventListener("hashchange", updateVisibility)
+        updateVisibility()
     },
 
     setup(props) {
@@ -258,6 +278,7 @@ export const OpenAPIViewer = {
         }
 
         return () => {
+            const showQuickstart = !data.cur0 || ["#quickstart", "#"].includes(location.hash) || !location.hash
             return <>
                 {data.loading && <Teleport to="main"><div class="loading" /></Teleport>}
 
@@ -301,25 +322,26 @@ export const OpenAPIViewer = {
 
                             {data.loading && <div class="loader"><div class="ui-spinner" /> Loading APIs ...</div>}
 
-                            {data.tree?.map(({ name, children }) => <li class="md-nav__item md-nav__item--nested" class={{
+                            {data.tree?.map(({ name, children, empty }) => <li class="md-nav__item md-nav__item--nested" class={{
                                 active: data.cur0 === tagEncode(name),
+                                empty
                             }}>
                                 <a href={`#tag/${tagEncode(name)}`}>{name}</a>
                                 <ul class='md-nav__list'>
-                                    {children?.map(({ name, endpoints }) => <li class='md-nav__item md-nav__item--nested accordion' class={{
+                                    {children?.map(({ name, endpoints, empty }) => <li class='md-nav__item md-nav__item--nested accordion' class={{
                                         active: data.cur1 === tagEncode(name),
-                                        empty: !endpoints?.filter(e => e.visible)?.length > 0
+                                        empty
                                     }}>
                                         <a href={`#tag/${tagEncode(name)}`} >{capitalize(name)} {Chevron}</a>
                                         <ul class='md-nav__list'>
-                                            {endpoints?.map(({ operationId, method, summary, visible = true }) => !!visible && <li class='md-nav__item md-nav__item--nested' class={{
+                                            {endpoints?.map(({ operationId, method, summary, visible = true }) => (!!visible && <li class='md-nav__item md-nav__item--nested' class={{
                                                 active: data.cur2 === `tag/${tagEncode(name)}/${operationId}`
                                             }}>
                                                 <a href={`#tag/${tagEncode(name)}/${operationId}`} onClick={closeMenu}>
                                                     <span class='method' class={method}>{method}</span>
                                                     <span>{summary || operationId}</span>
                                                 </a>
-                                            </li>)}
+                                            </li>))}
                                         </ul>
                                     </li>)}
                                 </ul>
@@ -345,24 +367,25 @@ export const OpenAPIViewer = {
                             Download full OpenAPI 3.1 schema in JSON format
                         </a>
 
-                        <h2 id="quickstart" class="sc-jXbUNg copjkU">Quickstart</h2>
-                        <div class="quickstart" v-embed={data.quickStart} />
-
-                        {data.tree?.map(({ name, children }) => <>
+                        {showQuickstart && <>
+                            <h2 id="quickstart" class="sc-jXbUNg copjkU">Quickstart</h2>
+                            <div class="quickstart" v-embed={data.quickStart} />
+                        </>}
+                        {data.tree?.map(({ name, children, empty }) => data.cur0 === tagEncode(name) && <>
                             <a href={`#tag/${tagEncode(name)}`}>
                                 <h2 id={`tag/${tagEncode(name)}`}>
                                     {name}
                                     <span class='alink' />
                                 </h2>
                             </a>
-                            {children?.map(({ name, endpoints }) => <>
-                                <a href={`#tag/${tagEncode(name)}`} class={{ empty: !endpoints?.filter(e => e.visible)?.length > 0 }}>
+                            {!empty && children?.map(({ name, endpoints, empty }) => <>
+                                <a href={`#tag/${tagEncode(name)}`} class={{ empty }}>
                                     <h3 id={`tag/${tagEncode(name)}`}>
                                         {capitalize(name)}
                                         <span class='alink' />
                                     </h3>
                                 </a>
-                                {endpoints?.map(endpoint => !!endpoint.visible && Endpoint(
+                                {!empty && endpoints?.map(endpoint => !!endpoint.visible && Endpoint(
                                     `tag/${tagEncode(name)}/${endpoint.operationId}`,
                                     endpoint,
                                     name,
