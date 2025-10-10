@@ -88,6 +88,7 @@ nav:
       - Events: xdr/features/investigate/events.md
       - AI Cases: xdr/features/investigate/ai_cases.md
       - Cases: xdr/features/investigate/cases.md
+      - Asset Context Panel (coming soon): xdr/features/investigate/asset_context_panel.md
       - Events Query Language: xdr/features/investigate/events_query_language.md
       - Querying Events: xdr/features/investigate/querying_events.md
       - Query Builder: xdr/features/investigate/query_builder.md
