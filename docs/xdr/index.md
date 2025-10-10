@@ -52,4 +52,5 @@ Each asset is enriched with a **Timeline**, **Hygiene** posture, **Vulnerabiliti
 #### Get started
 1. **Connect sources:** Deploy the [Sekoia Endpoint Agent](https://docs.sekoia.io/integration/categories/endpoint/sekoiaio/#enabling-host-hygiene-collection) and integrate your [asset inventory](https://docs.sekoia.io/xdr/features/collect/integrations_hub/) and [vulnerability management](https://docs.sekoia.io/xdr/features/collect/integrations_hub/) tools.  
 2. **Curate inventory:** Assign **criticality**, **tags**, and owners; resolve duplicates and address coverage gaps through your [asset inventory](https://docs.sekoia.io/xdr/features/collect/assets/#your-asset-inventory).  
-3. **Investigate:** Use the [Asset Context Panel](/xdr/reveal/asset-panel) anywhere to act on context.
+3. **Investigate:** Use the [Asset Context Panel](/xdr/features/investigate/asset_context_panel.md
+) anywhere to act on context.
