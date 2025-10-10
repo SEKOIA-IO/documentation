@@ -65,4 +65,4 @@ Get the last records from FlowLog (deprecated in flavor of Fetch new logs on S3)
 
 ## Extra
 
-Module **`AWS` v1.33.2**
+Module **`AWS` v1.33.4**
