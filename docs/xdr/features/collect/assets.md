@@ -101,29 +101,28 @@ The Asset Listing page supports bulk actions, allowing you to perform operations
 
 ### Asset Discovery
 
-Reveal supports *multi-source asset discovery*, combining several complementary methods to build a unified, contextualized Asset Inventory.  
+Supporting *multi-source asset discovery*, combining several complementary methods to build a unified, contextualized asset inventory.  
 This approach ensures maximum coverage of your environment, reduces blind spots, and provides redundancy when a single source of truth is incomplete.  
-By correlating multiple identifiers and data feeds, Reveal helps analysts quickly understand what assets exist, their context, and their security posture.  
 
-The three supported discovery methods are:  
+The three supported asset discovery methods are:  
 
-1. **Asset Collection via Asset Connectors** *(Reveal add-on module capability)*  
+1. **Asset Collection via Asset Connectors** *(Reveal module)*  - coming soon
 2. **Automatic Asset Discovery (via Events)**  
 3. **Manual Asset Creation**  
 
 Each method has unique strengths. Together, they deliver complete asset visibility.
 
-#### Asset Collection via Asset Connectors (Reveal add-On module) - Coming soon!
+#### Asset Collection via Asset Connectors (Reveal module) - coming soon
 
 **How it works:**  
 - Asset Connectors pull structured asset data directly from external systems like:  
-  - Endpoint Detection & Response (EDR) platforms  
-  - Vulnerability Management tools  
-  - Cloud/CMDB sources  
-- Each connector continuously synchronizes assets into Reveal, keeping the inventory current.  
-- Collected assets can override or enrich attributes discovered automatically (e.g., “OS = Windows 11” from the EDR is authoritative).  
-- Duplicates from multiple connectors are merged into a single asset record.  
-- Admins can manage connectors in **Configure → Asset Connectors**: add, test, enable/disable, or delete.  
+  - Endpoint Detection & Response (EDR)  
+  - Vulnerability Management  
+  - Cloud/CMDB  
+- Each connector synchronizes assets into your unified asset inventory.  
+- Collected assets can override, or enrich attributes discovered using other methods.  
+- Duplicates from multiple connectors are merged into a single asset record, for example on hostname basis.  
+- Admins can manage asset connectors in **Configure → Asset Connectors**: add, test, enable/disable, or delete.  
 
 **When to use it:**  
 - Recommended for critical systems where authoritative data is available (e.g., EDR agent data for all endpoints).  
