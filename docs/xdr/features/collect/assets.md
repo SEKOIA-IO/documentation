@@ -106,7 +106,7 @@ This approach ensures maximum coverage of your environment, reduces blind spots,
 
 The three supported asset discovery methods are:  
 
-1. **Asset Collection via Asset Connectors** *(Reveal module)*  - coming soon
+1. **Asset Collection via Asset Connectors**
 2. **Automatic Asset Discovery (via Events)**  
 3. **Manual Asset Creation**  
 
@@ -114,24 +114,25 @@ Each method has unique strengths. Together, they deliver complete asset visibili
 
 #### Asset Collection via Asset Connectors (Reveal module) - coming soon
 
-**How it works:**  
-- Asset Connectors pull structured asset data directly from external systems like:  
-  - Endpoint Detection & Response (EDR)  
-  - Vulnerability Management  
-  - Cloud/CMDB  
-- Each connector synchronizes assets into your unified asset inventory.  
-- Collected assets can override, or enrich attributes discovered using other methods.  
-- Duplicates from multiple connectors are merged into a single asset record, for example on hostname basis.  
-- Admins can manage asset connectors in **Configure → Asset Connectors**: add, test, enable/disable, or delete.  
+**How it works**  
+Asset Connectors ingest structured asset data from external sources such as:  
+- **Endpoint Detection & Response (EDR)**  
+- **Cloud / CMDB systems**
+- **Vulnerability Management (VM)**
+  
+Each asset connector frequently syncs assets into your unified inventory:  
+- Assets discovered by multiple asset connectors are **de-duplicated and merged** into a single record using stable identifiers (e.g., hostname)
+- Attributes from asset connectors can **enrich** existing assets.  
+- Administrators manage connectors in **Configure → Asset Connectors** to add, test, enable/disable, or remove them.
 
-**When to use it:**  
-- Recommended for critical systems where authoritative data is available (e.g., EDR agent data for all endpoints).  
-- Complements automatic discovery by ensuring attributes are correct and complete.  
+**When to use it**  
+- Ideal for environments where **authoritative data sources** exist (e.g., EDR-managed endpoints, cloud-hosted assets, or CMDB-managed systems).  
+- Complements **automatic network discovery** by ensuring asset attributes remain accurate, complete, and up to date.
 
-**Why it matters:**  
-- Provides **trusted data** from security controls (less noise than event-only discovery).  
-- Ensures consistency across security tools (same asset metadata shared across Sekoia, EDR, VM).  
-- Reduces reliance on logs alone, especially for assets with limited event coverage.  
+**Why it matters**  
+- Delivers **high-fidelity asset data** directly from trusted security and infrastructure systems.  
+- Improves **contextual accuracy** for investigations and risk assessments.  
+- Reduces analyst effort by consolidating multiple inventories into a **single, consistent asset view**.
 
 #### Automatic Asset Discovery
 
