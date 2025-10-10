@@ -4065,6 +4065,7 @@ Rules catalog includes **1048 built-in detection rules** ([_last update on 2025-
         - 20/12/2024 - minor - Adding minor filter on a process parent name.
         - 23/01/2024 - minor - Adding elements to increase detection and filters to reduce false positives.
         - 13/09/2024 - major - Adding filters to reduce false positives and updated the effort level to master as it is a rule highly dependent on the environment.
+        - 10/10/2025 - minor - Adding parent process command line as a newly displayed field in the alert.
             
 ??? abstract "Microsoft Office Spawning Script"
     
