@@ -162,6 +162,7 @@ nav:
       - Swimlane Turbine: cti/features/integrations/swimlane_turbine.md
       - Anomali ThreatStream: cti/features/integrations/anomali.md
       - PaloAlto Cortex XSOAR: cti/features/integrations/paloalto_xsoar.md
+      - PaloAlto Cortex XSIAM: cti/features/integrations/paloalto_xsiam.md
       - ThreatQuotient: cti/features/integrations/threatquotient.md
 - Integrations:
   - Introduction: integration/index.md
