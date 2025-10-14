@@ -525,6 +525,12 @@ The following Sekoia.io built-in rules match the intake **Microsoft Defender XDR
     
     - **Effort:** elementary
 
+??? abstract "Download File On Cloud Storage Through Command Line"
+    
+    Detects commonly used commands like curl or wget used to download files on a Cloud Storage URL like a Google Drive URL.
+    
+    - **Effort:** intermediate
+
 ??? abstract "Download Files From Suspicious TLDs"
     
     Detects download of certain file types from hosts in suspicious TLDs
@@ -1710,6 +1716,12 @@ The following Sekoia.io built-in rules match the intake **Microsoft Defender XDR
 ??? abstract "SOCKS Tunneling Tool"
     
     Detects the usage of a SOCKS tunneling tool, often used by threat actors. These tools often use the socks5 commandline argument, however socks4 can sometimes be used as well. Unfortunately, socks alone (without any number) triggered too many false positives. 
+    
+    - **Effort:** intermediate
+
+??? abstract "SSH Reverse Socks"
+    
+    Detects the usage of the -R option combined with StrictHostKeyChecking, which is an indication of using SSH for reverse socks.
     
     - **Effort:** intermediate
 

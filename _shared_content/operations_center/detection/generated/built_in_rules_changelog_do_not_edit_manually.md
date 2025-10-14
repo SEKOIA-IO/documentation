@@ -1,7 +1,10 @@
-Changelog _last update on 2025-10-10_
+Changelog _last update on 2025-10-14_
 
 ## Changelog
 
+### Microsoft Office Product Spawning Windows Shell
+  - 10/10/2025 - minor - Adding parent process command line as a newly displayed field in the alert.
+    
 ### Exploiting SetupComplete.cmd CVE-2019-1378
   - 09/10/2025 - minor - Added filter for a new field to reduce false positvives.
     
@@ -466,9 +469,6 @@ Changelog _last update on 2025-10-10_
     
 ### Microsoft Defender XDR Alert
   - 13/09/2024 - major - Update service name value following Microsoft change
-    
-### Microsoft Office Product Spawning Windows Shell
-  - 13/09/2024 - major - Adding filters to reduce false positives and updated the effort level to master as it is a rule highly dependent on the environment.
     
 ### DCSync Attack
   - 05/09/2024 - minor - Changing name of elements.

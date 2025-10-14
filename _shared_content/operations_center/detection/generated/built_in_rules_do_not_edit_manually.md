@@ -1,4 +1,4 @@
-Rules catalog includes **1048 built-in detection rules** ([_last update on 2025-10-10_](rules_changelog.md)).
+Rules catalog includes **1050 built-in detection rules** ([_last update on 2025-10-14_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Identity Information**
 
@@ -4065,6 +4065,7 @@ Rules catalog includes **1048 built-in detection rules** ([_last update on 2025-
         - 20/12/2024 - minor - Adding minor filter on a process parent name.
         - 23/01/2024 - minor - Adding elements to increase detection and filters to reduce false positives.
         - 13/09/2024 - major - Adding filters to reduce false positives and updated the effort level to master as it is a rule highly dependent on the environment.
+        - 10/10/2025 - minor - Adding parent process command line as a newly displayed field in the alert.
             
 ??? abstract "Microsoft Office Spawning Script"
     
@@ -14206,6 +14207,12 @@ Rules catalog includes **1048 built-in detection rules** ([_last update on 2025-
     
     - **Effort:** elementary
     
+??? abstract "Download File On Cloud Storage Through Command Line"
+    
+    Detects commonly used commands like curl or wget used to download files on a Cloud Storage URL like a Google Drive URL.
+    
+    - **Effort:** intermediate
+    
 ??? abstract "Dynamic DNS Contacted"
     
     Detect communication with dynamic dns domain. This kind of domain is often used by attackers. This rule can trigger false positive in non-controlled environment because dynamic dns is not always malicious.
@@ -14659,6 +14666,12 @@ Rules catalog includes **1048 built-in detection rules** ([_last update on 2025-
     When a user uses SSH tunneling in Linux, the sshd process binds sockets to communicate with the client machine via a ssh tunnel. With SSH tunneling, the SSH server can be used as a getaway to access internal systems. The traffic will seem to be coming from the SSH server whereas it only acts as a relay for an attacker. By using this technique, an attacker can successfully bypass external firewall rules. This rule is the most basic one (compared to the other one - SSH Tunnel), however it can detect the -D option in the ssh command if the machine is the client. This rule will detect the port binding (port 6010) when X11 forwarding is used. It will detect -R (server side), -D (client side) -X (server side), -Y (server side) and -L (client side) port binding.
     
     - **Effort:** advanced
+    
+??? abstract "SSH Reverse Socks"
+    
+    Detects the usage of the -R option combined with StrictHostKeyChecking, which is an indication of using SSH for reverse socks.
+    
+    - **Effort:** intermediate
     
 ??? abstract "SSH Tunnel Traffic"
     

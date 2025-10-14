@@ -339,6 +339,12 @@ The following Sekoia.io built-in rules match the intake **Stormshield SNS**. Thi
     
     - **Effort:** elementary
 
+??? abstract "Download File On Cloud Storage Through Command Line"
+    
+    Detects commonly used commands like curl or wget used to download files on a Cloud Storage URL like a Google Drive URL.
+    
+    - **Effort:** intermediate
+
 ??? abstract "Dscl Authonly"
     
     Detects the use of the command dscl with authonly used to verify the password of a user and for authentification. An attacker can abuse this command to gain credentials.
@@ -1140,6 +1146,12 @@ The following Sekoia.io built-in rules match the intake **Stormshield SNS**. Thi
 ??? abstract "SOCKS Tunneling Tool"
     
     Detects the usage of a SOCKS tunneling tool, often used by threat actors. These tools often use the socks5 commandline argument, however socks4 can sometimes be used as well. Unfortunately, socks alone (without any number) triggered too many false positives. 
+    
+    - **Effort:** intermediate
+
+??? abstract "SSH Reverse Socks"
+    
+    Detects the usage of the -R option combined with StrictHostKeyChecking, which is an indication of using SSH for reverse socks.
     
     - **Effort:** intermediate
 

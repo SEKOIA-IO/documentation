@@ -435,6 +435,12 @@ The following Sekoia.io built-in rules match the intake **Palo Alto Cortex XDR (
     
     - **Effort:** elementary
 
+??? abstract "Download File On Cloud Storage Through Command Line"
+    
+    Detects commonly used commands like curl or wget used to download files on a Cloud Storage URL like a Google Drive URL.
+    
+    - **Effort:** intermediate
+
 ??? abstract "Dscl Authonly"
     
     Detects the use of the command dscl with authonly used to verify the password of a user and for authentification. An attacker can abuse this command to gain credentials.
@@ -1418,6 +1424,12 @@ The following Sekoia.io built-in rules match the intake **Palo Alto Cortex XDR (
     The file authorized_keys is used by SSH server to identify SSH keys that are authorized to connect to the host, alteration of one of those files might indicate a user compromision.
     
     - **Effort:** advanced
+
+??? abstract "SSH Reverse Socks"
+    
+    Detects the usage of the -R option combined with StrictHostKeyChecking, which is an indication of using SSH for reverse socks.
+    
+    - **Effort:** intermediate
 
 ??? abstract "Schtasks Persistence With High Privileges"
     
