@@ -14,7 +14,7 @@ Instead of switching between inventory pages, a configuration management databas
 
 ---
 
-<img width="344,5" height="547,5" alt="Asset context panel example" src="https://github.com/user-attachments/assets/7559b5b2-a838-4e53-a416-071d6b8c2fef" />
+<img width="431" height="684" alt="Asset context panel example" src="https://github.com/user-attachments/assets/7559b5b2-a838-4e53-a416-071d6b8c2fef" />
 
 ---
 
@@ -31,8 +31,6 @@ The panel is designed for **contextual investigation**, letting you open it from
   → Correlate incidents affecting the same asset.
 - **From asset listing (Configure → Assets):** click the **asset context panel** icon on the right side of the listed asset.  
   → Instantly view all contextual information known about that asset, including identifiers, posture, vulnerabilities, and recent activity.
-
-<img width="2389" height="308" alt="Open the asset context panel from listing" src="https://github.com/user-attachments/assets/849985f7-8279-40bd-b5a4-82328b2babd1" />
 
 **Why it matters**  
 During an active investigation, analysts need to pivot fast. Every external click — to a CMDB, EDR console, or VM dashboard — adds friction and increases the risk of misattribution.  
@@ -281,7 +279,7 @@ Different sources score severity/risk differently. The **unified risk score (1�
 **Example**  
 A *remote file inclusion* alert (ATT&CK T1190) hits a web server. The tab shows **CVE-2023-28432** on the same application version with high unified risk → isolate host, patch urgently, and document exploit alignment.
 
-<img width="306,5" height="236" alt="Vulnerabilities tab example" src="https://github.com/user-attachments/assets/300d5842-379d-4c09-9827-331217ac4357" />
+<img width="515" height="396" alt="Vulnerabilities tab example" src="https://github.com/user-attachments/assets/300d5842-379d-4c09-9827-331217ac4357" />
 
 ---
 
@@ -307,7 +305,7 @@ Connectors that discovered or enriched the asset (e.g., **EDR** such as CrowdStr
 **Example**  
 A high-value domain controller appears in network telemetry and VM scans but not in endpoint or identity logs — explaining why credential-access activity was not detected. Task: deploy endpoint monitoring.
 
-<img width="331" height="279" alt="Security controls tab example" src="https://github.com/user-attachments/assets/279e1288-53c6-490e-8f30-0498c3484d3e" />
+<img width="463,4" height="390,6" alt="Security controls tab example" src="https://github.com/user-attachments/assets/279e1288-53c6-490e-8f30-0498c3484d3e" />
 
 ## Summary
 
