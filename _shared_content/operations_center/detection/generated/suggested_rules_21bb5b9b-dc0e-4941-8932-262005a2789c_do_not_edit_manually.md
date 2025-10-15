@@ -3,6 +3,12 @@
 The following Sekoia.io built-in rules match the intake **Hornetsecurity 365 Total Protection**. This documentation is updated automatically and is based solely on the fields used by the intake which are checked against our rules. This means that some rules will be listed but might not be relevant with the intake.
 
 [SEKOIA.IO x Hornetsecurity 365 Total Protection on ATT&CK Navigator](https://mitre-attack.github.io/attack-navigator/#layerURL=https%3A%2F%2Fraw.githubusercontent.com%2FSEKOIA-IO%2Fdocumentation%2Fmain%2F_shared_content%2Foperations_center%2Fdetection%2Fgenerated%2Fattack_21bb5b9b-dc0e-4941-8932-262005a2789c_do_not_edit_manually.json){ .md-button }
+??? abstract "Advanced Threat Detected By Hornetsecurity 365 Total Protection"
+    
+    Hornetsecurity 365 Total Protection has detected an advanced threat from an e-mail.
+    
+    - **Effort:** master
+
 ??? abstract "Burp Suite Tool Detected"
     
     Burp Suite is a cybersecurity tool. When used as a proxy service, its purpose is to intercept packets and modify them to send them to the server. Burp Collaborator is a network service that Burp Suite uses to help discover many kinds of vulnerabilities (vulnerabilities scanner).
@@ -75,6 +81,12 @@ The following Sekoia.io built-in rules match the intake **Hornetsecurity 365 Tot
     
     - **Effort:** master
 
+??? abstract "Spam Detected By Hornetsecurity 365 Total Protection"
+    
+    Hornetsecurity 365 Total Protection has detected a spam e-mail.
+    
+    - **Effort:** master
+
 ??? abstract "Suspicious TOR Gateway"
     
     Detects suspicious TOR gateways. Gateways are often used by the victim to pay and decrypt the encrypted files without installing TOR. Tor intercepts the network traffic from one or more apps on user’s computer, usually the user web browser, and shuffles it through a number of randomly-chosen computers before passing it on to its destination. This disguises user location, and makes it harder for servers to pick him/her out on repeat visits, or to tie together separate visits to different sites, this making tracking and surveillance more difficult. Before a network packet starts its journey, user’s computer chooses a random list of relays and repeatedly encrypts the data in multiple layers, like an onion. Each relay knows only enough to strip off the outermost layer of encryption, before passing what’s left on to the next relay in the list.
@@ -92,3 +104,9 @@ The following Sekoia.io built-in rules match the intake **Hornetsecurity 365 Tot
     Detects suspicious DNS queries to api.telegram.org used by Telegram Bots of any kind
     
     - **Effort:** advanced
+
+??? abstract "Threat Detected By Hornetsecurity 365 Total Protection"
+    
+    Hornetsecurity 365 Total Protection has detected a threat from an e-mail.
+    
+    - **Effort:** master
