@@ -154,13 +154,13 @@ The following table lists the atom types and their related event fields that are
 | --- | --- |
 | IPv4 | `client.ip`, `destination.ip`, `host.ip`, `server.ip`, `source.ip`, `related.ip` |
 | IPv6 | `client.ip`, `destination.ip`, `host.ip`, `server.ip`, `source.ip`, `related.ip` |
-| Hostname *| `host.name`, `host.hostname`, `related.host`, `client.name`, `server.name`, `log.hostname` |
+| Hostname | `host.name`, `host.hostname`, `related.host`, `client.name`, `server.name`, `log.hostname` |
 | fqdn | `dns.question.name`, `client.domain`, `client.registered_domain`, `destination.domain`, `destination.registered_domain`, `source.domain`, `source.registered_domain`, `server.domain`, `server.registered_domain`, `tls.client.x509.alternative_names`, `url.domain`, `url.registered_domain`, `x509.subject.common_name`, `x509.alternative_names`, `user.domain`, `related.host` |
 | username | `user.name`, `user.full_name`, `related.user`, `client.user.name` |
 | email | `client.user.email`, `destination.user.email`, `file.x509.alternative_names`, `host.user.email`, `server.user.email`, `source.user.email`, `tls.client.x509.alternative_names`,` user.email`, `user.changes.email`, `user.effective.email`, `user.target.email`, `x509.alternative_names`, `email.from.address`, `email.to.address` |
 | sid | `user.id`, `related.user`, `client.user.id` |
 
-* ⚠ To be considered valid, a hostname must have at least one letter, only contain letters, numbers, hyphens and underscores, and not be a valid domain
+⚠ To be considered valid, a hostname must have at least one letter, only contain letters, numbers, hyphens and underscores, and not be a valid domain
 
 ## Asset Discovery Rules
 
