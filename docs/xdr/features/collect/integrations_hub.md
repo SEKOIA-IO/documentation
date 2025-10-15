@@ -42,7 +42,7 @@ From this detailed listing, you can also create intakes or try playbook triggers
 
 ## Create Your Own Integration
 
-Can't find an integration that perfectly fits your unique needs? No problem! Unlock unlimited potential and effortlessly create custom integrations tailored specifically for you. With this capability, your integration possibilities are now boundless. Build your own playbook actions, triggers, event connectors, asset connector**(Coming soon)**  intake formats, and more.
+Can't find an integration that perfectly fits your unique needs? No problem! Unlock unlimited potential and effortlessly create custom integrations tailored specifically for you. With this capability, your integration possibilities are now boundless. Build your own playbook actions, triggers, event connectors, asset connector** (coming soon)**,  intake formats, and more.
 
 ### Pre-requisites
 
