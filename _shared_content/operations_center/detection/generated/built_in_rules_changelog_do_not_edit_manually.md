@@ -1,7 +1,16 @@
-Changelog _last update on 2025-10-14_
+Changelog _last update on 2025-10-15_
 
 ## Changelog
 
+### Brute-Force On Fortinet Firewall Login
+  - 15/10/2025 - minor - Update pattern to match intake format change
+    
+### Fortigate Firewall Login In Failure
+  - 15/10/2025 - minor - Update pattern to match intake format change
+    
+### Login Brute-Force On Fortinet Firewall From Internet
+  - 15/10/2025 - minor - Update pattern to match intake format change
+    
 ### Microsoft Office Product Spawning Windows Shell
   - 10/10/2025 - minor - Adding parent process command line as a newly displayed field in the alert.
     
@@ -254,9 +263,6 @@ Changelog _last update on 2025-10-14_
 ### Correlation Jumpcloud User Logged In From Multiple Countries
   - 03/02/2025 - minor - Update pattern to ECS field only
     
-### Login Brute-Force On Fortinet Firewall From Internet
-  - 03/02/2025 - minor - Update pattern to ECS field only and intake format
-    
 ### Login Brute-Force Successful Linux
   - 03/02/2025 - minor - Update pattern to ECS field only
     
@@ -282,12 +288,6 @@ Changelog _last update on 2025-10-14_
   - 20/01/2025 - minor - Removing event fields to use the smart description
     
 ### Fortigate Firewall Successful External Login
-  - 20/01/2025 - minor - Update pattern to ECS field only
-    
-### Brute-Force On Fortinet Firewall Login
-  - 20/01/2025 - minor - Update pattern to ECS field and add intake field format
-    
-### Fortigate Firewall Login In Failure
   - 20/01/2025 - minor - Update pattern to ECS field only
     
 ### Correlation Potential DNS Tunnel

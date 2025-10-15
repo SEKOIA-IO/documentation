@@ -1,4 +1,4 @@
-Rules catalog includes **1050 built-in detection rules** ([_last update on 2025-10-14_](rules_changelog.md)).
+Rules catalog includes **1050 built-in detection rules** ([_last update on 2025-10-15_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Identity Information**
 
@@ -842,6 +842,7 @@ Rules catalog includes **1050 built-in detection rules** ([_last update on 2025-
     - **Changelog:**
     
         - 20/01/2025 - minor - Update pattern to ECS field and add intake field format
+        - 15/10/2025 - minor - Update pattern to match intake format change
             
 ??? abstract "Denied Access To Remote Desktop"
     
@@ -942,6 +943,7 @@ Rules catalog includes **1050 built-in detection rules** ([_last update on 2025-
     - **Changelog:**
     
         - 03/02/2025 - minor - Update pattern to ECS field only and intake format
+        - 15/10/2025 - minor - Update pattern to match intake format change
             
 ??? abstract "Login Brute-Force On FreeRadius"
     
@@ -5612,6 +5614,7 @@ Rules catalog includes **1050 built-in detection rules** ([_last update on 2025-
     - **Changelog:**
     
         - 20/01/2025 - minor - Update pattern to ECS field and add intake field format
+        - 15/10/2025 - minor - Update pattern to match intake format change
             
 ??? abstract "Denied Access To Remote Desktop"
     
@@ -5712,6 +5715,7 @@ Rules catalog includes **1050 built-in detection rules** ([_last update on 2025-
     - **Changelog:**
     
         - 03/02/2025 - minor - Update pattern to ECS field only and intake format
+        - 15/10/2025 - minor - Update pattern to match intake format change
             
 ??? abstract "Login Brute-Force On FreeRadius"
     
@@ -7652,6 +7656,7 @@ Rules catalog includes **1050 built-in detection rules** ([_last update on 2025-
     - **Changelog:**
     
         - 20/01/2025 - minor - Update pattern to ECS field and add intake field format
+        - 15/10/2025 - minor - Update pattern to match intake format change
             
 ??? abstract "Denied Access To Remote Desktop"
     
@@ -7752,6 +7757,7 @@ Rules catalog includes **1050 built-in detection rules** ([_last update on 2025-
     - **Changelog:**
     
         - 03/02/2025 - minor - Update pattern to ECS field only and intake format
+        - 15/10/2025 - minor - Update pattern to match intake format change
             
 ??? abstract "Login Brute-Force On FreeRadius"
     
@@ -9583,6 +9589,7 @@ Rules catalog includes **1050 built-in detection rules** ([_last update on 2025-
     - **Changelog:**
     
         - 20/01/2025 - minor - Update pattern to ECS field and add intake field format
+        - 15/10/2025 - minor - Update pattern to match intake format change
             
 ??? abstract "Denied Access To Remote Desktop"
     
@@ -9683,6 +9690,7 @@ Rules catalog includes **1050 built-in detection rules** ([_last update on 2025-
     - **Changelog:**
     
         - 03/02/2025 - minor - Update pattern to ECS field only and intake format
+        - 15/10/2025 - minor - Update pattern to match intake format change
             
 ??? abstract "Login Brute-Force On FreeRadius"
     
@@ -12177,6 +12185,7 @@ Rules catalog includes **1050 built-in detection rules** ([_last update on 2025-
     - **Changelog:**
     
         - 20/01/2025 - minor - Update pattern to ECS field and add intake field format
+        - 15/10/2025 - minor - Update pattern to match intake format change
             
 ??? abstract "Correlation Internal Kerberos Password Spraying"
     
@@ -12219,6 +12228,7 @@ Rules catalog includes **1050 built-in detection rules** ([_last update on 2025-
     - **Changelog:**
     
         - 20/01/2025 - minor - Update pattern to ECS field only
+        - 15/10/2025 - minor - Update pattern to match intake format change
             
 ??? abstract "Fortigate Firewall Successful External Login"
     
@@ -12251,6 +12261,7 @@ Rules catalog includes **1050 built-in detection rules** ([_last update on 2025-
     - **Changelog:**
     
         - 03/02/2025 - minor - Update pattern to ECS field only and intake format
+        - 15/10/2025 - minor - Update pattern to match intake format change
             
 ??? abstract "Login Brute-Force On FreeRadius"
     
