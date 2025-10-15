@@ -282,6 +282,7 @@ nav:
       - Rubycat PROVE IT: integration/categories/iam/rubycat_prove_it.md
       - SentinelOne Singularity Identity: integration/categories/iam/sentinelone_identity.md
       - Wallix: integration/categories/iam/wallix.md
+      - Cyberark Digital Vault: integration/categories/iam/cyberark_vault.md
     - Network:
       - Amazon VPC Flow Logs: integration/categories/network/aws_flow_logs.md
       - Azure Application Gateway: integration/categories/network/azure_application_gateway.md
