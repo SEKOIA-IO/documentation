@@ -1,4 +1,4 @@
-Rules catalog includes **1050 built-in detection rules** ([_last update on 2025-10-15_](rules_changelog.md)).
+Rules catalog includes **1053 built-in detection rules** ([_last update on 2025-10-15_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Identity Information**
 
@@ -1323,6 +1323,12 @@ Rules catalog includes **1050 built-in detection rules** ([_last update on 2025-
             
 **Phishing**
 
+??? abstract "Advanced Threat Detected By Hornetsecurity 365 Total Protection"
+    
+    Hornetsecurity 365 Total Protection has detected an advanced threat from an e-mail.
+    
+    - **Effort:** master
+    
 ??? abstract "Cisco ESA Suspicious Email With Attachment"
     
     Detects an email with an attachment, from a sender tagged as suspect, detected by either the Antivirus or the Advanced Malware Protection (AMP) engine and delivered to the recipient
@@ -1668,6 +1674,12 @@ Rules catalog includes **1050 built-in detection rules** ([_last update on 2025-
     
         - 18/06/2024 - minor - Adding filter when whitelisted.
             
+??? abstract "Spam Detected By Hornetsecurity 365 Total Protection"
+    
+    Hornetsecurity 365 Total Protection has detected a spam e-mail.
+    
+    - **Effort:** master
+    
 ??? abstract "Spam Detected By Vade For M365"
     
     Vade Secure product Vade for M365, has detected a spam e-mail.
@@ -1754,6 +1766,12 @@ Rules catalog includes **1050 built-in detection rules** ([_last update on 2025-
     Detects suspicious child processes of Microsoft Outlook. These child processes are often associated with spearphishing activity.
     
     - **Effort:** intermediate
+    
+??? abstract "Threat Detected By Hornetsecurity 365 Total Protection"
+    
+    Hornetsecurity 365 Total Protection has detected a threat from an e-mail.
+    
+    - **Effort:** master
     
 ## Execution
 **Windows Management Instrumentation**
