@@ -170,7 +170,7 @@ Invalidates all the refresh tokens issued to applications for a user. Requires t
 #### Add permissions
 
 1. Go to `Manage` > `API permissions`
-2. Click `Add a permissions`
+2. Click `Add a permission`
 3. On the right panel, Select `Microsoft APIs` tab
 4. Click `Microsoft Graph`
 5. Click `Application permissions`
@@ -187,4 +187,4 @@ Invalidates all the refresh tokens issued to applications for a user. Requires t
 
 ## Extra
 
-Module **`Microsoft Entra ID` v2.9.0**
+Module **`Microsoft Entra ID` v2.10.0**
