@@ -188,6 +188,10 @@ The Sigma Pattern Testing feature allows SOC analysts to validate detection rule
 !!! warning
     Detection rules with `Sigma Correlation` are not supported for testing. Only `Sigma` rules are supported by the pattern testing feature.
 
+    Correlation rules are fundamentally different from simple detection rules. While simple rules evaluate individual events in isolation, correlation rules must identify relationships and patterns across multiple events such as detecting a sequence of failed login attempts followed by a successful login or identifying suspicious activity patterns across different data sources within a specific timeframe.
+
+    These advanced capabilities go beyond the scope of standard event search.
+
 Pattern testing provides two distinct testing modes:
 
 - **Rule Testing**: Validate new or existing Sigma detection patterns against historical event data
