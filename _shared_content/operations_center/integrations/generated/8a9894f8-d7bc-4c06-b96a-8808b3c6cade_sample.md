@@ -36,6 +36,14 @@ In this section, you will find examples of raw logs as generated natively by the
 
 
 
+=== "test_boot_request"
+
+    ```
+	0000005921 7 5  11-22-33-44-55-66:EVENT_REASON\,dhcp-parameter-request-list=1\, 3\, 6\, 15\, 31\, 33\, 43\, 44\, 46\, 47\, 119\, 121\, 249\, 252\,OperatingSystem=Windows\,PostureApplicable=Yes\,User-Fetch-Department=\,AD-Last-Fetch-Time=1759879885138\,Issuer=CN=COMPANY-SUB-CA\\OU=DSI\\O=COMPANY\\L=RENNES\\C=FR\,NmapSubnetScanID=0\,AD-Host-DNS-Domain=domain.asso.fr\,Device Identifier=\,Airespace-Wlan-Id=12\,ipv6=\,Issuer - Organization=COMPANY\,TotalAuthenLatency=2\,MatchedPolicyID=11111111-1111-1111-1111-111111111111\,Service-Type=Framed\,op=BOOTREQUEST\,UserName=USER$@domain.asso.fr\,FeedService=false\,TLSVersion=TLSv1.2\,AD-Host-NetBios-Name=DOMAIN\,Issuer - Location=RENNES\,SelectedAuthorizationProfiles=PermitAccess\,host-name=USER\,COMPANY_LAN=COMPANY_LAN#COMPANY_LAN\,Subject=CN=USER.DOMAIN.asso.fr\,
+    ```
+
+
+
 === "test_conf_events"
 
     ```

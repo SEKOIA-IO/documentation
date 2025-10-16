@@ -20,6 +20,22 @@ In this section, you will find examples of raw logs as generated natively by the
 
 
 
+=== "connexion3"
+
+    ```
+	Connexion au portail web org:example, user:toto@ORGANIZATION, ip:1.1.1.1
+    ```
+
+
+
+=== "connexion4"
+
+    ```
+	Connexion d&#39;une passerelle org:example, user:@local, ip:1.1.1.1
+    ```
+
+
+
 === "deconnexion1"
 
     ```
@@ -32,6 +48,46 @@ In this section, you will find examples of raw logs as generated natively by the
 
     ```
 	Déconnexion d'un plugin utilisateur org:example, user:jdoe@local, ip:10.48.178.33
+    ```
+
+
+
+=== "deconnexion3"
+
+    ```
+	Déconnexion du portail web org:example, user:toto@ORGANIZATION, ip:1.1.1.1
+    ```
+
+
+
+=== "deconnexion4"
+
+    ```
+	D&#233;connexion d&#39;une passerelle org:example, user:@local, ip:1.1.1.1
+    ```
+
+
+
+=== "echec1"
+
+    ```
+	Echec de la connexion &#224; la console d&#39;administration org:example, user:toto@example, ip:1.1.1.1 17b82585-3f88-4500-baf4-bb95ca7c3344
+    ```
+
+
+
+=== "fermeture1"
+
+    ```
+	Fermeture d'une application SSH (Secure Shell) : MultiTOTOAPP org:example, user:titi@ORGANIZATION, ip:1.1.1.1
+    ```
+
+
+
+=== "lancement1"
+
+    ```
+	Lancement d'une application Web : MultiTOTOAPP org:example, user:toto@ORGANIZATION, ip:1.1.1.1
     ```
 
 
