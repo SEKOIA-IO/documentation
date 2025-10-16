@@ -1,5 +1,5 @@
-uuid: 19cd2ed6-f90c-47f7-a46b-974354a107bb
-name: Microsoft Entra ID (Azure AD - Event Hub)
+uuid: a9b9f7be-a036-4e10-a407-53bc3b8308b4
+name: Microsoft Entra ID (Graph API)
 type: intake
 
 ## Overview
@@ -8,42 +8,97 @@ type: intake
 - **Detection based on**: Telemetry
 - **Supported application or feature**: Application logs, Authentication logs
 
-**Microsoft Entra ID (Azure AD) ** is a cloud-based Identity and Rights management service. The service is developed and managed by Microsoft Corp.
-
-
+**Microsoft Entra ID (Graph API) ** is a cloud-based Identity and Rights management service. The service is developed and managed by Microsoft Corp.
 
 ## Configure
 
-To forward **Microsoft Entra ID (Azure AD) ** events from Azure to Sekoia.io you need to send your event to an Azure **Event Hub** where Sekoia.io will collect the events.
-<div style="text-align: center;">
-    <img width="100%" alt="image" src="/assets/integration/cloud_and_saas/event_hub/consume_azure_logs.png">
-</div>
+### How to create an app registration with proper permissions
 
-### Prerequisite
+To connect Microsoft Entra ID to Sekoia.io, you need to create an app registration with the necessary permissions to access Entra ID users and groups. Follow these steps:
 
-You must have Contributor write on Azure to perform the following installation.
+1. Sign in to the Azure portal and navigate to Microsoft Entra ID.
 
-{!_shared_content/operations_center/integrations/event_hub.md!}
+    ![Azure portal Microsoft Entra ID section](/assets/integration/cloud_and_saas/entra_id/entra_id_application_1.png)
 
-### Send logs from Microsoft Entra ID (Azure AD)  to Azure Event Hub
+2. Click **App registrations** in the left navigation pane, then click **New registration**.
 
-When you have an **Event Hub** follow this guide to send your **Microsoft Entra ID (Azure AD) ** events from Azure to the **Event Hub**:
+    ![App registrations page with New registration button highlighted](/assets/integration/cloud_and_saas/entra_id/entra_id_application_2.png)
 
-You need to activate and configure the **Microsoft Entra ID (Azure AD) ** diagnostic settings (e.g. `company-ad`),
-to receive logs from the **Microsoft Entra ID (Azure AD) ** into your **Event Hub**.
+3. Enter a name for the application (e.g., `sekoia-logs-reader`) and click **Register**.
 
-Navigate to [Home > Microsoft Entra ID (Azure AD)  (e.g. `company-ad`) > Monitoring > Diagnostic settings](https://portal.azure.com/#view/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/~/DiagnosticSettings):
+    ![App registration form with name field](/assets/integration/cloud_and_saas/entra_id/entra_id_application_3.png)
 
-1. Add a new diagnostic setting, and select “Stream to an event hub” and click on configure.
-2. Select the previously created “Event hubs”, “Event Hub” and “SharedAccessKey” (**see step 3 of the event hub guide**).
-3. In the log section, select all log categories (as shown below).
-4. Choose a name for this configuration and click on “Save”.
+4. Copy the **Application (client) ID** and **Directory (tenant) ID** to a safe location. You'll need these values to configure the connector in Sekoia.io.
 
-![diag](https://github.com/jdpju/documentation/assets/113444861/b5e55fd3-da86-4f2f-8095-3c1704ae7a20){: style="max-width:100%"}
+    ![App registration overview with client and tenant IDs](/assets/integration/cloud_and_saas/entra_id/entra_id_application_4.png)
+
+### How to generate a client secret
+
+After creating the app registration, you need to generate a client secret for authentication:
+
+1. Click **Certificates & secrets** in the left navigation pane.
+
+2. Click **New client secret** to generate a new secret.
+
+    ![New client secret button highlighted](/assets/integration/cloud_and_saas/entra_id/entra_id_application_5.png)
+
+3. Enter a description for the secret (e.g., `sekoia-connector-secret`) and select an expiration period, then click **Add**.
+
+    ![Client secret creation form](/assets/integration/cloud_and_saas/entra_id/entra_id_application_6.png)
+
+4. Copy the **Value** of the client secret to a safe location. You'll need this secret to configure the connector in Sekoia.io.
+
+    ![Client secret value display](/assets/integration/cloud_and_saas/entra_id/entra_id_application_7.png)
+
+!!! Warning
+    - The client secret value is only shown when you create it. If you lose it, you must create a new client secret.
+    - Store this secret securely and never share it publicly.
+    - Consider rotating client secrets regularly for security best practices.
+
+### Required API permissions
+
+The app registration must have the following permissions to successfully fetch Entra ID users and groups:
+
+```json
+{
+    "permissions": [
+        "AuditLog.Read.All",
+        "Directory.Read.All"
+    ]
+}
+```
+
+**Required Permissions:**
+- `AuditLog.Read.All`: Read the log endpoint
+- `Directory.Read.All`: Read directory data (optional, for advanced features)
+
+### How to grant API permissions
+
+To grant the required permissions to your app registration:
+
+1. Click **API permissions** in the left navigation pane.
+
+2. Click **Add a permission** to add new permissions.
+
+    ![Add a permission button highlighted](/assets/integration/cloud_and_saas/entra_id/entra_id_application_8.png)
+
+3. Select **Microsoft Graph** as the API.
+
+    ![Microsoft Graph API selection](/assets/integration/cloud_and_saas/entra_id/entra_id_application_9.png)
+
+4. Select **Application permissions** and search for the required permissions:
+   - `AuditLog.Read.All`
+   - `Directory.Read.All`
+
+    ![Application permissions selection](/assets/integration/cloud_and_saas/entra_id/entra_id_application_10.png)
+
+5. Click **Add permissions** to add the selected permissions.
+
+6. Click **Grant admin consent** to grant the permissions (requires admin privileges).
 
 ### Create your intake
 
-1. Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a new intake from the `Microsoft Entra ID / Azure AD`.
+1. Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a new intake from the `GraphAPI for Microsoft Entra ID / Azure AD`.
 2. To fill the form, use the table completed during the creation of the **Event Hub**.
 
 
@@ -51,8 +106,8 @@ Navigate to [Home > Microsoft Entra ID (Azure AD)  (e.g. `company-ad`) > Monitor
 
 {!_shared_content/integration/detection_section.md!}
 
-{!_shared_content/operations_center/detection/generated/suggested_rules_19cd2ed6-f90c-47f7-a46b-974354a107bb_do_not_edit_manually.md!}
-{!_shared_content/operations_center/integrations/generated/19cd2ed6-f90c-47f7-a46b-974354a107bb.md!}
+{!_shared_content/operations_center/detection/generated/suggested_rules_a9b9f7be-a036-4e10-a407-53bc3b8308b4_do_not_edit_manually.md!}
+{!_shared_content/operations_center/integrations/generated/a9b9f7be-a036-4e10-a407-53bc3b8308b4.md!}
 
 #### Further Readings
 

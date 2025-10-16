@@ -277,6 +277,7 @@ nav:
       - Jumpcloud Directory Insights: integration/categories/iam/jumpcloud_directory_insights.md
       - ManageEngine ADAudit Plus: integration/categories/iam/manageengine_adauditplus.md
       - Microsoft Entra ID (Azure AD): integration/categories/iam/entra_id.md
+      - Microsoft Entra ID (Graph API): integration/categories/iam/entra_id_graph_api.md
       - Okta System log: integration/categories/iam/okta_system_log.md
       - OpenLDAP: integration/categories/iam/openldap.md
       - RSA SecurID: integration/categories/iam/rsa_securid.md
@@ -589,6 +590,7 @@ plugins:
       xdr/features/collect/integrations/cloud_and_saas/azure/azure_network_watcher.md: integration/categories/network_security/azure_network_watcher.md
       xdr/features/collect/integrations/cloud_and_saas/azure/azure_windows.md: integration/categories/endpoint/azure_windows.md
       xdr/features/collect/integrations/cloud_and_saas/azure/entra_id.md: integration/categories/iam/entra_id.md
+      xdr/features/collect/integrations/cloud_and_saas/azure/entra_id_graph_api.md: integration/categories/iam/entra_id_graph_api.md
       xdr/features/collect/integrations/cloud_and_saas/bitsight_spm.md: integration/categories/network_security/bitsight_spm.md
       xdr/features/collect/integrations/cloud_and_saas/broadcom_cloud_swg.md: integration/categories/network_security/broadcom_cloud_swg.md
       xdr/features/collect/integrations/cloud_and_saas/cato_sase.md: integration/categories/network/cato_sase.md
