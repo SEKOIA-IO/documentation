@@ -10,6 +10,12 @@ type: intake
 
 **Microsoft Entra ID (Graph API) ** is a cloud-based Identity and Rights management service. The service is developed and managed by Microsoft Corp.
 
+!!! Warning
+    Important note - This format is currently in beta. We highly value your feedback to improve its performance.
+    
+!!! Danger "Scalability"
+    This integration will collect the events through Microsoft Graph API, which is only recommended for small environments. For larger environments, it is recommended to use the Microsoft Entra ID / Azure AD integration (see [Microsoft Entra ID](entra_id.md))
+
 ## Configure
 
 ### How to create an app registration with proper permissions
