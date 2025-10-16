@@ -160,7 +160,7 @@ The following table lists the atom types and their related event fields that are
 | email | `client.user.email`, `destination.user.email`, `file.x509.alternative_names`, `host.user.email`, `server.user.email`, `source.user.email`, `tls.client.x509.alternative_names`,` user.email`, `user.changes.email`, `user.effective.email`, `user.target.email`, `x509.alternative_names`, `email.from.address`, `email.to.address` |
 | sid | `user.id`, `related.user`, `client.user.id` |
 
-⚠ To be considered valid, a hostname must have at least one letter, only contain letters, numbers, hyphens and underscores, and not be a valid domain
+⚠ To be considered valid, a hostname must have at least one letter, only contain letters, numbers, hyphens and underscores, and not be a valid domain. If the Hostname is not valid, it will not be detected as an Asset.
 
 ## Asset Discovery Rules
 
