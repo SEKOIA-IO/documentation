@@ -315,6 +315,12 @@ The following Sekoia.io built-in rules match the intake **Trellix ePO (on-prem)*
     
     - **Effort:** master
 
+??? abstract "SEKOIA.IO Intelligence Feed"
+    
+    Detect threats based on indicators of compromise (IOCs) collected by SEKOIA's Threat and Detection Research team.
+    
+    - **Effort:** elementary
+
 ??? abstract "Sekoia.io EICAR Detection"
     
     Detects observables in Sekoia.io CTI tagged as EICAR, which are fake samples meant to test detection.
@@ -330,6 +336,12 @@ The following Sekoia.io built-in rules match the intake **Trellix ePO (on-prem)*
 ??? abstract "Suspicious Double Extension"
     
     Detects suspicious use of an .exe extension after a non-executable file extension like .pdf.exe, a set of spaces or underlines to cloak the executable file in spearphishing campaigns
+    
+    - **Effort:** advanced
+
+??? abstract "Suspicious File Name"
+    
+    Detects suspicious file name possibly linked to malicious tool.
     
     - **Effort:** advanced
 
