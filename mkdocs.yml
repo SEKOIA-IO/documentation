@@ -277,7 +277,7 @@ nav:
       - Jumpcloud Directory Insights: integration/categories/iam/jumpcloud_directory_insights.md
       - ManageEngine ADAudit Plus: integration/categories/iam/manageengine_adauditplus.md
       - Microsoft Entra ID (Azure AD): integration/categories/iam/entra_id.md
-      - Microsoft Entra ID (Graph API): integration/categories/iam/entra_id_graph_api.md
+      - Microsoft Entra ID (via Graph API): integration/categories/iam/entra_id_graph_api.md
       - Okta System log: integration/categories/iam/okta_system_log.md
       - OpenLDAP: integration/categories/iam/openldap.md
       - RSA SecurID: integration/categories/iam/rsa_securid.md

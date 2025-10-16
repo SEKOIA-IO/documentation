@@ -3,12 +3,13 @@ name: Microsoft Entra ID (Graph API)
 type: intake
 
 ## Overview
+
+**Microsoft Entra ID (Graph API) ** is a cloud-based Identity and Rights management service. The service is developed and managed by Microsoft Corp.
+
 - **Vendor**: Microsoft
 - **Supported environment**: SaaS
 - **Detection based on**: Telemetry
 - **Supported application or feature**: Application logs, Authentication logs
-
-**Microsoft Entra ID (Graph API) ** is a cloud-based Identity and Rights management service. The service is developed and managed by Microsoft Corp.
 
 !!! Warning
     Important note - This format is currently in beta. We highly value your feedback to improve its performance.
