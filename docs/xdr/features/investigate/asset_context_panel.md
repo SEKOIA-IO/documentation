@@ -62,7 +62,8 @@ The **overview** tab summarizes the asset’s identity, business relevance, and 
 **Example**  
 When a ransomware alert hits *FIN-SRV01*, the overview shows it is a finance system tagged **critical** and owned by the CFO’s department. This routes containment to the right team immediately — reducing dwell time.
 
-<img width="755" height="241" alt="Overview header card example" src="https://github.com/user-attachments/assets/32860589-7a7d-4dbf-ba8b-a159c2805198" />
+<img width="538,3" height="172,2" alt="image" src="https://github.com/user-attachments/assets/11a8deca-efc1-4758-a218-c951703e284a" />
+
 
 #### Details card
 
