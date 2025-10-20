@@ -79,9 +79,8 @@ The **details** section provides the technical identifiers used to recognize and
 
 - **All asset types:** description, tags, identified by  
 - **Hosts:** hostname, IP addresses, Sekoia agent, operating system, domain/FQDN  
-- **Accounts:** username, full name, role, email, department, account state, last password change, key privileges  
-- **Networks:** IP/CIDR ranges, VLAN/segment  
-- **Source:** which asset connector(s), intake(s), or Sekoia endpoint agent contributed to discovery
+- **Users:** username, full name, role, email, department, account state, last password change, key privileges  
+- **Networks(Coming soon):** IP/CIDR ranges, VLAN/segment 
 
 **Why it matters during investigations**
 
