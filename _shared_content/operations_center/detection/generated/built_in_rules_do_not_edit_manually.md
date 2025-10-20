@@ -1,4 +1,4 @@
-Rules catalog includes **1053 built-in detection rules** ([_last update on 2025-10-16_](rules_changelog.md)).
+Rules catalog includes **1053 built-in detection rules** ([_last update on 2025-10-20_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Identity Information**
 
@@ -10389,15 +10389,16 @@ Rules catalog includes **1053 built-in detection rules** ([_last update on 2025-
     
         - 23/11/2023 - major - Extended detection and added filter
             
-??? abstract "Suspicious Rundll32.exe Execution"
+??? abstract "Suspicious Rundll32.exe Executions"
     
-    The process rundll32.exe executes a newly dropped DLL with update /i in the command line. This specific technic was observed at least being used by the IcedID loading mechanism dubbed Gziploader.
+    The process rundll32.exe executes a newly dropped DLL with update /i in the command line. This specific technic was observed at least being used by the IcedID loading mechanism dubbed Gziploader. Some other detections are related to LOLBAS (Living Off The Land Binaries, Scripts and Libraries) usages (like the COM registering).
     
     - **Effort:** intermediate
     
     - **Changelog:**
     
         - 21/09/2023 - minor - Extend to some usage without dll filename
+        - 20/10/2025 - minor - Adding COM registering detection pattern and filtering some DLL to avoid false positives.
             
 ??? abstract "Suspicious Taskkill Command"
     
