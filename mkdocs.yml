@@ -334,6 +334,7 @@ nav:
       - Bitsight SPM: integration/categories/network_security/bitsight_spm.md
       - Broadcom Cloud Secure Web Gateway: integration/categories/network_security/broadcom_cloud_swg.md
       - Broadcom Edge Secure Web Gateway: integration/categories/network_security/broadcom_edge_swg.md
+      - Broadcom Siteminder: integration/categories/network_security/broadcom_siteminder.md
       - Check Point: integration/categories/network_security/checkpoint.md
       - Cisco Identity Services Engine (ISE): integration/categories/network_security/cisco_identity_services_engine_ise.md
       - Cisco Secure Firewall: integration/categories/network_security/cisco_asa.md
@@ -353,7 +354,8 @@ nav:
       - FortiProxy: integration/categories/network_security/fortiproxy.md
       - FortiWeb: integration/categories/network_security/fortiweb.md
       - Fortigate: integration/categories/network_security/fortigate.md
-      - Gatewatcher AionIQ: integration/categories/network_security/gatewatcher_aioniq.md
+      - Gatewatcher AionIQ (<=v102): integration/categories/network_security/gatewatcher_aioniq.md
+      - Gatewatcher AionIQ (>=v103): integration/categories/network_security/gatewatcher_aioniq_ecs.md
       - Google Cloud Load Balancing: integration/categories/network_security/google_cloud_load_balancing.md
       - Imperva Web Application Firewall: integration/categories/network_security/imperva_waf.md
       - Lacework Cloud Security: integration/categories/network_security/lacework_cloud_security.md
@@ -396,6 +398,7 @@ nav:
       - Wiz Vulnerability Findings: integration/categories/network_security/wiz_vulnerability_findings.md
       - Zscaler Internet Access: integration/categories/network_security/zscaler_zia.md
   - List of Playbooks Actions:
+    - Overview: integration/action_library/overview.md
     - Applicative:
       - ElasticSearch: integration/action_library/elasticsearch.md
       - Mandrill: integration/action_library/mandrill.md
@@ -470,8 +473,13 @@ nav:
           - Tenable.io: integration/assets_categories/vulnerability/tenable_io.md
       - Device:
           - Harfanglab EDR: integration/assets_categories/device/harfanglab_edr.md
+          - AWS EC2: integration/assets_categories/device/aws_ec2_device.md
+          - Okta: integration/assets_categories/device/okta_device.md
       - User:
           - Crowdstrike Falcon: integration/assets_categories/user/crowdstrike_falcon_user.md
+          - AWS IAM: integration/assets_categories/user/aws_iam_user.md
+          - Okta: integration/assets_categories/user/okta_user.md
+          - Microsoft Entra ID: integration/assets_categories/user/microsoft_entra_id.md
   - How to develop a new Integration:
     - Overview: integration/develop_integration/overview.md
     - Automation:

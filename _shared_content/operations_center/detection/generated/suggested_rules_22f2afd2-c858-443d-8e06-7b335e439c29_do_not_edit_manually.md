@@ -2121,6 +2121,12 @@ The following Sekoia.io built-in rules match the intake **CrowdStrike Falcon**. 
     
     - **Effort:** advanced
 
+??? abstract "VSCode Tunnel Shell Exec"
+    
+    Using VSCode and its remote tunnel access feature to run a terminal and execute commands. This could be a legit use, but also has been observed being used by some attackers.
+    
+    - **Effort:** advanced
+
 ??? abstract "Venom Multi-hop Proxy agent detection"
     
     Detects Venom Multi-hop Proxy agent.
@@ -2174,6 +2180,12 @@ The following Sekoia.io built-in rules match the intake **CrowdStrike Falcon**. 
     Detects when a web application launches a shell.
     
     - **Effort:** master
+
+??? abstract "WerFaultSecure Abuse"
+    
+    Detect usage of the software vulnerability of WerFaultSecure to suspend the processes of EDRs, and bypass detection. It has been implemented in the tool EDR-Freeze.
+    
+    - **Effort:** advanced
 
 ??? abstract "WiFi Credentials Harvesting Using Netsh"
     

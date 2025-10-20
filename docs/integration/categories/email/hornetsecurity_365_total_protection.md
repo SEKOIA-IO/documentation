@@ -11,9 +11,6 @@ Hornetsecurity is a leading provider of cloud-based email security and data prot
 - **Detection based on**: Telemetry
 - **Supported application or feature**: Email gateway, Anti-virus
 
-!!! Warning
-    Important note - This format is currently in beta. We highly value your feedback to improve its performance.
-
 
 ## Configure
 

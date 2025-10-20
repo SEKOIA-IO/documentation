@@ -19,6 +19,9 @@ Zscaler is a cloud security company providing secure internet access and zero tr
 
 ## Actions
 
+### Zscaler Activate changes
+
+Activate changes
 ### Zscaler Block IoC
 
 Block the provided IOCs: IP / domain
@@ -27,7 +30,8 @@ Block the provided IOCs: IP / domain
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
-| `IoC` | `string` | The value of the IoC to block |
+| `IoC` | `string` | The single value of the IoC to block |
+| `IoCs` | `array` | The multiple values of IoCs to block |
 
 ### Zscaler Push IOCs for detection
 
@@ -48,9 +52,10 @@ UnBlock the provided IOCs: IP / domain
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
-| `IoC` | `string` | The value of the IoC to unblock |
+| `IoC` | `string` | The single value of the IoC to unblock |
+| `IoCs` | `array` | The multiple values of IoCs to unblock |
 
 
 ## Extra
 
-Module **`Zscaler` v1.0.1**
+Module **`Zscaler` v1.0.4**

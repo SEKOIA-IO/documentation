@@ -1,4 +1,4 @@
-Rules catalog includes **1043 built-in detection rules** ([_last update on 2025-09-12_](rules_changelog.md)).
+Rules catalog includes **1048 built-in detection rules** ([_last update on 2025-10-10_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Identity Information**
 
@@ -678,6 +678,10 @@ Rules catalog includes **1043 built-in detection rules** ([_last update on 2025-
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 24/09/2025 - minor - Improving selection in order to reduce false positives
+            
 ??? abstract "Okta User Logged In Multiple Applications"
     
     Detection of login events on multiple application.
@@ -706,6 +710,10 @@ Rules catalog includes **1043 built-in detection rules** ([_last update on 2025-
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 06/10/2025 - minor - Update similarity strategy for more granularity
+            
 ??? abstract "Varonis Data Security Network Low Severity Alert"
     
     Varonis Data Security has raised a low severity alert related to a network rule
@@ -715,6 +723,7 @@ Rules catalog includes **1043 built-in detection rules** ([_last update on 2025-
     - **Changelog:**
     
         - 14/05/2025 - major - Fix pattern where severity level was missing
+        - 06/10/2025 - minor - Update similarity strategy for more granularity
             
 ??? abstract "Varonis Data Security Network Medium Severity Alert"
     
@@ -722,6 +731,10 @@ Rules catalog includes **1043 built-in detection rules** ([_last update on 2025-
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 06/10/2025 - minor - Update similarity strategy for more granularity
+            
 **Obtain Capabilities**
 
 ??? abstract "Cyberwatch Detection Critical Vulnerability"
@@ -1330,6 +1343,7 @@ Rules catalog includes **1043 built-in detection rules** ([_last update on 2025-
     
         - 28/07/2025 - major - Improve filter and similarity strategy.
         - 05/08/2025 - minor - Improve filter to avoid false positives
+        - 06/10/2025 - minor - Improve filter to avoid false positives
             
 ??? abstract "Download Files From Suspicious TLDs"
     
@@ -1340,6 +1354,7 @@ Rules catalog includes **1043 built-in detection rules** ([_last update on 2025-
     - **Changelog:**
     
         - 28/07/2025 - major - Improve filter and similarity strategy.
+        - 06/10/2025 - minor - Improve filter to reduce false positives.
             
 ??? abstract "ESET Protect Malware"
     
@@ -1775,6 +1790,12 @@ Rules catalog includes **1043 built-in detection rules** ([_last update on 2025-
     
     - **Effort:** elementary
     
+??? abstract "VSCode Tunnel Shell Exec"
+    
+    Using VSCode and its remote tunnel access feature to run a terminal and execute commands. This could be a legit use, but also has been observed being used by some attackers.
+    
+    - **Effort:** advanced
+    
 ??? abstract "WMI DLL Loaded Via Office"
     
     Detects Windows Management Instrumentation (WMI) DLL loaded via Office process. This activity may correspond to VBA macro executing WMI commands, which is highly suspicious. The prerequisite is to log Loaded DLLs images, which can be done with the Sysmon Event ID 7 (DLL image loaded by process).
@@ -1819,6 +1840,12 @@ Rules catalog includes **1043 built-in detection rules** ([_last update on 2025-
         - 26/03/2024 - major - Rule's pattern field changed.
         - 26/06/2025 - major - Pattern updated to avoid false positives and effort level changed to be coherent.
             
+??? abstract "WerFaultSecure Abuse"
+    
+    Detect usage of the software vulnerability of WerFaultSecure to suspend the processes of EDRs, and bypass detection. It has been implemented in the tool EDR-Freeze.
+    
+    - **Effort:** advanced
+    
 ??? abstract "Windows Sandbox Start"
     
     Detection of Windows Sandbox started from the command line with a config file or interactively using a WSB file.
@@ -2150,6 +2177,7 @@ Rules catalog includes **1043 built-in detection rules** ([_last update on 2025-
     
     - **Changelog:**
     
+        - 02/10/2025 - minor - Alert severity updated to match Crowdstrike's values and sekoia rule CrowdStrike Falcon Intrusion Detection High Severity
         - 05/08/2025 - minor - Alert severity updated to match Crowdstrike's values
             
 ??? abstract "CrowdStrike Falcon Intrusion Detection Informational Severity"
@@ -2278,6 +2306,10 @@ Rules catalog includes **1043 built-in detection rules** ([_last update on 2025-
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 09/10/2025 - minor - Added filter for a new field to reduce false positvives.
+            
 ??? abstract "FromBase64String Command Line"
     
     Detects suspicious FromBase64String expressions in command line arguments.
@@ -2435,9 +2467,21 @@ Rules catalog includes **1043 built-in detection rules** ([_last update on 2025-
     
         - 13/09/2024 - major - Update service name value following Microsoft change
             
+??? abstract "Microsoft Defender XDR Data Loss Prevention Alert"
+    
+    Microsoft Defender XDR has raised an alert for Data Loss Prevention. The alert info and evidence events are grouped with the similarity into the same Sekoia.io alert.
+    
+    - **Effort:** master
+    
 ??? abstract "Microsoft Defender XDR Endpoint Alert"
     
     Microsoft Defender XDR has raised an alert for Microsoft Defender for Endpoint. The alert info and evidence events are grouped with the similarity into the same Sekoia.io alert.
+    
+    - **Effort:** master
+    
+??? abstract "Microsoft Defender XDR Entra ID Protection Alert"
+    
+    Microsoft Defender XDR has raised an alert for Microsoft Entra ID Protection. The alert info and evidence events are grouped with the similarity into the same Sekoia.io alert.
     
     - **Effort:** master
     
@@ -3158,6 +3202,7 @@ Rules catalog includes **1043 built-in detection rules** ([_last update on 2025-
     
         - 28/07/2025 - major - Improve filter and similarity strategy.
         - 05/08/2025 - minor - Improve filter to avoid false positives
+        - 06/10/2025 - minor - Improve filter to avoid false positives
             
 ??? abstract "Download Files From Suspicious TLDs"
     
@@ -3168,6 +3213,7 @@ Rules catalog includes **1043 built-in detection rules** ([_last update on 2025-
     - **Changelog:**
     
         - 28/07/2025 - major - Improve filter and similarity strategy.
+        - 06/10/2025 - minor - Improve filter to reduce false positives.
             
 ??? abstract "Exploit For CVE-2015-1641"
     
@@ -3390,6 +3436,7 @@ Rules catalog includes **1043 built-in detection rules** ([_last update on 2025-
     
     - **Changelog:**
     
+        - 02/10/2025 - minor - Alert severity updated to match Crowdstrike's values and sekoia rule CrowdStrike Falcon Intrusion Detection High Severity
         - 05/08/2025 - minor - Alert severity updated to match Crowdstrike's values
             
 ??? abstract "CrowdStrike Falcon Intrusion Detection Informational Severity"
@@ -3516,6 +3563,7 @@ Rules catalog includes **1043 built-in detection rules** ([_last update on 2025-
     
         - 28/07/2025 - major - Improve filter and similarity strategy.
         - 05/08/2025 - minor - Improve filter to avoid false positives
+        - 06/10/2025 - minor - Improve filter to avoid false positives
             
 ??? abstract "Download Files From Suspicious TLDs"
     
@@ -3526,6 +3574,7 @@ Rules catalog includes **1043 built-in detection rules** ([_last update on 2025-
     - **Changelog:**
     
         - 28/07/2025 - major - Improve filter and similarity strategy.
+        - 06/10/2025 - minor - Improve filter to reduce false positives.
             
 ??? abstract "ESET Protect Intrusion Detection"
     
@@ -3975,9 +4024,21 @@ Rules catalog includes **1043 built-in detection rules** ([_last update on 2025-
     
         - 13/09/2024 - major - Update service name value following Microsoft change
             
+??? abstract "Microsoft Defender XDR Data Loss Prevention Alert"
+    
+    Microsoft Defender XDR has raised an alert for Data Loss Prevention. The alert info and evidence events are grouped with the similarity into the same Sekoia.io alert.
+    
+    - **Effort:** master
+    
 ??? abstract "Microsoft Defender XDR Endpoint Alert"
     
     Microsoft Defender XDR has raised an alert for Microsoft Defender for Endpoint. The alert info and evidence events are grouped with the similarity into the same Sekoia.io alert.
+    
+    - **Effort:** master
+    
+??? abstract "Microsoft Defender XDR Entra ID Protection Alert"
+    
+    Microsoft Defender XDR has raised an alert for Microsoft Entra ID Protection. The alert info and evidence events are grouped with the similarity into the same Sekoia.io alert.
     
     - **Effort:** master
     
@@ -4337,6 +4398,10 @@ Rules catalog includes **1043 built-in detection rules** ([_last update on 2025-
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 06/10/2025 - minor - Update sources link
+            
 ??? abstract "Winword Document Droppers"
     
     Detects specific process characteristics of word document droppers. This techniques has been used by Maze ransomware operators.
@@ -4528,6 +4593,7 @@ Rules catalog includes **1043 built-in detection rules** ([_last update on 2025-
     
     - **Changelog:**
     
+        - 02/10/2025 - minor - Alert severity updated to match Crowdstrike's values and sekoia rule CrowdStrike Falcon Intrusion Detection High Severity
         - 05/08/2025 - minor - Alert severity updated to match Crowdstrike's values
             
 ??? abstract "CrowdStrike Falcon Intrusion Detection Informational Severity"
@@ -4770,9 +4836,21 @@ Rules catalog includes **1043 built-in detection rules** ([_last update on 2025-
     
         - 13/09/2024 - major - Update service name value following Microsoft change
             
+??? abstract "Microsoft Defender XDR Data Loss Prevention Alert"
+    
+    Microsoft Defender XDR has raised an alert for Data Loss Prevention. The alert info and evidence events are grouped with the similarity into the same Sekoia.io alert.
+    
+    - **Effort:** master
+    
 ??? abstract "Microsoft Defender XDR Endpoint Alert"
     
     Microsoft Defender XDR has raised an alert for Microsoft Defender for Endpoint. The alert info and evidence events are grouped with the similarity into the same Sekoia.io alert.
+    
+    - **Effort:** master
+    
+??? abstract "Microsoft Defender XDR Entra ID Protection Alert"
+    
+    Microsoft Defender XDR has raised an alert for Microsoft Entra ID Protection. The alert info and evidence events are grouped with the similarity into the same Sekoia.io alert.
     
     - **Effort:** master
     
@@ -5455,6 +5533,7 @@ Rules catalog includes **1043 built-in detection rules** ([_last update on 2025-
     
     - **Changelog:**
     
+        - 30/09/2025 - minor - Update selection to improve detection
         - 28/08/2025 - minor - Filter some FPs on key values
         - 21/06/2024 - major - Update detection pattern for ECS fields/value compliance, and filter some FPs
             
@@ -6288,6 +6367,12 @@ Rules catalog includes **1043 built-in detection rules** ([_last update on 2025-
     
     - **Effort:** elementary
     
+??? abstract "Potential Persistence Via Outlook LoadMacroProviderOnBoot Setting"
+    
+    Detects the modification of Outlook setting "LoadMacroProviderOnBoot" which if enabled allows the automatic loading of any configured VBA project/module. Logging for Registry events is needed, it can be done in the Sysmon configuration (events 12 and 13).
+    
+    - **Effort:** master
+    
 **Software Extensions**
 
 ??? abstract "Malicious Browser Extensions"
@@ -6788,6 +6873,12 @@ Rules catalog includes **1043 built-in detection rules** ([_last update on 2025-
     
     - **Effort:** intermediate
     
+??? abstract "Potential Persistence Via Outlook LoadMacroProviderOnBoot Setting"
+    
+    Detects the modification of Outlook setting "LoadMacroProviderOnBoot" which if enabled allows the automatic loading of any configured VBA project/module. Logging for Registry events is needed, it can be done in the Sysmon configuration (events 12 and 13).
+    
+    - **Effort:** master
+    
 ??? abstract "Reconnaissance Commands Activities"
     
     Based on Cynet, Microsoft and Kaspersky analysis of Qakbot, this rule tries to detect some discovery TTPs.
@@ -6880,6 +6971,7 @@ Rules catalog includes **1043 built-in detection rules** ([_last update on 2025-
     
     - **Changelog:**
     
+        - 30/09/2025 - minor - Update selection to improve detection
         - 28/08/2025 - minor - Filter some FPs on key values
         - 21/06/2024 - major - Update detection pattern for ECS fields/value compliance, and filter some FPs
             
@@ -7075,6 +7167,10 @@ Rules catalog includes **1043 built-in detection rules** ([_last update on 2025-
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 09/10/2025 - minor - Added filter for a new field to reduce false positvives.
+            
 ??? abstract "Hijack Legit RDP Session To Move Laterally"
     
     Identifies suspicious file creations in the startup folder of a remote system. An adversary could abuse this to move laterally by dropping a malicious script or executable that will be executed after a reboot or user logon.
@@ -7465,6 +7561,10 @@ Rules catalog includes **1043 built-in detection rules** ([_last update on 2025-
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 09/10/2025 - minor - Added filter for a new field to reduce false positvives.
+            
 ??? abstract "Okta Admin Privilege Granted"
     
     Administrator privilege granted to an user or account. This can be privilege escalation, persistance over system or account takedown.
@@ -8523,6 +8623,12 @@ Rules catalog includes **1043 built-in detection rules** ([_last update on 2025-
     
     - **Effort:** intermediate
     
+??? abstract "Potential Persistence Via Outlook LoadMacroProviderOnBoot Setting"
+    
+    Detects the modification of Outlook setting "LoadMacroProviderOnBoot" which if enabled allows the automatic loading of any configured VBA project/module. Logging for Registry events is needed, it can be done in the Sysmon configuration (events 12 and 13).
+    
+    - **Effort:** master
+    
 ??? abstract "Reconnaissance Commands Activities"
     
     Based on Cynet, Microsoft and Kaspersky analysis of Qakbot, this rule tries to detect some discovery TTPs.
@@ -8615,6 +8721,7 @@ Rules catalog includes **1043 built-in detection rules** ([_last update on 2025-
     
     - **Changelog:**
     
+        - 30/09/2025 - minor - Update selection to improve detection
         - 28/08/2025 - minor - Filter some FPs on key values
         - 21/06/2024 - major - Update detection pattern for ECS fields/value compliance, and filter some FPs
             
@@ -8804,6 +8911,10 @@ Rules catalog includes **1043 built-in detection rules** ([_last update on 2025-
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 09/10/2025 - minor - Added filter to reduce false positvives.
+            
 **Hijack Execution Flow**
 
 ??? abstract "DHCP Callout DLL Installation"
@@ -8876,6 +8987,10 @@ Rules catalog includes **1043 built-in detection rules** ([_last update on 2025-
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 09/10/2025 - minor - Added filter for a new field to reduce false positvives.
+            
 ??? abstract "Hijack Legit RDP Session To Move Laterally"
     
     Identifies suspicious file creations in the startup folder of a remote system. An adversary could abuse this to move laterally by dropping a malicious script or executable that will be executed after a reboot or user logon.
@@ -10535,6 +10650,10 @@ Rules catalog includes **1043 built-in detection rules** ([_last update on 2025-
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 09/10/2025 - minor - Added filter to reduce false positvives.
+            
 **Use Alternate Authentication Material**
 
 ??? abstract "Abusing Azure Browser SSO"
@@ -11406,6 +11525,10 @@ Rules catalog includes **1043 built-in detection rules** ([_last update on 2025-
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 09/10/2025 - minor - Added filter for a new field to reduce false positvives.
+            
 ??? abstract "Hijack Legit RDP Session To Move Laterally"
     
     Identifies suspicious file creations in the startup folder of a remote system. An adversary could abuse this to move laterally by dropping a malicious script or executable that will be executed after a reboot or user logon.
@@ -11791,6 +11914,7 @@ Rules catalog includes **1043 built-in detection rules** ([_last update on 2025-
         - 06/04/2023 - minor - Whitelisted another SourceImage as it triggered too many false positives.
         - 21/06/2023 - minor - Whitelisted lsm.exe that triggered too many false positives.
         - 26/03/2024 - major - Rule's pattern field changed
+        - 23/09/2025 - minor - Adding filters to avoid false positives.
             
 ??? abstract "NTDS.dit File In Suspicious Directory"
     
@@ -12932,6 +13056,10 @@ Rules catalog includes **1043 built-in detection rules** ([_last update on 2025-
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 18/09/2025 - minor - Similarity strategy updated.
+            
 ??? abstract "Anomaly Internal Port Connection"
     
     Detects multiple scan of different ports on internal network.
@@ -13245,6 +13373,7 @@ Rules catalog includes **1043 built-in detection rules** ([_last update on 2025-
     - **Changelog:**
     
         - 12/10/2023 - minor - Slight change to a condition in order to reduce false positives.
+        - 23/09/2025 - minor - Improving selection in order to reduce false positives.
             
 ??? abstract "Bloodhound and Sharphound Tools Usage"
     

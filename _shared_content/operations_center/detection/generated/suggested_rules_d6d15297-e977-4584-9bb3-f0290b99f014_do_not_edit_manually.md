@@ -87,6 +87,12 @@ The following Sekoia.io built-in rules match the intake **ArubaOS Switch**. This
     
     - **Effort:** master
 
+??? abstract "Login Brute-Force Successful On ArubaOS Switch"
+    
+    A user has attempted to login several times (brute-force) on ArubaOS switch and succeeded to login.
+    
+    - **Effort:** advanced
+
 ??? abstract "Microsoft Defender Antivirus History Deleted"
     
     Windows Defender history has been deleted. Could be an attempt by an attacker to remove its traces.

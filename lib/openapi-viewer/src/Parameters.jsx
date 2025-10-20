@@ -18,6 +18,7 @@ export const Parameters = {
             if (bodySchema) bodySchema = resolveSchema(bodySchema)
             if (bodySchema?.properties) bodyParameters.push(...Object.entries(bodySchema.properties).map(([name, p]) => {
                 p.name = name;
+                if (requestBody?.required && bodySchema.required?.includes(name)) p.required = true;
                 return p
             }))
 

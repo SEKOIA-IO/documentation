@@ -8,9 +8,6 @@ type: intake
 
 Lookout Mobile Endpoint Security is a robust solution designed to protect devices from threats and data breaches in real time. It combines advanced threat intelligence with deep visibility, ensuring that enterprises can secure their mobile environments and maintain compliance effortlessly.
 
-!!! Warning
-    Important note - This format is currently in beta. We highly value your feedback to improve its performance.
-
 - **Supported environment**: SaaS
 - **Detection based on**: Alerts, Audit
 - **Supported application or feature**:

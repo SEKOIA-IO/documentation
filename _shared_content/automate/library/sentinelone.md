@@ -12,7 +12,7 @@ SentinelOne is a cybersecurity company that provides autonomous endpoint protect
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
-| `hostname` | `string` | The domain-name to the SentinelOne instance |
+| `hostname` | `string` | The domain-name to the SentinelOne instance (e.g., <region>.sentinelone.net) |
 | `api_token` | `string` | The API token to authenticate to SentinelOne |
 
 ## Actions
@@ -226,5 +226,4 @@ For the action `Update Threat Incident`, there are two arguments `status` and `f
 
 ## Extra
 
-
-Module **`SentinelOne` v1.20.9**
+Module **`SentinelOne` v1.20.14**

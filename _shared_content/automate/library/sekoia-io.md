@@ -353,7 +353,7 @@ Add events to a case
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
-| `uuid` | `string` | UUID of the case |
+| `uuid` | `string` | UUID or short_id of the case to update |
 | `event_ids` | `array` | List of event identifiers (__event_id) to add to the case. Do not use event.id which is a different identifier. |
 
 ### Add IOC to IOC Collection
@@ -440,8 +440,8 @@ Attach one or more alerts to a specific case
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
-| `case_uuid` | `string` |  |
-| `alerts` | `array` | The list of identifiers of alerts to add |
+| `case_uuid` | `string` | UUID or short_id of the case to update |
+| `alerts` | `array` | The list of identifiers (UUID or short_id) of alerts to add |
 
 
 **Outputs**
@@ -971,7 +971,7 @@ Retrieve the definition of an alert
 | --------- | ------- | --------------------------- |
 | `uuid` | `string` |  |
 | `stix` | `boolean` |  |
-| `cases` | `boolean` | Get the cases associated with this alert |
+| `cases` | `boolean` | Fetch the cases associated with this alert in addition (default: false) |
 
 
 **Outputs**
@@ -1966,4 +1966,4 @@ Update a rule
 
 ## Extra
 
-Module **`Sekoia.io` v2.68.2**
+Module **`Sekoia.io` v2.68.5**
