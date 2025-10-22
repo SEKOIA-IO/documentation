@@ -11,7 +11,7 @@ Instead of switching between inventory pages, a configuration management databas
 - **All clients:** core sections — overview, asset details, recent activity, related alerts/cases/events, timeline.
 - **(Reveal specific capability):** extended sections — hygiene, vulnerabilities, security controls, points of interest (PoIs), applications *(coming soon)*.
 
-!!! note
+!!! Note
     To learn how assets are **configured and discovered**, see [Collect → Assets](https://docs.sekoia.io/xdr/features/collect/assets/).
 
 ---
@@ -186,7 +186,7 @@ Entries are automatically timestamped and iconized by category (alert, case, PoI
 
 Clicking an item triggers available pivots (e.g., clicking an alert opens the **alert details** view).
 
-!!! Note:
+!!! Note
     With the *(Reveal specific capability)*, the timeline includes PoIs vulnerability enrichments and hygiene changes.
 
 #### Using PoIs in the timeline
