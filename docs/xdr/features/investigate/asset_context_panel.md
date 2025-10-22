@@ -188,7 +188,7 @@ Clicking an item triggers available pivots (e.g., clicking an alert opens the **
 
 
 !!! Note
-    With the *(Reveal specific capability)*, the timeline includes PoIs vulnerability enrichments and hygiene changes..
+    With the (Reveal specific capability), the timeline includes PoIs vulnerability enrichments and hygiene changes.
 
 #### Using PoIs in the timeline
 
