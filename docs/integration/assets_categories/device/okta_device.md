@@ -77,7 +77,7 @@ To start getting your Okta devices into Sekoia.io, you need to create an asset c
 4. Enter the following information:
 
     - **API Token**: The API token value from your Okta organization
-    - **Base URL**: Your Okta organization’s base URL (e.g., `https://your-domain.okta.com`)[aws_ec2_device.md](aws_ec2_device.md)
+    - **Base URL**: Your Okta organization’s base URL (e.g., `https://your-domain.okta.com`)
 
 5. Test the connection by clicking the **Test connector** button.
 
