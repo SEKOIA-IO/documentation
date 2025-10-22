@@ -173,10 +173,11 @@ The **timeline** provides a unified, chronological record of relevant activity f
 
 **Displayed items**
 
-- alerts (rule/analytics detections)  
-- case associations (when the asset is seen in a case)  
-- PoIs (UEBA anomalies and notable activities)  
-- vulnerabilities (identified exposures related to the asset)
+- Alerts (rule/analytics detections)  
+- Case associations (when the asset is seen in a case)  
+- PoIs (UEBA anomalies and notable activities) (coming soon)  
+- Hygiene (Changes to asset hygiene posture) (coming soon)  
+- Vulnerabilities (identified exposures related to the asset) (coming soon)
 
 #### How the timeline works
 
@@ -186,7 +187,7 @@ Entries are automatically timestamped and iconized by category (alert, case, PoI
 Clicking an item triggers available pivots (e.g., clicking an alert opens the **alert details** view).
 
 !!! Note:
-    With the *(Reveal specific capability)*, the timeline includes PoIs and vulnerability enrichments.
+    With the *(Reveal specific capability)*, the timeline includes PoIs vulnerability enrichments and hygiene changes.
 
 #### Using PoIs in the timeline
 
