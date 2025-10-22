@@ -23,7 +23,7 @@ Refine your search and find the perfect integration using our filters:
 
 - **Featured:** Filter by Built-in and custom integrations
 - **Categories:** Narrow down integrations by their primary domain or purpose (Cloud Providers, Email, Network, Threat Intelligence, etc…)
-- **Content Types:** Identify integrations based on the type of content (Intake formats, event connectors, asset connectors(coming soon), triggers, actions)
+- **Content Types:** Identify integrations based on the type of content (Intake formats, event connectors, asset connectors (coming soon), triggers, actions)
 
 ### Quick Access
 
@@ -34,7 +34,7 @@ Quickly access our **[Integrations roadmap](https://roadmap-integrations.sekoia.
 Each integration has its own detailed page, providing comprehensive information. On this page, you'll find:
 
 - A description of the integration
-- Information on where it is used, allowing you to directly pivot to the playbooks intakes or asset connectors(coming soon) where the integration is active
+- Information on where it is used, allowing you to directly pivot to the playbooks intakes or asset connectors (coming soon) where the integration is active
 - An overview of its content (Event collection, asset collection, playbook actions and triggers) 
 - A changelog to track latest updates
 
