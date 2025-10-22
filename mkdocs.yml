@@ -428,7 +428,6 @@ nav:
       - Palo Alto Cortex XSIAM: integration/action_library/palo-alto-cortex-xsiam.md
       - Panda Security: integration/action_library/panda-security.md
       - SentinelOne: integration/action_library/sentinelone.md
-      - SentinelOne: integration/action_library/sentinelone.md
       - Sophos: integration/action_library/sophos.md
       - Stormshield SES: integration/action_library/stormshield-ses.md
       - TrendMicro VisionOne: integration/action_library/trendmicro-visionone.md
