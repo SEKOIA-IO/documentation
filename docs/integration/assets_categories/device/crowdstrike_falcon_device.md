@@ -19,7 +19,7 @@ To connect CrowdStrike Falcon to Sekoia.io, you need to create an API key pair (
 
     ![Account page showing navigation to API Keys tab in CrowdStrike](/assets/operation_center/asset_connectors/device/crowdstrike_falcon/api_key_button.png)
 
-3. In the `OAuth2 API Clients` tab, create a new `OAuth2 API Client` with the `Read` and `Write` permissions for the scopes `User Management.
+3. In the `OAuth2 API Clients` tab, create a new `OAuth2 API Client` with the `Read` and `Write` permissions for the scopes `User Management`.
 
     ![Generate API Keys button highlighted for clarity](/assets/operation_center/asset_connectors/device/crowdstrike_falcon/create_api_key.png)
 
