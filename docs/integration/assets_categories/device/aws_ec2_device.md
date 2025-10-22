@@ -25,8 +25,13 @@ To connect AWS EC2 to Sekoia.io, you need to create an IAM user with the necessa
     ![Create user form with username field](/assets/operation_center/asset_connectors/device/aws/aws_create_user_3.png)
 
 4. In the **Set permissions** step, select **Attach policies directly** and search for the following policies:
-   - `AmazonEC2ReadOnlyAccess` (for basic EC2 read access)
-   - `AmazonEC2FullAccess` (if you need full EC2 access)
+
+      - `AmazonEC2ReadOnlyAccess` (for basic EC2 read access)
+      - `AmazonEC2FullAccess` (if you need full EC2 access)
+   
+    !!! Warning
+            - Granting `AmazonEC2FullAccess` provides extensive permissions that may pose security risks. Only use it if absolutely necessary and ensure to follow the principle of least privilege.
+            - Do not attach both policies to the same user, as this could lead to permission conflicts.
 
     ![Policy attachment page with EC2 policies selected](/assets/operation_center/asset_connectors/device/aws/aws_create_user_4.png)
 

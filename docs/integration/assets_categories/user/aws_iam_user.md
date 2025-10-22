@@ -25,10 +25,15 @@ To connect AWS IAM to Sekoia.io, you need to create an IAM user with the necessa
     ![Create user form with username field](/assets/operation_center/asset_connectors/user/aws/aws_create_user_9.png)
 
 4. In the **Set permissions** step, select **Attach policies directly** and search for the following policies:
-   - `IAMReadOnlyAccess` (for basic IAM read access)
-   - `IAMFullAccess` (if you need full IAM access)
 
-    ![Policy attachment page with IAM policies selected](/assets/operation_center/asset_connectors/user/aws/aws_create_user_10.png)
+      - `IAMReadOnlyAccess` (recommended for ingestion; grants only read access to IAM resources)
+      - `IAMFullAccess` (only if you require full IAM management capabilities)
+   
+   !!! Warning
+         - Granting `IAMFullAccess` provides extensive permissions that may pose security risks. Only use it if absolutely necessary and ensure to follow the principle of least privilege.
+         - Do not attach both policies to the same user, as this could lead to permission conflicts.
+
+   ![Policy attachment page with IAM policies selected](/assets/operation_center/asset_connectors/user/aws/aws_create_user_10.png)
 
 5. Click **Next** to review, then click **Create user**.
 
@@ -127,9 +132,10 @@ To start getting your AWS IAM users into Sekoia.io, you need to create an asset 
     ![AWS IAM User connector configuration form](/assets/operation_center/asset_connectors/user/aws/create_aws_asset_connector_3.png)
 
 4. Enter the following information:
-   - **Access Key ID**: The access key ID from your IAM user
-   - **Secret Access Key**: The secret access key from your IAM user
-   - **Region**: The AWS region for API calls (e.g., `us-east-1`)
+
+     - **Access Key ID**: The access key ID from your IAM user
+     - **Secret Access Key**: The secret access key from your IAM user
+     - **Region**: The AWS region for API calls (e.g., `us-east-1`)
 
 5. Test the connection by clicking the **Test connector** button.
 

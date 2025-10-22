@@ -66,9 +66,10 @@ The app registration must have the following permissions to successfully fetch E
 ```
 
 **Required Permissions:**
+
 - `User.Read.All`: Read user profiles and attributes
 - `Group.Read.All`: Read group information and memberships
-- `Directory.Read.All`: Read directory data (optional, for advanced features)
+- `Directory.Read.All`: Read directory data
 
 ### How to grant API permissions
 
@@ -85,9 +86,10 @@ To grant the required permissions to your app registration:
     ![Microsoft Graph API selection](/assets/operation_center/asset_connectors/user/microsoft/entra_id_application_9.png)
 
 4. Select **Application permissions** and search for the required permissions:
-   - `User.Read.All`
-   - `Group.Read.All`
-   - `Directory.Read.All`
+
+      - `User.Read.All`
+      - `Group.Read.All`
+      - `Directory.Read.All`
 
     ![Application permissions selection](/assets/operation_center/asset_connectors/user/microsoft/entra_id_application_10.png)
 
@@ -112,9 +114,10 @@ To start getting your Microsoft Entra ID users into Sekoia.io, you need to creat
     ![Microsoft Entra ID User connector configuration form](/assets/operation_center/asset_connectors/user/microsoft/entra_id_asset_1.png)
 
 4. Enter the following information:
-   - **Tenant ID**: The Directory (tenant) ID from your app registration
-   - **Client ID**: The Application (client) ID from your app registration
-   - **Client Secret**: The client secret value you generated
+
+      - **Tenant ID**: The Directory (tenant) ID from your app registration
+      - **Client ID**: The Application (client) ID from your app registration
+      - **Client Secret**: The client secret value you generated
 
 5. Test the connection by clicking the **Test connector** button.
 

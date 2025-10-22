@@ -36,6 +36,7 @@ To connect Okta to Sekoia.io, you need to create an API token with the necessary
     - The token value is only shown when you create it. If you lose it, you must create a new token.
     - Store this token securely and never share it publicly.
     - Consider rotating API tokens regularly for security best practices.
+
 ### Required API permissions
 
 The API token must have the following scopes to successfully fetch Okta users and groups:
@@ -51,9 +52,10 @@ The API token must have the following scopes to successfully fetch Okta users an
 ```
 
 **Required Scopes:**
+
 - `okta.users.read`: Read user profiles and attributes
 - `okta.groups.read`: Read group information and memberships
-- `okta.users.manage`: Full user management capabilities (optional, for advanced features)
+- `okta.users.manage`: Full user management capabilities
 
 ### Create your asset
 

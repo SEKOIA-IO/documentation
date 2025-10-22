@@ -1,0 +1,49 @@
+
+## Overview
+
+CrowdStrike Falcon is an Endpoint Detection and Response solution. This setup guide shows how to forward device assets created in CrowdStrike Falcon to Sekoia.io.
+
+- **Vendor**: CrowdStrike
+- **Product**: CrowdStrike Falcon
+- **Supported environment**: SaaS
+
+## Configure
+
+### How to create an API token
+
+To connect CrowdStrike Falcon to Sekoia.io, you need to create an API key pair (Client id and Client secret) in your CrowdStrike Falcon console. Follow these steps:
+
+1. Log in to the CrowdStrike interface.
+
+2. Click on the burger menu and go to Support and `resources` > `Resources and tools` > `API client and keys`.
+
+    ![Account page showing navigation to API Keys tab in CrowdStrike](/assets/operation_center/asset_connectors/device/crowdstrike_falcon/api_key_button.png)
+
+3. In the `OAuth2 API Clients` tab, create a new `OAuth2 API Client` with the `Read` and `Write` permissions for the scopes `User Management.
+
+    ![Generate API Keys button highlighted for clarity](/assets/operation_center/asset_connectors/device/crowdstrike_falcon/create_api_key.png)
+
+4. Copy the api key in a safe place and start using it in Sekoia.io.
+
+
+### Create your asset
+
+To start getting your CrowdStrike assets into Sekoia.io, you need to create an asset connector on the [Assets page](https://app.sekoia.io/assets). To do so, follow these steps:
+
+1. Click the **Asset connectors** button to create a new connector.
+
+    ![Asset connectors button highlighted](/assets/operation_center/asset_connectors/device/common/create_asset_connector_button.png)
+
+2. Click the **+ New connector** button.
+    
+    ![create_asset_step_2.png](/assets/operation_center/asset_connectors/device/common/create_asset_connector_1.png)
+
+3. Choose **CrowdStrike Falcon devices**, give it a name, and fill the required fields:
+
+    ![CrowdStrike Falcon devices connector configuration form](/assets/operation_center/asset_connectors/device/crowdstrike_falcon/crowdstrike_device_connector.png)
+
+4. Test the connection by clicking the **Test connector** button.
+
+    ![Connector test result and Create asset connector button highlighted](/assets/operation_center/asset_connectors/device/crowdstrike_falcon/add_asset_device_asset.png)
+
+5. Click the **Create asset connector** button.

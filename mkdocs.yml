@@ -472,14 +472,14 @@ nav:
       - Vulnerability:
           - Tenable.io: integration/assets_categories/vulnerability/tenable_io.md
       - Device:
-          - Harfanglab EDR: integration/assets_categories/device/harfanglab_edr.md
           - AWS EC2: integration/assets_categories/device/aws_ec2_device.md
+          - Crowdstrike Falcon: integration/assets_categories/device/crowdstrike_falcon_device.md
+          - Harfanglab EDR: integration/assets_categories/device/harfanglab_edr.md
           - Okta: integration/assets_categories/device/okta_device.md
       - User:
-          - Crowdstrike Falcon: integration/assets_categories/user/crowdstrike_falcon_user.md
           - AWS IAM: integration/assets_categories/user/aws_iam_user.md
-          - Okta: integration/assets_categories/user/okta_user.md
           - Microsoft Entra ID: integration/assets_categories/user/microsoft_entra_id.md
+          - Okta: integration/assets_categories/user/okta_user.md
   - How to develop a new Integration:
     - Overview: integration/develop_integration/overview.md
     - Automation:

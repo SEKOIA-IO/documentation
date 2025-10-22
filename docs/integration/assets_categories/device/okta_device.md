@@ -37,6 +37,7 @@ To connect Okta to Sekoia.io, you need to create an API token with the necessary
     - Store this token securely and never share it publicly.
     - Consider rotating API tokens regularly for security best practices.
 
+
 ### Required API permissions
 
 The API token must have the following scopes to successfully fetch Okta devices and device trust information:
@@ -52,9 +53,10 @@ The API token must have the following scopes to successfully fetch Okta devices 
 ```
 
 **Required Scopes:**
+
 - `okta.devices.read`: Read device information and attributes
 - `okta.deviceTrust.read`: Read device trust and compliance status
-- `okta.devices.manage`: Full device management capabilities (optional, for advanced features)
+- `okta.devices.manage`: Full device management capabilities
 
 ### Create your asset
 
@@ -73,8 +75,9 @@ To start getting your Okta devices into Sekoia.io, you need to create an asset c
     ![Okta Device connector configuration form](/assets/operation_center/asset_connectors/device/okta/okta_asset_device_1.png)
 
 4. Enter the following information:
-   - **API Token**: The API token value from your Okta organization
-   - **Base URL**: Your Okta organization's base URL (e.g., `https://your-domain.okta.com`)
+
+    - **API Token**: The API token value from your Okta organization
+    - **Base URL**: Your Okta organization’s base URL (e.g., `https://your-domain.okta.com`)[aws_ec2_device.md](aws_ec2_device.md)
 
 5. Test the connection by clicking the **Test connector** button.
 
