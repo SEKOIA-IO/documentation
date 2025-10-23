@@ -106,7 +106,7 @@ To grant the required permissions to your app registration:
 ### Create your intake
 
 1. Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a new intake from the `GraphAPI for Microsoft Entra ID / Azure AD`.
-2. To fill the form, use the table completed during the creation of the **Event Hub**.
+2. Fill the form with the information collected during the app registration process.
 
 
 #### Enjoy your events on the [Events page](https://app.sekoia.io/operations/events)
