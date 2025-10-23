@@ -192,6 +192,11 @@ The Sigma Pattern Testing feature allows SOC analysts to validate detection rule
 
     These advanced capabilities go beyond the scope of standard event search.
 
+!!! warning
+    Detection rules with `Time-based detection` are not supported for testing at the moment. We are working on its implementation.
+
+    Time-based detection uses modifiers such as `timerange`, `day_of_week`, `day_of_year`, and `public_holiday_in` to detect events during specific time periods. For more information about time-based detection, see the [Sigma documentation](sigma.md#detection-on-specific-time-range).
+
 Pattern testing provides two distinct testing modes:
 
 - **Rule Testing**: Validate new or existing Sigma detection patterns against historical event data
