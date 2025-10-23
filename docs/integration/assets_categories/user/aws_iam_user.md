@@ -29,9 +29,9 @@ To connect AWS IAM to Sekoia.io, you need to create an IAM user with the necessa
       - `IAMReadOnlyAccess` (recommended for ingestion; grants only read access to IAM resources)
       - `IAMFullAccess` (only if you require full IAM management capabilities)
    
-   !!! Warning
-         - Granting `IAMFullAccess` provides extensive permissions that may pose security risks. Only use it if absolutely necessary and ensure to follow the principle of least privilege.
-         - Do not attach both policies to the same user, as this could lead to permission conflicts.
+    !!! Warning
+            - Granting `IAMFullAccess` provides extensive permissions that may pose security risks. Only use it if absolutely necessary and ensure to follow the principle of least privilege.
+            - Do not attach both policies to the same user, as this could lead to permission conflicts.
 
    ![Policy attachment page with IAM policies selected](/assets/operation_center/asset_connectors/user/aws/aws_create_user_10.png)
 
