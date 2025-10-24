@@ -1,5 +1,5 @@
 ---
-uuid: a0716ffd-5f9e-4b97-add4-30f1870e3d03
+uuid: 7b6d0592-9e0e-4db0-adf0-c9ab2d5c2162
 name: Netskope Log Streaming (Transaction Events)
 type: intake
 ---
@@ -61,10 +61,10 @@ Set up the trigger configuration with the `AWS SQS queue name` and the `intake k
 
 Start the playbook and enjoy your events.
 
-{!_shared_content/operations_center/integrations/generated/a0716ffd-5f9e-4b97-add4-30f1870e3d03_sample.md!}
+{!_shared_content/operations_center/integrations/generated/7b6d0592-9e0e-4db0-adf0-c9ab2d5c2162_sample.md!}
 
 {!_shared_content/integration/detection_section.md!}
 
-{!_shared_content/operations_center/detection/generated/suggested_rules_a0716ffd-5f9e-4b97-add4-30f1870e3d03_do_not_edit_manually.md!}
+{!_shared_content/operations_center/detection/generated/suggested_rules_7b6d0592-9e0e-4db0-adf0-c9ab2d5c2162_do_not_edit_manually.md!}
 
-{!_shared_content/operations_center/integrations/generated/a0716ffd-5f9e-4b97-add4-30f1870e3d03.md!}
+{!_shared_content/operations_center/integrations/generated/7b6d0592-9e0e-4db0-adf0-c9ab2d5c2162.md!}
