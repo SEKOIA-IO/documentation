@@ -993,6 +993,9 @@ Use the `matches regex` operator to filter the rows based on a regex pattern.
 !!! info
     Some characters are reserved as operators: `.` `?` `+` `*` `|` `{` `}` `[` `]` `(` `)` `"` `\` .<br>Escape reserved operators with a preceding backslash `\` or surround them with double quotes `""`.<br>`\@` renders as a literal '@'.<br>`\\` renders as a literal '\'.<br>`"john@smith.com"` renders as 'john@smith.com'.
 
+!!! info
+    The `matches regex` operator requires the entire string to match the regular expression; if you want to search for a substring or partial match, please use .* at the beginning and end of your pattern.
+
 **Example**
 
 Find events where `file.name` contains '.sh'.
