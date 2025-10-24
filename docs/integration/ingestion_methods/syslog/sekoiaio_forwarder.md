@@ -33,7 +33,7 @@ Please find our English tutorial video below to see how to configure the forward
 * OUTBOUND TCP flow opened towards:
   * **FRA1** intake.sekoia.io on port 10514
   * **FRA2** intake.fra2.sekoia.io on port 10514
-  * **MCO1** mco1.app.sekoia.io on port 10514
+  * **MCO1** app.mco1.sekoia.io on port 10514
   * **UAE1** app.uae1.sekoia.io on port 10514
   * **USA1** app.usa1.sekoia.io on port 10514
 

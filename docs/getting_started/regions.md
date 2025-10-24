@@ -12,7 +12,7 @@ Sekoia is currently available in several European and Middle-Eastern regions. Ea
 
 When you find URLs of the type <code>app.sekoia.io</code> in the product documentation, be sure to replace this value with that of your region ("URL" in the tables below).
 
-For example, if you are in the FRA2 region, replace <code>app.sekoia.io</code> with <code>fra2.app.sekoia.io</code>. 
+For example, if you are in the FRA2 region, replace <code>app.sekoia.io</code> with <code>app.fra2.sekoia.io</code>. 
 
 ## France - FRA1
 
@@ -75,23 +75,23 @@ SecNumCloud compliant infrastructure - For companies requiring PCI/DSS complianc
         </tr>
         <tr>
             <td>URL</td>
-            <td><a href="https://fra2.app.sekoia.io/">https://fra2.app.sekoia.io/</a></td>
+            <td><a href="https://app.fra2.sekoia.io/">https://app.fra2.sekoia.io/</a></td>
         </tr>
         <tr>
             <td>API</td>
-            <td><a href="https://fra2.app.sekoia.io/api/">https://fra2.app.sekoia.io/api/</a></td>
+            <td><a href="https://app.fra2.sekoia.io/api/">https://app.fra2.sekoia.io/api/</a></td>
         </tr>
         <tr>
             <td>HTTP Intake</td>
-            <td><a href="https://fra2.app.sekoia.io/api/v1/intake-http/">https://fra2.app.sekoia.io/api/v1/intake-http/</a></td>
+            <td><a href="https://app.fra2.sekoia.io/api/v1/intake-http/">https://app.fra2.sekoia.io/api/v1/intake-http/</a></td>
         </tr>
         <tr>
             <td>Syslog Intake</td>
-            <td><a href="fra2.app.sekoia.io:10514">fra2.app.sekoia.io:10514</a></td>
+            <td><a href="app.fra2.sekoia.io:10514">app.fra2.sekoia.io:10514</a></td>
         </tr>
         <tr>
             <td>Syslog RELP Intake</td>
-            <td><a href="fra2.app.sekoia.io:11514">fra2.app.sekoia.io:11514</a></td>
+            <td><a href="app.fra2.sekoia.io:11514">app.fra2.sekoia.io:11514</a></td>
         </tr>
     </tbody>
 </table>
@@ -160,23 +160,23 @@ For companies requiring their data to be hosted in Monaco:
         </tr>
         <tr>
             <td>URL</td>
-            <td><a href="https://mco1.app.sekoia.io">https://mco1.app.sekoia.io</a></td>
+            <td><a href="https://app.mco1.sekoia.io">https://app.mco1.sekoia.io</a></td>
         </tr>
         <tr>
             <td>API</td>
-            <td><a href="https://mco1.app.sekoia.io/api/">https://mco1.app.sekoia.io/api/</a></td>
+            <td><a href="https://app.mco1.sekoia.io/api/">https://app.mco1.sekoia.io/api/</a></td>
         </tr>
         <tr>
             <td>HTTP Intake</td>
-            <td><a href="https://mco1.app.sekoia.io/api/v1/intake-http/">https://mco1.app.sekoia.io/api/v1/intake-http/</a></td>
+            <td><a href="https://app.mco1.sekoia.io/api/v1/intake-http/">https://app.mco1.sekoia.io/api/v1/intake-http/</a></td>
         </tr>
         <tr>
             <td>Syslog Intake</td>
-            <td><a href="mco1.app.sekoia.io:10514">mco1.app.sekoia.io:10514</a></td>
+            <td><a href="app.mco1.sekoia.io:10514">app.mco1.sekoia.io:10514</a></td>
         </tr>
         <tr>
             <td>Syslog RELP Intake</td>
-            <td><a href="mco1.app.sekoia.io:11514">mco1.app.sekoia.io:11514</a></td>
+            <td><a href="app.mco1.sekoia.io:11514">app.mco1.sekoia.io:11514</a></td>
         </tr>
     </tbody>
 </table>
