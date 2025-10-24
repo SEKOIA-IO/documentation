@@ -207,6 +207,12 @@ The following Sekoia.io built-in rules match the intake **Trellix ePO (on-prem)*
     
     - **Effort:** advanced
 
+??? abstract "Linux Masquerading Space After Name"
+    
+    This detection rule identifies a process created from an executable with a space appended to the end of the name.
+    
+    - **Effort:** intermediate
+
 ??? abstract "Microsoft Defender Antivirus History Deleted"
     
     Windows Defender history has been deleted. Could be an attempt by an attacker to remove its traces.

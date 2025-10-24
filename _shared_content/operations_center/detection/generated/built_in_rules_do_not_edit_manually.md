@@ -1,4 +1,4 @@
-Rules catalog includes **1053 built-in detection rules** ([_last update on 2025-10-23_](rules_changelog.md)).
+Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-10-24_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Identity Information**
 
@@ -7027,6 +7027,12 @@ Rules catalog includes **1053 built-in detection rules** ([_last update on 2025-
     
     - **Effort:** intermediate
     
+??? abstract "Powershell Suspicious Startup Shortcut Persistence"
+    
+    Detects Powershell writing Startup shortcuts for persistence.
+    
+    - **Effort:** master
+    
 ??? abstract "Powershell Winlogon Helper DLL"
     
     Detects modifications to the Winlogon Registry keys, which may cause Winlogon to load and execute malicious DLLs and/or executables.
@@ -8779,6 +8785,12 @@ Rules catalog includes **1053 built-in detection rules** ([_last update on 2025-
     
     - **Effort:** intermediate
     
+??? abstract "Powershell Suspicious Startup Shortcut Persistence"
+    
+    Detects Powershell writing Startup shortcuts for persistence.
+    
+    - **Effort:** master
+    
 ??? abstract "Powershell Winlogon Helper DLL"
     
     Detects modifications to the Winlogon Registry keys, which may cause Winlogon to load and execute malicious DLLs and/or executables.
@@ -9162,6 +9174,12 @@ Rules catalog includes **1053 built-in detection rules** ([_last update on 2025-
     
         - 12/12/2023 - minor - extend regex to macth more cases
             
+??? abstract "Linux Masquerading Space After Name"
+    
+    This detection rule identifies a process created from an executable with a space appended to the end of the name.
+    
+    - **Effort:** intermediate
+    
 ??? abstract "New Or Renamed User Account With '$' In Attribute 'SamAccountName'"
     
     Detects possible bypass EDR and SIEM via abnormal user account name.
