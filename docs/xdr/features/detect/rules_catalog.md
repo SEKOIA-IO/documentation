@@ -179,6 +179,168 @@ In addition to the verified rules that are already built-in, you can create your
 
 The Rule creation form has the following sections:
 
+### Rule testing
+
+The Sigma Pattern Testing feature allows SOC analysts to validate detection rules against historical data before production deployment, reducing alert noise and improving detection accuracy. This capability addresses critical operational challenges by enabling thorough rule validation without disrupting production.
+
+#### Testing overview
+
+!!! warning
+    Detection rules with `Sigma Correlation` are not supported for testing. Only `Sigma` rules are supported by the pattern testing feature.
+
+    Correlation rules are fundamentally different from simple detection rules. While simple rules evaluate individual events in isolation, correlation rules must identify relationships and patterns across multiple events such as detecting a sequence of failed login attempts followed by a successful login or identifying suspicious activity patterns across different data sources within a specific timeframe.
+
+    These advanced capabilities go beyond the scope of standard event search.
+
+!!! warning
+    Detection rules with `Time-based detection` are not supported for testing at the moment. We are working on its implementation.
+
+    Time-based detection uses modifiers such as `timerange`, `day_of_week`, `day_of_year`, and `public_holiday_in` to detect events during specific time periods. For more information about time-based detection, see the [Sigma documentation](sigma.md#detection-on-specific-time-range).
+
+Pattern testing provides two distinct testing modes:
+
+- **Rule Testing**: Validate new or existing Sigma detection patterns against historical event data
+- **Alert Filter Testing**: Test alert exclusion patterns to optimize filtering and reduce false positives
+
+Both testing modes help prevent non-relevant alerts, increase detection accuracy, and enable rule threshold tuning in a controlled environment.
+
+#### When to use pattern testing
+
+Use pattern testing in the following scenarios:
+
+- Before deploying new Sigma rules
+- When optimizing existing detection rules
+- Before implementing alert filters for noise reduction
+- When analyzing rule performance over different time periods
+
+#### Rule testing
+
+Rule testing allows you to evaluate how a Sigma pattern performs against historical data, providing insights into detection frequency and event distribution patterns.
+
+##### Accessing rule testing
+
+1. Navigate to the Rules Catalog page
+2. Create a new rule
+3. Click the **Test pattern** button to open the testing modal
+
+![test-pattern](/assets/operation_center/rules_catalog/rules-test-pattern.gif){: style="max-width:100%"}
+
+##### Testing interface
+
+The testing modal displays the following components:
+
+- **Sigma pattern**: The detection pattern to be tested
+- **Time range selector**: Choose from 7, 30, or 60 days of historical data
+- **Test pattern button**: Launches the pattern testing process
+
+![test-modal](/assets/operation_center/rules_catalog/rule-test-modal.png){: style="max-width:100%"}
+
+##### Running a test
+
+1. **Select time range**: Choose the historical data period (7, 30, or 60 days)
+2. **Review pattern**: Verify the Sigma pattern is correct
+3. **Launch test**: Click **Test pattern** to begin testing
+4. **Analyze results**: Review the dual visualization output
+
+##### Test results visualization
+
+Test results are presented in two complementary formats:
+
+![test-results](/assets/operation_center/rules_catalog/rule-test-results.png){: style="max-width:100%"}
+
+**1. Chronological bar graph**
+
+- Displays event distribution over time period
+- Helps identify temporal patterns and detection frequency
+- Useful for understanding rule behavior across different time periods
+- Shows number of matched events
+
+**2. Detailed event list**
+
+- Provides drill-down access to individual matching events
+- **Show fields** component to select relevant event properties to display
+- **Show more** button for progressive loading of additional results
+
+![test-results-values](/assets/operation_center/rules_catalog/rule-test-results-values.gif){: style="max-width:100%"}
+
+**3. Event property analysis**
+
+- Top 10 value distribution analysis for each event property
+- Percentage-based breakdown of property values
+- Helps identify patterns and potential tuning opportunities
+
+##### Interpreting results
+
+- **High event count**: May indicate overly broad detection criteria
+- **Temporal clustering**: Events concentrated in specific time periods may suggest targeted attacks or system behavior
+- **Property distribution**: Uneven distribution may indicate opportunities for rule refinement
+
+#### Alert filter testing
+
+Alert filter testing provides enhanced capabilities for validating exclusion patterns, with additional context about existing alerts and their relationship to the filter being tested.
+
+##### Enhanced testing interface
+
+Alert filter testing includes all rule testing components plus:
+
+**Alert correlation table**
+
+- Lists existing alerts related to the same detection rule
+- Visual indicator highlights the current alert context
+- Displays alert metadata: ID, rule name, creation date, and status
+- **Matches filter**: Boolean indicator showing whether the pattern fully excludes the alert. Helps verify filter effectiveness and coverage
+
+![test-rule-alerts](/assets/operation_center/rules_catalog/rule-test-alerts.png){: style="max-width:100%"}
+
+##### Alert filter testing process
+
+1. **Access filter testing**: Click **Test pattern** when creating an alert filter
+2. **Review alert context**: Examine the alert correlation table to understand current alert landscape
+3. **Configure filter pattern**: Define or modify the exclusion pattern
+4. **Select view mode**: Use segmented control to toggle between:
+    - **Matching events**: Events that match the filter pattern (will be excluded)
+    - **Non-matching events**: Events that don't match the filter pattern (will still generate alerts)
+5. **Analyze coverage**: Review both matching and non-matching events to ensure proper filter scope
+
+![test-rule-matching](/assets/operation_center/rules_catalog/rule-test-matching.png){: style="max-width:100%"}
+
+##### Alert filter testing best practices
+
+**Pattern refinement**
+
+- Review non-matching events to identify gaps in filter coverage
+- Adjust filter patterns to achieve desired exclusion scope
+- Balance between noise reduction and detection sensitivity
+
+**Validation workflow**
+
+1. Test with **Matching events** view to confirm intended exclusions
+2. Switch to **Non-matching events** view to verify legitimate alerts remain
+3. Iterate pattern adjustments based on both views
+4. Validate filter effectiveness using the **Matches filter** indicator
+
+#### Testing best practices
+
+##### Pattern development
+
+- Start with broader patterns and refine based on test results
+- Use multiple time ranges to validate pattern consistency
+- Consider seasonal or business cycle impacts on detection patterns
+
+##### Performance considerations
+
+- Longer time ranges provide more comprehensive data but take longer to process
+- Focus on recent time periods (7-30 days) for current threat landscape validation
+- Use 60-day ranges for comprehensive historical analysis
+
+##### Threshold tuning
+
+- Analyze event frequency to set appropriate detection thresholds
+- Consider normal business operations when setting alert frequency expectations
+- Use temporal patterns to identify optimal detection windows
+
+This comprehensive testing framework ensures detection rules are thoroughly validated before production deployment, maintaining high detection accuracy while minimizing operational disruption.
+
 #### General definition of the rule
 - The rule name is mandatory during the creation, it will be used to name the corresponding raised alerts by default. You can add an optional description below.
 - Select the effort level required and the threats detected with this rule if any, by selecting it from the MITRE ATT&CK or by using the search bar through keywords or the drop-down list.
