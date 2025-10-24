@@ -32,7 +32,7 @@ Please find our English tutorial video below to see how to configure the forward
 * INBOUND TCP or UDP flows opened between the systems/applications and the concentrator on the ports of your choice
 * OUTBOUND TCP flow opened towards:
   * **FRA1** intake.sekoia.io on port 10514
-  * **FRA2** fra2.app.sekoia.io on port 10514
+  * **FRA2** intake.fra2.sekoia.io on port 10514
   * **MCO1** mco1.app.sekoia.io on port 10514
   * **UAE1** app.uae1.sekoia.io on port 10514
   * **USA1** app.usa1.sekoia.io on port 10514
