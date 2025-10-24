@@ -44,7 +44,19 @@ Netskope Log Streaming allows you to access all Netskope-generated logs directly
 
 ### Instruction on Sekoia
 
-{!_shared_content/integration/intake_configuration.md!}
+### Create the intake
+
+Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a new intake from the format `Netskope Transaction Events with AWS S3`.
+
+
+### Pull events
+
+Go to the [playbook page](https://app.sekoia.io/operations/playbooks) and create a new playbook with the AWS `Fetch new logs on S3` trigger. 
+
+Set up the module configuration with the `AWS access Key ID`, the `AWS secret access Key` and the `AWS region name`.
+Set up the trigger configuration with the `AWS SQS queue name` and the `intake key`,  from the intake previously created.
+
+Start the playbook and enjoy your events.
 
 {!_shared_content/operations_center/integrations/generated/a0716ffd-5f9e-4b97-add4-30f1870e3d03_sample.md!}
 
