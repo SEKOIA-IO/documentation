@@ -26,17 +26,17 @@ Netskope Log Streaming allows you to access all Netskope-generated logs directly
 
 1. Navigate to **Settings > Tools > Log Streaming** to add names and properties for the streams you want to monitor.
 
-    ![step](/assets/integration/endpoint/netskope/log_streaming_1.png){: style="max-width:100%"}
+    ![step](/assets/integration/network_security/netskope/log_streaming_1.png){: style="max-width:100%"}
 
 2. Click **Create Stream**. In **Name**, enter a human-readable name for the stream
 
-    ![step](/assets/integration/endpoint/netskope/log_streaming_2.png){: style="max-width:100%"}
+    ![step](/assets/integration/network_security/netskope/log_streaming_2.png){: style="max-width:100%"}
 
 3. Select `Transaction Events` dataset
 4. Choose `GZIP`
 5. For the Amazon S3 destination field, fill in the fields
 
-    ![step](/assets/integration/endpoint/netskope/log_streaming_3.png){: style="max-width:100%"}
+    ![step](/assets/integration/network_security/netskope/log_streaming_3.png){: style="max-width:100%"}
 
 6. Activate the stream upon saving
 
