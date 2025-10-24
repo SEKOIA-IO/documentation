@@ -362,7 +362,7 @@ nav:
       - McAfee Web Gateway / Skyhigh Secure Web Gateway - SaaS: integration/categories/network_security/skyhigh_secure_web_gateway_saas.md
       - NeroSwarm Honeypot: integration/categories/network_security/neroswarm_honeypot.md
       - Netskope Events: integration/categories/network_security/netskope_events.md
-      - Netskope Log Streaming (Transaction Events): integration/categories/endpoint/netskope_log_streaming.md
+      - Netskope Log Streaming (Transaction Events): integration/categories/network_security/netskope_log_streaming.md
       - Netskope Transaction Events: integration/categories/network_security/netskope_transaction.md
       - Nozomi Vantage: integration/categories/network_security/nozomi_vantage.md
       - OGO Shield WAF: integration/categories/network_security/ogo_shield.md
