@@ -7,7 +7,7 @@ type: intake
 - **Supported environment**:
 - **Version compatibility**:
 - **Detection based on**: Telemetry
-- **Supported application or feature**:
+- **Supported application or feature**: vpxd logs 
 
 VMWare VCenter is a centralized management software. It provides a single point of control for managing virtual machines and ESXi hosts from a centralized interface.
 
