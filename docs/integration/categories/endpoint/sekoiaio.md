@@ -738,6 +738,70 @@ Once the configuration file is modified, restart the agent:
     sudo systemctl restart SEKOIAEndpointAgent.service
     ```
 
+#### Customize agent's log file rotation
+
+By default, the agent's log files are rotated when they reach 100 MB in size, and up to 5 rotated log files are kept.
+
+It is possible to customize these values by editing the configuration file to add one of the following options:
+
+  - `LogMaxSize`: Maximum size in MB of the log file before rotating it (default: `100`)
+  - `LogMaxBackups`: Maximum number of old log files to keep (default: `5`)
+  - `LogCompress`: Whether to compress old log files (default: `true`)
+
+If you want to enable this feature, follow these steps:
+
+1. Edit the configuration file at:
+
+    === "Windows"
+
+        ```
+        C:\Windows\System32\config\systemprofile\AppData\Local\Sekoia.io\EndpointAgent\config.yaml
+        ```
+
+    === "Linux"
+
+        ```
+        /etc/endpoint-agent/config.yaml
+        ```
+
+    === "MacOs"
+
+        ```
+        /etc/endpoint-agent/config.yaml
+        ```
+
+2. Add the following configuration:
+
+```yaml
+LogMaxSize: 50          # Maximum size in MB of the log file before rotating it
+LogMaxBackups: 10       # Maximum number of old log files to keep
+LogCompress: false      # Whether to compress old log files
+```
+
+Once the configuration file is modified, restart the agent:
+
+=== "Windows"
+
+    Execute the following command **as an administrator**:
+
+    ```
+    Restart-Service SEKOIAEndpointAgent
+    ```
+=== "Linux"
+
+    Execute the following command:
+
+    ```
+    sudo systemctl restart SEKOIAEndpointAgent.service
+    ```
+
+=== "MacOs"
+
+    Execute the following command:
+
+    ```
+    sudo /Applications/SekoiaEndpointAgent.app/Contents/MacOs/SekoiaEndpointAgent service restart
+    ```
 
 ## Additionnal information
 Please find options and arguments available for Sekoia Agent by typing
