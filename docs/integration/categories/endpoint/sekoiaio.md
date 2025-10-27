@@ -112,7 +112,7 @@ The Endpoint Detection Agent is easy to install on Windows or Linux systems once
     ```
 
     !!! note
-        Stop the auditd service to enable the agent to work properly. The disable command is used to allow persistence of the configuration.  
+        Stop the auditd service to enable the agent to work properly. The disable command is used to allow persistence of the configuration.
 
     Now that `auditd` is disabled, you can install the agent:
 
@@ -135,7 +135,7 @@ The Endpoint Detection Agent is easy to install on Windows or Linux systems once
 
 
         # Stop listening to audit events
-        systemctl stop systemd-journald-audit.socket 
+        systemctl stop systemd-journald-audit.socket
 
         # Disable it to avoid future start
         systemctl disable systemd-journald-audit.socket
@@ -259,7 +259,7 @@ If the Sekoia Agent is already installed, you can enable Host Hygiene collection
     ```
 
 === "MacOs"
-    
+
     ```shell
     /etc/endpoint-agent/config.yaml
     ```
@@ -346,7 +346,7 @@ To uninstall the agent, follow the instructions specific to your OS.
     You can either:
 
     * Download the latest version of the agent and use this binary to perform the uninstall
-    * Copy the running agent located at `$ProgramFiles\EndpointAgent\agent.exe` 
+    * Copy the running agent located at `$ProgramFiles\EndpointAgent\agent.exe`
       * `$ProgramFiles` refers to the path to the `Program Files` folder, usually `c:\Program Files`
 
     Execute the following command **as an administrator**:
@@ -389,7 +389,7 @@ To uninstall the agent, follow the instructions specific to your OS.
       * `$ProgramFiles\EndpointAgent`
         * Where `$ProgramFiles` refers to the path to the `Program Files` folder, usually `c:\Program Files`
       * `$ProgramData\EndpointAgent`
-        * Where `$ProgramData` refers to the path to the `ProgramData` folder, usually `c:\ProgramData` 
+        * Where `$ProgramData` refers to the path to the `ProgramData` folder, usually `c:\ProgramData`
 
 === "Linux"
 
@@ -431,13 +431,13 @@ If you want to enable this feature, follow these steps:
         ```
 
     === "MacOs"
-    
+
         ```
         /etc/endpoint-agent/config.yaml
         ```
 
 2. Add the following configuration:
-	
+
 	```yaml
 	logfiles:
 	    - filepath: /var/log/nginx/access.log  # Path to the file to watch
@@ -449,9 +449,9 @@ If you want to enable this feature, follow these steps:
 
     For example, an intake key from the NGINX format is required for watching NGINX access logs.
 
-If you want to collect multiple source files on the host, just add a new entry in the configuration. 
+If you want to collect multiple source files on the host, just add a new entry in the configuration.
 For instance:
-	
+
 	```yaml
 	logfiles:
 	    - filepath: /var/log/nginx/access.log  # Path to the file to watch
@@ -491,23 +491,80 @@ Once the configuration file is modified, restart the agent:
 
 ### Using file patterns
 
-It is possible to specify patterns in the `filepath` attribute to match multiple files. 
+It is possible to specify patterns in the `filepath` attribute to match multiple files.
 For example `/var/log/nginx/*.log` will match all the log files located under `/var/log/nginx/`.
 
 It is also possible to restrict the allowed matching characters by specifying a range between brackets.
 For example, the pattern `/var/log/nginx/*[a-z].log` will match `/var/log/nginx/access.log` but not `/var/log/nginx/access.2023-02-14.log`.
-This kind of pattern is particularly useful when log rotation is enabled. 
+This kind of pattern is particularly useful when log rotation is enabled.
 
 !!! note
 	The recursive globstart pattern `**` is currently not supported
 
 ## Retention
 
-The agent sends the host logs through the Internet. The agent saves logs locally on disk in a non-customizable 100 MB memory space if the Internet connection is lost. Once the logs exceed the buffer size, the older logs are replaced by newer ones. When the Internet connection is restored, the older logs are sent to Sekoia.io first.
+The agent sends the host logs through the Internet. The agent saves logs locally on disk in a local buffer if the Internet connection is lost. Once the logs exceed the buffer size, the older logs are replaced by newer ones. When the Internet connection is restored, the older logs are sent to Sekoia.io first.
+
+By default the local buffer size is set to 100 MB. You can change this value by editing the `EventBufferCacheSize` option in the configuration file.
+To do it, follow these steps:
+
+1. Edit the configuration file at:
+
+    === "Windows"
+
+        ```
+        C:\Windows\System32\config\systemprofile\AppData\Local\Sekoia.io\EndpointAgent\config.yaml
+        ```
+
+    === "Linux"
+
+        ```
+        /etc/endpoint-agent/config.yaml
+        ```
+
+    === "MacOs"
+
+        ```
+        /etc/endpoint-agent/config.yaml
+        ```
+
+
+2. Add or modify the following configuration:
+    ```yaml
+    EventBufferCacheSize: 200  # Size in MB of the on-disk cache for events when no network connection is available
+    ```
+
+Once the configuration file is modified, restart the agent:
+
+=== "Windows"
+
+    Execute the following command **as an administrator**:
+
+    ```
+    Restart-Service SEKOIAEndpointAgent
+    ```
+
+=== "Linux"
+
+    Execute the following command:
+
+    ```
+    sudo systemctl restart SEKOIAEndpointAgent.service
+    ```
+
+=== "MacOs"
+
+    Execute the following command:
+
+    ```
+    sudo /Applications/SekoiaEndpointAgent.app/Contents/MacOs/SekoiaEndpointAgent service restart
+    ```
+
+## Events and fields
 
 {!_shared_content/operations_center/integrations/generated/250e4095-fa08-4101-bb02-e72f870fcbd1.md!}
 
-## Events examples
+### Events examples
 
 Here's a non-exhaustive list of events the agent can detect:
 
@@ -603,7 +660,7 @@ The proxy URL should follow the format `http://user:pass@host:port`.
     #### Configure Security log auditing
 
     A proper security log auditing configuration will allow the agent to collect different security-related events.
-    
+
     This document can be followed for an optimal configuration: [Configuring Security Log Audit Settings](https://github.com/Yamato-Security/EnableWindowsLogSettings/blob/main/ConfiguringSecurityLogAuditPolicies.md).
 
 === "Linux"
@@ -613,13 +670,13 @@ The proxy URL should follow the format `http://user:pass@host:port`.
     You can collect DNS resolutions events by enabling it in the agent configuration file:
 
     1. Edit the configuration file at:
-	
+
 	    ```
 	    /etc/endpoint-agent/config.yaml
 	    ```
 
     2. Add the following configuration:
-        
+
         ```yaml
         EnableDNSResolutions: true
         ```
@@ -634,24 +691,24 @@ The proxy URL should follow the format `http://user:pass@host:port`.
 
 To avoid having the agent computing hashes for files located under a specific directory the `HashesExcludedPaths` option can be added to the agent configuration.
 
-If you want to enable this feature, follow these steps: 
+If you want to enable this feature, follow these steps:
 
 1. Edit the configuration file at:
-	
+
 	=== "Windows"
-	
+
 	    ```
 	    C:\Windows\System32\config\systemprofile\AppData\Local\Sekoia.io\EndpointAgent\config.yaml
 	    ```
-	
+
 	=== "Linux"
-	
+
 	    ```
 	    /etc/endpoint-agent/config.yaml
 	    ```
 
 	=== "MacOs"
-	
+
 	    ```
 	    /etc/endpoint-agent/config.yaml
 	    ```
@@ -777,4 +834,4 @@ If you need further assistance, provide our team with the following information:
 
 2- Logs of the agent
 
-{!_shared_content/operations_center/detection/generated/suggested_rules_250e4095-fa08-4101-bb02-e72f870fcbd1_do_not_edit_manually.md!} 
+{!_shared_content/operations_center/detection/generated/suggested_rules_250e4095-fa08-4101-bb02-e72f870fcbd1_do_not_edit_manually.md!}
