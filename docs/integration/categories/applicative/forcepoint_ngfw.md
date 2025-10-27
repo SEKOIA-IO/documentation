@@ -40,7 +40,8 @@ To configure Forcepoint NGFW to forward logs to Sekoia.io, follow these steps:
    * Click `Others` > `Log Server`.
    * Right-click the `Log Server` from which you want to forward logs and select properties.
 3. Configure Log Forwarding.
-   * In the `Log Server` properties window, click the `Log Forwarding` tab. 
+   * In the `Log Server` properties window, click the `Log Forwarding` tab.
+   * Select the LEEF or CEF format (we only accept the both).
    * Click `Add` to create a new forwarding rule.
 
 ### Forward logs to Sekoia.io
