@@ -589,7 +589,7 @@ Each optimization rule is composed of:
     - A value: `value`
 
 !!! note
-String comparisons are case-sensitive.    
+    String comparisons are case-sensitive.
 
 The supported operators are:
 
@@ -624,18 +624,18 @@ Here is an example of an optimization rule ignoring events where the process nam
 ```
 
 !!! note
-The performance impact of optimization rules is negligible.
-The agent is optimized to apply them efficiently with minimal CPU and memory overhead.
+    The performance impact of optimization rules is negligible.
+    The agent is optimized to apply them efficiently with minimal CPU and memory overhead.
 
 #### Local optimization rules
 
 To define optimization rules locally on the agent, they must be defined in the agent's configuration file.
 
 !!! WARNING
-If the YAML configuration file is invalid:
+    If the YAML configuration file is invalid:
 
-- If it is valid YAML but contains invalid optimization rules: the agent logs an error and ignores the rules.
-- If it is not valid YAML, the agent logs an error and exits.
+    - If it is valid YAML but contains invalid optimization rules: the agent logs an error and ignores the rules.
+    - If it is not valid YAML, the agent logs an error and exits.
 
 
 1. Edit the configuration file at:
