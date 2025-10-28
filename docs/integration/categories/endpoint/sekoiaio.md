@@ -567,13 +567,13 @@ Once the configuration file is modified, restart the agent:
 !!! INFO
     This feature is currently in beta
 
-The agent allows you to ignore specific events based on their field's values.
-To achieve it, it relies on the concept of optimization rules that we also have in the platform.
+The agent allows you to ignore specific events based on their field values.
+To achieve this, it relies on the concept of optimization rules that we also have in the platform.
 
 An optimization rule can be created:
 
 - Locally on the agent by editing its configuration file
-- Centrally from the Sekoia.io XDR platform
+- Centrally from the Sekoia.io platform
 
 #### Optimization rule structure
 
@@ -581,12 +581,15 @@ Each optimization rule is composed of:
 
 - An UUID defining the unique identifier of the rule.
 - An action code defining the action to apply.
-    - Inside the agent only the action to ignore an event is supported, its associated code is `1`.
+    - Inside the agent, only the action to ignore an event is supported (`action: 1`).
 - A list of filters defining the conditions to match an event. All filters must match for the rule to match.
   Each filter is composed of:
     - A field name: `field`
     - An operator: `operator`
     - A value: `value`
+
+!!! note
+String comparisons are case-sensitive.    
 
 The supported operators are:
 
@@ -600,6 +603,11 @@ The supported operators are:
 | >=            | The field value is greater than or equal to the value | number     |
 | <             | The field value is less than the value                | number     |
 | <=            | The field value is less than or equal to the value    | number     |
+
+If multiple optimization rules match the same event, they are applied sequentially following their order of creation.
+
+Ignored events are reported in the agent’s health events.
+Each rule’s properties include a counter for the number of ignored events.
 
 Here is an example of an optimization rule ignoring events where the process name is `notepad.exe` and the file extension is `txt`:
 
@@ -615,9 +623,20 @@ Here is an example of an optimization rule ignoring events where the process nam
       value: "txt"
 ```
 
+!!! note
+The performance impact of optimization rules is negligible.
+The agent is optimized to apply them efficiently with minimal CPU and memory overhead.
+
 #### Local optimization rules
 
-To define optimization rules locally on the agent, they must be defined in the agent's configuration file:
+To define optimization rules locally on the agent, they must be defined in the agent's configuration file.
+
+!!! WARNING
+If the YAML configuration file is invalid:
+
+- If it is valid YAML but contains invalid optimization rules: the agent logs an error and ignores the rules.
+- If it is not valid YAML, the agent logs an error and exits.
+
 
 1. Edit the configuration file at:
 
@@ -677,7 +696,7 @@ Once the configuration file is modified, restart the agent:
 
 #### Remote optimization rules
 
-It is also possible to define optimization rules centrally from the Sekoia.io XDR platform.
+Remote optimization rules can be defined centrally from the Sekoia.io platform.
 
 !!! INFO
     To manage optimization rules in the platform the user must have the permission to manage intakes.
@@ -731,6 +750,17 @@ Once the configuration file is modified, restart the agent:
     ```
     sudo /Applications/SekoiaEndpointAgent.app/Contents/MacOs/SekoiaEndpointAgent service restart
     ```
+
+Once enabled:
+
+- The agent fetches remote rules at startup and then every hour.
+- If the agent is offline, it retries when connectivity is restored using cached rules.
+- Local and remote rules are merged — both are applied.
+
+The agent logs which optimization rules it applies.
+These logs are sent to Sekoia.io, allowing analysts to audit rule versions and deployments across agents.
+
+
 
 ##### Create optimization rules in the platform
 
