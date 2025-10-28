@@ -562,6 +562,260 @@ Once the configuration file is modified, restart the agent:
 
 ## Events and fields
 
+### Ignoring events
+
+!!! INFO
+    This feature is currently in beta
+
+The agent allows you to ignore specific events based on their field's values.
+To achieve it, it relies on the concept of optimization rules that we also have in the platform.
+
+An optimization rule can be created:
+
+- Locally on the agent by editing its configuration file
+- Centrally from the Sekoia.io XDR platform
+
+#### Optimization rule structure
+
+Each optimization rule is composed of:
+
+- An UUID defining the unique identifier of the rule.
+- An action code defining the action to apply.
+    - Inside the agent only the action to ignore an event is supported, its associated code is `1`.
+- A list of filters defining the conditions to match an event. All filters must match for the rule to match.
+  Each filter is composed of:
+    - A field name: `field`
+    - An operator: `operator`
+    - A value: `value`
+
+The supported operators are:
+
+| Operator code | Description                                           | Field type |
+|---------------|-------------------------------------------------------|------------|
+| ==            | The field value is equal to the value                 | all        |
+| !=            | The field value is not equal to the value             | all        |
+| contains      | The field value contains the value                    | string     |
+| not contains  | The field value does not contain the value            | string     |
+| >             | The field value is greater than the value             | number     |
+| >=            | The field value is greater than or equal to the value | number     |
+| <             | The field value is less than the value                | number     |
+| <=            | The field value is less than or equal to the value    | number     |
+
+Here is an example of an optimization rule ignoring events where the process name is `notepad.exe` and the file extension is `txt`:
+
+```yaml
+- uuid: 30bb044d-f7ba-448a-81c2-7f3c41a1fbf9
+  action: 1
+  filters:
+    - field: process.name
+      operator: ==
+      value: "notepad.exe"
+    - field: file.extension
+      operator: ==
+      value: "txt"
+```
+
+#### Local optimization rules
+
+To define optimization rules locally on the agent, they must be defined in the agent's configuration file:
+
+1. Edit the configuration file at:
+
+    === "Windows"
+
+        ```
+        C:\Windows\System32\config\systemprofile\AppData\Local\Sekoia.io\EndpointAgent\config.yaml
+        ```
+
+    === "Linux"
+
+        ```
+        /etc/endpoint-agent/config.yaml
+        ```
+
+    === "MacOs"
+
+        ```
+        /etc/endpoint-agent/config.yaml
+        ```
+
+2. Add the following configuration:
+
+    ```yaml
+    OptimizationRules:
+      - uuid: "30bb044d-f7ba-448a-81c2-7f3c41a1fbf9"
+        action: 1
+        filters:
+          - field: process.name
+            operator: ==
+            value: "notepad.exe"
+          - field: file.extension
+            operator: ==
+            value: "txt"
+    ```
+
+Once the configuration file is modified, restart the agent:
+
+=== "Windows"
+
+    Execute the following command **as an administrator**:
+
+    ```
+    Restart-Service SEKOIAEndpointAgent
+    ```
+=== "Linux"
+    Execute the following command:
+
+    ```
+    sudo systemctl restart SEKOIAEndpointAgent.service
+    ```
+=== "MacOs"
+    Execute the following command:
+    ```
+    sudo /Applications/SekoiaEndpointAgent.app/Contents/MacOs/SekoiaEndpointAgent service restart
+    ```
+
+#### Remote optimization rules
+
+It is also possible to define optimization rules centrally from the Sekoia.io XDR platform.
+
+!!! INFO
+    To manage optimization rules in the platform the user must have the permission to manage intakes.
+
+##### Allow the agent to fetch optimization rules
+
+The first step to use remote optimization rules is to allow the agent to fetch them from the platform.
+To do so the `RemoteOptimizationRules` option must be set to `true` in the agent's configuration file.
+
+1. Edit the configuration file at:
+
+    === "Windows"
+
+        ```
+        C:\Windows\System32\config\systemprofile\AppData\Local\Sekoia.io\EndpointAgent\config.yaml
+        ```
+
+    === "Linux"
+
+        ```
+        /etc/endpoint-agent/config.yaml
+        ```
+
+    === "MacOs"
+
+        ```
+        /etc/endpoint-agent/config.yaml
+        ```
+
+2. Add the following configuration:
+    ```yaml
+    RemoteOptimizationRules: true
+    ```
+
+Once the configuration file is modified, restart the agent:
+=== "Windows"
+
+    Execute the following command **as an administrator**:
+
+    ```
+    Restart-Service SEKOIAEndpointAgent
+    ```
+=== "Linux"
+    Execute the following command:
+
+    ```
+    sudo systemctl restart SEKOIAEndpointAgent.service
+    ```
+=== "MacOs"
+    Execute the following command:
+    ```
+    sudo /Applications/SekoiaEndpointAgent.app/Contents/MacOs/SekoiaEndpointAgent service restart
+    ```
+
+##### Create optimization rules in the platform
+
+It is possible to create an optimization rule that will be applied to:
+
+- All the agents from the community
+    - When creating the rule `format_uuid` must be set to the agent's format UUID: `250e4095-fa08-4101-bb02-e72f870fcbd1`
+- A specific agent intake
+    - When creating the rule `intake_uuid` must be set to the intake UUID and the format UUID to the agent's format UUID: `250e4095-fa08-4101-bb02-e72f870fcbd1`
+- A specific agent
+    - When creating the rule `agent_id` must be set to the agent's ID and the format UUID to the agent's format UUID: `250e4095-fa08-4101-bb02-e72f870fcbd1`
+
+For now there is no UI to create optimization rules in the platform. You must use the API to create them.
+You can refer to the [API documentation](/developer/api.md#/Configuration/Intakes/post_optimization_rules_resource) to create optimization rules.
+
+Example of an optimization rule created from the platform:
+
+Send a `POST` to `https://api.sekoia.io/v1/sic/conf/intakes/optimization_rules/` with the following payload:
+
+=== "For all agents from the community"
+
+    ```json
+    {
+      "format_uuid": "250e4095-fa08-4101-bb02-e72f870fcbd1",
+      "description": "Ignore notepad txt files",
+      "action": 1,
+      "filters": [
+        {
+          "field": "process.name",
+          "operator": "==",
+          "value": "notepad.exe"
+        },
+        {
+          "field": "file.extension",
+          "operator": "==",
+          "value": "txt"
+        }
+      ]
+    }
+    ```
+=== "For a specific intake"
+
+    ```json
+    {
+      "intake_uuid": "your_intake_uuid",
+      "format_uuid": "250e4095-fa08-4101-bb02-e72f870fcbd1",
+      "description": "Ignore notepad txt files",
+      "action": 1,
+      "filters": [
+        {
+          "field": "process.name",
+          "operator": "==",
+          "value": "notepad.exe"
+        },
+        {
+          "field": "file.extension",
+          "operator": "==",
+          "value": "txt"
+        }
+      ]
+    }
+    ```
+=== "For a specific agent"
+    ```json
+    {
+      "agent_id": "your_agent_id",
+      "format_uuid": "250e4095-fa08-4101-bb02-e72f870fcbd1",
+      "description": "Ignore notepad txt files",
+      "action": 1,
+      "filters": [
+        {
+          "field": "process.name",
+          "operator": "==",
+          "value": "notepad.exe"
+        },
+        {
+          "field": "file.extension",
+          "operator": "==",
+          "value": "txt"
+        }
+      ]
+    }
+    ```
+
+
 {!_shared_content/operations_center/integrations/generated/250e4095-fa08-4101-bb02-e72f870fcbd1.md!}
 
 ### Events examples
