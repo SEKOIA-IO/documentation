@@ -1,7 +1,10 @@
-Changelog _last update on 2025-10-24_
+Changelog _last update on 2025-10-29_
 
 ## Changelog
 
+### Windows Suspicious Service Creation
+  - 28/10/2025 - minor - improve detection by adding pattern
+    
 ### Suspicious Rundll32.exe Executions
   - 20/10/2025 - minor - Adding COM registering detection pattern and filtering some DLL to avoid false positives.
     
