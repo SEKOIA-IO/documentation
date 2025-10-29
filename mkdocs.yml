@@ -511,7 +511,18 @@ nav:
       - Bug VS Improvement Requests: integration/faq/general_questions/bug_and_improvement_requests.md
 - API Documentation: developer/api.md
 plugins:
-- search: null
+- search:
+    lang: en
+    synonyms:
+      - IOC: indicator of compromise
+      - IOCs: indicators of compromise
+      - CTI: cyber threat intelligence
+      - XDR: extended detection and response
+      - EDR: endpoint detection and response
+      - FAQ: frequently asked questions
+      - SSO: single sign-on
+      - SOL: sekoia operating language
+      - SOAR: security orchestration, automation, and response
 - redirects:
     redirect_maps:
       getting_started/2fa.md: getting_started/account_security.md
