@@ -63,6 +63,12 @@ The following Sekoia.io built-in rules match the intake **SentinelOne EDR**. Thi
     
     - **Effort:** master
 
+??? abstract "AppleScript Password Prompt"
+    
+    Detects when a prompt is displayed to gain credentials. This technique is used by MacOS malware to obtain the user's password.
+    
+    - **Effort:** advanced
+
 ??? abstract "Attempt to Disable Gatekeeper Execution Control"
     
     Detects attempts to disable Gatekeeper through the command line. Gatekeeper is a macOS feature designed to ensure that only trusted, signed software can be executed.
