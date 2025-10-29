@@ -1,4 +1,4 @@
-Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-10-24_](rules_changelog.md)).
+Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-10-29_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Identity Information**
 
@@ -5313,6 +5313,10 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 28/10/2025 - minor - improve detection by adding pattern
+            
 ??? abstract "Windows Update LolBins"
     
     This rule try to detect a suspicious behavior of wuauclt.exe (windows update client) that could be a lolbins. Wuauctl.exe could be used to execute a malicious program.
