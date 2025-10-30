@@ -1,4 +1,4 @@
-Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-10-29_](rules_changelog.md)).
+Rules catalog includes **1056 built-in detection rules** ([_last update on 2025-10-29_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Identity Information**
 
@@ -12171,6 +12171,14 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     
         - 21/11/2023 - minor - Rule's effort level has been changed to advanced as it was highly dependent on the environment.
             
+**Input Capture**
+
+??? abstract "AppleScript Password Prompt"
+    
+    Detects when a prompt is displayed to gain credentials. This technique is used by MacOS malware to obtain the user's password.
+    
+    - **Effort:** advanced
+    
 **Brute Force**
 
 ??? abstract "1Password EPM Brute Force"
@@ -13870,6 +13878,14 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
         - 15/04/2024 - minor - Update email from field to latest parser format
         - 14/11/2024 - major - Adding new file extension and new condition to make the rule broader as it can now match on more intakes.
             
+**Input Capture**
+
+??? abstract "AppleScript Password Prompt"
+    
+    Detects when a prompt is displayed to gain credentials. This technique is used by MacOS malware to obtain the user's password.
+    
+    - **Effort:** advanced
+    
 **Data Staged**
 
 ??? abstract "CVE-2021-20023 SonicWall Arbitrary File Read"
