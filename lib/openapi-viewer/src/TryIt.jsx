@@ -17,9 +17,10 @@ export const TryIt = {
 
     async function execute() {
       ui.busy = true;
-      const [status, res] = await execute_endpoint(props.endpoint, payload)
+      const [status, res, code] = await execute_endpoint(props.endpoint, payload)
       ui.status = status
       ui.res = res
+      ui.code = code
       ui.busy = false;
     }
 
@@ -66,7 +67,7 @@ export const TryIt = {
           </div>
 
           {((ui.res && ui.status) || ui.busy) && <div class="results">
-            <h3>Response</h3>
+            <h3>Response {ui.code && `(${ui.code})`}</h3>
             {ui.res && ui.status && <Code lang="json" class={ui.status} src={ui.res} />}
             {ui.busy && <div class="ui-spinner" />}
           </div>}
@@ -267,19 +268,19 @@ async function execute_endpoint(endpoint, payload) {
     Authorization: `Bearer ${payload['API Key']}`,
   };
 
-  const [status, res] = await fetch(url, { method: endpoint.method, body, headers })
+  const [status, res, code] = await fetch(url, { method: endpoint.method, body, headers })
     .then(async (x) => {
       if (x.status >= 400) {
-        return ["error", `Error ${x.status}\n${await x.text()}`];
+        return ["error", `Error ${x.status}\n${await x.text()}`, x.status];
       }
       if (x.status === 204) {
-        return ["success", "Success: No content"];
+        return ["success", "", x.status];
       }
-      return ["success", JSON.stringify(await x.json(), null, 4)];
+      return ["success", JSON.stringify(await x.json(), null, 4), x.status];
     })
     .catch((e) => {
-      return ["error", `${e}`]
+      return ["error", `${e}`, 500];
     });
 
-  return [status, res]
+  return [status, res, code]
 }
