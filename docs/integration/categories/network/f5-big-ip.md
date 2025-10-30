@@ -76,6 +76,10 @@ You can further refine your configuration:
 - For audit logs only: Use the "audit" facility when configuring remote logging, please use [this documentation](https://my.f5.com/manage/s/article/K56602501).
 - For specific module logs (e.g., LTM, ASM): Configure the system to send only those module logs to the remote syslog server, please use [this documentation](https://my.f5.com/manage/s/article/K10887436).
 
+!!! Warning
+    By default, the ASM module logs information about incoming requests. These logs can contains some **sensitive data**.
+    It is recommended to create policies to obfuscate sensitive data before sending logs to Sekoia.io (see [documentation](https://my.f5.com/manage/s/article/K52154401) and [trainnig](https://clouddocs.f5.com/training/community/waf/html/waf341/module2/lab3/lab3.html)).
+
 ### Instruction on Sekoia
 
 {!_shared_content/integration/intake_configuration.md!}
@@ -94,3 +98,5 @@ You can further refine your configuration:
 
 - [Configuring the BIG-IP system to log to a remote syslog server](https://my.f5.com/manage/s/article/K13080)
 - [Logging Application Security Events](https://techdocs.f5.com/en-us/bigip-15-0-0/big-ip-asm-implementations/logging-application-security-events.html#GUID-E0742D0B-9829-4210-AD70-EAFFD58B9767)
+- [ASM: Redact sensitive data from logs](https://my.f5.com/manage/s/article/K52154401)
+- [F5 Training: WAF 3.4.1 - Module 2 - Lab 3: Obfuscating Sensitive Data](https://clouddocs.f5.com/training/community/waf/html/waf341/module2/lab3/lab3.html)
