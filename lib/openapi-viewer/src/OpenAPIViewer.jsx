@@ -412,12 +412,30 @@ export const OpenAPIViewer = {
 /** Component that renders a single API endpoint */
 const Endpoint = (id, endpoint, tag) => {
     // Extract permissions from description text
-    let description = endpoint.description
-    const permissions = description?.match(/The following permissions are required:\n(\s+-[^\n]+)+/)?.slice(1).map(p => {
-        const [_, name, uuid, __, description] = p.match(/- \W*([\w\s]*)\W* \(`([^`]+)`\)(:\s+(.*))?/) || []
-        return { name, uuid, description }
-    })
-    description = description?.replace(/The following permissions are required:\n(\s+-[^\n]+)+/, "")
+    const mainRegex = /^(?<description>[\s\S]*?)The following permissions are required:([\s\S]*)$/;
+    const permRegex = /-\s*“(?<name>.*?)”\s*\(\`(?<uuid>[0-9a-fA-F-]+)\`\)(?<description>:\s+(.*))?/g;
+
+    let description = '';
+    const permissions = [];
+
+    const mainMatch = endpoint.description?.match(mainRegex);
+    if (mainMatch) {
+        // Get the description from the named group
+        description = mainMatch.groups.description.trim();
+        
+        // Get the permissions block (the 2nd capture group)
+        const permissionsBlock = mainMatch[2];
+        const allPermMatches = permissionsBlock.matchAll(permRegex);
+
+        for (const match of allPermMatches) {
+            permissions.push({
+                name: match.groups.name,
+                uuid: match.groups.uuid,
+                description: match.groups.description,
+            });
+        }
+    }
+
     const responses = Object.entries(endpoint.responses || {}).filter(([code]) => code < 400)
     const errors = Object.entries(endpoint.responses || {}).filter(([code]) => code >= 400)
     return <><div class='endpoint' id={id}>
