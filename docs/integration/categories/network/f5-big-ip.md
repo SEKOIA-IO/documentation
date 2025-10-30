@@ -58,14 +58,14 @@ To configure an F5 BIG-IP system to send its Common Event Format (CEF) logs via 
 4. For Remote Port, enter the remote syslog server UDP port (default is 514).
 
 !!! Note
-  For BIG-IP systems in a high availability (HA) configuration, the non-floating self IP address is recommended if using a Traffic Management Microkernel (TMM) based IP address.
+    For BIG-IP systems in a high availability (HA) configuration, the non-floating self IP address is recommended if using a Traffic Management Microkernel (TMM) based IP address.
 
 5. Choose type `ArcSight` (as we expect CEF log format)
 6. Select Add.
 7. Select Update.
 
 !!! Note
-  For BIG-IP systems in a high availability (HA) configuration, perform a ConfigSync to synchronize the changes to the other devices in the device group.
+    For BIG-IP systems in a high availability (HA) configuration, perform a ConfigSync to synchronize the changes to the other devices in the device group.
 
 Please find more information on how to configure remote loging [here](https://my.f5.com/manage/s/article/K13080).
 
