@@ -270,7 +270,10 @@ async function execute_endpoint(endpoint, payload) {
   const [status, res] = await fetch(url, { method: endpoint.method, body, headers })
     .then(async (x) => {
       if (x.status >= 400) {
-        return ["error", `Error ${x.status}\n${await x.text()}}`];
+        return ["error", `Error ${x.status}\n${await x.text()}`];
+      }
+      if (x.status === 204) {
+        return ["success", "Success: No content"];
       }
       return ["success", JSON.stringify(await x.json(), null, 4)];
     })
