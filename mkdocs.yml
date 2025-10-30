@@ -306,7 +306,6 @@ nav:
       - EfficientIP SOLIDServer DDI: integration/categories/network/efficientip_solidserver_ddi.md
       - Ekinops OneOS: integration/categories/network/ekinops_oneos.md
       - F5 BIG-IP: integration/categories/network/f5-big-ip.md
-      - Forcepoint Secure Web Gateway: integration/categories/network/forcepoint_web_gateway.md
       - Google VPC Flow Logs: integration/categories/network/google_vpc_flow_logs.md
       - HAProxy: integration/categories/network/haproxy.md
       - ISC DHCP: integration/categories/network/dhcpd.md
@@ -708,7 +707,6 @@ plugins:
       xdr/features/collect/integrations/network/efficientip_solidserver_ddi.md: integration/categories/network/efficientip_solidserver_ddi.md
       xdr/features/collect/integrations/network/ekinops_oneos.md: integration/categories/network/ekinops_oneos.md
       xdr/features/collect/integrations/network/f5-big-ip.md: integration/categories/network/f5-big-ip.md
-      xdr/features/collect/integrations/network/forcepoint_web_gateway.md: integration/categories/network/forcepoint_web_gateway.md
       xdr/features/collect/integrations/network/fortigate.md: integration/categories/network_security/fortigate.md
       xdr/features/collect/integrations/network/fortiproxy.md: integration/categories/network_security/fortiproxy.md
       xdr/features/collect/integrations/network/fortiweb.md: integration/categories/network_security/fortiweb.md
