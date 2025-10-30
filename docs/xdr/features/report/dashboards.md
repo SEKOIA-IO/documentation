@@ -138,6 +138,9 @@ On the query builder’s edit page, you can view a list of all dashboards utiliz
 
 ## Filters in Dashboards
 
+!!! Note
+    Filters are currently released under the Early Access Program.
+
 Filters make dashboards interactive and dynamic, allowing analysts to adjust displayed data without editing the underlying queries.
 They act as shared controls that can instantly update multiple widgets and queries across a dashboard.
 
