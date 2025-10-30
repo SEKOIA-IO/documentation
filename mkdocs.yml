@@ -402,7 +402,6 @@ nav:
       - Wiz Vulnerability Findings: integration/categories/network_security/wiz_vulnerability_findings.md
       - Zscaler Internet Access: integration/categories/network_security/zscaler_zia.md
   - List of Playbooks Actions:
-    - Overview: integration/action_library/overview.md
     - Applicative:
       - ElasticSearch: integration/action_library/elasticsearch.md
       - Mandrill: integration/action_library/mandrill.md
@@ -418,6 +417,7 @@ nav:
       - Nybble: integration/action_library/nybble.md
       - ServiceNow: integration/action_library/servicenow.md
       - The Hive: integration/action_library/the-hive.md
+      - The Hive V5: integration/action_library/the-hive-v5.md
       - The Hive V5: integration/action_library/the-hive-v5.md
     - Email:
       - Microsoft Outlook: integration/action_library/microsoft-outlook.md
@@ -450,6 +450,7 @@ nav:
       - Sophos: integration/action_library/sophos.md
       - Zscaler: integration/action_library/zscaler.md
     - Overview: integration/action_library/overview.md
+    - Overview: integration/action_library/overview.md
     - Threat Intelligence:
       - BinaryEdge's API: integration/action_library/binaryedge-s-api.md
       - Censys: integration/action_library/censys.md
@@ -472,17 +473,17 @@ nav:
       - VirusTotal: integration/action_library/virustotal.md
       - Whois: integration/action_library/whois.md
   - List of Asset Connectors:
-      - Vulnerability:
-          - Tenable.io: integration/assets_categories/vulnerability/tenable_io.md
-      - Device:
-          - AWS EC2: integration/assets_categories/device/aws_ec2_device.md
-          - Crowdstrike Falcon: integration/assets_categories/device/crowdstrike_falcon_device.md
-          - Harfanglab EDR: integration/assets_categories/device/harfanglab_edr.md
-          - Okta: integration/assets_categories/device/okta_device.md
-      - User:
-          - AWS IAM: integration/assets_categories/user/aws_iam_user.md
-          - Microsoft Entra ID: integration/assets_categories/user/microsoft_entra_id.md
-          - Okta: integration/assets_categories/user/okta_user.md
+    - Vulnerability:
+      - Tenable.io: integration/assets_categories/vulnerability/tenable_io.md
+    - Device:
+      - AWS EC2: integration/assets_categories/device/aws_ec2_device.md
+      - Crowdstrike Falcon: integration/assets_categories/device/crowdstrike_falcon_device.md
+      - Harfanglab EDR: integration/assets_categories/device/harfanglab_edr.md
+      - Okta: integration/assets_categories/device/okta_device.md
+    - User:
+      - AWS IAM: integration/assets_categories/user/aws_iam_user.md
+      - Microsoft Entra ID: integration/assets_categories/user/microsoft_entra_id.md
+      - Okta: integration/assets_categories/user/okta_user.md
   - How to develop a new Integration:
     - Overview: integration/develop_integration/overview.md
     - Automation:
