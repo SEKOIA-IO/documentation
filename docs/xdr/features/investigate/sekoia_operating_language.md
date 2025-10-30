@@ -226,6 +226,9 @@ You can query **event_telemetry** in the SOL query builder and combine it with o
 
 ## Filters
 
+!!! Note
+    Filters are currently released under the Early Access Program.
+
 Filters make SOL queries dynamic and interactive. They let you reuse the same query across dashboards and 
 contexts by substituting values dynamically — without modifying the query itself.
 
