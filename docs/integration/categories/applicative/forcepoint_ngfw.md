@@ -12,14 +12,6 @@ Forcepoint Next-Generation Firewall provide advanced threat protection and netwo
 - **Detection based on**: Telemetry
 - **Supported application or feature**: Network device logs, Network intrusion detection system, Network protocol, Firewall logs
 
-{!_shared_content/operations_center/integrations/generated/2c9ce787-85dc-45d9-a320-33a96077fead_sample.md!}
-
-
-{!_shared_content/integration/detection_section.md!}
-
-{!_shared_content/operations_center/detection/generated/suggested_rules_2c9ce787-85dc-45d9-a320-33a96077fead_do_not_edit_manually.md!}
-{!_shared_content/operations_center/integrations/generated/2c9ce787-85dc-45d9-a320-33a96077fead.md!}
-
 ## Configure
 
 This setup guide will show you how to forward your Forcepoint NGFW logs to Sekoia.io by means of a syslog transport channel.
@@ -51,6 +43,14 @@ Please consult the [Syslog Forwarding](/integration/ingestion_methods/syslog/sek
 ### Create an intake
 
 Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a new intake from the `Forcepoint NGFW` format.
+
+{!_shared_content/operations_center/integrations/generated/2c9ce787-85dc-45d9-a320-33a96077fead_sample.md!}
+
+
+{!_shared_content/integration/detection_section.md!}
+
+{!_shared_content/operations_center/detection/generated/suggested_rules_2c9ce787-85dc-45d9-a320-33a96077fead_do_not_edit_manually.md!}
+{!_shared_content/operations_center/integrations/generated/2c9ce787-85dc-45d9-a320-33a96077fead.md!}
 
 ### Additional Resources
 - [Forcepoint NGFW: Forwarding log data from Log Servers to external hosts](https://help.forcepoint.com/ngfw/en-us/7.0.1/GUID-1856F6D5-AC49-4A41-8EE0-766BAB088E39.html)
