@@ -12,6 +12,9 @@ Forcepoint Next-Generation Firewall provide advanced threat protection and netwo
 - **Detection based on**: Telemetry
 - **Supported application or feature**: Network device logs, Network intrusion detection system, Network protocol, Firewall logs
 
+!!! Warning
+    Important note - This format is currently in beta. We highly value your feedback to improve its performance.
+
 ## Configure
 
 This setup guide will show you how to forward your Forcepoint NGFW logs to Sekoia.io by means of a syslog transport channel.
