@@ -135,6 +135,69 @@ On the query builder’s edit page, you can view a list of all dashboards utiliz
 !!! Note
     The time period in a query is defined by the Query itself, which is influenced by the retention period of the data. If no specific time filter is applied in the Query, it will default to 'all time'.
 
+
+## Filters in Dashboards
+
+Filters make dashboards interactive and dynamic, allowing analysts to adjust displayed data without editing the underlying queries.
+They act as shared controls that can instantly update multiple widgets and queries across a dashboard.
+
+With filters, dashboards become context-aware, focusing on a specific time range, entity, process name, or other investigation criteria with a single click.
+
+<center>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/9q6K7vwEYv8?si=5x24TPninNak550B" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</center>
+
+### What Are Filters
+
+Filters are dynamic inputs that allow users to modify the behavior of queries in real time.
+Each filter is referenced in a SOL query using the syntax:
+
+```shell
+?filter_name
+```
+
+For example
+
+```shell
+events
+| where timestamp between (?time.start .. ?time.end)
+| where entity_uuid == ?entity_uuid
+| where process.name == ?process_name
+```
+
+In this example:
+
+* `?time.start` and `?time.end` are predefined time filters
+* `?entity_uuid` and `?process_name` are custom filters defined by the query author
+
+All these filters appear automatically in the dashboard, allowing users to modify them and instantly refresh the results.
+
+
+### Pinning Filters to the Dashboard
+
+When a widget’s query includes filters (for example `?entity_uuid` or `?process_name`), you can pin those filters to the dashboard so that all widgets referencing the same filter name stay synchronized.
+
+Pinned filters appear in the dashboard filter bar, allowing users to interact with them directly from the dashboard view.
+
+#### How to Pin a Filter
+
+To pin a filter to a dashboard:
+
+1. Open your dashboard.
+2. Click the Edit dashboard button in the top-right corner to enter edit mode.
+3. In the widget's panel, locate and click on the pin icon next to the filter you want to pin.
+4. Save the dashboard and exit edit mode.
+
+Once pinned, the filter appears at the top of the dashboard as a shared input control.
+
+#### Behavior of Pinned Filters
+
+* A pinned filter automatically synchronizes all widgets using the same filter name.
+* When a user changes the pinned filter’s value, all linked widgets refresh instantly.
+* If a widget uses a filter that isn’t pinned, it retains its own local filter configuration.
+* Unpinning a filter removes it from the dashboard’s filter bar but keeps widgets functional with their local values.
+
+
 ## Built-in Widgets
 
 Dashboards come equipped with a variety of built-in widgets designed to provide immediate access to critical data and insights.
