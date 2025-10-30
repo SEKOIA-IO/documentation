@@ -143,6 +143,10 @@ They act as shared controls that can instantly update multiple widgets and queri
 
 With filters, dashboards become context-aware, focusing on a specific time range, entity, process name, or other investigation criteria with a single click.
 
+<center>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/9q6K7vwEYv8?si=5x24TPninNak550B" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</center>
+
 ### What Are Filters
 
 Filters are dynamic inputs that allow users to modify the behavior of queries in real time.

@@ -229,6 +229,10 @@ You can query **event_telemetry** in the SOL query builder and combine it with o
 Filters make SOL queries dynamic and interactive. They let you reuse the same query across dashboards and 
 contexts by substituting values dynamically — without modifying the query itself.
 
+<center>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/9q6K7vwEYv8?si=5x24TPninNak550B" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</center>
+
 Filters are referenced using the `?filter_name` syntax.
 
 When a query uses one or more filters, the Query Builder and Dashboards:
