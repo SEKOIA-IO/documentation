@@ -67,7 +67,7 @@ To configure an F5 BIG-IP system to send its Common Event Format (CEF) logs via 
 !!! Note
     For BIG-IP systems in a high availability (HA) configuration, perform a ConfigSync to synchronize the changes to the other devices in the device group.
 
-Please find more information on how to configure remote loging [here](https://my.f5.com/manage/s/article/K13080).
+Please find more information on how to configure remote logging [here](https://my.f5.com/manage/s/article/K13080).
 
 #### Specifically send only certain types of logs
 
@@ -77,8 +77,8 @@ You can further refine your configuration:
 - For specific module logs (e.g., LTM, ASM): Configure the system to send only those module logs to the remote syslog server, please use [this documentation](https://my.f5.com/manage/s/article/K10887436).
 
 !!! Warning
-    By default, the ASM module logs information about incoming requests. These logs can contains some **sensitive data**.
-    It is recommended to create policies to obfuscate sensitive data before sending logs to Sekoia.io (see [documentation](https://my.f5.com/manage/s/article/K52154401) and [trainnig](https://clouddocs.f5.com/training/community/waf/html/waf341/module2/lab3/lab3.html)).
+    By default, the ASM module logs information about incoming requests. These logs can contain some **sensitive data**.
+    It is recommended to create policies to obfuscate sensitive data before sending logs to Sekoia.io (see [documentation](https://my.f5.com/manage/s/article/K52154401) and [training](https://clouddocs.f5.com/training/community/waf/html/waf341/module2/lab3/lab3.html)).
 
 ### Instruction on Sekoia
 
