@@ -141,6 +141,12 @@ The following Sekoia.io built-in rules match the intake **Daspren Parad**. This 
     
     - **Effort:** advanced
 
+??? abstract "Linux Masquerading Space After Name"
+    
+    This detection rule identifies a process created from an executable with a space appended to the end of the name.
+    
+    - **Effort:** intermediate
+
 ??? abstract "Microsoft Exchange Server Creating Unusual Files"
     
     Look for Microsoft Exchange Server’s Unified Messaging service creating non-standard content on disk, which could indicate web shells or other malicious content, suggesting exploitation of CVE-2021-26858 vulnerability

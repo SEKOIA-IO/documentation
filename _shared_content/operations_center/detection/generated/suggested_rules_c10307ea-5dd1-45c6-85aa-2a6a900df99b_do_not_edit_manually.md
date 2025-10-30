@@ -891,6 +891,12 @@ The following Sekoia.io built-in rules match the intake **Elastic Winlogbeat**. 
     
     - **Effort:** intermediate
 
+??? abstract "Linux Masquerading Space After Name"
+    
+    This detection rule identifies a process created from an executable with a space appended to the end of the name.
+    
+    - **Effort:** intermediate
+
 ??? abstract "Linux Remove Immutable Attribute"
     
     Adversaries may used chattr utility to alter file and folder attributes to control sudden operations like the deletion and modification of files.
@@ -1569,6 +1575,12 @@ The following Sekoia.io built-in rules match the intake **Elastic Winlogbeat**. 
     
     - **Effort:** advanced
 
+??? abstract "Powershell Suspicious Startup Shortcut Persistence"
+    
+    Detects Powershell writing Startup shortcuts for persistence.
+    
+    - **Effort:** master
+
 ??? abstract "Powershell UploadString Function"
     
     Powershell's `uploadXXX` functions are a category of methods which can be used to exfiltrate data through native means on a Windows host.
@@ -2145,9 +2157,9 @@ The following Sekoia.io built-in rules match the intake **Elastic Winlogbeat**. 
     
     - **Effort:** advanced
 
-??? abstract "Suspicious Rundll32.exe Execution"
+??? abstract "Suspicious Rundll32.exe Executions"
     
-    The process rundll32.exe executes a newly dropped DLL with update /i in the command line. This specific technic was observed at least being used by the IcedID loading mechanism dubbed Gziploader.
+    The process rundll32.exe executes a newly dropped DLL with update /i in the command line. This specific technic was observed at least being used by the IcedID loading mechanism dubbed Gziploader. Some other detections are related to LOLBAS (Living Off The Land Binaries, Scripts and Libraries) usages (like the COM registering).
     
     - **Effort:** intermediate
 

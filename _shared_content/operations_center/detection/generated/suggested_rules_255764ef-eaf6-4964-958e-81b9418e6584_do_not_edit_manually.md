@@ -57,6 +57,12 @@ The following Sekoia.io built-in rules match the intake **Kaspersky Endpoint Sec
     
     - **Effort:** intermediate
 
+??? abstract "Linux Masquerading Space After Name"
+    
+    This detection rule identifies a process created from an executable with a space appended to the end of the name.
+    
+    - **Effort:** intermediate
+
 ??? abstract "NTDS.dit File In Suspicious Directory"
     
     The file NTDS.dit is supposed to be located mainly in C:\Windows\NTDS. The rule checks whether the file is in a legitimate directory or not (through file creation events). This is usually really suspicious and could indicate an attacker trying copy the file to then look for users password hashes.

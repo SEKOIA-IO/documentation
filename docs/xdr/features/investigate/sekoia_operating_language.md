@@ -224,6 +224,186 @@ You can query **event_telemetry** in the SOL query builder and combine it with o
 | total_processing_lag    | Total accumulated processing time (in seconds) for all events in the bucket.                 |
 
 
+## Filters
+
+!!! Note
+    Filters are currently released under the Early Access Program.
+
+Filters make SOL queries dynamic and interactive. They let you reuse the same query across dashboards and 
+contexts by substituting values dynamically — without modifying the query itself.
+
+<center>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/9q6K7vwEYv8?si=5x24TPninNak550B" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</center>
+
+Filters are referenced using the `?filter_name` syntax.
+
+When a query uses one or more filters, the Query Builder and Dashboards:
+
+* Automatically detect them,
+* Display user input fields (text, date, select, etc.),
+* Re-execute the query whenever a filter value changes.
+
+### Syntax
+
+Use the `?filter_name` notation anywhere you would normally write a static value:
+
+```shell
+<table name>
+| where <column> == ?filter_name
+```
+
+Example with a time range filter
+
+```shell
+events
+| where timestamp between (?time.start .. ?time.end)
+```
+
+### Built-in Filters
+
+Certain filters are predefined and automatically available across all queries and dashboards.
+
+| Filter        | Type     | Description                        |
+| ------------- | -------- | ---------------------------------- |
+| `?time.start` | datetime | Start of the time range to analyze |
+| `?time.end`   | datetime | End of the time range to analyze   |
+| `?communities`   | string[] | UUID of all the communities of the workspace   |
+| `?intakes`   | string[] | UUID of all the intakes of the workspace   |
+
+### Custom Filters
+
+You can create additional filters for values that depend on your investigation context (e.g., hostname, domain, community, entity, etc.).
+
+Example
+
+```shell
+events
+| where timestamp between (?time.start .. ?time.end)
+| where process.name == ?process_name
+| select timestamp, host.name, user.name, process.name, process.command_line
+| order by timestamp desc
+| limit 100
+```
+
+
+Filters in SOL are created and managed in the Query Builder or Dashboard editor.
+Each filter defines how a variable (referenced as `?filter_name`) behaves in queries — its input type, allowed values, and how it is displayed to end users.
+
+When creating or editing a filter, you can:
+
+1. Select its type (Text, Boolean, Time, etc.)
+2. Add a description to clarify its purpose
+3. Optionally define authorized values — either statically or dynamically
+4. Preview how the filter will appear to users
+5. Copy the syntax (`?filter_name`) to reuse in SOL queries
+
+
+#### Supported Types
+
+SOL filters support the following types:
+
+| Type                    | Example usage                                        | Notes                               |
+| ----------------------- | ---------------------------------------------------- | ----------------------------------- |
+| **Text**                | `where user.name == ?username`                       | Free text input                     |
+| **Boolean**             | `where event.success == ?is_success`                 | Displayed as toggle                 |
+| **Time**                | `where timestamp between (?time.start .. ?time.end)` | Common in dashboards                |
+| **Single Selection**    | `where timestamp == ?alert_uuid`                     | One value among the accepted ones   |
+| **Multiple Selection**  | `where host.name in ?hostnames`                      | Multiple values are allowed         |
+
+
+#### Authorized Values
+
+For Single or Multiple selection filters, you can define authorized values in two ways:
+
+**Static List**
+
+Enter comma-separated values directly in the configuration panel.
+
+Example: 
+```shell
+powershell.exe, cmd.exe, rundll32.exe, chrome.exe
+```
+
+**Dynamic List**
+
+Generate authorized values automatically using a SOL query.
+
+Example:
+```shell
+events
+| distinct process.name
+| limit 100
+```
+This example retrieves the top 100 unique process names observed in recent events and uses them as selectable options.
+Dynamic lists update automatically as new data becomes available, ensuring filters stay relevant to current activity.
+
+
+!!! note
+
+    You can dissociate the technical value from its display label by using the syntax `value:Label`.
+    The value (left side) is used in the SOL query, while the label (right side) is what the user sees in the interface.
+
+    For example:
+
+    ```shell
+    powershell.exe:PowerShell, cmd.exe:Command Prompt, bash:Bash
+    ```
+    In this configuration:
+
+    - The user sees **PowerShell**, **Command Prompt**, and **Bash** in the dropdown
+    - The query receives `powershell.exe`, `cmd.exe`, or `bash` as the actual filter value
+
+    **Behavior**
+
+    * Values are separated by commas
+    * Labels after the colon (:) are optional
+    * Whitespace is trimmed automatically
+    * Duplicate values are silently ignored
+    * To include a comma inside a value, escape it with a backslash (`\`)
+
+
+#### Filter Preview
+
+The Preview panel (right side of the editor) shows how the filter will appear to users in dashboards or query widgets.
+
+Examples:
+
+* Boolean filter → toggle with labels “On” / “Off”
+* Text filter → input field
+* Selection filters → dropdown menus
+* Time filter → unified date range picker
+
+### How to Use Filters in Queries
+
+To use a filter in a SOL query, reference its name prefixed by `?`.
+
+```shell
+events
+| where timestamp between (?time.start .. ?time.end)
+| where process.name == ?process_name
+| select timestamp, host.name, process.command_line
+| order by timestamp desc
+| limit 100
+```
+
+In this example:
+
+* `?time.start` and `?time.end` are predefined time filters.
+* `?process_name` is a custom filter (e.g., single selection).
+
+When added to a dashboard, users can adjust these filters without modifying the query itself.
+
+
+#### Best Practices
+
+* ✅ Use descriptive names like `process_name`, `user_email`, `community_uuid`.
+* ✅ Reuse filter names across queries to enable dashboard-level synchronization.
+* ✅ Prefer dynamic lists when values depend on live data (e.g., entities, hosts).
+* ✅ Use `?time.start` and `?time.end` for all time-based filtering.
+* ❌ Avoid numeric filters — they are not fully supported.
+* ❌ Avoid hard-coded customer identifiers.
+
 
 ## Operators
 

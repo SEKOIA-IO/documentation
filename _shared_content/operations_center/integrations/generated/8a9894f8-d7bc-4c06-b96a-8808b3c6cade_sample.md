@@ -36,6 +36,14 @@ In this section, you will find examples of raw logs as generated natively by the
 
 
 
+=== "test_boot_request"
+
+    ```
+	0000005921 7 5  11-22-33-44-55-66:EVENT_REASON\,dhcp-parameter-request-list=1\, 3\, 6\, 15\, 31\, 33\, 43\, 44\, 46\, 47\, 119\, 121\, 249\, 252\,OperatingSystem=Windows\,PostureApplicable=Yes\,User-Fetch-Department=\,AD-Last-Fetch-Time=1759879885138\,Issuer=CN=COMPANY-SUB-CA\\OU=DSI\\O=COMPANY\\L=RENNES\\C=FR\,NmapSubnetScanID=0\,AD-Host-DNS-Domain=domain.asso.fr\,Device Identifier=\,Airespace-Wlan-Id=12\,ipv6=\,Issuer - Organization=COMPANY\,TotalAuthenLatency=2\,MatchedPolicyID=11111111-1111-1111-1111-111111111111\,Service-Type=Framed\,op=BOOTREQUEST\,UserName=USER$@domain.asso.fr\,FeedService=false\,TLSVersion=TLSv1.2\,AD-Host-NetBios-Name=DOMAIN\,Issuer - Location=RENNES\,SelectedAuthorizationProfiles=PermitAccess\,host-name=USER\,COMPANY_LAN=COMPANY_LAN#COMPANY_LAN\,Subject=CN=USER.DOMAIN.asso.fr\,
+    ```
+
+
+
 === "test_conf_events"
 
     ```
@@ -103,7 +111,7 @@ In this section, you will find examples of raw logs as generated natively by the
 === "test_network_info_events2"
 
     ```
-	<181>Jul 30 11:50:34 MGMT-ISE01 CISE_RADIUS_Accounting 0002391460 1 0 2025-07-30 11:50:34.267 +02:00 0023023046 3002 NOTICE Radius-Accounting: RADIUS Accounting watchdog update, ConfigVersionId=83, Device IP Address=1.2.3.4, UserName=00-00-00-00-00-00, NetworkDeviceName=Test-Network-Device-Name, User-Name=00-00-00-00-00-00, NAS-IP-Address=1.2.3.4, NAS-Port=50107, Framed-IP-Address=3.4.5.6, Class=CACS:0A0D00F90000001402268B53:ise/523393559/11169221, Called-Station-ID=11-00-00-00-00-00, Calling-Station-ID=00-00-00-00-00-00, Acct-Status-Type=Interim-Update, Acct-Delay-Time=0, Acct-Input-Octets=1848852125, Acct-Output-Octets=2808400785, Acct-Session-Id=00000070, Acct-Input-Packets=27991836, Acct-Output-Packets=40488347, Event-Timestamp=1753869011, NAS-Port-Type=Ethernet, NAS-Port-Id=GigabitEthernet0/7, cisco-av-pair=audit-session-id=0A0D00F90000001402268B53, cisco-av-pair=vlan-id=1330, cisco-av-pair=method=mab, AcsSessionID=MGMT-ISE01/0000000000/2185126, SelectedAccessService=Default Network Access, RequestLatency=3, Step=11004, Step=11017, Step=15049, Step=15008, Step=15048, Step=15048, Step=22094, Step=11005, NetworkDeviceGroups=Location#All Locations#Test Test#LAN#ACA, NetworkDeviceGroups=Device Type#All Device Types#Switch#2960L, NetworkDeviceGroups=IPSEC#Is IPSEC Device#No, CPMSessionID=0A0D00F90000001402268B53, StepLatency=1=0\;2=0\;3=0\;4=1\;5=0\;6=1\;7=0, StepData=4= Normalised Radius.RadiusFlowType, StepData=5= Normalised Radius.RadiusFlowType, TotalAuthenLatency=3, ClientLatency=0, Model Name=Unknown, Software Version=Unknown, Network Device Profile=Cisco, Location=Location#All Locations#Test Test#LAN#ACA, Device Type=Device Type#All Device Types#Switch#2960L, IPSEC=IPSEC#Is IPSEC Device#No,
+	CISE_RADIUS_Accounting 0002391460 1 0 2025-07-30 11:50:34.267 +02:00 0023023046 3002 NOTICE Radius-Accounting: RADIUS Accounting watchdog update, ConfigVersionId=83, Device IP Address=1.2.3.4, UserName=00-00-00-00-00-00, NetworkDeviceName=Test-Network-Device-Name, User-Name=00-00-00-00-00-00, NAS-IP-Address=1.2.3.4, NAS-Port=50107, Framed-IP-Address=3.4.5.6, Class=CACS:0A0D00F90000001402268B53:ise/523393559/11169221, Called-Station-ID=11-00-00-00-00-00, Calling-Station-ID=00-00-00-00-00-00, Acct-Status-Type=Interim-Update, Acct-Delay-Time=0, Acct-Input-Octets=1848852125, Acct-Output-Octets=2808400785, Acct-Session-Id=00000070, Acct-Input-Packets=27991836, Acct-Output-Packets=40488347, Event-Timestamp=1753869011, NAS-Port-Type=Ethernet, NAS-Port-Id=GigabitEthernet0/7, cisco-av-pair=audit-session-id=0A0D00F90000001402268B53, cisco-av-pair=vlan-id=1330, cisco-av-pair=method=mab, AcsSessionID=MGMT-ISE01/0000000000/2185126, SelectedAccessService=Default Network Access, RequestLatency=3, Step=11004, Step=11017, Step=15049, Step=15008, Step=15048, Step=15048, Step=22094, Step=11005, NetworkDeviceGroups=Location#All Locations#Test Test#LAN#ACA, NetworkDeviceGroups=Device Type#All Device Types#Switch#2960L, NetworkDeviceGroups=IPSEC#Is IPSEC Device#No, CPMSessionID=0A0D00F90000001402268B53, StepLatency=1=0\;2=0\;3=0\;4=1\;5=0\;6=1\;7=0, StepData=4= Normalised Radius.RadiusFlowType, StepData=5= Normalised Radius.RadiusFlowType, TotalAuthenLatency=3, ClientLatency=0, Model Name=Unknown, Software Version=Unknown, Network Device Profile=Cisco, Location=Location#All Locations#Test Test#LAN#ACA, Device Type=Device Type#All Device Types#Switch#2960L, IPSEC=IPSEC#Is IPSEC Device#No,
     ```
 
 
@@ -119,7 +127,7 @@ In this section, you will find examples of raw logs as generated natively by the
 === "test_network_info_events4"
 
     ```
-	<181>Jul 29 14:07:18 DEVICE CISE_Administrative_and_Operational_Audit 0000000000 1 0 2025-07-29 14:07:18.047 +02:00 0000000000 51000 NOTICE Administrator-Login: Administrator authentication failed, ConfigVersionId=XX, AdminInterface=GUI, AdminIPAddress=1.2.3.4, AdminName=REDACTED_NAME, OperationMessageText=Authentication failed due to invalid user or password, or account is disabled/locked,
+	CISE_Administrative_and_Operational_Audit 0000000000 1 0 2025-07-29 14:07:18.047 +02:00 0000000000 51000 NOTICE Administrator-Login: Administrator authentication failed, ConfigVersionId=XX, AdminInterface=GUI, AdminIPAddress=1.2.3.4, AdminName=REDACTED_NAME, OperationMessageText=Authentication failed due to invalid user or password, or account is disabled/locked,
     ```
 
 

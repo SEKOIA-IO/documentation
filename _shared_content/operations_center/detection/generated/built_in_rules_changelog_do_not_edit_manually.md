@@ -1,7 +1,13 @@
-Changelog _last update on 2025-10-15_
+Changelog _last update on 2025-10-29_
 
 ## Changelog
 
+### Windows Suspicious Service Creation
+  - 28/10/2025 - minor - improve detection by adding pattern
+    
+### Suspicious Rundll32.exe Executions
+  - 20/10/2025 - minor - Adding COM registering detection pattern and filtering some DLL to avoid false positives.
+    
 ### Brute-Force On Fortinet Firewall Login
   - 15/10/2025 - minor - Update pattern to match intake format change
     
@@ -1153,9 +1159,6 @@ Changelog _last update on 2025-10-15_
     
 ### Suspicious Regasm Regsvcs Usage
   - 27/09/2023 - major - Rule creation
-    
-### Suspicious Rundll32.exe Execution
-  - 21/09/2023 - minor - Extend to some usage without dll filename
     
 ### UAC Bypass via Event Viewer
   - 21/09/2023 - minor - Improve filter to reduce false positives

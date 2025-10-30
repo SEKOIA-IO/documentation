@@ -291,6 +291,12 @@ The following Sekoia.io built-in rules match the intake **Google Kubernetes Engi
     
     - **Effort:** intermediate
 
+??? abstract "Linux Masquerading Space After Name"
+    
+    This detection rule identifies a process created from an executable with a space appended to the end of the name.
+    
+    - **Effort:** intermediate
+
 ??? abstract "Linux Shared Lib Injection Via Ldso Preload"
     
     Detect ld.so.preload modification for shared lib injection, technique used by attackers to load arbitrary code into process
@@ -776,6 +782,12 @@ The following Sekoia.io built-in rules match the intake **Google Kubernetes Engi
     Detects new commands that add new printer port which point to suspicious file
     
     - **Effort:** advanced
+
+??? abstract "Suspicious Rundll32.exe Executions"
+    
+    The process rundll32.exe executes a newly dropped DLL with update /i in the command line. This specific technic was observed at least being used by the IcedID loading mechanism dubbed Gziploader. Some other detections are related to LOLBAS (Living Off The Land Binaries, Scripts and Libraries) usages (like the COM registering).
+    
+    - **Effort:** intermediate
 
 ??? abstract "Suspicious Taskkill Command"
     
