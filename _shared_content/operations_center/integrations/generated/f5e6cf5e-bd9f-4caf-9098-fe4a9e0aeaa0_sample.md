@@ -1019,7 +1019,7 @@ In this section, you will find examples of raw logs as generated natively by the
             "AgentAddresses": [],
             "AgentGroupGuid": "{61B578F4-289D-4B97-A331-DDDCB80C6427}",
             "AgentGroupName": "Desktop",
-            "AgentGuid": "{6EF8564D-941A-4377-80FD-78CD3DFEB269}",
+            "AgentGuid": "{0000000000000000000000000000000000}",
             "AgentName": "DST-001",
             "CategoryName": "Registry",
             "IncidentGuid": null,
@@ -1481,17 +1481,181 @@ In this section, you will find examples of raw logs as generated natively by the
         },
         "AdditionalData": {
             "AgentAddresses": [
-                "172.24.0.14"
+                "1.2.3.4"
             ],
             "AgentGroupGuid": "{00000000-0000-0000-0000-000000000000}",
             "AgentGroupName": "Default group",
-            "AgentGuid": "{074C7CCE-ACF4-4674-9650-4B63B569892F}",
+            "AgentGuid": "{0000000000000000000000000000000000}",
             "AgentName": "WINSERVER2012",
             "CategoryName": "Process",
             "IncidentGuid": "{12CA4135-575E-49DE-89AD-4CD35EE2EB3B}",
             "Message": "The 'ragnarlocker.exe' process attempted to run the 'cmd.exe' process",
             "PolicyName": "Stormshield - Incredible policy (1)",
             "SeverityName": "Emergency"
+        }
+    }
+    ```
+
+
+
+=== "test_type_11_2"
+
+
+    ```json
+	{
+        "Version": 1,
+        "Type": 11,
+        "TypeComputedMap": "ProcessExecution",
+        "Severity": 7,
+        "ServerReserved": 5,
+        "Attributes": 16,
+        "AttributesComputedBitMap": [
+            "Context"
+        ],
+        "EventGuid": "{00000000-0000-0000-0000-0000000000A1}",
+        "GenerateIncident": false,
+        "Timestamp": "2025-09-29T07:27:21.2220386+02:00",
+        "TimestampRaw": 134035972412220386,
+        "SpecificData": {
+            "SourceProcess": {
+                "PID": 1572,
+                "ProcessGuid": "{11111111-1111-1111-1111-111111111111}",
+                "ProcessImageName": "C:\\Windows\\System32\\svchost.exe",
+                "VolumeZone": 1,
+                "VolumeZoneComputedBitMap": [
+                    "Operating system"
+                ],
+                "ProcessCommandLine": "C:\\WINDOWS\\system32\\svchost.exe -k DcomLaunch -p",
+                "User": "S-1-5-18",
+                "UserNameLookup": "redacted-system",
+                "UserDomainLookup": "REDACTED-DOMAIN-A",
+                "IntegrityLevel": "S-1-16-16384",
+                "IntegrityLevelNameLookup": "Niveau obligatoire syst\u00e8me",
+                "IntegrityLevelDomainLookup": "\u00c9tiquette obligatoire",
+                "SessionID": 0,
+                "HashMd5": "00000000000000000000000000000000",
+                "HashSha1": "0000000000000000000000000000000000000000",
+                "HashSha256": "0000000000000000000000000000000000000000000000000000000000000000",
+                "IsProtectedOrCritical": true,
+                "CertificateSignatureState": 1,
+                "CertificateSignatureStateComputedMap": "SignatureStateTrusted",
+                "Certificates": [
+                    {
+                        "Algorithm": "SHA256",
+                        "IssuerCN": "Microsoft Windows Production PCA 2011",
+                        "SubjectCN": "Microsoft Windows Publisher",
+                        "SigningTime": "2025-08-27T02:32:01.8360000+02:00",
+                        "ValidityStart": "2024-11-15T01:56:46.0000000+02:00",
+                        "ValidityEnd": "2025-11-13T01:56:46.0000000+02:00"
+                    }
+                ],
+                "ProcessStartTime": "2025-09-29T07:26:46.0046710+02:00",
+                "ProcessStartTimeRaw": 134035972060046710
+            },
+            "Action": {
+                "PolicyGuid": "{33333333-3333-3333-3333-333333333333}",
+                "PolicyVersion": 29,
+                "RuleGuid": "{44444444-4444-4444-4444-4444444444F8}",
+                "BaseRuleGuid": "{44444444-4444-4444-4444-4444444444F7}",
+                "IdentifierGuid": "{55555555-5555-5555-5555-555555555555}",
+                "Blocked": false,
+                "RequestMoveToQuarantine": false,
+                "UserDecision": false,
+                "SourceProcessKilled": false,
+                "RuleTags": []
+            },
+            "CreatedProcess": {
+                "PID": 10664,
+                "ProcessGuid": "{22222222-2222-2222-2222-222222222222}",
+                "ProcessImageName": "C:\\Windows\\SystemApps\\Microsoft.Windows.StartMenuExperienceHost_cw5n1h2txyewy\\StartMenuExperienceHost.exe",
+                "VolumeZone": 1,
+                "VolumeZoneComputedBitMap": [
+                    "Operating system"
+                ],
+                "ProcessCommandLine": "\"C:\\WINDOWS\\SystemApps\\Microsoft.Windows.StartMenuExperienceHost_cw5n1h2txyewy\\StartMenuExperienceHost.exe\" -ServerName:App.AppXywbrabmsek0gm3tkwpr5kwzbs55tkqay.mca",
+                "User": "S-1-5-21-1111111111-2222222222-3333333333-1001",
+                "UserNameLookup": "redacted-user",
+                "UserDomainLookup": "REDACTED-DOMAIN-B",
+                "IntegrityLevel": "S-1-16-4096",
+                "IntegrityLevelNameLookup": "Niveau obligatoire faible",
+                "IntegrityLevelDomainLookup": "\u00c9tiquette obligatoire",
+                "SessionID": 1,
+                "HashMd5": "00000000000000000000000000000000",
+                "HashSha1": "0000000000000000000000000000000000000000",
+                "HashSha256": "0000000000000000000000000000000000000000000000000000000000000000",
+                "IsProtectedOrCritical": false,
+                "CertificateSignatureState": 1,
+                "CertificateSignatureStateComputedMap": "SignatureStateTrusted",
+                "Certificates": [
+                    {
+                        "Algorithm": "SHA256",
+                        "IssuerCN": "Microsoft Windows Production PCA 2011",
+                        "SubjectCN": "Microsoft Windows",
+                        "SigningTime": "2025-08-27T08:11:33.4980000+02:00",
+                        "ValidityStart": "2025-06-19T20:11:43.0000000+02:00",
+                        "ValidityEnd": "2026-06-17T20:11:43.0000000+02:00"
+                    }
+                ],
+                "ProcessStartTime": "2025-09-29T07:27:21.2167967+02:00",
+                "ProcessStartTimeRaw": 134035972412167967
+            },
+            "ParentProcess": {
+                "PID": 1572,
+                "ProcessGuid": "{11111111-1111-1111-1111-111111111111}",
+                "ProcessImageName": "C:\\Windows\\System32\\svchost.exe",
+                "VolumeZone": 1,
+                "VolumeZoneComputedBitMap": [
+                    "Operating system"
+                ],
+                "ProcessCommandLine": "C:\\WINDOWS\\system32\\svchost.exe -k DcomLaunch -p",
+                "User": "S-1-5-18",
+                "UserNameLookup": "redacted-system",
+                "UserDomainLookup": "REDACTED-DOMAIN-A",
+                "IntegrityLevel": "S-1-16-16384",
+                "IntegrityLevelNameLookup": "Niveau obligatoire syst\u00e8me",
+                "IntegrityLevelDomainLookup": "\u00c9tiquette obligatoire",
+                "SessionID": 0,
+                "HashMd5": "00000000000000000000000000000000",
+                "HashSha1": "0000000000000000000000000000000000000000",
+                "HashSha256": "0000000000000000000000000000000000000000000000000000000000000000",
+                "IsProtectedOrCritical": true,
+                "CertificateSignatureState": 1,
+                "CertificateSignatureStateComputedMap": "SignatureStateTrusted",
+                "Certificates": [
+                    {
+                        "Algorithm": "SHA256",
+                        "IssuerCN": "Microsoft Windows Production PCA 2011",
+                        "SubjectCN": "Microsoft Windows Publisher",
+                        "SigningTime": "2025-08-27T02:32:01.8360000+02:00",
+                        "ValidityStart": "2024-11-15T01:56:46.0000000+02:00",
+                        "ValidityEnd": "2025-11-13T01:56:46.0000000+02:00"
+                    }
+                ],
+                "ProcessStartTime": "2025-09-29T07:26:46.0046710+02:00",
+                "ProcessStartTimeRaw": 134035972060046710
+            }
+        },
+        "AdditionalData": {
+            "AgentAddresses": [
+                "10.0.0.5",
+                "fe80::1"
+            ],
+            "AgentGroupGuid": "{00000000-0000-0000-0000-000000000000}",
+            "AgentGroupName": "Default group",
+            "AgentGuid": "{66666666-6666-6666-6666-666666666666}",
+            "AgentName": "REDACTED-HOST",
+            "AttackCVEId": null,
+            "AttackMitreTacticId": null,
+            "AttackMitreTacticName": null,
+            "AttackMitreTechnicId": null,
+            "AttackMitreTechnicName": null,
+            "AttackSESId": null,
+            "AttackTriggerCondition": null,
+            "CategoryName": "Process",
+            "IncidentGuid": "{77777777-7777-7777-7777-777777777777}",
+            "Message": "The 'svchost.exe' process ran the 'StartMenuExperienceHost.exe' process",
+            "PolicyName": "Stormshield - Default policy",
+            "SeverityName": "Debug"
         }
     }
     ```
