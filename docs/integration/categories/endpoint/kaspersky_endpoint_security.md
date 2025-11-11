@@ -71,6 +71,9 @@ This setup guide describes how to forward events produced by **Kaspersky Endpoin
      ![SIEM3.png](/assets/integration/endpoint/kaspersky-edr/SIEM3.png)
 
    - Configure the forwarding:
+     
+     ![SIEM4.png](/assets/integration/endpoint/kaspersky-edr/SIEM4.png)
+
      a. Type the address of your log concentrator in the **SIEM system server address**
      b. Type the port in **SIEM system port**
      c. Select **TLS over TCP** as the protocol
@@ -85,8 +88,6 @@ This setup guide describes how to forward events produced by **Kaspersky Endpoin
          $ cat server.key server.crt > server.pem
          $ openssl x509 -in cert.crt -noout -fingerprint # copy the output
          ```
-
-     ![SIEM4.png](/assets/integration/endpoint/kaspersky-edr/SIEM4.png)
 
    - Check **Automatically export event to SIEM system database** (point 2):
 
