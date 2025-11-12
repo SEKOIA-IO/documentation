@@ -1,7 +1,37 @@
-Changelog _last update on 2025-11-06_
+Changelog _last update on 2025-11-12_
 
 ## Changelog
 
+### Spam Detected By Hornetsecurity 365 Total Protection
+  - 12/11/2025 - minor - Update rule type to integration
+    
+### Varonis Data Security Network Low Severity Alert
+  - 12/11/2025 - minor - Update rule type to integration
+    
+### Varonis Data Security Network High Severity Alert
+  - 12/11/2025 - minor - Update rule type to integration
+    
+### Microsoft Defender XDR Entra ID Protection Alert
+  - 12/11/2025 - minor - Update rule type to integration
+    
+### Vectra General Threat Detection
+  - 12/11/2025 - minor - Update rule type to integration
+    
+### Advanced Threat Detected By Hornetsecurity 365 Total Protection
+  - 12/11/2025 - minor - Update rule type to integration
+    
+### Microsoft Defender XDR Data Loss Prevention Alert
+  - 12/11/2025 - minor - Update rule type to integration
+    
+### AWS GuardDuty High Severity Alert
+  - 12/11/2025 - minor - Update rule type to integration
+    
+### Threat Detected By Hornetsecurity 365 Total Protection
+  - 12/11/2025 - minor - Update rule type to integration
+    
+### Varonis Data Security Network Medium Severity Alert
+  - 12/11/2025 - minor - Update rule type to integration
+    
 ### Windows Suspicious Service Creation
   - 28/10/2025 - minor - improve detection by adding pattern
     
@@ -25,18 +55,6 @@ Changelog _last update on 2025-11-06_
     
 ### Unusual Process Executed in Temporary Directory
   - 09/10/2025 - minor - Added filter to reduce false positvives.
-    
-### Varonis Data Security Network Low Severity Alert
-  - 06/10/2025 - minor - Update similarity strategy for more granularity
-    
-### Varonis Data Security Network High Severity Alert
-  - 06/10/2025 - minor - Update similarity strategy for more granularity
-    
-### Vectra General Threat Detection
-  - 06/10/2025 - minor - Update sources link
-    
-### Varonis Data Security Network Medium Severity Alert
-  - 06/10/2025 - minor - Update similarity strategy for more granularity
     
 ### Download Files From Suspicious TLDs
   - 06/10/2025 - minor - Improve filter to reduce false positives.
@@ -934,9 +952,6 @@ Changelog _last update on 2025-11-06_
     
 ### Non-Legitimate Executable Using AcceptEula Parameter
   - 19/02/2024 - minor - Update filter and effort level according to the observed hits for the rule.
-    
-### AWS GuardDuty High Severity Alert
-  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
     
 ### SentinelOne EDR Suspicious Threat Not Mitigated (Medium Confidence)
   - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
