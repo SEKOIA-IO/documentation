@@ -29,7 +29,7 @@ HarfangLab console. Follow these steps:
 !!! warning
     - Ensure the user account exists before generating an API token.
     - The API token is displayed only once at creation. Save it securely; if you lose it, you must generate a new one.
-    - When copying the API key, remove the token_ prefix — copy only the raw key value.
+    - When copying the API key, ensure you copy only the raw key value (excluding any `token_` prefix if displayed).
 
 
 ### Create your asset
