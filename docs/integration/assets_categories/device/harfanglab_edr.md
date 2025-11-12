@@ -27,7 +27,9 @@ HarfangLab console. Follow these steps:
 4. Copy the API key to a safe place and start using it in Sekoia.io.
 
 !!! warning
-    - A user must exist before generating an API token.
+    - Ensure the user account exists before generating an API token.
+    - The API token is displayed only once at creation. Save it securely; if you lose it, you must generate a new one.
+    - When copying the API key, remove the token_ prefix — copy only the raw key value.
 
 
 ### Create your asset
@@ -51,3 +53,6 @@ To start getting your HarfangLab assets into Sekoia.io, you need to create an as
     ![Connector test result and Create asset connector button highlighted](/assets/operation_center/asset_connectors/device/harfanglab/harfanglab_page.png)
 
 5. Click the **Create asset connector** button.
+
+!!! warning
+    - Make sure to add your port number for your HarfangLab instance in the `URL` field.
