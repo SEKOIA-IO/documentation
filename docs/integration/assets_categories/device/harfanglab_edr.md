@@ -55,4 +55,4 @@ To start getting your HarfangLab assets into Sekoia.io, you need to create an as
 5. Click the **Create asset connector** button.
 
 !!! warning
-    - Make sure to add your port number for your HarfangLab instance in the `URL` field.
+    - Make sure to include your port number in the `URL` field by appending it to the URL, for example: `https://your-harfanglab-instance.com:8443`.
