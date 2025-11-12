@@ -1,4 +1,4 @@
-Rules catalog includes **1056 built-in detection rules** ([_last update on 2025-11-06_](rules_changelog.md)).
+Rules catalog includes **1056 built-in detection rules** ([_last update on 2025-11-12_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Identity Information**
 
@@ -713,6 +713,7 @@ Rules catalog includes **1056 built-in detection rules** ([_last update on 2025-
     - **Changelog:**
     
         - 06/10/2025 - minor - Update similarity strategy for more granularity
+        - 12/11/2025 - minor - Update rule type to integration
             
 ??? abstract "Varonis Data Security Network Low Severity Alert"
     
@@ -724,6 +725,7 @@ Rules catalog includes **1056 built-in detection rules** ([_last update on 2025-
     
         - 14/05/2025 - major - Fix pattern where severity level was missing
         - 06/10/2025 - minor - Update similarity strategy for more granularity
+        - 12/11/2025 - minor - Update rule type to integration
             
 ??? abstract "Varonis Data Security Network Medium Severity Alert"
     
@@ -734,6 +736,7 @@ Rules catalog includes **1056 built-in detection rules** ([_last update on 2025-
     - **Changelog:**
     
         - 06/10/2025 - minor - Update similarity strategy for more granularity
+        - 12/11/2025 - minor - Update rule type to integration
             
 **Obtain Capabilities**
 
@@ -1329,6 +1332,10 @@ Rules catalog includes **1056 built-in detection rules** ([_last update on 2025-
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 12/11/2025 - minor - Update rule type to integration
+            
 ??? abstract "Cisco ESA Suspicious Email With Attachment"
     
     Detects an email with an attachment, from a sender tagged as suspect, detected by either the Antivirus or the Advanced Malware Protection (AMP) engine and delivered to the recipient
@@ -1680,6 +1687,10 @@ Rules catalog includes **1056 built-in detection rules** ([_last update on 2025-
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 12/11/2025 - minor - Update rule type to integration
+            
 ??? abstract "Spam Detected By Vade For M365"
     
     Vade Secure product Vade for M365, has detected a spam e-mail.
@@ -1773,6 +1784,10 @@ Rules catalog includes **1056 built-in detection rules** ([_last update on 2025-
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 12/11/2025 - minor - Update rule type to integration
+            
 ## Execution
 **Windows Management Instrumentation**
 
@@ -2017,6 +2032,7 @@ Rules catalog includes **1056 built-in detection rules** ([_last update on 2025-
     - **Changelog:**
     
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+        - 12/11/2025 - minor - Update rule type to integration
             
 ??? abstract "AWS GuardDuty Low Severity Alert"
     
@@ -2493,6 +2509,10 @@ Rules catalog includes **1056 built-in detection rules** ([_last update on 2025-
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 12/11/2025 - minor - Update rule type to integration
+            
 ??? abstract "Microsoft Defender XDR Endpoint Alert"
     
     Microsoft Defender XDR has raised an alert for Microsoft Defender for Endpoint. The alert info and evidence events are grouped with the similarity into the same Sekoia.io alert.
@@ -2505,6 +2525,10 @@ Rules catalog includes **1056 built-in detection rules** ([_last update on 2025-
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 12/11/2025 - minor - Update rule type to integration
+            
 ??? abstract "Microsoft Defender XDR Office 365 Alert"
     
     Microsoft Defender XDR for Office 365 has raised an alert. The alert info and evidence events are grouped with the similarity into the same Sekoia.io alert.
@@ -3275,6 +3299,7 @@ Rules catalog includes **1056 built-in detection rules** ([_last update on 2025-
     - **Changelog:**
     
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+        - 12/11/2025 - minor - Update rule type to integration
             
 ??? abstract "AWS GuardDuty Low Severity Alert"
     
@@ -4050,6 +4075,10 @@ Rules catalog includes **1056 built-in detection rules** ([_last update on 2025-
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 12/11/2025 - minor - Update rule type to integration
+            
 ??? abstract "Microsoft Defender XDR Endpoint Alert"
     
     Microsoft Defender XDR has raised an alert for Microsoft Defender for Endpoint. The alert info and evidence events are grouped with the similarity into the same Sekoia.io alert.
@@ -4062,6 +4091,10 @@ Rules catalog includes **1056 built-in detection rules** ([_last update on 2025-
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 12/11/2025 - minor - Update rule type to integration
+            
 ??? abstract "Microsoft Defender XDR Office 365 Alert"
     
     Microsoft Defender XDR for Office 365 has raised an alert. The alert info and evidence events are grouped with the similarity into the same Sekoia.io alert.
@@ -4422,6 +4455,7 @@ Rules catalog includes **1056 built-in detection rules** ([_last update on 2025-
     - **Changelog:**
     
         - 06/10/2025 - minor - Update sources link
+        - 12/11/2025 - minor - Update rule type to integration
             
 ??? abstract "Winword Document Droppers"
     
@@ -4863,6 +4897,10 @@ Rules catalog includes **1056 built-in detection rules** ([_last update on 2025-
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 12/11/2025 - minor - Update rule type to integration
+            
 ??? abstract "Microsoft Defender XDR Endpoint Alert"
     
     Microsoft Defender XDR has raised an alert for Microsoft Defender for Endpoint. The alert info and evidence events are grouped with the similarity into the same Sekoia.io alert.
@@ -4875,6 +4913,10 @@ Rules catalog includes **1056 built-in detection rules** ([_last update on 2025-
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 12/11/2025 - minor - Update rule type to integration
+            
 ??? abstract "Microsoft Defender XDR Office 365 Alert"
     
     Microsoft Defender XDR for Office 365 has raised an alert. The alert info and evidence events are grouped with the similarity into the same Sekoia.io alert.
