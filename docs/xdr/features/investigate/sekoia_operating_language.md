@@ -1589,6 +1589,10 @@ events
 
 #### Threat Intelligence enrichment
 
+**Automatically identify and prioritize alerts from known malicious sources**
+
+Instantly correlate your alerts with external threat intelligence feeds to distinguish between noise and genuine threats. This query enriches recent alerts with threat context, helping analysts focus on the most critical security events first.
+
 ```shell
 alerts
 | where created_at > ago(24h)
@@ -1599,6 +1603,10 @@ alerts
 
 #### Asset context enhancement
 
+**Understand event patterns across business units and system criticality**
+
+Transform raw security events into business-aware insights by correlating them with your asset inventory. Quickly identify which departments or critical systems are generating the most security events, enabling targeted investigation and resource allocation.
+
 ```shell
 events
 | where timestamp > ago(1h)
@@ -1608,6 +1616,10 @@ events
 ```
 
 #### User role validation
+
+**Detect privileged account activity and potential privilege escalation**
+
+Monitor administrative activities by correlating authentication events with your user directory. This helps identify unusual admin access patterns, shared accounts, or potential insider threats by tracking who is accessing what systems with elevated privileges.
 
 ```shell
 events
