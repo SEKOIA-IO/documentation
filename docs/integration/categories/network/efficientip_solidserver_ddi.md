@@ -14,7 +14,7 @@ EfficientIP SOLIDserver suite of appliances is designed to deliver highly scalab
 ## Supported versions
 
 This integration supports the following versions:
-
+- 8.3.x
 - 8.4.x
 
 ## Supported events
