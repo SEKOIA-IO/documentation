@@ -1532,17 +1532,27 @@ Imported datasets can be used like any other SOL data source:
 **Basic dataset query**
 
 ```shell
-approved_softwares
+authorized_domains
 | limit 100
 ```
 
-**Joining with events**
+**Detect unauthorized domains instantly:**
+
+```shell
+events
+| where timestamp > ago(24h) and url.domain != null
+| where not url.domain in (authorized_domains | select url_domain)
+| select timestamp, source.ip, url.domain
+| limit 100
+```
+
+**Correlate user activities with business roles:**
 
 ```shell
 events
 | where timestamp > ago(24h)
-| lookup user_team_dataset on user.full_name == full_name into dataset
-| select timestamp, user.full_name, dataset.team
+| lookup user_roles on user.full_name == full_name into roles_list
+| distinct user.full_name, roles_list.role
 | limit 100
 ```
 
@@ -1566,8 +1576,10 @@ events
 // Filter main data source first
 events
 | where timestamp > ago(1h) and user.name != null
-// Then join with dataset
+
+// Then join with SOL dataset. The modal object name is defined as 'dataset' here
 | lookup user_roles_dataset on user.name == username into dataset
+
 // Select relevant columns
 | select timestamp, user.name, dataset.role, event.action
 | limit 1000
