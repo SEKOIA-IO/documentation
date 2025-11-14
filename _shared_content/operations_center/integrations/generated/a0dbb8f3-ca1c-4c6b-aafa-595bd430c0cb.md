@@ -101,8 +101,8 @@ This section demonstrates how the raw logs will be transformed by our parsers. I
         },
         "@timestamp": "2025-05-02T11:31:06Z",
         "destination": {
-            "address": "https://example.com",
-            "domain": "https://example.com",
+            "address": "example.com",
+            "domain": "example.com",
             "port": 443,
             "registered_domain": "example.com",
             "top_level_domain": "com"
@@ -125,7 +125,7 @@ This section demonstrates how the raw logs will be transformed by our parsers. I
         },
         "related": {
             "hosts": [
-                "https://example.com"
+                "example.com"
             ],
             "ip": [
                 "5.6.7.8"
@@ -276,7 +276,7 @@ This section demonstrates how the raw logs will be transformed by our parsers. I
     ```json
 	
     {
-        "message": "1587042596.494   1717 192.168.224.39 TCP_TUNNEL/200 3512 CONNECT 193-164-229-102_s-2-18-244-11_ts-1587042594-clienttons-s.akamaihd.net:443 - HIER_DIRECT/193-164-229-102_s-2-18-244-11_ts-1587042594-clienttons-s.akamaihd.net -",
+        "message": "1587042596.494   1717 192.168.224.39 TCP_TUNNEL/200 3512 CONNECT 193-164-229-102_s-2-18-244-11_ts-1587042594-clienttons-s.example.net:443 - HIER_DIRECT/193-164-229-102_s-2-18-244-11_ts-1587042594-clienttons-s.example.net -",
         "event": {
             "category": [
                 "network",
@@ -286,10 +286,10 @@ This section demonstrates how the raw logs will be transformed by our parsers. I
         },
         "@timestamp": "2020-04-16T13:09:56.494000Z",
         "destination": {
-            "address": "193-164-229-102_s-2-18-244-11_ts-1587042594-clienttons-s.akamaihd.net",
-            "domain": "193-164-229-102_s-2-18-244-11_ts-1587042594-clienttons-s.akamaihd.net",
+            "address": "193-164-229-102_s-2-18-244-11_ts-1587042594-clienttons-s.example.net",
+            "domain": "193-164-229-102_s-2-18-244-11_ts-1587042594-clienttons-s.example.net",
             "port": 443,
-            "registered_domain": "akamaihd.net",
+            "registered_domain": "example.net",
             "subdomain": "193-164-229-102_s-2-18-244-11_ts-1587042594-clienttons-s",
             "top_level_domain": "net"
         },
@@ -313,14 +313,14 @@ This section demonstrates how the raw logs will be transformed by our parsers. I
         },
         "related": {
             "hosts": [
-                "193-164-229-102_s-2-18-244-11_ts-1587042594-clienttons-s.akamaihd.net"
+                "193-164-229-102_s-2-18-244-11_ts-1587042594-clienttons-s.example.net"
             ],
             "ip": [
                 "192.168.224.39"
             ]
         },
         "server": {
-            "domain": "193-164-229-102_s-2-18-244-11_ts-1587042594-clienttons-s.akamaihd.net"
+            "domain": "193-164-229-102_s-2-18-244-11_ts-1587042594-clienttons-s.example.net"
         },
         "source": {
             "address": "192.168.224.39",
@@ -339,7 +339,7 @@ This section demonstrates how the raw logs will be transformed by our parsers. I
     ```json
 	
     {
-        "message": "1737983758.627 207 1.2.3.4 TCP_TUNNEL/200 4047 CONNECT test.domain.org:443 - HIER_DIRECT/5.6.7.8 - ",
+        "message": "1737983758.627 207 1.2.3.4 TCP_TUNNEL/200 4047 CONNECT test.example.org:443 - HIER_DIRECT/5.6.7.8 - ",
         "event": {
             "category": [
                 "network",
@@ -349,10 +349,10 @@ This section demonstrates how the raw logs will be transformed by our parsers. I
         },
         "@timestamp": "2025-01-27T13:15:58.627000Z",
         "destination": {
-            "address": "test.domain.org",
-            "domain": "test.domain.org",
+            "address": "test.example.org",
+            "domain": "test.example.org",
             "port": 443,
-            "registered_domain": "domain.org",
+            "registered_domain": "example.org",
             "subdomain": "test",
             "top_level_domain": "org"
         },
@@ -376,7 +376,7 @@ This section demonstrates how the raw logs will be transformed by our parsers. I
         },
         "related": {
             "hosts": [
-                "test.domain.org"
+                "test.example.org"
             ],
             "ip": [
                 "1.2.3.4",
@@ -403,7 +403,7 @@ This section demonstrates how the raw logs will be transformed by our parsers. I
     ```json
 	
     {
-        "message": "1737983750.078 61 1.2.3.4 TCP_TUNNEL/200 8811 CONNECT safebrowsing.googleapis.com:443 - HIER_DIRECT/5.6.7.8 -",
+        "message": "1737983750.078 61 1.2.3.4 TCP_TUNNEL/200 8811 CONNECT safebrowsing.example.com:443 - HIER_DIRECT/5.6.7.8 -",
         "event": {
             "category": [
                 "network",
@@ -413,10 +413,10 @@ This section demonstrates how the raw logs will be transformed by our parsers. I
         },
         "@timestamp": "2025-01-27T13:15:50.078000Z",
         "destination": {
-            "address": "safebrowsing.googleapis.com",
-            "domain": "safebrowsing.googleapis.com",
+            "address": "safebrowsing.example.com",
+            "domain": "safebrowsing.example.com",
             "port": 443,
-            "registered_domain": "googleapis.com",
+            "registered_domain": "example.com",
             "subdomain": "safebrowsing",
             "top_level_domain": "com"
         },
@@ -440,7 +440,7 @@ This section demonstrates how the raw logs will be transformed by our parsers. I
         },
         "related": {
             "hosts": [
-                "safebrowsing.googleapis.com"
+                "safebrowsing.example.com"
             ],
             "ip": [
                 "1.2.3.4",
@@ -467,7 +467,7 @@ This section demonstrates how the raw logs will be transformed by our parsers. I
     ```json
 	
     {
-        "message": "1642667037.129      0 10.0.4.4 TCP_DENIED/403 3868 CONNECT 45.138.98.34:80 - HIER_NONE/- text/html \"-\" \"-\"",
+        "message": "1642667037.129      0 10.0.4.4 TCP_DENIED/403 3868 CONNECT 1.2.3.4:80 - HIER_NONE/- text/html \"-\" \"-\"",
         "event": {
             "category": [
                 "network",
@@ -482,8 +482,8 @@ This section demonstrates how the raw logs will be transformed by our parsers. I
         },
         "@timestamp": "2022-01-20T08:23:57.129000Z",
         "destination": {
-            "address": "45.138.98.34",
-            "ip": "45.138.98.34",
+            "address": "1.2.3.4",
+            "ip": "1.2.3.4",
             "port": 80
         },
         "http": {
@@ -507,8 +507,8 @@ This section demonstrates how the raw logs will be transformed by our parsers. I
         },
         "related": {
             "ip": [
-                "10.0.4.4",
-                "45.138.98.34"
+                "1.2.3.4",
+                "10.0.4.4"
             ]
         },
         "source": {
@@ -529,7 +529,7 @@ This section demonstrates how the raw logs will be transformed by our parsers. I
     ```json
 	
     {
-        "message": "1565598801.353     24 10.16.12.86 TCP_MISS/200 394 GET http://dt.adsafeprotected.com/dt?anId=929475&asId=f0fc9c04-7168-68e3-32ca-6cc17dd2223a&tv={c:l4fyeI,pingTime:-1,time:7884,type:u,clog:[{piv:100,vs:i,r:,w:1,h:1,t:78},{piv:0,vs:o,r:l,t:5971}],ndt:6,es:0,sc:1,ha:1,gm:1,slTimes:{i:5971,o:1913,n:0,pp:0,pm:0},slEvents:[{sl:i,t:78,wc:0.0.1920.1040,ac:952.74.1.1,am:i,cc:952.74.1.1,piv:100,obst:0,th:0,reas:,bkn:{piv:[5898~100],as:[5898~1.1]}},{sl:o,t:5971,wc:0.0.1920.1040,ac:952.-516.1.1,am:i,cc:952.-516.1.1,piv:0,obst:0,th:0,reas:l,bkn:{piv:[1914~0],as:[1914~1.1]}}],slEventCount:2,em:true,fr:true,e:,tt:jload,dtt:254,metricIdList:[publ1,grpm1],fm:ryV6ZcU+11|12|13|14*.929475|141|15.929475|151|152|16,idMap:14.c4c75fac-ccbe-9ba7-61b1-d1276709f9ec.31_289523-36779676|14*,rend:0,renddet:WINDOW,rmeas:0,lt:1}&br=c - HIER_DIRECT/dt.adsafeprotected.com image/gif",
+        "message": "1565598801.353     24 10.16.12.86 TCP_MISS/200 394 GET http://dt.example.com/dt123456 - HIER_DIRECT/dt.example.com image/gif",
         "event": {
             "category": [
                 "network",
@@ -539,9 +539,9 @@ This section demonstrates how the raw logs will be transformed by our parsers. I
         },
         "@timestamp": "2019-08-12T08:33:21.353000Z",
         "destination": {
-            "address": "dt.adsafeprotected.com",
-            "domain": "dt.adsafeprotected.com",
-            "registered_domain": "adsafeprotected.com",
+            "address": "dt.example.com",
+            "domain": "dt.example.com",
+            "registered_domain": "example.com",
             "subdomain": "dt",
             "top_level_domain": "com"
         },
@@ -566,7 +566,7 @@ This section demonstrates how the raw logs will be transformed by our parsers. I
         },
         "related": {
             "hosts": [
-                "dt.adsafeprotected.com"
+                "dt.example.com"
             ],
             "ip": [
                 "10.16.12.86"
@@ -581,16 +581,61 @@ This section demonstrates how the raw logs will be transformed by our parsers. I
             "hierarchy_code": "HIER_DIRECT"
         },
         "url": {
-            "domain": "dt.adsafeprotected.com",
-            "full": "http://dt.adsafeprotected.com/dt?anId=929475&asId=f0fc9c04-7168-68e3-32ca-6cc17dd2223a&tv={c:l4fyeI,pingTime:-1,time:7884,type:u,clog:[{piv:100,vs:i,r:,w:1,h:1,t:78},{piv:0,vs:o,r:l,t:5971}],ndt:6,es:0,sc:1,ha:1,gm:1,slTimes:{i:5971,o:1913,n:0,pp:0,pm:0},slEvents:[{sl:i,t:78,wc:0.0.1920.1040,ac:952.74.1.1,am:i,cc:952.74.1.1,piv:100,obst:0,th:0,reas:,bkn:{piv:[5898~100],as:[5898~1.1]}},{sl:o,t:5971,wc:0.0.1920.1040,ac:952.-516.1.1,am:i,cc:952.-516.1.1,piv:0,obst:0,th:0,reas:l,bkn:{piv:[1914~0],as:[1914~1.1]}}],slEventCount:2,em:true,fr:true,e:,tt:jload,dtt:254,metricIdList:[publ1,grpm1],fm:ryV6ZcU+11|12|13|14*.929475|141|15.929475|151|152|16,idMap:14.c4c75fac-ccbe-9ba7-61b1-d1276709f9ec.31_289523-36779676|14*,rend:0,renddet:WINDOW,rmeas:0,lt:1}&br=c",
-            "original": "http://dt.adsafeprotected.com/dt?anId=929475&asId=f0fc9c04-7168-68e3-32ca-6cc17dd2223a&tv={c:l4fyeI,pingTime:-1,time:7884,type:u,clog:[{piv:100,vs:i,r:,w:1,h:1,t:78},{piv:0,vs:o,r:l,t:5971}],ndt:6,es:0,sc:1,ha:1,gm:1,slTimes:{i:5971,o:1913,n:0,pp:0,pm:0},slEvents:[{sl:i,t:78,wc:0.0.1920.1040,ac:952.74.1.1,am:i,cc:952.74.1.1,piv:100,obst:0,th:0,reas:,bkn:{piv:[5898~100],as:[5898~1.1]}},{sl:o,t:5971,wc:0.0.1920.1040,ac:952.-516.1.1,am:i,cc:952.-516.1.1,piv:0,obst:0,th:0,reas:l,bkn:{piv:[1914~0],as:[1914~1.1]}}],slEventCount:2,em:true,fr:true,e:,tt:jload,dtt:254,metricIdList:[publ1,grpm1],fm:ryV6ZcU+11|12|13|14*.929475|141|15.929475|151|152|16,idMap:14.c4c75fac-ccbe-9ba7-61b1-d1276709f9ec.31_289523-36779676|14*,rend:0,renddet:WINDOW,rmeas:0,lt:1}&br=c",
-            "path": "/dt",
+            "domain": "dt.example.com",
+            "full": "http://dt.example.com/dt123456",
+            "original": "http://dt.example.com/dt123456",
+            "path": "/dt123456",
             "port": 80,
-            "query": "anId=929475&asId=f0fc9c04-7168-68e3-32ca-6cc17dd2223a&tv={c:l4fyeI,pingTime:-1,time:7884,type:u,clog:[{piv:100,vs:i,r:,w:1,h:1,t:78},{piv:0,vs:o,r:l,t:5971}],ndt:6,es:0,sc:1,ha:1,gm:1,slTimes:{i:5971,o:1913,n:0,pp:0,pm:0},slEvents:[{sl:i,t:78,wc:0.0.1920.1040,ac:952.74.1.1,am:i,cc:952.74.1.1,piv:100,obst:0,th:0,reas:,bkn:{piv:[5898~100],as:[5898~1.1]}},{sl:o,t:5971,wc:0.0.1920.1040,ac:952.-516.1.1,am:i,cc:952.-516.1.1,piv:0,obst:0,th:0,reas:l,bkn:{piv:[1914~0],as:[1914~1.1]}}],slEventCount:2,em:true,fr:true,e:,tt:jload,dtt:254,metricIdList:[publ1,grpm1],fm:ryV6ZcU+11|12|13|14*.929475|141|15.929475|151|152|16,idMap:14.c4c75fac-ccbe-9ba7-61b1-d1276709f9ec.31_289523-36779676|14*,rend:0,renddet:WINDOW,rmeas:0,lt:1}&br=c",
-            "registered_domain": "adsafeprotected.com",
+            "registered_domain": "example.com",
             "scheme": "http",
             "subdomain": "dt",
             "top_level_domain": "com"
+        }
+    }
+    	
+	```
+
+
+=== "error.json"
+
+    ```json
+	
+    {
+        "message": "1761121144.919      0 1.2.3.4 NONE_NONE/000 0 - error:transaction-end-before-headers - HIER_NONE/- - \"-\" \"-\"",
+        "event": {
+            "category": [
+                "network",
+                "web"
+            ],
+            "duration": 0,
+            "reason": "error:transaction-end-before-headers"
+        },
+        "@timestamp": "2025-10-22T08:19:04.919000Z",
+        "http": {
+            "response": {
+                "bytes": 0,
+                "status_code": 0
+            }
+        },
+        "network": {
+            "direction": "egress"
+        },
+        "observer": {
+            "product": "Squid",
+            "type": "proxy",
+            "vendor": "Squid"
+        },
+        "related": {
+            "ip": [
+                "1.2.3.4"
+            ]
+        },
+        "source": {
+            "address": "1.2.3.4",
+            "ip": "1.2.3.4"
+        },
+        "squid": {
+            "hierarchy_code": "HIER_NONE"
         }
     }
     	
@@ -602,7 +647,7 @@ This section demonstrates how the raw logs will be transformed by our parsers. I
     ```json
 	
     {
-        "message": "1564670112.892   5007 192.168.95.17 TCP_HIT_ABORTED/000 0 GET http://smex10-2-en.url.trendmicro.com/T/152/oiCEKI6Xe7maaxpSHK-gvDyUEBfC6_avSkwxG5MiT4-LQlujnVUK3SbBFHZKimvaG-TwxeMEqOnp0BelYbpVeMfVAZU85B8kltUSjYiidio-IBs_8MdCCFayLkMpM2lboKcOX-RrnDx2oFrUco0cMA== - HIER_DIRECT/smex10-2-en.url.trendmicro.com -",
+        "message": "1564670112.892   5007 192.168.95.17 TCP_HIT_ABORTED/000 0 GET http://smex10-2-en.url.example.com/T/152/oiCEKI6Xe7maaxpSHK-gvDyUEBfC6_avSkwxG5MiT4-LQlujnVUK3SbBFHZKimvaG-TwxeMEqOnp0BelYbpVeMfVAZU85B8kltUSjYiidio-IBs_8MdCCFayLkMpM2lboKcOX-RrnDx2oFrUco0cMA== - HIER_DIRECT/smex10-2-en.url.example.com -",
         "event": {
             "category": [
                 "network",
@@ -616,9 +661,9 @@ This section demonstrates how the raw logs will be transformed by our parsers. I
         },
         "@timestamp": "2019-08-01T14:35:12.892000Z",
         "destination": {
-            "address": "smex10-2-en.url.trendmicro.com",
-            "domain": "smex10-2-en.url.trendmicro.com",
-            "registered_domain": "trendmicro.com",
+            "address": "smex10-2-en.url.example.com",
+            "domain": "smex10-2-en.url.example.com",
+            "registered_domain": "example.com",
             "subdomain": "smex10-2-en.url",
             "top_level_domain": "com"
         },
@@ -642,7 +687,7 @@ This section demonstrates how the raw logs will be transformed by our parsers. I
         },
         "related": {
             "hosts": [
-                "smex10-2-en.url.trendmicro.com"
+                "smex10-2-en.url.example.com"
             ],
             "ip": [
                 "192.168.95.17"
@@ -657,12 +702,12 @@ This section demonstrates how the raw logs will be transformed by our parsers. I
             "hierarchy_code": "HIER_DIRECT"
         },
         "url": {
-            "domain": "smex10-2-en.url.trendmicro.com",
-            "full": "http://smex10-2-en.url.trendmicro.com/T/152/oiCEKI6Xe7maaxpSHK-gvDyUEBfC6_avSkwxG5MiT4-LQlujnVUK3SbBFHZKimvaG-TwxeMEqOnp0BelYbpVeMfVAZU85B8kltUSjYiidio-IBs_8MdCCFayLkMpM2lboKcOX-RrnDx2oFrUco0cMA==",
-            "original": "http://smex10-2-en.url.trendmicro.com/T/152/oiCEKI6Xe7maaxpSHK-gvDyUEBfC6_avSkwxG5MiT4-LQlujnVUK3SbBFHZKimvaG-TwxeMEqOnp0BelYbpVeMfVAZU85B8kltUSjYiidio-IBs_8MdCCFayLkMpM2lboKcOX-RrnDx2oFrUco0cMA==",
+            "domain": "smex10-2-en.url.example.com",
+            "full": "http://smex10-2-en.url.example.com/T/152/oiCEKI6Xe7maaxpSHK-gvDyUEBfC6_avSkwxG5MiT4-LQlujnVUK3SbBFHZKimvaG-TwxeMEqOnp0BelYbpVeMfVAZU85B8kltUSjYiidio-IBs_8MdCCFayLkMpM2lboKcOX-RrnDx2oFrUco0cMA==",
+            "original": "http://smex10-2-en.url.example.com/T/152/oiCEKI6Xe7maaxpSHK-gvDyUEBfC6_avSkwxG5MiT4-LQlujnVUK3SbBFHZKimvaG-TwxeMEqOnp0BelYbpVeMfVAZU85B8kltUSjYiidio-IBs_8MdCCFayLkMpM2lboKcOX-RrnDx2oFrUco0cMA==",
             "path": "/T/152/oiCEKI6Xe7maaxpSHK-gvDyUEBfC6_avSkwxG5MiT4-LQlujnVUK3SbBFHZKimvaG-TwxeMEqOnp0BelYbpVeMfVAZU85B8kltUSjYiidio-IBs_8MdCCFayLkMpM2lboKcOX-RrnDx2oFrUco0cMA==",
             "port": 80,
-            "registered_domain": "trendmicro.com",
+            "registered_domain": "example.com",
             "scheme": "http",
             "subdomain": "smex10-2-en.url",
             "top_level_domain": "com"
@@ -744,7 +789,7 @@ This section demonstrates how the raw logs will be transformed by our parsers. I
     ```json
 	
     {
-        "message": "1628084203.491     82 192.168.2.2 TCP_MISS/200 318399 GET http://download.windowsupdate.com/c/msdownload/update/others/2019/07/29477140_324519a81d0af914f765c56a1dc7141a5759ad4c.cab - HIER_DIRECT/13.107.4.50 application/vnd.ms-cab-compressed",
+        "message": "1628084203.491     82 192.168.2.2 TCP_MISS/200 318399 GET http://download.example.com/c/msdownload/update/others/2019/07/29477140_324519a81d0af914f765c56a1dc7141a5759ad4c.cab - HIER_DIRECT/1.2.3.4 application/vnd.ms-cab-compressed",
         "event": {
             "category": [
                 "network",
@@ -754,8 +799,8 @@ This section demonstrates how the raw logs will be transformed by our parsers. I
         },
         "@timestamp": "2021-08-04T13:36:43.491000Z",
         "destination": {
-            "address": "13.107.4.50",
-            "ip": "13.107.4.50"
+            "address": "1.2.3.4",
+            "ip": "1.2.3.4"
         },
         "http": {
             "request": {
@@ -778,7 +823,7 @@ This section demonstrates how the raw logs will be transformed by our parsers. I
         },
         "related": {
             "ip": [
-                "13.107.4.50",
+                "1.2.3.4",
                 "192.168.2.2"
             ]
         },
@@ -791,12 +836,12 @@ This section demonstrates how the raw logs will be transformed by our parsers. I
             "hierarchy_code": "HIER_DIRECT"
         },
         "url": {
-            "domain": "download.windowsupdate.com",
-            "full": "http://download.windowsupdate.com/c/msdownload/update/others/2019/07/29477140_324519a81d0af914f765c56a1dc7141a5759ad4c.cab",
-            "original": "http://download.windowsupdate.com/c/msdownload/update/others/2019/07/29477140_324519a81d0af914f765c56a1dc7141a5759ad4c.cab",
+            "domain": "download.example.com",
+            "full": "http://download.example.com/c/msdownload/update/others/2019/07/29477140_324519a81d0af914f765c56a1dc7141a5759ad4c.cab",
+            "original": "http://download.example.com/c/msdownload/update/others/2019/07/29477140_324519a81d0af914f765c56a1dc7141a5759ad4c.cab",
             "path": "/c/msdownload/update/others/2019/07/29477140_324519a81d0af914f765c56a1dc7141a5759ad4c.cab",
             "port": 80,
-            "registered_domain": "windowsupdate.com",
+            "registered_domain": "example.com",
             "scheme": "http",
             "subdomain": "download",
             "top_level_domain": "com"
@@ -811,7 +856,7 @@ This section demonstrates how the raw logs will be transformed by our parsers. I
     ```json
 	
     {
-        "message": "1628150510.448    549 192.168.0.1 TCP_HIT/206 2055995 GET http://edgedl.me.gvt1.com/edgedl/release2/chrome_component/adbzvrjxj3ir3yvy5lknhgbxo6tq_92.267.200/gkmgaooipdjhmangpemjhigmamcehddo_92.267.200_win64_ac37t7snjqk4qthomil6kwgo54hq.crx3 - HIER_NONE/- application/octet-stream",
+        "message": "1628150510.448    549 192.168.0.1 TCP_HIT/206 2055995 GET http://edgedl.me.example.com/edgedl/release2/chrome_component/adbzvrjxj3ir3yvy5lknhgbxo6tq_92.267.200/gkmgaooipdjhmangpemjhigmamcehddo_92.267.200_win64_ac37t7snjqk4qthomil6kwgo54hq.crx3 - HIER_NONE/- application/octet-stream",
         "event": {
             "category": [
                 "network",
@@ -853,12 +898,12 @@ This section demonstrates how the raw logs will be transformed by our parsers. I
             "hierarchy_code": "HIER_NONE"
         },
         "url": {
-            "domain": "edgedl.me.gvt1.com",
-            "full": "http://edgedl.me.gvt1.com/edgedl/release2/chrome_component/adbzvrjxj3ir3yvy5lknhgbxo6tq_92.267.200/gkmgaooipdjhmangpemjhigmamcehddo_92.267.200_win64_ac37t7snjqk4qthomil6kwgo54hq.crx3",
-            "original": "http://edgedl.me.gvt1.com/edgedl/release2/chrome_component/adbzvrjxj3ir3yvy5lknhgbxo6tq_92.267.200/gkmgaooipdjhmangpemjhigmamcehddo_92.267.200_win64_ac37t7snjqk4qthomil6kwgo54hq.crx3",
+            "domain": "edgedl.me.example.com",
+            "full": "http://edgedl.me.example.com/edgedl/release2/chrome_component/adbzvrjxj3ir3yvy5lknhgbxo6tq_92.267.200/gkmgaooipdjhmangpemjhigmamcehddo_92.267.200_win64_ac37t7snjqk4qthomil6kwgo54hq.crx3",
+            "original": "http://edgedl.me.example.com/edgedl/release2/chrome_component/adbzvrjxj3ir3yvy5lknhgbxo6tq_92.267.200/gkmgaooipdjhmangpemjhigmamcehddo_92.267.200_win64_ac37t7snjqk4qthomil6kwgo54hq.crx3",
             "path": "/edgedl/release2/chrome_component/adbzvrjxj3ir3yvy5lknhgbxo6tq_92.267.200/gkmgaooipdjhmangpemjhigmamcehddo_92.267.200_win64_ac37t7snjqk4qthomil6kwgo54hq.crx3",
             "port": 80,
-            "registered_domain": "gvt1.com",
+            "registered_domain": "example.com",
             "scheme": "http",
             "subdomain": "edgedl.me",
             "top_level_domain": "com"
@@ -873,7 +918,7 @@ This section demonstrates how the raw logs will be transformed by our parsers. I
     ```json
 	
     {
-        "message": "1564670112.892   5007 192.168.95.17 TCP_HIT_ABORTED/000 0 GET http://smex10-2-en.url.trendmicro.com/T/152/oiCEKI6Xe7maaxpSHK-gvDyUEBfC6_avSkwxG5MiT4-LQlujnVUK3SbBFHZKimvaG-TwxeMEqOnp0BelYbpVeMfVAZU85B8kltUSjYiidio-IBs_8MdCCFayLkMpM2lboKcOX-RrnDx2oFrUco0cMA== - HIER_DIRECT/smex10-2-en.url.trendmicro.com - \"http://www.example.org\" \"TMUFE\"",
+        "message": "1564670112.892   5007 192.168.95.17 TCP_HIT_ABORTED/000 0 GET http://smex10-2-en.url.example.com/T/152/oiCEKI6Xe7maaxpSHK-gvDyUEBfC6_avSkwxG5MiT4-LQlujnVUK3SbBFHZKimvaG-TwxeMEqOnp0BelYbpVeMfVAZU85B8kltUSjYiidio-IBs_8MdCCFayLkMpM2lboKcOX-RrnDx2oFrUco0cMA== - HIER_DIRECT/smex10-2-en.url.example.com - \"http://www.example.org\" \"TMUFE\"",
         "event": {
             "category": [
                 "network",
@@ -887,9 +932,9 @@ This section demonstrates how the raw logs will be transformed by our parsers. I
         },
         "@timestamp": "2019-08-01T14:35:12.892000Z",
         "destination": {
-            "address": "smex10-2-en.url.trendmicro.com",
-            "domain": "smex10-2-en.url.trendmicro.com",
-            "registered_domain": "trendmicro.com",
+            "address": "smex10-2-en.url.example.com",
+            "domain": "smex10-2-en.url.example.com",
+            "registered_domain": "example.com",
             "subdomain": "smex10-2-en.url",
             "top_level_domain": "com"
         },
@@ -914,7 +959,7 @@ This section demonstrates how the raw logs will be transformed by our parsers. I
         },
         "related": {
             "hosts": [
-                "smex10-2-en.url.trendmicro.com"
+                "smex10-2-en.url.example.com"
             ],
             "ip": [
                 "192.168.95.17"
@@ -929,12 +974,12 @@ This section demonstrates how the raw logs will be transformed by our parsers. I
             "hierarchy_code": "HIER_DIRECT"
         },
         "url": {
-            "domain": "smex10-2-en.url.trendmicro.com",
-            "full": "http://smex10-2-en.url.trendmicro.com/T/152/oiCEKI6Xe7maaxpSHK-gvDyUEBfC6_avSkwxG5MiT4-LQlujnVUK3SbBFHZKimvaG-TwxeMEqOnp0BelYbpVeMfVAZU85B8kltUSjYiidio-IBs_8MdCCFayLkMpM2lboKcOX-RrnDx2oFrUco0cMA==",
-            "original": "http://smex10-2-en.url.trendmicro.com/T/152/oiCEKI6Xe7maaxpSHK-gvDyUEBfC6_avSkwxG5MiT4-LQlujnVUK3SbBFHZKimvaG-TwxeMEqOnp0BelYbpVeMfVAZU85B8kltUSjYiidio-IBs_8MdCCFayLkMpM2lboKcOX-RrnDx2oFrUco0cMA==",
+            "domain": "smex10-2-en.url.example.com",
+            "full": "http://smex10-2-en.url.example.com/T/152/oiCEKI6Xe7maaxpSHK-gvDyUEBfC6_avSkwxG5MiT4-LQlujnVUK3SbBFHZKimvaG-TwxeMEqOnp0BelYbpVeMfVAZU85B8kltUSjYiidio-IBs_8MdCCFayLkMpM2lboKcOX-RrnDx2oFrUco0cMA==",
+            "original": "http://smex10-2-en.url.example.com/T/152/oiCEKI6Xe7maaxpSHK-gvDyUEBfC6_avSkwxG5MiT4-LQlujnVUK3SbBFHZKimvaG-TwxeMEqOnp0BelYbpVeMfVAZU85B8kltUSjYiidio-IBs_8MdCCFayLkMpM2lboKcOX-RrnDx2oFrUco0cMA==",
             "path": "/T/152/oiCEKI6Xe7maaxpSHK-gvDyUEBfC6_avSkwxG5MiT4-LQlujnVUK3SbBFHZKimvaG-TwxeMEqOnp0BelYbpVeMfVAZU85B8kltUSjYiidio-IBs_8MdCCFayLkMpM2lboKcOX-RrnDx2oFrUco0cMA==",
             "port": 80,
-            "registered_domain": "trendmicro.com",
+            "registered_domain": "example.com",
             "scheme": "http",
             "subdomain": "smex10-2-en.url",
             "top_level_domain": "com"
@@ -969,6 +1014,7 @@ The following table lists the fields that are extracted, normalized under the EC
 |`destination.port` | `long` | Port of the destination. |
 |`event.category` | `keyword` | Event category. The second categorization field in the hierarchy. |
 |`event.duration` | `long` | Duration of the event in nanoseconds. |
+|`event.reason` | `keyword` | Reason why this event happened, according to the source |
 |`event.type` | `keyword` | Event type. The third categorization field in the hierarchy. |
 |`http.request.method` | `keyword` | HTTP request method. |
 |`http.request.referrer` | `keyword` | Referrer for this HTTP request. |
