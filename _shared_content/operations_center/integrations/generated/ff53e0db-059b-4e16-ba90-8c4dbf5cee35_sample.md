@@ -104,3 +104,31 @@ In this section, you will find examples of raw logs as generated natively by the
 
 
 
+=== "test_event_5"
+
+
+    ```json
+	{
+        "attack_vector": "Device",
+        "backend_last_updated": "2025-10-02T10:53:26+00:00",
+        "details": "",
+        "device_id": 8,
+        "device_rooted": "False",
+        "email": "john.doe@example.com",
+        "event": "Compliant",
+        "event_timestamp": null,
+        "id": 16,
+        "mdm_uuid": "00000000-0000-0000-0000-0000000000",
+        "name": "my Iphone",
+        "number": "0123 4567890",
+        "policy_name": "Global",
+        "severity": "Information",
+        "threat_factors": "Network Protection (VPN)",
+        "device_model": "Apple / iPhone 15 Pro",
+        "client_version": "5.0.1.15281",
+        "os_version": "26.0.1"
+    }
+    ```
+
+
+
