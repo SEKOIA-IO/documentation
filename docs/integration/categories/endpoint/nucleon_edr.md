@@ -55,3 +55,13 @@ Copy the intake key. This key will be configured in the EDR Console.
 ![Nucleon EDR Event Settings](/assets/integration/endpoint/nucleonedr/nucleonedr-event-settings.png)
 
 7. Click on `Save` button to finish the setup. New events will then be forwarded directly.
+
+#### Enjoy your events on the [Events page](https://app.sekoia.io/operations/events)
+
+{!_shared_content/operations_center/integrations/generated/516d93f9-86b0-4038-a85b-c9be72035ac4_sample.md!}
+
+
+{!_shared_content/integration/detection_section.md!}
+
+{!_shared_content/operations_center/detection/generated/suggested_rules_516d93f9-86b0-4038-a85b-c9be72035ac4_do_not_edit_manually.md!}
+{!_shared_content/operations_center/integrations/generated/516d93f9-86b0-4038-a85b-c9be72035ac4.md!}
