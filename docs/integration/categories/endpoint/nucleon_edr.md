@@ -20,10 +20,11 @@ For on-premise environment, network access must be open to forward logs from the
 
 ### Steps
 
-#### In Sekoia.io
+#### Create your intake on Sekoia.io
 
-Create a new Nucleon EDR intake on Sekoia.io.
-Extract the intake key. This key will be configured in the EDR Console.
+Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a new intake from the `Nucleon EDR`.
+
+Copy the intake key. This key will be configured in the EDR Console.
 
 #### In Nucleon EDR Console
 
