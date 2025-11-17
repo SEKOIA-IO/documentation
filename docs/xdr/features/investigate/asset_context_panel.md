@@ -82,6 +82,10 @@ The **details** section provides the technical identifiers used to recognize and
 - **Users:** username, full name, role, email, department, account state, last password change, key privileges  
 - **Networks(Coming soon):** IP/CIDR ranges, VLAN/segment 
 
+**Additional options**
+- **View more details:** Open the full list of known details for the asset. You can mark any field as a favorite from this view.  
+- **Your favorite details:** Shows all fields you have marked as Favorites. Favorites are personal and persist on a per–asset-type basis. 
+
 **Why it matters during investigations**
 
 - **Correlation:** analysts can pivot across EDR, identity, network, and vulnerability logs using consistent identifiers.
