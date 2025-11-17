@@ -83,6 +83,7 @@ The **details** section provides the technical identifiers used to recognize and
 - **Networks(Coming soon):** IP/CIDR ranges, VLAN/segment 
 
 **Additional options**
+
 - **View more details:** Open the full list of known details for the asset. You can mark any field as a favorite from this view.  
 - **Your favorite details:** Shows all fields you have marked as Favorites. Favorites are personal and persist on a per–asset-type basis. 
 
