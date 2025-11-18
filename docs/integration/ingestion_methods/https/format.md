@@ -185,6 +185,7 @@ Below is an example script for sending logs from files in batches:
                 time.sleep(SLEEP_BETWEEN_BATCHES)
     ```
 
+
 You can also upload multiple events contained in a single file, with one event per line:
 
 ```bash 
