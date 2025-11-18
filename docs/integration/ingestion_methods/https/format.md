@@ -107,6 +107,84 @@ For numerous events, you can use the alternative endpoint `/plain/batch`. The ev
 
     1. Will print  `{"event_ids": ["uuid1", "uuid2"]}`
 
+Below is an example script for sending logs from files in batches:
+
+    ```python
+        import json
+        import requests
+        import urllib3
+        import os
+        import time
+
+        urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
+
+        SEKOIA_INTAKE_KEY       = "YOUR_INTAKE_KEY"
+        SEKOIA_ENDPOINT_URL     = "https://intake.sekoia.io/plain/batch" # ← change this to your endpoint URL if you are not on FRA1
+        LOG_DIRS                = ["logs/log_0001/"] # ← add your log directories here
+        MAX_LINES_PER_BATCH     = 500   # ← change this to the maximum number of lines you want per request
+        SLEEP_BETWEEN_BATCHES   = 5     # seconds
+
+        def send_to_sekoia_intake(lines_batch):
+            """
+            lines_batch: list of strings
+            """
+            raw_payload = "\n".join(lines_batch)
+            headers = {
+                "X-SEKOIAIO-INTAKE-KEY": SEKOIA_INTAKE_KEY,
+            }
+            try:
+                resp = requests.post(
+                    SEKOIA_ENDPOINT_URL,
+                    data=raw_payload,
+                    headers=headers,
+                    verify=False
+                )
+                resp.raise_for_status()
+                print(f"  → Sent {len(lines_batch)} lines, status={resp.status_code}")
+            except requests.exceptions.RequestException as e:
+                print(f"  ! Error during send request: {e}")
+
+        def chunk_list(full_list, chunk_size):
+            """
+            yield successive chunk_size‐length lists from full_list
+            """
+            for i in range(0, len(full_list), chunk_size):
+                yield full_list[i : i + chunk_size]
+
+        for log_dir in LOG_DIRS:
+            for filename in os.listdir(log_dir):
+                filepath = os.path.join(log_dir, filename)
+                with open(filepath, "r") as f:
+                    try:
+                        all_logs = json.load(f)
+                    except json.JSONDecodeError as e:
+                        print(f"Skipping {filename}, invalid JSON: {e}")
+                        continue
+
+                # Extract the message field (adjust if your structure is different)
+                lines = []
+                for entry in all_logs:
+                    try:
+                        msg = entry["_source"]["message"]
+                    except KeyError:
+                        continue
+                    lines.append(msg)
+
+                total = len(lines)
+                print(f"Pushing file: {filename}, total lines={total}")
+
+                if total == 0:
+                    continue
+
+                # split into batches of MAX_LINES_PER_BATCH
+                batch_number = 1
+                for batch in chunk_list(lines, MAX_LINES_PER_BATCH):
+                    print(f" Batch #{batch_number} -> sending {len(batch)} lines …")
+                    send_to_sekoia_intake(batch)
+                    batch_number += 1
+                    time.sleep(SLEEP_BETWEEN_BATCHES)
+    ```
+
 You can also upload multiple events contained in a single file, with one event per line:
 
 ```bash 
