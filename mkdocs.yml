@@ -330,6 +330,7 @@ nav:
       - Amazon CloudFront Logs: integration/categories/network_security/aws_cloudfront.md
       - Amazon GuardDuty: integration/categories/network_security/aws_guardduty.md
       - Amazon WAF: integration/categories/network_security/aws_waf.md
+      - Azure Activity Logs: integration/categories/network_security/azure_activity_logs.md
       - Azure Front Door: integration/categories/network_security/azure_front_door.md
       - Azure Network Watcher (NSG flow logs): integration/categories/network_security/azure_network_watcher.md
       - Azure Network Watcher (Virtual Network Flow Logs): integration/categories/network_security/azure_network_watcher_flow_logs.md
