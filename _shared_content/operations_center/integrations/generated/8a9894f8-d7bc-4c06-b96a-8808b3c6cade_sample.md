@@ -20,6 +20,14 @@ In this section, you will find examples of raw logs as generated natively by the
 
 
 
+=== "test_admin_auth_failed"
+
+    ```
+	CISE_Administrative_and_Operational_Audit 0026935732 1 0 2025-10-23 14:26:49.538 +02:00 0264007760 51000 NOTICE Administrator-Login: Administrator authentication failed, ConfigVersionId=118, AdminInterface=GUI, AdminIPAddress=1.2.3.4, AdminName=jdoe, OperationMessageText=Authentication failed due to invalid user or password\, or account is disabled/locked,
+    ```
+
+
+
 === "test_authentication"
 
     ```
