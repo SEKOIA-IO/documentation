@@ -43,7 +43,7 @@ The Advanced Threat Defense Appliances are purpose-built, scalable, and flexible
 - **Supported verbosity level**: Informational
 
 !!! Note
-    Log levels are based on the taxonomy of [RFC5424](https://datatracker.ietf.org/doc/html/rfc5424). Adapt according to the terminology used by the editor.
+    Log levels are based on the taxonomy of [RFC5424](https://datatracker.ietf.org/doc/html/rfc5424). Adapt according to the terminology used by the vendor.
 
 ## Step-by-Step Quick Configuration Procedure
 
@@ -59,7 +59,7 @@ The Advanced Threat Defense Appliances are purpose-built, scalable, and flexible
 8. Click **Submit**
 
 !!! Note
-    If you encounter any issues during the configuration specified in this section "Instructions on the 3rd Party Solution," please do not hesitate to contact your editor. We also welcome any suggestions for improving our documentation to better serve your needs.
+    If you encounter any issues during the configuration specified in this section "Instructions on the 3rd Party Solution," please do not hesitate to contact your vendor. We also welcome any suggestions for improving our documentation to better serve your needs.
 
 ### Instruction on Sekoia
 
