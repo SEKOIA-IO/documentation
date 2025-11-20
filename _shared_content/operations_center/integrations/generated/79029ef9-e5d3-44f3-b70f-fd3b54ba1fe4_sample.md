@@ -100,6 +100,22 @@ In this section, you will find examples of raw logs as generated natively by the
 
 
 
+=== "test_monitor"
+
+    ```
+	id=firewall time=2025-10-29 09:56:16 fw=ABSDC1MSLFWL01P tz=+0100 startime=2025-10-29 09:56:16 security=0 system=0 CPU=0,8,0 Pvm=0,0,0,0,0,0,0,0,0,0,0 vlan2=int-vlan2722,94891849,152692456,239447742,491018456,9364723,254 vlan1=int-vlan2954,12345,37352,3150,7320,1277,51 vlan0=int-vlan3718,214020032,482644112,70059432,123508648,13766296,611 Agg1=agg-0,0,0,0,0,0,0 Agg0=agg-1,0,0,0,0,0,0 sslvpn1=sslvpn_udp,0,0,0,0,0,0 sslvpn0=sslvpn,0,0,0,0,0,0 Ethernet1=Ethernet_1,0,0,0,0,0,0 Ethernet0=int-admin,59966,235120,996276,1169176,35692,22 Ethernet4=int-ha1,0,0,0,0,0,0 Ethernet2=Ethernet_2,0,0,0,0,0,0 Ethernet8=int-ha2,0,0,0,0,0,0 Ethernet6=Ethernet_6,0,0,0,0,0,0 ipsec=ipsec,68057620,125860320,217711664,469077136,8940118,0 Qid0=BYPASS_ipsec,6497892,12083160,185329240,889392592,539224,0 Qid1=BYPASS_Ethernet_6,0,0,0,0,0,0 Qid2=BYPASS_int-ha2,0,0,0,0,0,0 Qid3=BYPASS_Ethernet_2,0,0,0,0,0,0 Qid4=BYPASS_int-ha1,0,0,0,0,0,0 Qid5=BYPASS_int-admin,782264,2867304,232,2716264,33925,0 Qid6=BYPASS_Ethernet_1,0,0,0,0,0,0 Qid7=BYPASS_agg-1,0,0,0,0,0,0 Qid8=BYPASS_agg-0,0,0,0,0,0,0 Qid9=BYPASS_int-vlan3718,68073086,233044984,2537316,30750848,8633769,0 Qid10=BYPASS_int-vlan2954,0,65936,0,0,1357,0 Qid11=BYPASS_int-vlan2722,0,0,211743348,956867504,0,0  logtype=monitor
+    ```
+
+
+
+=== "test_monitor_2"
+
+    ```
+	id=firewall time=2025-10-28 13:14:08 fw=ABSDC1MSLFWL01P tz=+0100 startime=2025-10-28 13:14:08 security=0 system=0 CPU=0,7,0 Pvm=0,0,0,0,0,0,0,0,0,0,0 vlan2=int-vlan2723,66077451,91570072,216671312,383138048,11881282,197 vlan1=int-vlan2955,25972,53744,6376,11600,3558,41 vlan0=int-vlan3728,196621857,349377320,40027851,57390200,16559344,1954 Agg1=agg-1,0,0,0,0,0,0 Agg0=agg-0,0,0,0,0,0,0 sslvpn1=sslvpn_udp,0,0,0,0,0,0 sslvpn0=sslvpn,0,0,0,0,0,0 Ethernet1=Ethernet_1,0,0,0,0,0,0 Ethernet0=int-admin,90025,332128,1295038,1597520,60863,30 Ethernet4=int-ha1,0,0,0,0,0,0 Ethernet2=Ethernet_2,0,0,0,0,0,0 Ethernet8=int-ha2,0,0,0,0,0,0 Ethernet6=Ethernet_6,0,0,0,0,0,0 ipsec=ipsec,39754748,56979056,202705988,358098320,10640410,0 Qid0=BYPASS_ipsec,5523681,8258384,170409876,362899048,372264,0 Qid1=BYPASS_Ethernet_6,0,0,0,0,0,0 Qid2=BYPASS_int-ha2,0,0,0,0,0,0 Qid3=BYPASS_Ethernet_2,0,0,0,0,0,0 Qid4=BYPASS_int-ha1,0,0,0,0,0,0 Qid5=BYPASS_int-admin,1153686,2275752,185227,1114216,71734,0 Qid6=BYPASS_Ethernet_1,0,0,0,0,0,0 Qid7=BYPASS_agg-0,0,0,0,0,0,0 Qid8=BYPASS_agg-1,0,0,0,0,0,0 Qid9=BYPASS_int-vlan3728,54539899,176290960,4000940,5246536,10385185,0 Qid10=BYPASS_int-vlan2955,23742,143376,0,0,3782,0 Qid11=BYPASS_int-vlan2723,0,0,192347577,398852072,0,0  logtype=monitor
+    ```
+
+
+
 === "vpn_phase1"
 
     ```
