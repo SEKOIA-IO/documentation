@@ -276,6 +276,7 @@ nav:
       - Tenable Identity Exposure / Alsid: integration/categories/iam/alsid.md
       - Azure Key Vault: integration/categories/iam/azure_key_vault.md
       - Cisco Duo Security: integration/categories/iam/cisco_duo_security.md
+      - Cyberark Digital Vault: integration/categories/iam/cyberark_vault.md
       - CyberArk Identity Audit Logs: integration/categories/iam/cyberark_identity_audit_logs.md
       - FreeRADIUS: integration/categories/iam/freeradius.md
       - Jumpcloud Directory Insights: integration/categories/iam/jumpcloud_directory_insights.md
