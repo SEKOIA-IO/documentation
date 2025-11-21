@@ -348,6 +348,7 @@ nav:
       - F5 Distributed Cloud: integration/categories/network_security/f5-distributed-cloud.md
       - Fastly Next-Gen WAF: integration/categories/network_security/fastly_waf.md
       - Forcepoint Secure Web Gateway: integration/categories/network_security/forcepoint_web_gateway.md
+      - Forcepoint Management Server: integration/categories/network_security/forcepoint_management_server.md
       - FortiProxy: integration/categories/network_security/fortiproxy.md
       - FortiWeb: integration/categories/network_security/fortiweb.md
       - Fortigate: integration/categories/network_security/fortigate.md
