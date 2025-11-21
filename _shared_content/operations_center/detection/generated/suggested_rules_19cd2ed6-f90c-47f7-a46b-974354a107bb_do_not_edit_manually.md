@@ -177,6 +177,12 @@ The following Sekoia.io built-in rules match the intake **Microsoft Entra ID / A
     
     - **Effort:** elementary
 
+??? abstract "Entra ID Sign-In Via Known AiTM Phishing Kit (CEPHAS 2FA)"
+    
+    Detects a sign-in attempt with known characteristics of the adversary-in-the-middle phishing kit CEPHAS 2FA.
+    
+    - **Effort:** elementary
+
 ??? abstract "Entra ID Sign-In Via Known AiTM Phishing Kit (Gabagool)"
     
     Detects a sign-in attempt with known characteristics of the adversary-in-the-middle phishing kit Gabagool. The `filter_password_spraying` exclusion corresponds to a password spraying tool which is already detected by the rule `Entra ID Password Compromised By Known Credential Testing Tool`.
