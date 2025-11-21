@@ -10,9 +10,9 @@ Sekoia Operating Language (`SOL`) is a powerful, pipe-based query language desig
 
 | Data Source | Description | Use Cases |
 |-------------|-------------|-----------|
-| `events` | Security events | Threat hunting, incident investigation, SOC reporting |
+| `events` | Security events | Threat hunting, incident investigation, SOC reporting. You will receive events that are retained for the duration of your hot storage |
 | `event_telemetry` | Telemetry on events | Analytics on your ingestion pipelines |
-| `eternal_events` | Security events related to alerts or cases | Extract metrics from events related to alerts/cases |
+| `eternal_events` | Security events related to alerts or cases | Extract metrics from events related to alerts/cases. Access events related to an alert that are beyond your hot storage retention period |
 | `alerts` | Security alerts and detections | SOC monitoring, alert pattern analysis |
 | `cases` | Security incidents and cases | Case management, incident correlation |
 | `intakes` | Data sources | Data source management, volume monitoring |
@@ -21,8 +21,6 @@ Sekoia Operating Language (`SOL`) is a powerful, pipe-based query language desig
 | `asset_properties` | Listing known properties related to the Asset | Asset Investigations |
 | `asset_partitions` | Partitions on a per Asset basis and Hygiene related to these | Understand and improve Hygiene state Note: Part of the Reveal plan |
 | `asset_accounts` | Listing local users accounts related to the Asset | Impact analysis and incident correlation Note: Part of the Reveal plan |
-
-
 
 ### Alerts properties
 
@@ -225,6 +223,186 @@ You can query **event_telemetry** in the SOL query builder and combine it with o
 | min_processing_lag      | Minimum processing time (in seconds) taken by Sekoia.io to process an event.                 |
 | total_processing_lag    | Total accumulated processing time (in seconds) for all events in the bucket.                 |
 
+
+## Filters
+
+!!! Note
+    Filters are currently released under the Early Access Program.
+
+Filters make SOL queries dynamic and interactive. They let you reuse the same query across dashboards and 
+contexts by substituting values dynamically — without modifying the query itself.
+
+<center>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/9q6K7vwEYv8?si=5x24TPninNak550B" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</center>
+
+Filters are referenced using the `?filter_name` syntax.
+
+When a query uses one or more filters, the Query Builder and Dashboards:
+
+* Automatically detect them,
+* Display user input fields (text, date, select, etc.),
+* Re-execute the query whenever a filter value changes.
+
+### Syntax
+
+Use the `?filter_name` notation anywhere you would normally write a static value:
+
+```shell
+<table name>
+| where <column> == ?filter_name
+```
+
+Example with a time range filter
+
+```shell
+events
+| where timestamp between (?time.start .. ?time.end)
+```
+
+### Built-in Filters
+
+Certain filters are predefined and automatically available across all queries and dashboards.
+
+| Filter        | Type     | Description                        |
+| ------------- | -------- | ---------------------------------- |
+| `?time.start` | datetime | Start of the time range to analyze |
+| `?time.end`   | datetime | End of the time range to analyze   |
+| `?communities`   | string[] | UUID of all the communities of the workspace   |
+| `?intakes`   | string[] | UUID of all the intakes of the workspace   |
+
+### Custom Filters
+
+You can create additional filters for values that depend on your investigation context (e.g., hostname, domain, community, entity, etc.).
+
+Example
+
+```shell
+events
+| where timestamp between (?time.start .. ?time.end)
+| where process.name == ?process_name
+| select timestamp, host.name, user.name, process.name, process.command_line
+| order by timestamp desc
+| limit 100
+```
+
+
+Filters in SOL are created and managed in the Query Builder or Dashboard editor.
+Each filter defines how a variable (referenced as `?filter_name`) behaves in queries — its input type, allowed values, and how it is displayed to end users.
+
+When creating or editing a filter, you can:
+
+1. Select its type (Text, Boolean, Time, etc.)
+2. Add a description to clarify its purpose
+3. Optionally define authorized values — either statically or dynamically
+4. Preview how the filter will appear to users
+5. Copy the syntax (`?filter_name`) to reuse in SOL queries
+
+
+#### Supported Types
+
+SOL filters support the following types:
+
+| Type                    | Example usage                                        | Notes                               |
+| ----------------------- | ---------------------------------------------------- | ----------------------------------- |
+| **Text**                | `where user.name == ?username`                       | Free text input                     |
+| **Boolean**             | `where event.success == ?is_success`                 | Displayed as toggle                 |
+| **Time**                | `where timestamp between (?time.start .. ?time.end)` | Common in dashboards                |
+| **Single Selection**    | `where timestamp == ?alert_uuid`                     | One value among the accepted ones   |
+| **Multiple Selection**  | `where host.name in ?hostnames`                      | Multiple values are allowed         |
+
+
+#### Authorized Values
+
+For Single or Multiple selection filters, you can define authorized values in two ways:
+
+**Static List**
+
+Enter comma-separated values directly in the configuration panel.
+
+Example: 
+```shell
+powershell.exe, cmd.exe, rundll32.exe, chrome.exe
+```
+
+**Dynamic List**
+
+Generate authorized values automatically using a SOL query.
+
+Example:
+```shell
+events
+| distinct process.name
+| limit 100
+```
+This example retrieves the top 100 unique process names observed in recent events and uses them as selectable options.
+Dynamic lists update automatically as new data becomes available, ensuring filters stay relevant to current activity.
+
+
+!!! note
+
+    You can dissociate the technical value from its display label by using the syntax `value:Label`.
+    The value (left side) is used in the SOL query, while the label (right side) is what the user sees in the interface.
+
+    For example:
+
+    ```shell
+    powershell.exe:PowerShell, cmd.exe:Command Prompt, bash:Bash
+    ```
+    In this configuration:
+
+    - The user sees **PowerShell**, **Command Prompt**, and **Bash** in the dropdown
+    - The query receives `powershell.exe`, `cmd.exe`, or `bash` as the actual filter value
+
+    **Behavior**
+
+    * Values are separated by commas
+    * Labels after the colon (:) are optional
+    * Whitespace is trimmed automatically
+    * Duplicate values are silently ignored
+    * To include a comma inside a value, escape it with a backslash (`\`)
+
+
+#### Filter Preview
+
+The Preview panel (right side of the editor) shows how the filter will appear to users in dashboards or query widgets.
+
+Examples:
+
+* Boolean filter → toggle with labels “On” / “Off”
+* Text filter → input field
+* Selection filters → dropdown menus
+* Time filter → unified date range picker
+
+### How to Use Filters in Queries
+
+To use a filter in a SOL query, reference its name prefixed by `?`.
+
+```shell
+events
+| where timestamp between (?time.start .. ?time.end)
+| where process.name == ?process_name
+| select timestamp, host.name, process.command_line
+| order by timestamp desc
+| limit 100
+```
+
+In this example:
+
+* `?time.start` and `?time.end` are predefined time filters.
+* `?process_name` is a custom filter (e.g., single selection).
+
+When added to a dashboard, users can adjust these filters without modifying the query itself.
+
+
+#### Best Practices
+
+* ✅ Use descriptive names like `process_name`, `user_email`, `community_uuid`.
+* ✅ Reuse filter names across queries to enable dashboard-level synchronization.
+* ✅ Prefer dynamic lists when values depend on live data (e.g., entities, hosts).
+* ✅ Use `?time.start` and `?time.end` for all time-based filtering.
+* ❌ Avoid numeric filters — they are not fully supported.
+* ❌ Avoid hard-coded customer identifiers.
 
 
 ## Operators
@@ -1179,6 +1357,497 @@ alerts
 
 ```
 
+---
+
+### String: tolower()
+
+**Description**
+
+Converts a string to lowercase. This function is useful for normalizing text data for case-insensitive comparisons and analysis.
+
+**Syntax**
+
+``` shell
+tolower(<string>)
+```
+
+**Parameters**
+
+- `string`: A string value to be converted to lowercase
+
+**Return Value**
+
+Returns the lowercase version of the input string.
+
+**Example**
+
+Normalize user names to lowercase for consistent analysis:
+
+``` shell
+events
+| where timestamp > ago(24h) and user.name != null
+| aggregate count_by_user = count() by user.name
+| aggregate sum(count_by_user) by normalized_user = tolower(user.name)
+| limit 100
+```
+
+---
+
+### String: toupper()
+
+**Description**
+
+Converts a string to uppercase. This function is useful for normalizing text data for case-insensitive comparisons and analysis.
+
+**Syntax**
+
+``` shell
+toupper(<string>)
+```
+
+**Parameters**
+
+- `string`: A string value to be converted to uppercase
+
+**Return Value**
+
+Returns the uppercase version of the input string.
+
+**Example**
+
+Normalize command lines to uppercase for consistent analysis:
+
+``` shell
+events
+| where timestamp > ago(24h) and process.command_line != null
+| aggregate count_by_cmd = count() by process.command_line
+| aggregate sum(count_by_cmd) by normalized_cmd = toupper(process.command_line)
+| limit 100
+```
+
+---
+
+### Math: round()
+
+**Description**
+
+Rounds a number to a specified precision (number of decimal places). This function is useful for formatting numerical results and creating cleaner reports with rounded values.
+
+**Syntax**
+
+``` shell
+round(<number> [, <precision>])
+```
+
+**Parameters**
+
+- `number`: The number to round (required)
+- `precision`: Number of decimal places to round to (optional, defaults to 0)
+
+**Return Value**
+
+Returns the rounded number to the specified precision.
+
+**Example**
+
+Round time_to_detect values to 2 decimal places for cleaner reporting:
+
+``` shell
+alerts
+| where created_at > ago(7d)
+| select ttd_minutes = round(time_to_detect / 60.0, 2)
+| limit 100
+```
+
+---
+
+### Conditional: iff()
+
+**Description**
+
+Returns a value based on a conditional expression. Evaluates a boolean condition and returns one value if the condition is true, another value if the condition is false. This function is useful for data categorization and conditional transformations.
+
+**Syntax**
+
+``` shell
+iff(<condition>, <then_value>, <else_value>)
+```
+
+**Parameters**
+
+- `condition`: A boolean expression to evaluate (required)
+- `then_value`: Value returned if condition is true (required)
+- `else_value`: Value returned if condition is false (required)
+
+**Return Value**
+
+Returns the `then_value` when condition is true, otherwise returns `else_value`.
+
+**Example**
+
+Categorize alerts based on urgency and time to detect:
+
+``` shell
+alerts
+| where created_at > ago(7d)
+| aggregate count() by severity_category = iff(urgency >= 80, "Critical", 
+    iff(urgency >= 50, "High", "Medium"))
+| limit 100
+```
+
+---
+
+### Null handling: coalesce()
+
+**Description**
+
+Returns the first non-null value from a list of expressions. This function is useful for providing fallback values when dealing with potentially null data, ensuring queries can handle missing or incomplete information gracefully.
+
+**Syntax**
+
+``` shell
+coalesce(<arg1>, <arg2>, [<arg3>, ...])
+```
+
+**Parameters**
+
+- `arg1, arg2, ...`: A list of expressions of the same type to evaluate (at least 2 arguments required)
+
+**Return Value**
+
+Returns the first non-null value from the argument list, or null if all arguments are null.
+
+**Example**
+
+Provide fallback values for user identification when some fields might be null:
+
+``` shell
+events
+| where timestamp > ago(24h)
+| aggregate count() by user_identifier = coalesce(user.name, user.email, "Unknown")
+| limit 100
+```
+
+---
+
+### Datetime: format_datetime()
+
+**Description**
+
+Formats datetime values using Python strftime format specifiers, enabling flexible datetime representation in SOL queries. Supports both datetime objects and ISO format datetime strings.
+
+**Syntax**
+
+``` shell
+format_datetime(<datetime>, <format>)
+```
+
+**Parameters**
+
+- `datetime`: Datetime object (from functions like `now()`) or ISO format string to format (required)
+- `format`: String specifying the output format using Python strftime specifiers (required)
+
+**Return Value**
+
+Returns a formatted string representation of the datetime.
+
+**Common Format Specifiers**
+
+| Specifier | Description | Example |
+|-----------|-------------|---------|
+| `%Y` | 4-digit year | 2025 |
+| `%m` | Month (01-12) | 12 |
+| `%d` | Day of month (01-31) | 25 |
+| `%H` | Hour (00-23) | 14 |
+| `%M` | Minutes (00-59) | 30 |
+| `%S` | Seconds (00-59) | 45 |
+| `%B` | Full month name | December |
+| `%b` | Abbreviated month | Dec |
+| `%A` | Full weekday name | Monday |
+
+**Example**
+
+Format timestamps for cleaner reporting:
+
+``` shell
+alerts
+| where created_at > ago(24h)
+| extend date_only = format_datetime(created_at, '%Y-%m-%d')
+| extend readable_time = format_datetime(created_at, '%B %d, %Y at %H:%M')
+| extend eu_format = format_datetime(created_at, '%d-%m-%Y')
+| aggregate count() by date_only, readable_time, eu_format, detection_type
+| limit 100
+```
+
+---
+
+## SOL Datasets
+
+SOL Datasets is a powerful CSV import feature that enables SOC analysts to enrich security investigations by importing external data sources directly into the SOL query environment. This capability transforms static data lookups into dynamic, queryable datasets that can be seamlessly integrated with security events, alerts, and other platform data.
+
+### Feature benefits
+
+SOL Datasets addresses critical challenges in security operations:
+
+- **Enhanced Investigation Context**: Import custom threat intelligence, critical security context, list of approved softwares and other contextual data
+- **Eliminates Manual Lookups**: Replace time-consuming manual data correlation with automated joins
+- **Flexible Data Integration**: Combine external data with events, alerts, and cases using SOL's powerful query language
+
+### Accessing SOL Datasets
+
+SOL Datasets can be accessed from the Queries page in the SOL query builder interface:
+
+1. Navigate to **Investigate** > **Queries** in the main navigation
+2. Click the **SOL Datasets** button in the interface toolbar
+3. The SOL Datasets panel opens laterally, displaying available datasets
+
+![sol-list](/assets/operation_center/events/sol-list.gif){: style="max-width:100%"}
+
+The datasets panel provides:
+
+- **Search functionality** for finding specific datasets by their name
+- **Dataset cards** displaying key metadata
+- **New dataset** creation button
+- **Management controls** for existing datasets
+
+### Dataset management interface
+
+Each dataset is displayed as an information card containing:
+
+- **Dataset Name**: Table name used in SOL queries
+- **Upload Date**: When the dataset was imported (e.g., "09/30/2025 12:07:56")
+- **Author**: User who uploaded the dataset (e.g., "John Doe")
+- **File Size**: Dataset size in MB (e.g., "10MB")
+- **Actions**: Delete option
+
+The interface supports:
+
+- **Sorting**: Datasets ordered by upload date (most recent first)
+- **Search**: Filter datasets by name using the search bar
+- **Pagination**: Navigate through large dataset collections
+
+### CSV import process
+
+#### File requirements
+
+!!! warning "CSV Import Requirements"
+    Before importing your CSV file, ensure it meets these requirements:
+    
+    - **Column names follow snake_case format** and are unique
+    - **Column names are no longer than 128 characters**
+    - **The file is encoded in UTF-8 or ASCII**
+    - **The file size does not exceed 100 MB**
+
+#### Import workflow
+
+**Step 1: Initiate import**
+
+1. Click **+ New dataset** in the SOL Datasets panel
+2. The import modal opens with file selection interface
+
+**Step 2: File selection**
+
+1. Drag and drop your CSV file or click **Upload a file**
+2. Browse and select your CSV file from the file system
+3. The system validates file format and requirements
+
+![sol-import](/assets/operation_center/events/sol-import.png){: style="max-width:100%"}
+
+**Step 3: File preview and validation**
+
+1. After selection, the system displays file details and any validation errors
+2. Preview shows first 100 rows of data for verification
+3. Column names are automatically detected
+
+![sol-preview](/assets/operation_center/events/sol-preview.png){: style="max-width:100%"}
+
+**Step 4: Dataset configuration**
+
+1. **Dataset Name**: Defaults to filename
+2. **Community**: Select target community (for multi-tenancy)
+3. Review settings and click **Import**
+
+**Step 5: Import completion**
+
+1. The system processes the CSV file
+2. Dataset appears in the SOL Datasets panel
+3. Dataset is immediately available for use in SOL queries
+
+### Multi-tenancy and access control
+
+SOL Datasets support multi-tenant environments with the following access patterns:
+
+#### Shared access within community
+
+- All datasets uploaded to a community are **shared among all users** within that community
+- Any user can query any dataset within their community
+- Dataset visibility is automatically scoped to the user's community
+
+#### Sub-community limitations
+
+- **Sub-community users** can only access datasets uploaded within their specific sub-community
+- Sub-community users **cannot access parent datasets**
+- This ensures data isolation and security between different organizational units
+
+#### Parent community privileges
+
+- **Parent community users** have access to their own datasets
+- Parent tenant users can also access datasets from **all sub-communities** under their management
+- This enables centralized oversight and cross-tenant analysis
+
+### Using datasets in SOL queries
+
+#### Dataset discovery
+
+SOL provides autocomplete functionality for imported datasets:
+
+1. Start typing in the SOL query editor
+2. Imported datasets appear in autocomplete suggestions
+3. Select the dataset name to include it in your query
+
+#### Query integration
+
+Imported datasets can be used like any other SOL data source:
+
+**Basic dataset query**
+
+```shell
+authorized_domains
+| limit 100
+```
+
+**Detect unauthorized domains instantly:**
+
+```shell
+events
+| where timestamp > ago(24h) and url.domain != null
+| where not url.domain in (authorized_domains | select url_domain)
+| select timestamp, source.ip, url.domain
+| limit 100
+```
+
+**Correlate user activities with business roles:**
+
+```shell
+events
+| where timestamp > ago(24h)
+| lookup user_roles on user.full_name == full_name into roles_list
+| distinct user.full_name, roles_list.role
+| limit 100
+```
+
+#### Best practices for dataset queries
+
+**Performance optimization**
+
+- Use `lookup` instead of `join` when the imported dataset is small (< 10,000 rows)
+- Apply filters to main tables before joining with datasets
+- Limit result sets using `limit` operator
+
+**Data quality**
+
+- Validate data consistency before importing
+- Use consistent naming conventions across datasets
+- Handle null values appropriately in join conditions
+
+**Query structure**
+
+```shell
+// Filter main data source first
+events
+| where timestamp > ago(1h) and user.name != null
+
+// Then join with SOL dataset. The modal object name is defined as 'dataset' here
+| lookup user_roles_dataset on user.name == username into dataset
+
+// Select relevant columns
+| select timestamp, user.name, dataset.role, event.action
+| limit 1000
+```
+
+### Common use cases
+
+#### Automatically identify and prioritize alerts from known malicious sources
+
+Instantly correlate your alerts with external threat intelligence feeds to distinguish between noise and genuine threats. This query enriches recent alerts with threat context, helping analysts focus on the most critical security events first.
+
+```shell
+alerts
+| where created_at > ago(24h)
+| lookup threat_intel_dataset on source.ip == indicator_value into dataset
+| where dataset.threat_type != null
+| select rule_name, source.ip, dataset.threat_type, dataset.confidence
+```
+
+#### Understand event patterns across business units and system criticality
+
+Transform raw security events into business-aware insights by correlating them with your asset inventory. Quickly identify which departments or critical systems are generating the most security events, enabling targeted investigation and resource allocation.
+
+```shell
+events
+| where timestamp > ago(1h)
+| lookup asset_inventory on host.name == hostname into dataset
+| aggregate event_count = count() by dataset.department, dataset.criticality
+| order by event_count desc
+```
+
+#### Detect privileged account activity and potential privilege escalation
+
+Monitor administrative activities by correlating authentication events with your user directory. This helps identify unusual admin access patterns, shared accounts, or potential insider threats by tracking who is accessing what systems with elevated privileges.
+
+```shell
+events
+| where event.category == 'authentication' and action.outcome == 'success'
+| lookup user_directory on user.name == username into dataset
+| where dataset.role == 'admin'
+| aggregate count() by user.name, host.name
+```
+
+### Troubleshooting common issues
+
+#### Import failures
+
+File format errors
+
+- **Issue**: Column names contain spaces or special characters
+- **Solution**: Convert to snake_case format (e.g., "User Name" → "user_name")
+
+Encoding problems
+
+- **Issue**: Special characters appear corrupted
+- **Solution**: Save CSV file with UTF-8 encoding
+
+Size limitations
+
+- **Issue**: File exceeds 100 MB limit
+- **Solution**: Split large files or filter to essential columns only
+
+#### Query performance issues
+
+Slow join operations
+
+- **Issue**: Queries timeout or perform slowly
+- **Solution**: Use `lookup` instead of `join` for smaller datasets
+
+Memory limitations
+
+- **Issue**: Large dataset queries fail
+- **Solution**: Apply filters before joins, use `limit` operators
+
+#### Data access problems
+
+Dataset not found
+
+- **Issue**: Dataset doesn't appear in autocomplete
+- **Solution**: Verify dataset import completed successfully
+
+Join mismatches
+
+- **Issue**: Join operations return no results
+- **Solution**: Check column names and data formats match exactly
+
+---
+
 ## Join examples
 
 ### Join between events and communities tables (for Multi-tenant)
@@ -1460,7 +2129,7 @@ events
 | project host.name, total_count
 
 ```
-
+Please note: the `select` command can also be used. `select` and `project` are aliases and both return the same results.
 ---
 
 ### host.os.type per Sekoia endpoint agent
@@ -1476,14 +2145,14 @@ events
 ---
 
 
-### Received Kbytes per hour per intake
+### Received Kbytes per month per intake
 
 ``` shell
 event_telemetry
-| where bucket_start_date > ago(30d)
-| aggregate volume = sum(total_message_size) / 1024 by intake_uuid, date = bin(bucket_start_date, 1h)
+| where bucket_start_date >= ago(30d)
+| summarize sum_bytes = sum(total_message_size) by intake_uuid
 | lookup intakes on intake_uuid == uuid
-| order by date asc
-| render linechart with(x=date, y=volume, breakdown_by=intake.name)
+| select sum_gb = sum_bytes / (1000*1000*1000), intake.name
+| order by sum_gb desc
 
 ```

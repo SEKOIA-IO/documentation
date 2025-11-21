@@ -11,14 +11,11 @@ EfficientIP SOLIDserver suite of appliances is designed to deliver highly scalab
 - **Version Compatibility**: 8.0
 - **Detection based on**: Telemetry
 
-!!! warning
-    Important note - This format is currently in beta. We highly value your feedback to improve its performance.
-
 ## Supported versions
 
 This integration supports the following versions:
-
 - 8.3.x
+- 8.4.x
 
 ## Supported events
 

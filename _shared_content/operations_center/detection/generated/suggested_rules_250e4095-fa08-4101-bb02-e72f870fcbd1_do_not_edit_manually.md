@@ -1785,6 +1785,12 @@ The following Sekoia.io built-in rules match the intake **Sekoia.io Endpoint Age
     
     - **Effort:** intermediate
 
+??? abstract "Potential Persistence Via Outlook LoadMacroProviderOnBoot Setting"
+    
+    Detects the modification of Outlook setting "LoadMacroProviderOnBoot" which if enabled allows the automatic loading of any configured VBA project/module. Logging for Registry events is needed, it can be done in the Sysmon configuration (events 12 and 13).
+    
+    - **Effort:** master
+
 ??? abstract "Potential RDP Connection To Non-Domain Host"
     
     Detects logons using NTLM to hosts that are potentially not part of the domain using RDP (TermSrv). Event ID 8001 corresponds to outgoing NTLM authentication traffic and TermSrv stands for RDP Terminal Services Server. Check if the contacted host is legitimate. To use this detection rule, enable logging of outbound NTLM authentications on all domain controllers, using the following Group Policy (GPO) - Computer Configuration > Policies > Windows Settings > Security Settings > Local Policies > Security Options > Network security: Restrict NTLM: Outgoing NTLM traffic to remote servers -> Define this policy setting: Audit all.
@@ -1898,6 +1904,12 @@ The following Sekoia.io built-in rules match the intake **Sekoia.io Endpoint Age
     This rule aims to detect attempts to bypass AMSI in powershell using specific techniques.
     
     - **Effort:** advanced
+
+??? abstract "Powershell Suspicious Startup Shortcut Persistence"
+    
+    Detects Powershell writing Startup shortcuts for persistence.
+    
+    - **Effort:** master
 
 ??? abstract "Powershell UploadString Function"
     
@@ -2637,9 +2649,9 @@ The following Sekoia.io built-in rules match the intake **Sekoia.io Endpoint Age
     
     - **Effort:** advanced
 
-??? abstract "Suspicious Rundll32.exe Execution"
+??? abstract "Suspicious Rundll32.exe Executions"
     
-    The process rundll32.exe executes a newly dropped DLL with update /i in the command line. This specific technic was observed at least being used by the IcedID loading mechanism dubbed Gziploader.
+    The process rundll32.exe executes a newly dropped DLL with update /i in the command line. This specific technic was observed at least being used by the IcedID loading mechanism dubbed Gziploader. Some other detections are related to LOLBAS (Living Off The Land Binaries, Scripts and Libraries) usages (like the COM registering).
     
     - **Effort:** intermediate
 
@@ -2901,6 +2913,12 @@ The following Sekoia.io built-in rules match the intake **Sekoia.io Endpoint Age
     
     - **Effort:** master
 
+??? abstract "VSCode Tunnel Shell Exec"
+    
+    Using VSCode and its remote tunnel access feature to run a terminal and execute commands. This could be a legit use, but also has been observed being used by some attackers.
+    
+    - **Effort:** advanced
+
 ??? abstract "Venom Multi-hop Proxy agent detection"
     
     Detects Venom Multi-hop Proxy agent.
@@ -2929,7 +2947,7 @@ The following Sekoia.io built-in rules match the intake **Sekoia.io Endpoint Age
     
     Detects attacker fingerprint activities based on the correlation of specific WMIC commands. This has been observed with Aurora malware.
     
-    - **Effort:** intermediate
+    - **Effort:** advanced
 
 ??? abstract "WMI Install Of Binary"
     
@@ -2991,6 +3009,12 @@ The following Sekoia.io built-in rules match the intake **Sekoia.io Endpoint Age
     
     - **Effort:** master
 
+??? abstract "WerFaultSecure Abuse"
+    
+    Detect usage of the software vulnerability of WerFaultSecure to suspend the processes of EDRs, and bypass detection. It has been implemented in the tool EDR-Freeze.
+    
+    - **Effort:** advanced
+
 ??? abstract "Werfault DLL Injection"
     
     Werfault DLL search order look first in the current file, which lets an attacker use th legitimate exe to run its own DLL.  
@@ -3035,9 +3059,15 @@ The following Sekoia.io built-in rules match the intake **Sekoia.io Endpoint Age
 
 ??? abstract "Windows Registry Persistence COM Search Order Hijacking"
     
-    Detects potential COM object hijacking leveraging the COM Search Order. Logging for Registry events is needed, it can be done with Sysmon's Event IDs 12 and 13.
+    Detects potential COM object hijacking leveraging the COM Search Order. Logging for Registry events is needed, it can be done with Sysmon's Event IDs 12 and 13. Alert filters are highly encouraged for such kind of rule.
     
-    - **Effort:** advanced
+    - **Effort:** master
+
+??? abstract "Windows Sandbox Start"
+    
+    Detection of Windows Sandbox started from the command line with a config file or interactively using a WSB file.
+    
+    - **Effort:** master
 
 ??? abstract "Windows Suspicious Scheduled Task Creation"
     

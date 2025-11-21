@@ -69,6 +69,14 @@ When you have an **Event Hub** follow this guide to send your events from **Micr
 6. To export the event data to a single **Event Hub**, enter your **Event Hub** name and your **Event Hub Namespace** resource ID. **Be sure to take the event hub namespace ID and not the event hub ID.**
 7. To get your **Event Hub Namespace** resource ID, go to your **Azure Event Hub Namespace** page on Azure > Properties tab > copy the text under Resource ID:
 (e.g. `/subscriptions/XXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXX/resourceGroups/resourcegroupname/providers/Microsoft.EventHub/namespaces/namespacename`).
+    If you don't see it, you can go on the JSON View
+    <div style="text-align: center;">
+        <img width="100%" alt="image" src="/assets/integration/cloud_and_saas/event_hub/json_view.png">
+    </div>
+    And the resource ID will appear on the first line :
+    <div style="text-align: center;">
+        <img width="100%" alt="image" src="/assets/integration/cloud_and_saas/event_hub/content_json_view.png">
+    </div>
 8. Go to the supported **Microsoft Defender XDR** event types in event streaming API to review the support status of event types in the Microsoft 365 Streaming API.
 9. Choose the events you want to stream and click Save.
 

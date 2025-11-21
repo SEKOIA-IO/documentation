@@ -26,7 +26,10 @@ TheHive is a scalable, open source and free Security Incident Response Platform
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
+| `sekoia_base_url` | `string` | [Optional] Sekoia base url, depends of the region you want to use |
 | `alert` | `object` | A Sekoia.io alert |
+| `tlp` | `` | Case's TLP: 0, 1, 2, 3, 4 |
+| `pap` | `` | Case's PAP: 0, 1, 2, 3 |
 
 
 **Outputs**
@@ -59,4 +62,4 @@ TheHive is a scalable, open source and free Security Incident Response Platform
 
 ## Extra
 
-Module **`The Hive V5` v1.0.0**
+Module **`The Hive V5` v1.0.3**

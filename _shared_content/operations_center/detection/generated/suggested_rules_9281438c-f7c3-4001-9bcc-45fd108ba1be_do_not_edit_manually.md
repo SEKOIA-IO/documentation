@@ -189,6 +189,12 @@ The following Sekoia.io built-in rules match the intake **Windows**. This docume
     
     - **Effort:** elementary
 
+??? abstract "AppleScript Password Prompt"
+    
+    Detects when a prompt is displayed to gain credentials. This technique is used by MacOS malware to obtain the user's password.
+    
+    - **Effort:** advanced
+
 ??? abstract "Aspnet Compiler"
     
     Detects the starts of aspnet compiler.
@@ -386,6 +392,12 @@ The following Sekoia.io built-in rules match the intake **Windows**. This docume
     Detects when someone attempts to access/use a forbidden application.
     
     - **Effort:** master
+
+??? abstract "Chflags Hidden"
+    
+    Detects the use of the hidden flag by the utility chflags to hide files and directories.
+    
+    - **Effort:** advanced
 
 ??? abstract "Clear EventLogs Through CommandLine"
     
@@ -825,6 +837,12 @@ The following Sekoia.io built-in rules match the intake **Windows**. This docume
     
     - **Effort:** elementary
 
+??? abstract "Download File On Cloud Storage Through Command Line"
+    
+    Detects commonly used commands like curl or wget used to download files on a Cloud Storage URL like a Google Drive URL.
+    
+    - **Effort:** intermediate
+
 ??? abstract "Download Files From Non-Legitimate TLDs"
     
     Detects file downloads from non-legitimate TLDs. Additional legitimates TLDs should be filtered according to the business habits.
@@ -836,6 +854,12 @@ The following Sekoia.io built-in rules match the intake **Windows**. This docume
     Detects download of certain file types from hosts in suspicious TLDs
     
     - **Effort:** master
+
+??? abstract "Dscl Authonly"
+    
+    Detects the use of the command dscl with authonly used to verify the password of a user and for authentification. An attacker can abuse this command to gain credentials.
+    
+    - **Effort:** advanced
 
 ??? abstract "Dumpert LSASS Process Dumper"
     
@@ -1058,6 +1082,12 @@ The following Sekoia.io built-in rules match the intake **Windows**. This docume
     Detects MSI binaries run through GPOs.
     
     - **Effort:** intermediate
+
+??? abstract "Generic Password Discovery"
+    
+    Detects when the security utility is used to access passwords in a keychain.
+    
+    - **Effort:** advanced
 
 ??? abstract "Generic-reverse-shell-oneliner"
     
@@ -1350,6 +1380,12 @@ The following Sekoia.io built-in rules match the intake **Windows**. This docume
 ??? abstract "Linux Bash Reverse Shell"
     
     To bypass some security equipement or for a sack of simplicity attackers can open raw reverse shell using shell commands
+    
+    - **Effort:** intermediate
+
+??? abstract "Linux Masquerading Space After Name"
+    
+    This detection rule identifies a process created from an executable with a space appended to the end of the name.
     
     - **Effort:** intermediate
 
@@ -2007,6 +2043,12 @@ The following Sekoia.io built-in rules match the intake **Windows**. This docume
     
     - **Effort:** elementary
 
+??? abstract "Potential Persistence Via Outlook LoadMacroProviderOnBoot Setting"
+    
+    Detects the modification of Outlook setting "LoadMacroProviderOnBoot" which if enabled allows the automatic loading of any configured VBA project/module. Logging for Registry events is needed, it can be done in the Sysmon configuration (events 12 and 13).
+    
+    - **Effort:** master
+
 ??? abstract "Potential RDP Connection To Non-Domain Host"
     
     Detects logons using NTLM to hosts that are potentially not part of the domain using RDP (TermSrv). Event ID 8001 corresponds to outgoing NTLM authentication traffic and TermSrv stands for RDP Terminal Services Server. Check if the contacted host is legitimate. To use this detection rule, enable logging of outbound NTLM authentications on all domain controllers, using the following Group Policy (GPO) - Computer Configuration > Policies > Windows Settings > Security Settings > Local Policies > Security Options > Network security: Restrict NTLM: Outgoing NTLM traffic to remote servers -> Define this policy setting: Audit all.
@@ -2120,6 +2162,12 @@ The following Sekoia.io built-in rules match the intake **Windows**. This docume
     This rule aims to detect attempts to bypass AMSI in powershell using specific techniques.
     
     - **Effort:** advanced
+
+??? abstract "Powershell Suspicious Startup Shortcut Persistence"
+    
+    Detects Powershell writing Startup shortcuts for persistence.
+    
+    - **Effort:** master
 
 ??? abstract "Powershell UploadString Function"
     
@@ -2457,6 +2505,12 @@ The following Sekoia.io built-in rules match the intake **Windows**. This docume
     
     - **Effort:** intermediate
 
+??? abstract "SSH Reverse Socks"
+    
+    Detects the usage of the -R option combined with StrictHostKeyChecking, which is an indication of using SSH for reverse socks.
+    
+    - **Effort:** intermediate
+
 ??? abstract "STRRAT Scheduled Task"
     
     Detect STRRAT when it achieves persistence by creating a scheduled task. STRRAT is a Java-based stealer and remote backdoor, it establishes persistence using this specific command line: 'cmd /c schtasks /create /sc minute /mo 30 /tn Skype /tr "C:\Users\Admin\AppData\Roaming\SAMPLENAME.jar"'
@@ -2592,6 +2646,12 @@ The following Sekoia.io built-in rules match the intake **Windows**. This docume
 ??? abstract "SquirrelWaffle Malspam Execution Loading DLL"
     
     Detects cscript running suspicious command to load a DLL. This behavior has been detected in SquirrelWaffle campaign.
+    
+    - **Effort:** intermediate
+
+??? abstract "Startup Item Created"
+    
+    Detects when a item is added to the startup directory. An attacker can use this establish persistence.
     
     - **Effort:** intermediate
 
@@ -2883,9 +2943,9 @@ The following Sekoia.io built-in rules match the intake **Windows**. This docume
     
     - **Effort:** advanced
 
-??? abstract "Suspicious Rundll32.exe Execution"
+??? abstract "Suspicious Rundll32.exe Executions"
     
-    The process rundll32.exe executes a newly dropped DLL with update /i in the command line. This specific technic was observed at least being used by the IcedID loading mechanism dubbed Gziploader.
+    The process rundll32.exe executes a newly dropped DLL with update /i in the command line. This specific technic was observed at least being used by the IcedID loading mechanism dubbed Gziploader. Some other detections are related to LOLBAS (Living Off The Land Binaries, Scripts and Libraries) usages (like the COM registering).
     
     - **Effort:** intermediate
 
@@ -3189,6 +3249,12 @@ The following Sekoia.io built-in rules match the intake **Windows**. This docume
     
     - **Effort:** master
 
+??? abstract "User Added To Admin Group Via Cmd"
+    
+    Detects the use of different commands to add a user to an admin group.
+    
+    - **Effort:** advanced
+
 ??? abstract "User Added to Local Administrators"
     
     Detects when user accounts are added which could be legitimate activity or a sign of privilege escalation activity, Potential False-Positives Legitimate administrative activity WinRM clients
@@ -3200,6 +3266,12 @@ The following Sekoia.io built-in rules match the intake **Windows**. This docume
     The LsaRegisterLogonProcess function verifies that the application making the function call is a logon process by checking that it has the SeTcbPrivilege privilege set. Possible Rubeus tries to get a handle to LSA. This rule requires to log the Event ID 4673, which can be done by updating the Audit Policy.
     
     - **Effort:** master
+
+??? abstract "VSCode Tunnel Shell Exec"
+    
+    Using VSCode and its remote tunnel access feature to run a terminal and execute commands. This could be a legit use, but also has been observed being used by some attackers.
+    
+    - **Effort:** advanced
 
 ??? abstract "Venom Multi-hop Proxy agent detection"
     
@@ -3229,7 +3301,7 @@ The following Sekoia.io built-in rules match the intake **Windows**. This docume
     
     Detects attacker fingerprint activities based on the correlation of specific WMIC commands. This has been observed with Aurora malware.
     
-    - **Effort:** intermediate
+    - **Effort:** advanced
 
 ??? abstract "WMI Install Of Binary"
     
@@ -3291,6 +3363,12 @@ The following Sekoia.io built-in rules match the intake **Windows**. This docume
     
     - **Effort:** master
 
+??? abstract "WerFaultSecure Abuse"
+    
+    Detect usage of the software vulnerability of WerFaultSecure to suspend the processes of EDRs, and bypass detection. It has been implemented in the tool EDR-Freeze.
+    
+    - **Effort:** advanced
+
 ??? abstract "Werfault DLL Injection"
     
     Werfault DLL search order look first in the current file, which lets an attacker use th legitimate exe to run its own DLL.  
@@ -3335,9 +3413,15 @@ The following Sekoia.io built-in rules match the intake **Windows**. This docume
 
 ??? abstract "Windows Registry Persistence COM Search Order Hijacking"
     
-    Detects potential COM object hijacking leveraging the COM Search Order. Logging for Registry events is needed, it can be done with Sysmon's Event IDs 12 and 13.
+    Detects potential COM object hijacking leveraging the COM Search Order. Logging for Registry events is needed, it can be done with Sysmon's Event IDs 12 and 13. Alert filters are highly encouraged for such kind of rule.
     
-    - **Effort:** advanced
+    - **Effort:** master
+
+??? abstract "Windows Sandbox Start"
+    
+    Detection of Windows Sandbox started from the command line with a config file or interactively using a WSB file.
+    
+    - **Effort:** master
 
 ??? abstract "Windows Suspicious Scheduled Task Creation"
     

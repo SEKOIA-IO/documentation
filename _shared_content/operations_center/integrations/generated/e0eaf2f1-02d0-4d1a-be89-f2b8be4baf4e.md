@@ -167,9 +167,6 @@ This section demonstrates how the raw logs will be transformed by our parsers. I
         "source": {
             "address": "n35.grp.scd.yahoo.com",
             "domain": "n35.grp.scd.yahoo.com",
-            "geo": {
-                "country_iso_code": "us"
-            },
             "ip": "66.218.66.103",
             "registered_domain": "yahoo.com",
             "subdomain": "n35.grp.scd",
@@ -277,9 +274,6 @@ This section demonstrates how the raw logs will be transformed by our parsers. I
         "source": {
             "address": "208-86-203-0.proofpoint.com",
             "domain": "208-86-203-0.proofpoint.com",
-            "geo": {
-                "country_iso_code": "us"
-            },
             "ip": "208.86.203.10",
             "registered_domain": "proofpoint.com",
             "subdomain": "208-86-203-0",
@@ -371,9 +365,6 @@ This section demonstrates how the raw logs will be transformed by our parsers. I
         "source": {
             "address": "127.0.0.1",
             "domain": "127.0.0.1",
-            "geo": {
-                "country_iso_code": "**"
-            },
             "ip": "127.0.0.1"
         }
     }
@@ -454,7 +445,7 @@ This section demonstrates how the raw logs will be transformed by our parsers. I
                         },
                         "mime_type": "text/html",
                         "name": "text.html",
-                        "size": "2118"
+                        "size": 2118
                     }
                 }
             ],
@@ -518,15 +509,15 @@ The following table lists the fields that are extracted, normalized under the EC
 | Name | Type | Description                |
 | ---- | ---- | ---------------------------|
 |`@timestamp` | `date` | Date/time when the event originated. |
-|`email.attachments` | `array` | A list of objects describing the attachment files sent along with an email message |
-|`email.cc.address` | `keyword` | The email address of CC recipient |
-|`email.from.address` | `keyword` | The email address of the sender, typically from the RFC 5322 From: header field |
-|`email.local_id` | `keyword` | Unique identifier given to the email by the source that created the event |
-|`email.message_id` | `keyword` | Identifier from the RFC 5322 Message-ID: email header that refers to a particular email message |
-|`email.reply_to.address` | `keyword` | The address that replies should be delivered to based on the value in the RFC 5322 Reply-To: header |
-|`email.subject` | `keyword` | A brief summary of the topic of the message |
-|`email.to.address` | `keyword` | The email address of recipient |
-|`email.x_mailer` | `keyword` | The mailer that send the message |
+|`email.attachments` | `nested` | List of objects describing the attachments. |
+|`email.cc.address` | `keyword` | Email address of CC recipient |
+|`email.from.address` | `keyword` | The sender's email address. |
+|`email.local_id` | `keyword` | Unique identifier given by the source. |
+|`email.message_id` | `wildcard` | Value from the Message-ID header. |
+|`email.reply_to.address` | `keyword` | Address replies should be delivered to. |
+|`email.subject` | `keyword` | The subject of the email message. |
+|`email.to.address` | `keyword` | Email address of recipient |
+|`email.x_mailer` | `keyword` | Application that drafted email. |
 |`error.code` | `keyword` | Error code describing the error. |
 |`event.action` | `keyword` | The action captured by the event. |
 |`event.category` | `keyword` | Event category. The second categorization field in the hierarchy. |
@@ -547,7 +538,6 @@ The following table lists the fields that are extracted, normalized under the EC
 |`proofpoint.pod.smtp.sender` | `keyword` | The SMTP sender |
 |`proofpoint.pod.urls` | `array` | A list of urls detected in the message |
 |`source.domain` | `keyword` | The domain name of the source. |
-|`source.geo.country_iso_code` | `keyword` | Country ISO code. |
 |`source.ip` | `ip` | IP address of the source. |
 |`tls.cipher` | `keyword` | String indicating the cipher used during the current connection. |
 |`tls.version` | `keyword` | Numeric part of the version parsed from the original string. |

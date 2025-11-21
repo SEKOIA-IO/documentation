@@ -43,6 +43,7 @@ nav:
     - Account security:
       - Two-Factor Authentication: getting_started/account_security.md
       - Security tokens: getting_started/securitytokens.md
+      - Password Management Policy: getting_started/password_management_policy.md
     - Workspace security:
       - Session duration: getting_started/session_duration.md
       - Two-Factor Authentication: getting_started/twofactor_workspace.md
@@ -88,6 +89,7 @@ nav:
       - Events: xdr/features/investigate/events.md
       - AI Cases: xdr/features/investigate/ai_cases.md
       - Cases: xdr/features/investigate/cases.md
+      - Asset Context Panel (coming soon): xdr/features/investigate/asset_context_panel.md
       - Events Query Language: xdr/features/investigate/events_query_language.md
       - Querying Events: xdr/features/investigate/querying_events.md
       - Query Builder: xdr/features/investigate/query_builder.md
@@ -162,6 +164,7 @@ nav:
       - Swimlane Turbine: cti/features/integrations/swimlane_turbine.md
       - Anomali ThreatStream: cti/features/integrations/anomali.md
       - PaloAlto Cortex XSOAR: cti/features/integrations/paloalto_xsoar.md
+      - PaloAlto Cortex XSIAM: cti/features/integrations/paloalto_xsiam.md
       - ThreatQuotient: cti/features/integrations/threatquotient.md
 - Integrations:
   - Introduction: integration/index.md
@@ -242,6 +245,8 @@ nav:
       - Lookout Mobile Endpoint Security: integration/categories/endpoint/lookout_mes.md
       - Microsoft Defender XDR (Microsoft 365 Defender): integration/categories/endpoint/microsoft_365_defender.md
       - Microsoft Intune: integration/categories/endpoint/microsoft_intune.md
+      - Nozomi CMC: integration/categories/endpoint/nozomi_cmc.md
+      - Nucleon EDR: integration/categories/endpoint/nucleon_edr.md
       - Palo Alto Cortex XDR (EDR): integration/categories/endpoint/paloalto_cortex_edr.md
       - Panda Security Aether: integration/categories/endpoint/panda_security_aether.md
       - Pradeo MTD: integration/categories/endpoint/pradeo_mtd.md
@@ -276,6 +281,7 @@ nav:
       - Jumpcloud Directory Insights: integration/categories/iam/jumpcloud_directory_insights.md
       - ManageEngine ADAudit Plus: integration/categories/iam/manageengine_adauditplus.md
       - Microsoft Entra ID (Azure AD): integration/categories/iam/entra_id.md
+      - Microsoft Entra ID (via Graph API): integration/categories/iam/entra_id_graph_api.md
       - Okta System log: integration/categories/iam/okta_system_log.md
       - OpenLDAP: integration/categories/iam/openldap.md
       - RSA SecurID: integration/categories/iam/rsa_securid.md
@@ -303,7 +309,6 @@ nav:
       - EfficientIP SOLIDServer DDI: integration/categories/network/efficientip_solidserver_ddi.md
       - Ekinops OneOS: integration/categories/network/ekinops_oneos.md
       - F5 BIG-IP: integration/categories/network/f5-big-ip.md
-      - Forcepoint Secure Web Gateway: integration/categories/network/forcepoint_web_gateway.md
       - Google VPC Flow Logs: integration/categories/network/google_vpc_flow_logs.md
       - HAProxy: integration/categories/network/haproxy.md
       - ISC DHCP: integration/categories/network/dhcpd.md
@@ -330,9 +335,11 @@ nav:
       - Azure Front Door: integration/categories/network_security/azure_front_door.md
       - Azure Network Watcher (NSG flow logs): integration/categories/network_security/azure_network_watcher.md
       - Azure Network Watcher (Virtual Network Flow Logs): integration/categories/network_security/azure_network_watcher_flow_logs.md
+      - Barracuda CloudGen Firewall: integration/categories/network_security/barracuda_cloudgen_firewall.md
       - Bitsight SPM: integration/categories/network_security/bitsight_spm.md
       - Broadcom Cloud Secure Web Gateway: integration/categories/network_security/broadcom_cloud_swg.md
       - Broadcom Edge Secure Web Gateway: integration/categories/network_security/broadcom_edge_swg.md
+      - Broadcom Siteminder: integration/categories/network_security/broadcom_siteminder.md
       - Check Point: integration/categories/network_security/checkpoint.md
       - Cisco Identity Services Engine (ISE): integration/categories/network_security/cisco_identity_services_engine_ise.md
       - Cisco Secure Firewall: integration/categories/network_security/cisco_asa.md
@@ -349,10 +356,12 @@ nav:
       - F5 Distributed Cloud: integration/categories/network_security/f5-distributed-cloud.md
       - Fastly Next-Gen WAF: integration/categories/network_security/fastly_waf.md
       - Forcepoint Secure Web Gateway: integration/categories/network_security/forcepoint_web_gateway.md
+      - Forcepoint NGFW: integration/categories/network_security/forcepoint_ngfw.md
       - FortiProxy: integration/categories/network_security/fortiproxy.md
       - FortiWeb: integration/categories/network_security/fortiweb.md
       - Fortigate: integration/categories/network_security/fortigate.md
-      - Gatewatcher AionIQ: integration/categories/network_security/gatewatcher_aioniq.md
+      - Gatewatcher AionIQ (<=v102): integration/categories/network_security/gatewatcher_aioniq.md
+      - Gatewatcher AionIQ (>=v103): integration/categories/network_security/gatewatcher_aioniq_ecs.md
       - Google Cloud Load Balancing: integration/categories/network_security/google_cloud_load_balancing.md
       - Imperva Web Application Firewall: integration/categories/network_security/imperva_waf.md
       - Lacework Cloud Security: integration/categories/network_security/lacework_cloud_security.md
@@ -360,6 +369,7 @@ nav:
       - McAfee Web Gateway / Skyhigh Secure Web Gateway - SaaS: integration/categories/network_security/skyhigh_secure_web_gateway_saas.md
       - NeroSwarm Honeypot: integration/categories/network_security/neroswarm_honeypot.md
       - Netskope Events: integration/categories/network_security/netskope_events.md
+      - Netskope Log Streaming (Transaction Events): integration/categories/network_security/netskope_log_streaming.md
       - Netskope Transaction Events: integration/categories/network_security/netskope_transaction.md
       - Nozomi Vantage: integration/categories/network_security/nozomi_vantage.md
       - OGO Shield WAF: integration/categories/network_security/ogo_shield.md
@@ -395,7 +405,6 @@ nav:
       - Wiz Vulnerability Findings: integration/categories/network_security/wiz_vulnerability_findings.md
       - Zscaler Internet Access: integration/categories/network_security/zscaler_zia.md
   - List of Playbooks Actions:
-    - Overview: integration/action_library/overview.md
     - Applicative:
       - ElasticSearch: integration/action_library/elasticsearch.md
       - Mandrill: integration/action_library/mandrill.md
@@ -412,9 +421,11 @@ nav:
       - ServiceNow: integration/action_library/servicenow.md
       - The Hive: integration/action_library/the-hive.md
       - The Hive V5: integration/action_library/the-hive-v5.md
+      - The Hive V5: integration/action_library/the-hive-v5.md
     - Email:
       - Microsoft Outlook: integration/action_library/microsoft-outlook.md
     - Endpoint:
+      - Bitdefender GravityZone: integration/action_library/bitdefender-gravityzone.md
       - CrowdStrike Falcon: integration/action_library/crowdstrike-falcon.md
       - Eset: integration/action_library/eset.md
       - HarfangLab: integration/action_library/harfanglab.md
@@ -424,14 +435,15 @@ nav:
       - Palo Alto Cortex XSIAM: integration/action_library/palo-alto-cortex-xsiam.md
       - Panda Security: integration/action_library/panda-security.md
       - SentinelOne: integration/action_library/sentinelone.md
-      - SentinelOne: integration/action_library/sentinelone.md
       - Sophos: integration/action_library/sophos.md
       - Stormshield SES: integration/action_library/stormshield-ses.md
+      - TrendMicro VisionOne: integration/action_library/trendmicro-visionone.md
       - WithSecure: integration/action_library/withsecure.md
     - Generic:
       - HTTP: integration/action_library/http.md
       - OpenAI: integration/action_library/openai.md
       - RSS: integration/action_library/rss.md
+      - Sekoia.io: integration/action_library/sekoia-io.md
       - Sekoia.io: integration/action_library/sekoia-io.md
       - Utils: integration/action_library/utils.md
     - IAM:
@@ -441,6 +453,8 @@ nav:
       - Fortigate Firewalls: integration/action_library/fortigate-firewalls.md
       - Sophos: integration/action_library/sophos.md
       - Zscaler: integration/action_library/zscaler.md
+    - Overview: integration/action_library/overview.md
+    - Overview: integration/action_library/overview.md
     - Threat Intelligence:
       - BinaryEdge's API: integration/action_library/binaryedge-s-api.md
       - Censys: integration/action_library/censys.md
@@ -462,6 +476,18 @@ nav:
       - Triage: integration/action_library/triage.md
       - VirusTotal: integration/action_library/virustotal.md
       - Whois: integration/action_library/whois.md
+  - List of Asset Connectors:
+    - Vulnerability:
+      - Tenable.io: integration/assets_categories/vulnerability/tenable_io.md
+    - Device:
+      - AWS EC2: integration/assets_categories/device/aws_ec2_device.md
+      - Crowdstrike Falcon: integration/assets_categories/device/crowdstrike_falcon_device.md
+      - Harfanglab EDR: integration/assets_categories/device/harfanglab_edr.md
+      - Okta: integration/assets_categories/device/okta_device.md
+    - User:
+      - AWS IAM: integration/assets_categories/user/aws_iam_user.md
+      - Microsoft Entra ID: integration/assets_categories/user/microsoft_entra_id.md
+      - Okta: integration/assets_categories/user/okta_user.md
   - How to develop a new Integration:
     - Overview: integration/develop_integration/overview.md
     - Automation:
@@ -573,6 +599,7 @@ plugins:
       xdr/features/collect/integrations/cloud_and_saas/azure/azure_network_watcher.md: integration/categories/network_security/azure_network_watcher.md
       xdr/features/collect/integrations/cloud_and_saas/azure/azure_windows.md: integration/categories/endpoint/azure_windows.md
       xdr/features/collect/integrations/cloud_and_saas/azure/entra_id.md: integration/categories/iam/entra_id.md
+      xdr/features/collect/integrations/cloud_and_saas/azure/entra_id_graph_api.md: integration/categories/iam/entra_id_graph_api.md
       xdr/features/collect/integrations/cloud_and_saas/bitsight_spm.md: integration/categories/network_security/bitsight_spm.md
       xdr/features/collect/integrations/cloud_and_saas/broadcom_cloud_swg.md: integration/categories/network_security/broadcom_cloud_swg.md
       xdr/features/collect/integrations/cloud_and_saas/cato_sase.md: integration/categories/network/cato_sase.md
@@ -646,6 +673,7 @@ plugins:
       xdr/features/collect/integrations/endpoint/linux.md: integration/categories/endpoint/linux.md
       xdr/features/collect/integrations/endpoint/log_insight_windows.md: integration/categories/endpoint/log_insight_windows.md
       xdr/features/collect/integrations/endpoint/microsoft_intune.md: integration/categories/endpoint/microsoft_intune.md
+      xdr/features/collect/integrations/endpoint/nozomi_cmc.md: integration/categories/endpoint/nozomi_cmc.md
       xdr/features/collect/integrations/endpoint/paloalto_cortex_edr.md: integration/categories/endpoint/paloalto_cortex_edr.md
       xdr/features/collect/integrations/endpoint/panda_security_aether.md: integration/categories/endpoint/panda_security_aether.md
       xdr/features/collect/integrations/endpoint/sekoiaio.md: integration/categories/endpoint/sekoiaio.md
@@ -683,7 +711,6 @@ plugins:
       xdr/features/collect/integrations/network/efficientip_solidserver_ddi.md: integration/categories/network/efficientip_solidserver_ddi.md
       xdr/features/collect/integrations/network/ekinops_oneos.md: integration/categories/network/ekinops_oneos.md
       xdr/features/collect/integrations/network/f5-big-ip.md: integration/categories/network/f5-big-ip.md
-      xdr/features/collect/integrations/network/forcepoint_web_gateway.md: integration/categories/network/forcepoint_web_gateway.md
       xdr/features/collect/integrations/network/fortigate.md: integration/categories/network_security/fortigate.md
       xdr/features/collect/integrations/network/fortiproxy.md: integration/categories/network_security/fortiproxy.md
       xdr/features/collect/integrations/network/fortiweb.md: integration/categories/network_security/fortiweb.md

@@ -18,7 +18,7 @@ export function debounce(func, wait) {
 export function scrollToAnchor(hash) {
     const el = document.getElementById(hash.substring(1))
     if (el) window.scrollTo({
-        top: document.getElementById(hash.substring(1)).getBoundingClientRect().top + window.scrollY,
+        top: document.getElementById(hash.substring(1)).getBoundingClientRect().top + window.scrollY - 150,
         behavior: 'smooth'
     });
 }

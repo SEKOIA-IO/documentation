@@ -99,6 +99,14 @@ It should be noted that each `field` must not occur more than once. Multiple val
 # list alerts triggered on entity1 with rule named rule1 or rule2
 /alerts?match[entity_name]=entity1&match[rule_name]=rule1,rule2
 ```
+
+#### Date ranges
+
+The `date[field]` parameter can be used to filter documents given a date range on a specific `field`. The value of the parameter must be two dates separated by a comma (U+002C COMMA, “,”) without any spaces. The first date is the start date and the second date is the end date.
+
+Example of date range parameter: `date[created_at]=2025-09-22T01:20:00.000Z,2025-09-22T23:59:59.999Z`.
+
+
 ## Code examples
 Please find below two python code examples, one with a `GET` request with `query parameters` and another with a `POST` request and an `application/json` body.
 

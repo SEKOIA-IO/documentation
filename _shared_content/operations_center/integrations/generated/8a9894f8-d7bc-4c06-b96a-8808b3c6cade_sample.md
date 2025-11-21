@@ -20,6 +20,14 @@ In this section, you will find examples of raw logs as generated natively by the
 
 
 
+=== "test_admin_auth_failed"
+
+    ```
+	CISE_Administrative_and_Operational_Audit 0026935732 1 0 2025-10-23 14:26:49.538 +02:00 0264007760 51000 NOTICE Administrator-Login: Administrator authentication failed, ConfigVersionId=118, AdminInterface=GUI, AdminIPAddress=1.2.3.4, AdminName=jdoe, OperationMessageText=Authentication failed due to invalid user or password\, or account is disabled/locked,
+    ```
+
+
+
 === "test_authentication"
 
     ```
@@ -32,6 +40,14 @@ In this section, you will find examples of raw logs as generated natively by the
 
     ```
 	0000248509 3 0 2025-02-18 14:34:01.264 +01:00 0005365098 5400 NOTICE Failed-Attempt: Authentication failed, ConfigVersionId=88, Device IP Address=3.4.5.6, Device Port=53874, DestinationIPAddress=5.6.7.8, DestinationPort=1812, RadiusPacketType=AccessRequest, UserName=john.doe, Protocol=Radius, NetworkDeviceName=WLAN, User-Name=john.doe, NAS-IP-Address=2.3.4.5, NAS-Port=1656127488, Called-Station-ID=1.2.3.4, Calling-Station-ID=4.5.6.7, NAS-Port-Type=Virtual, Tunnel-Client-Endpoint=(tag=0) 4.5.6.7, cisco-av-pair=mdm-tlv=device-platform=win, cisco-av-pair=mdm-tlv=device-mac=61-05-38-5c-f8-bd, cisco-av-pair=mdm-tlv=device-platform-version=10.0.26100 , cisco-av-pair=mdm-tlv=device-public-mac=61-05-38-5c-f8-bd, cisco-av-pair=mdm-tlv=device-type=Default string Default string, cisco-av-pair=mdm-tlv=ac-user-agent=AnyConnect Windows 4.6.03049,
+    ```
+
+
+
+=== "test_boot_request"
+
+    ```
+	0000005921 7 5  11-22-33-44-55-66:EVENT_REASON\,dhcp-parameter-request-list=1\, 3\, 6\, 15\, 31\, 33\, 43\, 44\, 46\, 47\, 119\, 121\, 249\, 252\,OperatingSystem=Windows\,PostureApplicable=Yes\,User-Fetch-Department=\,AD-Last-Fetch-Time=1759879885138\,Issuer=CN=COMPANY-SUB-CA\\OU=DSI\\O=COMPANY\\L=RENNES\\C=FR\,NmapSubnetScanID=0\,AD-Host-DNS-Domain=domain.asso.fr\,Device Identifier=\,Airespace-Wlan-Id=12\,ipv6=\,Issuer - Organization=COMPANY\,TotalAuthenLatency=2\,MatchedPolicyID=11111111-1111-1111-1111-111111111111\,Service-Type=Framed\,op=BOOTREQUEST\,UserName=USER$@domain.asso.fr\,FeedService=false\,TLSVersion=TLSv1.2\,AD-Host-NetBios-Name=DOMAIN\,Issuer - Location=RENNES\,SelectedAuthorizationProfiles=PermitAccess\,host-name=USER\,COMPANY_LAN=COMPANY_LAN#COMPANY_LAN\,Subject=CN=USER.DOMAIN.asso.fr\,
     ```
 
 
@@ -96,6 +112,30 @@ In this section, you will find examples of raw logs as generated natively by the
 
     ```
 	0000738292 7 0 2025-01-09 09:28:49.914 +01:00 0043796555 5200 NOTICE Passed-Authentication: Authentication succeeded, ConfigVersionId=186, Device IP Address=2.3.4.5, DestinationIPAddress=1.2.3.4, DestinationPort=1812, UserName=testUserName, Protocol=Radius, NetworkDeviceName=MGCUH1-3, User-Name=testUserName, NAS-IP-Address=2.3.4.5, NAS-Port=1001, Service-Type=Framed, Framed-MTU=1449, State=37CPMSessionID=XXXXXXXXXXXXXX\;36SessionID=MGDFSISE2/515448264/543038\;, Called-Station-ID=a0:ec:f9:50:e2:90:DFS, Calling-Station-ID=bc:83:85:d8:88:c6, NAS-Identifier=MGCUH1-3, NAS-Port-Type=Wireless - IEEE 802.11, NAS-Port-Id=Capwap2, EAP-Key-Name=, cisco-av-pair=service-type=Framed, cisco-av-pair=audit-session-id=XXXXXXXXXXXXXX, cisco-av-pair=method=dot1x, cisco-av-pair=cisco-wlan-ssid=DFS, Airespace-Wlan-Id=5, NetworkDeviceProfileName=Cisco, NetworkDeviceProfileId=aaaaaaaaaaaaaaaaaaaaa,#015
+    ```
+
+
+
+=== "test_network_info_events2"
+
+    ```
+	CISE_RADIUS_Accounting 0002391460 1 0 2025-07-30 11:50:34.267 +02:00 0023023046 3002 NOTICE Radius-Accounting: RADIUS Accounting watchdog update, ConfigVersionId=83, Device IP Address=1.2.3.4, UserName=00-00-00-00-00-00, NetworkDeviceName=Test-Network-Device-Name, User-Name=00-00-00-00-00-00, NAS-IP-Address=1.2.3.4, NAS-Port=50107, Framed-IP-Address=3.4.5.6, Class=CACS:0A0D00F90000001402268B53:ise/523393559/11169221, Called-Station-ID=11-00-00-00-00-00, Calling-Station-ID=00-00-00-00-00-00, Acct-Status-Type=Interim-Update, Acct-Delay-Time=0, Acct-Input-Octets=1848852125, Acct-Output-Octets=2808400785, Acct-Session-Id=00000070, Acct-Input-Packets=27991836, Acct-Output-Packets=40488347, Event-Timestamp=1753869011, NAS-Port-Type=Ethernet, NAS-Port-Id=GigabitEthernet0/7, cisco-av-pair=audit-session-id=0A0D00F90000001402268B53, cisco-av-pair=vlan-id=1330, cisco-av-pair=method=mab, AcsSessionID=MGMT-ISE01/0000000000/2185126, SelectedAccessService=Default Network Access, RequestLatency=3, Step=11004, Step=11017, Step=15049, Step=15008, Step=15048, Step=15048, Step=22094, Step=11005, NetworkDeviceGroups=Location#All Locations#Test Test#LAN#ACA, NetworkDeviceGroups=Device Type#All Device Types#Switch#2960L, NetworkDeviceGroups=IPSEC#Is IPSEC Device#No, CPMSessionID=0A0D00F90000001402268B53, StepLatency=1=0\;2=0\;3=0\;4=1\;5=0\;6=1\;7=0, StepData=4= Normalised Radius.RadiusFlowType, StepData=5= Normalised Radius.RadiusFlowType, TotalAuthenLatency=3, ClientLatency=0, Model Name=Unknown, Software Version=Unknown, Network Device Profile=Cisco, Location=Location#All Locations#Test Test#LAN#ACA, Device Type=Device Type#All Device Types#Switch#2960L, IPSEC=IPSEC#Is IPSEC Device#No,
+    ```
+
+
+
+=== "test_network_info_events3"
+
+    ```
+	0000000000 1 0 2025-07-29 14:07:18.047 +02:00 0000000000 51000 NOTICE Administrator-Login: Administrator authentication failed, ConfigVersionId=XX, AdminInterface=GUI, AdminIPAddress=1.2.3.4, AdminName=REDACTED_NAME, OperationMessageText=Authentication failed due to invalid user or password, or account is disabled/locked,
+    ```
+
+
+
+=== "test_network_info_events4"
+
+    ```
+	CISE_Administrative_and_Operational_Audit 0000000000 1 0 2025-07-29 14:07:18.047 +02:00 0000000000 51000 NOTICE Administrator-Login: Administrator authentication failed, ConfigVersionId=XX, AdminInterface=GUI, AdminIPAddress=1.2.3.4, AdminName=REDACTED_NAME, OperationMessageText=Authentication failed due to invalid user or password, or account is disabled/locked,
     ```
 
 

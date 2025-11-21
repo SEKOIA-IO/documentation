@@ -353,7 +353,7 @@ Add events to a case
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
-| `uuid` | `string` | UUID of the case |
+| `uuid` | `string` | UUID or short_id of the case to update |
 | `event_ids` | `array` | List of event identifiers (__event_id) to add to the case. Do not use event.id which is a different identifier. |
 
 ### Add IOC to IOC Collection
@@ -440,8 +440,8 @@ Attach one or more alerts to a specific case
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
-| `case_uuid` | `string` |  |
-| `alerts` | `array` | The list of identifiers of alerts to add |
+| `case_uuid` | `string` | UUID or short_id of the case to update |
+| `alerts` | `array` | The list of identifiers (UUID or short_id) of alerts to add |
 
 
 **Outputs**
@@ -971,7 +971,7 @@ Retrieve the definition of an alert
 | --------- | ------- | --------------------------- |
 | `uuid` | `string` |  |
 | `stix` | `boolean` |  |
-| `cases` | `boolean` | Get the cases associated with this alert |
+| `cases` | `boolean` | Fetch the cases associated with this alert in addition (default: false) |
 
 
 **Outputs**
@@ -1012,6 +1012,52 @@ Retrieve the definition of an alert
 | `title` | `string` |  |
 | `target` | `string` |  |
 | `cases` | `array` |  |
+
+### [DEPRECATED] Get Asset (V2)
+
+Return an asset according to its identifier
+
+**Arguments**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `uuid` | `string` | The identifier of the asset |
+
+
+**Outputs**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `uuid` | `string` | The identifier of the asset |
+| `entity_uuid` | `` |  |
+| `community_uuid` | `string` | The community of the asset |
+| `name` | `string` | The name of the asset |
+| `type` | `string` | The type of the asset |
+| `category` | `['object', 'string', 'null']` | The category of the asset |
+| `criticality` | `['integer', 'null']` |  |
+| `created_at` | `` | The creation date of the asset |
+| `created_by` | `` |  |
+| `created_by_type` | `['string', 'null']` |  |
+| `updated_at` | `` | The modification date of the asset |
+| `first_seen` | `` |  |
+| `last_seen` | `` |  |
+| `nb_events` | `['integer', 'null']` |  |
+| `nb_alerts` | `['integer', 'null']` |  |
+| `nb_atoms` | `integer` |  |
+| `atoms` | `['object', 'null']` |  |
+| `props` | `['object', 'null']` |  |
+| `tags` | `array` |  |
+| `revoked` | `boolean` |  |
+| `revoked_at` | `` |  |
+| `revoked_by` | `` |  |
+| `reviewed` | `boolean` |  |
+| `reviewed_at` | `` |  |
+| `reviewed_by` | `` |  |
+| `source` | `string` |  |
+| `rule_uuid` | `` |  |
+| `rule_version` | `['string', 'null']` |  |
+| `criticity` | `['object', 'null']` | The criticality of the asset |
+| `asset_type` | `['object', 'null']` | The type of the asset |
 
 ### Get case
 
@@ -1402,17 +1448,41 @@ find alerts that match your filters
 | `match[stix_object]` | `string` |  |
 | `match[rule_uuid]` | `string` |  |
 | `match[rule_name]` | `string` |  |
-| `match[short_id]` | `string` |  |
+| `match[detection_type]` | `string` |  |
 | `match[uuid]` | `string` |  |
 | `match[title]` | `string` |  |
+| `match[asset_uuid]` | `string` |  |
+| `match[urgency_display]` | `string` |  |
+| `match[case_short_id]` | `string` |  |
+| `match[assignee]` | `string` |  |
+| `match[custom_status_uuid]` | `string` |  |
+| `match[verdict_uuid]` | `string` |  |
+| `match[short_id]` | `string` |  |
 | `date[created_at]` | `string` |  |
 | `date[updated_at]` | `string` |  |
 | `range[urgency]` | `string` |  |
 | `range[similar]` | `string` |  |
+| `nomatch[asset_uuid]` | `string` |  |
+| `nomatch[entity_uuid]` | `string` |  |
+| `nomatch[rule_uuid]` | `string` |  |
+| `nomatch[rule_name]` | `string` |  |
+| `nomatch[detection_type]` | `string` |  |
+| `nomatch[source]` | `string` |  |
+| `nomatch[target]` | `string` |  |
+| `nomatch[status_uuid]` | `string` |  |
+| `nomatch[stix_object]` | `string` |  |
+| `nomatch[type_value]` | `string` |  |
+| `nomatch[urgency_display]` | `string` |  |
+| `nomatch[assignee]` | `string` |  |
+| `nomatch[custom_status_uuid]` | `string` |  |
+| `nomatch[verdict_uuid]` | `string` |  |
 | `visible` | `boolean` |  |
+| `is_assigned_to_case` | `boolean` |  |
+| `similar_to` | `string` |  |
 | `limit` | `integer` |  |
 | `offset` | `integer` |  |
 | `stix` | `boolean` |  |
+| `cases` | `boolean` |  |
 | `sort` | `string` |  |
 | `direction` | `string` |  |
 | `with_count` | `boolean` |  |
@@ -1478,6 +1548,30 @@ Return a list of assets according to the filters
 | `rule_version` | `['string', 'null']` | Rule Version |
 | `offset` | `integer` | The position of the first asset to return |
 | `limit` | `integer` | The number of assets to return |
+
+
+**Outputs**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `items` | `array` |  |
+| `total` | `integer` |  |
+
+### List comments of a case
+
+List all comments of a case
+
+**Arguments**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `case_uuid` | `string` |  |
+| `limit` | `integer` | limit a number of items (allowed range is 1-100), default is 20. |
+| `offset` | `integer` | a number of items to skip, default is 0. |
+| `date[created_at]` | `string` | Filter cases by their creation date (see rfc3339). |
+| `match[created_by]` | `string` | Match cases by their creators |
+| `sort` | `string` | Sort returned comments (accepted values: 'created_at', 'created_by', 'updated_at'). |
+| `direction` | `string` | Direction of the sort (accepted values: 'asc', 'desc'). |
 
 
 **Outputs**
@@ -1729,6 +1823,8 @@ Return an asset according to its identifier
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
 | `uuid` | `string` | The identifier of the asset |
+| `with_telemetry` | `boolean` | Flag to return telemetry information (first_seen, last_seen, occurrences) of the asset |
+| `with_compliance` | `boolean` | Flag to return the hygiene information (partitions, vulnerabilities) of the asset |
 
 
 **Outputs**
@@ -1740,7 +1836,7 @@ Return an asset according to its identifier
 | `community_uuid` | `string` | The community of the asset |
 | `name` | `string` | The name of the asset |
 | `type` | `string` | The type of the asset |
-| `category` | `['object', 'string', 'null']` | The category of the asset |
+| `category` | `['string', 'object', 'null']` | The category of the asset |
 | `criticality` | `['integer', 'null']` |  |
 | `created_at` | `` | The creation date of the asset |
 | `created_by` | `` |  |
@@ -1823,6 +1919,67 @@ Triggers an action on an alert to update its status by name
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
 | `actions` | `array` |  |
+
+### Update asset
+
+Update an asset
+
+**Configuration**
+
+{'default': '', 'in': 'body', 'type': 'string'}
+
+**Arguments**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `uuid` | `string` | The identifier of the asset |
+| `entity_uuid` | `` |  |
+| `name` | `string` |  |
+| `description` | `string` |  |
+| `type` | `string` |  |
+| `category` | `['string', 'null']` |  |
+| `criticality` | `integer` |  |
+| `props` | `['object', 'null']` | Attach contextual properties |
+| `atoms` | `['object', 'null']` | Attach detection properties |
+| `tags` | `array` |  |
+| `reviewed` | `boolean` | Mark the asset as reviewed |
+| `revoked` | `boolean` |  |
+
+
+**Outputs**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `uuid` | `string` | The identifier of the asset |
+| `entity_uuid` | `` |  |
+| `community_uuid` | `string` | The community of the asset |
+| `name` | `string` | The name of the asset |
+| `type` | `string` | The type of the asset |
+| `category` | `['object', 'string', 'null']` | The category of the asset |
+| `criticality` | `['integer', 'null']` |  |
+| `created_at` | `` | The creation date of the asset |
+| `created_by` | `` |  |
+| `created_by_type` | `['string', 'null']` |  |
+| `updated_at` | `` | The modification date of the asset |
+| `first_seen` | `` |  |
+| `last_seen` | `` |  |
+| `nb_events` | `['integer', 'null']` |  |
+| `nb_alerts` | `['integer', 'null']` |  |
+| `nb_atoms` | `integer` |  |
+| `atoms` | `['object', 'null']` |  |
+| `props` | `['object', 'null']` |  |
+| `tags` | `array` |  |
+| `revoked` | `boolean` |  |
+| `revoked_at` | `` |  |
+| `revoked_by` | `` |  |
+| `reviewed` | `boolean` |  |
+| `reviewed_at` | `` |  |
+| `reviewed_by` | `` |  |
+| `source` | `string` |  |
+| `rule_uuid` | `` |  |
+| `rule_version` | `['string', 'null']` |  |
+| `criticity` | `['object', 'null']` | The criticality of the asset |
+| `asset_type` | `['object', 'null']` | The type of the asset |
 
 ### Edit case
 
@@ -1966,4 +2123,4 @@ Update a rule
 
 ## Extra
 
-Module **`Sekoia.io` v2.68.2**
+Module **`Sekoia.io` v2.68.16**

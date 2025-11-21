@@ -111,7 +111,6 @@ This section demonstrates how the raw logs will be transformed by our parsers. I
             "address": "1.1.1.1",
             "bytes": 1359,
             "geo": {
-                "country_iso_code": "FR",
                 "country_name": "France"
             },
             "ip": "1.1.1.1",
@@ -232,7 +231,6 @@ This section demonstrates how the raw logs will be transformed by our parsers. I
             "bytes": 1077,
             "geo": {
                 "city_name": "Paris",
-                "country_iso_code": "FR",
                 "country_name": "France",
                 "postal_code": "35750"
             },
@@ -453,7 +451,6 @@ This section demonstrates how the raw logs will be transformed by our parsers. I
             "bytes": 1869,
             "geo": {
                 "city_name": "Camping",
-                "country_iso_code": "FR",
                 "country_name": "France"
             },
             "ip": "1.2.3.4",
@@ -570,7 +567,6 @@ This section demonstrates how the raw logs will be transformed by our parsers. I
             "address": "1.2.3.4",
             "bytes": 2056,
             "geo": {
-                "country_iso_code": "FR",
                 "country_name": "France"
             },
             "ip": "1.2.3.4",
@@ -712,9 +708,6 @@ This section demonstrates how the raw logs will be transformed by our parsers. I
         "source": {
             "address": "1.2.3.4",
             "bytes": 2088,
-            "geo": {
-                "country_iso_code": "FR"
-            },
             "ip": "1.2.3.4",
             "mac": "00:11:22:33:44:55",
             "nat": {
@@ -875,7 +868,6 @@ This section demonstrates how the raw logs will be transformed by our parsers. I
             "address": "1.2.3.4",
             "bytes": 2376,
             "geo": {
-                "country_iso_code": "FR",
                 "country_name": "United-Kingdom"
             },
             "ip": "1.2.3.4",
@@ -998,7 +990,6 @@ This section demonstrates how the raw logs will be transformed by our parsers. I
             "address": "1.2.3.4",
             "bytes": 4486,
             "geo": {
-                "country_iso_code": "MAR",
                 "country_name": "France"
             },
             "ip": "1.2.3.4",
@@ -1102,7 +1093,6 @@ This section demonstrates how the raw logs will be transformed by our parsers. I
             "address": "1.2.3.1",
             "bytes": 1406,
             "geo": {
-                "country_iso_code": "FR",
                 "country_name": "France"
             },
             "ip": "1.2.3.1",
@@ -1227,7 +1217,6 @@ The following table lists the fields that are extracted, normalized under the EC
 |`sophos.threat_center.worker.id` | `keyword` | Process worker ID (it's a text not a number) |
 |`source.bytes` | `long` | Bytes sent from the source to the destination. |
 |`source.geo.city_name` | `keyword` | City name. |
-|`source.geo.country_iso_code` | `keyword` | Country ISO code. |
 |`source.geo.country_name` | `keyword` | Country name. |
 |`source.geo.postal_code` | `keyword` | Postal code. |
 |`source.ip` | `ip` | IP address of the source. |

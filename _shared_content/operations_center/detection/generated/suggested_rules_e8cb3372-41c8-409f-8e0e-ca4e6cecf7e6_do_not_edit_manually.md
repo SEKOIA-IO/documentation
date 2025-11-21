@@ -3,6 +3,12 @@
 The following Sekoia.io built-in rules match the intake **IBM AIX**. This documentation is updated automatically and is based solely on the fields used by the intake which are checked against our rules. This means that some rules will be listed but might not be relevant with the intake.
 
 [SEKOIA.IO x IBM AIX on ATT&CK Navigator](https://mitre-attack.github.io/attack-navigator/#layerURL=https%3A%2F%2Fraw.githubusercontent.com%2FSEKOIA-IO%2Fdocumentation%2Fmain%2F_shared_content%2Foperations_center%2Fdetection%2Fgenerated%2Fattack_e8cb3372-41c8-409f-8e0e-ca4e6cecf7e6_do_not_edit_manually.json){ .md-button }
+??? abstract "ACLight Discovering Privileged Accounts"
+    
+    Detects use of ACLight tool. This tool aims to discover privileged accounts by scanning the network.
+    
+    - **Effort:** advanced
+
 ??? abstract "AMSI Deactivation Using Registry Key"
     
     The rule detects attempts to deactivate/disable the AMSI provider by deleting the associated registry key.
@@ -69,6 +75,12 @@ The following Sekoia.io built-in rules match the intake **IBM AIX**. This docume
     
     - **Effort:** master
 
+??? abstract "AppleScript Password Prompt"
+    
+    Detects when a prompt is displayed to gain credentials. This technique is used by MacOS malware to obtain the user's password.
+    
+    - **Effort:** advanced
+
 ??? abstract "Attempt to Disable Gatekeeper Execution Control"
     
     Detects attempts to disable Gatekeeper through the command line. Gatekeeper is a macOS feature designed to ensure that only trusted, signed software can be executed.
@@ -123,6 +135,12 @@ The following Sekoia.io built-in rules match the intake **IBM AIX**. This docume
     
     - **Effort:** intermediate
 
+??? abstract "COM Hijack Via Sdclt"
+    
+    Detects changes to 'HKCU\Software\Classes\Folder\shell\open\command\DelegateExecute', to bypass UAC using 'sdclt.exe'.
+    
+    - **Effort:** intermediate
+
 ??? abstract "CVE-2017-11882 Microsoft Office Equation Editor Vulnerability"
     
     Detects the exploitation of CVE-2017-11882 vulnerability. The Microsoft Office Equation Editor has no reason to do a network request or drop an executable file. This requires a sysmon configuration with file and network events.
@@ -168,6 +186,12 @@ The following Sekoia.io built-in rules match the intake **IBM AIX**. This docume
 ??? abstract "Change Default File Association"
     
     When a file is opened, the default program used to open the file (also called the file association or handler) is checked. File association selections are stored in the Windows Registry and can be edited by users, administrators, or programs that have Registry access or by administrators using the built-in assoc utility. Applications can modify the file association for a given file extension to call an arbitrary program when a file with the given extension is opened.
+    
+    - **Effort:** advanced
+
+??? abstract "Chflags Hidden"
+    
+    Detects the use of the hidden flag by the utility chflags to hide files and directories.
     
     - **Effort:** advanced
 
@@ -248,6 +272,18 @@ The following Sekoia.io built-in rules match the intake **IBM AIX**. This docume
     Detects copy of files with well-known filenames (sensitive files with credential data) using esentutl. This requires Windows Security event log with the Detailed File Share logging policy enabled.
     
     - **Effort:** elementary
+
+??? abstract "Correlation Admin Files Checked On Network Share"
+    
+    Detects requests to multiple admin files on a network share. This could be an attacker performing reconnaissance steps on the system.
+    
+    - **Effort:** advanced
+
+??? abstract "Correlation Multi Service Disable"
+    
+    The rule detects a high number of services stopped or de-activated in a short period of time.
+    
+    - **Effort:** master
 
 ??? abstract "Credential Dump Tools Related Files"
     
@@ -345,6 +381,12 @@ The following Sekoia.io built-in rules match the intake **IBM AIX**. This docume
     
     - **Effort:** advanced
 
+??? abstract "Discovery Commands Correlation"
+    
+    Detects some frequent discovery commands used by some ransomware operators.
+    
+    - **Effort:** intermediate
+
 ??? abstract "Dism Disabling Windows Defender"
     
     Detects windows defender disabled by dism.
@@ -375,6 +417,12 @@ The following Sekoia.io built-in rules match the intake **IBM AIX**. This docume
     
     - **Effort:** elementary
 
+??? abstract "Dscl Authonly"
+    
+    Detects the use of the command dscl with authonly used to verify the password of a user and for authentification. An attacker can abuse this command to gain credentials.
+    
+    - **Effort:** advanced
+
 ??? abstract "Dynamic DNS Contacted"
     
     Detect communication with dynamic dns domain. This kind of domain is often used by attackers. This rule can trigger false positive in non-controlled environment because dynamic dns is not always malicious.
@@ -392,6 +440,12 @@ The following Sekoia.io built-in rules match the intake **IBM AIX**. This docume
     Detects a command that clears or disables any ETW Trace log which could indicate a logging evasion
     
     - **Effort:** intermediate
+
+??? abstract "Elevated Msiexec Via Repair Functionality"
+    
+    Detects when msiexec.exe is used with the repair functionality. The process gains elevated privileges. Attackers can use this to exploit the CVE-2024-38014.
+    
+    - **Effort:** master
 
 ??? abstract "Elise Backdoor"
     
@@ -495,6 +549,18 @@ The following Sekoia.io built-in rules match the intake **IBM AIX**. This docume
     
     - **Effort:** master
 
+??? abstract "HTA Infection Chains"
+    
+    Detect the creation of a ZIP file and an HTA file as it is often used in infection chains. Furthermore it also detects the use of suspicious processes launched by explorer.exe combined with the creation of an HTA file, since it is also often used in infection chains (LNK - HTA for instance).
+    
+    - **Effort:** advanced
+
+??? abstract "HTML Smuggling Suspicious Usage"
+    
+    Based on several samples from different botnets, this rule aims at detecting HTML infection chain by looking for HTML created files followed by suspicious files being executed.
+    
+    - **Effort:** advanced
+
 ??? abstract "HackTools Suspicious Names"
     
     Quick-win rule to detect the default process names or file names of several HackTools.
@@ -531,6 +597,18 @@ The following Sekoia.io built-in rules match the intake **IBM AIX**. This docume
     
     - **Effort:** elementary
 
+??? abstract "ISO LNK Infection Chain"
+    
+    Detection of an ISO (or any other similar archive file) downloaded file, followed by a child-process of explorer, which is characteristic of an infection using an ISO containing an LNK file. For events with `host.name`.
+    
+    - **Effort:** master
+
+??? abstract "Information Stealer Downloading Legitimate Third-Party DLLs"
+    
+    Detects operations that involved legitimate third-party DLLs used by information-stealing malware for data collection on the infected host. This detection rule correlates at least 7 events including the following DLLs - freebl3.dll, vcruntime140.dll, msvcp140.dll, nss3.dll, sqlite3.dll, softokn3.dll, mozglue.dll and libcurl.dll. This behaviour matches activities of several widespread stealer like Vidar, Raccoon Stealer v2, Mars Stealer, etc.
+    
+    - **Effort:** intermediate
+
 ??? abstract "Inhibit System Recovery Deleting Backups"
     
     Detects adversaries attempts to delete backups or inhibit system recovery. This rule relies on differents known techniques using Windows events logs from Sysmon (ID 1), and PowerShell (ID 4103, 4104).
@@ -548,6 +626,12 @@ The following Sekoia.io built-in rules match the intake **IBM AIX**. This docume
     Detects suspicious Invoke-TheHash PowerShell commandlet used for performing pass the hash WMI and SMB tasks.
     
     - **Effort:** elementary
+
+??? abstract "JS PowerShell Infection Chains"
+    
+    Detect JS script execution who run a PowerShell download and exec command_line
+    
+    - **Effort:** intermediate
 
 ??? abstract "KeePass Config XML In Command-Line"
     
@@ -1155,6 +1239,12 @@ The following Sekoia.io built-in rules match the intake **IBM AIX**. This docume
     
     - **Effort:** advanced
 
+??? abstract "Reconnaissance Commands Activities"
+    
+    Based on Cynet, Microsoft and Kaspersky analysis of Qakbot, this rule tries to detect some discovery TTPs.
+    
+    - **Effort:** intermediate
+
 ??? abstract "RedMimicry Winnti Playbook Registry Manipulation"
     
     Detects actions caused by the RedMimicry Winnti playbook. Logging for Registry events is needed in the Sysmon configuration (events 12 and 13).
@@ -1178,6 +1268,12 @@ The following Sekoia.io built-in rules match the intake **IBM AIX**. This docume
     Detect artifacts related to the installation or execution of the Remote Monitoring and Management tool Atera.
     
     - **Effort:** master
+
+??? abstract "Remote System Discovery Via Telnet"
+    
+    Detects use of the protocol telnet to access information.
+    
+    - **Effort:** advanced
 
 ??? abstract "Rubeus Tool Command-line"
     
@@ -1203,6 +1299,12 @@ The following Sekoia.io built-in rules match the intake **IBM AIX**. This docume
     
     - **Effort:** intermediate
 
+??? abstract "SSH Reverse Socks"
+    
+    Detects the usage of the -R option combined with StrictHostKeyChecking, which is an indication of using SSH for reverse socks.
+    
+    - **Effort:** intermediate
+
 ??? abstract "Schtasks Persistence With High Privileges"
     
     Detection of scheduled task with high privileges used by attacker for persistence.
@@ -1220,6 +1322,12 @@ The following Sekoia.io built-in rules match the intake **IBM AIX**. This docume
     Detects command line used to create and list shadow copies. An adversary may attempt to get information on shadow volumes to perform deletion or extract password hashes from the ntds.dit file. This rule requires command line logging or Windows PowerShell events (4104).
     
     - **Effort:** master
+
+??? abstract "Shell PID Injection"
+    
+    Detects when shells PID are listed and injected in another process. It can be performed to reuse sudo token related to shell in order to elevate privilege and maintain persistence.
+    
+    - **Effort:** intermediate
 
 ??? abstract "Socat Relaying Socket"
     
@@ -1242,6 +1350,12 @@ The following Sekoia.io built-in rules match the intake **IBM AIX**. This docume
 ??? abstract "Spyware Persistence Using Schtasks"
     
     Detects possible Agent Tesla or Formbook persistence using schtasks. The name of the scheduled task used by these malware is very specific (Updates/randomstring).
+    
+    - **Effort:** intermediate
+
+??? abstract "Startup Item Created"
+    
+    Detects when a item is added to the startup directory. An attacker can use this establish persistence.
     
     - **Effort:** intermediate
 
@@ -1389,9 +1503,9 @@ The following Sekoia.io built-in rules match the intake **IBM AIX**. This docume
     
     - **Effort:** advanced
 
-??? abstract "Suspicious Rundll32.exe Execution"
+??? abstract "Suspicious Rundll32.exe Executions"
     
-    The process rundll32.exe executes a newly dropped DLL with update /i in the command line. This specific technic was observed at least being used by the IcedID loading mechanism dubbed Gziploader.
+    The process rundll32.exe executes a newly dropped DLL with update /i in the command line. This specific technic was observed at least being used by the IcedID loading mechanism dubbed Gziploader. Some other detections are related to LOLBAS (Living Off The Land Binaries, Scripts and Libraries) usages (like the COM registering).
     
     - **Effort:** intermediate
 
@@ -1448,6 +1562,12 @@ The following Sekoia.io built-in rules match the intake **IBM AIX**. This docume
     System info discovery, attempt to detects basic command use to fingerprint a host.
     
     - **Effort:** master
+
+??? abstract "System Network Connections Discovery"
+    
+    Detects system network connections discovery via powershell and cmd.
+    
+    - **Effort:** advanced
 
 ??? abstract "TOR Usage Generic Rule"
     
@@ -1509,6 +1629,12 @@ The following Sekoia.io built-in rules match the intake **IBM AIX**. This docume
     
     - **Effort:** master
 
+??? abstract "User Added To Admin Group Via Cmd"
+    
+    Detects the use of different commands to add a user to an admin group.
+    
+    - **Effort:** advanced
+
 ??? abstract "Venom Multi-hop Proxy agent detection"
     
     Detects Venom Multi-hop Proxy agent.
@@ -1520,6 +1646,12 @@ The following Sekoia.io built-in rules match the intake **IBM AIX**. This docume
     Detects wceaux.dll creation while Windows Credentials Editor (WCE) is executed.
     
     - **Effort:** intermediate
+
+??? abstract "WMI Fingerprint Commands"
+    
+    Detects attacker fingerprint activities based on the correlation of specific WMIC commands. This has been observed with Aurora malware.
+    
+    - **Effort:** advanced
 
 ??? abstract "WMI Install Of Binary"
     
@@ -1563,6 +1695,12 @@ The following Sekoia.io built-in rules match the intake **IBM AIX**. This docume
     
     - **Effort:** master
 
+??? abstract "WerFaultSecure Abuse"
+    
+    Detect usage of the software vulnerability of WerFaultSecure to suspend the processes of EDRs, and bypass detection. It has been implemented in the tool EDR-Freeze.
+    
+    - **Effort:** advanced
+
 ??? abstract "WiFi Credentials Harvesting Using Netsh"
     
     Detects the harvesting of WiFi credentials using netsh.exe.
@@ -1587,6 +1725,12 @@ The following Sekoia.io built-in rules match the intake **IBM AIX**. This docume
     
     - **Effort:** master
 
+??? abstract "Windows Sandbox Start"
+    
+    Detection of Windows Sandbox started from the command line with a config file or interactively using a WSB file.
+    
+    - **Effort:** master
+
 ??? abstract "Wmic Process Call Creation"
     
     The WMI command-line (WMIC) utility provides a command-line interface for Windows Management Instrumentation (WMI). WMIC is compatible with existing shells and utility commands. Although WMI is supposed to be an administration tool, it is wildy abused by threat actors. One of the reasons is WMI is quite stealthy. This rule detects the wmic command line launching a process on a remote or local host.
@@ -1599,6 +1743,12 @@ The following Sekoia.io built-in rules match the intake **IBM AIX**. This docume
     
     - **Effort:** intermediate
 
+??? abstract "Wmic Suspicious Commands"
+    
+    Detects suspicious commands used by the process wmic to get informations on the system.
+    
+    - **Effort:** advanced
+
 ??? abstract "XCopy Suspicious Usage"
     
     Detects the usage of xcopy with suspicious command line options (used by Judgment Panda APT in the past). The rule is based on command line only in case xcopy is renamed.
@@ -1610,6 +1760,12 @@ The following Sekoia.io built-in rules match the intake **IBM AIX**. This docume
     Detection of an attack where adversaries may bypass application control and obscure execution of code by embedding scripts inside XSL files. Another variation of this technique, dubbed "Squiblytwo", involves to invoke JScript or VBScript within an XSL file.
     
     - **Effort:** intermediate
+
+??? abstract "ZIP LNK Infection Chain"
+    
+    Detection of an ZIP download followed by a child-process of explorer, followed by multiple Windows processes.This is widely used as an infection chain mechanism.
+    
+    - **Effort:** advanced
 
 ??? abstract "xWizard Execution"
     

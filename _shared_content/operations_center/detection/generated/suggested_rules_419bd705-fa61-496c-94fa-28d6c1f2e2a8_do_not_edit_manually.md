@@ -243,6 +243,12 @@ The following Sekoia.io built-in rules match the intake **Broadcom/Symantec Endp
     
     - **Effort:** advanced
 
+??? abstract "Linux Masquerading Space After Name"
+    
+    This detection rule identifies a process created from an executable with a space appended to the end of the name.
+    
+    - **Effort:** intermediate
+
 ??? abstract "Network Scanning and Discovery"
     
     Tools and command lines used for network discovery from current system
@@ -452,3 +458,9 @@ The following Sekoia.io built-in rules match the intake **Broadcom/Symantec Endp
     Detects file writes through WMI script event consumer.
     
     - **Effort:** advanced
+
+??? abstract "Windows Sandbox Start"
+    
+    Detection of Windows Sandbox started from the command line with a config file or interactively using a WSB file.
+    
+    - **Effort:** master

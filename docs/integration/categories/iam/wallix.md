@@ -7,7 +7,7 @@ WALLIX Bastion is a “Privileged Access Management” solution.
 
 
 - **Vendor**: Wallix
-- **Supported environment**: SaaS
+- **Supported environment**: SaaS & OnPrem
 - **Detection based on**: Telemetry
 - **Supported application or feature**: Authentication logs
 
