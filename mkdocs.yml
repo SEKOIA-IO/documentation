@@ -276,6 +276,7 @@ nav:
       - Tenable Identity Exposure / Alsid: integration/categories/iam/alsid.md
       - Azure Key Vault: integration/categories/iam/azure_key_vault.md
       - Cisco Duo Security: integration/categories/iam/cisco_duo_security.md
+      - Cyberark Digital Vault: integration/categories/iam/cyberark_vault.md
       - CyberArk Identity Audit Logs: integration/categories/iam/cyberark_identity_audit_logs.md
       - FreeRADIUS: integration/categories/iam/freeradius.md
       - Jumpcloud Directory Insights: integration/categories/iam/jumpcloud_directory_insights.md
@@ -288,7 +289,6 @@ nav:
       - Rubycat PROVE IT: integration/categories/iam/rubycat_prove_it.md
       - SentinelOne Singularity Identity: integration/categories/iam/sentinelone_identity.md
       - Wallix: integration/categories/iam/wallix.md
-      - Cyberark Digital Vault: integration/categories/iam/cyberark_vault.md
     - Network:
       - Amazon VPC Flow Logs: integration/categories/network/aws_flow_logs.md
       - Azure Application Gateway: integration/categories/network/azure_application_gateway.md
