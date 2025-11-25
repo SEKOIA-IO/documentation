@@ -1,4 +1,4 @@
-Rules catalog includes **1056 built-in detection rules** ([_last update on 2025-11-18_](rules_changelog.md)).
+Rules catalog includes **1057 built-in detection rules** ([_last update on 2025-11-25_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Identity Information**
 
@@ -12444,6 +12444,12 @@ Rules catalog includes **1056 built-in detection rules** ([_last update on 2025-
     
 **Multi-Factor Authentication Interception**
 
+??? abstract "Entra ID Sign-In Via Known AiTM Phishing Kit (CEPHAS 2FA)"
+    
+    Detects a sign-in attempt with known characteristics of the adversary-in-the-middle phishing kit CEPHAS 2FA.
+    
+    - **Effort:** elementary
+    
 ??? abstract "Entra ID Sign-In Via Known AiTM Phishing Kit (Gabagool)"
     
     Detects a sign-in attempt with known characteristics of the adversary-in-the-middle phishing kit Gabagool. The `filter_password_spraying` exclusion corresponds to a password spraying tool which is already detected by the rule `Entra ID Password Compromised By Known Credential Testing Tool`.
@@ -12762,6 +12768,12 @@ Rules catalog includes **1056 built-in detection rules** ([_last update on 2025-
     Detect a possible NTLM Relay attack combine with authent coerce
     
     - **Effort:** intermediate
+    
+??? abstract "Entra ID Sign-In Via Known AiTM Phishing Kit (CEPHAS 2FA)"
+    
+    Detects a sign-in attempt with known characteristics of the adversary-in-the-middle phishing kit CEPHAS 2FA.
+    
+    - **Effort:** elementary
     
 ??? abstract "Entra ID Sign-In Via Known AiTM Phishing Kit (Gabagool)"
     
@@ -14032,6 +14044,12 @@ Rules catalog includes **1056 built-in detection rules** ([_last update on 2025-
     Detect a possible NTLM Relay attack combine with authent coerce
     
     - **Effort:** intermediate
+    
+??? abstract "Entra ID Sign-In Via Known AiTM Phishing Kit (CEPHAS 2FA)"
+    
+    Detects a sign-in attempt with known characteristics of the adversary-in-the-middle phishing kit CEPHAS 2FA.
+    
+    - **Effort:** elementary
     
 ??? abstract "Entra ID Sign-In Via Known AiTM Phishing Kit (Gabagool)"
     
