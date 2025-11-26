@@ -1,5 +1,5 @@
 uuid: d2fb32f0-b722-4a32-ba9f-598215a8aacd
-name: Trellix Advanced Threat Defense
+name: Trellix Advanced Threat Defense [ Beta ]
 type: intake
 
 ## Overview
