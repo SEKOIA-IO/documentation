@@ -71,4 +71,6 @@ The Advanced Threat Defense Appliances are purpose-built, scalable, and flexible
 
 {!_shared_content/integration/detection_section.md!}
 
+{!_shared_content/operations_center/detection/generated/suggested_rules_d2fb32f0-b722-4a32-ba9f-598215a8aacd_do_not_edit_manually.md!}
+
 {!_shared_content/operations_center/integrations/generated/d2fb32f0-b722-4a32-ba9f-598215a8aacd.md!}
