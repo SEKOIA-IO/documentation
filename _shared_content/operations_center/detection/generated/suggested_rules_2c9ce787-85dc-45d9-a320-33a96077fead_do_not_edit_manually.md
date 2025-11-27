@@ -3,6 +3,24 @@
 The following Sekoia.io built-in rules match the intake **Forcepoint Next-Generation Firewall [BETA]**. This documentation is updated automatically and is based solely on the fields used by the intake which are checked against our rules. This means that some rules will be listed but might not be relevant with the intake.
 
 [SEKOIA.IO x Forcepoint Next-Generation Firewall [BETA] on ATT&CK Navigator](https://mitre-attack.github.io/attack-navigator/#layerURL=https%3A%2F%2Fraw.githubusercontent.com%2FSEKOIA-IO%2Fdocumentation%2Fmain%2F_shared_content%2Foperations_center%2Fdetection%2Fgenerated%2Fattack_2c9ce787-85dc-45d9-a320-33a96077fead_do_not_edit_manually.json){ .md-button }
+??? abstract "ACLight Discovering Privileged Accounts"
+    
+    Detects use of ACLight tool. This tool aims to discover privileged accounts by scanning the network.
+    
+    - **Effort:** advanced
+
+??? abstract "AMSI Deactivation Using Registry Key"
+    
+    The rule detects attempts to deactivate/disable the AMSI provider by deleting the associated registry key.
+    
+    - **Effort:** master
+
+??? abstract "AccCheckConsole Executing Dll"
+    
+    Detects suspicious LOLBIN AccCheckConsole execution with parameters as used to load an arbitrary DLL.
+    
+    - **Effort:** advanced
+
 ??? abstract "Account Added To A Security Enabled Group"
     
     Detection in order to investigate who has added a specific Domain User in Domain Admins or Group Policy Creator Owners (Security event 4728)
@@ -15,17 +33,41 @@ The following Sekoia.io built-in rules match the intake **Forcepoint Next-Genera
     
     - **Effort:** master
 
+??? abstract "Active Directory Data Export Using Csvde"
+    
+    Detects the use of Csvde, a command-line tool from Windows Server that can be used to export Active Directory data to CSV files. This export doesn't include password hashes, but can be used as a discovery tool to enumerate users, machines and group memberships.
+    
+    - **Effort:** elementary
+
+??? abstract "Active Directory Database Dump Via Ntdsutil"
+    
+    Detects the dump of ntdis.dit database by using the utility ntdsutil.exe. NTDS.dit database stores Active Directory data, including passwords hashes for all users in the domain.
+    
+    - **Effort:** elementary
+
 ??? abstract "AdFind Usage"
     
     Detects the usage of the AdFind tool. AdFind.exe is a free tool that extracts information from Active Directory.  Wizard Spider (Bazar, TrickBot, Ryuk), FIN6 and MAZE operators have used AdFind.exe to collect information about Active Directory organizational units and trust objects 
     
     - **Effort:** elementary
 
+??? abstract "Add User to Privileged Group"
+    
+    Add user in a potential privileged group which can be used to elevate privileges on the system.
+    
+    - **Effort:** advanced
+
 ??? abstract "Address Space Layout Randomization (ASLR) Alteration"
     
     ASLR is a security feature used by the Operating System to mitigate memory exploit, attacker might want to disable it
     
     - **Effort:** intermediate
+
+??? abstract "Adexplorer Usage"
+    
+    Detects the usage of Adexplorer, a legitimate tool from the Sysinternals suite that could be abused by attackers as it can saves snapshots of the Active Directory Database.
+    
+    - **Effort:** advanced
 
 ??? abstract "Adidnsdump Enumeration"
     
@@ -38,6 +80,24 @@ The following Sekoia.io built-in rules match the intake **Forcepoint Next-Genera
     Detects the use of Advanced IP Scanner. Seems to be a popular tool for ransomware groups.
     
     - **Effort:** master
+
+??? abstract "AppleScript Password Prompt"
+    
+    Detects when a prompt is displayed to gain credentials. This technique is used by MacOS malware to obtain the user's password.
+    
+    - **Effort:** advanced
+
+??? abstract "Aspnet Compiler"
+    
+    Detects the starts of aspnet compiler.
+    
+    - **Effort:** advanced
+
+??? abstract "Attempt to Disable Gatekeeper Execution Control"
+    
+    Detects attempts to disable Gatekeeper through the command line. Gatekeeper is a macOS feature designed to ensure that only trusted, signed software can be executed.
+    
+    - **Effort:** elementary
 
 ??? abstract "Audio Capture via PowerShell"
     
@@ -81,6 +141,30 @@ The following Sekoia.io built-in rules match the intake **Forcepoint Next-Genera
     
     - **Effort:** elementary
 
+??? abstract "CMSTP Execution"
+    
+    Detects various indicators of Microsoft Connection Manager Profile Installer execution
+    
+    - **Effort:** intermediate
+
+??? abstract "COM Hijack Via Sdclt"
+    
+    Detects changes to 'HKCU\Software\Classes\Folder\shell\open\command\DelegateExecute', to bypass UAC using 'sdclt.exe'.
+    
+    - **Effort:** intermediate
+
+??? abstract "CVE-2017-11882 Microsoft Office Equation Editor Vulnerability"
+    
+    Detects the exploitation of CVE-2017-11882 vulnerability. The Microsoft Office Equation Editor has no reason to do a network request or drop an executable file. This requires a sysmon configuration with file and network events.
+    
+    - **Effort:** master
+
+??? abstract "Capture a network trace with netsh.exe"
+    
+    Detects capture a network trace via netsh.exe trace functionality
+    
+    - **Effort:** advanced
+
 ??? abstract "CertOC Loading Dll"
     
     Detects when a user installs certificates by using CertOC.exe to loads the target DLL file.
@@ -105,9 +189,27 @@ The following Sekoia.io built-in rules match the intake **Forcepoint Next-Genera
     
     - **Effort:** advanced
 
+??? abstract "Chflags Hidden"
+    
+    Detects the use of the hidden flag by the utility chflags to hide files and directories.
+    
+    - **Effort:** advanced
+
 ??? abstract "Clear EventLogs Through CommandLine"
     
     Detects a command that clears event logs which could indicate an attempt from an attacker to erase its previous traces.
+    
+    - **Effort:** intermediate
+
+??? abstract "Cmdkey Cached Credentials Recon"
+    
+    Detects usage of cmdkey to look for cached credentials.
+    
+    - **Effort:** intermediate
+
+??? abstract "Cobalt Strike Default Beacons Names"
+    
+    Detects the default names of Cobalt Strike beacons / payloads.
     
     - **Effort:** intermediate
 
@@ -122,6 +224,12 @@ The following Sekoia.io built-in rules match the intake **Forcepoint Next-Genera
     Detects component object model hijacking. An attacker can establish persistence with COM objects.
     
     - **Effort:** advanced
+
+??? abstract "Compress Data for Exfiltration via Archiver"
+    
+    Detects data compressed by specific tools.
+    
+    - **Effort:** master
 
 ??? abstract "Compression Followed By Suppression"
     
@@ -159,6 +267,42 @@ The following Sekoia.io built-in rules match the intake **Forcepoint Next-Genera
     
     - **Effort:** elementary
 
+??? abstract "Copying Sensitive Files With Credential Data"
+    
+    Detects copy of files with well-known filenames (sensitive files with credential data) using esentutl. This requires Windows Security event log with the Detailed File Share logging policy enabled.
+    
+    - **Effort:** elementary
+
+??? abstract "Correlation Multi Service Disable"
+    
+    The rule detects a high number of services stopped or de-activated in a short period of time.
+    
+    - **Effort:** master
+
+??? abstract "Correlation Netcat Infection Chain"
+    
+    Detect netcat connection to download et execute payload via piped bash
+    
+    - **Effort:** elementary
+
+??? abstract "Correlation Supicious Powershell Drop and Exec"
+    
+    Detects a PowerShell process that download and exec a payload
+    
+    - **Effort:** intermediate
+
+??? abstract "Credential Harvesting Via Vaultcmd.exe"
+    
+    Detects when the process vaultcmd is used for credential harvesting.
+    
+    - **Effort:** advanced
+
+??? abstract "Credentials Extraction"
+    
+    This rule aims to detect the use of a specific command to access some credentials without using mimikatz or another tool.
+    
+    - **Effort:** advanced
+
 ??? abstract "Cryptomining"
     
     Detection of domain names potentially related to cryptomining activities.
@@ -177,9 +321,21 @@ The following Sekoia.io built-in rules match the intake **Forcepoint Next-Genera
     
     - **Effort:** intermediate
 
+??? abstract "DNS Query For Iplookup"
+    
+    Detects dns query of observables tagged as iplookup.
+    
+    - **Effort:** master
+
 ??? abstract "DNS ServerLevelPluginDll Installation"
     
     Detects the installation of a plugin DLL via ServerLevelPluginDll parameter in Windows Registry or in command line, which can be used to execute code in context of the DNS server (restart required). To fully use this rule, prerequesites are logging for Registry events in the Sysmon configuration (events 12, 13 and 14).
+    
+    - **Effort:** master
+
+??? abstract "Data Compressed With Rar"
+    
+    An adversary may compress data in order to make it portable and minimize the amount of data sent over the network, this could be done the popular rar command line program.
     
     - **Effort:** master
 
@@ -213,9 +369,39 @@ The following Sekoia.io built-in rules match the intake **Forcepoint Next-Genera
     
     - **Effort:** elementary
 
+??? abstract "Disable Windows Defender Credential Guard"
+    
+    Detects registry keys being changed to disable Windows Defender Credential Guard. The rule requires to log Registry Keys modifications or creations, which can be done using Sysmon Event IDs 12,13 and 14.
+    
+    - **Effort:** master
+
 ??? abstract "Disabled IE Security Features"
     
     Detects from the command lines or the registry, changes that indicate unwanted modifications to registry keys that disable important Internet Explorer security features. This has been used by attackers during Operation Ke3chang.
+    
+    - **Effort:** advanced
+
+??? abstract "Discovery Commands Correlation"
+    
+    Detects some frequent discovery commands used by some ransomware operators.
+    
+    - **Effort:** intermediate
+
+??? abstract "Dism Disabling Windows Defender"
+    
+    Detects windows defender disabled by dism.
+    
+    - **Effort:** advanced
+
+??? abstract "Docker Escape Bind Mount"
+    
+    Catch Docker escape via mount escape followed by chroot 
+    
+    - **Effort:** intermediate
+
+??? abstract "Domain Group And Permission Enumeration"
+    
+    Detects adversaries attempts to find domain-level groups and permission settings. Commands such as net group /domain of the Net utility can list domain-level groups The knowledge of domain-level permission groups can help adversaries determine which groups exist and which users belong to a particular group. Adversaries may use this information to determine which users have elevated permissions, such as domain administrators. Wizard Spider, FIN6, and other groups used net in their campaigns.
     
     - **Effort:** advanced
 
@@ -230,6 +416,12 @@ The following Sekoia.io built-in rules match the intake **Forcepoint Next-Genera
     Detects attempts to gather information on domain trust relationships that may be used to identify lateral movement opportunities. "trustedDomain" which is detected here is a Microsoft Active Directory ObjectClass Type that represents a domain that is trusted by, or trusting, the local AD DOMAIN. Several tools are using LDAP queries in the end to get the information (DSQuery, sometimes ADFind as well, etc.)
     
     - **Effort:** elementary
+
+??? abstract "Dscl Authonly"
+    
+    Detects the use of the command dscl with authonly used to verify the password of a user and for authentification. An attacker can abuse this command to gain credentials.
+    
+    - **Effort:** advanced
 
 ??? abstract "Dynamic DNS Contacted"
     
@@ -249,11 +441,59 @@ The following Sekoia.io built-in rules match the intake **Forcepoint Next-Genera
     
     - **Effort:** intermediate
 
+??? abstract "Elevated Msiexec Via Repair Functionality"
+    
+    Detects when msiexec.exe is used with the repair functionality. The process gains elevated privileges. Attackers can use this to exploit the CVE-2024-38014.
+    
+    - **Effort:** master
+
+??? abstract "Elise Backdoor"
+    
+    Detects Elise backdoor activity as used by Lotus Blossom
+    
+    - **Effort:** elementary
+
+??? abstract "Empire Monkey Activity"
+    
+    Detects EmpireMonkey APT reported Activity
+    
+    - **Effort:** elementary
+
+??? abstract "Enable Root Account With Dsenableroot"
+    
+    Detects when root is enabled. Attackers can use this as a mean of persistence since root is disabled by default.
+    
+    - **Effort:** elementary
+
+??? abstract "Enabling Restricted Admin Mode"
+    
+    Detects when the restricted admin mode is enabled.
+    
+    - **Effort:** elementary
+
 ??? abstract "Equation Group DLL_U Load"
     
     Detects a specific tool and export used by EquationGroup
     
     - **Effort:** elementary
+
+??? abstract "Erase Shell History"
+    
+    Malware and attacker try to reduce their fingerprints on compromised host by deleting shell history.
+    
+    - **Effort:** advanced
+
+??? abstract "Exchange Mailbox Export"
+    
+    Detection of a standard Exchange Mailbox export, which stores all mails from a user in a pst file, from command line or PowerShell script.
+    
+    - **Effort:** intermediate
+
+??? abstract "Exfiltration And Tunneling Tools Execution"
+    
+    Execution of well known tools for data exfiltration and tunneling
+    
+    - **Effort:** advanced
 
 ??? abstract "Exfiltration Domain"
     
@@ -267,17 +507,71 @@ The following Sekoia.io built-in rules match the intake **Forcepoint Next-Genera
     
     - **Effort:** intermediate
 
+??? abstract "Exfiltration Via Pscp"
+    
+    Detects the use of pscp which is a file sharing services.
+    
+    - **Effort:** advanced
+
+??? abstract "Explorer Process Executing HTA File"
+    
+    Detects a suspicious execution of an HTA file by the explorer.exe process. This unusual activity was observed when running IcedID malspam.
+    
+    - **Effort:** intermediate
+
+??? abstract "Fail2ban Unban IP"
+    
+    An IP was ubaned by Fail2ban. It could be use to allow malicous traffic.
+    
+    - **Effort:** advanced
+
 ??? abstract "FromBase64String Command Line"
     
     Detects suspicious FromBase64String expressions in command line arguments.
     
     - **Effort:** master
 
+??? abstract "Generic-reverse-shell-oneliner"
+    
+    To bypass some security equipement or for a sack of simplicity attackers can open raw reverse shell using shell commands
+    
+    - **Effort:** intermediate
+
+??? abstract "Gpresult Usage"
+    
+    Detects when an account uses gpresult to get information on gpo.
+    
+    - **Effort:** advanced
+
+??? abstract "Grabbing Sensitive Hives Via Reg Utility"
+    
+    Detects dump of SAM, System or Security hives using reg.exe utility. Adversaries may attempt to dump these Windows Registry to retrieve password hashes and access credentials.
+    
+    - **Effort:** master
+
+??? abstract "HTML Smuggling Suspicious Usage"
+    
+    Based on several samples from different botnets, this rule aims at detecting HTML infection chain by looking for HTML created files followed by suspicious files being executed.
+    
+    - **Effort:** advanced
+
+??? abstract "HackTools Suspicious Names"
+    
+    Quick-win rule to detect the default process names or file names of several HackTools.
+    
+    - **Effort:** advanced
+
 ??? abstract "HackTools Suspicious Process Names In Command Line"
     
     Detects the default process name of several HackTools and also check in command line. This rule is here for quickwins as it obviously has many blind spots.
     
     - **Effort:** intermediate
+
+??? abstract "Hiding Files With Attrib.exe"
+    
+    Detects usage of attrib.exe to hide files from users.
+    
+    - **Effort:** advanced
 
 ??? abstract "High Privileges Network Share Removal"
     
@@ -297,17 +591,11 @@ The following Sekoia.io built-in rules match the intake **Forcepoint Next-Genera
     
     - **Effort:** intermediate
 
-??? abstract "Internet Scanner"
+??? abstract "Interactive Terminal Spawned via Python"
     
-    Detects known scanner IP addresses. Alert is only raised when the scan hits an opened port, on TCP or UDP. This could be a very noisy rule, so be careful to check your detection perimeter before activation.
+    Identifies when a terminal (tty) is spawned via Python. Attackers may upgrade a simple reverse shell to a fully interactive tty after obtaining initial access to a host.
     
-    - **Effort:** master
-
-??? abstract "Internet Scanner Target"
-    
-    Detects known scanner IP addresses. Alert is only raised when the scan hits an opened port, on TCP or UDP and group by target address. This could be a very noisy rule, so be careful to check your detection perimeter before activation.
-    
-    - **Effort:** master
+    - **Effort:** advanced
 
 ??? abstract "Invoke-TheHash Commandlets"
     
@@ -315,11 +603,23 @@ The following Sekoia.io built-in rules match the intake **Forcepoint Next-Genera
     
     - **Effort:** elementary
 
+??? abstract "JS PowerShell Infection Chains"
+    
+    Detect JS script execution who run a PowerShell download and exec command_line
+    
+    - **Effort:** intermediate
+
 ??? abstract "KeePass Config XML In Command-Line"
     
     Detects a command-line interaction with the KeePass Config XML file. It could be used to retrieve informations or to be abused for persistence.
     
     - **Effort:** intermediate
+
+??? abstract "Kernel Module Alteration"
+    
+    Kernel module installation can be used to configure system settings to automatically execute a program during system boot or logon to maintain persistence or gain higher-level privileges on compromised systems. The prerequisites are to enable monitoring of the finit_module, init_module, delete_module syscalls using Auditbeat.
+    
+    - **Effort:** advanced
 
 ??? abstract "Lazarus Loaders"
     
@@ -339,9 +639,27 @@ The following Sekoia.io built-in rules match the intake **Forcepoint Next-Genera
     
     - **Effort:** intermediate
 
+??? abstract "Linux Remove Immutable Attribute"
+    
+    Adversaries may used chattr utility to alter file and folder attributes to control sudden operations like the deletion and modification of files.
+    
+    - **Effort:** intermediate
+
 ??? abstract "Linux Shared Lib Injection Via Ldso Preload"
     
     Detect ld.so.preload modification for shared lib injection, technique used by attackers to load arbitrary code into process
+    
+    - **Effort:** intermediate
+
+??? abstract "Linux Suspicious Nohup Exec"
+    
+    Detects suspicious usage of nohup which could be leveraged by an attacker to keep a process running or break out from restricted environments
+    
+    - **Effort:** intermediate
+
+??? abstract "Linux Suspicious Search"
+    
+    Adversaries may search for private key on compromised systems
     
     - **Effort:** intermediate
 
@@ -384,6 +702,24 @@ The following Sekoia.io built-in rules match the intake **Forcepoint Next-Genera
 ??? abstract "MavInject Process Injection"
     
     Detects process injection using the signed Windows tool Mavinject32.exe (which is a LOLBAS)
+    
+    - **Effort:** intermediate
+
+??? abstract "Meterpreter or Cobalt Strike Getsystem Service Installation"
+    
+    Detects the use of getsystem Meterpreter/Cobalt Strike command by detecting some of the techniques being used (technique 1,2 and 5).
+    
+    - **Effort:** elementary
+
+??? abstract "Microsoft Defender Antivirus Disable Scheduled Tasks"
+    
+    The rule detects attempts to deactivate/disable Windows Defender scheduled tasks via command line or PowerShell scripts.
+    
+    - **Effort:** intermediate
+
+??? abstract "Microsoft Defender Antivirus Disable SecurityHealth"
+    
+    The rule detects attempts to deactivate/disable Windows Defender SecurityHealth through command line, PowerShell scripts, and registry. To fully use this rule Windows Registry logging is recommended.
     
     - **Effort:** intermediate
 
@@ -435,6 +771,12 @@ The following Sekoia.io built-in rules match the intake **Forcepoint Next-Genera
     
     - **Effort:** intermediate
 
+??? abstract "Microsoft IIS Module Installation"
+    
+    Detects the installation of a new IIS module from the command line. It can used used to backdoor an IIS/OWA/Sharepoint server.
+    
+    - **Effort:** advanced
+
 ??? abstract "Microsoft Office Macro Security Registry Modifications"
     
     Detects registry changes allowing an attacker to make Microsoft Office products runs Macros without warning. Events are collected either from ETW/Sysmon/EDR depending of the integration.
@@ -453,6 +795,12 @@ The following Sekoia.io built-in rules match the intake **Forcepoint Next-Genera
     
     - **Effort:** elementary
 
+??? abstract "Mshta JavaScript Execution"
+    
+    Identifies suspicious mshta.exe commands that execute JavaScript supplied as a command line argument.
+    
+    - **Effort:** elementary
+
 ??? abstract "Mustang Panda Dropper"
     
     Detects specific process parameters as used by Mustang Panda droppers
@@ -465,9 +813,21 @@ The following Sekoia.io built-in rules match the intake **Forcepoint Next-Genera
     
     - **Effort:** intermediate
 
+??? abstract "Net.exe User Account Creation"
+    
+    Identifies creation of local users via the net.exe command
+    
+    - **Effort:** master
+
 ??? abstract "NetSh Used To Disable Windows Firewall"
     
     Detects NetSh commands used to disable the Windows Firewall
+    
+    - **Effort:** advanced
+
+??? abstract "Netsh Allow Command"
+    
+    Netsh command line to allow a program to pass through firewall.
     
     - **Effort:** advanced
 
@@ -483,17 +843,65 @@ The following Sekoia.io built-in rules match the intake **Forcepoint Next-Genera
     
     - **Effort:** intermediate
 
+??? abstract "Netsh Port Opening"
+    
+    Detects netsh commands that opens a specific port. Can be used by malware or attackers for lateralisation/exfiltration (e.g. SMB/RDP opening).
+    
+    - **Effort:** master
+
 ??? abstract "Netsh RDP Port Forwarding"
     
     Detects netsh commands that configure a port forwarding of port 3389 used for RDP. This is commonly used by attackers during lateralization on windows environments.
     
     - **Effort:** elementary
 
+??? abstract "Netsh RDP Port Opening"
+    
+    Detects netsh commands that opens the port 3389 used for RDP, used in Sarwent Malware.
+    
+    - **Effort:** intermediate
+
+??? abstract "Network Connection Via Certutil"
+    
+    Identifies certutil.exe making a network connection. Adversaries could abuse certutil.exe to download a certificate, or malware, from a remote URL.
+    
+    - **Effort:** intermediate
+
+??? abstract "Network Scanning and Discovery"
+    
+    Tools and command lines used for network discovery from current system
+    
+    - **Effort:** advanced
+
+??? abstract "Network Share Discovery"
+    
+    Adversaries may look for folders and drives shared on remote systems as a means of identifying sources of information to gather as a precursor for Collection and to identify potential systems of interest for Lateral Movement. Networks often contain shared network drives and folders that enable users to access file directories on various systems across a network. File sharing over a Windows network occurs over the SMB protocol. This technique is frequently leveraged by threat actors such as APT32, APT41, Wizard Spider. But also, through the use of some malware such as Cobalt Strike, Empire, PlugX and Ramsay.
+    
+    - **Effort:** master
+
+??? abstract "Network Sniffing"
+    
+    List of common tools used for network packages sniffing
+    
+    - **Effort:** advanced
+
+??? abstract "Network Sniffing Windows"
+    
+    Network sniffing refers to using the network interface on a system to monitor or capture information sent over a wired or wireless connection. An adversary may place a network interface into promiscuous mode to passively access data in transit over the network, or use span ports to capture a larger amount of data.
+    
+    - **Effort:** intermediate
+
 ??? abstract "New DLL Added To AppCertDlls Registry Key"
     
     Dynamic-link libraries (DLLs) that are specified in the AppCertDLLs value in the Registry key can be abused to obtain persistence and privilege escalation by causing a malicious DLL to be loaded and run in the context of separate processes on the computer. Logging for Registry events is needed in the Sysmon configuration (events 12 and 13).
     
     - **Effort:** intermediate
+
+??? abstract "New Service Creation"
+    
+    Detects creation of a new service from command line
+    
+    - **Effort:** advanced
 
 ??? abstract "Ngrok Process Execution"
     
@@ -525,11 +933,29 @@ The following Sekoia.io built-in rules match the intake **Forcepoint Next-Genera
     
     - **Effort:** advanced
 
+??? abstract "Ntfsinfo Usage"
+    
+    Detects when the command ntfsinfo is used. An attacker can access to information on the volume from NTFS and have a directory dump of NTFS files.
+    
+    - **Effort:** advanced
+
 ??? abstract "Office Application Startup Office Test"
     
     Detects the addition of office test registry that allows a user to specify an arbitrary DLL that will be executed everytime an Office application is started. An adversaries may abuse the Microsoft Office "Office Test" Registry key to obtain persistence on a compromised system.
     
     - **Effort:** elementary
+
+??? abstract "Openfiles Usage"
+    
+    Detects when the command openfiles, to get information on files opened remotely, is used.
+    
+    - **Effort:** advanced
+
+??? abstract "Opening Of a Password File"
+    
+    Command line detection of common office software opening some password related file. It could be a security breach if an unauthorized user access it.
+    
+    - **Effort:** master
 
 ??? abstract "Outlook Registry Access"
     
@@ -548,6 +974,18 @@ The following Sekoia.io built-in rules match the intake **Forcepoint Next-Genera
     The Directory Service Restore Mode (DSRM) account is a local administrator account on Domain Controllers. Attackers may change the password to gain persistence.
     
     - **Effort:** intermediate
+
+??? abstract "PasswordDump SecurityXploded Tool"
+    
+    Detects the execution of the PasswordDump SecurityXploded Tool
+    
+    - **Effort:** elementary
+
+??? abstract "Permission Discovery Via Wmic"
+    
+    Detects discovery of permission on local groups via the tool wmic.
+    
+    - **Effort:** advanced
 
 ??? abstract "Phorpiex DriveMgr Command"
     
@@ -585,15 +1023,39 @@ The following Sekoia.io built-in rules match the intake **Forcepoint Next-Genera
     
     - **Effort:** advanced
 
+??? abstract "PowerShell Downgrade Attack"
+    
+    Detects PowerShell downgrade attack by comparing the host versions with the actually used engine version 2.0
+    
+    - **Effort:** elementary
+
+??? abstract "PowerShell Download From URL"
+    
+    Detects a Powershell process that contains download commands in its command line string.
+    
+    - **Effort:** advanced
+
 ??? abstract "PowerShell EncodedCommand"
     
     Detects popular file extensions in commands obfuscated in base64 run through the EncodedCommand option.
     
     - **Effort:** advanced
 
+??? abstract "PowerShell Execution Via Rundll32"
+    
+    Detects PowerShell Strings applied to rundll as seen in PowerShdll.dll Rule modified
+    
+    - **Effort:** intermediate
+
 ??? abstract "PowerShell Invoke Expression With Registry"
     
     Detects keywords from well-known PowerShell techniques to get registry key values
+    
+    - **Effort:** advanced
+
+??? abstract "PowerShell Malicious Nishang PowerShell Commandlets"
+    
+    Detects Commandlet names and arguments from the Nishang exploitation framework.
     
     - **Effort:** advanced
 
@@ -621,6 +1083,12 @@ The following Sekoia.io built-in rules match the intake **Forcepoint Next-Genera
     
     - **Effort:** advanced
 
+??? abstract "Powershell Web Request"
+    
+    Detects the use of various web request methods executed remotely via Windows PowerShell.
+    
+    - **Effort:** master
+
 ??? abstract "Powershell Web Request And Windows Script"
     
     Detects the use of PowerShell web request method combined with Windows Script utilities. This has been observed being used by some malware loaders.
@@ -638,6 +1106,12 @@ The following Sekoia.io built-in rules match the intake **Forcepoint Next-Genera
     Detects the use of comsvcs in command line to dump a specific process memory. This technique is used by attackers for privilege escalation and pivot.
     
     - **Effort:** intermediate
+
+??? abstract "Process Memory Dump Using Createdump"
+    
+    Detects the use of createdump.exe in command line to dump the memory of a process. This technique is used by attackers for privilege escalation and pivot.
+    
+    - **Effort:** elementary
 
 ??? abstract "Process Memory Dump Using Rdrleakdiag"
     
@@ -657,11 +1131,29 @@ The following Sekoia.io built-in rules match the intake **Forcepoint Next-Genera
     
     - **Effort:** advanced
 
+??? abstract "Putty Sessions Listing"
+    
+    Detects attempts to list Putty sessions through registry. To fully work, this rule requires to log registry accesses, which can be done with the Windows Event ID 4656 or 4663 but for that specific configuration is needed.
+    
+    - **Effort:** master
+
+??? abstract "Python Exfiltration Tools"
+    
+    Python has some built-in modules or library that could be installed and later be used as exflitration tool by an attacker
+    
+    - **Effort:** advanced
+
 ??? abstract "Python HTTP Server"
     
     Detects command used to start a Simple HTTP server in Python. Threat actors could use it for data extraction, hosting a webshell or else.
     
     - **Effort:** intermediate
+
+??? abstract "Python Offensive Tools and Packages"
+    
+    Track installation and usage of offensive python packages and project that are used for lateral movement.
+    
+    - **Effort:** master
 
 ??? abstract "QakBot Process Creation"
     
@@ -675,6 +1167,18 @@ The following Sekoia.io built-in rules match the intake **Forcepoint Next-Genera
     
     - **Effort:** intermediate
 
+??? abstract "RDP Session Discovery"
+    
+    Detects use of RDP session discovery via qwinsta or quser. Used by some threat actors to know if someone is working via RDP on a server.
+    
+    - **Effort:** advanced
+
+??? abstract "RTLO Character"
+    
+    Detects RTLO (Right-To-Left character) in file and process names.
+    
+    - **Effort:** elementary
+
 ??? abstract "Raccine Uninstall"
     
     Detects commands that indicate a Raccine removal from an end system. Raccine is a free ransomware protection tool.
@@ -686,6 +1190,12 @@ The following Sekoia.io built-in rules match the intake **Forcepoint Next-Genera
     Detects Rclone executable or Rclone execution by using the process name, the execution through a command obfuscated or not.
     
     - **Effort:** advanced
+
+??? abstract "Reconnaissance Commands Activities"
+    
+    Based on Cynet, Microsoft and Kaspersky analysis of Qakbot, this rule tries to detect some discovery TTPs.
+    
+    - **Effort:** intermediate
 
 ??? abstract "RedMimicry Winnti Playbook Registry Manipulation"
     
@@ -704,6 +1214,18 @@ The following Sekoia.io built-in rules match the intake **Forcepoint Next-Genera
     Detect artifacts related to the installation or execution of the Remote Monitoring and Management tool AnyDesk.
     
     - **Effort:** master
+
+??? abstract "Remote Monitoring and Management Software - Atera"
+    
+    Detect artifacts related to the installation or execution of the Remote Monitoring and Management tool Atera.
+    
+    - **Effort:** master
+
+??? abstract "Remote System Discovery Via Telnet"
+    
+    Detects use of the protocol telnet to access information.
+    
+    - **Effort:** advanced
 
 ??? abstract "Rubeus Tool Command-line"
     
@@ -729,11 +1251,29 @@ The following Sekoia.io built-in rules match the intake **Forcepoint Next-Genera
     
     - **Effort:** intermediate
 
+??? abstract "Schtasks Persistence With High Privileges"
+    
+    Detection of scheduled task with high privileges used by attacker for persistence.
+    
+    - **Effort:** elementary
+
 ??? abstract "Sekoia.io EICAR Detection"
     
     Detects observables in Sekoia.io CTI tagged as EICAR, which are fake samples meant to test detection.
     
     - **Effort:** master
+
+??? abstract "Shadow Copies"
+    
+    Detects command line used to create and list shadow copies. An adversary may attempt to get information on shadow volumes to perform deletion or extract password hashes from the ntds.dit file. This rule requires command line logging or Windows PowerShell events (4104).
+    
+    - **Effort:** master
+
+??? abstract "Shell PID Injection"
+    
+    Detects when shells PID are listed and injected in another process. It can be performed to reuse sudo token related to shell in order to elevate privilege and maintain persistence.
+    
+    - **Effort:** intermediate
 
 ??? abstract "Socat Relaying Socket"
     
@@ -783,11 +1323,23 @@ The following Sekoia.io built-in rules match the intake **Forcepoint Next-Genera
     
     - **Effort:** master
 
+??? abstract "Suspicious CodePage Switch with CHCP"
+    
+    Detects a code page switch in command line
+    
+    - **Effort:** intermediate
+
 ??? abstract "Suspicious CommandLine Lsassy Pattern"
     
     Detects the characteristic lsassy loop used to identify lsass PIDs
     
     - **Effort:** intermediate
+
+??? abstract "Suspicious Control Process"
+    
+    Detects suspicious execution of control.exe process when used to execute a DLL file.
+    
+    - **Effort:** advanced
 
 ??? abstract "Suspicious DLL Loading By Ordinal"
     
@@ -801,17 +1353,47 @@ The following Sekoia.io built-in rules match the intake **Forcepoint Next-Genera
     
     - **Effort:** intermediate
 
+??? abstract "Suspicious Double Extension"
+    
+    Detects suspicious use of an .exe extension after a non-executable file extension like .pdf.exe, a set of spaces or underlines to cloak the executable file in spearphishing campaigns
+    
+    - **Effort:** advanced
+
+??? abstract "Suspicious Finger Usage"
+    
+    Detects suspicious aged finger.exe tool execution often used in malware attacks nowadays. An attacker can use finger to silently retrieve a command, a script or a payload from a remote server. For example, the tool Darkfinger-C2 uses this technique to download files from the C2 channel.
+    
+    - **Effort:** intermediate
+
+??? abstract "Suspicious Headless Web Browser Execution To Download File"
+    
+    Detects a suspicious command used to execute a Chromium-based web browser (Chrome or Edge) using the headless mode, meaning that the browser window wouldn't be visible, and the dump mode to download a file. This technique can be used to fingerprint the compromised host, in particular by the Ducktail infostealer.
+    
+    - **Effort:** elementary
+
 ??? abstract "Suspicious Microsoft Defender Antivirus Exclusion Command"
     
     Detects PowerShell commands aiming to exclude path, process, IP address, or extension from scheduled and real-time scanning. These commands can be used by attackers or malware to avoid being detected by Windows Defender. Depending on the environment and the installed software, this detection rule could raise false positives. We recommend customizing this rule by filtering legitimate processes that use Windows Defender exclusion command in your environment.
     
     - **Effort:** master
 
+??? abstract "Suspicious Mshta Execution"
+    
+    Detects suspicious mshta.exe execution patterns, either involving file polyglotism, remote file (http, ftp or ldap) or suspicious location. This technique is often used by threat actors.
+    
+    - **Effort:** intermediate
+
 ??? abstract "Suspicious Netsh DLL Persistence"
     
     Detects persitence via netsh helper. Netsh interacts with other operating system components using dynamic-link library (DLL) files. Adversaries may establish persistence by executing malicious content triggered by Netsh Helper DLLs.
     
     - **Effort:** elementary
+
+??? abstract "Suspicious Network Args In Command Line"
+    
+    Detection on some commonly observed suspicious processes command lines using HTTP schema with port 443.
+    
+    - **Effort:** intermediate
 
 ??? abstract "Suspicious PowerShell Invocations - Generic"
     
@@ -837,6 +1419,18 @@ The following Sekoia.io built-in rules match the intake **Forcepoint Next-Genera
     
     - **Effort:** advanced
 
+??? abstract "Suspicious Regasm Regsvcs Usage"
+    
+    catch abuse of regsvcs and regasm lolbin by attacker
+    
+    - **Effort:** advanced
+
+??? abstract "Suspicious Regsvr32 Execution"
+    
+    Detects suspicious regsvr32.exe executions, either regsvr32 registering a DLL in an unusual repository (temp/, appdata/ or public/), or regsvr32 executed by an unusual parent process, or regsvr32 executing an unusual process, or regsvr32 registering a media file and not a DLL (as seen in IcedID campaigns), or regsvr32 registering a ocx file in appdata/.
+    
+    - **Effort:** advanced
+
 ??? abstract "Suspicious Rundll32.exe Executions"
     
     The process rundll32.exe executes a newly dropped DLL with update /i in the command line. This specific technic was observed at least being used by the IcedID loading mechanism dubbed Gziploader. Some other detections are related to LOLBAS (Living Off The Land Binaries, Scripts and Libraries) usages (like the COM registering).
@@ -849,11 +1443,29 @@ The following Sekoia.io built-in rules match the intake **Forcepoint Next-Genera
     
     - **Effort:** intermediate
 
+??? abstract "Suspicious VBS Execution Parameter"
+    
+    Detects suspicious VBS file execution with a specific parameter by cscript. It was observed in the Operation CloudHopper.
+    
+    - **Effort:** elementary
+
 ??? abstract "Suspicious Windows Installer Execution"
     
     Detects suspicious execution of the Windows Installer service (msiexec.exe) which could be used to install a malicious MSI package hosted on a remote server.
     
     - **Effort:** master
+
+??? abstract "Suspicious Windows Script Execution"
+    
+    Detects wscript.exe or cscript.exe executing a script in user directories (C:\ProgramData or C:\Users) with a .txt extension, which is very suspicious. It could strongly correspond to a malware dropper, as seen during SquirrelWaffle maldoc campaign.
+    
+    - **Effort:** intermediate
+
+??? abstract "Suspicious XOR Encoded PowerShell Command Line"
+    
+    Detects suspicious powershell process which includes bxor command, alternative obfuscation  method to b64 encoded commands.
+    
+    - **Effort:** advanced
 
 ??? abstract "Suspicious certutil command"
     
@@ -861,11 +1473,23 @@ The following Sekoia.io built-in rules match the intake **Forcepoint Next-Genera
     
     - **Effort:** intermediate
 
-??? abstract "TOR Usage"
+??? abstract "Sysprep On AppData Folder"
     
-    Detects TOR usage, based on the IP address and the destination port (filtered on NTP). TOR is short for The Onion Router, and it gets its name from how it works. TOR intercepts the network traffic from one or more apps on user’s computer, usually the user web browser, and shuffles it through a number of randomly-chosen computers before passing it on to its destination. This disguises user location, and makes it harder for servers to pick him/her out on repeat visits, or to tie together separate visits to different sites, this making tracking and surveillance more difficult. Before a network packet starts its journey, user’s computer chooses a random list of relays and repeatedly encrypts the data in multiple layers, like an onion. Each relay knows only enough to strip off the outermost layer of encryption, before passing what’s left on to the next relay in the list.
+    Detects suspicious Sysprep process start with AppData folder as target (as used by Trojan Syndicasec in Thrip report by Symantec). Sysprep is a Windows tool used to change Windows images from a generalized state to a specialized state, and then back to a generalized state. It can be used to remove all system-specific information and reset the computer.
+    
+    - **Effort:** intermediate
+
+??? abstract "System Info Discovery"
+    
+    System info discovery, attempt to detects basic command use to fingerprint a host.
     
     - **Effort:** master
+
+??? abstract "System Network Connections Discovery"
+    
+    Detects system network connections discovery via powershell and cmd.
+    
+    - **Effort:** advanced
 
 ??? abstract "TOR Usage Generic Rule"
     
@@ -927,6 +1551,12 @@ The following Sekoia.io built-in rules match the intake **Forcepoint Next-Genera
     
     - **Effort:** master
 
+??? abstract "User Added To Admin Group Via Cmd"
+    
+    Detects the use of different commands to add a user to an admin group.
+    
+    - **Effort:** advanced
+
 ??? abstract "Venom Multi-hop Proxy agent detection"
     
     Detects Venom Multi-hop Proxy agent.
@@ -938,6 +1568,12 @@ The following Sekoia.io built-in rules match the intake **Forcepoint Next-Genera
     Detection of multiple block actions (more than 30) triggered by the same source by WAF detection rules
     
     - **Effort:** master
+
+??? abstract "WMI Fingerprint Commands"
+    
+    Detects attacker fingerprint activities based on the correlation of specific WMIC commands. This has been observed with Aurora malware.
+    
+    - **Effort:** advanced
 
 ??? abstract "WMI Install Of Binary"
     
@@ -968,6 +1604,12 @@ The following Sekoia.io built-in rules match the intake **Forcepoint Next-Genera
     Detects modification of the Windows Registry value of HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\WDigest\UseLogonCredential. This technique is used to extract passwords in clear-text using WDigest. The rule requires to log for Registry Events, which can be done using Sysmon Event IDs 12, 13 and 14.
     
     - **Effort:** elementary
+
+??? abstract "WerFaultSecure Abuse"
+    
+    Detect usage of the software vulnerability of WerFaultSecure to suspend the processes of EDRs, and bypass detection. It has been implemented in the tool EDR-Freeze.
+    
+    - **Effort:** advanced
 
 ??? abstract "WiFi Credentials Harvesting Using Netsh"
     
@@ -1011,8 +1653,32 @@ The following Sekoia.io built-in rules match the intake **Forcepoint Next-Genera
     
     - **Effort:** intermediate
 
+??? abstract "Wmic Suspicious Commands"
+    
+    Detects suspicious commands used by the process wmic to get informations on the system.
+    
+    - **Effort:** advanced
+
 ??? abstract "XCopy Suspicious Usage"
     
     Detects the usage of xcopy with suspicious command line options (used by Judgment Panda APT in the past). The rule is based on command line only in case xcopy is renamed.
     
     - **Effort:** advanced
+
+??? abstract "XSL Script Processing And SquiblyTwo Attack"
+    
+    Detection of an attack where adversaries may bypass application control and obscure execution of code by embedding scripts inside XSL files. Another variation of this technique, dubbed "Squiblytwo", involves to invoke JScript or VBScript within an XSL file.
+    
+    - **Effort:** intermediate
+
+??? abstract "ZIP LNK Infection Chain"
+    
+    Detection of an ZIP download followed by a child-process of explorer, followed by multiple Windows processes.This is widely used as an infection chain mechanism.
+    
+    - **Effort:** advanced
+
+??? abstract "xWizard Execution"
+    
+    Detects the execution of Xwizard tool with specific arguments which utilized to run custom class properties.
+    
+    - **Effort:** master

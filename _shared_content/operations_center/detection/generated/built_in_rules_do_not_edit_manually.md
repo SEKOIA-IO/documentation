@@ -1,4 +1,4 @@
-Rules catalog includes **1057 built-in detection rules** ([_last update on 2025-11-25_](rules_changelog.md)).
+Rules catalog includes **1058 built-in detection rules** ([_last update on 2025-11-27_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Identity Information**
 
@@ -10788,6 +10788,12 @@ Rules catalog includes **1057 built-in detection rules** ([_last update on 2025-
     Installation of new certificate(s) in the Certificate Authority can be used to trick user when spoofing website or to add trusted destinations.
     
     - **Effort:** master
+    
+??? abstract "Landlock Denied Access"
+    
+    Landlock LSM (Linux Security Module), has denied an access requests. This is logged by default for a program compiled with Landlock since Linux kernel 6.15.
+    
+    - **Effort:** intermediate
     
 ??? abstract "Microsoft Intune Non-Compliant Device"
     
