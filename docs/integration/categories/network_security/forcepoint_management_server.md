@@ -1,5 +1,5 @@
 uuid: ea13ed1f-ecaf-4284-91e7-4f092323364c
-name: Forcepoint Management Server
+name: Forcepoint Management Server [BETA]
 type: intake
 
 ## Overview
