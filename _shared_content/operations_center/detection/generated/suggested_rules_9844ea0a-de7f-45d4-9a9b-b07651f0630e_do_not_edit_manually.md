@@ -441,6 +441,12 @@ The following Sekoia.io built-in rules match the intake **Trend Micro Vision One
     
     - **Effort:** intermediate
 
+??? abstract "Linux Masquerading Space After Name"
+    
+    This detection rule identifies a process created from an executable with a space appended to the end of the name.
+    
+    - **Effort:** intermediate
+
 ??? abstract "Linux Shared Lib Injection Via Ldso Preload"
     
     Detect ld.so.preload modification for shared lib injection, technique used by attackers to load arbitrary code into process
@@ -753,6 +759,12 @@ The following Sekoia.io built-in rules match the intake **Trend Micro Vision One
     
     - **Effort:** intermediate
 
+??? abstract "Potential Persistence Via Outlook LoadMacroProviderOnBoot Setting"
+    
+    Detects the modification of Outlook setting "LoadMacroProviderOnBoot" which if enabled allows the automatic loading of any configured VBA project/module. Logging for Registry events is needed, it can be done in the Sysmon configuration (events 12 and 13).
+    
+    - **Effort:** master
+
 ??? abstract "PowerCat Function Loading"
     
     Detect a basic execution of PowerCat. PowerCat is a PowerShell function allowing to do basic connections, file transfer, shells, relays, generate payloads.
@@ -999,6 +1011,12 @@ The following Sekoia.io built-in rules match the intake **Trend Micro Vision One
     
     - **Effort:** intermediate
 
+??? abstract "SSH Reverse Socks"
+    
+    Detects the usage of the -R option combined with StrictHostKeyChecking, which is an indication of using SSH for reverse socks.
+    
+    - **Effort:** intermediate
+
 ??? abstract "Security Support Provider (SSP) Added to LSA Configuration"
     
     Detects the addition of a SSP to the registry. This is commonly used for persistence. Upon a reboot or API call, SSP DLLs gain access to encrypted and plaintext passwords stored in Windows. Logging for Registry events is needed for this rule to work (this can be done through Sysmon EventIDs 12 and 13).
@@ -1032,6 +1050,12 @@ The following Sekoia.io built-in rules match the intake **Trend Micro Vision One
 ??? abstract "Spyware Persistence Using Schtasks"
     
     Detects possible Agent Tesla or Formbook persistence using schtasks. The name of the scheduled task used by these malware is very specific (Updates/randomstring).
+    
+    - **Effort:** intermediate
+
+??? abstract "Startup Item Created"
+    
+    Detects when a item is added to the startup directory. An attacker can use this establish persistence.
     
     - **Effort:** intermediate
 
@@ -1146,6 +1170,12 @@ The following Sekoia.io built-in rules match the intake **Trend Micro Vision One
 ??? abstract "Suspicious Process Requiring DLL Starts Without DLL"
     
     Detects potential process injection and hollowing on processes that usually require a DLL to be launched, but are launched without any argument. 
+    
+    - **Effort:** intermediate
+
+??? abstract "Suspicious Rundll32.exe Executions"
+    
+    The process rundll32.exe executes a newly dropped DLL with update /i in the command line. This specific technic was observed at least being used by the IcedID loading mechanism dubbed Gziploader. Some other detections are related to LOLBAS (Living Off The Land Binaries, Scripts and Libraries) usages (like the COM registering).
     
     - **Effort:** intermediate
 
@@ -1297,7 +1327,7 @@ The following Sekoia.io built-in rules match the intake **Trend Micro Vision One
     
     Detects attacker fingerprint activities based on the correlation of specific WMIC commands. This has been observed with Aurora malware.
     
-    - **Effort:** intermediate
+    - **Effort:** advanced
 
 ??? abstract "WMI Install Of Binary"
     
@@ -1368,6 +1398,12 @@ The following Sekoia.io built-in rules match the intake **Trend Micro Vision One
 ??? abstract "Windows Registry Persistence COM Key Linking"
     
     Detects COM object hijacking via TreatAs subkey. Logging for Registry events is needed in the Sysmon configuration with this kind of rule `<TargetObject name="testr12" condition="end with">\TreatAs\(Default)</TargetObject>`.
+    
+    - **Effort:** master
+
+??? abstract "Windows Sandbox Start"
+    
+    Detection of Windows Sandbox started from the command line with a config file or interactively using a WSB file.
     
     - **Effort:** master
 

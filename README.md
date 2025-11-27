@@ -10,13 +10,31 @@ Once your pull request is created, a SEKOIA.IO reviewer will take responsibility
 
 ## Test locally
 
+### Back
 The service relies on the [MkDocs](https://www.mkdocs.org/) Python framework helped by a customized [Material theme](https://squidfunk.github.io/mkdocs-material/). To serve the documentation on the port `8000` of your computer, you should create a Python virtual environment, install the few requirements detailed in `pyproject.toml` and trigger the execution of the MkDocs server:
 
 ```shell
-$ pip install poetry
-$ poetry install
-$ poetry run mkdocs serve --strict
+pip install poetry
+poetry install
+poetry run mkdocs serve --strict
 ```
+
+### Front
+The front end is placed in `./lib/openapi-viewer`. You need node and yarn installed.
+To serve the doc locally, you need to load the back end service upper.
+
+Install yarn
+```shell
+npm install yarn -g
+```
+
+Launch the front
+```shell
+yarn install
+yarn start
+```
+
+Go to http://127.0.0.1:8080/developer/api/
 
 ## Guidelines
 

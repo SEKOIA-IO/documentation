@@ -871,7 +871,7 @@ This section demonstrates how the raw logs will be transformed by our parsers. I
     ```json
 	
     {
-        "message": "{\"Version\":1,\"Type\":113,\"TypeComputedMap\":\"RegistryValueCreate\",\"Severity\":5,\"ServerReserved\":9,\"Attributes\":8,\"AttributesComputedBitMap\":[\"Audit\"],\"EventGuid\":\"{E8B35E85-838F-44E5-B7AB-7635E9C81ECB}\",\"GenerateIncident\":false,\"Timestamp\":\"2024-03-22T12:39:27.6422102+01:00\",\"TimestampRaw\":133555811676422102,\"SpecificData\":{\"SourceProcess\":{\"PID\":1196,\"ProcessGuid\":\"{B0E2F52D-8C18-4DF8-8E73-470BB4E5D373}\",\"ProcessImageName\":\"C:\\\\Windows\\\\regedit.exe\",\"VolumeZone\":1,\"VolumeZoneComputedBitMap\":[\"Operatingsystem\"],\"ProcessCommandLine\":\"\\\"C:\\\\WINDOWS\\\\regedit.exe\\\"\",\"User\":\"S-1-5-21-2222222-33333333-44444444-555\",\"UserNameLookup\":\"JOHNDOE\",\"UserDomainLookup\":\"TEST\",\"IntegrityLevel\":\"S-1-16-8192\",\"IntegrityLevelNameLookup\":\"MediumMandatoryLevel\",\"IntegrityLevelDomainLookup\":\"MandatoryLabel\",\"SessionID\":2,\"HashMd5\":\"999A30979F6195BF562068639FFC4426\",\"HashSha1\":\"D4F2663AABC03478975382B3C69F24B3C6BD2AA9\",\"HashSha256\":\"92F24FED2BA2927173AAD58981F6E0643C6B89815B117E8A7C4A0988AC918170\",\"IsProtectedOrCritical\":false,\"CertificateSignatureState\":1,\"CertificateSignatureStateComputedMap\":\"SignatureStateTrusted\",\"Certificates\":[{\"Algorithm\":\"SHA256\",\"IssuerCN\":\"MicrosoftWindowsProductionPCA2011\",\"SubjectCN\":\"MicrosoftWindows\",\"SigningTime\":\"2023-01-18T02:58:33.2360000+01:00\",\"ValidityStart\":\"2022-05-05T20:23:14.0000000+01:00\",\"ValidityEnd\":\"2023-05-04T20:23:14.0000000+01:00\"}],\"ProcessStartTime\":\"2023-03-06T16:04:21.8793902+01:00\",\"ProcessStartTimeRaw\":133225886618793902},\"Action\":{\"PolicyGuid\":\"{BF0D5FEE-FF2A-4E6B-97DA-A1FC246FE845}\",\"PolicyVersion\":4,\"RuleGuid\":\"{4CEEDD7A-875D-4C7E-9ABD-A710BD3DD0C0}\",\"BaseRuleGuid\":\"{4CEEDD7A-875D-4C7E-9ABD-A710BD3DD0BF}\",\"IdentifierGuid\":\"{5C079068-7641-4C9A-8600-BBDC93FBBCDD}\",\"Blocked\":false,\"UserDecision\":false,\"SourceProcessKilled\":false},\"Path\":\"HKEY_LOCAL_MACHINE\\\\BCD00000000\\\\Objects\\\\{a5a30fa2-3d06-4e9f-b5f4-a01df9d1fcba}\\\\Elements\\\\25000004\",\"ValueName\":\"Element\",\"ValueDataType\":3,\"ValueDataTypeComputedMap\":\"REG_BINARY\",\"ValueData\":[0,0,0,0,0,0,0,0]},\"AdditionalData\":{\"AgentAddresses\":[],\"AgentGroupGuid\":\"{61B578F4-289D-4B97-A331-DDDCB80C6427}\",\"AgentGroupName\":\"Desktop\",\"AgentGuid\":\"{6EF8564D-941A-4377-80FD-78CD3DFEB269}\",\"AgentName\":\"DST-001\",\"CategoryName\":\"Registry\",\"IncidentGuid\":null,\"Message\":\"The'svchost.exe'processcreatedtheregistryvalue'Element'\",\"PolicyName\":\"Stormshield-Mediumpolicy-External\",\"SeverityName\":\"Notice\"}}",
+        "message": "{\"Version\":1,\"Type\":113,\"TypeComputedMap\":\"RegistryValueCreate\",\"Severity\":5,\"ServerReserved\":9,\"Attributes\":8,\"AttributesComputedBitMap\":[\"Audit\"],\"EventGuid\":\"{E8B35E85-838F-44E5-B7AB-7635E9C81ECB}\",\"GenerateIncident\":false,\"Timestamp\":\"2024-03-22T12:39:27.6422102+01:00\",\"TimestampRaw\":133555811676422102,\"SpecificData\":{\"SourceProcess\":{\"PID\":1196,\"ProcessGuid\":\"{B0E2F52D-8C18-4DF8-8E73-470BB4E5D373}\",\"ProcessImageName\":\"C:\\\\Windows\\\\regedit.exe\",\"VolumeZone\":1,\"VolumeZoneComputedBitMap\":[\"Operatingsystem\"],\"ProcessCommandLine\":\"\\\"C:\\\\WINDOWS\\\\regedit.exe\\\"\",\"User\":\"S-1-5-21-2222222-33333333-44444444-555\",\"UserNameLookup\":\"JOHNDOE\",\"UserDomainLookup\":\"TEST\",\"IntegrityLevel\":\"S-1-16-8192\",\"IntegrityLevelNameLookup\":\"MediumMandatoryLevel\",\"IntegrityLevelDomainLookup\":\"MandatoryLabel\",\"SessionID\":2,\"HashMd5\":\"999A30979F6195BF562068639FFC4426\",\"HashSha1\":\"D4F2663AABC03478975382B3C69F24B3C6BD2AA9\",\"HashSha256\":\"92F24FED2BA2927173AAD58981F6E0643C6B89815B117E8A7C4A0988AC918170\",\"IsProtectedOrCritical\":false,\"CertificateSignatureState\":1,\"CertificateSignatureStateComputedMap\":\"SignatureStateTrusted\",\"Certificates\":[{\"Algorithm\":\"SHA256\",\"IssuerCN\":\"MicrosoftWindowsProductionPCA2011\",\"SubjectCN\":\"MicrosoftWindows\",\"SigningTime\":\"2023-01-18T02:58:33.2360000+01:00\",\"ValidityStart\":\"2022-05-05T20:23:14.0000000+01:00\",\"ValidityEnd\":\"2023-05-04T20:23:14.0000000+01:00\"}],\"ProcessStartTime\":\"2023-03-06T16:04:21.8793902+01:00\",\"ProcessStartTimeRaw\":133225886618793902},\"Action\":{\"PolicyGuid\":\"{BF0D5FEE-FF2A-4E6B-97DA-A1FC246FE845}\",\"PolicyVersion\":4,\"RuleGuid\":\"{4CEEDD7A-875D-4C7E-9ABD-A710BD3DD0C0}\",\"BaseRuleGuid\":\"{4CEEDD7A-875D-4C7E-9ABD-A710BD3DD0BF}\",\"IdentifierGuid\":\"{5C079068-7641-4C9A-8600-BBDC93FBBCDD}\",\"Blocked\":false,\"UserDecision\":false,\"SourceProcessKilled\":false},\"Path\":\"HKEY_LOCAL_MACHINE\\\\BCD00000000\\\\Objects\\\\{a5a30fa2-3d06-4e9f-b5f4-a01df9d1fcba}\\\\Elements\\\\25000004\",\"ValueName\":\"Element\",\"ValueDataType\":3,\"ValueDataTypeComputedMap\":\"REG_BINARY\",\"ValueData\":[0,0,0,0,0,0,0,0]},\"AdditionalData\":{\"AgentAddresses\":[],\"AgentGroupGuid\":\"{61B578F4-289D-4B97-A331-DDDCB80C6427}\",\"AgentGroupName\":\"Desktop\",\"AgentGuid\":\"{0000000000000000000000000000000000}\",\"AgentName\":\"DST-001\",\"CategoryName\":\"Registry\",\"IncidentGuid\":null,\"Message\":\"The'svchost.exe'processcreatedtheregistryvalue'Element'\",\"PolicyName\":\"Stormshield-Mediumpolicy-External\",\"SeverityName\":\"Notice\"}}",
         "event": {
             "category": [
                 "registry"
@@ -884,6 +884,9 @@ This section demonstrates how the raw logs will be transformed by our parsers. I
             ]
         },
         "@timestamp": "2024-03-22T11:39:27.642210Z",
+        "agent": {
+            "id": "{0000000000000000000000000000000000}"
+        },
         "host": {
             "ip": [],
             "name": "DST-001"
@@ -1278,7 +1281,7 @@ This section demonstrates how the raw logs will be transformed by our parsers. I
     ```json
 	
     {
-        "message": "{\n  \"Version\": 1,\n  \"Type\": 11,\n  \"TypeComputedMap\": \"ProcessExecution\",\n  \"Severity\": 0,\n  \"ServerReserved\": 0,\n  \"Attributes\": 2,\n  \"AttributesComputedBitMap\": [\n    \"Protection\"\n  ],\n  \"EventGuid\": \"{5024762E-73B4-40DC-823A-7B080C82C542}\",\n  \"GenerateIncident\": true,\n  \"Timestamp\": \"2024-02-01T08:10:33.7922326-08:00\",\n  \"TimestampRaw\": 133512774337922326,\n  \"SpecificData\": {\n    \"SourceProcess\": {\n      \"PID\": 7248,\n      \"ProcessGuid\": \"{90FC03BE-4FBF-4184-A304-6D4B00AA152B}\",\n      \"ProcessImageName\": \"C:\\\\ragnarlocker.exe\",\n      \"VolumeZone\": 1,\n      \"VolumeZoneComputedBitMap\": [\n        \"Operating system\"\n      ],\n      \"ProcessCommandLine\": \"\\\"C:\\\\ragnarlocker.exe\\\" \",\n      \"User\": \"S-1-5-21-1111111111-22222222-3333333333-000\",\n      \"UserNameLookup\": \"Administrator\",\n      \"UserDomainLookup\": \"EXAMPLE\",\n      \"IntegrityLevel\": \"S-1-16-11111\",\n      \"IntegrityLevelNameLookup\": \"High Mandatory Level\",\n      \"IntegrityLevelDomainLookup\": \"Mandatory Label\",\n      \"SessionID\": 1,\n      \"HashMd5\": \"68B329DA9893E34099C7D8AD5CB9C940\",\n      \"HashSha1\": \"ADC83B19E793491B1C6EA0FD8B46CD9F32E592FC\",\n      \"HashSha256\": \"01BA4719C80B6FE911B091A7C05124B64EEECE964E09C058EF8F9805DACA546B\",\n      \"IsProtectedOrCritical\": false,\n      \"CertificateSignatureState\": 2,\n      \"CertificateSignatureStateComputedMap\": \"SignatureStateNoSignature\",\n      \"Certificates\": [],\n      \"ProcessStartTime\": \"2024-02-01T08:10:33.5801449-08:00\",\n      \"ProcessStartTimeRaw\": 133512774335801449\n    },\n    \"Action\": {\n      \"PolicyGuid\": \"{64AA4553-15FC-4188-B4AD-A0BDCFB11ED9}\",\n      \"PolicyVersion\": 14,\n      \"RuleGuid\": \"{B88B8874-E8E3-4F42-92B8-61D364DB65B9}\",\n      \"BaseRuleGuid\": \"{0C4D019E-B7D5-4456-909A-C5F4152461AE}\",\n      \"IdentifierGuid\": \"{BC74B5FB-8880-4A74-8316-FE865F9EA75C}\",\n      \"Blocked\": true,\n      \"UserDecision\": false,\n      \"SourceProcessKilled\": true\n    },\n    \"CreatedProcess\": {\n      \"PID\": 11308,\n      \"ProcessGuid\": \"{24F0AA75-BC26-4245-829E-97087BB07A47}\",\n      \"ProcessImageName\": \"C:\\\\Windows\\\\System32\\\\cmd.exe\",\n      \"VolumeZone\": 1,\n      \"VolumeZoneComputedBitMap\": [\n        \"Operating system\"\n      ],\n      \"ProcessCommandLine\": \"cmd.exe /c vssadmin delete shadows /all /quiet\",\n      \"User\": \"S-1-5-21-1111111111-22222222-3333333333-000\",\n      \"UserNameLookup\": \"Administrator\",\n      \"UserDomainLookup\": \"EXAMPLE\",\n      \"IntegrityLevel\": \"S-1-16-11111\",\n      \"IntegrityLevelNameLookup\": \"High Mandatory Level\",\n      \"IntegrityLevelDomainLookup\": \"Mandatory Label\",\n      \"SessionID\": 1,\n      \"HashMd5\": \"68B329DA9893E34099C7D8AD5CB9C940\",\n      \"HashSha1\": \"ADC83B19E793491B1C6EA0FD8B46CD9F32E592FC\",\n      \"HashSha256\": \"01BA4719C80B6FE911B091A7C05124B64EEECE964E09C058EF8F9805DACA546B\",\n      \"IsProtectedOrCritical\": false,\n      \"CertificateSignatureState\": 1,\n      \"CertificateSignatureStateComputedMap\": \"SignatureStateTrusted\",\n      \"Certificates\": [\n        {\n          \"Algorithm\": \"SHA256\",\n          \"IssuerCN\": \"Microsoft Windows Production PCA 2011\",\n          \"SubjectCN\": \"Microsoft Windows\",\n          \"SigningTime\": \"2013-08-22T05:07:49.2400000-08:00\",\n          \"ValidityStart\": \"2013-06-17T13:43:38.0000000-08:00\",\n          \"ValidityEnd\": \"2014-09-17T13:43:38.0000000-08:00\"\n        }\n      ],\n      \"ProcessStartTime\": \"2024-02-01T08:10:33.7833468-08:00\",\n      \"ProcessStartTimeRaw\": 133512774337833468\n    },\n    \"ParentProcess\": {\n      \"PID\": 7248,\n      \"ProcessGuid\": \"{D057290C-D86A-441B-B3CB-C6E54D42EBA5}\",\n      \"ProcessImageName\": \"C:\\\\ragnarlocker.exe\",\n      \"VolumeZone\": 1,\n      \"VolumeZoneComputedBitMap\": [\n        \"Operating system\"\n      ],\n      \"ProcessCommandLine\": \"\\\"C:\\\\ragnarlocker.exe\\\" \",\n      \"User\": \"S-1-5-21-1111111111-22222222-3333333333-000\",\n      \"UserNameLookup\": \"Administrator\",\n      \"UserDomainLookup\": \"EXAMPLE\",\n      \"IntegrityLevel\": \"S-1-16-11111\",\n      \"IntegrityLevelNameLookup\": \"High Mandatory Level\",\n      \"IntegrityLevelDomainLookup\": \"Mandatory Label\",\n      \"SessionID\": 1,\n      \"HashMd5\": \"68B329DA9893E34099C7D8AD5CB9C940\",\n      \"HashSha1\": \"ADC83B19E793491B1C6EA0FD8B46CD9F32E592FC\",\n      \"HashSha256\": \"01BA4719C80B6FE911B091A7C05124B64EEECE964E09C058EF8F9805DACA546B\",\n      \"IsProtectedOrCritical\": false,\n      \"CertificateSignatureState\": 2,\n      \"CertificateSignatureStateComputedMap\": \"SignatureStateNoSignature\",\n      \"Certificates\": [],\n      \"ProcessStartTime\": \"2024-02-01T08:10:33.5801449-08:00\",\n      \"ProcessStartTimeRaw\": 133512774335801449\n    }\n  },\n  \"AdditionalData\": {\n    \"AgentAddresses\": [\n      \"172.24.0.14\"\n    ],\n    \"AgentGroupGuid\": \"{00000000-0000-0000-0000-000000000000}\",\n    \"AgentGroupName\": \"Default group\",\n    \"AgentGuid\": \"{074C7CCE-ACF4-4674-9650-4B63B569892F}\",\n    \"AgentName\": \"WINSERVER2012\",\n    \"CategoryName\": \"Process\",\n    \"IncidentGuid\": \"{12CA4135-575E-49DE-89AD-4CD35EE2EB3B}\",\n    \"Message\": \"The 'ragnarlocker.exe' process attempted to run the 'cmd.exe' process\",\n    \"PolicyName\": \"Stormshield - Incredible policy (1)\",\n    \"SeverityName\": \"Emergency\"\n  }\n}",
+        "message": "{\n  \"Version\": 1,\n  \"Type\": 11,\n  \"TypeComputedMap\": \"ProcessExecution\",\n  \"Severity\": 0,\n  \"ServerReserved\": 0,\n  \"Attributes\": 2,\n  \"AttributesComputedBitMap\": [\n    \"Protection\"\n  ],\n  \"EventGuid\": \"{5024762E-73B4-40DC-823A-7B080C82C542}\",\n  \"GenerateIncident\": true,\n  \"Timestamp\": \"2024-02-01T08:10:33.7922326-08:00\",\n  \"TimestampRaw\": 133512774337922326,\n  \"SpecificData\": {\n    \"SourceProcess\": {\n      \"PID\": 7248,\n      \"ProcessGuid\": \"{90FC03BE-4FBF-4184-A304-6D4B00AA152B}\",\n      \"ProcessImageName\": \"C:\\\\ragnarlocker.exe\",\n      \"VolumeZone\": 1,\n      \"VolumeZoneComputedBitMap\": [\n        \"Operating system\"\n      ],\n      \"ProcessCommandLine\": \"\\\"C:\\\\ragnarlocker.exe\\\" \",\n      \"User\": \"S-1-5-21-1111111111-22222222-3333333333-000\",\n      \"UserNameLookup\": \"Administrator\",\n      \"UserDomainLookup\": \"EXAMPLE\",\n      \"IntegrityLevel\": \"S-1-16-11111\",\n      \"IntegrityLevelNameLookup\": \"High Mandatory Level\",\n      \"IntegrityLevelDomainLookup\": \"Mandatory Label\",\n      \"SessionID\": 1,\n      \"HashMd5\": \"68B329DA9893E34099C7D8AD5CB9C940\",\n      \"HashSha1\": \"ADC83B19E793491B1C6EA0FD8B46CD9F32E592FC\",\n      \"HashSha256\": \"01BA4719C80B6FE911B091A7C05124B64EEECE964E09C058EF8F9805DACA546B\",\n      \"IsProtectedOrCritical\": false,\n      \"CertificateSignatureState\": 2,\n      \"CertificateSignatureStateComputedMap\": \"SignatureStateNoSignature\",\n      \"Certificates\": [],\n      \"ProcessStartTime\": \"2024-02-01T08:10:33.5801449-08:00\",\n      \"ProcessStartTimeRaw\": 133512774335801449\n    },\n    \"Action\": {\n      \"PolicyGuid\": \"{64AA4553-15FC-4188-B4AD-A0BDCFB11ED9}\",\n      \"PolicyVersion\": 14,\n      \"RuleGuid\": \"{B88B8874-E8E3-4F42-92B8-61D364DB65B9}\",\n      \"BaseRuleGuid\": \"{0C4D019E-B7D5-4456-909A-C5F4152461AE}\",\n      \"IdentifierGuid\": \"{BC74B5FB-8880-4A74-8316-FE865F9EA75C}\",\n      \"Blocked\": true,\n      \"UserDecision\": false,\n      \"SourceProcessKilled\": true\n    },\n    \"CreatedProcess\": {\n      \"PID\": 11308,\n      \"ProcessGuid\": \"{24F0AA75-BC26-4245-829E-97087BB07A47}\",\n      \"ProcessImageName\": \"C:\\\\Windows\\\\System32\\\\cmd.exe\",\n      \"VolumeZone\": 1,\n      \"VolumeZoneComputedBitMap\": [\n        \"Operating system\"\n      ],\n      \"ProcessCommandLine\": \"cmd.exe /c vssadmin delete shadows /all /quiet\",\n      \"User\": \"S-1-5-21-1111111111-22222222-3333333333-000\",\n      \"UserNameLookup\": \"Administrator\",\n      \"UserDomainLookup\": \"EXAMPLE\",\n      \"IntegrityLevel\": \"S-1-16-11111\",\n      \"IntegrityLevelNameLookup\": \"High Mandatory Level\",\n      \"IntegrityLevelDomainLookup\": \"Mandatory Label\",\n      \"SessionID\": 1,\n      \"HashMd5\": \"68B329DA9893E34099C7D8AD5CB9C940\",\n      \"HashSha1\": \"ADC83B19E793491B1C6EA0FD8B46CD9F32E592FC\",\n      \"HashSha256\": \"01BA4719C80B6FE911B091A7C05124B64EEECE964E09C058EF8F9805DACA546B\",\n      \"IsProtectedOrCritical\": false,\n      \"CertificateSignatureState\": 1,\n      \"CertificateSignatureStateComputedMap\": \"SignatureStateTrusted\",\n      \"Certificates\": [\n        {\n          \"Algorithm\": \"SHA256\",\n          \"IssuerCN\": \"Microsoft Windows Production PCA 2011\",\n          \"SubjectCN\": \"Microsoft Windows\",\n          \"SigningTime\": \"2013-08-22T05:07:49.2400000-08:00\",\n          \"ValidityStart\": \"2013-06-17T13:43:38.0000000-08:00\",\n          \"ValidityEnd\": \"2014-09-17T13:43:38.0000000-08:00\"\n        }\n      ],\n      \"ProcessStartTime\": \"2024-02-01T08:10:33.7833468-08:00\",\n      \"ProcessStartTimeRaw\": 133512774337833468\n    },\n    \"ParentProcess\": {\n      \"PID\": 7248,\n      \"ProcessGuid\": \"{D057290C-D86A-441B-B3CB-C6E54D42EBA5}\",\n      \"ProcessImageName\": \"C:\\\\ragnarlocker.exe\",\n      \"VolumeZone\": 1,\n      \"VolumeZoneComputedBitMap\": [\n        \"Operating system\"\n      ],\n      \"ProcessCommandLine\": \"\\\"C:\\\\ragnarlocker.exe\\\" \",\n      \"User\": \"S-1-5-21-1111111111-22222222-3333333333-000\",\n      \"UserNameLookup\": \"Administrator\",\n      \"UserDomainLookup\": \"EXAMPLE\",\n      \"IntegrityLevel\": \"S-1-16-11111\",\n      \"IntegrityLevelNameLookup\": \"High Mandatory Level\",\n      \"IntegrityLevelDomainLookup\": \"Mandatory Label\",\n      \"SessionID\": 1,\n      \"HashMd5\": \"68B329DA9893E34099C7D8AD5CB9C940\",\n      \"HashSha1\": \"ADC83B19E793491B1C6EA0FD8B46CD9F32E592FC\",\n      \"HashSha256\": \"01BA4719C80B6FE911B091A7C05124B64EEECE964E09C058EF8F9805DACA546B\",\n      \"IsProtectedOrCritical\": false,\n      \"CertificateSignatureState\": 2,\n      \"CertificateSignatureStateComputedMap\": \"SignatureStateNoSignature\",\n      \"Certificates\": [],\n      \"ProcessStartTime\": \"2024-02-01T08:10:33.5801449-08:00\",\n      \"ProcessStartTimeRaw\": 133512774335801449\n    }\n  },\n  \"AdditionalData\": {\n    \"AgentAddresses\": [\n      \"1.2.3.4\"\n    ],\n    \"AgentGroupGuid\": \"{00000000-0000-0000-0000-000000000000}\",\n    \"AgentGroupName\": \"Default group\",\n    \"AgentGuid\": \"{0000000000000000000000000000000000}\",\n    \"AgentName\": \"WINSERVER2012\",\n    \"CategoryName\": \"Process\",\n    \"IncidentGuid\": \"{12CA4135-575E-49DE-89AD-4CD35EE2EB3B}\",\n    \"Message\": \"The 'ragnarlocker.exe' process attempted to run the 'cmd.exe' process\",\n    \"PolicyName\": \"Stormshield - Incredible policy (1)\",\n    \"SeverityName\": \"Emergency\"\n  }\n}",
         "event": {
             "category": [
                 "process"
@@ -1291,6 +1294,15 @@ This section demonstrates how the raw logs will be transformed by our parsers. I
             ]
         },
         "@timestamp": "2024-02-01T16:10:33.792232Z",
+        "agent": {
+            "id": "{0000000000000000000000000000000000}"
+        },
+        "host": {
+            "ip": [
+                "1.2.3.4"
+            ],
+            "name": "WINSERVER2012"
+        },
         "process": {
             "command_line": "cmd.exe /c vssadmin delete shadows /all /quiet",
             "executable": "C:\\Windows\\System32\\cmd.exe",
@@ -1328,6 +1340,9 @@ This section demonstrates how the raw logs will be transformed by our parsers. I
                 "01BA4719C80B6FE911B091A7C05124B64EEECE964E09C058EF8F9805DACA546B",
                 "68B329DA9893E34099C7D8AD5CB9C940",
                 "ADC83B19E793491B1C6EA0FD8B46CD9F32E592FC"
+            ],
+            "ip": [
+                "1.2.3.4"
             ]
         },
         "rule": {
@@ -1357,6 +1372,113 @@ This section demonstrates how the raw logs will be transformed by our parsers. I
                 },
                 "source_process": {
                     "killed": true
+                },
+                "type": "11"
+            }
+        }
+    }
+    	
+	```
+
+
+=== "test_type_11_2.json"
+
+    ```json
+	
+    {
+        "message": "{\n  \"Version\": 1,\n  \"Type\": 11,\n  \"TypeComputedMap\": \"ProcessExecution\",\n  \"Severity\": 7,\n  \"ServerReserved\": 5,\n  \"Attributes\": 16,\n  \"AttributesComputedBitMap\": [\n    \"Context\"\n  ],\n  \"EventGuid\": \"{00000000-0000-0000-0000-0000000000A1}\",\n  \"GenerateIncident\": false,\n  \"Timestamp\": \"2025-09-29T07:27:21.2220386+02:00\",\n  \"TimestampRaw\": 134035972412220386,\n  \"SpecificData\": {\n    \"SourceProcess\": {\n      \"PID\": 1572,\n      \"ProcessGuid\": \"{11111111-1111-1111-1111-111111111111}\",\n      \"ProcessImageName\": \"C:\\\\Windows\\\\System32\\\\svchost.exe\",\n      \"VolumeZone\": 1,\n      \"VolumeZoneComputedBitMap\": [\n        \"Operating system\"\n      ],\n      \"ProcessCommandLine\": \"C:\\\\WINDOWS\\\\system32\\\\svchost.exe -k DcomLaunch -p\",\n      \"User\": \"S-1-5-18\",\n      \"UserNameLookup\": \"redacted-system\",\n      \"UserDomainLookup\": \"REDACTED-DOMAIN-A\",\n      \"IntegrityLevel\": \"S-1-16-16384\",\n      \"IntegrityLevelNameLookup\": \"Niveau obligatoire syst\u00e8me\",\n      \"IntegrityLevelDomainLookup\": \"\u00c9tiquette obligatoire\",\n      \"SessionID\": 0,\n      \"HashMd5\": \"00000000000000000000000000000000\",\n      \"HashSha1\": \"0000000000000000000000000000000000000000\",\n      \"HashSha256\": \"0000000000000000000000000000000000000000000000000000000000000000\",\n      \"IsProtectedOrCritical\": true,\n      \"CertificateSignatureState\": 1,\n      \"CertificateSignatureStateComputedMap\": \"SignatureStateTrusted\",\n      \"Certificates\": [\n        {\n          \"Algorithm\": \"SHA256\",\n          \"IssuerCN\": \"Microsoft Windows Production PCA 2011\",\n          \"SubjectCN\": \"Microsoft Windows Publisher\",\n          \"SigningTime\": \"2025-08-27T02:32:01.8360000+02:00\",\n          \"ValidityStart\": \"2024-11-15T01:56:46.0000000+02:00\",\n          \"ValidityEnd\": \"2025-11-13T01:56:46.0000000+02:00\"\n        }\n      ],\n      \"ProcessStartTime\": \"2025-09-29T07:26:46.0046710+02:00\",\n      \"ProcessStartTimeRaw\": 134035972060046710\n    },\n    \"Action\": {\n      \"PolicyGuid\": \"{33333333-3333-3333-3333-333333333333}\",\n      \"PolicyVersion\": 29,\n      \"RuleGuid\": \"{44444444-4444-4444-4444-4444444444F8}\",\n      \"BaseRuleGuid\": \"{44444444-4444-4444-4444-4444444444F7}\",\n      \"IdentifierGuid\": \"{55555555-5555-5555-5555-555555555555}\",\n      \"Blocked\": false,\n      \"RequestMoveToQuarantine\": false,\n      \"UserDecision\": false,\n      \"SourceProcessKilled\": false,\n      \"RuleTags\": []\n    },\n    \"CreatedProcess\": {\n      \"PID\": 10664,\n      \"ProcessGuid\": \"{22222222-2222-2222-2222-222222222222}\",\n      \"ProcessImageName\": \"C:\\\\Windows\\\\SystemApps\\\\Microsoft.Windows.StartMenuExperienceHost_cw5n1h2txyewy\\\\StartMenuExperienceHost.exe\",\n      \"VolumeZone\": 1,\n      \"VolumeZoneComputedBitMap\": [\n        \"Operating system\"\n      ],\n      \"ProcessCommandLine\": \"\\\"C:\\\\WINDOWS\\\\SystemApps\\\\Microsoft.Windows.StartMenuExperienceHost_cw5n1h2txyewy\\\\StartMenuExperienceHost.exe\\\" -ServerName:App.AppXywbrabmsek0gm3tkwpr5kwzbs55tkqay.mca\",\n      \"User\": \"S-1-5-21-1111111111-2222222222-3333333333-1001\",\n      \"UserNameLookup\": \"redacted-user\",\n      \"UserDomainLookup\": \"REDACTED-DOMAIN-B\",\n      \"IntegrityLevel\": \"S-1-16-4096\",\n      \"IntegrityLevelNameLookup\": \"Niveau obligatoire faible\",\n      \"IntegrityLevelDomainLookup\": \"\u00c9tiquette obligatoire\",\n      \"SessionID\": 1,\n      \"HashMd5\": \"00000000000000000000000000000000\",\n      \"HashSha1\": \"0000000000000000000000000000000000000000\",\n      \"HashSha256\": \"0000000000000000000000000000000000000000000000000000000000000000\",\n      \"IsProtectedOrCritical\": false,\n      \"CertificateSignatureState\": 1,\n      \"CertificateSignatureStateComputedMap\": \"SignatureStateTrusted\",\n      \"Certificates\": [\n        {\n          \"Algorithm\": \"SHA256\",\n          \"IssuerCN\": \"Microsoft Windows Production PCA 2011\",\n          \"SubjectCN\": \"Microsoft Windows\",\n          \"SigningTime\": \"2025-08-27T08:11:33.4980000+02:00\",\n          \"ValidityStart\": \"2025-06-19T20:11:43.0000000+02:00\",\n          \"ValidityEnd\": \"2026-06-17T20:11:43.0000000+02:00\"\n        }\n      ],\n      \"ProcessStartTime\": \"2025-09-29T07:27:21.2167967+02:00\",\n      \"ProcessStartTimeRaw\": 134035972412167967\n    },\n    \"ParentProcess\": {\n      \"PID\": 1572,\n      \"ProcessGuid\": \"{11111111-1111-1111-1111-111111111111}\",\n      \"ProcessImageName\": \"C:\\\\Windows\\\\System32\\\\svchost.exe\",\n      \"VolumeZone\": 1,\n      \"VolumeZoneComputedBitMap\": [\n        \"Operating system\"\n      ],\n      \"ProcessCommandLine\": \"C:\\\\WINDOWS\\\\system32\\\\svchost.exe -k DcomLaunch -p\",\n      \"User\": \"S-1-5-18\",\n      \"UserNameLookup\": \"redacted-system\",\n      \"UserDomainLookup\": \"REDACTED-DOMAIN-A\",\n      \"IntegrityLevel\": \"S-1-16-16384\",\n      \"IntegrityLevelNameLookup\": \"Niveau obligatoire syst\u00e8me\",\n      \"IntegrityLevelDomainLookup\": \"\u00c9tiquette obligatoire\",\n      \"SessionID\": 0,\n      \"HashMd5\": \"00000000000000000000000000000000\",\n      \"HashSha1\": \"0000000000000000000000000000000000000000\",\n      \"HashSha256\": \"0000000000000000000000000000000000000000000000000000000000000000\",\n      \"IsProtectedOrCritical\": true,\n      \"CertificateSignatureState\": 1,\n      \"CertificateSignatureStateComputedMap\": \"SignatureStateTrusted\",\n      \"Certificates\": [\n        {\n          \"Algorithm\": \"SHA256\",\n          \"IssuerCN\": \"Microsoft Windows Production PCA 2011\",\n          \"SubjectCN\": \"Microsoft Windows Publisher\",\n          \"SigningTime\": \"2025-08-27T02:32:01.8360000+02:00\",\n          \"ValidityStart\": \"2024-11-15T01:56:46.0000000+02:00\",\n          \"ValidityEnd\": \"2025-11-13T01:56:46.0000000+02:00\"\n        }\n      ],\n      \"ProcessStartTime\": \"2025-09-29T07:26:46.0046710+02:00\",\n      \"ProcessStartTimeRaw\": 134035972060046710\n    }\n  },\n  \"AdditionalData\": {\n    \"AgentAddresses\": [\n      \"10.0.0.5\",\n      \"fe80::1\"\n    ],\n    \"AgentGroupGuid\": \"{00000000-0000-0000-0000-000000000000}\",\n    \"AgentGroupName\": \"Default group\",\n    \"AgentGuid\": \"{66666666-6666-6666-6666-666666666666}\",\n    \"AgentName\": \"REDACTED-HOST\",\n    \"AttackCVEId\": null,\n    \"AttackMitreTacticId\": null,\n    \"AttackMitreTacticName\": null,\n    \"AttackMitreTechnicId\": null,\n    \"AttackMitreTechnicName\": null,\n    \"AttackSESId\": null,\n    \"AttackTriggerCondition\": null,\n    \"CategoryName\": \"Process\",\n    \"IncidentGuid\": \"{77777777-7777-7777-7777-777777777777}\",\n    \"Message\": \"The 'svchost.exe' process ran the 'StartMenuExperienceHost.exe' process\",\n    \"PolicyName\": \"Stormshield - Default policy\",\n    \"SeverityName\": \"Debug\"\n  }\n}",
+        "event": {
+            "category": [
+                "process"
+            ],
+            "code": "ProcessExecution",
+            "reason": "The 'svchost.exe' process ran the 'StartMenuExperienceHost.exe' process",
+            "severity": 7,
+            "type": [
+                "start"
+            ]
+        },
+        "@timestamp": "2025-09-29T05:27:21.222038Z",
+        "agent": {
+            "id": "{66666666-6666-6666-6666-666666666666}"
+        },
+        "host": {
+            "ip": [
+                "10.0.0.5",
+                "fe80::1"
+            ],
+            "name": "REDACTED-HOST"
+        },
+        "process": {
+            "command_line": "\"C:\\WINDOWS\\SystemApps\\Microsoft.Windows.StartMenuExperienceHost_cw5n1h2txyewy\\StartMenuExperienceHost.exe\" -ServerName:App.AppXywbrabmsek0gm3tkwpr5kwzbs55tkqay.mca",
+            "executable": "C:\\Windows\\SystemApps\\Microsoft.Windows.StartMenuExperienceHost_cw5n1h2txyewy\\StartMenuExperienceHost.exe",
+            "hash": {
+                "md5": "00000000000000000000000000000000",
+                "sha1": "0000000000000000000000000000000000000000",
+                "sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+            },
+            "name": "StartMenuExperienceHost.exe",
+            "parent": {
+                "command_line": "C:\\WINDOWS\\system32\\svchost.exe -k DcomLaunch -p",
+                "executable": "C:\\Windows\\System32\\svchost.exe",
+                "hash": {
+                    "md5": "00000000000000000000000000000000",
+                    "sha1": "0000000000000000000000000000000000000000",
+                    "sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+                },
+                "name": "svchost.exe",
+                "pid": 1572,
+                "start": "2025-09-29T05:26:46.004671Z",
+                "user": {
+                    "id": "S-1-5-18",
+                    "name": "redacted-system"
+                }
+            },
+            "pid": 10664,
+            "start": "2025-09-29T05:27:21.216796Z",
+            "user": {
+                "id": "S-1-5-21-1111111111-2222222222-3333333333-1001",
+                "name": "redacted-user"
+            }
+        },
+        "related": {
+            "hash": [
+                "00000000000000000000000000000000",
+                "0000000000000000000000000000000000000000",
+                "0000000000000000000000000000000000000000000000000000000000000000"
+            ],
+            "ip": [
+                "10.0.0.5",
+                "fe80::1"
+            ]
+        },
+        "rule": {
+            "ruleset": "Stormshield - Default policy",
+            "uuid": "44444444-4444-4444-4444-4444444444F8"
+        },
+        "stormshield": {
+            "ses": {
+                "action": {
+                    "blocked": false,
+                    "user_decision": false
+                },
+                "categoryname": "Process",
+                "incident": {
+                    "id": "{77777777-7777-7777-7777-777777777777}"
+                },
+                "level": "Debug",
+                "process": {
+                    "parent": {
+                        "user": {
+                            "domain": "REDACTED-DOMAIN-A"
+                        }
+                    },
+                    "user": {
+                        "domain": "REDACTED-DOMAIN-B"
+                    }
+                },
+                "source_process": {
+                    "killed": false
                 },
                 "type": "11"
             }
@@ -2706,7 +2828,7 @@ This section demonstrates how the raw logs will be transformed by our parsers. I
         },
         "@timestamp": "2024-03-22T14:01:26.658996Z",
         "action": {
-            "id": "1117",
+            "id": 1117,
             "properties": {
                 "ActionId": "2",
                 "ActionName": "Quarantine",
@@ -2745,7 +2867,7 @@ This section demonstrates how the raw logs will be transformed by our parsers. I
                 "TypeId": "0",
                 "TypeName": "Concrete"
             },
-            "record_id": "613"
+            "record_id": 613
         },
         "process": {
             "pid": 5384,
@@ -6524,7 +6646,6 @@ The following table lists the fields that are extracted, normalized under the EC
 | Name | Type | Description                |
 | ---- | ---- | ---------------------------|
 |`@timestamp` | `date` | Date/time when the event originated. |
-|`action.id` | `keyword` | stormshield action id |
 |`action.properties.ActionId` | `keyword` | stormshield property Action ID |
 |`action.properties.ActionName` | `keyword` | stormshield property Action Name |
 |`action.properties.AdditionalActionsId` | `keyword` | stormshield property Additional Actions ID |
@@ -6564,7 +6685,6 @@ The following table lists the fields that are extracted, normalized under the EC
 |`action.properties.ThreatName` | `keyword` | stormshield property Threat Name |
 |`action.properties.TypeId` | `keyword` | stormshield property Type ID |
 |`action.properties.TypeName` | `keyword` | stormshield property Type Name |
-|`action.record_id` | `keyword` | stormshield action record id |
 |`agent.id` | `keyword` | Unique identifier of this agent. |
 |`destination.ip` | `ip` | IP address of the destination. |
 |`destination.mac` | `keyword` | MAC address of the destination. |

@@ -1,9 +1,16 @@
 # Alerts
 Alerts are created by the Operations Center when an event matches a rule and a threat is detected.
 ## Concepts
-### Alert Status and lifecycle
+### Alert Status and Lifecycle
 
-An alert can have five possible statuses:
+Sekoia.io allows you to customize alert statuses to adapt them to your SOC team's specific processes. Custom statuses enable you to define workflows that match your organization's requirements while maintaining consistency across alerts and cases.
+
+!!! info "Automatic Migration"
+    Legacy alert statuses (Pending, Acknowledged, Ongoing, Closed, Rejected) are automatically converted to custom statuses for existing users. Your current workflows remain unchanged.
+
+#### Default Alert Statuses
+
+By default, alerts use the following five statuses:
 
 | Status | Description | Possible actions to do |
 | --- | --- | --- |
@@ -13,7 +20,121 @@ An alert can have five possible statuses:
 | **Closed** | All necessary actions have been applied to the alert. This status is a final status. | No action accepted |
 | **Rejected** | The alert was a false positive. This status is a final status. |  No action accepted |
 
-### Alerts Workflow
+#### Managing Custom Statuses
+
+Custom statuses allow you to tailor the alert lifecycle to your SOC team's specific processes. You can create, edit, and organize statuses to match your organization's workflow requirements.
+
+##### Status Stages
+
+Each custom status belongs to one of three stages that define its position in the alert lifecycle:
+
+- **Open**: Initial stage for new or unprocessed alerts
+- **In Progress**: Intermediate stage for alerts under investigation or awaiting action
+- **Closed**: Final stage for alerts that have been resolved or dismissed
+
+These stages determine the overall state of an alert and affect features such as search filters and similarity.
+
+##### Creating and Editing Custom Statuses
+
+To manage custom statuses for alerts:
+
+1. Navigate to the Custom Statuses configuration page
+2. Click on `+` to create a new custom status in the appropriate stage
+3. Provide the following information:
+   - **Name**: A clear, descriptive name for the status (e.g., "Under Investigation", "Awaiting User Response")
+   - **Description**: Additional context about when this status should be used
+
+To edit an existing custom status:
+
+1. Click on the status you want to modify
+2. Update the name and/or description as needed
+3. Save your changes
+
+![Custom Statuses Configuration](/assets/operation_center/alerts/custom-statuses-config.png){: style="max-width:100%"}
+
+!!! note
+    Modifying a custom status name or description does not affect historical data. Previously recorded status changes will continue to display the original values in alert timelines and case histories.
+
+##### Reordering Statuses
+
+You can reorder custom statuses to match your preferred workflow sequence:
+
+1. In the Custom Statuses configuration page, use the drag handle on each status
+2. Drag and drop statuses to your desired order
+3. The new order will be reflected in status dropdowns throughout the platform
+
+##### Enabling Statuses for Alerts and Cases
+
+A unique feature of custom statuses is the ability to use the same status across both alerts and cases, ensuring consistency across your SOC platform.
+
+To enable a status for alerts and/or cases:
+
+1. In the Custom Statuses configuration, locate the status you want to configure
+2. Use the checkboxes in the **Alert** and **Case** columns to enable the status for each context
+3. A status can be enabled for:
+   - Alerts only
+   - Cases only
+   - Both alerts and cases (unified status)
+
+This unified approach allows you to maintain consistent terminology and processes across different investigation contexts.
+
+##### Deleting Custom Statuses
+
+Custom statuses can be deleted only if they are not currently in use:
+
+- If a status has been applied to any alert or case, it cannot be deleted
+- To delete a status that is in use, you must first change all alerts and cases using that status to a different status
+- Once no alerts or cases use the status, you can delete it from the configuration page
+
+!!! warning
+    Before deleting a custom status, ensure that your team no longer needs it, as this action will remove it from all status selection menus.
+
+#### Custom Verdicts
+
+Custom verdicts enable SOC teams to define and standardize their classifications of alerts and cases beyond simple true positive or false positive determinations. This feature helps clarify your team's stance on incident outcomes and improves communication within the team and with stakeholders.
+
+##### Verdict Categories
+
+Each custom verdict belongs to one of two categories:
+
+- **True Positive**: Verdicts that confirm the alert represents a genuine security threat or incident
+- **False Positive**: Verdicts that indicate the alert was triggered incorrectly or does not represent a real threat
+
+SOC teams often have different definitions and nuances for what constitutes a true or false positive. Custom verdicts allow you to capture these distinctions (e.g., "True Positive - Confirmed Malware", "False Positive - Misconfiguration", "True Positive - Policy Violation").
+
+##### Creating and Editing Custom Verdicts
+
+To manage custom verdicts for alerts and cases:
+
+1. Navigate to the Analyst verdict section
+2. Click on `+` to create a new custom verdict in the appropriate category
+3. Provide the following information:
+   - **Name**: A clear, descriptive name for the verdict (e.g., "Confirmed Malware", "Benign Activity", "Policy Violation")
+   - **Description**: Additional context about when this verdict should be used and what it signifies
+
+To edit an existing custom verdict:
+
+1. Click on the verdict you want to modify
+2. Update the name and/or description as needed
+3. Save your changes
+
+![Custom Verdicts Configuration](/assets/operation_center/alerts/custom-verdicts-config.png){: style="max-width:100%"}
+
+##### Deleting Custom Verdicts
+
+Custom verdicts follow the same deletion rules as custom statuses:
+
+- A verdict cannot be deleted if it has been applied to any alert or case
+- To delete a verdict that is in use, you must first remove or change the verdict on all alerts and cases using it
+- Once the verdict is no longer in use, you can delete it from the configuration page
+
+!!! tip
+    Custom verdicts help avoid miscommunication by establishing clear, documented definitions for alert and case outcomes. This is particularly valuable when multiple analysts work on the same alerts or when reporting to stakeholders.
+
+### Alerts Workflow (Legacy)
+
+The workflow diagram below illustrates the legacy alert status lifecycle:
+
 ![alert_workflow](/assets/operation_center/alerts/alert_workflow.png){: style="max-width:100%"}
 
 ### Alert Urgency
@@ -95,9 +216,9 @@ If there is no similarity forced by the rule or by the event, you can rely on Se
     When there is no data due to parsing issues, alert similarity is not shown except when there is a NULL propriety in `source.ip` or `destination.ip`. When the `source.ip` and the `destination.ip` are empty, we might use the value NULL as a similarity basis.
 
 #### Similarity and alert status
-As long as there is an existing similar alert with status **Pending**, **Acknowledged** or **Ongoing**, new matches are added to the alert as occurrences.
+As long as there is an existing similar alert with a status in the **Open** or **In Progress** stage (such as Pending, Acknowledged, or Ongoing in the default configuration), new matches are added to the alert as occurrences.
 
-If only **Closed** or **Rejected** alerts are similar, a new alert is created. **Closed** and **Rejected** similar alerts are listed inside the [Similar Alerts](#similar-alerts) tab.
+If only alerts with statuses in the **Closed** stage (such as Closed or Rejected in the default configuration) are similar, a new alert is created. Similar alerts with closed-stage statuses are listed inside the [Similar Alerts](#similar-alerts) tab.
 ## Alert types and categories
 The Alert type is associated with the rule that triggered it but can be changed with the value associated to specific indicators in case of CTI rules.
 The Alert type is defined according to a custom set of values derived from the Reference Incident Classification Taxonomy of ENISA.
@@ -157,7 +278,7 @@ We hope these two most used filters will save you time!
 
 | Pre-made filter | Composition |
 | --- | --- |
-| Open | Status is *any of* Acknowledged, Ongoing, Pending |
+| Open | Status is *any of* all statuses in the Open and In Progress stages (e.g., Acknowledged, Ongoing, Pending in the default configuration) |
 | New Today | Created at *within* Today |
 
 #### List of all filters
@@ -169,10 +290,10 @@ Here is the updated list of all available filters.
 | Asset | Lists impacted assets within the alert |
 | Created at | Select a date of creation (date range, relative dates…) |
 | Entity | Select entities where alerts happened that are listed in your alert table |
-| Rule | Lists all rules that have raised alerts. You can also filter by a specific value by hovering on a value in the Source column in the table and clicking on the “+” button |
-| Source | Lists all alert sources. You can also filter by a specific value by hovering on a value in the Source column in the table and clicking on the “+” button  |
-| Status | Can be acknowledged, closed, ongoing, pending, and rejected  |
-| Target | Lists all alert targets. You can also filter by a specific value by hovering on a value in the Source column in the table and clicking on the “+” button  |
+| Rule | Lists all rules that have raised alerts. You can also filter by a specific value by hovering on a value in the Source column in the table and clicking on the "+" button |
+| Source | Lists all alert sources. You can also filter by a specific value by hovering on a value in the Source column in the table and clicking on the "+" button  |
+| Status | Lists all configured alert statuses. Default statuses include: Acknowledged, Closed, Ongoing, Pending, and Rejected |
+| Target | Lists all alert targets. You can also filter by a specific value by hovering on a value in the Source column in the table and clicking on the "+" button  |
 | Threat | Lists all threats that are related to alerts.  |
 | Type | Lists all types of alerts present in the table. The type of rule is defined by the detection rule that triggered the alert.  |
 | Updated | Date of last update (date range, relative dates…) |
@@ -256,7 +377,7 @@ The Alert Details page can be reached by clicking on any alert in the Alert List
 
 The Alert Details header contains the `urgency`, the `name` and the `short ID` of the alert, as well as the following actions:
 
-- `Alert Status`: can be used to move the Alert through its lifecycle by changing its status
+- `Alert Status`: can be used to move the Alert through its lifecycle by changing its status to any configured status
 - `Add to case`: add the alert to a case to gather all the needed information for an extensive investigation
 - `Playbooks`: display the list of on-demand playbooks and be able to trigger them.
 
@@ -315,7 +436,7 @@ To help you compare between alerts, you can choose which columns you want to dis
 
 The similar alerts tab is divided into two parts:
 
-- **The suggestion message:** In a callout, you’ll find a text that reminds you of the status of the majority of previous similar alerts. This message suggests you change the alert status based on the previous alerts. You can also find an action button to apply the status on your alert (except for Closed alerts).
+- **The suggestion message:** In a callout, you'll find a text that reminds you of the status of the majority of previous similar alerts. This message suggests you change the alert status based on the previous alerts. You can also find an action button to apply the status on your alert (except for alerts with statuses in the Closed stage).
 - **The similar alerts table:** It gathers all the similar alerts that previously occurred. The columns of this table can be customized to help you investigate the similarities between alerts.
 
 
@@ -379,21 +500,106 @@ A side panel opens with the search results, allowing you to investigate an alert
 
 ### Graph Investigation
 
-The Graph Tab is presenting the analyst with a graphical visualization of the Alert.
+The Graph Investigation tab provides analysts with an interactive graphical visualization of the alert, enabling comprehensive threat analysis through visual correlation of security events and intelligence data.
 
-![graph](/assets/operation_center/alerts/alert-graph.png){: style="max-width:100%"}
+!!! note
+    All changes performed within the Graph Investigation are automatically saved. The graph updates dynamically with each visit based on the events associated with the alert. Any new objects discovered through additional events are automatically integrated into the existing graph structure.
 
-The following items appear on the graph:
+#### Graph Elements
 
-- `Observables`: these are automatically extracted from events (IP addresses, Domain Names, URLs, User Account, etc.)
-- `Observable Relationships`: relationships between observables are represented by arrows linking them on the graph. Relationships are extracted from events using the [Smart Description](https://github.com/Sekoia-io/Community/tree/main/events) definitions
-- `CTI Objects`: STIX objects from the Intelligence Center that provide additional context
-- `STIX relationships` between Threat Objects
+The graph displays the following interconnected elements:
+
+- **Observables**: Security artifacts automatically extracted from events, including IP addresses, domain names, URLs, user accounts, file hashes, and other indicators of compromise
+  
+- **Observable Relationships**: Visual connections between observables represented by directional arrows. These relationships are extracted from events using Smart Description definitions that parse event data to identify logical connections
+  
+- **CTI Objects**: STIX-compliant threat intelligence objects from the Intelligence Database that enrich the analysis with contextual threat information
+  
+- **STIX Relationships**: Standardized connections between threat intelligence objects that reveal the broader threat landscape
 
 **Threat Intelligence**
 
-You can access Threat Intelligence by clicking on any CTI object on the graph. The left panel will display its description and lists all known relationships. Related objects can then be added on the graph to pivot into the Threat Intelligence database.
+Access comprehensive threat intelligence by clicking on any CTI object within the graph. The left panel immediately displays:
 
-**Observables**
+- Detailed object descriptions and threat context
 
-You can access Observable Details by clicking on any Observable on the graph. The left panel will display all events inside the alert related to this observable, with their “Smart Description”. Full Events can be accessed into the right side panel by clicking on "Full Events". It is also possible to [Search events with this value](#search-events-with-this-value) by clicking on the button next to the name of the observable.
+- Complete relationship mappings with other intelligence objects
+
+- Interactive options to expand the graph by adding related objects
+
+This functionality enables pivoting through the threat intelligence database, allowing analysts to explore the full scope of related threats and campaigns.
+
+**Observable Analysis**
+
+Investigate specific observables by clicking on any observable node in the graph. The left panel provides:
+
+- **Event Context**: All events within the alert that contain the selected observable, presented with Smart Description summaries for quick comprehension
+
+- **Full Event Details**: Complete event information accessible through the right-side panel via the "Full Events" button
+
+- **Extended Search**: Direct access to search for additional events containing the same observable value across your entire environment
+
+This multi-layered approach ensures analysts can quickly understand both the immediate context and broader implications of each observable.
+
+#### Layers Management
+
+Layers enhance analytical efficiency by organizing complex graphs into manageable, focused sections that can be viewed independently or in combination.
+
+**Understanding Layers**
+
+Layers represent logical groupings within your graph that can be selectively displayed or hidden. This feature transforms complex visualizations into organized, digestible sections while maintaining the ability to view the complete picture when needed.
+
+**Default Layer Behavior**
+
+Every graph investigation automatically creates a default layer upon first access. This foundational layer:
+
+- Serves as the primary container for initial graph elements
+- Automatically incorporates new objects as additional events are processed
+- Maintains continuity across investigation sessions
+
+**Active Layer Management**
+
+The layer control interface, located in the top-left corner adjacent to the main panel, provides:
+
+- Layer Panel Access: One-click access to the complete layer management interface
+- Active Layer Indicator: Clear identification of the currently selected layer where new additions will be placed
+- Seamless Layer Switching: Instant transitions between different analytical perspectives
+
+##### Creating and Managing Layers
+
+To create and organize layers:
+
+- Click the name of the default layer in the top-left of the graph (e.g. Event Layer #1)
+- Select the “+” button to add a new layer
+- Enter a name for your layer.
+- Drag and drop objects or observables into the layer of your choice.
+
+All changes are saved automatically—no manual action required.
+
+**Viewing Layer Content**
+
+- To focus only on the contents of a specific layer, toggle visibility by clicking the Eye icon.
+
+Use this functionality to reduce visual clutter and isolate relevant data for deeper analysis.
+
+
+#### Strategic Layer Usage for Alerts
+
+Optimize your alert investigation by implementing these layer organization strategies:
+
+- **Observable Type Segregation**: Create separate layers for different observable categories (network indicators, file artifacts, user activities) to isolate analysis domains
+- **Temporal Analysis**: Organize layers by time periods to understand attack progression and identify patterns across different phases
+- **Threat Actor Attribution**: Separate layers for different suspected threat actors or attack techniques when multiple threats are identified
+
+**Advanced Layer Features**
+    
+- Visibility Control: Toggle individual layer visibility to focus analytical attention on specific aspects while temporarily hiding others
+
+- Cross-Layer Movement: Relocate misplaced objects between layers to maintain optimal organization as your investigation evolves
+
+- Dynamic Renaming: Update layer names throughout the investigation to reflect evolving understanding and maintain clear organization
+
+- Intelligent Search: Utilize the built-in search functionality to quickly locate specific objects within large, multi-layered graphs, essential for complex investigations with extensive observable networks
+
+These enhanced capabilities ensure that even the most complex alert investigations remain manageable and analytically productive.
+

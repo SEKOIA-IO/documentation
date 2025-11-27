@@ -117,12 +117,6 @@ The following Sekoia.io built-in rules match the intake **Vade for M365**. This 
     
     - **Effort:** master
 
-??? abstract "Suspicious Email Attachment Received"
-    
-    Detects email containing a suspicious file as an attachment, based on its extension.
-    
-    - **Effort:** advanced
-
 ??? abstract "TOR Usage Generic Rule"
     
     Detects TOR usage globally, whether the IP is a destination or source. TOR is short for The Onion Router, and it gets its name from how it works. TOR intercepts the network traffic from one or more apps on user’s computer, usually the user web browser, and shuffles it through a number of randomly-chosen computers before passing it on to its destination. This disguises user location, and makes it harder for servers to pick him/her out on repeat visits, or to tie together separate visits to different sites, this making tracking and surveillance more difficult. Before a network packet starts its journey, user’s computer chooses a random list of relays and repeatedly encrypts the data in multiple layers, like an onion. Each relay knows only enough to strip off the outermost layer of encryption, before passing what’s left on to the next relay in the list.

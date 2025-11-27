@@ -46,7 +46,8 @@ The following prerequisites are needed in order to setup efficient events handli
 2. Click on the burger menu and go to `Support and resources` > `Resources and tools` > `API client and keys`.
 3. In the `OAuth2 API Clients` tab, create an new OAuth2 API Client with the `Read` permission for the scopes `Event Stream` and `Detection`.
 
-To collect `Vertex`, please contact Crowdstrike Support to activate the Threat Graph API and create the ID of the legacy Threat Graph API.
+!!! Info
+    To collect `Vertex`, add the `Threat Graph` scope with `Read` permission to the same OAuth2 API Client you are creating in step 3 above.
 
 
 ### Create the intake

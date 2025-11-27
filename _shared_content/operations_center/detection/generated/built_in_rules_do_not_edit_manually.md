@@ -1,4 +1,4 @@
-Rules catalog includes **1036 built-in detection rules** ([_last update on 2025-08-14_](rules_changelog.md)).
+Rules catalog includes **1057 built-in detection rules** ([_last update on 2025-11-25_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Identity Information**
 
@@ -678,6 +678,10 @@ Rules catalog includes **1036 built-in detection rules** ([_last update on 2025-
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 24/09/2025 - minor - Improving selection in order to reduce false positives
+            
 ??? abstract "Okta User Logged In Multiple Applications"
     
     Detection of login events on multiple application.
@@ -706,6 +710,11 @@ Rules catalog includes **1036 built-in detection rules** ([_last update on 2025-
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 06/10/2025 - minor - Update similarity strategy for more granularity
+        - 12/11/2025 - minor - Update rule type to integration
+            
 ??? abstract "Varonis Data Security Network Low Severity Alert"
     
     Varonis Data Security has raised a low severity alert related to a network rule
@@ -715,6 +724,8 @@ Rules catalog includes **1036 built-in detection rules** ([_last update on 2025-
     - **Changelog:**
     
         - 14/05/2025 - major - Fix pattern where severity level was missing
+        - 06/10/2025 - minor - Update similarity strategy for more granularity
+        - 12/11/2025 - minor - Update rule type to integration
             
 ??? abstract "Varonis Data Security Network Medium Severity Alert"
     
@@ -722,6 +733,11 @@ Rules catalog includes **1036 built-in detection rules** ([_last update on 2025-
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 06/10/2025 - minor - Update similarity strategy for more granularity
+        - 12/11/2025 - minor - Update rule type to integration
+            
 **Obtain Capabilities**
 
 ??? abstract "Cyberwatch Detection Critical Vulnerability"
@@ -829,6 +845,7 @@ Rules catalog includes **1036 built-in detection rules** ([_last update on 2025-
     - **Changelog:**
     
         - 20/01/2025 - minor - Update pattern to ECS field and add intake field format
+        - 15/10/2025 - minor - Update pattern to match intake format change
             
 ??? abstract "Denied Access To Remote Desktop"
     
@@ -841,6 +858,12 @@ Rules catalog includes **1036 built-in detection rules** ([_last update on 2025-
         - 19/10/2023 - minor - Minor change in selection to reduce false positives.
         - 26/03/2024 - major - Rule's pattern field changed
             
+??? abstract "Dscl Authonly"
+    
+    Detects the use of the command dscl with authonly used to verify the password of a user and for authentification. An attacker can abuse this command to gain credentials.
+    
+    - **Effort:** advanced
+    
 ??? abstract "Enable Root Account With Dsenableroot"
     
     Detects when root is enabled. Attackers can use this as a mean of persistence since root is disabled by default.
@@ -923,6 +946,7 @@ Rules catalog includes **1036 built-in detection rules** ([_last update on 2025-
     - **Changelog:**
     
         - 03/02/2025 - minor - Update pattern to ECS field only and intake format
+        - 15/10/2025 - minor - Update pattern to match intake format change
             
 ??? abstract "Login Brute-Force On FreeRadius"
     
@@ -1022,6 +1046,12 @@ Rules catalog includes **1036 built-in detection rules** ([_last update on 2025-
     An user tries to access an unauthorized application.
     
     - **Effort:** master
+    
+??? abstract "User Added To Admin Group Via Cmd"
+    
+    Detects the use of different commands to add a user to an admin group.
+    
+    - **Effort:** advanced
     
 ??? abstract "User Added to Local Administrators"
     
@@ -1219,6 +1249,10 @@ Rules catalog includes **1036 built-in detection rules** ([_last update on 2025-
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 01/09/2025 - major - switch selection to regex to avoid false positive.
+            
 ??? abstract "CVE-2021-22986 F5 BIG-IP iControl REST Unauthenticated RCE"
     
     Detects successful exploitation of the F5 BIG-IP vulnerability CVE-2021-22986.
@@ -1292,6 +1326,16 @@ Rules catalog includes **1036 built-in detection rules** ([_last update on 2025-
             
 **Phishing**
 
+??? abstract "Advanced Threat Detected By Hornetsecurity 365 Total Protection"
+    
+    Hornetsecurity 365 Total Protection has detected an advanced threat from an e-mail.
+    
+    - **Effort:** master
+    
+    - **Changelog:**
+    
+        - 12/11/2025 - minor - Update rule type to integration
+            
 ??? abstract "Cisco ESA Suspicious Email With Attachment"
     
     Detects an email with an attachment, from a sender tagged as suspect, detected by either the Antivirus or the Advanced Malware Protection (AMP) engine and delivered to the recipient
@@ -1314,6 +1358,7 @@ Rules catalog includes **1036 built-in detection rules** ([_last update on 2025-
     
         - 28/07/2025 - major - Improve filter and similarity strategy.
         - 05/08/2025 - minor - Improve filter to avoid false positives
+        - 06/10/2025 - minor - Improve filter to avoid false positives
             
 ??? abstract "Download Files From Suspicious TLDs"
     
@@ -1324,6 +1369,7 @@ Rules catalog includes **1036 built-in detection rules** ([_last update on 2025-
     - **Changelog:**
     
         - 28/07/2025 - major - Improve filter and similarity strategy.
+        - 06/10/2025 - minor - Improve filter to reduce false positives.
             
 ??? abstract "ESET Protect Malware"
     
@@ -1635,6 +1681,16 @@ Rules catalog includes **1036 built-in detection rules** ([_last update on 2025-
     
         - 18/06/2024 - minor - Adding filter when whitelisted.
             
+??? abstract "Spam Detected By Hornetsecurity 365 Total Protection"
+    
+    Hornetsecurity 365 Total Protection has detected a spam e-mail.
+    
+    - **Effort:** master
+    
+    - **Changelog:**
+    
+        - 12/11/2025 - minor - Update rule type to integration
+            
 ??? abstract "Spam Detected By Vade For M365"
     
     Vade Secure product Vade for M365, has detected a spam e-mail.
@@ -1722,6 +1778,16 @@ Rules catalog includes **1036 built-in detection rules** ([_last update on 2025-
     
     - **Effort:** intermediate
     
+??? abstract "Threat Detected By Hornetsecurity 365 Total Protection"
+    
+    Hornetsecurity 365 Total Protection has detected a threat from an e-mail.
+    
+    - **Effort:** master
+    
+    - **Changelog:**
+    
+        - 12/11/2025 - minor - Update rule type to integration
+            
 ## Execution
 **Windows Management Instrumentation**
 
@@ -1759,6 +1825,12 @@ Rules catalog includes **1036 built-in detection rules** ([_last update on 2025-
     
     - **Effort:** elementary
     
+??? abstract "VSCode Tunnel Shell Exec"
+    
+    Using VSCode and its remote tunnel access feature to run a terminal and execute commands. This could be a legit use, but also has been observed being used by some attackers.
+    
+    - **Effort:** advanced
+    
 ??? abstract "WMI DLL Loaded Via Office"
     
     Detects Windows Management Instrumentation (WMI) DLL loaded via Office process. This activity may correspond to VBA macro executing WMI commands, which is highly suspicious. The prerequisite is to log Loaded DLLs images, which can be done with the Sysmon Event ID 7 (DLL image loaded by process).
@@ -1769,8 +1841,12 @@ Rules catalog includes **1036 built-in detection rules** ([_last update on 2025-
     
     Detects attacker fingerprint activities based on the correlation of specific WMIC commands. This has been observed with Aurora malware.
     
-    - **Effort:** intermediate
+    - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 19/08/2025 - major - Changing effort level.
+            
 ??? abstract "WMI Install Of Binary"
     
     Detection of WMI used to install a binary on the host. It is often used by attackers as a signed binary to infect an host.
@@ -1799,6 +1875,18 @@ Rules catalog includes **1036 built-in detection rules** ([_last update on 2025-
         - 26/03/2024 - major - Rule's pattern field changed.
         - 26/06/2025 - major - Pattern updated to avoid false positives and effort level changed to be coherent.
             
+??? abstract "WerFaultSecure Abuse"
+    
+    Detect usage of the software vulnerability of WerFaultSecure to suspend the processes of EDRs, and bypass detection. It has been implemented in the tool EDR-Freeze.
+    
+    - **Effort:** advanced
+    
+??? abstract "Windows Sandbox Start"
+    
+    Detection of Windows Sandbox started from the command line with a config file or interactively using a WSB file.
+    
+    - **Effort:** master
+    
 ??? abstract "Wmic Process Call Creation"
     
     The WMI command-line (WMIC) utility provides a command-line interface for Windows Management Instrumentation (WMI). WMIC is compatible with existing shells and utility commands. Although WMI is supposed to be an administration tool, it is wildy abused by threat actors. One of the reasons is WMI is quite stealthy. This rule detects the wmic command line launching a process on a remote or local host.
@@ -1944,6 +2032,7 @@ Rules catalog includes **1036 built-in detection rules** ([_last update on 2025-
     - **Changelog:**
     
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+        - 12/11/2025 - minor - Update rule type to integration
             
 ??? abstract "AWS GuardDuty Low Severity Alert"
     
@@ -1998,6 +2087,7 @@ Rules catalog includes **1036 built-in detection rules** ([_last update on 2025-
     
     - **Changelog:**
     
+        - 29/08/2025 - minor - Filtering some command line false positives.
         - 11/12/2024 - minor - Added a default similarity based on host name and user name to avoid too many alerts.
         - 26/03/2024 - minor - Adapted the rule to remove false positives.
             
@@ -2123,6 +2213,7 @@ Rules catalog includes **1036 built-in detection rules** ([_last update on 2025-
     
     - **Changelog:**
     
+        - 02/10/2025 - minor - Alert severity updated to match Crowdstrike's values and sekoia rule CrowdStrike Falcon Intrusion Detection High Severity
         - 05/08/2025 - minor - Alert severity updated to match Crowdstrike's values
             
 ??? abstract "CrowdStrike Falcon Intrusion Detection Informational Severity"
@@ -2251,6 +2342,10 @@ Rules catalog includes **1036 built-in detection rules** ([_last update on 2025-
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 09/10/2025 - minor - Added filter for a new field to reduce false positvives.
+            
 ??? abstract "FromBase64String Command Line"
     
     Detects suspicious FromBase64String expressions in command line arguments.
@@ -2275,6 +2370,10 @@ Rules catalog includes **1036 built-in detection rules** ([_last update on 2025-
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 05/09/2025 - minor - Filter some FPs
+            
 ??? abstract "Interactive Terminal Spawned via Python"
     
     Identifies when a terminal (tty) is spawned via Python. Attackers may upgrade a simple reverse shell to a fully interactive tty after obtaining initial access to a host.
@@ -2404,12 +2503,32 @@ Rules catalog includes **1036 built-in detection rules** ([_last update on 2025-
     
         - 13/09/2024 - major - Update service name value following Microsoft change
             
+??? abstract "Microsoft Defender XDR Data Loss Prevention Alert"
+    
+    Microsoft Defender XDR has raised an alert for Data Loss Prevention. The alert info and evidence events are grouped with the similarity into the same Sekoia.io alert.
+    
+    - **Effort:** master
+    
+    - **Changelog:**
+    
+        - 12/11/2025 - minor - Update rule type to integration
+            
 ??? abstract "Microsoft Defender XDR Endpoint Alert"
     
     Microsoft Defender XDR has raised an alert for Microsoft Defender for Endpoint. The alert info and evidence events are grouped with the similarity into the same Sekoia.io alert.
     
     - **Effort:** master
     
+??? abstract "Microsoft Defender XDR Entra ID Protection Alert"
+    
+    Microsoft Defender XDR has raised an alert for Microsoft Entra ID Protection. The alert info and evidence events are grouped with the similarity into the same Sekoia.io alert.
+    
+    - **Effort:** master
+    
+    - **Changelog:**
+    
+        - 12/11/2025 - minor - Update rule type to integration
+            
 ??? abstract "Microsoft Defender XDR Office 365 Alert"
     
     Microsoft Defender XDR for Office 365 has raised an alert. The alert info and evidence events are grouped with the similarity into the same Sekoia.io alert.
@@ -3051,6 +3170,10 @@ Rules catalog includes **1036 built-in detection rules** ([_last update on 2025-
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 05/09/2025 - minor - Filter some FPs
+            
 **Shared Modules**
 
 ??? abstract "FoggyWeb Backdoor DLL Loading"
@@ -3123,6 +3246,7 @@ Rules catalog includes **1036 built-in detection rules** ([_last update on 2025-
     
         - 28/07/2025 - major - Improve filter and similarity strategy.
         - 05/08/2025 - minor - Improve filter to avoid false positives
+        - 06/10/2025 - minor - Improve filter to avoid false positives
             
 ??? abstract "Download Files From Suspicious TLDs"
     
@@ -3133,6 +3257,7 @@ Rules catalog includes **1036 built-in detection rules** ([_last update on 2025-
     - **Changelog:**
     
         - 28/07/2025 - major - Improve filter and similarity strategy.
+        - 06/10/2025 - minor - Improve filter to reduce false positives.
             
 ??? abstract "Exploit For CVE-2015-1641"
     
@@ -3174,6 +3299,7 @@ Rules catalog includes **1036 built-in detection rules** ([_last update on 2025-
     - **Changelog:**
     
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+        - 12/11/2025 - minor - Update rule type to integration
             
 ??? abstract "AWS GuardDuty Low Severity Alert"
     
@@ -3355,6 +3481,7 @@ Rules catalog includes **1036 built-in detection rules** ([_last update on 2025-
     
     - **Changelog:**
     
+        - 02/10/2025 - minor - Alert severity updated to match Crowdstrike's values and sekoia rule CrowdStrike Falcon Intrusion Detection High Severity
         - 05/08/2025 - minor - Alert severity updated to match Crowdstrike's values
             
 ??? abstract "CrowdStrike Falcon Intrusion Detection Informational Severity"
@@ -3481,6 +3608,7 @@ Rules catalog includes **1036 built-in detection rules** ([_last update on 2025-
     
         - 28/07/2025 - major - Improve filter and similarity strategy.
         - 05/08/2025 - minor - Improve filter to avoid false positives
+        - 06/10/2025 - minor - Improve filter to avoid false positives
             
 ??? abstract "Download Files From Suspicious TLDs"
     
@@ -3491,6 +3619,7 @@ Rules catalog includes **1036 built-in detection rules** ([_last update on 2025-
     - **Changelog:**
     
         - 28/07/2025 - major - Improve filter and similarity strategy.
+        - 06/10/2025 - minor - Improve filter to reduce false positives.
             
 ??? abstract "ESET Protect Intrusion Detection"
     
@@ -3940,12 +4069,32 @@ Rules catalog includes **1036 built-in detection rules** ([_last update on 2025-
     
         - 13/09/2024 - major - Update service name value following Microsoft change
             
+??? abstract "Microsoft Defender XDR Data Loss Prevention Alert"
+    
+    Microsoft Defender XDR has raised an alert for Data Loss Prevention. The alert info and evidence events are grouped with the similarity into the same Sekoia.io alert.
+    
+    - **Effort:** master
+    
+    - **Changelog:**
+    
+        - 12/11/2025 - minor - Update rule type to integration
+            
 ??? abstract "Microsoft Defender XDR Endpoint Alert"
     
     Microsoft Defender XDR has raised an alert for Microsoft Defender for Endpoint. The alert info and evidence events are grouped with the similarity into the same Sekoia.io alert.
     
     - **Effort:** master
     
+??? abstract "Microsoft Defender XDR Entra ID Protection Alert"
+    
+    Microsoft Defender XDR has raised an alert for Microsoft Entra ID Protection. The alert info and evidence events are grouped with the similarity into the same Sekoia.io alert.
+    
+    - **Effort:** master
+    
+    - **Changelog:**
+    
+        - 12/11/2025 - minor - Update rule type to integration
+            
 ??? abstract "Microsoft Defender XDR Office 365 Alert"
     
     Microsoft Defender XDR for Office 365 has raised an alert. The alert info and evidence events are grouped with the similarity into the same Sekoia.io alert.
@@ -3969,6 +4118,7 @@ Rules catalog includes **1036 built-in detection rules** ([_last update on 2025-
         - 20/12/2024 - minor - Adding minor filter on a process parent name.
         - 23/01/2024 - minor - Adding elements to increase detection and filters to reduce false positives.
         - 13/09/2024 - major - Adding filters to reduce false positives and updated the effort level to master as it is a rule highly dependent on the environment.
+        - 10/10/2025 - minor - Adding parent process command line as a newly displayed field in the alert.
             
 ??? abstract "Microsoft Office Spawning Script"
     
@@ -4302,6 +4452,11 @@ Rules catalog includes **1036 built-in detection rules** ([_last update on 2025-
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 06/10/2025 - minor - Update sources link
+        - 12/11/2025 - minor - Update rule type to integration
+            
 ??? abstract "Winword Document Droppers"
     
     Detects specific process characteristics of word document droppers. This techniques has been used by Maze ransomware operators.
@@ -4493,6 +4648,7 @@ Rules catalog includes **1036 built-in detection rules** ([_last update on 2025-
     
     - **Changelog:**
     
+        - 02/10/2025 - minor - Alert severity updated to match Crowdstrike's values and sekoia rule CrowdStrike Falcon Intrusion Detection High Severity
         - 05/08/2025 - minor - Alert severity updated to match Crowdstrike's values
             
 ??? abstract "CrowdStrike Falcon Intrusion Detection Informational Severity"
@@ -4735,12 +4891,32 @@ Rules catalog includes **1036 built-in detection rules** ([_last update on 2025-
     
         - 13/09/2024 - major - Update service name value following Microsoft change
             
+??? abstract "Microsoft Defender XDR Data Loss Prevention Alert"
+    
+    Microsoft Defender XDR has raised an alert for Data Loss Prevention. The alert info and evidence events are grouped with the similarity into the same Sekoia.io alert.
+    
+    - **Effort:** master
+    
+    - **Changelog:**
+    
+        - 12/11/2025 - minor - Update rule type to integration
+            
 ??? abstract "Microsoft Defender XDR Endpoint Alert"
     
     Microsoft Defender XDR has raised an alert for Microsoft Defender for Endpoint. The alert info and evidence events are grouped with the similarity into the same Sekoia.io alert.
     
     - **Effort:** master
     
+??? abstract "Microsoft Defender XDR Entra ID Protection Alert"
+    
+    Microsoft Defender XDR has raised an alert for Microsoft Entra ID Protection. The alert info and evidence events are grouped with the similarity into the same Sekoia.io alert.
+    
+    - **Effort:** master
+    
+    - **Changelog:**
+    
+        - 12/11/2025 - minor - Update rule type to integration
+            
 ??? abstract "Microsoft Defender XDR Office 365 Alert"
     
     Microsoft Defender XDR for Office 365 has raised an alert. The alert info and evidence events are grouped with the similarity into the same Sekoia.io alert.
@@ -5179,6 +5355,10 @@ Rules catalog includes **1036 built-in detection rules** ([_last update on 2025-
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 28/10/2025 - minor - improve detection by adding pattern
+            
 ??? abstract "Windows Update LolBins"
     
     This rule try to detect a suspicious behavior of wuauclt.exe (windows update client) that could be a lolbins. Wuauctl.exe could be used to execute a malicious program.
@@ -5285,6 +5465,14 @@ Rules catalog includes **1036 built-in detection rules** ([_last update on 2025-
     
     - **Effort:** intermediate
     
+**Cloud Administration Command**
+
+??? abstract "WIZ Issues Critical Alert Raised"
+    
+    Detects when a critical alert from WIZ Issues is raised.
+    
+    - **Effort:** master
+    
 ## Persistence
 **Boot or Logon Initialization Scripts**
 
@@ -5293,6 +5481,12 @@ Rules catalog includes **1036 built-in detection rules** ([_last update on 2025-
     Detects creation or execution of UserInitMprLogonScript persistence method. The rule requires to log for process command lines and registry creations or update, which can be done using Sysmon Event IDs 1, 12, 13 and 14.
     
     - **Effort:** advanced
+    
+??? abstract "Startup Item Created"
+    
+    Detects when a item is added to the startup directory. An attacker can use this establish persistence.
+    
+    - **Effort:** intermediate
     
 **Scheduled Task/Job**
 
@@ -5406,6 +5600,8 @@ Rules catalog includes **1036 built-in detection rules** ([_last update on 2025-
     
     - **Changelog:**
     
+        - 30/09/2025 - minor - Update selection to improve detection
+        - 28/08/2025 - minor - Filter some FPs on key values
         - 21/06/2024 - major - Update detection pattern for ECS fields/value compliance, and filter some FPs
             
 **Valid Accounts**
@@ -5482,6 +5678,7 @@ Rules catalog includes **1036 built-in detection rules** ([_last update on 2025-
     - **Changelog:**
     
         - 20/01/2025 - minor - Update pattern to ECS field and add intake field format
+        - 15/10/2025 - minor - Update pattern to match intake format change
             
 ??? abstract "Denied Access To Remote Desktop"
     
@@ -5494,6 +5691,12 @@ Rules catalog includes **1036 built-in detection rules** ([_last update on 2025-
         - 19/10/2023 - minor - Minor change in selection to reduce false positives.
         - 26/03/2024 - major - Rule's pattern field changed
             
+??? abstract "Dscl Authonly"
+    
+    Detects the use of the command dscl with authonly used to verify the password of a user and for authentification. An attacker can abuse this command to gain credentials.
+    
+    - **Effort:** advanced
+    
 ??? abstract "Enable Root Account With Dsenableroot"
     
     Detects when root is enabled. Attackers can use this as a mean of persistence since root is disabled by default.
@@ -5576,6 +5779,7 @@ Rules catalog includes **1036 built-in detection rules** ([_last update on 2025-
     - **Changelog:**
     
         - 03/02/2025 - minor - Update pattern to ECS field only and intake format
+        - 15/10/2025 - minor - Update pattern to match intake format change
             
 ??? abstract "Login Brute-Force On FreeRadius"
     
@@ -5675,6 +5879,12 @@ Rules catalog includes **1036 built-in detection rules** ([_last update on 2025-
     An user tries to access an unauthorized application.
     
     - **Effort:** master
+    
+??? abstract "User Added To Admin Group Via Cmd"
+    
+    Detects the use of different commands to add a user to an admin group.
+    
+    - **Effort:** advanced
     
 ??? abstract "User Added to Local Administrators"
     
@@ -6226,6 +6436,12 @@ Rules catalog includes **1036 built-in detection rules** ([_last update on 2025-
     
     - **Effort:** elementary
     
+??? abstract "Potential Persistence Via Outlook LoadMacroProviderOnBoot Setting"
+    
+    Detects the modification of Outlook setting "LoadMacroProviderOnBoot" which if enabled allows the automatic loading of any configured VBA project/module. Logging for Registry events is needed, it can be done in the Sysmon configuration (events 12 and 13).
+    
+    - **Effort:** master
+    
 **Software Extensions**
 
 ??? abstract "Malicious Browser Extensions"
@@ -6726,6 +6942,12 @@ Rules catalog includes **1036 built-in detection rules** ([_last update on 2025-
     
     - **Effort:** intermediate
     
+??? abstract "Potential Persistence Via Outlook LoadMacroProviderOnBoot Setting"
+    
+    Detects the modification of Outlook setting "LoadMacroProviderOnBoot" which if enabled allows the automatic loading of any configured VBA project/module. Logging for Registry events is needed, it can be done in the Sysmon configuration (events 12 and 13).
+    
+    - **Effort:** master
+    
 ??? abstract "Reconnaissance Commands Activities"
     
     Based on Cynet, Microsoft and Kaspersky analysis of Qakbot, this rule tries to detect some discovery TTPs.
@@ -6818,6 +7040,8 @@ Rules catalog includes **1036 built-in detection rules** ([_last update on 2025-
     
     - **Changelog:**
     
+        - 30/09/2025 - minor - Update selection to improve detection
+        - 28/08/2025 - minor - Filter some FPs on key values
         - 21/06/2024 - major - Update detection pattern for ECS fields/value compliance, and filter some FPs
             
 ??? abstract "Microsoft Office Macro Security Registry Modifications"
@@ -6848,6 +7072,12 @@ Rules catalog includes **1036 built-in detection rules** ([_last update on 2025-
     Detects specifis registry values that are related to njRat usage.
     
     - **Effort:** intermediate
+    
+??? abstract "Powershell Suspicious Startup Shortcut Persistence"
+    
+    Detects Powershell writing Startup shortcuts for persistence.
+    
+    - **Effort:** master
     
 ??? abstract "Powershell Winlogon Helper DLL"
     
@@ -7012,6 +7242,10 @@ Rules catalog includes **1036 built-in detection rules** ([_last update on 2025-
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 09/10/2025 - minor - Added filter for a new field to reduce false positvives.
+            
 ??? abstract "Hijack Legit RDP Session To Move Laterally"
     
     Identifies suspicious file creations in the startup folder of a remote system. An adversary could abuse this to move laterally by dropping a malicious script or executable that will be executed after a reboot or user logon.
@@ -7044,13 +7278,14 @@ Rules catalog includes **1036 built-in detection rules** ([_last update on 2025-
     
 ??? abstract "Windows Registry Persistence COM Search Order Hijacking"
     
-    Detects potential COM object hijacking leveraging the COM Search Order. Logging for Registry events is needed, it can be done with Sysmon's Event IDs 12 and 13.
+    Detects potential COM object hijacking leveraging the COM Search Order. Logging for Registry events is needed, it can be done with Sysmon's Event IDs 12 and 13. Alert filters are highly encouraged for such kind of rule.
     
-    - **Effort:** advanced
+    - **Effort:** master
     
     - **Changelog:**
     
         - 11/01/2024 - minor - Adding filtering for some FPs
+        - 18/08/2025 - major - Effort level moved to master. Pattern changed to enhance the detection scope. Filters were added to reduce false positives.
             
 ## Privilege Execution
 **Boot or Logon Initialization Scripts**
@@ -7060,6 +7295,12 @@ Rules catalog includes **1036 built-in detection rules** ([_last update on 2025-
     Detects creation or execution of UserInitMprLogonScript persistence method. The rule requires to log for process command lines and registry creations or update, which can be done using Sysmon Event IDs 1, 12, 13 and 14.
     
     - **Effort:** advanced
+    
+??? abstract "Startup Item Created"
+    
+    Detects when a item is added to the startup directory. An attacker can use this establish persistence.
+    
+    - **Effort:** intermediate
     
 **Scheduled Task/Job**
 
@@ -7395,6 +7636,10 @@ Rules catalog includes **1036 built-in detection rules** ([_last update on 2025-
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 09/10/2025 - minor - Added filter for a new field to reduce false positvives.
+            
 ??? abstract "Okta Admin Privilege Granted"
     
     Administrator privilege granted to an user or account. This can be privilege escalation, persistance over system or account takedown.
@@ -7481,6 +7726,7 @@ Rules catalog includes **1036 built-in detection rules** ([_last update on 2025-
     - **Changelog:**
     
         - 20/01/2025 - minor - Update pattern to ECS field and add intake field format
+        - 15/10/2025 - minor - Update pattern to match intake format change
             
 ??? abstract "Denied Access To Remote Desktop"
     
@@ -7493,6 +7739,12 @@ Rules catalog includes **1036 built-in detection rules** ([_last update on 2025-
         - 19/10/2023 - minor - Minor change in selection to reduce false positives.
         - 26/03/2024 - major - Rule's pattern field changed
             
+??? abstract "Dscl Authonly"
+    
+    Detects the use of the command dscl with authonly used to verify the password of a user and for authentification. An attacker can abuse this command to gain credentials.
+    
+    - **Effort:** advanced
+    
 ??? abstract "Enable Root Account With Dsenableroot"
     
     Detects when root is enabled. Attackers can use this as a mean of persistence since root is disabled by default.
@@ -7575,6 +7827,7 @@ Rules catalog includes **1036 built-in detection rules** ([_last update on 2025-
     - **Changelog:**
     
         - 03/02/2025 - minor - Update pattern to ECS field only and intake format
+        - 15/10/2025 - minor - Update pattern to match intake format change
             
 ??? abstract "Login Brute-Force On FreeRadius"
     
@@ -7674,6 +7927,12 @@ Rules catalog includes **1036 built-in detection rules** ([_last update on 2025-
     An user tries to access an unauthorized application.
     
     - **Effort:** master
+    
+??? abstract "User Added To Admin Group Via Cmd"
+    
+    Detects the use of different commands to add a user to an admin group.
+    
+    - **Effort:** advanced
     
 ??? abstract "User Added to Local Administrators"
     
@@ -8441,6 +8700,12 @@ Rules catalog includes **1036 built-in detection rules** ([_last update on 2025-
     
     - **Effort:** intermediate
     
+??? abstract "Potential Persistence Via Outlook LoadMacroProviderOnBoot Setting"
+    
+    Detects the modification of Outlook setting "LoadMacroProviderOnBoot" which if enabled allows the automatic loading of any configured VBA project/module. Logging for Registry events is needed, it can be done in the Sysmon configuration (events 12 and 13).
+    
+    - **Effort:** master
+    
 ??? abstract "Reconnaissance Commands Activities"
     
     Based on Cynet, Microsoft and Kaspersky analysis of Qakbot, this rule tries to detect some discovery TTPs.
@@ -8533,6 +8798,8 @@ Rules catalog includes **1036 built-in detection rules** ([_last update on 2025-
     
     - **Changelog:**
     
+        - 30/09/2025 - minor - Update selection to improve detection
+        - 28/08/2025 - minor - Filter some FPs on key values
         - 21/06/2024 - major - Update detection pattern for ECS fields/value compliance, and filter some FPs
             
 ??? abstract "Microsoft Office Macro Security Registry Modifications"
@@ -8563,6 +8830,12 @@ Rules catalog includes **1036 built-in detection rules** ([_last update on 2025-
     Detects specifis registry values that are related to njRat usage.
     
     - **Effort:** intermediate
+    
+??? abstract "Powershell Suspicious Startup Shortcut Persistence"
+    
+    Detects Powershell writing Startup shortcuts for persistence.
+    
+    - **Effort:** master
     
 ??? abstract "Powershell Winlogon Helper DLL"
     
@@ -8721,6 +8994,10 @@ Rules catalog includes **1036 built-in detection rules** ([_last update on 2025-
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 09/10/2025 - minor - Added filter to reduce false positvives.
+            
 **Hijack Execution Flow**
 
 ??? abstract "DHCP Callout DLL Installation"
@@ -8793,6 +9070,10 @@ Rules catalog includes **1036 built-in detection rules** ([_last update on 2025-
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 09/10/2025 - minor - Added filter for a new field to reduce false positvives.
+            
 ??? abstract "Hijack Legit RDP Session To Move Laterally"
     
     Identifies suspicious file creations in the startup folder of a remote system. An adversary could abuse this to move laterally by dropping a malicious script or executable that will be executed after a reboot or user logon.
@@ -8825,13 +9106,14 @@ Rules catalog includes **1036 built-in detection rules** ([_last update on 2025-
     
 ??? abstract "Windows Registry Persistence COM Search Order Hijacking"
     
-    Detects potential COM object hijacking leveraging the COM Search Order. Logging for Registry events is needed, it can be done with Sysmon's Event IDs 12 and 13.
+    Detects potential COM object hijacking leveraging the COM Search Order. Logging for Registry events is needed, it can be done with Sysmon's Event IDs 12 and 13. Alert filters are highly encouraged for such kind of rule.
     
-    - **Effort:** advanced
+    - **Effort:** master
     
     - **Changelog:**
     
         - 11/01/2024 - minor - Adding filtering for some FPs
+        - 18/08/2025 - major - Effort level moved to master. Pattern changed to enhance the detection scope. Filters were added to reduce false positives.
             
 **Escape to Host**
 
@@ -8926,6 +9208,7 @@ Rules catalog includes **1036 built-in detection rules** ([_last update on 2025-
         - 22/01/2024 - minor - Extending filter to avoid FPs
         - 04/01/2024 - major - Rework filter selection with contains instead of re modifier
         - 26/03/2024 - major - Rule's pattern field changed
+        - 20/08/2025 - minor - Extending filter to avoid FPs on Windows on ARM architectures
             
 ??? abstract "Linux Binary Masquerading"
     
@@ -8937,6 +9220,12 @@ Rules catalog includes **1036 built-in detection rules** ([_last update on 2025-
     
         - 12/12/2023 - minor - extend regex to macth more cases
             
+??? abstract "Linux Masquerading Space After Name"
+    
+    This detection rule identifies a process created from an executable with a space appended to the end of the name.
+    
+    - **Effort:** intermediate
+    
 ??? abstract "New Or Renamed User Account With '$' In Attribute 'SamAccountName'"
     
     Detects possible bypass EDR and SIEM via abnormal user account name.
@@ -9382,6 +9671,7 @@ Rules catalog includes **1036 built-in detection rules** ([_last update on 2025-
     - **Changelog:**
     
         - 20/01/2025 - minor - Update pattern to ECS field and add intake field format
+        - 15/10/2025 - minor - Update pattern to match intake format change
             
 ??? abstract "Denied Access To Remote Desktop"
     
@@ -9394,6 +9684,12 @@ Rules catalog includes **1036 built-in detection rules** ([_last update on 2025-
         - 19/10/2023 - minor - Minor change in selection to reduce false positives.
         - 26/03/2024 - major - Rule's pattern field changed
             
+??? abstract "Dscl Authonly"
+    
+    Detects the use of the command dscl with authonly used to verify the password of a user and for authentification. An attacker can abuse this command to gain credentials.
+    
+    - **Effort:** advanced
+    
 ??? abstract "Enable Root Account With Dsenableroot"
     
     Detects when root is enabled. Attackers can use this as a mean of persistence since root is disabled by default.
@@ -9476,6 +9772,7 @@ Rules catalog includes **1036 built-in detection rules** ([_last update on 2025-
     - **Changelog:**
     
         - 03/02/2025 - minor - Update pattern to ECS field only and intake format
+        - 15/10/2025 - minor - Update pattern to match intake format change
             
 ??? abstract "Login Brute-Force On FreeRadius"
     
@@ -9575,6 +9872,12 @@ Rules catalog includes **1036 built-in detection rules** ([_last update on 2025-
     An user tries to access an unauthorized application.
     
     - **Effort:** master
+    
+??? abstract "User Added To Admin Group Via Cmd"
+    
+    Detects the use of different commands to add a user to an admin group.
+    
+    - **Effort:** advanced
     
 ??? abstract "User Added to Local Administrators"
     
@@ -10150,15 +10453,16 @@ Rules catalog includes **1036 built-in detection rules** ([_last update on 2025-
     
         - 23/11/2023 - major - Extended detection and added filter
             
-??? abstract "Suspicious Rundll32.exe Execution"
+??? abstract "Suspicious Rundll32.exe Executions"
     
-    The process rundll32.exe executes a newly dropped DLL with update /i in the command line. This specific technic was observed at least being used by the IcedID loading mechanism dubbed Gziploader.
+    The process rundll32.exe executes a newly dropped DLL with update /i in the command line. This specific technic was observed at least being used by the IcedID loading mechanism dubbed Gziploader. Some other detections are related to LOLBAS (Living Off The Land Binaries, Scripts and Libraries) usages (like the COM registering).
     
     - **Effort:** intermediate
     
     - **Changelog:**
     
         - 21/09/2023 - minor - Extend to some usage without dll filename
+        - 20/10/2025 - minor - Adding COM registering detection pattern and filtering some DLL to avoid false positives.
             
 ??? abstract "Suspicious Taskkill Command"
     
@@ -10438,6 +10742,10 @@ Rules catalog includes **1036 built-in detection rules** ([_last update on 2025-
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 09/10/2025 - minor - Added filter to reduce false positvives.
+            
 **Use Alternate Authentication Material**
 
 ??? abstract "Abusing Azure Browser SSO"
@@ -11197,6 +11505,12 @@ Rules catalog includes **1036 built-in detection rules** ([_last update on 2025-
     
 **Hide Artifacts**
 
+??? abstract "Chflags Hidden"
+    
+    Detects the use of the hidden flag by the utility chflags to hide files and directories.
+    
+    - **Effort:** advanced
+    
 ??? abstract "Hiding Files With Attrib.exe"
     
     Detects usage of attrib.exe to hide files from users.
@@ -11303,6 +11617,10 @@ Rules catalog includes **1036 built-in detection rules** ([_last update on 2025-
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 09/10/2025 - minor - Added filter for a new field to reduce false positvives.
+            
 ??? abstract "Hijack Legit RDP Session To Move Laterally"
     
     Identifies suspicious file creations in the startup folder of a remote system. An adversary could abuse this to move laterally by dropping a malicious script or executable that will be executed after a reboot or user logon.
@@ -11335,13 +11653,14 @@ Rules catalog includes **1036 built-in detection rules** ([_last update on 2025-
     
 ??? abstract "Windows Registry Persistence COM Search Order Hijacking"
     
-    Detects potential COM object hijacking leveraging the COM Search Order. Logging for Registry events is needed, it can be done with Sysmon's Event IDs 12 and 13.
+    Detects potential COM object hijacking leveraging the COM Search Order. Logging for Registry events is needed, it can be done with Sysmon's Event IDs 12 and 13. Alert filters are highly encouraged for such kind of rule.
     
-    - **Effort:** advanced
+    - **Effort:** master
     
     - **Changelog:**
     
         - 11/01/2024 - minor - Adding filtering for some FPs
+        - 18/08/2025 - major - Effort level moved to master. Pattern changed to enhance the detection scope. Filters were added to reduce false positives.
             
 **Modify Cloud Compute Infrastructure**
 
@@ -11687,6 +12006,7 @@ Rules catalog includes **1036 built-in detection rules** ([_last update on 2025-
         - 06/04/2023 - minor - Whitelisted another SourceImage as it triggered too many false positives.
         - 21/06/2023 - minor - Whitelisted lsm.exe that triggered too many false positives.
         - 26/03/2024 - major - Rule's pattern field changed
+        - 23/09/2025 - minor - Adding filters to avoid false positives.
             
 ??? abstract "NTDS.dit File In Suspicious Directory"
     
@@ -11893,6 +12213,14 @@ Rules catalog includes **1036 built-in detection rules** ([_last update on 2025-
     
         - 21/11/2023 - minor - Rule's effort level has been changed to advanced as it was highly dependent on the environment.
             
+**Input Capture**
+
+??? abstract "AppleScript Password Prompt"
+    
+    Detects when a prompt is displayed to gain credentials. This technique is used by MacOS malware to obtain the user's password.
+    
+    - **Effort:** advanced
+    
 **Brute Force**
 
 ??? abstract "1Password EPM Brute Force"
@@ -11948,6 +12276,7 @@ Rules catalog includes **1036 built-in detection rules** ([_last update on 2025-
     - **Changelog:**
     
         - 20/01/2025 - minor - Update pattern to ECS field and add intake field format
+        - 15/10/2025 - minor - Update pattern to match intake format change
             
 ??? abstract "Correlation Internal Kerberos Password Spraying"
     
@@ -11990,6 +12319,7 @@ Rules catalog includes **1036 built-in detection rules** ([_last update on 2025-
     - **Changelog:**
     
         - 20/01/2025 - minor - Update pattern to ECS field only
+        - 15/10/2025 - minor - Update pattern to match intake format change
             
 ??? abstract "Fortigate Firewall Successful External Login"
     
@@ -12022,6 +12352,7 @@ Rules catalog includes **1036 built-in detection rules** ([_last update on 2025-
     - **Changelog:**
     
         - 03/02/2025 - minor - Update pattern to ECS field only and intake format
+        - 15/10/2025 - minor - Update pattern to match intake format change
             
 ??? abstract "Login Brute-Force On FreeRadius"
     
@@ -12113,6 +12444,12 @@ Rules catalog includes **1036 built-in detection rules** ([_last update on 2025-
     
 **Multi-Factor Authentication Interception**
 
+??? abstract "Entra ID Sign-In Via Known AiTM Phishing Kit (CEPHAS 2FA)"
+    
+    Detects a sign-in attempt with known characteristics of the adversary-in-the-middle phishing kit CEPHAS 2FA.
+    
+    - **Effort:** elementary
+    
 ??? abstract "Entra ID Sign-In Via Known AiTM Phishing Kit (Gabagool)"
     
     Detects a sign-in attempt with known characteristics of the adversary-in-the-middle phishing kit Gabagool. The `filter_password_spraying` exclusion corresponds to a password spraying tool which is already detected by the rule `Entra ID Password Compromised By Known Credential Testing Tool`.
@@ -12364,6 +12701,12 @@ Rules catalog includes **1036 built-in detection rules** ([_last update on 2025-
     
     - **Effort:** advanced
     
+??? abstract "Generic Password Discovery"
+    
+    Detects when the security utility is used to access passwords in a keychain.
+    
+    - **Effort:** advanced
+    
 ??? abstract "Information Stealer Downloading Legitimate Third-Party DLLs"
     
     Detects operations that involved legitimate third-party DLLs used by information-stealing malware for data collection on the infected host. This detection rule correlates at least 7 events including the following DLLs - freebl3.dll, vcruntime140.dll, msvcp140.dll, nss3.dll, sqlite3.dll, softokn3.dll, mozglue.dll and libcurl.dll. This behaviour matches activities of several widespread stealer like Vidar, Raccoon Stealer v2, Mars Stealer, etc.
@@ -12425,6 +12768,12 @@ Rules catalog includes **1036 built-in detection rules** ([_last update on 2025-
     Detect a possible NTLM Relay attack combine with authent coerce
     
     - **Effort:** intermediate
+    
+??? abstract "Entra ID Sign-In Via Known AiTM Phishing Kit (CEPHAS 2FA)"
+    
+    Detects a sign-in attempt with known characteristics of the adversary-in-the-middle phishing kit CEPHAS 2FA.
+    
+    - **Effort:** elementary
     
 ??? abstract "Entra ID Sign-In Via Known AiTM Phishing Kit (Gabagool)"
     
@@ -12822,6 +13171,10 @@ Rules catalog includes **1036 built-in detection rules** ([_last update on 2025-
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 18/09/2025 - minor - Similarity strategy updated.
+            
 ??? abstract "Anomaly Internal Port Connection"
     
     Detects multiple scan of different ports on internal network.
@@ -12883,6 +13236,7 @@ Rules catalog includes **1036 built-in detection rules** ([_last update on 2025-
     
     - **Changelog:**
     
+        - 29/08/2025 - minor - Filtering some command line false positives.
         - 11/12/2024 - minor - Added a default similarity based on host name and user name to avoid too many alerts.
         - 26/03/2024 - minor - Adapted the rule to remove false positives.
             
@@ -12952,8 +13306,12 @@ Rules catalog includes **1036 built-in detection rules** ([_last update on 2025-
     
     Detects attacker fingerprint activities based on the correlation of specific WMIC commands. This has been observed with Aurora malware.
     
-    - **Effort:** intermediate
+    - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 19/08/2025 - major - Changing effort level.
+            
 **File and Directory Discovery**
 
 ??? abstract "Netskope DLP Alert"
@@ -13002,6 +13360,7 @@ Rules catalog includes **1036 built-in detection rules** ([_last update on 2025-
     
     - **Changelog:**
     
+        - 29/08/2025 - minor - Filtering some command line false positives.
         - 11/12/2024 - minor - Added a default similarity based on host name and user name to avoid too many alerts.
         - 26/03/2024 - minor - Adapted the rule to remove false positives.
             
@@ -13129,6 +13488,7 @@ Rules catalog includes **1036 built-in detection rules** ([_last update on 2025-
     - **Changelog:**
     
         - 12/10/2023 - minor - Slight change to a condition in order to reduce false positives.
+        - 23/09/2025 - minor - Improving selection in order to reduce false positives.
             
 ??? abstract "Bloodhound and Sharphound Tools Usage"
     
@@ -13138,6 +13498,7 @@ Rules catalog includes **1036 built-in detection rules** ([_last update on 2025-
     
     - **Changelog:**
     
+        - 29/08/2025 - minor - Filtering some command line false positives.
         - 11/12/2024 - minor - Added a default similarity based on host name and user name to avoid too many alerts.
         - 26/03/2024 - minor - Adapted the rule to remove false positives.
             
@@ -13571,6 +13932,14 @@ Rules catalog includes **1036 built-in detection rules** ([_last update on 2025-
         - 15/04/2024 - minor - Update email from field to latest parser format
         - 14/11/2024 - major - Adding new file extension and new condition to make the rule broader as it can now match on more intakes.
             
+**Input Capture**
+
+??? abstract "AppleScript Password Prompt"
+    
+    Detects when a prompt is displayed to gain credentials. This technique is used by MacOS malware to obtain the user's password.
+    
+    - **Effort:** advanced
+    
 **Data Staged**
 
 ??? abstract "CVE-2021-20023 SonicWall Arbitrary File Read"
@@ -13675,6 +14044,12 @@ Rules catalog includes **1036 built-in detection rules** ([_last update on 2025-
     Detect a possible NTLM Relay attack combine with authent coerce
     
     - **Effort:** intermediate
+    
+??? abstract "Entra ID Sign-In Via Known AiTM Phishing Kit (CEPHAS 2FA)"
+    
+    Detects a sign-in attempt with known characteristics of the adversary-in-the-middle phishing kit CEPHAS 2FA.
+    
+    - **Effort:** elementary
     
 ??? abstract "Entra ID Sign-In Via Known AiTM Phishing Kit (Gabagool)"
     
@@ -13959,6 +14334,12 @@ Rules catalog includes **1036 built-in detection rules** ([_last update on 2025-
     This rule detects requests to Konni C2 servers. These patterns come from an analysis done in 2022, September.
     
     - **Effort:** elementary
+    
+??? abstract "Download File On Cloud Storage Through Command Line"
+    
+    Detects commonly used commands like curl or wget used to download files on a Cloud Storage URL like a Google Drive URL.
+    
+    - **Effort:** intermediate
     
 ??? abstract "Dynamic DNS Contacted"
     
@@ -14414,6 +14795,12 @@ Rules catalog includes **1036 built-in detection rules** ([_last update on 2025-
     
     - **Effort:** advanced
     
+??? abstract "SSH Reverse Socks"
+    
+    Detects the usage of the -R option combined with StrictHostKeyChecking, which is an indication of using SSH for reverse socks.
+    
+    - **Effort:** intermediate
+    
 ??? abstract "SSH Tunnel Traffic"
     
     When a user creates and uses a SSH tunnel in Linux, the sshd process opens sockets to communicate with other machines or ports. With SSH tunneling, the SSH server can be used as a getaway to access internal systems. The traffic will seem to be coming from the SSH server whereas it only acts as a relay for an attacker. By using this technique, an attacker can successfully bypass external firewall rules and gain foothold to your network, allowing him to scan,hunt and attack your internal systems. This rule includes a filter on port 22, this filter is created to avoid false positive when a user is connecting via ssh. If you do not use port 22 for your machines, please create an alert filter.
@@ -14823,6 +15210,7 @@ Rules catalog includes **1036 built-in detection rules** ([_last update on 2025-
     - **Changelog:**
     
         - 31/01/2024 - minor - Improve selection filter
+        - 04/09/2025 - minor - Adding similarity strategy.
             
 ??? abstract "Stop Backup Services"
     

@@ -11,9 +11,6 @@ Ubika Cloud Protector Next Generation offers cutting-edge security for cloud env
 - **Detection based on**: Alert
 - **Supported application or feature**: Web application firewall logs
 
-!!! Warning
-    Important note - This format is currently in beta. We highly value your feedback to improve its performance.
-
 ## Configure
 
 ### How to create refresh token

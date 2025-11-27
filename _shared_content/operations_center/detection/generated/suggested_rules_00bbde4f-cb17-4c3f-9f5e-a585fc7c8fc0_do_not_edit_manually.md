@@ -291,6 +291,12 @@ The following Sekoia.io built-in rules match the intake **Google Kubernetes Engi
     
     - **Effort:** intermediate
 
+??? abstract "Linux Masquerading Space After Name"
+    
+    This detection rule identifies a process created from an executable with a space appended to the end of the name.
+    
+    - **Effort:** intermediate
+
 ??? abstract "Linux Shared Lib Injection Via Ldso Preload"
     
     Detect ld.so.preload modification for shared lib injection, technique used by attackers to load arbitrary code into process
@@ -669,6 +675,12 @@ The following Sekoia.io built-in rules match the intake **Google Kubernetes Engi
     
     - **Effort:** intermediate
 
+??? abstract "SSH Reverse Socks"
+    
+    Detects the usage of the -R option combined with StrictHostKeyChecking, which is an indication of using SSH for reverse socks.
+    
+    - **Effort:** intermediate
+
 ??? abstract "Socat Relaying Socket"
     
     Socat is a linux tool used to relay local socket or internal network connection, this technics is often used by attacker to bypass security equipment such as firewall
@@ -684,6 +696,12 @@ The following Sekoia.io built-in rules match the intake **Google Kubernetes Engi
 ??? abstract "Spyware Persistence Using Schtasks"
     
     Detects possible Agent Tesla or Formbook persistence using schtasks. The name of the scheduled task used by these malware is very specific (Updates/randomstring).
+    
+    - **Effort:** intermediate
+
+??? abstract "Startup Item Created"
+    
+    Detects when a item is added to the startup directory. An attacker can use this establish persistence.
     
     - **Effort:** intermediate
 
@@ -764,6 +782,12 @@ The following Sekoia.io built-in rules match the intake **Google Kubernetes Engi
     Detects new commands that add new printer port which point to suspicious file
     
     - **Effort:** advanced
+
+??? abstract "Suspicious Rundll32.exe Executions"
+    
+    The process rundll32.exe executes a newly dropped DLL with update /i in the command line. This specific technic was observed at least being used by the IcedID loading mechanism dubbed Gziploader. Some other detections are related to LOLBAS (Living Off The Land Binaries, Scripts and Libraries) usages (like the COM registering).
+    
+    - **Effort:** intermediate
 
 ??? abstract "Suspicious Taskkill Command"
     
@@ -882,6 +906,12 @@ The following Sekoia.io built-in rules match the intake **Google Kubernetes Engi
 ??? abstract "Windows Registry Persistence COM Key Linking"
     
     Detects COM object hijacking via TreatAs subkey. Logging for Registry events is needed in the Sysmon configuration with this kind of rule `<TargetObject name="testr12" condition="end with">\TreatAs\(Default)</TargetObject>`.
+    
+    - **Effort:** master
+
+??? abstract "Windows Sandbox Start"
+    
+    Detection of Windows Sandbox started from the command line with a config file or interactively using a WSB file.
     
     - **Effort:** master
 

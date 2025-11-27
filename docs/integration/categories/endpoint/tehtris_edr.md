@@ -24,7 +24,7 @@ To forward events produced by TEHTRIS EDR to Sekoia.io, you have to:
 
 2. Log on the TEHTRIS XDR platform and navigate to `SOAR > Key Management`
 
-3. Click on the button `Add`, enter the label of the API Key and select, at least, the API `Fetch Events`. You may have to create a filter
+3. Click on the button `Add`, enter the label of the API Key and select, at least, the API `Fetch Events`. You are required to create a filter (this filter may be left empty if desired).
 
 4. At the end, click on `Create` to generate the API Key
 

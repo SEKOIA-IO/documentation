@@ -50,7 +50,7 @@ Go to the Sekoia.io [playbook page](https://app.sekoia.io/operations/playbooks),
       - `customer Id` (from "Find your Customer ID" step), 
       - `account name`
       - `account password`
-      - `api domain name` (Europe: eu.msg.mcafeesaas.com, North America: us.msg.mcafeesaas.com)
+      - `api domain name` (`<region>.logapi.skyhigh.cloud`; e.g. Germany: de.logapi.skyhigh.cloud, North America: us.logapi.skyhigh.cloud, ...)
 
 8. Click the **Save** button
 9. **Activate the playbook** with the toggle button
@@ -64,3 +64,8 @@ Go to the Sekoia.io [playbook page](https://app.sekoia.io/operations/playbooks),
 {!_shared_content/operations_center/detection/generated/suggested_rules_40bac399-2d8e-40e3-af3b-f73a622c9687_do_not_edit_manually.md!}
 {!_shared_content/operations_center/integrations/generated/40bac399-2d8e-40e3-af3b-f73a622c9687.md!}
 
+
+## Further readings
+
+- [Skyhigh Secure Web Gateway (Cloud) Documentation](https://success.skyhighsecurity.com/Skyhigh_Secure_Web_Gateway_(Cloud))
+- [Region prefixes](https://success.skyhighsecurity.com/Skyhigh_Secure_Web_Gateway_(Cloud)/Using_the_Forensics_API_for_Reporting/Create_a_Report_with_the_Forensics_API)

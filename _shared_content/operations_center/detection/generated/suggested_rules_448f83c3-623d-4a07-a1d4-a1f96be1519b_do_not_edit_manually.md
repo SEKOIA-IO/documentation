@@ -1,8 +1,8 @@
 ### Related Built-in Rules
 
-The following Sekoia.io built-in rules match the intake **Trellix ePO (on-prem) [BETA]**. This documentation is updated automatically and is based solely on the fields used by the intake which are checked against our rules. This means that some rules will be listed but might not be relevant with the intake.
+The following Sekoia.io built-in rules match the intake **Trellix ePO (on-prem)**. This documentation is updated automatically and is based solely on the fields used by the intake which are checked against our rules. This means that some rules will be listed but might not be relevant with the intake.
 
-[SEKOIA.IO x Trellix ePO (on-prem) [BETA] on ATT&CK Navigator](https://mitre-attack.github.io/attack-navigator/#layerURL=https%3A%2F%2Fraw.githubusercontent.com%2FSEKOIA-IO%2Fdocumentation%2Fmain%2F_shared_content%2Foperations_center%2Fdetection%2Fgenerated%2Fattack_448f83c3-623d-4a07-a1d4-a1f96be1519b_do_not_edit_manually.json){ .md-button }
+[SEKOIA.IO x Trellix ePO (on-prem) on ATT&CK Navigator](https://mitre-attack.github.io/attack-navigator/#layerURL=https%3A%2F%2Fraw.githubusercontent.com%2FSEKOIA-IO%2Fdocumentation%2Fmain%2F_shared_content%2Foperations_center%2Fdetection%2Fgenerated%2Fattack_448f83c3-623d-4a07-a1d4-a1f96be1519b_do_not_edit_manually.json){ .md-button }
 ??? abstract "Account Added To A Security Enabled Group"
     
     Detection in order to investigate who has added a specific Domain User in Domain Admins or Group Policy Creator Owners (Security event 4728)
@@ -207,6 +207,12 @@ The following Sekoia.io built-in rules match the intake **Trellix ePO (on-prem) 
     
     - **Effort:** advanced
 
+??? abstract "Linux Masquerading Space After Name"
+    
+    This detection rule identifies a process created from an executable with a space appended to the end of the name.
+    
+    - **Effort:** intermediate
+
 ??? abstract "Microsoft Defender Antivirus History Deleted"
     
     Windows Defender history has been deleted. Could be an attempt by an attacker to remove its traces.
@@ -315,6 +321,12 @@ The following Sekoia.io built-in rules match the intake **Trellix ePO (on-prem) 
     
     - **Effort:** master
 
+??? abstract "SEKOIA.IO Intelligence Feed"
+    
+    Detect threats based on indicators of compromise (IOCs) collected by SEKOIA's Threat and Detection Research team.
+    
+    - **Effort:** elementary
+
 ??? abstract "Sekoia.io EICAR Detection"
     
     Detects observables in Sekoia.io CTI tagged as EICAR, which are fake samples meant to test detection.
@@ -330,6 +342,12 @@ The following Sekoia.io built-in rules match the intake **Trellix ePO (on-prem) 
 ??? abstract "Suspicious Double Extension"
     
     Detects suspicious use of an .exe extension after a non-executable file extension like .pdf.exe, a set of spaces or underlines to cloak the executable file in spearphishing campaigns
+    
+    - **Effort:** advanced
+
+??? abstract "Suspicious File Name"
+    
+    Detects suspicious file name possibly linked to malicious tool.
     
     - **Effort:** advanced
 

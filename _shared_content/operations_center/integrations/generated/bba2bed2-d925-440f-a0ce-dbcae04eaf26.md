@@ -136,6 +136,11 @@ This section demonstrates how the raw logs will be transformed by our parsers. I
             "address": "1.1.1.1",
             "ip": "1.1.1.1",
             "port": 1294
+        },
+        "url": {
+            "domain": "pgoadcmgqfacj.com",
+            "registered_domain": "pgoadcmgqfacj.com",
+            "top_level_domain": "com"
         }
     }
     	
@@ -340,6 +345,9 @@ This section demonstrates how the raw logs will be transformed by our parsers. I
             "version": "0.2"
         },
         "related": {
+            "hosts": [
+                "urlhaus.abuse.ch"
+            ],
             "ip": [
                 "1.1.1.1",
                 "2.2.2.2"
@@ -349,6 +357,12 @@ This section demonstrates how the raw logs will be transformed by our parsers. I
             "address": "1.1.1.1",
             "ip": "1.1.1.1",
             "port": 55614
+        },
+        "url": {
+            "domain": "urlhaus.abuse.ch",
+            "registered_domain": "abuse.ch",
+            "subdomain": "urlhaus",
+            "top_level_domain": "ch"
         }
     }
     	
@@ -685,6 +699,10 @@ This section demonstrates how the raw logs will be transformed by our parsers. I
                 "ja3s": "15af977ce25de452b96affa2addb1036"
             },
             "version": "TLS 1.3"
+        },
+        "url": {
+            "domain": "gcap-xxxxxxxxx.domain.local",
+            "subdomain": "gcap-xxxxxxxxx.domain"
         }
     }
     	

@@ -1,8 +1,8 @@
 ### Related Built-in Rules
 
-The following Sekoia.io built-in rules match the intake **BeyondTrust Privileged Remote Access Session [BETA]**. This documentation is updated automatically and is based solely on the fields used by the intake which are checked against our rules. This means that some rules will be listed but might not be relevant with the intake.
+The following Sekoia.io built-in rules match the intake **BeyondTrust Privileged Remote Access Session**. This documentation is updated automatically and is based solely on the fields used by the intake which are checked against our rules. This means that some rules will be listed but might not be relevant with the intake.
 
-[SEKOIA.IO x BeyondTrust Privileged Remote Access Session [BETA] on ATT&CK Navigator](https://mitre-attack.github.io/attack-navigator/#layerURL=https%3A%2F%2Fraw.githubusercontent.com%2FSEKOIA-IO%2Fdocumentation%2Fmain%2F_shared_content%2Foperations_center%2Fdetection%2Fgenerated%2Fattack_f6cfddb4-543a-41fe-9802-c66b7c90366d_do_not_edit_manually.json){ .md-button }
+[SEKOIA.IO x BeyondTrust Privileged Remote Access Session on ATT&CK Navigator](https://mitre-attack.github.io/attack-navigator/#layerURL=https%3A%2F%2Fraw.githubusercontent.com%2FSEKOIA-IO%2Fdocumentation%2Fmain%2F_shared_content%2Foperations_center%2Fdetection%2Fgenerated%2Fattack_f6cfddb4-543a-41fe-9802-c66b7c90366d_do_not_edit_manually.json){ .md-button }
 ??? abstract "ACLight Discovering Privileged Accounts"
     
     Detects use of ACLight tool. This tool aims to discover privileged accounts by scanning the network.
@@ -504,6 +504,12 @@ The following Sekoia.io built-in rules match the intake **BeyondTrust Privileged
 ??? abstract "Linux Bash Reverse Shell"
     
     To bypass some security equipement or for a sack of simplicity attackers can open raw reverse shell using shell commands
+    
+    - **Effort:** intermediate
+
+??? abstract "Linux Masquerading Space After Name"
+    
+    This detection rule identifies a process created from an executable with a space appended to the end of the name.
     
     - **Effort:** intermediate
 
@@ -1023,6 +1029,12 @@ The following Sekoia.io built-in rules match the intake **BeyondTrust Privileged
     
     - **Effort:** advanced
 
+??? abstract "SSH Reverse Socks"
+    
+    Detects the usage of the -R option combined with StrictHostKeyChecking, which is an indication of using SSH for reverse socks.
+    
+    - **Effort:** intermediate
+
 ??? abstract "Security Support Provider (SSP) Added to LSA Configuration"
     
     Detects the addition of a SSP to the registry. This is commonly used for persistence. Upon a reboot or API call, SSP DLLs gain access to encrypted and plaintext passwords stored in Windows. Logging for Registry events is needed for this rule to work (this can be done through Sysmon EventIDs 12 and 13).
@@ -1050,6 +1062,12 @@ The following Sekoia.io built-in rules match the intake **BeyondTrust Privileged
 ??? abstract "Spyware Persistence Using Schtasks"
     
     Detects possible Agent Tesla or Formbook persistence using schtasks. The name of the scheduled task used by these malware is very specific (Updates/randomstring).
+    
+    - **Effort:** intermediate
+
+??? abstract "Startup Item Created"
+    
+    Detects when a item is added to the startup directory. An attacker can use this establish persistence.
     
     - **Effort:** intermediate
 
@@ -1172,6 +1190,12 @@ The following Sekoia.io built-in rules match the intake **BeyondTrust Privileged
     Detects new commands that add new printer port which point to suspicious file
     
     - **Effort:** advanced
+
+??? abstract "Suspicious Rundll32.exe Executions"
+    
+    The process rundll32.exe executes a newly dropped DLL with update /i in the command line. This specific technic was observed at least being used by the IcedID loading mechanism dubbed Gziploader. Some other detections are related to LOLBAS (Living Off The Land Binaries, Scripts and Libraries) usages (like the COM registering).
+    
+    - **Effort:** intermediate
 
 ??? abstract "Suspicious TOR Gateway"
     
@@ -1309,7 +1333,7 @@ The following Sekoia.io built-in rules match the intake **BeyondTrust Privileged
     
     Detects attacker fingerprint activities based on the correlation of specific WMIC commands. This has been observed with Aurora malware.
     
-    - **Effort:** intermediate
+    - **Effort:** advanced
 
 ??? abstract "WMI Install Of Binary"
     
@@ -1374,6 +1398,12 @@ The following Sekoia.io built-in rules match the intake **BeyondTrust Privileged
 ??? abstract "Windows Registry Persistence COM Key Linking"
     
     Detects COM object hijacking via TreatAs subkey. Logging for Registry events is needed in the Sysmon configuration with this kind of rule `<TargetObject name="testr12" condition="end with">\TreatAs\(Default)</TargetObject>`.
+    
+    - **Effort:** master
+
+??? abstract "Windows Sandbox Start"
+    
+    Detection of Windows Sandbox started from the command line with a config file or interactively using a WSB file.
     
     - **Effort:** master
 

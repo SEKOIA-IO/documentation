@@ -29,11 +29,34 @@ To create a new case, you can:
 6. Add tags if needed
 7. Click on `Create`
 
+## Case Custom Statuses and Verdicts
+
+Cases support the same custom status and verdict system as alerts, enabling consistent terminology and workflows across your entire SOC platform.
+
+### Custom Statuses for Cases
+
+Custom statuses allow you to define case lifecycle stages that match your organization's investigation processes. Just like alerts, case statuses belong to one of three stages:
+
+- **Open**: Cases that are active and require attention
+- **In progress**: Cases under active investigation
+- **Closed**: Cases that have been resolved or dismissed
+
+Custom statuses can be configured to work exclusively for cases, exclusively for alerts, or for both simultaneously. When a status is enabled for both alerts and cases, it ensures consistent terminology across different investigation contexts.
+
+!!! note
+    Case history preserves original status names even if a custom status is modified later. This ensures that historical records remain accurate and reflect the status names that were in use at the time of each change.
+
+### Custom Verdicts for Cases
+
+Custom verdicts enable standardized classification of case outcomes. Each verdict belongs to either the **True Positive** or **False Positive** category, allowing your team to document investigation conclusions with precise, organization-specific terminology.
+
+Like custom statuses, verdicts can be enabled for cases, alerts, or both, ensuring consistent language when communicating investigation outcomes.
+
 ## Edit a case
 
 To edit a case, you just have to click on a case and reach the `edit` button available on the details view.
 
-The case must be open in order to be edited.
+The case must not have a status in the "Closed" stage in order to be edited. Cases with statuses in the "Open" or "In progress" stages can be edited.
 
 ## Case details
 
@@ -110,24 +133,101 @@ A side panel opens with the search results, allowing you to investigate a case w
 
 ### Graph Investigation
 
-The Graph Investigation Tab is presenting the analyst with a graphical visualization of the Case.
+The Graph Investigation tab provides analysts with an interactive graphical visualization of the alert, enabling comprehensive threat analysis through visual correlation of security events and intelligence data.
 
-![graph](/assets/operation_center/graph-in-case.png){: style="max-width:100%"}
+!!! note
+    All changes performed within the Graph Investigation are automatically saved. The graph updates dynamically with each visit based on the events associated with the alert. Any new objects discovered through additional events are automatically integrated into the existing graph structure.
 
-The following items appear on the graph:
+The graph displays the following interconnected elements:
 
-- `Observables`: these are automatically extracted from events (IP addresses, Domain Names, URLs, User Account, etc.)
-- `Observable Relationships`: relationships between observables are represented by arrows linking them on the graph. Relationships are extracted from events using the [Smart Description](../collect/intakes.md) definitions
-- `CTI Objects`: STIX objects from the Intelligence Center that provide additional context
-- `STIX relationships` between Threat Objects
+- **Observables**: Security artifacts automatically extracted from events, including IP addresses, domain names, URLs, user accounts, file hashes, and other indicators of compromise
 
-!!!note
-    All changes performed inside the Graph Investigation are temporary. A new graph is generated at each visit based on the list of events associated with the case.
+- **Observable Relationships**: Visual connections between observables represented by directional arrows. These relationships are extracted from events using Smart Description definitions that parse event data to identify logical connections
+
+- **CTI Objects**: STIX-compliant threat intelligence objects from the Intelligence database that enrich the analysis with contextual threat information
+
+- **STIX Relationships**: Standardized connections between threat intelligence objects that reveal the broader threat landscape
 
 **Threat Intelligence**
 
-You can access Threat Intelligence by clicking on any CTI object on the graph. The left panel will display its description and lists all known relationships. Related objects can then be added to the graph to pivot into the Threat Intelligence database.
+Access comprehensive threat intelligence by clicking on any CTI object within the graph. The left panel immediately displays:
 
-**Observables**
+- Detailed object descriptions and threat context
 
-You can access Observable Details by clicking on any Observable on the graph. The left panel will display all events inside the alert related to this observable, with their “Smart Description”. Full Events can be accessed in the right side panel by clicking on "Full Events". It is also possible to [Search events with this value](#search-events-with-this-value) by clicking on the button next to the name of the observable.
+- Complete relationship mappings with other intelligence objects
+
+- Interactive options to expand the graph by adding related objects
+
+This functionality enables quick pivoting through the threat intelligence database, allowing analysts to explore the full scope of related threats and campaigns.
+
+**Observable Analysis**
+
+Investigate specific observables by clicking on any observable node in the graph. The left panel provides:
+
+- **Event Context**: All events within the alert that contain the selected observable, presented with Smart Description summaries for quick comprehension
+
+- **Full Event Details**: Complete event information accessible through the right-side panel via the "Full Events" button
+
+- **Extended Search**: Direct access to search for additional events containing the same observable value across your entire environment
+
+This multi-layered approach ensures analysts can quickly understand both the immediate context and broader implications of each observable.
+
+#### Layers Management
+
+Layers enhance analytical efficiency by organizing complex graphs into manageable, focused sections that can be viewed independently or in combination.
+
+**Understanding Layers**
+
+Layers represent logical groupings within your graph that can be selectively displayed or hidden. This feature transforms complex visualizations into organized, digestible sections while maintaining the ability to view the complete picture when needed.
+
+**Default Layer Behavior**
+
+Every graph investigation automatically creates a default layer upon first access. This foundational layer:
+
+- Serves as the primary container for initial graph elements
+- Automatically incorporates new objects as additional events are processed
+- Maintains continuity across investigation sessions
+
+**Active Layer Management**
+
+The layer control interface, located in the top-left corner adjacent to the main panel, provides:
+
+- **Layer Panel Access**: One-click access to the complete layer management interface
+- **Active Layer Indicator**: Clear identification of the currently selected layer where new additions will be placed
+- **Layer Switching**: Instant transitions between different analytical perspectives
+
+##### Creating and Managing Layers
+
+To create and organize layers:
+
+- Click the name of the default layer in the top-left of the graph (e.g. Event Layer #1)
+- Select the “+” button to add a new layer
+- Enter a name for your layer.
+- Drag and drop objects or observables into the layer of your choice.
+
+All changes are saved automatically—no manual action required.
+
+**Viewing Layer Content**
+
+- To focus only on the contents of a specific layer, toggle visibility by clicking the Eye icon.
+
+Use this functionality to reduce visual clutter and isolate relevant data for deeper analysis.
+
+##### Strategic Layer Usage for Cases**
+
+Optimize your case investigation by implementing these layer organization strategies:
+
+- **Alert-Based Organization**: Create separate layers for each alert when dealing with cases containing a manageable number of distinct alerts, enabling focused analysis of individual attack phases
+- **Temporal Analysis**: Organize layers by time periods or dates to understand attack progression and identify patterns across different phases of the campaign
+- **Attack Vector Segregation**: Separate layers for different attack techniques, entry points, or affected systems to isolate analysis domains
+- **Threat Actor Attribution:** Create distinct layers when multiple threat actors or attack campaigns are suspected within the same case
+
+**Advanced Layer Features**
+
+- **Visibility Control**: Toggle individual layer visibility to focus analytical attention on specific case aspects while temporarily hiding others
+- **Cross-Layer Movement**: Relocate misplaced objects between layers to maintain optimal organization as your case investigation evolves
+- **Dynamic Renaming**: Update layer names throughout the investigation to reflect evolving understanding and maintain clear organization across complex cases
+- **Intelligent Search**: Utilize the built-in search functionality to quickly locate specific objects within large, multi-layered case graphs, essential for complex investigations with extensive observable networks spanning multiple alerts
+
+These enhanced capabilities ensure that even the most complex multi-alert cases remain manageable and analytically productive, enabling analysts to maintain situational awareness across extended attack campaigns while drilling down into specific details when needed.
+
