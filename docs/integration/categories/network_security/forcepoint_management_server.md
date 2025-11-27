@@ -1,4 +1,4 @@
-uuid: ea13ed1f-ecaf-4284-91e7-4f092323364c
+uuid: b02a2580-3457-49fd-9991-bae9d2fe7768
 name: Forcepoint Management Server [BETA]
 type: intake
 
@@ -48,9 +48,9 @@ Please consult the [Syslog Forwarding](/integration/ingestion_methods/syslog/sek
 
 Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a new intake from the `Forcepoint NGFW` format.
 
-{!_shared_content/operations_center/integrations/generated/ea13ed1f-ecaf-4284-91e7-4f092323364c_sample.md!}
+{!_shared_content/operations_center/integrations/generated/b02a2580-3457-49fd-9991-bae9d2fe7768_sample.md!}
 
 
 {!_shared_content/integration/detection_section.md!}
 
-{!_shared_content/operations_center/integrations/generated/ea13ed1f-ecaf-4284-91e7-4f092323364c.md!}
+{!_shared_content/operations_center/integrations/generated/b02a2580-3457-49fd-9991-bae9d2fe7768.md!}
