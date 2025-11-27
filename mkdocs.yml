@@ -204,6 +204,7 @@ nav:
       - LockSelf LockPass/LockTransfer/LockFiles: integration/categories/applicative/lockself.md
       - Microsoft IIS: integration/categories/applicative/microsoft_iis.md
       - Microsoft Sentinel: integration/categories/applicative/microsoft_sentinel.md
+      - New Relic Alerts: integration/categories/applicative/newrelic_alerts.md
       - Salesforce: integration/categories/applicative/salesforce.md
       - Sekoia.io activity logs: integration/categories/applicative/sekoiaio_activity_logs.md
       - Sekoia.io forwarder logs: integration/categories/applicative/sekoiaio_forwarder_logs.md
