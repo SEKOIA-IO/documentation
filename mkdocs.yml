@@ -258,6 +258,7 @@ nav:
       - Symantec Endpoint Protection: integration/categories/endpoint/symantec_epp.md
       - TEHTRIS Endpoint Detection & Reponse: integration/categories/endpoint/tehtris_edr.md
       - Tanium: integration/categories/endpoint/tanium.md
+      - Trellix ATD: integration/categories/endpoint/trellix_atd.md
       - Trellix EDR: integration/categories/endpoint/trellix_edr.md
       - Trend Micro Apex One / Vision One Endpoint: integration/categories/endpoint/trend_micro_apex_one.md
       - Trend Micro Vision One Workbench: integration/categories/endpoint/trend_micro_vision_one_workbench.md
