@@ -1,4 +1,4 @@
-uuid: 48481cb9-e594-4f6c-b724-08694f0aadb7
+uuid: 6e2f8b2b-3412-4699-a96b-a9a769bff683
 name: CyberArk Digital Vault
 type: intake
 
@@ -72,8 +72,8 @@ CyberArk Vault is a secure digital repository designed to protect and manage sen
 
 {!_shared_content/integration/forwarder_configuration.md!}
 
-{!_shared_content/operations_center/integrations/generated/48481cb9-e594-4f6c-b724-08694f0aadb7_sample.md!}
+{!_shared_content/operations_center/integrations/generated/6e2f8b2b-3412-4699-a96b-a9a769bff683_sample.md!}
 
 {!_shared_content/integration/detection_section.md!}
 
-{!_shared_content/operations_center/integrations/generated/48481cb9-e594-4f6c-b724-08694f0aadb7.md!}
+{!_shared_content/operations_center/integrations/generated/6e2f8b2b-3412-4699-a96b-a9a769bff683.md!}
