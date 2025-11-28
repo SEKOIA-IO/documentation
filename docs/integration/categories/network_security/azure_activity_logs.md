@@ -23,9 +23,7 @@ service health incidents.
 
 ## Configure
 
-### How to configure Azure Monitor Logs module
-
-#### Create an Azure application
+### Create an Azure application
 
 1. On the Azure Portal, in the search bar, go to `App registrations`
 2. Click [`+ New registration`](https://portal.azure.com/#view/Microsoft_AAD_RegisteredApps/CreateApplicationBlade/quickStartType~/null/isMSAApp~/false)
@@ -34,7 +32,7 @@ service health incidents.
 5. Click `Register`
 6. From the `Overview` page, copy `Application (client) ID` and `Directory (tenant) ID`
 
-#### Create a client secret
+### Create a client secret
 
 1. Go to `Manage` > `Certificates & secrets`
 2. Click `+ New client secret`
@@ -42,7 +40,7 @@ service health incidents.
 4. Click `Add`
 5. Copy the `Value` of the client secret
 
-#### Add role to the APP
+### Add role to the APP
 
 1. In the search bar, go to `Subscriptions`
 2. Click on one of your subscriptions
