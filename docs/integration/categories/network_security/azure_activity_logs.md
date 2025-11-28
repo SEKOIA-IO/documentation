@@ -23,20 +23,37 @@ service health incidents.
 
 ## Configure
 
-### Configuring activity log export
+### How to configure Azure Monitor Logs module
 
-1. Go to the Azure portal, and access the **Activity Logs** section.
+#### Create an Azure application
 
-    ![1](/assets/integration/network_security/azure_activity_logs/1.png){: style="max-width:100%"}
-       
-2. Select **Activity log** > **Export Activity Logs.**
-3. Find and select the subscription, and then select **Add diagnostic setting.**
+1. On the Azure Portal, in the search bar, go to `App registrations`
+2. Click [`+ New registration`](https://portal.azure.com/#view/Microsoft_AAD_RegisteredApps/CreateApplicationBlade/quickStartType~/null/isMSAApp~/false)
+3. Type a name
+4. Select `Accounts in this organizational directory only` option as account type
+5. Click `Register`
+6. From the `Overview` page, copy `Application (client) ID` and `Directory (tenant) ID`
 
-    ![2](/assets/integration/network_security/azure_activity_logs/2.png){: style="max-width:100%"}
+#### Create a client secret
 
-4. In the Diagnostic setting name box, enter a name. Select all applicable categories and then select Save.
+1. Go to `Manage` > `Certificates & secrets`
+2. Click `+ New client secret`
+3. Type a description and select the desired expiration period
+4. Click `Add`
+5. Copy the `Value` of the client secret
 
-    ![3](/assets/integration/network_security/azure_activity_logs/3.png){: style="max-width:100%"}
+#### Add role to the APP
+
+1. In the search bar, go to `Subscriptions`
+2. Click on one of your subscriptions
+3. On the right panel, Click `Access control (IAM)`
+4. Click `+ Add` > `Add role assignment`
+5. In the `job function roles` sub-tab, search for `Log Analytics Reader` and select it
+6. Click `Next`
+7. Select `User, group or service principal` as access
+8. Click `+ Select members`
+9. Type the name of the Azure application created previously, select it and click `Select`
+10. Click `Review + assign`
 
 ### Retrieve your Subscription ID
 
@@ -46,23 +63,6 @@ In Azure Web Portal:
 
 1. Navigate to: `Home` > `Cost Management + Billing` > `Subscriptions`
 2. From there, copy the relevant **Subscription ID** that will be used in the command line (e.g. `uuid`)
-
-### Create an Azure application
-
-1. On the Azure Portal, in the search bar, go to `App registrations`
-2. Click [`+ New registration`](https://portal.azure.com/#view/Microsoft_AAD_RegisteredApps/CreateApplicationBlade/quickStartType~/null/isMSAApp~/false)
-3. Type a name
-4. Select `Accounts in this organizational directory only` option as account type
-5. Click `Register`
-6. From the `Overview` page, copy `Application (client) ID` and `Directory (tenant) ID`
-
-### Create a client secret
-
-1. Go to `Manage` > `Certificates & secrets`
-2. Click `+ New client secret`
-3. Type a description and select the desired expiration period
-4. Click `Add`
-5. Copy the `Value` of the client secret
 
 ### Create an intake
 
@@ -76,8 +76,3 @@ In Azure Web Portal:
 {!_shared_content/operations_center/detection/generated/suggested_rules_39280bac-34d7-4fa2-a6b5-c43791eed1bc_do_not_edit_manually.md!}
 
 {!_shared_content/operations_center/integrations/generated/39280bac-34d7-4fa2-a6b5-c43791eed1bc.md!}
-
-
-## Further Readings
-
-- [Configure Azure activity log export](https://learn.microsoft.com/en-us/troubleshoot/azure/azure-monitor/activity-logs/config-export/configuring-azure-activity-log-export-comprehensive-guide)
