@@ -750,7 +750,7 @@ To ensure code quality and maintain consistency, it's recommended to lint and fo
 To format the code, please use `black` with the following command in the root directory of your module:
 
 ```shell
- black . # to format python code
+black . # to format python code
 ```
 
 ### Lint your module
@@ -758,19 +758,19 @@ To format the code, please use `black` with the following command in the root di
 To lint the manifest files, in the working copy of the `automation-library` repository, run the following command:
 
 ```shell
-$ python3 linter.py fix --changes
+python3 linter.py fix --changes
 ```
 
 ## Check your module
 
-To check your module for type correctness and compliance with Sekoia's standards, it's recommended to type check your Python code
+To check your module for type correctness and compliance with Sekoia's standards, it's recommended to type check your Python code.
 
 ### Check Python code
 
 To check your code, please use `mypy` with the following command in the working copy of the `automation-library` repository:
 
 ```
-$ poetry run mypy  --install-types --non-interactive --ignore-missing-imports --show-column-numbers --hide-error-context .
+poetry run mypy  --install-types --non-interactive --ignore-missing-imports --show-column-numbers --hide-error-context .
 ```
 
 ### Check compliance
@@ -778,7 +778,7 @@ $ poetry run mypy  --install-types --non-interactive --ignore-missing-imports --
 In the working copy of the `automation-library` repository, to check the automation module against compliance rules:
 
 ```
-$ poetry -C _utils run python compliance check --changes
+poetry -C _utils run python compliance check --changes
 ```
 
 ## Deploy your module
