@@ -744,7 +744,6 @@ For more detailed information, you can check the [Poetry documentation](https://
 
 To ensure code quality and maintain consistency, it's recommended to lint and format the automation module.
 
-
 ### Format your module
 
 To format the code, please use `black` with the following command in the root directory of your module:
@@ -769,7 +768,7 @@ To check your module for type correctness and compliance with Sekoia's standards
 
 To check your code, please use `mypy` with the following command in the working copy of the `automation-library` repository:
 
-```
+```shell
 poetry run mypy  --install-types --non-interactive --ignore-missing-imports --show-column-numbers --hide-error-context .
 ```
 
@@ -777,7 +776,7 @@ poetry run mypy  --install-types --non-interactive --ignore-missing-imports --sh
 
 In the working copy of the `automation-library` repository, to check the automation module against compliance rules:
 
-```
+```shell
 poetry -C _utils run python compliance check --changes
 ```
 
