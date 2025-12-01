@@ -128,7 +128,7 @@ Tests are run from the `intake-formats/utils` directory.
 
 #### Lint the format (Optional; mandatory for the homologation process)
 
-Before pushing any changes to the repository, please, lint the format with the following commands from the `intake-formats/utils` directory. 
+Before pushing any changes to the repository, please lint the format with the following commands from the `intake-formats/utils` directory. 
 
 ```bash
 > cd ~/dev/intake-formats/utils
