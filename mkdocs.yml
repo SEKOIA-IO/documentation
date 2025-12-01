@@ -158,7 +158,8 @@ nav:
       - Cortex Analyzer: cti/features/integrations/thehive.md
       - MISP Feed: cti/features/integrations/misp.md
       - Microsoft Sentinel: cti/features/integrations/microsoft-sentinel.md
-      - OpenCTI: cti/features/integrations/opencti.md
+      - OpenCTI Import Connector: cti/features/integrations/opencti.md
+      - OpenCTI Stream Connector: cti/features/integrations/opencti-stream-connector.md
       - Splunk: cti/features/integrations/splunk.md
       - Splunk SOAR: cti/features/integrations/splunk_soar.md
       - Swimlane Turbine: cti/features/integrations/swimlane_turbine.md
