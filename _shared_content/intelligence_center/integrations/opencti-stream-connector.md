@@ -40,7 +40,7 @@ Before setting up the connector, you need:
 - The UUID of the target IOC collection
 - A configured live stream in OpenCTI with appropriate filters
 
-## Important Limitations
+## Limitations
 
 - **Collection Limit**: Each IOC collection is limited to 500,000 indicators
 - **Deletion Behavior**: Deleted indicators are revoked (not deleted) in Sekoia.io collections
