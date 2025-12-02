@@ -287,6 +287,7 @@ nav:
       - Microsoft Entra ID (via Graph API): integration/categories/iam/entra_id_graph_api.md
       - Okta System log: integration/categories/iam/okta_system_log.md
       - OpenLDAP: integration/categories/iam/openldap.md
+      - PingFederate: integration/categories/iam/pingfederate.md
       - RSA SecurID: integration/categories/iam/rsa_securid.md
       - Rubycat PROVE IT: integration/categories/iam/rubycat_prove_it.md
       - SentinelOne Singularity Identity: integration/categories/iam/sentinelone_identity.md
