@@ -35,7 +35,7 @@ The connector operates as a stream listener that:
 
 Before setting up the connector, you need:
 
-- A Sekoia.io API key with appropriate permissions
+- A Sekoia.io API key with appropriate permissions (IoC Collections)
 - An existing IOC collection in Sekoia.io (the connector does not create collections)
 - The UUID of the target IOC collection
 - A configured live stream in OpenCTI with appropriate filters
