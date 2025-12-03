@@ -1,5 +1,5 @@
 ---
-uuid: c84632e0-d80b-44cf-a2ae-2457106b5910
+uuid: 9df06db1-01f1-46ef-97e4-a269e24ff417
 name: New Relic Alerts
 type: intake
 ---
@@ -102,10 +102,10 @@ Teams use New Relic to optimize performance, reliability, and user experience ac
     
     ![Step 08.png](/assets/integration/application/newrelic/step_8.png)
 
-{!_shared_content/operations_center/integrations/generated/c84632e0-d80b-44cf-a2ae-2457106b5910_sample.md!}
+{!_shared_content/operations_center/integrations/generated/9df06db1-01f1-46ef-97e4-a269e24ff417_sample.md!}
 
 {!_shared_content/integration/detection_section.md!}
 
-{!_shared_content/operations_center/detection/generated/suggested_rules_c84632e0-d80b-44cf-a2ae-2457106b5910_do_not_edit_manually.md!}
+{!_shared_content/operations_center/detection/generated/suggested_rules_9df06db1-01f1-46ef-97e4-a269e24ff417_do_not_edit_manually.md!}
 
-{!_shared_content/operations_center/integrations/generated/c84632e0-d80b-44cf-a2ae-2457106b5910.md!}
+{!_shared_content/operations_center/integrations/generated/9df06db1-01f1-46ef-97e4-a269e24ff417.md!}
