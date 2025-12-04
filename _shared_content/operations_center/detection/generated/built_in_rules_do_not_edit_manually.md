@@ -1,4 +1,4 @@
-Rules catalog includes **1058 built-in detection rules** ([_last update on 2025-12-02_](rules_changelog.md)).
+Rules catalog includes **1058 built-in detection rules** ([_last update on 2025-12-04_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Identity Information**
 
@@ -1977,6 +1977,16 @@ Rules catalog includes **1058 built-in detection rules** ([_last update on 2025-
     
     - **Effort:** intermediate
     
+??? abstract "Scheduled Task Creation By Non Privileged User"
+    
+    Detects scheduled task creation, either executed by a non-system user or a user who is not administrator (the user ID is not S-1-5-18 or S-1-5-18-*). This detection rule doesn't match Sysmon EventID 1 because the user SID is always set to S-1-5-18. 
+    
+    - **Effort:** master
+    
+    - **Changelog:**
+    
+        - 03/12/2025 - minor - Change rule effort level and update of rule name
+            
 ??? abstract "Schtasks Persistence With High Privileges"
     
     Detection of scheduled task with high privileges used by attacker for persistence.
@@ -1995,21 +2005,16 @@ Rules catalog includes **1058 built-in detection rules** ([_last update on 2025-
     
     - **Effort:** intermediate
     
-??? abstract "Suspicious Scheduled Task Creation"
-    
-    Detects suspicious scheduled task creation, either executed by a non-system user or a user who is not administrator (the user ID is not S-1-5-18 or S-1-5-18-*). This detection rule doesn't match Sysmon EventID 1 because the user SID is always set to S-1-5-18. 
-    
-    - **Effort:** intermediate
-    
 ??? abstract "Windows Suspicious Scheduled Task Creation"
     
-    The rule identify creation of new scheduled task who run suspicious or dangerous command
+    The rule identify creation of new scheduled task who run suspicious commands.
     
-    - **Effort:** intermediate
+    - **Effort:** master
     
     - **Changelog:**
     
         - 24/04/2025 - minor - Adding similarity strategy.
+        - 03/12/2025 - major - Change rule effort level according to sigthings
             
 **Command and Scripting Interpreter**
 
@@ -5556,6 +5561,16 @@ Rules catalog includes **1058 built-in detection rules** ([_last update on 2025-
     
     - **Effort:** intermediate
     
+??? abstract "Scheduled Task Creation By Non Privileged User"
+    
+    Detects scheduled task creation, either executed by a non-system user or a user who is not administrator (the user ID is not S-1-5-18 or S-1-5-18-*). This detection rule doesn't match Sysmon EventID 1 because the user SID is always set to S-1-5-18. 
+    
+    - **Effort:** master
+    
+    - **Changelog:**
+    
+        - 03/12/2025 - minor - Change rule effort level and update of rule name
+            
 ??? abstract "Schtasks Persistence With High Privileges"
     
     Detection of scheduled task with high privileges used by attacker for persistence.
@@ -5574,21 +5589,16 @@ Rules catalog includes **1058 built-in detection rules** ([_last update on 2025-
     
     - **Effort:** intermediate
     
-??? abstract "Suspicious Scheduled Task Creation"
-    
-    Detects suspicious scheduled task creation, either executed by a non-system user or a user who is not administrator (the user ID is not S-1-5-18 or S-1-5-18-*). This detection rule doesn't match Sysmon EventID 1 because the user SID is always set to S-1-5-18. 
-    
-    - **Effort:** intermediate
-    
 ??? abstract "Windows Suspicious Scheduled Task Creation"
     
-    The rule identify creation of new scheduled task who run suspicious or dangerous command
+    The rule identify creation of new scheduled task who run suspicious commands.
     
-    - **Effort:** intermediate
+    - **Effort:** master
     
     - **Changelog:**
     
         - 24/04/2025 - minor - Adding similarity strategy.
+        - 03/12/2025 - major - Change rule effort level according to sigthings
             
 **Registry Run Keys / Startup Folder**
 
@@ -7370,6 +7380,16 @@ Rules catalog includes **1058 built-in detection rules** ([_last update on 2025-
     
     - **Effort:** intermediate
     
+??? abstract "Scheduled Task Creation By Non Privileged User"
+    
+    Detects scheduled task creation, either executed by a non-system user or a user who is not administrator (the user ID is not S-1-5-18 or S-1-5-18-*). This detection rule doesn't match Sysmon EventID 1 because the user SID is always set to S-1-5-18. 
+    
+    - **Effort:** master
+    
+    - **Changelog:**
+    
+        - 03/12/2025 - minor - Change rule effort level and update of rule name
+            
 ??? abstract "Schtasks Persistence With High Privileges"
     
     Detection of scheduled task with high privileges used by attacker for persistence.
@@ -7388,21 +7408,16 @@ Rules catalog includes **1058 built-in detection rules** ([_last update on 2025-
     
     - **Effort:** intermediate
     
-??? abstract "Suspicious Scheduled Task Creation"
-    
-    Detects suspicious scheduled task creation, either executed by a non-system user or a user who is not administrator (the user ID is not S-1-5-18 or S-1-5-18-*). This detection rule doesn't match Sysmon EventID 1 because the user SID is always set to S-1-5-18. 
-    
-    - **Effort:** intermediate
-    
 ??? abstract "Windows Suspicious Scheduled Task Creation"
     
-    The rule identify creation of new scheduled task who run suspicious or dangerous command
+    The rule identify creation of new scheduled task who run suspicious commands.
     
-    - **Effort:** intermediate
+    - **Effort:** master
     
     - **Changelog:**
     
         - 24/04/2025 - minor - Adding similarity strategy.
+        - 03/12/2025 - major - Change rule effort level according to sigthings
             
 **Process Injection**
 

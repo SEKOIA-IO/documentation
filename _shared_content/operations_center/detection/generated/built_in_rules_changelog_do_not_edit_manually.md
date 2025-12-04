@@ -1,7 +1,13 @@
-Changelog _last update on 2025-12-02_
+Changelog _last update on 2025-12-04_
 
 ## Changelog
 
+### Scheduled Task Creation By Non Privileged User
+  - 03/12/2025 - minor - Change rule effort level and update of rule name
+    
+### Windows Suspicious Scheduled Task Creation
+  - 03/12/2025 - major - Change rule effort level according to sigthings
+    
 ### Spam Detected By Hornetsecurity 365 Total Protection
   - 12/11/2025 - minor - Update rule type to integration
     
@@ -175,9 +181,6 @@ Changelog _last update on 2025-12-02_
     
 ### Capture a network trace with netsh.exe
   - 24/04/2025 - minor - Adding similarity strategy and filters to reduce false positives and changing effort level.
-    
-### Windows Suspicious Scheduled Task Creation
-  - 24/04/2025 - minor - Adding similarity strategy.
     
 ### Usage Of Procdump With Common Arguments
   - 22/04/2025 - minor - Added filter to reduce false positives and change effort level.
