@@ -1,0 +1,302 @@
+
+### Raw Events Samples
+
+In this section, you will find examples of raw logs as generated natively by the source. These examples are provided to help integrators understand the data format before ingestion into Sekoia.io. It is crucial for setting up the correct parsing stages and ensuring that all relevant information is captured.
+
+
+=== "administrative"
+
+
+    ```json
+	{
+        "authorization": {
+            "action": "Microsoft.Network/networkSecurityGroups/write",
+            "scope": "/subscriptions/<subscription ID>/resourcegroups/myResourceGroup/providers/Microsoft.Network/networkSecurityGroups/myNSG"
+        },
+        "caller": "REDACTED",
+        "channels": "Operation",
+        "claims": {
+            "aud": "https://management.core.windows.net/",
+            "iss": "https://sts.windows.net/11111111-1111-1111-1111-111111111111/",
+            "iat": "1234567890",
+            "nbf": "1234567890",
+            "exp": "1234567890",
+            "_claim_names": "{\"groups\":\"src1\"}",
+            "_claim_sources": "{\"src1\":{\"endpoint\":\"https://graph.microsoft.com/11111111-1111-1111-1111-111111111111/users/88888888-8888-8888-8888-888888888888/getMemberObjects\"}}",
+            "http://schemas.microsoft.com/claims/authnclassreference": "1",
+            "aio": "A3GgTJdwK4vy7Fa7l6DgJC2mI0GX44tML385OpU1Q+z+jaPnFMwB",
+            "http://schemas.microsoft.com/claims/authnmethodsreferences": "rsa,mfa",
+            "appid": "22222222-2222-2222-2222-222222222222",
+            "appidacr": "2",
+            "http://schemas.microsoft.com/2012/01/devicecontext/claims/identifier": "55555555-5555-5555-5555-555555555555",
+            "e_exp": "262800",
+            "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/surname": "Robertson",
+            "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/givenname": "Rob",
+            "ipaddr": "1.2.3.4",
+            "name": "Rob Robertson",
+            "http://schemas.microsoft.com/identity/claims/objectidentifier": "88888888-8888-8888-8888-888888888888",
+            "onprem_sid": "S-1-5-21-4837261184-168309720-1886587427-18514304",
+            "puid": "18247BBD84827C6D",
+            "http://schemas.microsoft.com/identity/claims/scope": "user_impersonation",
+            "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier": "b-24Jf94A3FH2sHWVIFqO3-RSJEiv24Jnif3gj7s",
+            "http://schemas.microsoft.com/identity/claims/tenantid": "33333333-3333-3333-3333-333333333333",
+            "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name": "REDACTED",
+            "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/upn": "REDACTED",
+            "uti": "IdP3SUJGtkGlt7dDQVRPAA",
+            "ver": "1.0"
+        },
+        "correlationId": "99999999-9999-9999-9999-999999999999",
+        "eventDataId": "77777777-7777-7777-7777-777777777777",
+        "eventName": {
+            "value": "EndRequest",
+            "localizedValue": "End request"
+        },
+        "category": {
+            "value": "Administrative",
+            "localizedValue": "Administrative"
+        },
+        "eventTimestamp": "2018-01-29T20:42:31.3810679Z",
+        "id": "/subscriptions/<subscription ID>/resourcegroups/myResourceGroup/providers/Microsoft.Network/networkSecurityGroups/myNSG/events/77777777-7777-7777-7777-777777777777/ticks/636528553513810679",
+        "level": "Informational",
+        "operationId": "66666666-6666-6666-6666-666666666666",
+        "operationName": {
+            "value": "Microsoft.Network/networkSecurityGroups/write",
+            "localizedValue": "Microsoft.Network/networkSecurityGroups/write"
+        },
+        "resourceGroupName": "myResourceGroup",
+        "resourceProviderName": {
+            "value": "Microsoft.Network",
+            "localizedValue": "Microsoft.Network"
+        },
+        "resourceType": {
+            "value": "Microsoft.Network/networkSecurityGroups",
+            "localizedValue": "Microsoft.Network/networkSecurityGroups"
+        },
+        "resourceId": "/subscriptions/<subscription ID>/resourcegroups/myResourceGroup/providers/Microsoft.Network/networkSecurityGroups/myNSG",
+        "status": {
+            "value": "Succeeded",
+            "localizedValue": "Succeeded"
+        },
+        "subStatus": {
+            "value": "",
+            "localizedValue": ""
+        },
+        "submissionTimestamp": "2018-01-29T20:42:50.0724829Z",
+        "subscriptionId": "<subscription ID>",
+        "properties": {
+            "statusCode": "Created",
+            "serviceRequestId": "44444444-4444-4444-4444-444444444444",
+            "responseBody": "",
+            "requestbody": ""
+        },
+        "relatedEvents": []
+    }
+    ```
+
+
+
+=== "alert"
+
+
+    ```json
+	{
+        "caller": "Microsoft.Insights/alertRules",
+        "channels": "Admin, Operation",
+        "claims": {
+            "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/spn": "Microsoft.Insights/alertRules"
+        },
+        "correlationId": "/subscriptions/<subscription ID>/resourceGroups/myResourceGroup/providers/microsoft.insights/alertrules/myalert/incidents/L3N1YnNjcmlwdGlvbnMvZGY2MDJjOWMtN2FhMC00MDdkLWE2ZmItZWIyMGM4YmQxMTkyL3Jlc291cmNlR3JvdXBzL0NzbUV2ZW50RE9HRk9PRC1XZXN0VVMvcHJvdmlkZXJzL21pY3Jvc29mdC5pbnNpZ2h0cy9hbGVydHJ1bGVzL215YWxlcnQwNjM2MzYyMjU4NTM1MjIxOTIw",
+        "description": "'Disk read LessThan 100000 ([Count]) in the last 5 minutes' has been resolved for CloudService: myResourceGroup/Production/Event.BackgroundJobsWorker.razzle (myResourceGroup)",
+        "eventDataId": "dddd3d3d-ee4e-ff5f-aa6a-bbbbbb7b7b7b",
+        "eventName": {
+            "value": "Alert",
+            "localizedValue": "Alert"
+        },
+        "category": {
+            "value": "Alert",
+            "localizedValue": "Alert"
+        },
+        "id": "/subscriptions/<subscription ID>/resourceGroups/myResourceGroup/providers/Microsoft.ClassicCompute/domainNames/myResourceGroup/slots/Production/roles/Event.BackgroundJobsWorker.razzle/events/dddd3d3d-ee4e-ff5f-aa6a-bbbbbb7b7b7b/ticks/636362258535221920",
+        "level": "Informational",
+        "resourceGroupName": "myResourceGroup",
+        "resourceProviderName": {
+            "value": "Microsoft.ClassicCompute",
+            "localizedValue": "Microsoft.ClassicCompute"
+        },
+        "resourceId": "/subscriptions/<subscription ID>/resourceGroups/myResourceGroup/providers/Microsoft.ClassicCompute/domainNames/myResourceGroup/slots/Production/roles/Event.BackgroundJobsWorker.razzle",
+        "resourceType": {
+            "value": "Microsoft.ClassicCompute/domainNames/slots/roles",
+            "localizedValue": "Microsoft.ClassicCompute/domainNames/slots/roles"
+        },
+        "operationId": "/subscriptions/<subscription ID>/resourceGroups/myResourceGroup/providers/microsoft.insights/alertrules/myalert/incidents/L3N1YnNjcmlwdGlvbnMvZGY2MDJjOWMtN2FhMC00MDdkLWE2ZmItZWIyMGM4YmQxMTkyL3Jlc291cmNlR3JvdXBzL0NzbUV2ZW50RE9HRk9PRC1XZXN0VVMvcHJvdmlkZXJzL21pY3Jvc29mdC5pbnNpZ2h0cy9hbGVydHJ1bGVzL215YWxlcnQwNjM2MzYyMjU4NTM1MjIxOTIw",
+        "operationName": {
+            "value": "Microsoft.Insights/AlertRules/Resolved/Action",
+            "localizedValue": "Microsoft.Insights/AlertRules/Resolved/Action"
+        },
+        "properties": {
+            "RuleUri": "/subscriptions/<subscription ID>/resourceGroups/myResourceGroup/providers/microsoft.insights/alertrules/myalert",
+            "RuleName": "myalert",
+            "RuleDescription": "",
+            "Threshold": "100000",
+            "WindowSizeInMinutes": "5",
+            "Aggregation": "Average",
+            "Operator": "LessThan",
+            "MetricName": "Disk read",
+            "MetricUnit": "Count"
+        },
+        "status": {
+            "value": "Resolved",
+            "localizedValue": "Resolved"
+        },
+        "subStatus": {
+            "value": null
+        },
+        "eventTimestamp": "2017-07-21T09:24:13.522192Z",
+        "submissionTimestamp": "2017-07-21T09:24:15.6578651Z",
+        "subscriptionId": "<subscription ID>"
+    }
+    ```
+
+
+
+=== "policy"
+
+
+    ```json
+	{
+        "authorization": {
+            "action": "Microsoft.Resources/checkPolicyCompliance/read",
+            "scope": "/subscriptions/<subscriptionID>"
+        },
+        "caller": "99999999-9999-9999-9999-999999999999",
+        "channels": "Operation",
+        "claims": {
+            "aud": "https://management.azure.com/",
+            "iss": "https://sts.windows.net/55555555-5555-5555-5555-555555555555/",
+            "iat": "1234567890",
+            "nbf": "1234567890",
+            "exp": "1234567890",
+            "aio": "AIOEXAMPLE",
+            "appid": "22222222-2222-2222-2222-222222222222",
+            "appidacr": "2",
+            "http://schemas.microsoft.com/identity/claims/identityprovider": "https://sts.windows.net/55555555-5555-5555-5555-555555555555/",
+            "http://schemas.microsoft.com/identity/claims/objectidentifier": "33333333-3333-3333-3333-333333333333",
+            "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier": "NAMEIDENTIFIER",
+            "http://schemas.microsoft.com/identity/claims/tenantid": "66666666-6666-6666-6666-666666666666",
+            "uti": "UTI",
+            "ver": "1.0"
+        },
+        "correlationId": "AAAAAAAA-AAAA-AAAA-AAAA-AAAAAAAAAAAA",
+        "description": "",
+        "eventDataId": "11111111-1111-1111-1111-111111111111",
+        "eventName": {
+            "value": "EndRequest",
+            "localizedValue": "End request"
+        },
+        "category": {
+            "value": "Policy",
+            "localizedValue": "Policy"
+        },
+        "eventTimestamp": "2019-01-15T13:19:56.1227642Z",
+        "id": "/subscriptions/<subscriptionID>/resourceGroups/myResourceGroup/providers/Microsoft.Sql/servers/contososqlpolicy/events/11111111-1111-1111-1111-111111111111/ticks/636831551961227642",
+        "level": "Warning",
+        "operationId": "88888888-8888-8888-8888-888888888888",
+        "operationName": {
+            "value": "Microsoft.Authorization/policies/audit/action",
+            "localizedValue": "Microsoft.Authorization/policies/audit/action"
+        },
+        "resourceGroupName": "myResourceGroup",
+        "resourceProviderName": {
+            "value": "Microsoft.Sql",
+            "localizedValue": "Microsoft SQL"
+        },
+        "resourceType": {
+            "value": "Microsoft.Resources/checkPolicyCompliance",
+            "localizedValue": "Microsoft.Resources/checkPolicyCompliance"
+        },
+        "resourceId": "/subscriptions/<subscriptionID>/resourceGroups/myResourceGroup/providers/Microsoft.Sql/servers/contososqlpolicy",
+        "status": {
+            "value": "Succeeded",
+            "localizedValue": "Succeeded"
+        },
+        "subStatus": {
+            "value": "",
+            "localizedValue": ""
+        },
+        "submissionTimestamp": "2019-01-15T13:20:17.1077672Z",
+        "subscriptionId": "<subscriptionID>",
+        "properties": {
+            "isComplianceCheck": "True",
+            "resourceLocation": "westus2",
+            "ancestors": "44444444-4444-4444-4444-444444444444",
+            "policies": "[{\"policyDefinitionId\":\"/subscriptions/<subscriptionID>/providers/Microsoft.Authorization/policyDefinitions/77777777-7777-7777-7777-777777777777/\",\"policyDefinitionName\":\"77777777-7777-7777-7777-777777777777\",\"policyDefinitionEffect\":\"Deny\",\"policyAssignmentId\":\"/subscriptions/<subscriptionID>/providers/Microsoft.Authorization/policyAssignments/1234567890abcdef/\",\"policyAssignmentName\":\"1234567890abcdef\",\"policyAssignmentScope\":\"/subscriptions/<subscriptionID>\",\"policyAssignmentParameters\":{}}]"
+        },
+        "relatedEvents": []
+    }
+    ```
+
+
+
+=== "security"
+
+
+    ```json
+	{
+        "channels": "Operation",
+        "correlationId": "11111111-1111-1111-1111-111111111111",
+        "description": "Suspicious double extension file executed. Machine logs indicate an execution of a process with a suspicious double extension.\r\nThis extension may trick users into thinking files are safe to be opened and might indicate the presence of malware on the system.",
+        "eventDataId": "11111111-1111-1111-1111-111111111111",
+        "eventName": {
+            "value": "Suspicious double extension file executed",
+            "localizedValue": "Suspicious double extension file executed"
+        },
+        "category": {
+            "value": "Security",
+            "localizedValue": "Security"
+        },
+        "eventTimestamp": "2017-10-18T06:02:18.6179339Z",
+        "id": "/subscriptions/<subscription ID>/providers/Microsoft.Security/locations/centralus/alerts/bbbb1b1b-cc2c-dd3d-ee4e-ffffff5f5f5f/events/11111111-1111-1111-1111-111111111111/ticks/1234567890",
+        "level": "Informational",
+        "operationId": "11111111-1111-1111-1111-111111111111",
+        "operationName": {
+            "value": "Microsoft.Security/locations/alerts/activate/action",
+            "localizedValue": "Microsoft.Security/locations/alerts/activate/action"
+        },
+        "resourceGroupName": "myResourceGroup",
+        "resourceProviderName": {
+            "value": "Microsoft.Security",
+            "localizedValue": "Microsoft.Security"
+        },
+        "resourceType": {
+            "value": "Microsoft.Security/locations/alerts",
+            "localizedValue": "Microsoft.Security/locations/alerts"
+        },
+        "resourceId": "/subscriptions/<subscription ID>/providers/Microsoft.Security/locations/centralus/alerts/987654321_22222222-2222-2222-2222-222222222222",
+        "status": {
+            "value": "Active",
+            "localizedValue": "Active"
+        },
+        "subStatus": {
+            "value": null
+        },
+        "submissionTimestamp": "2017-10-18T06:02:52.2176969Z",
+        "subscriptionId": "<subscription ID>",
+        "properties": {
+            "accountLogonId": "0x2r4",
+            "commandLine": "c:\\mydirectory\\doubleetension.pdf.exe",
+            "domainName": "example",
+            "parentProcess": "unknown",
+            "parentProcess id": "0",
+            "processId": "6988",
+            "processName": "c:\\mydirectory\\doubleetension.pdf.exe",
+            "userName": "user1",
+            "UserSID": "S-3-2-12",
+            "ActionTaken": "Detected",
+            "Severity": "High"
+        },
+        "relatedEvents": []
+    }
+    ```
+
+
+
