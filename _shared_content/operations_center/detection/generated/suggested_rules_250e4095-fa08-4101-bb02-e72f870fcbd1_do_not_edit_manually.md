@@ -2241,6 +2241,12 @@ The following Sekoia.io built-in rules match the intake **Sekoia.io Endpoint Age
     
     - **Effort:** intermediate
 
+??? abstract "Scheduled Task Creation By Non Privileged User"
+    
+    Detects scheduled task creation, either executed by a non-system user or a user who is not administrator (the user ID is not S-1-5-18 or S-1-5-18-*). This detection rule doesn't match Sysmon EventID 1 because the user SID is always set to S-1-5-18. 
+    
+    - **Effort:** master
+
 ??? abstract "Schtasks Persistence With High Privileges"
     
     Detection of scheduled task with high privileges used by attacker for persistence.
@@ -2661,12 +2667,6 @@ The following Sekoia.io built-in rules match the intake **Sekoia.io Endpoint Age
     
     - **Effort:** intermediate
 
-??? abstract "Suspicious Scheduled Task Creation"
-    
-    Detects suspicious scheduled task creation, either executed by a non-system user or a user who is not administrator (the user ID is not S-1-5-18 or S-1-5-18-*). This detection rule doesn't match Sysmon EventID 1 because the user SID is always set to S-1-5-18. 
-    
-    - **Effort:** intermediate
-
 ??? abstract "Suspicious Scripting In A WMI Consumer"
     
     Detects suspicious scripting in WMI Event Consumers. The rule requires to log WMI Consumers, which can be done through Sysmon's Event IDs 20 and 21.
@@ -3071,9 +3071,9 @@ The following Sekoia.io built-in rules match the intake **Sekoia.io Endpoint Age
 
 ??? abstract "Windows Suspicious Scheduled Task Creation"
     
-    The rule identify creation of new scheduled task who run suspicious or dangerous command
+    The rule identify creation of new scheduled task who run suspicious commands.
     
-    - **Effort:** intermediate
+    - **Effort:** master
 
 ??? abstract "Windows Suspicious Service Creation"
     
