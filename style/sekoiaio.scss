@@ -479,3 +479,89 @@
 
     }
 }
+
+.md-typeset {
+
+  // Tabbed container
+  .tabbed-set {
+    position: relative;
+    display: flex;
+    flex-flow: column wrap;
+    margin: 1em 0;
+    border-radius: px2rem(2px);
+
+    // Tab radio button - the Tabbed extension will generate radio buttons with
+    // labels, so tabs can be triggered without the necessity for JavaScript.
+    // This is pretty cool, as it has great accessibility out-of-the box, so
+    // we just hide the radio button and toggle the label color for indication.
+    > input {
+      position: absolute;
+      width: 0;
+      height: 0;
+      opacity: 0;
+
+      // Adjust scroll margin
+      &:target {
+        --md-scroll-offset: #{px2em(10px, 16px)};
+      }
+
+      // Tab label states
+      @for $i from 100 through 21 {
+        &:nth-child(#{$i}) {
+
+          // Tab is active
+          &:checked {
+
+            // Tab label
+            ~ .tabbed-labels > :nth-child(#{$i}) {
+              @extend %tabbed-label;
+            }
+
+            // Tab content
+            ~ .tabbed-content > :nth-child(#{$i}) {
+              @extend %tabbed-content;
+            }
+          }
+
+          // Tab label on keyboard focus
+          &.focus-visible ~ .tabbed-labels > :nth-child(#{$i}) {
+            @extend %tabbed-label-focus-visible;
+          }
+        }
+      }
+
+      // Tab indicator on keyboard focus
+      &.focus-visible ~ .tabbed-labels::before {
+        background-color: var(--md-accent-fg-color);
+      }
+    }
+  }
+}
+
+%tabbed-label {
+
+  // [screen]: Show active state
+  @media screen {
+    color: var(--md-default-fg-color);
+
+    // [no-js]: Show border (indicator is animated with JavaScript)
+    .no-js & {
+      border-color: var(--md-default-fg-color);
+    }
+
+    // Show border for tabs in tooltips
+    [role="dialog"] & {
+      border-color: var(--md-default-fg-color);
+    }
+  }
+}
+
+// Tab label on keyboard focus placeholder
+%tabbed-label-focus-visible {
+  color: var(--md-accent-fg-color);
+}
+
+// Tab content placeholder
+%tabbed-content {
+  display: block;
+}
