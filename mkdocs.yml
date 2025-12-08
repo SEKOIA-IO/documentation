@@ -415,6 +415,7 @@ nav:
       - ElasticSearch: integration/action_library/elasticsearch.md
       - Mandrill: integration/action_library/mandrill.md
       - Mattermost: integration/action_library/mattermost.md
+      - New Relic: integration/action_library/new-relic.md
       - PagerDuty: integration/action_library/pagerduty.md
     - Cloud Providers:
       - AWS: integration/action_library/aws.md
@@ -457,7 +458,6 @@ nav:
       - Microsoft Entra ID: integration/action_library/microsoft-entra-id.md
     - Network:
       - Fortigate Firewalls: integration/action_library/fortigate-firewalls.md
-      - New Relic: integration/action_library/new-relic.md
       - Sophos: integration/action_library/sophos.md
       - Zscaler: integration/action_library/zscaler.md
     - Overview: integration/action_library/overview.md
