@@ -28,7 +28,7 @@ This setup guide will show you how to forward your Delinea logs to Sekoia.io by 
 
 ### Create the intake
 
-Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a new intake from the format SonicWall Firewall.
+Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a new intake from the format `Delinea PRA`.
 
 ### Forward logs to Sekoia.io
 
