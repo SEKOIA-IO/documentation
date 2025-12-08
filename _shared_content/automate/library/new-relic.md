@@ -61,4 +61,4 @@ Query New Relic data with NRQL
 
 ## Extra
 
-Module **`New Relic` v1.0.0**
+Module **`New Relic` v1.0.1**
