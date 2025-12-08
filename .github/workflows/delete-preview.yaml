@@ -24,7 +24,7 @@ jobs:
 
       - name: Install Swift
         run: |
-          pip install python-swiftclient==4.3.0 python-keystoneclient==5.1.0
+          pip install urllib3==2.5.0 python-swiftclient==4.9.0 python-keystoneclient==5.1.0
 
       - name: OVH Object Storage
         run: |
