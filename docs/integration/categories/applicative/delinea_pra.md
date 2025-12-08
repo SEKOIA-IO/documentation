@@ -20,7 +20,7 @@ This setup guide will show you how to forward your Delinea logs to Sekoia.io by 
 4. Type IP address or name for the IIS server hosting the syslog/CEF server in the `Syslog/CEF Server` text box.
 5. Type the port number where the logging information will be passed (6514 is the default port for secure TCP syslog) in the `Syslog/CEF Port` text box.
 6. Click the `Syslog/CEF Protocol` dropdown list and select `Secure TCP`. Secure TCP means either TLS v1.2 or v1.1 because other versions of SSL, such as SSL v3 and TLS v1.0, have known weaknesses.
-7. Click to select `Syslog/CEF Time Zone` list box to `UTC Time` or `Server Time`, depending on your preference.
+7. Click to select `Syslog/CEF Time Zone` list box to `UTC Time`
 8. Click the `Syslog/CEF DateTime Format` dropdown to format Syslog timestamps. The standard for Syslog is ISO timestamps; however, some still use the legacy format. Syslog is the default for upgrades to allow current configurations to retain their behavior, and ISO format is the default in new instances. Syslog format: Jun 23 2022 11:22:33. ISO 8601 format: 2022-06-23T11:22:33.000. You must enable the configuration preview to modify this setting.
 9. Click the `Syslog/CEF Site` dropdown to select the related Site that Syslog/CEF will run on.
 10. Click to select the `Write Syslogs As Windows Events` check box to write audits and event subscriptions to the Windows Event Log of the server.
