@@ -1182,7 +1182,7 @@ If you need further assistance, provide our team with the following information:
 
 2- Logs of the agent
 
-### Common error
+### Common errors
 
 - `ERR HTTP request to send logs to SEKOIA.IO failed StatusCode=422`
 
