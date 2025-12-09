@@ -1182,4 +1182,11 @@ If you need further assistance, provide our team with the following information:
 
 2- Logs of the agent
 
+### Common errors
+
+- `ERR HTTP request to send logs to SEKOIA.IO failed StatusCode=422`
+
+If this error appears in the agent's logs, check: is the intake key still valid? is the related community's subscription valid?
+  
+
 {!_shared_content/operations_center/detection/generated/suggested_rules_250e4095-fa08-4101-bb02-e72f870fcbd1_do_not_edit_manually.md!}
