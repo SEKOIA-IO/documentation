@@ -55,9 +55,6 @@ HAProxy is a free, open-source software that provides a high availability load b
 !!! Note
     The default HAProxy configuration file `haproxy.cfg` is located in `/etc/haproxy`
 
-### Sample of supported raw events
-
-__TODO_BEFORE_MERGE__
 ## Step-by-Step Configuration Procedure
 
 ### Instructions on the 3rd party solution
