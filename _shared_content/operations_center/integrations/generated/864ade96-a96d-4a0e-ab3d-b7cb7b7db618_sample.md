@@ -44,6 +44,30 @@ In this section, you will find examples of raw logs as generated natively by the
 
 
 
+=== "query_log_dhcp_11"
+
+    ```
+	DHCPDISCOVER from 11:22:33:44:55:66 (ABCDEF123) via 1.2.3.4 TransID abcd1234
+    ```
+
+
+
+=== "query_log_dhcp_12"
+
+    ```
+	DHCPDISCOVER from 11:22:33:44:55:66 (TEST_HOSTNAME) via 1.2.3.4 TransID abcd1234 uid 01:11:22:33:44:55:66
+    ```
+
+
+
+=== "query_log_dhcp_13"
+
+    ```
+	DHCPDISCOVER from 11:22:33:44:55:66 via 1.2.3.4 TransID abcd1234
+    ```
+
+
+
 === "query_log_dhcp_2"
 
     ```

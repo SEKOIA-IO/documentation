@@ -480,6 +480,15 @@ In this section, you will find examples of raw logs as generated natively by the
 
 
 
+=== "test_auth_fail11"
+
+
+    ```json
+	1,2024/12/16 20:19:04,1111111111,SYSTEM,auth,2561,2024/12/16 20:19:04,,auth-success,ESA-AUTH,0,0,general,medium,"failed authentication for user 'test.user'. Reason: Authentication request is timed out. auth profile 'ESA-AUTH', vsys 'vsys1', server profile 'ESA', server address '1.2.3.4', auth protocol 'PAP', From: 3.4.5.6.",7439393285273531690,0x0,0,0,0,0,,FWPADC1,0,0,2024-12-16T20:19:04.851+01:00
+    ```
+
+
+
 === "test_auth_fail2"
 
 
@@ -548,15 +557,6 @@ In this section, you will find examples of raw logs as generated natively by the
 
     ```json
 	1,2025/02/11 10:34:25,1111111111,SYSTEM,auth,2562,2025/02/11 10:34:26,,auth-fail,FWPA,0,0,general,medium,"failed authentication for user 'test_user'. Reason: Invalid username/password. auth profile 'FWPA', vsys 'shared', server profile 'RADIUS_RSA', server address '1.2.3.4', auth protocol 'PAP', From: 3.4.5.6.",7459881507616729894,0x0,0,0,0,0,,FWPAN01,0,0,2025-02-11T10:34:26.348+01:00
-    ```
-
-
-
-=== "test_auth_success"
-
-
-    ```json
-	1,2024/12/16 20:19:04,1111111111,SYSTEM,auth,2561,2024/12/16 20:19:04,,auth-success,ESA-AUTH,0,0,general,medium,"failed authentication for user 'test.user'. Reason: Authentication request is timed out. auth profile 'ESA-AUTH', vsys 'vsys1', server profile 'ESA', server address '1.2.3.4', auth protocol 'PAP', From: 3.4.5.6.",7439393285273531690,0x0,0,0,0,0,,FWPADC1,0,0,2024-12-16T20:19:04.851+01:00
     ```
 
 

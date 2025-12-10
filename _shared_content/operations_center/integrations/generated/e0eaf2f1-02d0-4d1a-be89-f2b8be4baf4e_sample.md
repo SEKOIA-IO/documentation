@@ -9,7 +9,7 @@ In this section, you will find examples of raw logs as generated natively by the
 
     ```json
 	{
-        "data": "2022-08-25T17:06:21.935763-07:00 m0169160 sendmail[22003]: 27PNO8ta032355: to=/dev/null, ctladdr=<jcarpenter@bobsbank.ca> (8/0), delay=00:00:00, xdelay=00:00:00, mailer=*file*, tls_verify=NONE, tls_version=NONE, cipher=NONE, pri=32434, dsn=2.0.0, stat=Sent",
+        "data": "2022-08-25T17:06:21.935763-07:00 m0169160 sendmail[22003]: 27PNO8ta032355: to=REDACTED, ctladdr=<user@example.org> (8/0), delay=00:00:00, xdelay=00:00:00, mailer=*file*, tls_verify=NONE, tls_version=NONE, cipher=NONE, pri=32434, dsn=2.0.0, stat=Sent",
         "tls": {
             "version": "NONE",
             "verify": "NONE",
@@ -18,11 +18,11 @@ In this section, you will find examples of raw logs as generated natively by the
         "sm": {
             "delay": "00:00:00",
             "to": [
-                "/dev/null"
+                "REDACTED"
             ],
             "pri": "32434",
             "dsn": "2.0.0",
-            "ctladdr": "<jcarpenter@bobsbank.ca> (8/0)",
+            "ctladdr": "<user@example.org> (8/0)",
             "qid": "27PNO8ta032355",
             "xdelay": "00:00:00",
             "stat": "Sent",
@@ -57,11 +57,11 @@ In this section, you will find examples of raw logs as generated natively by the
 	{
         "connection": {
             "protocol": "smtp:smtp",
-            "ip": "66.218.66.103",
-            "host": "n35.grp.scd.yahoo.com",
+            "ip": "1.2.3.4",
+            "host": "n35.grp.scd.example.com",
             "sid": "3j6jew035h",
             "resolveStatus": "ok",
-            "helo": "n35.grp.scd.yahoo.com",
+            "helo": "n35.grp.scd.example.com",
             "country": "us"
         },
         "filter": {
@@ -147,37 +147,37 @@ In this section, you will find examples of raw logs as generated natively by the
                     "<sentto-4328378-18698-1074787260-gboja=proofpoint.com@returns.groups.yahoo.com>"
                 ],
                 "to": [
-                    "\"wmoms\" <wmoms@yahoogroups.com>"
+                    "\"wmoms\" <user2@example.org>"
                 ],
                 "message-id": [
-                    "<1C30CBDA666538428B33679A1FB67AFDBA380B@bumail.bradley.edu>"
+                    "<111111111111111111111@example.com>"
                 ],
                 "from": [
-                    "\"Schweigert, Wendy\" <wendy@bumail.bradley.edu>"
+                    "\"Schweigert, Wendy\" <user1@example.com>"
                 ],
                 "reply-to": [
-                    "wmoms@yahoogroups.com"
+                    "user2@example.org"
                 ],
                 "subject": [
-                    "[wmoms] ctts"
+                    "REDACTED"
                 ]
             },
             "sizeBytes": 4275,
             "normalizedHeader": {
                 "subject": [
-                    "[wmoms] ctts"
+                    "REDACTED"
                 ],
                 "reply-to": [
-                    "wmoms@yahoogroups.com"
+                    "user2@example.org"
                 ],
                 "to": [
-                    "\"wmoms\" <wmoms@yahoogroups.com>"
+                    "\"wmoms\" <user2@example.org>"
                 ],
                 "message-id": [
-                    "1C30CBDA666538428B33679A1FB67AFDBA380B@bumail.bradley.edu"
+                    "111111111111111111111@example.com"
                 ],
                 "from": [
-                    "\"Schweigert, Wendy\" <wendy@bumail.bradley.edu>"
+                    "\"Schweigert, Wendy\" <user1@example.com>"
                 ],
                 "return-path": [
                     "<sentto-4328378-18698-1074787260-gboja=proofpoint.com@returns.groups.yahoo.com>"
@@ -185,13 +185,13 @@ In this section, you will find examples of raw logs as generated natively by the
             },
             "parsedAddresses": {
                 "from": [
-                    "wendy@bumail.bradley.edu"
+                    "user1@example.com"
                 ],
                 "to": [
-                    "wmoms@yahoogroups.com"
+                    "user2@example.org"
                 ],
                 "reply-to": [
-                    "wmoms@yahoogroups.com"
+                    "user2@example.org"
                 ],
                 "fromDisplayNames": [
                     "Schweigert, Wendy"
@@ -237,14 +237,14 @@ In this section, you will find examples of raw logs as generated natively by the
         },
         "ts": "2022-09-11T18:28:19.902627-0700",
         "envelope": {
-            "from": "rdmfe@yokm.net",
+            "from": "user1@example.net",
             "rcpts": [
                 "ceo@exec.vogon.science"
             ]
         },
         "connection": {
-            "host": "208-86-203-0.proofpoint.com",
-            "ip": "208.86.203.10",
+            "host": "1-2-3-4.example.com",
+            "ip": "5.6.7.8",
             "sid": "3jgptm9dux",
             "tls": {
                 "inbound": {
@@ -262,19 +262,19 @@ In this section, you will find examples of raw logs as generated natively by the
             "lang": "ja",
             "normalizedHeader": {
                 "to": [
-                    "<sletre@vogon.science>"
+                    "<user2@example.org>"
                 ],
                 "subject": [
-                    "\u3010\u60c5\u5831\u3011 Amazon.co.jp\uff1a\u304a\u5ba2\u69d8\u306e\u304a\u652f\u6255\u3044\u65b9\u6cd5\u304c\u627f\u8a8d\u3055\u308c\u307e\u305b\u3093 #878-9442229-8829554"
+                    "ANONYMIZED"
                 ],
                 "message-id": [
-                    "20220912092800466772@yokm.net"
+                    "20220912092800466772@example.net"
                 ],
                 "x-mailer": [
                     "Xwstoxzpk 1"
                 ],
                 "from": [
-                    "\"Amazon\" <rdmfe@yokm.net>"
+                    "\"Amazon\" <user1@example.net>"
                 ]
             },
             "parsedAddresses": {
@@ -282,27 +282,27 @@ In this section, you will find examples of raw logs as generated natively by the
                     "Amazon"
                 ],
                 "from": [
-                    "rdmfe@yokm.net"
+                    "user1@example.net"
                 ],
                 "to": [
-                    "sletre@vogon.science"
+                    "user2@example.org"
                 ]
             },
             "header": {
                 "from": [
-                    "\"Amazon\" <rdmfe@yokm.net>"
+                    "\"Amazon\" <user1@example.net>"
                 ],
                 "message-id": [
-                    "<20220912092800466772@yokm.net>"
+                    "<20220912092800466772@example.net>"
                 ],
                 "x-mailer": [
                     "Xwstoxzpk 1"
                 ],
                 "subject": [
-                    "=?utf-8?B?44CQ5oOF5aCx44CRIEFtYXpvbi5jby5qcO+8muOBiuWuog==?=\r\n\t=?utf-8?B?5qeY44Gu44GK5pSv5omV44GE5pa55rOV44GM5om/6KqN44GV44KM44G+44Gb44KTICM4Nw==?=\r\n\t=?utf-8?B?OC05NDQyMjI5LTg4Mjk1NTQ=?="
+                    "REDACTED"
                 ],
                 "to": [
-                    "<sletre@vogon.science>"
+                    "<user2@example.org>"
                 ]
             },
             "sizeBytes": 33366
@@ -396,7 +396,7 @@ In this section, you will find examples of raw logs as generated natively by the
                         {
                             "method": "spf",
                             "emailIdentities": {
-                                "smtp.mailfrom": "rdmfe@yokm.net"
+                                "smtp.mailfrom": "user1@example.net"
                             },
                             "result": "none"
                         },
@@ -458,7 +458,7 @@ In this section, you will find examples of raw logs as generated natively by the
 	{
         "connection": {
             "resolveStatus": "[unknown]",
-            "host": "127.0.0.1",
+            "host": "hostname",
             "country": "**",
             "ip": "127.0.0.1",
             "helo": "outbound.proofpointdemo",
@@ -478,7 +478,7 @@ In this section, you will find examples of raw logs as generated natively by the
         "msg": {
             "header": {
                 "message-id": [
-                    "<3jryreg677-1@m0169160.ppops.net>"
+                    "<user11@example.net>"
                 ],
                 "subject": [
                     ""
@@ -488,7 +488,7 @@ In this section, you will find examples of raw logs as generated natively by the
             "parsedAddresses": {},
             "normalizedHeader": {
                 "message-id": [
-                    "3jryreg677-1@m0169160.ppops.net"
+                    "user11@example.net"
                 ],
                 "subject": [
                     ""
@@ -497,9 +497,9 @@ In this section, you will find examples of raw logs as generated natively by the
             "sizeBytes": 203
         },
         "envelope": {
-            "from": "wmacdonald@cloudadminuidemo.com",
+            "from": "user3@example.org",
             "rcpts": [
-                "pchilson@huntingance.com"
+                "user2@example.net"
             ]
         },
         "guid": "xjin0zM1KZbSWy8mUJvOxTV7WqFRrbd1",
@@ -543,7 +543,7 @@ In this section, you will find examples of raw logs as generated natively by the
             },
             "verified": {
                 "rcpts": [
-                    "pchilson@huntingance.com"
+                    "user2@example.net"
                 ]
             },
             "routes": [
@@ -572,7 +572,7 @@ In this section, you will find examples of raw logs as generated natively by the
             ],
             "delivered": {
                 "rcpts": [
-                    "pchilson@huntingance.com"
+                    "user2@example.net"
                 ]
             },
             "qid": "28MNsFLm006936"
@@ -632,7 +632,7 @@ In this section, you will find examples of raw logs as generated natively by the
             "isProtected": false,
             "urls": [
                 {
-                    "url": "http://us.adserver.yahoo.com/l?M=243273.4326031.5516772.1261774/D=egroupmail/S=:HM/A=1750744/rand=299818046",
+                    "url": "http://us.adserver.example.com/?REDACTED",
                     "src": [
                         "filter"
                     ]
@@ -673,6 +673,56 @@ In this section, you will find examples of raw logs as generated natively by the
         "type": "msgParts",
         "guid": "1234567890",
         "uuid": "eb99b626-c278-4af3-96f8-5a194e016a43",
+        "disposition": "continue"
+    }
+    ```
+
+
+
+=== "test_msgparts_metadata"
+
+
+    ```json
+	{
+        "msgParts": {
+            "sha256": "741d139c90f3db2f790cdb31d3ed9716fd0eebd504114a0e269127f09e5b0479",
+            "labeledName": "dlp - template.xlsx",
+            "isTimedOut": false,
+            "isDeleted": false,
+            "detectedName": "dlp - template.xlsx",
+            "detectedExt": "XLSX",
+            "detectedCharset": "",
+            "textExtracted": "U0NBTEFSKDB4N2YyNjE5NTViYTM4KQ==\n",
+            "metadata": {
+                "codepage": 65001,
+                "create_dtm": "2025-11-20 21:38:41",
+                "modified": "2025-11-20 21:38:41",
+                "lastauthor": "MOMENZADEH Thomas (EXT)",
+                "appversion": "16.0300",
+                "application": "Microsoft Excel Online",
+                "created": "2025-11-20 21:38:41",
+                "appname": "Microsoft Excel Online",
+                "lastsave_dtm": "2025-11-20 21:38:41"
+            },
+            "isArchive": false,
+            "labeledExt": "xlsx",
+            "isCorrupted": false,
+            "dataBase64": "U0NBTEFSKDB4N2YyODMxZTcxYTM4KQ==\n",
+            "structureId": "1",
+            "labeledCharset": "",
+            "sizeDecodedBytes": 23741,
+            "detectedMime": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+            "detectedSizeBytes": 23741,
+            "isProtected": false,
+            "isVirtual": false,
+            "disposition": "attached",
+            "labeledMime": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+            "md5": "596a2fe42e0af1b90e5427f706bfb745"
+        },
+        "guid": "2X6R0Z9mr_zQhgw_6glhAZc-dw9_iFKk",
+        "type": "msgParts",
+        "ts": "2025-11-20T21:39:14.304430+0000",
+        "uuid": "8ea3df61-8b18-4ec6-a0af-743321e08b50",
         "disposition": "continue"
     }
     ```
