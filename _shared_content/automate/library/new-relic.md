@@ -28,6 +28,13 @@ Query New Relic data with NRQL
 | `account_ids` | `array` | Account identifiers to use |
 | `query` | `string` | The NRQL to execute |
 
+
+**Outputs**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `results` | `array` | The results of the NRQL query |
+
 ## Set up
 
 ## How to create an API Key
@@ -61,4 +68,4 @@ Query New Relic data with NRQL
 
 ## Extra
 
-Module **`New Relic` v1.0.1**
+Module **`New Relic` v1.0.2**
