@@ -71,15 +71,17 @@ In the Keycloak configuration, set the following options to forward events to a 
 - `log-syslog-protocol` (env: `KC_LOG_SYSLOG_PROTOCOL`): Set to `tcp`
 - `log-syslog-output` (env: `KC_LOG_SYSLOG_OUTPUT`): Set to `json`
 - `log-syslog-json-format` (env: `KC_LOG_SYSLOG_JSON_FORMAT`): Set to `ecs`
+- `spi-events-listener--jboss-logging--success-level` (env: `KC_SPI_EVENTS_LISTENER_JBOSS_LOGGING_SUCCESS_LEVEL`): Set to `info`
 
 **Using Environment Variables**
 
 ```bash
-KC_LOG=syslog
-KC_LOG_SYSLOG_ENDPOINT=<ip_concentrator>:<intake_port>
-KC_LOG_SYSLOG_PROTOCOL=tcp
-KC_LOG_SYSLOG_OUTPUT=json
-KC_LOG_SYSLOG_JSON_FORMAT=ecs
+export KC_LOG=syslog
+export KC_LOG_SYSLOG_ENDPOINT=<ip_concentrator>:<intake_port>
+export KC_LOG_SYSLOG_PROTOCOL=tcp
+export KC_LOG_SYSLOG_OUTPUT=json
+export KC_LOG_SYSLOG_JSON_FORMAT=ecs
+export KC_SPI_EVENTS_LISTENER__JBOSS_LOGGING__SUCCESS_LEVEL=info
 ```
 
 **Using the `keycloak.conf` File**
@@ -90,21 +92,24 @@ log-syslog-endpoint=<ip_concentrator>:<intake_port>
 log-syslog-protocol=tcp
 log-syslog-output=json
 log-syslog-json-format=ecs
+
+spi-events-listener-jboss-logging-success-level=info
 ```
 
 ### Forward events to Sekoia.io
 
 Please consult the [Syslog Forwarding](/integration/ingestion_methods/syslog/sekoiaio_forwarder.md) documentation to forward these logs to Sekoia.io.
 
-Create a new configuration file:
+Go to the configuration folder of your syslog server (e.g., /etc/rsyslog.d/ for rsyslog, ./extended_conf/ for Sekoia.io forwarder) and create a new configuration file:
 
 ```bash
-sudo vim ./extended_conf/12-keycloak.conf
+sudo vim 12-keycloak.conf
 ```
 
 with the following template:
 
 ```bash
+module(load="imtcp")
 input(type="imtcp" port="PORT" ruleset="remoteKeycloak")
 
 template(name="SEKOIAIOTemplate" type="string" string="<%pri%>1 %timestamp:::date-rfc3339% %hostname% %app-name% %procid% LOG [SEKOIA@53288 intake_key=\"INTAKE_KEY\"] %msg%\n")
@@ -129,7 +134,7 @@ ruleset(name="remoteKeycloak"){
 !!! note
     Please change `INTAKE_KEY` with your actual intake key, as well as the `PORT` number.
 
-Update the `docker-compose.yml` file of the Sekoia.io forwarder to mount the extended conf:
+For the Sekoia.io forwarder, update the `docker-compose.yml` file  to mount the extended conf:
 
 ```yaml
 volumes:
