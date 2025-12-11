@@ -100,10 +100,10 @@ spi-events-listener-jboss-logging-success-level=info
 
 Please consult the [Syslog Forwarding](/integration/ingestion_methods/syslog/sekoiaio_forwarder.md) documentation to forward these logs to Sekoia.io.
 
-Go to the configuration folder of your syslog server (e.g., /etc/rsyslog.d/ for rsyslog, ./extended_conf/ for Sekoia.io forwarder) and create a new configuration file:
+Create a new configuration file in the `./extended_conf/` directory (create it if it does not exist):
 
 ```bash
-sudo vim 12-keycloak.conf
+vim ./extended_conf/12-keycloak.conf
 ```
 
 with the following template:
@@ -134,7 +134,7 @@ ruleset(name="remoteKeycloak"){
 !!! note
     Please change `INTAKE_KEY` with your actual intake key, as well as the `PORT` number.
 
-For the Sekoia.io forwarder, update the `docker-compose.yml` file  to mount the extended conf:
+Update the `docker-compose.yml` file of the Sekoia.io Forwarder to mount the extended conf:
 
 ```yaml
 volumes:
