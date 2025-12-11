@@ -685,19 +685,19 @@ In this section, you will find examples of raw logs as generated natively by the
     ```json
 	{
         "msgParts": {
-            "sha256": "741d139c90f3db2f790cdb31d3ed9716fd0eebd504114a0e269127f09e5b0479",
+            "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
             "labeledName": "dlp - template.xlsx",
             "isTimedOut": false,
             "isDeleted": false,
             "detectedName": "dlp - template.xlsx",
             "detectedExt": "XLSX",
             "detectedCharset": "",
-            "textExtracted": "U0NBTEFSKDB4N2YyNjE5NTViYTM4KQ==\n",
+            "textExtracted": "dGVzdA==\n",
             "metadata": {
                 "codepage": 65001,
                 "create_dtm": "2025-11-20 21:38:41",
                 "modified": "2025-11-20 21:38:41",
-                "lastauthor": "MOMENZADEH Thomas (EXT)",
+                "lastauthor": "DOE John (EXT)",
                 "appversion": "16.0300",
                 "application": "Microsoft Excel Online",
                 "created": "2025-11-20 21:38:41",
@@ -707,7 +707,7 @@ In this section, you will find examples of raw logs as generated natively by the
             "isArchive": false,
             "labeledExt": "xlsx",
             "isCorrupted": false,
-            "dataBase64": "U0NBTEFSKDB4N2YyODMxZTcxYTM4KQ==\n",
+            "dataBase64": "dGVzdA==\n",
             "structureId": "1",
             "labeledCharset": "",
             "sizeDecodedBytes": 23741,
@@ -717,12 +717,12 @@ In this section, you will find examples of raw logs as generated natively by the
             "isVirtual": false,
             "disposition": "attached",
             "labeledMime": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
-            "md5": "596a2fe42e0af1b90e5427f706bfb745"
+            "md5": "68b329da9893e34099c7d8ad5cb9c940"
         },
-        "guid": "2X6R0Z9mr_zQhgw_6glhAZc-dw9_iFKk",
+        "guid": "REDACTED",
         "type": "msgParts",
         "ts": "2025-11-20T21:39:14.304430+0000",
-        "uuid": "8ea3df61-8b18-4ec6-a0af-743321e08b50",
+        "uuid": "11111111-1111-1111-1111-111111111111",
         "disposition": "continue"
     }
     ```
