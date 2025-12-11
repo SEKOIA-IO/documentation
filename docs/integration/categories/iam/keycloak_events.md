@@ -42,25 +42,25 @@ This integration supports the following event types:
 1. Log in to the Keycloak Console as an administrator
 2. Go to `Realm settings`
 
-    ![Step - 01.png](/assets/integration/applicative/keycloak_events/Step_01.png)
+    ![Step - 01.png](/assets/integration/iam/keycloak_events/Step_01.png)
 
 3. Click `Events` tab
 
-    ![Step - 02.png](/assets/integration/applicative/keycloak_events/Step_02.png)
+    ![Step - 02.png](/assets/integration/iam/keycloak_events/Step_02.png)
 
 4. Select `jboss-logging` as `Event listeners`
 5. Click `Save`
 
-    ![Step - 03.png](/assets/integration/applicative/keycloak_events/Step_03.png)
+    ![Step - 03.png](/assets/integration/iam/keycloak_events/Step_03.png)
 
 6. Click `User events settings` Tab
 
-    ![Step - 04.png](/assets/integration/applicative/keycloak_events/Step_04.png)
+    ![Step - 04.png](/assets/integration/iam/keycloak_events/Step_04.png)
 
 7. Enable `save events`
 8. Click `Save`
 
-    ![Step - 03.png](/assets/integration/applicative/keycloak_events/Step_03_1.png)
+    ![Step - 03.png](/assets/integration/iam/keycloak_events/Step_03_1.png)
 
 
 See [Keycloak Documentation](https://www.keycloak.org/docs/latest/server_admin/index.html#configuring-auditing-to-track-events) for more information.
