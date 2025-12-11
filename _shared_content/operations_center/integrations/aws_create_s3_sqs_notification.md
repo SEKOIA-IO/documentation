@@ -90,6 +90,9 @@ Ensure that the IAM user dedicated to accessing the S3 bucket and SQS Queue has 
     !!! Important
         Keep in mind that you have to create the SQS queue in the same region as the S3 bucket you want to watch.
 
+    !!! Info
+        No need to add a prefix in the notification configuration and you can select all S3 events
+
     ** Create a S3 Event Notification **
 
     Use the [following guide](https://docs.aws.amazon.com/AmazonS3/latest/userguide/enable-event-notifications.html) to create S3 Event Notification.
