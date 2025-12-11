@@ -62,6 +62,9 @@ This integration supports the following event types:
 
     ![Step - 03.png](/assets/integration/applicative/keycloak_events/Step_03_1.png)
 
+
+See [Keycloak Documentation](https://www.keycloak.org/docs/latest/server_admin/index.html#configuring-auditing-to-track-events) for more information.
+
 ### Forward events to the concentrator
 
 In the Keycloak configuration, set the following options to forward events to a log concentrator:
@@ -95,6 +98,7 @@ log-syslog-json-format=ecs
 
 spi-events-listener-jboss-logging-success-level=info
 ```
+
 
 ### Forward events to Sekoia.io
 
@@ -150,3 +154,9 @@ volumes:
 {!_shared_content/operations_center/detection/generated/suggested_rules_cc1b212e-80c2-4dde-8446-2e194c6d4e80_do_not_edit_manually.md!}
 
 {!_shared_content/operations_center/integrations/generated/cc1b212e-80c2-4dde-8446-2e194c6d4e80.md!}
+
+## Further reading
+
+- [Configuring auditing to track events](https://www.keycloak.org/docs/latest/server_admin/index.html#configuring-auditing-to-track-events)
+- [Configuring logging](https://www.keycloak.org/server/logging)
+- [Jboss logging configuration](https://www.keycloak.org/server/all-provider-config#_jboss_logging)
