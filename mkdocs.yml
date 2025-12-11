@@ -201,7 +201,7 @@ nav:
       - Github Audit Logs: integration/categories/applicative/github_audit_logs.md
       - Google Workspace / ChromeOS: integration/categories/applicative/google_reports.md
       - Google Cloud Audit Logs: integration/categories/applicative/google_cloud_audit.md
-      - Keycloak: integration/categories/applicative/keycloak_events.md
+      - Keycloak Events: integration/categories/applicative/keycloak_events.md
       - LockSelf LockPass/LockTransfer/LockFiles: integration/categories/applicative/lockself.md
       - Microsoft IIS: integration/categories/applicative/microsoft_iis.md
       - Microsoft Sentinel: integration/categories/applicative/microsoft_sentinel.md
