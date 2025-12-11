@@ -479,3 +479,66 @@
 
     }
 }
+
+.md-typeset {
+
+  // Tabbed container
+  .tabbed-set {
+    > input {
+
+
+      // Tab label states
+      @for $i from 100 through 21 {
+        &:nth-child(#{$i}) {
+
+          // Tab is active
+          &:checked {
+
+            // Tab label
+            ~ .tabbed-labels > :nth-child(#{$i}) {
+              @extend %tabbed-label;
+            }
+
+            // Tab content
+            ~ .tabbed-content > :nth-child(#{$i}) {
+              @extend %tabbed-content;
+            }
+          }
+
+          // Tab label on keyboard focus
+          &.focus-visible ~ .tabbed-labels > :nth-child(#{$i}) {
+            @extend %tabbed-label-focus-visible;
+          }
+        }
+      }
+    }
+  }
+}
+
+%tabbed-label {
+
+  // [screen]: Show active state
+  @media screen {
+    color: var(--md-default-fg-color);
+
+    // [no-js]: Show border (indicator is animated with JavaScript)
+    .no-js & {
+      border-color: var(--md-default-fg-color);
+    }
+
+    // Show border for tabs in tooltips
+    [role="dialog"] & {
+      border-color: var(--md-default-fg-color);
+    }
+  }
+}
+
+// Tab label on keyboard focus placeholder
+%tabbed-label-focus-visible {
+  color: var(--md-accent-fg-color);
+}
+
+// Tab content placeholder
+%tabbed-content {
+  display: block;
+}
