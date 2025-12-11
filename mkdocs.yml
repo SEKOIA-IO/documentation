@@ -203,7 +203,6 @@ nav:
       - Github Audit Logs: integration/categories/applicative/github_audit_logs.md
       - Google Workspace / ChromeOS: integration/categories/applicative/google_reports.md
       - Google Cloud Audit Logs: integration/categories/applicative/google_cloud_audit.md
-      - Keycloak Events: integration/categories/applicative/keycloak_events.md
       - LockSelf LockPass/LockTransfer/LockFiles: integration/categories/applicative/lockself.md
       - Microsoft IIS: integration/categories/applicative/microsoft_iis.md
       - Microsoft Sentinel: integration/categories/applicative/microsoft_sentinel.md
@@ -285,6 +284,7 @@ nav:
       - CyberArk Identity Audit Logs: integration/categories/iam/cyberark_identity_audit_logs.md
       - FreeRADIUS: integration/categories/iam/freeradius.md
       - Jumpcloud Directory Insights: integration/categories/iam/jumpcloud_directory_insights.md
+      - Keycloak Events: integration/categories/iam/keycloak_events.md
       - ManageEngine ADAudit Plus: integration/categories/iam/manageengine_adauditplus.md
       - Microsoft Entra ID (Azure AD): integration/categories/iam/entra_id.md
       - Microsoft Entra ID (via Graph API): integration/categories/iam/entra_id_graph_api.md
