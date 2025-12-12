@@ -1,4 +1,4 @@
-uuid: 4fef0495-b93e-4c9c-bc3b-d54180383e31
+uuid: f5f05e2a-32fc-432d-9f00-11f490ae15f4
 name: Juniper NGFW
 type: intake
 
@@ -78,8 +78,8 @@ Juniper Next-Generation Firewall (NGFW) services provide a set of cyber defenses
 
 {!_shared_content/integration/forwarder_configuration.md!}
 
-{!_shared_content/operations_center/integrations/generated/4fef0495-b93e-4c9c-bc3b-d54180383e31_sample.md!}
+{!_shared_content/operations_center/integrations/generated/f5f05e2a-32fc-432d-9f00-11f490ae15f4_sample.md!}
 
 {!_shared_content/integration/detection_section.md!}
 
-{!_shared_content/operations_center/integrations/generated/4fef0495-b93e-4c9c-bc3b-d54180383e31.md!}
+{!_shared_content/operations_center/integrations/generated/f5f05e2a-32fc-432d-9f00-11f490ae15f4.md!}
