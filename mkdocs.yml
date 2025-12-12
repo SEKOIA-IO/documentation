@@ -338,7 +338,7 @@ nav:
       - Amazon GuardDuty: integration/categories/network_security/aws_guardduty.md
       - Amazon WAF: integration/categories/network_security/aws_waf.md
       - Azure Front Door: integration/categories/network_security/azure_front_door.md
-      - Azure Network Watcher (NSG flow logs): integration/categories/network_security/azure_network_watcher.md
+      - Azure Network Watcher (NSG flow logs; deprecated): integration/categories/network_security/azure_network_watcher.md
       - Azure Network Watcher (Virtual Network Flow Logs): integration/categories/network_security/azure_network_watcher_flow_logs.md
       - Barracuda CloudGen Firewall: integration/categories/network_security/barracuda_cloudgen_firewall.md
       - Bitsight SPM: integration/categories/network_security/bitsight_spm.md
