@@ -915,6 +915,12 @@ The following Sekoia.io built-in rules match the intake **Elastic Winlogbeat**. 
     
     - **Effort:** intermediate
 
+??? abstract "Linux Suspicious Auto-start Desktop Shortcut Execution"
+    
+    This detection rule identifies a suspicious process start from an graphical env process which may indicate the use of a malicious .desktop shortcut.
+    
+    - **Effort:** intermediate
+
 ??? abstract "Linux Suspicious Nohup Exec"
     
     Detects suspicious usage of nohup which could be leveraged by an attacker to keep a process running or break out from restricted environments
