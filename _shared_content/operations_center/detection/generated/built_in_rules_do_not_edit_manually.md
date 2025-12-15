@@ -1,4 +1,4 @@
-Rules catalog includes **1058 built-in detection rules** ([_last update on 2025-12-10_](rules_changelog.md)).
+Rules catalog includes **1059 built-in detection rules** ([_last update on 2025-12-15_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Identity Information**
 
@@ -7042,6 +7042,12 @@ Rules catalog includes **1058 built-in detection rules** ([_last update on 2025-
     
         - 21/06/2024 - major - Update detection pattern for ECS fields/value compliance
             
+??? abstract "Linux Suspicious Auto-start Desktop Shortcut Execution"
+    
+    This detection rule identifies a suspicious process start from an graphical env process which may indicate the use of a malicious .desktop shortcut.
+    
+    - **Effort:** intermediate
+    
 ??? abstract "Malware Persistence Registry Key"
     
     Detects registry key used by several malware, especially Formbook spyware in two ways, either the Sysmon registry events, or the commands line.
@@ -8805,6 +8811,12 @@ Rules catalog includes **1058 built-in detection rules** ([_last update on 2025-
     
         - 21/06/2024 - major - Update detection pattern for ECS fields/value compliance
             
+??? abstract "Linux Suspicious Auto-start Desktop Shortcut Execution"
+    
+    This detection rule identifies a suspicious process start from an graphical env process which may indicate the use of a malicious .desktop shortcut.
+    
+    - **Effort:** intermediate
+    
 ??? abstract "Malware Persistence Registry Key"
     
     Detects registry key used by several malware, especially Formbook spyware in two ways, either the Sysmon registry events, or the commands line.

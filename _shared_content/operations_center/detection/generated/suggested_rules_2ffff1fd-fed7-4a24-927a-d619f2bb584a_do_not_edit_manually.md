@@ -219,6 +219,12 @@ The following Sekoia.io built-in rules match the intake **ESET Protect**. This d
     
     - **Effort:** intermediate
 
+??? abstract "Linux Suspicious Auto-start Desktop Shortcut Execution"
+    
+    This detection rule identifies a suspicious process start from an graphical env process which may indicate the use of a malicious .desktop shortcut.
+    
+    - **Effort:** intermediate
+
 ??? abstract "Logonui Wrong Parent"
     
     Logonui.exe is a file associated with the Logon user interface. The login user interface is an essential part of the Windows operating system. It doesn't only make it easy for the user to log in to the PC but also determines whether the user has logged in and logged out correctly and makes it easy to switch between users. This rule checks if the parent of this process is a legitimate one or not.
