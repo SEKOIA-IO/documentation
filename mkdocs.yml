@@ -444,6 +444,7 @@ nav:
       - Panda Security: integration/action_library/panda-security.md
       - SentinelOne: integration/action_library/sentinelone.md
       - Sophos: integration/action_library/sophos.md
+      - Sophos: integration/action_library/sophos.md
       - Stormshield SES: integration/action_library/stormshield-ses.md
       - TrendMicro VisionOne: integration/action_library/trendmicro-visionone.md
       - WithSecure: integration/action_library/withsecure.md
@@ -459,6 +460,7 @@ nav:
       - Microsoft Entra ID: integration/action_library/microsoft-entra-id.md
     - Network:
       - Fortigate Firewalls: integration/action_library/fortigate-firewalls.md
+      - Sophos: integration/action_library/sophos.md
       - Sophos: integration/action_library/sophos.md
       - Zscaler: integration/action_library/zscaler.md
     - Overview: integration/action_library/overview.md

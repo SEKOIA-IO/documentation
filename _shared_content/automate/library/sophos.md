@@ -13,13 +13,13 @@ Sophos is a cybersecurity company that provides a range of security solutions, i
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
 | `oauth2_authorization_url` | `string` | OAuth2 authorization URL |
-| `api_host` | `string` | API Url of the Sophos Central API (e.g. 'https://api-{dataRegion}.central.sophos.com') |
+| `api_host` | `string` | API Url of the Sophos Central API |
 | `client_id` | `string` | OAuth2 client identifier |
 | `client_secret` | `string` | OAuth2 client secret |
 
 ## Actions
 
-### [BETA] Deisolate endpoint
+### Deisolate endpoint
 
 Turn off endpoint isolation
 
@@ -29,7 +29,7 @@ Turn off endpoint isolation
 | --------- | ------- | --------------------------- |
 | `endpoint_id` | `string` | Endpoint ID |
 
-### [BETA] Isolate endpoint
+### Isolate endpoint
 
 Turn on endpoint isolation
 
@@ -39,7 +39,7 @@ Turn on endpoint isolation
 | --------- | ------- | --------------------------- |
 | `endpoint_id` | `string` | Endpoint ID |
 
-### [BETA] Run scan
+### Run scan
 
 
 
@@ -52,4 +52,4 @@ Turn on endpoint isolation
 
 ## Extra
 
-Module **`Sophos` v1.17.3**
+Module **`Sophos` v1.17.6**
