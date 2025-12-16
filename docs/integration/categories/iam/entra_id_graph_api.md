@@ -15,7 +15,21 @@ type: intake
     Important note - This format is currently in beta. We highly value your feedback to improve its performance.
     
 !!! Danger "Scalability"
-    This integration will collect the events through Microsoft Graph API, which is only recommended for small environments. For larger environments, it is recommended to use the Microsoft Entra ID / Azure AD integration (see [Microsoft Entra ID](entra_id.md))
+    This integration will collect the events through Microsoft Graph API, which is only recommended for small environments.
+    We can suggest using next numbers in order to decide which integration to use:
+
+    1. Sign-ins per day: < 300,000
+
+    2. Sign-ins per second (peak): < 10/sec
+
+    3. Audit logs per day: < 100,000
+
+    4. Total logs/day: < 500,000
+
+    5. Total logs/day: 250,000 – 1,500,000
+
+    If your environment exceeds these numbers, we strongly recommend to use the Microsoft Entra ID / Azure AD integration (see [Microsoft Entra ID](entra_id.md))
+    
 
 ## Configure
 
