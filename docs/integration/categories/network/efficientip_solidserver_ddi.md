@@ -48,7 +48,7 @@ An internal syslog concentrator is required to collect and forward events to Sek
     ![syslog](/assets/integration/network/efficientip_solidserver/03 - syslog.png)
 
 5. In the `Services` drop-dwon, select the following services:
-	- `named`
+	- `dns`
 
 6. In the `Target server`, fill the ip address and the port of the log concentrator.
 
