@@ -38,6 +38,14 @@ Teams use New Relic to optimize performance, reliability, and user experience ac
     
 - Type a name for the destination (e.g `Sekoia.io Alert Forwarding`)
 - Set [`https://intake.sekoia.io/plain`](https://intake.sekoia.io/plain) as the endpoint URL
+
+!!! warning 
+    The previous URL works for the FRA1 region. For any other region, replace the domain “intake.sekoia.io” with your region’s HTTP-intake domain—for example:
+
+    https://app.usa1.sekoia.io/api/v1/intake-http
+
+    You can find your region’s domain here: [https://docs.sekoia.io/getting_started/regions/](https://docs.sekoia.io/getting_started/regions/)
+
 - Select `Basic authorization` as authorization method
 - Type any username (NewRelic requires a non-empty username to validate the form)
 - Set the Sekoia.io intake key as the password
