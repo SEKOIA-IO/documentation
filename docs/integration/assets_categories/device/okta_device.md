@@ -1,3 +1,7 @@
+uuid: b6e2c8a2-4f3b-4e7a-8c1d-2e4f3a6b7c9d
+name: Okta Device
+type: asset
+
 ## Overview
 
 Okta is a cloud-based identity and access management platform that provides secure authentication, authorization, and device management services. Okta helps organizations manage device identities across multiple applications and systems, providing device trust, device compliance, and comprehensive device lifecycle management.

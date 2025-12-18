@@ -1,3 +1,6 @@
+uuid: adcd0095-0f3d-4699-8621-158977b6c2c3
+name: Crowdstrike Falcon devices
+type: asset
 
 ## Overview
 

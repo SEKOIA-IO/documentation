@@ -1,3 +1,7 @@
+uuid: b2e2e2c7-1a3e-4b7a-9c2d-8e4f3a6b7c9d
+name: Okta User
+type: asset
+
 ## Overview
 
 Okta is a cloud-based identity and access management platform that provides secure authentication, authorization, and user management services. Okta helps organizations manage user identities across multiple applications and systems, providing single sign-on (SSO), multi-factor authentication (MFA), and comprehensive user lifecycle management.

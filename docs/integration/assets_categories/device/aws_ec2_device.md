@@ -1,3 +1,7 @@
+uuid: e2a7c6b4-9f1d-4b8a-8c3e-2d5f7a1e4b9c
+name: AWS devices
+type: asset
+
 ## Overview
 
 Amazon Elastic Compute Cloud (EC2) is a web service that provides secure, resizable compute capacity in the cloud. It is designed to make web-scale cloud computing easier for developers by providing a simple web service interface that allows you to obtain and configure capacity with minimal friction.
