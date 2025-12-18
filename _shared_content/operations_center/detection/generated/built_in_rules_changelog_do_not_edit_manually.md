@@ -1,7 +1,10 @@
-Changelog _last update on 2025-12-15_
+Changelog _last update on 2025-12-18_
 
 ## Changelog
 
+### Google Workspace External Sharing
+  - 18/12/2025 - major - Deleting elements to reduce false positives.
+    
 ### Scheduled Task Creation By Non Privileged User
   - 03/12/2025 - minor - Change rule effort level and update of rule name
     
@@ -601,9 +604,6 @@ Changelog _last update on 2025-12-15_
     
 ### Google Workspace Password Change
   - 20/06/2024 - minor - Adding new element to increase detection.
-    
-### Google Workspace External Sharing
-  - 20/06/2024 - minor - Adding new elements to increase detection.
     
 ### Scam Detected By Vade For M365 And Not Blocked
   - 18/06/2024 - minor - Adding filter when whitelisted.
