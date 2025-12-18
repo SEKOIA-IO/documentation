@@ -1,4 +1,4 @@
-Rules catalog includes **1059 built-in detection rules** ([_last update on 2025-12-15_](rules_changelog.md)).
+Rules catalog includes **1059 built-in detection rules** ([_last update on 2025-12-18_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Identity Information**
 
@@ -14401,6 +14401,7 @@ Rules catalog includes **1059 built-in detection rules** ([_last update on 2025-
     - **Changelog:**
     
         - 20/06/2024 - minor - Adding new elements to increase detection.
+        - 18/12/2025 - major - Deleting elements to reduce false positives.
             
 ??? abstract "Koadic MSHTML Command"
     
