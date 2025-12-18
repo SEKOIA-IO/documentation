@@ -1,3 +1,7 @@
+uuid: b6e2e2e2-4c3a-4b7a-9e2a-1f2c3d4e5f6a
+name: Entra ID
+type: asset
+
 ## Overview
 
 Microsoft Entra ID (formerly Azure Active Directory) is a cloud-based identity and access management service that provides secure authentication, authorization, and user management services. Entra ID helps organizations manage user identities across Microsoft and third-party applications, providing single sign-on (SSO), multi-factor authentication (MFA), and comprehensive user lifecycle management.

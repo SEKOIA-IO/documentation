@@ -1,3 +1,7 @@
+uuid: e2a7c1b4-5d8f-4e3a-9c2b-7f1e6d8a3b2c
+name: AWS users
+type: asset
+
 ## Overview
 
 AWS Identity and Access Management (IAM) is a web service that helps you securely control access to AWS resources. With IAM, you can centrally manage permissions that control which AWS resources users can access. You use IAM to control who is authenticated (signed in) and authorized (has permissions) to use resources.

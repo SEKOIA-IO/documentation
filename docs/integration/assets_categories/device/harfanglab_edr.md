@@ -1,3 +1,6 @@
+uuid": f7da3627-6016-415d-9885-231e1455a7a5
+name: Harfanglab EDR
+type: asset
 
 ## Overview
 
