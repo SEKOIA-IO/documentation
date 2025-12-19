@@ -12,9 +12,6 @@ It provides real-time monitoring and automated response capabilities, ensuring c
 - **Detection based on**: Alert
 - **Supported application or feature**: Security events
 
-!!! Warning
-    Important note - This format is currently in beta. We highly value your feedback to improve its performance.
-
 ## Configure
 
 ### Enable API Access ( Creation of credentials )
