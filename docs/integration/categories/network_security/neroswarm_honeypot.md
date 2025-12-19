@@ -11,9 +11,6 @@ type: intake
 - **Detection based on:** Alerts  
 - **Supported feature:** Events associated with incidents  
 
-!!! Warning
-    Important note - This format is currently in beta. We highly value your feedback to improve its performance.
-
 ## Step-by-Step Configuration Procedure
 
 ### Create an Intake

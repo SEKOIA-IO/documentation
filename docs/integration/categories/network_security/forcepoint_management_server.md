@@ -12,9 +12,6 @@ The Management Server is the central component for system administration. One Ma
 - **Detection based on**: Telemetry
 - **Supported application or feature**: Network device logs, Network intrusion detection system
 
-!!! Warning
-    Important note - This format is currently in beta. We highly value your feedback to improve its performance.
-
 ## Configure
 
 This setup guide will show you how to forward your Forcepoint Management Server logs to Sekoia.io by means of a syslog transport channel.

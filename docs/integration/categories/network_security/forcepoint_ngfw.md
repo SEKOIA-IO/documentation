@@ -12,8 +12,6 @@ Forcepoint Next-Generation Firewall provide advanced threat protection and netwo
 - **Detection based on**: Telemetry
 - **Supported application or feature**: Network device logs, Network intrusion detection system, Network protocol, Firewall logs
 
-!!! Warning
-    Important note - This format is currently in beta. We highly value your feedback to improve its performance.
 
 ## Configure
 

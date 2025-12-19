@@ -1,5 +1,5 @@
 uuid: ff575606-1cec-4d9f-8e08-d02dd9100af8
-name: Trellix Advanced Threat Defense [ Beta ]
+name: Trellix Advanced Threat Defense
 type: intake
 
 ## Overview
@@ -10,9 +10,6 @@ The Advanced Threat Defense Appliances are purpose-built, scalable, and flexible
 - **Supported environment**: On Premise
 - **Detection based on**: Telemetry
 - **Supported application or feature**: Application logs
-
-!!! Warning
-    Important note - This format is currently in beta. We highly value your feedback to improve its performance.
 
 ## High-Level Architecture Diagram
 
