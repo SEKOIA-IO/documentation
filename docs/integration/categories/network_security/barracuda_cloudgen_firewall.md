@@ -6,9 +6,6 @@ type: intake
 
 Barracuda NextGen Firewall is a unified network‐security appliance that combines stateful, application‐aware firewalling with intrusion prevention, malware protection, web‐filtering and full-mesh VPN/SD-WAN.
 
-!!! Warning
-    Important note - This format is currently in beta. We highly value your feedback to improve its performance.
-
 - **Vendor**: Barracuda
 - **Supported environment**: OnPrem
 - **Detection based on**: Telemetry
