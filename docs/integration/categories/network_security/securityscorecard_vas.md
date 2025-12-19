@@ -40,6 +40,13 @@ Set the destination url to `https://intake.sekoia.io/plain?intake_key=<intake_ke
 
 * Save the configuration and enjoy your events
 
+!!! warning 
+    The previous URL works for the FRA1 region. For any other region, replace the domain “intake.sekoia.io” with your region’s HTTP-intake domain—for example:
+
+    https://app.usa1.sekoia.io/api/v1/intake-http
+
+    You can find your region’s domain here: [https://docs.sekoia.io/getting_started/regions/](https://docs.sekoia.io/getting_started/regions/)
+
 
 {!_shared_content/operations_center/integrations/generated/8f472113-ba5b-45b9-9a2c-944834396333_sample.md!}
 
