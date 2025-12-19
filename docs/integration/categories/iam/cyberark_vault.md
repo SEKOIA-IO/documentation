@@ -11,9 +11,6 @@ CyberArk Vault is a secure digital repository designed to protect and manage sen
 - **Detection based on**: Telemetry
 - **Supported application or feature**: Application logs
 
-!!! Warning
-    Important note - This format is currently in beta. We highly value your feedback to improve its performance.
-
 ## High-Level Architecture Diagram
 
 - **Type of integration**: Outbound (PUSH to Sekoia.io)
