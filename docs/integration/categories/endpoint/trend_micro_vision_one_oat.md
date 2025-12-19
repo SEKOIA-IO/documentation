@@ -1,5 +1,5 @@
 uuid: 2345b987-a94a-4363-b7bc-a6e4a9efd98a
-name: Trend Micro Vision One Observed Attack Techniques [BETA]
+name: Trend Micro Vision One Observed Attack Techniques
 type: intake
 
 
@@ -7,9 +7,6 @@ type: intake
 
 Trend Micro Vision One is an extended detection and response (XDR) platform that enhances threat detection, investigation, and response across multiple security layers. It provides a centralized view for improved security posture and faster threat remediation.
 This intake format will ingest Observed Attack Techniques from Trend Micro Vision One.
-
-!!! Warning
-    Important note - This format is currently in beta. We highly value your feedback to improve its performance.
 
 - **Supported environment**: SaaS
 - **Detection based on**: Alerts
