@@ -10,9 +10,6 @@ type: intake
 - **Supported environment**: SaaS
 - **Detection based on**: Telemetry
 - **Supported application or feature**: Application logs, Authentication logs
-
-!!! Warning
-    Important note - This format is currently in beta. We highly value your feedback to improve its performance.
     
 !!! Danger "Scalability"
     This integration will collect the events through Microsoft Graph API, which is only recommended for small environments.
