@@ -126,7 +126,7 @@ In this section, you will find examples of raw logs as generated natively by the
 
 
     ```json
-	1,2023/06/28 14:40:42,015451000032715,GLOBALPROTECT,0,2562,2023/06/28 14:40:42,vsys1,gateway-config-release,configuration,,,example.org\\test,EN,2021-02707,88.120.236.74,0.0.0.0,10.0.0.232,0.0.0.0,8f0fd1d3-5d3b-49c3-9bee-247ff89a52f3,DFN3535D,6.0.4,Windows,"Microsoft Windows 10 Enterprise , 64-bit",1,,,,success,,0,,0,VPN_GATEWAY,5555555555555555555,0x8000000000000000,2023-06-28T14:40:43.134+02:00,,,,,,0,0,0,0,,VPN-DOM-01,1
+	1,2023/06/28 14:40:42,015451000032715,GLOBALPROTECT,0,2562,2023/06/28 14:40:42,vsys1,gateway-config-release,configuration,,,example.org\\test,EN,2021-02707,1.2.3.4,0.0.0.0,10.0.0.232,0.0.0.0,8f0fd1d3-5d3b-49c3-9bee-247ff89a52f3,DFN3535D,6.0.4,Windows,"Microsoft Windows 10 Enterprise , 64-bit",1,,,,success,,0,,0,VPN_GATEWAY,5555555555555555555,0x8000000000000000,2023-06-28T14:40:43.134+02:00,,,,,,0,0,0,0,,VPN-DOM-01,1
 
     ```
 
@@ -594,7 +594,7 @@ In this section, you will find examples of raw logs as generated natively by the
         "EventName": "cloud-election",
         "EventComponent": "",
         "VendorSeverity": "Informational",
-        "EventDescription": "CLOUD ELECTION: serverlist2.urlcloud.paloaltonetworks.com IP: 35.244.229.101 was elected, measured alive test 143294.",
+        "EventDescription": "CLOUD ELECTION: serverlist2.urlcloud.paloaltonetworks.com IP: 1.2.3.4 was elected, measured alive test 143294.",
         "SequenceNo": 7200776623254143113,
         "DGHierarchyLevel1": 0,
         "DGHierarchyLevel2": 0,
@@ -1371,10 +1371,10 @@ In this section, you will find examples of raw logs as generated natively by the
         "Subtype": "url",
         "ConfigVersion": "10.2",
         "TimeGenerated": "2024-07-08T13:13:27.000000Z",
-        "SourceAddress": "19.16.1.6",
-        "DestinationAddress": "17.25.11.9",
-        "NATSource": "210.210.140.61",
-        "NATDestination": "17.25.11.9",
+        "SourceAddress": "5.5.5.5",
+        "DestinationAddress": "1.1.1.1",
+        "NATSource": "3.3.3.3",
+        "NATDestination": "1.1.1.1",
         "Rule": "Guest_Mobile_Internet Access",
         "SourceUser": null,
         "DestinationUser": null,
@@ -1398,7 +1398,7 @@ In this section, you will find examples of raw logs as generated natively by the
         "VendorSeverity": "Informational",
         "DirectionOfAttack": "client to server",
         "SequenceNo": 73503956876009,
-        "SourceLocation": "19.18.0.0-19.18.255.255",
+        "SourceLocation": "2.2.2.2-4.4.4.4",
         "DestinationLocation": "US",
         "ContentType": null,
         "PacketID": 0,
