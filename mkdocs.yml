@@ -412,6 +412,7 @@ nav:
       - Wiz Vulnerability Findings: integration/categories/network_security/wiz_vulnerability_findings.md
       - Zscaler Internet Access: integration/categories/network_security/zscaler_zia.md
   - List of Playbooks Actions:
+    - Overview: integration/action_library/overview.md
     - Applicative:
       - ElasticSearch: integration/action_library/elasticsearch.md
       - Mandrill: integration/action_library/mandrill.md
@@ -461,8 +462,6 @@ nav:
       - Fortigate Firewalls: integration/action_library/fortigate-firewalls.md
       - Sophos: integration/action_library/sophos.md
       - Zscaler: integration/action_library/zscaler.md
-    - Overview: integration/action_library/overview.md
-    - Overview: integration/action_library/overview.md
     - Threat Intelligence:
       - BinaryEdge's API: integration/action_library/binaryedge-s-api.md
       - Censys: integration/action_library/censys.md
@@ -485,6 +484,7 @@ nav:
       - VirusTotal: integration/action_library/virustotal.md
       - Whois: integration/action_library/whois.md
   - List of Asset Connectors:
+    - Overview: integration/assets_categories/overview.md
     - Vulnerability:
       - Tenable.io: integration/assets_categories/vulnerability/tenable_io.md
     - Device:
