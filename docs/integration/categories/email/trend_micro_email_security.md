@@ -13,21 +13,43 @@ Trend Micro Email Security is a robust email protection solution that safeguards
 
 ## Configure
 
-### How to get an API key
+For the configuration part, there are two methods because Trend Micro Email Security is migrating to Trend Vision One within the same product. For those still using the old solution, there is the first configuration method, and for those using the new one, there is a second method.
+
+### How to create an API token ( Trend Micro Email Security )
+
 1. Log on to the Trend Micro Email Security administrator console.
 2. Go to **Administration**
 
-![Step 1](/assets/integration/email/trend_micro/step_1.png)
+    ![Step 1](/assets/integration/email/trend_micro/step_1.png)
 
-4. Click on **Service Integration**. The API Access tab displays by default.
+3. Click on **Service Integration**. The API Access tab displays by default.
 
-![Click on Service Integration](/assets/integration/email/trend_micro/step_2.png)
+    ![Click on Service Integration](/assets/integration/email/trend_micro/step_2.png)
+    
+4. Click **Add** to generate an API Key.
 
-6. Click **Add** to generate an API Key.
+    ![Click on Add](/assets/integration/email/trend_micro/step_3.png)
 
-![Click on Add](/assets/integration/email/trend_micro/step_3.png)
+5. Copy the API Key value and save the value. Keep the API Key private
 
-9. Copy the API Key value and save the value. Keep the API Key private
+### How to create an API token ( Trend Vision One )
+
+1. Log in the Trend Vision One console
+2. On the left panel, click `Administration` then click `API keys`
+
+    ![step 1](/assets/integration/cloud_and_saas/trend_micro_vision_one/01_administration.png)
+
+3. Click `Add API key`
+
+    ![step 2](/assets/integration/cloud_and_saas/trend_micro_vision_one/02_create_api_key.png)
+
+4. Type a name for the API key
+5. Select the `Email administrator` role and an expiration time
+6. Check `status` to enable the API key
+7. Copy the API key and click `Close`
+
+    ![step 4](/assets/integration/cloud_and_saas/trend_micro_vision_one/04_save_api_key.png)
+
 
 ### Create your intake
 
