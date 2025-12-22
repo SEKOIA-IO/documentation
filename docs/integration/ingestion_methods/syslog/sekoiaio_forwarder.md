@@ -203,7 +203,13 @@ Volumes are used to share files and folders between the host and the container:
 
 #### Import a custom rsyslog configuration
 
-You can add your own additional rsyslog configuration. It can be useful to deal with specific use cases which are not supported natively by the Sekoia.io concentrator. To enable it, you simply have to create a new folder called `extended_conf` and put an additional your rsyslog file into (your file must have the extension *.conf). You do not have to deal with the `intake.yaml` file. Your custom configuration will be added in addition to the intake definition and will not erase exisiting ones.
+You can add your own additional rsyslog configuration. This can be useful to handle specific use cases that are not natively supported by the Sekoia.io concentrator. To enable it, simply create a new folder called `extended_conf` and place your additional rsyslog configuration file(s) inside (your file must have the `.conf` extension).
+
+    !!! Warning
+
+        If you configure a port or input in your custom `.conf` file within the `extended_conf` directory, **do not declare this intake again in the `intake.yaml` file**. Using both for the same input or port will cause conflicts and may prevent the concentrator from starting correctly.
+        Your custom configuration will be added in addition to the existing intake definitions and will not overwrite them. Just make sure each port or source is configured *either* in `intake.yaml` *or* in your `.conf` file, not both.
+
 
 You can define your own method for obtaining logs using rsyslog modules, but you still need to forward events to Sekoia.io by providing a syslog-valid message with your intake key as a header, as follows:
 
