@@ -67,7 +67,7 @@ To enable hydrating the data lake for server:
 2. Set the intake account configuration with the `client_id` and `client_secret` from the Sophos console.
 
     !!! info
-        - If you want to change the region with your own region, you can find your region via **protect devices field**, first click on **Protect Devices**, Then copy link of any download links and finally Check the region that appears as part of the URL.
+        - No need to change the **API Url of the Sophos Central API**
         - No need to change the **Oauth2 Authorization Url** for the moment (this's the only endpoint to get a JWT token).
 
 3. In the intake configuration section choose a `frequency` - Default is `60` -.
