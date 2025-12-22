@@ -424,6 +424,7 @@ nav:
       - Google Cloud: integration/action_library/google-cloud.md
     - Collaboration Tools:
       - Atlassian JIRA: integration/action_library/atlassian-jira.md
+      - Atlassian JIRA: integration/action_library/atlassian-jira.md
       - Git: integration/action_library/git.md
       - Nybble: integration/action_library/nybble.md
       - ServiceNow: integration/action_library/servicenow.md
