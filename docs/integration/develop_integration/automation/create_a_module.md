@@ -352,7 +352,7 @@ Depending on your needs, you can choose to create an **Action**, a **Connector**
                 time.sleep(60)
     ```
 
-    Additionnaly, you can define parameters that will be set during the instanciation of the Intake in Sekoia. For that you have 2 options depending of the type of parameter you want to define.
+    Additionaly, you can define parameters that will be set during the instanciation of the Intake in Sekoia. For that you have 2 options depending of the type of parameter you want to define.
 
     * **Option 1**: Define parameters in the Module
 
