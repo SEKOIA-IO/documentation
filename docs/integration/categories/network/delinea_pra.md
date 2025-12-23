@@ -9,6 +9,13 @@ Delinea’s Privileged Remote Access (PRA) is a secure session‐broker solution
 !!! Warning
     Important note - This format is currently in beta. We highly value your feedback to improve its performance.
 
+- **Vendor**: Delinea
+- **Supported environment**: SaaS
+- **Detection based on**: Audit events
+- **Supported application or feature**:
+    - Remote Access logs
+    - Vault Secret logs
+
 ## Configure
 
 This setup guide will show you how to forward your Delinea logs to Sekoia.io.
