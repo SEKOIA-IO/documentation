@@ -60,3 +60,19 @@ In this section, you will find examples of raw logs as generated natively by the
 
 
 
+=== "ressource_filename"
+
+    ```
+	ValidateAccept HOST_XXX [23/Jul/2025:09:42:31 +0200] "2.2.2.2 uid=toto,ou=Internal,ou=People,o=group" "domain.com GET /livelink/llisapi.dll/11111111/News_Text_EN.html?func=doc.Fetch&nodeid=1111111" [idletime=18000;maxtime=18000;authlevel=5;] [0]  [] []
+    ```
+
+
+
+=== "ressource_func"
+
+    ```
+	AzAccept host_01 [22/Sep/2025:13:29:26 +0200] "192.168.1.1 uid=toto,ou=Internal,ou=People,o=group" "subdomain.corp.xxxxx_agent GET /livelink/livelink.exe?func=multifile.downloadfile&objAction=Browse&objId=1111111111&cacheid=2222222222&nodeid=3333333333" [000000000000000000000000d111100a-496c-68d11111-111c-01057c71] [0]  [] []
+    ```
+
+
+

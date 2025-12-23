@@ -95,7 +95,7 @@ In this section, you will find examples of raw logs as generated natively by the
 === "test_ASA_111008"
 
     ```
-	%ASA-5-111008: User 'admintufin' executed the 'login' command
+	%ASA-5-111008: User 'admin' executed the 'login' command.
     ```
 
 
