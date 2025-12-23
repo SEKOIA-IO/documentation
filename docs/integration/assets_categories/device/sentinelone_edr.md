@@ -23,15 +23,11 @@ To connect SentinelOne to Sekoia.io, you need to generate an API token from the 
 
 Follow these steps to create an API token:
 
-1. In the SentinelOne management console, go to **Settings**, select **USERS**, and then select **Service Users**.
+1. In the SentinelOne management console, go to **Policies and settings**, select **User management**, and then select **Service Users**.
 
-    ![Navigate to Service Users in SentinelOne console](/assets/operation_center/asset_connectors/device/sentinelone/settings_users.png)
+2. Create a new **New Service User** by specifying a name and an expiration date.
 
-2. Create a new **Service User** by specifying a name and an expiration date.
-
-3. Choose the **Scope** of the **Service User**: `Global`, `Account` or `Site`, select the appropriate **Account(s)** or **Site(s)** and the role to grant to the **Service User**.
-
-    ![Create Service User with appropriate scope and role](/assets/operation_center/asset_connectors/device/sentinelone/create_service_user.png)
+3. Choose the **Scope** of the **Service User**: `Global`, `Account` or `Site`, select the appropriate **Account(s)** or **Site(s)** and the role to grant to the **Viewer**.
 
 4. Select **Create User** and copy the generated API token to a safe place.
 
