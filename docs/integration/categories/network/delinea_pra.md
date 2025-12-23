@@ -11,31 +11,107 @@ Delinea’s Privileged Remote Access (PRA) is a secure session‐broker solution
 
 ## Configure
 
-This setup guide will show you how to forward your Delinea logs to Sekoia.io by means of a syslog transport channel.
+This setup guide will show you how to forward your Delinea logs to Sekoia.io.
 
-### Delinea PRA configuration
+### Create a Role
 
-#### Configuring a Secure TCP Syslog or CEF External Audit Server in Secret Server
+1. Log in the Delinea PRA Admin Portal.
+2. Go to `Access` > `Roles`.
 
-1. Navigate to `Admin` > `Application`. The Application page appears.
-2. Click the Edit button at the top right of the page.
-3. Click to select the `Enable Syslog/CEF Log Output` check box. A syslog/CEF section expands below.
-4. Type IP address or name for the IIS server hosting the syslog/CEF server in the `Syslog/CEF Server` text box.
-5. Type the port number where the logging information will be passed (6514 is the default port for secure TCP syslog) in the `Syslog/CEF Port` text box.
-6. Click the `Syslog/CEF Protocol` dropdown list and select `Secure TCP`. Secure TCP means either TLS v1.2 or v1.1 because other versions of SSL, such as SSL v3 and TLS v1.0, have known weaknesses.
-7. Click to select `Syslog/CEF Time Zone` list box to `UTC Time`
-8. Click the `Syslog/CEF DateTime Format` dropdown to format Syslog timestamps. The standard for Syslog is ISO timestamps; however, some still use the legacy format. Syslog is the default for upgrades to allow current configurations to retain their behavior, and ISO format is the default in new instances. Syslog format: Jun 23 2022 11:22:33. ISO 8601 format: 2022-06-23T11:22:33.000. You must enable the configuration preview to modify this setting.
-9. Click the `Syslog/CEF Site` dropdown to select the related Site that Syslog/CEF will run on.
-10. Click to select the `Write Syslogs As Windows Events` check box to write audits and event subscriptions to the Windows Event Log of the server.
-11. Click the `Save` button.
+    ![Step 01](/assets/integration/network/delinea_pra/Step 01.webp){: style="max-width:100%"}
 
-### Create the intake
+3. Click `Add Role`
 
-Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a new intake from the format `Delinea PRA`.
+    ![Step 02](/assets/integration/network/delinea_pra/Step 02.webp){: style="max-width:100%"}
 
-### Forward logs to Sekoia.io
+4. Select `Add New Custom Role` as `Role Type`
+5. Name the Role (e.g., `API Service Audit Role`).
+6. Describe the Role (optional).
+7. Click `Save`
 
-Please consult the [Syslog Forwarding](/integration/ingestion_methods/syslog/sekoiaio_forwarder.md) documentation to forward these logs to Sekoia.io.
+    ![Step 03](/assets/integration/network/delinea_pra/Step 03.webp){: style="max-width:100%"}
+
+8. Click the `Permissions` tab.
+
+    ![Step 04](/assets/integration/network/delinea_pra/Step 04.webp){: style="max-width:100%"}
+
+9. Select `Read Audit events` in the list of permissions.
+10. Click `Assign`
+
+    ![Step 05](/assets/integration/network/delinea_pra/Step 05.webp){: style="max-width:100%"}
+
+### Create a Group
+
+1. In the Delinea PRA Admin Portal, go to `Access` > `Groups`.
+
+    ![Step 06](/assets/integration/network/delinea_pra/Step 06.webp){: style="max-width:100%"}
+
+2. Click `Add Group`
+
+    ![Step 07](/assets/integration/network/delinea_pra/Step 07.webp){: style="max-width:100%"}
+
+3. Name the Group (e.g., `API Service Audit Group`).
+4. Describe the Group (optional).
+5. Click `Save`
+
+    ![Step 08](/assets/integration/network/delinea_pra/Step 08.webp){: style="max-width:100%"}
+
+6. Click on the new group
+
+    ![Step 09](/assets/integration/network/delinea_pra/Step 09.webp){: style="max-width:100%"}
+
+7. Go to the `Roles` tab.
+
+    ![Step 10](/assets/integration/network/delinea_pra/Step 10.webp){: style="max-width:100%"}
+
+8. Click `Assign Role`
+
+    ![Step 11](/assets/integration/network/delinea_pra/Step 11.webp){: style="max-width:100%"}
+
+9. Select the previously created Role (e.g., `API Service Audit Role`).
+10. Click `Assign`.
+
+    ![Step 12](/assets/integration/network/delinea_pra/Step 12.webp){: style="max-width:100%"}
+
+### Create a user
+
+1. In the Delinea PRA Admin Portal, go to `Access` > `Users`.
+
+    ![Step 13](/assets/integration/network/delinea_pra/Step 13.webp){: style="max-width:100%"}
+
+2. Click `More` > `Add service user`.
+
+    ![Step 14](/assets/integration/network/delinea_pra/Step 14.webp){: style="max-width:100%"}
+
+3. Name the user (e.g., `API Service Audit User`).
+4. Type an email address.
+5. Type a display name.
+6. Select `Generated` or type a password.
+7. Save the password somewhere safe.
+8. Click `Next`.
+
+    ![Step 15](/assets/integration/network/delinea_pra/Step 15.webp){: style="max-width:100%"}
+
+9. Select the previously created Group (e.g., `API Service Audit Group`).
+10. Click `Add`.
+
+    ![Step 16](/assets/integration/network/delinea_pra/Step 16.webp){: style="max-width:100%"}
+
+### Create an intake
+
+1. Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a new intake from the format `Delinea PRA`.
+2. Set up the intake configuration with the base url, the username as `client id` and the password as `client_secret` of the previously created service user.
+
+{!_shared_content/operations_center/integrations/generated/049b3dfd-8f67-40b6-a22d-b86ba3b42a05.md!}
+
+{!_shared_content/integration/detection_section.md!}
+
 
 {!_shared_content/operations_center/detection/generated/suggested_rules_049b3dfd-8f67-40b6-a22d-b86ba3b42a05_do_not_edit_manually.md!}
+
 {!_shared_content/operations_center/integrations/generated/049b3dfd-8f67-40b6-a22d-b86ba3b42a05.md!}
+
+## Further readings
+
+- [Authenticating with Platform API | Delinea](https://docs.delinea.com/online-help/delinea-platform/api/platform-apis.htm#Creating3)
+- [Adding Users | Delinea](https://docs.delinea.com/online-help/delinea-platform/users/add-users.htm#ServiceUsers)
