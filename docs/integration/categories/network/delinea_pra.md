@@ -6,6 +6,9 @@ type: intake
 
 Delinea’s Privileged Remote Access (PRA) is a secure session‐broker solution that lets organizations grant, monitor and audit elevated RDP, SSH and SFTP connections to critical systems without exposing underlying credentials to end users. PRA integrates with your vault, identity providers and SIEMs to enforce just-in-time, least-privilege access policies, record every keystroke and file transfer, and stream real-time audit events for compliance and threat detection. By isolating sessions, injecting credentials on the fly and capturing detailed forensic logs, Delinea PRA reduces risk from shared accounts, lateral movement and credential theft while delivering complete visibility into who accessed what, when and how.
 
+!!! Warning
+    Important note - This format is currently in beta. We highly value your feedback to improve its performance.
+
 ## Configure
 
 This setup guide will show you how to forward your Delinea logs to Sekoia.io by means of a syslog transport channel.
