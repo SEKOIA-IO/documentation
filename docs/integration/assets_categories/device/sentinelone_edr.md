@@ -8,7 +8,7 @@ SentinelOne is an Endpoint Detection and Response (EDR) solution that provides c
 
 - **Vendor**: SentinelOne
 - **Product**: SentinelOne EDR
-- **Supported environment**: Cloud
+- **Supported environment**: SaaS
 
 ## Configure
 
