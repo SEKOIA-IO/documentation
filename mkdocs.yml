@@ -492,6 +492,7 @@ nav:
       - Crowdstrike Falcon: integration/assets_categories/device/crowdstrike_falcon_device.md
       - Harfanglab EDR: integration/assets_categories/device/harfanglab_edr.md
       - Okta: integration/assets_categories/device/okta_device.md
+      - SentinelOne EDR: integration/assets_categories/device/sentinelone_edr.md
     - User:
       - AWS IAM: integration/assets_categories/user/aws_iam_user.md
       - Microsoft Entra ID: integration/assets_categories/user/microsoft_entra_id.md
