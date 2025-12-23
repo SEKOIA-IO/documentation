@@ -1087,7 +1087,7 @@ Once the configuration file is modified, restart the agent:
     sudo /Applications/SekoiaEndpointAgent.app/Contents/MacOs/SekoiaEndpointAgent service restart
     ```
 
-## Additionnal information
+## Additional information
 Please find options and arguments available for Sekoia Agent by typing
 
 === "Windows"

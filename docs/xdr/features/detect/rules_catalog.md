@@ -470,4 +470,4 @@ We continuously update the rules catalog with new rules.
 To keep posted, we introduced a dedicated trigger in the Notification Center.
 This new notification trigger enables the creation of notification rules that triggers when a new detection rule is added to the Rules Catalog by Sekoia.io.
 
-This trigger supports additionnal filters on the name of the detection rule, its description, pattern or severity.
+This trigger supports additional filters on the name of the detection rule, its description, pattern or severity.
