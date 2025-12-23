@@ -1,4 +1,4 @@
-Rules catalog includes **1059 built-in detection rules** ([_last update on 2025-12-18_](rules_changelog.md)).
+Rules catalog includes **1059 built-in detection rules** ([_last update on 2025-12-23_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Identity Information**
 
@@ -2702,7 +2702,7 @@ Rules catalog includes **1059 built-in detection rules** ([_last update on 2025-
     
 ??? abstract "Raw Reverse Shell"
     
-    To bypass some security equipement or for a sack of simplicity attackers can open raw reverse shell using sh and or bash commands
+    To bypass some security equipment or for a sack of simplicity attackers can open raw reverse shell using sh and or bash commands
     
     - **Effort:** master
     
