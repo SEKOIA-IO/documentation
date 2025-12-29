@@ -1,4 +1,4 @@
-Rules catalog includes **1059 built-in detection rules** ([_last update on 2025-12-18_](rules_changelog.md)).
+Rules catalog includes **1059 built-in detection rules** ([_last update on 2025-12-29_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Identity Information**
 
@@ -2702,7 +2702,7 @@ Rules catalog includes **1059 built-in detection rules** ([_last update on 2025-
     
 ??? abstract "Raw Reverse Shell"
     
-    To bypass some security equipement or for a sack of simplicity attackers can open raw reverse shell using sh and or bash commands
+    To bypass some security equipment or for a sack of simplicity attackers can open raw reverse shell using sh and or bash commands
     
     - **Effort:** master
     
@@ -4720,10 +4720,11 @@ Rules catalog includes **1059 built-in detection rules** ([_last update on 2025-
     
     The csrss.exe process (csrss stands for Client / Server Runtime Subsystem) is a generic Windows process used to manage windows and Windows graphics. This process  should not create a child process or it is very rare.
     
-    - **Effort:** intermediate
+    - **Effort:** advanced
     
     - **Changelog:**
     
+        - 23/12/2025 - minor - Rule was moved to advanced effort level considering the number of alerts and addtional filters were added.
         - 16/12/2024 - minor - Improve pattern mandatory fields and add filter to reduce false positives
             
 ??? abstract "Csrss Wrong Parent"
@@ -6580,10 +6581,11 @@ Rules catalog includes **1059 built-in detection rules** ([_last update on 2025-
     
     The csrss.exe process (csrss stands for Client / Server Runtime Subsystem) is a generic Windows process used to manage windows and Windows graphics. This process  should not create a child process or it is very rare.
     
-    - **Effort:** intermediate
+    - **Effort:** advanced
     
     - **Changelog:**
     
+        - 23/12/2025 - minor - Rule was moved to advanced effort level considering the number of alerts and addtional filters were added.
         - 16/12/2024 - minor - Improve pattern mandatory fields and add filter to reduce false positives
             
 ??? abstract "Csrss Wrong Parent"
@@ -8349,10 +8351,11 @@ Rules catalog includes **1059 built-in detection rules** ([_last update on 2025-
     
     The csrss.exe process (csrss stands for Client / Server Runtime Subsystem) is a generic Windows process used to manage windows and Windows graphics. This process  should not create a child process or it is very rare.
     
-    - **Effort:** intermediate
+    - **Effort:** advanced
     
     - **Changelog:**
     
+        - 23/12/2025 - minor - Rule was moved to advanced effort level considering the number of alerts and addtional filters were added.
         - 16/12/2024 - minor - Improve pattern mandatory fields and add filter to reduce false positives
             
 ??? abstract "Csrss Wrong Parent"

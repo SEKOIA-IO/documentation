@@ -529,7 +529,7 @@ The following Sekoia.io built-in rules match the intake **Sekoia.io Endpoint Age
     
     The csrss.exe process (csrss stands for Client / Server Runtime Subsystem) is a generic Windows process used to manage windows and Windows graphics. This process  should not create a child process or it is very rare.
     
-    - **Effort:** intermediate
+    - **Effort:** advanced
 
 ??? abstract "Csrss Wrong Parent"
     
