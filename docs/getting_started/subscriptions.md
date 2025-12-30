@@ -85,7 +85,7 @@ The notification rules depend on the license duration and on whether the adminis
 
 The system evaluates nearly expired licenses daily around 08:00 (UTC) and sends notifications accordingly.
 
-**Workspace (MSSP)**
+**Workspace**
 
 Workspace admins receive an email when at least one managed community has a subscription close to expiration:
 * **Long-term licenses:** If the license duration is greater than 100 days, the system sends a notification when the license expires in less than 90 days.
