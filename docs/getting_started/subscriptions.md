@@ -63,3 +63,49 @@ A **trial** is a temporary subscription that allows users to access the platform
 - **Archiving duration**: 0 days
 
 When creating a new community, a trial subscription is **automatically made available**.
+
+## Subscription notifications
+
+Sekoia automatically sends email notifications to inform administrators about key events in the subscription lifecycle, 
+such as upcoming expirations or expired licenses.
+
+Notifications are evaluated through scheduled daily processes. Except for manual operations, subscription status changes and 
+notifications are not processed in real time.
+
+Only users with the Admin role receive subscription-related email notifications.
+
+### Expired license
+
+When a subscription expires, an email is sent to the admins of the affected community to inform them that the license is no longer active.
+License expiration is checked every day at 02:00 (UTC). If a license is detected as expired during this check, 
+the notification is sent automatically.
+
+### Nearly expired license
+
+To help anticipate renewals, Sekoia sends reminder emails when a license is approaching its expiration date. 
+The notification rules depend on the license duration and on whether the administrator belongs to a workspace (MSSP) or to a community.
+
+Nearly expired licenses are evaluated every day around 08:00 (UTC), and notifications are sent accordingly.
+
+**Workspace (MSSP)**
+
+Workspace admins receive an email when at least one managed community has a subscription that is close to expiring:
+- If the license duration is greater than 100 days, a notification is sent when the license expires in less than 90 days
+- If the license duration is 100 days or less, a notification is sent when the license expires in less than 10 days
+
+These notifications provide a global view of upcoming expirations across all managed communities.
+
+**Community**
+
+Community admins receive an email when their community subscription is close to expiring:
+- If the license duration is greater than 100 days, a notification is sent when the license expires in less than 30 days
+- If the license duration is 100 days or less, a notification is sent when the license expires in less than 5 days
+
+### Notification schedule
+
+| Event                      | Recipient        | Condition                                      | Evaluation time (UTC) |
+| -------------------------- | ---------------- | ---------------------------------------------- | --------------------- |
+| License expired            | Community admins | License end date reached                       | Daily at 02:00        |
+| Nearly expired (workspace) | Workspace admins | < 90 days (or < 10 days if license ≤ 100 days) | Daily ~08:00          |
+| Nearly expired (community) | Community admins | < 30 days (or < 5 days if license ≤ 100 days)  | Daily ~08:00          |
+
