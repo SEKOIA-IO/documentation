@@ -27,7 +27,7 @@ jobs:
 
       - name: Build site
         run: |
-          uv run python -m mkdocs build --strict
+          uv run python -m zensical build --strict
 
       - name: Save PR number
         run: |

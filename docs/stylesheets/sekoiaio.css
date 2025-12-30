@@ -1,0 +1,410 @@
+@charset "UTF-8";
+:root {
+  --md-default-fg-color: #111233;
+  --md-text-font: 'Inter', sans-serif;
+  --md-code-font: 'Inter', sans-serif;
+}
+
+.md-search__inner .md-search__form {
+  background-color: var(--md-default-fg-color);
+}
+
+.md-header {
+  background-color: #ffffff;
+  color: #111233;
+}
+.md-header[data-md-state=shadow] {
+  box-shadow: inherit;
+}
+.md-header .md-header__topic {
+  display: none;
+}
+.md-header .md-logo img[alt=logo] {
+  height: 2rem;
+  width: inherit;
+}
+
+.md-sidebar--primary .md-nav__title, .md-sidebar--primary .md-nav__link {
+  color: #12005e;
+}
+.md-sidebar--primary .md-nav__link:hover {
+  color: #5351eb;
+}
+
+.md-sidebar--secondary {
+  right: 0;
+  transform: inherit;
+}
+.md-sidebar--secondary .md-sidebar__inner {
+  border-left: 1px solid #9ba6b7;
+}
+.md-sidebar--secondary .md-nav__title {
+  text-transform: uppercase;
+  color: black;
+}
+.md-sidebar--secondary .md-nav--secondary > .md-nav__list > li {
+  padding-left: 0.2rem;
+}
+.md-sidebar--secondary .md-nav--secondary > .md-nav__list > li > a {
+  justify-content: inherit;
+}
+
+.md-container .md-tabs {
+  background-color: #2d2e83;
+}
+.md-container main .md-main__inner {
+  --md-default-fg-color--light: #12005e;
+}
+.md-container main .md-main__inner .md-typeset {
+  font-size: 0.7rem;
+}
+.md-container main .md-main__inner h1 {
+  font-weight: bold;
+  font-family: "Poppins", sans-serif;
+}
+.md-container main .md-main__inner h2::after {
+  content: " ";
+  width: 33%;
+  border-bottom: 1px solid grey;
+  padding-top: 0.3em;
+  display: inherit;
+}
+.md-container main .md-main__inner a {
+  color: #1B18CD;
+}
+.md-container main .md-main__inner a:hover {
+  color: #5351eb;
+}
+.md-container main .md-main__inner pre {
+  background: #f5f8fc;
+  border-radius: 3px;
+}
+.md-container main .md-main__inner pre code {
+  color: #000;
+  border: 0;
+}
+.md-container main .md-main__inner pre code .string {
+  color: #000;
+}
+.md-container main .md-main__inner #content_search {
+  display: none;
+}
+.md-container main .md-main__inner p img {
+  max-width: 70%;
+  display: block;
+}
+.md-container main .md-main__inner .admonition.note p.admonition-title {
+  background-color: #e7f3fd;
+}
+.md-container main .md-main__inner .admonition.note {
+  box-shadow: inherit;
+  border: 1px solid #e7f3fd;
+}
+.md-container main .md-main__inner .admonition.note .md-typeset details {
+  box-shadow: inherit;
+}
+.md-container footer .md-footer__inner {
+  background-color: #171930;
+  margin-left: 0;
+  margin-right: 0;
+  max-width: 100%;
+}
+.md-container footer .md-footer-meta {
+  background-color: #120e5e;
+}
+.md-container footer .md-footer-meta .md-footer-copyright {
+  margin: 0 auto;
+  font-size: 16px;
+  display: inherit;
+}
+.md-container footer .md-footer-meta .md-footer-copyright div::after {
+  content: " ";
+  display: inline;
+}
+.md-container footer .md-footer-meta .md-footer-copyright a::before {
+  content: " ";
+}
+
+.mdx-sek-home {
+  min-height: calc(100vh - 6.4rem);
+  display: flex;
+  flex-direction: column;
+}
+.mdx-sek-home .categories {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.mdx-container {
+  text-align: center;
+  font-size: initial;
+}
+.mdx-container .maindescription {
+  background: url("../assets/background-main.jpg") no-repeat;
+  background-size: cover;
+  padding-top: 5em;
+  padding-bottom: 5em;
+  text-align: left;
+}
+.mdx-container .maindescription .maindescription__inner {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 61rem;
+}
+.mdx-container .maindescription .maindescription__inner h1 {
+  color: white;
+  font-weight: bold;
+  font-size: 48px;
+  font-family: "Poppins", sans-serif;
+  line-height: 52px;
+}
+.mdx-container .maindescription .maindescription__inner p {
+  color: white;
+  font-size: 24px;
+  line-height: 32px;
+}
+.mdx-container .search {
+  padding-top: 3em;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  margin-top: 24px;
+  /* flex-direction: row; */
+  justify-content: center;
+  align-items: flex-start;
+  /* padding: 40px 148px; */
+}
+.mdx-container .search img.search-image {
+  width: 433px;
+}
+.mdx-container .search .search__inner {
+  /* flex: 1 1; */
+  margin: 5em;
+}
+.mdx-container .search .search__inner h2 {
+  color: #171930;
+  font-size: 40px;
+  line-height: 48px;
+}
+.mdx-container .search .search__inner .input {
+  display: flex;
+  align-items: center;
+  margin: 12px 38px 8px 33px;
+  height: 36px;
+  border: 1px solid #c2c9d4;
+  border-radius: 3px;
+  background: #fff;
+  max-width: 500px;
+  margin: 0 auto;
+  margin-top: 48px;
+}
+.mdx-container .search .search__inner .input input {
+  border: none;
+  width: calc(100% - 58px);
+  font-size: 14px;
+  line-height: 24px;
+  font-weight: 400;
+}
+.mdx-container .categories {
+  background-color: #f5f7fa;
+  padding-top: 1em;
+  padding-bottom: 3em;
+  background-color: white;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.mdx-container .categories h2 {
+  color: #171930;
+  font-size: 24px;
+  line-height: 36px;
+}
+.mdx-container .categories h2::after {
+  content: " ";
+  width: 150px;
+  border-bottom: 1px solid grey;
+  padding-top: 4px;
+  display: inherit;
+  margin: 0 auto;
+  margin-top: 1em;
+  background: #5D4FF2;
+}
+.mdx-container .categories .category {
+  font-weight: 600;
+  display: grid;
+  column-gap: 24px;
+  row-gap: 24px;
+  grid-template-columns: repeat(auto-fit, 230px);
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 40px 0;
+}
+.mdx-container .categories .category a {
+  font-size: 16px;
+  line-height: 16px;
+  text-decoration: none;
+  color: #5D4FF2;
+  border: 2px solid #5D4FF2;
+  border-radius: 8px;
+  width: 230px;
+  display: block;
+  padding: 17px 0;
+}
+.mdx-container .categories .category a:hover {
+  background-color: #3027AE;
+  color: #ffffff;
+  border-color: #3027AE;
+}
+.mdx-container .support {
+  padding-top: 3em;
+  padding-bottom: 3em;
+  background-color: #2d2e83;
+}
+.mdx-container .support .support__inner {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 61rem;
+  display: flex;
+}
+.mdx-container .support .support__inner .col {
+  flex: 33%;
+  text-align: left;
+  margin: 10px;
+}
+.mdx-container .support .support__inner a {
+  color: #12005e;
+}
+.mdx-container .support .support__inner p {
+  color: #f5f5f5;
+}
+.mdx-container .support .support__inner ul {
+  list-style-type: none;
+  padding: 0px;
+  margin: 0px;
+}
+.mdx-container .support .support__inner ul li {
+  margin-top: 10px;
+}
+.mdx-container .support .button {
+  text-align: center;
+  font-size: 13px;
+  line-height: 13px;
+  text-decoration: none;
+  color: #2d2e83;
+  border: 2px solid #2d2e83;
+  background-color: #ffffff;
+  border-radius: 8px;
+  width: 180px;
+  display: block;
+  padding: 10px 0;
+}
+.mdx-container .support .button:hover {
+  background-color: #526cfe;
+  color: #ffffff;
+  border-color: #526cfe;
+}
+.mdx-container .support h3 {
+  color: white;
+  margin-bottom: 15px;
+}
+.mdx-container + .md-main {
+  display: none;
+}
+
+.sek-row {
+  display: flex;
+}
+
+.sek-two-columns {
+  flex: 50%;
+}
+
+.sek-cards {
+  grid-template-columns: repeat(auto-fill, minmax(400px, 400px));
+  display: grid;
+  margin: 4em auto;
+  justify-content: space-between;
+  grid-gap: 30px;
+  max-width: 1260px;
+}
+
+.sek-card {
+  padding: 2em 3em;
+  border: 1px solid #2d2e83;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.sek-card a {
+  border: 1px solid #2d2e83;
+  padding: 10px 15px;
+  text-transform: uppercase;
+  cursor: pointer;
+  border-radius: 4px;
+  margin-top: 10px;
+  display: inline-block;
+  text-decoration: none;
+  color: #2d2e83;
+}
+
+.sek-card a:hover {
+  background: #2d2e83;
+  color: white;
+}
+
+.api {
+  padding: 0;
+  margin: 0;
+}
+.api:before {
+  height: 0;
+}
+
+.sek-submenu-api {
+  background-color: #992a85;
+  margin: 0;
+  max-width: 100%;
+  height: 40px;
+  text-align: center;
+  font-size: 16px;
+  line-height: 40px;
+}
+.sek-submenu-api ul {
+  margin: 0px;
+  padding: 0px;
+}
+.sek-submenu-api ul li {
+  list-style-type: none;
+  display: inline;
+}
+.sek-submenu-api ul li:not(:first-child):before {
+  content: " | ";
+}
+
+@media screen {
+  .md-typeset .tabbed-set > input:nth-child(100):checked ~ .tabbed-labels > :nth-child(100), .md-typeset .tabbed-set > input:nth-child(99):checked ~ .tabbed-labels > :nth-child(99), .md-typeset .tabbed-set > input:nth-child(98):checked ~ .tabbed-labels > :nth-child(98), .md-typeset .tabbed-set > input:nth-child(97):checked ~ .tabbed-labels > :nth-child(97), .md-typeset .tabbed-set > input:nth-child(96):checked ~ .tabbed-labels > :nth-child(96), .md-typeset .tabbed-set > input:nth-child(95):checked ~ .tabbed-labels > :nth-child(95), .md-typeset .tabbed-set > input:nth-child(94):checked ~ .tabbed-labels > :nth-child(94), .md-typeset .tabbed-set > input:nth-child(93):checked ~ .tabbed-labels > :nth-child(93), .md-typeset .tabbed-set > input:nth-child(92):checked ~ .tabbed-labels > :nth-child(92), .md-typeset .tabbed-set > input:nth-child(91):checked ~ .tabbed-labels > :nth-child(91), .md-typeset .tabbed-set > input:nth-child(90):checked ~ .tabbed-labels > :nth-child(90), .md-typeset .tabbed-set > input:nth-child(89):checked ~ .tabbed-labels > :nth-child(89), .md-typeset .tabbed-set > input:nth-child(88):checked ~ .tabbed-labels > :nth-child(88), .md-typeset .tabbed-set > input:nth-child(87):checked ~ .tabbed-labels > :nth-child(87), .md-typeset .tabbed-set > input:nth-child(86):checked ~ .tabbed-labels > :nth-child(86), .md-typeset .tabbed-set > input:nth-child(85):checked ~ .tabbed-labels > :nth-child(85), .md-typeset .tabbed-set > input:nth-child(84):checked ~ .tabbed-labels > :nth-child(84), .md-typeset .tabbed-set > input:nth-child(83):checked ~ .tabbed-labels > :nth-child(83), .md-typeset .tabbed-set > input:nth-child(82):checked ~ .tabbed-labels > :nth-child(82), .md-typeset .tabbed-set > input:nth-child(81):checked ~ .tabbed-labels > :nth-child(81), .md-typeset .tabbed-set > input:nth-child(80):checked ~ .tabbed-labels > :nth-child(80), .md-typeset .tabbed-set > input:nth-child(79):checked ~ .tabbed-labels > :nth-child(79), .md-typeset .tabbed-set > input:nth-child(78):checked ~ .tabbed-labels > :nth-child(78), .md-typeset .tabbed-set > input:nth-child(77):checked ~ .tabbed-labels > :nth-child(77), .md-typeset .tabbed-set > input:nth-child(76):checked ~ .tabbed-labels > :nth-child(76), .md-typeset .tabbed-set > input:nth-child(75):checked ~ .tabbed-labels > :nth-child(75), .md-typeset .tabbed-set > input:nth-child(74):checked ~ .tabbed-labels > :nth-child(74), .md-typeset .tabbed-set > input:nth-child(73):checked ~ .tabbed-labels > :nth-child(73), .md-typeset .tabbed-set > input:nth-child(72):checked ~ .tabbed-labels > :nth-child(72), .md-typeset .tabbed-set > input:nth-child(71):checked ~ .tabbed-labels > :nth-child(71), .md-typeset .tabbed-set > input:nth-child(70):checked ~ .tabbed-labels > :nth-child(70), .md-typeset .tabbed-set > input:nth-child(69):checked ~ .tabbed-labels > :nth-child(69), .md-typeset .tabbed-set > input:nth-child(68):checked ~ .tabbed-labels > :nth-child(68), .md-typeset .tabbed-set > input:nth-child(67):checked ~ .tabbed-labels > :nth-child(67), .md-typeset .tabbed-set > input:nth-child(66):checked ~ .tabbed-labels > :nth-child(66), .md-typeset .tabbed-set > input:nth-child(65):checked ~ .tabbed-labels > :nth-child(65), .md-typeset .tabbed-set > input:nth-child(64):checked ~ .tabbed-labels > :nth-child(64), .md-typeset .tabbed-set > input:nth-child(63):checked ~ .tabbed-labels > :nth-child(63), .md-typeset .tabbed-set > input:nth-child(62):checked ~ .tabbed-labels > :nth-child(62), .md-typeset .tabbed-set > input:nth-child(61):checked ~ .tabbed-labels > :nth-child(61), .md-typeset .tabbed-set > input:nth-child(60):checked ~ .tabbed-labels > :nth-child(60), .md-typeset .tabbed-set > input:nth-child(59):checked ~ .tabbed-labels > :nth-child(59), .md-typeset .tabbed-set > input:nth-child(58):checked ~ .tabbed-labels > :nth-child(58), .md-typeset .tabbed-set > input:nth-child(57):checked ~ .tabbed-labels > :nth-child(57), .md-typeset .tabbed-set > input:nth-child(56):checked ~ .tabbed-labels > :nth-child(56), .md-typeset .tabbed-set > input:nth-child(55):checked ~ .tabbed-labels > :nth-child(55), .md-typeset .tabbed-set > input:nth-child(54):checked ~ .tabbed-labels > :nth-child(54), .md-typeset .tabbed-set > input:nth-child(53):checked ~ .tabbed-labels > :nth-child(53), .md-typeset .tabbed-set > input:nth-child(52):checked ~ .tabbed-labels > :nth-child(52), .md-typeset .tabbed-set > input:nth-child(51):checked ~ .tabbed-labels > :nth-child(51), .md-typeset .tabbed-set > input:nth-child(50):checked ~ .tabbed-labels > :nth-child(50), .md-typeset .tabbed-set > input:nth-child(49):checked ~ .tabbed-labels > :nth-child(49), .md-typeset .tabbed-set > input:nth-child(48):checked ~ .tabbed-labels > :nth-child(48), .md-typeset .tabbed-set > input:nth-child(47):checked ~ .tabbed-labels > :nth-child(47), .md-typeset .tabbed-set > input:nth-child(46):checked ~ .tabbed-labels > :nth-child(46), .md-typeset .tabbed-set > input:nth-child(45):checked ~ .tabbed-labels > :nth-child(45), .md-typeset .tabbed-set > input:nth-child(44):checked ~ .tabbed-labels > :nth-child(44), .md-typeset .tabbed-set > input:nth-child(43):checked ~ .tabbed-labels > :nth-child(43), .md-typeset .tabbed-set > input:nth-child(42):checked ~ .tabbed-labels > :nth-child(42), .md-typeset .tabbed-set > input:nth-child(41):checked ~ .tabbed-labels > :nth-child(41), .md-typeset .tabbed-set > input:nth-child(40):checked ~ .tabbed-labels > :nth-child(40), .md-typeset .tabbed-set > input:nth-child(39):checked ~ .tabbed-labels > :nth-child(39), .md-typeset .tabbed-set > input:nth-child(38):checked ~ .tabbed-labels > :nth-child(38), .md-typeset .tabbed-set > input:nth-child(37):checked ~ .tabbed-labels > :nth-child(37), .md-typeset .tabbed-set > input:nth-child(36):checked ~ .tabbed-labels > :nth-child(36), .md-typeset .tabbed-set > input:nth-child(35):checked ~ .tabbed-labels > :nth-child(35), .md-typeset .tabbed-set > input:nth-child(34):checked ~ .tabbed-labels > :nth-child(34), .md-typeset .tabbed-set > input:nth-child(33):checked ~ .tabbed-labels > :nth-child(33), .md-typeset .tabbed-set > input:nth-child(32):checked ~ .tabbed-labels > :nth-child(32), .md-typeset .tabbed-set > input:nth-child(31):checked ~ .tabbed-labels > :nth-child(31), .md-typeset .tabbed-set > input:nth-child(30):checked ~ .tabbed-labels > :nth-child(30), .md-typeset .tabbed-set > input:nth-child(29):checked ~ .tabbed-labels > :nth-child(29), .md-typeset .tabbed-set > input:nth-child(28):checked ~ .tabbed-labels > :nth-child(28), .md-typeset .tabbed-set > input:nth-child(27):checked ~ .tabbed-labels > :nth-child(27), .md-typeset .tabbed-set > input:nth-child(26):checked ~ .tabbed-labels > :nth-child(26), .md-typeset .tabbed-set > input:nth-child(25):checked ~ .tabbed-labels > :nth-child(25), .md-typeset .tabbed-set > input:nth-child(24):checked ~ .tabbed-labels > :nth-child(24), .md-typeset .tabbed-set > input:nth-child(23):checked ~ .tabbed-labels > :nth-child(23), .md-typeset .tabbed-set > input:nth-child(22):checked ~ .tabbed-labels > :nth-child(22), .md-typeset .tabbed-set > input:nth-child(21):checked ~ .tabbed-labels > :nth-child(21) {
+    color: var(--md-default-fg-color);
+  }
+  .no-js .md-typeset .tabbed-set > input:nth-child(100):checked ~ .tabbed-labels > :nth-child(100), .md-typeset .no-js .tabbed-set > input:nth-child(100):checked ~ .tabbed-labels > :nth-child(100), .no-js .md-typeset .tabbed-set > input:nth-child(99):checked ~ .tabbed-labels > :nth-child(99), .md-typeset .no-js .tabbed-set > input:nth-child(99):checked ~ .tabbed-labels > :nth-child(99), .no-js .md-typeset .tabbed-set > input:nth-child(98):checked ~ .tabbed-labels > :nth-child(98), .md-typeset .no-js .tabbed-set > input:nth-child(98):checked ~ .tabbed-labels > :nth-child(98), .no-js .md-typeset .tabbed-set > input:nth-child(97):checked ~ .tabbed-labels > :nth-child(97), .md-typeset .no-js .tabbed-set > input:nth-child(97):checked ~ .tabbed-labels > :nth-child(97), .no-js .md-typeset .tabbed-set > input:nth-child(96):checked ~ .tabbed-labels > :nth-child(96), .md-typeset .no-js .tabbed-set > input:nth-child(96):checked ~ .tabbed-labels > :nth-child(96), .no-js .md-typeset .tabbed-set > input:nth-child(95):checked ~ .tabbed-labels > :nth-child(95), .md-typeset .no-js .tabbed-set > input:nth-child(95):checked ~ .tabbed-labels > :nth-child(95), .no-js .md-typeset .tabbed-set > input:nth-child(94):checked ~ .tabbed-labels > :nth-child(94), .md-typeset .no-js .tabbed-set > input:nth-child(94):checked ~ .tabbed-labels > :nth-child(94), .no-js .md-typeset .tabbed-set > input:nth-child(93):checked ~ .tabbed-labels > :nth-child(93), .md-typeset .no-js .tabbed-set > input:nth-child(93):checked ~ .tabbed-labels > :nth-child(93), .no-js .md-typeset .tabbed-set > input:nth-child(92):checked ~ .tabbed-labels > :nth-child(92), .md-typeset .no-js .tabbed-set > input:nth-child(92):checked ~ .tabbed-labels > :nth-child(92), .no-js .md-typeset .tabbed-set > input:nth-child(91):checked ~ .tabbed-labels > :nth-child(91), .md-typeset .no-js .tabbed-set > input:nth-child(91):checked ~ .tabbed-labels > :nth-child(91), .no-js .md-typeset .tabbed-set > input:nth-child(90):checked ~ .tabbed-labels > :nth-child(90), .md-typeset .no-js .tabbed-set > input:nth-child(90):checked ~ .tabbed-labels > :nth-child(90), .no-js .md-typeset .tabbed-set > input:nth-child(89):checked ~ .tabbed-labels > :nth-child(89), .md-typeset .no-js .tabbed-set > input:nth-child(89):checked ~ .tabbed-labels > :nth-child(89), .no-js .md-typeset .tabbed-set > input:nth-child(88):checked ~ .tabbed-labels > :nth-child(88), .md-typeset .no-js .tabbed-set > input:nth-child(88):checked ~ .tabbed-labels > :nth-child(88), .no-js .md-typeset .tabbed-set > input:nth-child(87):checked ~ .tabbed-labels > :nth-child(87), .md-typeset .no-js .tabbed-set > input:nth-child(87):checked ~ .tabbed-labels > :nth-child(87), .no-js .md-typeset .tabbed-set > input:nth-child(86):checked ~ .tabbed-labels > :nth-child(86), .md-typeset .no-js .tabbed-set > input:nth-child(86):checked ~ .tabbed-labels > :nth-child(86), .no-js .md-typeset .tabbed-set > input:nth-child(85):checked ~ .tabbed-labels > :nth-child(85), .md-typeset .no-js .tabbed-set > input:nth-child(85):checked ~ .tabbed-labels > :nth-child(85), .no-js .md-typeset .tabbed-set > input:nth-child(84):checked ~ .tabbed-labels > :nth-child(84), .md-typeset .no-js .tabbed-set > input:nth-child(84):checked ~ .tabbed-labels > :nth-child(84), .no-js .md-typeset .tabbed-set > input:nth-child(83):checked ~ .tabbed-labels > :nth-child(83), .md-typeset .no-js .tabbed-set > input:nth-child(83):checked ~ .tabbed-labels > :nth-child(83), .no-js .md-typeset .tabbed-set > input:nth-child(82):checked ~ .tabbed-labels > :nth-child(82), .md-typeset .no-js .tabbed-set > input:nth-child(82):checked ~ .tabbed-labels > :nth-child(82), .no-js .md-typeset .tabbed-set > input:nth-child(81):checked ~ .tabbed-labels > :nth-child(81), .md-typeset .no-js .tabbed-set > input:nth-child(81):checked ~ .tabbed-labels > :nth-child(81), .no-js .md-typeset .tabbed-set > input:nth-child(80):checked ~ .tabbed-labels > :nth-child(80), .md-typeset .no-js .tabbed-set > input:nth-child(80):checked ~ .tabbed-labels > :nth-child(80), .no-js .md-typeset .tabbed-set > input:nth-child(79):checked ~ .tabbed-labels > :nth-child(79), .md-typeset .no-js .tabbed-set > input:nth-child(79):checked ~ .tabbed-labels > :nth-child(79), .no-js .md-typeset .tabbed-set > input:nth-child(78):checked ~ .tabbed-labels > :nth-child(78), .md-typeset .no-js .tabbed-set > input:nth-child(78):checked ~ .tabbed-labels > :nth-child(78), .no-js .md-typeset .tabbed-set > input:nth-child(77):checked ~ .tabbed-labels > :nth-child(77), .md-typeset .no-js .tabbed-set > input:nth-child(77):checked ~ .tabbed-labels > :nth-child(77), .no-js .md-typeset .tabbed-set > input:nth-child(76):checked ~ .tabbed-labels > :nth-child(76), .md-typeset .no-js .tabbed-set > input:nth-child(76):checked ~ .tabbed-labels > :nth-child(76), .no-js .md-typeset .tabbed-set > input:nth-child(75):checked ~ .tabbed-labels > :nth-child(75), .md-typeset .no-js .tabbed-set > input:nth-child(75):checked ~ .tabbed-labels > :nth-child(75), .no-js .md-typeset .tabbed-set > input:nth-child(74):checked ~ .tabbed-labels > :nth-child(74), .md-typeset .no-js .tabbed-set > input:nth-child(74):checked ~ .tabbed-labels > :nth-child(74), .no-js .md-typeset .tabbed-set > input:nth-child(73):checked ~ .tabbed-labels > :nth-child(73), .md-typeset .no-js .tabbed-set > input:nth-child(73):checked ~ .tabbed-labels > :nth-child(73), .no-js .md-typeset .tabbed-set > input:nth-child(72):checked ~ .tabbed-labels > :nth-child(72), .md-typeset .no-js .tabbed-set > input:nth-child(72):checked ~ .tabbed-labels > :nth-child(72), .no-js .md-typeset .tabbed-set > input:nth-child(71):checked ~ .tabbed-labels > :nth-child(71), .md-typeset .no-js .tabbed-set > input:nth-child(71):checked ~ .tabbed-labels > :nth-child(71), .no-js .md-typeset .tabbed-set > input:nth-child(70):checked ~ .tabbed-labels > :nth-child(70), .md-typeset .no-js .tabbed-set > input:nth-child(70):checked ~ .tabbed-labels > :nth-child(70), .no-js .md-typeset .tabbed-set > input:nth-child(69):checked ~ .tabbed-labels > :nth-child(69), .md-typeset .no-js .tabbed-set > input:nth-child(69):checked ~ .tabbed-labels > :nth-child(69), .no-js .md-typeset .tabbed-set > input:nth-child(68):checked ~ .tabbed-labels > :nth-child(68), .md-typeset .no-js .tabbed-set > input:nth-child(68):checked ~ .tabbed-labels > :nth-child(68), .no-js .md-typeset .tabbed-set > input:nth-child(67):checked ~ .tabbed-labels > :nth-child(67), .md-typeset .no-js .tabbed-set > input:nth-child(67):checked ~ .tabbed-labels > :nth-child(67), .no-js .md-typeset .tabbed-set > input:nth-child(66):checked ~ .tabbed-labels > :nth-child(66), .md-typeset .no-js .tabbed-set > input:nth-child(66):checked ~ .tabbed-labels > :nth-child(66), .no-js .md-typeset .tabbed-set > input:nth-child(65):checked ~ .tabbed-labels > :nth-child(65), .md-typeset .no-js .tabbed-set > input:nth-child(65):checked ~ .tabbed-labels > :nth-child(65), .no-js .md-typeset .tabbed-set > input:nth-child(64):checked ~ .tabbed-labels > :nth-child(64), .md-typeset .no-js .tabbed-set > input:nth-child(64):checked ~ .tabbed-labels > :nth-child(64), .no-js .md-typeset .tabbed-set > input:nth-child(63):checked ~ .tabbed-labels > :nth-child(63), .md-typeset .no-js .tabbed-set > input:nth-child(63):checked ~ .tabbed-labels > :nth-child(63), .no-js .md-typeset .tabbed-set > input:nth-child(62):checked ~ .tabbed-labels > :nth-child(62), .md-typeset .no-js .tabbed-set > input:nth-child(62):checked ~ .tabbed-labels > :nth-child(62), .no-js .md-typeset .tabbed-set > input:nth-child(61):checked ~ .tabbed-labels > :nth-child(61), .md-typeset .no-js .tabbed-set > input:nth-child(61):checked ~ .tabbed-labels > :nth-child(61), .no-js .md-typeset .tabbed-set > input:nth-child(60):checked ~ .tabbed-labels > :nth-child(60), .md-typeset .no-js .tabbed-set > input:nth-child(60):checked ~ .tabbed-labels > :nth-child(60), .no-js .md-typeset .tabbed-set > input:nth-child(59):checked ~ .tabbed-labels > :nth-child(59), .md-typeset .no-js .tabbed-set > input:nth-child(59):checked ~ .tabbed-labels > :nth-child(59), .no-js .md-typeset .tabbed-set > input:nth-child(58):checked ~ .tabbed-labels > :nth-child(58), .md-typeset .no-js .tabbed-set > input:nth-child(58):checked ~ .tabbed-labels > :nth-child(58), .no-js .md-typeset .tabbed-set > input:nth-child(57):checked ~ .tabbed-labels > :nth-child(57), .md-typeset .no-js .tabbed-set > input:nth-child(57):checked ~ .tabbed-labels > :nth-child(57), .no-js .md-typeset .tabbed-set > input:nth-child(56):checked ~ .tabbed-labels > :nth-child(56), .md-typeset .no-js .tabbed-set > input:nth-child(56):checked ~ .tabbed-labels > :nth-child(56), .no-js .md-typeset .tabbed-set > input:nth-child(55):checked ~ .tabbed-labels > :nth-child(55), .md-typeset .no-js .tabbed-set > input:nth-child(55):checked ~ .tabbed-labels > :nth-child(55), .no-js .md-typeset .tabbed-set > input:nth-child(54):checked ~ .tabbed-labels > :nth-child(54), .md-typeset .no-js .tabbed-set > input:nth-child(54):checked ~ .tabbed-labels > :nth-child(54), .no-js .md-typeset .tabbed-set > input:nth-child(53):checked ~ .tabbed-labels > :nth-child(53), .md-typeset .no-js .tabbed-set > input:nth-child(53):checked ~ .tabbed-labels > :nth-child(53), .no-js .md-typeset .tabbed-set > input:nth-child(52):checked ~ .tabbed-labels > :nth-child(52), .md-typeset .no-js .tabbed-set > input:nth-child(52):checked ~ .tabbed-labels > :nth-child(52), .no-js .md-typeset .tabbed-set > input:nth-child(51):checked ~ .tabbed-labels > :nth-child(51), .md-typeset .no-js .tabbed-set > input:nth-child(51):checked ~ .tabbed-labels > :nth-child(51), .no-js .md-typeset .tabbed-set > input:nth-child(50):checked ~ .tabbed-labels > :nth-child(50), .md-typeset .no-js .tabbed-set > input:nth-child(50):checked ~ .tabbed-labels > :nth-child(50), .no-js .md-typeset .tabbed-set > input:nth-child(49):checked ~ .tabbed-labels > :nth-child(49), .md-typeset .no-js .tabbed-set > input:nth-child(49):checked ~ .tabbed-labels > :nth-child(49), .no-js .md-typeset .tabbed-set > input:nth-child(48):checked ~ .tabbed-labels > :nth-child(48), .md-typeset .no-js .tabbed-set > input:nth-child(48):checked ~ .tabbed-labels > :nth-child(48), .no-js .md-typeset .tabbed-set > input:nth-child(47):checked ~ .tabbed-labels > :nth-child(47), .md-typeset .no-js .tabbed-set > input:nth-child(47):checked ~ .tabbed-labels > :nth-child(47), .no-js .md-typeset .tabbed-set > input:nth-child(46):checked ~ .tabbed-labels > :nth-child(46), .md-typeset .no-js .tabbed-set > input:nth-child(46):checked ~ .tabbed-labels > :nth-child(46), .no-js .md-typeset .tabbed-set > input:nth-child(45):checked ~ .tabbed-labels > :nth-child(45), .md-typeset .no-js .tabbed-set > input:nth-child(45):checked ~ .tabbed-labels > :nth-child(45), .no-js .md-typeset .tabbed-set > input:nth-child(44):checked ~ .tabbed-labels > :nth-child(44), .md-typeset .no-js .tabbed-set > input:nth-child(44):checked ~ .tabbed-labels > :nth-child(44), .no-js .md-typeset .tabbed-set > input:nth-child(43):checked ~ .tabbed-labels > :nth-child(43), .md-typeset .no-js .tabbed-set > input:nth-child(43):checked ~ .tabbed-labels > :nth-child(43), .no-js .md-typeset .tabbed-set > input:nth-child(42):checked ~ .tabbed-labels > :nth-child(42), .md-typeset .no-js .tabbed-set > input:nth-child(42):checked ~ .tabbed-labels > :nth-child(42), .no-js .md-typeset .tabbed-set > input:nth-child(41):checked ~ .tabbed-labels > :nth-child(41), .md-typeset .no-js .tabbed-set > input:nth-child(41):checked ~ .tabbed-labels > :nth-child(41), .no-js .md-typeset .tabbed-set > input:nth-child(40):checked ~ .tabbed-labels > :nth-child(40), .md-typeset .no-js .tabbed-set > input:nth-child(40):checked ~ .tabbed-labels > :nth-child(40), .no-js .md-typeset .tabbed-set > input:nth-child(39):checked ~ .tabbed-labels > :nth-child(39), .md-typeset .no-js .tabbed-set > input:nth-child(39):checked ~ .tabbed-labels > :nth-child(39), .no-js .md-typeset .tabbed-set > input:nth-child(38):checked ~ .tabbed-labels > :nth-child(38), .md-typeset .no-js .tabbed-set > input:nth-child(38):checked ~ .tabbed-labels > :nth-child(38), .no-js .md-typeset .tabbed-set > input:nth-child(37):checked ~ .tabbed-labels > :nth-child(37), .md-typeset .no-js .tabbed-set > input:nth-child(37):checked ~ .tabbed-labels > :nth-child(37), .no-js .md-typeset .tabbed-set > input:nth-child(36):checked ~ .tabbed-labels > :nth-child(36), .md-typeset .no-js .tabbed-set > input:nth-child(36):checked ~ .tabbed-labels > :nth-child(36), .no-js .md-typeset .tabbed-set > input:nth-child(35):checked ~ .tabbed-labels > :nth-child(35), .md-typeset .no-js .tabbed-set > input:nth-child(35):checked ~ .tabbed-labels > :nth-child(35), .no-js .md-typeset .tabbed-set > input:nth-child(34):checked ~ .tabbed-labels > :nth-child(34), .md-typeset .no-js .tabbed-set > input:nth-child(34):checked ~ .tabbed-labels > :nth-child(34), .no-js .md-typeset .tabbed-set > input:nth-child(33):checked ~ .tabbed-labels > :nth-child(33), .md-typeset .no-js .tabbed-set > input:nth-child(33):checked ~ .tabbed-labels > :nth-child(33), .no-js .md-typeset .tabbed-set > input:nth-child(32):checked ~ .tabbed-labels > :nth-child(32), .md-typeset .no-js .tabbed-set > input:nth-child(32):checked ~ .tabbed-labels > :nth-child(32), .no-js .md-typeset .tabbed-set > input:nth-child(31):checked ~ .tabbed-labels > :nth-child(31), .md-typeset .no-js .tabbed-set > input:nth-child(31):checked ~ .tabbed-labels > :nth-child(31), .no-js .md-typeset .tabbed-set > input:nth-child(30):checked ~ .tabbed-labels > :nth-child(30), .md-typeset .no-js .tabbed-set > input:nth-child(30):checked ~ .tabbed-labels > :nth-child(30), .no-js .md-typeset .tabbed-set > input:nth-child(29):checked ~ .tabbed-labels > :nth-child(29), .md-typeset .no-js .tabbed-set > input:nth-child(29):checked ~ .tabbed-labels > :nth-child(29), .no-js .md-typeset .tabbed-set > input:nth-child(28):checked ~ .tabbed-labels > :nth-child(28), .md-typeset .no-js .tabbed-set > input:nth-child(28):checked ~ .tabbed-labels > :nth-child(28), .no-js .md-typeset .tabbed-set > input:nth-child(27):checked ~ .tabbed-labels > :nth-child(27), .md-typeset .no-js .tabbed-set > input:nth-child(27):checked ~ .tabbed-labels > :nth-child(27), .no-js .md-typeset .tabbed-set > input:nth-child(26):checked ~ .tabbed-labels > :nth-child(26), .md-typeset .no-js .tabbed-set > input:nth-child(26):checked ~ .tabbed-labels > :nth-child(26), .no-js .md-typeset .tabbed-set > input:nth-child(25):checked ~ .tabbed-labels > :nth-child(25), .md-typeset .no-js .tabbed-set > input:nth-child(25):checked ~ .tabbed-labels > :nth-child(25), .no-js .md-typeset .tabbed-set > input:nth-child(24):checked ~ .tabbed-labels > :nth-child(24), .md-typeset .no-js .tabbed-set > input:nth-child(24):checked ~ .tabbed-labels > :nth-child(24), .no-js .md-typeset .tabbed-set > input:nth-child(23):checked ~ .tabbed-labels > :nth-child(23), .md-typeset .no-js .tabbed-set > input:nth-child(23):checked ~ .tabbed-labels > :nth-child(23), .no-js .md-typeset .tabbed-set > input:nth-child(22):checked ~ .tabbed-labels > :nth-child(22), .md-typeset .no-js .tabbed-set > input:nth-child(22):checked ~ .tabbed-labels > :nth-child(22), .no-js .md-typeset .tabbed-set > input:nth-child(21):checked ~ .tabbed-labels > :nth-child(21), .md-typeset .no-js .tabbed-set > input:nth-child(21):checked ~ .tabbed-labels > :nth-child(21) {
+    border-color: var(--md-default-fg-color);
+  }
+  [role=dialog] .md-typeset .tabbed-set > input:nth-child(100):checked ~ .tabbed-labels > :nth-child(100), .md-typeset [role=dialog] .tabbed-set > input:nth-child(100):checked ~ .tabbed-labels > :nth-child(100), [role=dialog] .md-typeset .tabbed-set > input:nth-child(99):checked ~ .tabbed-labels > :nth-child(99), .md-typeset [role=dialog] .tabbed-set > input:nth-child(99):checked ~ .tabbed-labels > :nth-child(99), [role=dialog] .md-typeset .tabbed-set > input:nth-child(98):checked ~ .tabbed-labels > :nth-child(98), .md-typeset [role=dialog] .tabbed-set > input:nth-child(98):checked ~ .tabbed-labels > :nth-child(98), [role=dialog] .md-typeset .tabbed-set > input:nth-child(97):checked ~ .tabbed-labels > :nth-child(97), .md-typeset [role=dialog] .tabbed-set > input:nth-child(97):checked ~ .tabbed-labels > :nth-child(97), [role=dialog] .md-typeset .tabbed-set > input:nth-child(96):checked ~ .tabbed-labels > :nth-child(96), .md-typeset [role=dialog] .tabbed-set > input:nth-child(96):checked ~ .tabbed-labels > :nth-child(96), [role=dialog] .md-typeset .tabbed-set > input:nth-child(95):checked ~ .tabbed-labels > :nth-child(95), .md-typeset [role=dialog] .tabbed-set > input:nth-child(95):checked ~ .tabbed-labels > :nth-child(95), [role=dialog] .md-typeset .tabbed-set > input:nth-child(94):checked ~ .tabbed-labels > :nth-child(94), .md-typeset [role=dialog] .tabbed-set > input:nth-child(94):checked ~ .tabbed-labels > :nth-child(94), [role=dialog] .md-typeset .tabbed-set > input:nth-child(93):checked ~ .tabbed-labels > :nth-child(93), .md-typeset [role=dialog] .tabbed-set > input:nth-child(93):checked ~ .tabbed-labels > :nth-child(93), [role=dialog] .md-typeset .tabbed-set > input:nth-child(92):checked ~ .tabbed-labels > :nth-child(92), .md-typeset [role=dialog] .tabbed-set > input:nth-child(92):checked ~ .tabbed-labels > :nth-child(92), [role=dialog] .md-typeset .tabbed-set > input:nth-child(91):checked ~ .tabbed-labels > :nth-child(91), .md-typeset [role=dialog] .tabbed-set > input:nth-child(91):checked ~ .tabbed-labels > :nth-child(91), [role=dialog] .md-typeset .tabbed-set > input:nth-child(90):checked ~ .tabbed-labels > :nth-child(90), .md-typeset [role=dialog] .tabbed-set > input:nth-child(90):checked ~ .tabbed-labels > :nth-child(90), [role=dialog] .md-typeset .tabbed-set > input:nth-child(89):checked ~ .tabbed-labels > :nth-child(89), .md-typeset [role=dialog] .tabbed-set > input:nth-child(89):checked ~ .tabbed-labels > :nth-child(89), [role=dialog] .md-typeset .tabbed-set > input:nth-child(88):checked ~ .tabbed-labels > :nth-child(88), .md-typeset [role=dialog] .tabbed-set > input:nth-child(88):checked ~ .tabbed-labels > :nth-child(88), [role=dialog] .md-typeset .tabbed-set > input:nth-child(87):checked ~ .tabbed-labels > :nth-child(87), .md-typeset [role=dialog] .tabbed-set > input:nth-child(87):checked ~ .tabbed-labels > :nth-child(87), [role=dialog] .md-typeset .tabbed-set > input:nth-child(86):checked ~ .tabbed-labels > :nth-child(86), .md-typeset [role=dialog] .tabbed-set > input:nth-child(86):checked ~ .tabbed-labels > :nth-child(86), [role=dialog] .md-typeset .tabbed-set > input:nth-child(85):checked ~ .tabbed-labels > :nth-child(85), .md-typeset [role=dialog] .tabbed-set > input:nth-child(85):checked ~ .tabbed-labels > :nth-child(85), [role=dialog] .md-typeset .tabbed-set > input:nth-child(84):checked ~ .tabbed-labels > :nth-child(84), .md-typeset [role=dialog] .tabbed-set > input:nth-child(84):checked ~ .tabbed-labels > :nth-child(84), [role=dialog] .md-typeset .tabbed-set > input:nth-child(83):checked ~ .tabbed-labels > :nth-child(83), .md-typeset [role=dialog] .tabbed-set > input:nth-child(83):checked ~ .tabbed-labels > :nth-child(83), [role=dialog] .md-typeset .tabbed-set > input:nth-child(82):checked ~ .tabbed-labels > :nth-child(82), .md-typeset [role=dialog] .tabbed-set > input:nth-child(82):checked ~ .tabbed-labels > :nth-child(82), [role=dialog] .md-typeset .tabbed-set > input:nth-child(81):checked ~ .tabbed-labels > :nth-child(81), .md-typeset [role=dialog] .tabbed-set > input:nth-child(81):checked ~ .tabbed-labels > :nth-child(81), [role=dialog] .md-typeset .tabbed-set > input:nth-child(80):checked ~ .tabbed-labels > :nth-child(80), .md-typeset [role=dialog] .tabbed-set > input:nth-child(80):checked ~ .tabbed-labels > :nth-child(80), [role=dialog] .md-typeset .tabbed-set > input:nth-child(79):checked ~ .tabbed-labels > :nth-child(79), .md-typeset [role=dialog] .tabbed-set > input:nth-child(79):checked ~ .tabbed-labels > :nth-child(79), [role=dialog] .md-typeset .tabbed-set > input:nth-child(78):checked ~ .tabbed-labels > :nth-child(78), .md-typeset [role=dialog] .tabbed-set > input:nth-child(78):checked ~ .tabbed-labels > :nth-child(78), [role=dialog] .md-typeset .tabbed-set > input:nth-child(77):checked ~ .tabbed-labels > :nth-child(77), .md-typeset [role=dialog] .tabbed-set > input:nth-child(77):checked ~ .tabbed-labels > :nth-child(77), [role=dialog] .md-typeset .tabbed-set > input:nth-child(76):checked ~ .tabbed-labels > :nth-child(76), .md-typeset [role=dialog] .tabbed-set > input:nth-child(76):checked ~ .tabbed-labels > :nth-child(76), [role=dialog] .md-typeset .tabbed-set > input:nth-child(75):checked ~ .tabbed-labels > :nth-child(75), .md-typeset [role=dialog] .tabbed-set > input:nth-child(75):checked ~ .tabbed-labels > :nth-child(75), [role=dialog] .md-typeset .tabbed-set > input:nth-child(74):checked ~ .tabbed-labels > :nth-child(74), .md-typeset [role=dialog] .tabbed-set > input:nth-child(74):checked ~ .tabbed-labels > :nth-child(74), [role=dialog] .md-typeset .tabbed-set > input:nth-child(73):checked ~ .tabbed-labels > :nth-child(73), .md-typeset [role=dialog] .tabbed-set > input:nth-child(73):checked ~ .tabbed-labels > :nth-child(73), [role=dialog] .md-typeset .tabbed-set > input:nth-child(72):checked ~ .tabbed-labels > :nth-child(72), .md-typeset [role=dialog] .tabbed-set > input:nth-child(72):checked ~ .tabbed-labels > :nth-child(72), [role=dialog] .md-typeset .tabbed-set > input:nth-child(71):checked ~ .tabbed-labels > :nth-child(71), .md-typeset [role=dialog] .tabbed-set > input:nth-child(71):checked ~ .tabbed-labels > :nth-child(71), [role=dialog] .md-typeset .tabbed-set > input:nth-child(70):checked ~ .tabbed-labels > :nth-child(70), .md-typeset [role=dialog] .tabbed-set > input:nth-child(70):checked ~ .tabbed-labels > :nth-child(70), [role=dialog] .md-typeset .tabbed-set > input:nth-child(69):checked ~ .tabbed-labels > :nth-child(69), .md-typeset [role=dialog] .tabbed-set > input:nth-child(69):checked ~ .tabbed-labels > :nth-child(69), [role=dialog] .md-typeset .tabbed-set > input:nth-child(68):checked ~ .tabbed-labels > :nth-child(68), .md-typeset [role=dialog] .tabbed-set > input:nth-child(68):checked ~ .tabbed-labels > :nth-child(68), [role=dialog] .md-typeset .tabbed-set > input:nth-child(67):checked ~ .tabbed-labels > :nth-child(67), .md-typeset [role=dialog] .tabbed-set > input:nth-child(67):checked ~ .tabbed-labels > :nth-child(67), [role=dialog] .md-typeset .tabbed-set > input:nth-child(66):checked ~ .tabbed-labels > :nth-child(66), .md-typeset [role=dialog] .tabbed-set > input:nth-child(66):checked ~ .tabbed-labels > :nth-child(66), [role=dialog] .md-typeset .tabbed-set > input:nth-child(65):checked ~ .tabbed-labels > :nth-child(65), .md-typeset [role=dialog] .tabbed-set > input:nth-child(65):checked ~ .tabbed-labels > :nth-child(65), [role=dialog] .md-typeset .tabbed-set > input:nth-child(64):checked ~ .tabbed-labels > :nth-child(64), .md-typeset [role=dialog] .tabbed-set > input:nth-child(64):checked ~ .tabbed-labels > :nth-child(64), [role=dialog] .md-typeset .tabbed-set > input:nth-child(63):checked ~ .tabbed-labels > :nth-child(63), .md-typeset [role=dialog] .tabbed-set > input:nth-child(63):checked ~ .tabbed-labels > :nth-child(63), [role=dialog] .md-typeset .tabbed-set > input:nth-child(62):checked ~ .tabbed-labels > :nth-child(62), .md-typeset [role=dialog] .tabbed-set > input:nth-child(62):checked ~ .tabbed-labels > :nth-child(62), [role=dialog] .md-typeset .tabbed-set > input:nth-child(61):checked ~ .tabbed-labels > :nth-child(61), .md-typeset [role=dialog] .tabbed-set > input:nth-child(61):checked ~ .tabbed-labels > :nth-child(61), [role=dialog] .md-typeset .tabbed-set > input:nth-child(60):checked ~ .tabbed-labels > :nth-child(60), .md-typeset [role=dialog] .tabbed-set > input:nth-child(60):checked ~ .tabbed-labels > :nth-child(60), [role=dialog] .md-typeset .tabbed-set > input:nth-child(59):checked ~ .tabbed-labels > :nth-child(59), .md-typeset [role=dialog] .tabbed-set > input:nth-child(59):checked ~ .tabbed-labels > :nth-child(59), [role=dialog] .md-typeset .tabbed-set > input:nth-child(58):checked ~ .tabbed-labels > :nth-child(58), .md-typeset [role=dialog] .tabbed-set > input:nth-child(58):checked ~ .tabbed-labels > :nth-child(58), [role=dialog] .md-typeset .tabbed-set > input:nth-child(57):checked ~ .tabbed-labels > :nth-child(57), .md-typeset [role=dialog] .tabbed-set > input:nth-child(57):checked ~ .tabbed-labels > :nth-child(57), [role=dialog] .md-typeset .tabbed-set > input:nth-child(56):checked ~ .tabbed-labels > :nth-child(56), .md-typeset [role=dialog] .tabbed-set > input:nth-child(56):checked ~ .tabbed-labels > :nth-child(56), [role=dialog] .md-typeset .tabbed-set > input:nth-child(55):checked ~ .tabbed-labels > :nth-child(55), .md-typeset [role=dialog] .tabbed-set > input:nth-child(55):checked ~ .tabbed-labels > :nth-child(55), [role=dialog] .md-typeset .tabbed-set > input:nth-child(54):checked ~ .tabbed-labels > :nth-child(54), .md-typeset [role=dialog] .tabbed-set > input:nth-child(54):checked ~ .tabbed-labels > :nth-child(54), [role=dialog] .md-typeset .tabbed-set > input:nth-child(53):checked ~ .tabbed-labels > :nth-child(53), .md-typeset [role=dialog] .tabbed-set > input:nth-child(53):checked ~ .tabbed-labels > :nth-child(53), [role=dialog] .md-typeset .tabbed-set > input:nth-child(52):checked ~ .tabbed-labels > :nth-child(52), .md-typeset [role=dialog] .tabbed-set > input:nth-child(52):checked ~ .tabbed-labels > :nth-child(52), [role=dialog] .md-typeset .tabbed-set > input:nth-child(51):checked ~ .tabbed-labels > :nth-child(51), .md-typeset [role=dialog] .tabbed-set > input:nth-child(51):checked ~ .tabbed-labels > :nth-child(51), [role=dialog] .md-typeset .tabbed-set > input:nth-child(50):checked ~ .tabbed-labels > :nth-child(50), .md-typeset [role=dialog] .tabbed-set > input:nth-child(50):checked ~ .tabbed-labels > :nth-child(50), [role=dialog] .md-typeset .tabbed-set > input:nth-child(49):checked ~ .tabbed-labels > :nth-child(49), .md-typeset [role=dialog] .tabbed-set > input:nth-child(49):checked ~ .tabbed-labels > :nth-child(49), [role=dialog] .md-typeset .tabbed-set > input:nth-child(48):checked ~ .tabbed-labels > :nth-child(48), .md-typeset [role=dialog] .tabbed-set > input:nth-child(48):checked ~ .tabbed-labels > :nth-child(48), [role=dialog] .md-typeset .tabbed-set > input:nth-child(47):checked ~ .tabbed-labels > :nth-child(47), .md-typeset [role=dialog] .tabbed-set > input:nth-child(47):checked ~ .tabbed-labels > :nth-child(47), [role=dialog] .md-typeset .tabbed-set > input:nth-child(46):checked ~ .tabbed-labels > :nth-child(46), .md-typeset [role=dialog] .tabbed-set > input:nth-child(46):checked ~ .tabbed-labels > :nth-child(46), [role=dialog] .md-typeset .tabbed-set > input:nth-child(45):checked ~ .tabbed-labels > :nth-child(45), .md-typeset [role=dialog] .tabbed-set > input:nth-child(45):checked ~ .tabbed-labels > :nth-child(45), [role=dialog] .md-typeset .tabbed-set > input:nth-child(44):checked ~ .tabbed-labels > :nth-child(44), .md-typeset [role=dialog] .tabbed-set > input:nth-child(44):checked ~ .tabbed-labels > :nth-child(44), [role=dialog] .md-typeset .tabbed-set > input:nth-child(43):checked ~ .tabbed-labels > :nth-child(43), .md-typeset [role=dialog] .tabbed-set > input:nth-child(43):checked ~ .tabbed-labels > :nth-child(43), [role=dialog] .md-typeset .tabbed-set > input:nth-child(42):checked ~ .tabbed-labels > :nth-child(42), .md-typeset [role=dialog] .tabbed-set > input:nth-child(42):checked ~ .tabbed-labels > :nth-child(42), [role=dialog] .md-typeset .tabbed-set > input:nth-child(41):checked ~ .tabbed-labels > :nth-child(41), .md-typeset [role=dialog] .tabbed-set > input:nth-child(41):checked ~ .tabbed-labels > :nth-child(41), [role=dialog] .md-typeset .tabbed-set > input:nth-child(40):checked ~ .tabbed-labels > :nth-child(40), .md-typeset [role=dialog] .tabbed-set > input:nth-child(40):checked ~ .tabbed-labels > :nth-child(40), [role=dialog] .md-typeset .tabbed-set > input:nth-child(39):checked ~ .tabbed-labels > :nth-child(39), .md-typeset [role=dialog] .tabbed-set > input:nth-child(39):checked ~ .tabbed-labels > :nth-child(39), [role=dialog] .md-typeset .tabbed-set > input:nth-child(38):checked ~ .tabbed-labels > :nth-child(38), .md-typeset [role=dialog] .tabbed-set > input:nth-child(38):checked ~ .tabbed-labels > :nth-child(38), [role=dialog] .md-typeset .tabbed-set > input:nth-child(37):checked ~ .tabbed-labels > :nth-child(37), .md-typeset [role=dialog] .tabbed-set > input:nth-child(37):checked ~ .tabbed-labels > :nth-child(37), [role=dialog] .md-typeset .tabbed-set > input:nth-child(36):checked ~ .tabbed-labels > :nth-child(36), .md-typeset [role=dialog] .tabbed-set > input:nth-child(36):checked ~ .tabbed-labels > :nth-child(36), [role=dialog] .md-typeset .tabbed-set > input:nth-child(35):checked ~ .tabbed-labels > :nth-child(35), .md-typeset [role=dialog] .tabbed-set > input:nth-child(35):checked ~ .tabbed-labels > :nth-child(35), [role=dialog] .md-typeset .tabbed-set > input:nth-child(34):checked ~ .tabbed-labels > :nth-child(34), .md-typeset [role=dialog] .tabbed-set > input:nth-child(34):checked ~ .tabbed-labels > :nth-child(34), [role=dialog] .md-typeset .tabbed-set > input:nth-child(33):checked ~ .tabbed-labels > :nth-child(33), .md-typeset [role=dialog] .tabbed-set > input:nth-child(33):checked ~ .tabbed-labels > :nth-child(33), [role=dialog] .md-typeset .tabbed-set > input:nth-child(32):checked ~ .tabbed-labels > :nth-child(32), .md-typeset [role=dialog] .tabbed-set > input:nth-child(32):checked ~ .tabbed-labels > :nth-child(32), [role=dialog] .md-typeset .tabbed-set > input:nth-child(31):checked ~ .tabbed-labels > :nth-child(31), .md-typeset [role=dialog] .tabbed-set > input:nth-child(31):checked ~ .tabbed-labels > :nth-child(31), [role=dialog] .md-typeset .tabbed-set > input:nth-child(30):checked ~ .tabbed-labels > :nth-child(30), .md-typeset [role=dialog] .tabbed-set > input:nth-child(30):checked ~ .tabbed-labels > :nth-child(30), [role=dialog] .md-typeset .tabbed-set > input:nth-child(29):checked ~ .tabbed-labels > :nth-child(29), .md-typeset [role=dialog] .tabbed-set > input:nth-child(29):checked ~ .tabbed-labels > :nth-child(29), [role=dialog] .md-typeset .tabbed-set > input:nth-child(28):checked ~ .tabbed-labels > :nth-child(28), .md-typeset [role=dialog] .tabbed-set > input:nth-child(28):checked ~ .tabbed-labels > :nth-child(28), [role=dialog] .md-typeset .tabbed-set > input:nth-child(27):checked ~ .tabbed-labels > :nth-child(27), .md-typeset [role=dialog] .tabbed-set > input:nth-child(27):checked ~ .tabbed-labels > :nth-child(27), [role=dialog] .md-typeset .tabbed-set > input:nth-child(26):checked ~ .tabbed-labels > :nth-child(26), .md-typeset [role=dialog] .tabbed-set > input:nth-child(26):checked ~ .tabbed-labels > :nth-child(26), [role=dialog] .md-typeset .tabbed-set > input:nth-child(25):checked ~ .tabbed-labels > :nth-child(25), .md-typeset [role=dialog] .tabbed-set > input:nth-child(25):checked ~ .tabbed-labels > :nth-child(25), [role=dialog] .md-typeset .tabbed-set > input:nth-child(24):checked ~ .tabbed-labels > :nth-child(24), .md-typeset [role=dialog] .tabbed-set > input:nth-child(24):checked ~ .tabbed-labels > :nth-child(24), [role=dialog] .md-typeset .tabbed-set > input:nth-child(23):checked ~ .tabbed-labels > :nth-child(23), .md-typeset [role=dialog] .tabbed-set > input:nth-child(23):checked ~ .tabbed-labels > :nth-child(23), [role=dialog] .md-typeset .tabbed-set > input:nth-child(22):checked ~ .tabbed-labels > :nth-child(22), .md-typeset [role=dialog] .tabbed-set > input:nth-child(22):checked ~ .tabbed-labels > :nth-child(22), [role=dialog] .md-typeset .tabbed-set > input:nth-child(21):checked ~ .tabbed-labels > :nth-child(21), .md-typeset [role=dialog] .tabbed-set > input:nth-child(21):checked ~ .tabbed-labels > :nth-child(21) {
+    border-color: var(--md-default-fg-color);
+  }
+}
+
+.md-typeset .tabbed-set > input:nth-child(100).focus-visible ~ .tabbed-labels > :nth-child(100), .md-typeset .tabbed-set > input:nth-child(99).focus-visible ~ .tabbed-labels > :nth-child(99), .md-typeset .tabbed-set > input:nth-child(98).focus-visible ~ .tabbed-labels > :nth-child(98), .md-typeset .tabbed-set > input:nth-child(97).focus-visible ~ .tabbed-labels > :nth-child(97), .md-typeset .tabbed-set > input:nth-child(96).focus-visible ~ .tabbed-labels > :nth-child(96), .md-typeset .tabbed-set > input:nth-child(95).focus-visible ~ .tabbed-labels > :nth-child(95), .md-typeset .tabbed-set > input:nth-child(94).focus-visible ~ .tabbed-labels > :nth-child(94), .md-typeset .tabbed-set > input:nth-child(93).focus-visible ~ .tabbed-labels > :nth-child(93), .md-typeset .tabbed-set > input:nth-child(92).focus-visible ~ .tabbed-labels > :nth-child(92), .md-typeset .tabbed-set > input:nth-child(91).focus-visible ~ .tabbed-labels > :nth-child(91), .md-typeset .tabbed-set > input:nth-child(90).focus-visible ~ .tabbed-labels > :nth-child(90), .md-typeset .tabbed-set > input:nth-child(89).focus-visible ~ .tabbed-labels > :nth-child(89), .md-typeset .tabbed-set > input:nth-child(88).focus-visible ~ .tabbed-labels > :nth-child(88), .md-typeset .tabbed-set > input:nth-child(87).focus-visible ~ .tabbed-labels > :nth-child(87), .md-typeset .tabbed-set > input:nth-child(86).focus-visible ~ .tabbed-labels > :nth-child(86), .md-typeset .tabbed-set > input:nth-child(85).focus-visible ~ .tabbed-labels > :nth-child(85), .md-typeset .tabbed-set > input:nth-child(84).focus-visible ~ .tabbed-labels > :nth-child(84), .md-typeset .tabbed-set > input:nth-child(83).focus-visible ~ .tabbed-labels > :nth-child(83), .md-typeset .tabbed-set > input:nth-child(82).focus-visible ~ .tabbed-labels > :nth-child(82), .md-typeset .tabbed-set > input:nth-child(81).focus-visible ~ .tabbed-labels > :nth-child(81), .md-typeset .tabbed-set > input:nth-child(80).focus-visible ~ .tabbed-labels > :nth-child(80), .md-typeset .tabbed-set > input:nth-child(79).focus-visible ~ .tabbed-labels > :nth-child(79), .md-typeset .tabbed-set > input:nth-child(78).focus-visible ~ .tabbed-labels > :nth-child(78), .md-typeset .tabbed-set > input:nth-child(77).focus-visible ~ .tabbed-labels > :nth-child(77), .md-typeset .tabbed-set > input:nth-child(76).focus-visible ~ .tabbed-labels > :nth-child(76), .md-typeset .tabbed-set > input:nth-child(75).focus-visible ~ .tabbed-labels > :nth-child(75), .md-typeset .tabbed-set > input:nth-child(74).focus-visible ~ .tabbed-labels > :nth-child(74), .md-typeset .tabbed-set > input:nth-child(73).focus-visible ~ .tabbed-labels > :nth-child(73), .md-typeset .tabbed-set > input:nth-child(72).focus-visible ~ .tabbed-labels > :nth-child(72), .md-typeset .tabbed-set > input:nth-child(71).focus-visible ~ .tabbed-labels > :nth-child(71), .md-typeset .tabbed-set > input:nth-child(70).focus-visible ~ .tabbed-labels > :nth-child(70), .md-typeset .tabbed-set > input:nth-child(69).focus-visible ~ .tabbed-labels > :nth-child(69), .md-typeset .tabbed-set > input:nth-child(68).focus-visible ~ .tabbed-labels > :nth-child(68), .md-typeset .tabbed-set > input:nth-child(67).focus-visible ~ .tabbed-labels > :nth-child(67), .md-typeset .tabbed-set > input:nth-child(66).focus-visible ~ .tabbed-labels > :nth-child(66), .md-typeset .tabbed-set > input:nth-child(65).focus-visible ~ .tabbed-labels > :nth-child(65), .md-typeset .tabbed-set > input:nth-child(64).focus-visible ~ .tabbed-labels > :nth-child(64), .md-typeset .tabbed-set > input:nth-child(63).focus-visible ~ .tabbed-labels > :nth-child(63), .md-typeset .tabbed-set > input:nth-child(62).focus-visible ~ .tabbed-labels > :nth-child(62), .md-typeset .tabbed-set > input:nth-child(61).focus-visible ~ .tabbed-labels > :nth-child(61), .md-typeset .tabbed-set > input:nth-child(60).focus-visible ~ .tabbed-labels > :nth-child(60), .md-typeset .tabbed-set > input:nth-child(59).focus-visible ~ .tabbed-labels > :nth-child(59), .md-typeset .tabbed-set > input:nth-child(58).focus-visible ~ .tabbed-labels > :nth-child(58), .md-typeset .tabbed-set > input:nth-child(57).focus-visible ~ .tabbed-labels > :nth-child(57), .md-typeset .tabbed-set > input:nth-child(56).focus-visible ~ .tabbed-labels > :nth-child(56), .md-typeset .tabbed-set > input:nth-child(55).focus-visible ~ .tabbed-labels > :nth-child(55), .md-typeset .tabbed-set > input:nth-child(54).focus-visible ~ .tabbed-labels > :nth-child(54), .md-typeset .tabbed-set > input:nth-child(53).focus-visible ~ .tabbed-labels > :nth-child(53), .md-typeset .tabbed-set > input:nth-child(52).focus-visible ~ .tabbed-labels > :nth-child(52), .md-typeset .tabbed-set > input:nth-child(51).focus-visible ~ .tabbed-labels > :nth-child(51), .md-typeset .tabbed-set > input:nth-child(50).focus-visible ~ .tabbed-labels > :nth-child(50), .md-typeset .tabbed-set > input:nth-child(49).focus-visible ~ .tabbed-labels > :nth-child(49), .md-typeset .tabbed-set > input:nth-child(48).focus-visible ~ .tabbed-labels > :nth-child(48), .md-typeset .tabbed-set > input:nth-child(47).focus-visible ~ .tabbed-labels > :nth-child(47), .md-typeset .tabbed-set > input:nth-child(46).focus-visible ~ .tabbed-labels > :nth-child(46), .md-typeset .tabbed-set > input:nth-child(45).focus-visible ~ .tabbed-labels > :nth-child(45), .md-typeset .tabbed-set > input:nth-child(44).focus-visible ~ .tabbed-labels > :nth-child(44), .md-typeset .tabbed-set > input:nth-child(43).focus-visible ~ .tabbed-labels > :nth-child(43), .md-typeset .tabbed-set > input:nth-child(42).focus-visible ~ .tabbed-labels > :nth-child(42), .md-typeset .tabbed-set > input:nth-child(41).focus-visible ~ .tabbed-labels > :nth-child(41), .md-typeset .tabbed-set > input:nth-child(40).focus-visible ~ .tabbed-labels > :nth-child(40), .md-typeset .tabbed-set > input:nth-child(39).focus-visible ~ .tabbed-labels > :nth-child(39), .md-typeset .tabbed-set > input:nth-child(38).focus-visible ~ .tabbed-labels > :nth-child(38), .md-typeset .tabbed-set > input:nth-child(37).focus-visible ~ .tabbed-labels > :nth-child(37), .md-typeset .tabbed-set > input:nth-child(36).focus-visible ~ .tabbed-labels > :nth-child(36), .md-typeset .tabbed-set > input:nth-child(35).focus-visible ~ .tabbed-labels > :nth-child(35), .md-typeset .tabbed-set > input:nth-child(34).focus-visible ~ .tabbed-labels > :nth-child(34), .md-typeset .tabbed-set > input:nth-child(33).focus-visible ~ .tabbed-labels > :nth-child(33), .md-typeset .tabbed-set > input:nth-child(32).focus-visible ~ .tabbed-labels > :nth-child(32), .md-typeset .tabbed-set > input:nth-child(31).focus-visible ~ .tabbed-labels > :nth-child(31), .md-typeset .tabbed-set > input:nth-child(30).focus-visible ~ .tabbed-labels > :nth-child(30), .md-typeset .tabbed-set > input:nth-child(29).focus-visible ~ .tabbed-labels > :nth-child(29), .md-typeset .tabbed-set > input:nth-child(28).focus-visible ~ .tabbed-labels > :nth-child(28), .md-typeset .tabbed-set > input:nth-child(27).focus-visible ~ .tabbed-labels > :nth-child(27), .md-typeset .tabbed-set > input:nth-child(26).focus-visible ~ .tabbed-labels > :nth-child(26), .md-typeset .tabbed-set > input:nth-child(25).focus-visible ~ .tabbed-labels > :nth-child(25), .md-typeset .tabbed-set > input:nth-child(24).focus-visible ~ .tabbed-labels > :nth-child(24), .md-typeset .tabbed-set > input:nth-child(23).focus-visible ~ .tabbed-labels > :nth-child(23), .md-typeset .tabbed-set > input:nth-child(22).focus-visible ~ .tabbed-labels > :nth-child(22), .md-typeset .tabbed-set > input:nth-child(21).focus-visible ~ .tabbed-labels > :nth-child(21) {
+  color: var(--md-accent-fg-color);
+}
+
+.md-typeset .tabbed-set > input:nth-child(100):checked ~ .tabbed-content > :nth-child(100), .md-typeset .tabbed-set > input:nth-child(99):checked ~ .tabbed-content > :nth-child(99), .md-typeset .tabbed-set > input:nth-child(98):checked ~ .tabbed-content > :nth-child(98), .md-typeset .tabbed-set > input:nth-child(97):checked ~ .tabbed-content > :nth-child(97), .md-typeset .tabbed-set > input:nth-child(96):checked ~ .tabbed-content > :nth-child(96), .md-typeset .tabbed-set > input:nth-child(95):checked ~ .tabbed-content > :nth-child(95), .md-typeset .tabbed-set > input:nth-child(94):checked ~ .tabbed-content > :nth-child(94), .md-typeset .tabbed-set > input:nth-child(93):checked ~ .tabbed-content > :nth-child(93), .md-typeset .tabbed-set > input:nth-child(92):checked ~ .tabbed-content > :nth-child(92), .md-typeset .tabbed-set > input:nth-child(91):checked ~ .tabbed-content > :nth-child(91), .md-typeset .tabbed-set > input:nth-child(90):checked ~ .tabbed-content > :nth-child(90), .md-typeset .tabbed-set > input:nth-child(89):checked ~ .tabbed-content > :nth-child(89), .md-typeset .tabbed-set > input:nth-child(88):checked ~ .tabbed-content > :nth-child(88), .md-typeset .tabbed-set > input:nth-child(87):checked ~ .tabbed-content > :nth-child(87), .md-typeset .tabbed-set > input:nth-child(86):checked ~ .tabbed-content > :nth-child(86), .md-typeset .tabbed-set > input:nth-child(85):checked ~ .tabbed-content > :nth-child(85), .md-typeset .tabbed-set > input:nth-child(84):checked ~ .tabbed-content > :nth-child(84), .md-typeset .tabbed-set > input:nth-child(83):checked ~ .tabbed-content > :nth-child(83), .md-typeset .tabbed-set > input:nth-child(82):checked ~ .tabbed-content > :nth-child(82), .md-typeset .tabbed-set > input:nth-child(81):checked ~ .tabbed-content > :nth-child(81), .md-typeset .tabbed-set > input:nth-child(80):checked ~ .tabbed-content > :nth-child(80), .md-typeset .tabbed-set > input:nth-child(79):checked ~ .tabbed-content > :nth-child(79), .md-typeset .tabbed-set > input:nth-child(78):checked ~ .tabbed-content > :nth-child(78), .md-typeset .tabbed-set > input:nth-child(77):checked ~ .tabbed-content > :nth-child(77), .md-typeset .tabbed-set > input:nth-child(76):checked ~ .tabbed-content > :nth-child(76), .md-typeset .tabbed-set > input:nth-child(75):checked ~ .tabbed-content > :nth-child(75), .md-typeset .tabbed-set > input:nth-child(74):checked ~ .tabbed-content > :nth-child(74), .md-typeset .tabbed-set > input:nth-child(73):checked ~ .tabbed-content > :nth-child(73), .md-typeset .tabbed-set > input:nth-child(72):checked ~ .tabbed-content > :nth-child(72), .md-typeset .tabbed-set > input:nth-child(71):checked ~ .tabbed-content > :nth-child(71), .md-typeset .tabbed-set > input:nth-child(70):checked ~ .tabbed-content > :nth-child(70), .md-typeset .tabbed-set > input:nth-child(69):checked ~ .tabbed-content > :nth-child(69), .md-typeset .tabbed-set > input:nth-child(68):checked ~ .tabbed-content > :nth-child(68), .md-typeset .tabbed-set > input:nth-child(67):checked ~ .tabbed-content > :nth-child(67), .md-typeset .tabbed-set > input:nth-child(66):checked ~ .tabbed-content > :nth-child(66), .md-typeset .tabbed-set > input:nth-child(65):checked ~ .tabbed-content > :nth-child(65), .md-typeset .tabbed-set > input:nth-child(64):checked ~ .tabbed-content > :nth-child(64), .md-typeset .tabbed-set > input:nth-child(63):checked ~ .tabbed-content > :nth-child(63), .md-typeset .tabbed-set > input:nth-child(62):checked ~ .tabbed-content > :nth-child(62), .md-typeset .tabbed-set > input:nth-child(61):checked ~ .tabbed-content > :nth-child(61), .md-typeset .tabbed-set > input:nth-child(60):checked ~ .tabbed-content > :nth-child(60), .md-typeset .tabbed-set > input:nth-child(59):checked ~ .tabbed-content > :nth-child(59), .md-typeset .tabbed-set > input:nth-child(58):checked ~ .tabbed-content > :nth-child(58), .md-typeset .tabbed-set > input:nth-child(57):checked ~ .tabbed-content > :nth-child(57), .md-typeset .tabbed-set > input:nth-child(56):checked ~ .tabbed-content > :nth-child(56), .md-typeset .tabbed-set > input:nth-child(55):checked ~ .tabbed-content > :nth-child(55), .md-typeset .tabbed-set > input:nth-child(54):checked ~ .tabbed-content > :nth-child(54), .md-typeset .tabbed-set > input:nth-child(53):checked ~ .tabbed-content > :nth-child(53), .md-typeset .tabbed-set > input:nth-child(52):checked ~ .tabbed-content > :nth-child(52), .md-typeset .tabbed-set > input:nth-child(51):checked ~ .tabbed-content > :nth-child(51), .md-typeset .tabbed-set > input:nth-child(50):checked ~ .tabbed-content > :nth-child(50), .md-typeset .tabbed-set > input:nth-child(49):checked ~ .tabbed-content > :nth-child(49), .md-typeset .tabbed-set > input:nth-child(48):checked ~ .tabbed-content > :nth-child(48), .md-typeset .tabbed-set > input:nth-child(47):checked ~ .tabbed-content > :nth-child(47), .md-typeset .tabbed-set > input:nth-child(46):checked ~ .tabbed-content > :nth-child(46), .md-typeset .tabbed-set > input:nth-child(45):checked ~ .tabbed-content > :nth-child(45), .md-typeset .tabbed-set > input:nth-child(44):checked ~ .tabbed-content > :nth-child(44), .md-typeset .tabbed-set > input:nth-child(43):checked ~ .tabbed-content > :nth-child(43), .md-typeset .tabbed-set > input:nth-child(42):checked ~ .tabbed-content > :nth-child(42), .md-typeset .tabbed-set > input:nth-child(41):checked ~ .tabbed-content > :nth-child(41), .md-typeset .tabbed-set > input:nth-child(40):checked ~ .tabbed-content > :nth-child(40), .md-typeset .tabbed-set > input:nth-child(39):checked ~ .tabbed-content > :nth-child(39), .md-typeset .tabbed-set > input:nth-child(38):checked ~ .tabbed-content > :nth-child(38), .md-typeset .tabbed-set > input:nth-child(37):checked ~ .tabbed-content > :nth-child(37), .md-typeset .tabbed-set > input:nth-child(36):checked ~ .tabbed-content > :nth-child(36), .md-typeset .tabbed-set > input:nth-child(35):checked ~ .tabbed-content > :nth-child(35), .md-typeset .tabbed-set > input:nth-child(34):checked ~ .tabbed-content > :nth-child(34), .md-typeset .tabbed-set > input:nth-child(33):checked ~ .tabbed-content > :nth-child(33), .md-typeset .tabbed-set > input:nth-child(32):checked ~ .tabbed-content > :nth-child(32), .md-typeset .tabbed-set > input:nth-child(31):checked ~ .tabbed-content > :nth-child(31), .md-typeset .tabbed-set > input:nth-child(30):checked ~ .tabbed-content > :nth-child(30), .md-typeset .tabbed-set > input:nth-child(29):checked ~ .tabbed-content > :nth-child(29), .md-typeset .tabbed-set > input:nth-child(28):checked ~ .tabbed-content > :nth-child(28), .md-typeset .tabbed-set > input:nth-child(27):checked ~ .tabbed-content > :nth-child(27), .md-typeset .tabbed-set > input:nth-child(26):checked ~ .tabbed-content > :nth-child(26), .md-typeset .tabbed-set > input:nth-child(25):checked ~ .tabbed-content > :nth-child(25), .md-typeset .tabbed-set > input:nth-child(24):checked ~ .tabbed-content > :nth-child(24), .md-typeset .tabbed-set > input:nth-child(23):checked ~ .tabbed-content > :nth-child(23), .md-typeset .tabbed-set > input:nth-child(22):checked ~ .tabbed-content > :nth-child(22), .md-typeset .tabbed-set > input:nth-child(21):checked ~ .tabbed-content > :nth-child(21) {
+  display: block;
+}
+
+/*# sourceMappingURL=sekoiaio.css.map */
