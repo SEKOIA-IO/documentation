@@ -74,9 +74,7 @@ Add required role:
 
 7. click on `Next` and add a `Comment`
 
-You can now create the playbook "Create a new playbook > Create a playbook from scratch" and add the "Office 365 Message Trace OAuth" trigger.
-
-Create a trigger configuration and input the following information:
+You can now create your intake and input the following information:
 
 - `client_id`
 - `client_secret`
