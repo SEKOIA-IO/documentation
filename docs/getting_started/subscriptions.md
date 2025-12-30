@@ -69,37 +69,35 @@ When creating a new community, a trial subscription is **automatically made avai
 Sekoia automatically sends email notifications to inform administrators about key events in the subscription lifecycle, 
 such as upcoming expirations or expired licenses.
 
-Notifications are evaluated through scheduled daily processes. Except for manual operations, subscription status changes and 
-notifications are not processed in real time.
+The system evaluates notifications through scheduled daily processes. With the exception of manual operations, Sekoia does not process subscription status changes or notifications in real-time.
 
 Only users with the Admin role receive subscription-related email notifications.
 
 ### Expired license
 
-When a subscription expires, an email is sent to the admins of the affected community to inform them that the license is no longer active.
-License expiration is checked every day at 02:00 (UTC). If a license is detected as expired during this check, 
-the notification is sent automatically.
+When a subscription expires, Sekoia sends an email to the administrators of the affected community to inform them that the license is inactive.
+The system checks for license expiration daily at 02:00 (UTC). If the system detects an expired license during this check, it automatically sends the notification.
 
 ### Nearly expired license
 
-To help anticipate renewals, Sekoia sends reminder emails when a license is approaching its expiration date. 
+To help you anticipate renewals, Sekoia sends reminder emails when a license is approaching its expiration date. 
 The notification rules depend on the license duration and on whether the administrator belongs to a workspace (MSSP) or to a community.
 
-Nearly expired licenses are evaluated every day around 08:00 (UTC), and notifications are sent accordingly.
+The system evaluates nearly expired licenses daily around 08:00 (UTC) and sends notifications accordingly.
 
 **Workspace (MSSP)**
 
-Workspace admins receive an email when at least one managed community has a subscription that is close to expiring:
-- If the license duration is greater than 100 days, a notification is sent when the license expires in less than 90 days
-- If the license duration is 100 days or less, a notification is sent when the license expires in less than 10 days
+Workspace admins receive an email when at least one managed community has a subscription close to expiration:
+- Long-term licenses: If the license duration is greater than 100 days, the system sends a notification when the license expires in less than 90 days.
+- hort-term licenses: If the license duration is 100 days or less, the system sends a notification when the license expires in less than 10 days.
 
 These notifications provide a global view of upcoming expirations across all managed communities.
 
 **Community**
 
-Community admins receive an email when their community subscription is close to expiring:
-- If the license duration is greater than 100 days, a notification is sent when the license expires in less than 30 days
-- If the license duration is 100 days or less, a notification is sent when the license expires in less than 5 days
+Community admins receive an email when their community subscription is close to expiration:
+- If the license duration is greater than 100 days, the system sends a notification when the license expires in less than 30 days.
+- If the license duration is 100 days or less, the system sends a notification when the license expires in less than 5 days.
 
 ### Notification schedule
 
