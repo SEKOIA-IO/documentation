@@ -1,6 +1,9 @@
+---
 uuid: bba2bed2-d925-440f-a0ce-dbcae04eaf26,2f28e4f9-a4f3-40a6-9909-b69f3df32535
+title: Gatewatcher AionIQ (Legacy)
 name: Gatewatcher AionIQ (Legacy)
 type: intake
+---
 
 ## Overview
 

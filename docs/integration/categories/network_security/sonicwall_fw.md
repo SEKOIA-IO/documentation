@@ -1,6 +1,9 @@
+---
 uuid: ee0b3023-524c-40f6-baf5-b69c7b679887
+title: SonicWall Firewall
 name: SonicWall Firewall
 type: intake
+---
 
 ## Overview
 SonicWall firewalls enable you to identify and control all applications that are running on your network. By identifying applications based on their unique signatures rather than ports or protocols, this additional control improves compliance and data leakage prevention.

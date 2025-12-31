@@ -1,6 +1,9 @@
+---
 uuid: 033cd098-b21b-4c9b-85c4-c8174c307e48
+title: WithSecure Elements
 name: WithSecure Elements
 type: intake
+---
 
 ## Overview
 

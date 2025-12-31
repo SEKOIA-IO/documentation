@@ -1,6 +1,9 @@
+---
 uuid: dbebefdd-dd2e-48a9-89e6-ee5a00ee0956
+title: Veeam Backup
 name: Veeam Backup
 type: intake
+---
 
 ## Overview
 - **Vendor**: Veeam

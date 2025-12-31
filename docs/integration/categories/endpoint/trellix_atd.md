@@ -1,6 +1,9 @@
+---
 uuid: ff575606-1cec-4d9f-8e08-d02dd9100af8
+title: Trellix Advanced Threat Defense [ Beta ]
 name: Trellix Advanced Threat Defense [ Beta ]
 type: intake
+---
 
 ## Overview
 

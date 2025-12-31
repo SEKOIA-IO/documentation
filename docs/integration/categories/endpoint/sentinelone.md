@@ -1,6 +1,9 @@
+---
 uuid: 07c556c0-0675-478c-9803-e7990afe78b6
+title: SentinelOne
 name: SentinelOne
 type: intake
+---
 
 ## Overview
 

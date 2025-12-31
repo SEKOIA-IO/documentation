@@ -1,6 +1,9 @@
+---
 uuid: 05e6f36d-cee0-4f06-b575-9e43af779f9f
+title: Microsoft Defender XDR / Microsoft 365 Defender
 name: Microsoft Defender XDR / Microsoft 365 Defender
 type: intake
+---
 
 ## Overview
 - **Vendor**: Microsoft

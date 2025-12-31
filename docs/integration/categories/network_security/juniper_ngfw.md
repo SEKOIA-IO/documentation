@@ -1,6 +1,9 @@
+---
 uuid: f5f05e2a-32fc-432d-9f00-11f490ae15f4
+title: Juniper NGFW
 name: Juniper NGFW
 type: intake
+---
 
 ## Overview
 

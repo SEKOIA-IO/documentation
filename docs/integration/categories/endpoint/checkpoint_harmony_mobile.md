@@ -1,6 +1,9 @@
+---
 uuid: ff53e0db-059b-4e16-ba90-8c4dbf5cee35
+title: Check Point Harmony Mobile
 name: Check Point Harmony Mobile
 type: intake
+---
 
 ## Overview
 

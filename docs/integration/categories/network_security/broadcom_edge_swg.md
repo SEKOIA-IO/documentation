@@ -1,6 +1,9 @@
+---
 uuid: 2886cd2d-f686-4e7d-9976-250cba2eaf5b
+title: Broadcom Edge Secure Web Gateway
 name: Broadcom Edge Secure Web Gateway
 type: intake
+---
 
 ## Overview
 

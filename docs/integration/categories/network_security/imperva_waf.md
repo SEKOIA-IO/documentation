@@ -1,6 +1,9 @@
+---
 uuid: d9f337a4-1303-47d4-b15f-1f83807ff3cc
+title: Imperva Web Application Firewall
 name: Imperva Web Application Firewall
 type: intake
+---
 
 ## Overview
 

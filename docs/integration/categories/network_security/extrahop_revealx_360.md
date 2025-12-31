@@ -1,6 +1,9 @@
+---
 uuid: 1df44c62-33d3-41d4-8176-f1fa13589eea
+title: ExtraHop Reveal(x) 360
 name: ExtraHop Reveal(x) 360
 type: intake
+---
 
 ## Overview
 

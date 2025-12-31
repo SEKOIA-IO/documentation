@@ -1,6 +1,9 @@
+---
 uuid: 46e14ac3-0b79-42d6-8630-da4fcdb8d5f1
+title: Jizo AI / Sesame it NDR
 name: Jizo AI / Sesame it NDR
 type: intake
+---
 
 ## Overview
 Jizo AI / Sesame it NDR is a network observability platform that enables decision-makers to anticipate, identify and block cyber-attacks.

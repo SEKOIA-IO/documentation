@@ -1,6 +1,9 @@
+---
 uuid: 5a8ef52f-d143-4735-8546-98539fc07725
+title: Umbrella Proxy Logs
 name: Umbrella Proxy Logs
 type: intake
+---
 
 ## Overview
 

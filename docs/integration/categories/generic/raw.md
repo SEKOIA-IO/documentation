@@ -1,6 +1,9 @@
+---
 uuid: b6323683-c23f-4d2f-9606-aeb55c5d0e8f
+title: Raw
 name: Raw
 type: intake
+---
 
 ## Overview
 - **Detection based on**: Telemetry

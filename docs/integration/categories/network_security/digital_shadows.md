@@ -1,6 +1,9 @@
+---
 uuid: ccf942fe-c839-42be-a081-5c3f946e80f5
+title: Digital Shadows SearchLight
 name: Digital Shadows SearchLight
 type: intake
+---
 
 ## Overview
 

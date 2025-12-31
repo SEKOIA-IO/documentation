@@ -1,6 +1,9 @@
+---
 uuid: b2e2e2c7-1a3e-4b7a-9c2d-8e4f3a6b7c9d
+title: Okta User
 name: Okta User
 type: asset
+---
 
 ## Overview
 
