@@ -1,6 +1,9 @@
+---
 uuid: 995d7daf-4e4a-42ec-b90d-9af2f7be7019
+title: Cisco Meraki MX
 name: Cisco Meraki MX
 type: intake
+---
 
 ## Overview
 

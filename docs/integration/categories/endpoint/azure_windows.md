@@ -1,6 +1,9 @@
+---
 uuid: 2815eaab-2425-4eff-8038-3f7d5a3b8b11
+title: Azure Windows
 name: Azure Windows
 type: intake
+---
 
 ## Overview
 Azure Virtual Machines service is developed and managed by Microsoft Corp.

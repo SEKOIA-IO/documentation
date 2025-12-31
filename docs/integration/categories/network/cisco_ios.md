@@ -1,6 +1,9 @@
+---
 uuid: 700f332f-d515-4bc5-8a62-49fa5f2c9206
+title: Cisco IOS
 name: Cisco IOS
 type: intake
+---
 
 ## Overview
 

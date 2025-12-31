@@ -1,6 +1,9 @@
+---
 uuid: e6bb2404-8fc8-4124-a785-c1276277b5d7
+title: Okta System log
 name: Okta System log
 type: intake
+---
 
 
 ## Overview

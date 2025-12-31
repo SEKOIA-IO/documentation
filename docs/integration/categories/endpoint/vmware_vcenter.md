@@ -1,6 +1,9 @@
+---
 uuid: 0642b03a-9d4a-4c88-a5e2-4597e366b8c4
+title: VMWare VCenter
 name: VMWare VCenter
 type: intake
+---
 
 ## Overview
 - **Vendor**:

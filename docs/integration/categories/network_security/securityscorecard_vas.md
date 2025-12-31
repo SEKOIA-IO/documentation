@@ -1,6 +1,9 @@
+---
 uuid: 8f472113-ba5b-45b9-9a2c-944834396333
+title: Security Scorecard Vunerability Assessment Scanner
 name: Security Scorecard Vunerability Assessment Scanner
 type: intake
+---
 
 ## Overview
 SecurityScorecard's Vulnerability Assessment Scanner is a tool designed to identify and assess vulnerabilities in an

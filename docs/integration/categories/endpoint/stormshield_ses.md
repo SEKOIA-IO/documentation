@@ -1,6 +1,9 @@
+---
 uuid: f5e6cf5e-bd9f-4caf-9098-fe4a9e0aeaa0
+title: Stormshield SES
 name: Stormshield SES
 type: intake
+---
 
 ## Overview
 

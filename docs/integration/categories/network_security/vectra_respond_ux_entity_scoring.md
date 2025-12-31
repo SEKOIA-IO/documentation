@@ -1,6 +1,9 @@
+---
 uuid: 48146ba4-4c79-4aa9-8eb3-660e984bda95
+title: Vectra Response UX Entity Scoring
 name: Vectra Response UX Entity Scoring
 type: intake
+---
 
 ## Overview
 Vectra Respond UX delivers an intuitive, AI-driven interface for seamless threat investigation and response. It provides real-time visibility, guided workflows and automated remediation actions to accelerate incident resolution.

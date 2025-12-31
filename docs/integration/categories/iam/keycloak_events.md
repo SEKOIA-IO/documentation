@@ -1,6 +1,9 @@
+---
 uuid: cc1b212e-80c2-4dde-8446-2e194c6d4e80
+title: Keycloak
 name: Keycloak
 type: intake
+---
 
 ## Overview
 

@@ -1,6 +1,9 @@
+---
 uuid: 916c13a8-c109-49f0-94db-d6a2300f5580
+title: Fastly Next-Gen WAF
 name: Fastly Next-Gen WAF
 type: intake
+---
 
 
 ## Overview

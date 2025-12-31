@@ -1,6 +1,9 @@
+---
 uuid: 8461aabe-6eba-4044-ad7f-a0c39a2b2279
+title: Office 365 Message Trace
 name: Office 365 Message Trace
 type: intake
+---
 
 ## Overview
 - **Vendor**: Microsoft

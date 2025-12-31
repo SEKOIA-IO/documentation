@@ -1,6 +1,9 @@
+---
 uuid: d1d24b7a-c6a7-482d-8334-affc0a11dedd
+title: F5 Distributed Cloud
 name: F5 Distributed Cloud
 type: intake
+---
 
 ## Overview
 

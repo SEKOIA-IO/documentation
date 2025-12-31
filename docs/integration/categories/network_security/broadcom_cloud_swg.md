@@ -1,6 +1,9 @@
+---
 uuid: d626fec3-473a-44b3-9e3d-587fdd99a421
+title: Broadcom Cloud Secure Web Gateway
 name: Broadcom Cloud Secure Web Gateway
 type: intake
+---
 
 ## Overview
 

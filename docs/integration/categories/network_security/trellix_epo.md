@@ -1,6 +1,9 @@
+---
 uuid: ba40ab72-1456-11ee-be56-0242ac120002
+title: Trellix ePO
 name: Trellix ePO
 type: intake
+---
 
 ## Overview
 

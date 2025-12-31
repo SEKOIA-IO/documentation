@@ -1,6 +1,9 @@
+---
 uuid: e8cb3372-41c8-409f-8e0e-ca4e6cecf7e6
+title: IBM AIX
 name: IBM AIX
 type: intake
+---
 
 ## Overview
 

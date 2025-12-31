@@ -1,6 +1,9 @@
+---
 uuid: ae62a8c4-11f8-4aea-af5b-6968f8ac04ba
+title: Azure Key Vault
 name: Azure Key Vault
 type: intake
+---
 
 ## Overview
 

@@ -1,6 +1,9 @@
+---
 uuid: e4a758fc-7620-49e6-b8ed-b7fb3d7fa232
+title: Vade M365
 name: Vade M365
 type: intake
+---
 
 ## Overview
 

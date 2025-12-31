@@ -1,6 +1,9 @@
+---
 uuid: 622999fe-d383-4d41-9f2d-eed5013fe463
+title: SonicWall SMA
 name: SonicWall SMA
 type: intake
+---
 
 ## Overview
 SonicWall Secure Mobile Access offers secure and seamless remote access to corporate resources, applications, and data, enhancing workforce mobility while maintaining robust security and compliance measures.

@@ -1,6 +1,9 @@
+---
 uuid: dc0f339f-5dbe-4e68-9fa0-c63661820941
+title: Zscaler Internet Access
 name: Zscaler Internet Access
 type: intake
+---
 
 ## Overview
 Zscaler Internet Access is a cloud-native security platform that delivers secure and direct internet access for users and devices, providing real-time protection against cyber threats while enabling secure and efficient web access from anywhere.

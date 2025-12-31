@@ -1,6 +1,9 @@
+---
 uuid: ea265b9d-fb48-4e92-9c26-dcfbf937b630
+title: Palo Alto Prisma Access
 name: Palo Alto Prisma Access
 type: intake
+---
 
 ## Overview
 

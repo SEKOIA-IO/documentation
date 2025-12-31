@@ -1,6 +1,9 @@
+---
 uuid: de9ca004-991e-4f5c-89c5-e075f3fb3216
+title: Netskope Events
 name: Netskope Events
 type: intake
+---
 
 
 ## Overview

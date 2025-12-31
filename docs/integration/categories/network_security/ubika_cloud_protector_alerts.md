@@ -1,6 +1,9 @@
+---
 uuid: d0383e87-e054-4a21-8a2c-6a89635d8615
+title: Ubika Cloud Protector Alerts
 name: Ubika Cloud Protector Alerts
 type: intake
+---
 
 ## Overview
 

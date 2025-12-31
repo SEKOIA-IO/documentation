@@ -1,6 +1,9 @@
+---
 uuid: ff575606-1cec-4d9f-8e08-d02dd9100af8
 name: Trellix Advanced Threat Defense
+title: Trellix Advanced Threat Defense
 type: intake
+---
 
 ## Overview
 
@@ -50,7 +53,7 @@ The Advanced Threat Defense Appliances are purpose-built, scalable, and flexible
 > Note: When HTTPS Session Log is enabled, Advanced Threat Defense web performance is impacted.
 4. From the drop-down menu, select TCP
 > Note, if your security policy requires extra-security (ex: tls) between the application and the syslog forwarder,    modify the configuration accordingly
-5. Click **Enable Syslog** 
+5. Click **Enable Syslog**
 6. Type in the IP and port of the forwarder you want the logs sent to.
 7. Click **Test Connection** and expect a "Test connection successful" message.
 8. Click **Submit**

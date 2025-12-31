@@ -1,6 +1,9 @@
+---
 uuid: ee6364a1-9e3c-4363-9cb6-2f574bd4ce51
+title: Panda Security Aether
 name: Panda Security Aether
 type: intake
+---
 
 ## Overview
 - **Vendor**:

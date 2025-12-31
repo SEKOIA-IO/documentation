@@ -1,6 +1,9 @@
+---
 uuid: a0716ffd-5f9e-4b97-add4-30f1870e3d03
+title: Netskope Transaction Events
 name: Netskope Transaction Events
 type: intake
+---
 
 ## Overview
 
