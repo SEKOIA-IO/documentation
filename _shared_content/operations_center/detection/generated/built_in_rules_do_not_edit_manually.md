@@ -1,4 +1,4 @@
-Rules catalog includes **1059 built-in detection rules** ([_last update on 2025-12-31_](rules_changelog.md)).
+Rules catalog includes **1059 built-in detection rules** ([_last update on 2026-01-02_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Identity Information**
 
@@ -12535,6 +12535,7 @@ Rules catalog includes **1059 built-in detection rules** ([_last update on 2025-
     - **Changelog:**
     
         - 01/10/2024 - major - Update the pattern following changes in the phishing kit.
+        - 31/12/2025 - major - Change the similarity strategy to user.id instead of user.email.
             
 ??? abstract "EvilProxy Phishing Domain"
     
@@ -12860,6 +12861,7 @@ Rules catalog includes **1059 built-in detection rules** ([_last update on 2025-
     - **Changelog:**
     
         - 01/10/2024 - major - Update the pattern following changes in the phishing kit.
+        - 31/12/2025 - major - Change the similarity strategy to user.id instead of user.email.
             
 ??? abstract "EvilProxy Phishing Domain"
     
@@ -14038,6 +14040,10 @@ Rules catalog includes **1059 built-in detection rules** ([_last update on 2025-
     
     - **Effort:** elementary
     
+    - **Changelog:**
+    
+        - 31/12/2025 - minor - Add a domain name to the pattern
+            
 ??? abstract "Outlook Registry Access"
     
     Detection of accesses to Microsoft Outlook registry hive, which might contain sensitive information.
@@ -14136,6 +14142,7 @@ Rules catalog includes **1059 built-in detection rules** ([_last update on 2025-
     - **Changelog:**
     
         - 01/10/2024 - major - Update the pattern following changes in the phishing kit.
+        - 31/12/2025 - major - Change the similarity strategy to user.id instead of user.email.
             
 ??? abstract "EvilProxy Phishing Domain"
     
