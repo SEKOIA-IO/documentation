@@ -1,7 +1,14 @@
-Changelog _last update on 2025-12-31_
+Changelog _last update on 2026-01-02_
 
 ## Changelog
 
+### Entra ID Sign-In Via Known AiTM Phishing Kit (Tycoon 2FA)
+  - 31/12/2025 - major - Change the similarity strategy to user.id instead of user.email.
+  - 01/10/2024 - major - Update the pattern following changes in the phishing kit.
+    
+### Microsoft 365 Email Forwarding To Privacy Email Address
+  - 31/12/2025 - minor - Add a domain name to the pattern
+    
 ### Csrss Child Found
   - 23/12/2025 - minor - Rule was moved to advanced effort level considering the number of alerts and addtional filters were added.
   - 16/12/2024 - minor - Improve pattern mandatory fields and add filter to reduce false positives
@@ -734,9 +741,6 @@ Changelog _last update on 2025-12-31_
     
 ### Interactive Terminal Spawned via Python
   - 02/10/2024 - major - Rule's pattern changed
-    
-### Entra ID Sign-In Via Known AiTM Phishing Kit (Tycoon 2FA)
-  - 01/10/2024 - major - Update the pattern following changes in the phishing kit.
     
 ### Suspicious URL Requested By Curl Or Wget Commands
   - 23/09/2024 - major - Fixed an issue with the detection pattern.
