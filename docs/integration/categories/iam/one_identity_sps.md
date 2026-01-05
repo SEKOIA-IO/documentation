@@ -55,7 +55,7 @@ Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a n
 
 ![Step 5](/assets/integration/iam/oneidentity_sps/Step 05.webp){: style="max-width:100%"}
 
-{!_shared_content/operations_center/integrations/generated/94d4ef59-638c-4230-b38d-e4a1381db8ed.md!}
+{!_shared_content/operations_center/integrations/generated/94d4ef59-638c-4230-b38d-e4a1381db8ed_sample.md!}
 
 {!_shared_content/integration/detection_section.md!}
 
