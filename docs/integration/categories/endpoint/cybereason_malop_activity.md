@@ -39,7 +39,7 @@ Contact the Cybereason Customer Success Manager to get the Cybereason CEF Forwar
 
 Connect to the [Cybereason Partner Nest](https://nest.cybereason.com/user/login) and follow [these instructions](https://nest.cybereason.com/s/article/arcsight-configure) for the installation of the CEF forwarder.
 
-Create a new configuration file and fill `host` and `port` with the address and the listening port of the syslog collector.
+Create or edit the configuration file (e.g: `cybereason-forwarders/config/sample_config.json`) and fill `host` and `port` with the address and the listening port of the syslog collector.
 
 ### Rebuild the Docker image
 
