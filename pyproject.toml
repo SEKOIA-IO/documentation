@@ -17,7 +17,7 @@ dependencies = [
 
 [dependency-groups]
 upload = [
-    "python-keystoneclient==5.1.0",
+    "python-keystoneclient==5.7.0",
     "python-swiftclient==4.3.0",
 ]
 
