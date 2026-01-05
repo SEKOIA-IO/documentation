@@ -28,7 +28,7 @@ A key requirement for this configuration is the Base DN, which defines the start
 
 - `Base DN`: This identifies the specific container or domain level where the connector starts looking for users.
       
-      Example: OU=Users,DC=company,DC=com
+  Example: `OU=Users,DC=company,DC=com`
 
 !!! Warning 
         Ensure that the account used has a password that does not expire, or remember to update the connector settings in Sekoia.io whenever the password is changed, otherwise the synchronization will fail.
