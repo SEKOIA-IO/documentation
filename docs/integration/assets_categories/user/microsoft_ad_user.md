@@ -18,7 +18,7 @@ To connect your on-premise Active Directory to Sekoia.io, ensure the following r
 
 1. `Account Credentials`: A valid admin account.
 
-2. `Network Connectivity: Ensure port 636 (LDAPS) is open between your network and the Sekoia.io ingestion point to allow secure communication.
+2. `Network Connectivity`: Ensure port 636 (LDAPS) is open between your network and the Sekoia.io ingestion point to allow secure communication.
 
 ### Create connector configuration
 
