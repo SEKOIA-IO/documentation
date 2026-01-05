@@ -18,19 +18,19 @@ To connect Microsoft Entra ID to Sekoia.io, you need to create an app registrati
 
 1. Sign in to the Azure portal and navigate to Microsoft Entra ID.
 
-    ![Azure portal Microsoft Entra ID section](/assets/operation_center/asset_connectors/user/microsoft/entra_id_application_1.png)
+    ![Azure portal Microsoft Entra ID section](/assets/operation_center/asset_connectors/user/microsoft/entra_id/entra_id_application_1.png)
 
 2. Click **App registrations** in the left navigation pane, then click **New registration**.
 
-    ![App registrations page with New registration button highlighted](/assets/operation_center/asset_connectors/user/microsoft/entra_id_application_2.png)
+    ![App registrations page with New registration button highlighted](/assets/operation_center/asset_connectors/user/microsoft/entra_id/entra_id_application_2.png)
 
 3. Enter a name for the application (e.g., `sekoia-user-reader`) and click **Register**.
 
-    ![App registration form with name field](/assets/operation_center/asset_connectors/user/microsoft/entra_id_application_3.png)
+    ![App registration form with name field](/assets/operation_center/asset_connectors/user/microsoft/entra_id/entra_id_application_3.png)
 
 4. Copy the **Application (client) ID** and **Directory (tenant) ID** to a safe location. You'll need these values to configure the connector in Sekoia.io.
 
-    ![App registration overview with client and tenant IDs](/assets/operation_center/asset_connectors/user/microsoft/entra_id_application_4.png)
+    ![App registration overview with client and tenant IDs](/assets/operation_center/asset_connectors/user/microsoft/entra_id/entra_id_application_4.png)
 
 ### How to generate a client secret
 
@@ -40,15 +40,15 @@ After creating the app registration, you need to generate a client secret for au
 
 2. Click **New client secret** to generate a new secret.
 
-    ![New client secret button highlighted](/assets/operation_center/asset_connectors/user/microsoft/entra_id_application_5.png)
+    ![New client secret button highlighted](/assets/operation_center/asset_connectors/user/microsoft/entra_id/entra_id_application_5.png)
 
 3. Enter a description for the secret (e.g., `sekoia-connector-secret`) and select an expiration period, then click **Add**.
 
-    ![Client secret creation form](/assets/operation_center/asset_connectors/user/microsoft/entra_id_application_6.png)
+    ![Client secret creation form](/assets/operation_center/asset_connectors/user/microsoft/entra_id/entra_id_application_6.png)
 
 4. Copy the **Value** of the client secret to a safe location. You'll need this secret to configure the connector in Sekoia.io.
 
-    ![Client secret value display](/assets/operation_center/asset_connectors/user/microsoft/entra_id_application_7.png)
+    ![Client secret value display](/assets/operation_center/asset_connectors/user/microsoft/entra_id/entra_id_application_7.png)
 
 !!! Warning
     - The client secret value is only shown when you create it. If you lose it, you must create a new client secret.
@@ -87,11 +87,11 @@ To grant the required permissions to your app registration:
 
 2. Click **Add a permission** to add new permissions.
 
-    ![Add a permission button highlighted](/assets/operation_center/asset_connectors/user/microsoft/entra_id_application_8.png)
+    ![Add a permission button highlighted](/assets/operation_center/asset_connectors/user/microsoft/entra_id/entra_id_application_8.png)
 
 3. Select **Microsoft Graph** as the API.
 
-    ![Microsoft Graph API selection](/assets/operation_center/asset_connectors/user/microsoft/entra_id_application_9.png)
+    ![Microsoft Graph API selection](/assets/operation_center/asset_connectors/user/microsoft/entra_id/entra_id_application_9.png)
 
 4. Select **Application permissions** and search for the required permissions:
 
@@ -101,7 +101,7 @@ To grant the required permissions to your app registration:
       - `Directory.Read.All`
       - `UserAuthenticationMethod.Read.All`
 
-    ![Application permissions selection](/assets/operation_center/asset_connectors/user/microsoft/entra_id_application_10.png)
+    ![Application permissions selection](/assets/operation_center/asset_connectors/user/microsoft/entra_id/entra_id_application_10.png)
 
 5. Click **Add permissions** to add the selected permissions.
 
@@ -121,7 +121,7 @@ To start getting your Microsoft Entra ID users into Sekoia.io, you need to creat
 
 3. Choose **Microsoft Entra ID User**, give it a name, and fill the required fields:
 
-    ![Microsoft Entra ID User connector configuration form](/assets/operation_center/asset_connectors/user/microsoft/entra_id_asset_1.png)
+    ![Microsoft Entra ID User connector configuration form](/assets/operation_center/asset_connectors/user/microsoft/entra_id/entra_id_asset_1.png)
 
 4. Enter the following information:
 
@@ -131,7 +131,7 @@ To start getting your Microsoft Entra ID users into Sekoia.io, you need to creat
 
 5. Test the connection by clicking the **Test connector** button.
 
-    ![Connector test result and Create asset connector button highlighted](/assets/operation_center/asset_connectors/user/microsoft/entra_id_asset_2.png)
+    ![Connector test result and Create asset connector button highlighted](/assets/operation_center/asset_connectors/user/microsoft/entra_id/entra_id_asset_2.png)
 
 6. Click the **Create asset connector** button.
 
