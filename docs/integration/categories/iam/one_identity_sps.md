@@ -22,7 +22,7 @@ This setup guide will show you how to forward your One Identity SPS logs to Seko
 
 ### Prerequisites
 
-- Have an internal log concentrator (e.g., Sekoia.io forwarder,  Rsyslog, Syslog-NG, etc.) to receive the logs from One Identity SPS and forward them to Sekoia.io.
+- Have an internal log concentrator (e.g., Sekoia.io forwarder, Rsyslog, Syslog-NG, etc.) to receive the logs from One Identity SPS and forward them to Sekoia.io.
 
 ### Create the intake
 
@@ -48,8 +48,8 @@ Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a n
 ![Step 4](/assets/integration/iam/oneidentity_sps/Step 04.webp){: style="max-width:100%"}
 
 6. Name the destination (e.g., `Sekoia.io`).
-7, In the `Address` field, enter the IP address or hostname of your internal log concentrator.
-8. In the `Port` field, enter the port number for the intake
+7. In the `Address` field, enter the IP address or hostname of your internal log concentrator.
+8. In the `Port` field, enter the port number for the intake.
 9. Select `CEF` as the `Format`.
 10. Click `Commit` to apply the changes.
 
@@ -64,6 +64,6 @@ Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a n
 
 {!_shared_content/operations_center/integrations/generated/94d4ef59-638c-4230-b38d-e4a1381db8ed.md!}
 
-## Further readings
+## Further Readings
 
 - [One Identity Safeguard for Privileged Sessions - Forwarding data to third-party systems](https://support.oneidentity.com/fr-fr/technical-documents/one-identity-safeguard-for-privileged-sessions/7.4/administration-guide/30#TOPIC-2065507)
