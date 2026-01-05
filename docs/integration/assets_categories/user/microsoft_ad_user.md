@@ -47,7 +47,7 @@ To start getting your Microsoft Active Directory users into Sekoia.io, you need 
 
 3. Choose **Fetch user assets from Microsoft Active Directory**, give it a name, and fill the required fields:
 
-    ![Microsoft Entra ID User connector configuration form](/assets/operation_center/asset_connectors/user/microsoft/active_directory/connector_in_catalogue.png)
+    ![Microsoft Active Directory User connector configuration form](/assets/operation_center/asset_connectors/user/microsoft/active_directory/connector_in_catalogue.png)
 
 4. Enter the following information:
 
