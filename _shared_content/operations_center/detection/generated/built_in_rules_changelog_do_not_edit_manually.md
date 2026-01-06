@@ -1,7 +1,11 @@
-Changelog _last update on 2026-01-02_
+Changelog _last update on 2026-01-06_
 
 ## Changelog
 
+### Suspicious desktop.ini Action
+  - 06/01/2026 - minor - Adding some filters
+  - 30/04/2024 - minor - Adding some filters
+    
 ### Entra ID Sign-In Via Known AiTM Phishing Kit (Tycoon 2FA)
   - 31/12/2025 - major - Change the similarity strategy to user.id instead of user.email.
   - 01/10/2024 - major - Update the pattern following changes in the phishing kit.
@@ -923,9 +927,6 @@ Changelog _last update on 2026-01-02_
     
 ### Login Brute-Force On Sekoia.io
   - 22/05/2024 - minor - Switch the group-by clause to a sekoiaio uuid field.
-    
-### Suspicious desktop.ini Action
-  - 30/04/2024 - major - Adding some filters
     
 ### Microsoft 365 Email Forwarding To Consumer Email Address
   - 22/04/2024 - minor - Add zohomail.com
