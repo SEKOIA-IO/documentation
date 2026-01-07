@@ -157,7 +157,7 @@ The following Sekoia.io built-in rules match the intake **Microsoft 365 / Office
     
     Discord is a messaging application. It allows users to create their own communities to share messages and attachments. Those attachments have little to no overview and can be downloaded by almost anyone, which has been abused by attackers to host malicious payloads.
     
-    - **Effort:** intermediate
+    - **Effort:** advanced
 
 ??? abstract "Discovery Commands Correlation"
     
@@ -171,23 +171,23 @@ The following Sekoia.io built-in rules match the intake **Microsoft 365 / Office
     
     - **Effort:** advanced
 
-??? abstract "Download Files From Non-Legitimate TLDs"
-    
-    Detects file downloads from non-legitimate TLDs. Additional legitimates TLDs should be filtered according to the business habits.
-    
-    - **Effort:** master
-
-??? abstract "Download Files From Suspicious TLDs"
-    
-    Detects download of certain file types from hosts in suspicious TLDs
-    
-    - **Effort:** master
-
 ??? abstract "Dynamic DNS Contacted"
     
     Detect communication with dynamic dns domain. This kind of domain is often used by attackers. This rule can trigger false positive in non-controlled environment because dynamic dns is not always malicious.
     
     - **Effort:** master
+
+??? abstract "Elevated Shell Launched By Browser"
+    
+    Detects when openwith.exe is launched with privileges followed by a browser launching an elevated shell. Related to the CVE-2024-38014.
+    
+    - **Effort:** master
+
+??? abstract "Enable Root Account With Dsenableroot"
+    
+    Detects when root is enabled. Attackers can use this as a mean of persistence since root is disabled by default.
+    
+    - **Effort:** elementary
 
 ??? abstract "Entra ID Consent Attempt to Suspicious OAuth Application"
     
@@ -201,15 +201,45 @@ The following Sekoia.io built-in rules match the intake **Microsoft 365 / Office
     
     - **Effort:** elementary
 
-??? abstract "Entra ID Sign-In Via Known AiTM Phishing Kit"
+??? abstract "Entra ID Password Compromised Via Seamless SSO Credential Testing"
     
-    Detects a sign-in attempt from an IP address belonging to a known adversary-in-the-middle phishing kit.
+    Detects a sign-in using the Entra ID Seamless SSO `usernamemixed` endpoint. This endpoint is rarely used legitimately, and often abused by credential testing tools. Note that even if the sign-in was blocked by MFA (error 50074) or device authentication (error 50097), these verifications only occur after the correct password was submitted. The account's password must still be considered compromised, and be changed.
     
     - **Effort:** elementary
 
-??? abstract "Entra ID Sign-In Via Known AiTM Phishing Kit (RED0046)"
+??? abstract "Entra ID Sign-In Via Known AiTM Phishing Kit (CEPHAS 2FA)"
     
-    Detects a sign-in attempt with known characteristics of the adversary-in-the-middle phishing kit tracked by Sekoia.io as RED0046.
+    Detects a sign-in attempt with known characteristics of the adversary-in-the-middle phishing kit CEPHAS 2FA.
+    
+    - **Effort:** elementary
+
+??? abstract "Entra ID Sign-In Via Known AiTM Phishing Kit (Gabagool)"
+    
+    Detects a sign-in attempt with known characteristics of the adversary-in-the-middle phishing kit Gabagool. The `filter_password_spraying` exclusion corresponds to a password spraying tool which is already detected by the rule `Entra ID Password Compromised By Known Credential Testing Tool`.
+    
+    - **Effort:** elementary
+
+??? abstract "Entra ID Sign-In Via Known AiTM Phishing Kit (Greatness)"
+    
+    Detects a sign-in attempt with known characteristics of the adversary-in-the-middle phishing kit Greatness.
+    
+    - **Effort:** elementary
+
+??? abstract "Entra ID Sign-In Via Known AiTM Phishing Kit (Mamba 2FA)"
+    
+    Detects a sign-in attempt with known characteristics of the adversary-in-the-middle phishing kit tracked by Sekoia.io as Mamba 2FA.
+    
+    - **Effort:** elementary
+
+??? abstract "Entra ID Sign-In Via Known AiTM Phishing Kit (Rockstar 2FA)"
+    
+    Detects a sign-in attempt with known characteristics of the adversary-in-the-middle phishing kit Rockstar 2FA.
+    
+    - **Effort:** elementary
+
+??? abstract "Entra ID Sign-In Via Known AiTM Phishing Kit (Sneaky 2FA)"
+    
+    Detects a sign-in attempt with an impossible device shift characteristic of the adversary-in-the-middle phishing kit Sneaky 2FA.
     
     - **Effort:** elementary
 
@@ -235,41 +265,41 @@ The following Sekoia.io built-in rules match the intake **Microsoft 365 / Office
     
     Detect the creation of a ZIP file and an HTA file as it is often used in infection chains. Furthermore it also detects the use of suspicious processes launched by explorer.exe combined with the creation of an HTA file, since it is also often used in infection chains (LNK - HTA for instance).
     
-    - **Effort:** intermediate
+    - **Effort:** advanced
 
 ??? abstract "HTML Smuggling Suspicious Usage"
     
     Based on several samples from different botnets, this rule aims at detecting HTML infection chain by looking for HTML created files followed by suspicious files being executed.
     
-    - **Effort:** intermediate
+    - **Effort:** advanced
 
 ??? abstract "HackTools Suspicious Names"
     
     Quick-win rule to detect the default process names or file names of several HackTools.
     
-    - **Effort:** elementary
+    - **Effort:** advanced
 
 ??? abstract "ISO LNK Infection Chain"
     
     Detection of an ISO (or any other similar archive file) downloaded file, followed by a child-process of explorer, which is characteristic of an infection using an ISO containing an LNK file. For events with `host.name`.
     
+    - **Effort:** master
+
+??? abstract "Impacket Addcomputer"
+    
+    Detects suspicious computer account creation based on impacket default pattern
+    
     - **Effort:** intermediate
 
 ??? abstract "Kernel Module Alteration"
     
-    Kernel module installation can be used to configure system settings to automatically execute a program during system boot or logon to maintain persistence or gain higher-level privileges on compromised systems.
+    Kernel module installation can be used to configure system settings to automatically execute a program during system boot or logon to maintain persistence or gain higher-level privileges on compromised systems. The prerequisites are to enable monitoring of the finit_module, init_module, delete_module syscalls using Auditbeat.
     
     - **Effort:** advanced
 
 ??? abstract "Koadic MSHTML Command"
     
     Detects Koadic payload using MSHTML module
-    
-    - **Effort:** intermediate
-
-??? abstract "MSBuild Abuse"
-    
-    Detection of MSBuild uses by attackers to infect an host. Focuses on XML compilation which is a Metasploit payload, and on connections made by this process which is unusual.
     
     - **Effort:** intermediate
 
@@ -423,6 +453,18 @@ The following Sekoia.io built-in rules match the intake **Microsoft 365 / Office
     
     - **Effort:** elementary
 
+??? abstract "Microsoft 365 Security and Compliance Center High Severity Alert"
+    
+    A security or compliance-related alert of high severity was raised, based on the policies of the tenant. This rule can be very noisy depending on the configuration of the tenant. Alert filters are likely required. In addition, most alerts don't include any context, and are only useful if the analysts have access to the Microsoft portals to investigate.
+    
+    - **Effort:** master
+
+??? abstract "Microsoft 365 Security and Compliance Center Medium Severity Alert"
+    
+    A security or compliance-related alert of medium severity was raised, based on the policies of the tenant. This rule can be very noisy depending on the configuration of the tenant. Alert filters are likely required. In addition, most alerts don't include any context, and are only useful if the analysts have access to the Microsoft portals to investigate.
+    
+    - **Effort:** master
+
 ??? abstract "Microsoft 365 Sign-in With No User Agent"
     
     Detects a sign-in without any User-Agent header. This may indicate that the sign-in originated from an adversary-in-the-middle phishing page or a password spraying tool. Sign-ins happening through a regular web browser always have a User-Agent header. Investigate the source IP address. If it is unknown, assume that the account's password is compromised.
@@ -529,7 +571,7 @@ The following Sekoia.io built-in rules match the intake **Microsoft 365 / Office
     
     This event can be a sign of Kerberos replay attack or, among other things, network device configuration or routing problems.
     
-    - **Effort:** intermediate
+    - **Effort:** master
 
 ??? abstract "Potential Bazar Loader User-Agents"
     
@@ -555,15 +597,15 @@ The following Sekoia.io built-in rules match the intake **Microsoft 365 / Office
     
     - **Effort:** advanced
 
-??? abstract "RDP Session Discovery"
+??? abstract "RDP Configuration File From Mail Process"
     
-    Detects use of RDP session discovery via qwinsta or quser. Used by some threat actors to know if someone is working via RDP on a server.
+    Detects RDP configuration file being created or executed by a Mail-related process like Outlook. RDP configuration file will allow, when opened, an user to connect to the configured server easily. Attackers use this to trick victims in order to get a shared drive and potentially retrieve the data from that drive, but also drop a malicious file on the drive to establish persistence. Using RDP can also expose the victim's credential and clipboard data on some cases.
     
     - **Effort:** advanced
 
-??? abstract "RSA SecurID Failed Authentification"
+??? abstract "RDP Session Discovery"
     
-    Detects many failed attempts to authenticate followed by a successfull login for a super admin account.
+    Detects use of RDP session discovery via qwinsta or quser. Used by some threat actors to know if someone is working via RDP on a server.
     
     - **Effort:** advanced
 
@@ -609,17 +651,11 @@ The following Sekoia.io built-in rules match the intake **Microsoft 365 / Office
     
     - **Effort:** master
 
-??? abstract "Socat Relaying Socket"
+??? abstract "Sign-In Via Known AiTM Phishing Kit"
     
-    Socat is a linux tool used to relay local socket or internal network connection, this technics is often used by attacker to bypass security equipment such as firewall
+    Detects a sign-in attempt from an IP address belonging to a known adversary-in-the-middle phishing kit.
     
-    - **Effort:** advanced
-
-??? abstract "Socat Reverse Shell Detection"
-    
-    Socat is a linux tool used to relay or open reverse shell that is often used by attacker to bypass security equipment.
-    
-    - **Effort:** intermediate
+    - **Effort:** elementary
 
 ??? abstract "SolarWinds Suspicious File Creation"
     
@@ -641,9 +677,9 @@ The following Sekoia.io built-in rules match the intake **Microsoft 365 / Office
 
 ??? abstract "Suspicious Email Attachment Received"
     
-    Detects email containing an .exe|.dll|.ps1|.bat|.hta attachment. Most of the time files send by mail like this are malware.
+    Detects email containing a suspicious file as an attachment, based on its extension.
     
-    - **Effort:** elementary
+    - **Effort:** advanced
 
 ??? abstract "Suspicious File Name"
     

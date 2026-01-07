@@ -4,81 +4,123 @@ Once your event logs are collected and normalized by Sekoia.io, you probably wan
 
 All rules are applied to your event stream in real-time, so that you can detect - and respond to - threats as fast as possible.
 
-Please check the [dedicated FAQ page](../../../FAQ/Detection_qa/) related to detection rule strategy.
+Please check the [dedicated FAQ page](/xdr/FAQ/intelligence/Detection_qa.md) related to detection rule strategy.
 
-## Rule Types
+## Detection Rule Types
 
-Sekoia.io supports the following rule types:
+Sekoia.io supports the following detection types:
 
 - **Sigma**: signature rules using the [Sigma detection language](sigma.md)
 - **CTI**: rules based on Indicators Of Compromise (IOCs) coming from a Threat Intelligence feed. These rules automatically detect thousands of known malicious indicators (such as domain names, URLs, IP addresses, etc.). A CTI rule "SEKOIA Intelligence Feed" is already built-in to detect malicious activity based on a list of indicators from Sekoia.io's own Intelligence feed, continuously updated by our Threat & Detection Research team
 - **Anomaly**: [univariate anomaly detection rules](anomaly.md).
-- **STIX** (deprecated): signature rules using the STIX Patterning language
 
 ## Rules Catalog
 The Rules Catalog page can be used to list and manage all detection rules. Many filters are available and can be combined to easily find the rules you are looking for.
 
-![rules_catalog](/assets/operation_center/rules_catalog/rules-catalog-layout.png){: style="max-width:100%"}
-
 !!! tip
-    You can enable or disable rules one by one or all at once according to current filters. 
-
-
+    You can enable or disable rules one by one or all at once according to current filters.
 
 ### Rules Attributes
 
-#### Available and verified rules
-The Rules Catalog lists all detection rules available to your organization: 
-<figure markdown>![available_verified_rules](/assets/operation_center/rules_catalog/available_verified.png){ width=300 }</figure>. 
+#### Available Rules in the Catalog 
+The Rules Catalog lists all detection rules available to your organization:
 
-- **Verified Rules**: rules with the following logo ![verified_logo](/assets/operation_center/rules_catalog/verified_logo.PNG) are verified. These rules are created for you by Sekoia.io's Threat & Detection Research team and already built-in. Verified rules are constantly updated to improve detection. Furthermore, they follow a specific process to test them and be certain they won't cause many false positives. This process is described in our blogpost [XDR detection engineering at scale: crafting detection rules for SecOps efficiency](https://blog.sekoia.io/xdr-detection-rules-at-scale/). This set of more than 550 rules can be used to detect known threats, attack patterns, etc.
-- **Your Rules**: rules created by your team that are specific to your organization.
+| Rule Type                  | Description                                                                                                                                                                                                                                                                                                                                                                         |
+|----------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Sekoia Verified Rules**  | Rules with the valid icon are verified ones. These rules are created by Sekoia.io's Threat & Detection Research team and come built-in. They are continuously updated to enhance detection quality and follow a rigorous process to minimize false positives. This process is detailed in our blogpost [XDR detection engineering at scale: crafting detection rules for SecOps efficiency](https://blog.sekoia.io/xdr-detection-rules-at-scale/). This set includes more than 1000 rules designed to detect known threats, attack patterns, and more. |
+| **Your Rules (Custom)**     | Rules created by your team that are specifically tailored to your organization.                                                                                                                                                                                                                                                                                                      |
+| **Integration Rules (Verified)** | Detection rules designed to monitor and alert on suspicious activity from third-party security tools and platforms integrated with Sekoia.io. Maintained by the Integrations team, these rules are clearly marked with partner branding in the Rules Catalog to help users quickly identify and filter detections originating from external sources.                                                                                     
 
-The Available Rules counter displays the total number of rules (verified + custom). You can click on the `Verified counter` to list only Verified rules.
+#### Effort Level
 
-You can then click on the `Verified filter` if you would rather see only Custom rules.
+All rules are assigned an effort level that increases from **Elementary** to **Master** based on two factors:
 
-#### Effort level
+- The effort required to enable the rule
+- The risk of false positives generated by the rule
 
-All rules have an associated effort level. The effort level is increasing from Elementary to Master according to two criteria:
-![effort_level](/assets/operation_center/rules_catalog/effort_level.png){ align=right }
+### Descriptions of Effort Levels:
 
-- Effort needed to enable a rule.
-- Risk of false positives.
+- **Elementary**: Requires no effort to enable and generates fewer alerts. These rules are designed to be effective while minimizing false positives.
+  
+- **Intermediate**: Similar in effort to Elementary rules but may produce more alerts.
+  
+- **Advanced**: May require more effort to enable and can generate frequent alerts depending on the IT environment configuration.
+  
+- **Master**: May need specific configuration to activate and/or generate a high volume of alerts. These rules are designed to detect subtle signals and usually require customization based on the organization's IT context. They are intended for mature security operations.
 
-Description of each effort level:
+#### Rule Lifecycle 
 
-- `Elementary`: rule requires no effort to enable rule and raises fewer alerts. Those rules are built to be effective and designed to raise as little false positives as possible
-- `Intermediate`: similar to `Elementary` effort but a rule could raise more alerts
-- `Advanced`: rule could require more effort to be enabled and could raise alerts frequently depending on the IT configuration
-- `Master`: rule could require a specific configuration to be enabled and/or could raise a high number of alerts, but is designed to detect weaker signals. `Master` rules usually require an additional customization effort, depending on the IT context and configuration. They are designed for more mature organizations. 
+Each detection rule progresses through a lifecycle that communicates its current status and maintenance plan. Understanding rule lifecycle states helps your security team stay informed about rule changes and maintain an up-to-date detection strategy.
 
-#### Capabilities
+##### Lifecycle States
 
-The rules are also associated with different capabilities:
+Rules in the catalog can exist in one of three states:
 
-- Offensive Capabilities: `threats` or `attack patterns` that they can detect
-- Defensive Capabilities: `data sources` on which they operate
+| Status                    | Description                                                                                                                                          | Key Details                                                                                                                                    |
+|---------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------|
+| **Active**                | The rule is currently maintained and actively detecting threats.                                                                                     | - Continue to receive updates and improvements from rule maintainers<br>- Generate alerts as configured in your detection environment<br>- Are counted in your organization's verified rule coverage metrics |
+| **Scheduled for Deprecation** | Rule owners have flagged a rule for future retirement due to obsolescence, replacement, or maintenance considerations.                              | - A "Valid until" date is displayed on the rule card and detailed view, indicating when the rule will transition to Deprecated status<br>- A warning tag appears on the rule<br>- Users subscribed to deprecation notifications receive an alert<br>- The rule continues to generate alerts until the validity date is reached<br>- Rule owners provide a deprecation reason |
+| **Deprecated**             | The validity date has been reached and the rule is no longer actively maintained.                                                                     | - A prominent warning banner is displayed on the rule card and detailed view<br>- The rule remains enabled unless you disable it<br>- Users subscribed to deprecation notifications receive a final notification<br>- The rule continues to generate alerts until manually disabled or auto-disabled in the catalog |
+ 
+##### How to set deprecation
 
-![capabilities](/assets/operation_center/rules_catalog/rules_capabilities.png)
+- Open a custom rule in the Rules Catalog
+- Click the Edit button
+- Add a Valid until date
+- Add a Deprecation reason to communicate context to users (mandatory) 
+- Save changes — the status automatically changes to "Scheduled for deprecation"
 
-Capabilities that have associated rules inside the catalog are listed on the left of the page. You can click on any Threat, Attack Pattern, or Datasource to list only rules that are associated with it.
+##### Get notified when a rule is deprecated 
+
+Stay informed about rule lifecycle changes by configuring deprecation notifications:
+
+- Navigate to the Rules Catalog page
+- Click the Get Notified button in the top right corner
+- Under Notifications, enable "Receive notifications when a rule is scheduled for deprecation" and "Receive notifications when a rule is deprecated"
+- You will receive alerts whenever rule status changes occur for rules in your organization
+
+**Automatic Deprecation Handling**
+
+To streamline your security operations, Sekoia.io provides an option to automatically disable deprecated rules:
+
+- Navigate to Rules Catalog Settings
+- Enable "Automatically disable deprecated rules"
+- When enabled, deprecated rules will be automatically disabled on their deprecation date
+
+!!! tip
+    We recommend enabling automatic deprecation of Sekoia's own verified rules to maintain alignment with our latest detection strategies. However, you may want to manually review deprecated custom rules before they are automatically disabled to ensure no critical detections are lost.
+
+
+#### Intake formats
+
+Rules are associated with Intake formats that they are compatible with. Detection rules can be enabled when they have a compatible intake format configured that provide the necessary data to detect suspicious activites.
+
+Select an intake format in the left panel to list rules compatible with the intake format.
+
+![intakes](/assets/operation_center/rules_catalog/filter_by_intake.png){: style="max-width:50%", align=right}
+
+You can also filter by intake formats that you have already configured with the associated filter.
+
+![filter](/assets/operation_center/rules_catalog/intake_configured.png){: style="max-width:50%", align=right}
+
+#### Threats
+
+Rules are associated with Threats or Attack Pattern that they can detect.
+
+Use the associated search filter to list rules associated to specific threats.
+
+![threats](/assets/operation_center/rules_catalog/search_filters.png){: style="max-width:50%", align=right}
 
 #### Tags
 
-To have a filtered view of your rules, you can rely on filters cited before ([Available/Verified](#available-and-verified-rules), [Effort level](#effort-level), [Capabilities](#capabilities)) but also on tags associated with rules. 
+To have a filtered view of your rules, you can rely on filters cited before ([Available/Verified](#available-and-verified-rules), [Effort level](#effort-level), Capabilities) but also on tags associated with rules.
 
 These tags are defined by Sekoia.io analysts to help make searching for a rule easier and provide categories such as `AWS`, `CVE`, `O365` and `phishing`.
 
 To filter rules using tags, there are two ways:
 
 - Select a tag under a rule and it will filter all rules to show only those with the same tag
-- Use the select `Filter by tag` next to the search bar and choose a category from the list
-
-![tag_selector](/assets/operation_center/rules_catalog/tag_selector1.png){: style="max-width:100%"}
-
-!!! tip
-    To remove filters, simply click on `Clear all filters` next to the tags' list or deselect one tag at a time by clicking on the close icon inside the tag. 
+- Click the filter button and select "Tags" 
 
 ----
 
@@ -86,69 +128,270 @@ To filter rules using tags, there are two ways:
 
 The MITRE ATT&CK framework is a comprehensive matrix of **tactics** and **techniques** used by threat hunters and defenders to better classify attacks and assess an organization's risk.
 
-Every time you enable a rule, it appears in blue on the matrix in one or many cells. Each cell represents an attack technique. The cells are clickable and enable you to see or disable the rules activated in each one.
+Whenever you filter the Rules Catalog, the matrix will update and rules will appear in blue on the matrix in one or many cells. Each cell represents an attack technique.
 
-![security_profile](/assets/operation_center/rules_catalog/security_profilev2.png){: style="max-width:100%"}
+![security_profile](/assets/operation_center/rules_catalog/security_profilev3.png){: style="max-width:100%"}
 
-You can see how many rules are enabled in a cell by hovering over it. 
+The color changes depending on the number of rules contained in one cell:
 
-The color changes depending on the number of rules activated in one cell: 
+- Colored cells signify the presence of rules. **Darker cells** indicate a higher number of rules available for that specific technique. **Lighter cells** suggest that there are fewer enabled rules for the technique.
+- A white cell means that no rule is available for that technique. 
 
-- Blue cells means rules are enabled. Darker cells mean there are multiple rules enabled for this technique and lighter cells mean there are only few rules enabled for this tactic. 
+![mitre_details](/assets/operation_center/rules_catalog/mitre_details.gif){: style="max-width:100%"}
 
-- A white cell means that no rules are activated in it. 
+Click on the MITRE preview to explore the distribution of rules across each technique and sub-technique.
+
+To view the MITRE framework in fullscreen, click the fullscreen button in the top-right corner of the modal.
+
+Use the "Sub-techniques" button to expand or collapse all sub-techniques.
+
+You can scroll through the MITRE details both horizontally and vertically.
 
 ---
 
 ### Rule Details
 You can click on the name of a rule to display additional details, such as, but not limited to:
 
-- The severity which should be used to later determine the [Alert's Urgency](../../investigate/alerts/#alert-urgency)
+- The severity which should be used to later determine the [Alert's Urgency](../investigate/alerts.md#alert-urgency)
+- The validity date of the rule 
 - The category of created alerts
 - Associated Threats
 - Associated Data Sources
 - Known False Positives
-- The actual detection logic (the pattern)
-- [Similarity strategy](../../investigate/alerts/#similarity-strategies) for the produced alerts
+- The detection logic (the rule pattern)
+- Alert filters
+- [Similarity strategy](../investigate/alerts.md#similarity-strategies) for the produced alerts
 
 ![rule details](/assets/operation_center/rules_catalog/rule_details2.png)
 
+### Compatible intake formats
+
+This section list the compatible intake formats you can use with the detection rule. Configuring one of these intake formats allow the detection rule to receive compatible events to perform detection.
+
+In the list, the `configured` badge indicates intake formats that are already configured. You can click on the configured intake to go the intake page.
+
+![configured intake](/assets/operation_center/rules_catalog/configured_intake.png)
+
+!!! tip
+    You can use this feature to run simulations with the MITRE matrix to improve your security posture.
+    Select a new intake to have a preview of the techniques that will be covered by configuring this datasource.
+
+### Alert filters
+
+In the section `Alert filters`, you can consult the list of alert filters that are currently enabled in the `Actives` tab. The number of alert `muted` in the `last 30 days` is displayed for each alert filter to help you audit its effectiveness.
+
+Click on the `arrow` to expand the alert filter and consult the exclusion pattern.
+
+![alert filters](/assets/operation_center/rules_catalog/alert_filters.png)
+
+The `Expired` tab list all the alert filters that had an `expiration date` set and whose date has been reached. Expired alert filters can be deleted if needed.
+
+### Rules with active alert filter
+
+To search for rules that have at least one active alert filter, use the search `Alert filter` and select the criteria `Rules with alert filters`.
+All rules with active alert filters will be returned in the list.
+
+![search alert filters](/assets/operation_center/rules_catalog/search_alert_filters.png)
+
+You can also search for rules that have no active alert filters with the other search criteria.
+
 ### Enable new rules
+
 #### Automatically
 
 New verified rules are created regularly. You may not want to look at the rules catalog daily to decide if you want to enable them or not. By clicking on the `configure` icon at the top right of the Rules Catalog page, you can configure which rules should be automatically enabled for your organization.
 
-![auto-enable](/assets/operation_center/rules_catalog/enable_rules.png){: style="max-width:100%"}
 
 Rules are automatically enabled based on the configured effort level, or you can decide to never automatically enable rules.
 
 #### Manually
 
-To ensure that activated rules comply with your security policy, you can choose which rules you want to enable. 
-For an MSSP Community, you can easily enable your custom and verified rules in multiple managed communities. 
-![Enable rules for MSSP community](/assets/operation_center/rules_catalog/enable_multi_communities.png){: style="max-width:70%"}
+To ensure that activated rules comply with your security policy, you can choose which rules you want to enable.
+For an MSSP Community, you can easily enable your custom and verified rules in multiple managed communities.
 
 ### Enable / Disable all rules
 
-As seen previously, rules can be filtered by type, status, effort level and tags. To enable or disable these filtered rules, you can simply click on the button `Enable all` or `Disable all` that are displayed under the search bar. 
-
-![enable-disable](/assets/operation_center/rules_catalog/rules-enable-disable.png){: style="max-width:100%"}
-
+As seen previously, rules can be filtered by type, status, effort level and tags. To enable or disable these filtered rules, you can simply click on the button `Enable all` or `Disable all` that are displayed under the search bar.
 
 ----
 
-### Create custom rules
+## Create custom rules
 
 In addition to the verified rules that are already built-in, you can create your own rules to support other detection use cases. To create a rule, click on the `+ Rule` button at the top right of the page and fill out the form.
 
 The Rule creation form has the following sections:
 
-#### General definition of the rule 
+### Rule testing
+
+The Sigma Pattern Testing feature allows SOC analysts to validate detection rules against historical data before production deployment, reducing alert noise and improving detection accuracy. This capability addresses critical operational challenges by enabling thorough rule validation without disrupting production.
+
+#### Testing overview
+
+!!! warning
+    Detection rules with `Sigma Correlation` are not supported for testing. Only `Sigma` rules are supported by the pattern testing feature.
+
+    Correlation rules are fundamentally different from simple detection rules. While simple rules evaluate individual events in isolation, correlation rules must identify relationships and patterns across multiple events such as detecting a sequence of failed login attempts followed by a successful login or identifying suspicious activity patterns across different data sources within a specific timeframe.
+
+    These advanced capabilities go beyond the scope of standard event search.
+
+!!! warning
+    Detection rules with `Time-based detection` are not supported for testing and will not be supported in the future.
+
+    Time-based detection uses modifiers such as `timerange`, `day_of_week`, `day_of_year`, and `public_holiday_in` to detect events during specific time periods. These temporal filters require infrastructure capabilities that are not natively supported by our search architecture. Supporting this feature would require full data scans that significantly impact performance. To ensure long-term platform stability and performance, we have chosen not to implement this functionality in pattern testing.
+
+    For more information about time-based detection in Sigma rules, see the [Sigma documentation](sigma.md#detection-on-specific-time-range).
+
+Pattern testing provides two distinct testing modes:
+
+- **Rule Testing**: Validate new or existing Sigma detection patterns against historical event data
+- **Alert Filter Testing**: Test alert exclusion patterns to optimize filtering and reduce false positives
+
+Both testing modes help prevent non-relevant alerts, increase detection accuracy, and enable rule threshold tuning in a controlled environment.
+
+#### When to use pattern testing
+
+Use pattern testing in the following scenarios:
+
+- Before deploying new Sigma rules
+- When optimizing existing detection rules
+- Before implementing alert filters for noise reduction
+- When analyzing rule performance over different time periods
+
+#### Rule testing
+
+Rule testing allows you to evaluate how a Sigma pattern performs against historical data, providing insights into detection frequency and event distribution patterns.
+
+##### Accessing rule testing
+
+1. Navigate to the Rules Catalog page
+2. Create a new rule
+3. Click the **Test pattern** button to open the testing modal
+
+![test-pattern](/assets/operation_center/rules_catalog/rules-test-pattern.gif){: style="max-width:100%"}
+
+##### Testing interface
+
+The testing modal displays the following components:
+
+- **Sigma pattern**: The detection pattern to be tested
+- **Time range selector**: Choose from 7, 30, or 60 days of historical data
+- **Test pattern button**: Launches the pattern testing process
+
+![test-modal](/assets/operation_center/rules_catalog/rule-test-modal.png){: style="max-width:100%"}
+
+##### Running a test
+
+1. **Select time range**: Choose the historical data period (7, 30, or 60 days)
+2. **Review pattern**: Verify the Sigma pattern is correct
+3. **Launch test**: Click **Test pattern** to begin testing
+4. **Analyze results**: Review the dual visualization output
+
+##### Test results visualization
+
+Test results are presented in two complementary formats:
+
+![test-results](/assets/operation_center/rules_catalog/rule-test-results.png){: style="max-width:100%"}
+
+**1. Chronological bar graph**
+
+- Displays event distribution over time period
+- Helps identify temporal patterns and detection frequency
+- Useful for understanding rule behavior across different time periods
+- Shows number of matched events
+
+**2. Detailed event list**
+
+- Provides drill-down access to individual matching events
+- **Show fields** component to select relevant event properties to display
+- **Show more** button for progressive loading of additional results
+
+![test-results-values](/assets/operation_center/rules_catalog/rule-test-results-values.gif){: style="max-width:100%"}
+
+**3. Event property analysis**
+
+- Top 10 value distribution analysis for each event property
+- Percentage-based breakdown of property values
+- Helps identify patterns and potential tuning opportunities
+
+##### Interpreting results
+
+- **High event count**: May indicate overly broad detection criteria
+- **Temporal clustering**: Events concentrated in specific time periods may suggest targeted attacks or system behavior
+- **Property distribution**: Uneven distribution may indicate opportunities for rule refinement
+
+#### Alert filter testing
+
+Alert filter testing provides enhanced capabilities for validating exclusion patterns, with additional context about existing alerts and their relationship to the filter being tested.
+
+##### Enhanced testing interface
+
+Alert filter testing includes all rule testing components plus:
+
+**Alert correlation table**
+
+- Lists existing alerts related to the same detection rule
+- Visual indicator highlights the current alert context
+- Displays alert metadata: ID, rule name, creation date, and status
+- **Matches filter**: Boolean indicator showing whether the pattern fully excludes the alert. Helps verify filter effectiveness and coverage
+
+![test-rule-alerts](/assets/operation_center/rules_catalog/rule-test-alerts.png){: style="max-width:100%"}
+
+##### Alert filter testing process
+
+1. **Access filter testing**: Click **Test pattern** when creating an alert filter
+2. **Review alert context**: Examine the alert correlation table to understand current alert landscape
+3. **Configure filter pattern**: Define or modify the exclusion pattern
+4. **Select view mode**: Use segmented control to toggle between:
+    - **Matching events**: Events that match the filter pattern (will be excluded)
+    - **Non-matching events**: Events that don't match the filter pattern (will still generate alerts)
+5. **Analyze coverage**: Review both matching and non-matching events to ensure proper filter scope
+
+![test-rule-matching](/assets/operation_center/rules_catalog/rule-test-matching.png){: style="max-width:100%"}
+
+##### Alert filter testing best practices
+
+**Pattern refinement**
+
+- Review non-matching events to identify gaps in filter coverage
+- Adjust filter patterns to achieve desired exclusion scope
+- Balance between noise reduction and detection sensitivity
+
+**Validation workflow**
+
+1. Test with **Matching events** view to confirm intended exclusions
+2. Switch to **Non-matching events** view to verify legitimate alerts remain
+3. Iterate pattern adjustments based on both views
+4. Validate filter effectiveness using the **Matches filter** indicator
+
+#### Testing best practices
+
+##### Pattern development
+
+- Start with broader patterns and refine based on test results
+- Use multiple time ranges to validate pattern consistency
+- Consider seasonal or business cycle impacts on detection patterns
+
+##### Performance considerations
+
+- Longer time ranges provide more comprehensive data but take longer to process
+- Focus on recent time periods (7-30 days) for current threat landscape validation
+- Use 60-day ranges for comprehensive historical analysis
+
+##### Threshold tuning
+
+- Analyze event frequency to set appropriate detection thresholds
+- Consider normal business operations when setting alert frequency expectations
+- Use temporal patterns to identify optimal detection windows
+
+This comprehensive testing framework ensures detection rules are thoroughly validated before production deployment, maintaining high detection accuracy while minimizing operational disruption.
+
+#### General definition of the rule
+
 - The rule name is mandatory during the creation, it will be used to name the corresponding raised alerts by default. You can add an optional description below.
 - Select the effort level required and the threats detected with this rule if any, by selecting it from the MITRE ATT&CK or by using the search bar through keywords or the drop-down list.
 - For an MSSP community, first select the community you want to create your rule in.
--  
-Two options are available: select `All communities` or select a specific community. 
+
+Two options are available: select `All communities` or select a specific community.
 
 If you choose `All communities`, your rule will be available for all your communities and you can enable it later on the desired community.
 
@@ -157,23 +400,23 @@ If you choose `All communities`, your rule will be available for all your commun
 #### Detection Pattern
 
   This is the detection logic itself. It varies according to the selected rule type.
-  
-!!! note 
-    Fields available to create a detection pattern follow the ECS standard and can be found on Events page  > **Show fields and top values**. 
-    
+
+!!! note
+    Fields available to create a detection pattern follow the ECS standard and can be found on Events page  > **Show fields and top values**.
+
 #### Security alerts
 In the Alert properties part, you should indicate the category and type of the alerts raised by the rule and the severity of the rule, which is used to calculate the urgency of the corresponding raised alerts in association with assets criticality for events matching assets.
 
-##### Fields displayed in alert events 
-  
+##### Fields displayed in alert events
+
 You can select fields that will be displayed in events present inside your raised alerts to speed up alert qualification.
 
 To search for fields you want to display, click on the select and type in your event field. This field works as an auto-complete.
-  
-##### Custom similarity strategy
-Alerts are considered similar when some event fields have identical values. 
 
-You can select these event fields in your rule configuration. To do so, click on the select and type in your event field. You can select as many fields as needed. 
+##### Custom similarity strategy
+Alerts are considered similar when some event fields have identical values.
+
+You can select these event fields in your rule configuration. To do so, click on the select and type in your event field. You can select as many fields as needed.
 
 In addition to that, these event fields can be added to the `Swappable fields`. A typical example of that is  `source.ip` and `destination.ip`.
 
@@ -182,26 +425,25 @@ In addition to that, these event fields can be added to the `Swappable fields`. 
     Fields used in the `group-by` clause of the pattern will be used as similarity strategy.
 
 !!! note
-    You can learn more about similarity strategies in this [section](../../investigate/alerts/#similarity-strategies).
-    
+    You can learn more about similarity strategies in this [section](../investigate/alerts.md#similarity-strategies).
+
 
 ### Edit your custom rules
-When the Rule Details panel is open, you can click on the `Configure` icon at the top right to edit the rule's configuration. 
-For Custom rule, you will be able to edit its main definition: 
+When the Rule Details panel is open, you can click on the `Configure` icon at the top right to edit the rule's configuration.
+For Custom rule, you will be able to edit its main definition:
 
 - General definition of the rule
+- Validity date 
 - Detection Pattern
-- Security alerts (event fields can be selected to define the similarity strategy in the section `Similarity strategy`). 
+- Security alerts (event fields can be selected to define the similarity strategy in the section `Similarity strategy`).
 
 For an MSSP communty, when you edit this part and your rule is multi-communities, changes will be shared with all your managed communities.
-
-
 
 ### Limiting the scope of a rule
 
 For all types of rules, You will be able to limit its applicable scope with the following filters. For an MSSP community, these filters will be applied only on the community selected:
 
-- **Alert Filters**: are additional patterns that you can add to any rule to exclude matching events. This is useful to exclude known false positives so that your detections are always spot on. It is often easier to create Alert Filters [directly from an Alert](../../investigate/alerts/#create-an-alert-filter).
+- **Alert Filters**: are additional patterns that you can add to any rule to exclude matching events. This is useful to exclude known false positives so that your detections are always spot on. It is often easier to create Alert Filters [directly from an Alert](../investigate/alerts.md#create-an-alert-filter).
 - **Entities**: select the entities this rule should apply to. By default, rules apply to all entities.
 - **Assets**: select the assets this rule should apply to. By default, rules apply to all assets
 
@@ -209,15 +451,23 @@ For all types of rules, You will be able to limit its applicable scope with the 
 
 When rules have limited scope with selected entities or assets, these rules will not automatically apply to new entities or assets that are later created.
 
+#### Create an alert Filter
 
+To prevent known false positives from raising alerts in the future:
+
+- Click on the `+ Alert filter` button to create an alert filter
+- Enter the `name` of the alert filter (mandatory)
+- Enter the `description` of the alert filter (optional)
+- Enter the `pattern` to exclude events (mandatory)
+- Set an `expiration date` (optional) to define a temporary alert filter
 
 ### Notify on new rules
 
 ![notif_rules](/assets/operation_center/rules_catalog/notification_rules.png){ align=right }
 
-We continuously update the rules catalog with new rules. 
+We continuously update the rules catalog with new rules.
 
 To keep posted, we introduced a dedicated trigger in the Notification Center.
 This new notification trigger enables the creation of notification rules that triggers when a new detection rule is added to the Rules Catalog by Sekoia.io.
 
-This trigger supports additionnal filters on the name of the detection rule, its description, pattern or severity.
+This trigger supports additional filters on the name of the detection rule, its description, pattern or severity.

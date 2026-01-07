@@ -7,7 +7,6 @@ type: intake
 Azure Database for MySQL provides fully managed, enterprise-ready community MySQL database as a service. The service is developed and managed by Microsoft Corp.
 
 - **Vendor**: Microsoft Azure
-- **Plan**: Defend Core & Defend Prime
 - **Supported environment**: SaaS
 - **Detection based on**: Telemetry
 - **Supported application or feature**: Authentication logs, Application logs

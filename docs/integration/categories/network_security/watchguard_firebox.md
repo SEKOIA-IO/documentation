@@ -9,7 +9,6 @@ Sending WatchGuard Firebox logs to Sekoia.io enables the discovering of potentia
 
 
 - **Vendor** :WatchGuard
-- **Plan**: Defend Core & Defend Prime
 - **Supported environment**: On prem
 - **Version compatibility**: 12.4.1
 - **Detection based on**: Telemetry
@@ -26,6 +25,9 @@ An internal log concentrator (Rsyslog) is required to collect and forward events
 
 Log on your Firebox appliance and follow [this guide](https://www.watchguard.com/help/docs/help-center/en-US/Content/Integration-Guides/General/ubuntu_rsyslog.html) to enable syslog forwarding.
 
+!!! warning
+	Make sure that you didn't check the "time stamp" box in your Syslog Server configuration.
+
 Configure the event forwarding to use the IBM LEEF format (for more information, please read the [associated documentation](http://www.watchguard.com/help/docs/fireware/12/en-us/Content/en-US/logging/send_logs_to_syslog_c.html)).
 
 ## Create the intake
@@ -34,7 +36,7 @@ Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a n
 
 ## Forward logs to Sekoia.io
 
-Please consult the [Rsyslog Transport](/integration/ingestion_methods/syslog/overview) documentation or [Syslog Forwarding](/integration/ingestion_methods/syslog/sekoiaio_forwarder) documentation to forward these logs to Sekoia.io.
+Please consult the [Rsyslog Transport](/integration/ingestion_methods/syslog/overview.md) documentation or [Syslog Forwarding](/integration/ingestion_methods/syslog/sekoiaio_forwarder.md) documentation to forward these logs to Sekoia.io.
 
 
 {!_shared_content/operations_center/integrations/generated/d719e8b5-85a1-4dad-bf71-46155af56570_sample.md!}

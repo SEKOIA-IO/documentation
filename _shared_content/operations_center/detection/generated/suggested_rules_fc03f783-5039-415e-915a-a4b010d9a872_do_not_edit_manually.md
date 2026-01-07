@@ -1,8 +1,8 @@
 ### Related Built-in Rules
 
-The following Sekoia.io built-in rules match the intake **IBM iSeries [BETA]**. This documentation is updated automatically and is based solely on the fields used by the intake which are checked against our rules. This means that some rules will be listed but might not be relevant with the intake.
+The following Sekoia.io built-in rules match the intake **IBM iSeries**. This documentation is updated automatically and is based solely on the fields used by the intake which are checked against our rules. This means that some rules will be listed but might not be relevant with the intake.
 
-[SEKOIA.IO x IBM iSeries [BETA] on ATT&CK Navigator](https://mitre-attack.github.io/attack-navigator/#layerURL=https%3A%2F%2Fraw.githubusercontent.com%2FSEKOIA-IO%2Fdocumentation%2Fmain%2F_shared_content%2Foperations_center%2Fdetection%2Fgenerated%2Fattack_fc03f783-5039-415e-915a-a4b010d9a872_do_not_edit_manually.json){ .md-button }
+[SEKOIA.IO x IBM iSeries on ATT&CK Navigator](https://mitre-attack.github.io/attack-navigator/#layerURL=https%3A%2F%2Fraw.githubusercontent.com%2FSEKOIA-IO%2Fdocumentation%2Fmain%2F_shared_content%2Foperations_center%2Fdetection%2Fgenerated%2Fattack_fc03f783-5039-415e-915a-a4b010d9a872_do_not_edit_manually.json){ .md-button }
 ??? abstract "Account Added To A Security Enabled Group"
     
     Detection in order to investigate who has added a specific Domain User in Domain Admins or Group Policy Creator Owners (Security event 4728)
@@ -99,6 +99,12 @@ The following Sekoia.io built-in rules match the intake **IBM iSeries [BETA]**. 
     
     - **Effort:** master
 
+??? abstract "Correlation Admin Files Checked On Network Share"
+    
+    Detects requests to multiple admin files on a network share. This could be an attacker performing reconnaissance steps on the system.
+    
+    - **Effort:** advanced
+
 ??? abstract "Credential Dump Tools Related Files"
     
     Detects processes or file names related to credential dumping tools and the dropped files they generate by default.
@@ -107,7 +113,7 @@ The following Sekoia.io built-in rules match the intake **IBM iSeries [BETA]**. 
 
 ??? abstract "Cron Files Alteration"
     
-    Cron Files and Cron Directory alteration used by attacker for persistency or privilege escalation.
+    Cron Files and Cron Directory alteration used by attacker for persistency or privilege escalation. To ensure full performance on this rule, `auditbeat` intake must be configure with the module `file_integrity` containing path mentionned in the pattern.
     
     - **Effort:** advanced
 
@@ -141,6 +147,12 @@ The following Sekoia.io built-in rules match the intake **IBM iSeries [BETA]**. 
     
     - **Effort:** master
 
+??? abstract "Enable Root Account With Dsenableroot"
+    
+    Detects when root is enabled. Attackers can use this as a mean of persistence since root is disabled by default.
+    
+    - **Effort:** elementary
+
 ??? abstract "Exfiltration And Tunneling Tools Execution"
     
     Execution of well known tools for data exfiltration and tunneling
@@ -157,19 +169,19 @@ The following Sekoia.io built-in rules match the intake **IBM iSeries [BETA]**. 
     
     Detect the creation of a ZIP file and an HTA file as it is often used in infection chains. Furthermore it also detects the use of suspicious processes launched by explorer.exe combined with the creation of an HTA file, since it is also often used in infection chains (LNK - HTA for instance).
     
-    - **Effort:** intermediate
+    - **Effort:** advanced
 
 ??? abstract "HTML Smuggling Suspicious Usage"
     
     Based on several samples from different botnets, this rule aims at detecting HTML infection chain by looking for HTML created files followed by suspicious files being executed.
     
-    - **Effort:** intermediate
+    - **Effort:** advanced
 
 ??? abstract "HackTools Suspicious Names"
     
     Quick-win rule to detect the default process names or file names of several HackTools.
     
-    - **Effort:** elementary
+    - **Effort:** advanced
 
 ??? abstract "Hijack Legit RDP Session To Move Laterally"
     
@@ -181,7 +193,7 @@ The following Sekoia.io built-in rules match the intake **IBM iSeries [BETA]**. 
     
     Detection of an ISO (or any other similar archive file) downloaded file, followed by a child-process of explorer, which is characteristic of an infection using an ISO containing an LNK file. For events with `host.name`.
     
-    - **Effort:** intermediate
+    - **Effort:** master
 
 ??? abstract "Information Stealer Downloading Legitimate Third-Party DLLs"
     
@@ -191,15 +203,9 @@ The following Sekoia.io built-in rules match the intake **IBM iSeries [BETA]**. 
 
 ??? abstract "Kernel Module Alteration"
     
-    Kernel module installation can be used to configure system settings to automatically execute a program during system boot or logon to maintain persistence or gain higher-level privileges on compromised systems.
+    Kernel module installation can be used to configure system settings to automatically execute a program during system boot or logon to maintain persistence or gain higher-level privileges on compromised systems. The prerequisites are to enable monitoring of the finit_module, init_module, delete_module syscalls using Auditbeat.
     
     - **Effort:** advanced
-
-??? abstract "MSBuild Abuse"
-    
-    Detection of MSBuild uses by attackers to infect an host. Focuses on XML compilation which is a Metasploit payload, and on connections made by this process which is unusual.
-    
-    - **Effort:** intermediate
 
 ??? abstract "Microsoft Exchange Server Creating Unusual Files"
     
@@ -257,7 +263,7 @@ The following Sekoia.io built-in rules match the intake **IBM iSeries [BETA]**. 
 
 ??? abstract "Package Manager Alteration"
     
-    Package manager (eg: apt, yum) can be altered to install malicious software
+    Package manager (eg: apt, yum) can be altered to install malicious software. To ensure full performance on this rule, `auditbeat` intake must be configure with the module `file_integrity` containing path mentionned in the pattern.
     
     - **Effort:** advanced
 
@@ -277,7 +283,7 @@ The following Sekoia.io built-in rules match the intake **IBM iSeries [BETA]**. 
     
     This event can be a sign of Kerberos replay attack or, among other things, network device configuration or routing problems.
     
-    - **Effort:** intermediate
+    - **Effort:** master
 
 ??? abstract "Process Trace Alteration"
     
@@ -294,12 +300,6 @@ The following Sekoia.io built-in rules match the intake **IBM iSeries [BETA]**. 
 ??? abstract "RDP Session Discovery"
     
     Detects use of RDP session discovery via qwinsta or quser. Used by some threat actors to know if someone is working via RDP on a server.
-    
-    - **Effort:** advanced
-
-??? abstract "RSA SecurID Failed Authentification"
-    
-    Detects many failed attempts to authenticate followed by a successfull login for a super admin account.
     
     - **Effort:** advanced
 
@@ -339,29 +339,11 @@ The following Sekoia.io built-in rules match the intake **IBM iSeries [BETA]**. 
     
     - **Effort:** advanced
 
-??? abstract "SecurityScorecard Vulnerability Assessment Scanner New Issues"
-    
-    Raises an alert when SecurityScorecard Vulnerability Assessment Scanner find new issues.
-    
-    - **Effort:** master
-
 ??? abstract "Sekoia.io EICAR Detection"
     
     Detects observables in Sekoia.io CTI tagged as EICAR, which are fake samples meant to test detection.
     
     - **Effort:** master
-
-??? abstract "Socat Relaying Socket"
-    
-    Socat is a linux tool used to relay local socket or internal network connection, this technics is often used by attacker to bypass security equipment such as firewall
-    
-    - **Effort:** advanced
-
-??? abstract "Socat Reverse Shell Detection"
-    
-    Socat is a linux tool used to relay or open reverse shell that is often used by attacker to bypass security equipment.
-    
-    - **Effort:** intermediate
 
 ??? abstract "SolarWinds Suspicious File Creation"
     

@@ -3,14 +3,13 @@ name: Microsoft Entra ID (Azure AD)
 type: intake
 
 ## Overview
-- **Vendor**: Microsoft
-- **Plan**: Defend Core & Defend Prime
-- **Supported environment**: SaaS
-- **Detection based on**: Telemetry
-- **Supported application or feature**: Application logs, Authentication logs
 
 **Microsoft Entra ID (Azure AD) ** is a cloud-based Identity and Rights management service. The service is developed and managed by Microsoft Corp.
 
+- **Vendor**: Microsoft
+- **Supported environment**: SaaS
+- **Detection based on**: Telemetry
+- **Supported application or feature**: Application logs, Authentication logs
 
 
 ## Configure
@@ -42,6 +41,13 @@ Navigate to [Home > Microsoft Entra ID (Azure AD)  (e.g. `company-ad`) > Monitor
 
 ![diag](https://github.com/jdpju/documentation/assets/113444861/b5e55fd3-da86-4f2f-8095-3c1704ae7a20){: style="max-width:100%"}
 
+### Create your intake
+
+1. Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a new intake from the `Microsoft Entra ID / Azure AD`.
+2. To fill the form, use the table completed during the creation of the **Event Hub**.
+
+
+#### Enjoy your events on the [Events page](https://app.sekoia.io/operations/events)
 
 {!_shared_content/integration/detection_section.md!}
 
@@ -51,10 +57,3 @@ Navigate to [Home > Microsoft Entra ID (Azure AD)  (e.g. `company-ad`) > Monitor
 #### Further Readings
 
 - [Microsoft Github diagnostic Active Directory documentation](https://github.com/MicrosoftDocs/SupportArticles-docs/blob/main/support/windows-server/active-directory/configure-ad-and-lds-event-logging.md)
-
-
-### Create the intake
-
-Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a new intake from the format `Microsoft Entra ID (Azure AD) `.
-
-{!_shared_content/operations_center/integrations/configure_consume_event_hub.md!}

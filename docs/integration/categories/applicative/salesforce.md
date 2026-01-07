@@ -3,19 +3,27 @@ name: Salesforce
 type: intake
 
 ## Overview
+
+Salesforce provides customer relationship management software and applications focused on sales, customer service, marketing automation, e-commerce, analytics, and application development.
+
 - **Vendor**: Salesforce
-- **Plan**: Defend Core & Defend Prime
 - **Supported environment**: SaaS
 - **Detection based on**: Telemetry
 - **Supported application or feature**: Application Logs
-
-Salesforce provides customer relationship management software and applications focused on sales, customer service, marketing automation, e-commerce, analytics, and application development.
 
 
 
 ## Configure
 
 This setup guide will show you how to provide an integration between Salesforce events and Sekoia.io.
+
+!!! note
+    To provide a quick detection on malicious activities, Sekoia.io recommends getting the event log files on an hourly basis.
+    Please see [the Salesforce documentation](https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/event_log_file_hourly_overview.htm) to enable hourly Event Log Files.
+
+!!! warning
+    Please ensure enabling `Hourly` log collection in your Salesforce Event Log File settings before unselecting the `Daily` log option in your intake configuration. This omission will cause an `INVALID_FIELD` error in the connector.
+
 
 ### Configure OAuth
 
@@ -55,15 +63,9 @@ This setup guide will show you how to provide an integration between Salesforce 
 
 ### Create an intake
 
-Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a new intake from the format Salesforce. Copy the intake key.
+1. Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a new intake from the format Salesforce.
+2. Set up the intake configuration with the consumer key and consumer secret.
 
-### Pull events
-
-To start to pull events, you have to:
-
-1. Go to the [playbooks page](https://app.sekoia.io/operations/playbooks) and create a new playbook with the [Salesforce](/integration/action_library/applicative/salesforce) trigger
-2. Set up the module configuration with the consumer key and consumer secret. Set up the trigger configuration with the intake key
-3. Start the playbook and enjoy your events
 
 !!! note
 

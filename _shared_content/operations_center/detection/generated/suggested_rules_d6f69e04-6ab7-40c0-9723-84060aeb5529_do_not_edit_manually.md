@@ -21,9 +21,9 @@ The following Sekoia.io built-in rules match the intake **Rubycat PROVE IT**. Th
     
     - **Effort:** master
 
-??? abstract "RSA SecurID Failed Authentification"
+??? abstract "Login Brute-Force Successful On Jumpcloud Portal"
     
-    Detects many failed attempts to authenticate followed by a successfull login for a super admin account.
+    A user has attempted to login several times (brute-force) on Jumpcloud Portal and succeeded to login.
     
     - **Effort:** advanced
 

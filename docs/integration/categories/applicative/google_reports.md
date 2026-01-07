@@ -1,21 +1,36 @@
 uuid: 04d36706-ee4a-419b-906d-f92f3a46bcdd
-name: Google Reports
+name: Google Workspace / ChromeOS
 type: intake
 
 ## Overview
 - **Vendor**: Google
-- **Plan**: Defend Prime
 - **Supported environment**: SaaS
 - **Detection based on**: Telemetry
 - **Supported application or feature**: Application Logs
 
-Google Reports is a data reporting and analysis platform offered by Google for Google Workspace services, designed to provide insights and metrics about user activities and interactions within various Google services. It allows organizations to track and visualize user engagement, application usage, and other relevant data points, enabling informed decision-making and optimization of digital experiences. 
+Google Workspace, formerly known as G Suite, is a cloud-based productivity and collaboration platform developed by Google, featuring tools like Gmail, Google Drive, and Google Docs. It allows users to create, communicate, and collaborate in real-time from any location, promoting efficient teamwork and secure file management. Complementing this, ChromeOS is a Linux-based operating system designed for Chromebooks, focusing on delivering a fast and secure user experience centered around web applications and cloud services. Together, Google Workspace and ChromeOS provide an integrated environment that enhances productivity and collaboration in the digital age.
 
 ### Supported applications
 
 This integration can collect activities from the following GSuite applications:
 
-- `admin` to collect activities on the Admin console 
+- `admin` to collect activities, on the Admin console, including:
+    - [application settings](https://developers.google.com/admin-sdk/reports/v1/reference/activity-ref-appendix-a/admin-application-events)
+    - [calendar settings](https://developers.google.com/admin-sdk/reports/v1/reference/activity-ref-appendix-a/admin-cal-events)
+    - [chat settings](https://developers.google.com/admin-sdk/reports/v1/reference/activity-ref-appendix-a/admin-chat-events)
+    - [chrome os settings](https://developers.google.com/admin-sdk/reports/v1/reference/activity-ref-appendix-a/admin-chromeos-events)
+    - [contacts settings](https://developers.google.com/admin-sdk/reports/v1/reference/activity-ref-appendix-a/admin-contacts-events)
+    - [delegated admin](https://developers.google.com/admin-sdk/reports/v1/reference/activity-ref-appendix-a/admin-deladmin-events)
+    - [docs settings](https://developers.google.com/admin-sdk/reports/v1/reference/activity-ref-appendix-a/admin-docs-events)
+    - [domain settings](https://developers.google.com/admin-sdk/reports/v1/reference/activity-ref-appendix-a/admin-domain-events)
+    - [email settings](https://developers.google.com/admin-sdk/reports/v1/reference/activity-ref-appendix-a/admin-gmail-events)
+    - [group settings](https://developers.google.com/admin-sdk/reports/v1/reference/activity-ref-appendix-a/admin-groups-events)
+    - [licenses settings](https://developers.google.com/admin-sdk/reports/v1/reference/activity-ref-appendix-a/admin-licenses-events)
+    - [mobile settings](https://developers.google.com/admin-sdk/reports/v1/reference/activity-ref-appendix-a/admin-mobile-events)
+    - [organization settings](https://developers.google.com/admin-sdk/reports/v1/reference/activity-ref-appendix-a/admin-org-events)
+    - [security settings](https://developers.google.com/admin-sdk/reports/v1/reference/activity-ref-appendix-a/admin-security-events)
+    - [sites settings](https://developers.google.com/admin-sdk/reports/v1/reference/activity-ref-appendix-a/admin-sites-events)
+    - [user settings](https://developers.google.com/admin-sdk/reports/v1/reference/activity-ref-appendix-a/admin-user-events)
 - `calendar` to collect events from Google calendar
 - `chat` to collect Chat activities
 - `drive` to supervise Google Drive events
@@ -28,13 +43,17 @@ This integration can collect activities from the following GSuite applications:
 - `token` for authentication supervision
 - `user_accounts` to monitor Users accounts activities
 - `keep` to supervices Google Keep activities
+- `vault` to collect vault activities
+- `rules` to collect Rules activities
+- `saml` to collect SAML activities
+- `context_aware_access` to collect Context-aware access activities
+- `chrome` lists various types of Chrome Audit activity events
 
 
 ### Limitation
 
 Only activities from one applications can be collected from one playbook.
 To collect activities from several Google Application, create as many playbooks as applications to collect.
-
 
 
 ## Configure
@@ -122,32 +141,19 @@ Find more information on the [official google documentation](https://cloud.googl
 ### Create your intake
 
 1. Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a new intake from the `Google Report`.
-2. Copy the associated Intake key
-
-### Pull the logs to collect them on Sekoia.io
-
-Go to the Sekoia.io [playbook page](https://app.sekoia.io/operations/playbooks), and follow these steps:
-
-- Click on **+ PLAYBOOK** button to create a new one
-- Select **Create a playbook from scratch**
-- Give it a name in the field **Name**
-- Open the left panel, click **Google** then select the trigger `Get user activities`
-- Click on **Create**
-
-- Create a **Module configuration** using your service account credentials from your Google Cloud environment extracted on a JSON file. Name the module configuration as you wish
-
-
--  Create a **Trigger configuration** using:
-
-    * Type the `Intake key` created on the previous
-    * Select the `application name` what you to fetch events from
+2. Edit the intake configuration with the following attribut:
+    * Select the `application name` you want to fetch the events from
     * Type the `an Google workspace admin email`.
   
 !!! Important
-    This Google workspace admin email is any user part of the domain **that has** the right to view de Data of Google Workspace 
+    * This Google workspace admin email is any user part of the domain **that has** the right to view de Data of Google Workspace
+    * If you are uncertain whether to use a super admin or admin email, make sure you have the appropriate permissions in the email for the service you are requesting. For example, if you need to access logs on Google Vault, you will need the Access all logs permission.
 
-- Click on the **Save** button
-- **Activate the playbook** with the toggle button on the top right corner of the page
+!!! Important
+    Google Workspace events may be available in the Admin console and the Google Report API with delay.
+    This delay can be from a couple of minutes up to several hours (see [documentation](https://support.google.com/a/answer/7061566?hl=en)).
+    Please adjust the timedelta parameter in the configuration accordingly.
+
 
 ### Enjoy your events on the [Events page](https://app.sekoia.io/operations/events)
 

@@ -51,6 +51,12 @@ The following Sekoia.io built-in rules match the intake **Sophos EDR**. This doc
     
     - **Effort:** master
 
+??? abstract "Correlation Admin Files Checked On Network Share"
+    
+    Detects requests to multiple admin files on a network share. This could be an attacker performing reconnaissance steps on the system.
+    
+    - **Effort:** advanced
+
 ??? abstract "Detect requests to Konni C2 servers"
     
     This rule detects requests to Konni C2 servers. These patterns come from an analysis done in 2022, September.
@@ -61,7 +67,7 @@ The following Sekoia.io built-in rules match the intake **Sophos EDR**. This doc
     
     Discord is a messaging application. It allows users to create their own communities to share messages and attachments. Those attachments have little to no overview and can be downloaded by almost anyone, which has been abused by attackers to host malicious payloads.
     
-    - **Effort:** intermediate
+    - **Effort:** advanced
 
 ??? abstract "Domain Trust Created Or Removed"
     
@@ -69,15 +75,15 @@ The following Sekoia.io built-in rules match the intake **Sophos EDR**. This doc
     
     - **Effort:** advanced
 
-??? abstract "Download Files From Suspicious TLDs"
-    
-    Detects download of certain file types from hosts in suspicious TLDs
-    
-    - **Effort:** master
-
 ??? abstract "Koadic MSHTML Command"
     
     Detects Koadic payload using MSHTML module
+    
+    - **Effort:** intermediate
+
+??? abstract "Linux Shared Lib Injection Via Ldso Preload"
+    
+    Detect ld.so.preload modification for shared lib injection, technique used by attackers to load arbitrary code into process
     
     - **Effort:** intermediate
 
@@ -97,7 +103,7 @@ The following Sekoia.io built-in rules match the intake **Sophos EDR**. This doc
     
     This event can be a sign of Kerberos replay attack or, among other things, network device configuration or routing problems.
     
-    - **Effort:** intermediate
+    - **Effort:** master
 
 ??? abstract "Process Trace Alteration"
     
@@ -110,12 +116,6 @@ The following Sekoia.io built-in rules match the intake **Sophos EDR**. This doc
     Detects suspicious calls to Microsoft Exchange resources, in locations related to webshells observed in campaigns using this vulnerability.
     
     - **Effort:** elementary
-
-??? abstract "RSA SecurID Failed Authentification"
-    
-    Detects many failed attempts to authenticate followed by a successfull login for a super admin account.
-    
-    - **Effort:** advanced
 
 ??? abstract "Remote Monitoring and Management Software - AnyDesk"
     

@@ -4,7 +4,6 @@ type: intake
 
 ## Overview
 - **Vendor**: Microsoft
-- **Plan**: Defend Core & Defend Prime
 - **Supported environment**: Cloud
 - **Version compatibility**:
 - **Detection based on**: Telemetry
@@ -22,7 +21,7 @@ According to [docs.microsoft.com](https://docs.microsoft.com/en-us/microsoft-365
 - Microsoft Defender for Office 365 plan 1 and plan 2
 - Microsoft 365 Defender
 
-In Sekoia.io XDR, [create a new intake key](/xdr/features/collect/intakes/#create-an-intake-from-our-integrations-catalog) using the "Message Trace" format.
+In Sekoia.io XDR, [create a new intake key](/xdr/features/collect/intakes.md#create-an-intake-from-our-integrations-catalog) using the "Message Trace" format.
 
 ## Configure OAuth
 
@@ -56,15 +55,26 @@ Add required permission:
 Add required role:
 
 1. From the `Microsoft Entra ID (Azure AD) ` page
+![Microsoft Entra ID home page](/assets/operation_center/integration_catalog/email/office365_message_trace/home_page.png){: style="max-width:100%"}
+
 2. Open `Roles and administrators`
+![Roles button](/assets/operation_center/integration_catalog/email/office365_message_trace/role_button.png){: style="max-width:50%"}
+
 3. Search and open `Global Reader`
+![App registrations button](/assets/operation_center/integration_catalog/email/office365_message_trace/role_and_admin_page.png){: style="max-width:100%"}
+
 4. Use the `+ Add assignments` to add this role to your application
+![App registrations button](/assets/operation_center/integration_catalog/email/office365_message_trace/global_reader_page.png){: style="max-width:100%"}
 
-For a detailed explanation, please read the related documentation [Azure portal - Assign a role](https://learn.microsoft.com/en-us/azure/active-directory/roles/manage-roles-portal).
+5. Open `No member select` to select your application
+![App registrations button](/assets/operation_center/integration_catalog/email/office365_message_trace/add_assignments.png){: style="max-width:100%"}
 
-You can now create the playbook "Create a new playbook > Create a playbook from scratch" and add the "Office 365 Message Trace OAuth" trigger.
+6. Search for your application by name
+![App registrations button](/assets/operation_center/integration_catalog/email/office365_message_trace/select_app.png){: style="max-width:100%"}
 
-Create a trigger configuration and input the following information:
+7. click on `Next` and add a `Comment`
+
+You can now create your intake and input the following information:
 
 - `client_id`
 - `client_secret`
@@ -145,4 +155,3 @@ If your user cannot access the MessageTrace API, please visit the [Azure Sign-in
 
 {!_shared_content/operations_center/detection/generated/suggested_rules_8461aabe-6eba-4044-ad7f-a0c39a2b2279_do_not_edit_manually.md!}
 {!_shared_content/operations_center/integrations/generated/8461aabe-6eba-4044-ad7f-a0c39a2b2279.md!}
-

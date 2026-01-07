@@ -69,6 +69,24 @@ The following Sekoia.io built-in rules match the intake **WithSecure Elements**.
     
     - **Effort:** master
 
+??? abstract "AppleScript Password Prompt"
+    
+    Detects when a prompt is displayed to gain credentials. This technique is used by MacOS malware to obtain the user's password.
+    
+    - **Effort:** advanced
+
+??? abstract "Aspnet Compiler"
+    
+    Detects the starts of aspnet compiler.
+    
+    - **Effort:** advanced
+
+??? abstract "Attempt to Disable Gatekeeper Execution Control"
+    
+    Detects attempts to disable Gatekeeper through the command line. Gatekeeper is a macOS feature designed to ensure that only trusted, signed software can be executed.
+    
+    - **Effort:** elementary
+
 ??? abstract "Audio Capture via PowerShell"
     
     Detects audio capture via PowerShell Cmdlet
@@ -151,7 +169,7 @@ The following Sekoia.io built-in rules match the intake **WithSecure Elements**.
     
     Detects capture a network trace via netsh.exe trace functionality
     
-    - **Effort:** intermediate
+    - **Effort:** advanced
 
 ??? abstract "CertOC Loading Dll"
     
@@ -177,6 +195,12 @@ The following Sekoia.io built-in rules match the intake **WithSecure Elements**.
     
     - **Effort:** advanced
 
+??? abstract "Chflags Hidden"
+    
+    Detects the use of the hidden flag by the utility chflags to hide files and directories.
+    
+    - **Effort:** advanced
+
 ??? abstract "Clear EventLogs Through CommandLine"
     
     Detects a command that clears event logs which could indicate an attempt from an attacker to erase its previous traces.
@@ -199,7 +223,7 @@ The following Sekoia.io built-in rules match the intake **WithSecure Elements**.
     
     Detects specific commands used regularly by ransomwares to stop services or remove backups
     
-    - **Effort:** intermediate
+    - **Effort:** master
 
 ??? abstract "Component Object Model Hijacking"
     
@@ -355,7 +379,7 @@ The following Sekoia.io built-in rules match the intake **WithSecure Elements**.
     
     Detects registry keys being changed to disable Windows Defender Credential Guard. The rule requires to log Registry Keys modifications or creations, which can be done using Sysmon Event IDs 12,13 and 14.
     
-    - **Effort:** intermediate
+    - **Effort:** master
 
 ??? abstract "Disabled IE Security Features"
     
@@ -367,7 +391,7 @@ The following Sekoia.io built-in rules match the intake **WithSecure Elements**.
     
     Discord is a messaging application. It allows users to create their own communities to share messages and attachments. Those attachments have little to no overview and can be downloaded by almost anyone, which has been abused by attackers to host malicious payloads.
     
-    - **Effort:** intermediate
+    - **Effort:** advanced
 
 ??? abstract "Dism Disabling Windows Defender"
     
@@ -399,11 +423,11 @@ The following Sekoia.io built-in rules match the intake **WithSecure Elements**.
     
     - **Effort:** elementary
 
-??? abstract "Download Files From Non-Legitimate TLDs"
+??? abstract "Dscl Authonly"
     
-    Detects file downloads from non-legitimate TLDs. Additional legitimates TLDs should be filtered according to the business habits.
+    Detects the use of the command dscl with authonly used to verify the password of a user and for authentification. An attacker can abuse this command to gain credentials.
     
-    - **Effort:** master
+    - **Effort:** advanced
 
 ??? abstract "Dynamic DNS Contacted"
     
@@ -432,6 +456,12 @@ The following Sekoia.io built-in rules match the intake **WithSecure Elements**.
 ??? abstract "Empire Monkey Activity"
     
     Detects EmpireMonkey APT reported Activity
+    
+    - **Effort:** elementary
+
+??? abstract "Enable Root Account With Dsenableroot"
+    
+    Detects when root is enabled. Attackers can use this as a mean of persistence since root is disabled by default.
     
     - **Effort:** elementary
 
@@ -541,13 +571,13 @@ The following Sekoia.io built-in rules match the intake **WithSecure Elements**.
     
     Detects dump of SAM, System or Security hives using reg.exe utility. Adversaries may attempt to dump these Windows Registry to retrieve password hashes and access credentials.
     
-    - **Effort:** intermediate
+    - **Effort:** master
 
 ??? abstract "HackTools Suspicious Names"
     
     Quick-win rule to detect the default process names or file names of several HackTools.
     
-    - **Effort:** elementary
+    - **Effort:** advanced
 
 ??? abstract "HackTools Suspicious Process Names In Command Line"
     
@@ -579,9 +609,9 @@ The following Sekoia.io built-in rules match the intake **WithSecure Elements**.
     
     - **Effort:** elementary
 
-??? abstract "IIS Module Installation Using AppCmd"
+??? abstract "Impacket Addcomputer"
     
-    Detects the installation of a new IIS module from the command line. It can used used to backdoor an IIS/OWA/Sharepoint server.
+    Detects suspicious computer account creation based on impacket default pattern
     
     - **Effort:** intermediate
 
@@ -590,6 +620,12 @@ The following Sekoia.io built-in rules match the intake **WithSecure Elements**.
     Detects adversaries attempts to delete backups or inhibit system recovery. This rule relies on differents known techniques using Windows events logs from Sysmon (ID 1), and PowerShell (ID 4103, 4104).
     
     - **Effort:** intermediate
+
+??? abstract "Interactive Terminal Spawned via Python"
+    
+    Identifies when a terminal (tty) is spawned via Python. Attackers may upgrade a simple reverse shell to a fully interactive tty after obtaining initial access to a host.
+    
+    - **Effort:** advanced
 
 ??? abstract "Invoke-TheHash Commandlets"
     
@@ -605,7 +641,7 @@ The following Sekoia.io built-in rules match the intake **WithSecure Elements**.
 
 ??? abstract "Kernel Module Alteration"
     
-    Kernel module installation can be used to configure system settings to automatically execute a program during system boot or logon to maintain persistence or gain higher-level privileges on compromised systems.
+    Kernel module installation can be used to configure system settings to automatically execute a program during system boot or logon to maintain persistence or gain higher-level privileges on compromised systems. The prerequisites are to enable monitoring of the finit_module, init_module, delete_module syscalls using Auditbeat.
     
     - **Effort:** advanced
 
@@ -639,6 +675,12 @@ The following Sekoia.io built-in rules match the intake **WithSecure Elements**.
     
     - **Effort:** intermediate
 
+??? abstract "Linux Masquerading Space After Name"
+    
+    This detection rule identifies a process created from an executable with a space appended to the end of the name.
+    
+    - **Effort:** intermediate
+
 ??? abstract "Linux Remove Immutable Attribute"
     
     Adversaries may used chattr utility to alter file and folder attributes to control sudden operations like the deletion and modification of files.
@@ -648,6 +690,12 @@ The following Sekoia.io built-in rules match the intake **WithSecure Elements**.
 ??? abstract "Linux Shared Lib Injection Via Ldso Preload"
     
     Detect ld.so.preload modification for shared lib injection, technique used by attackers to load arbitrary code into process
+    
+    - **Effort:** intermediate
+
+??? abstract "Linux Suspicious Auto-start Desktop Shortcut Execution"
+    
+    This detection rule identifies a suspicious process start from an graphical env process which may indicate the use of a malicious .desktop shortcut.
     
     - **Effort:** intermediate
 
@@ -683,7 +731,7 @@ The following Sekoia.io built-in rules match the intake **WithSecure Elements**.
 
 ??? abstract "MSBuild Abuse"
     
-    Detection of MSBuild uses by attackers to infect an host. Focuses on XML compilation which is a Metasploit payload, and on connections made by this process which is unusual.
+    Detection of MSBuild uses by attackers to infect an host. Focuses on XML compilation which is a Metasploit payload.
     
     - **Effort:** intermediate
 
@@ -807,9 +855,21 @@ The following Sekoia.io built-in rules match the intake **WithSecure Elements**.
     
     - **Effort:** intermediate
 
+??? abstract "Microsoft IIS Module Installation"
+    
+    Detects the installation of a new IIS module from the command line. It can used used to backdoor an IIS/OWA/Sharepoint server.
+    
+    - **Effort:** advanced
+
 ??? abstract "Microsoft Office Creating Suspicious File"
     
     Detects Microsoft Office process (word, excel, powerpoint) creating a suspicious file which corresponds to a script or an executable. This behavior highly corresponds to an executed macro which loads an installation script or a malware payload. The rule requires to log for File Creations to work properly, which can be done through Sysmon Event ID 11.
+    
+    - **Effort:** master
+
+??? abstract "Microsoft Office Macro Security Registry Modifications"
+    
+    Detects registry changes allowing an attacker to make Microsoft Office products runs Macros without warning. Events are collected either from ETW/Sysmon/EDR depending of the integration.
     
     - **Effort:** master
 
@@ -859,7 +919,7 @@ The following Sekoia.io built-in rules match the intake **WithSecure Elements**.
     
     Detects NetSh commands used to disable the Windows Firewall
     
-    - **Effort:** intermediate
+    - **Effort:** advanced
 
 ??? abstract "Netsh Allow Command"
     
@@ -905,7 +965,7 @@ The following Sekoia.io built-in rules match the intake **WithSecure Elements**.
 
 ??? abstract "Network Connection Via Certutil"
     
-    Identifies certutil.exe making a network connection. Adversaries could abuse certutil.exe to download a certificate, or malware, from a remote URL. The rule excludes private IP addresses and IPV6. This requires Sysmon logging.
+    Identifies certutil.exe making a network connection. Adversaries could abuse certutil.exe to download a certificate, or malware, from a remote URL.
     
     - **Effort:** intermediate
 
@@ -975,6 +1035,12 @@ The following Sekoia.io built-in rules match the intake **WithSecure Elements**.
     
     - **Effort:** advanced
 
+??? abstract "Ntfsinfo Usage"
+    
+    Detects when the command ntfsinfo is used. An attacker can access to information on the volume from NTFS and have a directory dump of NTFS files.
+    
+    - **Effort:** advanced
+
 ??? abstract "Office Application Startup Office Test"
     
     Detects the addition of office test registry that allows a user to specify an arbitrary DLL that will be executed everytime an Office application is started. An adversaries may abuse the Microsoft Office "Office Test" Registry key to obtain persistence on a compromised system.
@@ -1015,7 +1081,7 @@ The following Sekoia.io built-in rules match the intake **WithSecure Elements**.
     
     Detects Pandemic Windows Implant through registry keys or specific command lines. Prerequisites: Logging for Registry events is needed, which can be done in the Sysmon configuration (events 12 and 13).
     
-    - **Effort:** intermediate
+    - **Effort:** master
 
 ??? abstract "Password Change On Directory Service Restore Mode (DSRM) Account"
     
@@ -1051,7 +1117,7 @@ The following Sekoia.io built-in rules match the intake **WithSecure Elements**.
     
     This event can be a sign of Kerberos replay attack or, among other things, network device configuration or routing problems.
     
-    - **Effort:** intermediate
+    - **Effort:** master
 
 ??? abstract "Potential RDP Connection To Non-Domain Host"
     
@@ -1129,7 +1195,7 @@ The following Sekoia.io built-in rules match the intake **WithSecure Elements**.
     
     Detects PowerView commandlets which perform network and Windows domain enumeration and exploitation. It provides replaces for almost all Windows net commands, letting you query users, machines, domain controllers, user descriptions, share, sessions, and more.
     
-    - **Effort:** advanced
+    - **Effort:** master
 
 ??? abstract "Powershell AMSI Bypass"
     
@@ -1141,13 +1207,19 @@ The following Sekoia.io built-in rules match the intake **WithSecure Elements**.
     
     Powershell's `uploadXXX` functions are a category of methods which can be used to exfiltrate data through native means on a Windows host.
     
-    - **Effort:** intermediate
+    - **Effort:** advanced
 
 ??? abstract "Powershell Web Request"
     
     Detects the use of various web request methods executed remotely via Windows PowerShell.
     
-    - **Effort:** advanced
+    - **Effort:** master
+
+??? abstract "Powershell Web Request And Windows Script"
+    
+    Detects the use of PowerShell web request method combined with Windows Script utilities. This has been observed being used by some malware loaders.
+    
+    - **Effort:** intermediate
 
 ??? abstract "Privilege Escalation Awesome Scripts (PEAS)"
     
@@ -1191,6 +1263,12 @@ The following Sekoia.io built-in rules match the intake **WithSecure Elements**.
     
     - **Effort:** master
 
+??? abstract "Python Exfiltration Tools"
+    
+    Python has some built-in modules or library that could be installed and later be used as exflitration tool by an attacker
+    
+    - **Effort:** advanced
+
 ??? abstract "Python HTTP Server"
     
     Detects command used to start a Simple HTTP server in Python. Threat actors could use it for data extraction, hosting a webshell or else.
@@ -1199,7 +1277,7 @@ The following Sekoia.io built-in rules match the intake **WithSecure Elements**.
 
 ??? abstract "Python Offensive Tools and Packages"
     
-    Track installation and usage of offensive python packages and project that are used for lateral movement
+    Track installation and usage of offensive python packages and project that are used for lateral movement.
     
     - **Effort:** master
 
@@ -1218,12 +1296,6 @@ The following Sekoia.io built-in rules match the intake **WithSecure Elements**.
 ??? abstract "RDP Session Discovery"
     
     Detects use of RDP session discovery via qwinsta or quser. Used by some threat actors to know if someone is working via RDP on a server.
-    
-    - **Effort:** advanced
-
-??? abstract "RSA SecurID Failed Authentification"
-    
-    Detects many failed attempts to authenticate followed by a successfull login for a super admin account.
     
     - **Effort:** advanced
 
@@ -1287,6 +1359,12 @@ The following Sekoia.io built-in rules match the intake **WithSecure Elements**.
     
     - **Effort:** intermediate
 
+??? abstract "SSH Reverse Socks"
+    
+    Detects the usage of the -R option combined with StrictHostKeyChecking, which is an indication of using SSH for reverse socks.
+    
+    - **Effort:** intermediate
+
 ??? abstract "Schtasks Persistence With High Privileges"
     
     Detection of scheduled task with high privileges used by attacker for persistence.
@@ -1315,7 +1393,7 @@ The following Sekoia.io built-in rules match the intake **WithSecure Elements**.
     
     Socat is a linux tool used to relay or open reverse shell that is often used by attacker to bypass security equipment.
     
-    - **Effort:** intermediate
+    - **Effort:** elementary
 
 ??? abstract "SolarWinds Suspicious File Creation"
     
@@ -1326,6 +1404,12 @@ The following Sekoia.io built-in rules match the intake **WithSecure Elements**.
 ??? abstract "Spyware Persistence Using Schtasks"
     
     Detects possible Agent Tesla or Formbook persistence using schtasks. The name of the scheduled task used by these malware is very specific (Updates/randomstring).
+    
+    - **Effort:** intermediate
+
+??? abstract "Startup Item Created"
+    
+    Detects when a item is added to the startup directory. An attacker can use this establish persistence.
     
     - **Effort:** intermediate
 
@@ -1352,6 +1436,12 @@ The following Sekoia.io built-in rules match the intake **WithSecure Elements**.
     Copy suspicious files through Windows cmd prompt to network share
     
     - **Effort:** intermediate
+
+??? abstract "Suspicious Cmd.exe Command Line"
+    
+    Detection on suspicious cmd.exe command line seen being used by some attackers (e.g. Lazarus with Word macros). This requires Windows process command line logging.
+    
+    - **Effort:** master
 
 ??? abstract "Suspicious CodePage Switch with CHCP"
     
@@ -1391,9 +1481,9 @@ The following Sekoia.io built-in rules match the intake **WithSecure Elements**.
 
 ??? abstract "Suspicious Email Attachment Received"
     
-    Detects email containing an .exe|.dll|.ps1|.bat|.hta attachment. Most of the time files send by mail like this are malware.
+    Detects email containing a suspicious file as an attachment, based on its extension.
     
-    - **Effort:** elementary
+    - **Effort:** advanced
 
 ??? abstract "Suspicious File Name"
     
@@ -1447,7 +1537,7 @@ The following Sekoia.io built-in rules match the intake **WithSecure Elements**.
     
     Detects suspicious PowerShell invocation command parameters through command line logging or ScriptBlock Logging.
     
-    - **Effort:** intermediate
+    - **Effort:** advanced
 
 ??? abstract "Suspicious PowerShell Invocations - Specific"
     
@@ -1485,9 +1575,9 @@ The following Sekoia.io built-in rules match the intake **WithSecure Elements**.
     
     - **Effort:** advanced
 
-??? abstract "Suspicious Rundll32.exe Execution"
+??? abstract "Suspicious Rundll32.exe Executions"
     
-    The process rundll32.exe executes a newly dropped DLL with update /i in the command line. This specific technic was observed at least being used by the IcedID loading mechanism dubbed Gziploader.
+    The process rundll32.exe executes a newly dropped DLL with update /i in the command line. This specific technic was observed at least being used by the IcedID loading mechanism dubbed Gziploader. Some other detections are related to LOLBAS (Living Off The Land Binaries, Scripts and Libraries) usages (like the COM registering).
     
     - **Effort:** intermediate
 
@@ -1507,7 +1597,7 @@ The following Sekoia.io built-in rules match the intake **WithSecure Elements**.
     
     Detects suspicious execution of the Windows Installer service (msiexec.exe) which could be used to install a malicious MSI package hosted on a remote server.
     
-    - **Effort:** intermediate
+    - **Effort:** master
 
 ??? abstract "Suspicious Windows Script Execution"
     
@@ -1557,6 +1647,30 @@ The following Sekoia.io built-in rules match the intake **WithSecure Elements**.
     
     - **Effort:** master
 
+??? abstract "Tactical RMM Installation"
+    
+    Detection of common Tactical RMM installation arguments that could be abused by some attackers.
+    
+    - **Effort:** elementary
+
+??? abstract "Tmutil Delete Backups"
+    
+    Detects when the utility tmutil is used to delete backups. The Time Machine utility is used to restore data from backups, add or remove exclusions, and compare backups.
+    
+    - **Effort:** elementary
+
+??? abstract "Tmutil Disabled"
+    
+    Detects when the utility tmutil is disabled. The Time Machine utility is used to restore data from backups, add or remove exclusions, and compare backups.
+    
+    - **Effort:** elementary
+
+??? abstract "Tmutil Exclude File From Backups"
+    
+    Detects when the utility tmutil is used to exclude paths from backups.
+    
+    - **Effort:** master
+
 ??? abstract "UAC Bypass Via Sdclt"
     
     Detects changes to HKCU\Software\Classes\exefile\shell\runas\command\isolatedCommand by an attacker in order to bypass User Account Control (UAC)
@@ -1567,7 +1681,7 @@ The following Sekoia.io built-in rules match the intake **WithSecure Elements**.
     
     Detects the usage of Procdump sysinternals tool with some common arguments and followed by common patterns.
     
-    - **Effort:** intermediate
+    - **Effort:** advanced
 
 ??? abstract "Usage Of Sysinternals Tools"
     
@@ -1586,6 +1700,12 @@ The following Sekoia.io built-in rules match the intake **WithSecure Elements**.
     Detects local user deletion
     
     - **Effort:** master
+
+??? abstract "User Added To Admin Group Via Cmd"
+    
+    Detects the use of different commands to add a user to an admin group.
+    
+    - **Effort:** advanced
 
 ??? abstract "Venom Multi-hop Proxy agent detection"
     
@@ -1627,7 +1747,7 @@ The following Sekoia.io built-in rules match the intake **WithSecure Elements**.
     
     WMImplant is a powershell framework used by attacker for reconnaissance and exfiltration, this rule attempts to detect WMimplant arguments and invokes commands. 
     
-    - **Effort:** intermediate
+    - **Effort:** advanced
 
 ??? abstract "Wdigest Enable UseLogonCredential"
     
@@ -1641,11 +1761,23 @@ The following Sekoia.io built-in rules match the intake **WithSecure Elements**.
     
     - **Effort:** master
 
+??? abstract "WerFaultSecure Abuse"
+    
+    Detect usage of the software vulnerability of WerFaultSecure to suspend the processes of EDRs, and bypass detection. It has been implemented in the tool EDR-Freeze.
+    
+    - **Effort:** advanced
+
 ??? abstract "WiFi Credentials Harvesting Using Netsh"
     
     Detects the harvesting of WiFi credentials using netsh.exe.
     
     - **Effort:** advanced
+
+??? abstract "Windows Defender Logging Modification Via Registry"
+    
+    Detects when the logging for defender is disabled in the registry.
+    
+    - **Effort:** elementary
 
 ??? abstract "Windows Firewall Changes"
     
@@ -1659,9 +1791,21 @@ The following Sekoia.io built-in rules match the intake **WithSecure Elements**.
     
     - **Effort:** master
 
+??? abstract "Windows Sandbox Start"
+    
+    Detection of Windows Sandbox started from the command line with a config file or interactively using a WSB file.
+    
+    - **Effort:** master
+
 ??? abstract "WithSecure Elements Critical Severity"
     
     WithSecure Elements has several modules. One constant is the severity of a raised event, which can be critical and therefore interesting to look at.
+    
+    - **Effort:** master
+
+??? abstract "WithSecure Elements Warning Severity"
+    
+    Detects when WithSecure Elements raised an event with a warning (and is not blocked or quarantined).
     
     - **Effort:** master
 

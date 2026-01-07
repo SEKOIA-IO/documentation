@@ -18,7 +18,7 @@ The following prerequisites are needed in order to setup efficient Rsyslog:
 
 - Administrator privileges of the server: `root`
 - Inbound traffic from the equipment to the Rsyslog must be open on `TCP 514`
-- Outbound traffic from the Rsyslog to the Sekoia.io platform must be open on `TCP 10514` (IP for `intake.sekoia.io` is `51.159.9.95`)
+- Outbound traffic from the Rsyslog to the Sekoia.io platform must be open on `TCP 10514` (IP for `intake.sekoia.io` is `213.32.5.228`)
 
 ## Rsyslog installation procedure
 
@@ -49,13 +49,7 @@ After receiving the IDs to connect to the Linux server, the main activities are 
         sudo dnf install -y rsyslog rsyslog-gnutls wget
 	    ```
 
-3. Download the Sekoia.io certificate
-
-	```bash
-	sudo wget -O /etc/rsyslog.d/Sekoia-io-intake.pem https://app.sekoia.io/assets/files/SEKOIA-IO-intake.pem
-	```
-
-4. Modify the `/etc/rsyslog.conf` main configuration file
+3. Modify the `/etc/rsyslog.conf` main configuration file
 
 	This is an example of standard configuration file.
     In this file:
@@ -108,7 +102,7 @@ After receiving the IDs to connect to the Linux server, the main activities are 
 	*.*;auth,authpriv.none          -/var/log/syslog
 	```
 
-5. Verify your configuration file is correct
+4. Verify your configuration file is correct
 
     ```bash
     rsyslogd -N1
@@ -117,7 +111,7 @@ After receiving the IDs to connect to the Linux server, the main activities are 
     !!!note
         Rsyslogd may not be in your distribution PATH. It is usually found in `/sbin/rsyslogd`
 
-6. Restart Rsyslog service and check its status
+5. Restart Rsyslog service and check its status
 
 	```bash
 	sudo systemctl restart rsyslog
@@ -169,7 +163,6 @@ In this section, let suppose that Windows event logs are sent to the Rsyslog on 
     To this ruleset, an action is defined to tell Rsyslog that all incoming messages associated to it must be forwarded to the Sekoia.io syslog endpoint on a specific Intake. Please change using the YOUR_INTAKE_KEY accordingly.
 
     ```bash
-    $DefaultNetstreamDriverCAFile /etc/rsyslog.d/Sekoia-io-intake.pem
     input(type="imtcp" port="20516" ruleset="remote20516")
 
     template(name="SEKOIAIOWindowsTemplate" type="string" string="<%pri%>1 %timestamp:::date-rfc3339% %hostname% %app-name% %procid% LOG [SEKOIA@53288 intake_key=\"YOUR_INTAKE_KEY\"] %msg%\n")
@@ -452,6 +445,10 @@ Follow these steps to forward logs using RELP Protocol:
 	}
 	```
 
+!!!note
+    If selinux is enabled and set to enforcing, port 11514 needs to be added to 'syslog_tls_port_t'. Run `sudo semanage port -a -t syslog_tls_port_t -p tcp 11514`
+
+
 ## Troubleshooting
 
 After setting up your Rsyslog, you may encounter errors due to the contextual environment or omissions while copying and pasting information.
@@ -579,6 +576,21 @@ It is possible to test your specific `if` condition. To do so:
 4. Restart the Rsyslog service
 5. Remove the `/var/log/testing.log` file and `/var/log/troubleshoot.log` file if necessary
 
+### 5- TLS error: Rsyslog cannot authenticate the Sekoia.io syslog endpoint
+
+The Sekoia.io syslog endpoint is secured with a [Letsencrypt](https://letsencrypt.org) certificate.
+
+According to our installation, it may be necessary to install `ISRG ROOT X1` certificate in our **trusted root certification authorities certificate store**:
+
+1. Download the `ISRG ROOT X1` certificate: <https://letsencrypt.org/certs/isrgrootx1.pem>
+
+    ```bash
+    $ wget https://letsencrypt.org/certs/isrgrootx1.pem -O /tmp/isrgrootx1.pem
+    ```
+
+2. Move the certificate to the relevant directory (e.g., `/etc/ssl/certs` for Debian-based distributions, `/etc/pki/tls/certs` for Red Hat-based distributions; please refer to the documentation of your operating system distribution)
+
+
 ## Example of auto-setup configuration
 
 In order to help users setting up this concentrator, the following bash script working for Ubuntu or Debian server is recommended.
@@ -666,9 +678,6 @@ It will automatically configure you Rsyslog server to collect and forward Window
 	    )
 	}
 	EOM
-
-	# Collect the SEKOIA Key for encryption between Rsyslog and Sekoia.io
-	sudo wget -O /etc/rsyslog.d/Sekoia-io-intake.pem https://app.sekoia.io/assets/files/SEKOIA-IO-intake.pem
 	```
 
 2. Once the file created on the Rsyslog, make it executable with the command `chmod +x <filename.sh>`.

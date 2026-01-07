@@ -7,7 +7,6 @@ type: intake
 Imperva Web Application Firewall helps you to protect your web applications and your APIs.
 
 - **Vendor**: Imperva
-- **Plan**: Defend Prime
 - **Supported environment**: SaaS
 - **Detection based on**: Telemetry
 - **Supported application or feature**: Imperva WAF dataset
@@ -18,23 +17,63 @@ Imperva Web Application Firewall helps you to protect your web applications and 
 
 ### Instructions on the 3rd Party Solution
 
-- In your Imperva control panel, go to [Account > Account Management > SIEM Logs > WAF Log Setup](https://management.service.imperva.com/my/web-logs/settings).
-- Select `Imperva API`, `CEF format` and `enable compression`.
+- Log on to your [Imperva control panel](https://management.service.imperva.com/)
+
+- Go to your `Account > Account Management`
+
+    ![step](/assets/integration/network_security/imperva/step01.png)
+
+- Go to [`SIEM Logs > Log Configuration`](https://management.service.imperva.com/siem-config-service).
+
+    ![step](/assets/integration/network_security/imperva/step02.png)
+
+- Click `Add connection`
+
+    ![step](/assets/integration/network_security/imperva/step03.png)
+
+- Select `Imperva API` as delivery method
+
+    ![step](/assets/integration/network_security/imperva/step04.png)
+
+- Type a name for the connection
+- Click `Generate API keys`
+
+    ![step](/assets/integration/network_security/imperva/step05.png)
 
 !!! Note
     Copy the API ID, the API Key and the Log Server URI.
 
-- Then go to [SIEM Logs > Websites Logs Level](https://management.service.imperva.com/my/web-logs/sites-settings)
-- Enable for each website the log level `INFO`
+- Click `Close`
+
+    ![step](/assets/integration/network_security/imperva/step06.png)
+
+- On the new connection, click `Add log type`
+
+    ![step](/assets/integration/network_security/imperva/step07.png)
+
+- Select `Cloud WAF` as the dataset
+
+    ![step](/assets/integration/network_security/imperva/step08.png)
+
+- Select the log types to forward (at least, `Access logs`; You can add `Security Logs` for more detections)
+- Select the default website log level (at least, a log level with `Access logs`)
+- Select `CEF` as format
+- Enable `Compress logs`
+- If you wish to enable log encryption, upload your public key (see [Imperva documentation](https://docs-cybersec.thalesgroup.com/bundle/cloud-application-security/page/settings/log-integration.htm#EnableEncryption) for more details)
+
+    ![step](/assets/integration/network_security/imperva/step09.png)
+
+- Enable the state `Enabled`
+- Click `Add log type` to save
+
+    ![step](/assets/integration/network_security/imperva/step10.png)
+
 
 ### Instruction on Sekoia
 
 {!_shared_content/integration/intake_configuration.md!}
 
 {!_shared_content/integration/connector_configuration.md!}
-
-!!! Important
-    At the end of the playbook, set up the action `Push events to intake` with a Sekoia.io API key and the intake key, from the intake previously created.
 
 {!_shared_content/operations_center/integrations/generated/d9f337a4-1303-47d4-b15f-1f83807ff3cc_sample.md!}
 
@@ -46,4 +85,4 @@ Imperva Web Application Firewall helps you to protect your web applications and 
 
 ## Further Readings
 
-- [Imperva Log Integration Documentation](https://docs.imperva.com/bundle/cloud-application-security/page/settings/log-integration.htm)
+- [Imperva Log Integration Documentation](https://docs-cybersec.thalesgroup.com/bundle/cloud-application-security/page/settings/log-integration.htm)

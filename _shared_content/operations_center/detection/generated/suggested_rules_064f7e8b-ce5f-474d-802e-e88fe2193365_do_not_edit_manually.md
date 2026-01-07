@@ -1,8 +1,8 @@
 ### Related Built-in Rules
 
-The following Sekoia.io built-in rules match the intake **Trend Micro Apex One**. This documentation is updated automatically and is based solely on the fields used by the intake which are checked against our rules. This means that some rules will be listed but might not be relevant with the intake.
+The following Sekoia.io built-in rules match the intake **Trend Micro Apex One / Vision One endpoint**. This documentation is updated automatically and is based solely on the fields used by the intake which are checked against our rules. This means that some rules will be listed but might not be relevant with the intake.
 
-[SEKOIA.IO x Trend Micro Apex One on ATT&CK Navigator](https://mitre-attack.github.io/attack-navigator/#layerURL=https%3A%2F%2Fraw.githubusercontent.com%2FSEKOIA-IO%2Fdocumentation%2Fmain%2F_shared_content%2Foperations_center%2Fdetection%2Fgenerated%2Fattack_064f7e8b-ce5f-474d-802e-e88fe2193365_do_not_edit_manually.json){ .md-button }
+[SEKOIA.IO x Trend Micro Apex One / Vision One endpoint on ATT&CK Navigator](https://mitre-attack.github.io/attack-navigator/#layerURL=https%3A%2F%2Fraw.githubusercontent.com%2FSEKOIA-IO%2Fdocumentation%2Fmain%2F_shared_content%2Foperations_center%2Fdetection%2Fgenerated%2Fattack_064f7e8b-ce5f-474d-802e-e88fe2193365_do_not_edit_manually.json){ .md-button }
 ??? abstract "ACLight Discovering Privileged Accounts"
     
     Detects use of ACLight tool. This tool aims to discover privileged accounts by scanning the network.
@@ -74,6 +74,18 @@ The following Sekoia.io built-in rules match the intake **Trend Micro Apex One**
     Detects the use of Advanced IP Scanner. Seems to be a popular tool for ransomware groups.
     
     - **Effort:** master
+
+??? abstract "AppleScript Password Prompt"
+    
+    Detects when a prompt is displayed to gain credentials. This technique is used by MacOS malware to obtain the user's password.
+    
+    - **Effort:** advanced
+
+??? abstract "Attempt to Disable Gatekeeper Execution Control"
+    
+    Detects attempts to disable Gatekeeper through the command line. Gatekeeper is a macOS feature designed to ensure that only trusted, signed software can be executed.
+    
+    - **Effort:** elementary
 
 ??? abstract "Audio Capture via PowerShell"
     
@@ -187,7 +199,7 @@ The following Sekoia.io built-in rules match the intake **Trend Micro Apex One**
     
     Detects capture a network trace via netsh.exe trace functionality
     
-    - **Effort:** intermediate
+    - **Effort:** advanced
 
 ??? abstract "CertOC Loading Dll"
     
@@ -213,6 +225,12 @@ The following Sekoia.io built-in rules match the intake **Trend Micro Apex One**
     
     - **Effort:** advanced
 
+??? abstract "Chflags Hidden"
+    
+    Detects the use of the hidden flag by the utility chflags to hide files and directories.
+    
+    - **Effort:** advanced
+
 ??? abstract "Clear EventLogs Through CommandLine"
     
     Detects a command that clears event logs which could indicate an attempt from an attacker to erase its previous traces.
@@ -235,7 +253,7 @@ The following Sekoia.io built-in rules match the intake **Trend Micro Apex One**
     
     Detects specific commands used regularly by ransomwares to stop services or remove backups
     
-    - **Effort:** intermediate
+    - **Effort:** master
 
 ??? abstract "Component Object Model Hijacking"
     
@@ -297,17 +315,35 @@ The following Sekoia.io built-in rules match the intake **Trend Micro Apex One**
     
     - **Effort:** elementary
 
+??? abstract "Correlation Admin Files Checked On Network Share"
+    
+    Detects requests to multiple admin files on a network share. This could be an attacker performing reconnaissance steps on the system.
+    
+    - **Effort:** advanced
+
 ??? abstract "Correlation Multi Service Disable"
     
     The rule detects a high number of services stopped or de-activated in a short period of time.
     
     - **Effort:** master
 
+??? abstract "Correlation Netcat Infection Chain"
+    
+    Detect netcat connection to download et execute payload via piped bash
+    
+    - **Effort:** elementary
+
 ??? abstract "Correlation Potential DNS Tunnel"
     
-    Detects domain name which is longer than 95 characters. Long domain names are distinctive of DNS tunnels.
+    Detects domain name which is longer than 62 characters and requested at least 50 times in a 10 minutes range time. Long domain names are distinctive of DNS tunnels.
     
     - **Effort:** advanced
+
+??? abstract "Correlation Priv Esc Via Remote Thread"
+    
+    Detect a process that obtains system privilege via a remote thread
+    
+    - **Effort:** intermediate
 
 ??? abstract "Credential Dump Tools Related Files"
     
@@ -323,7 +359,7 @@ The following Sekoia.io built-in rules match the intake **Trend Micro Apex One**
 
 ??? abstract "Cron Files Alteration"
     
-    Cron Files and Cron Directory alteration used by attacker for persistency or privilege escalation.
+    Cron Files and Cron Directory alteration used by attacker for persistency or privilege escalation. To ensure full performance on this rule, `auditbeat` intake must be configure with the module `file_integrity` containing path mentionned in the pattern.
     
     - **Effort:** advanced
 
@@ -403,7 +439,7 @@ The following Sekoia.io built-in rules match the intake **Trend Micro Apex One**
     
     Detects registry keys being changed to disable Windows Defender Credential Guard. The rule requires to log Registry Keys modifications or creations, which can be done using Sysmon Event IDs 12,13 and 14.
     
-    - **Effort:** intermediate
+    - **Effort:** master
 
 ??? abstract "Disabled IE Security Features"
     
@@ -415,7 +451,7 @@ The following Sekoia.io built-in rules match the intake **Trend Micro Apex One**
     
     Discord is a messaging application. It allows users to create their own communities to share messages and attachments. Those attachments have little to no overview and can be downloaded by almost anyone, which has been abused by attackers to host malicious payloads.
     
-    - **Effort:** intermediate
+    - **Effort:** advanced
 
 ??? abstract "Discovery Commands Correlation"
     
@@ -453,11 +489,11 @@ The following Sekoia.io built-in rules match the intake **Trend Micro Apex One**
     
     - **Effort:** elementary
 
-??? abstract "Download Files From Suspicious TLDs"
+??? abstract "Dscl Authonly"
     
-    Detects download of certain file types from hosts in suspicious TLDs
+    Detects the use of the command dscl with authonly used to verify the password of a user and for authentification. An attacker can abuse this command to gain credentials.
     
-    - **Effort:** master
+    - **Effort:** advanced
 
 ??? abstract "Dynamic DNS Contacted"
     
@@ -477,6 +513,18 @@ The following Sekoia.io built-in rules match the intake **Trend Micro Apex One**
     
     - **Effort:** intermediate
 
+??? abstract "Elevated Msiexec Via Repair Functionality"
+    
+    Detects when msiexec.exe is used with the repair functionality. The process gains elevated privileges. Attackers can use this to exploit the CVE-2024-38014.
+    
+    - **Effort:** master
+
+??? abstract "Elevated Shell Launched By Browser"
+    
+    Detects when openwith.exe is launched with privileges followed by a browser launching an elevated shell. Related to the CVE-2024-38014.
+    
+    - **Effort:** master
+
 ??? abstract "Elise Backdoor"
     
     Detects Elise backdoor activity as used by Lotus Blossom
@@ -486,6 +534,12 @@ The following Sekoia.io built-in rules match the intake **Trend Micro Apex One**
 ??? abstract "Empire Monkey Activity"
     
     Detects EmpireMonkey APT reported Activity
+    
+    - **Effort:** elementary
+
+??? abstract "Enable Root Account With Dsenableroot"
+    
+    Detects when root is enabled. Attackers can use this as a mean of persistence since root is disabled by default.
     
     - **Effort:** elementary
 
@@ -583,25 +637,25 @@ The following Sekoia.io built-in rules match the intake **Trend Micro Apex One**
     
     Detects dump of SAM, System or Security hives using reg.exe utility. Adversaries may attempt to dump these Windows Registry to retrieve password hashes and access credentials.
     
-    - **Effort:** intermediate
+    - **Effort:** master
 
 ??? abstract "HTA Infection Chains"
     
     Detect the creation of a ZIP file and an HTA file as it is often used in infection chains. Furthermore it also detects the use of suspicious processes launched by explorer.exe combined with the creation of an HTA file, since it is also often used in infection chains (LNK - HTA for instance).
     
-    - **Effort:** intermediate
+    - **Effort:** advanced
 
 ??? abstract "HTML Smuggling Suspicious Usage"
     
     Based on several samples from different botnets, this rule aims at detecting HTML infection chain by looking for HTML created files followed by suspicious files being executed.
     
-    - **Effort:** intermediate
+    - **Effort:** advanced
 
 ??? abstract "HackTools Suspicious Names"
     
     Quick-win rule to detect the default process names or file names of several HackTools.
     
-    - **Effort:** elementary
+    - **Effort:** advanced
 
 ??? abstract "HackTools Suspicious Process Names In Command Line"
     
@@ -633,17 +687,11 @@ The following Sekoia.io built-in rules match the intake **Trend Micro Apex One**
     
     - **Effort:** elementary
 
-??? abstract "IIS Module Installation Using AppCmd"
-    
-    Detects the installation of a new IIS module from the command line. It can used used to backdoor an IIS/OWA/Sharepoint server.
-    
-    - **Effort:** intermediate
-
 ??? abstract "ISO LNK Infection Chain"
     
     Detection of an ISO (or any other similar archive file) downloaded file, followed by a child-process of explorer, which is characteristic of an infection using an ISO containing an LNK file. For events with `host.name`.
     
-    - **Effort:** intermediate
+    - **Effort:** master
 
 ??? abstract "Impacket Addcomputer"
     
@@ -663,6 +711,12 @@ The following Sekoia.io built-in rules match the intake **Trend Micro Apex One**
     
     - **Effort:** intermediate
 
+??? abstract "Interactive Terminal Spawned via Python"
+    
+    Identifies when a terminal (tty) is spawned via Python. Attackers may upgrade a simple reverse shell to a fully interactive tty after obtaining initial access to a host.
+    
+    - **Effort:** advanced
+
 ??? abstract "Invoke-TheHash Commandlets"
     
     Detects suspicious Invoke-TheHash PowerShell commandlet used for performing pass the hash WMI and SMB tasks.
@@ -677,7 +731,7 @@ The following Sekoia.io built-in rules match the intake **Trend Micro Apex One**
 
 ??? abstract "Kernel Module Alteration"
     
-    Kernel module installation can be used to configure system settings to automatically execute a program during system boot or logon to maintain persistence or gain higher-level privileges on compromised systems.
+    Kernel module installation can be used to configure system settings to automatically execute a program during system boot or logon to maintain persistence or gain higher-level privileges on compromised systems. The prerequisites are to enable monitoring of the finit_module, init_module, delete_module syscalls using Auditbeat.
     
     - **Effort:** advanced
 
@@ -708,6 +762,12 @@ The following Sekoia.io built-in rules match the intake **Trend Micro Apex One**
 ??? abstract "Linux Bash Reverse Shell"
     
     To bypass some security equipement or for a sack of simplicity attackers can open raw reverse shell using shell commands
+    
+    - **Effort:** intermediate
+
+??? abstract "Linux Masquerading Space After Name"
+    
+    This detection rule identifies a process created from an executable with a space appended to the end of the name.
     
     - **Effort:** intermediate
 
@@ -749,7 +809,7 @@ The following Sekoia.io built-in rules match the intake **Trend Micro Apex One**
 
 ??? abstract "MSBuild Abuse"
     
-    Detection of MSBuild uses by attackers to infect an host. Focuses on XML compilation which is a Metasploit payload, and on connections made by this process which is unusual.
+    Detection of MSBuild uses by attackers to infect an host. Focuses on XML compilation which is a Metasploit payload.
     
     - **Effort:** intermediate
 
@@ -855,9 +915,21 @@ The following Sekoia.io built-in rules match the intake **Trend Micro Apex One**
     
     - **Effort:** intermediate
 
+??? abstract "Microsoft IIS Module Installation"
+    
+    Detects the installation of a new IIS module from the command line. It can used used to backdoor an IIS/OWA/Sharepoint server.
+    
+    - **Effort:** advanced
+
 ??? abstract "Microsoft Office Creating Suspicious File"
     
     Detects Microsoft Office process (word, excel, powerpoint) creating a suspicious file which corresponds to a script or an executable. This behavior highly corresponds to an executed macro which loads an installation script or a malware payload. The rule requires to log for File Creations to work properly, which can be done through Sysmon Event ID 11.
+    
+    - **Effort:** master
+
+??? abstract "Microsoft Office Macro Security Registry Modifications"
+    
+    Detects registry changes allowing an attacker to make Microsoft Office products runs Macros without warning. Events are collected either from ETW/Sysmon/EDR depending of the integration.
     
     - **Effort:** master
 
@@ -907,7 +979,7 @@ The following Sekoia.io built-in rules match the intake **Trend Micro Apex One**
     
     Detects NetSh commands used to disable the Windows Firewall
     
-    - **Effort:** intermediate
+    - **Effort:** advanced
 
 ??? abstract "Netsh Allow Command"
     
@@ -947,7 +1019,7 @@ The following Sekoia.io built-in rules match the intake **Trend Micro Apex One**
 
 ??? abstract "Network Connection Via Certutil"
     
-    Identifies certutil.exe making a network connection. Adversaries could abuse certutil.exe to download a certificate, or malware, from a remote URL. The rule excludes private IP addresses and IPV6. This requires Sysmon logging.
+    Identifies certutil.exe making a network connection. Adversaries could abuse certutil.exe to download a certificate, or malware, from a remote URL.
     
     - **Effort:** intermediate
 
@@ -1017,6 +1089,12 @@ The following Sekoia.io built-in rules match the intake **Trend Micro Apex One**
     
     - **Effort:** advanced
 
+??? abstract "Ntfsinfo Usage"
+    
+    Detects when the command ntfsinfo is used. An attacker can access to information on the volume from NTFS and have a directory dump of NTFS files.
+    
+    - **Effort:** advanced
+
 ??? abstract "Office Application Startup Office Test"
     
     Detects the addition of office test registry that allows a user to specify an arbitrary DLL that will be executed everytime an Office application is started. An adversaries may abuse the Microsoft Office "Office Test" Registry key to obtain persistence on a compromised system.
@@ -1055,7 +1133,7 @@ The following Sekoia.io built-in rules match the intake **Trend Micro Apex One**
 
 ??? abstract "Package Manager Alteration"
     
-    Package manager (eg: apt, yum) can be altered to install malicious software
+    Package manager (eg: apt, yum) can be altered to install malicious software. To ensure full performance on this rule, `auditbeat` intake must be configure with the module `file_integrity` containing path mentionned in the pattern.
     
     - **Effort:** advanced
 
@@ -1063,7 +1141,7 @@ The following Sekoia.io built-in rules match the intake **Trend Micro Apex One**
     
     Detects Pandemic Windows Implant through registry keys or specific command lines. Prerequisites: Logging for Registry events is needed, which can be done in the Sysmon configuration (events 12 and 13).
     
-    - **Effort:** intermediate
+    - **Effort:** master
 
 ??? abstract "Password Change On Directory Service Restore Mode (DSRM) Account"
     
@@ -1105,11 +1183,11 @@ The following Sekoia.io built-in rules match the intake **Trend Micro Apex One**
     
     This event can be a sign of Kerberos replay attack or, among other things, network device configuration or routing problems.
     
-    - **Effort:** intermediate
+    - **Effort:** master
 
 ??? abstract "Potential DNS Tunnel"
     
-    Detects domain name which is longer than 95 characters. Long domain names are distinctive of DNS tunnels.
+    Detects domain name which is longer than 62 characters. Long domain names are distinctive of DNS tunnels.
     
     - **Effort:** advanced
 
@@ -1183,7 +1261,7 @@ The following Sekoia.io built-in rules match the intake **Trend Micro Apex One**
     
     Detects PowerView commandlets which perform network and Windows domain enumeration and exploitation. It provides replaces for almost all Windows net commands, letting you query users, machines, domain controllers, user descriptions, share, sessions, and more.
     
-    - **Effort:** advanced
+    - **Effort:** master
 
 ??? abstract "Powershell AMSI Bypass"
     
@@ -1195,13 +1273,19 @@ The following Sekoia.io built-in rules match the intake **Trend Micro Apex One**
     
     Powershell's `uploadXXX` functions are a category of methods which can be used to exfiltrate data through native means on a Windows host.
     
-    - **Effort:** intermediate
+    - **Effort:** advanced
 
 ??? abstract "Powershell Web Request"
     
     Detects the use of various web request methods executed remotely via Windows PowerShell.
     
-    - **Effort:** advanced
+    - **Effort:** master
+
+??? abstract "Powershell Web Request And Windows Script"
+    
+    Detects the use of PowerShell web request method combined with Windows Script utilities. This has been observed being used by some malware loaders.
+    
+    - **Effort:** intermediate
 
 ??? abstract "Privilege Escalation Awesome Scripts (PEAS)"
     
@@ -1251,6 +1335,12 @@ The following Sekoia.io built-in rules match the intake **Trend Micro Apex One**
     
     - **Effort:** master
 
+??? abstract "Python Exfiltration Tools"
+    
+    Python has some built-in modules or library that could be installed and later be used as exflitration tool by an attacker
+    
+    - **Effort:** advanced
+
 ??? abstract "Python HTTP Server"
     
     Detects command used to start a Simple HTTP server in Python. Threat actors could use it for data extraction, hosting a webshell or else.
@@ -1259,7 +1349,7 @@ The following Sekoia.io built-in rules match the intake **Trend Micro Apex One**
 
 ??? abstract "Python Offensive Tools and Packages"
     
-    Track installation and usage of offensive python packages and project that are used for lateral movement
+    Track installation and usage of offensive python packages and project that are used for lateral movement.
     
     - **Effort:** master
 
@@ -1278,12 +1368,6 @@ The following Sekoia.io built-in rules match the intake **Trend Micro Apex One**
 ??? abstract "RDP Session Discovery"
     
     Detects use of RDP session discovery via qwinsta or quser. Used by some threat actors to know if someone is working via RDP on a server.
-    
-    - **Effort:** advanced
-
-??? abstract "RSA SecurID Failed Authentification"
-    
-    Detects many failed attempts to authenticate followed by a successfull login for a super admin account.
     
     - **Effort:** advanced
 
@@ -1371,17 +1455,17 @@ The following Sekoia.io built-in rules match the intake **Trend Micro Apex One**
     
     - **Effort:** advanced
 
+??? abstract "SSH Reverse Socks"
+    
+    Detects the usage of the -R option combined with StrictHostKeyChecking, which is an indication of using SSH for reverse socks.
+    
+    - **Effort:** intermediate
+
 ??? abstract "Schtasks Persistence With High Privileges"
     
     Detection of scheduled task with high privileges used by attacker for persistence.
     
     - **Effort:** elementary
-
-??? abstract "SecurityScorecard Vulnerability Assessment Scanner New Issues"
-    
-    Raises an alert when SecurityScorecard Vulnerability Assessment Scanner find new issues.
-    
-    - **Effort:** master
 
 ??? abstract "Sekoia.io EICAR Detection"
     
@@ -1411,7 +1495,7 @@ The following Sekoia.io built-in rules match the intake **Trend Micro Apex One**
     
     Socat is a linux tool used to relay or open reverse shell that is often used by attacker to bypass security equipment.
     
-    - **Effort:** intermediate
+    - **Effort:** elementary
 
 ??? abstract "SolarWinds Suspicious File Creation"
     
@@ -1422,6 +1506,12 @@ The following Sekoia.io built-in rules match the intake **Trend Micro Apex One**
 ??? abstract "Spyware Persistence Using Schtasks"
     
     Detects possible Agent Tesla or Formbook persistence using schtasks. The name of the scheduled task used by these malware is very specific (Updates/randomstring).
+    
+    - **Effort:** intermediate
+
+??? abstract "Startup Item Created"
+    
+    Detects when a item is added to the startup directory. An attacker can use this establish persistence.
     
     - **Effort:** intermediate
 
@@ -1448,6 +1538,12 @@ The following Sekoia.io built-in rules match the intake **Trend Micro Apex One**
     Copy suspicious files through Windows cmd prompt to network share
     
     - **Effort:** intermediate
+
+??? abstract "Suspicious Cmd.exe Command Line"
+    
+    Detection on suspicious cmd.exe command line seen being used by some attackers (e.g. Lazarus with Word macros). This requires Windows process command line logging.
+    
+    - **Effort:** master
 
 ??? abstract "Suspicious CodePage Switch with CHCP"
     
@@ -1493,9 +1589,9 @@ The following Sekoia.io built-in rules match the intake **Trend Micro Apex One**
 
 ??? abstract "Suspicious Email Attachment Received"
     
-    Detects email containing an .exe|.dll|.ps1|.bat|.hta attachment. Most of the time files send by mail like this are malware.
+    Detects email containing a suspicious file as an attachment, based on its extension.
     
-    - **Effort:** elementary
+    - **Effort:** advanced
 
 ??? abstract "Suspicious File Name"
     
@@ -1549,7 +1645,7 @@ The following Sekoia.io built-in rules match the intake **Trend Micro Apex One**
     
     Detects suspicious PowerShell invocation command parameters through command line logging or ScriptBlock Logging.
     
-    - **Effort:** intermediate
+    - **Effort:** advanced
 
 ??? abstract "Suspicious PowerShell Invocations - Specific"
     
@@ -1581,9 +1677,9 @@ The following Sekoia.io built-in rules match the intake **Trend Micro Apex One**
     
     - **Effort:** advanced
 
-??? abstract "Suspicious Rundll32.exe Execution"
+??? abstract "Suspicious Rundll32.exe Executions"
     
-    The process rundll32.exe executes a newly dropped DLL with update /i in the command line. This specific technic was observed at least being used by the IcedID loading mechanism dubbed Gziploader.
+    The process rundll32.exe executes a newly dropped DLL with update /i in the command line. This specific technic was observed at least being used by the IcedID loading mechanism dubbed Gziploader. Some other detections are related to LOLBAS (Living Off The Land Binaries, Scripts and Libraries) usages (like the COM registering).
     
     - **Effort:** intermediate
 
@@ -1621,7 +1717,7 @@ The following Sekoia.io built-in rules match the intake **Trend Micro Apex One**
     
     Detects suspicious execution of the Windows Installer service (msiexec.exe) which could be used to install a malicious MSI package hosted on a remote server.
     
-    - **Effort:** intermediate
+    - **Effort:** master
 
 ??? abstract "Suspicious Windows Script Execution"
     
@@ -1671,11 +1767,35 @@ The following Sekoia.io built-in rules match the intake **Trend Micro Apex One**
     
     - **Effort:** master
 
+??? abstract "Tactical RMM Installation"
+    
+    Detection of common Tactical RMM installation arguments that could be abused by some attackers.
+    
+    - **Effort:** elementary
+
 ??? abstract "Telegram Bot API Request"
     
     Detects suspicious DNS queries to api.telegram.org used by Telegram Bots of any kind
     
     - **Effort:** advanced
+
+??? abstract "Tmutil Delete Backups"
+    
+    Detects when the utility tmutil is used to delete backups. The Time Machine utility is used to restore data from backups, add or remove exclusions, and compare backups.
+    
+    - **Effort:** elementary
+
+??? abstract "Tmutil Disabled"
+    
+    Detects when the utility tmutil is disabled. The Time Machine utility is used to restore data from backups, add or remove exclusions, and compare backups.
+    
+    - **Effort:** elementary
+
+??? abstract "Tmutil Exclude File From Backups"
+    
+    Detects when the utility tmutil is used to exclude paths from backups.
+    
+    - **Effort:** master
 
 ??? abstract "Trend Micro Apex One Data Loss Prevention Alert"
     
@@ -1705,7 +1825,7 @@ The following Sekoia.io built-in rules match the intake **Trend Micro Apex One**
     
     Detects the usage of Procdump sysinternals tool with some common arguments and followed by common patterns.
     
-    - **Effort:** intermediate
+    - **Effort:** advanced
 
 ??? abstract "Usage Of Sysinternals Tools"
     
@@ -1725,6 +1845,12 @@ The following Sekoia.io built-in rules match the intake **Trend Micro Apex One**
     
     - **Effort:** master
 
+??? abstract "User Added To Admin Group Via Cmd"
+    
+    Detects the use of different commands to add a user to an admin group.
+    
+    - **Effort:** advanced
+
 ??? abstract "Venom Multi-hop Proxy agent detection"
     
     Detects Venom Multi-hop Proxy agent.
@@ -1741,7 +1867,7 @@ The following Sekoia.io built-in rules match the intake **Trend Micro Apex One**
     
     Detects attacker fingerprint activities based on the correlation of specific WMIC commands. This has been observed with Aurora malware.
     
-    - **Effort:** intermediate
+    - **Effort:** advanced
 
 ??? abstract "WMI Install Of Binary"
     
@@ -1771,7 +1897,7 @@ The following Sekoia.io built-in rules match the intake **Trend Micro Apex One**
     
     WMImplant is a powershell framework used by attacker for reconnaissance and exfiltration, this rule attempts to detect WMimplant arguments and invokes commands. 
     
-    - **Effort:** intermediate
+    - **Effort:** advanced
 
 ??? abstract "Wdigest Enable UseLogonCredential"
     
@@ -1785,11 +1911,23 @@ The following Sekoia.io built-in rules match the intake **Trend Micro Apex One**
     
     - **Effort:** master
 
+??? abstract "WerFaultSecure Abuse"
+    
+    Detect usage of the software vulnerability of WerFaultSecure to suspend the processes of EDRs, and bypass detection. It has been implemented in the tool EDR-Freeze.
+    
+    - **Effort:** advanced
+
 ??? abstract "WiFi Credentials Harvesting Using Netsh"
     
     Detects the harvesting of WiFi credentials using netsh.exe.
     
     - **Effort:** advanced
+
+??? abstract "Windows Defender Logging Modification Via Registry"
+    
+    Detects when the logging for defender is disabled in the registry.
+    
+    - **Effort:** elementary
 
 ??? abstract "Windows Firewall Changes"
     
@@ -1800,6 +1938,12 @@ The following Sekoia.io built-in rules match the intake **Trend Micro Apex One**
 ??? abstract "Windows Registry Persistence COM Key Linking"
     
     Detects COM object hijacking via TreatAs subkey. Logging for Registry events is needed in the Sysmon configuration with this kind of rule `<TargetObject name="testr12" condition="end with">\TreatAs\(Default)</TargetObject>`.
+    
+    - **Effort:** master
+
+??? abstract "Windows Sandbox Start"
+    
+    Detection of Windows Sandbox started from the command line with a config file or interactively using a WSB file.
     
     - **Effort:** master
 

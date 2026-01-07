@@ -141,9 +141,21 @@ The following Sekoia.io built-in rules match the intake **Fortinet FortiGate**. 
     
     - **Effort:** master
 
+??? abstract "Correlation Fortigate Multi Alert From One Internal Ip"
+    
+    This rule detect an internal asset that targets a destination IP address with several threat
+    
+    - **Effort:** master
+
+??? abstract "Correlation Fortigate Multi Dest From One Internal Ip"
+    
+    This rule detect an internal asset that targets several destination IP address with the same threat
+    
+    - **Effort:** master
+
 ??? abstract "Correlation Potential DNS Tunnel"
     
-    Detects domain name which is longer than 95 characters. Long domain names are distinctive of DNS tunnels.
+    Detects domain name which is longer than 62 characters and requested at least 50 times in a 10 minutes range time. Long domain names are distinctive of DNS tunnels.
     
     - **Effort:** advanced
 
@@ -193,25 +205,13 @@ The following Sekoia.io built-in rules match the intake **Fortinet FortiGate**. 
     
     Discord is a messaging application. It allows users to create their own communities to share messages and attachments. Those attachments have little to no overview and can be downloaded by almost anyone, which has been abused by attackers to host malicious payloads.
     
-    - **Effort:** intermediate
+    - **Effort:** advanced
 
 ??? abstract "Domain Trust Created Or Removed"
     
     A trust was created or removed to a domain. An attacker could perform that in order to do lateral movement easily between domains or shutdown the ability of two domains to communicate.
     
     - **Effort:** advanced
-
-??? abstract "Download Files From Non-Legitimate TLDs"
-    
-    Detects file downloads from non-legitimate TLDs. Additional legitimates TLDs should be filtered according to the business habits.
-    
-    - **Effort:** master
-
-??? abstract "Download Files From Suspicious TLDs"
-    
-    Detects download of certain file types from hosts in suspicious TLDs
-    
-    - **Effort:** master
 
 ??? abstract "Dynamic DNS Contacted"
     
@@ -237,15 +237,15 @@ The following Sekoia.io built-in rules match the intake **Fortinet FortiGate**. 
     
     - **Effort:** advanced
 
-??? abstract "Fortinet FortiGate Firewall Login In Failure"
+??? abstract "Fortigate IPS Critical Alert"
     
-    Detects failed login attemps on firewall administration rule. Prerequisites, check that the firewall logs format corresponds to the rule
+    Fortigate intrusion detection alert with critical severity.
     
     - **Effort:** master
 
-??? abstract "Fortinet FortiGate Firewall Successful External Login"
+??? abstract "Fortigate IPS High Severity Alert"
     
-    Detects succesfull access to administration console of firewall from another IP address than 127.0.0.1. Prerequisites, check that the firewall logs format corresponds to the rule
+    Fortigate intrusion detection alert with high severity.
     
     - **Effort:** master
 
@@ -253,25 +253,25 @@ The following Sekoia.io built-in rules match the intake **Fortinet FortiGate**. 
     
     Detect the creation of a ZIP file and an HTA file as it is often used in infection chains. Furthermore it also detects the use of suspicious processes launched by explorer.exe combined with the creation of an HTA file, since it is also often used in infection chains (LNK - HTA for instance).
     
-    - **Effort:** intermediate
+    - **Effort:** advanced
 
 ??? abstract "HTML Smuggling Suspicious Usage"
     
     Based on several samples from different botnets, this rule aims at detecting HTML infection chain by looking for HTML created files followed by suspicious files being executed.
     
-    - **Effort:** intermediate
+    - **Effort:** advanced
 
 ??? abstract "HackTools Suspicious Names"
     
     Quick-win rule to detect the default process names or file names of several HackTools.
     
-    - **Effort:** elementary
+    - **Effort:** advanced
 
 ??? abstract "ISO LNK Infection Chain"
     
     Detection of an ISO (or any other similar archive file) downloaded file, followed by a child-process of explorer, which is characteristic of an infection using an ISO containing an LNK file. For events with `host.name`.
     
-    - **Effort:** intermediate
+    - **Effort:** master
 
 ??? abstract "Internet Scanner"
     
@@ -290,18 +290,6 @@ The following Sekoia.io built-in rules match the intake **Fortinet FortiGate**. 
     Detects Koadic payload using MSHTML module
     
     - **Effort:** intermediate
-
-??? abstract "Login Brute-Force On Firewall"
-    
-    Detects successful access to administration console of a firewall after several failure.
-    
-    - **Effort:** advanced
-
-??? abstract "Login Brute-Force Successful On Jumpcloud Portal"
-    
-    A user has attempted to login several times (brute-force) on Jumpcloud Portal and succeeded to login.
-    
-    - **Effort:** advanced
 
 ??? abstract "Login Brute-Force Successful On SentinelOne EDR Management Console"
     
@@ -355,7 +343,7 @@ The following Sekoia.io built-in rules match the intake **Fortinet FortiGate**. 
     
     This event can be a sign of Kerberos replay attack or, among other things, network device configuration or routing problems.
     
-    - **Effort:** intermediate
+    - **Effort:** master
 
 ??? abstract "Potential Bazar Loader User-Agents"
     
@@ -365,7 +353,7 @@ The following Sekoia.io built-in rules match the intake **Fortinet FortiGate**. 
 
 ??? abstract "Potential DNS Tunnel"
     
-    Detects domain name which is longer than 95 characters. Long domain names are distinctive of DNS tunnels.
+    Detects domain name which is longer than 62 characters. Long domain names are distinctive of DNS tunnels.
     
     - **Effort:** advanced
 
@@ -398,12 +386,6 @@ The following Sekoia.io built-in rules match the intake **Fortinet FortiGate**. 
     Detects suspicious calls to Microsoft Exchange resources, in locations related to webshells observed in campaigns using this vulnerability.
     
     - **Effort:** elementary
-
-??? abstract "RSA SecurID Failed Authentification"
-    
-    Detects many failed attempts to authenticate followed by a successfull login for a super admin account.
-    
-    - **Effort:** advanced
 
 ??? abstract "RTLO Character"
     
@@ -440,12 +422,6 @@ The following Sekoia.io built-in rules match the intake **Fortinet FortiGate**. 
     Detect threats based on indicators of compromise (IOCs) collected by SEKOIA's Threat and Detection Research team.
     
     - **Effort:** elementary
-
-??? abstract "SecurityScorecard Vulnerability Assessment Scanner New Issues"
-    
-    Raises an alert when SecurityScorecard Vulnerability Assessment Scanner find new issues.
-    
-    - **Effort:** master
 
 ??? abstract "Sekoia.io EICAR Detection"
     

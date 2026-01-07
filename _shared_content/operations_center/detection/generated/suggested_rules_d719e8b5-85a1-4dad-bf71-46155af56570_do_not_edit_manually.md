@@ -35,7 +35,7 @@ The following Sekoia.io built-in rules match the intake **WatchGuard Firebox**. 
 
 ??? abstract "Correlation Potential DNS Tunnel"
     
-    Detects domain name which is longer than 95 characters. Long domain names are distinctive of DNS tunnels.
+    Detects domain name which is longer than 62 characters and requested at least 50 times in a 10 minutes range time. Long domain names are distinctive of DNS tunnels.
     
     - **Effort:** advanced
 
@@ -49,7 +49,7 @@ The following Sekoia.io built-in rules match the intake **WatchGuard Firebox**. 
     
     Discord is a messaging application. It allows users to create their own communities to share messages and attachments. Those attachments have little to no overview and can be downloaded by almost anyone, which has been abused by attackers to host malicious payloads.
     
-    - **Effort:** intermediate
+    - **Effort:** advanced
 
 ??? abstract "Domain Trust Created Or Removed"
     
@@ -62,12 +62,6 @@ The following Sekoia.io built-in rules match the intake **WatchGuard Firebox**. 
     Detect communication with dynamic dns domain. This kind of domain is often used by attackers. This rule can trigger false positive in non-controlled environment because dynamic dns is not always malicious.
     
     - **Effort:** master
-
-??? abstract "Entra ID Sign-In Via Known AiTM Phishing Kit"
-    
-    Detects a sign-in attempt from an IP address belonging to a known adversary-in-the-middle phishing kit.
-    
-    - **Effort:** elementary
 
 ??? abstract "EvilProxy Phishing Domain"
     
@@ -99,6 +93,12 @@ The following Sekoia.io built-in rules match the intake **WatchGuard Firebox**. 
     
     - **Effort:** intermediate
 
+??? abstract "Login Brute-Force Successful On WatchGuard Firebox"
+    
+    A user has attempted to login several times (brute-force) on WatchGuard Firebox and succeeded to login.
+    
+    - **Effort:** advanced
+
 ??? abstract "Password Change On Directory Service Restore Mode (DSRM) Account"
     
     The Directory Service Restore Mode (DSRM) account is a local administrator account on Domain Controllers. Attackers may change the password to gain persistence.
@@ -109,7 +109,7 @@ The following Sekoia.io built-in rules match the intake **WatchGuard Firebox**. 
     
     This event can be a sign of Kerberos replay attack or, among other things, network device configuration or routing problems.
     
-    - **Effort:** intermediate
+    - **Effort:** master
 
 ??? abstract "Potential Azure AD Phishing Page (Adversary-in-the-Middle)"
     
@@ -119,13 +119,7 @@ The following Sekoia.io built-in rules match the intake **WatchGuard Firebox**. 
 
 ??? abstract "Potential DNS Tunnel"
     
-    Detects domain name which is longer than 95 characters. Long domain names are distinctive of DNS tunnels.
-    
-    - **Effort:** advanced
-
-??? abstract "RSA SecurID Failed Authentification"
-    
-    Detects many failed attempts to authenticate followed by a successfull login for a super admin account.
+    Detects domain name which is longer than 62 characters. Long domain names are distinctive of DNS tunnels.
     
     - **Effort:** advanced
 
@@ -153,17 +147,17 @@ The following Sekoia.io built-in rules match the intake **WatchGuard Firebox**. 
     
     - **Effort:** elementary
 
-??? abstract "SecurityScorecard Vulnerability Assessment Scanner New Issues"
-    
-    Raises an alert when SecurityScorecard Vulnerability Assessment Scanner find new issues.
-    
-    - **Effort:** master
-
 ??? abstract "Sekoia.io EICAR Detection"
     
     Detects observables in Sekoia.io CTI tagged as EICAR, which are fake samples meant to test detection.
     
     - **Effort:** master
+
+??? abstract "Sign-In Via Known AiTM Phishing Kit"
+    
+    Detects a sign-in attempt from an IP address belonging to a known adversary-in-the-middle phishing kit.
+    
+    - **Effort:** elementary
 
 ??? abstract "Sliver DNS Beaconing"
     

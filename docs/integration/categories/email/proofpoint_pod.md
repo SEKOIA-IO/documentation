@@ -7,7 +7,6 @@ type: intake
 ProofPoint On Demand (PoD) offers a real-time email processing feed to detect, classify and mitigate threats.
 
 - **Vendor**: Proofpoint
-- **Plan**: Defend Prime
 - **Supported environment**: Cloud
 - **Detection based on**: Telemetry
 - **Supported application or feature**: Email gateway
@@ -19,25 +18,27 @@ ProofPoint On Demand (PoD) offers a real-time email processing feed to detect, c
 
 As a prerequisite, you need to create an APIKey and to get your cluster id:
 
-Copy your cluster id. It is diplayed on the upper-right corner of your management interface, next to the release number.
-
-To create an APIKey, from our dashboard:
+To create an APIKey, from [admin.proofpoint.com](https://admin.proofpoint.com):
 
 - Open the menu, unfold the `Settings` section and go to `API Key Management`.
+- Select the `PoD Logging` tab
+
+![API Key creation](/assets/integration/email/proofpoint/create_api_key.png)
+
 - Click on the button `Create New` to display the `Create New API Key` dialog box.
-- Type a name and generate the API Key.
+- Type a name
+- Copy the Cluster ID
+
+![Cluster ID](/assets/integration/email/proofpoint/copy_cluster_id.png)
+
+- Click `Generate Key`
 - Select `View Details` from the ellipsis menu on the fresh API Key and copy the key.
 
 
 ### Create the intake
 
-Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a new intake from the format `Proofpoint PoD`.
-
-### Pull events
-
-Go to the [playbook page](https://app.sekoia.io/operations/playbooks) and create a new playbook with the [ProofPoint PoD connector](/integration/action_library/applicative/proofpoint/#get-proofpoint-pod-events).
-
-Set up the trigger configuration with the api key, the cluster id and the intake key. Customize others parameters if needed.
+1. Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a new intake from the format `Proofpoint PoD`.
+2. Set up the intake configuration with the api key and the cluster id.
 
 Start the playbook and enjoy your events.
 

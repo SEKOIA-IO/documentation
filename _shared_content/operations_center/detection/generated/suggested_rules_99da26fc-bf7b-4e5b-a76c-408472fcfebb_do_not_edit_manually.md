@@ -75,6 +75,18 @@ The following Sekoia.io built-in rules match the intake **Sophos Analysis Threat
     
     - **Effort:** master
 
+??? abstract "AppleScript Password Prompt"
+    
+    Detects when a prompt is displayed to gain credentials. This technique is used by MacOS malware to obtain the user's password.
+    
+    - **Effort:** advanced
+
+??? abstract "Attempt to Disable Gatekeeper Execution Control"
+    
+    Detects attempts to disable Gatekeeper through the command line. Gatekeeper is a macOS feature designed to ensure that only trusted, signed software can be executed.
+    
+    - **Effort:** elementary
+
 ??? abstract "Audio Capture via PowerShell"
     
     Detects audio capture via PowerShell Cmdlet
@@ -163,7 +175,7 @@ The following Sekoia.io built-in rules match the intake **Sophos Analysis Threat
     
     Detects capture a network trace via netsh.exe trace functionality
     
-    - **Effort:** intermediate
+    - **Effort:** advanced
 
 ??? abstract "CertOC Loading Dll"
     
@@ -186,6 +198,12 @@ The following Sekoia.io built-in rules match the intake **Sophos Analysis Threat
 ??? abstract "Change Default File Association"
     
     When a file is opened, the default program used to open the file (also called the file association or handler) is checked. File association selections are stored in the Windows Registry and can be edited by users, administrators, or programs that have Registry access or by administrators using the built-in assoc utility. Applications can modify the file association for a given file extension to call an arbitrary program when a file with the given extension is opened.
+    
+    - **Effort:** advanced
+
+??? abstract "Chflags Hidden"
+    
+    Detects the use of the hidden flag by the utility chflags to hide files and directories.
     
     - **Effort:** advanced
 
@@ -217,7 +235,7 @@ The following Sekoia.io built-in rules match the intake **Sophos Analysis Threat
     
     Detects specific commands used regularly by ransomwares to stop services or remove backups
     
-    - **Effort:** intermediate
+    - **Effort:** master
 
 ??? abstract "Component Object Model Hijacking"
     
@@ -273,17 +291,35 @@ The following Sekoia.io built-in rules match the intake **Sophos Analysis Threat
     
     - **Effort:** elementary
 
+??? abstract "Correlation Admin Files Checked On Network Share"
+    
+    Detects requests to multiple admin files on a network share. This could be an attacker performing reconnaissance steps on the system.
+    
+    - **Effort:** advanced
+
 ??? abstract "Correlation Multi Service Disable"
     
     The rule detects a high number of services stopped or de-activated in a short period of time.
     
     - **Effort:** master
 
+??? abstract "Correlation Netcat Infection Chain"
+    
+    Detect netcat connection to download et execute payload via piped bash
+    
+    - **Effort:** elementary
+
 ??? abstract "Correlation Potential DNS Tunnel"
     
-    Detects domain name which is longer than 95 characters. Long domain names are distinctive of DNS tunnels.
+    Detects domain name which is longer than 62 characters and requested at least 50 times in a 10 minutes range time. Long domain names are distinctive of DNS tunnels.
     
     - **Effort:** advanced
+
+??? abstract "Correlation PowerShell Suspicious DLL Loading"
+    
+    Detect some suspicious Windows DLL Loading where some PowerShell activity from the binary itself, followed by the same DLL process spawning other process. This is related to the usage of a PowerShell Named Pipe IPC from the DLL.
+    
+    - **Effort:** intermediate
 
 ??? abstract "Credential Dump Tools Related Files"
     
@@ -302,12 +338,6 @@ The following Sekoia.io built-in rules match the intake **Sophos Analysis Threat
     Detection of domain names potentially related to cryptomining activities.
     
     - **Effort:** master
-
-??? abstract "Csrss Child Found"
-    
-    The csrss.exe process (csrss stands for Client / Server Runtime Subsystem) is a generic Windows process used to manage windows and Windows graphics. This process  should not create a child process or it is very rare.
-    
-    - **Effort:** intermediate
 
 ??? abstract "DHCP Callout DLL Installation"
     
@@ -385,7 +415,7 @@ The following Sekoia.io built-in rules match the intake **Sophos Analysis Threat
     
     Detects registry keys being changed to disable Windows Defender Credential Guard. The rule requires to log Registry Keys modifications or creations, which can be done using Sysmon Event IDs 12,13 and 14.
     
-    - **Effort:** intermediate
+    - **Effort:** master
 
 ??? abstract "Disabled IE Security Features"
     
@@ -429,6 +459,12 @@ The following Sekoia.io built-in rules match the intake **Sophos Analysis Threat
     
     - **Effort:** elementary
 
+??? abstract "Dscl Authonly"
+    
+    Detects the use of the command dscl with authonly used to verify the password of a user and for authentification. An attacker can abuse this command to gain credentials.
+    
+    - **Effort:** advanced
+
 ??? abstract "Dynamic DNS Contacted"
     
     Detect communication with dynamic dns domain. This kind of domain is often used by attackers. This rule can trigger false positive in non-controlled environment because dynamic dns is not always malicious.
@@ -447,6 +483,12 @@ The following Sekoia.io built-in rules match the intake **Sophos Analysis Threat
     
     - **Effort:** intermediate
 
+??? abstract "Elevated Msiexec Via Repair Functionality"
+    
+    Detects when msiexec.exe is used with the repair functionality. The process gains elevated privileges. Attackers can use this to exploit the CVE-2024-38014.
+    
+    - **Effort:** master
+
 ??? abstract "Elise Backdoor"
     
     Detects Elise backdoor activity as used by Lotus Blossom
@@ -456,6 +498,12 @@ The following Sekoia.io built-in rules match the intake **Sophos Analysis Threat
 ??? abstract "Empire Monkey Activity"
     
     Detects EmpireMonkey APT reported Activity
+    
+    - **Effort:** elementary
+
+??? abstract "Enable Root Account With Dsenableroot"
+    
+    Detects when root is enabled. Attackers can use this as a mean of persistence since root is disabled by default.
     
     - **Effort:** elementary
 
@@ -549,12 +597,6 @@ The following Sekoia.io built-in rules match the intake **Sophos Analysis Threat
     
     - **Effort:** intermediate
 
-??? abstract "Explorer Wrong Parent"
-    
-    Detects suspicious spawning of explorer.exe process created by the rundll32.exe or regsvr32.exe. This behaviour is abnormal. Malware injecting itself into the explorer.exe process is quite common, in order to evade process-based defenses.
-    
-    - **Effort:** master
-
 ??? abstract "FLTMC command usage"
     
     Detects the use of fltmc to list and load/unload a filter driver.
@@ -591,6 +633,12 @@ The following Sekoia.io built-in rules match the intake **Sophos Analysis Threat
     
     - **Effort:** master
 
+??? abstract "Generic Password Discovery"
+    
+    Detects when the security utility is used to access passwords in a keychain.
+    
+    - **Effort:** advanced
+
 ??? abstract "Generic-reverse-shell-oneliner"
     
     To bypass some security equipement or for a sack of simplicity attackers can open raw reverse shell using shell commands
@@ -607,25 +655,25 @@ The following Sekoia.io built-in rules match the intake **Sophos Analysis Threat
     
     Detects dump of SAM, System or Security hives using reg.exe utility. Adversaries may attempt to dump these Windows Registry to retrieve password hashes and access credentials.
     
-    - **Effort:** intermediate
+    - **Effort:** master
 
 ??? abstract "HTA Infection Chains"
     
     Detect the creation of a ZIP file and an HTA file as it is often used in infection chains. Furthermore it also detects the use of suspicious processes launched by explorer.exe combined with the creation of an HTA file, since it is also often used in infection chains (LNK - HTA for instance).
     
-    - **Effort:** intermediate
+    - **Effort:** advanced
 
 ??? abstract "HTML Smuggling Suspicious Usage"
     
     Based on several samples from different botnets, this rule aims at detecting HTML infection chain by looking for HTML created files followed by suspicious files being executed.
     
-    - **Effort:** intermediate
+    - **Effort:** advanced
 
 ??? abstract "HackTools Suspicious Names"
     
     Quick-win rule to detect the default process names or file names of several HackTools.
     
-    - **Effort:** elementary
+    - **Effort:** advanced
 
 ??? abstract "HackTools Suspicious Process Names In Command Line"
     
@@ -657,17 +705,11 @@ The following Sekoia.io built-in rules match the intake **Sophos Analysis Threat
     
     - **Effort:** elementary
 
-??? abstract "IIS Module Installation Using AppCmd"
-    
-    Detects the installation of a new IIS module from the command line. It can used used to backdoor an IIS/OWA/Sharepoint server.
-    
-    - **Effort:** intermediate
-
 ??? abstract "ISO LNK Infection Chain"
     
     Detection of an ISO (or any other similar archive file) downloaded file, followed by a child-process of explorer, which is characteristic of an infection using an ISO containing an LNK file. For events with `host.name`.
     
-    - **Effort:** intermediate
+    - **Effort:** master
 
 ??? abstract "IcedID Execution Using Excel"
     
@@ -699,11 +741,23 @@ The following Sekoia.io built-in rules match the intake **Sophos Analysis Threat
     
     - **Effort:** intermediate
 
+??? abstract "Interactive Terminal Spawned via Python"
+    
+    Identifies when a terminal (tty) is spawned via Python. Attackers may upgrade a simple reverse shell to a fully interactive tty after obtaining initial access to a host.
+    
+    - **Effort:** advanced
+
 ??? abstract "Invoke-TheHash Commandlets"
     
     Detects suspicious Invoke-TheHash PowerShell commandlet used for performing pass the hash WMI and SMB tasks.
     
     - **Effort:** elementary
+
+??? abstract "JS PowerShell Infection Chains"
+    
+    Detect JS script execution who run a PowerShell download and exec command_line
+    
+    - **Effort:** intermediate
 
 ??? abstract "KeePass Config XML In Command-Line"
     
@@ -713,7 +767,7 @@ The following Sekoia.io built-in rules match the intake **Sophos Analysis Threat
 
 ??? abstract "Kernel Module Alteration"
     
-    Kernel module installation can be used to configure system settings to automatically execute a program during system boot or logon to maintain persistence or gain higher-level privileges on compromised systems.
+    Kernel module installation can be used to configure system settings to automatically execute a program during system boot or logon to maintain persistence or gain higher-level privileges on compromised systems. The prerequisites are to enable monitoring of the finit_module, init_module, delete_module syscalls using Auditbeat.
     
     - **Effort:** advanced
 
@@ -753,6 +807,12 @@ The following Sekoia.io built-in rules match the intake **Sophos Analysis Threat
     
     - **Effort:** intermediate
 
+??? abstract "Linux Suspicious Auto-start Desktop Shortcut Execution"
+    
+    This detection rule identifies a suspicious process start from an graphical env process which may indicate the use of a malicious .desktop shortcut.
+    
+    - **Effort:** intermediate
+
 ??? abstract "Linux Suspicious Nohup Exec"
     
     Detects suspicious usage of nohup which could be leveraged by an attacker to keep a process running or break out from restricted environments
@@ -781,7 +841,7 @@ The following Sekoia.io built-in rules match the intake **Sophos Analysis Threat
     
     Detects a Windows command line executable started from MMC process
     
-    - **Effort:** intermediate
+    - **Effort:** master
 
 ??? abstract "MMC20 Lateral Movement"
     
@@ -792,12 +852,6 @@ The following Sekoia.io built-in rules match the intake **Sophos Analysis Threat
 ??? abstract "MOFComp Execution"
     
     Detects rare usage of the Managed Object Format (MOF) compiler on Microsoft Windows. This could be abused by some attackers to load WMI classes.
-    
-    - **Effort:** intermediate
-
-??? abstract "MSBuild Abuse"
-    
-    Detection of MSBuild uses by attackers to infect an host. Focuses on XML compilation which is a Metasploit payload, and on connections made by this process which is unusual.
     
     - **Effort:** intermediate
 
@@ -909,9 +963,21 @@ The following Sekoia.io built-in rules match the intake **Sophos Analysis Threat
     
     - **Effort:** intermediate
 
+??? abstract "Microsoft IIS Module Installation"
+    
+    Detects the installation of a new IIS module from the command line. It can used used to backdoor an IIS/OWA/Sharepoint server.
+    
+    - **Effort:** advanced
+
 ??? abstract "Microsoft Office Creating Suspicious File"
     
     Detects Microsoft Office process (word, excel, powerpoint) creating a suspicious file which corresponds to a script or an executable. This behavior highly corresponds to an executed macro which loads an installation script or a malware payload. The rule requires to log for File Creations to work properly, which can be done through Sysmon Event ID 11.
+    
+    - **Effort:** master
+
+??? abstract "Microsoft Office Macro Security Registry Modifications"
+    
+    Detects registry changes allowing an attacker to make Microsoft Office products runs Macros without warning. Events are collected either from ETW/Sysmon/EDR depending of the integration.
     
     - **Effort:** master
 
@@ -938,6 +1004,12 @@ The following Sekoia.io built-in rules match the intake **Sophos Analysis Threat
     Detects various Follina vulnerability exploitation techniques. This is based on the Compatability Troubleshooter which is abused to do code execution.
     
     - **Effort:** elementary
+
+??? abstract "Mshta Command From A Scheduled Task"
+    
+    Detects when an attacker leverage the Microsoft Windows Scheduled task feature to run the mshta.exe process. This is a common usage of a living-off-the-land binary, frequently abused for malicous purposes and not common nowadays in IT administration.
+    
+    - **Effort:** intermediate
 
 ??? abstract "Mshta JavaScript Execution"
     
@@ -985,7 +1057,7 @@ The following Sekoia.io built-in rules match the intake **Sophos Analysis Threat
     
     Detects NetSh commands used to disable the Windows Firewall
     
-    - **Effort:** intermediate
+    - **Effort:** advanced
 
 ??? abstract "Netsh Allow Command"
     
@@ -1026,6 +1098,12 @@ The following Sekoia.io built-in rules match the intake **Sophos Analysis Threat
 ??? abstract "Netsh RDP Port Opening"
     
     Detects netsh commands that opens the port 3389 used for RDP, used in Sarwent Malware.
+    
+    - **Effort:** intermediate
+
+??? abstract "Network Connection Via Certutil"
+    
+    Identifies certutil.exe making a network connection. Adversaries could abuse certutil.exe to download a certificate, or malware, from a remote URL.
     
     - **Effort:** intermediate
 
@@ -1095,6 +1173,12 @@ The following Sekoia.io built-in rules match the intake **Sophos Analysis Threat
     
     - **Effort:** advanced
 
+??? abstract "Ntfsinfo Usage"
+    
+    Detects when the command ntfsinfo is used. An attacker can access to information on the volume from NTFS and have a directory dump of NTFS files.
+    
+    - **Effort:** advanced
+
 ??? abstract "OceanLotus Registry Activity"
     
     Detects registry keys created in OceanLotus (also known as APT32) attack. Logging for Registry events is needed in the Sysmon configuration (events 12 and 13).
@@ -1141,7 +1225,7 @@ The following Sekoia.io built-in rules match the intake **Sophos Analysis Threat
     
     Detects Pandemic Windows Implant through registry keys or specific command lines. Prerequisites: Logging for Registry events is needed, which can be done in the Sysmon configuration (events 12 and 13).
     
-    - **Effort:** intermediate
+    - **Effort:** master
 
 ??? abstract "Password Change On Directory Service Restore Mode (DSRM) Account"
     
@@ -1171,13 +1255,19 @@ The following Sekoia.io built-in rules match the intake **Sophos Analysis Threat
     
     This event can be a sign of Kerberos replay attack or, among other things, network device configuration or routing problems.
     
-    - **Effort:** intermediate
+    - **Effort:** master
 
 ??? abstract "Potential DNS Tunnel"
     
-    Detects domain name which is longer than 95 characters. Long domain names are distinctive of DNS tunnels.
+    Detects domain name which is longer than 62 characters. Long domain names are distinctive of DNS tunnels.
     
     - **Effort:** advanced
+
+??? abstract "Potential Persistence Via Outlook LoadMacroProviderOnBoot Setting"
+    
+    Detects the modification of Outlook setting "LoadMacroProviderOnBoot" which if enabled allows the automatic loading of any configured VBA project/module. Logging for Registry events is needed, it can be done in the Sysmon configuration (events 12 and 13).
+    
+    - **Effort:** master
 
 ??? abstract "PowerCat Function Loading"
     
@@ -1249,7 +1339,7 @@ The following Sekoia.io built-in rules match the intake **Sophos Analysis Threat
     
     Detects PowerView commandlets which perform network and Windows domain enumeration and exploitation. It provides replaces for almost all Windows net commands, letting you query users, machines, domain controllers, user descriptions, share, sessions, and more.
     
-    - **Effort:** advanced
+    - **Effort:** master
 
 ??? abstract "Powershell AMSI Bypass"
     
@@ -1261,19 +1351,19 @@ The following Sekoia.io built-in rules match the intake **Sophos Analysis Threat
     
     Powershell's `uploadXXX` functions are a category of methods which can be used to exfiltrate data through native means on a Windows host.
     
-    - **Effort:** intermediate
-
-??? abstract "Powershell Web Request"
-    
-    Detects the use of various web request methods executed remotely via Windows PowerShell.
-    
     - **Effort:** advanced
+
+??? abstract "Powershell Web Request And Windows Script"
+    
+    Detects the use of PowerShell web request method combined with Windows Script utilities. This has been observed being used by some malware loaders.
+    
+    - **Effort:** intermediate
 
 ??? abstract "Powershell Winlogon Helper DLL"
     
     Detects modifications to the Winlogon Registry keys, which may cause Winlogon to load and execute malicious DLLs and/or executables.
     
-    - **Effort:** intermediate
+    - **Effort:** master
 
 ??? abstract "Privilege Escalation Awesome Scripts (PEAS)"
     
@@ -1317,6 +1407,12 @@ The following Sekoia.io built-in rules match the intake **Sophos Analysis Threat
     
     - **Effort:** master
 
+??? abstract "Python Exfiltration Tools"
+    
+    Python has some built-in modules or library that could be installed and later be used as exflitration tool by an attacker
+    
+    - **Effort:** advanced
+
 ??? abstract "Python HTTP Server"
     
     Detects command used to start a Simple HTTP server in Python. Threat actors could use it for data extraction, hosting a webshell or else.
@@ -1335,6 +1431,12 @@ The following Sekoia.io built-in rules match the intake **Sophos Analysis Threat
     
     - **Effort:** intermediate
 
+??? abstract "RDP Configuration File From Mail Process"
+    
+    Detects RDP configuration file being created or executed by a Mail-related process like Outlook. RDP configuration file will allow, when opened, an user to connect to the configured server easily. Attackers use this to trick victims in order to get a shared drive and potentially retrieve the data from that drive, but also drop a malicious file on the drive to establish persistence. Using RDP can also expose the victim's credential and clipboard data on some cases.
+    
+    - **Effort:** advanced
+
 ??? abstract "RDP Sensitive Settings Changed"
     
     Detects changes to RDP terminal service sensitive settings. Logging for registry events is needed in the Sysmon configuration (events 12 and 13).
@@ -1344,12 +1446,6 @@ The following Sekoia.io built-in rules match the intake **Sophos Analysis Threat
 ??? abstract "RDP Session Discovery"
     
     Detects use of RDP session discovery via qwinsta or quser. Used by some threat actors to know if someone is working via RDP on a server.
-    
-    - **Effort:** advanced
-
-??? abstract "RSA SecurID Failed Authentification"
-    
-    Detects many failed attempts to authenticate followed by a successfull login for a super admin account.
     
     - **Effort:** advanced
 
@@ -1449,6 +1545,12 @@ The following Sekoia.io built-in rules match the intake **Sophos Analysis Threat
     
     - **Effort:** intermediate
 
+??? abstract "SSH Reverse Socks"
+    
+    Detects the usage of the -R option combined with StrictHostKeyChecking, which is an indication of using SSH for reverse socks.
+    
+    - **Effort:** intermediate
+
 ??? abstract "STRRAT Scheduled Task"
     
     Detect STRRAT when it achieves persistence by creating a scheduled task. STRRAT is a Java-based stealer and remote backdoor, it establishes persistence using this specific command line: 'cmd /c schtasks /create /sc minute /mo 30 /tn Skype /tr "C:\Users\Admin\AppData\Roaming\SAMPLENAME.jar"'
@@ -1467,11 +1569,17 @@ The following Sekoia.io built-in rules match the intake **Sophos Analysis Threat
     
     - **Effort:** intermediate
 
+??? abstract "Screenconnect Remote Execution"
+    
+    Detect cmd or powershell remote execution cmdline via ScreenConnect
+    
+    - **Effort:** intermediate
+
 ??? abstract "Searchprotocolhost Child Found"
     
     SearchProtocolHost.exe is part of the Windows Indexing Service, an application that indexes files from the local drive making them easier to search. This is a crucial part of the Windows operating system. This process should not create a child process or it is very rare.
     
-    - **Effort:** intermediate
+    - **Effort:** master
 
 ??? abstract "Sekoia.io EICAR Detection"
     
@@ -1501,7 +1609,7 @@ The following Sekoia.io built-in rules match the intake **Sophos Analysis Threat
     
     Socat is a linux tool used to relay or open reverse shell that is often used by attacker to bypass security equipment.
     
-    - **Effort:** intermediate
+    - **Effort:** elementary
 
 ??? abstract "SolarWinds Suspicious File Creation"
     
@@ -1527,6 +1635,12 @@ The following Sekoia.io built-in rules match the intake **Sophos Analysis Threat
     
     - **Effort:** intermediate
 
+??? abstract "Startup Item Created"
+    
+    Detects when a item is added to the startup directory. An attacker can use this establish persistence.
+    
+    - **Effort:** intermediate
+
 ??? abstract "Stop Backup Services"
     
     Detects adversaries attempts to stop backups services or disable Windows previous files versions feature. This could be related to ransomware operators or legit administrators. This rule relies Windows command line logging and registry logging, and PowerShell (ID 4103, 4104).
@@ -1549,7 +1663,7 @@ The following Sekoia.io built-in rules match the intake **Sophos Analysis Threat
     
     Detection on suspicious cmd.exe command line seen being used by some attackers (e.g. Lazarus with Word macros). This requires Windows process command line logging.
     
-    - **Effort:** advanced
+    - **Effort:** master
 
 ??? abstract "Suspicious CodePage Switch with CHCP"
     
@@ -1675,7 +1789,7 @@ The following Sekoia.io built-in rules match the intake **Sophos Analysis Threat
     
     Detects suspicious PowerShell invocation command parameters through command line logging or ScriptBlock Logging.
     
-    - **Effort:** intermediate
+    - **Effort:** advanced
 
 ??? abstract "Suspicious PowerShell Invocations - Specific"
     
@@ -1713,9 +1827,9 @@ The following Sekoia.io built-in rules match the intake **Sophos Analysis Threat
     
     - **Effort:** advanced
 
-??? abstract "Suspicious Rundll32.exe Execution"
+??? abstract "Suspicious Rundll32.exe Executions"
     
-    The process rundll32.exe executes a newly dropped DLL with update /i in the command line. This specific technic was observed at least being used by the IcedID loading mechanism dubbed Gziploader.
+    The process rundll32.exe executes a newly dropped DLL with update /i in the command line. This specific technic was observed at least being used by the IcedID loading mechanism dubbed Gziploader. Some other detections are related to LOLBAS (Living Off The Land Binaries, Scripts and Libraries) usages (like the COM registering).
     
     - **Effort:** intermediate
 
@@ -1747,7 +1861,7 @@ The following Sekoia.io built-in rules match the intake **Sophos Analysis Threat
     
     Detects suspicious execution of the Windows Installer service (msiexec.exe) which could be used to install a malicious MSI package hosted on a remote server.
     
-    - **Effort:** intermediate
+    - **Effort:** master
 
 ??? abstract "Suspicious Windows Script Execution"
     
@@ -1797,6 +1911,12 @@ The following Sekoia.io built-in rules match the intake **Sophos Analysis Threat
     
     - **Effort:** master
 
+??? abstract "Tactical RMM Installation"
+    
+    Detection of common Tactical RMM installation arguments that could be abused by some attackers.
+    
+    - **Effort:** elementary
+
 ??? abstract "Taskhost or Taskhostw Suspicious Child Found"
     
     Task Host manages pop-up windows when users try to close them in a Windows environment. Taskhost.exe triggers the host process for the task. Task Host is a Windows process designed to alert users when dialog boxes close. It is usually launched when restarting and shutting down a PC, and checks if all programs have been properly closed. This process should not create a child process or it is very rare.
@@ -1808,6 +1928,24 @@ The following Sekoia.io built-in rules match the intake **Sophos Analysis Threat
     Detects suspicious DNS queries to api.telegram.org used by Telegram Bots of any kind
     
     - **Effort:** advanced
+
+??? abstract "Tmutil Delete Backups"
+    
+    Detects when the utility tmutil is used to delete backups. The Time Machine utility is used to restore data from backups, add or remove exclusions, and compare backups.
+    
+    - **Effort:** elementary
+
+??? abstract "Tmutil Disabled"
+    
+    Detects when the utility tmutil is disabled. The Time Machine utility is used to restore data from backups, add or remove exclusions, and compare backups.
+    
+    - **Effort:** elementary
+
+??? abstract "Tmutil Exclude File From Backups"
+    
+    Detects when the utility tmutil is used to exclude paths from backups.
+    
+    - **Effort:** master
 
 ??? abstract "Trickbot Malware Activity"
     
@@ -1837,7 +1975,7 @@ The following Sekoia.io built-in rules match the intake **Sophos Analysis Threat
     
     Detects the usage of Procdump sysinternals tool with some common arguments and followed by common patterns.
     
-    - **Effort:** intermediate
+    - **Effort:** advanced
 
 ??? abstract "Usage Of Sysinternals Tools"
     
@@ -1857,6 +1995,18 @@ The following Sekoia.io built-in rules match the intake **Sophos Analysis Threat
     
     - **Effort:** master
 
+??? abstract "User Added To Admin Group Via Cmd"
+    
+    Detects the use of different commands to add a user to an admin group.
+    
+    - **Effort:** advanced
+
+??? abstract "VSCode Tunnel Shell Exec"
+    
+    Using VSCode and its remote tunnel access feature to run a terminal and execute commands. This could be a legit use, but also has been observed being used by some attackers.
+    
+    - **Effort:** advanced
+
 ??? abstract "Venom Multi-hop Proxy agent detection"
     
     Detects Venom Multi-hop Proxy agent.
@@ -1873,7 +2023,7 @@ The following Sekoia.io built-in rules match the intake **Sophos Analysis Threat
     
     Detects attacker fingerprint activities based on the correlation of specific WMIC commands. This has been observed with Aurora malware.
     
-    - **Effort:** intermediate
+    - **Effort:** advanced
 
 ??? abstract "WMI Install Of Binary"
     
@@ -1903,7 +2053,7 @@ The following Sekoia.io built-in rules match the intake **Sophos Analysis Threat
     
     WMImplant is a powershell framework used by attacker for reconnaissance and exfiltration, this rule attempts to detect WMimplant arguments and invokes commands. 
     
-    - **Effort:** intermediate
+    - **Effort:** advanced
 
 ??? abstract "Wdigest Enable UseLogonCredential"
     
@@ -1911,15 +2061,21 @@ The following Sekoia.io built-in rules match the intake **Sophos Analysis Threat
     
     - **Effort:** elementary
 
+??? abstract "Web Application Launching Shell"
+    
+    Detects when a web application launches a shell.
+    
+    - **Effort:** master
+
 ??? abstract "Webshell Creation"
     
     Detects possible webshell file creation. It requires File Creation monitoring, which can be done using Sysmon's Event ID 11. However the recommended SwiftOnSecurity configuration does not fully cover the needs for this rule, it needs to be updated with the proper file names extensions.
     
     - **Effort:** master
 
-??? abstract "Webshell Execution W3WP Process"
+??? abstract "WerFaultSecure Abuse"
     
-    Detects possible webshell execution on Windows Servers which is usually a w3wp parent process with the user name DefaultAppPool.
+    Detect usage of the software vulnerability of WerFaultSecure to suspend the processes of EDRs, and bypass detection. It has been implemented in the tool EDR-Freeze.
     
     - **Effort:** advanced
 
@@ -1935,6 +2091,12 @@ The following Sekoia.io built-in rules match the intake **Sophos Analysis Threat
     
     - **Effort:** elementary
 
+??? abstract "Windows Defender Logging Modification Via Registry"
+    
+    Detects when the logging for defender is disabled in the registry.
+    
+    - **Effort:** elementary
+
 ??? abstract "Windows Firewall Changes"
     
     Detects changes on Windows Firewall configuration
@@ -1944,6 +2106,12 @@ The following Sekoia.io built-in rules match the intake **Sophos Analysis Threat
 ??? abstract "Windows Registry Persistence COM Key Linking"
     
     Detects COM object hijacking via TreatAs subkey. Logging for Registry events is needed in the Sysmon configuration with this kind of rule `<TargetObject name="testr12" condition="end with">\TreatAs\(Default)</TargetObject>`.
+    
+    - **Effort:** master
+
+??? abstract "Windows Sandbox Start"
+    
+    Detection of Windows Sandbox started from the command line with a config file or interactively using a WSB file.
     
     - **Effort:** master
 
@@ -1958,12 +2126,6 @@ The following Sekoia.io built-in rules match the intake **Sophos Analysis Threat
     Detects specific process characteristics of word document droppers. This techniques has been used by Maze ransomware operators.
     
     - **Effort:** elementary
-
-??? abstract "Winword wrong parent"
-    
-    Word is a well known Windows process used to read documents. Some malicious process could use it to run malicious code. The rule tries to detect winword.exe launched with a suspect parent process name.
-    
-    - **Effort:** master
 
 ??? abstract "Wmic Process Call Creation"
     

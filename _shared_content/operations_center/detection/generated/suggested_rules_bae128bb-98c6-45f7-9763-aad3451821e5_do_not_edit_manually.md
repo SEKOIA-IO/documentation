@@ -139,13 +139,7 @@ The following Sekoia.io built-in rules match the intake **Trellix Network Securi
     
     Discord is a messaging application. It allows users to create their own communities to share messages and attachments. Those attachments have little to no overview and can be downloaded by almost anyone, which has been abused by attackers to host malicious payloads.
     
-    - **Effort:** intermediate
-
-??? abstract "Download Files From Suspicious TLDs"
-    
-    Detects download of certain file types from hosts in suspicious TLDs
-    
-    - **Effort:** master
+    - **Effort:** advanced
 
 ??? abstract "Dynamic DNS Contacted"
     
@@ -169,7 +163,7 @@ The following Sekoia.io built-in rules match the intake **Trellix Network Securi
     
     Quick-win rule to detect the default process names or file names of several HackTools.
     
-    - **Effort:** elementary
+    - **Effort:** advanced
 
 ??? abstract "Internet Scanner"
     
@@ -290,12 +284,6 @@ The following Sekoia.io built-in rules match the intake **Trellix Network Securi
     Detect threats based on indicators of compromise (IOCs) collected by SEKOIA's Threat and Detection Research team.
     
     - **Effort:** elementary
-
-??? abstract "SecurityScorecard Vulnerability Assessment Scanner New Issues"
-    
-    Raises an alert when SecurityScorecard Vulnerability Assessment Scanner find new issues.
-    
-    - **Effort:** master
 
 ??? abstract "Sekoia.io EICAR Detection"
     

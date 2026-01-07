@@ -41,7 +41,7 @@ The following Sekoia.io built-in rules match the intake **Vade for M365**. This 
 
 ??? abstract "Phishing Detected By Vade For M365 And Not Blocked"
     
-    Vade Secure product Vade for M365 has detected a phishing attempt and didn't move it to junk folder.
+    Vade Secure product Vade for M365 has detected a phishing attempt from an email that is not whitelisted and didn't move the email to the junk folder.
     
     - **Effort:** advanced
 

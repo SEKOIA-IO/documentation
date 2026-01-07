@@ -8,8 +8,8 @@ This use case describes how to send a notification to a third party system like 
 - The user that configures the Playbook should have a Role that contains:
 	* The SYMPHONY permissions
 - An API Key with a Role that contains at least the following permission:
-	* SIC_READ_ALERTS
-	* SIC_READ_INTAKES
+	* View alerts
+	* View intakes
 
 > To create your API Key, follow this [documentation](../../../getting_started/manage_api_keys.md).
 

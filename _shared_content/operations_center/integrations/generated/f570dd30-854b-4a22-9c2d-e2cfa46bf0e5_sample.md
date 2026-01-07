@@ -4,6 +4,231 @@
 In this section, you will find examples of raw logs as generated natively by the source. These examples are provided to help integrators understand the data format before ingestion into Sekoia.io. It is crucial for setting up the correct parsing stages and ensuring that all relevant information is captured.
 
 
+=== "test_1"
+
+
+    ```json
+	{
+        "Action": "warpEnrollment",
+        "Allowed": true,
+        "AppDomain": "example.com/warp",
+        "AppUUID": "uuid-app-1",
+        "Connection": "okta",
+        "Country": "xx",
+        "CreatedAt": "2025-05-13T08:43:53Z",
+        "Email": "user1@example.com",
+        "IPAddress": "1.2.3.4",
+        "PurposeJustificationPrompt": "",
+        "PurposeJustificationResponse": "",
+        "RayID": "ray-id-1",
+        "TemporaryAccessApprovers": [],
+        "TemporaryAccessDuration": 0,
+        "UserUID": "uuid-user-1"
+    }
+    ```
+
+
+
+=== "test_2"
+
+
+    ```json
+	{
+        "Action": "login",
+        "Allowed": true,
+        "AppDomain": "example.com/warp",
+        "AppUUID": "uuid-app-1",
+        "Connection": "okta",
+        "Country": "xx",
+        "CreatedAt": "2025-05-13T08:43:51Z",
+        "Email": "user1@example.com",
+        "IPAddress": "1.2.3.4",
+        "PurposeJustificationPrompt": "",
+        "PurposeJustificationResponse": "",
+        "RayID": "ray-id-2",
+        "TemporaryAccessApprovers": [],
+        "TemporaryAccessDuration": 0,
+        "UserUID": "uuid-user-1"
+    }
+    ```
+
+
+
+=== "test_3"
+
+
+    ```json
+	{
+        "Action": "warpEnrollment",
+        "Allowed": true,
+        "AppDomain": "example.com/warp",
+        "AppUUID": "uuid-app-1",
+        "Connection": "okta",
+        "Country": "xx",
+        "CreatedAt": "2025-05-13T08:41:59Z",
+        "Email": "user2@example.com",
+        "IPAddress": "1.2.3.4",
+        "PurposeJustificationPrompt": "",
+        "PurposeJustificationResponse": "",
+        "RayID": "ray-id-3",
+        "TemporaryAccessApprovers": [],
+        "TemporaryAccessDuration": 0,
+        "UserUID": "uuid-user-2"
+    }
+    ```
+
+
+
+=== "test_4"
+
+
+    ```json
+	{
+        "Action": "login",
+        "Allowed": true,
+        "AppDomain": "example.com/warp",
+        "AppUUID": "uuid-app-1",
+        "Connection": "okta",
+        "Country": "xx",
+        "CreatedAt": "2025-05-13T08:41:58Z",
+        "Email": "user2@example.com",
+        "IPAddress": "1.2.3.4",
+        "PurposeJustificationPrompt": "",
+        "PurposeJustificationResponse": "",
+        "RayID": "ray-id-4",
+        "TemporaryAccessApprovers": [],
+        "TemporaryAccessDuration": 0,
+        "UserUID": "uuid-user-2"
+    }
+    ```
+
+
+
+=== "test_5"
+
+
+    ```json
+	{
+        "Action": "warpEnrollment",
+        "Allowed": true,
+        "AppDomain": "example.com/warp",
+        "AppUUID": "uuid-app-1",
+        "Connection": "okta",
+        "Country": "xx",
+        "CreatedAt": "2025-05-13T08:41:35Z",
+        "Email": "user3@example.com",
+        "IPAddress": "1.2.3.4",
+        "PurposeJustificationPrompt": "",
+        "PurposeJustificationResponse": "",
+        "RayID": "ray-id-5",
+        "TemporaryAccessApprovers": [],
+        "TemporaryAccessDuration": 0,
+        "UserUID": "uuid-user-3"
+    }
+    ```
+
+
+
+=== "test_6"
+
+
+    ```json
+	{
+        "Action": "login",
+        "Allowed": true,
+        "AppDomain": "example.com/warp",
+        "AppUUID": "uuid-app-1",
+        "Connection": "okta",
+        "Country": "xx",
+        "CreatedAt": "2025-05-13T08:41:34Z",
+        "Email": "user3@example.com",
+        "IPAddress": "1.2.3.4",
+        "PurposeJustificationPrompt": "",
+        "PurposeJustificationResponse": "",
+        "RayID": "ray-id-6",
+        "TemporaryAccessApprovers": [],
+        "TemporaryAccessDuration": 0,
+        "UserUID": "uuid-user-3"
+    }
+    ```
+
+
+
+=== "test_7"
+
+
+    ```json
+	{
+        "Action": "warpEnrollment",
+        "Allowed": true,
+        "AppDomain": "example.com/warp",
+        "AppUUID": "uuid-app-1",
+        "Connection": "okta",
+        "Country": "xx",
+        "CreatedAt": "2025-05-13T06:36:28Z",
+        "Email": "user4@example.com",
+        "IPAddress": "1.2.3.4",
+        "PurposeJustificationPrompt": "",
+        "PurposeJustificationResponse": "",
+        "RayID": "ray-id-7",
+        "TemporaryAccessApprovers": [],
+        "TemporaryAccessDuration": 0,
+        "UserUID": "uuid-user-4"
+    }
+    ```
+
+
+
+=== "test_8"
+
+
+    ```json
+	{
+        "Action": "warpEnrollment",
+        "Allowed": true,
+        "AppDomain": "example.com/warp",
+        "AppUUID": "uuid-app-1",
+        "Connection": "okta",
+        "Country": "xx",
+        "CreatedAt": "2025-05-12T14:01:45Z",
+        "Email": "user5@example.com",
+        "IPAddress": "1.2.3.4",
+        "PurposeJustificationPrompt": "",
+        "PurposeJustificationResponse": "",
+        "RayID": "ray-id-8",
+        "TemporaryAccessApprovers": [],
+        "TemporaryAccessDuration": 0,
+        "UserUID": "uuid-user-5"
+    }
+    ```
+
+
+
+=== "test_9"
+
+
+    ```json
+	{
+        "Action": "login",
+        "Allowed": true,
+        "AppDomain": "example.com/warp",
+        "AppUUID": "uuid-app-1",
+        "Connection": "okta",
+        "Country": "xx",
+        "CreatedAt": "2025-05-12T14:01:44Z",
+        "Email": "user5@example.com",
+        "IPAddress": "1.2.3.4",
+        "PurposeJustificationPrompt": "",
+        "PurposeJustificationResponse": "",
+        "RayID": "ray-id-9",
+        "TemporaryAccessApprovers": [],
+        "TemporaryAccessDuration": 0,
+        "UserUID": "uuid-user-5"
+    }
+    ```
+
+
+
 === "test_blocked_file"
 
 
@@ -97,6 +322,35 @@ In this section, you will find examples of raw logs as generated natively by the
         "UploadedFileNames": [],
         "UserAgent": "curl/7.81.0",
         "UserID": ""
+    }
+    ```
+
+
+
+=== "test_http_2"
+
+
+    ```json
+	{
+        "AccountID": "11111111111111111111111111111111",
+        "Action": "allowedOnNoRuleMatch",
+        "Datetime": "2025-04-30T06:41:33Z",
+        "DestinationIP": "1.2.3.4",
+        "DestinationPort": 443,
+        "DeviceID": "11111111-1111-1111-1111-111111111111",
+        "DeviceName": "Device01",
+        "Email": "john.doe@mail.com",
+        "OverrideIP": "",
+        "OverridePort": 0,
+        "PolicyID": "",
+        "PolicyName": "",
+        "SNI": "1234.something.com",
+        "SessionID": "272706f9f70000fddab4381400000001",
+        "SourceIP": "5.6.7.8",
+        "SourceInternalIP": "",
+        "SourcePort": 54494,
+        "Transport": "tcp",
+        "UserID": "22222222-2222-2222-2222-222222222222"
     }
     ```
 

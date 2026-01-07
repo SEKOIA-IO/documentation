@@ -157,25 +157,13 @@ The following Sekoia.io built-in rules match the intake **Netskope Transaction E
     
     Discord is a messaging application. It allows users to create their own communities to share messages and attachments. Those attachments have little to no overview and can be downloaded by almost anyone, which has been abused by attackers to host malicious payloads.
     
-    - **Effort:** intermediate
-
-??? abstract "Download Files From Suspicious TLDs"
-    
-    Detects download of certain file types from hosts in suspicious TLDs
-    
-    - **Effort:** master
+    - **Effort:** advanced
 
 ??? abstract "Dynamic DNS Contacted"
     
     Detect communication with dynamic dns domain. This kind of domain is often used by attackers. This rule can trigger false positive in non-controlled environment because dynamic dns is not always malicious.
     
     - **Effort:** master
-
-??? abstract "Entra ID Sign-In Via Known AiTM Phishing Kit"
-    
-    Detects a sign-in attempt from an IP address belonging to a known adversary-in-the-middle phishing kit.
-    
-    - **Effort:** elementary
 
 ??? abstract "Exfiltration Domain"
     
@@ -248,12 +236,6 @@ The following Sekoia.io built-in rules match the intake **Netskope Transaction E
     Detects suspicious calls to Microsoft Exchange resources, in locations related to webshells observed in campaigns using this vulnerability.
     
     - **Effort:** elementary
-
-??? abstract "RSA SecurID Failed Authentification"
-    
-    Detects many failed attempts to authenticate followed by a successfull login for a super admin account.
-    
-    - **Effort:** advanced
 
 ??? abstract "Raccoon Stealer 2.0 Legitimate Third-Party DLL Download URL"
     

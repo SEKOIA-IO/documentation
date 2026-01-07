@@ -5,7 +5,7 @@
 [Docker](https://docs.docker.com/get-started/overview/) is a tool that can be used to run packaged applications in an isolated environment on a host.
 Packaged applications are stored in an object called an image, which includes an OS, the dependencies and the configuration. With that, the application will have the same behaviour whatever the OS used on the host as long as it's a x86-64 Linux host.
 
-Sekoia.io offers a preconfigured concentrator based on Docker to forward events on the platform.
+Sekoia.io offers a preconfigured collector / concentrator based on Docker to forward events on the platform.
 
 This method simplifies as much as possible the configuration needed to set up a concentrator in order to collect logs and send them on each relevant Intakes.
 
@@ -25,18 +25,19 @@ Please find our English tutorial video below to see how to configure the forward
   | 10 000           |    4   |   8       |      1000      |  MEMORY_MESSAGES=5000000 / DISK_SPACE=980g  |
   | 50 000           |    6   |   16      |      5000      |  MEMORY_MESSAGES=12000000 / DISK_SPACE=4980g |
 
-  !!! info 
+  !!! info
       These data are recommendations based on standards and observed averages on Sekoia.io, so they may change depending on use cases.
-      
+
 * Last version of Docker Engine. Please follow [this section](#docker-engine-installation) to install it if needed
 * INBOUND TCP or UDP flows opened between the systems/applications and the concentrator on the ports of your choice
 * OUTBOUND TCP flow opened towards:
-  * **FRA1** intake.sekoia.io on port 10514 
-  * **FRA2** fra2.app.sekoia.io on port 10514 
-  * **MCO1** mco1.app.sekoia.io on port 10514 
-  * **EUA1** app.uae1.sekoia.io on port 10514 
+  * **FRA1** intake.sekoia.io on port 10514
+  * **FRA2** intake.fra2.sekoia.io on port 10514
+  * **MCO1** app.mco1.sekoia.io on port 10514
+  * **UAE1** app.uae1.sekoia.io on port 10514
+  * **USA1** app.usa1.sekoia.io on port 10514
 
-  !!! note 
+  !!! note
       The disk choice (SSD or HDD type) has no impact on the performance of Sekoia.io Forwarder.
       However, SSD type would be useful when an issue arise for recovery or catchup.
       Please choose accordingly to your usage and cost.
@@ -90,7 +91,7 @@ intakes:
     You are not limited to 3 entries. Feel free to adapt it to your needs.
 
 #### Debug
-A debug variable is available in order to debug a specific intake, for example 
+A debug variable is available in order to debug a specific intake, for example
 ```yaml
 ---
 intakes:
@@ -120,7 +121,7 @@ Please find below a template of the `docker-compose.yml` file.
 # version: "3.9"
 services:
   rsyslog:
-    image: ghcr.io/sekoia-io/sekoiaio-docker-concentrator:2.6.0
+    image: ghcr.io/sekoia-io/sekoiaio-docker-concentrator:2.7.2
     environment:
       - MEMORY_MESSAGES=2000000
       - DISK_SPACE=180g
@@ -147,15 +148,28 @@ environment:
     - MEMORY_MESSAGES=2000000
     - DISK_SPACE=180g
     - REGION=FRA1
+    - RELP_OUTPUT=True
 ```
 
 Two environment variables are used to customize the container. These variables are used to define a queue for incoming logs in case there is a temporarily issue in transmitting events to Sekoia.io. The queue stores messages in memory up to a certain number of events and then store them on disk. When the issue is fixed, events stored are retrieved from the queue and forward to the plateform.
 
-* `MEMORY_MESSAGES=2000000` means the queue is allowed to store up to 2,000,000 messages in memory. If we consider a message size is 1.2KB, then you will use 2,4GB of RAM memory (2000000 * 1.2KB = 2.4GB).
-* `DISK_SPACE=180g` means the queue is allowed to store on disk up to 180giga of messages.
-* `REGION=FRA1` is the region where to send the logs. Currently 4 options are available: `FRA1`, `FRA2`, `MCO1` and `UAE1`
+* `MEMORY_MESSAGES=2000000` means queues are allowed to store up to 2,000,000 messages in memory. If we consider a message size is 1.2KB, then you will use 2,4GB of RAM memory (2000000 * 1.2KB = 2.4GB). Note that this value is distributed among the configured intakes. For example, if 10 intakes are configured, each queue will have a retention capacity of 200,000 messages.
+* `DISK_SPACE=180g` means that the total of all queues is allowed to store up to 180 gigabytes of messages on disk.
+* `REGION=FRA1` is the region where to send the logs. Currently 5 options are available: `FRA1`, `FRA2`, `MCO1`, `UAE1` and `USA1`
+* `RELP_OUTPUT=True` it is an optional environment variable. If the value is set to true, it allows sending all logs to Sekoia via the relp protocol instead of the default tcp syslog mode.
 
 [Here](#prerequisites) you will find recommendations to set these variables based on the number of assets. You can also define your own values, which should be chosen according to your virtual machine's template.
+
+!!! Info
+    In case you want to set a specific retention size in memory for a particular intake, you can define it using this type of configuration:
+    ```yaml
+    - name: Techno1
+      protocol: tcp
+      port: 20516
+      intake_key: INTAKE_KEY_FOR_TECHNO_1
+      queue_size: 100000
+    ```
+    Note that other intakes will retain their default values, which is MEMORY_MESSAGES divided by the total number of intakes.
 
 #### Ports
 
@@ -165,7 +179,7 @@ ports:
     - "20516-20566:20516-20566/udp"
 ```
 
-As specified in the Overview section, the concentrator will be run in an isolated environment. That means, by default, no flow is open between the host and the concentrator. 
+As specified in the Overview section, the concentrator will be run in an isolated environment. That means, by default, no flow is open between the host and the concentrator.
 `20516-20518:20516-20566` means that every packets coming through the TCP port form `20516` to  `20566` to the host will be forwarded to the concentrator container from port `20516` to `20566`.
 
 If you want to open a UDP flow, please add a line with `/udp` at the end.
@@ -187,9 +201,14 @@ Volumes are used to share files and folders between the host and the container:
 * `./conf:/etc/rsyslog.d` is mapped if you want to customize some rsyslog configuration (ADVANCED)
 * `./disk_queue:/var/spool/rsyslog` is used when the concentrator queue stores data on disk. The mapping avoids data loss if logs are stored on disk and the container is deleted.
 
-#### Import a custom rsyslog configuration 
+#### Import a custom rsyslog configuration
 
-You can add your own additional rsyslog configuration. It can be useful to deal with specific use cases which are not supported natively by the Sekoia.io concentrator. To enable it, you simply have to create a new folder called `extended_conf` and put an additional your rsyslog file into (your file must have the extension *.conf). You do not have to deal with the `intake.yaml` file. Your custom configuration will be added in addition to the intake definition and will not erase exisiting ones. 
+You can add your own additional rsyslog configuration. This can be useful to handle specific use cases that are not natively supported by the Sekoia.io concentrator. To enable it, simply create a new folder called `extended_conf` and place your additional rsyslog configuration file(s) inside (your file must have the `.conf` extension).
+
+!!! warning
+    If you configure a port or input in your custom `.conf` file within the `extended_conf` directory, **do not declare this intake again in the `intake.yaml` file**. Using both for the same input or port will cause conflicts and may prevent the concentrator from starting correctly.
+    Your custom configuration will be added in addition to the existing intake definitions and will not overwrite them. Just make sure each port or source is configured *either* in `intake.yaml` *or* in your `.conf` file, not both.
+
 
 You can define your own method for obtaining logs using rsyslog modules, but you still need to forward events to Sekoia.io by providing a syslog-valid message with your intake key as a header, as follows:
 
@@ -213,7 +232,7 @@ action(
 }
 ```
 
-Once additional configuration has been added, you simply have to mount them in the docker as following: 
+Once additional configuration has been added, you simply have to mount them in the docker as following:
 
 ```yaml
 volumes:
@@ -274,7 +293,7 @@ mkdir certs && cd certs
     ```
 
 === "Fedora, Red Hat, CentOS (dnf)"
-    
+
     ```bash
     sudo dnf update
     sudo dnf install -y openssl
@@ -319,9 +338,74 @@ If you wish to specify other filenames, you can do so in the intake configuratio
 ```
 [...]
 protocol: tls
-tls_key_name: server.key
-tls_cert_name: server.crt
-tls_ca_name: server.crt
+tls_key_name: server
+tls_cert_name: server
+tls_ca_name: server
+```
+
+## Monitor your concentrator
+
+The forwarder is a critical component in the architecture between your information system and the Sekoia platform. A prolonged service interruption could lead to data loss, potentially causing missed detection of an attack within your environment.
+
+In this context, please find below the instructions to enable monitoring of your forwarder.
+This will allow health status information of the component to be transmitted to Sekoia, enabling you to set up alerts based on the values of the transmitted metrics.
+
+### Create the forwarder logs intake
+
+The first step is to create the intake on the Sekoia platform and save the associated intake key
+
+For detailed information on this process, please refer to the following [documentation](/integration/categories/applicative/sekoiaio_forwarder_logs.md)
+
+### Configuration of the intake.yml file
+
+To activate the monitoring mode, simply defined a new intake and add `stats: True` in the `intakes.yaml` file with the associated `intake_key` coming from the right format:
+
+```yaml
+---
+intakes:
+- name: Monitoring
+  stats: True
+  intake_key: INTAKE_KEY_FOR_FORWARDER_LOGS
+```
+
+!!! Note
+    This intake is special because logs are auto-generated by the forwarder. As a consequency, you don't need to define an input port neither the protocol.
+
+### Understanding concentrator metrics
+
+The concentrator is based on a rsyslog instance so to monitor the forwarder, we decided against developing our own metrics. Instead, we opted for leveraging a standard implementation provided by rsyslog direclty: the [impstats module](https://www.rsyslog.com/doc/configuration/modules/impstats.html)
+
+By enabling this internal module, rsyslog generates numerous low-level metrics, which are essential for us to comprehend in order to understand the forwarder metrics. Therefore, it is crucial to grasp the operational workflow of rsyslog. [Here](https://www.rsyslog.com/doc/configuration/basic_structure.html) you can find more details about rsyslog principles.
+
+The forwarder is configured with one input module per intake, as specified in the `intake.yaml` file. Each input module is paired with a corresponding ruleset, action, and specific queue. When monitoring is enabled, dedicated metrics for each module will be transferred to Sekoia, identified by a specific name, as shown below:
+
+![image](/assets/operation_center/ingestion_methods/sekoiaio_forwarder/forwarder_monitoring_2.png){: style="max-width:100%"}
+
+By leveraging these metrics, you can easily define custom rules to detect specific behaviors such as service interruptions, full queues, discarded events, and more. This monitoring capability is crucial for maintaining optimal performance and ensuring the reliability of the forwarder in your system.
+
+Below is an example of a rule pattern designed to identify if queues are full on the forwarder, which may lead to log loss. The cause of a full queue can be attributed to several factors, such as an under-provisioned machine unable to handle the load, a sudden increase in events per second (EPS), or infrastructure issues. In any case, this type of alert indicates the need for further investigation into the behavior of the forwarder to understand the root cause of the problem.
+
+```yaml
+detection:
+  selection:
+    - sekoiaio.forwarder.queue.discarded.full|gt: 0
+    - sekoiaio.forwarder.queue.discarded.nf|gt: 0
+    - sekoiaio.forwarder.queue.full|gt: 0
+  condition: selection
+```
+
+!!! Note
+    To understand the detailed meaning of each counter, please refer to the [associated rsyslog documentation](https://www.rsyslog.com/doc/configuration/rsyslog_statistic_counter.html) and be free to implement your own rules based on these metrics.
+
+### Extract concentrator metrics in case of outage
+
+In extreme cases, the forwarder may cease to function entirely, and as a result, it will also stop sending its metrics to Sekoia (e.g., a full queue). While an alert from Sekoia will notify you of this issue, you will still need to investigate and understand the root cause to resolve the problem.
+
+In addition to continuously sending its metrics to Sekoia, the forwarder also retains a raw copy of its metrics locally. To retrieve these logs on your host for debugging purpose, you can use the following command:
+
+
+```bash
+ sudo docker compose cp rsyslog:/var/log/rsyslog-stats.log  rsyslog-stats.log
 ```
 
 ## Start the concentrator
@@ -424,14 +508,14 @@ sudo docker compose logs -f
 
 1. Check that the forwarder is correctly configured
 
-    * Check the `intakes.yaml` file to see if you have declared the protocols and ports you wanted. 
+    * Check the `intakes.yaml` file to see if you have declared the protocols and ports you wanted.
 
     * Verify if this information is taken into account by the concentrator. At start-up, the concentrator always shows the list of Intakes with the protocols and ports.
         ```bash
         sudo docker compose logs | more
         ```
 
-    * Check that you correctly declared the `ports` section in the `docker-compose.yml` file. They MUST be the same as the ports declared in the `intakes.yaml` file. For instance, if you declared 4 technologies on ports `25020`, `25021`, `25022` and `25023`, the ports line the `docker-compose.yml` has to be at least `"25020-25023:25020-25023"` for TCP and `"25020-25023:25020-25023/udp"` if using UDP. 
+    * Check that you correctly declared the `ports` section in the `docker-compose.yml` file. They MUST be the same as the ports declared in the `intakes.yaml` file. For instance, if you declared 4 technologies on ports `25020`, `25021`, `25022` and `25023`, the ports line the `docker-compose.yml` has to be at least `"25020-25023:25020-25023"` for TCP and `"25020-25023:25020-25023/udp"` if using UDP.
 
 2. Verify that traffic is incoming from your log source, **meaning no firewall is blocking the events**.
     ```bash
@@ -441,7 +525,7 @@ sudo docker compose logs -f
     `remote_ip`is the IP from which the logs should be incoming.
 
 3. If you are sure that no firewall blocks the events but you still don't see any logs, verify on the source that you are forwarding the logs to the right IP and port using the correct protocol.
-   
+
     **Example**
 
     You want to forward your firewall logs to Sekoia. You decided to use the `TCP/20524` port.
@@ -617,8 +701,8 @@ Connect to the remote server where you would like to install the Sekoia.io Forwa
 
 2. Edit the configuration files
 
-    - `sekoiaio-concentrator/intakes.yaml` by replacing the `name`, `protocol`, `port` and `intake_key` for each intake you would like to collect 
-    - `sekoiaio-concentrator/docker-compose.yml` by remplacing the value `"20516-20518:20516-20518"` by a relevant content according to the `sekoiaio-concentrator/intakes.yaml` previously edited
+    - `sekoiaio-concentrator/intakes.yaml` by replacing the `name`, `protocol`, `port` and `intake_key` for each intake you would like to collect
+    - `sekoiaio-concentrator/docker-compose.yml` by replacing the value `"20516-20518:20516-20518"` by a relevant content according to the `sekoiaio-concentrator/intakes.yaml` previously edited
 
 3. Start the docker
 

@@ -6,8 +6,7 @@ type: intake
 
 CrowdStrike provides cloud workload and endpoint security, threat intelligence, and cyberattack response services and products.
 
-- **Vendor**: Cloudflare
-- **Plan**: Defend Prime
+- **Vendor**: CrowdStrike
 - **Supported environment**: SaaS
 - **Detection based on**: Telemetry
 - **Supported application or feature**: Process monitoring
@@ -41,16 +40,8 @@ To set up the integration:
 
 ### Create the intake
 
-Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a new intake from the format `CrowdStrike Falcon Telemetry`. Copy the intake key.
-
-
-### Pull events
-
-To start to pull events, you have to:
-
-1. Go to the [playbooks page](https://app.sekoia.io/operations/playbooks) and create a new playbook with the [Fetch new events from CrowdStrike Data replication](/integration/action_library/endpoint/crowdstrike) trigger
-2. Set up the module configuration with your client id, the client secret and the region. Set up the trigger configuration with the intake key and the queue name.
-3. Start the playbook and enjoy your events
+1. Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a new intake from the format `CrowdStrike Falcon Telemetry`.
+2. Set up the intake configuration with your client id, the client secret, the region and the queue name.
 
 {!_shared_content/operations_center/integrations/generated/10999b99-9a8d-4b92-9fbd-01e3fac01cd5_sample.md!}
 

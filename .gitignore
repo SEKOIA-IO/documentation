@@ -1,6 +1,7 @@
 .idea
 site
 docs/stylesheets/sekoiaio.css
+docs/stylesheets/openapi.css
 venv
 *~
 redoc.egg-info
@@ -24,3 +25,5 @@ docs/getting_started/inactive_users
 node_modules/
 Icon?
 /docu
+.vscode/*
+.devcontainer/*

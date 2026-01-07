@@ -1,16 +1,15 @@
-[tool.poetry]
+[project]
 name = "update_mkdocs"
 version = "0.1.0"
 description = ""
-authors = ["gbossert <georges.bossert@sekoia.fr>"]
+authors = [{"name"="Georges Bossert", "email"="georges.bossert@sekoia.io"}]
+requires-python = ">=3.11,<4.0.0"
 
-[tool.poetry.dependencies]
-python = "^3.11"
-PyYAML = "^6.0"
-Jinja2 = "^3.1.3"
-
-[tool.poetry.dev-dependencies]
+dependencies = [
+    "PyYAML (>=6.0.0,<7.0.0)",
+    "Jinja2 (>=3.1.3,<4.0.0)",
+]
 
 [build-system]
-requires = ["poetry-core>=1.0.0"]
-build-backend = "poetry.core.masonry.api"
+requires = ["hatchling"]
+build-backend = "hatchling.build"

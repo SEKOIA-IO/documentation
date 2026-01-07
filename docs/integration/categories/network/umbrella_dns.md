@@ -6,7 +6,6 @@ type: intake
 Cisco Umbrella offers flexible, cloud-delivered security. It combines multiple security functions into one solution, so that protection can be extended to devices, remote users, and distributed locations anywhere.
 
 - **Vendor**: Cisco
-- **Plan**: Defend Core & Defend Prime
 - **Supported environment**: SaaS
 - **Detection based on**: Telemetry
 - **Supported application or feature**: DNS records, Network device logs
@@ -27,17 +26,12 @@ Once created:
 3. As the destination, choose the SQS service
 4. Select the queue you created in the previous section
 
-### Create the intake
+{!_shared_content/integration/intake_configuration.md!}
 
-Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a new intake from the format `Cisco Umbrella DNS`.
+{!_shared_content/integration/connector_configuration.md!}
 
-### Pull events
-
-To start to pull events, you have to:
-
-1. Go to the [playbook page](https://app.sekoia.io/operations/playbooks) and create a new playbook with the [AWS Fetch new logs on S3 connector](/integration/action_library/cloud_providers/aws/#fetch-new-logs-on-s3)
-2. Set up the module configuration with the [AWS Access Key](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html), the secret key and the region name. Set up the trigger configuration with the name of the SQS queue and the intake key, from the intake previously created
-3. Start the playbook and enjoy your events
+!!! Info
+    Please find here the official documentation related to [AWS Access Key](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html).
 
 {!_shared_content/operations_center/integrations/generated/90179796-f949-490c-8729-8cbc9c65be55_sample.md!}
 

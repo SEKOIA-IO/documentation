@@ -6,7 +6,6 @@ type: intake
 Trend Micro Email Security is a robust email protection solution that safeguards against email-borne threats such as phishing, malware, and spam, offering advanced threat detection and content filtering to secure corporate email communications effectively.
 
 - **Vendor**: Trend Micro
-- **Plan**: Defend Prime
 - **Supported environment**: Cloud 
 - **Detection based on**: Telemetry
 - **Supported application or feature**: Email gateway
@@ -33,21 +32,8 @@ Trend Micro Email Security is a robust email protection solution that safeguards
 ### Create your intake
 
 1. Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a new intake from the `Trend Micro Email Security`.
-2. Copy the associated Intake key
+2. Edit the intake configuration using your `Service URL`, `Username` and `Login ID`. All three  are required.
 
-### Pull the logs to collect them on Sekoia.io
-
-Go to the Sekoia.io [playbook page](https://app.sekoia.io/operations/playbooks), and follow these steps:
-
-1. Click on **+ PLAYBOOK** button to create a new one
-2. Select **Create a playbook from scratch**
-3. Give it a name in the field **Name**
-4. Open the left panel, click **Trend Micro Email Security** then select the trigger `Fetch new logs`
-5. Click on **Create**
-
-6. Create a **Trigger configuration** using your `Service URL`, `Username`, `API key` and `Intake key`. All four are required.
-
-* `API key` is created on the first step
 * `username` is your `Login ID` entered during account creating
 * The value of `service URL` varies according to your location:
 
@@ -60,10 +46,6 @@ Go to the Sekoia.io [playbook page](https://app.sekoia.io/operations/playbooks),
 | Singapore                                     | api.tmes-sg.trendmicro.com  |
 | India                                         | api.tmes-in.trendmicro.com  |
 
-* Type the `Intake key` created on the previous step
-
-7. Click on the **Save** button
-8. **Activate the playbook** with the toggle button in the top right corner of the page
 
 ### Enjoy your events on the [Events page](https://app.sekoia.io/operations/events)
 

@@ -7,7 +7,6 @@ type: intake
 Citrix NetScaler / ADC (formerly Citrix NetScaler) is a delivery controller and load-balancing tool that offers enhanced security and application performance.
 
 - **Vendor**: Citrix
-- **Plan**: Defend Prime
 - **Supported environment**: On Premise
 - **Detection based on**: Telemetry, Alert, Audit
 - **Supported application or feature**: Application Delivery and Security
@@ -66,6 +65,9 @@ This setup guide will show you how to forward both your access and error logs to
     ```bash
     set appfw settings CEFLogging on
     ```
+
+!!! Important
+    Make sure to set the value of "Max Log Data Size To Hold" to 1000 to avoid logs to be truncated, as the default value is 500.
 
 ### Instruction on Sekoia
 

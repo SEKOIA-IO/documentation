@@ -17,7 +17,7 @@ In details, the following table denotes the type of events produced by this inte
 
 | Name | Values |
 | ---- | ------ |
-| Kind | `` |
+| Kind | `alert` |
 | Category | `malware`, `network` |
 | Type | `info` |
 
@@ -26,54 +26,172 @@ In details, the following table denotes the type of events produced by this inte
 
 ### Transformed Events Samples after Ingestion
 
-This section demonstrates how the raw logs will be transformed by our parsers. It shows the extracted fields that will be available for use in the [built-in detection rules](/xdr/features/detect/rules_catalog) and hunting activities in the [events page](/xdr/features/investigate/events). Understanding these transformations is essential for analysts to create effective detection mechanisms with [custom detection rules](/xdr/features/detect/sigma) and to leverage the full potential of the collected data.
+This section demonstrates how the raw logs will be transformed by our parsers. It shows the extracted fields that will be available for use in the [built-in detection rules](/xdr/features/detect/rules_catalog.md) and hunting activities in the [events page](/xdr/features/investigate/events.md). Understanding these transformations is essential for analysts to create effective detection mechanisms with [custom detection rules](/xdr/features/detect/sigma.md) and to leverage the full potential of the collected data.
 
-=== "malcore_event.json"
+=== "codebreaker.json"
 
     ```json
 	
     {
-        "message": "{\"@timestamp\":\"2022-06-03T15:00:20.531Z\",\"detail_wait_time\":18,\"event_type\":\"malware\",\"total_found\":\"3/16\",\"type\":\"malcore\",\"analyzed_clean\":13,\"analyzed_error\":0,\"SHA256\":\"2c36fbcbac3e57df410f6613180fe572015adba62d0f1bd98c13a1535d64703c\",\"dest_port\":49804,\"timestamp\":\"2022-06-03T14:59:08.780474+0000\",\"state\":\"Infected\",\"engine_id\":{\"3\":{\"scan_result\":\"CLEAN\",\"id\":\"312a189607571ec2c7544636be405f10889e73d061e0ed77ca0eca97a470838d\",\"threat_details\":\"\"},\"4\":{\"scan_result\":\"INFECTED\",\"id\":\"32f2f45e6d9faf46e6954356a710208d412fac5181f6c641e34cb9956a133684\",\"threat_details\":\"Win32/Exploit.CVE-2022-30190.A trojan\"},\"6\":{\"scan_result\":\"CLEAN\",\"id\":\"4ca73ae4b92fd7ddcda418e6b70ced0481ac2d878c48e61b686d0c9573c331dc\",\"threat_details\":\"\"},\"10\":{\"scan_result\":\"CLEAN\",\"id\":\"a9b912e461cec506780d8ad8e785cca6b233ad7c72335c262b0a4ab189afa713\",\"threat_details\":\"\"},\"13\":{\"scan_result\":\"CLEAN\",\"id\":\"b14014e40c0e672e050ad9c210a68a5303ce7facabae9eb2ee07ddf97dc0da0e\",\"threat_details\":\"\"},\"2\":{\"scan_result\":\"CLEAN\",\"id\":\"0ff95ddb1117d8f36124f6eac406dbbf9f17e3dd89f9bb1bd600f6ad834c25db\",\"threat_details\":\"\"},\"12\":{\"scan_result\":\"CLEAN\",\"id\":\"af6868a2b87b3388a816e09d2b282629ccf883b763b3691368a27fbd6f6cd51a\",\"threat_details\":\"\"},\"1\":{\"scan_result\":\"INFECTED\",\"id\":\"054a20c51cbe9d2cc7d6a237d6cd4e08ab1a67e170b371e632995766d3ba81af\",\"threat_details\":\"Exploit/HTML.CVE-2022-30190.S1841\"},\"14\":{\"scan_result\":\"CLEAN\",\"id\":\"ecc47e2309be9838d6dc2c5157be1a840950e943f5aaca6637afca11516c3eaf\",\"threat_details\":\"\"},\"9\":{\"scan_result\":\"CLEAN\",\"id\":\"95603b80d80fa3e98b6faf07418a55ed0b035d19209e3ad4f1858f6b46fa070a\",\"threat_details\":\"\"},\"15\":{\"scan_result\":\"CLEAN\",\"id\":\"fe665976a02d03734c321007328109ab66823b260a8eea117d2ab49ee9dfd3f1\",\"threat_details\":\"\"},\"7\":{\"scan_result\":\"CLEAN\",\"id\":\"527db072abcf877d4bdcd0e9e4ce12c5d769621aa65dd2f7697a3d67de6cc737\",\"threat_details\":\"\"},\"5\":{\"scan_result\":\"SUSPICIOUS\",\"id\":\"3bfeb615a695c5ebaac5ade948ffae0c3cfec3787d4625e3abb27fa3c2867f53\",\"threat_details\":\"HEUR:Exploit.Script.Generic\"},\"0\":{\"scan_result\":\"CLEAN\",\"id\":\"038e407ba285f0e01dd30c6e4f77ec19bad5ed3dc866a2904ae6bf46baa14b74\",\"threat_details\":\"\"},\"8\":{\"scan_result\":\"CLEAN\",\"id\":\"714eca0a6475fe7d2bf9a24bcae343f657b230ff68acd544b019574f1392de77\",\"threat_details\":\"\"},\"11\":{\"scan_result\":\"CLEAN\",\"id\":\"ad05e0dc742bcd6251af91bd07ef470c699d5aebbb2055520b07021b14d7380c\",\"threat_details\":\"\"}},\"detail_threat_found\":\"Infected : Exploit/HTML.CVE-2022-30190.S1841, Win32/Exploit.CVE-2022-30190.A trojan, HEUR:Exploit.Script.Generic\",\"analyzed_suspicious\":1,\"fileinfo\":{\"tx_id\":0,\"magic\":\"HTML document, ASCII text, with very long lines\",\"gaps\":false,\"md5\":\"16e3fcee85f81ec9e9c75dd13fb08c01\",\"sha256\":\"2c36fbcbac3e57df410f6613180fe572015adba62d0f1bd98c13a1535d64703c\",\"file_id\":1,\"sid\":[1100029],\"state\":\"CLOSED\",\"size\":6105,\"stored\":true,\"filename\":\"/exploit.html\"},\"host\":\"network.internal\",\"src_port\":80,\"flow_id\":1686930575880829,\"processing_time\":359,\"file_type_description\":\"Not available\",\"timestamp_analyzed\":\"2022-06-03T15:00:20.531Z\",\"dest_ip\":\"1.2.3.4\",\"reporting_token\":\"No GBOX\",\"severity\":1,\"gcenter\":[\"gcenter-nti.gatewatcher.com\",\"gcenter-nti.gatewatcher.com\"],\"analyzed_other\":0,\"analyzed_infected\":2,\"app_proto\":\"http\",\"detail_scan_time\":341,\"src_ip\":\"9.8.7.6\",\"magic_details\":\"HTML document, ASCII text, with very long lines\",\"proto\":\"TCP\",\"http\":{\"protocol\":\"HTTP/1.1\",\"hostname\":\"www.xmlformats.com\",\"http_content_type\":\"text/html\",\"length\":2485,\"http_user_agent\":\"Mozilla/4.0 (compatible; ms-office; MSOffice 16)\",\"http_method\":\"GET\",\"url\":\"/exploit.html\",\"status\":200},\"timestamp_detected\":\"2022-06-03T14:59:08.780Z\",\"analyzers_up\":16,\"file_type\":\"Not available\",\"in_iface\":\"monvirt\",\"code\":1,\"engines_last_update_date\":\"2022-06-01T21:22:55Z\",\"gcap\":\"gcap-nti.gatewatcher.com\",\"uuid\":\"73a1884d-94a6-4800-9b08-6daa3281ce8f\"}",
+        "message": "{\"event_type\":\"powershell\",\"scores\":{\"analysis\":1890,\"analysis_detailed\":{\"CharInt\":0,\"InvokeWebRequest\":0,\"FmtStr\":0,\"WebClientInvokation\":0,\"StrReplace\":0,\"StrJoin\":0,\"SetContent\":0,\"StreamWriter\":0,\"SystemIOFile\":0,\"StreamReader\":0,\"InvokeRestMethod\":0,\"AddContent\":0,\"StartBitsTransfer\":0,\"InvokeExpression\":0,\"GetContent\":0,\"StrCat\":370,\"Base64\":1520},\"proba_obfuscated\":1.0},\"timestamp_detected\":\"2023-03-22T10:30:37.145Z\",\"uuid\":\"8906e477-02b5-4ada-abaa-67b2d41f204a\",\"severity\":1,\"type\":\"codebreaker\",\"src_ip\":\"1.1.1.1\",\"state\":\"Exploit\",\"dest_port\":\"35444\",\"dest_ip\":\"2.2.2.2\",\"flow_id\":\"2157601933358692\",\"gcap\":\"gcap-xxxxxxxxxx.domain.local\",\"@timestamp\":\"2023-03-22T10:32:50.269Z\",\"timestamp_analyzed\":\"2023-03-22T10:32:50.269Z\",\"src_port\":\"4242\",\"file_id\":\"03-22-2023T10:32:45_772669089795425e9ad63823ea1e7ac3_gcap-xxxxxxxx.domain.local\",\"sub_type\":\"powershell\",\"SHA256\":\"efc9380fee13f9accf1cbc2f2bb02ae430cf39d4fbfe1d766f65b500b571ca29\",\"MD5\":\"60b656e17bec0a97f5638790c78a3124\",\"@version\":\"1\",\"gcenter\":\"gcenter-xxxxxxxxxx.domain.local\"}",
+        "event": {
+            "category": [
+                "network"
+            ],
+            "module": "powershell",
+            "severity": 1
+        },
+        "@timestamp": "2023-03-22T10:30:37.145000Z",
+        "destination": {
+            "address": "2.2.2.2",
+            "ip": "2.2.2.2",
+            "port": 35444
+        },
+        "gatewatcher": {
+            "event_type": "powershell",
+            "flow_id": "2157601933358692",
+            "gcap": "gcap-xxxxxxxxxx.domain.local",
+            "gcenter": "gcenter-xxxxxxxxxx.domain.local",
+            "sample_id": "03-22-2023T10:32:45_772669089795425e9ad63823ea1e7ac3_gcap-xxxxxxxx.domain.local",
+            "scores": {
+                "analysis": 1890,
+                "analysis_detailed": "{\"AddContent\":0,\"Base64\":1520,\"CharInt\":0,\"FmtStr\":0,\"GetContent\":0,\"InvokeExpression\":0,\"InvokeRestMethod\":0,\"InvokeWebRequest\":0,\"SetContent\":0,\"StartBitsTransfer\":0,\"StrCat\":370,\"StrJoin\":0,\"StrReplace\":0,\"StreamReader\":0,\"StreamWriter\":0,\"SystemIOFile\":0,\"WebClientInvokation\":0}",
+                "proba_obfuscated": 1.0
+            },
+            "state": "Exploit",
+            "sub_type": "powershell",
+            "timestamp_analyzed": "2023-03-22T10:32:50.269Z",
+            "timestamp_detected": "2023-03-22T10:30:37.145Z",
+            "type": "codebreaker"
+        },
+        "observer": {
+            "name": "gcap-xxxxxxxxxx.domain.local",
+            "type": "ids",
+            "version": "0.2"
+        },
+        "related": {
+            "ip": [
+                "1.1.1.1",
+                "2.2.2.2"
+            ]
+        },
+        "source": {
+            "address": "1.1.1.1",
+            "ip": "1.1.1.1",
+            "port": 4242
+        }
+    }
+    	
+	```
+
+
+=== "dga.json"
+
+    ```json
+	
+    {
+        "message": "{\"event_type\":\"dga\",\"domain_name\":\"pgoadcmgqfacj.com\",\"timestamp_detected\":\"2023-03-22T10:25:54.903Z\",\"uuid\":\"4e4b3104-06ba-4277-899e-149a74a0671c\",\"severity\":1,\"type\":\"machine_learning\",\"probability\":0.9999731546766107,\"dest_port\":53,\"gcap\":\"gcap-xxxxxxxx.domain.local\",\"dest_ip\":\"2.2.2.2\",\"flow_id\":729468278572,\"src_ip\":\"1.1.1.1\",\"@timestamp\":\"2023-03-22T10:46:08.487Z\",\"@version\":\"1\",\"matched_event\":\"041b2ed4-a5e0-4814-8bdc-7522b6d5464f\",\"timestamp_analyzed\":\"2023-03-22T10:46:08.487Z\",\"gcenter\":\"gcenter-xxxxxx.domain.local\",\"src_port\":1294}",
+        "event": {
+            "category": [
+                "network"
+            ],
+            "module": "dga",
+            "severity": 1
+        },
+        "@timestamp": "2023-03-22T10:25:54.903000Z",
+        "destination": {
+            "address": "pgoadcmgqfacj.com",
+            "domain": "pgoadcmgqfacj.com",
+            "ip": "2.2.2.2",
+            "port": 53,
+            "registered_domain": "pgoadcmgqfacj.com",
+            "top_level_domain": "com"
+        },
+        "gatewatcher": {
+            "event_type": "dga",
+            "flow_id": "729468278572",
+            "gcap": "gcap-xxxxxxxx.domain.local",
+            "gcenter": "gcenter-xxxxxx.domain.local",
+            "matched_event": "041b2ed4-a5e0-4814-8bdc-7522b6d5464f",
+            "probability": 0.9999731546766107,
+            "timestamp_analyzed": "2023-03-22T10:46:08.487Z",
+            "timestamp_detected": "2023-03-22T10:25:54.903Z",
+            "type": "machine_learning"
+        },
+        "observer": {
+            "name": "gcap-xxxxxxxx.domain.local",
+            "type": "ids",
+            "version": "0.2"
+        },
+        "related": {
+            "hosts": [
+                "pgoadcmgqfacj.com"
+            ],
+            "ip": [
+                "1.1.1.1",
+                "2.2.2.2"
+            ]
+        },
+        "source": {
+            "address": "1.1.1.1",
+            "ip": "1.1.1.1",
+            "port": 1294
+        },
+        "url": {
+            "domain": "pgoadcmgqfacj.com",
+            "registered_domain": "pgoadcmgqfacj.com",
+            "top_level_domain": "com"
+        }
+    }
+    	
+	```
+
+
+=== "malcore.json"
+
+    ```json
+	
+    {
+        "message": "{\"timestamp\":\"2023-03-22T10:35:22.615360+0000\",\"analyzed_infected\":10,\"detail_threat_found\":\"Infected : Script.SWF.CVE-2014-0515+.C107 (B), Exp.SWF.Angler.D, Script.SWF.CVE-2014-0515+.C107, SWF/Exploit.ExKit.J trojan, Exploit.SWF.Agent.ja, Exploit.Agent.Script.371, Exploit.Swf.Agent.dvtnkm, Script.SWF.CVE-2014-0515++.C118, EXP/FLASH.Pubenush.E.Gen, Exploit.SWF\",\"timestamp_detected\":\"2023-03-22T10:35:22.615Z\",\"uuid\":\"2103a99c-549e-49b7-bbef-68459e6cc44e\",\"severity\":1,\"dest_port\":19609,\"detail_wait_time\":320265,\"host\":\"gcap-xxxxxxxxx.domain.local\",\"dest_ip\":\"2.2.2.2\",\"timestamp_analyzed\":\"2023-03-22T10:53:13.408Z\",\"@timestamp\":\"2023-03-22T10:53:13.408Z\",\"file_type_description\":\"Macromedia Flash Player\",\"fileinfo\":{\"sha256\":\"350836364013549b6a76aab79d57d109df6acc143759e24a952d3ff5d6a76ec4\",\"file_id\":379,\"magic\":\"Macromedia Flash data (compressed), version 14\",\"tx_id\":1,\"state\":\"CLOSED\",\"filename\":\"/6SuCHKKkf8Sf1aFXJPqD0R6r3oEDCrbwHFm23EU-Af2zwWdHgpn6mEGu5XlxFust\",\"sid\":[1100020],\"stored\":true,\"md5\":\"67ca9a31f220bc7b68f203c07ad668b9\",\"gaps\":false,\"size\":77068},\"analyzed_suspicious\":0,\"analyzers_up\":16,\"app_proto\":\"http\",\"engines_last_update_date\":\"2023-03-08T19:03:00Z\",\"total_found\":\"10/16\",\"file_type\":\"application/x-shockwave-flash\",\"detail_scan_time\":13425,\"processing_time\":333690,\"SHA256\":\"350836364013549b6a76aab79d57d109df6acc143759e24a952d3ff5d6a76ec4\",\"gcenter\":\"gcenter-xxxxxxxx.domain.local\",\"analyzed_clean\":5,\"event_type\":\"malware\",\"http\":{\"http_method\":\"GET\",\"http_port\":8080,\"protocol\":\"HTTP/1.1\",\"status\":200,\"hostname\":\"tsevid-synonymi.justdanceatsea.com\",\"url\":\"/6SuCHKKkf8Sf1aFXJPqD0R6r3oEDCrbwHFm23EU-Af2zwWdHgpn6mEGu5XlxFust\",\"length\":77068,\"http_content_type\":\"application/x-shockwave-flash\",\"http_user_agent\":\"Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 6.1; Trident/4.0; SLCC2; .NET CLR 2.0.50727; .NET CLR 3.5.30729; .NET CLR 3.0.30729)\",\"http_refer\":\"http://tsevid-synonymi.justdanceatsea.com:8080/ndf4xx22ci.php\"},\"type\":\"malcore\",\"in_iface\":\"monvirt\",\"src_ip\":\"1.1.1.1\",\"state\":\"Infected\",\"gcap\":\"gcap-xxxxxxxx.domain.local\",\"flow_id\":1910314914537014,\"reporting_token\":\"No GBOX\",\"src_port\":8080,\"analyzed_other\":1,\"engine_id\":{\"4\":{\"id\":\"32f2f45e6d9faf46e6954356a710208d412fac5181f6c641e34cb9956a133684\",\"threat_details\":\"SWF/Exploit.ExKit.J trojan\",\"scan_result\":\"INFECTED\"},\"1\":{\"id\":\"054a20c51cbe9d2cc7d6a237d6cd4e08ab1a67e170b371e632995766d3ba81af\",\"threat_details\":\"\",\"scan_result\":\"CLEAN\"},\"9\":{\"id\":\"95603b80d80fa3e98b6faf07418a55ed0b035d19209e3ad4f1858f6b46fa070a\",\"threat_details\":\"Script.SWF.CVE-2014-0515++.C118\",\"scan_result\":\"INFECTED\"},\"14\":{\"id\":\"ecc47e2309be9838d6dc2c5157be1a840950e943f5aaca6637afca11516c3eaf\",\"threat_details\":\"\",\"scan_result\":\"CLEAN\"},\"8\":{\"id\":\"714eca0a6475fe7d2bf9a24bcae343f657b230ff68acd544b019574f1392de77\",\"threat_details\":\"Exploit.Swf.Agent.dvtnkm\",\"scan_result\":\"INFECTED\"},\"7\":{\"id\":\"527db072abcf877d4bdcd0e9e4ce12c5d769621aa65dd2f7697a3d67de6cc737\",\"threat_details\":\"Exploit.Agent.Script.371\",\"scan_result\":\"INFECTED\"},\"2\":{\"id\":\"0ff95ddb1117d8f36124f6eac406dbbf9f17e3dd89f9bb1bd600f6ad834c25db\",\"threat_details\":\"Exp.SWF.Angler.D\",\"scan_result\":\"INFECTED\"},\"11\":{\"id\":\"ad05e0dc742bcd6251af91bd07ef470c699d5aebbb2055520b07021b14d7380c\",\"threat_details\":\"\",\"scan_result\":\"NOT_SCANNED\"},\"12\":{\"id\":\"af6868a2b87b3388a816e09d2b282629ccf883b763b3691368a27fbd6f6cd51a\",\"threat_details\":\"EXP/FLASH.Pubenush.E.Gen\",\"scan_result\":\"INFECTED\"},\"10\":{\"id\":\"a9b912e461cec506780d8ad8e785cca6b233ad7c72335c262b0a4ab189afa713\",\"threat_details\":\"\",\"scan_result\":\"CLEAN\"},\"3\":{\"id\":\"312a189607571ec2c7544636be405f10889e73d061e0ed77ca0eca97a470838d\",\"threat_details\":\"Script.SWF.CVE-2014-0515+.C107\",\"scan_result\":\"INFECTED\"},\"6\":{\"id\":\"4ca73ae4b92fd7ddcda418e6b70ced0481ac2d878c48e61b686d0c9573c331dc\",\"threat_details\":\"\",\"scan_result\":\"CLEAN\"},\"13\":{\"id\":\"b14014e40c0e672e050ad9c210a68a5303ce7facabae9eb2ee07ddf97dc0da0e\",\"threat_details\":\"\",\"scan_result\":\"CLEAN\"},\"0\":{\"id\":\"038e407ba285f0e01dd30c6e4f77ec19bad5ed3dc866a2904ae6bf46baa14b74\",\"threat_details\":\"Script.SWF.CVE-2014-0515+.C107 (B)\",\"scan_result\":\"INFECTED\"},\"5\":{\"id\":\"3bfeb615a695c5ebaac5ade948ffae0c3cfec3787d4625e3abb27fa3c2867f53\",\"threat_details\":\"Exploit.SWF.Agent.ja\",\"scan_result\":\"INFECTED\"},\"15\":{\"id\":\"fe665976a02d03734c321007328109ab66823b260a8eea117d2ab49ee9dfd3f1\",\"threat_details\":\"Exploit.SWF\",\"scan_result\":\"INFECTED\"}},\"proto\":\"TCP\",\"code\":1,\"analyzed_error\":0,\"@version\":\"1\",\"magic_details\":\"Macromedia Flash data (compressed), version 14\"}",
         "event": {
             "category": [
                 "malware"
             ],
-            "kind": "event",
+            "module": "malware",
             "severity": 1,
             "type": [
                 "info"
             ]
         },
-        "@timestamp": "2022-06-03T15:00:20.531000Z",
+        "@timestamp": "2023-03-22T10:35:22.615000Z",
         "destination": {
-            "address": "1.2.3.4",
-            "ip": "1.2.3.4",
-            "port": 49804
+            "address": "2.2.2.2",
+            "ip": "2.2.2.2",
+            "port": 19609
         },
         "file": {
             "hash": {
-                "md5": "16e3fcee85f81ec9e9c75dd13fb08c01",
-                "sha256": "2c36fbcbac3e57df410f6613180fe572015adba62d0f1bd98c13a1535d64703c"
+                "md5": "67ca9a31f220bc7b68f203c07ad668b9",
+                "sha256": "350836364013549b6a76aab79d57d109df6acc143759e24a952d3ff5d6a76ec4"
             },
-            "name": "/exploit.html",
-            "size": 6105
+            "name": "/6SuCHKKkf8Sf1aFXJPqD0R6r3oEDCrbwHFm23EU-Af2zwWdHgpn6mEGu5XlxFust",
+            "size": 77068
         },
         "gatewatcher": {
             "event_type": "malware",
-            "flow_id": "1686930575880829",
-            "gcap": "gcap-nti.gatewatcher.com",
-            "gcenter": [
-                "gcenter-nti.gatewatcher.com",
-                "gcenter-nti.gatewatcher.com"
-            ],
+            "fileinfo": "{\"file_id\":379,\"filename\":\"/6SuCHKKkf8Sf1aFXJPqD0R6r3oEDCrbwHFm23EU-Af2zwWdHgpn6mEGu5XlxFust\",\"gaps\":false,\"magic\":\"Macromedia Flash data (compressed), version 14\",\"md5\":\"67ca9a31f220bc7b68f203c07ad668b9\",\"sha256\":\"350836364013549b6a76aab79d57d109df6acc143759e24a952d3ff5d6a76ec4\",\"sid\":[1100020],\"size\":77068,\"state\":\"CLOSED\",\"stored\":true,\"tx_id\":1}",
+            "filemagic": "Macromedia Flash data (compressed), version 14",
+            "flow_id": "1910314914537014",
+            "gcap": "gcap-xxxxxxxx.domain.local",
+            "gcenter": "gcenter-xxxxxxxx.domain.local",
             "malcore": {
                 "code": "1",
-                "detail_threat_found": "Infected : Exploit/HTML.CVE-2022-30190.S1841, Win32/Exploit.CVE-2022-30190.A trojan, HEUR:Exploit.Script.Generic"
+                "detail_threat_found": "Infected : Script.SWF.CVE-2014-0515+.C107 (B), Exp.SWF.Angler.D, Script.SWF.CVE-2014-0515+.C107, SWF/Exploit.ExKit.J trojan, Exploit.SWF.Agent.ja, Exploit.Agent.Script.371, Exploit.Swf.Agent.dvtnkm, Script.SWF.CVE-2014-0515++.C118, EXP/FLASH.Pubenush.E.Gen, Exploit.SWF"
             },
             "reporting_token": "No GBOX",
             "state": "Infected",
-            "timestamp_analyzed": "2022-06-03T15:00:20.531Z",
-            "timestamp_detected": "2022-06-03T14:59:08.780Z",
+            "timestamp_analyzed": "2023-03-22T10:53:13.408Z",
+            "timestamp_detected": "2023-03-22T10:35:22.615Z",
             "type": "malcore"
         },
         "http": {
@@ -89,96 +207,205 @@ This section demonstrates how the raw logs will be transformed by our parsers. I
             "transport": "TCP"
         },
         "observer": {
-            "hostname": "network.internal",
-            "name": "gcap-nti.gatewatcher.com",
-            "type": "firewall",
+            "hostname": "gcap-xxxxxxxxx.domain.local",
+            "name": "gcap-xxxxxxxx.domain.local",
+            "type": "ids",
             "version": "0.2"
         },
         "related": {
             "hash": [
-                "16e3fcee85f81ec9e9c75dd13fb08c01",
-                "2c36fbcbac3e57df410f6613180fe572015adba62d0f1bd98c13a1535d64703c"
+                "350836364013549b6a76aab79d57d109df6acc143759e24a952d3ff5d6a76ec4",
+                "67ca9a31f220bc7b68f203c07ad668b9"
             ],
             "hosts": [
-                "network.internal",
-                "www.xmlformats.com"
+                "gcap-xxxxxxxxx.domain.local",
+                "tsevid-synonymi.justdanceatsea.com"
             ],
             "ip": [
-                "1.2.3.4",
-                "9.8.7.6"
+                "1.1.1.1",
+                "2.2.2.2"
             ]
         },
         "source": {
-            "address": "9.8.7.6",
-            "ip": "9.8.7.6",
-            "port": 80
+            "address": "1.1.1.1",
+            "ip": "1.1.1.1",
+            "port": 8080
         },
         "url": {
-            "domain": "www.xmlformats.com",
-            "path": "/exploit.html",
-            "registered_domain": "xmlformats.com",
-            "subdomain": "www",
+            "domain": "tsevid-synonymi.justdanceatsea.com",
+            "path": "/6SuCHKKkf8Sf1aFXJPqD0R6r3oEDCrbwHFm23EU-Af2zwWdHgpn6mEGu5XlxFust",
+            "registered_domain": "justdanceatsea.com",
+            "subdomain": "tsevid-synonymi",
             "top_level_domain": "com"
         },
         "user_agent": {
             "device": {
                 "name": "Other"
             },
-            "name": "Outlook",
-            "original": "Mozilla/4.0 (compatible; ms-office; MSOffice 16)",
+            "name": "IE",
+            "original": "Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 6.1; Trident/4.0; SLCC2; .NET CLR 2.0.50727; .NET CLR 3.5.30729; .NET CLR 3.0.30729)",
             "os": {
-                "name": "Other"
+                "name": "Windows",
+                "version": "7"
             },
-            "version": "2016"
+            "version": "8.0"
         }
     }
     	
 	```
 
 
-=== "suricata_alert_event.json"
+=== "retrohunt.json"
 
     ```json
 	
     {
-        "message": "{\"@timestamp\":\"2022-06-03T14:59:41.373Z\",\"gcenter\":[\"gcenter-sekoia.gatewatcher.com\",\"gcenter-sekoia.gatewatcher.com\"],\"event_type\":\"alert\",\"payload\":\"SFRUUC8xLjEgMjAwIE9LCkRhdGU6IFRodSwgMDIgSnVuIDIwMjIgMjI6Mzc6MjIgR01UClNlcnZlcjogQXBhY2hlLzIuNC40MSAoVWJ1bnR1KQpMYXN0LU1vZGlmaWVkOiBUaHUsIDAyIEp1biAyMDIyIDIyOjMwOjM0IEdNVApFVGFnOiAiMTdkOS01ZTA3ZThkZGI0NTA4LWd6aXAiCkFjY2VwdC1SYW5nZXM6IGJ5dGVzClZhcnk6IEFjY2VwdC1FbmNvZGluZwpDb250ZW50LUVuY29kaW5nOiBnemlwCkNvbnRlbnQtTGVuZ3RoOiAyNDg1CktlZXAtQWxpdmU6IHRpbWVvdXQ9NSwgbWF4PTEwMApDb25uZWN0aW9uOiBLZWVwLUFsaXZlCkNvbnRlbnQtVHlwZTogdGV4dC9odG1sCgp0ZXN0Cg==\",\"packet\":\"CAAnjitsCAAnk+hwCABFAAAoBRhAAD8GMWkKAQHewKg4yABQwow7Z24SQI3k4FAQAfUWzAAA\",\"type\":\"suricata\",\"community_id\":\"1:dGVzdAo=\",\"app_proto\":\"http\",\"src_ip\":\"9.8.7.6\",\"dest_port\":49804,\"alert\":{\"action\":\"allowed\",\"rev\":2,\"signature\":\"ETPRO INFO Observed Suspicious Base64 Encoded Wide String Inbound (exe)\",\"category\":\"Potentially Bad Traffic\",\"gid\":1,\"metadata\":{\"updated_at\":[\"2020_11_17\"],\"created_at\":[\"2020_04_13\"],\"former_category\":[\"HUNTING\"],\"signature_severity\":[\"Informational\"],\"attack_target\":[\"Client_Endpoint\"],\"deployment\":[\"Perimeter\"],\"affected_product\":[\"Windows_XP_Vista_7_8_10_Server_32_64_Bit\"]},\"signature_id\":2841990,\"severity\":2},\"flow\":{\"pkts_toserver\":5,\"bytes_toserver\":798,\"start\":\"2022-06-03T14:59:08.750205+0000\",\"pkts_toclient\":4,\"bytes_toclient\":3052},\"files\":[{\"filename\":\"/exploit.html\",\"state\":\"CLOSED\",\"tx_id\":0,\"sid\":[1100029],\"magic\":\"HTML document, ASCII text, with very long lines\",\"gaps\":false,\"md5\":\"16e3fcee85f81ec9e9c75dd13fb08c01\",\"sha256\":\"2c36fbcbac3e57df410f6613180fe572015adba62d0f1bd98c13a1535d64703c\",\"size\":6105,\"stored\":false}],\"proto\":\"TCP\",\"stream\":1,\"host\":\"network.internal\",\"http\":{\"protocol\":\"HTTP/1.1\",\"hostname\":\"www.xmlformats.com\",\"http_content_type\":\"text/html\",\"length\":2485,\"http_user_agent\":\"Mozilla/4.0 (compatible; ms-office; MSOffice 16)\",\"http_method\":\"GET\",\"url\":\"/exploit.html\",\"status\":200},\"timestamp_detected\":\"2022-06-03T14:59:08.780Z\",\"ether\":{\"src_mac\":\"08:00:27:8e:2b:6c\",\"dest_mac\":\"08:00:27:93:e8:70\"},\"src_port\":80,\"flow_id\":1686930575880829,\"payload_printable\":\"HTTP/1.1 200 OK\\r\\nDate: Thu, 02 Jun 2022 22:37:22 GMT\\r\\nServer: Apache/2.4.41 (Ubuntu)\\r\\nLast-Modified: Thu, 02 Jun 2022 22:30:34 GMT\\r\\nETag: \\\"17d9-5e07e8ddb4508-gzip\\\"\\r\\nAccept-Ranges: bytes\\r\\nVary: Accept-Encoding\\r\\nContent-Encoding: gzip\\r\\nContent-Length: 2485\\r\\nKeep-Alive: timeout=5, max=100\\r\\nConnection: Keep-Alive\\r\\nContent-Type: text/html\\r\\n\\r\\n...........Xko........\\n.F&.$VS..]pmYRa.Vd9q.(.........gW......#7....G....s.=.RO.....q..&n.....0.k...|{D.....!6.....V&nB.6.oVap......}7........l..>..{>{..~k.n..f.5]o.....X..k._G....U.....|...\\\\.a.m.f......._.!...c.8.Z..n.0........i..`.:..c[.a..;......_.........gv}.L.1V.G.......o.2,}..C~..w.(,...[..at+..8.~..'.mh1a..y......hVc0.n.iB.en.Z..O.]...l.b..2.b..{|i|._+...o].3}..Wd....3\\\"...!:.............C./.Z.....\\rP$S,.t<Y..m.E.]5Y-...Sx.A..1...[W.@.......kKlb...m.3..n./......c...\\n..@y0.....5.........$ .#..|\\r.......;.w}....`.)..u....U^.....lD...D.#...&...jaT.........@@..Lf..6l.z........p>.s.k..!..r..UI..g...ji^V...,.k..0i...}.!.=.......2.%.@..=u........{'Y@.k.8!.*`... ..c..z.j.u.D.....*......G.ng.U.....@.3U......\\n...$/..!.c.....T..S..tr.$...h......$(....&R...i.U#PL.J{...\\n!E.-9,w.....$%Xh9.U!...6...S`b...C>.i.cW......H...It\\n...B......q.IR....\\n..P&....i.d... .07.]U$tD.R...J4............^....tIT....UaD....g..k.b.......\\rm.VcK....p:....P.Dj...\\nD*0u*..b..(..P...\\\\S..Q*VT'......m.............7B..D./\\\"...gX..\\\".9W....I.=.9......T.%.U....J{b.l.\\r..Q.X.t9U.i)......R.i..V.g.5c..^.,.....&=r..p0SX..E...S5hsSJt..J...'}#8.........R.H.D.(i.TW...^.&..>@v..+sX\\ra..],>I.!%.`l`..,vDvL.....vDwM....,.I.-[3IP.I..GMi.I.MYa..'Z$U]r...... j3CE).NM!.@.!a......T.S.77....k&...P.........8...$..:.A.....+A........a......Mm..*..\\\\..zZ\\\"\\n...D.I.e.....r..9..JD..8.u`vd{..=.)Y.9...\\\\A'.}J...'.A?....)...........U....M5.`....J.&..e.D....N{1.s...d....cZE....\\nG)..8.nq)..G..`..@.T.rgB..B.9>7.@.\\\\&#'EUT...;Xt?...P.%W'.,@(\\r.+Y...4.y~.{d.&xn\\\"...../].....k.m.ZK`..M.lr.....VK.\\\"z&.R+.V.<-..U.\\\"...IU.h%/9....y....T)].f..._.I.X0K.k...|-t...\\\\.d#7.A..J..I.L.H7:.r..%].Ti......(....V-i....2...:...`J...\\\"S\\\"..?I.......w..E....Q.......B.l$.T.E....-......k.u........BQ.#.Tn@.C..x.7.K/...M...},..-L.......~..E.@..o.7.. .!.t....._q.....\\\\........H...Y...MA...`U.8..O..z.J.l#91..\\\".+...Vi..v..k......%.k...0i..u.T.O#A.[j.M...*G*W..s.......V..+.%.......t:..&<....Uz..2.....{....\\\\.{a.H.-.D.QC..]|>3..t5.........9.._n.U..1Ly.....(v.Fm...agn..zs.s=0..........;..U..\\n.........bs...[={.A....oG...7.../.}...yz.>......7......B;.....m\\r.../....F!../O./.n...~~..u$.~....hz..e..n.@(.=.Ui.../.\\\\_-F{..........W....~...g}......W........uWvm..ve1~n...vo_<.....=.......}e.v..gOl.^D{vJ..k_........>......y|.........k.=..W.?}.s.../^......=.4.#=.~..l?.}.}k._.....K>...k....._...:...N........`}C......w.................:.wW...Z.....~.....}.._..%?.W8.....$.R..y...............sCq.....y.....)^e....gS^<z..G...|.G....\\n)p,.|...v7.............LMY._.o.......y.......\",\"packet_info\":{\"linktype\":1},\"in_iface\":\"monvirt\",\"dest_ip\":\"1.2.3.4\",\"timestamp_analyzed\":\"2022-06-03T14:59:41.373Z\",\"gcap\":\"gcap-sekoia.gatewatcher.com\",\"tx_id\":0,\"uuid\":\"525084c9-9a40-4dc9-81fb-27d5efe6b965\",\"severity\":2}",
+        "message": "{\"external_links\":[{\"url\":\"https://urlhaus.abuse.ch/url/2269068/\",\"source_name\":\"URLHaus Abuse.ch\"}],\"relations\":[\"0e3cc27b-7999-48ce-8484-dc12b325a355\"],\"description\":\"IOC matching first tests\",\"event_type\":\"retrohunt\",\"kill_chain_phases\":[],\"timestamp_detected\":\"2023-06-09T14:08:46.845Z\",\"ioc_type\":\"Host\",\"severity\":1,\"community_id\":\"1:x0uuTl0mYnN1nwngep7+A4VH38I=\",\"ioc_creation_date\":\"2023-06-12T10:00:35+00:00\",\"targeted_countries\":[],\"ioc_value\":\"im.a.very.bad.doma.in\",\"dest_ip\":\"2.2.2.2\",\"vulnerabilities\":[],\"matched_event\":\"bd7686c8-20db-427e-941d-844a5ecfe559\",\"risk\":\"Suspicious\",\"uuid\":\"416f35ad-b954-4b6a-a886-987b826bb7f4\",\"meta_data\":{\"ssdeep\":\"1536:87vbq1lGAXSEYQjbChaAU2yU23M51DjZgSQAvcYkFtZTjzBht5:8D+CAXFYQChaAUk5ljnQssL\",\"cwe\":[],\"descriptions\":[],\"tslh\":\"T16D7312E017B517CC1371A8353BED205E9128223972AE35302E97528DF957703BAB2DBE\",\"filetype\":\"ELF 32-bit LSB executable, ARM, EABI5 version 1 (GNU/Linux)\",\"size\":78.3984375,\"usageMode\":\"hunting\"},\"flow_id\":841376349480333,\"matched_event_type\":\"alert\",\"ioc_updated_date\":\"2023-06-12T10:00:35+00:00\",\"targeted_platforms\":[\"linux\"],\"signature\":\"RetroHunt - Host - malware/Unknown - Hajime - GW Lab Test - 00100035-1206-2023-cbf5-08330f0d5bc0\",\"ioc_tags\":[\"trojan.generickd.34055387 (b)\",\"linux/hajime.a trojan\",\"e32/agent.cd\",\"linux.hajime.bc\",\"backdoor.hajime.linux.129\",\"linux/hajime.75930\",\"unix.malware.agent-6626471-0\",\"linux/hajime.nsnlw\",\"hajime\",\"elf.mirai.43048.gc\",\"trojan.elfarm32.hajime.fbhtfi\",\"trojan.linux.hajime\",\"trojan.generickd.34055387\"],\"@version\":\"1\",\"type\":\"cti\",\"targeted_organizations\":[],\"campaigns\":[],\"categories\":[\"malware\"],\"src_port\":55614,\"gcenter\":\"gcenter-xxxxxxxxxxxxxxxxx.domain.local\",\"case_id\":\"00100035-1206-2023-edb6-b38911f8ba0c\",\"dest_port\":80,\"usage_mode\":\"hunting\",\"timestamp_package\":\"2023-06-12T10:00:35.012874+0000\",\"src_ip\":\"1.1.1.1\",\"ttp\":[],\"tlp\":\"green\",\"probability\":0.5,\"gcap\":\"gcap-xxxxxxxxxxxxxxxx.domain.local\",\"@timestamp\":\"2023-06-12T10:12:39.001Z\",\"timestamp_analyzed\":\"2023-06-12T10:12:39.001Z\",\"families\":[\"Hajime\"],\"ioc_id\":\"00100035-1206-2023-cbf5-08330f0d5bc0\",\"targeted_sectors\":[],\"threat_actor\":[\"GW Lab Test\"],\"matched_app_proto\":\"http\"}",
+        "event": {
+            "category": [
+                "network"
+            ],
+            "module": "retrohunt",
+            "severity": 1
+        },
+        "@timestamp": "2023-06-09T14:08:46.845000Z",
+        "destination": {
+            "address": "2.2.2.2",
+            "ip": "2.2.2.2",
+            "port": 80
+        },
+        "gatewatcher": {
+            "campaigns": [],
+            "case_id": "00100035-1206-2023-edb6-b38911f8ba0c",
+            "categories": [
+                "malware"
+            ],
+            "description": "IOC matching first tests",
+            "event_type": "retrohunt",
+            "external_links": [
+                "{\"source_name\":\"URLHaus Abuse.ch\",\"url\":\"https://urlhaus.abuse.ch/url/2269068/\"}"
+            ],
+            "families": [
+                "Hajime"
+            ],
+            "flow_id": "841376349480333",
+            "gcap": "gcap-xxxxxxxxxxxxxxxx.domain.local",
+            "gcenter": "gcenter-xxxxxxxxxxxxxxxxx.domain.local",
+            "ioc_creation_date": "2023-06-12T10:00:35+00:00",
+            "ioc_id": "00100035-1206-2023-cbf5-08330f0d5bc0",
+            "ioc_tags": [
+                "backdoor.hajime.linux.129",
+                "e32/agent.cd",
+                "elf.mirai.43048.gc",
+                "hajime",
+                "linux.hajime.bc",
+                "linux/hajime.75930",
+                "linux/hajime.a trojan",
+                "linux/hajime.nsnlw",
+                "trojan.elfarm32.hajime.fbhtfi",
+                "trojan.generickd.34055387",
+                "trojan.generickd.34055387 (b)",
+                "trojan.linux.hajime",
+                "unix.malware.agent-6626471-0"
+            ],
+            "ioc_type": "Host",
+            "ioc_updated_date": "2023-06-12T10:00:35+00:00",
+            "ioc_value": "im.a.very.bad.doma.in",
+            "kill_chain_phases": [],
+            "matched_event": "bd7686c8-20db-427e-941d-844a5ecfe559",
+            "matched_event_type": "alert",
+            "meta_data": "{\"cwe\":[],\"descriptions\":[],\"filetype\":\"ELF 32-bit LSB executable, ARM, EABI5 version 1 (GNU/Linux)\",\"size\":78.3984375,\"ssdeep\":\"1536:87vbq1lGAXSEYQjbChaAU2yU23M51DjZgSQAvcYkFtZTjzBht5:8D+CAXFYQChaAUk5ljnQssL\",\"tslh\":\"T16D7312E017B517CC1371A8353BED205E9128223972AE35302E97528DF957703BAB2DBE\",\"usageMode\":\"hunting\"}",
+            "probability": 0.5,
+            "relations": [
+                "0e3cc27b-7999-48ce-8484-dc12b325a355"
+            ],
+            "risk": "Suspicious",
+            "signature": "RetroHunt - Host - malware/Unknown - Hajime - GW Lab Test - 00100035-1206-2023-cbf5-08330f0d5bc0",
+            "targeted_countries": [],
+            "targeted_organizations": [],
+            "targeted_platforms": [
+                "linux"
+            ],
+            "targeted_sectors": [],
+            "threat_actor": [
+                "GW Lab Test"
+            ],
+            "timestamp_analyzed": "2023-06-12T10:12:39.001Z",
+            "timestamp_detected": "2023-06-09T14:08:46.845Z",
+            "timestamp_package": "2023-06-12T10:00:35.012874+0000",
+            "tlp": "green",
+            "ttp": [],
+            "type": "cti",
+            "usage_mode": "hunting",
+            "vulnerabilities": []
+        },
+        "observer": {
+            "name": "gcap-xxxxxxxxxxxxxxxx.domain.local",
+            "type": "ids",
+            "version": "0.2"
+        },
+        "related": {
+            "hosts": [
+                "urlhaus.abuse.ch"
+            ],
+            "ip": [
+                "1.1.1.1",
+                "2.2.2.2"
+            ]
+        },
+        "source": {
+            "address": "1.1.1.1",
+            "ip": "1.1.1.1",
+            "port": 55614
+        },
+        "url": {
+            "domain": "urlhaus.abuse.ch",
+            "registered_domain": "abuse.ch",
+            "subdomain": "urlhaus",
+            "top_level_domain": "ch"
+        }
+    }
+    	
+	```
+
+
+=== "sigflow-alert.json"
+
+    ```json
+	
+    {
+        "message": "{\"event_type\":\"alert\",\"http\":{\"url\":\"/bsb/debugnosso/index.php?N=GO-GO-GADGET-PC-inspector-gadget%20=%20%20%20%20Iniciou%20o%20executar%20%20http://65.181.125.193/a35new/w7.zip%7Chttp://65.181.125.193/a35new/w7.zip%7C32%7Chttp://65.181.125.193/a35new/dll.dll\",\"protocol\":\"HTTP/1.1\",\"hostname\":\"www.devyatinskiy.ru\",\"length\":0,\"http_method\":\"GET\"},\"timestamp_detected\":\"2023-03-22T10:25:55.690Z\",\"uuid\":\"fd5ba8ea-e263-426d-b4b2-a16521ae09b1\",\"packet_info\":{\"linktype\":1},\"severity\":1,\"in_iface\":\"monvirt\",\"src_ip\":\"1.1.1.1\",\"host\":\"gcap-xxxxxxxx.domain.local\",\"dest_ip\":\"2.2.2.2\",\"flow_id\":1408237495862400,\"dest_port\":16122,\"@timestamp\":\"2023-03-22T10:44:08.001Z\",\"timestamp_analyzed\":\"2023-03-22T10:44:08.001Z\",\"gcap\":\"gcap-xxxxxxx.domain.local\",\"type\":\"suricata\",\"src_port\":8550,\"metadata\":{\"flowbits\":[\"min.gethttp\",\"ETPROtxtminhead\",\"http.dottedquadhost.dll\"]},\"community_id\":\"1:hEBuGl9msx7YJtg3Tb/+Gf+a1VI=\",\"app_proto\":\"http\",\"packet\":\"kOK6pqSQkOK6pqSRCABFAAC7Uz1AAEAGPT4py4AkHxzgtiFmPvokcIbSnp074oAYAGsSTgAAAQEICmgi0xNoItMTR0VUIC9ic2IvZGVidWdub3Nzby9pbmRleC5waHA/Tj1HTy1HTy1HQURHRVQtUEMtaW5zcGVjdG9yLWdhZGdldCUyMD0lMjAlMjAlMjAlMjBJbmljaWFyJTdCNjklN0QgSFRUUC8xLjENCkhvc3Q6IHd3dy5kZXZ5YXRpbnNraXkucnUNCg0K\",\"proto\":\"TCP\",\"stream\":1,\"flow\":{\"bytes_toclient\":90364,\"bytes_toserver\":3084,\"pkts_toserver\":19,\"pkts_toclient\":66,\"start\":\"2023-03-22T10:25:55.345216+0000\"},\"tx_id\":5,\"ether\":{\"dest_mac\":\"90:e2:ba:a6:a4:90\",\"src_mac\":\"90:e2:ba:a6:a4:91\"},\"payload\":\"R0VUIC9kb3dubG9hZC9RanRHRGx0bWNlLzE2MDgyMDE2dmVjTzdPa0wzeUxQSUNsZW96aWJLRS52YnM/ZHNpZD1ndjVucTMuNDAwYjg2YzcxOTZmOWU4Y2NkZTM1MzcwZWIwYTU0Yjkmc2Jzcj0yZjViMmRmMGFlMGE4Yzc1NTFjN2RmMGJjNDZhOWQ3OTk4MCZsZ2ZwPTMwMDAgSFRUUC8xLjENCkFjY2VwdDogdGV4dC9odG1sLCBhcHBsaWNhdGlvbi94aHRtbCt4bWwsICovKg0KQWNjZXB0LUxhbmd1YWdlOiBlbi1VUw0KVXNlci1BZ2VudDogTW96aWxsYS81LjAgKFdpbmRvd3MgTlQgNi4xOyBXT1c2NDsgVHJpZGVudC83LjA7IHJ2OjExLjApIGxpa2UgR2Vja28NCkFjY2VwdC1FbmNvZGluZzogZ3ppcCwgZGVmbGF0ZQ0KSG9zdDogZGM1MjQuNHNoYXJlZC5jb20NCkNvbm5lY3Rpb246IEtlZXAtQWxpdmUNCkNvb2tpZTogZGF5MWhvc3Q9aA0KDQpHRVQgL3dlYi9jZG4vcG9wdWxhci9kb3dubG9hZC9RanRHRGx0bWNlP2NvbnREaXNwPWF0dGFjaG1lbnQlM0IrZmlsZW5hbWUlM0QlMjIxNjA4MjAxNnZlY083T2tMM3lMUElDbGVvemliS0VIYTg2MUh6aDlHRi52YnMlMjIlM0IrZmlsZW5hbWUqJTNEdXRmLTglMjclMjcxNjA4MjAxNnZlY083T2tMM3lMUElDbGVvemliS0VIYTg2MUh6aDlHRi52YnMmY29udFR5cGU9QVBQTElDQVRJT04lMkZPQ1RFVC1TVFJFQU0mY2RuaD03YTc0NTUzYTA1N2VhNTVmYzU2OGI4MGU2MGNkN2ZhMiZkM2M9ZmRzUWp0R0RsdG1jZSUzRElOSVRJQUxJWkVEJTNCK2RvbWFpbiUzRC40c2hhcmVkLmNvbSUzQitleHBpcmVzJTNEV2VkJTJDKzE3LUF1Zy0yMDE2KzAxJTNBMzYlM0E0NCtHTVQlM0IrcGF0aCUzRCUyRiBIVFRQLzEuMQ0KQWNjZXB0OiB0ZXh0L2h0bWwsIGFwcGxpY2F0aW9uL3hodG1sK3htbCwgKi8qDQpBY2NlcHQtTGFuZ3VhZ2U6IGVuLVVTDQpVc2VyLUFnZW50OiBNb3ppbGxhLzUuMCAoV2luZG93cyBOVCA2LjE7IFdPVzY0OyBUcmlkZW50LzcuMDsgcnY6MTEuMCkgbGlrZSBHZWNrbw0KQWNjZXB0LUVuY29kaW5nOiBnemlwLCBkZWZsYXRlDQpDb29raWU6IGRheTFob3N0PWgNCkNvbm5lY3Rpb246IEtlZXAtQWxpdmUNCkhvc3Q6IGNkbmZpbGVzLjRzaGFyZWQuY29tDQoNCkdFVCAvYTM1bmV3L3c3LnR4dCBIVFRQLzEuMQ0KSG9zdDogNjUuMTgxLjEyNS4xOTMNCkNvbm5lY3Rpb246IEtlZXAtQWxpdmUNCg0KR0VUIC9hMzVuZXcvYXc3LnRpZmYgSFRUUC8xLjENCkhvc3Q6IDY1LjE4MS4xMjUuMTkzDQoNCkdFVCAvYnNiL2luZmVjdHMvaW5kZXgucGhwP049R08tR08tR0FER0VULVBDLWluc3BlY3Rvci1nYWRnZXQlMjA9JTIwJTIwJTIwJTIwV2luZG93cyUyMDclMjBIb21lJTIwUHJlbWl1bSUyMCUyMCUyMCUyMD0lMjAlMjAlMjAlMjAlMjAlMjAlMjBOL0EgSFRUUC8xLjENCkhvc3Q6IHd3dy5kZXZ5YXRpbnNraXkucnUNCkNvbm5lY3Rpb246IEtlZXAtQWxpdmUNCg0KR0VUIC9ic2IvZGVidWdub3Nzby9pbmRleC5waHA/Tj1HTy1HTy1HQURHRVQtUEMtaW5zcGVjdG9yLWdhZGdldCUyMD0lMjAlMjAlMjAlMjBJbmljaW91JTIwbyUyMGV4ZWN1dGFyJTIwJTIwaHR0cDovLzY1LjE4MS4xMjUuMTkzL2EzNW5ldy93Ny56aXAlN0NodHRwOi8vNjUuMTgxLjEyNS4xOTMvYTM1bmV3L3c3LnppcCU3QzMyJTdDaHR0cDovLzY1LjE4MS4xMjUuMTkzL2EzNW5ldy9kbGwuZGxsIEhUVFAvMS4xDQpIb3N0OiB3d3cuZGV2eWF0aW5za2l5LnJ1DQoNCg==\",\"@version\":\"1\",\"gcenter\":\"gcenter-xxxxxxxx.domain.local\",\"payload_printable\":\"GET /download/QjtGDltmce/16082016vecO7OkL3yLPICleozibKE.vbs?dsid=gv5nq3.400b86c7196f9e8ccde35370eb0a54b9&sbsr=2f5b2df0ae0a8c7551c7df0bc46a9d79980&lgfp=3000 HTTP/1.1\\r\\nAccept: text/html, application/xhtml+xml, */*\\r\\nAccept-Language: en-US\\r\\nUser-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; Trident/7.0; rv:11.0) like Gecko\\r\\nAccept-Encoding: gzip, deflate\\r\\nHost: dc524.4shared.com\\r\\nConnection: Keep-Alive\\r\\nCookie: day1host=h\\r\\n\\r\\nGET /web/cdn/popular/download/QjtGDltmce?contDisp=attachment%3B+filename%3D%2216082016vecO7OkL3yLPICleozibKEHa861Hzh9GF.vbs%22%3B+filename*%3Dutf-8%27%2716082016vecO7OkL3yLPICleozibKEHa861Hzh9GF.vbs&contType=APPLICATION%2FOCTET-STREAM&cdnh=7a74553a057ea55fc568b80e60cd7fa2&d3c=fdsQjtGDltmce%3DINITIALIZED%3B+domain%3D.4shared.com%3B+expires%3DWed%2C+17-Aug-2016+01%3A36%3A44+GMT%3B+path%3D%2F HTTP/1.1\\r\\nAccept: text/html, application/xhtml+xml, */*\\r\\nAccept-Language: en-US\\r\\nUser-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; Trident/7.0; rv:11.0) like Gecko\\r\\nAccept-Encoding: gzip, deflate\\r\\nCookie: day1host=h\\r\\nConnection: Keep-Alive\\r\\nHost: cdnfiles.4shared.com\\r\\n\\r\\nGET /a35new/w7.txt HTTP/1.1\\r\\nHost: 65.181.125.193\\r\\nConnection: Keep-Alive\\r\\n\\r\\nGET /a35new/aw7.tiff HTTP/1.1\\r\\nHost: 65.181.125.193\\r\\n\\r\\nGET /bsb/infects/index.php?N=GO-GO-GADGET-PC-inspector-gadget%20=%20%20%20%20Windows%207%20Home%20Premium%20%20%20%20=%20%20%20%20%20%20%20N/A HTTP/1.1\\r\\nHost: www.devyatinskiy.ru\\r\\nConnection: Keep-Alive\\r\\n\\r\\nGET /bsb/debugnosso/index.php?N=GO-GO-GADGET-PC-inspector-gadget%20=%20%20%20%20Iniciou%20o%20executar%20%20http://65.181.125.193/a35new/w7.zip%7Chttp://65.181.125.193/a35new/w7.zip%7C32%7Chttp://65.181.125.193/a35new/dll.dll HTTP/1.1\\r\\nHost: www.devyatinskiy.ru\\r\\n\\r\\n\",\"alert\":{\"signature\":\"ETPRO TROJAN MSIL/Bazidow.A HTTP C2\",\"category\":\"A Network Trojan was detected\",\"gid\":1,\"signature_id\":2828821,\"rev\":3,\"severity\":1,\"metadata\":{\"affected_product\":[\"Windows_XP_Vista_7_8_10_Server_32_64_Bit\"],\"performance_impact\":[\"Moderate\"],\"deployment\":[\"Perimeter\"],\"created_at\":[\"2017_12_07\"],\"updated_at\":[\"2022_05_03\"],\"former_category\":[\"MALWARE\"],\"attack_target\":[\"Client_Endpoint\"],\"signature_severity\":[\"Major\"]},\"action\":\"allowed\"}}",
         "event": {
             "action": "allowed",
             "category": [
                 "network"
             ],
             "kind": "alert",
-            "severity": 2,
-            "type": [
-                "info"
-            ]
+            "module": "alert",
+            "severity": 1
         },
-        "@timestamp": "2022-06-03T14:59:41.373000Z",
+        "@timestamp": "2023-03-22T10:25:55.690000Z",
         "destination": {
-            "address": "1.2.3.4",
-            "bytes": 3052,
-            "ip": "1.2.3.4",
-            "packets": 4,
-            "port": 49804
+            "address": "2.2.2.2",
+            "bytes": 90364,
+            "ip": "2.2.2.2",
+            "packets": 66,
+            "port": 16122
         },
         "gatewatcher": {
             "event_type": "alert",
-            "flow_id": "1686930575880829",
-            "gcap": "gcap-sekoia.gatewatcher.com",
-            "gcenter": [
-                "gcenter-sekoia.gatewatcher.com",
-                "gcenter-sekoia.gatewatcher.com"
-            ],
-            "timestamp_analyzed": "2022-06-03T14:59:41.373Z",
-            "timestamp_detected": "2022-06-03T14:59:08.780Z",
+            "flow_id": "1408237495862400",
+            "gcap": "gcap-xxxxxxx.domain.local",
+            "gcenter": "gcenter-xxxxxxxx.domain.local",
+            "payload": "R0VUIC9kb3dubG9hZC9RanRHRGx0bWNlLzE2MDgyMDE2dmVjTzdPa0wzeUxQSUNsZW96aWJLRS52YnM/ZHNpZD1ndjVucTMuNDAwYjg2YzcxOTZmOWU4Y2NkZTM1MzcwZWIwYTU0Yjkmc2Jzcj0yZjViMmRmMGFlMGE4Yzc1NTFjN2RmMGJjNDZhOWQ3OTk4MCZsZ2ZwPTMwMDAgSFRUUC8xLjENCkFjY2VwdDogdGV4dC9odG1sLCBhcHBsaWNhdGlvbi94aHRtbCt4bWwsICovKg0KQWNjZXB0LUxhbmd1YWdlOiBlbi1VUw0KVXNlci1BZ2VudDogTW96aWxsYS81LjAgKFdpbmRvd3MgTlQgNi4xOyBXT1c2NDsgVHJpZGVudC83LjA7IHJ2OjExLjApIGxpa2UgR2Vja28NCkFjY2VwdC1FbmNvZGluZzogZ3ppcCwgZGVmbGF0ZQ0KSG9zdDogZGM1MjQuNHNoYXJlZC5jb20NCkNvbm5lY3Rpb246IEtlZXAtQWxpdmUNCkNvb2tpZTogZGF5MWhvc3Q9aA0KDQpHRVQgL3dlYi9jZG4vcG9wdWxhci9kb3dubG9hZC9RanRHRGx0bWNlP2NvbnREaXNwPWF0dGFjaG1lbnQlM0IrZmlsZW5hbWUlM0QlMjIxNjA4MjAxNnZlY083T2tMM3lMUElDbGVvemliS0VIYTg2MUh6aDlHRi52YnMlMjIlM0IrZmlsZW5hbWUqJTNEdXRmLTglMjclMjcxNjA4MjAxNnZlY083T2tMM3lMUElDbGVvemliS0VIYTg2MUh6aDlHRi52YnMmY29udFR5cGU9QVBQTElDQVRJT04lMkZPQ1RFVC1TVFJFQU0mY2RuaD03YTc0NTUzYTA1N2VhNTVmYzU2OGI4MGU2MGNkN2ZhMiZkM2M9ZmRzUWp0R0RsdG1jZSUzRElOSVRJQUxJWkVEJTNCK2RvbWFpbiUzRC40c2hhcmVkLmNvbSUzQitleHBpcmVzJTNEV2VkJTJDKzE3LUF1Zy0yMDE2KzAxJTNBMzYlM0E0NCtHTVQlM0IrcGF0aCUzRCUyRiBIVFRQLzEuMQ0KQWNjZXB0OiB0ZXh0L2h0bWwsIGFwcGxpY2F0aW9uL3hodG1sK3htbCwgKi8qDQpBY2NlcHQtTGFuZ3VhZ2U6IGVuLVVTDQpVc2VyLUFnZW50OiBNb3ppbGxhLzUuMCAoV2luZG93cyBOVCA2LjE7IFdPVzY0OyBUcmlkZW50LzcuMDsgcnY6MTEuMCkgbGlrZSBHZWNrbw0KQWNjZXB0LUVuY29kaW5nOiBnemlwLCBkZWZsYXRlDQpDb29raWU6IGRheTFob3N0PWgNCkNvbm5lY3Rpb246IEtlZXAtQWxpdmUNCkhvc3Q6IGNkbmZpbGVzLjRzaGFyZWQuY29tDQoNCkdFVCAvYTM1bmV3L3c3LnR4dCBIVFRQLzEuMQ0KSG9zdDogNjUuMTgxLjEyNS4xOTMNCkNvbm5lY3Rpb246IEtlZXAtQWxpdmUNCg0KR0VUIC9hMzVuZXcvYXc3LnRpZmYgSFRUUC8xLjENCkhvc3Q6IDY1LjE4MS4xMjUuMTkzDQoNCkdFVCAvYnNiL2luZmVjdHMvaW5kZXgucGhwP049R08tR08tR0FER0VULVBDLWluc3BlY3Rvci1nYWRnZXQlMjA9JTIwJTIwJTIwJTIwV2luZG93cyUyMDclMjBIb21lJTIwUHJlbWl1bSUyMCUyMCUyMCUyMD0lMjAlMjAlMjAlMjAlMjAlMjAlMjBOL0EgSFRUUC8xLjENCkhvc3Q6IHd3dy5kZXZ5YXRpbnNraXkucnUNCkNvbm5lY3Rpb246IEtlZXAtQWxpdmUNCg0KR0VUIC9ic2IvZGVidWdub3Nzby9pbmRleC5waHA/Tj1HTy1HTy1HQURHRVQtUEMtaW5zcGVjdG9yLWdhZGdldCUyMD0lMjAlMjAlMjAlMjBJbmljaW91JTIwbyUyMGV4ZWN1dGFyJTIwJTIwaHR0cDovLzY1LjE4MS4xMjUuMTkzL2EzNW5ldy93Ny56aXAlN0NodHRwOi8vNjUuMTgxLjEyNS4xOTMvYTM1bmV3L3c3LnppcCU3QzMyJTdDaHR0cDovLzY1LjE4MS4xMjUuMTkzL2EzNW5ldy9kbGwuZGxsIEhUVFAvMS4xDQpIb3N0OiB3d3cuZGV2eWF0aW5za2l5LnJ1DQoNCg==",
+            "payload_printable": "GET /download/QjtGDltmce/16082016vecO7OkL3yLPICleozibKE.vbs?dsid=gv5nq3.400b86c7196f9e8ccde35370eb0a54b9&sbsr=2f5b2df0ae0a8c7551c7df0bc46a9d79980&lgfp=3000 HTTP/1.1\r\nAccept: text/html, application/xhtml+xml, */*\r\nAccept-Language: en-US\r\nUser-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; Trident/7.0; rv:11.0) like Gecko\r\nAccept-Encoding: gzip, deflate\r\nHost: dc524.4shared.com\r\nConnection: Keep-Alive\r\nCookie: day1host=h\r\n\r\nGET /web/cdn/popular/download/QjtGDltmce?contDisp=attachment%3B+filename%3D%2216082016vecO7OkL3yLPICleozibKEHa861Hzh9GF.vbs%22%3B+filename*%3Dutf-8%27%2716082016vecO7OkL3yLPICleozibKEHa861Hzh9GF.vbs&contType=APPLICATION%2FOCTET-STREAM&cdnh=7a74553a057ea55fc568b80e60cd7fa2&d3c=fdsQjtGDltmce%3DINITIALIZED%3B+domain%3D.4shared.com%3B+expires%3DWed%2C+17-Aug-2016+01%3A36%3A44+GMT%3B+path%3D%2F HTTP/1.1\r\nAccept: text/html, application/xhtml+xml, */*\r\nAccept-Language: en-US\r\nUser-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; Trident/7.0; rv:11.0) like Gecko\r\nAccept-Encoding: gzip, deflate\r\nCookie: day1host=h\r\nConnection: Keep-Alive\r\nHost: cdnfiles.4shared.com\r\n\r\nGET /a35new/w7.txt HTTP/1.1\r\nHost: 65.181.125.193\r\nConnection: Keep-Alive\r\n\r\nGET /a35new/aw7.tiff HTTP/1.1\r\nHost: 65.181.125.193\r\n\r\nGET /bsb/infects/index.php?N=GO-GO-GADGET-PC-inspector-gadget%20=%20%20%20%20Windows%207%20Home%20Premium%20%20%20%20=%20%20%20%20%20%20%20N/A HTTP/1.1\r\nHost: www.devyatinskiy.ru\r\nConnection: Keep-Alive\r\n\r\nGET /bsb/debugnosso/index.php?N=GO-GO-GADGET-PC-inspector-gadget%20=%20%20%20%20Iniciou%20o%20executar%20%20http://65.181.125.193/a35new/w7.zip%7Chttp://65.181.125.193/a35new/w7.zip%7C32%7Chttp://65.181.125.193/a35new/dll.dll HTTP/1.1\r\nHost: www.devyatinskiy.ru\r\n\r\n",
+            "timestamp_analyzed": "2023-03-22T10:44:08.001Z",
+            "timestamp_detected": "2023-03-22T10:25:55.690Z",
             "type": "suricata"
         },
         "http": {
             "request": {
                 "method": "GET"
-            },
-            "response": {
-                "status_code": 200
             }
         },
         "network": {
@@ -186,99 +413,83 @@ This section demonstrates how the raw logs will be transformed by our parsers. I
             "transport": "TCP"
         },
         "observer": {
-            "hostname": "network.internal",
+            "hostname": "gcap-xxxxxxxx.domain.local",
             "mac": [
-                "08:00:27:8e:2b:6c",
-                "08:00:27:93:e8:70"
+                "90:e2:ba:a6:a4:90",
+                "90:e2:ba:a6:a4:91"
             ],
-            "name": "gcap-sekoia.gatewatcher.com",
-            "type": "firewall",
+            "name": "gcap-xxxxxxx.domain.local",
+            "type": "ids",
             "version": "0.2"
         },
         "related": {
             "hosts": [
-                "network.internal",
-                "www.xmlformats.com"
+                "gcap-xxxxxxxx.domain.local",
+                "www.devyatinskiy.ru"
             ],
             "ip": [
-                "1.2.3.4",
-                "9.8.7.6"
+                "1.1.1.1",
+                "2.2.2.2"
             ]
         },
         "rule": {
-            "category": "Potentially Bad Traffic",
-            "id": "2841990",
-            "name": "ETPRO INFO Observed Suspicious Base64 Encoded Wide String Inbound (exe)"
+            "category": "A Network Trojan was detected",
+            "id": "2828821",
+            "name": "ETPRO TROJAN MSIL/Bazidow.A HTTP C2"
         },
         "source": {
-            "address": "9.8.7.6",
-            "bytes": 798,
-            "ip": "9.8.7.6",
-            "packets": 5,
-            "port": 80
+            "address": "1.1.1.1",
+            "bytes": 3084,
+            "ip": "1.1.1.1",
+            "packets": 19,
+            "port": 8550
         },
         "url": {
-            "domain": "www.xmlformats.com",
-            "path": "/exploit.html",
-            "registered_domain": "xmlformats.com",
+            "domain": "www.devyatinskiy.ru",
+            "path": "/bsb/debugnosso/index.php?N=GO-GO-GADGET-PC-inspector-gadget%20=%20%20%20%20Iniciou%20o%20executar%20%20http://65.181.125.193/a35new/w7.zip%7Chttp://65.181.125.193/a35new/w7.zip%7C32%7Chttp://65.181.125.193/a35new/dll.dll",
+            "registered_domain": "devyatinskiy.ru",
             "subdomain": "www",
-            "top_level_domain": "com"
-        },
-        "user_agent": {
-            "device": {
-                "name": "Other"
-            },
-            "name": "Outlook",
-            "original": "Mozilla/4.0 (compatible; ms-office; MSOffice 16)",
-            "os": {
-                "name": "Other"
-            },
-            "version": "2016"
+            "top_level_domain": "ru"
         }
     }
     	
 	```
 
 
-=== "suricata_fileinfo_event.json"
+=== "sigflow-file.json"
 
     ```json
 	
     {
-        "message": "{\"@timestamp\":\"2022-06-03T14:59:41.374Z\",\"gcenter\":[\"gcenter-sekoia.gatewatcher.com\",\"gcenter-sekoia.gatewatcher.com\"],\"event_type\":\"fileinfo\",\"http\":{\"protocol\":\"HTTP/1.1\",\"hostname\":\"www.xmlformats.com\",\"http_content_type\":\"text/html\",\"length\":2485,\"http_user_agent\":\"Mozilla/4.0 (compatible; ms-office; MSOffice 16)\",\"http_method\":\"GET\",\"url\":\"/exploit.html\",\"status\":200},\"host\":\"gcap-sekoia.gatewatcher.com\",\"type\":\"suricata\",\"timestamp_detected\":\"2022-06-03T14:59:08.780Z\",\"fileinfo\":{\"tx_id\":0,\"magic\":\"HTML document, ASCII text, with very long lines\",\"gaps\":false,\"md5\":\"16e3fcee85f81ec9e9c75dd13fb08c01\",\"sha256\":\"2c36fbcbac3e57df410f6613180fe572015adba62d0f1bd98c13a1535d64703c\",\"file_id\":1,\"sid\":[1100029],\"state\":\"CLOSED\",\"size\":6105,\"stored\":true,\"filename\":\"/exploit.html\"},\"src_port\":80,\"flow_id\":1686930575880829,\"app_proto\":\"http\",\"in_iface\":\"monvirt\",\"src_ip\":\"9.8.7.6\",\"dest_port\":49804,\"dest_ip\":\"1.2.3.4\",\"timestamp_analyzed\":\"2022-06-03T14:59:41.374Z\",\"gcap\":\"gcap-sekoia.gatewatcher.com\",\"uuid\":\"a2d71147-3283-4136-9dc1-df9beaffd301\",\"proto\":\"TCP\"}",
+        "message": "{\"event_type\":\"fileinfo\",\"proto\":\"TCP\",\"http\":{\"protocol\":\"HTTP/1.1\",\"url\":\"/web/cdn/popular/download/QjtGDltmce?contDisp=attachment%3B+filename%3D%2216082016vecO7OkL3yLPICleozibKEHa861Hzh9GF.vbs%22%3B+filename*%3Dutf-8%27%2716082016vecO7OkL3yLPICleozibKEHa861Hzh9GF.vbs&contType=APPLICATION%2FOCTET-STREAM&cdnh=7a74553a057ea55fc568b80e60cd7fa2&d3c=fdsQjtGDltmce%3DINITIALIZED%3B+domain%3D.4shared.com%3B+expires%3DWed%2C+17-Aug-2016+01%3A36%3A44+GMT%3B+path%3D%2F\",\"hostname\":\"cdnfiles.4shared.com\",\"status\":200,\"length\":1088,\"http_content_type\":\"APPLICATION/OCTET-STREAM\",\"http_user_agent\":\"Mozilla/5.0 (Windows NT 6.1; WOW64; Trident/7.0; rv:11.0) like Gecko\",\"http_method\":\"GET\"},\"timestamp_detected\":\"2023-03-22T10:25:55.469Z\",\"uuid\":\"24231245-276c-4509-9437-016b82f88c7c\",\"type\":\"suricata\",\"in_iface\":\"monvirt\",\"src_ip\":\"1.1.1.1\",\"host\":\"gcap-xxxxxxxxx.domain.local\",\"dest_ip\":\"2.2.2.2\",\"flow_id\":1408237495862400,\"@timestamp\":\"2023-03-22T10:44:07.998Z\",\"timestamp_analyzed\":\"2023-03-22T10:44:07.998Z\",\"@version\":\"1\",\"gcap\":\"gcap-xxxxxxxxxx.domain.local\",\"gcenter\":\"gcenter-xxxxxxxx.domain.local\",\"fileinfo\":{\"size\":1088,\"filename\":\"16082016vecO7OkL3yLPICleozibKEHa861Hzh9GF.vbs\",\"state\":\"CLOSED\",\"sha256\":\"f31faae778ecfee8e27041309444468a37ad7681d42d7972faa92fe2056721df\",\"magic\":\"Little-endian UTF-16 Unicode text, with CRLF line terminators\",\"sid\":[],\"stored\":false,\"tx_id\":1,\"gaps\":false,\"md5\":\"d526c8e4ad7ab6d80baeb839976b7c80\"},\"dest_port\":8550,\"src_port\":16122,\"app_proto\":\"http\"}",
         "event": {
             "category": [
                 "network"
             ],
-            "kind": "event",
-            "type": [
-                "info"
-            ]
+            "module": "fileinfo"
         },
-        "@timestamp": "2022-06-03T14:59:41.374000Z",
+        "@timestamp": "2023-03-22T10:25:55.469000Z",
         "destination": {
-            "address": "1.2.3.4",
-            "ip": "1.2.3.4",
-            "port": 49804
+            "address": "2.2.2.2",
+            "ip": "2.2.2.2",
+            "port": 8550
         },
         "file": {
             "hash": {
-                "md5": "16e3fcee85f81ec9e9c75dd13fb08c01",
-                "sha256": "2c36fbcbac3e57df410f6613180fe572015adba62d0f1bd98c13a1535d64703c"
+                "md5": "d526c8e4ad7ab6d80baeb839976b7c80",
+                "sha256": "f31faae778ecfee8e27041309444468a37ad7681d42d7972faa92fe2056721df"
             },
-            "name": "/exploit.html",
-            "size": 6105
+            "name": "16082016vecO7OkL3yLPICleozibKEHa861Hzh9GF.vbs",
+            "size": 1088
         },
         "gatewatcher": {
             "event_type": "fileinfo",
-            "flow_id": "1686930575880829",
-            "gcap": "gcap-sekoia.gatewatcher.com",
-            "gcenter": [
-                "gcenter-sekoia.gatewatcher.com",
-                "gcenter-sekoia.gatewatcher.com"
-            ],
-            "timestamp_analyzed": "2022-06-03T14:59:41.374Z",
-            "timestamp_detected": "2022-06-03T14:59:08.780Z",
+            "filemagic": "Little-endian UTF-16 Unicode text, with CRLF line terminators",
+            "flow_id": "1408237495862400",
+            "gcap": "gcap-xxxxxxxxxx.domain.local",
+            "gcenter": "gcenter-xxxxxxxx.domain.local",
+            "timestamp_analyzed": "2023-03-22T10:44:07.998Z",
+            "timestamp_detected": "2023-03-22T10:25:55.469Z",
             "type": "suricata"
         },
         "http": {
@@ -294,138 +505,204 @@ This section demonstrates how the raw logs will be transformed by our parsers. I
             "transport": "TCP"
         },
         "observer": {
-            "hostname": "gcap-sekoia.gatewatcher.com",
-            "name": "gcap-sekoia.gatewatcher.com",
-            "type": "firewall",
+            "hostname": "gcap-xxxxxxxxx.domain.local",
+            "name": "gcap-xxxxxxxxxx.domain.local",
+            "type": "ids",
             "version": "0.2"
         },
         "related": {
             "hash": [
-                "16e3fcee85f81ec9e9c75dd13fb08c01",
-                "2c36fbcbac3e57df410f6613180fe572015adba62d0f1bd98c13a1535d64703c"
+                "d526c8e4ad7ab6d80baeb839976b7c80",
+                "f31faae778ecfee8e27041309444468a37ad7681d42d7972faa92fe2056721df"
             ],
             "hosts": [
-                "gcap-sekoia.gatewatcher.com",
-                "www.xmlformats.com"
+                "cdnfiles.4shared.com",
+                "gcap-xxxxxxxxx.domain.local"
             ],
             "ip": [
-                "1.2.3.4",
-                "9.8.7.6"
+                "1.1.1.1",
+                "2.2.2.2"
             ]
         },
         "source": {
-            "address": "9.8.7.6",
-            "ip": "9.8.7.6",
-            "port": 80
+            "address": "1.1.1.1",
+            "ip": "1.1.1.1",
+            "port": 16122
         },
         "url": {
-            "domain": "www.xmlformats.com",
-            "path": "/exploit.html",
-            "registered_domain": "xmlformats.com",
-            "subdomain": "www",
+            "domain": "cdnfiles.4shared.com",
+            "path": "/web/cdn/popular/download/QjtGDltmce?contDisp=attachment%3B+filename%3D%2216082016vecO7OkL3yLPICleozibKEHa861Hzh9GF.vbs%22%3B+filename*%3Dutf-8%27%2716082016vecO7OkL3yLPICleozibKEHa861Hzh9GF.vbs&contType=APPLICATION%2FOCTET-STREAM&cdnh=7a74553a057ea55fc568b80e60cd7fa2&d3c=fdsQjtGDltmce%3DINITIALIZED%3B+domain%3D.4shared.com%3B+expires%3DWed%2C+17-Aug-2016+01%3A36%3A44+GMT%3B+path%3D%2F",
+            "registered_domain": "4shared.com",
+            "subdomain": "cdnfiles",
             "top_level_domain": "com"
         },
         "user_agent": {
             "device": {
                 "name": "Other"
             },
-            "name": "Outlook",
-            "original": "Mozilla/4.0 (compatible; ms-office; MSOffice 16)",
+            "name": "IE",
+            "original": "Mozilla/5.0 (Windows NT 6.1; WOW64; Trident/7.0; rv:11.0) like Gecko",
             "os": {
-                "name": "Other"
+                "name": "Windows",
+                "version": "7"
             },
-            "version": "2016"
+            "version": "11.0"
         }
     }
     	
 	```
 
 
-=== "suricata_http_event.json"
+=== "sigflow-meta.json"
 
     ```json
 	
     {
-        "message": "{\"@timestamp\":\"2022-06-03T14:59:41.378Z\",\"gcenter\":[\"gcenter-sekoia.gatewatcher.com\",\"gcenter-sekoia.gatewatcher.com\"],\"event_type\":\"http\",\"type\":\"suricata\",\"community_id\":\"1:dGVzdAo=\",\"src_ip\":\"9.8.7.6\",\"dest_port\":80,\"proto\":\"TCP\",\"http\":{\"content_type\":\"text/html\",\"hostname\":\"www.xmlformats.com\",\"http_content_type\":\"text/html\",\"connection\":\"Keep-Alive\",\"authorization\":\"Bearer\",\"length\":0,\"server\":\"Apache/2.4.41 (Ubuntu)\",\"url\":\"/exploit.html\",\"http_user_agent\":\"Microsoft Office Existence Discovery\",\"date\":\"Thu, 02 Jun 2022 22:37:22 GMT\",\"protocol\":\"HTTP/1.1\",\"http_parsed_user_agent\":{\"os_name\":\"Other\",\"os_full\":\"Other\",\"name\":\"Other\",\"device\":\"Other\",\"os\":\"Other\"},\"content_length\":\"6105\",\"last_modified\":\"Thu, 02 Jun 2022 22:30:34 GMT\",\"vary\":\"Accept-Encoding\",\"http_method\":\"HEAD\",\"status\":200},\"host\":\"gcap-sekoia.gatewatcher.com\",\"timestamp_detected\":\"2022-06-03T14:59:08.833Z\",\"ether\":{\"src_mac\":\"00:17:a4:77:09:20\",\"dest_mac\":\"a0:36:9f:0f:b1:70\"},\"src_port\":49804,\"flow_id\":1686930575880829,\"in_iface\":\"monvirt\",\"dest_ip\":\"1.2.3.4\",\"timestamp_analyzed\":\"2022-06-03T14:59:41.378Z\",\"metadata\":{\"flowbits\":[\"Office.UA\"]},\"gcap\":\"gcap-sekoia.gatewatcher.com\",\"tx_id\":4,\"uuid\":\"4f1bd378-9439-4c1c-ab1d-4b3ba6c22b87\"}",
+        "message": "{\"event_type\":\"http\",\"http\":{\"accept_encoding\":\"gzip, deflate\",\"server\":\"524\",\"accept\":\"text/html, application/xhtml+xml, */*\",\"url\":\"/download/QjtGDltmce/16082016vecO7OkL3yLPICleozibKE.vbs?dsid=gv5nq3.400b86c7196f9e8ccde35370eb0a54b9&sbsr=2f5b2df0ae0a8c7551c7df0bc46a9d79980&lgfp=3000\",\"protocol\":\"HTTP/1.1\",\"hostname\":\"dc524.4shared.com\",\"accept_language\":\"en-US\",\"location\":\"http://cdnfiles.4shared.com/web/cdn/popular/download/QjtGDltmce?contDisp=attachment%3B+filename%3D%2216082016vecO7OkL3yLPICleozibKEHa861Hzh9GF.vbs%22%3B+filename*%3Dutf-8%27%2716082016vecO7OkL3yLPICleozibKEHa861Hzh9GF.vbs&contType=APPLICATION%2FOCTET-STREAM&cdnh=7a74553a057ea55fc568b80e60cd7fa2&d3c=fdsQjtGDltmce%3DINITIALIZED%3B+domain%3D.4shared.com%3B+expires%3DWed%2C+17-Aug-2016+01%3A36%3A44+GMT%3B+path%3D%2F\",\"length\":0,\"status\":302,\"http_user_agent\":\"Mozilla/5.0 (Windows NT 6.1; WOW64; Trident/7.0; rv:11.0) like Gecko\",\"date\":\"Wed, 17 Aug 2016 01:34:43 GMT\",\"redirect\":\"http://cdnfiles.4shared.com/web/cdn/popular/download/QjtGDltmce?contDisp=attachment%3B+filename%3D%2216082016vecO7OkL3yLPICleozibKEHa861Hzh9GF.vbs%22%3B+filename*%3Dutf-8%27%2716082016vecO7OkL3yLPICleozibKEHa861Hzh9GF.vbs&contType=APPLICATION%2FOCTET-STREAM&cdnh=7a74553a057ea55fc568b80e60cd7fa2&d3c=fdsQjtGDltmce%3DINITIALIZED%3B+domain%3D.4shared.com%3B+expires%3DWed%2C+17-Aug-2016+01%3A36%3A44+GMT%3B+path%3D%2F\",\"content_length\":\"0\",\"cookie\":\"day1host=h\",\"http_method\":\"GET\"},\"timestamp_detected\":\"2023-03-22T10:25:55.377Z\",\"uuid\":\"f8ee6e33-91ef-404f-bad3-a69185416a0d\",\"type\":\"suricata\",\"in_iface\":\"monvirt\",\"src_ip\":\"1.1.1.1\",\"host\":\"gcap-xxxxxxxxx.domain.local\",\"dest_ip\":\"2.2.2.2\",\"flow_id\":1408237495862400,\"@timestamp\":\"2023-03-22T10:44:07.997Z\",\"timestamp_analyzed\":\"2023-03-22T10:44:07.997Z\",\"gcap\":\"gcap-xxxxxxxxx.domain.local\",\"dest_port\":16122,\"src_port\":8550,\"community_id\":\"1:hEBuGl9msx7YJtg3Tb/+Gf+a1VI=\",\"proto\":\"TCP\",\"tx_id\":0,\"ether\":{\"dest_mac\":\"90:e2:ba:a6:a4:90\",\"src_mac\":\"90:e2:ba:a6:a4:91\"},\"@version\":\"1\",\"gcenter\":\"gcenter-xxxxxxxxxx.domain.local\"}",
         "event": {
             "category": [
                 "network"
             ],
-            "kind": "event",
-            "type": [
-                "info"
-            ]
+            "module": "http"
         },
-        "@timestamp": "2022-06-03T14:59:41.378000Z",
+        "@timestamp": "2023-03-22T10:25:55.377000Z",
         "destination": {
-            "address": "1.2.3.4",
-            "ip": "1.2.3.4",
-            "port": 80
+            "address": "2.2.2.2",
+            "ip": "2.2.2.2",
+            "port": 16122
         },
         "gatewatcher": {
             "event_type": "http",
-            "flow_id": "1686930575880829",
-            "gcap": "gcap-sekoia.gatewatcher.com",
-            "gcenter": [
-                "gcenter-sekoia.gatewatcher.com",
-                "gcenter-sekoia.gatewatcher.com"
-            ],
-            "timestamp_analyzed": "2022-06-03T14:59:41.378Z",
-            "timestamp_detected": "2022-06-03T14:59:08.833Z",
+            "flow_id": "1408237495862400",
+            "gcap": "gcap-xxxxxxxxx.domain.local",
+            "gcenter": "gcenter-xxxxxxxxxx.domain.local",
+            "timestamp_analyzed": "2023-03-22T10:44:07.997Z",
+            "timestamp_detected": "2023-03-22T10:25:55.377Z",
             "type": "suricata"
         },
         "http": {
             "request": {
-                "method": "HEAD"
+                "method": "GET"
             },
             "response": {
-                "status_code": 200
+                "status_code": 302
             }
         },
         "network": {
             "transport": "TCP"
         },
         "observer": {
-            "hostname": "gcap-sekoia.gatewatcher.com",
+            "hostname": "gcap-xxxxxxxxx.domain.local",
             "mac": [
-                "00:17:a4:77:09:20",
-                "a0:36:9f:0f:b1:70"
+                "90:e2:ba:a6:a4:90",
+                "90:e2:ba:a6:a4:91"
             ],
-            "name": "gcap-sekoia.gatewatcher.com",
-            "type": "firewall",
+            "name": "gcap-xxxxxxxxx.domain.local",
+            "type": "ids",
             "version": "0.2"
         },
         "related": {
             "hosts": [
-                "gcap-sekoia.gatewatcher.com",
-                "www.xmlformats.com"
+                "dc524.4shared.com",
+                "gcap-xxxxxxxxx.domain.local"
             ],
             "ip": [
-                "1.2.3.4",
-                "9.8.7.6"
+                "1.1.1.1",
+                "2.2.2.2"
             ]
         },
         "source": {
-            "address": "9.8.7.6",
-            "ip": "9.8.7.6",
-            "port": 49804
+            "address": "1.1.1.1",
+            "ip": "1.1.1.1",
+            "port": 8550
         },
         "url": {
-            "domain": "www.xmlformats.com",
-            "path": "/exploit.html",
-            "registered_domain": "xmlformats.com",
-            "subdomain": "www",
+            "domain": "dc524.4shared.com",
+            "path": "/download/QjtGDltmce/16082016vecO7OkL3yLPICleozibKE.vbs?dsid=gv5nq3.400b86c7196f9e8ccde35370eb0a54b9&sbsr=2f5b2df0ae0a8c7551c7df0bc46a9d79980&lgfp=3000",
+            "registered_domain": "4shared.com",
+            "subdomain": "dc524",
             "top_level_domain": "com"
         },
         "user_agent": {
             "device": {
                 "name": "Other"
             },
-            "name": "Other",
-            "original": "Microsoft Office Existence Discovery",
+            "name": "IE",
+            "original": "Mozilla/5.0 (Windows NT 6.1; WOW64; Trident/7.0; rv:11.0) like Gecko",
             "os": {
-                "name": "Other"
-            }
+                "name": "Windows",
+                "version": "7"
+            },
+            "version": "11.0"
+        }
+    }
+    	
+	```
+
+
+=== "sigflow-tls.json"
+
+    ```json
+	
+    {
+        "message": "{\"uuid\":\"b96777f9-6409-4864-b8a1-452094a93c5d\",\"host\":\"gcap-xxxxxxxxx.domain.local\",\"ether\":{\"dest_mac\":\"e6:43:7e:91:1b:92\",\"src_mac\":\"82:df:ee:4f:81:af\"},\"type\":\"suricata\",\"dest_ip\":\"5.6.7.8\",\"src_port\":64809,\"flow_id\":1366008699485799,\"timestamp_analyzed\":\"2024-11-21T13:02:44.291Z\",\"timestamp\":\"2024-11-21T13:02:02.870913+0000\",\"gcenter\":\"gcenter-xxxxxxxx.domain.local\",\"event_type\":\"tls\",\"src_ip\":\"1.2.3.4\",\"dest_port\":443,\"in_iface\":\"mon2\",\"tls\":{\"sni\":\"www.microsoft.com\",\"version\":\"TLS 1.3\",\"ja3s\":{\"string\":\"771,4866,43-51\",\"hash\":\"15af977ce25de452b96affa2addb1036\"}},\"@version\":\"1\",\"proto\":\"TCP\",\"gcap\":\"gcap-xxxxxxxxx.domain.local\",\"@timestamp\":\"2024-11-21T13:02:44.291Z\"}\n",
+        "event": {
+            "category": [
+                "network"
+            ],
+            "module": "tls"
+        },
+        "destination": {
+            "address": "5.6.7.8",
+            "ip": "5.6.7.8",
+            "port": 443
+        },
+        "gatewatcher": {
+            "event_type": "tls",
+            "flow_id": "1366008699485799",
+            "gcap": "gcap-xxxxxxxxx.domain.local",
+            "gcenter": "gcenter-xxxxxxxx.domain.local",
+            "timestamp_analyzed": "2024-11-21T13:02:44.291Z",
+            "tls": "{\"ja3s\":{\"hash\":\"15af977ce25de452b96affa2addb1036\",\"string\":\"771,4866,43-51\"},\"sni\":\"www.microsoft.com\",\"version\":\"TLS 1.3\"}",
+            "tls_sni": "www.microsoft.com",
+            "type": "suricata"
+        },
+        "network": {
+            "transport": "TCP"
+        },
+        "observer": {
+            "hostname": "gcap-xxxxxxxxx.domain.local",
+            "mac": [
+                "82:df:ee:4f:81:af",
+                "e6:43:7e:91:1b:92"
+            ],
+            "name": "gcap-xxxxxxxxx.domain.local",
+            "type": "ids",
+            "version": "0.2"
+        },
+        "related": {
+            "hosts": [
+                "gcap-xxxxxxxxx.domain.local"
+            ],
+            "ip": [
+                "1.2.3.4",
+                "5.6.7.8"
+            ]
+        },
+        "source": {
+            "address": "1.2.3.4",
+            "ip": "1.2.3.4",
+            "port": 64809
+        },
+        "tls": {
+            "server": {
+                "ja3s": "15af977ce25de452b96affa2addb1036"
+            },
+            "version": "TLS 1.3"
+        },
+        "url": {
+            "domain": "gcap-xxxxxxxxx.domain.local",
+            "subdomain": "gcap-xxxxxxxxx.domain"
         }
     }
     	
@@ -443,6 +720,7 @@ The following table lists the fields that are extracted, normalized under the EC
 | ---- | ---- | ---------------------------|
 |`@timestamp` | `date` | Date/time when the event originated. |
 |`destination.bytes` | `long` | Bytes sent from the destination to the source. |
+|`destination.domain` | `keyword` | The domain name of the destination. |
 |`destination.ip` | `ip` | IP address of the destination. |
 |`destination.packets` | `long` | Packets sent from the destination to the source. |
 |`destination.port` | `long` | Port of the destination. |
@@ -452,28 +730,94 @@ The following table lists the fields that are extracted, normalized under the EC
 |`dns.type` | `keyword` | The type of DNS event captured, query or answer. |
 |`event.action` | `keyword` | The action captured by the event. |
 |`event.category` | `keyword` | Event category. The second categorization field in the hierarchy. |
+|`event.kind` | `keyword` | The kind of the event. The highest categorization field in the hierarchy. |
+|`event.module` | `keyword` | Name of the module this data is coming from. |
 |`event.severity` | `long` | Numeric severity of the event. |
 |`event.type` | `keyword` | Event type. The third categorization field in the hierarchy. |
 |`file.hash.md5` | `keyword` | MD5 hash. |
 |`file.hash.sha256` | `keyword` | SHA256 hash. |
 |`file.name` | `keyword` | Name of the file including the extension, without the directory. |
 |`file.size` | `long` | File size in bytes. |
+|`gatewatcher.calls` | `text` | This field represents the list of calls detected in a shellcode |
+|`gatewatcher.campaigns` | `text` | This field is used for retrohunt alerts |
+|`gatewatcher.case_id` | `text` | This field is used for retrohunt alerts |
+|`gatewatcher.categories` | `text` | This field is used for retrohunt alerts |
+|`gatewatcher.description` | `text` | This field is used for retrohunt alerts |
+|`gatewatcher.dhcp` | `text` | This field represents the dhcp field in a network metadata (used in legacy format log) |
+|`gatewatcher.dnp3` | `text` | This field represents the dnp3 field in a suricata alert (used in legacy format log) |
+|`gatewatcher.email` | `text` | This field represents the email field |
+|`gatewatcher.encodings` | `text` | This field represents the encodings used in the shellcode |
 |`gatewatcher.event_type` | `keyword` | Type of event |
+|`gatewatcher.external_links` | `text` | This field is used for retrohunt alerts |
+|`gatewatcher.families` | `text` | This field is used for retrohunt alerts |
+|`gatewatcher.fileinfo` | `text` | This field represents the fileinfo field in a malcore alert (used in legacy format log) |
+|`gatewatcher.filemagic` | `text` | This field represents the magic of a file info |
 |`gatewatcher.flow_id` | `keyword` | Identifier of the flow |
+|`gatewatcher.ftp` | `text` | This field represents the ftp field in a network metadata (used in legacy format log) |
+|`gatewatcher.ftp_data` | `text` | This field represents the ftp-data field in a network metadata (used in legacy format log) |
 |`gatewatcher.gcap` | `keyword` | Name of the gcap |
 |`gatewatcher.gcenter` | `keyword` | Name of the associated gcenter |
+|`gatewatcher.http2` | `text` | This field represents the http2 field in a network metadata (used in legacy format log) |
+|`gatewatcher.ikev2` | `text` | This field represents the ikev2 field in a network metadata (used in legacy format log) |
+|`gatewatcher.ioc_creation_date` | `text` | This field is used for retrohunt alerts |
+|`gatewatcher.ioc_id` | `text` | This field is used for retrohunt alerts |
+|`gatewatcher.ioc_tags` | `text` | This field is used for retrohunt alerts |
+|`gatewatcher.ioc_type` | `text` | This field is used for retrohunt alerts |
+|`gatewatcher.ioc_updated_date` | `text` | This field is used for retrohunt alerts |
+|`gatewatcher.ioc_value` | `text` | This field is used for retrohunt alerts |
+|`gatewatcher.kill_chain_phases` | `text` | This field is used for retrohunt alerts |
+|`gatewatcher.krb5` | `text` | This field represents the krb5 field in a network metadata (used in legacy format log) |
 |`gatewatcher.malcore.code` | `keyword` | Return code of the malcore analysis |
 |`gatewatcher.malcore.detail_threat_found` | `keyword` | Type of the detected threat |
 |`gatewatcher.malcore.file` | `keyword` | Identifier of the file |
 |`gatewatcher.malcore.magic` | `keyword` | The magic number of the executable of the malware |
 |`gatewatcher.malcore.replica` | `keyword` | Analysis is a replica of another previous one |
+|`gatewatcher.matched_event` | `text` | This field represents the matched event found in a dga and retrohunt alert |
+|`gatewatcher.matched_event_type` | `text` | This field is used for retrohunt alerts |
+|`gatewatcher.meta_data` | `text` | This field is used for retrohunt alerts |
+|`gatewatcher.mqtt` | `text` | This field represents the mqtt field in a network metadata (used in legacy format log) |
 |`gatewatcher.nb_rescans` | `long` | Number of retroact analysis |
+|`gatewatcher.nfs` | `text` | This field represents the nfs field in a network metadata (used in legacy format log) |
+|`gatewatcher.payload` | `text` | This field represents the payload in a suricata alert |
+|`gatewatcher.payload_printable` | `text` | This field represents the human readable payload in a suricata alert |
+|`gatewatcher.probability` | `float` | This field represents the probability found in a dga and retrohunt alert |
+|`gatewatcher.rdp` | `text` | This field represents the rdp field in a network metadata (used in legacy format log) |
+|`gatewatcher.relations` | `text` | This field is used for retrohunt alerts |
 |`gatewatcher.reporting_token` | `keyword` | Token used by Gbox |
 |`gatewatcher.retroact` | `keyword` | Analysis result per retroact |
+|`gatewatcher.rfb` | `text` | This field represents the rfb field in a network metadata (used in legacy format log) |
+|`gatewatcher.risk` | `text` | This field is used for retrohunt alerts |
+|`gatewatcher.rpc` | `text` | This field represents the rpc field in a network metadata (used in legacy format log) |
+|`gatewatcher.sample_id` | `text` | Matching legacy file_id with ECS sample_id |
+|`gatewatcher.scores.analysis` | `number` | test-scores |
+|`gatewatcher.scores.analysis_detailed` | `text` | test-scores |
+|`gatewatcher.scores.proba_obfuscated` | `float` | test-scores |
+|`gatewatcher.signature` | `text` | This field is used for retrohunt alerts |
+|`gatewatcher.sip` | `text` | This field represents the sip field in a network metadata (used in legacy format log) |
+|`gatewatcher.smb` | `text` | This field represents the smb field in a network metadata (used in legacy format log) |
+|`gatewatcher.smtp` | `text` | This field represents the smtp field in a network metadata (used in legacy format log) |
+|`gatewatcher.snmp` | `text` | This field represents the snmp field in a network metadata (used in legacy format log) |
+|`gatewatcher.ssh` | `text` | This field represents the ssh field in a network metadata (used in legacy format log) |
 |`gatewatcher.state` | `keyword` | Analysis result |
+|`gatewatcher.stats` | `text` | This field represents the metrics stats |
+|`gatewatcher.sub_type` | `text` | Sub type of codebreaker exploit |
+|`gatewatcher.targeted_countries` | `text` | This field is used for retrohunt alerts |
+|`gatewatcher.targeted_organizations` | `text` | This field is used for retrohunt alerts |
+|`gatewatcher.targeted_platforms` | `text` | This field is used for retrohunt alerts |
+|`gatewatcher.targeted_sectors` | `text` | This field is used for retrohunt alerts |
+|`gatewatcher.tftp` | `text` | This field represents the tftp field in a network metadata (used in legacy format log) |
+|`gatewatcher.threat_actor` | `text` | This field is used for retrohunt alerts |
 |`gatewatcher.timestamp_analyzed` | `keyword` | Timestamp of the alert processing by gcenter |
 |`gatewatcher.timestamp_detected` | `keyword` | Timestamp of the file collection by gcap |
+|`gatewatcher.timestamp_package` | `text` | This field is used for retrohunt alerts |
+|`gatewatcher.tlp` | `text` | This field is used for retrohunt alerts |
+|`gatewatcher.tls` | `text` | This field contains all TLS data fields in a TLS metadata |
+|`gatewatcher.tls_fingerprint` | `text` | This field represents the TLS server fingerprint field in a TLS metadata |
+|`gatewatcher.tls_sni` | `text` | This field represents the TLS SNI field in a TLS metadata |
+|`gatewatcher.ttp` | `text` | This field is used for retrohunt alerts |
 |`gatewatcher.type` | `keyword` | Type of analysis |
+|`gatewatcher.usage_mode` | `text` | This field is used for retrohunt alerts |
+|`gatewatcher.vulnerabilities` | `text` | This field is used for retrohunt alerts |
 |`http.request.method` | `keyword` | HTTP request method. |
 |`http.response.status_code` | `long` | HTTP response status code. |
 |`http.version` | `keyword` | HTTP version. |
@@ -492,6 +836,13 @@ The following table lists the fields that are extracted, normalized under the EC
 |`source.ip` | `ip` | IP address of the source. |
 |`source.packets` | `long` | Packets sent from the source to the destination. |
 |`source.port` | `long` | Port of the source. |
+|`tls.server.certificate_chain` | `keyword` | Array of PEM-encoded certificates that make up the certificate chain offered by the server. |
+|`tls.server.issuer` | `keyword` | Subject of the issuer of the x.509 certificate presented by the server. |
+|`tls.server.ja3s` | `keyword` | A hash that identifies servers based on how they perform an SSL/TLS handshake. |
+|`tls.server.not_after` | `date` | Timestamp indicating when server certificate is no longer considered valid. |
+|`tls.server.not_before` | `date` | Timestamp indicating when server certificate is first considered valid. |
+|`tls.server.subject` | `keyword` | Subject of the x.509 certificate presented by the server. |
+|`tls.version` | `keyword` | Numeric part of the version parsed from the original string. |
 |`url.domain` | `keyword` | Domain of the url. |
 |`url.path` | `wildcard` | Path of the request, such as "/search". |
 |`user_agent.original` | `keyword` | Unparsed user_agent string. |

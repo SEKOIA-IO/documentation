@@ -9,44 +9,25 @@ jobs:
     steps:
 
       - name: Checkout main
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Setup Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v6
         id: setup-python
         with:
-          python-version: '3.11'
+          python-version: '3.14'
 
       - name: Make destination directory for compiled CSS
         run: mkdir -vp docs/stylesheets/
 
-      - name: Compile CSS from SCSS files
-        uses: gha-utilities/sass-build@v0.5.1
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
         with:
-          source: src/sekoiaio.scss
-          destination: docs/stylesheets/sekoiaio.css
-
-      - name: Install Poetry
-        run: |
-          pip install poetry
-          poetry config virtualenvs.in-project true
-
-      - name: Load cached venv
-        id: cached-poetry-dependencies
-        uses: actions/cache@v4.0.2
-        with:
-          path: .venv
-          key: poetry-${{ runner.os }}-python${{ steps.setup-python.outputs.python-version }}-${{ hashFiles('poetry.lock') }}
-          restore-keys: |
-            poetry-${{ runner.os }}-python${{ steps.setup-python.outputs.python-version }}
-
-      - name: Install dependencies
-        run: |
-          poetry install
+          enable-cache: true
 
       - name: Build site
         run: |
-          poetry run python -m mkdocs build
+          uv run python -m mkdocs build --strict
 
       - name: Save PR number
         run: |
@@ -55,7 +36,7 @@ jobs:
       - run: |
           tar zcvf site.tar.gz -C site .
 
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         with:
           name: site.tar.gz
           path: site.tar.gz

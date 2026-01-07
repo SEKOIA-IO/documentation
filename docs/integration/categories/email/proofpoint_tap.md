@@ -7,8 +7,7 @@ type: intake
 Proofpoint Targeted Attack Protection (TAP) helps detect, mitigate, and block advanced threats that target people through email.
 
 - **Vendor**: Proofpoint
-- **Plan**: Defend Prime
-- **Supported environment**: Cloud 
+- **Supported environment**: Cloud
 - **Detection based on**: Telemetry
 - **Supported application or feature**: Email gateway
 
@@ -28,13 +27,8 @@ As a prerequisite, you need to create a service principal and a secret on the se
 
 ### Create the intake
 
-Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a new intake from the format `Proofpoint TAP`.
-
-### Pull events
-
-Go to the [playbook page](https://app.sekoia.io/operations/playbooks) and create a new playbook with the [ProofPoint TAP connector](/integration/action_library/applicative/proofpoint/#get-proofpoint-tap-events).
-
-Set up the trigger configuration with the service principal, the secret and the intake key. Customize others parameters if needed.
+1. Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a new intake from the format `Proofpoint TAP`.
+2. Set up the intake configuration with the service principal and the secret.
 
 Start the playbook and enjoy your events.
 

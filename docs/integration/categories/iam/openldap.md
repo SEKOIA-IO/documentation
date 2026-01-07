@@ -6,7 +6,6 @@ type: intake
 OpenLDAP (Lightweight Directory Access Protocol) is an open-source implementation of a directory service protocol. It helps organizations to maintain and manage a centralized directory of user information, such as names, addresses, and other attributes.
 
 - **Vendor**: OpenLDAP Foundation
-- **Plan**: Defend Core & Defend Prime
 - **Supported environment**: On prem
 - **Version compatibility**: 2.6
 - **Detection based on**: Telemetry
@@ -40,7 +39,7 @@ Below is a couple of suggestions you can follow to configure your system to coll
    ```
 
 ### Forward logs to SEKOIA.IO
-Please consult the [Rsyslog Transport](/integration/ingestion_methods/syslog/overview) documentation to forward these logs to Sekoia.io.
+Please consult the [Rsyslog Transport](/integration/ingestion_methods/syslog/overview.md) documentation to forward these logs to Sekoia.io.
 
 
 {!_shared_content/integration/detection_section.md!}

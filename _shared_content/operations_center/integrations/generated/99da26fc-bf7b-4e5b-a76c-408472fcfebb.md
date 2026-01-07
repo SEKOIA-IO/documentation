@@ -19,7 +19,7 @@ The following table lists the data source offered by this integration.
 
 ### Transformed Events Samples after Ingestion
 
-This section demonstrates how the raw logs will be transformed by our parsers. It shows the extracted fields that will be available for use in the [built-in detection rules](/xdr/features/detect/rules_catalog) and hunting activities in the [events page](/xdr/features/investigate/events). Understanding these transformations is essential for analysts to create effective detection mechanisms with [custom detection rules](/xdr/features/detect/sigma) and to leverage the full potential of the collected data.
+This section demonstrates how the raw logs will be transformed by our parsers. It shows the extracted fields that will be available for use in the [built-in detection rules](/xdr/features/detect/rules_catalog.md) and hunting activities in the [events page](/xdr/features/investigate/events.md). Understanding these transformations is essential for analysts to create effective detection mechanisms with [custom detection rules](/xdr/features/detect/sigma.md) and to leverage the full potential of the collected data.
 
 === "ioc_view_no_pwd_set.json"
 
@@ -58,6 +58,9 @@ This section demonstrates how the raw logs will be transformed by our parsers. I
             "ip": [
                 "0.0.0.0",
                 "1.1.1.1"
+            ],
+            "user": [
+                "Administrateur"
             ]
         },
         "sophos": {
@@ -108,7 +111,6 @@ This section demonstrates how the raw logs will be transformed by our parsers. I
             "address": "1.1.1.1",
             "bytes": 1359,
             "geo": {
-                "country_iso_code": "FR",
                 "country_name": "France"
             },
             "ip": "1.1.1.1",
@@ -176,7 +178,7 @@ This section demonstrates how the raw logs will be transformed by our parsers. I
         "sophos": {
             "threat_center": {
                 "aggressive_activity": "False",
-                "analysis": "{\"dep_alwayson\": 0, \"dep_opt_in\": 1, \"dep_opt_out\": 0}",
+                "analysis": "{\"dep_alwayson\":0,\"dep_opt_in\":1,\"dep_opt_out\":0}",
                 "detection_id_dedup": "azeifazeiofuhapizefhapzieofhazeufh",
                 "endpoint": {
                     "type": "computer"
@@ -229,7 +231,6 @@ This section demonstrates how the raw logs will be transformed by our parsers. I
             "bytes": 1077,
             "geo": {
                 "city_name": "Paris",
-                "country_iso_code": "FR",
                 "country_name": "France",
                 "postal_code": "35750"
             },
@@ -296,7 +297,7 @@ This section demonstrates how the raw logs will be transformed by our parsers. I
         "sophos": {
             "threat_center": {
                 "aggressive_activity": "False",
-                "analysis": "{\"os_compatibility_target\": \"test\"}",
+                "analysis": "{\"os_compatibility_target\":\"test\"}",
                 "detection_id_dedup": "432025a1cb38ad65dc6azefazef",
                 "endpoint": {
                     "type": "computer"
@@ -450,7 +451,6 @@ This section demonstrates how the raw logs will be transformed by our parsers. I
             "bytes": 1869,
             "geo": {
                 "city_name": "Camping",
-                "country_iso_code": "FR",
                 "country_name": "France"
             },
             "ip": "1.2.3.4",
@@ -507,7 +507,8 @@ This section demonstrates how the raw logs will be transformed by our parsers. I
                 "1.2.3.4"
             ],
             "user": [
-                "AC000TEST0011"
+                "AC000TEST0011",
+                "Administrateur"
             ]
         },
         "server": {
@@ -566,7 +567,6 @@ This section demonstrates how the raw logs will be transformed by our parsers. I
             "address": "1.2.3.4",
             "bytes": 2056,
             "geo": {
-                "country_iso_code": "FR",
                 "country_name": "France"
             },
             "ip": "1.2.3.4",
@@ -643,6 +643,9 @@ This section demonstrates how the raw logs will be transformed by our parsers. I
             ],
             "ip": [
                 "1.2.3.4"
+            ],
+            "user": [
+                "Administrateur"
             ]
         },
         "server": {
@@ -705,9 +708,6 @@ This section demonstrates how the raw logs will be transformed by our parsers. I
         "source": {
             "address": "1.2.3.4",
             "bytes": 2088,
-            "geo": {
-                "country_iso_code": "FR"
-            },
             "ip": "1.2.3.4",
             "mac": "00:11:22:33:44:55",
             "nat": {
@@ -868,7 +868,6 @@ This section demonstrates how the raw logs will be transformed by our parsers. I
             "address": "1.2.3.4",
             "bytes": 2376,
             "geo": {
-                "country_iso_code": "FR",
                 "country_name": "United-Kingdom"
             },
             "ip": "1.2.3.4",
@@ -991,7 +990,6 @@ This section demonstrates how the raw logs will be transformed by our parsers. I
             "address": "1.2.3.4",
             "bytes": 4486,
             "geo": {
-                "country_iso_code": "MAR",
                 "country_name": "France"
             },
             "ip": "1.2.3.4",
@@ -1002,6 +1000,115 @@ This section demonstrates how the raw logs will be transformed by our parsers. I
         },
         "user": {
             "name": "JDOE"
+        }
+    }
+    	
+	```
+
+
+=== "ioc_view_query7.json"
+
+    ```json
+	
+    {
+        "message": "{\n  \"upload_size\": 1406,\n  \"profile_path\": \"%%XXXX\",\n  \"record_identifier\": \"xxxxxxxxx01xxxxxxxxxxxxxxxxxxxxx\",\n  \"ioc_severity\": 4,\n  \"handler_verdicts_case_descriptions\": {\n    \"default\": \"{\\\"correlated_reason_id\\\":\\\"\\\",\\\"created_reason_id\\\":\\\"\\\"}\"\n  },\n  \"user_parameters\": \"%%XXXX\",\n  \"folded\": 0,\n  \"meta_mac_address\": \"c5:1a:64:c1:65:3a\",\n  \"endpoint_id\": \"xxxxxxxx-xxxxxx-xxxxxx-xxxxxx\",\n  \"handler_verdict_suppression_mdr\": false,\n  \"meta_public_ip_country_code\": \"FR\",\n  \"schema_version\": \"24\",\n  \"subject_logon_id\": \"0x3e7\",\n  \"ioc_detection_mitre_attack\": \"[]\",\n  \"handler_verdicts_entities\": \"[{\\\"attributes\\\":{\\\"domain_controller\\\":\\\"False\\\",\\\"endpoint_type\\\":\\\"computer\\\",\\\"hostname\\\":\\\"XXXX-XXXXXXXX\\\",\\\"id\\\":\\\"xxxxxxxx-xxxxxx-xxxxxx-xxxxxx\\\",\\\"os_platform\\\":\\\"windows\\\",\\\"os_type\\\":\\\"\\\"},\\\"id\\\":\\\"b5c47470231d356f5cf8d90a31999db59172206adef7958ec9c650b9ce99147b\\\",\\\"integration_id\\\":\\\"xxxxxxxx-xxxxxx-xxxxxx-xxxxxx\\\",\\\"source_system\\\":\\\"osquery\\\",\\\"type\\\":\\\"device\\\"},{\\\"attributes\\\":{\\\"address\\\":\\\"1.2.3.4\\\",\\\"external\\\":true,\\\"id\\\":\\\"263522d8b9d989b8c304a6d2f088f107b6ee0010675a11fb459b326eb27edefd\\\",\\\"type\\\":\\\"ipv4\\\"},\\\"id\\\":\\\"46ce85dc0d61d3ddc073e7a66074a8add18e75b082eef550e08863895dcbadb0\\\",\\\"integration_id\\\":\\\"xxxxxxxx-xxxxxx-xxxxxx-xxxxxx\\\",\\\"source_system\\\":\\\"osquery\\\",\\\"type\\\":\\\"ip_address\\\"},{\\\"attributes\\\":{\\\"address\\\":\\\"1.2.3.1\\\",\\\"external\\\":false,\\\"id\\\":\\\"ead232f295b08325f6b65bd85a8454239cd479ef30e470f594f2fcb628ec3d64\\\",\\\"type\\\":\\\"ipv4\\\"},\\\"id\\\":\\\"a2bf7ac1f3a3e09342ef4510b4d63f53100334262aa0fe8eef47a0e3642a34fe\\\",\\\"integration_id\\\":\\\"xxxxxxxx-xxxxxx-xxxxxx-xxxxxx\\\",\\\"source_system\\\":\\\"osquery\\\",\\\"type\\\":\\\"ip_address\\\"}]\",\n  \"user_workstations\": \"%%XXXX\",\n  \"meta_licence\": \"MTR\",\n  \"ioc_detection_experiment_level\": 0,\n  \"privilege_list\": \"-\",\n  \"ioc_created_at\": \"2024-10-22T14:41:22.595Z\",\n  \"ingestion_timestamp\": \"2024-10-22T14:41:09.572Z\",\n  \"home_directory\": \"%%XXXX\",\n  \"ioc_detection_attack\": \"Suspicious Activity\",\n  \"numerics\": false,\n  \"eventid\": 4738,\n  \"meta_public_ip\": \"1.2.3.4\",\n  \"counter\": 0,\n  \"detection_id_dedup\": \"detectionIdDedup-xxxxxxxxxxxxxxx\",\n  \"password_last_set\": \"%%1794\",\n  \"meta_hostname\": \"XXXX-XXXXXXXX\",\n  \"ioc_detection_references\": \"[\\\"https://docs.microsoft.com/en-us/windows/security/threat-protection/auditing/event-4738\\\"]\",\n  \"ioc_worker_name\": \"Security Event Service\",\n  \"ioc_detection_type\": \"Threat\",\n  \"ioc_detection_category\": \"Threat\",\n  \"ioc_unix_time\": \"2024-10-22T14:40:48.000Z\",\n  \"epoch\": 1729607690,\n  \"meta_ip_mask\": \"255.255.252.0\",\n  \"ioc_worker_id\": \"security-event-service\",\n  \"handler_verdict_suppression_xdr\": false,\n  \"unix_time\": \"2024-10-22T14:40:48.000Z\",\n  \"ioc_log_type\": \"summary\",\n  \"query_source\": \"xdr_only\",\n  \"host_identifier\": \"hostIdentifier-xxxxxxxxxxxxxxx\",\n  \"partition_bucket\": \"87\",\n  \"home_path\": \"%%XXXX\",\n  \"meta_public_ip_country\": \"France\",\n  \"meta_boot_time\": 1729607865,\n  \"subject_username\": \"XXXX-XXXXXXXX$\",\n  \"handler_verdicts_detection_descriptions\": {\n    \"default\": \"{\\\"created_reason_id\\\":\\\"WIN-EVENT-4738\\\",\\\"significance_id\\\":\\\"WIN-EVENT-4738\\\"}\"\n  },\n  \"meta_os_name\": \"Microsoft Windows 11 Professionnel\",\n  \"osquery_action\": \"added\",\n  \"script_path\": \"%%XXXX\",\n  \"account_expires\": \"%%1794\",\n  \"meta_query_pack_version\": \"1.21.26\",\n  \"subject_domain\": \"ACOSS\",\n  \"handler_verdict_suppression\": false,\n  \"calendar_time\": \"2024-10-22T14:40:48.000Z\",\n  \"meta_eid\": \"xxxxxxxx-xxxxxx-xxxxxx-xxxxxx\",\n  \"meta_public_ip_longitude\": 2.3387,\n  \"ioc_detection_id\": \"WIN-EVENT-4738\",\n  \"meta_os_platform\": \"windows\",\n  \"meta_username\": \"\",\n  \"detection_identifier\": \"xxxxxxxxx01xxxxxxxxxxxxxxxxxxxxx_detectionIdDedup-xxxxxxxxxxxxxxx\",\n  \"handler_verdict_escalation\": false,\n  \"query_name\": \"windows_event_user_account_changed\",\n  \"provider_name\": \"Microsoft-Windows-Security-Auditing\",\n  \"meta_os_type\": \"\",\n  \"meta_os_version\": \"10.0.22631\",\n  \"sam_account_name\": \"TestUser\",\n  \"meta_public_ip_latitude\": 48.8582,\n  \"source\": \"Security\",\n  \"ioc_detection_licenses\": \"[\\\"MTR\\\",\\\"XDR\\\"]\",\n  \"user_principal_name\": \"-\",\n  \"description\": \"A User Account was changed\",\n  \"meta_aggressive_activity\": \"False\",\n  \"meta_ip_address\": \"1.2.3.1\",\n  \"handler_verdicts\": \"{\\\"default\\\":{\\\"correlation\\\":{\\\"correlate\\\":false,\\\"correlationIds\\\":null,\\\"id\\\":\\\"hostIdentifier-xxxxxxxxxxxxxxx111-xxxx-xxxxx-xxxxxx111111\\\"},\\\"escalation\\\":false,\\\"labels\\\":[],\\\"matched_rules\\\":[{\\\"description\\\":\\\"Define the mutation data structure for subsequent mutation rules to reference\\\",\\\"kb\\\":\\\"mutation\\\",\\\"name\\\":\\\"define_mutation_structure\\\"},{\\\"description\\\":\\\"rule to normalize osquery detections\\\",\\\"kb\\\":\\\"mutation\\\",\\\"name\\\":\\\"normalize_osquery_detections\\\"},{\\\"description\\\":\\\"Update the description in handler verdicts to add detection id\\\",\\\"kb\\\":\\\"mutation\\\",\\\"name\\\":\\\"add_detection_id\\\"},{\\\"description\\\":\\\"Correlate Osquery detections on customer ID and host ID\\\",\\\"kb\\\":\\\"correlation\\\",\\\"name\\\":\\\"osquery_correlation_id\\\"}],\\\"mutations\\\":{\\\"descriptions\\\":{\\\"case_descriptions\\\":{\\\"correlated_reason_id\\\":\\\"\\\",\\\"created_reason_id\\\":\\\"\\\"},\\\"detection_descriptions\\\":{\\\"created_reason_id\\\":\\\"WIN-EVENT-4738\\\",\\\"significance_id\\\":\\\"WIN-EVENT-4738\\\"}},\\\"entities\\\":[{\\\"attributes\\\":{\\\"domain_controller\\\":\\\"False\\\",\\\"endpoint_type\\\":\\\"computer\\\",\\\"hostname\\\":\\\"XXXX-XXXXXXXX\\\",\\\"id\\\":\\\"xxxxxxxx-xxxxxx-xxxxxx-xxxxxx\\\",\\\"os_platform\\\":\\\"windows\\\",\\\"os_type\\\":\\\"\\\"},\\\"id\\\":\\\"b5c47470231d356f5cf8d90a31999db59172206adef7958ec9c650b9ce99147b\\\",\\\"integration_id\\\":\\\"xxxxxxxx-xxxxxx-xxxxxx-xxxxxx\\\",\\\"source_system\\\":\\\"osquery\\\",\\\"type\\\":\\\"device\\\"},{\\\"attributes\\\":{\\\"address\\\":\\\"1.2.3.4\\\",\\\"external\\\":true,\\\"id\\\":\\\"263522d8b9d989b8c304a6d2f088f107b6ee0010675a11fb459b326eb27edefd\\\",\\\"type\\\":\\\"ipv4\\\"},\\\"id\\\":\\\"46ce85dc0d61d3ddc073e7a66074a8add18e75b082eef550e08863895dcbadb0\\\",\\\"integration_id\\\":\\\"xxxxxxxx-xxxxxx-xxxxxx-xxxxxx\\\",\\\"source_system\\\":\\\"osquery\\\",\\\"type\\\":\\\"ip_address\\\"},{\\\"attributes\\\":{\\\"address\\\":\\\"1.2.3.1\\\",\\\"external\\\":false,\\\"id\\\":\\\"ead232f295b08325f6b65bd85a8454239cd479ef30e470f594f2fcb628ec3d64\\\",\\\"type\\\":\\\"ipv4\\\"},\\\"id\\\":\\\"a2bf7ac1f3a3e09342ef4510b4d63f53100334262aa0fe8eef47a0e3642a34fe\\\",\\\"integration_id\\\":\\\"xxxxxxxx-xxxxxx-xxxxxx-xxxxxx\\\",\\\"source_system\\\":\\\"osquery\\\",\\\"type\\\":\\\"ip_address\\\"}],\\\"labels\\\":[]},\\\"rule_hits\\\":[],\\\"rule_hits_summary\\\":{\\\"correlation\\\":[\\\"osquery_correlation_id\\\"],\\\"escalation\\\":[],\\\"mutation\\\":[\\\"define_mutation_structure\\\",\\\"normalize_osquery_detections\\\",\\\"add_detection_id\\\"],\\\"suppression\\\":[]},\\\"suppression\\\":false},\\\"mdr\\\":{\\\"correlation\\\":{\\\"correlate\\\":false,\\\"correlationIds\\\":null,\\\"id\\\":\\\"\\\"},\\\"escalation\\\":false,\\\"labels\\\":[],\\\"matched_rules\\\":[{\\\"description\\\":\\\"Define the mutation data structure for subsequent mutation rules to reference\\\",\\\"kb\\\":\\\"mutation\\\",\\\"name\\\":\\\"define_mutation_structure\\\"}],\\\"mutations\\\":{\\\"descriptions\\\":{\\\"case_descriptions\\\":{\\\"correlated_reason_id\\\":\\\"\\\",\\\"created_reason_id\\\":\\\"\\\"},\\\"detection_descriptions\\\":{\\\"created_reason_id\\\":\\\"\\\",\\\"significance_id\\\":\\\"\\\"}},\\\"entities\\\":[],\\\"labels\\\":[]},\\\"rule_hits\\\":[],\\\"rule_hits_summary\\\":{\\\"correlation\\\":[],\\\"escalation\\\":[],\\\"mutation\\\":[\\\"define_mutation_structure\\\"],\\\"suppression\\\":[]},\\\"suppression\\\":false},\\\"xdr\\\":{\\\"correlation\\\":{\\\"correlate\\\":false,\\\"id\\\":\\\"\\\",\\\"correlationIds\\\":null},\\\"mutations\\\":{},\\\"matched_rules\\\":[],\\\"labels\\\":[],\\\"rule_hits\\\":[],\\\"rule_hits_summary\\\":{\\\"correlation\\\":[],\\\"escalation\\\":[],\\\"mutation\\\":[],\\\"suppression\\\":[]},\\\"escalation\\\":false,\\\"suppression\\\":false}}\",\n  \"ingest_date\": \"2024-10-22\",\n  \"target_domain\": \"XXXX-XXXXXXXX\",\n  \"uac\": \"-\",\n  \"meta_endpoint_type\": \"computer\",\n  \"meta_domain_controller\": \"False\",\n  \"customer_id\": \"111-xxxx-xxxxx-xxxxxx111111\",\n  \"ioc_detection_description\": \"Windows Event User Account Changed.\",\n  \"message_identifier\": \"fbf30057d0b09be51ec23ca2d8354d1fe1c4329a6d52e6ed3bddca127cad105d\",\n  \"ioc_attack_type\": \"Security Event Service Detections\",\n  \"target_username\": \"TestUser\",\n  \"display_name\": \"%%XXXX\",\n  \"allowed_to_delegate_to\": \"-\",\n  \"ioc_detection_weight\": 4\n}",
+        "event": {
+            "code": "WIN-EVENT-4738",
+            "ingested": "2024-10-22T14:41:09.572000Z",
+            "reason": "A User Account was changed",
+            "severity": 4
+        },
+        "@timestamp": "2024-10-22T14:40:48Z",
+        "destination": {
+            "address": "XXXX-XXXXXXXX",
+            "domain": "XXXX-XXXXXXXX"
+        },
+        "host": {
+            "domain": "ACOSS",
+            "id": "hostIdentifier-xxxxxxxxxxxxxxx",
+            "name": "XXXX-XXXXXXXX",
+            "os": {
+                "full": "Microsoft Windows 11 Professionnel",
+                "name": "windows",
+                "version": "10.0.22631"
+            }
+        },
+        "process": {
+            "name": "Security Event Service"
+        },
+        "related": {
+            "hosts": [
+                "XXXX-XXXXXXXX"
+            ],
+            "ip": [
+                "1.2.3.1",
+                "1.2.3.4"
+            ],
+            "user": [
+                "TestUser"
+            ]
+        },
+        "sophos": {
+            "threat_center": {
+                "aggressive_activity": "False",
+                "detection_id_dedup": "detectionIdDedup-xxxxxxxxxxxxxxx",
+                "endpoint": {
+                    "type": "computer"
+                },
+                "event": {
+                    "id": 4738
+                },
+                "id": "xxxxxxxx-xxxxxx-xxxxxx-xxxxxx",
+                "ioc": {
+                    "attack_type": "Security Event Service Detections",
+                    "detection": {
+                        "attack": "Suspicious Activity",
+                        "category": "Threat",
+                        "licences": [
+                            "MTR",
+                            "XDR"
+                        ],
+                        "type": "Threat",
+                        "weight": "4"
+                    },
+                    "log_type": "summary",
+                    "unix_time": "2024-10-22T14:40:48.000000Z"
+                },
+                "message": {
+                    "id": "fbf30057d0b09be51ec23ca2d8354d1fe1c4329a6d52e6ed3bddca127cad105d"
+                },
+                "query": {
+                    "action": "added",
+                    "name": "windows_event_user_account_changed",
+                    "pack_version": "1.21.26",
+                    "source": "xdr_only"
+                },
+                "record_identifier": "xxxxxxxxx01xxxxxxxxxxxxxxxxxxxxx",
+                "worker": {
+                    "id": "security-event-service"
+                }
+            }
+        },
+        "source": {
+            "address": "1.2.3.1",
+            "bytes": 1406,
+            "geo": {
+                "country_name": "France"
+            },
+            "ip": "1.2.3.1",
+            "mac": "c5:1a:64:c1:65:3a",
+            "nat": {
+                "ip": "1.2.3.4"
+            }
+        },
+        "user": {
+            "target": {
+                "name": "TestUser"
+            }
+        },
+        "vulnerability": {
+            "description": "Windows Event User Account Changed.",
+            "reference": "https://docs.microsoft.com/en-us/windows/security/threat-protection/auditing/event-4738"
         }
     }
     	
@@ -1110,7 +1217,6 @@ The following table lists the fields that are extracted, normalized under the EC
 |`sophos.threat_center.worker.id` | `keyword` | Process worker ID (it's a text not a number) |
 |`source.bytes` | `long` | Bytes sent from the source to the destination. |
 |`source.geo.city_name` | `keyword` | City name. |
-|`source.geo.country_iso_code` | `keyword` | Country ISO code. |
 |`source.geo.country_name` | `keyword` | Country name. |
 |`source.geo.postal_code` | `keyword` | Postal code. |
 |`source.ip` | `ip` | IP address of the source. |

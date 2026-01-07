@@ -7,7 +7,6 @@ type: intake
 [Netskope](https://www.netskope.com/) is a cybersecurity company that provides solutions to protect data in cloud apps and network security while applying zero trust principles.
 
 - **Vendor**: Netskope
-- **Plan**: Defend Prime
 - **Supported environment**: SaaS
 - **Detection based on**: Telemetry
 - **Supported application or feature**: Network
@@ -52,31 +51,30 @@ Find more information about the subscription key on the [official google documen
 }
 ```
 
+5.  Also in the `Event Streaming` section, extract 4 sub-strings from the `Subscription Endpoint` as explained in the following example:
+
+Example of Subcription Endoint: `projects/1023456728636/locations/europe-west3-a/subscriptions/prod-goskope-eu456-sub-streaming-12345-6706281495`
+
+| Information to collect | Example of values contained in the Subscription Endpoint |
+| --- | --- |
+| Project ID | 1023456728636 |
+| Subscription ID | prod-goskope-eu456-sub-streaming-12345-6706281495 |
+| Cloud Region | europe-west3 |
+| Zone ID | a |
+
 ### Instruction on Sekoia
+#### Create your intake
 
-!!! Note
-    The intake you would like to configure is nammed `Netskope Transaction Events`. Not `Netskope Events`.
-
-{!_shared_content/integration/intake_configuration.md!}
-
-#### Pull the logs to collect them on Sekoia.io
-
-Go to the Sekoia.io [playbook page](https://app.sekoia.io/operations/playbooks), and follow these steps:
-
-- Click on **+ PLAYBOOK** button to create a new one
-- Select **Create a playbook from scratch**
-- Give it a name in the field **Name**
-- Open the left panel, click **Google** then select the trigger `Fetch new transaction events from Netskope`
-- Click on **Create**
-
--  Create a **Trigger configuration** using:
+1. Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a new intake from the `Netskope Transaction Events`.
+2. Set the intake configuration using:
     * Your service account credentials from your Google Cloud environment extracted on a JSON file
-    * Type the `Intake key` created on the previous
+    * Subscription ID, Cloud Region and Zone ID extracted from the Subscription Endpoint on Netskope Event Streaming section
     * Select the `application name` what you to fetch events from
     * Type the `Admin email`
+ 
+!!! Note
+    Please copy past the whole private key value during the procedure, including the begining and ending separators.
 
-- Click on the **Save** button
-- **Activate the playbook** with the toggle button on the top right corner of the page
 
 {!_shared_content/operations_center/integrations/generated/a0716ffd-5f9e-4b97-add4-30f1870e3d03_sample.md!}
 

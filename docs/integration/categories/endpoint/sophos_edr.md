@@ -10,8 +10,7 @@ This EDR reduces the attack surface and prevent attacks from running with an ant
 This setup guide shows how to forward events produced by Sophos EDR to Sekoia.io.
 
 - **Vendor**: Sophos
-- **Plan**: Defend Prime
-- **Supported environment**: Cloud 
+- **Supported environment**: Cloud
 - **Detection based on**: Telemetry
 - **Supported application or feature**: File monitoring, Process monitoring
 
@@ -33,25 +32,14 @@ In the Sophos Central Admin console:
 ### Create the intake
 
 1. Go to the [Intake page](https://app.sekoia.io/operations/intakes) and create a new `Sophos EDR` intake.
-2. Copy the associated Intake key
-
-### Pull events
-
-1. Go to the [Playbook page](https://app.sekoia.io/operations/playbooks).
-2. Click on `+ PLAYBOOK` and choose `Create a playbook from scratch`.
-3. Give it a name and a description and click on `Next`.
-4. In `Choose a trigger`, select the [Get Sophos events](/integration/action_library/endpoint/sophos/#get-sophos-events).
-5. Click on the `Get Sophos events` module on the right sidebar and in the `Module Configuration` section, select `Create new configuration`.
-6. Write a `name` and paste the `client_id` and `client_secret` from the Sophos console and click on `Save`.
+2. Set the intake account: Write a `name` and paste the `client_id` and `client_secret` from the Sophos console and click on `Save`.
 
     !!! info
         - If you want to change the region with your own region, you can find your region via **protect devices field**, first click on **Protect Devices**, Then copy link of any download links and finally Check the region that appears as part of the URL.
         - No need to change the **Oauth2 Authorization Url** for the moment, as this's the only endpoint to get a JWT token
 
-7. In the `Trigger Configuration` section, click on `Create new configuration`.
-8. Write a `name`, choose a `frequency` - Default is `60` -, paste the `intake_key` associated to your `Sophos EDR` intake and click on `Save`.
-9. On the top right corner, start the Playbook. You should see monitoring messages in the `Logs` section.
-10. Check on the Events page that the Sophos logs are being received.
+3. Set the intake configuration, choose a `frequency` - Default is `60` -
+
 
 ![Sophos Module Configuration](/assets/integration/cloud_and_saas/sophos_edr/sophos_module_configuration.png){: style="max-width:60%"}
 ![Sophos Trigger Configuration](/assets/integration/cloud_and_saas/sophos_edr/sophos_trigger_configuration.png){: style="max-width:60%"}

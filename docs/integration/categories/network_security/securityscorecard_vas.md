@@ -8,7 +8,6 @@ organization's digital infrastructure, offering real-time insights and prioritiz
 security measures and reduce cyber risk.
 
 - **Vendor**: SecurityScorecard
-- **Plan**: Defend Core & Defend Prime
 - **Supported environment**: SaaS
 - **Detection based on**: Alert
 - **Supported application or feature**: Application logs
@@ -40,6 +39,13 @@ Set the destination url to `https://intake.sekoia.io/plain?intake_key=<intake_ke
     ![Create Rule](/assets/instructions/securityscorecard_vas/securityscorecard_vas_3.png)
 
 * Save the configuration and enjoy your events
+
+!!! warning 
+    The previous URL works for the FRA1 region. For any other region, replace the domain “intake.sekoia.io” with your region’s HTTP-intake domain—for example:
+
+    https://app.usa1.sekoia.io/api/v1/intake-http
+
+    You can find your region’s domain here: [https://docs.sekoia.io/getting_started/regions/](https://docs.sekoia.io/getting_started/regions/)
 
 
 {!_shared_content/operations_center/integrations/generated/8f472113-ba5b-45b9-9a2c-944834396333_sample.md!}

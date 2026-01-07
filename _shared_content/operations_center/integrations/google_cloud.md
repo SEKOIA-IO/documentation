@@ -32,16 +32,10 @@ You should now have:
 
 To pull events, you have to:
 
-1. Go to [the playbooks' page](https://app.sekoia.io/operations/playbooks) 
-2. Click on `+New playbook` to create a new playbook 
-3. Select `Use a template` when creating a playbook
-4. Search for `Google Cloud` then select `Forward Google Pubsub records to Sekoia.io`
+1. Go to [the intake's page](https://app.sekoia.io/intakes) 
+2. Click on `+New intakes` to create a new intake 
 
-This playbook consumes records from Google Pubsub and pushes them to Sekoia.io. 
-
-You can also create your own on the same basis by using the "Google Pub/Sub" trigger (`Connect to the specified`)
-
-- Use the JSON keys (*service account credentials*) information downloaded to complete the fields on the trigger
+This intake consumes records from Google Pubsub and pushes them to Sekoia.io. 
 
 **Fields description**
 

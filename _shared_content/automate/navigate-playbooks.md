@@ -53,7 +53,7 @@ The workflow view is composed of three main sections:
 
 #### Actions library
 
-Accessible in a side panel that appears when clicking on the `+` on the left of the screen, this library provides you with a set of [triggers](https://docs.sekoia.io/xdr/features/automate/triggers/), [actions](https://docs.sekoia.io/xdr/features/automate/actions/) and [operators](https://docs.sekoia.io/xdr/features/automate/operators/) to help automate your workflow.
+Accessible in a side panel that appears when clicking on the `+` on the left of the screen, this library provides you with a set of [triggers](/xdr/features/automate/triggers.md), [actions](/xdr/features/automate/actions.md) and [operators](/xdr/features/automate/operators.md) to help automate your workflow.
 
 These actions are regrouped in apps and services that are interconnected with Sekoia.io.
 
@@ -65,7 +65,7 @@ To find actions in the listing, you can either:
 To add these actions to your graph, click on the dots next to the action name and drag it to the graph area. Dropping actions into this area will form a **block**.
 
 !!! note
-    Configuration for each of these blocks is detailed in the [Library section](https://docs.sekoia.io/xdr/features/automate/library/aws/) of this documentation.
+    Configuration for each of these blocks is detailed in the [Library section](/xdr/features/automate/library/aws.md) of this documentation.
 
 #### Graph area
 
@@ -198,10 +198,10 @@ from jinja2 import Template
 file_json = open("file.json", "r")
 loading = json.load(file_json)
 
-# The JINJA partern to be tested
-jinja_patern = "{{urgency.value}}"
+# The JINJA pattern to be tested
+jinja_pattern = "{{urgency.value}}"
 
-tm = Template(jinja_patern)
+tm = Template(jinja_pattern)
 
 msg = tm.render(urgency=loading["urgency"])
 print(msg)
@@ -229,7 +229,7 @@ This tab includes filters for sorting by Status. Additionally, 'Meta-Playbooks' 
 
 #### Run results
 
-Run results are accessible either from the tab `Runs` in the playbook or in the panel that details a [playbook's details](#details-panel).
+Run results are accessible either from the tab `Runs` in the playbook or in the panel that details a [playbook's details](#playbook-details).
 
 This panel contains the following information:
 

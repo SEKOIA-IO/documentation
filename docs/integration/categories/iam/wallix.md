@@ -7,8 +7,7 @@ WALLIX Bastion is a “Privileged Access Management” solution.
 
 
 - **Vendor**: Wallix
-- **Plan**: Defend Core & Defend Prime
-- **Supported environment**: SaaS
+- **Supported environment**: SaaS & OnPrem
 - **Detection based on**: Telemetry
 - **Supported application or feature**: Authentication logs
 
@@ -47,6 +46,8 @@ Logs will then be sent to the selected IP address, port and transmission protoco
 ### Configure the syslog server
 
 Please consult the [Sekoia.io Forwarder](https://docs.sekoia.io/integration/ingestion_methods/syslog/sekoiaio_forwarder/) documentation to forward these logs to Sekoia.io.
+
+{!_shared_content/operations_center/integrations/generated/6b8cb346-6605-4240-ac15-3828627ba899_sample.md!}
 
 {!_shared_content/integration/detection_section.md!}
 

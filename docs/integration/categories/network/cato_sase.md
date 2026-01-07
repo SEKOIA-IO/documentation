@@ -7,7 +7,6 @@ type: intake
 Cato Networks is a software company providing solutions to protect cloud applications. Cato SASE Cloud provides zero trust network access to on-premises and cloud applications.
 
 - **Vendor**: Cato Networks
-- **Plan**: Defend Prime
 - **Supported environment**: Cloud
 - **Detection based on**: Telemetry / Alert
 - **Supported application or feature**: Application, Web, Authentication
@@ -22,7 +21,7 @@ This setup guide will show you how to provide an integration between Cato SASE e
 
 1. Log in to your Cato Management Application
 2. Click on the `Administration` section then click on `API & Integrations`
-    ![Administration](/assets/integration/cloud_and_saas/cato/administration.png){: style="max-width:100%"} 
+    ![Administration](/assets/integration/cloud_and_saas/cato/administration.png){: style="max-width:100%"}
 3. Select the tab `Events Integration`
 4. Click on `Enable integration with Cato events`
     ![Administration](/assets/integration/cloud_and_saas/cato/enable_eventsfeed.png){: style="max-width:100%"}
@@ -44,15 +43,8 @@ In addition to the API key, Cato `account ID` is also required for the Account c
 
 ### Create an intake
 
-Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a new intake from the format Cato SASE. Copy the intake key.
-
-### Pull events
-
-To start to pull events, you have to:
-
-1. Go to the [playbooks page](https://app.sekoia.io/operations/playbooks) and create a new playbook with the [Cato SASE](/integration/action_library/network/cato-networks) trigger
-2. Set up the module configuration with the Api Key and Account Id. Set up the trigger configuration with the intake key
-3. Start the playbook and enjoy your events
+1. Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a new intake from the format Cato SASE.
+2. Set up the intake account configuration with the Api Key and Account Id.
 
 {!_shared_content/operations_center/integrations/generated/469bd3ae-61c9-4c39-9703-7452882e70da_sample.md!}
 

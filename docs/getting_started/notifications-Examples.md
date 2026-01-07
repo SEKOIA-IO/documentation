@@ -82,11 +82,34 @@ The Email notification will let you send an e-mail to a specified address with t
 - By default, simple notification content will be sent with a link to Sekoia.io page corresponding of the Condition(s) set up
 - If you enable the `Enrich email with contextual infos` toggle, the email will include more detailed contextual information related to your alert.
 
+!!! Warning 
+    Each email recipient can receive up to 10 emails per hour for each notification rule.
+
 ### Mattermost Notification
 
 Mattermost is a popular professional chat service. The Mattermost Notification action allows you to send messages to any Mattermost instance. To set this up, you'll need to configure a new Incoming Webhook on your Mattermost instance and specify the Mattermost channel where the message should be sent.
 
 You can refer to the Mattermost documentation on how to [create a new Mattermost “incoming webhook”](https://developers.mattermost.com/integrate/webhooks/incoming/).
+
+### Teams and Slack Notifications 
+
+You can now send notifications directly to your Teams or Slack channels, making it easy to keep your team informed about important activity.
+
+1. Navigate to **Settings** > **Notifications** from the main menu
+2. Click the **"Create new notification"** button
+3. Choose the **event** or **metric** you want to receive an alert for
+4. In the **"Actions to perform"** section, select **Teams** or **Slack** from the dropdown menu
+5. Paste your incoming webhook URL into the field provided
+6. Click **Save** to activate the notification
+
+Once saved, any future notifications triggered by your selected event or metric will automatically be sent to the designated Teams or Slack channel.
+
+#### Finding Your Webhook URL
+
+If you don't know where to find your webhook URL, here are the official guides for each platform:
+
+- **Teams:** [Create incoming webhooks](https://docs.microsoft.com/en-us/microsoftteams/platform/webhooks-and-connectors/how-to/add-incoming-webhook)
+- **Slack:** [Sending messages using Incoming Webhooks](https://api.slack.com/messaging/webhooks)
 
 ### WebHook Notification
 
@@ -160,7 +183,7 @@ from typing import Literal, Optional
 
 import httpx
 from fastapi import BackgroundTasks, FastAPI
-from pydantic import BaseModel, BaseSettings
+from pydantic.v1 import BaseModel, BaseSettings
 
 
 class WebHookSettings(BaseSettings): # (4)

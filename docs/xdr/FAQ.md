@@ -4,9 +4,9 @@
 
 ### Is the IP behind `intake.sekoia.io` static?
 
-**IP for `intake.sekoia.io` is `51.159.9.95`.**
+**IP for `intake.sekoia.io` is currently `213.32.5.228`.**
 
-`intake.sekoia.io` is the domain name used to send your logs to Sekoia.io, either via Syslog or HTTP protocols. The IP address behind that service is static and stable. You can use that IP to configure your firewalls to allow connections from your forwarding systems to Sekoia.io.
+`intake.sekoia.io` is the domain name used to send your logs to Sekoia.io, either via Syslog or HTTP protocols. The IP address behind that service is mostly static but may change at any time. Please refrain from doing IP filtering to avoid future issues. If you absolutely need to perform IP filtering, please manage your own DNS configuration and keep up with upstream changes. Old IPs will continue working for up to a month after the official DNS modification.
 
 ### Outgoing IP addresses for playbooks runs and connectors
 
@@ -103,13 +103,13 @@ Anomalies are evaluated in real-time and can impact the user's credibility. Here
 - **Anomalies Relative to Fixed Thresholds**:
 
     - **Response Time**: Requests taking more than 10 seconds of CPU/memory processing.
-    - **Request Frequency**: More than 200 requests per second.
+    - **Request Frequency**: More than 100 requests per second.
     - **Authentication**: Strengthened mechanisms on authentication management pages.
 
 - **Anomalies Relative to Smart Thresholds**:
 
     - **Response Time**: Limit requests to less than 100 ms per second over a 10-second period.
-    - **Error Requests**: Do not exceed 20% errors (4XX or 5XX codes) on 20 requests per 10-second period.
+    - **Error Requests**: Do not exceed 8 errors/s (4XX or 5XX codes) per 5-second period.
 
 !!! Note
     **Error Code 429**: Indicates rate limiting when too many requests are received in a short time.
@@ -121,7 +121,7 @@ To avoid being blocked by our WAF, it is important to follow these best practice
 - **Optimize Requests**: Avoid requests that consume too many resources (no more than 100 ms per request).
 - **Limit Request Frequency**: Do not exceed 5 requests per second.
 - **Handle Errors**: Pause scripts if the return code is 4XX or 5XX for 2 requests within a 10-second period.
-- **Impact Duration**: In case of blocking, the user will be impacted for between 30 seconds and 5 minutes (randomized duration).
+- **Impact Duration**: In case of blocking, the user will be impacted for between 30 seconds and 10 minutes (randomized duration).
 
 !!! Note
     Users sharing the same VPN exit point will be considered as a single user. Ensure that multiple users accessing the service through the same VPN do not collectively exceed the recommended limits.

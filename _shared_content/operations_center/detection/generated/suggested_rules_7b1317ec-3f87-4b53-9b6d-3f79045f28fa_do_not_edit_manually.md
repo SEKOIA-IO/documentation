@@ -9,6 +9,18 @@ The following Sekoia.io built-in rules match the intake **Cloudflare Gateway DNS
     
     - **Effort:** elementary
 
+??? abstract "Cloudflare Gateway DNS Query Allowed to Malicious Domain"
+    
+    A DNS query to a domain categorized by Cloudflare Gateway as malicious was allowed because no blocking policy is configured.
+    
+    - **Effort:** master
+
+??? abstract "Cloudflare Gateway DNS Query Blocked to Malicious Domain"
+    
+    A DNS query to a domain categorized by Cloudflare Gateway as malicious was blocked by policy.
+    
+    - **Effort:** master
+
 ??? abstract "Cobalt Strike DNS Beaconing"
     
     Detects suspicious DNS queries known from Cobalt Strike beacons. The threshold is more than 50 suspicious DNS requests to avoid false positives.
@@ -17,7 +29,7 @@ The following Sekoia.io built-in rules match the intake **Cloudflare Gateway DNS
 
 ??? abstract "Correlation Potential DNS Tunnel"
     
-    Detects domain name which is longer than 95 characters. Long domain names are distinctive of DNS tunnels.
+    Detects domain name which is longer than 62 characters and requested at least 50 times in a 10 minutes range time. Long domain names are distinctive of DNS tunnels.
     
     - **Effort:** advanced
 
@@ -47,7 +59,7 @@ The following Sekoia.io built-in rules match the intake **Cloudflare Gateway DNS
 
 ??? abstract "Potential DNS Tunnel"
     
-    Detects domain name which is longer than 95 characters. Long domain names are distinctive of DNS tunnels.
+    Detects domain name which is longer than 62 characters. Long domain names are distinctive of DNS tunnels.
     
     - **Effort:** advanced
 

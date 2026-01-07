@@ -6,7 +6,6 @@ type: intake
 AWS GuardDuty is a service that detects potential security issues within your network.
 
 - **Vendor**: AWS
-- **Plan**: Defend Core & Defend Prime
 - **Supported environment**: SaaS
 - **Detection based on**: Alert
 - **Supported application or feature**: GuardDuty alerts
@@ -30,12 +29,11 @@ You have to:
 {!_shared_content/integration/intake_configuration.md!}
 
 ### Pull events
+#### Create your intake
 
-To start to pull events, you have to:
+1. Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a new intake from the `AWS GuardDuty`.
+2. Set up the intake account configuration with the [AWS Access Key](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html), the secret key and the region name. Set up the intake configuration with the name of the SQS queue
 
-1. Go to the [playbook page](https://app.sekoia.io/operations/playbooks) and create a new playbook with the [AWS Fetch new logs on S3 connector](/integration/action_library/cloud_providers/aws#fetch-new-logs-on-s3)
-2. Set up the module configuration with the [AWS Access Key](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html), the secret key and the region name. Set up the trigger configuration with the name of the SQS queue as well as the intake key from the intake previously created
-3. Start the playbook and enjoy your events
 
 {!_shared_content/operations_center/integrations/generated/3e060900-4004-4754-a597-d2944a601930_sample.md!}
 

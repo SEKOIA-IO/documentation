@@ -4,7 +4,6 @@ type: intake
 
 ## Overview
 - **Vendor**:
-- **Plan**: Defend Core & Defend Prime
 - **Supported environment**:
 - **Version compatibility**:
 - **Detection based on**: Telemetry
@@ -22,7 +21,9 @@ An internal log concentrator is required to collect and forward events to Sekoia
 
 ### Enable Syslog forwarding
 
-Browse to the host thank to the vSphere Client inventory and follow [this guide](https://docs.vmware.com/en/VMware-vSphere/7.0/com.vmware.esxi.upgrade.doc/GUID-9F67DB52-F469-451F-B6C8-DAE8D95976E7.html) to enable the log forwarding to the log concentrator.
+Browse to the host thank to the vSphere Client inventory and follow [this guide](https://knowledge.broadcom.com/external/article/318939/configuring-syslog-on-esxi.html) to enable the log forwarding to the log concentrator.
+
+For syslog forwarding, the only parameter required is [loghost](https://docs.vmware.com/en/VMware-vSphere/7.0/com.vmware.esxi.upgrade.doc/GUID-8981F5FA-BB2A-47FB-A59A-7FC5C523CFDE.html) that set the location of the syslog server.
 
 ## Create the intake
 
@@ -30,7 +31,7 @@ Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a n
 
 ## Forward logs to Sekoia.io
 
-Please consult the [Syslog Forwarding](/integration/ingestion_methods/syslog/sekoiaio_forwarder) documentation to forward these logs to Sekoia.io.
+Please consult the [Syslog Forwarding](/integration/ingestion_methods/syslog/sekoiaio_forwarder.md) documentation to forward these logs to Sekoia.io.
 
 {!_shared_content/operations_center/integrations/generated/2b13307b-7439-4973-900a-2b58303cac90_sample.md!}
 

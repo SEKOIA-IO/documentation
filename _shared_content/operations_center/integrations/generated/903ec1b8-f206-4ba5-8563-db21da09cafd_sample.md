@@ -4,6 +4,34 @@
 In this section, you will find examples of raw logs as generated natively by the source. These examples are provided to help integrators understand the data format before ingestion into Sekoia.io. It is crucial for setting up the correct parsing stages and ensuring that all relevant information is captured.
 
 
+=== "DNS_json"
+
+
+    ```json
+	{
+        "VendorName": "palo alto networks",
+        "DeviceSN": "111111111111111",
+        "TimeReceived": "2025-03-20T13:18:03.483814Z",
+        "LogType": "DNS",
+        "Subtype": "realtime_dns_telemetry_response",
+        "SubType": "realtime_dns_telemetry_response",
+        "TimeGenerated": "2025-03-20T13:18:03.000000Z",
+        "RecordType": null,
+        "DNSResolverIP": "8.8.8.8",
+        "ThreatID": 0,
+        "DNSCategory": "benign",
+        "ThreatName": null,
+        "SourceAddress": "1.2.3.4",
+        "FromZone": "INTERNAL",
+        "Action": "Allow",
+        "DNSResponse": null,
+        "ToZone": null,
+        "DestinationUser": null
+    }
+    ```
+
+
+
 === "User_id_1_csv"
 
 
@@ -27,6 +55,15 @@ In this section, you will find examples of raw logs as generated natively by the
 
     ```json
 	CEF:0|Palo Alto Networks|LF|2.0|AUTH|Radius|3|ProfileToken=xxxxx dtz=UTC rt=Feb 28 2021 18:20:54 deviceExternalId=xxxxxxxxxxxxx PanOSConfigVersion=10.0 PanOSAuthenticatedUserDomain=paloaltonetwork PanOSAuthenticatedUserName=xxxxx PanOSAuthenticatedUserUUID= PanOSClientTypeName= PanOSCortexDataLakeTenantID=xxxxxxxxxxxxx PanOSIsDuplicateLog=false PanOSIsPrismaNetworks=false PanOSIsPrismaUsers=false PanOSLogExported=false PanOSLogForwarded=true PanOSLogSource=firewall PanOSLogSourceTimeZoneOffset= PanOSRuleMatched= start=Feb 28 2021 18:20:40 cs3=vsys1 cs3Label=VirtualLocation c6a2=::ffff:0 c6a2Label=Source IPv6 Address c6a3=::ffff:0 c6a3Label=Destination IPv6 Address duser=paloaltonetwork\\xxxxx cs2=paloaltonetwork\\xxxxx cs2Label=NormalizeUser fname=Authentication object2 cs4=DC cs4Label=AuthenticationPolicy cnt=33554432 cn2=-5257671089978343424 cn2Label=MFAAuthenticationID PanOSMFAVendor=Symantec VIP cs6=rs-logging cs6Label=LogSetting cs1=deny-attackers cs1Label=AuthServerProfile PanOSAuthenticationDescription=www.something cs5=Unknown cs5Label=ClientType msg=Invalid Certificate cn1=0 cn1Label=AuthFactorNo externalId=xxxxxxxxxxxxx PanOSDGHierarchyLevel1=11 PanOSDGHierarchyLevel2=0 PanOSDGHierarchyLevel3=0 PanOSDGHierarchyLevel4=0 PanOSVirtualSystemName= dvchost=xxxxx PanOSVirtualSystemID=1 PanOSAuthenticationProtocol=EAP-TTLS with PAP PanOSRuleMatchedUUID= PanOSTimeGeneratedHighResolution=Feb 28 2021 18:20:41 PanOSSourceDeviceCategory=src_category_list-1 PanOSSourceDeviceProfile=src_profile_list-1 PanOSSourceDeviceModel=src_model_list-1 PanOSSourceDeviceVendor=src_vendor_list-1 PanOSSourceDeviceOSFamily=src_osfamily_list-0 PanOSSourceDeviceOSVersion=src_osversion_list-2 PanOSSourceDeviceHost=src_host_list-0 PanOSSourceDeviceMac=src_mac_list-2 PanOSAuthCacheServiceRegion= PanOSUserAgentString= PanOSSessionID=
+    ```
+
+
+
+=== "auth_events_dsv"
+
+
+    ```json
+	1,2025/07/04 19:10:17,026709003121,AUTH,Unknown,2817,2025/07/04 19:10:17,vsys1,1.2.3.4,,,EXAMPLE,Example,1,1234567890,,EXAMPLE_LogFwd,,No user activity after prompted for credentials from AUTH-PORTAL.,Authentication Portal,Authentication Timeout,1,123456,0x0,0,0,0,0,,HOSTNAME,1,,30700717-0688-43fd-b76f-cf9c9a4a7f03,2025-07-04T19:10:18.043+11:00,,,
     ```
 
 
@@ -89,8 +126,73 @@ In this section, you will find examples of raw logs as generated natively by the
 
 
     ```json
-	1,2023/06/28 14:40:42,015451000032715,GLOBALPROTECT,0,2562,2023/06/28 14:40:42,vsys1,gateway-config-release,configuration,,,example.org\\test,EN,2021-02707,88.120.236.74,0.0.0.0,10.0.0.232,0.0.0.0,8f0fd1d3-5d3b-49c3-9bee-247ff89a52f3,DFN3535D,6.0.4,Windows,"Microsoft Windows 10 Enterprise , 64-bit",1,,,,success,,0,,0,VPN_GATEWAY,5555555555555555555,0x8000000000000000,2023-06-28T14:40:43.134+02:00,,,,,,0,0,0,0,,VPN-DOM-01,1
+	1,2023/06/28 14:40:42,015451000032715,GLOBALPROTECT,0,2562,2023/06/28 14:40:42,vsys1,gateway-config-release,configuration,,,example.org\\test,EN,2021-02707,1.2.3.4,0.0.0.0,10.0.0.232,0.0.0.0,8f0fd1d3-5d3b-49c3-9bee-247ff89a52f3,DFN3535D,6.0.4,Windows,"Microsoft Windows 10 Enterprise , 64-bit",1,,,,success,,0,,0,VPN_GATEWAY,5555555555555555555,0x8000000000000000,2023-06-28T14:40:43.134+02:00,,,,,,0,0,0,0,,VPN-DOM-01,1
 
+    ```
+
+
+
+=== "hash_in_filename"
+
+
+    ```json
+	{
+        "Action": "alert",
+        "Application": "jira-uploading",
+        "ApplicationCategory": "saas",
+        "ApplicationContainer": "jira",
+        "ApplicationSubcategory": "general-business",
+        "DestinationAddress": "1.2.3.4",
+        "DestinationDeviceHost": null,
+        "DestinationDeviceMac": null,
+        "DestinationDeviceOSFamily": null,
+        "DestinationLocation": "IN",
+        "DestinationPort": 443,
+        "DestinationUser": null,
+        "DeviceName": "MYDEVICE",
+        "DeviceSN": "no-serial",
+        "DirectionOfAttack": "client to server",
+        "DomainEDL": null,
+        "FileHash": null,
+        "FileName": "sha256-9f86d081884c7d659a2feaa0c55ad015a3bf4f1b2b0b822cd15d6c15",
+        "FileType": "PNG File Upload",
+        "FromZone": "trust",
+        "HTTP2Connection": 0,
+        "InboundInterface": "tunnel.1",
+        "IsPacketCapture": false,
+        "Justification": null,
+        "LogType": "THREAT",
+        "NATDestination": "1.2.3.4",
+        "NATDestinationPort": 443,
+        "NATSource": "5.6.7.8",
+        "NATSourcePort": 51468,
+        "OutboundInterface": "ethernet1/1",
+        "PartialHash": 0,
+        "Protocol": "tcp",
+        "ReasonForDataFilteringAction": null,
+        "RepeatCount": 1,
+        "Rule": "Global_Outbound_internet_access",
+        "RuleUUID": "2ad91ec3-e3eb-474d-b4ac-efc0d893440c",
+        "SequenceNo": 123456789,
+        "SessionID": 123,
+        "SourceAddress": "9.10.11.12",
+        "SourceDeviceHost": null,
+        "SourceDeviceMac": null,
+        "SourceDeviceOSFamily": null,
+        "SourceLocation": "LOCATION",
+        "SourcePort": 58786,
+        "SourceUser": "john.doe@example.com",
+        "SubType": "file",
+        "Subtype": "file",
+        "TimeGenerated": "2025-07-25T14:33:36.000000Z",
+        "TimeGeneratedHighResolution": "2025-07-25T14:33:36.205000Z",
+        "TimeReceived": "2025-07-25T14:33:43.000000Z",
+        "ToZone": "untrust",
+        "TunneledApplication": "jira-uploading",
+        "URLCategory": "computer-and-internet-info",
+        "Users": "john.doe@example.com",
+        "VendorSeverity": "Low"
+    }
     ```
 
 
@@ -351,6 +453,132 @@ In this section, you will find examples of raw logs as generated natively by the
 
 
 
+=== "test_auth_fail"
+
+
+    ```json
+	1,2024/12/16 20:19:04,1111111111,SYSTEM,auth,2561,2024/12/16 20:19:04,,auth-fail,ESA-AUTH,0,0,general,medium,"failed authentication for user 'test.user'. Reason: Authentication request is timed out. auth profile 'ESA-AUTH', vsys 'vsys1', server profile 'ESA', server address '1.2.3.4', auth protocol 'PAP', From: 3.4.5.6.",7439393285273531690,0x0,0,0,0,0,,FWPADC1,0,0,2024-12-16T20:19:04.851+01:00
+    ```
+
+
+
+=== "test_auth_fail1"
+
+
+    ```json
+	1,2025/02/26 10:22:28,1111111111,SYSTEM,auth,2561,2025/02/26 10:22:28,,auth-fail,GCA_VPN_AUTH_SEQ,0,0,general,medium,"failed authentication for user 'test.user'.  Reason: User is not in allowlist. auth profile 'GCA_VPN_AUTH_SEQ', vsys 'vsys1', From: 1.2.3.4.",7473081312217257800,0x0,0,0,0,0,,FWPADC1,0,0,2025-02-26T10:22:28.691+01:00
+    ```
+
+
+
+=== "test_auth_fail10"
+
+
+    ```json
+	1,2025/02/11 10:34:25,1111111111,SYSTEM,auth,2562,2025/02/11 10:34:26,,auth-fail,FWPA,0,0,general,medium,"failed authentication for user 'test_user'. Reason: Invalid username/password. auth profile 'FWPA', vsys 'shared', server profile 'RADIUS_RSA', server address '1.2.3.4', auth protocol 'PAP', From: 3.4.5.6.",7459881507616729894,0x0,0,0,0,0,,FWPAN01,0,0,2025-02-11T10:34:26.348+01:00
+    ```
+
+
+
+=== "test_auth_fail11"
+
+
+    ```json
+	1,2024/12/16 20:19:04,1111111111,SYSTEM,auth,2561,2024/12/16 20:19:04,,auth-success,ESA-AUTH,0,0,general,medium,"failed authentication for user 'test.user'. Reason: Authentication request is timed out. auth profile 'ESA-AUTH', vsys 'vsys1', server profile 'ESA', server address '1.2.3.4', auth protocol 'PAP', From: 3.4.5.6.",7439393285273531690,0x0,0,0,0,0,,FWPADC1,0,0,2024-12-16T20:19:04.851+01:00
+    ```
+
+
+
+=== "test_auth_fail2"
+
+
+    ```json
+	1,2025/02/26 10:12:07,1111111111,SYSTEM,auth,2561,2025/02/26 10:12:07,,auth-fail,ESA-AUTH,0,0,general,medium,"failed authentication for user 'test.user'.  Reason: Authentication request is timed out. auth profile 'ESA-AUTH', vsys 'vsys1', server profile 'ESA', server address '1.2.3.4', auth protocol 'PAP', From: 2.3.4.5.",7473081312217252401,0x0,0,0,0,0,,FWPADC1,0,0,2025-02-26T10:12:07.623+01:00
+    ```
+
+
+
+=== "test_auth_fail3"
+
+
+    ```json
+	1,2025/02/24 14:58:26,1111111111,SYSTEM,auth,2561,2025/02/24 14:58:27,,auth-fail,AD-AUTH,0,0,general,medium,"failed authentication for user 'test.user'. Reason: Invalid username/password. auth profile 'AD-AUTH', vsys 'shared', server profile 'GCA-AD', server address '1.2.3.4', From: 3.4.5.6.",7473081312215912049,0x0,0,0,0,0,,FWPADC1,0,0,2025-02-24T14:58:27.897+01:00
+    ```
+
+
+
+=== "test_auth_fail4"
+
+
+    ```json
+	1,2025/02/24 14:58:26,1111111111,SYSTEM,auth,2561,2025/02/24 14:58:27,,auth-fail,AD-AUTH,0,0,general,medium,"failed authentication for user 'test.user'. Reason: Invalid username/password. auth profile 'AD-AUTH', vsys 'shared', server profile 'GCA-AD', server address '1.2.3.4', From: 3.4.5.6.",7473081312215912049,0x0,0,0,0,0,,FWPADC1,0,0,2025-02-24T14:58:27.897+01:00
+    ```
+
+
+
+=== "test_auth_fail5"
+
+
+    ```json
+	1,2025/02/21 08:25:50,1111111111,SYSTEM,auth,2561,2025/02/21 08:25:51,,auth-fail,ESA-AUTH,0,0,general,medium,"failed authentication for user 'test.user'. Reason: User is in locked users list. auth profile 'ESA-AUTH', vsys 'vsys1', auth protocol 'unknown RADIUS authentication protocol', From: 1.2.3.4.",7473081312213343374,0x0,0,0,0,0,,FWPADC1,0,0,2025-02-21T08:25:51.399+01:00
+    ```
+
+
+
+=== "test_auth_fail6"
+
+
+    ```json
+	1,2025/02/21 08:25:50,1111111111,SYSTEM,auth,2561,2025/02/21 08:25:51,,auth-fail,ESA-AUTH,0,0,general,medium,"failed authentication for user 'test.user'. Reason: User is in locked users list. auth profile 'ESA-AUTH', vsys 'vsys1', auth protocol 'unknown RADIUS authentication protocol', From: 1.2.3.4.",7473081312213343374,0x0,0,0,0,0,,FWPADC1,0,0,2025-02-21T08:25:51.399+01:00
+    ```
+
+
+
+=== "test_auth_fail7"
+
+
+    ```json
+	1,2025/02/19 07:27:09,016301013012,SYSTEM,auth,2561,2025/02/19 07:24:51,,auth-fail,,0,0,general,medium,"failed authentication for user 'test_user'. Reason: Authentication profile not found for the user. From: 1.2.3.4.",7473011295655034976,0x0,0,0,0,0,,FWPADC2,0,0,2025-02-19T07:27:10.089+01:00
+    ```
+
+
+
+=== "test_auth_fail8"
+
+
+    ```json
+	1,2025/02/11 09:35:28,1111111111,SYSTEM,auth,2561,2025/02/11 09:35:29,,auth-fail,ESA-AUTH,0,0,general,medium,"failed authentication for user 'test_user'. Reason: Internal error, e.g. network connection, DNS failure or remote server down. auth profile 'ESA-AUTH',",7439393285315977320,0x0,0,0,0,0,,FWPADC1,0,0,2025-02-11T09:35:29.424+01:00
+    ```
+
+
+
+=== "test_auth_fail9"
+
+
+    ```json
+	1,2025/02/11 10:34:25,1111111111,SYSTEM,auth,2562,2025/02/11 10:34:26,,auth-fail,FWPA,0,0,general,medium,"failed authentication for user 'test_user'. Reason: Invalid username/password. auth profile 'FWPA', vsys 'shared', server profile 'RADIUS_RSA', server address '1.2.3.4', auth protocol 'PAP', From: 3.4.5.6.",7459881507616729894,0x0,0,0,0,0,,FWPAN01,0,0,2025-02-11T10:34:26.348+01:00
+    ```
+
+
+
+=== "test_auth_success1"
+
+
+    ```json
+	1,2025/02/11 10:35:09,1111111111,SYSTEM,auth,2562,2025/02/11 10:35:10,,auth-success,FWPA,0,0,general,informational,"authenticated for user 'test_user'. auth profile 'FWPA', vsys 'shared', server profile 'RADIUS_RSA', server address '1.2.3.4', auth protocol 'PAP', admin role 'superreader', From: 3.4.5.6.",7459881507616729900,0x0,0,0,0,0,,FWPAN01,0,0,2025-02-11T10:35:10.099+01:00
+    ```
+
+
+
+=== "test_auth_success_2"
+
+
+    ```json
+	1,2025/03/06 17:43:12,1111111111,SYSTEM,auth,2561,2025/03/06 17:43:12,,auth-success,ESA-AUTH,0,0,general,informational,"authenticated for user 'jane.doe'.   auth profile 'ESA-AUTH', vsys 'vsys1', server profile 'ESA', server address '1.2.3.4', auth protocol 'PAP', From: 5.6.7.8.",7473081312223375061,0x0,0,0,0,0,,FWPADC1,0,0,2025-03-06T17:43:12.834+01:00
+    ```
+
+
+
 === "test_cloud_election_json"
 
 
@@ -366,7 +594,7 @@ In this section, you will find examples of raw logs as generated natively by the
         "EventName": "cloud-election",
         "EventComponent": "",
         "VendorSeverity": "Informational",
-        "EventDescription": "CLOUD ELECTION: serverlist2.urlcloud.paloaltonetworks.com IP: 35.244.229.101 was elected, measured alive test 143294.",
+        "EventDescription": "CLOUD ELECTION: serverlist2.urlcloud.paloaltonetworks.com IP: 1.2.3.4 was elected, measured alive test 143294.",
         "SequenceNo": 7200776623254143113,
         "DGHierarchyLevel1": 0,
         "DGHierarchyLevel2": 0,
@@ -377,6 +605,114 @@ In this section, you will find examples of raw logs as generated natively by the
         "DeviceGroup": null,
         "Template": null,
         "TimeGeneratedHighResolution": "2023-02-16T15:36:23.710000Z"
+    }
+    ```
+
+
+
+=== "test_decryption_csv"
+
+
+    ```json
+	1,2024/11/03 19:09:43,111111111111,DECRYPTION,0,2562,2024/11/03 19:09:43,1.2.3.4,5.6.7.8,4.3.2.1,8.7.6.5,URL Filtering - Chrome Profile,jdoe,,ssl,vsys1,VPN-SSL,INTERNET,tunnel.16,ae2.1111,Forward-Syslog,2024/11/03 19:09:43,2020391,1,55107,443,22814,443,0x400400,tcp,allow,N/A,,,,,25185364-4f1b-46b5-a376-a96a9438d665,Unknown,Unknown,TLS1.3,ECDHE,AES_256_GCM,SHA384,NoDecrypt-rule,,None,uninspected,Uninspected,No Decrypt,,,,,V1,0,0,0,0,0,:::::NONE,,,,,,,,,,,,,2024-11-03T19:09:43.654+01:00,,,,,,,,,,,,,,,,,1111111111111111111,0x8000000000000000,53,0,0,0,,NFW-OUT-DCA,1,encrypted-tunnel,networking,browser-based,4,"used-by-malware,able-to-transfer-file,has-known-vulnerability,tunnel-other-application,pervasive-use",,ssl,no,no
+
+    ```
+
+
+
+=== "test_decryption_json"
+
+
+    ```json
+	{
+        "TimeReceived": "2024-11-20T16:40:01.000000Z",
+        "DeviceSN": "no-serial",
+        "LogType": "DECRYPTION",
+        "Subtype": "start",
+        "SubType": "start",
+        "ConfigVersion": "10.2",
+        "TimeGenerated": "2024-11-20T16:39:51.000000Z",
+        "SourceAddress": "1.2.3.4",
+        "DestinationAddress": "5.6.7.8",
+        "NATSource": "4.3.2.1",
+        "NATDestination": "8.7.6.5",
+        "Rule": "URL Filtering - Chrome Profile",
+        "SourceUser": "example\\jdoe",
+        "DestinationUser": null,
+        "Application": "incomplete",
+        "VirtualLocation": "vsys1",
+        "FromZone": "VPN-SSL",
+        "ToZone": "INTERNET",
+        "InboundInterface": "tunnel.16",
+        "OutboundInterface": "ethernet1/1",
+        "LogSetting": "Forward-Syslog",
+        "TimeReceivedManagementPlane": "2024-11-20T16:39:51.000000Z",
+        "SessionID": 2222222,
+        "RepeatCount": 1,
+        "CountOfRepeat": 1,
+        "SourcePort": 58877,
+        "DestinationPort": 443,
+        "NATSourcePort": 1042,
+        "NATDestinationPort": 443,
+        "Protocol": "tcp",
+        "Action": "allow",
+        "Tunnel": "N/A",
+        "SourceUUID": null,
+        "DestinationUUID": null,
+        "RuleUUID": "eaf45b26-01ef-496c-990d-bbd1d89f2ed5",
+        "ClientToFirewall": "Finished",
+        "FirewallToClient": "Client_Hello",
+        "TLSVersion": "TLS1.2",
+        "TLSKeyExchange": "ECDHE",
+        "TLSEncryptionAlgorithm": "AES_256_GCM",
+        "TLSAuth": "SHA384",
+        "PolicyName": "TLS - https inspection - default rule",
+        "EllipticCurve": "secp256r1",
+        "ErrorIndex": "Protocol",
+        "RootStatus": "trusted",
+        "ChainStatus": "Trusted",
+        "ProxyType": "Forward",
+        "CertificateSerial": "059125d73c34a73fca9",
+        "Fingerprint": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+        "TimeNotBefore": 1730875569,
+        "TimeNotAfter": 1765176368,
+        "CertificateVersion": "V3",
+        "CertificateSize": 256,
+        "CommonNameLength": 13,
+        "IssuerNameLength": 29,
+        "RootCNLength": 10,
+        "SNILength": 23,
+        "CertificateFlags": 4,
+        "CommonName": "example.org",
+        "IssuerCommonName": "GlobalSign ECC OV SSL CA 2018",
+        "RootCommonName": "GlobalSign",
+        "ServerNameIndication": "static.files.example.org",
+        "ErrorMessage": "General TLS protocol error. Received fatal alert DecodeError from server",
+        "ContainerID": null,
+        "ContainerNameSpace": null,
+        "ContainerName": null,
+        "SourceEDL": null,
+        "DestinationEDL": null,
+        "SourceDynamicAddressGroup": null,
+        "DestinationDynamicAddressGroup": null,
+        "TimeGeneratedHighResolution": "2024-11-20T16:39:51.441000Z",
+        "SourceDeviceCategory": null,
+        "SourceDeviceProfile": null,
+        "SourceDeviceModel": null,
+        "SourceDeviceVendor": null,
+        "SourceDeviceOSFamily": null,
+        "SourceDeviceOSVersion": null,
+        "SourceDeviceHost": null,
+        "SourceDeviceMac": null,
+        "DestinationDeviceCategory": null,
+        "DestinationDeviceProfile": null,
+        "DestinationDeviceModel": null,
+        "DestinationDeviceVendor": null,
+        "DestinationDeviceOSFamily": null,
+        "DestinationDeviceOSVersion": null,
+        "DestinationDeviceHost": null,
+        "DestinationDeviceMac": null,
+        "SequenceNo": 1111111111111111111
     }
     ```
 
@@ -470,6 +806,91 @@ In this section, you will find examples of raw logs as generated natively by the
         "ToZone": null,
         "DestinationUser": null
     }
+    ```
+
+
+
+=== "test_dns_response_complicated"
+
+
+    ```json
+	{
+        "VendorName": "palo alto networks",
+        "DeviceSN": "xxxxxxxxxxxxx",
+        "TimeReceived": "2025-02-11T10:51:15.456002Z",
+        "LogType": "DNS",
+        "Subtype": "realtime_dns_telemetry_response",
+        "SubType": "realtime_dns_telemetry_response",
+        "TimeGenerated": "2025-02-11T10:51:15.000000Z",
+        "RecordType": "cname,cname,cname,a,a,a,a,a,a,a,a",
+        "DNSResolverIP": "1.2.3.4",
+        "ThreatID": 0,
+        "DNSCategory": "benign",
+        "ThreatName": null,
+        "SourceAddress": "5.6.7.8",
+        "FromZone": "RN-USDAA-1",
+        "Action": "Allow",
+        "DNSResponse": [
+            "sub1.example.com.",
+            "sub2.example.com.",
+            "example2.net.",
+            "9.10.11.9",
+            "12.13.14.11",
+            "9.10.11.11",
+            "12.13.14.15",
+            "9.10.11.12",
+            "12.13.14.10",
+            "9.10.11.14",
+            "9.10.11.4"
+        ],
+        "ToZone": null,
+        "DestinationUser": null
+    }
+    ```
+
+
+
+=== "test_event_reason"
+
+
+    ```json
+	1,2024/10/25 16:04:52,024101011111,SYSTEM,userid,2522,2024/10/25 16:04:52,,connect-server-monitor-failure,,0,0,general,high,"User-ID server monitor test05(vsystest) Access denied",7389706522298800000,0x0,0,0,0,0,,FFFFF01,0,0,2024-10-25T16:04:52.574+02:00
+    ```
+
+
+
+=== "test_event_reason1"
+
+
+    ```json
+	1,2024/10/25 16:10:48,024101010000,SYSTEM,userid,2562,2024/10/25 16:10:48,,connect-ldap-sever,1.2.3.4,0,0,general,informational,"ldap cfg joe_done connected to server 5.6.7.8:333, initiated by: 0.0.1.1",73897065222988700000,0x0,0,0,0,0,,FFFFFF01,0,0,2024-10-25T16:10:48.575+02:00
+    ```
+
+
+
+=== "test_event_reason2"
+
+
+    ```json
+	1,2024/10/22 08:54:16,024101011111,SYSTEM,auth,2511,2024/10/22 08:54:17,,auth-success,FFFF,0,0,general,informational,"When authenticating user joe1595 from 1.2.3.4, a less secure authentication method PAP is used. Please migrate to PEAP or EAP-TTLS. Authentication Profile FFFF, vsys shared, Server Profile SERVER_TEST, Server Address 5.6.7.8",7389706522298800000,0x0,0,0,0,0,,FWPAN01,0,0,2024-10-22T08:54:17.012+02:0
+    ```
+
+
+
+=== "test_event_reason3"
+
+
+    ```json
+	1,2024/10/22 09:29:30,024101011111,SYSTEM,auth,2562,2024/10/22 09:29:30,,auth-success,FFFF,0,0,general,informational,"authenticated for user joe979.   auth profile FFFF, vsys shared, server profile server-test, server address 1.7.4.4, auth protocol PAP, admin role superuser, From: 1.2.2.7.",738970652229833333,0x0,0,0,0,0,,FFFF01,0,0,2024-10-22T09:29:30.605+02:00
+    ```
+
+
+
+=== "test_event_reason4"
+
+
+    ```json
+	1,2025/02/24 10:44:03,024201005376,CONFIG,0,2562,2025/02/24 10:44:03,1.2.3.4,,edit,test-user,Web,Succeeded, config shared report-group FW_OUT_quot,7472830928503439382,0x0,0,0,0,0,,NFW-OUT-DCA,0,,0,2025-02-24T10:44:03.705+01:00,/config/shared/report-group/entry[@name='FW_OUT_quot']
     ```
 
 
@@ -578,6 +999,62 @@ In this section, you will find examples of raw logs as generated natively by the
 
     ```json
 	1,2024/01/12 11:41:42,015451000023232323,GLOBALPROTECT,0,2562,2024/01/12 11:41:42,vsys1,gateway-switch-to-ssl,tunnel,,SSLVPN,test.fr\JDOE,FR,2023-01724,1.2.3.4,0.0.0.0,1.2.3.4,0.0.0.0,662f0b44-e024-4a70,PF000000,6.0.4,Windows,"Microsoft Windows 10 Enterprise , 64-bit",1,,,,success,,0,,0,CD78_VPN_GP_GATEWAY,5555555555555555555,0x8000000000000000,2024-01-12T11:41:43.895+02:00,,,,,,0,0,0,0,,test-01-01,1
+    ```
+
+
+
+=== "test_hipmatch_csv"
+
+
+    ```json
+	1,2024/11/03 18:50:04,111111111111,HIPMATCH,0,1111,2024/11/03 18:50:04,jdoe,vsys1,DESKTOP-01,Windows,1.2.3.4,VPN Compliant,1,profile,,,1111111111111111111,0x8000000000000000,28,99,38,0,,FW-CIV1,1,0.0.0.0,3a7393a4-997f-4e5b-b6e4-4ebff71dacf4,aefee8,,2024-11-03T18:50:04.310+01:00,
+    ```
+
+
+
+=== "test_hipmatch_json"
+
+
+    ```json
+	{
+        "TimeReceived": "2024-11-20T16:30:32.000000Z",
+        "DeviceSN": "no-serial",
+        "LogType": "HIPMATCH",
+        "Subtype": "hipmatch",
+        "ConfigVersion": "10.2",
+        "TimeGenerated": "2024-11-20T16:30:28.000000Z",
+        "SourceUser": "jdoe@example.org",
+        "VirtualLocation": "vsys1",
+        "EndpointDeviceName": "DESKTOP-01",
+        "EndpointOSType": "Windows",
+        "SourceIP": "1.2.3.4",
+        "HipMatchName": "VPN Compliant",
+        "RepeatCount": 1,
+        "CountOfRepeats": 1,
+        "HipMatchType": "profile",
+        "SequenceNo": 1111111111111111111,
+        "DGHierarchyLevel1": 12,
+        "DGHierarchyLevel2": 22,
+        "DGHierarchyLevel3": 0,
+        "DGHierarchyLevel4": 0,
+        "VirtualSystemName": "",
+        "DeviceName": "FW-ALK01",
+        "VirtualSystemID": 1,
+        "SourceIPv6": "",
+        "HostID": "3a7393a4-997f-4e5b-b6e4-4ebff71dacf4",
+        "EndpointSerialNumber": "aefee8",
+        "SourceDeviceCategory": null,
+        "SourceDeviceProfile": null,
+        "SourceDeviceModel": null,
+        "SourceDeviceVendor": null,
+        "SourceDeviceOSFamily": null,
+        "SourceDeviceOSVersion": null,
+        "SourceDeviceMac": null,
+        "SourceDeviceHost": null,
+        "Source": null,
+        "TimestampDeviceIdentification": null,
+        "TimeGeneratedHighResolution": "2024-11-20T16:30:28.904000Z"
+    }
     ```
 
 
@@ -894,10 +1371,10 @@ In this section, you will find examples of raw logs as generated natively by the
         "Subtype": "url",
         "ConfigVersion": "10.2",
         "TimeGenerated": "2024-07-08T13:13:27.000000Z",
-        "SourceAddress": "19.16.1.6",
-        "DestinationAddress": "17.25.11.9",
-        "NATSource": "210.210.140.61",
-        "NATDestination": "17.25.11.9",
+        "SourceAddress": "5.5.5.5",
+        "DestinationAddress": "1.1.1.1",
+        "NATSource": "3.3.3.3",
+        "NATDestination": "1.1.1.1",
         "Rule": "Guest_Mobile_Internet Access",
         "SourceUser": null,
         "DestinationUser": null,
@@ -921,7 +1398,7 @@ In this section, you will find examples of raw logs as generated natively by the
         "VendorSeverity": "Informational",
         "DirectionOfAttack": "client to server",
         "SequenceNo": 73503956876009,
-        "SourceLocation": "19.18.0.0-19.18.255.255",
+        "SourceLocation": "2.2.2.2-4.4.4.4",
         "DestinationLocation": "US",
         "ContentType": null,
         "PacketID": 0,
@@ -1175,6 +1652,33 @@ In this section, you will find examples of raw logs as generated natively by the
         "VirtualLocation": null,
         "VirtualSystemName": null
     }
+    ```
+
+
+
+=== "test_system_event_13"
+
+
+    ```json
+	1,2024/11/26 22:10:01,02410100000000,SYSTEM,auth,2555,2024/11/26 22:10:01,,auth-success,FWPA,0,0,general,informational,"When authenticating user 'test000555' from '1.2.5.5', a less secure authentication method PAP is used. Please migrate to PEAP or EAP-TTLS. Authentication Profile 'FWPA', vsys 'shared', Server Profile 'RADIUS_RSA', Server Address '1.7.4.2'",738970652229900000000,0x0,0,0,0,0,,FWPAN00,0,0,2024-11-26T22:10:01.627+01:00
+    ```
+
+
+
+=== "test_system_event_14"
+
+
+    ```json
+	1,2024/12/16 20:19:04,1111111111,SYSTEM,auth,2561,2024/12/16 20:19:04,,auth-fail,ESA-AUTH,0,0,general,medium,"failed authentication for user john.doe. Reason: Authentication request is timed out. auth profile ESA-AUTH, vsys vsys1, server profile ESA, server address 1.2.3.4, auth protocol PAP, From: 5.6.7.8.",7439393285273531690,0x0,0,0,0,0,,FWPADC1,0,0,2024-12-16T20:19:04.851+01:00
+    ```
+
+
+
+=== "test_system_event_15"
+
+
+    ```json
+	1,2025/01/21 11:57:22,1111111111,SYSTEM,auth,2561,2025/01/21 11:57:23,,auth-fail,ESA-AUTH,0,0,general,medium,"failed authentication for user 'john.doe'. Reason: Authentication request is timed out. auth profile 'ESA-AUTH', vsys 'vsys1', server profile 'ESA', server address '1.2.3.4', auth protocol 'PAP', From: 5.6.7.8.",7439393285299734188,0x0,0,0,0,0,,FWPADC1,0,0,2025-01-21T11:57:23.294+01:00
     ```
 
 
@@ -1476,6 +1980,77 @@ In this section, you will find examples of raw logs as generated natively by the
 
 
 
+=== "test_threat_03_json"
+
+
+    ```json
+	{
+        "TimeReceived": "2025-05-20T06:59:20.000000Z",
+        "DeviceSN": "111111111111",
+        "LogType": "THREAT",
+        "Subtype": "wildfire",
+        "TimeGenerated": "2025-05-20T06:59:14.000000Z",
+        "SourceAddress": "1.2.3.4",
+        "DestinationAddress": "5.6.7.8",
+        "NATSource": "",
+        "NATDestination": "",
+        "Rule": "Active Directory",
+        "SourceUser": "john.doe@example.org",
+        "DestinationUser": null,
+        "Application": "ms-ds-smbv3",
+        "VirtualLocation": "vsys1",
+        "FromZone": "SDWAN-VWIRE",
+        "ToZone": "SDWAN-VWIRE",
+        "InboundInterface": "ethernet1/9",
+        "OutboundInterface": "ethernet1/10",
+        "SessionID": 2575234,
+        "RepeatCount": 1,
+        "SourcePort": 51240,
+        "DestinationPort": 445,
+        "NATSourcePort": 0,
+        "NATDestinationPort": 0,
+        "Protocol": "tcp",
+        "Action": "allow",
+        "FileName": "add-helpdesk-localadmins.vbs",
+        "ThreatID": "VBScript File(52205)",
+        "VendorSeverity": "Informational",
+        "DirectionOfAttack": "server to client",
+        "SequenceNo": 7490912032519653792,
+        "SourceLocation": "Azure-EU-WEST-CBS-BELLEM",
+        "DestinationLocation": "US",
+        "FileHash": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+        "ApplianceOrCloud": "eu.wildfire.paloaltonetworks.com",
+        "URLCounter": 0,
+        "FileType": "script",
+        "SenderEmail": null,
+        "EmailSubject": null,
+        "RecipientEmail": null,
+        "DeviceName": "DC-FRMPL-F2",
+        "ThreatCategory": "unknown",
+        "ContentVersion": "0",
+        "RuleUUID": "b96b3d8a-7d15-4b1a-9d7e-2e121f0f91fb",
+        "HTTP2Connection": 0,
+        "SourceDeviceOSFamily": null,
+        "SourceDeviceHost": null,
+        "SourceDeviceMac": null,
+        "DestinationDeviceOSFamily": null,
+        "DestinationDeviceHost": null,
+        "DestinationDeviceMac": null,
+        "DomainEDL": null,
+        "PartialHash": 0,
+        "TimeGeneratedHighResolution": "2025-05-20T06:59:15.165000Z",
+        "ApplicationCategory": "business-systems",
+        "ApplicationContainer": "ms-ds-smb",
+        "ApplicationSubcategory": "storage-backup",
+        "IsPacketCapture": false,
+        "Users": "john.doe@example.org",
+        "TunneledApplication": "untunneled",
+        "ThreatNameFirewall": "VBScript File"
+    }
+    ```
+
+
+
 === "test_timestamp_palo"
 
 
@@ -1703,6 +2278,82 @@ In this section, you will find examples of raw logs as generated natively by the
 
 
 
+=== "test_traffic_event_3_json"
+
+
+    ```json
+	{
+        "TimeReceived": "2025-01-28T17:00:36.000000Z",
+        "DeviceSN": "007057000103158",
+        "LogType": "TRAFFIC",
+        "Subtype": "start",
+        "ConfigVersion": "11.1",
+        "TimeGenerated": "2025-01-28T17:01:01.000000Z",
+        "SourceAddress": "1.2.3.4",
+        "DestinationAddress": "5.6.7.8",
+        "NATSource": "",
+        "NATDestination": "",
+        "Rule": "intrazone-default",
+        "SourceUser": null,
+        "DestinationUser": null,
+        "Application": "paloalto-updates",
+        "FromZone": "OUTSIDE",
+        "ToZone": "OUTSIDE",
+        "InboundInterface": "ethernet1/1",
+        "OutboundInterface": "ethernet1/1",
+        "LogSetting": "Panorama_CDL",
+        "SessionID": 117195,
+        "RepeatCount": 1,
+        "SourcePort": 45483,
+        "DestinationPort": 443,
+        "NATSourcePort": 0,
+        "NATDestinationPort": 0,
+        "Protocol": "tcp",
+        "Action": "allow",
+        "Bytes": 797,
+        "BytesSent": 723,
+        "BytesReceived": 74,
+        "PacketsTotal": 4,
+        "SessionStartTime": "2025-01-28T17:01:02.000000Z",
+        "SessionDuration": 0,
+        "URLCategory": "computer-and-internet-info",
+        "SourceLocation": "TEST_INFRA",
+        "DestinationLocation": "US",
+        "PacketsSent": 3,
+        "PacketsReceived": 1,
+        "SessionEndReason": "n-a",
+        "DeviceName": "PC-01",
+        "ActionSource": "from-policy",
+        "RuleUUID": "6c2be47e-4724-4212-9902-26ba054fe2a9",
+        "SourceDeviceCategory": null,
+        "SourceDeviceProfile": null,
+        "SourceDeviceModel": null,
+        "SourceDeviceVendor": null,
+        "SourceDeviceOSFamily": null,
+        "SourceDeviceOSVersion": null,
+        "SourceDeviceHost": null,
+        "SourceDeviceMac": null,
+        "DestinationDeviceCategory": null,
+        "DestinationDeviceProfile": null,
+        "DestinationDeviceModel": null,
+        "DestinationDeviceVendor": null,
+        "DestinationDeviceOSFamily": null,
+        "DestinationDeviceOSVersion": null,
+        "DestinationDeviceHost": null,
+        "DestinationDeviceMac": null,
+        "SourceEDL": null,
+        "DestinationEDL": null,
+        "TimeGeneratedHighResolution": "2025-01-28T17:01:02.738000Z",
+        "DestinationUserName": null,
+        "SourceUserDomain": null,
+        "Users": "1.2.3.4",
+        "IsPacketCapture": false,
+        "IsPhishing": false
+    }
+    ```
+
+
+
 === "test_update_content_json"
 
 
@@ -1801,6 +2452,15 @@ In this section, you will find examples of raw logs as generated natively by the
 
     ```json
 	1,2024/01/12 11:23:33,01545100000000,USERID,login,2222,2024/01/12 11:23:33,vsys1,1.2.3.4,test.fr\JDOE,,0,1,10888,0,0,vpn-client,globalprotect,555555555555555555555555,0x8000000000000000,0,0,0,0,,test-01,1,,2024/01/12 11:23:33,1,0x80000000,dtest,,2024-01-12T11:23:33.907+01:00
+    ```
+
+
+
+=== "test_username"
+
+
+    ```json
+	1,2025/08/06 15:11:22,016301005120,SYSTEM,auth,2817,2025/08/06 15:11:23,,auth-success,Auth_Seq_RAH,0,0,general,informational,"Kerberos SSO authenticated for user 'toto'. realm 'RXX-R.XXXX', auth profile 'Auth_Seq_RAL', vsys 'shared',",7512418093042533211,0x0,0,0,0,0,,HOST_01,0,0,2025-08-06T15:11:23.221+02:00
     ```
 
 

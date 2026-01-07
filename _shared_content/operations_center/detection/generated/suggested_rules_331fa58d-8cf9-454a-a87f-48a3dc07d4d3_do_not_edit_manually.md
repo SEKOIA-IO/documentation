@@ -161,7 +161,7 @@ The following Sekoia.io built-in rules match the intake **Suricata**. This docum
 
 ??? abstract "Correlation Potential DNS Tunnel"
     
-    Detects domain name which is longer than 95 characters. Long domain names are distinctive of DNS tunnels.
+    Detects domain name which is longer than 62 characters and requested at least 50 times in a 10 minutes range time. Long domain names are distinctive of DNS tunnels.
     
     - **Effort:** advanced
 
@@ -187,7 +187,7 @@ The following Sekoia.io built-in rules match the intake **Suricata**. This docum
     
     Discord is a messaging application. It allows users to create their own communities to share messages and attachments. Those attachments have little to no overview and can be downloaded by almost anyone, which has been abused by attackers to host malicious payloads.
     
-    - **Effort:** intermediate
+    - **Effort:** advanced
 
 ??? abstract "Download Files From Suspicious TLDs"
     
@@ -269,7 +269,7 @@ The following Sekoia.io built-in rules match the intake **Suricata**. This docum
 
 ??? abstract "Potential DNS Tunnel"
     
-    Detects domain name which is longer than 95 characters. Long domain names are distinctive of DNS tunnels.
+    Detects domain name which is longer than 62 characters. Long domain names are distinctive of DNS tunnels.
     
     - **Effort:** advanced
 
@@ -344,6 +344,24 @@ The following Sekoia.io built-in rules match the intake **Suricata**. This docum
     Detects suspicious DNS queries known from Sliver beaconing 
     
     - **Effort:** intermediate
+
+??? abstract "Suricata Attempted Administrator Privilege Gain High Severity Alert"
+    
+    Detects a high severity alert triggered from Suricata Attempted Administrator Privilege Gain category.
+    
+    - **Effort:** master
+
+??? abstract "Suricata Exploit Kit Activity Detected High Severity Alert"
+    
+    Detects a high severity alert triggered from Suricata Exploit Kit Activity Detected category.
+    
+    - **Effort:** master
+
+??? abstract "Suricata Web Application Attack High Severity Alert"
+    
+    Detects a high severity alert triggered from Suricata Web Application Attack category.
+    
+    - **Effort:** master
 
 ??? abstract "Suspicious Download Links From Legitimate Services"
     

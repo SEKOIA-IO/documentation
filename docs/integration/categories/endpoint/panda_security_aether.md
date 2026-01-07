@@ -4,7 +4,6 @@ type: intake
 
 ## Overview
 - **Vendor**:
-- **Plan**: Defend Core & Defend Prime
 - **Supported environment**:
 - **Version compatibility**:
 - **Detection based on**: Telemetry
@@ -35,7 +34,7 @@ Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a n
 
 ### Pull events
 
-Go to the [playbook page](https://app.sekoia.io/operations/playbooks) and create a new playbook with the [Panda Security trigger](/integration/action_library/endpoint/panda-security/#fetch-security-events). You can use the existing template to fasten and ease the creation of your playbook.
+Go to the [playbook page](https://app.sekoia.io/operations/playbooks) and create a new playbook with the [Panda Security trigger](/integration/action_library/panda-security.md#fetch-security-events). You can use the existing template to fasten and ease the creation of your playbook.
 
 Set up the module configuration with an access ID, the password of the access ID (`access_secret`), your WatchGuard Cloud account ID (`account_id`), the API Key (`api_key`).
 Set the `base_url` with the domain part of the API Url (e.g: for the API URL `https://api.usa.cloud.watchguard.com/rest/`, the `base_url` is `https://api.usa.cloud.watchguard.com`).
@@ -44,8 +43,6 @@ Set up the trigger configuration with the frequency of the pull.
 At the end of the playbook, set up the action `Push events to intake` with a Sekoia.io API key and the intake key, from the intake previously created.
 
 Start the playbook and enjoy your events.
-
-
 
 {!_shared_content/operations_center/integrations/generated/ee6364a1-9e3c-4363-9cb6-2f574bd4ce51_sample.md!}
 

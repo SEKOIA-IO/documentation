@@ -6,7 +6,6 @@ type: intake
 SonicWall firewalls enable you to identify and control all applications that are running on your network. By identifying applications based on their unique signatures rather than ports or protocols, this additional control improves compliance and data leakage prevention.
 
 - **Vendor**: SonicWall
-- **Plan**: Defend Core & Defend Prime
 - **Supported environment**: On prem
 - **Version compatibility**: 7,0,1
 - **Detection based on**: Telemetry
@@ -40,7 +39,7 @@ Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a n
 
 ### Forward logs to Sekoia.io
 
-Please consult the [Syslog Forwarding](/integration/ingestion_methods/syslog/sekoiaio_forwarder) documentation to forward these logs to Sekoia.io.
+Please consult the [Syslog Forwarding](/integration/ingestion_methods/syslog/sekoiaio_forwarder.md) documentation to forward these logs to Sekoia.io.
 
 {!_shared_content/operations_center/integrations/generated/ee0b3023-524c-40f6-baf5-b69c7b679887_sample.md!}
 

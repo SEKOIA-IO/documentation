@@ -7,7 +7,6 @@ type: intake
 Protection solution for user and technical messaging.
 
 - **Vendor**: Retarus
-- **Plan**: Defend Prime
 - **Supported environment**: Cloud 
 - **Detection based on**: Telemetry / Alert
 - **Supported application or feature**: Email gateway

@@ -47,3 +47,8 @@ Please consult our documentation for each technology used
 
 !!! note
    Please contact Support if you have any questions or feedbacks. We will be glad to assist you.
+
+### Truncating verification when in error
+
+1. Check the size of the raw event, we truncate events larger than 250 KiB.
+2. If events are truncated of less than 250 KiB, we recommand to check each component on the collection chain and the source to identify where the event is truncated. 

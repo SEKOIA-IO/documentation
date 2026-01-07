@@ -6,7 +6,6 @@ type: intake
 PROVE IT by Rubycat is a privileged access management solution.
 
 - **Vendor**: Rubycat
-- **Plan**: Defend Core & Defend Prime
 - **Supported environment**: On prem
 - **Version compatibility**: 5,0
 - **Detection based on**: Telemetry
@@ -38,9 +37,6 @@ sudo vim /etc/rsyslog.d/46-proveit.conf
 Paste the following rsyslog configuration to trigger the emission of Pulse Connect Secure logs by your Rsyslog server to Sekoia.io:
 
 ```bash
-# Define the SEKIOA-IO intake certificate
-$DefaultNetstreamDriverCAFile /etc/rsyslog.d/Sekoia.io-intake.pem
-
 # Configure up the network ssl connection
 $ActionSendStreamDriver gtls # use gtls netstream driver
 $ActionSendStreamDriverMode 1 # require TLS for the connection
@@ -75,3 +71,18 @@ Go to the [events page](https://app.sekoia.io/operations/events) to watch your i
 {!_shared_content/operations_center/detection/generated/suggested_rules_d6f69e04-6ab7-40c0-9723-84060aeb5529_do_not_edit_manually.md!}
 {!_shared_content/operations_center/integrations/generated/d6f69e04-6ab7-40c0-9723-84060aeb5529.md!}
 
+## Troubleshooting
+
+### TLS error: Rsyslog cannot authenticate the Sekoia.io syslog endpoint
+
+The Sekoia.io syslog endpoint is secured with a [Letsencrypt](https://letsencrypt.org) certificate.
+
+According to our installation, it may be necessary to install `ISRG ROOT X1` certificate in our **trusted root certification authorities certificate store**:
+
+1. Download the `ISRG ROOT X1` certificate: <https://letsencrypt.org/certs/isrgrootx1.pem>
+
+```bash
+$ wget https://letsencrypt.org/certs/isrgrootx1.pem -O /tmp/isrgrootx1.pem
+```
+
+2. Move the certificate to the relevant directory (e.g., `/etc/ssl/certs` for Debian-based distributions, `/etc/pki/tls/certs` for Red Hat-based distributions; please refer to the documentation of your operating system distribution)

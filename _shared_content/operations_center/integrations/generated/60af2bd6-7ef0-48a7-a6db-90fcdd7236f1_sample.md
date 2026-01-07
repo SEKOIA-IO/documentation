@@ -28,6 +28,14 @@ In this section, you will find examples of raw logs as generated natively by the
 
 
 
+=== "event_smpt_from_1"
+
+    ```
+	time=05:25:47.932 device_id=TestDeviceId log_id=0003014907 type=event subtype=smtp pri=information  user=mail ui=mail action=NONE status=N/A session_id="testsessionid" msg="from=<info@testtest-error.art>, size=0, class=0, nrcpts=0, proto=SMTP, daemon=SMTP_MTA, relay=[1.2.3.4]"
+    ```
+
+
+
 === "event_smpt_to_1"
 
     ```
@@ -80,6 +88,14 @@ In this section, you will find examples of raw logs as generated natively by the
 
     ```
 	time=11:19:15.002 device_id=123 log_id=0701031743 type=kevent subtype=admin pri=information scope=o365 user=j.doe ui=GUI(1.2.3.4) action=login status=success reason=none msg="User j.doe login successfully from GUI(1.2.3.4)"
+    ```
+
+
+
+=== "relay_ip_only"
+
+    ```
+	time=15:03:24.344 device_id=FFFF log_id=YY type=event subtype=smtp pri=information  user=mail ui=mail action=NONE status=N/A session_id="AAA-BBB" msg="to=<johndoe>, delay=00:00:01, xdelay=00:00:01, mailer=esmtp, pri=2290731, relay= [1.2.3.4], dsn=2.0.0, stat=Sent (ok:  Message 88943067 accepted)"
     ```
 
 

@@ -4,7 +4,6 @@ type: intake
 
 ## Overview
 - **Vendor**:
-- **Plan**: Defend Core & Defend Prime
 - **Supported environment**:
 - **Version compatibility**:
 - **Detection based on**: Telemetry
@@ -74,7 +73,7 @@ Restart the NXLog service through the Services tool as Administrator or use Powe
 
 ### Forward logs to Sekoia.io
 
-Please consult the [Syslog Forwarding](/integration/ingestion_methods/syslog/sekoiaio_forwarder) documentation to forward these logs to Sekoia.io.
+Please consult the [Syslog Forwarding](/integration/ingestion_methods/syslog/sekoiaio_forwarder.md) documentation to forward these logs to Sekoia.io.
 
 ### Enjoy your events
 Go to the [events page](https://app.sekoia.io/operations/events) to watch your incoming events.

@@ -6,11 +6,7 @@ type: intake
 
 Ubika Cloud Protector is a cloud-native security solution, providing advanced threat detection and data protection to secure cloud environments, enabling real-time monitoring and mitigation of risks in cloud-based infrastructures.
 
-!!! warning
-    Important note - This format is currently in beta. We highly value your feedback to improve its performance.
-
 - **Vendor**: Ubika
-- **Plan**: Prime
 - **Supported environment**: SaaS
 - **Detection based on**: Telemetry
 - **Supported application or feature**: Web proxy	
@@ -41,24 +37,8 @@ To get API keys info:
 ### Create your intake
 
 1. Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a new intake from the `Ubika Cloud Protector`.
-2. Copy the associated Intake key
+2. Set the intake account configuration with the `provider`, `tenant` and `token` from the `How to get API keys info` step.
 
-### Pull the logs to collect them on Sekoia.io
-
-Go to the Sekoia.io [playbook page](https://app.sekoia.io/operations/playbooks), and follow these steps:
-
-- Click on **+ PLAYBOOK** button to create a new one
-- Select **Create a playbook from scratch**
-- Give it a name in the field **Name**
-- Open the left panel, click **Ubika** then select the trigger `Fetch new traffic events from Ubika Cloud Protector`
-- Click on **Create**
-- Create a **Trigger configuration** using:
-
-    * Type the `Intake key` created on the previous step
-    * Type the `provider`, `tenant` and `token` from the `How to get API keys info` step 
-
-- Click on the **Save** button
-- **Activate the playbook** with the toggle button on the top right corner of the page
 
 ### Enjoy your events on the [Events page](https://app.sekoia.io/operations/events)
 

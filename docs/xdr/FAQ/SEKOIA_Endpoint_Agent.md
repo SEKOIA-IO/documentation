@@ -1,48 +1,86 @@
-## Retrieve events linked to a file access
+## General Questions about the Sekoia.io Endpoint Agent
 
-**Can Sekoia.io Endpoint Agent (Windows) retrieve events linked to file accesses such as denied access to file, modification on file, ...?**
+### 1. **Does the Sekoia.io Endpoint Agent require Internet access to function?**
 
-Sekoia.io Agent tracks information on file creation / deletion but not for denied / modified access.
-However, an event will probably be linked to a process that tries to open a file. 
+Yes, the Sekoia.io Endpoint Agent requires Internet access to send events directly to Sekoia.io via HTTPS. If your information system uses an HTTP proxy that allows access to the [HTTP intake endpoint for your region](/getting_started/regions.md), you can configure the agent to use this proxy. In the absence of direct Internet access, alternatives like **NXLog** for Windows or **Auditbeat** for Linux may be considered.
 
-## Add Windows Event ID to a file the endpoint agent loaded
+### 2. **Can events be redirected to a log forwarder without Internet access?**
 
-**Is it possible to add a Windows Event ID to a file that Sekoia.io Agent loaded?**
+No, the Sekoia.io Endpoint Agent sends events directly to Sekoia.io via HTTPS, which requires Internet access. However, an HTTP proxy can be configured to facilitate this communication if direct access is unavailable.
 
-It is not possible to add an Event ID. 
+### 3. **Can the Sekoia.io Endpoint Agent work in a Docker environment?**
 
-For each Event ID, we format the event to follow our Taxonomy (ECS norm) so we cannot add them on the fly.
+The Sekoia.io Endpoint Agent is not specifically designed for Docker environments. Operations like installation and service status verification might not function correctly in Docker. Additionally, there is no version of the agent designed for use as a Kubernetes DaemonSet.
 
-However, we welcome any suggestions of Event IDs to be collected that seems relevant.
+### 4. **What happens if the Internet connection is lost?**
 
-## Retrieve events linked to blocked accounts on AD
+If the Internet connection is lost, the agent stores logs locally on disk, up to 100 MB. Once this limit is reached, the oldest logs are overwritten. When the connection is restored, the oldest logs are sent to Sekoia.io first.
 
-**Is Sekoia.io Agent allowed to retrieve events linked to blocked accounts on AD?**
+### 5. **Can the Sekoia.io Endpoint Agent be configured with an HTTP proxy?**
 
-It is not possible at the moment.
-This subject has been identified for improvement of Sekoia.io Agent integration with AD.
+Yes, the agent supports HTTP proxy for its HTTPS requests. You can configure the proxy by modifying the `config.yaml` file. Refer to the documentation for more details on proxy configuration.
 
-## Sekoia.io Agent version 0.2.8
+### 6. **How often are events sent to Sekoia.io?**
 
-**What brings the new Sekoia.io Agent version 0.2.8 in comparison to other versions?**
-The Agent 0.2.8 will bring the following elements:
+Events are sent to Sekoia.io when one of the following conditions is met:
+- A batch contains 250 events.
+- 5 seconds have elapsed since the first event was added to the batch.
 
-   - Automatic update of the Agent
-   - Improvement of Integration with rules produced by Sekoia.io analysts
-   - Collect new event types
+### 7. **Which operating systems are supported by the Sekoia.io Endpoint Agent?**
 
-## DNS logs
+The agent is compatible with the following 64-bit operating systems:
+- **Windows**
+- **Linux**
+- **MacOS**
 
-**Are DNS logs collected by Sekoia.io agent?**
+For a detailed list of supported versions, please refer to [this link](/integration/categories/endpoint/sekoiaio.md).
 
-Yes, DNS logs are collected by the Agent in the Windows version through system calls. It's not available in the Linux version at the moment. 
+### 8. **Can the agent be uninstalled?**
 
-## Sekoia.io Agent and Sysmon
+Yes, the agent can be uninstalled. Refer to [this page](/integration/categories/endpoint/sekoiaio.md#uninstall) for the command corresponding to your operating system. For versions earlier than 0.3.0, you must stop and uninstall the service before deleting the agent’s directories. Detailed instructions are available in the [documentation](/integration/categories/endpoint/sekoiaio.md).
 
-**Will there be any duplicates when using SEKOIA Agent and Sysmon? For instance, what happens if I search for events in my Sysmon configuration that are already sent by the Sekoia.io agent?**
+### 9. **How does the automatic update feature of the agent work?**
 
-For some events, the Agent will ignore Sysmon events as it will already cover the same scope and in the same way. Here are some examples:
+By default, the agent updates automatically. To disable this feature, use the `--disable-auto-update` option during installation. To update manually, execute the appropriate command for your operating system, available [here](/integration/categories/endpoint/sekoiaio.md#manual-update) .
 
+### 10. **How to diagnose a problem with the agent installation?**
+
+To diagnose issues, check the agent’s logs located at:
+- **Windows** (default): `C:\Windows\System32\config\systemprofile\AppData\Local\SEKOIA.IO\EndpointAgent\logs\agent.log`
+- **Linux/MacOS** (default): `/var/log/endpoint-agent/agent.log`
+
+These logs provide valuable information for troubleshooting. If needed, contact Sekoia.io support for assistance.
+
+---
+
+## Specific Features and Use Cases
+
+### 1. **Can the Sekoia.io Endpoint Agent (Windows) retrieve events linked to file accesses such as denied access or modifications?**
+
+The agent tracks information on file creation and deletion but not for denied or modified access. However, an event might be linked to a process attempting to access a file.
+
+### 2. **Is it possible to add a Windows Event ID to a file loaded by the Sekoia.io Agent?**
+
+No, it is not possible to add an Event ID. Each Event ID is formatted to align with Sekoia.io’s Taxonomy (ECS norm). However, suggestions for additional Event IDs to collect are welcome.
+
+### 3. **Can the agent retrieve events linked to blocked accounts in Active Directory (AD)?**
+
+Not at this time. This capability has been identified as an area for improvement in the agent’s integration with AD.
+
+### 4. **What are the new features in Sekoia.io Agent version 0.2.8?**
+
+Version 0.2.8 introduces:
+- Automatic agent updates
+- Improved integration with rules produced by Sekoia.io analysts
+- Support for new event types
+
+### 5. **Does the Sekoia.io Endpoint Agent collect DNS logs?**
+
+Yes, DNS logs are collected in the Windows version via system calls. This feature is not currently available in the Linux version.
+
+### 6. **Will there be duplicate events when using the Sekoia.io Agent and Sysmon?**
+
+For some events, the agent ignores Sysmon events as it already covers the same scope. Examples include:
 - sysmonProcessCreation
 - sysmonNetworkConnection
 - sysmonProcessTerminated
@@ -52,21 +90,20 @@ For some events, the Agent will ignore Sysmon events as it will already cover th
 - sysmonFileDelete
 - sysmonFileDeleteDetected
 
-## Sekoia.io Agent and ANSSI recommendations
+### 7. **Does the agent comply with ANSSI recommendations without Sysmon?**
 
-**Do you confirm that Sekoia.io Agent (without Sysmon) will apply all SEKOIA rules and ANSSI recommendations? Is it an ongoing subject?**
+We aim to cover all ANSSI recommendations and SEKOIA rules comprehensively in future beta versions.
 
-We plan to cover all the ANSSI recommendations and SEKOIA rules to the greatest extent in the next beta.
+### 8. **Will the Sysmon option be removed?**
 
-## Remove Sysmon option 
+We plan to continue supporting Sysmon for users who wish to use it.
 
-**Do you plan to remove the possibility to select Sysmon option or will we allow users to add a Sysmon configuration?**
+### 9. **Is the agent suitable for monitoring Docker or Kubernetes hosts?**
 
-We most probably will support Sysmon for users who wish to continue using it. 
+The agent, based on Auditd, effectively monitors system activities on Linux hosts, including those running Docker or Kubernetes. While it captures some container-related activities (e.g., DNS requests or file accesses on the host), it is not designed specifically for Docker or Kubernetes and may lack the granularity of specialized tools.
 
-## Is the agent useful for monitoring a Docker or Kubernetes host?
+---
 
-The Sekoia agent, based on Auditd, is designed to effectively monitor system activities across various Linux technologies, including machines hosting Docker or Kubernetes. While this agent focuses on system logs from the host machine, it can observe some data related to executions within containers. However, it is not specifically tailored to manage Docker or Kubernetes technologies directly and won't capture specific application logs. Consequently, it may provide a lower level of detail compared to specialized tools designed for these environments.
-
-For instance, if a Docker container makes a DNS request or accesses a file on the host, these activities will be captured by the agent just as they would for any application executed on the host. 
+### **Useful Links:**
+- [Sekoia.io Endpoint Agent Documentation](/integration/categories/endpoint/sekoiaio.md)
 

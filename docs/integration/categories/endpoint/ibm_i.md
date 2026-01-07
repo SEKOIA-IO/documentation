@@ -7,16 +7,12 @@ type: intake
 IBM iSeries (AS/400) is a robust, scalable family of midrange business computers running the IBM i operating system, known for its integrated DB2 database and strong security features.
 
 - **Vendor**: IBM
-- **Plan**: Defend Prime
 - **Supported environment**: On prem
 - **Version Compatibility**: 7.5
 - **Detection based on**: Telemetry
 
 !!! warning
 	Important - This integration requires the installation of Syslog Reporting Manager on IBM i, for which a fee is charged.
-
-!!! warning
-    Important note - This format is currently in beta. We highly value your feedback to improve its performance.
 
 ## Supported versions
 
@@ -71,7 +67,7 @@ Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a n
 
 ## Send logs to Sekoia.io
 
-Please consult the [Syslog Forwarding](/integration/ingestion_methods/syslog/sekoiaio_forwarder) documentation to forward these logs to Sekoia.io.
+Please consult the [Syslog Forwarding](/integration/ingestion_methods/syslog/sekoiaio_forwarder.md) documentation to forward these logs to Sekoia.io.
 
 {!_shared_content/operations_center/integrations/generated/fc03f783-5039-415e-915a-a4b010d9a872_sample.md!}
 

@@ -95,7 +95,7 @@ The following Sekoia.io built-in rules match the intake **Fortinet FortiProxy**.
 
 ??? abstract "Correlation Potential DNS Tunnel"
     
-    Detects domain name which is longer than 95 characters. Long domain names are distinctive of DNS tunnels.
+    Detects domain name which is longer than 62 characters and requested at least 50 times in a 10 minutes range time. Long domain names are distinctive of DNS tunnels.
     
     - **Effort:** advanced
 
@@ -127,7 +127,7 @@ The following Sekoia.io built-in rules match the intake **Fortinet FortiProxy**.
     
     Discord is a messaging application. It allows users to create their own communities to share messages and attachments. Those attachments have little to no overview and can be downloaded by almost anyone, which has been abused by attackers to host malicious payloads.
     
-    - **Effort:** intermediate
+    - **Effort:** advanced
 
 ??? abstract "Download Files From Non-Legitimate TLDs"
     
@@ -159,29 +159,11 @@ The following Sekoia.io built-in rules match the intake **Fortinet FortiProxy**.
     
     - **Effort:** master
 
-??? abstract "HTA Infection Chains"
-    
-    Detect the creation of a ZIP file and an HTA file as it is often used in infection chains. Furthermore it also detects the use of suspicious processes launched by explorer.exe combined with the creation of an HTA file, since it is also often used in infection chains (LNK - HTA for instance).
-    
-    - **Effort:** intermediate
-
-??? abstract "HTML Smuggling Suspicious Usage"
-    
-    Based on several samples from different botnets, this rule aims at detecting HTML infection chain by looking for HTML created files followed by suspicious files being executed.
-    
-    - **Effort:** intermediate
-
 ??? abstract "HackTools Suspicious Names"
     
     Quick-win rule to detect the default process names or file names of several HackTools.
     
-    - **Effort:** elementary
-
-??? abstract "ISO LNK Infection Chain"
-    
-    Detection of an ISO (or any other similar archive file) downloaded file, followed by a child-process of explorer, which is characteristic of an infection using an ISO containing an LNK file. For events with `host.name`.
-    
-    - **Effort:** intermediate
+    - **Effort:** advanced
 
 ??? abstract "Koadic MSHTML Command"
     
@@ -227,7 +209,7 @@ The following Sekoia.io built-in rules match the intake **Fortinet FortiProxy**.
 
 ??? abstract "Potential DNS Tunnel"
     
-    Detects domain name which is longer than 95 characters. Long domain names are distinctive of DNS tunnels.
+    Detects domain name which is longer than 62 characters. Long domain names are distinctive of DNS tunnels.
     
     - **Effort:** advanced
 
@@ -338,9 +320,3 @@ The following Sekoia.io built-in rules match the intake **Fortinet FortiProxy**.
     Detects wceaux.dll creation while Windows Credentials Editor (WCE) is executed.
     
     - **Effort:** intermediate
-
-??? abstract "ZIP LNK Infection Chain"
-    
-    Detection of an ZIP download followed by a child-process of explorer, followed by multiple Windows processes.This is widely used as an infection chain mechanism.
-    
-    - **Effort:** advanced

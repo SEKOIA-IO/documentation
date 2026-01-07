@@ -7,7 +7,6 @@ type: intake
 Trellix Network Security is an effective cyberthreat protection solution that helps your organization minimize the risk of costly breaches by accurately detecting and immediately stopping advanced, targeted, and other evasive attacks hiding in internet traffic.
 
 - **Vendor**: Trellix
-- **Plan**: Defend Core & Defend Prime
 - **Supported environment**: On prem
 - **Version compatibility**: 10.0.1
 - **Detection based on**: Telemetry
@@ -41,7 +40,7 @@ You should have:
 Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a new intake from the format Trellix Network Security.
 
 ### Configure the Rsyslog server
-Please consult the [Rsyslog Transport](/integration/ingestion_methods/syslog/overview) documentation to forward these logs to Sekoia.io.
+Please consult the [Rsyslog Transport](/integration/ingestion_methods/syslog/overview.md) documentation to forward these logs to Sekoia.io.
 
 {!_shared_content/operations_center/integrations/generated/bae128bb-98c6-45f7-9763-aad3451821e5_sample.md!}
 

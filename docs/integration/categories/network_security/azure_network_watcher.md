@@ -6,10 +6,13 @@ type: intake
 Azure Network Watcher provides tools to monitor, diagnose, view metrics, and enable or disable logs for resources in an Azure virtual network. It also allows to log information about IP traffic flowing through a network security group: NSG flow logs.
 
 - **Vendor**: Microsoft Azure
-- **Plan**: Defend Prime
 - **Supported environment**: SaaS
 - **Detection based on**: Telemetry
 - **Supported application or feature**: Host network interface, Netflow/Enclave netflow, Network device logs, Network protocol analysis
+
+!!! warning
+    Network security group (NSG) flow logs will be retired on September 30, 2027. From June 30, 2025, Microsoft will no longer accept new configurations or updates to existing NSG flow logs. It is recommended to transition to [Azure Network Watcher Virtual Network flow logs](azure_network_watcher_flow_logs.md) for continued flow logging capabilities.
+    see [Microsoft official documentation](https://learn.microsoft.com/en-us/azure/network-watcher/nsg-flow-logs-overview)
 
 ## Configure
 Please contact your support to discuss about the network security group to monitor in your Azure infrastructure in order to find the appropriate solution to forward your logs to Sekoia.io.

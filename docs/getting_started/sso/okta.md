@@ -4,8 +4,9 @@ In order to configure Okta with Sekoia.io, the following steps must be done:
 
 1. Create a new application in your Okta admin console
 2. Connect to Sekoia.io and add a new domain that belongs to your community and wait for its validation.
-3. Configure OpenID Connect in Sekoia.io. (see associated documentation [Single Sign-On With OpenID Connect](/getting_started/sso/openid_connect))
+3. Configure OpenID Connect in Sekoia.io. (see associated documentation [Single Sign-On With OpenID Connect](/getting_started/sso/openid_connect.md))
 
+{!_shared_content/sso_multiple_business.md!}
 
 ## Create a new application in Okta
 
@@ -24,8 +25,8 @@ Once your app has been created:
 
 1. Save the "Client ID" & "Client secret" for later use.
 2. Save your Okta domain. You can find this by navigating to the user menu in the top right corner of the Okta interface, and it will be listed under your email address. You will need it to provide it in Sekoia.io "Authentication provider base URL" field: `https://${yourOktaDomain}/`
- 
- !!! note 
+
+ !!! note
      You can find more info on Okta documentation: [Composing your base URL](https://developer.okta.com/docs/reference/api/oidc/#composing-your-base-url). Be aware that, your Okta domain is not the domain of the "Okta Admin Console".
 
 You are ready to input your configuration to Sekoia.io.
@@ -46,7 +47,7 @@ When your users login to Okta, the Sekoia.io app can be displayed. This feature 
 
 Okta can be configured to restrict which users are allowed to access Sekoia.io.
 
-To restrict access to a user or a group of users, follow these steps: 
+To restrict access to a user or a group of users, follow these steps:
 
 1. In "Applications" > "Applications": select your application
 2. In "Assignments" > "Settings icon" >  "Assign": you can select "Assign to People" or "Assign to Groups"

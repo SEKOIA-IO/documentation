@@ -7,7 +7,6 @@ type: intake
 Pulse Connect Secure is an SSL VPN solution for remote and mobile users.
 
 - **Vendor**: Pulse Secure
-- **Plan**: TODO Defend Core / Defend Prime
 - **Supported environment**: On Premise
 - **Version compatibility, if applicable**:
 - **Detection based on**: VPN Logs
@@ -16,9 +15,6 @@ Pulse Connect Secure is an SSL VPN solution for remote and mobile users.
 ## High-Level Architecture Diagram
 
 - **Type of integration**: Outbound (PUSH to Sekoia.io)
-- **Schema**
-
-![pulse_connect_secure_architecture](/assets/integration/pulse_connect_secure_architecture.png)
 
 !!! Alternative
 
@@ -67,13 +63,15 @@ This setup guide will show you how to forward your Pulse Connect Secure logs to 
    - Please refer to the documentation of Pulse Secure Connect to forward events to your syslog concentrator.
 
 3. **Forward Logs to Sekoia.io:**
-   - The reader can consult the [Syslog Forwarding](/integration/ingestion_methods/syslog/sekoiaio_forwarder) documentation to forward these logs to Sekoia.io.
+   - The reader can consult the [Syslog Forwarding](/integration/ingestion_methods/syslog/sekoiaio_forwarder.md) documentation to forward these logs to Sekoia.io.
 
 ### Instruction on Sekoia
 
 {!_shared_content/integration/intake_configuration.md!}
 
 {!_shared_content/integration/forwarder_configuration.md!}
+
+{!_shared_content/operations_center/integrations/generated/7a12aa3b-ec73-4ebb-8fb3-f7c543fd84a5_sample.md!}
 
 ## Detection section
 

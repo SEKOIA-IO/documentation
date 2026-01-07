@@ -6,7 +6,6 @@ type: intake
 Tanium solutions manage and protect networks and endpoints.
 
 - **Vendor**: Tanium
-- **Plan**: Defend Prime
 - **Supported environment**: On Premise
 - **Version compatibility**:7.5.6
 - **Detection based on**: Telemetry

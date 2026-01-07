@@ -7,7 +7,6 @@ type: intake
 Auditbeat communicates directly with the Linux audit framework, collects the same data as auditd, then the data can be stored in JSON inside a log file before being sent to a log concentrator.
 
 - **Vendor**: Elastic
-- **Plan**: Defend Prime
 - **Supported environment**: On Premise
 - **Detection based on**: Telemetry
 - **Supported application or feature**: System Monitoring and Security
@@ -88,7 +87,9 @@ auditbeat.modules:
 
   # Load audit rules
   audit_rules: |
-    ## Example of audit rules here. Comment what is NOT needed
+    ## Example of audit rules here. 
+    ## Comment what is NOT needed.
+    ## Add the audit rules needed, rules examples are available here: https://github.com/SEKOIA-IO/auditd
     ## Executions.
     -a always,exit -F arch=b64 -S execve,execveat -k exec
 
@@ -232,7 +233,7 @@ $IncludeConfig /etc/rsyslog.d/*.conf
 ```bash
 module(load="imfile" PollingInterval="10")
 input(type="imfile"
-      File="/var/log/auditbeat/auditbeat*.ndjson"
+      File="/tmp/auditbeat/auditbeat*.ndjson"
       Tag="linux_auditbeat"
       Severity="info"
       Facility="local7"

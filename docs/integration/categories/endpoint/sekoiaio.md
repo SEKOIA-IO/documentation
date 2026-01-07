@@ -23,6 +23,7 @@ The Endpoint Detection Agent supports the following operating systems, **on 64-b
     * Windows Server 2016
     * Windows Server 2019
     * Windows Server 2022
+    * Windows Server 2025
 
 === "Linux"
 
@@ -36,9 +37,6 @@ The Endpoint Detection Agent supports the following operating systems, **on 64-b
     * Redhat 7 and newer
 
 === "MacOs"
-
-    !!! note
-        The Sekoia.io agent is currently in beta for Mac OS.
 
     * macOS 13 Ventura and newer
 
@@ -55,13 +53,16 @@ The Sekoia.io Endpoint Agent uses the HTTPS protocol to send its events and has 
     * <https://api.sekoia.io/>
 
 === "FRA2"
-    * <https://fra2.app.sekoia.io/>
+    * <https://app.fra2.sekoia.io/>
 
 === "MCO1"
-    * <https://mco1.app.sekoia.io/>
+    * <https://app.mco1.sekoia.io/>
 
 === "UAE1"
     * <https://app.uae1.sekoia.io/>
+
+=== "USA1"
+    * <https://app.usa1.sekoia.io/>
 
 
 ## Installation
@@ -88,7 +89,7 @@ The Endpoint Detection Agent is easy to install on Windows or Linux systems once
     Execute the following commands **as an administrator**:
 
     ```shell
-    agent.exe install --intake-key <INTAKE_KEY>
+    .\agent-latest.exe install --intake-key <INTAKE_KEY>
     ```
 
     To make sure the agent is successfully installed as a service, run the following command:
@@ -111,7 +112,7 @@ The Endpoint Detection Agent is easy to install on Windows or Linux systems once
     ```
 
     !!! note
-        Stop the auditd service to enable the agent to work properly. The disable command is used to allow persistence of the configuration.  
+        Stop the auditd service to enable the agent to work properly. The disable command is used to allow persistence of the configuration.
 
     Now that `auditd` is disabled, you can install the agent:
 
@@ -134,7 +135,7 @@ The Endpoint Detection Agent is easy to install on Windows or Linux systems once
 
 
         # Stop listening to audit events
-        systemctl stop systemd-journald-audit.socket 
+        systemctl stop systemd-journald-audit.socket
 
         # Disable it to avoid future start
         systemctl disable systemd-journald-audit.socket
@@ -198,7 +199,7 @@ For example, if the agent must communicate with `fra2`, run the following comman
 === "Windows"
 
     ```shell
-    agent.exe install --intake-key <INTAKE_KEY> --region fra2
+    .\agent-latest.exe install --intake-key <INTAKE_KEY> --region fra2
     ```
 
 === "Linux"
@@ -212,6 +213,89 @@ For example, if the agent must communicate with `fra2`, run the following comman
     ```shell
     sudo /Applications/SekoiaEndpointAgent.app/Contents/MacOs/SekoiaEndpointAgent install --intake-key <INTAKE_KEY> --region fra2
     ```
+#### Enabling Host Hygiene Collection
+**Note:** Collection of Hygiene telemetry are a feature of the Reveal module.
+
+Host Hygiene collection can be enabled during the initial installation of the Sekoia Agent or by modifying the agent's configuration file.
+
+##### Method 1: During Agent Installation
+
+To enable Host Hygiene collection during the agent installation, append the `--compliance-collector` flag to your installation command.
+
+For example,
+
+=== "Windows"
+
+    ```shell
+    .\agent-latest.exe install --intake-key <INTAKE_KEY> --compliance-collector
+    ```
+
+=== "Linux"
+
+    ```shell
+    ./agent-latest install --intake-key <INTAKE_KEY> ---compliance-collector
+    ```
+
+=== "MacOs"
+
+    ```shell
+    sudo /Applications/SekoiaEndpointAgent.app/Contents/MacOs/SekoiaEndpointAgent install --intake-key <INTAKE_KEY> --compliance-collector
+    ```
+
+##### Method 2: Editing the Configuration File
+
+If the Sekoia Agent is already installed, you can enable Host Hygiene collection by editing its configuration file. Locate the configuration file and add `compliance-collector` to the `roles` section.
+
+=== "Windows"
+
+    ```shell
+    C:\Windows\System32\config\systemprofile\AppData\Local\Sekoia.io\EndpointAgent\config.yaml
+    ```
+
+=== "Linux"
+
+    ```shell
+    /etc/endpoint-agent/config.yaml
+    ```
+
+=== "MacOs"
+
+    ```shell
+    /etc/endpoint-agent/config.yaml
+    ```
+
+Add the following configuration:
+
+    ```yaml
+    roles:
+    - event-collector
+    - compliance-collector
+    ```
+
+Once the configuration file is modified, restart the agent:
+
+=== "Windows"
+
+    Execute the following command **as an administrator**:
+
+    ```
+    Restart-Service SEKOIAEndpointAgent
+    ```
+
+=== "Linux"
+
+    Execute the following command:
+
+    ```
+    sudo systemctl restart SEKOIAEndpointAgent.service
+    ```
+
+=== "MacOs"
+
+    Execute the following command:
+
+    ```
+    sudo /Applications/SekoiaEndpointAgent.app/Contents/MacOs/SekoiaEndpointAgent service restart
 
 ### Update
 
@@ -228,7 +312,7 @@ To update the agent manually, follow the instructions specific to your OS.
     Execute the following command **as an administrator**:
 
     ```shell
-    $ProgramFiles\EndpointAgent\agent.exe update
+    $ProgramFiles\EndpointAgent\agent-latest.exe update
     ```
 
     Where `$ProgramFiles` refers to the path to the `Program Files` folder, usually `c:\Program Files`.
@@ -238,7 +322,7 @@ To update the agent manually, follow the instructions specific to your OS.
     The following command must be executed:
 
     ```shell
-    sudo /opt/endpoint-agent update
+    sudo /opt/endpoint-agent/agent update
     ```
 
 === "MacOs"
@@ -262,13 +346,13 @@ To uninstall the agent, follow the instructions specific to your OS.
     You can either:
 
     * Download the latest version of the agent and use this binary to perform the uninstall
-    * Copy the running agent located at `$ProgramFiles\EndpointAgent\agent.exe` 
+    * Copy the running agent located at `$ProgramFiles\EndpointAgent\agent.exe`
       * `$ProgramFiles` refers to the path to the `Program Files` folder, usually `c:\Program Files`
 
     Execute the following command **as an administrator**:
 
     ```shell
-    agent.exe uninstall
+    .\agent-latest.exe uninstall
     ```
 === "Linux"
 
@@ -296,8 +380,8 @@ To uninstall the agent, follow the instructions specific to your OS.
     To remove the service, execute the following commands **as an administrator**:
 
     ```shell
-    agent.exe -service stop
-    agent.exe -service uninstall
+    .\agent-latest.exe -service stop
+    .\agent-latest.exe -service uninstall
     ```
 
     Then, remove the folders created by the agent:
@@ -305,7 +389,7 @@ To uninstall the agent, follow the instructions specific to your OS.
       * `$ProgramFiles\EndpointAgent`
         * Where `$ProgramFiles` refers to the path to the `Program Files` folder, usually `c:\Program Files`
       * `$ProgramData\EndpointAgent`
-        * Where `$ProgramData` refers to the path to the `ProgramData` folder, usually `c:\ProgramData` 
+        * Where `$ProgramData` refers to the path to the `ProgramData` folder, usually `c:\ProgramData`
 
 === "Linux"
 
@@ -324,9 +408,6 @@ To uninstall the agent, follow the instructions specific to your OS.
     ```
 
 ## Collect logs in files
-
-!!! WARNING
-    This feature is currently in beta.
 
 !!! INFO
     This feature allows you to monitor and collect logs from applications like NGINX. The agent automatically collects logs for all system-related events.
@@ -350,13 +431,13 @@ If you want to enable this feature, follow these steps:
         ```
 
     === "MacOs"
-    
+
         ```
         /etc/endpoint-agent/config.yaml
         ```
 
 2. Add the following configuration:
-	
+
 	```yaml
 	logfiles:
 	    - filepath: /var/log/nginx/access.log  # Path to the file to watch
@@ -368,9 +449,9 @@ If you want to enable this feature, follow these steps:
 
     For example, an intake key from the NGINX format is required for watching NGINX access logs.
 
-If you want to collect multiple source files on the host, just add a new entry in the configuration. 
+If you want to collect multiple source files on the host, just add a new entry in the configuration.
 For instance:
-	
+
 	```yaml
 	logfiles:
 	    - filepath: /var/log/nginx/access.log  # Path to the file to watch
@@ -410,23 +491,364 @@ Once the configuration file is modified, restart the agent:
 
 ### Using file patterns
 
-It is possible to specify patterns in the `filepath` attribute to match multiple files. 
+It is possible to specify patterns in the `filepath` attribute to match multiple files.
 For example `/var/log/nginx/*.log` will match all the log files located under `/var/log/nginx/`.
 
 It is also possible to restrict the allowed matching characters by specifying a range between brackets.
 For example, the pattern `/var/log/nginx/*[a-z].log` will match `/var/log/nginx/access.log` but not `/var/log/nginx/access.2023-02-14.log`.
-This kind of pattern is particularly useful when log rotation is enabled. 
+This kind of pattern is particularly useful when log rotation is enabled.
 
 !!! note
 	The recursive globstart pattern `**` is currently not supported
 
 ## Retention
 
-The agent sends the host logs through the Internet. The agent saves logs locally on disk in a non-customizable 100 MB memory space if the Internet connection is lost. Once the logs exceed the buffer size, the older logs are replaced by newer ones. When the Internet connection is restored, the older logs are sent to Sekoia.io first.
+The agent sends the host logs through the Internet. The agent saves logs locally on disk in a local buffer if the Internet connection is lost. Once the logs exceed the buffer size, the older logs are replaced by newer ones. When the Internet connection is restored, the older logs are sent to Sekoia.io first.
+
+By default the local buffer size is set to 100 MB. You can change this value by editing the `EventBufferCacheSize` option in the configuration file.
+To do it, follow these steps:
+
+1. Edit the configuration file at:
+
+    === "Windows"
+
+        ```
+        C:\Windows\System32\config\systemprofile\AppData\Local\Sekoia.io\EndpointAgent\config.yaml
+        ```
+
+    === "Linux"
+
+        ```
+        /etc/endpoint-agent/config.yaml
+        ```
+
+    === "MacOs"
+
+        ```
+        /etc/endpoint-agent/config.yaml
+        ```
+
+
+2. Add or modify the following configuration:
+    ```yaml
+    EventBufferCacheSize: 200  # Size in MB of the on-disk cache for events when no network connection is available
+    ```
+
+Once the configuration file is modified, restart the agent:
+
+=== "Windows"
+
+    Execute the following command **as an administrator**:
+
+    ```
+    Restart-Service SEKOIAEndpointAgent
+    ```
+
+=== "Linux"
+
+    Execute the following command:
+
+    ```
+    sudo systemctl restart SEKOIAEndpointAgent.service
+    ```
+
+=== "MacOs"
+
+    Execute the following command:
+
+    ```
+    sudo /Applications/SekoiaEndpointAgent.app/Contents/MacOs/SekoiaEndpointAgent service restart
+    ```
+
+## Events and fields
+
+### Ignoring events
+
+!!! INFO
+    This feature is currently in beta
+
+The agent allows you to ignore specific events based on their field values.
+To achieve this, it relies on the concept of optimization rules that we also have in the platform.
+
+An optimization rule can be created:
+
+- Locally on the agent by editing its configuration file
+- Centrally from the Sekoia.io platform
+
+#### Optimization rule structure
+
+Each optimization rule is composed of:
+
+- An UUID defining the unique identifier of the rule.
+- An action code defining the action to apply.
+    - Inside the agent, only the action to ignore an event is supported (`action: 1`).
+- A list of filters defining the conditions to match an event. All filters must match for the rule to match.
+  Each filter is composed of:
+    - A field name: `field`
+    - An operator: `operator`
+    - A value: `value`
+
+!!! note
+    String comparisons are case-sensitive.
+
+The supported operators are:
+
+| Operator code | Description                                           | Field type |
+|---------------|-------------------------------------------------------|------------|
+| ==            | The field value is equal to the value                 | all        |
+| !=            | The field value is not equal to the value             | all        |
+| contains      | The field value contains the value                    | string     |
+| not contains  | The field value does not contain the value            | string     |
+| >             | The field value is greater than the value             | number     |
+| >=            | The field value is greater than or equal to the value | number     |
+| <             | The field value is less than the value                | number     |
+| <=            | The field value is less than or equal to the value    | number     |
+
+If multiple optimization rules match the same event, they are applied sequentially following their order of creation.
+
+Ignored events are reported in the agent’s health events.
+Each rule’s properties include a counter for the number of ignored events.
+
+Here is an example of an optimization rule ignoring events where the process name is `notepad.exe` and the file extension is `txt`:
+
+```yaml
+- uuid: 30bb044d-f7ba-448a-81c2-7f3c41a1fbf9
+  action: 1
+  filters:
+    - field: process.name
+      operator: ==
+      value: "notepad.exe"
+    - field: file.extension
+      operator: ==
+      value: "txt"
+```
+
+!!! note
+    The performance impact of optimization rules is negligible.
+    The agent is optimized to apply them efficiently with minimal CPU and memory overhead.
+
+#### Local optimization rules
+
+To define optimization rules locally on the agent, they must be defined in the agent's configuration file.
+
+!!! WARNING
+    If the YAML configuration file is invalid:
+
+    - If it is valid YAML but contains invalid optimization rules: the agent logs an error and ignores the rules.
+    - If it is not valid YAML, the agent logs an error and exits.
+
+
+1. Edit the configuration file at:
+
+    === "Windows"
+
+        ```
+        C:\Windows\System32\config\systemprofile\AppData\Local\Sekoia.io\EndpointAgent\config.yaml
+        ```
+
+    === "Linux"
+
+        ```
+        /etc/endpoint-agent/config.yaml
+        ```
+
+    === "MacOs"
+
+        ```
+        /etc/endpoint-agent/config.yaml
+        ```
+
+2. Add the following configuration:
+
+    ```yaml
+    OptimizationRules:
+      - uuid: "30bb044d-f7ba-448a-81c2-7f3c41a1fbf9"
+        action: 1
+        filters:
+          - field: process.name
+            operator: ==
+            value: "notepad.exe"
+          - field: file.extension
+            operator: ==
+            value: "txt"
+    ```
+
+Once the configuration file is modified, restart the agent:
+
+=== "Windows"
+
+    Execute the following command **as an administrator**:
+
+    ```
+    Restart-Service SEKOIAEndpointAgent
+    ```
+=== "Linux"
+    Execute the following command:
+
+    ```
+    sudo systemctl restart SEKOIAEndpointAgent.service
+    ```
+=== "MacOs"
+    Execute the following command:
+    ```
+    sudo /Applications/SekoiaEndpointAgent.app/Contents/MacOs/SekoiaEndpointAgent service restart
+    ```
+
+#### Remote optimization rules
+
+Remote optimization rules can be defined centrally from the Sekoia.io platform.
+
+!!! INFO
+    To manage optimization rules in the platform the user must have the permission to manage intakes.
+
+##### Allow the agent to fetch optimization rules
+
+The first step to use remote optimization rules is to allow the agent to fetch them from the platform.
+To do so the `RemoteOptimizationRules` option must be set to `true` in the agent's configuration file.
+
+1. Edit the configuration file at:
+
+    === "Windows"
+
+        ```
+        C:\Windows\System32\config\systemprofile\AppData\Local\Sekoia.io\EndpointAgent\config.yaml
+        ```
+
+    === "Linux"
+
+        ```
+        /etc/endpoint-agent/config.yaml
+        ```
+
+    === "MacOs"
+
+        ```
+        /etc/endpoint-agent/config.yaml
+        ```
+
+2. Add the following configuration:
+    ```yaml
+    RemoteOptimizationRules: true
+    ```
+
+Once the configuration file is modified, restart the agent:
+=== "Windows"
+
+    Execute the following command **as an administrator**:
+
+    ```
+    Restart-Service SEKOIAEndpointAgent
+    ```
+=== "Linux"
+    Execute the following command:
+
+    ```
+    sudo systemctl restart SEKOIAEndpointAgent.service
+    ```
+=== "MacOs"
+    Execute the following command:
+    ```
+    sudo /Applications/SekoiaEndpointAgent.app/Contents/MacOs/SekoiaEndpointAgent service restart
+    ```
+
+Once enabled:
+
+- The agent fetches remote rules at startup and then every hour.
+- If the agent is offline, it retries when connectivity is restored using cached rules.
+- Local and remote rules are merged — both are applied.
+
+The agent logs which optimization rules it applies.
+These logs are sent to Sekoia.io, allowing analysts to audit rule versions and deployments across agents.
+
+
+
+##### Create optimization rules in the platform
+
+It is possible to create an optimization rule that will be applied to:
+
+- All the agents from the community
+    - When creating the rule `format_uuid` must be set to the agent's format UUID: `250e4095-fa08-4101-bb02-e72f870fcbd1`
+- A specific agent intake
+    - When creating the rule `intake_uuid` must be set to the intake UUID and the format UUID to the agent's format UUID: `250e4095-fa08-4101-bb02-e72f870fcbd1`
+- A specific agent
+    - When creating the rule `agent_id` must be set to the agent's ID and the format UUID to the agent's format UUID: `250e4095-fa08-4101-bb02-e72f870fcbd1`
+
+For now there is no UI to create optimization rules in the platform. You must use the API to create them.
+You can refer to the [API documentation](/developer/api.md#/Configuration/Intakes/post_optimization_rules_resource) to create optimization rules.
+
+Example of an optimization rule created from the platform:
+
+Send a `POST` to `https://api.sekoia.io/v1/sic/conf/intakes/optimization_rules/` with the following payload:
+
+=== "For all agents from the community"
+
+    ```json
+    {
+      "format_uuid": "250e4095-fa08-4101-bb02-e72f870fcbd1",
+      "description": "Ignore notepad txt files",
+      "action": 1,
+      "filters": [
+        {
+          "field": "process.name",
+          "operator": "==",
+          "value": "notepad.exe"
+        },
+        {
+          "field": "file.extension",
+          "operator": "==",
+          "value": "txt"
+        }
+      ]
+    }
+    ```
+=== "For a specific intake"
+
+    ```json
+    {
+      "intake_uuid": "your_intake_uuid",
+      "format_uuid": "250e4095-fa08-4101-bb02-e72f870fcbd1",
+      "description": "Ignore notepad txt files",
+      "action": 1,
+      "filters": [
+        {
+          "field": "process.name",
+          "operator": "==",
+          "value": "notepad.exe"
+        },
+        {
+          "field": "file.extension",
+          "operator": "==",
+          "value": "txt"
+        }
+      ]
+    }
+    ```
+=== "For a specific agent"
+    ```json
+    {
+      "agent_id": "your_agent_id",
+      "format_uuid": "250e4095-fa08-4101-bb02-e72f870fcbd1",
+      "description": "Ignore notepad txt files",
+      "action": 1,
+      "filters": [
+        {
+          "field": "process.name",
+          "operator": "==",
+          "value": "notepad.exe"
+        },
+        {
+          "field": "file.extension",
+          "operator": "==",
+          "value": "txt"
+        }
+      ]
+    }
+    ```
+
 
 {!_shared_content/operations_center/integrations/generated/250e4095-fa08-4101-bb02-e72f870fcbd1.md!}
 
-## Events examples
+### Events examples
 
 Here's a non-exhaustive list of events the agent can detect:
 
@@ -522,8 +944,8 @@ The proxy URL should follow the format `http://user:pass@host:port`.
     #### Configure Security log auditing
 
     A proper security log auditing configuration will allow the agent to collect different security-related events.
-    
-    This document can be followed for an optimal configuration: [Configuring Security Log Audit Settings](https://github.com/Yamato-Security/EnableWindowsLogSettings/blob/main/ConfiguringSecurityLogAuditPolicies).
+
+    This document can be followed for an optimal configuration: [Configuring Security Log Audit Settings](https://github.com/Yamato-Security/EnableWindowsLogSettings/blob/main/ConfiguringSecurityLogAuditPolicies.md).
 
 === "Linux"
 
@@ -532,13 +954,13 @@ The proxy URL should follow the format `http://user:pass@host:port`.
     You can collect DNS resolutions events by enabling it in the agent configuration file:
 
     1. Edit the configuration file at:
-	
+
 	    ```
 	    /etc/endpoint-agent/config.yaml
 	    ```
 
     2. Add the following configuration:
-        
+
         ```yaml
         EnableDNSResolutions: true
         ```
@@ -553,24 +975,24 @@ The proxy URL should follow the format `http://user:pass@host:port`.
 
 To avoid having the agent computing hashes for files located under a specific directory the `HashesExcludedPaths` option can be added to the agent configuration.
 
-If you want to enable this feature, follow these steps: 
+If you want to enable this feature, follow these steps:
 
 1. Edit the configuration file at:
-	
+
 	=== "Windows"
-	
+
 	    ```
 	    C:\Windows\System32\config\systemprofile\AppData\Local\Sekoia.io\EndpointAgent\config.yaml
 	    ```
-	
+
 	=== "Linux"
-	
+
 	    ```
 	    /etc/endpoint-agent/config.yaml
 	    ```
 
 	=== "MacOs"
-	
+
 	    ```
 	    /etc/endpoint-agent/config.yaml
 	    ```
@@ -600,14 +1022,78 @@ Once the configuration file is modified, restart the agent:
     sudo systemctl restart SEKOIAEndpointAgent.service
     ```
 
+#### Customize agent's log file rotation
 
-## Additionnal information
+By default, the agent's log files are rotated when they reach 100 MB in size, and up to 5 rotated log files are kept.
+
+It is possible to customize these values by editing the configuration file to add one of the following options:
+
+  - `LogMaxSize`: Maximum size in MB of the log file before rotating it (default: `100`)
+  - `LogMaxBackups`: Maximum number of old log files to keep (default: `5`)
+  - `LogCompress`: Whether to compress old log files (default: `true`)
+
+If you want to enable this feature, follow these steps:
+
+1. Edit the configuration file at:
+
+    === "Windows"
+
+        ```
+        C:\Windows\System32\config\systemprofile\AppData\Local\Sekoia.io\EndpointAgent\config.yaml
+        ```
+
+    === "Linux"
+
+        ```
+        /etc/endpoint-agent/config.yaml
+        ```
+
+    === "MacOs"
+
+        ```
+        /etc/endpoint-agent/config.yaml
+        ```
+
+2. Add the following configuration:
+
+```yaml
+LogMaxSize: 50          # Maximum size in MB of the log file before rotating it
+LogMaxBackups: 10       # Maximum number of old log files to keep
+LogCompress: false      # Whether to compress old log files
+```
+
+Once the configuration file is modified, restart the agent:
+
+=== "Windows"
+
+    Execute the following command **as an administrator**:
+
+    ```
+    Restart-Service SEKOIAEndpointAgent
+    ```
+=== "Linux"
+
+    Execute the following command:
+
+    ```
+    sudo systemctl restart SEKOIAEndpointAgent.service
+    ```
+
+=== "MacOs"
+
+    Execute the following command:
+
+    ```
+    sudo /Applications/SekoiaEndpointAgent.app/Contents/MacOs/SekoiaEndpointAgent service restart
+    ```
+
+## Additional information
 Please find options and arguments available for Sekoia Agent by typing
 
 === "Windows"
 
     ````
-    agent.exe -h
+    .\agent-latest.exe -h
     ````
 
 === "Linux"
@@ -627,7 +1113,7 @@ Please find options and arguments available for Sekoia Agent by typing
 === "Windows"
 
     ````
-    agent-latest.exe <command> [<args>]
+    .\agent-latest.exe <command> [<args>]
     ````
 
 === "Linux"
@@ -696,4 +1182,11 @@ If you need further assistance, provide our team with the following information:
 
 2- Logs of the agent
 
-{!_shared_content/operations_center/detection/generated/suggested_rules_250e4095-fa08-4101-bb02-e72f870fcbd1_do_not_edit_manually.md!} 
+### Common errors
+
+- `ERR HTTP request to send logs to SEKOIA.IO failed StatusCode=422`
+
+If this error appears in the agent's logs, check: is the intake key still valid? is the related community's subscription valid?
+  
+
+{!_shared_content/operations_center/detection/generated/suggested_rules_250e4095-fa08-4101-bb02-e72f870fcbd1_do_not_edit_manually.md!}

@@ -9,7 +9,6 @@ WithSecure Elements is an advanced cloud-based EDR/EPP platform that provides a 
 This setup guide shows how to forward events produced by WithSecures Elements to Sekoia.io.
 
 - **Vendor**: WithSecure
-- **Plan**: Defend Prime
 - **Supported environment**: Cloud
 - **Detection based on**: Telemetry
 - **Supported application or feature**: File monitoring, Process monitoring
@@ -30,21 +29,8 @@ In the WithSecure Elements Central Admin console:
 ### Create the intake
 
 1. Go to the [Intake page](https://app.sekoia.io/operations/intakes) and create a new `WithSecure Elements` intake.
-2. Copy the associated Intake key
-
-### Create the playbook that fetches the events
-
-1. Go to the [Playbook page](https://app.sekoia.io/operations/playbooks).
-2. Click on `+ PLAYBOOK` and choose `Create a playbook from scratch`.
-3. Give it a name such as `Collect WithSecure Elements events` and a description and click on `Next`.
-4. In `Choose a trigger`, select the [Fetch security events](/integration/action_library/endpoint/withsecure).
-5. Click on the `Fetch security events` trigger and, on the right sidebar, create a new `Module Configuration`. Give it a name  such as `My Organisation WithSecure` and enter your API Client credentials `Client ID`/`Secret`
-6. In the Trigger Configuration section, Click on `Create new configuration`.
-8. Write a `name`, paste the `intake_key` associated to your `WithSecure Elements` intake and click on `Save`.
-9. On the top right corner, start the Playbook. You should see monitoring messages in the `Logs` section of your action.
-10. After a couple of minutes check on the Events page that WithSecure Elements logs are being received.
-
-![WithSecure Playbook Example](/assets/integration/endpoint/withsecure/withsecure_playbook_collect.png){: style="max-width:80%"}
+2. Set the intake account with your API Client credentials `Client ID`/`Secret`
+3. After a couple of minutes check on the Events page that WithSecure Elements logs are being received.
 
 {!_shared_content/operations_center/integrations/generated/033cd098-b21b-4c9b-85c4-c8174c307e48_sample.md!}
 

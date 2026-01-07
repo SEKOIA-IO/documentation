@@ -59,7 +59,7 @@ The following Sekoia.io built-in rules match the intake **Fortinet FortiMail**. 
 
 ??? abstract "Correlation Potential DNS Tunnel"
     
-    Detects domain name which is longer than 95 characters. Long domain names are distinctive of DNS tunnels.
+    Detects domain name which is longer than 62 characters and requested at least 50 times in a 10 minutes range time. Long domain names are distinctive of DNS tunnels.
     
     - **Effort:** advanced
 
@@ -85,31 +85,13 @@ The following Sekoia.io built-in rules match the intake **Fortinet FortiMail**. 
     
     Discord is a messaging application. It allows users to create their own communities to share messages and attachments. Those attachments have little to no overview and can be downloaded by almost anyone, which has been abused by attackers to host malicious payloads.
     
-    - **Effort:** intermediate
-
-??? abstract "Download Files From Non-Legitimate TLDs"
-    
-    Detects file downloads from non-legitimate TLDs. Additional legitimates TLDs should be filtered according to the business habits.
-    
-    - **Effort:** master
-
-??? abstract "Download Files From Suspicious TLDs"
-    
-    Detects download of certain file types from hosts in suspicious TLDs
-    
-    - **Effort:** master
+    - **Effort:** advanced
 
 ??? abstract "Dynamic DNS Contacted"
     
     Detect communication with dynamic dns domain. This kind of domain is often used by attackers. This rule can trigger false positive in non-controlled environment because dynamic dns is not always malicious.
     
     - **Effort:** master
-
-??? abstract "Entra ID Sign-In Via Known AiTM Phishing Kit"
-    
-    Detects a sign-in attempt from an IP address belonging to a known adversary-in-the-middle phishing kit.
-    
-    - **Effort:** elementary
 
 ??? abstract "EvilProxy Phishing Domain"
     
@@ -127,7 +109,7 @@ The following Sekoia.io built-in rules match the intake **Fortinet FortiMail**. 
     
     Quick-win rule to detect the default process names or file names of several HackTools.
     
-    - **Effort:** elementary
+    - **Effort:** advanced
 
 ??? abstract "Koadic MSHTML Command"
     
@@ -149,7 +131,7 @@ The following Sekoia.io built-in rules match the intake **Fortinet FortiMail**. 
 
 ??? abstract "Potential DNS Tunnel"
     
-    Detects domain name which is longer than 95 characters. Long domain names are distinctive of DNS tunnels.
+    Detects domain name which is longer than 62 characters. Long domain names are distinctive of DNS tunnels.
     
     - **Effort:** advanced
 
@@ -158,12 +140,6 @@ The following Sekoia.io built-in rules match the intake **Fortinet FortiMail**. 
     Detects suspicious calls to Microsoft Exchange resources, in locations related to webshells observed in campaigns using this vulnerability.
     
     - **Effort:** elementary
-
-??? abstract "RSA SecurID Failed Authentification"
-    
-    Detects many failed attempts to authenticate followed by a successfull login for a super admin account.
-    
-    - **Effort:** advanced
 
 ??? abstract "RTLO Character"
     
@@ -207,6 +183,12 @@ The following Sekoia.io built-in rules match the intake **Fortinet FortiMail**. 
     
     - **Effort:** master
 
+??? abstract "Sign-In Via Known AiTM Phishing Kit"
+    
+    Detects a sign-in attempt from an IP address belonging to a known adversary-in-the-middle phishing kit.
+    
+    - **Effort:** elementary
+
 ??? abstract "Suspicious Download Links From Legitimate Services"
     
     Detects users clicking on Google docs links to download suspicious files. This technique was used a lot by Bazar Loader in the past.
@@ -215,9 +197,9 @@ The following Sekoia.io built-in rules match the intake **Fortinet FortiMail**. 
 
 ??? abstract "Suspicious Email Attachment Received"
     
-    Detects email containing an .exe|.dll|.ps1|.bat|.hta attachment. Most of the time files send by mail like this are malware.
+    Detects email containing a suspicious file as an attachment, based on its extension.
     
-    - **Effort:** elementary
+    - **Effort:** advanced
 
 ??? abstract "Suspicious File Name"
     

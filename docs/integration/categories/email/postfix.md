@@ -6,7 +6,6 @@ type: intake
 Postfix is a free and open-source mail transfer agent that routes and delivers electronic mail.
 
 - **Vendor**: Postfix
-- **Plan**: Defend Prime
 - **Supported environment**: On Premise
 - **Version compatibility**:
 - **Detection based on**: Telemetry
@@ -18,7 +17,7 @@ As of now, the main solution to collect Postfix logs leverages the Rsyslog recip
 
 ### Rsyslog
 
-Please refer to the documentation of Postfix to forward events to your rsyslog server. The reader can consult the [Rsyslog Transport](/integration/ingestion_methods/syslog/overview) documentation to forward these logs to Sekoia.io.
+Please refer to the documentation of Postfix to forward events to your rsyslog server. The reader can consult the [Rsyslog Transport](/integration/ingestion_methods/syslog/overview.md) documentation to forward these logs to Sekoia.io.
 
 {!_shared_content/operations_center/integrations/generated/eb727929-6a06-4e68-a09d-cf0e5daf3ccd_sample.md!}
 

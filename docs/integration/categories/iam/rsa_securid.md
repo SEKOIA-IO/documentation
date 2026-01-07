@@ -6,7 +6,6 @@ type: intake
 SecurID is a token system, or authenticator, produced by RSA Security and intended to offer strong authentication to its user in the context of access to an information system.
 
 - **Vendor**: RSA Security
-- **Plan**: Defend Core & Defend Prime
 - **Supported environment**: On prem
 - **Version compatibility**: 8,4
 - **Detection based on**: Telemetry
@@ -38,7 +37,7 @@ Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a n
 
 ## Forward logs to Sekoia.io
 
-Please consult the [Sekoia Forwarder](/integration/ingestion_methods/syslog/sekoiaio_forwarder) documentation to forward these logs to Sekoia.io.
+Please consult the [Sekoia Forwarder](/integration/ingestion_methods/syslog/sekoiaio_forwarder.md) documentation to forward these logs to Sekoia.io.
 
 
 

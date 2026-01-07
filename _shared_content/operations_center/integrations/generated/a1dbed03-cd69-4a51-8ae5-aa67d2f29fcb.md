@@ -26,7 +26,7 @@ In details, the following table denotes the type of events produced by this inte
 
 ### Transformed Events Samples after Ingestion
 
-This section demonstrates how the raw logs will be transformed by our parsers. It shows the extracted fields that will be available for use in the [built-in detection rules](/xdr/features/detect/rules_catalog) and hunting activities in the [events page](/xdr/features/investigate/events). Understanding these transformations is essential for analysts to create effective detection mechanisms with [custom detection rules](/xdr/features/detect/sigma) and to leverage the full potential of the collected data.
+This section demonstrates how the raw logs will be transformed by our parsers. It shows the extracted fields that will be available for use in the [built-in detection rules](/xdr/features/detect/rules_catalog.md) and hunting activities in the [events page](/xdr/features/investigate/events.md). Understanding these transformations is essential for analysts to create effective detection mechanisms with [custom detection rules](/xdr/features/detect/sigma.md) and to leverage the full potential of the collected data.
 
 === "admin_login.json"
 
@@ -486,6 +486,9 @@ This section demonstrates how the raw logs will be transformed by our parsers. I
         "related": {
             "ip": [
                 "1.2.3.4"
+            ],
+            "user": [
+                "jane.doe"
             ]
         },
         "source": {
@@ -556,6 +559,9 @@ This section demonstrates how the raw logs will be transformed by our parsers. I
         "related": {
             "ip": [
                 "4.5.6.7"
+            ],
+            "user": [
+                "jane.doe"
             ]
         },
         "source": {
@@ -637,6 +643,9 @@ This section demonstrates how the raw logs will be transformed by our parsers. I
         "related": {
             "ip": [
                 "10.11.12.13"
+            ],
+            "user": [
+                "john.wick"
             ]
         },
         "source": {

@@ -7,14 +7,10 @@ type: intake
 Olfeo Secure Web Gateway is a suite of cybersecurity features for analyzing, filtering and securing your web flows. Combining proxy filtering, flow antivirus and DNS filtering.
 
 - **Vendor**: Olfeo
-- **Plan**: Defend Prime
 - **Supported environment**: On Premise
 - **Version compatibility**: v6.8.6 and above
 - **Detection based on**: Telemetry
 - **Supported application or feature**: Network web traffic
-
-!!! Warning
-    Important note - This format is currently in beta. We highly value your feedback to improve its performance.
 
 ## Specification
 

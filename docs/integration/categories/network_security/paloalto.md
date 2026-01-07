@@ -7,11 +7,26 @@ type: intake
 Palo Alto Networks offers an enterprise cybersecurity platform which provides network security, cloud security, endpoint protection, and various cloud-delivered security services.
 
 - **Vendor**: Palo Alto
-- **Plan**: Defend Core & Defend Prime
 - **Supported environment**: On Premise
 - **Version compatibility**:
 - **Detection based on**: Telemetry
-- **Supported application or feature**: Traffic, Threat and WildFire Malicious
+- **Supported application or feature**:
+   - Authentication
+   - Decryption
+   - DNS
+   - GlobalProtect
+   - HIP match
+   - IP Tag
+   - SCTP
+   - System
+   - Traffic
+   - Threat
+   - UserId
+   - WildFire Malicious
+- **Supported series**: 
+   - VM-series
+   - CN-series
+   - PA-series
 
 ## Specification
 
@@ -22,7 +37,7 @@ Palo Alto Networks offers an enterprise cybersecurity platform which provides ne
 
 	OR
 
-	- Palo Alto Cortex Data Lake
+	- Palo Alto Strata Logging Service (formely Palo Alto Cortex Data Lake)
 
 - **Network**:
     - Outbound traffic allowed
@@ -91,22 +106,22 @@ Please follow [Configure Log Forwarding](https://docs.paloaltonetworks.com/pan-o
 
 {!_shared_content/integration/forwarder_configuration.md!}
 
-### Option B - Forward events through Palo Alto Cortex Data Lake
+### Option B - Forward events through Palo Alto Strata Logging Service
 
 #### Configure Palo Alto NGFW
 
 1. In the GUI, go to `Objects > Log Forwarding`.
 2. Click `Add`, and enter a `Name` to identify the profile.
-3. For each log type (here Traffic, Threat and WileFire Malicious), check the box `Cortex Data Lake` in the Forward Method and click `OK`.
+3. For each log type (here Traffic, Threat and WileFire Malicious), check the box `Strata Logging Service` (or `Cortex Data Lake`) in the Forward Method and click `OK`.
 4. Select `Policies > Security` and select a policy rule.
 5. Select the `Actions` tab and select the `Log Forwarding` profile you created.
 6. In the `Profile Type` drop-down, select `Profiles` or `Groups`, and then select the security profiles or `Group Profiles` required to trigger log generation and forwarding.
 7. Select both of the `Log at Session Start` and `Log At Session End` check boxes, and click `OK`.
 
-#### Configure Palo Alto Cortex Data Lake
+#### Configure Palo Alto Strata Logging Service
 
-1. On the Cortex Data Lake console, got to `Log Forwarding`
-2. Create a new HTTPS Profiles
+1. On the Strata Logging Service console, go to `Log Forwarding`
+2. In the `Https` section, click `+` to create a new HTTPS Profiles
 3. Enter a `Name` to identify the profile and set the URL to `https://intake.sekoia.io/jsons?status_code=200`
 4. In the Client Authorization section, select `Basic Authorization` as Type, fill `Username` with any string (e.g. `sekoiaio`) and `Password` with your **intake key** (see step "Instruction on Sekoia")
 5. Click `Test Connection` then click `Next`

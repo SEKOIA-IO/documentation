@@ -9,7 +9,6 @@ Stormshield Network Security firewalls provides comprehensive security and high 
 In this documentation we will explain how to collect and send Stormshield Network Security logs to Sekoia.io.
 
 - **Vendor**: Stormshield
-- **Plan**: Defend Core & Defend Prime
 - **Supported environment**: On prem
 - **Version compatibility**: 4.8.2 and newer
 - **Detection based on**: Alert, Telemetry
@@ -20,7 +19,7 @@ In this documentation we will explain how to collect and send Stormshield Networ
 ### Instruction on Sekoia
 #### Create your intake
 
-Everything you need to do for this part of the configuration is described [here](/xdr/features/collect/intakes).
+Everything you need to do for this part of the configuration is described [here](/xdr/features/collect/intakes.md).
 
 1. Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a new intake from the `Stormshield Network Security`.
 2. Copy the associated Intake key
@@ -31,7 +30,7 @@ This section will guide you to forward Stormshield SNS logs to Sekoia.
 
 #### Import the intake certificate
 
-On a device, please download the [Sekoia.io intake certificate](https://app.sekoia.io/assets/files/SEKOIA-IO-intake.pem)
+On a device, please download the `ISRG ROOT X1` certificate: <https://letsencrypt.org/certs/isrgrootx1.pem>
 
 1. Log on the UTM administration console
 2. Click `Configuration` tab

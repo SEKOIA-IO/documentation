@@ -1,17 +1,16 @@
 uuid: 44439212-c2d8-4645-ad60-8fd5e39140b3
-name: Google Workspace and Google Cloud Audit Logs
+name: Google Cloud Audit Logs
 type: intake
 
 ## Overview
 - **Vendor**: Google
-- **Plan**: Defend Prime
 - **Supported environment**: SaaS
 - **Detection based on**: Audit
 - **Supported application or feature**: Application Logs
 
 Google Cloud Logging centralizes logs from Google Cloud products.
 
-In this documentation, you will learn how to collect and send Google Workspace and Google Cloud audit logs to Sekoia.io.
+In this documentation, you will learn how to collect and send Google Cloud audit logs to Sekoia.io.
 
 
 
@@ -26,7 +25,7 @@ In this documentation, you will learn how to collect and send Google Workspace a
 !!! Warning
 	The administrator that proceeds to the configuration MUST explicitly have the role "Logging Admin" activated. This is not the case by default even for administrator users.
 
-### Centralise Google Workspace logs on your Google Cloud
+### Centralise Google logs on your Google Cloud
 
 #### Create a topic
 
@@ -164,33 +163,10 @@ Go to your Sekoia.io [Intakes page](https://app.sekoia.io/operations/intakes), a
 1. Click on **+ Intake** button to create a new one
 2. Choose **Google Cloud Audit Logs**, give it a name and choose the relevant Entity
 3. Click on **Create** button
-4. Copy the **Intake key** of this Google Intake.
-
-!!! Note
-	Save the `Intake key` on a block note. It will be used in the next step.
-
-#### Pull the logs to collect them on Sekoia.io
-
-Go to the Sekoia.io [playbook page](https://app.sekoia.io/operations/playbooks), and follow these steps:
-
-- Click on **+ PLAYBOOK** button to create a new one
-- Select **Use a template**
-- Search for `Google` keywork on the search bar and select the template named `Forward Google Pubsub records to Sekoia.io`
-
-![google-playbook-template](/assets/integration/cloud_and_saas/google/google-template.PNG){: style="max-width:100%"} 
-
-- Create a **Module configuration** using your service account credentials from your Google Cloud environment extracted on a JSON file. Name the module configuration as you wish
-
-![template-playbook-configuration](/assets/integration/cloud_and_saas/google/template-configuration.png ){: style="max-width:100%"}
-
--  Create a **Trigger configuration** using:
-
-	* `Intake key` created on the previous
+4. Configure your intake with
 	* The project ID 
 	* The suject ID that is `sekoia-gca-subscription`
 
-- Click on the **Save** button
-- **Activate the playbook** with the toggle button on the top right corner of the page
 
 #### Enjoy your events on the [Events page](https://app.sekoia.io/operations/events)
 

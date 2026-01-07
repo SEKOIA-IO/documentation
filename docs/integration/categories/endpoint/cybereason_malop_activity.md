@@ -7,7 +7,6 @@ type: intake
 Cybereason offers a set of Endpoint Detection and Response (EDR) solutions. Through the Cybereason platform, all suspicious operations will be gathered in MalOps, a multi-stage visualizations of device activities.
 
 - **Vendor**: Cybereason
-- **Plan**: Defend Prime
 - **Supported environment**: SaaS
 - **Detection based on**: Telemetry
 
@@ -30,7 +29,7 @@ Keep aside the intake key.
 
 ### Setup the Syslog collector
 
-Check the [Syslog Forwarding](/integration/ingestion_methods/syslog/sekoiaio_forwarder) documentation to install and set up the syslog collector.
+Check the [Syslog Forwarding](/integration/ingestion_methods/syslog/sekoiaio_forwarder.md) documentation to install and set up the syslog collector.
 
 Once the setup has completed, write down the IP address and port. This information will be used in the next step.
 
@@ -38,16 +37,26 @@ Once the setup has completed, write down the IP address and port. This informati
 
 Contact the Cybereason Customer Success Manager to get the Cybereason CEF Forwarder.
 
-Connect to the [Cybereason Partner Nest](https://nest.cybereason.com/user/login) and follow [these instructions](https://nest.cybereason.com/node/3517551) for the installation of the CEF forwarder.
+Connect to the [Cybereason Partner Nest](https://nest.cybereason.com/user/login) and follow [these instructions](https://nest.cybereason.com/s/article/arcsight-configure) for the installation of the CEF forwarder.
 
-Create a [new configuration](https://nest.cybereason.com/node/3517426) to forward MalOp activities to the syslog collector: fill `host` and `port` with the address and the listening port of the syslog collector.
+Create or edit the configuration file (e.g: `cybereason-forwarders/config/sample_config.json`) and fill `host` and `port` with the address and the listening port of the syslog collector.
+
+### Rebuild the Docker image
+
+To apply the new configuration, you need to rebuild the Docker image of the Cybereason CEF Forwarder.
+
+```bash
+$ cd cybereason-forwarders/docker/
+$ docker-compose build --build-arg COMPOSE_MODULE_NAME=cybereason-arcsight
+```
 
 ### Start the forwarding
 
-Start the CEF Forwarder with your new configuration
+Start the CEF Forwarder
 
 ```bash
-$ cybereason-forwarders/scripts/run_forwarder.sh config/<my new configuration>.json
+$ cd cybereason-forwarders/docker/
+$ ./deploy_stack.sh docker-stack.yml CYBEREASON
 ```
 
 ### Enjoy your events

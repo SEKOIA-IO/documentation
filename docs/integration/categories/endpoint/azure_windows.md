@@ -6,7 +6,6 @@ type: intake
 Azure Virtual Machines service is developed and managed by Microsoft Corp.
 
 - **Vendor**: Microsoft Azure
-- **Plan**: Defend Prime
 - **Supported environment**: SaaS
 - **Detection based on**: Telemetry
 - **Supported application or feature**: Access tokens,Authentication logs, File monitoring, PowerShell logs, Process command-line parameters, Process monitoring, Process use of network, Windows event logs, Windows Registry

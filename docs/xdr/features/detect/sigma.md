@@ -72,7 +72,7 @@ Here is the list of supported modifiers:
 - `base64`: match the value encoded with Base64
 - `endswith`: the value is expected at the end of the field's content (replaces e.g. `*\cmd.exe`)
 - `startswith`: the value is expected at the beginning of the field's content. (replaces e.g. `adm*`)
-- `re`: the value is a regular expression. Regular expressions are case sensitive by default
+- `re`: the value is a [regular expression](https://github.com/andreasvc/pyre2). Regular expressions are case sensitive by default, and must match the **entire** field (full match).
 - `cidr`: the value is a subnet in CIDR notation (e.g. `192.168.1.0/24`) the IP address should belong to
 - `lt`: less than this value
 - `lte`: less than or equal to this value
@@ -296,4 +296,170 @@ aliases:
   remote_ip:
     login_success: source.ip
     new_network_connection: destination.ip
+```
+
+## Detection on specific time range
+
+Use `time-based` modifiers below to detect suspicious activites that occur outside of normal business hours or reduce alert fatigue through intelligent time-based filtering.
+
+Time-based modifiers can be used in:
+
+- **SIGMA detection rules**
+- **SIGMA alert filters**
+
+!!! Info
+    Theses time-based modifiers are not part of Sigma standard. They are only available in Sekoia SOC platform.
+
+!!! Warning
+    By default, all `time-based` modifiers are `UTC` based. To specify a local time, use the `timezone` metadata. 
+    We recommend using `timezone` rather than `UTC` to automatically account for Daylight Savings.
+
+### Hour
+
+Use the `timerange` modifier to detect events during non-working hours on a time range (in `UTC` by default).
+
+Example: Detect from 20:00pm to 09:00am (`UTC`)
+
+```yaml
+detection:
+  selection:
+    event.code: 4720
+  non_working_hours_utc:
+	  timestamp|timerange: 20:00-09:00
+	condition: selection and non_working_hours_utc
+```
+
+### Day of week
+
+Use the `day_of_week` modifier to detect events during specific days of the week.
+If not specifed, the days of the week are `UTC` based.
+
+| day of week      |
+|------------------|
+| sunday           |
+| monday           |
+| tuesday          |
+| wednesday        |
+| thursday         |
+| friday           |
+| saturday         |
+
+Example: Detect on Saturday and Sunday
+
+```yaml
+detection:
+  selection:
+    event.code: 4720
+  non_working_days:
+	  timestamp|day_of_week:
+		  - saturday
+		  - sunday
+	condition: selection and non_working_days
+```
+
+### Day of year
+
+Use the `day_of_year` modifier to detect events during specific days of the year.
+If not specifed, the days of the year are `UTC` based.
+
+Use the following format `MM-DD` ([ISO 8601](https://en.wikipedia.org/wiki/ISO_8601)).
+
+Example: Detect on January 1st, July 14th, December 23th and December 24th
+
+```yaml
+detection:
+  selection:
+    event.code: 4720
+  non_working_dates:
+	  timestamp|day_of_year:
+		  - 01-01
+		  - 07-14
+		  - 12-23
+		  - 12-24
+	condition: selection and non_working_dates
+```
+
+### Public holidays
+
+Use the `public_holiday_in` modifier to detect events during public holidays.
+If not specifed, the days of the year are `UTC` based.
+
+Use the `ISO 3166` country code to specify the corresponding country public holidays:
+[https://en.wikipedia.org/wiki/List_of_ISO_3166_country_codes](https://en.wikipedia.org/wiki/List_of_ISO_3166_country_codes)
+
+You can explore the full list of available countries for holiday data in the holidays [library documentation](https://holidays.readthedocs.io/en/latest/#available-countries).
+
+Example: Detect during France and United States public holidays
+
+```yaml
+detection:
+  selection:
+    event.code: 4720
+  non_working_dates:
+	  timestamp|public_holiday_in:
+		  - FR
+		  - US
+	condition: selection and non_working_dates
+```
+
+### Timezone
+
+The `timezone` metadata enables user to specify a local time.
+
+Use the `TZ identifier` column from `tz database` to specify the timezone:
+[https://en.wikipedia.org/wiki/List_of_tz_database_time_zones](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones)
+
+This metadata applies only to the following `modifiers`:
+
+- `timerange`
+- `day_of_week`
+- `day_of_year`
+- `public_holiday_in`
+
+Example: Detect from 19:00 to 08:00 in local time Europe/Paris
+
+```yaml
+timezone: Europe/Paris
+detection:
+  selection:
+    event.code: 4720
+  non_working_hours_local:
+	  timestamp|timerange: 19:00-08:00
+	condition: selection and non_working_hours_local
+```
+
+Example: Detect from 19:00 to 08:00 in local time America/Los_Angeles
+
+```yaml
+timezone: America/Los_Angeles
+detection:
+  selection:
+    event.code: 4720
+  non_working_hours_local:
+	  timestamp|timerange: 19:00-08:00
+	condition: selection and non_working_hours_local
+```
+
+Example: Detect from 19:00 to 08:00 in local time Asia/Dubai
+
+```yaml
+timezone: Asia/Dubai
+detection:
+  selection:
+    event.code: 4720
+  non_working_hours_local:
+	  timestamp|timerange: 19:00-08:00
+	condition: selection and non_working_hours_local
+```
+
+Example: Detect from 19:00 to 08:00 in local time Europe/Warsaw
+
+```yaml
+timezone: Europe/Warsaw
+detection:
+  selection:
+    event.code: 4720
+  non_working_hours_local:
+	  timestamp|timerange: 19:00-08:00
+	condition: selection and non_working_hours_local
 ```

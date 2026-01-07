@@ -8,7 +8,6 @@ type: intake
 Cisco Duo Security offers solutions for strong authentication.
 
 - **Vendor**: Cisco
-- **Plan**: Defend Core & Defend Prime
 - **Supported environment**: SaaS
 - **Detection based on**: Telemetry
 - **Supported application or feature**: Authentication logs
@@ -27,15 +26,8 @@ More details in [Duo documentation](https://duo.com/docs/adminapi#first-steps)
 
 ### Create the intake in Sekoia.io
 
-Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a new intake from the format `Cisco Duo Security`. Copy the intake key.
-
-### Pull events
-
-To start to pull events, you have to:
-
-1. Go to the [playbooks page](https://app.sekoia.io/operations/playbooks) and create a new playbook with the **Fetch new logs from Duo** trigger
-2. Set up the module configuration with the base URL of your Netskope instance. Set up the trigger configuration with the API token and the intake key
-3. Start the playbook and enjoy your events
+1. Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a new intake from the format `Cisco Duo Security`.
+2. Set up the intake account configuration with the Hostname, Integration Key and Secret Key
 
 {!_shared_content/operations_center/integrations/generated/547234b3-82ea-4507-b28f-3ee3cd5b9a8e_sample.md!}
 

@@ -25,7 +25,7 @@ The following Sekoia.io built-in rules match the intake **Broadcom Cloud Secure 
     
     Discord is a messaging application. It allows users to create their own communities to share messages and attachments. Those attachments have little to no overview and can be downloaded by almost anyone, which has been abused by attackers to host malicious payloads.
     
-    - **Effort:** intermediate
+    - **Effort:** advanced
 
 ??? abstract "Dynamic DNS Contacted"
     
@@ -71,7 +71,7 @@ The following Sekoia.io built-in rules match the intake **Broadcom Cloud Secure 
 
 ??? abstract "Potential DNS Tunnel"
     
-    Detects domain name which is longer than 95 characters. Long domain names are distinctive of DNS tunnels.
+    Detects domain name which is longer than 62 characters. Long domain names are distinctive of DNS tunnels.
     
     - **Effort:** advanced
 

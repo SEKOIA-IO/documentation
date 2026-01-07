@@ -1,8 +1,8 @@
 ### Related Built-in Rules
 
-The following Sekoia.io built-in rules match the intake **Systancia Cleanroom [BETA]**. This documentation is updated automatically and is based solely on the fields used by the intake which are checked against our rules. This means that some rules will be listed but might not be relevant with the intake.
+The following Sekoia.io built-in rules match the intake **Systancia Cleanroom**. This documentation is updated automatically and is based solely on the fields used by the intake which are checked against our rules. This means that some rules will be listed but might not be relevant with the intake.
 
-[SEKOIA.IO x Systancia Cleanroom [BETA] on ATT&CK Navigator](https://mitre-attack.github.io/attack-navigator/#layerURL=https%3A%2F%2Fraw.githubusercontent.com%2FSEKOIA-IO%2Fdocumentation%2Fmain%2F_shared_content%2Foperations_center%2Fdetection%2Fgenerated%2Fattack_dcb14795-a6f0-4ebb-a73d-6eb8b982afcd_do_not_edit_manually.json){ .md-button }
+[SEKOIA.IO x Systancia Cleanroom on ATT&CK Navigator](https://mitre-attack.github.io/attack-navigator/#layerURL=https%3A%2F%2Fraw.githubusercontent.com%2FSEKOIA-IO%2Fdocumentation%2Fmain%2F_shared_content%2Foperations_center%2Fdetection%2Fgenerated%2Fattack_dcb14795-a6f0-4ebb-a73d-6eb8b982afcd_do_not_edit_manually.json){ .md-button }
 ??? abstract "Cryptomining"
     
     Detection of domain names potentially related to cryptomining activities.
@@ -21,12 +21,6 @@ The following Sekoia.io built-in rules match the intake **Systancia Cleanroom [B
     
     - **Effort:** master
 
-??? abstract "RSA SecurID Failed Authentification"
-    
-    Detects many failed attempts to authenticate followed by a successfull login for a super admin account.
-    
-    - **Effort:** advanced
-
 ??? abstract "Remote Access Tool Domain"
     
     Detects traffic toward a domain flagged as a Remote Administration Tool (RAT).
@@ -42,6 +36,12 @@ The following Sekoia.io built-in rules match the intake **Systancia Cleanroom [B
 ??? abstract "Sekoia.io EICAR Detection"
     
     Detects observables in Sekoia.io CTI tagged as EICAR, which are fake samples meant to test detection.
+    
+    - **Effort:** master
+
+??? abstract "Systancia Cleanroom Brute Force"
+    
+    Detects a successful brute force attempt to access systancia cleanroom web portal.
     
     - **Effort:** master
 

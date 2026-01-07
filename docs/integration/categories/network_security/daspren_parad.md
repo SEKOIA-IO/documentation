@@ -7,23 +7,16 @@ type: intake
 Daspren is the only Data Detection and Response (DDR) that integrates detection and blocking of cyber attacks. Daspren goes deep, using our patented data-centric AI to meticulously dissect and analyze every data access. It seamlessly intercepts and scrutinizes these access requests, ensuring that only legitimate, authorized applications can access your data, keeping it secure and protected.
 
 - **Vendor**: Daspren
-- **Plan**: Defend Prime
-- **Supported environment**: SaaS
+- **Supported environment**: On Premise
 - **Detection based on**: Telemetry
 - **Supported application or feature**: Parad is the data protection solution from Daspren. It monitors data activity and use AI to prevent data breaches coming from both the inside and the outside of your organization:
     - File created, opened, deleted, moved or modified,
     - Access rules breach attempts,
     - Malicious processes detected.
 
-!!! Warning
-    This format is currently in beta. We highly value your feedback to improve its performance.
-
 ## High-Level Architecture Diagram
 
 - **Type of integration**: Outbound (PUSH to Sekoia.io)
-- **Schema**
-
-![daspren](/assets/integration/daspren.png){: style="max-width:100%"}
 
 ## Specification
 
@@ -38,7 +31,7 @@ Daspren is the only Data Detection and Response (DDR) that integrates detection 
 ### Logs details
 
 - **Supported functionalities**: See section [Overview](#overview)
-- **Supported type(s) of structure**: Plain text
+- **Supported type(s) of structure**: JSON
 - **Supported verbosity level**: Informational
 
 !!! Note

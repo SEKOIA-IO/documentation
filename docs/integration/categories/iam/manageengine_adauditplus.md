@@ -7,7 +7,6 @@ type: intake
 ManageEngine ADAudit Plus is a robust Active Directory auditing and compliance solution, empowering organizations to track and monitor changes, detect security threats, and ensure regulatory compliance within their Active Directory environment.
 
 - **Vendor**: ManageEngine
-- **Plan**: Defend Core & Defend Prime
 - **Supported environment**: On prem
 - **Version compatibility**: 8.1
 - **Detection based on**: Telemetry
@@ -44,7 +43,7 @@ Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a n
 
 ## Forward logs to Sekoia.io
 
-Please consult the [Syslog Forwarding](/integration/ingestion_methods/syslog/sekoiaio_forwarder/) documentation to forward these logs to Sekoia.io.
+Please consult the [Syslog Forwarding](/integration/ingestion_methods/syslog/sekoiaio_forwarder.md) documentation to forward these logs to Sekoia.io.
 
 
 
@@ -58,4 +57,3 @@ Please consult the [Syslog Forwarding](/integration/ingestion_methods/syslog/sek
 
 {!_shared_content/operations_center/detection/generated/suggested_rules_890207d2-4878-440d-9079-3dd25d472e0a_do_not_edit_manually.md!}
 {!_shared_content/operations_center/integrations/generated/890207d2-4878-440d-9079-3dd25d472e0a.md!}
-

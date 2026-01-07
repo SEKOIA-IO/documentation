@@ -10,7 +10,6 @@ Palo Alto Cortex XDR (EDR) is an advanced Endpoint Detection and Response soluti
 This setup guide shows how to forward EDR alerts collected on the Palo Alto Cortex XDR (EDR) platform to Sekoia.io.
 
 - **Vendor**: Palo Alto
-- **Plan**: Defend Prime
 - **Supported environment**: Cloud 
 - **Detection based on**: Telemetry / Alert
 - **Supported application or feature**: Network device logs
@@ -28,12 +27,6 @@ This integration collects the following events:
 This integration was tested against the following versions:
 
 - Palo Alto Cortex XDR (EDR) 3.8
-
-{!_shared_content/operations_center/detection/generated/suggested_rules_9b95c9cf-8b78-4830-a1ed-b9e88f05e67a_do_not_edit_manually.md!}
-
-{!_shared_content/operations_center/integrations/generated/9b95c9cf-8b78-4830-a1ed-b9e88f05e67a.md!}
-
-
 
 ## Create API Key
 
@@ -66,20 +59,9 @@ Before using the **Cortex XDR** connector, you must generate an API key in Corte
 ### Create the intake
 
 1. Go to the [Intake page](https://app.sekoia.io/operations/intakes) and create a new `Palo Alto Cortex XDR (EDR)` intake.
-2. Copy the associated Intake key ( You will use it in the playbook part )
+2. Create or Select a Palo Alto account with an `API Key`, `API Key ID` and `Fqdn`.
+3. Edit the intake configuration with a `chunk size` - Default is `100` and a `frequency` - Default is `60`
 
-### Pull events
-
-1. Go to the [Playbook page](https://app.sekoia.io/operations/playbooks).
-2. Click on `+ PLAYBOOK` and choose `Create a playbook from scratch`.
-3. Give it a name and a description and click on `Next`.
-4. In `Choose a trigger`, select the `Fetch Alerts from Cortex`.
-5. Click on the `Fetch Alerts from Cortex` module on the right sidebar and in the `Module Configuration` section, select `Create new configuration`.
-6. Write a `name` and paste the `API Key`, `API Key ID` and `Fqdn`, then click on `Save`.
-7. In the `Trigger Configuration` section, click on `Create new configuration`.
-8. Write a `name`, choose a `frequency` - Default is `60` -, paste the `intake_key` associated to your `Fetch Alerts from Cortex` intake and click on `Save`.
-9. On the top right corner, start the Playbook. You should see monitoring messages in the `Trigger Logs` section.
-10. Check on the Events page that the Cortex logs are being received.
 
 {!_shared_content/operations_center/integrations/generated/9b95c9cf-8b78-4830-a1ed-b9e88f05e67a_sample.md!}
 

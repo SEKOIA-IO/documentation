@@ -6,14 +6,24 @@ type: intake
 A secure email gateway to block spam, viruses, and malware.
 
 - **Vendor**: Mimecast
-- **Plan**: Defend Prime
 - **Supported environment**: Cloud
 - **Detection based on**: Telemetry
 - **Supported application or feature**: Email gateway
 
+### Supported datasets
 
-!!! warning
-    Important note - This format is currently in beta. We highly value your feedback to improve its performance.
+This integration can collect the following datasets from Mimecast:
+
+- Attachment protect
+- Antivirus
+- Delivery
+- Impersonation protect
+- Internal email protect
+- Journal
+- Process
+- Receipt
+- Spam
+- URL protect
 
 ## High-Level Architecture Diagram
 
@@ -57,41 +67,41 @@ A secure email gateway to block spam, viruses, and malware.
 4. Add the following roles under the section called **Security Events and Data Retrieval**:
     - **Threat and security svents (SIEM)** with READ permission,
     - **Threat and security statistics** with READ permission.
-5. Navigate to **Services | API and Platform Integrations**
-6. Locate the following **Mimecast API 2.0** tile and click on **Generate Keys.**
-7. After reading the **Terms & Conditions**, complete the **I accept** check box to enable the **Next** button to progress onto the next step.
-8. Complete the **Application Details** section by providing:
+5. Add the following roles under the section called **Event Streaming Service**
+    - **Event Streaming** with READ permission
+6. Navigate to **Services | API and Platform Integrations**
+7. Locate the following **Mimecast API 2.0** tile and click on **Generate Keys.**
+8. After reading the **Terms & Conditions**, complete the **I accept** check box to enable the **Next** button to progress onto the next step.
+9. Complete the **Application Details** section by providing:
     - Application Name: Select **SIEM Integration**,
     - Description (Optional),
     - Integration Partner (Optional),
     - Products: Select all products,
     - Role: Select the "Sekoia" role created above.
-9. Complete the **Notifications** section by providing:
+10. Complete the **Notifications** section by providing:
     - Technical Point of Contact: Write the name of the administrator to be contacted if you encounter any issue with the API,
     - Email : Write the administrator's email.
-10. Validate the form and Click on **Add and Generate Keys**
-11. The wizard completes and displays a pop-up window including your `Client ID` and `Client Secret` key data.
+11. Validate the form and Click on **Add and Generate Keys**
+12. The wizard completes and displays a pop-up window including your `Client ID` and `Client Secret` key data.
+
+#### Activate logging
+
+1. Login to **Mimecast Administration Console**
+2. Navigate to **Account** > **Account Settings** > **Enhanced Logging**
+3. Select the Enhanced Logging option that you want:
+![mimecast_logging](/assets/integration/mimecast_logging.png){: style="max-width:100%"}
 
 ### Instruction on Sekoia
 #### Create your intake
 
-1. Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a new intake from the `Mimecast Email Security`.
-2. Copy the associated Intake key
+1. Navigate to the [intake page](https://app.sekoia.io/operations/intakes) and create a new intake using the `Mimecast Email Security` integration.  
+2. If you do not already have one, create an account by entering your `Client ID` and `Client Secret`. If you have an existing account, simply select it from the list.  
+3. Configure the settings by choosing your preferred `Chunk Size` and `Frequency`.  
+4. Copy the newly created Intake Key for use in your setup.  
 
-#### Pull your logs on Sekoia.io
+!!! Note
+    Mimecast provides events in batches every 15 minutes. In order to comply with the Mimecast ratelimiting (50 calls per 15 minutes), the default frequency is set to 8 minutes.
 
-Go to the Sekoia.io [playbook page](https://app.sekoia.io/operations/playbooks), and follow these steps:
-
-- Click on **+ PLAYBOOK** button to create a new one
-- Select **Create a playbook from scratch**
-- Give it a name in the field **Name**
-- Open the left panel, click **Mimecast** then select the trigger `[BETA] Fetch new email events from Mimecast`
-- Click on **Create**
-
-- Create a **Module configuration** using your `Client ID` and `Client Secret` created on the *How to create API credentials* step. Name the module configuration as you wish
-- Create a **Trigger configuration** and Type the `Intake key` created on the previous step
-- Click on the **Save** button
-- **Activate the playbook** with the toggle button on the top right corner of the page
 
 ### Enjoy your events on the [Events page](https://app.sekoia.io/operations/events)
 

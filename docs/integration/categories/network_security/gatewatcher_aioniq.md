@@ -1,5 +1,5 @@
-uuid: bba2bed2-d925-440f-a0ce-dbcae04eaf26
-name: Gatewatcher AionIQ
+uuid: bba2bed2-d925-440f-a0ce-dbcae04eaf26,2f28e4f9-a4f3-40a6-9909-b69f3df32535
+name: Gatewatcher AionIQ (Legacy)
 type: intake
 
 ## Overview
@@ -7,18 +7,14 @@ type: intake
 Gatewatcher AionIQ is a detection and response platform for your network that identifies malicious actions and suspicious behaviors.
 
 - **Vendor**: Gatewatcher
-- **Plan**: Defend Core & Defend Prime
 - **Supported environment**: On Premise
-- **Version compatibility, if applicable**: 2.5.3
+- **Version compatibility, if applicable**: 2.5.3.101, 2.5.3.102
 - **Detection based on**: Network Telemetry
 - **Supported application or feature**: Malware and Network events
 
 ## High-Level Architecture Diagram
 
 - **Type of integration**: Outbound (PUSH to Sekoia.io)
-- **Schema**
-
-![gatewatcher_aioniq_architecture](/assets/integration/gatewatcher_aioniq_architecture.png)
 
 ## Specification
 
@@ -53,9 +49,18 @@ This setup guide will show you how to forward your Gatewatcher AionIQ logs to Se
 
 #### Setup syslog forwarding on GCenter
 
-   - Log on your GCenter and follow [this guide](https://docs.gatewatcher.com/en/gcenter/2.5.3/101/itg-ext/syslog.html) to enable syslog forwarding.
-   - Set the hostname to your log concentrator and the port number to `514`.
+   - Log on your GCenter
+   - Go to  `Administrators` > `GCenter` > `Data export`
+   - Click `Configure` on the primary or secondary data exports
+   - Set the hostname to your log concentrator and the port number to `514`
    - Select `json` as the codec, `5424` as RFC and `tcp` as the protocol.
+   - Click `Enable` to activate the data exports
+   - Click `Save` to save the configuration
+
+See GCenter documentation for more details:
+
+- [Syslog configuration for v101](https://docs.gatewatcher.com/en/gcenter/2.5.3/101/itg-ext/syslog.html)
+- [Syslog configuration for v102](https://docs.gatewatcher.com/en/gcenter/2.5.3/102/08_use_cases_administrator/05_gcenter_admin/01_data_management.html)
 
 {!_shared_content/integration/forwarder_configuration.md!}
 
@@ -73,4 +78,5 @@ This setup guide will show you how to forward your Gatewatcher AionIQ logs to Se
 
 ## Further readings
 
-- [GCenter Syslog configuration overview](https://docs.gatewatcher.com/en/gcenter/2.5.3/101)
+- [GCenter 2.5.3v101 Documentation](https://docs.gatewatcher.com/en/gcenter/2.5.3/101)
+- [GCenter 2.5.3v102 Documentation](https://docs.gatewatcher.com/en/gcenter/2.5.3/102)

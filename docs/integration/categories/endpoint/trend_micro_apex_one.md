@@ -1,16 +1,15 @@
 uuid: 064f7e8b-ce5f-474d-802e-e88fe2193365
-name: Trend Micro Apex One
+name: Trend Micro Apex One / Vision One Endpoint
 type: intake
 
 ## Overview
 - **Vendor**:
-- **Plan**: Defend Core & Defend Prime
 - **Supported environment**:
 - **Version compatibility**:
 - **Detection based on**: Alert, Telemetry
 - **Supported application or feature**:
 
-Trend Micro Apex One is Endpoint Detection and Response (EDR) solution that detects and protects your endpoints against threats.
+Trend Micro Apex One / Vision One Endpoint is Endpoint Detection and Response (EDR) solution that detects and protects your endpoints against threats.
 
 This integration supports the following log types:
 
@@ -30,11 +29,6 @@ This integration supports the following log types:
 - Web Violation
 - Engine Update Status
 - Pattern Update Status
-
-
-!!! warning
-    This format is in beta
-
 
 
 ## Configure
@@ -81,7 +75,7 @@ Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a n
 
 ## Forward logs to Sekoia.io
 
-Please consult the [Syslog Forwarding](/integration/ingestion_methods/syslog/sekoiaio_forwarder/) documentation to forward these logs to Sekoia.io.
+Please consult the [Syslog Forwarding](/integration/ingestion_methods/syslog/sekoiaio_forwarder.md) documentation to forward these logs to Sekoia.io.
 
 
 {!_shared_content/operations_center/integrations/generated/064f7e8b-ce5f-474d-802e-e88fe2193365_sample.md!}

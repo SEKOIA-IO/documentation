@@ -6,7 +6,6 @@ type: intake
 SonicWall Secure Mobile Access offers secure and seamless remote access to corporate resources, applications, and data, enhancing workforce mobility while maintaining robust security and compliance measures.
 
 - **Vendor**: SonicWall
-- **Plan**: Defend Core & Defend Prime
 - **Supported environment**: On prem
 - **Version compatibility**: 10.2
 - **Detection based on**: Telemetry
@@ -38,7 +37,7 @@ Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a n
 
 ### Forward logs to Sekoia.io
 
-Please consult the [Syslog Forwarding](/integration/ingestion_methods/syslog/sekoiaio_forwarder) documentation to forward these logs to Sekoia.io.
+Please consult the [Syslog Forwarding](/integration/ingestion_methods/syslog/sekoiaio_forwarder.md) documentation to forward these logs to Sekoia.io.
 
 {!_shared_content/operations_center/integrations/generated/622999fe-d383-4d41-9f2d-eed5013fe463_sample.md!}
 

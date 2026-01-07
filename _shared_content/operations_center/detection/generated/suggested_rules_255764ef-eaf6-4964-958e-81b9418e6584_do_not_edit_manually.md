@@ -37,7 +37,7 @@ The following Sekoia.io built-in rules match the intake **Kaspersky Endpoint Sec
     
     Discord is a messaging application. It allows users to create their own communities to share messages and attachments. Those attachments have little to no overview and can be downloaded by almost anyone, which has been abused by attackers to host malicious payloads.
     
-    - **Effort:** intermediate
+    - **Effort:** advanced
 
 ??? abstract "Formbook File Creation DB1"
     
@@ -49,11 +49,17 @@ The following Sekoia.io built-in rules match the intake **Kaspersky Endpoint Sec
     
     Quick-win rule to detect the default process names or file names of several HackTools.
     
-    - **Effort:** elementary
+    - **Effort:** advanced
 
 ??? abstract "Koadic MSHTML Command"
     
     Detects Koadic payload using MSHTML module
+    
+    - **Effort:** intermediate
+
+??? abstract "Linux Masquerading Space After Name"
+    
+    This detection rule identifies a process created from an executable with a space appended to the end of the name.
     
     - **Effort:** intermediate
 
@@ -90,12 +96,6 @@ The following Sekoia.io built-in rules match the intake **Kaspersky Endpoint Sec
 ??? abstract "Process Trace Alteration"
     
     PTrace syscall provides a means by which one process ("tracer") may observe and control the execution of another process ("tracee") and examine and change the tracee's memory and registers. Attacker might want to abuse ptrace functionnality to analyse memory process. It requires to be admin or set ptrace_scope to 0 to allow all user to trace any process.
-    
-    - **Effort:** advanced
-
-??? abstract "RSA SecurID Failed Authentification"
-    
-    Detects many failed attempts to authenticate followed by a successfull login for a super admin account.
     
     - **Effort:** advanced
 

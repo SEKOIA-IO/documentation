@@ -92,10 +92,34 @@ In this section, you will find examples of raw logs as generated natively by the
 
 
 
+=== "test_ASA_111008"
+
+    ```
+	%ASA-5-111008: User 'admin' executed the 'login' command.
+    ```
+
+
+
 === "test_ASA_113004"
 
     ```
 	%ASA-6-113004: AAA user authentication Successful : server = 10.79.48.28 : user = jdoe001566
+    ```
+
+
+
+=== "test_ASA_113005"
+
+    ```
+	Jun 07 2025 17:31:57: %ASA-6-113005: AAA user authentication Rejected : reason = Unspecified : server = 1.2.3.4 : user = ***** : user IP = 5.6.7.8
+    ```
+
+
+
+=== "test_ASA_113012"
+
+    ```
+	%ASA-6-113012: AAA user authentication Successful : local database : user = admintufin
     ```
 
 
@@ -108,10 +132,18 @@ In this section, you will find examples of raw logs as generated natively by the
 
 
 
-=== "test_ASA_302013"
+=== "test_ASA_302013_1"
 
     ```
 	%ASA-6-302013: Built inbound TCP connection 1800234408 for TTA-ACME-VDO_CAM:10.1.7.248/40454 (10.1.7.248/40454) to TTA-ACME-SRV_INFRA:10.1.0.10/53 (10.1.0.10/53)
+    ```
+
+
+
+=== "test_ASA_302013_2"
+
+    ```
+	%ASA-6-302013: Built inbound TCP connection 79601067 for internet:1.2.3.4/62197 (1.2.3.4/62197)(LOCAL\john.doe@company.fr) to transit:5.6.7.8/88 (5.6.7.8/88)
     ```
 
 
@@ -212,6 +244,30 @@ In this section, you will find examples of raw logs as generated natively by the
 
 
 
+=== "test_ASA_611101"
+
+    ```
+	%ASA-6-611101: User authentication succeeded: IP address: 0.0.0.0, Uname: admintufin
+    ```
+
+
+
+=== "test_ASA_611103"
+
+    ```
+	%ASA-5-611103: User logged out: Uname: admintufin
+    ```
+
+
+
+=== "test_ASA_716039"
+
+    ```
+	Jun 07 2025 16:16:20: %ASA-6-716039: Group <GrpPolicy> User <*****> IP <1.2.3.4> Authentication: rejected, Session Type: WebVPN.
+    ```
+
+
+
 === "test_ASA_716058"
 
     ```
@@ -300,6 +356,14 @@ In this section, you will find examples of raw logs as generated natively by the
 
 
 
+=== "test_ASA_722051"
+
+    ```
+	%ASA-6-722051: (WebVPN-Primary) WebVPN session for client user test-test, IP 1.2.3.4 has been created.
+    ```
+
+
+
 === "test_ASA_725001"
 
     ```
@@ -348,6 +412,14 @@ In this section, you will find examples of raw logs as generated natively by the
 
 
 
+=== "test_ASA_750003"
+
+    ```
+	%ASA-4-750003: Local:1.2.3.4:500 Remote:peer-aws-GIPN:500 Username:5.6.7.8 IKEv2 Negotiation aborted due to ERROR: There was no IPSEC policy found for received TS
+    ```
+
+
+
 === "test_ASA_852001"
 
     ```
@@ -356,10 +428,50 @@ In this section, you will find examples of raw logs as generated natively by the
 
 
 
+=== "test_FTD_109201"
+
+    ```
+	%FTD-5-109201: UAUTH: Session=0x00fee000, User=User_Acme, Assigned IP=1.2.3.4, Succeeded adding entry.
+    ```
+
+
+
 === "test_FTD_113004"
 
     ```
 	%FTD-6-113004: AAA user authentication Successful : server =  10.10.48.61 : user = jdoe
+    ```
+
+
+
+=== "test_FTD_113004_2"
+
+    ```
+	%FTD-6-113004: AAA user authorization Successful : server = 1.2.3.4 : user = User_Acme
+    ```
+
+
+
+=== "test_FTD_113019"
+
+    ```
+	%FTD-4-113019: Group = MyGroup, Username = User_Acme, IP = 1.2.3.4, Session disconnected. Session Type: IKEv2, Duration: 2h:28m:09s, Bytes xmt: 54735230, Bytes rcv: 27473152, Reason: Idle Timeout
+    ```
+
+
+
+=== "test_FTD_113039"
+
+    ```
+	%FTD-6-113039: Group <CLIENT_VPN> User <User_Acme> IP <192.168.91.121> AnyConnect parent session started.
+    ```
+
+
+
+=== "test_FTD_113039_2"
+
+    ```
+	%FTD-6-113039: Group <CLIENT-VPN> User <user-name> IP <1.2.3.4> AnyConnect parent session started.
     ```
 
 
@@ -392,6 +504,46 @@ In this section, you will find examples of raw logs as generated natively by the
 
     ```
 	%FTD-1-430003: EventPriority: Low, DeviceUUID: deyyyyy-844d-11e7-b104-8d1450667052, InstanceID: 1, FirstPacketSecond: 2023-08-23T12:59:00Z, ConnectionID: 55087, AccessControlRuleAction: Allow, SrcIP: 10.55.21.168, DstIP: 142.55.179.67, SrcPort: 77777, DstPort: 80, Protocol: tcp, IngressInterface: LAN, EgressInterface: WAN, IngressZone: LAN, EgressZone: OUT, IngressVRF: Global, EgressVRF: Global, ACPolicy: ACPolicy, AccessControlRuleName: SORTIE_INTERNET_ALL, Prefilter Policy: LALALAND L3-L4 Policy, User: Not Found, UserAgent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.32 Safari/537.36, Client: Chrome, ClientVersion: 60.0.3112.32, ApplicationProtocol: HTTP, WebApplication: Google, ConnectionDuration: 0, InitiatorPackets: 5, ResponderPackets: 5, InitiatorBytes: 565, ResponderBytes: 484, NAPPolicy: Balanced Security and Connectivity, ReferencedHost: connectivitycheck.gstatic.com, URLCategory: Infrastructure and Content Delivery Networks, URLReputation: Favorable, URL: http://connectivitycheck.gstatic.com/generate_204, NAT_InitiatorPort: 77777, NAT_ResponderPort: 80, NAT_InitiatorIP: 194.55.57.195, NAT_ResponderIP: 142.55.179.67
+    ```
+
+
+
+=== "test_FTD_722051_1"
+
+    ```
+	%FTD-4-722051: Group <GroupPolicy> User <johndoe> IP <1.2.3.4> IPv4 Address <5.6.7.8> IPv6 address <::> assigned to session
+    ```
+
+
+
+=== "test_FTD_722051_2"
+
+    ```
+	%FTD-4-722051: Group <GP_SSL_Desktop> User <johndoe> IP <1.2.3.4> IPv4 Address <5.6.7.8> IPv6 address <::> assigned to session
+    ```
+
+
+
+=== "test_FTD_750003"
+
+    ```
+	%FTD-4-750003 Local:1.2.3.4:500 Remote:5.6.7.8:500 Username:User IKEv2 Negotiation aborted due to ERROR: Failed to authenticate the IKE SA
+    ```
+
+
+
+=== "test_FTD_750003_2"
+
+    ```
+	%FTD-4-750003: Local:1.2.3.4:500 Remote:5.6.7.8:500 Username:5.6.7.8 IKEv2 Negotiation aborted due to ERROR: There was no IPSEC policy found for received TS
+    ```
+
+
+
+=== "test_FTD_75006"
+
+    ```
+	%FTD-5-750006: Local:1.2.3.4:4500 Remote:5.6.7.8:55543 Username:toto IKEv2 SA UP. Reason: New Connection Established
     ```
 
 

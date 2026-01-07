@@ -7,7 +7,6 @@ type: intake
 SentinelOne is an Endpoint Detection and Response (EDR) solution. By using the standard SentinelOne EDR logs collection by API, you will be provided with high-level information on the detection and investigation of your EDR.
 
 - **Vendor**: SentinelOne
-- **Plan**:  Defend Core & Defend Prime
 - **Supported environment**: Cloud
 - **Detection based on**: Alert
 
@@ -24,7 +23,7 @@ Depending on the context of the log, additional content could be available, such
 - File information
 
 !!! Tip
-    For advanced log collection, we suggest you use the SentinelOne Cloud Funnel 2.0 option, as described in the [SentinelOne Cloud Funnel 2.0 integration](/integration/categories/endpoint/sentinelone_cloudfunnel2.0).
+    For advanced log collection, we suggest you use the SentinelOne Cloud Funnel 2.0 option, as described in the [SentinelOne Cloud Funnel 2.0 integration](/integration/categories/endpoint/sentinelone_cloudfunnel2.0.md).
 
 
 ## Configure
@@ -42,7 +41,7 @@ This setup guide will show you how to pull events produced by SentinelOne EDR on
 4. Select `Create User` and copy the generated API token.
 
 !!! note
-    A `Service User` with the `Site Admin` or `IR Team` role can mitigate threats from [Sekoia.io](https://app.sekoia.io/) using [SentinelOne playbook actions](/xdr/features/automate/library/sentinelone). A user with the `Site Viewer` role can view activity events and threats but cannot take action.
+    A `Service User` with the `Site Admin` or `IR Team` role can mitigate threats from [Sekoia.io](https://app.sekoia.io/) using [SentinelOne playbook actions](/xdr/features/automate/library/sentinelone.md). A user with the `Site Viewer` role can view activity events and threats but cannot take action.
 
 ## Create a SentinelOne intake
 
@@ -53,11 +52,11 @@ In the [Sekoia.io Operation Center](https://app.sekoia.io/operations/intakes):
 3. Click `Create` under the relevant object (SentinelOne EDR or SentinelOne Cloud Funnel).
 4. Enter the `Name` of your intake that will be displayed, select the related `Entity` from the dropdown, and then select `Automatically`:
 
-![SentinelOne EDR Intake creation](/assets/operation_center/integration_catalog/endpoint/sentinelone/sentinelone-configure-intake.png){: style="max-width:60%"}
+![SentinelOne EDR Intake creation](/assets/integration/endpoint/sentinelone/sentinelone-configure-intake.png){: style="max-width:60%"}
 
 5. Enter the previously downloaded SentinelOne `API token` and the related `URL Domain`:
 
-![SentinelOne EDR secret](/assets/operation_center/integration_catalog/endpoint/sentinelone/sentinelone_edr_api.png){: style="max-width:60%"}
+![SentinelOne EDR secret](/assets/integration/endpoint/sentinelone/sentinelone_edr_api.png){: style="max-width:60%"}
 
 {!_shared_content/operations_center/integrations/generated/07c556c0-0675-478c-9803-e7990afe78b6_sample.md!}
 

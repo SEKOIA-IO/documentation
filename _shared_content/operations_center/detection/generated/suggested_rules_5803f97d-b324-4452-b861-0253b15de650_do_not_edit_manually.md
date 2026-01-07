@@ -79,13 +79,7 @@ The following Sekoia.io built-in rules match the intake **Lacework Cloud Securit
     
     This event can be a sign of Kerberos replay attack or, among other things, network device configuration or routing problems.
     
-    - **Effort:** intermediate
-
-??? abstract "RSA SecurID Failed Authentification"
-    
-    Detects many failed attempts to authenticate followed by a successfull login for a super admin account.
-    
-    - **Effort:** advanced
+    - **Effort:** master
 
 ??? abstract "Remote Access Tool Domain"
     
