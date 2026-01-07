@@ -282,6 +282,7 @@ nav:
       - Cisco Duo Security: integration/categories/iam/cisco_duo_security.md
       - Cyberark Digital Vault: integration/categories/iam/cyberark_vault.md
       - CyberArk Identity Audit Logs: integration/categories/iam/cyberark_identity_audit_logs.md
+      - Delinea Platform Audit Logs: integration/categories/iam/delinea_audit_logs.md
       - FreeRADIUS: integration/categories/iam/freeradius.md
       - Jumpcloud Directory Insights: integration/categories/iam/jumpcloud_directory_insights.md
       - Keycloak Events: integration/categories/iam/keycloak_events.md
@@ -313,7 +314,6 @@ nav:
       - Cloudflare Gateway HTTP: integration/categories/network/cloudflare-gateway-http.md
       - Cloudflare Gateway Network: integration/categories/network/cloudflare-gateway-network.md
       - Cloudflare HTTP requests: integration/categories/network/cloudflare-http-requests.md
-      - Delinea PRA: integration/categories/network/delinea_pra.md
       - EfficientIP SOLIDServer DDI: integration/categories/network/efficientip_solidserver_ddi.md
       - Ekinops OneOS: integration/categories/network/ekinops_oneos.md
       - F5 BIG-IP: integration/categories/network/f5-big-ip.md
