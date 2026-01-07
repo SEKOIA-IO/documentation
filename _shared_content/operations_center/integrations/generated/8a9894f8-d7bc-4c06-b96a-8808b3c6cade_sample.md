@@ -76,6 +76,22 @@ In this section, you will find examples of raw logs as generated natively by the
 
 
 
+=== "test_failed_attempts_2"
+
+    ```
+	CISE_Failed_Attempts 0000815086 4 1 SSID=11-22-33-44-55-66, AcsSessionID=HOST_01/552714706/823738, AuthenticationIdentityStore=Internal Endpoints, AuthenticationMethod=Lookup, SelectedAccessService=Selected_Service, SelectedAuthorizationProfiles=DenyAccess, UseCase=Host Lookup, RequestLatency=12, IdentityGroup=Endpoint Identity Groups:Profiled, FailureReason=15039 Rejected per authorization profile, Step=11001, Step=11017, Step=11027, Step=15049, Step=15008, Step=15048, Step=15048, Step=15048, Step=15048, Step=15041, Step=15048, Step=15013, Step=24209, Step=24211, Step=22037, Step=15036, Step=15048, Step=15048, Step=24032, Step=24017, Step=24019, Step=24034, Step=24031, Step=24017, Step=24019, Step=15048, Step=24032, Step=24017, Step=24019, Step=24034, Step=24031, Step=24017, Step=24019, Step=15048, Step=15048, Step=15016, Step=15039, Step=11003, SelectedAuthenticationIdentityStores=Internal Endpoints, NetworkDeviceGroups=Location#All Locations#EU#France#RENNES,#15
+    ```
+
+
+
+=== "test_failed_attempts_3"
+
+    ```
+	CISE_Failed_Attempts 0000815085 5 4 IPSEC=IPSEC#Is IPSEC Device#No, Name=Endpoint Identity Groups:Profiled, Response={RadiusPacketType=AccessReject; AuthenticationResult=Passed; UserName=11:22:33:44:55:66; },#15
+    ```
+
+
+
 === "test_kv_with_colon_1"
 
     ```
@@ -188,6 +204,14 @@ In this section, you will find examples of raw logs as generated natively by the
 
 
 
+=== "test_passed_authentication"
+
+    ```
+	CISE_Passed_Authentications 0000815089 10 8 DC=infra,DC=xxxxx, Issuer - Common Name=XXX Devices CA, Issuer - Domain Component=xxx, Issuer - Domain Component=infra, Issuer - Domain Component=xxxxx, Key Usage=0, Key Usage=2, Extended Key Usage - Name=130, Extended Key Usage - OID=1.1.1.1.1.1.1.1.1, Template Name=2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2, Days to Expiry=261, Issuer - Fingerprint SHA-256=a0946a7af563dbc3397893f7313410cb9087fcab14566096e7f1b44992251e62, AKI=33:33:33:33:33:33:33:33:33:33:33:33:33:33:33:33:33:33:33:33, HostIdentityGroup=Endpoint Identity Groups:Unknown, Model Name=9200, Network Device Profile=Cisco, Location=Location#All Locations#EU#France#RENNES, Device Type=Device Type#All Device Types#Wired#Switch#Cisco, IPSEC=IPSEC#Is IPSEC Device#No, distinguishedName=CN=TEST-NAME-01,OU=Laptops,OU=Computers,OU=RUM,DC=xxx,DC=infra,DC=xxxxx, ExternalGroups=S-1-2-3-4-5-6-7,#15
+    ```
+
+
+
 === "test_profiler_1"
 
     ```
@@ -200,6 +224,22 @@ In this section, you will find examples of raw logs as generated natively by the
 
     ```
 	Oct 27 15:20:43 HOST-01 CISE_RADIUS_Accounting 0001042079 1 0 2025-10-27 15:20:43.919 +01:00 0015337799 3002 NOTICE Radius-Accounting: RADIUS Accounting watchdog update, ConfigVersionId=11, Device IP Address=1.2.3.4, UserName=user1, NetworkDeviceName=DEVICE-02, User-Name=user1, NAS-IP-Address=1.2.3.4, NAS-Port=42, Service-Type=Framed, Framed-IP-Address=1.2.3.4, Class=CACS:000000000000000000000000:HOST-01/000000000/000000, Called-Station-ID=user1:, Calling-Station-ID=user1, Acct-Status-Type=Interim-Update, Acct-Delay-Time=0, Acct-Input-Octets=921941396, Acct-Output-Octets=0, Acct-Session-Id=0000000000000000, Acct-Authentic=RADIUS, Acct-Session-Time=570009, Acct-Input-Packets=0, Acct-Output-Packets=35, Acct-Input-Gigawords=922518720, Acct-Output-Gigawords=28, Event-Timestamp=1761574843, NAS-Port-Type=Ethernet, cisco-av-pair=audit-session-id=000000000000000000000000, AcsSessionID=HOST-01/000000000/000000, SelectedAccessService=Default Network Access, RequestLatency=2, Step=11004, Step=11017, Step=15049, Step=15008, Step=22094, Step=11005, NetworkDeviceGroups=Location#All Locations#SITE-02, NetworkDeviceGroups=Device Type#All Device Types#SW_Vendor_Site, NetworkDeviceGroups=IPSEC#Is IPSEC Device#No, CPMSessionID=000000000000000000000000, StepLatency=1=0;2=0;3=1;4=0;5=0, TotalAuthenLatency=2, ClientLatency=0, Network Device Profile=Cisco, Location=Location#All Locations#SITE-02, Device Type=Device Type#All Device Types#SW_Vendor_Site, IPSEC=IPSEC#Is IPSEC Device#No,
+    ```
+
+
+
+=== "test_radius_accounting_2"
+
+    ```
+	CISE_RADIUS_Accounting 0000493168 3 2 NetworkDeviceGroups=IPSEC#Is IPSEC Device#No, NetworkDeviceGroups=Device Type#All Device Types, CPMSessionID=111111111111111111111111, TotalAuthenLatency=2, ClientLatency=0, Model Name=Unknown, Software Version=Unknown, Network Device Profile=Cisco, Location=Location#All Locations#DC1, Device Type=Device Type#All Device Types, IPSEC=IPSEC#Is IPSEC Device#No, #15
+    ```
+
+
+
+=== "test_radius_accounting_3"
+
+    ```
+	CISE_RADIUS_Accounting 0000493146 3 1 cisco-av-pair=dc-device-name=device_01, cisco-av-pair=dc-device-class-tag=Android-Device:Android, cisco-av-pair=dc-certainty-metric=30, cisco-av-pair=11:11:11:11:11:11:11:11:11:11:11:00:00:00:01:00:00:00:00:00:00:00, cisco-av-pair=dc-protocol-map=9, cisco-av-pair=http-tlv=User-Agent=Useragent/1.6.0 (Linux; U; Android 4.4.2; ALR-H450 Build/KOT49H), cisco-av-pair=dhcp-option=host-name=device_01, cisco-av-pair=dhcp-option=dhcp-class-identifier=dhcpcd-5.5.6, cisco-av-pair=dhcp-option=dhcp-parameter-request-list=1, 33, 3, 6, 15, 28, 51, 58, 59, cisco-av-pair=audit-session-id=6BF9680A001DC135219AFBFD, cisco-av-pair=vlan-id=2001, cisco-av-pair=method=mab, cisco-av-pair=cts:security-group-tag=0006, cisco-av-pair=cisco-wlan-ssid=C-Guest, cisco-av-pair=wlan-profile-name=C-Guest-CWA, Airespace-Wlan-Id=40, AcsSessionID=HOST_01/549140223/473883, SelectedAccessService=Default Network Access,#15
     ```
 
 
