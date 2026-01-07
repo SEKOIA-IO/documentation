@@ -1,6 +1,9 @@
+---
 uuid: 954a6488-6394-4385-8427-621541e881d5
+title: Trellix EDR
 name: Trellix EDR
 type: intake
+---
 
 ## Overview
 - **Vendor**: Trellix

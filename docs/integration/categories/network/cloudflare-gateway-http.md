@@ -1,6 +1,9 @@
+---
 uuid: f570dd30-854b-4a22-9c2d-e2cfa46bf0e5
+title: Cloudflare Gateway HTTP
 name: Cloudflare Gateway HTTP
 type: intake
+---
 
 ## Overview
 

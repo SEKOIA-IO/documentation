@@ -1,6 +1,9 @@
+---
 uuid: a0dbb8f3-ca1c-4c6b-aafa-595bd430c0cb
+title: Squid
 name: Squid
 type: intake
+---
 
 # Squid
 

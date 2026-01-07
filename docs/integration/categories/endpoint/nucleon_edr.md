@@ -1,6 +1,9 @@
+---
 uuid: 516d93f9-86b0-4038-a85b-c9be72035ac4
+title: NucleonEDR
 name: NucleonEDR
 type: intake
+---
 
 ## Overview
 

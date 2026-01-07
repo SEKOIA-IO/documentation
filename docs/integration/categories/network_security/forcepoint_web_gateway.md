@@ -1,6 +1,9 @@
+---
 uuid: f0f95532-9928-4cde-a399-ddd992d48472
+title: Forcepoint Secure Web Gateway
 name: Forcepoint Secure Web Gateway
 type: intake
+---
 
 ## Overview
 

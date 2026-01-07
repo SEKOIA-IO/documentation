@@ -1,6 +1,9 @@
+---
 uuid: a2915a14-d1e9-4397-86fc-8f8b2c617466
+title: Olfeo Secure Web Gateway
 name: Olfeo Secure Web Gateway
 type: intake
+---
 
 ## Overview
 

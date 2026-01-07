@@ -1,6 +1,9 @@
+---
 uuid: ab25af2e-4916-40ba-955c-34d2301c1f51
+title: NGINX
 name: NGINX
 type: intake
+---
 
 ## Overview
 

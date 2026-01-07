@@ -1,6 +1,9 @@
+---
 uuid: 90179796-f949-490c-8729-8cbc9c65be55
+title: Umbrella DNS Logs
 name: Umbrella DNS Logs
 type: intake
+---
 
 ## Overview
 Cisco Umbrella offers flexible, cloud-delivered security. It combines multiple security functions into one solution, so that protection can be extended to devices, remote users, and distributed locations anywhere.

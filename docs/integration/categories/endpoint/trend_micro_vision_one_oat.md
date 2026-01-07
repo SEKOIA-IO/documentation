@@ -1,6 +1,9 @@
+---
 uuid: 2345b987-a94a-4363-b7bc-a6e4a9efd98a
+title: Trend Micro Vision One Observed Attack Techniques [BETA]
 name: Trend Micro Vision One Observed Attack Techniques [BETA]
 type: intake
+---
 
 
 ## Overview

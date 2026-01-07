@@ -1,6 +1,9 @@
+---
 uuid: 46ca6fc8-3d30-434c-92ff-0e1cde564161
+title: Proofpoint Targeted Attack Protection
 name: Proofpoint Targeted Attack Protection
 type: intake
+---
 
 ## Overview
 

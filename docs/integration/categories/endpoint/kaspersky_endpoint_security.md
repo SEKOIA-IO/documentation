@@ -1,6 +1,9 @@
+---
 uuid: 255764ef-eaf6-4964-958e-81b9418e6584
+title: Kaspersky Endpoint Security
 name: Kaspersky Endpoint Security
 type: intake
+---
 
 ## Overview
 

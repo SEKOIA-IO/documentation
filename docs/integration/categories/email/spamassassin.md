@@ -1,6 +1,9 @@
+---
 uuid: 7954ae6f-eafa-404d-8e15-4b99a12b754c
+title: SpamAssassin
 name: SpamAssassin
 type: intake
+---
 
 ## Overview
 

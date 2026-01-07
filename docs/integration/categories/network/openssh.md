@@ -1,6 +1,9 @@
+---
 uuid: b28db14b-e3a7-463e-8659-9bf0e577944f
+title: OpenSSH
 name: OpenSSH
 type: intake
+---
 
 ## Overview
 - **Vendor**:

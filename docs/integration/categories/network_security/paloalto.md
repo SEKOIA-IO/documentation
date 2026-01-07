@@ -1,6 +1,9 @@
+---
 uuid: 903ec1b8-f206-4ba5-8563-db21da09cafd
+title: Palo Alto Next-Generation Firewall
 name: Palo Alto Next-Generation Firewall
 type: intake
+---
 
 ## Overview
 

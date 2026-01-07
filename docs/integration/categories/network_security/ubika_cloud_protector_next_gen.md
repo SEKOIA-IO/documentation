@@ -1,6 +1,9 @@
+---
 uuid: e04c988c-cbb7-4b6a-8025-7b80a301ac28
+title: Ubika Cloud Protector Next Generation
 name: Ubika Cloud Protector Next Generation
 type: intake
+---
 
 ## Overview
 

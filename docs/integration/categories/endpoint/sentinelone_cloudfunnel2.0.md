@@ -1,6 +1,9 @@
+---
 uuid: 40deb162-6bb1-4635-9c99-5c2de7e1d340
+title: SentinelOne Cloud Funnel 2.0
 name: SentinelOne Cloud Funnel 2.0
 type: intake
+---
 
 ## Overview
 

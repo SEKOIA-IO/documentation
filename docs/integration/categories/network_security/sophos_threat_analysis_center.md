@@ -1,6 +1,9 @@
+---
 uuid: 99da26fc-bf7b-4e5b-a76c-408472fcfebb
+title: Sophos Threat Analysis Center
 name: Sophos Threat Analysis Center
 type: intake
+---
 
 ## Overview
 

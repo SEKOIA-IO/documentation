@@ -1,6 +1,9 @@
+---
 uuid: bd9d0f51-114e-499a-bb7a-4f2d0a518b04
+title: Cloudflare DNS logs
 name: Cloudflare DNS logs
 type: intake
+---
 
 ## Overview
 

@@ -1,6 +1,9 @@
+---
 uuid: 2f28e4f9-a4f3-40a6-9909-b69f3df32535
+title: Gatewatcher AionIQ
 name: Gatewatcher AionIQ
 type: intake
+---
 
 ## Overview
 

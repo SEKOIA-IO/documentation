@@ -1,6 +1,9 @@
+---
 uuid: 59991ced-c2a0-4fb0-91f3-49e3993c16f5
+title: Tanium
 name: Tanium
 type: intake
+---
 
 ## Overview
 Tanium solutions manage and protect networks and endpoints.
