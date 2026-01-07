@@ -1,7 +1,12 @@
-Changelog _last update on 2026-01-06_
+Changelog _last update on 2026-01-07_
 
 ## Changelog
 
+### Suspicious Download Links From Legitimate Services
+  - 06/01/2026 - minor - Update filter to reduce false positives.
+  - 15/10/2024 - minor - Adding filter to reduce false positives.
+  - 13/06/2024 - minor - Adding similarity strategy and changing effort level.
+    
 ### Suspicious desktop.ini Action
   - 06/01/2026 - minor - Adding some filters
   - 30/04/2024 - minor - Adding some filters
@@ -712,10 +717,6 @@ Changelog _last update on 2026-01-06_
   - 20/11/2023 - minor - Rule's effort level has been changed to advanced as it was too dependent on the environment.
   - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
   - 04/07/2023 - major - Added filter to reduce false positives
-    
-### Suspicious Download Links From Legitimate Services
-  - 15/10/2024 - minor - Adding filter to reduce false positives.
-  - 13/06/2024 - minor - Adding similarity strategy and changing effort level.
     
 ### Active Directory Replication User Backdoor
   - 15/10/2024 - major - Update pattern to avoid false positives and change rule effort

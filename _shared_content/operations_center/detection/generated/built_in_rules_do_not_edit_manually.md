@@ -1,4 +1,4 @@
-Rules catalog includes **1059 built-in detection rules** ([_last update on 2026-01-06_](rules_changelog.md)).
+Rules catalog includes **1059 built-in detection rules** ([_last update on 2026-01-07_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Identity Information**
 
@@ -1753,6 +1753,7 @@ Rules catalog includes **1059 built-in detection rules** ([_last update on 2026-
     
         - 13/06/2024 - minor - Adding similarity strategy and changing effort level.
         - 15/10/2024 - minor - Adding filter to reduce false positives.
+        - 06/01/2026 - minor - Update filter to reduce false positives.
             
 ??? abstract "Suspicious Email Attachment Received"
     
