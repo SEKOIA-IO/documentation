@@ -11,9 +11,6 @@ Siteminder generates access logs directly on the system. Then the data can be se
 - **Detection based on**: Telemetry
 - **Supported application or feature**: Web proxy, Web logs
 
-!!! Warning
-    Important note - This format is currently in beta. We highly value your feedback to improve its performance.
-
 ## High-Level Architecture Diagram
 
 - **Type of integration**: Outbound (PUSH to Sekoia.io)

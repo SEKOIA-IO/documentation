@@ -12,9 +12,6 @@ Netskope Log Streaming allows you to access all Netskope-generated logs directly
 - **Detection based on**: Telemetry
 - **Supported application or feature**:
     - Transaction Events
- 
-!!! Warning
-    Important note - This format is currently in beta. We highly value your feedback to improve its performance.
     
 
 ## Configure

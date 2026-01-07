@@ -12,9 +12,6 @@ This documentation shows how to setup the automated events forwarding from the E
 - **Detection based on**: Telemetry / Alert
 - **Supported application or feature**: System & network events
 
-!!! Warning
-    Important note - This format is currently in beta. We highly value your feedback to improve its performance.
-
 
 ## Configure
 
