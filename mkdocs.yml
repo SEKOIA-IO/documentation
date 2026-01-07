@@ -289,6 +289,7 @@ nav:
       - Microsoft Entra ID (Azure AD): integration/categories/iam/entra_id.md
       - Microsoft Entra ID (via Graph API): integration/categories/iam/entra_id_graph_api.md
       - Okta System log: integration/categories/iam/okta_system_log.md
+      - One Identity SPS Session logs: integration/categories/iam/one_identity_sps.md
       - OpenLDAP: integration/categories/iam/openldap.md
       - PingFederate: integration/categories/iam/pingfederate.md
       - RSA SecurID: integration/categories/iam/rsa_securid.md
