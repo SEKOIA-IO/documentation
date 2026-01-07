@@ -585,7 +585,6 @@ plugins:
       xdr/features/collect/integrations/application/apache.md: integration/categories/applicative/apache.md
       xdr/features/collect/integrations/application/bind.md: integration/categories/network/bind.md
       xdr/features/collect/integrations/application/cyberwatch_detection.md: integration/categories/network_security/cyberwatch_detection.md
-      xdr/features/collect/integrations/application/delinea-pra.md: integration/categories/applicative/delinea_pra.md
       xdr/features/collect/integrations/application/dhcpd.md: integration/categories/network/dhcpd.md
       xdr/features/collect/integrations/application/freeradius.md: integration/categories/iam/freeradius.md
       xdr/features/collect/integrations/application/haproxy.md: integration/categories/network/haproxy.md
