@@ -54,7 +54,7 @@ Juniper Next-Generation Firewall (NGFW) services provide a set of cyber defenses
 
     ```bash
     set security log mode stream
-    set security log format sd-syslog
+    set security log format syslog
     set security log source-interface {CHANGE_WITH_YOUR_INTERFACE}}
     ```
 
@@ -63,7 +63,7 @@ Juniper Next-Generation Firewall (NGFW) services provide a set of cyber defenses
     > Note : if your security policy requires extra-security (ex: tls) between the application and the syslog forwarder, modify the configuration accordingly
 
     ```bash
-    set security log stream sekoia_forwarder format sd-syslog
+    set security log stream sekoia_forwarder format syslog
     set security log stream sekoia_forwarder host {IP_OF_YOUR_SEKOIA_FORWARDER} port {SEKOIA_FORWARDER_SPECIFIC_PORT}
     set security log stream sekoia_forwarder category {ADAPT_TO_YOUR_NEEDS}
     ```
