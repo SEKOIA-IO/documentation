@@ -262,6 +262,9 @@ So you can setup it in two ways:
       -d @payload.json
       ```
 
+!!! warning
+    The `setPushEventSettings` can take up to 2 hours to be effective, or may require to repeat the operation twice
+
 #### Enjoy your events on the [Events page](https://app.sekoia.io/operations/events)
 
 {!_shared_content/operations_center/integrations/generated/d11df984-840d-4c29-a6dc-b9195c3a24e3_sample.md!}
