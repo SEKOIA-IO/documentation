@@ -9,6 +9,7 @@ extra_css:
 - stylesheets/lightgallery.min.css
 - stylesheets/poppins.min.css
 - stylesheets/inter.min.css
+- stylesheets/posthog.css
 extra_javascript:
 - javascript/sekoiaio.js
 - javascript/lightgallery.min.js

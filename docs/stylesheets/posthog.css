@@ -1,0 +1,67 @@
+/* --- Page feedback card under ToC --- */
+.toc-card[data-component="toc-card"] {
+  margin-top: 1rem;
+  padding: 1rem;
+}
+
+/* Title */
+.toc-card__title {
+  margin: 0 0 .75rem 0;
+  font-weight: 700;
+  font-size: .7rem;
+  line-height: 1.2;
+  color: var(--md-default-fg-color);
+}
+
+/* Buttons row */
+.toc-card__actions {
+  display: flex;
+  gap: .5rem;
+}
+
+/* Buttons */
+.toc-card__btn.docs-page-feedback__btn.docs-feedback {
+  display: inline-flex;
+  align-items: center;
+  gap: .4rem;
+
+  padding: .1rem .7rem;
+  border-radius: .5rem;
+
+  border: 1px solid var(--md-primary-fg-color);
+  background: transparent;
+  color: var(--md-primary-fg-color);
+
+  font-weight: 600;
+  font-size: .5rem;
+  line-height: 1;
+
+  cursor: pointer;
+  user-select: none;
+}
+
+/* Hover/focus */
+.toc-card__btn.docs-page-feedback__btn.docs-feedback:hover {
+  background: color-mix(in srgb, var(--md-primary-fg-color) 10%, transparent);
+}
+
+.toc-card__btn.docs-page-feedback__btn.docs-feedback:focus-visible {
+  outline: 2px solid var(--md-primary-fg-color);
+  outline-offset: 2px;
+}
+
+/* Pressed */
+.toc-card__btn.docs-page-feedback__btn.docs-feedback:active {
+  transform: translateY(1px);
+}
+
+/* Icon sizing */
+.toc-card__icon svg {
+  width: 1rem;
+  height: 1rem;
+}
+
+/* Optional: visual state if your JS toggles aria-pressed="true" */
+.toc-card__btn[aria-pressed="true"] {
+  background: color-mix(in srgb, var(--md-primary-fg-color) 14%, transparent);
+}
