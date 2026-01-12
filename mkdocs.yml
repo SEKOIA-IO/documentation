@@ -1,9 +1,16 @@
-copyright: Copyright &copy; 2025 - Sekoia.io
+copyright: Copyright &copy; 2026 - Sekoia.io
 edit_uri: edit/main/docs/
 extra:
   social:
-  - icon: fontawesome/brands/twitter
-    link: https://twitter.com/sekoia_io
+  - icon: fontawesome/brands/x-twitter
+    link: https://x.com/sekoia_io
+  - icon: fontawesome/brands/linkedin
+    link: https://www.linkedin.com/company/sekoia/
+  - icon: fontawesome/brands/bluesky
+    link: https://bsky.app/profile/sekoia.io
+  - icon: fontawesome/brands/mastodon
+    link: https://infosec.exchange/@sekoia_io
+
 extra_css:
 - stylesheets/sekoiaio.css
 - stylesheets/lightgallery.min.css
