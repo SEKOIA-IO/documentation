@@ -1,59 +1,50 @@
-# Configuring Widgets and layout
+# Creating and managing Dashboards
 
-The practical guide to building your Dashboard: adding Widgets, organizing the layout, and using dynamic Filters.
+Learn how to use the Dashboards Listing to organize your views, create new Dashboards, and set your homepage.
 
-## Working with Widgets
+## The Dashboards Listing
 
-### Add Widgets
-1.  Click the **Add New Widget** button in the top right corner.
-2.  Select Widgets from the available **Queries** (custom) or **Presets** (built-in).
+The **Dashboards Listing** page is your central hub for managing access to all Dashboards. It provides a table with the following information:
 
-### Edit Widgets
-Click the **three dots (...)** on a Widget and select **Edit Widget**.
-* **Query visualization:** You are redirected to the Query settings page to edit parameters.
-* **Preset:** An editing panel appears to adjust options like time range or visualization type.
+* **Name:** The title of the Dashboard.
+* **Last edition:** Date and time of the last modification.
+* **Modified/Created by:** The user who created or last changed the Dashboard.
+* **Number of Widgets:** The total count of Widgets included.
 
-### Remove Widgets
-Click the **three dots (...)** on a Widget and select **Delete from dashboard**.
+### Filtering and sorting
+To quickly find a Dashboard:
+* **Filter:** Choose between **All community dashboards** or **Personal dashboards (Created by me)**.
+* **Sort:** Arrange by **A-Z** or **Last edition** (newest to oldest).
 
-## Reorganizing the layout
+## Creating a new Dashboard
 
-1.  Click the **Edit button** in the top right corner of the screen.
-2.  **Move:** Drag and drop Widgets to your preferred locations.
-3.  **Resize:** Change the size of each Widget.
-4.  Click **Save** to apply changes.
+You can easily create a new Dashboard directly from the Listing page:
+1.  Click the **+ New Dashboard** button.
+2.  Start building your custom view.
 
-## Using Query Builders
+> !!! warning
+         Dashboards you create will be available to all members of your community.
 
-You can insert existing Query Builders into Dashboards to streamline visualization.
+## Managing existing Dashboards
 
-* **Synchronization:** Changes made to a Query on the Query Builder page are automatically propagated to all Dashboards using it.
-* **Tracking:** On the Query Builder’s edit page, you can view a list of all Dashboards utilizing that specific Query.
-* **Visualization:** The Widget utilizes the visualization settings saved within the Query Builder (refer to Query Builders documentation for details).
+Click the **(...) button** associated with any Dashboard in the list to perform the following actions:
 
-## Configuring Filters
+### Duplicate
+Select **Duplicate** to automatically create a copy of the Dashboard with all its Queries and Widgets.
 
-> !!! Note "Availability"
+### Delete
+!!! warning 
 
-        Filters are currently released under the Early Access Program.
+        This will remove the Dashboard for **all members** of the community.
         
-Filters make Dashboards interactive by acting as shared controls that update multiple Widgets instantly.
+Select **Delete** to remove the Dashboard.
 
-### Syntax
-Filters are dynamic inputs referenced in a SPL query using `?filter_name`.
-*Example:* `events | where process.name == ?process_name`
 
-### Pinning Filters
-You can "pin" these Filters to the top of the Dashboard so they control all Widgets referencing the same Filter name.
-
-1.  Open the Dashboard and click **Edit dashboard**.
-2.  In the Widget's panel, click the **pin icon** next to the Filter you want to pin.
-3.  **Save** the Dashboard.
-
-### Behavior
-* **Pinned:** The Filter appears in the Dashboard header. Changing it refreshes all linked Widgets.
-* **Unpinned:** The Widget retains its own local Filter configuration.
+### Set as Homepage
+Select **Set as Homepage** to make this Dashboard your default landing page.
+* Every time you log in, you will land directly on this Dashboard.
+* You can change your default homepage at any time.
 
 ---
 **Next steps**
-* See the list of available presets in the [Built-in Widgets reference](#).
+* Your Dashboard is created; now populate it by [Configuring Widgets and layout](#).
