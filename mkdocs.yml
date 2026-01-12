@@ -104,7 +104,11 @@ nav:
       - Sekoia Operating Language: xdr/features/investigate/sekoia_operating_language.md
       - Notebooks: xdr/features/investigate/notebooks.md
     - Report:
-      - Dashboards: xdr/features/report/dashboards.md
+      - Dashboards: 
+        - Overview: xdr/features/report/dashboards.md
+        - Create dashboards: xdr/features/report/create_dashboards.md
+        - Share dashboards: xdr/features/report/share_dashboards.md
+        - Add widgets: xdr/features/report/add_widgets_dashboards.md
       - Threat Landscape: xdr/features/report/threat_landscape.md
     - Automate:
       - Playbooks: xdr/features/automate/index.md
