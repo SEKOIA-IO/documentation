@@ -109,6 +109,7 @@ nav:
         - Create dashboards: xdr/features/report/create_dashboards.md
         - Share dashboards: xdr/features/report/share_dashboards.md
         - Add widgets: xdr/features/report/add_widgets_dashboards.md
+        - Built-in widgets reference: xdr/features/report/built_in_widget_reference
       - Threat Landscape: xdr/features/report/threat_landscape.md
     - Automate:
       - Playbooks: xdr/features/automate/index.md
