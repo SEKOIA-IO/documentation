@@ -1,6 +1,9 @@
+---
 uuid: aeb7d407-db57-44b2-90b6-7df6738d5d7f
+title: FreeRADIUS
 name: FreeRADIUS
 type: intake
+---
 
 ## Overview
 

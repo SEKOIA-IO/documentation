@@ -1,6 +1,9 @@
+---
 uuid: 325369ba-8515-45b4-b750-5db882ea1266
+title: Sophos Firewall
 name: Sophos Firewall
 type: intake
+---
 
 ## Overview
 Sophos firewalls offer an integrated software solution that provides superior performance in an all-in-one firewall. Its hardened operating system, stateful packet inspection, content filtering (virus & surf protection), application proxies and IPsec based VPN provides powerful solutions to today's security issues. It is designed to maximise networks security without compromising its performance enabling telecommuters, branch offices, customers and suppliers to safely share critical business information.

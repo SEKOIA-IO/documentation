@@ -1,6 +1,9 @@
+---
 uuid: 3f99cdd8-aeca-4860-a846-6f2a794583e1
+title: Azure MySQL
 name: Azure MySQL
 type: intake
+---
 
 ## Overview
 

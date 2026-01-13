@@ -1,6 +1,9 @@
+---
 uuid: b21d2080-03e4-4d8c-a175-83691c1e071c
+title: Nozomi Vantage
 name: Nozomi Vantage
 type: intake
+---
 
 ## Overview
 

@@ -1,6 +1,9 @@
+---
 uuid: d719e8b5-85a1-4dad-bf71-46155af56570
+title: WatchGuard Firebox
 name: WatchGuard Firebox
 type: intake
+---
 
 ## Overview
 

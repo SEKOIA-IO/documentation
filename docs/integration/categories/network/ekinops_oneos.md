@@ -1,6 +1,9 @@
+---
 uuid: 4760d0bc-2194-44e5-a876-85102b18d832
+title: Ekinops OneOS
 name: Ekinops OneOS
 type: intake
+---
 
 ## Overview
 

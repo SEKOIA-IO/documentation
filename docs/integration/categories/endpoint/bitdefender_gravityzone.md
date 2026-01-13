@@ -1,6 +1,9 @@
+---
 uuid: d11df984-840d-4c29-a6dc-b9195c3a24e3
+title: Bitdefender GravityZone
 name: Bitdefender GravityZone
 type: intake
+---
 
 ## Overview
 

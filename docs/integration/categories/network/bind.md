@@ -1,6 +1,9 @@
+---
 uuid: a199fbde-508e-4cb9-ae37-842703494be0
+title: BIND
 name: BIND
 type: intake
+---
 
 ## Overview
 

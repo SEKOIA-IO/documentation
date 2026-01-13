@@ -1,6 +1,9 @@
+---
 uuid: d6f69e04-6ab7-40c0-9723-84060aeb5529
+title: Rubycat PROVE IT
 name: Rubycat PROVE IT
 type: intake
+---
 
 ## Overview
 PROVE IT by Rubycat is a privileged access management solution.

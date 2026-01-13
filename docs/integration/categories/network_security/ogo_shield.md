@@ -1,6 +1,9 @@
+---
 uuid: cf5c916e-fa26-11ed-a844-f7f4d7348199
+title: OGO Shield WAF
 name: OGO Shield WAF
 type: intake
+---
 
 ## Overview
 

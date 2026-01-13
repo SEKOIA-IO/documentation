@@ -1,6 +1,9 @@
+---
 uuid: c20528c1-621e-4959-83ba-652eca2e8ed0
+title: Microsoft Intune
 name: Microsoft Intune
 type: intake
+---
 
 ## Overview
 - **Vendor**:

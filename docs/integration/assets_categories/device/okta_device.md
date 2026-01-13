@@ -1,6 +1,9 @@
+---
 uuid: b6e2c8a2-4f3b-4e7a-8c1d-2e4f3a6b7c9d
+title: Okta Device
 name: Okta Device
 type: asset
+---
 
 ## Overview
 

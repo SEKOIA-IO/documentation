@@ -1,6 +1,9 @@
+---
 uuid: 9844ea0a-de7f-45d4-9a9b-b07651f0630e
+title: Trend Micro Vision One Workbench Alerts [BETA]
 name: Trend Micro Vision One Workbench Alerts [BETA]
 type: intake
+---
 
 
 ## Overview

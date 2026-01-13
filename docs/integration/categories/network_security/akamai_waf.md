@@ -1,6 +1,9 @@
+---
 uuid: 4c4f3256-c3c7-415f-9515-75261514f861
+title: Akamai WAF
 name: Akamai WAF
 type: intake
+---
 
 ## Overview
 

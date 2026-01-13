@@ -1,6 +1,9 @@
+---
 uuid: 0ba58f32-7dba-4084-ab17-90c0be6b1f10
+title: Cloudflare HTTP requests
 name: Cloudflare HTTP requests
 type: intake
+---
 
 ## Overview
 

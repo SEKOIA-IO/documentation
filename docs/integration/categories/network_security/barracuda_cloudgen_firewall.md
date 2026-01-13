@@ -1,6 +1,9 @@
+---
 uuid: fe9c462f-8907-4a4d-9a34-5ffff0a2c56f
+title: Barracuda CloudGen Firewall
 name: Barracuda CloudGen Firewall
 type: intake
+---
 
 ## Overview
 

@@ -1,6 +1,9 @@
+---
 uuid: 4f9ea4fb-e8b8-4001-822a-4c7a547c31d6
+title: WatchGuard EPDR
 name: WatchGuard EPDR
 type: intake
+---
 
 ## Overview
 

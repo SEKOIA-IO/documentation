@@ -1,6 +1,9 @@
+---
 uuid: 250e4095-fa08-4101-bb02-e72f870fcbd1
+title: Sekoia.io Endpoint Agent
 name: Sekoia.io Endpoint Agent
 type: intake
+---
 
 # Sekoia.io Endpoint Agent
 

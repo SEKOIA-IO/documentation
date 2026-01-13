@@ -1,6 +1,9 @@
+---
 uuid: b6e2e2e2-4c3a-4b7a-9e2a-1f2c3d4e5f6a
+title: Entra ID
 name: Entra ID
 type: asset
+---
 
 ## Overview
 

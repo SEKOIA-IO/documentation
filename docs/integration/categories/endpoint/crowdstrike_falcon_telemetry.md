@@ -1,6 +1,9 @@
+---
 uuid: 10999b99-9a8d-4b92-9fbd-01e3fac01cd5
+title: CrowdStrike Falcon Telemetry
 name: CrowdStrike Falcon Telemetry
 type: intake
+---
 
 ## Overview
 

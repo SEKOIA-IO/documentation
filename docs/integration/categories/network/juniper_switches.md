@@ -1,6 +1,9 @@
+---
 uuid: b1545bb3-6f55-4ba4-ac80-d649040a127c
+title: Juniper Network Switches
 name: Juniper Network Switches
 type: intake
+---
 
 ## Overview
 

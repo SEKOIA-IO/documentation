@@ -1,6 +1,9 @@
+---
 uuid: acd3374a-9738-4650-9d20-bd0a22daac40
+title: Datadome Protection
 name: Datadome Protection
 type: intake
+---
 
 ## Overview
 

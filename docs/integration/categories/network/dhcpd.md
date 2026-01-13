@@ -1,6 +1,9 @@
+---
 uuid: 9044ba46-2b5d-4ebd-878a-51d62e84c8df
+title: ISC DHCP
 name: ISC DHCP
 type: intake
+---
 
 ## Overview
 

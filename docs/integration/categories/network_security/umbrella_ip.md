@@ -1,6 +1,9 @@
+---
 uuid: 5cf6cc3b-50ca-48f5-a3ea-b9be92914fa2
+title: Umbrella IP Logs
 name: Umbrella IP Logs
 type: intake
+---
 
 ## Overview
 

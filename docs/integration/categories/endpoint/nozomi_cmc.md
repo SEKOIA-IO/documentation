@@ -1,6 +1,9 @@
+---
 uuid: baf03007-4fbc-427e-a966-fa50cbe77856
+title: Nozomi CMC [Beta]
 name: Nozomi CMC [Beta]
 type: intake
+---
 
 ## Overview
 

@@ -1,6 +1,9 @@
+---
 uuid: c10307ea-5dd1-45c6-85aa-2a6a900df99b
+title: Winlogbeat
 name: Winlogbeat
 type: intake
+---
 
 ## Overview
 

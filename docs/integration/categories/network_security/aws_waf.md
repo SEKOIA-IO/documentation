@@ -1,6 +1,9 @@
+---
 uuid: 46e45417-187b-45bb-bf81-30df7b1963a0
+title: Amazon WAF
 name: Amazon WAF
 type: intake
+---
 
 ## Overview
 AWS WAF is a web application firewall that lets you monitor the HTTP(S) requests that are forwarded to your protected web application resources.

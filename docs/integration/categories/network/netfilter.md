@@ -1,6 +1,9 @@
+---
 uuid: c3888137-b34e-4526-ab61-836b2d45a742
+title: Netfilter
 name: Netfilter
 type: intake
+---
 
 ## Overview
 - **Vendor**:

@@ -1,6 +1,9 @@
+---
 uuid: 22f2afd2-c858-443d-8e06-7b335e439c29
+title: CrowdStrike Falcon
 name: CrowdStrike Falcon
 type: intake
+---
 
 ## Overview
 

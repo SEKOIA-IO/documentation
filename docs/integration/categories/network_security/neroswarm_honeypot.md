@@ -1,6 +1,9 @@
+---
 uuid: daa275af-af18-42e5-9c8d-e3191c4ac7fa
+title: NeroSwarm Honeypot
 name: NeroSwarm Honeypot
 type: intake
+---
 
 ## Overview
 

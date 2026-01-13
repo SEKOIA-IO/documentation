@@ -1,6 +1,9 @@
+---
 uuid: e2a7c6b4-9f1d-4b8a-8c3e-2d5f7a1e4b9c
+title: AWS devices
 name: AWS devices
 type: asset
+---
 
 ## Overview
 

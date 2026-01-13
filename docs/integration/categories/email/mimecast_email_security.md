@@ -1,6 +1,9 @@
+---
 uuid: 041e915e-2fb6-4604-9b24-902c9daa2d3c
+title: Mimecast Email Security
 name: Mimecast Email Security
 type: intake
+---
 
 ## Overview
 A secure email gateway to block spam, viruses, and malware.

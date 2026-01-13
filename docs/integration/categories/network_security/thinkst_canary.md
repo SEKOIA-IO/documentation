@@ -1,6 +1,9 @@
+---
 uuid: 89346697-b64b-45d4-a456-72fd8a2be5d8
+title: Thinkst Canary
 name: Thinkst Canary
 type: intake
+---
 
 ## Overview
 

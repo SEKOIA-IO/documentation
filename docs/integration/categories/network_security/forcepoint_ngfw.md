@@ -1,6 +1,9 @@
+---
 uuid: 2c9ce787-85dc-45d9-a320-33a96077fead
+title: Forcepoint NGFW
 name: Forcepoint NGFW
 type: intake
+---
 
 ## Overview
 

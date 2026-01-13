@@ -1,6 +1,9 @@
+---
 uuid: 23b75d0c-2026-4d3e-b916-636c27ba4931
+title: Cisco Web Security Appliance
 name: Cisco Web Security Appliance
 type: intake
+---
 
 ## Overview
 

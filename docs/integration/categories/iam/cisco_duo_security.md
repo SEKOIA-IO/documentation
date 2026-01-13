@@ -1,6 +1,9 @@
+---
 uuid: 547234b3-82ea-4507-b28f-3ee3cd5b9a8e
+title: Cisco Duo Security
 name: Cisco Duo Security
 type: intake
+---
 
 
 ## Overview

@@ -1,6 +1,9 @@
+---
 uuid: 3e060900-4004-4754-a597-d2944a601930
+title: Amazon GuardDuty
 name: Amazon GuardDuty
 type: intake
+---
 
 ## Overview
 AWS GuardDuty is a service that detects potential security issues within your network.

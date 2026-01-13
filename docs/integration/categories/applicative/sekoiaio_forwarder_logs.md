@@ -1,6 +1,9 @@
+---
 uuid: 915a119c-2ec8-4482-a3c6-4d4cae62b671
+title: Sekoia.io forwarder logs
 name: Sekoia.io forwarder logs
 type: intake
+---
 
 ## Overview
 - **Vendor**: Sekoia

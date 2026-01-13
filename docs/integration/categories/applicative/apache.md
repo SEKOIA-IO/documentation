@@ -1,6 +1,9 @@
+---
 uuid: 6c2a44e3-a86a-4d98-97a6-d575ffcb29f7
+title: Apache HTTP Server
 name: Apache HTTP Server
 type: intake
+---
 
 ## Overview
 

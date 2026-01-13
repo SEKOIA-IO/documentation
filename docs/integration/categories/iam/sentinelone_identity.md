@@ -1,6 +1,9 @@
+---
 uuid: b502e522-6996-4b12-9538-f69326b68243
+title: SentinelOne Identity
 name: SentinelOne Identity
 type: intake
+---
 
 ## Overview
 SentinelOne Singularity Identity is a cybersecurity solution that provides identity protection and zero-trust security by continuously monitoring and analyzing user behaviors to detect and prevent potential threats.

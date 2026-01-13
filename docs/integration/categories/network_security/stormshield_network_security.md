@@ -1,6 +1,9 @@
+---
 uuid: 79029ef9-e5d3-44f3-b70f-fd3b54ba1fe4
+title: Stormshield Network Security
 name: Stormshield Network Security
 type: intake
+---
 
 ## Overview
 

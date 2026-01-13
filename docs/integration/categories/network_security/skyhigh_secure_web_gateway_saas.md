@@ -1,6 +1,9 @@
+---
 uuid: 40bac399-2d8e-40e3-af3b-f73a622c9687
+title: McAfee Web Gateway / Skyhigh Secure Web Gateway - SaaS
 name: McAfee Web Gateway / Skyhigh Secure Web Gateway - SaaS
 type: intake
+---
 
 ## Overview
 Skyhigh Secure Web Gateway (SWG) (previously McAfee Web Gateway (MWG)) is a web gateway offering malware detection, threat prevention and reputation filtering.

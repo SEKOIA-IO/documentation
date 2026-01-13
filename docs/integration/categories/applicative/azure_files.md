@@ -1,6 +1,9 @@
+---
 uuid: 70c5c3db-fae8-4825-8d8b-08d6315e1ef6
+title: Azure Files
 name: Azure Files
 type: intake
+---
 
 ## Overview
 

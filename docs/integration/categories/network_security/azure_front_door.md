@@ -1,6 +1,9 @@
+---
 uuid: 69b52166-b804-4f47-860f-2d3fd0b46987
+title: Azure Front Door
 name: Azure Front Door
 type: intake
+---
 
 ## Overview
 

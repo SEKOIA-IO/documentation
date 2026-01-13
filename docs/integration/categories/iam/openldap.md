@@ -1,6 +1,9 @@
+---
 uuid: 35855de3-0728-4a83-ae19-e38e167432a1
+title: OpenLDAP
 name: OpenLDAP
 type: intake
+---
 
 ## Overview
 OpenLDAP (Lightweight Directory Access Protocol) is an open-source implementation of a directory service protocol. It helps organizations to maintain and manage a centralized directory of user information, such as names, addresses, and other attributes.

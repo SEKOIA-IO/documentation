@@ -1,6 +1,9 @@
+---
 uuid: 6b8cb346-6605-4240-ac15-3828627ba899
+title: Wallix
 name: Wallix
 type: intake
+---
 
 ## Overview
 WALLIX Bastion is a “Privileged Access Management” solution.

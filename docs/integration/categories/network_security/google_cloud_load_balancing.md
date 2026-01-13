@@ -1,6 +1,9 @@
+---
 uuid: 4d50ae7e-ccac-4a5b-9a4c-58a7893f93bb
+title: Google Cloud Load Balancing
 name: Google Cloud Load Balancing
 type: intake
+---
 
 ## Overview
 

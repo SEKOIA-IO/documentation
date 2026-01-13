@@ -1,6 +1,9 @@
+---
 uuid: 07c0cac8-f68f-11ea-adc1-0242ac120002
+title: Amazon VPC Flow Logs
 name: Amazon VPC Flow Logs
 type: intake
+---
 
 ## Overview
 

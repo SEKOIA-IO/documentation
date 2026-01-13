@@ -1,6 +1,9 @@
+---
 uuid: 466aeca2-e112-4ccc-a109-c6d85b91bbcf
+title: Cisco Secure Firewall
 name: Cisco Secure Firewall
 type: intake
+---
 
 ## Overview
 

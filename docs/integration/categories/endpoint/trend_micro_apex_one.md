@@ -1,6 +1,9 @@
+---
 uuid: 064f7e8b-ce5f-474d-802e-e88fe2193365
+title: Trend Micro Apex One / Vision One Endpoint
 name: Trend Micro Apex One / Vision One Endpoint
 type: intake
+---
 
 ## Overview
 - **Vendor**:

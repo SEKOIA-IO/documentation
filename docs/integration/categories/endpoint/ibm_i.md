@@ -1,6 +1,9 @@
+---
 uuid: fc03f783-5039-415e-915a-a4b010d9a872
+title: IBM iSeries (AS/400)
 name: IBM iSeries (AS/400)
 type: intake
+---
 
 ## Overview
 

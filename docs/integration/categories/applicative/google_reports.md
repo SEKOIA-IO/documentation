@@ -1,6 +1,9 @@
+---
 uuid: 04d36706-ee4a-419b-906d-f92f3a46bcdd
+title: Google Workspace / ChromeOS
 name: Google Workspace / ChromeOS
 type: intake
+---
 
 ## Overview
 - **Vendor**: Google

@@ -1,6 +1,9 @@
+---
 uuid: 44439212-c2d8-4645-ad60-8fd5e39140b3
+title: Google Cloud Audit Logs
 name: Google Cloud Audit Logs
 type: intake
+---
 
 ## Overview
 - **Vendor**: Google

@@ -1,6 +1,9 @@
+---
 uuid: 0de050fb-3f56-4c7a-a9b6-76bf5298a617
+title: Cybereason MalOp activity
 name: Cybereason MalOp activity
 type: intake
+---
 
 ## Overview
 

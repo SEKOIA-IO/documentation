@@ -1,6 +1,9 @@
+---
 uuid: 6e2f8b2b-3412-4699-a96b-a9a769bff683
+title: CyberArk Digital Vault
 name: CyberArk Digital Vault
 type: intake
+---
 
 ## Overview
 

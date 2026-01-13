@@ -1,6 +1,9 @@
+---
 uuid: 419bd705-fa61-496c-94fa-28d6c1f2e2a8
+title: Symantec Endpoint Protection
 name: Symantec Endpoint Protection
 type: intake
+---
 
 ## Overview
 

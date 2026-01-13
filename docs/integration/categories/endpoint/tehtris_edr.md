@@ -1,6 +1,9 @@
+---
 uuid: 8d8f040d-6a75-4bf4-bf1d-772e9a30f0dd
+title: TEHTRIS Endpoint Detection & Reponse
 name: TEHTRIS Endpoint Detection & Reponse
 type: intake
+---
 
 ## Overview
 

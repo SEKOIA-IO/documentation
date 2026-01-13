@@ -1,6 +1,9 @@
+---
 uuid: 8d024a2b-3627-4909-818d-26e1e3b2409c
+title: Ubika Cloud Protector Traffic
 name: Ubika Cloud Protector Traffic
 type: intake
+---
 
 ## Overview
 

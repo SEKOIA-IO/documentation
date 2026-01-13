@@ -1,6 +1,9 @@
+---
 uuid: 59912cb4-2eef-4987-ad9a-cb657e29b929
+title: LockSelf LockPass/LockTransfer/LockFiles
 name: LockSelf LockPass/LockTransfer/LockFiles
 type: intake
+---
 
 ## Overview
 

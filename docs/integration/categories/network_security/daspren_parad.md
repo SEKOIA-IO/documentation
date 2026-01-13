@@ -1,6 +1,9 @@
+---
 uuid: 23813540-b658-48dd-b030-e9b92168bbf4
+title: Daspren Parad
 name: Daspren Parad
 type: intake
+---
 
 ## Overview
 

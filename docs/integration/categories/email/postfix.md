@@ -1,6 +1,9 @@
+---
 uuid: eb727929-6a06-4e68-a09d-cf0e5daf3ccd
+title: Postfix
 name: Postfix
 type: intake
+---
 
 ## Overview
 Postfix is a free and open-source mail transfer agent that routes and delivers electronic mail.

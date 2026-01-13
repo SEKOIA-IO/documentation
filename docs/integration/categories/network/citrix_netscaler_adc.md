@@ -1,6 +1,9 @@
+---
 uuid: 02a74ceb-a9b0-467c-97d1-588319e39d71
+title: Citrix NetScaler / ADC
 name: Citrix NetScaler / ADC
 type: intake
+---
 
 ## Overview
 

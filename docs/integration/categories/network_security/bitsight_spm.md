@@ -1,6 +1,9 @@
+---
 uuid: 57eda191-2f93-4fd9-99a2-fd8ffbcdff50
+title: Bitsight SPM
 name: Bitsight SPM
 type: intake
+---
 
 ## Overview
 

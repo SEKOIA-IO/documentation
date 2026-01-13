@@ -1,6 +1,9 @@
+---
 uuid: 09754cc4-e247-4712-9a76-25529ba11b8b
+title: 1Password EPM
 name: 1Password EPM
 type: intake
+---
 
 ## Overview
 

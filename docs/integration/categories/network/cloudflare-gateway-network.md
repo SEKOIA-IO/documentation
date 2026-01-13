@@ -1,6 +1,9 @@
+---
 uuid: d14567dd-56b1-42f8-aa64-fb65d4b0a4cf
+title: Cloudflare Gateway Network
 name: Cloudflare Gateway Network
 type: intake
+---
 
 ## Overview
 

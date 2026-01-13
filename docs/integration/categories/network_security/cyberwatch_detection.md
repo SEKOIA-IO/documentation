@@ -1,6 +1,9 @@
+---
 uuid: c6a43439-7b9d-4678-804b-ebda6756db60
+title: Cyberwatch Detection
 name: Cyberwatch Detection
 type: intake
+---
 
 ## Overview
 

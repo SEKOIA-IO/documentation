@@ -1,6 +1,9 @@
+---
 uuid: 448f83c3-623d-4a07-a1d4-a1f96be1519b
+title: Trellix ePO (on-prem)
 name: Trellix ePO (on-prem)
 type: intake
+---
 
 ## Overview
 

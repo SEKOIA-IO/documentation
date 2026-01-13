@@ -1,6 +1,9 @@
+---
 uuid: 9f47aa9f-52d7-4849-9462-cf7fc8bcd51a
+title: Claroty xDome
 name: Claroty xDome
 type: intake
+---
 
 ## Overview
 

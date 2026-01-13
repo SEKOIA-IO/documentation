@@ -1,6 +1,9 @@
+---
 uuid: f95fea50-533c-4897-9272-2f8361e63644
+title: EfficientIP SOLIDServer DDI
 name: EfficientIP SOLIDServer DDI
 type: intake
+---
 
 ## Overview
 

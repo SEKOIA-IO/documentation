@@ -1,6 +1,9 @@
+---
 uuid: 2b13307b-7439-4973-900a-2b58303cac90
+title: VMWare ESXi
 name: VMWare ESXi
 type: intake
+---
 
 ## Overview
 - **Vendor**:

@@ -1,6 +1,9 @@
+---
 uuid: e8ca856f-8a58-490b-bea4-247b12b3d74b
+title: OpenVPN
 name: OpenVPN
 type: intake
+---
 
 ## Overview
 - **Vendor**:

@@ -1,6 +1,9 @@
+---
 uuid: 6dbdd199-77ae-4705-a5de-5c2722fa020e
+title: Ubika WAAP Gateway
 name: Ubika WAAP Gateway
 type: intake
+---
 
 ## Overview
 Ubika WAAP Gateway detect and prevent threats against your web applications and your APIs.

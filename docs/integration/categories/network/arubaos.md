@@ -1,6 +1,9 @@
+---
 uuid: d6d15297-e977-4584-9bb3-f0290b99f014
+title: ArubaOS Switch
 name: ArubaOS Switch
 type: intake
+---
 
 ## Overview
 

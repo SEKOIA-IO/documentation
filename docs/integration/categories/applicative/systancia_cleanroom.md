@@ -1,6 +1,9 @@
+---
 uuid: dcb14795-a6f0-4ebb-a73d-6eb8b982afcd
+title: Systancia Cleanroom
 name: Systancia Cleanroom
 type: intake
+---
 
 ## Overview
 - **Vendor**: Systancia

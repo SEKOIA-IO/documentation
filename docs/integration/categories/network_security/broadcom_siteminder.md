@@ -1,6 +1,9 @@
+---
 uuid: 2bfa5c39-bc73-48cf-afbd-7fd0eccf1d59
+title: Broadcom Siteminder
 name: Broadcom Siteminder
 type: intake
+---
 
 ## Overview
 

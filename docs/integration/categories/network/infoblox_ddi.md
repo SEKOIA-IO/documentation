@@ -1,6 +1,9 @@
+---
 uuid: 864ade96-a96d-4a0e-ab3d-b7cb7b7db618
+title: Infoblox DDI
 name: Infoblox DDI
 type: intake
+---
 
 ## Overview
 

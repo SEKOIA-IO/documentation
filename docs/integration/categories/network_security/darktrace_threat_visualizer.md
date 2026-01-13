@@ -1,6 +1,9 @@
+---
 uuid: 98fa7079-41ae-4033-a93f-bbd70d114188
+title: Darktrace Threat Visualizer
 name: Darktrace Threat Visualizer
 type: intake
+---
 
 ## Overview
 

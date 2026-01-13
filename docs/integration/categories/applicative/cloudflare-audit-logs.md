@@ -1,6 +1,9 @@
+---
 uuid: 76d767ed-5431-4db1-b893-a48b6903d871
+title: Cloudflare Audit Logs
 name: Cloudflare Audit Logs
 type: intake
+---
 
 ## Overview
 

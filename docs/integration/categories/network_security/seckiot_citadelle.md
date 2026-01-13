@@ -1,6 +1,9 @@
+---
 uuid: ec7fd978-5526-42c8-acd5-e1b4aa752a73
+title: Seckiot Citadelle
 name: Seckiot Citadelle
 type: intake
+---
 
 ## Overview
 

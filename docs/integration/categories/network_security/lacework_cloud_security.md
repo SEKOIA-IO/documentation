@@ -1,6 +1,9 @@
+---
 uuid: 5803f97d-b324-4452-b861-0253b15de650
+title: Lacework Cloud Security
 name: Lacework Cloud Security
 type: intake
+---
 
 ## Overview
 

@@ -1,6 +1,9 @@
+---
 uuid: 591feb54-1d1f-4453-b780-b225c59e9f99
+title: Cisco NX-OS
 name: Cisco NX-OS
 type: intake
+---
 
 ## Overview
 

@@ -1,6 +1,9 @@
+---
 uuid: 6967b0ca-f27e-480a-b124-fa4ab0b9d889
+title: Azure Application Gateway
 name: Azure Application Gateway
 type: intake
+---
 
 ## Overview
 Azure Application Gateway is a web traffic load balancer that manages traffic to your web applications with advanced routing, SSL termination, and Web Application Firewall (WAF) features. It ensures high availability, scalability, and integrates seamlessly with other Azure services for efficient deployment and management. Additionally, it offers insights and diagnostics to monitor and optimize application performance.

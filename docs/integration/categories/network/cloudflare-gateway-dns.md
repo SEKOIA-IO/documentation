@@ -1,6 +1,9 @@
+---
 uuid: 7b1317ec-3f87-4b53-9b6d-3f79045f28fa
+title: Cloudflare DNS Gateway
 name: Cloudflare DNS Gateway
 type: intake
+---
 
 ## Overview
 

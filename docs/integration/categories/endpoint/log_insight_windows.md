@@ -1,6 +1,9 @@
+---
 uuid: ee54dd8e-4bd4-4fe8-9d9d-1a018cd8c4bb
+title: Log Insight Windows
 name: Log Insight Windows
 type: intake
+---
 
 ## Overview
 - **Vendor**:

@@ -1,6 +1,9 @@
+---
 uuid: 41e3ca4e-a714-41aa-ad69-684a0b3835fc
+title: Sekoia.io activity logs
 name: Sekoia.io activity logs
 type: intake
+---
 
 ## Overview
 - **Vendor**: Sekoia

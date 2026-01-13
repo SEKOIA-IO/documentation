@@ -1,6 +1,9 @@
+---
 uuid: c2faea65-1eb3-4f3f-b895-c8769a749d45
+title: Fastly WAF Audit logs
 name: Fastly WAF Audit logs
 type: intake
+---
 
 
 ## Overview

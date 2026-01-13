@@ -1,6 +1,9 @@
+---
 uuid: 7b75d498-4a65-4d44-aa81-31090d723a60
+title: Varonis Data Security
 name: Varonis Data Security
 type: intake
+---
 
 ## Overview
 Varonis offers solutions to track and protect data.
