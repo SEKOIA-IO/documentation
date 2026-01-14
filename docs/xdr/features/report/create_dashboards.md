@@ -1,46 +1,52 @@
-# Understanding Dashboards: Widgets, data, and Filters
+# Create and manage Dashboards
 
-Discover how Dashboards centralize your security data through Widgets and how to manipulate views using time ranges and refresh controls.
+Learn how to use the Dashboards Listing to organize your views, create new Dashboards, and set your homepage.
 
-## What is a Dashboard?
+## The Dashboards Listing page
 
-Dashboards provide a powerful and intuitive way to visualize and monitor key metrics and data in real-time. Users can create customized views by combining various Widgets, offering insights into different aspects of their operations, security posture, or other critical areas.
+The **Dashboards Listing** page is your central hub for managing access to all Dashboards. 
+To access it, in the left handed panel, click on **Dashboards**.
 
-### Default Dashboard
-Accounts on Sekoia.io come with a preconfigured Dashboard that gives a synthetic view of the current community activity, either from:
-* **Operational security perspective:** Risk Level, number of alerts, etc.
-* **Activity perspective:** List of last posted comments, last created alerts, etc.
+It provides a table with the following information:
 
-## The building blocks: Widgets
+* **Name:** The title of the Dashboard.
+* **Last edition:** Date and time of the last modification.
+* **Modified/Created by:** The user who created or last changed the Dashboard.
+* **Number of Widgets:** The total count of Widgets included.
 
-A key aspect of Dashboards is the ability to use **Widgets**. These are the individual containers that display data. There are two main types:
+### Filter and sort
+To quickly find a Dashboard, you have a few options accessible from the top of listing page:
+! (docs/assets/xdr/dashboards/dashboard_sort_option.png)
 
-* **Built-in Widgets:** Pre-configured tools for common use cases (e.g., Risk Level, Top Threats).
-* **Query Builder Widgets:** These enable users to create custom data queries directly within the Dashboard. This allows for highly tailored data analysis and visualization, empowering users to explore specific datasets.
+* **Search:** Enter keywords in the search bar to retrieve a specific dashboard.
+* **Filter:** Choose between **All community dashboards** or **Personal dashboards (Created by me)**.
+* **Sort:** Arrange by **A-Z** or **Last edition** (newest to oldest).
 
-## Interacting with data
+## Create a new Dashboard
 
-### Time range configuration
-Managing the time range is essential for analyzing trends.
+You can easily create a new Dashboard directly from the Listing page:
+1.  Click the **+ New Dashboard** button.
+2.  Start building your custom view.
 
-* **Dashboard date range:** You can synchronize Built-in Widgets with the overall Dashboard's date range using the range selector at the top of the page.
-* **Widget-specific time range:** By default, each Widget can display data for its own specific time period. This allows different Widgets to focus on different time frames simultaneously.
+!!! note Dashboards you create will be available to all members of your community.
 
-> **Note:** The time period in a custom Query Widget is defined by the Query itself (influenced by data retention). If no specific time filter is applied in the Query, it defaults to 'all time'.
+## Manage existing Dashboards
 
-### Refreshing data
-By default, the Dashboard shows data computed during the last refresh. The date and time of the last successful refresh are displayed next to the Refresh button.
+To perform the following actions, click the **(...) button** associated with any Dashboard in the list:
 
-* **Manual refresh:** Click the **Refresh** button to update all Widgets. (Trigger limit: once every minute).
-* **Auto-refresh:** Enable this option in settings to automatically refresh all Widgets every **30 minutes**.
+### Duplicate
+Select **Duplicate** to automatically create a copy of the Dashboard with all its Queries and Widgets.
 
-## Sharing Dashboards
+### Delete
+Select **Delete** to remove the Dashboard.
+!!! warning This will remove the Dashboard for **all members** of the community.
 
-Dashboards support collaboration between Managed Security Service Providers (MSSPs) and End Users.
-* **For MSSPs:** Custom Dashboards can be shared with your communities directly during the creation or edition process.
-* **For End Users:** Shared Dashboards are visible in the community. You can view them, duplicate them for personalization, and inspect or run the underlying queries.
+### Set as Homepage
+Select **Set as Homepage** to make this Dashboard your default landing page.
+
+* Every time you log in, you will land directly on this Dashboard.
+* You can change your default homepage at any time.
 
 ---
 **Next steps**
-* Now that you understand the concepts, learn how to [Create and manage Dashboards](#).
-* Ready to build? Go to [Configuring Widgets and layout](#).
+* Your Dashboard is created; now populate it by [Configuring Widgets and layout](docs/xdr/features/report/add_widgets_dashboards.md).
