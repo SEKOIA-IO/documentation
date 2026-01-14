@@ -48,15 +48,15 @@ To enable Syslog server in Rubycat PROVE IT:
     - **Name**: Choose a name for your syslog server configuration.
     - **Description**: Enter a description (optional).
 
-5. Click `Next`
+5. Click `Next`.
 6. Fill in the Syslog server details:
 
     - **Hostname or IP address**: Enter the hostname or IP address of your syslog forwarder.
     - **Port**: Set the port you have configured for your intake.
     - **Protocol**: Select the protocol (UDP or TCP) matching the syslog forwarder configuration (recommended: TCP).
 
-7. Click `Next`
-8. Click `Submit`
+7. Click `Next`.
+8. Click `Submit`.
 
 ## Events
 
