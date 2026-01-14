@@ -32,6 +32,7 @@ The dashboard provides several options for refreshing the data presented in the 
 ## Sharing Dashboards
 
 Dashboards support collaboration between Managed Security Service Providers (MSSPs) and End Users.
+
 * **For MSSPs:** Custom Dashboards can be shared with End Users directly during the creation or edition process.
 * **For End Users:** Shared Dashboards are visible in the community. Users can view them, duplicate them for personalization, and inspect or run the underlying queries.
 
