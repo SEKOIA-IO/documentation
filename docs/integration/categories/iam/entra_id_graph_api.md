@@ -10,6 +10,11 @@ type: intake
 - **Supported environment**: SaaS
 - **Detection based on**: Telemetry
 - **Supported application or feature**: Application logs, Authentication logs
+- **Supported events**:
+    - [Interactive user sign-in events](https://learn.microsoft.com/en-us/graph/api/signin-list)
+    - [Federated sign-in events](https://learn.microsoft.com/en-us/graph/api/signin-list)
+    - [Provisioning events](https://learn.microsoft.com/en-us/graph/api/provisioningobjectsummary-list)
+    - [Audit logs](https://learn.microsoft.com/en-us/graph/api/directoryaudit-list)
     
 !!! Danger "Scalability"
     This integration will collect the events through Microsoft Graph API, which is only recommended for small environments.

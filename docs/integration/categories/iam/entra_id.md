@@ -10,6 +10,21 @@ type: intake
 - **Supported environment**: SaaS
 - **Detection based on**: Telemetry
 - **Supported application or feature**: Application logs, Authentication logs
+- **Supported events**:
+    - User sign-in events
+    - Non-interactive user sign-in events
+    - Service principal sign-in events
+    - Managed identity sign-in events
+    - Provisioning events
+    - ADFS sign-in events
+    - Risky users
+    - User risk events
+    - Risky service principals
+    - Service principal risk events
+    - Network access traffic logs
+    - Audit logs
+    - Enriched Office 365 audit logs
+    - Microsoft Graph Activity logs
 
 
 ## Configure
