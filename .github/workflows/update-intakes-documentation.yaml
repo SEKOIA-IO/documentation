@@ -4,6 +4,10 @@ on:
   repository_dispatch:
     types: [rebuild-intake-documentation]
 
+permissions:
+  contents: write
+  pull-requests: write
+
 jobs:
   build:
     runs-on: ubuntu-latest
