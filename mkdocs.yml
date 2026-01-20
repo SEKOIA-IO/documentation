@@ -21,6 +21,7 @@ extra_javascript:
 - javascript/sekoiaio.js
 - javascript/lightgallery.min.js
 - javascript/posthog.js
+- javascript/gtm.js
 markdown_extensions:
 - admonition
 - attr_list
