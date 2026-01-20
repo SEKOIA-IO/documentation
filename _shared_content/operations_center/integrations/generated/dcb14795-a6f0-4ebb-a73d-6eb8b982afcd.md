@@ -18,7 +18,7 @@ In details, the following table denotes the type of events produced by this inte
 | ---- | ------ |
 | Kind | `` |
 | Category | `process`, `session` |
-| Type | `end`, `start` |
+| Type | `end`, `info`, `start` |
 
 
 
@@ -169,10 +169,9 @@ This section demonstrates how the raw logs will be transformed by our parsers. I
             "category": [
                 "session"
             ],
-            "outcome": "success",
             "reason": "Connexion d&#39;une passerelle",
             "type": [
-                "end"
+                "info"
             ]
         },
         "observer": {
@@ -629,6 +628,216 @@ This section demonstrates how the raw logs will be transformed by our parsers. I
 	```
 
 
+=== "user_first_new_process.json"
+
+    ```json
+	
+    {
+        "message": "johndoe@local New process: \"C:\\Windows\\System32\\RuntimeBroker.exe\"",
+        "event": {
+            "category": [
+                "process"
+            ],
+            "outcome": "success",
+            "reason": "New process: \"C:\\Windows\\System32\\RuntimeBroker.exe\"",
+            "type": [
+                "start"
+            ]
+        },
+        "observer": {
+            "product": "Systancia Cleanroom",
+            "vendor": "Systancia"
+        },
+        "process": {
+            "executable": "C:\\Windows\\System32\\RuntimeBroker.exe"
+        },
+        "related": {
+            "user": [
+                "johndoe"
+            ]
+        },
+        "user": {
+            "domain": "local",
+            "name": "johndoe"
+        }
+    }
+    	
+	```
+
+
+=== "user_first_other_1.json"
+
+    ```json
+	
+    {
+        "message": "john.doe@Azure SSO idle saved.",
+        "event": {
+            "category": [
+                "session"
+            ],
+            "reason": "SSO idle saved.",
+            "type": [
+                "info"
+            ]
+        },
+        "observer": {
+            "product": "Systancia Cleanroom",
+            "vendor": "Systancia"
+        },
+        "related": {
+            "user": [
+                "john.doe"
+            ]
+        },
+        "user": {
+            "domain": "Azure",
+            "name": "john.doe"
+        }
+    }
+    	
+	```
+
+
+=== "user_first_other_2.json"
+
+    ```json
+	
+    {
+        "message": "john.doe@Azure SSO Window closed: \"G:\\ - TreeSize Professional\"",
+        "event": {
+            "category": [
+                "session"
+            ],
+            "reason": "SSO Window closed: \"G:\\ - TreeSize Professional\"",
+            "type": [
+                "info"
+            ]
+        },
+        "observer": {
+            "product": "Systancia Cleanroom",
+            "vendor": "Systancia"
+        },
+        "related": {
+            "user": [
+                "john.doe"
+            ]
+        },
+        "user": {
+            "domain": "Azure",
+            "name": "john.doe"
+        }
+    }
+    	
+	```
+
+
+=== "user_first_other_3.json"
+
+    ```json
+	
+    {
+        "message": "john.doe@Azure SSO key sequence :\"<BACK<BACK\"",
+        "event": {
+            "category": [
+                "session"
+            ],
+            "reason": "SSO key sequence :\"<BACK<BACK\"",
+            "type": [
+                "info"
+            ]
+        },
+        "observer": {
+            "product": "Systancia Cleanroom",
+            "vendor": "Systancia"
+        },
+        "related": {
+            "user": [
+                "john.doe"
+            ]
+        },
+        "user": {
+            "domain": "Azure",
+            "name": "john.doe"
+        }
+    }
+    	
+	```
+
+
+=== "user_first_process_end_1.json"
+
+    ```json
+	
+    {
+        "message": "johndoe@local Process end: \"dllhost.exe\"",
+        "event": {
+            "category": [
+                "process"
+            ],
+            "outcome": "success",
+            "reason": "Process end: \"dllhost.exe\"",
+            "type": [
+                "end"
+            ]
+        },
+        "observer": {
+            "product": "Systancia Cleanroom",
+            "vendor": "Systancia"
+        },
+        "process": {
+            "executable": "dllhost.exe"
+        },
+        "related": {
+            "user": [
+                "johndoe"
+            ]
+        },
+        "user": {
+            "domain": "local",
+            "name": "johndoe"
+        }
+    }
+    	
+	```
+
+
+=== "user_first_process_end_2.json"
+
+    ```json
+	
+    {
+        "message": "johndoe@local Process end: \"backgroundTaskHost.exe\"",
+        "event": {
+            "category": [
+                "process"
+            ],
+            "outcome": "success",
+            "reason": "Process end: \"backgroundTaskHost.exe\"",
+            "type": [
+                "end"
+            ]
+        },
+        "observer": {
+            "product": "Systancia Cleanroom",
+            "vendor": "Systancia"
+        },
+        "process": {
+            "executable": "backgroundTaskHost.exe"
+        },
+        "related": {
+            "user": [
+                "johndoe"
+            ]
+        },
+        "user": {
+            "domain": "local",
+            "name": "johndoe"
+        }
+    }
+    	
+	```
+
+
 
 
 
@@ -645,6 +854,7 @@ The following table lists the fields that are extracted, normalized under the EC
 |`observer.product` | `keyword` | The product name of the observer. |
 |`observer.vendor` | `keyword` | Vendor name of the observer. |
 |`organization.name` | `keyword` | Organization name. |
+|`process.executable` | `keyword` | Absolute path to the process executable. |
 |`source.ip` | `ip` | IP address of the source. |
 |`user.domain` | `keyword` | Name of the directory the user is a member of. |
 |`user.name` | `keyword` | Short name or login of the user. |
