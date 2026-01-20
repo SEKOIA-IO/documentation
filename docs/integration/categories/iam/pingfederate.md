@@ -1,5 +1,5 @@
 ---
-uuid: 1ef7f586-5354-4171-9266-f9f049c3253a
+uuid: c47d2c82-494e-400c-b804-d68fb7a60859
 name: PingFederate
 type: intake
 ---
@@ -243,13 +243,13 @@ This setup guide will lead you into forwarding PingFederate's logs to Sekoia.io 
 
 {!_shared_content/integration/forwarder_configuration.md!}
 
-{!_shared_content/operations_center/integrations/generated/1ef7f586-5354-4171-9266-f9f049c3253a_sample.md!}
+{!_shared_content/operations_center/integrations/generated/c47d2c82-494e-400c-b804-d68fb7a60859_sample.md!}
 
 {!_shared_content/integration/detection_section.md!}
 
-{!_shared_content/operations_center/detection/generated/suggested_rules_1ef7f586-5354-4171-9266-f9f049c3253a_do_not_edit_manually.md!}
+{!_shared_content/operations_center/detection/generated/suggested_rules_c47d2c82-494e-400c-b804-d68fb7a60859_do_not_edit_manually.md!}
 
-{!_shared_content/operations_center/integrations/generated/1ef7f586-5354-4171-9266-f9f049c3253a.md!}
+{!_shared_content/operations_center/integrations/generated/c47d2c82-494e-400c-b804-d68fb7a60859.md!}
 
 ## Further Readings
 
