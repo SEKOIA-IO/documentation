@@ -381,14 +381,14 @@ In this section, you will find examples of raw logs as generated natively by the
                     }
                 },
                 "spf": {
-                    "domain": "yokm.net",
+                    "domain": "example.net",
                     "result": "none"
                 },
                 "dmarc": {
                     "records": [
                         {
                             "error": "NXDOMAIN",
-                            "query": "_dmarc.yokm.net"
+                            "query": "_dmarc.example.net"
                         }
                     ],
                     "filterdResult": "none",
