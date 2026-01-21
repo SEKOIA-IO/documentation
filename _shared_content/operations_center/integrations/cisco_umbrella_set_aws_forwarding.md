@@ -2,9 +2,39 @@ This section will guide you to configure the forwarding of Cisco Umbrella logs t
 
 ### Prerequities
 
-- Administrator access to the Cisco Umbrella console
-- Access to Sekoia.io Intakes and Playbook pages with write permissions
-- Access to AWS S3 and AWS SQS
+In order to set up the AWS architecture, you need an administrator access to the [Amazon console]( https://console.aws.amazon.com) with the permissions to create and manage S3 buckets, SQS queues, S3 notifications and users.
+
+Ensure that the IAM user dedicated to accessing the S3 bucket and SQS Queue has the following permissions:
+
+```json
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Action": [
+                "sqs:ReceiveMessage", "sqs:DeleteMessage", "sqs:GetQueueUrl"
+            ],
+            "Principal": {
+                "AWS": "arn:aws:iam::XXXXXXXXXXXX:user/USERNAME_HERE"
+            },
+            "Effect": "Allow",
+            "Resource": "arn:aws:sqs:REGION_HERE:XXXXXXXXXXXX:NAME_HERE"
+        },
+        {
+            "Action": [
+                "s3:GetObject"
+            ],
+            "Principal": {
+                "AWS": "arn:aws:iam::XXXXXXXXXXXX:user/USERNAME_HERE"
+            },
+            "Effect": "Allow",
+            "Resource": "arn:aws:s3:REGION_HERE:XXXXXXXXXXXX:NAME_HERE/*"
+        },
+    ]
+}
+```
+
+Also ensure that you have access to Sekoia.io Intakes and Playbook pages with write permissions.
 
 ### Create an AWS S3 Bucket
 
