@@ -6,12 +6,10 @@ Shared dashboards allow you to provide standardized data visualization across di
 
 A workspace can share a dashboard with one or several communities to maintain visibility across the organization.
 
-### Prerequisites
+Before you start make sure that: 
 
-* You must have the **Write** permission for dashboards in your workspace.
-* The dashboard must not contain queries with **SOL parameters** or specific **Parameters**, as these cannot be shared at the moment.
-
-### Procedure
+* You have the **Write** permission for dashboards in your workspace.
+* The dashboard does NOT contain queries with **SOL parameters** or specific **Parameters**, as these cannot be shared at the moment.
 
 1. Navigate to the dashboard you want to share.
 2. Click **Manage Access**.
@@ -44,8 +42,6 @@ To modify a dashboard shared by another community, you must create a local copy.
 
 !!!note "Internal query persistence"
     Duplicating a dashboard does not make the internal queries editable. To modify data visualizations, you must duplicate the individual queries within the dashboard separately.
-
-### Procedure
 
 1. Navigate to the shared dashboard you wish to edit.
 2. Click **Duplicate**.
