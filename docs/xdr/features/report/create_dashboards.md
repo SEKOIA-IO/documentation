@@ -4,7 +4,7 @@ Learn how to use the Dashboards Listing to organize your views, create new Dashb
 
 ## The Dashboards Listing page
 
-The **Dashboards Listing** page is your central hub for managing access to all Dashboards. 
+The **Dashboards Listing** page is your central hub for managing access to all Dashboards.
 To access it, in the left handed panel, click on **Dashboards**.
 
 It provides a table with the following information:
@@ -16,7 +16,7 @@ It provides a table with the following information:
 
 ### Filter and sort
 To quickly find a Dashboard, you have a few options accessible from the top of listing page:
-! (docs/assets/xdr/dashboards/dashboard_sort_option.png)
+! (/assets/xdr/dashboards/dashboard_sort_option.png)
 
 * **Search:** Enter keywords in the search bar to retrieve a specific dashboard.
 * **Filter:** Choose between **All community dashboards** or **Personal dashboards (Created by me)**.
@@ -77,4 +77,4 @@ If you prefer automated updates, you can enable the **Auto-refresh** option in t
 * This ensures your data stays current without manual intervention.
 ---
 **Next steps**
-* Your Dashboard is created; now populate it by [Configuring Widgets and layout](docs/xdr/features/report/add_widgets_dashboards.md).
+* Your Dashboard is created; now populate it by [Configuring Widgets and layout](/xdr/features/report/add_widgets_dashboards.md).

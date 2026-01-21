@@ -51,7 +51,7 @@ To pin a filter to a dashboard:
 2. Select **Edit dashboard** to enter the edit mode.
 3. Locate the widget containing the filter you want to share.
 4. In the widget panel, select the Pin icon next to the specific filter name.
-   ![Clicking the Pin filter to dashboard button next to filter name.](/docs/assets/xdr/dashboards/pin_filter_button.png)
+   ![Clicking the Pin filter to dashboard button next to filter name.](/assets/xdr/dashboards/pin_filter_button.png)
 5. To exit edit mode, click **Save**.
 
 !!! Note
@@ -64,4 +64,3 @@ You can unpin it at any time.
 * When a user changes the pinned filter’s value, all linked widgets refresh instantly.
 * If a widget uses a filter that isn’t pinned, it retains its own local filter configuration.
 * Unpinning a filter removes it from the dashboard’s filter bar but keeps widgets functional with their local values.
-

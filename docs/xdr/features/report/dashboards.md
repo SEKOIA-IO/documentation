@@ -20,7 +20,7 @@ A key aspect of Dashboards is the ability to use **Widgets**. These are the indi
 
 ## Interacting with data
 
-### Filtering 
+### Filtering
 By using filters, you can adjust the scope of an investigation—such as time range, entity, or process, without editing the underlying query logic.
 
 ### Time range configuration
@@ -38,5 +38,5 @@ Dashboards support collaboration between Managed Security Service Providers (MSS
 
 ---
 **Next steps**
-* Now that you understand the concepts, learn how to [Create and manage Dashboards](docs/xdr/features/report/create_dashboards.md).
-* Ready to build? Go to [Configuring Widgets and layout](docs/xdr/features/report/add_widgets_dashboards.md).
+* Now that you understand the concepts, learn how to [Create and manage Dashboards](/xdr/features/report/create_dashboards.md).
+* Ready to build? Go to [Configuring Widgets and layout](/xdr/features/report/add_widgets_dashboards.md).

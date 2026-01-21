@@ -6,7 +6,7 @@ The practical guide to building your Dashboard: adding Widgets, organizing the l
 
 ### Add Widgets
 1.  Open your Dashboard.
-2.  In the Top right corner, click on **Edit Dashboard**. 
+2.  In the Top right corner, click on **Edit Dashboard**.
 3.  In the top right corner, click the **Add New Widget** button.
 4.  Select Widgets from the available **Queries** (custom queries previously created in the Query Builder) or **Presets** (built-in).
 
@@ -22,7 +22,7 @@ Click the **three dots (...)** on a Widget and select **Delete from dashboard**.
 
 1.  Open your Dashboard.
 2.  In the Top right corner, click on **Edit Dashboard**. You can:
-   
+
  * **Move:** Drag and drop Widgets to your preferred locations.
  * **Resize:** Change the size of each Widget.
 3.  Click **Save** to apply changes.
@@ -37,7 +37,7 @@ You can insert an existing query created in the Query Builder into your dashboar
 ![insert_qb_in_dashboard](/assets/xdr/dashboards/insert_qb_in_dashboard.gif){: style="max-width:100%"}
 
 ### Insert a Query from the Query Builder
-You can add a query to a Dashboard directly after its creation in the Builder. 
+You can add a query to a Dashboard directly after its creation in the Builder.
 1.  To access the Query Builder, on the left side panel, click on **Queries > New Query**.
 2.  Configure your Query.
 3.  Click Save. The query is immediately usable, and the **+ Add to a Dashboard** button appears.
@@ -46,7 +46,7 @@ You can add a query to a Dashboard directly after its creation in the Builder.
 
     * In an **existing Dashboard**, click on the **Add** button next to the relevant dashboard name.
     * In a **new dashboard**, click on **Add to new dashboard** button an enter required fields.
-  
+
 Your dashboard name moves to the top of the list so that it is more visible. A **Remove** button replaces the **Add** button.
 
 !!! Note
@@ -55,16 +55,16 @@ You can check and manage the dashboards that use it by returning to the **+ Add 
 
 ### Manage a Query widget
 
-In addition to the widget options available from the dashboard (see **Working with Widgets** section), you can manage it from the Query builder: 
+In addition to the widget options available from the dashboard (see **Working with Widgets** section), you can manage it from the Query builder:
 
-From the **+ Add to a Dashboard** menu: 
+From the **+ Add to a Dashboard** menu:
 
 * **Check where a query is used**: the total number of usage is shown on the **+ Add to a Dashboard**, and all dashboards using it will be the first one in the list with a **Remove** button next to their name.
-* **Add** or **remove** a query from a dashboard: in the list, click on the button next to its name. 
+* **Add** or **remove** a query from a dashboard: in the list, click on the button next to its name.
 
 
 ---
 **Next steps**
-* See the list of available presets in the [Built-in Widgets reference article](docs/xdr/features/report/built_in_widget_reference).
-* Learn how to create meaningful custom widgets in the [Query Builder documentation](xdr/features/investigate/query_builder/)
-* Discover how to use SOL language in your dashboard to [Filter your dashboard's data](docs/xdr/features/report/share_dashboards).
+* See the list of available presets in the [Built-in Widgets reference article](/xdr/features/report/built_in_widget_reference.md).
+* Learn how to create meaningful custom widgets in the [Query Builder documentation](/xdr/features/investigate/query_builder.md)
+* Discover how to use SOL language in your dashboard to [Filter your dashboard's data](/xdr/features/report/share_dashboards.md).
