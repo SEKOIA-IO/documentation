@@ -53,7 +53,7 @@ Your dashboard name moves to the top of the list so that it is more visible. A *
 
 !!! Note
     Any changes made in a query will be applied to all dashboards where it is used.
-You can check and manage the dashboards that use it by returning to the **+ Add to a Dashboard** menu at any time.
+    You can check and manage the dashboards that use it by returning to the **+ Add to a Dashboard** menu at any time.
 
 ### Manage a Query widget
 
