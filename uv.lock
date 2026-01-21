@@ -27,11 +27,11 @@ wheels = [
 
 [[package]]
 name = "certifi"
-version = "2025.11.12"
+version = "2026.1.4"
 source = { registry = "https://pypi.org/simple" }
-sdist = { url = "https://files.pythonhosted.org/packages/a2/8c/58f469717fa48465e4a50c014a0400602d3c437d7c0c468e17ada824da3a/certifi-2025.11.12.tar.gz", hash = "sha256:d8ab5478f2ecd78af242878415affce761ca6bc54a22a27e026d7c25357c3316", size = 160538, upload-time = "2025-11-12T02:54:51.517Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/e0/2d/a891ca51311197f6ad14a7ef42e2399f36cf2f9bd44752b3dc4eab60fdc5/certifi-2026.1.4.tar.gz", hash = "sha256:ac726dd470482006e014ad384921ed6438c457018f4b3d204aea4281258b2120", size = 154268, upload-time = "2026-01-04T02:42:41.825Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/70/7d/9bc192684cea499815ff478dfcdc13835ddf401365057044fb721ec6bddb/certifi-2025.11.12-py3-none-any.whl", hash = "sha256:97de8790030bbd5c2d96b7ec782fc2f7820ef8dba6db909ccf95449f2d062d4b", size = 159438, upload-time = "2025-11-12T02:54:49.735Z" },
+    { url = "https://files.pythonhosted.org/packages/e6/ad/3cc14f097111b4de0040c83a525973216457bbeeb63739ef1ed275c1c021/certifi-2026.1.4-py3-none-any.whl", hash = "sha256:9943707519e4add1115f44c2bc244f782c0249876bf51b6599fee1ffbedd685c", size = 152900, upload-time = "2026-01-04T02:42:40.15Z" },
 ]
 
 [[package]]
@@ -136,7 +136,7 @@ wheels = [
 
 [[package]]
 name = "keystoneauth1"
-version = "5.12.0"
+version = "5.13.0"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "iso8601" },
@@ -146,9 +146,9 @@ dependencies = [
     { name = "stevedore" },
     { name = "typing-extensions" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/e5/16/b96df223ca7ea4bfa78034b205e0eaf4875bfecb2f119f375fc5232d2061/keystoneauth1-5.12.0.tar.gz", hash = "sha256:dd113c2f3dcb418d9f761c73b8cd43a96ddfa8a612b51c576822381f39ca4ae8", size = 288504, upload-time = "2025-08-21T09:34:10.767Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/e5/2b/5a08163c8e878811f11dc8c78c041c2384cd424c71f75fb7a6b19969047f/keystoneauth1-5.13.0.tar.gz", hash = "sha256:57c9ca407207899b50d8ff1ca8abb4a4e7427461bfc1877eb8519c3989ce63ec", size = 288721, upload-time = "2026-01-19T10:47:02.467Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/16/8a/803a45dc660770ac7e2d74fc1260a15ade29d2234120854747491b4a7a02/keystoneauth1-5.12.0-py3-none-any.whl", hash = "sha256:2e514b03615e2d9162f0c07c823a61a636e6d4df38ff4a34b7511a04e8a4166a", size = 343402, upload-time = "2025-08-21T09:34:09.38Z" },
+    { url = "https://files.pythonhosted.org/packages/dd/99/76476a1057b349c860bae72e45d6ef438feb877c84ee7d565faf464e54c3/keystoneauth1-5.13.0-py3-none-any.whl", hash = "sha256:5ab81412eb0923ceb9c602cc3decce514b399523cb83d16b409ed3b0f9b03d41", size = 343585, upload-time = "2026-01-19T10:47:00.762Z" },
 ]
 
 [[package]]
@@ -367,7 +367,7 @@ wheels = [
 
 [[package]]
 name = "oslo-config"
-version = "10.1.0"
+version = "10.2.0"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "netaddr" },
@@ -377,9 +377,9 @@ dependencies = [
     { name = "rfc3986" },
     { name = "stevedore" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/73/86/ecf03dcf57e48668276481f19bebddf09432b3f96dc205d441d29902b955/oslo_config-10.1.0.tar.gz", hash = "sha256:93a68f9bd52242198b404bb07b2b81f644008044a4882eb1b5042417b9819b36", size = 165089, upload-time = "2025-11-13T13:46:40.873Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/25/b4/91cc92f141ed1bb9c9e46a84c6407074f391cfd0997b25c649cd725761ff/oslo_config-10.2.0.tar.gz", hash = "sha256:6d282113f2fb2ee4d40c8becdb4ac39917c3f447c3bb355abf47f0d6181edffc", size = 163256, upload-time = "2026-01-08T13:34:33.071Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/ec/c9/780ecc7afef133136daf978392938a78d681399e66848ed83ce03612d786/oslo_config-10.1.0-py3-none-any.whl", hash = "sha256:90505d941597be502228d15f847f1f4cc990c25f59844a07efde9a65e707bd61", size = 131595, upload-time = "2025-11-13T13:46:39.734Z" },
+    { url = "https://files.pythonhosted.org/packages/b7/da/5f29eca3589a675bd339c8fb2a23e0432259aad34b52f967b900b9312ae1/oslo_config-10.2.0-py3-none-any.whl", hash = "sha256:6298bb78d87d97cb5032b116941dc8305a792d5467e2e031c8ff7fadcaa7e211", size = 131756, upload-time = "2026-01-08T13:34:31.406Z" },
 ]
 
 [[package]]
@@ -449,11 +449,11 @@ wheels = [
 
 [[package]]
 name = "pathspec"
-version = "0.12.1"
+version = "1.0.3"
 source = { registry = "https://pypi.org/simple" }
-sdist = { url = "https://files.pythonhosted.org/packages/ca/bc/f35b8446f4531a7cb215605d100cd88b7ac6f44ab3fc94870c120ab3adbf/pathspec-0.12.1.tar.gz", hash = "sha256:a482d51503a1ab33b1c67a6c3813a26953dbdc71c31dacaef9a838c4e29f5712", size = 51043, upload-time = "2023-12-10T22:30:45Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/4c/b2/bb8e495d5262bfec41ab5cb18f522f1012933347fb5d9e62452d446baca2/pathspec-1.0.3.tar.gz", hash = "sha256:bac5cf97ae2c2876e2d25ebb15078eb04d76e4b98921ee31c6f85ade8b59444d", size = 130841, upload-time = "2026-01-09T15:46:46.009Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/cc/20/ff623b09d963f88bfde16306a54e12ee5ea43e9b597108672ff3a408aad6/pathspec-0.12.1-py3-none-any.whl", hash = "sha256:a0d503e138a4c123b27490a4f7beda6a01c6f288df0e4a8b79c7eb0dc7b4cc08", size = 31191, upload-time = "2023-12-10T22:30:43.14Z" },
+    { url = "https://files.pythonhosted.org/packages/32/2b/121e912bd60eebd623f873fd090de0e84f322972ab25a7f9044c056804ed/pathspec-1.0.3-py3-none-any.whl", hash = "sha256:e80767021c1cc524aa3fb14bedda9c34406591343cc42797b386ce7b9354fb6c", size = 55021, upload-time = "2026-01-09T15:46:44.652Z" },
 ]
 
 [[package]]
@@ -510,24 +510,24 @@ wheels = [
 
 [[package]]
 name = "pymdown-extensions"
-version = "10.19.1"
+version = "10.20"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "markdown" },
     { name = "pyyaml" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/72/2d/9f30cee56d4d6d222430d401e85b0a6a1ae229819362f5786943d1a8c03b/pymdown_extensions-10.19.1.tar.gz", hash = "sha256:4969c691009a389fb1f9712dd8e7bd70dcc418d15a0faf70acb5117d022f7de8", size = 847839, upload-time = "2025-12-14T17:25:24.42Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/3e/35/e3814a5b7df295df69d035cfb8aab78b2967cdf11fcfae7faed726b66664/pymdown_extensions-10.20.tar.gz", hash = "sha256:5c73566ab0cf38c6ba084cb7c5ea64a119ae0500cce754ccb682761dfea13a52", size = 852774, upload-time = "2025-12-31T19:59:42.211Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/fb/35/b763e8fbcd51968329b9adc52d188fc97859f85f2ee15fe9f379987d99c5/pymdown_extensions-10.19.1-py3-none-any.whl", hash = "sha256:e8698a66055b1dc0dca2a7f2c9d0ea6f5faa7834a9c432e3535ab96c0c4e509b", size = 266693, upload-time = "2025-12-14T17:25:22.999Z" },
+    { url = "https://files.pythonhosted.org/packages/ea/10/47caf89cbb52e5bb764696fd52a8c591a2f0e851a93270c05a17f36000b5/pymdown_extensions-10.20-py3-none-any.whl", hash = "sha256:ea9e62add865da80a271d00bfa1c0fa085b20d133fb3fc97afdc88e682f60b2f", size = 268733, upload-time = "2025-12-31T19:59:40.652Z" },
 ]
 
 [[package]]
 name = "pyparsing"
-version = "3.3.1"
+version = "3.3.2"
 source = { registry = "https://pypi.org/simple" }
-sdist = { url = "https://files.pythonhosted.org/packages/33/c1/1d9de9aeaa1b89b0186e5fe23294ff6517fce1bc69149185577cd31016b2/pyparsing-3.3.1.tar.gz", hash = "sha256:47fad0f17ac1e2cad3de3b458570fbc9b03560aa029ed5e16ee5554da9a2251c", size = 1550512, upload-time = "2025-12-23T03:14:04.391Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/f3/91/9c6ee907786a473bf81c5f53cf703ba0957b23ab84c264080fb5a450416f/pyparsing-3.3.2.tar.gz", hash = "sha256:c777f4d763f140633dcb6d8a3eda953bf7a214dc4eff598413c070bcdc117cbc", size = 6851574, upload-time = "2026-01-21T03:57:59.36Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/8b/40/2614036cdd416452f5bf98ec037f38a1afb17f327cb8e6b652d4729e0af8/pyparsing-3.3.1-py3-none-any.whl", hash = "sha256:023b5e7e5520ad96642e2c6db4cb683d3970bd640cdf7115049a6e9c3682df82", size = 121793, upload-time = "2025-12-23T03:14:02.103Z" },
+    { url = "https://files.pythonhosted.org/packages/10/bd/c038d7cc38edc1aa5bf91ab8068b63d4308c66c4c8bb3cbba7dfbc049f9c/pyparsing-3.3.2-py3-none-any.whl", hash = "sha256:850ba148bd908d7e2411587e247a1e4f0327839c40e2e5e6d05a007ecc69911d", size = 122781, upload-time = "2026-01-21T03:57:55.912Z" },
 ]
 
 [[package]]
@@ -544,7 +544,7 @@ wheels = [
 
 [[package]]
 name = "python-keystoneclient"
-version = "5.1.0"
+version = "5.7.0"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "debtcollector" },
@@ -556,24 +556,23 @@ dependencies = [
     { name = "packaging" },
     { name = "pbr" },
     { name = "requests" },
-    { name = "six" },
     { name = "stevedore" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/bb/57/f59abb588eb28c1b5a8432e3163a2135183672e2dceb747aed0b26f3db01/python-keystoneclient-5.1.0.tar.gz", hash = "sha256:ba09bdfeafa2a2196450a327cd3f46f2a8a9dd9d21b838f8cb9b17a99740c6a1", size = 325232, upload-time = "2023-02-24T15:12:42.126Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/94/29/3775d7a722924a72208753a8aa5ddb0a58de24f5a5dd287cc9a0f66038e4/python_keystoneclient-5.7.0.tar.gz", hash = "sha256:8ce7bf1c8cddca6d7140fc76918b44eddf1d64040a60cb8ff7059136104d4ceb", size = 322387, upload-time = "2025-08-28T09:50:01.249Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/87/b1/29a005e387db31a21c2ebf4970de5f2d363ce285645c70530dd503c0d4f5/python_keystoneclient-5.1.0-py3-none-any.whl", hash = "sha256:9c2e0b1700f553ca625e987f4cd8ef62d7a27ad88c5104e96e16904d2ae1d918", size = 398639, upload-time = "2023-02-24T15:12:40.683Z" },
+    { url = "https://files.pythonhosted.org/packages/90/d1/eb39a6e544f5f789fd44c09274a8b1b08a86e3e7ac0e016d07ceb94c0b42/python_keystoneclient-5.7.0-py3-none-any.whl", hash = "sha256:2ec19994ba8b8b16fe6cf4ac45c3f2180a22e203d1b3aa977a34a0160caae0b6", size = 397216, upload-time = "2025-08-28T09:49:59.798Z" },
 ]
 
 [[package]]
 name = "python-swiftclient"
-version = "4.3.0"
+version = "4.9.0"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "requests" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/51/8a/fc31e8e08bff444ddd5b2ac483320f301999c43c82bebd1bd5461ff5ce08/python-swiftclient-4.3.0.tar.gz", hash = "sha256:1e3ddf998ccbea7dc25aa6df8eb3df7d38bf4bc96b065f2f84431e8259817b33", size = 206510, upload-time = "2023-04-05T13:16:23.691Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/36/33/be8b0b894f92f45877cd314a9cf6478001af77a53179adf833a296e792ff/python_swiftclient-4.9.0.tar.gz", hash = "sha256:9e207b82ec31786f10db8fef6e205681c24997a0b600d28a194f9d15a90ed772", size = 210197, upload-time = "2025-11-13T13:52:06.971Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/fd/bf/8f28cdd62541b8c3a043ad28479615e3ffc86ea92b01c30afca9580592cb/python_swiftclient-4.3.0-py3-none-any.whl", hash = "sha256:f88ff0d7d038a84872ac415a00df007d2a9078b73d8c5921fdc531e893378a89", size = 88858, upload-time = "2023-04-05T13:16:21.026Z" },
+    { url = "https://files.pythonhosted.org/packages/8e/c2/e5b67b0d446ec86ca551e0011ca834b5a53c32919f9c9c9b70df358c582f/python_swiftclient-4.9.0-py3-none-any.whl", hash = "sha256:0a53fd2fe27843108f39a1ff9e75dac253eeafb4c7e9e59d373263573f17665d", size = 88723, upload-time = "2025-11-13T13:52:05.866Z" },
 ]
 
 [[package]]
@@ -671,8 +670,8 @@ requires-dist = [
 
 [package.metadata.requires-dev]
 upload = [
-    { name = "python-keystoneclient", specifier = "==5.1.0" },
-    { name = "python-swiftclient", specifier = "==4.3.0" },
+    { name = "python-keystoneclient" },
+    { name = "python-swiftclient" },
 ]
 
 [[package]]
@@ -722,11 +721,11 @@ wheels = [
 
 [[package]]
 name = "urllib3"
-version = "2.6.2"
+version = "2.6.3"
 source = { registry = "https://pypi.org/simple" }
-sdist = { url = "https://files.pythonhosted.org/packages/1e/24/a2a2ed9addd907787d7aa0355ba36a6cadf1768b934c652ea78acbd59dcd/urllib3-2.6.2.tar.gz", hash = "sha256:016f9c98bb7e98085cb2b4b17b87d2c702975664e4f060c6532e64d1c1a5e797", size = 432930, upload-time = "2025-12-11T15:56:40.252Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/c7/24/5f1b3bdffd70275f6661c76461e25f024d5a38a46f04aaca912426a2b1d3/urllib3-2.6.3.tar.gz", hash = "sha256:1b62b6884944a57dbe321509ab94fd4d3b307075e0c2eae991ac71ee15ad38ed", size = 435556, upload-time = "2026-01-07T16:24:43.925Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/6d/b9/4095b668ea3678bf6a0af005527f39de12fb026516fb3df17495a733b7f8/urllib3-2.6.2-py3-none-any.whl", hash = "sha256:ec21cddfe7724fc7cb4ba4bea7aa8e2ef36f607a4bab81aa6ce42a13dc3f03dd", size = 131182, upload-time = "2025-12-11T15:56:38.584Z" },
+    { url = "https://files.pythonhosted.org/packages/39/08/aaaad47bc4e9dc8c725e68f9d04865dbcb2052843ff09c97b08904852d84/urllib3-2.6.3-py3-none-any.whl", hash = "sha256:bf272323e553dfb2e87d9bfd225ca7b0f467b919d7bbd355436d3fd37cb0acd4", size = 131584, upload-time = "2026-01-07T16:24:42.685Z" },
 ]
 
 [[package]]

@@ -17,8 +17,8 @@ dependencies = [
 
 [dependency-groups]
 upload = [
-    "python-keystoneclient==5.1.0",
-    "python-swiftclient==4.3.0",
+    "python-keystoneclient",
+    "python-swiftclient",
 ]
 
 [project.entry-points."mkdocs.plugins"]
