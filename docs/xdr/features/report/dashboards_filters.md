@@ -6,7 +6,7 @@
 Dashboard filters are dynamic controls that allow you to modify query parameters across one or multiple widgets in real time. By using filters, you create a placeholder that accepts user input to adjust the scope of an investigation, such as time range, entity, or process, without editing the underlying query logic. This makes dashboards context-aware and interactive.
 
 !!! Example
-Instead of hardcoding a specific username in a query, you use a filter variable. When you view the dashboard, you can enter any username, and all widgets referencing that filter will update instantly.
+    Instead of hardcoding a specific username in a query, you use a filter variable. When you view the dashboard, you can enter any username, and all widgets referencing that filter will update instantly.
 
 <center>
     <iframe width="560" height="315" src="https://www.youtube.com/embed/9q6K7vwEYv8?si=5x24TPninNak550B" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
@@ -14,25 +14,25 @@ Instead of hardcoding a specific username in a query, you use a filter variable.
 
 ## Create Filters
 
-To implement a filter, you must reference it in your query, using SOL Language, with the question mark syntax: ```shell
-?filter_name
-```
+To implement a filter, you must reference it in your query, using SOL Language, with the question mark syntax: `?filter_name`
 
 All the filters appear automatically in the dashboard, allowing users to modify them and instantly refresh the results.
 
 ### Predefined vs. Custom Filters
 
-* **Predefined Filters**: Built-in variables like ?time.start and ?time.end that control the global time range of the dashboard.
+* **Predefined Filters**: Built-in variables like `?time.start` and `?time.end` that control the global time range of the dashboard.  
+* **Custom Filters**: User-defined variables (e.g., `?entity_uuid`, `?process_name`) that target specific attributes.
 
-* **Custom Filters**: User-defined variables (e.g., ?entity_uuid, ?process_name) that target specific attributes.
+??? example "Query with Filters"
+    The following example demonstrates a query using both predefined time filters and custom logic filters.
 
-??? example "Query with Filters" The following example demonstrates a query using both predefined time filters and custom logic filters.
-```shell
-events
-| where timestamp between (?time.start .. ?time.end)
-| where entity_uuid == ?entity_uuid
-| where process.name == ?process_name
-```
+    ```shell
+    events
+    | where timestamp between (?time.start .. ?time.end)
+    | where entity_uuid == ?entity_uuid
+    | where process.name == ?process_name
+    ```
+
 In this example:
 
 * `?time.start` and `?time.end` are predefined time filters
@@ -54,9 +54,9 @@ To pin a filter to a dashboard:
    ![Clicking the Pin filter to dashboard button next to filter name.](/assets/xdr/dashboards/pin_filter_button.png)
 5. To exit edit mode, click **Save**.
 
-!!! Note
-Once pinned, the filter appears at the top of the dashboard as a shared input control.
-You can unpin it at any time.
+!!! note
+    Once pinned, the filter appears at the top of the dashboard as a shared input control.
+    You can unpin it at any time.
 
 #### Behavior of Pinned Filters
 
