@@ -1,6 +1,9 @@
+---
 uuid: 8510051d-c7cf-4b0c-a398-031afe91faa0
+title: OPNSense
 name: OPNSense
 type: intake
+---
 
 ## Overview
 - **Vendor**: OPNSense

@@ -1,6 +1,9 @@
+---
 uuid: a9b9f7be-a036-4e10-a407-53bc3b8308b4
+title: Microsoft Entra ID (Graph API)
 name: Microsoft Entra ID (Graph API)
 type: intake
+---
 
 ## Overview
 

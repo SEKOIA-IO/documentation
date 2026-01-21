@@ -1,6 +1,9 @@
+---
 uuid: 5702ae4e-7d8a-455f-a47b-ef64dd87c981
+title: Fortigate
 name: Fortigate
 type: intake
+---
 
 ## Overview
 

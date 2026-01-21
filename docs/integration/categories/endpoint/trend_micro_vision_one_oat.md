@@ -1,6 +1,9 @@
+---
 uuid: 2345b987-a94a-4363-b7bc-a6e4a9efd98a
 name: Trend Micro Vision One Observed Attack Techniques
+name: Trend Micro Vision One Observed Attack Techniques
 type: intake
+---
 
 
 ## Overview
@@ -12,7 +15,7 @@ This intake format will ingest Observed Attack Techniques from Trend Micro Visio
 - **Detection based on**: Alerts
 - **Supported application or feature**:
     - Observed Attack Techniques
-    
+
 ## Configure
 
 {!_shared_content/operations_center/integrations/trend_micro_vision_one_api_key.md!}

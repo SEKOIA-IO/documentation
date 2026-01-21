@@ -1,6 +1,9 @@
+---
 uuid: f6cfddb4-543a-41fe-9802-c66b7c90366d
+title: BeyondTrust PRA Sessions
 name: BeyondTrust PRA Sessions
 type: intake
+---
 
 ## Overview
 

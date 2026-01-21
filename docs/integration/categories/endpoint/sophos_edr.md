@@ -1,6 +1,9 @@
+---
 uuid: 3f330d19-fdea-48ac-96bd-91a447bb26bd
+title: Sophos EDR
 name: Sophos EDR
 type: intake
+---
 
 ## Overview
 

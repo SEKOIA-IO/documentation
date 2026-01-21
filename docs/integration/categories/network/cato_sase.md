@@ -1,6 +1,9 @@
+---
 uuid: 469bd3ae-61c9-4c39-9703-7452882e70da
+title: Cato SASE
 name: Cato SASE
 type: intake
+---
 
 ## Overview
 

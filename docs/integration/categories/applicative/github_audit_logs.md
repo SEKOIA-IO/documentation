@@ -1,6 +1,9 @@
+---
 uuid: 80de6ccb-7246-40de-bcbb-bc830118c1f9
+title: Github Audit Logs
 name: Github Audit Logs
 type: intake
+---
 
 ## Overview
 - **Vendor**: Microsoft

@@ -1,6 +1,9 @@
+---
 uuid: a1dbed03-cd69-4a51-8ae5-aa67d2f29fcb
+title: Jumpcloud Directory Insights
 name: Jumpcloud Directory Insights
 type: intake
+---
 
 
 ## Overview

@@ -1,6 +1,9 @@
+---
 uuid: 9281438c-f7c3-4001-9bcc-45fd108ba1be
+title: Windows
 name: Windows
 type: intake
+---
 
 ## Overview
 - **Vendor**:

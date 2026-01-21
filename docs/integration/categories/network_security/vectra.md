@@ -1,6 +1,9 @@
+---
 uuid: bf8867ee-43b7-444c-9475-a7f43754ab6d
+title: Vectra Cognito Detect
 name: Vectra Cognito Detect
 type: intake
+---
 
 ## Overview
 Vectra provides AI-powered incident detection and resolution support for native and hybrid clouds.

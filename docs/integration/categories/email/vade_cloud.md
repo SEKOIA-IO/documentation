@@ -1,6 +1,9 @@
+---
 uuid: 838ed6e5-6d5e-4a5b-b079-ab35ac6b2ab9
+title: Vade Cloud
 name: Vade Cloud
 type: intake
+---
 
 ## Overview
 

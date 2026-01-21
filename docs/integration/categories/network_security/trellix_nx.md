@@ -1,6 +1,9 @@
+---
 uuid: bae128bb-98c6-45f7-9763-aad3451821e5
+title: Trellix Network Security
 name: Trellix Network Security
 type: intake
+---
 
 ## Overview
 

@@ -1,6 +1,9 @@
+---
 uuid: 16676d72-463e-4b8a-b13a-f8dd48cddc8c
+title: Cloudflare WAF / Firewall Events
 name: Cloudflare WAF / Firewall Events
 type: intake
+---
 
 ## Overview
 

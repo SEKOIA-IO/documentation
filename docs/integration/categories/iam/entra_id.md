@@ -1,6 +1,9 @@
+---
 uuid: 19cd2ed6-f90c-47f7-a46b-974354a107bb
+title: Microsoft Entra ID (Azure AD)
 name: Microsoft Entra ID (Azure AD)
 type: intake
+---
 
 ## Overview
 

@@ -1,6 +1,9 @@
+---
 uuid: 64d118f0-84a5-4f46-ab05-7776bd6d0eed
+title: Clavister Next-Gen Firewall
 name: Clavister Next-Gen Firewall
 type: intake
+---
 
 ## Overview
 

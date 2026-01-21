@@ -1,6 +1,9 @@
+---
 uuid: 021e9def-5a55-4369-941e-af269b45bef1
+title: Linux AuditBeat
 name: Linux AuditBeat
 type: intake
+---
 
 ## Overview
 
