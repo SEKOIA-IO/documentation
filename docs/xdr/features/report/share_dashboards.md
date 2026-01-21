@@ -6,7 +6,7 @@ Shared dashboards allow you to provide standardized data visualization across di
 
 A workspace can share a dashboard with one or several communities to maintain visibility across the organization.
 
-Before you start make sure that: 
+Before you start make sure that:
 
 * You have the **Write** permission for dashboards in your workspace.
 * The dashboard does NOT contain queries with **SOL parameters** or specific **Parameters**, as these cannot be shared at the moment.
@@ -15,7 +15,7 @@ Before you start make sure that:
 2. Click **Manage Access**.
 3. Select the communities you want to share the dashboard with.
 
-!!!warning "Query validation"
+??? warning "Query validation"
     Review all queries within the dashboard to ensure the logic and data exposure are appropriate for the target communities.
 
 4. Click **Save**.
