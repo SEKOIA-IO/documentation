@@ -29,7 +29,7 @@ Ensure that the IAM user dedicated to accessing the S3 bucket and SQS Queue has 
             },
             "Effect": "Allow",
             "Resource": "arn:aws:s3:REGION_HERE:XXXXXXXXXXXX:NAME_HERE/*"
-        },
+        }
     ]
 }
 ```
