@@ -1,6 +1,6 @@
 This section will guide you to configure the forwarding of Cisco Umbrella logs to Sekoia.io by means of AWS S3 buckets.
 
-### Prerequities
+### Prerequisites
 
 In order to set up the AWS architecture, you need an administrator access to the [Amazon console]( https://console.aws.amazon.com) with the permissions to create and manage S3 buckets, SQS queues, S3 notifications and users.
 
