@@ -8,6 +8,7 @@ Dashboards provide a powerful and intuitive way to visualize and monitor key met
 
 ### Default Dashboard
 Accounts on Sekoia.io come with a preconfigured Dashboard that gives a synthetic view of the current community activity, either from:
+
 * **Operational security perspective:** Risk Level, number of alerts, etc.
 * **Activity perspective:** List of last posted comments, last created alerts, etc.
 
@@ -38,5 +39,6 @@ Dashboards support collaboration between Managed Security Service Providers (MSS
 
 ---
 **Next steps**
+
 * Now that you understand the concepts, learn how to [Create and manage Dashboards](/xdr/features/report/create_dashboards.md).
 * Ready to build? Go to [Configuring Widgets and layout](/xdr/features/report/add_widgets_dashboards.md).
