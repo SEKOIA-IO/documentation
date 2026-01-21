@@ -16,7 +16,7 @@ It provides a table with the following information:
 
 ### Filter and sort
 To quickly find a Dashboard, you have a few options accessible from the top of listing page:
-! (/assets/xdr/dashboards/dashboard_sort_option.png)
+![image locating search, filter and sort CTA on the page](/assets/xdr/dashboards/dashboard_sort_option.png)
 
 * **Search:** Enter keywords in the search bar to retrieve a specific dashboard.
 * **Filter:** Choose between **All community dashboards** or **Personal dashboards (Created by me)**.
@@ -28,7 +28,8 @@ You can easily create a new Dashboard directly from the Listing page:
 1.  Click the **+ New Dashboard** button.
 2.  Start building your custom view.
 
-!!! note Dashboards you create will be available to all members of your community.
+!!! Note
+Dashboards you create will be available to all members of your community.
 
 ## Manage existing Dashboards
 
@@ -39,7 +40,9 @@ Select **Duplicate** to automatically create a copy of the Dashboard with all it
 
 ### Delete
 Select **Delete** to remove the Dashboard.
-!!! warning This will remove the Dashboard for **all members** of the community.
+
+!!! warning 
+This will remove the Dashboard for **all members** of the community.
 
 ### Set as Homepage
 Select **Set as Homepage** to make this Dashboard your default landing page.
@@ -53,6 +56,7 @@ Managing the time range is essential for analyzing trends over specific periods.
 
 ### Dashboard date range
 For Built-in Widgets, you can synchronize the time range with the overall Dashboard's date range.
+
 * This is set using the **range selector** prominently displayed at the top of the Dashboard.
 * Adjusting this selector updates all Built-in Widgets configured to follow the Dashboard's global date.
 
@@ -67,14 +71,18 @@ Ensuring that the data displayed is up-to-date is critical for accurate monitori
 
 ### Manual refresh
 To manually update data across all Widgets on the current Dashboard:
+
 * Click the **Refresh** button located near the top of the Dashboard.
 * The date and time of the last successful refresh are displayed next to the button.
-> **Note:** You can only trigger a manual refresh once every minute.
+!!! Note
+   You can only trigger a manual refresh once every minute.
 
 ### Auto-refresh
 If you prefer automated updates, you can enable the **Auto-refresh** option in the Dashboard settings.
+
 * When enabled, all Widgets automatically refresh every **30 minutes**.
 * This ensures your data stays current without manual intervention.
 ---
 **Next steps**
+
 * Your Dashboard is created; now populate it by [Configuring Widgets and layout](/xdr/features/report/add_widgets_dashboards.md).
