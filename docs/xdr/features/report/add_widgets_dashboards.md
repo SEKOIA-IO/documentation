@@ -12,6 +12,7 @@ The practical guide to building your Dashboard: adding Widgets, organizing the l
 
 ### Edit Widgets
 In the top right corner of a widget, click the **three dots (...)** and select **Edit Widget**.
+
 * **Query visualization:** You are redirected to the Query settings page to edit parameters.
 * **Preset:** An editing panel appears to adjust options like time range or visualization type.
 
@@ -38,14 +39,15 @@ You can insert an existing query created in the Query Builder into your dashboar
 
 ### Insert a Query from the Query Builder
 You can add a query to a Dashboard directly after its creation in the Builder.
-1.  To access the Query Builder, on the left side panel, click on **Queries > New Query**.
-2.  Configure your Query.
-3.  Click Save. The query is immediately usable, and the **+ Add to a Dashboard** button appears.
-4.  Click **+ Add to a Dashboard**.
-5.  To add the Query as a widget:
 
-    * In an **existing Dashboard**, click on the **Add** button next to the relevant dashboard name.
-    * In a **new dashboard**, click on **Add to new dashboard** button an enter required fields.
+1. To access the Query Builder, on the left side panel, click on **Queries > New Query**.
+2. Configure your Query.
+3. Click Save. The query is immediately usable, and the **+ Add to a Dashboard** button appears.
+4. Click **+ Add to a Dashboard**.
+5. To add the Query as a widget:
+
+    - In an **existing Dashboard**, click on the **Add** button next to the relevant dashboard name.
+    - In a **new dashboard**, click on **Add to new dashboard** button and enter required fields.
 
 Your dashboard name moves to the top of the list so that it is more visible. A **Remove** button replaces the **Add** button.
 
@@ -65,6 +67,7 @@ From the **+ Add to a Dashboard** menu:
 
 ---
 **Next steps**
+
 * See the list of available presets in the [Built-in Widgets reference article](/xdr/features/report/built_in_widget_reference.md).
 * Learn how to create meaningful custom widgets in the [Query Builder documentation](/xdr/features/investigate/query_builder.md)
 * Discover how to use SOL language in your dashboard to [Filter your dashboard's data](/xdr/features/report/share_dashboards.md).
