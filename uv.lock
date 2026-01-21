@@ -671,8 +671,8 @@ requires-dist = [
 
 [package.metadata.requires-dev]
 upload = [
-    { name = "python-keystoneclient", specifier = "==5.1.0" },
-    { name = "python-swiftclient", specifier = "==4.3.0" },
+    { name = "python-keystoneclient" },
+    { name = "python-swiftclient" },
 ]
 
 [[package]]

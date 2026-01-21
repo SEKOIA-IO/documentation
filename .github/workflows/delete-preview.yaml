@@ -7,8 +7,8 @@ on:
       - completed
 
 jobs:
-  upload:
-    name: Upload preview to OVH Object Storage
+  remove:
+    name: Delete preview from OVHcloud Object Storage
     runs-on: ubuntu-latest
 
     steps:
@@ -22,36 +22,20 @@ jobs:
         id: pr_number
         run: echo "pr_number=$(cat PR_NUMBER)" >> $GITHUB_OUTPUT
 
-      - name: Install Swift
-        run: |
-          pip install urllib3==2.5.0 python-swiftclient==4.9.0 python-keystoneclient==5.1.0
-
-      - name: OVH Object Storage
-        run: |
-          swift delete sekoiaio-documentation-previews -p ${{ steps.pr_number.outputs.pr_number }} --object-threads 5
-        env:
-          OS_AUTH_URL: "https://auth.cloud.ovh.net/v3/"
-          OS_IDENTITY_API_VERSION: 3
-          OS_TENANT_ID: ${{ secrets.PR_OS_TENANT_ID }}
-          OS_TENANT_NAME: ${{ secrets.PR_OS_TENANT_NAME }}
-          OS_USERNAME: ${{ secrets.PR_OS_USERNAME }}
-          OS_PASSWORD: ${{ secrets.PR_OS_PASSWORD }}
-          OS_REGION_NAME: "GRA"
-
-      - name: Find Comment
-        uses: peter-evans/find-comment@v3
-        id: fc
+      - name: Check-out the repo
+        uses: actions/checkout@v4
         with:
-          issue-number: ${{ steps.pr_number.outputs.pr_number }}
-          comment-author: github-actions[bot]
-          body-includes: Newest code from ${{ github.actor}} has been published to
+          sparse-checkout: |
+            .github/actions/
 
-      - name: Add comment to PR
-        uses: peter-evans/create-or-update-comment@v4
+      - name: Delete preview
+        uses: ./.github/actions/delete-preview
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          issue-number: ${{ steps.pr_number.outputs.pr_number }}
-          comment-id: ${{ steps.fc.outputs.comment-id }}
-          edit-mode: replace
-          body: |
+          pull_request_id: ${{ steps.pr_number.outputs.pr_number }}
+          os_tenant_id: ${{ secrets.PR_OS_TENANT_ID }}
+          os_tenant_name: ${{ secrets.PR_OS_TENANT_NAME }}
+          os_username: ${{ secrets.PR_OS_USERNAME }}
+          os_password: ${{ secrets.PR_OS_PASSWORD }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          message: |
             _Pull request was merged, preview was removed._
