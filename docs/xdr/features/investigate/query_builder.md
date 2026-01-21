@@ -236,4 +236,4 @@ See [JSON Lines documentation](https://jsonlines.org/) for more details.
 
 ## Add query to dashboard
 
-Queries can be added to dashboards. To read more about this feature, check our documentation on [dashboards](/xdr/features/report/dashboards.md#query-builders-widgets).
+Queries can be added to dashboards. To read more about this feature, check our documentation on [dashboards](/xdr/features/report/add_widgets_dashboards.md).
