@@ -16,6 +16,9 @@ Dashboard filters are dynamic controls that allow you to modify query parameters
 
 To implement a filter, you must reference it in your query, using SOL Language, with the question mark syntax: `?filter_name`
 
+!!! note
+    Learn how to create query in our [article dedicated to the Query Builder](/xdr/features/investigate/query_builder.md).
+
 All the filters appear automatically in the dashboard, allowing users to modify them and instantly refresh the results.
 
 ### Predefined vs. Custom Filters
