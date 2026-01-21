@@ -15,9 +15,11 @@ Before you start make sure that:
 1. Navigate to the dashboard you want to share.
 2. Click **Manage Access**.
 3. Select the communities you want to share the dashboard with.
+    
     !!! warning "Query validation"
         Review all queries within the dashboard to ensure the logic and data exposure are appropriate for the target communities.
-5. Click **Save**.
+
+4. Click **Save**.
 
 ## Manage shared dashboards
 
