@@ -1,7 +1,7 @@
 name: Delete previews for stale PRs
 
 on:
-  pull_request:
+  pull_request_target:
     types:
       - labeled
 
