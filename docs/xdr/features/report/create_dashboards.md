@@ -25,11 +25,12 @@ To quickly find a Dashboard, you have a few options accessible from the top of l
 ## Create a new Dashboard
 
 You can easily create a new Dashboard directly from the Listing page:
+
 1.  Click the **+ New Dashboard** button.
 2.  Start building your custom view.
 
-!!! Note
-   Dashboards you create will be available to all members of your community.
+!!! note
+    Dashboards you create will be available to all members of your community.
 
 ## Manage existing Dashboards
 
@@ -41,8 +42,8 @@ Select **Duplicate** to automatically create a copy of the Dashboard with all it
 ### Delete
 Select **Delete** to remove the Dashboard.
 
-!!! warning 
-   This will remove the Dashboard for **all members** of the community.
+!!! warning
+    This will remove the dashboard for **all members** of the community.
 
 ### Set as Homepage
 Select **Set as Homepage** to make this Dashboard your default landing page.
@@ -62,6 +63,7 @@ For Built-in Widgets, you can synchronize the time range with the overall Dashbo
 
 ### Widget-specific time range
 By default, each Widget can be configured to display data for its own specific time period.
+
 * This allows for detailed analysis where different Widgets focus on different time frames simultaneously (e.g., real-time monitoring vs. 30-day trends).
 * Each Widget clearly displays the time range it is currently using.
 
@@ -75,8 +77,8 @@ To manually update data across all Widgets on the current Dashboard:
 * Click the **Refresh** button located near the top of the Dashboard.
 * The date and time of the last successful refresh are displayed next to the button.
 
-!!! Note
-   You can only trigger a manual refresh once every minute.
+!!! note
+    You can only trigger a manual refresh once every minute.
 
 ### Auto-refresh
 If you prefer automated updates, you can enable the **Auto-refresh** option in the Dashboard settings.
