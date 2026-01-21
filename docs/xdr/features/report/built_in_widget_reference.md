@@ -5,6 +5,7 @@ A comprehensive catalog of pre-configured Widgets available in Sekoia.io and det
 ## Widget categories
 
 Built-in Widgets are designed to provide immediate access to critical data without custom configuration. They are organized into:
+
 * **Investigate:** For exploring specific data points, threats, or entities.
 * **Observe:** For monitoring ongoing activities, trends, and metrics.
 
@@ -43,4 +44,5 @@ The **Risk Level Widget** shows the Risk Level of your infrastructure (normalize
 
 ---
 **Next steps**
-* Go back to [Understanding Dashboards](#) for a refresher on concepts.
+
+* Go back to [Understanding Dashboards](/xdr/features/report/dashboards.md) for a refresher on concepts.
