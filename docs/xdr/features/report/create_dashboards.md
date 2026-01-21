@@ -29,7 +29,7 @@ You can easily create a new Dashboard directly from the Listing page:
 2.  Start building your custom view.
 
 !!! Note
-Dashboards you create will be available to all members of your community.
+   Dashboards you create will be available to all members of your community.
 
 ## Manage existing Dashboards
 
@@ -42,7 +42,7 @@ Select **Duplicate** to automatically create a copy of the Dashboard with all it
 Select **Delete** to remove the Dashboard.
 
 !!! warning 
-This will remove the Dashboard for **all members** of the community.
+   This will remove the Dashboard for **all members** of the community.
 
 ### Set as Homepage
 Select **Set as Homepage** to make this Dashboard your default landing page.
@@ -74,6 +74,7 @@ To manually update data across all Widgets on the current Dashboard:
 
 * Click the **Refresh** button located near the top of the Dashboard.
 * The date and time of the last successful refresh are displayed next to the button.
+
 !!! Note
    You can only trigger a manual refresh once every minute.
 
