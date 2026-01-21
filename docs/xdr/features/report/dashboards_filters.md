@@ -33,10 +33,10 @@ All the filters appear automatically in the dashboard, allowing users to modify 
     | where process.name == ?process_name
     ```
 
-In this example:
+    In this example:
 
-* `?time.start` and `?time.end` are predefined time filters
-* `?entity_uuid` and `?process_name` are custom filters defined by the query author
+    * `?time.start` and `?time.end` are predefined time filters
+    * `?entity_uuid` and `?process_name` are custom filters defined by the query author
 
 ## Apply Filters to all widgets in the dashboard to synchronize changes
 
