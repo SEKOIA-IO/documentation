@@ -46,6 +46,7 @@ export const OpenAPIViewer = {
         const app = createApp(OpenAPIViewer);
         app.use(hljsVuePlugin)
         data.quickStart = document.querySelector("main article")
+        data.introSections = Array.from(document.querySelectorAll("main article h2,h1")).map(x => x.id).filter(id => id?.length > 0)
         const container = document.createElement("article")
         container.classList.add("md-content__inner")
         container.classList.add("md-typeset")
@@ -280,7 +281,7 @@ export const OpenAPIViewer = {
         }
 
         return () => {
-            const showQuickstart = !data.cur0 || ["#quickstart", "#"].includes(location.hash) || !location.hash
+            const showQuickstart = !data.cur0 || data.introSections.includes(location.hash.replace(/^#\/?/, "")) || !location.hash
             return <>
                 {data.loading && <Teleport to="main"><div class="loading" /></Teleport>}
 
@@ -318,7 +319,7 @@ export const OpenAPIViewer = {
                                 {data.intro?.map(name => <li class='md-nav__item' class={{
                                     active: location.hash === `#${tagEncode(name.toLowerCase())}`,
                                 }}>
-                                    <a href={`#/${tagEncode(name.toLowerCase())}`} >{capitalize(name)}</a>
+                                    <a href={`#${tagEncode(name.toLowerCase())}`} >{capitalize(name)}</a>
                                 </li>)}
                             </ul>
 
@@ -422,7 +423,7 @@ const Endpoint = (id, endpoint, tag) => {
     if (mainMatch) {
         // Get the description from the named group
         description = mainMatch.groups.description.trim();
-        
+
         // Get the permissions block (the 2nd capture group)
         const permissionsBlock = mainMatch[2];
         const allPermMatches = permissionsBlock.matchAll(permRegex);
