@@ -1,4 +1,4 @@
-# Filter data in Dashboards
+# Filter data in dashboards
 
 !!! Note
     Filters are currently released under the Early Access Program.
@@ -12,7 +12,7 @@ Dashboard filters are dynamic controls that allow you to modify query parameters
     <iframe width="560" height="315" src="https://www.youtube.com/embed/9q6K7vwEYv8?si=5x24TPninNak550B" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 </center>
 
-## Create Filters
+## Create filters
 
 To implement a filter, you must reference it in your query, using SOL Language, with the question mark syntax: `?filter_name`
 
@@ -21,10 +21,10 @@ To implement a filter, you must reference it in your query, using SOL Language, 
 
 All the filters appear automatically in the dashboard, allowing users to modify them and instantly refresh the results.
 
-### Predefined vs. Custom Filters
+### Predefined vs. Custom filters
 
-* **Predefined Filters**: Built-in variables like `?time.start` and `?time.end` that control the global time range of the dashboard.  
-* **Custom Filters**: User-defined variables (e.g., `?entity_uuid`, `?process_name`) that target specific attributes.
+* **Predefined filters**: Built-in variables like `?time.start` and `?time.end` that control the global time range of the dashboard.  
+* **Custom filters**: User-defined variables (e.g., `?entity_uuid`, `?process_name`) that target specific attributes.
 
 ??? example "Query with Filters"
     The following example demonstrates a query using both predefined time filters and custom logic filters.
@@ -41,12 +41,12 @@ All the filters appear automatically in the dashboard, allowing users to modify 
     * `?time.start` and `?time.end` are predefined time filters
     * `?entity_uuid` and `?process_name` are custom filters defined by the query author
 
-## Apply Filters to all widgets in the dashboard to synchronize changes
+## Apply filters to all widgets in the dashboard to synchronize changes
 
 The primary benefit of filters is synchronization. When multiple widgets use the same filter name (e.g., ?process_name), they share the same input control.  You can pin a filter to a dashboard to make sure that changing the value in one location updates every widget listening for that specific variable.
 
 
-#### How to Pin a Filter
+#### How to pin a filter
 
 To pin a filter to a dashboard:
 
@@ -61,7 +61,7 @@ To pin a filter to a dashboard:
     Once pinned, the filter appears at the top of the dashboard as a shared input control.
     You can unpin it at any time.
 
-#### Behavior of Pinned Filters
+#### Behavior of pinned filters
 
 * A pinned filter automatically synchronizes all widgets using the same filter name.
 * When a user changes the pinned filter’s value, all linked widgets refresh instantly.

@@ -11,12 +11,13 @@ Before you start make sure that:
 * You have the **Write** permission for dashboards in your workspace.
 * The dashboard does NOT contain queries with **SOL parameters** or specific **Parameters**, as these cannot be shared at the moment.
 
+###
 1. Navigate to the dashboard you want to share.
-2. Click **Manage Access**.
+2. Click **Manage access**.
 3. Select the communities you want to share the dashboard with.
-
-??? warning "Query validation"
-    Review all queries within the dashboard to ensure the logic and data exposure are appropriate for the target communities.
+    
+    !!! warning "Query validation"
+        Review all queries within the dashboard to ensure the logic and data exposure are appropriate for the target communities.
 
 4. Click **Save**.
 
