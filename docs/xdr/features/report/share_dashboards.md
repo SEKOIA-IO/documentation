@@ -13,7 +13,7 @@ Before you start make sure that:
 
 ###
 1. Navigate to the dashboard you want to share.
-2. Click **Manage Access**.
+2. Click **Manage access**.
 3. Select the communities you want to share the dashboard with.
     
     !!! warning "Query validation"
