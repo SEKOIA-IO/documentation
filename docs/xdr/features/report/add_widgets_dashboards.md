@@ -1,6 +1,6 @@
 # Configure widgets and layout
 
-The practical guide to building your Dashboard: adding Widgets, organizing the layout, and using dynamic Filters.
+The practical guide to building your Dashboards: adding widgets, organizing the layout, and using dynamic filters.
 
 ## Working with widgets
 
@@ -28,7 +28,7 @@ Click the **three dots (...)** on a Widget and select **Delete from dashboard**.
  * **Resize:** Change the size of each Widget.
 3.  Click **Save** to apply changes.
 
-## Using Query Builders
+## Using the Query Builder
 You can insert an existing query created in the Query Builder into your dashboards to streamline visualization. It allows:
 
 * **Synchronization:** Changes made to a Query on the Query Builder page are automatically propagated to all Dashboards using it.
