@@ -10,13 +10,13 @@ The practical guide to building your Dashboard: adding Widgets, organizing the l
 3.  In the top right corner, click the **Add new widget** button.
 4.  Select Widgets from the available **Queries** (custom queries previously created in the Query Builder) or **Presets** (built-in).
 
-### Edit Widgets
+### Edit widgets
 In the top right corner of a widget, click the **three dots (...)** and select **Edit widget**.
 
 * **Query visualization:** You are redirected to the Query settings page to edit parameters.
 * **Preset:** An editing panel appears to adjust options like time range or visualization type.
 
-### Remove Widgets
+### Remove widgets
 Click the **three dots (...)** on a Widget and select **Delete from dashboard**.
 
 ## Reorganizing the layout
