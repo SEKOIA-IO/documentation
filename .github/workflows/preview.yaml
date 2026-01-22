@@ -17,6 +17,10 @@ jobs:
         with:
           python-version: '3.14'
 
+      - name: Add “preview” banner
+        run: |
+          mv theme/main_preview.html theme/main.html
+
       - name: Make destination directory for compiled CSS
         run: mkdir -vp docs/stylesheets/
 
