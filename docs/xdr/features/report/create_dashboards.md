@@ -1,10 +1,10 @@
-# Create and manage Dashboards
+# Create and manage dashboards
 
 Learn how to use the Dashboards Listing to organize your views, create new Dashboards, and set your homepage.
 
-## The Dashboards Listing page
+## The dashboards listing page
 
-The **Dashboards Listing** page is your central hub for managing access to all Dashboards.
+The **Dashboards listing** page is your central hub for managing access to all Dashboards.
 To access it, in the left handed panel, click on **Dashboards**.
 
 It provides a table with the following information:
@@ -22,17 +22,17 @@ To quickly find a Dashboard, you have a few options accessible from the top of l
 * **Filter:** Choose between **All community dashboards** or **Personal dashboards (Created by me)**.
 * **Sort:** Arrange by **A-Z** or **Last edition** (newest to oldest).
 
-## Create a new Dashboard
+## Create a new dashboard
 
 You can easily create a new Dashboard directly from the Listing page:
 
-1.  Click the **+ New Dashboard** button.
+1.  Click the **+ New dashboard** button.
 2.  Start building your custom view.
 
 !!! note
     Dashboards you create will be available to all members of your community.
 
-## Manage existing Dashboards
+## Manage existing dashboards
 
 To perform the following actions, click the **(...) button** associated with any Dashboard in the list:
 
@@ -45,8 +45,8 @@ Select **Delete** to remove the Dashboard.
 !!! warning
     This will remove the dashboard for **all members** of the community.
 
-### Set as Homepage
-Select **Set as Homepage** to make this Dashboard your default landing page.
+### Set as homepage
+Select **Set as homepage** to make this Dashboard your default landing page.
 
 * Every time you log in, you will land directly on this Dashboard.
 * You can change your default homepage at any time.
