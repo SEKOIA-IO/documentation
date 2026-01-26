@@ -1,7 +1,7 @@
 # Query Builder
 
 Start exploring your data with the Query Builder. Hunt for threats, obtain analytics, and create insightful dashboards and reports. The Query Builder is a simple tool that allows you to build queries to explore your data effectively.
-
+ 
 With this form, you can aggregate data to extract new insights, helping you make informed decisions. Additionally, the Query Builder enables the visualization of data through various types of charts, enriching your reporting capabilities.
 
 Currently, the Alerts data source is available, along with the Events source and the Cases source, with plans to introduce more sources in the future.
