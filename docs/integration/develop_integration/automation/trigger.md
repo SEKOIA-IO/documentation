@@ -33,3 +33,264 @@ It must implement the method `run` and call the method `publish_events_to_intake
 To expose a trigger of the module, the trigger must be declared in `main.py` at the root of the module.
 
 Import the class in `main.py` and register the class, against the module, with the unique command name of the trigger as second argument.
+
+---
+
+## Alert Events Threshold Trigger
+
+The **Alert Events Threshold Trigger** is a specialized trigger that monitors alert updates and triggers playbooks only when configurable event accumulation thresholds are met. Unlike standard alert triggers that fire on every update, this trigger provides intelligent batching based on volume and time-window thresholds, reducing playbook execution overhead while ensuring timely response to significant alert activity.
+
+### Overview
+
+When alerts accumulate many similar events over time (e.g., repeated login failures, recurring malware detections), triggering a playbook on every single event update can be inefficient and noisy. The Alert Events Threshold Trigger solves this problem by:
+
+- **Volume-based triggering**: Fire the playbook only when a specified number of new events (e.g., 100) have accumulated since the last trigger
+- **Time-based triggering**: Fire the playbook after a configurable time window (e.g., 1 hour) if there is any activity, ensuring alerts are not left unprocessed for too long
+- **Persistent state management**: Track trigger history per alert across pod restarts using S3-backed state storage
+- **Observability**: Expose Prometheus metrics for monitoring threshold checks and state size
+
+### Use Cases
+
+1. **High-volume alert deduplication**: Reduce playbook runs for alerts that accumulate thousands of events by only triggering when significant batches are ready
+2. **Scheduled batch processing**: Process alerts on a time-based schedule (e.g., every hour) rather than on every event
+3. **Cost optimization**: Minimize playbook execution costs for high-event-rate alerts
+4. **Noise reduction**: Prevent operator fatigue by batching notifications for recurring events
+
+### Configuration
+
+The trigger accepts the following configuration parameters:
+
+| Parameter | Type | Default | Description |
+|-----------|------|---------|-------------|
+| `rule_filter` | string | `null` | Filter by a single rule name or UUID. Only alerts matching this rule will trigger the playbook. |
+| `rule_names_filter` | array[string] | `[]` | Filter by multiple rule names. Only alerts matching one of these rules will trigger the playbook. Cannot be used together with `rule_filter`. |
+| `event_count_threshold` | integer | `100` | Minimum number of new events required to trigger (volume-based). Range: 1+ |
+| `time_window_hours` | integer | `1` | Time window in hours for time-based triggering. If events occur within this window and volume threshold is not met, the trigger fires after the window elapses. Range: 1-168 (max 7 days) |
+| `enable_volume_threshold` | boolean | `true` | Enable volume-based threshold triggering (>= N events) |
+| `enable_time_threshold` | boolean | `true` | Enable time-based threshold triggering (periodic check for pending events) |
+| `state_cleanup_days` | integer | `30` | Remove state entries for alerts not triggered in the last N days. Range: 1-365 |
+| `fetch_events` | boolean | `false` | Whether to fetch and include the actual events in the trigger output |
+| `fetch_all_events` | boolean | `false` | If `true`, fetch all events from the alert. If `false`, fetch only new events since the last trigger |
+| `max_events_per_fetch` | integer | `1000` | Maximum number of events to fetch per trigger execution. Range: 1-10000 |
+
+!!! note "Configuration Validation"
+    - At least one threshold (`enable_volume_threshold` or `enable_time_threshold`) must be enabled
+    - `rule_filter` and `rule_names_filter` cannot be used together
+    - `state_cleanup_days` must be longer than `time_window_hours` (converted to days)
+
+### Threshold Logic
+
+The trigger implements dual threshold logic:
+
+#### Volume-Based Threshold
+When `enable_volume_threshold` is `true`:
+
+- The trigger fires immediately when the number of new events since the last trigger reaches or exceeds `event_count_threshold`
+- Example: If `event_count_threshold` is 100 and an alert had 50 events at the last trigger, the next trigger occurs when the alert reaches 150 events
+
+#### Time-Based Threshold
+When `enable_time_threshold` is `true`:
+
+- A background thread periodically checks (every 5 minutes) for alerts that have pending events
+- If `time_window_hours` has elapsed since the last trigger (or first event) and there are pending events (>= 1), the trigger fires
+- This ensures alerts are not left unprocessed even if the volume threshold is never met
+
+The combination of both thresholds provides a balanced approach:
+
+- High-activity alerts trigger via volume threshold for timely response
+- Low-activity alerts trigger via time threshold to ensure eventual processing
+
+### Trigger Output
+
+When the trigger fires, it produces an event with the following structure:
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `file_path` | string | Path to the alert JSON file on disk |
+| `event_type` | string | The type of event that triggered the notification (`alert`) |
+| `alert_uuid` | string | Unique identifier of the alert (UUID) |
+| `short_id` | string | Human-readable short identifier of the alert |
+| `status` | object | Alert status with `name` and `uuid` fields |
+| `created_at` | string | Alert creation timestamp (ISO 8601) |
+| `urgency` | integer | Current urgency value of the alert |
+| `entity` | object | Entity information with `name` and `uuid` fields |
+| `alert_type` | object | Alert type category and value |
+| `rule` | object | Detection rule with `name` and `uuid` fields |
+| `first_seen_at` | string | First event timestamp (ISO 8601) |
+| `last_seen_at` | string | Most recent event timestamp (ISO 8601) |
+| `events_count` | integer | Total number of events in the alert |
+| `trigger_context` | object | Threshold-specific context (see below) |
+| `events_file_path` | string | Path to events JSON file (only if `fetch_events` is enabled) |
+| `fetched_events_count` | integer | Number of fetched events (only if `fetch_events` is enabled) |
+
+#### Trigger Context Object
+
+The `trigger_context` field provides detailed information about why the trigger fired:
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `triggered_at` | string | ISO 8601 timestamp when threshold was met |
+| `trigger_type` | string | Always `alert_events_threshold` |
+| `reason` | string | Reason for triggering: `first_occurrence`, `volume_threshold`, `time_threshold`, or combinations |
+| `new_events` | integer | Number of new events since the last trigger |
+| `previous_count` | integer | Event count at the last trigger |
+| `current_count` | integer | Current total event count |
+| `time_window_hours` | integer | Configured time window |
+
+### State Management
+
+The trigger uses persistent state storage to track per-alert threshold information:
+
+#### State Structure
+
+For each alert, the trigger maintains:
+
+- `alert_uuid`: Alert identifier
+- `alert_short_id`: Human-readable identifier
+- `rule_uuid` / `rule_name`: Detection rule information
+- `last_triggered_at`: Timestamp of the last trigger
+- `last_triggered_event_count`: Event count at last trigger
+- `total_triggers`: Total number of times this alert has triggered
+- `current_event_count`: Latest known event count
+- `alert_info`: Cached alert data (reduces API calls)
+
+#### State Cleanup
+
+State entries for alerts that have not triggered within `state_cleanup_days` are automatically cleaned up once per day. This prevents unbounded state growth for inactive alerts.
+
+#### Concurrency Handling
+
+- In-memory locks prevent race conditions within a single pod
+- S3 state persistence ensures state survives pod restarts
+- State is reloaded before each update to minimize race conditions in multi-notification scenarios
+
+### Observability Metrics
+
+The trigger exposes Prometheus metrics for monitoring:
+
+| Metric | Type | Labels | Description |
+|--------|------|--------|-------------|
+| `events_forwarded` | Counter | `trigger_type` | Events forwarded to playbooks, labeled by trigger type (`first_occurrence`, `volume_threshold`, `time_threshold`) |
+| `events_filtered` | Counter | `reason` | Events filtered out, labeled by reason (`rule_filter`, `threshold_not_met`) |
+| `threshold_checks` | Counter | `triggered` | Threshold evaluation count, labeled by result (`true`, `false`) |
+| `state_size` | Gauge | - | Current number of alerts tracked in state |
+
+### Example Configuration
+
+#### High-Volume Alert Batching
+
+Trigger only when 500 new events accumulate, but ensure processing at least every 4 hours:
+
+```json
+{
+  "event_count_threshold": 500,
+  "time_window_hours": 4,
+  "enable_volume_threshold": true,
+  "enable_time_threshold": true,
+  "fetch_events": false
+}
+```
+
+#### Hourly Batch Processing with Events
+
+Process alerts every hour with full event data for a specific rule:
+
+```json
+{
+  "rule_filter": "Suspicious Login Activity",
+  "event_count_threshold": 1,
+  "time_window_hours": 1,
+  "enable_volume_threshold": false,
+  "enable_time_threshold": true,
+  "fetch_events": true,
+  "fetch_all_events": false,
+  "max_events_per_fetch": 500
+}
+```
+
+#### Pure Volume-Based Triggering
+
+Trigger only on volume, ignoring time windows:
+
+```json
+{
+  "event_count_threshold": 100,
+  "enable_volume_threshold": true,
+  "enable_time_threshold": false
+}
+```
+
+### Manifest Example
+
+```json
+{
+  "uuid": "83d7092a-0036-4adb-83c1-087265c57659",
+  "name": "Alert Events Threshold",
+  "description": "Trigger playbooks only when alert event accumulation meets configurable thresholds (volume-based or time-based)",
+  "docker_parameters": "alert_events_threshold_trigger",
+  "arguments": {
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {
+      "event_count_threshold": {
+        "type": "integer",
+        "minimum": 1,
+        "default": 100,
+        "description": "Minimum number of new events to trigger (volume-based)"
+      },
+      "time_window_hours": {
+        "type": "integer",
+        "minimum": 1,
+        "maximum": 168,
+        "default": 1,
+        "description": "Time window in hours for time-based triggering (max 7 days)"
+      },
+      "enable_volume_threshold": {
+        "type": "boolean",
+        "default": true,
+        "description": "Enable volume-based threshold (>= N events)"
+      },
+      "enable_time_threshold": {
+        "type": "boolean",
+        "default": true,
+        "description": "Enable time-based threshold (triggers if activity in last N hours)"
+      }
+    }
+  },
+  "results": {
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {
+      "alert_uuid": { "type": "string" },
+      "short_id": { "type": "string" },
+      "events_count": { "type": "integer" },
+      "trigger_context": { "type": "object" }
+    },
+    "required": ["alert_uuid", "short_id", "events_count", "trigger_context"]
+  }
+}
+```
+
+### Implementation Notes
+
+The trigger extends the base `SecurityAlertsTrigger` class and handles:
+
+- `alert:created` events: New alerts are tracked, optionally triggering immediately based on volume
+- `alert:updated` events: Event count changes are evaluated against thresholds
+
+The trigger optimizes API calls by:
+
+1. Extracting alert info from Kafka notifications when possible (no API call for `alert:created`)
+2. Caching alert info in state for subsequent updates
+3. Using event counts from Kafka notifications when available (fallback to API only when necessary)
+
+### Related Triggers
+
+| Trigger | Description |
+|---------|-------------|
+| `SecurityAlertsTrigger` | Base trigger for all alert events |
+| `AlertCreatedTrigger` | Triggers on alert creation only |
+| `AlertUpdatedTrigger` | Triggers on every alert update |
+| `AlertStatusChangedTrigger` | Triggers when alert status changes |
+
+For high-volume alerts where every update does not require immediate action, the **Alert Events Threshold Trigger** provides the most efficient approach to playbook automation.
