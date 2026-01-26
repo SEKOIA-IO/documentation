@@ -8,6 +8,28 @@ Currently, the Alerts data source is available, along with the Events source and
 
 ![query builder](/assets/operation_center/events/qb-run.gif){: style="max-width:100%"}
 
+## Query listing 
+
+The **Queries** page provides an overview of all available queries. Use the table columns to track the origin and usage of each query.
+
+### Query table columns
+
+| **Column** | **Description** |
+| --- | --- |
+| **Author** | The original creator of the query. |
+| **Edited by** | The last user who modified the query. |
+| **Created by** | The user who first saved the query. |
+| **Available in...** | The number of dashboards currently using this query. |
+| **Shared by** | The workspace or entity that shared the query with your community. |
+
+### Query types
+
+| **Type** | **Description** |
+| --- | --- |
+| **Personal** | Queries created by you. |
+| **Community** | Queries created by members of your community. |
+| **Shared** | Queries shared with your community by a parent workspace. |
+
 ## Build your query
 
 Select a data source to query in the `From` clause and use `Add clause` button to refine your query.
@@ -237,3 +259,25 @@ See [JSON Lines documentation](https://jsonlines.org/) for more details.
 ## Add query to dashboard
 
 Queries can be added to dashboards. To read more about this feature, check our documentation on [dashboards](/xdr/features/report/add_widgets_dashboards.md).
+
+## Share query from workspace to community 
+
+Individual queries created in a workspace can be shared with sub-communities to facilitate threat hunting and log analysis without sharing an entire dashboard.
+
+1. To start, create a new query or edit an existing one.
+2. Click **Manage Access**.
+3. Select the communities you want to share the query with.
+4. Click **Save**.
+
+!!! note
+    Shared queries are available to users in the destination community in read-only mode.
+
+### Duplicate a shared query
+
+If you want to edit a shared query, you must duplicate it. The original shared query remains in read-only mode, while the duplicated version is fully customizable.
+
+1. To find the query, navigate to the **Queries** page.
+2. Locate the shared query you wish to modify.
+3. Click the **...** (three dots) icon associated with the query.
+4. Select **Duplicate**.
+5. Enter a name for the duplicated query and save your changes.
