@@ -53,15 +53,19 @@ The Sekoia.io Endpoint Agent uses the HTTPS protocol to send its events and has 
     * <https://api.sekoia.io/>
 
 === "FRA2"
+    * <https://intake.fra2.sekoia.io/>
     * <https://app.fra2.sekoia.io/>
 
 === "MCO1"
+    * <https://intake.mco1.sekoia.io/>
     * <https://app.mco1.sekoia.io/>
 
 === "UAE1"
+    * <https://intake.uae1.sekoia.io/>
     * <https://app.uae1.sekoia.io/>
 
 === "USA1"
+    * <https://intake.usa1.sekoia.io/>
     * <https://app.usa1.sekoia.io/>
 
 
