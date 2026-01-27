@@ -103,7 +103,7 @@ To update a custom field value:
 
 ## Query custom fields with SOL
 
-Custom fields can be queried using the [Sekoia Operating Language (SOL)](sekoia_operating_language.md) in the [Query Builder](query_builder.md). This enables you to filter cases, create aggregations, and build dashboards based on custom field values.
+Custom fields can be queried using the [Sekoia Operating Language (SOL)](sekoia_operating_language.md). This enables you to filter cases, create aggregations, and build dashboards based on custom field values.
 
 ### Column naming convention
 
@@ -125,7 +125,7 @@ Filter cases by a multi-select custom field value:
 
 ```
 cases
-| where custom_fields.impacted_teams in ["HR"]
+| where custom_fields.impacted_teams in ["HR", "Finance"]
 ```
 
 Aggregate cases by a custom field:
