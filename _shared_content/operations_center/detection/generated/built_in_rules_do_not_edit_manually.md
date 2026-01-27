@@ -1,4 +1,4 @@
-Rules catalog includes **1059 built-in detection rules** ([_last update on 2026-01-16_](rules_changelog.md)).
+Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-01-27_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Identity Information**
 
@@ -7272,6 +7272,12 @@ Rules catalog includes **1059 built-in detection rules** ([_last update on 2026-
     
     - **Effort:** intermediate
     
+??? abstract "Linux Ldpreload Modification"
+    
+    Detect ld.so.preload modification for shared lib injection, technique used by attackers to load arbitrary code into process
+    
+    - **Effort:** intermediate
+    
 ??? abstract "Linux Shared Lib Injection Via Ldso Preload"
     
     Detect ld.so.preload modification for shared lib injection, technique used by attackers to load arbitrary code into process
@@ -9110,6 +9116,12 @@ Rules catalog includes **1059 built-in detection rules** ([_last update on 2026-
 ??? abstract "Hijack Legit RDP Session To Move Laterally"
     
     Identifies suspicious file creations in the startup folder of a remote system. An adversary could abuse this to move laterally by dropping a malicious script or executable that will be executed after a reboot or user logon.
+    
+    - **Effort:** intermediate
+    
+??? abstract "Linux Ldpreload Modification"
+    
+    Detect ld.so.preload modification for shared lib injection, technique used by attackers to load arbitrary code into process
     
     - **Effort:** intermediate
     
@@ -11663,6 +11675,12 @@ Rules catalog includes **1059 built-in detection rules** ([_last update on 2026-
 ??? abstract "Hijack Legit RDP Session To Move Laterally"
     
     Identifies suspicious file creations in the startup folder of a remote system. An adversary could abuse this to move laterally by dropping a malicious script or executable that will be executed after a reboot or user logon.
+    
+    - **Effort:** intermediate
+    
+??? abstract "Linux Ldpreload Modification"
+    
+    Detect ld.so.preload modification for shared lib injection, technique used by attackers to load arbitrary code into process
     
     - **Effort:** intermediate
     
