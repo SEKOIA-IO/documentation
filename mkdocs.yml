@@ -97,6 +97,7 @@ nav:
       - Events: xdr/features/investigate/events.md
       - AI Cases: xdr/features/investigate/ai_cases.md
       - Cases: xdr/features/investigate/cases.md
+      - Case Custom Fields (coming soon): xdr/features/investigate/case_custom_fields.md
       - Asset Context Panel (coming soon): xdr/features/investigate/asset_context_panel.md
       - Events Query Language: xdr/features/investigate/events_query_language.md
       - Querying Events: xdr/features/investigate/querying_events.md
@@ -571,6 +572,7 @@ plugins:
       operation_center/alerts.md: xdr/features/investigate/alerts.md
       operation_center/assets.md: xdr/features/collect/assets.md
       operation_center/cases.md: xdr/features/investigate/cases.md
+      operation_center/case_custom_fields.md: xdr/features/investigate/case_custom_fields.md
       operation_center/data_collection/ingestion_methods/sekoiaio.md: integration/categories/endpoint/sekoiaio.md
       operation_center/entities.md: xdr/features/collect/entities.md
       operation_center/events.md: xdr/features/investigate/events.md
