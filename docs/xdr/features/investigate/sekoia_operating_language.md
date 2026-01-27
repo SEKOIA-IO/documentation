@@ -15,6 +15,11 @@ Sekoia Operating Language (`SOL`) is a powerful, pipe-based query language desig
 | `eternal_events` | Security events related to alerts or cases | Extract metrics from events related to alerts/cases. Access events related to an alert that are beyond your hot storage retention period |
 | `alerts` | Security alerts and detections | SOC monitoring, alert pattern analysis |
 | `cases` | Security incidents and cases | Case management, incident correlation |
+| `custom_statuses` | Alerts and cases custom statuses | Reporting |
+| `custom_priorities` | Cases custom priorities | Reporting |
+| `verdicts` | Alerts and cases verdicts | Reporting |
+| `cases` | Security incidents and cases | Case management, incident correlation |
+| `communities` | Communities (for multi-tenant only) | Multi-tenant reporting |
 | `intakes` | Data sources | Data source management, volume monitoring |
 | `entities` | Company entities | Entity tracking, detailed reporting |
 | `assets` | Known Assets | Asset Investigations |
@@ -72,6 +77,41 @@ Sekoia Operating Language (`SOL`) is a powerful, pipe-based query language desig
 | first_seen_at             | The date and time when the case was first detected.                                        |
 | last_seen_at              | The date and time when the case was last observed or updated.                              |
 
+### Custom statuses
+
+| **Property**              | **Description**                                                                            |
+|---------------------------|--------------------------------------------------------------------------------------------|
+| uuid                      | A unique identifier for the custom status.                                                 |
+| community_uuid            | A unique identifier for the community related to the custom status.                        |
+| level                     | The numeric level of the status.                                                           |
+| created_at                | The date and time when the custom status was created.                                      |
+| created_by                | The user or system that created the custom status.                                         |
+| created_by_type           | The type of entity that created the custom status (e.g., avatar, apikey).                  |
+| updated_at                | The date and time when the custom status was last updated.                                 |
+| updated_by                | The user or system that last updated the custom status.                                    |
+| updated_by_type           | The type of entity that last updated the custom status.                                    |
+| stage                     | The workflow stage of the status (e.g., New, In progress, Closed).                         |
+| label                     | The display label for the status.                                                          |
+| description               | A text description of the status.                                                          |
+| type                      | The type(s) this status applies to (e.g., case, alert).                                    |
+
+### Custom priorities
+
+| **Property**              | **Description**                                                                            |
+|---------------------------|--------------------------------------------------------------------------------------------|
+| uuid                      | A unique identifier for the custom priority.                                               |
+| community_uuid            | A unique identifier for the community related to the custom priority.                      |
+| level                     | The numeric level of the priority.                                                         |
+| created_at                | The date and time when the custom priority was created.                                    |
+| created_by                | The user or system that created the custom priority.                                       |
+| created_by_type           | The type of entity that created the custom priority (e.g., avatar, apikey).                |
+| updated_at                | The date and time when the custom priority was last updated.                               |
+| updated_by                | The user or system that last updated the custom priority.                                  |
+| updated_by_type           | The type of entity that last updated the custom priority.                                  |
+| color                     | The color associated with the priority (CSS variable or color name).                       |
+| label                     | The display label for the priority.                                                        |
+| description               | A text description of the priority.                                                        |
+
 ### Entities properties
 
 | **Property**              | **Description**                                                                            |
@@ -113,7 +153,6 @@ Sekoia Operating Language (`SOL`) is a powerful, pipe-based query language desig
 | description               | The description of the community.                                                          |
 | homepage_url              | The homepage url of the community.                                                         |
 | picture_mode              | The picture mode of the community.                                                         |
-| intake_key                | The intake key of the community.                                                           |
 | created_at                | The date and time when the community was created.                                          |
 | created_by                | The user or system that created the community.                                             |
 | created_by_type           | The type of entity that created the community (e.g., avatar, apikey).                      |
