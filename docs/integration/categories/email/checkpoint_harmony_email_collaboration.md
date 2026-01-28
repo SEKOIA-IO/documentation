@@ -53,6 +53,14 @@ This integration supports the following event types:
 7. Type `https://intake.sekoia.io/plain` as **HTTP Collector URL**
 
     ![Step 03](/assets/integration/checkpoint_hec/step_03.png)
+    
+!!! warning 
+    The previous URL works for the FRA1 region. For any other region, replace the domain “intake.sekoia.io” with your region’s HTTP-intake domain—for example:
+
+    https://app.usa1.sekoia.io/api/v1/intake-http
+
+    You can find your region’s domain here: [https://docs.sekoia.io/getting_started/regions/](https://docs.sekoia.io/getting_started/regions/)
+
 
 8. Select `JSON` as **Format**
 
