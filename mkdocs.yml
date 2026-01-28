@@ -227,6 +227,7 @@ nav:
       - Systancia Cleanroom: integration/categories/applicative/systancia_cleanroom.md
       - Veeam Backup: integration/categories/applicative/veeam_backup.md
       - Wiz Audit Logs: integration/categories/applicative/wiz_audit_logs.md
+      - Workday Activity Logs: integration/categories/applicative/workday_activity_logs.md
     - Email:
       - Cisco Email Security Appliance: integration/categories/email/cisco_esa.md
       - FortiMail: integration/categories/email/fortimail.md
