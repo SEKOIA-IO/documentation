@@ -8,6 +8,9 @@ Check Point Harmony Email & Collaboration Suite Security delivers unified protec
 Advanced anti-phishing, zero-day malware sandboxing, URL defense and data loss prevention stop BEC, ransomware and data leaks.
 Centrally managed with granular policies, threat intelligence and real-time insights for seamless workspace security.
 
+!!! Warning
+    Important note - This format is currently in beta. We highly value your feedback to improve its performance.
+
 - **Vendor**: Check Point
 - **Supported environment**: SaaS
 - **Detection based on**: Telemetry, Alert
