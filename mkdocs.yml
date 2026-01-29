@@ -228,6 +228,7 @@ nav:
       - Veeam Backup: integration/categories/applicative/veeam_backup.md
       - Wiz Audit Logs: integration/categories/applicative/wiz_audit_logs.md
     - Email:
+      - Checkpoint Harmony Email and Collaboration: integration/categories/email/checkpoint_harmony_email_collaboration.md
       - Cisco Email Security Appliance: integration/categories/email/cisco_esa.md
       - FortiMail: integration/categories/email/fortimail.md
       - Hornetsecurity 365 Total Protection: integration/categories/email/hornetsecurity_365_total_protection.md
