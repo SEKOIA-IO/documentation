@@ -120,7 +120,7 @@ Get information about an user's authentication methods (such as their MFA status
 | --------- | ------- | --------------------------- |
 | `authenticationResults` | `array` |  |
 
-### Reset User Password
+### Reset User Password [ DEPRECATED ]
 
 Reset a user's password. You will need UserAuthenticationMethod.ReadWrite.All deleguated permission. And to disable the MFA authentication in your azure AD
 
@@ -131,6 +131,18 @@ Reset a user's password. You will need UserAuthenticationMethod.ReadWrite.All de
 | `id` | `string` | ID of the user. id or userPrincipalName should be specified. |
 | `userPrincipalName` | `string` | Principal Name of the user. id or userPrincipalName should be specified. |
 | `userNewPassword` | `string` | New password, required to reset the old one of course. |
+
+### Reset User Password Through Patching Password Profile
+
+Resets a user's password by patching passwordProfile. Requires User-PasswordProfile.ReadWrite.All (Application), admin consent and appropriate Entra role assignment
+
+**Arguments**
+
+| Name                | Type     | Description                                                              |
+|---------------------|----------|--------------------------------------------------------------------------|
+| `id`                | `string` | ID of the user. id or userPrincipalName should be specified.             |
+| `userPrincipalName` | `string` | Principal Name of the user. id or userPrincipalName should be specified. |
+| `userNewPassword`   | `string` | New password, required to reset the old one of course.                   |
 
 ### Revoke Sign in
 
