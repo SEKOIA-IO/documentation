@@ -74,6 +74,9 @@ This integration supports the following event types:
 
     ![Step 04](/assets/integration/checkpoint_hec/step_04.png)
 
+!!! info
+    Events can take up to 15 minutes to be sent by Checkpoint Harmony after being generated.
+
 #### Create an intake
 
 1. Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a new intake from the format `Checkpoint Harmony Email & Collaboration`.
