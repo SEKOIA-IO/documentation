@@ -9,8 +9,14 @@ Imperva Web Application Firewall helps you to protect your web applications and 
 - **Vendor**: Imperva
 - **Supported environment**: SaaS
 - **Detection based on**: Telemetry
-- **Supported application or feature**: Imperva WAF dataset
+- **Supported application or feature**: Cloud WAF service
 
+### Supported events
+
+This integration supports the following event types:
+
+- `Access Logs`
+- `Security Logs`
 
 
 ## Step-by-Step Configuration Procedure
