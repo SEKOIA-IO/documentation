@@ -76,4 +76,4 @@ Search in AD
 
 ## Extra
 
-Module **`Microsoft Active Directory` v1.3.9**
+Module **`Microsoft Active Directory` v1.4.4**
