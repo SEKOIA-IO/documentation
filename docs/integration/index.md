@@ -6,7 +6,7 @@ Welcome to the Integrations section of our documentation! This section is design
 
 ### Ingestion Methods
 
-In this section, you'll find detailed information on the various methods (pushing on [HTTPS](/integration/ingestion_methods/https/overview.md) or [Syslog](/integration/ingestion_methods/syslog/overview.md), or pulling a [remote external cloud storage](/integration/ingestion_methods/cloud_saas/overview.md)) you can use to ingest data into Sekoia.io SOC Platform. We provide [comprehensive guides and examples](/integration/ingestion_methods/index.md) to help you set up and manage your data ingestion processes efficiently.
+In this section, you'll find detailed information on the various methods (pushing on [HTTPS](/integration/ingestion_methods/https/overview.md) or [Syslog](/integration/ingestion_methods/syslog/overview.md), collecting [NetFlow](/integration/ingestion_methods/netflow/sekoiaio_netflow_concentrator.md) data, or pulling a [remote external cloud storage](/integration/ingestion_methods/cloud_saas/overview.md)) you can use to ingest data into Sekoia.io SOC Platform. We provide [comprehensive guides and examples](/integration/ingestion_methods/index.md) to help you set up and manage your data ingestion processes efficiently.
 
 ### Intake Categories
 
