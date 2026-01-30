@@ -45,6 +45,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
             ?.replaceAll(/\D/g, "")
         ) || 0;
       const query = search.querySelector("input.md-search__input").value.trim();
+      if (query.length < 3) return; // Ignore short queries (lunr.js returns no results for them)
 
       posthog.capture("search", {
         search_query: query,
