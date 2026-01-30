@@ -1,4 +1,4 @@
-Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-01-27_](rules_changelog.md)).
+Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-01-30_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Identity Information**
 
@@ -2300,6 +2300,7 @@ Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-
     
     - **Changelog:**
     
+        - 30/01/2026 - minor - Updating similarity to use malop id.
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
             
 ??? abstract "DNS Exfiltration and Tunneling Tools Execution"
@@ -3568,6 +3569,7 @@ Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-
     
     - **Changelog:**
     
+        - 30/01/2026 - minor - Updating similarity to use malop id.
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
             
 ??? abstract "Darktrace Threat Visualizer Model Breach Critical Activity"
@@ -4759,6 +4761,7 @@ Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-
     
     - **Changelog:**
     
+        - 30/01/2026 - minor - Updating similarity to use malop id.
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
             
 ??? abstract "Dllhost Wrong Parent"

@@ -1,7 +1,11 @@
-Changelog _last update on 2026-01-27_
+Changelog _last update on 2026-01-30_
 
 ## Changelog
 
+### Cybereason EDR Malware Detection
+  - 30/01/2026 - minor - Updating similarity to use malop id.
+  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+    
 ### Suspicious Download Links From Legitimate Services
   - 06/01/2026 - minor - Update filter to reduce false positives.
   - 15/10/2024 - minor - Adding filter to reduce false positives.
@@ -1259,9 +1263,6 @@ Changelog _last update on 2026-01-27_
   - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
     
 ### SentinelOne EDR Threat Mitigation Report Quarantine Failed
-  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
-    
-### Cybereason EDR Malware Detection
   - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
     
 ### CrowdStrike Falcon Identity Protection Detection Low Severity
