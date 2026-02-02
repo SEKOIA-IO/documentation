@@ -132,17 +132,19 @@ Reset a user's password. You will need UserAuthenticationMethod.ReadWrite.All de
 | `userPrincipalName` | `string` | Principal Name of the user. id or userPrincipalName should be specified. |
 | `userNewPassword` | `string` | New password, required to reset the old one of course. |
 
-### Reset User Password Through Patching Password Profile
+### Reset User Password
 
 Resets a user's password by patching passwordProfile. Requires User-PasswordProfile.ReadWrite.All (Application), admin consent and appropriate Entra role assignment
 
 **Arguments**
 
-| Name                | Type     | Description                                                              |
-|---------------------|----------|--------------------------------------------------------------------------|
-| `id`                | `string` | ID of the user. id or userPrincipalName should be specified.             |
-| `userPrincipalName` | `string` | Principal Name of the user. id or userPrincipalName should be specified. |
-| `userNewPassword`   | `string` | New password, required to reset the old one of course.                   |
+| Name                                   | Type      | Description                                                                                                          |
+|----------------------------------------|-----------|----------------------------------------------------------------------------------------------------------------------|
+| `id`                                   | `string`  | ID of the user. id or userPrincipalName should be specified.                                                         |
+| `userPrincipalName`                    | `string`  | Principal Name of the user. id or userPrincipalName should be specified.                                             |
+| `userNewPassword`                      | `string`  | New password, required to reset the old one of course.                                                               |
+| `forceChangePasswordNextSignIn`        | `boolean` | Determines if the user must change their password on the next sign-in.                                               |
+| `forceChangePasswordNextSignInWithMfa` | `boolean` | Determines if the user must perform a multifactor authentication (MFA) before being forced to change their password. |
 
 ### Revoke Sign in
 
