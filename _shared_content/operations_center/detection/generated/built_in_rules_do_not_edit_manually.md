@@ -1,4 +1,4 @@
-Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-01-30_](rules_changelog.md)).
+Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-02-02_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Identity Information**
 
@@ -1359,6 +1359,7 @@ Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-
         - 28/07/2025 - major - Improve filter and similarity strategy.
         - 05/08/2025 - minor - Improve filter to avoid false positives
         - 06/10/2025 - minor - Improve filter to avoid false positives
+        - 02/02/2026 - minor - Improved selection to avoid false positives by forcing the destination.ip field.
             
 ??? abstract "Download Files From Suspicious TLDs"
     
@@ -2730,6 +2731,10 @@ Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 02/02/2026 - minor - Update rule type to integration
+            
 ??? abstract "SentinelOne EDR Custom Rule Alert"
     
     A SentinelOne EDR agent has detected a threat related to a Custom Rule and raised an alert for it.
@@ -2739,6 +2744,7 @@ Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-
     - **Changelog:**
     
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+        - 02/02/2026 - minor - Update rule type to integration
             
 ??? abstract "SentinelOne EDR Malicious Threat Detected And Mitigated Preemptively"
     
@@ -2749,6 +2755,7 @@ Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-
     - **Changelog:**
     
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+        - 02/02/2026 - minor - Update rule type to integration
             
 ??? abstract "SentinelOne EDR Malicious Threat Not Mitigated"
     
@@ -2759,6 +2766,7 @@ Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-
     - **Changelog:**
     
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+        - 02/02/2026 - minor - Update rule type to integration
             
 ??? abstract "SentinelOne EDR SSO User Added"
     
@@ -2769,6 +2777,7 @@ Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-
     - **Changelog:**
     
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+        - 02/02/2026 - minor - Update rule type to integration
             
 ??? abstract "SentinelOne EDR Suspicious Threat Not Mitigated (Medium Confidence)"
     
@@ -2779,6 +2788,7 @@ Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-
     - **Changelog:**
     
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+        - 02/02/2026 - minor - Update rule type to integration
             
 ??? abstract "SentinelOne EDR Threat Detected (Malicious)"
     
@@ -2789,6 +2799,7 @@ Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-
     - **Changelog:**
     
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+        - 02/02/2026 - minor - Update rule type to integration
             
 ??? abstract "SentinelOne EDR Threat Detected (Suspicious)"
     
@@ -2799,6 +2810,7 @@ Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-
     - **Changelog:**
     
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+        - 02/02/2026 - minor - Update rule type to integration
             
 ??? abstract "SentinelOne EDR Threat Mitigation Report Kill Success"
     
@@ -2809,6 +2821,7 @@ Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-
     - **Changelog:**
     
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+        - 02/02/2026 - minor - Update rule type to integration
             
 ??? abstract "SentinelOne EDR Threat Mitigation Report Quarantine Failed"
     
@@ -2819,6 +2832,7 @@ Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-
     - **Changelog:**
     
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+        - 02/02/2026 - minor - Update rule type to integration
             
 ??? abstract "SentinelOne EDR Threat Mitigation Report Quarantine Success"
     
@@ -2829,6 +2843,7 @@ Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-
     - **Changelog:**
     
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+        - 02/02/2026 - minor - Update rule type to integration
             
 ??? abstract "SentinelOne EDR Threat Mitigation Report Remediate Success"
     
@@ -2839,6 +2854,7 @@ Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-
     - **Changelog:**
     
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+        - 02/02/2026 - minor - Update rule type to integration
             
 ??? abstract "SentinelOne EDR User Failed To Log In To The Management Console"
     
@@ -2846,6 +2862,10 @@ Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 02/02/2026 - minor - Update rule type to integration
+            
 ??? abstract "SentinelOne EDR User Logged In To The Management Console"
     
     A user has logged in to the management console.
@@ -2855,6 +2875,7 @@ Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-
     - **Changelog:**
     
         - 24/03/2023 - minor - Adjusting displayed columns when the rule triggers an alert. Now timestamp and username will be displayed.
+        - 02/02/2026 - minor - Update rule type to integration
             
 ??? abstract "Socat Relaying Socket"
     
@@ -3254,6 +3275,7 @@ Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-
         - 28/07/2025 - major - Improve filter and similarity strategy.
         - 05/08/2025 - minor - Improve filter to avoid false positives
         - 06/10/2025 - minor - Improve filter to avoid false positives
+        - 02/02/2026 - minor - Improved selection to avoid false positives by forcing the destination.ip field.
             
 ??? abstract "Download Files From Suspicious TLDs"
     
@@ -3617,6 +3639,7 @@ Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-
         - 28/07/2025 - major - Improve filter and similarity strategy.
         - 05/08/2025 - minor - Improve filter to avoid false positives
         - 06/10/2025 - minor - Improve filter to avoid false positives
+        - 02/02/2026 - minor - Improved selection to avoid false positives by forcing the destination.ip field.
             
 ??? abstract "Download Files From Suspicious TLDs"
     
@@ -4194,6 +4217,10 @@ Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 02/02/2026 - minor - Update rule type to integration
+            
 ??? abstract "SentinelOne EDR Custom Rule Alert"
     
     A SentinelOne EDR agent has detected a threat related to a Custom Rule and raised an alert for it.
@@ -4203,6 +4230,7 @@ Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-
     - **Changelog:**
     
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+        - 02/02/2026 - minor - Update rule type to integration
             
 ??? abstract "SentinelOne EDR Malicious Threat Detected And Mitigated Preemptively"
     
@@ -4213,6 +4241,7 @@ Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-
     - **Changelog:**
     
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+        - 02/02/2026 - minor - Update rule type to integration
             
 ??? abstract "SentinelOne EDR Malicious Threat Not Mitigated"
     
@@ -4223,6 +4252,7 @@ Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-
     - **Changelog:**
     
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+        - 02/02/2026 - minor - Update rule type to integration
             
 ??? abstract "SentinelOne EDR SSO User Added"
     
@@ -4233,6 +4263,7 @@ Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-
     - **Changelog:**
     
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+        - 02/02/2026 - minor - Update rule type to integration
             
 ??? abstract "SentinelOne EDR Suspicious Threat Not Mitigated (Medium Confidence)"
     
@@ -4243,6 +4274,7 @@ Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-
     - **Changelog:**
     
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+        - 02/02/2026 - minor - Update rule type to integration
             
 ??? abstract "SentinelOne EDR Threat Detected (Malicious)"
     
@@ -4253,6 +4285,7 @@ Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-
     - **Changelog:**
     
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+        - 02/02/2026 - minor - Update rule type to integration
             
 ??? abstract "SentinelOne EDR Threat Detected (Suspicious)"
     
@@ -4263,6 +4296,7 @@ Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-
     - **Changelog:**
     
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+        - 02/02/2026 - minor - Update rule type to integration
             
 ??? abstract "SentinelOne EDR Threat Mitigation Report Kill Success"
     
@@ -4273,6 +4307,7 @@ Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-
     - **Changelog:**
     
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+        - 02/02/2026 - minor - Update rule type to integration
             
 ??? abstract "SentinelOne EDR Threat Mitigation Report Quarantine Failed"
     
@@ -4283,6 +4318,7 @@ Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-
     - **Changelog:**
     
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+        - 02/02/2026 - minor - Update rule type to integration
             
 ??? abstract "SentinelOne EDR Threat Mitigation Report Quarantine Success"
     
@@ -4293,6 +4329,7 @@ Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-
     - **Changelog:**
     
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+        - 02/02/2026 - minor - Update rule type to integration
             
 ??? abstract "SentinelOne EDR Threat Mitigation Report Remediate Success"
     
@@ -4303,6 +4340,7 @@ Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-
     - **Changelog:**
     
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+        - 02/02/2026 - minor - Update rule type to integration
             
 ??? abstract "SentinelOne EDR User Failed To Log In To The Management Console"
     
@@ -4310,6 +4348,10 @@ Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 02/02/2026 - minor - Update rule type to integration
+            
 ??? abstract "SentinelOne EDR User Logged In To The Management Console"
     
     A user has logged in to the management console.
@@ -4319,6 +4361,7 @@ Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-
     - **Changelog:**
     
         - 24/03/2023 - minor - Adjusting displayed columns when the rule triggers an alert. Now timestamp and username will be displayed.
+        - 02/02/2026 - minor - Update rule type to integration
             
 ??? abstract "Sophos EDR Application Blocked"
     
@@ -5025,6 +5068,10 @@ Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 02/02/2026 - minor - Update rule type to integration
+            
 ??? abstract "SentinelOne EDR Custom Rule Alert"
     
     A SentinelOne EDR agent has detected a threat related to a Custom Rule and raised an alert for it.
@@ -5034,6 +5081,7 @@ Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-
     - **Changelog:**
     
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+        - 02/02/2026 - minor - Update rule type to integration
             
 ??? abstract "SentinelOne EDR Malicious Threat Detected And Mitigated Preemptively"
     
@@ -5044,6 +5092,7 @@ Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-
     - **Changelog:**
     
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+        - 02/02/2026 - minor - Update rule type to integration
             
 ??? abstract "SentinelOne EDR Malicious Threat Not Mitigated"
     
@@ -5054,6 +5103,7 @@ Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-
     - **Changelog:**
     
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+        - 02/02/2026 - minor - Update rule type to integration
             
 ??? abstract "SentinelOne EDR SSO User Added"
     
@@ -5064,6 +5114,7 @@ Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-
     - **Changelog:**
     
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+        - 02/02/2026 - minor - Update rule type to integration
             
 ??? abstract "SentinelOne EDR Suspicious Threat Not Mitigated (Medium Confidence)"
     
@@ -5074,6 +5125,7 @@ Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-
     - **Changelog:**
     
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+        - 02/02/2026 - minor - Update rule type to integration
             
 ??? abstract "SentinelOne EDR Threat Detected (Malicious)"
     
@@ -5084,6 +5136,7 @@ Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-
     - **Changelog:**
     
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+        - 02/02/2026 - minor - Update rule type to integration
             
 ??? abstract "SentinelOne EDR Threat Detected (Suspicious)"
     
@@ -5094,6 +5147,7 @@ Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-
     - **Changelog:**
     
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+        - 02/02/2026 - minor - Update rule type to integration
             
 ??? abstract "SentinelOne EDR Threat Mitigation Report Kill Success"
     
@@ -5104,6 +5158,7 @@ Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-
     - **Changelog:**
     
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+        - 02/02/2026 - minor - Update rule type to integration
             
 ??? abstract "SentinelOne EDR Threat Mitigation Report Quarantine Failed"
     
@@ -5114,6 +5169,7 @@ Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-
     - **Changelog:**
     
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+        - 02/02/2026 - minor - Update rule type to integration
             
 ??? abstract "SentinelOne EDR Threat Mitigation Report Quarantine Success"
     
@@ -5124,6 +5180,7 @@ Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-
     - **Changelog:**
     
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+        - 02/02/2026 - minor - Update rule type to integration
             
 ??? abstract "SentinelOne EDR Threat Mitigation Report Remediate Success"
     
@@ -5134,6 +5191,7 @@ Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-
     - **Changelog:**
     
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+        - 02/02/2026 - minor - Update rule type to integration
             
 ??? abstract "SentinelOne EDR User Failed To Log In To The Management Console"
     
@@ -5141,6 +5199,10 @@ Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 02/02/2026 - minor - Update rule type to integration
+            
 ??? abstract "SentinelOne EDR User Logged In To The Management Console"
     
     A user has logged in to the management console.
@@ -5150,6 +5212,7 @@ Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-
     - **Changelog:**
     
         - 24/03/2023 - minor - Adjusting displayed columns when the rule triggers an alert. Now timestamp and username will be displayed.
+        - 02/02/2026 - minor - Update rule type to integration
             
 ??? abstract "Smbexec.py Service Installation"
     

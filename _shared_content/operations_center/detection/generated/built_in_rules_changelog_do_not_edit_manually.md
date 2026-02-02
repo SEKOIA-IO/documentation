@@ -1,7 +1,67 @@
-Changelog _last update on 2026-01-30_
+Changelog _last update on 2026-02-02_
 
 ## Changelog
 
+### SentinelOne EDR Agent Disabled
+  - 02/02/2026 - minor - Update rule type to integration
+    
+### SentinelOne EDR Suspicious Threat Not Mitigated (Medium Confidence)
+  - 02/02/2026 - minor - Update rule type to integration
+  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+    
+### SentinelOne EDR SSO User Added
+  - 02/02/2026 - minor - Update rule type to integration
+  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+    
+### SentinelOne EDR Threat Mitigation Report Remediate Success
+  - 02/02/2026 - minor - Update rule type to integration
+  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+    
+### SentinelOne EDR Malicious Threat Not Mitigated
+  - 02/02/2026 - minor - Update rule type to integration
+  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+    
+### SentinelOne EDR Threat Mitigation Report Kill Success
+  - 02/02/2026 - minor - Update rule type to integration
+  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+    
+### SentinelOne EDR Threat Mitigation Report Quarantine Failed
+  - 02/02/2026 - minor - Update rule type to integration
+  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+    
+### SentinelOne EDR User Failed To Log In To The Management Console
+  - 02/02/2026 - minor - Update rule type to integration
+    
+### SentinelOne EDR Threat Detected (Malicious)
+  - 02/02/2026 - minor - Update rule type to integration
+  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+    
+### SentinelOne EDR User Logged In To The Management Console
+  - 02/02/2026 - minor - Update rule type to integration
+  - 24/03/2023 - minor - Adjusting displayed columns when the rule triggers an alert. Now timestamp and username will be displayed.
+    
+### SentinelOne EDR Custom Rule Alert
+  - 02/02/2026 - minor - Update rule type to integration
+  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+    
+### SentinelOne EDR Malicious Threat Detected And Mitigated Preemptively
+  - 02/02/2026 - minor - Update rule type to integration
+  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+    
+### SentinelOne EDR Threat Detected (Suspicious)
+  - 02/02/2026 - minor - Update rule type to integration
+  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+    
+### SentinelOne EDR Threat Mitigation Report Quarantine Success
+  - 02/02/2026 - minor - Update rule type to integration
+  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+    
+### Download Files From Non-Legitimate TLDs
+  - 02/02/2026 - minor - Improved selection to avoid false positives by forcing the destination.ip field.
+  - 06/10/2025 - minor - Improve filter to avoid false positives
+  - 05/08/2025 - minor - Improve filter to avoid false positives
+  - 28/07/2025 - major - Improve filter and similarity strategy.
+    
 ### Cybereason EDR Malware Detection
   - 30/01/2026 - minor - Updating similarity to use malop id.
   - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
@@ -106,11 +166,6 @@ Changelog _last update on 2026-01-30_
     
 ### Download Files From Suspicious TLDs
   - 06/10/2025 - minor - Improve filter to reduce false positives.
-  - 28/07/2025 - major - Improve filter and similarity strategy.
-    
-### Download Files From Non-Legitimate TLDs
-  - 06/10/2025 - minor - Improve filter to avoid false positives
-  - 05/08/2025 - minor - Improve filter to avoid false positives
   - 28/07/2025 - major - Improve filter and similarity strategy.
     
 ### CrowdStrike Falcon Intrusion Detection High Severity EppDetection
@@ -1232,28 +1287,13 @@ Changelog _last update on 2026-01-30_
 ### Non-Legitimate Executable Using AcceptEula Parameter
   - 19/02/2024 - minor - Update filter and effort level according to the observed hits for the rule.
     
-### SentinelOne EDR Suspicious Threat Not Mitigated (Medium Confidence)
-  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
-    
-### SentinelOne EDR SSO User Added
-  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
-    
-### SentinelOne EDR Threat Mitigation Report Remediate Success
-  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
-    
 ### Trend Micro Apex One Intrusion Detection Alert
   - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
     
 ### CrowdStrike Falcon Identity Protection Detection High Severity
   - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
     
-### SentinelOne EDR Malicious Threat Not Mitigated
-  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
-    
 ### CrowdStrike Falcon Intrusion Detection Medium Severity
-  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
-    
-### SentinelOne EDR Threat Mitigation Report Kill Success
   - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
     
 ### Login Brute-Force Successful On SentinelOne EDR Management Console
@@ -1262,13 +1302,7 @@ Changelog _last update on 2026-01-30_
 ### Trend Micro Apex One Data Loss Prevention Alert
   - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
     
-### SentinelOne EDR Threat Mitigation Report Quarantine Failed
-  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
-    
 ### CrowdStrike Falcon Identity Protection Detection Low Severity
-  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
-    
-### SentinelOne EDR Threat Detected (Malicious)
   - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
     
 ### Login Failed Brute-Force On SentinelOne EDR Management Console
@@ -1292,25 +1326,13 @@ Changelog _last update on 2026-01-30_
 ### CrowdStrike Falcon Intrusion Detection High Severity
   - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
     
-### SentinelOne EDR Custom Rule Alert
-  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
-    
-### SentinelOne EDR Malicious Threat Detected And Mitigated Preemptively
-  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
-    
 ### CrowdStrike Falcon Intrusion Detection
   - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
     
 ### WithSecure Elements Critical Severity
   - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
     
-### SentinelOne EDR Threat Detected (Suspicious)
-  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
-    
 ### CrowdStrike Falcon Identity Protection Detection Medium Severity
-  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
-    
-### SentinelOne EDR Threat Mitigation Report Quarantine Success
   - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
     
 ### Cybereason EDR Alert
@@ -1479,9 +1501,6 @@ Changelog _last update on 2026-01-30_
     
 ### Adexplorer Usage
   - 27/03/2023 - minor - Modify pattern to avoid false positive and detect usage of either / or - character for snapshot parameter
-    
-### SentinelOne EDR User Logged In To The Management Console
-  - 24/03/2023 - minor - Adjusting displayed columns when the rule triggers an alert. Now timestamp and username will be displayed.
     
 ### Windows Update LolBins
   - 24/03/2023 - minor - The legitimate DLL UpdateDeploymentProvider.dll is now excluded from the rule as it triggered several false positives.
