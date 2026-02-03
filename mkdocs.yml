@@ -203,6 +203,8 @@ nav:
       - Rsyslog: integration/ingestion_methods/syslog/rsyslog.md
       - Syslog NG: integration/ingestion_methods/syslog/syslog-ng.md
       - Secured forwarding: integration/ingestion_methods/syslog/secured_forwarding.md
+    - NetFlow:
+      - Sekoia.io NetFlow Concentrator: integration/ingestion_methods/netflow/sekoiaio_netflow_concentrator.md
   - List of Intakes:
     - Overview: integration/categories/overview.md
     - Applicative:
