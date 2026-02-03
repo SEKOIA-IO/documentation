@@ -48,13 +48,18 @@ Edit the `configuration.ini` file with the following content:
 
 ```ini
 [listener]
-bind=0.0.0.0          # IP address to bind the NetFlow listener (0.0.0.0 for all interfaces)
-port=2055             # Port to listen for NetFlow data (default: 2055)
+# IP address to bind the NetFlow listener (0.0.0.0 for all interfaces)
+bind=0.0.0.0
+# Port to listen for NetFlow data (default: 2055)
+port=2055
 
 [forwarder]
-host=intake.sekoia.io # SEKOIA.IO intake host (see Regional Hosts section below)
-port=10514            # SEKOIA.IO intake port
-intake_key=<intake_key>  # Your SEKOIA.IO intake key (REQUIRED)
+# SEKOIA.IO intake host (see Regional Hosts section below)
+host=intake.sekoia.io
+# SEKOIA.IO intake port
+port=10514
+# Your SEKOIA.IO intake key (REQUIRED)
+intake_key=<intake_key>
 ```
 
 !!! Important
