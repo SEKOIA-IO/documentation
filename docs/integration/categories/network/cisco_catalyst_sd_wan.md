@@ -8,7 +8,7 @@ Cisco Catalyst SD-WAN is a cloud-managed solution that delivers secure, high-per
 
 - **Vendor**: Cisco
 - **Supported environment**: On Premise
-- **Version compatibility**: 17.4.1 and upper
+- **Version compatibility**: 17.4.1 and above
 - **Detection based on**: Telemetry
 - **Supported application or feature**: Network traffic monitoring
 
@@ -76,7 +76,7 @@ This setup guide will show you how to provide an integration between Cisco Catal
 - Type the address of the netflow collector as `IP address`
 - Type the listen port of the netflow collector as `Port`
 - Select `UDP` as `Transport Protocol`
-- Type enter the name of the interface to use to send flows to the collector as `Source interface`
+- Type the name of the interface to use to send flows to the collector as `Source interface`
 - Click `Add`
 - Click `Next`
 - At `Apply Policies to Sites and VPNs`, type a `Policy Name` and a `Policy Description`
@@ -134,4 +134,4 @@ See [documentation](https://www.cisco.com/c/en/us/td/docs/routers/sdwan/configur
 ## Further readings
 
 - [Cisco - Traffic Flow Monitoring](https://www.cisco.com/c/en/us/td/docs/routers/sdwan/configuration/policies/ios-xe-17/policies-book-xe/traffic-flow-monitor.html)
-- [Youtube - Configure SNMP and Netflow on Cisco SD-WAN](https://www.youtube.com/watch?v=a1Tw1xANgsU)
+- [YouTube - Configure SNMP and Netflow on Cisco SD-WAN](https://www.youtube.com/watch?v=a1Tw1xANgsU)
