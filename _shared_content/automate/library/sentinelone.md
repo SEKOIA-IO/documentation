@@ -17,7 +17,7 @@ SentinelOne is a cybersecurity company that provides autonomous endpoint protect
 
 ## Actions
 
-### [BETA] Create IOCs
+### Create IOCs
 
 Push IOCs in the Threat Intelligence API of SentinelOne
 
@@ -226,4 +226,4 @@ For the action `Update Threat Incident`, there are two arguments `status` and `f
 
 ## Extra
 
-Module **`SentinelOne` v1.20.14**
+Module **`SentinelOne` v1.21.5**
