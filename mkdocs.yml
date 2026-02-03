@@ -10,7 +10,6 @@ extra:
     link: https://bsky.app/profile/sekoia.io
   - icon: fontawesome/brands/mastodon
     link: https://infosec.exchange/@sekoia_io
-
 extra_css:
 - stylesheets/sekoiaio.css
 - stylesheets/lightgallery.min.css

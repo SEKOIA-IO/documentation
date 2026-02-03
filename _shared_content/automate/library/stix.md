@@ -133,8 +133,8 @@ Convert CVE JSON to STIX
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
-| `cve_list` | `array` | CVE Objects to convert to STIX. Format version accepted: 4.0 or 5.1 |
-| `cve_list_paths` | `array` | CVE Objects to convert to STIX, from file paths. Format version accepted: 4.0 or 5.1 |
+| `cve_list` | `array` | CVE Objects to convert to STIX. Format version accepted: 4.0 or 5.2 |
+| `cve_list_paths` | `array` | CVE Objects to convert to STIX, from file paths. Format version accepted: 4.0 or 5.2 |
 | `confidence` | `integer` | Confidence that the creator has in the correctness of their data |
 
 
@@ -364,4 +364,4 @@ Convert a list of strings into a list of observables
 
 ## Extra
 
-Module **`STIX` v1.73.1**
+Module **`STIX` v1.75.0**
