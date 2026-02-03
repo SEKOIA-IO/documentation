@@ -320,6 +320,7 @@ nav:
       - BeyondTrust PRA Sessions: integration/categories/network/beyondtrust_pra_sessions.md
       - BIND: integration/categories/network/bind.md
       - Cato SASE: integration/categories/network/cato_sase.md
+      - Cisco Catalyst SD-WAN: integration/categories/network/cisco_catalyst_sd_wan.md
       - Cisco IOS: integration/categories/network/cisco_ios.md
       - Cisco Meraki MX: integration/categories/network/cisco_meraki_mx.md
       - Cisco NX-OS: integration/categories/network/cisco_nx_os.md
