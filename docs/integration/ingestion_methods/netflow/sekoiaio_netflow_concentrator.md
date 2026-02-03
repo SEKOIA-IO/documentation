@@ -17,8 +17,8 @@ The NetFlow Concentrator acts as a collector that:
 * INBOUND UDP flow opened on the concentrator for NetFlow data reception (default port: 2055)
 * OUTBOUND TCP flow opened towards:
     * **FRA1** intake.sekoia.io on port 10514
-    * **FRA2** fra2.app.sekoia.io on port 10514
-    * **MCO1** mco1.app.sekoia.io on port 10514
+    * **FRA2** app.fra2.sekoia.io on port 10514
+    * **MCO1** app.mco1.sekoia.io on port 10514
     * **UAE1** app.uae1.sekoia.io on port 10514
     * **USA1** app.usa1.sekoia.io on port 10514
 * A Sekoia.io intake key for NetFlow data
@@ -72,8 +72,8 @@ Select the appropriate host address based on your Sekoia.io region:
 | Region | Host Address              | Port  |
 |--------|---------------------------|-------|
 | FRA1   | `intake.sekoia.io`        | 10514 |
-| FRA2   | `fra2.app.sekoia.io`      | 10514 |
-| MCO1   | `mco1.app.sekoia.io`      | 10514 |
+| FRA2   | `app.fra2.sekoia.io`      | 10514 |
+| MCO1   | `app.mco1.sekoia.io`      | 10514 |
 | UAE1   | `app.uae1.sekoia.io`      | 10514 |
 | USA1   | `app.usa1.sekoia.io`      | 10514 |
 
