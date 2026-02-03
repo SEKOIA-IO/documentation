@@ -16,11 +16,11 @@ The NetFlow Concentrator acts as a collector that:
 * Last version of Docker Engine with Docker Compose support. Please follow [this section](#docker-engine-installation) to install it if needed
 * INBOUND UDP flow opened on the concentrator for NetFlow data reception (default port: 2055)
 * OUTBOUND TCP flow opened towards:
-  * **FRA1** intake.sekoia.io on port 10514
-  * **FRA2** fra2.app.sekoia.io on port 10514
-  * **MCO1** mco1.app.sekoia.io on port 10514
-  * **UAE1** app.uae1.sekoia.io on port 10514
-  * **USA1** app.usa1.sekoia.io on port 10514
+    * **FRA1** intake.sekoia.io on port 10514
+    * **FRA2** fra2.app.sekoia.io on port 10514
+    * **MCO1** mco1.app.sekoia.io on port 10514
+    * **UAE1** app.uae1.sekoia.io on port 10514
+    * **USA1** app.usa1.sekoia.io on port 10514
 * A Sekoia.io intake key for NetFlow data
 * Network devices configured to send NetFlow data
 
@@ -268,26 +268,26 @@ docker compose restart
 ### Common Issues
 
 1. **No data received**: 
-   - Verify network devices are configured correctly
-   - Check firewall rules allow UDP traffic on the listener port
-   - Ensure the container is running and listening
-   - Verify the bind address and port in `configuration.ini`
+    - Verify network devices are configured correctly
+    - Check firewall rules allow UDP traffic on the listener port
+    - Ensure the container is running and listening
+    - Verify the bind address and port in `configuration.ini`
 
 2. **Cannot connect to Sekoia.io**:
-   - Verify your intake key is correct
-   - Check that you're using the correct regional host address
-   - Check network connectivity to your regional host on port 10514
-   - Ensure outbound TCP traffic is allowed
+    - Verify your intake key is correct
+    - Check that you're using the correct regional host address
+    - Check network connectivity to your regional host on port 10514
+    - Ensure outbound TCP traffic is allowed
 
 3. **Container fails to start**:
-   - Check that the configuration file exists and is properly formatted
-   - Verify the intake key is set in `configuration.ini`
-   - Review container logs for specific error messages: `docker compose logs netflow-concentrator`
+    - Check that the configuration file exists and is properly formatted
+    - Verify the intake key is set in `configuration.ini`
+    - Review container logs for specific error messages: `docker compose logs netflow-concentrator`
 
 4. **High CPU or memory usage**:
-   - Monitor the volume of NetFlow data being received
-   - Consider increasing host resources if needed
-   - Check for network loops or misconfigured devices sending excessive data
+    - Monitor the volume of NetFlow data being received
+    - Consider increasing host resources if needed
+    - Check for network loops or misconfigured devices sending excessive data
 
 ## Updates
 
