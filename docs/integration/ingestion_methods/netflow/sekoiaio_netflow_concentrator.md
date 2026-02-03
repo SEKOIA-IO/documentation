@@ -158,7 +158,7 @@ restart: always
 pull_policy: always
 ```
 
-* `restart: always`: this line indicates to restart the concentrator everytime it stops. That means if it crashes, if you restart Docker or if you restart the host, the concentrator will start automatically.
+* `restart: always`: this line indicates to restart the concentrator every time it stops. That means if it crashes, if you restart Docker or if you restart the host, the concentrator will start automatically.
 * `pull_policy: always`: docker compose will always try to pull the image from the registry and check if a new version is available for the tag specified.
 
 ## Deploy your concentrator
