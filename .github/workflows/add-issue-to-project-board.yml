@@ -1,0 +1,18 @@
+name: Add to Project
+
+on:
+  issues:
+    types: [opened]
+
+jobs:
+  add-to-project:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/add-to-project@v0.5.0
+        with:
+          # L'URL de votre projet dans l'organisation SekoiaLab
+          # Remplacez le numéro '1' à la fin par le numéro de VOTRE projet
+          project-url: https://github.com/users/alexane-bougeardbebin-sekoia/projects/2
+          
+          # Le nom du secret créé à l'étape 2
+          github-token: ${{ secrets.PROJECT_BOARD_TOKEN }}
