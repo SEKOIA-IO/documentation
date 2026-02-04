@@ -33,9 +33,9 @@ Please find our English tutorial video below to see how to configure the forward
 * OUTBOUND TCP flow opened towards:
   * **FRA1** intake.sekoia.io on port 10514
   * **FRA2** intake.fra2.sekoia.io on port 10514
-  * **MCO1** app.mco1.sekoia.io on port 10514
-  * **UAE1** app.uae1.sekoia.io on port 10514
-  * **USA1** app.usa1.sekoia.io on port 10514
+  * **MCO1** intake.mco1.sekoia.io on port 10514
+  * **UAE1** intake.uae1.sekoia.io on port 10514
+  * **USA1** intake.usa1.sekoia.io on port 10514
 
   !!! note
       The disk choice (SSD or HDD type) has no impact on the performance of Sekoia.io Forwarder.
