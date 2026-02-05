@@ -43,7 +43,7 @@ Please consult the [Syslog Forwarding](/integration/ingestion_methods/syslog/sek
 
 ### Create an intake
 
-Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a new intake from the `Forcepoint NGFW` format.
+Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a new intake from the `Forcepoint Forcepoint Management Server` format.
 
 {!_shared_content/operations_center/integrations/generated/b02a2580-3457-49fd-9991-bae9d2fe7768_sample.md!}
 
