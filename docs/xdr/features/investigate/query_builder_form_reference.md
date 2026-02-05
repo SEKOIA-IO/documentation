@@ -29,7 +29,9 @@ Use these operators within the **WHERE** clause to define your conditions.
 ### System limits
 
 !!! warning "Platform rate limits"
+
     To protect platform health, the following limits are enforced:
+    
     * **Processed rows**: Maximum 10,000. Results will be partial if this limit is reached.
     * **Query frequency**: 10 executions per minute per user.
     * **Query timeout**: Queries automatically time out after 10 minutes.
