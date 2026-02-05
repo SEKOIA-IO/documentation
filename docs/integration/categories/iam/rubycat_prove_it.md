@@ -38,7 +38,7 @@ PROVE IT by Rubycat is a privileged access management solution.
 
 ## Step-by-Step Configuration Procedure
 
-To enable Syslog server in Rubycat PROVE IT:
+### To enable Syslog server in Rubycat PROVE IT:
 
 1. Log in to the PROVE IT administration console.
 2. Go to `System` > `External servers` > `Syslog servers`.
@@ -57,6 +57,37 @@ To enable Syslog server in Rubycat PROVE IT:
 
 7. Click `Next`.
 8. Click `Submit`.
+
+### To notify events through Syslog in Rubycat PROVE IT:
+
+1. Log in to the PROVE IT administration console.
+2. Go to `Audit` > `Parameters` > `Notifications`.
+3. Create a new rule by filling the details:
+
+   - **Type**: select `All`
+   - **Name**: Choose a name for the rule (ex: `All`)
+   - **Description**: Enter a description (optional)
+   - **target**: click on `add a target +`, select the Syslog server defined previously
+
+4. Click `Save`
+5. Go to the tab `Administrator` in the same menu
+6. Create a new rule by filling the details:
+
+   - **Type**: select `All`
+   - **Name**: Choose a name for the rule (ex: `All`)
+   - **Description**: Enter a description (optional)
+   - **target**: click on `add a target +`, select the Syslog server defined previously
+
+7. Click `Save`
+8. Go to the tab `System` in the same menu
+9. Create a new rule by filling the details:
+   
+   - **Type**: select `All`
+   - **Name**: Choose a name for the rule (ex: `All`)
+   - **Description**: Enter a description (optional)
+   - **target**: click on `add a target +`, select the Syslog server defined previously
+
+10. Click `Save`
 
 ## Events
 
