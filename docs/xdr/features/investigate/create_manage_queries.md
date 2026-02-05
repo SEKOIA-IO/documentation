@@ -11,6 +11,11 @@ Let's dive into the process of building your first query. You can choose between
 
 The Form mode acts as a wizard to help you structure your request without writing code.
 
+!!! tip "Master the SOL Syntax"
+
+    To discover the all operators, clauses, and properties available within the Query Builder Form mode consult the [Query Form Reference article](/xdr/features/investigate/query_builder_form_reference.md).
+
+
 1. Navigate to the **Query Builder** page: : Left panel > **Investigate** > **Queries**.
 2. On the upper right corner, click **New Query**. 
 3. Ensure the toggle is set to **Form**.
@@ -25,7 +30,7 @@ Code mode is the default interface. It uses the SOL language to provide higher p
 
 !!! tip "Master the SOL Syntax"
 
-    To learn how to write advanced queries and create custom filters for your dashboards, consult the [SOL Language Reference](sekoia_operating_language.md).
+    To learn how to write advanced queries and create custom filters for your dashboards, consult the [SOL Language Reference](/xdr/features/investigate/sekoia_operating_language.md).
 
 
 1. Navigate to the **Query Builder** page.
