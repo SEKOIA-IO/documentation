@@ -1,0 +1,19 @@
+## OCSF Mapping for {{ config.name | default('Connector') }}
+
+{% if mapping.mapping.ocsf_class %}
+**OCSF Class:** `{{ mapping.mapping.ocsf_class }}`
+{% endif %}
+
+{% if mapping.mapping.version %}
+**Version:** {{ mapping.mapping.version }}
+{% endif %}
+
+{% if mapping.mapping.fields %}
+## Field Mapping
+
+| Source Field | OCSF Field | Type | Description |
+|--------------|------------|------|-------------|
+{% for field in mapping.mapping.fields -%}
+| `{{ field.source | default('-') }}` | `{{ field.target | default('-') }}` | `{{ field.type | default('-') }}` | {{ field.description | default('-') }} |
+{% endfor %}
+{% endif %}
