@@ -1,33 +1,19 @@
-# {{ manifest.name }}
+## OCSF Mapping for {{ config.name | default('Connector') }}
 
-{{ manifest.description | default('') }}
-
-{% if manifest.data_sources %}
-## Data Sources
-
-{% for source in manifest.data_sources %}
-- {{ source }}
-{% endfor %}
+{% if mapping.mapping.ocsf_class %}
+**OCSF Class:** `{{ mapping.mapping.ocsf_class }}`
 {% endif %}
 
-{% if mapping.ocsf_class %}
-## OCSF Class
-
-`{{ mapping.ocsf_class }}`
+{% if mapping.mapping.version %}
+**Version:** {{ mapping.mapping.version }}
 {% endif %}
 
-{% if mapping.fields %}
+{% if mapping.mapping.fields %}
 ## Field Mapping
 
 | Source Field | OCSF Field | Type | Description |
 |--------------|------------|------|-------------|
-{% for field in mapping.fields %}
-| `{{ field.source }}` | `{{ field.target }}` | {{ field.type | default('-') }} | {{ field.description | default('-') }} |
+{% for field in mapping.mapping.fields -%}
+| `{{ field.source | default('-') }}` | `{{ field.target | default('-') }}` | `{{ field.type | default('-') }}` | {{ field.description | default('-') }} |
 {% endfor %}
-{% endif %}
-
-{% if manifest.notes %}
-## Notes
-
-{{ manifest.notes }}
 {% endif %}
