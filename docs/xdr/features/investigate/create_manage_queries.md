@@ -2,16 +2,16 @@
 
 Let's dive into the process of building your first query. You can choose between a guided experience or a code-centric approach depending on your technical needs.
 
-### Prerequisites
+## Prerequisites
 
 * You must have an active Sekoia.io account.
 * You must have logs, alerts, or cases already ingested into your workspace.
 
-### Build a query using the Form
+## Build a query using the Form
 
 The Form mode acts as a wizard to help you structure your request without writing code.
 
-!!! tip "Master the SOL Syntax"
+!!! tip "Discover the full potential of From mode"
 
     To discover the all operators, clauses, and properties available within the Query Builder Form mode consult the [Query Form Reference article](/xdr/features/investigate/query_builder_form_reference.md).
 
@@ -24,7 +24,7 @@ The Form mode acts as a wizard to help you structure your request without writin
 6. Select a clause (e.g., **WHERE** or **AGGREGATION**) and enter your parameters.
 7. To view the results, click **Run query**.
 
-### Build a query using Code (SOL)
+## Build a query using Code (SOL)
 
 Code mode is the default interface. It uses the SOL language to provide higher precision for filters and complex queries.
 
@@ -39,7 +39,7 @@ Code mode is the default interface. It uses the SOL language to provide higher p
 4. To view the results, click **Run query**.
 
 
-### Save and manage results
+## Save and manage results
 
 1. To filter your results, click the right end side of the filter button. A dropdown panel opens, allowing you to select your filtering options.
 2. To save your configuration, enter a title in the **Title** field and click **Save**.
