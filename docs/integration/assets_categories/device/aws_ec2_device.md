@@ -135,6 +135,210 @@ To start getting your AWS EC2 instances into Sekoia.io, you need to create an as
 
 6. Click the **Create asset connector** button.
 
+## Information Collected
+
+The AWS EC2 asset connector fetches comprehensive EC2 instance information from AWS and transforms it into the OCSF (Open Cybersecurity Schema Framework) Device Inventory format for standardized security monitoring and asset management.
+
+### Data Mapping Table
+
+The following table shows how AWS EC2 instance data is mapped to OCSF model fields:
+
+| Source Field | OCSF Field Path | Description | Data Type |
+|--------------|-----------------|-------------|-----------|
+| `InstanceId` | `device.uid` | EC2 instance unique identifier | String |
+| `PublicDnsName` / `PrivateDnsName` | `device.hostname` | Public or private DNS name (fallback to instance ID) | String |
+| `Tags[Name]` | `device.name` | Instance name from Name tag | String |
+| `PlatformDetails` | `device.os.name` | Operating system name (Windows, Linux, MacOS) | String |
+| `PlatformDetails` | `device.os.type` | Operating system type enum | String (Enum) |
+| `PlatformDetails` | `device.os.type_id` | Operating system type ID (100=Windows, 200=Linux, 300=MacOS, 0=Unknown) | Integer (Enum) |
+| `NetworkInterfaces[].NetworkInterfaceId` | `device.network_interfaces[].uid` | Network interface unique identifier | String |
+| `NetworkInterfaces[].Description` | `device.network_interfaces[].name` | Network interface description | String |
+| `NetworkInterfaces[].MacAddress` | `device.network_interfaces[].mac` | MAC address | String |
+| `NetworkInterfaces[].PrivateIpAddress` | `device.network_interfaces[].ip` | Private IP address | String |
+| `NetworkInterfaces[].PrivateDnsName` | `device.network_interfaces[].hostname` | Private DNS name | String |
+| `NetworkInterfaces[]` | `device.network_interfaces[].type` | Interface type (always "Wired") | String (Enum) |
+| `NetworkInterfaces[]` | `device.network_interfaces[].type_id` | Interface type ID (always 1 for Wired) | Integer (Enum) |
+| `SecurityGroups[].GroupId` | `device.groups[].uid` | Security group ID | String |
+| `SecurityGroups[].GroupName` | `device.groups[].name` | Security group name | String |
+| `PublicIpAddress` / `PrivateIpAddress` | `device.ip` | Primary IP address (public preferred, fallback to private) | String |
+| `Placement.AvailabilityZone` | `device.region` | AWS availability zone | String |
+| `SubnetId` | `device.subnet` | Subnet ID | String |
+| `VpcId` | `device.domain` | VPC ID (mapped as domain) | String |
+| `Hypervisor` | `device.hypervisor` | Hypervisor type (e.g., xen, nitro) | String |
+| Static value | `device.vendor_name` | Always "Amazon Web Services" | String |
+| `InstanceType` | `device.model` | Instance type (e.g., t2.micro, m5.large) | String |
+| `LaunchTime` | `device.boot_time` | Instance launch time (ISO format) | String (ISO 8601) |
+| `BlockDeviceMappings[0].Ebs.AttachTime` / `LaunchTime` | `device.created_time` | Creation timestamp (Unix epoch) | Integer (timestamp) |
+| `IamInstanceProfile` | `device.is_managed` | Whether instance has IAM role (managed) | Boolean |
+| `Tags[aws:autoscaling:groupName]` | `device.autoscale_uid` | Auto Scaling group name | String |
+| `ImageId` + `State.Name` | `device.desc` | Description with AMI ID and state | String |
+| `Reservations[].OwnerId` | `device.org.uid` | AWS Account ID | String |
+| `Reservations[].OwnerId` | `device.org.name` | Organization name (e.g., "AWS Account 123456789012") | String |
+| Static value | `device.type` | Always "Server" | String (Enum) |
+| Static value | `device.type_id` | Always 1 (Server) | Integer (Enum) |
+| `LaunchTime` / `BlockDeviceMappings[0].Ebs.AttachTime` | `time` | Event timestamp for OCSF model (Unix epoch) | Integer (timestamp) |
+
+### OCSF Model Structure
+
+The connector generates OCSF Device Inventory events (class UID 5001) with the following structure:
+
+```json
+{
+  "activity_id": 2,
+  "activity_name": "Collect",
+  "category_name": "Discovery",
+  "category_uid": 5,
+  "class_name": "Device Inventory Info",
+  "class_uid": 5001,
+  "type_name": "Device Inventory Info: Collect",
+  "type_uid": 500102,
+  "severity": "Informational",
+  "severity_id": 1,
+  "time": "<unix_timestamp>",
+  "metadata": {
+    "product": {
+      "name": "AWS EC2",
+      "version": "<version>"
+    },
+    "version": "<ocsf_version>"
+  },
+  "device": {
+    "type": "Server",
+    "type_id": 1,
+    "uid": "<instance_id>",
+    "hostname": "<public_or_private_dns>",
+    "name": "<name_from_tags>",
+    "ip": "<public_or_private_ip>",
+    "os": {
+      "name": "Linux|Windows|MacOS|Unknown",
+      "type": "Linux|Windows|macOS|Unknown",
+      "type_id": 100|200|300|0
+    },
+    "network_interfaces": [
+      {
+        "uid": "<network_interface_id>",
+        "name": "<interface_description>",
+        "mac": "<mac_address>",
+        "ip": "<private_ip_address>",
+        "hostname": "<private_dns_name>",
+        "type": "Wired",
+        "type_id": 1
+      }
+    ],
+    "groups": [
+      {
+        "uid": "<security_group_id>",
+        "name": "<security_group_name>"
+      }
+    ],
+    "region": "<availability_zone>",
+    "subnet": "<subnet_id>",
+    "domain": "<vpc_id>",
+    "hypervisor": "<hypervisor_type>",
+    "vendor_name": "Amazon Web Services",
+    "model": "<instance_type>",
+    "boot_time": "<launch_time_iso>",
+    "created_time": <unix_timestamp>,
+    "is_managed": true|false,
+    "autoscale_uid": "<autoscaling_group_name>",
+    "desc": "AMI: <image_id>, State: <state>",
+    "org": {
+      "name": "AWS Account <account_id>",
+      "uid": "<account_id>"
+    }
+  }
+}
+```
+
+### Enrichment Objects
+
+The connector performs several enrichment operations to provide comprehensive device context:
+
+#### Network Interface Enrichment
+- **Source**: `NetworkInterfaces[]` array from EC2 instance data
+- **Enrichment**: Extracts detailed network interface information
+- **Fields added**: 
+  - `device.network_interfaces[]` with ID, description, MAC address, private IP, private DNS
+  - Always sets type as "Wired" (type_id: 1) for EC2 instances
+- **Special handling**: Continues on individual interface extraction errors
+
+#### Security Group Enrichment
+- **Source**: `SecurityGroups[]` array from EC2 instance data
+- **Enrichment**: Maps EC2 security groups to OCSF Group objects
+- **Fields added**: `device.groups[]` with security group ID and name
+- **Purpose**: Tracks network access control and firewall rules
+
+#### Operating System Detection
+- **Source**: `PlatformDetails` field from EC2 instance
+- **Enrichment**: Determines OS type from platform details string
+- **Logic**: 
+  - Searches for "windows" → Windows (type_id: 100)
+  - Searches for "linux" or "unix" → Linux (type_id: 200)
+  - Searches for "macos" or "mac" → MacOS (type_id: 300)
+  - Otherwise → Unknown (type_id: 0)
+- **Fields added**: `device.os.name`, `device.os.type`, `device.os.type_id`
+
+#### Hostname Resolution
+- **Source**: `PublicDnsName` and `PrivateDnsName` fields
+- **Enrichment**: Determines the best hostname for the device
+- **Priority**: 
+  1. Public DNS name (if available)
+  2. Private DNS name (if public not available)
+  3. Instance ID (if neither DNS name is available)
+- **Fields added**: `device.hostname`
+- **Special handling**: Empty strings treated as None
+
+#### Tag-Based Name Extraction
+- **Source**: `Tags[]` array with Key-Value pairs
+- **Enrichment**: Extracts the "Name" tag value
+- **Fields added**: `device.name`
+- **Purpose**: Provides human-readable instance names
+
+#### Auto Scaling Group Detection
+- **Source**: `Tags[]` array with Key-Value pairs
+- **Enrichment**: Extracts the "aws:autoscaling:groupName" tag
+- **Fields added**: `device.autoscale_uid`
+- **Purpose**: Identifies instances managed by Auto Scaling
+
+#### Organization Enrichment
+- **Source**: `OwnerId` from Reservation data
+- **Enrichment**: Creates organization object from AWS Account ID
+- **Fields added**: 
+  - `device.org.uid` (account ID)
+  - `device.org.name` (formatted as "AWS Account <account_id>")
+
+#### Management Status Detection
+- **Source**: `IamInstanceProfile` field
+- **Enrichment**: Determines if instance is managed based on IAM role presence
+- **Logic**: Instance is considered "managed" if it has an IAM instance profile attached
+- **Fields added**: `device.is_managed` (boolean)
+- **Purpose**: Identifies instances with automated management capabilities
+
+#### Primary IP Resolution
+- **Source**: `PublicIpAddress` and `PrivateIpAddress` fields
+- **Enrichment**: Determines the primary IP address
+- **Priority**:
+  1. Public IP address (if available)
+  2. Private IP address (if public not available)
+- **Fields added**: `device.ip`
+
+#### Creation Time Resolution
+- **Source**: `BlockDeviceMappings[0].Ebs.AttachTime` and `LaunchTime`
+- **Enrichment**: Determines the most accurate creation timestamp
+- **Priority**:
+  1. EBS attachment time (if available)
+  2. Launch time (as fallback)
+- **Fields added**: `device.created_time` (Unix timestamp), `time` (event timestamp)
+- **Special handling**: Ensures UTC timezone, converts to epoch timestamp
+
+#### Description Generation
+- **Source**: `ImageId` and `State.Name` fields
+- **Enrichment**: Creates a descriptive string combining AMI ID and instance state
+- **Format**: "AMI: <image_id>, State: <state>"
+- **Fields added**: `device.desc`
+- **Purpose**: Provides quick reference to instance image and current state
+
+
 ## Further Reading
 - [AWS EC2 Documentation](https://docs.aws.amazon.com/ec2/)
 - [AWS IAM User Guide](https://docs.aws.amazon.com/IAM/latest/UserGuide/)

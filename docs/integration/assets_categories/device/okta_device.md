@@ -89,6 +89,114 @@ To start getting your Okta devices into Sekoia.io, you need to create an asset c
 
 6. Click the **Create asset connector** button.
 
+## Information Collected
+
+This connector collects device information from Okta and maps it to the OCSF (Open Cybersecurity Schema Framework) Device Inventory Info event model (Class 5001). The following sections detail the data mapping and structure.
+
+### Data Mapping Table
+
+| Source Field (Okta) | OCSF Field Path | Description | Data Type |
+|---------------------|-----------------|-------------|-----------|
+| `id` | `device.uid` | Unique device identifier | String |
+| `profile.displayName` | `device.hostname` | Device display name | String |
+| `profile.platform` | `device.os.type` / `device.os.type_id` | Operating system platform (Windows, macOS, Linux, iOS, Android) | String / Integer |
+| `profile.osVersion` | `device.os.version` | Operating system version | String |
+| `profile.manufacturer` | `device.vendor_name` | Device manufacturer | String |
+| `profile.model` | `device.model` | Device model | String |
+| `created` | `device.created_time` | Device creation timestamp | DateTime |
+| `lastUpdated` | `device.last_seen_time` | Last update timestamp | DateTime |
+| `profile.managed` | `device.is_managed` | Whether device is managed | Boolean |
+| `profile.registered` | `device.is_compliant` | Device registration/compliance status | Boolean |
+| `profile.diskEncryptionType` | `enrichments[].data.DiskEncryption.partitions` | Disk encryption configuration | Object |
+| `profile.serialNumber` | `enrichments[].data.Users[]` | Hardware serial number | String (in enrichment) |
+| `profile.sid` | `enrichments[].data.Users[]` | Windows Security Identifier | String (in enrichment) |
+| `profile.secureHardwarePresent` | `enrichments[].data.Users[]` | Secure hardware presence | Boolean (in enrichment) |
+
+### OCSF Model Structure
+
+The connector produces events conforming to the **Device Inventory Info** event class (OCSF 5001) with the following structure:
+
+```json
+{
+  "activity_id": 2,
+  "activity_name": "Collect",
+  "category_name": "Discovery",
+  "category_uid": 5,
+  "class_name": "Device Inventory Info",
+  "class_uid": 5001,
+  "type_name": "Device Inventory Info: Collect",
+  "type_uid": 500102,
+  "severity": "Informational",
+  "severity_id": 1,
+  "time": "<timestamp>",
+  "metadata": {
+    "product": {
+      "name": "Okta",
+      "vendor_name": "Okta",
+      "version": "N/A"
+    },
+    "version": "1.6.0"
+  },
+  "device": {
+    "hostname": "<device_display_name>",
+    "uid": "<device_id>",
+    "type": "Other",
+    "type_id": 99,
+    "os": {
+      "name": "<os_name>",
+      "version": "<os_version>",
+      "type": "<os_type>",
+      "type_id": "<os_type_id>"
+    },
+    "vendor_name": "<manufacturer>",
+    "model": "<model>",
+    "created_time": "<timestamp>",
+    "last_seen_time": "<timestamp>",
+    "is_managed": true/false,
+    "is_compliant": true/false
+  },
+  "enrichments": [...]
+}
+```
+
+#### Operating System Type Mappings
+
+| Okta Platform | OCSF OS Type | OCSF Type ID |
+|---------------|--------------|--------------|
+| `windows` | `Windows` | 100 |
+| `macos` | `macOS` | 300 |
+| `linux` | `Linux` | 200 |
+| `ios` | `iOS` | 302 |
+| `android` | `Android` | 201 |
+| Other | `Other` | 99 |
+
+### Enrichment Objects
+
+The connector provides additional device context through enrichment objects. These enrichments contain hardware and security information that doesn't fit directly into the standard OCSF device schema.
+
+#### Device Info Enrichment
+
+**Name**: `device_info`  
+**Value**: `hardware_and_security`
+
+**Disk Encryption Object** (`enrichments[].data.DiskEncryption`):
+
+Maps Okta's disk encryption types to partition-level encryption status:
+
+- **ALL_INTERNAL_VOLUMES**: `{"all_internal": "Enabled"}`
+- **FULL**: `{"full": "Enabled"}`
+- **USER**: `{"user": "Enabled"}`
+- **None/Other**: `{"none": "Disabled"}`
+
+**Hardware Identifiers** (`enrichments[].data.Users[]`):
+
+Contains hardware and security-related identifiers as string entries:
+
+- `serial_number:<value>` - Device serial number
+- `windows_sid:<value>` - Windows Security Identifier (SID)
+- `secure_hardware_present:<true/false>` - Presence of secure hardware (TPM, Secure Enclave, etc.)
+
+
 ## Further Reading
 - [Okta Documentation](https://developer.okta.com/docs/)
 - [Okta Device Management API](https://developer.okta.com/docs/reference/api/devices/)
