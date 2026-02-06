@@ -516,6 +516,7 @@ nav:
       - SentinelOne EDR: integration/assets_categories/device/sentinelone_edr.md
     - User:
       - AWS IAM: integration/assets_categories/user/aws_iam_user.md
+      - Microsoft Active Directory: integration/assets_categories/user/microsoft_ad_user.md
       - Microsoft Entra ID: integration/assets_categories/user/microsoft_entra_id.md
       - Okta: integration/assets_categories/user/okta_user.md
   - How to develop a new Integration:
