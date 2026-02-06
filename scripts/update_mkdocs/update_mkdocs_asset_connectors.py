@@ -9,6 +9,17 @@ from jinja2 import Environment, FileSystemLoader
 ASSET_TYPES = ["device", "user", "vulnerability"]
 
 
+def find_asset_connectors_folder(module_path: Path) -> Path | None:
+    excluded_dirs = {".venv", "venv", "tests", "__pycache__", ".git", "node_modules", ".mypy_cache"}
+
+    for path in module_path.rglob("asset_connector"):
+        if path.is_dir():
+            parts = path.relative_to(module_path).parts
+            if not any(part in excluded_dirs for part in parts):
+                return path
+    return None
+
+
 def load_asset_connectors(automation_module_repository: str) -> List[Dict]:
     asset_connectors: List[Dict] = []
 
@@ -25,24 +36,22 @@ def load_asset_connectors(automation_module_repository: str) -> List[Dict]:
 
         module_slug = module_manifest.get("slug", module_path.name.lower())
 
-        sub_module_path = module_path / module_slug
-        if not sub_module_path.exists():
+        asset_connector_path = find_asset_connectors_folder(module_path)
+        if not asset_connector_path:
             continue
 
-        asset_connector_path = sub_module_path / "asset_connectors"
-        if not asset_connector_path.exists():
-            continue
+        print(f"Module {module_slug}: found asset_connectors at {asset_connector_path.relative_to(module_path)}")
 
         for config_file in module_path.glob("*_asset_connector.json"):
             config_name = config_file.stem
             asset_type = None
-            for type in ASSET_TYPES:
-                if f"_{type}_asset_connector" in config_name:
-                    asset_type = type
+            for t in ASSET_TYPES:
+                if f"_{t}_asset_connector" in config_name:
+                    asset_type = t
                     break
 
             if not asset_type:
-                print(f"Skipping config {config_file.name}: unknown asset type")
+                print(f"  - Skipping config {config_file.name}: unknown asset type")
                 continue
 
             with open(config_file, "r") as fd:
@@ -50,7 +59,7 @@ def load_asset_connectors(automation_module_repository: str) -> List[Dict]:
 
             mapping_file = asset_connector_path / f"{asset_type}_mapping.yml"
             if not mapping_file.exists():
-                print(f"Skipping {module_slug}/{asset_type}: no mapping file")
+                print(f"  - Skipping {module_slug}/{asset_type}: no mapping file")
                 continue
 
             with open(mapping_file, "r") as fd:
@@ -66,7 +75,7 @@ def load_asset_connectors(automation_module_repository: str) -> List[Dict]:
             }
 
             asset_connectors.append(connector)
-            print(f"Found: {module_slug} ({asset_type})")
+            print(f"  - Found: {module_slug} ({asset_type})")
 
     return asset_connectors
 
