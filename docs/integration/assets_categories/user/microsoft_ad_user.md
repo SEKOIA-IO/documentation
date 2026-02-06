@@ -77,6 +77,99 @@ To start getting your Microsoft Active Directory users into Sekoia.io, you need 
 
 6. Click the **Create asset connector** button.
 
+## Information Collected
+
+This section describes the data fields collected from Microsoft Active Directory and how they map to the Open Cybersecurity Schema Framework (OCSF) User Inventory model.
+
+### Data Mapping Table
+
+The following table shows the mapping between Active Directory attributes and OCSF model fields:
+
+| AD Attribute | OCSF Field Path | Description | Data Type |
+|--------------|-----------------|-------------|-----------|
+| `givenName` | `user.name` | User's first name (combined with `sn` for full name) | String |
+| `sn` | `user.name` | User's last name (surname, combined with `givenName`) | String |
+| `userPrincipalName` | `user.account.name` | User Principal Name (e.g., user@domain.com) | String |
+| `objectSid` | `user.uid` | Security Identifier - unique identifier for the user | String |
+| `objectSid` | `user.account.uid` | Security Identifier used for account identification | String |
+| `objectGUID` | `user.uid_alt` | Globally Unique Identifier - alternative identifier | String (GUID) |
+| `displayName` | `user.full_name` | User's display name | String |
+| `displayName` | `user.display_name` | User's display name | String |
+| `mail` | `user.email_addr` | User's email address | String |
+| `distinguishedName` | `user.domain` | Distinguished Name indicating organizational location | String |
+| `member_of` | `user.groups[]` | List of groups the user belongs to | Array of Groups |
+| `whenCreated` | `time` | Timestamp when the user was created in AD | Datetime |
+| `userAccountControl` | `enrichments[].data.is_enabled` | Indicates if the account is enabled (UAC & 2 check) | Boolean |
+| `lastLogon` | `enrichments[].data.last_logon` | Timestamp of user's last logon | Timestamp |
+| `badPwdCount` | `enrichments[].data.bad_password_count` | Number of failed password attempts | Integer |
+| `logonCount` | `enrichments[].data.number_of_logons` | Total number of successful logons | Integer |
+
+### OCSF Model Structure
+
+The connector produces user assets conforming to the OCSF User Inventory Info event class (UID: 5003) with the following structure:
+
+**Event Metadata:**
+
+- `activity_id`: 2 (Collect)
+- `activity_name`: "Collect"
+- `category_uid`: 5 (Discovery)
+- `category_name`: "Discovery"
+- `class_uid`: 5003 (User Inventory Info)
+- `class_name`: "User Inventory Info"
+- `type_uid`: 500302
+- `type_name`: "User Inventory"
+- `severity`: "Informational"
+- `severity_id`: 1
+
+**Product Metadata:**
+
+- `metadata.product.name`: "Microsoft Active Directory"
+- `metadata.product.vendor_name`: "Microsoft"
+- `metadata.product.version`: "N/A"
+- `metadata.version`: "1.6.0" (OCSF schema version)
+
+**User Object:**
+
+- `user.name`: Constructed from first and last name
+- `user.uid`: objectSid (primary identifier)
+- `user.uid_alt`: objectGUID (alternative identifier)
+- `user.full_name`: Display name
+- `user.display_name`: Display name
+- `user.email_addr`: Email address
+- `user.domain`: Distinguished Name
+- `user.type`: "User" or "Admin" (based on group membership)
+- `user.type_id`: 1 (User) or 2 (Admin)
+- `user.account`: Account object with type LDAP_ACCOUNT
+- `user.groups`: Array of Group objects
+
+### Enrichment Objects
+
+The connector provides additional enrichment data through the `enrichments` array:
+
+**Login Information Enrichment:**
+
+- `name`: "login"
+- `value`: "infos"
+- `data`: UserDataObject containing:
+  - `is_enabled`: Boolean indicating if the account is enabled (derived from userAccountControl bit flag)
+  - `last_logon`: Timestamp of the user's last successful logon (null if never logged in or invalid)
+  - `bad_password_count`: Number of failed password attempts
+  - `number_of_logons`: Total count of successful logons
+
+**User Type Detection:**
+
+The connector automatically determines user type based on group membership:
+
+- **Admin User**: If any group DN contains "admin" (case-insensitive)
+- **Regular User**: Default type for all other users
+
+**Notes:**
+
+- All attributes marked as "Unknown" if not present in Active Directory
+- The `lastLogon` value is validated to exclude invalid dates (before 1601)
+- The `objectGUID` is stripped of curly braces for consistent formatting
+- Group names are extracted from the Distinguished Name of each group membership
+
 ## Further Reading
 - [Microsoft: What is Active Directory](https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/get-started/virtual-dc/active-directory-domain-services-overview)
 - [LDAP Query Basics](https://learn.microsoft.com/en-us/previous-versions/windows/desktop/ldap/lightweight-directory-access-protocol-ldap-api)

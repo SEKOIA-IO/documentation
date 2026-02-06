@@ -64,3 +64,109 @@ To start getting your SentinelOne assets into Sekoia.io, you need to create an a
 !!! warning
     - Ensure you have the correct URL Domain for your SentinelOne Management Console.
     - The API token must have sufficient permissions to read endpoint and agent information.
+
+## Information Collected
+
+The SentinelOne EDR asset connector collects comprehensive device information from SentinelOne agents and maps it to the OCSF (Open Cybersecurity Schema Framework) Device Inventory Info standard.
+
+### Data Mapping Table
+
+The following table shows how SentinelOne agent data is mapped to OCSF Device model fields:
+
+| Source Field (SentinelOne) | OCSF Field Path | Description | Data Type |
+|----------------------------|-----------------|-------------|-----------|
+| `computerName` | `device.hostname` | Computer/device hostname | String |
+| `uuid` | `device.uid` | Primary unique identifier for the device | String |
+| `id` | `device.uid_alt` | Alternate unique identifier (agent ID) | String |
+| `machineType` | `device.type` / `device.type_id` | Device type (Desktop, Laptop, Server, etc.) | String / Integer |
+| `osType` | `device.os.type` / `device.os.type_id` | Operating system type (Windows, Linux, macOS, etc.) | String / Integer |
+| `osName` | `device.os.name` | Operating system name and version | String |
+| `osRevision` | `device.os.name` | OS revision combined with OS name | String |
+| `domain` | `device.domain` | Active Directory or network domain | String |
+| `externalIp` | `device.ip` | External/public IP address | String |
+| `groupIp` | `device.subnet` | Network subnet or IP range (e.g., "31.155.5.x") | String |
+| `networkInterfaces[].name` | `device.network_interfaces[].name` | Network interface name | String |
+| `networkInterfaces[].physical` | `device.network_interfaces[].mac` | MAC address | String |
+| `networkInterfaces[].inet[0]` | `device.network_interfaces[].ip` | IP address (first from inet list) | String |
+| `networkInterfaces[].id` | `device.network_interfaces[].uid` | Network interface unique identifier | String |
+| `modelName` | `device.model` | Device hardware model | String |
+| `osStartTime` | `device.boot_time` | Last boot/startup time | ISO 8601 String |
+| `createdAt` | `device.created_time` | Device/agent creation timestamp | Unix Timestamp |
+| `registeredAt` | `device.first_seen_time` | First registration timestamp | Unix Timestamp |
+| `lastActiveDate` | `device.last_seen_time` | Last activity timestamp | Unix Timestamp |
+| `isUpToDate` | `device.is_compliant` | Compliance status (agent up-to-date) | Boolean |
+| `siteName` | `device.region` | SentinelOne site name used as region | String |
+| `groupName` | `device.groups[].name` | Group name | String |
+| `groupId` | `device.groups[].uid` | Group unique identifier | String |
+| `locations[0].name` | `device.location.city` | Location city (from first location) | String |
+| `agentVersion` | `metadata.product.version` | SentinelOne agent version | String |
+
+### OCSF Model Structure
+
+The connector produces OCSF Device Inventory Info events with the following structure:
+
+```json
+{
+  "activity_id": 2,
+  "activity_name": "Collect",
+  "category_name": "Discovery",
+  "category_uid": 5,
+  "class_name": "Device Inventory Info",
+  "class_uid": 5001,
+  "device": {
+    "hostname": "<computerName>",
+    "uid": "<uuid>",
+    "uid_alt": "<id>",
+    "type": "<Desktop|Laptop|Server|etc>",
+    "type_id": "<1-99>",
+    "os": {
+      "name": "<osName osRevision>",
+      "type": "<Windows|Linux|macOS|etc>",
+      "type_id": "<100-499>"
+    },
+    "domain": "<domain>",
+    "ip": "<externalIp>",
+    "subnet": "<groupIp>",
+    "network_interfaces": [...],
+    "model": "<modelName>",
+    "vendor_name": "SentinelOne",
+    "boot_time": "<osStartTime>",
+    "created_time": "<timestamp>",
+    "first_seen_time": "<timestamp>",
+    "last_seen_time": "<timestamp>",
+    "is_managed": true,
+    "is_compliant": "<isUpToDate>",
+    "region": "<siteName>",
+    "groups": [...],
+    "location": {
+      "city": "<locations[0].name>"
+    }
+  },
+  "enrichments": [...],
+  "metadata": {
+    "product": {
+      "name": "SentinelOne",
+      "vendor_name": "SentinelOne",
+      "version": "<agentVersion>"
+    },
+    "version": "1.6.0"
+  },
+  "severity": "Informational",
+  "severity_id": 1,
+  "type_name": "Device Inventory Info: Collect",
+  "type_uid": 500102
+}
+```
+
+### Enrichment Objects
+
+The connector creates enrichment objects to capture additional security and operational information that doesn't fit directly into the OCSF Device model:
+
+| Enrichment Name | Source Field | Description | Value Type |
+|----------------|--------------|-------------|------------|
+| **Firewall** | `firewallEnabled` | Windows firewall status | "Enabled" / "Disabled" |
+| **Users** | `lastLoggedInUserName`, `osUsername` | User accounts associated with the device | Comma-separated string |
+| **Update Status** | `isUpToDate` | Agent update compliance status | "Up to Date" / "Update Required" |
+| **Active Threats** | `activeThreats` | Number of active threats detected | String (numeric) |
+| **Infection Status** | `infected` | Current infection state | "Infected" / "Clean" |
+
