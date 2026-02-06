@@ -1,0 +1,33 @@
+# {{ manifest.name }}
+
+{{ manifest.description | default('') }}
+
+{% if manifest.data_sources %}
+## Data Sources
+
+{% for source in manifest.data_sources %}
+- {{ source }}
+{% endfor %}
+{% endif %}
+
+{% if mapping.ocsf_class %}
+## OCSF Class
+
+`{{ mapping.ocsf_class }}`
+{% endif %}
+
+{% if mapping.fields %}
+## Field Mapping
+
+| Source Field | OCSF Field | Type | Description |
+|--------------|------------|------|-------------|
+{% for field in mapping.fields %}
+| `{{ field.source }}` | `{{ field.target }}` | {{ field.type | default('-') }} | {{ field.description | default('-') }} |
+{% endfor %}
+{% endif %}
+
+{% if manifest.notes %}
+## Notes
+
+{{ manifest.notes }}
+{% endif %}
