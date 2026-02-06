@@ -16,9 +16,25 @@ Microsoft Active Directory (AD) is a directory service developed by Microsoft fo
 
 To connect your on-premise Active Directory to Sekoia.io, ensure the following requirements are met:
 
-1. `Account Credentials`: A valid admin account.
+1. `Service Account`: A dedicated service account with read-only permissions.
+
+    !!! tip "Recommended: Create a least-privilege account"
+        Instead of using an admin account, create a dedicated service account with minimal permissions:
+        
+        1. Open **Active Directory Users and Computers**
+        2. Create a new user account (e.g., `svc-sekoia-sync`)
+        3. Right-click on the OU containing your users → **Delegate Control**
+        4. Add the service account and select **Read all user information**
+        5. Apply to the relevant OUs containing users
+        
+        This account only needs:
+        
+        - Read permissions on the Users container (or specific OUs)
+        - Read All Properties on User objects
+        - No write, delete, or modify permissions
 
 2. `Network Connectivity`: Ensure port 636 (LDAPS) is open between your network and the Sekoia.io ingestion point to allow secure communication.
+
 
 ### Create connector configuration
 
