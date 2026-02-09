@@ -11,7 +11,7 @@ Let's dive into the process of building your first query. You can choose between
 
 The Form mode acts as a wizard to help you structure your request without writing code.
 
-!!! tip "Discover the full potential of From mode"
+!!! tip "Discover the full potential of Form mode"
 
     To discover the all operators, clauses, and properties available within the Query Builder Form mode consult the [Query Form Reference article](/xdr/features/investigate/query_builder_form_reference.md).
 
