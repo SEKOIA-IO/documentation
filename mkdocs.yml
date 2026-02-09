@@ -103,7 +103,7 @@ nav:
         - Discover the query builder: xdr/features/investigate/query_builder.md
         - Create and manage queries: xdr/features/investigate/create_manage_queries.md
         - Share and duplicate queries: xdr/features/investigate/share_queries.md
-        - Data visualization guide: xdr/features/investigate/Data visualization guide.md
+        - Data visualization guide: xdr/features/investigate/data_visualization_guide.md
         - Query builder form mode reference: xdr/features/investigate/query_builder_form_reference.md
       - Sekoia Operating Language: xdr/features/investigate/sekoia_operating_language.md
       - Notebooks: xdr/features/investigate/notebooks.md
