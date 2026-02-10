@@ -50,7 +50,7 @@ Before configuring the integration, ensure that you have:
 
 ### Instruction on Sekoia
 
-{!_shared_content/operations_center/integrations/generated/f0270ace-6531-403d-8e82-39fe492d7561.md!}
+{!_shared_content/operations_center/integrations/generated/f0270ace-6531-403d-8e82-39fe492d7561_sample.md!}
 
 {!_shared_content/integration/detection_section.md!}
 
