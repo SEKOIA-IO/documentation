@@ -105,7 +105,7 @@ To get started with NXLog, follow these steps:
 
   Exec to_syslog_ietf();
   Exec $raw_event = replace($raw_event, '[NXLOG@', '[SEKOIA@53288 intake_key="YOUR_INTAKE_KEY"][NXLOG@', 1);
-  OutputType Syslog_TLS
+  OutputType Syslog_TLS #Only for TCP, not UDP
 </Output>
 
 <Route eventlog_to_sekoia_intake>
@@ -180,7 +180,7 @@ To get started, follow these steps:
   Module om_tcp
   Host RSYSLOG_HOST
   Port 514
-  OutputType Syslog_TLS
+  OutputType Syslog_TLS #Only for TCP, not UDP
 
   Exec to_syslog_ietf();
 </Output>
@@ -420,7 +420,7 @@ To ensure proper logging configuration, please follow the steps below:
         Module om_tcp
         Host RSYSLOG_HOST
         Port 514
-        OutputType Syslog_TLS
+        OutputType Syslog_TLS #Only for TCP, not UDP
 
         Exec to_syslog_ietf();
       </Output>
