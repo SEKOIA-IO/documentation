@@ -2,6 +2,89 @@ Changelog _last update on 2026-02-10_
 
 ## Changelog
 
+### CrowdStrike Falcon Intrusion Detection Low Severity EppDetection
+  - 10/02/2026 - minor - Update rule type to integration
+  - 05/08/2025 - minor - Alert severity updated to match Crowdstrike's values
+    
+### CrowdStrike Falcon Intrusion Detection Medium Severity EppDetection
+  - 10/02/2026 - minor - Update rule type to integration
+  - 05/08/2025 - minor - Alert severity updated to match Crowdstrike's values
+    
+### CrowdStrike Falcon Mobile Detection Critical Severity
+  - 10/02/2026 - minor - Update rule type to integration
+    
+### CrowdStrike Falcon Intrusion Detection EppDetection
+  - 10/02/2026 - minor - Update rule type to integration
+  - 05/08/2025 - minor - Alert severity updated to match Crowdstrike's values
+    
+### CrowdStrike Falcon Mobile Detection Medium Severity
+  - 10/02/2026 - minor - Update rule type to integration
+    
+### CrowdStrike Falcon Identity Protection Detection High Severity
+  - 10/02/2026 - minor - Update rule type to integration
+  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+    
+### CrowdStrike Falcon Mobile Detection Informational Severity
+  - 10/02/2026 - minor - Update rule type to integration
+    
+### CrowdStrike Falcon Intrusion Detection Medium Severity
+  - 10/02/2026 - minor - Update rule type to integration
+  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+    
+### CrowdStrike Falcon Mobile Detection High Severity
+  - 10/02/2026 - minor - Update rule type to integration
+    
+### CrowdStrike Falcon Identity Protection Detection Low Severity
+  - 10/02/2026 - minor - Update rule type to integration
+  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+    
+### CrowdStrike Falcon Intrusion Detection Critical Severity EppDetection
+  - 10/02/2026 - minor - Update rule type to integration
+    
+### CrowdStrike Falcon Intrusion Detection Informational Severity
+  - 10/02/2026 - minor - Update rule type to integration
+  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+    
+### CrowdStrike Falcon Identity Protection Detection Informational Severity
+  - 10/02/2026 - minor - Update rule type to integration
+  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+    
+### CrowdStrike Falcon Mobile Detection Low Severity
+  - 10/02/2026 - minor - Update rule type to integration
+    
+### CrowdStrike Falcon Intrusion Detection Low Severity
+  - 10/02/2026 - minor - Update rule type to integration
+  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+    
+### CrowdStrike Falcon Intrusion Detection High Severity EppDetection
+  - 10/02/2026 - minor - Update rule type to integration
+  - 02/10/2025 - minor - Alert severity updated to match Crowdstrike's values and sekoia rule CrowdStrike Falcon Intrusion Detection High Severity
+  - 05/08/2025 - minor - Alert severity updated to match Crowdstrike's values
+    
+### CrowdStrike Falcon Intrusion Detection Informational Severity EppDetection
+  - 10/02/2026 - minor - Update rule type to integration
+  - 05/08/2025 - minor - Alert severity updated to match Crowdstrike's values
+    
+### CrowdStrike Falcon Identity Protection Detection Critical Severity
+  - 10/02/2026 - minor - Update rule type to integration
+  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+    
+### CrowdStrike Falcon Intrusion Detection Critical Severity
+  - 10/02/2026 - minor - Update rule type to integration
+  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+    
+### CrowdStrike Falcon Intrusion Detection High Severity
+  - 10/02/2026 - minor - Update rule type to integration
+  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+    
+### CrowdStrike Falcon Intrusion Detection
+  - 10/02/2026 - minor - Update rule type to integration
+  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+    
+### CrowdStrike Falcon Identity Protection Detection Medium Severity
+  - 10/02/2026 - minor - Update rule type to integration
+  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+    
 ### SentinelOne EDR Agent Disabled
   - 02/02/2026 - minor - Update rule type to integration
     
@@ -168,10 +251,6 @@ Changelog _last update on 2026-02-10_
   - 06/10/2025 - minor - Improve filter to reduce false positives.
   - 28/07/2025 - major - Improve filter and similarity strategy.
     
-### CrowdStrike Falcon Intrusion Detection High Severity EppDetection
-  - 02/10/2025 - minor - Alert severity updated to match Crowdstrike's values and sekoia rule CrowdStrike Falcon Intrusion Detection High Severity
-  - 05/08/2025 - minor - Alert severity updated to match Crowdstrike's values
-    
 ### Malware Persistence Registry Key
   - 30/09/2025 - minor - Update selection to improve detection
   - 28/08/2025 - minor - Filter some FPs on key values
@@ -279,18 +358,6 @@ Changelog _last update on 2026-02-10_
   - 27/05/2024 - minor - Added new filters to reduce false positives.
   - 21/11/2023 - minor - Added new filters to reduce false positives.
   - 08/11/2023 - minor - Added filter to reduce false positives
-    
-### CrowdStrike Falcon Intrusion Detection Low Severity EppDetection
-  - 05/08/2025 - minor - Alert severity updated to match Crowdstrike's values
-    
-### CrowdStrike Falcon Intrusion Detection Medium Severity EppDetection
-  - 05/08/2025 - minor - Alert severity updated to match Crowdstrike's values
-    
-### CrowdStrike Falcon Intrusion Detection EppDetection
-  - 05/08/2025 - minor - Alert severity updated to match Crowdstrike's values
-    
-### CrowdStrike Falcon Intrusion Detection Informational Severity EppDetection
-  - 05/08/2025 - minor - Alert severity updated to match Crowdstrike's values
     
 ### Suspicious Windows DNS Queries
   - 21/07/2025 - minor - Updating pattern with new field and new filter to avoid false positives.
@@ -1290,49 +1357,16 @@ Changelog _last update on 2026-02-10_
 ### Trend Micro Apex One Intrusion Detection Alert
   - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
     
-### CrowdStrike Falcon Identity Protection Detection High Severity
-  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
-    
-### CrowdStrike Falcon Intrusion Detection Medium Severity
-  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
-    
 ### Login Brute-Force Successful On SentinelOne EDR Management Console
   - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
     
 ### Trend Micro Apex One Data Loss Prevention Alert
   - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
     
-### CrowdStrike Falcon Identity Protection Detection Low Severity
-  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
-    
 ### Login Failed Brute-Force On SentinelOne EDR Management Console
   - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
     
-### CrowdStrike Falcon Intrusion Detection Informational Severity
-  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
-    
-### CrowdStrike Falcon Identity Protection Detection Informational Severity
-  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
-    
-### CrowdStrike Falcon Intrusion Detection Low Severity
-  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
-    
-### CrowdStrike Falcon Identity Protection Detection Critical Severity
-  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
-    
-### CrowdStrike Falcon Intrusion Detection Critical Severity
-  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
-    
-### CrowdStrike Falcon Intrusion Detection High Severity
-  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
-    
-### CrowdStrike Falcon Intrusion Detection
-  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
-    
 ### WithSecure Elements Critical Severity
-  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
-    
-### CrowdStrike Falcon Identity Protection Detection Medium Severity
   - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
     
 ### Cybereason EDR Alert

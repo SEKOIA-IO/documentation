@@ -2124,6 +2124,7 @@ Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-
     
     - **Changelog:**
     
+        - 10/02/2026 - minor - Update rule type to integration
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
             
 ??? abstract "CrowdStrike Falcon Identity Protection Detection High Severity"
@@ -2134,6 +2135,7 @@ Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-
     
     - **Changelog:**
     
+        - 10/02/2026 - minor - Update rule type to integration
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
             
 ??? abstract "CrowdStrike Falcon Identity Protection Detection Informational Severity"
@@ -2144,6 +2146,7 @@ Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-
     
     - **Changelog:**
     
+        - 10/02/2026 - minor - Update rule type to integration
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
             
 ??? abstract "CrowdStrike Falcon Identity Protection Detection Low Severity"
@@ -2154,6 +2157,7 @@ Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-
     
     - **Changelog:**
     
+        - 10/02/2026 - minor - Update rule type to integration
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
             
 ??? abstract "CrowdStrike Falcon Identity Protection Detection Medium Severity"
@@ -2164,6 +2168,7 @@ Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-
     
     - **Changelog:**
     
+        - 10/02/2026 - minor - Update rule type to integration
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
             
 ??? abstract "CrowdStrike Falcon Intrusion Detection"
@@ -2174,6 +2179,7 @@ Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-
     
     - **Changelog:**
     
+        - 10/02/2026 - minor - Update rule type to integration
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
             
 ??? abstract "CrowdStrike Falcon Intrusion Detection Critical Severity"
@@ -2184,6 +2190,7 @@ Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-
     
     - **Changelog:**
     
+        - 10/02/2026 - minor - Update rule type to integration
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
             
 ??? abstract "CrowdStrike Falcon Intrusion Detection Critical Severity EppDetection"
@@ -2192,6 +2199,10 @@ Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 10/02/2026 - minor - Update rule type to integration
+            
 ??? abstract "CrowdStrike Falcon Intrusion Detection EppDetection"
     
     CrowdStrike Falcon agent raised an alert for an intrusion detection with the new EppDetectionSummaryEvent type.
@@ -2200,6 +2211,7 @@ Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-
     
     - **Changelog:**
     
+        - 10/02/2026 - minor - Update rule type to integration
         - 05/08/2025 - minor - Alert severity updated to match Crowdstrike's values
             
 ??? abstract "CrowdStrike Falcon Intrusion Detection High Severity"
@@ -2210,6 +2222,7 @@ Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-
     
     - **Changelog:**
     
+        - 10/02/2026 - minor - Update rule type to integration
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
             
 ??? abstract "CrowdStrike Falcon Intrusion Detection High Severity EppDetection"
@@ -2220,6 +2233,7 @@ Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-
     
     - **Changelog:**
     
+        - 10/02/2026 - minor - Update rule type to integration
         - 02/10/2025 - minor - Alert severity updated to match Crowdstrike's values and sekoia rule CrowdStrike Falcon Intrusion Detection High Severity
         - 05/08/2025 - minor - Alert severity updated to match Crowdstrike's values
             
@@ -2231,6 +2245,7 @@ Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-
     
     - **Changelog:**
     
+        - 10/02/2026 - minor - Update rule type to integration
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
             
 ??? abstract "CrowdStrike Falcon Intrusion Detection Informational Severity EppDetection"
@@ -2241,6 +2256,7 @@ Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-
     
     - **Changelog:**
     
+        - 10/02/2026 - minor - Update rule type to integration
         - 05/08/2025 - minor - Alert severity updated to match Crowdstrike's values
             
 ??? abstract "CrowdStrike Falcon Intrusion Detection Low Severity"
@@ -2251,6 +2267,7 @@ Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-
     
     - **Changelog:**
     
+        - 10/02/2026 - minor - Update rule type to integration
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
             
 ??? abstract "CrowdStrike Falcon Intrusion Detection Low Severity EppDetection"
@@ -2261,6 +2278,7 @@ Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-
     
     - **Changelog:**
     
+        - 10/02/2026 - minor - Update rule type to integration
         - 05/08/2025 - minor - Alert severity updated to match Crowdstrike's values
             
 ??? abstract "CrowdStrike Falcon Intrusion Detection Medium Severity"
@@ -2271,6 +2289,7 @@ Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-
     
     - **Changelog:**
     
+        - 10/02/2026 - minor - Update rule type to integration
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
             
 ??? abstract "CrowdStrike Falcon Intrusion Detection Medium Severity EppDetection"
@@ -2281,6 +2300,7 @@ Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-
     
     - **Changelog:**
     
+        - 10/02/2026 - minor - Update rule type to integration
         - 05/08/2025 - minor - Alert severity updated to match Crowdstrike's values
             
 ??? abstract "Cybereason EDR Alert"
@@ -3414,6 +3434,7 @@ Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-
     
     - **Changelog:**
     
+        - 10/02/2026 - minor - Update rule type to integration
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
             
 ??? abstract "CrowdStrike Falcon Identity Protection Detection High Severity"
@@ -3424,6 +3445,7 @@ Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-
     
     - **Changelog:**
     
+        - 10/02/2026 - minor - Update rule type to integration
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
             
 ??? abstract "CrowdStrike Falcon Identity Protection Detection Informational Severity"
@@ -3434,6 +3456,7 @@ Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-
     
     - **Changelog:**
     
+        - 10/02/2026 - minor - Update rule type to integration
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
             
 ??? abstract "CrowdStrike Falcon Identity Protection Detection Low Severity"
@@ -3444,6 +3467,7 @@ Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-
     
     - **Changelog:**
     
+        - 10/02/2026 - minor - Update rule type to integration
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
             
 ??? abstract "CrowdStrike Falcon Identity Protection Detection Medium Severity"
@@ -3454,6 +3478,7 @@ Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-
     
     - **Changelog:**
     
+        - 10/02/2026 - minor - Update rule type to integration
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
             
 ??? abstract "CrowdStrike Falcon Intrusion Detection"
@@ -3464,6 +3489,7 @@ Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-
     
     - **Changelog:**
     
+        - 10/02/2026 - minor - Update rule type to integration
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
             
 ??? abstract "CrowdStrike Falcon Intrusion Detection Critical Severity"
@@ -3474,6 +3500,7 @@ Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-
     
     - **Changelog:**
     
+        - 10/02/2026 - minor - Update rule type to integration
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
             
 ??? abstract "CrowdStrike Falcon Intrusion Detection Critical Severity EppDetection"
@@ -3482,6 +3509,10 @@ Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 10/02/2026 - minor - Update rule type to integration
+            
 ??? abstract "CrowdStrike Falcon Intrusion Detection EppDetection"
     
     CrowdStrike Falcon agent raised an alert for an intrusion detection with the new EppDetectionSummaryEvent type.
@@ -3490,6 +3521,7 @@ Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-
     
     - **Changelog:**
     
+        - 10/02/2026 - minor - Update rule type to integration
         - 05/08/2025 - minor - Alert severity updated to match Crowdstrike's values
             
 ??? abstract "CrowdStrike Falcon Intrusion Detection High Severity"
@@ -3500,6 +3532,7 @@ Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-
     
     - **Changelog:**
     
+        - 10/02/2026 - minor - Update rule type to integration
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
             
 ??? abstract "CrowdStrike Falcon Intrusion Detection High Severity EppDetection"
@@ -3510,6 +3543,7 @@ Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-
     
     - **Changelog:**
     
+        - 10/02/2026 - minor - Update rule type to integration
         - 02/10/2025 - minor - Alert severity updated to match Crowdstrike's values and sekoia rule CrowdStrike Falcon Intrusion Detection High Severity
         - 05/08/2025 - minor - Alert severity updated to match Crowdstrike's values
             
@@ -3521,6 +3555,7 @@ Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-
     
     - **Changelog:**
     
+        - 10/02/2026 - minor - Update rule type to integration
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
             
 ??? abstract "CrowdStrike Falcon Intrusion Detection Informational Severity EppDetection"
@@ -3531,6 +3566,7 @@ Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-
     
     - **Changelog:**
     
+        - 10/02/2026 - minor - Update rule type to integration
         - 05/08/2025 - minor - Alert severity updated to match Crowdstrike's values
             
 ??? abstract "CrowdStrike Falcon Intrusion Detection Low Severity"
@@ -3541,6 +3577,7 @@ Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-
     
     - **Changelog:**
     
+        - 10/02/2026 - minor - Update rule type to integration
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
             
 ??? abstract "CrowdStrike Falcon Intrusion Detection Low Severity EppDetection"
@@ -3551,6 +3588,7 @@ Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-
     
     - **Changelog:**
     
+        - 10/02/2026 - minor - Update rule type to integration
         - 05/08/2025 - minor - Alert severity updated to match Crowdstrike's values
             
 ??? abstract "CrowdStrike Falcon Intrusion Detection Medium Severity"
@@ -3561,6 +3599,7 @@ Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-
     
     - **Changelog:**
     
+        - 10/02/2026 - minor - Update rule type to integration
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
             
 ??? abstract "CrowdStrike Falcon Intrusion Detection Medium Severity EppDetection"
@@ -3571,6 +3610,7 @@ Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-
     
     - **Changelog:**
     
+        - 10/02/2026 - minor - Update rule type to integration
         - 05/08/2025 - minor - Alert severity updated to match Crowdstrike's values
             
 ??? abstract "Cybereason EDR Alert"
@@ -4603,6 +4643,7 @@ Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-
     
     - **Changelog:**
     
+        - 10/02/2026 - minor - Update rule type to integration
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
             
 ??? abstract "CrowdStrike Falcon Identity Protection Detection High Severity"
@@ -4613,6 +4654,7 @@ Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-
     
     - **Changelog:**
     
+        - 10/02/2026 - minor - Update rule type to integration
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
             
 ??? abstract "CrowdStrike Falcon Identity Protection Detection Informational Severity"
@@ -4623,6 +4665,7 @@ Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-
     
     - **Changelog:**
     
+        - 10/02/2026 - minor - Update rule type to integration
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
             
 ??? abstract "CrowdStrike Falcon Identity Protection Detection Low Severity"
@@ -4633,6 +4676,7 @@ Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-
     
     - **Changelog:**
     
+        - 10/02/2026 - minor - Update rule type to integration
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
             
 ??? abstract "CrowdStrike Falcon Identity Protection Detection Medium Severity"
@@ -4643,6 +4687,7 @@ Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-
     
     - **Changelog:**
     
+        - 10/02/2026 - minor - Update rule type to integration
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
             
 ??? abstract "CrowdStrike Falcon Intrusion Detection"
@@ -4653,6 +4698,7 @@ Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-
     
     - **Changelog:**
     
+        - 10/02/2026 - minor - Update rule type to integration
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
             
 ??? abstract "CrowdStrike Falcon Intrusion Detection Critical Severity"
@@ -4663,6 +4709,7 @@ Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-
     
     - **Changelog:**
     
+        - 10/02/2026 - minor - Update rule type to integration
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
             
 ??? abstract "CrowdStrike Falcon Intrusion Detection Critical Severity EppDetection"
@@ -4671,6 +4718,10 @@ Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 10/02/2026 - minor - Update rule type to integration
+            
 ??? abstract "CrowdStrike Falcon Intrusion Detection EppDetection"
     
     CrowdStrike Falcon agent raised an alert for an intrusion detection with the new EppDetectionSummaryEvent type.
@@ -4679,6 +4730,7 @@ Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-
     
     - **Changelog:**
     
+        - 10/02/2026 - minor - Update rule type to integration
         - 05/08/2025 - minor - Alert severity updated to match Crowdstrike's values
             
 ??? abstract "CrowdStrike Falcon Intrusion Detection High Severity"
@@ -4689,6 +4741,7 @@ Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-
     
     - **Changelog:**
     
+        - 10/02/2026 - minor - Update rule type to integration
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
             
 ??? abstract "CrowdStrike Falcon Intrusion Detection High Severity EppDetection"
@@ -4699,6 +4752,7 @@ Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-
     
     - **Changelog:**
     
+        - 10/02/2026 - minor - Update rule type to integration
         - 02/10/2025 - minor - Alert severity updated to match Crowdstrike's values and sekoia rule CrowdStrike Falcon Intrusion Detection High Severity
         - 05/08/2025 - minor - Alert severity updated to match Crowdstrike's values
             
@@ -4710,6 +4764,7 @@ Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-
     
     - **Changelog:**
     
+        - 10/02/2026 - minor - Update rule type to integration
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
             
 ??? abstract "CrowdStrike Falcon Intrusion Detection Informational Severity EppDetection"
@@ -4720,6 +4775,7 @@ Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-
     
     - **Changelog:**
     
+        - 10/02/2026 - minor - Update rule type to integration
         - 05/08/2025 - minor - Alert severity updated to match Crowdstrike's values
             
 ??? abstract "CrowdStrike Falcon Intrusion Detection Low Severity"
@@ -4730,6 +4786,7 @@ Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-
     
     - **Changelog:**
     
+        - 10/02/2026 - minor - Update rule type to integration
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
             
 ??? abstract "CrowdStrike Falcon Intrusion Detection Low Severity EppDetection"
@@ -4740,6 +4797,7 @@ Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-
     
     - **Changelog:**
     
+        - 10/02/2026 - minor - Update rule type to integration
         - 05/08/2025 - minor - Alert severity updated to match Crowdstrike's values
             
 ??? abstract "CrowdStrike Falcon Intrusion Detection Medium Severity"
@@ -4750,6 +4808,7 @@ Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-
     
     - **Changelog:**
     
+        - 10/02/2026 - minor - Update rule type to integration
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
             
 ??? abstract "CrowdStrike Falcon Intrusion Detection Medium Severity EppDetection"
@@ -4760,6 +4819,7 @@ Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-
     
     - **Changelog:**
     
+        - 10/02/2026 - minor - Update rule type to integration
         - 05/08/2025 - minor - Alert severity updated to match Crowdstrike's values
             
 ??? abstract "Csrss Child Found"
@@ -14417,30 +14477,50 @@ Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 10/02/2026 - minor - Update rule type to integration
+            
 ??? abstract "CrowdStrike Falcon Mobile Detection High Severity"
     
     CrowdStrike Falcon for Mobile raised an alert with high severity
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 10/02/2026 - minor - Update rule type to integration
+            
 ??? abstract "CrowdStrike Falcon Mobile Detection Informational Severity"
     
     CrowdStrike Falcon for Mobile raised an alert with informational severity
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 10/02/2026 - minor - Update rule type to integration
+            
 ??? abstract "CrowdStrike Falcon Mobile Detection Low Severity"
     
     CrowdStrike Falcon for Mobile raised an alert with low severity
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 10/02/2026 - minor - Update rule type to integration
+            
 ??? abstract "CrowdStrike Falcon Mobile Detection Medium Severity"
     
     CrowdStrike Falcon for Mobile raised an alert with medium severity
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 10/02/2026 - minor - Update rule type to integration
+            
 ??? abstract "Cryptomining"
     
     Detection of domain names potentially related to cryptomining activities.
