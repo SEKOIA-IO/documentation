@@ -45,7 +45,7 @@ Before configuring the integration, ensure that you have:
 
 1. Log in to the USTA platform.
 2. Navigate to the Management -> Company Settings -> Integrations -> API keys.
-3. Locate your API token and copy.
+3. Locate your API token and copy it.
 4. Save these credentials for use in Sekoia.io.
 
 ### Instruction on Sekoia
