@@ -243,6 +243,19 @@ export const OpenAPIViewer = {
             data.cur1 = level1 || null
             data.cur2 = level2 || null
             animateAccordion()
+            posthogTracking()
+        }
+
+        let posthog_debounce_timeout = null;
+        function posthogTracking(now = false) {
+            if (!now) {
+                if (posthog_debounce_timeout !== null) clearTimeout(posthog_debounce_timeout)
+                posthog_debounce_timeout = setTimeout(() => posthogTracking(true), 2000)
+                return;
+            }
+            posthog.capture("$pageview", {
+                $current_url: window.location.href,
+            });
         }
 
         setTimeout(afterRender, 50)
