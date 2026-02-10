@@ -59,7 +59,7 @@ This integration allows you to ingest BeyondTrust Privileged Remote Access sessi
 
 ### Instruction on Sekoia
 
-{!_shared_content/operations_center/integrations/generated/f6cfddb4-543a-41fe-9802-c66b7c90366d.md!}
+{!_shared_content/operations_center/integrations/generated/f6cfddb4-543a-41fe-9802-c66b7c90366d_sample.md!}
 
 {!_shared_content/integration/detection_section.md!}
 
