@@ -11,6 +11,9 @@ type: intake
 - **Supported application or feature**:
     - Threat Detection
 
+!!! Warning
+    Important note - This format is currently in beta. We highly value your feedback to improve its performance.
+
 ## Configure
 
 ### Pre-requisite
@@ -23,10 +26,10 @@ To setup the integration, you need to have access to `Wiz Console`.
 - Go to `Settings` > `Service Accounts`
 - Type a name for the new service account. e.g: [Sekoia.io](http://Sekoia.io) Integration
 - Select next permissions:
-  - `read:detection`
-  - `read:cloud_events_cloud`
-  - `read:cloud_events_sensor`
-  - `read:security_scans`
+    - `read:detection`
+    - `read:cloud_events_cloud`
+    - `read:cloud_events_sensor`
+    - `read:security_scans`
 - Click `Add Service Account`
 - Copy the Client ID and the Client Secret
 
