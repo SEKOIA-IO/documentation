@@ -1,4 +1,4 @@
-uuid: b6e2e2e2-4c3a-4b7a-9e2a-1f2c3d4e5f6a
+uuid: 7dc16ecd-c119-4ca5-9039-1c83e355918a
 name: Entra ID
 type: asset
 
