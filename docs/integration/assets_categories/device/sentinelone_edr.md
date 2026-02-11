@@ -64,3 +64,5 @@ To start getting your SentinelOne assets into Sekoia.io, you need to create an a
 !!! warning
     - Ensure you have the correct URL Domain for your SentinelOne Management Console.
     - The API token must have sufficient permissions to read endpoint and agent information.
+
+{!_shared_content/operations_center/integrations/generated_assets_documentation/sentinelone_device.md!}

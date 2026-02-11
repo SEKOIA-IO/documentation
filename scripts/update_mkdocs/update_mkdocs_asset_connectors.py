@@ -12,11 +12,12 @@ ASSET_TYPES = ["device", "user", "vulnerability"]
 def find_asset_connectors_folder(module_path: Path) -> Path | None:
     excluded_dirs = {".venv", "venv", "tests", "__pycache__", ".git", "node_modules", ".mypy_cache"}
 
-    for path in module_path.rglob("asset_connector"):
-        if path.is_dir():
-            parts = path.relative_to(module_path).parts
-            if not any(part in excluded_dirs for part in parts):
-                return path
+    for folder_name in ["asset_connector", "asset_connectors"]:
+        for path in module_path.rglob(folder_name):
+            if path.is_dir():
+                parts = path.relative_to(module_path).parts
+                if not any(part in excluded_dirs for part in parts):
+                    return path
     return None
 
 
