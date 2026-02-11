@@ -89,6 +89,8 @@ To start getting your Okta devices into Sekoia.io, you need to create an asset c
 
 6. Click the **Create asset connector** button.
 
+{!_shared_content/operations_center/integrations/generated_assets_documentation/okta_device.md!}
+
 ## Further Reading
 - [Okta Documentation](https://developer.okta.com/docs/)
 - [Okta Device Management API](https://developer.okta.com/docs/reference/api/devices/)

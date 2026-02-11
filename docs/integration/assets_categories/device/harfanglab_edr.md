@@ -59,3 +59,5 @@ To start getting your HarfangLab assets into Sekoia.io, you need to create an as
 
 !!! warning
     - Make sure to include your port number in the `URL` field by appending it to the URL, for example: `https://your-harfanglab-instance.com:8443`.
+
+{!_shared_content/operations_center/integrations/generated_assets_documentation/harfanglab_device.md!}

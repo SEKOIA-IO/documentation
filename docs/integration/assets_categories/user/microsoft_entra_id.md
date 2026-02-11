@@ -135,6 +135,8 @@ To start getting your Microsoft Entra ID users into Sekoia.io, you need to creat
 
 6. Click the **Create asset connector** button.
 
+{!_shared_content/operations_center/integrations/generated_assets_documentation/azure-ad_user.md!}
+
 ## Further Reading
 - [Microsoft Entra ID Documentation](https://docs.microsoft.com/en-us/azure/active-directory/)
 - [Microsoft Graph API](https://docs.microsoft.com/en-us/graph/)

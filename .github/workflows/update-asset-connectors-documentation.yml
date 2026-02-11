@@ -1,0 +1,53 @@
+name: Update assets connectors documentation
+on:
+  workflow_dispatch:
+  repository_dispatch:
+    types: [rebuild-assets-documentation]
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout `documentation` repository under `main/`
+      uses: actions/checkout@v6
+      with:
+        path: main
+
+    - name: Checkout `automation-module` repository under `asset_connectors/`
+      uses: actions/checkout@v6
+      with:
+        repository: SEKOIA-IO/automation-module
+        path: asset_connectors
+
+    - name: Install uv
+      uses: astral-sh/setup-uv@v7
+      with:
+        enable-cache: true
+
+    - name: Setup Python
+      uses: actions/setup-python@v6
+      id: setup-python
+      with:
+        python-version: '3.14'
+
+    - name: Refresh assets connectors documentation
+      run: |
+        rm -rf ../../_shared_content/operations_center/integrations/generated_assets_documentation/*.md
+        uv run python update_mkdocs_asset_connectors.py $GITHUB_WORKSPACE/asset_connectors $GITHUB_WORKSPACE/main
+      working-directory: ./main/scripts/update_mkdocs
+
+    - name: Create Pull Request
+      uses: peter-evans/create-pull-request@v8
+      with:
+        commit-message: Refresh assets connectors documentation
+        delete-branch: true
+        title: Refresh assets connectors documentation
+        base: main
+        path: ./main
+        branch: update-assets-documentation
+        body: |
+          Refresh assets connectors documentation
