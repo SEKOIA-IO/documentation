@@ -66,7 +66,9 @@ The app registration must have the following permissions to successfully fetch E
         "Group.Read.All",
         "GroupMember.Read.All",
         "Directory.Read.All",
-        "UserAuthenticationMethod.Read.All"
+        "UserAuthenticationMethod.Read.All",
+        "AuditLog.Read.All"
+
     ]
 }
 ```
@@ -78,6 +80,7 @@ The app registration must have the following permissions to successfully fetch E
 - `GroupMember.Read.All`: Read group memberships
 - `Directory.Read.All`: Read directory data
 - `UserAuthenticationMethod.Read.All`: Read user authentication methods
+- `AuditLog.Read.All`: Read audit logs (optional, for enhanced logging and monitoring)
 
 ### How to grant API permissions
 
@@ -100,6 +103,7 @@ To grant the required permissions to your app registration:
       - `GroupMember.Read.All`
       - `Directory.Read.All`
       - `UserAuthenticationMethod.Read.All`
+      - `AuditLog.Read.All`
 
     ![Application permissions selection](/assets/operation_center/asset_connectors/user/microsoft/entra_id/entra_id_application_10.png)
 
@@ -134,6 +138,76 @@ To start getting your Microsoft Entra ID users into Sekoia.io, you need to creat
     ![Connector test result and Create asset connector button highlighted](/assets/operation_center/asset_connectors/user/microsoft/entra_id/entra_id_asset_2.png)
 
 6. Click the **Create asset connector** button.
+
+## Information Collected
+
+The Microsoft Entra ID asset connector retrieves comprehensive user information from your Entra ID tenant and maps it to the OCSF (Open Cybersecurity Schema Framework) User Inventory model. Below is a detailed mapping table showing how data is collected and transformed:
+
+### Data Mapping Table
+
+| Microsoft Entra ID Field | OCSF Field Path | Description | Data Type |
+|--------------------------|-----------------|-------------|-----------|
+| `id` | `user.uid` | Unique user identifier in Entra ID | String |
+| `displayName` | `user.name` | User's display name | String |
+| `mail` | `user.email_addr` | User's primary email address | String |
+| `userPrincipalName` | `user.account.name` | User principal name (UPN) | String |
+| `userPrincipalName` (domain part) | `user.domain` | Domain extracted from UPN (after @) | String |
+| `mailNickname` | `user.email_addr` (fallback) | Email alias if primary email is unavailable | String |
+| `accountEnabled` | `enrichments[].data.is_enabled` | Account enabled/disabled status | Boolean |
+| `department` | `enrichments[].data` (employment) | User's department | String |
+| `jobTitle` | `enrichments[].data` (employment) | User's job title | String |
+| `employeeId` | `enrichments[].data` (employment) | Employee identifier | String |
+| `employeeType` | `enrichments[].data` (employment) | Type of employee (e.g., employee, contractor) | String |
+| `companyName` | `user.org.name` | Company/organization name | String |
+| `officeLocation` | `user.org.ou_name` | Physical office location | String |
+| `createdDateTime` | `time` | Account creation timestamp | DateTime |
+| `signInActivity.lastSignInDateTime` | `enrichments[].data.last_logon` | Last successful sign-in timestamp | DateTime |
+| `isManagementRestricted` | `enrichments[].data.is_restricted` | Management restriction status | Boolean |
+| **Derived from Groups API** | | | |
+| Group membership | `user.groups[]` | List of groups user belongs to | Array |
+| Group `id` | `user.groups[].uid` | Group unique identifier | String |
+| Group `displayName` | `user.groups[].name` | Group display name | String |
+| **Derived from Directory Roles API** | | | |
+| Admin role membership | `user.type_id` / `user.type_str` | User type (User=0, Admin=1) | Enum |
+| **Derived from Authentication Methods API** | | | |
+| MFA methods (Authenticator, Phone, OATH) | `enrichments[].data.is_mfa` | Multi-factor authentication status | Boolean |
+
+### OCSF Model Structure
+
+The connector generates a complete OCSF User Inventory event with the following structure:
+
+- **OCSF Class**: User Inventory Info (class_uid: 5003)
+- **OCSF Category**: Discovery (category_uid: 5)
+- **Activity**: Collect (activity_id: 2)
+- **Type**: User Inventory (type_uid: 500302)
+
+### Enrichment Objects
+
+The connector creates multiple enrichment objects to provide additional context:
+
+1. **Account Status Enrichment** (`enrichments[0]`):
+   - `name`: "account"
+   - `value`: "status"
+   - Contains: `is_enabled`, `is_mfa`, `is_restricted`, `last_logon`
+
+2. **Employment Information Enrichment** (`enrichments[1]`, if applicable):
+   - `name`: "employment"
+   - `value`: Department and Job Title
+   - Contains: Employment-related attributes
+
+### API Endpoints Used
+
+The connector makes the following Microsoft Graph API calls:
+
+1. **Users List**: `GET /users` - Retrieves user profiles with filtering by creation date
+2. **User Groups**: `GET /users/{user_id}/memberOf` - Fetches group memberships
+3. **Admin Roles**: `GET /users/{user_id}/transitiveMemberOf/microsoft.graph.directoryRole` - Checks for admin role assignments
+4. **MFA Methods**: `GET /users/{user_id}/authentication/methods` - Retrieves configured authentication methods
+
+!!! Note
+    - The connector supports incremental synchronization, fetching only users created after the last successful run.
+    - Pagination is automatically handled for large datasets.
+    - All timestamps are converted to Unix epoch format for OCSF compatibility.
 
 ## Further Reading
 - [Microsoft Entra ID Documentation](https://docs.microsoft.com/en-us/azure/active-directory/)

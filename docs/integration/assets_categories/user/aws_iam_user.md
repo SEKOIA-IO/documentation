@@ -148,9 +148,111 @@ To start getting your AWS IAM users into Sekoia.io, you need to create an asset 
 
 6. Click the **Create asset connector** button.
 
+## Information Collected
+
+The AWS IAM asset connector fetches comprehensive user information from AWS IAM and transforms it into the OCSF (Open Cybersecurity Schema Framework) User Inventory format for standardized security monitoring and asset management.
+
+### Data Mapping Table
+
+The following table shows how AWS IAM user data is mapped to OCSF model fields:
+
+| Source Field | OCSF Field Path | Description | Data Type |
+|--------------|-----------------|-------------|-----------|
+| `UserName` | `user.name` | The IAM user's username | String |
+| `Arn` | `user.uid` | AWS Resource Name (unique identifier) | String |
+| `UserId` | `user.account.uid_alt` | AWS internal user ID | String |
+| `CreateDate` | `time` | User creation timestamp (Unix epoch) | Integer (timestamp) |
+| `UserName` | `user.account.name` | Account name (same as username) | String |
+| `Arn` | `user.account.uid` | Account unique identifier (ARN) | String |
+| `Groups[].GroupName` | `user.groups[].name` | Name of IAM group | String |
+| `Groups[].Arn` | `user.groups[].uid` | Group unique identifier (ARN) | String |
+| `Groups[].Policies` | `user.groups[].privileges[]` | List of policy names attached to group | Array[String] |
+| `MFADevices[]` | `user.has_mfa` | Whether user has MFA enabled | Boolean |
+| `Arn` (extracted) | `user.org.uid` | AWS Account ID extracted from ARN | String |
+| `Arn` (extracted) | `user.org.name` | Organization name (e.g., "AWS Account 123456789012") | String |
+| Admin policy check | `user.type` | User type: "Admin" or "User" | String (Enum) |
+| Admin policy check | `user.type_id` | User type ID: 2 (Admin) or 1 (User) | Integer (Enum) |
+
+### OCSF Model Structure
+
+The connector generates OCSF User Inventory events (class UID 5003) with the following structure:
+
+```json
+{
+  "activity_id": 2,
+  "activity_name": "Collect",
+  "category_name": "Discovery",
+  "category_uid": 5,
+  "class_name": "User Inventory",
+  "class_uid": 5003,
+  "type_name": "User Inventory Info: Collect",
+  "type_uid": 500301,
+  "time": "<unix_timestamp>",
+  "metadata": {
+    "product": {
+      "name": "AWS IAM Asset Connector",
+      "version": "<version>"
+    },
+    "version": "<ocsf_version>"
+  },
+  "user": {
+    "name": "<username>",
+    "uid": "<user_arn>",
+    "type": "User|Admin",
+    "type_id": 1|2,
+    "has_mfa": true|false,
+    "account": {
+      "name": "<username>",
+      "type": "AWS Account",
+      "type_id": 10,
+      "uid": "<user_arn>",
+      "uid_alt": "<user_id>"
+    },
+    "groups": [
+      {
+        "name": "<group_name>",
+        "uid": "<group_arn>",
+        "privileges": ["<policy_name>", ...]
+      }
+    ],
+    "org": {
+      "name": "AWS Account <account_id>",
+      "uid": "<account_id>"
+    }
+  }
+}
+```
+
+### API Endpoints Used
+
+The connector uses the following AWS IAM API endpoints to collect user information:
+
+| API Endpoint | Purpose | Pagination | Error Handling |
+|--------------|---------|------------|----------------|
+| `list_users` | Retrieve all IAM users in the account | Yes (paginated) | ClientError, BotoCoreError, NoCredentialsError |
+| `list_groups_for_user` | Get groups for a specific user | Yes (paginated) | ClientError, BotoCoreError |
+| `list_attached_group_policies` | Get policies attached to a group | Yes (paginated) | ClientError, BotoCoreError |
+| `list_mfa_devices` | Check if user has MFA devices configured | No | ClientError, BotoCoreError |
+
+#### API Call Workflow
+
+1. **Initial Collection**: The connector starts by calling `list_users` to retrieve all IAM users
+2. **Per-User Enrichment**: For each user, the connector performs:
+   - `list_groups_for_user` to get user's groups
+   - For each group: `list_attached_group_policies` to get group privileges
+   - `list_mfa_devices` to check MFA status
+3. **Incremental Collection**: Uses checkpoint mechanism to track the most recent collection date
+4. **Date Filtering**: Only collects users created after the last checkpoint date (incremental updates)
+
+#### Performance Considerations
+
+- All API calls use pagination to handle large datasets efficiently
+- The connector implements error handling at multiple levels to continue collection even if individual API calls fail
+- Checkpoint mechanism reduces redundant API calls by tracking already-processed users
+- Batch processing yields users in pages for memory-efficient operation
+
 ## Further Reading
 - [AWS IAM Documentation](https://docs.aws.amazon.com/iam/)
 - [AWS IAM User Guide](https://docs.aws.amazon.com/IAM/latest/UserGuide/)
 - [AWS IAM API Reference](https://docs.aws.amazon.com/IAM/latest/APIReference/)
-- [AWS Global Infrastructure](https://aws.amazon.com/about-aws/global-infrastructure/)
 
