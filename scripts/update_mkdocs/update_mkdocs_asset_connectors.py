@@ -43,11 +43,11 @@ def load_asset_connectors(automation_module_repository: str) -> List[Dict]:
 
         print(f"Module {module_slug}: found asset_connectors at {asset_connector_path.relative_to(module_path)}")
 
-        for config_file in module_path.glob("*_asset_connector.json"):
+        for config_file in module_path.glob("*_assets.json"):
             config_name = config_file.stem
             asset_type = None
             for t in ASSET_TYPES:
-                if f"_{t}_asset_connector" in config_name:
+                if f"_{t}_assets" in config_name:
                     asset_type = t
                     break
 
