@@ -264,7 +264,7 @@ nav:
       - Lookout Mobile Endpoint Security: integration/categories/endpoint/lookout_mes.md
       - Microsoft Defender XDR (Microsoft 365 Defender): integration/categories/endpoint/microsoft_365_defender.md
       - Microsoft Intune: integration/categories/endpoint/microsoft_intune.md
-      - Nozomi CMC: integration/categories/endpoint/nozomi_cmc.md
+      - Nozomi Central Management Console: integration/categories/endpoint/nozomi_cmc.md
       - Nucleon EDR: integration/categories/endpoint/nucleon_edr.md
       - Palo Alto Cortex XDR (EDR): integration/categories/endpoint/paloalto_cortex_edr.md
       - Panda Security Aether: integration/categories/endpoint/panda_security_aether.md

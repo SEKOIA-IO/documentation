@@ -9,36 +9,74 @@ industrial networks. It enables users to monitor, configure, and respond to thre
 visibility and control over operational technology environments. With its user-friendly interface and powerful 
 analytics, the console simplifies security operations and strengthens defense against cyber risks.
 
-- **Supported environment**: On prem
-- **Detection based on**: Alerts, Audit
+- **Supported environment**: On Prem
+- **Detection based on**: Alerts, Telemetry
 - **Supported application or feature**:
     - Alerts
     - Health
     - Audit
 
-## Configure
+## Specification
 
-1. In the top navigation bar, select `settings`
-2. In the `Settings` section, select `Data integration`.
-3. In the top right section, select `Add`.
-4. From the `Choose a configuration` dropdown, select CEF.
+### Prerequisites
+
+- **Resource**:
+    - Self-managed syslog forwarder
+
+- **Network**:
+    - **On Premise**: Outbound traffic allowed
+
+- **Permissions**:
+    - Administrator access to the Central Management Console
+    - Root access to the Linux server with the syslog forwarder
+
+### Transport Protocol/Method
+
+- **Indirect Syslog** for On Premise
+
+### Logs details
+
+- **Supported functionalities**: See section [Overview](#overview)
+- **Supported type(s) of structure**: CEF
+- **Supported verbosity level**: Alert, Informational
+
+!!! Note
+    This is a description of the log level based on the taxonomy of the [RFC5424](https://datatracker.ietf.org/doc/html/rfc5424) for standardization purpose. Please adapt to the wording used by the editor.
+
+## Step-by-Step Configuration Procedure
+
+To Enable the CEF forwarding:
+
+1. Log in the Nozomi Central Management Console.
+2. Click `Administration`.
+
+  <img width="100%" alt="Configuration" src="/assets/integration/cloud_and_saas/nozomi_cmc/administration.png">
+
+3. Go to `Settings` > `Data integration`.
+4. Click `+ Add`.
+
+  <img width="100%" alt="Configuration" src="/assets/integration/cloud_and_saas/nozomi_cmc/data_integration.png">
+
+5. From the `Choose a configuration` dropdown, select CEF.
 
   <img width="100%" alt="Configuration" src="/assets/integration/cloud_and_saas/nozomi_cmc/configuration.png">
 
-5. Enter the necessary details and enable whichever log types you prefer.
+6. Type a description.
+7. In `To URI`, type `tcp://` following by the address of the log concentrator and the port for the intake
+8. Check `Enable sending Alerts`
+9. Check `Enable sending Audit Logs`
+10. Check `Enable sending Health Logs`
 
   <img width="100%" alt="Details" src="/assets/integration/cloud_and_saas/nozomi_cmc/details.png">
 
 
-### Create your intake
+### Instruction on Sekoia
 
-Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a new intake from the `Nozomi CMC`.
+{!_shared_content/integration/intake_configuration.md!}
 
-
-#### Enjoy your events on the [Events page](https://app.sekoia.io/operations/events)
+{!_shared_content/integration/forwarder_configuration.md!}
 
 {!_shared_content/operations_center/integrations/generated/baf03007-4fbc-427e-a966-fa50cbe77856_sample.md!}
-
 
 {!_shared_content/integration/detection_section.md!}
 
