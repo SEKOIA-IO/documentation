@@ -87,6 +87,8 @@ To start getting your Okta users into Sekoia.io, you need to create an asset con
 
 6. Click the **Create asset connector** button.
 
+{!_shared_content/operations_center/integrations/generated_assets_documentation/okta_user.md!}
+
 ## Further Reading
 - [Okta Documentation](https://developer.okta.com/docs/)
 - [Okta User Management API](https://developer.okta.com/docs/reference/api/users/)

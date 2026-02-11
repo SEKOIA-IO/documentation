@@ -135,6 +135,8 @@ To start getting your AWS EC2 instances into Sekoia.io, you need to create an as
 
 6. Click the **Create asset connector** button.
 
+{!_shared_content/operations_center/integrations/generated_assets_documentation/aws_device.md!}
+
 ## Further Reading
 - [AWS EC2 Documentation](https://docs.aws.amazon.com/ec2/)
 - [AWS IAM User Guide](https://docs.aws.amazon.com/IAM/latest/UserGuide/)

@@ -4,16 +4,54 @@
 **OCSF Class:** `{{ mapping.mapping.ocsf_class }}`
 {% endif %}
 
-{% if mapping.mapping.version %}
-**Version:** {{ mapping.mapping.version }}
+{% if mapping.mapping.class_uid %}
+**Class UID:** `{{ mapping.mapping.class_uid }}`
+{% endif %}
+
+{% if mapping.mapping.ocsf_version %}
+**OCSF Version:** `{{ mapping.mapping.ocsf_version }}`
+{% endif %}
+
+## Information Collected
+
+The {{ config.name | default('Connector') }} fetches comprehensive information and transforms it into the OCSF (Open Cybersecurity Schema Framework) format for standardized security monitoring and asset management.
+
+{% if mapping.mapping.samples %}
+### API Response Examples
+
+{% for sample in mapping.mapping.samples -%}
+#### {{ sample.name }}
+{{ sample.description }}
+
+```json
+{{ sample.data | indent(0) }}
+```
+
+{% endfor %}
 {% endif %}
 
 {% if mapping.mapping.fields %}
-## Field Mapping
+### Data Mapping Table
 
-| Source Field | OCSF Field | Type | Description |
-|--------------|------------|------|-------------|
+The following table shows how source data is mapped to OCSF model fields:
+
+| Source Field | OCSF Field Path | Description | Data Type | Logic |
+|--------------|-----------------|-------------|-----------|-------|
 {% for field in mapping.mapping.fields -%}
-| `{{ field.source | default('-') }}` | `{{ field.target | default('-') }}` | `{{ field.type | default('-') }}` | {{ field.description | default('-') }} |
+| `{{ field.source | default('-') }}` | `{{ field.target | default('-') }}` | {{ field.description | default('-') }} | `{{ field.type | default('-') }}` | {{ field.logic | default('-') }} |
+{% endfor %}
+{% endif %}
+
+{% if mapping.mapping.ocsf_samples %}
+### OCSF Model Structure
+
+{% for sample in mapping.mapping.ocsf_samples -%}
+#### {{ sample.name }}
+{{ sample.description }}
+
+```json
+{{ sample.data | indent(0) }}
+```
+
 {% endfor %}
 {% endif %}

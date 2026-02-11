@@ -50,3 +50,5 @@ To start getting your CrowdStrike assets into Sekoia.io, you need to create an a
     ![Connector test result and Create asset connector button highlighted](/assets/operation_center/asset_connectors/device/crowdstrike_falcon/add_asset_device_asset.png)
 
 5. Click the **Create asset connector** button.
+
+{!_shared_content/operations_center/integrations/generated_assets_documentation/crowdstrike-falcon_device.md!}
