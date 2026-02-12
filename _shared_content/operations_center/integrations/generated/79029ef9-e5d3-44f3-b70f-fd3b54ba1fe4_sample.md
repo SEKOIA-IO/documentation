@@ -92,6 +92,14 @@ In this section, you will find examples of raw logs as generated natively by the
 
 
 
+=== "ssh_auth_failed"
+
+    ```
+	id=firewall time="2026-02-07 09:12:44" fw="SN820X99C1234D5" tz=+0100 startime="2026-02-07 09:12:44" src=11.22.33.44 user="john.doe" domain="" msg="SSH authentication failed: user not found in ldap" totp="no" logtype="auth"
+    ```
+
+
+
 === "system"
 
     ```

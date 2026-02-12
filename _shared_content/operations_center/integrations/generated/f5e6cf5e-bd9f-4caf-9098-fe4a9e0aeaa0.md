@@ -3290,6 +3290,7 @@ This section demonstrates how the raw logs will be transformed by our parsers. I
         },
         "url": {
             "domain": "sample.xyz",
+            "full": "http://sample.xyz/malicious.encoded",
             "original": "http://sample.xyz/malicious.encoded",
             "path": "/malicious.encoded",
             "port": 80,
