@@ -452,13 +452,13 @@ If you want to enable this feature, follow these steps:
 If you want to collect multiple source files on the host, just add a new entry in the configuration.
 For instance:
 
-	```yaml
-	logfiles:
-	    - filepath: /var/log/nginx/access.log  # Path to the file to watch
-	      intakekey: {intake key}  # Intake key to use to send the events
-	    - filepath: /var/log/mysql/mysql.log
-	      intakekey: {intake key}
-	```
+```yaml
+logfiles:
+    - filepath: /var/log/nginx/access.log  # Path to the file to watch
+      intakekey: {intake key}  # Intake key to use to send the events
+    - filepath: /var/log/mysql/mysql.log
+      intakekey: {intake key}
+```
 
 !!! WARNING
     Your configuration file must be a valid YAML. An invalid file can prevent the agent from starting.
