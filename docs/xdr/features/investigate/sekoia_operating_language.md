@@ -17,7 +17,6 @@ Sekoia Operating Language (`SOL`) is a powerful, pipe-based query language desig
 | `cases` | Security incidents and cases | Case management, incident correlation |
 | `custom_statuses` | Alerts and cases custom statuses | Reporting |
 | `custom_priorities` | Cases custom priorities | Reporting |
-| `verdicts` | Alerts and cases verdicts | Reporting |
 | `cases` | Security incidents and cases | Case management, incident correlation |
 | `communities` | Communities (for multi-tenant only) | Multi-tenant reporting |
 | `intakes` | Data sources | Data source management, volume monitoring |
