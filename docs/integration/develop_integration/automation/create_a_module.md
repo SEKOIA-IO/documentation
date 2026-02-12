@@ -740,6 +740,46 @@ poetry run pytest -v -s tests/
 ```
 For more detailed information, you can check the [Poetry documentation](https://python-poetry.org/docs/). Additionally, you can look at the tests in the existing module.
 
+## Lint and format your code (optional)
+
+To ensure code quality and maintain consistency, it's recommended to lint and format the automation module.
+
+### Format your module
+
+To format the code, please use `black` with the following command in the root directory of your module:
+
+```shell
+black . # to format python code
+```
+
+### Lint your module
+
+To lint the manifest files, in the working copy of the `automation-library` repository, run the following command:
+
+```shell
+python3 linter.py fix --changes
+```
+
+## Check your module
+
+To check your module for type correctness and compliance with Sekoia's standards, it's recommended to type check your Python code.
+
+### Check Python code
+
+To check your code, please use `mypy` with the following command in the working copy of the `automation-library` repository:
+
+```shell
+poetry run mypy  --install-types --non-interactive --ignore-missing-imports --show-column-numbers --hide-error-context .
+```
+
+### Check compliance
+
+In the working copy of the `automation-library` repository, to check the automation module against compliance rules:
+
+```shell
+poetry -C _utils run python compliance check --changes
+```
+
 ## Deploy your module
 
 To deploy your module, you first need to make sure the module version is unique and has not already been imported in Sekoia.
