@@ -143,6 +143,22 @@ auditbeat.modules:
     - user      # User information
 
   user.detect_password_changes: true
+  processors:
+    - drop_event:
+        when:
+          or:
+            - and:
+              - equals:
+                  destination.port: 53
+              - equals:
+                  event.action: network_flow
+            - and:
+              - equals:
+                  event.action: network_flow
+              - network:
+                  source.ip: private
+              - network:
+                  destination.ip: private
 
 # ================================== Outputs ===================================
 output.elasticsearch:
