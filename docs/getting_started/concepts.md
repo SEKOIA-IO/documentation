@@ -41,17 +41,21 @@ Switching Workspaces
 
 To switch to a different workspace, follow these steps:
 
-- Click on the current workspace name located at the top of the menu
-- A dropdown list will appear, showing all available workspaces
-- Select the desired workspace from the list to switch to it
+1. Click on the current workspace name located at the top of the menu.
+
+    A dropdown list will appear, showing all available workspaces.
+
+2. Select the desired workspace from the list to switch to it.
 
 #### Switching communities
 
 For switching communities or selecting multiple communities, use the Communities button located in the breadcrumb:
 
-1. Click on the Communities button in the breadcrumb navigation
-2. A selection menu will appear, displaying all available communities
-3. Check the boxes next to the communities you need to access to switch to the chosen communities
+1. Click on the Communities button in the breadcrumb navigation.
+
+    A selection menu will appear, displaying all available communities.
+
+2. Check the boxes next to the communities you need to access to switch to the chosen communities.
 
 !!! note 
     The button Communities in the breadcrumb is only available to multi-tenant workspaces. 
@@ -84,9 +88,9 @@ To enhance your workflow, you can add the pages you use most frequently to your 
 
 The menu is divided into multiple sections, which you can reorganize according to your preferences. To rearrange these sections:
 
-1. Click and hold the section header you wish to move
-2. Drag the section to your desired position within the menu
-3. Release the mouse button to drop the section in its new location
+1. Click and hold the section header you wish to move.
+2. Drag the section to your desired position within the menu.
+3. Release the mouse button to drop the section in its new location.
 
 For example, if you use the Observe section more frequently, you can drag it to the top of the menu for quicker access.
 
