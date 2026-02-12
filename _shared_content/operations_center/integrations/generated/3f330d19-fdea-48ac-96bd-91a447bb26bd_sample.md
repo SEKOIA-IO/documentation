@@ -12,19 +12,19 @@ In this section, you will find examples of raw logs as generated natively by the
         "severity": "low",
         "type": "Event::Endpoint::Application::Blocked",
         "endpoint_type": "computer",
-        "endpoint_id": "5da7691b-cc01-4330-bb8b-358362c3a5f1",
+        "endpoint_id": "11111111-1111-1111-1111-111111111111",
         "source_info": {
-            "ip": "1.2.3.4"
+            "ip": "1.1.1.1"
         },
-        "customer_id": "36d5cd97-169e-490b-a2c4-bcd9d5d2a54b",
+        "customer_id": "33333333-3333-3333-3333-333333333333",
         "name": "Controlled application blocked: Google Software Reporter Tool (Security tool)",
-        "id": "bc60c18b-dc21-43a3-bfd5-f28963f288e2",
+        "id": "22222222-2222-2222-2222-222222222222",
         "group": "APPLICATION_CONTROL",
         "datastream": "event",
         "end": "2022-04-25T03:15:31.760Z",
         "suser": "n/a",
         "rt": "2022-04-25T03:15:31.777Z",
-        "dhost": "DOMAIN-1234"
+        "dhost": "HOSTNAME"
     }
     ```
 
@@ -38,20 +38,20 @@ In this section, you will find examples of raw logs as generated natively by the
         "severity": "medium",
         "type": "Event::Endpoint::Enc::DiskNotEncryptedEvent",
         "name": "Device is not encrypted.",
-        "id": "f7c7e65a-a452-429c-9e0a-cdc16c5b50e9",
+        "id": "33333333-3333-3333-3333-333333333333",
         "source_info": {
-            "ip": "1.2.3.4"
+            "ip": "1.1.1.1"
         },
-        "customer_id": "36d5cd97-169e-490b-a2c4-bcd9d5d2a54b",
-        "endpoint_id": "92d4ef41-9c13-4041-bbed-952011796812",
+        "customer_id": "22222222-2222-2222-2222-222222222222",
+        "endpoint_id": "11111111-1111-1111-1111-111111111111",
         "endpoint_type": "computer",
-        "group": "DENC",
+        "group": "GROUP",
         "datastream": "event",
         "end": "2022-04-27T13:23:07.981Z",
-        "dhost": "DESKTOP-1234",
+        "dhost": "HOSTNAME",
         "rt": "2022-04-27T13:24:08.662Z",
-        "duid": "574fcff42ead810f5e43b0fc",
-        "suser": "Elon Musk"
+        "duid": "555555555555555555555555",
+        "suser": "Username2"
     }
     ```
 
@@ -65,19 +65,19 @@ In this section, you will find examples of raw logs as generated natively by the
         "severity": "low",
         "type": "Event::Endpoint::DataLossPreventionAutomaticallyAllowed",
         "endpoint_type": "computer",
-        "endpoint_id": "5da7691b-cc01-4330-bb8b-358362c3a5f1",
+        "endpoint_id": "11111111-1111-1111-1111-111111111111",
         "source_info": {
-            "ip": "1.2.3.4"
+            "ip": "1.1.1.1"
         },
-        "customer_id": "36d5cd97-169e-490b-a2c4-bcd9d5d2a54b",
-        "name": "An \u2033allow file transfer\u2033 action was taken.  Username: DDDDD\\XXXXXXXXXX  Rule names: \u2032Multimedia file\u2032  User action: File open  Application Name: Firefox (V7 and higher)  Data Control action: Allow  File type: Media Container (TFT\u2215MPEG-4)  File size: 559316722  Source path: C:\\Users\\XXXXXXXX\\Downloads\\YYYYYYYYYYYYYYYYY.mp4",
-        "id": "bc60c18b-dc21-43a3-bfd5-f28963f288e2",
+        "customer_id": "33333333-3333-3333-3333-333333333333",
+        "name": "An \u2033allow file transfer\u2033 action was taken.  Username: DDDDD\\XXXXXXXXXX  Rule names: \u2032Multimedia file\u2032  User action: File open  Application Name: Firefox (V7 and higher)  Data Control action: Allow  File type: Media Container (TFT\u2215MPEG-4)  File size: 559316722  Source path: C:\\XXXXXXXX\\Downloads\\YYYYYYYYYYYYYYYYY.mp4",
+        "id": "22222222-2222-2222-2222-222222222222",
         "group": "DATA_LOSS_PREVENTION",
         "datastream": "event",
         "end": "2022-04-25T03:15:31.760Z",
         "suser": "n/a",
         "rt": "2022-04-25T03:15:31.777Z",
-        "dhost": "DOMAIN-1234"
+        "dhost": "HOSTNAME"
     }
     ```
 
@@ -91,19 +91,19 @@ In this section, you will find examples of raw logs as generated natively by the
         "severity": "low",
         "type": "Event::Endpoint::DataLossPreventionAutomaticallyAllowed",
         "endpoint_type": "computer",
-        "endpoint_id": "5da7691b-cc01-4330-bb8b-358362c3a5f1",
+        "endpoint_id": "11111111-1111-1111-1111-111111111111",
         "source_info": {
-            "ip": "1.2.3.4"
+            "ip": "1.1.1.1"
         },
-        "customer_id": "36d5cd97-169e-490b-a2c4-bcd9d5d2a54b",
-        "name": "An \u2033allow file transfer\u2033 action was taken.  Username: DDDDD\\XXXXXXXXXX  Rule names: \u2032Multimedia file\u2032  User action: File open  Application Name: Firefox (V7 and higher)  Data Control action: Allow  File type: Media Container (TFT\u2215MPEG-4)  File size: 559316722  Source path: C:\\Users\\XXXXXXXX\\Downloads\\YYYYYYYYYYYYYYYYY.mp4  Destination path: D:\\XXXXXXXXXXXXXXX\\Documents\\Videos\\YYYYY.mp4  Destination type: Removable storage",
-        "id": "bc60c18b-dc21-43a3-bfd5-f28963f288e2",
+        "customer_id": "33333333-3333-3333-3333-333333333333",
+        "name": "An \u2033allow file transfer\u2033 action was taken.  Username: DDDDD\\XXXXXXXXXX  Rule names: \u2032Multimedia file\u2032  User action: File open  Application Name: Firefox (V7 and higher)  Data Control action: Allow  File type: Media Container (TFT\u2215MPEG-4)  File size: 559316722  Source path: C:\\XXXXXXXX\\Downloads\\YYYYYYYYYYYYYYYYY.mp4  Destination path: D:\\XXXXXXXXXXXXXXX\\Documents\\Videos\\YYYYY.mp4  Destination type: Removable storage",
+        "id": "22222222-2222-2222-2222-222222222222",
         "group": "DATA_LOSS_PREVENTION",
         "datastream": "event",
         "end": "2022-04-25T03:15:31.760Z",
         "suser": "n/a",
         "rt": "2022-04-25T03:15:31.777Z",
-        "dhost": "DOMAIN-1234"
+        "dhost": "HOSTNAME"
     }
     ```
 
@@ -116,21 +116,21 @@ In this section, you will find examples of raw logs as generated natively by the
 	{
         "severity": "low",
         "type": "Event::Endpoint::Enc::DiskEncryptionInformation",
-        "name": "Device Encryption information for volume with id: 63E6153A-3663-44E1-A200-F1CD4CB9EBCE. Message: Encryption has been postponed.",
-        "id": "55726d81-213b-43b6-be18-48dee3add6f8",
+        "name": "Device Encryption information for volume with id: 22222222-2222-2222-2222-222222222222. Message: Encryption has been postponed.",
+        "id": "33333333-3333-3333-3333-333333333333",
         "source_info": {
-            "ip": "1.2.3.4"
+            "ip": "1.1.1.1"
         },
-        "customer_id": "c0e1e239-8912-4cc9-a6ed-245a964dec10",
-        "endpoint_id": "92d4ef41-9c13-4041-bbed-952011796812",
+        "customer_id": "11111111-1111-1111-1111-111111111111",
+        "endpoint_id": "44444444-4444-4444-4444-444444444444",
         "endpoint_type": "computer",
         "group": "DENC",
         "datastream": "event",
         "end": "2022-04-27T08:48:48.808Z",
-        "dhost": "DESKTOP-1234",
+        "dhost": "HOSTNAME",
         "rt": "2022-04-27T08:48:48.809Z",
-        "duid": "62690353b62561118508746f",
-        "suser": "TESLA\\user"
+        "duid": "555555555555555555555555",
+        "suser": "COMPANY\\Username1"
     }
     ```
 
@@ -144,20 +144,20 @@ In this section, you will find examples of raw logs as generated natively by the
         "severity": "medium",
         "type": "Event::Endpoint::Denc::EncryptionSuspendedEvent",
         "name": "Device Encryption is suspended",
-        "id": "80130549-e09e-46d3-ab98-919fbd625884",
+        "id": "11111111-1111-1111-1111-111111111111",
         "source_info": {
-            "ip": "1.2.3.4"
+            "ip": "1.1.1.1"
         },
-        "customer_id": "36d5cd97-169e-490b-a2c4-bcd9d5d2a54b",
-        "endpoint_id": "92d4ef41-9c13-4041-bbed-952011796812",
+        "customer_id": "33333333-3333-3333-3333-333333333333",
+        "endpoint_id": "22222222-2222-2222-2222-222222222222",
         "endpoint_type": "computer",
         "group": "DENC",
         "datastream": "event",
         "end": "2022-04-27T08:47:16.490Z",
-        "dhost": "DESKTOP-1234",
+        "dhost": "HOSTNAME",
         "rt": "2022-04-27T08:48:19.320Z",
-        "duid": "624aabf253f2e60fda590556",
-        "suser": "TESLA\\admin"
+        "duid": "555555555555555555555555",
+        "suser": "COMPANY\\Username1"
     }
     ```
 
@@ -171,19 +171,19 @@ In this section, you will find examples of raw logs as generated natively by the
         "severity": "low",
         "type": "Event::Endpoint::HmpaExploitPrevented",
         "endpoint_type": "computer",
-        "endpoint_id": "5da7691b-cc01-4330-bb8b-358362c3a5f1",
+        "endpoint_id": "11111111-1111-1111-1111-111111111111",
         "source_info": {
-            "ip": "1.2.3.4"
+            "ip": "1.1.1.1"
         },
-        "customer_id": "36d5cd97-169e-490b-a2c4-bcd9d5d2a54b",
+        "customer_id": "33333333-3333-3333-3333-333333333333",
         "name": "'CodeCave' exploit prevented in Essential Objects Worker Process",
-        "id": "bc60c18b-dc21-43a3-bfd5-f28963f288e2",
+        "id": "22222222-2222-2222-2222-222222222222",
         "group": "RUNTIME_DETECTIONS",
         "datastream": "event",
         "end": "2022-04-25T03:15:31.760Z",
         "suser": "n/a",
         "rt": "2022-04-25T03:15:31.777Z",
-        "dhost": "DOMAIN-1234"
+        "dhost": "HOSTNAME"
     }
     ```
 
@@ -196,21 +196,21 @@ In this section, you will find examples of raw logs as generated natively by the
 	{
         "severity": "low",
         "type": "Event::Endpoint::Enc::Recovery::KeyReceived",
-        "name": "A BitLocker recovery key has been received from: DESKTOP-1234.",
-        "id": "c8e0b5c9-69d0-4885-8964-5cefaa8ef13e",
+        "name": "A BitLocker recovery key has been received from: HOSTNAME.",
+        "id": "11111111-1111-1111-1111-111111111111",
         "source_info": {
-            "ip": "1.2.3.4"
+            "ip": "1.1.1.1"
         },
-        "customer_id": "36d5cd97-169e-490b-a2c4-bcd9d5d2a54b",
-        "endpoint_id": "92d4ef41-9c13-4041-bbed-952011796812",
+        "customer_id": "22222222-2222-2222-2222-222222222222",
+        "endpoint_id": "33333333-3333-3333-3333-333333333333",
         "endpoint_type": "computer",
         "group": "DENC",
         "datastream": "event",
         "end": "2022-04-27T13:22:08.749Z",
-        "dhost": "DESKTOP-1234",
+        "dhost": "HOSTNAME",
         "rt": "2022-04-27T13:22:13.565Z",
-        "duid": "574fcff42ead810f5e43b0fc",
-        "suser": "admin tech"
+        "duid": "555555555555555555555555",
+        "suser": "Username3"
     }
     ```
 
@@ -224,20 +224,20 @@ In this section, you will find examples of raw logs as generated natively by the
         "severity": "low",
         "type": "Event::Endpoint::Denc::OutlookPluginEnabledEvent",
         "name": "Outlook add-in is enabled",
-        "id": "37d8c083-2342-4e88-9da6-4f47e3143c9d",
+        "id": "33333333-3333-3333-3333-333333333333",
         "source_info": {
-            "ip": "1.2.3.4"
+            "ip": "1.1.1.1"
         },
-        "customer_id": "36d5cd97-169e-490b-a2c4-bcd9d5d2a54b",
-        "endpoint_id": "92d4ef41-9c13-4041-bbed-952011796812",
+        "customer_id": "22222222-2222-2222-2222-222222222222",
+        "endpoint_id": "11111111-1111-1111-1111-111111111111",
         "endpoint_type": "computer",
         "group": "DENC",
         "datastream": "event",
         "end": "2022-04-27T13:22:06.909Z",
-        "dhost": "DESKTOP-1234",
+        "dhost": "HOSTNAME",
         "rt": "2022-04-27T13:22:13.226Z",
-        "duid": "574fcff42ead810f5e43b0fc",
-        "suser": "admin tech"
+        "duid": "555555555555555555555555",
+        "suser": "Username3"
     }
     ```
 
@@ -251,19 +251,19 @@ In this section, you will find examples of raw logs as generated natively by the
         "severity": "low",
         "type": "Event::Endpoint::CorePuaDetection",
         "endpoint_type": "computer",
-        "endpoint_id": "5da7691b-cc01-4330-bb8b-358362c3a5f1",
+        "endpoint_id": "11111111-1111-1111-1111-111111111111",
         "source_info": {
-            "ip": "1.2.3.4"
+            "ip": "1.1.1.1"
         },
-        "customer_id": "36d5cd97-169e-490b-a2c4-bcd9d5d2a54b",
-        "name": "PUA detected: 'Rule Generic PUA' at 'C:\\Users\\XXXXXXXXXX\\AppData\\Local\\Microsoft\\SquirrelTemp\\tempc'",
-        "id": "bc60c18b-dc21-43a3-bfd5-f28963f288e2",
+        "customer_id": "33333333-3333-3333-3333-333333333333",
+        "name": "PUA detected: 'Rule Generic PUA' at 'C:\\XXXXXXXXXX\\AppData\\Local\\Microsoft\\SquirrelTemp\\tempc'",
+        "id": "22222222-2222-2222-2222-222222222222",
         "group": "PUA",
         "datastream": "event",
         "end": "2022-04-25T03:15:31.760Z",
         "suser": "n/a",
         "rt": "2022-04-25T03:15:31.777Z",
-        "dhost": "DOMAIN-1234"
+        "dhost": "HOSTNAME"
     }
     ```
 
@@ -276,23 +276,23 @@ In this section, you will find examples of raw logs as generated natively by the
 	{
         "appSha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
         "source_info": {
-            "ip": "1.2.3.4"
+            "ip": "1.1.1.1"
         },
-        "customer_id": "d9b11461-9678-4448-ab88-4b5211d2bf5e",
-        "endpoint_id": "61092e0b-b6f5-46c5-b0a7-68ee3b2dc822",
+        "customer_id": "33333333-3333-3333-3333-333333333333",
+        "endpoint_id": "22222222-2222-2222-2222-222222222222",
         "endpoint_type": "computer",
         "threat": "Generic Reputation PUA",
         "origin": "ML",
         "type": "Event::Endpoint::CorePuaDetection",
-        "id": "c39307f6-0c51-4a55-af23-f2ac7905416d",
+        "id": "11111111-1111-1111-1111-111111111111",
         "group": "PUA",
         "rt": "2023-08-07T21:55:28.843Z",
         "severity": "medium",
-        "duid": "63ed3118d043e176065be9ba",
+        "duid": "REDACTED",
         "end": "2023-08-07T21:55:27.508Z",
-        "name": "PUA detected: 'Generic Reputation PUA' at 'C:\\Users\\John Doe\\Documents\\suspicious.zip'",
-        "dhost": "LAPTOP-01",
-        "suser": "LAPTOP-01\\John Doe"
+        "name": "PUA detected: 'Generic Reputation PUA' at 'C:\\John Doe\\Documents\\suspicious.zip'",
+        "dhost": "HOSTNAME",
+        "suser": "HOSTNAME\\John Doe"
     }
     ```
 
@@ -305,21 +305,21 @@ In this section, you will find examples of raw logs as generated natively by the
 	{
         "severity": "low",
         "type": "Event::Endpoint::Registered",
-        "name": "New computer registered: DESKTOP-1234",
-        "id": "b3c9c053-6037-469d-9bee-49d39f7932d0",
+        "name": "New computer registered: HOSTNAME",
+        "id": "11111111-1111-1111-1111-111111111111",
         "source_info": {
-            "ip": "1.2.3.4"
+            "ip": "1.1.1.1"
         },
-        "customer_id": "36d5cd97-169e-490b-a2c4-bcd9d5d2a54b",
-        "endpoint_id": "92d4ef41-9c13-4041-bbed-952011796812",
+        "customer_id": "22222222-2222-2222-2222-222222222222",
+        "endpoint_id": "33333333-3333-3333-3333-333333333333",
         "endpoint_type": "computer",
         "group": "PROTECTION",
         "datastream": "event",
         "end": "2022-04-27T13:17:10.188Z",
-        "dhost": "DESKTOP-1234",
+        "dhost": "HOSTNAME",
         "rt": "2022-04-27T13:17:10.197Z",
-        "duid": "574fcff42ead810f5e43b0fc",
-        "suser": "admin tech"
+        "duid": "555555555555555555555555",
+        "suser": "Username3"
     }
     ```
 
@@ -333,20 +333,20 @@ In this section, you will find examples of raw logs as generated natively by the
         "severity": "low",
         "type": "Event::Endpoint::SavScanComplete",
         "name": "Scan 'Sophos Cloud Scheduled Scan' completed",
-        "id": "fca84bd1-44df-4c30-ab79-103b971e714a",
+        "id": "11111111-1111-1111-1111-111111111111",
         "source_info": {
-            "ip": "1.2.3.4"
+            "ip": "1.1.1.1"
         },
-        "customer_id": "36d5cd97-169e-490b-a2c4-bcd9d5d2a54b",
-        "endpoint_id": "92d4ef41-9c13-4041-bbed-952011796812",
+        "customer_id": "33333333-3333-3333-3333-333333333333",
+        "endpoint_id": "22222222-2222-2222-2222-222222222222",
         "endpoint_type": "computer",
         "group": "PROTECTION",
         "datastream": "event",
         "end": "2022-04-27T08:59:59.000Z",
-        "dhost": "DESKTOP-1234",
+        "dhost": "HOSTNAME",
         "rt": "2022-04-27T09:00:03.548Z",
-        "duid": "611cda48cf87290e90dfc1d1",
-        "suser": "Elon Musk"
+        "duid": "555555555555555555555555",
+        "suser": "Username2"
     }
     ```
 
@@ -360,19 +360,19 @@ In this section, you will find examples of raw logs as generated natively by the
         "severity": "low",
         "type": "Event::Endpoint::UpdateFailure",
         "endpoint_type": "server",
-        "endpoint_id": "350e274b-777f-4b67-b34b-10d17a6c6193",
+        "endpoint_id": "33333333-3333-3333-3333-333333333333",
         "source_info": {
-            "ip": "1.2.3.4"
+            "ip": "1.1.1.1"
         },
-        "customer_id": "36d5cd97-169e-490b-a2c4-bcd9d5d2a54b",
+        "customer_id": "22222222-2222-2222-2222-222222222222",
         "name": "Download of WindowsCloudServer failed from server http:\u2215\u2215dci.sophosupd.com.",
-        "id": "f68abcb6-c87f-46ae-a82a-7919bf313a66",
+        "id": "11111111-1111-1111-1111-111111111111",
         "group": "UPDATING",
         "datastream": "event",
         "end": "2022-04-25T07:41:03.101Z",
         "suser": "n/a",
         "rt": "2022-04-25T07:41:03.118Z",
-        "dhost": "DESKTOP-1234"
+        "dhost": "HOSTNAME"
     }
     ```
 
@@ -386,19 +386,19 @@ In this section, you will find examples of raw logs as generated natively by the
         "severity": "low",
         "type": "Event::Endpoint::UpdateRebootRequired",
         "endpoint_type": "server",
-        "endpoint_id": "5da7691b-cc01-4330-bb8b-358362c3a5f1",
+        "endpoint_id": "11111111-1111-1111-1111-111111111111",
         "source_info": {
-            "ip": "1.2.3.4"
+            "ip": "1.1.1.1"
         },
-        "customer_id": "36d5cd97-169e-490b-a2c4-bcd9d5d2a54b",
+        "customer_id": "33333333-3333-3333-3333-333333333333",
         "name": "Reboot to complete update; computer stays protected in the meantime",
-        "id": "bc60c18b-dc21-43a3-bfd5-f28963f288e2",
+        "id": "22222222-2222-2222-2222-222222222222",
         "group": "UPDATING",
         "datastream": "event",
         "end": "2022-04-25T03:15:31.760Z",
         "suser": "n/a",
         "rt": "2022-04-25T03:15:31.777Z",
-        "dhost": "DOMAIN-1234"
+        "dhost": "HOSTNAME"
     }
     ```
 
@@ -412,19 +412,19 @@ In this section, you will find examples of raw logs as generated natively by the
         "severity": "low",
         "type": "Event::Endpoint::UpdateSuccess",
         "endpoint_type": "server",
-        "endpoint_id": "2ddff78e-27a1-40ff-8478-6c9be62e3b29",
+        "endpoint_id": "11111111-1111-1111-1111-111111111111",
         "source_info": {
-            "ip": "4.5.6.7"
+            "ip": "1.1.1.1"
         },
-        "customer_id": "36d5cd97-169e-490b-a2c4-bcd9d5d2a54b",
+        "customer_id": "22222222-2222-2222-2222-222222222222",
         "name": "Update succeeded",
-        "id": "a4c6776e-2f47-4bea-b5b3-7f1914c03a70",
+        "id": "33333333-3333-3333-3333-333333333333",
         "group": "UPDATING",
         "datastream": "event",
         "end": "2022-04-25T04:57:09.886Z",
         "suser": "n/a",
         "rt": "2022-04-25T04:57:09.900Z",
-        "dhost": "ACLOUD-2K22"
+        "dhost": "HOSTNAME"
     }
     ```
 
@@ -437,21 +437,21 @@ In this section, you will find examples of raw logs as generated natively by the
 	{
         "severity": "low",
         "type": "Event::Endpoint::UserAutoCreated",
-        "name": "New user added automatically: TESLA\\e.musk",
-        "id": "1498e255-e9c1-4835-b0b9-8ae7b44ae6f7",
+        "name": "New user added automatically: COMPANY\\Username1",
+        "id": "22222222-2222-2222-2222-222222222222",
         "source_info": {
-            "ip": "1.3.3.7"
+            "ip": "1.1.1.1"
         },
-        "customer_id": "36d5cd97-169e-490b-a2c4-bcd9d5d2a54b",
-        "endpoint_id": "36d5cd97-169e-490b-a2c4-bcd9d5d2a54b",
+        "customer_id": "11111111-1111-1111-1111-111111111111",
+        "endpoint_id": "11111111-1111-1111-1111-111111111111",
         "endpoint_type": "computer",
         "group": "PROTECTION",
         "datastream": "event",
         "end": "2022-04-27T08:48:19.449Z",
-        "dhost": "DESKTOP-1234",
+        "dhost": "HOSTNAME",
         "rt": "2022-04-27T08:48:19.456Z",
-        "duid": "62690353b62561118508746f",
-        "suser": "TESLA\\e.musk"
+        "duid": "555555555555555555555555",
+        "suser": "COMPANY\\Username1"
     }
     ```
 
@@ -465,20 +465,46 @@ In this section, you will find examples of raw logs as generated natively by the
         "severity": "low",
         "type": "Event::Endpoint::WebFilteringBlocked",
         "endpoint_type": "computer",
-        "endpoint_id": "3205420f-f05c-4f03-bb10-3ff6bf97b6ab",
+        "endpoint_id": "33333333-3333-3333-3333-333333333333",
         "source_info": {
-            "ip": "1.3.3.7"
+            "ip": "1.1.1.1"
         },
-        "customer_id": "36d5cd97-169e-490b-a2c4-bcd9d5d2a54b",
-        "name": "Access was blocked to \"www.malicious-site.com\" because of \"Rulename\".",
-        "id": "a91e11e2-1739-4f01-bf33-2dfd165e5ca3",
+        "customer_id": "22222222-2222-2222-2222-222222222222",
+        "name": "Access was blocked to \"www.example.com\" because of \"Rulename\".",
+        "id": "11111111-1111-1111-1111-111111111111",
         "group": "WEB",
         "datastream": "event",
         "end": "2022-04-25T09:35:54.000Z",
-        "suser": "Elon Musk",
+        "suser": "Username2",
         "rt": "2022-04-25T09:35:55.764Z",
-        "duid": "615ff633eae9110e824c07b7",
-        "dhost": "TESLA-SUPPORT"
+        "duid": "555555555555555555555555",
+        "dhost": "HOSTNAME"
+    }
+    ```
+
+
+
+=== "event_webfiltering_2"
+
+
+    ```json
+	{
+        "endpoint_id": "22222222-2222-2222-2222-222222222222",
+        "endpoint_type": "computer",
+        "customer_id": "33333333-3333-3333-3333-333333333333",
+        "source_info": {
+            "ip": "1.1.1.1"
+        },
+        "id": "33333333-3333-3333-3333-333333333333",
+        "type": "Event::Endpoint::WebFilteringBlocked",
+        "group": "WEB",
+        "duid": "111111111111111111111111",
+        "rt": "2026-01-30T10:23:51.021Z",
+        "severity": "low",
+        "end": "2026-01-30T10:23:42.000Z",
+        "name": "Access was blocked to \"example.com\" because of \"Mal/JSInject-AC\".",
+        "dhost": "HOSTNAME",
+        "suser": "John Doe"
     }
     ```
 

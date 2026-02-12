@@ -7,7 +7,7 @@ In this section, you will find examples of raw logs as generated natively by the
 === "test_106001"
 
     ```
-	%FTD-2-106001: Inbound TCP connection denied from 172.16.10.234/901 to 192.168.122.55/111 flags SYN  on interface LAN
+	%FTD-2-106001: Inbound TCP connection denied from 1.1.1.1/901 to 2.2.2.2/111 flags SYN  on interface LAN
     ```
 
 
@@ -15,7 +15,7 @@ In this section, you will find examples of raw logs as generated natively by the
 === "test_106006"
 
     ```
-	%FTD-2-106006: Deny inbound UDP from 172.16.10.234/901 to 192.168.122.55/111 on interface LAN
+	%FTD-2-106006: Deny inbound UDP from 1.1.1.1/901 to 2.2.2.2/111 on interface LAN
     ```
 
 
@@ -23,7 +23,7 @@ In this section, you will find examples of raw logs as generated natively by the
 === "test_430002"
 
     ```
-	%NGIPS-1-430002: EventPriority: Low, DeviceUUID: b2433c5c-a6a1-11eb-a6e7-be0b9833091f, InstanceID: 2, FirstPacketSecond: 2021-04-30T11:31:19Z, ConnectionID: 4, AccessControlRuleAction: Allow, SrcIP: 172.16.10.10, DstIP: 172.16.20.10, ICMPType: Echo Request, ICMPCode: No Code, Protocol: icmp, IngressInterface: inside, EgressInterface: outside, ACPolicy: Default Allow All Traffic, AccessControlRuleName: test, Client: ICMP client, ApplicationProtocol: ICMP, InitiatorPackets: 1, ResponderPackets: 0, InitiatorBytes: 74, ResponderBytes: 0, NAPPolicy: Balanced Security and Connectivity
+	%NGIPS-1-430002: EventPriority: Low, DeviceUUID: 11111111-1111-1111-1111-111111111111, InstanceID: 2, FirstPacketSecond: 2021-04-30T11:31:19Z, ConnectionID: 4, AccessControlRuleAction: Allow, SrcIP: 2.2.2.2, DstIP: 1.1.1.1, ICMPType: Echo Request, ICMPCode: No Code, Protocol: icmp, IngressInterface: inside, EgressInterface: outside, ACPolicy: Default Allow All Traffic, AccessControlRuleName: test, Client: ICMP client, ApplicationProtocol: ICMP, InitiatorPackets: 1, ResponderPackets: 0, InitiatorBytes: 74, ResponderBytes: 0, NAPPolicy: Balanced Security and Connectivity
     ```
 
 
@@ -31,7 +31,7 @@ In this section, you will find examples of raw logs as generated natively by the
 === "test_430003"
 
     ```
-	%NGIPS-1-430003: EventPriority: Low, DeviceUUID: e8566508-eaa9-11e5-860f-de3e305d8269, InstanceID: 3, FirstPacketSecond: 2020-02-04T08:45:34Z, ConnectionID: 34774, AccessControlRuleAction: <br/>Block with reset, SrcIP: 93.157.158.93, DstIP: 10.1.9.9, SrcPort: 13723, DstPort: 80, Protocol: tcp, IngressInterface: outside, EgressInterface: seversDMZ, ACPolicy: Basic IPS/IDS and GeoIP block foreign contries, AccessControlRuleName: GeoBlock other Countries, Prefilter Policy: Unknown, ConnectionDuration: 0, InitiatorPackets: 1, ResponderPackets: 0, InitiatorBytes: 54, ResponderBytes: 0, NAPPolicy: Balanced Security and Connectivity
+	%NGIPS-1-430003: EventPriority: Low, DeviceUUID: 11111111-1111-1111-1111-111111111111, InstanceID: 3, FirstPacketSecond: 2020-02-04T08:45:34Z, ConnectionID: 34774, AccessControlRuleAction: <br/>Block with reset, SrcIP: 1.1.1.1, DstIP: 2.2.2.2, SrcPort: 13723, DstPort: 80, Protocol: tcp, IngressInterface: outside, EgressInterface: seversDMZ, ACPolicy: Basic IPS/IDS and GeoIP block foreign contries, AccessControlRuleName: GeoBlock other Countries, Prefilter Policy: Unknown, ConnectionDuration: 0, InitiatorPackets: 1, ResponderPackets: 0, InitiatorBytes: 54, ResponderBytes: 0, NAPPolicy: Balanced Security and Connectivity
     ```
 
 
@@ -39,7 +39,7 @@ In this section, you will find examples of raw logs as generated natively by the
 === "test_430005"
 
     ```
-	%FTD-1-430005: SrcIP: 10.0.1.20, DstIP: 81.2.69.144, SrcPort: 46004, DstPort: 80, Protocol: tcp, FileDirection: Download, FileAction: Malware Cloud Lookup, FileSHA256: 2546dcffc5ad854d4ddc64fbf056871cd5a00f2471cb7a5bfd4ac23b6e9eedad, SHA_Disposition: Unavailable, SperoDisposition: Spero detection not performed on file, ThreatName: Win.Ransomware.Eicar::95.sbx.tg, FileName: eicar_com.zip, FileType: ZIP, FileSize: 184, ApplicationProtocol: HTTP, Client: cURL, User: No Authentication Required, FirstPacketSecond: 2019-08-16T09:39:02Z, FilePolicy: malware-and-file-policy, FileStorageStatus: Not Stored (Disposition Was Pending), FileSandboxStatus: File Size Is Too Small, URI: http://www.eicar.org/download/eicar_com.zip
+	%FTD-1-430005: SrcIP: 2.2.2.2, DstIP: 1.1.1.1, SrcPort: 46004, DstPort: 80, Protocol: tcp, FileDirection: Download, FileAction: Malware Cloud Lookup, FileSHA256: 01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b, SHA_Disposition: Unavailable, SperoDisposition: Spero detection not performed on file, ThreatName: Win.Ransomware.Eicar::95.sbx.tg, FileName: eicar_com.zip, FileType: ZIP, FileSize: 184, ApplicationProtocol: HTTP, Client: cURL, User: No Authentication Required, FirstPacketSecond: 2019-08-16T09:39:02Z, FilePolicy: malware-and-file-policy, FileStorageStatus: Not Stored (Disposition Was Pending), FileSandboxStatus: File Size Is Too Small, URI: http://www.example.org/download/eicar_com.zip
     ```
 
 
@@ -47,7 +47,7 @@ In this section, you will find examples of raw logs as generated natively by the
 === "test_ASA_106012"
 
     ```
-	%ASA-6-106012: Deny IP from 192.168.122.143 to 224.0.0.22, IP options: "Router Alert"
+	%ASA-6-106012: Deny IP from 1.1.1.1 to 2.2.2.2, IP options: "Router Alert"
     ```
 
 
@@ -55,7 +55,7 @@ In this section, you will find examples of raw logs as generated natively by the
 === "test_ASA_106015"
 
     ```
-	%ASA-6-106015: Deny TCP (no connection) from 10.9.4.3/52675 to 161.5.222.141/443 flags FIN ACK on interface ACME_interface
+	%ASA-6-106015: Deny TCP (no connection) from 2.2.2.2/52675 to 1.1.1.1/443 flags FIN ACK on interface ACME_interface
     ```
 
 
@@ -63,7 +63,7 @@ In this section, you will find examples of raw logs as generated natively by the
 === "test_ASA_106023"
 
     ```
-	%ASA-4-106023: Deny udp src ACMEsL:10.0.200.29/320 dst identity:224.0.1.129/320 by access-group "ACME_group" [0x0, 0x0]
+	%ASA-4-106023: Deny udp src ACMEsL:1.1.1.1/320 dst identity:2.2.2.2/320 by access-group "ACME_group" [0x0, 0x0]
     ```
 
 
@@ -71,7 +71,7 @@ In this section, you will find examples of raw logs as generated natively by the
 === "test_ASA_106100"
 
     ```
-	%ASA-6-106100: access-list ACME_INFRA permitted udp ACME_INFRA/10.1.0.16(42592) -> ACME/10.1.1.76(161) hit-cnt 1 first hit [0x42666c4c, 0x05739900]
+	%ASA-6-106100: access-list ACME_INFRA permitted udp ACME_INFRA/1.1.1.1(42592) -> ACME/2.2.2.2(161) hit-cnt 1 first hit [0x42666c4c, 0x05739900]
     ```
 
 
@@ -79,7 +79,7 @@ In this section, you will find examples of raw logs as generated natively by the
 === "test_ASA_110003"
 
     ```
-	%ASA-6-110003: Routing failed to locate next hop for icmp from WAN:10.11.0.2/0 to WAN:10.112.115.1/0
+	%ASA-6-110003: Routing failed to locate next hop for icmp from WAN:2.2.2.2/0 to WAN:1.1.1.1/0
     ```
 
 
@@ -87,7 +87,7 @@ In this section, you will find examples of raw logs as generated natively by the
 === "test_ASA_111007"
 
     ```
-	%ASA-5-111007: Begin configuration: 10.24.25.21 reading from http [POST]
+	%ASA-5-111007: Begin configuration: 1.1.1.1 reading from http [POST]
     ```
 
 
@@ -100,10 +100,26 @@ In this section, you will find examples of raw logs as generated natively by the
 
 
 
+=== "test_ASA_111009"
+
+    ```
+	%ASA-7-111009: User 'admin' executed cmd: show logging
+    ```
+
+
+
+=== "test_ASA_111010"
+
+    ```
+	%ASA-5-111010 User 'admin', running 'CLI' from IP 1.1.1.1, executed 'ping 2.2.2.2'
+    ```
+
+
+
 === "test_ASA_113004"
 
     ```
-	%ASA-6-113004: AAA user authentication Successful : server = 10.79.48.28 : user = jdoe001566
+	%ASA-6-113004: AAA user authentication Successful : server = 1.1.1.1 : user = admin
     ```
 
 
@@ -111,7 +127,7 @@ In this section, you will find examples of raw logs as generated natively by the
 === "test_ASA_113005"
 
     ```
-	Jun 07 2025 17:31:57: %ASA-6-113005: AAA user authentication Rejected : reason = Unspecified : server = 1.2.3.4 : user = ***** : user IP = 5.6.7.8
+	Jun 07 2025 17:31:57: %ASA-6-113005: AAA user authentication Rejected : reason = Unspecified : server = 2.2.2.2 : user = ***** : user IP = 1.1.1.1
     ```
 
 
@@ -119,7 +135,7 @@ In this section, you will find examples of raw logs as generated natively by the
 === "test_ASA_113012"
 
     ```
-	%ASA-6-113012: AAA user authentication Successful : local database : user = admintufin
+	%ASA-6-113012: AAA user authentication Successful : local database : user = admin
     ```
 
 
@@ -135,7 +151,7 @@ In this section, you will find examples of raw logs as generated natively by the
 === "test_ASA_302013_1"
 
     ```
-	%ASA-6-302013: Built inbound TCP connection 1800234408 for TTA-ACME-VDO_CAM:10.1.7.248/40454 (10.1.7.248/40454) to TTA-ACME-SRV_INFRA:10.1.0.10/53 (10.1.0.10/53)
+	%ASA-6-302013: Built inbound TCP connection 1800234408 for TTA-ACME-VDO_CAM:2.2.2.2/40454 (2.2.2.2/40454) to TTA-ACME-SRV_INFRA:1.1.1.1/53 (1.1.1.1/53)
     ```
 
 
@@ -143,7 +159,7 @@ In this section, you will find examples of raw logs as generated natively by the
 === "test_ASA_302013_2"
 
     ```
-	%ASA-6-302013: Built inbound TCP connection 79601067 for internet:1.2.3.4/62197 (1.2.3.4/62197)(LOCAL\john.doe@company.fr) to transit:5.6.7.8/88 (5.6.7.8/88)
+	%ASA-6-302013: Built inbound TCP connection 79601067 for internet:2.2.2.2/62197 (2.2.2.2/62197)(EXAMPLE\john.doe@example.org) to transit:1.1.1.1/88 (1.1.1.1/88)
     ```
 
 
@@ -151,7 +167,7 @@ In this section, you will find examples of raw logs as generated natively by the
 === "test_ASA_302014"
 
     ```
-	%ASA-6-302014: Teardown TCP connection 3642851852 for outside:9.27.0.93/63677 to Pika:172.17.1.200/443 duration 0:10:06 bytes 4666 FIN Timeout from Pika
+	%ASA-6-302014: Teardown TCP connection 3642851852 for outside:1.1.1.1/63677 to Pika:2.2.2.2/443 duration 0:10:06 bytes 4666 FIN Timeout from Pika
     ```
 
 
@@ -159,7 +175,7 @@ In this section, you will find examples of raw logs as generated natively by the
 === "test_ASA_302020"
 
     ```
-	%ASA-6-302020: Built inbound ICMP connection for faddr 47.241.116.84/10800 gaddr 10.11.0.2/0 laddr 10.11.0.2/0
+	%ASA-6-302020: Built inbound ICMP connection for faddr 1.1.1.1/10800 gaddr 2.2.2.2/0 laddr 2.2.2.2/0
     ```
 
 
@@ -167,7 +183,7 @@ In this section, you will find examples of raw logs as generated natively by the
 === "test_ASA_302020_2"
 
     ```
-	%ASA-6-302020: Built inbound ICMP connection for faddr 1.2.3.4/1(LOCAL\USER) gaddr 1.2.3.5/0 laddr 1.2.3.5/0 (USER) type 8 code 0
+	%ASA-6-302020: Built inbound ICMP connection for faddr 2.2.2.2/1(EXAMPLE\USERNAME) gaddr 1.1.1.1/0 laddr 1.1.1.1/0 (USER) type 8 code 0
     ```
 
 
@@ -175,7 +191,7 @@ In this section, you will find examples of raw logs as generated natively by the
 === "test_ASA_302021"
 
     ```
-	%ASA-6-302021: Teardown ICMP connection for faddr 172.16.10.208/2189 gaddr 172.16.19.90/0 laddr 172.16.19.90/0 (karibou)
+	%ASA-6-302021: Teardown ICMP connection for faddr 2.2.2.2/2189 gaddr 1.1.1.1/0 laddr 1.1.1.1/0 (admin)
     ```
 
 
@@ -183,7 +199,7 @@ In this section, you will find examples of raw logs as generated natively by the
 === "test_ASA_302021_2"
 
     ```
-	%ASA-6-302021: Teardown ICMP connection for faddr 1.2.3.4/25481 gaddr 1.2.4.3/0 laddr 1.2.4.3/0 type 8 code 0
+	%ASA-6-302021: Teardown ICMP connection for faddr 1.1.1.1/25481 gaddr 2.2.2.2/0 laddr 2.2.2.2/0 type 8 code 0
     ```
 
 
@@ -191,7 +207,7 @@ In this section, you will find examples of raw logs as generated natively by the
 === "test_ASA_302021_3"
 
     ```
-	%ASA-6-302020: Built inbound ICMP connection for faddr 1.2.3.4/14 gaddr 172.1.1.1/0 laddr 172.1.1.2/0 type 8 code 0
+	%ASA-6-302020: Built inbound ICMP connection for faddr 3.3.3.3/14 gaddr 2.2.2.2/0 laddr 1.1.1.1/0 type 8 code 0
     ```
 
 
@@ -199,7 +215,7 @@ In this section, you will find examples of raw logs as generated natively by the
 === "test_ASA_302021_4"
 
     ```
-	%ASA-6-302021: Teardown ICMP connection for faddr 1.2.3.4/14 gaddr 172.1.1.1/0 laddr 172.1.1.2/0 type 8 code 0
+	%ASA-6-302021: Teardown ICMP connection for faddr 3.3.3.3/14 gaddr 2.2.2.2/0 laddr 1.1.1.1/0 type 8 code 0
     ```
 
 
@@ -207,7 +223,7 @@ In this section, you will find examples of raw logs as generated natively by the
 === "test_ASA_305011"
 
     ```
-	%ASA-6-305011: Built dynamic TCP translation from interco_pa_asa:10.79.16.23/35928 to dmz-gce:126.189.129.55/35928
+	%ASA-6-305011: Built dynamic TCP translation from interco_pa_asa:2.2.2.2/35928 to dmz-gce:1.1.1.1/35928
     ```
 
 
@@ -215,7 +231,7 @@ In this section, you will find examples of raw logs as generated natively by the
 === "test_ASA_305012"
 
     ```
-	%ASA-6-305012: Teardown dynamic TCP translation from interco_asa:10.79.16.24/55924 to dmz:12.18.129.56/55924 duration 0:00:15
+	%ASA-6-305012: Teardown dynamic TCP translation from interco_asa:2.2.2.2/55924 to dmz:1.1.1.1/55924 duration 0:00:15
     ```
 
 
@@ -223,7 +239,7 @@ In this section, you will find examples of raw logs as generated natively by the
 === "test_ASA_313005"
 
     ```
-	%ASA-4-313005: No matching connection for ICMP error message: icmp src outside:1.2.3.4(LOCAL\a.smithee) dst inside:1.4.3.2 (type 3, code 3) on outside interface.  Original IP payload: udp src 1.4.3.2/53 dst 1.2.3.4/60717.
+	%ASA-4-313005: No matching connection for ICMP error message: icmp src outside:1.1.1.1(EXAMPLE\john.doe) dst inside:2.2.2.2 (type 3, code 3) on outside interface.  Original IP payload: udp src 2.2.2.2/53 dst 1.1.1.1/60717.
     ```
 
 
@@ -239,7 +255,7 @@ In this section, you will find examples of raw logs as generated natively by the
 === "test_ASA_609002"
 
     ```
-	%ASA-7-609002: Teardown local-host outside:1.2.3.4 duration 0:10:26
+	%ASA-7-609002: Teardown local-host outside:1.1.1.1 duration 0:10:26
     ```
 
 
@@ -247,7 +263,7 @@ In this section, you will find examples of raw logs as generated natively by the
 === "test_ASA_611101"
 
     ```
-	%ASA-6-611101: User authentication succeeded: IP address: 0.0.0.0, Uname: admintufin
+	%ASA-6-611101: User authentication succeeded: IP address: 1.1.1.1, Uname: admin
     ```
 
 
@@ -255,7 +271,7 @@ In this section, you will find examples of raw logs as generated natively by the
 === "test_ASA_611103"
 
     ```
-	%ASA-5-611103: User logged out: Uname: admintufin
+	%ASA-5-611103: User logged out: Uname: admin
     ```
 
 
@@ -263,7 +279,7 @@ In this section, you will find examples of raw logs as generated natively by the
 === "test_ASA_716039"
 
     ```
-	Jun 07 2025 16:16:20: %ASA-6-716039: Group <GrpPolicy> User <*****> IP <1.2.3.4> Authentication: rejected, Session Type: WebVPN.
+	Jun 07 2025 16:16:20: %ASA-6-716039: Group <EXAMPLE> User <Username> IP <1.1.1.1> Authentication: rejected, Session Type: WebVPN.
     ```
 
 
@@ -271,7 +287,7 @@ In this section, you will find examples of raw logs as generated natively by the
 === "test_ASA_716058"
 
     ```
-	%ASA-6-716058: Group <CLIENT_VPN> User <Acme_account> IP <86.199.78.204> AnyConnect session lost connection. Waiting to resume.
+	%ASA-6-716058: Group <EXAMPLE> User <Username> IP <1.1.1.1> AnyConnect session lost connection. Waiting to resume.
     ```
 
 
@@ -279,7 +295,7 @@ In this section, you will find examples of raw logs as generated natively by the
 === "test_ASA_716059"
 
     ```
-	%ASA-6-716059: Group <CLIENT_VPN> User <User_Acme> IP <10.17.100.175> AnyConnect session resumed connection from IP <10.17.100.175>.
+	%ASA-6-716059: Group <EXAMPLE> User <Username> IP <1.1.1.1> AnyConnect session resumed connection from IP <1.1.1.1>.
     ```
 
 
@@ -287,7 +303,7 @@ In this section, you will find examples of raw logs as generated natively by the
 === "test_ASA_722011"
 
     ```
-	%ASA-5-722011: Group <GroupPolicy_CLIENT_VPN> User <User_acme> IP <91.172.139.4> SVC Message: 17/WARNING: Reconnecting the VPN tunnel..
+	%ASA-5-722011: Group <EXAMPLE> User <Username> IP <1.1.1.1> SVC Message: 17/WARNING: Reconnecting the VPN tunnel..
     ```
 
 
@@ -295,7 +311,7 @@ In this section, you will find examples of raw logs as generated natively by the
 === "test_ASA_722012"
 
     ```
-	%ASA-5-722012: Group <GroupPolicy_CLIENT_VPN> User <User_Acme> IP <86.217.237.163> SVC Message: 16/NOTICE: Client PC is going into suspend mode (Sleep, Hibernate, etc)..
+	%ASA-5-722012: Group <EXAMPLE> User <Username> IP <1.1.1.1> SVC Message: 16/NOTICE: Client PC is going into suspend mode (Sleep, Hibernate, etc)..
     ```
 
 
@@ -303,7 +319,7 @@ In this section, you will find examples of raw logs as generated natively by the
 === "test_ASA_722023"
 
     ```
-	%ASA-6-722023: Group <GroupPolicy_CLIENT_VPN> User <User_Acme> IP <86.215.190.93> TCP SVC connection terminated without compression
+	%ASA-6-722023: Group <EXAMPLE> User <Username> IP <1.1.1.1> TCP SVC connection terminated without compression
     ```
 
 
@@ -311,7 +327,7 @@ In this section, you will find examples of raw logs as generated natively by the
 === "test_ASA_722023_2"
 
     ```
-	%ASA-6-722023: Group <GroupPolicy-CLIENT-VPN> User <a.smithee> IP <1.2.3.4> UDP SVC connection terminated without compression
+	%ASA-6-722023: Group <EXAMPLE> User <Username> IP <1.1.1.1> UDP SVC connection terminated without compression
     ```
 
 
@@ -319,7 +335,7 @@ In this section, you will find examples of raw logs as generated natively by the
 === "test_ASA_722028"
 
     ```
-	%ASA-5-722028: Group <GroupPolicy_CLIENT_VPN> User <User_Acme> IP <91.172.139.4> Stale SVC connection closed.
+	%ASA-5-722028: Group <EXAMPLE> User <Username> IP <1.1.1.1> Stale SVC connection closed.
     ```
 
 
@@ -327,7 +343,7 @@ In this section, you will find examples of raw logs as generated natively by the
 === "test_ASA_722032"
 
     ```
-	%ASA-5-722032: Group <GroupPolicy_CLIENT_VPN> User <User_Acme> IP <93.23.18.76> New UDP SVC connection replacing old connection.
+	%ASA-5-722032: Group <EXAMPLE> User <Username> IP <1.1.1.1> New UDP SVC connection replacing old connection.
     ```
 
 
@@ -335,7 +351,7 @@ In this section, you will find examples of raw logs as generated natively by the
 === "test_ASA_722033"
 
     ```
-	%ASA-5-722033: Group <GroupPolicy_CLIENT_VPN> User <User_Acme> IP <77.205.143.138> First TCP SVC connection established for SVC session.
+	%ASA-5-722033: Group <EXAMPLE> User <Username> IP <1.1.1.1> First TCP SVC connection established for SVC session.
     ```
 
 
@@ -343,7 +359,7 @@ In this section, you will find examples of raw logs as generated natively by the
 === "test_ASA_722034"
 
     ```
-	%ASA-5-722034: Group <GroupPolicy_CLIENT_VPN> User <User_Acme> IP <109.17.100.175> New TCP SVC connection, no existing connection.
+	%ASA-5-722034: Group <EXAMPLE> User <Username> IP <1.1.1.1> New TCP SVC connection, no existing connection.
     ```
 
 
@@ -351,7 +367,7 @@ In this section, you will find examples of raw logs as generated natively by the
 === "test_ASA_722037"
 
     ```
-	%ASA-4-722037: Group <GroupPolicy_CLIENT_VPN> User <User_Acme> IP <92.131.212.102> SVC closing connection: Transport closing.
+	%ASA-4-722037: Group <EXAMPLE> User <Username> IP <1.1.1.1> SVC closing connection: Transport closing.
     ```
 
 
@@ -359,7 +375,7 @@ In this section, you will find examples of raw logs as generated natively by the
 === "test_ASA_722051"
 
     ```
-	%ASA-6-722051: (WebVPN-Primary) WebVPN session for client user test-test, IP 1.2.3.4 has been created.
+	%ASA-6-722051: (WebVPN-Primary) WebVPN session for client user admin, IP 1.1.1.1 has been created.
     ```
 
 
@@ -367,7 +383,7 @@ In this section, you will find examples of raw logs as generated natively by the
 === "test_ASA_725001"
 
     ```
-	%ASA-6-725001: Starting SSL handshake with client WAN:195.101.173.60/49238 for TLS session.
+	%ASA-6-725001: Starting SSL handshake with client WAN:1.1.1.1/49238 for TLS session.
     ```
 
 
@@ -375,7 +391,7 @@ In this section, you will find examples of raw logs as generated natively by the
 === "test_ASA_725002"
 
     ```
-	%ASA-6-725002: Device completed SSL handshake with client WAN:90.114.208.186/65531
+	%ASA-6-725002: Device completed SSL handshake with client WAN:1.1.1.1/65531
     ```
 
 
@@ -383,7 +399,7 @@ In this section, you will find examples of raw logs as generated natively by the
 === "test_ASA_725006"
 
     ```
-	%ASA-6-725006: Device failed SSL handshake with client WAN:195.101.173.60/49699
+	%ASA-6-725006: Device failed SSL handshake with client WAN:1.1.1.1/49699
     ```
 
 
@@ -391,7 +407,7 @@ In this section, you will find examples of raw logs as generated natively by the
 === "test_ASA_725007"
 
     ```
-	<166>Nov 09 2022 10:01:59: %ASA-6-725007: SSL session with client WAN:195.101.173.60/49486 terminated.
+	<166>Nov 09 2022 10:01:59: %ASA-6-725007: SSL session with client WAN:1.1.1.1/49486 terminated.
     ```
 
 
@@ -407,7 +423,7 @@ In this section, you will find examples of raw logs as generated natively by the
 === "test_ASA_737016"
 
     ```
-	%ASA-6-737016: IPAA: Freeing local pool address 192.168.122.247
+	%ASA-6-737016: IPAA: Freeing local pool address 1.1.1.1
     ```
 
 
@@ -415,7 +431,7 @@ In this section, you will find examples of raw logs as generated natively by the
 === "test_ASA_750003"
 
     ```
-	%ASA-4-750003: Local:1.2.3.4:500 Remote:peer-aws-GIPN:500 Username:5.6.7.8 IKEv2 Negotiation aborted due to ERROR: There was no IPSEC policy found for received TS
+	%ASA-4-750003: Local:2.2.2.2:500 Remote:HOSTNAME:500 Username:User1 IKEv2 Negotiation aborted due to ERROR: There was no IPSEC policy found for received TS
     ```
 
 
@@ -423,7 +439,7 @@ In this section, you will find examples of raw logs as generated natively by the
 === "test_ASA_852001"
 
     ```
-	%FTD-6-852001: Received Lightweight to full proxy event from application Snort for TCP flow 1.2.3.4/10000 to 4.3.2.1/47003
+	%FTD-6-852001: Received Lightweight to full proxy event from application Snort for TCP flow 1.1.1.1/10000 to 2.2.2.2/47003
     ```
 
 
@@ -431,7 +447,7 @@ In this section, you will find examples of raw logs as generated natively by the
 === "test_FTD_109201"
 
     ```
-	%FTD-5-109201: UAUTH: Session=0x00fee000, User=User_Acme, Assigned IP=1.2.3.4, Succeeded adding entry.
+	%FTD-5-109201: UAUTH: Session=0x00fee000, User=Username, Assigned IP=1.1.1.1, Succeeded adding entry.
     ```
 
 
@@ -439,7 +455,7 @@ In this section, you will find examples of raw logs as generated natively by the
 === "test_FTD_113004"
 
     ```
-	%FTD-6-113004: AAA user authentication Successful : server =  10.10.48.61 : user = jdoe
+	%FTD-6-113004: AAA user authentication Successful : server =  1.1.1.1 : user = jdoe
     ```
 
 
@@ -447,7 +463,7 @@ In this section, you will find examples of raw logs as generated natively by the
 === "test_FTD_113004_2"
 
     ```
-	%FTD-6-113004: AAA user authorization Successful : server = 1.2.3.4 : user = User_Acme
+	%FTD-6-113004: AAA user authorization Successful : server = 1.1.1.1 : user = Username
     ```
 
 
@@ -455,7 +471,7 @@ In this section, you will find examples of raw logs as generated natively by the
 === "test_FTD_113019"
 
     ```
-	%FTD-4-113019: Group = MyGroup, Username = User_Acme, IP = 1.2.3.4, Session disconnected. Session Type: IKEv2, Duration: 2h:28m:09s, Bytes xmt: 54735230, Bytes rcv: 27473152, Reason: Idle Timeout
+	%FTD-4-113019: Group = EXAMPLE, Username = Username, IP = 1.1.1.1, Session disconnected. Session Type: IKEv2, Duration: 2h:28m:09s, Bytes xmt: 54735230, Bytes rcv: 27473152, Reason: Idle Timeout
     ```
 
 
@@ -463,7 +479,7 @@ In this section, you will find examples of raw logs as generated natively by the
 === "test_FTD_113039"
 
     ```
-	%FTD-6-113039: Group <CLIENT_VPN> User <User_Acme> IP <192.168.91.121> AnyConnect parent session started.
+	%FTD-6-113039: Group <EXAMPLE> User <Username> IP <1.1.1.1> AnyConnect parent session started.
     ```
 
 
@@ -471,7 +487,7 @@ In this section, you will find examples of raw logs as generated natively by the
 === "test_FTD_113039_2"
 
     ```
-	%FTD-6-113039: Group <CLIENT-VPN> User <user-name> IP <1.2.3.4> AnyConnect parent session started.
+	%FTD-6-113039: Group <EXAMPLE> User <Username> IP <1.1.1.1> AnyConnect parent session started.
     ```
 
 
@@ -479,7 +495,7 @@ In this section, you will find examples of raw logs as generated natively by the
 === "test_FTD_430002_1"
 
     ```
-	%FTD-1-430002: EventPriority: Low, DeviceUUID: 1662dc94-665c-4e50-97df-1c5b281556aa, InstanceID: 3, FirstPacketSecond: 2023-07-27T08:13:09Z, ConnectionID: 62230, AccessControlRuleAction: Allow, SrcIP: 1.2.3.4, DstIP: 5.6.7.8, SrcPort: 63853, DstPort: 443, Protocol: tcp, IngressInterface: WAN, EgressInterface: DMZ, IngressZone: OUT, EgressZone: DMZ, IngressVRF: Global, EgressVRF: Global, ACPolicy: ACPolicy, AccessControlRuleName: IN_KEMP_MAIL, Prefilter Policy: EXAMPLE L3-L4 Policy, InitiatorPackets: 2, ResponderPackets: 1, InitiatorBytes: 128, ResponderBytes: 66, NAPPolicy: Balanced Security and Connectivity
+	%FTD-1-430002: EventPriority: Low, DeviceUUID: 11111111-1111-1111-1111-111111111111, InstanceID: 3, FirstPacketSecond: 2023-07-27T08:13:09Z, ConnectionID: 62230, AccessControlRuleAction: Allow, SrcIP: 2.2.2.2, DstIP: 1.1.1.1, SrcPort: 63853, DstPort: 443, Protocol: tcp, IngressInterface: WAN, EgressInterface: DMZ, IngressZone: OUT, EgressZone: DMZ, IngressVRF: Global, EgressVRF: Global, ACPolicy: ACPolicy, AccessControlRuleName: IN_KEMP_MAIL, Prefilter Policy: EXAMPLE L3-L4 Policy, InitiatorPackets: 2, ResponderPackets: 1, InitiatorBytes: 128, ResponderBytes: 66, NAPPolicy: Balanced Security and Connectivity
     ```
 
 
@@ -487,7 +503,7 @@ In this section, you will find examples of raw logs as generated natively by the
 === "test_FTD_430003_1"
 
     ```
-	%FTD-1-430003: EventPriority: Low, DeviceUUID: 1662dc94-665c-4e50-97df-1c5b281556aa, InstanceID: 5, FirstPacketSecond: 2023-07-27T08:13:09Z, ConnectionID: 35868, AccessControlRuleAction: Allow, SrcIP: 1.2.3.4, DstIP: 5.6.7.8, SrcPort: 56901, DstPort: 53, Protocol: udp, IngressInterface: LAN, EgressInterface: WAN, IngressZone: LAN, EgressZone: OUT, IngressVRF: Global, EgressVRF: Global, ACPolicy: ACPolicy, AccessControlRuleName: SORTIE_SRVAD_DNS_OUT, Prefilter Policy: EXAMPLE L3-L4 Policy, User: Not Found, Client: DNS client, ApplicationProtocol: DNS, ConnectionDuration: 0, InitiatorPackets: 1, ResponderPackets: 1, InitiatorBytes: 88, ResponderBytes: 152, NAPPolicy: Balanced Security and Connectivity, DNSQuery: 1.fr.pool.ntp.org, DNSRecordType: a host address, DNSResponseType: No Error, DNS_TTL: 150, NAT_InitiatorPort: 22294, NAT_ResponderPort: 53, NAT_InitiatorIP: 4.3.2.1, NAT_ResponderIP: 8.7.6.5
+	%FTD-1-430003: EventPriority: Low, DeviceUUID: 11111111-1111-1111-1111-111111111111, InstanceID: 5, FirstPacketSecond: 2023-07-27T08:13:09Z, ConnectionID: 35868, AccessControlRuleAction: Allow, SrcIP: 3.3.3.3, DstIP: 1.1.1.1, SrcPort: 56901, DstPort: 53, Protocol: udp, IngressInterface: LAN, EgressInterface: WAN, IngressZone: LAN, EgressZone: OUT, IngressVRF: Global, EgressVRF: Global, ACPolicy: ACPolicy, AccessControlRuleName: SORTIE_SRVAD_DNS_OUT, Prefilter Policy: EXAMPLE L3-L4 Policy, User: Not Found, Client: DNS client, ApplicationProtocol: DNS, ConnectionDuration: 0, InitiatorPackets: 1, ResponderPackets: 1, InitiatorBytes: 88, ResponderBytes: 152, NAPPolicy: Balanced Security and Connectivity, DNSQuery: 1.fr.pool.ntp.example.org, DNSRecordType: a host address, DNSResponseType: No Error, DNS_TTL: 150, NAT_InitiatorPort: 22294, NAT_ResponderPort: 53, NAT_InitiatorIP: 4.4.4.4, NAT_ResponderIP: 2.2.2.2
     ```
 
 
@@ -495,7 +511,7 @@ In this section, you will find examples of raw logs as generated natively by the
 === "test_FTD_430003_2"
 
     ```
-	%FTD-1-430003: EventPriority: Low, DeviceUUID: 1662dc94-665c-4e50-97df-1c5b281556aa, InstanceID: 5, FirstPacketSecond: 2023-07-27T08:13:09Z, ConnectionID: 35871, AccessControlRuleAction: Allow, SrcIP: 1.2.3.4, DstIP: 5.6.7.8, SrcPort: 50158, DstPort: 443, Protocol: tcp, IngressInterface: LAN, EgressInterface: WAN, IngressZone: LAN, EgressZone: OUT, IngressVRF: Global, EgressVRF: Global, ACPolicy: ACPolicy, AccessControlRuleName: SORTIE_INTERNET_ALL, Prefilter Policy: EXAMPLE L3-L4 Policy, User: Not Found, Client: SSL client, ApplicationProtocol: HTTPS, WebApplication: Trend Micro, ConnectionDuration: 0, InitiatorPackets: 10, ResponderPackets: 13, InitiatorBytes: 967, ResponderBytes: 5018, NAPPolicy: Balanced Security and Connectivity, SSLPolicy: None, SSLFlowStatus: Success, SSLCipherSuite: Unknown, SSLCertificate: 3ccc5ece59e81d905ed314c1e9af0f797393fec5, SSLVersion: Unknown, SSLServerCertStatus: Valid, SSLActualAction: Do Not Decrypt, SSLExpectedAction: Do Not Decrypt, SSLServerName: example.org, URLCategory: Computer Security, URLReputation: Trusted, URL: https://example.org, NAT_InitiatorPort: 36170, NAT_ResponderPort: 443, NAT_InitiatorIP: 4.3.2.1, NAT_ResponderIP: 8.7.6.5
+	%FTD-1-430003: EventPriority: Low, DeviceUUID: 11111111-1111-1111-1111-111111111111, InstanceID: 5, FirstPacketSecond: 2023-07-27T08:13:09Z, ConnectionID: 35871, AccessControlRuleAction: Allow, SrcIP: 3.3.3.3, DstIP: 1.1.1.1, SrcPort: 50158, DstPort: 443, Protocol: tcp, IngressInterface: LAN, EgressInterface: WAN, IngressZone: LAN, EgressZone: OUT, IngressVRF: Global, EgressVRF: Global, ACPolicy: ACPolicy, AccessControlRuleName: SORTIE_INTERNET_ALL, Prefilter Policy: EXAMPLE L3-L4 Policy, User: Not Found, Client: SSL client, ApplicationProtocol: HTTPS, WebApplication: Trend Micro, ConnectionDuration: 0, InitiatorPackets: 10, ResponderPackets: 13, InitiatorBytes: 967, ResponderBytes: 5018, NAPPolicy: Balanced Security and Connectivity, SSLPolicy: None, SSLFlowStatus: Success, SSLCipherSuite: Unknown, SSLCertificate: 3ccc5ece59e81d905ed314c1e9af0f797393fec5, SSLVersion: Unknown, SSLServerCertStatus: Valid, SSLActualAction: Do Not Decrypt, SSLExpectedAction: Do Not Decrypt, SSLServerName: example.org, URLCategory: Computer Security, URLReputation: Trusted, URL: https://example.org, NAT_InitiatorPort: 36170, NAT_ResponderPort: 443, NAT_InitiatorIP: 4.4.4.4, NAT_ResponderIP: 2.2.2.2
     ```
 
 
@@ -503,7 +519,7 @@ In this section, you will find examples of raw logs as generated natively by the
 === "test_FTD_430003_3"
 
     ```
-	%FTD-1-430003: EventPriority: Low, DeviceUUID: deyyyyy-844d-11e7-b104-8d1450667052, InstanceID: 1, FirstPacketSecond: 2023-08-23T12:59:00Z, ConnectionID: 55087, AccessControlRuleAction: Allow, SrcIP: 10.55.21.168, DstIP: 142.55.179.67, SrcPort: 77777, DstPort: 80, Protocol: tcp, IngressInterface: LAN, EgressInterface: WAN, IngressZone: LAN, EgressZone: OUT, IngressVRF: Global, EgressVRF: Global, ACPolicy: ACPolicy, AccessControlRuleName: SORTIE_INTERNET_ALL, Prefilter Policy: LALALAND L3-L4 Policy, User: Not Found, UserAgent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.32 Safari/537.36, Client: Chrome, ClientVersion: 60.0.3112.32, ApplicationProtocol: HTTP, WebApplication: Google, ConnectionDuration: 0, InitiatorPackets: 5, ResponderPackets: 5, InitiatorBytes: 565, ResponderBytes: 484, NAPPolicy: Balanced Security and Connectivity, ReferencedHost: connectivitycheck.gstatic.com, URLCategory: Infrastructure and Content Delivery Networks, URLReputation: Favorable, URL: http://connectivitycheck.gstatic.com/generate_204, NAT_InitiatorPort: 77777, NAT_ResponderPort: 80, NAT_InitiatorIP: 194.55.57.195, NAT_ResponderIP: 142.55.179.67
+	%FTD-1-430003: EventPriority: Low, DeviceUUID: deyyyyy-844d-11e7-b104-8d1450667052, InstanceID: 1, FirstPacketSecond: 2023-08-23T12:59:00Z, ConnectionID: 55087, AccessControlRuleAction: Allow, SrcIP: 3.3.3.3, DstIP: 1.1.1.1, SrcPort: 77777, DstPort: 80, Protocol: tcp, IngressInterface: LAN, EgressInterface: WAN, IngressZone: LAN, EgressZone: OUT, IngressVRF: Global, EgressVRF: Global, ACPolicy: ACPolicy, AccessControlRuleName: SORTIE_INTERNET_ALL, Prefilter Policy: LALALAND L3-L4 Policy, User: Not Found, UserAgent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.32 Safari/537.36, Client: Chrome, ClientVersion: 60.0.3112.32, ApplicationProtocol: HTTP, WebApplication: Google, ConnectionDuration: 0, InitiatorPackets: 5, ResponderPackets: 5, InitiatorBytes: 565, ResponderBytes: 484, NAPPolicy: Balanced Security and Connectivity, ReferencedHost: connectivitycheck.gstatic.example.com, URLCategory: Infrastructure and Content Delivery Networks, URLReputation: Favorable, URL: http://connectivitycheck.gstatic.example.com/generate_204, NAT_InitiatorPort: 77777, NAT_ResponderPort: 80, NAT_InitiatorIP: 2.2.2.2, NAT_ResponderIP: 1.1.1.1
     ```
 
 
@@ -511,7 +527,7 @@ In this section, you will find examples of raw logs as generated natively by the
 === "test_FTD_722051_1"
 
     ```
-	%FTD-4-722051: Group <GroupPolicy> User <johndoe> IP <1.2.3.4> IPv4 Address <5.6.7.8> IPv6 address <::> assigned to session
+	%FTD-4-722051: Group <EXAMPLE> User <Username> IP <2.2.2.2> IPv4 Address <1.1.1.1> IPv6 address <::> assigned to session
     ```
 
 
@@ -519,7 +535,7 @@ In this section, you will find examples of raw logs as generated natively by the
 === "test_FTD_722051_2"
 
     ```
-	%FTD-4-722051: Group <GP_SSL_Desktop> User <johndoe> IP <1.2.3.4> IPv4 Address <5.6.7.8> IPv6 address <::> assigned to session
+	%FTD-4-722051: Group <EXAMPLE> User <Username> IP <2.2.2.2> IPv4 Address <1.1.1.1> IPv6 address <::> assigned to session
     ```
 
 
@@ -527,7 +543,7 @@ In this section, you will find examples of raw logs as generated natively by the
 === "test_FTD_750003"
 
     ```
-	%FTD-4-750003 Local:1.2.3.4:500 Remote:5.6.7.8:500 Username:User IKEv2 Negotiation aborted due to ERROR: Failed to authenticate the IKE SA
+	%FTD-4-750003 Local:2.2.2.2:500 Remote:1.1.1.1:500 Username:Username IKEv2 Negotiation aborted due to ERROR: Failed to authenticate the IKE SA
     ```
 
 
@@ -535,7 +551,7 @@ In this section, you will find examples of raw logs as generated natively by the
 === "test_FTD_750003_2"
 
     ```
-	%FTD-4-750003: Local:1.2.3.4:500 Remote:5.6.7.8:500 Username:5.6.7.8 IKEv2 Negotiation aborted due to ERROR: There was no IPSEC policy found for received TS
+	%FTD-4-750003: Local:2.2.2.2:500 Remote:1.1.1.1:500 Username:User1 IKEv2 Negotiation aborted due to ERROR: There was no IPSEC policy found for received TS
     ```
 
 
@@ -543,7 +559,7 @@ In this section, you will find examples of raw logs as generated natively by the
 === "test_FTD_75006"
 
     ```
-	%FTD-5-750006: Local:1.2.3.4:4500 Remote:5.6.7.8:55543 Username:toto IKEv2 SA UP. Reason: New Connection Established
+	%FTD-5-750006: Local:2.2.2.2:4500 Remote:1.1.1.1:55543 Username:admin IKEv2 SA UP. Reason: New Connection Established
     ```
 
 
@@ -551,7 +567,7 @@ In this section, you will find examples of raw logs as generated natively by the
 === "test_group_1"
 
     ```
-	Group <AnyConnect-SESAME> User <JD34242243> IP <1.2.3.4> AnyConnect session lost connection. Waiting to resume.
+	Group <EXAMPLE> User <Username> IP <1.1.1.1> AnyConnect session lost connection. Waiting to resume.
     ```
 
 
@@ -567,7 +583,7 @@ In this section, you will find examples of raw logs as generated natively by the
 === "test_group_1_2"
 
     ```
-	Group <MyGroup> User <MyUser> IP <4.3.2.1> IPv4 Address <1.2.3.4> IPv6 address <::> assigned to session
+	Group <EXAMPLE> User <Username> IP <2.2.2.2> IPv4 Address <1.1.1.1> IPv6 address <::> assigned to session
     ```
 
 
@@ -575,7 +591,7 @@ In this section, you will find examples of raw logs as generated natively by the
 === "test_group_1_3"
 
     ```
-	Group <MyGroup> User <MyUser> IP <4.3.2.1> IPv4 Address <> IPv6 address <3deb:3c5e:59d0:53ad:1115:d3d7:58da:47d6> assigned to session
+	Group <EXAMPLE> User <Username> IP <1.1.1.1> IPv4 Address <> IPv6 address <fe80:0011:2233:4455:6677:8899:aabb:ccdd> assigned to session
     ```
 
 
@@ -583,7 +599,7 @@ In this section, you will find examples of raw logs as generated natively by the
 === "test_group_2"
 
     ```
-	Group <MYGROUP> User <JD34242243> IP <1.2.3.4> SVC closing connection: DPD failure.
+	Group <EXAMPLE> User <Username> IP <1.1.1.1> SVC closing connection: DPD failure.
     ```
 
 
@@ -591,7 +607,7 @@ In this section, you will find examples of raw logs as generated natively by the
 === "test_group_2_2"
 
     ```
-	Group <MyGroup> User <MyUsser> IP <1.2.3.4> Client Type: Cisco AnyConnect VPN Agent for Windows 4.10.07061
+	Group <EXAMPLE> User <Username> IP <1.1.1.1> Client Type: Cisco AnyConnect VPN Agent for Windows 4.10.07061
     ```
 
 
@@ -599,7 +615,7 @@ In this section, you will find examples of raw logs as generated natively by the
 === "test_group_2_3"
 
     ```
-	 Group <MyGroup> User <MyUsser> IP <1.2.3.4> Client Type: Cisco AnyConnect VPN Agent for Windows 4.10.07061
+	 Group <EXAMPLE> User <Username> IP <1.1.1.1> Client Type: Cisco AnyConnect VPN Agent for Windows 4.10.07061
     ```
 
 
@@ -607,7 +623,7 @@ In this section, you will find examples of raw logs as generated natively by the
 === "test_group_3"
 
     ```
-	Group = MYGROUP, Username = JD34242243, IP = 1.2.3.4, Session disconnected. Session Type: SSL, Duration: 6h:33m:18s, Bytes xmt: 220870890, Bytes rcv: 57125392, Reason: Idle Timeout
+	Group = EXAMPLE, Username = Username, IP = 1.1.1.1, Session disconnected. Session Type: SSL, Duration: 6h:33m:18s, Bytes xmt: 220870890, Bytes rcv: 57125392, Reason: Idle Timeout
     ```
 
 
@@ -623,7 +639,7 @@ In this section, you will find examples of raw logs as generated natively by the
 === "test_group_5"
 
     ```
-	TunnelGroup <AnyConnect-SESAME> GroupPolicy <MYGROUP> User <JD34242243> IP <1.2.3.4> No IPv6 address available for SVC connection
+	TunnelGroup <REDACTED> GroupPolicy <EXAMPLE> User <Username> IP <1.1.1.1> No IPv6 address available for SVC connection
     ```
 
 
@@ -631,7 +647,7 @@ In this section, you will find examples of raw logs as generated natively by the
 === "test_group_6_2"
 
     ```
-	Group <AnyConnect-EXAMPLE> User <MyUser> IP <1.2.3.4> AnyConnect session lost connection. Waiting to resume.
+	Group <EXAMPLE> User <Username> IP <1.1.1.1> AnyConnect session lost connection. Waiting to resume.
     ```
 
 
@@ -639,7 +655,7 @@ In this section, you will find examples of raw logs as generated natively by the
 === "test_group_7"
 
     ```
-	TunnelGroup <AnyConnect-EX> GroupPolicy <MyGroup> User <MyUser> IP <4.3.2.1> No IPv6 address available for SVC connection
+	TunnelGroup <REDACTED> GroupPolicy <EXAMPLE> User <Username> IP <1.1.1.1> No IPv6 address available for SVC connection
     ```
 
 

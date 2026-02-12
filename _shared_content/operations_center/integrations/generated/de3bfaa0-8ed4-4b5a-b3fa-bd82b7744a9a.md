@@ -301,7 +301,12 @@ This section demonstrates how the raw logs will be transformed by our parsers. I
             "name": "Publicly Exposed Assets with DataFindings "
         },
         "url": {
-            "full": "https://example.org:443"
+            "domain": "example.org",
+            "full": "https://example.org:443",
+            "port": 443,
+            "registered_domain": "example.org",
+            "scheme": "https",
+            "top_level_domain": "org"
         },
         "wiz": {
             "issues": {
