@@ -64,28 +64,28 @@ PROVE IT by Rubycat is a privileged access management solution.
 2. Go to `Audit` > `Parameters` > `Notifications`.
 3. Create a new rule by filling the details:
 
-   - **Type**: select `All`
-   - **Name**: Choose a name for the rule (ex: `All`)
-   - **Description**: Enter a description (optional)
-   - **target**: click on `add a target +`, select the Syslog server defined previously
+    - **Type**: select `All`
+    - **Name**: Choose a name for the rule (ex: `All`)
+    - **Description**: Enter a description (optional)
+    - **target**: click on `add a target +`, select the Syslog server defined previously
 
 4. Click `Save`
 5. Go to the tab `Administrator` in the same menu
 6. Create a new rule by filling the details:
 
-   - **Type**: select `All`
-   - **Name**: Choose a name for the rule (ex: `All`)
-   - **Description**: Enter a description (optional)
-   - **target**: click on `add a target +`, select the Syslog server defined previously
+    - **Type**: select `All`
+    - **Name**: Choose a name for the rule (ex: `All`)
+    - **Description**: Enter a description (optional)
+    - **target**: click on `add a target +`, select the Syslog server defined previously
 
 7. Click `Save`
 8. Go to the tab `System` in the same menu
 9. Create a new rule by filling the details:
    
-   - **Type**: select `All`
-   - **Name**: Choose a name for the rule (ex: `All`)
-   - **Description**: Enter a description (optional)
-   - **target**: click on `add a target +`, select the Syslog server defined previously
+    - **Type**: select `All`
+    - **Name**: Choose a name for the rule (ex: `All`)
+    - **Description**: Enter a description (optional)
+    - **target**: click on `add a target +`, select the Syslog server defined previously
 
 10. Click `Save`
 
