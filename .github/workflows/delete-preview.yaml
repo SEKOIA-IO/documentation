@@ -23,7 +23,7 @@ jobs:
         run: echo "pr_number=$(cat PR_NUMBER)" >> $GITHUB_OUTPUT
 
       - name: Check-out the repo
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           sparse-checkout: |
             .github/actions/
