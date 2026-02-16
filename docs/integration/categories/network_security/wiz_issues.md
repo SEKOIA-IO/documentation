@@ -6,7 +6,7 @@ type: intake
 
 ## Overview
 
-Wiz Cloud Issues surface and classify security risks across your cloud estate—misconfigurations, vulnerabilities, secrets exposure, and policy violations.  
+Wiz Cloud Issues surface and classify security risks across your cloud estate—misconfigurations, vulnerabilities, secrets exposure, and policy violations.
 
 - **Supported environment**: SaaS
 - **Detection based on**: Alerts

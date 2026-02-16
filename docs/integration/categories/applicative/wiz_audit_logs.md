@@ -6,7 +6,7 @@ type: intake
 
 ## Overview
 
-Wiz Audit Logs capture and centralize user activities, API calls, and resource changes across your cloud environments in real time.  
+Wiz Audit Logs capture and centralize user activities, API calls, and resource changes across your cloud environments in real time.
 
 They deliver immutable, context-rich log trails for forensic investigations, compliance reporting, and anomaly detection.
 
