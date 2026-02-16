@@ -412,6 +412,7 @@ This section demonstrates how the raw logs will be transformed by our parsers. I
         },
         "url": {
             "domain": "www.example.org",
+            "full": "http://www.example.org/",
             "original": "http://www.example.org/",
             "path": "/",
             "port": 80,
@@ -492,6 +493,7 @@ This section demonstrates how the raw logs will be transformed by our parsers. I
         },
         "url": {
             "domain": "us.adserver.example.com",
+            "full": "http://us.adserver.example.com/?REDACTED",
             "original": "http://us.adserver.example.com/?REDACTED",
             "path": "/",
             "port": 80,
