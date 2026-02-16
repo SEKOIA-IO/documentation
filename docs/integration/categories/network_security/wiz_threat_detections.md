@@ -6,6 +6,10 @@ type: intake
 
 ## Overview
 
+Wiz Threat Detections delivers real-time, agentless threat monitoring across cloud workloads, containers, and Kubernetes.
+It fuses vulnerability scanning, behavioral analytics, and exposure context to pinpoint and prioritize risks.
+As a SaaS platform, Wiz integrates with CI/CD pipelines and cloud services for continuous, automated defense.
+
 - **Supported environment**: SaaS
 - **Detection based on**: Alerts
 - **Supported application or feature**:
