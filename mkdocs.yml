@@ -429,6 +429,7 @@ nav:
       - WatchGuard Firebox: integration/categories/network_security/watchguard_firebox.md
       - Wiz Cloud configuration findings: integration/categories/network_security/wiz_cloud_configuration_findings.md
       - Wiz Issues: integration/categories/network_security/wiz_issues.md
+      - Wiz Threat Detections: integration/categories/network_security/wiz_threat_detections.md
       - Wiz Vulnerability Findings: integration/categories/network_security/wiz_vulnerability_findings.md
       - Zscaler Internet Access: integration/categories/network_security/zscaler_zia.md
   - List of Playbooks Actions:
