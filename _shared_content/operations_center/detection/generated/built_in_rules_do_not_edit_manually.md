@@ -1,4 +1,4 @@
-Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-02-10_](rules_changelog.md)).
+Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-02-16_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Identity Information**
 
@@ -3252,10 +3252,14 @@ Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-
 
 ??? abstract "Antivirus Exploitation Framework Detection"
     
-    Detects a highly relevant Antivirus alert that reports an exploitation framework. This is based on Windows Defender logs (Event ID 1116 and 1117).
+    Detects a highly relevant Antivirus alert that reports an exploitation framework. This is based on Windows Defender logs (Event ID 1116 and 1117). 
     
     - **Effort:** elementary
     
+    - **Changelog:**
+    
+        - 16/02/2026 - minor - Filtering out Event ID 1011 which caused false positives. The rule fired at the deletion of a quarantined file by Defender which was not the wanted behaviour.
+            
 ??? abstract "Antivirus Password Dumper Detection"
     
     Detects a highly relevant Antivirus alert that reports a password dumper. This detection relies on Windows Defender events logs. This is based on Windows Defender logs (Event ID 1116 and 1117).
@@ -14881,10 +14885,14 @@ Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-
 
 ??? abstract "Antivirus Exploitation Framework Detection"
     
-    Detects a highly relevant Antivirus alert that reports an exploitation framework. This is based on Windows Defender logs (Event ID 1116 and 1117).
+    Detects a highly relevant Antivirus alert that reports an exploitation framework. This is based on Windows Defender logs (Event ID 1116 and 1117). 
     
     - **Effort:** elementary
     
+    - **Changelog:**
+    
+        - 16/02/2026 - minor - Filtering out Event ID 1011 which caused false positives. The rule fired at the deletion of a quarantined file by Defender which was not the wanted behaviour.
+            
 ??? abstract "Antivirus Password Dumper Detection"
     
     Detects a highly relevant Antivirus alert that reports a password dumper. This detection relies on Windows Defender events logs. This is based on Windows Defender logs (Event ID 1116 and 1117).

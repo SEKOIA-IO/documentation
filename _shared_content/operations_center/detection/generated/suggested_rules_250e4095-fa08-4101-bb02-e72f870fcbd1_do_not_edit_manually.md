@@ -155,7 +155,7 @@ The following Sekoia.io built-in rules match the intake **Sekoia.io Endpoint Age
 
 ??? abstract "Antivirus Exploitation Framework Detection"
     
-    Detects a highly relevant Antivirus alert that reports an exploitation framework. This is based on Windows Defender logs (Event ID 1116 and 1117).
+    Detects a highly relevant Antivirus alert that reports an exploitation framework. This is based on Windows Defender logs (Event ID 1116 and 1117). 
     
     - **Effort:** elementary
 
