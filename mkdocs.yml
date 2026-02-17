@@ -99,7 +99,12 @@ nav:
       - Asset Context Panel (coming soon): xdr/features/investigate/asset_context_panel.md
       - Events Query Language: xdr/features/investigate/events_query_language.md
       - Querying Events: xdr/features/investigate/querying_events.md
-      - Query Builder: xdr/features/investigate/query_builder.md
+      - Query Builder: 
+        - Discover the query builder: xdr/features/investigate/query_builder.md
+        - Create and manage queries: xdr/features/investigate/create_manage_queries.md
+        - Share and duplicate queries: xdr/features/investigate/share_queries.md
+        - Data visualization guide: xdr/features/investigate/data_visualization_guide.md
+        - Query builder form mode reference: xdr/features/investigate/query_builder_form_reference.md
       - Sekoia Operating Language: xdr/features/investigate/sekoia_operating_language.md
       - Notebooks: xdr/features/investigate/notebooks.md
     - Report:
@@ -107,7 +112,7 @@ nav:
         - Understanding dashboards: xdr/features/report/dashboards.md
         - Create and manage dashboards: xdr/features/report/create_dashboards.md
         - Configure widgets and layout: xdr/features/report/add_widgets_dashboards.md
-        - Use filters in dashboards: xdr/features/report/dashboards_filters.md
+        - Filter data in dashboards: xdr/features/report/dashboards_filters.md
         - Share dashboards: xdr/features/report/share_dashboards.md
         - Built-in widgets reference: xdr/features/report/built_in_widget_reference.md
       - Threat Landscape: xdr/features/report/threat_landscape.md
