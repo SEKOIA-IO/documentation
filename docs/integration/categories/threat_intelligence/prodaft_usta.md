@@ -1,4 +1,4 @@
-uuid: f0270ace-6531-403d-8e82-39fe492d7561
+uuid: bb71a257-e2cc-419c-b210-ab23cf731b3a
 name: Prodaft USTA
 type: intake
 
@@ -50,13 +50,13 @@ Before configuring the integration, ensure that you have:
 
 ### Instruction on Sekoia
 
-{!_shared_content/operations_center/integrations/generated/f0270ace-6531-403d-8e82-39fe492d7561_sample.md!}
+{!_shared_content/operations_center/integrations/generated/bb71a257-e2cc-419c-b210-ab23cf731b3a_sample.md!}
 
 {!_shared_content/integration/detection_section.md!}
 
-{!_shared_content/operations_center/detection/generated/suggested_rules_f0270ace-6531-403d-8e82-39fe492d7561_do_not_edit_manually.md!}
+{!_shared_content/operations_center/detection/generated/suggested_rules_bb71a257-e2cc-419c-b210-ab23cf731b3a_do_not_edit_manually.md!}
 
-{!_shared_content/operations_center/integrations/generated/f0270ace-6531-403d-8e82-39fe492d7561.md!}
+{!_shared_content/operations_center/integrations/generated/bb71a257-e2cc-419c-b210-ab23cf731b3a.md!}
 
 ## Further readings
 
