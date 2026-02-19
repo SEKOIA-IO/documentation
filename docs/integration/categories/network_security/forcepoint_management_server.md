@@ -35,7 +35,7 @@ To configure Forcepoint Management Server to forward logs to Sekoia.io, follow t
    * In the `Management Server` properties window, click the `Audit Forwarding` tab.
    * Click `Add` to create a new forwarding rule
    * Set `Target host`, `Port`and `Service` based on your sekoia forwarder server configuration.
-   * Select the LEEF or CEF format (we only accept the both).
+   * Select `McAfee ESM` format.
 
 ### Forward logs to Sekoia.io
 
