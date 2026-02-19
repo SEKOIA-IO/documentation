@@ -1,8 +1,5 @@
 # Filter data in dashboards
 
-!!! Note
-    Filters are currently released under the Early Access Program.
-
 Dashboard filters are dynamic controls that allow you to modify query parameters across one or multiple widgets in real time. By using filters, you create a placeholder that accepts user input to adjust the scope of an investigation, such as time range, entity, or process, without editing the underlying query logic. This makes dashboards context-aware and interactive.
 
 !!! Example
