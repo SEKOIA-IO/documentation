@@ -566,6 +566,7 @@ Once the configuration file is modified, restart the agent:
 
 !!! INFO
     This feature is currently in beta
+	Optimization rules can be used plateform-wide on any integration
 
 The agent allows you to ignore specific events based on their field values.
 To achieve this, it relies on the concept of optimization rules that we also have in the platform.
