@@ -326,7 +326,7 @@ detection:
     event.code: 4720
   non_working_hours_utc:
 	  timestamp|timerange: 20:00-09:00
-	condition: selection and non_working_hours_utc
+  condition: selection and non_working_hours_utc
 ```
 
 ### Day of week
