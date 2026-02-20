@@ -137,7 +137,7 @@ Reset a user's password. You will need UserAuthenticationMethod.ReadWrite.All de
 | --------- | ------- | --------------------------- |
 | `id` | `string` | ID of the user. id or userPrincipalName should be specified. |
 | `userPrincipalName` | `string` | Principal Name of the user. id or userPrincipalName should be specified. |
-| `userNewPassword` | `string` | New password, required to reset the old one of course. |
+| `userNewPassword` | `string` | [New password](https://learn.microsoft.com/en-us/entra/identity/authentication/concept-password-ban-bad-combined-policy), required to reset the old one of course. |
 
 ### Revoke Sign in
 
