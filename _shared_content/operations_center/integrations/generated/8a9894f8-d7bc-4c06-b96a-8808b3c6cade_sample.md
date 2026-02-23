@@ -60,6 +60,14 @@ In this section, you will find examples of raw logs as generated natively by the
 
 
 
+=== "test_cmd_authorization"
+
+    ```
+	0085509171 4 0 2026-01-07 19:51:20.282 +00:00 5510785544 5202 NOTICE Device-Administration: Command Authorization succeeded, ConfigVersionId=242, Device IP Address=1.1.1.1, DestinationIPAddress=2.2.2.2, DestinationPort=49, UserName=Username1, CmdSet=[ CmdAV=show CmdArgAV=ipv6 CmdArgAV=mld CmdArgAV=snooping CmdArgAV=<cr> ], Protocol=Tacacs, MatchedCommandSet=AllowAllCommands, NetworkDeviceName=example.local, Type=Authorization, Privilege-Level=1, Authen-Type=ASCII, Service=None, User=Username1, Port=tty1, Remote-Address=3.3.3.3, Authen-Method=None, Service-Argument=shell, NetworkDeviceProfileId=11111111-1111-1111-1111-111111111111, AcsSessionID=EXAMPLE/11111/22222, AuthenticationIdentityStore=IT_AD, AuthenticationMethod=Lookup, SelectedAccessService=Default Device Admin, SelectedCommandSet=AllowAllCommands, IsMachineAuthentication=false, RequestLatency=90, Step=13005, Step=15049, Step=15008, Step=15048, Step=15041,
+    ```
+
+
+
 === "test_conf_events"
 
     ```
@@ -168,6 +176,38 @@ In this section, you will find examples of raw logs as generated natively by the
 
     ```
 	CISE_Administrative_and_Operational_Audit 0000000000 1 0 2025-07-29 14:07:18.047 +02:00 0000000000 51000 NOTICE Administrator-Login: Administrator authentication failed, ConfigVersionId=XX, AdminInterface=GUI, AdminIPAddress=1.2.3.4, AdminName=user1, OperationMessageText=Authentication failed due to invalid user or password, or account is disabled/locked,
+    ```
+
+
+
+=== "test_network_info_events5"
+
+    ```
+	0017407182 7 4  WiFi iPhone-ABC1234 Example Cert\, iPhone-ABC1234 \, 11111111-1111-1111-1111-111111111111, StepData=34=a1.example.org, StepData=35=a1.example.org, StepData=36=b1.example.org\,Domain trust is one-way, StepData=37=example.net\,Domain trust is one-way, StepData=38=EXAMPLE.LOCAL\,Domain trust is one-way, StepData=40=ERROR_NO_SUCH_USER, StepData=41=IT_AD, StepData=51= Network Access.NetworkDeviceName, StepData=52= CERTIFICATE.Issuer - Common Name, TotalAuthenLatency=27, ClientLatency=15, IsMachineIdentity=false, allowEasyWiredSession=false, TLSCipher=ECDHE-RSA-AES256-GCM-SHA384, TLSVersion=TLSv1.2, DTLSSupport=Unknown, Subject=CN=WiFi iPhone-ABC1234 Example Cert, Subject Alternative Name - Other Name=iPhone-ABC1234 , Subject Alternative Name - DNS=11111111-1111-1111-1111-111111111111, Issuer=CN=Example Sub CA G2\,DC=a1\,DC=example.org, Issuer - Common Name=Example Sub CA G2, Issuer - Domain Component=a1, Issuer - Domain Component=example.org,
+    ```
+
+
+
+=== "test_network_info_events6"
+
+    ```
+	0003023466 4 3  DTLSSupport=Unknown, HostIdentityGroup=Endpoint Identity Groups:Unknown, Model Name=9800-CL, Network Device Profile=Cisco, Location=Location#All Locations#SWE#Azure, Device Type=Device Type#All Device Types#WLC9800, IPSEC=IPSEC#Is IPSEC Device#No, Name=Endpoint Identity Groups:Unknown, Response={UserName=02:00:00:00:00:01; User-Name=02-00-00-00-00-01; Class=CACS:01BCDEF023:ABC/111111/22222; cisco-av-pair=url-redirect-acl=GS-Redirect_ACL; cisco-av-pair=url-redirect=https://REDACTED; cisco-av-pair=profile-name=Unknown; LicenseTypes=1; },
+    ```
+
+
+
+=== "test_network_info_events7"
+
+    ```
+	0017407213 1 0 2026-01-22 17:20:22.444 +01:00 1165981159 61025 NOTICE Administrative and Operational Audit: Open secure connection with TLS peer, ConfigVersionId=167, UserName=USERNAME, ISELocalAddress=1.1.1.1:1812, ISEModuleName=EAP_SERVER, ISEServiceName=EAP-TLS Server, PeerAddress=02-00-00-00-00-01, PeerName=iPhone-ABC123 , ConnectionStatus=Succeeded, UniqueConnectionIdentifier =11111111-1111-1111-1111-111111111111,
+    ```
+
+
+
+=== "test_network_info_events8"
+
+    ```
+	0003023463 3 0 2026-01-22 17:20:15.900 +00:00 0196666985 3000 NOTICE Radius-Accounting: RADIUS Accounting start request, ConfigVersionId=226, Device IP Address=2.2.2.2, UserName=02-00-00-00-00-01, NetworkDeviceName=DEVICE_NAME, User-Name=02-00-00-00-00-01, NAS-IP-Address=2.2.2.2, NAS-Port=20012, Framed-IP-Address=1.1.1.1, Class=CACS:01234ABC:ABC/111111/222222, Called-Station-ID=02-00-00-00-00-02, Called-Station-ID=example:abcs, Calling-Station-ID=02-00-00-00-00-01, NAS-Identifier=DEVICE_NAME, Acct-Status-Type=Start, Acct-Delay-Time=0, Acct-Session-Id=00000123, Acct-Authentic=Remote, Event-Timestamp=1769102415, NAS-Port-Type=Wireless - IEEE 802.11, NAS-Port-Id=example, cisco-av-pair=dc-profile-name=Un-Classified Device, cisco-av-pair=dc-device-name=Unknown Device, cisco-av-pair=dc-device-class-tag=Un-Classified Device, cisco-av-pair=dc-certainty-metric=0,
     ```
 
 
