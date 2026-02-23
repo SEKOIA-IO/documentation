@@ -851,7 +851,7 @@ Send a `POST` to `https://api.sekoia.io/v1/sic/conf/intakes/optimization_rules/`
 
 ### Events examples
 
-Here's a non-exhaustive list of events the agent can detect:
+Here's a non-exhaustive list of events the agent can detect (the list is not exhaustive because it depends on context, configuration, agent version, etc.):
 
 === "Windows"
 
