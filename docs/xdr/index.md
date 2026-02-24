@@ -45,7 +45,7 @@ Automating your security improves your cybersecurity operations by consolidating
 
 ### Reveal (Asset Visibility & Inventory)
 
-Reveal is an add-on module that continuously discovers, unifies, and contextualizes your assets (hosts, accounts, networks). It merges data from third-party asset inventories, vulnerability management tools, the sekoia endpoint agent and passive asset identication into a single, unified Asset Inventory.  
+Reveal is an add-on module that continuously discovers, unifies, and contextualizes your assets (hosts, accounts, networks). It merges data from third-party asset inventories, vulnerability management tools, the sekoia endpoint agent and passive asset identification into a single, unified Asset Inventory.  
 
 Each asset is enriched with a context such as, Timeline, Hygiene posture, Vulnerabilities, and Points of Interest. Open the Asset Context Panel from Alerts, Cases, Events, or Assets to see identity, activity, and risk in place — speeding up triage and decisions.  
 

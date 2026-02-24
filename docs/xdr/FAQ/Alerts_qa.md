@@ -20,4 +20,4 @@ Besides matching a rule in real time, an alert can be triggered with a delay whe
         * Reingestion of old logs
 
 !!! Note
-    See more informaiton on `timestamp` and `event.created`fields [here](Events_qa.md).
+    See more information on `timestamp` and `event.created`fields [here](Events_qa.md).

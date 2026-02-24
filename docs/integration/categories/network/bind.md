@@ -108,7 +108,7 @@ As of now, the main solution to collect BIND logs leverages the Rsyslog recipe. 
 5. **Verify Syslog Server Configuration:**
    - On your syslog server, verify that it is configured to accept syslog messages from the BIND server on the specified port.
 
-For more informations on [how to configure your BIND instance on its official website](https://kb.isc.org/docs/aa-01526).
+For more information on [how to configure your BIND instance on its official website](https://kb.isc.org/docs/aa-01526).
 
 ### Instruction on Sekoia
 

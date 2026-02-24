@@ -93,7 +93,7 @@ To streamline your security operations, Sekoia.io provides an option to automati
 
 #### Intake formats
 
-Rules are associated with Intake formats that they are compatible with. Detection rules can be enabled when they have a compatible intake format configured that provide the necessary data to detect suspicious activites.
+Rules are associated with Intake formats that they are compatible with. Detection rules can be enabled when they have a compatible intake format configured that provide the necessary data to detect suspicious activities.
 
 Select an intake format in the left panel to list rules compatible with the intake format.
 
@@ -437,15 +437,15 @@ For Custom rule, you will be able to edit its main definition:
 - Detection Pattern
 - Security alerts (event fields can be selected to define the similarity strategy in the section `Similarity strategy`).
 
-For an MSSP communty, when you edit this part and your rule is multi-communities, changes will be shared with all your managed communities.
+For an MSSP community, when you edit this part and your rule is multi-communities, changes will be shared with all your managed communities.
 
 ### Limiting the scope of a rule
 
 For all types of rules, You will be able to limit its applicable scope with the following filters. For an MSSP community, these filters will be applied only on the community selected:
 
 - **Alert Filters**: are additional patterns that you can add to any rule to exclude matching events. This is useful to exclude known false positives so that your detections are always spot on. It is often easier to create Alert Filters [directly from an Alert](../investigate/alerts.md#create-an-alert-filter).
-- **Entities**: select the entities this rule should apply to. By default, rules apply to all entities. To ease the selection of entities, users can include or exlude specific entities. Use the filter on top of the table to include or exclude. Have a quick look at your selection by clicking on `selected entities`. 
-- **Assets**: select the assets this rule should apply to. By default, rules apply to all assets. To ease the selection of assets, users can include or exlude specific entities. To ease the selection of entities, users can include or exlude specific entities. Use the filter on top of the table to include or exclude. Have a quick look at your selection by clicking on `selected assets`. 
+- **Entities**: select the entities this rule should apply to. By default, rules apply to all entities. To ease the selection of entities, users can include or exclude specific entities. Use the filter on top of the table to include or exclude. Have a quick look at your selection by clicking on `selected entities`. 
+- **Assets**: select the assets this rule should apply to. By default, rules apply to all assets. To ease the selection of assets, users can include or exclude specific entities. To ease the selection of entities, users can include or exclude specific entities. Use the filter on top of the table to include or exclude. Have a quick look at your selection by clicking on `selected assets`. 
 
 ![limit-scope](/assets/operation_center/rules_catalog/rules_catalog_filters.png)
 

@@ -58,7 +58,7 @@ Microsoft Sentinel is a cloud-native security information and event management (
 
 1. Go to `Manage` > `Certificates & secrets`
 
-![Certificats and secrets](/assets/operation_center/integration_catalog/cloud_and_saas/microsoft_sentinel/certificats_secrets.png){: style="max-width:100%"}
+![Certificates and secrets](/assets/operation_center/integration_catalog/cloud_and_saas/microsoft_sentinel/certificats_secrets.png){: style="max-width:100%"}
 
 2. Click `+ New client secret`
 
@@ -76,7 +76,7 @@ Microsoft Sentinel is a cloud-native security information and event management (
 1. In the search bar, go to `Subscriptions`
 2. Click on one of your subscriptions
 3. On the right panel, Click `Access control (IAM)`
-4. Click `+ Add` > `Add role assignement`
+4. Click `+ Add` > `Add role assignment`
 5. In the `job function roles` sub-tab, search for `Microsoft Sentinel Contributor` and select it
 6. Click `Next`
 7. Select `User, group or service principal` as access

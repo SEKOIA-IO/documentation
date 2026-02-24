@@ -44,7 +44,7 @@ They can also compare the different plans of Sekoia by clicking on `Compare plan
 
 ### Community subscriptions overview
 
-From the worskpace, admins can have a quick overview of all their managed communities subscriptions. 
+From the workspace, admins can have a quick overview of all their managed communities subscriptions. 
 
 They can: 
 

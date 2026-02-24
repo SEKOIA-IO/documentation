@@ -82,13 +82,13 @@ Select the way who develop your parse to find the appropriate documentation: wit
     ### Common stages
     Common stages are provided by Sekoia.io to help you parse your events.
 
-    There are currently 5 different common stages, each having its specifities:
+    There are currently 5 different common stages, each having its specifics:
 
     - [Json](#json-stage)
 
     - [Date](#date)
 
-    - [Delimiter Separeted Value](#delimiter-separated-values)
+    - [Delimiter Separated Value](#delimiter-separated-values)
 
     - [Grok](#grok)
 
@@ -264,7 +264,7 @@ Select the way who develop your parse to find the appropriate documentation: wit
 
     - A `Column Names` - You need to list the column names used to retrieve information. The format has to be the following : `<column_A>,<column_B>,<column_C>...`
 
-    - A `Delimiter` - The delimiter used to differenciate two columns (By default `,`).
+    - A `Delimiter` - The delimiter used to differentiate two columns (By default `,`).
 
     **Example**
 
@@ -942,7 +942,7 @@ Select the way who develop your parse to find the appropriate documentation: wit
     ## Action
 
     An action is an elementary operations that can create, update and delete fields.
-    The execution of an action can be conditionned to a filter.
+    The execution of an action can be conditioned to a filter.
 
     ### set
 
@@ -1000,7 +1000,7 @@ Select the way who develop your parse to find the appropriate documentation: wit
 
     Each stage generates a layer with a set of produced fields in the stage.
     You can refer one of these field from another field, a filter or the input of a next common stage.
-    To refer a field, use a [jinja](https://jinja.palletsprojects.com) placeholder (ie `{{xxxx}}`) with the name of the referred layed (ie, the name of the stage) as the prefix then the path to the field in dot-notation
+    To refer a field, use a [jinja](https://jinja.palletsprojects.com) placeholder (ie `{{xxxx}}`) with the name of the referred layer (ie, the name of the stage) as the prefix then the path to the field in dot-notation
     (eg, to refer the value of the field `date` from the `parsed_date` stage, use `{{parsed_date.date}}`).
     For incoming events, a first layer named `original` is created by Ingest and the ECS envelop as received.
 

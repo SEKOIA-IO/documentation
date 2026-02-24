@@ -63,10 +63,10 @@ Two files are needed to run the concentrator: `docker-compose.yml` and `intakes.
 The `intakes.yaml` file is used to tell the concentrator how to bind a port where logs are received to its technology represented by the Intake key.
 For each technology, specify:
 
-* a name: it has nothing to do with Sekoia.io, feel free to use the explicite value of your choice
+* a name: it has nothing to do with Sekoia.io, feel free to use the explicit value of your choice
 * the protocol: `tcp`, `udp` or `tls`
 * a port: to process incoming events
-* the Intake key: can be retreived from the Intakes page of your community
+* the Intake key: can be retrieved from the Intakes page of your community
 
 Here is an example of the file with 3 technologies sending their events to the concentrator on ports `20516`, `20517` and `20518`. Feel free to copy paste it and adapt it to your need:
 
@@ -373,7 +373,7 @@ intakes:
 
 ### Understanding concentrator metrics
 
-The concentrator is based on a rsyslog instance so to monitor the forwarder, we decided against developing our own metrics. Instead, we opted for leveraging a standard implementation provided by rsyslog direclty: the [impstats module](https://www.rsyslog.com/doc/configuration/modules/impstats.html)
+The concentrator is based on a rsyslog instance so to monitor the forwarder, we decided against developing our own metrics. Instead, we opted for leveraging a standard implementation provided by rsyslog directly: the [impstats module](https://www.rsyslog.com/doc/configuration/modules/impstats.html)
 
 By enabling this internal module, rsyslog generates numerous low-level metrics, which are essential for us to comprehend in order to understand the forwarder metrics. Therefore, it is crucial to grasp the operational workflow of rsyslog. [Here](https://www.rsyslog.com/doc/configuration/basic_structure.html) you can find more details about rsyslog principles.
 

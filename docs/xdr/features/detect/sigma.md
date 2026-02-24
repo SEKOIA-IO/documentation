@@ -5,12 +5,12 @@ Sigma is a generic and open format you can use to write signatures that will be 
 Each rule should contain a `detection` object using a set of `Search-Identifier`s to define a matching `condition`:
 ```yaml
 detection:
-  <Search-Idenfier>
+  <Search-Identifier>
     <string-list>
     <field:value>
   condition: <Condition>
 ```
-`<Search-Identifier>` is a unique identifier that will be used in `<Condition>`. A `<Search-Idenfier>` can contain two different structures: **Maps** and **Lists**.
+`<Search-Identifier>` is a unique identifier that will be used in `<Condition>`. A `<Search-Identifier>` can contain two different structures: **Maps** and **Lists**.
 
 ### Maps
 Maps consist of key/value pairs in which the key is the name of a field in your normalized event. The value is the value that should be present in this field for the `Search-Identifier` to match. Several values can be specified at once, in which case they are joined together with a logical `OR`.
@@ -300,7 +300,7 @@ aliases:
 
 ## Detection on specific time range
 
-Use `time-based` modifiers below to detect suspicious activites that occur outside of normal business hours or reduce alert fatigue through intelligent time-based filtering.
+Use `time-based` modifiers below to detect suspicious activities that occur outside of normal business hours or reduce alert fatigue through intelligent time-based filtering.
 
 Time-based modifiers can be used in:
 
@@ -332,7 +332,7 @@ detection:
 ### Day of week
 
 Use the `day_of_week` modifier to detect events during specific days of the week.
-If not specifed, the days of the week are `UTC` based.
+If not specified, the days of the week are `UTC` based.
 
 | day of week      |
 |------------------|
@@ -360,7 +360,7 @@ detection:
 ### Day of year
 
 Use the `day_of_year` modifier to detect events during specific days of the year.
-If not specifed, the days of the year are `UTC` based.
+If not specified, the days of the year are `UTC` based.
 
 Use the following format `MM-DD` ([ISO 8601](https://en.wikipedia.org/wiki/ISO_8601)).
 
@@ -382,7 +382,7 @@ detection:
 ### Public holidays
 
 Use the `public_holiday_in` modifier to detect events during public holidays.
-If not specifed, the days of the year are `UTC` based.
+If not specified, the days of the year are `UTC` based.
 
 Use the `ISO 3166` country code to specify the corresponding country public holidays:
 [https://en.wikipedia.org/wiki/List_of_ISO_3166_country_codes](https://en.wikipedia.org/wiki/List_of_ISO_3166_country_codes)

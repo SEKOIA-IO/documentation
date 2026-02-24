@@ -44,7 +44,7 @@ Siteminder generates access logs directly on the system. Then the data can be se
 
 ## Step-by-Step Configuration Procedure
 
-1. Log in to your Siteminder applicance as root.
+1. Log in to your Siteminder appliance as root.
 2. Find the smaccess.log file on the system :
 ```bash
 find /opt -name smaccess.log 2>/dev/null

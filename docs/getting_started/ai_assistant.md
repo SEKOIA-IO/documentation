@@ -24,7 +24,7 @@ We strongly encourage you to use the thumbs up and down feedback options to rate
 
 While Roy can assist you, it's important to remember that the AI assistant is not infallible. We recommend double-checking any critical information before acting on it to ensure accuracy and reliability in your security operations.
 
-## Roy can assit with writing Sigma rules
+## Roy can assist with writing Sigma rules
 
 Need help writing a Sigma rule? Roy can assist you by helping to construct the Sigma pattern of the rule. Simply ask Roy for guidance, and you can receive examples or templates to get started.
 

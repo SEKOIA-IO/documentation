@@ -22,7 +22,7 @@ This setup guide will show you how to forward your Delinea logs to Sekoia.io.
 
 ### Create a Role
 
-1. Log in the Delinea Plaftorm Admin Portal.
+1. Log in the Delinea Platform Admin Portal.
 2. Go to `Access` > `Roles`.
 
     ![Step 01](/assets/integration/iam/delinea_audit_logs/Step 01.webp){: style="max-width:100%"}

@@ -160,7 +160,7 @@ Here's the description of the payload fields description:
 | `metadata.user_uuid`      | Always         | Event that concerns only a single user of Sekoia.io.                                                   |
 | `metadata.permissions`    | Always         | Unused.                                                                                                |
 | `attributes.uuid`         | Alert specific | Unique identifier of the alert (UUID). Can be used to talk to the Alert API.                           |
-| `attributes.short_id`     | Alert specific | Human readable alert unique identifer.                                                                 |
+| `attributes.short_id`     | Alert specific | Human readable alert unique identifier.                                                                 |
 
 
 Now, let’s say that you want to post a notification to your internal Microsoft Teams messaging system when a new alert is raised. To do so, you have to:

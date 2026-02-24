@@ -6,7 +6,7 @@ type: intake
 Suricata is a free and open source, mature, fast and robust network threat detection engine. Suricata inspects the network traffic using a powerful and extensive rules and signature language, and has powerful Lua scripting support for detection of complex threats.
 
 
-- **Vendor**: OISF fundation
+- **Vendor**: OISF foundation
 - **Supported environment**: On prem
 - **Version compatibility**: 6.0.20
 - **Detection based on**: Telemetry
@@ -44,7 +44,7 @@ Given this Suricata configuration, your local built-in rsyslog service will hand
 Once your Suricata is configured to log threw syslog you have many options to forward those logs to Sekoia.io app. All of those solutions have their advantages. You will find more details about the type of events that are handled by each of them and how to set up those solutions on the dedicated documentations that follows:
 
 - [Collect logs in files with Sekoia.io agent and send them directly to Sekoia.io via HTTP](https://docs.sekoia.io/integration/integrations/endpoint/sekoiaio/#collect-logs-in-files)
-- [Forward local logs to a central Sekoia.io Forwarder prior to be transfered to Sekoia.io via Syslog](https://docs.sekoia.io/integration/ingestion_methods/sekoiaio_forwarder/)
+- [Forward local logs to a central Sekoia.io Forwarder prior to be transferred to Sekoia.io via Syslog](https://docs.sekoia.io/integration/ingestion_methods/sekoiaio_forwarder/)
 - [Update the local Rsyslog to send updated logs to a central Sekoia.io Forwarder or directly to Sekoia.io via Syslog](https://docs.sekoia.io/integration/ingestion_methods/syslog/rsyslog/)
 
 

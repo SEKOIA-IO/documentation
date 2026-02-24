@@ -56,7 +56,7 @@ Here's an annotated example of a `manifest.json` file:
   "uuid": "4ef895d1-3f21-4678-8d0a-5c39c37210fe",  // (2)!
   "slug": "okta",
   "version": "2.0.0",  // (3)!
-  "description": "[Okta](https://www.okta.com/) is an entreprise-grade, identity management service compatible with cloud apps as well as many on-premises applications",
+  "description": "[Okta](https://www.okta.com/) is an enterprise-grade, identity management service compatible with cloud apps as well as many on-premises applications",
   "configuration": {  // (4)!
     "$schema": "http://json-schema.org/draft-07/schema#",
     "title": "Okta",
@@ -84,7 +84,7 @@ Here's an annotated example of a `manifest.json` file:
 2. The UUID of the module. It must be unique
 3. A version for the module. This version must be incremented each time a change is made in the module
 4. The configuration of the module
-      * All the informations that are needed for the module to be able to communicate with the external service
+      * All the information that are needed for the module to be able to communicate with the external service
       * The `configuration` attribute should be a valid JSON Schema object
 5. A configuration item can be mandatory
 
@@ -123,7 +123,7 @@ Here's an annotated example of an action manifest:
 {
     "name": "Download File",  // (1)!
     "uuid": "09e9dc3a-aeb2-4dde-ad96-3ee543afdf51",  // (2)!
-    "description": "Donwload the given file and save it",
+    "description": "Download the given file and save it",
     "slug": "download-file",  // (3)!
     "docker_parameters": "download-file",  // (4)!
     "arguments": {  // (5)!

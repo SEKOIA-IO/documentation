@@ -14,7 +14,7 @@ CrowdStrike Falcon is an Endpoint Detection and Response solution. This setup gu
 
 CrowdStrike Falcon integration gathers EDR logs. Below is a concise list of activities that can be monitored using CrowdStrike Falcon logs:
 
-- Alerts raised by the EDR, with limited informations like hash, command line, IP...
+- Alerts raised by the EDR, with limited information like hash, command line, IP...
 - Crowdstrike Falcon Audit logs
 - Crowdstrike Falcon Incident logs
 - Identity protection events

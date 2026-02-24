@@ -34,7 +34,7 @@ On a device, please download the `ISRG ROOT X1` certificate: <https://letsencryp
 
 1. Log on the UTM administration console
 2. Click `Configuration` tab
-3. On the left panel, Click `Objects` > `Certificats and PKI`
+3. On the left panel, Click `Objects` > `Certificates and PKI`
 4. Click `+ Add`
 5. Select the intake certificate
 6. Click `Import`
