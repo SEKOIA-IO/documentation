@@ -27,7 +27,9 @@ To view your current plan:
 1.  Navigate to **Settings > Subscription**.
 2.  Locate the **Storage** section to see your allocated days for each tier.
 
-<img src="docs/assets/xdr/storage_subscription.png" alt="Navigation to Settings > Subscription to view hot and cold storage days" />
+![Navigation to Settings > Subscription to view hot and cold storage days](docs/assets/xdr/storage_subscription.png)
+
+
 
 ## Storage limitations
 
@@ -36,3 +38,6 @@ Retention periods are strictly governed by your contractual agreement.
 !!! warning "Data Permanence"
 
     Sekoia.io cannot retrieve data that exceeds your defined storage thresholds. For example, if your total retention is 120 days, any data older than this limit is permanently deleted and cannot be recovered by Support.
+
+## Next steps
+To learn how to access your archived events for a specific investigation, follow our guide to [restore data from cold storage](../xdr/FAQ/restore_data_cold_storage.md).
