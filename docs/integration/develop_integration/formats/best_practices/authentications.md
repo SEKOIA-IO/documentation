@@ -6,7 +6,7 @@ An authentication is fully recognized as valid when all of these three fields ar
 
 - event.category : with the value `authentication`
 - event.type : with the value `start`
-- action.outcome : with the value `success` if the authentication successed or `failure` else
+- action.outcome : with the value `success` if the authentication succeeded or `failure` else
 
 Other fields are necessary in order to be able to fully describe the authentication. These fields are described in the table below. This list is not exhaustive, do not hesitate to fill in as many fields as possible.
 
@@ -24,7 +24,7 @@ Other fields are necessary in order to be able to fully describe the authenticat
 | server.domain               | Host domain targeted by the authentication                           |
 | server.ip                   | Host IP targeted by the authentication                               |
 | server.geo.country_iso_code | Host geoloc targeted by the authentication                           |
-| sekoiaio.authentication.process.name | process name has perfomed authentication (i.e., sshd, kerberos, ...) |
+| sekoiaio.authentication.process.name | process name has performed authentication (i.e., sshd, kerberos, ...) |
 | user.name                   | user name has requested authentication                               |
 | user.domain                 | user domain has requested authentication                             |
 | user.id                     | user id has requested authentication                                 |

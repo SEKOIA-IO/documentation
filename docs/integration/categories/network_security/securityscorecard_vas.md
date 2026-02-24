@@ -1,5 +1,5 @@
 uuid: 8f472113-ba5b-45b9-9a2c-944834396333
-name: Security Scorecard Vunerability Assessment Scanner
+name: Security Scorecard Vulnerability Assessment Scanner
 type: intake
 
 ## Overview
@@ -15,7 +15,7 @@ security measures and reduce cyber risk.
 
 ## Configure
 
-This setup guide will show you how to provide an integration between Security Scorecard Vunerability Assessment Scanner
+This setup guide will show you how to provide an integration between Security Scorecard Vulnerability Assessment Scanner
 events and Sekoia.io.
 
 ### Create an intake

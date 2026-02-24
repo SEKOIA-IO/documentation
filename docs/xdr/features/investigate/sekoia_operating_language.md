@@ -1135,7 +1135,7 @@ Use the `not` operator to negate any comparison.
 
 ``` shell
 <table name>
-| where not <column name> <comparaison operator> <pattern>
+| where not <column name> <comparison operator> <pattern>
 
 ```
 
@@ -1627,7 +1627,7 @@ SOL Datasets is a powerful CSV import feature that enables SOC analysts to enric
 
 SOL Datasets addresses critical challenges in security operations:
 
-- **Enhanced Investigation Context**: Import custom threat intelligence, critical security context, list of approved softwares and other contextual data
+- **Enhanced Investigation Context**: Import custom threat intelligence, critical security context, list of approved software and other contextual data
 - **Eliminates Manual Lookups**: Replace time-consuming manual data correlation with automated joins
 - **Flexible Data Integration**: Combine external data with events, alerts, and cases using SOL's powerful query language
 

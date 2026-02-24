@@ -18,7 +18,7 @@ This setup guide describes how to forward audit logs from Github to Sekoia.io.
 
 ### Prerequisites
 
-- Your organization must use GitHub Entreprise Cloud to [get access to audit log API](https://docs.github.com/en/enterprise-cloud@latest/organizations/keeping-your-organization-secure/managing-security-settings-for-your-organization/reviewing-the-audit-log-for-your-organization#using-the-audit-log-api)
+- Your organization must use GitHub Enterprise Cloud to [get access to audit log API](https://docs.github.com/en/enterprise-cloud@latest/organizations/keeping-your-organization-secure/managing-security-settings-for-your-organization/reviewing-the-audit-log-for-your-organization#using-the-audit-log-api)
 - You must be Administrator of the organization. There are two options on how to configure connector:
     * [With Github API Key](#creating-the-github-api-key)
     * [With Github PEM file](#create-the-github-pem-file)
@@ -31,7 +31,7 @@ To create an API key on [Github](https://github.com/):
 
     ![Personal settings](/assets/instructions/github_audit_logs/personal_settings.png)
 
-2. On the Developper Settings, create a Personnal access token (classic) with read access to the audit_logs.
+2. On the Developer Settings, create a Personal access token (classic) with read access to the audit_logs.
 
     ![Developer settings](/assets/instructions/github_audit_logs/developer_settings.png)
 

@@ -284,7 +284,7 @@ On the WEC server, create an XML file, named `DC_SUBSCRIPTION.xml` with the foll
     <!-- Target Event log on WEC -->
     <LogFile>ForwardedEvents</LogFile>
     <!-- Define which domain computers are allowed or not to initiate subscriptions -->
-    <!-- This exemple grants members of the Domain Computers domain group, as well as the local Network Service group (for local forwarder) -->
+    <!-- This example grants members of the Domain Computers domain group, as well as the local Network Service group (for local forwarder) -->
     <AllowedSourceDomainComputers>O:NSG:NSD:(A;;GA;;;DC)(A;;GA;;;NS)</AllowedSourceDomainComputers>
 </Subscription>
 ```
@@ -435,7 +435,7 @@ To ensure proper logging configuration, please follow the steps below:
 
 3. Restart the NXLog service through the Services tool as Administrator or use this Powershell command line as Administrator:
 
-    ```poweshell
+    ```powershell
     Restart-Service nxlog
     ```
 

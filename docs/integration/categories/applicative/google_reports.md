@@ -36,7 +36,7 @@ This integration can collect activities from the following GSuite applications:
 - `drive` to supervise Google Drive events
 - `gcp` for the Google Cloud platform activiaties
 - `groups` to collect Google groups events
-- `groups_entreprise` to collect Entreprise groups events
+- `groups_enterprise` to collect Enterprise groups events
 - `jamboard` to collect Jamboard activities
 - `login` to monitor authentication in Google applications
 - `meet` to supervise Google meet events
@@ -141,7 +141,7 @@ Find more information on the [official google documentation](https://cloud.googl
 ### Create your intake
 
 1. Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a new intake from the `Google Report`.
-2. Edit the intake configuration with the following attribut:
+2. Edit the intake configuration with the following attribute:
     * Select the `application name` you want to fetch the events from
     * Type the `an Google workspace admin email`.
   

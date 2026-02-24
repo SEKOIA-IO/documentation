@@ -6,7 +6,7 @@ type: intake
 
 ## Overview
 
-Kubernetes is an open-source container orchestration system for automating software deployment, scaling and managment.
+Kubernetes is an open-source container orchestration system for automating software deployment, scaling and management.
 
 In this documentation, you will learn how to configure, collect and send Kubernetes Audit logs to SEKOIA.IO.
 

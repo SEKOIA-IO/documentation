@@ -48,7 +48,7 @@ Please consult the [Syslog Forwarding](/integration/ingestion_methods/syslog/sek
 
 
 
-## Futher Readings
+## Further Readings
 
 - [SIEM Integration](https://www.manageengine.com/products/active-directory-audit/help/admin-settings/siem-integration.html)
 - [Collected logs in CEF format](https://pitstop.manageengine.com/portal/en/community/topic/collected-syslog-files-in-cef-format)

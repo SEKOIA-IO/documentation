@@ -15,7 +15,7 @@ Ubika Cloud Protector is a cloud-native security solution, providing advanced th
 ## Configure
 
 ### How to get API keys info
-3 informations are required to collect data from Ubika:
+3 information are required to collect data from Ubika:
 
 - The `provider name` (available in Ubika interface)
 - The `tenant name` (available in Ubika interface)

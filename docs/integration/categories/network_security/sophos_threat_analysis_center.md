@@ -4,7 +4,7 @@ type: intake
 
 ## Overview
 
-The Sophos Threat Analysis Center (STAC), is a dedicated tool for research and analysis of cybersecurity threats. so it can help continuously on monitoring the cyber threat landscape and analyze new forms of malware, attack techniques, and cybercrime trends. which has also the most important part which the _live Discover_ , with usage of queries you can have device informations from Sophos data lake.
+The Sophos Threat Analysis Center (STAC), is a dedicated tool for research and analysis of cybersecurity threats. so it can help continuously on monitoring the cyber threat landscape and analyze new forms of malware, attack techniques, and cybercrime trends. which has also the most important part which the _live Discover_ , with usage of queries you can have device information from Sophos data lake.
 
 - **Vendor**: Sophos
 - **Supported environment**: SaaS

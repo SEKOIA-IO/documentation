@@ -44,7 +44,7 @@ This setup guide will show you how to forward your Bitdefender GravityZone event
 ### Create a BitDefender GravityZone API key
 
 - Log in the BitDefender GravityZone console
-- On the top-right bar, open your personal panel and click `My Accout`
+- On the top-right bar, open your personal panel and click `My Account`
 
   ![My Account](/assets/operation_center/integration_catalog/endpoint/bitdefender_gravityzone/1_my_account.png){: style="max-width:100%"}
 
@@ -70,7 +70,7 @@ Bitdefender GravityZone have an ability to setup push events settings using http
 
 Two ways are suggested in order to set up the forwarding of your events to Sekoia.io.
 
-If you are not a shell expert, we recommend to use the "pyton script" way as it is easier to set up.
+If you are not a shell expert, we recommend to use the "python script" way as it is easier to set up.
 
 So you can setup it in two ways:
 

@@ -1,5 +1,5 @@
 uuid: 8d8f040d-6a75-4bf4-bf1d-772e9a30f0dd
-name: TEHTRIS Endpoint Detection & Reponse
+name: TEHTRIS Endpoint Detection & Response
 type: intake
 
 ## Overview
@@ -30,7 +30,7 @@ To forward events produced by TEHTRIS EDR to Sekoia.io, you have to:
 
 ### Create the intake
 
-1. To create the intake, go to the [intake page](https://app.sekoia.io/operations/intakes) and create a new intake from the format `TEHTRIS Endpoint Detection & Reponse`.
+1. To create the intake, go to the [intake page](https://app.sekoia.io/operations/intakes) and create a new intake from the format `TEHTRIS Endpoint Detection & Response`.
 2. Set up the intake configuration with your API key and your tenant ID (most of time, your tenant ID is the subdomain of your TEHTRIS instance; eg: `https://{tenant_id}.tehtris.net`)
 
 {!_shared_content/operations_center/integrations/generated/8d8f040d-6a75-4bf4-bf1d-772e9a30f0dd_sample.md!}

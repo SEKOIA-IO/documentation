@@ -29,7 +29,7 @@ A module always hosts a pyproject file. This file describes the dependencies for
 
 ## The actions and triggers
 
-Actions and triggers are splitted in two parts:
+Actions and triggers are split in two parts:
 
 - a code hosted in the subdirectory `<module_name>_module`
 - a json file that describes the action or the trigger.

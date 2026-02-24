@@ -58,7 +58,7 @@ After receiving the IDs to connect to the Linux server, the main activities are 
     * We specify the maximum supported message size to 20K with the command `$MaxMessageSize 20k` since by default it is 8K and some messages (especially Windows) are longer
 
     !!!note
-        It is not recommanded to change the default `$WorkDirectory` and the Rules which will depend of your distribution.
+        It is not recommended to change the default `$WorkDirectory` and the Rules which will depend of your distribution.
         In this example, the rule defined writes all syslog messages except those related to authentication in `/var/log/syslog`.
         Be sure a logrotate is applied to the files defined in rules for files rotation!
 
@@ -89,10 +89,10 @@ After receiving the IDs to connect to the Linux server, the main activities are 
 	$Umask 0022
 
 	$ActionQueueType LinkedList     # create a queue stored in the RAM
-	$ActionQueueFileName sek_fwd    # set up the prefix for writting
+	$ActionQueueFileName sek_fwd    # set up the prefix for writing
 	$ActionQueueMaxDiskSpace 5g     # allow 5 giga of storage for the buffer
 	$ActionQueueSaveOnShutdown on   # write on disk is the Rsyslog is whut down
-	$ActionResumeRetryCount -1      # prevent the Rsyslog from droping the logs if the connexion is interrupted
+	$ActionResumeRetryCount -1      # prevent the Rsyslog from dropping the logs if the connexion is interrupted
 
 	# Where to place spool and state files
 	$WorkDirectory /var/spool/rsyslog
@@ -242,7 +242,7 @@ To receive and process Windows logs, you have to follow these steps:
         We can use these information to catch our events.
 
         !!!important
-            If `Microsoft-Windows-Sysmon` is used, only Sysmon events will be catched. To get the other Windows event logs, only `Microsoft-Windows` should be used.
+            If `Microsoft-Windows-Sysmon` is used, only Sysmon events will be caught. To get the other Windows event logs, only `Microsoft-Windows` should be used.
 
     **Method 2: Create a configuration file to view raw syslog messages**
 
@@ -642,10 +642,10 @@ It will automatically configure you Rsyslog server to collect and forward Window
 	$Umask 0022
 
 	$ActionQueueType LinkedList     # create a queue stored in the RAM
-	$ActionQueueFileName sek_fwd    # set up the prefix for writting
+	$ActionQueueFileName sek_fwd    # set up the prefix for writing
 	$ActionQueueMaxDiskSpace 5g     # allow 5 giga of storage for the buffer
 	$ActionQueueSaveOnShutdown on   # write on disk is the Rsyslog is whut down
-	$ActionResumeRetryCount -1      # prevent the Rsyslog from droping the logs if the connexion is interrupted
+	$ActionResumeRetryCount -1      # prevent the Rsyslog from dropping the logs if the connexion is interrupted
 
 	# Where to place spool and state files
 	$WorkDirectory /var/spool/rsyslog

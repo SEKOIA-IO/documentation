@@ -23,7 +23,7 @@ Fields you can use to narrow down your events search are listed [here](https://d
 
 ### Filters
 
-It is possible to further restict the scope of your events search by using filters. Filters are combined together and with the search query with a logical AND.
+It is possible to further restrict the scope of your events search by using filters. Filters are combined together and with the search query with a logical AND.
 
 You can easily add filters by using the icon buttons provided when hovering over a value inside a `Smart Description` or an event's `Details`:
 
@@ -67,7 +67,7 @@ To access your saved queries:
 2. Select a period of time
 3. Click on `Search` to see your saved query events
 
-    !!! Disclamer
+    !!! Disclaimer
     The saved queries are stored locally on the user's browser. Ensure that you do not have a task or setting that cleans your browser cookies, as this will result in the loss of your favorite queries.
 
 ### Date
@@ -94,7 +94,7 @@ When you are creating a new search, results are available instantly for 30 minut
 
 ![search-history](/assets/operation_center/events/events-search-history.png)
 
-It is possible to configure the retention to reach up to one day (24 hours). After this retention period, you can still replay any events search available in the `Search History` by simply clicking on it. It will trigger a new search using exatcly the same parameters (query, filters and date range).
+It is possible to configure the retention to reach up to one day (24 hours). After this retention period, you can still replay any events search available in the `Search History` by simply clicking on it. It will trigger a new search using exactly the same parameters (query, filters and date range).
 
 By default, the `Search History` panel is only listing your events search. You can access all events search by clicking on `My Searches` at the top of the panel and selecting `All Searches`.
 
@@ -115,7 +115,7 @@ Events histogram appears under the search bar when a query has been made and mat
 
 It gives a consolidated view of all matching events in a specific period of time and it highlights the number of events as well as events that are present in alerts.
 
-You can select a date range by clicking on the histogram and dragging the cursor over events you are intersted in. This will automatically create a new search and display filtered results. If you want to come back to the previous range, you can use the [search history](#search-history)
+You can select a date range by clicking on the histogram and dragging the cursor over events you are interested in. This will automatically create a new search and display filtered results. If you want to come back to the previous range, you can use the [search history](#search-history)
 
 ## Log listing
 

@@ -26,7 +26,7 @@ To forward **Microsoft Intune** events from Microsoft to Sekoia.io you need to s
 To send **Microsoft Intune** logs to Sekoia.io, there are some prerequisites:
 
 - Have access to the Sekoia.io XDR Operations Center
-- Be a Intune Service Administrator to perfom the interconnection with **Azure Event Hub**
+- Be a Intune Service Administrator to perform the interconnection with **Azure Event Hub**
 - Be a Contributor on Azure to setup an **Event Hub**.
 
 {!_shared_content/operations_center/integrations/event_hub.md!}

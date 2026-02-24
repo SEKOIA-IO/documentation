@@ -352,7 +352,7 @@ Depending on your needs, you can choose to create an **Action**, a **Connector**
                 time.sleep(60)
     ```
 
-    Additionally, you can define parameters that will be set during the instanciation of the Intake in Sekoia. For that you have 2 options depending of the type of parameter you want to define.
+    Additionally, you can define parameters that will be set during the instantiation of the Intake in Sekoia. For that you have 2 options depending of the type of parameter you want to define.
 
     * **Option 1**: Define parameters in the Module
 
@@ -365,7 +365,7 @@ Depending on your needs, you can choose to create an **Action**, a **Connector**
 
     In that case the parameter is only accessible by the connector, and not by the other components of the module. This is where we define connector specific settings, such as the *connector polling frequency*.
 
-    Once set these parameters can be seen and modifed in the `Configure` option in the Intake page in Sekoia.
+    Once set these parameters can be seen and modified in the `Configure` option in the Intake page in Sekoia.
 
     In the next example we will use both options for our connector.
 
@@ -575,7 +575,7 @@ Depending on your needs, you can choose to create an **Action**, a **Connector**
       This method must run forever
       It must handle all the expected errors 
     1. The base `Trigger` class provides a `send_event` method that allows to trigger a new event. For each playbook having this trigger a new run will be started with `event` as argument.
-    2. The `log` method allows to log errors and informations. Those logs are visible in the UI.
+    2. The `log` method allows to log errors and information. Those logs are visible in the UI.
 
     **Generate the manifest and entrypoint**
 
@@ -722,7 +722,7 @@ def test_get_request(requests_mock):
   action = Request()
   result = action.run(arguments)
 
-  # Interprete the dict correctly if the response is serialized to a dict:
+  # Interpret the dict correctly if the response is serialized to a dict:
   if isinstance(result, dict):
       result = Response(**result)
 

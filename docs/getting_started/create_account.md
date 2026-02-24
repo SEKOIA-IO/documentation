@@ -1,6 +1,6 @@
 # Create your account
 
-As mentionned in the [Join a workspace or a community](join_community.md) article, you need to be invited to join a workspace by a current user to be able to create an account. 
+As mentioned in the [Join a workspace or a community](join_community.md) article, you need to be invited to join a workspace by a current user to be able to create an account. 
 
 ## Step-by-step account creation
 
