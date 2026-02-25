@@ -144,6 +144,8 @@ nav:
       - Events QA: xdr/FAQ/Events_qa.md
       - Facing issues with logs collection: xdr/FAQ/Log_collection_Troubleshoot.md
       - Extract my events: xdr/FAQ/get_events.md
+      - Data storage and retention: xdr/FAQ/data_storage_retention.md
+      - Restore Data from cold storage: xdr/FAQ/restore_data_cold_storage.md
     - Intelligence:
       - Detection: xdr/FAQ/intelligence/Detection_qa.md
       - Questions about IoC revokation: xdr/FAQ/intelligence/revoke_ioc.md
