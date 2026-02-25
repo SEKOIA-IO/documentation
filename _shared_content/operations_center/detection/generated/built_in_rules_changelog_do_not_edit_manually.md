@@ -54,6 +54,13 @@ Changelog _last update on 2026-02-25_
   - 25/02/2026 - minor - Update rule type to integration
   - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
     
+### Login Brute-Force Successful On AzureAD From Single IP Address
+  - 25/02/2026 - minor - Adding error code 500011 as filters to reduce false positives.
+  - 28/11/2024 - minor - Adding error codes as filters to reduce false positives.
+  - 14/10/2024 - minor - The error codes 70043, 50173, 70008, 700082, 9002341 have been excluded as they are not related to login failures that we want to detect and caused several false positives.
+  - 16/08/2024 - minor - The error code 50078 has been excluded as it is not a specific error code related to a login failure that we want to detect and caused several false positives.
+  - 23/03/2023 - minor - The error code 50076 has been excluded as it is not a specific error code related to a login failure that we want to detect and caused several false positives.
+    
 ### Antivirus Exploitation Framework Detection
   - 16/02/2026 - minor - Filtering out Event ID 1011 which caused false positives. The rule fired at the deletion of a quarantined file by Defender which was not the wanted behaviour.
     
@@ -755,12 +762,6 @@ Changelog _last update on 2026-02-25_
   - 20/09/2024 - minor - File paths added to filter some false positives.
   - 19/09/2024 - minor - File paths added to filter some false positives.
   - 30/11/2023 - minor - Update pattern with new lolbin
-    
-### Login Brute-Force Successful On AzureAD From Single IP Address
-  - 28/11/2024 - minor - Adding error codes as filters to reduce false positives.
-  - 14/10/2024 - minor - The error codes 70043, 50173, 70008, 700082, 9002341 have been excluded as they are not related to login failures that we want to detect and caused several false positives.
-  - 16/08/2024 - minor - The error code 50078 has been excluded as it is not a specific error code related to a login failure that we want to detect and caused several false positives.
-  - 23/03/2023 - minor - The error code 50076 has been excluded as it is not a specific error code related to a login failure that we want to detect and caused several false positives.
     
 ### Suspicious Cmd.exe Command Line
   - 27/11/2024 - minor - Adding new filters to reduce false positives.

@@ -302,6 +302,7 @@ Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-
         - 16/08/2024 - minor - The error code 50078 has been excluded as it is not a specific error code related to a login failure that we want to detect and caused several false positives.
         - 14/10/2024 - minor - The error codes 70043, 50173, 70008, 700082, 9002341 have been excluded as they are not related to login failures that we want to detect and caused several false positives.
         - 28/11/2024 - minor - Adding error codes as filters to reduce false positives.
+        - 25/02/2026 - minor - Adding error code 500011 as filters to reduce false positives.
             
 ??? abstract "Login Brute-Force Successful On Jumpcloud Portal"
     
@@ -473,6 +474,7 @@ Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-
         - 16/08/2024 - minor - The error code 50078 has been excluded as it is not a specific error code related to a login failure that we want to detect and caused several false positives.
         - 14/10/2024 - minor - The error codes 70043, 50173, 70008, 700082, 9002341 have been excluded as they are not related to login failures that we want to detect and caused several false positives.
         - 28/11/2024 - minor - Adding error codes as filters to reduce false positives.
+        - 25/02/2026 - minor - Adding error code 500011 as filters to reduce false positives.
             
 ??? abstract "Login Brute-Force Successful On Jumpcloud Portal"
     
