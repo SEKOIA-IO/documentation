@@ -46,9 +46,9 @@ This way, you will be able to exactly identify what data is sent to Sekoia.io.
 ### Can I access logs older than my hot storage period?
 Yes. If your subscription includes cold storage (**Archiving**, you can request the temporary restoration of archived events. 
 
-To understand how tiers work, see our article on [Data storage and retention](xdr/FAQ/data_storage_retention.md). 
+To understand how tiers work, see our article on [Data storage and retention](/xdr/FAQ/data_storage_retention.md). 
 
-To start a restoration, follow the procedure to [restore data from cold storage](xdr/FAQ/restore_data_cold_storage.md).
+To start a restoration, follow the procedure to [restore data from cold storage](/xdr/FAQ/restore_data_cold_storage.md).
 
 **Restoration flow**
 
