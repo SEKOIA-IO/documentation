@@ -27,7 +27,7 @@ To view your current plan:
 1.  Navigate to **Settings > Subscription**.
 2.  Locate the **Storage** section to see your allocated days for each tier.
 
-![Navigation to Settings > Subscription to view hot and cold storage days](docs/assets/xdr/storage_subscription.png)
+![Navigation to Settings > Subscription to view hot and cold storage days](assets/xdr/storage_subscription.png)
 
 
 
