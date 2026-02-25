@@ -13,7 +13,7 @@ Amazon CloudFront is a web service that speeds up distribution of your static an
 ## Configure
 
 !!! Important
-    Cloudfront have strict requirements regarding regions. Make sure to check [the regions availabled](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/AccessLogs.html#access-logs-choosing-s3-bucket) before creating the data collection architecture.
+    Cloudfront have strict requirements regarding regions. Make sure to check [the regions available](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/AccessLogs.html#access-logs-choosing-s3-bucket) before creating the data collection architecture.
 
 {!_shared_content/operations_center/integrations/aws_create_s3_sqs_notification.md!}
 

@@ -159,7 +159,7 @@ if __name__ == '__main__':
 
 ### Create a SIGMA Rule with a POST Request and JSON Body
 
-In this example, we will create a simple SIGMA rule nammed "My custom SIGMA rule", so it will be a `POST` request. According to [this documentation](https://docs.sekoia.io/xdr/develop/rest_api/configuration/#tag/rules-catalog/operation/post_rules_resource) in order to create a new rule we must provide the request with a minimum of mandatory fields. You will find in the following table what we will use in the Python script:
+In this example, we will create a simple SIGMA rule named "My custom SIGMA rule", so it will be a `POST` request. According to [this documentation](https://docs.sekoia.io/xdr/develop/rest_api/configuration/#tag/rules-catalog/operation/post_rules_resource) in order to create a new rule we must provide the request with a minimum of mandatory fields. You will find in the following table what we will use in the Python script:
 
 
 In this scenario, we aim to create a SIGMA rule named "My custom SIGMA rule" through a **POST request**. Referring to the relevant documentation, some mandatory fields must be provided to successfully create a new rule. Below, you will find a summary of the key fields used in the Python script:
@@ -449,7 +449,7 @@ search_events.py [-h] --dates DATES --query QUERY [-v] APIKEY
 ```
 
 * `--dates` is used to specify to the time windows. The format used is `earliest_time,latest_time`. Dates can be in ISO8601 or relative format.
-* `--query` is the query in Dork format (same langage as the Sekoia.io event page)
+* `--query` is the query in Dork format (same language as the Sekoia.io event page)
 * `-v` to get verbose mode
 * `APIKEY` is the Sekoia.io key with the `SIC_READ_INTAKES` permission
 

@@ -28,7 +28,7 @@ To ensure consistency and ease of use, each detailed page of an integration foll
 3. **Specifications**: Contains prerequisites, supported transport protocols/methods, and other technical details.
 4. **Logs Details**: Information about the logs collected from the integration, including a sample of supported raw events.
 5. **Step-by-Step Configuration Procedure**: Detailed instructions on how to set up and configure the integration.
-6. **Detection**: Information on detection capabilities related to the integration with a list of built-in rules, and the list of extracted fields that can be used for creating your own custom rules or hunting activites.
+6. **Detection**: Information on detection capabilities related to the integration with a list of built-in rules, and the list of extracted fields that can be used for creating your own custom rules or hunting activities.
 7. **Further Readings**: Additional resources and links for further information.
 
 ## Valuable Resources

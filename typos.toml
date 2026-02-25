@@ -1,0 +1,4 @@
+[files]
+ignore-hidden = true
+ignore-dot = true
+extend-exclude = ["docs/assets", "docs/javascript"]

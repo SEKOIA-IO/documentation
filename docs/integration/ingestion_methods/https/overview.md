@@ -2,7 +2,7 @@
 
 ## Overview
 
-To push your events to Sekoia.io, you can use the HTTPS procotol. It's the simpler way to send us your logs, especially for non-syslog system.
+To push your events to Sekoia.io, you can use the HTTPS protocol. It's the simpler way to send us your logs, especially for non-syslog system.
 
 Before processing, you have to:
 

@@ -4,7 +4,7 @@ type: intake
 
 ## Overview
 
-WatchGuard Firebox is a serie of high-performance firewalls to protect computer networks.
+WatchGuard Firebox is a series of high-performance firewalls to protect computer networks.
 Sending WatchGuard Firebox logs to Sekoia.io enables the discovering of potential network security threats. Spotted threats are contextualized by means of  Sekoia.io's Cyber Threat Intelligence (CTI).
 
 

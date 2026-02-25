@@ -32,7 +32,7 @@ Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a n
    2. Select `TCP/TLS` as the protocol
    3. Define the syslog destination port to 10514
    4. Select `Raw Json` as message Content
-   5. Select `Non-Transparent-Framing` as transfert-type
+   5. Select `Non-Transparent-Framing` as transfer-type
    6. In the `Structured data` input, add `[SEKOIA@53288 intake_key="<YOUR_INTAKE_KEY>"]` with our intake key as replacement of the placeholder
    7. Save the configuration
    ![Configuration](/assets/integration/endpoint/stormshield/stormshield_ses_02.png){: style="max-width:100%"}

@@ -7,7 +7,7 @@ type: intake
 - **Plan**: Defend Core & Defend Prime
 - **Detection based on**: Audit
 - **Supported application or feature**:
-Sekoia.io forwarder logs collect all statictics coming from Sekoia forwarder instances. It helps to monitor the forwarder health:
+Sekoia.io forwarder logs collect all statistics coming from Sekoia forwarder instances. It helps to monitor the forwarder health:
 
     - resource usage
     - queue size

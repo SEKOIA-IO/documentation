@@ -53,7 +53,7 @@ Our product is designed to focus on high-priority threats, enabling expert resou
 - **Monitor the average number of Alerts per Intake** to identify intakes generating too many or too few alerts.
 - **Limit the number of Daily New Alerts** at a manageable level for your team (by experience, around 6 to 8 per day per analyst, or 60 per day) and prioritise the [tuning of a rule](https://docs.sekoia.io/xdr/features/investigate/alerts/#create-an-alert-filter) over automating its status change if no defensive action is to be taken.
 - **Track the Weekly and Monthly volume of New Alerts** to evaluate the evolution of threats and the performance of detection rules.
-- **Assess the number of Daily New Cases** to understand workload and the effectiveness of response processes. In general, the number of case(s) per day does not exceed 1, as it is cconsidered as a very important incident.
+- **Assess the number of Daily New Cases** to understand workload and the effectiveness of response processes. In general, the number of case(s) per day does not exceed 1, as it is considered as a very important incident.
 - **Ensure no sleeping alert is older than 1 week** without status "Closed" or "Rejected".
 
 ![alert_workflow](/assets/operation_center/alerts/alert_workflow.png){: style="max-width:100%"}
@@ -88,6 +88,6 @@ For instance, the following [playbook template](/xdr/features/automate/build-pla
 - **Ensure the duration of each Action** within playbooks is less than 10 seconds to reduce the chance of a timeout with most third-party tools you interact with.
 - **Track the overall [duration of playbook executions](/xdr/features/automate/navigate-playbooks.md)** for each playbook to complete its execution in less than 1 minute.
 - **Ensure no playbook is having an issue** that is visible with the status "Trigger crashed" and "Configuration issues".
-- **Keep a low number of "Ready to start" playbooks**, for instance less than 2, to avoid activation issue after a long period of configuration due to confict with recent evolutions of your community.
+- **Keep a low number of "Ready to start" playbooks**, for instance less than 2, to avoid activation issue after a long period of configuration due to conflict with recent evolutions of your community.
 
 By adhering to these best practices, you can maximize the efficiency of Sekoia’s solutions, ensuring optimal security and operational performance for your organization.

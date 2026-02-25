@@ -113,7 +113,7 @@ The service account will be used on Sekoia.io to pull logs available on your Goo
 6. Click **Continue**, then click **Done** to finish creating the service account
 
 !!! Note
-	Ensure that this user has the role **Pub/Sub Subscriber** in both **Topic** and **Subsciption** pages. Otherwise, you will have an error with status 403 when you will activate the playbook detailed on the bottom of this page. 
+	Ensure that this user has the role **Pub/Sub Subscriber** in both **Topic** and **Subscription** pages. Otherwise, you will have an error with status 403 when you will activate the playbook detailed on the bottom of this page. 
 
 Find more information on the [official google documentation](https://cloud.google.com/iam/docs/service-accounts-create).
 
@@ -165,7 +165,7 @@ Go to your Sekoia.io [Intakes page](https://app.sekoia.io/operations/intakes), a
 3. Click on **Create** button
 4. Configure your intake with
 	* The project ID 
-	* The suject ID that is `sekoia-gca-subscription`
+	* The subject ID that is `sekoia-gca-subscription`
 
 
 #### Enjoy your events on the [Events page](https://app.sekoia.io/operations/events)

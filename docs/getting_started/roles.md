@@ -39,7 +39,7 @@ Please refer to this section to learn [how to create intake restricted roles](in
 
 ## Permissions
 
-You can discover all permissions associated either to built-in or custom roles directly from the UI in `Settings > Worskpace Roles`. 
+You can discover all permissions associated either to built-in or custom roles directly from the UI in `Settings > Workspace Roles`. 
 
 ## Legacy roles
 

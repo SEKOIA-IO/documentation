@@ -14,7 +14,7 @@ This section offers an organized view of different [intake categories](/integrat
 
 ### Automation Categories
 
-This section contains a wealth of [automation actions](/integration/action_library/overview.md) to interract with Third party directly from and without leaving the Sekoia.io SOC Platform. These resources are designed to help you streamline your workflows and automate repetitive tasks, allowing you to focus on more strategic activities.
+This section contains a wealth of [automation actions](/integration/action_library/overview.md) to interact with Third party directly from and without leaving the Sekoia.io SOC Platform. These resources are designed to help you streamline your workflows and automate repetitive tasks, allowing you to focus on more strategic activities.
 
 ### How to Develop A New Integration
 

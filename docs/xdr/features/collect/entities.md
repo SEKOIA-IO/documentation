@@ -36,7 +36,7 @@ To create a new entity:
 1. Go the the Entities page in the menu
 2. Click on the `+ New Entity` button
 3. Give your entity a name, an entity ID and a description. All these fields are mandatory
-4. Choose your Alert generation mode (A default value for alert generation mode is defined for each entity but can be overrided in each detection rule)
+4. Choose your Alert generation mode (A default value for alert generation mode is defined for each entity but can be overridden in each detection rule)
 5. Save your settings
 
 ## Entity details

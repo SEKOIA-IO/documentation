@@ -18,7 +18,7 @@ As of now, the main solution to collect Squid logs leverages the Rsyslog recipe.
 
 In this Section, we detail how to configure Squid’s logging output for Sekoia.io by means of the Rsyslog transport. We hereby focus on the configuration of Squid and invite the reader to the [Rsyslog Transport](/integration/ingestion_methods/syslog/overview.md) documentation to forward these logs to Sekoia.io.
 
-To configure Squid logging, you can create a new configuration `99-sekoiaio.conf` file in the `/etc/squid/conf.d/` directory of your server. With most of Squid configurations (including Debian, Red Hat Entreprise Linux, etc.), this file will automatically be used.
+To configure Squid logging, you can create a new configuration `99-sekoiaio.conf` file in the `/etc/squid/conf.d/` directory of your server. With most of Squid configurations (including Debian, Red Hat Enterprise Linux, etc.), this file will automatically be used.
 
 This file should contain two information:
 

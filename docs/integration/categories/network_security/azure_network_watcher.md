@@ -27,7 +27,7 @@ As a prerequisite you need at least one virtual machine with a network security 
 
 Navigate to the Network Watcher service, and select `NSG flow logs` under `LOGS`. From the list of NSGs, select your VM(s), and under `Flow logs settings`, select `On` to enable the NSG flow logs. Please, select the Version 2 NSG flow log format sample which is integrated to the Operations Center.
 
-These instructions are illustrated and more detailled [here](https://docs.microsoft.com/en-us/azure/network-watcher/network-watcher-nsg-flow-logging-portal).
+These instructions are illustrated and more detailed [here](https://docs.microsoft.com/en-us/azure/network-watcher/network-watcher-nsg-flow-logging-portal).
 
 ### Share access to logs
 
