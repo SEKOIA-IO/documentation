@@ -40,4 +40,4 @@ Retention periods are strictly governed by your contractual agreement.
     Sekoia.io cannot retrieve data that exceeds your defined storage thresholds. For example, if your total retention is 120 days, any data older than this limit is permanently deleted and cannot be recovered by Support.
 
 ## Next steps
-To learn how to access your archived events for a specific investigation, follow our guide to [restore data from cold storage](../xdr/FAQ/restore_data_cold_storage.md).
+To learn how to access your archived events for a specific investigation, follow our guide to [restore data from cold storage](xdr/FAQ/restore_data_cold_storage.md).
