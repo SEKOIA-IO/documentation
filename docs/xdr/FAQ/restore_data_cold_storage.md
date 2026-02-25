@@ -28,11 +28,11 @@ To trigger the restoration of your archives, you must contact Sekoia.io Support.
 Once the request is received, the Support team evaluates the volume:
 
 * **Volume < 30 TB**: The rehydration process starts within 48 working hours.
-* **Volume > 30 TB**: Support will provide a custom solution and an estimated time of completion (ETA).
+* **Volume > 30 TB**: Support will provide a custom solution and an estimated time of completion (ETA). 
 
 ## Access restored data
 
-Once rehydrated, the events are accessible via the Sekoia.io API or the search interface.
+Once rehydrated, the events are accessible via the Sekoia.io API or the search interface. (For volumes > 30TB, other alternatives may be suggested by Support on a case-by-case basis.)
 
 !!! warning "Automatic Deletion"
     Restored data is temporary. Sekoia.io deletes rehydrated events after 30 days (or less if specified in your request) to optimize storage performance.
