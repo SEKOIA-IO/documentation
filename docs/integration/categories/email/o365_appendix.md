@@ -83,7 +83,7 @@ Exchange, SharePoint and General audit events are part of the **M365 Unified Aud
 4. Start the playbook and verify events flow into your [Events page](https://app.sekoia.io/operations/events)
 
 !!! note "Multiple clients"
-    For each client, create a dedicated Event Hub (or separate Event Hub topics within the same namespace), a dedicated Sekoia intake, and a dedicated playbook. This ensures log isolation between tenants.
+    For each client, create a dedicated Event Hub (or separate Event Hubs within the same namespace), a dedicated Sekoia intake, and a dedicated playbook. This ensures log isolation between tenants.
 
 ## Further Readings
 - [Microsoft: Stream Azure monitoring data to an event hub](https://docs.microsoft.com/en-us/azure/azure-monitor/platform/stream-monitoring-data-event-hubs)
