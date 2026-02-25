@@ -20,7 +20,7 @@ To trigger the restoration of your archives, you must contact Sekoia.io Support.
 3.  Determine the **retention duration** for the restored data (how long you need the data to remain searchable).
 4.  Send a formal request to **Sekoia.io Support** containing these three elements.
 
-![A flowchart showing the Sekoia.io rehydration process. 1. A customer requests a specific timespan for rehydration. 2. A Sekoia.io operator triggers the rehydration of events. 3. The storage system downloads archive files from a dedicated customer bucket in a Cloud Object Storage (external provider) that matches the requested timespan. 4. The customer accesses the rehydrated events through the Sekoia.io API. 5. The storage system automatically deletes the rehydrated data after a set number of days.](docs/assets/xdr/rehydration_process.png)
+![A flowchart showing the Sekoia.io rehydration process. 1. A customer requests a specific timespan for rehydration. 2. A Sekoia.io operator triggers the rehydration of events. 3. The storage system downloads archive files from a dedicated customer bucket in a Cloud Object Storage (external provider) that matches the requested timespan. 4. The customer accesses the rehydrated events through the Sekoia.io API. 5. The storage system automatically deletes the rehydrated data after a set number of days.](assets/xdr/rehydration_process.png)
 
 
 ## Processing times
