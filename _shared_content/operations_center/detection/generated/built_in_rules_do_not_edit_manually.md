@@ -1,4 +1,4 @@
-Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-02-16_](rules_changelog.md)).
+Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-02-25_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Identity Information**
 
@@ -1124,6 +1124,7 @@ Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-
     - **Changelog:**
     
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+        - 25/02/2026 - minor - Update rule type to integration
             
 ??? abstract "Trend Micro Cloud One High Intrusion"
     
@@ -1131,18 +1132,30 @@ Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 25/02/2026 - minor - Update rule type to integration
+            
 ??? abstract "Trend Micro Cloud One Low Intrusion"
     
     Detects when Trend Micro EDR raised an alert for an intrusion with a low severity level.
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 25/02/2026 - minor - Update rule type to integration
+            
 ??? abstract "Trend Micro Cloud One Medium Intrusion"
     
     Detects when Trend Micro EDR raised an alert for an intrusion with a medium severity level.
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 25/02/2026 - minor - Update rule type to integration
+            
 **Exploit Public-Facing Application**
 
 ??? abstract "CVE-2018-11776 Apache Struts2"
@@ -2312,6 +2325,7 @@ Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-
     - **Changelog:**
     
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+        - 25/02/2026 - minor - Update rule type to integration
             
 ??? abstract "Cybereason EDR Malware Detection"
     
@@ -3056,6 +3070,10 @@ Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 25/02/2026 - minor - Update rule type to integration
+            
 ??? abstract "Trend Micro Apex One Data Loss Prevention Alert"
     
     Trend Micro Apex One has raised an alert for data loss prevention.
@@ -3065,6 +3083,7 @@ Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-
     - **Changelog:**
     
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+        - 25/02/2026 - minor - Update rule type to integration
             
 ??? abstract "Trend Micro Apex One Malware Alert"
     
@@ -3075,6 +3094,7 @@ Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-
     - **Changelog:**
     
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+        - 25/02/2026 - minor - Update rule type to integration
             
 ??? abstract "Trend Micro Vision One Workbench Critical Severity Alert"
     
@@ -3082,24 +3102,40 @@ Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 25/02/2026 - minor - Update rule type to integration
+            
 ??? abstract "Trend Micro Vision One Workbench Low Severity Alert"
     
     Detects when a low alert severity is raised by Trend Micro Vision One Workbench.
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 25/02/2026 - minor - Update rule type to integration
+            
 ??? abstract "Trend Micro Vision One Workbench Medium Severity Alert"
     
     Detects when a medium alert severity is raised by Trend Micro Vision One Workbench.
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 25/02/2026 - minor - Update rule type to integration
+            
 ??? abstract "Trend Micro Vision One Workbench high Severity Alert"
     
     Detects when a high alert severity is raised by Trend Micro Vision One Workbench.
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 25/02/2026 - minor - Update rule type to integration
+            
 ??? abstract "Trickbot Malware Activity"
     
     Detects Trickbot malware process tree pattern in which rundll32.exe is parent of wermgr.exe.
@@ -3626,6 +3662,7 @@ Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-
     - **Changelog:**
     
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+        - 25/02/2026 - minor - Update rule type to integration
             
 ??? abstract "Cybereason EDR Malware Detection"
     
@@ -4234,6 +4271,7 @@ Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-
     - **Changelog:**
     
         - 10/03/2025 - minor - Update severity to match the severity level from the editor
+        - 25/02/2026 - minor - Update rule type to integration
             
 ??? abstract "Palo Alto Cortex XDR (EDR) Alert Not Blocked (Low Severity)"
     
@@ -4244,6 +4282,7 @@ Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-
     - **Changelog:**
     
         - 10/03/2025 - minor - Update severity to match the severity level from the editor
+        - 25/02/2026 - minor - Update rule type to integration
             
 ??? abstract "Palo Alto Cortex XDR (EDR) Alert Not Blocked (Medium Severity)"
     
@@ -4254,6 +4293,7 @@ Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-
     - **Changelog:**
     
         - 10/03/2025 - minor - Update severity to match the severity level from the editor
+        - 25/02/2026 - minor - Update rule type to integration
             
 ??? abstract "SentinelOne EDR Agent Disabled"
     
@@ -4497,6 +4537,10 @@ Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 25/02/2026 - minor - Update rule type to integration
+            
 ??? abstract "Trend Micro Apex One Data Loss Prevention Alert"
     
     Trend Micro Apex One has raised an alert for data loss prevention.
@@ -4506,6 +4550,7 @@ Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-
     - **Changelog:**
     
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+        - 25/02/2026 - minor - Update rule type to integration
             
 ??? abstract "Trend Micro Apex One Malware Alert"
     
@@ -4516,6 +4561,7 @@ Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-
     - **Changelog:**
     
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+        - 25/02/2026 - minor - Update rule type to integration
             
 ??? abstract "Trend Micro Vision One Workbench Critical Severity Alert"
     
@@ -4523,24 +4569,40 @@ Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 25/02/2026 - minor - Update rule type to integration
+            
 ??? abstract "Trend Micro Vision One Workbench Low Severity Alert"
     
     Detects when a low alert severity is raised by Trend Micro Vision One Workbench.
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 25/02/2026 - minor - Update rule type to integration
+            
 ??? abstract "Trend Micro Vision One Workbench Medium Severity Alert"
     
     Detects when a medium alert severity is raised by Trend Micro Vision One Workbench.
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 25/02/2026 - minor - Update rule type to integration
+            
 ??? abstract "Trend Micro Vision One Workbench high Severity Alert"
     
     Detects when a high alert severity is raised by Trend Micro Vision One Workbench.
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 25/02/2026 - minor - Update rule type to integration
+            
 ??? abstract "Vectra General Threat Detection"
     
     Vectra Cognito detected a potential threat. This is a very generic rule to raise as much alerts as possible from Vectra detections however RECONNAISSANCE and INFO categories have been removed to avoid spamming.
@@ -4859,6 +4921,7 @@ Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-
     - **Changelog:**
     
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+        - 25/02/2026 - minor - Update rule type to integration
             
 ??? abstract "Cybereason EDR Malware Detection"
     
@@ -5376,6 +5439,10 @@ Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 25/02/2026 - minor - Update rule type to integration
+            
 ??? abstract "Taskhost Wrong Parent"
     
     Detects if the Taskhost process was executed by a non-legitimate parent process. Taskhost is the process of the Windows Task Manager which lists the processes that are currently running on the computer system.
@@ -5424,6 +5491,7 @@ Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-
     - **Changelog:**
     
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+        - 25/02/2026 - minor - Update rule type to integration
             
 ??? abstract "Trend Micro Apex One Malware Alert"
     
@@ -5434,6 +5502,7 @@ Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-
     - **Changelog:**
     
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+        - 25/02/2026 - minor - Update rule type to integration
             
 ??? abstract "Trend Micro Vision One Workbench Critical Severity Alert"
     
@@ -5441,24 +5510,40 @@ Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 25/02/2026 - minor - Update rule type to integration
+            
 ??? abstract "Trend Micro Vision One Workbench Low Severity Alert"
     
     Detects when a low alert severity is raised by Trend Micro Vision One Workbench.
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 25/02/2026 - minor - Update rule type to integration
+            
 ??? abstract "Trend Micro Vision One Workbench Medium Severity Alert"
     
     Detects when a medium alert severity is raised by Trend Micro Vision One Workbench.
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 25/02/2026 - minor - Update rule type to integration
+            
 ??? abstract "Trend Micro Vision One Workbench high Severity Alert"
     
     Detects when a high alert severity is raised by Trend Micro Vision One Workbench.
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 25/02/2026 - minor - Update rule type to integration
+            
 ??? abstract "Usage Of Procdump With Common Arguments"
     
     Detects the usage of Procdump sysinternals tool with some common arguments and followed by common patterns.
@@ -6465,6 +6550,7 @@ Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-
     - **Changelog:**
     
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+        - 25/02/2026 - minor - Update rule type to integration
             
 ??? abstract "Trend Micro Cloud One High Intrusion"
     
@@ -6472,18 +6558,30 @@ Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 25/02/2026 - minor - Update rule type to integration
+            
 ??? abstract "Trend Micro Cloud One Low Intrusion"
     
     Detects when Trend Micro EDR raised an alert for an intrusion with a low severity level.
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 25/02/2026 - minor - Update rule type to integration
+            
 ??? abstract "Trend Micro Cloud One Medium Intrusion"
     
     Detects when Trend Micro EDR raised an alert for an intrusion with a medium severity level.
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 25/02/2026 - minor - Update rule type to integration
+            
 **Create Account**
 
 ??? abstract "AWS Persistence By Creating KeyPair And SecurityGroup"
