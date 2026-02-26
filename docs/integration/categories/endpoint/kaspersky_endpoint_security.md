@@ -42,6 +42,8 @@ type: intake
 
 !!! Note
     - Log levels are based on the taxonomy of [RFC5424](https://datatracker.ietf.org/doc/html/rfc5424). Adapt according to the terminology used by the editor.
+
+!!! Warning
     - Please ensure your logs are sent in English. Otherwise, the parser will be unable to process the fields correctly, leading to parsing warnings (see the `sekoiaio.intake.parsing_warning` field).
 
 ## Step-by-Step Configuration Procedure
