@@ -729,7 +729,7 @@ alerts
 
 **Description**
 
-Use the `aggregate` operator to group rows by a column and perform aggregations with a chosen function: `count`, `sum`, `min`, `max`, `avg`, `count_distinct`, `make_set`.
+Use the `aggregate` operator to group rows by a column and perform aggregations with a chosen function: `count`, `sum`, `min`, `max`, `avg`, `count_distinct`, `make_set`, `count_if`.
 
 ``` shell
 <table name>
@@ -831,6 +831,19 @@ Note that `null` values are ignored.
 ``` shell
 events
 | aggregate make_set(source.ip)
+| limit 100
+
+```
+
+**Example 9**
+
+Count allowed and denied network events per destination port using `count_if`
+
+``` shell
+events
+| where timestamp >= ago(24h) and event.category == 'network'
+| aggregate allowed = count_if(action.outcome == 'success'), denied = count_if(action.outcome == 'failure') by destination.port
+| order by denied desc
 | limit 100
 
 ```
@@ -1465,6 +1478,99 @@ events
 
 ---
 
+### String: extract()
+
+**Description**
+
+Extracts a match for a regular expression from a string. Optionally targets a specific capture group. This function is useful for parsing structured data from free-text fields such as URLs, log messages, or command lines.
+
+**Syntax**
+
+``` shell
+extract(<regex>, <capture_group>, <source>)
+```
+
+**Parameters**
+
+- `regex`: A regular expression pattern to match against the source string (required). Use the `@` prefix for raw string literals to avoid double-escaping backslashes (e.g., `@'https?://([^/]+)'`).
+- `capture_group`: The capture group index to extract (required). `0` returns the entire match; `1` returns the first parenthesized group; `2+` for subsequent groups.
+- `source`: The string to search (required)
+
+**Return Value**
+
+Returns the matched substring for the specified capture group. Returns `null` if the regex finds no match.
+
+**Example 1**
+
+Extract the domain from a URL:
+
+``` shell
+events
+| where timestamp > ago(24h) and url.original != null
+| select timestamp, domain = extract(@'https?://([^/]+)', 1, url.original)
+| limit 100
+```
+
+**Example 2**
+
+Extract user identifiers from log messages:
+
+``` shell
+events
+| where timestamp > ago(24h) and message != null
+| select timestamp, user_id = extract(@'user_(\d+)', 1, message)
+| where user_id != null
+| limit 100
+```
+
+---
+
+### String: replace_regex()
+
+**Description**
+
+Replaces all matches of a regular expression in a string with a specified replacement pattern. This function is useful for sanitizing, normalizing, or transforming string data in security investigations.
+
+**Syntax**
+
+``` shell
+replace_regex(<source>, <lookup_regex>, <rewrite_pattern>)
+```
+
+**Parameters**
+
+- `source`: The source string to search and replace within (required)
+- `lookup_regex`: The regular expression to search for (required). Can contain capture groups in parentheses. Use the `@` prefix for raw string literals to avoid double-escaping backslashes.
+- `rewrite_pattern`: The replacement pattern (required). Use `$0` for the whole match, `$1` for the first capture group, `$2` for the second, etc.
+
+**Return Value**
+
+Returns the modified string with all non-overlapping matches replaced. If no matches are found, the original string is returned unchanged.
+
+**Example 1**
+
+Strip the protocol from URLs:
+
+``` shell
+events
+| where timestamp > ago(24h) and url.original != null
+| select timestamp, cleaned_url = replace_regex(url.original, @'https?://', '')
+| limit 100
+```
+
+**Example 2**
+
+Sanitize email addresses in logs:
+
+``` shell
+events
+| where timestamp > ago(24h) and user.email != null
+| select timestamp, sanitized_email = replace_regex(user.email, @'(\w+)@.*', '$1@example.com')
+| limit 100
+```
+
+---
+
 ### Math: round()
 
 **Description**
@@ -1495,6 +1601,54 @@ alerts
 | where created_at > ago(7d)
 | select ttd_minutes = round(time_to_detect / 60.0, 2)
 | limit 100
+```
+
+---
+
+### Type conversion: toint()
+
+**Description**
+
+Converts a value to a signed 32-bit integer representation. This function is useful for converting string fields to numeric values for comparisons, calculations, or filtering.
+
+**Syntax**
+
+``` shell
+toint(<value>)
+```
+
+**Parameters**
+
+- `value`: The value to convert to an integer (required). Can be a string, float, or other scalar type.
+
+**Return Value**
+
+Returns the integer representation of the value. Returns `null` if the conversion fails (e.g., non-numeric string).
+
+If the input is a decimal number, the value is truncated to the integer portion (e.g., `toint(2.9)` returns `2`).
+
+**Example 1**
+
+Convert a string field to integer for numeric comparison:
+
+``` shell
+events
+| where timestamp > ago(24h)
+| select port_number = toint(destination.port)
+| where port_number > 1024
+| limit 100
+```
+
+**Example 2**
+
+Convert and aggregate by numeric field:
+
+``` shell
+events
+| where timestamp > ago(24h)
+| extend severity_int = toint(event.severity)
+| aggregate count() by severity_int
+| order by severity_int desc
 ```
 
 ---
@@ -1615,6 +1769,50 @@ alerts
 | extend eu_format = format_datetime(created_at, '%d-%m-%Y')
 | aggregate count() by date_only, readable_time, eu_format, detection_type
 | limit 100
+```
+
+---
+
+### Aggregation: count_if()
+
+**Description**
+
+Counts the number of rows for which a predicate evaluates to `true`. This function is used within the `aggregate` operator and is useful for computing conditional counts in a single query, such as counting successes and failures side by side.
+
+**Syntax**
+
+``` shell
+count_if(<predicate>)
+```
+
+**Parameters**
+
+- `predicate`: A boolean expression to evaluate for each row (required). Rows where this evaluates to `true` are counted; rows where it evaluates to `false` or `null` are not counted.
+
+**Return Value**
+
+Returns the count of rows for which the predicate is `true`. Returns `0` if no rows match.
+
+**Example 1**
+
+Count successful and failed login attempts per source IP:
+
+``` shell
+events
+| where timestamp > ago(24h) and event.category == 'authentication'
+| aggregate success_count = count_if(event.code == '4624'), failed_count = count_if(event.code == '4625') by source.ip
+| order by failed_count desc
+| limit 100
+```
+
+**Example 2**
+
+Count high-urgency vs. low-urgency alerts per detection type:
+
+``` shell
+alerts
+| where created_at > ago(7d)
+| aggregate high = count_if(urgency >= 80), low = count_if(urgency < 80) by detection_type
 ```
 
 ---
