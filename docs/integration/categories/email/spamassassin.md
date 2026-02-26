@@ -61,36 +61,38 @@ This setup guide will show you how to forward logs produced by your SpamAssassin
 
 #### Detailed Procedure:
 
-1. **Install and Configure Rsyslog:**
-   - Ensure that the `rsyslog` package is installed on your server.
-   - Load the `imfile` module to read log files:
+1. **Install Rsyslog:**
+    - Ensure that the `rsyslog` package is installed on your server.
 
-     ```bash
-     $ModLoad imfile
-     ```
+2. **Create a dedicated configuration**
+    - Add a dedicated configuration file for SpamAssassin logs in `/etc/rsyslog.d/18-spamassassin.conf`:
 
-2. **Configure Rsyslog to Monitor SpamAssassin Log Files:**
-   - Add the following configuration to your `rsyslog` configuration file (usually found in `/etc/rsyslog.conf` or `/etc/rsyslog.d/`):
+     ```text
+        module(load="imfile" PollingInterval="5")
+        module(load="omfwd")
 
-     ```bash
-     $InputFileName /var/log/spamd.log
-     $InputFileStateFile stat-apache-spamassassin
-     $InputFileSeverity notice
-     $InputFileFacility local5
-     $InputFilePollInterval 1
-     $InputRunFileMonitor
-     ```
+        input(
+            type="imfile"
+            File="/var/log/spamd.log"
+            Facility="local5"
+            Severity="notice"
+            StateFile="stat-apache-spamassassin"
+            PersistStateInterval="200"
+            Ruleset="spamassassin-logs"
+        )
 
-3. **Forward Logs to a Concentrator:**
-   - Configure rsyslog to forward logs to a syslog concentrator:
-
-     ```bash
-     *.* action(type="omfwd"
-        target="<Concentrator_FQDN_or_IP>"
-        port="<Remote_Port>"
-        protocol="tcp"
-        TCP_Framing="octet-counted"
-     )
+        ruleset(name="spamassassin-logs") {
+            # Forward to remote concentrator
+            action(
+                type="omfwd"
+                target="CONCENTRATOR_FQDN_OR_IP"
+                port="REMOTE_PORT"
+                protocol="tcp"
+                TCP_Framing="octet-counted"
+            )
+            # Prevent further processing of these messages
+            stop
+        }
      ```
 
 !!! Note
