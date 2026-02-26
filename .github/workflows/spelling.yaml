@@ -40,4 +40,4 @@ jobs:
       - name: Spell Check Repo
         uses: crate-ci/typos@57b11c6b7e54c402ccd9cda953f1072ec4f78e33 # v1.43.5
         with:
-          files: ${{ fromJSON(needs.find-docs.outputs.matrix) }}
+          files: ${{ needs.find-docs.outputs.matrix }}
