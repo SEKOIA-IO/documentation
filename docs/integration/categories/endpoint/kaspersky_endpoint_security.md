@@ -41,7 +41,8 @@ type: intake
 - **Supported verbosity level**: Emergency / Alert / Critical / Error / Warning / Notice / Informational / Debug
 
 !!! Note
-    Log levels are based on the taxonomy of [RFC5424](https://datatracker.ietf.org/doc/html/rfc5424). Adapt according to the terminology used by the editor.
+    - Log levels are based on the taxonomy of [RFC5424](https://datatracker.ietf.org/doc/html/rfc5424). Adapt according to the terminology used by the editor.
+    - Please ensure your logs are sent in English. Otherwise, the parser will be unable to process the fields correctly, leading to parsing_warning issues.
 
 ## Step-by-Step Configuration Procedure
 
