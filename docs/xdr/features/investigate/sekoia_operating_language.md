@@ -729,7 +729,7 @@ alerts
 
 **Description**
 
-Use the `aggregate` operator to group rows by a column and perform aggregations with a chosen function: `count`, `sum`, `min`, `max`, `avg`, `count_distinct`, `make_set`, `count_if`.
+Use the `aggregate` operator to group rows by a column and perform aggregations with a chosen function: `count`, `sum`, `min`, `max`, `avg`, `count_distinct`, `make_set`, `countif`.
 
 ``` shell
 <table name>
@@ -837,12 +837,12 @@ events
 
 **Example 9**
 
-Count allowed and denied network events per destination port using `count_if`
+Count allowed and denied network events per destination port using `countif`
 
 ``` shell
 events
 | where timestamp >= ago(24h) and event.category == 'network'
-| aggregate allowed = count_if(action.outcome == 'success'), denied = count_if(action.outcome == 'failure') by destination.port
+| aggregate allowed = countif(action.outcome == 'success'), denied = countif(action.outcome == 'failure') by destination.port
 | order by denied desc
 | limit 100
 
@@ -1773,7 +1773,7 @@ alerts
 
 ---
 
-### Aggregation: count_if()
+### Aggregation: countif()
 
 **Description**
 
@@ -1782,7 +1782,7 @@ Counts the number of rows for which a predicate evaluates to `true`. This functi
 **Syntax**
 
 ``` shell
-count_if(<predicate>)
+countif(<predicate>)
 ```
 
 **Parameters**
@@ -1800,7 +1800,7 @@ Count successful and failed login attempts per source IP:
 ``` shell
 events
 | where timestamp > ago(24h) and event.category == 'authentication'
-| aggregate success_count = count_if(event.code == '4624'), failed_count = count_if(event.code == '4625') by source.ip
+| aggregate success_count = countif(event.code == '4624'), failed_count = countif(event.code == '4625') by source.ip
 | order by failed_count desc
 | limit 100
 ```
@@ -1812,7 +1812,7 @@ Count high-urgency vs. low-urgency alerts per detection type:
 ``` shell
 alerts
 | where created_at > ago(7d)
-| aggregate high = count_if(urgency >= 80), low = count_if(urgency < 80) by detection_type
+| aggregate high = countif(urgency >= 80), low = countif(urgency < 80) by detection_type
 ```
 
 ---
