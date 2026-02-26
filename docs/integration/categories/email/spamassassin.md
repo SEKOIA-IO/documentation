@@ -85,8 +85,8 @@ This setup guide will show you how to forward logs produced by your SpamAssassin
             # Forward to remote concentrator
             action(
                 type="omfwd"
-                target="CONCENTRATOR_FQDN_OR_IP"
-                port="REMOTE_PORT"
+                target="<Concentrator_FQDN_or_IP>"
+                port="<Remote_Port>"
                 protocol="tcp"
                 TCP_Framing="octet-counted"
             )
