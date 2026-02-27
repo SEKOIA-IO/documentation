@@ -50,7 +50,7 @@ For companies wishing to host their data in France:
         </tr>
         <tr>
             <td>Syslog RELP Intake</td>
-            <td><a href="app.sekoia.io:11514">app.sekoia.io:11514</a></td>
+            <td><a href="intake.sekoia.io:11514">app.sekoia.io:11514</a></td>
         </tr>
     </tbody>
 </table>

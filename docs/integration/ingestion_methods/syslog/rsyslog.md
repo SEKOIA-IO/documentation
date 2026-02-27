@@ -408,7 +408,7 @@ Before processing, you have to:
 - Add an Intake to the relevant Entity
 - Keep trace of the automatically generated Intake key
 
-To forward events using this acknowledge protocol to Sekoia.io, you have to send events using TLS to `relp.intake.sekoia.io` and to respect the RFC 5426. Additionally, you need to update the syslog header with the intake key you created earlier.
+To forward events using this acknowledge protocol to Sekoia.io, you have to send events using TLS to `intake.sekoia.io` and to respect the RFC 5426. Additionally, you need to update the syslog header with the intake key you created earlier.
 
 The most noticeable change using RELP in Rsyslog is the output module used (`omrelp`).
 
@@ -434,12 +434,12 @@ Follow these steps to forward logs using RELP Protocol:
 	if ($programname startswith 'unbound') then {
 	  action(
 		type="omrelp"
-		target="relp.intake.sekoia.io"
+		target="intake.sekoia.io"
 		port="11514"
 		tls="on"
 		tls.caCert="/etc/rsyslog.d/Sekoia-io-intake.pem"
 		tls.authmode="name"
-		tls.permittedPeer=["relp.intake.sekoia.io"]
+		tls.permittedPeer=["intake.sekoia.io"]
 		template="SEKOIAIOUnboundTemplate"
 	    )
 	}
