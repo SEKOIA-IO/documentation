@@ -13,7 +13,13 @@ Notifications, accessible through the main menu or Settings, allow you to:
     - A report is available
     - A new rule is added to the Rules Catalog by Sekoia.io 
     - No events are received 
-    - A playbook encountered an error 
+    - A playbook encountered an error
+    - A connector encoutered an error
+    - A rule from the Rules Catalog is scheduled for deprecation
+    - A rule from the Rules Catalog is deprecated
+    - An automated case is created
+    - An automated case is edited
+    - A detection rule entered rate-limited state
 
 - Add specific conditions: 
     - Focus on the name, reference, pattern, source, intake...
