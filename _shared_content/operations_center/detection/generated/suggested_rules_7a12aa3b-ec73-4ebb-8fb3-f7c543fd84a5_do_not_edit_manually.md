@@ -39,6 +39,12 @@ The following Sekoia.io built-in rules match the intake **Ivanti / Pulse Connect
     
     - **Effort:** advanced
 
+??? abstract "Covenant Default HTTP Beaconing"
+    
+    Detects potential Covenant communications through the user-agent and specific urls
+    
+    - **Effort:** intermediate
+
 ??? abstract "Cryptomining"
     
     Detection of domain names potentially related to cryptomining activities.
@@ -93,6 +99,18 @@ The following Sekoia.io built-in rules match the intake **Ivanti / Pulse Connect
     
     - **Effort:** master
 
+??? abstract "Internet Scanner"
+    
+    Detects known scanner IP addresses. Alert is only raised when the scan hits an opened port, on TCP or UDP. This could be a very noisy rule, so be careful to check your detection perimeter before activation.
+    
+    - **Effort:** master
+
+??? abstract "Internet Scanner Target"
+    
+    Detects known scanner IP addresses. Alert is only raised when the scan hits an opened port, on TCP or UDP and group by target address. This could be a very noisy rule, so be careful to check your detection perimeter before activation.
+    
+    - **Effort:** master
+
 ??? abstract "Koadic MSHTML Command"
     
     Detects Koadic payload using MSHTML module
@@ -117,6 +135,12 @@ The following Sekoia.io built-in rules match the intake **Ivanti / Pulse Connect
     
     - **Effort:** advanced
 
+??? abstract "Nimbo-C2 User Agent"
+    
+    Nimbo-C2 Uses an unusual User-Agent format in its implants.
+    
+    - **Effort:** intermediate
+
 ??? abstract "Password Change On Directory Service Restore Mode (DSRM) Account"
     
     The Directory Service Restore Mode (DSRM) account is a local administrator account on Domain Controllers. Attackers may change the password to gain persistence.
@@ -135,11 +159,23 @@ The following Sekoia.io built-in rules match the intake **Ivanti / Pulse Connect
     
     - **Effort:** intermediate
 
+??? abstract "Potential Bazar Loader User-Agents"
+    
+    Detects potential Bazar loader communications through the user-agent
+    
+    - **Effort:** elementary
+
 ??? abstract "Potential DNS Tunnel"
     
     Detects domain name which is longer than 62 characters. Long domain names are distinctive of DNS tunnels.
     
     - **Effort:** advanced
+
+??? abstract "Potential Lemon Duck User-Agent"
+    
+    Detects LemonDuck user agent. The format used two sets of alphabetical characters separated by dashes, for example "User-Agent: Lemon-Duck-[A-Z]-[A-Z]".
+    
+    - **Effort:** elementary
 
 ??? abstract "Remote Access Tool Domain"
     
@@ -176,6 +212,12 @@ The following Sekoia.io built-in rules match the intake **Ivanti / Pulse Connect
     Detects suspicious TOR gateways. Gateways are often used by the victim to pay and decrypt the encrypted files without installing TOR. Tor intercepts the network traffic from one or more apps on user’s computer, usually the user web browser, and shuffles it through a number of randomly-chosen computers before passing it on to its destination. This disguises user location, and makes it harder for servers to pick him/her out on repeat visits, or to tie together separate visits to different sites, this making tracking and surveillance more difficult. Before a network packet starts its journey, user’s computer chooses a random list of relays and repeatedly encrypts the data in multiple layers, like an onion. Each relay knows only enough to strip off the outermost layer of encryption, before passing what’s left on to the next relay in the list.
     
     - **Effort:** advanced
+
+??? abstract "TOR Usage"
+    
+    Detects TOR usage, based on the IP address and the destination port (filtered on NTP). TOR is short for The Onion Router, and it gets its name from how it works. TOR intercepts the network traffic from one or more apps on user’s computer, usually the user web browser, and shuffles it through a number of randomly-chosen computers before passing it on to its destination. This disguises user location, and makes it harder for servers to pick him/her out on repeat visits, or to tie together separate visits to different sites, this making tracking and surveillance more difficult. Before a network packet starts its journey, user’s computer chooses a random list of relays and repeatedly encrypts the data in multiple layers, like an onion. Each relay knows only enough to strip off the outermost layer of encryption, before passing what’s left on to the next relay in the list.
+    
+    - **Effort:** master
 
 ??? abstract "TOR Usage Generic Rule"
     
