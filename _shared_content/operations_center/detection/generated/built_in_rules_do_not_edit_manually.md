@@ -1,4 +1,4 @@
-Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-02-25_](rules_changelog.md)).
+Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-02-27_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Identity Information**
 
@@ -173,6 +173,10 @@ Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 27/02/2026 - minor - Update rule type to integration
+            
 ??? abstract "Fortigate IPS Critical Alert"
     
     Fortigate intrusion detection alert with critical severity.
@@ -211,18 +215,30 @@ Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 27/02/2026 - minor - Update rule type to integration
+            
 ??? abstract "Varonis Data Security Intrusion Detection Low Severity Alert"
     
     Varonis Data Security has raised a low severity alert for its intrusion detection engine.
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 27/02/2026 - minor - Update rule type to integration
+            
 ??? abstract "Varonis Data Security Intrusion Detection Medium Severity Alert"
     
     Varonis Data Security has raised a medium severity alert for its intrusion detection engine.
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 27/02/2026 - minor - Update rule type to integration
+            
 ??? abstract "Veeam Backup & Replication Malware Detection"
     
     Veeam Backup & Replication has detected some malware related activity
@@ -700,12 +716,20 @@ Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 27/02/2026 - minor - Update rule type to integration
+            
 ??? abstract "Varonis Data Security Email Medium Severity Alert"
     
     Varonis Data Security has raised a medium severity alert related to a supervised email account.
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 27/02/2026 - minor - Update rule type to integration
+            
 ??? abstract "Varonis Data Security Network High Severity Alert"
     
     Varonis Data Security has raised a high severity  alert related to a network rule
@@ -988,6 +1012,7 @@ Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-
     
         - 29/01/2025 - minor - Rework pattern for high severity events only and filter out authentication events.
         - 28/03/2024 - minor - Rule effort was updated to master
+        - 27/02/2026 - minor - Update rule type to integration
             
 ??? abstract "Netskope Malware Detected"
     
@@ -995,12 +1020,20 @@ Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 27/02/2026 - minor - Update rule type to integration
+            
 ??? abstract "Netskope Malware Patient Zero Detected"
     
     Netskope identified a malware as Patient Zero.
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 27/02/2026 - minor - Update rule type to integration
+            
 ??? abstract "Netskope Potential Brute Force On Protected Applications"
     
     Detects potential brute force on Netskope protected applications with more than 10 failures in 5 minutes for the same user name and application.
@@ -1025,6 +1058,10 @@ Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 27/02/2026 - minor - Update rule type to integration
+            
 ??? abstract "Okta Access To Admin Console Denied"
     
     Detects when an attempt was made to access the Okta Admin Console from an interactive user account but failed.
@@ -2062,6 +2099,10 @@ Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 27/02/2026 - minor - Update rule type to integration
+            
 ??? abstract "AWS GuardDuty Medium Severity Alert"
     
     GuardDuty has detected a threat with a medium severity level. A Medium severity level indicates suspicious activity that deviates from normally observed behavior and, depending on your use case, may be indicative of a resource compromise.
@@ -2071,6 +2112,7 @@ Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-
     - **Changelog:**
     
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+        - 27/02/2026 - minor - Update rule type to integration
             
 ??? abstract "Alternate PowerShell Hosts Pipe"
     
@@ -3398,6 +3440,10 @@ Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 27/02/2026 - minor - Update rule type to integration
+            
 ??? abstract "AWS GuardDuty Medium Severity Alert"
     
     GuardDuty has detected a threat with a medium severity level. A Medium severity level indicates suspicious activity that deviates from normally observed behavior and, depending on your use case, may be indicative of a resource compromise.
@@ -3407,6 +3453,7 @@ Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-
     - **Changelog:**
     
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+        - 27/02/2026 - minor - Update rule type to integration
             
 ??? abstract "Alert High Severity Sesame it Jizo NDR"
     
@@ -3687,6 +3734,7 @@ Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-
     
         - 12/11/2024 - minor - Update name, description, similarity and severity
         - 02/07/2025 - minor - Update similarity
+        - 27/02/2026 - minor - Update rule type to integration
             
 ??? abstract "Darktrace Threat Visualizer Model Breach Suspicious Activity"
     
@@ -3698,6 +3746,7 @@ Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-
     
         - 12/11/2024 - minor - Update name, description, similarity and severity
         - 02/07/2025 - minor - Update similarity
+        - 27/02/2026 - minor - Update rule type to integration
             
 ??? abstract "Darktrace Threat Visualizer Threat Critical Alert"
     
@@ -3943,24 +3992,40 @@ Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 27/02/2026 - minor - Update rule type to integration
+            
 ??? abstract "Lacework Cloud Security High Severity Alert"
     
     Detects when a high alert severity is raised by Lacework. This severity level might indicates a suspicious change in configuration or policy violation.
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 27/02/2026 - minor - Update rule type to integration
+            
 ??? abstract "Lacework Cloud Security Low Severity Alert"
     
     Detects when a low alert severity is raised by Lacework. This severity level might indicates a change in configuration that could be malicious or not.
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 27/02/2026 - minor - Update rule type to integration
+            
 ??? abstract "Lacework Cloud Security Medium Severity Alert"
     
     Detects when a medium alert severity is raised by Lacework. This severity level might indicates a suspicious activity such as new source from user connection.
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 27/02/2026 - minor - Update rule type to integration
+            
 ??? abstract "Login Brute-Force Successful On SentinelOne EDR Management Console"
     
     A user has attempted to login several times (brute-force) on the SentinelOne EDR Management Console and succeeded to login.
@@ -5697,6 +5762,10 @@ Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 27/02/2026 - minor - Update rule type to integration
+            
 ## Persistence
 **Boot or Logon Initialization Scripts**
 
@@ -6048,6 +6117,7 @@ Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-
     
         - 29/01/2025 - minor - Rework pattern for high severity events only and filter out authentication events.
         - 28/03/2024 - minor - Rule effort was updated to master
+        - 27/02/2026 - minor - Update rule type to integration
             
 ??? abstract "Netskope Malware Detected"
     
@@ -6055,12 +6125,20 @@ Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 27/02/2026 - minor - Update rule type to integration
+            
 ??? abstract "Netskope Malware Patient Zero Detected"
     
     Netskope identified a malware as Patient Zero.
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 27/02/2026 - minor - Update rule type to integration
+            
 ??? abstract "Netskope Potential Brute Force On Protected Applications"
     
     Detects potential brute force on Netskope protected applications with more than 10 failures in 5 minutes for the same user name and application.
@@ -6085,6 +6163,10 @@ Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 27/02/2026 - minor - Update rule type to integration
+            
 ??? abstract "Okta Access To Admin Console Denied"
     
     Detects when an attempt was made to access the Okta Admin Console from an interactive user account but failed.
@@ -8128,6 +8210,7 @@ Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-
     
         - 29/01/2025 - minor - Rework pattern for high severity events only and filter out authentication events.
         - 28/03/2024 - minor - Rule effort was updated to master
+        - 27/02/2026 - minor - Update rule type to integration
             
 ??? abstract "Netskope Malware Detected"
     
@@ -8135,12 +8218,20 @@ Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 27/02/2026 - minor - Update rule type to integration
+            
 ??? abstract "Netskope Malware Patient Zero Detected"
     
     Netskope identified a malware as Patient Zero.
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 27/02/2026 - minor - Update rule type to integration
+            
 ??? abstract "Netskope Potential Brute Force On Protected Applications"
     
     Detects potential brute force on Netskope protected applications with more than 10 failures in 5 minutes for the same user name and application.
@@ -8165,6 +8256,10 @@ Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 27/02/2026 - minor - Update rule type to integration
+            
 ??? abstract "Okta Access To Admin Console Denied"
     
     Detects when an attempt was made to access the Okta Admin Console from an interactive user account but failed.
@@ -8542,6 +8637,7 @@ Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-
     - **Changelog:**
     
         - 20/01/2025 - minor - Removing event fields to use the smart description
+        - 27/02/2026 - minor - Update rule type to integration
             
 ??? abstract "Tenable Identity Exposure / Alsid High Severity Alert"
     
@@ -8552,6 +8648,7 @@ Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-
     - **Changelog:**
     
         - 20/01/2025 - minor - Removing event fields to use the smart description
+        - 27/02/2026 - minor - Update rule type to integration
             
 **Create or Modify System Process**
 
@@ -10087,6 +10184,7 @@ Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-
     
         - 29/01/2025 - minor - Rework pattern for high severity events only and filter out authentication events.
         - 28/03/2024 - minor - Rule effort was updated to master
+        - 27/02/2026 - minor - Update rule type to integration
             
 ??? abstract "Netskope Malware Detected"
     
@@ -10094,12 +10192,20 @@ Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 27/02/2026 - minor - Update rule type to integration
+            
 ??? abstract "Netskope Malware Patient Zero Detected"
     
     Netskope identified a malware as Patient Zero.
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 27/02/2026 - minor - Update rule type to integration
+            
 ??? abstract "Netskope Potential Brute Force On Protected Applications"
     
     Detects potential brute force on Netskope protected applications with more than 10 failures in 5 minutes for the same user name and application.
@@ -10124,6 +10230,10 @@ Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 27/02/2026 - minor - Update rule type to integration
+            
 ??? abstract "Okta Access To Admin Console Denied"
     
     Detects when an attempt was made to access the Okta Admin Console from an interactive user account but failed.
@@ -10898,6 +11008,7 @@ Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-
     - **Changelog:**
     
         - 20/01/2025 - minor - Removing event fields to use the smart description
+        - 27/02/2026 - minor - Update rule type to integration
             
 ??? abstract "Tenable Identity Exposure / Alsid High Severity Alert"
     
@@ -10908,6 +11019,7 @@ Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-
     - **Changelog:**
     
         - 20/01/2025 - minor - Removing event fields to use the smart description
+        - 27/02/2026 - minor - Update rule type to integration
             
 **Abuse Elevation Control Mechanism**
 
@@ -12025,24 +12137,40 @@ Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 27/02/2026 - minor - Update rule type to integration
+            
 ??? abstract "Lacework Cloud Security High Severity Alert"
     
     Detects when a high alert severity is raised by Lacework. This severity level might indicates a suspicious change in configuration or policy violation.
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 27/02/2026 - minor - Update rule type to integration
+            
 ??? abstract "Lacework Cloud Security Low Severity Alert"
     
     Detects when a low alert severity is raised by Lacework. This severity level might indicates a change in configuration that could be malicious or not.
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 27/02/2026 - minor - Update rule type to integration
+            
 ??? abstract "Lacework Cloud Security Medium Severity Alert"
     
     Detects when a medium alert severity is raised by Lacework. This severity level might indicates a suspicious activity such as new source from user connection.
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 27/02/2026 - minor - Update rule type to integration
+            
 **Network Boundary Bridging**
 
 ??? abstract "Loss Of Parsing"
@@ -13612,6 +13740,7 @@ Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-
     - **Changelog:**
     
         - 28/03/2024 - minor - Rule effort was updated to master
+        - 27/02/2026 - minor - Update rule type to integration
             
 **Account Discovery**
 
@@ -14329,6 +14458,7 @@ Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-
     - **Changelog:**
     
         - 28/03/2024 - minor - Rule effort was updated to master
+        - 27/02/2026 - minor - Update rule type to integration
             
 **Adversary-in-the-Middle**
 
@@ -15267,6 +15397,7 @@ Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-
     
         - 29/01/2024 - minor - Rework detection pattern to focus on compliance issues
         - 28/03/2024 - minor - Rule effort was updated to master
+        - 27/02/2026 - minor - Update rule type to integration
             
 ??? abstract "Remote File Copy"
     
