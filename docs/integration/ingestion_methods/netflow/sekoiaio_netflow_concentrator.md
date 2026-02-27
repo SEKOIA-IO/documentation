@@ -14,15 +14,22 @@ The NetFlow Concentrator acts as a collector that:
 ## Prerequisites
 
 * Last version of Docker Engine with Docker Compose support. Please follow [this section](#docker-engine-installation) to install it if needed
-* INBOUND UDP flow opened on the concentrator for NetFlow data reception (default port: 2055)
-* OUTBOUND TCP flow opened towards:
-    * **FRA1** intake.sekoia.io on port 10514
-    * **FRA2** app.fra2.sekoia.io on port 10514
-    * **MCO1** app.mco1.sekoia.io on port 10514
-    * **UAE1** app.uae1.sekoia.io on port 10514
-    * **USA1** app.usa1.sekoia.io on port 10514
+* INBOUND **UDP** flow opened on the concentrator for NetFlow data reception (default port: `2055`)
+* OUTBOUND **TCP** flow opened towards corresponding [regional hosts](#regional-hosts)
 * A Sekoia.io intake key for NetFlow data
 * Network devices configured to send NetFlow data
+
+## Regional Hosts
+
+Select the appropriate host address based on your Sekoia.io region:
+
+| Region | Host Address              | Port    |
+|--------|---------------------------|---------|
+| FRA1   | `intake.sekoia.io`        | `10514` |
+| FRA2   | `intake.fra2.sekoia.io`   | `10514` |
+| MCO1   | `intake.mco1.sekoia.io`   | `10514` |
+| UAE1   | `intake.uae1.sekoia.io`   | `10514` |
+| USA1   | `intake.usa1.sekoia.io`   | `10514` |
 
 ## Configure your concentrator
 
@@ -54,7 +61,7 @@ bind=0.0.0.0
 port=2055
 
 [forwarder]
-# SEKOIA.IO intake host (see Regional Hosts section below)
+# SEKOIA.IO intake host (see Regional Hosts section above)
 host=intake.sekoia.io
 # SEKOIA.IO intake port
 port=10514
@@ -65,24 +72,12 @@ intake_key=<intake_key>
 !!! Important
     Replace `<intake_key>` with your actual Sekoia.io intake key and set the `host` according to your Sekoia.io region.
 
-#### Regional Hosts
-
-Select the appropriate host address based on your Sekoia.io region:
-
-| Region | Host Address              | Port  |
-|--------|---------------------------|-------|
-| FRA1   | `intake.sekoia.io`        | 10514 |
-| FRA2   | `app.fra2.sekoia.io`      | 10514 |
-| MCO1   | `app.mco1.sekoia.io`      | 10514 |
-| UAE1   | `app.uae1.sekoia.io`      | 10514 |
-| USA1   | `app.usa1.sekoia.io`      | 10514 |
-
 #### Configuration Parameters
 
 **Listener Section:**
 
 * `bind`: The IP address on which the NetFlow collector listens. Use `0.0.0.0` to listen on all network interfaces.
-* `port`: The UDP port for receiving NetFlow data. Standard NetFlow ports are 2055 or 9995.
+* `port`: The UDP port for receiving NetFlow data. Standard NetFlow ports are `2055` or `9995`.
 
 **Forwarder Section:**
 
@@ -214,7 +209,7 @@ docker compose restart
 
 ### Firewall Rules
 
-Ensure that the UDP port specified in `configuration.ini` (default: 2055) is open and accessible from your network devices:
+Ensure that the UDP port specified in `configuration.ini` (default: `2055`) is open and accessible from your network devices:
 
 === "Debian, Ubuntu"
 
@@ -234,7 +229,7 @@ Ensure that the UDP port specified in `configuration.ini` (default: 2055) is ope
 Configure your network devices (routers, switches, firewalls) to export NetFlow data to:
 
 * **IP Address**: The host running this Docker container
-* **Port**: The port specified in `configuration.ini` (default: 2055)
+* **Port**: The port specified in `configuration.ini` (default: `2055`)
 * **Protocol**: UDP
 
 Example configurations vary by vendor:
@@ -281,7 +276,7 @@ docker compose restart
 2. **Cannot connect to Sekoia.io**:
     - Verify your intake key is correct
     - Check that you're using the correct regional host address
-    - Check network connectivity to your regional host on port 10514
+    - Check network connectivity to your regional host on port `10514`
     - Ensure outbound TCP traffic is allowed
 
 3. **Container fails to start**:
