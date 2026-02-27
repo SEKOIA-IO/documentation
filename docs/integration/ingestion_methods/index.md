@@ -12,7 +12,7 @@ Sekoia.io supports the following log collecting methods:
 
 - [HTTPS](/integration/ingestion_methods/https/overview.md) (`https://intake.sekoia.io`): `POST` your JSON events to Sekoia.io.
 - [Syslog](/integration/ingestion_methods/syslog/overview.md) over TLS (`intake.sekoia.io:10514`): forward your events with the Syslog protocol specified in RFC 5424.
-- [RELP](/integration/ingestion_methods/syslog/rsyslog.md#how-to-forward-logs-to-sekoiaio-using-relp) over TLS (`relp.intake.sekoia.io:11514`): forward your events with Rsyslog's reliable protocol called RELP.
+- [RELP](/integration/ingestion_methods/syslog/rsyslog.md#how-to-forward-logs-to-sekoiaio-using-relp) over TLS (`intake.sekoia.io:11514`): forward your events with Rsyslog's reliable protocol called RELP.
 - [NetFlow](/integration/ingestion_methods/netflow/sekoiaio_netflow_concentrator.md): collect and forward NetFlow data from network devices using our NetFlow concentrator.
 - [Cloud hosting and API polling](/integration/ingestion_methods/cloud_saas/overview.md): configure Sekoia.io to regularly retrieve your logs.
 
