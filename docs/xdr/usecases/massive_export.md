@@ -140,7 +140,7 @@ Downloading: export_20260214_143842.json.gz
 2. **Export all relevant data**
    ```bash
    uvx sekoia-event-exporter export <job_uuid> \
-     --fields "@timestamp,message,host.name,event.*" \
+     --fields "@timestamp,message,host.name,event.action,event.category,event.outcome" \
      --output archive_oldserver_2026.json.gz
    ```
 
@@ -214,7 +214,7 @@ Downloading: export_20260214_143842.json.gz
 
    ```bash
    uvx sekoia-event-exporter export <job_uuid> \
-     --fields "@timestamp,event.*,source.*,destination.*,user.*,process.*" \
+     --fields "@timestamp,event.action,event.category,event.outcome,source.ip,destination.ip,user.name,process.name" \
      --no-download
    ```
 
@@ -222,7 +222,7 @@ Downloading: export_20260214_143842.json.gz
 
    ```bash
    uvx sekoia-event-exporter export <job_uuid> \
-     --fields "@timestamp,event.*,source.*,destination.*" \
+     --fields "@timestamp,event.action,event.category,source.ip,destination.ip,user.name" \
      --s3-bucket company-security-datalake \
      --s3-prefix sekoia/events/ \
      --s3-access-key <access-key> \
@@ -245,9 +245,9 @@ Downloading: export_20260214_143842.json.gz
 
 **Choose the right fields:**
 
-- For investigations: Include source.ip, destination.ip, user.name, process.name
-- For compliance: Include user.name, event.action, event.outcome
-- For archival or data lakes: Use `*` wildcards like `event.*` to get all event fields
+- For investigations: Include source.ip, destination.ip, user.name, process.name, event.action
+- For compliance: Include user.name, event.action, event.outcome, source.ip
+- For archival or data lakes: List all fields you need explicitly (wildcards are not supported)
 
 **Managing large exports:**
 

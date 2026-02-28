@@ -95,6 +95,7 @@ nav:
       - Query Builder: xdr/features/investigate/query_builder.md
       - Sekoia Operating Language: xdr/features/investigate/sekoia_operating_language.md
       - Notebooks: xdr/features/investigate/notebooks.md
+      - Event Export: xdr/features/investigate/event_export.md
     - Report:
       - Dashboards: xdr/features/report/dashboards.md
       - Threat Landscape: xdr/features/report/threat_landscape.md
