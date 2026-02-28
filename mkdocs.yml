@@ -110,6 +110,7 @@ nav:
         - Query builder form mode reference: xdr/features/investigate/query_builder_form_reference.md
       - Sekoia Operating Language: xdr/features/investigate/sekoia_operating_language.md
       - Notebooks: xdr/features/investigate/notebooks.md
+      - Event Export: xdr/features/investigate/event_export.md
     - Report:
       - Dashboards:
         - Understanding dashboards: xdr/features/report/dashboards.md
