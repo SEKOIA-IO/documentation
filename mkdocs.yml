@@ -114,6 +114,7 @@ nav:
       - Palo Alto Cortex XSOAR: xdr/features/integrations/interconnect_sekoia_with_xsoar.md
       - Swimlane Turbine: xdr/features/integrations/swimlane_turbine.md
   - Usecases:
+    - Export large volumes of events: xdr/usecases/massive_export.md
     - Implement a blocklist in Sekoia.io: xdr/usecases/playbook/implement_blocklist.md
     - Synchronize Alerts with an external tool: xdr/usecases/playbook/synchronize_alerts.md
     - Synchronize Assets with an Active Directory: xdr/usecases/playbook/synchronize_asset_with_ad.md
