@@ -6,7 +6,7 @@ type: playbook
 
 ![Microsoft Entra ID](/assets/playbooks/library/microsoft-entra-id.png){ align=right width=150 }
 
-Microsoft Entra ID (formely Azure Active Directory) is an enterprise identity service that provides single sign-on, multifactor authentication, and conditional access to guard against 99.9 percent of cybersecurity attacks.
+Microsoft Entra ID (formerly Azure Active Directory) is an enterprise identity service that provides single sign-on, multifactor authentication, and conditional access to guard against 99.9 percent of cybersecurity attacks.
 
 ## Configuration
 
@@ -28,7 +28,7 @@ Delete an app in azure AD. Requires the Application.ReadWrite.OwnedBy or Applica
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
-| `id` | `string` | Object ID of the app. |
+| `objectId` | `string` | Object ID of the app. |
 
 ### Disable User
 
@@ -120,9 +120,9 @@ Get information about an user's authentication methods (such as their MFA status
 | --------- | ------- | --------------------------- |
 | `authenticationResults` | `array` |  |
 
-### Reset User Password
+### Reset User Password [DEPRECATED]
 
-Reset a user's password. You will need UserAuthenticationMethod.ReadWrite.All deleguated permission. And to disable the MFA authentication in your azure AD
+Reset a user's password (deprecated). You will need UserAuthenticationMethod.ReadWrite.All delegated permission. And to disable the MFA authentication in your azure AD
 
 **Arguments**
 
@@ -132,6 +132,27 @@ Reset a user's password. You will need UserAuthenticationMethod.ReadWrite.All de
 | `userPrincipalName` | `string` | Principal Name of the user. id or userPrincipalName should be specified. |
 | `userNewPassword` | `string` | New password, required to reset the old one of course. |
 
+### Reset User Password
+
+Resets a user's password by patching passwordProfile. Requires User-PasswordProfile.ReadWrite.All (Application), admin consent and appropriate Entra role assignment
+
+**Arguments**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `id` | `string` | ID of the user. Only one of id or userPrincipalName should be specified. |
+| `userPrincipalName` | `string` | Principal Name of the user. Only one of id or userPrincipalName should be specified. |
+| `userNewPassword` | `['string', 'null']` | New password, to reset the old one. Let empty to generate a random password. If not empty, should comply with https://learn.microsoft.com/en-us/entra/identity/authentication/concept-password-ban-bad-combined-policy |
+| `forceChangePasswordNextSignIn` | `boolean` | Determines if the user must change their password on the next sign-in. |
+| `forceChangePasswordNextSignInWithMfa` | `boolean` | Determines if the user must perform a multifactor authentication (MFA) before being forced to change their password. |
+
+
+**Outputs**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `newPassword` | `string` | New password |
+
 ### Revoke Sign in
 
 Invalidates all the refresh tokens issued to applications for a user. Requires the User.ReadWrite.All or Directory.ReadWrite.All permissions.
@@ -140,7 +161,7 @@ Invalidates all the refresh tokens issued to applications for a user. Requires t
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
-| `id` | `string` | ID of the app. |
+| `id` | `string` | ID of the user. id or userPrincipalName should be specified. |
 | `userPrincipalName` | `string` | Principal Name of the user. id or userPrincipalName should be specified. |
 
 ## Set up
@@ -170,7 +191,7 @@ Invalidates all the refresh tokens issued to applications for a user. Requires t
 #### Add permissions
 
 1. Go to `Manage` > `API permissions`
-2. Click `Add a permissions`
+2. Click `Add a permission`
 3. On the right panel, Select `Microsoft APIs` tab
 4. Click `Microsoft Graph`
 5. Click `Application permissions`
@@ -180,6 +201,7 @@ Invalidates all the refresh tokens issued to applications for a user. Requires t
     3. `UserAuthenticationMethod.ReadWrite.All`
     4. `Directory.ReadWrite.All`
     5. `AuditLog.Read.All`
+    6. `User-PasswordProfile.ReadWrite.All`
 7. Click `Add permissions`
 8. In the `API permissions` page, click `Grant admin consent for TENANT_NAME`
 9. Click `Yes` in the `Grant admin consent confirmation` modal
@@ -187,4 +209,4 @@ Invalidates all the refresh tokens issued to applications for a user. Requires t
 
 ## Extra
 
-Module **`Microsoft Entra ID` v2.9.0**
+Module **`Microsoft Entra ID` v2.10.16**
