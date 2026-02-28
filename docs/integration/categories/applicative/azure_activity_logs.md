@@ -53,6 +53,13 @@ service health incidents.
 9. Type the name of the Azure application created previously, select it and click `Select`
 10. Click `Review + assign`
 
+!!! Warning
+    Minimal permission in order to work with integration is `Microsoft.Insights/eventtypes/values/Read`, in case if you want to make your custom role
+
+Useful resources are:
+- [Azure permissions for Monitor](https://learn.microsoft.com/en-us/azure/role-based-access-control/permissions/monitor)
+- [Retrieve activity log data using Azure monitor REST API](https://learn.microsoft.com/en-us/azure/azure-monitor/platform/rest-activity-log)
+
 ### Retrieve your Subscription ID
 
 You also need your **Subscription ID** if you don't have a default one.
