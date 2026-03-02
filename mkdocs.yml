@@ -78,6 +78,8 @@ nav:
 - Sekoia Defend (XDR):
   - Introduction: xdr/index.md
   - Quick start guide: xdr/xdr_quick_start.md
+  - Resources:
+    - SE Technical Summary and RFP Guide: xdr/resources/sekoia_defend_se_technical_summary_and_rfp_guide.md
   - Features:
     - Collect:
       - Integrations: xdr/features/collect/integrations_hub.md
