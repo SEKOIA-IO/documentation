@@ -6,7 +6,6 @@ type: intake
 
 Sekoia.io provides its agent for collecting security-related events with a minimal configuration overhead. This agent sends events directly to Sekoia.io.
 
-### Disclaimer
 
 !!! INFO
     The Sekoia.io Endpoint Detection Agent preserves the integrity of logs collected from the operating system event log; it does NOT modify or rewrite logs.
@@ -131,6 +130,7 @@ To install the agent, use the command specific to your operating system. Replace
 To ensure the Sekoia.io Endpoint Agent correctly captures events via the audit framework, you must prevent **journald** from listening to the audit socket. This configuration avoids event competition between the two services.
 
 **Prerequisites**
+
 * Access to the Linux machine with **root** or **sudo** privileges.
 * The Sekoia.io Endpoint Agent must be installed on the host.
 
@@ -179,7 +179,7 @@ Once configured, the agent successfully collects, normalizes, and sends event lo
     sudo /Applications/SekoiaEndpointAgent.app/Contents/MacOs/SekoiaEndpointAgent install --intake-key <INTAKE_KEY>
     ```
 
-    To make sure the agent is successfully installed as a service, run the following command:
+8. To make sure the agent is successfully installed as a service, run the following command:
 
     ```shell
     sudo launchctl print system/SEKOIAEndpointAgent
