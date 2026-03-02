@@ -1,4 +1,4 @@
-# Sekoia Defend (XDR) - Sales Engineer Technical Summary and RFP Guide
+# Sekoia Defend - Sales Engineer Technical Summary and RFP Guide
 
 Version: 2026-03-02  
 Audience: Sales Engineers (primary), technical evaluators, RFP responders  
