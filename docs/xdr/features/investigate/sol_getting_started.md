@@ -15,9 +15,11 @@ Every SOL query starts with a datasource name. The datasource determines what da
 
 The most commonly used datasources are:
 
-- `events` — Security events and logs
-- `alerts` — Security alerts and detections
-- `cases` — Security incidents and cases
+| Datasource | Description |
+|---|---|
+| `events` | Security events and logs |
+| `alerts` | Security alerts and detections |
+| `cases` | Security incidents and cases |
 
 For the full list of available datasources and their properties, see the [Datasources reference](sol_ref_datasources.md).
 
@@ -54,12 +56,14 @@ You can combine multiple conditions with `and` and `or`:
 
 ```shell
 events
-| where timestamp > ago(24h) and event.category == 'authentication'
+| where timestamp > ago(24h) and (event.category == 'authentication' or event.category == 'network')
 | where action.outcome == 'failure'
-| select timestamp, source.ip, user.name, action.outcome
+| select timestamp, source.ip, user.name, event.category, action.outcome
 | order by timestamp desc
 | limit 100
 ```
+
+This query filters events from the last 24 hours where the category is either `authentication` **or** `network`, **and** the outcome is `failure`. Note that chaining multiple `where` operators on separate lines is equivalent to combining them with `and`.
 
 ### Counting rows
 
@@ -85,7 +89,14 @@ events
 | limit 20
 ```
 
-Unlike `count` which returns one total, `aggregate count() by` groups rows and returns a count for each unique value. Here, it counts events per source IP over the last 24 hours, sorted by the most active IPs.
+Unlike `count` which returns one total, `aggregate count() by` groups rows and returns a count for each unique value. Here, it counts events per source IP over the last 24 hours, sorted by the most active IPs:
+
+| source.ip | count |
+|---|---|
+| 192.168.1.42 | 1204 |
+| 10.0.0.15 | 873 |
+| 172.16.5.8 | 412 |
+| 10.0.0.22 | 98 |
 
 For more aggregation patterns, see [How to aggregate data](sol_how_to_guides.md#how-to-aggregate-data).
 
@@ -112,8 +123,8 @@ For the complete list of operators, see the [Operators reference](sol_ref_operat
 
 Once you've written a useful query, you can save it for later reuse:
 
-1. Click **Save** in the Query Builder toolbar
-2. Give your query a descriptive name
+1. Edit the query title to give it a descriptive name
+2. Click **Save** in the Query Builder toolbar
 3. Your saved queries are accessible from the Queries list
 
 Saved queries can also be used as the basis for dashboard widgets.

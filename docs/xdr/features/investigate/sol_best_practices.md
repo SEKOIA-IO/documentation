@@ -6,7 +6,7 @@ This page covers best practices for writing performant and maintainable SOL quer
 
 ### Always filter by time first
 
-Every query on the `events` datasource should start with a time filter. This is the single most impactful optimization — it determines how much data the query engine needs to scan.
+Every query on the `events` datasource should start with a time filter. This is the single most impactful optimization, it determines how much data the query engine needs to scan.
 
 ```shell
 // Good: time filter as the first condition
@@ -14,9 +14,7 @@ events
 | where timestamp > ago(24h)
 | where source.ip == '10.0.0.1'
 | limit 100
-```
 
-```shell
 // Bad: no time filter, scans all retained data
 events
 | where source.ip == '10.0.0.1'

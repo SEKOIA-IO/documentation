@@ -203,7 +203,7 @@ For full instructions on creating and managing dashboards, see [Create and manag
 
 ### Using SOL filters for interactive dashboards
 
-Filters make SOL queries dynamic and interactive. They let you reuse the same query across dashboards and contexts by substituting values dynamically — without modifying the query itself.
+Filters make SOL queries dynamic and interactive. They let you reuse the same query across dashboards and contexts by substituting values dynamically without modifying the query itself.
 
 !!! Note
     Filters are currently released under the Early Access Program.
