@@ -30,17 +30,24 @@ Please find our English tutorial video below to see how to configure the forward
 
 * Last version of Docker Engine. Please follow [this section](#docker-engine-installation) to install it if needed
 * INBOUND TCP or UDP flows opened between the systems/applications and the concentrator on the ports of your choice
-* OUTBOUND TCP flow opened towards:
-  * **FRA1** intake.sekoia.io on port 10514
-  * **FRA2** intake.fra2.sekoia.io on port 10514
-  * **MCO1** intake.mco1.sekoia.io on port 10514
-  * **UAE1** intake.uae1.sekoia.io on port 10514
-  * **USA1** intake.usa1.sekoia.io on port 10514
+* OUTBOUND TCP flow opened towards corresponding [regional hosts](#regional-hosts)
 
   !!! note
       The disk choice (SSD or HDD type) has no impact on the performance of Sekoia.io Forwarder.
       However, SSD type would be useful when an issue arise for recovery or catchup.
       Please choose accordingly to your usage and cost.
+
+## Regional Hosts
+
+Select the appropriate host address based on your Sekoia.io region:
+
+| Region | Host Address              | Port    |
+|--------|---------------------------|---------|
+| FRA1   | `intake.sekoia.io`        | `10514` |
+| FRA2   | `intake.fra2.sekoia.io`   | `10514` |
+| MCO1   | `intake.mco1.sekoia.io`   | `10514` |
+| UAE1   | `intake.uae1.sekoia.io`   | `10514` |
+| USA1   | `intake.usa1.sekoia.io`   | `10514` |
 
 ## Configure your concentrator
 
