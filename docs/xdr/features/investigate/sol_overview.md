@@ -33,7 +33,6 @@ SOL is inspired by KQL but has its own conventions:
 | Sort operator | `sort by` | `order by` |
 | Limit operator | `take` | `limit` |
 | Time literals | `ago(1h)` | `ago(1h)` |
-| Pipe syntax | `\|` | `\|` |
 | Comments | `//` | `//` |
 
 ## Where SOL is used
