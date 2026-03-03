@@ -99,7 +99,7 @@ nav:
       - Asset Context Panel (coming soon): xdr/features/investigate/asset_context_panel.md
       - Events Query Language: xdr/features/investigate/events_query_language.md
       - Querying Events: xdr/features/investigate/querying_events.md
-      - Query Builder: 
+      - Query Builder:
         - Discover the query builder: xdr/features/investigate/query_builder.md
         - Create and manage queries: xdr/features/investigate/create_manage_queries.md
         - Share and duplicate queries: xdr/features/investigate/share_queries.md
@@ -442,7 +442,6 @@ nav:
     - Threat Intelligence:
       - Prodaft USTA: integration/categories/threat_intelligence/prodaft_usta.md
   - List of Playbooks Actions:
-    - Overview: integration/action_library/overview.md
     - Applicative:
       - ElasticSearch: integration/action_library/elasticsearch.md
       - Mandrill: integration/action_library/mandrill.md
@@ -450,6 +449,7 @@ nav:
       - New Relic: integration/action_library/new-relic.md
       - PagerDuty: integration/action_library/pagerduty.md
     - Cloud Providers:
+      - AWS: integration/action_library/aws.md
       - AWS: integration/action_library/aws.md
       - Azure Monitor: integration/action_library/azure-monitor.md
       - Google Cloud: integration/action_library/google-cloud.md
@@ -493,6 +493,7 @@ nav:
       - Fortigate Firewalls: integration/action_library/fortigate-firewalls.md
       - Sophos: integration/action_library/sophos.md
       - Zscaler: integration/action_library/zscaler.md
+    - Overview: integration/action_library/overview.md
     - Threat Intelligence:
       - BinaryEdge's API: integration/action_library/binaryedge-s-api.md
       - Censys: integration/action_library/censys.md
