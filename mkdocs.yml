@@ -235,6 +235,7 @@ nav:
       - Systancia Cleanroom: integration/categories/applicative/systancia_cleanroom.md
       - Veeam Backup: integration/categories/applicative/veeam_backup.md
       - Wiz Audit Logs: integration/categories/applicative/wiz_audit_logs.md
+      - Workday Activity Logs: integration/categories/applicative/workday_activity_logs.md
     - Email:
       - Checkpoint Harmony Email and Collaboration: integration/categories/email/checkpoint_harmony_email_collaboration.md
       - Cisco Email Security Appliance: integration/categories/email/cisco_esa.md
