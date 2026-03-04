@@ -2547,7 +2547,7 @@ The following Sekoia.io built-in rules match the intake **Windows**. This docume
     
     - **Effort:** intermediate
 
-??? abstract "SeEnableDelagationPrivilege Granted To User Or Machine In Active Directory"
+??? abstract "SeEnableDelegationPrivilege Granted To User Or Machine In Active Directory"
     
     Detects the SeEnableDelegationPrivilege right in Active Directory granted to a user of a computer, it would allow control of other AD user objects
     
@@ -3165,7 +3165,7 @@ The following Sekoia.io built-in rules match the intake **Windows**. This docume
     
     - **Effort:** master
 
-??? abstract "Transfering Files With Credential Data Via Network Shares"
+??? abstract "Transferring Files With Credential Data Via Network Shares"
     
     Detects file transfer of sensitive files which contain credential data using network shares.
     

@@ -1,7 +1,30 @@
-Changelog _last update on 2026-02-27_
+Changelog _last update on 2026-03-04_
 
 ## Changelog
 
+### WAF Block Rule
+  - 04/03/2026 - major - Removing intakes from the rule to make it more generic and match all WAF products. The sources and description fields were updated accordingly.
+  - 15/11/2023 - minor - Adding support for Ubika
+    
+### Palo Alto Cortex XDR (EDR) Alert Not Blocked (Medium Severity)
+  - 04/03/2026 - minor - Similarity strategy updated to caseID
+  - 25/02/2026 - minor - Update rule type to integration
+  - 10/03/2025 - minor - Update severity to match the severity level from the editor
+    
+### Palo Alto Cortex XDR (EDR) Alert Not Blocked (Low Severity)
+  - 04/03/2026 - minor - Similarity strategy updated to caseID
+  - 25/02/2026 - minor - Update rule type to integration
+  - 10/03/2025 - minor - Update severity to match the severity level from the editor
+    
+### Palo Alto Cortex XDR (EDR) Alert Not Blocked (High Severity)
+  - 04/03/2026 - minor - Similarity strategy updated to caseID
+  - 25/02/2026 - minor - Update rule type to integration
+  - 10/03/2025 - minor - Update severity to match the severity level from the editor
+    
+### SeEnableDelegationPrivilege Granted To User Or Machine In Active Directory
+  - 04/03/2026 - minor - Fix small typo in rule name.
+  - 04/04/2024 - major - Rule's pattern field changed
+    
 ### Lacework Cloud Security Low Severity Alert
   - 27/02/2026 - minor - Update rule type to integration
     
@@ -97,10 +120,6 @@ Changelog _last update on 2026-02-27_
   - 25/02/2026 - minor - Update rule type to integration
   - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
     
-### Palo Alto Cortex XDR (EDR) Alert Not Blocked (Medium Severity)
-  - 25/02/2026 - minor - Update rule type to integration
-  - 10/03/2025 - minor - Update severity to match the severity level from the editor
-    
 ### Trend Micro Apex One Intrusion Detection Alert
   - 25/02/2026 - minor - Update rule type to integration
   - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
@@ -122,10 +141,6 @@ Changelog _last update on 2026-02-27_
 ### TEHTRIS EDR Alert
   - 25/02/2026 - minor - Update rule type to integration
     
-### Palo Alto Cortex XDR (EDR) Alert Not Blocked (Low Severity)
-  - 25/02/2026 - minor - Update rule type to integration
-  - 10/03/2025 - minor - Update severity to match the severity level from the editor
-    
 ### Trend Micro Vision One Workbench Critical Severity Alert
   - 25/02/2026 - minor - Update rule type to integration
     
@@ -134,10 +149,6 @@ Changelog _last update on 2026-02-27_
     
 ### Trend Micro Vision One Workbench Medium Severity Alert
   - 25/02/2026 - minor - Update rule type to integration
-    
-### Palo Alto Cortex XDR (EDR) Alert Not Blocked (High Severity)
-  - 25/02/2026 - minor - Update rule type to integration
-  - 10/03/2025 - minor - Update severity to match the severity level from the editor
     
 ### Trend Micro Cloud One High Intrusion
   - 25/02/2026 - minor - Update rule type to integration
@@ -1217,9 +1228,6 @@ Changelog _last update on 2026-02-27_
 ### Secure Deletion With SDelete
   - 04/04/2024 - major - Rule's pattern field changed
     
-### SeEnableDelagationPrivilege Granted To User Or Machine In Active Directory
-  - 04/04/2024 - major - Rule's pattern field changed
-    
 ### WMI Event Subscription
   - 04/04/2024 - major - Rule's pattern field changed
     
@@ -1561,9 +1569,6 @@ Changelog _last update on 2026-02-27_
 ### AWS CloudTrail Remove Flow logs
   - 15/11/2023 - minor - Changing effort level.
     
-### WAF Block Rule
-  - 15/11/2023 - minor - Adding support for Ubika
-    
 ### NTDS.dit File Interaction Through Command Line
   - 08/11/2023 - minor - Added filter to reduce false positives
     
@@ -1576,8 +1581,9 @@ Changelog _last update on 2026-02-27_
 ### Domain Trust Discovery Through LDAP
   - 19/10/2023 - minor - improve filter to reduce false positives
     
-### Transfering Files With Credential Data Via Network Shares
+### Transferring Files With Credential Data Via Network Shares
   - 17/10/2023 - minor - Improve selection to reduce false positives
+  - 04/03/2023 - minor - Fixed small typos.
     
 ### Microsoft 365 (Office 365) Mass Download By A Single User
   - 09/10/2023 - major - Fix field names to match the current parser.
