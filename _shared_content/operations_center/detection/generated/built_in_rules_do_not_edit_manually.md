@@ -1,4 +1,4 @@
-Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-02-27_](rules_changelog.md)).
+Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-03-04_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Identity Information**
 
@@ -251,13 +251,14 @@ Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-
             
 ??? abstract "WAF Block Rule"
     
-    Detects when one of WAF rule blocked an HTTP request 
+    Detects when one of WAF rule blocked an HTTP request. This rule often needs fine tuning according to the environment.
     
     - **Effort:** master
     
     - **Changelog:**
     
         - 15/11/2023 - minor - Adding support for Ubika
+        - 04/03/2026 - major - Removing intakes from the rule to make it more generic and match all WAF products. The sources and description fields were updated accordingly.
             
 ??? abstract "WAF Correlation Block Multiple Destinations"
     
@@ -4339,6 +4340,7 @@ Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-
     
         - 10/03/2025 - minor - Update severity to match the severity level from the editor
         - 25/02/2026 - minor - Update rule type to integration
+        - 04/03/2026 - minor - Similarity strategy updated to caseID
             
 ??? abstract "Palo Alto Cortex XDR (EDR) Alert Not Blocked (Low Severity)"
     
@@ -4350,6 +4352,7 @@ Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-
     
         - 10/03/2025 - minor - Update severity to match the severity level from the editor
         - 25/02/2026 - minor - Update rule type to integration
+        - 04/03/2026 - minor - Similarity strategy updated to caseID
             
 ??? abstract "Palo Alto Cortex XDR (EDR) Alert Not Blocked (Medium Severity)"
     
@@ -4361,6 +4364,7 @@ Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-
     
         - 10/03/2025 - minor - Update severity to match the severity level from the editor
         - 25/02/2026 - minor - Update rule type to integration
+        - 04/03/2026 - minor - Similarity strategy updated to caseID
             
 ??? abstract "SentinelOne EDR Agent Disabled"
     

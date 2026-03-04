@@ -1,7 +1,26 @@
-Changelog _last update on 2026-02-27_
+Changelog _last update on 2026-03-04_
 
 ## Changelog
 
+### WAF Block Rule
+  - 04/03/2026 - major - Removing intakes from the rule to make it more generic and match all WAF products. The sources and description fields were updated accordingly.
+  - 15/11/2023 - minor - Adding support for Ubika
+    
+### Palo Alto Cortex XDR (EDR) Alert Not Blocked (Medium Severity)
+  - 04/03/2026 - minor - Similarity strategy updated to caseID
+  - 25/02/2026 - minor - Update rule type to integration
+  - 10/03/2025 - minor - Update severity to match the severity level from the editor
+    
+### Palo Alto Cortex XDR (EDR) Alert Not Blocked (Low Severity)
+  - 04/03/2026 - minor - Similarity strategy updated to caseID
+  - 25/02/2026 - minor - Update rule type to integration
+  - 10/03/2025 - minor - Update severity to match the severity level from the editor
+    
+### Palo Alto Cortex XDR (EDR) Alert Not Blocked (High Severity)
+  - 04/03/2026 - minor - Similarity strategy updated to caseID
+  - 25/02/2026 - minor - Update rule type to integration
+  - 10/03/2025 - minor - Update severity to match the severity level from the editor
+    
 ### Lacework Cloud Security Low Severity Alert
   - 27/02/2026 - minor - Update rule type to integration
     
@@ -97,10 +116,6 @@ Changelog _last update on 2026-02-27_
   - 25/02/2026 - minor - Update rule type to integration
   - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
     
-### Palo Alto Cortex XDR (EDR) Alert Not Blocked (Medium Severity)
-  - 25/02/2026 - minor - Update rule type to integration
-  - 10/03/2025 - minor - Update severity to match the severity level from the editor
-    
 ### Trend Micro Apex One Intrusion Detection Alert
   - 25/02/2026 - minor - Update rule type to integration
   - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
@@ -122,10 +137,6 @@ Changelog _last update on 2026-02-27_
 ### TEHTRIS EDR Alert
   - 25/02/2026 - minor - Update rule type to integration
     
-### Palo Alto Cortex XDR (EDR) Alert Not Blocked (Low Severity)
-  - 25/02/2026 - minor - Update rule type to integration
-  - 10/03/2025 - minor - Update severity to match the severity level from the editor
-    
 ### Trend Micro Vision One Workbench Critical Severity Alert
   - 25/02/2026 - minor - Update rule type to integration
     
@@ -134,10 +145,6 @@ Changelog _last update on 2026-02-27_
     
 ### Trend Micro Vision One Workbench Medium Severity Alert
   - 25/02/2026 - minor - Update rule type to integration
-    
-### Palo Alto Cortex XDR (EDR) Alert Not Blocked (High Severity)
-  - 25/02/2026 - minor - Update rule type to integration
-  - 10/03/2025 - minor - Update severity to match the severity level from the editor
     
 ### Trend Micro Cloud One High Intrusion
   - 25/02/2026 - minor - Update rule type to integration
@@ -1560,9 +1567,6 @@ Changelog _last update on 2026-02-27_
     
 ### AWS CloudTrail Remove Flow logs
   - 15/11/2023 - minor - Changing effort level.
-    
-### WAF Block Rule
-  - 15/11/2023 - minor - Adding support for Ubika
     
 ### NTDS.dit File Interaction Through Command Line
   - 08/11/2023 - minor - Added filter to reduce false positives
