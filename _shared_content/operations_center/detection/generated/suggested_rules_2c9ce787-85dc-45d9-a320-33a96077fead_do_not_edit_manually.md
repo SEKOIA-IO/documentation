@@ -1563,6 +1563,12 @@ The following Sekoia.io built-in rules match the intake **Forcepoint Next-Genera
     
     - **Effort:** intermediate
 
+??? abstract "WAF Block Rule"
+    
+    Detects when one of WAF rule blocked an HTTP request. This rule often needs fine tuning according to the environment.
+    
+    - **Effort:** master
+
 ??? abstract "WAF Correlation Block actions"
     
     Detection of multiple block actions (more than 30) triggered by the same source by WAF detection rules
