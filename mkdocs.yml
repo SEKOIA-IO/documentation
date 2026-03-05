@@ -66,7 +66,9 @@ nav:
       - Custom roles: getting_started/custom_roles.md
       - Intake Restricted roles: getting_started/intake_restricted_roles.md
   - Notifications:
-    - Create and manage notifications: getting_started/notifications-Listing_Creation.md
+    - Notification system: getting_started/notification_concept.md
+    - Create notifications: getting_started/notifications-Listing_Creation.md
+    - Manage notifications: getting_started/manage_notifications.md
     - Notification examples: getting_started/notifications-Examples.md
   - API Keys: getting_started/manage_api_keys.md
   - Subscriptions: getting_started/subscriptions.md
