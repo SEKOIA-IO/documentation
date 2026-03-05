@@ -1491,6 +1491,12 @@ The following Sekoia.io built-in rules match the intake **Elastic AuditBeat Linu
     
     - **Effort:** intermediate
 
+??? abstract "WAF Block Rule"
+    
+    Detects when one of WAF rule blocked an HTTP request. This rule often needs fine tuning according to the environment.
+    
+    - **Effort:** master
+
 ??? abstract "WMI Install Of Binary"
     
     Detection of WMI used to install a binary on the host. It is often used by attackers as a signed binary to infect an host.

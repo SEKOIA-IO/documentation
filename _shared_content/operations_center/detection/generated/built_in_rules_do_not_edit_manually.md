@@ -1,4 +1,4 @@
-Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-02-27_](rules_changelog.md)).
+Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-03-04_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Identity Information**
 
@@ -251,13 +251,14 @@ Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-
             
 ??? abstract "WAF Block Rule"
     
-    Detects when one of WAF rule blocked an HTTP request 
+    Detects when one of WAF rule blocked an HTTP request. This rule often needs fine tuning according to the environment.
     
     - **Effort:** master
     
     - **Changelog:**
     
         - 15/11/2023 - minor - Adding support for Ubika
+        - 04/03/2026 - major - Removing intakes from the rule to make it more generic and match all WAF products. The sources and description fields were updated accordingly.
             
 ??? abstract "WAF Correlation Block Multiple Destinations"
     
@@ -4339,6 +4340,7 @@ Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-
     
         - 10/03/2025 - minor - Update severity to match the severity level from the editor
         - 25/02/2026 - minor - Update rule type to integration
+        - 04/03/2026 - minor - Similarity strategy updated to caseID
             
 ??? abstract "Palo Alto Cortex XDR (EDR) Alert Not Blocked (Low Severity)"
     
@@ -4350,6 +4352,7 @@ Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-
     
         - 10/03/2025 - minor - Update severity to match the severity level from the editor
         - 25/02/2026 - minor - Update rule type to integration
+        - 04/03/2026 - minor - Similarity strategy updated to caseID
             
 ??? abstract "Palo Alto Cortex XDR (EDR) Alert Not Blocked (Medium Severity)"
     
@@ -4361,6 +4364,7 @@ Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-
     
         - 10/03/2025 - minor - Update severity to match the severity level from the editor
         - 25/02/2026 - minor - Update rule type to integration
+        - 04/03/2026 - minor - Similarity strategy updated to caseID
             
 ??? abstract "SentinelOne EDR Agent Disabled"
     
@@ -6379,7 +6383,7 @@ Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-
     
     - **Effort:** advanced
     
-??? abstract "SeEnableDelagationPrivilege Granted To User Or Machine In Active Directory"
+??? abstract "SeEnableDelegationPrivilege Granted To User Or Machine In Active Directory"
     
     Detects the SeEnableDelegationPrivilege right in Active Directory granted to a user of a computer, it would allow control of other AD user objects
     
@@ -6388,6 +6392,7 @@ Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-
     - **Changelog:**
     
         - 04/04/2024 - major - Rule's pattern field changed
+        - 04/03/2026 - minor - Fix small typo in rule name.
             
 ??? abstract "User Added to Local Administrators"
     
@@ -8472,7 +8477,7 @@ Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-
     
     - **Effort:** advanced
     
-??? abstract "SeEnableDelagationPrivilege Granted To User Or Machine In Active Directory"
+??? abstract "SeEnableDelegationPrivilege Granted To User Or Machine In Active Directory"
     
     Detects the SeEnableDelegationPrivilege right in Active Directory granted to a user of a computer, it would allow control of other AD user objects
     
@@ -8481,6 +8486,7 @@ Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-
     - **Changelog:**
     
         - 04/04/2024 - major - Rule's pattern field changed
+        - 04/03/2026 - minor - Fix small typo in rule name.
             
 ??? abstract "User Added to Local Administrators"
     
@@ -12533,7 +12539,7 @@ Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-
     
         - 04/04/2024 - major - Rule's pattern field changed
             
-??? abstract "Transfering Files With Credential Data Via Network Shares"
+??? abstract "Transferring Files With Credential Data Via Network Shares"
     
     Detects file transfer of sensitive files which contain credential data using network shares.
     
@@ -12542,6 +12548,7 @@ Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-
     - **Changelog:**
     
         - 17/10/2023 - minor - Improve selection to reduce false positives
+        - 04/03/2023 - minor - Fixed small typos.
             
 ??? abstract "Unsigned Image Loaded Into LSASS Process"
     
