@@ -1,7 +1,73 @@
-Changelog _last update on 2026-03-04_
+Changelog _last update on 2026-03-05_
 
 ## Changelog
 
+### Gatewatcher AionIQ V103 Dga Detect
+  - 05/03/2026 - minor - Update rule type to integration
+    
+### Gatewatcher AionIQ V103 Sigflow Alert
+  - 05/03/2026 - minor - Update rule type to integration
+    
+### Darktrace Threat Visualizer Threat Critical Alert
+  - 05/03/2026 - minor - Update rule type to integration
+    
+### Darktrace Threat Visualizer Threat Suspicious Alert
+  - 05/03/2026 - minor - Update rule type to integration
+    
+### Gatewatcher AionIQ V103 Retrohunt
+  - 05/03/2026 - minor - Update rule type to integration
+  - 30/06/2025 - minor - Changing similarity on threat name.
+    
+### Gatewatcher AionIQ V103 Ransomware Detect
+  - 05/03/2026 - minor - Update rule type to integration
+    
+### Gatewatcher AionIQ V103 Malcore
+  - 05/03/2026 - minor - Update rule type to integration
+  - 27/01/2025 - minor - Changing field and adding filter to reduce false positives.
+  - 24/01/2025 - minor - Adding filter to reduce false positives.
+    
+### Gatewatcher AionIQ V103 Network Behavior Analytics
+  - 05/03/2026 - minor - Update rule type to integration
+    
+### Suricata Exploit Kit Activity Detected High Severity Alert
+  - 05/03/2026 - minor - Update rule type to integration
+    
+### Gatewatcher AionIQ V103 Active CTI
+  - 05/03/2026 - minor - Update rule type to integration
+    
+### Gatewatcher AionIQ Malware Alert
+  - 05/03/2026 - minor - Update rule type to integration
+    
+### Suricata Attempted Administrator Privilege Gain High Severity Alert
+  - 05/03/2026 - minor - Update rule type to integration
+    
+### Suricata Web Application Attack High Severity Alert
+  - 05/03/2026 - minor - Update rule type to integration
+    
+### Gatewatcher AionIQ V103 Shellcode Detect
+  - 05/03/2026 - minor - Update rule type to integration
+    
+### Gatewatcher AionIQ Network Alert
+  - 05/03/2026 - minor - Update rule type to integration
+    
+### Gatewatcher AionIQ V103 Beacon Detect
+  - 05/03/2026 - minor - Update rule type to integration
+    
+### Datadome Protection Intrusion Detection
+  - 05/03/2026 - minor - Update rule type to integration
+    
+### Claroty xDome Network Threat Detection Alert
+  - 05/03/2026 - minor - Update rule type to integration
+    
+### Daspren Parad Malicious Behavior
+  - 05/03/2026 - minor - Update rule type to integration
+    
+### Gatewatcher AionIQ V103 Malicious Powershell Detect
+  - 05/03/2026 - minor - Update rule type to integration
+    
+### Alert High Severity Sesame it Jizo NDR
+  - 05/03/2026 - minor - Update rule type to integration
+    
 ### WAF Block Rule
   - 04/03/2026 - major - Removing intakes from the rule to make it more generic and match all WAF products. The sources and description fields were updated accordingly.
   - 15/11/2023 - minor - Adding support for Ubika
@@ -518,9 +584,6 @@ Changelog _last update on 2026-03-04_
   - 11/06/2025 - minor - Added filters to reduce false positives.
   - 02/08/2023 - minor - Added a new field and filters to reduce false positives.
     
-### Gatewatcher AionIQ V103 Retrohunt
-  - 30/06/2025 - minor - Changing similarity on threat name.
-    
 ### WMImplant Hack Tool
   - 26/06/2025 - major - Pattern updated to avoid false positives and effort level changed to be coherent.
   - 26/03/2024 - major - Rule's pattern field changed.
@@ -719,10 +782,6 @@ Changelog _last update on 2026-03-04_
 ### SOCKS Tunneling Tool
   - 30/01/2025 - minor - Similarity strategy was modified to have more relevant alerts.
   - 20/06/2024 - minor - Added filter to reduce false positives
-    
-### Gatewatcher AionIQ V103 Malcore
-  - 27/01/2025 - minor - Changing field and adding filter to reduce false positives.
-  - 24/01/2025 - minor - Adding filter to reduce false positives.
     
 ### Microsoft Entra ID (Azure AD) Self Service Password Reset In Failure
   - 20/01/2025 - minor - Update pattern to ECS field and specific intake field
