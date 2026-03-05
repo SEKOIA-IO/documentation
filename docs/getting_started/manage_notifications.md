@@ -39,6 +39,6 @@ To permanently remove a rule:
 
 ## Related articles
 
-* [The notification system](/getting_started/notification_concept): Context on how notifications work.
+* [The notification system](/getting_started/notification_concept.md): Context on how notifications work.
 * [Create a notification](/getting_started/notifications-Listing_Creation.md): Detailed steps for setting up new alerts.
 * [Notification examples](/getting_started/notifications-Examples.md): Inspiration for your notification setup.
