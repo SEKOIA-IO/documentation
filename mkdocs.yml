@@ -482,6 +482,7 @@ nav:
       - Stormshield Network Security: integration/categories/network_security/stormshield_network_security.md
       - Suricata: integration/categories/network_security/suricata.md
       - Thinkst Canary: integration/categories/network_security/thinkst_canary.md
+      - Trapster: integration/categories/network_security/trapster.md
       - Trellix Network Security: integration/categories/network_security/trellix_nx.md
       - Trellix ePO: integration/categories/network_security/trellix_epo.md
       - Trellix ePO - On Prem: integration/categories/network_security/trellix_epo_on_prem.md
