@@ -1,4 +1,4 @@
-Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-03-04_](rules_changelog.md)).
+Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-03-05_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Identity Information**
 
@@ -33,6 +33,10 @@ Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 05/03/2026 - minor - Update rule type to integration
+            
 ??? abstract "Internet Scanner"
     
     Detects known scanner IP addresses. Alert is only raised when the scan hits an opened port, on TCP or UDP. This could be a very noisy rule, so be careful to check your detection perimeter before activation.
@@ -288,6 +292,10 @@ Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 05/03/2026 - minor - Update rule type to integration
+            
 ??? abstract "Gatewatcher AionIQ V103 Retrohunt"
     
     Detects when a retrohunt event is raised by GatewatcherV103.
@@ -297,6 +305,7 @@ Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-
     - **Changelog:**
     
         - 30/06/2025 - minor - Changing similarity on threat name.
+        - 05/03/2026 - minor - Update rule type to integration
             
 ## Resource Development
 **Acquire Infrastructure**
@@ -1134,6 +1143,10 @@ Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 05/03/2026 - minor - Update rule type to integration
+            
 ??? abstract "Failed Logon Followed By A Success From Public IP Addresses"
     
     A login from a public IP can indicate a misconfigured firewall or network boundary. The detection look for 5 or more failed attemps followed by a successfull one. The sekoia.tags are used to filter internal Ipv4 addresses.
@@ -2445,6 +2458,10 @@ Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 05/03/2026 - minor - Update rule type to integration
+            
 ??? abstract "Generic-reverse-shell-oneliner"
     
     To bypass some security equipement or for a sack of simplicity attackers can open raw reverse shell using shell commands
@@ -3462,6 +3479,10 @@ Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 05/03/2026 - minor - Update rule type to integration
+            
 ??? abstract "Bitdefender GravityZone Endpoint Detection"
     
     Bitdefender GravityZone detected a malicious activity on an endpoint
@@ -3755,12 +3776,20 @@ Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 05/03/2026 - minor - Update rule type to integration
+            
 ??? abstract "Darktrace Threat Visualizer Threat Suspicious Alert"
     
     Darktrace Threat Visualizer has raised a threat suspicious alert related to one supervised device
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 05/03/2026 - minor - Update rule type to integration
+            
 ??? abstract "Download Files From Non-Legitimate TLDs"
     
     Detects file downloads from non-legitimate TLDs. Additional legitimates TLDs should be filtered according to the business habits.
@@ -3819,6 +3848,7 @@ Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-
     
         - 24/01/2025 - minor - Adding filter to reduce false positives.
         - 27/01/2025 - minor - Changing field and adding filter to reduce false positives.
+        - 05/03/2026 - minor - Update rule type to integration
             
 ??? abstract "Google Workspace Anomaly File Downloads"
     
@@ -4572,18 +4602,30 @@ Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 05/03/2026 - minor - Update rule type to integration
+            
 ??? abstract "Suricata Exploit Kit Activity Detected High Severity Alert"
     
     Detects a high severity alert triggered from Suricata Exploit Kit Activity Detected category.
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 05/03/2026 - minor - Update rule type to integration
+            
 ??? abstract "Suricata Web Application Attack High Severity Alert"
     
     Detects a high severity alert triggered from Suricata Web Application Attack category.
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 05/03/2026 - minor - Update rule type to integration
+            
 ??? abstract "Suspicious DLL Loaded Via Office Applications"
     
     Detects suspicious DLL being loaded by an Microsoft Office Product. Considered as suspects are some .NET DLLs, clr.dll, GAC DLL, DSParse (Active Directoryi services API) or Kerberos DLLs which may be loaded by MS Office processes when executing a potentially malicious macro. The prerequisite is to log the Sysmon Event ID 7 (DLL image loaded by process). 
@@ -6609,6 +6651,10 @@ Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 05/03/2026 - minor - Update rule type to integration
+            
 ??? abstract "Failed Logon Followed By A Success From Public IP Addresses"
     
     A login from a public IP can indicate a misconfigured firewall or network boundary. The detection look for 5 or more failed attemps followed by a successfull one. The sekoia.tags are used to filter internal Ipv4 addresses.
@@ -7782,6 +7828,10 @@ Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 05/03/2026 - minor - Update rule type to integration
+            
 ??? abstract "Dynwrapx Module Loading"
     
     Detects the loading of DynamicWrapperX (Dynwrapx). It is used by some malware in their infection chain and could help to detect its usage from vbs/wscript/cscript scripts. This is based on Microsoft Windows Sysmon events (Event ID 7).
@@ -9692,6 +9742,10 @@ Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 05/03/2026 - minor - Update rule type to integration
+            
 ??? abstract "Dynwrapx Module Loading"
     
     Detects the loading of DynamicWrapperX (Dynwrapx). It is used by some malware in their infection chain and could help to detect its usage from vbs/wscript/cscript scripts. This is based on Microsoft Windows Sysmon events (Event ID 7).
@@ -15180,6 +15234,10 @@ Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 05/03/2026 - minor - Update rule type to integration
+            
 **Non-Standard Port**
 
 ??? abstract "RDP Port Change Using Powershell"
@@ -15334,6 +15392,10 @@ Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 05/03/2026 - minor - Update rule type to integration
+            
 **Exfiltration Over C2 Channel**
 
 ??? abstract "Claroty xDome Network Threat Detection Alert"
@@ -15342,6 +15404,10 @@ Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 05/03/2026 - minor - Update rule type to integration
+            
 ??? abstract "Exfiltration And Tunneling Tools Execution"
     
     Execution of well known tools for data exfiltration and tunneling
@@ -15366,24 +15432,40 @@ Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 05/03/2026 - minor - Update rule type to integration
+            
 ??? abstract "Gatewatcher AionIQ Network Alert"
     
     Forward network alerts reported by Gatewatcher AionIQ  
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 05/03/2026 - minor - Update rule type to integration
+            
 ??? abstract "Gatewatcher AionIQ V103 Beacon Detect"
     
     Detects a suspicious beacon.
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 05/03/2026 - minor - Update rule type to integration
+            
 ??? abstract "Gatewatcher AionIQ V103 Sigflow Alert"
     
     Detects a sigflow alert by Gatewatcher AionIQ V103.
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 05/03/2026 - minor - Update rule type to integration
+            
 ??? abstract "Netsh Port Forwarding"
     
     Detects netsh commands that enable a port forwarding between to hosts. This can be used by attackers to tunnel RDP or SMB shares for example.
@@ -15600,6 +15682,10 @@ Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 05/03/2026 - minor - Update rule type to integration
+            
 ??? abstract "Suncrypt Parameters"
     
     Detects SunCrypt ransomware's parameters, most of which are unique.
