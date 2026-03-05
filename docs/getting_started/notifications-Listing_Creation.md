@@ -1,62 +1,40 @@
+# Create a notification
 
-# Notifications
+This procedure explains how to set up a new notification rule to monitor events and receive alerts through your preferred channel(s). 
 
-Stay updated on your workspace's latest activities by setting up notifications for multiple features. 
+### Prerequisites
 
-## What notifications can do
+* Access to the community where you want to monitor activities.
+* (Optional) Incoming webhook URLs if you plan to integrate with Slack, Teams, or Mattermost.
 
-Notifications, accessible through the main menu or Settings, allow you to:
+## Procedure
 
-- Focus on specific events such as: 
-    - A new alert is raised
-    - An alert is updated
-    - A report is available
-    - A new rule is added to the Rules Catalog by Sekoia.io 
-    - No events are received 
-    - A playbook encountered an error
-    - A connector encoutered an error
-    - A rule from the Rules Catalog is scheduled for deprecation
-    - A rule from the Rules Catalog is deprecated
-    - An automated case is created
-    - An automated case is edited
-    - A detection rule entered rate-limited state
+1.  Navigate to the bottom of the left-hand panel and click **Settings**.
+2.  Select the **Notifications** tab.
 
-- Add specific conditions: 
-    - Focus on the name, reference, pattern, source, intake...
+3.  Click the **+ Notification** button.
+    !!! note "Initial Setup"
+        If no notifications exist, the listing page appears blank with the **+ Notification** button highlighted.
+4.  Enter a descriptive name in the **Notification name** field.
+5.  Select the event category from the **Trigger** drop-down list.
+6.  Define specific criteria (such as Alert Status, Urgency, or Involved Asset) in the **Conditions** section.
+7.  Select the delivery method in the **Action to perform** section:
+    * **In-app notification**: View alerts within the Sekoia.io platform.
+    * **Email**: Send a notification to a specific email address.
+    * **External Tools**: Select Slack, Teams, or Mattermost or provide a webhook URL.
+8.  Click **Save**.
 
-- In a multi-tenant setup, specify if the notification applies to all your communities or specific ones 
-- Configure actions such as sending an email or displaying an in-app notification
+### Result
 
-This documentation provides detailed information on the Sekoia.io notifications mechanism.
+Your new notification appears in your personal listing. The system begins monitoring for the specified trigger immediately.
 
-## Notifications Listing
-
-If no notifications are set up in your community, the listing page will be blank with a highlighted `+ New Notification` button for creating new notifications.
-
-Once notifications are created, you can edit, duplicate, delete, and (de)activate them from the main Notification page in the Settings. You can also search and filter notifications by trigger type or action type.
-
-!!! Warning
-    Each notification is only visible to the user who created it and within the community where it was created.
-
-You can access your in-app notifications from the main navigation. 
-
-## Create a new notification
-
-**Single-tenant mode**: Notifications apply only to the current workspace.
-
-**Multi-tenant mode**: By default, notifications come from all communities, but you can choose to receive notifications from a specific community.
-
-1. Go to Settings > Notifications > `+ New notification`
-1. Choose the event and conditions that will trigger your notification rule (e.g., new or existing alerts)
-2. Set conditions like alert status, urgency, and involved asset
-3. Decide on actions like in-app notifications, emails, texts via webhooks, or Mattermost channels
-4. Give your notification a name
-5. Save your settings
-
-## Example notification criteria
-
-New alert status is `Ongoing`
-Alert urgency is `higher than 80`
-Involved asset is `My Critical Asset`
-
-Other examples can be found in [this section of the documentation](notifications-Examples.md). 
+??? example "Example: High-Urgency Alert Notification"
+    **Problem**: You need to be immediately alerted when a critical asset is involved in a high-priority incident so you can begin remediation.
+    
+    * **Trigger**: New alert is raised.
+    * **Conditions**: 
+        * `Urgency` is greater than `80`
+        * `Asset name` contains `Production-Database`
+    * **Action**: Send an email and a Slack message.
+    
+    **Result**: Whenever an alert matching these criteria occurs, you receive a direct email and a notification in your designated Slack channel with the alert details.
