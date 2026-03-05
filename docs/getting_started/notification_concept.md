@@ -23,7 +23,7 @@ You can monitor several categories of events within the platform:
     - A new rule is added to the Rules Catalog by Sekoia.io 
     - No events are received 
     - A playbook encountered an error
-    - A connector encoutered an error
+    - A connector encountered an error
     - A rule from the Rules Catalog is scheduled for deprecation
     - A rule from the Rules Catalog is deprecated
     - An automated case is created
