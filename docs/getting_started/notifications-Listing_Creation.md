@@ -12,9 +12,9 @@ This procedure explains how to set up a new notification rule to monitor events 
 1.  Navigate to the bottom of the left-hand panel and click **Settings**.
 2.  Select the **Notifications** tab.
 
-3.  Click the **+ Notification** button.
+3.  Click the **+ New notification rule** button.
     !!! note "Initial Setup"
-        If no notifications exist, the listing page appears blank with the **+ Notification** button highlighted.
+        If no notifications exist, the listing page appears blank with the **+ Notification** button.
 4.  Enter a descriptive name in the **Notification name** field.
 5.  Select the event category from the **Trigger** drop-down list.
 6.  Define specific criteria (such as Alert Status, Urgency, or Involved Asset) in the **Conditions** section.
