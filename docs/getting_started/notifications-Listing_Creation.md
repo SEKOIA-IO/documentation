@@ -38,3 +38,9 @@ Your new notification appears in your personal listing. The system begins monito
     * **Action**: Send an email and a Slack message.
     
     **Result**: Whenever an alert matching these criteria occurs, you receive a direct email and a notification in your designated Slack channel with the alert details.
+
+## Related articles
+
+* [The notification system](/getting_started/notification_concept): Understand the logic and triggers behind the system.
+* [Manage notifications](/getting_started/manage_notifications.md): Learn how to update or deactivate existing rules.
+* [Notification examples](/getting_started/notifications-Examples.md): Explore more configuration templates.
