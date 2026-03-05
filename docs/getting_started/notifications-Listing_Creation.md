@@ -41,6 +41,6 @@ Your new notification appears in your personal listing. The system begins monito
 
 ## Related articles
 
-* [The notification system](/getting_started/notification_concept): Understand the logic and triggers behind the system.
+* [The notification system](/getting_started/notification_concept.md): Understand the logic and triggers behind the system.
 * [Manage notifications](/getting_started/manage_notifications.md): Learn how to update or deactivate existing rules.
 * [Notification examples](/getting_started/notifications-Examples.md): Explore more configuration templates.
