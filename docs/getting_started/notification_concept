@@ -52,6 +52,6 @@ The behavior of notifications depends on your workspace hierarchy:
     Notifications are personal. A notification rule is only visible to and manageable by the user who created it within the community where it was created.
 
 ## Next steps
-* [Create a notification](THIS LINK IS WRONG TO BE UPDATED create-notification.md): Learn how to set up your first notification rule.
-* [Manage notifications](THIS LINK IS WRONG TO BE UPDATED manage-notifications.md): Instructions on editing, disabling, or deleting rules.
-* [Notification examples](THIS LINK IS WRONG TO BE UPDATED notification-examples.md): Practical use cases for common security scenarios.
+* [Create a notification](/getting_started/notifications-Listing_Creation.md): Learn how to set up your first notification rule.
+* [Manage notifications](/getting_started/manage_notifications.md): Instructions on editing, disabling, or deleting rules.
+* [Notification examples](/getting_started/manage_notifications.md): Practical use cases for common security scenarios.
