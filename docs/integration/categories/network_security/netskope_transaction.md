@@ -4,6 +4,9 @@ type: intake
 
 ## Overview
 
+!!! Warning
+    This integration is deprecated in favor of [Netskope Log Streaming](netskope_log_streaming.md) and will be removed next.
+
 [Netskope](https://www.netskope.com/) is a cybersecurity company that provides solutions to protect data in cloud apps and network security while applying zero trust principles.
 
 - **Vendor**: Netskope
