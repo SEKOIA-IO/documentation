@@ -30,7 +30,7 @@ Code mode is the default interface. It uses the SOL language to provide higher p
 
 !!! tip "Master the SOL Syntax"
 
-    To learn how to write advanced queries and create custom filters for your dashboards, consult the [SOL Language Reference](/xdr/features/investigate/sekoia_operating_language.md).
+    To learn how to write advanced queries and create custom filters for your dashboards, consult the [SOL Language Reference](/xdr/features/investigate/sol_overview.md).
 
 
 1. Navigate to the **Query Builder** page.

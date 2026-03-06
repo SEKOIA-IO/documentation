@@ -1,0 +1,381 @@
+# How-to guides
+
+This page provides goal-oriented instructions for common SOL tasks.
+
+## How to aggregate data
+
+Use the `aggregate` operator to group rows and perform calculations. SOL supports the following aggregation functions: `count`, `sum`, `min`, `max`, `avg`, `count_distinct`, `make_set`, `countif`.
+
+### Basic aggregation
+
+```shell
+events
+| where timestamp > ago(24h)
+| aggregate count() by source.ip
+| order by count desc
+| limit 20
+```
+
+### Multiple aggregations
+
+You can perform multiple aggregations in a single query:
+
+```shell
+alerts
+| where created_at > ago(30d)
+| aggregate alert_count = count(), avg_ttd = avg(time_to_detect), max_urgency = max(urgency) by rule_name
+| order by alert_count desc
+| limit 20
+```
+
+### Aggregation over time
+
+Use `bin()` to group data into time buckets:
+
+```shell
+events
+| where timestamp > ago(7d)
+| aggregate count() by bin(timestamp, 1d)
+```
+
+### Conditional counting
+
+Use `countif()` to count rows matching specific conditions:
+
+```shell
+events
+| where timestamp >= ago(24h) and event.category == 'authentication'
+| aggregate success = countif(action.outcome == 'success'), failure = countif(action.outcome == 'failure') by source.ip
+| order by failure desc
+| limit 100
+```
+
+For the full operator reference, see [Aggregate rows](sol_ref_operators.md#aggregate-rows).
+
+---
+
+## How to join multiple tables
+
+SOL provides `join` and `lookup` operators to combine data from multiple tables.
+
+### Using join
+
+The `join` operator combines two tables based on matching columns. The right table is injected into a `model` object:
+
+```shell
+events
+| where timestamp > ago(24h)
+| limit 100
+| inner join intakes on sekoiaio.intake.uuid == uuid
+| distinct intake.name
+```
+
+Available join types:
+
+- **inner join** (default): Returns only matching records
+- **left join**: Returns all records from the left table, with matched records from the right
+
+### Using lookup
+
+Prefer `lookup` over `join` when the right table is small — it's faster and more efficient:
+
+```shell
+events
+| where timestamp > ago(24h)
+| lookup entities on sekoiaio.entity.uuid == uuid
+| aggregate count() by entity.name
+```
+
+### Custom model names
+
+Use the `into` keyword to define a custom name for the model object:
+
+```shell
+alerts
+| where created_at > ago(24h)
+| inner join entities on entity_uuid == uuid into my_entity
+| select my_entity.name
+```
+
+For the full operator reference, see [Join tables](sol_ref_operators.md#join-tables) and [Lookup](sol_ref_operators.md#lookup).
+
+---
+
+## How to use nested queries
+
+Use nested queries to filter data based on the results of a previous query. Define a subquery with `let`, then reference it with `in`:
+
+```shell
+let chromium_browsers = events
+| where timestamp > ago(30d)
+| where process.command_line contains " --type=renderer " and process.command_line contains " --extension-process "
+| distinct process.command_line;
+
+events
+| where process.command_line in chromium_browsers
+| aggregate count_agents=count_distinct(agent.id), executables=make_set(process.executable) by process.name
+| order by count_agents
+```
+
+For the full operator reference, see [Nested query](sol_ref_operators.md#nested-query).
+
+---
+
+## How to create visualizations
+
+Use the `render` operator to display query results as charts. Supported chart types:
+
+- `number` — Single value display
+- `piechart` — Pie chart
+- `columnchart` — Vertical bar chart
+- `barchart` — Horizontal bar chart
+- `linechart` — Line chart
+
+### Basic chart
+
+```shell
+events
+| where timestamp > ago(24h)
+| aggregate count() by sekoiaio.any_asset.name
+| render barchart with (y=sekoiaio.any_asset.name)
+| limit 100
+```
+
+### Chart with breakdown
+
+Use `breakdown_by` to split data into series, and `mode` to control stacking:
+
+```shell
+events
+| where timestamp > ago(7d)
+| aggregate count() by bin(timestamp, 1d), event.category
+| render linechart with (x=bin, y=count, breakdown_by=event.category, mode=stacked)
+```
+
+For the full operator reference, see [Render results in chart](sol_ref_operators.md#render-results-in-chart).
+
+---
+
+## How to use external data with SOL Datasets
+
+SOL Datasets allow you to import CSV files and use them in your queries. This is useful for enriching events with external context like threat intelligence, asset inventories, or user directories.
+
+### Quick example
+
+```shell
+events
+| where timestamp > ago(24h) and url.domain != null
+| where not url.domain in (authorized_domains | select url_domain)
+| select timestamp, source.ip, url.domain
+| limit 100
+```
+
+For the full guide on importing CSVs, multi-tenancy rules, and advanced query patterns, see the dedicated [SOL Datasets](sol_datasets.md) page.
+
+---
+
+## How to build a query library
+
+Build a collection of reusable queries to accelerate your team's investigations:
+
+1. **Start with common use cases**: Create queries for frequent investigations (failed logins, suspicious processes, network anomalies)
+2. **Use variables** for configurable time ranges with `let`:
+    ```shell
+    let StartTime = ago(24h);
+    let EndTime = now();
+
+    events
+    | where timestamp between (StartTime .. EndTime)
+    | where event.category == 'authentication' and action.outcome == 'failure'
+    | aggregate count() by source.ip
+    | order by count desc
+    ```
+3. **Save your queries**: Use the Query Builder's save functionality to store queries for reuse.
+4. **Browse examples**: See the [Query examples](sol_query_examples.md) page for ready-to-use queries covering events, alerts, and joins.
+
+---
+
+## How to create a dashboard
+
+Dashboards are built from SOL query widgets. Each widget executes a SOL query and renders the results as a table or chart.
+
+For full instructions on creating and managing dashboards, see [Create and manage dashboards](../report/create_dashboards.md) and [Configure widgets and layout](../report/add_widgets_dashboards.md).
+
+### Using SOL filters for interactive dashboards
+
+Filters make SOL queries dynamic and interactive. They let you reuse the same query across dashboards and contexts by substituting values dynamically without modifying the query itself.
+
+!!! Note
+    Filters are currently released under the Early Access Program.
+
+<center>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/9q6K7vwEYv8?si=5x24TPninNak550B" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</center>
+
+Filters are referenced using the `?filter_name` syntax.
+
+When a query uses one or more filters, the Query Builder and Dashboards:
+
+* Automatically detect them,
+* Display user input fields (text, date, select, etc.),
+* Re-execute the query whenever a filter value changes.
+
+#### Syntax
+
+Use the `?filter_name` notation anywhere you would normally write a static value:
+
+```shell
+<table name>
+| where <column> == ?filter_name
+```
+
+Example with a time range filter
+
+```shell
+events
+| where timestamp between (?time.start .. ?time.end)
+```
+
+#### Built-in Filters
+
+Certain filters are predefined and automatically available across all queries and dashboards.
+
+| Filter        | Type     | Description                        |
+| ------------- | -------- | ---------------------------------- |
+| `?time.start` | datetime | Start of the time range to analyze |
+| `?time.end`   | datetime | End of the time range to analyze   |
+| `?communities`   | string[] | UUID of all the communities of the workspace   |
+| `?intakes`   | string[] | UUID of all the intakes of the workspace   |
+
+#### Custom Filters
+
+You can create additional filters for values that depend on your investigation context (e.g., hostname, domain, community, entity, etc.).
+
+Example
+
+```shell
+events
+| where timestamp between (?time.start .. ?time.end)
+| where process.name == ?process_name
+| select timestamp, host.name, user.name, process.name, process.command_line
+| order by timestamp desc
+| limit 100
+```
+
+
+Filters in SOL are created and managed in the Query Builder or Dashboard editor.
+Each filter defines how a variable (referenced as `?filter_name`) behaves in queries — its input type, allowed values, and how it is displayed to end users.
+
+When creating or editing a filter, you can:
+
+1. Select its type (Text, Boolean, Time, etc.)
+2. Add a description to clarify its purpose
+3. Optionally define authorized values — either statically or dynamically
+4. Preview how the filter will appear to users
+5. Copy the syntax (`?filter_name`) to reuse in SOL queries
+
+
+#### Supported Types
+
+SOL filters support the following types:
+
+| Type                    | Example usage                                        | Notes                               |
+| ----------------------- | ---------------------------------------------------- | ----------------------------------- |
+| **Text**                | `where user.name == ?username`                       | Free text input                     |
+| **Boolean**             | `where event.success == ?is_success`                 | Displayed as toggle                 |
+| **Time**                | `where timestamp between (?time.start .. ?time.end)` | Common in dashboards                |
+| **Single Selection**    | `where timestamp == ?alert_uuid`                     | One value among the accepted ones   |
+| **Multiple Selection**  | `where host.name in ?hostnames`                      | Multiple values are allowed         |
+
+
+#### Authorized Values
+
+For Single or Multiple selection filters, you can define authorized values in two ways:
+
+**Static List**
+
+Enter comma-separated values directly in the configuration panel.
+
+Example:
+```shell
+powershell.exe, cmd.exe, rundll32.exe, chrome.exe
+```
+
+**Dynamic List**
+
+Generate authorized values automatically using a SOL query.
+
+Example:
+```shell
+events
+| distinct process.name
+| limit 100
+```
+This example retrieves the top 100 unique process names observed in recent events and uses them as selectable options.
+Dynamic lists update automatically as new data becomes available, ensuring filters stay relevant to current activity.
+
+
+!!! note
+
+    You can dissociate the technical value from its display label by using the syntax `value:Label`.
+    The value (left side) is used in the SOL query, while the label (right side) is what the user sees in the interface.
+
+    For example:
+
+    ```shell
+    powershell.exe:PowerShell, cmd.exe:Command Prompt, bash:Bash
+    ```
+    In this configuration:
+
+    - The user sees **PowerShell**, **Command Prompt**, and **Bash** in the dropdown
+    - The query receives `powershell.exe`, `cmd.exe`, or `bash` as the actual filter value
+
+    **Behavior**
+
+    * Values are separated by commas
+    * Labels after the colon (:) are optional
+    * Whitespace is trimmed automatically
+    * Duplicate values are silently ignored
+    * To include a comma inside a value, escape it with a backslash (`\`)
+
+
+#### Filter Preview
+
+The Preview panel (right side of the editor) shows how the filter will appear to users in dashboards or query widgets.
+
+Examples:
+
+* Boolean filter → toggle with labels "On" / "Off"
+* Text filter → input field
+* Selection filters → dropdown menus
+* Time filter → unified date range picker
+
+#### Using Filters in Queries
+
+To use a filter in a SOL query, reference its name prefixed by `?`.
+
+```shell
+events
+| where timestamp between (?time.start .. ?time.end)
+| where process.name == ?process_name
+| select timestamp, host.name, process.command_line
+| order by timestamp desc
+| limit 100
+```
+
+In this example:
+
+* `?time.start` and `?time.end` are predefined time filters.
+* `?process_name` is a custom filter (e.g., single selection).
+
+When added to a dashboard, users can adjust these filters without modifying the query itself.
+
+
+#### Filter Best Practices
+
+* Use descriptive names like `process_name`, `user_email`, `community_uuid`.
+* Reuse filter names across queries to enable dashboard-level synchronization.
+* Prefer dynamic lists when values depend on live data (e.g., entities, hosts).
+* Use `?time.start` and `?time.end` for all time-based filtering.
+* Avoid numeric filters — they are not fully supported.
+* Avoid hard-coded customer identifiers.
