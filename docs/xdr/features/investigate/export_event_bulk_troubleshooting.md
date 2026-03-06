@@ -38,7 +38,7 @@ This guide provides structured solutions for common errors and performance issue
 
 
 ## Next steps
-To understand the technical boundaries and monthly data quotas of the system, consult the [Export technical reference](docs/xdr/features/investigate/export_reference.md).
+To understand the technical boundaries and monthly data quotas of the system, consult the [Export technical reference](xdr/features/investigate/export_reference.md).
 
 ### Getting further assistance
 If the troubleshooting steps above do not resolve your issue:
