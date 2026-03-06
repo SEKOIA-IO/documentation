@@ -54,7 +54,7 @@ Sources are represented in STIX by `Identity` objects.
 
 Our consolidation strategy means that the `created_by_ref` field of the STIX objects will always be set to the SEKOIA identity. The sources that contributed to one of our STIX object are available, as references, in the `x_inthreat_sources_refs` custom field.
 
-As an exemple, here are parts of a `Spearphishing Link` object:
+As an example, here are parts of a `Spearphishing Link` object:
 
 ```json
 {

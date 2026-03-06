@@ -1,3 +1,7 @@
+uuid: b6e2c8a2-4f3b-4e7a-8c1d-2e4f3a6b7c9d
+name: Okta Device
+type: asset
+
 ## Overview
 
 Okta is a cloud-based identity and access management platform that provides secure authentication, authorization, and device management services. Okta helps organizations manage device identities across multiple applications and systems, providing device trust, device compliance, and comprehensive device lifecycle management.
@@ -84,6 +88,8 @@ To start getting your Okta devices into Sekoia.io, you need to create an asset c
     ![Connector test result and Create asset connector button highlighted](/assets/operation_center/asset_connectors/device/okta/okta_asset_device_2.png)
 
 6. Click the **Create asset connector** button.
+
+{!_shared_content/operations_center/integrations/generated_assets_documentation/okta_device.md!}
 
 ## Further Reading
 - [Okta Documentation](https://developer.okta.com/docs/)

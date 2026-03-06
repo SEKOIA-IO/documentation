@@ -7,7 +7,7 @@ In this section, you will find examples of raw logs as generated natively by the
 === "event_01"
 
     ```
-	[categoryId=0 instanceId=31000 param1="0" param2="0" param3="0" param4="0" ChangesXML="<changes><object><property internal="SyslogReportingEnabled" type="Boolean"><old>False</old><new>True</new></property><property internal="SyslogReportingHost" type="String"><old /><new>logconcentrator.example.org</new></property><property internal="SyslogReportingPort" type="Integer"><old /><new>20517</new></property><property internal="SyslogReportingProtocol" type="SyslogProtocol"><old /><new>Tcp</new></property><property internal="SyslogReportingCertificateThumbprint" type="String"><old /><new></new></property></object></changes>" UserName="MyMachine\jdoe" Version="1" Description="Backup server general options have been changed"]
+	[categoryId=0 instanceId=31000 param1="0" param2="0" param3="0" param4="0" ChangesXML="<changes><object><property internal="SyslogReportingEnabled" type="Boolean"><old>False</old><new>True</new></property><property internal="SyslogReportingHost" type="String"><old /><new>logconcentrator.example.org</new></property><property internal="SyslogReportingPort" type="Integer"><old /><new>20517</new></property><property internal="SyslogReportingProtocol" type="SyslogProtocol"><old /><new>Tcp</new></property><property internal="SyslogReportingCertificateThumbprint" type="String"><old /><new></new></property></object></changes>" UserName="example.com\jdoe" Version="1" Description="Backup server general options have been changed"]
     ```
 
 
@@ -15,7 +15,7 @@ In this section, you will find examples of raw logs as generated natively by the
 === "event_02"
 
     ```
-	[categoryId=0 instanceId=31000 param1="0" param2="0" param3="0" param4="0" ChangesXML="<changes><object /></changes>" UserName="MyMachine\jdoe" Version="1" Description="Backup server general options have been changed"]
+	[categoryId=0 instanceId=31000 param1="0" param2="0" param3="0" param4="0" ChangesXML="<changes><object /></changes>" UserName="example.com\jdoe" Version="1" Description="Backup server general options have been changed"]
     ```
 
 
@@ -23,7 +23,7 @@ In this section, you will find examples of raw logs as generated natively by the
 === "event_03"
 
     ```
-	[categoryId=0 instanceId=25300 CredentialsId="11111111-2222-4333-4444-555555555555" AccountName="MyMachine\jdoe" param3="0" param4="0" param5="0" UserName="MyMachine\jdoe" UserFullInfo="<ModifiedUserInfo fullName="MyMachine\jdoe" loginType="0" />" Version="1" Description="Credentials MyMachine\jdoe have been added"]
+	[categoryId=0 instanceId=25300 CredentialsId="11111111-2222-4333-4444-555555555555" AccountName="example.com\jdoe" param3="0" param4="0" param5="0" UserName="example.com\jdoe" UserFullInfo="<ModifiedUserInfo fullName="example.com\jdoe" loginType="0" />" Version="1" Description="Credentials example.com\jdoe have been added"]
     ```
 
 
@@ -39,7 +39,7 @@ In this section, you will find examples of raw logs as generated natively by the
 === "event_05"
 
     ```
-	[categoryId=0 instanceId=23110 JobID="11111111-2222-4333-4444-555555555555" JobType="12003" Platform="N\A" JobName="Agent Backup Job 1" ChangesXML="<changes><object id="11111111-2222-4333-4444-555555555555" /></changes>" UserName="MyMachine\jdoe" Version="1" Description="'1' objects has been created for 'Agent Backup Job 1'."]
+	[categoryId=0 instanceId=23110 JobID="11111111-2222-4333-4444-555555555555" JobType="12003" Platform="N\A" JobName="Agent Backup Job 1" ChangesXML="<changes><object id="11111111-2222-4333-4444-555555555555" /></changes>" UserName="example.com\jdoe" Version="1" Description="'1' objects has been created for 'Agent Backup Job 1'."]
     ```
 
 
@@ -95,7 +95,7 @@ In this section, you will find examples of raw logs as generated natively by the
 === "event_12"
 
     ```
-	[categoryId=0 instanceId=42290 param1="0" param2="0" param3="0" param4="0" ChangesXML="<changes><object><property internal="IsEnabledInlineScanning" type="Boolean"><old>False</old><new>True</new></property><property internal="InlineScanningSensitivity" type="ERansomwareScanningSensitivity"><old /><new>Normal</new></property></object></changes>" UserName="MyMachine\jdoe" Version="1" Description="Malware detection settings have been changed."]
+	[categoryId=0 instanceId=42290 param1="0" param2="0" param3="0" param4="0" ChangesXML="<changes><object><property internal="IsEnabledInlineScanning" type="Boolean"><old>False</old><new>True</new></property><property internal="InlineScanningSensitivity" type="ERansomwareScanningSensitivity"><old /><new>Normal</new></property></object></changes>" UserName="example.com\jdoe" Version="1" Description="Malware detection settings have been changed."]
     ```
 
 
@@ -143,7 +143,7 @@ In this section, you will find examples of raw logs as generated natively by the
 === "event_18"
 
     ```
-	[categoryId=0 instanceId=29100 ProtectionGroupID="11111111-2222-4333-4444-555555555555" ProtectionGroupName="Protection Group 1" UserName="MyMachine\jdoe" Version="1" Description="Protection Group Protection Group 1 has been added."]
+	[categoryId=0 instanceId=29100 ProtectionGroupID="11111111-2222-4333-4444-555555555555" ProtectionGroupName="Protection Group 1" UserName="example.com\jdoe" Version="1" Description="Protection Group Protection Group 1 has been added."]
     ```
 
 
@@ -191,7 +191,15 @@ In this section, you will find examples of raw logs as generated natively by the
 === "event_24"
 
     ```
-	[categoryId=0 instanceId=10050 OibID="11111111-2222-4333-4444-555555555555" OriginalOibID="11111111-2222-4333-4444-555555555555" VmRef="11111111-2222-4333-4444-555555555555" VmName="127.0.0.1" ServerName="This server" DateTime="12/22/2023 15:27:59" IsCorrupted="False" Platform="6" StorageSize="53710848" RepositoryID="11111111-2222-4333-4444-555555555555" IsFull="False" Version="1" Description="Restore point for VM '127.0.0.1' has been removed by user MyMachine\jdoe."]
+	[categoryId=0 instanceId=10050 OibID="11111111-2222-4333-4444-555555555555" OriginalOibID="11111111-2222-4333-4444-555555555555" VmRef="11111111-2222-4333-4444-555555555555" VmName="127.0.0.1" ServerName="This server" DateTime="12/22/2023 15:27:59" IsCorrupted="False" Platform="6" StorageSize="53710848" RepositoryID="11111111-2222-4333-4444-555555555555" IsFull="False" Version="1" Description="Restore point for VM '127.0.0.1' has been removed by user example.com\jdoe."]
+    ```
+
+
+
+=== "event_25"
+
+    ```
+	[categoryId=0 instanceId=111111 JobID="000000000-0000000000-000000000-000000000" JobType="0" Platform="N\A" JobName="TEST_BACKUP" ChangesXML="11111232323(BDD_TEST_01)" UserName="example.com\Administrator" VbrHostName="example.com" VbrVersion="1.2.3.4" Version="1" Description="'1' objects has been deleted for 'TEST_BACKUP'."]
     ```
 
 

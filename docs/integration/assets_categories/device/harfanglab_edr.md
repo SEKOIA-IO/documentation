@@ -1,3 +1,6 @@
+uuid: f7da3627-6016-415d-9885-231e1455a7a5
+name: Harfanglab EDR
+type: asset
 
 ## Overview
 
@@ -27,7 +30,9 @@ HarfangLab console. Follow these steps:
 4. Copy the API key to a safe place and start using it in Sekoia.io.
 
 !!! warning
-    - A user must exist before generating an API token.
+    - Ensure the user account exists before generating an API token.
+    - The API token is displayed only once at creation. Save it securely; if you lose it, you must generate a new one.
+    - When copying the API key, ensure you copy only the raw key value (excluding any `token_` prefix if displayed).
 
 
 ### Create your asset
@@ -51,3 +56,8 @@ To start getting your HarfangLab assets into Sekoia.io, you need to create an as
     ![Connector test result and Create asset connector button highlighted](/assets/operation_center/asset_connectors/device/harfanglab/harfanglab_page.png)
 
 5. Click the **Create asset connector** button.
+
+!!! warning
+    - Make sure to include your port number in the `URL` field by appending it to the URL, for example: `https://your-harfanglab-instance.com:8443`.
+
+{!_shared_content/operations_center/integrations/generated_assets_documentation/harfanglab_device.md!}

@@ -14,14 +14,14 @@ The "Custom format" feature allows you to easily develop your own Intake. It giv
 
 The creation of an empty Custom format is the first step to develop your own Intake.
 
-After that, you will be able to create an instance of this Intake and start sending your logs. No event will be parsed but you will be able to see the evolution of your parser while you are developping it.
+After that, you will be able to create an instance of this Intake and start sending your logs. No event will be parsed but you will be able to see the evolution of your parser while you are developing it.
 
 To create an empty custom format:
 
 1. Go to `Intakes`, `+ INTAKE` and select `Custom format`
 2. Write the name of your Intake
 3. Give a description for your Intake
-4. Select a module. A module is linked to a taxonomy in relation with your format which will help you develop your parser. For instance, if you develop a Custom format for a Fortinet product, you will choose the Fortinet module. If your module does not exist, just write the name of your module (name of the application or compagny if they have different products) and click on `Create`
+4. Select a module. A module is linked to a taxonomy in relation with your format which will help you develop your parser. For instance, if you develop a Custom format for a Fortinet product, you will choose the Fortinet module. If your module does not exist, just write the name of your module (name of the application or company if they have different products) and click on `Create`
 5. Select the data sources associated to your events. Note that you can have multiple ones and that data sources can be used when you want to deploy rules.
 6. Click on `Save`
 
@@ -124,6 +124,25 @@ Tests are run from the `intake-formats/utils` directory.
 > poetry run pytest test_formats.py --module='module-name' -vv # run tests for a specific module
 > poetry run pytest test_formats.py --format='format-name' -vv # run tests for a specific format
 > poetry run pytest test_formats.py --format='format-name' --fix-expectations # fix test expectations
+```
+
+#### Lint the format (Optional; mandatory for the homologation process)
+
+Before pushing any changes to the repository, please lint the format with the following commands from the `intake-formats/utils` directory. 
+
+```bash
+> cd ~/dev/intake-formats/utils
+> poetry run python linter.py fix --format <format_name>  # fix linting issues in taxonomy, manifest files and tests
+> npx prettier --w <module>/<format>/ingest/parser.yml              # fix yaml formatting issues in parser file
+```
+
+#### Check the format (Optional; mandatory for the homologation process)
+
+Before pushing any changes, please check the format with the following command from the `intake-formats/utils` directory.
+
+```bash
+> cd ~/dev/intake-formats/utils
+> poetry run python checks --changes --json --ignore_event_fieldset_errors --ignore_missing_parsers --ignore_missing_tests --ignore_empty_descriptions
 ```
 
 #### Write smart descriptions

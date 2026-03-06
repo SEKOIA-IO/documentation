@@ -71,7 +71,39 @@ Create issue in JIRA
 | --------- | ------- | --------------------------- |
 | `issue_key` | `string` | Key of the created issue |
 
+### Get issue
+
+Get issue
+
+**Arguments**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `issue_key` | `string` | Issue key (e.g. PROJ-1) or ID |
+| `fields` | `array` | A list of fields to return for the issue (*all by default) |
+| `fields_by_keys` | `boolean` | Whether fields in `fields` are referenced by keys rather than IDs |
+| `expand` | `string` | Comma-separated list of additional information to include |
+| `properties` | `array` | A list of properties to return for the issue (*all by default) |
+| `update_view_history` | `boolean` | Whether to mark the issue as recently viewed |
+| `fail_fast` | `boolean` | Whether to fail the request quickly in case of an error while loading fields for an issue |
+
+### Search issues
+
+Find issues using provided filters
+
+**Arguments**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `jql` | `string` | JQL query |
+| `fields` | `array` | A list of fields to return for the issue (*all by default) |
+| `expand` | `string` | Comma-separated list of additional information to include |
+| `properties` | `array` | A list of properties to return for the issue (*all by default) |
+| `fields_by_keys` | `boolean` | Whether fields in `fields` are referenced by keys rather than IDs |
+| `fail_fast` | `boolean` | Whether to fail the request quickly in case of an error while loading fields for an issue |
+| `reconcile_issues` | `array` | List of IDs to reconcile |
+
 
 ## Extra
 
-Module **`Atlassian JIRA` v1.3.0**
+Module **`Atlassian JIRA` v1.4.1**

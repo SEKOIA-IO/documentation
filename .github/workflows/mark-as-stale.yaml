@@ -1,0 +1,26 @@
+name: Mark old PRs as stale
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 3 * * *"
+
+jobs:
+  close-issues:
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+      pull-requests: write
+
+    steps:
+      - uses: actions/stale@v3
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          ascending: true
+          days-before-issue-close: -1
+          days-before-issue-stale: -1
+          days-before-pr-close: -1
+          days-before-pr-stale: 30
+          operations-per-run: 1000
+          stale-issue-label: "stale"
+          stale-pr-message: "This PR was marked as stale because it has been open for 30 days with no activity."

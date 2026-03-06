@@ -1,4 +1,4 @@
-# Best Pratices
+# Best Practices
 
 Raw events may represent information in different ways. For each datasource, the parser will extract important information and generate a normalized JSON document.
 

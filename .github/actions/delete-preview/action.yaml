@@ -1,0 +1,76 @@
+name: Delete Preview
+description: Delete a given preview from Swift/S3 at OVHcloud
+
+inputs:
+  pull_request_id:
+    description: Identifier of the PR
+    required: true
+    type: string
+  os_tenant_id:
+    description: OpenStack tenant identifier
+    required: true
+    type: string
+  os_tenant_name:
+    description: OpenStack tenant name
+    required: true
+    type: string
+  os_username:
+    description: OpenStack username
+    required: true
+    type: string
+  os_password:
+    description: OpenStack password
+    required: true
+    type: string
+  github_token:
+    description: GitHub Token
+    required: true
+    type: string
+  message:
+    description: Message to post
+    required: true
+    type: string
+
+runs:
+  using: composite
+  steps:
+  - name: Install uv
+    uses: astral-sh/setup-uv@v6
+    with:
+      enable-cache: true
+      activate-environment: true
+
+  - name: Install upload dependencies
+    shell: bash
+    run: |
+      uv sync --group upload
+
+  - name: OVH Object Storage
+    shell: bash
+    run: |
+      uv run swift delete sekoiaio-documentation-previews -p ${{ inputs.pull_request_id }}/ --object-threads 5
+    env:
+      OS_AUTH_URL: "https://auth.cloud.ovh.net/v3/"
+      OS_IDENTITY_API_VERSION: 3
+      OS_TENANT_ID: ${{ inputs.os_tenant_id }}
+      OS_TENANT_NAME: ${{ inputs.os_tenant_name }}
+      OS_USERNAME: ${{ inputs.os_username }}
+      OS_PASSWORD: ${{ inputs.os_password }}
+      OS_REGION_NAME: "GRA"
+
+  - name: Find Comment
+    uses: peter-evans/find-comment@v3
+    id: fc
+    with:
+      issue-number: ${{ inputs.pull_request_id }}
+      comment-author: github-actions[bot]
+      body-includes: Newest code from ${{ github.actor}} has been published to
+
+  - name: Add comment to PR
+    uses: peter-evans/create-or-update-comment@v4
+    with:
+      token: ${{ inputs.github_token }}
+      issue-number: ${{ inputs.pull_request_id }}
+      comment-id: ${{ steps.fc.outputs.comment-id }}
+      edit-mode: replace
+      body: ${{ inputs.message }}

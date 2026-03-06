@@ -73,7 +73,7 @@ The following Sekoia.io built-in rules match the intake **ESET Protect**. This d
     
     The csrss.exe process (csrss stands for Client / Server Runtime Subsystem) is a generic Windows process used to manage windows and Windows graphics. This process  should not create a child process or it is very rare.
     
-    - **Effort:** intermediate
+    - **Effort:** advanced
 
 ??? abstract "DNS Query For Iplookup"
     
@@ -216,6 +216,12 @@ The following Sekoia.io built-in rules match the intake **ESET Protect**. This d
 ??? abstract "Linux Masquerading Space After Name"
     
     This detection rule identifies a process created from an executable with a space appended to the end of the name.
+    
+    - **Effort:** intermediate
+
+??? abstract "Linux Suspicious Auto-start Desktop Shortcut Execution"
+    
+    This detection rule identifies a suspicious process start from an graphical env process which may indicate the use of a malicious .desktop shortcut.
     
     - **Effort:** intermediate
 

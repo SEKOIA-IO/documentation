@@ -1017,6 +1017,12 @@ The following Sekoia.io built-in rules match the intake **Trend Micro Vision One
     
     - **Effort:** intermediate
 
+??? abstract "Scheduled Task Creation By Non Privileged User"
+    
+    Detects scheduled task creation, either executed by a non-system user or a user who is not administrator (the user ID is not S-1-5-18 or S-1-5-18-*). This detection rule doesn't match Sysmon EventID 1 because the user SID is always set to S-1-5-18. 
+    
+    - **Effort:** master
+
 ??? abstract "Security Support Provider (SSP) Added to LSA Configuration"
     
     Detects the addition of a SSP to the registry. This is commonly used for persistence. Upon a reboot or API call, SSP DLLs gain access to encrypted and plaintext passwords stored in Windows. Logging for Registry events is needed for this rule to work (this can be done through Sysmon EventIDs 12 and 13).
@@ -1176,12 +1182,6 @@ The following Sekoia.io built-in rules match the intake **Trend Micro Vision One
 ??? abstract "Suspicious Rundll32.exe Executions"
     
     The process rundll32.exe executes a newly dropped DLL with update /i in the command line. This specific technic was observed at least being used by the IcedID loading mechanism dubbed Gziploader. Some other detections are related to LOLBAS (Living Off The Land Binaries, Scripts and Libraries) usages (like the COM registering).
-    
-    - **Effort:** intermediate
-
-??? abstract "Suspicious Scheduled Task Creation"
-    
-    Detects suspicious scheduled task creation, either executed by a non-system user or a user who is not administrator (the user ID is not S-1-5-18 or S-1-5-18-*). This detection rule doesn't match Sysmon EventID 1 because the user SID is always set to S-1-5-18. 
     
     - **Effort:** intermediate
 

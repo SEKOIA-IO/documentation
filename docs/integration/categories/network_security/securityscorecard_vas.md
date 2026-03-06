@@ -1,5 +1,5 @@
 uuid: 8f472113-ba5b-45b9-9a2c-944834396333
-name: Security Scorecard Vunerability Assessment Scanner
+name: Security Scorecard Vulnerability Assessment Scanner
 type: intake
 
 ## Overview
@@ -15,7 +15,7 @@ security measures and reduce cyber risk.
 
 ## Configure
 
-This setup guide will show you how to provide an integration between Security Scorecard Vunerability Assessment Scanner
+This setup guide will show you how to provide an integration between Security Scorecard Vulnerability Assessment Scanner
 events and Sekoia.io.
 
 ### Create an intake
@@ -39,6 +39,13 @@ Set the destination url to `https://intake.sekoia.io/plain?intake_key=<intake_ke
     ![Create Rule](/assets/instructions/securityscorecard_vas/securityscorecard_vas_3.png)
 
 * Save the configuration and enjoy your events
+
+!!! warning 
+    The previous URL works for the FRA1 region. For any other region, replace the domain “intake.sekoia.io” with your region’s HTTP-intake domain—for example:
+
+    https://app.usa1.sekoia.io/api/v1/intake-http
+
+    You can find your region’s domain here: [https://docs.sekoia.io/getting_started/regions/](https://docs.sekoia.io/getting_started/regions/)
 
 
 {!_shared_content/operations_center/integrations/generated/8f472113-ba5b-45b9-9a2c-944834396333_sample.md!}

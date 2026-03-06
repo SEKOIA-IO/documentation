@@ -57,6 +57,12 @@ The following Sekoia.io built-in rules match the intake **Elastic AuditBeat Linu
     
     - **Effort:** master
 
+??? abstract "AppleScript Password Prompt"
+    
+    Detects when a prompt is displayed to gain credentials. This technique is used by MacOS malware to obtain the user's password.
+    
+    - **Effort:** advanced
+
 ??? abstract "Aspnet Compiler"
     
     Detects the starts of aspnet compiler.
@@ -1484,6 +1490,12 @@ The following Sekoia.io built-in rules match the intake **Elastic AuditBeat Linu
     Detects Venom Multi-hop Proxy agent.
     
     - **Effort:** intermediate
+
+??? abstract "WAF Block Rule"
+    
+    Detects when one of WAF rule blocked an HTTP request. This rule often needs fine tuning according to the environment.
+    
+    - **Effort:** master
 
 ??? abstract "WMI Install Of Binary"
     

@@ -11,14 +11,11 @@ EfficientIP SOLIDserver suite of appliances is designed to deliver highly scalab
 - **Version Compatibility**: 8.0
 - **Detection based on**: Telemetry
 
-!!! warning
-    Important note - This format is currently in beta. We highly value your feedback to improve its performance.
-
 ## Supported versions
 
 This integration supports the following versions:
-
 - 8.3.x
+- 8.4.x
 
 ## Supported events
 
@@ -51,7 +48,7 @@ An internal syslog concentrator is required to collect and forward events to Sek
     ![syslog](/assets/integration/network/efficientip_solidserver/03 - syslog.png)
 
 5. In the `Services` drop-dwon, select the following services:
-	- `named`
+	- `dns`
 
 6. In the `Target server`, fill the ip address and the port of the log concentrator.
 

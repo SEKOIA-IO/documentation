@@ -29,11 +29,34 @@ To create a new case, you can:
 6. Add tags if needed
 7. Click on `Create`
 
+## Case Custom Statuses and Verdicts
+
+Cases support the same custom status and verdict system as alerts, enabling consistent terminology and workflows across your entire SOC platform.
+
+### Custom Statuses for Cases
+
+Custom statuses allow you to define case lifecycle stages that match your organization's investigation processes. Just like alerts, case statuses belong to one of three stages:
+
+- **Open**: Cases that are active and require attention
+- **In progress**: Cases under active investigation
+- **Closed**: Cases that have been resolved or dismissed
+
+Custom statuses can be configured to work exclusively for cases, exclusively for alerts, or for both simultaneously. When a status is enabled for both alerts and cases, it ensures consistent terminology across different investigation contexts.
+
+!!! note
+    Case history preserves original status names even if a custom status is modified later. This ensures that historical records remain accurate and reflect the status names that were in use at the time of each change.
+
+### Custom Verdicts for Cases
+
+Custom verdicts enable standardized classification of case outcomes. Each verdict belongs to either the **True Positive** or **False Positive** category, allowing your team to document investigation conclusions with precise, organization-specific terminology.
+
+Like custom statuses, verdicts can be enabled for cases, alerts, or both, ensuring consistent language when communicating investigation outcomes.
+
 ## Edit a case
 
 To edit a case, you just have to click on a case and reach the `edit` button available on the details view.
 
-The case must be open in order to be edited.
+The case must not have a status in the "Closed" stage in order to be edited. Cases with statuses in the "Open" or "In progress" stages can be edited.
 
 ## Case details
 

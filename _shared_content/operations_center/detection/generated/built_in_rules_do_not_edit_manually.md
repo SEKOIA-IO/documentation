@@ -1,4 +1,4 @@
-Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-10-24_](rules_changelog.md)).
+Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-03-05_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Identity Information**
 
@@ -33,6 +33,10 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 05/03/2026 - minor - Update rule type to integration
+            
 ??? abstract "Internet Scanner"
     
     Detects known scanner IP addresses. Alert is only raised when the scan hits an opened port, on TCP or UDP. This could be a very noisy rule, so be careful to check your detection perimeter before activation.
@@ -173,6 +177,10 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 27/02/2026 - minor - Update rule type to integration
+            
 ??? abstract "Fortigate IPS Critical Alert"
     
     Fortigate intrusion detection alert with critical severity.
@@ -211,18 +219,30 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 27/02/2026 - minor - Update rule type to integration
+            
 ??? abstract "Varonis Data Security Intrusion Detection Low Severity Alert"
     
     Varonis Data Security has raised a low severity alert for its intrusion detection engine.
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 27/02/2026 - minor - Update rule type to integration
+            
 ??? abstract "Varonis Data Security Intrusion Detection Medium Severity Alert"
     
     Varonis Data Security has raised a medium severity alert for its intrusion detection engine.
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 27/02/2026 - minor - Update rule type to integration
+            
 ??? abstract "Veeam Backup & Replication Malware Detection"
     
     Veeam Backup & Replication has detected some malware related activity
@@ -235,13 +255,14 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
             
 ??? abstract "WAF Block Rule"
     
-    Detects when one of WAF rule blocked an HTTP request 
+    Detects when one of WAF rule blocked an HTTP request. This rule often needs fine tuning according to the environment.
     
     - **Effort:** master
     
     - **Changelog:**
     
         - 15/11/2023 - minor - Adding support for Ubika
+        - 04/03/2026 - major - Removing intakes from the rule to make it more generic and match all WAF products. The sources and description fields were updated accordingly.
             
 ??? abstract "WAF Correlation Block Multiple Destinations"
     
@@ -271,6 +292,10 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 05/03/2026 - minor - Update rule type to integration
+            
 ??? abstract "Gatewatcher AionIQ V103 Retrohunt"
     
     Detects when a retrohunt event is raised by GatewatcherV103.
@@ -280,6 +305,7 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     - **Changelog:**
     
         - 30/06/2025 - minor - Changing similarity on threat name.
+        - 05/03/2026 - minor - Update rule type to integration
             
 ## Resource Development
 **Acquire Infrastructure**
@@ -302,6 +328,7 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
         - 16/08/2024 - minor - The error code 50078 has been excluded as it is not a specific error code related to a login failure that we want to detect and caused several false positives.
         - 14/10/2024 - minor - The error codes 70043, 50173, 70008, 700082, 9002341 have been excluded as they are not related to login failures that we want to detect and caused several false positives.
         - 28/11/2024 - minor - Adding error codes as filters to reduce false positives.
+        - 25/02/2026 - minor - Adding error code 500011 as filters to reduce false positives.
             
 ??? abstract "Login Brute-Force Successful On Jumpcloud Portal"
     
@@ -473,6 +500,7 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
         - 16/08/2024 - minor - The error code 50078 has been excluded as it is not a specific error code related to a login failure that we want to detect and caused several false positives.
         - 14/10/2024 - minor - The error codes 70043, 50173, 70008, 700082, 9002341 have been excluded as they are not related to login failures that we want to detect and caused several false positives.
         - 28/11/2024 - minor - Adding error codes as filters to reduce false positives.
+        - 25/02/2026 - minor - Adding error code 500011 as filters to reduce false positives.
             
 ??? abstract "Login Brute-Force Successful On Jumpcloud Portal"
     
@@ -698,12 +726,20 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 27/02/2026 - minor - Update rule type to integration
+            
 ??? abstract "Varonis Data Security Email Medium Severity Alert"
     
     Varonis Data Security has raised a medium severity alert related to a supervised email account.
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 27/02/2026 - minor - Update rule type to integration
+            
 ??? abstract "Varonis Data Security Network High Severity Alert"
     
     Varonis Data Security has raised a high severity  alert related to a network rule
@@ -713,6 +749,7 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     - **Changelog:**
     
         - 06/10/2025 - minor - Update similarity strategy for more granularity
+        - 12/11/2025 - minor - Update rule type to integration
             
 ??? abstract "Varonis Data Security Network Low Severity Alert"
     
@@ -724,6 +761,7 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     
         - 14/05/2025 - major - Fix pattern where severity level was missing
         - 06/10/2025 - minor - Update similarity strategy for more granularity
+        - 12/11/2025 - minor - Update rule type to integration
             
 ??? abstract "Varonis Data Security Network Medium Severity Alert"
     
@@ -734,6 +772,7 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     - **Changelog:**
     
         - 06/10/2025 - minor - Update similarity strategy for more granularity
+        - 12/11/2025 - minor - Update rule type to integration
             
 **Obtain Capabilities**
 
@@ -983,6 +1022,7 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     
         - 29/01/2025 - minor - Rework pattern for high severity events only and filter out authentication events.
         - 28/03/2024 - minor - Rule effort was updated to master
+        - 27/02/2026 - minor - Update rule type to integration
             
 ??? abstract "Netskope Malware Detected"
     
@@ -990,12 +1030,20 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 27/02/2026 - minor - Update rule type to integration
+            
 ??? abstract "Netskope Malware Patient Zero Detected"
     
     Netskope identified a malware as Patient Zero.
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 27/02/2026 - minor - Update rule type to integration
+            
 ??? abstract "Netskope Potential Brute Force On Protected Applications"
     
     Detects potential brute force on Netskope protected applications with more than 10 failures in 5 minutes for the same user name and application.
@@ -1020,6 +1068,10 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 27/02/2026 - minor - Update rule type to integration
+            
 ??? abstract "Okta Access To Admin Console Denied"
     
     Detects when an attempt was made to access the Okta Admin Console from an interactive user account but failed.
@@ -1091,6 +1143,10 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 05/03/2026 - minor - Update rule type to integration
+            
 ??? abstract "Failed Logon Followed By A Success From Public IP Addresses"
     
     A login from a public IP can indicate a misconfigured firewall or network boundary. The detection look for 5 or more failed attemps followed by a successfull one. The sekoia.tags are used to filter internal Ipv4 addresses.
@@ -1121,6 +1177,7 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     - **Changelog:**
     
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+        - 25/02/2026 - minor - Update rule type to integration
             
 ??? abstract "Trend Micro Cloud One High Intrusion"
     
@@ -1128,18 +1185,30 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 25/02/2026 - minor - Update rule type to integration
+            
 ??? abstract "Trend Micro Cloud One Low Intrusion"
     
     Detects when Trend Micro EDR raised an alert for an intrusion with a low severity level.
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 25/02/2026 - minor - Update rule type to integration
+            
 ??? abstract "Trend Micro Cloud One Medium Intrusion"
     
     Detects when Trend Micro EDR raised an alert for an intrusion with a medium severity level.
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 25/02/2026 - minor - Update rule type to integration
+            
 **Exploit Public-Facing Application**
 
 ??? abstract "CVE-2018-11776 Apache Struts2"
@@ -1329,6 +1398,10 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 12/11/2025 - minor - Update rule type to integration
+            
 ??? abstract "Cisco ESA Suspicious Email With Attachment"
     
     Detects an email with an attachment, from a sender tagged as suspect, detected by either the Antivirus or the Advanced Malware Protection (AMP) engine and delivered to the recipient
@@ -1352,6 +1425,7 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
         - 28/07/2025 - major - Improve filter and similarity strategy.
         - 05/08/2025 - minor - Improve filter to avoid false positives
         - 06/10/2025 - minor - Improve filter to avoid false positives
+        - 02/02/2026 - minor - Improved selection to avoid false positives by forcing the destination.ip field.
             
 ??? abstract "Download Files From Suspicious TLDs"
     
@@ -1680,6 +1754,10 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 12/11/2025 - minor - Update rule type to integration
+            
 ??? abstract "Spam Detected By Vade For M365"
     
     Vade Secure product Vade for M365, has detected a spam e-mail.
@@ -1742,6 +1820,7 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     
         - 13/06/2024 - minor - Adding similarity strategy and changing effort level.
         - 15/10/2024 - minor - Adding filter to reduce false positives.
+        - 06/01/2026 - minor - Update filter to reduce false positives.
             
 ??? abstract "Suspicious Email Attachment Received"
     
@@ -1773,6 +1852,10 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 12/11/2025 - minor - Update rule type to integration
+            
 ## Execution
 **Windows Management Instrumentation**
 
@@ -1962,6 +2045,16 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     
     - **Effort:** intermediate
     
+??? abstract "Scheduled Task Creation By Non Privileged User"
+    
+    Detects scheduled task creation, either executed by a non-system user or a user who is not administrator (the user ID is not S-1-5-18 or S-1-5-18-*). This detection rule doesn't match Sysmon EventID 1 because the user SID is always set to S-1-5-18. 
+    
+    - **Effort:** master
+    
+    - **Changelog:**
+    
+        - 03/12/2025 - minor - Change rule effort level and update of rule name
+            
 ??? abstract "Schtasks Persistence With High Privileges"
     
     Detection of scheduled task with high privileges used by attacker for persistence.
@@ -1980,21 +2073,16 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     
     - **Effort:** intermediate
     
-??? abstract "Suspicious Scheduled Task Creation"
-    
-    Detects suspicious scheduled task creation, either executed by a non-system user or a user who is not administrator (the user ID is not S-1-5-18 or S-1-5-18-*). This detection rule doesn't match Sysmon EventID 1 because the user SID is always set to S-1-5-18. 
-    
-    - **Effort:** intermediate
-    
 ??? abstract "Windows Suspicious Scheduled Task Creation"
     
-    The rule identify creation of new scheduled task who run suspicious or dangerous command
+    The rule identify creation of new scheduled task who run suspicious commands.
     
-    - **Effort:** intermediate
+    - **Effort:** master
     
     - **Changelog:**
     
         - 24/04/2025 - minor - Adding similarity strategy.
+        - 03/12/2025 - major - Change rule effort level according to sigthings
             
 **Command and Scripting Interpreter**
 
@@ -2017,6 +2105,7 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     - **Changelog:**
     
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+        - 12/11/2025 - minor - Update rule type to integration
             
 ??? abstract "AWS GuardDuty Low Severity Alert"
     
@@ -2024,6 +2113,10 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 27/02/2026 - minor - Update rule type to integration
+            
 ??? abstract "AWS GuardDuty Medium Severity Alert"
     
     GuardDuty has detected a threat with a medium severity level. A Medium severity level indicates suspicious activity that deviates from normally observed behavior and, depending on your use case, may be indicative of a resource compromise.
@@ -2033,6 +2126,7 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     - **Changelog:**
     
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+        - 27/02/2026 - minor - Update rule type to integration
             
 ??? abstract "Alternate PowerShell Hosts Pipe"
     
@@ -2101,6 +2195,7 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     
     - **Changelog:**
     
+        - 10/02/2026 - minor - Update rule type to integration
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
             
 ??? abstract "CrowdStrike Falcon Identity Protection Detection High Severity"
@@ -2111,6 +2206,7 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     
     - **Changelog:**
     
+        - 10/02/2026 - minor - Update rule type to integration
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
             
 ??? abstract "CrowdStrike Falcon Identity Protection Detection Informational Severity"
@@ -2121,6 +2217,7 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     
     - **Changelog:**
     
+        - 10/02/2026 - minor - Update rule type to integration
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
             
 ??? abstract "CrowdStrike Falcon Identity Protection Detection Low Severity"
@@ -2131,6 +2228,7 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     
     - **Changelog:**
     
+        - 10/02/2026 - minor - Update rule type to integration
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
             
 ??? abstract "CrowdStrike Falcon Identity Protection Detection Medium Severity"
@@ -2141,6 +2239,7 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     
     - **Changelog:**
     
+        - 10/02/2026 - minor - Update rule type to integration
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
             
 ??? abstract "CrowdStrike Falcon Intrusion Detection"
@@ -2151,6 +2250,7 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     
     - **Changelog:**
     
+        - 10/02/2026 - minor - Update rule type to integration
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
             
 ??? abstract "CrowdStrike Falcon Intrusion Detection Critical Severity"
@@ -2161,6 +2261,7 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     
     - **Changelog:**
     
+        - 10/02/2026 - minor - Update rule type to integration
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
             
 ??? abstract "CrowdStrike Falcon Intrusion Detection Critical Severity EppDetection"
@@ -2169,6 +2270,10 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 10/02/2026 - minor - Update rule type to integration
+            
 ??? abstract "CrowdStrike Falcon Intrusion Detection EppDetection"
     
     CrowdStrike Falcon agent raised an alert for an intrusion detection with the new EppDetectionSummaryEvent type.
@@ -2177,6 +2282,7 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     
     - **Changelog:**
     
+        - 10/02/2026 - minor - Update rule type to integration
         - 05/08/2025 - minor - Alert severity updated to match Crowdstrike's values
             
 ??? abstract "CrowdStrike Falcon Intrusion Detection High Severity"
@@ -2187,6 +2293,7 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     
     - **Changelog:**
     
+        - 10/02/2026 - minor - Update rule type to integration
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
             
 ??? abstract "CrowdStrike Falcon Intrusion Detection High Severity EppDetection"
@@ -2197,6 +2304,7 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     
     - **Changelog:**
     
+        - 10/02/2026 - minor - Update rule type to integration
         - 02/10/2025 - minor - Alert severity updated to match Crowdstrike's values and sekoia rule CrowdStrike Falcon Intrusion Detection High Severity
         - 05/08/2025 - minor - Alert severity updated to match Crowdstrike's values
             
@@ -2208,6 +2316,7 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     
     - **Changelog:**
     
+        - 10/02/2026 - minor - Update rule type to integration
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
             
 ??? abstract "CrowdStrike Falcon Intrusion Detection Informational Severity EppDetection"
@@ -2218,6 +2327,7 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     
     - **Changelog:**
     
+        - 10/02/2026 - minor - Update rule type to integration
         - 05/08/2025 - minor - Alert severity updated to match Crowdstrike's values
             
 ??? abstract "CrowdStrike Falcon Intrusion Detection Low Severity"
@@ -2228,6 +2338,7 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     
     - **Changelog:**
     
+        - 10/02/2026 - minor - Update rule type to integration
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
             
 ??? abstract "CrowdStrike Falcon Intrusion Detection Low Severity EppDetection"
@@ -2238,6 +2349,7 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     
     - **Changelog:**
     
+        - 10/02/2026 - minor - Update rule type to integration
         - 05/08/2025 - minor - Alert severity updated to match Crowdstrike's values
             
 ??? abstract "CrowdStrike Falcon Intrusion Detection Medium Severity"
@@ -2248,6 +2360,7 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     
     - **Changelog:**
     
+        - 10/02/2026 - minor - Update rule type to integration
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
             
 ??? abstract "CrowdStrike Falcon Intrusion Detection Medium Severity EppDetection"
@@ -2258,6 +2371,7 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     
     - **Changelog:**
     
+        - 10/02/2026 - minor - Update rule type to integration
         - 05/08/2025 - minor - Alert severity updated to match Crowdstrike's values
             
 ??? abstract "Cybereason EDR Alert"
@@ -2269,6 +2383,7 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     - **Changelog:**
     
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+        - 25/02/2026 - minor - Update rule type to integration
             
 ??? abstract "Cybereason EDR Malware Detection"
     
@@ -2278,6 +2393,7 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     
     - **Changelog:**
     
+        - 30/01/2026 - minor - Updating similarity to use malop id.
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
             
 ??? abstract "DNS Exfiltration and Tunneling Tools Execution"
@@ -2342,6 +2458,10 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 05/03/2026 - minor - Update rule type to integration
+            
 ??? abstract "Generic-reverse-shell-oneliner"
     
     To bypass some security equipement or for a sack of simplicity attackers can open raw reverse shell using shell commands
@@ -2493,6 +2613,10 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 12/11/2025 - minor - Update rule type to integration
+            
 ??? abstract "Microsoft Defender XDR Endpoint Alert"
     
     Microsoft Defender XDR has raised an alert for Microsoft Defender for Endpoint. The alert info and evidence events are grouped with the similarity into the same Sekoia.io alert.
@@ -2505,6 +2629,10 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 12/11/2025 - minor - Update rule type to integration
+            
 ??? abstract "Microsoft Defender XDR Office 365 Alert"
     
     Microsoft Defender XDR for Office 365 has raised an alert. The alert info and evidence events are grouped with the similarity into the same Sekoia.io alert.
@@ -2673,7 +2801,7 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     
 ??? abstract "Raw Reverse Shell"
     
-    To bypass some security equipement or for a sack of simplicity attackers can open raw reverse shell using sh and or bash commands
+    To bypass some security equipment or for a sack of simplicity attackers can open raw reverse shell using sh and or bash commands
     
     - **Effort:** master
     
@@ -2699,6 +2827,10 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 02/02/2026 - minor - Update rule type to integration
+            
 ??? abstract "SentinelOne EDR Custom Rule Alert"
     
     A SentinelOne EDR agent has detected a threat related to a Custom Rule and raised an alert for it.
@@ -2708,6 +2840,7 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     - **Changelog:**
     
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+        - 02/02/2026 - minor - Update rule type to integration
             
 ??? abstract "SentinelOne EDR Malicious Threat Detected And Mitigated Preemptively"
     
@@ -2718,6 +2851,7 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     - **Changelog:**
     
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+        - 02/02/2026 - minor - Update rule type to integration
             
 ??? abstract "SentinelOne EDR Malicious Threat Not Mitigated"
     
@@ -2728,6 +2862,7 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     - **Changelog:**
     
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+        - 02/02/2026 - minor - Update rule type to integration
             
 ??? abstract "SentinelOne EDR SSO User Added"
     
@@ -2738,6 +2873,7 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     - **Changelog:**
     
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+        - 02/02/2026 - minor - Update rule type to integration
             
 ??? abstract "SentinelOne EDR Suspicious Threat Not Mitigated (Medium Confidence)"
     
@@ -2748,6 +2884,7 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     - **Changelog:**
     
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+        - 02/02/2026 - minor - Update rule type to integration
             
 ??? abstract "SentinelOne EDR Threat Detected (Malicious)"
     
@@ -2758,6 +2895,7 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     - **Changelog:**
     
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+        - 02/02/2026 - minor - Update rule type to integration
             
 ??? abstract "SentinelOne EDR Threat Detected (Suspicious)"
     
@@ -2768,6 +2906,7 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     - **Changelog:**
     
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+        - 02/02/2026 - minor - Update rule type to integration
             
 ??? abstract "SentinelOne EDR Threat Mitigation Report Kill Success"
     
@@ -2778,6 +2917,7 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     - **Changelog:**
     
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+        - 02/02/2026 - minor - Update rule type to integration
             
 ??? abstract "SentinelOne EDR Threat Mitigation Report Quarantine Failed"
     
@@ -2788,6 +2928,7 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     - **Changelog:**
     
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+        - 02/02/2026 - minor - Update rule type to integration
             
 ??? abstract "SentinelOne EDR Threat Mitigation Report Quarantine Success"
     
@@ -2798,6 +2939,7 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     - **Changelog:**
     
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+        - 02/02/2026 - minor - Update rule type to integration
             
 ??? abstract "SentinelOne EDR Threat Mitigation Report Remediate Success"
     
@@ -2808,6 +2950,7 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     - **Changelog:**
     
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+        - 02/02/2026 - minor - Update rule type to integration
             
 ??? abstract "SentinelOne EDR User Failed To Log In To The Management Console"
     
@@ -2815,6 +2958,10 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 02/02/2026 - minor - Update rule type to integration
+            
 ??? abstract "SentinelOne EDR User Logged In To The Management Console"
     
     A user has logged in to the management console.
@@ -2824,6 +2971,7 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     - **Changelog:**
     
         - 24/03/2023 - minor - Adjusting displayed columns when the rule triggers an alert. Now timestamp and username will be displayed.
+        - 02/02/2026 - minor - Update rule type to integration
             
 ??? abstract "Socat Relaying Socket"
     
@@ -2984,6 +3132,10 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 25/02/2026 - minor - Update rule type to integration
+            
 ??? abstract "Trend Micro Apex One Data Loss Prevention Alert"
     
     Trend Micro Apex One has raised an alert for data loss prevention.
@@ -2993,6 +3145,7 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     - **Changelog:**
     
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+        - 25/02/2026 - minor - Update rule type to integration
             
 ??? abstract "Trend Micro Apex One Malware Alert"
     
@@ -3003,6 +3156,7 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     - **Changelog:**
     
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+        - 25/02/2026 - minor - Update rule type to integration
             
 ??? abstract "Trend Micro Vision One Workbench Critical Severity Alert"
     
@@ -3010,24 +3164,40 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 25/02/2026 - minor - Update rule type to integration
+            
 ??? abstract "Trend Micro Vision One Workbench Low Severity Alert"
     
     Detects when a low alert severity is raised by Trend Micro Vision One Workbench.
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 25/02/2026 - minor - Update rule type to integration
+            
 ??? abstract "Trend Micro Vision One Workbench Medium Severity Alert"
     
     Detects when a medium alert severity is raised by Trend Micro Vision One Workbench.
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 25/02/2026 - minor - Update rule type to integration
+            
 ??? abstract "Trend Micro Vision One Workbench high Severity Alert"
     
     Detects when a high alert severity is raised by Trend Micro Vision One Workbench.
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 25/02/2026 - minor - Update rule type to integration
+            
 ??? abstract "Trickbot Malware Activity"
     
     Detects Trickbot malware process tree pattern in which rundll32.exe is parent of wermgr.exe.
@@ -3180,10 +3350,14 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
 
 ??? abstract "Antivirus Exploitation Framework Detection"
     
-    Detects a highly relevant Antivirus alert that reports an exploitation framework. This is based on Windows Defender logs (Event ID 1116 and 1117).
+    Detects a highly relevant Antivirus alert that reports an exploitation framework. This is based on Windows Defender logs (Event ID 1116 and 1117). 
     
     - **Effort:** elementary
     
+    - **Changelog:**
+    
+        - 16/02/2026 - minor - Filtering out Event ID 1011 which caused false positives. The rule fired at the deletion of a quarantined file by Defender which was not the wanted behaviour.
+            
 ??? abstract "Antivirus Password Dumper Detection"
     
     Detects a highly relevant Antivirus alert that reports a password dumper. This detection relies on Windows Defender events logs. This is based on Windows Defender logs (Event ID 1116 and 1117).
@@ -3223,6 +3397,7 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
         - 28/07/2025 - major - Improve filter and similarity strategy.
         - 05/08/2025 - minor - Improve filter to avoid false positives
         - 06/10/2025 - minor - Improve filter to avoid false positives
+        - 02/02/2026 - minor - Improved selection to avoid false positives by forcing the destination.ip field.
             
 ??? abstract "Download Files From Suspicious TLDs"
     
@@ -3275,6 +3450,7 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     - **Changelog:**
     
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+        - 12/11/2025 - minor - Update rule type to integration
             
 ??? abstract "AWS GuardDuty Low Severity Alert"
     
@@ -3282,6 +3458,10 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 27/02/2026 - minor - Update rule type to integration
+            
 ??? abstract "AWS GuardDuty Medium Severity Alert"
     
     GuardDuty has detected a threat with a medium severity level. A Medium severity level indicates suspicious activity that deviates from normally observed behavior and, depending on your use case, may be indicative of a resource compromise.
@@ -3291,6 +3471,7 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     - **Changelog:**
     
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+        - 27/02/2026 - minor - Update rule type to integration
             
 ??? abstract "Alert High Severity Sesame it Jizo NDR"
     
@@ -3298,6 +3479,10 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 05/03/2026 - minor - Update rule type to integration
+            
 ??? abstract "Bitdefender GravityZone Endpoint Detection"
     
     Bitdefender GravityZone detected a malicious activity on an endpoint
@@ -3360,6 +3545,7 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     
     - **Changelog:**
     
+        - 10/02/2026 - minor - Update rule type to integration
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
             
 ??? abstract "CrowdStrike Falcon Identity Protection Detection High Severity"
@@ -3370,6 +3556,7 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     
     - **Changelog:**
     
+        - 10/02/2026 - minor - Update rule type to integration
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
             
 ??? abstract "CrowdStrike Falcon Identity Protection Detection Informational Severity"
@@ -3380,6 +3567,7 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     
     - **Changelog:**
     
+        - 10/02/2026 - minor - Update rule type to integration
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
             
 ??? abstract "CrowdStrike Falcon Identity Protection Detection Low Severity"
@@ -3390,6 +3578,7 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     
     - **Changelog:**
     
+        - 10/02/2026 - minor - Update rule type to integration
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
             
 ??? abstract "CrowdStrike Falcon Identity Protection Detection Medium Severity"
@@ -3400,6 +3589,7 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     
     - **Changelog:**
     
+        - 10/02/2026 - minor - Update rule type to integration
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
             
 ??? abstract "CrowdStrike Falcon Intrusion Detection"
@@ -3410,6 +3600,7 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     
     - **Changelog:**
     
+        - 10/02/2026 - minor - Update rule type to integration
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
             
 ??? abstract "CrowdStrike Falcon Intrusion Detection Critical Severity"
@@ -3420,6 +3611,7 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     
     - **Changelog:**
     
+        - 10/02/2026 - minor - Update rule type to integration
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
             
 ??? abstract "CrowdStrike Falcon Intrusion Detection Critical Severity EppDetection"
@@ -3428,6 +3620,10 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 10/02/2026 - minor - Update rule type to integration
+            
 ??? abstract "CrowdStrike Falcon Intrusion Detection EppDetection"
     
     CrowdStrike Falcon agent raised an alert for an intrusion detection with the new EppDetectionSummaryEvent type.
@@ -3436,6 +3632,7 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     
     - **Changelog:**
     
+        - 10/02/2026 - minor - Update rule type to integration
         - 05/08/2025 - minor - Alert severity updated to match Crowdstrike's values
             
 ??? abstract "CrowdStrike Falcon Intrusion Detection High Severity"
@@ -3446,6 +3643,7 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     
     - **Changelog:**
     
+        - 10/02/2026 - minor - Update rule type to integration
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
             
 ??? abstract "CrowdStrike Falcon Intrusion Detection High Severity EppDetection"
@@ -3456,6 +3654,7 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     
     - **Changelog:**
     
+        - 10/02/2026 - minor - Update rule type to integration
         - 02/10/2025 - minor - Alert severity updated to match Crowdstrike's values and sekoia rule CrowdStrike Falcon Intrusion Detection High Severity
         - 05/08/2025 - minor - Alert severity updated to match Crowdstrike's values
             
@@ -3467,6 +3666,7 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     
     - **Changelog:**
     
+        - 10/02/2026 - minor - Update rule type to integration
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
             
 ??? abstract "CrowdStrike Falcon Intrusion Detection Informational Severity EppDetection"
@@ -3477,6 +3677,7 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     
     - **Changelog:**
     
+        - 10/02/2026 - minor - Update rule type to integration
         - 05/08/2025 - minor - Alert severity updated to match Crowdstrike's values
             
 ??? abstract "CrowdStrike Falcon Intrusion Detection Low Severity"
@@ -3487,6 +3688,7 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     
     - **Changelog:**
     
+        - 10/02/2026 - minor - Update rule type to integration
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
             
 ??? abstract "CrowdStrike Falcon Intrusion Detection Low Severity EppDetection"
@@ -3497,6 +3699,7 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     
     - **Changelog:**
     
+        - 10/02/2026 - minor - Update rule type to integration
         - 05/08/2025 - minor - Alert severity updated to match Crowdstrike's values
             
 ??? abstract "CrowdStrike Falcon Intrusion Detection Medium Severity"
@@ -3507,6 +3710,7 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     
     - **Changelog:**
     
+        - 10/02/2026 - minor - Update rule type to integration
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
             
 ??? abstract "CrowdStrike Falcon Intrusion Detection Medium Severity EppDetection"
@@ -3517,6 +3721,7 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     
     - **Changelog:**
     
+        - 10/02/2026 - minor - Update rule type to integration
         - 05/08/2025 - minor - Alert severity updated to match Crowdstrike's values
             
 ??? abstract "Cybereason EDR Alert"
@@ -3528,6 +3733,7 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     - **Changelog:**
     
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+        - 25/02/2026 - minor - Update rule type to integration
             
 ??? abstract "Cybereason EDR Malware Detection"
     
@@ -3537,6 +3743,7 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     
     - **Changelog:**
     
+        - 30/01/2026 - minor - Updating similarity to use malop id.
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
             
 ??? abstract "Darktrace Threat Visualizer Model Breach Critical Activity"
@@ -3549,6 +3756,7 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     
         - 12/11/2024 - minor - Update name, description, similarity and severity
         - 02/07/2025 - minor - Update similarity
+        - 27/02/2026 - minor - Update rule type to integration
             
 ??? abstract "Darktrace Threat Visualizer Model Breach Suspicious Activity"
     
@@ -3560,6 +3768,7 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     
         - 12/11/2024 - minor - Update name, description, similarity and severity
         - 02/07/2025 - minor - Update similarity
+        - 27/02/2026 - minor - Update rule type to integration
             
 ??? abstract "Darktrace Threat Visualizer Threat Critical Alert"
     
@@ -3567,12 +3776,20 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 05/03/2026 - minor - Update rule type to integration
+            
 ??? abstract "Darktrace Threat Visualizer Threat Suspicious Alert"
     
     Darktrace Threat Visualizer has raised a threat suspicious alert related to one supervised device
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 05/03/2026 - minor - Update rule type to integration
+            
 ??? abstract "Download Files From Non-Legitimate TLDs"
     
     Detects file downloads from non-legitimate TLDs. Additional legitimates TLDs should be filtered according to the business habits.
@@ -3584,6 +3801,7 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
         - 28/07/2025 - major - Improve filter and similarity strategy.
         - 05/08/2025 - minor - Improve filter to avoid false positives
         - 06/10/2025 - minor - Improve filter to avoid false positives
+        - 02/02/2026 - minor - Improved selection to avoid false positives by forcing the destination.ip field.
             
 ??? abstract "Download Files From Suspicious TLDs"
     
@@ -3630,6 +3848,7 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     
         - 24/01/2025 - minor - Adding filter to reduce false positives.
         - 27/01/2025 - minor - Changing field and adding filter to reduce false positives.
+        - 05/03/2026 - minor - Update rule type to integration
             
 ??? abstract "Google Workspace Anomaly File Downloads"
     
@@ -3804,24 +4023,40 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 27/02/2026 - minor - Update rule type to integration
+            
 ??? abstract "Lacework Cloud Security High Severity Alert"
     
     Detects when a high alert severity is raised by Lacework. This severity level might indicates a suspicious change in configuration or policy violation.
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 27/02/2026 - minor - Update rule type to integration
+            
 ??? abstract "Lacework Cloud Security Low Severity Alert"
     
     Detects when a low alert severity is raised by Lacework. This severity level might indicates a change in configuration that could be malicious or not.
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 27/02/2026 - minor - Update rule type to integration
+            
 ??? abstract "Lacework Cloud Security Medium Severity Alert"
     
     Detects when a medium alert severity is raised by Lacework. This severity level might indicates a suspicious activity such as new source from user connection.
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 27/02/2026 - minor - Update rule type to integration
+            
 ??? abstract "Login Brute-Force Successful On SentinelOne EDR Management Console"
     
     A user has attempted to login several times (brute-force) on the SentinelOne EDR Management Console and succeeded to login.
@@ -4050,6 +4285,10 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 12/11/2025 - minor - Update rule type to integration
+            
 ??? abstract "Microsoft Defender XDR Endpoint Alert"
     
     Microsoft Defender XDR has raised an alert for Microsoft Defender for Endpoint. The alert info and evidence events are grouped with the similarity into the same Sekoia.io alert.
@@ -4062,6 +4301,10 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 12/11/2025 - minor - Update rule type to integration
+            
 ??? abstract "Microsoft Defender XDR Office 365 Alert"
     
     Microsoft Defender XDR for Office 365 has raised an alert. The alert info and evidence events are grouped with the similarity into the same Sekoia.io alert.
@@ -4126,6 +4369,8 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     - **Changelog:**
     
         - 10/03/2025 - minor - Update severity to match the severity level from the editor
+        - 25/02/2026 - minor - Update rule type to integration
+        - 04/03/2026 - minor - Similarity strategy updated to caseID
             
 ??? abstract "Palo Alto Cortex XDR (EDR) Alert Not Blocked (Low Severity)"
     
@@ -4136,6 +4381,8 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     - **Changelog:**
     
         - 10/03/2025 - minor - Update severity to match the severity level from the editor
+        - 25/02/2026 - minor - Update rule type to integration
+        - 04/03/2026 - minor - Similarity strategy updated to caseID
             
 ??? abstract "Palo Alto Cortex XDR (EDR) Alert Not Blocked (Medium Severity)"
     
@@ -4146,6 +4393,8 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     - **Changelog:**
     
         - 10/03/2025 - minor - Update severity to match the severity level from the editor
+        - 25/02/2026 - minor - Update rule type to integration
+        - 04/03/2026 - minor - Similarity strategy updated to caseID
             
 ??? abstract "SentinelOne EDR Agent Disabled"
     
@@ -4153,6 +4402,10 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 02/02/2026 - minor - Update rule type to integration
+            
 ??? abstract "SentinelOne EDR Custom Rule Alert"
     
     A SentinelOne EDR agent has detected a threat related to a Custom Rule and raised an alert for it.
@@ -4162,6 +4415,7 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     - **Changelog:**
     
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+        - 02/02/2026 - minor - Update rule type to integration
             
 ??? abstract "SentinelOne EDR Malicious Threat Detected And Mitigated Preemptively"
     
@@ -4172,6 +4426,7 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     - **Changelog:**
     
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+        - 02/02/2026 - minor - Update rule type to integration
             
 ??? abstract "SentinelOne EDR Malicious Threat Not Mitigated"
     
@@ -4182,6 +4437,7 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     - **Changelog:**
     
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+        - 02/02/2026 - minor - Update rule type to integration
             
 ??? abstract "SentinelOne EDR SSO User Added"
     
@@ -4192,6 +4448,7 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     - **Changelog:**
     
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+        - 02/02/2026 - minor - Update rule type to integration
             
 ??? abstract "SentinelOne EDR Suspicious Threat Not Mitigated (Medium Confidence)"
     
@@ -4202,6 +4459,7 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     - **Changelog:**
     
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+        - 02/02/2026 - minor - Update rule type to integration
             
 ??? abstract "SentinelOne EDR Threat Detected (Malicious)"
     
@@ -4212,6 +4470,7 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     - **Changelog:**
     
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+        - 02/02/2026 - minor - Update rule type to integration
             
 ??? abstract "SentinelOne EDR Threat Detected (Suspicious)"
     
@@ -4222,6 +4481,7 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     - **Changelog:**
     
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+        - 02/02/2026 - minor - Update rule type to integration
             
 ??? abstract "SentinelOne EDR Threat Mitigation Report Kill Success"
     
@@ -4232,6 +4492,7 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     - **Changelog:**
     
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+        - 02/02/2026 - minor - Update rule type to integration
             
 ??? abstract "SentinelOne EDR Threat Mitigation Report Quarantine Failed"
     
@@ -4242,6 +4503,7 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     - **Changelog:**
     
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+        - 02/02/2026 - minor - Update rule type to integration
             
 ??? abstract "SentinelOne EDR Threat Mitigation Report Quarantine Success"
     
@@ -4252,6 +4514,7 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     - **Changelog:**
     
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+        - 02/02/2026 - minor - Update rule type to integration
             
 ??? abstract "SentinelOne EDR Threat Mitigation Report Remediate Success"
     
@@ -4262,6 +4525,7 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     - **Changelog:**
     
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+        - 02/02/2026 - minor - Update rule type to integration
             
 ??? abstract "SentinelOne EDR User Failed To Log In To The Management Console"
     
@@ -4269,6 +4533,10 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 02/02/2026 - minor - Update rule type to integration
+            
 ??? abstract "SentinelOne EDR User Logged In To The Management Console"
     
     A user has logged in to the management console.
@@ -4278,6 +4546,7 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     - **Changelog:**
     
         - 24/03/2023 - minor - Adjusting displayed columns when the rule triggers an alert. Now timestamp and username will be displayed.
+        - 02/02/2026 - minor - Update rule type to integration
             
 ??? abstract "Sophos EDR Application Blocked"
     
@@ -4333,18 +4602,30 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 05/03/2026 - minor - Update rule type to integration
+            
 ??? abstract "Suricata Exploit Kit Activity Detected High Severity Alert"
     
     Detects a high severity alert triggered from Suricata Exploit Kit Activity Detected category.
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 05/03/2026 - minor - Update rule type to integration
+            
 ??? abstract "Suricata Web Application Attack High Severity Alert"
     
     Detects a high severity alert triggered from Suricata Web Application Attack category.
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 05/03/2026 - minor - Update rule type to integration
+            
 ??? abstract "Suspicious DLL Loaded Via Office Applications"
     
     Detects suspicious DLL being loaded by an Microsoft Office Product. Considered as suspects are some .NET DLLs, clr.dll, GAC DLL, DSParse (Active Directoryi services API) or Kerberos DLLs which may be loaded by MS Office processes when executing a potentially malicious macro. The prerequisite is to log the Sysmon Event ID 7 (DLL image loaded by process). 
@@ -4369,6 +4650,10 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 25/02/2026 - minor - Update rule type to integration
+            
 ??? abstract "Trend Micro Apex One Data Loss Prevention Alert"
     
     Trend Micro Apex One has raised an alert for data loss prevention.
@@ -4378,6 +4663,7 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     - **Changelog:**
     
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+        - 25/02/2026 - minor - Update rule type to integration
             
 ??? abstract "Trend Micro Apex One Malware Alert"
     
@@ -4388,6 +4674,7 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     - **Changelog:**
     
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+        - 25/02/2026 - minor - Update rule type to integration
             
 ??? abstract "Trend Micro Vision One Workbench Critical Severity Alert"
     
@@ -4395,24 +4682,40 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 25/02/2026 - minor - Update rule type to integration
+            
 ??? abstract "Trend Micro Vision One Workbench Low Severity Alert"
     
     Detects when a low alert severity is raised by Trend Micro Vision One Workbench.
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 25/02/2026 - minor - Update rule type to integration
+            
 ??? abstract "Trend Micro Vision One Workbench Medium Severity Alert"
     
     Detects when a medium alert severity is raised by Trend Micro Vision One Workbench.
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 25/02/2026 - minor - Update rule type to integration
+            
 ??? abstract "Trend Micro Vision One Workbench high Severity Alert"
     
     Detects when a high alert severity is raised by Trend Micro Vision One Workbench.
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 25/02/2026 - minor - Update rule type to integration
+            
 ??? abstract "Vectra General Threat Detection"
     
     Vectra Cognito detected a potential threat. This is a very generic rule to raise as much alerts as possible from Vectra detections however RECONNAISSANCE and INFO categories have been removed to avoid spamming.
@@ -4422,6 +4725,7 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     - **Changelog:**
     
         - 06/10/2025 - minor - Update sources link
+        - 12/11/2025 - minor - Update rule type to integration
             
 ??? abstract "Winword Document Droppers"
     
@@ -4518,6 +4822,7 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     
     - **Changelog:**
     
+        - 10/02/2026 - minor - Update rule type to integration
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
             
 ??? abstract "CrowdStrike Falcon Identity Protection Detection High Severity"
@@ -4528,6 +4833,7 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     
     - **Changelog:**
     
+        - 10/02/2026 - minor - Update rule type to integration
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
             
 ??? abstract "CrowdStrike Falcon Identity Protection Detection Informational Severity"
@@ -4538,6 +4844,7 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     
     - **Changelog:**
     
+        - 10/02/2026 - minor - Update rule type to integration
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
             
 ??? abstract "CrowdStrike Falcon Identity Protection Detection Low Severity"
@@ -4548,6 +4855,7 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     
     - **Changelog:**
     
+        - 10/02/2026 - minor - Update rule type to integration
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
             
 ??? abstract "CrowdStrike Falcon Identity Protection Detection Medium Severity"
@@ -4558,6 +4866,7 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     
     - **Changelog:**
     
+        - 10/02/2026 - minor - Update rule type to integration
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
             
 ??? abstract "CrowdStrike Falcon Intrusion Detection"
@@ -4568,6 +4877,7 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     
     - **Changelog:**
     
+        - 10/02/2026 - minor - Update rule type to integration
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
             
 ??? abstract "CrowdStrike Falcon Intrusion Detection Critical Severity"
@@ -4578,6 +4888,7 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     
     - **Changelog:**
     
+        - 10/02/2026 - minor - Update rule type to integration
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
             
 ??? abstract "CrowdStrike Falcon Intrusion Detection Critical Severity EppDetection"
@@ -4586,6 +4897,10 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 10/02/2026 - minor - Update rule type to integration
+            
 ??? abstract "CrowdStrike Falcon Intrusion Detection EppDetection"
     
     CrowdStrike Falcon agent raised an alert for an intrusion detection with the new EppDetectionSummaryEvent type.
@@ -4594,6 +4909,7 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     
     - **Changelog:**
     
+        - 10/02/2026 - minor - Update rule type to integration
         - 05/08/2025 - minor - Alert severity updated to match Crowdstrike's values
             
 ??? abstract "CrowdStrike Falcon Intrusion Detection High Severity"
@@ -4604,6 +4920,7 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     
     - **Changelog:**
     
+        - 10/02/2026 - minor - Update rule type to integration
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
             
 ??? abstract "CrowdStrike Falcon Intrusion Detection High Severity EppDetection"
@@ -4614,6 +4931,7 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     
     - **Changelog:**
     
+        - 10/02/2026 - minor - Update rule type to integration
         - 02/10/2025 - minor - Alert severity updated to match Crowdstrike's values and sekoia rule CrowdStrike Falcon Intrusion Detection High Severity
         - 05/08/2025 - minor - Alert severity updated to match Crowdstrike's values
             
@@ -4625,6 +4943,7 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     
     - **Changelog:**
     
+        - 10/02/2026 - minor - Update rule type to integration
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
             
 ??? abstract "CrowdStrike Falcon Intrusion Detection Informational Severity EppDetection"
@@ -4635,6 +4954,7 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     
     - **Changelog:**
     
+        - 10/02/2026 - minor - Update rule type to integration
         - 05/08/2025 - minor - Alert severity updated to match Crowdstrike's values
             
 ??? abstract "CrowdStrike Falcon Intrusion Detection Low Severity"
@@ -4645,6 +4965,7 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     
     - **Changelog:**
     
+        - 10/02/2026 - minor - Update rule type to integration
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
             
 ??? abstract "CrowdStrike Falcon Intrusion Detection Low Severity EppDetection"
@@ -4655,6 +4976,7 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     
     - **Changelog:**
     
+        - 10/02/2026 - minor - Update rule type to integration
         - 05/08/2025 - minor - Alert severity updated to match Crowdstrike's values
             
 ??? abstract "CrowdStrike Falcon Intrusion Detection Medium Severity"
@@ -4665,6 +4987,7 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     
     - **Changelog:**
     
+        - 10/02/2026 - minor - Update rule type to integration
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
             
 ??? abstract "CrowdStrike Falcon Intrusion Detection Medium Severity EppDetection"
@@ -4675,16 +4998,18 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     
     - **Changelog:**
     
+        - 10/02/2026 - minor - Update rule type to integration
         - 05/08/2025 - minor - Alert severity updated to match Crowdstrike's values
             
 ??? abstract "Csrss Child Found"
     
     The csrss.exe process (csrss stands for Client / Server Runtime Subsystem) is a generic Windows process used to manage windows and Windows graphics. This process  should not create a child process or it is very rare.
     
-    - **Effort:** intermediate
+    - **Effort:** advanced
     
     - **Changelog:**
     
+        - 23/12/2025 - minor - Rule was moved to advanced effort level considering the number of alerts and addtional filters were added.
         - 16/12/2024 - minor - Improve pattern mandatory fields and add filter to reduce false positives
             
 ??? abstract "Csrss Wrong Parent"
@@ -4709,6 +5034,7 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     - **Changelog:**
     
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+        - 25/02/2026 - minor - Update rule type to integration
             
 ??? abstract "Cybereason EDR Malware Detection"
     
@@ -4718,6 +5044,7 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     
     - **Changelog:**
     
+        - 30/01/2026 - minor - Updating similarity to use malop id.
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
             
 ??? abstract "Dllhost Wrong Parent"
@@ -4863,6 +5190,10 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 12/11/2025 - minor - Update rule type to integration
+            
 ??? abstract "Microsoft Defender XDR Endpoint Alert"
     
     Microsoft Defender XDR has raised an alert for Microsoft Defender for Endpoint. The alert info and evidence events are grouped with the similarity into the same Sekoia.io alert.
@@ -4875,6 +5206,10 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 12/11/2025 - minor - Update rule type to integration
+            
 ??? abstract "Microsoft Defender XDR Office 365 Alert"
     
     Microsoft Defender XDR for Office 365 has raised an alert. The alert info and evidence events are grouped with the similarity into the same Sekoia.io alert.
@@ -4973,6 +5308,10 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 02/02/2026 - minor - Update rule type to integration
+            
 ??? abstract "SentinelOne EDR Custom Rule Alert"
     
     A SentinelOne EDR agent has detected a threat related to a Custom Rule and raised an alert for it.
@@ -4982,6 +5321,7 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     - **Changelog:**
     
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+        - 02/02/2026 - minor - Update rule type to integration
             
 ??? abstract "SentinelOne EDR Malicious Threat Detected And Mitigated Preemptively"
     
@@ -4992,6 +5332,7 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     - **Changelog:**
     
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+        - 02/02/2026 - minor - Update rule type to integration
             
 ??? abstract "SentinelOne EDR Malicious Threat Not Mitigated"
     
@@ -5002,6 +5343,7 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     - **Changelog:**
     
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+        - 02/02/2026 - minor - Update rule type to integration
             
 ??? abstract "SentinelOne EDR SSO User Added"
     
@@ -5012,6 +5354,7 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     - **Changelog:**
     
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+        - 02/02/2026 - minor - Update rule type to integration
             
 ??? abstract "SentinelOne EDR Suspicious Threat Not Mitigated (Medium Confidence)"
     
@@ -5022,6 +5365,7 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     - **Changelog:**
     
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+        - 02/02/2026 - minor - Update rule type to integration
             
 ??? abstract "SentinelOne EDR Threat Detected (Malicious)"
     
@@ -5032,6 +5376,7 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     - **Changelog:**
     
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+        - 02/02/2026 - minor - Update rule type to integration
             
 ??? abstract "SentinelOne EDR Threat Detected (Suspicious)"
     
@@ -5042,6 +5387,7 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     - **Changelog:**
     
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+        - 02/02/2026 - minor - Update rule type to integration
             
 ??? abstract "SentinelOne EDR Threat Mitigation Report Kill Success"
     
@@ -5052,6 +5398,7 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     - **Changelog:**
     
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+        - 02/02/2026 - minor - Update rule type to integration
             
 ??? abstract "SentinelOne EDR Threat Mitigation Report Quarantine Failed"
     
@@ -5062,6 +5409,7 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     - **Changelog:**
     
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+        - 02/02/2026 - minor - Update rule type to integration
             
 ??? abstract "SentinelOne EDR Threat Mitigation Report Quarantine Success"
     
@@ -5072,6 +5420,7 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     - **Changelog:**
     
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+        - 02/02/2026 - minor - Update rule type to integration
             
 ??? abstract "SentinelOne EDR Threat Mitigation Report Remediate Success"
     
@@ -5082,6 +5431,7 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     - **Changelog:**
     
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+        - 02/02/2026 - minor - Update rule type to integration
             
 ??? abstract "SentinelOne EDR User Failed To Log In To The Management Console"
     
@@ -5089,6 +5439,10 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 02/02/2026 - minor - Update rule type to integration
+            
 ??? abstract "SentinelOne EDR User Logged In To The Management Console"
     
     A user has logged in to the management console.
@@ -5098,6 +5452,7 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     - **Changelog:**
     
         - 24/03/2023 - minor - Adjusting displayed columns when the rule triggers an alert. Now timestamp and username will be displayed.
+        - 02/02/2026 - minor - Update rule type to integration
             
 ??? abstract "Smbexec.py Service Installation"
     
@@ -5197,6 +5552,10 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 25/02/2026 - minor - Update rule type to integration
+            
 ??? abstract "Taskhost Wrong Parent"
     
     Detects if the Taskhost process was executed by a non-legitimate parent process. Taskhost is the process of the Windows Task Manager which lists the processes that are currently running on the computer system.
@@ -5245,6 +5604,7 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     - **Changelog:**
     
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+        - 25/02/2026 - minor - Update rule type to integration
             
 ??? abstract "Trend Micro Apex One Malware Alert"
     
@@ -5255,6 +5615,7 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     - **Changelog:**
     
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+        - 25/02/2026 - minor - Update rule type to integration
             
 ??? abstract "Trend Micro Vision One Workbench Critical Severity Alert"
     
@@ -5262,24 +5623,40 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 25/02/2026 - minor - Update rule type to integration
+            
 ??? abstract "Trend Micro Vision One Workbench Low Severity Alert"
     
     Detects when a low alert severity is raised by Trend Micro Vision One Workbench.
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 25/02/2026 - minor - Update rule type to integration
+            
 ??? abstract "Trend Micro Vision One Workbench Medium Severity Alert"
     
     Detects when a medium alert severity is raised by Trend Micro Vision One Workbench.
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 25/02/2026 - minor - Update rule type to integration
+            
 ??? abstract "Trend Micro Vision One Workbench high Severity Alert"
     
     Detects when a high alert severity is raised by Trend Micro Vision One Workbench.
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 25/02/2026 - minor - Update rule type to integration
+            
 ??? abstract "Usage Of Procdump With Common Arguments"
     
     Detects the usage of Procdump sysinternals tool with some common arguments and followed by common patterns.
@@ -5313,6 +5690,10 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 28/10/2025 - minor - improve detection by adding pattern
+            
 ??? abstract "Windows Update LolBins"
     
     This rule try to detect a suspicious behavior of wuauclt.exe (windows update client) that could be a lolbins. Wuauctl.exe could be used to execute a malicious program.
@@ -5427,6 +5808,10 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 27/02/2026 - minor - Update rule type to integration
+            
 ## Persistence
 **Boot or Logon Initialization Scripts**
 
@@ -5510,6 +5895,16 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     
     - **Effort:** intermediate
     
+??? abstract "Scheduled Task Creation By Non Privileged User"
+    
+    Detects scheduled task creation, either executed by a non-system user or a user who is not administrator (the user ID is not S-1-5-18 or S-1-5-18-*). This detection rule doesn't match Sysmon EventID 1 because the user SID is always set to S-1-5-18. 
+    
+    - **Effort:** master
+    
+    - **Changelog:**
+    
+        - 03/12/2025 - minor - Change rule effort level and update of rule name
+            
 ??? abstract "Schtasks Persistence With High Privileges"
     
     Detection of scheduled task with high privileges used by attacker for persistence.
@@ -5528,21 +5923,16 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     
     - **Effort:** intermediate
     
-??? abstract "Suspicious Scheduled Task Creation"
-    
-    Detects suspicious scheduled task creation, either executed by a non-system user or a user who is not administrator (the user ID is not S-1-5-18 or S-1-5-18-*). This detection rule doesn't match Sysmon EventID 1 because the user SID is always set to S-1-5-18. 
-    
-    - **Effort:** intermediate
-    
 ??? abstract "Windows Suspicious Scheduled Task Creation"
     
-    The rule identify creation of new scheduled task who run suspicious or dangerous command
+    The rule identify creation of new scheduled task who run suspicious commands.
     
-    - **Effort:** intermediate
+    - **Effort:** master
     
     - **Changelog:**
     
         - 24/04/2025 - minor - Adding similarity strategy.
+        - 03/12/2025 - major - Change rule effort level according to sigthings
             
 **Registry Run Keys / Startup Folder**
 
@@ -5773,6 +6163,7 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     
         - 29/01/2025 - minor - Rework pattern for high severity events only and filter out authentication events.
         - 28/03/2024 - minor - Rule effort was updated to master
+        - 27/02/2026 - minor - Update rule type to integration
             
 ??? abstract "Netskope Malware Detected"
     
@@ -5780,12 +6171,20 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 27/02/2026 - minor - Update rule type to integration
+            
 ??? abstract "Netskope Malware Patient Zero Detected"
     
     Netskope identified a malware as Patient Zero.
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 27/02/2026 - minor - Update rule type to integration
+            
 ??? abstract "Netskope Potential Brute Force On Protected Applications"
     
     Detects potential brute force on Netskope protected applications with more than 10 failures in 5 minutes for the same user name and application.
@@ -5810,6 +6209,10 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 27/02/2026 - minor - Update rule type to integration
+            
 ??? abstract "Okta Access To Admin Console Denied"
     
     Detects when an attempt was made to access the Okta Admin Console from an interactive user account but failed.
@@ -6022,7 +6425,7 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     
     - **Effort:** advanced
     
-??? abstract "SeEnableDelagationPrivilege Granted To User Or Machine In Active Directory"
+??? abstract "SeEnableDelegationPrivilege Granted To User Or Machine In Active Directory"
     
     Detects the SeEnableDelegationPrivilege right in Active Directory granted to a user of a computer, it would allow control of other AD user objects
     
@@ -6031,6 +6434,7 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     - **Changelog:**
     
         - 04/04/2024 - major - Rule's pattern field changed
+        - 04/03/2026 - minor - Fix small typo in rule name.
             
 ??? abstract "User Added to Local Administrators"
     
@@ -6247,6 +6651,10 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 05/03/2026 - minor - Update rule type to integration
+            
 ??? abstract "Failed Logon Followed By A Success From Public IP Addresses"
     
     A login from a public IP can indicate a misconfigured firewall or network boundary. The detection look for 5 or more failed attemps followed by a successfull one. The sekoia.tags are used to filter internal Ipv4 addresses.
@@ -6277,6 +6685,7 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     - **Changelog:**
     
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+        - 25/02/2026 - minor - Update rule type to integration
             
 ??? abstract "Trend Micro Cloud One High Intrusion"
     
@@ -6284,18 +6693,30 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 25/02/2026 - minor - Update rule type to integration
+            
 ??? abstract "Trend Micro Cloud One Low Intrusion"
     
     Detects when Trend Micro EDR raised an alert for an intrusion with a low severity level.
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 25/02/2026 - minor - Update rule type to integration
+            
 ??? abstract "Trend Micro Cloud One Medium Intrusion"
     
     Detects when Trend Micro EDR raised an alert for an intrusion with a medium severity level.
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 25/02/2026 - minor - Update rule type to integration
+            
 **Create Account**
 
 ??? abstract "AWS Persistence By Creating KeyPair And SecurityGroup"
@@ -6524,10 +6945,11 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     
     The csrss.exe process (csrss stands for Client / Server Runtime Subsystem) is a generic Windows process used to manage windows and Windows graphics. This process  should not create a child process or it is very rare.
     
-    - **Effort:** intermediate
+    - **Effort:** advanced
     
     - **Changelog:**
     
+        - 23/12/2025 - minor - Rule was moved to advanced effort level considering the number of alerts and addtional filters were added.
         - 16/12/2024 - minor - Improve pattern mandatory fields and add filter to reduce false positives
             
 ??? abstract "Csrss Wrong Parent"
@@ -6986,6 +7408,12 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     
         - 21/06/2024 - major - Update detection pattern for ECS fields/value compliance
             
+??? abstract "Linux Suspicious Auto-start Desktop Shortcut Execution"
+    
+    This detection rule identifies a suspicious process start from an graphical env process which may indicate the use of a malicious .desktop shortcut.
+    
+    - **Effort:** intermediate
+    
 ??? abstract "Malware Persistence Registry Key"
     
     Detects registry key used by several malware, especially Formbook spyware in two ways, either the Sysmon registry events, or the commands line.
@@ -7074,7 +7502,8 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     
     - **Changelog:**
     
-        - 30/04/2024 - major - Adding some filters
+        - 06/01/2026 - minor - Adding some filters
+        - 30/04/2024 - minor - Adding some filters
             
 ??? abstract "Svchost Modification"
     
@@ -7206,6 +7635,12 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     
     - **Effort:** intermediate
     
+??? abstract "Linux Ldpreload Modification"
+    
+    Detect ld.so.preload modification for shared lib injection, technique used by attackers to load arbitrary code into process
+    
+    - **Effort:** intermediate
+    
 ??? abstract "Linux Shared Lib Injection Via Ldso Preload"
     
     Detect ld.so.preload modification for shared lib injection, technique used by attackers to load arbitrary code into process
@@ -7324,6 +7759,16 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     
     - **Effort:** intermediate
     
+??? abstract "Scheduled Task Creation By Non Privileged User"
+    
+    Detects scheduled task creation, either executed by a non-system user or a user who is not administrator (the user ID is not S-1-5-18 or S-1-5-18-*). This detection rule doesn't match Sysmon EventID 1 because the user SID is always set to S-1-5-18. 
+    
+    - **Effort:** master
+    
+    - **Changelog:**
+    
+        - 03/12/2025 - minor - Change rule effort level and update of rule name
+            
 ??? abstract "Schtasks Persistence With High Privileges"
     
     Detection of scheduled task with high privileges used by attacker for persistence.
@@ -7342,21 +7787,16 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     
     - **Effort:** intermediate
     
-??? abstract "Suspicious Scheduled Task Creation"
-    
-    Detects suspicious scheduled task creation, either executed by a non-system user or a user who is not administrator (the user ID is not S-1-5-18 or S-1-5-18-*). This detection rule doesn't match Sysmon EventID 1 because the user SID is always set to S-1-5-18. 
-    
-    - **Effort:** intermediate
-    
 ??? abstract "Windows Suspicious Scheduled Task Creation"
     
-    The rule identify creation of new scheduled task who run suspicious or dangerous command
+    The rule identify creation of new scheduled task who run suspicious commands.
     
-    - **Effort:** intermediate
+    - **Effort:** master
     
     - **Changelog:**
     
         - 24/04/2025 - minor - Adding similarity strategy.
+        - 03/12/2025 - major - Change rule effort level according to sigthings
             
 **Process Injection**
 
@@ -7388,6 +7828,10 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 05/03/2026 - minor - Update rule type to integration
+            
 ??? abstract "Dynwrapx Module Loading"
     
     Detects the loading of DynamicWrapperX (Dynwrapx). It is used by some malware in their infection chain and could help to detect its usage from vbs/wscript/cscript scripts. This is based on Microsoft Windows Sysmon events (Event ID 7).
@@ -7821,6 +8265,7 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     
         - 29/01/2025 - minor - Rework pattern for high severity events only and filter out authentication events.
         - 28/03/2024 - minor - Rule effort was updated to master
+        - 27/02/2026 - minor - Update rule type to integration
             
 ??? abstract "Netskope Malware Detected"
     
@@ -7828,12 +8273,20 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 27/02/2026 - minor - Update rule type to integration
+            
 ??? abstract "Netskope Malware Patient Zero Detected"
     
     Netskope identified a malware as Patient Zero.
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 27/02/2026 - minor - Update rule type to integration
+            
 ??? abstract "Netskope Potential Brute Force On Protected Applications"
     
     Detects potential brute force on Netskope protected applications with more than 10 failures in 5 minutes for the same user name and application.
@@ -7858,6 +8311,10 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 27/02/2026 - minor - Update rule type to integration
+            
 ??? abstract "Okta Access To Admin Console Denied"
     
     Detects when an attempt was made to access the Okta Admin Console from an interactive user account but failed.
@@ -8070,7 +8527,7 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     
     - **Effort:** advanced
     
-??? abstract "SeEnableDelagationPrivilege Granted To User Or Machine In Active Directory"
+??? abstract "SeEnableDelegationPrivilege Granted To User Or Machine In Active Directory"
     
     Detects the SeEnableDelegationPrivilege right in Active Directory granted to a user of a computer, it would allow control of other AD user objects
     
@@ -8079,6 +8536,7 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     - **Changelog:**
     
         - 04/04/2024 - major - Rule's pattern field changed
+        - 04/03/2026 - minor - Fix small typo in rule name.
             
 ??? abstract "User Added to Local Administrators"
     
@@ -8235,6 +8693,7 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     - **Changelog:**
     
         - 20/01/2025 - minor - Removing event fields to use the smart description
+        - 27/02/2026 - minor - Update rule type to integration
             
 ??? abstract "Tenable Identity Exposure / Alsid High Severity Alert"
     
@@ -8245,6 +8704,7 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     - **Changelog:**
     
         - 20/01/2025 - minor - Removing event fields to use the smart description
+        - 27/02/2026 - minor - Update rule type to integration
             
 **Create or Modify System Process**
 
@@ -8282,10 +8742,11 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     
     The csrss.exe process (csrss stands for Client / Server Runtime Subsystem) is a generic Windows process used to manage windows and Windows graphics. This process  should not create a child process or it is very rare.
     
-    - **Effort:** intermediate
+    - **Effort:** advanced
     
     - **Changelog:**
     
+        - 23/12/2025 - minor - Rule was moved to advanced effort level considering the number of alerts and addtional filters were added.
         - 16/12/2024 - minor - Improve pattern mandatory fields and add filter to reduce false positives
             
 ??? abstract "Csrss Wrong Parent"
@@ -8744,6 +9205,12 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     
         - 21/06/2024 - major - Update detection pattern for ECS fields/value compliance
             
+??? abstract "Linux Suspicious Auto-start Desktop Shortcut Execution"
+    
+    This detection rule identifies a suspicious process start from an graphical env process which may indicate the use of a malicious .desktop shortcut.
+    
+    - **Effort:** intermediate
+    
 ??? abstract "Malware Persistence Registry Key"
     
     Detects registry key used by several malware, especially Formbook spyware in two ways, either the Sysmon registry events, or the commands line.
@@ -8832,7 +9299,8 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     
     - **Changelog:**
     
-        - 30/04/2024 - major - Adding some filters
+        - 06/01/2026 - minor - Adding some filters
+        - 30/04/2024 - minor - Adding some filters
             
 ??? abstract "Svchost Modification"
     
@@ -9031,6 +9499,12 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
 ??? abstract "Hijack Legit RDP Session To Move Laterally"
     
     Identifies suspicious file creations in the startup folder of a remote system. An adversary could abuse this to move laterally by dropping a malicious script or executable that will be executed after a reboot or user logon.
+    
+    - **Effort:** intermediate
+    
+??? abstract "Linux Ldpreload Modification"
+    
+    Detect ld.so.preload modification for shared lib injection, technique used by attackers to load arbitrary code into process
     
     - **Effort:** intermediate
     
@@ -9268,6 +9742,10 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 05/03/2026 - minor - Update rule type to integration
+            
 ??? abstract "Dynwrapx Module Loading"
     
     Detects the loading of DynamicWrapperX (Dynwrapx). It is used by some malware in their infection chain and could help to detect its usage from vbs/wscript/cscript scripts. This is based on Microsoft Windows Sysmon events (Event ID 7).
@@ -9766,6 +10244,7 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     
         - 29/01/2025 - minor - Rework pattern for high severity events only and filter out authentication events.
         - 28/03/2024 - minor - Rule effort was updated to master
+        - 27/02/2026 - minor - Update rule type to integration
             
 ??? abstract "Netskope Malware Detected"
     
@@ -9773,12 +10252,20 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 27/02/2026 - minor - Update rule type to integration
+            
 ??? abstract "Netskope Malware Patient Zero Detected"
     
     Netskope identified a malware as Patient Zero.
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 27/02/2026 - minor - Update rule type to integration
+            
 ??? abstract "Netskope Potential Brute Force On Protected Applications"
     
     Detects potential brute force on Netskope protected applications with more than 10 failures in 5 minutes for the same user name and application.
@@ -9803,6 +10290,10 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 27/02/2026 - minor - Update rule type to integration
+            
 ??? abstract "Okta Access To Admin Console Denied"
     
     Detects when an attempt was made to access the Okta Admin Console from an interactive user account but failed.
@@ -10577,6 +11068,7 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     - **Changelog:**
     
         - 20/01/2025 - minor - Removing event fields to use the smart description
+        - 27/02/2026 - minor - Update rule type to integration
             
 ??? abstract "Tenable Identity Exposure / Alsid High Severity Alert"
     
@@ -10587,6 +11079,7 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     - **Changelog:**
     
         - 20/01/2025 - minor - Removing event fields to use the smart description
+        - 27/02/2026 - minor - Update rule type to integration
             
 **Abuse Elevation Control Mechanism**
 
@@ -10742,6 +11235,12 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     Installation of new certificate(s) in the Certificate Authority can be used to trick user when spoofing website or to add trusted destinations.
     
     - **Effort:** master
+    
+??? abstract "Landlock Denied Access"
+    
+    Landlock LSM (Linux Security Module), has denied an access requests. This is logged by default for a program compiled with Landlock since Linux kernel 6.15.
+    
+    - **Effort:** intermediate
     
 ??? abstract "Microsoft Intune Non-Compliant Device"
     
@@ -11581,6 +12080,12 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     
     - **Effort:** intermediate
     
+??? abstract "Linux Ldpreload Modification"
+    
+    Detect ld.so.preload modification for shared lib injection, technique used by attackers to load arbitrary code into process
+    
+    - **Effort:** intermediate
+    
 ??? abstract "Linux Shared Lib Injection Via Ldso Preload"
     
     Detect ld.so.preload modification for shared lib injection, technique used by attackers to load arbitrary code into process
@@ -11692,24 +12197,40 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 27/02/2026 - minor - Update rule type to integration
+            
 ??? abstract "Lacework Cloud Security High Severity Alert"
     
     Detects when a high alert severity is raised by Lacework. This severity level might indicates a suspicious change in configuration or policy violation.
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 27/02/2026 - minor - Update rule type to integration
+            
 ??? abstract "Lacework Cloud Security Low Severity Alert"
     
     Detects when a low alert severity is raised by Lacework. This severity level might indicates a change in configuration that could be malicious or not.
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 27/02/2026 - minor - Update rule type to integration
+            
 ??? abstract "Lacework Cloud Security Medium Severity Alert"
     
     Detects when a medium alert severity is raised by Lacework. This severity level might indicates a suspicious activity such as new source from user connection.
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 27/02/2026 - minor - Update rule type to integration
+            
 **Network Boundary Bridging**
 
 ??? abstract "Loss Of Parsing"
@@ -12072,7 +12593,7 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     
         - 04/04/2024 - major - Rule's pattern field changed
             
-??? abstract "Transfering Files With Credential Data Via Network Shares"
+??? abstract "Transferring Files With Credential Data Via Network Shares"
     
     Detects file transfer of sensitive files which contain credential data using network shares.
     
@@ -12081,6 +12602,7 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     - **Changelog:**
     
         - 17/10/2023 - minor - Improve selection to reduce false positives
+        - 04/03/2023 - minor - Fixed small typos.
             
 ??? abstract "Unsigned Image Loaded Into LSASS Process"
     
@@ -12167,6 +12689,14 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     
         - 21/11/2023 - minor - Rule's effort level has been changed to advanced as it was highly dependent on the environment.
             
+**Input Capture**
+
+??? abstract "AppleScript Password Prompt"
+    
+    Detects when a prompt is displayed to gain credentials. This technique is used by MacOS malware to obtain the user's password.
+    
+    - **Effort:** advanced
+    
 **Brute Force**
 
 ??? abstract "1Password EPM Brute Force"
@@ -12390,6 +12920,12 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     
 **Multi-Factor Authentication Interception**
 
+??? abstract "Entra ID Sign-In Via Known AiTM Phishing Kit (CEPHAS 2FA)"
+    
+    Detects a sign-in attempt with known characteristics of the adversary-in-the-middle phishing kit CEPHAS 2FA.
+    
+    - **Effort:** elementary
+    
 ??? abstract "Entra ID Sign-In Via Known AiTM Phishing Kit (Gabagool)"
     
     Detects a sign-in attempt with known characteristics of the adversary-in-the-middle phishing kit Gabagool. The `filter_password_spraying` exclusion corresponds to a password spraying tool which is already detected by the rule `Entra ID Password Compromised By Known Credential Testing Tool`.
@@ -12439,6 +12975,7 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     - **Changelog:**
     
         - 01/10/2024 - major - Update the pattern following changes in the phishing kit.
+        - 31/12/2025 - major - Change the similarity strategy to user.id instead of user.email.
             
 ??? abstract "EvilProxy Phishing Domain"
     
@@ -12709,6 +13246,12 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     
     - **Effort:** intermediate
     
+??? abstract "Entra ID Sign-In Via Known AiTM Phishing Kit (CEPHAS 2FA)"
+    
+    Detects a sign-in attempt with known characteristics of the adversary-in-the-middle phishing kit CEPHAS 2FA.
+    
+    - **Effort:** elementary
+    
 ??? abstract "Entra ID Sign-In Via Known AiTM Phishing Kit (Gabagool)"
     
     Detects a sign-in attempt with known characteristics of the adversary-in-the-middle phishing kit Gabagool. The `filter_password_spraying` exclusion corresponds to a password spraying tool which is already detected by the rule `Entra ID Password Compromised By Known Credential Testing Tool`.
@@ -12758,6 +13301,7 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     - **Changelog:**
     
         - 01/10/2024 - major - Update the pattern following changes in the phishing kit.
+        - 31/12/2025 - major - Change the similarity strategy to user.id instead of user.email.
             
 ??? abstract "EvilProxy Phishing Domain"
     
@@ -13257,6 +13801,7 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     - **Changelog:**
     
         - 28/03/2024 - minor - Rule effort was updated to master
+        - 27/02/2026 - minor - Update rule type to integration
             
 **Account Discovery**
 
@@ -13866,6 +14411,14 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
         - 15/04/2024 - minor - Update email from field to latest parser format
         - 14/11/2024 - major - Adding new file extension and new condition to make the rule broader as it can now match on more intakes.
             
+**Input Capture**
+
+??? abstract "AppleScript Password Prompt"
+    
+    Detects when a prompt is displayed to gain credentials. This technique is used by MacOS malware to obtain the user's password.
+    
+    - **Effort:** advanced
+    
 **Data Staged**
 
 ??? abstract "CVE-2021-20023 SonicWall Arbitrary File Read"
@@ -13928,6 +14481,10 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     
     - **Effort:** elementary
     
+    - **Changelog:**
+    
+        - 31/12/2025 - minor - Add a domain name to the pattern
+            
 ??? abstract "Outlook Registry Access"
     
     Detection of accesses to Microsoft Outlook registry hive, which might contain sensitive information.
@@ -13962,6 +14519,7 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     - **Changelog:**
     
         - 28/03/2024 - minor - Rule effort was updated to master
+        - 27/02/2026 - minor - Update rule type to integration
             
 **Adversary-in-the-Middle**
 
@@ -13970,6 +14528,12 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     Detect a possible NTLM Relay attack combine with authent coerce
     
     - **Effort:** intermediate
+    
+??? abstract "Entra ID Sign-In Via Known AiTM Phishing Kit (CEPHAS 2FA)"
+    
+    Detects a sign-in attempt with known characteristics of the adversary-in-the-middle phishing kit CEPHAS 2FA.
+    
+    - **Effort:** elementary
     
 ??? abstract "Entra ID Sign-In Via Known AiTM Phishing Kit (Gabagool)"
     
@@ -14020,6 +14584,7 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     - **Changelog:**
     
         - 01/10/2024 - major - Update the pattern following changes in the phishing kit.
+        - 31/12/2025 - major - Change the similarity strategy to user.id instead of user.email.
             
 ??? abstract "EvilProxy Phishing Domain"
     
@@ -14207,30 +14772,50 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 10/02/2026 - minor - Update rule type to integration
+            
 ??? abstract "CrowdStrike Falcon Mobile Detection High Severity"
     
     CrowdStrike Falcon for Mobile raised an alert with high severity
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 10/02/2026 - minor - Update rule type to integration
+            
 ??? abstract "CrowdStrike Falcon Mobile Detection Informational Severity"
     
     CrowdStrike Falcon for Mobile raised an alert with informational severity
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 10/02/2026 - minor - Update rule type to integration
+            
 ??? abstract "CrowdStrike Falcon Mobile Detection Low Severity"
     
     CrowdStrike Falcon for Mobile raised an alert with low severity
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 10/02/2026 - minor - Update rule type to integration
+            
 ??? abstract "CrowdStrike Falcon Mobile Detection Medium Severity"
     
     CrowdStrike Falcon for Mobile raised an alert with medium severity
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 10/02/2026 - minor - Update rule type to integration
+            
 ??? abstract "Cryptomining"
     
     Detection of domain names potentially related to cryptomining activities.
@@ -14288,6 +14873,7 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     - **Changelog:**
     
         - 20/06/2024 - minor - Adding new elements to increase detection.
+        - 18/12/2025 - major - Deleting elements to reduce false positives.
             
 ??? abstract "Koadic MSHTML Command"
     
@@ -14590,10 +15176,14 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
 
 ??? abstract "Antivirus Exploitation Framework Detection"
     
-    Detects a highly relevant Antivirus alert that reports an exploitation framework. This is based on Windows Defender logs (Event ID 1116 and 1117).
+    Detects a highly relevant Antivirus alert that reports an exploitation framework. This is based on Windows Defender logs (Event ID 1116 and 1117). 
     
     - **Effort:** elementary
     
+    - **Changelog:**
+    
+        - 16/02/2026 - minor - Filtering out Event ID 1011 which caused false positives. The rule fired at the deletion of a quarantined file by Defender which was not the wanted behaviour.
+            
 ??? abstract "Antivirus Password Dumper Detection"
     
     Detects a highly relevant Antivirus alert that reports a password dumper. This detection relies on Windows Defender events logs. This is based on Windows Defender logs (Event ID 1116 and 1117).
@@ -14644,6 +15234,10 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 05/03/2026 - minor - Update rule type to integration
+            
 **Non-Standard Port**
 
 ??? abstract "RDP Port Change Using Powershell"
@@ -14798,6 +15392,10 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 05/03/2026 - minor - Update rule type to integration
+            
 **Exfiltration Over C2 Channel**
 
 ??? abstract "Claroty xDome Network Threat Detection Alert"
@@ -14806,6 +15404,10 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 05/03/2026 - minor - Update rule type to integration
+            
 ??? abstract "Exfiltration And Tunneling Tools Execution"
     
     Execution of well known tools for data exfiltration and tunneling
@@ -14830,24 +15432,40 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 05/03/2026 - minor - Update rule type to integration
+            
 ??? abstract "Gatewatcher AionIQ Network Alert"
     
     Forward network alerts reported by Gatewatcher AionIQ  
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 05/03/2026 - minor - Update rule type to integration
+            
 ??? abstract "Gatewatcher AionIQ V103 Beacon Detect"
     
     Detects a suspicious beacon.
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 05/03/2026 - minor - Update rule type to integration
+            
 ??? abstract "Gatewatcher AionIQ V103 Sigflow Alert"
     
     Detects a sigflow alert by Gatewatcher AionIQ V103.
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 05/03/2026 - minor - Update rule type to integration
+            
 ??? abstract "Netsh Port Forwarding"
     
     Detects netsh commands that enable a port forwarding between to hosts. This can be used by attackers to tunnel RDP or SMB shares for example.
@@ -14868,6 +15486,7 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     
         - 29/01/2024 - minor - Rework detection pattern to focus on compliance issues
         - 28/03/2024 - minor - Rule effort was updated to master
+        - 27/02/2026 - minor - Update rule type to integration
             
 ??? abstract "Remote File Copy"
     
@@ -15063,6 +15682,10 @@ Rules catalog includes **1055 built-in detection rules** ([_last update on 2025-
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 05/03/2026 - minor - Update rule type to integration
+            
 ??? abstract "Suncrypt Parameters"
     
     Detects SunCrypt ransomware's parameters, most of which are unique.

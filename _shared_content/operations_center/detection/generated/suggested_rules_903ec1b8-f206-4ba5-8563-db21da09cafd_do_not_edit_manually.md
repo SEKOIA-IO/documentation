@@ -237,6 +237,12 @@ The following Sekoia.io built-in rules match the intake **Palo Alto NGFW**. This
     
     - **Effort:** intermediate
 
+??? abstract "Login Brute-Force Successful On Jumpcloud Portal"
+    
+    A user has attempted to login several times (brute-force) on Jumpcloud Portal and succeeded to login.
+    
+    - **Effort:** advanced
+
 ??? abstract "Login Brute-Force Successful On SentinelOne EDR Management Console"
     
     A user has attempted to login several times (brute-force) on the SentinelOne EDR Management Console and succeeded to login.
@@ -420,6 +426,12 @@ The following Sekoia.io built-in rules match the intake **Palo Alto NGFW**. This
 ??? abstract "User Account Deleted"
     
     Detects local user deletion
+    
+    - **Effort:** master
+
+??? abstract "WAF Block Rule"
+    
+    Detects when one of WAF rule blocked an HTTP request. This rule often needs fine tuning according to the environment.
     
     - **Effort:** master
 

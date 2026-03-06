@@ -30,17 +30,24 @@ Please find our English tutorial video below to see how to configure the forward
 
 * Last version of Docker Engine. Please follow [this section](#docker-engine-installation) to install it if needed
 * INBOUND TCP or UDP flows opened between the systems/applications and the concentrator on the ports of your choice
-* OUTBOUND TCP flow opened towards:
-  * **FRA1** intake.sekoia.io on port 10514
-  * **FRA2** intake.fra2.sekoia.io on port 10514
-  * **MCO1** app.mco1.sekoia.io on port 10514
-  * **UAE1** app.uae1.sekoia.io on port 10514
-  * **USA1** app.usa1.sekoia.io on port 10514
+* OUTBOUND TCP flow opened towards corresponding [regional hosts](#regional-hosts)
 
   !!! note
       The disk choice (SSD or HDD type) has no impact on the performance of Sekoia.io Forwarder.
       However, SSD type would be useful when an issue arise for recovery or catchup.
       Please choose accordingly to your usage and cost.
+
+## Regional Hosts
+
+Select the appropriate host address based on your Sekoia.io region:
+
+| Region | Host Address              | Port    |
+|--------|---------------------------|---------|
+| FRA1   | `intake.sekoia.io`        | `10514` |
+| FRA2   | `intake.fra2.sekoia.io`   | `10514` |
+| MCO1   | `intake.mco1.sekoia.io`   | `10514` |
+| UAE1   | `intake.uae1.sekoia.io`   | `10514` |
+| USA1   | `intake.usa1.sekoia.io`   | `10514` |
 
 ## Configure your concentrator
 
@@ -63,10 +70,10 @@ Two files are needed to run the concentrator: `docker-compose.yml` and `intakes.
 The `intakes.yaml` file is used to tell the concentrator how to bind a port where logs are received to its technology represented by the Intake key.
 For each technology, specify:
 
-* a name: it has nothing to do with Sekoia.io, feel free to use the explicite value of your choice
+* a name: it has nothing to do with Sekoia.io, feel free to use the explicit value of your choice
 * the protocol: `tcp`, `udp` or `tls`
 * a port: to process incoming events
-* the Intake key: can be retreived from the Intakes page of your community
+* the Intake key: can be retrieved from the Intakes page of your community
 
 Here is an example of the file with 3 technologies sending their events to the concentrator on ports `20516`, `20517` and `20518`. Feel free to copy paste it and adapt it to your need:
 
@@ -203,7 +210,12 @@ Volumes are used to share files and folders between the host and the container:
 
 #### Import a custom rsyslog configuration
 
-You can add your own additional rsyslog configuration. It can be useful to deal with specific use cases which are not supported natively by the Sekoia.io concentrator. To enable it, you simply have to create a new folder called `extended_conf` and put an additional your rsyslog file into (your file must have the extension *.conf). You do not have to deal with the `intake.yaml` file. Your custom configuration will be added in addition to the intake definition and will not erase exisiting ones.
+You can add your own additional rsyslog configuration. This can be useful to handle specific use cases that are not natively supported by the Sekoia.io concentrator. To enable it, simply create a new folder called `extended_conf` and place your additional rsyslog configuration file(s) inside (your file must have the `.conf` extension).
+
+!!! warning
+    If you configure a port or input in your custom `.conf` file within the `extended_conf` directory, **do not declare this intake again in the `intake.yaml` file**. Using both for the same input or port will cause conflicts and may prevent the concentrator from starting correctly.
+    Your custom configuration will be added in addition to the existing intake definitions and will not overwrite them. Just make sure each port or source is configured *either* in `intake.yaml` *or* in your `.conf` file, not both.
+
 
 You can define your own method for obtaining logs using rsyslog modules, but you still need to forward events to Sekoia.io by providing a syslog-valid message with your intake key as a header, as follows:
 
@@ -368,7 +380,7 @@ intakes:
 
 ### Understanding concentrator metrics
 
-The concentrator is based on a rsyslog instance so to monitor the forwarder, we decided against developing our own metrics. Instead, we opted for leveraging a standard implementation provided by rsyslog direclty: the [impstats module](https://www.rsyslog.com/doc/configuration/modules/impstats.html)
+The concentrator is based on a rsyslog instance so to monitor the forwarder, we decided against developing our own metrics. Instead, we opted for leveraging a standard implementation provided by rsyslog directly: the [impstats module](https://www.rsyslog.com/doc/configuration/modules/impstats.html)
 
 By enabling this internal module, rsyslog generates numerous low-level metrics, which are essential for us to comprehend in order to understand the forwarder metrics. Therefore, it is crucial to grasp the operational workflow of rsyslog. [Here](https://www.rsyslog.com/doc/configuration/basic_structure.html) you can find more details about rsyslog principles.
 

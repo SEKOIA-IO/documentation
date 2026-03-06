@@ -6,7 +6,7 @@ Welcome to the Integrations section of our documentation! This section is design
 
 ### Ingestion Methods
 
-In this section, you'll find detailed information on the various methods (pushing on [HTTPS](/integration/ingestion_methods/https/overview.md) or [Syslog](/integration/ingestion_methods/syslog/overview.md), or pulling a [remote external cloud storage](/integration/ingestion_methods/cloud_saas/overview.md)) you can use to ingest data into Sekoia.io SOC Platform. We provide [comprehensive guides and examples](/integration/ingestion_methods/index.md) to help you set up and manage your data ingestion processes efficiently.
+In this section, you'll find detailed information on the various methods (pushing on [HTTPS](/integration/ingestion_methods/https/overview.md) or [Syslog](/integration/ingestion_methods/syslog/overview.md), collecting [NetFlow](/integration/ingestion_methods/netflow/sekoiaio_netflow_concentrator.md) data, or pulling a [remote external cloud storage](/integration/ingestion_methods/cloud_saas/overview.md)) you can use to ingest data into Sekoia.io SOC Platform. We provide [comprehensive guides and examples](/integration/ingestion_methods/index.md) to help you set up and manage your data ingestion processes efficiently.
 
 ### Intake Categories
 
@@ -14,7 +14,7 @@ This section offers an organized view of different [intake categories](/integrat
 
 ### Automation Categories
 
-This section contains a wealth of [automation actions](/integration/action_library/overview.md) to interract with Third party directly from and without leaving the Sekoia.io SOC Platform. These resources are designed to help you streamline your workflows and automate repetitive tasks, allowing you to focus on more strategic activities.
+This section contains a wealth of [automation actions](/integration/action_library/overview.md) to interact with Third party directly from and without leaving the Sekoia.io SOC Platform. These resources are designed to help you streamline your workflows and automate repetitive tasks, allowing you to focus on more strategic activities.
 
 ### How to Develop A New Integration
 

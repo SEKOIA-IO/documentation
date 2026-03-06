@@ -1,3 +1,7 @@
+uuid: b2e2e2c7-1a3e-4b7a-9c2d-8e4f3a6b7c9d
+name: Okta User
+type: asset
+
 ## Overview
 
 Okta is a cloud-based identity and access management platform that provides secure authentication, authorization, and user management services. Okta helps organizations manage user identities across multiple applications and systems, providing single sign-on (SSO), multi-factor authentication (MFA), and comprehensive user lifecycle management.
@@ -82,6 +86,8 @@ To start getting your Okta users into Sekoia.io, you need to create an asset con
     ![Connector test result and Create asset connector button highlighted](/assets/operation_center/asset_connectors/user/okta/okta_asset_user_2.png)
 
 6. Click the **Create asset connector** button.
+
+{!_shared_content/operations_center/integrations/generated_assets_documentation/okta_user.md!}
 
 ## Further Reading
 - [Okta Documentation](https://developer.okta.com/docs/)

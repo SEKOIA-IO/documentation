@@ -6,7 +6,7 @@ Prerequisites:
 
 - Access to Sekoia.io
 - Intake key(s) created
-- Priviledge account on the Graylog server
+- Privilege account on the Graylog server
 
 ## Installation procedure
 1. Download the JAR file [here](https://github.com/SekoiaLab/graylog-http-plugin/releases/).

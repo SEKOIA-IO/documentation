@@ -27,7 +27,7 @@ On Mac OS X (with homebrew):
 $ brew install openssl
 ```
 
-### Generate the Certificate Autority (CA)
+### Generate the Certificate Authority (CA)
 
 Create a directory that will contain your certificates.
 Open a terminal and type:

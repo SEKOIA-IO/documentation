@@ -55,9 +55,6 @@ HAProxy is a free, open-source software that provides a high availability load b
 !!! Note
     The default HAProxy configuration file `haproxy.cfg` is located in `/etc/haproxy`
 
-### Sample of supported raw events
-
-__TODO_BEFORE_MERGE__
 ## Step-by-Step Configuration Procedure
 
 ### Instructions on the 3rd party solution
@@ -67,7 +64,7 @@ After HAProxy has been setup and configured, the logs have to be sent to a syslo
 By default, at HAProxy first installation, an rsyslog configuration is created on the repository `/etc/rsyslog.d/`, it contains the following lines:
 
 ```
-# Create an additionnal socket in haproxy's chroot in order to allow logging via
+# Create an additional socket in haproxy's chroot in order to allow logging via
 # /dev/log to chroot'ed HAProxy processes
 $AddUnixListenSocket /var/lib/haproxy/dev/log
 
@@ -81,7 +78,7 @@ $AddUnixListenSocket /var/lib/haproxy/dev/log
 You only have to replace the configuration by the following lines:
 
 ```
-# Create an additionnal socket in haproxy's chroot in order to allow logging via
+# Create an additional socket in haproxy's chroot in order to allow logging via
 # /dev/log to chroot'ed HAProxy processes
 $AddUnixListenSocket /var/lib/haproxy/dev/log
 

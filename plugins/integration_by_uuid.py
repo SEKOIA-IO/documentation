@@ -32,6 +32,7 @@ Redirecting...
 </html>"""
 
     _redirection_table: dict[str, str] = {}
+    _asset_connector_redirection_table: dict[str, str] = {}
     _integrations: list[dict[str, str]] = []
 
     def process_intake_file(
@@ -89,11 +90,22 @@ Redirecting...
             )
         ]
 
+    def process_asset_connector_file(
+        self, source_file: File, metadata: dict, config: Config
+    ):
+        self._asset_connector_redirection_table[metadata["uuid"]] = source_file.url
+
+        return [
+            File(
+                path=f"integration/asset_connectors/uuid/{metadata['uuid']}.md",
+                src_dir="integration/asset_connectors/uuid",
+                dest_dir=config["site_dir"],
+                use_directory_urls=True,
+            )
+        ]
+
     def on_files(self, files: Files, config: Config):
         new_files: list[File] = []
-        source_files = [
-            source_file for source_file in files if source_file.src_path.endswith(".md")
-        ]
 
         for source_file in files:
             if not source_file.src_path.endswith(".md"):
@@ -114,7 +126,10 @@ Redirecting...
                     "integration/action_library/"
                 ):
                     new_files += self.process_module_file(source_file, metadata, config)
-
+                elif metadata.get("type").lower() == "asset":
+                    new_files += self.process_asset_connector_file(
+                        source_file, metadata, config
+                    )
         for file in new_files:
             if file.src_uri in files._src_uris:
                 files.remove(file)
@@ -146,4 +161,10 @@ Redirecting...
             if page.file.name in self._redirection_table:
                 return self.template.format(
                     destination=self._redirection_table[page.file.name]
+                )
+
+        if page.file.src_path.startswith("integration/asset_connectors/uuid/"):
+            if page.file.name in self._asset_connector_redirection_table:
+                return self.template.format(
+                    destination=self._asset_connector_redirection_table[page.file.name]
                 )

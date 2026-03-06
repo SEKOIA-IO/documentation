@@ -101,7 +101,7 @@ The following Sekoia.io built-in rules match the intake **HarfangLab EDR**. This
 
 ??? abstract "Antivirus Exploitation Framework Detection"
     
-    Detects a highly relevant Antivirus alert that reports an exploitation framework. This is based on Windows Defender logs (Event ID 1116 and 1117).
+    Detects a highly relevant Antivirus alert that reports an exploitation framework. This is based on Windows Defender logs (Event ID 1116 and 1117). 
     
     - **Effort:** elementary
 
@@ -122,6 +122,12 @@ The following Sekoia.io built-in rules match the intake **HarfangLab EDR**. This
     Detects a highly relevant Antivirus alert that reports a web shell. This is based on Windows Defender logs (Event ID 1116 and 1117).
     
     - **Effort:** elementary
+
+??? abstract "AppleScript Password Prompt"
+    
+    Detects when a prompt is displayed to gain credentials. This technique is used by MacOS malware to obtain the user's password.
+    
+    - **Effort:** advanced
 
 ??? abstract "Aspnet Compiler"
     
@@ -607,7 +613,7 @@ The following Sekoia.io built-in rules match the intake **HarfangLab EDR**. This
     
     The csrss.exe process (csrss stands for Client / Server Runtime Subsystem) is a generic Windows process used to manage windows and Windows graphics. This process  should not create a child process or it is very rare.
     
-    - **Effort:** intermediate
+    - **Effort:** advanced
 
 ??? abstract "Csrss Wrong Parent"
     
@@ -1272,6 +1278,12 @@ The following Sekoia.io built-in rules match the intake **HarfangLab EDR**. This
 ??? abstract "Linux Shared Lib Injection Via Ldso Preload"
     
     Detect ld.so.preload modification for shared lib injection, technique used by attackers to load arbitrary code into process
+    
+    - **Effort:** intermediate
+
+??? abstract "Linux Suspicious Auto-start Desktop Shortcut Execution"
+    
+    This detection rule identifies a suspicious process start from an graphical env process which may indicate the use of a malicious .desktop shortcut.
     
     - **Effort:** intermediate
 
@@ -2289,6 +2301,12 @@ The following Sekoia.io built-in rules match the intake **HarfangLab EDR**. This
     
     - **Effort:** intermediate
 
+??? abstract "Scheduled Task Creation By Non Privileged User"
+    
+    Detects scheduled task creation, either executed by a non-system user or a user who is not administrator (the user ID is not S-1-5-18 or S-1-5-18-*). This detection rule doesn't match Sysmon EventID 1 because the user SID is always set to S-1-5-18. 
+    
+    - **Effort:** master
+
 ??? abstract "Schtasks Persistence With High Privileges"
     
     Detection of scheduled task with high privileges used by attacker for persistence.
@@ -2307,7 +2325,7 @@ The following Sekoia.io built-in rules match the intake **HarfangLab EDR**. This
     
     - **Effort:** intermediate
 
-??? abstract "SeEnableDelagationPrivilege Granted To User Or Machine In Active Directory"
+??? abstract "SeEnableDelegationPrivilege Granted To User Or Machine In Active Directory"
     
     Detects the SeEnableDelegationPrivilege right in Active Directory granted to a user of a computer, it would allow control of other AD user objects
     
@@ -2673,9 +2691,9 @@ The following Sekoia.io built-in rules match the intake **HarfangLab EDR**. This
     
     - **Effort:** intermediate
 
-??? abstract "Suspicious Scheduled Task Creation"
+??? abstract "Suspicious Scripting In A WMI Consumer"
     
-    Detects suspicious scheduled task creation, either executed by a non-system user or a user who is not administrator (the user ID is not S-1-5-18 or S-1-5-18-*). This detection rule doesn't match Sysmon EventID 1 because the user SID is always set to S-1-5-18. 
+    Detects suspicious scripting in WMI Event Consumers. The rule requires to log WMI Consumers, which can be done through Sysmon's Event IDs 20 and 21.
     
     - **Effort:** intermediate
 
@@ -2829,7 +2847,7 @@ The following Sekoia.io built-in rules match the intake **HarfangLab EDR**. This
     
     - **Effort:** master
 
-??? abstract "Transfering Files With Credential Data Via Network Shares"
+??? abstract "Transferring Files With Credential Data Via Network Shares"
     
     Detects file transfer of sensitive files which contain credential data using network shares.
     
@@ -3041,9 +3059,9 @@ The following Sekoia.io built-in rules match the intake **HarfangLab EDR**. This
 
 ??? abstract "Windows Suspicious Scheduled Task Creation"
     
-    The rule identify creation of new scheduled task who run suspicious or dangerous command
+    The rule identify creation of new scheduled task who run suspicious commands.
     
-    - **Effort:** intermediate
+    - **Effort:** master
 
 ??? abstract "Windows Update LolBins"
     

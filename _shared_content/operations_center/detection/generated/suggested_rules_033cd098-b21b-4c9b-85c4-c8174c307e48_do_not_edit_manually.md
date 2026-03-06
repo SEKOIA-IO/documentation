@@ -69,6 +69,12 @@ The following Sekoia.io built-in rules match the intake **WithSecure Elements**.
     
     - **Effort:** master
 
+??? abstract "AppleScript Password Prompt"
+    
+    Detects when a prompt is displayed to gain credentials. This technique is used by MacOS malware to obtain the user's password.
+    
+    - **Effort:** advanced
+
 ??? abstract "Aspnet Compiler"
     
     Detects the starts of aspnet compiler.
@@ -684,6 +690,12 @@ The following Sekoia.io built-in rules match the intake **WithSecure Elements**.
 ??? abstract "Linux Shared Lib Injection Via Ldso Preload"
     
     Detect ld.so.preload modification for shared lib injection, technique used by attackers to load arbitrary code into process
+    
+    - **Effort:** intermediate
+
+??? abstract "Linux Suspicious Auto-start Desktop Shortcut Execution"
+    
+    This detection rule identifies a suspicious process start from an graphical env process which may indicate the use of a malicious .desktop shortcut.
     
     - **Effort:** intermediate
 

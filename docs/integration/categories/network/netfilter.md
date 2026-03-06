@@ -36,7 +36,7 @@ Please consult the [Rsyslog Transport](/integration/ingestion_methods/syslog/ove
 
 ### Configure Netfilter using Iptables
 The first step is to configure Netfilter to log the awaited
-trafic. For example, if you want to only allow HTTP and HTTPS trafic
+traffic. For example, if you want to only allow HTTP and HTTPS traffic
 and log everything else, you could use the following `iptables`
 commands:
 

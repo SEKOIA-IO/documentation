@@ -107,6 +107,8 @@ For numerous events, you can use the alternative endpoint `/plain/batch`. The ev
 
     1. Will print  `{"event_ids": ["uuid1", "uuid2"]}`
 
+You can find an example script for sending logs from files in batches [here](https://github.com/SEKOIA-IO/intake-formats/blob/main/utils/send_events.py)
+
 You can also upload multiple events contained in a single file, with one event per line:
 
 ```bash 

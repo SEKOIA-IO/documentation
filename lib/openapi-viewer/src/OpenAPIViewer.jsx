@@ -46,6 +46,7 @@ export const OpenAPIViewer = {
         const app = createApp(OpenAPIViewer);
         app.use(hljsVuePlugin)
         data.quickStart = document.querySelector("main article")
+        data.introSections = Array.from(document.querySelectorAll("main article h2,h1")).map(x => x.id).filter(id => id?.length > 0)
         const container = document.createElement("article")
         container.classList.add("md-content__inner")
         container.classList.add("md-typeset")
@@ -242,6 +243,19 @@ export const OpenAPIViewer = {
             data.cur1 = level1 || null
             data.cur2 = level2 || null
             animateAccordion()
+            posthogTracking()
+        }
+
+        let posthog_debounce_timeout = null;
+        function posthogTracking(now = false) {
+            if (!now) {
+                if (posthog_debounce_timeout !== null) clearTimeout(posthog_debounce_timeout)
+                posthog_debounce_timeout = setTimeout(() => posthogTracking(true), 2000)
+                return;
+            }
+            posthog.capture("$pageview", {
+                $current_url: window.location.href,
+            });
         }
 
         setTimeout(afterRender, 50)
@@ -280,7 +294,7 @@ export const OpenAPIViewer = {
         }
 
         return () => {
-            const showQuickstart = !data.cur0 || ["#quickstart", "#"].includes(location.hash) || !location.hash
+            const showQuickstart = !data.cur0 || data.introSections.includes(location.hash.replace(/^#\/?/, "")) || !location.hash
             return <>
                 {data.loading && <Teleport to="main"><div class="loading" /></Teleport>}
 
@@ -318,7 +332,7 @@ export const OpenAPIViewer = {
                                 {data.intro?.map(name => <li class='md-nav__item' class={{
                                     active: location.hash === `#${tagEncode(name.toLowerCase())}`,
                                 }}>
-                                    <a href={`#/${tagEncode(name.toLowerCase())}`} >{capitalize(name)}</a>
+                                    <a href={`#${tagEncode(name.toLowerCase())}`} >{capitalize(name)}</a>
                                 </li>)}
                             </ul>
 
@@ -412,12 +426,30 @@ export const OpenAPIViewer = {
 /** Component that renders a single API endpoint */
 const Endpoint = (id, endpoint, tag) => {
     // Extract permissions from description text
-    let description = endpoint.description
-    const permissions = description?.match(/The following permissions are required:\n(\s+-[^\n]+)+/)?.slice(1).map(p => {
-        const [_, name, uuid, __, description] = p.match(/- \W*([\w\s]*)\W* \(`([^`]+)`\)(:\s+(.*))?/) || []
-        return { name, uuid, description }
-    })
-    description = description?.replace(/The following permissions are required:\n(\s+-[^\n]+)+/, "")
+    const mainRegex = /^(?<description>[\s\S]*?)The following permissions are required:([\s\S]*)$/;
+    const permRegex = /-\s*“(?<name>.*?)”\s*\(\`(?<uuid>[0-9a-fA-F-]+)\`\)(?<description>:\s+(.*))?/g;
+
+    let description = '';
+    const permissions = [];
+
+    const mainMatch = endpoint.description?.match(mainRegex);
+    if (mainMatch) {
+        // Get the description from the named group
+        description = mainMatch.groups.description.trim();
+
+        // Get the permissions block (the 2nd capture group)
+        const permissionsBlock = mainMatch[2];
+        const allPermMatches = permissionsBlock.matchAll(permRegex);
+
+        for (const match of allPermMatches) {
+            permissions.push({
+                name: match.groups.name,
+                uuid: match.groups.uuid,
+                description: match.groups.description,
+            });
+        }
+    }
+
     const responses = Object.entries(endpoint.responses || {}).filter(([code]) => code < 400)
     const errors = Object.entries(endpoint.responses || {}).filter(([code]) => code >= 400)
     return <><div class='endpoint' id={id}>

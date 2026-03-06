@@ -24,12 +24,12 @@ You can configure a syslog server in Sophos Firewall by following the instructio
 - Enter a name for the syslog server.
 - Enter the IP Address of the syslog server. Messages from the device will be sent to the entered IP address.
 - Enter a Port number that the device will use for communicating with the syslog server. Device will send messages using the selected port.
-- Select the Facility from the available options, "DEAMON" should work.
+- Select the Facility from the available options, "DAEMON" should work.
 
 !!! Note
     Facility informs the syslog server of the log message's source. It is defined by the syslog protocol. You can configure the facility to distinguish log messages from different devices. This parameter helps you identify the device that recorded a specific log file.
 
-- Confirm the procotol is UDP.
+- Confirm the protocol is UDP.
 - Select the Severity Level from the available options.
 - Deactivate the option "Secure log transmission".
 - Click Save to save the configuration.

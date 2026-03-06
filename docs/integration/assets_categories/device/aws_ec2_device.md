@@ -1,3 +1,7 @@
+uuid: e2a7c6b4-9f1d-4b8a-8c3e-2d5f7a1e4b9c
+name: AWS devices
+type: asset
+
 ## Overview
 
 Amazon Elastic Compute Cloud (EC2) is a web service that provides secure, resizable compute capacity in the cloud. It is designed to make web-scale cloud computing easier for developers by providing a simple web service interface that allows you to obtain and configure capacity with minimal friction.
@@ -130,6 +134,8 @@ To start getting your AWS EC2 instances into Sekoia.io, you need to create an as
     ![Connector test result and Create asset connector button highlighted](/assets/operation_center/asset_connectors/device/aws/create_aws_asset_connector_2.png)
 
 6. Click the **Create asset connector** button.
+
+{!_shared_content/operations_center/integrations/generated_assets_documentation/aws_device.md!}
 
 ## Further Reading
 - [AWS EC2 Documentation](https://docs.aws.amazon.com/ec2/)

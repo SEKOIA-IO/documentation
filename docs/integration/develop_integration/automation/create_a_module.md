@@ -352,7 +352,7 @@ Depending on your needs, you can choose to create an **Action**, a **Connector**
                 time.sleep(60)
     ```
 
-    Additionnaly, you can define parameters that will be set during the instanciation of the Intake in Sekoia. For that you have 2 options depending of the type of parameter you want to define.
+    Additionally, you can define parameters that will be set during the instantiation of the Intake in Sekoia. For that you have 2 options depending of the type of parameter you want to define.
 
     * **Option 1**: Define parameters in the Module
 
@@ -365,7 +365,7 @@ Depending on your needs, you can choose to create an **Action**, a **Connector**
 
     In that case the parameter is only accessible by the connector, and not by the other components of the module. This is where we define connector specific settings, such as the *connector polling frequency*.
 
-    Once set these parameters can be seen and modifed in the `Configure` option in the Intake page in Sekoia.
+    Once set these parameters can be seen and modified in the `Configure` option in the Intake page in Sekoia.
 
     In the next example we will use both options for our connector.
 
@@ -575,7 +575,7 @@ Depending on your needs, you can choose to create an **Action**, a **Connector**
       This method must run forever
       It must handle all the expected errors 
     1. The base `Trigger` class provides a `send_event` method that allows to trigger a new event. For each playbook having this trigger a new run will be started with `event` as argument.
-    2. The `log` method allows to log errors and informations. Those logs are visible in the UI.
+    2. The `log` method allows to log errors and information. Those logs are visible in the UI.
 
     **Generate the manifest and entrypoint**
 
@@ -722,7 +722,7 @@ def test_get_request(requests_mock):
   action = Request()
   result = action.run(arguments)
 
-  # Interprete the dict correctly if the response is serialized to a dict:
+  # Interpret the dict correctly if the response is serialized to a dict:
   if isinstance(result, dict):
       result = Response(**result)
 
@@ -739,6 +739,46 @@ To effectively manage dependencies and run your tests, you should use Poetry:
 poetry run pytest -v -s tests/
 ```
 For more detailed information, you can check the [Poetry documentation](https://python-poetry.org/docs/). Additionally, you can look at the tests in the existing module.
+
+## Lint and format your code (optional)
+
+To ensure code quality and maintain consistency, it's recommended to lint and format the automation module.
+
+### Format your module
+
+To format the code, please use `black` with the following command in the root directory of your module:
+
+```shell
+black . # to format python code
+```
+
+### Lint your module
+
+To lint the manifest files, in the working copy of the `automation-library` repository, run the following command:
+
+```shell
+python3 linter.py fix --changes
+```
+
+## Check your module
+
+To check your module for type correctness and compliance with Sekoia's standards, it's recommended to type check your Python code.
+
+### Check Python code
+
+To check your code, please use `mypy` with the following command in the working copy of the `automation-library` repository:
+
+```shell
+poetry run mypy  --install-types --non-interactive --ignore-missing-imports --show-column-numbers --hide-error-context .
+```
+
+### Check compliance
+
+In the working copy of the `automation-library` repository, to check the automation module against compliance rules:
+
+```shell
+poetry -C _utils run python compliance check --changes
+```
 
 ## Deploy your module
 

@@ -87,6 +87,12 @@ The following Sekoia.io built-in rules match the intake **Elastic Winlogbeat**. 
     
     - **Effort:** master
 
+??? abstract "AppleScript Password Prompt"
+    
+    Detects when a prompt is displayed to gain credentials. This technique is used by MacOS malware to obtain the user's password.
+    
+    - **Effort:** advanced
+
 ??? abstract "Aspnet Compiler"
     
     Detects the starts of aspnet compiler.
@@ -385,7 +391,7 @@ The following Sekoia.io built-in rules match the intake **Elastic Winlogbeat**. 
     
     The csrss.exe process (csrss stands for Client / Server Runtime Subsystem) is a generic Windows process used to manage windows and Windows graphics. This process  should not create a child process or it is very rare.
     
-    - **Effort:** intermediate
+    - **Effort:** advanced
 
 ??? abstract "Csrss Wrong Parent"
     
@@ -906,6 +912,12 @@ The following Sekoia.io built-in rules match the intake **Elastic Winlogbeat**. 
 ??? abstract "Linux Shared Lib Injection Via Ldso Preload"
     
     Detect ld.so.preload modification for shared lib injection, technique used by attackers to load arbitrary code into process
+    
+    - **Effort:** intermediate
+
+??? abstract "Linux Suspicious Auto-start Desktop Shortcut Execution"
+    
+    This detection rule identifies a suspicious process start from an graphical env process which may indicate the use of a malicious .desktop shortcut.
     
     - **Effort:** intermediate
 
@@ -1821,6 +1833,12 @@ The following Sekoia.io built-in rules match the intake **Elastic Winlogbeat**. 
     
     - **Effort:** intermediate
 
+??? abstract "Scheduled Task Creation By Non Privileged User"
+    
+    Detects scheduled task creation, either executed by a non-system user or a user who is not administrator (the user ID is not S-1-5-18 or S-1-5-18-*). This detection rule doesn't match Sysmon EventID 1 because the user SID is always set to S-1-5-18. 
+    
+    - **Effort:** master
+
 ??? abstract "Schtasks Persistence With High Privileges"
     
     Detection of scheduled task with high privileges used by attacker for persistence.
@@ -1839,7 +1857,7 @@ The following Sekoia.io built-in rules match the intake **Elastic Winlogbeat**. 
     
     - **Effort:** intermediate
 
-??? abstract "SeEnableDelagationPrivilege Granted To User Or Machine In Active Directory"
+??? abstract "SeEnableDelegationPrivilege Granted To User Or Machine In Active Directory"
     
     Detects the SeEnableDelegationPrivilege right in Active Directory granted to a user of a computer, it would allow control of other AD user objects
     
@@ -2163,12 +2181,6 @@ The following Sekoia.io built-in rules match the intake **Elastic Winlogbeat**. 
     
     - **Effort:** intermediate
 
-??? abstract "Suspicious Scheduled Task Creation"
-    
-    Detects suspicious scheduled task creation, either executed by a non-system user or a user who is not administrator (the user ID is not S-1-5-18 or S-1-5-18-*). This detection rule doesn't match Sysmon EventID 1 because the user SID is always set to S-1-5-18. 
-    
-    - **Effort:** intermediate
-
 ??? abstract "Suspicious TOR Gateway"
     
     Detects suspicious TOR gateways. Gateways are often used by the victim to pay and decrypt the encrypted files without installing TOR. Tor intercepts the network traffic from one or more apps on user’s computer, usually the user web browser, and shuffles it through a number of randomly-chosen computers before passing it on to its destination. This disguises user location, and makes it harder for servers to pick him/her out on repeat visits, or to tie together separate visits to different sites, this making tracking and surveillance more difficult. Before a network packet starts its journey, user’s computer chooses a random list of relays and repeatedly encrypts the data in multiple layers, like an onion. Each relay knows only enough to strip off the outermost layer of encryption, before passing what’s left on to the next relay in the list.
@@ -2402,6 +2414,12 @@ The following Sekoia.io built-in rules match the intake **Elastic Winlogbeat**. 
     Detects Venom Multi-hop Proxy agent.
     
     - **Effort:** intermediate
+
+??? abstract "WAF Block Rule"
+    
+    Detects when one of WAF rule blocked an HTTP request. This rule often needs fine tuning according to the environment.
+    
+    - **Effort:** master
 
 ??? abstract "WAF Correlation Block actions"
     

@@ -63,6 +63,12 @@ The following Sekoia.io built-in rules match the intake **CrowdStrike Falcon**. 
     
     - **Effort:** master
 
+??? abstract "AppleScript Password Prompt"
+    
+    Detects when a prompt is displayed to gain credentials. This technique is used by MacOS malware to obtain the user's password.
+    
+    - **Effort:** advanced
+
 ??? abstract "Attempt to Disable Gatekeeper Execution Control"
     
     Detects attempts to disable Gatekeeper through the command line. Gatekeeper is a macOS feature designed to ensure that only trusted, signed software can be executed.
@@ -463,7 +469,7 @@ The following Sekoia.io built-in rules match the intake **CrowdStrike Falcon**. 
     
     The csrss.exe process (csrss stands for Client / Server Runtime Subsystem) is a generic Windows process used to manage windows and Windows graphics. This process  should not create a child process or it is very rare.
     
-    - **Effort:** intermediate
+    - **Effort:** advanced
 
 ??? abstract "Csrss Wrong Parent"
     
@@ -936,6 +942,12 @@ The following Sekoia.io built-in rules match the intake **CrowdStrike Falcon**. 
 ??? abstract "Linux Shared Lib Injection Via Ldso Preload"
     
     Detect ld.so.preload modification for shared lib injection, technique used by attackers to load arbitrary code into process
+    
+    - **Effort:** intermediate
+
+??? abstract "Linux Suspicious Auto-start Desktop Shortcut Execution"
+    
+    This detection rule identifies a suspicious process start from an graphical env process which may indicate the use of a malicious .desktop shortcut.
     
     - **Effort:** intermediate
 
@@ -1677,6 +1689,12 @@ The following Sekoia.io built-in rules match the intake **CrowdStrike Falcon**. 
     
     - **Effort:** intermediate
 
+??? abstract "Scheduled Task Creation By Non Privileged User"
+    
+    Detects scheduled task creation, either executed by a non-system user or a user who is not administrator (the user ID is not S-1-5-18 or S-1-5-18-*). This detection rule doesn't match Sysmon EventID 1 because the user SID is always set to S-1-5-18. 
+    
+    - **Effort:** master
+
 ??? abstract "Schtasks Persistence With High Privileges"
     
     Detection of scheduled task with high privileges used by attacker for persistence.
@@ -1962,12 +1980,6 @@ The following Sekoia.io built-in rules match the intake **CrowdStrike Falcon**. 
 ??? abstract "Suspicious Rundll32.exe Executions"
     
     The process rundll32.exe executes a newly dropped DLL with update /i in the command line. This specific technic was observed at least being used by the IcedID loading mechanism dubbed Gziploader. Some other detections are related to LOLBAS (Living Off The Land Binaries, Scripts and Libraries) usages (like the COM registering).
-    
-    - **Effort:** intermediate
-
-??? abstract "Suspicious Scheduled Task Creation"
-    
-    Detects suspicious scheduled task creation, either executed by a non-system user or a user who is not administrator (the user ID is not S-1-5-18 or S-1-5-18-*). This detection rule doesn't match Sysmon EventID 1 because the user SID is always set to S-1-5-18. 
     
     - **Effort:** intermediate
 

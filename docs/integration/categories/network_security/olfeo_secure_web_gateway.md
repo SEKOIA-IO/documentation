@@ -50,7 +50,7 @@ To enable syslog forwarding:
 1. Log in your Olfeo web interface.
 2. Go to `Parameters > Monitoring > Syslog.`.
 3. Click on `add a syslog` button.
-4. Add `label, description and server adress`.
+4. Add `label, description and server address`.
 5. Click on `Create`.
 
 !!! Note

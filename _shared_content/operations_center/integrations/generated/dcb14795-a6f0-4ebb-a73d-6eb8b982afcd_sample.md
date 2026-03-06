@@ -116,3 +116,51 @@ In this section, you will find examples of raw logs as generated natively by the
 
 
 
+=== "user_first_new_process"
+
+    ```
+	johndoe@local New process: "C:\Windows\System32\RuntimeBroker.exe"
+    ```
+
+
+
+=== "user_first_other_1"
+
+    ```
+	john.doe@Azure SSO idle saved.
+    ```
+
+
+
+=== "user_first_other_2"
+
+    ```
+	john.doe@Azure SSO Window closed: "G:\ - TreeSize Professional"
+    ```
+
+
+
+=== "user_first_other_3"
+
+    ```
+	john.doe@Azure SSO key sequence :"<BACK<BACK"
+    ```
+
+
+
+=== "user_first_process_end_1"
+
+    ```
+	johndoe@local Process end: "dllhost.exe"
+    ```
+
+
+
+=== "user_first_process_end_2"
+
+    ```
+	johndoe@local Process end: "backgroundTaskHost.exe"
+    ```
+
+
+

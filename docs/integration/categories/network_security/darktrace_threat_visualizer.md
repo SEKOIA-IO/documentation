@@ -49,18 +49,18 @@ This setup guide describes how to forward logs from Darktrace Threat visualizer 
 
 {!_shared_content/integration/intake_configuration.md!}
 
-#### For Cloud verion only
+#### For Cloud version only
 
 {!_shared_content/integration/connector_configuration.md!}
 
 ### Instructions on the 3rd party solution
-#### For Cloud verion - Acquire your public and private key
+#### For Cloud version - Acquire your public and private key
 
 As a prerequisite, you need a Darktrace Threat Visualizer API tenant url.
 
-See the [Darktrace documentation](https://customerportal.darktrace.com/product-guides/main/api-tokens) for intructions to acquire your public and private key.
+See the [Darktrace documentation](https://customerportal.darktrace.com/product-guides/main/api-tokens) for instructions to acquire your public and private key.
 
-#### For On Premise verion - Send logs to a syslog server
+#### For On Premise version - Send logs to a syslog server
 
 1. Open the Threat Visualizer and navigate to the **System Config** page (Main menu › Admin).
 2. From the left-side menu, **select Modules**, then navigate to the **Workflow Integrations** section and choose

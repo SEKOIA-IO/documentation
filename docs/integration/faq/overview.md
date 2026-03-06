@@ -3,7 +3,7 @@
 Welcome to the Integrations FAQ section. Here, we address some of the most common questions and issues users encounter when working with our integrations. Our goal is to help you quickly find the information you need to set up, use, and troubleshoot integrations effectively.
 
 !!! Note
-    This FAQ section is under contruction. We aim to continuously expand and update this FAQ to cover all relevant questions and issues. If you have a question that's not addressed here, please don't hesitate to contact our Support team via the dedicated webportal.
+    This FAQ section is under construction. We aim to continuously expand and update this FAQ to cover all relevant questions and issues. If you have a question that's not addressed here, please don't hesitate to contact our Support team via the dedicated webportal.
 
 ## Categories
 

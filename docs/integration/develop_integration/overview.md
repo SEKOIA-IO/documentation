@@ -56,7 +56,7 @@ If there are no compatible methods in Sekoia to collect events from your product
 Sekoia will trigger this connector on a recurring basis to connect to your product and collect new events.
 
 !!! Prerequisites
-    A custom connector requires Python development skills, as connectors are custom Python code developped using sekoia-automation SDK.
+    A custom connector requires Python development skills, as connectors are custom Python code developed using sekoia-automation SDK.
 
 If you're all set, then:
 

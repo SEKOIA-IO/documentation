@@ -105,7 +105,7 @@ To get started with NXLog, follow these steps:
 
   Exec to_syslog_ietf();
   Exec $raw_event = replace($raw_event, '[NXLOG@', '[SEKOIA@53288 intake_key="YOUR_INTAKE_KEY"][NXLOG@', 1);
-  OutputType Syslog_TLS
+  OutputType Syslog_TLS #Only for TCP, not UDP
 </Output>
 
 <Route eventlog_to_sekoia_intake>
@@ -180,7 +180,7 @@ To get started, follow these steps:
   Module om_tcp
   Host RSYSLOG_HOST
   Port 514
-  OutputType Syslog_TLS
+  OutputType Syslog_TLS #Only for TCP, not UDP
 
   Exec to_syslog_ietf();
 </Output>
@@ -284,7 +284,7 @@ On the WEC server, create an XML file, named `DC_SUBSCRIPTION.xml` with the foll
     <!-- Target Event log on WEC -->
     <LogFile>ForwardedEvents</LogFile>
     <!-- Define which domain computers are allowed or not to initiate subscriptions -->
-    <!-- This exemple grants members of the Domain Computers domain group, as well as the local Network Service group (for local forwarder) -->
+    <!-- This example grants members of the Domain Computers domain group, as well as the local Network Service group (for local forwarder) -->
     <AllowedSourceDomainComputers>O:NSG:NSD:(A;;GA;;;DC)(A;;GA;;;NS)</AllowedSourceDomainComputers>
 </Subscription>
 ```
@@ -420,7 +420,7 @@ To ensure proper logging configuration, please follow the steps below:
         Module om_tcp
         Host RSYSLOG_HOST
         Port 514
-        OutputType Syslog_TLS
+        OutputType Syslog_TLS #Only for TCP, not UDP
 
         Exec to_syslog_ietf();
       </Output>
@@ -435,7 +435,7 @@ To ensure proper logging configuration, please follow the steps below:
 
 3. Restart the NXLog service through the Services tool as Administrator or use this Powershell command line as Administrator:
 
-    ```poweshell
+    ```powershell
     Restart-Service nxlog
     ```
 

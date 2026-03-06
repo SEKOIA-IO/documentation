@@ -492,6 +492,165 @@ This section demonstrates how the raw logs will be transformed by our parsers. I
 	```
 
 
+=== "ressource_filename.json"
+
+    ```json
+	
+    {
+        "message": "ValidateAccept HOST_XXX [23/Jul/2025:09:42:31 +0200] \"2.2.2.2 uid=toto,ou=Internal,ou=People,o=group\" \"domain.com GET /livelink/llisapi.dll/11111111/News_Text_EN.html?func=doc.Fetch&nodeid=1111111\" [idletime=18000;maxtime=18000;authlevel=5;] [0]  [] []",
+        "event": {
+            "action": "ValidateAccept",
+            "category": [
+                "web"
+            ],
+            "dataset": "smaccess",
+            "kind": "event",
+            "outcome": "success",
+            "reason": "Sm_Api_Reason_None",
+            "type": [
+                "access",
+                "allowed"
+            ]
+        },
+        "@timestamp": "2025-07-23T07:42:31Z",
+        "broadcom": {
+            "siteminder": {
+                "agent": {
+                    "name": "domain.com"
+                },
+                "authlevel": "5",
+                "function": "doc.Fetch",
+                "idle": "18000",
+                "maxtime": "18000",
+                "node": {
+                    "id": "1111111"
+                },
+                "transaction": {
+                    "id": "idletime=18000;maxtime=18000;authlevel=5;"
+                }
+            }
+        },
+        "client": {
+            "address": "2.2.2.2",
+            "ip": "2.2.2.2",
+            "user": {
+                "domain": "ou=Internal,ou=People,o=group",
+                "name": "toto"
+            }
+        },
+        "file": {
+            "name": "News_Text_EN.html"
+        },
+        "http": {
+            "request": {
+                "method": "GET"
+            }
+        },
+        "observer": {
+            "hostname": "HOST_XXX",
+            "product": "Siteminder",
+            "type": "uam",
+            "vendor": "Broadcom "
+        },
+        "related": {
+            "hosts": [
+                "HOST_XXX"
+            ],
+            "ip": [
+                "2.2.2.2"
+            ],
+            "user": [
+                "toto"
+            ]
+        },
+        "url": {
+            "path": "/livelink/llisapi.dll/11111111/News_Text_EN.html?func=doc.Fetch&nodeid=1111111"
+        }
+    }
+    	
+	```
+
+
+=== "ressource_func.json"
+
+    ```json
+	
+    {
+        "message": "AzAccept host_01 [22/Sep/2025:13:29:26 +0200] \"192.168.1.1 uid=toto,ou=Internal,ou=People,o=group\" \"subdomain.corp.xxxxx_agent GET /livelink/livelink.exe?func=multifile.downloadfile&objAction=Browse&objId=1111111111&cacheid=2222222222&nodeid=3333333333\" [000000000000000000000000d111100a-496c-68d11111-111c-01057c71] [0]  [] []",
+        "event": {
+            "action": "AzAccept",
+            "category": [
+                "web"
+            ],
+            "dataset": "smaccess",
+            "kind": "event",
+            "outcome": "success",
+            "reason": "Sm_Api_Reason_None",
+            "type": [
+                "access",
+                "allowed"
+            ]
+        },
+        "@timestamp": "2025-09-22T11:29:26Z",
+        "broadcom": {
+            "siteminder": {
+                "action": "Browse",
+                "agent": {
+                    "name": "subdomain.corp.xxxxx_agent"
+                },
+                "cache": {
+                    "id": "2222222222"
+                },
+                "function": "multifile.downloadfile",
+                "node": {
+                    "id": "3333333333"
+                },
+                "object": {
+                    "id": "1111111111"
+                },
+                "transaction": {
+                    "id": "000000000000000000000000d111100a-496c-68d11111-111c-01057c71"
+                }
+            }
+        },
+        "client": {
+            "address": "192.168.1.1",
+            "ip": "192.168.1.1",
+            "user": {
+                "domain": "ou=Internal,ou=People,o=group",
+                "name": "toto"
+            }
+        },
+        "http": {
+            "request": {
+                "method": "GET"
+            }
+        },
+        "observer": {
+            "hostname": "host_01",
+            "product": "Siteminder",
+            "type": "uam",
+            "vendor": "Broadcom "
+        },
+        "related": {
+            "hosts": [
+                "host_01"
+            ],
+            "ip": [
+                "192.168.1.1"
+            ],
+            "user": [
+                "toto"
+            ]
+        },
+        "url": {
+            "path": "/livelink/livelink.exe?func=multifile.downloadfile&objAction=Browse&objId=1111111111&cacheid=2222222222&nodeid=3333333333"
+        }
+    }
+    	
+	```
+
+
 
 
 
@@ -502,10 +661,15 @@ The following table lists the fields that are extracted, normalized under the EC
 | Name | Type | Description                |
 | ---- | ---- | ---------------------------|
 |`@timestamp` | `date` | Date/time when the event originated. |
+|`broadcom.siteminder.action` | `keyword` | Action performed on the resource in Broadcom SiteMinder |
 |`broadcom.siteminder.agent.name` | `keyword` | The name of the agent |
 |`broadcom.siteminder.authlevel` | `keyword` | Authentication level |
+|`broadcom.siteminder.cache.id` | `keyword` | ID of the cache concerned by the action in broadcom siteminder |
+|`broadcom.siteminder.function` | `keyword` | Function used on the resource in Broadcom SiteMinder |
 |`broadcom.siteminder.idle` | `keyword` | IDLE time in minutes |
 |`broadcom.siteminder.maxtime` | `keyword` | Maximum time |
+|`broadcom.siteminder.node.id` | `keyword` | ID of the node concerned by the action in broadcom siteminder |
+|`broadcom.siteminder.object.id` | `keyword` | ID of the object concerned by the action in broadcom siteminder |
 |`broadcom.siteminder.transaction.id` | `keyword` | A string that contains idletime=<value>. |
 |`client.ip` | `ip` | IP address of the client. |
 |`client.user.domain` | `keyword` | Name of the directory the user is a member of. |
@@ -517,6 +681,7 @@ The following table lists the fields that are extracted, normalized under the EC
 |`event.outcome` | `keyword` | The outcome of the event. The lowest level categorization field in the hierarchy. |
 |`event.reason` | `keyword` | Reason why this event happened, according to the source |
 |`event.type` | `keyword` | Event type. The third categorization field in the hierarchy. |
+|`file.name` | `keyword` | Name of the file including the extension, without the directory. |
 |`http.request.method` | `keyword` | HTTP request method. |
 |`observer.hostname` | `keyword` | Hostname of the observer. |
 |`observer.product` | `keyword` | The product name of the observer. |

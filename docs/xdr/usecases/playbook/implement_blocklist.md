@@ -1,7 +1,7 @@
 # Implement a blocklist in Sekoia.io
 
 While investigating an alert, an analyst can discover malicious IP addresses, domains, URLs or other kind of artifacts.
-To contain the threat, the analyst might want to block the communications with these artifacts on the different network security solutions (firewalls, proxys, …) that are deployed in the information system. 
+To contain the threat, the analyst might want to block the communications with these artifacts on the different network security solutions (firewalls, proxies, …) that are deployed in the information system. 
 
 This article will show how a blocklist can be implemented in Sekoia.io to automate this task.
 
@@ -31,7 +31,7 @@ The implementation of a blocklist in Sekoia.io is based on the [IOC Collections]
 
 ## Create your IOC Collection
 
-Our recommandation is to create a dedicated IOC Collection per artifact type (IP address, domain, URL...) to serve as a blocklist as it will be easier to maintain in time. You can follow this [documentation](../../../cti/features/consume/ioccollections.md) to create a new IOC Collection - no need to import data into it at this point.
+Our recommendation is to create a dedicated IOC Collection per artifact type (IP address, domain, URL...) to serve as a blocklist as it will be easier to maintain in time. You can follow this [documentation](../../../cti/features/consume/ioccollections.md) to create a new IOC Collection - no need to import data into it at this point.
 
 Once the IOC Collection is created:
 - Go back to the `IOC Collections` page
@@ -59,7 +59,7 @@ To create the playbook for your blocklist, follow these steps:
 Once your playbook is created, the following configuration steps are required:
 
 - Open each `Sekoia.io` action and select the account that needs to be used to communicate with Sekoia.io APIs. You may have to create an account with the API key you created previously if no account exists.
-- Open the `Add IOC to IOC Collection` action and replace the ID of the IOC Collection with the `Feed ID` from the previous step. Optionnally, you can also specify the `valid_for` parameter with the number of days for which the indicator will be valid (only valid indicators will be retrieved by the network security solutions). Default validity values will be used otherwise (30 days for IP addresses, 6 months for domains and URLs). 
+- Open the `Add IOC to IOC Collection` action and replace the ID of the IOC Collection with the `Feed ID` from the previous step. Optionally, you can also specify the `valid_for` parameter with the number of days for which the indicator will be valid (only valid indicators will be retrieved by the network security solutions). Default validity values will be used otherwise (30 days for IP addresses, 6 months for domains and URLs). 
 - Save the modifications and enable your playbook.
 
 ## Configure your network security solution

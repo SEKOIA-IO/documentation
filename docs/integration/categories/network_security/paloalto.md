@@ -37,7 +37,7 @@ Palo Alto Networks offers an enterprise cybersecurity platform which provides ne
 
 	OR
 
-	- Palo Alto Strata Logging Service (formely Palo Alto Cortex Data Lake)
+	- Palo Alto Strata Logging Service (formerly Palo Alto Cortex Data Lake)
 
 - **Network**:
     - Outbound traffic allowed

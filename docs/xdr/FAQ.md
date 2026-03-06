@@ -43,28 +43,12 @@ This way, you will be able to exactly identify what data is sent to Sekoia.io.
 
 ## Logs
 
-### Retention
+### Can I access logs older than my hot storage period?
+Yes. If your subscription includes cold storage (**Archiving**, you can request the temporary restoration of archived events. 
 
-Logs are available and displayed for 30 days in Sekoia.io, for standard contracts.
+To understand how tiers work, see our article on [Data storage and retention](/xdr/FAQ/data_storage_retention.md). 
 
-### Archive and restore data
-
-!!! Info
-
-    Depending on your plan we can archive your data and restore it on demand
-
-    Option not available for all plans
-
-
-**Restoration process**
-
-- The request must be made to [support](https://support.sekoia.io)
-
-- Rehydratation process will be launched within 48 working hours
-
-- The data requested must be less than 12 months old (the end date of the requested period must be less than 365 days)
-
-- Restored data will be deleted after 30 days
+To start a restoration, follow the procedure to [restore data from cold storage](/xdr/FAQ/restore_data_cold_storage.md).
 
 **Restoration flow**
 

@@ -6,6 +6,10 @@ type: intake
 
 ## Overview
 
+Wiz Cloud Configuration Findings detect insecure settings and policy violations across your cloud environments, mapping each issue to severity and compliance frameworks.
+
+They deliver prioritized, actionable remediation guidance to ensure secure, standards-aligned configurations.
+
 - **Supported environment**: SaaS
 - **Detection based on**: Alerts
 - **Supported application or feature**:

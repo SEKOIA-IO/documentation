@@ -59,7 +59,7 @@ print(f"Collection created with id {res.json()['id']}")
 
 ### Import indicators
 !!! note
-    This is the prefered way for API integration.
+    This is the preferred way for API integration.
 
 A dedicated endpoint allows to import indicators by sending them as the payload of a POST request. It supports batch creation of indicators, **up to 100 at once**.
 
@@ -75,10 +75,10 @@ A dedicated endpoint allows to import indicators by sending them as the payload 
     "title": "IOC upload payload",
     "description": "Parameters schema",
     "type": "object",
-    "proprties": {
+    "properties": {
         "default_fields": {
             "type": "object",
-            "desription": "Default data that will be used for all IOCs of the batch",
+            "description": "Default data that will be used for all IOCs of the batch",
             "properties": {
                 "description": {
                     "description": "Description of the IOCs",

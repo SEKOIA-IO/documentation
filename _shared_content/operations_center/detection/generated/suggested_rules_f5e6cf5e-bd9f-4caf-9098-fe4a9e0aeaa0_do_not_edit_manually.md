@@ -77,7 +77,7 @@ The following Sekoia.io built-in rules match the intake **Stormshield SES**. Thi
 
 ??? abstract "Antivirus Exploitation Framework Detection"
     
-    Detects a highly relevant Antivirus alert that reports an exploitation framework. This is based on Windows Defender logs (Event ID 1116 and 1117).
+    Detects a highly relevant Antivirus alert that reports an exploitation framework. This is based on Windows Defender logs (Event ID 1116 and 1117). 
     
     - **Effort:** elementary
 
@@ -98,6 +98,12 @@ The following Sekoia.io built-in rules match the intake **Stormshield SES**. Thi
     Detects a highly relevant Antivirus alert that reports a web shell. This is based on Windows Defender logs (Event ID 1116 and 1117).
     
     - **Effort:** elementary
+
+??? abstract "AppleScript Password Prompt"
+    
+    Detects when a prompt is displayed to gain credentials. This technique is used by MacOS malware to obtain the user's password.
+    
+    - **Effort:** advanced
 
 ??? abstract "Attempt to Disable Gatekeeper Execution Control"
     
@@ -397,7 +403,7 @@ The following Sekoia.io built-in rules match the intake **Stormshield SES**. Thi
     
     The csrss.exe process (csrss stands for Client / Server Runtime Subsystem) is a generic Windows process used to manage windows and Windows graphics. This process  should not create a child process or it is very rare.
     
-    - **Effort:** intermediate
+    - **Effort:** advanced
 
 ??? abstract "Csrss Wrong Parent"
     
@@ -948,6 +954,12 @@ The following Sekoia.io built-in rules match the intake **Stormshield SES**. Thi
 ??? abstract "Linux Shared Lib Injection Via Ldso Preload"
     
     Detect ld.so.preload modification for shared lib injection, technique used by attackers to load arbitrary code into process
+    
+    - **Effort:** intermediate
+
+??? abstract "Linux Suspicious Auto-start Desktop Shortcut Execution"
+    
+    This detection rule identifies a suspicious process start from an graphical env process which may indicate the use of a malicious .desktop shortcut.
     
     - **Effort:** intermediate
 
@@ -1749,6 +1761,12 @@ The following Sekoia.io built-in rules match the intake **Stormshield SES**. Thi
     
     - **Effort:** intermediate
 
+??? abstract "Scheduled Task Creation By Non Privileged User"
+    
+    Detects scheduled task creation, either executed by a non-system user or a user who is not administrator (the user ID is not S-1-5-18 or S-1-5-18-*). This detection rule doesn't match Sysmon EventID 1 because the user SID is always set to S-1-5-18. 
+    
+    - **Effort:** master
+
 ??? abstract "Schtasks Persistence With High Privileges"
     
     Detection of scheduled task with high privileges used by attacker for persistence.
@@ -2070,12 +2088,6 @@ The following Sekoia.io built-in rules match the intake **Stormshield SES**. Thi
 ??? abstract "Suspicious Rundll32.exe Executions"
     
     The process rundll32.exe executes a newly dropped DLL with update /i in the command line. This specific technic was observed at least being used by the IcedID loading mechanism dubbed Gziploader. Some other detections are related to LOLBAS (Living Off The Land Binaries, Scripts and Libraries) usages (like the COM registering).
-    
-    - **Effort:** intermediate
-
-??? abstract "Suspicious Scheduled Task Creation"
-    
-    Detects suspicious scheduled task creation, either executed by a non-system user or a user who is not administrator (the user ID is not S-1-5-18 or S-1-5-18-*). This detection rule doesn't match Sysmon EventID 1 because the user SID is always set to S-1-5-18. 
     
     - **Effort:** intermediate
 
