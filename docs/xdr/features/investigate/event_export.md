@@ -1,4 +1,4 @@
-# Massive Event Export
+# Massive event export
 
 ## Overview
 
@@ -44,8 +44,9 @@ The export process is asynchronous and follows a specific security and operation
 
 
 ## Next steps:
-- [Export events with the CLI](LINK HERE): To begin your first export using our official tool, follow the **Export events with the CLI** guide.
+- [Export events with the CLI (recommended)](/xdr/features/investigate/export_event_cli.md): To begin your first export using our official tool, follow the **Export events with the CLI** guide.
 - [Export Large Volumes of Events - Use Case Guide](../../usecases/massive_export.md)  Practical examples and step-by-step workflows for common scenarios
+- [Export events with the API](/xdr/features/investigate/export_event_API.md): If you rather like exporting with API, follow the **Export events with the API** guide.
 
 
 
