@@ -93,7 +93,13 @@ nav:
       - IOCs Collections: xdr/features/detect/ioccollections.md
     - Investigate:
       - Alerts: xdr/features/investigate/alerts.md
-      - Events: xdr/features/investigate/events.md
+      - Events page: xdr/features/investigate/events.md
+      - Massive event export:
+        - Understand massive event export: xdr/features/investigate/event_export.md 
+        - Export events with CLI: xdr/features/investigate/export_event_cli.md
+        - Export events with API: xdr/features/investigate/export_event_API.md
+        - Massive export technical specifications: xdr/features/investigate/export_reference.md 
+        - Massive event export troubleshooting: xdr/features/investigate/export_event_bulk_troubleshooting.md
       - AI Cases: xdr/features/investigate/ai_cases.md
       - Cases: xdr/features/investigate/cases.md
       - Asset Context Panel (coming soon): xdr/features/investigate/asset_context_panel.md
@@ -132,6 +138,7 @@ nav:
       - Palo Alto Cortex XSOAR: xdr/features/integrations/interconnect_sekoia_with_xsoar.md
       - Swimlane Turbine: xdr/features/integrations/swimlane_turbine.md
   - Usecases:
+    - Export large volumes of events: xdr/usecases/massive_export.md
     - Implement a blocklist in Sekoia.io: xdr/usecases/playbook/implement_blocklist.md
     - Synchronize Alerts with an external tool: xdr/usecases/playbook/synchronize_alerts.md
     - Synchronize Assets with an Active Directory: xdr/usecases/playbook/synchronize_asset_with_ad.md
@@ -141,9 +148,9 @@ nav:
     - General: xdr/FAQ.md
     - Alerts: xdr/FAQ/Alerts_qa.md
     - Events:
+      - Events FAQ: xdr/FAQ/get_events.md
       - Events QA: xdr/FAQ/Events_qa.md
       - Facing issues with logs collection: xdr/FAQ/Log_collection_Troubleshoot.md
-      - Extract my events: xdr/FAQ/get_events.md
       - Data storage and retention: xdr/FAQ/data_storage_retention.md
       - Restore Data from cold storage: xdr/FAQ/restore_data_cold_storage.md
     - Intelligence:
