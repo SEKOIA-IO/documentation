@@ -331,4 +331,4 @@ cat export_*.json | jq 'select(.["source.ip"] == "192.168.1.100")'
     ```
 
 ## Next steps: 
-To understand the technical boundaries and monthly data quotas of the system, consult the [Export technical reference](xdr/features/investigate/export_reference.md).
+To understand the technical boundaries and monthly data quotas of the system, consult the [Export technical reference](/xdr/features/investigate/export_reference.md).
