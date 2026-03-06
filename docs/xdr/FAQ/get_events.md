@@ -20,7 +20,7 @@
  
 ### Massive export 
  Please read our dedicated documentation: 
- - [How bulk export works](docs/xdr/features/investigate/event_export.md)
+ - [How bulk export works](/xdr/features/investigate/event_export.md)
  - [CLI massive export (recommended)](/xdr/features/investigate/export_event_cli.md)
  - [API massive export](/xdr/features/investigate/export_event_API.md)
  - [Massive export technical reference](/xdr/features/investigate/export_reference.md)
