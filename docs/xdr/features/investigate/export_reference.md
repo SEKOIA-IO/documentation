@@ -39,7 +39,7 @@ Typical processing times vary based on query complexity and field count:
 
 !!! info "Field selection"
     By default, `@timestamp` and `message` are included.
-    You can customize which fields to export by specifying exact field names. For example : `source.ip`, `user.name`, `event.action`, `event.categroy`, `destination.ip`... 
+    You can customize which fields to export by specifying exact field names. For example : `source.ip`, `user.name`, `event.action`, `event. category`, `destination.ip`... 
 
 ??? example
 
