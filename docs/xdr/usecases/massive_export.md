@@ -1,62 +1,63 @@
 # Export Large Volumes of Events
 
-This guide shows how to export large volumes of security events from SEKOIA.IO for offline analysis, incident response, compliance reporting, and archival purposes.
+This tutorial guides you through exporting up to 100 million security events from Sekoia.io for offline analysis, incident response, compliance reporting, and archival.
 
-## What You Can Do
+By using the official CLI tool, you can automate the extraction of massive datasets and stream them directly to your infrastructure or local machine.
 
-Export up to 100 million events from your searches for:
+!!! note 
+    Read our overview article to learn more about [Massive event export](xdr/features/investigate/event_export.md). 
+    For complete documentation, see the [official CLI repository](https://github.com/SEKOIA-IO/sekoia-event-exporter).
+    
 
-- **Incident investigation** - Deep forensic analysis of security incidents
-- **Compliance reporting** - Quarterly or annual audit log exports
-- **Long-term archival** - Preserve logs for regulatory retention
-- **External analysis** - Share data with partners or use specialized tools
-- **Custom analytics** - Feed events into your own analysis pipelines
 
-## Before You Start
+## Prerequisites
 
-This guide uses the **SEKOIA.IO Event Exporter CLI tool** to make exports simple and automated. For complete documentation, see the [official CLI repository](https://github.com/SEKOIA-IO/sekoia-event-exporter).
+This guide uses the **SEKOIA.IO Event Exporter CLI tool** to make exports simple and automated. 
 
-You'll need:
+Prerequisites
 
 1. **A completed search in SEKOIA.IO** - Go to Events > Search, run your query, and wait for it to finish
 2. **The search job UUID** - Copy it from your browser's URL when viewing the search results
 3. **An API key** - Create one with the `Massive export of events` permission
+4. * **Python** installed on your system to run the `uvx` command.
 
-## How to Export Events
+## Export Events with CLI
 
-### Step 1: Set Up Your API Key
+1. Set your API Key:
 
 ```bash
 export API_KEY="your-api-key-here"
 ```
 
-### Step 2: Run the Export
+2. Run the Export command:
 
 ```bash
 uvx sekoia-event-exporter export <search_job_uuid>
 ```
 
-Replace `<search_job_uuid>` with the UUID you copied from your search.
+3. Replace `<search_job_uuid>` with the UUID you copied from your search.
 
-**That's it!** The tool will:
+!!! success 
 
-- Start the export
-- Show progress in real-time
-- Download the file automatically
-- Save it in your current folder
+    The tool:
 
-### What You'll See
+    - Start the export
+    - Show progress in real-time
+    - Download the file automatically
+    - Save it in your current folder
 
-```
-✓ Export triggered
+    What You'll See: 
 
-Exporting: ████████████░░░░░░░░ 40.0% | 4M / 10M events | ⏱ 2m 30s
+    ```
+    ✓ Export triggered
 
-✓ Export ready!
-Downloading: export_20260214_143842.json.gz
-✓ Download complete (15.0 MB)
+    Exporting: ████████████░░░░░░░░ 40.0% | 4M / 10M events | ⏱ 2m 30s
 
-```
+    ✓ Export ready!
+    Downloading: export_20260214_143842.json.gz
+    ✓ Download complete (15.0 MB)
+
+    ```
 
 
 ## Common Use Cases
@@ -119,7 +120,6 @@ Downloading: export_20260214_143842.json.gz
    ```
 
 3. **Save securely**
-
    - Keep the encryption key in your secure vault
    - Store the export in your compliance archive
    - The file is encrypted in S3 storage (you'll download a decrypted, gzip-compressed version)
@@ -148,7 +148,9 @@ Downloading: export_20260214_143842.json.gz
 
    - Transfer to cold storage
    - Keep the encryption key - you'll need it if you want to re-download from S3 later
-   - Note: The downloaded file is gzip-compressed but not encrypted (encryption is only for S3 storage)
+
+!!! note
+    The downloaded file is gzip-compressed but not encrypted (encryption is only for S3 storage)
 
 ---
 
@@ -170,14 +172,16 @@ Downloading: export_20260214_143842.json.gz
      --no-download
    ```
 
-   The tool will display:
-   ```
-   ✓ Export ready!
-   Download URL: https://s3.storage.com/...
-   Encryption key: dGhpc2lzYW5leGFtcGxl...
+!!! success
 
-   ⚠️  URL valid for 24 hours
-   ```
+    The tool will display:
+    ```
+    ✓ Export ready!
+    Download URL: https://s3.storage.com/...
+    Encryption key: dGhpc2lzYW5leGFtcGxl...
+ 
+    ⚠️  URL valid for 24 hours
+    ```
 
 3. **Securely share with your partner**
 
@@ -240,48 +244,62 @@ Downloading: export_20260214_143842.json.gz
 **Result:** Events are exported directly to your infrastructure, ready for automated ingestion into your data lake, SIEM, or analytics platform. No manual download and upload needed!
 
 ---
+### Use case 6: Export 30M events to AWS S3
+**Situation:** You need to export 30 million events directly to your company's data lake to avoid local storage limits.
+
+**Step-by-Step:**
+
+1. **Configure AWS**
+
+   Set your bucket environment variables:
+   
+   ```bash
+   export S3_BUCKET="company-security-datalake"
+   export S3_REGION_NAME="eu-west-1"
+   export S3_ACCESS_KEY_ID="<your-access-key>"
+   export S3_SECRET_ACCESS_KEY="<your-secret-key>"
+   ```
+
+2. **Trigger Stream**
+    Use the `--no-download` flag to send data directly to AWS:
+    ```bash
+    uvx sekoia-event-exporter export <job_uuid> --no-download
+    ```
+
+4. **Verify**: Check your S3 bucket once the CLI displays the FINISHED status.
+
+**Result:** In your AWS Management Console, a new object appears in the bucket and prefix you defined (e.g., s3://company-security-datalake/sekoia/events/). 0 bytes used on your local machine; standard S3 storage consumption in AWS.
+
+---
 
 ## Tips for SOC Analysts
 
-**Choose the right fields:**
+### Choose the right fields:
 
 - For investigations: Include source.ip, destination.ip, user.name, process.name, event.action
 - For compliance: Include user.name, event.action, event.outcome, source.ip
 - For archival or data lakes: List all fields you need explicitly (wildcards are not supported)
 
-**Managing large exports:**
+### Managing large exports:
 
 - Exports can take 10-30 minutes for millions of events
-- You can close your terminal - the export continues server-side
+- You can close your terminal:  the export continues server-side
 - Use `sekoia-event-exporter status <task_uuid>` to check progress later
 
-**Working with export files:**
+### Working with export files:
 
 - Files are JSON format, one event per line
 - Use `jq`, `grep`, or Python to analyze them
 - Compressed files are typically 60-80% smaller than original
 
-**Automating exports to your infrastructure:**
+### Automating exports to your infrastructure:
 
 - Export directly to your S3 bucket to skip manual downloads
 - Use `--no-download` flag when exporting to custom S3 buckets
 - Store S3 credentials as environment variables for security
 
 
-
-## Working with Export Files
-
-Export files are in **JSON Lines format** (`.jsonl`) and **gzip-compressed** (`.gz`).
-
-Each line in the file is one complete event:
-
-```json
-{"@timestamp":"2025-01-12T10:15:30Z","message":"Failed login for user admin","source.ip":"192.168.1.100"}
-{"@timestamp":"2025-01-12T10:15:31Z","message":"Failed login for user root","source.ip":"192.168.1.100"}
-{"@timestamp":"2025-01-12T10:15:33Z","message":"Successful login for user alice","source.ip":"192.168.1.50"}
-```
-
-### Quick Analysis Commands
+## Quick Analysis Commands
 
 ```bash
 # Extract the file
@@ -300,78 +318,17 @@ grep "malware" export_*.json
 cat export_*.json | jq 'select(.["source.ip"] == "192.168.1.100")'
 ```
 
-### Python Analysis Example
+??? "Python Analysis Example"
 
-```python
-import json
+    ```python
+    import json
 
-with open('export_20260214.json', 'r') as f:
-    for line in f:
-        event = json.loads(line)
-        if event.get('source.ip') == '192.168.1.100':
-            print(f"{event['@timestamp']}: {event['message']}")
-```
+    with open('export_20260214.json', 'r') as f:
+        for line in f:
+            event = json.loads(line)
+            if event.get('source.ip') == '192.168.1.100':
+                print(f"{event['@timestamp']}: {event['message']}")
+    ```
 
----
-
-## Important Things to Know
-
-**Exports are re-executed searches:**
-
-- When you export, SEKOIA.IO runs your search query again
-- Results may differ slightly if new events arrived since your original search
-- This ensures you get the most up-to-date data
-
-**Exports are encrypted in S3 storage:**
-
-- Every export gets a unique SSE-C encryption key for S3 storage
-- The key is shown when the export completes - **save it!**
-- You need this key to download the file from S3
-- Once downloaded, the file is gzip-compressed (not encrypted)
-- Store encryption keys in your password manager or secure vault
-
-**Download links expire:**
-
-- Export files are available for 24 hours
-- Download the file promptly after export completes
-- If you miss the window, you'll need to run a new export
-
-**For different regions:**
-If you're using SEKOIA.IO in a non-European region, add the `--api-host` flag:
-
-```bash
-# USA region example
-uvx sekoia-event-exporter export <job_uuid> --api-host api.usa1.sekoia.io
-```
-
----
-
-## Troubleshooting
-
-**"Permission denied" or "403 Forbidden"**
-
-- Ask your SEKOIA.IO admin to give you the `Massive export of events` permission
-- Check you're using the right API key
-
-**"Search job not found"**
-
-- Make sure your search has finished (you see "Search completed" in the UI)
-- Double-check you copied the correct UUID from the URL
-
-**"Can't download the file" or S3 encryption errors**
-
-- Make sure you saved the SSE-C encryption key from when the export finished
-- The key is needed to access the file from S3 storage
-- Copy the entire key exactly - no spaces or line breaks
-
-**Export is taking forever**
-
-- Large exports (millions of events) can take 10-30 minutes
-- Try exporting fewer fields to speed it up
-- Or split into smaller time ranges (export one week at a time)
-
-**Need help?**
-
-- Contact your SEKOIA.IO administrator
-- Check the [CLI tool documentation](https://github.com/sekoia-io/sekoia-event-exporter)
-- Reach out to SEKOIA.IO support if you hit quota limits
+## Next steps: 
+To understand the technical boundaries and monthly data quotas of the system, consult the [Export technical reference](xdr/features/investigate/export_reference.md).
