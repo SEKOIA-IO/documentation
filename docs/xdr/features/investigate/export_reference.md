@@ -34,12 +34,18 @@ Typical processing times vary based on query complexity and field count:
 
 ## File format and fields
 * **Format**: JSON Lines (`.jsonl`) with gzip compression (`.gz`). Each line is a single event.
-* **Field selection**: 
-* **No Wildcards**: You must list fields explicitly. Wildcards like `source.*` are **not** supported.
+* **Field selection**: By default, `@timestamp` and `message` are included. When using the `--fields flag`, use these specific sets to minimize file size while maintaining visibility into critical data points.
+| Investigation Scenario | Recommended ECS Fields |
+| :--- | :--- |
+| **Network Investigation** | `@timestamp`, `source.ip`, `source.port`, `destination.ip`, `destination.port`, `network.protocol`, `network.transport`, `event.action` |
+| **Identity & Access Audit** | `@timestamp`, `user.name`, `user.domain`, `source.ip`, `event.action`, `event.outcome`, `message` |
+| **Endpoint Forensics** | `@timestamp`, `host.name`, `process.name`, `process.executable`, `process.args`, `file.path`, `file.hash.sha256`, `user.name` |
 
-!!! info "Field selection"
-    By default, `@timestamp` and `message` are included.
-    You can customize which fields to export by specifying exact field names. For example : `source.ip`, `user.name`, `event.action`, `event. category`, `destination.ip`... 
+
+!!! tip "Customizing your export"
+    You can combine these fields or add others from the platform's schema.
+
+* **No Wildcards**: You must list fields explicitly. Wildcards like `source.*` are **not** supported.
 
 ??? example
 
@@ -79,13 +85,34 @@ You can export directly to your own S3 bucket instead of using SEKOIA.IO's stora
 - Useful for automated data pipelines and data lakes
 
 
-## Troubleshooting
-| Issue | Possible Cause | Resolution |
-| :--- | :--- | :--- |
-| `Permission denied` | API key lacks permissions. | Ensure key has `SIC_MASSIVE_EXPORT_EVENTS`. |
-| `Search job not found` | Search is not finished. | Verify search status is `DONE` in the UI. |
-| Download failed | Missing SSE-C key. | You must use the key provided at the end of the export. |
-| Export is slow | High event/field count. | Limit exported fields or split timeframe into smaller ranges. |
+## Analysis command cheat sheet
+Once you have decompressed your export file (`.json`), use these standard terminal utilities for rapid triage.
+
+| Goal | Command |
+| :--- | :--- |
+| **Count events** | `wc -l export_file.json` |
+| **Search for string** | `grep "malware_domain.com" export_file.json` |
+| **View first 10 events** | `head -n 10 export_file.json` |
+| **Filter by field (jq)** | `cat export_file.json | jq 'select(.["event.outcome"] == "failure")'` |
+| **Extract field list** | `cat export_file.json | jq -r '.["user.name"]' | sort | uniq -c` |
+
+
+## Python quick-parser
+For complex logic, use this Python snippet to iterate through the exported JSON Lines.
+
+```python
+import json
+
+# Replace with your actual filename
+filename = 'export_20260306.json'
+
+with open(filename, 'r') as f:
+    for line in f:
+        event = json.loads(line)
+        # Example logic: filter for specific IP
+        if event.get('source.ip') == '192.168.1.100':
+            print(f"{event['@timestamp']}: {event['message']}")
+```
 
 ## Next step
 
