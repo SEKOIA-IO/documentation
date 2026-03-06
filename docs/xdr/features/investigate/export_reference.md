@@ -116,5 +116,5 @@ with open(filename, 'r') as f:
 
 ## Next step
 
-- If you need a high-level overview of the export security logic, return to the [Massive event export concept](xdr/features/investigate/event_export.md).
+- If you need a high-level overview of the export security logic, return to the [Massive event export concept](/xdr/features/investigate/event_export.md).
 - Get inspired by practical examples and step-by-step workflows for common scenarios with our  [Export Large Volumes of Events - Use Case Guide](../../usecases/massive_export.md)
