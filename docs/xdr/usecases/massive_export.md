@@ -16,7 +16,7 @@ This guide uses the **Sekoia.io Event Exporter CLI tool** to make exports simple
 
 Prerequisites
 
-1. **A completed search in SEKOIA.IO** - Go to Events > Search, run your query, and wait for it to finish
+1. **A completed search in Sekoia.io** - Go to Events > Search, run your query, and wait for it to finish
 2. **The search job UUID** - Copy it from your browser's URL when viewing the search results
 3. **An API key** - Create one with the `Massive export of events` permission
 4. * **Python** installed on your system to run the `uvx` command.
