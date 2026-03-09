@@ -4,7 +4,7 @@ The `sekoia-event-exporter` is the official command-line tool for automating the
 
 ## Prerequisites
 * An API Key with the `SIC_MASSIVE_EXPORT_EVENTS` permission.
-* A completed search in Sekoia.io (status must be **DONE**).
+* A completed search in Sekoia.io (status must be `DONE`).
 * The **Search Job UUID** (copied from the browser URL when viewing results).
 * Sekoia.io operates in multiple regions. **Configure your region** when using the CLI.
 
