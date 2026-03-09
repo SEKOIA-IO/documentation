@@ -41,7 +41,7 @@ curl -H "Authorization: Bearer YOUR_API_KEY" \
      "[https://api.sekoia.io/v1/tasks/](https://api.sekoia.io/v1/tasks/){task_uuid}"
 ```
 **Result:**
-The response indicates the **status**. Possible values are PENDING, RUNNING, FINISHED, or FAILED.
+The response indicates the `status`. Possible values are `PENDING`, `RUNNING`, `FINISHED`, or `FAILED`.
 
 ### Step 3: Retrieve the download URL
 Once the status is FINISHED, retrieve the pre-signed S3 URL and the metadata for the exported file.
