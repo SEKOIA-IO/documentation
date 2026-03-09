@@ -41,7 +41,7 @@ The `sekoia-event-exporter` is the official command-line tool for automating the
 !!! warning "Encryption key storage"
     The tool displays a unique encryption key upon completion. Save this key in a secure vault. Without it, you cannot re-download the file from S3 storage if the local copy is lost.
 
-!!! tip "manual status check"
+!!! tip "Manual status check"
     If you disconnected or closed your terminal, you can resume monitoring using the status command and your Task UUID. (The task UUID appears in the first few lines of the output):
     ```bash
      uvx sekoia-event-exporter status <task_uuid>
