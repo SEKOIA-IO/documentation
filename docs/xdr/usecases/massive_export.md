@@ -5,7 +5,7 @@ This tutorial guides you through exporting up to 100 million security events fro
 By using the official CLI tool, you can automate the extraction of massive datasets and stream them directly to your infrastructure or local machine.
 
 !!! note 
-    Read our overview article to learn more about [Massive event export](xdr/features/investigate/event_export.md). 
+    Read our overview article to learn more about [Massive event export](/xdr/features/investigate/event_export.md). 
     For complete documentation, see the [official CLI repository](https://github.com/SEKOIA-IO/sekoia-event-exporter).
     
 
