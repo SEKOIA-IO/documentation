@@ -194,7 +194,7 @@ uvx sekoia-event-exporter export <search_job_uuid>
 
 ### Use Case 5: Export to Your Own S3 Bucket
 
-**Situation:** You want to automatically feed SEKOIA.IO events into your own data lake or SIEM platform by exporting directly to your S3 bucket.
+**Situation:** You want to automatically feed Sekoia.io events into your own data lake or SIEM platform by exporting directly to your S3 bucket.
 
 **Step-by-Step:**
 
