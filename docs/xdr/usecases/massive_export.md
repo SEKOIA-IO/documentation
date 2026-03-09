@@ -24,17 +24,13 @@ Prerequisites
 ## Export Events with CLI
 
 1. Set your API Key:
-
-```bash
-export API_KEY="your-api-key-here"
-```
-
+    ```bash
+    export API_KEY="your-api-key-here"
+    ```
 2. Run the Export command:
-
-```bash
-uvx sekoia-event-exporter export <search_job_uuid>
-```
-
+    ```bash
+    uvx sekoia-event-exporter export <search_job_uuid>
+    ```
 3. Replace `<search_job_uuid>` with the UUID you copied from your search.
 
 !!! success 
@@ -68,13 +64,13 @@ uvx sekoia-event-exporter export <search_job_uuid>
 
 **Step-by-Step:**
 
-1. **Search for user activities in Sekoia.io**
+1. **Search for user activities in Sekoia.io**: 
 
-   - Go to **Events** > **Search**
-   - Query: `user.name:"john.doe"`
-   - Set timeframe: Last 7 days
-   - Wait for the search to complete
-   - Copy the job UUID from the URL
+     * Go to **Events** > **Search**
+     * Query: `user.name:"john.doe"`
+     * Set timeframe: Last 7 days
+     * Wait for the search to complete
+     * Copy the job UUID from the URL
 
 2. **Export with user activity fields**
    ```bash
@@ -109,8 +105,8 @@ uvx sekoia-event-exporter export <search_job_uuid>
 
 1. **Search for audit events**
 
-   - Query: `event.category:authentication OR event.category:access`
-   - Timeframe: Q1 2026 (Jan 1 - Mar 31)
+   * Query: `event.category:authentication OR event.category:access`
+   * Timeframe: Q1 2026 (Jan 1 - Mar 31)
 
 2. **Export with compliance fields**
    ```bash
@@ -120,9 +116,10 @@ uvx sekoia-event-exporter export <search_job_uuid>
    ```
 
 3. **Save securely**
-   - Keep the encryption key in your secure vault
-   - Store the export in your compliance archive
-   - The file is encrypted in S3 storage (you'll download a decrypted, gzip-compressed version)
+   
+   * Keep the encryption key in your secure vault
+   * Store the export in your compliance archive
+   * The file is encrypted in S3 storage (you'll download a decrypted, gzip-compressed version)
 
 ---
 
@@ -134,8 +131,8 @@ uvx sekoia-event-exporter export <search_job_uuid>
 
 1. **Search for system events**
 
-   - Query: `host.name:"old-server-01"`
-   - Timeframe: All time (or specific retention period)
+   * Query: `host.name:"old-server-01"`
+   * Timeframe: All time (or specific retention period)
 
 2. **Export all relevant data**
    ```bash
@@ -146,8 +143,8 @@ uvx sekoia-event-exporter export <search_job_uuid>
 
 3. **Archive securely**
 
-   - Transfer to cold storage
-   - Keep the encryption key - you'll need it if you want to re-download from S3 later
+   * Transfer to cold storage
+   * Keep the encryption key - you'll need it if you want to re-download from S3 later
 
 !!! note
     The downloaded file is gzip-compressed but not encrypted (encryption is only for S3 storage)
@@ -162,8 +159,8 @@ uvx sekoia-event-exporter export <search_job_uuid>
 
 1. **Create a focused search**
 
-   - Limit to specific timeframe and systems
-   - Exclude sensitive internal data if needed
+   * Limit to specific timeframe and systems
+   * Exclude sensitive internal data if needed
 
 2. **Export and get the download URL** (without downloading locally)
    ```bash
@@ -185,10 +182,10 @@ uvx sekoia-event-exporter export <search_job_uuid>
 
 3. **Securely share with your partner**
 
-   - Send the download URL (valid for 24 hours)
-   - Share the encryption key separately via a different channel (phone, secure messaging, etc.)
-   - Your partner needs the key to download from S3 (the file they download will be gzip-compressed, not encrypted)
-   - No need to download and re-upload the file yourself
+   * Send the download URL (valid for 24 hours)
+   * Share the encryption key separately via a different channel (phone, secure messaging, etc.)
+   * Your partner needs the key to download from S3 (the file they download will be gzip-compressed, not encrypted)
+   * No need to download and re-upload the file yourself
 
 ---
 
@@ -200,9 +197,9 @@ uvx sekoia-event-exporter export <search_job_uuid>
 
 1. **Prepare your S3 credentials**
 
-   - Get your S3 bucket name (e.g., `company-security-datalake`)
-   - Create AWS access keys with write permissions to the bucket
-   - Note your bucket's region (e.g., `eu-west-1`)
+   * Get your S3 bucket name (e.g., `company-security-datalake`)
+   * Create AWS access keys with write permissions to the bucket
+   * Note your bucket's region (e.g., `eu-west-1`)
 
 2. **Set up environment variables** (recommended for security)
 
@@ -237,9 +234,9 @@ uvx sekoia-event-exporter export <search_job_uuid>
 
 4. **Verify the export**
 
-   - Check your S3 bucket for the exported file
-   - The file will be in: `s3://company-security-datalake/sekoia/events/`
-   - Your data pipeline can now process it automatically
+   * Check your S3 bucket for the exported file
+   * The file will be in: `s3://company-security-datalake/sekoia/events/`
+   * Your data pipeline can now process it automatically
 
 **Result:** Events are exported directly to your infrastructure, ready for automated ingestion into your data lake, SIEM, or analytics platform. No manual download and upload needed!
 
