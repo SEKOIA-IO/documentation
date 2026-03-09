@@ -5,7 +5,7 @@ The Sekoia.io REST API allows you to programmatically trigger event exports and 
 ## Prerequisites
 * An API Key with the `SIC_MASSIVE_EXPORT_EVENTS` permission.
 * A completed Search Job UUID (status must be `DONE`).
-* A tool to send HTTP requests (e.g., `curl` or Postman).
+* A tool to send HTTP requests (e.g., cURL or Postman).
 * SEKOIA operates in multiple regions. **Configure your region** when using the CLI.
 
 ??? info "API Configuration"
