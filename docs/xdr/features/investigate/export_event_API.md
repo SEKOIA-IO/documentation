@@ -33,7 +33,9 @@ curl -X POST "[https://api.sekoia.io/v1/sic/conf/events/search/jobs/](https://ap
 The API returns a `task_uuid`. You must use this ID to monitor the status in the next step.
 
 ###Step 2: Monitor task status
-Send a `GET` request to verify the progress and the state of the export task.
+
+1. Retrieve the Task UUID: When you trigger the export via a POST request, the API response body contains the uuid of the task.
+2. Poll the status endpoint: Send a GET request to the tasks endpoint. Replace {task_uuid} with your ID.
 
 **Request:**
 ```bash
