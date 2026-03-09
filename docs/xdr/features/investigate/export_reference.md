@@ -13,11 +13,13 @@ This page details the constraints, formats, and API endpoints for the export sys
 | **Community scope** | Single community only (multi-community not supported) |
 
 ## Processing time expectations
+
 Typical processing times vary based on query complexity and field count:
 
-    * **1 million events**: 2–5 minutes
-    * **10 million events**: 20–40 minutes
-    * **50 million events**: 60–120 minutes
+* **1 million events**: 2–5 minutes
+* **10 million events**: 20–40 minutes
+* **50 million events**: 60–120 minutes
+  
 
 !!! info "Processing time variations"
     Processing time varies based on:
@@ -34,15 +36,15 @@ Typical processing times vary based on query complexity and field count:
     * **Prioritize off-peak hours**: Schedule very large exports (50M+ events) during low-traffic periods to benefit from higher available processing bandwidth.
 
 ## File format and fields
-* **Format**: JSON Lines (`.jsonl`) with gzip compression (`.gz`). Each line is a single event.
-* **Field selection**: By default, `@timestamp` and `message` are included. When using the `--fields flag`, use these specific sets to minimize file size while maintaining visibility into critical data points.
-  
-| Investigation Scenario | Recommended ECS Fields |
-| :--- | :--- |
-| **Network Investigation** | `@timestamp`, `source.ip`, `source.port`, `destination.ip`, `destination.port`, `network.protocol`, `network.transport`, `event.action` |
-| **Identity & Access Audit** | `@timestamp`, `user.name`, `user.domain`, `source.ip`, `event.action`, `event.outcome`, `message` |
-| **Endpoint Forensics** | `@timestamp`, `host.name`, `process.name`, `process.executable`, `process.args`, `file.path`, `file.hash.sha256`, `user.name` |
 
+* **Format**: JSON Lines (`.jsonl`) with gzip compression (`.gz`). Each line is a single event.
+* **Field selection**: By default, `@timestamp` and `message` are included. When using the `--fields` flag, use these specific sets to minimize file size while maintaining visibility into critical data points.
+
+| Investigation Scenario      | Recommended ECS Fields                                                                                                                                         |
+|-----------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Network Investigation**   | `@timestamp`, `source.ip`, `source.port`, `destination.ip`, `destination.port`, `network.protocol`, `network.transport`, `event.action`                        |
+| **Identity & Access Audit** | `@timestamp`, `user.name`, `user.domain`, `source.ip`, `event.action`, `event.outcome`, `message`                                                              |
+| **Endpoint Forensics**      | `@timestamp`, `host.name`, `process.name`, `process.executable`, `process.args`, `file.path`, `file.hash.sha256`, `user.name`                                  |
 
 !!! tip "Customizing your export"
     You can combine these fields or add others from the platform's schema.
