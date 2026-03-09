@@ -78,7 +78,7 @@ Every export is automatically encrypted in S3 storage using **SSE-C**:
 
 ### Custom S3 Buckets
 
-You can export directly to your own S3 bucket instead of using SEKOIA.IO's storage:
+You can export directly to your own S3 bucket instead of using Sekoia.io's storage:
 
 - Requires S3 credentials (access key, secret key)
 - Supports S3-compatible storage (MinIO, Wasabi, etc.)
