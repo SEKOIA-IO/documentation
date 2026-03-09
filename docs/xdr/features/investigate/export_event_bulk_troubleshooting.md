@@ -24,7 +24,7 @@ This guide provides structured solutions for common errors and performance issue
 
     * **Condition**: The export task remains in the `RUNNING` state for an extended period or terminates with a timeout.
     * **Cause**: The export request involves a high volume of events (e.g., >50M) combined with a high number of selected fields, or the search query is computationally expensive.
-    * **Solution**: Optimize the request by explicitly limiting the fields using the `--fields` flag. For very large datasets, split the export into smaller time ranges (e.g., daily increments). Check the [Optimization Guide](../concepts/optimization.md) to ensure you are exporting during recommended off-peak windows.
+    * **Solution**: Optimize the request by explicitly limiting the fields using the `--fields` flag. For very large datasets, split the export into smaller time ranges (e.g., daily increments). Check the [Optimization Guide](https://docs.sekoia.io/integration/categories/endpoint/sekoiaio/#local-optimization-rules) to ensure you are exporting during recommended off-peak windows.
 
 ### Summary of common fixes
 
