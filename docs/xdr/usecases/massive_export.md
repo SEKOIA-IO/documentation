@@ -266,7 +266,7 @@ uvx sekoia-event-exporter export <search_job_uuid>
     uvx sekoia-event-exporter export <job_uuid> --no-download
     ```
 
-4. **Verify**: Check your S3 bucket once the CLI displays the FINISHED status.
+4. **Verify**: Check your S3 bucket once the CLI displays the `FINISHED` status.
 
 **Result:** In your AWS Management Console, a new object appears in the bucket and prefix you defined (e.g., s3://company-security-datalake/sekoia/events/). 0 bytes used on your local machine; standard S3 storage consumption in AWS.
 
