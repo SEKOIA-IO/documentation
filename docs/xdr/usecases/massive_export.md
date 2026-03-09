@@ -12,7 +12,7 @@ By using the official CLI tool, you can automate the extraction of massive datas
 
 ## Prerequisites
 
-This guide uses the **SEKOIA.IO Event Exporter CLI tool** to make exports simple and automated. 
+This guide uses the **Sekoia.io Event Exporter CLI tool** to make exports simple and automated. 
 
 Prerequisites
 
