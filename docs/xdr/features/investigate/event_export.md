@@ -16,10 +16,10 @@ The export process is asynchronous and follows a specific security and operation
 - **Re-execution behavior:** When you trigger an export, Sekoia.io does not reuse cached search results. It re-runs your exact search query with the same time range and filters. This ensures you capture any late-arriving events that were not present in your initial search results.
 - **Task lifecycle:** Exports progress through four distinct statuses:
 
-  - `PENDING`: The task is queued and waiting for resources.
-  - `RUNNING`: The platform is actively streaming results to storage.
-  - `FINISHED`: The export is complete and the file is ready for download.
-  - `FAILED`: An error occurred (e.g., quota exceeded or search job expired).
+      * `PENDING`: The task is queued and waiting for resources.
+      * `RUNNING`: The platform is actively streaming results to storage.
+      * `FINISHED`: The export is complete and the file is ready for download.
+      * `FAILED`: An error occurred (e.g., quota exceeded or search job expired).
 
 !!! note 
 
