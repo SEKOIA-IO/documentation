@@ -68,7 +68,7 @@ uvx sekoia-event-exporter export <search_job_uuid>
 
 **Step-by-Step:**
 
-1. **Search for user activities in SEKOIA.IO**
+1. **Search for user activities in Sekoia.io**
 
    - Go to **Events** > **Search**
    - Query: `user.name:"john.doe"`
