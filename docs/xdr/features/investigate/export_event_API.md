@@ -18,7 +18,7 @@ The Sekoia.io REST API allows you to programmatically trigger event exports and 
 
 
 ### Step 1: Trigger the export
-To start the export, send a **POST** request to the export endpoint. You must specify the fields you want to retrieve as wildcard patterns (like `event.*`) are not supported.
+To start the export, send a `POST` request to the export endpoint. You must specify the fields you want to retrieve as wildcard patterns (like `event.*`) are not supported.
 
 **Request:**
 ```bash
