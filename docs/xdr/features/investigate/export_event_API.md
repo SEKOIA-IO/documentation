@@ -55,7 +55,7 @@ curl -H "Authorization: Bearer YOUR_API_KEY" \
 The response provides the `download_url`, `the export_size_compressed`, and the `expire_at timestamp`.
 
 !!! warning "Encryption key retrieval"
-    The API response includes the unique SSE-C encryption key. You must provide this key in the header of your final download request to S3 to decrypt the stream. This key is only valid for the current export job.download_url, the export_size_compressed, and the expire_at timestamp.
+    The API response includes the unique SSE-C encryption key. You must provide this key in the header of your final download request to S3 to decrypt the stream. This key is only valid for the current export `job.download_url`, the `export_size_compressed`, and the `expire_at` timestamp.
 
 ## See also: 
 - To see how these API steps are automated into a single command-line interface, refer to the [Export events with the CLI](/xdr/features/investigate/export_event_cli.md) guide.
