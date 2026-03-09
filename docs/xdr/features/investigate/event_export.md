@@ -23,7 +23,10 @@ The export process is asynchronous and follows a specific security and operation
 
 !!! note 
 
-    You can monitor progress at any time using the task UUID.
+    You can monitor progress at any time: 
+    
+    * With **CLI (recommended)**: The sekoia-event-exporter handles monitoring automatically by default, but you can also check the status of a specific task manually. (Read our article dedicated to [CLI massive export for more details](/xdr/features/investigate/export_event_cli.md).)
+    * With **API**: If you are integrating the export into a custom script or SOAR, you must poll the task endpoint to track progress. (Read our article dedicated to [API massive export for more details](/xdr/features/investigate/export_event_API.md).)
 
 **Key Capabilities:**
 
@@ -36,7 +39,7 @@ The export process is asynchronous and follows a specific security and operation
 
 **Tools Available:**
 
-- **CLI Tool**: We provide an official [sekoia-event-exporter](https://github.com/SEKOIA-IO/sekoia-event-exporter) command-line tool that automates the entire export workflow, including triggering, monitoring progress, and downloading files
+- **CLI Tool (recommended)**: We provide an official [sekoia-event-exporter](https://github.com/SEKOIA-IO/sekoia-event-exporter) command-line tool that automates the entire export workflow, including triggering, monitoring progress, and downloading files
 - **API**: Direct API access for custom integrations and automation
 
 
