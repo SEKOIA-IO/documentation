@@ -14,9 +14,10 @@ This page details the constraints, formats, and API endpoints for the export sys
 
 ## Processing time expectations
 Typical processing times vary based on query complexity and field count:
-* **1 million events**: 2–5 minutes
-* **10 million events**: 20–40 minutes
-* **50 million events**: 60–120 minutes
+
+    * **1 million events**: 2–5 minutes
+    * **10 million events**: 20–40 minutes
+    * **50 million events**: 60–120 minutes
 
 !!! info "Processing time variations"
     Processing time varies based on:
@@ -35,6 +36,7 @@ Typical processing times vary based on query complexity and field count:
 ## File format and fields
 * **Format**: JSON Lines (`.jsonl`) with gzip compression (`.gz`). Each line is a single event.
 * **Field selection**: By default, `@timestamp` and `message` are included. When using the `--fields flag`, use these specific sets to minimize file size while maintaining visibility into critical data points.
+  
 | Investigation Scenario | Recommended ECS Fields |
 | :--- | :--- |
 | **Network Investigation** | `@timestamp`, `source.ip`, `source.port`, `destination.ip`, `destination.port`, `network.protocol`, `network.transport`, `event.action` |
