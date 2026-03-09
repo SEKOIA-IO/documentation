@@ -58,6 +58,6 @@ You can skip manual downloads by feeding events directly into your own data lake
     ```
 
 ## See also: 
-- To export with API, follow the [Export events with the API](LINK HERE) guide
+- To export with API, follow the [Export events with the API](../xdr/features/investigate/export_event_API.md) guide
 - To review the exact quotas, processing times, and troubleshooting steps, consult the [Export technical reference](../xdr/features/investigate/export_technical_specs.md).
 - For practical examples of how to configure fields for specific security investigations, see our [Event export use cases]((../../usecases/massive_export.md)).
