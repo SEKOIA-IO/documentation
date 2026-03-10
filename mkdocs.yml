@@ -243,6 +243,7 @@ nav:
       - Mimecast Email Security: integration/categories/email/mimecast_email_security.md
       - Office 365: integration/categories/email/o365.md
       - Office 365 Message Trace: integration/categories/email/message_trace.md
+      - Office 365 Message Trace (Graph API): integration/categories/email/message_trace_graph_api.md
       - Postfix: integration/categories/email/postfix.md
       - Proofpoint On Demand: integration/categories/email/proofpoint_pod.md
       - Proofpoint Targeted Attack Protection: integration/categories/email/proofpoint_tap.md
