@@ -1,4 +1,4 @@
-# Alerts
+# Alerts 
 Alerts are created by the Operations Center when an event matches a rule and a threat is detected.
 ## Concepts
 ### Alert Status and Lifecycle
