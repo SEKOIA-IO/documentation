@@ -8,7 +8,7 @@ Optimization rules act as a pre-processing layer. When an event enters the platf
 
 * **Execution order**: Rules do not follow a specific sequential execution order, such as priority or creation date. 
 * **Quotas**: There is no limit on the number of rules you can create per community or per intake.
-* **Rule types**: Rules can be Global (managed by Sekoia) or Community-based (managed by individual communities).
+* **Rule types**: Rules can be Global (at the workspace level) or Community-based (managed by individual communities).
 
 ## Rule components
 
