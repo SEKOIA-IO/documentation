@@ -25,33 +25,30 @@ Besides matching a rule in real time, an alert can be triggered with a delay whe
 
 ## Alert Rate Limitation
 
-Alert Rate Limitations automatically contain **misconfigured or runaway detection rules** to protect your community from alert storms. For SOC teams, this preserves **triage usability**, keeps **queues and notifications actionable**, and reduces **analyst fatigue** — so high-signal alerts don’t get buried under noise.
-
-This safeguard is evaluated **per rule, per community**.
+Alert Rate Limitations automatically contain **misconfigured or runaway detection rules** to protect your community from alert storms. For SOC teams, this preserves **triage usability**, keeps **queues and notifications actionable**, and reduces **analyst fatigue** - so high-signal alerts don’t get buried under noise.
 
 ### How it works
-
 Alert Flood Protection is evaluated **per detection rule** and **per community**:
 
-#### 1) Rate threshold (sliding window)
-- The platform tracks how fast a rule is producing new unique alerts using a **sliding (rolling) counter** (not cron-aligned fixed windows).
-- **Threshold:** **30 alerts / 30 seconds** *(per rule, per community)*.
+##### Detection Rules
+- Rate-limitation is applied at the rule level.
+- The platform tracks how fast a rule is producing distinct alerts using a sliding (rolling) counter.
+- If a detection rule generates **30 distinct alerts within 30 seconds**, that rule enters a **rate-limited state** for **30 minutes**.
+- Alerts considered similar to an existing alert do not count toward this threshold.
 
-#### 2) Entering **Rate-Limited**
-A rule becomes **Rate-Limited** when it exceeds the threshold.
+##### CTI Rules
+- Rate-limitation is applied at the individual IOC level.
+- If a specific IOC reaches the threshold, only that **rule + IOC combination** enters a **rate-limited state** for **30 minutes**.
+- Other IOCs within the same CTI rule remain unaffected and continue generating alerts normally.
 
-#### 3) While **Rate-Limited**
-- The rule **emits no new alerts** (alerts are suppressed).
-- The rule **continues matching events** and evaluating conditions.
+#### During the rate-limited state
+- No new alerts are raised for the affected rule, or affected **rule + IOC combination** for CTI rules.
+- Matching events remain visible, allowing investigations to continue.
+- Users can configure notifications when a rule enters a rate-limited state.
 
-#### 4) Cooldown (exit conditions)
-- **Cooldown duration:** **30 minutes**
-- A rule exits Rate-Limited **only after 30 minutes pass without any new threshold breaches**.
-- **Any threshold breach during cooldown resets the 30-minute timer**, which can keep a rule Rate-Limited indefinitely.
-
-### Staying investigative while alerts are suppressed
-
-When a Detection Rule is Rate-Limited, matching events remain visible for investigation and can be shown with UI metadata such as.
+#### Cooldown behavior
+- If new threshold breaches occur during the cooldown period, the **30-minute timer resets**.
+- The affected rule, or affected **rule + IOC combination** for CTI rules, exits the rate-limited state only after **30 minutes** pass without a new threshold breach.
 
 #### What you’ll see in the UI
 - A **Rate-Limited icon/indicator** on matching events.
@@ -60,7 +57,7 @@ When a Detection Rule is Rate-Limited, matching events remain visible for invest
 Example,
 <img width="437" height="559" alt="image" src="https://github.com/user-attachments/assets/f3ee6754-58db-4135-ac36-6eb7da549a3a" />
 
-## Notifications when Alert Rate Limitation engage
+### Notifications when Alert Rate Limitation engage
 You can configure notifications using:
 - **A detection rule entered rate-limited state**
 
