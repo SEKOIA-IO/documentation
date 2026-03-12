@@ -411,6 +411,12 @@ The following Sekoia.io built-in rules match the intake **VMware vCenter**. This
     
     - **Effort:** elementary
 
+??? abstract "Correlation Admin Files Checked On Network Share"
+    
+    Detects requests to multiple admin files on a network share. This could be an attacker performing reconnaissance steps on the system.
+    
+    - **Effort:** advanced
+
 ??? abstract "Correlation Multi Service Disable"
     
     The rule detects a high number of services stopped or de-activated in a short period of time.
@@ -744,6 +750,12 @@ The following Sekoia.io built-in rules match the intake **VMware vCenter**. This
 ??? abstract "High Privileges Network Share Removal"
     
     Detects high privileges shares being deleted with the net share command.
+    
+    - **Effort:** intermediate
+
+??? abstract "Hijack Legit RDP Session To Move Laterally"
+    
+    Identifies suspicious file creations in the startup folder of a remote system. An adversary could abuse this to move laterally by dropping a malicious script or executable that will be executed after a reboot or user logon.
     
     - **Effort:** intermediate
 
@@ -1130,6 +1142,12 @@ The following Sekoia.io built-in rules match the intake **VMware vCenter**. This
     Detects the addition of office test registry that allows a user to specify an arbitrary DLL that will be executed everytime an Office application is started. An adversaries may abuse the Microsoft Office "Office Test" Registry key to obtain persistence on a compromised system.
     
     - **Effort:** elementary
+
+??? abstract "OneNote Suspicious Children Process"
+    
+    In January 2023, a peak of attacks using .one files was observed in the wild. This rule tries to detect the effect of such attempts using this technique.
+    
+    - **Effort:** advanced
 
 ??? abstract "Openfiles Usage"
     
@@ -1629,6 +1647,12 @@ The following Sekoia.io built-in rules match the intake **VMware vCenter**. This
     
     - **Effort:** intermediate
 
+??? abstract "Suspicious PROCEXP152.sys File Created In Tmp"
+    
+    Detects the creation of the PROCEXP152.sys file in the application-data local temporary folder. This driver is used by Sysinternals Process Explorer but also by KDU (https://github.com/hfiref0x/KDU) or Ghost-In-The-Logs (https://github.com/bats3c/Ghost-In-The-Logs), which uses KDU. Note - Clever attackers may easily bypass this detection by just renaming the driver filename. Therefore just Medium-level and don't rely on it.
+    
+    - **Effort:** advanced
+
 ??? abstract "Suspicious PowerShell Invocations - Generic"
     
     Detects suspicious PowerShell invocation command parameters through command line logging or ScriptBlock Logging.
@@ -1826,6 +1850,12 @@ The following Sekoia.io built-in rules match the intake **VMware vCenter**. This
     Detection of WMI used to install a binary on the host. It is often used by attackers as a signed binary to infect an host.
     
     - **Effort:** elementary
+
+??? abstract "WMI Persistence Script Event Consumer File Write"
+    
+    Detects file writes through WMI script event consumer.
+    
+    - **Effort:** advanced
 
 ??? abstract "WMIC Command To Determine The Antivirus"
     
