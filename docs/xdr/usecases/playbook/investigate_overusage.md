@@ -27,9 +27,9 @@ Once you identify the community, you must determine if the volume is concentrate
 
 ```kusto
 let earliestTime = ago(90d); 
-let lastestTime = now();
+let latestTime = now();
 event_telemetry 
-| where bucket_start_date > earliestTime and bucket_start_date < lastestTime 
+| where bucket_start_date > earliestTime and bucket_start_date < latestTime 
 | aggregate total_message_volume = sum(total_message_size) by intake_uuid, date=month(bucket_start_date) 
 | join intakes on intake_uuid == uuid 
 | select date, intake.name, intake_uuid, total_message_volume_gb = round(total_message_volume / 1000 / 1000 / 1000, 0)
@@ -49,9 +49,9 @@ If the volume is spread across multiple intakes, you must analyze the volume by 
 
 ```kusto
 let earliestTime = ago(90d); 
-let lastestTime = now();
+let latestTime = now();
 event_telemetry 
-| where bucket_start_date > earliestTime and bucket_start_date < lastestTime 
+| where bucket_start_date > earliestTime and bucket_start_date < latestTime 
 | aggregate total_message_volume = sum(total_message_size), make_set(intake_uuid) by intake_dialect_uuid, date=month(bucket_start_date) 
 | join intakes on make_set_intake_uuid[0] == uuid 
 | select date, intake_exemple_for_dialect=intake.name, total_message_volume_gb = round(total_message_volume / 1000 / 1000 / 1000, 0)
