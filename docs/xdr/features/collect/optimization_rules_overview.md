@@ -28,4 +28,4 @@ A rule is defined by the following components:
 * [Investigate overusage](/xdr/usecases/playbook/investigate_overusage.md) to learn more about overusage and how to avoid it. 
 * [Optimization rules technical reference](/xdr/features/collect/optimization_rules_reference.md) to learn more about filter operators, action bitmask values and more.
 * [Create an optimization rule](/xdr/features/collect/create_optimization_rule.md) to start creating your rule thanks to our step by step guide. 
-* [Investigate fair use overusage](/xdr/usecases/playbook/investigate_overusage.md) to align your rules on your usage.
+* [Log volume reduction strategies](/xdr/usecases/playbook/log_volume_reduction_strategies.md) to align your rules on your usage.
