@@ -25,6 +25,7 @@ A rule is defined by the following components:
 * **Processing efficiency**: Actions like shrinking events or deleting message fields optimize the internal workflow and associated storage.
 
 ## See also
+* [Investigate overusage](/xdr/usecases/playbook/investigate_overusage.md) to learn more about overusage and how to avoid it. 
 * [Optimization rules technical reference](/xdr/features/collect/optimization_rules_reference.md) to learn more about filter operators, action bitmask values and more.
 * [Create an optimization rule](/xdr/features/collect/create_optimization_rule.md) to start creating your rule thanks to our step by step guide. 
 * [Investigate fair use overusage](/xdr/usecases/playbook/investigate_overusage.md) to align your rules on your usage.
