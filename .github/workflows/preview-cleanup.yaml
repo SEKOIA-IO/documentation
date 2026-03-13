@@ -13,7 +13,7 @@ jobs:
           mkdir PR
           echo ${{ github.event.number }} > ./PR/PR_NUMBER
 
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v6
         with:
           name: PR
           path: PR/
