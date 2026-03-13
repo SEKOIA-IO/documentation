@@ -27,3 +27,6 @@ Sekoia.io recommends following this hierarchy, ordered from most efficient to le
 * **Noise reduction**: Excluding known safe, high-frequency events like successful local logins in a non-critical environment.
 * **Compliance**: Ensuring only logs required for specific regulatory frameworks are ingested.
 * **Troubleshooting**: Temporarily increasing verbosity for a specific asset while keeping other sources filtered.
+
+## See also: 
+[Learn how to investigate your usage](/xdr/usecases/playbook/investigate_overusage.md)
