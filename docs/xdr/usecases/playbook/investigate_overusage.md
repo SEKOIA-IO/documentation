@@ -54,9 +54,9 @@ event_telemetry
 | where bucket_start_date > earliestTime and bucket_start_date < latestTime 
 | aggregate total_message_volume = sum(total_message_size), make_set(intake_uuid) by intake_dialect_uuid, date=month(bucket_start_date) 
 | join intakes on make_set_intake_uuid[0] == uuid 
-| select date, intake_exemple_for_dialect=intake.name, total_message_volume_gb = round(total_message_volume / 1000 / 1000 / 1000, 0)
+| select date, intake_example_for_dialect=intake.name, total_message_volume_gb = round(total_message_volume / 1000 / 1000 / 1000, 0)
 | order by date desc, total_message_volume_gb
-| render linechart with (x=date, y=total_message_volume_gb, breakdown_by=intake_exemple_for_dialect)
+| render linechart with (x=date, y=total_message_volume_gb, breakdown_by=intake_example_for_dialect)
 ```
 
 4. Click **Run**.
