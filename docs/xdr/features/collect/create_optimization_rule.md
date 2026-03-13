@@ -20,9 +20,13 @@ To create a new optimization rule, send a POST request to the configuration endp
 4. [cite_start]Add your criteria in the **filters** array using a **field**, **operator**, and **value**[cite: 62, 63, 64].
 5. [cite_start]Send the request to `https://api.sekoia.io/v1/sic/conf/intakes/optimization_rules`[cite: 52].
 
-!!! warning "Filter Accuracy"
+!!! warning "Respect field types"
 
-    All defined filters must match for a rule to apply.
+    You must match the value type to the field definition to avoid runtime errors.
+    * If the field is an Integer, do not use quotes (e.g., "value": 4624).
+    * If the field is a String, use quotes (e.g., "value": "netflow").
+    
+    Using quotes for an integer field will cause the filter to fail.
 
 ??? example "Example: Ignore events with specific IP tags"
     This command ignores events where both source and destination IPs are private for the netflow dataset.
