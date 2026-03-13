@@ -21,6 +21,13 @@ This reference provides the technical specifications for filters, operators, and
 | `exists` | [cite_start]Checks if the specified key exists [cite: 32] | Unary |
 | `not exists` | [cite_start]Checks if the specified key does not exist [cite: 33] | Unary |
 
+## Value data types
+When defining the "value" in a filter, you must match the data type of the field you are evaluating.
+
+* Integer fields: Use raw numbers without quotes (e.g., "4624").
+* String fields: Use double quotes (e.g., "failed").
+* Collections: Use arrays for "in" or "not in" operators (e.g., ["rfc1918", "rfc5735"]).
+
 ## Action bitmask values
 
 [cite_start]A rule can accept a combination of actions specified using a bit mask[cite: 36].
