@@ -40,18 +40,12 @@ Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a n
 You must have a Sekoia Forwarder instance running in your infrastructure. This forwarder must be reachable from one of your App Connector
 
 #### Configure the forwarding
-docs/assets/integration/cloud_and_saas/zscaler/zpa_log_receivers_menu.png
-In the Zscaler ZPA Administration Panel:
 
-1. Go to `Configuration & Control` > `Private Infrastructure` > `Log Receivers`
-   ![menu](/assets/integration/cloud_and_saas/zscaler/zpa_log_receivers_menu.png){: style="max-width:100%"}
-2. Click on `Add` to createa new log receiver
-   ![Log Receiver](/assets/integration/cloud_and_saas/zscaler/zpa_add_new_log_receiver.png){: style="max-width:50%"}
-3. Give your new log receiver a Name and a description, then specify the `Port` and `Public Adress` of the sekoia forwarder inside your infrastructure ![configuration](/assets/integration/cloud_and_saas/zscaler/zpa_log_receiver_configuration.png)
+
+1. Go to `Configuration & Control` > `Private Infrastructure` > `Log Receivers` ![menu](/assets/integration/cloud_and_saas/zscaler/zpa_log_receivers_menu.png){: style="max-width:50%"}
+2. Click on `Add` to create a new log receiver ![Log Receiver](/assets/integration/cloud_and_saas/zscaler/zpa_add_new_log_receiver.png){: style="max-width:100%"}
+3. Give your new log receiver a Name and a description, then specify the `Port` and `Public address` of the sekoia forwarder inside your infrastructure ![configuration](/assets/integration/cloud_and_saas/zscaler/zpa_log_receiver_configuration.png)
 4. Choose the Log Type you want to forward and select the `json` Log Template. Keep the default Log format ![log stream](/assets/integration/cloud_and_saas/zscaler/zpa_log_format.png)
-
-
-
 5. Save your log receiver, you will need to create a new receiver for each of the log type you want to forward, you have to make them point to the same forwarder/port
 
 
