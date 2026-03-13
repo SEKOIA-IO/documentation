@@ -15,10 +15,10 @@ To manage optimization rules via the API, you must have an API key with the foll
 To create a new optimization rule, send a POST request to the configuration endpoint.
 
 1. Open your terminal or API client.
-2. [cite_start]Prepare your JSON payload including a **description** and an **action**[cite: 56, 57].
-3. [cite_start]Define the scope using **community_uuid** and optionally **dialect_uuid** or **intake_uuid**[cite: 55, 58].
-4. [cite_start]Add your criteria in the **filters** array using a **field**, **operator**, and **value**[cite: 62, 63, 64].
-5. [cite_start]Send the request to `https://api.sekoia.io/v1/sic/conf/intakes/optimization_rules`[cite: 52].
+2. Prepare your JSON payload including a **description** and an **action**.
+3. Define the scope using **community_uuid** and optionally **dialect_uuid** or **intake_uuid**.
+4. Add your criteria in the **filters** array using a **field**, **operator**, and **value**.
+5. Send the request to `https://api.sekoia.io/v1/sic/conf/intakes/optimization_rules.
 
 !!! warning "Respect field types"
 
@@ -49,7 +49,7 @@ To create a new optimization rule, send a POST request to the configuration endp
 
 ## Result
 
-Once created, the rule is applied to matching incoming events immediately. [cite_start]You can verify the reduction of ingestion volume on the platform's usage page if you used the **Ignore Event** action[cite: 42]. There is no limit to the number of rules you can create.
+Once created, the rule is applied to matching incoming events immediately. You can verify the reduction of ingestion volume on the platform's usage page if you used the **Ignore Event** action. There is no limit to the number of rules you can create.
 
 ## See also
 * [Optimization rules overview](/xdr/features/collect/optimization_rules_overview.md)
