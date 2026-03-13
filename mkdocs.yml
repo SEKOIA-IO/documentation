@@ -86,6 +86,10 @@ nav:
       - Intakes: xdr/features/collect/intakes.md
       - Entities: xdr/features/collect/entities.md
       - Assets: xdr/features/collect/assets.md
+      - Optimization rules: 
+         - Optimization rules overview: /xdr/features/collect/optimization_rules_overview.md
+         - Create an optimization rule: /xdr/features/collect/create_optimization_rule.md
+         - Optimization rules technical references: /xdr/features/collect/optimization_rules_reference.md
     - Detect:
       - IOCs Detection: xdr/features/detect/iocdetection.md
       - Rules Catalog: xdr/features/detect/rules_catalog.md
@@ -146,6 +150,8 @@ nav:
     - Synchronize Assets with an Active Directory: xdr/usecases/playbook/synchronize_asset_with_ad.md
     - Send notifications to a Webhook using a playbook: xdr/usecases/playbook/notifications_using_playbooks.md
     - Use your own CTI in Sekoia.io: xdr/usecases/use_your_own_cti.md
+    - Investigate overusage: /xdr/usecases/playbook/investigate_overusage.md
+    - Log volume reduction strategies: /xdr/usecases/playbook/log_volume_reduction_strategies.md.md
   - FAQ:
     - General: xdr/FAQ.md
     - Alerts: xdr/FAQ/Alerts_qa.md
