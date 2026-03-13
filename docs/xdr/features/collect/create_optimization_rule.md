@@ -54,4 +54,4 @@ Once created, the rule is applied to matching incoming events immediately. [cite
 ## See also
 * [Optimization rules overview](/xdr/features/collect/optimization_rules_overview.md)
 * [Optimization rules technical reference](/xdr/features/collect/optimization_rules_reference.md) to learn more about filter operators, action bitmask values and more. 
-* [Investigate fair use overusage](/xdr/features/collect/investigate_overusage.md) to align your rules on your usage.
+* [Investigate fair use overusage](/xdr/usecases/playbook/investigate_overusage.md) to align your rules on your usage.
