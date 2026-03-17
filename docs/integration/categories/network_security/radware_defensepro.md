@@ -7,8 +7,8 @@ type: intake
 Radware is a leading provider of cybersecurity and application-delivery solutions that keep enterprise applications fast, available and secure across on-premises, cloud and hybrid environments. The platform offers real-time DDoS protection, a web application firewall, application delivery controllers, bot management and API security, all unified under centralized management with advanced analytics and automation. By combining multi-layered defenses with performance optimization, Radware enables organizations to mitigate attacks, accelerate traffic and ensure continuous service availability.
 
 - **Vendor**: Radware
-- **Supported environment**: Cloud/SaaS
-- **Version compatibility, if applicable**: DefensePro
+- **Supported environment**: On-premises (DefensePro appliance)
+- **Version compatibility, if applicable**:
 - **Detection based on**: Telemetry
 - **Supported application or feature**: DDoS Attack Detection, Attack Mitigation, Traffic Analysis
 
