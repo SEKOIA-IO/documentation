@@ -45,7 +45,7 @@ Before you start:
 
 - Connect to [Sekoia.io SOC Platform with a Defend Plan](https://app.sekoia.io/intakes)
 - Add an Intake to the relevant Entity
-- Keep trace of the automatically generated Intake key
+- Keep track of the automatically generated Intake key
 - Have a syslog concentrator (Rsyslog or Syslog-ng) already running and configured to forward logs to Sekoia.io
 
 #### Detailed Procedure
