@@ -1160,7 +1160,7 @@ Our agent uses, on average, **less than 1% of CPU** and around **36MB of RAM**.
 2. Operations: For normal operation you have to take into account the space taken by logs. By default log files are rotated when they reached 100MB and Sekoia keep up to 5 old log files (those file are compressed).
 
 !!! tip
-    Those logging settings can be tweaked, [read the section dedicated to agent customization](/integration/categories/endpoint/sekoiaio/#customize-agents-log-file-rotation)
+    Those logging settings can be tweaked, [read the section dedicated to agent customization](#customize-agents-log-file-rotation)
 
 
 ## Troubleshoot
