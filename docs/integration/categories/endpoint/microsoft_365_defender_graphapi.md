@@ -13,6 +13,8 @@ Microsoft Defender XDR (formerly Microsoft 365 Defender) is a unified pre- and p
 
 This setup guide describes how to forward events produced by `Microsoft Defender XDR (Graph API)` to Sekoia.io XDR.
 
+!!! Warning
+	Important note - This format is currently in beta. We highly value your feedback to improve its performance.
 
 ## Microsoft Defender XDR event types supported
 Here is a list of all the Microsoft Defender XDR event types supported by this integration:
