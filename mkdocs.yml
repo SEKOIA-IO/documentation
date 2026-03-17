@@ -94,7 +94,15 @@ nav:
       - Anomaly Detection: xdr/features/detect/anomaly.md
       - IOCs Collections: xdr/features/detect/ioccollections.md
     - Investigate:
-      - Alerts: xdr/features/investigate/alerts.md
+      - Alerts: 
+          - Understand the alerts: xdr/features/investigate/alerts.md
+          - Manage alerts: xdr/features/investigate/manage_alerts.md
+          - Filter and suppress alerts: xdr/features/investigate/filter_and_suppress_alerts.md
+          - Investigate an alert: xdr/features/investigate/investigate_an_alert.md
+          - Investigate alerts with Graph: xdr/features/investigate/investigate_alerts_graph.md
+          - Configure custom alert statuses: xdr/features/investigate/configure_custom_alert_statuses.md
+          - Configure custom verdicts: xdr/features/investigate/configure_custom_verdicts.md
+          - Alert interface reference: xdr/features/investigate/alert_interface_reference.md
       - Events: xdr/features/investigate/events.md
       - AI Cases: xdr/features/investigate/ai_cases.md
       - Cases: xdr/features/investigate/cases.md
