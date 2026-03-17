@@ -1,20 +1,18 @@
 uuid: a90e587e-06e7-47c4-9738-1f9172277646
-name: Radware DefensePro
+name: Radware DefensePro [Beta]
 type: intake
 
 ## Overview
 
 Radware is a leading provider of cybersecurity and application-delivery solutions that keep enterprise applications fast, available and secure across on-premises, cloud and hybrid environments. The platform offers real-time DDoS protection, a web application firewall, application delivery controllers, bot management and API security, all unified under centralized management with advanced analytics and automation. By combining multi-layered defenses with performance optimization, Radware enables organizations to mitigate attacks, accelerate traffic and ensure continuous service availability.
 
+!!! Warning
+    Important note - This format is currently in beta. We highly value your feedback to improve its performance.
+
 - **Vendor**: Radware
-- **Supported environment**: On-premises (DefensePro appliance)
-- **Version compatibility, if applicable**:
+- **Supported environment**: On-premises
 - **Detection based on**: Telemetry
 - **Supported application or feature**: DDoS Attack Detection, Attack Mitigation, Traffic Analysis
-
-## High-Level Architecture Diagram
-
-- **Type of integration**: Outbound (PUSH to Sekoia.io)
 
 ## Specification
 
@@ -62,7 +60,7 @@ There are two ways to configure syslog on Radware DefensePro: through the Web UI
 2. Navigate to **Services** > **Syslog Reporting**
 3. Choose Enable under the **Syslog Operation** menu
 4. Click on **Create** to add a new syslog destination server
-5. Fill in the required fields **Syslog server**, **Syslog server Source Port** (default is 514), **Syslog server destination Port** (default is 514) and select the appropriate **Protocol** (TCP or UDP)
+5. Fill in the required fields based on your syslog server configuration ( **Syslog server**, **Syslog server Source Port**, **Syslog server destination Port** and **Protocol**)
 6. Click **Set** to confirm the configuration
 
 ###### APSolute Vision Configuration
