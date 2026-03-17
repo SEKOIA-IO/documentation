@@ -142,6 +142,7 @@ nav:
       - Palo Alto Cortex XSOAR: xdr/features/integrations/interconnect_sekoia_with_xsoar.md
       - Swimlane Turbine: xdr/features/integrations/swimlane_turbine.md
   - Usecases:
+    - Export large volumes of events: xdr/usecases/massive_export.md
     - Implement a blocklist in Sekoia.io: xdr/usecases/playbook/implement_blocklist.md
     - Synchronize Alerts with an external tool: xdr/usecases/playbook/synchronize_alerts.md
     - Synchronize Assets with an Active Directory: xdr/usecases/playbook/synchronize_asset_with_ad.md
@@ -151,9 +152,9 @@ nav:
     - General: xdr/FAQ.md
     - Alerts: xdr/FAQ/Alerts_qa.md
     - Events:
+      - Events FAQ: xdr/FAQ/get_events.md
       - Events QA: xdr/FAQ/Events_qa.md
       - Facing issues with logs collection: xdr/FAQ/Log_collection_Troubleshoot.md
-      - Extract my events: xdr/FAQ/get_events.md
       - Data storage and retention: xdr/FAQ/data_storage_retention.md
       - Restore Data from cold storage: xdr/FAQ/restore_data_cold_storage.md
     - Intelligence:

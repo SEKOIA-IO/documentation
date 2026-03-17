@@ -1,4 +1,4 @@
-Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-03-05_](rules_changelog.md)).
+Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-03-12_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Identity Information**
 
@@ -3883,6 +3883,7 @@ Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-
     
         - 23/05/2024 - minor - Added filter to exclude threat dataset
         - 16/01/2025 - minor - Adding format field to improve rules mapping
+        - 12/03/2026 - minor - Update rule type to integration
             
 ??? abstract "HarfangLab EDR Critical Threat"
     
@@ -3894,6 +3895,7 @@ Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-
     
         - 23/12/2024 - minor - Change alert severity
         - 16/01/2025 - minor - Adding format field to improve rules mapping
+        - 12/03/2026 - minor - Update rule type to integration
             
 ??? abstract "HarfangLab EDR High Level Rule Detection"
     
@@ -3905,6 +3907,7 @@ Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-
     
         - 23/05/2024 - minor - Added filter to exclude threat dataset
         - 16/01/2025 - minor - Adding format field to improve rules mapping
+        - 12/03/2026 - minor - Update rule type to integration
             
 ??? abstract "HarfangLab EDR High Threat"
     
@@ -3916,6 +3919,7 @@ Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-
     
         - 23/12/2024 - minor - Change alert severity
         - 16/01/2025 - minor - Adding format field to improve rules mapping
+        - 12/03/2026 - minor - Update rule type to integration
             
 ??? abstract "HarfangLab EDR Hlai Engine Detection"
     
@@ -3927,6 +3931,7 @@ Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-
     
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
         - 16/01/2025 - minor - Adding format field to improve rules mapping
+        - 12/03/2026 - minor - Update rule type to integration
             
 ??? abstract "HarfangLab EDR Low Level Rule Detection"
     
@@ -3938,6 +3943,7 @@ Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-
     
         - 23/05/2024 - minor - Added filter to exclude threat dataset
         - 16/01/2025 - minor - Adding format field to improve rules mapping
+        - 12/03/2026 - minor - Update rule type to integration
             
 ??? abstract "HarfangLab EDR Low Threat"
     
@@ -3948,6 +3954,7 @@ Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-
     - **Changelog:**
     
         - 16/01/2025 - minor - Adding format field to improve rules mapping
+        - 12/03/2026 - minor - Update rule type to integration
             
 ??? abstract "HarfangLab EDR Medium Level Rule Detection"
     
@@ -3959,6 +3966,7 @@ Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-
     
         - 23/05/2024 - minor - Added filter to exclude threat dataset
         - 16/01/2025 - minor - Adding format field to improve rules mapping
+        - 12/03/2026 - minor - Update rule type to integration
             
 ??? abstract "HarfangLab EDR Medium Threat"
     
@@ -3969,6 +3977,7 @@ Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-
     - **Changelog:**
     
         - 16/01/2025 - minor - Adding format field to improve rules mapping
+        - 12/03/2026 - minor - Update rule type to integration
             
 ??? abstract "HarfangLab EDR Process Execution Blocked (HL-AI engine)"
     
@@ -3981,6 +3990,7 @@ Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-
         - 10/01/2024 - major - Account for all blocks instead of only "Startup blocked". Rule name explicitly mentions HL-AI engine.
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
         - 16/01/2025 - minor - Adding format field to improve rules mapping
+        - 12/03/2026 - minor - Update rule type to integration
             
 ??? abstract "HarfangLab EDR Suspicious Process Behavior Has Been Detected"
     
@@ -3991,6 +4001,7 @@ Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-
     - **Changelog:**
     
         - 16/01/2025 - minor - Adding format field to improve rules mapping
+        - 12/03/2026 - minor - Update rule type to integration
             
 ??? abstract "ISO LNK Infection Chain"
     

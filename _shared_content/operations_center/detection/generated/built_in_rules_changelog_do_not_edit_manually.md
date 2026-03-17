@@ -1,7 +1,60 @@
-Changelog _last update on 2026-03-05_
+Changelog _last update on 2026-03-12_
 
 ## Changelog
 
+### HarfangLab EDR Medium Threat
+  - 12/03/2026 - minor - Update rule type to integration
+  - 16/01/2025 - minor - Adding format field to improve rules mapping
+    
+### HarfangLab EDR Process Execution Blocked (HL-AI engine)
+  - 12/03/2026 - minor - Update rule type to integration
+  - 16/01/2025 - minor - Adding format field to improve rules mapping
+  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+  - 10/01/2024 - major - Account for all blocks instead of only "Startup blocked". Rule name explicitly mentions HL-AI engine.
+    
+### HarfangLab EDR Critical Level Rule Detection
+  - 12/03/2026 - minor - Update rule type to integration
+  - 16/01/2025 - minor - Adding format field to improve rules mapping
+  - 23/05/2024 - minor - Added filter to exclude threat dataset
+    
+### HarfangLab EDR High Threat
+  - 12/03/2026 - minor - Update rule type to integration
+  - 16/01/2025 - minor - Adding format field to improve rules mapping
+  - 23/12/2024 - minor - Change alert severity
+    
+### HarfangLab EDR Medium Level Rule Detection
+  - 12/03/2026 - minor - Update rule type to integration
+  - 16/01/2025 - minor - Adding format field to improve rules mapping
+  - 23/05/2024 - minor - Added filter to exclude threat dataset
+    
+### HarfangLab EDR Low Level Rule Detection
+  - 12/03/2026 - minor - Update rule type to integration
+  - 16/01/2025 - minor - Adding format field to improve rules mapping
+  - 23/05/2024 - minor - Added filter to exclude threat dataset
+    
+### HarfangLab EDR High Level Rule Detection
+  - 12/03/2026 - minor - Update rule type to integration
+  - 16/01/2025 - minor - Adding format field to improve rules mapping
+  - 23/05/2024 - minor - Added filter to exclude threat dataset
+    
+### HarfangLab EDR Low Threat
+  - 12/03/2026 - minor - Update rule type to integration
+  - 16/01/2025 - minor - Adding format field to improve rules mapping
+    
+### HarfangLab EDR Critical Threat
+  - 12/03/2026 - minor - Update rule type to integration
+  - 16/01/2025 - minor - Adding format field to improve rules mapping
+  - 23/12/2024 - minor - Change alert severity
+    
+### HarfangLab EDR Hlai Engine Detection
+  - 12/03/2026 - minor - Update rule type to integration
+  - 16/01/2025 - minor - Adding format field to improve rules mapping
+  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+    
+### HarfangLab EDR Suspicious Process Behavior Has Been Detected
+  - 12/03/2026 - minor - Update rule type to integration
+  - 16/01/2025 - minor - Adding format field to improve rules mapping
+    
 ### Gatewatcher AionIQ V103 Dga Detect
   - 05/03/2026 - minor - Update rule type to integration
     
@@ -827,48 +880,6 @@ Changelog _last update on 2026-03-05_
     
 ### Autorun Keys Modification
   - 16/01/2025 - minor - Added filters to reduce false positives.
-    
-### HarfangLab EDR Medium Threat
-  - 16/01/2025 - minor - Adding format field to improve rules mapping
-    
-### HarfangLab EDR Process Execution Blocked (HL-AI engine)
-  - 16/01/2025 - minor - Adding format field to improve rules mapping
-  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
-  - 10/01/2024 - major - Account for all blocks instead of only "Startup blocked". Rule name explicitly mentions HL-AI engine.
-    
-### HarfangLab EDR Critical Level Rule Detection
-  - 16/01/2025 - minor - Adding format field to improve rules mapping
-  - 23/05/2024 - minor - Added filter to exclude threat dataset
-    
-### HarfangLab EDR High Threat
-  - 16/01/2025 - minor - Adding format field to improve rules mapping
-  - 23/12/2024 - minor - Change alert severity
-    
-### HarfangLab EDR Medium Level Rule Detection
-  - 16/01/2025 - minor - Adding format field to improve rules mapping
-  - 23/05/2024 - minor - Added filter to exclude threat dataset
-    
-### HarfangLab EDR Low Level Rule Detection
-  - 16/01/2025 - minor - Adding format field to improve rules mapping
-  - 23/05/2024 - minor - Added filter to exclude threat dataset
-    
-### HarfangLab EDR High Level Rule Detection
-  - 16/01/2025 - minor - Adding format field to improve rules mapping
-  - 23/05/2024 - minor - Added filter to exclude threat dataset
-    
-### HarfangLab EDR Low Threat
-  - 16/01/2025 - minor - Adding format field to improve rules mapping
-    
-### HarfangLab EDR Critical Threat
-  - 16/01/2025 - minor - Adding format field to improve rules mapping
-  - 23/12/2024 - minor - Change alert severity
-    
-### HarfangLab EDR Hlai Engine Detection
-  - 16/01/2025 - minor - Adding format field to improve rules mapping
-  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
-    
-### HarfangLab EDR Suspicious Process Behavior Has Been Detected
-  - 16/01/2025 - minor - Adding format field to improve rules mapping
     
 ### SecurityScorecard Vulnerability Assessment Scanner New Issues
   - 15/01/2025 - minor - Adding format field to improve rules mapping
