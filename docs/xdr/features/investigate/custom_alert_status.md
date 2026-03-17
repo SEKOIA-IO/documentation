@@ -21,7 +21,7 @@ These stages determine the overall state of an alert and affect features such as
 
 ## Create a custom status
 
-1. Navigate to the **Custom Statuses** configuration page.
+1. On the left panel, navigate to **Settings** > **Configuration** > **Custom Statuses**.
 2. Click **+** to create a new custom status in the appropriate stage.
 3. Enter a **Name** (e.g., "Awaiting User Response").
 4. Enter a **Description** about when this status should be used.
@@ -37,22 +37,25 @@ A custom status can be shared across both alerts and cases, ensuring consistent 
 !!! tip
     Enabling the same status for both alerts and cases reduces the number of statuses to manage and improves communication across investigation contexts.
 
-1. In the **Custom Statuses** configuration page, locate the status you want to configure.
-2. Select the checkbox in the **Alert** column, the **Case** column, or both.
+1. On the left panel, navigate to **Settings** > **Configuration** > **Custom Statuses**.
+2. Locate the status you want to configure.
+3. Select the checkbox in the **Alert** column, the **Case** column, or both.
 
 ## Edit a custom status
 
-1. Click the status you want to modify.
-2. Update the **Name** or **Description**.
-3. Click **Save**.
+1. On the left panel, navigate to **Settings** > **Configuration** > **Custom Statuses**.
+2. Click the status you want to modify.
+3. Update the **Name** or **Description**.
+4. Click **Save**.
 
 !!! note
     Modifying a status name or description does not affect historical data. Previously recorded status changes continue to display the original values in alert timelines and case histories.
 
 ## Reorder statuses
 
-1. On the **Custom Statuses** configuration page, locate the drag handle on the status you want to move.
-2. Drag and drop the status to your preferred position.
+1. On the left panel, navigate to **Settings** > **Configuration** > **Custom Statuses**.
+2. Locate the drag handle on the status you want to move.
+3. Drag and drop the status to your preferred position.
 
 The new order is immediately reflected in all status dropdowns across the platform.
 
@@ -61,7 +64,7 @@ The new order is immediately reflected in all status dropdowns across the platfo
 !!! warning "Status in use cannot be deleted"
     You can only delete a status if it is not currently applied to any alert or case. Reassign all affected items to a different status before proceeding.
 
-1. Reassign all alerts and cases using the status to a different status.
+1. Reassign all alerts and cases using the status you want to delete to a different status.
 2. Return to the **Custom Statuses** configuration page.
 3. Click the delete icon next to the status.
 
