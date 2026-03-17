@@ -63,7 +63,7 @@ There are two ways to configure syslog on Radware DefensePro: through the Web UI
 3. Choose Enable under the **Syslog Operation** menu
 4. Click on **Create** to add a new syslog destination server
 5. Fill in the required fields **Syslog server**, **Syslog server Source Port** (default is 514), **Syslog server destination Port** (default is 514) and select the appropriate **Protocol** (TCP or UDP)
-7. Click **Set** to confirm the configuration
+6. Click **Set** to confirm the configuration
 
 ###### APSolute Vision Configuration
 
