@@ -33,6 +33,18 @@ Each custom status belongs to one of three stages:
 - **Edit**: Click on a status to update the name or description. Modifying these does not affect historical data in timelines.
 - **Reorder**: Use the drag handle on each status to drag and drop them into your desired order.
 - **Delete**: Click the delete icon. You can only delete a status if it is not currently applied to any alert or case.
+!!! warning
+    Before deleting a custom status, ensure that your team no longer needs it, as this action will remove it from all status selection menus.
+  
+- **Enable statuses for Alerts and Cases**: To maintain consistent terminology and processes across different investigation contexts:
+    1. Navigate to the status you want to configure.
+    2. 2. Use the checkboxes in the **Alert** and **Case** columns to enable the status for each context
+
+!!! note
+    A status can be enabled for:
+       - Alerts only
+       - Cases only
+       - Both alerts and cases (unified status)
 
 ## Related articles
 
