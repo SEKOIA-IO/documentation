@@ -2,66 +2,36 @@
 
 The Alerts page is the primary interface for monitoring security detections. By default, it displays the last 10 alerts ordered by the most recent.
 
+> 📸 [SCREENSHOT SUGGESTION: The full Alerts listing page showing the table, sort options, and bulk action toolbar. | ALT TEXT: Alerts listing page with sort options and alert table.]
 
-## Filter the alerts listing
+## Sort alerts
 
-1. Click **Filters** or press `f`.
-2. Search for and select a filter (e.g., **Asset**, **Rule**, **Urgency**).
-3. Select an operator (e.g., `is`, `is not`, `is any of`).
-4. Select the values to apply.
+You can sort the alert listing using the following options:
 
-!!! tip "Keyboard shortcuts"
-    | Key | Action |
-    |---|---|
-    | `f` | Open the filter menu |
-    | `↑` / `↓` | Navigate lists |
-    | `Enter` | Select values |
-    | `Esc` | Close the menu |
-
-### Pre-made filters
-
-| Filter | Description |
+| Sort option | Description |
 |---|---|
-| **Open** | Status is any of the Open or In Progress stages. |
-| **New Today** | Created within the current day. |
-
+| **Most Recent** | Orders alerts by creation date, newest first. Default view. |
+| **Most Frequent** | Orders alerts by occurrence count. |
+| **Recently Updated** | Orders alerts by the date of the last status change. |
+| **Most Urgent** | Orders alerts by urgency score, highest first. |
 
 ## Process alerts in bulk
 
 1. Select alerts using the checkboxes in the list.
 2. To select alerts across all pages, click **Select all XX alerts**.
-3. Perform one of the following:
-   - **Add to case**: Select an existing case or create a new one.
-   - **Change status**: Choose a new status and enter a comment to explain the decision.
-
-
-## Create an alert filter
-
-To prevent known false positives from triggering the same alert:
-
-1. Navigate to the **Events** tab of an alert.
-2. Below the graphic, click **Toggle value selection** icon.
-3. Select the values in the logs you want to filter.
-4. Click **New alert filter**.
-5. Enter a **Name** and optional **Description**.
-6. Click **Add**.
+3. Perform one of the following actions:
+   - **Add to case** - Select an existing case or create a new one.
+   - **Change status** - Select a new status, enter a comment to explain the decision, then click **Update status**.
 
 !!! note
-    Select, **Reject the Alert** to automatically reject the current alert after creating the filter.
+    For multi-tenant communities, alerts can only be added to cases that belong to the same community. Leaving a comment when changing status is recommended but not mandatory.
 
-
-## Search events with values
-
-To search all events within the alert timeframe (± 1 hour):
-
-1. In the **Events** tab of an alert, click **Toggle value selection**.
-2. Select the values you want to search.
-3. Click **Perform a search**.
-4. A side panel opens with the results.
-
+> 📸 [SCREENSHOT SUGGESTION: The bulk action toolbar showing the status dropdown and comment field after selecting multiple alerts. | ALT TEXT: Bulk status change interface with status dropdown and comment field.]
 
 ## Related articles
 
-* [Investigate alerts with Graph](/xdr/features/investigate/investigate_alerts_graph.md): Conduct deep analysis using visual correlation.
-* [Alerts](/xdr/features/investigate/alerts.md): Learn about urgency calculation and similarity strategies.
-* [Alert interface reference](alert_interface_reference.md): Detailed list of all available filters and table columns.
+* [Filter and suppress alerts](/xdr/features/investigate/filter_and_suppress_alerts.md): Build complex queries and suppress false positives.
+* [Investigate an alert](/xdr/features/investigate/investigate_an_alert.md): Deep-dive into alert details, tasks, events, and similar alerts.
+* [Investigate alerts with Graph](/xdr/features/investigate/investigate_alerts_graph.md): Use visual correlation to analyze complex threats.
+* [Alerts](/xdr/features/investigate/alerts.md): Understand alert urgency, similarity, and lifecycle logic.
+* [Alert interface reference](/xdr/features/investigate/alert_interface_reference.md): Detailed lookup for alert table columns and icons.
