@@ -22,6 +22,10 @@ By default, alerts use the following five statuses:
 | **Rejected** | Final status. The alert was a false positive. | No action accepted |
 
 > 📸 [SCREENSHOT SUGGESTION: The legacy alert workflow diagram showing status transitions. | ALT TEXT: Alert lifecycle workflow showing transitions between Pending, Acknowledged, Ongoing, Closed, and Rejected statuses.]
+>
+> ## Alert date
+ 
+When an alert is triggered, the alert date is set to the first trigger. Additional events that enrich the alert afterward do not update this date.
 
 ## Alert urgency
 
@@ -99,6 +103,12 @@ As long as a similar alert exists with a status in the **Open** or **In Progress
 The alert type is associated with the triggering rule or specific indicators from CTI rules. Types are derived from the [ENISA Reference Incident Classification Taxonomy](https://www.enisa.europa.eu/).
 
 > 📸 [SCREENSHOT SUGGESTION: The alert categories diagram showing all threat classifications. | ALT TEXT: Sekoia.io alert category taxonomy derived from ENISA.]
+
+## Alert rate limiting
+ 
+Alert rate limiting automatically contains misconfigured or runaway detection rules to protect your community from alert storms. If a rule generates 30 distinct alerts within 30 seconds, it enters a rate-limited state for 30 minutes.
+ 
+For full details on thresholds, CTI rule behavior, and notifications, see [Alert rate limiting](/xdr/features/investigate/alert_rate_limiting.md).
 
 ## Related articles
 
