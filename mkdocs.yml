@@ -98,9 +98,9 @@ nav:
       - Entities: xdr/features/collect/entities.md
       - Assets: xdr/features/collect/assets.md
       - Optimization rules: 
-         - Optimization rules overview: /xdr/features/collect/optimization_rules_overview.md
-         - Create an optimization rule: /xdr/features/collect/create_optimization_rule.md
-         - Optimization rules technical references: /xdr/features/collect/optimization_rules_reference.md
+         - Optimization rules overview: xdr/features/collect/optimization_rules_overview.md
+         - Create an optimization rule: xdr/features/collect/create_optimization_rule.md
+         - Optimization rules technical references: xdr/features/collect/optimization_rules_reference.md
     - Detect:
       - IOCs Detection: xdr/features/detect/iocdetection.md
       - Rules Catalog: xdr/features/detect/rules_catalog.md
