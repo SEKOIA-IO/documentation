@@ -40,7 +40,7 @@ Rate limiting is evaluated per detection rule and per community.
 <img width="437" height="559" alt="image" src="https://github.com/user-attachments/assets/f3ee6754-58db-4135-ac36-6eb7da549a3a" />
 
 ## Notifications when Alert Rate Limitation engage
-You can set up notifications to alert you whenever an alert rate limit is engaged. To do so, use the following trigger in your [notification configuration](/getting_started/notifications-Listing_Creation/):
+You can set up notifications to alert you whenever an alert rate limit is engaged. To do so, use the following trigger in your [notification configuration](/getting_started/notifications-Listing_Creation.md):
 **Detection rule enters a rate-limited state**
 
 
