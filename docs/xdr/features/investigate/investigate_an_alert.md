@@ -56,6 +56,19 @@ Select **Complete** or **Reject** on a task to record the action. Completing a t
 !!! note
     Subtasks with an OpenC2 specification can be viewed by clicking the automation icon next to the subtask.
 
+## Notebook tab
+
+The **Notebook** tab provides a collaborative workspace to centralize your investigation queries, automation actions, and findings in a single document. Notebooks support markdown syntax, embedded queries, data visualizations, and image attachments.
+
+![notebook](/assets/operation_center/notebook.gif){: style="max-width:100%"}
+
+!!! note
+    In a multi-tenant environment, notebooks are created in the parent workspace by default and are not visible to child tenants unless explicitly shared.
+
+You can create a notebook from scratch or apply a pre-defined template tailored to specific threat types (e.g., phishing, malware analysis). A default template can be configured to standardize your team's response process across all alerts.
+
+For full details on templates, formatting commands, PDF export, and sharing, see [our Notebooks documentation](/xdr/features/investigate/notebooks/).
+
 ## Similar alerts tab
 
 The **Similar alerts** tab displays all previously recorded alerts that match the current alert's similarity strategy.
