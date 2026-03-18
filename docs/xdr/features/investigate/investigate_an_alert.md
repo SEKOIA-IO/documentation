@@ -67,7 +67,7 @@ The **Notebook** tab provides a collaborative workspace to centralize your inves
 
 You can create a notebook from scratch or apply a pre-defined template tailored to specific threat types (e.g., phishing, malware analysis). A default template can be configured to standardize your team's response process across all alerts.
 
-For full details on templates, formatting commands, PDF export, and sharing, see [our Notebooks documentation](/xdr/features/investigate/notebooks/).
+For full details on templates, formatting commands, PDF export, and sharing, see [our Notebooks documentation](/xdr/features/investigate/notebooks.md).
 
 ## Similar alerts tab
 
