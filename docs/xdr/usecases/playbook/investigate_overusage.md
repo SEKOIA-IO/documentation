@@ -43,7 +43,7 @@ event_telemetry
 
 If the volume is spread across multiple intakes, you must analyze the volume by dialect.
 
-1. Navigate to **Operations > Query**.
+1. Navigate to **Settings > Query**.
 2. Select the **event_telemetry** datasource.
 3. Enter the following query:
 
@@ -65,7 +65,7 @@ event_telemetry
 
 After identifying the intake or dialect, you must find the specific verbose logs or assets.
 
-1. Navigate to **Operations > Query**.
+1. Navigate to **Investigate > Query**.
 2. Select the **events** datasource.
 3. To filter by a specific dialect, enter a query similar to the following:
 
