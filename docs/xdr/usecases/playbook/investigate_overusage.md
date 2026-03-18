@@ -11,7 +11,7 @@ The fair use policy ensures optimal performance and cost-predictability across t
 
 To begin your investigation, you must confirm which community is exceeding its limits.
 
-1. Navigate to **Operations > Usage**.
+1. Navigate to **Settings > Usage**.
 2. Compare the monthly community usage against the fair use threshold.
 
 !!! note "Reference documentation"
@@ -21,7 +21,7 @@ To begin your investigation, you must confirm which community is exceeding its l
 
 Once you identify the community, you must determine if the volume is concentrated on specific intakes.
 
-1. Navigate to **Operations > Query**.
+1. Navigate to **Investigate > Queries**.
 2. Select the **event_telemetry** datasource.
 3. Enter the following query to view the monthly volume evolution per intake:
 
@@ -43,7 +43,7 @@ event_telemetry
 
 If the volume is spread across multiple intakes, you must analyze the volume by dialect.
 
-1. Navigate to **Settings > Query**.
+1. Navigate to **Investigate > Queries**.
 2. Select the **event_telemetry** datasource.
 3. Enter the following query:
 
@@ -65,7 +65,7 @@ event_telemetry
 
 After identifying the intake or dialect, you must find the specific verbose logs or assets.
 
-1. Navigate to **Investigate > Query**.
+1. Navigate to **Investigate > Queries**.
 2. Select the **events** datasource.
 3. To filter by a specific dialect, enter a query similar to the following:
 
