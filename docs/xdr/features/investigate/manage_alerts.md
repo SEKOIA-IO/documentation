@@ -28,7 +28,6 @@ You can sort the alert listing using the following options:
 !!! note
     For multi-tenant communities, alerts can only be added to cases that belong to the same community. Leaving a comment when changing status is recommended but not mandatory.
 
-> 📸 [SCREENSHOT SUGGESTION: The bulk action toolbar showing the status dropdown and comment field after selecting multiple alerts. | ALT TEXT: Bulk status change interface with status dropdown and comment field.]
 
 ## Related articles
 
