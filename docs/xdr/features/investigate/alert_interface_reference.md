@@ -35,7 +35,7 @@ By default, the Alerts table displays the following columns:
 
 | Icon | Description |
 |---|---|
-| **Bell icon** | Indicates the event is involved in the current alert and in at least one other alert. |
+| **Bell icon** | Indicates the event is involved in the current alert and in at least one other alert. The bell is not displayed if the event is only involved in the current alert. |
 | **Smart Descriptions** | Human-readable summaries of events displayed in the alert timeline. |
 
 ## Delayed alerts
@@ -54,3 +54,4 @@ An alert may be triggered with a delay under the following conditions:
 * [Manage alerts](/xdr/features/investigate/manage_alerts.md): Practical guide for daily operations.
 * [Filter and suppress alerts](/xdr/features/investigate/filter_and_suppress_alerts.md): Build complex queries and suppress false positives.
 * [Investigate an alert](/xdr/features/investigate/investigate_an_alert.md): Deep-dive into alert details, tasks, events, and similar alerts.
+* [Alert rate limiting](/xdr/features/investigate/alert_rate_limiting.md): Understand thresholds, cooldown behavior, and rate-limited state indicators.
