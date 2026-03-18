@@ -28,7 +28,7 @@ These stages determine the overall state of an alert and affect features such as
 5. Use the checkboxes in the **Alert** and **Case** columns to enable the status for each context.
 6. Click **Save**.
 
-![Custom Statuses configuration page with Alert and Case columns](/assets/operation_center/alerts/custom-statuses-config.png)
+![Custom Statuses configuration page with Alert and Case columns](/assets/operation_center/alerts/custom-statuses-config.png){ width="800" }
 
 ## Enable a status for alerts and cases
 
