@@ -2,7 +2,7 @@
 
 The alert detail page centralizes all information needed for a deep investigation, including event history, associated tasks, similar alerts, and graph visualization.
 
-> 📸 [SCREENSHOT SUGGESTION: The full alert detail page showing the header and the four tabs. | ALT TEXT: Alert detail page with urgency, status, and navigation tabs.]
+![Alert detail page with urgency, status, and navigation tabs](/assets/operation_center/alerts/alert-detail-layout.png)
 
 ## Navigate the alert detail page
 
@@ -49,6 +49,8 @@ You can filter the timeline to display only items of a specific type. To add a c
 
 The **Tasks** tab lists all tasks and subtasks associated with the alert.
 
+![Tasks tab showing complete and reject actions](/assets/operation_center/alerts/alert-tasks.png)
+
 Select **Complete** or **Reject** on a task to record the action. Completing a task decreases the alert urgency and the risk indicator.
 
 !!! note
@@ -57,6 +59,8 @@ Select **Complete** or **Reject** on a task to record the action. Completing a t
 ## Similar alerts tab
 
 The **Similar alerts** tab displays all previously recorded alerts that match the current alert's similarity strategy.
+
+![Similar alerts tab with suggestion message and customizable table](/assets/operation_center/alerts/similar_alerts.png)
 
 The tab is divided into two sections:
 
@@ -73,6 +77,8 @@ The tab is divided into two sections:
 
 The **Events** tab lists all events that triggered the alert.
 
+![Events tab showing event list and value selection mode](/assets/operation_center/alerts/alert-events.png)
+
 When interacting with an individual value in an event, you can:
 
 - **Filter for** - Narrow the event list to events matching this value.
@@ -83,6 +89,8 @@ To work with multiple values at once, click **Toggle value selection** and selec
 
 - [Create an alert filter](/xdr/features/investigate/filter_and_suppress_alerts.md) to suppress future false positives.
 - Click **Perform a search** to open a side panel with results across your environment.
+
+![Search events side panel with results](/assets/operation_center/alerts/search-events.png)
 
 ## Related articles
 
