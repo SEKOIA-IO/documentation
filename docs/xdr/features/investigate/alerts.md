@@ -20,8 +20,6 @@ By default, alerts use the following five statuses:
 | **Ongoing** | The alert is a true positive and countermeasures are not yet applied. This is the first status seen in automatic mode. | Close, Reject |
 | **Closed** | Final status. All necessary actions have been applied. | No action accepted |
 | **Rejected** | Final status. The alert was a false positive. | No action accepted |
-
-> 📸 [SCREENSHOT SUGGESTION: The legacy alert workflow diagram showing status transitions. | ALT TEXT: Alert lifecycle workflow showing transitions between Pending, Acknowledged, Ongoing, Closed, and Rejected statuses.]
 >
 > ## Alert date
  
@@ -102,7 +100,7 @@ As long as a similar alert exists with a status in the **Open** or **In Progress
 
 The alert type is associated with the triggering rule or specific indicators from CTI rules. Types are derived from the [ENISA Reference Incident Classification Taxonomy](https://www.enisa.europa.eu/).
 
-> 📸 [SCREENSHOT SUGGESTION: The alert categories diagram showing all threat classifications. | ALT TEXT: Sekoia.io alert category taxonomy derived from ENISA.]
+![Sekoia.io alert category taxonomy derived from ENISA](/assets/operation_center/alerts/alert_categories.png)
 
 ## Alert rate limiting
  
