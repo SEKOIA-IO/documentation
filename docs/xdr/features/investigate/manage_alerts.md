@@ -2,7 +2,7 @@
 
 The Alerts page is the primary interface for monitoring security detections. By default, it displays the last 10 alerts ordered by the most recent.
 
-> 📸 [SCREENSHOT SUGGESTION: The full Alerts listing page showing the table, sort options, and bulk action toolbar. | ALT TEXT: Alerts listing page with sort options and alert table.]
+![Alerts listing page with filters, sort options, and alert table](/assets/operation_center/alerts/alert_listing.png)
 
 ## Sort alerts
 
@@ -19,9 +19,11 @@ You can sort the alert listing using the following options:
 
 1. Select alerts using the checkboxes in the list.
 2. To select alerts across all pages, click **Select all XX alerts**.
-3. Perform one of the following actions:
-   - **Add to case** - Select an existing case or create a new one.
-   - **Change status** - Select a new status, enter a comment to explain the decision, then click **Update status**.
+![Select all alerts confirmation](/assets/operation_center/alerts/select-all-alerts.png)
+![All alerts selected message](/assets/operation_center/alerts/unselect-all-alerts.png)
+4. Perform one of the following actions:
+   - **Add to case** - Select an existing case or create a new one. ![Bulk add to case toolbar](/assets/operation_center/alerts/alert-to-case.png)
+   - **Change status** - Select a new status, enter a comment to explain the decision, then click **Update status**. ![Bulk status change interface with status dropdown and comment field](/assets/operation_center/alerts/alert-status.png)
 
 !!! note
     For multi-tenant communities, alerts can only be added to cases that belong to the same community. Leaving a comment when changing status is recommended but not mandatory.
