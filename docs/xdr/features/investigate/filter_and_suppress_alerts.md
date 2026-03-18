@@ -64,7 +64,7 @@ Alert filters prevent known false positives from triggering the same alert in th
 5. Enter a **Name** (mandatory) and an optional **Description**.
 6. Click **Add**.
 
-> 📸 [SCREENSHOT SUGGESTION: The Events tab with Toggle value selection active and the Create an alert filter button visible. | ALT TEXT: Events tab showing value selection mode and alert filter creation button.]
+![Events tab showing value selection mode and alert filter creation button](/assets/operation_center/alerts/alert-filter.png)
 
 ## Related articles
 
