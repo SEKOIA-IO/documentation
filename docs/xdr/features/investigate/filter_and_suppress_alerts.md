@@ -55,7 +55,7 @@ The Alerts page lets you build complex queries to isolate specific alerts and su
 Alert filters prevent known false positives from triggering the same alert in the future. You create them directly from event values in the alert.
 
 !!! note
-    By default, **Reject the Alert** is selected to automatically reject the current alert after the filter is created.
+    Select **Reject the Alert** to automatically reject the current alert after the filter is created.
 
 1. On the alert page, select the **Events** tab.
 2. Click **Toggle value selection** icon.
