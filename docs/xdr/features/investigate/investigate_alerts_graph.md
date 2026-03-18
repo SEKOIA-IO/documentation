@@ -49,7 +49,6 @@ Layers organize complex graphs into manageable, focused sections. Every investig
 
 To focus on the contents of a specific layer, click the **Eye** icon next to its name to toggle visibility.
 
-> 📸 [SCREENSHOT SUGGESTION: The layer management panel in the top-left of the graph showing layer names, eye icons, and the + button. | ALT TEXT: Graph Investigation layer management panel with visibility toggles.]
 
 ## Layer strategies
 
