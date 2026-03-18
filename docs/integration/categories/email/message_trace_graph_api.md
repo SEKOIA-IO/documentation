@@ -55,7 +55,7 @@ In order to access message traces in the Microsoft Graph API, you must provision
 
 ### Configure OAuth
 
-Collect your Tenant ID from your [Azure Portal](https://portal.azure.com/#view/Microsoft_AAD_IAM/TenantPropertiesBlade)(for more information read ([How to find your Microsoft Entra ID (Azure AD) tenant ID](https://learn.microsoft.com/en-us/azure/active-directory/fundamentals/active-directory-how-to-find-tenant)).
+Collect your Tenant ID from your [Azure Portal](https://portal.azure.com/#view/Microsoft_AAD_IAM/TenantPropertiesBlade)(for more information read [How to find your Microsoft Entra ID (Azure AD) tenant ID](https://learn.microsoft.com/en-us/azure/active-directory/fundamentals/active-directory-how-to-find-tenant)).
 
 #### Create an Azure application
 
