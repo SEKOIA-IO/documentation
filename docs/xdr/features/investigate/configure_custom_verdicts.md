@@ -26,7 +26,7 @@ SOC teams often have different nuances for what constitutes a true or false posi
 4. Enter a **Description** about when the verdict should be used.
 5. Click **Save**.
 
-> 📸 [SCREENSHOT SUGGESTION: The Analyst verdict configuration page showing True Positive and False Positive categories with the + button. | ALT TEXT: Custom verdicts configuration page with verdict categories.]
+![Custom verdicts configuration page with verdict categories](/assets/operation_center/alerts/custom-verdicts-config.png)
 
 ## Edit a custom verdict
 
