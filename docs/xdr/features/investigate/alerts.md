@@ -29,7 +29,7 @@ When an alert is triggered, the alert date is set to the first trigger. Addition
 
 Urgency is a number between 1 (very low risk) and 100 (very high risk) used to score the risk associated with an alert. It is calculated from the severity of a rule and the criticality of assets related to the alert.
 
-$$Alert\ urgency = \frac{Severity\ of\ the\ rule + Criticality\ of\ the\ asset}{2}$$
+**Alert urgency = (Severity of the rule + Criticality of the asset) / 2**
 
 !!! note
     When the criticality of an asset is 0 (N/A), the alert urgency is equal to the severity of the rule.
