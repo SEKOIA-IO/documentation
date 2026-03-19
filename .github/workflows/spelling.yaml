@@ -1,8 +1,5 @@
 name: Spelling
 
-permissions:
-  contents: read
-
 on:
   pull_request:
     types: [opened, synchronize, reopened]
@@ -13,8 +10,13 @@ on:
 env:
   CLICOLOR: 1
 
+permissions: {}
+
 jobs:
   spelling:
+    permissions:
+      contents: read  # for actions/checkout to fetch code
+      pull-requests: read  # for tj-actions/changed-files to list changed files via pulls.listFiles API
     name: Spell Check with Typos
     runs-on: ubuntu-latest
     steps:
