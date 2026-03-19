@@ -1,4 +1,4 @@
-Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-03-12_](rules_changelog.md)).
+Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-03-19_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Identity Information**
 
@@ -2157,6 +2157,10 @@ Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 18/03/2026 - minor - Update rule type to integration
+            
 ??? abstract "Bloodhound and Sharphound Tools Usage"
     
     Detects default process names and default command line parameters used by Bloodhound and Sharphound tools.
@@ -3273,6 +3277,7 @@ Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-
     - **Changelog:**
     
         - 07/04/2025 - minor - Similarity strategy changed to avoid too much grouping
+        - 18/03/2026 - minor - Update rule type to integration
             
 ??? abstract "XSL Script Processing And SquiblyTwo Attack"
     
@@ -3489,30 +3494,50 @@ Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 18/03/2026 - minor - Update rule type to integration
+            
 ??? abstract "Broadcom/Symantec Endpoint Security Event Blocked"
     
     Broadcom/Symantec Endpoint Security blocked an action. Careful when activating this rule, it generates lots of events that are not always relevant for detection.
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 18/03/2026 - minor - Update rule type to integration
+            
 ??? abstract "Broadcom/Symantec Endpoint Security Event Cleaned"
     
     Broadcom/Symantec Endpoint Security had cleaned action. Careful when activating this rule, it generates lots of events that are not always relevant for detection.
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 18/03/2026 - minor - Update rule type to integration
+            
 ??? abstract "Broadcom/Symantec Endpoint Security Event Quarantined"
     
     Broadcom/Symantec Endpoint Security had a quarantined action. Careful when activating this rule, it generates lots of events that are not always relevant for detection.
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 18/03/2026 - minor - Update rule type to integration
+            
 ??? abstract "Broadcom/Symantec Endpoint Security Event Terminate"
     
     Broadcom/Symantec Endpoint Security had a process terminate action. Careful when activating this rule, it generates lots of events that are not always relevant for detection.
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 18/03/2026 - minor - Update rule type to integration
+            
 ??? abstract "Cobalt Strike Default Beacons Names"
     
     Detects the default names of Cobalt Strike beacons / payloads.
@@ -4565,24 +4590,40 @@ Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 18/03/2026 - minor - Update rule type to integration
+            
 ??? abstract "Sophos EDR Application Detected"
     
     Sophos EDR detected a potentially malicious application.
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 18/03/2026 - minor - Update rule type to integration
+            
 ??? abstract "Sophos EDR CorePUA Clean"
     
     Sophos EDR detected a potentially unwanted application and cleaned it.
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 18/03/2026 - minor - Update rule type to integration
+            
 ??? abstract "Sophos EDR CorePUA Detection"
     
     Sophos EDR detected a potentially unwanted application.
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 18/03/2026 - minor - Update rule type to integration
+            
 ??? abstract "SquirrelWaffle Malspam Execution Loading DLL"
     
     Detects cscript running suspicious command to load a DLL. This behavior has been detected in SquirrelWaffle campaign.
@@ -4595,18 +4636,30 @@ Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 18/03/2026 - minor - Update rule type to integration
+            
 ??? abstract "Stormshield Ses Critical Not Block"
     
     Stormshield Endpoint Security detect threat with critical severity that was not blocked
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 18/03/2026 - minor - Update rule type to integration
+            
 ??? abstract "Stormshield Ses Emergency Block"
     
     Stormshield Endpoint Security block execution with emergency severity
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 18/03/2026 - minor - Update rule type to integration
+            
 ??? abstract "Suricata Attempted Administrator Privilege Gain High Severity Alert"
     
     Detects a high severity alert triggered from Suricata Attempted Administrator Privilege Gain category.
@@ -4763,6 +4816,7 @@ Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-
     - **Changelog:**
     
         - 07/04/2025 - minor - Similarity strategy changed to avoid too much grouping
+        - 18/03/2026 - minor - Update rule type to integration
             
 ??? abstract "ZIP LNK Infection Chain"
     
@@ -4807,6 +4861,10 @@ Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 18/03/2026 - minor - Update rule type to integration
+            
 ??? abstract "Check Point Harmony Mobile Application Forbidden"
     
     Detects when someone attempts to access/use a forbidden application.
@@ -5775,6 +5833,7 @@ Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-
     - **Changelog:**
     
         - 07/04/2025 - minor - Similarity strategy changed to avoid too much grouping
+        - 18/03/2026 - minor - Update rule type to integration
             
 ??? abstract "Wsmprovhost Wrong Parent"
     
