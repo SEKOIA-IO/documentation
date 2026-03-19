@@ -37,7 +37,7 @@ jobs:
     - name: Refresh intakes documentation
       run: |
         rm -rf ../../_shared_content/operations_center/integrations/generated/*.md
-        uv run python update_mkdocs.py $GITHUB_WORKSPACE/intakes $GITHUB_WORKSPACE/main
+        uv run python update_mkdocs.py "$GITHUB_WORKSPACE/intakes" "$GITHUB_WORKSPACE/main"
       working-directory: ./main/scripts/update_mkdocs
 
     - name: Create Pull Request

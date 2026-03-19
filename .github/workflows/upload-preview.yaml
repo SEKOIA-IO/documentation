@@ -24,7 +24,7 @@ jobs:
 
       - name: Get PR number
         id: pr_number
-        run: echo "pr_number=$(cat site/.pr_number)" >> $GITHUB_OUTPUT
+        run: echo "pr_number=$(cat site/.pr_number)" >> "$GITHUB_OUTPUT"
 
       - name: Fix URLs and relative links
         run: |
@@ -39,7 +39,7 @@ jobs:
 
       - name: Delete any previous preview
         run: |
-          swift delete sekoiaio-documentation-previews -p ${STEPS_PR_NUMBER_OUTPUTS_PR_NUMBER}  --object-threads 5
+          swift delete sekoiaio-documentation-previews -p "${STEPS_PR_NUMBER_OUTPUTS_PR_NUMBER}"  --object-threads 5
         env:
           OS_AUTH_URL: "https://auth.cloud.ovh.net/v3/"
           OS_IDENTITY_API_VERSION: 3
@@ -52,7 +52,7 @@ jobs:
 
       - name: OVH Object Storage
         run: |
-          swift upload sekoiaio-documentation-previews site --object-name ${STEPS_PR_NUMBER_OUTPUTS_PR_NUMBER} --object-threads 5
+          swift upload sekoiaio-documentation-previews site --object-name "${STEPS_PR_NUMBER_OUTPUTS_PR_NUMBER}" --object-threads 5
         env:
           OS_AUTH_URL: "https://auth.cloud.ovh.net/v3/"
           OS_IDENTITY_API_VERSION: 3
@@ -73,7 +73,7 @@ jobs:
 
       - name: Get current date
         id: date
-        run: echo "date=$(date +'%F %H:%M:%S')" >> $GITHUB_OUTPUT
+        run: echo "date=$(date +'%F %H:%M:%S')" >> "$GITHUB_OUTPUT"
 
       - name: Add comment to PR
         uses: peter-evans/create-or-update-comment@e8674b075228eee787fea43ef493e45ece1004c9 # v5.0.0
