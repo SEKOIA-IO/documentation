@@ -1,7 +1,47 @@
-Changelog _last update on 2026-03-12_
+Changelog _last update on 2026-03-19_
 
 ## Changelog
 
+### Broadcom/Symantec Endpoint Security Event Blocked
+  - 18/03/2026 - minor - Update rule type to integration
+    
+### Stormshield Ses Critical Not Block
+  - 18/03/2026 - minor - Update rule type to integration
+    
+### Broadcom/Symantec Endpoint Security Event Quarantined
+  - 18/03/2026 - minor - Update rule type to integration
+    
+### Stormshield Ses Critical Block
+  - 18/03/2026 - minor - Update rule type to integration
+    
+### Sophos EDR CorePUA Clean
+  - 18/03/2026 - minor - Update rule type to integration
+    
+### Sophos EDR Application Detected
+  - 18/03/2026 - minor - Update rule type to integration
+    
+### Sophos EDR Application Blocked
+  - 18/03/2026 - minor - Update rule type to integration
+    
+### Sophos EDR CorePUA Detection
+  - 18/03/2026 - minor - Update rule type to integration
+    
+### Bitdefender GravityZone Endpoint Detection
+  - 18/03/2026 - minor - Update rule type to integration
+    
+### WithSecure Elements Warning Severity
+  - 18/03/2026 - minor - Update rule type to integration
+  - 07/04/2025 - minor - Similarity strategy changed to avoid too much grouping
+    
+### Broadcom/Symantec Endpoint Security Event Terminate
+  - 18/03/2026 - minor - Update rule type to integration
+    
+### Broadcom/Symantec Endpoint Security Event Cleaned
+  - 18/03/2026 - minor - Update rule type to integration
+    
+### Stormshield Ses Emergency Block
+  - 18/03/2026 - minor - Update rule type to integration
+    
 ### HarfangLab EDR Medium Threat
   - 12/03/2026 - minor - Update rule type to integration
   - 16/01/2025 - minor - Adding format field to improve rules mapping
@@ -710,9 +750,6 @@ Changelog _last update on 2026-03-12_
   - 07/04/2025 - minor - Changed similarity strategy and effort level.
   - 26/03/2024 - major - Rule's pattern field changed
   - 04/10/2023 - major - Removed an option from the ScriptBlockText selection to reduce false positives.
-    
-### WithSecure Elements Warning Severity
-  - 07/04/2025 - minor - Similarity strategy changed to avoid too much grouping
     
 ### Remote Enumeration Of Lateral Movement Groups
   - 02/04/2025 - minor - Use chained correlation to group alerts by source account.
@@ -1563,6 +1600,9 @@ Changelog _last update on 2026-03-12_
 ### Microsoft Defender for Office 365 Medium Severity AIR Alert
   - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
     
+### WithSecure Elements Critical Severity
+  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+    
 ### CVE-2021-21985 VMware vCenter
   - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
     
@@ -1577,9 +1617,6 @@ Changelog _last update on 2026-03-12_
   - 10/08/2023 - minor - Rule modified and filter added to reduce false positives.
     
 ### Login Brute-Force Successful On SentinelOne EDR Management Console
-  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
-    
-### WithSecure Elements Critical Severity
   - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
     
 ### Login Failed Brute-Force On SentinelOne EDR Management Console
