@@ -5,31 +5,24 @@ inputs:
   pull_request_id:
     description: Identifier of the PR
     required: true
-    type: string
   os_tenant_id:
     description: OpenStack tenant identifier
     required: true
-    type: string
   os_tenant_name:
     description: OpenStack tenant name
     required: true
-    type: string
   os_username:
     description: OpenStack username
     required: true
-    type: string
   os_password:
     description: OpenStack password
     required: true
-    type: string
   github_token:
     description: GitHub Token
     required: true
-    type: string
   message:
     description: Message to post
     required: true
-    type: string
 
 runs:
   using: composite
