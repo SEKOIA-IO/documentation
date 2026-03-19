@@ -38,7 +38,7 @@ jobs:
 
       - name: Delete old content on remote storage
         run: |
-          swift list sekoiaio-public-documentation -j | jq -r ".[].name" | while read remote_file; do
+          swift list sekoiaio-public-documentation -j | jq -r ".[].name" | while read -r remote_file; do
               if [ ! -f "site/${remote_file}" ]; then
                   swift delete sekoiaio-public-documentation "$remote_file" --object-threads 5
               fi

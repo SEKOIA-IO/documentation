@@ -37,7 +37,7 @@ jobs:
     - name: Refresh assets connectors documentation
       run: |
         rm -rf ../../_shared_content/operations_center/integrations/generated_assets_documentation/*.md
-        uv run python update_mkdocs_asset_connectors.py $GITHUB_WORKSPACE/asset_connectors $GITHUB_WORKSPACE/main
+        uv run python update_mkdocs_asset_connectors.py "$GITHUB_WORKSPACE/asset_connectors" "$GITHUB_WORKSPACE/main"
       working-directory: ./main/scripts/update_mkdocs
 
     - name: Create Pull Request

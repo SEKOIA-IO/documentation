@@ -48,7 +48,7 @@ runs:
   - name: OVH Object Storage
     shell: bash
     run: |
-      uv run swift delete sekoiaio-documentation-previews -p ${INPUTS_PULL_REQUEST_ID}/ --object-threads 5
+      uv run swift delete sekoiaio-documentation-previews -p "${INPUTS_PULL_REQUEST_ID}/" --object-threads 5
     env:
       OS_AUTH_URL: "https://auth.cloud.ovh.net/v3/"
       OS_IDENTITY_API_VERSION: 3
