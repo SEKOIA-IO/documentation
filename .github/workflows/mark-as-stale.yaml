@@ -1,4 +1,4 @@
-name: Mark old PRs as stale
+name: Mark old PRs as stale and delete their previews
 
 on:
   workflow_dispatch:
@@ -8,14 +8,17 @@ on:
 permissions: {}
 
 jobs:
-  close-issues:
+  mark-stale:
     permissions:
       issues: write  # for actions/stale to close stale issues
       pull-requests: write  # for actions/stale to label and comment on stale pull requests
     runs-on: ubuntu-latest
+    outputs:
+      stale-prs: ${{ steps.extract-prs.outputs.prs }}
 
     steps:
       - uses: actions/stale@b5d41d4e1d5dceea10e7104786b73624c18a190f # v10.2.0
+        id: stale
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           ascending: true
@@ -26,3 +29,53 @@ jobs:
           operations-per-run: 1000
           stale-issue-label: "stale"
           stale-pr-message: "This PR was marked as stale because it has been open for 30 days with no activity."
+
+      # staled-issues-prs holds only the items this run newly labelled, not every
+      # already-stale one, so each preview is deleted exactly once. Warn rather than
+      # fail if it is unparsable: the label is applied by now, so this run will never
+      # be retried and a hard failure would strand the previews either way.
+      - name: Extract stale PR numbers
+        id: extract-prs
+        env:
+          STALED: ${{ steps.stale.outputs.staled-issues-prs }}
+        run: |
+          if ! prs=$(jq -c '[.[] | select(.pull_request != null) | .number]' <<<"${STALED:-[]}"); then
+            echo "::warning::Could not parse staled-issues-prs from actions/stale (${#STALED} bytes); no stale previews will be deleted this run."
+          fi
+          echo "prs=${prs:-[]}" >> "$GITHUB_OUTPUT"
+
+  delete-stale-previews:
+    name: Delete preview for stale PR ${{ matrix.pr }}
+    needs: mark-stale
+    if: fromJson(needs.mark-stale.outputs.stale-prs)[0] != null
+    permissions:
+      contents: read  # for actions/checkout to fetch code
+      issues: write  # for ./.github/actions/delete-preview (peter-evans/create-or-update-comment) to create or update comment
+      pull-requests: write  # for ./.github/actions/delete-preview (peter-evans/create-or-update-comment) to create or update comment on pull requests
+    runs-on: ubuntu-latest
+    strategy:
+      # A PR is only ever staled once, so a failure here is never retried; let the
+      # other previews be deleted rather than cancelling them.
+      fail-fast: false
+      matrix:
+        pr: ${{ fromJson(needs.mark-stale.outputs.stale-prs) }}
+
+    steps:
+      - name: Check-out the repo
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          sparse-checkout: |
+            .github/actions/
+          persist-credentials: false
+
+      - name: Delete preview
+        uses: ./.github/actions/delete-preview
+        with:
+          pull_request_id: ${{ matrix.pr }}
+          os_tenant_id: ${{ secrets.PR_OS_TENANT_ID }}
+          os_tenant_name: ${{ secrets.PR_OS_TENANT_NAME }}
+          os_username: ${{ secrets.PR_OS_USERNAME }}
+          os_password: ${{ secrets.PR_OS_PASSWORD }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          message: |
+            _Preview was removed as the PR is stale._
