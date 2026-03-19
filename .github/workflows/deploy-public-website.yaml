@@ -5,8 +5,12 @@ on:
     branches:
     - main
 
+permissions: {}
+
 jobs:
   build_and_upload_website:
+    permissions:
+      contents: read  # for actions/checkout to fetch code
     name: Build and upload public version of the website
     runs-on: ubuntu-latest
 

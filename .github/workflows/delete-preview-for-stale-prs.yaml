@@ -5,8 +5,13 @@ on:
     types:
       - labeled
 
+permissions: {}
+
 jobs:
   build:
+    permissions:
+      contents: read  # for actions/checkout to fetch code
+      issues: write  # for ./.github/actions/delete-preview (peter-evans/create-or-update-comment) to create or update comment
     if: ${{ github.event.label.name == 'stale' }}
     runs-on: ubuntu-latest
 

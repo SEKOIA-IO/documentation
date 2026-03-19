@@ -5,12 +5,14 @@ on:
   schedule:
     - cron: "0 3 * * *"
 
+permissions: {}
+
 jobs:
   close-issues:
-    runs-on: ubuntu-latest
     permissions:
-      issues: write
-      pull-requests: write
+      issues: write  # for actions/stale to close stale issues
+      pull-requests: read  # for actions/stale to check PR draft status
+    runs-on: ubuntu-latest
 
     steps:
       - uses: actions/stale@b5d41d4e1d5dceea10e7104786b73624c18a190f # v10.2.0
