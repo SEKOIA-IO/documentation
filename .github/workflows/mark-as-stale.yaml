@@ -5,15 +5,20 @@ on:
   schedule:
     - cron: "0 3 * * *"
 
+permissions: {}
+
 jobs:
-  close-issues:
+  mark-stale:
     runs-on: ubuntu-latest
     permissions:
       issues: write
       pull-requests: write
+    outputs:
+      stale-prs: ${{ steps.extract-prs.outputs.prs }}
 
     steps:
-      - uses: actions/stale@v3
+      - uses: actions/stale@b5d41d4e1d5dceea10e7104786b73624c18a190f # v10.2.0
+        id: stale
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           ascending: true
@@ -24,3 +29,42 @@ jobs:
           operations-per-run: 1000
           stale-issue-label: "stale"
           stale-pr-message: "This PR was marked as stale because it has been open for 30 days with no activity."
+
+      - name: Extract stale PR numbers
+        id: extract-prs
+        env:
+          STALED: ${{ steps.stale.outputs.staled-issues-prs }}
+        run: |
+          prs=$(echo "$STALED" | jq -c '[.[] | select(.pull_request != null) | .number]')
+          echo "prs=$prs" >> "$GITHUB_OUTPUT"
+
+  delete-stale-previews:
+    needs: mark-stale
+    if: fromJson(needs.mark-stale.outputs.stale-prs)[0] != null
+    runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
+    strategy:
+      matrix:
+        pr: ${{ fromJson(needs.mark-stale.outputs.stale-prs) }}
+    steps:
+      - name: Check-out the repo
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          sparse-checkout: |
+            .github/actions/
+            pyproject.toml
+            uv.lock
+          persist-credentials: false
+
+      - name: Delete preview
+        uses: ./.github/actions/delete-preview
+        with:
+          pull_request_id: ${{ matrix.pr }}
+          os_tenant_id: ${{ secrets.PR_OS_TENANT_ID }}
+          os_tenant_name: ${{ secrets.PR_OS_TENANT_NAME }}
+          os_username: ${{ secrets.PR_OS_USERNAME }}
+          os_password: ${{ secrets.PR_OS_PASSWORD }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          message: |
+            _Preview was removed as the PR is stale._
