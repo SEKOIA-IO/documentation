@@ -48,7 +48,7 @@ runs:
   - name: OVH Object Storage
     shell: bash
     run: |
-      uv run swift delete sekoiaio-documentation-previews -p ${{ inputs.pull_request_id }}/ --object-threads 5
+      uv run swift delete sekoiaio-documentation-previews -p ${INPUTS_PULL_REQUEST_ID}/ --object-threads 5
     env:
       OS_AUTH_URL: "https://auth.cloud.ovh.net/v3/"
       OS_IDENTITY_API_VERSION: 3
@@ -57,6 +57,7 @@ runs:
       OS_USERNAME: ${{ inputs.os_username }}
       OS_PASSWORD: ${{ inputs.os_password }}
       OS_REGION_NAME: "GRA"
+      INPUTS_PULL_REQUEST_ID: ${{ inputs.pull_request_id }}
 
   - name: Find Comment
     uses: peter-evans/find-comment@b30e6a3c0ed37e7c023ccd3f1db5c6c0b0c23aad # v4.0.0
