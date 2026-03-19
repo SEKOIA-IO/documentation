@@ -75,6 +75,48 @@ A new Alert was created in the Operation Center
 | `last_seen_at` | `string` |  |
 
 
+### Alert Events Threshold
+
+Trigger playbooks only when alert event accumulation meets configurable thresholds (volume-based or time-based)
+
+**Arguments**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `rule_filter` | `string` | Filter by rule name or UUID (single rule only) |
+| `rule_names_filter` | `array` | Filter by multiple rule names |
+| `event_count_threshold` | `integer` | Minimum number of new events to trigger (volume-based) |
+| `time_window_hours` | `integer` | Time window in hours for time-based triggering (max 7 days) |
+| `enable_volume_threshold` | `boolean` | Enable volume-based threshold (>= N events) |
+| `enable_time_threshold` | `boolean` | Enable time-based threshold (triggers if there is activity in last N hours, checked periodically) |
+| `state_cleanup_days` | `integer` | Remove state entries for alerts older than N days |
+| `fetch_events` | `boolean` | Whether to fetch and include events in the trigger output |
+| `fetch_all_events` | `boolean` | If true, fetch all events from the alert. If false, fetch only new events since last trigger |
+| `max_events_per_fetch` | `integer` | Maximum number of events to fetch per trigger execution |
+
+
+**Outputs**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `file_path` | `string` | File path to the alert on disk. |
+| `event_type` | `string` | Action that triggered this Sekoia.io Alert notification. |
+| `alert_uuid` | `string` | Unique identifier of the Alert (UUID string). |
+| `short_id` | `string` | Unique short identifier of the Alert. |
+| `status` | `object` | Status of the Alert (object containing status description and name). |
+| `created_at` | `integer` | Creation date of the Alert (timestamp). |
+| `urgency` | `integer` | Current urgency of the Alert. |
+| `entity` | `object` | Description of the entity involved with this Alert (object containing entity UUID and name). |
+| `alert_type` | `object` | Category of the Alert |
+| `rule` | `object` |  |
+| `first_seen_at` | `string` |  |
+| `last_seen_at` | `string` |  |
+| `events_count` | `integer` | Total number of events in the alert |
+| `trigger_context` | `object` | Threshold-specific context about why this alert triggered |
+| `events_file_path` | `string` | File path to the events JSON file on disk (only present if fetch_events is enabled) |
+| `fetched_events_count` | `integer` | Number of events fetched and saved (only present if fetch_events is enabled) |
+
+
 ### Alert Status Changed
 
 The status of an existing alert was changed
@@ -364,6 +406,7 @@ Add indicators to an IOC Collection
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
+| `indicator` | `string` | Single indicator to add to an IOC collection. |
 | `indicators` | `array` | List of indicators to add to an IOC collection |
 | `indicators_path` | `string` | Path of the indicators file to add to an IOC collection |
 | `ioc_collection_id` | `string` | Identifier of the IOC collection |
@@ -988,6 +1031,9 @@ Retrieve the definition of an alert
 | `ttps` | `array` |  |
 | `number_of_unseen_comments` | `integer` |  |
 | `status` | `object` |  |
+| `custom_status_uuid` | `string` | UUID of the custom status associated to the alert |
+| `custom_status` | `object` |  |
+| `verdict` | `object` |  |
 | `created_by` | `string` |  |
 | `updated_by` | `string` |  |
 | `source` | `string` |  |
@@ -1581,6 +1627,35 @@ List all comments of a case
 | `items` | `array` |  |
 | `total` | `integer` |  |
 
+### Search Cases
+
+find cases that match your filters
+
+**Arguments**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `match[community_uuid]` | `string` |  |
+| `match[status_uuid]` | `string` |  |
+| `match[status_name]` | `string` |  |
+| `date[created_at]` | `string` |  |
+| `match[created_by]` | `string` |  |
+| `match[tags]` | `string` |  |
+| `match[assignees]` | `string` |  |
+| `limit` | `integer` |  |
+| `offset` | `integer` |  |
+| `sort` | `string` |  |
+| `direction` | `string` |  |
+
+
+**Outputs**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `total` | `integer` |  |
+| `has_more` | `boolean` |  |
+| `items` | `array` |  |
+
 ### Edit Alert
 
 Edit the details of an alert
@@ -1596,6 +1671,8 @@ Edit the details of an alert
 | `urgency` | `integer` | The urgency of the alert |
 | `kill_chain_short_id` | `string` | The ID of the kill chain step this alert denotes |
 | `title` | `string` | Title of the alert |
+| `verdict_uuid` | `string` | Verdict of the alert |
+| `custom_status_uuid` | `string` | Custom status of the alert |
 
 
 **Outputs**
@@ -1609,6 +1686,10 @@ Edit the details of an alert
 | `ttps` | `array` |  |
 | `number_of_unseen_comments` | `integer` |  |
 | `status` | `object` |  |
+| `custom_status_uuid` | `string` | UUID of the custom status associated to the alert |
+| `custom_status` | `object` |  |
+| `verdict_uuid` | `string` | UUID of the verdict associated to the alert |
+| `verdict` | `object` |  |
 | `created_by` | `string` |  |
 | `updated_by` | `string` |  |
 | `source` | `string` |  |
@@ -2123,4 +2204,4 @@ Update a rule
 
 ## Extra
 
-Module **`Sekoia.io` v2.68.16**
+Module **`Sekoia.io` v2.71.0**
