@@ -53,6 +53,26 @@ Get the detail of a message from the user's mailbox
 | `user` | `string` | The identifier or the principal name of the user |
 | `message_id` | `string` | The identifier of the message to get |
 
+### Send a message
+
+Send a message from the user's mailbox
+
+**Arguments**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `user` | `string` | The identifier or the principal name of the user |
+| `sender` | `string` | The sender of the message. Usually the same as mailbox owner |
+| `from` | `string` | The mailbox owner of the message (from header). Usually the same as sender |
+| `subject` | `string` | The subject of the message |
+| `content` | `string` | The content of the message |
+| `content_type` | `string` | The type of the content |
+| `save_to_sent_items` | `boolean` | Indicates whether to save the message in Sent Items |
+| `recipients` | `array` | The list of recipients |
+| `bcc` | `array` | The list of BCC recipients |
+| `cc` | `array` | The list of CC recipients |
+| `importance` | `string` | The importance of the message |
+
 ### Update a message
 
 Update a message in the user's mailbox
@@ -110,4 +130,4 @@ Update a message in the user's mailbox
 
 ## Extra
 
-Module **`Microsoft Outlook` v0.1.1**
+Module **`Microsoft Outlook` v0.1.2**

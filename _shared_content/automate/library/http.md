@@ -16,7 +16,7 @@ This module accepts no configuration.
 
 ### Download File
 
-Donwload the given file and save it
+Download the given file and save it
 
 **Arguments**
 
@@ -24,14 +24,15 @@ Donwload the given file and save it
 | --------- | ------- | --------------------------- |
 | `url` | `string` | Url of the file to download |
 | `headers` | `object` | Headers to use when sending the requests. i.e. {"authorization": "Bearer foo"} |
-| `verify_ssl` | `boolean` | Wether the SSL certificate must be verified. Default to true. |
+| `verify_ssl` | `boolean` | Whether the SSL certificate must be verified. Default to true. |
 
 
 **Outputs**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
-| `file_path` | `string` | File path on disk |
+| `file_path` | `string` | Absolute file path on disk (legacy, prefer file_relative_path for chaining with other modules) |
+| `file_relative_path` | `string` | File path relative to the playbook data directory, suitable for use as input to other modules (e.g. Scan File) |
 
 ### Request URL
 
@@ -42,11 +43,15 @@ Requests a resource at a specified URL and returns the response as Raw or JSON
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
 | `url` | `string` | Target URL of the HTTP request |
-| `headers` | `object` | Headers to use when sending the requests. i.e. {"authorization": "Bearer foo"} |
+| `headers` | `object` | Headers to use when sending the requests. e.g. {"Content-Type": "application/json"} |
+| `auth_type` | `string` | Type of authorization, if applicable |
+| `auth_token` | `string` | Token for Bearer authentication |
+| `auth_username` | `string` | Username for Basic and Digest authentications |
+| `auth_password` | `string` | Password for Basic and Digest authentications |
 | `method` | `string` | Method of the HTTP request |
 | `data` | `string` | The body to attach to the request |
 | `json` | `object` | The JSON to attach as body of the request |
-| `params` | `string` | Query string parameters to append to the URL |
+| `params` | `` | Query string parameters to append to the URL |
 | `fail_on_http_error` | `boolean` | Fail when the HTTP query returns in error. Default to true. |
 | `verify_ssl` | `boolean` | Wether the SSL certificate must be verified. Default to true. |
 
@@ -67,4 +72,4 @@ Requests a resource at a specified URL and returns the response as Raw or JSON
 
 ## Extra
 
-Module **`HTTP` v1.119.4**
+Module **`HTTP` v1.120.3**

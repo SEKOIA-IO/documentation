@@ -28,6 +28,18 @@ Disable a Microsoft Active Directory user.
 | --------- | ------- | --------------------------- |
 | `username` | `string` | Target user |
 | `basedn` | `string` | The starting point an LDAP server uses when searching for users authentication within your Directory. (e.g DC=example-domain,DC=com) |
+| `email` | `string` | Filter by email address (mail attribute) to narrow results when multiple users share the same name |
+| `apply_to_all` | `boolean` | When true, apply action to all matching users instead of failing when multiple users are found |
+
+
+**Outputs**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `affected_users` | `array` | List of users affected by the action (only when apply_to_all is true) |
+| `total_found` | `integer` |  |
+| `total_success` | `integer` |  |
+| `total_failed` | `integer` |  |
 
 ### Enable User
 
@@ -38,7 +50,19 @@ Enable a Microsoft Active Directory user.
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
 | `username` | `string` | Target user |
-| `basedn` | `string` | he starting point an LDAP server uses when searching for users authentication within your Directory. (e.g DC=example-domain,DC=com) |
+| `basedn` | `string` | The starting point an LDAP server uses when searching for users authentication within your Directory. (e.g DC=example-domain,DC=com) |
+| `email` | `string` | Filter by email address (mail attribute) to narrow results when multiple users share the same name |
+| `apply_to_all` | `boolean` | When true, apply action to all matching users instead of failing when multiple users are found |
+
+
+**Outputs**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `affected_users` | `array` | List of users affected by the action (only when apply_to_all is true) |
+| `total_found` | `integer` |  |
+| `total_success` | `integer` |  |
+| `total_failed` | `integer` |  |
 
 ### Reset User Password
 
@@ -51,6 +75,18 @@ Reset a user's password. You will need a strong password for that otherwise enab
 | `username` | `string` | Target user |
 | `basedn` | `string` | The starting point an LDAP server uses when searching for users authentication within your Directory. (e.g DC=example-domain,DC=com) |
 | `new_password` | `string` | New password, required to reset the old one of course. |
+| `email` | `string` | Filter by email address (mail attribute) to narrow results when multiple users share the same name |
+| `apply_to_all` | `boolean` | When true, apply action to all matching users instead of failing when multiple users are found |
+
+
+**Outputs**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `affected_users` | `array` | List of users affected by the action (only when apply_to_all is true) |
+| `total_found` | `integer` |  |
+| `total_success` | `integer` |  |
+| `total_failed` | `integer` |  |
 
 ### Search in AD
 
@@ -76,4 +112,4 @@ Search in AD
 
 ## Extra
 
-Module **`Microsoft Active Directory` v1.3.9**
+Module **`Microsoft Active Directory` v1.5.1**
