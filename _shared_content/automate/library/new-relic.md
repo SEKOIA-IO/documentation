@@ -27,6 +27,7 @@ Query New Relic data with NRQL
 | --------- | ------- | --------------------------- |
 | `account_ids` | `array` | Account identifiers to use |
 | `query` | `string` | The NRQL to execute |
+| `save_to_file` | `boolean` | Whether to save response as a file |
 
 
 **Outputs**
@@ -34,6 +35,7 @@ Query New Relic data with NRQL
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
 | `results` | `array` | The results of the NRQL query |
+| `file_path` | `string` | Path of the file with results of the NRQL query |
 
 ## Set up
 
@@ -68,4 +70,4 @@ Query New Relic data with NRQL
 
 ## Extra
 
-Module **`New Relic` v1.0.2**
+Module **`New Relic` v1.1.1**
