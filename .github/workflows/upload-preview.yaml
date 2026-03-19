@@ -29,7 +29,9 @@ jobs:
       - name: Fix URLs and relative links
         run: |
           shopt -s globstar
-          sed -i 's,src="/assets/,src="/v1/AUTH_741841e1c7da4c50a76152cbc2609bd1/sekoiaio-documentation-previews/${{ steps.pr_number.outputs.pr_number }}/assets/,' site/**/*.html
+          sed -i 's,src="/assets/,src="/v1/AUTH_741841e1c7da4c50a76152cbc2609bd1/sekoiaio-documentation-previews/'"${STEPS_PR_NUMBER_OUTPUTS_PR_NUMBER}"'/assets/,' site/**/*.html
+        env:
+          STEPS_PR_NUMBER_OUTPUTS_PR_NUMBER: ${{ steps.pr_number.outputs.pr_number }}
 
       - name: Install Swift
         run: |
@@ -37,7 +39,7 @@ jobs:
 
       - name: Delete any previous preview
         run: |
-          swift delete sekoiaio-documentation-previews -p ${{ steps.pr_number.outputs.pr_number }}  --object-threads 5
+          swift delete sekoiaio-documentation-previews -p ${STEPS_PR_NUMBER_OUTPUTS_PR_NUMBER}  --object-threads 5
         env:
           OS_AUTH_URL: "https://auth.cloud.ovh.net/v3/"
           OS_IDENTITY_API_VERSION: 3
@@ -46,10 +48,11 @@ jobs:
           OS_USERNAME: ${{ secrets.PR_OS_USERNAME }}
           OS_PASSWORD: ${{ secrets.PR_OS_PASSWORD }}
           OS_REGION_NAME: "GRA"
+          STEPS_PR_NUMBER_OUTPUTS_PR_NUMBER: ${{ steps.pr_number.outputs.pr_number }}
 
       - name: OVH Object Storage
         run: |
-          swift upload sekoiaio-documentation-previews site --object-name ${{ steps.pr_number.outputs.pr_number }} --object-threads 5
+          swift upload sekoiaio-documentation-previews site --object-name ${STEPS_PR_NUMBER_OUTPUTS_PR_NUMBER} --object-threads 5
         env:
           OS_AUTH_URL: "https://auth.cloud.ovh.net/v3/"
           OS_IDENTITY_API_VERSION: 3
@@ -58,6 +61,7 @@ jobs:
           OS_USERNAME: ${{ secrets.PR_OS_USERNAME }}
           OS_PASSWORD: ${{ secrets.PR_OS_PASSWORD }}
           OS_REGION_NAME: "GRA"
+          STEPS_PR_NUMBER_OUTPUTS_PR_NUMBER: ${{ steps.pr_number.outputs.pr_number }}
 
       - name: Find Comment
         uses: peter-evans/find-comment@b30e6a3c0ed37e7c023ccd3f1db5c6c0b0c23aad # v4.0.0
