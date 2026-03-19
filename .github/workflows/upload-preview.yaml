@@ -25,11 +25,22 @@ jobs:
 
       - run: |
           mkdir site
-          tar zxvf site.tar.gz -C ./site
+          # Safe extraction of untrusted archive (rejects path traversal, symlinks, etc.)
+          python3 -c "
+          import tarfile
+          with tarfile.open('site.tar.gz') as tar:
+              tar.extractall(path='./site', filter='data')
+          "
 
       - name: Get PR number
         id: pr_number
-        run: echo "pr_number=$(cat site/.pr_number)" >> "$GITHUB_OUTPUT"
+        run: |
+          PR_NUMBER=$(cat site/.pr_number)
+          if ! [[ "$PR_NUMBER" =~ ^[0-9]+$ ]]; then
+            echo "::error::Invalid PR number: ${PR_NUMBER}"
+            exit 1
+          fi
+          echo "pr_number=${PR_NUMBER}" >> "$GITHUB_OUTPUT"
 
       - name: Fix URLs and relative links
         run: |
