@@ -15,7 +15,7 @@ Optimization rules act as a pre-processing layer. When an event enters the platf
 A rule is defined by the following components:
 
 * **Scope**: You can target specific intakes using a **Community UUID**, **Dialect UUID**, or **Intake UUID**.
-* **Filters**: A rule can accept 0, 1, or more filters. All defined filters must match for a rule to apply.
+* **Filters**: A rule can accept several filters. All defined filters of a rule must match an existing field to apply.
 * **Action**: This specifies the particular operation executed to optimize the event.
 
 ## Benefits
