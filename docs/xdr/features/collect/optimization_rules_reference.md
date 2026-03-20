@@ -26,7 +26,7 @@ When defining the "value" in a filter, you must match the data type of the field
 
 * Integer fields: Use raw numbers without quotes (e.g., 4624).
 * String fields: Use double quotes (e.g., "failed").
-* Collections: Use arrays for "in" or "not in" operators (e.g., ["rfc1918", "rfc5735"]).
+* Collections: Use arrays for "==", "in" or "not in" operators (e.g., ["rfc1918", "rfc5735"]
 
 ## Action bitmask values
 
