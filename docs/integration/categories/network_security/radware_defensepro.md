@@ -43,9 +43,9 @@ This setup guide will show you how to forward your Radware DefensePro logs to Se
 
 Before you start:
 
-- Connect to [Sekoia.io SOC Platform with a Defend Plan](https://app.sekoia.io/intakes)
+- Connect to [Sekoia.io SOC Platform with a Defend Plan](https://app.sekoia.io/operations/intakes)
 - Add an Intake to the relevant Entity
-- Keep trace of the automatically generated Intake key
+- Keep track of the automatically generated Intake key
 - Have a syslog concentrator (Rsyslog or Syslog-ng) already running and configured to forward logs to Sekoia.io
 
 #### Detailed Procedure
