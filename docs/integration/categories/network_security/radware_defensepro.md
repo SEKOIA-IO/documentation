@@ -71,11 +71,12 @@ There are two ways to configure syslog on Radware DefensePro: through the Web UI
 4. Select your preferred protocol (TCP or UDP)
 5. Click **Submit** to apply the configuration 
 
-{!_shared_content/integration/forwarder_configuration.md!}
 
 ### Instruction on Sekoia
 
 {!_shared_content/integration/intake_configuration.md!}
+
+{!_shared_content/integration/forwarder_configuration.md!}
 
 {!_shared_content/operations_center/integrations/generated/a90e587e-06e7-47c4-9738-1f9172277646_sample.md!}
 
