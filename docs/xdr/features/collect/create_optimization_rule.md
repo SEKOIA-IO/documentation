@@ -4,7 +4,7 @@ You can create optimization rules via the Sekoia.io API to automate the filterin
 
 !!! tip "Prioritize filtering at the source"
     Use optimization rules as a last resort for managing log volume. Sekoia.io recommends implementing filters as close to the data source as possible (e.g., at the device or forwarder level) before applying platform-level rules. 
-    For a detailed hierarchy of filtering methods, see the [Log volume reduction strategies](../usecases/playbook/log_volume_reduction_strategies.md) guide.
+    For a detailed hierarchy of filtering methods, see the [Log volume reduction strategies](/xdr/usecases/playbook/log_volume_reduction_strategies.md) guide.
     
 
 ## Prerequisites
