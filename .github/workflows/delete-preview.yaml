@@ -6,13 +6,19 @@ on:
     types:
       - completed
 
+permissions: {}
+
 jobs:
   remove:
+    permissions:
+      actions: read  # for actions/download-artifact to download artifacts from other workflow runs
+      contents: read  # for actions/checkout to fetch code
+      issues: write  # for ./.github/actions/delete-preview (peter-evans/create-or-update-comment) to create or update comment
     name: Delete preview from OVHcloud Object Storage
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/download-artifact@v4
+      - uses: actions/download-artifact@70fc10c6e5e1ce46ad2ea6f2b72d43f7d47b13c3 # v8.0.0
         with:
           name: PR
           github-token: ${{ github.token }}
@@ -20,10 +26,16 @@ jobs:
 
       - name: Get PR number
         id: pr_number
-        run: echo "pr_number=$(cat PR_NUMBER)" >> $GITHUB_OUTPUT
+        run: |
+          PR_NUMBER=$(cat PR_NUMBER)
+          if ! [[ "$PR_NUMBER" =~ ^[0-9]+$ ]]; then
+            echo "::error::Invalid PR number: ${PR_NUMBER}"
+            exit 1
+          fi
+          echo "pr_number=${PR_NUMBER}" >> "$GITHUB_OUTPUT"
 
       - name: Check-out the repo
-        uses: actions/checkout@v4
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
         with:
           sparse-checkout: |
             .github/actions/

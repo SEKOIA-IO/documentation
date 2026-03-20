@@ -4,6 +4,8 @@ on:
   pull_request:
     types: [closed]
 
+permissions: {}
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -13,7 +15,7 @@ jobs:
           mkdir PR
           echo ${{ github.event.number }} > ./PR/PR_NUMBER
 
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@bbbca2ddaa5d8feaa63e36b76fdaad77386f024f # v7.0.0
         with:
           name: PR
           path: PR/
