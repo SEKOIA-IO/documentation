@@ -20,9 +20,9 @@ The rule is now active. It checks both incoming telemetry and historical events 
 ## Related articles
 
 - [Feeds](/_shared_content/intelligence_center/consume
-/concept_feeds.md): Understand what feeds are, how they work, available formats, and the default feed.
+/feeds.md): Understand what feeds are, how they work, available formats, and the default feed.
 - [Create a feed](/_shared_content/intelligence_center/consume
-/task_create_feed.md): Configure and activate a new feed by selecting object types, sources, TLP levels, and output format.
+/create_feed.md): Configure and activate a new feed by selecting object types, sources, TLP levels, and output format.
 - [Manage feeds](/_shared_content/intelligence_center/consume
-/task_manage_feeds.md): Consume, edit, duplicate, or delete an existing feed.
+/manage_feeds.md): Consume, edit, duplicate, or delete an existing feed.
  
