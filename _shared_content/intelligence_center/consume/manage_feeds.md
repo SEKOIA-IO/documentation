@@ -1,6 +1,6 @@
 # Manage feeds
 
-This article covers how to consume, edit, duplicate, and delete an existing feed. To create a new feed, see [Create a feed](task_create_feed.md).
+This article covers how to consume, edit, duplicate, and delete an existing feed. To create a new feed, see [Create a feed](/cti/features/consume/create_feed.md).
 
 ## Consume a feed
 
