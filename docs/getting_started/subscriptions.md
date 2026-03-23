@@ -80,26 +80,51 @@ The system checks for license expiration daily at 02:00 (UTC). If the system det
 
 ### Nearly expired license
 
-To help you anticipate renewals, Sekoia sends reminder emails when a license is approaching its expiration date. 
-The notification rules depend on the license duration and on whether the administrator belongs to a workspace (MSSP) or to a community.
+To help administrators anticipate subscription renewals, Sekoia notifies them when a license is approaching its expiration date.
 
-The system evaluates nearly expired licenses daily around 08:00 (UTC) and sends notifications accordingly.
+These notifications are evaluated daily, around 08:00 UTC, based on the license duration and on the administrator scope:
+
+* **workspace admins** are notified at workspace level
+* **community admins** are notified at community level
+
+Sekoia currently supports two notification channels for nearly expired licenses:
+
+* **email notifications**
+* **in-app banners**, displayed at the top of the application
+
+The in-app banner is shown on the same day as the email notification.
 
 **Workspace**
 
-Workspace admins receive an email when at least one managed community has a subscription close to expiration:
+Workspace admins receive a notification when at least one managed community has a subscription close to expiration:
 
-* **Long-term licenses:** If the license duration is greater than 100 days, the system sends a notification when the license expires in less than 90 days.
-* **Short-term licenses:**: If the license duration is 100 days or less, the system sends a notification when the license expires in less than 10 days.
+* **Long-term licenses:** If the license duration is greater than 100 days, the notification is sent when the license expires in less than 90 days.
+* **Short-term licenses:**: If the license duration is 100 days or less, the notification is sent when the license expires in less than 10 days.
 
-These notifications provide a global view of upcoming expirations across all managed communities.
+These notifications provide a consolidated view of upcoming expirations across all managed communities.
 
 **Community**
 
-Community admins receive an email when their community subscription is close to expiration:
+Community admins receive a notification when their community subscription is close to expiration:
 
-* **Long-term licenses:** If the license duration is greater than 100 days, the system sends a notification when the license expires in less than 30 days.
-* **Short-term licenses:** If the license duration is 100 days or less, the system sends a notification when the license expires in less than 5 days.
+* **Long-term licenses:** If the license duration is greater than 100 days, the notification is sent when the license expires in less than 30 days.
+* **Short-term licenses:** If the license duration is 100 days or less, the notification is sent when the license expires in less than 5 days.
+
+### In-app banner behavior
+
+When a nearly expired license notification is triggered, Sekoia can also display an in-app banner at the top of the application.
+
+The banner is displayed only to:
+
+* community admins of communities with a nearly expired license
+* workspace admins of workspaces containing one or more communities with a nearly expired license
+
+Users can dismiss the banner from the interface. This dismissal is temporary:
+
+* the banner stays hidden until the next daily recomputation
+* if the license is still nearly expired after recomputation, the banner is displayed again the next day
+
+This behavior ensures repeated visibility until the situation is resolved, while allowing users to temporarily hide the message.
 
 ### Notification schedule
 
