@@ -4,16 +4,6 @@ A feed is a filtered, scoped view of Cyber Threat Intelligence (CTI) objects fro
 
 Feeds are shared across all users within the community that created them, ensuring consistent intelligence scoping across your organization.
 
-
-The **Feeds** page is accessible from the main menu. Each feed appears as a row with the following columns:
-
-- **Name** – The title of the feed
-- **Format** – The export format (JSON/STIX, Text, CSV, or Custom)
-- **Created by** – The community that created the feed
-- **Filters** – Active filters: object types, sources, TLPs, observables
-- **Actions (⋯)** – **Disseminate**, **Edit**, **Duplicate**, or **Delete** *(unavailable on the Default Feed)*
-
-
 ## What feeds are used for
 
 Feeds serve as versatile components for both internal analysis and external integration.
@@ -33,7 +23,19 @@ Every community with an Intelligence subscription has a **Default Feed** availab
 Use the following Feed ID to access it programmatically: `d6092c37-d8d7-45c3-8aff-c4dc26030608`
 
 !!! tip "Creating scoped feeds"
-    Create additional feeds whenever you need a filtered, scoped view, for a specific TLP level, source, or object type.
+    Create additional feeds whenever you need a filtered, scoped view — for a specific TLP level, source, or object type.
+
+## Feeds page columns
+
+The **Feeds** page displays all feeds available in your community. Each feed appears as a row with the following columns.
+
+| Column | Description |
+| --- | --- |
+| **Name** | The title of the feed |
+| **Format** | The export format: JSON/STIX, Text, CSV, or Custom |
+| **Created by** | The community that created the feed |
+| **Filters** | Active filters applied to the feed: object types, sources, TLP levels, and observables |
+| **Actions (⋯)** | Available actions: **Disseminate**, **Edit**, **Duplicate**, or **Delete**. These actions are unavailable on the Default Feed. |
 
 ## Feed formats
 
@@ -46,13 +48,26 @@ When you create or edit a feed, you select an output format. The table below sum
 | CSV | Customizable spreadsheet exports | 2,000 |
 | Custom | User-defined templates using variables such as `$tlp`, `$id`, `$name`, and `$observables` | 2,000 |
 
+## Dissemination links
+
+When you select **Disseminate** from the **Actions (⋯)** menu of a feed, you access three integration links. A single feed can be consumed simultaneously through all three.
+
+| Link | Use |
+| --- | --- |
+| **Public Feed ID** | Fetch or update the collection programmatically |
+| **Public API URL** | Direct API calls and integrations (`https://app.sekoia.io/api/v2/inthreat/collections/...`) |
+| **Public TAXII URL** | TAXII-compatible systems and platforms (`https://app.sekoia.io/api/v2/inthreat/taxii-server/...`) |
+
 ## Relationship handling
 
 Feeds include only the object types you select in the **Object type** filters. Relationships between objects are not included. If you leave the object type filter empty, all object types are included.
 
 ## Related articles
 
-- [Feeds listing](reference_feeds_listing.md)
-- [Create a feed](task_create_feed.md)
-- [Manage feeds](task_manage_feeds.md)
-- [Create a detection rule from a feed](task_create_detection_rule_from_feed.md)
+- [Create a feed](/_shared_content/intelligence_center/consume
+/create_feed.md): Configure and activate a new feed by selecting object types, sources, TLP levels, and output format.
+- [Manage feeds](/_shared_content/intelligence_center/consume
+/manage_feeds.md): Consume, edit, duplicate, or delete an existing feed.
+- [Create a detection rule from a feed](/_shared_content/intelligence_center/consume
+/create_detection_rule_from_feed.md): Link a feed to a CTI detection rule to automatically match IOCs against your telemetry. Requires a Defend subscription.
+ 
