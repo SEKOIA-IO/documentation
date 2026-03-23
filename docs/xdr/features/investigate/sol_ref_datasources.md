@@ -13,6 +13,7 @@
 | `custom_priorities` | Cases custom priorities | Reporting |
 | `communities` | Communities (for multi-tenant only) | Multi-tenant reporting |
 | `intakes` | Data sources | Data source management, volume monitoring |
+| `intake_formats` | Intake formats (parsers) | Volume monitoring |
 | `entities` | Company entities | Entity tracking, detailed reporting |
 | `assets` | Known Assets | Asset Investigations |
 | `asset_properties` | Listing known properties related to the Asset | Asset Investigations |
@@ -135,6 +136,25 @@
 | updated_by_type           | The type of user that last updated the intake.                                             |
 | is_custom_format          | Indicate if the intake uses a custom format.                                               |
 | connector_configuration_uuid    | A unique identifier for the connector configuration related to the intake.           |
+
+## Intake Formats properties
+
+| **Property**                  | **Description**                                                                            |
+|-------------------------------|--------------------------------------------------------------------------------------------|
+| uuid                          | A unique identifier for the intake format.                                                 |
+| community_uuid                | A unique identifier for the community related to the intake format.                        |
+| name                          | The name of the intake format.                                                             |
+| slug                          | A URL-friendly identifier for the intake format (e.g., azure-application-gateway).        |
+| description                   | A description of the intake format.                                                        |
+| created_at                    | The date and time when the intake format was created.                                      |
+| created_by                    | The user or system that created the intake format.                                         |
+| created_by_type               | The type of entity that created the intake format (e.g., avatar, apikey).                  |
+| updated_at                    | The date and time when the intake format was last updated.                                 |
+| updated_by                    | The user or system that last updated the intake format.                                    |
+| updated_by_type               | The type of entity that last updated the intake format.                                    |
+| automation_connector_uuid     | A unique identifier for the automation connector related to the intake format.             |
+
+For example queries using intake_formats, see [Join examples](sol_query_examples.md#join-examples).
 
 ## Communities properties
 

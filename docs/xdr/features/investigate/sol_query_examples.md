@@ -39,6 +39,52 @@ alerts
 
 ```
 
+### Join between events and intake_formats tables
+
+``` shell
+events
+| where timestamp between (?time.start .. ?time.end)
+| join intake_formats on sekoiaio.intake.dialect_uuid == uuid
+| aggregate count() by intake_format.name
+| limit 100
+```
+
+---
+
+### Count events per intake format (event_telemetry)
+
+``` shell
+event_telemetry
+| where bucket_start_date between (?time.start .. ?time.end)
+| join intake_formats on intake_dialect_uuid == uuid
+| aggregate sum(occurrences) by intake_format.name
+| limit 100
+```
+
+---
+
+### Data volume per intake format (event_telemetry)
+
+``` shell
+event_telemetry
+| where bucket_start_date between (?time.start .. ?time.end)
+| join intake_formats on intake_dialect_uuid == uuid
+| aggregate sum(total_event_size) by intake_format.name
+| limit 100
+```
+
+---
+
+### Resolve intake format name from intakes
+
+``` shell
+intakes
+| join intake_formats on format_uuid == uuid
+| select name, intake_format.name
+```
+
+---
+
 ## Alerts query examples
 
 ### Detection rules ranked by number of alerts
