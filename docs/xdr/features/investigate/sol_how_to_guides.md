@@ -160,15 +160,15 @@ For the full operator reference, see [Render results in chart](sol_ref_operators
 
 SOL Datasets allow you to import CSV files and use them in your queries. This is useful for enriching events with external context like threat intelligence, asset inventories, or user directories.
 
-### Quick example
+!!! example
 
-```shell
-events
-| where timestamp > ago(24h) and url.domain != null
-| where not url.domain in (authorized_domains | select url_domain)
-| select timestamp, source.ip, url.domain
-| limit 100
-```
+    ```shell
+    events
+    | where timestamp > ago(24h) and url.domain != null
+    | where not url.domain in (authorized_domains | select url_domain)
+    | select timestamp, source.ip, url.domain
+    | limit 100
+    ```
 
 For the full guide on importing CSVs, multi-tenancy rules, and advanced query patterns, see the dedicated [SOL Datasets](sol_datasets.md) page.
 
@@ -229,12 +229,12 @@ Use the `?filter_name` notation anywhere you would normally write a static value
 | where <column> == ?filter_name
 ```
 
-Example with a time range filter
+??? example "Example with a time range filter"
 
-```shell
-events
-| where timestamp between (?time.start .. ?time.end)
-```
+    ```shell
+    events
+    | where timestamp between (?time.start .. ?time.end)
+    ```
 
 #### Built-in Filters
 
@@ -251,16 +251,16 @@ Certain filters are predefined and automatically available across all queries an
 
 You can create additional filters for values that depend on your investigation context (e.g., hostname, domain, community, entity, etc.).
 
-Example
+!!! example
 
-```shell
-events
-| where timestamp between (?time.start .. ?time.end)
-| where process.name == ?process_name
-| select timestamp, host.name, user.name, process.name, process.command_line
-| order by timestamp desc
-| limit 100
-```
+    ```shell
+    events
+    | where timestamp between (?time.start .. ?time.end)
+    | where process.name == ?process_name
+    | select timestamp, host.name, user.name, process.name, process.command_line
+    | order by timestamp desc
+    | limit 100
+    ```
 
 
 Filters in SOL are created and managed in the Query Builder or Dashboard editor.
@@ -268,11 +268,11 @@ Each filter defines how a variable (referenced as `?filter_name`) behaves in que
 
 When creating or editing a filter, you can:
 
-1. Select its type (Text, Boolean, Time, etc.)
-2. Add a description to clarify its purpose
-3. Optionally define authorized values — either statically or dynamically
-4. Preview how the filter will appear to users
-5. Copy the syntax (`?filter_name`) to reuse in SOL queries
+* Select its type (Text, Boolean, Time, etc.)
+*. Add a description to clarify its purpose
+* Optionally define authorized values, either statically or dynamically
+* Preview how the filter will appear to users
+* Copy the syntax (`?filter_name`) to reuse in SOL queries
 
 
 #### Supported Types
@@ -296,21 +296,21 @@ For Single or Multiple selection filters, you can define authorized values in tw
 
 Enter comma-separated values directly in the configuration panel.
 
-Example:
-```shell
-powershell.exe, cmd.exe, rundll32.exe, chrome.exe
-```
+!!! example
+    ```shell
+    powershell.exe, cmd.exe, rundll32.exe, chrome.exe
+    ```
 
 **Dynamic List**
 
 Generate authorized values automatically using a SOL query.
 
-Example:
-```shell
-events
-| distinct process.name
-| limit 100
-```
+!!! example
+    ```shell
+    events
+    | distinct process.name
+    | limit 100
+    ```
 This example retrieves the top 100 unique process names observed in recent events and uses them as selectable options.
 Dynamic lists update automatically as new data becomes available, ensuring filters stay relevant to current activity.
 
@@ -343,7 +343,7 @@ Dynamic lists update automatically as new data becomes available, ensuring filte
 
 The Preview panel (right side of the editor) shows how the filter will appear to users in dashboards or query widgets.
 
-Examples:
+!!! example
 
 * Boolean filter → toggle with labels "On" / "Off"
 * Text filter → input field
