@@ -11,7 +11,7 @@ jobs:
   close-issues:
     permissions:
       issues: write  # for actions/stale to close stale issues
-      pull-requests: read  # for actions/stale to check PR draft status
+      pull-requests: write  # for actions/stale to label and comment on stale pull requests
     runs-on: ubuntu-latest
 
     steps:
