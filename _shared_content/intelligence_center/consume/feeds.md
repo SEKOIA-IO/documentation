@@ -64,10 +64,7 @@ Feeds include only the object types you select in the **Object type** filters. R
 
 ## Related articles
 
-- [Create a feed](/_shared_content/intelligence_center/consume
-/create_feed.md): Configure and activate a new feed by selecting object types, sources, TLP levels, and output format.
-- [Manage feeds](/_shared_content/intelligence_center/consume
-/manage_feeds.md): Consume, edit, duplicate, or delete an existing feed.
-- [Create a detection rule from a feed](/_shared_content/intelligence_center/consume
-/create_detection_rule_from_feed.md): Link a feed to a CTI detection rule to automatically match IOCs against your telemetry. Requires a Defend subscription.
+- [Create a feed](/cti/features/consume/create_feed.md): Configure and activate a new feed by selecting object types, sources, TLP levels, and output format.
+- [Manage feeds](/cti/features/consume/manage_feeds.md): Consume, edit, duplicate, or delete an existing feed.
+- [Create a detection rule from a feed](/cti/features/consume/create_detection_rule_from_feed.md): Link a feed to a CTI detection rule to automatically match IOCs against your telemetry. Requires a Defend subscription.
  
