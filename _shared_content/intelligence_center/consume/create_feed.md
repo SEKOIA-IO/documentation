@@ -36,9 +36,6 @@ The feed is now active and appears in the feed listing, ready for internal use o
 
 ## Related articles
 
-- [Feeds](/_shared_content/intelligence_center/consume
-/feeds.md): Understand what feeds are, how they work, available formats, and the default feed.
-- [Manage feeds](/_shared_content/intelligence_center/consume
-/manage_feeds.md): Consume, edit, duplicate, or delete an existing feed.
-- [Create a detection rule from a feed](/_shared_content/intelligence_center/consume
-/create_detection_rule_from_feed.md): Link a feed to a CTI detection rule to automatically match IOCs against your telemetry. Requires a Defend subscription.
+- [Feeds](/cti/features/consume/feeds.md): Understand what feeds are, how they work, available formats, and the default feed.
+- [Manage feeds](/cti/features/consume/manage_feeds.md): Consume, edit, duplicate, or delete an existing feed.
+- [Create a detection rule from a feed](/cti/features/consume/create_detection_rule_from_feed.md): Link a feed to a CTI detection rule to automatically match IOCs against your telemetry. Requires a Defend subscription.
