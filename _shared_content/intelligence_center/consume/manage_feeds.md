@@ -61,7 +61,10 @@ Remove a feed that is no longer required for your operations.
 
 ## Related articles
 
-- [Feeds](concept_feeds.md)
-- [Feeds listing](reference_feeds_listing.md)
-- [Create a feed](task_create_feed.md)
-- [Create a detection rule from a feed](task_create_detection_rule_from_feed.md)
+- [Feeds](/_shared_content/intelligence_center/consume
+/feeds.md) — Understand what feeds are, how they work, available formats, and the default feed.
+- [Create a feed](/_shared_content/intelligence_center/consume
+/create_feed.md) — Configure and activate a new feed by selecting object types, sources, TLP levels, and output format.
+- [Create a detection rule from a feed](/_shared_content/intelligence_center/consume
+/create_detection_rule_from_feed.md) — Link a feed to a CTI detection rule to automatically match IOCs against your telemetry. Requires a Defend subscription.
+ 
