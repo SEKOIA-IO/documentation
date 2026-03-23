@@ -12,6 +12,7 @@ jobs:
     permissions:
       contents: read  # for actions/checkout to fetch code
       issues: write  # for ./.github/actions/delete-preview (peter-evans/create-or-update-comment) to create or update comment
+      pull-requests: write  # for ./.github/actions/delete-preview (peter-evans/create-or-update-comment) to create or update comment on pull requests
     if: ${{ github.event.label.name == 'stale' }}
     runs-on: ubuntu-latest
 
