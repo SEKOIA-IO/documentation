@@ -20,7 +20,7 @@ The taxonomy of [structured events](structured_event.md) is based on the [ECS](h
     The `related` field aggregate various pieces of information, like IP addresses, into an array to facilitate searching, regardless of their location within an ECS event. With our custom module called `ingest`, additional fields like `source.user.name` or `user.target.name` can also be included in this field.
 
 !!! note
-    We recommend to only define `event.kind` for any other value than `event`. The absence of `event.kind` is considered as `event.kind: event`.
+    We recommend defining `event.kind` only when its value is not `event`. The absence of `event.kind` is considered `event.kind: event`.
 
 ## Custom Taxomony
 
@@ -54,7 +54,7 @@ A custom field consists of three elements:
 - description: a short description to understand the value of the field
 
 !!! note
-    Unless specific naming conventions are defined for a product (like [AWS termonology](https://github.com/SEKOIA-IO/intake-formats/blob/develop/AWS/aws-cloudtrail/_meta/fields.yml#L131-L134) or [Windows Event Data names](https://github.com/SEKOIA-IO/intake-formats/blob/develop/Windows/windows/_meta/fields.yml#L6-L134)), we strongly recommend using snake case for the name of custom fields
+    Unless specific naming conventions are defined for a product (like [AWS terminology](https://github.com/SEKOIA-IO/intake-formats/blob/develop/AWS/aws-cloudtrail/_meta/fields.yml#L131-L134) or [Windows Event Data names](https://github.com/SEKOIA-IO/intake-formats/blob/develop/Windows/windows/_meta/fields.yml#L6-L134)), we strongly recommend using `snake_case` for the name of custom fields.
 
 ### Example
 
