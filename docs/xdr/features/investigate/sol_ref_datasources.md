@@ -176,6 +176,9 @@
 | revoked                   | Indicates whether the asset is revoked                                                     |
 | reviewed                  | Indicates if the asset has been reviewed                                                   |
 | atoms                     | List of related names/identifiers (e.g., hostname, IPs, etc.)                              |
+| tags                      | List of tags associated with the asset                                                     |
+
+For example queries using tags, see [Assets query examples](sol_query_examples.md#assets-query-examples).
 
 ## Asset Properties
 
