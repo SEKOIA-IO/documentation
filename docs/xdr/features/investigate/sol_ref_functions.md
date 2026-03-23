@@ -2,24 +2,19 @@
 
 ## Datetime: now()
 
-**Description**
-
 Returns the current **UTC** time, optionally offset by a given timespan.
 
-**Example**
+!!! example
 
-``` shell
-let time = now();
+    ``` shell
+    let time = now();
 
-let time_earlier = now(-2d);
+    let time_earlier = now(-2d);
 
-```
+    ```
 
----
 
 ## Datetime: ago()
-
-**Description**
 
 Returns a datetime value equal to the current UTC time minus the timespan.
 
@@ -30,99 +25,77 @@ Returns a datetime value equal to the current UTC time minus the timespan.
 | m | minute time interval | `30m` | 30 minutes |
 | s | second time interval | `10s` | 10 seconds |
 
-**Example**
+!!! example
 
-``` shell
-let time = ago(1h);
+    ``` shell
+    let time = ago(1h);
+ 
+    ```
 
-```
-
----
 
 ## Timestamp: bin()
 
-**Description**
-
 Rounds values down to an integer multiple of a given bin size.
 
-**Example**
+!!! example
 
-``` shell
-events
-| aggregate count() by bin(timestamp, 1d)
+    ``` shell
+    events
+    | aggregate count() by bin(timestamp, 1d)
 
-```
+    ```
 
----
+
 
 ## Year
 
-**Description**
-
 Returns the year by a given date in the following format: `YYYY`.
 
-**Example**
+!!! example
 
-``` shell
-let time = year(now());
-
-```
-
----
+    ``` shell
+    let time = year(now());
+ 
+    ```
 
 ## Month
 
-**Description**
-
 Returns the year and month by a given date in the following format: `YYYY-MM`.
 
-**Example**
-
-``` shell
-let time = month(now());
-
-```
-
----
+!!! example
+    ``` shell
+    let time = month(now());
+ 
+    ```
 
 ## Week
 
-**Description**
-
 Returns the year and month by a given date in the following format: `YYYY - Week {week number}`.
 
-**Example**
+!!! example
 
-``` shell
-let time = week(now());
+    ``` shell
+    let time = week(now());
 
-```
-
----
+    ```
 
 ## To scalar
 
-**Description**
-
 Use the `toscalar` function to return a constant value of a statement.
 
-**Example**
+!!! example
 
-``` shell
-let total = toscalar(alerts | where created_at >= ago(7d) | count);
+    ``` shell
+    let total = toscalar(alerts | where created_at >= ago(7d) | count);
 
-alerts
-| where created_at >= ago(7d)
-| aggregate count() by detection_type
-| extend percentage = (count / total) * 100
+    alerts
+    | where created_at >= ago(7d)
+    | aggregate count() by detection_type
+    | extend percentage = (count / total) * 100
 
-```
-
----
+    ```
 
 ## String: tolower()
-
-**Description**
 
 Converts a string to lowercase. This function is useful for normalizing text data for case-insensitive comparisons and analysis.
 
@@ -140,23 +113,19 @@ tolower(<string>)
 
 Returns the lowercase version of the input string.
 
-**Example**
+!!! example
 
-Normalize user names to lowercase for consistent analysis:
+    Normalize user names to lowercase for consistent analysis:
 
-``` shell
-events
-| where timestamp > ago(24h) and user.name != null
-| aggregate count_by_user = count() by user.name
-| aggregate sum(count_by_user) by normalized_user = tolower(user.name)
-| limit 100
-```
-
----
+    ``` shell
+    events
+    | where timestamp > ago(24h) and user.name != null
+    | aggregate count_by_user = count() by user.name
+    | aggregate sum(count_by_user) by normalized_user = tolower(user.name)
+    | limit 100
+    ```
 
 ## String: toupper()
-
-**Description**
 
 Converts a string to uppercase. This function is useful for normalizing text data for case-insensitive comparisons and analysis.
 
@@ -174,23 +143,18 @@ toupper(<string>)
 
 Returns the uppercase version of the input string.
 
-**Example**
+!!! example
+    Normalize command lines to uppercase for consistent analysis:
 
-Normalize command lines to uppercase for consistent analysis:
-
-``` shell
-events
-| where timestamp > ago(24h) and process.command_line != null
-| aggregate count_by_cmd = count() by process.command_line
-| aggregate sum(count_by_cmd) by normalized_cmd = toupper(process.command_line)
-| limit 100
-```
-
----
+    ``` shell
+    events
+    | where timestamp > ago(24h) and process.command_line != null
+    | aggregate count_by_cmd = count() by process.command_line
+    | aggregate sum(count_by_cmd) by normalized_cmd = toupper(process.command_line)
+    | limit 100
+    ```
 
 ## String: extract()
-
-**Description**
 
 Extracts a match for a regular expression from a string. Optionally targets a specific capture group. This function is useful for parsing structured data from free-text fields such as URLs, log messages, or command lines.
 
@@ -210,30 +174,24 @@ extract(<regex>, <capture_group>, <source>)
 
 Returns the matched substring for the specified capture group. Returns `null` if the regex finds no match.
 
-**Example 1**
+!!! example " Extract the domain from a URL"
 
-Extract the domain from a URL:
+    ``` shell
+    events
+    | where timestamp > ago(24h) and url.original != null
+    | select timestamp, domain = extract(@'https?://([^/]+)', 1, url.original)
+    | limit 100
+    ```
+    
+!!! example "Extract user identifiers from log messages"
 
-``` shell
-events
-| where timestamp > ago(24h) and url.original != null
-| select timestamp, domain = extract(@'https?://([^/]+)', 1, url.original)
-| limit 100
-```
-
-**Example 2**
-
-Extract user identifiers from log messages:
-
-``` shell
-events
-| where timestamp > ago(24h) and message != null
-| select timestamp, user_id = extract(@'user_(\d+)', 1, message)
-| where user_id != null
-| limit 100
-```
-
----
+    ``` shell
+    events
+    | where timestamp > ago(24h) and message != null
+    | select timestamp, user_id = extract(@'user_(\d+)', 1, message)
+    | where user_id != null
+    | limit 100
+    ```
 
 ## String: replace_regex()
 
@@ -257,29 +215,26 @@ replace_regex(<source>, <lookup_regex>, <rewrite_pattern>)
 
 Returns the modified string with all non-overlapping matches replaced. If no matches are found, the original string is returned unchanged.
 
-**Example 1**
 
-Strip the protocol from URLs:
+!!! example "Strip the protocol from URLs"
 
-``` shell
-events
-| where timestamp > ago(24h) and url.original != null
-| select timestamp, cleaned_url = replace_regex(url.original, @'https?://', '')
-| limit 100
-```
+    ``` shell
+    events
+    | where timestamp > ago(24h) and url.original != null
+    | select timestamp, cleaned_url = replace_regex(url.original, @'https?://', '')
+    | limit 100
+    ```
 
-**Example 2**
 
-Sanitize email addresses in logs:
+!!! example "Sanitize email addresses in logs"
 
-``` shell
-events
-| where timestamp > ago(24h) and user.email != null
-| select timestamp, sanitized_email = replace_regex(user.email, @'(\w+)@.*', '$1@example.com')
-| limit 100
-```
+    ``` shell
+    events
+    | where timestamp > ago(24h) and user.email != null
+    | select timestamp, sanitized_email = replace_regex(user.email, @'(\w+)@.*', '$1@example.com')
+    | limit 100
+    ```
 
----
 
 ## Math: round()
 
@@ -302,18 +257,15 @@ round(<number> [, <precision>])
 
 Returns the rounded number to the specified precision.
 
-**Example**
+!!! example "Round time_to_detect values to 2 decimal places for cleaner reporting"
 
-Round time_to_detect values to 2 decimal places for cleaner reporting:
+    ``` shell
+    alerts
+    | where created_at > ago(7d)
+    | select ttd_minutes = round(time_to_detect / 60.0, 2)
+    | limit 100
+    ```
 
-``` shell
-alerts
-| where created_at > ago(7d)
-| select ttd_minutes = round(time_to_detect / 60.0, 2)
-| limit 100
-```
-
----
 
 ## Type conversion: toint()
 
@@ -339,29 +291,27 @@ If the input is a decimal number, the value is truncated to the integer portion 
 
 **Example 1**
 
-Convert a string field to integer for numeric comparison:
+!!! example "Convert a string field to integer for numeric comparison"
 
-``` shell
-events
-| where timestamp > ago(24h)
-| select port_number = toint(destination.port)
-| where port_number > 1024
-| limit 100
-```
+    ``` shell
+    events
+    | where timestamp > ago(24h)
+    | select port_number = toint(destination.port)
+    | where port_number > 1024
+    | limit 100
+    ```
 
-**Example 2**
 
-Convert and aggregate by numeric field:
 
-``` shell
-events
-| where timestamp > ago(24h)
-| extend severity_int = toint(event.severity)
-| aggregate count() by severity_int
-| order by severity_int desc
-```
+!!! example "Convert and aggregate by numeric field"
 
----
+    ``` shell
+    events
+    | where timestamp > ago(24h)
+    | extend severity_int = toint(event.severity)
+    | aggregate count() by severity_int
+    | order by severity_int desc
+    ```
 
 ## Conditional: iff()
 
@@ -385,19 +335,16 @@ Returns a value based on a conditional expression. Evaluates a boolean condition
 
 Returns the `then_value` when condition is true, otherwise returns `else_value`.
 
-**Example**
 
-Categorize alerts based on urgency and time to detect:
+!!! example  "Categorize alerts based on urgency and time to detect"
 
-``` shell
-alerts
-| where created_at > ago(7d)
-| aggregate count() by severity_category = iff(urgency >= 80, "Critical",
-    iff(urgency >= 50, "High", "Medium"))
-| limit 100
-```
-
----
+    ``` shell
+    alerts
+    | where created_at > ago(7d)
+    | aggregate count() by severity_category = iff(urgency >= 80, "Critical",
+        iff(urgency >= 50, "High", "Medium"))
+    | limit 100
+    ```
 
 ## Null handling: coalesce()
 
@@ -419,18 +366,16 @@ coalesce(<arg1>, <arg2>, [<arg3>, ...])
 
 Returns the first non-null value from the argument list, or null if all arguments are null.
 
-**Example**
 
-Provide fallback values for user identification when some fields might be null:
+!!! example "Provide fallback values for user identification when some fields might be null"
 
-``` shell
-events
-| where timestamp > ago(24h)
-| aggregate count() by user_identifier = coalesce(user.name, user.email, "Unknown")
-| limit 100
-```
+    ``` shell
+    events
+    | where timestamp > ago(24h)
+    | aggregate count() by user_identifier = coalesce(user.name, user.email, "Unknown")
+    | limit 100
+    ```
 
----
 
 ## Datetime: format_datetime()
 
@@ -467,21 +412,19 @@ Returns a formatted string representation of the datetime.
 | `%b` | Abbreviated month | Dec |
 | `%A` | Full weekday name | Monday |
 
-**Example**
 
-Format timestamps for cleaner reporting:
 
-``` shell
-alerts
-| where created_at > ago(24h)
-| extend date_only = format_datetime(created_at, '%Y-%m-%d')
-| extend readable_time = format_datetime(created_at, '%B %d, %Y at %H:%M')
-| extend eu_format = format_datetime(created_at, '%d-%m-%Y')
-| aggregate count() by date_only, readable_time, eu_format, detection_type
-| limit 100
-```
+!!! example  "Format timestamps for cleaner reporting"
 
----
+    ``` shell
+    alerts
+    | where created_at > ago(24h)
+    | extend date_only = format_datetime(created_at, '%Y-%m-%d')
+    | extend readable_time = format_datetime(created_at, '%B %d, %Y at %H:%M')
+    | extend eu_format = format_datetime(created_at, '%d-%m-%Y')
+    | aggregate count() by date_only, readable_time, eu_format, detection_type
+    | limit 100
+    ```
 
 ## Aggregation: countif()
 
@@ -503,24 +446,22 @@ countif(<predicate>)
 
 Returns the count of rows for which the predicate is `true`. Returns `0` if no rows match.
 
-**Example 1**
 
-Count successful and failed login attempts per source IP:
+!!! example "Count successful and failed login attempts per source IP"
 
-``` shell
-events
-| where timestamp > ago(24h) and event.category == 'authentication'
-| aggregate success_count = countif(event.code == '4624'), failed_count = countif(event.code == '4625') by source.ip
-| order by failed_count desc
-| limit 100
-```
+    ``` shell
+    events
+    | where timestamp > ago(24h) and event.category == 'authentication'
+    | aggregate success_count = countif(event.code == '4624'), failed_count = countif(event.code == '4625') by source.ip
+    | order by failed_count desc
+    | limit 100
+    ```
 
-**Example 2**
 
-Count high-urgency vs. low-urgency alerts per detection type:
+!!! example  "Count high-urgency vs. low-urgency alerts per detection type"
 
-``` shell
-alerts
-| where created_at > ago(7d)
-| aggregate high = countif(urgency >= 80), low = countif(urgency < 80) by detection_type
-```
+    ``` shell
+    alerts
+    | where created_at > ago(7d)
+    | aggregate high = countif(urgency >= 80), low = countif(urgency < 80) by detection_type
+    ```
