@@ -53,6 +53,9 @@ A custom field consists of three elements:
 
 - description: a short description to understand the value of the field
 
+!!! note
+    Unless specific naming conventions are defined for a product (like [AWS termonology](https://github.com/SEKOIA-IO/intake-formats/blob/develop/AWS/aws-cloudtrail/_meta/fields.yml#L131-L134) or [Windows Event Data names](https://github.com/SEKOIA-IO/intake-formats/blob/develop/Windows/windows/_meta/fields.yml#L6-L134)), we strongly recommend using snake case for the name of custom fields
+
 ### Example
 
 See [AWS CloudTrail](https://github.com/SEKOIA-IO/intake-formats/blob/main/AWS/aws-cloudtrail/_meta/fields.yml). 
