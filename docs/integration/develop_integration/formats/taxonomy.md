@@ -19,6 +19,9 @@ The taxonomy of [structured events](structured_event.md) is based on the [ECS](h
 !!! note
     The `related` field aggregate various pieces of information, like IP addresses, into an array to facilitate searching, regardless of their location within an ECS event. With our custom module called `ingest`, additional fields like `source.user.name` or `user.target.name` can also be included in this field.
 
+!!! note
+    We recommend to only define `event.kind` for any other value than `event`. The absence of `event.kind` is considered as `event.kind: event`.
+
 ## Custom Taxomony
 
 When a valuable information is present in the raw event, and no ECS fields is suitable to host the information, a custom field may be defined.
