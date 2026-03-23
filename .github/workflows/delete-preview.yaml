@@ -13,7 +13,8 @@ jobs:
     permissions:
       actions: read  # for actions/download-artifact to download artifacts from other workflow runs
       contents: read  # for actions/checkout to fetch code
-      issues: write  # for ./.github/actions/delete-preview (peter-evans/create-or-update-comment) to create or update comment
+      issues: write  # for ./.github/actions/delete-preview (peter-evans/find-comment) to search comments
+      pull-requests: write  # for ./.github/actions/delete-preview (peter-evans/create-or-update-comment) to create or update comment
     name: Delete preview from OVHcloud Object Storage
     runs-on: ubuntu-latest
 
