@@ -192,6 +192,7 @@ nav:
       - TAXII: cti/features/integrations/taxii.md
       - Cortex Analyzer: cti/features/integrations/thehive.md
       - MISP Feed: cti/features/integrations/misp.md
+      - MISP - Import to IOC Collection: cti/features/integrations/misp_ids_to_ioc_collection.md
       - Microsoft Sentinel: cti/features/integrations/microsoft-sentinel.md
       - OpenCTI Import Connector: cti/features/integrations/opencti.md
       - OpenCTI Stream Connector: cti/features/integrations/opencti-stream-connector.md
