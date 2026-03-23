@@ -181,7 +181,7 @@ alerts
 
 ```
 
----
+
 
 ## Assets query examples
 
@@ -252,7 +252,7 @@ assets
 | limit 100
 ```
 
----
+
 
 ## Events query examples
 
@@ -398,7 +398,10 @@ events
 | project host.name, total_count
 
 ```
-Please note: the `select` command can also be used. `select` and `project` are aliases and both return the same results.
+
+!!! note
+    Please note: the `select` command can also be used. `select` and `project` are aliases and both return the same results.
+    
 ---
 
 ### host.os.type per Sekoia endpoint agent
