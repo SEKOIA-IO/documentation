@@ -137,6 +137,77 @@ alerts
 
 ---
 
+## Assets query examples
+
+### Filter assets with a specific tag
+
+``` shell
+assets
+| where tags.tag in ["Admin"]
+| limit 100
+```
+
+---
+
+### Filter assets with multiple tags
+
+``` shell
+assets
+| where tags.tag in ["Admin", "Backup"]
+| limit 100
+```
+
+---
+
+### List all distinct tags
+
+``` shell
+assets
+| distinct tags.tag
+```
+
+---
+
+### Filter assets where tag starts with a prefix
+
+``` shell
+assets
+| where tags.tag startswith "Finance"
+| limit 100
+```
+
+---
+
+### Filter assets where tag contains a string (case-insensitive)
+
+``` shell
+assets
+| where tags.tag contains~ "prod"
+| limit 100
+```
+
+---
+
+### Count assets per tag
+
+``` shell
+assets
+| aggregate count() by tags.tag
+| order by count desc
+```
+
+---
+
+### Exclude assets with a specific tag
+
+``` shell
+assets
+| where not tags.tag in ["Backup"]
+| limit 100
+```
+
+---
+
 ## Events query examples
 
 ### Number of unique command lines per host.name
