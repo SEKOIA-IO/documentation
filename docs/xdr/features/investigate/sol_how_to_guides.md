@@ -52,7 +52,6 @@ events
 
 For the full operator reference, see [Aggregate rows](sol_ref_operators.md#aggregate-rows).
 
----
 
 ## How to join multiple tables
 
@@ -99,7 +98,6 @@ alerts
 
 For the full operator reference, see [Join tables](sol_ref_operators.md#join-tables) and [Lookup](sol_ref_operators.md#lookup).
 
----
 
 ## How to use nested queries
 
@@ -119,7 +117,6 @@ events
 
 For the full operator reference, see [Nested query](sol_ref_operators.md#nested-query).
 
----
 
 ## How to create visualizations
 
@@ -154,7 +151,6 @@ events
 
 For the full operator reference, see [Render results in chart](sol_ref_operators.md#render-results-in-chart).
 
----
 
 ## How to use external data with SOL Datasets
 
@@ -172,7 +168,6 @@ SOL Datasets allow you to import CSV files and use them in your queries. This is
 
 For the full guide on importing CSVs, multi-tenancy rules, and advanced query patterns, see the dedicated [SOL Datasets](sol_datasets.md) page.
 
----
 
 ## How to build a query library
 
@@ -193,7 +188,6 @@ Build a collection of reusable queries to accelerate your team's investigations:
 3. **Save your queries**: Use the Query Builder's save functionality to store queries for reuse.
 4. **Browse examples**: See the [Query examples](sol_query_examples.md) page for ready-to-use queries covering events, alerts, and joins.
 
----
 
 ## How to create a dashboard
 
@@ -330,13 +324,14 @@ Dynamic lists update automatically as new data becomes available, ensuring filte
     - The user sees **PowerShell**, **Command Prompt**, and **Bash** in the dropdown
     - The query receives `powershell.exe`, `cmd.exe`, or `bash` as the actual filter value
 
-    **Behavior**
 
-    * Values are separated by commas
-    * Labels after the colon (:) are optional
-    * Whitespace is trimmed automatically
-    * Duplicate values are silently ignored
-    * To include a comma inside a value, escape it with a backslash (`\`)
+**Behavior**
+
+* Values are separated by commas
+* Labels after the colon (:) are optional
+* Whitespace is trimmed automatically
+* Duplicate values are silently ignored
+* To include a comma inside a value, escape it with a backslash (`\`)
 
 
 #### Filter Preview
@@ -379,3 +374,21 @@ When added to a dashboard, users can adjust these filters without modifying the 
 * Use `?time.start` and `?time.end` for all time-based filtering.
 * Avoid numeric filters — they are not fully supported.
 * Avoid hard-coded customer identifiers.
+
+
+## Related articles
+
+### Getting Started & Overview
+* [SOL Overview](/xdr/features/investigate/sol_overview.md): Sekoia Operating Language overview.
+* [SOL Getting Started](/xdr/features/investigate/sol_getting_started.md): This tutorial walks you through writing your first SOL queries. By the end, you'll be able to search events, filter results, and save queries for reuse.
+* [SOL Best Practices](/xdr/features/investigate/sol_best_practices.md): Best practices to use SOL effectively.
+
+### User Guides
+* [Create and Manage Queries](/xdr/features/investigate/create_manage_queries.md): Create and manage queries using SOL.
+* [SOL Query Examples](/xdr/features/investigate/sol_query_examples.md): Get inspiration from our examples.
+* [SOL Datasets](/xdr/features/investigate/sol_datasets.md): Discover the CSV import feature that enables SOC analysts to enrich security investigations by importing external data sources directly into the SOL query environment.
+
+### Technical Reference
+* [SOL Data Sources Reference](/xdr/features/investigate/sol_ref_datasources.md): Technical references to access security data within the Sekoia platform thanks to SOL.
+* [SOL Functions Reference](/xdr/features/investigate/sol_ref_functions.md): Reference article regarding functions used in SOL.
+* [SOL Operators Reference](/xdr/features/investigate/sol_ref_operators.md): Reference article regarding operators used in the SOL language.
