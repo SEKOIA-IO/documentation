@@ -9,8 +9,8 @@ You must have a Defend subscription and the necessary permissions to manage dete
 **Procedure**
 
 1. Navigate to **Rules catalog**.
-2. Click to create a new CTI rule.
-3. In the source selection, select **IOC collections**.
+2. Click to create a new rule.
+3. In the detection pattern, select **CTI**.
 4. Select your custom feed from the list.
 5. Configure the rule logic and status.
 6. Click **Save**.
