@@ -1,8 +1,146 @@
-# SOL best practices
+# Understand SOL performance
 
-This page covers best practices for writing performant and maintainable Sekoia Operating Language queries.
+SOL is a unified query language that lets you query all your security data without needing to know the underlying storage technology. You can even combine multiple data sources in a single query.
 
-## Writing performant queries
+This power comes with a trade-off: the more flexible a query is, the harder it can be to execute efficiently.
+
+## The Pipe-Based Model
+
+All queries are built as pipelines:
+
+```shell
+datasource
+| command 1
+| command 2
+| command 3
+```
+
+Each step takes the previous result, transforms it and passes it forward.
+
+**The goal: reduce early**
+
+A well-written query behaves like a funnel where data volume shrinks at each stage:
+
+```
+Raw Data (large) → Filter (smaller) → Transform (smaller) → Aggregate (tiny)
+```
+
+The earlier you reduce the data, the faster your query runs.
+
+## How Queries Actually Run
+
+Behind the scenes, your query is executed across two layers:
+
+- **Datasource layer** — filters and operations that execute natively within the underlying storage engine, close to the data
+- **SOL Engine layer** — operations that require fetching data into memory for processing
+
+Understanding which layer handles each part of your query is key to writing efficient queries.
+
+## Pushdown: The Fast Path
+
+Pushdown means executing parts of your query directly inside the Datasource layer, before any data is transferred to the SOL Engine.
+
+Why it's fast:
+
+- Leverages native indexes
+- Avoids transferring unnecessary data
+- Runs close to storage
+
+Example — both conditions below are typically pushed down:
+
+```shell
+events
+| where timestamp > ago(24h)
+| where event.category == "authentication"
+```
+
+## Engine Execution: The Flexible Path
+
+When an operation cannot be handled by the Datasource layer, it runs inside the SOL Engine instead.
+
+Why this can be slower:
+
+- Data must be fetched first
+- Processing happens in memory
+- Performance depends on the volume of data fetched
+
+Example — `extract` is never supported at the datasource level, so the engine must fetch all matching events before processing:
+
+```shell
+events
+| extend domain = extract(@'https?://([^/]+)', 1, url.original)
+```
+
+## Mental Model: "Where Does This Run?"
+
+For every step in your query, ask yourself:
+
+> Is this a simple operation that the Datasource layer can handle natively?
+
+If yes, the command is pushed down (fast). If not, execution falls back to the SOL Engine. Because queries are pipe-based, there is a virtual **pushdown limit** — the point where execution shifts from the datasource to the SOL Engine. Everything before this limit runs at the source; everything after runs in memory.
+
+```shell
+events
+| where timestamp > ago(24h)
+| where event.category == "web"
+// PUSHDOWN LIMIT
+// Commands above run inside the datasource engine
+// Commands below run inside the SOL engine
+| extend domain = extract(@'https?://([^/]+)', 1, url.original)
+| where domain endswith ".io"
+```
+
+The query will only be fast if the number of rows **before the pushdown limit** is small. Ensure you apply your most selective filters before any non-pushable operation.
+
+### Pushdown reference table
+
+Use this table to identify which operations can be pushed down to the datasource:
+
+| SOL Operation | Can be pushed down? |
+|---|---|
+| `\| count` | ✅ Always |
+| `\| distinct <definitions>` | When `<definitions>` are simple field references |
+| `\| extend ...` | ❌ Never |
+| `\| join ...`, `\| lookup ...` | ❌ Never |
+| `\| select <definitions>` | When `<definitions>` are simple field references |
+| `\| order by <definitions>` | When `<definitions>` are simple field references. For the `events` and `eternal_events` datasources, `order by` cannot be pushed down after an aggregation |
+| `\| aggregate <aggregations>` | When `<aggregations>` operate on simple field references. Only the first `aggregate` command can be pushed down |
+| `\| limit ...` | ✅ Always |
+| `\| top X by <definitions>` | When `<definitions>` are simple field references. For the `events` and `eternal_events` datasources, `top` cannot be pushed down after an aggregation |
+| `\| where <conditions>` | When `<conditions>` are simple comparison expressions over simple field references |
+| Constants and time functions (e.g. `now()`, `ago(24h)`) | ✅ Always |
+| Group-by time functions (`bin`, `year`, `month`, `week`) | ✅ Always |
+| `countif` aggregation function | ❌ Never |
+| Row-level functions (e.g. `coalesce`, `extract`, `iff`, `tolower`) | ❌ Never |
+
+## SOL Engine Limitations
+
+### Internal Fetch Limit
+
+To protect the engine from runaway queries, the SOL Engine enforces a limit on the number of rows fetched for a single query. The default is **10 000** rows.
+
+When this limit is hit, a warning is displayed and only partial results are returned:
+
+!!! warning
+    There were too many rows to process (> 10 000), please refine your query. Partial results are displayed.
+
+If your query legitimately requires more rows, you can raise the limit up to **1 000 000** by adding the following at the top of your query:
+
+```shell
+set internal_fetch_limit = 100000;
+
+datasource
+| where ...
+```
+
+!!! danger
+    Do not set `internal_fetch_limit` as a default in all your queries. Doing so masks performance issues and makes it harder to diagnose query errors. Only use it when you are confident your query is well-designed and genuinely requires a larger result set.
+
+### Memory Limit
+
+When raising `internal_fetch_limit`, your query may fail if the data volume exceeds the engine's memory capacity. Each query has a hard limit of **3 GB** of memory. This value cannot be changed.
+
+## Best practices
 
 ### Always filter by time first
 
@@ -76,62 +214,6 @@ events
 | lookup entities on sekoiaio.entity.uuid == uuid
 | select timestamp, user.name, entity.name
 | limit 100
-```
-
-## Writing maintainable queries
-
-### Use variables for reusable values
-
-Use `let` to define variables for time ranges or repeated values. This makes queries easier to modify and understand.
-
-```shell
-let StartTime = ago(7d);
-let EndTime = now();
-
-alerts
-| where created_at between (StartTime .. EndTime)
-| aggregate count() by detection_type
-```
-
-### Use comments to explain intent
-
-Add comments with `//` to explain complex logic or business context.
-
-```shell
-// Count failed logins from external IPs (excluding known VPN ranges)
-events
-| where timestamp > ago(24h)
-| where event.category == 'authentication' and action.outcome == 'failure'
-| where not source.ip startswith '10.'  // Exclude internal network
-| aggregate count() by source.ip
-| order by count desc
-```
-
-### Name your aggregation columns
-
-Give meaningful names to aggregated columns for clearer results.
-
-```shell
-// Good: descriptive column names
-alerts
-| where created_at > ago(30d)
-| aggregate alert_count = count(), avg_ttd = avg(time_to_detect) by rule_name
-| order by alert_count desc
-
-// Less clear: default column names
-alerts
-| where created_at > ago(30d)
-| aggregate count(), avg(time_to_detect) by rule_name
-```
-
-### Use `coalesce` for null handling
-
-When fields might be null, use `coalesce` to provide fallback values.
-
-```shell
-events
-| where timestamp > ago(24h)
-| aggregate count() by user = coalesce(user.name, user.email, "Unknown")
 ```
 
 ## Related articles

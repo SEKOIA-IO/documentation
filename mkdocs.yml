@@ -108,7 +108,7 @@ nav:
       - Sekoia Operating Language:
         - Overview: xdr/features/investigate/sol_overview.md
         - Getting started: xdr/features/investigate/sol_getting_started.md
-        - Best practices: xdr/features/investigate/sol_best_practices.md
+        - Understand SOL performance: xdr/features/investigate/sol_best_practices.md
         - How-to guides: xdr/features/investigate/sol_how_to_guides.md
         - SOL Datasets: xdr/features/investigate/sol_datasets.md
         - Query examples: xdr/features/investigate/sol_query_examples.md
