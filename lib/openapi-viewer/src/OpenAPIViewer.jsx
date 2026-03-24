@@ -186,6 +186,15 @@ export const OpenAPIViewer = {
         watch(() => data.search, OpenAPIViewer.updateAsap)
         update()
 
+        function normalizeApiHash(hash) {
+            if (!hash?.startsWith("#/")) return hash
+            const [level0, level1, ...rest] = hash.replace(/^#\//, "").split("/")
+            const normalizedLevel0 = level0 ? tagEncode(level0) : null
+            const normalizedLevel1 = level1 ? tagEncode(level1) : null
+            const normalized = [normalizedLevel0, normalizedLevel1, ...rest].filter(x => x)
+            return normalized.length > 0 ? `#/${normalized.join("/")}` : "#/"
+        }
+
         /** Called when the window is scrolled to sync the selected menu item */
         function onScroll() {
             const el = getVisibleEndpoint()
@@ -237,10 +246,13 @@ export const OpenAPIViewer = {
 
         // Set visible levels when the hash changes
         function updateVisibility() {
-            const hash = location.hash
-            const [level0, level1, level2] = hash.replace("#/", "").split("/")
-            data.cur0 = level0 || null
-            data.cur1 = level1 || null
+            const normalizedHash = normalizeApiHash(location.hash)
+            if (normalizedHash !== location.hash)
+                history.replaceState(null, null, normalizedHash)
+
+            const [level0, level1, level2] = normalizedHash.replace(/^#\//, "").split("/")
+            data.cur0 = level0 ? tagEncode(level0) : null
+            data.cur1 = level1 ? tagEncode(level1) : null
             data.cur2 = level2 || null
             animateAccordion()
             posthogTracking()
