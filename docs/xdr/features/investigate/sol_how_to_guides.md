@@ -340,10 +340,10 @@ The Preview panel (right side of the editor) shows how the filter will appear to
 
 !!! example
 
-* Boolean filter → toggle with labels "On" / "Off"
-* Text filter → input field
-* Selection filters → dropdown menus
-* Time filter → unified date range picker
+    * Boolean filter → toggle with labels "On" / "Off"
+    * Text filter → input field
+    * Selection filters → dropdown menus
+    * Time filter → unified date range picker
 
 #### Using Filters in Queries
 
