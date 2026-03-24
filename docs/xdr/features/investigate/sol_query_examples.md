@@ -13,7 +13,6 @@ events
 
 ```
 
----
 
 ### Join between events and entities tables
 
@@ -26,7 +25,6 @@ events
 
 ```
 
----
 
 ### Join between alerts and communities tables (for Multi-tenant)
 
@@ -49,7 +47,6 @@ events
 | limit 100
 ```
 
----
 
 ### Count events per intake format (event_telemetry)
 
@@ -61,7 +58,6 @@ event_telemetry
 | limit 100
 ```
 
----
 
 ### Data volume per intake format (event_telemetry)
 
@@ -73,7 +69,6 @@ event_telemetry
 | limit 100
 ```
 
----
 
 ### Resolve intake format name from intakes
 
@@ -83,7 +78,6 @@ intakes
 | select name, intake_format.name
 ```
 
----
 
 ## Alerts query examples
 
@@ -97,7 +91,6 @@ alerts
 
 ```
 
----
 
 ### Assets ranked by number of alerts
 
@@ -109,8 +102,6 @@ alerts
 | limit 100
 
 ```
-
----
 
 ### Threats ranked by number of alerts
 
@@ -132,8 +123,6 @@ alerts
 
 ```
 
----
-
 ### Average time to detect in last 30 days
 
 ``` shell
@@ -143,7 +132,6 @@ alerts
 
 ```
 
----
 
 ### Rename columns and convert time_to_detect in minutes
 
@@ -155,7 +143,6 @@ alerts
 
 ```
 
----
 
 ### Ranking of communities by alerts
 
@@ -168,7 +155,6 @@ alerts
 
 ```
 
----
 
 ### Ranking of communities by intakes
 
@@ -193,7 +179,6 @@ assets
 | limit 100
 ```
 
----
 
 ### Filter assets with multiple tags
 
@@ -203,7 +188,6 @@ assets
 | limit 100
 ```
 
----
 
 ### List all distinct tags
 
@@ -212,7 +196,6 @@ assets
 | distinct tags.tag
 ```
 
----
 
 ### Filter assets where tag starts with a prefix
 
@@ -222,7 +205,6 @@ assets
 | limit 100
 ```
 
----
 
 ### Filter assets where tag contains a string (case-insensitive)
 
@@ -232,8 +214,6 @@ assets
 | limit 100
 ```
 
----
-
 ### Count assets per tag
 
 ``` shell
@@ -241,8 +221,6 @@ assets
 | aggregate count() by tags.tag
 | order by count desc
 ```
-
----
 
 ### Exclude assets with a specific tag
 
@@ -266,8 +244,6 @@ events
 
 ```
 
----
-
 ### Number of unique hostname per month
 
 ``` shell
@@ -276,8 +252,6 @@ events
 | aggregate count=count_distinct(log.hostname) by month(timestamp)
 
 ```
-
----
 
 ### Top 10 visited URL
 
@@ -289,7 +263,6 @@ events
 
 ```
 
----
 
 ### Top 10 blocked URL
 
@@ -301,8 +274,6 @@ events
 
 ```
 
----
-
 ### Top 10 login failures on Windows
 
 ``` shell
@@ -312,8 +283,6 @@ events
 | top 10 by failed_login_count
 
 ```
-
----
 
 ### Sekoia.io endpoint agents per version
 
@@ -326,7 +295,6 @@ events
 
 ```
 
----
 
 ### List unique user.name
 
@@ -336,8 +304,6 @@ events
 | distinct(user.name)
 
 ```
-
----
 
 ### Number of events per IP address
 
@@ -349,7 +315,6 @@ events
 
 ```
 
----
 
 ### Aggregate events by source.ip and action.outcome
 
@@ -360,7 +325,6 @@ events
 
 ```
 
----
 
 ### Events where process.name starts with 'chrome'
 
@@ -371,7 +335,6 @@ events
 
 ```
 
----
 
 ### Events of specific intake
 
@@ -383,7 +346,6 @@ events
 
 ```
 
----
 
 ### Number of defended assets: unique host.name with more than 10 events during 2 weeks in the last 30 days
 
@@ -402,8 +364,6 @@ events
 !!! note
     Please note: the `select` command can also be used. `select` and `project` are aliases and both return the same results.
     
----
-
 ### host.os.type per Sekoia endpoint agent
 
 ``` shell
@@ -413,8 +373,6 @@ events
 | limit 100
 
 ```
-
----
 
 
 ### Received Kbytes per month per intake
@@ -428,3 +386,20 @@ event_telemetry
 | order by sum_gb desc
 
 ```
+
+## Related articles
+
+### Getting Started & Overview
+* [SOL Overview](/xdr/features/investigate/sol_overview.md): Sekoia Operating Language overview.
+* [SOL Getting Started](/xdr/features/investigate/sol_getting_started.md): This tutorial walks you through writing your first SOL queries. By the end, you'll be able to search events, filter results, and save queries for reuse.
+* [SOL Best Practices](/xdr/features/investigate/sol_best_practices.md): Best practices to use SOL effectively.
+
+### User Guides
+* [Create and Manage Queries](/xdr/features/investigate/create_manage_queries.md): Create and manage queries using SOL.
+* [SOL How-to Guides](/xdr/features/investigate/sol_how_to_guides.md): Learn how to use the main functions of SOL to reach your goals (aggregate data, join tables, use external data, build a query library...).
+* [SOL Datasets](/xdr/features/investigate/sol_datasets.md): Discover the CSV import feature that enables SOC analysts to enrich security investigations by importing external data sources directly into the SOL query environment.
+
+### Technical Reference
+* [SOL Data Sources Reference](/xdr/features/investigate/sol_ref_datasources.md): Technical references to access security data within the Sekoia platform thanks to SOL.
+* [SOL Functions Reference](/xdr/features/investigate/sol_ref_functions.md): Reference article regarding functions used in SOL.
+* [SOL Operators Reference](/xdr/features/investigate/sol_ref_operators.md): Reference article regarding operators used in the SOL language.
