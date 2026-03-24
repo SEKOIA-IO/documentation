@@ -8,7 +8,7 @@
 events
 | where timestamp > ago(5m)
 | limit 100
-| join communities on sekoiaio.customer.community_uuid == uuid
+| lookup communities on sekoiaio.customer.community_uuid == uuid
 | select timestamp, sekoiaio.customer.community_uuid, community.name
 
 ```
@@ -18,6 +18,7 @@ events
 
 ``` shell
 events
+| where timestamp > ago(24h)
 | limit 100
 | lookup entities on sekoiaio.entity.uuid == uuid
 | aggregate count=count() by entity.name
@@ -31,7 +32,7 @@ events
 ``` shell
 alerts
 | aggregate count=count() by community_uuid
-| join communities on community_uuid == uuid
+| lookup communities on community_uuid == uuid
 | select community.name, community_uuid, count
 | limit 100
 
@@ -42,7 +43,7 @@ alerts
 ``` shell
 events
 | where timestamp between (?time.start .. ?time.end)
-| join intake_formats on sekoiaio.intake.dialect_uuid == uuid
+| lookup intake_formats on sekoiaio.intake.dialect_uuid == uuid
 | aggregate count() by intake_format.name
 | limit 100
 ```
@@ -53,7 +54,7 @@ events
 ``` shell
 event_telemetry
 | where bucket_start_date between (?time.start .. ?time.end)
-| join intake_formats on intake_dialect_uuid == uuid
+| lookup intake_formats on intake_dialect_uuid == uuid
 | aggregate sum(occurrences) by intake_format.name
 | limit 100
 ```
@@ -64,7 +65,7 @@ event_telemetry
 ``` shell
 event_telemetry
 | where bucket_start_date between (?time.start .. ?time.end)
-| join intake_formats on intake_dialect_uuid == uuid
+| lookup intake_formats on intake_dialect_uuid == uuid
 | aggregate sum(total_event_size) by intake_format.name
 | limit 100
 ```
@@ -74,7 +75,7 @@ event_telemetry
 
 ``` shell
 intakes
-| join intake_formats on format_uuid == uuid
+| lookup intake_formats on format_uuid == uuid
 | select name, intake_format.name
 ```
 
@@ -88,6 +89,7 @@ alerts
 | where created_at > ago(30d)
 | order by occurrences desc
 | select rule_name, occurrences
+| limit 100
 
 ```
 
@@ -149,19 +151,7 @@ alerts
 ``` shell
 alerts
 | aggregate AlertCount = count() by community_uuid
-| left join communities on community_uuid == uuid
-| order by AlertCount desc
-| select community.name, AlertCount
-
-```
-
-
-### Ranking of communities by intakes
-
-``` shell
-alerts
-| aggregate AlertCount = count() by community_uuid
-| left join communities on community_uuid == uuid
+| lookup communities on community_uuid == uuid
 | order by AlertCount desc
 | select community.name, AlertCount
 
@@ -194,6 +184,7 @@ assets
 ``` shell
 assets
 | distinct tags.tag
+| limit 100
 ```
 
 
@@ -220,6 +211,7 @@ assets
 assets
 | aggregate count() by tags.tag
 | order by count desc
+| limit 100
 ```
 
 ### Exclude assets with a specific tag
@@ -241,6 +233,7 @@ events
 | where timestamp > ago(24h)
 | aggregate count=count_distinct(process.command_line) by host.name
 | order by count desc
+| limit 100
 
 ```
 
@@ -302,6 +295,7 @@ events
 events
 | where timestamp >= ago(24h)
 | distinct(user.name)
+| limit 100
 
 ```
 
@@ -312,6 +306,7 @@ events
 | where timestamp > ago(30d)
 | aggregate count=count() by client.ip
 | order by count desc
+| limit 100
 
 ```
 
@@ -322,6 +317,7 @@ events
 events
 | where timestamp >= ago(24h) and event.category == 'authentication'
 | aggregate count() by source.ip, action.outcome
+| limit 100
 
 ```
 
@@ -340,8 +336,9 @@ events
 
 ``` shell
 events
-| left join intakes on sekoiaio.intake.uuid == uuid
-| where timestamp >= ago(24h) and intake.name == '<intake name>'
+| where timestamp >= ago(24h)
+| lookup intakes on sekoiaio.intake.uuid == uuid
+| where intake.name == '<intake name>'
 | limit 100
 
 ```
@@ -358,6 +355,7 @@ events
 | where week_count >= 2
 | order by total_count
 | project host.name, total_count
+| limit 100
 
 ```
 
@@ -368,6 +366,7 @@ events
 
 ``` shell
 events
+| where timestamp >= ago(24h)
 | where sekoiaio.intake.dialect == 'sekoia.io endpoint agent'
 | aggregate count() by host.os.type
 | limit 100
@@ -380,7 +379,7 @@ events
 ``` shell
 event_telemetry
 | where bucket_start_date >= ago(30d)
-| summarize sum_bytes = sum(total_message_size) by intake_uuid
+| aggregate sum_bytes = sum(total_message_size) by intake_uuid
 | lookup intakes on intake_uuid == uuid
 | select sum_gb = sum_bytes / (1000*1000*1000), intake.name
 | order by sum_gb desc

@@ -1,6 +1,6 @@
 # Sekoia Operating Language (SOL)
 
-Sekoia Operating Language (`SOL`) is a powerful, pipe-based query language designed specifically for modern security operations. Built with similarities to `KQL` (Kusto Query Language) and `SQL`, `SOL` combines familiar syntax with advanced security-focused capabilities to deliver exceptional performance when analyzing massive security datasets.
+Sekoia Operating Language (`SOL`) is a pipe-based query language for security operations on the Sekoia platform. Inspired by `KQL` (Kusto Query Language), it lets you query and correlate all your security data (events, alerts, cases, assets, and more) using a single, unified syntax.
 
 ## SOL vs the Events page
 
