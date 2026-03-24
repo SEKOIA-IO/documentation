@@ -44,6 +44,10 @@ This setup guide describes how to forward events from Trapster to Sekoia.io via 
 
 Your events will then be available on the [Events page](https://app.sekoia.io/operations/events).
 
-{!_shared_content/operations_center/integrations/generated/ead80c4a-9305-4e31-9a1b-9a5dd1978d2d_sample.md!}
+{!_shared_content/operations_center/integrations/generated/517e223d-07a1-4d61-b508-c4c5587146d6_sample.md!}
 
-{!_shared_content/operations_center/integrations/generated/ead80c4a-9305-4e31-9a1b-9a5dd1978d2d.md!}
+{!_shared_content/integration/detection_section.md!}
+
+{!_shared_content/operations_center/detection/generated/suggested_rules_517e223d-07a1-4d61-b508-c4c5587146d6_do_not_edit_manually.md!}
+
+{!_shared_content/operations_center/integrations/generated/517e223d-07a1-4d61-b508-c4c5587146d6.md!}
