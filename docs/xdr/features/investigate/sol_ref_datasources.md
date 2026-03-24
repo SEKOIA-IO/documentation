@@ -1,4 +1,4 @@
-# Reference: Datasources
+# SOL technical reference: Datasources
 
 `SOL` provides seamless access to all critical security data within Sekoia SOC platform:
 
@@ -276,3 +276,20 @@ You can query **event_telemetry** in the SOL query builder and combine it with o
 | max_processing_lag      | Maximum processing time (in seconds) taken by Sekoia.io to process an event.                 |
 | min_processing_lag      | Minimum processing time (in seconds) taken by Sekoia.io to process an event.                 |
 | total_processing_lag    | Total accumulated processing time (in seconds) for all events in the bucket.                 |
+
+## Related articles
+
+### Getting Started & Overview
+* [SOL Overview](/xdr/features/investigate/sol_overview.md): Sekoia Operating Language overview.
+* [SOL Getting Started](/xdr/features/investigate/sol_getting_started.md): This tutorial walks you through writing your first SOL queries. By the end, you'll be able to search events, filter results, and save queries for reuse.
+* [SOL Best Practices](/xdr/features/investigate/sol_best_practices.md): Best practices to use SOL effectively.
+
+### User Guides
+* [Create and Manage Queries](/xdr/features/investigate/create_manage_queries.md): Create and manage queries using SOL.
+* [SOL How-to Guides](/xdr/features/investigate/sol_how_to_guides.md): Learn how to use the main functions of SOL to reach your goals (aggregate data, join tables, use external data, build a query library...).
+* [SOL Query Examples](/xdr/features/investigate/sol_query_examples.md): Get inspiration from our examples.
+* [SOL Datasets](/xdr/features/investigate/sol_datasets.md): Discover the CSV import feature that enables SOC analysts to enrich security investigations by importing external data sources directly into the SOL query environment.
+
+### Technical Reference
+* [SOL Functions Reference](/xdr/features/investigate/sol_ref_functions.md): Reference article regarding functions used in SOL.
+* [SOL Operators Reference](/xdr/features/investigate/sol_ref_operators.md): Reference article regarding operators used in the SOL language.
