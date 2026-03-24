@@ -6,6 +6,9 @@ type: intake
 
 Trapster deploys honeypots across your network to detect lateral movements, malicious scans, and insider threats. These digital decoys have no legitimate use, so any interaction immediately signals suspicious activity. With near-zero false positives and instant alerts, security teams can quickly identify and investigate potential intrusions. You also receive alerts for any attempted connection to the honeypots as well as the use of honeytokens or breadcrumbs, helping reduce overall detection time.
 
+!!! Warning
+    Important note - This format is currently in beta. We highly value your feedback to improve its performance.
+
 - **Vendor**: Ballpoint
 - **Supported environment**: SaaS
 - **Detection based on**: Alert
