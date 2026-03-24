@@ -4,6 +4,20 @@
 
 Returns the current **UTC** time, optionally offset by a given timespan.
 
+**Syntax**
+
+``` shell
+now([offset])
+```
+
+**Parameters**
+
+- `offset` (optional): A timespan to subtract from the current time (e.g., `-2d` for 2 days ago).
+
+**Return Value**
+
+Returns the current UTC datetime, optionally shifted by the given offset.
+
 !!! example
 
     ``` shell
@@ -18,24 +32,53 @@ Returns the current **UTC** time, optionally offset by a given timespan.
 
 Returns a datetime value equal to the current UTC time minus the timespan.
 
-| Syntax | Description | Example | Length of time |
+**Syntax**
+
+``` shell
+ago(<timespan>)
+```
+
+**Parameters**
+
+- `timespan`: A time interval using suffix notation (required).
+
+| Suffix | Description | Example | Length of time |
 | --- | --- | --- | --- |
 | d | day time interval | `2d` | 2 days |
 | h | hour time interval | `1h` | 1 hour |
 | m | minute time interval | `30m` | 30 minutes |
 | s | second time interval | `10s` | 10 seconds |
 
+**Return Value**
+
+Returns a datetime equal to the current UTC time minus the specified timespan.
+
 !!! example
 
     ``` shell
     let time = ago(1h);
- 
+
     ```
 
 
 ## Timestamp: bin()
 
 Rounds values down to an integer multiple of a given bin size.
+
+**Syntax**
+
+``` shell
+bin(<value>, <bin_size>)
+```
+
+**Parameters**
+
+- `value`: The value to round down (required).
+- `bin_size`: The interval size to round to (required). Supports timespans (e.g., `1d`, `1h`) and numeric values.
+
+**Return Value**
+
+Returns the value rounded down to the nearest multiple of `bin_size`.
 
 !!! example
 
@@ -51,26 +94,69 @@ Rounds values down to an integer multiple of a given bin size.
 
 Returns the year by a given date in the following format: `YYYY`.
 
+**Syntax**
+
+``` shell
+year(<date>)
+```
+
+**Parameters**
+
+- `date`: A datetime value (required).
+
+**Return Value**
+
+Returns the year in `YYYY` format.
+
 !!! example
 
     ``` shell
     let time = year(now());
- 
+
     ```
 
 ## Month
 
 Returns the year and month by a given date in the following format: `YYYY-MM`.
 
+**Syntax**
+
+``` shell
+month(<date>)
+```
+
+**Parameters**
+
+- `date`: A datetime value (required).
+
+**Return Value**
+
+Returns the year and month in `YYYY-MM` format.
+
 !!! example
+
     ``` shell
     let time = month(now());
- 
+
     ```
 
 ## Week
 
-Returns the year and month by a given date in the following format: `YYYY - Week {week number}`.
+Returns the year and week number by a given date in the following format: `YYYY - Week {week number}`.
+
+**Syntax**
+
+``` shell
+week(<date>)
+```
+
+**Parameters**
+
+- `date`: A datetime value (required).
+
+**Return Value**
+
+Returns the year and week number in `YYYY - Week {week number}` format.
 
 !!! example
 
@@ -82,6 +168,20 @@ Returns the year and month by a given date in the following format: `YYYY - Week
 ## To scalar
 
 Use the `toscalar` function to return a constant value of a statement.
+
+**Syntax**
+
+``` shell
+toscalar(<expression>)
+```
+
+**Parameters**
+
+- `expression`: A SOL expression or subquery that returns a single value (required).
+
+**Return Value**
+
+Returns the scalar value of the expression, usable as a constant in the rest of the query.
 
 !!! example
 
