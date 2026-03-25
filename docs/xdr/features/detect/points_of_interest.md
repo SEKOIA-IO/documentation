@@ -1,10 +1,19 @@
 # Points of interest
 
-**[Reveal module](reveal_index.md)** — This feature requires the Reveal add-on module.
+__**[Reveal module](/docs/xdr/features/investigate
+/reveal_index.md)(#){.md-button }** — This feature requires the Reveal add-on module._ — This feature requires the Reveal add-on module._
 
-Points of interest (PoIs) are behavioral investigation signals surfaced in the asset context panel to help analysts assess whether an asset is associated with unusual or otherwise meaningful activity. A PoI provides context to support analyst judgment; it does not by itself confirm malicious activity.
+Points of interest (PoIs) are behavioral investigation signals surfaced in the [Asset context panel](/xdr/features/investigate/asset_context_panel.md) to help analysts assess whether an asset is associated with unusual or otherwise meaningful activity. A PoI provides context to support analyst judgment; it does not by itself confirm malicious activity.
 
-> 📸 [SCREENSHOT SUGGESTION: Asset context panel timeline tab or overview showing a point of interest entry with its type label and timestamp. | ALT TEXT: Asset context panel showing a point of interest entry in the timeline.]
+![Asset context panel showing a point of interest entry in the timeline](/assets/operation_center/POI_overview.png)
+
+## Why it matters
+Points of Interest help by surfacing behavioral context directly on the asset being investigated. This can help analysts:
+
+- prioritize assets during triage
+- validate whether suspicious activity fits a broader pattern
+- enrich an ongoing investigation with additional context
+- identify weak signals that become more meaningful when correlated with stronger evidence, answering: what led up to the compromise? what happened afterwards?
 
 ## Prerequisites
 
@@ -19,7 +28,7 @@ To benefit from points of interest:
 
 ## Where points of interest appear
 
-Points of interest are displayed in the [asset context panel](asset_context_panel.md). This allows analysts to review them while triaging a case, reviewing an asset, investigating related alerts or events, or building context before deciding whether escalation is needed. Displaying PoIs in the asset context panel reduces context switching and keeps behavioral context close to the entity under review.
+Points of interest are displayed in the [asset context panel](/xdr/features/investigate/asset_context_panel.md). This allows analysts to review them while triaging a case, reviewing an asset, investigating related alerts or events, or building context before deciding whether escalation is needed. Displaying PoIs in the asset context panel reduces context switching and keeps behavioral context close to the entity under review.
 
 ## Types of points of interest
 
@@ -96,6 +105,6 @@ Keep the following in mind when using points of interest:
 
 ## Related links
 
-- [Asset context panel](asset_context_panel.md) — Full reference for the asset context panel, where points of interest appear in the timeline and overview sections.
-- [Attack path visualization](attack_path_visualization.md) — How to assess potential lateral movement paths from an asset, complementing the behavioral context provided by PoIs.
-- [Detection — IOC detection](https://docs.sekoia.io/xdr/features/detect/iocdetection/) — Overview of detection capabilities in Sekoia, including rule-based and analytics-driven approaches that PoIs complement.
+- [Asset context panel](/xdr/features/investigate/asset_context_panel.md) — Full reference for the asset context panel, where points of interest appear in the timeline and overview sections.
+- [Attack path visualization](/xdr/features/investigate/attack_path_visualization.md) — How to assess potential lateral movement paths from an asset, complementing the behavioral context provided by PoIs.
+- [Detection — IOC detection](/xdr/features/detect/iocdetection.md) — Overview of detection capabilities in Sekoia, including rule-based and analytics-driven approaches that PoIs complement.
