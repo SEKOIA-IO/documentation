@@ -37,7 +37,7 @@ To create a new optimization rule, send a POST request to the configuration endp
 
     Optimization rules only support parsed fields. Enriched fields (like sekoiaio.tags.*) are not usable in this context.
 
-??? example "Example: Ignore events with specific IP tags"
+??? example "Example: Ignore LDAP traffic on NetFlow"
     This command ignores NetFlow events based on parsed fields (for example, specific ports or datasets).
     ```bash
     curl --request POST \
