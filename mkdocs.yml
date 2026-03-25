@@ -117,7 +117,16 @@ nav:
         - Share and duplicate queries: xdr/features/investigate/share_queries.md
         - Data visualization guide: xdr/features/investigate/data_visualization_guide.md
         - Query builder form mode reference: xdr/features/investigate/query_builder_form_reference.md
-      - Sekoia Operating Language: xdr/features/investigate/sekoia_operating_language.md
+      - Sekoia Operating Language:
+        - Overview: xdr/features/investigate/sol_overview.md
+        - Getting started: xdr/features/investigate/sol_getting_started.md
+        - Understand SOL performance: xdr/features/investigate/sol_best_practices.md
+        - How-to guides: xdr/features/investigate/sol_how_to_guides.md
+        - SOL Datasets: xdr/features/investigate/sol_datasets.md
+        - Query examples: xdr/features/investigate/sol_query_examples.md
+        - "Reference: Datasources": xdr/features/investigate/sol_ref_datasources.md
+        - "Reference: Operators": xdr/features/investigate/sol_ref_operators.md
+        - "Reference: Functions": xdr/features/investigate/sol_ref_functions.md
       - Notebooks: xdr/features/investigate/notebooks.md
     - Report:
       - Dashboards:
@@ -574,6 +583,7 @@ plugins:
 - search: null
 - redirects:
     redirect_maps:
+      xdr/features/investigate/sekoia_operating_language.md: xdr/features/investigate/sol_overview.md
       getting_started/2fa.md: getting_started/account_security.md
       getting_started/apikey_creation.md: getting_started/manage_api_keys.md
       getting_started/first_steps.md: getting_started/index.md
