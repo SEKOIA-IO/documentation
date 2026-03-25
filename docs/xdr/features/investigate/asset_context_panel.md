@@ -348,11 +348,9 @@ For a full explanation of the graph, node types, navigation controls, and remedi
 
 
 
-
 ## Related links
  
 - [Attack path visualization](/xdr/features/investigate/attack_path_visualization.md) — How to open and interpret the attack path graph from the asset context panel, including node types, satellite nodes, and remediation prioritization.
-- [Points of interest](/xdr/features/investigate/points_of_interest.md) — How Reveal surfaces behavioral anomalies on assets, including UEBA rules and how to interpret PoI signals during triage.
-- [Asset connector health status and logs](/xdr/features/investigate/asset_connector_health.md) — How to monitor asset connector error states and investigate synchronization issues using connector logs.
+- [Points of interest](/xdr/features/detect/points_of_interest.md) — How Reveal surfaces behavioral anomalies on assets, including UEBA rules and how to interpret PoI signals during triage.
+- [Asset connector health status and logs](/xdr/features/collect/asset_connector_health.md) — How to monitor asset connector error states and investigate synchronization issues using connector logs.
 - [Collect — Assets](/xdr/features/collect/assets.md) — How assets are configured, discovered, and managed in Sekoia.
-The panel bridges the gap between *data visibility* and *investigative understanding* — making every analyst faster, more confident, and more effective.
