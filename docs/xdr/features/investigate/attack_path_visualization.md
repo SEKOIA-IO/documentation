@@ -1,18 +1,20 @@
 # Attack path visualization
 
-**[Reveal module](reveal_index.md)** — This feature requires the Reveal add-on module.
+**[Reveal module](/docs/xdr/features/investigate
+/reveal_index.md)(#){.md-button }**  — This feature requires the Reveal add-on module.
 
-Attack path visualization is a graph-based view accessible from the [asset context panel](asset_context_panel.md#attack-path-visualization-reveal). It maps observed authentication relationships between hosts and users to show how an attacker could move through an environment from a given asset. This article covers the graph structure, navigation controls, interpretation guidance, and remediation workflow in detail.
+Attack path visualization is a graph-based view accessible from the [asset context panel](/docs/xdr/features/investigate
+/asset_context_panel.md#attack-path-visualization). It maps observed authentication relationships between hosts and users to show how an attacker could move through an environment from a given asset. This article covers the graph structure, navigation controls, interpretation guidance, and remediation workflow in detail.
 
 !!! note "Prerequisites"
     To use attack path visualization, your community must be subscribed to the Reveal add-on module, host and user assets must be available, and authentication telemetry related to those assets must be ingested. Enrichment quality depends on connected sources such as asset connectors, the Sekoia endpoint agent (with hygiene enabled), and other risk signals. Incomplete telemetry or missing integrations may reduce path completeness.
 
 ## Open attack path visualization
 
-1. Open the **asset context panel** for a host or user asset by clicking the asset from an alert, event, case, or the asset listing.
-2. Select the **Attack path visualization** tab in the asset context panel.
+1. Open the **asset context panel** for a host or user asset: from an alert, event, case, or the asset listing > **t** button (top right corner).
+2. On the top right corner of the asset context panel, select the **Visualize the attack path for this asse** button.
 
-> 📸 [SCREENSHOT SUGGESTION: Asset context panel with the Attack path visualization tab selected, showing the graph view active. | ALT TEXT: Asset context panel with Attack path visualization tab open and graph displayed.]
+![Attack Path Button](/assets/operation_center/attack_path_button.png)
 
 ## Understand the graph
 
@@ -24,11 +26,13 @@ Nodes represent assets involved in the path: hosts, users, and accounts. Node co
 
 Clicking any node opens a detail panel showing the asset context for that node, so you can assess its role in the path without navigating away.
 
-> 📸 [SCREENSHOT SUGGESTION: Graph with several nodes color-coded by criticality. One node is selected and its detail panel is open alongside the graph. | ALT TEXT: Attack path graph showing host and user nodes with a selected node detail panel open.]
+![Attack path graph showing host and user nodes with a selected node detail panel open](/assets/operation_center/nodes.png)
 
 ### Satellite nodes
 
 Depending on available asset enrichment, each node can display satellite nodes that summarize its current exposure and security context.
+
+![Graph node with satellite nodes for cases, alerts, hygiene, vulnerabilities, and public IP, with one satellite expanded](/assets/operation_center/satellite_node.png)
 
 | Satellite node | Description |
 |---|---|
@@ -43,7 +47,7 @@ Depending on available asset enrichment, each node can display satellite nodes t
 
 Select a satellite node to expand it and review its details.
 
-> 📸 [SCREENSHOT SUGGESTION: A node with all five satellite nodes visible around it. One satellite is expanded showing its detail list. | ALT TEXT: Graph node with satellite nodes for cases, alerts, hygiene, vulnerabilities, and public IP, with one satellite expanded.]
+![Expanded satellite graph node](/assets/operation_center/expanded_satelite_node.png)
 
 ### Relationships
 
@@ -51,55 +55,24 @@ Relationships represent authentication connections that may enable progression f
 
 Relationships are derived from observed authentication logs. Together with nodes, they show how one risk can enable another.
 
-> 📸 [SCREENSHOT SUGGESTION: Two nodes connected by a labeled relationship edge in the graph. | ALT TEXT: Two nodes connected by a relationship edge in the attack path visualization graph.]
+![Multiple nodes connected by a relationship edge in the attack path visualization graph](/assets/operation_center/path_relation.png)
 
 ## Navigate the graph
 
 Attack path visualization includes several controls to help you explore larger or more complex graphs.
 
-**Refresh**
-
-Select **Refresh** to reload the graph based on the currently selected asset and settings.
-
-**Levels**
-
-When refreshing, adjust the number of levels to display. A level represents how many relationship steps away from the selected node the graph will show.
-
-!!! tip "Start with fewer levels"
-    Start with fewer levels and expand only when you need to trace additional relationships. This keeps the graph readable and improves performance.
-
-**Graph overview**
-
-Select **Graph overview** to highlight asset nodes by type, such as users or hosts. This helps identify specific asset categories in larger graphs.
-
-> 📸 [SCREENSHOT SUGGESTION: Graph overview panel open alongside the graph, with Users and Hosts toggle options visible. | ALT TEXT: Graph overview panel showing node type filter options for users and hosts.]
-
-**Layout controls**
-
-Select a layout option to change how nodes and relationships are rendered. A vertical or horizontal layout may make relationships easier to follow depending on the shape of the graph.
-
-**Zoom**
-
-Use the **Zoom** control or your mouse scroll wheel to focus on a specific area or step back to view the larger structure.
-
-**Center**
-
-Select **Center** to re-center the graph in the current view.
-
-**Full screen**
-
-Select **Full screen** to expand the graph for analyzing larger relationship maps more comfortably.
-
-**Lock and unlock**
-
-Select **Lock** to preserve the current graph layout during an investigation. When locked, the layout remains stable as you interact with nodes and review paths, preventing the graph from reorganizing itself.
-
-Select **Unlock** when you want the graph to become dynamic again.
+| Control Name    | Control Image                                                     | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                |
+|-----------------|-------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Refresh         | ![Refresh](/assets/operation_center/refresh.png){width=32px height=32px}         | Select **Refresh** to reload the graph based on the currently selected asset and settings.   When refreshing, adjust the number of levels to display. A level represents how many relationship steps away from the selected node the graph will show.<br/><br/>!!! tip "Start with fewer levels"<br/>    Start with fewer levels and expand only when you need to trace additional relationships. This keeps the graph readable and improves performance.    |
+| Graph overview  | ![Graph overview](/assets/operation_center/graph.png){width=32px height=32px} | Select **Graph overview** to highlight asset nodes by type, such as users or hosts. This helps identify specific asset categories in larger graphs.                                                                                                                                                                                                                                                                                                      |
+| Layout controls | ![Layout controls](/assets/operation_center/layout_controls.png){width=32px height=32px} | Select a layout option to change how nodes and relationships are rendered. A vertical or horizontal layout may make relationships easier to follow depending on the shape of the graph.                                                                                                                                                                                                                                                                    |
+| Zoom            | ![Zoom](/assets/operation_center/zoom.png){width=32px height=64px}                | Use the **Zoom** controls or your mouse scroll wheel to focus on a specific area or step back to view the larger structure.                                                                                                                                                                                                                                                                                                                                  |
+| Center          | ![Center](/assets/operation_center/center.png){width=32px height=32px}              | Select **Center** to re-center the graph in the current view.                                                                                                                                                                                                                                                                                                                                                                                                 |
+| Full screen     | ![Full screen](/assets/operation_center/expand.png){width=32px height=32px}    | Select **Full screen** to expand the graph for analyzing larger relationship maps more comfortably.                                                                                                                                                                                                                                                                                                                                                         |
+| Lock & Unlock   | ![Lock/Unlock](/assets/operation_center/lock.png){width=32px height=32px}    | Select **Lock** to preserve the current graph layout during an investigation. When locked, the layout remains stable as you interact with nodes and review paths, preventing the graph from reorganizing itself.<br/><br/>Select **Unlock** when you want the graph to become dynamic again.                                                                                                                                                            |
 
 !!! note "Lock and refresh"
     A locked graph is preserved until you refresh it. Once refreshed, the graph is recalculated and the layout may change based on current data and settings.
-
-> 📸 [SCREENSHOT SUGGESTION: Graph navigation toolbar showing Refresh, levels input, Graph overview, layout controls, Zoom, Center, Full screen, and Lock buttons. | ALT TEXT: Attack path visualization toolbar with all navigation controls visible.]
 
 ## Interpret the graph
 
@@ -141,7 +114,7 @@ In many cases, breaking a single relationship can disrupt the full path.
 
 ## Related links
 
-- [Asset context panel](asset_context_panel.md#attack-path-visualization-reveal) — The tab within the asset context panel where attack path visualization is accessed, alongside hygiene, vulnerability, and security control data for the same asset.
-- [Points of interest](points_of_interest.md) — Behavioral signals surfaced on assets that can complement attack path analysis by adding context about unusual login patterns or anomalous activity.
-- [Asset connector health status and logs](asset_connector_health.md) — How to monitor and troubleshoot the asset connectors that provide the enrichment data powering the attack path graph.
-- [Collect — Assets](https://docs.sekoia.io/xdr/features/collect/assets/) — How assets are configured and discovered, which determines the data available in the graph.
+- [Asset context panel](/xdr/features/investigate/asset_context_panel.md#attack-path-visualization-reveal) — Discover the other informations accessible with the asset context panel, including hygiene, vulnerability, and security control data for the same asset.
+- [Points of interest](/xdr/features/detect/points_of_interest.md) — Behavioral signals surfaced on assets that can complement attack path analysis by adding context about unusual login patterns or anomalous activity.
+- [Asset connector health status and logs](/xdr/features/collect/asset_connector_health.md) — How to monitor and troubleshoot the asset connectors that provide the enrichment data powering the attack path graph.
+- [Collect — Assets](/xdr/features/collect/assets.md) — How assets are configured and discovered, which determines the data available in the graph.
