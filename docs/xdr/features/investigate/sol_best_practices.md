@@ -46,13 +46,13 @@ Why it's fast:
 - Avoids transferring unnecessary data
 - Runs close to storage
 
-Example — both conditions below are typically pushed down:
+!!! example "simple filtering options are typically pushed down"
 
-```shell
-events
-| where timestamp > ago(24h)
-| where event.category == "authentication"
-```
+    ```shell
+    events
+    | where timestamp > ago(24h)
+    | where event.category == "authentication"
+    ```
 
 ## Engine Execution: The Flexible Path
 
@@ -64,12 +64,12 @@ Why this can be slower:
 - Processing happens in memory
 - Performance depends on the volume of data fetched
 
-Example — `extract` is never supported at the datasource level, so the engine must fetch all matching events before processing:
+!!! example "`extract` is never supported at the datasource level, so the engine must fetch all matching events before processing"
 
-```shell
-events
-| extend domain = extract(@'https?://([^/]+)', 1, url.original)
-```
+    ```shell
+    events
+    | extend domain = extract(@'https?://([^/]+)', 1, url.original)
+    ```
 
 ## Mental Model: "Where Does This Run?"
 
@@ -121,8 +121,9 @@ To protect the engine from runaway queries, the SOL Engine enforces a limit on t
 
 When this limit is hit, a warning is displayed and only partial results are returned:
 
-!!! warning
-    There were too many rows to process (> 10 000), please refine your query. Partial results are displayed.
+!!! example
+    !!! warning
+        There were too many rows to process (> 10 000), please refine your query. Partial results are displayed.
 
 If your query legitimately requires more rows, you can raise the limit up to **1 000 000** by adding the following at the top of your query:
 
@@ -133,7 +134,7 @@ datasource
 | where ...
 ```
 
-!!! danger
+!!! warning
     Do not set `internal_fetch_limit` as a default in all your queries. Doing so masks performance issues and makes it harder to diagnose query errors. Only use it when you are confident your query is well-designed and genuinely requires a larger result set.
 
 ### Memory Limit
