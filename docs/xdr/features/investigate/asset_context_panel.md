@@ -16,11 +16,8 @@ Instead of switching between inventory pages, a configuration management databas
 !!! Note
     To learn how assets are **configured and discovered**, see [Collect → Assets](https://docs.sekoia.io/xdr/features/collect/assets/).
 
----
-
 <img width="431" height="684" alt="Asset context panel example" src="https://github.com/user-attachments/assets/7559b5b2-a838-4e53-a416-071d6b8c2fef" />
 
----
 
 ## Accessing the asset context panel
 
@@ -327,13 +324,14 @@ Connectors that discovered or enriched the asset (e.g., **EDR** such as CrowdStr
 ??? example "Detecting a visibility gap on a domain controller"
     A high-value domain controller appears in network telemetry and vulnerability management scans but not in endpoint or identity logs. This explains why credential-access activity was not detected. The recommended action is to deploy endpoint monitoring on the asset.
 
-<img width="463,4" height="390,6" alt="Security controls tab example" src="https://github.com/user-attachments/assets/279e1288-53c6-490e-8f30-0498c3484d3e" />
+<img width="463,4" height="390,6" alt="Security controls tab example" src="https://github.com/user-attachments/assets/279e1288-53c6-490e-8f30-0498c3484d3e"/>
+
 
 ## Attack path visualization tab  *(Reveal specific capability)*
 
 The **Attack path visualization** tab displays a graph of connected hosts and users that may form a potential attack path from the current asset, helping analysts assess lateral movement risk and blast radius without leaving the asset context.
 
-<img width="463,4" height="390,6" alt="Attack path visualization tab showing a node graph of connected assets within the asset context panel." src="/assets/attack_path_visualization" />
+<img width="463,4" height="390,6" alt="Attack path visualization tab showing a node graph of connected assets within the asset context panel." src="/assets/attack_path_visualization"/>
  
  
 **What it shows**
