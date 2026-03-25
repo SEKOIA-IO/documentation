@@ -97,6 +97,7 @@ nav:
       - Intakes: xdr/features/collect/intakes.md
       - Entities: xdr/features/collect/entities.md
       - Assets: xdr/features/collect/assets.md
+      - Check asset connector health: xdr/features/collect/asset_connector_health.md
       - Optimization rules: 
          - Optimization rules overview: xdr/features/collect/optimization_rules_overview.md
          - Create an optimization rule: xdr/features/collect/create_optimization_rule.md
@@ -108,6 +109,7 @@ nav:
       - Sigma: xdr/features/detect/sigma.md
       - Anomaly Detection: xdr/features/detect/anomaly.md
       - IOCs Collections: xdr/features/detect/ioccollections.md
+      - Discover Points of Interest: docs/xdr/features/detect/points_of_interest.md
     - Investigate:
       - Alerts: xdr/features/investigate/alerts.md
       - Events page: xdr/features/investigate/events.md
@@ -119,8 +121,8 @@ nav:
         - Massive event export troubleshooting: xdr/features/investigate/export_event_bulk_troubleshooting.md
       - AI Cases: xdr/features/investigate/ai_cases.md
       - Cases: xdr/features/investigate/cases.md
-      - Case Custom Fields (coming soon): xdr/features/investigate/case_custom_fields.md
-      - Asset Context Panel (coming soon): xdr/features/investigate/asset_context_panel.md
+      - Asset Context Panel: xdr/features/investigate/asset_context_panel.md
+      - Attack path visualization: xdr/features/investigate/attack_path_visualization.md
       - Events Query Language: xdr/features/investigate/events_query_language.md
       - Querying Events: xdr/features/investigate/querying_events.md
       - Query Builder: 
@@ -171,6 +173,7 @@ nav:
       - FortiSOAR: xdr/features/integrations/fortisoar.md
       - Palo Alto Cortex XSOAR: xdr/features/integrations/interconnect_sekoia_with_xsoar.md
       - Swimlane Turbine: xdr/features/integrations/swimlane_turbine.md
+    - Modules: xdr/features/modules/reveal_index.md
   - Usecases:
     - Export large volumes of events: xdr/usecases/massive_export.md
     - Implement a blocklist in Sekoia.io: xdr/usecases/playbook/implement_blocklist.md
