@@ -10,7 +10,7 @@
 
 ### Is the IP behind `api.sekoia.io` static?
 
-The IP address behind that service is mostly static but may change at any time.
+`api.sekoia.io` is used for agent management functions, including the initial enrollment process, automatic software updates, and policy communication. The IP address behind that service is mostly static but may change at any time.
 
 ### Outgoing IP addresses for playbooks runs and connectors
 
