@@ -1,7 +1,7 @@
 # Attack path visualization
 
-**[Reveal module](/docs/xdr/features/investigate
-/reveal_index.md)(#){.md-button }**  — This feature requires the Reveal add-on module.
+_**[Reveal module](/docs/xdr/features/investigate
+/reveal_index.md)(#){.md-button }**  — This feature requires the Reveal add-on module._
 
 Attack path visualization is a graph-based view accessible from the [asset context panel](/docs/xdr/features/investigate
 /asset_context_panel.md#attack-path-visualization). It maps observed authentication relationships between hosts and users to show how an attacker could move through an environment from a given asset. This article covers the graph structure, navigation controls, interpretation guidance, and remediation workflow in detail.
