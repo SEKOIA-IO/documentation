@@ -4,13 +4,37 @@
 
 ### Is the IP behind `intake.sekoia.io` static?
 
-**IP for `intake.sekoia.io` is currently `213.32.5.228`.**
+ intake.sekoia.io is the fully qualified domain name you use to ship logs into the Sekoia.io platform—whether over Syslog or HTTP. While the service’s IP addresses are generally stable, they may change at any time without notice.
 
-`intake.sekoia.io` is the domain name used to send your logs to Sekoia.io, either via Syslog or HTTP protocols. The IP address behind that service is mostly static but may change at any time. Please refrain from doing IP filtering to avoid future issues. If you absolutely need to perform IP filtering, please manage your own DNS configuration and keep up with upstream changes. Old IPs will continue working for up to a month after the official DNS modification.
+To avoid interruptions, we strongly recommend:
+
+- Allowlisting the FQDN intake.sekoia.io in your firewall or proxy rather than individual IPs.
+- Relying on DNS resolution (with a short TTL) so that any upstream changes propagate automatically.
+
+If your security policy absolutely requires IP-based rules:
+
+Maintain your own DNS lookups for intake.sekoia.io.
+1. Monitor the domain’s A-records for updates.
+2. Update your firewall allowlists promptly when the IPs change.
 
 ### Is the IP behind `api.sekoia.io` static?
 
-`api.sekoia.io` is used for agent management functions, including the initial enrollment process, automatic software updates, and policy communication. The IP address behind that service is mostly static but may change at any time.
+ api.sekoia.io is the fully qualified domain name used by Sekoia.io agents for:
+
+- Initial enrollment and authentication
+- Automatic software updates
+- Policy downloads and status reporting
+
+Although the underlying IP addresses are generally stable, they may change without notice. To ensure uninterrupted agent management, we strongly recommend:
+
+- Allowlisting the FQDN api.sekoia.io in your firewall or proxy rather than individual IPs
+- Relying on DNS resolution with a short TTL so that any changes propagate automatically
+
+If your security policy absolutely requires IP-based rules:
+
+1. Perform your own DNS lookups for api.sekoia.io at regular intervals.
+2. Monitor the domain’s A-records for any additions or removals.
+3. Promptly update your firewall or proxy rules whenever you detect a change.
 
 ### Outgoing IP addresses for playbooks runs and connectors
 
