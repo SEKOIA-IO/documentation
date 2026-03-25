@@ -33,8 +33,12 @@ To create a new optimization rule, send a POST request to the configuration endp
     
     Using quotes for an integer field will cause the filter to fail.
 
+!!! warning "Optimization rules limitations"
+
+    Optimization rules only support parsed fields. Enriched fields (like sekoiaio.tags.*) are not usable in this context.
+
 ??? example "Example: Ignore events with specific IP tags"
-    This command ignores events where both source and destination IPs are private for the netflow dataset.
+    This command ignores NetFlow events based on parsed fields (for example, specific ports or datasets).
     ```bash
     curl --request POST \
     --url [https://api.sekoia.io/v1/sic/conf/intakes/optimization_rules](https://api.sekoia.io/v1/sic/conf/intakes/optimization_rules) \
@@ -46,8 +50,7 @@ To create a new optimization rule, send a POST request to the configuration endp
       "community_uuid": "YOUR_COMMUNITY_ID",
       "filters": [
         { "field": "event.dataset", "operator": "==", "value": "netflow" },
-        { "field": "sekoiaio.tags.source.ip", "operator": "in", "value": ["rfc5735", "rfc1918"] },
-        { "field": "sekoiaio.tags.destination.ip", "operator": "in", "value": ["rfc5735", "rfc1918"] }
+        { "field": "destination.port", "operator": "==", "value": 389 }
       ]
     }'
     ```
