@@ -8,6 +8,10 @@
 
 `intake.sekoia.io` is the domain name used to send your logs to Sekoia.io, either via Syslog or HTTP protocols. The IP address behind that service is mostly static but may change at any time. Please refrain from doing IP filtering to avoid future issues. If you absolutely need to perform IP filtering, please manage your own DNS configuration and keep up with upstream changes. Old IPs will continue working for up to a month after the official DNS modification.
 
+### Is the IP behind `api.sekoia.io` static?
+
+The IP address behind that service is mostly static but may change at any time.
+
 ### Outgoing IP addresses for playbooks runs and connectors
 
 
