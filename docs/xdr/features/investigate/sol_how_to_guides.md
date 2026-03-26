@@ -8,47 +8,85 @@ Use the `aggregate` operator to group rows and perform calculations. SOL support
 
 ### Basic aggregation
 
-```shell
-events
-| where timestamp > ago(24h)
-| aggregate count() by source.ip
-| order by count desc
-| limit 20
-```
+=== "Query"
+
+    ```shell
+    events
+    | where timestamp > ago(24h)
+    | aggregate count() by source.ip
+    | order by count desc
+    | limit 20
+    ```
+
+=== "Results"
+
+    | source.ip     | count |
+    | ------------- | ----- |
+    | 192.168.2.10  | 204   |
+    | 192.168.2.22  | 202   |
+    | 192.168.2.100 | 188   |
 
 ### Multiple aggregations
 
 You can perform multiple aggregations in a single query:
 
-```shell
-alerts
-| where created_at > ago(30d)
-| aggregate alert_count = count(), avg_ttd = avg(time_to_detect), max_urgency = max(urgency) by rule_name
-| order by alert_count desc
-| limit 20
-```
+=== "Query"
+
+    ```shell
+    alerts
+    | where created_at > ago(30d)
+    | aggregate alert_count = count(), avg_ttd = avg(time_to_detect), max_urgency = max(urgency) by rule_name
+    | order by alert_count desc
+    | limit 20
+    ```
+
+=== "Results"
+
+    | rule_name                  | alert_count | avg_ttd | max_urgency |
+    | -------------------------- | ----------- | ------- | ----------- |
+    | SEKOIA Intelligence Feed   | 132         | 1035.66 | 95          |
+    | Suspicious Mshta Execution | 82          | 523.40  | 80          |
 
 ### Aggregation over time
 
 Use `bin()` to group data into time buckets:
 
-```shell
-events
-| where timestamp > ago(7d)
-| aggregate count() by bin(timestamp, 1d)
-```
+=== "Query"
+
+    ```shell
+    events
+    | where timestamp > ago(7d)
+    | aggregate count() by bin(timestamp, 1d)
+    ```
+
+=== "Results"
+
+    | bin_timestamp            | count |
+    | ------------------------ | ----- |
+    | 2026-03-20T00:00:00.000Z | 6234  |
+    | 2026-03-21T00:00:00.000Z | 7891  |
+    | 2026-03-22T00:00:00.000Z | 7234  |
 
 ### Conditional counting
 
 Use `countif()` to count rows matching specific conditions:
 
-```shell
-events
-| where timestamp >= ago(24h) and event.category == 'authentication'
-| aggregate success = countif(action.outcome == 'success'), failure = countif(action.outcome == 'failure') by source.ip
-| order by failure desc
-| limit 100
-```
+=== "Query"
+
+    ```shell
+    events
+    | where timestamp >= ago(24h) and event.category == 'authentication'
+    | aggregate success = countif(action.outcome == 'success'), failure = countif(action.outcome == 'failure') by source.ip
+    | order by failure desc
+    | limit 100
+    ```
+
+=== "Results"
+
+    | source.ip  | success | failure |
+    | ---------- | ------- | ------- |
+    | 1.0.0.95   | 142     | 33      |
+    | 1.5.178.82 | 136     | 24      |
 
 For the full operator reference, see [Aggregate rows](sol_ref_operators.md#aggregate-rows).
 
@@ -61,13 +99,23 @@ SOL provides `join` and `lookup` operators to combine data from multiple tables.
 
 The `join` operator combines two tables based on matching columns. The right table is injected into a `model` object:
 
-```shell
-events
-| where timestamp > ago(24h)
-| limit 100
-| inner join intakes on sekoiaio.intake.uuid == uuid
-| distinct intake.name
-```
+=== "Query"
+
+    ```shell
+    events
+    | where timestamp > ago(24h)
+    | limit 100
+    | inner join intakes on sekoiaio.intake.uuid == uuid
+    | distinct intake.name
+    ```
+
+=== "Results"
+
+    | intake.name  |
+    | ------------ |
+    | Sekoia Agent |
+    | Zscaler      |
+    | Zscaler ZIA  |
 
 Available join types:
 
@@ -78,23 +126,42 @@ Available join types:
 
 Prefer `lookup` over `join` when the right table is small — it's faster and more efficient:
 
-```shell
-events
-| where timestamp > ago(24h)
-| lookup entities on sekoiaio.entity.uuid == uuid
-| aggregate count() by entity.name
-```
+=== "Query"
+
+    ```shell
+    events
+    | where timestamp > ago(24h)
+    | aggregate count() by sekoiaio.entity.uuid
+    | lookup entities on sekoiaio.entity.uuid == uuid
+    | select entity.name, count
+    ```
+
+=== "Results"
+
+    | entity.name        | count |
+    | ------------------ | ----- |
+    | HQ - London Office | 100   |
+    | Cambridge Campus   | 20    |
 
 ### Custom model names
 
 Use the `into` keyword to define a custom name for the model object:
 
-```shell
-alerts
-| where created_at > ago(24h)
-| inner join entities on entity_uuid == uuid into my_entity
-| select my_entity.name
-```
+=== "Query"
+
+    ```shell
+    alerts
+    | where created_at > ago(24h)
+    | inner join entities on entity_uuid == uuid into my_entity
+    | select my_entity.name
+    ```
+
+=== "Results"
+
+    | my_entity.name     |
+    | ------------------ |
+    | HQ - London Office |
+    | Cambridge Campus   |
 
 For the full operator reference, see [Join tables](sol_ref_operators.md#join-tables) and [Lookup](sol_ref_operators.md#lookup).
 
@@ -103,17 +170,26 @@ For the full operator reference, see [Join tables](sol_ref_operators.md#join-tab
 
 Use nested queries to filter data based on the results of a previous query. Define a subquery with `let`, then reference it with `in`:
 
-```shell
-let chromium_browsers = events
-| where timestamp > ago(30d)
-| where process.command_line contains " --type=renderer " and process.command_line contains " --extension-process "
-| distinct process.command_line;
+=== "Query"
 
-events
-| where process.command_line in chromium_browsers
-| aggregate count_agents=count_distinct(agent.id), executables=make_set(process.executable) by process.name
-| order by count_agents
-```
+    ```shell
+    let chromium_browsers = events
+    | where timestamp > ago(30d)
+    | where process.command_line contains " --type=renderer " and process.command_line contains " --extension-process "
+    | distinct process.command_line;
+
+    events
+    | where process.command_line in chromium_browsers
+    | aggregate count_agents=count_distinct(agent.id), executables=make_set(process.executable) by process.name
+    | order by count_agents
+    ```
+
+=== "Results"
+
+    | process.name | count_agents | executables                      |
+    | ------------ | ------------ | -------------------------------- |
+    | chrome       | 304          | ["chrome.exe"]                   |
+    | chrome.exe   | 290          | ["chrome.exe", "chrome_sandbox"] |
 
 For the full operator reference, see [Nested query](sol_ref_operators.md#nested-query).
 
@@ -130,24 +206,45 @@ Use the `render` operator to display query results as charts. Supported chart ty
 
 ### Basic chart
 
-```shell
-events
-| where timestamp > ago(24h)
-| aggregate count() by sekoiaio.any_asset.name
-| render barchart with (y=sekoiaio.any_asset.name)
-| limit 100
-```
+=== "Query"
+
+    ```shell
+    events
+    | where timestamp > ago(24h)
+    | aggregate count() by sekoiaio.any_asset.name
+    | render barchart with (y=sekoiaio.any_asset.name)
+    | limit 100
+    ```
+
+=== "Results"
+
+    | sekoiaio.any_asset.name | count |
+    | ----------------------- | ----- |
+    | laptop-6a1ec62f         | 16    |
+    | laptop-chris            | 525   |
+    | laptop-b3205bc2         | 517   |
 
 ### Chart with breakdown
 
 Use `breakdown_by` to split data into series, and `mode` to control stacking:
 
-```shell
-events
-| where timestamp > ago(7d)
-| aggregate count() by bin(timestamp, 1d), event.category
-| render linechart with (x=bin, y=count, breakdown_by=event.category, mode=stacked)
-```
+=== "Query"
+
+    ```shell
+    events
+    | where timestamp > ago(7d)
+    | aggregate count() by bin(timestamp, 1d), event.category
+    | render linechart with (x=bin, y=count, breakdown_by=event.category, mode=stacked)
+    ```
+
+=== "Results"
+
+    | bin_timestamp            | event.category | count |
+    | ------------------------ | -------------- | ----- |
+    | 2026-03-20T00:00:00.000Z | authentication | 234   |
+    | 2026-03-20T00:00:00.000Z | network        | 1560  |
+    | 2026-03-21T00:00:00.000Z | authentication | 198   |
+    | 2026-03-21T00:00:00.000Z | network        | 1734  |
 
 For the full operator reference, see [Render results in chart](sol_ref_operators.md#render-results-in-chart).
 
@@ -158,13 +255,22 @@ SOL Datasets allow you to import CSV files and use them in your queries. This is
 
 !!! example
 
-    ```shell
-    events
-    | where timestamp > ago(24h) and url.domain != null
-    | where not url.domain in (authorized_domains | select url_domain)
-    | select timestamp, source.ip, url.domain
-    | limit 100
-    ```
+    === "Query"
+
+        ```shell
+        events
+        | where timestamp > ago(24h) and url.domain != null
+        | where not url.domain in (authorized_domains | select url_domain)
+        | select timestamp, source.ip, url.domain
+        | limit 100
+        ```
+
+    === "Results"
+
+        | timestamp                | source.ip    | url.domain            |
+        | ------------------------ | ------------ | --------------------- |
+        | 2026-03-26T15:35:14.738Z | 192.168.2.10 | www.sohu.com          |
+        | 2026-03-26T15:35:03.740Z | 192.168.2.22 | www.princeton.edu     |
 
 For the full guide on importing CSVs, multi-tenancy rules, and advanced query patterns, see the dedicated [SOL Datasets](sol_datasets.md) page.
 
@@ -175,16 +281,27 @@ Build a collection of reusable queries to accelerate your team's investigations:
 
 1. **Start with common use cases**: Create queries for frequent investigations (failed logins, suspicious processes, network anomalies)
 2. **Use variables** for configurable time ranges with `let`:
-    ```shell
-    let StartTime = ago(24h);
-    let EndTime = now();
 
-    events
-    | where timestamp between (StartTime .. EndTime)
-    | where event.category == 'authentication' and action.outcome == 'failure'
-    | aggregate count() by source.ip
-    | order by count desc
-    ```
+    === "Query"
+
+        ```shell
+        let StartTime = ago(24h);
+        let EndTime = now();
+
+        events
+        | where timestamp between (StartTime .. EndTime)
+        | where event.category == 'authentication' and action.outcome == 'failure'
+        | aggregate count() by source.ip
+        | order by count desc
+        ```
+
+    === "Results"
+
+        | source.ip     | count |
+        | ------------- | ----- |
+        | 192.168.2.10  | 204   |
+        | 192.168.2.22  | 202   |
+
 3. **Save your queries**: Use the Query Builder's save functionality to store queries for reuse.
 4. **Browse examples**: See the [Query examples](sol_query_examples.md) page for ready-to-use queries covering events, alerts, and joins.
 
@@ -275,11 +392,11 @@ SOL filters support the following types:
 
 | Type                    | Example usage                                        | Notes                               |
 | ----------------------- | ---------------------------------------------------- | ----------------------------------- |
-| **Text**                | `where user.name == ?username`                       | Free text input                     |
-| **Boolean**             | `where event.success == ?is_success`                 | Displayed as toggle                 |
+| **Text**                | `where timestamp > ago(1h) and user.name == ?username`                       | Free text input                     |
+| **Boolean**             | `where timestamp > ago(1h) and event.success == ?is_success`                 | Displayed as toggle                 |
 | **Time**                | `where timestamp between (?time.start .. ?time.end)` | Common in dashboards                |
-| **Single Selection**    | `where timestamp == ?alert_uuid`                     | One value among the accepted ones   |
-| **Multiple Selection**  | `where host.name in ?hostnames`                      | Multiple values are allowed         |
+| **Single Selection**    | `where uuid == ?alert_uuid`                     | One value among the accepted ones   |
+| **Multiple Selection**  | `where timestamp > ago(1h) and host.name in ?hostnames`                      | Multiple values are allowed         |
 
 
 #### Authorized Values

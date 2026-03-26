@@ -5,20 +5,62 @@
 | Data Source | Description | Use Cases |
 |-------------|-------------|-----------|
 | `events` | Security events | Threat hunting, incident investigation, SOC reporting. You will receive events that are retained for the duration of your hot storage |
-| `event_telemetry` | Telemetry on events | Analytics on your ingestion pipelines |
+| [`event_telemetry`](#event-telemetry) | Telemetry on events | Analytics on your ingestion pipelines |
 | `eternal_events` | Security events related to alerts or cases | Extract metrics from events related to alerts/cases. Access events related to an alert that are beyond your hot storage retention period |
-| `alerts` | Security alerts and detections | SOC monitoring, alert pattern analysis |
-| `cases` | Security incidents and cases | Case management, incident correlation |
-| `custom_statuses` | Alerts and cases custom statuses | Reporting |
-| `custom_priorities` | Cases custom priorities | Reporting |
-| `communities` | Communities (for multi-tenant only) | Multi-tenant reporting |
-| `intakes` | Data sources | Data source management, volume monitoring |
-| `intake_formats` | Intake formats (parsers) | Volume monitoring |
-| `entities` | Company entities | Entity tracking, detailed reporting |
-| `assets` | Known Assets | Asset Investigations |
-| `asset_properties` | Listing known properties related to the Asset | Asset Investigations |
-| `asset_partitions` | Partitions on a per Asset basis and Hygiene related to these | Understand and improve Hygiene state Note: Part of the Reveal plan |
-| `asset_accounts` | Listing local users accounts related to the Asset | Impact analysis and incident correlation Note: Part of the Reveal plan |
+| [`alerts`](#alerts-properties) | Security alerts and detections | SOC monitoring, alert pattern analysis |
+| [`cases`](#cases-properties) | Security incidents and cases | Case management, incident correlation |
+| [`custom_statuses`](#custom-statuses) | Alerts and cases custom statuses | Reporting |
+| [`custom_priorities`](#custom-priorities) | Cases custom priorities | Reporting |
+| [`communities`](#communities-properties) | Communities (for multi-tenant only) | Multi-tenant reporting |
+| [`intakes`](#intakes-properties) | Data sources | Data source management, volume monitoring |
+| [`intake_formats`](#intake-formats-properties) | Intake formats (parsers) | Volume monitoring |
+| [`entities`](#entities-properties) | Company entities | Entity tracking, detailed reporting |
+| [`assets`](#assets) | Known Assets | Asset Investigations |
+| [`asset_properties`](#asset-properties) | Listing known properties related to the Asset | Asset Investigations |
+| [`asset_partitions`](#asset-partitions) | Partitions on a per Asset basis and Hygiene related to these | Understand and improve Hygiene state Note: Part of the Reveal plan |
+| [`asset_accounts`](#asset-accounts) | Listing local users accounts related to the Asset | Impact analysis and incident correlation Note: Part of the Reveal plan |
+
+## Event Telemetry
+
+The **event_telemetry** data source provides aggregated metrics about the events processed by your intakes.
+It allows you to monitor, report, and troubleshoot data ingestion across your Sekoia.io tenant.
+
+Each record in **event_telemetry** represents a time-bucketed summary of event activity for a given intake, including the number of events, total data volume, event sizes, and processing lags.
+This makes it easy to:
+
+* Analyze your data usage over time, per intake
+* Identify anomalies such as sudden spikes in data volume or processing delays
+* Detect potential misconfigurations that could lead to unexpected data costs or ingestion issues
+
+Typical Use Cases:
+
+* Usage reporting: Track how much data each intake is sending over specific timeframes.
+* Performance monitoring: Observe event size distributions and processing lags to ensure optimal pipeline performance.
+* Root cause analysis: Investigate policy violations or overages by drilling down into intake-level telemetry.
+
+You can query **event_telemetry** in the SOL query builder and combine it with other sources (e.g., intakes) to enrich your reports with intake names and configurations.
+
+
+| **Property**            | **Description**                                                                              |
+|-------------------------|----------------------------------------------------------------------------------------------|
+| community_uuid          | UUID of the community the events belongs to                                                  |
+| intake_uuid             | UUID of the intake source generating the events                                              |
+| intake_dialect_uuid     | UUID representing the dialect used for the intake                                            |
+| bucket_start_date       | UTC timestamp representing the beginning of the aggregation window                           |
+| bucket_end_date         | UTC timestamp representing the end of the aggregation windows                                |
+| occurrences             | Number of events in the aggregation                                                          |
+| total_message_size      | Total size (in bytes) of raw events in the bucket                                            |
+| max_message_size        | Size (in bytes) of the largest raw event in the bucket                                       |
+| min_message_size        | Size (in bytes) of the smallest raw event in the bucket                                      |
+| total_event_size        | Total size (in bytes) of all events in the bucket                                            |
+| max_event_size          | Size (in bytes) of the largest event in the bucket                                           |
+| min_event_size          | Size (in bytes) of the smallest event in the bucket                                          |
+| max_lag                 | Maximum observed delay (in seconds) between the event's timestamp and its reception date.    |
+| min_lag                 | Minimum observed delay (in seconds) between the event's timestamp and its reception date.    |
+| total_lag               | Total accumulated lag (in seconds) across all events in the bucket.                          |
+| max_processing_lag      | Maximum processing time (in seconds) taken by Sekoia.io to process an event.                 |
+| min_processing_lag      | Minimum processing time (in seconds) taken by Sekoia.io to process an event.                 |
+| total_processing_lag    | Total accumulated processing time (in seconds) for all events in the bucket.                 |
 
 ## Alerts properties
 
@@ -105,18 +147,30 @@
 | label                     | The display label for the priority.                                                        |
 | description               | A text description of the priority.                                                        |
 
-## Entities properties
+## Communities properties
 
 | **Property**              | **Description**                                                                            |
 |---------------------------|--------------------------------------------------------------------------------------------|
-| uuid                      | A unique identifier for the entity.                                                        |
-| name                      | The name of the entity.                                                                    |
-| alerts_generation         | The alert generation mode of the entity.                                                   |
-| description               | The description of the entity.                                                             |
-| entity_id                 | The ID of the entity.                                                                      |
-| community_uuid            | A unique identifier for the community related to the entity.                               |
-| created_at                | The date and time when the entity was created.                                             |
-| updated_at                | The date and time when the entity was last updated.                                        |
+| uuid                      | A unique identifier for the community.                                                     |
+| name                      | The name of the community.                                                                 |
+| description               | The description of the community.                                                          |
+| homepage_url              | The homepage url of the community.                                                         |
+| picture_mode              | The picture mode of the community.                                                         |
+| created_at                | The date and time when the community was created.                                          |
+| created_by                | The user or system that created the community.                                             |
+| created_by_type           | The type of entity that created the community (e.g., avatar, apikey).                      |
+| updated_at                | The date and time when the community was last updated.                                     |
+| company_size              | The size of the company.                                                                   |
+| company_security_team_size  | The size of the security team.                                                           |
+| company_sector            | The sector of the company.                                                                 |
+| company_location          | The location of the company.                                                               |
+| is_parent                 | Indicate if the community is a parent community.                                           |
+| parent_uuid               | A unique identifier of the parent community.                                               |
+| subcommunities            | Indicate if the community has subcommunities.                                              |
+| is_mfa_enforced           | Indicate if MFA is enforced at the community level.                                        |
+| session_timeout           | The duration before users are automatically logged after inactivity.                       |
+| disable_inactive_avatars  | Indicate if users are disabled after 90 days of inactivity.                                |
+| disabled                  | Indicate if the community is disabled.                                                     |
 
 ## Intakes properties
 
@@ -156,30 +210,18 @@
 
 For example queries using intake_formats, see [Join examples](sol_query_examples.md#join-examples).
 
-## Communities properties
+## Entities properties
 
 | **Property**              | **Description**                                                                            |
 |---------------------------|--------------------------------------------------------------------------------------------|
-| uuid                      | A unique identifier for the community.                                                     |
-| name                      | The name of the community.                                                                 |
-| description               | The description of the community.                                                          |
-| homepage_url              | The homepage url of the community.                                                         |
-| picture_mode              | The picture mode of the community.                                                         |
-| created_at                | The date and time when the community was created.                                          |
-| created_by                | The user or system that created the community.                                             |
-| created_by_type           | The type of entity that created the community (e.g., avatar, apikey).                      |
-| updated_at                | The date and time when the community was last updated.                                     |
-| company_size              | The size of the company.                                                                   |
-| company_security_team_size  | The size of the security team.                                                           |
-| company_sector            | The sector of the company.                                                                 |
-| company_location          | The location of the company.                                                               |
-| is_parent                 | Indicate if the community is a parent community.                                           |
-| parent_uuid               | A unique identifier of the parent community.                                               |
-| subcommunities            | Indicate if the community has subcommunities.                                              |
-| is_mfa_enforced           | Indicate if MFA is enforced at the community level.                                        |
-| session_timeout           | The duration before users are automatically logged after inactivity.                       |
-| disable_inactive_avatars  | Indicate if users are disabled after 90 days of inactivity.                                |
-| disabled                  | Indicate if the community is disabled.                                                     |
+| uuid                      | A unique identifier for the entity.                                                        |
+| name                      | The name of the entity.                                                                    |
+| alerts_generation         | The alert generation mode of the entity.                                                   |
+| description               | The description of the entity.                                                             |
+| entity_id                 | The ID of the entity.                                                                      |
+| community_uuid            | A unique identifier for the community related to the entity.                               |
+| created_at                | The date and time when the entity was created.                                             |
+| updated_at                | The date and time when the entity was last updated.                                        |
 
 ## Assets
 
@@ -234,48 +276,6 @@ For example queries using tags, see [Assets query examples](sol_query_examples.m
 | bad_password_count        | Number of failed logon attempts                                                            |
 | number_of_logons          | Total number of logons recorded                                                            |
 | account_type              | Type of account (LocalUser, MicrosoftAccount, ...)                                         |
-
-## Event Telemetry
-
-The **event_telemetry** data source provides aggregated metrics about the events processed by your intakes.
-It allows you to monitor, report, and troubleshoot data ingestion across your Sekoia.io tenant.
-
-Each record in **event_telemetry** represents a time-bucketed summary of event activity for a given intake, including the number of events, total data volume, event sizes, and processing lags.
-This makes it easy to:
-
-* Analyze your data usage over time, per intake
-* Identify anomalies such as sudden spikes in data volume or processing delays
-* Detect potential misconfigurations that could lead to unexpected data costs or ingestion issues
-
-Typical Use Cases:
-
-* Usage reporting: Track how much data each intake is sending over specific timeframes.
-* Performance monitoring: Observe event size distributions and processing lags to ensure optimal pipeline performance.
-* Root cause analysis: Investigate policy violations or overages by drilling down into intake-level telemetry.
-
-You can query **event_telemetry** in the SOL query builder and combine it with other sources (e.g., intakes) to enrich your reports with intake names and configurations.
-
-
-| **Property**            | **Description**                                                                              |
-|-------------------------|----------------------------------------------------------------------------------------------|
-| community_uuid          | UUID of the community the events belongs to                                                  |
-| intake_uuid             | UUID of the intake source generating the events                                              |
-| intake_dialect_uuid     | UUID representing the dialect used for the intake                                            |
-| bucket_start_date       | UTC timestamp representing the beginning of the aggregation window                           |
-| bucket_end_date         | UTC timestamp representing the end of the aggregation windows                                |
-| occurrences             | Number of events in the aggregation                                                          |
-| total_message_size      | Total size (in bytes) of raw events in the bucket                                            |
-| max_message_size        | Size (in bytes) of the largest raw event in the bucket                                       |
-| min_message_size        | Size (in bytes) of the smallest raw event in the bucket                                      |
-| total_event_size        | Total size (in bytes) of all events in the bucket                                            |
-| max_event_size          | Size (in bytes) of the largest event in the bucket                                           |
-| min_event_size          | Size (in bytes) of the smallest event in the bucket                                          |
-| max_lag                 | Maximum observed delay (in seconds) between the event's timestamp and its reception date.    |
-| min_lag                 | Minimum observed delay (in seconds) between the event's timestamp and its reception date.    |
-| total_lag               | Total accumulated lag (in seconds) across all events in the bucket.                          |
-| max_processing_lag      | Maximum processing time (in seconds) taken by Sekoia.io to process an event.                 |
-| min_processing_lag      | Minimum processing time (in seconds) taken by Sekoia.io to process an event.                 |
-| total_processing_lag    | Total accumulated processing time (in seconds) for all events in the bucket.                 |
 
 ## Related articles
 

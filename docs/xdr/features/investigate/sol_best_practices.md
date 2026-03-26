@@ -195,14 +195,16 @@ When the right-side table is small (e.g., `entities`, `intakes`, `communities`),
 // Good: lookup for small reference tables
 events
 | where timestamp > ago(24h)
+| aggregate count() by sekoiaio.intake.uuid
 | lookup intakes on sekoiaio.intake.uuid == uuid
-| aggregate count() by intake.name
+| select intake.name, count
 
 // Avoid: join when lookup would suffice
 events
 | where timestamp > ago(24h)
-| inner join intakes on sekoiaio.intake.uuid == uuid
 | aggregate count() by intake.name
+| inner join intakes on sekoiaio.intake.uuid == uuid
+| select intake.name, count
 ```
 
 ### Filter before joining
