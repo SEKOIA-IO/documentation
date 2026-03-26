@@ -62,7 +62,7 @@ The **overview** tab summarizes the asset’s identity, business relevance, and 
 - **Prioritization:** analysts must respond faster to alerts on high-impact systems (e.g., domain controllers or production databases).  
 - **Attribution:** identifies the business unit or owner to contact for containment, access suspension, or post-incident communication.
 
-??? example "Ransomware triage scenario"
+!!! example "Ransomware triage scenario"
     A ransomware alert targets *FIN-SRV01*. The header card shows it is a finance system tagged as critical and owned by the CFO's department. This routes containment to the right team immediately, reducing dwell time.
 
 <img width="538,3" height="172,2" alt="image" src="https://github.com/user-attachments/assets/11a8deca-efc1-4758-a218-c951703e284a" />
@@ -88,7 +88,7 @@ The **details** section provides the technical identifiers used to recognize and
 
 - **Correlation:** analysts can pivot across EDR, identity, network, and vulnerability logs using consistent identifiers.
 
-??? example "Lateral movement identification"
+!!! example "Lateral movement identification"
     A host appears in a lateral-movement alert with IP `10.10.2.45`. The details card shows the same IP belongs to *HR-LAPTOP07*, last seen by CrowdStrike and identified as Windows 11. Identity and scope are confirmed in seconds.
 
 <img width="743" height="320" alt="Details card example" src="https://github.com/user-attachments/assets/9319c956-126d-4640-a382-f3b09f4ff7b8" />
@@ -160,7 +160,7 @@ A compact card listing the **five most severe** items (by severity, then recency
 - **Campaign correlation:** several alerts on the same host (failed logins, unusual tools, privilege escalation) often indicate an active compromise chain.  
 - **Case enrichment:** attach new findings to an existing incident instead of opening a duplicate case.
 
-??? example "Lateral movement correlation"
+!!! example "Lateral movement correlation"
     *ADMIN-LAPTOP01* triggered a *suspicious PsExec* alert and a *credential dumping* case. Linking both identifies lateral movement tied to a stolen admin account.
 
 <img width="671" height="545" alt="Severe items card example" src="https://github.com/user-attachments/assets/073e1702-d1e3-4d7e-a994-96e7b93a9e9b" />
@@ -192,8 +192,7 @@ Clicking an item triggers available pivots (e.g., clicking an alert opens the **
 
 **PoIs** capture anomalies and behavioral deviations that may **precede** or **follow** alerts — filling gaps between rule-based detections.
 
-??? example "PoIs"
-
+!!! example "PoIs"
     - anomalous login time (user or host)  
     - rare login location (user or host)  
     - anomalous login failure ratio (user or host)
@@ -293,7 +292,7 @@ Different sources score severity/risk differently. The **unified risk score (1�
 - **Attack-surface clarity:** explains plausible entry points and lateral paths.  
 - **Operational prioritization:** escalate high-risk items to vulnerability ops; link to the active case.
 
-??? example "Exploit alignment during a web server incident"
+!!! example "Exploit alignment during a web server incident"
     A *remote file inclusion* alert (ATT&CK T1190) targets a web server. The vulnerabilities tab shows **CVE-2023-28432** on the same application version with a high unified risk score. The recommended action is to isolate the host, patch urgently, and document exploit alignment in the case.
     
 <img width="515" height="396" alt="Vulnerabilities tab example" src="https://github.com/user-attachments/assets/300d5842-379d-4c09-9827-331217ac4357" />
@@ -320,7 +319,7 @@ Connectors that discovered or enriched the asset (e.g., **EDR** such as CrowdStr
 - **Response planning:** confirm protective agents/integrations before containment.  
 - **SOC maturity:** continuously improve visibility and control coverage.
 
-??? example "Detecting a visibility gap on a domain controller"
+!!! example "Detecting a visibility gap on a domain controller"
     A high-value domain controller appears in network telemetry and vulnerability management scans but not in endpoint or identity logs. This explains why credential-access activity was not detected. The recommended action is to deploy endpoint monitoring on the asset.
 
 <img width="463,4" height="390,6" alt="Security controls tab example" src="https://github.com/user-attachments/assets/279e1288-53c6-490e-8f30-0498c3484d3e"/>
