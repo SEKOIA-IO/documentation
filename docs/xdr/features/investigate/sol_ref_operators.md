@@ -25,11 +25,9 @@ Use the `count` operator to count the number of rows returned by the statement.
 
     === "Results"
 
-        ``` shell
         | count |
         | ----- |
         | 1284  |
-        ```
 
 
 
@@ -57,13 +55,11 @@ Use the `select` operator to define the columns to retrieve from the table. The 
 
     === "Results"
 
-        ``` shell
         | host.name       | source.ip     |
         | --------------- | ------------- |
         | laptop-chris    | 192.168.2.10  |
         | laptop-6a1ec62f | 192.168.2.22  |
         | laptop-b3205bc2 | 10.0.0.45     |
-        ```
 
 
 ## Distinct
@@ -90,13 +86,11 @@ Use the `distinct` operator to list all the unique values of a column.
 
     === "Results"
 
-        ``` shell
         | client.ip     |
         | ------------- |
         | 192.168.2.10  |
         | 192.168.2.22  |
         | 10.0.0.45     |
-        ```
 
 ## Where
 
@@ -121,13 +115,11 @@ Use the `where` operator to filter rows by a list of conditions. Use parenthesis
 
     === "Results"
 
-        ``` shell
         | timestamp                | user_agent.device.name |
         | ------------------------ | ---------------------- |
         | 2026-03-26T14:22:03.120Z | Mac                    |
         | 2026-03-26T14:19:47.883Z | Mac                    |
         | 2026-03-26T14:17:31.554Z | Mac                    |
-        ```
 
 !!! example "Filter the query by excluding events older than `5 days` and retrieving only user agent from `Mac` or `Android`"
 
@@ -142,13 +134,11 @@ Use the `where` operator to filter rows by a list of conditions. Use parenthesis
 
     === "Results"
 
-        ``` shell
         | timestamp                | user_agent.device.name |
         | ------------------------ | ---------------------- |
         | 2026-03-26T14:22:03.120Z | Mac                    |
         | 2026-03-26T14:20:15.441Z | Android                |
         | 2026-03-26T14:19:47.883Z | Mac                    |
-        ```
 
 !!! example "Same as previous but with multiple `where` statements"
 
@@ -164,13 +154,11 @@ Use the `where` operator to filter rows by a list of conditions. Use parenthesis
 
     === "Results"
 
-        ``` shell
         | timestamp                | user_agent.device.name |
         | ------------------------ | ---------------------- |
         | 2026-03-26T14:22:03.120Z | Mac                    |
         | 2026-03-26T14:20:15.441Z | Android                |
         | 2026-03-26T14:19:47.883Z | Mac                    |
-        ```
 
 ## Nested query
 
@@ -204,12 +192,10 @@ let query = <table name> | select <column name>;
 
     === "Results"
 
-        ``` shell
         | process.name | count_agents | executables                      |
         | ------------ | ------------ | -------------------------------- |
         | chrome       | 304          | ["chrome.exe"]                   |
         | chrome.exe   | 290          | ["chrome.exe", "chrome_sandbox"] |
-        ```
 
 ## Sort results
 
@@ -235,13 +221,11 @@ Use the `order by` operator to sort rows by a column. The default sort order is 
 
     === "Results"
 
-        ``` shell
         | timestamp                | host.name       | source.ip    |
         | ------------------------ | --------------- | ------------ |
         | 2026-03-19T00:00:01.002Z | laptop-6a1ec62f | 10.0.0.45    |
         | 2026-03-19T00:00:04.118Z | laptop-chris    | 192.168.2.10 |
         | 2026-03-19T00:00:07.553Z | laptop-b3205bc2 | 192.168.2.22 |
-        ```
 
 !!! example "Order alerts by descending urgency and ascending first_seen_at"
 
@@ -258,13 +242,11 @@ Use the `order by` operator to sort rows by a column. The default sort order is 
 
     === "Results"
 
-        ``` shell
         | short_id | rule_name                  | urgency | first_seen_at            |
         | -------- | -------------------------- | ------- | ------------------------ |
         | ALT-0042 | SEKOIA Intelligence Feed   | 95      | 2026-03-20T08:14:22.000Z |
         | ALT-0087 | Suspicious Mshta Execution | 80      | 2026-03-21T11:03:47.000Z |
         | ALT-0031 | Suspicious Mshta Execution | 80      | 2026-03-22T09:55:10.000Z |
-        ```
 
 ## Limit results
 
@@ -289,13 +271,11 @@ Use the `limit` operator to retrieve the last n number of rows based on the curr
 
     === "Results"
 
-        ``` shell
         | timestamp                | host.name       | source.ip     |
         | ------------------------ | --------------- | ------------- |
         | 2026-03-26T14:22:03.120Z | laptop-chris    | 192.168.2.10  |
         | 2026-03-26T14:21:58.774Z | laptop-6a1ec62f | 192.168.2.22  |
         | 2026-03-26T14:21:44.331Z | laptop-b3205bc2 | 10.0.0.45     |
-        ```
 
 ## Get the Top n rows
 
@@ -320,7 +300,6 @@ Use the `top` operator to returns the first n rows sorted by the specified colum
 
     === "Results"
 
-        ``` shell
         | rule_name                        | occurrences |
         | -------------------------------- | ----------- |
         | SEKOIA Intelligence Feed         | 312         |
@@ -328,7 +307,6 @@ Use the `top` operator to returns the first n rows sorted by the specified colum
         | Brute Force Authentication       | 187         |
         | Credential Dumping via Mimikatz  | 143         |
         | Suspicious PowerShell Invocation | 98          |
-        ```
 
     Note that the query below is equivalent.
 
@@ -365,13 +343,11 @@ Use `select` to specify the columns to display. When using `extend`, the calcula
 
     === "Results"
 
-        ``` shell
         | total    |
         | -------- |
         | 3847.20  |
         | 2103.55  |
         | 1589.80  |
-        ```
 
 ## Aggregate rows
 
@@ -397,13 +373,11 @@ Use the `aggregate` operator to group rows by a column and perform aggregations 
 
     === "Results"
 
-        ``` shell
         | sekoiaio.any_asset.name | count |
         | ----------------------- | ----- |
         | laptop-6a1ec62f         | 16    |
         | laptop-chris            | 525   |
         | laptop-b3205bc2         | 517   |
-        ```
 
     Note that you can specify a column name for the aggregation. In the example below, the column name is defined as `total`.
 
@@ -419,13 +393,11 @@ Use the `aggregate` operator to group rows by a column and perform aggregations 
 
     === "Results"
 
-        ``` shell
         | sekoiaio.any_asset.name | total |
         | ----------------------- | ----- |
         | laptop-6a1ec62f         | 16    |
         | laptop-chris            | 525   |
         | laptop-b3205bc2         | 517   |
-        ```
 
 !!! example "Count the number of events per source.ip and per action.outcome in the `events` table"
 
@@ -440,14 +412,12 @@ Use the `aggregate` operator to group rows by a column and perform aggregations 
 
     === "Results"
 
-        ``` shell
         | source.ip    | action.outcome | count |
         | ------------ | -------------- | ----- |
         | 192.168.2.10 | success        | 142   |
         | 192.168.2.10 | failure        | 33    |
         | 1.5.178.82   | success        | 136   |
         | 1.5.178.82   | failure        | 24    |
-        ```
 
 !!! example "Sum the values of 'time_to_detect' column in the `alerts` table"
 
@@ -463,11 +433,9 @@ Use the `aggregate` operator to group rows by a column and perform aggregations 
 
     === "Results"
 
-        ``` shell
         | sum_time_to_detect |
         | ------------------ |
         | 284610.40          |
-        ```
 
 !!! example "Retrieve the minimum value of 'time_to_detect' column in the `alerts` table"
 
@@ -483,11 +451,9 @@ Use the `aggregate` operator to group rows by a column and perform aggregations 
 
     === "Results"
 
-        ``` shell
         | min_time_to_detect |
         | ------------------ |
         | 12.50              |
-        ```
 
 !!! example "Retrieve the maximum value of 'time_to_detect' column in the `alerts` table"
 
@@ -503,11 +469,9 @@ Use the `aggregate` operator to group rows by a column and perform aggregations 
 
     === "Results"
 
-        ``` shell
         | max_time_to_detect |
         | ------------------ |
         | 7284.00            |
-        ```
 
 !!! example "Calculate the average value of 'time_to_detect' column in the `alerts` table"
 
@@ -523,11 +487,9 @@ Use the `aggregate` operator to group rows by a column and perform aggregations 
 
     === "Results"
 
-        ``` shell
         | avg_time_to_detect |
         | ------------------ |
         | 1035.66            |
-        ```
 
 
 !!! example "Count unique values of 'source.ip' column in the `events` table"
@@ -544,11 +506,9 @@ Use the `aggregate` operator to group rows by a column and perform aggregations 
 
     === "Results"
 
-        ``` shell
         | count_distinct_source.ip |
         | ------------------------ |
         | 47                       |
-        ```
 
 !!! example "Create an array of the set of distinct values of 'source.ip' column in the `events` table"
     Note that `null` values are ignored.
@@ -565,11 +525,9 @@ Use the `aggregate` operator to group rows by a column and perform aggregations 
 
     === "Results"
 
-        ``` shell
         | make_set_source.ip                                      |
         | ------------------------------------------------------- |
         | ["192.168.2.10", "192.168.2.22", "10.0.0.45", "1.5.178.82"] |
-        ```
 
 !!! example "Count allowed and denied network events per destination port using `countif`"
 
@@ -586,13 +544,11 @@ Use the `aggregate` operator to group rows by a column and perform aggregations 
 
     === "Results"
 
-        ``` shell
         | destination.port | allowed | denied |
         | ---------------- | ------- | ------ |
         | 443              | 8412    | 124    |
         | 80               | 3201    | 87     |
         | 22               | 145     | 63     |
-        ```
 
 ## Render results in chart
 
@@ -626,13 +582,11 @@ Use the `render` operator to display results in a chart to identify more easily 
 
     === "Results"
 
-        ``` shell
         | sekoiaio.any_asset.name | count |
         | ----------------------- | ----- |
         | laptop-6a1ec62f         | 16    |
         | laptop-chris            | 525   |
         | laptop-b3205bc2         | 517   |
-        ```
 
 ## Join tables
 
@@ -672,13 +626,11 @@ This `model` object (similar to a class Object in code development) contains a s
 
     === "Results"
 
-        ``` shell
         | intake.name  |
         | ------------ |
         | Sekoia Agent |
         | Zscaler      |
         | Zscaler ZIA  |
-        ```
 
     The `model` object default name is related to the table name it is originating from. In this case, the model name is `intake` since the join was performed on the `intakes` table.
 
@@ -697,12 +649,10 @@ This `model` object (similar to a class Object in code development) contains a s
 
     === "Results"
 
-        ``` shell
         | entity.name        |
         | ------------------ |
         | HQ - London Office |
         | Cambridge Campus   |
-        ```
 
     The `model` object default name is related to the table name it is originating from. In this case, the model name is `entity` since the join was performed on the `entities` table.
 
@@ -721,12 +671,10 @@ This `model` object (similar to a class Object in code development) contains a s
 
     === "Results"
 
-        ``` shell
         | my_entity.name     |
         | ------------------ |
         | HQ - London Office |
         | Cambridge Campus   |
-        ```
 
 ## Lookup
 
@@ -792,13 +740,11 @@ Use `in~` to filter on a set of case-insensitive strings.
 
     === "Results"
 
-        ``` shell
         | timestamp                | client.ip   |
         | ------------------------ | ----------- |
         | 2026-03-26T14:22:03.120Z | 192.168.0.1 |
         | 2026-03-26T14:19:47.883Z | 192.168.0.2 |
         | 2026-03-26T14:17:31.554Z | 192.168.0.1 |
-        ```
 
 !!! example "Find events where `process.name` equals to theses values ignoring case-sensitivity: powershell.exe, powershell_ise.exe"
 
@@ -814,13 +760,11 @@ Use `in~` to filter on a set of case-insensitive strings.
 
     === "Results"
 
-        ``` shell
         | timestamp                | process.name      |
         | ------------------------ | ----------------- |
         | 2026-03-26T14:20:15.441Z | powershell.exe    |
         | 2026-03-26T14:18:52.007Z | PowerShell.exe    |
         | 2026-03-26T14:15:33.229Z | powershell_ise.exe |
-        ```
 
 ## Contains
 
@@ -846,13 +790,11 @@ Use `contains~` to switch to case-insensitive strings.
 
     === "Results"
 
-        ``` shell
         | timestamp                | user.full_name      |
         | ------------------------ | ------------------- |
         | 2026-03-26T14:22:03.120Z | Admin User          |
         | 2026-03-26T14:19:47.883Z | AdminSecOps         |
         | 2026-03-26T14:17:31.554Z | John Admin          |
-        ```
 
 !!! example "Find events where `user.full_name` contains the string `ADMIN` (case insensitive)"
 
@@ -868,13 +810,11 @@ Use `contains~` to switch to case-insensitive strings.
 
     === "Results"
 
-        ``` shell
         | timestamp                | user.full_name      |
         | ------------------------ | ------------------- |
         | 2026-03-26T14:22:03.120Z | Admin User          |
         | 2026-03-26T14:20:15.441Z | admin-svc           |
         | 2026-03-26T14:19:47.883Z | AdminSecOps         |
-        ```
 
 ## Starts with
 
@@ -901,13 +841,11 @@ Use `startswith~` to switch to case-insensitive strings.
 
     === "Results"
 
-        ``` shell
         | timestamp                | url.domain               |
         | ------------------------ | ------------------------ |
         | 2026-03-26T14:22:03.120Z | api.prod.example.com     |
         | 2026-03-26T14:19:47.883Z | api.prod-eu.example.com  |
         | 2026-03-26T14:17:31.554Z | api.prod.internal        |
-        ```
 
 !!! example "Find events where `process.command_line` starts with the string `Invoke` ignoring case-sensitivity"
 
@@ -923,13 +861,11 @@ Use `startswith~` to switch to case-insensitive strings.
 
     === "Results"
 
-        ``` shell
         | timestamp                | process.command_line                                  |
         | ------------------------ | ----------------------------------------------------- |
         | 2026-03-26T14:22:03.120Z | Invoke-Expression -Command "IEX (New-Object Net...)"  |
         | 2026-03-26T14:19:47.883Z | invoke-webrequest -Uri http://malicious.example.com   |
         | 2026-03-26T14:17:31.554Z | Invoke-Mimikatz -DumpCreds                            |
-        ```
 
 ## Ends with
 
@@ -956,13 +892,11 @@ Use `endswith~` to switch to case-insensitive strings.
 
     === "Results"
 
-        ``` shell
         | timestamp                | url.path              |
         | ------------------------ | --------------------- |
         | 2026-03-26T14:22:03.120Z | /dashboard/admin      |
         | 2026-03-26T14:19:47.883Z | /api/v1/admin         |
         | 2026-03-26T14:17:31.554Z | /admin                |
-        ```
 
 !!! example "Find events where `process.command_line` ends with the string `.DLl` ignoring case-sensitivity"
 
@@ -978,13 +912,11 @@ Use `endswith~` to switch to case-insensitive strings.
 
     === "Results"
 
-        ``` shell
         | timestamp                | process.command_line                            |
         | ------------------------ | ----------------------------------------------- |
         | 2026-03-26T14:22:03.120Z | rundll32.exe C:\Windows\System32\shell32.dll    |
         | 2026-03-26T14:19:47.883Z | regsvr32.exe /s C:\Temp\malicious.DLL           |
         | 2026-03-26T14:17:31.554Z | C:\Windows\System32\svchost.exe kernel32.DLl    |
-        ```
 
 ## Not
 
@@ -1009,13 +941,11 @@ Use the `not` operator to negate any comparison.
 
     === "Results"
 
-        ``` shell
         | timestamp                | client.ip     |
         | ------------------------ | ------------- |
         | 2026-03-26T14:22:03.120Z | 192.168.2.10  |
         | 2026-03-26T14:20:15.441Z | 10.0.0.45     |
         | 2026-03-26T14:19:47.883Z | 1.5.178.82    |
-        ```
 
 !!! example "Find events where `user.full_name` does not contain the string `Admin` (case sensitive)"
 
@@ -1031,13 +961,11 @@ Use the `not` operator to negate any comparison.
 
     === "Results"
 
-        ``` shell
         | timestamp                | user.full_name  |
         | ------------------------ | --------------- |
         | 2026-03-26T14:22:03.120Z | john.doe        |
         | 2026-03-26T14:20:15.441Z | alice.smith     |
         | 2026-03-26T14:19:47.883Z | bob.jones       |
-        ```
 
 !!! example "Find events where `process.command_line` does not start with the string `Invoke` ignoring case-sensitivity"
 
@@ -1053,13 +981,11 @@ Use the `not` operator to negate any comparison.
 
     === "Results"
 
-        ``` shell
         | timestamp                | process.command_line                         |
         | ------------------------ | -------------------------------------------- |
         | 2026-03-26T14:22:03.120Z | C:\Windows\System32\svchost.exe -k netsvcs   |
         | 2026-03-26T14:20:15.441Z | chrome.exe --type=renderer                   |
         | 2026-03-26T14:19:47.883Z | python.exe script.py                         |
-        ```
 
 !!! example "Find events where `process.command_line` does not end with the string `.DLl` ignoring case-sensitivity"
 
@@ -1075,13 +1001,11 @@ Use the `not` operator to negate any comparison.
 
     === "Results"
 
-        ``` shell
         | timestamp                | process.command_line                         |
         | ------------------------ | -------------------------------------------- |
         | 2026-03-26T14:22:03.120Z | powershell.exe -ExecutionPolicy Bypass       |
         | 2026-03-26T14:20:15.441Z | cmd.exe /c whoami                            |
         | 2026-03-26T14:19:47.883Z | python.exe -c "import os; os.system('id')"   |
-        ```
 
 ## Regex
 
@@ -1124,13 +1048,11 @@ Use the `matches regex` operator to filter the rows based on a regex pattern.
 
     === "Results"
 
-        ``` shell
         | timestamp                | file.name           |
         | ------------------------ | ------------------- |
         | 2026-03-26T14:22:03.120Z | deploy.sh           |
         | 2026-03-26T14:19:47.883Z | cleanup.sh          |
         | 2026-03-26T14:17:31.554Z | install_agent.sh    |
-        ```
 
 ## Variables
 
@@ -1160,11 +1082,9 @@ let <variable name> = <string | integer>;
 
     === "Results"
 
-        ``` shell
         | count |
         | ----- |
         | 8924  |
-        ```
 
 ## Comments
 

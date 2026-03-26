@@ -31,12 +31,10 @@ Returns the current UTC datetime, optionally shifted by the given offset.
 
     === "Results"
 
-        ``` shell
         | variable     | result                   |
         | ------------ | ------------------------ |
         | time         | 2026-03-26T10:30:00.000Z |
         | time_earlier | 2026-03-24T10:30:00.000Z |
-        ```
 
 
 ## Datetime: ago()
@@ -101,13 +99,11 @@ Returns the value rounded down to the nearest multiple of `bin_size`.
 
     === "Results"
 
-        ``` shell
         | bin_timestamp            | count |
         | ------------------------ | ----- |
         | 2026-03-20T00:00:00.000Z | 6234  |
         | 2026-03-21T00:00:00.000Z | 7891  |
         | 2026-03-22T00:00:00.000Z | 7234  |
-        ```
 
 
 
@@ -140,11 +136,9 @@ Returns the year in `YYYY` format.
 
     === "Results"
 
-        ``` shell
         | result |
         | ------ |
         | 2026   |
-        ```
 
 ## Month
 
@@ -175,11 +169,9 @@ Returns the year and month in `YYYY-MM` format.
 
     === "Results"
 
-        ``` shell
         | result  |
         | ------- |
         | 2026-03 |
-        ```
 
 ## Week
 
@@ -210,11 +202,9 @@ Returns the year and week number in `YYYY - Week {week number}` format.
 
     === "Results"
 
-        ``` shell
         | result         |
         | -------------- |
         | 2026 - Week 13 |
-        ```
 
 ## To scalar
 
@@ -250,13 +240,11 @@ Returns the scalar value of the expression, usable as a constant in the rest of 
 
     === "Results"
 
-        ``` shell
         | detection_type    | count | percentage |
         | ----------------- | ----- | ---------- |
         | Sigma             | 238   | 88.81      |
         | Sigma Correlation | 14    | 5.22       |
         | CTI Retrohunt     | 5     | 1.86       |
-        ```
 
 ## String: tolower()
 
@@ -292,13 +280,11 @@ Returns the lowercase version of the input string.
 
     === "Results"
 
-        ``` shell
         | normalized_user | sum_count_by_user |
         | --------------- | ----------------- |
         | ada_lovelace    | 152               |
         | ken_thompson    | 138               |
         | barbara_liskov  | 120               |
-        ```
 
 ## String: toupper()
 
@@ -334,12 +320,10 @@ Returns the uppercase version of the input string.
 
     === "Results"
 
-        ``` shell
         | normalized_cmd                  | sum_count_by_cmd |
         | ------------------------------- | ---------------- |
         | C:\WINDOWS\SYSTEM32\CMD.EXE     | 204              |
         | POWERSHELL.EXE -EXECUTIONPOLICY | 188              |
-        ```
 
 ## String: extract()
 
@@ -374,13 +358,11 @@ Returns the matched substring for the specified capture group. Returns `null` if
 
     === "Results"
 
-        ``` shell
         | timestamp                | domain              |
         | ------------------------ | ------------------- |
         | 2026-03-26T15:35:14.738Z | clients2.google.com |
         | 2026-03-26T15:35:03.740Z | www.deloitte.com    |
         | 2026-03-26T15:35:04.539Z | www.squarespace.com |
-        ```
 
 !!! example "Extract user identifiers from log messages"
 
@@ -396,13 +378,11 @@ Returns the matched substring for the specified capture group. Returns `null` if
 
     === "Results"
 
-        ``` shell
         | timestamp                | user_id |
         | ------------------------ | ------- |
         | 2026-03-26T15:35:14.738Z | 1042    |
         | 2026-03-26T15:35:03.740Z | 2891    |
         | 2026-03-26T15:35:04.539Z | 305     |
-        ```
 
 ## String: replace_regex()
 
@@ -440,13 +420,11 @@ Returns the modified string with all non-overlapping matches replaced. If no mat
 
     === "Results"
 
-        ``` shell
         | timestamp                | cleaned_url                     |
         | ------------------------ | ------------------------------- |
         | 2026-03-26T15:35:14.738Z | clients2.google.com/generate204 |
         | 2026-03-26T15:35:03.740Z | www.deloitte.com/services       |
         | 2026-03-26T15:35:04.539Z | www.squarespace.com/login       |
-        ```
 
 
 !!! example "Sanitize email addresses in logs"
@@ -462,13 +440,11 @@ Returns the modified string with all non-overlapping matches replaced. If no mat
 
     === "Results"
 
-        ``` shell
         | timestamp                | sanitized_email   |
         | ------------------------ | ----------------- |
         | 2026-03-26T15:35:14.738Z | ada@example.com   |
         | 2026-03-26T15:35:03.740Z | ken@example.com   |
         | 2026-03-26T15:35:04.539Z | grace@example.com |
-        ```
 
 
 ## Math: round()
@@ -505,13 +481,11 @@ Returns the rounded number to the specified precision.
 
     === "Results"
 
-        ``` shell
         | ttd_minutes |
         | ----------- |
         | 17.25       |
         | 0.13        |
         | 31.73       |
-        ```
 
 
 ## Type conversion: toint()
@@ -552,13 +526,11 @@ If the input is a decimal number, the value is truncated to the integer portion 
 
     === "Results"
 
-        ``` shell
         | port_number |
         | ----------- |
         | 443         |
         | 8080        |
         | 3389        |
-        ```
 
 
 
@@ -576,13 +548,11 @@ If the input is a decimal number, the value is truncated to the integer portion 
 
     === "Results"
 
-        ``` shell
         | severity_int | count |
         | ------------ | ----- |
         | 10            | 204   |
         | 20            | 188   |
         | 30            | 42    |
-        ```
 
 ## Conditional: iff()
 
@@ -621,13 +591,11 @@ Returns the `then_value` when condition is true, otherwise returns `else_value`.
 
     === "Results"
 
-        ``` shell
         | severity_category | count |
         | ----------------- | ----- |
         | Critical          | 82    |
         | High              | 52    |
         | Medium            | 14    |
-        ```
 
 ## Null handling: coalesce()
 
@@ -663,13 +631,11 @@ Returns the first non-null value from the argument list, or null if all argument
 
     === "Results"
 
-        ``` shell
         | user_identifier   | count |
         | ----------------- | ----- |
         | ada_lovelace      | 152   |
         | ken@example.com   | 42    |
         | Unknown           | 18    |
-        ```
 
 
 ## Datetime: format_datetime()
@@ -725,12 +691,10 @@ Returns a formatted string representation of the datetime.
 
     === "Results"
 
-        ``` shell
         | date_only  | readable_time              | eu_format  | detection_type | count |
         | ---------- | -------------------------- | ---------- | -------------- | ----- |
         | 2026-03-26 | March 26, 2026 at 15:35    | 26-03-2026 | CTI            | 14    |
         | 2026-03-26 | March 26, 2026 at 16:02    | 26-03-2026 | Sigma          | 8     |
-        ```
 
 ## Aggregation: countif()
 
@@ -767,12 +731,10 @@ Returns the count of rows for which the predicate is `true`. Returns `0` if no r
 
     === "Results"
 
-        ``` shell
         | source.ip  | success_count | failed_count |
         | ---------- | ------------- | ------------ |
         | 1.0.0.95   | 142           | 33           |
         | 1.5.178.82 | 136           | 24           |
-        ```
 
 
 !!! example  "Count high-urgency vs. low-urgency alerts per detection type"
@@ -787,13 +749,11 @@ Returns the count of rows for which the predicate is `true`. Returns `0` if no r
 
     === "Results"
 
-        ``` shell
         | detection_type    | high | low |
         | ----------------- | ---- | --- |
         | Sigma             | 52   | 186 |
         | Sigma Correlation | 8    | 6   |
         | CTI               | 2    | 3   |
-        ```
 
 ## Related articles
 

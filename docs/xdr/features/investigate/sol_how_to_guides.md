@@ -20,13 +20,11 @@ Use the `aggregate` operator to group rows and perform calculations. SOL support
 
 === "Results"
 
-    ```shell
     | source.ip     | count |
     | ------------- | ----- |
     | 192.168.2.10  | 204   |
     | 192.168.2.22  | 202   |
     | 192.168.2.100 | 188   |
-    ```
 
 ### Multiple aggregations
 
@@ -44,12 +42,10 @@ You can perform multiple aggregations in a single query:
 
 === "Results"
 
-    ```shell
     | rule_name                  | alert_count | avg_ttd | max_urgency |
     | -------------------------- | ----------- | ------- | ----------- |
     | SEKOIA Intelligence Feed   | 132         | 1035.66 | 95          |
     | Suspicious Mshta Execution | 82          | 523.40  | 80          |
-    ```
 
 ### Aggregation over time
 
@@ -65,13 +61,11 @@ Use `bin()` to group data into time buckets:
 
 === "Results"
 
-    ```shell
     | bin_timestamp            | count |
     | ------------------------ | ----- |
     | 2026-03-20T00:00:00.000Z | 6234  |
     | 2026-03-21T00:00:00.000Z | 7891  |
     | 2026-03-22T00:00:00.000Z | 7234  |
-    ```
 
 ### Conditional counting
 
@@ -89,12 +83,10 @@ Use `countif()` to count rows matching specific conditions:
 
 === "Results"
 
-    ```shell
     | source.ip  | success | failure |
     | ---------- | ------- | ------- |
     | 1.0.0.95   | 142     | 33      |
     | 1.5.178.82 | 136     | 24      |
-    ```
 
 For the full operator reference, see [Aggregate rows](sol_ref_operators.md#aggregate-rows).
 
@@ -119,13 +111,11 @@ The `join` operator combines two tables based on matching columns. The right tab
 
 === "Results"
 
-    ```shell
     | intake.name  |
     | ------------ |
     | Sekoia Agent |
     | Zscaler      |
     | Zscaler ZIA  |
-    ```
 
 Available join types:
 
@@ -148,12 +138,10 @@ Prefer `lookup` over `join` when the right table is small — it's faster and mo
 
 === "Results"
 
-    ```shell
     | entity.name        | count |
     | ------------------ | ----- |
     | HQ - London Office | 100   |
     | Cambridge Campus   | 20    |
-    ```
 
 ### Custom model names
 
@@ -170,12 +158,10 @@ Use the `into` keyword to define a custom name for the model object:
 
 === "Results"
 
-    ```shell
     | my_entity.name     |
     | ------------------ |
     | HQ - London Office |
     | Cambridge Campus   |
-    ```
 
 For the full operator reference, see [Join tables](sol_ref_operators.md#join-tables) and [Lookup](sol_ref_operators.md#lookup).
 
@@ -200,12 +186,10 @@ Use nested queries to filter data based on the results of a previous query. Defi
 
 === "Results"
 
-    ```shell
     | process.name | count_agents | executables                      |
     | ------------ | ------------ | -------------------------------- |
     | chrome       | 304          | ["chrome.exe"]                   |
     | chrome.exe   | 290          | ["chrome.exe", "chrome_sandbox"] |
-    ```
 
 For the full operator reference, see [Nested query](sol_ref_operators.md#nested-query).
 
@@ -234,13 +218,11 @@ Use the `render` operator to display query results as charts. Supported chart ty
 
 === "Results"
 
-    ```shell
     | sekoiaio.any_asset.name | count |
     | ----------------------- | ----- |
     | laptop-6a1ec62f         | 16    |
     | laptop-chris            | 525   |
     | laptop-b3205bc2         | 517   |
-    ```
 
 ### Chart with breakdown
 
@@ -257,14 +239,12 @@ Use `breakdown_by` to split data into series, and `mode` to control stacking:
 
 === "Results"
 
-    ```shell
     | bin_timestamp            | event.category | count |
     | ------------------------ | -------------- | ----- |
     | 2026-03-20T00:00:00.000Z | authentication | 234   |
     | 2026-03-20T00:00:00.000Z | network        | 1560  |
     | 2026-03-21T00:00:00.000Z | authentication | 198   |
     | 2026-03-21T00:00:00.000Z | network        | 1734  |
-    ```
 
 For the full operator reference, see [Render results in chart](sol_ref_operators.md#render-results-in-chart).
 
@@ -287,12 +267,10 @@ SOL Datasets allow you to import CSV files and use them in your queries. This is
 
     === "Results"
 
-        ```shell
         | timestamp                | source.ip    | url.domain            |
         | ------------------------ | ------------ | --------------------- |
         | 2026-03-26T15:35:14.738Z | 192.168.2.10 | www.sohu.com          |
         | 2026-03-26T15:35:03.740Z | 192.168.2.22 | www.princeton.edu     |
-        ```
 
 For the full guide on importing CSVs, multi-tenancy rules, and advanced query patterns, see the dedicated [SOL Datasets](sol_datasets.md) page.
 
@@ -319,12 +297,10 @@ Build a collection of reusable queries to accelerate your team's investigations:
 
     === "Results"
 
-        ```shell
         | source.ip     | count |
         | ------------- | ----- |
         | 192.168.2.10  | 204   |
         | 192.168.2.22  | 202   |
-        ```
 
 3. **Save your queries**: Use the Query Builder's save functionality to store queries for reuse.
 4. **Browse examples**: See the [Query examples](sol_query_examples.md) page for ready-to-use queries covering events, alerts, and joins.
