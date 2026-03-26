@@ -128,30 +128,61 @@ Imported datasets can be used like any other SOL data source:
 
 **Basic dataset query**
 
-```shell
-authorized_domains
-| limit 100
-```
+=== "Query"
+
+    ```shell
+    authorized_domains
+    | limit 100
+    ```
+
+=== "Results"
+
+    | url_domain                                    |
+    | --------------------------------------------- |
+    | clients2.google.com                           |
+    | fef.amsub0202.manage.microsoft.com            |
+    | incoming.telemetry.mozilla.org                |
 
 **Detect unauthorized domains instantly:**
 
-```shell
-events
-| where timestamp > ago(24h) and url.domain != null
-| where not url.domain in (authorized_domains | select url_domain)
-| select timestamp, source.ip, url.domain
-| limit 100
-```
+=== "Query"
+
+    ```shell
+    events
+    | where timestamp > ago(24h) and url.domain != null
+    | where not url.domain in (authorized_domains | select url_domain)
+    | select timestamp, source.ip, url.domain
+    | limit 100
+    ```
+
+=== "Results"
+
+    | timestamp                | source.ip    | url.domain                              |
+    | ------------------------ | ------------ | --------------------------------------- |
+    | 2026-03-26T15:35:14.738Z | 192.168.2.10 | 8po4ycsb.bazar                          |
+    | 2026-03-26T15:35:03.740Z | 192.168.2.22 | bvnremfv.pro                            |
+    | 2026-03-26T15:35:04.539Z | 192.168.2.10 | botequimdamarques.bytedelivery.com.br   |
 
 **Correlate user activities with business roles:**
 
-```shell
-events
-| where timestamp > ago(24h)
-| lookup user_roles on user.full_name == full_name into roles_list
-| distinct user.full_name, roles_list.role
-| limit 100
-```
+=== "Query"
+
+    ```shell
+    events
+    | where timestamp > ago(24h)
+    | lookup user_roles on user.full_name == full_name into roles_list
+    | distinct user.full_name, roles_list.role
+    | limit 100
+    ```
+
+=== "Results"
+
+    | user.full_name  | roles_list.role           |
+    | --------------- | ------------------------- |
+    | alice.moreau    | Product Manager           |
+    | bob.dupont      | Product Designer          |
+    | claire.martin   | Front-End Engineer        |
+    | david.chen      | Back-End Engineer         |
 
 ### Best practices for dataset queries
 
@@ -169,18 +200,28 @@ events
 
 **Query structure**
 
-```shell
-// Filter main data source first
-events
-| where timestamp > ago(1h) and user.name != null
+=== "Query"
 
-// Then join with SOL dataset. The modal object name is defined as 'dataset' here
-| lookup user_roles_dataset on user.name == username into dataset
+    ```shell
+    // Filter main data source first
+    events
+    | where timestamp > ago(1h) and user.name != null
 
-// Select relevant columns
-| select timestamp, user.name, dataset.role, event.action
-| limit 1000
-```
+    // Then join with SOL dataset. The modal object name is defined as 'dataset' here
+    | lookup user_roles_dataset on user.name == username into dataset
+
+    // Select relevant columns
+    | select timestamp, user.name, dataset.role, event.action
+    | limit 1000
+    ```
+
+=== "Results"
+
+    | timestamp                | user.name     | dataset.role       | event.action |
+    | ------------------------ | ------------- | ------------------ | ------------ |
+    | 2026-03-26T14:22:03.120Z | alice.moreau  | Product Manager    | login        |
+    | 2026-03-26T14:20:15.441Z | david.chen    | Back-End Engineer  | file_access  |
+    | 2026-03-26T14:19:47.883Z | claire.martin | Front-End Engineer | login        |
 
 ## Common use cases
 
@@ -188,37 +229,65 @@ events
 
 Instantly correlate your alerts with external threat intelligence feeds to distinguish between noise and genuine threats. This query enriches recent alerts with threat context, helping analysts focus on the most critical security events first.
 
-```shell
-alerts
-| where created_at > ago(24h)
-| lookup threat_intel_dataset on source.ip == indicator_value into dataset
-| where dataset.threat_type != null
-| select rule_name, source.ip, dataset.threat_type, dataset.confidence
-```
+=== "Query"
+
+    ```shell
+    alerts
+    | where created_at > ago(24h)
+    | lookup threat_intel_dataset on source.ip == indicator_value into dataset
+    | where dataset.threat_type != null
+    | select rule_name, source.ip, dataset.threat_type, dataset.confidence
+    ```
+
+=== "Results"
+
+    | rule_name                | source.ip      | dataset.threat_type | dataset.confidence |
+    | ------------------------ | -------------- | ------------------- | ------------------ |
+    | SEKOIA Intelligence Feed | 143.198.133.245 | malware_c2         | high               |
+    | Suspicious DNS Query     | 185.220.101.47 | tor_exit_node       | medium             |
 
 ### Understand event patterns across business units and system criticality
 
 Transform raw security events into business-aware insights by correlating them with your asset inventory. Quickly identify which departments or critical systems are generating the most security events, enabling targeted investigation and resource allocation.
 
-```shell
-events
-| where timestamp > ago(1h)
-| lookup asset_inventory on host.name == hostname into dataset
-| aggregate event_count = count() by dataset.department, dataset.criticality
-| order by event_count desc
-```
+=== "Query"
+
+    ```shell
+    events
+    | where timestamp > ago(1h)
+    | lookup asset_inventory on host.name == hostname into dataset
+    | aggregate event_count = count() by dataset.department, dataset.criticality
+    | order by event_count desc
+    ```
+
+=== "Results"
+
+    | dataset.department | dataset.criticality | event_count |
+    | ------------------ | ------------------- | ----------- |
+    | Engineering        | high                | 1204        |
+    | Finance            | critical            | 876         |
+    | HR                 | medium              | 342         |
 
 ### Detect privileged account activity and potential privilege escalation
 
 Monitor administrative activities by correlating authentication events with your user directory. This helps identify unusual admin access patterns, shared accounts, or potential insider threats by tracking who is accessing what systems with elevated privileges.
 
-```shell
-events
-| where event.category == 'authentication' and action.outcome == 'success'
-| lookup user_directory on user.name == username into dataset
-| where dataset.role == 'admin'
-| aggregate count() by user.name, host.name
-```
+=== "Query"
+
+    ```shell
+    events
+    | where event.category == 'authentication' and action.outcome == 'success'
+    | lookup user_directory on user.name == username into dataset
+    | where dataset.role == 'admin'
+    | aggregate count() by user.name, host.name
+    ```
+
+=== "Results"
+
+    | user.name    | host.name       | count |
+    | ------------ | --------------- | ----- |
+    | alice.moreau | laptop-chris    | 42    |
+    | david.chen   | laptop-b3205bc2 | 18    |
 
 ## Troubleshooting common issues
 
