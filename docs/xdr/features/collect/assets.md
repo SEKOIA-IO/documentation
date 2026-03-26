@@ -48,6 +48,8 @@ This value contributes to the [urgency score of alerts](/xdr/features/investigat
 Asset matching and detection properties are fundamental features that enhance our system's event correlation and enrichment capabilities. Each asset type comes with a predefined set of detection properties that determine the criteria for matching incoming events with specific assets. When an event matches an asset based on these properties, the event is enriched with the asset UUID and inherits all the contextual properties associated with the asset, including its criticality and other relevant information.
 
 Your SOC team can effectively correlate these events with specific assets through **asset matching**, enabling them to grasp the context and comprehend the potential impact on critical systems.
+!!! note
+    Detection properties are case-insensitive; they will match events fields regardless of letter casing.
 
 ### Contextual Properties
 
