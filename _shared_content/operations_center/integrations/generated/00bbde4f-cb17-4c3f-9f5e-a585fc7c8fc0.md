@@ -520,6 +520,102 @@ This section demonstrates how the raw logs will be transformed by our parsers. I
 	```
 
 
+=== "stdout_event_1.json"
+
+    ```json
+	
+    {
+        "message": "{\"insertId\":\"1111111111111111\",\"jsonPayload\":{\"additional\":{\"pixyl-analysis-id\":\"analysis-1111111-1\"},\"context\":\"default\",\"logger\":\"ai.gleamer.inference.core.wlm.ReaderThread.pixyl_loggers.loggers.GleamerJSONFormatter\",\"message\":\"{1: 1}\",\"thread\":\"W-8081-Thread-stdout\"},\"labels\":{\"compute.googleapis.com/resource_name\":\"gtest-resource\",\"k8s-pod/app_kubernetes_io/managed-by\":\"Manager\",\"k8s-pod/app_kubernetes_io/name\":\"test-integration-eu-3-3-0\",\"k8s-pod/app_kubernetes_io/version\":\"3.3.0\",\"k8s-pod/gleamer_ai/connector-name\":\"test-integration-eu\",\"k8s-pod/gleamer_ai/connector-version\":\"3.3.0\",\"k8s-pod/manager_sh/chart\":\"app-0.1.0\",\"k8s-pod/pod-template-hash\":\"1111111111\",\"logging.gke.io/top_level_controller_name\":\"test-integration-eu-3-3-0\",\"logging.gke.io/top_level_controller_type\":\"Deployment\"},\"logName\":\"projects/test/logs/stdout\",\"receiveTimestamp\":\"2026-03-09T08:20:46.852786133Z\",\"resource\":{\"labels\":{\"cluster_name\":\"cluster-primary\",\"container_name\":\"app\",\"location\":\"europe-west1\",\"namespace_name\":\"connector\",\"pod_name\":\"test-integration-eu-3-3-0-1111111111-hq6kl\",\"project_id\":\"test\"},\"type\":\"k8s_container\"},\"severity\":\"INFO\",\"timestamp\":\"2026-03-09T08:20:43.016224684Z\"}",
+        "event": {
+            "category": [
+                "process"
+            ],
+            "reason": "\"{1: 1}\"",
+            "type": [
+                "change"
+            ]
+        },
+        "@timestamp": "2026-03-09T08:20:43.016224Z",
+        "cloud": {
+            "project": {
+                "id": "test"
+            }
+        },
+        "google_kubernetes_engine": {
+            "insertId": "1111111111111111",
+            "logName": "projects/test/logs/stdout",
+            "receiveTimestamp": "2026-03-09T08:20:46.852786133Z",
+            "severity": "INFO"
+        },
+        "orchestrator": {
+            "cluster": {
+                "name": "cluster-primary"
+            },
+            "namespace": "connector",
+            "resource": {
+                "name": "test-integration-eu-3-3-0-1111111111-hq6kl",
+                "type": "k8s_container"
+            },
+            "type": "kubernetes"
+        },
+        "server": {
+            "geo": {
+                "name": "europe-west1"
+            }
+        }
+    }
+    	
+	```
+
+
+=== "stdout_event_2.json"
+
+    ```json
+	
+    {
+        "message": "{\"insertId\":\"1111111111111111\",\"jsonPayload\":{\"hostName\":\"host-name\",\"loggerName\":\"logger.test.Integration\",\"mdc\":{\"messageId\":\"11111111111111111\",\"subscription\":\"projects/test/subscriptions/integration\"},\"message\":\"Received message 11111111111111111\",\"ndc\":\"\",\"sequence\":22068,\"threadId\":156,\"threadName\":\"Thread\",\"timestamp\":\"2026-03-09T08:48:59.658400674Z\"},\"labels\":{\"compute.googleapis.com/resource_name\":\"resource-name\",\"k8s-pod/app_kubernetes_io/managed-by\":\"Manager\",\"k8s-pod/app_kubernetes_io/name\":\"inference-consumer\",\"k8s-pod/app_kubernetes_io/version\":\"1.10.0\",\"k8s-pod/manager_sh/chart\":\"app-0.1.0\",\"k8s-pod/pod-template-hash\":\"789754fc8f\",\"logging.gke.io/top_level_controller_name\":\"inference-consumer\",\"logging.gke.io/top_level_controller_type\":\"Deployment\"},\"logName\":\"projects/test/logs/stdout\",\"receiveTimestamp\":\"2026-03-09T08:49:02.892865366Z\",\"resource\":{\"labels\":{\"cluster_name\":\"cluster\",\"container_name\":\"app\",\"location\":\"europe-west1\",\"namespace_name\":\"inference\",\"pod_name\":\"host-name\",\"project_id\":\"test\"},\"type\":\"k8s_container\"},\"severity\":\"DEBUG\",\"timestamp\":\"2026-03-09T08:48:59.658510174Z\"}",
+        "event": {
+            "category": [
+                "process"
+            ],
+            "reason": "\"Received message 11111111111111111\"",
+            "type": [
+                "change"
+            ]
+        },
+        "@timestamp": "2026-03-09T08:48:59.658510Z",
+        "cloud": {
+            "project": {
+                "id": "test"
+            }
+        },
+        "google_kubernetes_engine": {
+            "insertId": "1111111111111111",
+            "logName": "projects/test/logs/stdout",
+            "receiveTimestamp": "2026-03-09T08:49:02.892865366Z",
+            "severity": "DEBUG"
+        },
+        "orchestrator": {
+            "cluster": {
+                "name": "cluster"
+            },
+            "namespace": "inference",
+            "resource": {
+                "name": "host-name",
+                "type": "k8s_container"
+            },
+            "type": "kubernetes"
+        },
+        "server": {
+            "geo": {
+                "name": "europe-west1"
+            }
+        }
+    }
+    	
+	```
+
+
 
 
 

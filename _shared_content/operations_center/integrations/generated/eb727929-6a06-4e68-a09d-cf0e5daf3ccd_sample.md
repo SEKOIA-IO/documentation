@@ -252,6 +252,14 @@ In this section, you will find examples of raw logs as generated natively by the
 
 
 
+=== "opendkim"
+
+    ```
+	host01 opendkim[778]: 720B91122280: DKIM-Signature field added (s=test01, d=something-group.com)
+    ```
+
+
+
 === "pass"
 
     ```
