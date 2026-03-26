@@ -20,12 +20,23 @@ Returns the current UTC datetime, optionally shifted by the given offset.
 
 !!! example
 
-    ``` shell
-    let time = now();
+    === "Query"
 
-    let time_earlier = now(-2d);
+        ``` shell
+        let time = now();
 
-    ```
+        let time_earlier = now(-2d);
+
+        ```
+
+    === "Results"
+
+        ``` shell
+        | variable     | result                   |
+        | ------------ | ------------------------ |
+        | time         | 2026-03-26T10:30:00.000Z |
+        | time_earlier | 2026-03-24T10:30:00.000Z |
+        ```
 
 
 ## Datetime: ago()
@@ -54,12 +65,10 @@ ago(<timespan>)
 Returns a datetime equal to the current UTC time minus the specified timespan.
 
 !!! example
+``` shell
+let time = ago(1h);
 
-    ``` shell
-    let time = ago(1h);
-
-    ```
-
+```
 
 ## Timestamp: bin()
 
@@ -82,11 +91,23 @@ Returns the value rounded down to the nearest multiple of `bin_size`.
 
 !!! example
 
-    ``` shell
-    events
-    | aggregate count() by bin(timestamp, 1d)
+    === "Query"
 
-    ```
+        ``` shell
+        events
+        | aggregate count() by bin(timestamp, 1d)
+
+        ```
+
+    === "Results"
+
+        ``` shell
+        | bin_timestamp            | count |
+        | ------------------------ | ----- |
+        | 2026-03-20T00:00:00.000Z | 6234  |
+        | 2026-03-21T00:00:00.000Z | 7891  |
+        | 2026-03-22T00:00:00.000Z | 7234  |
+        ```
 
 
 
@@ -110,10 +131,20 @@ Returns the year in `YYYY` format.
 
 !!! example
 
-    ``` shell
-    let time = year(now());
+    === "Query"
 
-    ```
+        ``` shell
+        let time = year(now());
+
+        ```
+
+    === "Results"
+
+        ``` shell
+        | result |
+        | ------ |
+        | 2026   |
+        ```
 
 ## Month
 
@@ -135,10 +166,20 @@ Returns the year and month in `YYYY-MM` format.
 
 !!! example
 
-    ``` shell
-    let time = month(now());
+    === "Query"
 
-    ```
+        ``` shell
+        let time = month(now());
+
+        ```
+
+    === "Results"
+
+        ``` shell
+        | result  |
+        | ------- |
+        | 2026-03 |
+        ```
 
 ## Week
 
@@ -160,10 +201,20 @@ Returns the year and week number in `YYYY - Week {week number}` format.
 
 !!! example
 
-    ``` shell
-    let time = week(now());
+    === "Query"
 
-    ```
+        ``` shell
+        let time = week(now());
+
+        ```
+
+    === "Results"
+
+        ``` shell
+        | result         |
+        | -------------- |
+        | 2026 - Week 13 |
+        ```
 
 ## To scalar
 
@@ -185,15 +236,27 @@ Returns the scalar value of the expression, usable as a constant in the rest of 
 
 !!! example
 
-    ``` shell
-    let total = toscalar(alerts | where created_at >= ago(7d) | count);
+    === "Query"
 
-    alerts
-    | where created_at >= ago(7d)
-    | aggregate count() by detection_type
-    | extend percentage = (count / total) * 100
+        ``` shell
+        let total = toscalar(alerts | where created_at >= ago(7d) | count);
 
-    ```
+        alerts
+        | where created_at >= ago(7d)
+        | aggregate count() by detection_type
+        | extend percentage = (count / total) * 100
+
+        ```
+
+    === "Results"
+
+        ``` shell
+        | detection_type    | count | percentage |
+        | ----------------- | ----- | ---------- |
+        | Sigma             | 238   | 88.81      |
+        | Sigma Correlation | 14    | 5.22       |
+        | CTI Retrohunt     | 5     | 1.86       |
+        ```
 
 ## String: tolower()
 
@@ -217,13 +280,25 @@ Returns the lowercase version of the input string.
 
     Normalize user names to lowercase for consistent analysis:
 
-    ``` shell
-    events
-    | where timestamp > ago(24h) and user.name != null
-    | aggregate count_by_user = count() by user.name
-    | aggregate sum(count_by_user) by normalized_user = tolower(user.name)
-    | limit 100
-    ```
+    === "Query"
+
+        ``` shell
+        events
+        | where timestamp > ago(24h) and user.name != null
+        | aggregate count_by_user = count() by user.name
+        | aggregate sum(count_by_user) by normalized_user = tolower(user.name)
+        | limit 100
+        ```
+
+    === "Results"
+
+        ``` shell
+        | normalized_user | sum_count_by_user |
+        | --------------- | ----------------- |
+        | ada_lovelace    | 152               |
+        | ken_thompson    | 138               |
+        | barbara_liskov  | 120               |
+        ```
 
 ## String: toupper()
 
@@ -244,15 +319,27 @@ toupper(<string>)
 Returns the uppercase version of the input string.
 
 !!! example
+
     Normalize command lines to uppercase for consistent analysis:
 
-    ``` shell
-    events
-    | where timestamp > ago(24h) and process.command_line != null
-    | aggregate count_by_cmd = count() by process.command_line
-    | aggregate sum(count_by_cmd) by normalized_cmd = toupper(process.command_line)
-    | limit 100
-    ```
+    === "Query"
+
+        ``` shell
+        events
+        | where timestamp > ago(24h) and process.command_line != null
+        | aggregate count_by_cmd = count() by process.command_line
+        | aggregate sum(count_by_cmd) by normalized_cmd = toupper(process.command_line)
+        | limit 100
+        ```
+
+    === "Results"
+
+        ``` shell
+        | normalized_cmd                  | sum_count_by_cmd |
+        | ------------------------------- | ---------------- |
+        | C:\WINDOWS\SYSTEM32\CMD.EXE     | 204              |
+        | POWERSHELL.EXE -EXECUTIONPOLICY | 188              |
+        ```
 
 ## String: extract()
 
@@ -276,22 +363,46 @@ Returns the matched substring for the specified capture group. Returns `null` if
 
 !!! example " Extract the domain from a URL"
 
-    ``` shell
-    events
-    | where timestamp > ago(24h) and url.original != null
-    | select timestamp, domain = extract(@'https?://([^/]+)', 1, url.original)
-    | limit 100
-    ```
-    
+    === "Query"
+
+        ``` shell
+        events
+        | where timestamp > ago(24h) and url.original != null
+        | select timestamp, domain = extract(@'https?://([^/]+)', 1, url.original)
+        | limit 100
+        ```
+
+    === "Results"
+
+        ``` shell
+        | timestamp                | domain              |
+        | ------------------------ | ------------------- |
+        | 2026-03-26T15:35:14.738Z | clients2.google.com |
+        | 2026-03-26T15:35:03.740Z | www.deloitte.com    |
+        | 2026-03-26T15:35:04.539Z | www.squarespace.com |
+        ```
+
 !!! example "Extract user identifiers from log messages"
 
-    ``` shell
-    events
-    | where timestamp > ago(24h) and message != null
-    | select timestamp, user_id = extract(@'user_(\d+)', 1, message)
-    | where user_id != null
-    | limit 100
-    ```
+    === "Query"
+
+        ``` shell
+        events
+        | where timestamp > ago(24h) and message != null
+        | select timestamp, user_id = extract(@'user_(\d+)', 1, message)
+        | where user_id != null
+        | limit 100
+        ```
+
+    === "Results"
+
+        ``` shell
+        | timestamp                | user_id |
+        | ------------------------ | ------- |
+        | 2026-03-26T15:35:14.738Z | 1042    |
+        | 2026-03-26T15:35:03.740Z | 2891    |
+        | 2026-03-26T15:35:04.539Z | 305     |
+        ```
 
 ## String: replace_regex()
 
@@ -318,22 +429,46 @@ Returns the modified string with all non-overlapping matches replaced. If no mat
 
 !!! example "Strip the protocol from URLs"
 
-    ``` shell
-    events
-    | where timestamp > ago(24h) and url.original != null
-    | select timestamp, cleaned_url = replace_regex(url.original, @'https?://', '')
-    | limit 100
-    ```
+    === "Query"
+
+        ``` shell
+        events
+        | where timestamp > ago(24h) and url.original != null
+        | select timestamp, cleaned_url = replace_regex(url.original, @'https?://', '')
+        | limit 100
+        ```
+
+    === "Results"
+
+        ``` shell
+        | timestamp                | cleaned_url                     |
+        | ------------------------ | ------------------------------- |
+        | 2026-03-26T15:35:14.738Z | clients2.google.com/generate204 |
+        | 2026-03-26T15:35:03.740Z | www.deloitte.com/services       |
+        | 2026-03-26T15:35:04.539Z | www.squarespace.com/login       |
+        ```
 
 
 !!! example "Sanitize email addresses in logs"
 
-    ``` shell
-    events
-    | where timestamp > ago(24h) and user.email != null
-    | select timestamp, sanitized_email = replace_regex(user.email, @'(\w+)@.*', '$1@example.com')
-    | limit 100
-    ```
+    === "Query"
+
+        ``` shell
+        events
+        | where timestamp > ago(24h) and user.email != null
+        | select timestamp, sanitized_email = replace_regex(user.email, @'(\w+)@.*', '$1@example.com')
+        | limit 100
+        ```
+
+    === "Results"
+
+        ``` shell
+        | timestamp                | sanitized_email   |
+        | ------------------------ | ----------------- |
+        | 2026-03-26T15:35:14.738Z | ada@example.com   |
+        | 2026-03-26T15:35:03.740Z | ken@example.com   |
+        | 2026-03-26T15:35:04.539Z | grace@example.com |
+        ```
 
 
 ## Math: round()
@@ -359,12 +494,24 @@ Returns the rounded number to the specified precision.
 
 !!! example "Round time_to_detect values to 2 decimal places for cleaner reporting"
 
-    ``` shell
-    alerts
-    | where created_at > ago(7d)
-    | select ttd_minutes = round(time_to_detect / 60.0, 2)
-    | limit 100
-    ```
+    === "Query"
+
+        ``` shell
+        alerts
+        | where created_at > ago(7d)
+        | select ttd_minutes = round(time_to_detect / 60.0, 2)
+        | limit 100
+        ```
+
+    === "Results"
+
+        ``` shell
+        | ttd_minutes |
+        | ----------- |
+        | 17.25       |
+        | 0.13        |
+        | 31.73       |
+        ```
 
 
 ## Type conversion: toint()
@@ -393,25 +540,49 @@ If the input is a decimal number, the value is truncated to the integer portion 
 
 !!! example "Convert a string field to integer for numeric comparison"
 
-    ``` shell
-    events
-    | where timestamp > ago(24h)
-    | select port_number = toint(destination.port)
-    | where port_number > 1024
-    | limit 100
-    ```
+    === "Query"
+
+        ``` shell
+        events
+        | where timestamp > ago(24h)
+        | select port_number = toint(destination.port)
+        | where port_number > 1024
+        | limit 100
+        ```
+
+    === "Results"
+
+        ``` shell
+        | port_number |
+        | ----------- |
+        | 443         |
+        | 8080        |
+        | 3389        |
+        ```
 
 
 
 !!! example "Convert and aggregate by numeric field"
 
-    ``` shell
-    events
-    | where timestamp > ago(24h)
-    | extend severity_int = toint(event.severity)
-    | aggregate count() by severity_int
-    | order by severity_int desc
-    ```
+    === "Query"
+
+        ``` shell
+        events
+        | where timestamp > ago(24h)
+        | extend severity_int = toint(event.severity)
+        | aggregate count() by severity_int
+        | order by severity_int desc
+        ```
+
+    === "Results"
+
+        ``` shell
+        | severity_int | count |
+        | ------------ | ----- |
+        | 10            | 204   |
+        | 20            | 188   |
+        | 30            | 42    |
+        ```
 
 ## Conditional: iff()
 
@@ -438,13 +609,25 @@ Returns the `then_value` when condition is true, otherwise returns `else_value`.
 
 !!! example  "Categorize alerts based on urgency and time to detect"
 
-    ``` shell
-    alerts
-    | where created_at > ago(7d)
-    | aggregate count() by severity_category = iff(urgency >= 80, "Critical",
-        iff(urgency >= 50, "High", "Medium"))
-    | limit 100
-    ```
+    === "Query"
+
+        ``` shell
+        alerts
+        | where created_at > ago(7d)
+        | aggregate count() by severity_category = iff(urgency >= 80, "Critical",
+            iff(urgency >= 50, "High", "Medium"))
+        | limit 100
+        ```
+
+    === "Results"
+
+        ``` shell
+        | severity_category | count |
+        | ----------------- | ----- |
+        | Critical          | 82    |
+        | High              | 52    |
+        | Medium            | 14    |
+        ```
 
 ## Null handling: coalesce()
 
@@ -469,12 +652,24 @@ Returns the first non-null value from the argument list, or null if all argument
 
 !!! example "Provide fallback values for user identification when some fields might be null"
 
-    ``` shell
-    events
-    | where timestamp > ago(24h)
-    | aggregate count() by user_identifier = coalesce(user.name, user.email, "Unknown")
-    | limit 100
-    ```
+    === "Query"
+
+        ``` shell
+        events
+        | where timestamp > ago(24h)
+        | aggregate count() by user_identifier = coalesce(user.name, user.email, "Unknown")
+        | limit 100
+        ```
+
+    === "Results"
+
+        ``` shell
+        | user_identifier   | count |
+        | ----------------- | ----- |
+        | ada_lovelace      | 152   |
+        | ken@example.com   | 42    |
+        | Unknown           | 18    |
+        ```
 
 
 ## Datetime: format_datetime()
@@ -516,15 +711,26 @@ Returns a formatted string representation of the datetime.
 
 !!! example  "Format timestamps for cleaner reporting"
 
-    ``` shell
-    alerts
-    | where created_at > ago(24h)
-    | extend date_only = format_datetime(created_at, '%Y-%m-%d')
-    | extend readable_time = format_datetime(created_at, '%B %d, %Y at %H:%M')
-    | extend eu_format = format_datetime(created_at, '%d-%m-%Y')
-    | aggregate count() by date_only, readable_time, eu_format, detection_type
-    | limit 100
-    ```
+    === "Query"
+
+        ``` shell
+        alerts
+        | where created_at > ago(24h)
+        | extend date_only = format_datetime(created_at, '%Y-%m-%d')
+        | extend readable_time = format_datetime(created_at, '%B %d, %Y at %H:%M')
+        | extend eu_format = format_datetime(created_at, '%d-%m-%Y')
+        | aggregate count() by date_only, readable_time, eu_format, detection_type
+        | limit 100
+        ```
+
+    === "Results"
+
+        ``` shell
+        | date_only  | readable_time              | eu_format  | detection_type | count |
+        | ---------- | -------------------------- | ---------- | -------------- | ----- |
+        | 2026-03-26 | March 26, 2026 at 15:35    | 26-03-2026 | CTI            | 14    |
+        | 2026-03-26 | March 26, 2026 at 16:02    | 26-03-2026 | Sigma          | 8     |
+        ```
 
 ## Aggregation: countif()
 
@@ -549,22 +755,45 @@ Returns the count of rows for which the predicate is `true`. Returns `0` if no r
 
 !!! example "Count successful and failed login attempts per source IP"
 
-    ``` shell
-    events
-    | where timestamp > ago(24h) and event.category == 'authentication'
-    | aggregate success_count = countif(event.code == '4624'), failed_count = countif(event.code == '4625') by source.ip
-    | order by failed_count desc
-    | limit 100
-    ```
+    === "Query"
+
+        ``` shell
+        events
+        | where timestamp > ago(24h) and event.category == 'authentication'
+        | aggregate success_count = countif(event.code == '4624'), failed_count = countif(event.code == '4625') by source.ip
+        | order by failed_count desc
+        | limit 100
+        ```
+
+    === "Results"
+
+        ``` shell
+        | source.ip  | success_count | failed_count |
+        | ---------- | ------------- | ------------ |
+        | 1.0.0.95   | 142           | 33           |
+        | 1.5.178.82 | 136           | 24           |
+        ```
 
 
 !!! example  "Count high-urgency vs. low-urgency alerts per detection type"
 
-    ``` shell
-    alerts
-    | where created_at > ago(7d)
-    | aggregate high = countif(urgency >= 80), low = countif(urgency < 80) by detection_type
-    ```
+    === "Query"
+
+        ``` shell
+        alerts
+        | where created_at > ago(7d)
+        | aggregate high = countif(urgency >= 80), low = countif(urgency < 80) by detection_type
+        ```
+
+    === "Results"
+
+        ``` shell
+        | detection_type    | high | low |
+        | ----------------- | ---- | --- |
+        | Sigma             | 52   | 186 |
+        | Sigma Correlation | 8    | 6   |
+        | CTI               | 2    | 3   |
+        ```
 
 ## Related articles
 
