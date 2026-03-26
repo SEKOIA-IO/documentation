@@ -1,7 +1,6 @@
 # Asset connector health status and logs
 
-_**[Reveal module](/docs/xdr/features/investigate
-/reveal_index.md)(#){.md-button }** — This feature requires the Reveal add-on module._
+_**[Reveal module](xdr/features/modules/reveal_index.md)(#){.md-button }** — This feature requires the Reveal add-on module._
 
 The asset connectors panel provides visibility into whether a connector is experiencing errors and what happened during its recent activity. Use it to confirm successful synchronizations, identify issues preventing asset collection, and gather precise error details for troubleshooting or escalation.
 
