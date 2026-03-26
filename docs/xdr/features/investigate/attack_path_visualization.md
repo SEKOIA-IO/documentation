@@ -114,7 +114,7 @@ In many cases, breaking a single relationship can disrupt the full path.
 
 ## Related links
 
-- [Asset context panel](/xdr/features/investigate/asset_context_panel.md#attack-path-visualization-reveal) — Discover the other informations accessible with the asset context panel, including hygiene, vulnerability, and security control data for the same asset.
+- [Asset context panel](/xdr/features/investigate/asset_context_panel.md#attack-path-visualization-reveal) — Discover the other information accessible with the asset context panel, including hygiene, vulnerability, and security control data for the same asset.
 - [Points of interest](/xdr/features/detect/points_of_interest.md) — Behavioral signals surfaced on assets that can complement attack path analysis by adding context about unusual login patterns or anomalous activity.
 - [Asset connector health status and logs](/xdr/features/collect/asset_connector_health.md) — How to monitor and troubleshoot the asset connectors that provide the enrichment data powering the attack path graph.
 - [Collect — Assets](/xdr/features/collect/assets.md) — How assets are configured and discovered, which determines the data available in the graph.
