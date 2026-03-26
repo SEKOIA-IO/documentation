@@ -1,4 +1,4 @@
-uuid: a90e587e-06e7-47c4-9738-1f9172277646
+uuid: 47c9021d-4add-435a-a9db-68e8dc053b6b
 name: Radware DefensePro [Beta]
 type: intake
 
@@ -78,13 +78,13 @@ There are two ways to configure syslog on Radware DefensePro: through the Web UI
 
 {!_shared_content/integration/forwarder_configuration.md!}
 
-{!_shared_content/operations_center/integrations/generated/a90e587e-06e7-47c4-9738-1f9172277646_sample.md!}
+{!_shared_content/operations_center/integrations/generated/47c9021d-4add-435a-a9db-68e8dc053b6b_sample.md!}
 
 {!_shared_content/integration/detection_section.md!}
 
-{!_shared_content/operations_center/detection/generated/suggested_rules_a90e587e-06e7-47c4-9738-1f9172277646_do_not_edit_manually.md!}
+{!_shared_content/operations_center/detection/generated/suggested_rules_47c9021d-4add-435a-a9db-68e8dc053b6b_do_not_edit_manually.md!}
 
-{!_shared_content/operations_center/integrations/generated/a90e587e-06e7-47c4-9738-1f9172277646.md!}
+{!_shared_content/operations_center/integrations/generated/47c9021d-4add-435a-a9db-68e8dc053b6b.md!}
 
 ## Further readings
 
