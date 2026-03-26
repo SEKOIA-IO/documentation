@@ -109,7 +109,7 @@ nav:
       - Sigma: xdr/features/detect/sigma.md
       - Anomaly Detection: xdr/features/detect/anomaly.md
       - IOCs Collections: xdr/features/detect/ioccollections.md
-      - Discover Points of Interest: docs/xdr/features/detect/points_of_interest.md
+      - Discover Points of Interest: xdr/features/detect/points_of_interest.md
     - Investigate:
       - Alerts: xdr/features/investigate/alerts.md
       - Events page: xdr/features/investigate/events.md
