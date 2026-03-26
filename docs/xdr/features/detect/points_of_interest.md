@@ -1,6 +1,6 @@
 # Points of interest
 
-__**[Reveal module](xdr/features/modules/reveal_index.md)(#){.md-button }** — This feature requires the Reveal add-on module._ — This feature requires the Reveal add-on module._
+__**[Reveal module](/xdr/features/modules/reveal_index.md)(#){.md-button }** — This feature requires the Reveal add-on module._ — This feature requires the Reveal add-on module._
 
 Points of interest (PoIs) are behavioral investigation signals surfaced in the [Asset context panel](/xdr/features/investigate/asset_context_panel.md) to help analysts assess whether an asset is associated with unusual or otherwise meaningful activity. A PoI provides context to support analyst judgment; it does not by itself confirm malicious activity.
 
