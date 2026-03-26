@@ -11,11 +11,11 @@ The asset context panel is the central investigation surface in Sekoia. The foll
 
 - [Asset context panel](/xdr/features/investigate/asset_context_panel.md) — Full reference for the asset context panel, including all tabs and cards. Describes the overview, timeline, related events, hygiene, vulnerabilities, and security controls tabs.
 - [Attack path visualization](/xdr/features/investigate/attack_path_visualization.md) — How to open and interpret the attack path visualization from the asset context panel, including graph navigation, node types, and remediation prioritization.
-- [Points of interest](/xdr/features/investigate/points_of_interest.md) — How Reveal surfaces behavioral signals (UEBA anomalies and notable activities) on assets during triage and investigation.
+- [Points of interest](/xdr/features/detect/points_of_interest.md) — How Reveal surfaces behavioral signals (UEBA anomalies and notable activities) on assets during triage and investigation.
 
 ## Asset connectors
 
-- [Asset connector health status and logs](asset_connector_health.md) — How to monitor asset connector error states and use connector logs to troubleshoot synchronization issues.
+- [Asset connector health status and logs](/xdr/features/investigate/asset_context_panel.md) — How to monitor asset connector error states and use connector logs to troubleshoot synchronization issues.
 
 ## Related links
 
