@@ -17,7 +17,7 @@
 
 === "Results"
 
-    | timestamp                | sekoiaio.customer.community_uuid     | community.name.     |
+    | timestamp                | sekoiaio.customer.community_uuid     | community.name     |
     | ------------------------ | ------------------------------------ | ------------------- |
     | 2026-03-25T15:17:20.357Z | 904df422-adf9-4be8-b2b6-d027c0d68184 | Reynholm Industries |
     | 2026-03-25T15:17:57.942Z | 904df422-adf9-4be8-b2b6-d027c0d68184 | Reynholm Industries |
