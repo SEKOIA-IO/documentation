@@ -82,11 +82,7 @@ The system checks for license expiration daily at 02:00 (UTC). If the system det
 
 To help administrators anticipate subscription renewals, Sekoia notifies them when a license is approaching its expiration date.
 
-These notifications are evaluated daily, around 08:00 UTC, based on the license duration and on the administrator scope:
-
-* **workspace admins** are notified at workspace level
-* **community admins** are notified at community level
-
+These notifications are evaluated daily, around 08:00 UTC, based on the license duration and on the administrator scope.
 Sekoia currently supports two notification channels for nearly expired licenses:
 
 * **email notifications**
