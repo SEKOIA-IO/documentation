@@ -48,7 +48,7 @@ You receive a notification when your community subscription is close to expirati
 
 When a nearly expired license notification is triggered, an in-app banner appears at the top of the application.
 
-![pale orange banner displayed at the top of the page notifying user of nearly ended subscription with a CTA to consult subscription page](docs/assets/in_app_banner.png){: style="max-width:100%"}
+![pale orange banner displayed at the top of the page notifying user of nearly ended subscription with a CTA to consult subscription page](/assets/in_app_banner.png){: style="max-width:100%"}
 
 The banner is displayed to:
 
