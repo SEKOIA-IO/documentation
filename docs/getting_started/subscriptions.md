@@ -77,5 +77,5 @@ The trial subscription includes:
 
 - [Allocate a trial subscription](/xdr/FAQ/subscriptions/allocate_trial_subscription.md): Step-by-step instructions for manually 
 assigning a trial subscription to a community from the MSSP workspace.
-- [Subscription notifications](/xdr/FAQ/subscriptions/subscription_notifications.md): How Sekoia notifies administrators about 
+- [Subscription notifications](/xdr/FAQ/subscriptions/subscriptions_notifications.md): How Sekoia notifies administrators about 
 upcoming and expired licenses, including email and in-app banner behavior.
