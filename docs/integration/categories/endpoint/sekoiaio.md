@@ -568,9 +568,14 @@ Once the configuration file is modified, restart the agent:
 
 ### Ignoring events
 
+To optimize your consumption, Sekoia.io recommends a hierarchy of filtering. By applying filters early in the data pipeline, you reduce unnecessary noise before it impacts platform performance or costs. [Read more about Log volume reduction strategies](/xdr/usecases/playbook/log_volume_reduction_strategies.md)
+
+
+**This sections explains how to create an optimization rule at the forwarder level. If this method proves insufficient, we invite you to consult our guide to filter logs when they reach the Sekoia.io platform : [Create optimization rules–(/xdr/features/collect/create_optimization_rule.md).
+**
+
 !!! INFO
     This feature is currently in beta
-	Optimization rules can be used plateform-wide on any integration
 
 The agent allows you to ignore specific events based on their field values.
 To achieve this, it relies on the concept of optimization rules that we also have in the platform.
