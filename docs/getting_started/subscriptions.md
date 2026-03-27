@@ -2,6 +2,10 @@ The Subscriptions page is a dedicated section within Sekoia designed to provide 
 
 From there, they can easily track active and inactive subscriptions, allocate subscriptions to specific communities, and manage trial periods for newly created communities. 
 
+
+![subscription page showing the different active modules and remaining days](/assets/subscription_page.png){: style="max-width:100%"}
+
+
 To access the Subscriptions page, the pre-requisites are:
 
 - Admins, analysts and guests can have access to the page
@@ -109,6 +113,8 @@ Community admins receive a notification when their community subscription is clo
 ### In-app banner behavior
 
 When a nearly expired license notification is triggered, Sekoia can also display an in-app banner at the top of the application.
+
+![pale orange banner displayed at the top of the page notifying user of nearly ended subscription with a CTA to consult subscription page](docs/assets/in_app_banner.png){: style="max-width:100%"}
 
 The banner is displayed only to:
 
