@@ -16,7 +16,7 @@
 | [intake_formats](#intake_formats) | Intake formats (parsers) | Volume monitoring |
 | [entities](#entities) | Company entities | Entity tracking, detailed reporting |
 | [assets](#assets) | Known Assets | Asset Investigations |
-| [asset_properties`](#asset_properties) | Listing known properties related to the Asset | Asset Investigations |
+| [asset_properties](#asset_properties) | Listing known properties related to the Asset | Asset Investigations |
 | [asset_partitions](#asset_partitions) | Partitions on a per Asset basis and Hygiene related to these | Understand and improve Hygiene state Note: Part of the Reveal plan |
 | [asset_accounts](#asset_accounts) | Listing local users accounts related to the Asset | Impact analysis and incident correlation Note: Part of the Reveal plan |
 
