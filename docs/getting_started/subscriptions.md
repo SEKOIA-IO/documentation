@@ -1,138 +1,81 @@
-The Subscriptions page is a dedicated section within Sekoia designed to provide community admins with a comprehensive overview of their subscriptions. 
+# Subscriptions
 
-From there, they can easily track active and inactive subscriptions, allocate subscriptions to specific communities, and manage trial periods for newly created communities. 
+The Subscriptions page gives you a centralized view of all active and inactive licenses across your communities. 
+You can use it to monitor subscription status, track expiration dates, and manage trial periods.
 
+## Access requirements
+
+The following roles can access the Subscriptions page:
+
+| Role | View subscriptions | Allocate trials and subscriptions |
+|---|---|---|
+| Admin | ✅ | ✅ |
+| Analyst | ✅ | ❌ |
+| Guest | ✅ | ❌ |
+
+You must also have the following permissions:
+
+- Read community licenses
+- Manage community licenses
+
+## Subscription information
+
+Regardless of your community type, the Subscriptions page displays:
+
+- Current subscriptions
+- Expired subscriptions
+
+For each subscription, you can view:
+
+- The plan type (e.g., Defend Core, Defend Prime, Intelligence)
+- The subscription period, region, number of defended assets, and retention durations
+- The remaining days on the subscription
+
+To compare available plans, click **Compare plans**. To contact the Sekoia team, click **Contact us**.
+
+## Single-tenant communities
+
+If you manage a single-tenant community, the Subscriptions page shows the subscriptions attached to that community.
 
 ![subscription page showing the different active modules and remaining days](/assets/subscription_page.png){: style="max-width:100%"}
 
 
-To access the Subscriptions page, the pre-requisites are:
-
-- Admins, analysts and guests can have access to the page
-- Only `Admin roles` can allocate trial and subscriptions 
-- Permissions: Read community licenses, Manage community licenses
-
-## Single-tenant communities
-
-The subscription page will show the following information:
-
-- Current subscriptions
-- Expired subscriptions
-
-Admins can view a comprehensive list of all active subscriptions across their community. They can monitor the status of subscriptions, including:
-
-- The type of plan (e.g., Defend Core, Defend Prime, Intelligence).
-- Key properties such as the subscription period, region, number of defended assets, and retention durations.
-- The remaining days of their subscription
-
-They can also compare the different plans of Sekoia by clicking on `Compare plans` and contact our teams using the button `Contact us`.
-
 ## MSSP (multi-tenant) communities
 
-From the workspace, it is possible to access the current subscription for the workspace as well as have an overview of all your community subscriptions. 
+If you manage a multi-tenant workspace, the Subscriptions page gives you visibility across all your managed communities.
 
-The double navigation allows for a quick overview of all communities. This listing includes the name of the community as well as the status of the subscription. A red icon shows that the community has no active subscription. 
+A double navigation panel lets you switch between communities quickly. The community list displays each community 
+name alongside its subscription status. A red icon indicates that a community has no active subscription.
 
-The subscription page will show the following information:
-
-- Current subscriptions
-- Expired subscriptions
-
-Admins can view a comprehensive list of all active subscriptions across their community. They can monitor the status of subscriptions, including:
-
-- The type of plan (e.g., Defend Core, Defend Prime, Intelligence).
-- Key properties such as the subscription period, region, number of defended assets, and retention durations.
-- The remaining days of their subscription
-
-They can also compare the different plans of Sekoia by clicking on `Compare plans` and contact our teams using the button `Contact us`.
 
 ### Community subscriptions overview
 
-From the workspace, admins can have a quick overview of all their managed communities subscriptions. 
+From the workspace, you can get a consolidated view of all managed community subscriptions. You can:
 
-They can: 
-
-- See the list of all communities and their subscriptions
+- View the full list of communities and their subscription status
 - Filter by: Trial, nearly expired, not active
 - Search for a specific community using the search bar
 
-## Allocate trial subscription
+## Trial subscriptions
 
-A **trial** is a temporary subscription that allows users to access the platform's features and functionalities for a limited time, without any financial commitment. In Sekoia, the trial subscription offered is for a duration of **45 days**.
+A trial is a temporary subscription that gives you access to platform features for a limited period, with no 
+financial commitment.
 
-- **Duration**: 45 days
-- **Plan**: Defend Prime
-- **Number of assets**: Up to 1000 assets
-- **Hot storage**: 7 days
-- **Archiving duration**: 0 days
+When you create a new community, a trial subscription is automatically made available.
 
-When creating a new community, a trial subscription is **automatically made available**.
+The trial subscription includes:
 
-## Subscription notifications
+| Property | Value |
+|---|---|
+| Duration | 45 days |
+| Plan | Defend Prime |
+| Number of assets | Up to 1,000 |
+| Hot storage | 7 days |
+| Archiving duration | 0 days |
 
-Sekoia automatically sends email notifications to inform administrators about key events in the subscription lifecycle, 
-such as upcoming expirations or expired licenses.
+## Related links
 
-The system evaluates notifications through scheduled daily processes. With the exception of manual operations, Sekoia does not process subscription status changes or notifications in real-time.
-
-Only users with the Admin role receive subscription-related email notifications.
-
-### Expired license
-
-When a subscription expires, Sekoia sends an email to the administrators of the affected community to inform them that the license is inactive.
-The system checks for license expiration daily at 02:00 (UTC). If the system detects an expired license during this check, it automatically sends the notification.
-
-### Nearly expired license
-
-To help administrators anticipate subscription renewals, Sekoia notifies them when a license is approaching its expiration date.
-
-These notifications are evaluated daily, around 08:00 UTC, based on the license duration and on the administrator scope.
-Sekoia currently supports two notification channels for nearly expired licenses:
-
-* **email notifications**
-* **in-app banners**, displayed at the top of the application
-
-The in-app banner is shown on the same day as the email notification.
-
-**Workspace**
-
-Workspace admins receive a notification when at least one managed community has a subscription close to expiration:
-
-* **Long-term licenses:** If the license duration is greater than 100 days, the notification is sent when the license expires in less than 90 days.
-* **Short-term licenses:**: If the license duration is 100 days or less, the notification is sent when the license expires in less than 10 days.
-
-These notifications provide a consolidated view of upcoming expirations across all managed communities.
-
-**Community**
-
-Community admins receive a notification when their community subscription is close to expiration:
-
-* **Long-term licenses:** If the license duration is greater than 100 days, the notification is sent when the license expires in less than 30 days.
-* **Short-term licenses:** If the license duration is 100 days or less, the notification is sent when the license expires in less than 5 days.
-
-### In-app banner behavior
-
-When a nearly expired license notification is triggered, Sekoia can also display an in-app banner at the top of the application.
-
-![pale orange banner displayed at the top of the page notifying user of nearly ended subscription with a CTA to consult subscription page](docs/assets/in_app_banner.png){: style="max-width:100%"}
-
-The banner is displayed only to:
-
-* community admins of communities with a nearly expired license
-* workspace admins of workspaces containing one or more communities with a nearly expired license
-
-Users can dismiss the banner from the interface. This dismissal is temporary:
-
-* the banner stays hidden until the next daily recomputation
-* if the license is still nearly expired after recomputation, the banner is displayed again the next day
-
-This behavior ensures repeated visibility until the situation is resolved, while allowing users to temporarily hide the message.
-
-### Notification schedule
-
-| Event                      | Recipient        | Condition                                      | Evaluation time (UTC) |
-| -------------------------- | ---------------- | ---------------------------------------------- | --------------------- |
-| License expired            | Community admins | License end date reached                       | Daily at 02:00        |
-| Nearly expired (workspace) | Workspace admins | < 90 days (or < 10 days if license ≤ 100 days) | Daily ~08:00          |
-| Nearly expired (community) | Community admins | < 30 days (or < 5 days if license ≤ 100 days)  | Daily ~08:00          |
-
+- [Allocate a trial subscription](/xdr/FAQ/subscriptions/allocate-trial-subscription.md): Step-by-step instructions for manually 
+assigning a trial subscription to a community from the MSSP workspace.
+- [Subscription notifications](/xdr/FAQ/subscriptions/subscription-notifications.md): How Sekoia notifies administrators about 
+upcoming and expired licenses, including email and in-app banner behavior.
