@@ -5,20 +5,20 @@
 | Data Source | Description | Use Cases |
 |-------------|-------------|-----------|
 | `events` | Security events | Threat hunting, incident investigation, SOC reporting. You will receive events that are retained for the duration of your hot storage |
-| [event_telemetry](#event-telemetry) | Telemetry on events | Analytics on your ingestion pipelines |
+| [event_telemetry](#event_telemetry) | Telemetry on events | Analytics on your ingestion pipelines |
 | `eternal_events` | Security events related to alerts or cases | Extract metrics from events related to alerts/cases. Access events related to an alert that are beyond your hot storage retention period |
-| [alerts](#alerts-properties) | Security alerts and detections | SOC monitoring, alert pattern analysis |
-| [cases](#cases-properties) | Security incidents and cases | Case management, incident correlation |
-| [custom_statuses](#custom-statuses) | Alerts and cases custom statuses | Reporting |
-| [custom_priorities](#custom-priorities) | Cases custom priorities | Reporting |
-| [communities](#communities-properties) | Communities (for multi-tenant only) | Multi-tenant reporting |
-| [intakes](#intakes-properties) | Data sources | Data source management, volume monitoring |
-| [intake_formats](#intake-formats-properties) | Intake formats (parsers) | Volume monitoring |
-| [entities](#entities-properties) | Company entities | Entity tracking, detailed reporting |
+| [alerts](#alerts) | Security alerts and detections | SOC monitoring, alert pattern analysis |
+| [cases](#cases) | Security incidents and cases | Case management, incident correlation |
+| [custom_statuses](#custom_statuses) | Alerts and cases custom statuses | Reporting |
+| [custom_priorities](#custom_priorities) | Cases custom priorities | Reporting |
+| [communities](#communities) | Communities (for multi-tenant only) | Multi-tenant reporting |
+| [intakes](#intakes) | Data sources | Data source management, volume monitoring |
+| [intake_formats](#intake_formats) | Intake formats (parsers) | Volume monitoring |
+| [entities](#entities) | Company entities | Entity tracking, detailed reporting |
 | [assets](#assets) | Known Assets | Asset Investigations |
-| [asset_properties`](#asset-properties) | Listing known properties related to the Asset | Asset Investigations |
-| [asset_partitions](#asset-partitions) | Partitions on a per Asset basis and Hygiene related to these | Understand and improve Hygiene state Note: Part of the Reveal plan |
-| [asset_accounts](#asset-accounts) | Listing local users accounts related to the Asset | Impact analysis and incident correlation Note: Part of the Reveal plan |
+| [asset_properties`](#asset_properties) | Listing known properties related to the Asset | Asset Investigations |
+| [asset_partitions](#asset_partitions) | Partitions on a per Asset basis and Hygiene related to these | Understand and improve Hygiene state Note: Part of the Reveal plan |
+| [asset_accounts](#asset_accounts) | Listing local users accounts related to the Asset | Impact analysis and incident correlation Note: Part of the Reveal plan |
 
 ## event_telemetry
 
