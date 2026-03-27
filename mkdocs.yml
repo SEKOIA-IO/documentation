@@ -177,6 +177,9 @@ nav:
     - Assets: xdr/FAQ/Assets_qa.md
     - Ingestion:
       - Delay with event ingestion or alert creation: xdr/FAQ/ingestion/ingestion_delay.md
+    - Subscriptions: 
+      - Allocate trial subscription: xdr/FAQ/subscriptions/allocate_trial_subscription.md
+      - Subscriptions notifications: xdr/FAQ/subscriptions/subscriptions_notifications.md
     - Sekoia.io Endpoint agent: xdr/FAQ/SEKOIA_Endpoint_Agent.md
     - Datetime representation: xdr/FAQ/datetime.md
 - Sekoia Intelligence (CTI):
