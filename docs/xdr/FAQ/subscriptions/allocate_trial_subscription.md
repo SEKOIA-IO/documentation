@@ -32,5 +32,5 @@ new trial status.
 
 - [Subscriptions](/getting_started/subscriptions.md): An overview of the Subscriptions page, including access requirements, 
 subscription details, and trial specifications for single-tenant and MSSP communities.
-- [Subscription notifications](/xdr/FAQ/subscriptions/subscription_notifications.md): How Sekoia notifies administrators about 
+- [Subscription notifications](/xdr/FAQ/subscriptions/subscriptions_notifications.md): How Sekoia notifies administrators about 
 upcoming and expired licenses, including email and in-app banner behavior.
