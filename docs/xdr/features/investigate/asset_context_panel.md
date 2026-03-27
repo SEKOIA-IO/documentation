@@ -1,5 +1,5 @@
 # Asset context panel
-**[Reveal module](/xdr/features/modules/reveal_index.md)(#){.md-button }** — Core sections are available to all clients. Hygiene, vulnerabilities, security controls, points of interest, and attack path visualization require the Reveal add-on module.
+_**[Reveal module](/xdr/features/modules/reveal_index.md)** — Core sections are available to all clients. Hygiene, vulnerabilities, security controls, points of interest, and attack path visualization require the Reveal add-on module._
 
 The **asset context panel** is the analyst’s command window for understanding an asset’s full context — its identity, posture, vulnerabilities, and recent behavior — directly within your investigation workflow.
 
