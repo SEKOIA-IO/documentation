@@ -104,3 +104,11 @@ Go to your Sekoia.io [Intakes page](https://app.sekoia.io/operations/intakes), a
 {!_shared_content/operations_center/detection/generated/suggested_rules_a3617bc2-090f-44f6-aeb2-1c6088e24878_do_not_edit_manually.md!}
 
 {!_shared_content/operations_center/integrations/generated/a3617bc2-090f-44f6-aeb2-1c6088e24878.md!}
+
+## Troubleshooting
+
+### App ID `8bd644d1-64a1-4d4b-ae52-2e0cbf64e373` not found
+
+In order to retrieve Office365 MessageTrace logs, the Microsoft GraphAPI requires to provision the Microsoft application `8bd644d1-64a1-4d4b-ae52-2e0cbf64e373` as Service Principal in your tenant.
+
+Please refer [Provision the Microsoft Application](#provision-the-microsoft-application).
