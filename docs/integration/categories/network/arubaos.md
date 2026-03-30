@@ -1,113 +1,116 @@
-uuid: d6d15297-e977-4584-9bb3-f0290b99f014
-name: ArubaOS Switch
-type: intake
+# arubaos
 
-## Overview
+uuid: d6d15297-e977-4584-9bb3-f0290b99f014 name: ArubaOS Switch type: intake
+
+### Overview
 
 [Aruba OS-S](https://arubanetworking.hpe.com/techdocs/AOS-S/DocPortal/Content/home.htm) is the operating system developed by Aruba Networks, designed for their networking devices and infrastructure. It offers advanced features for wireless and wired networking, security, and management, enhancing network performance and reliability.
 
-- **Vendor**: Aruba Networks
-- **Supported environment**: On Premise
-- **Version compatibility**: AOS-S 16.10 (Latest version as of now)
-- **Detection based on**: Telemetry
-- **Supported application or feature**: Network management and performance monitoring
+* **Vendor**: Aruba Networks
+* **Supported environment**: On Premise
+* **Version compatibility**: AOS-S 16.10 (Latest version as of now)
+* **Detection based on**: Telemetry
+* **Supported application or feature**: Network management and performance monitoring
 
-## High-Level Architecture Diagram
+### High-Level Architecture Diagram
 
-- **Type of integration**: Outbound (PUSH to Sekoia.io)
-- **Schema**
+* **Type of integration**: Outbound (PUSH to Sekoia.io)
+* **Schema**
 
-![arubaos_switch_architecture](/assets/integration/arubaos_switch_architecture.png){: style="max-width:100%"}
+{: style="max-width:100%"}
 
+### Specification
 
-## Specification
+#### Prerequisites
 
-### Prerequisites
+* **Resource**:
+  * Self-managed syslog forwarder
+* **Network**:
+  * Outbound traffic allowed
+* **Permissions**:
+  * Administrator or Root access to the ArubaOS device
+  * Root access to the Linux server with the syslog forwarder
 
+#### Transport Protocol/Method
 
-- **Resource**:
-    - Self-managed syslog forwarder
-- **Network**:
-    - Outbound traffic allowed
-- **Permissions**:
-    - Administrator or Root access to the ArubaOS device
-    - Root access to the Linux server with the syslog forwarder
+* **Indirect Syslog**
 
-### Transport Protocol/Method
+#### Logs details
 
-- **Indirect Syslog**
+* **Supported functionalities**: See section [Overview](arubaos.md#overview)
+* **Supported type(s) of structure**: Plain Text
+* **Supported verbosity level**: Informational
 
-### Logs details
+!!! Note Log levels are based on the taxonomy of [RFC5424](https://datatracker.ietf.org/doc/html/rfc5424). Adapt according to the terminology used by the editor.
 
-- **Supported functionalities**: See section [Overview](#overview)
-- **Supported type(s) of structure**: Plain Text
-- **Supported verbosity level**: Informational
+### Step-by-Step Configuration Procedure
 
-!!! Note
-    Log levels are based on the taxonomy of [RFC5424](https://datatracker.ietf.org/doc/html/rfc5424). Adapt according to the terminology used by the editor.
-
-## Step-by-Step Configuration Procedure
-
-### Instructions on the 3rd Party Solution
+#### Instructions on the 3rd Party Solution
 
 This setup guide will show you how to forward your ArubaOS logs to Sekoia.io by means of a syslog transport channel.
 
-#### Enable Syslog Forwarding for ArubaOS
+**Enable Syslog Forwarding for ArubaOS**
 
-- Log in to your ArubaOS device using SSH, Telnet, or the web-based management interface, depending on your preferred method.
-- Access the configuration mode on your ArubaOS device. For example, if you are using the CLI, you might use the `configure terminal` command.
+* Log in to your ArubaOS device using SSH, Telnet, or the web-based management interface, depending on your preferred method.
+* Access the configuration mode on your ArubaOS device. For example, if you are using the CLI, you might use the `configure terminal` command.
 
-#### Configure Syslog Settings
+**Configure Syslog Settings**
 
-- Use the following command to specify the syslog server's IP address:
-  ```bash
-  logging x.x.x.x
-  ```
-  Replace `x.x.x.x` with the IP address of your syslog concentrator.
-- Additionally, you can specify the syslog server's UDP port using the `port` keyword:
-  ```bash
-  logging x.x.x.x port yyyy
-  ```
-  Replace `yyyy` with the port number your syslog concentrator is configured to listen on.
+*   Use the following command to specify the syslog server's IP address:
 
-#### Set Log Severity Levels
+    ```bash
+    logging x.x.x.x
+    ```
 
-- Configure the severity level of logs that will be sent to the syslog server.
-  ```bash
-  logging level informational
-  ```
+    Replace `x.x.x.x` with the IP address of your syslog concentrator.
+*   Additionally, you can specify the syslog server's UDP port using the `port` keyword:
 
-#### Save Configuration Changes
+    ```bash
+    logging x.x.x.x port yyyy
+    ```
 
-- Save your configuration changes by issuing the appropriate command (e.g., `write memory` or `copy running-config startup-config`) to ensure that the syslog configuration persists across reboots.
+    Replace `yyyy` with the port number your syslog concentrator is configured to listen on.
 
-#### Test Syslog Forwarding (Optional)
+**Set Log Severity Levels**
 
-- You can generate a test log entry to ensure that logs are being forwarded to the syslog server.
-  For example, use the following command:
-  ```bash
-  logging x.x.x.x testing
-  ```
-  This will generate a test log message that should appear in your syslog server's logs.
+*   Configure the severity level of logs that will be sent to the syslog server.
 
-#### Verify Syslog Server Configuration
+    ```bash
+    logging level informational
+    ```
 
-- On your syslog server, verify that it is configured to accept syslog messages in UDP from the ArubaOS device on the specified port.
+**Save Configuration Changes**
 
-### Instruction on Sekoia
+* Save your configuration changes by issuing the appropriate command (e.g., `write memory` or `copy running-config startup-config`) to ensure that the syslog configuration persists across reboots.
 
-{!_shared_content/integration/intake_configuration.md!}
+**Test Syslog Forwarding (Optional)**
 
-{!_shared_content/integration/forwarder_configuration.md!}
+*   You can generate a test log entry to ensure that logs are being forwarded to the syslog server. For example, use the following command:
 
-{!_shared_content/operations_center/integrations/generated/d6d15297-e977-4584-9bb3-f0290b99f014_sample.md!}
+    ```bash
+    logging x.x.x.x testing
+    ```
 
-{!_shared_content/integration/detection_section.md!}
+    This will generate a test log message that should appear in your syslog server's logs.
 
-{!_shared_content/operations_center/detection/generated/suggested_rules_d6d15297-e977-4584-9bb3-f0290b99f014_do_not_edit_manually.md!}
+**Verify Syslog Server Configuration**
 
-{!_shared_content/operations_center/integrations/generated/d6d15297-e977-4584-9bb3-f0290b99f014.md!}
+* On your syslog server, verify that it is configured to accept syslog messages in UDP from the ArubaOS device on the specified port.
 
-## Further readings
+#### Instruction on Sekoia
 
-- [ArubaOS documentation](https://www.arubanetworks.com/documentation/)
+{!\_shared\_content/integration/intake\_configuration.md!}
+
+{!\_shared\_content/integration/forwarder\_configuration.md!}
+
+{!\_shared\_content/operations\_center/integrations/generated/d6d15297-e977-4584-9bb3-f0290b99f014\_sample.md!}
+
+{!\_shared\_content/integration/detection\_section.md!}
+
+{!\_shared\_content/operations\_center/detection/generated/suggested\_rules\_d6d15297-e977-4584-9bb3-f0290b99f014\_do\_not\_edit\_manually.md!}
+
+{!\_shared\_content/operations\_center/integrations/generated/d6d15297-e977-4584-9bb3-f0290b99f014.md!}
+
+### Further readings
+
+* [ArubaOS documentation](https://www.arubanetworks.com/documentation/)

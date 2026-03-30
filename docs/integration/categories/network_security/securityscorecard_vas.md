@@ -1,61 +1,45 @@
-uuid: 8f472113-ba5b-45b9-9a2c-944834396333
-name: Security Scorecard Vulnerability Assessment Scanner
-type: intake
+# securityscorecard\_vas
 
-## Overview
-SecurityScorecard's Vulnerability Assessment Scanner is a tool designed to identify and assess vulnerabilities in an
-organization's digital infrastructure, offering real-time insights and prioritized recommendations to strengthen
-security measures and reduce cyber risk.
+uuid: 8f472113-ba5b-45b9-9a2c-944834396333 name: Security Scorecard Vulnerability Assessment Scanner type: intake
 
-- **Vendor**: SecurityScorecard
-- **Supported environment**: SaaS
-- **Detection based on**: Alert
-- **Supported application or feature**: Application logs
+### Overview
 
+SecurityScorecard's Vulnerability Assessment Scanner is a tool designed to identify and assess vulnerabilities in an organization's digital infrastructure, offering real-time insights and prioritized recommendations to strengthen security measures and reduce cyber risk.
 
-## Configure
+* **Vendor**: SecurityScorecard
+* **Supported environment**: SaaS
+* **Detection based on**: Alert
+* **Supported application or feature**: Application logs
 
-This setup guide will show you how to provide an integration between Security Scorecard Vulnerability Assessment Scanner
-events and Sekoia.io.
+### Configure
 
-### Create an intake
+This setup guide will show you how to provide an integration between Security Scorecard Vulnerability Assessment Scanner events and Sekoia.io.
 
-Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a new intake from the format Security Scorecard VAS.
-Copy the intake key.
+#### Create an intake
 
-### Configure Security Scorecard
+Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a new intake from the format Security Scorecard VAS. Copy the intake key.
+
+#### Configure Security Scorecard
 
 * Login to admin panel and go to `Rule Builder` tab.
-
-    ![Rule Builder](/assets/instructions/securityscorecard_vas/securityscorecard_vas_1.png)
-
 * Click `Create Rule` button.
-
-    ![Create Rule](/assets/instructions/securityscorecard_vas/securityscorecard_vas_2.png)
-
-* In the forms that you see please feel all the fields with correct values and use `Send web request to` as action.
-Set the destination url to `https://intake.sekoia.io/plain?intake_key=<intake_key>` with value from previous steps.
-
-    ![Create Rule](/assets/instructions/securityscorecard_vas/securityscorecard_vas_3.png)
-
+* In the forms that you see please feel all the fields with correct values and use `Send web request to` as action. Set the destination url to `https://intake.sekoia.io/plain?intake_key=<intake_key>` with value from previous steps.
 * Save the configuration and enjoy your events
 
-!!! warning 
-    The previous URL works for the FRA1 region. For any other region, replace the domain “intake.sekoia.io” with your region’s HTTP-intake domain—for example:
+!!! warning The previous URL works for the FRA1 region. For any other region, replace the domain “intake.sekoia.io” with your region’s HTTP-intake domain—for example:
 
-    https://app.usa1.sekoia.io/api/v1/intake-http
+```
+https://app.usa1.sekoia.io/api/v1/intake-http
 
-    You can find your region’s domain here: [https://docs.sekoia.io/getting_started/regions/](https://docs.sekoia.io/getting_started/regions/)
+You can find your region’s domain here: [https://docs.sekoia.io/getting_started/regions/](https://docs.sekoia.io/getting_started/regions/)
+```
 
+{!\_shared\_content/operations\_center/integrations/generated/8f472113-ba5b-45b9-9a2c-944834396333\_sample.md!}
 
-{!_shared_content/operations_center/integrations/generated/8f472113-ba5b-45b9-9a2c-944834396333_sample.md!}
+{!\_shared\_content/integration/detection\_section.md!}
 
+{!\_shared\_content/operations\_center/detection/generated/suggested\_rules\_8f472113-ba5b-45b9-9a2c-944834396333\_do\_not\_edit\_manually.md!} {!\_shared\_content/operations\_center/integrations/generated/8f472113-ba5b-45b9-9a2c-944834396333.md!}
 
-{!_shared_content/integration/detection_section.md!}
+### Further Readings
 
-{!_shared_content/operations_center/detection/generated/suggested_rules_8f472113-ba5b-45b9-9a2c-944834396333_do_not_edit_manually.md!}
-{!_shared_content/operations_center/integrations/generated/8f472113-ba5b-45b9-9a2c-944834396333.md!}
-
-## Further Readings
-
-- [Build apps with SecurityScorecard](https://securityscorecard.readme.io/docs/build-an-app)
+* [Build apps with SecurityScorecard](https://securityscorecard.readme.io/docs/build-an-app)

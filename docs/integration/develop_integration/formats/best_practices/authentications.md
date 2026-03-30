@@ -4,36 +4,35 @@ In order to simplify the recognition and semantic interpretation of authenticati
 
 An authentication is fully recognized as valid when all of these three fields are completed:
 
-- event.category : with the value `authentication`
-- event.type : with the value `start`
-- action.outcome : with the value `success` if the authentication succeeded or `failure` else
+* event.category : with the value `authentication`
+* event.type : with the value `start`
+* action.outcome : with the value `success` if the authentication succeeded or `failure` else
 
 Other fields are necessary in order to be able to fully describe the authentication. These fields are described in the table below. This list is not exhaustive, do not hesitate to fill in as many fields as possible.
 
-| Field                       | Description                                                          |
-| --------------------------- | -------------------------------------------------------------------- |
-| event.action                | Logon action type                                                    |
-| event.reason                | Reason type                                                          |
-| sekoiaio.client.name        | Hostname from which authentication is requested                      |
-| sekoiaio.client.os.type     | OS type of the host from which authentication is requested           |
-| client.domain               | Domain of the host from which authentication is requested            |
-| client.ip                   | IP of the host from which authentication is requested                |
-| client.geo.country_iso_code | ISO COUNTRY CODE of the host from which authentication is requested  |
-| sekoiaio.server.name        | Host name  targeted by the authentication                            |
-| sekoiaio.server.os.type     | OS type of the host targeted by the authentication                   |
-| server.domain               | Host domain targeted by the authentication                           |
-| server.ip                   | Host IP targeted by the authentication                               |
-| server.geo.country_iso_code | Host geoloc targeted by the authentication                           |
+| Field                                | Description                                                           |
+| ------------------------------------ | --------------------------------------------------------------------- |
+| event.action                         | Logon action type                                                     |
+| event.reason                         | Reason type                                                           |
+| sekoiaio.client.name                 | Hostname from which authentication is requested                       |
+| sekoiaio.client.os.type              |  OS type of the host from which authentication is requested           |
+| client.domain                        | Domain of the host from which authentication is requested             |
+| client.ip                            | IP of the host from which authentication is requested                 |
+| client.geo.country\_iso\_code        | ISO COUNTRY CODE of the host from which authentication is requested   |
+| sekoiaio.server.name                 | Host name targeted by the authentication                              |
+| sekoiaio.server.os.type              |  OS type of the host targeted by the authentication                   |
+| server.domain                        | Host domain targeted by the authentication                            |
+| server.ip                            | Host IP targeted by the authentication                                |
+| server.geo.country\_iso\_code        | Host geoloc targeted by the authentication                            |
 | sekoiaio.authentication.process.name | process name has performed authentication (i.e., sshd, kerberos, ...) |
-| user.name                   | user name has requested authentication                               |
-| user.domain                 | user domain has requested authentication                             |
-| user.id                     | user id has requested authentication                                 |
-| user.email                  | user email has requested authentication                              |
-| user.target.name            | user name targeted by the authentication                             |
-| user.target.domain          | user domain targeted by the authentication                           |
-| user.target.id              | user id targeted by the authentication                               |
-| user.target.email           | user email targeted by the authentication                            |
-
+| user.name                            | user name has requested authentication                                |
+| user.domain                          | user domain has requested authentication                              |
+| user.id                              | user id has requested authentication                                  |
+| user.email                           | user email has requested authentication                               |
+| user.target.name                     |  user name targeted by the authentication                             |
+| user.target.domain                   | user domain targeted by the authentication                            |
+| user.target.id                       |  user id targeted by the authentication                               |
+| user.target.email                    | user email targeted by the authentication                             |
 
 You can also extract some additional information like urls, user agent, ...
 
@@ -45,7 +44,7 @@ These following examples describe a set of successfully authentications.
 
 #### AWS Cloudtrail
 
-```JSON
+```json
 {
   "additionalEventData": {
     "LoginTo": "https://console.aws.amazon.com/billing/home?region=eu-west-3&state=hashArgs%23%2F&isauthcode=true",
@@ -102,7 +101,7 @@ Will result into this ECS document:
 
 #### Salesforce
 
-```JSON
+```json
 {
   "EVENT_TYPE": "Login", # (1)
   "USER": "john.doe@example.com", # (3)
@@ -118,7 +117,7 @@ Will result into this ECS document:
 }
 ```
 
-1. The field EVENT_TYPE is used to determine the `event.category` and `event.type`
+1. The field EVENT\_TYPE is used to determine the `event.category` and `event.type`
 2. The outcome of the event
 3. The email of the user
 
@@ -233,8 +232,8 @@ For the Salesforce event, this smart-description will result into:
 
 Sources:
 
-- [microsoft.com: 4624(S): An account was successfully logged on.](https://learn.microsoft.com/fr-fr/windows/security/threat-protection/auditing/event-4624)
-- [microsoft.com: 4625(F): An account failed to log on.](https://learn.microsoft.com/fr-fr/windows/security/threat-protection/auditing/event-4625)
+* [microsoft.com: 4624(S): An account was successfully logged on.](https://learn.microsoft.com/fr-fr/windows/security/threat-protection/auditing/event-4624)
+* [microsoft.com: 4625(F): An account failed to log on.](https://learn.microsoft.com/fr-fr/windows/security/threat-protection/auditing/event-4625)
 
 ### action.outcome
 
@@ -249,43 +248,43 @@ For Windows events, we can map `action.id` with `action.outcome` as follow:
 
 For Windows events, we can map `action.properties.LogonType` with `event.action` as follow:
 
-| action.properties.LogonType | event.action                             |
-| --------------------------- | ---------------------------------------- |
-| 2	                          | authentication_interactive               |
-| 3	                          | authentication_network                   |
-| 4	                          | authentication_batch                     |
-| 5	                          | authentication_service                   |
-| 7	                          | authentication_unlock                    |
-| 8	                          | authentication_network_cleartext         |
-| 9	                          | authentication_alternative_credentials   |
-| 10                          | authentication_remote_interactive        |
-| 11                          | authentication_cached_interactive        |
-| 12                          | authentication_cached_remote_interactive |
-| 13                          | authentication_cached_unlock             |
+| action.properties.LogonType | event.action                                |
+| --------------------------- | ------------------------------------------- |
+| 2                           | authentication\_interactive                 |
+| 3                           | authentication\_network                     |
+| 4                           | authentication\_batch                       |
+| 5                           | authentication\_service                     |
+| 7                           | authentication\_unlock                      |
+| 8                           | authentication\_network\_cleartext          |
+| 9                           | authentication\_alternative\_credentials    |
+| 10                          | authentication\_remote\_interactive         |
+| 11                          | authentication\_cached\_interactive         |
+| 12                          | authentication\_cached\_remote\_interactive |
+| 13                          | authentication\_cached\_unlock              |
 
 ### event.reason
 
 For Windows events, we can map `action.properties.SubStatus` with `event.reason` as follow:
 
-| action.properties.SubStatus | event.reason                             |
-| --------------------------- | ---------------------------------------- |
-| 0xC0000064                  | user_not_exist                           |
-| 0xC000006A                  |	bad_password                             |
-| 0xC0000234                  |	user_locked_out                          |
-| 0xC0000072                  |	user_disabled                            |
-| 0xC000006F                  |	time_restriction                         |
-| 0xC0000070                  |	policy_restriction                       |
-| 0xC0000193                  |	account_expired                          |
-| 0xC0000071                  |	password_expired                         |
-| 0xC0000133                  |	clock_not_sync                           |
-| 0xC0000224                  |	need_to_update_password                  |
-| 0xC0000225                  |	os_problem                               |
-| 0xc000015b                  |	user_not_granted                         |
-
+| action.properties.SubStatus | event.reason               |
+| --------------------------- | -------------------------- |
+| 0xC0000064                  | user\_not\_exist           |
+| 0xC000006A                  | bad\_password              |
+| 0xC0000234                  | user\_locked\_out          |
+| 0xC0000072                  | user\_disabled             |
+| 0xC000006F                  | time\_restriction          |
+| 0xC0000070                  | policy\_restriction        |
+| 0xC0000193                  | account\_expired           |
+| 0xC0000071                  | password\_expired          |
+| 0xC0000133                  | clock\_not\_sync           |
+| 0xC0000224                  | need\_to\_update\_password |
+| 0xC0000225                  | os\_problem                |
+| 0xc000015b                  | user\_not\_granted         |
 
 ### Parsing example for a Windows authentication
 
 #### Success authentication example
+
 This event represents a successful authentication on a Windows host collected through a nxlog collector.
 
 ```
@@ -423,8 +422,8 @@ Will result into the description:
 
 `KEY\\SVC_DD_SP-SEARCH logged on to V-FOO (authentication_network)`
 
-
 #### Failure authentication example
+
 This event represents a failing authentication on a Windows host collected through a nxlog collector.
 
 ```
@@ -527,4 +526,3 @@ With the following smart-description:
 Will result into the description:
 
 `KEY\\SVC_DD_SP-SEARCH logged on to V-FOO (authentication_network)`
-

@@ -4,60 +4,62 @@ name: HAProxy
 type: intake
 ---
 
-## Overview
+# haproxy
+
+### Overview
 
 HAProxy is a free, open-source software that provides a high availability load balancer and proxy server for TCP and HTTP-based applications, distributing requests across multiple servers. As it operates between your infrastructure and your clients, HAProxy offers extensive monitoring capabilities.
 
-- **Vendor**: HAProxy Technologies
-- **Supported Environment**: On Premise
-- **Version Compatibility**: 2.9 or higher
-- **Detection Based On**: Telemetry
-- **Supported Application or Feature**: Access Traffic
+* **Vendor**: HAProxy Technologies
+* **Supported Environment**: On Premise
+* **Version Compatibility**: 2.9 or higher
+* **Detection Based On**: Telemetry
+* **Supported Application or Feature**: Access Traffic
 
-## High-Level Architecture Diagram
+### High-Level Architecture Diagram
 
-- **Type of Integration**: Outbound (PUSH to Sekoia.io)
-- **Schema**:
+* **Type of Integration**: Outbound (PUSH to Sekoia.io)
+* **Schema**:
 
-![haproxy_architecture](/assets/integration/haproxy_architecture.png){: style="max-width:100%"}
+{: style="max-width:100%"}
 
 !!! Alternative Log Collection Method
 
-    This will not be detailed on this documentation, but logs can also be sent directly to Sekoia.io over HTTPS using the Sekoia.io Endpoint Agent and the "Collect logs in files" method. This provides an alternative to the specified syslog collection method and may be preferable in certain environments.
+```
+This will not be detailed on this documentation, but logs can also be sent directly to Sekoia.io over HTTPS using the Sekoia.io Endpoint Agent and the "Collect logs in files" method. This provides an alternative to the specified syslog collection method and may be preferable in certain environments.
+```
 
-## Specification
+### Specification
 
-### Prerequisites
+#### Prerequisites
 
-- **Resource**: Self-managed syslog forwarder
-- **Network**: Outbound traffic allowed
-- **Permissions**:
-    - Administrator or Root access to the HAProxy host
-    - Root access to the Linux server with the syslog forwarder
+* **Resource**: Self-managed syslog forwarder
+* **Network**: Outbound traffic allowed
+* **Permissions**:
+  * Administrator or Root access to the HAProxy host
+  * Root access to the Linux server with the syslog forwarder
 
-### Transport Protocol/Method
+#### Transport Protocol/Method
 
-- **Indirect Syslog**
+* **Indirect Syslog**
 
-### Logs details
+#### Logs details
 
-- **Supported functionalities**: See section [Overview](#overview)
-- **Supported Structures**: Plain Text
-- **Supported Verbosity Levels**: Informational
+* **Supported functionalities**: See section [Overview](haproxy.md#overview)
+* **Supported Structures**: Plain Text
+* **Supported Verbosity Levels**: Informational
 
-!!! Note
-    Log levels are based on the taxonomy of [RFC5424](https://datatracker.ietf.org/doc/html/rfc5424). Adapt according to the terminology used by the editor.
+!!! Note Log levels are based on the taxonomy of [RFC5424](https://datatracker.ietf.org/doc/html/rfc5424). Adapt according to the terminology used by the editor.
 
-- **Default Log Location**:
-    - Events forwarded to `/var/lib/haproxy/dev/log`
-    - Processed by a local rsyslog to `/var/log/haproxy.log`
+* **Default Log Location**:
+  * Events forwarded to `/var/lib/haproxy/dev/log`
+  * Processed by a local rsyslog to `/var/log/haproxy.log`
 
-!!! Note
-    The default HAProxy configuration file `haproxy.cfg` is located in `/etc/haproxy`
+!!! Note The default HAProxy configuration file `haproxy.cfg` is located in `/etc/haproxy`
 
-## Step-by-Step Configuration Procedure
+### Step-by-Step Configuration Procedure
 
-### Instructions on the 3rd party solution
+#### Instructions on the 3rd party solution
 
 After HAProxy has been setup and configured, the logs have to be sent to a syslog concentrator then forwarded to Sekoia.io.
 
@@ -100,22 +102,22 @@ if ($programname startswith 'haproxy') then {
 
 For more information on Rsyslog configuration, please consult the [official website](https://www.rsyslog.com/doc/configuration/templates.html).
 
-!!! Note
-    If you encounter any issues during the configuration specified in this section "Instructions on the 3rd Party Solution," please do not hesitate to contact your editor. We also welcome any suggestions for improving our documentation to better serve your needs.
+!!! Note If you encounter any issues during the configuration specified in this section "Instructions on the 3rd Party Solution," please do not hesitate to contact your editor. We also welcome any suggestions for improving our documentation to better serve your needs.
 
-### Instruction on Sekoia
+#### Instruction on Sekoia
 
-{!_shared_content/integration/intake_configuration.md!}
+{!\_shared\_content/integration/intake\_configuration.md!}
 
-{!_shared_content/integration/forwarder_configuration.md!}
+{!\_shared\_content/integration/forwarder\_configuration.md!}
 
-{!_shared_content/operations_center/integrations/generated/ff1873e7-8757-4b1a-b0ca-b33f9b27f3d9_sample.md!}
+{!\_shared\_content/operations\_center/integrations/generated/ff1873e7-8757-4b1a-b0ca-b33f9b27f3d9\_sample.md!}
 
-{!_shared_content/integration/detection_section.md!}
+{!\_shared\_content/integration/detection\_section.md!}
 
-{!_shared_content/operations_center/detection/generated/suggested_rules_ff1873e7-8757-4b1a-b0ca-b33f9b27f3d9_do_not_edit_manually.md!}
+{!\_shared\_content/operations\_center/detection/generated/suggested\_rules\_ff1873e7-8757-4b1a-b0ca-b33f9b27f3d9\_do\_not\_edit\_manually.md!}
 
-{!_shared_content/operations_center/integrations/generated/ff1873e7-8757-4b1a-b0ca-b33f9b27f3d9.md!}
-## Further readings
+{!\_shared\_content/operations\_center/integrations/generated/ff1873e7-8757-4b1a-b0ca-b33f9b27f3d9.md!}
 
-- [HAProxy Official Documentation](http://www.haproxy.org/#docs)
+### Further readings
+
+* [HAProxy Official Documentation](http://www.haproxy.org/#docs)

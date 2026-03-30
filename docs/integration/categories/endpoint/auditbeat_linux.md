@@ -1,64 +1,63 @@
-uuid: 021e9def-5a55-4369-941e-af269b45bef1
-name: Linux AuditBeat
-type: intake
+# auditbeat\_linux
 
-## Overview
+uuid: 021e9def-5a55-4369-941e-af269b45bef1 name: Linux AuditBeat type: intake
+
+### Overview
 
 Auditbeat communicates directly with the Linux audit framework, collects the same data as auditd, then the data can be stored in JSON inside a log file before being sent to a log concentrator.
 
-- **Vendor**: Elastic
-- **Supported environment**: On Premise
-- **Detection based on**: Telemetry
-- **Supported application or feature**: System Monitoring and Security
+* **Vendor**: Elastic
+* **Supported environment**: On Premise
+* **Detection based on**: Telemetry
+* **Supported application or feature**: System Monitoring and Security
 
-## High-Level Architecture Diagram
+### High-Level Architecture Diagram
 
-- **Type of integration**: Outbound (PUSH to Sekoia.io)
-- **Schema**
+* **Type of integration**: Outbound (PUSH to Sekoia.io)
+* **Schema**
 
-![linux_auditbeat_architecture](/assets/integration/linux_auditbeat_architecture.png){: style="max-width:100%"}
+{: style="max-width:100%"}
 
-## Specification
+### Specification
 
-### Prerequisites
+#### Prerequisites
 
-- **Resource**:
-    - Self-managed syslog forwarder
-- **Network**:
-    - Outbound traffic allowed
-- **Permissions**:
-    - Root access to the Linux machine
-    - Root access to the Linux server with the syslog forwarder
+* **Resource**:
+  * Self-managed syslog forwarder
+* **Network**:
+  * Outbound traffic allowed
+* **Permissions**:
+  * Root access to the Linux machine
+  * Root access to the Linux server with the syslog forwarder
 
-### Transport Protocol/Method
+#### Transport Protocol/Method
 
-- **Indirect Syslog**
+* **Indirect Syslog**
 
-### Logs details
+#### Logs details
 
-- **Supported functionalities**: See section [Overview](#overview)
-- **Supported type(s) of structure**: JSON
-- **Supported verbosity level**: Informational
+* **Supported functionalities**: See section [Overview](auditbeat_linux.md#overview)
+* **Supported type(s) of structure**: JSON
+* **Supported verbosity level**: Informational
 
-!!! Note
-    Log levels are based on the taxonomy of [RFC5424](https://datatracker.ietf.org/doc/html/rfc5424). Adapt according to the terminology used by the editor.
+!!! Note Log levels are based on the taxonomy of [RFC5424](https://datatracker.ietf.org/doc/html/rfc5424). Adapt according to the terminology used by the editor.
 
-## Step-by-Step Configuration Procedure
+### Step-by-Step Configuration Procedure
 
-### Instructions on the 3rd Party Solution
+#### Instructions on the 3rd Party Solution
 
 This setup guide will show you how to forward your Auditbeat logs to Sekoia.io by means of a syslog transport channel.
 
-#### Install and Configure Auditbeat
+**Install and Configure Auditbeat**
 
-- To download and install Auditbeat on a Debian-based distribution (including Ubuntu, Linux Mint, etc.):
+* To download and install Auditbeat on a Debian-based distribution (including Ubuntu, Linux Mint, etc.):
 
 ```bash
 curl -L -O https://artifacts.elastic.co/downloads/beats/auditbeat/auditbeat-8.11.4-amd64.deb
 sudo dpkg -i auditbeat-8.11.4-amd64.deb
 ```
 
-- To download and install Auditbeat on Fedora, CentOS, or Red Hat Enterprise Linux:
+* To download and install Auditbeat on Fedora, CentOS, or Red Hat Enterprise Linux:
 
 ```bash
 curl -L -O https://artifacts.elastic.co/downloads/beats/auditbeat/auditbeat-8.11.4-x86_64.rpm
@@ -67,7 +66,7 @@ sudo rpm -vi auditbeat-8.11.4-x86_64.rpm
 
 > Modify the version number with the newest one.
 
-- Replace the configuration file `/etc/auditbeat/auditbeat.yml` with the following content:
+* Replace the configuration file `/etc/auditbeat/auditbeat.yml` with the following content:
 
 ```yaml
 ########################## Auditbeat Configuration #############################
@@ -178,34 +177,34 @@ logging.files:
   permissions: 0600
 ```
 
-- Ensure the permissions for the new `auditbeat.yml` are correct:
+* Ensure the permissions for the new `auditbeat.yml` are correct:
 
 ```bash
 sudo chmod 0600 auditbeat.yml
 sudo chown root:root auditbeat.yml
 ```
 
-- Load the predefined assets for parsing, indexing, and visualizing your data:
+* Load the predefined assets for parsing, indexing, and visualizing your data:
 
 ```bash
 sudo auditbeat -e
 ```
 
-- Start Auditbeat:
+* Start Auditbeat:
 
 ```bash
 sudo systemctl restart auditbeat.service
 ```
 
-#### Configure Local Rsyslog Service
+**Configure Local Rsyslog Service**
 
-- Install rsyslog if it's not already installed:
+* Install rsyslog if it's not already installed:
 
 ```bash
 sudo apt install rsyslog
 ```
 
-- Edit the `/etc/rsyslog.conf` file for a light client rsyslog setup:
+* Edit the `/etc/rsyslog.conf` file for a light client rsyslog setup:
 
 ```bash
 module(load="imuxsock")                                 # provides support for local system logging
@@ -228,7 +227,7 @@ $IncludeConfig /etc/rsyslog.d/*.conf
 *.* -/var/log/syslog
 ```
 
-- Add a dedicated configuration file for Auditbeat logs in `/etc/rsyslog.d/8-linux_auditbeat.conf`:
+* Add a dedicated configuration file for Auditbeat logs in `/etc/rsyslog.d/8-linux_auditbeat.conf`:
 
 ```bash
 module(load="imfile" PollingInterval="10")
@@ -254,29 +253,28 @@ ruleset(name="auditbeatSekoia") {
 }
 ```
 
-- Ensure the destination server in the rsyslog config is correctly set:
+* Ensure the destination server in the rsyslog config is correctly set:
 
 ```bash
 sudo systemctl restart rsyslog.service
 ```
 
-!!! Note
-    If you encounter any issues during the configuration specified in this section "Instructions on the 3rd Party Solution," please do not hesitate to contact your editor. We also welcome any suggestions for improving our documentation to better serve your needs.
+!!! Note If you encounter any issues during the configuration specified in this section "Instructions on the 3rd Party Solution," please do not hesitate to contact your editor. We also welcome any suggestions for improving our documentation to better serve your needs.
 
-### Instruction on Sekoia
+#### Instruction on Sekoia
 
-{!_shared_content/integration/intake_configuration.md!}
+{!\_shared\_content/integration/intake\_configuration.md!}
 
-{!_shared_content/integration/forwarder_configuration.md!}
+{!\_shared\_content/integration/forwarder\_configuration.md!}
 
-{!_shared_content/operations_center/integrations/generated/021e9def-5a55-4369-941e-af269b45bef1_sample.md!}
+{!\_shared\_content/operations\_center/integrations/generated/021e9def-5a55-4369-941e-af269b45bef1\_sample.md!}
 
-{!_shared_content/integration/detection_section.md!}
+{!\_shared\_content/integration/detection\_section.md!}
 
-{!_shared_content/operations_center/detection/generated/suggested_rules_021e9def-5a55-4369-941e-af269b45bef1_do_not_edit_manually.md!}
+{!\_shared\_content/operations\_center/detection/generated/suggested\_rules\_021e9def-5a55-4369-941e-af269b45bef1\_do\_not\_edit\_manually.md!}
 
-{!_shared_content/operations_center/integrations/generated/021e9def-5a55-4369-941e-af269b45bef1.md!}
+{!\_shared\_content/operations\_center/integrations/generated/021e9def-5a55-4369-941e-af269b45bef1.md!}
 
-## Further readings
+### Further readings
 
-- [Configure a remote Syslog server](https://docs.cyberwatch.fr/help/en/administration/remote_syslog_configuration/)
+* [Configure a remote Syslog server](https://docs.cyberwatch.fr/help/en/administration/remote_syslog_configuration/)
