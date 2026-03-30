@@ -5,22 +5,22 @@
 | Data Source | Description | Use Cases |
 |-------------|-------------|-----------|
 | `events` | Security events | Threat hunting, incident investigation, SOC reporting. You will receive events that are retained for the duration of your hot storage |
-| [`event_telemetry`](#event-telemetry) | Telemetry on events | Analytics on your ingestion pipelines |
+| [event_telemetry](#event_telemetry) | Telemetry on events | Analytics on your ingestion pipelines |
 | `eternal_events` | Security events related to alerts or cases | Extract metrics from events related to alerts/cases. Access events related to an alert that are beyond your hot storage retention period |
-| [`alerts`](#alerts-properties) | Security alerts and detections | SOC monitoring, alert pattern analysis |
-| [`cases`](#cases-properties) | Security incidents and cases | Case management, incident correlation |
-| [`custom_statuses`](#custom-statuses) | Alerts and cases custom statuses | Reporting |
-| [`custom_priorities`](#custom-priorities) | Cases custom priorities | Reporting |
-| [`communities`](#communities-properties) | Communities (for multi-tenant only) | Multi-tenant reporting |
-| [`intakes`](#intakes-properties) | Data sources | Data source management, volume monitoring |
-| [`intake_formats`](#intake-formats-properties) | Intake formats (parsers) | Volume monitoring |
-| [`entities`](#entities-properties) | Company entities | Entity tracking, detailed reporting |
-| [`assets`](#assets) | Known Assets | Asset Investigations |
-| [`asset_properties`](#asset-properties) | Listing known properties related to the Asset | Asset Investigations |
-| [`asset_partitions`](#asset-partitions) | Partitions on a per Asset basis and Hygiene related to these | Understand and improve Hygiene state Note: Part of the Reveal plan |
-| [`asset_accounts`](#asset-accounts) | Listing local users accounts related to the Asset | Impact analysis and incident correlation Note: Part of the Reveal plan |
+| [alerts](#alerts) | Security alerts and detections | SOC monitoring, alert pattern analysis |
+| [cases](#cases) | Security incidents and cases | Case management, incident correlation |
+| [custom_statuses](#custom_statuses) | Alerts and cases custom statuses | Reporting |
+| [custom_priorities](#custom_priorities) | Cases custom priorities | Reporting |
+| [communities](#communities) | Communities (for multi-tenant only) | Multi-tenant reporting |
+| [intakes](#intakes) | Data sources | Data source management, volume monitoring |
+| [intake_formats](#intake_formats) | Intake formats (parsers) | Volume monitoring |
+| [entities](#entities) | Company entities | Entity tracking, detailed reporting |
+| [assets](#assets) | Known Assets | Asset Investigations |
+| [asset_properties](#asset_properties) | Listing known properties related to the Asset | Asset Investigations |
+| [asset_partitions](#asset_partitions) | Partitions on a per Asset basis and Hygiene related to these | Understand and improve Hygiene state Note: Part of the Reveal plan |
+| [asset_accounts](#asset_accounts) | Listing local users accounts related to the Asset | Impact analysis and incident correlation Note: Part of the Reveal plan |
 
-## Event Telemetry
+## event_telemetry
 
 The **event_telemetry** data source provides aggregated metrics about the events processed by your intakes.
 It allows you to monitor, report, and troubleshoot data ingestion across your Sekoia.io tenant.
@@ -62,7 +62,7 @@ You can query **event_telemetry** in the SOL query builder and combine it with o
 | min_processing_lag      | Minimum processing time (in seconds) taken by Sekoia.io to process an event.                 |
 | total_processing_lag    | Total accumulated processing time (in seconds) for all events in the bucket.                 |
 
-## Alerts properties
+## alerts
 
 | **Alert Property**        | **Description**                                                                              |
 |---------------------------|----------------------------------------------------------------------------------------------|
@@ -93,7 +93,7 @@ You can query **event_telemetry** in the SOL query builder and combine it with o
 | assets                    | List of assets associated to the alert.                                                      |
 | threats                   | List of threats associated the alert.                                                        |
 
-## Cases properties
+## cases
 
 | **Property**              | **Description**                                                                            |
 |---------------------------|--------------------------------------------------------------------------------------------|
@@ -112,7 +112,7 @@ You can query **event_telemetry** in the SOL query builder and combine it with o
 | first_seen_at             | The date and time when the case was first detected.                                        |
 | last_seen_at              | The date and time when the case was last observed or updated.                              |
 
-## Custom statuses
+## custom_statuses
 
 | **Property**              | **Description**                                                                            |
 |---------------------------|--------------------------------------------------------------------------------------------|
@@ -130,7 +130,7 @@ You can query **event_telemetry** in the SOL query builder and combine it with o
 | description               | A text description of the status.                                                          |
 | type                      | The type(s) this status applies to (e.g., case, alert).                                    |
 
-## Custom priorities
+## custom_priorities
 
 | **Property**              | **Description**                                                                            |
 |---------------------------|--------------------------------------------------------------------------------------------|
@@ -147,7 +147,7 @@ You can query **event_telemetry** in the SOL query builder and combine it with o
 | label                     | The display label for the priority.                                                        |
 | description               | A text description of the priority.                                                        |
 
-## Communities properties
+## communities
 
 | **Property**              | **Description**                                                                            |
 |---------------------------|--------------------------------------------------------------------------------------------|
@@ -172,7 +172,7 @@ You can query **event_telemetry** in the SOL query builder and combine it with o
 | disable_inactive_avatars  | Indicate if users are disabled after 90 days of inactivity.                                |
 | disabled                  | Indicate if the community is disabled.                                                     |
 
-## Intakes properties
+## intakes
 
 | **Property**              | **Description**                                                                            |
 |---------------------------|--------------------------------------------------------------------------------------------|
@@ -191,7 +191,7 @@ You can query **event_telemetry** in the SOL query builder and combine it with o
 | is_custom_format          | Indicate if the intake uses a custom format.                                               |
 | connector_configuration_uuid    | A unique identifier for the connector configuration related to the intake.           |
 
-## Intake Formats properties
+## intake_formats
 
 | **Property**                  | **Description**                                                                            |
 |-------------------------------|--------------------------------------------------------------------------------------------|
@@ -210,7 +210,7 @@ You can query **event_telemetry** in the SOL query builder and combine it with o
 
 For example queries using intake_formats, see [Join examples](sol_query_examples.md#join-examples).
 
-## Entities properties
+## entities
 
 | **Property**              | **Description**                                                                            |
 |---------------------------|--------------------------------------------------------------------------------------------|
@@ -223,7 +223,7 @@ For example queries using intake_formats, see [Join examples](sol_query_examples
 | created_at                | The date and time when the entity was created.                                             |
 | updated_at                | The date and time when the entity was last updated.                                        |
 
-## Assets
+## assets
 
 | **Property**              | **Description**                                                                            |
 |---------------------------|--------------------------------------------------------------------------------------------|
@@ -242,7 +242,7 @@ For example queries using intake_formats, see [Join examples](sol_query_examples
 
 For example queries using tags, see [Assets query examples](sol_query_examples.md#assets-query-examples).
 
-## Asset Properties
+## asset_properties
 
 | **Property**              | **Description**                                                                            |
 |---------------------------|--------------------------------------------------------------------------------------------|
@@ -250,7 +250,7 @@ For example queries using tags, see [Assets query examples](sol_query_examples.m
 | value                     | The value of the property (e.g., darwin)                                                   |
 | name                      | The name of the property (e.g., os)                                                        |
 
-## Asset Partitions
+## asset_partitions
 
 | **Property**              | **Description**                                                                            |
 |---------------------------|--------------------------------------------------------------------------------------------|
@@ -261,7 +261,7 @@ For example queries using tags, see [Assets query examples](sol_query_examples.m
 | mountpoint                | Partition mount point (e.g., C:)                                                           |
 | encrypted                 | Whether the partition is encrypted (true/false)                                            |
 
-## Asset Accounts
+## asset_accounts
 
 | **Property**              | **Description**                                                                            |
 |---------------------------|--------------------------------------------------------------------------------------------|
