@@ -26,13 +26,10 @@ To connect AWS EC2 to Sekoia.io, you need to create an IAM user with the necessa
    * `AmazonEC2FullAccess` (if you need full EC2 access)
 
 {% hint style="warning" %}
-test
-{% endhint %}
-
-```
  - Granting `AmazonEC2FullAccess` provides extensive permissions that may pose security risks. Only use it if absolutely necessary and ensure to follow the principle of least privilege.
  - Do not attach both policies to the same user, as this could lead to permission conflicts.
-```
+{% endhint %}
+
 
 1. Click **Next** to review, then click **Create user**.
 
@@ -46,7 +43,9 @@ After creating the IAM user, you need to generate access keys for programmatic a
 4. Add a description tag (optional) and click **Create access key**.
 5. Copy the **Access key ID** and **Secret access key** to a safe location. You'll need these credentials to configure the connector in Sekoia.io.
 
-!!! Warning - The secret access key is only shown when you create it. If you lose it, you must create a new access key. - Store these credentials securely and never share them publicly. - Consider rotating access keys regularly for security best practices.
+{% hint style="warning" %}
+- The secret access key is only shown when you create it. If you lose it, you must create a new access key. - Store these credentials securely and never share them publicly. - Consider rotating access keys regularly for security best practices.
+{% endhint %}
 
 #### Required IAM permissions
 
