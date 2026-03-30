@@ -469,6 +469,7 @@ nav:
       - Wiz Threat Detections: integration/categories/network_security/wiz_threat_detections.md
       - Wiz Vulnerability Findings: integration/categories/network_security/wiz_vulnerability_findings.md
       - Zscaler Internet Access: integration/categories/network_security/zscaler_zia.md
+      - Zscaler Private Access: integration/categories/network_security/zscaler_zpa.md
     - Threat Intelligence:
       - Prodaft USTA: integration/categories/threat_intelligence/prodaft_usta.md
   - List of Playbooks Actions:
