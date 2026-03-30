@@ -103,8 +103,6 @@ To start getting your AWS EC2 instances into Sekoia.io, you need to create an as
 
 {% include "../../.gitbook/includes/aws-device-shared-content.md" %}
 
-{!\_shared\_content/operations\_center/integrations/generated\_assets\_documentation/aws\_device.md!}
-
 ### Further Reading
 
 * [AWS EC2 Documentation](https://docs.aws.amazon.com/ec2/)
