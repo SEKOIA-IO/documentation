@@ -26,10 +26,9 @@ To connect AWS EC2 to Sekoia.io, you need to create an IAM user with the necessa
    * `AmazonEC2FullAccess` (if you need full EC2 access)
 
 {% hint style="warning" %}
- - Granting `AmazonEC2FullAccess` provides extensive permissions that may pose security risks. Only use it if absolutely necessary and ensure to follow the principle of least privilege.
- - Do not attach both policies to the same user, as this could lead to permission conflicts.
+* Granting `AmazonEC2FullAccess` provides extensive permissions that may pose security risks. Only use it if absolutely necessary and ensure to follow the principle of least privilege.
+* Do not attach both policies to the same user, as this could lead to permission conflicts.
 {% endhint %}
-
 
 1. Click **Next** to review, then click **Create user**.
 
@@ -44,7 +43,7 @@ After creating the IAM user, you need to generate access keys for programmatic a
 5. Copy the **Access key ID** and **Secret access key** to a safe location. You'll need these credentials to configure the connector in Sekoia.io.
 
 {% hint style="warning" %}
-- The secret access key is only shown when you create it. If you lose it, you must create a new access key. - Store these credentials securely and never share them publicly. - Consider rotating access keys regularly for security best practices.
+* The secret access key is only shown when you create it. If you lose it, you must create a new access key. - Store these credentials securely and never share them publicly. - Consider rotating access keys regularly for security best practices.
 {% endhint %}
 
 #### Required IAM permissions
@@ -99,6 +98,10 @@ To start getting your AWS EC2 instances into Sekoia.io, you need to create an as
    * **Region**: The AWS region where your EC2 instances are located (e.g., `us-east-1`)
 5. Test the connection by clicking the **Test connector** button.
 6. Click the **Create asset connector** button.
+
+
+
+{% include "../../.gitbook/includes/aws-device-shared-content.md" %}
 
 {!\_shared\_content/operations\_center/integrations/generated\_assets\_documentation/aws\_device.md!}
 
