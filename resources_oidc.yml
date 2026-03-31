@@ -1,0 +1,135 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Description: >
+  Deploys the AWS infrastructure required for Sekoia.io log collection using
+  IAM Role with OIDC authentication (no long-lived access keys).
+  Creates an IAM Role with a scoped trust policy, an SQS queue, and an S3 bucket
+  with event notifications. The Sekoia.io OIDC Identity Provider must be created
+  manually beforehand as described in the documentation.
+
+Parameters:
+  RoleName:
+    Description: Name of the IAM Role to create for Sekoia.io
+    Type: String
+    Default: SekoiaIOConnectorRole
+
+  BucketName:
+    Description: Name of the S3 Bucket to create
+    Type: String
+
+  SQSName:
+    Description: Name of the SQS Queue to create
+    Type: String
+
+  CommunityUUID:
+    Description: >
+      Your Sekoia.io Community UUID. Restricts role assumption to connectors
+      belonging to this community. Find it in the Sekoia.io platform under
+      your community settings.
+    Type: String
+
+  ModuleConfigurationUUID:
+    Description: >
+      Your Sekoia.io Module Configuration UUID. Restricts role assumption to
+      a specific connector within the community. Use '*' to allow all
+      connectors in the community. Find it in the connector's configuration page.
+    Type: String
+
+  OIDCProviderArn:
+    Description: >
+      ARN of the existing AWS IAM OIDC Identity Provider for Sekoia.io
+      (e.g. arn:aws:iam::XXXXXXXXXXXX:oidc-provider/app.sekoia.io/api/v1/symphony/oidc).
+      Create it manually following Step 1 of the documentation before deploying this stack.
+    Type: String
+
+Resources:
+
+  # ------------------------------------------------------------------
+  # SQS Queue — receives S3 event notifications
+  # ------------------------------------------------------------------
+  SQSQueue:
+    Type: AWS::SQS::Queue
+    Properties:
+      QueueName: !Ref SQSName
+
+  SQSAccessPolicy:
+    Type: AWS::SQS::QueuePolicy
+    Properties:
+      Queues:
+        - !Ref SQSQueue
+      PolicyDocument:
+        Statement:
+          - Action:
+              - "SQS:SendMessage"
+            Effect: Allow
+            Resource: !GetAtt SQSQueue.Arn
+            Principal: "*"
+            Condition:
+              ArnLike:
+                aws:SourceArn: !Join
+                  - ""
+                  - - "arn:aws:s3:::"
+                    - !Ref BucketName
+
+  # ------------------------------------------------------------------
+  # S3 Bucket — stores logs and triggers SQS on new objects
+  # ------------------------------------------------------------------
+  S3Bucket:
+    Type: AWS::S3::Bucket
+    DependsOn: SQSAccessPolicy
+    Properties:
+      BucketName: !Ref BucketName
+      NotificationConfiguration:
+        QueueConfigurations:
+          - Event: s3:ObjectCreated:*
+            Queue: !GetAtt SQSQueue.Arn
+
+  # ------------------------------------------------------------------
+  # IAM Role — assumed by Sekoia.io via OIDC web identity
+  # ------------------------------------------------------------------
+  SekoiaRole:
+    Type: AWS::IAM::Role
+    Properties:
+      RoleName: !Ref RoleName
+      AssumeRolePolicyDocument:
+        Version: "2012-10-17"
+        Statement:
+          - Effect: Allow
+            Principal:
+              Federated: !Ref OIDCProviderArn
+            Action: sts:AssumeRoleWithWebIdentity
+            Condition:
+              StringEquals:
+                "app.sekoia.io/api/v1/symphony/oidc:aud": "sts.amazonaws.com"
+              StringLike:
+                "app.sekoia.io/api/v1/symphony/oidc:sub": !Sub "community:${CommunityUUID}:modconf:${ModuleConfigurationUUID}"
+      Policies:
+        - PolicyName: SekoiaS3SQSAccessPolicy
+          PolicyDocument:
+            Version: "2012-10-17"
+            Statement:
+              - Effect: Allow
+                Action:
+                  - s3:PutObject
+                  - s3:GetObject
+                  - s3:ListBucket
+                Resource: !GetAtt S3Bucket.Arn
+              - Effect: Allow
+                Action:
+                  - sqs:GetQueueUrl
+                  - sqs:ReceiveMessage
+                  - sqs:DeleteMessage
+                  - sqs:GetQueueAttributes
+                Resource: !GetAtt SQSQueue.Arn
+
+Outputs:
+  RoleArn:
+    Value: !GetAtt SekoiaRole.Arn
+    Description: IAM Role ARN to set as the AWS Role ARN in the Sekoia.io connector configuration
+
+  AwsRegion:
+    Value: !Ref "AWS::Region"
+    Description: AWS Region to set in the Sekoia.io connector configuration
+
+  QueueName:
+    Value: !Ref SQSName
+    Description: SQS Queue Name to set in the Sekoia.io connector configuration

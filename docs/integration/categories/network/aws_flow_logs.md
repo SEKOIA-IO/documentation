@@ -38,7 +38,9 @@ Please follow [this guide](https://docs.aws.amazon.com/vpc/latest/userguide/flow
 ### Create the intake
 
 1. Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a new intake from the format `AWS Flowlogs`.
-2. Set up the intake account configuration with the [AWS Access Key](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html), the secret key and the region name. 
+2. Set up the intake account configuration with the **AWS Region** and either:
+    - The **AWS Role ARN** (for OIDC authentication — recommended)
+    - The **AWS Access Key** and **Secret Access Key** (for static credentials)
 3. Set up the intake configuration with the name of the SQS queue.
 
 {!_shared_content/operations_center/integrations/generated/07c0cac8-f68f-11ea-adc1-0242ac120002_sample.md!}
