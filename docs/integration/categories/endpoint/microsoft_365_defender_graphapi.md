@@ -4,9 +4,9 @@ type: intake
 
 ## Overview
 - **Vendor**: Microsoft
-- **Supported environment**:
+- **Supported environment**: SaaS
 - **Version compatibility**:
-- **Detection based on**: Alert, Telemetry
+- **Detection based on**: Alert
 - **Supported application or feature**: see section below
 
 Microsoft Defender XDR (formerly Microsoft 365 Defender) is a unified pre- and post-breach enterprise defense suite that natively coordinates detection, prevention, investigation, and response across endpoints, identities, email, and applications to provide integrated protection against sophisticated attacks.
@@ -21,6 +21,10 @@ Here is a list of all the Microsoft Defender XDR event types supported by this i
 
 * Alert
 * Alert Evidence
+
+!!! warning
+	This integration will **only** collect Alert Info and Alert Evidence. 
+	If you need to collect more event types, please use the [Microsoft Defender XDR (Microsoft 365 Defender)](/integration/categories/endpoint/microsoft_365_defender.md).
 
 ## Configure
 
