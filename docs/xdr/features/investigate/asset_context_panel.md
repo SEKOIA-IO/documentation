@@ -1,4 +1,5 @@
 # Asset context panel
+_**[Reveal module](/xdr/features/modules/reveal_index.md)** — Core sections are available to all clients. Hygiene, vulnerabilities, security controls, points of interest, and attack path visualization require the Reveal add-on module._
 
 The **asset context panel** is the analyst’s command window for understanding an asset’s full context — its identity, posture, vulnerabilities, and recent behavior — directly within your investigation workflow.
 
@@ -14,11 +15,8 @@ Instead of switching between inventory pages, a configuration management databas
 !!! Note
     To learn how assets are **configured and discovered**, see [Collect → Assets](https://docs.sekoia.io/xdr/features/collect/assets/).
 
----
-
 <img width="431" height="684" alt="Asset context panel example" src="https://github.com/user-attachments/assets/7559b5b2-a838-4e53-a416-071d6b8c2fef" />
 
----
 
 ## Accessing the asset context panel
 
@@ -39,13 +37,13 @@ The panel is designed for **contextual investigation**, letting you open it from
 During an active investigation, analysts need to pivot fast. Every external click — to a CMDB, EDR console, or VM dashboard — adds friction and increases the risk of misattribution.  
 The **asset context panel** eliminates this by bringing **context, coverage, and posture** directly into the investigation view — helping analysts move from *alert to understanding* in a single step.
 
-## Asset context panel content
 
-### 1. Overview tab
 
-The **overview** tab summarizes the asset’s identity, business relevance, and current review status — helping analysts assess **how critical it is to the organization** before acting and navigate known details.
+## Overview tab
 
-#### Header card
+The **overview** tab summarizes the asset’s identity, business relevance, and current review status, helping analysts assess **how critical it is to the organization** before acting and navigate known details.
+
+### Header card
 
 **Displayed fields**
 
@@ -64,14 +62,13 @@ The **overview** tab summarizes the asset’s identity, business relevance, and 
 - **Prioritization:** analysts must respond faster to alerts on high-impact systems (e.g., domain controllers or production databases).  
 - **Attribution:** identifies the business unit or owner to contact for containment, access suspension, or post-incident communication.
 
-**Example**  
-
-When a ransomware alert hits *FIN-SRV01*, the overview shows it is a finance system tagged **critical** and owned by the CFO’s department. This routes containment to the right team immediately — reducing dwell time.
+!!! example "Ransomware triage scenario"
+    A ransomware alert targets *FIN-SRV01*. The header card shows it is a finance system tagged as critical and owned by the CFO's department. This routes containment to the right team immediately, reducing dwell time.
 
 <img width="538,3" height="172,2" alt="image" src="https://github.com/user-attachments/assets/11a8deca-efc1-4758-a218-c951703e284a" />
 
 
-#### Details card
+### Details card
 
 The **details** section provides the technical identifiers used to recognize and correlate this asset across multiple data sources.
 
@@ -91,13 +88,12 @@ The **details** section provides the technical identifiers used to recognize and
 
 - **Correlation:** analysts can pivot across EDR, identity, network, and vulnerability logs using consistent identifiers.
 
-**Example**  
-
-A host appears in a lateral-movement alert with IP `10.10.2.45`. In the panel, you see the same IP belongs to *HR-LAPTOP07*, last seen by CrowdStrike and identified as Windows 11. You have confirmed identity and scope in seconds.
+!!! example "Lateral movement identification"
+    A host appears in a lateral-movement alert with IP `10.10.2.45`. The details card shows the same IP belongs to *HR-LAPTOP07*, last seen by CrowdStrike and identified as Windows 11. Identity and scope are confirmed in seconds.
 
 <img width="743" height="320" alt="Details card example" src="https://github.com/user-attachments/assets/9319c956-126d-4640-a382-f3b09f4ff7b8" />
 
-#### Health check card *(Reveal specific capability)*
+### Health check card *(Reveal specific capability)*
 
 **Availability:** host assets
 
@@ -136,7 +132,7 @@ Displays the number of configuration or posture issues identified (e.g., disable
 
 <img width="671" height="233" alt="Health check card example" src="https://github.com/user-attachments/assets/2e4cfcff-758a-4902-8b49-21676382336a" />
 
-#### Seen in (last 30 days) card
+### Seen in (last 30 days) card
 
 The **seen in (last 30 days)** card shows how frequently the asset has appeared in recent security activity, aggregating counts across **alerts**, **cases**, **PoIs**, and **events** related to the asset.
 
@@ -151,7 +147,7 @@ Each counter links to its respective view (filtered to the asset and time range)
 
 <img width="670" height="114" alt="Seen in 30 days card example" src="https://github.com/user-attachments/assets/1545c3b2-a748-4d0f-bbcc-8b62644b105c" />
 
-#### Last 5 severe alerts and cases (last 30 days) card
+### Last 5 severe alerts and cases (last 30 days) card
 
 A compact card listing the **five most severe** items (by severity, then recency) involving the asset over the last 30 days. Use it to spot high-impact activity at a glance and jump straight into the most urgent investigations.
 
@@ -164,15 +160,14 @@ A compact card listing the **five most severe** items (by severity, then recency
 - **Campaign correlation:** several alerts on the same host (failed logins, unusual tools, privilege escalation) often indicate an active compromise chain.  
 - **Case enrichment:** attach new findings to an existing incident instead of opening a duplicate case.
 
-**Example**  
-
-*ADMIN-LAPTOP01* triggered a *suspicious PsExec* alert and a *credential dumping* case. Linking both identifies lateral movement tied to a stolen admin account.
+!!! example "Lateral movement correlation"
+    *ADMIN-LAPTOP01* triggered a *suspicious PsExec* alert and a *credential dumping* case. Linking both identifies lateral movement tied to a stolen admin account.
 
 <img width="671" height="545" alt="Severe items card example" src="https://github.com/user-attachments/assets/073e1702-d1e3-4d7e-a994-96e7b93a9e9b" />
 
----
 
-### 2. Timeline tab *(all clients; enriched with Reveal specific capability)*
+
+## Timeline tab *(all clients; enriched with Reveal specific capability)*
 
 The **timeline** provides a unified, chronological record of relevant activity for a specific asset, bringing together **alerts**, **points of interest (PoIs)**, **vulnerabilities**, and **case associations** into a single stream.
 
@@ -183,62 +178,54 @@ The **timeline** provides a unified, chronological record of relevant activity f
 - PoIs (UEBA anomalies and notable activities) (coming soon)  
 - Hygiene (Changes to asset hygiene posture) (coming soon)  
 - Vulnerabilities (identified exposures related to the asset) (coming soon)
-
-#### How the timeline works
+  
 
 Each entry represents a significant observation tied to the asset.  
 Entries are automatically timestamped and iconized by category (alert, case, PoI, vulnerability) and color-coded by severity.
 
 Clicking an item triggers available pivots (e.g., clicking an alert opens the **alert details** view).
 
+!!! note "Reveal enrichment"
+    With the Reveal add-on module, the timeline includes PoI signals, vulnerability enrichments, and hygiene changes.
 
-!!! Note
-    With the (Reveal specific capability), the timeline includes PoIs vulnerability enrichments and hygiene changes.
-
-#### Using PoIs in the timeline
+### Using Point of Interest (PoIs) in the timeline
 
 **PoIs** capture anomalies and behavioral deviations that may **precede** or **follow** alerts — filling gaps between rule-based detections.
 
-**Example PoIs**
-
-- anomalous login time (user/host)  
-- rare login location (user/host)  
-- anomalous login failure ratio (user/host)
+!!! example "PoIs"
+    - anomalous login time (user or host)  
+    - rare login location (user or host)  
+    - anomalous login failure ratio (user or host)
 
 **Why PoIs matter**
 
 1) **Connect subtle signals** into a coherent narrative.  
 2) **Correlate with detections** before/after alerts (e.g., failed logons → successful RDP → SYSTEM process creation).
 
----
 
-### 3. Related events tab
+
+## Related events tab
 
 The **related events** tab provides an investigative view of all events associated with the asset. It enables analysts to **visualize activity volume** and **drill into telemetry** without leaving asset context, bridging summarized context (overview, timeline) and underlying evidence.
 
 <img width="378" height="447" alt="Related events tab example" src="https://github.com/user-attachments/assets/536911ca-7745-49c9-b83e-a7b403f2d55d" />
 
-#### Purpose
-
-- investigate directly from the asset view (host, IP, user)  
-- correlate behaviors over time (spikes/quiet periods)  
-- assign events to cases for evidence tracking
-
-#### What you see
 
 **Top of the view**
 
-- **event histogram:** distribution over time to spot patterns  
-- **filter bar:** adjust time range, connectors, or field filtering  
-- **totals:** event count and number linked to alerts
+- **Event histogram:** distribution over time to spot patterns  
+- **Filter bar:** adjust time range, connectors, or field filtering  
+- **Totals:** event count and number linked to alerts
 
 **Event list**
 
-- **timestamp**  
-- **event type and action**  
-- **short description** (process execution, logon, network connection, etc.)  
-- **linked asset(s)**  
-- **quick actions** (expand raw event, assign to case)
+Each row in the event list includes: 
+
+- **Timestamp**  
+- **Event type and action**  
+- **Short description** (process execution, logon, network connection, etc.)  
+- **Linked asset(s)**  
+- **Quick actions** (expand raw event, assign to case)
 
 **Why it matters**
 
@@ -247,27 +234,19 @@ The **related events** tab provides an investigative view of all events associat
 - **Forensic traceability:** assigned events become case evidence  
 - **Cross-source correlation:** endpoint, identity, and network in one place
 
----
 
-### 4. Hygiene tab *(Reveal specific capability)*
+## Hygiene tab *(Reveal specific capability)*
 
 The **hygiene** tab provides visibility into the asset’s **security posture** and **configuration health** based on the Sekoia endpoint agent and connected integrations.  
 It highlights **disabled encryption** or **disabled firewall** and other missing protections that increase exposure and impact.
 
 <img width="389" height="465" alt="Hygiene tab example" src="https://github.com/user-attachments/assets/8e476aa6-2bb5-4284-8f71-374042bd936f" />
 
-#### Purpose
-
-- assess hardening (are firewall and encryption enabled?)  
-- identify exposure (weak points attackers can exploit)  
-- support remediation (actionable insights for IT and SOC)
-
-#### What you see
 
 **Summary cards**
 
-- **firewall:** enabled/disabled  
-- **disk encryption:** global state and per-volume details
+- **Firewall:** enabled/disabled  
+- **Disk encryption:** global state and per-volume details
 
 **Why it matters**
 
@@ -275,36 +254,33 @@ It highlights **disabled encryption** or **disabled firewall** and other missing
 - **Containment prioritization:** poor posture on high-value assets warrants immediate action.  
 - **Post-incident remediation:** validate protections were restored.
 
----
 
-### 5. Vulnerabilities tab *(Reveal specific capability)*
+## Vulnerabilities tab *(Reveal specific capability)*
 
 The **vulnerabilities** tab lists known CVE exposures affecting the asset, aggregated from vulnerability scanners and cloud/IaaS APIs.  
 Use it to understand **exposure**, validate **exploit alignment**, and prioritize **remediation**.
 
-#### What you see
-
 **List columns**
 
-- **status:** `Open`, `Closed: Accepted risk`, `Closed: False positive`, `Closed: Remediated`  
+- **Status:** `Open`, `Closed: Accepted risk`, `Closed: False positive`, `Closed: Remediated`  
 - **CVE ID:** linked to **Sekoia cyber threat intelligence (CTI)**  
-- **severity:** CVSS (v3/v4 when available)  
+- **Severity:** CVSS (v3/v4 when available)  
 - **CWE:** weakness category  
-- **unified risk score (1–100):** normalized across vendor-specific scoring systems (see *Normalization* below)  
-- **software / version:** affected product and version
+- **Unified risk score (1–100):** normalized across vendor-specific scoring systems (see *Normalization* below)  
+- **Software / Version:** affected product and version
 
 **Expanded row**
 
-- **description** (source/CTI)  
-- **identified by** (scanner/connector/job)  
-- **closed by** (user/process, if available)  
-- **first seen / last seen**
+- **Description** (source/CTI)  
+- **Identified by** (scanner/connector/job)  
+- **Closed by** (user/process, if available)  
+- **First seen / Last seen**
 
-#### Normalization (unified risk score)
+### Normalization (unified risk score)
 
-Different sources score severity/risk differently. The **unified risk score (1–100)** translates each source into a comparable “risk level”. It is **not the same as CVSS** — it reflects *contextual risk*, aligning disparate vendor scales.
+Different sources score severity/risk differently. The **unified risk score (1–100)** translates each source into a comparable “risk level”. It is **not the same as CVSS**: it reflects *contextual risk*, aligning disparate vendor scales.
 
-**How it works**
+**Method**
 
 1) **Normalize** any vendor range (e.g., 0–10, 0–5) to a **0–100** percentage.  
 2) **Adjust direction:** if a score means *higher = safer*, invert so **100 = highest risk**.  
@@ -316,26 +292,25 @@ Different sources score severity/risk differently. The **unified risk score (1�
 - **Attack-surface clarity:** explains plausible entry points and lateral paths.  
 - **Operational prioritization:** escalate high-risk items to vulnerability ops; link to the active case.
 
-**Example**  
-
-A *remote file inclusion* alert (ATT&CK T1190) hits a web server. The tab shows **CVE-2023-28432** on the same application version with high unified risk → isolate host, patch urgently, and document exploit alignment.
-
+!!! example "Exploit alignment during a web server incident"
+    A *remote file inclusion* alert (ATT&CK T1190) targets a web server. The vulnerabilities tab shows **CVE-2023-28432** on the same application version with a high unified risk score. The recommended action is to isolate the host, patch urgently, and document exploit alignment in the case.
+    
 <img width="515" height="396" alt="Vulnerabilities tab example" src="https://github.com/user-attachments/assets/300d5842-379d-4c09-9827-331217ac4357" />
 
----
 
-### 6. Software tab *(coming soon)*
 
----
+## Software tab *(coming soon)*
 
-### 7. Security controls tab *(Reveal specific capability)*
+
+
+## Security controls tab *(Reveal specific capability)*
 
 The **security controls** tab visualizes which detection and protection technologies are actively securing the asset — a clear view of **telemetry posture** (how the asset was discovered and which controls observe/protect it).
 
-#### Asset connectors
+### Asset connectors
 Connectors that discovered or enriched the asset (e.g., **EDR** such as CrowdStrike/HarfangLab; **VM** such as Tenable). Use this to identify which technologies provide **visibility/protection**, where to **pivot**, and whether gaps exist (e.g., only logs, no active monitoring).
 
-#### Seen by
+### Seen by
 **Intakes and technologies** that have observed the asset recently (e.g., proxy, endpoint agent, identity provider). Presence indicates data visibility from that source.
 
 **Why it matters**
@@ -344,21 +319,36 @@ Connectors that discovered or enriched the asset (e.g., **EDR** such as CrowdStr
 - **Response planning:** confirm protective agents/integrations before containment.  
 - **SOC maturity:** continuously improve visibility and control coverage.
 
-**Example**  
+!!! example "Detecting a visibility gap on a domain controller"
+    A high-value domain controller appears in network telemetry and vulnerability management scans but not in endpoint or identity logs. This explains why credential-access activity was not detected. The recommended action is to deploy endpoint monitoring on the asset.
 
-A high-value domain controller appears in network telemetry and VM scans but not in endpoint or identity logs — explaining why credential-access activity was not detected. Task: deploy endpoint monitoring.
+<img width="463,4" height="390,6" alt="Security controls tab example" src="https://github.com/user-attachments/assets/279e1288-53c6-490e-8f30-0498c3484d3e"/>
 
-<img width="463,4" height="390,6" alt="Security controls tab example" src="https://github.com/user-attachments/assets/279e1288-53c6-490e-8f30-0498c3484d3e" />
 
-## Summary
+## Attack path visualization *(Reveal specific capability)*
 
-The **asset context panel** combines **asset intelligence**, **behavior analytics**, and **security posture** in one view.
+The **Attack path visualization** displays a graph of connected hosts and users that may form a potential attack path from the current asset, helping analysts assess lateral movement risk and blast radius without leaving the asset context.
 
-It turns investigation into **risk-aware decision-making**, helping analysts:
+<img width="463,4" height="390,6" alt="Attack path visualization tab showing a node graph of connected assets within the asset context panel." src="/assets/attack_path_visualization"/>
+ 
+ 
+**What it shows**
+ 
+- Hosts, users, and accounts connected to the current asset through observed authentication relationships
+- Node color reflecting configured asset criticality
+- Satellite indicators summarizing active alerts, cases, vulnerabilities, and hygiene issues per node
+ 
+**Why it matters**
+ 
+A single exposure is not always critical on its own. Its impact depends on what it can lead to. The attack path visualization tab lets analysts immediately assess whether a compromised or exposed asset provides a path to a more sensitive target, and where remediation would have the greatest effect.
+ 
+For a full explanation of the graph, node types, navigation controls, and remediation workflow, see [Attack path visualization](/xdr/features/investigate/attack_path_visualization.md).
 
-- understand **what** the asset is  
-- evaluate **how well** it is protected  
-- assess **whether** it is behaving abnormally  
-- **act decisively** with traceable context
 
-The panel bridges the gap between *data visibility* and *investigative understanding* — making every analyst faster, more confident, and more effective.
+
+## Related links
+ 
+- [Attack path visualization](/xdr/features/investigate/attack_path_visualization.md) — How to open and interpret the attack path graph from the asset context panel, including node types, satellite nodes, and remediation prioritization.
+- [Points of interest](/xdr/features/detect/points_of_interest.md) — How Reveal surfaces behavioral anomalies on assets, including UEBA rules and how to interpret PoI signals during triage.
+- [Asset connector health status and logs](/xdr/features/collect/asset_connector_health.md) — How to monitor asset connector error states and investigate synchronization issues using connector logs.
+- [Collect — Assets](/xdr/features/collect/assets.md) — How assets are configured, discovered, and managed in Sekoia.
