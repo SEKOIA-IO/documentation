@@ -60,7 +60,9 @@ To create a new feed:
 
 <figure><img src="../../.gitbook/assets/feeds.png" alt=""><figcaption></figcaption></figure>
 
-!!! note Filter categories are combined together with a logical AND. Different values in the same filter category are combined together with a logical OR. This means you can define a feed with values matching ((Locations: France OR Germany) AND (Sectors: Financial Services OR Industrial).
+{% hint style="info" %}
+Filter categories are combined together with a logical AND. Different values in the same filter category are combined together with a logical OR. This means you can define a feed with values matching ((Locations: France OR Germany) AND (Sectors: Financial Services OR Industrial).
+{% endhint %}
 
 ### Edit a feed
 
@@ -81,4 +83,6 @@ To delete an existing feed:
 3. Click on the `delete` button in the right of the table
 4. Confirm deletion in the modal
 
-!!! note Beware, deleting a feed is a permanent action as you will not be able to access or edit it afterwards.
+{% hint style="info" %}
+Beware, deleting a feed is a permanent action as you will not be able to access or edit it afterwards.
+{% endhint %}
