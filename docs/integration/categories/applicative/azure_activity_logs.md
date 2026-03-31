@@ -10,8 +10,9 @@ Azure Activity Logs deliver a subscription-level audit trail of
 control-plane events—resource creations, modifications, deletions and
 service health incidents.
 
-!!! Warning
-    Important note - This format is currently in beta. We highly value your feedback to improve its performance.
+{% hint style="warning" %}
+Important note - This format is currently in beta. We highly value your feedback to improve its performance.
+{% endhint %}
 
 - **Supported environment**: SaaS
 - **Detection based on**: Telemetry, Alerts, Audit
@@ -53,8 +54,9 @@ service health incidents.
 9. Type the name of the Azure application created previously, select it and click `Select`
 10. Click `Review + assign`
 
-!!! Warning
-    Minimal permission in order to work with integration is `Microsoft.Insights/eventtypes/values/Read`, in case if you want to make your custom role
+{% hint style="warning" %}
+Minimal permission in order to work with integration is `Microsoft.Insights/eventtypes/values/Read`, in case if you want to make your custom role
+{% endhint %}
 
 Useful resources are:
 - [Azure permissions for Monitor](https://learn.microsoft.com/en-us/azure/role-based-access-control/permissions/monitor)
@@ -74,10 +76,10 @@ In Azure Web Portal:
 1. Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a new intake from the format Azure Activity Logs. 
 2. Set up the intake configuration with the Subscription ID, Tenant ID, Client ID and Client Secret.
 
-{!_shared_content/operations_center/integrations/generated/39280bac-34d7-4fa2-a6b5-c43791eed1bc.md!}
+{% include "../../../../_shared_content/operations_center/integrations/generated/39280bac-34d7-4fa2-a6b5-c43791eed1bc.md" %}
 
-{!_shared_content/integration/detection_section.md!}
+{% include "../../../../_shared_content/integration/detection_section.md" %}
 
-{!_shared_content/operations_center/detection/generated/suggested_rules_39280bac-34d7-4fa2-a6b5-c43791eed1bc_do_not_edit_manually.md!}
+{% include "../../../../_shared_content/operations_center/detection/generated/suggested_rules_39280bac-34d7-4fa2-a6b5-c43791eed1bc_do_not_edit_manually.md" %}
 
-{!_shared_content/operations_center/integrations/generated/39280bac-34d7-4fa2-a6b5-c43791eed1bc.md!}
+{% include "../../../../_shared_content/operations_center/integrations/generated/39280bac-34d7-4fa2-a6b5-c43791eed1bc.md" %}
