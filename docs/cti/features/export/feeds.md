@@ -1,4 +1,5 @@
-# Outgoing Feeds
+# Feeds
+
 A feed allows you to filter CTI objects from your database.
 
 ## Feeds listing
@@ -7,12 +8,12 @@ The feeds’ page is accessible in the main menu. The page lists all feeds that 
 
 The available filters are:
 
-- Types
-- TLPs
-- Targeted sectors of activity
-- Targeted locations
-- Sources
-- Observable types
+* Types
+* TLPs
+* Targeted sectors of activity
+* Targeted locations
+* Sources
+* Observable types
 
 A feed can be consumed by all users belonging to the community that creates it.
 
@@ -22,9 +23,9 @@ To consume a feed, you have to click on the dropdown icon next to the name of th
 
 You can then:
 
-- Copy the feed ID
-- Copy the API URL
-- Copy the TAXII URL
+* Copy the feed ID
+* Copy the API URL
+* Copy the TAXII URL
 
 ## Feed format
 
@@ -32,12 +33,12 @@ When creating a feed, you have different formats to choose from.
 
 The available formats are:
 
-- **JSON**: The default format
-- **CSV**: It is possible to choose which attributes you want to see in the feed
-- **Text**: The content for this format will be a raw text with, on each line, either the name of the object or the observable from the pattern.
-- **Custom**: A template string is needed to specify the way the data must be formatted.
-    - The template variables must follow the format: `$name` where `name` is the name of the attribute
-    - Example: `ID: $id, name: $name, Observables: $observables`
+* **JSON**: The default format
+* **CSV**: It is possible to choose which attributes you want to see in the feed
+* **Text**: The content for this format will be a raw text with, on each line, either the name of the object or the observable from the pattern.
+* **Custom**: A template string is needed to specify the way the data must be formatted.
+  * The template variables must follow the format: `$name` where `name` is the name of the attribute
+  * Example: `ID: $id, name: $name, Observables: $observables`
 
 ### Default Feed
 
@@ -57,8 +58,9 @@ To create a new feed:
 4. Choose a feed format
 5. Save your changes
 
-!!! note
-    Filter categories are combined together with a logical AND. Different values in the same filter category are combined together with a logical OR. This means you can define a feed with values matching ((Locations: France OR Germany) AND (Sectors: Financial Services OR Industrial).
+<figure><img src="../../.gitbook/assets/feeds.png" alt=""><figcaption></figcaption></figure>
+
+!!! note Filter categories are combined together with a logical AND. Different values in the same filter category are combined together with a logical OR. This means you can define a feed with values matching ((Locations: France OR Germany) AND (Sectors: Financial Services OR Industrial).
 
 ### Edit a feed
 
@@ -79,5 +81,4 @@ To delete an existing feed:
 3. Click on the `delete` button in the right of the table
 4. Confirm deletion in the modal
 
-!!! note
-    Beware, deleting a feed is a permanent action as you will not be able to access or edit it afterwards.
+!!! note Beware, deleting a feed is a permanent action as you will not be able to access or edit it afterwards.
