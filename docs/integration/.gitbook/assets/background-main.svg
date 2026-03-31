@@ -1,0 +1,32 @@
+<svg width="1920" height="1080" viewBox="0 0 1920 1080" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_7_80)">
+<rect width="1920" height="1080" fill="url(#paint0_radial_7_80)"/>
+<g style="mix-blend-mode:color-dodge" filter="url(#filter0_f_7_80)">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M619.311 606.544C1157.92 606.544 1594.54 169.917 1594.54 -368.689C1594.54 -907.296 1157.92 -1343.92 619.311 -1343.92C80.7044 -1343.92 -355.922 -907.296 -355.922 -368.689C-355.922 169.917 80.7044 606.544 619.311 606.544ZM619.311 931.622C1337.45 931.622 1919.62 349.453 1919.62 -368.689C1919.62 -1086.83 1337.45 -1669 619.311 -1669C-98.8311 -1669 -681 -1086.83 -681 -368.689C-681 349.453 -98.8311 931.622 619.311 931.622Z" fill="#4F4C69"/>
+</g>
+<g style="mix-blend-mode:color-dodge" filter="url(#filter1_f_7_80)">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M619.311 841.622C1287.75 841.622 1829.62 299.747 1829.62 -368.689C1829.62 -1037.13 1287.75 -1579 619.311 -1579C-49.1254 -1579 -591 -1037.13 -591 -368.689C-591 299.747 -49.1254 841.622 619.311 841.622ZM619.311 931.622C1337.45 931.622 1919.62 349.453 1919.62 -368.689C1919.62 -1086.83 1337.45 -1669 619.311 -1669C-98.8311 -1669 -681 -1086.83 -681 -368.689C-681 349.453 -98.8311 931.622 619.311 931.622Z" fill="#4F4C69"/>
+</g>
+</g>
+<defs>
+<filter id="filter0_f_7_80" x="-850.795" y="-1838.8" width="2940.21" height="2940.21" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+<feGaussianBlur stdDeviation="84.8975" result="effect1_foregroundBlur_7_80"/>
+</filter>
+<filter id="filter1_f_7_80" x="-850.795" y="-1838.8" width="2940.21" height="2940.21" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+<feGaussianBlur stdDeviation="84.8975" result="effect1_foregroundBlur_7_80"/>
+</filter>
+<radialGradient id="paint0_radial_7_80" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(706 8.74069e-06) rotate(70.0627) scale(1495.64 2658.68)">
+<stop offset="0.046875" stop-color="#1B198C"/>
+<stop offset="0.309446" stop-color="#4531BF"/>
+<stop offset="0.548061" stop-color="#5D4FF2"/>
+<stop offset="1" stop-color="#08031F"/>
+</radialGradient>
+<clipPath id="clip0_7_80">
+<rect width="1920" height="1080" fill="white"/>
+</clipPath>
+</defs>
+</svg>
