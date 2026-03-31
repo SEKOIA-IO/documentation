@@ -325,9 +325,9 @@ Connectors that discovered or enriched the asset (e.g., **EDR** such as CrowdStr
 <img width="463,4" height="390,6" alt="Security controls tab example" src="https://github.com/user-attachments/assets/279e1288-53c6-490e-8f30-0498c3484d3e"/>
 
 
-## Attack path visualization tab  *(Reveal specific capability)*
+## Attack path visualization  *(Reveal specific capability)*
 
-The **Attack path visualization** tab displays a graph of connected hosts and users that may form a potential attack path from the current asset, helping analysts assess lateral movement risk and blast radius without leaving the asset context.
+The **Attack path visualization** displays a graph of connected hosts and users that may form a potential attack path from the current asset, helping analysts assess lateral movement risk and blast radius without leaving the asset context.
 
 <img width="463,4" height="390,6" alt="Attack path visualization tab showing a node graph of connected assets within the asset context panel." src="/assets/attack_path_visualization"/>
  
