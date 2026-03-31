@@ -51,10 +51,13 @@ Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a n
 
 Set up the intake configuration with the EventHub's `Connection string-primary key`, the hub name, the consumer group, the storage's `Connection string-primary key` and the container name.
 
-{!\_shared\_content/operations\_center/integrations/generated/70c5c3db-fae8-4825-8d8b-08d6315e1ef6\_sample.md!}
+\{% include "\_shared\_content/operations\_center/integrations/generated/70c5c3db-fae8-4825-8d8b-08d6315e1ef6\_sample.md" %\}
 
-{!\_shared\_content/integration/detection\_section.md!}
+\{% include "\_shared\_content/integration/detection\_section.md" %\}
 
-{!\_shared\_content/operations\_center/detection/generated/suggested\_rules\_70c5c3db-fae8-4825-8d8b-08d6315e1ef6\_do\_not\_edit\_manually.md!}
+\{% include "\_shared\_content/operations\_center/detection/generated/suggested\_rules\_70c5c3db-fae8-4825-8d8b-08d6315e1ef6\_do\_not\_edit\_manually.md" %\}
 
-{!\_shared\_content/operations\_center/integrations/generated/70c5c3db-fae8-4825-8d8b-08d6315e1ef6.md!}
+\{% include "\_shared\_content/operations\_center/integrations/generated/70c5c3db-fae8-4825-8d8b-08d6315e1ef6.md" %\}
+
+{% include "../../.gitbook/includes/untitled.md" %}
+
