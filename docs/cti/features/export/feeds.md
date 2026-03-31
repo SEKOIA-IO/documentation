@@ -17,6 +17,8 @@ The available filters are:
 
 A feed can be consumed by all users belonging to the community that creates it.
 
+<figure><img src="../../.gitbook/assets/roy.png" alt=""><figcaption></figcaption></figure>
+
 ## Consume a feed
 
 To consume a feed, you have to click on the dropdown icon next to the name of the feed in the first column of the table.
