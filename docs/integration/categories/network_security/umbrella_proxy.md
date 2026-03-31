@@ -31,7 +31,7 @@ Once created:
 {!_shared_content/integration/connector_configuration.md!}
 
 !!! Info
-    Please find here the official documentation related to [AWS Access Key](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html).
+    Refer to the **AWS Authentication Setup** section above for instructions on configuring either OIDC (recommended) or static access keys.
 
 {!_shared_content/operations_center/integrations/generated/5a8ef52f-d143-4735-8546-98539fc07725_sample.md!}
 
