@@ -22,7 +22,7 @@
   * [applicative](categories/applicative/README.md)
     * [1password\_epm](categories/applicative/1password_epm.md)
     * [apache](categories/applicative/apache.md)
-    * [azure\_activity\_logs](categories/applicative/azure_activity_logs.md)
+    * [Azure Activity Logs](categories/applicative/azure_activity_logs.md)
     * [azure\_files](categories/applicative/azure_files.md)
     * [azure\_mysql](categories/applicative/azure_mysql.md)
     * [cloudflare-audit-logs](categories/applicative/cloudflare-audit-logs.md)
