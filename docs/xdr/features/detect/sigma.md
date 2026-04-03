@@ -1,6 +1,10 @@
 # Sigma Rules
 
 Sigma is a generic and open format you can use to write signatures that will be applied to your event stream in real-time. This format makes it easy to write rules applicable to any field available in normalized events. Rules are documents using the YAML format.
+
+!!! Warning
+    Do not use comments `# My comment on a line ...` to build your rules, they are not supported
+
 ## Detection Object
 Each rule should contain a `detection` object using a set of `Search-Identifier`s to define a matching `condition`:
 ```yaml
