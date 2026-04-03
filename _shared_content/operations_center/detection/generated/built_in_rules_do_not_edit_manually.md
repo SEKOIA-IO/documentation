@@ -1,4 +1,4 @@
-Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-03-24_](rules_changelog.md)).
+Rules catalog includes **1062 built-in detection rules** ([_last update on 2026-04-03_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Identity Information**
 
@@ -2433,6 +2433,12 @@ Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-
     Detects Elise backdoor activity as used by Lotus Blossom
     
     - **Effort:** elementary
+    
+??? abstract "Evil Winrm Modules Execution"
+    
+    This rule detects suspicious PowerShell activity consistent with the Evil-WinRM remote shell being executed via the Windows Remote Management host process
+    
+    - **Effort:** intermediate
     
 ??? abstract "Exploited CVE-2020-10189 Zoho ManageEngine"
     
@@ -10026,6 +10032,12 @@ Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-
     
     - **Effort:** master
     
+??? abstract "Correlation Post Exploitation Patterns Via Winrm"
+    
+    This rule detects a sequence of post exploitation commands (e.g., whoami, net, ipconfig) executed via WinRM on host within a short timeframe
+    
+    - **Effort:** intermediate
+    
 ??? abstract "ETW Tampering"
     
     Detects a command that clears or disables any ETW Trace log which could indicate a logging evasion
@@ -10052,6 +10064,12 @@ Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-
     
         - 26/03/2024 - major - Rule's pattern field changed
             
+??? abstract "Evil Winrm Modules Execution"
+    
+    This rule detects suspicious PowerShell activity consistent with the Evil-WinRM remote shell being executed via the Windows Remote Management host process
+    
+    - **Effort:** intermediate
+    
 ??? abstract "High Privileges Network Share Removal"
     
     Detects high privileges shares being deleted with the net share command.
@@ -15833,6 +15851,7 @@ Rules catalog includes **1060 built-in detection rules** ([_last update on 2026-
     
     - **Changelog:**
     
+        - 02/04/2026 - minor - Adding regex to reduce false positives.
         - 21/06/2024 - major - Update detection pattern for ECS fields/value compliance
         - 16/05/2024 - minor - add pattern to extend and improve detection
             
