@@ -6,7 +6,10 @@ type: intake
 
 BeyondTrust Privileged Remote Access enables secure, controlled remote access to critical systems for employees and vendors, focusing on protecting privileged credentials and sessions. 
 
-This integration collects the VaultAccountActivity logs
+This integration collects the VaultAccountActivity logs.
+
+!!! Warning
+    Important note - This format is currently in beta. We highly value your feedback to improve its performance.
 
 - **Vendor**: BeyondTrust
 - **Supported environment**: SaaS
