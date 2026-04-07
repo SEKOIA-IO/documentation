@@ -88,7 +88,8 @@ The page also includes powerful filtering options to help you efficiently locate
 You can use multiple filters simultaneously to refine your view. The number next to the `Filters` button indicates the total number of assets that match your applied filter criteria.
 
 !!! note
-    Each asset can have up to 100 tags, and tags can only have string-type values.
+    - Each asset can have up to 100 tags, 
+    - Tags can only have string-type values.
 
 ### Bulk Actions 
 
