@@ -14,8 +14,6 @@ Sekoia.io provides its agent for collecting security-related events with a minim
 
 The Endpoint Detection Agent supports the following operating systems, **on 64-bit versions only**:
 
-\=== "Windows"
-
 {% tabs %}
 {% tab title="Windows" %}
 ```
@@ -57,20 +55,28 @@ To find out about the changes between each version please check the [agent's cha
 
 The Sekoia.io Endpoint Agent uses the HTTPS protocol to send its events and has an automatic update mechanism. As a prerequisite, it's necessary to open the following streams:
 
-\=== "FRA1"
-
-```
-* <https://intake.sekoia.io/>
-* <https://api.sekoia.io/>
-```
-
-\=== "FRA2" \* [https://intake.fra2.sekoia.io/](https://intake.fra2.sekoia.io/) \* [https://app.fra2.sekoia.io/](https://app.fra2.sekoia.io/)
-
-\=== "MCO1" \* [https://intake.mco1.sekoia.io/](https://intake.mco1.sekoia.io/) \* [https://app.mco1.sekoia.io/](https://app.mco1.sekoia.io/)
-
-\=== "UAE1" \* [https://intake.uae1.sekoia.io/](https://intake.uae1.sekoia.io/) \* [https://app.uae1.sekoia.io/](https://app.uae1.sekoia.io/)
-
-\=== "USA1" \* [https://intake.usa1.sekoia.io/](https://intake.usa1.sekoia.io/) \* [https://app.usa1.sekoia.io/](https://app.usa1.sekoia.io/)
+{% tabs %}
+{% tab title="FRA1" %}
+- [https://intake.sekoia.io/](https://intake.sekoia.io/)
+- [https://api.sekoia.io/](https://api.sekoia.io/)
+{% endtab %}
+{% tab title="FRA2" %}
+- [https://intake.fra2.sekoia.io/](https://intake.fra2.sekoia.io/)
+- [https://app.fra2.sekoia.io/](https://app.fra2.sekoia.io/)
+{% endtab %}
+{% tab title="MCO1" %}
+- [https://intake.mco1.sekoia.io/](https://intake.mco1.sekoia.io/)
+- [https://app.mco1.sekoia.io/](https://app.mco1.sekoia.io/)
+{% endtab %}
+{% tab title="UAE1" %}
+- [https://intake.uae1.sekoia.io/](https://intake.uae1.sekoia.io/)
+- [https://app.uae1.sekoia.io/](https://app.uae1.sekoia.io/)
+{% endtab %}
+{% tab title="USA1" %}
+- [https://intake.usa1.sekoia.io/](https://intake.usa1.sekoia.io/)
+- [https://app.usa1.sekoia.io/](https://app.usa1.sekoia.io/)
+{% endtab %}
+{% endtabs %}
 
 ### Installation
 
