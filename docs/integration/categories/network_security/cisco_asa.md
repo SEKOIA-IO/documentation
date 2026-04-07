@@ -85,17 +85,15 @@ The Cisco Secure Firewall (formerly Next-Generation Firewall) is a security prod
 
 {% include "../../../../_shared_content/integration/intake_configuration.md" %}
 
-{!\_shared\_content/integration/intake\_configuration.md!}
+{% include "../../../../_shared_content/integration/forwarder_configuration.md" %}
 
-{!\_shared\_content/integration/forwarder\_configuration.md!}
+{% include "../../../../_shared_content/operations_center/integrations/generated/466aeca2-e112-4ccc-a109-c6d85b91bbcf_sample.md" %}
 
-{!\_shared\_content/operations\_center/integrations/generated/466aeca2-e112-4ccc-a109-c6d85b91bbcf\_sample.md!}
+{% include "../../../../_shared_content/integration/detection_section.md" %}
 
-{!\_shared\_content/integration/detection\_section.md!}
+{% include "../../../../_shared_content/operations_center/detection/generated/suggested_rules_466aeca2-e112-4ccc-a109-c6d85b91bbcf_do_not_edit_manually.md" %}
 
-{!\_shared\_content/operations\_center/detection/generated/suggested\_rules\_466aeca2-e112-4ccc-a109-c6d85b91bbcf\_do\_not\_edit\_manually.md!}
-
-{!\_shared\_content/operations\_center/integrations/generated/466aeca2-e112-4ccc-a109-c6d85b91bbcf.md!}
+{% include "../../../../_shared_content/operations_center/integrations/generated/466aeca2-e112-4ccc-a109-c6d85b91bbcf.md %}
 
 ### Further readings
 
