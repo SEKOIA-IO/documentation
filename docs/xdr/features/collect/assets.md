@@ -87,6 +87,9 @@ The page also includes powerful filtering options to help you efficiently locate
 
 You can use multiple filters simultaneously to refine your view. The number next to the `Filters` button indicates the total number of assets that match your applied filter criteria.
 
+!!! note
+    Each asset can have up to 100 tags, and tags can only have string-type values.
+
 ### Bulk Actions 
 
 The Asset Listing page supports bulk actions, allowing you to perform operations on multiple selected assets simultaneously. This significantly improves efficiency when managing your inventory. Available bulk actions include:
@@ -268,7 +271,7 @@ detection:
 
 By using custom tags, you can precisely control which assets are included in or excluded from your detection rules, ensuring a more targeted and effective threat detection strategy. For more information on how to tag assets using the Sekoia.io API, refer to the API documentation.
 
-    !!! Note
+!!! Note
     There is no need to add the `contains` modifier when referring to a tag. Because the `sekoiaio.any_asset.tags` field is a list, `sekoiaio.any_asset.tags: mytag` already means "match if any of the tags is mytag".
 
 ### Manual Asset Creation
