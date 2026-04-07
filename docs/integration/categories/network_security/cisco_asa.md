@@ -83,6 +83,8 @@ The Cisco Secure Firewall (formerly Next-Generation Firewall) is a security prod
 
 #### Instruction on Sekoia
 
+{% include "../../../_shared_content/integration/intake/configuration.md" %}
+
 {!\_shared\_content/integration/intake\_configuration.md!}
 
 {!\_shared\_content/integration/forwarder\_configuration.md!}
