@@ -1,6 +1,6 @@
 # Register for a training course
 
-This article explains how to create a training account and enroll in Sekoia.io courses, from self-paced e-learning to instructor-led certification sessions.
+This article explains how to create a training account and enroll in Sekoia courses, from self-paced e-learning to instructor-led certification sessions.
 
 ## Prerequisites
 
