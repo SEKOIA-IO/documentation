@@ -35,7 +35,7 @@ The 301 and 302 certifications are validated by a Multiple Choice Question (MCQ)
 
 ## Training portal
 
-Access all courses and manage your enrollments on the training portal at `https://training.sekoia.io/`.
+Access all courses and manage your enrollments on the training portal at [https://training.sekoia.io/](https://training.sekoia.io/).
 
 To sign up for our training programs, follow our dedicated guide: [Register for a training course](/getting_started/register_training.md)
 
