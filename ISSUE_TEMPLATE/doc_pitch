@@ -1,0 +1,59 @@
+name: 📄 Documentation Pitch
+description: Submit request and raw material for a new documentation article.
+title: "[DOC]: "
+labels: ["documentation", "needs-content"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Please fill in the sections below to provide the Content Team with the necessary context and technical details.
+
+  - type: textarea
+    id: value_prop
+    attributes:
+      label: Value Proposition
+      description: Why should the user care? What is the issue this doc will solve?
+      placeholder: e.g., This feature allows analysts to filter alerts by severity, saving time during investigations...
+    validations:
+      required: true
+
+  - type: dropdown
+    id: audience
+    attributes:
+      label: Target Audience
+      description: Do we speak to an Analyst, an Integrator, or a Dev? This defines the complexity level.
+      options:
+        - Security Analyst (User)
+        - Integrator (Setup/Config)
+        - Developer (API/Code)
+    validations:
+      required: true
+
+  - type: textarea
+    id: tech_points
+    attributes:
+      label: Key Technical Points
+      description: The raw material needed to structure the guide (config steps, logs format, specific parameters, screenshots links).
+      placeholder: List the steps, prerequisites, or copy-paste technical specs here.
+    validations:
+      required: true
+
+        - type: dropdown
+    id: priority
+    attributes:
+      label: Priority
+      options:
+        - P0 (Urgent / Blocking Release)
+        - P1 (High / Important)
+        - P2 (Medium)
+        - P3 (Low / Nice to have)
+    validations:
+      required: true
+
+  - type: input
+    id: deadline
+    attributes:
+      label: Desired Delivery Date
+      placeholder: YYYY-MM-DD
+    validations:
+      required: false
