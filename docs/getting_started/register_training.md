@@ -9,20 +9,20 @@ This article explains how to create a training account and enroll in Sekoia cour
 
 ## Create your training account
 
-1. Go to `https://sekoia.io`, navigate to **Resources > Training Courses**, then select **Sign up**.
+1. Go to [https://sekoia.io](https://sekoia.io), navigate to **Resources > Training Courses**, then select **Sign up**.
 
     !!! tip "Direct link"
-        You can also access the registration form directly at `https://www.sekoia.io/en/lets-talk-about-your-training-project/`.
+        You can also access the registration form directly at [https://www.sekoia.io/en/lets-talk-about-your-training-project/](https://www.sekoia.io/en/lets-talk-about-your-training-project/).
 
 2. Complete the registration form and submit it.
-3. Check your inbox for an account creation email and follow the link to finalize your account on `https://training.sekoia.io/`.
+3. Check your inbox for an account creation email and follow the link to finalize your account on [https://training.sekoia.io/](https://training.sekoia.io/).
 
 !!! warning "Account activation deadline"
     Your account is deactivated if you do not log in within one week of receiving the creation email. If this happens, contact `training@sekoia.io` to reactivate your access.
 
 ## Enroll in self-paced courses (101, 201, 202)
 
-1. Log in to the training portal at `https://training.sekoia.io/`.
+1. Log in to the training portal at [https://training.sekoia.io/](https://training.sekoia.io/).
 2. Browse the course catalog and select the course you want to follow.
 3. Select **Enroll** to start the course at your own pace.
 
@@ -32,7 +32,7 @@ This article explains how to create a training account and enroll in Sekoia cour
     Your enrollment in a 301 or 302 session is validated only after the team confirms that you have completed the required e-learning courses (101, 201, 202). Make sure you finish these before booking a session.
 
 1. Complete the 101, 201, and 202 courses and pass their exams.
-2. Log in to the training portal at `https://training.sekoia.io/`.
+2. Log in to the training portal at [https://training.sekoia.io/](https://training.sekoia.io/).
 3. Select the 301 or 302 session that fits your schedule.
 4. Select **Book** to reserve your spot.
 
