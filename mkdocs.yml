@@ -51,6 +51,9 @@ nav:
 - Getting started:
   - Overview: getting_started/index.md
   - Where to start: getting_started/concepts.md
+  - Trainings: 
+    - Training offer overview: getting_started/training_overview.md
+    - Register for a training course: getting_started/register_training.md
   - Workspace setup:
     - Join workspace: getting_started/join_community.md
     - Create and manage communities: getting_started/create_community.md
