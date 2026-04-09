@@ -1,4 +1,4 @@
-Rules catalog includes **1062 built-in detection rules** ([_last update on 2026-04-03_](rules_changelog.md)).
+Rules catalog includes **1063 built-in detection rules** ([_last update on 2026-04-09_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Identity Information**
 
@@ -13026,6 +13026,12 @@ Rules catalog includes **1062 built-in detection rules** ([_last update on 2026-
     
     - **Effort:** elementary
     
+??? abstract "Entra ID Sign-In Via Known AiTM Phishing Kit (HoneySecurity / HoneyStorm)"
+    
+    Detects a sign-in attempt with known characteristics of the adversary-in-the-middle phishing kit HoneySecurity / HoneyStorm.
+    
+    - **Effort:** elementary
+    
 ??? abstract "Entra ID Sign-In Via Known AiTM Phishing Kit (Mamba 2FA)"
     
     Detects a sign-in attempt with known characteristics of the adversary-in-the-middle phishing kit tracked by Sekoia.io as Mamba 2FA.
@@ -13349,6 +13355,12 @@ Rules catalog includes **1062 built-in detection rules** ([_last update on 2026-
 ??? abstract "Entra ID Sign-In Via Known AiTM Phishing Kit (Greatness)"
     
     Detects a sign-in attempt with known characteristics of the adversary-in-the-middle phishing kit Greatness.
+    
+    - **Effort:** elementary
+    
+??? abstract "Entra ID Sign-In Via Known AiTM Phishing Kit (HoneySecurity / HoneyStorm)"
+    
+    Detects a sign-in attempt with known characteristics of the adversary-in-the-middle phishing kit HoneySecurity / HoneyStorm.
     
     - **Effort:** elementary
     
@@ -14632,6 +14644,12 @@ Rules catalog includes **1062 built-in detection rules** ([_last update on 2026-
 ??? abstract "Entra ID Sign-In Via Known AiTM Phishing Kit (Greatness)"
     
     Detects a sign-in attempt with known characteristics of the adversary-in-the-middle phishing kit Greatness.
+    
+    - **Effort:** elementary
+    
+??? abstract "Entra ID Sign-In Via Known AiTM Phishing Kit (HoneySecurity / HoneyStorm)"
+    
+    Detects a sign-in attempt with known characteristics of the adversary-in-the-middle phishing kit HoneySecurity / HoneyStorm.
     
     - **Effort:** elementary
     
