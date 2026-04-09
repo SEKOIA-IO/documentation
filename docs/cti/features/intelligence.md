@@ -13,7 +13,7 @@ The two ways to find what you need in the knowledge base is to:
 1. Use the search bar embedded in the menu. It’s accessible from any page of the app and enables a quick search in the database.
 2. Click `Intelligence` from the app menu and use the main search bar to browse the knowledge you need.
 
-{: style="max-width:100%"}
+<div data-with-frame="true"><figure><img src="../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure></div>
 
 You can search for **multiple items at the same time**. To skip a line and paste multiple items, press `Shift-Enter` and paste your content.
 
@@ -23,7 +23,7 @@ You can search for **multiple items at the same time**. To skip a line and paste
 
 After you’ve typed your search and clicked on `enter`, two or three tabs appear under the search bar: one for **objects**, one for **observables** and one for **unknown observables**.
 
-You can refer to [this page](../../../../cti/features/data_model.md) to understand what objects and observables are and how our data model works.
+You can refer to [this page](../../../cti/features/data_model.md) to understand what objects and observables are and how our data model works.
 
 Each tab has a counter that informs users about the **number of items** in the database for each category.
 

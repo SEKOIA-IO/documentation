@@ -14,7 +14,7 @@
       * [STIX 2.1](features/core-concepts/standards/stix-2.1.md)
       * [ATT\&CK](features/core-concepts/standards/att-and-ck.md)
   * [Threat Landscape](features/threat_landscape.md)
-  * [Intelligence Database](features/intelligence/README.md)
+  * [Intelligence Database](features/intelligence.md)
     * [Find Objects](features/intelligence/find-objects.md)
     * [Find Observables](features/intelligence/find-observables.md)
   * [Reports](features/reports/README.md)
