@@ -7,7 +7,7 @@ To ensure consistent recognition and semantic interpretation of network events, 
 | **Field**          | **Description**                                      | **Examples**                                     |
 |--------------------|------------------------------------------------------|--------------------------------------------------|
 | **event.action**   | Describes what the event represents or what action was taken. | `allow`, `deny`, `connection`, `disconnection`, `alert` |
-| **event.kind**     | Describes the kind of event.                         | `event`, `alert`, `metric`, `state`              |
+| **event.kind**     | Describes the kind of event.                         | `alert`, `metric`, `state`              |
 | **event.category** | The high-level category of the event.              | `network`, `intrusion_detection`, `firewall`     |
 
 ## 🛠️ Additional Fields
