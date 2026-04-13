@@ -1100,6 +1100,14 @@ In this section, you will find examples of raw logs as generated natively by the
 
 
 
+=== "test_disconnect_with_helo"
+
+    ```
+	disconnect from mail-gateway.example.com[1.2.3.4] helo=1 mail=1 rcpt=1 data=1 quit=1 commands=5
+    ```
+
+
+
 === "wo_appname_anvil"
 
     ```

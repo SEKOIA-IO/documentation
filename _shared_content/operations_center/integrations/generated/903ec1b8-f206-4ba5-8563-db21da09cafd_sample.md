@@ -2051,6 +2051,15 @@ In this section, you will find examples of raw logs as generated natively by the
 
 
 
+=== "test_threat_wildfire_csv"
+
+
+    ```json
+	1,2026/03/02 09:27:13,012345678901,THREAT,wildfire,2818,2026/03/02 09:27:13,1.2.3.4,5.6.7.8,9.10.11.12,5.6.7.8,Allow-Outbound-Web,EXAMPLE\jdoe,,web-browsing,vsys1,Zone-Trust,Zone-Untrust,ae4.119,ethernet1/4,Default-LogFwd,2026/03/02 09:27:13,783942,1,61838,80,8270,80,0x402000,tcp,allow,"vcomp140_app.dll",Windows Dynamic Link Library (DLL)(52019),benign,informational,server-to-client,1234567890123456789,0x0,10.0.0.0-10.255.255.255,New Caledonia
+    ```
+
+
+
 === "test_timestamp_palo"
 
 
