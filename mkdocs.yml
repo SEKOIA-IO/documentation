@@ -466,9 +466,7 @@ nav:
       - Trellix ePO: integration/categories/network_security/trellix_epo.md
       - Trellix ePO - On Prem: integration/categories/network_security/trellix_epo_on_prem.md
       - Trend Micro Deep Security / Workload Security: integration/categories/network_security/trend_micro_deep_security.md
-      - Ubika Cloud Protector Alerts: integration/categories/network_security/ubika_cloud_protector_alerts.md
       - Ubika Cloud Protector Next Generation: integration/categories/network_security/ubika_cloud_protector_next_gen.md
-      - Ubika Cloud Protector Traffic: integration/categories/network_security/ubika_cloud_protector_traffic.md
       - Ubika WAAP Gateway: integration/categories/network_security/ubika_waap.md
       - Umbrella IP Logs: integration/categories/network_security/umbrella_ip.md
       - Umbrella Proxy Logs: integration/categories/network_security/umbrella_proxy.md
@@ -499,7 +497,6 @@ nav:
     - Collaboration Tools:
       - Atlassian JIRA: integration/action_library/atlassian-jira.md
       - Git: integration/action_library/git.md
-      - Nybble: integration/action_library/nybble.md
       - ServiceNow: integration/action_library/servicenow.md
       - The Hive: integration/action_library/the-hive.md
       - The Hive V5: integration/action_library/the-hive-v5.md
@@ -534,7 +531,6 @@ nav:
       - Sophos: integration/action_library/sophos.md
       - Zscaler: integration/action_library/zscaler.md
     - Threat Intelligence:
-      - BinaryEdge's API: integration/action_library/binaryedge-s-api.md
       - Censys: integration/action_library/censys.md
       - Certificate Transparency: integration/action_library/certificate-transparency.md
       - Detection Rules: integration/action_library/detection-rules.md
@@ -548,7 +544,6 @@ nav:
       - OSINT: integration/action_library/osint.md
       - Onyphe: integration/action_library/onyphe.md
       - Public Suffix: integration/action_library/public-suffix.md
-      - RiskIQ: integration/action_library/riskiq.md
       - Shodan: integration/action_library/shodan.md
       - Tranco: integration/action_library/tranco.md
       - Triage: integration/action_library/triage.md
