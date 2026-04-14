@@ -11,6 +11,8 @@ Nanocorp provides network observability and security events, offering centralize
 - **Detection based on**: Telemetry
 - **Supported application or feature**: Network events
 
+!!! Warning
+	Important note - This format is currently in beta. We highly value your feedback to improve its performance.
 
 ## Configure
 
