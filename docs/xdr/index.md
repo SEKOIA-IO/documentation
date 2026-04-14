@@ -1,8 +1,17 @@
-# Sekoia Defend (XDR)
+# Sekoia Defend 
 
-Sekoia Defend (XDR) is **an eXtended Detection and Response platform** that automates your SOC.
+!!! note "Licensing & Ecosystem"
+    Sekoia Defend is the foundational module of the Sekoia AI SOC Platform. It operates as a **standalone product** for detection and response. Its capabilities can be seamlessly extended by integrating **Sekoia Intelligence** (also available standalone), or by activating the **Reveal** and **Elevate** modules.
 
-It allows you to easily integrate and analyze the events produced by your applications, endpoints, cloud and SaaS perimeters in real time, and we designed it with the sole purpose of protecting your assets from potential cyber threats.
+    
+Sekoia Defend is the central engine of the Sekoia AI SOC Platform. Designed to move beyond the limitations of legacy security tooling, it provides a high-performance environment to detect, investigate, and respond to cyber threats in real time.
+
+By consolidating telemetry from your applications, endpoints, cloud infrastructures, and SaaS perimeters, Sekoia Defend transforms raw data into actionable security outcomes through advanced automation and a user-centric interface.
+
+
+  <script async src="https://js.storylane.io/js/v2/storylane.js"></script>
+  <div class="sl-embed" style="position:relative;padding-bottom:56.25%;width:100%;height:0;transform:scale(1)">
+    <iframe loading="lazy" class="sl-demo" src="https://sekoia.storylane.io/demo/8zdjfok9atpn?embed=popup" name="sl-embed" allow="fullscreen" allowfullscreen style="position:absolute;top:0;left:0;width:100%!important;height:100%!important;border:1px solid rgba(63,95,172,0.35);box-shadow: 0px 0px 18px rgba(26, 19, 72, 0.15);border-radius:10px;box-sizing:border-box;"></iframe>
 
 ## Product Features
 
