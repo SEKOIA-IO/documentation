@@ -1,4 +1,4 @@
-uuid: 0ebb28ba-5748-4617-af1f-51b7ca31bf9a
+uuid: 48121ba7-6091-4bbc-accd-50e7c286e7af
 name: Nanocorp
 type: intake
 
@@ -45,3 +45,12 @@ Before starting, ensure you have:
 1. Review the configuration settings.
 2. Save the connector.
 3. Verify that events are successfully forwarded to Sekoia.
+
+
+{!_shared_content/operations_center/integrations/generated/48121ba7-6091-4bbc-accd-50e7c286e7af_sample.md!}
+
+{!_shared_content/integration/detection_section.md!}
+
+{!_shared_content/operations_center/detection/generated/suggested_rules_48121ba7-6091-4bbc-accd-50e7c286e7af_do_not_edit_manually.md!}
+
+{!_shared_content/operations_center/integrations/generated/48121ba7-6091-4bbc-accd-50e7c286e7af.md!}
