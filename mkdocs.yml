@@ -97,7 +97,7 @@ nav:
       - Export: cti/features/consume/export.md
       - IOCs Collections: cti/features/consume/ioccollections.md
     - Monitor:
-    - Dashboards: cti/features/monitor/dashboard.md
+      - Dashboards: cti/features/monitor/dashboard.md
       - Threat Landscape: cti/features/monitor/threat_landscape.md
     - External Integrations:
     - Overview: cti/features/integrations/index.md
