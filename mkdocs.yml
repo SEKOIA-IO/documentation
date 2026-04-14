@@ -221,7 +221,6 @@ nav:
           - Manage feeds: cti/features/consume/manage_feeds.md
           - Create a detection rule from a feed: cti/features/consume/create_detection_rule_from_feed.md
       - Graph Explorations: cti/features/consume/graph_explorations.md
-      - Enrichers: cti/features/consume/enrichers.md
       - Export: cti/features/consume/export.md
       - IOCs Collections: cti/features/consume/ioccollections.md
     - Monitor:
