@@ -4,9 +4,7 @@
     Sekoia Defend is the foundational module of the Sekoia AI SOC Platform. It operates as a **standalone product** for detection and response. Its capabilities can be seamlessly extended by integrating **Sekoia Intelligence** (also available standalone), or by activating the **Reveal** and **Elevate** modules.
 
     
-Sekoia Defend is the central engine of the Sekoia AI SOC Platform. Designed to move beyond the limitations of legacy security tooling, it provides a high-performance environment to detect, investigate, and respond to cyber threats in real time.
-
-By consolidating telemetry from your applications, endpoints, cloud infrastructures, and SaaS perimeters, Sekoia Defend transforms raw data into actionable security outcomes through advanced automation and a user-centric interface.
+Sekoia Defend makes it possible to easily integrate and analyze the events produced by your applications, endpoints, cloud and SaaS perimeters in real time, and we designed it with the sole purpose of protecting your assets from potential cyber threats.
 
 
   <script async src="https://js.storylane.io/js/v2/storylane.js"></script>
