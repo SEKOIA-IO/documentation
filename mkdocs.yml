@@ -82,7 +82,7 @@ nav:
   - Troubleshooting tips: getting_started/get_troubleshooting_tips.md
 - Sekoia Solutions:
   - Threat Context (Intelligence):
-    - Introduction: cti/index.md
+    - Intelligence overview: cti/index.md
     - Data Models: cti/features/data_model.md
     - Consume:
       - Intelligence: cti/features/consume/intelligence.md
@@ -116,7 +116,7 @@ nav:
       - PaloAlto Cortex XSIAM: cti/features/integrations/paloalto_xsiam.md
       - ThreatQuotient: cti/features/integrations/threatquotient.md
   - Detect, Hunt and Respond (Defend):
-    - Introduction: xdr/index.md
+    - Defend overview: xdr/index.md
     - Quick start guide: xdr/xdr_quick_start.md
     - Collect:
       - Integrations: xdr/features/collect/integrations_hub.md
