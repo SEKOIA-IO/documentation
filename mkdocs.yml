@@ -95,7 +95,6 @@ nav:
             - Manage feeds: cti/features/consume/manage_feeds.md
             - Create a detection rule from a feed: cti/features/consume/create_detection_rule_from_feed.md
         - Graph Explorations: cti/features/consume/graph_explorations.md
-        - Enrichers: cti/features/consume/enrichers.md
         - Export: cti/features/consume/export.md
         - IOCs Collections: cti/features/consume/ioccollections.md
       - Monitor:
@@ -612,7 +611,6 @@ plugins:
       intelligence_center/dashboard.md: cti/features/monitor/dashboard.md
       intelligence_center/data_export.md: cti/features/consume/export.md
       intelligence_center/data_model.md: cti/features/data_model.md
-      intelligence_center/enricher.md: cti/features/consume/enrichers.md
       intelligence_center/graph_explorations.md: cti/features/consume/graph_explorations.md
       intelligence_center/integrations.md: cti/features/integrations/index.md
       intelligence_center/integrations/anomali.md: cti/features/integrations/anomali.md
