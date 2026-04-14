@@ -100,7 +100,7 @@ nav:
       - Dashboards: cti/features/monitor/dashboard.md
       - Threat Landscape: cti/features/monitor/threat_landscape.md
     - External Integrations:
-    - Overview: cti/features/integrations/index.md
+      - Overview: cti/features/integrations/index.md
       - API: cti/features/integrations/api.md
       - TAXII: cti/features/integrations/taxii.md
       - Cortex Analyzer: cti/features/integrations/thehive.md
@@ -165,7 +165,7 @@ nav:
         - "Reference: Operators": xdr/features/investigate/sol_ref_operators.md
         - "Reference: Functions": xdr/features/investigate/sol_ref_functions.md
       - Notebooks: xdr/features/investigate/notebooks.md
-     - Report:
+    - Report:
       - Dashboards:
        - Understanding dashboards: xdr/features/report/dashboards.md
        - Create and manage dashboards: xdr/features/report/create_dashboards.md
@@ -195,35 +195,35 @@ nav:
       - Discover Points of Interest: xdr/features/detect/points_of_interest.md
       - Check asset connector health: xdr/features/collect/asset_connector_health.md
 - Usecases:
-    - Export large volumes of events: xdr/usecases/massive_export.md
-    - Implement a blocklist in Sekoia.io: xdr/usecases/playbook/implement_blocklist.md
-    - Synchronize Alerts with an external tool: xdr/usecases/playbook/synchronize_alerts.md
-    - Synchronize Assets with an Active Directory: xdr/usecases/playbook/synchronize_asset_with_ad.md
-    - Send notifications to a Webhook using a playbook: xdr/usecases/playbook/notifications_using_playbooks.md
-    - Use your own CTI in Sekoia.io: xdr/usecases/use_your_own_cti.md
-    - Investigate overusage: xdr/usecases/playbook/investigate_overusage.md
-    - Log volume reduction strategies: xdr/usecases/playbook/log_volume_reduction_strategies.md
+  - Export large volumes of events: xdr/usecases/massive_export.md
+  - Implement a blocklist in Sekoia.io: xdr/usecases/playbook/implement_blocklist.md
+  - Synchronize Alerts with an external tool: xdr/usecases/playbook/synchronize_alerts.md
+  - Synchronize Assets with an Active Directory: xdr/usecases/playbook/synchronize_asset_with_ad.md
+  - Send notifications to a Webhook using a playbook: xdr/usecases/playbook/notifications_using_playbooks.md
+  - Use your own CTI in Sekoia.io: xdr/usecases/use_your_own_cti.md
+  - Investigate overusage: xdr/usecases/playbook/investigate_overusage.md
+  - Log volume reduction strategies: xdr/usecases/playbook/log_volume_reduction_strategies.md
 - FAQ and troubleshooting:
-    - General: xdr/FAQ.md
-    - Alerts: xdr/FAQ/Alerts_qa.md
-    - Events:
-      - Events FAQ: xdr/FAQ/get_events.md
-      - Events QA: xdr/FAQ/Events_qa.md
-      - Facing issues with logs collection: xdr/FAQ/Log_collection_Troubleshoot.md
-      - Data storage and retention: xdr/FAQ/data_storage_retention.md
-      - Restore Data from cold storage: xdr/FAQ/restore_data_cold_storage.md
-    - Intelligence:
-      - Detection: xdr/FAQ/intelligence/Detection_qa.md
-      - Questions about IoC revokation: xdr/FAQ/intelligence/revoke_ioc.md
-      - Questions about detection rules: xdr/FAQ/intelligence/detection_rules.md
-    - Assets: xdr/FAQ/Assets_qa.md
-    - Ingestion:
-      - Delay with event ingestion or alert creation: xdr/FAQ/ingestion/ingestion_delay.md
-    - Subscriptions: 
-      - Allocate trial subscription: xdr/FAQ/subscriptions/allocate_trial_subscription.md
-      - Subscriptions notifications: xdr/FAQ/subscriptions/subscriptions_notifications.md
-    - Sekoia.io Endpoint agent: xdr/FAQ/SEKOIA_Endpoint_Agent.md
-    - Datetime representation: xdr/FAQ/datetime.md
+  - General: xdr/FAQ.md
+  - Alerts: xdr/FAQ/Alerts_qa.md
+  - Events:
+    - Events FAQ: xdr/FAQ/get_events.md
+    - Events QA: xdr/FAQ/Events_qa.md
+    - Facing issues with logs collection: xdr/FAQ/Log_collection_Troubleshoot.md
+    - Data storage and retention: xdr/FAQ/data_storage_retention.md
+    - Restore Data from cold storage: xdr/FAQ/restore_data_cold_storage.md
+  - Intelligence:
+    - Detection: xdr/FAQ/intelligence/Detection_qa.md
+    - Questions about IoC revokation: xdr/FAQ/intelligence/revoke_ioc.md
+    - Questions about detection rules: xdr/FAQ/intelligence/detection_rules.md
+  - Assets: xdr/FAQ/Assets_qa.md
+  - Ingestion:
+    - Delay with event ingestion or alert creation: xdr/FAQ/ingestion/ingestion_delay.md
+  - Subscriptions: 
+    - Allocate trial subscription: xdr/FAQ/subscriptions/allocate_trial_subscription.md
+    - Subscriptions notifications: xdr/FAQ/subscriptions/subscriptions_notifications.md
+  - Sekoia.io Endpoint agent: xdr/FAQ/SEKOIA_Endpoint_Agent.md
+  - Datetime representation: xdr/FAQ/datetime.md
 - Integrations:
   - Introduction: integration/index.md
   - Ingestion methods:
