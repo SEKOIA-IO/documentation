@@ -53,7 +53,7 @@ Select **Set as homepage** to make this Dashboard your default landing page.
 
 ## Managing time ranges
 
-Managing the time range is essential for analyzing trends over specific periods. The Dashboard offers flexible options for configuring the time range for each Widget or the overall view.
+Managing the time range is essential for analyzing trends over specific periods. The Dashboard offers flexible options for configuring the time range for each Widget or the overall view. (You can pin the widget's time filter to the dashboard and apply the new time filter to the whole dashboard)
 
 ### Dashboard date range
 For Built-in Widgets, you can synchronize the time range with the overall Dashboard's date range.
