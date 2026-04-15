@@ -53,8 +53,12 @@ Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a n
 
 Go to the [playbook page](https://app.sekoia.io/operations/playbooks) and create a new playbook with the AWS `Fetch new logs on S3` trigger. 
 
-Set up the module configuration with the `AWS access Key ID`, the `AWS secret access Key` and the `AWS region name`.
-Set up the trigger configuration with the `AWS SQS queue name` and the `intake key`,  from the intake previously created.
+Set up the module configuration with the **AWS Region** and either:
+
+- The **AWS Role ARN** (for OIDC authentication — recommended)
+- The **AWS access Key ID** and **AWS secret access Key** (for static credentials)
+
+Set up the trigger configuration with the `AWS SQS queue name` and the `intake key`, from the intake previously created.
 
 Start the playbook and enjoy your events.
 
