@@ -26,25 +26,32 @@ BeyondTrust Privileged Remote Access enables secure, controlled remote access to
 ### How to create an API token
 
 1. Log in the BeyondTrust Privileged Remote Access console
-2. On the left panel, click `Management`
 
-    ![Management](/assets/operation_center/integration_catalog/cloud_and_saas/beyondtrust/01_management.png){: style="max-width:100%"}
+    ![Login](/assets/operation_center/integration_catalog/cloud_and_saas/beyondtrust/syslog/00_beyondtrust_login.png){: style="max-width:100%"}
 
-3. Click `API Configuration`
+2. Click the Burger menu
 
-    ![Configuration](/assets/operation_center/integration_catalog/cloud_and_saas/beyondtrust/02_configuration.png){: style="max-width:100%"}
+    ![Burget Menu](/assets/operation_center/integration_catalog/cloud_and_saas/beyondtrust/syslog/01_burger_menu.png){: style="max-width:100%"}
 
-4. Check `Enable XML API` and click `+ Add`
+3. On the left panel, click `Management`
+    
+    ![Management](/assets/operation_center/integration_catalog/cloud_and_saas/beyondtrust/syslog/02_management.png){: style="max-width:100%"} 
 
-    ![Enable](/assets/operation_center/integration_catalog/cloud_and_saas/beyondtrust/03_enable_api_key.png){: style="max-width:100%"}
+4. Click `API Configuration`
 
-5. Check `Enable`
-6. Type a name for the API Account and add a comment (optional)
-7. Check `Reporting > Allow Access to Syslog Reports`
-8. Copy the OAuth client ID and the OAuth client Secret
-9. Click `Save`
+    ![Configuration](/assets/operation_center/integration_catalog/cloud_and_saas/beyondtrust/syslog/03_api_configuration.png){: style="max-width:100%"}
 
-    ![Click Save](/assets/operation_center/integration_catalog/cloud_and_saas/beyondtrust/04_create_api_key.png){: style="max-width:100%"}
+5. Check `Enable XML API` and click `+ Add`
+
+    ![Enable](/assets/operation_center/integration_catalog/cloud_and_saas/beyondtrust/syslog/04_enable_api_key.png){: style="max-width:100%"}
+
+6. Check `Enable`
+7. Type a name for the API Account and add a comment (optional)
+8. Check `Reporting > Allow Access to Syslog Reports`
+9. Copy the OAuth client ID and the OAuth client Secret
+10. Click `Save`
+
+     ![Click Save](/assets/operation_center/integration_catalog/cloud_and_saas/beyondtrust/syslog/05_save.png){: style="max-width:100%"}
 
 ### Instruction on Sekoia
 
