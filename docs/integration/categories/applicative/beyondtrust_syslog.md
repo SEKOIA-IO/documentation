@@ -8,6 +8,9 @@ type: intake
 
 BeyondTrust Privileged Remote Access enables secure, controlled remote access to critical systems for employees and vendors, focusing on protecting privileged credentials and sessions.
 
+!!! Warning
+    This format is currently in beta. We highly value your feedback to improve its performance.
+
 - **Vendor**: BeyondTrust
 - **Supported environment**: SaaS
 - **Detection based on**: Telemetry
