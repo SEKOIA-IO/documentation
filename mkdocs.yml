@@ -364,6 +364,7 @@ nav:
       - Azure Application Gateway: integration/categories/network/azure_application_gateway.md
       - ArubaOS Switch: integration/categories/network/arubaos.md
       - BeyondTrust PRA Sessions: integration/categories/network/beyondtrust_pra_sessions.md
+      - BeyondTrust PRA Team: integration/categories/network/beyondtrust_pra_team_activity.md
       - BIND: integration/categories/network/bind.md
       - Cato SASE: integration/categories/network/cato_sase.md
       - Cisco Catalyst SD-WAN: integration/categories/network/cisco_catalyst_sd_wan.md
