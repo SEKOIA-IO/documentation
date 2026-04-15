@@ -1,6 +1,7 @@
 # Table of contents
 
-* [Threat Context (Intelligence)](README.md)
+* [Welcome to Sekoia.io documentation](README.md)
+* [Threat Context (Intelligence)](<README (1).md>)
   * [Core Concepts](features/core-concepts/README.md)
     * [Data Model](features/core-concepts/data_model/README.md)
       * [Objects](features/core-concepts/data_model/objects.md)
