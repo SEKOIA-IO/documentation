@@ -111,7 +111,7 @@ Sekoia.io supports two authentication methods to access your AWS resources. Choo
 
     === "Automatic"
 
-        To get started, click on the button below and fill the form on AWS to set up the required environment for Sekoia [![Deploy to AWS](https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png)](https://console.aws.amazon.com/cloudformation/home#/stacks/new?stackName=sekoia_oidc_stack&templateURL=https://sekoia-doc-bucket.s3.eu-west-3.amazonaws.com/ressources_oidc.yml)
+        To get started, click on the button below and fill the form on AWS to set up the required environment for Sekoia [![Deploy to AWS](https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png)](https://console.aws.amazon.com/cloudformation/home#/stacks/new?stackName=sekoia_oidc_stack&templateURL=https://sekoia-doc-bucket.s3.eu-west-3.amazonaws.com/resources_oidc.yml)
 
         You need to fill the following inputs:
 
