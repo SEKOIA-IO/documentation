@@ -60,11 +60,6 @@ Sekoia.io supports two authentication methods to access your AWS resources. Choo
         }
         ```
 
-<!-- !!! Info
-    
-
-    You can find your **Community UUID** and **Module Configuration UUID** in the Sekoia.io platform under the connector's configuration page. -->
-
     **Step 3 — Attach a permission policy to the role**
 
     Attach an inline or managed policy granting the role read access to the SQS queue and S3 bucket:
