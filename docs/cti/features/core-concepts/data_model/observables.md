@@ -4,7 +4,13 @@ STIX Cyber Observables (SCOs) are technical artifacts that have been observed ac
 
 Observables are automatically collected from multiple sources: open-source intelligence, partner feeds, subscriptions, and Sekoia internal analysis (including C2 trackers and malware sandboxes).
 
-> For a detailed explanation of the difference between an observable and an indicator, [see Indicators vs. Observables →.](indicators-vs.-observables.md)
+
+
+{% hint style="info" %}
+For a detailed explanation of the difference between an observable and an indicator, [see Indicators vs. Observables →.](indicators-vs.-observables.md)
+{% endhint %}
+
+<figure><img src="../../../.gitbook/assets/data-model-observables.png" alt=""><figcaption></figcaption></figure>
 
 ### Supported types <a href="#supported-types" id="supported-types"></a>
 

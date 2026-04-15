@@ -8,6 +8,10 @@ Every SDO is:
 * **Exportable** — available through the CTI feed via API, TAXII, or MISP
 * **Interconnected** — linked to other objects through typed relationships (SROs)
 
+<figure><img src="../../../.gitbook/assets/data-model-objects.png" alt=""><figcaption></figcaption></figure>
+
+
+
 ### Supported Object Types <a href="#supported-object-types" id="supported-object-types"></a>
 
 | Object type          | Description                                                           |
@@ -49,4 +53,3 @@ Objects are classified using the **Traffic Light Protocol (TLP)** to indicate ho
 | **TLP:AMBER** | Limited sharing — within organization and clients |
 | **TLP:RED**   | Strict — named recipients only                    |
 
-###

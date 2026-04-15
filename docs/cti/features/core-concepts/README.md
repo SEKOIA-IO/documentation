@@ -15,6 +15,8 @@ layout:
     visible: true
   tags:
     visible: true
+tags:
+  - intelligence
 ---
 
 # Core Concepts

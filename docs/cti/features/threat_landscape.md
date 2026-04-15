@@ -1,3 +1,8 @@
+---
+tags:
+  - intelligence
+---
+
 # Threat Landscape
 
 Sekoia Threat Landscape is our centralised hub for providing actionable insights and trends on cyber threats and adversary activities.

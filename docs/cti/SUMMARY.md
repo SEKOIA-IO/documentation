@@ -1,7 +1,6 @@
 # Table of contents
 
-* [Sekoia Intelligence (CTI)](README.md)
-  * [Overview](features/overview.md)
+* [Threat Context (Intelligence)](README.md)
   * [Core Concepts](features/core-concepts/README.md)
     * [Data Model](features/core-concepts/data_model/README.md)
       * [Objects](features/core-concepts/data_model/objects.md)
@@ -26,3 +25,6 @@
   * [Graph Explorations](features/graph_explorations.md)
   * [IOC Collections](features/ioccollections.md)
   * [Enrichers](features/enrichers.md)
+* [Detect, Hunt and Respond (Defend)](detect-hunt-and-respond-defend.md)
+* [Asset Intelligence (Reveal)](asset-intelligence-reveal.md)
+* [AI Agents (Elevate)](ai-agents-elevate.md)

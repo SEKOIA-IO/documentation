@@ -1,8 +1,10 @@
 ---
-icon: book-heart
+icon: book-open
+tags:
+  - intelligence
 ---
 
-# Sekoia Intelligence (CTI)
+# Threat Context (Intelligence)
 
 Cyber Threat Intelligence is at the core of cybersecurity operations. Everyone can trigger indicators when damage has already happened. Conversely, showcasing high volumes of indicators is easy when these are long expired. Contrary to other threat intel tools, every single bit of information presented on our feed is framed within explicit validity timestamps and constantly updated, so that you are presented with relevant intelligence, just in time.
 
@@ -11,6 +13,8 @@ Through our publications and access to the database of the Intelligence Center, 
 Our 500+ sources of information help us track over 200 attackers groups and their attack infrastructures over the entire world. This information is thoroughly processed, cross-analysed and contextualised by our analysts, in order to provide you with trustworthy intelligence about real threats, with global coverage wherever your assets are located, and whatever industry you are operating in.
 
 At Sekoia.io, the **Intelligence Center** is a Threat Intelligence knowledge base that is being constantly updated by Sekoia.io's analysts.
+
+{% @storylane/embed subdomain="sekoia" linkValue="z0zg8xyww00d" url="https://sekoia.storylane.io/share/z0zg8xyww00d" %}
 
 ## Product Features
 
