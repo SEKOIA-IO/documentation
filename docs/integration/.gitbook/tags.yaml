@@ -1,0 +1,4 @@
+- tag: new
+  label: New
+  icon: gem
+  color: $primary

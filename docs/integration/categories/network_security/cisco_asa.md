@@ -93,8 +93,6 @@ The Cisco Secure Firewall (formerly Next-Generation Firewall) is a security prod
 
 {% include "../../../../_shared_content/operations_center/detection/generated/suggested_rules_466aeca2-e112-4ccc-a109-c6d85b91bbcf_do_not_edit_manually.md" %}
 
-{% include "../../../../_shared_content/operations_center/integrations/generated/466aeca2-e112-4ccc-a109-c6d85b91bbcf.md %}
-
 ### Further readings
 
 * [Cisco ASA Command Reference](https://www.cisco.com/c/en/us/td/docs/security/asa/asa-cli-reference/S/asa-command-ref-S.html).
