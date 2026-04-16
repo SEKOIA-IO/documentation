@@ -1,11 +1,3 @@
-- tag: hot
-  label: Hot
-  icon: fire-flame-curved
-  color: orange
-- tag: new
-  label: New
-  icon: gem
-  color: $primary
 - tag: intelligence
   label: Intelligence
   icon: book-open
@@ -26,3 +18,11 @@
   label: Beta
   icon: flask
   color: $info
+- tag: new
+  label: New
+  icon: gem
+  color: $primary
+- tag: hot
+  label: Hot
+  icon: fire-flame-curved
+  color: orange

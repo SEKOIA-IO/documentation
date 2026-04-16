@@ -1,7 +1,3 @@
----
-hidden: true
----
-
 # IOC Collections
 
 Indicators Of Compromise (IOCs) are commonly shared between CERT and SOC teams and by Cyber Threat Intelligence providers. They are an important part of detection.
@@ -18,9 +14,9 @@ You can open the IOC Collection creation modal by clicking on `+ Collection`. Yo
 * (Optional) Add a description to the collection
 * Choose if you want to automatically add IOCs from this collection into your detection by creating a dedicated detection rule. Note that you will be able to manually create a detection rule for this collection later if you want
 
-{: style="max-width:100%"}
-
-!!! Note Inside a MSSP community, you also have to choose the community in which the IOC Collection should be created. If you choose “All communities”, the collection will be readable by all subcommunities.
+{% hint style="info" %}
+Inside a MSSP community, you also have to choose the community in which the IOC Collection should be created. If you choose “All communities”, the collection will be readable by all subcommunities.
+{% endhint %}
 
 ## Import IOCs inside a collection
 
@@ -37,7 +33,9 @@ Each indicator inside the collection can have the following properties:
 | Kill Chain Phases | Steps of the attack this indicator belongs to                                                                                             |
 | Description       | Any text that would add additional context. It is limited to **500 characters**                                                           |
 
-!!! warning If you select the kill chain phase '**Command and Control**' when importing IP addresses in an IOC collection, our detection engines will only look into `destination.ip`. This is meant to reduce false positives, such as network scans.
+{% hint style="warning" %}
+If you select the kill chain phase '**Command and Control**' when importing IP addresses in an IOC collection, our detection engines will only look into `destination.ip`. This is meant to reduce false positives, such as network scans.
+{% endhint %}
 
 ### Limitations
 
@@ -49,11 +47,7 @@ Text Import can be used when you want to import a list of IOCs (typically one IO
 
 Add all your IOCs in the text field, then click on `Next`.
 
-{: style="max-width:100%"}
-
 On the next screen, select the additional properties to add intelligence context to your indicators. All fields are optional here:
-
-{: style="max-width:100%"}
 
 Finally, click on `Import` to add indicators to your collection. Depending on the number of indicators your are importing at once, this can take some time.
 
@@ -77,7 +71,9 @@ When inside a collection, buttons are available at the end of each line to updat
 2. Modify the properties you would like to change inside the modal
 3. Click on `Save`
 
-!!! Warning The observable value cannot be changed.
+{% hint style="danger" %}
+The observable value c**annot be changed.**
+{% endhint %}
 
 ### Revoke an indicator
 
@@ -94,4 +90,7 @@ If you realize that an indicator is bad and produces false positive detections, 
   * Linked **observables**
 * Click the **Request revocation** button available at the top right.
 
-!!! warning Revoking an indicator cannot be undone.
+{% hint style="danger" %}
+Revoking an indicator **cannot be undone.**
+{% endhint %}
+
