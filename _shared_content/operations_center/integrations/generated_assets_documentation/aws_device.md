@@ -134,11 +134,25 @@ The following table shows how source data is mapped to OCSF model fields:
 
 | Source Field | OCSF Field Path | Description | Data Type | Logic |
 |--------------|-----------------|-------------|-----------|-------|
-| `InstanceId` | `device.uid` | Unique EC2 instance identifier | `string` | Direct mapping of EC2 instance ID |
-| `PublicDnsName || PrivateDnsName || InstanceId` | `device.hostname` | Device hostname or DNS name | `string` | Fallback chain: PublicDnsName → PrivateDnsName → InstanceId; skip empty strings |
-| `Tags[Key='Name'].Value` | `device.name` | Device name from tags | `string` | Extract 'Name' tag value; if absent, use InstanceId |
+| `static: 2` | `activity_id` | OCSF activity ID | `integer` | Always 2 for 'Collect' activity |
+| `static: Collect` | `activity_name` | OCSF activity name | `string` | Always 'Collect' for asset inventory |
+| `static: Discovery` | `category_name` | OCSF category name | `string` | Always 'Discovery' |
+| `static: 5` | `category_uid` | OCSF category UID | `integer` | Always 5 for Discovery category |
+| `static: Device Inventory Info` | `class_name` | OCSF class name | `string` | Always 'Device Inventory Info' |
+| `static: 5001` | `class_uid` | OCSF class UID | `integer` | Always 5001 for Device Inventory Info |
+| `static: 500102` | `type_uid` | OCSF type UID | `integer` | Always 500102 for Device Inventory Info: Collect type |
+| `static: Device Inventory Info: Collect` | `type_name` | OCSF type name | `string` | Concatenate 'Device Inventory Info: Collect' |
+| `static: Informational` | `severity` | Event severity | `string` | Always 'Informational' for inventory events |
+| `static: 1` | `severity_id` | OCSF severity ID | `integer` | Always 1 for Informational severity |
+| `LaunchTime` | `time` | OCSF event timestamp | `timestamp` | Convert ISO 8601 to Unix epoch for OCSF event timestamp |
+| `static: AWS EC2` | `metadata.product.name` | Product name | `string` | Always 'AWS EC2' |
+| `static: N/A` | `metadata.product.version` | Product version) | `string` | Always N/A |
+| `static: 1.6.0` | `metadata.version` | OCSF schema version | `string` | Fixed OCSF schema version |
 | `static: Server` | `device.type` | OCSF device type | `string` | Always 'Server' for EC2 instances |
 | `static: 1` | `device.type_id` | OCSF device type ID | `integer` | Always 1 for Server type |
+| `InstanceId` | `device.uid` | Unique EC2 instance identifier | `string` | Direct mapping of EC2 instance ID |
+| `PublicDnsName || PrivateDnsName || InstanceId` | `device.hostname` | Device hostname or DNS name | `string` | One of Public DNS, Private DNS, or Instance ID (in that order) as hostname |
+| `Tags[Key='Name'].Value` | `device.name` | Device name from tags | `string` | Extract 'Name' tag value; if absent, use InstanceId |
 | `PlatformDetails` | `device.os.name` | Operating system name | `string` | Direct mapping (e.g., 'Linux/UNIX', 'Windows', 'macOS') |
 | `PlatformDetails` | `device.os.type` | Operating system type | `string` | Parse OS: 'windows'→Windows, 'linux'/'unix'→Linux, 'mac'→macOS, else→Unknown |
 | `PlatformDetails` | `device.os.type_id` | OCSF OS type ID | `integer` | Map OS type: Windows→100, Linux→200, macOS→300, Unknown→0 |
@@ -150,38 +164,22 @@ The following table shows how source data is mapped to OCSF model fields:
 | `NetworkInterfaces[].PrivateDnsName` | `device.network_interfaces[].hostname` | Network interface hostname | `string` | Direct mapping of private DNS name |
 | `static: Wired` | `device.network_interfaces[].type` | Interface type | `string` | Always 'Wired' for EC2 network interfaces |
 | `static: 1` | `device.network_interfaces[].type_id` | Interface type ID | `integer` | Always 1 for Wired interface type |
-| `PublicIpAddress || PrivateIpAddress` | `device.ip` | Primary device IP address | `ip` | Prefer public IP; fallback to private IP |
-| `SecurityGroups[]` | `device.groups[]` | Security groups associated with instance | `object` | Iterate over security groups; map according to sub-mappings below |
 | `SecurityGroups[].GroupId` | `device.groups[].uid` | Security group unique ID | `string` | Direct mapping of security group ID |
 | `SecurityGroups[].GroupName` | `device.groups[].name` | Security group name | `string` | Direct mapping of security group name |
-| `Placement.AvailabilityZone || Placement` | `device.region` | AWS availability zone (region) | `string` | Extract availability zone (e.g., 'us-east-1a') |
+| `PublicIpAddress || PrivateIpAddress` | `device.ip` | Primary device IP address | `ip` | Prefer public IP; fallback to private IP |
+| `Placement.AvailabilityZone` | `device.region` | AWS availability zone (region) | `string` | Extract availability zone (e.g., 'us-east-1a') |
 | `SubnetId` | `device.subnet` | VPC subnet ID | `string` | Direct mapping of subnet ID |
 | `VpcId` | `device.domain` | VPC ID for network domain | `string` | Direct mapping of VPC ID (mapped as domain) |
 | `Hypervisor` | `device.hypervisor` | Hypervisor type | `string` | Direct mapping (e.g., 'xen', 'nitro') |
-| `InstanceType` | `device.model` | EC2 instance type | `string` | Direct mapping (e.g., 't3.medium', 'm5.large') |
-| `ImageId` | `device.image_id` | EC2 AMI (Amazon Machine Image) ID | `string` | Direct mapping of AMI ID |
-| `State.Name` | `device.state` | Instance state | `string` | Direct mapping (running, stopped, terminated, etc.) |
 | `static: Amazon Web Services` | `device.vendor_name` | Device vendor name | `string` | Always 'Amazon Web Services' |
+| `InstanceType` | `device.model` | EC2 instance type | `string` | Direct mapping (e.g., 't3.medium', 'm5.large') |
 | `LaunchTime` | `device.boot_time` | Instance launch/boot time | `timestamp` | Convert ISO 8601 to string (ISO format preferred) |
 | `BlockDeviceMappings[0].Ebs.AttachTime || LaunchTime` | `device.created_time` | Device creation timestamp | `timestamp` | Use EBS attachment time if available; fallback to launch time; convert to Unix epoch |
-| `LaunchTime` | `time` | OCSF event timestamp | `timestamp` | Convert ISO 8601 to Unix epoch for OCSF event timestamp |
 | `IamInstanceProfile` | `device.is_managed` | Whether instance has IAM role (managed by policies) | `boolean` | true if IamInstanceProfile is present and not empty; false otherwise |
 | `Tags[Key='aws:autoscaling:groupName'].Value` | `device.autoscale_uid` | Auto Scaling group name | `string` | Extract 'aws:autoscaling:groupName' tag value if present |
+| `ImageId + State.Name` | `device.desc` | Device description with image and state | `string` | Concatenate as 'AMI: <ImageId>, State: <State.Name>' |
 | `OwnerId` | `device.org.uid` | AWS account ID | `string` | Direct mapping of AWS account ID |
 | `OwnerId` | `device.org.name` | Organization/Account name | `string` | Format as 'AWS Account <OwnerId>' |
-| `ImageId + State.Name` | `device.desc` | Device description with image and state | `string` | Concatenate as 'AMI: <ImageId>, State: <State.Name>' |
-| `static: AWS EC2` | `metadata.product.name` | Product name | `string` | Always 'AWS EC2' |
-| `static: 1.6.0` | `metadata.version` | OCSF schema version | `string` | Fixed OCSF schema version |
-| `static: 2` | `activity_id` | OCSF activity ID | `integer` | Always 2 for 'Collect' activity |
-| `static: Collect` | `activity_name` | OCSF activity name | `string` | Always 'Collect' for asset inventory |
-| `static: Discovery` | `category_name` | OCSF category name | `string` | Always 'Discovery' |
-| `static: 5` | `category_uid` | OCSF category UID | `integer` | Always 5 for Discovery category |
-| `static: Device Inventory Info` | `class_name` | OCSF class name | `string` | Always 'Device Inventory Info' |
-| `static: 5001` | `class_uid` | OCSF class UID | `integer` | Always 5001 for Device Inventory Info |
-| `computed: 500100 + activity_id` | `type_uid` | OCSF type UID | `integer` | Base 500100 + activity_id (2 = 500102) |
-| `computed: class_name + ': ' + activity_name` | `type_name` | OCSF type name | `string` | Concatenate 'Device Inventory Info: Collect' |
-| `static: Informational` | `severity` | Event severity | `string` | Always 'Informational' for inventory events |
-| `static: 1` | `severity_id` | OCSF severity ID | `integer` | Always 1 for Informational severity |
 
 
 
