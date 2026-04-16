@@ -277,8 +277,6 @@ nav:
     - Applicative:
       - 1Password EPM: integration/categories/applicative/1password_epm.md
       - Apache HTTP Server: integration/categories/applicative/apache.md
-      - BeyondTrust PRA Syslog: integration/categories/applicative/beyondtrust_syslog.md
-      - Azure Activity Logs: integration/categories/applicative/azure_activity_logs.md
       - Azure Activity Logs: integration/categories/applicative/azure_activity_logs.md
       - Azure Files: integration/categories/applicative/azure_files.md
       - Azure MySQL: integration/categories/applicative/azure_mysql.md
@@ -371,6 +369,8 @@ nav:
     - IAM:
       - Tenable Identity Exposure / Alsid: integration/categories/iam/alsid.md
       - Azure Key Vault: integration/categories/iam/azure_key_vault.md
+      - BeyondTrust PRA Sessions: integration/categories/iam/beyondtrust_pra_sessions.md
+      - BeyondTrust PRA Syslog: integration/categories/iam/beyondtrust_syslog.md
       - Cisco Duo Security: integration/categories/iam/cisco_duo_security.md
       - Cyberark Digital Vault: integration/categories/iam/cyberark_vault.md
       - Cyberark Digital Vault: integration/categories/iam/cyberark_vault.md
@@ -398,8 +398,6 @@ nav:
       - Amazon VPC Flow Logs: integration/categories/network/aws_flow_logs.md
       - Azure Application Gateway: integration/categories/network/azure_application_gateway.md
       - ArubaOS Switch: integration/categories/network/arubaos.md
-      - BeyondTrust PRA Sessions: integration/categories/network/beyondtrust_pra_sessions.md
-      - BeyondTrust PRA Vault Account Activity: integration/categories/network/beyondtrust_pra_vault_account_activity.md
       - BIND: integration/categories/network/bind.md
       - Cato SASE: integration/categories/network/cato_sase.md
       - Cisco Catalyst SD-WAN: integration/categories/network/cisco_catalyst_sd_wan.md
@@ -879,6 +877,7 @@ plugins:
       xdr/features/collect/integrations/network/wallix.md: integration/categories/iam/wallix.md
       xdr/features/collect/integrations/network/watchguard_firebox.md: integration/categories/network_security/watchguard_firebox.md
       xdr/features/investigate/dork_language.md: xdr/features/investigate/events_query_language.md
+      integration/categories/network/beyondtrust_pra_sessions.md: integration/categories/iam/beyondtrust_pra_sessions.md
 - integration_by_uuid
 - sass
 repo_url: https://github.com/SEKOIA-IO/documentation
