@@ -108,7 +108,7 @@ Get information about an Azure Active Directory user. Requires the User.Read.All
 Get information about an user's authentication methods (such as their MFA status). Requires the UserAuthenticationMethod.Read.All permission.
 
 !!! warning
-    This action may not work if the tenant has not the appropriate licence (e.g., Azure AD Premium P1 or P2).
+    This action may not work if the tenant does not have the appropriate license (e.g., Microsoft Entra ID/Azure AD Premium P1 or P2).
 
 **Arguments**
 
