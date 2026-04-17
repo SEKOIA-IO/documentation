@@ -1,233 +1,241 @@
 # Cases
 
-Cases enable you to regroup your investigation findings across multiple perimeters, alerts and analysts and share your results with your end-users in an efficient manner.
-
-You can either create a new case from an existing alert or add alerts to an existing case.
+Cases let you group investigation findings across multiple perimeters, alerts, and analysts, and share results with your end-users in a structured and traceable way. You can create a case from an existing alert or add alerts to a case at any point during your investigation.
 
 ## Cases listing
-The listing page lists all the cases across your community.
-They can be listed following multiple filters:
 
-- Status (open or closed cases)
-- Assigned to or Created by
-- Tags associated
+The listing page displays all cases across your community. You can filter cases by:
 
-You can also sort your cases depending on:
+* Status (open or closed)
+* Assignee or creator
+* Associated tags
 
-- Last edition (default)
-- Creation date
-- Priority (`low`, `medium`, `high`)
+You can sort cases by:
+
+* Last edition (default)
+* Creation date
+* Priority (`low`, `medium`, `high`)
+
+> 📸 [SCREENSHOT SUGGESTION: The cases listing page showing the filter panel, sort options, and case rows with checkboxes. | ALT TEXT: Cases listing page with filter and sort controls.]
 
 ## Create a case
-To create a new case, you can:
 
-1. Open the Cases page
-2. Click on `+ Case` button
-3. Provide a title and a description (mandatory fields)
-4. Select an assignee
-5. Define a priority
-6. Add tags if needed
-7. Click on `Create`
+To create a new case:
 
-## Case Custom Statuses and Verdicts
+1. Navigate to the **Cases** page.
+2. Click **+ Case**.
+3. Enter a **Title** and a **Description** (both fields are mandatory).
+4. Select an **Assignee**.
+5. Set a **Priority**.
+6. Add **Tags** if needed.
+7. Click **Create**.
 
-Cases support the same custom status and verdict system as alerts, enabling consistent terminology and workflows across your entire SOC platform.
+## Bulk actions on cases
 
-### Custom Statuses for Cases
+Sekoia.io lets you perform actions on multiple cases simultaneously from the cases listing page. This is useful for triaging large volumes of alerts or reassigning incidents at scale.
 
-Custom statuses allow you to define case lifecycle stages that match your organization's investigation processes. Just like alerts, case statuses belong to one of three stages:
+### Select multiple cases
 
-- **Open**: Cases that are active and require attention
-- **In progress**: Cases under active investigation
-- **Closed**: Cases that have been resolved or dismissed
+You can build a selection using three methods:
 
-Custom statuses can be configured to work exclusively for cases, exclusively for alerts, or for both simultaneously. When a status is enabled for both alerts and cases, it ensures consistent terminology across different investigation contexts.
+1. **Individual selection**: Click the checkbox on the left side of each case row.
+2. **Page selection**: Click the checkbox in the table header to select all cases visible on the current page (up to 25, 50, or 100 cases depending on your display settings).
+3. **Global selection**: After activating page selection, a banner appears at the top of the list. Use it to extend your selection to all cases matching your active filters, up to the platform limit.
 
-!!! note
-    Case history preserves original status names even if a custom status is modified later. This ensures that historical records remain accurate and reflect the status names that were in use at the time of each change.
+> 📸 [SCREENSHOT SUGGESTION: The cases listing with several rows checked and the selection banner visible at the top of the list. | ALT TEXT: Cases listing with bulk selection banner active.]
 
-### Custom Verdicts for Cases
+### Selection limits
 
-Custom verdicts enable standardized classification of case outcomes. Each verdict belongs to either the **True Positive** or **False Positive** category, allowing your team to document investigation conclusions with precise, organization-specific terminology.
+!!! note "Selection limit"
+    Mass selections are capped at 5,000 cases at a time to maintain platform performance. If your filtered results exceed 5,000 cases, a tooltip informs you: "Selections are limited to 5,000 cases at a time for performance reasons. You can select the remaining cases afterward." Use the **Clear selection** button in the action banner to deselect all cases and reset the view.
 
-Like custom statuses, verdicts can be enabled for cases, alerts, or both, ensuring consistent language when communicating investigation outcomes.
+### Available bulk actions
+
+Once you select at least one case, the bulk action toolbar appears at the top of the list. The **+ New Case** button is temporarily replaced by the toolbar during an active selection.
+
+| Action | Description |
+|---|---|
+| Change status | Update the status (e.g., New, Ongoing, Closed) for all selected cases. |
+| Add comment | Append the same comment to every selected case. |
+| Change assignee | Reassign all selected cases to a specific user or team. |
+| Edit tags and fields | Add or remove custom tags and labels across the selection. |
+
+## Case custom statuses and verdicts
+
+Cases support the same custom status and verdict system as alerts, enabling consistent terminology and workflows across your SOC.
+
+### Custom statuses for cases
+
+Custom statuses let you define case lifecycle stages that match your organization's investigation processes. Each status belongs to one of three stages:
+
+* **Open**: Cases that are active and require attention.
+* **In progress**: Cases under active investigation.
+* **Closed**: Cases that have been resolved or dismissed.
+
+You can configure custom statuses to apply exclusively to cases, exclusively to alerts, or to both. Enabling a status for both contexts ensures consistent terminology across your investigation workflows.
+
+!!! note "Status history"
+    Case history preserves the original status name even if a custom status is modified later. Historical records always reflect the status names that were in use at the time of each change.
+
+### Custom verdicts for cases
+
+Custom verdicts provide standardized classification of case outcomes. Each verdict belongs to either the **True Positive** or **False Positive** category, allowing your team to document investigation conclusions with organization-specific terminology.
+
+Like custom statuses, you can enable verdicts for cases, alerts, or both.
 
 ## Edit a case
 
-To edit a case, you just have to click on a case and reach the `edit` button available on the details view.
+To edit a case, click on the case to open the details view, then click **Edit**.
 
-The case must not have a status in the "Closed" stage in order to be edited. Cases with statuses in the "Open" or "In progress" stages can be edited.
+!!! warning "Editing restriction"
+    You can only edit cases with a status in the **Open** or **In progress** stage. Cases with a **Closed** status cannot be edited.
 
 ## Case details
 
-The Case details page contains multiple elements.
+The case details page is organized into a header and five tabs.
 
-In the header, you can find the name of the case, the person that created it, the last edition date, a tag with the case ID that you can easily copy by clicking on it, the priority and the status.
+The header displays the case name, creator, last edition date, case ID (click to copy), priority, and status.
 
-The different sections of the page are then separated into 5 tabs: `Details`, `Alerts`, `Tasks`, `Events`, and `Graph Investigation`.
+The five tabs are: **Details**, **Alerts**, **Tasks**, **Events**, and **Graph Investigation**.
 
 ### Details tab
 
-The Details tab contains basic information about the case:
+The **Details** tab contains:
 
-- Authors, the community, and the dates of creation and edition of the case
-- A description of the case that uses Markdown to enable you to format your text
-- A timeline displaying comments
+* Authors, community, and creation and edition dates.
+* A Markdown-enabled description field.
+* A timeline of comments.
 
 ### Alerts tab
 
-The Alerts tab contains a list of alerts that were added to the case.
+The **Alerts** tab lists all alerts added to the case.
 
-To add alerts to a case, you can either:
+To add alerts to the case, you can:
 
-- Use the `Add alerts` button on this tab
-!!! tip
-    To add multiple alerts to a case, we recommend to either copy the ID of your case found in the case details page then paste it in the search bar. The case will be displayed then you can select it and click on `Add to alerts` button.
+* Click **Add alerts** from this tab.
+* Click **Add to case** from the detailed page of any alert.
 
-- Use the `Add to case` button on the detailed page of any alert
-!!! tip
-    To add alerts to multiple case, we recommend to copy the ID of your alert found in the alert details page then paste it in the search bar. The alert will be displayed then you can select it OR you can scroll and select all alerts needed and click on `Add to case` button.
+!!! tip "Adding multiple alerts to a case"
+    Copy the case ID from the case details page and paste it into the search bar on the alerts page. Select the case from the results, then click **Add to alerts**.
 
-### Tasks
+!!! tip "Adding an alert to multiple cases"
+    Copy the alert ID from the alert details page and paste it into the search bar. Select the alert from the results, or scroll and select all the alerts you need, then click **Add to case**.
 
-The Tasks tab allows you to manage tasks and subtasks associated with the case.
+### Tasks tab
 
-### Events
+The **Tasks** tab lets you create and manage tasks and subtasks associated with the case.
 
-The Events tab lists the events that are associated with the case in a display similar to the [Events page](events.md).
+### Events tab
 
-![events](/assets/operation_center/events-in-case.png){: style="max-width:100%"}
+The **Events** tab lists all events associated with the case, using the same display as the [Events page](xdr/features/investigate/events.md).
 
-Events associated with the case are:
+> 📸 [SCREENSHOT SUGGESTION: The Events tab within a case, showing the event list and the Toggle value selection button. | ALT TEXT: Events tab inside a case details page.]
 
-- Events that raised an alert that was added to the case.
-- Events that were [directly added to the case](events.md#adding-events-to-cases).
+Events appear in this tab when they:
 
-When interacting with individual values, it is possible to:
+* Raised an alert that was added to the case.
+* Were [directly added to the case](../events/#adding-events-to-cases).
 
-- Filter for: only applies to the events associated with the case
-- Filter out: only applies to the events associated with the case
-- [Search events with this value](#search-events-with-this-value)
+When you interact with individual values in the event list, you can:
 
-The `Value Selection` mode can be toggled with the button at the top right of the event list to select multiple values in displayed events. The selected values can then be used to:
+* **Filter for**: restricts the view to events matching that value within the case.
+* **Filter out**: excludes events matching that value within the case.
+* **Search events with this value**: runs a broader search (see below).
 
-- Create a Sigma Rule
-- [Search events with these values](#search-events-with-this-value)
+To work with multiple values at once, click **Toggle value selection** at the top of the event list. You can then select multiple values and use them to:
 
-#### Search Events with this value
+* Create a Sigma rule.
+* Search events with these values.
 
-The "Search Events with this value" feature can be used to perform a search into all events that occurred during the case's timeframe (+- 1 hour).
+#### Search events with this value
 
-![search-events](/assets/operation_center/alerts/search-events.png){align=right}
-
-The search query is automatically created from selected values.
+This feature searches all events that occurred within the case's timeframe (plus or minus one hour). The search query is built automatically from your selected values.
 
 To search events with a value:
 
-- On the `case` page, go to `events` tab
-- Click on `Toggle value selection` button in the upper right of the logs list
-- Select `values` you want to search for by clicking on them in the logs list
-- Click on the button `Perform a search` as shown in the screenshot
+1. Navigate to the **Events** tab of the case.
+2. Click **Toggle value selection** at the top of the event list.
+3. Select the values you want to search for by clicking them in the list.
+4. Click **Perform a search**.
 
-A side panel opens with the search results, allowing you to investigate a case without leaving the page.
+A side panel opens with the search results so you can investigate without leaving the case page.
 
-### Graph Investigation
+> 📸 [SCREENSHOT SUGGESTION: The side panel opened after clicking Perform a search, showing results alongside the events list. | ALT TEXT: Search events side panel open within the case events tab.]
 
-The Graph Investigation tab provides analysts with an interactive graphical visualization of the alert, enabling comprehensive threat analysis through visual correlation of security events and intelligence data.
+### Graph investigation tab
 
-!!! note
-    All changes performed within the Graph Investigation are automatically saved. The graph updates dynamically with each visit based on the events associated with the alert. Any new objects discovered through additional events are automatically integrated into the existing graph structure.
+The **Graph Investigation** tab provides an interactive visualization of the case's alerts and events, enabling threat analysis through visual correlation of security data and intelligence.
 
-The graph displays the following interconnected elements:
+!!! note "Automatic saving"
+    All changes in the graph are saved automatically. The graph updates dynamically on each visit as new events are associated with the case. New objects discovered through additional events are integrated into the existing graph structure automatically.
 
-- **Observables**: Security artifacts automatically extracted from events, including IP addresses, domain names, URLs, user accounts, file hashes, and other indicators of compromise
+The graph displays the following elements:
 
-- **Observable Relationships**: Visual connections between observables represented by directional arrows. These relationships are extracted from events using Smart Description definitions that parse event data to identify logical connections
+* **Observables**: Security artifacts extracted from events, including IP addresses, domains, URLs, user accounts, file hashes, and other indicators of compromise.
+* **Observable relationships**: Directional connections between observables, extracted from events using Smart Description definitions.
+* **CTI objects**: STIX-compliant threat intelligence objects from the intelligence database that provide contextual threat information.
+* **STIX relationships**: Standardized connections between intelligence objects that reveal broader threat context.
 
-- **CTI Objects**: STIX-compliant threat intelligence objects from the Intelligence database that enrich the analysis with contextual threat information
+**Threat intelligence panel**
 
-- **STIX Relationships**: Standardized connections between threat intelligence objects that reveal the broader threat landscape
+Click any CTI object in the graph to open a detail panel displaying:
 
-**Threat Intelligence**
+* Object descriptions and threat context.
+* Relationship mappings with other intelligence objects.
+* Options to expand the graph by adding related objects.
 
-Access comprehensive threat intelligence by clicking on any CTI object within the graph. The left panel immediately displays:
+**Observable analysis panel**
 
-- Detailed object descriptions and threat context
+Click any observable node to open a detail panel displaying:
 
-- Complete relationship mappings with other intelligence objects
+* All events within the case that contain the selected observable, with Smart Description summaries.
+* Access to full event details via the **Full Events** button.
+* A direct link to search for additional events containing the same value across your environment.
 
-- Interactive options to expand the graph by adding related objects
+#### Layers
 
-This functionality enables quick pivoting through the threat intelligence database, allowing analysts to explore the full scope of related threats and campaigns.
+Layers organize complex graphs into logical groupings that you can display or hide independently. This lets you focus on a specific aspect of the investigation without losing the complete picture.
 
-**Observable Analysis**
+**Default layer**
 
-Investigate specific observables by clicking on any observable node in the graph. The left panel provides:
+Every graph automatically creates a default layer on first access. This layer serves as the primary container for initial graph elements and automatically incorporates new objects as additional events are processed.
 
-- **Event Context**: All events within the alert that contain the selected observable, presented with Smart Description summaries for quick comprehension
+**Layer controls**
 
-- **Full Event Details**: Complete event information accessible through the right-side panel via the "Full Events" button
+The layer control panel is located at the top of the graph. It provides:
 
-- **Extended Search**: Direct access to search for additional events containing the same observable value across your entire environment
+* Access to the full layer management interface.
+* An indicator of the currently active layer, where new additions are placed.
+* Controls to switch between layers instantly.
 
-This multi-layered approach ensures analysts can quickly understand both the immediate context and broader implications of each observable.
+##### Create and manage layers
 
-#### Layers Management
+To create a new layer:
 
-Layers enhance analytical efficiency by organizing complex graphs into manageable, focused sections that can be viewed independently or in combination.
+1. Click the name of the default layer at the top of the graph (for example, **Event Layer #1**).
+2. Click **+** to add a new layer.
+3. Enter a name for the layer.
+4. Drag and drop objects or observables into the layer.
 
-**Understanding Layers**
+All changes are saved automatically.
 
-Layers represent logical groupings within your graph that can be selectively displayed or hidden. This feature transforms complex visualizations into organized, digestible sections while maintaining the ability to view the complete picture when needed.
+To focus on a specific layer, click the **Eye** icon next to the layer name to toggle its visibility. This reduces visual clutter and isolates data for deeper analysis.
 
-**Default Layer Behavior**
+##### Layer organization strategies
 
-Every graph investigation automatically creates a default layer upon first access. This foundational layer:
+Use layers to structure complex, multi-alert cases:
 
-- Serves as the primary container for initial graph elements
-- Automatically incorporates new objects as additional events are processed
-- Maintains continuity across investigation sessions
+* **Alert-based organization**: Create one layer per alert to focus analysis on individual attack phases.
+* **Temporal analysis**: Organize layers by time period to track attack progression across a campaign.
+* **Attack vector segregation**: Separate layers by technique, entry point, or affected system.
+* **Threat actor attribution**: Create distinct layers when multiple threat actors or campaigns are suspected.
 
-**Active Layer Management**
+You can rename layers at any time, move objects between layers, and use the built-in search to locate specific objects within large multi-layered graphs.
 
-The layer control interface, located in the top-left corner adjacent to the main panel, provides:
+## Related articles
 
-- **Layer Panel Access**: One-click access to the complete layer management interface
-- **Active Layer Indicator**: Clear identification of the currently selected layer where new additions will be placed
-- **Layer Switching**: Instant transitions between different analytical perspectives
-
-##### Creating and Managing Layers
-
-To create and organize layers:
-
-- Click the name of the default layer in the top-left of the graph (e.g. Event Layer #1)
-- Select the “+” button to add a new layer
-- Enter a name for your layer.
-- Drag and drop objects or observables into the layer of your choice.
-
-All changes are saved automatically—no manual action required.
-
-**Viewing Layer Content**
-
-- To focus only on the contents of a specific layer, toggle visibility by clicking the Eye icon.
-
-Use this functionality to reduce visual clutter and isolate relevant data for deeper analysis.
-
-##### Strategic Layer Usage for Cases**
-
-Optimize your case investigation by implementing these layer organization strategies:
-
-- **Alert-Based Organization**: Create separate layers for each alert when dealing with cases containing a manageable number of distinct alerts, enabling focused analysis of individual attack phases
-- **Temporal Analysis**: Organize layers by time periods or dates to understand attack progression and identify patterns across different phases of the campaign
-- **Attack Vector Segregation**: Separate layers for different attack techniques, entry points, or affected systems to isolate analysis domains
-- **Threat Actor Attribution:** Create distinct layers when multiple threat actors or attack campaigns are suspected within the same case
-
-**Advanced Layer Features**
-
-- **Visibility Control**: Toggle individual layer visibility to focus analytical attention on specific case aspects while temporarily hiding others
-- **Cross-Layer Movement**: Relocate misplaced objects between layers to maintain optimal organization as your case investigation evolves
-- **Dynamic Renaming**: Update layer names throughout the investigation to reflect evolving understanding and maintain clear organization across complex cases
-- **Intelligent Search**: Utilize the built-in search functionality to quickly locate specific objects within large, multi-layered case graphs, essential for complex investigations with extensive observable networks spanning multiple alerts
-
-These enhanced capabilities ensure that even the most complex multi-alert cases remain manageable and analytically productive, enabling analysts to maintain situational awareness across extended attack campaigns while drilling down into specific details when needed.
-
+* [Alerts](/xdr/features/investigate/alerts): Understand how alerts are created and how to manage them before grouping them into cases.
+* [AI Cases](/xdr/features/investigate/ai_cases.md): Learn how Sekoia.io automatically correlates alerts into cases using AI.
+* [Events](/xdr/features/investigate/events.md): Explore the events associated with your cases and run contextual searches.
+* [Playbooks](/xdr/features/automate.md): Automate case workflows and trigger actions based on case updates.
+* [Dashboards](/xdr/features/report/dashboards.md): Monitor case activity and investigation KPIs across your community.
