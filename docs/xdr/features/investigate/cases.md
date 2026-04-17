@@ -234,8 +234,8 @@ You can rename layers at any time, move objects between layers, and use the buil
 
 ## Related articles
 
-* [Alerts](xdr/features/investigate/alerts): Understand how alerts are created and how to manage them before grouping them into cases.
-* [AI Cases](xdr/features/investigate/ai_cases.md): Learn how Sekoia.io automatically correlates alerts into cases using AI.
-* [Events](xdr/features/investigate/events.md): Explore the events associated with your cases and run contextual searches.
-* [Playbooks](xdr/features/automate.md): Automate case workflows and trigger actions based on case updates.
-* [Dashboards](xdr/features/report/dashboards.md): Monitor case activity and investigation KPIs across your community.
+* [Alerts](/xdr/features/investigate/alerts): Understand how alerts are created and how to manage them before grouping them into cases.
+* [AI Cases](/xdr/features/investigate/ai_cases.md): Learn how Sekoia.io automatically correlates alerts into cases using AI.
+* [Events](/xdr/features/investigate/events.md): Explore the events associated with your cases and run contextual searches.
+* [Playbooks](/xdr/features/automate.md): Automate case workflows and trigger actions based on case updates.
+* [Dashboards](/xdr/features/report/dashboards.md): Monitor case activity and investigation KPIs across your community.
