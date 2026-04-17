@@ -15,9 +15,6 @@ As a SaaS platform, Wiz integrates with CI/CD pipelines and cloud services for c
 - **Supported application or feature**:
     - Threat Detection
 
-!!! Warning
-    Important note - This format is currently in beta. We highly value your feedback to improve its performance.
-
 ## Configure
 
 ### Pre-requisite
