@@ -239,7 +239,7 @@ The following table lists the available fields for defining asset-based detectio
 | `sekoiaio.any_asset.criticality_value`   | Set of Integers    | `{80, 0}`                              |
 
 !!! Warning
-    Some of the fields listed above are removed from the events before indexing them, but they can be used in detection and filtering patterns. Indexed events will thus only contain `sekoia.assets.*.uuid`, `sekoia.assets.*.name`, `sekoia.assets.*.criticality_value`, `sekoia.any_asset.uuid`, `sekoia.any_asset.name` and `sekoia.any_asset.criticality_value`.
+    Some of the fields listed above are removed from the events before indexing them, but they can be used in detection and filtering patterns. Indexed events will thus only contain `sekoiaio.assets.*.uuid`, `sekoiaio.assets.*.name`, `sekoiaio.assets.*.criticality_value`, `sekoiaio.any_asset.uuid`, `sekoiaio.any_asset.name` and `sekoiaio.any_asset.criticality_value`.
 
 ##### Use Case Example
 
