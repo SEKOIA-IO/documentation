@@ -12,9 +12,6 @@ Cisco Catalyst SD-WAN is a cloud-managed solution that delivers secure, high-per
 - **Detection based on**: Telemetry
 - **Supported application or feature**: Network traffic monitoring
 
-!!! Warning
-    Important note - This format is currently in beta. We highly value your feedback to improve its performance.
-
 ## Specification
 
 ### Prerequisites
