@@ -1,8 +1,8 @@
 ### Related Built-in Rules
 
-The following Sekoia.io built-in rules match the intake **Nanocorp [BETA]**. This documentation is updated automatically and is based solely on the fields used by the intake which are checked against our rules. This means that some rules will be listed but might not be relevant with the intake.
+The following Sekoia.io built-in rules match the intake **BeyondTrust Privileged Remote Access Syslog [BETA]**. This documentation is updated automatically and is based solely on the fields used by the intake which are checked against our rules. This means that some rules will be listed but might not be relevant with the intake.
 
-[SEKOIA.IO x Nanocorp [BETA] on ATT&CK Navigator](https://mitre-attack.github.io/attack-navigator/#layerURL=https%3A%2F%2Fraw.githubusercontent.com%2FSEKOIA-IO%2Fdocumentation%2Fmain%2F_shared_content%2Foperations_center%2Fdetection%2Fgenerated%2Fattack_48121ba7-6091-4bbc-accd-50e7c286e7af_do_not_edit_manually.json){ .md-button }
+[SEKOIA.IO x BeyondTrust Privileged Remote Access Syslog [BETA] on ATT&CK Navigator](https://mitre-attack.github.io/attack-navigator/#layerURL=https%3A%2F%2Fraw.githubusercontent.com%2FSEKOIA-IO%2Fdocumentation%2Fmain%2F_shared_content%2Foperations_center%2Fdetection%2Fgenerated%2Fattack_225da01c-9500-45e4-b499-0e4966d4361c_do_not_edit_manually.json){ .md-button }
 ??? abstract "Cryptomining"
     
     Detection of domain names potentially related to cryptomining activities.
@@ -24,12 +24,6 @@ The following Sekoia.io built-in rules match the intake **Nanocorp [BETA]**. Thi
 ??? abstract "Remote Access Tool Domain"
     
     Detects traffic toward a domain flagged as a Remote Administration Tool (RAT).
-    
-    - **Effort:** master
-
-??? abstract "Remote Monitoring and Management Software - AnyDesk"
-    
-    Detect artifacts related to the installation or execution of the Remote Monitoring and Management tool AnyDesk.
     
     - **Effort:** master
 
