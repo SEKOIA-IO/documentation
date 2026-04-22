@@ -68,8 +68,8 @@ This setup guide will show you how to forward your Akamai Guardicore events to S
 
 ### Set up the forwarding for Events
 
-- Log in the Akamai Guardicore console
-- With the left panel, go to `System` > `INTEGRATION` >`Data Exporters`
+- Log in to the Akamai Guardicore console
+- In the left panel, go to `System` > `INTEGRATION` >`Data Exporters`
 
   ![Step 01](/assets/operation_center/integration_catalog/network_security/akamai_guardicore/Step 01.png){: style="max-width:100%"}
 
