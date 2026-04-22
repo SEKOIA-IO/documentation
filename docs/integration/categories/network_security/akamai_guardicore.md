@@ -157,7 +157,7 @@ Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a n
 
 ### No event is received
 
-In the Akamai Guardicore console, for each data exporters for Sekoia.io, check, in the `Message format` section:
+In the Akamai Guardicore console, for each data exporter for Sekoia.io, check, in the `Message format` section:
 
 - The intake is supplied in the `RFC5424 structured data` option
 - `RFC5424` is selected as `Message format`
