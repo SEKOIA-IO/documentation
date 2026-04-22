@@ -65,6 +65,30 @@
     | Reynholm Industries                         | 904df422-adf9-4be8-b2b6-d027c0d68184 | 488       |
     | MIT - Massachusetts Institute of Technology | c0540367-9702-46e2-90c3-7ab65ead9a27 | 464       |
 
+### Join between alerts and assets tables
+
+=== "Query"
+
+    ``` shell
+    alerts
+    | lookup assets on assets.uuid == uuid
+    | select short_id, rule_name, asset.name, asset.type
+    | limit 10
+
+    ```
+
+=== "Results"
+
+    | short_id     | rule_name                                                     | asset.name      | asset.type |
+    | ------------ | ------------------------------------------------------------- | --------------- | ---------- |
+    | ALqUHCbZMbnY | Mshta Suspicious Child Process                                | desktop-4932-vm | host       |
+    | ALS5mN68LpbB | Mshta Command From A Scheduled Task                           | desktop-4932-vm | host       |
+    | ALWzDs9pcVVb | CrowdStrike Falcon Intrusion Detection                        | root            | account    |
+    | ALQbzwMvo1Aj | CrowdStrike Falcon Intrusion Detection Informational Severity | root            | account    |
+    | ALTwu5cU16LK | PsExec Process                                                | root            | account    |
+    | ALHGJU7tcoGb | CrowdStrike Falcon Intrusion Detection                        | root            | account    |
+    | ALqPWeuUow4p | CrowdStrike Falcon Intrusion Detection High Severity          | root            | account    |
+
 ### Join between events and intake_formats tables
 
 === "Query"
