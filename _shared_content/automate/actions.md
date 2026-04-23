@@ -68,13 +68,11 @@ To get notified, you can rely on these tools:
 
 If you have an account in one of the listed tools below, you can easily extract data from there and import it to Sekoia.io. This is made possible with an API key.
 
-- [BinaryEdge](/integration/action_library/binaryedge-s-api.md)
 - [Censys](/integration/action_library/censys.md)
 - [GLIMPS](/integration/action_library/glimps.md)
 - [IKnowWhatYouDownloaded](/integration/action_library/iknowwhatyoudownload.md)
 - [Onyphe](/integration/action_library/onyphe.md)
 - [Public Suffix](/integration/action_library/public-suffix.md)
-- [RiskIQ](/integration/action_library/riskiq.md)
 - [Shodan](/integration/action_library/shodan.md)
 - [VirusTotal](/integration/action_library/virustotal.md)
 - [Whois](/integration/action_library/whois.md)
