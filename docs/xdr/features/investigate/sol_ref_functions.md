@@ -558,7 +558,7 @@ If the input is a decimal number, the value is truncated to the integer portion 
 
 **Description**
 
-Converts a value to its string representation. This function is useful when you need to concatenate non-string values (numbers, datetimes, booleans) with string literals, or when building human-readable labels from numeric or structured data.
+Converts a value to its string representation. This function is useful when you need to concatenate non-string values (numbers, datetimes, booleans) with string literals or when building human-readable labels from numeric or structured data.
 
 **Syntax**
 
@@ -568,7 +568,7 @@ tostring(<value>)
 
 **Parameters**
 
-- `value`: The value to convert to a string (required). Can be a number, datetime, boolean, or other scalar type.
+- `value`: The value to convert to a string (required). Can be a number, datetime, boolean or other scalar type.
 
 **Return Value**
 
@@ -599,7 +599,7 @@ Returns the string representation of the value. Returns an empty string if the v
 
 **Description**
 
-Parses a string as a JSON value and returns the parsed object. This function is useful for working with fields that contain JSON-encoded data (for example, nested structures flattened into a single string by an intake), so you can filter, project, or extend by any nested property using dot notation (e.g., `parsed.sourceIPAddress`).
+Parses a string as a JSON value and returns the parsed object. This function is useful for working with fields that contain JSON-encoded data (for example, nested structures flattened into a single string by an intake). You can filter, project or extend by any nested property using dot notation (e.g., `parsed.sourceIPAddress`).
 
 **Syntax**
 
@@ -609,7 +609,7 @@ parse_json(<string>)
 
 **Parameters**
 
-- `string`: A string containing a valid JSON value — object, array, or scalar (required).
+- `string`: A string containing a valid JSON value: object, array, or scalar (required).
 
 **Return Value**
 
