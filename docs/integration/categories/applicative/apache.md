@@ -65,47 +65,50 @@ This setup guide will show you how to forward both your access and error logs to
 
 #### Detailed Procedure:
 
-1. **Install and Configure Rsyslog:**
-   - Ensure that the `rsyslog` package is installed on your server.
-   - Load the `imfile` module to read log files:
+1. **Install Rsyslog:**
+    - Ensure that the `rsyslog` package is installed on your server.
 
-     ```bash
-     $ModLoad imfile
-     ```
+2. **Create a dedicated configuration**
+    - Add a dedicated configuration file for Apache logs in `/etc/rsyslog.d/17-apache.conf`:
 
-2. **Configure Rsyslog to Monitor Apache Log Files:**
-   - Add the following configuration to your `rsyslog` configuration file (usually found in `/etc/rsyslog.conf` or `/etc/rsyslog.d/`):
+     ```text
+        module(load="imfile" PollingInterval="5")
+        module(load="omfwd")
 
-     ```bash
-     # Error log
-     $InputFileName /var/log/apache2/error.log
-     $InputFileTag apache:
-     $InputFileStateFile stat-apache-error
-     $InputFileSeverity error
-     $InputFileFacility local5
-     $InputFilePollInterval 1
-     $InputRunFileMonitor
+        input(
+            type="imfile"
+            File="/var/log/apache2/error.log"
+            Tag="apache-error:"
+            Facility="local5"
+            Severity="error"
+            StateFile="stat-apache-error"
+            PersistStateInterval="200"
+            Ruleset="apache-logs"
+        )
 
-     # Access log
-     $InputFileName /var/log/apache2/access.log
-     $InputFileTag apache:
-     $InputFileStateFile stat-apache-access
-     $InputFileSeverity notice
-     $InputFileFacility local5
-     $InputFilePollInterval 1
-     $InputRunFileMonitor
-     ```
+        input(
+            type="imfile"
+            File="/var/log/apache2/access.log"
+            Tag="apache-access:"
+            Facility="local5"
+            Severity="notice"
+            StateFile="stat-apache-access"
+            PersistStateInterval="200"
+            Ruleset="apache-logs"
+        )
 
-3. **Forward Logs to a Concentrator:**
-   - Configure rsyslog to forward logs to a syslog concentrator:
-
-     ```bash
-     *.* action(type="omfwd"
-        target="<Concentrator_FQDN_or_IP>"
-        port="<Remote_Port>"
-        protocol="tcp"
-        TCP_Framing="octet-counted"
-     )
+        ruleset(name="apache-logs") {
+            # Forward to remote concentrator
+            action(
+                type="omfwd"
+                target="CONCENTRATOR_FQDN_OR_IP"
+                port="REMOTE_PORT"
+                protocol="tcp"
+                TCP_Framing="octet-counted"
+            )
+            # Prevent further processing of these messages
+            stop
+        }
      ```
 
 !!! Note
