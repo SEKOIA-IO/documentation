@@ -11,6 +11,9 @@ This section covers all Reveal-specific capabilities. Each article indicates its
   </div>
 </div>
 
+!!! info "Prerequisite"
+    **Reveal** (Asset Intelligence) is an **add-on module** exclusive to Sekoia Defend. It cannot be purchased as a standalone product and requires an active Sekoia Defend license to function.
+
 ## Asset context panel
 
 The asset context panel is the central investigation surface in Sekoia. The following articles document both core capabilities (available to all clients) and Reveal-specific extensions.
