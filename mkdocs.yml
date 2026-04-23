@@ -40,7 +40,7 @@ nav:
 - Getting started:
   - Overview: getting_started/index.md
   - Where to start: getting_started/concepts.md
-  - Trainings: 
+  - Trainings:
     - Training offer overview: getting_started/training_overview.md
     - Register for a training course: getting_started/register_training.md
   - Workspace setup:
@@ -90,10 +90,10 @@ nav:
       - Entities: xdr/features/collect/entities.md
       - Assets: xdr/features/collect/assets.md
       - Check asset connector health: xdr/features/collect/asset_connector_health.md
-      - Optimization rules: 
-         - Optimization rules overview: xdr/features/collect/optimization_rules_overview.md
-         - Create an optimization rule: xdr/features/collect/create_optimization_rule.md
-         - Optimization rules technical references: xdr/features/collect/optimization_rules_reference.md
+      - Optimization rules:
+        - Optimization rules overview: xdr/features/collect/optimization_rules_overview.md
+        - Create an optimization rule: xdr/features/collect/create_optimization_rule.md
+        - Optimization rules technical references: xdr/features/collect/optimization_rules_reference.md
     - Detect:
       - IOCs Detection: xdr/features/detect/iocdetection.md
       - Rules Catalog: xdr/features/detect/rules_catalog.md
@@ -106,10 +106,10 @@ nav:
       - Alerts: xdr/features/investigate/alerts.md
       - Events page: xdr/features/investigate/events.md
       - Massive event export:
-        - Understand massive event export: xdr/features/investigate/event_export.md 
+        - Understand massive event export: xdr/features/investigate/event_export.md
         - Export events with CLI: xdr/features/investigate/export_event_cli.md
         - Export events with API: xdr/features/investigate/export_event_API.md
-        - Massive export technical specifications: xdr/features/investigate/export_reference.md 
+        - Massive export technical specifications: xdr/features/investigate/export_reference.md
         - Massive event export troubleshooting: xdr/features/investigate/export_event_bulk_troubleshooting.md
       - AI Cases: xdr/features/investigate/ai_cases.md
       - Cases: xdr/features/investigate/cases.md
@@ -130,9 +130,9 @@ nav:
         - How-to guides: xdr/features/investigate/sol_how_to_guides.md
         - SOL Datasets: xdr/features/investigate/sol_datasets.md
         - Query examples: xdr/features/investigate/sol_query_examples.md
-        - "Reference: Datasources": xdr/features/investigate/sol_ref_datasources.md
-        - "Reference: Operators": xdr/features/investigate/sol_ref_operators.md
-        - "Reference: Functions": xdr/features/investigate/sol_ref_functions.md
+        - 'Reference: Datasources': xdr/features/investigate/sol_ref_datasources.md
+        - 'Reference: Operators': xdr/features/investigate/sol_ref_operators.md
+        - 'Reference: Functions': xdr/features/investigate/sol_ref_functions.md
       - Notebooks: xdr/features/investigate/notebooks.md
     - Report:
       - Dashboards:
@@ -184,7 +184,7 @@ nav:
     - Assets: xdr/FAQ/Assets_qa.md
     - Ingestion:
       - Delay with event ingestion or alert creation: xdr/FAQ/ingestion/ingestion_delay.md
-    - Subscriptions: 
+    - Subscriptions:
       - Allocate trial subscription: xdr/FAQ/subscriptions/allocate_trial_subscription.md
       - Subscriptions notifications: xdr/FAQ/subscriptions/subscriptions_notifications.md
     - Sekoia.io Endpoint agent: xdr/FAQ/SEKOIA_Endpoint_Agent.md
@@ -197,11 +197,11 @@ nav:
       - Intelligence: cti/features/consume/intelligence.md
       - Observables: cti/features/consume/observables.md
       - Telemetry: cti/features/consume/telemetry.md
-      - Feeds: 
-          - Understand the feeds: cti/features/consume/feeds.md
-          - Create feeds: cti/features/consume/create_feed.md
-          - Manage feeds: cti/features/consume/manage_feeds.md
-          - Create a detection rule from a feed: cti/features/consume/create_detection_rule_from_feed.md
+      - Feeds:
+        - Understand the feeds: cti/features/consume/feeds.md
+        - Create feeds: cti/features/consume/create_feed.md
+        - Manage feeds: cti/features/consume/manage_feeds.md
+        - Create a detection rule from a feed: cti/features/consume/create_detection_rule_from_feed.md
       - Graph Explorations: cti/features/consume/graph_explorations.md
       - Export: cti/features/consume/export.md
       - IOCs Collections: cti/features/consume/ioccollections.md
@@ -486,7 +486,6 @@ nav:
     - Threat Intelligence:
       - Prodaft USTA: integration/categories/threat_intelligence/prodaft_usta.md
   - List of Playbooks Actions:
-    - Overview: integration/action_library/overview.md
     - Applicative:
       - ElasticSearch: integration/action_library/elasticsearch.md
       - Mandrill: integration/action_library/mandrill.md
@@ -526,6 +525,7 @@ nav:
       - OpenAI: integration/action_library/openai.md
       - RSS: integration/action_library/rss.md
       - Sekoia.io: integration/action_library/sekoia-io.md
+      - Sekoia.io: integration/action_library/sekoia-io.md
       - Utils: integration/action_library/utils.md
     - IAM:
       - Microsoft Active Directory: integration/action_library/microsoft-active-directory.md
@@ -534,6 +534,7 @@ nav:
       - Fortigate Firewalls: integration/action_library/fortigate-firewalls.md
       - Sophos: integration/action_library/sophos.md
       - Zscaler: integration/action_library/zscaler.md
+    - Overview: integration/action_library/overview.md
     - Threat Intelligence:
       - BinaryEdge's API: integration/action_library/binaryedge-s-api.md
       - Censys: integration/action_library/censys.md
@@ -601,11 +602,11 @@ plugins:
 - search: null
 - redirects:
     redirect_maps:
-      xdr/features/investigate/sekoia_operating_language.md: xdr/features/investigate/sol_overview.md
       getting_started/2fa.md: getting_started/account_security.md
       getting_started/apikey_creation.md: getting_started/manage_api_keys.md
       getting_started/first_steps.md: getting_started/index.md
       getting_started/inviting_users_to_join_your_community.md: getting_started/invite_users.md
+      integration/categories/network/beyondtrust_pra_sessions.md: integration/categories/iam/beyondtrust_pra_sessions.md
       intelligence_center.md: cti/index.md
       intelligence_center/dashboard.md: cti/features/monitor/dashboard.md
       intelligence_center/data_export.md: cti/features/consume/export.md
@@ -820,7 +821,7 @@ plugins:
       xdr/features/collect/integrations/network/wallix.md: integration/categories/iam/wallix.md
       xdr/features/collect/integrations/network/watchguard_firebox.md: integration/categories/network_security/watchguard_firebox.md
       xdr/features/investigate/dork_language.md: xdr/features/investigate/events_query_language.md
-      integration/categories/network/beyondtrust_pra_sessions.md: integration/categories/iam/beyondtrust_pra_sessions.md
+      xdr/features/investigate/sekoia_operating_language.md: xdr/features/investigate/sol_overview.md
 - integration_by_uuid
 - sass
 repo_url: https://github.com/SEKOIA-IO/documentation
