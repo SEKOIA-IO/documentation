@@ -21,7 +21,7 @@ The asset context panel is the central investigation surface in Sekoia. The foll
 
 ## Asset connectors
 
-- [Asset connector health status and logs](/xdr/features/investigate/asset_context_panel.md) — How to monitor asset connector error states and use connector logs to troubleshoot synchronization issues.
+- [Asset connector health status and logs](/xdr/features/collect/asset_connector_health.md) — How to monitor asset connector error states and use connector logs to troubleshoot synchronization issues.
 
 ## Related links
 
