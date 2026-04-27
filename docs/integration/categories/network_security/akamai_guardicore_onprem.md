@@ -4,7 +4,7 @@ type: intake
 
 ## Overview
 
-Akamai Guardicore delivers application-centric microsegmentation and breach detection to prevent lateral movement across on-premises and 
+Akamai Guardicore delivers application-centric microsegmentation and breach detection to prevent lateral movement across on-premises and
 cloud environments.
 With process-level visibility, dynamic policy orchestration and automated workflows, it enforces Zero Trust controls at scale.
 Simplify network segmentation, accelerate threat response and maintain continuous compliance for critical assets.
@@ -60,7 +60,7 @@ This setup guide will show you how to forward your Akamai Guardicore events to S
 - Set up the forwarding for Events
 - Set up the forwarding for Network Logs
 
-### Instruction on Sekoia
+### Instructions on Sekoia
 
 {!_shared_content/integration/intake_configuration.md!}
 
@@ -69,7 +69,7 @@ This setup guide will show you how to forward your Akamai Guardicore events to S
 ### Set up the forwarding for Events
 
 - Log in to the Akamai Guardicore console
-- In the left panel, go to `System` > `INTEGRATION` >`Data Exporters`
+- In the left panel, go to `System` > `INTEGRATION` > `Data Exporters`
 
   ![Step 01](/assets/operation_center/integration_catalog/network_security/akamai_guardicore/Step 01.png){: style="max-width:100%"}
 
