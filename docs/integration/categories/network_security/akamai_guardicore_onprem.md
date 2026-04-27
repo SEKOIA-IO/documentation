@@ -71,11 +71,11 @@ This setup guide will show you how to forward your Akamai Guardicore events to S
 - Log in to the Akamai Guardicore console
 - In the left panel, go to `System` > `INTEGRATION` > `Data Exporters`
 
-  ![Step 01](/assets/operation_center/integration_catalog/network_security/akamai_guardicore/Step 01.png){: style="max-width:100%"}
+  ![Step 01](/assets/operation_center/integration_catalog/network_security/akamai_guardicore/Step%2001.png){: style="max-width:100%"}
 
 - Click `+ Create Data Exporter`
 
-  ![Step 02](/assets/operation_center/integration_catalog/network_security/akamai_guardicore/Step 02.png){: style="max-width:100%"}
+  ![Step 02](/assets/operation_center/integration_catalog/network_security/akamai_guardicore/Step%2002.png){: style="max-width:100%"}
 
 - Select `Events syslog Exporter`
 - Type a name for the exporter configuration (e.g: `Sekoia.io Events exporter`)
@@ -85,14 +85,14 @@ This setup guide will show you how to forward your Akamai Guardicore events to S
     - Select the matching protocol for the syslog concentrator as `Syslog protocol`
     - Disable `Verify host`
 
-    ![Step 03 on-premises](/assets/operation_center/integration_catalog/network_security/akamai_guardicore/Step 03 onprem.png){: style="max-width:100%"}
+    ![Step 03 on-premises](/assets/operation_center/integration_catalog/network_security/akamai_guardicore/Step%2003%20onprem.png){: style="max-width:100%"}
 
 - In the `Exporting options` section:
     - Enable `Export incidents`
     - Disable `Export Agent Logs`
     - Enable `Audit Logs`
 
-    ![Step 04](/assets/operation_center/integration_catalog/network_security/akamai_guardicore/Step 04.png){: style="max-width:100%"}
+    ![Step 04](/assets/operation_center/integration_catalog/network_security/akamai_guardicore/Step%2004.png){: style="max-width:100%"}
 
 - In the `Message format` section:
     - Select `CEF` as `Message format`
@@ -100,13 +100,13 @@ This setup guide will show you how to forward your Akamai Guardicore events to S
     - Click `Test Connection`
     - Click `Save`
 
-    ![Step 05 on-premises](/assets/operation_center/integration_catalog/network_security/akamai_guardicore/Step 05 onprem.png){: style="max-width:100%"}
+    ![Step 05 on-premises](/assets/operation_center/integration_catalog/network_security/akamai_guardicore/Step%2005%20onprem.png){: style="max-width:100%"}
 
 ### Set up the forwarding for Network logs
 
 - Click `+ Create Data Exporter`
 
-  ![Step 02](/assets/operation_center/integration_catalog/network_security/akamai_guardicore/Step 02.png){: style="max-width:100%"}
+  ![Step 02](/assets/operation_center/integration_catalog/network_security/akamai_guardicore/Step%2002.png){: style="max-width:100%"}
 
 - Select `Network Log syslog Exporter`
 - Type a name for the exporter configuration (e.g: `Sekoia.io Network Log exporter`)
@@ -116,7 +116,7 @@ This setup guide will show you how to forward your Akamai Guardicore events to S
     - Select the matching protocol for the syslog concentrator as `Syslog protocol`
     - Disable `Verify host`
 
-    ![Step 06 on-premises](/assets/operation_center/integration_catalog/network_security/akamai_guardicore/Step 06 onprem.png){: style="max-width:100%"}
+    ![Step 06 on-premises](/assets/operation_center/integration_catalog/network_security/akamai_guardicore/Step%2006%20onprem.png){: style="max-width:100%"}
 
 - In the `Exporting options` section:
     - Click `+ Add`
@@ -126,7 +126,7 @@ This setup guide will show you how to forward your Akamai Guardicore events to S
         - `Alerted`
         - `Allowed and Encrypted`
 
-    ![Step 07](/assets/operation_center/integration_catalog/network_security/akamai_guardicore/Step 07.png){: style="max-width:100%"}
+    ![Step 07](/assets/operation_center/integration_catalog/network_security/akamai_guardicore/Step%2007.png){: style="max-width:100%"}
 
 - In the `Message format` section:
     - Select `CEF` as `Message format`
@@ -134,7 +134,7 @@ This setup guide will show you how to forward your Akamai Guardicore events to S
     - Click `Test Connection`
     - Click `Save`
 
-    ![Step 05 on-premises](/assets/operation_center/integration_catalog/network_security/akamai_guardicore/Step 05 onprem.png){: style="max-width:100%"}
+    ![Step 05 on-premises](/assets/operation_center/integration_catalog/network_security/akamai_guardicore/Step%2005%20onprem.png){: style="max-width:100%"}
 
 
 {!_shared_content/operations_center/integrations/generated/042ca68e-dbdd-4646-8d9d-01ca28882c3f_sample.md!}
