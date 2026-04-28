@@ -371,6 +371,7 @@ nav:
       - Azure Key Vault: integration/categories/iam/azure_key_vault.md
       - BeyondTrust PRA Sessions: integration/categories/iam/beyondtrust_pra_sessions.md
       - BeyondTrust PRA Syslog: integration/categories/iam/beyondtrust_syslog.md
+      - BeyondTrust PRA Vault Account Activity: integration/categories/iam/beyondtrust_pra_vault_account_activity.md
       - Cisco Duo Security: integration/categories/iam/cisco_duo_security.md
       - Cyberark Digital Vault: integration/categories/iam/cyberark_vault.md
       - Cyberark Digital Vault: integration/categories/iam/cyberark_vault.md
