@@ -11,7 +11,7 @@ Simplify network segmentation, accelerate threat response and maintain continuou
 
 - **Vendor**: Akamai
 - **Supported environment**: On-Premises
-- **Version compatibility**: V51
+- **Version compatibility**: V51 or upper
 - **Detection based on**: Alert, Telemetry
 - **Supported application or feature**: see section below
 
