@@ -45,13 +45,13 @@ Hornetsecurity is a leading provider of cloud-based email security and data prot
 
     ![Hornetsecurity Control Panel](/assets/integration/email/hornetsecurity/Step8_tokeninfo.png)
 
-!!! warning
-    If using a domain as your scope, it must be configured in the Hornetsecurity Control Panel (Settings > Domains) to avoid errors in Sekoia.
-
 ### Create your intake
 
 1. Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a new intake from the `Hornetsecurity 365 Total Protection`.
 2. Set the intake account configuration with the `api_token` and the `base_url` from the previous step.
+
+!!! warning
+    If using a domain as your scope, it must be configured in the Hornetsecurity Control Panel (Settings > Domains) to avoid errors in Sekoia.
 
 ### Enjoy your events on the [Events page](https://app.sekoia.io/operations/events)
 
