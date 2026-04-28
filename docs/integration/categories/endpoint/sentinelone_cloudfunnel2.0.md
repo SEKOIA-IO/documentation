@@ -89,7 +89,9 @@ In the [Sekoia.io Operations Center](https://app.sekoia.io/operations/intakes):
 2. Search for `SentinelOne Cloud Funnel 2.0` by navigating the page or using the search bar
 3. Click `Create` on the relevant object
 4. Specify the `Name` of your intake that will be displayed and select the `Entity` needed
-5. Set up the intake account configuration with the [AWS Access Key](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html), the secret key and the region name
+5. Set up the intake account configuration with the **AWS Region** and either:
+    - The **AWS Role ARN** (for OIDC authentication — recommended)
+    - The **AWS Access Key** and **Secret Access Key** (for static credentials)
 6. Set up the intake configuration with the name of the SQS queue
 
 {!_shared_content/operations_center/integrations/generated/40deb162-6bb1-4635-9c99-5c2de7e1d340_sample.md!}

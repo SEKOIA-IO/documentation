@@ -4,7 +4,7 @@
 
 The Massive Event Export feature allows you to extract up to 100 million security events from Sekoia.io for offline analysis, compliance reporting, and long-term archival.
 
-While the platform offers a Direct Export for small, immediate datasets (up to 500 events), the Massive Export is designed for large-scale data movements, automated workflows, and regulatory log retention. 
+While the platform offers a Direct Export for small, immediate datasets (up to 1000 events), the Massive Export is designed for large-scale data movements, automated workflows, and regulatory log retention. 
 
 !!! note "Small export"
     [Learn more about this option in our Events FAQ](/xdr/FAQ/get_events.md))

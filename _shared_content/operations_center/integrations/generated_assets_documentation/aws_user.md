@@ -108,33 +108,29 @@ The following table shows how source data is mapped to OCSF model fields:
 
 | Source Field | OCSF Field Path | Description | Data Type | Logic |
 |--------------|-----------------|-------------|-----------|-------|
-| `UserId` | `user.uid` | AWS IAM user unique identifier | `string` | Direct mapping of AWS IAM user ID |
-| `UserName` | `user.name` | AWS IAM username | `string` | Direct mapping of IAM username |
-| `UserName` | `user.full_name` | User full name (from IAM username) | `string` | Direct mapping of IAM username as full name |
-| `Arn` | `user.account.uid` | AWS IAM user ARN (Amazon Resource Name) | `string` | Direct mapping of AWS ARN |
-| `UserName` | `user.account.name` | Account username | `string` | Direct mapping of IAM username |
-| `static: AWS IAM` | `user.account.type` | Account type identifier | `string` | Always 'AWS IAM' |
-| `static: 40` | `user.account.type_id` | OCSF account type ID | `integer` | Always 40 for AWS IAM account type |
-| `Path` | `user.path` | IAM user path in the hierarchy (e.g., '/service-role/', '/engineering/') | `string` | Direct mapping of IAM path hierarchy |
-| `ConsoleAccessEnabled` | `user.is_console_user` | Whether user has AWS Management Console access | `boolean` | true if login profile exists, false otherwise |
-| `MFADevices | length > 0` | `user.has_mfa` | Whether MFA is enabled for user account | `boolean` | true if any MFA device is registered, false otherwise |
-| `AccessKeys | filter(Status='Active') | length` | `user.access_keys_count` | Number of active programmatic access keys | `integer` | Count of active (non-deleted) access keys |
-| `PasswordLastUsed` | `user.password_last_used_time` | Password/console last used timestamp (Unix epoch) | `timestamp` | Convert ISO 8601 to Unix epoch; null if never used |
-| `Tags[]` | `user.tags` | AWS resource tags (key-value pairs for cost allocation, environment, etc.) | `object` | Convert array of {Key, Value} to key-value object |
-| `CreateDate` | `user.created_time` | User creation timestamp | `timestamp` | Convert ISO 8601 to Unix epoch |
-| `CreateDate` | `time` | OCSF event timestamp (user discovery time) | `timestamp` | Convert ISO 8601 to Unix epoch for OCSF event timestamp |
 | `static: 2` | `activity_id` | OCSF activity ID for inventory collection | `integer` | Always 2 for 'Collect' activity |
 | `static: Collect` | `activity_name` | OCSF activity name | `string` | Always 'Collect' |
 | `static: Discovery` | `category_name` | OCSF category name | `string` | Always 'Discovery' |
 | `static: 5` | `category_uid` | OCSF category UID | `integer` | Always 5 for Discovery category |
 | `static: User Inventory Info` | `class_name` | OCSF class name | `string` | Always 'User Inventory Info' |
 | `static: 5003` | `class_uid` | OCSF class UID | `integer` | Always 5003 for User Inventory Info |
-| `computed: 500300 + activity_id` | `type_uid` | OCSF type UID | `integer` | Base 500300 + activity_id (2 = 500302) |
-| `computed: class_name + ': ' + activity_name` | `type_name` | OCSF type name | `string` | Concatenate 'User Inventory Info: Collect' |
-| `static: Informational` | `severity` | Event severity level | `string` | Always 'Informational' for inventory events |
-| `static: 1` | `severity_id` | OCSF severity ID | `integer` | Always 1 for Informational severity |
+| `static: 500301` | `type_uid` | OCSF type UID | `integer` | Always 500301 for User Inventory Info: Collect type |
+| `static: 'User Inventory Info: Collect'` | `type_name` | OCSF type name | `string` | Always 'User Inventory Info: Collect' |
+| `CreateDate` | `time` | OCSF event timestamp (user discovery time) | `timestamp` | Convert ISO 8601 to Unix epoch for OCSF event timestamp |
 | `static: AWS IAM` | `metadata.product.name` | Source product name | `string` | Always 'AWS IAM' |
+| `static: N/A` | `metadata.product.version` | Source product version | `string` | There's no specific version for AWS IAM as it's a managed service; using 'N/A' |
 | `static: 1.6.0` | `metadata.version` | OCSF schema version | `string` | Fixed OCSF schema version |
+| `UserName` | `user.name` | AWS IAM username | `string` | Direct mapping of IAM username |
+| `Arn` | `user.uid` | AWS IAM user unique identifier | `string` | Direct mapping of AWS IAM user ID |
+| `Arn` | `user.groups[].uid` | Group unique identifier (using ARN for uniqueness across accounts) | `string` | Direct mapping of AWS ARN for group unique identifier |
+| `GroupName` | `user.groups[].name` |  | `string` | Direct mapping of IAM group name |
+| `PolicyName` | `user.groups[].privileges[]` | Privileges derived from IAM policies | `Array of strings` | This field captures the names of policies attached to the user or their groups. |
+| `MFADevices` | `user.has_mfa` | Whether MFA is enabled for user account | `boolean` | true if any MFA device is registered, false otherwise |
+| `UserName` | `user.account.name` | Account username | `string` | Direct mapping of IAM username |
+| `Arn` | `user.account.uid` | AWS IAM user ARN (Amazon Resource Name) | `string` | Direct mapping of AWS ARN |
+| `UserId` | `user.account.uid_alt` | AWS IAM UserId (alternative unique identifier) | `string` | Direct mapping of IAM UserId for alternative unique identifier |
+| `static: AWS IAM` | `user.account.type` | Account type identifier | `string` | Always 'AWS IAM' |
+| `static: 40` | `user.account.type_id` | OCSF account type ID | `integer` | Always 40 for AWS IAM account type |
 
 
 

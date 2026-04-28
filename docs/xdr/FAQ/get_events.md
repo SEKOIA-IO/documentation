@@ -2,7 +2,7 @@
 
 ## How to Export Events?
 
-### Small export (< 500)
+### Small export (< 1000)
 - **From the Interface:**
     - Go to the **Events** section.
     - Create your query in the search bar.
@@ -10,8 +10,12 @@
     - Select the fields to export or choose to export all fields.
     - **Available Formats:** CSV (ideal for spreadsheets) and JSON (useful for technical integration).
     - **Export Limits:** 
-        - Maximum of 500 events per export. Refine your search to get complete results if this limit is reached.
+        - Maximum of 1000 events per export. Refine your search to get complete results if this limit is reached. 
         - The description field is dynamic and therefore excluded from extraction, as its structure may vary across events.
+          
+!!! note
+    Exports are limited to 500 when no search terms are applied.
+    
 
 - **Via API:**
     - Use the Event Search API to automate event exports through jobs.
