@@ -46,7 +46,7 @@ Hornetsecurity is a leading provider of cloud-based email security and data prot
     ![Hornetsecurity Control Panel](/assets/integration/email/hornetsecurity/Step8_tokeninfo.png)
 
 !!! warning
-    Make sure to configure a domain under `settings > domains` in the Hornetsecurity Control Panel, otherwise you will get error in sekoia side.
+    If using a domain as your scope, it must be configured in the Hornetsecurity Control Panel (Settings > Domains) to avoid errors in Sekoia.
 
 ### Create your intake
 
