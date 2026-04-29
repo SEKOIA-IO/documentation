@@ -134,7 +134,7 @@ The **Tasks** tab lets you create and manage tasks and subtasks associated with 
 
 The **Events** tab lists all events associated with the case, using the same display as the [Events page](xdr/features/investigate/events.md).
 
-![Events tab inside a case](/assets/operation_center/cases/case-event-tab.png){: style="max-width:100%"}
+![Events tab inside a case](/assets/operation_center/cases/case-events-tab.png){: style="max-width:100%"}
 
 Events appear in this tab when they:
 
