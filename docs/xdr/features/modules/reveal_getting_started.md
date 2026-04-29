@@ -73,8 +73,6 @@ Open the asset context panel from an alert, case, or asset view and confirm the 
 - Points of Interest appear when behavioral event data is available.
 - Attack Path Visualization shows relationships when authentication event data is available.
 
-> 📸 [SCREENSHOT SUGGESTION: Asset context panel showing populated overview tab with identity, timeline, vulnerabilities, and hygiene cards visible. | ALT TEXT: Asset context panel with asset data populated across multiple tabs.]
-
 ## Outcome
 
 When all steps are complete, analysts can open any asset from an alert or case and immediately see its identity, activity history, posture, exposure, and relationships without pivoting to external tools.
