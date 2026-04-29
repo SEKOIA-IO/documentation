@@ -83,7 +83,7 @@ nav:
     - Deployment Process: self_hosted/deployment/deployment_process.md
     - Deployment Prerequisites: self_hosted/deployment/deployment_prerequisites.md
     - Deployment Guide: self_hosted/deployment/deployment_guide.md
-    - Deploymennt Configuration: self_hosted/deployment/deployment_configuration.md
+    - Deployment Configuration: self_hosted/deployment/deployment_configuration.md
   - Monitoring: 
     - Monitoring Guide: self_hosted/monitoring/monitoring_guide.md
   - Troubleshooting:
