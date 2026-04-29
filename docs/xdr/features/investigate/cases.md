@@ -6,17 +6,22 @@ Cases let you group investigation findings across multiple perimeters, alerts, a
 
 The listing page displays all cases across your community. You can filter cases by:
 
-* Status (open or closed)
-* Assignee or creator
-* Associated tags
+* Asset
+* Assignee
+* Creator
+* Custom fields
+* Priority
+* Status
+* Tag
+* Verdict
 
 You can sort cases by:
 
 * Last edition (default)
 * Creation date
-* Priority (`low`, `medium`, `high`)
+* By highest priority
 
-> 📸 [SCREENSHOT SUGGESTION: The cases listing page showing the filter panel, sort options, and case rows with checkboxes. | ALT TEXT: Cases listing page with filter and sort controls.]
+![Case listing with filter](/assets/operation_center/cases/cases-filter.png){: style="max-width:100%"}
 
 ## Create a case
 
@@ -32,17 +37,17 @@ To create a new case:
 
 ## Bulk actions on cases
 
-Sekoia.io lets you perform actions on multiple cases simultaneously from the cases listing page. This is useful for triaging large volumes of alerts or reassigning incidents at scale.
+Sekoia.io lets you perform actions on multiple cases simultaneously from the cases listing page. This is useful for triaging large volumes of cases or reassigning incidents at scale.
 
 ### Select multiple cases
 
 You can build a selection using three methods:
 
 1. **Individual selection**: Click the checkbox on the left side of each case row.
-2. **Page selection**: Click the checkbox in the table header to select all cases visible on the current page (up to 25, 50, or 100 cases depending on your display settings).
+2. **Page selection**: Click the checkbox in the table header to select all cases visible on the current page (up to 25, 50, or 100 cases).
 3. **Global selection**: After activating page selection, a banner appears at the top of the list. Use it to extend your selection to all cases matching your active filters, up to the platform limit.
 
-> 📸 [SCREENSHOT SUGGESTION: The cases listing with several rows checked and the selection banner visible at the top of the list. | ALT TEXT: Cases listing with bulk selection banner active.]
+![Case listing with bulk actions](/assets/operation_center/cases/cases-bulk-actions.png){: style="max-width:100%"}
 
 ### Selection limits
 
@@ -51,14 +56,14 @@ You can build a selection using three methods:
 
 ### Available bulk actions
 
-Once you select at least one case, the bulk action toolbar appears at the top of the list. The **+ New Case** button is temporarily replaced by the toolbar during an active selection.
+Once you select at least one case, the bulk action toolbar appears at the top of the list. The **Filters** tool bar is temporarily replaced during an active selection.
 
 | Action | Description |
 |---|---|
-| Change status | Update the status (e.g., New, Ongoing, Closed) for all selected cases. |
-| Add comment | Append the same comment to every selected case. |
-| Change assignee | Reassign all selected cases to a specific user or team. |
-| Edit tags and fields | Add or remove custom tags and labels across the selection. |
+| Change priority | Update the priority (e.g., High, Medium, Low) for all selected cases. |
+| Change status | Update the status (e.g., New, In progress, Closed) for all selected cases. |
+| Change verdict | Update the verdict (e.g., True positive: Confirmed attack, False positive: Detection error) for all selected cases. |
+| Change assignee | Reassign all selected cases to a specific user. |
 
 ## Case custom statuses and verdicts
 
@@ -129,7 +134,7 @@ The **Tasks** tab lets you create and manage tasks and subtasks associated with 
 
 The **Events** tab lists all events associated with the case, using the same display as the [Events page](xdr/features/investigate/events.md).
 
-> 📸 [SCREENSHOT SUGGESTION: The Events tab within a case, showing the event list and the Toggle value selection button. | ALT TEXT: Events tab inside a case details page.]
+![Events tab inside a case](/assets/operation_center/cases/case-event-tab.png){: style="max-width:100%"}
 
 Events appear in this tab when they:
 
@@ -160,7 +165,7 @@ To search events with a value:
 
 A side panel opens with the search results so you can investigate without leaving the case page.
 
-> 📸 [SCREENSHOT SUGGESTION: The side panel opened after clicking Perform a search, showing results alongside the events list. | ALT TEXT: Search events side panel open within the case events tab.]
+![Search events in side panel](/assets/operation_center/cases/case-side-panel.png){: style="max-width:100%"}
 
 ### Graph investigation tab
 
