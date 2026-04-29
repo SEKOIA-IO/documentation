@@ -108,4 +108,4 @@ Enable detections on the provided IOCs: md5 / sha256 file hashes, IPv4/v6 addres
 
 ## Extra
 
-Module **`CrowdStrike Falcon` v1.25.11**
+Module **`CrowdStrike Falcon` v1.25.12**
