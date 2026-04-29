@@ -23,23 +23,23 @@ This integration collects the Team logs.
 
 1. Log in the BeyondTrust Privileged Remote Access console
  
-   ![Step 1](/assets/operation_center/integration_catalog/cloud_and_saas/beyondtrust/team/step_1.png){: style="max-width:100%"}
+    ![Step 1](/assets/operation_center/integration_catalog/cloud_and_saas/beyondtrust/team/step_1.png){: style="max-width:100%"}
 
 2. Click the Burger menu
 
-   ![Step 2](/assets/operation_center/integration_catalog/cloud_and_saas/beyondtrust/team/step_2.png){: style="max-width:100%"}
+    ![Step 2](/assets/operation_center/integration_catalog/cloud_and_saas/beyondtrust/team/step_2.png){: style="max-width:100%"}
 
 3. On the left panel, click `Management`
    
-   ![Step 3](/assets/operation_center/integration_catalog/cloud_and_saas/beyondtrust/team/step_3.png){: style="max-width:100%"}
+    ![Step 3](/assets/operation_center/integration_catalog/cloud_and_saas/beyondtrust/team/step_3.png){: style="max-width:100%"}
 
 4. Click `API Configuration`
 
-   ![Step 4](/assets/operation_center/integration_catalog/cloud_and_saas/beyondtrust/team/step_4.png){: style="max-width:100%"}
+    ![Step 4](/assets/operation_center/integration_catalog/cloud_and_saas/beyondtrust/team/step_4.png){: style="max-width:100%"}
 
 5. Check `Enable XML API` and click `+ Add`
 
-   ![Step 5](/assets/operation_center/integration_catalog/cloud_and_saas/beyondtrust/team/step_5.png){: style="max-width:100%"}
+    ![Step 5](/assets/operation_center/integration_catalog/cloud_and_saas/beyondtrust/team/step_5.png){: style="max-width:100%"}
 
 6. Check `Enable`
 7. Type a name for the API Account and add a comment (optional)
@@ -47,7 +47,7 @@ This integration collects the Team logs.
 9. Copy the OAuth client ID and the OAuth client Secret 
 10. Click `Save`
 
-   ![Step 6](/assets/operation_center/integration_catalog/cloud_and_saas/beyondtrust/team/step_6.png){: style="max-width:100%"}
+    ![Step 6](/assets/operation_center/integration_catalog/cloud_and_saas/beyondtrust/team/step_6.png){: style="max-width:100%"}
 
 ### Create an intake
 
