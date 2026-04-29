@@ -191,9 +191,12 @@ nav:
       - Swimlane Turbine: xdr/features/integrations/swimlane_turbine.md
   - Asset Intelligence (Reveal):
       - Reveal overview: xdr/features/modules/reveal_index.md
+      - Get started with Reveal: xdr/features/modules/reveal_getting_started.md
       - Visualize attack paths: xdr/features/investigate/attack_path_visualization.md
       - Discover Points of Interest: xdr/features/detect/points_of_interest.md
       - Check asset connector health: xdr/features/collect/asset_connector_health.md
+      - Reveal enablement matrix: xdr/features/modules/reveal_feature_enablement.md
+
 - Usecases:
   - Export large volumes of events: xdr/usecases/massive_export.md
   - Implement a blocklist in Sekoia.io: xdr/usecases/playbook/implement_blocklist.md
@@ -224,6 +227,8 @@ nav:
     - Subscriptions notifications: xdr/FAQ/subscriptions/subscriptions_notifications.md
   - Sekoia.io Endpoint agent: xdr/FAQ/SEKOIA_Endpoint_Agent.md
   - Datetime representation: xdr/FAQ/datetime.md
+  - Reveal troubleshooting: xdr/features/modules/reveal_troubleshoot.md
+  
 - Integrations:
   - Introduction: integration/index.md
   - Ingestion methods:
