@@ -17,3 +17,8 @@ The architecture is designed for production-grade reliability:
 * **Self-healing**: Automated recovery mechanisms for continuous operations.
 * **Scalability**: Support for multi-node compute clusters to handle high-volume ingestion.
 
+## Data Workflow
+
+* **Ingestion**: Event logs are sent to forwarders which point to a unique domain/port redirected to your Load Balancer.
+* **Processing**: Microservices are decoupled to prevent cascading failures.
+* **Storage**: Data is written to an S3-compatible storage managed by the customer.

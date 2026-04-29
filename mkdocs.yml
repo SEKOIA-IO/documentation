@@ -82,15 +82,14 @@ nav:
   - Deployment: 
     - Deployment Process: self_hosted/deployment/deployment_process.md
     - Deployment Prerequisites: self_hosted/deployment/deployment_prerequisites.md
-    - Deploymennt Configuration: self_hosted/deployment/deployment_configuration.md
     - Deployment Guide: self_hosted/deployment/deployment_guide.md
+    - Deploymennt Configuration: self_hosted/deployment/deployment_configuration.md
   - Monitoring: 
     - Monitoring Guide: self_hosted/monitoring/monitoring_guide.md
-    - Metrics: self_hosted/monitoring/metrics.md
   - Troubleshooting:
     - Debug Tool: self_hosted/troubleshooting/debug_tool.md
   - Release Notes: 
-    - 0.1.0: self_hosted/release_notes/0.1.0.md
+    - 0.0.1: self_hosted/release_notes/0.0.1.md
 - Sekoia Defend (XDR):
   - Introduction: xdr/index.md
   - Quick start guide: xdr/xdr_quick_start.md

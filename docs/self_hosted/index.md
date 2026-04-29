@@ -17,7 +17,7 @@ The platform ensures:
 * **Regulatory Compliance**: The platform is compatible with national and sector-specific regulations, including public procurement frameworks.
 * **Enterprise-Grade Operations**: You can provision and scale environments with automated orchestration and built-in autoscaling.
 * **High Availability**: The architecture includes redundancy and self-healing capabilities to ensure continuous security operations.
-* **Decoupled Intelligence**: While the technical foundation follows a structured release cycle, security content and threat intelligence are updated daily to minimize intelligence gaps.
+* **Continuous Protection**: The business layer is decoupled from the technical foundation, allowing you to receive daily updates for threat intelligence, security rules, integrations, and automations. This ensures your detection capabilities improve continuously without requiring platform upgrades or service disruption.
 
 ## Intended audience
 

@@ -1,30 +1,41 @@
 # Self-Hosted technical requirements
 
-Sekoia Self-Hosted requires specific infrastructure, network, and operational readiness. As a customer-operated platform, you are responsible for the end-to-end lifecycle.
+Sekoia Self-Hosted is an enterprise-grade solution that requires specific infrastructure, network, and operational readiness. As a customer-operated platform, you are responsible for the end-to-end lifecycle, including provisioning, management, and monitoring.
 
-## General requirements
-Ensure your organization meets these operational prerequisites:
+## Infrastructure Prerequisites
+You must provision and manage the following dedicated infrastructure components:
 
-* **Operations team**: You must maintain a dedicated team responsible for deployment, configuration, and monitoring.
-* **Infrastructure management**: You must be able to provision and manage your own infrastructure, whether on-premises or via virtual machines.
-* **Licensing**: You must possess a valid license defining the maximum supervised assets and event-ingest capacity.
+| Component | CPU | RAM | Storage / Throughput |
+| :--- | :--- | :--- | :--- |
+| **Load Balancer** (e.g., HAProxy, Nginx) | 4 | 8GB | 50MB/s (validate per customer) |
+| **Local Image Registry** (e.g., Harbor) | 4 | 8GB | 5TB |
+| **Local Code Registry** (e.g., Git) | 4 | 8GB | 100GB |
+| **Orchestration Node** (Admin) | 4 | 8GB | 100GB |
 
-## Hardware footprint
-The following specifications are estimated for a deployment of approximately 500GB/day.
+## Networking and Storage
+* **Networking**: You must provide internal DNS resolution, synchronized NTP infrastructure, and SMTP servers for alerts.
+* **S3 Storage**: You must provide an S3-compatible bucket for event storage.
+    * **Calculation**: Total capacity = Raw daily ingested events (GB) x retention days.
+    * **Note**: The 4TB local SSD on compute nodes is strictly for system use, not long-term event storage.
 
-| Component | Specification |
-| :--- | :--- |
-| **Compute servers (6x)** | 44 CPU (3.2 GHz min), 128GB RAM, 2TB SSD, Debian 11 |
-| **GPU server (1x)** | NVIDIA H100 dedicated for AI processing |
-| **Storage** | S3-compatible bucket |
-| **Admin node (1x)** | Debian 12, Python 3.11, 4 CPU / 8GB RAM |
+## Scaling Table
+The following table outlines the estimated hardware footprint per cluster based on asset count and daily ingestion volume.
 
-!!! warning "Consult Sekoia for sizing"
-    These figures are estimates provided for guidance. Contact Sekoia for a full requirements review before you commence deployment.
+| Assets | Daily Volume | Compute Nodes | GPU Nodes |
+| :--- | :--- | :--- | :--- |
+| 5,000 | 500 GB | 6 | 1 |
+| 10,000 | 1 TB | 12 | 1 |
+| 20,000 | 2 TB | 24 | 2 |
+| 50,000 | 5 TB | 60 | 2 |
+| 100,000 | 10 TB | 120 | 2 |
 
-## Network and connectivity
-Configure the internal network to allow communication between platform components:
+!!! warning "Theoretical Sizing"
+    The figures provided in the scaling table are estimates for guidance. Infrastructure requirements vary based on specific replication constraints, data retention policies, and query patterns. These figures must be validated by Sekoia prior to deployment.
 
-* **DNS and Time**: Provide DNS resolution for all nodes and a synchronized NTP infrastructure.
-* **Load balancer**: Configure a load balancer for Web UI access (Ports 80/443) and event ingestion (Ports 10514/11514).
-* **Internal traffic**: Allow communication for Kubernetes management (Ports 6443, 2379-2380) and VXLAN overlay (Port 8472).
+!!! warning "Hardware Specifications"
+    Each compute node must meet the minimum specification: 44 CPU (3.2 GHz minimum), 128GB RAM, and 4TB SSD (Debian 11). GPU nodes require an NVIDIA H100.
+
+## Operational Readiness
+* **Operations Team**: A dedicated in-house or partner team must handle deployment, configuration, updates, and 24/7 monitoring.
+* **Infrastructure Management**: You must have the ability to provision and manage your own private cloud, on-premises servers, or virtual machines.
+* **Licensing**: A valid license must be provided, defining the maximum supervised assets and daily event-ingest capacity.

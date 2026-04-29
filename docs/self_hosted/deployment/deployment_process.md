@@ -1,13 +1,19 @@
-# The Deployment process
+# The Deployment Process
 
-The Sekoia Self-Hosted platform uses an idempotent, agentless CLI to manage the platform lifecycle. This process unifies installation, configuration, and drift reconciliation.
+A central tool called the **Self-Hosted Controller** manages the platform lifecycle. This tool takes a configuration file as a parameter, with all settings described in the configuration section. 
 
-## Core principles
-The deployment engine operates on three main pillars:
+All available commands can be listed by running the `list` command. Specific details for these commands are provided in the relevant sections below (Deployment, Debug, Check). Before proceeding, please consult the list of prerequisites for a Self-Hosted deployment.
 
-* **Preflight validation**: The CLI verifies OS versions, network connectivity, and credentials before any change is applied.
-* **Declarative configuration**: You define the desired state of your infrastructure in a `customer.yml` manifest.
+## Core Principles
+The deployment engine is designed around three fundamental pillars to ensure stability and predictability:
+
+* **Preflight Validation**: The CLI performs comprehensive checks before any execution. It verifies OS versions, network connectivity, and file checksums, blocking execution until the environment meets all minimum requirements.
+* **Declarative Configuration**: The platform state is defined by a `config.yml` manifest. This file acts as the single source of truth for infrastructure settings (IPs, load-balancers, DNS), service configurations (SMTP, feature toggles, AI modules), and scaling parameters (node counts, resource quotas).
 * **Orchestration**: A core engine computes the difference between the actual and desired state to execute only necessary tasks.
 
-## Artifact delivery
-Each release is delivered as a single digitally signed archive that guarantees tamper evidence and verifiability. This archive contains the core platform and Sekoia applications, including the deployer, Kubernetes stack, and microservices.
+## Workflow Execution
+The CLI supports both online and air-gapped environments:
+
+* **Online**: Fetches artifacts directly from authorized registries.
+* **Air-gapped**: Operates in fully disconnected modes using pre-staged packages and locally cached manifests.
+
