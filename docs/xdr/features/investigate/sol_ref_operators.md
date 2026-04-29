@@ -656,6 +656,32 @@ This `model` object (similar to a class Object in code development) contains a s
 
     The `model` object default name is related to the table name it is originating from. In this case, the model name is `entity` since the join was performed on the `entities` table.
 
+!!! example "Join the tables alerts and assets"
+
+    === "Query"
+
+        ``` shell
+        alerts
+        | join assets on assets.uuid == uuid
+        | select short_id, rule_name, asset.name, asset.type
+        | limit 10
+
+        ```
+
+    === "Results"
+
+        | short_id     | rule_name                                                     | asset.name      | asset.type |
+        | ------------ | ------------------------------------------------------------- | --------------- | ---------- |
+        | ALqUHCbZMbnY | Mshta Suspicious Child Process                                | desktop-4932-vm | host       |
+        | ALK5mN68LpbB | Mshta Command From A Scheduled Task                           | desktop-4932-vm | host       |
+        | ALWzDs9pcVVb | CrowdStrike Falcon Intrusion Detection                        | root            | account    |
+        | ALQbzwMvo1Aj | CrowdStrike Falcon Intrusion Detection Informational Severity | root            | account    |
+        | ALTwu5cU16LK | PsExec Process                                                | root            | account    |
+        | ALHGJU7tcoGb | CrowdStrike Falcon Intrusion Detection                        | root            | account    |
+        | ALqPWeuUow4p | CrowdStrike Falcon Intrusion Detection High Severity          | root            | account    |
+
+    The `model` object default name is related to the table name it is originating from. In this case, the model name is `asset` since the join was performed on the `assets` table.
+
 !!! example "Define model object name"
 
     In this example, we define a specific name for the model object with the into operator.

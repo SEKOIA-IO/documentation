@@ -9,9 +9,10 @@
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
-| `aws_access_key_id` | `string` | The identifier of the access key |
-| `aws_secret_access_key` | `string` | The secret associated to the access key |
+| `aws_access_key_id` | `string` | The identifier of the access key (leave empty when using `aws_role_arn`) |
+| `aws_secret_access_key` | `string` | The secret associated to the access key (leave empty when using `aws_role_arn`) |
 | `aws_region` | `string` | The area hosting the AWS resources |
+| `aws_role_arn` | `string` | The ARN of the IAM Role to assume via OIDC (leave empty when using static access keys) |
 
 ## Triggers
 
