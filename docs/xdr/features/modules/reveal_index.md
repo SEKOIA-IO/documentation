@@ -70,11 +70,11 @@ Use Reveal when you need asset context that your alerts do not provide. Typical 
 
 ## Get started
 
-To enable and configure Reveal, follow the [Getting started with Reveal](getting-started.md) guide. It describes the required data sources, the recommended setup order, and how to validate each capability.
+To enable and configure Reveal, follow the [Getting started with Reveal](reveal_getting_started.md) guide. It describes the required data sources, the recommended setup order, and how to validate each capability.
 
 
 ## Related links
 
-- [Collect — Assets](/xdr/features/collect/assets.md) — Documentation on how assets are configured, discovered, and managed in Sekoia.
-- [Detection — IOC detection](/xdr/features/detect/iocdetection.md) — Overview of detection capabilities in Sekoia, including rule-based and analytics-driven approaches.
-- [Integration — Asset categories](/integration/assets_categories/overview.md) — Reference for asset connector categories and integration setup.
+- [Collect — Assets](/xdr/features/collect/assets.md): Documentation on how assets are configured, discovered, and managed in Sekoia.
+- [Detection — IOC detection](/xdr/features/detect/iocdetection.md): Overview of detection capabilities in Sekoia, including rule-based and analytics-driven approaches.
+- [Integration — Asset categories](/integration/assets_categories/overview.md): Reference for asset connector categories and integration setup.
