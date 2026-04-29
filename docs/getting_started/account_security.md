@@ -67,3 +67,6 @@ Admins of a community can easily reset the two-factor authentication of users in
 6. Copy the single-use recovery code and send it to the user who requested the reset via a secured app 
 7. They will receive an email to let them know you reset their 2FA 
 
+!!! note
+
+    If a user needs both a password reset and to reset their two-factor authentication at the same time, please contact the support team with this information.
