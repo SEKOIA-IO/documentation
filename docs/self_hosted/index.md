@@ -32,3 +32,23 @@ Target organizations include:
 
 !!! note "Operational Responsibility"
     Sekoia Self-Hosted requires a dedicated operations team to manage the end-to-end lifecycle, including deployment, configuration, and monitoring.
+
+## Documentation map
+
+Use the following links to navigate the technical documentation and manage your deployment lifecycle.
+
+### Architecture
+* [Reference Architecture](architecture/architecture.md): Explore the technical design, component interactions, and data flow of the self-hosted solution.
+
+### Deployment
+* [Deployment Process](deployment/deployment_process.md): Understand the high-level stages of a standard installation.
+* [Deployment Prerequisites](deployment/deployment_prerequisites.md): Verify hardware, software, and network requirements before you begin.
+* [Deployment Guide](deployment/deployment_guide.md): Follow step-by-step instructions to install and initialize the platform.
+* [Deployment Configuration](deployment/deployment_configuration.md): Consult the comprehensive reference for the `config.yml` manifest parameters.
+
+### Operations and Support
+* [Monitoring Guide](monitoring/monitoring_guide.md): Learn how to observe platform health and performance metrics.
+* [Debug Tool](troubleshooting/debug_tool.md): Use the built-in diagnostic tools to identify and resolve common issues.
+
+### Release updates
+* [Release Notes](release_notes/0.0.1.md): Review the latest features, improvements, and fixes included in each version.
