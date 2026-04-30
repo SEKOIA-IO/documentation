@@ -18,7 +18,7 @@ This guide describes how to install the Sekoia Self-Hosted platform using the or
    tar -xvf sekoia-archive.tar.gz -C $SEKOIA_LOCAL_DIR
     ```
 !!! note "Disk space requirements"
-    Ensure the destination directory provides at least 50 GB of available disk space to extract the Sekoia release.
+    Ensure the destination directory provides at least 100 GB of available disk space to extract the Sekoia release.
 
 ### 2. Initialize the Controller
 
