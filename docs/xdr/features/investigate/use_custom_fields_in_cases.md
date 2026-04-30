@@ -11,7 +11,7 @@ Custom field definitions must exist in your workspace before you can use them on
 
 ## Add a custom field to a case
 
-> 📸 [SCREENSHOT SUGGESTION: Case details page with the Custom Fields section expanded, showing an empty field and the + Add button. | ALT TEXT: Custom fields section on the case details page.]
+![Case custom fields section](/assets/operation_center/cases/case-custom-fields-section.png){: style="max-width:100%"}
 
 To add a custom field value to a case:
 
