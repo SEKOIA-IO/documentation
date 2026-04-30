@@ -80,18 +80,51 @@ nav:
   - Roy AI Assistant: getting_started/ai_assistant.md
   - Best practices: getting_started/best_practices.md
   - Troubleshooting tips: getting_started/get_troubleshooting_tips.md
-- Sekoia Defend (XDR):
-  - Introduction: xdr/index.md
-  - Quick start guide: xdr/xdr_quick_start.md
-  - Features:
+- Sekoia Solutions:
+  - Threat Context (Intelligence):
+    - Intelligence overview: cti/index.md
+    - Data Models: cti/features/data_model.md
+    - Consume:
+      - Intelligence: cti/features/consume/intelligence.md
+      - Observables: cti/features/consume/observables.md
+      - Telemetry: cti/features/consume/telemetry.md
+      - Feeds: 
+          - Understand the feeds: cti/features/consume/feeds.md
+          - Create feeds: cti/features/consume/create_feed.md
+          - Manage feeds: cti/features/consume/manage_feeds.md
+          - Create a detection rule from a feed: cti/features/consume/create_detection_rule_from_feed.md
+      - Graph Explorations: cti/features/consume/graph_explorations.md
+      - Export: cti/features/consume/export.md
+      - IOCs Collections: cti/features/consume/ioccollections.md
+    - Monitor:
+      - Dashboards: cti/features/monitor/dashboard.md
+      - Threat Landscape: cti/features/monitor/threat_landscape.md
+    - External Integrations:
+      - Overview: cti/features/integrations/index.md
+      - API: cti/features/integrations/api.md
+      - TAXII: cti/features/integrations/taxii.md
+      - Cortex Analyzer: cti/features/integrations/thehive.md
+      - MISP Feed: cti/features/integrations/misp.md
+      - Microsoft Sentinel: cti/features/integrations/microsoft-sentinel.md
+      - OpenCTI Import Connector: cti/features/integrations/opencti.md     
+      - OpenCTI Stream Connector: cti/features/integrations/opencti-stream-connector.md
+      - Splunk: cti/features/integrations/splunk.md
+      - Splunk SOAR: cti/features/integrations/splunk_soar.md
+      - Swimlane Turbine: cti/features/integrations/swimlane_turbine.md
+      - Anomali ThreatStream: cti/features/integrations/anomali.md
+      - PaloAlto Cortex XSOAR: cti/features/integrations/paloalto_xsoar.md
+      - PaloAlto Cortex XSIAM: cti/features/integrations/paloalto_xsiam.md
+      - ThreatQuotient: cti/features/integrations/threatquotient.md
+  - Detect, Hunt and Respond (Defend):
+    - Defend overview: xdr/index.md
+    - Quick start guide: xdr/xdr_quick_start.md
     - Collect:
       - Integrations: xdr/features/collect/integrations_hub.md
       - Intakes: xdr/features/collect/intakes.md
       - Entities: xdr/features/collect/entities.md
       - Assets: xdr/features/collect/assets.md
-      - Check asset connector health: xdr/features/collect/asset_connector_health.md
       - Optimization rules: 
-         - Optimization rules overview: xdr/features/collect/optimization_rules_overview.md
+         - Optimization rules overview: xdr/features/collect/optimization_rules_overview.md          
          - Create an optimization rule: xdr/features/collect/create_optimization_rule.md
          - Optimization rules technical references: xdr/features/collect/optimization_rules_reference.md
     - Detect:
@@ -101,7 +134,6 @@ nav:
       - Sigma: xdr/features/detect/sigma.md
       - Anomaly Detection: xdr/features/detect/anomaly.md
       - IOCs Collections: xdr/features/detect/ioccollections.md
-      - Discover Points of Interest: xdr/features/detect/points_of_interest.md
     - Investigate:
       - Alerts: xdr/features/investigate/alerts.md
       - Events page: xdr/features/investigate/events.md
@@ -114,7 +146,6 @@ nav:
       - AI Cases: xdr/features/investigate/ai_cases.md
       - Cases: xdr/features/investigate/cases.md
       - Asset Context Panel: xdr/features/investigate/asset_context_panel.md
-      - Attack path visualization: xdr/features/investigate/attack_path_visualization.md
       - Events Query Language: xdr/features/investigate/events_query_language.md
       - Querying Events: xdr/features/investigate/querying_events.md
       - Query Builder:
@@ -124,7 +155,7 @@ nav:
         - Data visualization guide: xdr/features/investigate/data_visualization_guide.md
         - Query builder form mode reference: xdr/features/investigate/query_builder_form_reference.md
       - Sekoia Operating Language:
-        - Overview: xdr/features/investigate/sol_overview.md
+        - SOL overview: xdr/features/investigate/sol_overview.md
         - Getting started: xdr/features/investigate/sol_getting_started.md
         - Understand SOL performance: xdr/features/investigate/sol_best_practices.md
         - How-to guides: xdr/features/investigate/sol_how_to_guides.md
@@ -158,72 +189,47 @@ nav:
       - FortiSOAR: xdr/features/integrations/fortisoar.md
       - Palo Alto Cortex XSOAR: xdr/features/integrations/interconnect_sekoia_with_xsoar.md
       - Swimlane Turbine: xdr/features/integrations/swimlane_turbine.md
-    - Modules: xdr/features/modules/reveal_index.md
-  - Usecases:
-    - Export large volumes of events: xdr/usecases/massive_export.md
-    - Implement a blocklist in Sekoia.io: xdr/usecases/playbook/implement_blocklist.md
-    - Synchronize Alerts with an external tool: xdr/usecases/playbook/synchronize_alerts.md
-    - Synchronize Assets with an Active Directory: xdr/usecases/playbook/synchronize_asset_with_ad.md
-    - Send notifications to a Webhook using a playbook: xdr/usecases/playbook/notifications_using_playbooks.md
-    - Use your own CTI in Sekoia.io: xdr/usecases/use_your_own_cti.md
-    - Investigate overusage: xdr/usecases/playbook/investigate_overusage.md
-    - Log volume reduction strategies: xdr/usecases/playbook/log_volume_reduction_strategies.md
-  - FAQ:
-    - General: xdr/FAQ.md
-    - Alerts: xdr/FAQ/Alerts_qa.md
-    - Events:
-      - Events FAQ: xdr/FAQ/get_events.md
-      - Events QA: xdr/FAQ/Events_qa.md
-      - Facing issues with logs collection: xdr/FAQ/Log_collection_Troubleshoot.md
-      - Data storage and retention: xdr/FAQ/data_storage_retention.md
-      - Restore Data from cold storage: xdr/FAQ/restore_data_cold_storage.md
-    - Intelligence:
-      - Detection: xdr/FAQ/intelligence/Detection_qa.md
-      - Questions about IoC revokation: xdr/FAQ/intelligence/revoke_ioc.md
-      - Questions about detection rules: xdr/FAQ/intelligence/detection_rules.md
-    - Assets: xdr/FAQ/Assets_qa.md
-    - Ingestion:
-      - Delay with event ingestion or alert creation: xdr/FAQ/ingestion/ingestion_delay.md
-    - Subscriptions: 
-      - Allocate trial subscription: xdr/FAQ/subscriptions/allocate_trial_subscription.md
-      - Subscriptions notifications: xdr/FAQ/subscriptions/subscriptions_notifications.md
-    - Sekoia.io Endpoint agent: xdr/FAQ/SEKOIA_Endpoint_Agent.md
-    - Datetime representation: xdr/FAQ/datetime.md
-- Sekoia Intelligence (CTI):
-  - Introduction: cti/index.md
-  - Features:
-    - Data Models: cti/features/data_model.md
-    - Consume:
-      - Intelligence: cti/features/consume/intelligence.md
-      - Observables: cti/features/consume/observables.md
-      - Telemetry: cti/features/consume/telemetry.md
-      - Feeds: 
-          - Understand the feeds: cti/features/consume/feeds.md
-          - Create feeds: cti/features/consume/create_feed.md
-          - Manage feeds: cti/features/consume/manage_feeds.md
-          - Create a detection rule from a feed: cti/features/consume/create_detection_rule_from_feed.md
-      - Graph Explorations: cti/features/consume/graph_explorations.md
-      - Export: cti/features/consume/export.md
-      - IOCs Collections: cti/features/consume/ioccollections.md
-    - Monitor:
-      - Dashboards: cti/features/monitor/dashboard.md
-      - Threat Landscape: cti/features/monitor/threat_landscape.md
-    - External Integrations:
-      - Overview: cti/features/integrations/index.md
-      - API: cti/features/integrations/api.md
-      - TAXII: cti/features/integrations/taxii.md
-      - Cortex Analyzer: cti/features/integrations/thehive.md
-      - MISP Feed: cti/features/integrations/misp.md
-      - Microsoft Sentinel: cti/features/integrations/microsoft-sentinel.md
-      - OpenCTI Import Connector: cti/features/integrations/opencti.md
-      - OpenCTI Stream Connector: cti/features/integrations/opencti-stream-connector.md
-      - Splunk: cti/features/integrations/splunk.md
-      - Splunk SOAR: cti/features/integrations/splunk_soar.md
-      - Swimlane Turbine: cti/features/integrations/swimlane_turbine.md
-      - Anomali ThreatStream: cti/features/integrations/anomali.md
-      - PaloAlto Cortex XSOAR: cti/features/integrations/paloalto_xsoar.md
-      - PaloAlto Cortex XSIAM: cti/features/integrations/paloalto_xsiam.md
-      - ThreatQuotient: cti/features/integrations/threatquotient.md
+  - Asset Intelligence (Reveal):
+      - Reveal overview: xdr/features/modules/reveal_index.md
+      - Get started with Reveal: xdr/features/modules/reveal_getting_started.md
+      - Explore assets context: xdr/features/modules/reveal_asset_context_panel.md
+      - Visualize attack paths: xdr/features/investigate/attack_path_visualization.md
+      - Discover Points of Interest: xdr/features/detect/points_of_interest.md
+      - Check asset connector health: xdr/features/collect/asset_connector_health.md
+      - Reveal enablement matrix: xdr/features/modules/reveal_feature_enablement.md
+
+- Usecases:
+  - Export large volumes of events: xdr/usecases/massive_export.md
+  - Implement a blocklist in Sekoia.io: xdr/usecases/playbook/implement_blocklist.md
+  - Synchronize Alerts with an external tool: xdr/usecases/playbook/synchronize_alerts.md
+  - Synchronize Assets with an Active Directory: xdr/usecases/playbook/synchronize_asset_with_ad.md
+  - Send notifications to a Webhook using a playbook: xdr/usecases/playbook/notifications_using_playbooks.md
+  - Use your own CTI in Sekoia.io: xdr/usecases/use_your_own_cti.md
+  - Investigate overusage: xdr/usecases/playbook/investigate_overusage.md
+  - Log volume reduction strategies: xdr/usecases/playbook/log_volume_reduction_strategies.md
+- FAQ and troubleshooting:
+  - General: xdr/FAQ.md
+  - Alerts: xdr/FAQ/Alerts_qa.md
+  - Events:
+    - Events FAQ: xdr/FAQ/get_events.md
+    - Events QA: xdr/FAQ/Events_qa.md
+    - Facing issues with logs collection: xdr/FAQ/Log_collection_Troubleshoot.md
+    - Data storage and retention: xdr/FAQ/data_storage_retention.md
+    - Restore Data from cold storage: xdr/FAQ/restore_data_cold_storage.md
+  - Intelligence:
+    - Detection: xdr/FAQ/intelligence/Detection_qa.md
+    - Questions about IoC revokation: xdr/FAQ/intelligence/revoke_ioc.md
+    - Questions about detection rules: xdr/FAQ/intelligence/detection_rules.md
+  - Assets: xdr/FAQ/Assets_qa.md
+  - Ingestion:
+    - Delay with event ingestion or alert creation: xdr/FAQ/ingestion/ingestion_delay.md
+  - Subscriptions: 
+    - Allocate trial subscription: xdr/FAQ/subscriptions/allocate_trial_subscription.md
+    - Subscriptions notifications: xdr/FAQ/subscriptions/subscriptions_notifications.md
+  - Sekoia.io Endpoint agent: xdr/FAQ/SEKOIA_Endpoint_Agent.md
+  - Datetime representation: xdr/FAQ/datetime.md
+  - Reveal troubleshooting: xdr/features/modules/reveal_troubleshoot.md
+  
 - Integrations:
   - Introduction: integration/index.md
   - Ingestion methods:
