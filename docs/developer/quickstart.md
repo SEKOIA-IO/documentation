@@ -6,13 +6,21 @@ The Sekoia.io REST API lets you access platform data, trigger actions, and build
 
 The base URL depends on the region where your Sekoia.io subscription is hosted.
 
-| Region | Base URL |
-| --- | --- |
-| FRA1 (default) | `https://api.sekoia.io` |
-| FRA2 | `https://app.fra2.sekoia.io/api` |
-| MCO1 | `https://app.mco1.sekoia.io/api` |
-| UAE1 | `https://app.uae1.sekoia.io/api` |
-| USA1 | `https://app.usa1.sekoia.io/api` |
+<table>
+  <thead>
+    <tr>
+      <th>Region</th>
+      <th style="white-space: nowrap">Base URL</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>FRA1 (default)</td><td><code>https://api.sekoia.io</code></td></tr>
+    <tr><td>FRA2</td><td><code>https://app.fra2.sekoia.io/api</code></td></tr>
+    <tr><td>MCO1</td><td><code>https://app.mco1.sekoia.io/api</code></td></tr>
+    <tr><td>UAE1</td><td><code>https://app.uae1.sekoia.io/api</code></td></tr>
+    <tr><td>USA1</td><td><code>https://app.usa1.sekoia.io/api</code></td></tr>
+  </tbody>
+</table>
 
 If you are unsure of your region, look at the URL you use to access the Sekoia.io application. For example, if you log in via `https://app.mco1.sekoia.io/`, your API base URL is `https://app.mco1.sekoia.io/api`.
 
