@@ -37,6 +37,11 @@ To create a new case:
 
 ## Bulk actions on cases
 
+!!! note "Early Access"
+
+    This feature is currently in Early Access and only available for Beta testers. We plan to roll out this functionality to all environments soon.
+
+
 Sekoia.io lets you perform actions on multiple cases simultaneously from the cases listing page. This is useful for triaging large volumes of cases or reassigning incidents at scale.
 
 ### Select multiple cases
