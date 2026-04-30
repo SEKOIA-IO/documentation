@@ -2,7 +2,21 @@
 
 The Sekoia.io REST API lets you access platform data, trigger actions, and build integrations or automations on top of Sekoia.io. The GUI itself is built on this API, so anything you can do in the interface, you can do via the API.
 
-## Step 1 — Create an API key
+## Step 1 — Find your base URL
+
+The base URL depends on the region where your Sekoia.io subscription is hosted.
+
+| Region | Base URL |
+| --- | --- |
+| FRA1 (default) | `https://api.sekoia.io` |
+| FRA2 | `https://app.fra2.sekoia.io/api` |
+| MCO1 | `https://app.mco1.sekoia.io/api` |
+| UAE1 | `https://app.uae1.sekoia.io/api` |
+| USA1 | `https://app.usa1.sekoia.io/api` |
+
+If you are unsure of your region, look at the URL you use to access the Sekoia.io application. For example, if you log in via `https://app.mco1.sekoia.io/`, your API base URL is `https://app.mco1.sekoia.io/api`.
+
+## Step 2 — Create an API key
 
 All API requests are authenticated with an API key. To create one:
 
@@ -19,13 +33,15 @@ All API requests are authenticated with an API key. To create one:
 !!! note
     Only users with admin roles can create API keys.
 
-## Step 2 — Make your first API call
+## Step 3 — Make your first API call
 
 To verify that your key works, retrieve your user profile. This endpoint requires no special permissions beyond a valid key.
 
 ```bash
+export SEKOIA_API_KEY="your_api_key_here"
+
 curl -X GET https://api.sekoia.io/v1/me \
-  -H "Authorization: Bearer YOUR_API_KEY"
+  -H "Authorization: Bearer $SEKOIA_API_KEY"
 ```
 
 A successful response looks like this:
@@ -39,23 +55,7 @@ A successful response looks like this:
 }
 ```
 
-If it works, your key is valid and you are ready to explore the rest of the API.
-
-## Step 3 — Find your base URL
-
-The base URL depends on the region where your Sekoia.io subscription is hosted.
-
-| Region | Base URL |
-| --- | --- |
-| FRA1 (default) | `https://api.sekoia.io` |
-| FRA2 | `https://app.fra2.sekoia.io/api` |
-| MCO1 | `https://app.mco1.sekoia.io/api` |
-| UAE1 | `https://app.uae1.sekoia.io/api` |
-| USA1 | `https://app.usa1.sekoia.io/api` |
-
-If you are unsure of your region, look at the URL you use to access the Sekoia.io application. For example, if you log in via `https://app.mco1.sekoia.io/`, your API base URL is `https://app.mco1.sekoia.io/api`.
-
-Replace `https://api.sekoia.io` with your region's base URL in all examples throughout this documentation.
+If you can see your email and UUID, your setup is working.
 
 ## Troubleshooting
 
@@ -67,4 +67,6 @@ Replace `https://api.sekoia.io` with your region's base URL in all examples thro
 
 ## Next steps
 
-Browse the full API reference using the navigation on this page. Each endpoint lists the required permissions, available parameters, and example responses.
+- [Search for rules](tutorials/search_rules.md) — filter and retrieve detection rules from your catalog
+- [Create a SIGMA rule](tutorials/create_sigma_rule.md) — create a detection rule programmatically
+- [Search events](tutorials/search_events.md) — run an asynchronous event search and retrieve results
