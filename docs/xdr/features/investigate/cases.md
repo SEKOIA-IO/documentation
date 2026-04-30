@@ -132,14 +132,14 @@ The **Tasks** tab lets you create and manage tasks and subtasks associated with 
 
 ### Events tab
 
-The **Events** tab lists all events associated with the case, using the same display as the [Events page](xdr/features/investigate/events.md).
+The **Events** tab lists all events associated with the case, using the same display as the [Events page](/xdr/features/investigate/events.md).
 
 ![Events tab inside a case](/assets/operation_center/cases/case-events-tab.png){: style="max-width:100%"}
 
 Events appear in this tab when they:
 
 * Raised an alert that was added to the case.
-* Were [directly added to the case](../events/#adding-events-to-cases).
+* Were [directly added to the case](../events.md#adding-events-to-cases).
 
 When you interact with individual values in the event list, you can:
 
@@ -239,8 +239,8 @@ You can rename layers at any time, move objects between layers, and use the buil
 
 ## Related articles
 
-* [Alerts](/xdr/features/investigate/alerts): Understand how alerts are created and how to manage them before grouping them into cases.
+* [Alerts](/xdr/features/investigate/alerts.md): Understand how alerts are created and how to manage them before grouping them into cases.
 * [AI Cases](/xdr/features/investigate/ai_cases.md): Learn how Sekoia.io automatically correlates alerts into cases using AI.
 * [Events](/xdr/features/investigate/events.md): Explore the events associated with your cases and run contextual searches.
-* [Playbooks](/xdr/features/automate.md): Automate case workflows and trigger actions based on case updates.
+* [Playbooks](/xdr/features/automate/index.md): Automate case workflows and trigger actions based on case updates.
 * [Dashboards](/xdr/features/report/dashboards.md): Monitor case activity and investigation KPIs across your community.
