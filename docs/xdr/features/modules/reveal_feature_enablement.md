@@ -19,6 +19,6 @@ Each column represents a data source. Each row represents a Reveal capability.
 
 - [Getting started with Reveal](/xdr/features/modules/reveal_getting_started.md)
 - [Troubleshoot Reveal](/xdr/features/modules/reveal_troubleshoot.md)
-- [Asset context panel](/xdr/features/investigate/asset_context_panel.md)
+- [Asset context panel - Reveal capabilities](/xdr/features/modules/reveal_asset_context_panel.md)
 - [Attack Path Visualization](/xdr/features/investigate/attack_path_visualization.md)
 - [Points of Interest](/xdr/features/detect/points_of_interest.md)
