@@ -143,8 +143,20 @@ nav:
         - Export events with API: xdr/features/investigate/export_event_API.md
         - Massive export technical specifications: xdr/features/investigate/export_reference.md 
         - Massive event export troubleshooting: xdr/features/investigate/export_event_bulk_troubleshooting.md
-      - AI Cases: xdr/features/investigate/ai_cases.md
-      - Cases: xdr/features/investigate/cases.md
+      - Cases: 
+        - Cases overview: xdr/features/investigate/cases.md
+        - Create and manage cases: 
+          - Create a case: xdr/features/investigate/create_a_case.md
+          - Manage cases: xdr/features/investigate/manage_cases.md
+        - Investigate cases: 
+          - Investigate case details: xdr/features/investigate/case_details.md
+          - Graph investigation: xdr/features/investigate/graph_investigation.md
+          - AI Cases: xdr/features/investigate/ai_cases.md
+        - Using cases custom fields:
+          - Cases custom fields overview: xdr/features/investigate/case_custom_fields.md
+          - Use custom fields in cases: xdr/features/investigate/use_custom_fields_in_cases.md
+          - Manage custom field definition: xdr/features/investigate/manage_custom_field_definitions.md
+          - Query custom fields: xdr/features/investigate/query_custom_fields.md
       - Asset Context Panel: xdr/features/investigate/asset_context_panel.md
       - Events Query Language: xdr/features/investigate/events_query_language.md
       - Querying Events: xdr/features/investigate/querying_events.md
