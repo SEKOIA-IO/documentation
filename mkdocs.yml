@@ -600,6 +600,11 @@ nav:
     - General Questions:
       - Bug VS Improvement Requests: integration/faq/general_questions/bug_and_improvement_requests.md
 - API Documentation: developer/api.md
+- Tutorials:
+  - Overview: developer/tutorials/index.md
+  - Search for rules: developer/tutorials/search_rules.md
+  - Create a SIGMA rule: developer/tutorials/create_sigma_rule.md
+  - Search events: developer/tutorials/search_events.md
 plugins:
 - search: null
 - redirects:
