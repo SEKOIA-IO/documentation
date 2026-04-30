@@ -1,0 +1,54 @@
+# Sekoia Self Hosted
+
+Sekoia Self-Hosted is a customer-operated deployment of the Sekoia AI SOC platform designed for environments with high regulatory, sovereignty, or connectivity constraints. It provides cloud-grade detection and automation capabilities while keeping data processing and infrastructure entirely under your authority. 
+
+## Purpose and logic
+
+Highly regulated sectors often operate under legal or technical constraints that make standard SaaS models impractical. Sekoia Self-Hosted addresses these challenges by allowing you to maintain full control over your security operations.The platform ensures:
+
+The platform ensures:
+
+* **Data Sovereignty**: Data remains within your infrastructure to meet residency and sovereignty laws.
+* **Network Independence**: Operations can run in restricted or fully air-gapped networks with no external connectivity.
+* **Infrastructure Control**: You manage the deployment, monitoring, and lifecycle of the platform on your own infrastructure.
+
+## Key benefits
+
+* **Regulatory Compliance**: The platform is compatible with national and sector-specific regulations, including public procurement frameworks.
+* **Enterprise-Grade Operations**: You can provision and scale environments with automated orchestration and built-in autoscaling.
+* **High Availability**: The architecture includes redundancy and self-healing capabilities to ensure continuous security operations.
+* **Continuous Protection**: The business layer is decoupled from the technical foundation, allowing you to receive daily updates for threat intelligence, security rules, integrations, and automations. This ensures your detection capabilities improve continuously without requiring platform upgrades or service disruption.
+
+## Intended audience
+
+Sekoia Self-Hosted is specifically designed for organizations that require maximum control over their security stack.
+
+Target organizations include:
+
+* **Highly Regulated Industries**: Sectors such as finance, government, and healthcare.
+* **Sovereign Entities**: Organizations with strict national data requirements or those using sovereign service providers.
+* **Restricted Environments**: Teams operating in air-gapped or classified infrastructures.
+* **Large Enterprises**: Organizations running dedicated security operations with an internal platform team or a trusted MSSP.
+
+!!! note "Operational Responsibility"
+    Sekoia Self-Hosted requires a dedicated operations team to manage the end-to-end lifecycle, including deployment, configuration, and monitoring.
+
+## Documentation map
+
+Use the following links to navigate the technical documentation and manage your deployment lifecycle.
+
+### Architecture
+* [Reference Architecture](architecture/architecture.md): Explore the technical design, component interactions, and data flow of the self-hosted solution.
+
+### Deployment
+* [Deployment Process](deployment/deployment_process.md): Understand the high-level stages of a standard installation.
+* [Deployment Prerequisites](deployment/deployment_prerequisites.md): Verify hardware, software, and network requirements before you begin.
+* [Deployment Guide](deployment/deployment_guide.md): Follow step-by-step instructions to install and initialize the platform.
+* [Deployment Configuration](deployment/deployment_configuration.md): Consult the comprehensive reference for the `config.yml` manifest parameters.
+
+### Operations and Support
+* [Monitoring Guide](monitoring/monitoring_guide.md): Learn how to observe platform health and performance metrics.
+* [Debug Tool](troubleshooting/debug_tool.md): Use the built-in diagnostic tools to identify and resolve common issues.
+
+### Release updates
+* [Release Notes](release_notes/0.0.1.md): Review the latest features, improvements, and fixes included in each version.
