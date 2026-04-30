@@ -53,11 +53,13 @@ Points of Interest surface behavioral anomalies on assets, such as unusual authe
 
 Endpoint Hygiene shows posture signals for endpoints, such as whether the firewall or disk encryption is enabled. It requires the Sekoia Endpoint Agent or a supported connector.
 
-→ [Asset connector health status and logs](/xdr/features/collect/asset_connector_health.md) 
+→ [Hygiene tab](/xdr/features/modules/reveal_asset_context_panel.md#hygiene-tab)
 
 ### Vulnerability enrichment
 
 Vulnerability enrichment shows whether an asset is affected by known CVEs. It requires a connected vulnerability scanner.
+
+→ [Vulnerability list and score](/xdr/features/modules/reveal_asset_context_panel.md#vulnerabilities-tab)
 
 ## When to use Reveal
 
