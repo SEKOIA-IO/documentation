@@ -53,7 +53,7 @@ Points of Interest surface behavioral anomalies on assets, such as unusual authe
 
 Endpoint Hygiene shows posture signals for endpoints, such as whether the firewall or disk encryption is enabled. It requires the Sekoia Endpoint Agent or a supported connector.
 
-→ [Hygiene tab](/xdr/features/collect/asset_connector_health.md#hygiene-tab)
+→ [Hygiene tab](/xdr/features/modules/reveal_asset_context_panel.md#hygiene-tab)
 
 ### Vulnerability enrichment
 
