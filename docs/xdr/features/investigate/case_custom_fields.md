@@ -1,5 +1,10 @@
 # Case Custom Fields
 
+!!! note "Early Access"
+
+    This feature is currently in Early Access and only available for Beta testers. We plan to roll out this functionality to all environments soon.
+    
+
 Case custom fields enable SOC analysts to classify cases with typed, structured data for better tracking, reporting, and automation. By defining custom fields tailored to your organization's needs, you can capture essential metadata that enhances case management workflows and supports data-driven decision-making.
 
 ## Overview
