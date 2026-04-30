@@ -35,7 +35,7 @@ You do not need all four sources to start. Each source unlocks additional capabi
 
 The asset context panel is the primary investigation surface. Reveal extends it with vulnerability data, hygiene status, and behavioral signals.
 
-→ [Asset context panel](/xdr/features/investigate/asset_context_panel.md)
+→ [Asset context panel](/xdr/features/modules/reveal_asset_context_panel.md)
 
 ### Attack Path Visualization
 
@@ -53,7 +53,7 @@ Points of Interest surface behavioral anomalies on assets, such as unusual authe
 
 Endpoint Hygiene shows posture signals for endpoints, such as whether the firewall or disk encryption is enabled. It requires the Sekoia Endpoint Agent or a supported connector.
 
-→ [Asset connector health status and logs](/xdr/features/investigate/asset_context_panel.md) 
+→ [Asset connector health status and logs](/xdr/features/collect/asset_connector_health.md) 
 
 ### Vulnerability enrichment
 
@@ -70,7 +70,7 @@ Use Reveal when you need asset context that your alerts do not provide. Typical 
 
 ## Get started
 
-To enable and configure Reveal, follow the [Getting started with Reveal](reveal_getting_started.md) guide. It describes the required data sources, the recommended setup order, and how to validate each capability.
+To enable and configure Reveal, follow the [Getting started with Reveal](/xdr/features/modules/reveal_getting_started.md) guide. It describes the required data sources, the recommended setup order, and how to validate each capability.
 
 
 ## Related links
