@@ -1,4 +1,5 @@
 # Asset context panel
+_**[Reveal module](/xdr/features/modules/reveal_index.md)** — Core sections are available to all clients. Hygiene, vulnerabilities, security controls, points of interest, and attack path visualization require the Reveal add-on module._
 
 The asset context panel is the central investigation surface in Sekoia. It gives analysts immediate access to an asset's identity, recent activity, and related security events without leaving the investigation workflow.
 

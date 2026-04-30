@@ -1,4 +1,5 @@
 copyright: Copyright &copy; 2026 - Sekoia.io
+copyright: Copyright &copy; 2026 - Sekoia.io
 edit_uri: edit/main/docs/
 extra:
   social:
@@ -16,10 +17,12 @@ extra_css:
 - stylesheets/poppins.min.css
 - stylesheets/inter.min.css
 - stylesheets/posthog.css
+- stylesheets/posthog.css
 extra_javascript:
 - javascript/sekoiaio.js
 - javascript/lightgallery.min.js
 - javascript/posthog.js
+- javascript/gtm.js
 - javascript/gtm.js
 markdown_extensions:
 - admonition
@@ -134,6 +137,7 @@ nav:
       - Sigma: xdr/features/detect/sigma.md
       - Anomaly Detection: xdr/features/detect/anomaly.md
       - IOCs Collections: xdr/features/detect/ioccollections.md
+      - Discover Points of Interest: xdr/features/detect/points_of_interest.md
     - Investigate:
       - Alerts: xdr/features/investigate/alerts.md
       - Events page: xdr/features/investigate/events.md
@@ -272,6 +276,7 @@ nav:
       - Microsoft IIS: integration/categories/applicative/microsoft_iis.md
       - Microsoft Sentinel: integration/categories/applicative/microsoft_sentinel.md
       - New Relic Alerts: integration/categories/applicative/newrelic_alerts.md
+      - New Relic Alerts: integration/categories/applicative/newrelic_alerts.md
       - Salesforce: integration/categories/applicative/salesforce.md
       - Sekoia.io activity logs: integration/categories/applicative/sekoiaio_activity_logs.md
       - Sekoia.io forwarder logs: integration/categories/applicative/sekoiaio_forwarder_logs.md
@@ -330,6 +335,7 @@ nav:
       - TEHTRIS Endpoint Detection & Reponse: integration/categories/endpoint/tehtris_edr.md
       - Tanium: integration/categories/endpoint/tanium.md
       - Trellix ATD: integration/categories/endpoint/trellix_atd.md
+      - Trellix ATD: integration/categories/endpoint/trellix_atd.md
       - Trellix EDR: integration/categories/endpoint/trellix_edr.md
       - Trend Micro Apex One / Vision One Endpoint: integration/categories/endpoint/trend_micro_apex_one.md
       - Trend Micro Vision One Workbench: integration/categories/endpoint/trend_micro_vision_one_workbench.md
@@ -352,17 +358,22 @@ nav:
       - BeyondTrust PRA Vault Account Activity: integration/categories/iam/beyondtrust_pra_vault_account_activity.md
       - Cisco Duo Security: integration/categories/iam/cisco_duo_security.md
       - Cyberark Digital Vault: integration/categories/iam/cyberark_vault.md
+      - Cyberark Digital Vault: integration/categories/iam/cyberark_vault.md
       - CyberArk Identity Audit Logs: integration/categories/iam/cyberark_identity_audit_logs.md
+      - Delinea Platform Audit Logs: integration/categories/iam/delinea_audit_logs.md
       - Delinea Platform Audit Logs: integration/categories/iam/delinea_audit_logs.md
       - FreeRADIUS: integration/categories/iam/freeradius.md
       - Jumpcloud Directory Insights: integration/categories/iam/jumpcloud_directory_insights.md
+      - Keycloak Events: integration/categories/iam/keycloak_events.md
       - Keycloak Events: integration/categories/iam/keycloak_events.md
       - ManageEngine ADAudit Plus: integration/categories/iam/manageengine_adauditplus.md
       - Microsoft Entra ID (Azure AD): integration/categories/iam/entra_id.md
       - Microsoft Entra ID (via Graph API): integration/categories/iam/entra_id_graph_api.md
       - Okta System log: integration/categories/iam/okta_system_log.md
       - One Identity SPS Session logs: integration/categories/iam/one_identity_sps.md
+      - One Identity SPS Session logs: integration/categories/iam/one_identity_sps.md
       - OpenLDAP: integration/categories/iam/openldap.md
+      - PingFederate: integration/categories/iam/pingfederate.md
       - PingFederate: integration/categories/iam/pingfederate.md
       - RSA SecurID: integration/categories/iam/rsa_securid.md
       - Rubycat PROVE IT: integration/categories/iam/rubycat_prove_it.md
@@ -414,6 +425,7 @@ nav:
       - Amazon WAF: integration/categories/network_security/aws_waf.md
       - Azure Front Door: integration/categories/network_security/azure_front_door.md
       - Azure Network Watcher (NSG flow logs; deprecated): integration/categories/network_security/azure_network_watcher.md
+      - Azure Network Watcher (NSG flow logs; deprecated): integration/categories/network_security/azure_network_watcher.md
       - Azure Network Watcher (Virtual Network Flow Logs): integration/categories/network_security/azure_network_watcher_flow_logs.md
       - Barracuda CloudGen Firewall: integration/categories/network_security/barracuda_cloudgen_firewall.md
       - Bitsight SPM: integration/categories/network_security/bitsight_spm.md
@@ -438,6 +450,8 @@ nav:
       - Forcepoint Secure Web Gateway: integration/categories/network_security/forcepoint_web_gateway.md
       - Forcepoint Management Server: integration/categories/network_security/forcepoint_management_server.md
       - Forcepoint NGFW: integration/categories/network_security/forcepoint_ngfw.md
+      - Forcepoint Management Server: integration/categories/network_security/forcepoint_management_server.md
+      - Forcepoint NGFW: integration/categories/network_security/forcepoint_ngfw.md
       - FortiProxy: integration/categories/network_security/fortiproxy.md
       - FortiWeb: integration/categories/network_security/fortiweb.md
       - Fortigate: integration/categories/network_security/fortigate.md
@@ -445,6 +459,7 @@ nav:
       - Gatewatcher AionIQ (>=v103): integration/categories/network_security/gatewatcher_aioniq_ecs.md
       - Google Cloud Load Balancing: integration/categories/network_security/google_cloud_load_balancing.md
       - Imperva Web Application Firewall: integration/categories/network_security/imperva_waf.md
+      - Juniper Next Gen Firewall: integration/categories/network_security/juniper_ngfw.md
       - Juniper Next Gen Firewall: integration/categories/network_security/juniper_ngfw.md
       - Lacework Cloud Security: integration/categories/network_security/lacework_cloud_security.md
       - McAfee Web Gateway / Skyhigh Secure Web Gateway - On Prem: integration/categories/network_security/skyhigh_secure_web_gateway_on_prem.md
@@ -497,6 +512,7 @@ nav:
       - ElasticSearch: integration/action_library/elasticsearch.md
       - Mandrill: integration/action_library/mandrill.md
       - Mattermost: integration/action_library/mattermost.md
+      - New Relic: integration/action_library/new-relic.md
       - New Relic: integration/action_library/new-relic.md
       - PagerDuty: integration/action_library/pagerduty.md
     - Cloud Providers:
@@ -629,6 +645,7 @@ plugins:
       operation_center/alerts.md: xdr/features/investigate/alerts.md
       operation_center/assets.md: xdr/features/collect/assets.md
       operation_center/cases.md: xdr/features/investigate/cases.md
+      operation_center/case_custom_fields.md: xdr/features/investigate/case_custom_fields.md
       operation_center/data_collection/ingestion_methods/sekoiaio.md: integration/categories/endpoint/sekoiaio.md
       operation_center/entities.md: xdr/features/collect/entities.md
       operation_center/events.md: xdr/features/investigate/events.md
