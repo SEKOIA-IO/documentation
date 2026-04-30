@@ -139,7 +139,7 @@ The **Events** tab lists all events associated with the case, using the same dis
 Events appear in this tab when they:
 
 * Raised an alert that was added to the case.
-* Were [directly added to the case](../events.md#adding-events-to-cases).
+* Were [directly added to the case](/xdr/features/investigate/events.md#adding-events-to-cases).
 
 When you interact with individual values in the event list, you can:
 
