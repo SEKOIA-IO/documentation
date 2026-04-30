@@ -192,6 +192,7 @@ nav:
   - Asset Intelligence (Reveal):
       - Reveal overview: xdr/features/modules/reveal_index.md
       - Get started with Reveal: xdr/features/modules/reveal_getting_started.md
+      - Explore assets context: xdr/features/modules/reveal_asset_context_panel.md
       - Visualize attack paths: xdr/features/investigate/attack_path_visualization.md
       - Discover Points of Interest: xdr/features/detect/points_of_interest.md
       - Check asset connector health: xdr/features/collect/asset_connector_health.md
