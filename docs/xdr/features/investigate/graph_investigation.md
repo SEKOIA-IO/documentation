@@ -28,8 +28,6 @@ Clicking a CTI object opens a panel that displays:
 * Relationship mappings with other intelligence objects.
 * Options to expand the graph by adding related objects.
 
-> 📸 [SCREENSHOT SUGGESTION: Graph investigation tab with a CTI object selected and the threat intelligence detail panel open on the right. | ALT TEXT: Threat intelligence detail panel in the graph investigation tab.]
-
 ### Observable analysis panel
 
 Clicking an observable node opens a panel that displays:
@@ -38,13 +36,9 @@ Clicking an observable node opens a panel that displays:
 * Access to full event details via the **Full events** button.
 * A direct link to search for additional events containing the same value across your environment.
 
-> 📸 [SCREENSHOT SUGGESTION: Graph investigation tab with an observable node selected and the observable analysis panel open showing related events. | ALT TEXT: Observable analysis panel in the graph investigation tab.]
-
 ## Work with layers
 
 Layers organize complex graphs into logical groupings that you can display or hide independently. This lets you focus on a specific aspect of the investigation without losing the complete picture.
-
-> 📸 [SCREENSHOT SUGGESTION: Graph investigation tab showing multiple named layers in the layer control panel at the top of the graph, with one layer hidden. | ALT TEXT: Layer control panel in the graph investigation tab.]
 
 ### Default layer
 
