@@ -18,7 +18,7 @@ Custom fields are accessible in SOL through the `custom_fields` prefix. The fiel
 !!! tip "Autocomplete support"
     The SOL query editor provides autocomplete for custom field columns. Enter `custom_fields.` to see all available fields for your workspace.
 
-> 📸 [SCREENSHOT SUGGESTION: SOL query editor with the autocomplete dropdown open after typing "custom_fields.", showing a list of available field columns. | ALT TEXT: SOL autocomplete for custom fields.]
+![SOL autocomplete custom fields](/assets/operation_center/cases/sol-autocomplete-custom-fields.png){: style="max-width:100%"}
 
 ## Query examples
 
@@ -28,6 +28,7 @@ To retrieve cases where a numeric custom field exceeds a given value:
 
 ```
 cases
+| where created_at > ago(90d) and custom_fields.number_of_impacted_users != null
 | where custom_fields.number_of_impacted_users > 2
 ```
 
@@ -37,6 +38,7 @@ To retrieve cases where a multi select field contains specific values:
 
 ```
 cases
+| where created_at > ago(90d)
 | where custom_fields.impacted_teams in ["HR", "Finance"]
 ```
 
@@ -46,10 +48,11 @@ To count cases grouped by a custom field value:
 
 ```
 cases
+| where created_at > ago(90d)
 | aggregate count() by custom_fields.impacted_teams
 ```
 
-> 📸 [SCREENSHOT SUGGESTION: SOL results panel showing a table or chart output from a custom field aggregation query. | ALT TEXT: SOL query results aggregated by a custom field.]
+![SOL query results aggregated by custom field](/assets/operation_center/cases/sol-query-result-custom-fields.png){: style="max-width:100%"}
 
 ## Use query results in dashboards
 

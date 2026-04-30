@@ -13,7 +13,7 @@ By default, users with the **Admin** or **Analyst** role can manage custom field
 
 To open the custom field management page, navigate to **Settings > Custom fields**.
 
-> 📸 [SCREENSHOT SUGGESTION: Settings > Custom Fields page showing the list of existing field definitions with the + Add button visible. | ALT TEXT: Custom fields settings page.]
+![Custom Fields Settings](/assets/operation_center/cases/custom-fields-settings.png){: style="max-width:100%"}
 
 ## Create a custom field
 
