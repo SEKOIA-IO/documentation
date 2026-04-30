@@ -39,7 +39,7 @@ The header card displays the asset's name, type, and organizational context.
 !!! note "Field availability"
     Displayed fields differ by asset type and discovery source.
 
-??? example "Ransomware triage scenario"
+!!! example "Ransomware triage scenario"
     A ransomware alert targets *FIN-SRV01*. The header card shows it is a finance system tagged as critical and owned by the CFO's department. This routes containment to the right team immediately, reducing dwell time.
 
 <img width="538,3" height="172,2" alt="image" src="https://github.com/user-attachments/assets/11a8deca-efc1-4758-a218-c951703e284a" />
@@ -58,7 +58,7 @@ The details card lists the technical identifiers used to recognize and correlate
 Select **View more details** to open the full list of known fields for the asset. You can mark any field as a favorite from this view. Favorites are personal and persist on a per-asset-type basis.
 Select **Your favorite details:** to open all fields you have marked as Favorites. Favorites are personal and persist on a per–asset-type bas
 
-??? example "Lateral movement identification"
+!!! example "Lateral movement identification"
     A host appears in a lateral movement alert with IP `10.10.2.45`. The details card shows the same IP belongs to *HR-LAPTOP07*, last seen by CrowdStrike and identified as Windows 11. Identity and scope are confirmed in seconds.
 
 <img width="743" height="320" alt="Details card example" src="https://github.com/user-attachments/assets/9319c956-126d-4640-a382-f3b09f4ff7b8" />
@@ -81,7 +81,7 @@ This card lists the five most severe alerts and cases involving the asset over t
 | Severity | Configured severity level |
 | Age | Time since the item was created |
 
-??? example "Lateral movement correlation"
+!!! example "Lateral movement correlation"
     *ADMIN-LAPTOP01* triggered a *suspicious PsExec* alert and a *credential dumping* case. Linking both identifies lateral movement tied to a stolen admin account.
 
 <img width="671" height="545" alt="Severe items card example" src="https://github.com/user-attachments/assets/073e1702-d1e3-4d7e-a994-96e7b93a9e9b" />
