@@ -124,6 +124,7 @@ nav:
         - Massive event export troubleshooting: xdr/features/investigate/export_event_bulk_troubleshooting.md
       - AI Cases: xdr/features/investigate/ai_cases.md
       - Cases: xdr/features/investigate/cases.md
+      - Case Custom Fields: xdr/features/investigate/case_custom_fields.md
       - Asset Context Panel: xdr/features/investigate/asset_context_panel.md
       - Attack path visualization: xdr/features/investigate/attack_path_visualization.md
       - Events Query Language: xdr/features/investigate/events_query_language.md
