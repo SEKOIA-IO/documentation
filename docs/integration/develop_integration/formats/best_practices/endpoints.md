@@ -9,7 +9,7 @@ To ensure consistent recognition and semantic interpretation of EDR (Endpoint De
 | `action.type`    | Specifies the action taken by the EDR system.  | `block`, `allow`, `alert`                       |
 | `event.category` | The high-level category of the event.          | `malware`, `intrusion`, `policy`                |
 | `event.code`     | A unique identifier or code representing the event. | `12345`, `67890`, `ABCDE`                     |
-| `event.kind`     | Describes the kind of event.                    | `event`, `alert`, `metric`                      |
+| `event.kind`     | Describes the kind of event.                    | `alert`, `metric`                      |
 | `event.dataset`  | Specifies the dataset used by the EDR system.  | `sentinelone`, `harfanglab`, `crowdstrike`, `cybereason`, `sophos`, `stormshield`, `symantec`, `tehtris`, `trendmicro`, `withsecure` |
 | `event.severity` | The severity level of the event.               | `low`, `medium`, `high`, `critical`             |
 

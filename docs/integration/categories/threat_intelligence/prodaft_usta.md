@@ -16,9 +16,6 @@ This integration enables the ingestion of compromised credential feeds generated
 
 The feed provides indicators related to exposed or compromised user accounts, allowing SOC teams to correlate external credential compromise signals with authentication activity, detect account takeover attempts, and prioritize remediation actions.
 
-!!! Warning
-    Important note - This format is currently in beta. We highly value your feedback to improve its performance.
-
 ## Detection
 
 Collecting compromised credential events from USTA enables several security detection and investigation use cases within Sekoia.io.

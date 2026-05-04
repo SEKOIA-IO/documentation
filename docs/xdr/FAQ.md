@@ -39,7 +39,7 @@ If your security policy absolutely requires IP-based rules:
 ### Outgoing IP addresses for playbooks runs and connectors
 
 
-For all the actions available in the Playbooks section of Sekoia.io (include connectors used to retrieve logs from external sources), we use a number of outbound IP addresses. The full list is publicly accessible and can be retrieved at the following URL: [https://api.sekoia.io/outgoing-ips](https://api.sekoia.io/outgoing-ips). This will be useful to setup filtering options if needed, and even automate any future update.
+For all the actions available in the Playbooks section of Sekoia.io (including connectors used to retrieve logs from external sources), we use a number of outbound IP addresses. The full list is publicly accessible and can be retrieved at the following URL: [https://api.sekoia.io/outgoing-ips](https://api.sekoia.io/outgoing-ips) for FRA1, or https://api.'region'.sekoia.io/outgoing-ips for other regions. This can be used to setup filtering, including automating it using the link.
 
 We try to make this list as stable as possible, but events out of our control may result in modifications. If any changes occur, we are committed to providing our customers with advance notice of at least two weeks, either via a dedicated communication, or via our [status page](https://status.sekoia.io/).
 

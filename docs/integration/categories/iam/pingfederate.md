@@ -15,9 +15,6 @@ In this documentation, you will learn how to collect and send PingFederate logs 
 - **Detection based on**: Telemetry
 - **Supported application or feature**: Authentication, Authorization, Token lifecycle, Administrative audit logs
 
-!!! Warning
-    This format is currently in beta. We highly value your feedback to improve its performance.
-
 ## High-Level Architecture Diagram
 
 - **Type of integration**: Outbound (PUSH to Sekoia.io)
