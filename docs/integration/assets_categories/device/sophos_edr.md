@@ -1,13 +1,13 @@
-uuid: 
+uuid: 6a90a5c0-3365-4a9c-938d-38113cc981a0
 name: Sophos EDR
 type: asset
 
 ## Overview
 
 Sophos EDR monitors, detects and mitigates threats on endpoints.
-This EDR reduces the attack surface and prevent attacks from running with an anti-exploit, an anti-ransomware and advanced control technology.
+This EDR reduces the attack surface and prevents attacks by using anti-exploit, anti-ransomware, and advanced control technologies.
 
-This setup guide shows how to forward events produced by Sophos EDR to Sekoia.io.
+This setup guide shows how to forward device assets from Sophos EDR to Sekoia.io.
 
 - **Vendor**: Sophos
 - **Product**: SentinelOne EDR
@@ -43,10 +43,10 @@ To start getting your Sophos assets into Sekoia.io, you need to create an asset 
 
     - **Account name**: The name of the Sophos EDR account you want to connect to.
     - **Client ID**: The client ID of the API credential you created in the Sophos Central Admin console.
-    - **Client Secret**: The client secret of the API credential you
+    - **Client Secret**: The client secret of the API credential you created in the Sophos Central Admin console
     - **API Host**: The API host URL of your Sophos EDR instance. 
 
-    ![SentinelOne EDR connector configuration form](/assets/operation_center/asset_connectors/device/sophos/sophos_connector.png)
+    ![Sophos EDR connector configuration form](/assets/operation_center/asset_connectors/device/sophos/sophos_connector.png)
 
 4. Test the connection by clicking the **Test connector** button.
 
