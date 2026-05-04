@@ -554,6 +554,88 @@ If the input is a decimal number, the value is truncated to the integer portion 
         | 20            | 188   |
         | 30            | 42    |
 
+## Type conversion: tostring()
+
+**Description**
+
+Converts a value to its string representation. This function is useful when you need to concatenate non-string values (numbers, datetimes, booleans) with string literals or when building human-readable labels from numeric or structured data.
+
+**Syntax**
+
+``` shell
+tostring(<value>)
+```
+
+**Parameters**
+
+- `value`: The value to convert to a string (required). Can be a number, datetime, boolean or other scalar type.
+
+**Return Value**
+
+Returns the string representation of the value. Returns an empty string if the value is `null`.
+
+
+!!! example "Build a human-readable label by concatenating a count with a string literal"
+
+    === "Query"
+
+        ``` shell
+        events
+        | where timestamp between (?time.start .. ?time.end)
+        | aggregate count() by sekoiaio.intake.dialect
+        | select tostring(count) + " Number of dialect"
+        | limit 10
+        ```
+
+    === "Results"
+
+        | result                 |
+        | ---------------------- |
+        | 1523 Number of dialect |
+        | 842 Number of dialect  |
+        | 317 Number of dialect  |
+
+## Dynamic: parse_json()
+
+**Description**
+
+Parses a string as a JSON value and returns the parsed object. This function is useful for working with fields that contain JSON-encoded data (for example, nested structures flattened into a single string by an intake). You can filter, project or extend by any nested property using dot notation (e.g., `parsed.sourceIPAddress`).
+
+**Syntax**
+
+``` shell
+parse_json(<string>)
+```
+
+**Parameters**
+
+- `string`: A string containing a valid JSON value: object, array, or scalar (required).
+
+**Return Value**
+
+Returns the JSON value represented by the input string. Individual properties can then be accessed using dot notation. Returns `null` if the input is `null` or is not valid JSON.
+
+
+!!! example "Filter AWS CloudTrail events by a nested property inside a JSON-encoded field"
+
+    === "Query"
+
+        ``` shell
+        events
+        | where timestamp between (?time.start .. ?time.end)
+        | select parsed = parse_json(aws.cloudtrail.flattened.request_parameters)
+        | where parsed.sourceIPAddress == '10.0.166.149'
+        | limit 100
+        ```
+
+    === "Results"
+
+        | parsed                                                                    |
+        | ------------------------------------------------------------------------- |
+        | {"sourceIPAddress": "10.0.166.149", "userAgent": "aws-cli/2.15.0", ...}   |
+        | {"sourceIPAddress": "10.0.166.149", "userAgent": "Boto3/1.34.0", ...}     |
+        | {"sourceIPAddress": "10.0.166.149", "userAgent": "console.amazonaws", ...}|
+
 ## Conditional: iff()
 
 **Description**
