@@ -32,8 +32,8 @@ The platform is modular, allowing organizations to deploy specific capabilities 
 ## Read more
 Explore the technical specifications and configuration guides for each component of the Sekoia ecosystem.
 
-(Sekoia Defend Overview)[/xdr/index.md]
-(Sekoia Intelligence Overview)[/cti/index.md]
-(Reveal: Asset Intelligence Overview)[/xdr/features/modules/reveal_index.md]
-(Integration Library: A comprehensive catalog of supported log sources, intake formats, and transport protocols (Syslog, HTTPS, Cloud-to-Cloud))[/integration/index.md]
-(Sekoia API Reference)[/developer/quickstart.md]
+- [Sekoia Defend Overview](/xdr/index.md)
+- [Sekoia Intelligence Overview](/cti/index.md)
+- [Reveal: Asset Intelligence Overview](/xdr/features/modules/reveal_index.md)
+- [Integration Library: A comprehensive catalog of supported log sources, intake formats, and transport protocols (Syslog, HTTPS, Cloud-to-Cloud)](/integration/index.md)
+- [Sekoia API Reference](/developer/quickstart.md)
