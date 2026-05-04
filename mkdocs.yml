@@ -81,6 +81,7 @@ nav:
   - Best practices: getting_started/best_practices.md
   - Troubleshooting tips: getting_started/get_troubleshooting_tips.md
 - Sekoia Solutions:
+  - Sekoia's environment: xdr/sekoia_solutions
   - Threat Context (Intelligence):
     - Intelligence overview: cti/index.md
     - Data Models: cti/features/data_model.md
