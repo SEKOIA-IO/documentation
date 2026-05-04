@@ -419,7 +419,7 @@ nav:
       - Unbound: integration/categories/network/unbound.md
     - Network Security:
       - Akamai Guardicore On-Premises: integration/categories/network_security/akamai_guardicore_onprem.md
-      - Akamai Guardicore Saas: integration/categories/network_security/akamai_guardicore.md
+      - Akamai Guardicore Saas: integration/categories/network_security/akamai_guardicore_saas.md
       - Akamai WAF: integration/categories/network_security/akamai_waf.md
       - AWS CloudTrail: integration/categories/network_security/aws_cloudtrail.md
       - Amazon CloudFront Logs: integration/categories/network_security/aws_cloudfront.md
