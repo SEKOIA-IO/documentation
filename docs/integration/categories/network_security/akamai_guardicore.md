@@ -4,8 +4,8 @@ type: intake
 
 ## Overview
 
-Akamai Guardicore delivers application-centric microsegmentation and breach detection to prevent lateral movement across on-premises and 
-cloud environments.
+Akamai Guardicore delivers application-centric microsegmentation and breach detection to prevent lateral movement across on-premises
+and cloud environments.
 With process-level visibility, dynamic policy orchestration and automated workflows, it enforces Zero Trust controls at scale.
 Simplify network segmentation, accelerate threat response and maintain continuous compliance for critical assets.
 
@@ -15,7 +15,7 @@ Simplify network segmentation, accelerate threat response and maintain continuou
 - **Supported application or feature**: see section below
 
 !!! Warning
-	Important note - This format is currently in beta. We highly value your feedback to improve its performance.
+    Important note - This format is currently in beta. We highly value your feedback to improve its performance.
 
 ## Akamai Guardicore event types supported
 Here is a list of all the Akamai Guardicore event types supported by this integration:
@@ -59,7 +59,7 @@ Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a n
 
     ![Step 03](/assets/operation_center/integration_catalog/network_security/akamai_guardicore/Step 03.png){: style="max-width:100%"}
 
-!!! warning 
+!!! warning
     The previous domain works for the FRA1 region. For any other region, replace the domain “intake.sekoia.io” with your region’s Syslog-intake domain—for example:
 
     intake.usa1.sekoia.io:10514
