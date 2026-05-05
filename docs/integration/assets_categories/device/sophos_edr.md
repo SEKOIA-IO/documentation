@@ -1,4 +1,4 @@
-uuid: 6a90a5c0-3365-4a9c-938d-38113cc981a0
+uuid: b3f7a1c2-4e8d-4b5a-9c6f-1d2e3f4a5b6c
 name: Sophos EDR
 type: asset
 
