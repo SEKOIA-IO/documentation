@@ -1,4 +1,4 @@
-# Definition of the taxomony
+# Definition of the taxonomy
 
 The taxonomy of [structured events](structured_event.md) is based on the [ECS](https://www.elastic.co/guide/en/ecs/current/ecs-reference.html) specifications. This taxonomy defines a set of fields available for values in [parsers](parser.md).
 
@@ -22,7 +22,7 @@ The taxonomy of [structured events](structured_event.md) is based on the [ECS](h
 !!! note
     We recommend defining `event.kind` only when its value is not `event`. The absence of `event.kind` is considered `event.kind: event`.
 
-## Custom Taxomony
+## Custom Taxonomy
 
 When a valuable information is present in the raw event, and no ECS fields is suitable to host the information, a custom field may be defined.
 
