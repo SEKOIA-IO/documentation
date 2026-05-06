@@ -96,7 +96,7 @@ The list of expected datasources is available in [Datasources](datasources.md)
 
 #### Missing fields.yml
 
-A format expects having a `_meta/fields.yml` file. Please create it even if it's empty.
+A format expects is expected to have a `_meta/fields.yml` file. Please create it even if it's empty.
 
 ```bash
 > touch _meta/fields.yml

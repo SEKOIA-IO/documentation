@@ -42,6 +42,7 @@ The custom format panel is structured like this:
 - Clone the GitHub repository [SEKOIA-IO/intake-formats](https://github.com/SEKOIA-IO/intake-formats)
     ```bash
     > git clone https://github.com/SEKOIA-IO/intake-formats ~/dev/intake-formats
+    > cd ~/dev/intake-formats
     ```
 - Install [mise-en-place](https://mise.jdx.dev/) by following their [getting started documentation](https://mise.jdx.dev/getting-started.html)
 
