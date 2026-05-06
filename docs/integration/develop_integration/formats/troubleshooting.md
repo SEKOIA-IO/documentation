@@ -6,7 +6,7 @@ This document will guide you to fix the most common issues when developing intak
 
 This section provides ways to fix most linting issues.
 
-### on the parser
+### On the parser
 
 For linting issues on the parser, execute the following command:
 
@@ -16,7 +16,7 @@ For linting issues on the parser, execute the following command:
 
 ### On test files, smart-descriptions, ...
 
-To fix linting issues on test files, smart-descriptions, metadata, ..., exexecute this command:
+To fix linting issues on test files, smart-descriptions, metadata, ..., execute this command:
 
 ```bash
 > uv run utils/linter.py --changes
@@ -31,8 +31,8 @@ Logos for the module and for the format must respect the following criteria:
   - The logo must be a PNG image
   - The logo must be named `logo.png`
   - The background must be transparent
-  - The image must be squared, ie the width is equal to the height
-  - The weight of the logo must be lesser than 50kb
+  - The image must be square, i.e. the width is equal to the height
+  - The size of the logo must be less than 50 KB
 
 To meet these criteria, execute the following script:
 
@@ -80,7 +80,7 @@ For a manifest for a format, add a list of datasources (see [`Missing or invalid
 
 #### Missing or invalid datasources
 
-The manifest for a format required a list of datasources, under the `data_sources` field:
+The manifest for a format requires a list of datasources, under the `data_sources` field:
 
 ```yaml
 ...
@@ -122,11 +122,11 @@ See [Custom field](taxonomy.md#custom-field) for the recommendations about the n
 
 In order to validate developments and prevent regressions on changes, tests are required.
 
-Provide a test covering it use-case of the format. See [Create a test](create_a_format.md#create-a-test).
+Provide a test covering its use case for the format. See [Create a test](create_a_format.md#create-a-test).
 
 #### Event type or category incorrect
 
-The parsers of a format aims to generate standard JSON documents relying on the [Elastic Common Schema](https://www.elastic.co/docs/reference/ecs) specifciation.
+The parsers of a format aim to generate standard JSON documents relying on the [Elastic Common Schema](https://www.elastic.co/docs/reference/ecs) specification.
 
 These generated documents must provide an `event.category` and an `event.type` fields, and the type of the event must match the category of the event.
 

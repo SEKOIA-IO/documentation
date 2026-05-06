@@ -144,7 +144,7 @@ If the validation of the format failed, try to execute the following command to 
 > mise run fix
 ```
 
-If this command is not able to recovery all issues, please check the [troubleshooting guide](troubleshooting.md)
+If this command is not able to recover all issues, please check the [troubleshooting guide](troubleshooting.md)
 
 #### Write smart descriptions
 
