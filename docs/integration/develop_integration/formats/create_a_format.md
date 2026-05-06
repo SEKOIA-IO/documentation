@@ -40,6 +40,10 @@ The custom format panel is structured like this:
 #### Technical Requirements
 
 - Clone the Github repository [SEKOIA-IO/intake-formats](https://github.com/SEKOIA-IO/intake-formats)
+    ```bash
+    > git clone https://github.com/SEKOIA-IO/intake-formats ~/dev/intake-formats
+    ```
+- Install [mise-en-place](https://mise.jdx.dev/) by following their [getting started documentation](https://mise.jdx.dev/getting-started.html)
 
 #### Create a module
 
@@ -50,8 +54,7 @@ To create a new module, follow these steps:
 1. Execute the following command:
 
   ```bash
-  > cd ~/dev/intake-formats/utils
-  > poetry run python3 generate.py new-module
+  > mise run create-module
   ```
 
 2. Complete the form with the name of the module, its description and its destination directory. 
@@ -72,8 +75,7 @@ To create a new format, follow these steps:
 1. Execute the following command:
 
   ```bash
-  > cd ~/dev/intake-formats/utils
-  > poetry run python3 generate.py new-format <module_directory>
+  > mise run create-format <module-directory>
   ```
 
 2. Complete the form with the name of the format, its slug and a description. 
@@ -106,43 +108,40 @@ To create the test file, follow these steps:
 1. From a sample event, use [create_test.py](https://github.com/SEKOIA-IO/intake-formats/blob/main/utils/create_test.py) to create a new test file
 
   ```bash
-  > cd ~/dev/intake-formats/utils
-  > poetry run python3 create_test.py ~/dev/intake-formats/<module>/<format>/tests/test_my_event.json <event>
-  > cat /tmp/raw_event.txt | poetry run python3 create_test.py ~/dev/intake-formats/<module>/<format>/tests/test_my_second_event.json -
+  > mise run create-test ~/dev/intake-formats/<module>/<format>/tests/test_my_event.json <event>
+  > cat /tmp/raw_event.txt | mise run create-test ~/dev/intake-formats/<module>/<format>/tests/test_my_second_event.json -
   ```
 
 2. Complete the test file with expected fields
 
 #### Run tests
 
-Tests are run from the `intake-formats/utils` directory. 
+To run the tests, type one of the following commands: 
 
 ```bash
-> cd ~/dev/intake-formats/utils
-> poetry run pytest test_formats.py -vv               # run tests for all parsers
-> poetry run pytest test_formats.py -vv --changes     # run tests only for updated parsers
-> poetry run pytest test_formats.py --module='module-name' -vv # run tests for a specific module
-> poetry run pytest test_formats.py --format='format-name' -vv # run tests for a specific format
-> poetry run pytest test_formats.py --format='format-name' --fix-expectations # fix test expectations
-```
-
-#### Lint the format (Optional; mandatory for the homologation process)
-
-Before pushing any changes to the repository, please lint the format with the following commands from the `intake-formats/utils` directory. 
-
-```bash
-> cd ~/dev/intake-formats/utils
-> poetry run python linter.py fix --format <format_name>  # fix linting issues in taxonomy, manifest files and tests
-> npx prettier --w <module>/<format>/ingest/parser.yml              # fix yaml formatting issues in parser file
+> mise run test -vv               # run tests for all parsers
+> mise run test -vv --changes     # run tests only for updated parsers
+> mise run test --module='module-name' -vv # run tests for a specific module
+> mise run test --format='format-name' -vv # run tests for a specific format
+> mise run test --format='format-name' --fix-expectations # fix test expectations
 ```
 
 #### Check the format (Optional; mandatory for the homologation process)
 
-Before pushing any changes, please check the format with the following command from the `intake-formats/utils` directory.
+Before pushing any changes to the repository, check our developments with the following command:
 
 ```bash
-> cd ~/dev/intake-formats/utils
-> poetry run python checks --changes --json --ignore_event_fieldset_errors --ignore_missing_parsers --ignore_missing_tests --ignore_empty_descriptions
+> mise run validate
+```
+
+This command will check the parser, the test files, the smart-descriptions, the metadata and the logo. It will also run the tests.
+
+#### Fix the format (Optional; mandatory for the homologation process)
+
+If the validation of the format failed, try to execute the following command to fix most issues:
+
+```bash
+> mise run fix
 ```
 
 #### Write smart descriptions
