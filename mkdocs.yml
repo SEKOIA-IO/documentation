@@ -40,6 +40,9 @@ nav:
 - Getting started:
   - Overview: getting_started/index.md
   - Where to start: getting_started/concepts.md
+  - Trainings: 
+    - Training offer overview: getting_started/training_overview.md
+    - Register for a training course: getting_started/register_training.md
   - Workspace setup:
     - Join workspace: getting_started/join_community.md
     - Create and manage communities: getting_started/create_community.md
@@ -77,17 +80,52 @@ nav:
   - Roy AI Assistant: getting_started/ai_assistant.md
   - Best practices: getting_started/best_practices.md
   - Troubleshooting tips: getting_started/get_troubleshooting_tips.md
-- Sekoia Defend (XDR):
-  - Introduction: xdr/index.md
-  - Quick start guide: xdr/xdr_quick_start.md
-  - Features:
+- Sekoia Solutions:
+  - Threat Context (Intelligence):
+    - Intelligence overview: cti/index.md
+    - Data Models: cti/features/data_model.md
+    - Consume:
+      - Intelligence: cti/features/consume/intelligence.md
+      - Observables: cti/features/consume/observables.md
+      - Telemetry: cti/features/consume/telemetry.md
+      - Feeds: 
+          - Understand the feeds: cti/features/consume/feeds.md
+          - Create feeds: cti/features/consume/create_feed.md
+          - Manage feeds: cti/features/consume/manage_feeds.md
+          - Create a detection rule from a feed: cti/features/consume/create_detection_rule_from_feed.md
+      - Graph Explorations: cti/features/consume/graph_explorations.md
+      - Export: cti/features/consume/export.md
+      - IOCs Collections: cti/features/consume/ioccollections.md
+    - Monitor:
+      - Dashboards: cti/features/monitor/dashboard.md
+      - Threat Landscape: cti/features/monitor/threat_landscape.md
+    - External Integrations:
+      - Overview: cti/features/integrations/index.md
+      - API: cti/features/integrations/api.md
+      - TAXII: cti/features/integrations/taxii.md
+      - Cortex Analyzer: cti/features/integrations/thehive.md
+      - MISP Feed: cti/features/integrations/misp.md
+      - MISP - Import to IOC Collection: cti/features/integrations/misp_ids_to_ioc_collection.md
+      - Microsoft Sentinel: cti/features/integrations/microsoft-sentinel.md
+      - OpenCTI Import Connector: cti/features/integrations/opencti.md     
+      - OpenCTI Stream Connector: cti/features/integrations/opencti-stream-connector.md
+      - Splunk: cti/features/integrations/splunk.md
+      - Splunk SOAR: cti/features/integrations/splunk_soar.md
+      - Swimlane Turbine: cti/features/integrations/swimlane_turbine.md
+      - Anomali ThreatStream: cti/features/integrations/anomali.md
+      - PaloAlto Cortex XSOAR: cti/features/integrations/paloalto_xsoar.md
+      - PaloAlto Cortex XSIAM: cti/features/integrations/paloalto_xsiam.md
+      - ThreatQuotient: cti/features/integrations/threatquotient.md
+  - Detect, Hunt and Respond (Defend):
+    - Defend overview: xdr/index.md
+    - Quick start guide: xdr/xdr_quick_start.md
     - Collect:
       - Integrations: xdr/features/collect/integrations_hub.md
       - Intakes: xdr/features/collect/intakes.md
       - Entities: xdr/features/collect/entities.md
       - Assets: xdr/features/collect/assets.md
       - Optimization rules: 
-         - Optimization rules overview: xdr/features/collect/optimization_rules_overview.md
+         - Optimization rules overview: xdr/features/collect/optimization_rules_overview.md          
          - Create an optimization rule: xdr/features/collect/create_optimization_rule.md
          - Optimization rules technical references: xdr/features/collect/optimization_rules_reference.md
     - Detect:
@@ -106,18 +144,39 @@ nav:
         - Export events with API: xdr/features/investigate/export_event_API.md
         - Massive export technical specifications: xdr/features/investigate/export_reference.md 
         - Massive event export troubleshooting: xdr/features/investigate/export_event_bulk_troubleshooting.md
-      - AI Cases: xdr/features/investigate/ai_cases.md
-      - Cases: xdr/features/investigate/cases.md
-      - Asset Context Panel (coming soon): xdr/features/investigate/asset_context_panel.md
+      - Cases: 
+        - Cases overview: xdr/features/investigate/cases.md
+        - Create and manage cases: 
+          - Create a case: xdr/features/investigate/create_a_case.md
+          - Manage cases: xdr/features/investigate/manage_cases.md
+        - Investigate cases: 
+          - Investigate case details: xdr/features/investigate/case_details.md
+          - Graph investigation: xdr/features/investigate/graph_investigation.md
+          - AI Cases: xdr/features/investigate/ai_cases.md
+        - Using cases custom fields:
+          - Cases custom fields overview: xdr/features/investigate/case_custom_fields.md
+          - Use custom fields in cases: xdr/features/investigate/use_custom_fields_in_cases.md
+          - Manage custom field definition: xdr/features/investigate/manage_custom_field_definitions.md
+          - Query custom fields: xdr/features/investigate/query_custom_fields.md
+      - Asset Context Panel: xdr/features/investigate/asset_context_panel.md
       - Events Query Language: xdr/features/investigate/events_query_language.md
       - Querying Events: xdr/features/investigate/querying_events.md
-      - Query Builder: 
+      - Query Builder:
         - Discover the query builder: xdr/features/investigate/query_builder.md
         - Create and manage queries: xdr/features/investigate/create_manage_queries.md
         - Share and duplicate queries: xdr/features/investigate/share_queries.md
         - Data visualization guide: xdr/features/investigate/data_visualization_guide.md
         - Query builder form mode reference: xdr/features/investigate/query_builder_form_reference.md
-      - Sekoia Operating Language: xdr/features/investigate/sekoia_operating_language.md
+      - Sekoia Operating Language:
+        - SOL overview: xdr/features/investigate/sol_overview.md
+        - Getting started: xdr/features/investigate/sol_getting_started.md
+        - Understand SOL performance: xdr/features/investigate/sol_best_practices.md
+        - How-to guides: xdr/features/investigate/sol_how_to_guides.md
+        - SOL Datasets: xdr/features/investigate/sol_datasets.md
+        - Query examples: xdr/features/investigate/sol_query_examples.md
+        - "Reference: Datasources": xdr/features/investigate/sol_ref_datasources.md
+        - "Reference: Operators": xdr/features/investigate/sol_ref_operators.md
+        - "Reference: Functions": xdr/features/investigate/sol_ref_functions.md
       - Notebooks: xdr/features/investigate/notebooks.md
     - Report:
       - Dashboards:
@@ -143,66 +202,47 @@ nav:
       - FortiSOAR: xdr/features/integrations/fortisoar.md
       - Palo Alto Cortex XSOAR: xdr/features/integrations/interconnect_sekoia_with_xsoar.md
       - Swimlane Turbine: xdr/features/integrations/swimlane_turbine.md
-  - Usecases:
-    - Export large volumes of events: xdr/usecases/massive_export.md
-    - Implement a blocklist in Sekoia.io: xdr/usecases/playbook/implement_blocklist.md
-    - Synchronize Alerts with an external tool: xdr/usecases/playbook/synchronize_alerts.md
-    - Synchronize Assets with an Active Directory: xdr/usecases/playbook/synchronize_asset_with_ad.md
-    - Send notifications to a Webhook using a playbook: xdr/usecases/playbook/notifications_using_playbooks.md
-    - Use your own CTI in Sekoia.io: xdr/usecases/use_your_own_cti.md
-    - Investigate overusage: xdr/usecases/playbook/investigate_overusage.md
-    - Log volume reduction strategies: xdr/usecases/playbook/log_volume_reduction_strategies.md
-  - FAQ:
-    - General: xdr/FAQ.md
-    - Alerts: xdr/FAQ/Alerts_qa.md
-    - Events:
-      - Events FAQ: xdr/FAQ/get_events.md
-      - Events QA: xdr/FAQ/Events_qa.md
-      - Facing issues with logs collection: xdr/FAQ/Log_collection_Troubleshoot.md
-      - Data storage and retention: xdr/FAQ/data_storage_retention.md
-      - Restore Data from cold storage: xdr/FAQ/restore_data_cold_storage.md
-    - Intelligence:
-      - Detection: xdr/FAQ/intelligence/Detection_qa.md
-      - Questions about IoC revokation: xdr/FAQ/intelligence/revoke_ioc.md
-      - Questions about detection rules: xdr/FAQ/intelligence/detection_rules.md
-    - Assets: xdr/FAQ/Assets_qa.md
-    - Ingestion:
-      - Delay with event ingestion or alert creation: xdr/FAQ/ingestion/ingestion_delay.md
-    - Sekoia.io Endpoint agent: xdr/FAQ/SEKOIA_Endpoint_Agent.md
-    - Datetime representation: xdr/FAQ/datetime.md
-- Sekoia Intelligence (CTI):
-  - Introduction: cti/index.md
-  - Features:
-    - Data Models: cti/features/data_model.md
-    - Consume:
-      - Intelligence: cti/features/consume/intelligence.md
-      - Observables: cti/features/consume/observables.md
-      - Telemetry: cti/features/consume/telemetry.md
-      - Outgoing Feeds: cti/features/consume/feeds.md
-      - Graph Explorations: cti/features/consume/graph_explorations.md
-      - Enrichers: cti/features/consume/enrichers.md
-      - Export: cti/features/consume/export.md
-      - IOCs Collections: cti/features/consume/ioccollections.md
-    - Monitor:
-      - Dashboards: cti/features/monitor/dashboard.md
-      - Threat Landscape: cti/features/monitor/threat_landscape.md
-    - External Integrations:
-      - Overview: cti/features/integrations/index.md
-      - API: cti/features/integrations/api.md
-      - TAXII: cti/features/integrations/taxii.md
-      - Cortex Analyzer: cti/features/integrations/thehive.md
-      - MISP Feed: cti/features/integrations/misp.md
-      - MISP - Import to IOC Collection: cti/features/integrations/misp_ids_to_ioc_collection.md
-      - Microsoft Sentinel: cti/features/integrations/microsoft-sentinel.md
-      - OpenCTI Import Connector: cti/features/integrations/opencti.md
-      - OpenCTI Stream Connector: cti/features/integrations/opencti-stream-connector.md
-      - Splunk: cti/features/integrations/splunk.md
-      - Splunk SOAR: cti/features/integrations/splunk_soar.md
-      - Swimlane Turbine: cti/features/integrations/swimlane_turbine.md
-      - Anomali ThreatStream: cti/features/integrations/anomali.md
-      - PaloAlto Cortex XSOAR: cti/features/integrations/paloalto_xsoar.md
-      - PaloAlto Cortex XSIAM: cti/features/integrations/paloalto_xsiam.md
-      - ThreatQuotient: cti/features/integrations/threatquotient.md
+  - Asset Intelligence (Reveal):
+      - Reveal overview: xdr/features/modules/reveal_index.md
+      - Get started with Reveal: xdr/features/modules/reveal_getting_started.md
+      - Explore assets context: xdr/features/modules/reveal_asset_context_panel.md
+      - Visualize attack paths: xdr/features/investigate/attack_path_visualization.md
+      - Discover Points of Interest: xdr/features/detect/points_of_interest.md
+      - Check asset connector health: xdr/features/collect/asset_connector_health.md
+      - Reveal enablement matrix: xdr/features/modules/reveal_feature_enablement.md
+
+- Usecases:
+  - Export large volumes of events: xdr/usecases/massive_export.md
+  - Implement a blocklist in Sekoia.io: xdr/usecases/playbook/implement_blocklist.md
+  - Synchronize Alerts with an external tool: xdr/usecases/playbook/synchronize_alerts.md
+  - Synchronize Assets with an Active Directory: xdr/usecases/playbook/synchronize_asset_with_ad.md
+  - Send notifications to a Webhook using a playbook: xdr/usecases/playbook/notifications_using_playbooks.md
+  - Use your own CTI in Sekoia.io: xdr/usecases/use_your_own_cti.md
+  - Investigate overusage: xdr/usecases/playbook/investigate_overusage.md
+  - Log volume reduction strategies: xdr/usecases/playbook/log_volume_reduction_strategies.md
+- FAQ and troubleshooting:
+  - General: xdr/FAQ.md
+  - Alerts: xdr/FAQ/Alerts_qa.md
+  - Events:
+    - Events FAQ: xdr/FAQ/get_events.md
+    - Events QA: xdr/FAQ/Events_qa.md
+    - Facing issues with logs collection: xdr/FAQ/Log_collection_Troubleshoot.md
+    - Data storage and retention: xdr/FAQ/data_storage_retention.md
+    - Restore Data from cold storage: xdr/FAQ/restore_data_cold_storage.md
+  - Intelligence:
+    - Detection: xdr/FAQ/intelligence/Detection_qa.md
+    - Questions about IoC revokation: xdr/FAQ/intelligence/revoke_ioc.md
+    - Questions about detection rules: xdr/FAQ/intelligence/detection_rules.md
+  - Assets: xdr/FAQ/Assets_qa.md
+  - Ingestion:
+    - Delay with event ingestion or alert creation: xdr/FAQ/ingestion/ingestion_delay.md
+  - Subscriptions: 
+    - Allocate trial subscription: xdr/FAQ/subscriptions/allocate_trial_subscription.md
+    - Subscriptions notifications: xdr/FAQ/subscriptions/subscriptions_notifications.md
+  - Sekoia.io Endpoint agent: xdr/FAQ/SEKOIA_Endpoint_Agent.md
+  - Datetime representation: xdr/FAQ/datetime.md
+  - Reveal troubleshooting: xdr/features/modules/reveal_troubleshoot.md
+  
 - Integrations:
   - Introduction: integration/index.md
   - Ingestion methods:
@@ -287,6 +327,7 @@ nav:
       - Log Insight Windows: integration/categories/endpoint/log_insight_windows.md
       - Lookout Mobile Endpoint Security: integration/categories/endpoint/lookout_mes.md
       - Microsoft Defender XDR (Microsoft 365 Defender): integration/categories/endpoint/microsoft_365_defender.md
+      - Microsoft Defender XDR (Graph API): integration/categories/endpoint/microsoft_365_defender_graphapi.md
       - Microsoft Intune: integration/categories/endpoint/microsoft_intune.md
       - Nozomi Central Management Console: integration/categories/endpoint/nozomi_cmc.md
       - Nucleon EDR: integration/categories/endpoint/nucleon_edr.md
@@ -319,6 +360,10 @@ nav:
     - IAM:
       - Tenable Identity Exposure / Alsid: integration/categories/iam/alsid.md
       - Azure Key Vault: integration/categories/iam/azure_key_vault.md
+      - BeyondTrust PRA Sessions: integration/categories/iam/beyondtrust_pra_sessions.md
+      - BeyondTrust PRA Syslog: integration/categories/iam/beyondtrust_syslog.md
+      - BeyondTrust PRA Team: integration/categories/iam/beyondtrust_pra_team_activity.md
+      - BeyondTrust PRA Vault Account Activity: integration/categories/iam/beyondtrust_pra_vault_account_activity.md
       - Cisco Duo Security: integration/categories/iam/cisco_duo_security.md
       - Cyberark Digital Vault: integration/categories/iam/cyberark_vault.md
       - CyberArk Identity Audit Logs: integration/categories/iam/cyberark_identity_audit_logs.md
@@ -341,7 +386,6 @@ nav:
       - Amazon VPC Flow Logs: integration/categories/network/aws_flow_logs.md
       - Azure Application Gateway: integration/categories/network/azure_application_gateway.md
       - ArubaOS Switch: integration/categories/network/arubaos.md
-      - BeyondTrust PRA Sessions: integration/categories/network/beyondtrust_pra_sessions.md
       - BIND: integration/categories/network/bind.md
       - Cato SASE: integration/categories/network/cato_sase.md
       - Cisco Catalyst SD-WAN: integration/categories/network/cisco_catalyst_sd_wan.md
@@ -376,6 +420,8 @@ nav:
       - Umbrella DNS Logs: integration/categories/network/umbrella_dns.md
       - Unbound: integration/categories/network/unbound.md
     - Network Security:
+      - Akamai Guardicore On-Premises: integration/categories/network_security/akamai_guardicore_onprem.md
+      - Akamai Guardicore Saas: integration/categories/network_security/akamai_guardicore_saas.md
       - Akamai WAF: integration/categories/network_security/akamai_waf.md
       - AWS CloudTrail: integration/categories/network_security/aws_cloudtrail.md
       - Amazon CloudFront Logs: integration/categories/network_security/aws_cloudfront.md
@@ -418,6 +464,7 @@ nav:
       - Lacework Cloud Security: integration/categories/network_security/lacework_cloud_security.md
       - McAfee Web Gateway / Skyhigh Secure Web Gateway - On Prem: integration/categories/network_security/skyhigh_secure_web_gateway_on_prem.md
       - McAfee Web Gateway / Skyhigh Secure Web Gateway - SaaS: integration/categories/network_security/skyhigh_secure_web_gateway_saas.md
+      - Nanocorp: integration/categories/network_security/nanocorp.md
       - NeroSwarm Honeypot: integration/categories/network_security/neroswarm_honeypot.md
       - Netskope Events: integration/categories/network_security/netskope_events.md
       - Netskope Log Streaming (Transaction Events): integration/categories/network_security/netskope_log_streaming.md
@@ -428,6 +475,7 @@ nav:
       - Olfeo Secure Web Gateway: integration/categories/network_security/olfeo_secure_web_gateway.md
       - Palo Alto Next-Generation Firewall: integration/categories/network_security/paloalto.md
       - Palo Alto Prisma access: integration/categories/network_security/paloalto_prisma_access.md
+      - Radware DefensePro: integration/categories/network_security/radware_defensepro.md
       - Seckiot Citadelle: integration/categories/network_security/seckiot_citadelle.md
       - Security Scorecard Vunerability Assessment Scanner: integration/categories/network_security/securityscorecard_vas.md
       - SonicWall Firewall: integration/categories/network_security/sonicwall_fw.md
@@ -437,13 +485,12 @@ nav:
       - Stormshield Network Security: integration/categories/network_security/stormshield_network_security.md
       - Suricata: integration/categories/network_security/suricata.md
       - Thinkst Canary: integration/categories/network_security/thinkst_canary.md
+      - Trapster: integration/categories/network_security/trapster.md
       - Trellix Network Security: integration/categories/network_security/trellix_nx.md
       - Trellix ePO: integration/categories/network_security/trellix_epo.md
       - Trellix ePO - On Prem: integration/categories/network_security/trellix_epo_on_prem.md
       - Trend Micro Deep Security / Workload Security: integration/categories/network_security/trend_micro_deep_security.md
-      - Ubika Cloud Protector Alerts: integration/categories/network_security/ubika_cloud_protector_alerts.md
       - Ubika Cloud Protector Next Generation: integration/categories/network_security/ubika_cloud_protector_next_gen.md
-      - Ubika Cloud Protector Traffic: integration/categories/network_security/ubika_cloud_protector_traffic.md
       - Ubika WAAP Gateway: integration/categories/network_security/ubika_waap.md
       - Umbrella IP Logs: integration/categories/network_security/umbrella_ip.md
       - Umbrella Proxy Logs: integration/categories/network_security/umbrella_proxy.md
@@ -456,6 +503,7 @@ nav:
       - Wiz Threat Detections: integration/categories/network_security/wiz_threat_detections.md
       - Wiz Vulnerability Findings: integration/categories/network_security/wiz_vulnerability_findings.md
       - Zscaler Internet Access: integration/categories/network_security/zscaler_zia.md
+      - Zscaler Private Access: integration/categories/network_security/zscaler_zpa.md
     - Threat Intelligence:
       - Prodaft USTA: integration/categories/threat_intelligence/prodaft_usta.md
   - List of Playbooks Actions:
@@ -473,7 +521,6 @@ nav:
     - Collaboration Tools:
       - Atlassian JIRA: integration/action_library/atlassian-jira.md
       - Git: integration/action_library/git.md
-      - Nybble: integration/action_library/nybble.md
       - ServiceNow: integration/action_library/servicenow.md
       - The Hive: integration/action_library/the-hive.md
       - The Hive V5: integration/action_library/the-hive-v5.md
@@ -508,7 +555,6 @@ nav:
       - Sophos: integration/action_library/sophos.md
       - Zscaler: integration/action_library/zscaler.md
     - Threat Intelligence:
-      - BinaryEdge's API: integration/action_library/binaryedge-s-api.md
       - Censys: integration/action_library/censys.md
       - Certificate Transparency: integration/action_library/certificate-transparency.md
       - Detection Rules: integration/action_library/detection-rules.md
@@ -522,7 +568,6 @@ nav:
       - OSINT: integration/action_library/osint.md
       - Onyphe: integration/action_library/onyphe.md
       - Public Suffix: integration/action_library/public-suffix.md
-      - RiskIQ: integration/action_library/riskiq.md
       - Shodan: integration/action_library/shodan.md
       - Tranco: integration/action_library/tranco.md
       - Triage: integration/action_library/triage.md
@@ -538,6 +583,7 @@ nav:
       - Harfanglab EDR: integration/assets_categories/device/harfanglab_edr.md
       - Okta: integration/assets_categories/device/okta_device.md
       - SentinelOne EDR: integration/assets_categories/device/sentinelone_edr.md
+      - Sophos EDR: integration/assets_categories/device/sophos_edr.md
     - User:
       - AWS IAM: integration/assets_categories/user/aws_iam_user.md
       - Microsoft Active Directory: integration/assets_categories/user/microsoft_ad_user.md
@@ -574,6 +620,7 @@ plugins:
 - search: null
 - redirects:
     redirect_maps:
+      xdr/features/investigate/sekoia_operating_language.md: xdr/features/investigate/sol_overview.md
       getting_started/2fa.md: getting_started/account_security.md
       getting_started/apikey_creation.md: getting_started/manage_api_keys.md
       getting_started/first_steps.md: getting_started/index.md
@@ -582,7 +629,6 @@ plugins:
       intelligence_center/dashboard.md: cti/features/monitor/dashboard.md
       intelligence_center/data_export.md: cti/features/consume/export.md
       intelligence_center/data_model.md: cti/features/data_model.md
-      intelligence_center/enricher.md: cti/features/consume/enrichers.md
       intelligence_center/graph_explorations.md: cti/features/consume/graph_explorations.md
       intelligence_center/integrations.md: cti/features/integrations/index.md
       intelligence_center/integrations/anomali.md: cti/features/integrations/anomali.md
@@ -695,8 +741,6 @@ plugins:
       xdr/features/collect/integrations/cloud_and_saas/salesforce.md: integration/categories/applicative/salesforce.md
       xdr/features/collect/integrations/cloud_and_saas/securityscorecard_vas.md: integration/categories/network_security/securityscorecard_vas.md
       xdr/features/collect/integrations/cloud_and_saas/sophos_threat_analysis_center.md: integration/categories/network_security/sophos_threat_analysis_center.md
-      xdr/features/collect/integrations/cloud_and_saas/ubika_cloud_protector_alerts.md: integration/categories/network_security/ubika_cloud_protector_alerts.md
-      xdr/features/collect/integrations/cloud_and_saas/ubika_cloud_protector_traffic.md: integration/categories/network_security/ubika_cloud_protector_traffic.md
       xdr/features/collect/integrations/cloud_and_saas/ubika_waap.md: integration/categories/network_security/ubika_waap.md
       xdr/features/collect/integrations/cloud_and_saas/zscaler_zia.md: integration/categories/network_security/zscaler_zia.md
       xdr/features/collect/integrations/email/cisco_esa.md: integration/categories/email/cisco_esa.md
@@ -793,6 +837,7 @@ plugins:
       xdr/features/collect/integrations/network/wallix.md: integration/categories/iam/wallix.md
       xdr/features/collect/integrations/network/watchguard_firebox.md: integration/categories/network_security/watchguard_firebox.md
       xdr/features/investigate/dork_language.md: xdr/features/investigate/events_query_language.md
+      integration/categories/network/beyondtrust_pra_sessions.md: integration/categories/iam/beyondtrust_pra_sessions.md
 - integration_by_uuid
 - sass
 repo_url: https://github.com/SEKOIA-IO/documentation

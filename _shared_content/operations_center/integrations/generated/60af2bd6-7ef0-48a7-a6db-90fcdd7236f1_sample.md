@@ -180,6 +180,14 @@ In this section, you will find examples of raw logs as generated natively by the
 
 
 
+=== "statistics_2"
+
+    ```
+	<190>timestamp=1775747539 devname="FORTIMAIL1" devid="ID1234567890" vd="root" itime=1775747539 date="2026-04-09" time=17:12:19.201 device_id="ID1234567890" eventtime=1775747539201 tz=+0200 log_id="0200010651" type="statistics" pri="information" session_id="11111111111111-11111111111111" client_name="client.name" client_ip=1.2.3.4 client_cc="US" dst_ip=5.6.7.8 from="sender@company.com" hfrom="sender@company.com" to="receiver@destination.com" polid="0:1:5:destination.com" domain="destination.com" mailer="mta" resolved="OK" src_type="ext" direction="in" virus="FortiSandbox: Riskware" disposition="System Quarantine;Defer Disposition" classifier="FortiSandbox File" detail=Virus message_length=44391 subject="Subject" message_id="20260409151001.1111111111111111@company.com" recv_time= notif_delay="0" scan_time=0.015940 xfer_time=0.001187 srcfolder="" read_status=""
+    ```
+
+
+
 === "virus"
 
     ```

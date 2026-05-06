@@ -1,6 +1,6 @@
 
 /** Encode the given {tag} for use in HTML anchors */
-export const tagEncode = tag => tag.replace(" ", "-")
+export const tagEncode = tag => tag.replaceAll(" ", "-").toLowerCase()
 
 export const Chevron = <svg class="nav-chevron" version="1.1" viewBox="0 0 24 24" x="0" xmlns="http://www.w3.org/2000/svg" y="0" aria-hidden="true"><polygon points="17.3 8.3 12 13.6 6.7 8.3 5.3 9.7 12 16.4 18.7 9.7 "></polygon></svg>
 
@@ -16,9 +16,15 @@ export function debounce(func, wait) {
 }
 
 export function scrollToAnchor(hash) {
-    const el = document.getElementById(hash.substring(1))
+    const targetId = hash.substring(1)
+    let el = document.getElementById(targetId)
+    if (!el) {
+        const normalizedTargetId = targetId.toLowerCase()
+        el = Array.from(document.querySelectorAll("[id]"))
+            .find(({ id }) => id?.toLowerCase() === normalizedTargetId)
+    }
     if (el) window.scrollTo({
-        top: document.getElementById(hash.substring(1)).getBoundingClientRect().top + window.scrollY - 150,
+        top: el.getBoundingClientRect().top + window.scrollY - 150,
         behavior: 'smooth'
     });
 }

@@ -6,7 +6,7 @@ type: intake
 Ubika WAAP Gateway detect and prevent threats against your web applications and your APIs.
 
 - **Vendor**: Ubika
-- **Supported environment**: SaaS
+- **Supported environment**: On Premise
 - **Detection based on**: Alert, Telemetry
 - **Supported application or feature**: Web application firewall logs
 

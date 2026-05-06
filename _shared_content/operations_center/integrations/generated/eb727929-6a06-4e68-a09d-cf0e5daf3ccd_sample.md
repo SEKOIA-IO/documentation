@@ -252,6 +252,14 @@ In this section, you will find examples of raw logs as generated natively by the
 
 
 
+=== "opendkim"
+
+    ```
+	host01 opendkim[778]: 720B91122280: DKIM-Signature field added (s=test01, d=something-group.com)
+    ```
+
+
+
 === "pass"
 
     ```
@@ -1088,6 +1096,14 @@ In this section, you will find examples of raw logs as generated natively by the
 
     ```
 	spamd: result: . -1 - DKIM_INVALID,DKIM_SIGNED,HEADER_FROM_DIFFERENT_DOMAINS,HTML_FONT_LOW_CONTRAST,HTML_MESSAGE,MIME_HTML_ONLY,RCVD_IN_MSPIKE_H2,SPF_HELO_NONE,SPF_PASS,T_REMOTE_IMAGE scantime=2.9,size=65264,user=debian-spamd,uid=117,required_score=5.0,rhost=127.0.0.1,raddr=127.0.0.1,rport=33254,mid=<111111111111111111111111111111111111@mx.example.org>,autolearn=disabled
+    ```
+
+
+
+=== "test_disconnect_with_helo"
+
+    ```
+	disconnect from mail-gateway.example.com[1.2.3.4] helo=1 mail=1 rcpt=1 data=1 quit=1 commands=5
     ```
 
 

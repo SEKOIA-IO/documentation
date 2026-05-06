@@ -11,6 +11,10 @@ Cloudflare is a global network designed to make everything you connect to the In
 - **Detection based on**: Telemetry
 - **Supported application or feature**: Web application firewall logs
 
+### Prerequisites
+
+- **License**: Using the Logpush feature requires an active Enterprise plan or Workers Paid plan license (https://developers.cloudflare.com/logs/logpush/).
+
 ## Configuration
 
 ### Create the intake on Sekoia.io
