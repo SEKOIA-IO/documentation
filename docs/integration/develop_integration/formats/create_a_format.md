@@ -39,7 +39,7 @@ The custom format panel is structured like this:
 ### Custom format creation with the github repository
 #### Technical Requirements
 
-- Clone the Github repository [SEKOIA-IO/intake-formats](https://github.com/SEKOIA-IO/intake-formats)
+- Clone the GitHub repository [SEKOIA-IO/intake-formats](https://github.com/SEKOIA-IO/intake-formats)
     ```bash
     > git clone https://github.com/SEKOIA-IO/intake-formats ~/dev/intake-formats
     ```
