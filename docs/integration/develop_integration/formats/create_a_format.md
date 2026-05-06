@@ -128,7 +128,7 @@ To run the tests, type one of the following commands:
 
 #### Check the format (Optional; mandatory for the homologation process)
 
-Before pushing any changes to the repository, check our developments with the following command:
+Before pushing any changes to the repository, validate your work with the following command:
 
 ```bash
 > mise run validate

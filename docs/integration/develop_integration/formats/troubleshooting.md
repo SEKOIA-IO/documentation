@@ -1,6 +1,6 @@
 # Troubleshooting
 
-This document will guide you to fix the most common issues when developing intake-formats.
+This document will help you fix the most common issues when developing intake-formats.
 
 ## Linting issues
 
@@ -110,7 +110,7 @@ Any custom field, used in the parser, must be declared in `_meta/fields.yml`:
 
 <custom field name>:
     name: <custom field name>
-    description: <a description explained what the value of the custom field represents>
+    description: <a description explaining what the value of the custom field represents>
     type: <the type of the custom field>
 ```
 
