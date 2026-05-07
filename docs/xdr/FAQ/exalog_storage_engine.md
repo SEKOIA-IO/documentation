@@ -44,12 +44,12 @@ ExaLog reached general availability in May 2026. All new workspaces are provisio
 !!! note "Activation on a new region"
     When ExaLog becomes available in a new region, only events ingested after the activation date are indexed in ExaLog. Existing data is not migrated retroactively. Full capabilities become available progressively as your original retention window expires.
 
-To initiate or check the status of your workspace migration, contact your Customer Success Manager or follow the steps in [Migrate your workspace to ExaLog](migrate_workspace_to_exalog.md).
+To initiate or check the status of your workspace migration, contact your Customer Success Manager or follow the steps in [Migrate your workspace to ExaLog](/xdr/FAQ/migrate_workspace_to_exalog.md).
 
 ## Related articles
 
-- [Data storage and retention](data_storage_and_retention.md) — Overview of both the legacy Hot/Cold model and ExaLog, with guidance on which applies to your workspace.
-- [Migrate your workspace to ExaLog](migrate_workspace_to_exalog.md) — Step-by-step guide to checking your current storage model and requesting a migration to ExaLog.
-- [Events page](https://docs.sekoia.io/xdr/features/investigate/events/) — How to search and filter events in the Sekoia.io investigation interface.
-- [Understand massive event export](https://docs.sekoia.io/xdr/features/investigate/event_export/) — How to export large volumes of events to an external S3-compatible storage.
-- [Retrohunt](https://docs.sekoia.io/xdr/features/detect/rules_catalog/) — How to run retrohunt queries across historical event data to identify past threats.
+- [Data storage and retention](/xdr/FAQ/data_storage_retention.md): Overview of both the legacy Hot/Cold model and ExaLog, with guidance on which applies to your workspace.
+- [Migrate your workspace to ExaLog](/xdr/FAQ/migrate_workspace_to_exalog.md): Step-by-step guide to checking your current storage model and requesting a migration to ExaLog.
+- [Events page](/xdr/features/investigate/events.md): How to search and filter events in the Sekoia.io investigation interface.
+- [Understand massive event export](/xdr/features/investigate/event_export.md): How to export large volumes of events to an external S3-compatible storage.
+- [Retrohunt](/xdr/features/detect/rules_catalog.md): How to run retrohunt queries across historical event data to identify past threats.
