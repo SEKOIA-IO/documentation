@@ -9,6 +9,11 @@ type: intake
 - **Detection based on**: Telemetry
 - **Supported application or feature**:
 
+!!! WARNING
+    We highly recommend using the [Sekoia.io Endpoint Agent](sekoiaio.md) to collect telemetry from Microsoft Windows endpoints.
+
+    Use the Windows integration only when the Sekoia.io Endpoint Agent is not suitable.
+
 Microsoft Windows is a widely used operating system that has been developed by Microsoft since 1985.
 
 This page will provide you with two methods for collecting and forwarding Windows logs to Sekoia.io.
