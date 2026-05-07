@@ -60,7 +60,7 @@ Key characteristics of ExaLog:
 !!! note "Activation on a new region"
     When ExaLog becomes available in a new region, only events ingested after the activation date are indexed in ExaLog. Existing data is not migrated retroactively. Full capabilities become available progressively as your original retention window expires.
 
-To learn more about ExaLog capabilities, see [ExaLog storage engine](exalog_storage_engine.md).
+To learn more about ExaLog capabilities, see [ExaLog storage engine](/xdr/FAQ/exalog_storage_engine.md).
 
 ## Related articles
 
