@@ -64,8 +64,8 @@ To learn more about ExaLog capabilities, see [ExaLog storage engine](exalog_stor
 
 ## Related articles
 
-- [ExaLog storage engine](exalog_storage_engine.md) — Learn about ExaLog's capabilities, benefits, and how it differs from the legacy Hot/Cold model.
-- [Migrate your workspace to ExaLog](migrate_workspace_to_exalog.md) — Step-by-step guide to checking your current storage model and requesting a migration to ExaLog.
+- [ExaLog storage engine](/xdr/FAQ/exalog_storage_engine.md) — Learn about ExaLog's capabilities, benefits, and how it differs from the legacy Hot/Cold model.
+- [Migrate your workspace to ExaLog](/xdr/FAQ/migrate_workspace_to_exalog.md) — Step-by-step guide to checking your current storage model and requesting a migration to ExaLog.
 - [Restore data from cold storage](/xdr/FAQ/restore_data_cold_storage.md) — How to rehydrate archived events from cold storage on legacy workspaces.
 - [Events page](/xdr/features/investigate/events.md) — How to search and filter events in the Sekoia.io investigation interface.
 - [Understand massive event export](/xdr/features/investigate/event_export.md) — How to export large volumes of events to an external S3-compatible storage.
