@@ -25,11 +25,9 @@ Additionally, this documentation will offer guidance on collecting and forwardin
 !!! Warning
     Please be advised that collecting Windows events with NXLog on certain Windows languages that contain accents (such as French for "Système" keyword), are not correctly encoded by NXLog and results in an error of interpretation on our product. In such case, please consider the installation of our [agent](https://docs.sekoia.io/integration/integrations/endpoint/sekoiaio/) on the supported OS.
 
-!!! warning "Important prerequisite regarding timezones"
-    Windows events forwarded using NXLog may not always contain precise timezone information depending on configurations. To avoid time offset issues when events are parsed by Sekoia.io (e.g. events appearing to happen in the future), we heavily recommend configuring your Windows server's timezone to **UTC**.
-    ```powershell
-    Set-TimeZone -Name "UTC"
-    ```
+!!! Warning "Important prerequisite regarding timezones"
+    To avoid time offset issues when events are parsed by Sekoia.io (e.g. events appearing to happen in the future), you *must* configure your server's timezone to **UTC**. 
+    You can find more information in the [Sekoia timezone requirements document](https://docs.sekoia.io/xdr/FAQ/datetime/).
 
 ## Windows Event logs
 
