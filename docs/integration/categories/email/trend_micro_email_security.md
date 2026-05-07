@@ -13,7 +13,12 @@ Trend Micro Email Security is a robust email protection solution that safeguards
 
 ## Configure
 
-For the configuration part, there are two methods because Trend Micro Email Security is migrating to Trend Vision One within the same product. For those still using the old solution, there is the first configuration method, and for those using the new one, there is a second method.
+This section will guide you through the creation of the API key.
+
+According to the solution you use, the procedure will change:
+- The first method is for those still using Trend Micro Email Security
+- the second method is for those using Trend Vision One
+
 
 ### How to create an API token ( Trend Micro Email Security )
 
