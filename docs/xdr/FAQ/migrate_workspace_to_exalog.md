@@ -45,6 +45,6 @@ Once your workspace is migrated to ExaLog:
 ## Related articles
 
 - [ExaLog storage engine](/xdr/FAQ/exalog_storage_engine.md): Learn about ExaLog's capabilities, benefits, and how it differs from the legacy Hot/Cold model.
-- [Data storage and retention](/xdr/FAQ/data_storage_and_retention.md): Overview of both the legacy Hot/Cold model and ExaLog, with guidance on which applies to your workspace.
+- [Data storage and retention](/xdr/FAQ/data_storage_retention.md): Overview of both the legacy Hot/Cold model and ExaLog, with guidance on which applies to your workspace.
 - [Restore data from cold storage](/xdr/FAQ/restore_data_cold_storage.md): How to rehydrate archived events from cold storage on legacy workspaces.
 - [Events page](/xdr/features/investigate/events.md): How to search and filter events in the Sekoia.io investigation interface.
