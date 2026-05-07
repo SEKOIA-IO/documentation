@@ -248,6 +248,340 @@ volumes:
     - ./disk_queue:/var/spool/rsyslog
 ```
 
+#### Handle multiple technologies on a single port
+
+Some network devices and appliances cannot be reconfigured to send syslog to a custom port — they are hardcoded to a fixed destination port. The most common example is the standard syslog port **514** (TCP and/or UDP). When several technologies are in this situation, they all converge on the same port of the forwarder, which makes the standard one-port-per-intake approach used in `intakes.yaml` unusable.
+
+The solution is to let rsyslog inspect the properties of each incoming syslog message (hostname, source IP, application name, etc.) and use conditional routing rules to forward each log to the correct Sekoia.io intake. This is done entirely in a custom `.conf` file placed in the `extended_conf` directory.
+
+!!! note
+    Port 514 is used as a concrete example throughout this section. The same approach applies to any shared port.
+
+---
+
+**Prerequisites**
+
+!!! warning
+    **Do not declare the shared port in `intakes.yaml`.** If the same port is configured both in `intakes.yaml` and in a custom `.conf` file, rsyslog will attempt to bind it twice and the concentrator will fail to start.
+
+Before proceeding, verify the following:
+
+- The shared port (e.g. 514) is **not** declared in `intakes.yaml`.
+- The shared port is **opened** for both TCP and UDP in the `ports` section of `docker-compose.yml`.
+- The `./extended_conf:/extended_conf` volume mount is **present** in `docker-compose.yml`.
+
+---
+
+**Step 1 — Update `docker-compose.yml`**
+
+Add the port mapping for both TCP and UDP and ensure the `extended_conf` directory is mounted:
+
+```yaml
+services:
+  rsyslog:
+    image: ghcr.io/sekoia-io/sekoiaio-docker-concentrator:2.7.2
+    environment:
+      - MEMORY_MESSAGES=2000000
+      - DISK_SPACE=180g
+      - REGION=FRA1
+    ports:
+      - "20516-20566:20516-20566"
+      - "20516-20566:20516-20566/udp"
+      - "514:514"        # shared port — TCP
+      - "514:514/udp"    # shared port — UDP
+    volumes:
+      - ./intakes.yaml:/intakes.yaml
+      - ./extended_conf:/extended_conf
+      - ./disk_queue:/var/spool/rsyslog
+    restart: always
+    pull_policy: always
+```
+
+Create the `extended_conf` directory on the host if it does not exist yet:
+
+```bash
+mkdir -p extended_conf
+```
+
+---
+
+**Step 2 — Identify discriminants in syslog headers**
+
+Before writing routing rules, you need to determine what uniquely identifies each technology in the incoming syslog messages. Rsyslog exposes the following properties from each received message:
+
+| Property | Description | Typical use |
+|---|---|---|
+| `$fromhost-ip` | Actual source IP of the sender as seen by the forwarder | Most reliable for network appliances — independent of what the device puts in its header |
+| `$hostname` | Hostname or FQDN as declared in the syslog header by the sender | Identify a device by its declared name (may be an IP or a device name depending on the sender) |
+| `$syslogtag` | Application name or program name as reported by the sender | Identify a specific application or product (e.g. `%ASA-`, `pam_unix`) |
+| `$app-name` | RFC 5424 application name field | Similar to `$syslogtag` for RFC 5424 compliant senders |
+| `$msg` | The log message body | Last resort, when no header property is distinctive enough |
+
+The following log starts with a syslog header from "<13>1" up to "LOG" then followed by the JSON structured Windows event: 
+
+```text
+<13>1 2026-05-07T09:49:31.308+00:00 windows-vm-0 Microsoft-Windows-Sysmon[3524] - LOG {"EventTime":"2022-09-16 12:39:18", [...] }
+```
+
+In this example, We can use these information to catch our events:
+
+- `windows-vm-0` corresponds to the hostname
+- `Microsoft-Windows-Sysmon` corresponds to the app-name
+- `-` corresponds to the procid
+
+For a complete reference see the [rsyslog properties documentation](https://docs.rsyslog.com/doc/configuration/properties.html).
+
+!!! tip "Finding the right discriminant"
+    Use `tcpdump` **from the forwarder host** to inspect raw syslog frames arriving on the shared port. Because Docker exposes the port on the host network interface, the capture works without entering the container:
+
+    ```bash
+    sudo tcpdump -i any -c 100 -nn -A 'port 514' | grep "LOG"
+    ```
+
+    Look at the syslog header of each incoming message and identify a field that is unique to each technology. Typical choices, to be adapted depending on actual production context:
+
+    - A **firewall** sending from a known IP → use `$fromhost-ip`
+    - A **VPN concentrator** announcing a specific app name → use `$syslogtag`
+    - A **switch** always sending with a hostname following a naming convention → use `$hostname`
+
+!!! note
+    Rsyslog `if` conditions use **string comparison operators**, not standard programming operators:
+
+    - `isequal` — exact match (case-sensitive)
+    - `contains` — substring match (case-sensitive)
+    - `contains_i` — substring match (case-insensitive)
+    - `startswith` — prefix match (case-sensitive)
+
+    Example: `if ($hostname startswith "sw-") then { ... }`
+
+---
+
+**Step 3 — Create the custom rsyslog configuration file**
+
+Create the file `extended_conf/port514.conf`. This file defines:
+
+1. One `template()` per technology that embeds the correct intake key.
+2. A TCP listener on port 514 and a UDP listener on port 514, each bound to its own ruleset.
+3. Conditional routing rules inside each ruleset.
+4. A fallback action for logs that do not match any rule.
+
+!!! warning
+    **Do not add `module(load="imtcp")` or `module(load="imudp")` in this file.** These modules are already loaded by the concentrator for the intakes defined in `intakes.yaml`. Adding them again will cause a startup error. Only use `input()` directives to open additional ports.
+
+!!! warning
+    **Action `name=` values must be unique across the entire rsyslog configuration.** Use suffixes like `_tcp` and `_udp` to avoid conflicts between rulesets.
+
+The example below routes logs from three technologies sharing port 514, each discriminated by a different property:
+
+- **Palo Alto Firewall** — identified by its source IP (`$fromhost-ip`)
+- **Cisco ASA VPN** — identified by its syslog tag (`$syslogtag`)
+- **Cisco Switch** — identified by a hostname prefix (`$hostname`)
+
+Unmatched logs are sent to a catch-all intake for review.
+
+```
+# ============================================================
+# extended_conf/port514.conf
+# Multi-technology routing on port 514 (TCP and UDP)
+# ============================================================
+
+# --- Templates: one per technology ---
+# Replace MY-INTAKE-KEY-xxx with the actual Intake key from the Sekoia.io platform.
+
+template(name="Tmpl_PaloAlto" type="string"
+    string="<%pri%>1 %timegenerated:::date-rfc3339% %hostname% %app-name% %procid% LOG [SEKOIA@53288 intake_key=\"MY-INTAKE-KEY-PALOALTO\"] %msg%\n")
+
+template(name="Tmpl_CiscoASA" type="string"
+    string="<%pri%>1 %timegenerated:::date-rfc3339% %hostname% %app-name% %procid% LOG [SEKOIA@53288 intake_key=\"MY-INTAKE-KEY-CISCO-ASA\"] %msg%\n")
+
+template(name="Tmpl_CiscoSwitch" type="string"
+    string="<%pri%>1 %timegenerated:::date-rfc3339% %hostname% %app-name% %procid% LOG [SEKOIA@53288 intake_key=\"MY-INTAKE-KEY-CISCO-SWITCH\"] %msg%\n")
+
+template(name="Tmpl_CatchAll" type="string"
+    string="<%pri%>1 %timegenerated:::date-rfc3339% %hostname% %app-name% %procid% LOG [SEKOIA@53288 intake_key=\"MY-INTAKE-KEY-CATCHALL\"] %msg%\n")
+
+# ---- TCP listener on port 514 ----
+# ---- Assuming Palo Alto and Cisco ASA VPN logs are sent in TCP  ----
+input(type="imtcp" port="514" ruleset="remote514tcp")
+
+ruleset(name="remote514tcp") {
+
+    # Rule 1: Palo Alto — matched by source IP (most reliable for network appliances)
+    if ($fromhost-ip isequal "192.168.10.5") then {
+        action(
+            name="fwd_paloalto_tcp"
+            type="omfwd"
+            protocol="tcp"
+            target="intake.sekoia.io"
+            port="10514"
+            TCP_Framing="octet-counted"
+            StreamDriver="gtls"
+            StreamDriverMode="1"
+            StreamDriverAuthMode="x509/name"
+            StreamDriverPermittedPeers="intake.sekoia.io"
+            Template="Tmpl_PaloAlto"
+        )
+        stop  # stop processing — prevent this log from matching subsequent rules
+    }
+
+    # Rule 2: Cisco ASA VPN — matched by syslog tag
+    if ($syslogtag startswith "%ASA-") then {
+        action(
+            name="fwd_ciscoasa_tcp"
+            type="omfwd"
+            protocol="tcp"
+            target="intake.sekoia.io"
+            port="10514"
+            TCP_Framing="octet-counted"
+            StreamDriver="gtls"
+            StreamDriverMode="1"
+            StreamDriverAuthMode="x509/name"
+            StreamDriverPermittedPeers="intake.sekoia.io"
+            Template="Tmpl_CiscoASA"
+        )
+        stop
+    }
+
+    # Optional Fallback: no rule matched — forward to a catch-all intake for investigation
+    action(
+        name="fwd_catchall_tcp"
+        type="omfwd"
+        protocol="tcp"
+        target="intake.sekoia.io"
+        port="10514"
+        TCP_Framing="octet-counted"
+        StreamDriver="gtls"
+        StreamDriverMode="1"
+        StreamDriverAuthMode="x509/name"
+        StreamDriverPermittedPeers="intake.sekoia.io"
+        Template="Tmpl_CatchAll"
+    )
+}
+
+# ---- UDP listener on port 514 ----
+# ---- Assuming Cisco Switch logs are sent in UDP as per example  ----
+# UDP requires a separate input and ruleset — the routing logic is identical.
+input(type="imudp" port="514" ruleset="remote514udp")
+
+ruleset(name="remote514udp") {
+
+    # Rule 3: Cisco Switch — matched by hostname prefix
+    if ($hostname startswith "sw-") then {
+        action(
+            name="fwd_ciscoswitch_tcp"
+            type="omfwd"
+            protocol="tcp"
+            target="intake.sekoia.io"
+            port="10514"
+            TCP_Framing="octet-counted"
+            StreamDriver="gtls"
+            StreamDriverMode="1"
+            StreamDriverAuthMode="x509/name"
+            StreamDriverPermittedPeers="intake.sekoia.io"
+            Template="Tmpl_CiscoSwitch"
+        )
+        stop
+    }
+
+    # Optional Fallback: no rule matched — forward to a catch-all intake for investigation
+    action(
+        name="fwd_catchall_udp"
+        type="omfwd"
+        protocol="tcp"
+        target="intake.sekoia.io"
+        port="10514"
+        TCP_Framing="octet-counted"
+        StreamDriver="gtls"
+        StreamDriverMode="1"
+        StreamDriverAuthMode="x509/name"
+        StreamDriverPermittedPeers="intake.sekoia.io"
+        Template="Tmpl_CatchAll"
+    )
+}
+```
+
+!!! note
+    The `stop` directive after each matched action prevents a log from being evaluated by subsequent rules. Without it, a log that matches rule 1 would also be tested against rules 2 and 3 and could be forwarded to multiple intakes simultaneously.
+
+!!! note
+    TCP and UDP require separate `input()` directives and separate rulesets — an rsyslog input can only be bound to one ruleset. The routing logic is therefore duplicated between `remote514tcp` and `remote514udp`. This is intentional and expected.
+
+!!! note
+    `intake.sekoia.io` is used for FRA1 region, please adapt depending on the region logs are to be sent.
+
+---
+
+**Step 4 — Reload the forwarder**
+
+Apply the new configuration by recreating the container:
+
+```bash
+sudo docker compose up -d
+```
+
+Verify that the container started correctly and that no errors appear in the logs:
+
+```bash
+sudo docker compose logs | head -50
+```
+
+A syntax error in the `.conf` file will be reported here and may prevent the container from starting.
+
+---
+
+**Tips and troubleshooting**
+
+*Logs are not routed to the expected intake*
+
+Re-run the `tcpdump` capture and compare the actual syslog header values with the conditions in your `.conf` file. A common mistake is a case mismatch (`startswith "%asa-"` will not match `%ASA-`). Use `contains_i` for a case-insensitive match while debugging.
+
+Verify that `stop` is present after each matched action. Without it, a log that matches rule 1 will also be evaluated by rules 2, 3, and the fallback.
+
+*Temporarily verify routing with a file output*
+
+Add a file output action before the forwarding action to confirm a rule is matching as expected:
+
+```
+module(load="omfile")  # required to enable file output actions
+
+if ($fromhost-ip isequal "192.168.10.5") then {
+    action(
+        name="debug_paloalto_tcp"
+        type="omfile"
+        file="/tmp/debug-paloalto.log"
+    )
+    action(
+        name="fwd_paloalto_tcp"
+        ...
+    )
+    stop
+}
+```
+
+Read the file from the host:
+
+```bash
+sudo docker compose exec rsyslog tail -f /tmp/debug-paloalto.log
+```
+
+!!! warning
+    Remove all `omfile` debug actions before going to production. File output inside the container is not persistent and consumes disk space indefinitely.
+
+*The container fails to start after adding the `.conf` file*
+
+Check the rsyslog error message:
+
+```bash
+sudo docker compose logs rsyslog | head -100
+```
+
+Common causes:
+
+- Syntax error in the `.conf` file (missing parenthesis, unknown directive).
+- The shared port is also declared in `intakes.yaml`.
+- `module(load="imtcp")` or `module(load="imudp")` was added to the `.conf` file (already loaded by the concentrator).
+- Two actions share the same `name=` value.
+
 #### Additional options
 
 ```yaml
