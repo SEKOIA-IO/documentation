@@ -16,13 +16,13 @@ To verify which storage model your workspace uses:
 1. Navigate to **Settings > Subscription**.
 2. Locate the **Storage** section.
 3. If you see separate **Hot storage** and **Cold storage** entries, your workspace uses the legacy model and is eligible for migration.
-
-> 📸 [SCREENSHOT SUGGESTION: Settings > Subscription page with the Storage section showing Hot and Cold storage tiers for a legacy workspace. | ALT TEXT: Storage section in Subscription settings showing legacy Hot/Cold tiers.]
+   
+![Navigation to Settings > Subscription to view hot and cold storage days](/assets/xdr/storage_subscription.png)
 
 ## Request migration to ExaLog
 
 !!! note "Migration timeline"
-    Migration is performed by Sekoia.io teams. The timeline depends on your workspace size and region availability. Your Customer Success Manager will confirm the schedule before any action is taken.
+    Migration is performed by our teams. The timeline depends on your workspace size and region availability. Your Customer Success Manager will confirm the schedule before any action is taken.
 
 1. Contact your Customer Success Manager directly or through the Sekoia.io support portal.
 2. Request migration of your workspace to ExaLog.
@@ -44,7 +44,7 @@ Once your workspace is migrated to ExaLog:
 
 ## Related articles
 
-- [ExaLog storage engine](exalog_storage_engine.md) — Learn about ExaLog's capabilities, benefits, and how it differs from the legacy Hot/Cold model.
-- [Data storage and retention](data_storage_and_retention.md) — Overview of both the legacy Hot/Cold model and ExaLog, with guidance on which applies to your workspace.
-- [Restore data from cold storage](https://docs.sekoia.io/xdr/FAQ/restore_data_cold_storage/) — How to rehydrate archived events from cold storage on legacy workspaces.
-- [Events page](https://docs.sekoia.io/xdr/features/investigate/events/) — How to search and filter events in the Sekoia.io investigation interface.
+- [ExaLog storage engine](/xdr/FAQ/exalog_storage_engine.md): Learn about ExaLog's capabilities, benefits, and how it differs from the legacy Hot/Cold model.
+- [Data storage and retention](/xdr/FAQ/data_storage_and_retention.md): Overview of both the legacy Hot/Cold model and ExaLog, with guidance on which applies to your workspace.
+- [Restore data from cold storage](/xdr/FAQ/restore_data_cold_storage.md): How to rehydrate archived events from cold storage on legacy workspaces.
+- [Events page](/xdr/features/investigate/events.md): How to search and filter events in the Sekoia.io investigation interface.
