@@ -9,7 +9,7 @@ type: intake
 - **Detection based on**: Telemetry
 - **Supported application or feature**:
 
-!!! Warning
+!!! Info
     We highly recommend using the [Sekoia.io Endpoint Agent](sekoiaio.md) to collect telemetry from Microsoft Windows endpoints.
 
     Use the Windows integration only when the Sekoia.io Endpoint Agent is not suitable.
