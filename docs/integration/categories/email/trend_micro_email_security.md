@@ -39,7 +39,7 @@ According to the solution you use, the procedure will change:
 
 5. Copy the API Key value and save the value. Keep the API Key private
 
-### How to create an API token ( Trend Vision One )
+=== Trend Vision One 
 
 1. Log in the Trend Vision One console
 2. On the left panel, click `Administration` then click `API keys`
