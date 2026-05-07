@@ -20,7 +20,9 @@ According to the solution you use, the procedure will change:
 - the second method is for those using Trend Vision One
 
 
-### How to create an API token ( Trend Micro Email Security )
+### How to create an API token 
+
+=== Trend Micro Email Security
 
 1. Log on to the Trend Micro Email Security administrator console.
 2. Go to **Administration**
