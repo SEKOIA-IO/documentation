@@ -22,40 +22,40 @@ According to the solution you use, the procedure will change:
 
 ### How to create an API token 
 
-=== Trend Micro Email Security
+=== "Trend Micro Email Security"
 
-1. Log on to the Trend Micro Email Security administrator console.
-2. Go to **Administration**
+    1. Log on to the Trend Micro Email Security administrator console.
+    2. Go to **Administration**
 
-    ![Step 1](/assets/integration/email/trend_micro/step_1.png)
+        ![Step 1](/assets/integration/email/trend_micro/step_1.png)
 
-3. Click on **Service Integration**. The API Access tab displays by default.
+    3. Click on **Service Integration**. The API Access tab displays by default.
 
-    ![Click on Service Integration](/assets/integration/email/trend_micro/step_2.png)
-    
-4. Click **Add** to generate an API Key.
+        ![Click on Service Integration](/assets/integration/email/trend_micro/step_2.png)
 
-    ![Click on Add](/assets/integration/email/trend_micro/step_3.png)
+    4. Click **Add** to generate an API Key.
 
-5. Copy the API Key value and save the value. Keep the API Key private
+        ![Click on Add](/assets/integration/email/trend_micro/step_3.png)
 
-=== Trend Vision One 
+    5. Copy the API Key value and save the value. Keep the API Key private
 
-1. Log in the Trend Vision One console
-2. On the left panel, click `Administration` then click `API keys`
+=== "Trend Vision One"
 
-    ![step 1](/assets/integration/cloud_and_saas/trend_micro_vision_one/01_administration.png)
+    1. Log in the Trend Vision One console
+    2. On the left panel, click `Administration` then click `API keys`
 
-3. Click `Add API key`
+        ![step 1](/assets/integration/cloud_and_saas/trend_micro_vision_one/01_administration.png)
 
-    ![step 2](/assets/integration/cloud_and_saas/trend_micro_vision_one/02_create_api_key.png)
+    3. Click `Add API key`
 
-4. Type a name for the API key
-5. Select the `Email administrator` role and an expiration time
-6. Check `status` to enable the API key
-7. Copy the API key and click `Close`
+        ![step 2](/assets/integration/cloud_and_saas/trend_micro_vision_one/02_create_api_key.png)
 
-    ![step 4](/assets/integration/cloud_and_saas/trend_micro_vision_one/04_save_api_key.png)
+    4. Type a name for the API key
+    5. Select the `Email administrator` role and an expiration time
+    6. Check `status` to enable the API key
+    7. Copy the API key and click `Close`
+
+        ![step 4](/assets/integration/cloud_and_saas/trend_micro_vision_one/04_save_api_key.png)
 
 
 ### Create your intake
