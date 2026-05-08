@@ -23,7 +23,7 @@ To create a new optimization rule, send a POST request to the configuration endp
 2. Prepare your JSON payload including a **description** and an **action**.
 3. Define the scope using **community_uuid** and optionally **dialect_uuid** or **intake_uuid**.
 4. Add your criteria in the **filters** array using a **field**, **operator**, and **value**.
-5. Send the request to `https://api.sekoia.io/v1/sic/conf/intakes/optimization_rules.
+5. Send the request to `https://api.sekoia.io/v1/sic/conf/intakes/optimization_rules`.
 
 !!! warning "Respect field types"
 
