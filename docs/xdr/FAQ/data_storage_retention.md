@@ -52,9 +52,9 @@ Key characteristics of ExaLog:
 | Characteristic | Details |
 |---|---|
 | Retention | Configurable retention window; events linked to alerts or cases are preserved beyond the standard window |
-| Search | All events are immediately searchable within the retention period |
+| Search | All events are searchable within the retention period without delay|
 | Encryption | Data is encrypted at rest; Sekoia.io manages the encryption keys |
-| Export | Large-volume exports to S3-compatible storage are supported |
+| Export | Large-volume exports to S3-compatible storage are supported (available in June 2026)|
 | Regions | ExaLog is being rolled out to all deployment regions |
 
 !!! note "Activation on a new region"
