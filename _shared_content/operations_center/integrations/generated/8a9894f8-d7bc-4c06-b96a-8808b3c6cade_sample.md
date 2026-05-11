@@ -284,3 +284,11 @@ In this section, you will find examples of raw logs as generated natively by the
 
 
 
+=== "test_subject_data"
+
+    ```
+	0000050179 9 4 Subject - Common Name=EXAMPLE, Subject Alternative Name=EXAMPLE.intra.example.net, Subject - Organization Unit=Std, Subject - Organization Unit=Abc, Subject - Organization Unit=Def, CPMSessionID=REDACTED, EndPointMACAddress=02-00-00-00-00-01, PostureAssessmentStatus=NotApplicable, EndPointMatchedProfile=Unknown, ISEPolicySetName=Policy 802.1X, IdentitySelectionMatchedRule=Default,
+    ```
+
+
+
