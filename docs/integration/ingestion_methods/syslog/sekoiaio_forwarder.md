@@ -451,7 +451,7 @@ Create `extended_conf/port514.conf`. The file must define one template per techn
     An rsyslog `input()` can only be bound to one ruleset. The routing logic is intentionally duplicated between `remote514tcp` and `remote514udp`.
 
 !!! note "Regional host"
-    The examples above use `intake.sekoia.io` (FRA1). Adapt the `target` value to match your region.
+    The examples above use `intake.sekoia.io` (FRA1). Adapt the `target` and `StreamDriverPermittedPeers` values to match your region.
 
 ### Step 4 - Reload the forwarder
 
