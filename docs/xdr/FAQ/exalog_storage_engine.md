@@ -4,7 +4,7 @@ ExaLog is Sekoia.io's next-generation log storage and search engine, designed to
 
 ## How ExaLog changes event storage
 
-With the legacy Hot/Cold model, querying older events required a rehydration step to move archived data back into the active index. ExaLog removes this constraint: all events within your configured retention window are directly queryable at any time from the **Events** page, without any intermediate step.
+With the legacy Hot/Cold model, querying older events required a rehydration step to move archived data back into the active index. ExaLog removes this constraint: all events within your configured retention window are directly queryable at any time from the **Events** page, SOL queries, notebooks... without any intermediate step.
 
 Events linked to alerts or cases are preserved in dedicated indexes beyond the standard retention window, ensuring that forensic data remains available for investigation even after the original retention period expires.
 
