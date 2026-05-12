@@ -13,7 +13,7 @@ Review the connector list. A connector with an issue displays an error message i
 !!! note "Zero assets warning"
     If a connector tile shows 0 assets, this may indicate a synchronization issue even if no error message is visible. Inspect the logs to confirm.
 
-> 📸 [SCREENSHOT SUGGESTION: Asset connector list showing one tile with an error badge in the upper right corner and another showing 0 assets. | ALT TEXT: Asset connector tiles, one displaying an error indicator.]
+[!Defective connector with message Error during data collection](/assets/connector_error_mesg.png){: style="width: 100%; max-width: 100%"}
 
 ## Step 2: Open the connector logs
 
@@ -22,7 +22,7 @@ Review the connector list. A connector with an issue displays an error message i
 
 The full log list opens.
 
-> 📸 [SCREENSHOT SUGGESTION: Connector log view showing a list of timestamped log entries with error and info level entries visible. | ALT TEXT: Asset connector log list with error entries.]
+[!Asset connector log list with error entries](/assets/connector_logs.png){: style="width: 100%; max-width: 100%"}
 
 ## Step 3: Diagnose the issue
 
@@ -44,14 +44,12 @@ If the issue is caused by a misconfiguration or expired credentials:
 3. Select **Edit**.
 4. Update the relevant fields such as the API key, client ID, or scope.
 5. Select **Test connector** to validate the updated credentials.
-6. When the test is conclusive, select **Save**.
+6. When the test is conclusive, select **Edit asset connector**.
 
 The connector resumes synchronization with the updated configuration.
 
 !!! note "What the test checks"
     The test validates credentials only. It does not retrieve assets or confirm that the scope configuration is correct. Verify asset retrieval from the **Assets** page after saving.
-
-> 📸 [SCREENSHOT SUGGESTION: Connector edit form open with the API key field highlighted, and the Test connector button visible at the bottom. | ALT TEXT: Connector edit form with credential fields and test button.]
 
 ## Related links
 
