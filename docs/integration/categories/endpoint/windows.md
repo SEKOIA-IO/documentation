@@ -198,6 +198,27 @@ To get started, follow these steps:
 
 !!! Warning
     `OutputType Syslog_TLS` is needed for `TCP` transport even if you do not encrypt data. It does not depend on SSL transport at all.
+
+### Timezone management with a central forwarder
+
+When forwarding logs through a central forwarder, it is crucial to handle timezone information correctly to avoid events appearing in the future on Sekoia.io.
+
+!!! warning "Disclaimer: Timezone Management Architecture"
+    Depending on your topology, if logs are passing through a central forwarder, you must consider the timezone configured on this forwarder:
+    
+    - **Forwarder configured in UTC**: The recommended and simplest topology is to configure your central forwarder's system timezone to **UTC**. This natively avoids any offset issues.
+    - **Forwarder configured in Local Time**: If your forwarder must remain in a local timezone, you **must use NXLog Enterprise Edition**. The free NXLog Community Edition does not support the advanced syslog directives required to enforce the timezone offset.
+
+If you are using **NXLog Enterprise Edition** and need to specify an extra parameter to append the correct timezone, you can use the `IETFDefaultTZ` directive in your `xm_syslog` configuration block:
+
+```apache
+<Extension _syslog>
+    Module xm_syslog
+    IETFDefaultTZ +02:00
+</Extension>
+```
+
+You can find more information about this extra parameter and NXLog Enterprise on the [NXLog Platform Documentation](https://docs.nxlog.co/platform/current/landing.html) and in the [xm_syslog optional directives reference](https://docs.nxlog.co/refman/v6.1/xm/syslog.html#optional-directives).
   **Remove it ONLY** if you use `UDP` - `om_udp`.
     For more information, consult [NXLog documentation.](https://docs.nxlog.co/refman/current/xm/syslog.html)
 
