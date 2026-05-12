@@ -423,7 +423,7 @@ nav:
       - Akamai Guardicore On-Premises: integration/categories/network_security/akamai_guardicore_onprem.md
       - Akamai Guardicore Saas: integration/categories/network_security/akamai_guardicore_saas.md
       - Akamai WAF: integration/categories/network_security/akamai_waf.md
-      - Aleph: integration/categories/network_security/aleph_alerts.md
+      - Aleph Alerts: integration/categories/network_security/aleph_alerts.md
       - AWS CloudTrail: integration/categories/network_security/aws_cloudtrail.md
       - Amazon CloudFront Logs: integration/categories/network_security/aws_cloudfront.md
       - Amazon GuardDuty: integration/categories/network_security/aws_guardduty.md
