@@ -14,6 +14,9 @@ Events linked to alerts or cases are preserved in dedicated indexes beyond the s
 
 ExaLog handles all search queries initiated from the **Events** page, including searches scoped to events involved in alerts. There is no distinction between recent and older events within the retention window.
 
+!!! tip "Get the most out of extended retention"
+    ExaLog makes more historical data available than ever. To keep your searches fast and accurate, always specify a time range in your queries. Without one, a query targets your entire retention window, which can slow down results significantly.
+
 ### Retrohunt and anomaly detection
 
 You can run retrohunt queries and anomaly detection jobs across the full configured retention window. This allows you to hunt for threats over extended historical datasets without being limited by shorter query horizons.
