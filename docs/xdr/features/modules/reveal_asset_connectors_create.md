@@ -19,20 +19,21 @@ Confirm that the following conditions are met:
 
 The asset connectors panel opens and lists your existing connectors.
 
-> 📸 [SCREENSHOT SUGGESTION: Asset connectors panel showing an empty connector list and the New connector button in the upper right area. | ALT TEXT: Asset connectors panel with no connectors configured.]
+![!Asset connectors panel](/assets/asset_connector_panel.png){: style="width: 100%; max-width: 100%"}
+
 
 ### Step 2: Select an integration
 
 1. Select **New connector**.
 2. In the integration catalog, select the integration you want to configure.
 
-> 📸 [SCREENSHOT SUGGESTION: Integration catalog showing a grid of available connector types such as CrowdStrike, Tenable, and Microsoft Entra. | ALT TEXT: Integration catalog for asset connectors.]
+![!Integration catalog for asset connector]( docs/assets/connector_choice.png){: style="width: 100%; max-width: 100%"}
 
 ### Step 3: Fill in the connector form
 
-Enter the required fields for the selected integration. The fields vary by integration type and typically include a connector name, credentials (API key, client ID and secret, or service account), and the scope or environment to synchronize.
+Enter the required fields for the selected integration. The fields vary by integration type and typically include a connector name, and an Account to synchronize.
 
-> 📸 [SCREENSHOT SUGGESTION: Connector configuration form showing name, API key, and scope fields for an example integration. | ALT TEXT: Asset connector configuration form.]
+![!Asset connectors configuration form](docs/assets/connector_config.png){: style="width: 100%; max-width: 100%"} 
 
 ### Step 4: Test the connector
 
