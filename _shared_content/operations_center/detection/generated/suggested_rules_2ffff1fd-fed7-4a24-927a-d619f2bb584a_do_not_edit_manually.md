@@ -309,6 +309,12 @@ The following Sekoia.io built-in rules match the intake **ESET Protect**. This d
     
     - **Effort:** elementary
 
+??? abstract "Potential macOS SSH Brute Force Detected"
+    
+    Detects a potential ssh bruteforce to gain access to accounts.
+    
+    - **Effort:** advanced
+
 ??? abstract "Powershell Web Request"
     
     Detects the use of various web request methods executed remotely via Windows PowerShell.

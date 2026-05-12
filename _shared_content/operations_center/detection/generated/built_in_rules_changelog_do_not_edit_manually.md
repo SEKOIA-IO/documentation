@@ -1,7 +1,10 @@
-Changelog _last update on 2026-04-22_
+Changelog _last update on 2026-05-12_
 
 ## Changelog
 
+### Erase Shell History
+  - 05/05/2026 - minor - improve filter to reduce false positives
+    
 ### Stop Backup Services
   - 02/04/2026 - minor - Adding regex to reduce false positives.
   - 21/06/2024 - major - Update detection pattern for ECS fields/value compliance
