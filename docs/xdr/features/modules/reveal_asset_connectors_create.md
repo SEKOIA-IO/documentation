@@ -1,0 +1,70 @@
+# Create an asset connector
+
+Asset connectors link external systems to Sekoia so that asset records can be created, merged, and enriched with structured data from sources such as EDR tools, vulnerability scanners, identity providers, and CMDBs. This article explains how to create a new asset connector and verify that it is working.
+
+## Before you begin
+
+Confirm that the following conditions are met:
+
+- The Reveal add-on module is enabled for your community.
+- You have the credentials required by the integration you want to connect (API key, client ID, service account, or equivalent).
+
+## Create an asset connector
+
+### Step 1: Open the asset connectors panel
+
+1. In the left menu, select **Configure**.
+2. Select **Assets**.
+3. Select **Asset connectors**.
+
+The asset connectors panel opens and lists your existing connectors.
+
+> 📸 [SCREENSHOT SUGGESTION: Asset connectors panel showing an empty connector list and the New connector button in the upper right area. | ALT TEXT: Asset connectors panel with no connectors configured.]
+
+### Step 2: Select an integration
+
+1. Select **New connector**.
+2. In the integration catalog, select the integration you want to configure.
+
+> 📸 [SCREENSHOT SUGGESTION: Integration catalog showing a grid of available connector types such as CrowdStrike, Tenable, and Microsoft Entra. | ALT TEXT: Integration catalog for asset connectors.]
+
+### Step 3: Fill in the connector form
+
+Enter the required fields for the selected integration. The fields vary by integration type and typically include a connector name, credentials (API key, client ID and secret, or service account), and the scope or environment to synchronize.
+
+> 📸 [SCREENSHOT SUGGESTION: Connector configuration form showing name, API key, and scope fields for an example integration. | ALT TEXT: Asset connector configuration form.]
+
+### Step 4: Test the connector
+
+Select **Test connector** to validate your credentials before saving.
+
+!!! note "What the test checks"
+    The test validates your credentials only. It does not retrieve assets or logs. A successful test confirms that Sekoia can authenticate with the external system.
+
+### Step 5: Create the connector
+
+When the test is conclusive, select **Create asset connector**.
+
+The connector starts retrieving asset data from the external system. Asset retrieval is progressive. Depending on the size of your environment and the integration, the first assets may take several minutes to appear.
+
+!!! note "Where to find your assets"
+    All assets retrieved by connectors are available on the **Assets** page. You can monitor connector health from the asset context panel under the **Security controls** tab.
+
+## Manage existing connectors
+
+From the asset connector list, you can perform the following actions on any connector tile:
+
+| Action | How to access |
+|---|---|
+| Enable or disable | Toggle on the connector tile |
+| Edit configuration | Select **...** then select **Edit** |
+| View logs | Select **...** then select **View logs** |
+| Delete | Select **...** then select **Delete** |
+
+## Related links
+
+- [Troubleshoot asset connectors](/xdr/features/modules/reveal_asset_connectors_troubleshoot.md) — How to diagnose and resolve connector errors using error indicators and logs.
+- [Reveal feature enablement matrix](/xdr/features/modules/reveal_feature_enablement.md) — Which data sources are required or optional for each Reveal capability.
+- [Getting started with Reveal](/xdr/features/modules/reveal_getting_started.md) — Recommended setup order for all Reveal data sources.
+- [Integration — Asset categories](/xdr/integration/assets_categories/overview.md) — Reference for available connector categories and integration setup.
+- [Security controls](/xdr/features/modules/reveal_security_controls.md) — How to verify connector coverage from the asset context panel.
