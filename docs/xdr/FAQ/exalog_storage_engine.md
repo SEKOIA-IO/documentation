@@ -22,10 +22,6 @@ You can run retrohunt queries and anomaly detection jobs across the full configu
 
 Detection rules and correlation logic operate over the full ExaLog retention window, enabling rule-based detections to cover longer time ranges.
 
-### Massive event export
-
-ExaLog supports large-volume exports to S3-compatible external storage, preserving your ability to archive or transfer data to external systems.
-
 ## Benefits
 
 | Benefit | Description |
