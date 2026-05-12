@@ -4,7 +4,7 @@ type: playbook
 
 # Stormshield
 
-![Stormshield](/assets/playbooks/library/stormshield.png){ align=right width=150 }
+![Stormshield](/assets/playbooks/library/stormshield-ses.png){ align=right width=150 }
 
 Stormshield Network Security is a range of network security appliances.
 
