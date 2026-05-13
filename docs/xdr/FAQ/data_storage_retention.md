@@ -1,6 +1,6 @@
 # Data storage and retention
 
-Sekoia.io stores and indexes security events to support detection, investigation, and compliance. The storage model depends on when your workspace was provisioned: workspaces created before May 2026 use a two-tier Hot/Cold architecture, while workspaces created from May 2026 onward use ExaLog, Sekoia.io's next-generation storage and search engine.
+Sekoia.io stores and indexes security events to support detection, investigation, and compliance. The storage model depends on when your workspace was provisioned: workspaces created before May 2026 use a two-tier Hot/Cold storage architecture, while workspaces created from May 2026 onward use ExaLog, Sekoia.io's next-generation storage and search engine with a single, long-term hot storage layer.
 
 !!! note "Ongoing migration"
     Existing workspaces are being migrated to ExaLog progressively. Contact your Customer Success Manager to check your workspace status or to initiate the migration.
