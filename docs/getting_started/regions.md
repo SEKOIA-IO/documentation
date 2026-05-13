@@ -263,3 +263,43 @@ USA1 is our northern america region hosted in OVH (USA East, Virginia).
     </tbody>
 </table>
 
+## Singapore - SGP1
+
+SGP1 is our south Asia region hosted in OVH/Akamai. 
+
+<table style="width:100%">
+    <tbody>
+        <tr>
+            <td><strong>Name</strong></td>
+            <td><strong>USA1</strong></td>
+        </tr>
+        <tr>
+            <td>Location</td>
+            <td>🇸🇬 Singapore / East</td>
+        </tr>
+        <tr>
+            <td>Infrastructure</td>
+            <td>OVH / Akamai</td>
+        </tr>
+        <tr>
+            <td>URL</td>
+            <td><a href="https://app.usa1.sekoia.io">https://app.sgp1.sekoia.io</a></td>
+        </tr>
+        <tr>
+            <td>API</td>
+            <td><a href="https://api.sgp1.sekoia.io">https://api.sgp1.sekoia.io</a></td>
+        </tr>
+        <tr>
+            <td>HTTP Intake</td>
+            <td><a href="https://intake.sgp1.sekoia.io">https://intake.sgp1.sekoia.io</a></td>
+        </tr>
+        <tr>
+            <td>Syslog Intake</td>
+            <td><a href="intake.sgp1.sekoia.io:10514">intake.sgp1.sekoia.io:10514</a></td>
+        </tr>
+        <tr>
+            <td>Syslog RELP Intake</td>
+            <td><a href="intake.sgp1.sekoia.io:11514">intake.sgp1.sekoia.io:11514</a></td>
+        </tr>
+    </tbody>
+</table>
