@@ -96,50 +96,6 @@ SecNumCloud compliant infrastructure - For companies requiring PCI/DSS complianc
     </tbody>
 </table>
 
-## Amsterdam - EUR1
-
-!!! warning
-    ✋ Region not available yet - Coming soon
-
-For companies requiring their data to be in Europe: 
-
-<table style="width:100%">
-    <tbody>
-        <tr>
-            <td><strong>Name</strong></td>
-            <td><strong>EUR1</strong></td>
-        </tr>
-        <tr>
-            <td>Location</td>
-            <td>🇪🇺Europe / 🇳🇱Amsterdam, 🇮🇪Dublin</td>
-        </tr>
-        <tr>
-            <td>Infrastructure</td>
-            <td>Microsoft Azure</td>
-        </tr>
-        <tr>
-            <td>URL</td>
-            <td> <i>Coming soon</i></td>
-        </tr>
-        <tr>
-            <td>API</td>
-            <td> <i>Coming soon</i></td>
-        </tr>
-        <tr>
-            <td>HTTP Intake</td>
-            <td> <i>Coming soon</i></td>
-        </tr>
-        <tr>
-            <td>Syslog Intake</td>
-            <td> <i>Coming soon</i></td>
-        </tr>
-        <tr>
-            <td>Syslog RELP Intake</td>
-            <td> <i>Coming soon</i></td>
-        </tr>
-    </tbody>
-</table>
-
 ## Monaco - MCO1
 
 For companies requiring their data to be hosted in Monaco: 
@@ -271,7 +227,7 @@ SGP1 is our south Asia region hosted in OVH/Akamai.
     <tbody>
         <tr>
             <td><strong>Name</strong></td>
-            <td><strong>USA1</strong></td>
+            <td><strong>SGP1</strong></td>
         </tr>
         <tr>
             <td>Location</td>
