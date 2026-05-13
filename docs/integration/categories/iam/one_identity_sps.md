@@ -52,6 +52,17 @@ Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a n
 
 ![Step 5](/assets/integration/iam/oneidentity_sps/Step 05.webp){: style="max-width:100%"}
 
+!!! warning "Forward raw CEF, without a syslog header"
+    The parser expects each message to start with `CEF:0|...`, exactly as shown in the [Raw Events Samples](#raw-events-samples) below. If your log concentrator (Sekoia.io forwarder, Rsyslog, Syslog-NG, etc.) prepends a syslog header (timestamp and hostname) before relaying to Sekoia.io, events will not be parsed.
+
+    Example of a payload that **will not** be parsed (note the leading timestamp and hostname):
+
+    ```
+    2026-05-06T13:48:15+02:00 hostname.example.local CEF:0|OneIdentity|SPS|8.1.1|127084214|CommandChannelEvent|0|app=SSH ...
+    ```
+
+    Configure your forwarder to strip the syslog header so that only the CEF payload (starting with `CEF:0|`) is sent to Sekoia.io. For example, with Rsyslog, use a template that outputs `$msg` only; with Syslog-NG, use `template("${MESSAGE}\n")` on the destination.
+
 {!_shared_content/operations_center/integrations/generated/94d4ef59-638c-4230-b38d-e4a1381db8ed_sample.md!}
 
 {!_shared_content/integration/detection_section.md!}
