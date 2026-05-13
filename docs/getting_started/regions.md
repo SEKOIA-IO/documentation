@@ -283,7 +283,7 @@ SGP1 is our south Asia region hosted in OVH/Akamai.
         </tr>
         <tr>
             <td>URL</td>
-            <td><a href="https://app.usa1.sekoia.io">https://app.sgp1.sekoia.io</a></td>
+            <td><a href="https://app.sgp1.sekoia.io">https://app.sgp1.sekoia.io</a></td>
         </tr>
         <tr>
             <td>API</td>
