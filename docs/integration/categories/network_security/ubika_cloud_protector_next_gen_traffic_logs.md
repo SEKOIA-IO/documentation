@@ -6,7 +6,7 @@ type: intake
 
 Ubika Cloud Protector's Next Generation Traffic Logs feature gives organizations real-time visibility into every byte of network activity across their cloud environments. This detailed traffic intelligence empowers teams to optimize network operations and swiftly detect—and respond to—unusual behavior before it impacts their infrastructure.
 
-- **Vendor**:Ubika
+- **Vendor**: Ubika
 - **Supported environment**: SaaS
 - **Detection based on**: Telemetry
 - **Supported application or feature**: Web application firewall logs
