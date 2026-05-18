@@ -26,5 +26,9 @@ If the problem persists, collect and send the network logs to us so we can inves
 6. Find the sekoiaNetlog file in the Downloads folder on your computer
 7. Send us a message with the file attached
 
+**Step 3: Create and send a HAR archive**
+
+Generate a HAR (HTTP Archive) file to capture all network activity in your browser. This gives us a detailed trace of requests and responses to further investigate the issue.
+
 !!! note
     If you don't use Chrome as your browser, send us a message and we'll help you resolve the issue.
