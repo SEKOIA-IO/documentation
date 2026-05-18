@@ -38,7 +38,7 @@ Detection rules and correlation logic operate over the full ExaLog retention win
 
 ## Availability and migration
 
-ExaLog reached general availability in May 2026. By default, all new workspaces are provisioned on ExaLog. Existing workspaces are migrated progressively.
+ExaLog reached general availability on FRA1 and SGP1 regions in May 2026. By default, all new workspaces are provisioned on ExaLog. Existing workspaces are migrated progressively.
 
 !!! note "Activation on a new region"
     When ExaLog becomes available in a new region, only events ingested after the activation date are indexed in ExaLog. Existing data is not migrated retroactively. Full capabilities become available progressively as your original retention window expires.
