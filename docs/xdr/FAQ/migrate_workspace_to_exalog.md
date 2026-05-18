@@ -6,7 +6,7 @@ ExaLog is Sekoia.io's next-generation storage engine. Migrating gives you access
 
 ## Prerequisites
 
-- Your worspace is on FRA1 region.
+- Your workspace is on FRA1 region.
 - Your workspace was created before May 2026 (workspaces created from May 2026 onward on FRA 1 and SGP1 are already on ExaLog).
 - You have a Customer Success Manager assigned to your account.
 
