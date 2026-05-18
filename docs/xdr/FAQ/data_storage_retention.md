@@ -44,7 +44,7 @@ Retention periods are strictly governed by your contractual agreement.
 
 ## ExaLog (current model)
 
-ExaLog is Sekoia.io's next-generation log storage and search engine. It replaces the Hot/Cold architecture and is available for all workspaces created from May 2026 onward.
+ExaLog is Sekoia.io's next-generation log storage and search engine. It replaces the Hot/Cold architecture and is available for all FRA1 and SGP1 regions' workspaces created from May 2026 onward.
 
 ExaLog provides a unified retention window with no distinction between hot and cold tiers. All events within your configured retention period are directly queryable from the **Events** page without any rehydration step.
 
