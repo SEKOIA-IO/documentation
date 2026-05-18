@@ -3,9 +3,9 @@
 Sekoia.io stores and indexes security events to support detection, investigation, and compliance. The storage model depends on when your workspace was provisioned: workspaces created before May 2026 use a two-tier Hot/Cold storage architecture, while workspaces created from May 2026 onward on FRA1 and SGP1 regions use ExaLog, Sekoia.io's next-generation storage and search engine with a single, long-term hot storage layer.
 
 !!! note "Ongoing migration"
-    ExaLog is available on FRA1 and SGP1 only in May 2026.
-    Existing workspaces on these regions are being migrated to ExaLog progressively. Contact your Customer Success Manager to check your workspace status or to initiate the migration.
+    Existing workspaces on FRA1 are being migrated to ExaLog progressively starting in May 2026. Contact your Customer Success Manager to check your workspace status or to initiate the migration.
 
+    
 ## Hot/Cold storage (legacy model)
 
 Workspaces that have not yet been migrated to ExaLog use a hybrid two-tier storage model.
@@ -44,7 +44,7 @@ Retention periods are strictly governed by your contractual agreement.
 
 ## ExaLog (current model)
 
-ExaLog is Sekoia.io's next-generation log storage and search engine. It replaces the Hot/Cold architecture and is available for all FRA1 and SGP1 regions' workspaces created from May 2026 onward.
+ExaLog is Sekoia.io's next-generation log storage and search engine. It replaces the Hot/Cold architecture and is available for all workspaces in the FRA1 and SGP1 regions created from May 2026 onward.
 
 ExaLog provides a unified retention window with no distinction between hot and cold tiers. All events within your configured retention period are directly queryable from the **Events** page without any rehydration step.
 
