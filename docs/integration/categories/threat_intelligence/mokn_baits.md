@@ -76,29 +76,3 @@ Collected events include the main attempt metadata exposed by MokN, including:
 - Credential check history
 
 The integration emits MokN bait attempts with the event action `mokn_bait_attempt` and the dataset `mokn.bait_attempt`.
-
-## Response Actions
-
-### Comment Attempt
-
-Use the `Comment Attempt` action to add or update the comment of a specific MokN attempt.
-
-Required parameters:
-
-- `attempt_id`: Identifier of the MokN attempt
-- `comment`: Comment to add to the attempt
-
-### Request MokN Credential Check
-
-Use the `Request MokN Credential Check` action to trigger a credential check for a specific MokN attempt.
-
-Required parameters:
-
-- `attempt_id`: Identifier of the MokN attempt
-
-## Use Cases
-
-This integration is useful to:
-
-- Monitor targeted and opportunistic authentication activity observed by MokN
-- Enrich investigations with leak context, attacker telemetry, and JA4H fingerprints
