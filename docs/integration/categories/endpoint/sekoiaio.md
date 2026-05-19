@@ -68,6 +68,10 @@ The Sekoia.io Endpoint Agent uses the HTTPS protocol to send its events and has 
     * <https://intake.usa1.sekoia.io/>
     * <https://app.usa1.sekoia.io/>
 
+=== "SGP1"
+    * <https://intake.sgp1.sekoia.io/>
+    * <https://app.sgp1.sekoia.io/>
+
 
 ## Installation
 

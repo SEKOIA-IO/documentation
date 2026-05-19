@@ -40,6 +40,7 @@ Select the host address that matches your Sekoia.io region:
 | MCO1 | `intake.mco1.sekoia.io` | `10514` |
 | UAE1 | `intake.uae1.sekoia.io` | `10514` |
 | USA1 | `intake.usa1.sekoia.io` | `10514` |
+| SGP1 | `intake.sgp1.sekoia.io` | `10514` |
 
 ## Configure the concentrator
 
