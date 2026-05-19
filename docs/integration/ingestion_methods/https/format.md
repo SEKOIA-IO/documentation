@@ -1,18 +1,51 @@
 # Formatting options
 
-To forward logs to Sekoia.io, several options format are available:
+To forward logs to Sekoia.io, several formatting options are available:
 
 - Send your events as line-oriented records
 - Send your events as a JSON object
 - Send your events as a structured payload
 
-For each option, we will have to supply an intake key. The collector endpoint of Sekoia.io will provide event identifiers within the Sekoia.io detection workflow in the form of a JSON payload.
+For each option, we have to supply an intake key. The collector endpoint of Sekoia.io will provide event identifiers within the Sekoia.io detection workflow in the form of a JSON payload.
+
+## Select the intake endpoint for your region
+
+Sekoia.io supports multiple regions for HTTP ingestion.
+
+FRA1 keeps the historical URL scheme, while all other regions use the new API-prefixed scheme.
+
+Use the right endpoint for your region:
+
+| Region | Endpoint |
+|--------|-------------------|
+| FRA1 | `https://intake.sekoia.io/<path>` |
+| FRA2 | `https://intake.fra2.io/api/v1/intake-http/<path>` |
+| MC01 | `https://intake.mc01.io/api/v1/intake-http/<path>` |
+| UAE1 | `https://intake.uae1.io/api/v1/intake-http/<path>` |
+| USA1 | `https://intake.usa1.io/api/v1/intake-http/<path>` |
+| SGP1 | `https://intake.sgp1.io/api/v1/intake-http/<path>` |
+
+To derive other ingestion paths `/<path>` from this page, use:
+
+- FRA1 base URL: `https://intake.sekoia.io`
+- Other regions base URL: `https://intake.<region>.io/api/v1/intake-http`
+
+Then append the path `/<path>` (examples: `/plain`, `/plain/batch`, `/jsons`, `/batch`, `/array`, etc.) to the corresponding regional base URL.
+
+Examples:
+- `https://intake.sekoia.io/batch`
+- `https://intake.fra2.io/api/v1/intake-http/batch`
+- `https://intake.mc01.io/api/v1/intake-http/jsons`
+- `https://intake.uae1.io/api/v1/intake-http/plain/batch`
+
+!!! warning
+    The examples below use FRA1 URLs for readability. For other regions, replace the base URL with your regional endpoint.
 
 ## Push our events to Sekoia.io as line-oriented records
 
 To forward events as plain records, you can use the `/plain` endpoint.
 
-The following headers are handled by Sekoia.io’S HTTPS log collector:
+The following headers are handled by Sekoia.io's HTTPS log collector:
 
 | Header                       | Mandatory? | Type     | Description                                                                            |
 |------------------------------|------------|----------|----------------------------------------------------------------------------------------|
@@ -20,7 +53,7 @@ The following headers are handled by Sekoia.io’S HTTPS log collector:
 | `X-SEKOIAIO-EVENT-TIMESTAMP` | No         | Datetime | Event date if you want to push your own date (fallback is to use the reception’s date) |
 
 
-Supply the intake key as the header `X-SEKOIAIO-INTAKE-KEY`, as password in the HTTP Basic authentication mechanism or as a parameter in the querystring.
+Supply the intake key as the header `X-SEKOIAIO-INTAKE-KEY`, as password in the HTTP Basic authentication mechanism, or as a parameter in the query string.
 
 To push one event, just POST content to `https://intake.sekoia.io/plain`
 
@@ -121,7 +154,7 @@ curl -X POST -H "X-SEKOIAIO-INTAKE-KEY: REPLACE_BY_INTAKE_KEY" --data-binary @ev
 
 To send us events as a JSON list, you should set `Content-Type` HTTP header to `application/json`.
 
-The following headers are handled by Sekoia.io’S HTTPS log collector:
+The following headers are handled by Sekoia.io's HTTPS log collector:
 
 | Header                       | Mandatory? | Type     | Description                                                                            |
 |------------------------------|------------|----------|----------------------------------------------------------------------------------------|
@@ -129,7 +162,7 @@ The following headers are handled by Sekoia.io’S HTTPS log collector:
 | `X-SEKOIAIO-EVENT-TIMESTAMP` | No         | Datetime | Event date if you want to push your own date (fallback is to use the reception’s date) |
 
 
-Supply the intake key as the header `X-SEKOIAIO-INTAKE-KEY`, as password in the HTTP Basic authentication mechanism or as a parameter in the querystring.
+Supply the intake key as the header `X-SEKOIAIO-INTAKE-KEY`, as password in the HTTP Basic authentication mechanism, or as a parameter in the query string.
 
 Use the endpoint `/jsons`. This endpoint accepts a set of events:
 
@@ -223,11 +256,11 @@ If your events are enclosed in a JSON object, use the endpoint `/jsons` and prov
 
 To send us events, you should set `Content-Type` HTTP header to `application/json`.
 
-The following fields are currently handled by Sekoia.io’S HTTPS log collector:
+The following fields are currently handled by Sekoia.io's HTTPS log collector:
 
 | Field         | Mandatory? | Type     | Description                                                                                            |
 |---------------|------------|----------|--------------------------------------------------------------------------------------------------------|
-| `intakey_key` | Yes        | String   | Intake to which you would like to push events to                                                       |
+| `intake_key`  | Yes        | String   | Intake to which you would like to push events to                                                       |
 | `json`        | Yes        | String   | The actual log payload. If you want to push structured JSON logs, please send them as quoted JSON here |
 | `@timestamp`  | No         | Datetime | Event date if you want to push your own date (fallback is to use the reception’s date)                 |
 
