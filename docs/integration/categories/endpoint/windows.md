@@ -194,7 +194,6 @@ To get started, follow these steps:
 
 !!! Warning
     `OutputType Syslog_TLS` is needed for `TCP` transport even if you do not encrypt data. It does not depend on SSL transport at all.
-
   **Remove it ONLY** if you use `UDP` - `om_udp`.
     For more information, consult [NXLog documentation.](https://docs.nxlog.co/refman/current/xm/syslog.html)
 
