@@ -14,25 +14,17 @@ Sekoia.io supports multiple regions for HTTP ingestion.
 
 FRA1 keeps the historical URL scheme, while all other regions use the new API-prefixed scheme.
 
-Use the right endpoint for your region:
+The Sekoia regions are listed and documented [here](https://docs.sekoia.io/getting_started/regions/)
 
-| Region | Endpoint |
-|--------|-------------------|
-| FRA1 | `https://intake.sekoia.io/<path>` |
-| FRA2 | `https://intake.fra2.sekoia.io/api/v1/intake-http/<path>` |
-| MCO1 | `https://intake.mco1.sekoia.io/api/v1/intake-http/<path>` |
-| UAE1 | `https://intake.uae1.sekoia.io/api/v1/intake-http/<path>` |
-| USA1 | `https://intake.usa1.sekoia.io/api/v1/intake-http/<path>` |
-| SGP1 | `https://intake.sgp1.sekoia.io/api/v1/intake-http/<path>` |
-
-To derive other ingestion paths `/<path>` from this page, use:
+Endpoints must be built from regional base URLs:
 
 - FRA1 base URL: `https://intake.sekoia.io`
 - Other regions base URL: `https://intake.<region>.sekoia.io/api/v1/intake-http`
 
-Then append the path `/<path>` (examples: `/plain`, `/plain/batch`, `/jsons`, `/batch`, `/array`, etc.) to the corresponding regional base URL.
+Then append the path `/<path>` (e.g., `/plain`, `/plain/batch`, `/jsons`, `/batch`, `/array`, etc.) to the corresponding regional base URL.
 
 Examples:
+
 - `https://intake.sekoia.io/batch`
 - `https://intake.fra2.sekoia.io/api/v1/intake-http/batch`
 - `https://intake.mco1.sekoia.io/api/v1/intake-http/jsons`

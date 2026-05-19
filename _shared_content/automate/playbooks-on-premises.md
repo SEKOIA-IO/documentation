@@ -101,9 +101,10 @@ Checking connectivity with the object storage ... OK
 !!! tip
     The `-e` option can be passed to the docker command to specify:
 
-    * The region: `-e region=<region>`, where `<region>` is one of `fra1`, `fra2`, `mco1`, `uae1`, `usa1`, `sgp1` (e.g., `-e region=mco1` for MCO1 region)
+    * The region: `-e region=<region>` (e.g., `-e region=mco1` for MCO1 region)
     * Proxy information: `-e https_proxy=<proxy_url>`
 
+The Sekoia regions are listed and documented [here](https://docs.sekoia.io/getting_started/regions/)
 
 ## Playbook runners
 
@@ -125,7 +126,7 @@ To create a playbook runner, follow these steps:
 Your newly created playbook runner should now appear in the list. It will also be shown when configuring any playbook action.
 
 !!! tip
-    To specify a region when installing the runner, add the `--region` argument to the installation command. Accepted values are: `fra1`, `fra2`, `mco1`, `uae1`, `usa1`, `sgp1`.
+    To specify a region when installing the runner, add the `--region` argument to the installation command.
 
 ### Use a runner in a playbook action
 
