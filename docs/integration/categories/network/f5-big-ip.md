@@ -46,7 +46,7 @@ F5's BIG-IP is a family of products covering software and hardware designed arou
 
 ## Step-by-Step Configuration Procedure
 
-!!! warning "Important prerequisite regarding timezones"
+!!! Warning
     To avoid time offset issues when events are parsed by Sekoia.io (e.g. events appearing to happen in the future), you *must* configure your system's timezone to **UTC**.
     You can find more information in the [Sekoia timezone requirements document](https://docs.sekoia.io/xdr/FAQ/datetime/).
     
