@@ -25,10 +25,6 @@ Additionally, this documentation will offer guidance on collecting and forwardin
 !!! Warning
     Please be advised that collecting Windows events with NXLog on certain Windows languages that contain accents (such as French for "Système" keyword), are not correctly encoded by NXLog and results in an error of interpretation on our product. In such case, please consider the installation of our [agent](https://docs.sekoia.io/integration/integrations/endpoint/sekoiaio/) on the supported OS.
 
-!!! Warning "Important prerequisite regarding timezones"
-    To avoid time offset issues when events are parsed by Sekoia.io (e.g. events appearing to happen in the future), you *must* configure your server's timezone to **UTC**. 
-    You can find more information in the [Sekoia timezone requirements document](https://docs.sekoia.io/xdr/FAQ/datetime/).
-
 ## Windows Event logs
 
 On Microsoft Windows workstations and servers, most of the important hardware and software activities that are relevant for security detection and analysis, are logged into three files:
