@@ -71,6 +71,11 @@ To ensure a bug-free installation, the Sekoia Endpoint Agent must be able to com
     - minio-symphony.prod.sekoia.io
     - ...
 
+!!! note
+    The domains listed above apply to the **FRA1** region.
+    For other regions, the agent will communicate with region-specific endpoints (e.g., `app.fra2.sekoia.io`, `api.fra2.sekoia.io` for FRA2 region).
+    The required domains for your region are displayed during the playbook runner installation in the Sekoia.io interface.
+
 ### Testing the prerequisites
 
 We've prepared a Docker image to facilitate the validation process and ensure the environment is properly configured for agent installation.
@@ -83,7 +88,7 @@ docker run ghcr.io/sekoia-io/hello-sekoia:latest
 
 This command will initiate the image download, effectively verifying whether the host system can successfully access the Docker registry and establish connectivity with Sekoia.io.
 
-Here's an example of the expected output for your reference:
+Here's an example of the expected output for your reference (FRA1 region):
 
 ```
 Checking container runs in Docker ... OK
@@ -96,7 +101,7 @@ Checking connectivity with the object storage ... OK
 !!! tip
     The `-e` option can be passed to the docker command to specify:
 
-    * The region: `-e region=mco1`
+    * The region: `-e region=<region>`, where `<region>` is one of: `fra1`, `fra2`, `mco1`, `uae1`, `usa1`, `sgp1`
     * Proxy information: `-e https_proxy={proxy_url}`
 
 
@@ -120,7 +125,7 @@ To create a playbook runner, follow these steps:
 Your newly created playbook runner should now appear in the list. It will also be shown when configuring any playbook action.
 
 !!! tip
-    To specify a region when installing the runner, the `--region` argument can be added to the command.
+    To specify a region when installing the runner, add the `--region` argument to the installation command. Accepted values are: `fra1`, `fra2`, `mco1`, `uae1`, `usa1`, `sgp1`.
 
 ### Use a runner in a playbook action
 
