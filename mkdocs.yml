@@ -220,6 +220,8 @@ nav:
   - Use your own CTI in Sekoia.io: xdr/usecases/use_your_own_cti.md
   - Investigate overusage: xdr/usecases/playbook/investigate_overusage.md
   - Log volume reduction strategies: xdr/usecases/playbook/log_volume_reduction_strategies.md
+
+
 - FAQ and troubleshooting:
   - General: xdr/FAQ.md
   - Alerts: xdr/FAQ/Alerts_qa.md
@@ -227,8 +229,11 @@ nav:
     - Events FAQ: xdr/FAQ/get_events.md
     - Events QA: xdr/FAQ/Events_qa.md
     - Facing issues with logs collection: xdr/FAQ/Log_collection_Troubleshoot.md
+  - Storage:
     - Data storage and retention: xdr/FAQ/data_storage_retention.md
     - Restore Data from cold storage: xdr/FAQ/restore_data_cold_storage.md
+    - Understand Exalog storage engine: xdr/FAQ/exalog_storage_engine.md
+    - Migrate to Exalog: xdr/FAQ/migrate_workspace_to_exalog.md
   - Intelligence:
     - Detection: xdr/FAQ/intelligence/Detection_qa.md
     - Questions about IoC revokation: xdr/FAQ/intelligence/revoke_ioc.md
