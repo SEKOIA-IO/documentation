@@ -41,7 +41,7 @@ Once your workspace is migrated to ExaLog:
 - Events linked to alerts or cases are preserved beyond the standard retention window.
 
 !!! note "Historical data availability"
-    Events ingested before the migration date are available in ExaLog only after your original retention window has fully transitioned. Full ExaLog capabilities become available progressively.
+    Events ingested before the migration date become available in ExaLog progressively, as your original retention window transitions. Full ExaLog capabilities are available once the transition is complete.
 
 ## Related articles
 
