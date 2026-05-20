@@ -14,7 +14,8 @@ Sekoia.io supports multiple regions for HTTP ingestion.
 
 FRA1 keeps the historical URL scheme, while all other regions use the new API-prefixed scheme.
 
-The Sekoia regions are listed and documented [here](https://docs.sekoia.io/getting_started/regions/)
+!!! tip
+    Learn more about region and code in [our dedicated article](/getting_started/regions.md).
 
 Endpoints must be built from regional base URLs:
 

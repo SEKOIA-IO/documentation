@@ -88,15 +88,15 @@ docker run ghcr.io/sekoia-io/hello-sekoia:latest
 
 This command will initiate the image download, effectively verifying whether the host system can successfully access the Docker registry and establish connectivity with Sekoia.io.
 
-Here's an example of the expected output for your reference (FRA1 region):
+??? example "Example of the expected output (FRA1 region):"
 
-```
-Checking container runs in Docker ... OK
-Checking connectivity with Sekoia.io APIs ...
-  - Checking app.sekoia.io ... OK
-  - Checking api.sekoia.io ... OK
-Checking connectivity with the object storage ... OK
-```
+    ```
+    Checking container runs in Docker ... OK
+    Checking connectivity with Sekoia.io APIs ...
+    - Checking app.sekoia.io ... OK
+    - Checking api.sekoia.io ... OK
+    Checking connectivity with the object storage ... OK
+    ```
 
 !!! tip
     The `-e` option can be passed to the docker command to specify:
@@ -104,7 +104,8 @@ Checking connectivity with the object storage ... OK
     * The region: `-e region=<region>` (e.g., `-e region=mco1` for MCO1 region)
     * Proxy information: `-e https_proxy=<proxy_url>`
 
-The Sekoia regions are listed and documented [here](https://docs.sekoia.io/getting_started/regions/)
+!!! tip
+    Learn more about region and code in [our dedicated article](/getting_started/regions.md).
 
 ## Playbook runners
 
@@ -127,6 +128,9 @@ Your newly created playbook runner should now appear in the list. It will also b
 
 !!! tip
     To specify a region when installing the runner, add the `--region` argument to the installation command.
+
+!!! tip
+    Learn more about region and code in [our dedicated article](/getting_started/regions.md).
 
 ### Use a runner in a playbook action
 
