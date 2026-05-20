@@ -6,6 +6,9 @@ type: intake
 
 Ubika Cloud Protector's Next Generation Traffic Logs feature gives organizations real-time visibility into every byte of network activity across their cloud environments. This detailed traffic intelligence empowers teams to optimize network operations and swiftly detect—and respond to—unusual behavior before it impacts their infrastructure.
 
+!!! Warning
+    Important note - This format is currently in beta. We highly value your feedback to improve its performance.
+
 - **Vendor**: Ubika
 - **Supported environment**: SaaS
 - **Detection based on**: Telemetry
@@ -15,8 +18,7 @@ Ubika Cloud Protector's Next Generation Traffic Logs feature gives organizations
 
 ### How to create refresh token
 
-See [Ubika Cloud Protector Next Generation](https://docs.sekoia.io/integration/categories/network_security/ubika_cloud_protector_next_gen/)
-
+{!_shared_content/operations_center/integrations/ubika_cloud_protector_next_gen_refresh_token.md!}
 
 ### Create your intake
 
@@ -27,9 +29,7 @@ See [Ubika Cloud Protector Next Generation](https://docs.sekoia.io/integration/c
 
 {!_shared_content/operations_center/integrations/generated/19527522-2653-45dd-acea-49ae725bb435_sample.md!}
 
-
 {!_shared_content/integration/detection_section.md!}
 
 {!_shared_content/operations_center/detection/generated/suggested_rules_19527522-2653-45dd-acea-49ae725bb435_do_not_edit_manually.md!}
 {!_shared_content/operations_center/integrations/generated/19527522-2653-45dd-acea-49ae725bb435.md!}
-
