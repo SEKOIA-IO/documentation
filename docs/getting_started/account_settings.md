@@ -14,11 +14,12 @@ For more detailed guidance on navigating the platform and using its features, re
 
 To change the theme of your workspace, follow these steps:
 
-1. Go to Settings
-2. On the top of the menu, click on `Theme`
-3. Select either Light theme or Dark theme 
+1. Go to **Settings**
+2. On the top of the menu, click on **Theme**
+3. Select either **Light theme** or **Dark theme**
 
-The change takes effect immediately and will be saved. Please note that this customization applies only to your account and does not affect the theme settings for other workspace members.
+!!! note
+    The change is automatically saved and takes effect immediately. Please note that this customization applies only to your account and does not affect the theme settings for other workspace members.
 
 ### Choose your date format
 
