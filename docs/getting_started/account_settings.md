@@ -29,11 +29,11 @@ You can choose how dates are displayed across the platform, so timestamps match 
 
 Once the feature is enabled, set your preferred date format:
 
-1. Go to Settings
-2. Click on `Profile`
-3. Select either `Day/Month/Year` (20/05/2026) or `Month/Day/Year` (5/20/2026)
-
-Your preference is saved on your account, so it follows you across every device and browser. On first use, the format is automatically selected from your browser locale, so it is correct out of the box.
+1. Go to **Settings**
+2. Click on **Profile**
+3. Select either **Day/Month/Year** (20/05/2026) or **Month/Day/Year** (5/20/2026)
 
 !!! note
-    This setting changes the display only. API responses and stored data are unchanged.
+    - Your preference is automatically saved on your account, so it follows you across every device and browser. 
+    - On first use, the format is automatically selected from your browser locale, so it is correct out of the box.
+    - This setting changes the display only. API responses and stored data are unchanged.
