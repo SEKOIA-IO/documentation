@@ -19,6 +19,8 @@
 | [asset_properties](#asset_properties) | Listing known properties related to the Asset | Asset Investigations |
 | [asset_partitions](#asset_partitions) | Partitions on a per Asset basis and Hygiene related to these | Understand and improve Hygiene state Note: Part of the Reveal plan |
 | [asset_accounts](#asset_accounts) | Listing local users accounts related to the Asset | Impact analysis and incident correlation Note: Part of the Reveal plan |
+| [rule_definitions](#rule_definitions) | Detection rule definitions (Sigma, CTI, Anomaly...) | Rules coverage reporting, audit of detection catalog |
+| [rule_instances](#rule_instances) | Instances of detection rules per community | Monitor enabled/disabled rules, compliance reporting |
 
 ## event_telemetry
 
@@ -276,6 +278,47 @@ For example queries using tags, see [Assets query examples](sol_query_examples.m
 | bad_password_count        | Number of failed logon attempts                                                            |
 | number_of_logons          | Total number of logons recorded                                                            |
 | account_type              | Type of account (LocalUser, MicrosoftAccount, ...)                                         |
+
+
+## rule_definitions
+
+The **rule_definitions** data source provides the list of detection rule definitions available in your catalog, including Sekoia-managed and custom rules.
+
+It allows you to audit your detection coverage, report on rule types and origins, and cross-reference with rule instances to understand what is deployed in your communities.
+
+| **Property** | **Description** |
+| --- | --- |
+| uuid | A unique identifier for the rule definition. |
+| name | The name of the detection rule. |
+| source | The origin of the rule (e.g., `Sekoia`, `Custom`). |
+| type | The type of rule (e.g., `sigma`, `cti`, `anomaly`). |
+
+## rule_instances
+
+The **rule_instances** data source provides the list of rule instances per community, i.e., the actual deployment state of each detection rule.
+
+It can be joined with `rule_definitions` to produce reports on which rules are enabled or disabled, by type and origin.
+
+| **Property** | **Description** |
+| --- | --- |
+| uuid | A unique identifier for the rule instance. |
+| rule_definition_uuid | UUID of the related rule definition (used for `lookup` joins). |
+| enabled | Whether the rule is currently enabled (`True` / `False`). |
+| community_uuid | UUID of the community where the rule instance is applied. |
+
+??? example 
+    The following query generates a breakdown of detection rules by source and type, with the count of enabled rules per category — useful for monthly client reporting or coverage monitoring:
+
+    ```
+    rule_definitions
+    | lookup rule_instances on uuid == rule_definition_uuid into rule
+    | aggregate 
+        rules_count = count(),
+        enabled_rules_count = count(iff(rule.enabled == True, True, null))
+        by source = coalesce(source, "Custom"), type
+    | order by source, type
+    | select source, type, rules_count, enabled_rules_count
+    ```
 
 ## Related articles
 
