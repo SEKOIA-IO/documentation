@@ -846,6 +846,7 @@ plugins:
       xdr/features/collect/integrations/network/watchguard_firebox.md: integration/categories/network_security/watchguard_firebox.md
       xdr/features/investigate/dork_language.md: xdr/features/investigate/events_query_language.md
       integration/categories/network/beyondtrust_pra_sessions.md: integration/categories/iam/beyondtrust_pra_sessions.md
+      integration/categories/network_security/ubika_cloud_protector_next_gen.md: integration/categories/network_security/ubika_cloud_protector_next_gen_alerts.md
 - integration_by_uuid
 - sass
 repo_url: https://github.com/SEKOIA-IO/documentation
