@@ -275,6 +275,99 @@ SOL Datasets allow you to import CSV files and use them in your queries. This is
 For the full guide on importing CSVs, multi-tenancy rules, and advanced query patterns, see the dedicated [SOL Datasets](sol_datasets.md) page.
 
 
+## How to check for non-null properties
+
+Many event fields are optional and may be absent from some records. Use `!= null` to keep only rows where a field is present, or `== null` to find rows where a field is missing.
+
+### Filter out rows with a missing field
+
+=== "Query"
+
+    ```shell
+    events
+    | where timestamp > ago(24h) and user.name != null
+    | select timestamp, host.name, user.name
+    | order by timestamp desc
+    | limit 100
+    ```
+
+=== "Results"
+
+    | timestamp                | host.name    | user.name    |
+    | ------------------------ | ------------ | ------------ |
+    | 2026-03-26T15:35:14.738Z | laptop-chris | ada_lovelace |
+    | 2026-03-26T15:30:02.110Z | laptop-chris | grace_hopper |
+
+### Find rows where a field is absent
+
+Checking for `== null` is useful to detect incomplete or unparsed events:
+
+=== "Query"
+
+    ```shell
+    events
+    | where timestamp > ago(24h) and process.name != null and process.command_line == null
+    | select timestamp, host.name, process.name
+    | order by timestamp desc
+    | limit 100
+    ```
+
+=== "Results"
+
+    | timestamp                | host.name       | process.name |
+    | ------------------------ | --------------- | ------------ |
+    | 2026-03-26T14:20:15.441Z | laptop-6a1ec62f | svchost.exe  |
+    | 2026-03-26T14:17:31.554Z | laptop-b3205bc2 | lsass.exe    |
+
+### Combine multiple null checks
+
+You can combine null checks with other conditions in the same `where` clause:
+
+=== "Query"
+
+    ```shell
+    events
+    | where timestamp >= ago(24h)
+          and event.action == 'blocked'
+          and user.name != null
+          and url.domain != null
+    | select timestamp, user.name, url.domain
+    | order by timestamp desc
+    | limit 100
+    ```
+
+=== "Results"
+
+    | timestamp                | user.name    | url.domain      |
+    | ------------------------ | ------------ | --------------- |
+    | 2026-03-26T15:35:14.738Z | ada_lovelace | www.example.com |
+    | 2026-03-26T15:30:02.110Z | grace_hopper | www.test.org    |
+
+### Provide a fallback value instead of filtering
+
+If you want to keep rows with a missing field but display a default value, use `coalesce()` instead of filtering:
+
+=== "Query"
+
+    ```shell
+    events
+    | where timestamp > ago(24h)
+    | aggregate count() by user_identifier = coalesce(user.name, user.email, "Unknown")
+    | order by count desc
+    | limit 100
+    ```
+
+=== "Results"
+
+    | user_identifier | count |
+    | --------------- | ----- |
+    | ada_lovelace    | 152   |
+    | ken@example.com | 42    |
+    | Unknown         | 18    |
+
+For the full reference, see [Where](sol_ref_operators.md#where) and [Null handling: coalesce()](sol_ref_functions.md#null-handling-coalesce).
+
+
 ## How to build a query library
 
 Build a collection of reusable queries to accelerate your team's investigations:
