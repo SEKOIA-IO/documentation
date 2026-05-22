@@ -343,29 +343,7 @@ You can combine null checks with other conditions in the same `where` clause:
     | 2026-03-26T15:35:14.738Z | ada_lovelace | www.example.com |
     | 2026-03-26T15:30:02.110Z | grace_hopper | www.test.org    |
 
-### Provide a fallback value instead of filtering
-
-If you want to keep rows with a missing field but display a default value, use `coalesce()` instead of filtering:
-
-=== "Query"
-
-    ```shell
-    events
-    | where timestamp > ago(24h)
-    | aggregate count() by user_identifier = coalesce(user.name, user.email, "Unknown")
-    | order by count desc
-    | limit 100
-    ```
-
-=== "Results"
-
-    | user_identifier | count |
-    | --------------- | ----- |
-    | ada_lovelace    | 152   |
-    | ken@example.com | 42    |
-    | Unknown         | 18    |
-
-For the full reference, see [Where](sol_ref_operators.md#where) and [Null handling: coalesce()](sol_ref_functions.md#null-handling-coalesce).
+For the full reference, see [Where](sol_ref_operators.md#where).
 
 
 ## How to build a query library

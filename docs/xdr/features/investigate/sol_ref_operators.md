@@ -202,10 +202,6 @@ Many event fields are optional and may not be present in every event. Use `!= nu
         | 2026-03-26T14:20:15.441Z | laptop-6a1ec62f | svchost.exe  |
         | 2026-03-26T14:17:31.554Z | laptop-b3205bc2 | lsass.exe    |
 
-!!! tip
-
-    To provide a fallback value for null fields instead of filtering them out, use the [`coalesce()`](sol_ref_functions.md#null-handling-coalesce) function.
-
 ## Nested query
 
 Use the `in` operator to use the results of a previous query.
