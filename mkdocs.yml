@@ -555,7 +555,6 @@ nav:
       - Fortigate Firewalls: integration/action_library/fortigate-firewalls.md
       - Sophos: integration/action_library/sophos.md
       - Stormshield: integration/action_library/stormshield.md
-      - Stormshield: integration/action_library/stormshield.md
       - Zscaler: integration/action_library/zscaler.md
     - Overview: integration/action_library/overview.md
     - Threat Intelligence:
