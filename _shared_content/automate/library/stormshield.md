@@ -41,16 +41,6 @@ Block an IPv4 or IPv6 address on Stormshield SNS.
 
 ## Set up
 
-uuid: 59498b29-5cfb-46e6-aaf1-9c0c3afeb00c
-name: Stormshield
-type: playbook
-
-# Stormshield
-
-![Stormshield](/assets/playbooks/library/stormshield-ses.png){ align=right width=150 }
-
-Stormshield Network Security is a range of network security appliances.
-
 ## Configuration
 
 ### Create a Stormshield REST API key
