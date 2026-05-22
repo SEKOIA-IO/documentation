@@ -202,6 +202,19 @@ nav:
       - FortiSOAR: xdr/features/integrations/fortisoar.md
       - Palo Alto Cortex XSOAR: xdr/features/integrations/interconnect_sekoia_with_xsoar.md
       - Swimlane Turbine: xdr/features/integrations/swimlane_turbine.md
+  - AI Agents (Elevate):
+      - Elevate overview: xdr/features/modules/elevate_overview.md
+      - Elevate kick start guide: 
+        - Activate Elevate:  xdr/features/modules/elevate_activate.md
+        - Elevate analysis states:  xdr/features/modules/elevate_analysis_states.md
+      - Investigate with Elevate:  
+        - Investigate an alert:  xdr/features/modules/elevate_investigate_alert.md
+        - Validate or override a verdict:  xdr/features/modules/elevate_validate_verdict.md
+        - Trigger an analysis:  xdr/features/modules/manual_analysis.md
+      - Manage Elevate: 
+        - Override community settings:  xdr/features/modules/elevate_community_override.md
+        - Elevate Quota:  xdr/features/modules/elevate_quota.md
+        - Limit auto-analysis: xdr/features/modules/elevate_rule_filter.md
   - Asset Intelligence (Reveal):
       - Reveal overview: xdr/features/modules/reveal_index.md
       - Get started with Reveal: xdr/features/modules/reveal_getting_started.md
@@ -210,6 +223,7 @@ nav:
       - Discover Points of Interest: xdr/features/detect/points_of_interest.md
       - Check asset connector health: xdr/features/collect/asset_connector_health.md
       - Reveal enablement matrix: xdr/features/modules/reveal_feature_enablement.md
+    
 
 - Usecases:
   - Export large volumes of events: xdr/usecases/massive_export.md
