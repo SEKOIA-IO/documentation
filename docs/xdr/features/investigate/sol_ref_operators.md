@@ -160,6 +160,48 @@ Use the `where` operator to filter rows by a list of conditions. Use parenthesis
         | 2026-03-26T14:20:15.441Z | Android                |
         | 2026-03-26T14:19:47.883Z | Mac                    |
 
+### Checking for non-null properties
+
+Many event fields are optional and may not be present in every event. Use `!= null` to keep only rows where a field has a value, or `== null` to find rows where the field is absent.
+
+!!! example "Retrieve events where `user.name` is present"
+
+    === "Query"
+
+        ``` shell
+        events
+        | where timestamp > ago(24h) and user.name != null
+        | select timestamp, host.name, user.name
+        | limit 100
+
+        ```
+
+    === "Results"
+
+        | timestamp                | host.name    | user.name      |
+        | ------------------------ | ------------ | -------------- |
+        | 2026-03-26T14:22:03.120Z | laptop-chris | ada_lovelace   |
+        | 2026-03-26T14:19:47.883Z | laptop-chris | grace_hopper   |
+
+!!! example "Find events where `process.command_line` is missing"
+
+    === "Query"
+
+        ``` shell
+        events
+        | where timestamp > ago(24h) and process.name != null and process.command_line == null
+        | select timestamp, host.name, process.name
+        | limit 100
+
+        ```
+
+    === "Results"
+
+        | timestamp                | host.name       | process.name |
+        | ------------------------ | --------------- | ------------ |
+        | 2026-03-26T14:20:15.441Z | laptop-6a1ec62f | svchost.exe  |
+        | 2026-03-26T14:17:31.554Z | laptop-b3205bc2 | lsass.exe    |
+
 ## Nested query
 
 Use the `in` operator to use the results of a previous query.
