@@ -11,7 +11,6 @@ This article explains how to access and read the AI investigation report produce
 
 1. Navigate to **Investigate > Alerts**.
 2. Select the alert you want to review.
-3. Select the **AI Investigation** tab in the alert detail view.
 
 > 📸 [SCREENSHOT SUGGESTION: Alert detail view with the AI Investigation tab selected, showing the Verdict section at the top and the Findings section below. | ALT TEXT: AI Investigation tab of an alert showing the verdict and findings sections.]
 
@@ -39,7 +38,7 @@ Findings tagged **Global** apply to the alert as a whole rather than to a specif
 
 > 📸 [SCREENSHOT SUGGESTION: Findings section of the AI Investigation tab with several finding cards expanded, each displaying a "Global" tag and a plain-language observation. | ALT TEXT: Findings section showing expandable evidence cards with Global tags.]
 
-## Access findings from the alert timeline
+### Access findings from the alert timeline
 
 A summary of findings is also available directly from the alert detail view without opening the AI Investigation tab.
 
@@ -49,6 +48,13 @@ A summary of findings is also available directly from the alert detail view with
 The Findings tab lists all evidence items the agent collected, allowing you to review them alongside the alert timeline.
 
 > 📸 [SCREENSHOT SUGGESTION: Alert detail view with the Findings tab selected in the timeline panel, showing a bulleted list of evidence items collected by the Elevate agent. | ALT TEXT: Findings tab in the alert timeline panel showing AI-collected evidence items.]
+
+## Discover Reasoning questions
+
+To go further in your understanding of the verdict and findings methodology, scroll down to **Reasoning questions** sections. 
+
+Most of the Reasoning questions comes from our Runbooks, but Elevate agent add its own relevant investigation questions. 
+
 
 ## Related links
 
