@@ -90,8 +90,6 @@ To achieve this you can:
 
 {!_shared_content/operations_center/integrations/generated/nutanix_sample.md!}
 
-{!_shared_content/integration/detection_section.md!}
-
 {!_shared_content/operations_center/detection/generated/suggested_rules_9a7f6d4e-3b2a-4c1d-8f9e-0a1b2c3d4e5f_do_not_edit_manually.md!}
 
 ## Logs Details and Parsing Guidance
@@ -124,7 +122,7 @@ This section contains suggested detection rules and mappings that can be used in
 
 ### How to use
 
-- Import the generated suggested rules located in `_shared_content/operations_center/detection/generated/suggested_rules_nutanix_do_not_edit_manually.md` into your Operations Center.
+- Import the generated suggested rules located in `_shared_content/operations_center/detection/generated/suggested_rules_9a7f6d4e-3b2a-4c1d-8f9e-0a1b2c3d4e5f_do_not_edit_manually.md` into your Operations Center.
 - Tune thresholds and allowlists (known admin networks, maintenance accounts) according to your environment.
 - Ensure ECS mappings are applied during parsing so the rules operate on normalized fields.
 
