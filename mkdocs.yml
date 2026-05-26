@@ -285,6 +285,7 @@ nav:
       - LockSelf LockPass/LockTransfer/LockFiles: integration/categories/applicative/lockself.md
       - Microsoft IIS: integration/categories/applicative/microsoft_iis.md
       - Microsoft Sentinel: integration/categories/applicative/microsoft_sentinel.md
+      - Nutanix: integration/categories/applicative/nutanix.md
       - New Relic Alerts: integration/categories/applicative/newrelic_alerts.md
       - Salesforce: integration/categories/applicative/salesforce.md
       - Sekoia.io activity logs: integration/categories/applicative/sekoiaio_activity_logs.md
@@ -375,6 +376,7 @@ nav:
       - ManageEngine ADAudit Plus: integration/categories/iam/manageengine_adauditplus.md
       - Microsoft Entra ID (Azure AD): integration/categories/iam/entra_id.md
       - Microsoft Entra ID (via Graph API): integration/categories/iam/entra_id_graph_api.md
+      - Nutanix: integration/categories/iam/nutanix.md
       - Okta System log: integration/categories/iam/okta_system_log.md
       - One Identity SPS Session logs: integration/categories/iam/one_identity_sps.md
       - OpenLDAP: integration/categories/iam/openldap.md
