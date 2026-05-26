@@ -160,6 +160,48 @@ Use the `where` operator to filter rows by a list of conditions. Use parenthesis
         | 2026-03-26T14:20:15.441Z | Android                |
         | 2026-03-26T14:19:47.883Z | Mac                    |
 
+### Checking for non-null properties
+
+Many event fields are optional and may not be present in every event. Use `!= null` to keep only rows where a field has a value, or `== null` to find rows where the field is absent.
+
+!!! example "Retrieve events where `user.name` is present"
+
+    === "Query"
+
+        ``` shell
+        events
+        | where timestamp > ago(24h) and user.name != null
+        | select timestamp, host.name, user.name
+        | limit 100
+
+        ```
+
+    === "Results"
+
+        | timestamp                | host.name    | user.name      |
+        | ------------------------ | ------------ | -------------- |
+        | 2026-03-26T14:22:03.120Z | laptop-chris | ada_lovelace   |
+        | 2026-03-26T14:19:47.883Z | laptop-chris | grace_hopper   |
+
+!!! example "Find events where `process.command_line` is missing"
+
+    === "Query"
+
+        ``` shell
+        events
+        | where timestamp > ago(24h) and process.name != null and process.command_line == null
+        | select timestamp, host.name, process.name
+        | limit 100
+
+        ```
+
+    === "Results"
+
+        | timestamp                | host.name       | process.name |
+        | ------------------------ | --------------- | ------------ |
+        | 2026-03-26T14:20:15.441Z | laptop-6a1ec62f | svchost.exe  |
+        | 2026-03-26T14:17:31.554Z | laptop-b3205bc2 | lsass.exe    |
+
 ## Nested query
 
 Use the `in` operator to use the results of a previous query.
@@ -1054,6 +1096,20 @@ Use the `matches regex` operator to filter the rows based on a regex pattern.
 | `(...)` | Forms a group. You can use a group to treat part of the expression as a single character | `abc(def)?` matches 'abc' and 'abcdef' but not 'abcd' |
 | `[...]` | Match one of the character in the brackets<br>Inside the brackets, `-` indicates a range unless `-` is the first character or escaped<br>A `^` before a character in the brackets negates the character or range  | `[abc]` matches 'a', 'b', 'c'<br>`[-abc]` matches '-', 'a', 'b', 'c'<br>`[^abc]` matches any character except 'a', 'b', or 'c' |
 
+The `matches regex` operator uses a restricted regex syntax.
+
+### Unsupported constructs
+
+The following constructs are **not supported**. Using them will return no results without an error message.
+
+| Unsupported construct | Example |
+|---|---|
+| Non-capturing groups | `(?:pattern)` |
+| Named capture groups | `(?P<name>pattern)` |
+| Inline flags | `(?i)`, `(?m)`, `(?s)` |
+| Lookaheads / lookbehinds | `(?=...)`, `(?!...)`, `(?<=...)`, `(?<!...)` |
+| Backreferences | `\1`, `\k<name>` |
+
 !!! info
     Some characters are reserved as operators: `.` `?` `+` `*` `|` `{` `}` `[` `]` `(` `)` `"` `\` .<br>Escape reserved operators with a preceding backslash `\` or surround them with double quotes `""`.<br>`\@` renders as a literal '@'.<br>`\\` renders as a literal '\'.<br>`"john@smith.com"` renders as 'john@smith.com'.
 
@@ -1079,6 +1135,7 @@ Use the `matches regex` operator to filter the rows based on a regex pattern.
         | 2026-03-26T14:22:03.120Z | deploy.sh           |
         | 2026-03-26T14:19:47.883Z | cleanup.sh          |
         | 2026-03-26T14:17:31.554Z | install_agent.sh    |
+        
 
 ## Variables
 
