@@ -17,12 +17,6 @@ This page explains how to collect Nutanix logs (Prism Central / Prism Element) a
 - Product: Nutanix Prism (Prism Central / Prism Element)
 - Use cases: administrative audits, infrastructure events, Security Policy Hit Logs, and Flow service logs for troubleshooting.
 
-### High-Level Architecture
-
-_Placeholder diagram:_
-
-Include a high-level architecture diagram showing Nutanix Prism (Prism Central / Prism Element) sending logs to a central collector or to the Sekoia.io forwarder. Add the image under [docs/assets/integration/applicative/nutanix/architecture.png](docs/assets/integration/applicative/nutanix/architecture.png) and reference it here when available.
-
 ## Overview
 
 - **Vendor**: Nutanix
