@@ -58,7 +58,7 @@ This setup guide will show you how to forward your Infoblox DDI logs to Sekoia.i
    - An internal syslog concentrator is required to collect and forward events to Sekoia.io.
 
 2. **Enable Syslog Forwarding:**
-   - Log on your NIOS appliance and follow [this guide](https://docs.infoblox.com/space/NAG8/22252249/Using+a+Syslog+Server) to enable syslog forwarding.
+   - Log on your NIOS appliance and follow [this guide](https://docs.infoblox.com/space/nios90/1380844672/Specifying+Syslog+Servers) to enable syslog forwarding.
 
 ### Instruction on Sekoia
 
