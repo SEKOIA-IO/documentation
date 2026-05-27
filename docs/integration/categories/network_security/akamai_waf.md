@@ -15,30 +15,37 @@ Akamai Web Application Firewall (WAF) is a cloud-based security solution designe
 
 ### Create EdgeGrid authentication credentials
 
-1. Launch `Identity and Access Management`. In Control Center, select `☰ > ACCOUNT ADMIN > Identity & access`.
+1. Navigate to `Identity and Access Management`. In the Control Center, click the Main Menu icon (☰) and select `ACCOUNT ADMIN` > `Identity & access`.
 
-    ![step 1](/assets/operation_center/integration_catalog/network_security/akamai_waf/create_creds.png){: style="max-width:100%"}
+    ![step 1](/assets/operation_center/integration_catalog/network_security/akamai_waf/identity_and_access_button.png){: style="max-width:100%"}
 
-2. Under `Users and API Clients`, click `Create API client`.
-3. Click `Quick` to create an API client with access levels, group roles, and permissions identical to your current login.
-4. Click Show additional details to verify the APIs you can access.
-5. Enter the API service's name in the `Filter` field to verify that it's included and that you have the proper level of access.
-Click Hide additional details to return to the Details and Credentials information.
-6. Save information from the `Credentials` section.
+2. In the `Users and API Clients` section, click `Create API client`.
+
+     ![step 2](/assets/operation_center/integration_catalog/network_security/akamai_waf/create_api_button.png){: style="max-width:100%"}
+
+3. Select the `Quick` option to automatically generate an API client.
+   
+   ![step 3](/assets/operation_center/integration_catalog/network_security/akamai_waf/create_api_client_button.png){: style="max-width:100%"}
+
+4. Click Show additional details to review and verify your accessible APIs and search if you have `SIEM` permission using the `Filter` field before creating this api key.
+
+   ![step 4](/assets/operation_center/integration_catalog/network_security/akamai_waf/siem_permission.png){: style="max-width:100%"}
+
+5. Copy and securely save the information displayed in the `Credentials` section.
 
 ### Enable data collection
 
-1. Go to "Security Configurations" menu and click on "Version history"
+1. Navigate to the `Security Configurations`. In the Control Center, click the Main Menu icon (☰) and select `WEB & DATA CENTER SECURITY` > `Security Configurations`.
 
-    ![step 2](/assets/operation_center/integration_catalog/network_security/akamai_waf/step1.png){: style="max-width:100%"}
+    ![step 1](/assets/operation_center/integration_catalog/network_security/akamai_waf/security_configuration_button.png){: style="max-width:100%"}
 
-2. On the current version, click on action and select the option "Create new version from v<x>"
+2. Click on `Edit Configuration` for the app you want to enable data collection on.
 
-    ![step 3](/assets/operation_center/integration_catalog/network_security/akamai_waf/step2.png){: style="max-width:100%"}
+    ![step 2](/assets/operation_center/integration_catalog/network_security/akamai_waf/edit_configuration_button.png){: style="max-width:100%"}
 
-3. Set "Data collection for SIEM integration" option to on and click on activate.
+3. On the current version, under `Advanced settings`. Set `Data collection` for SIEM integration option to on and click on activate.
 
-    ![step 4](/assets/operation_center/integration_catalog/network_security/akamai_waf/step3.png){: style="max-width:100%"}
+    ![step 3](/assets/operation_center/integration_catalog/network_security/akamai_waf/data_collection_siem.png){: style="max-width:100%"}
 
 ### Create your intake
 
