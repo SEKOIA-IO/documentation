@@ -1,24 +1,3 @@
-Voici l'article amélioré avec l'ensemble des suggestions appliquées, en markdown MkDocs :
-
----
-
-## Changements appliqués
-
-Voici un résumé des modifications effectuées :
-
-1. **Origine de l'échelle Admiralty** : paragraphe introductif ajouté avant les tableaux Confidence et Reliability.
-2. **Nouvelle sous-section** : "Reading Confidence and Reliability together" avec notation combinée `<Letter><Number>` et exemples.
-3. **Colonne "Example" dans le tableau Confidence** : exemples CTI concrets pour chaque niveau.
-4. **Colonne "Example" dans le tableau Reliability** : exemples de sources pour chaque niveau.
-5. **Bloc JSON enrichi** : l'exemple existant est remplacé par un indicateur complet avec logique de scoring expliquée.
-6. **Encart "Known limitations"** : note sur les limites connues de l'échelle Admiralty.
-7. **Diagramme Mermaid** : arbre de décision Observable vs Indicator.
-
----
-
-Voici le résultat complet :
-
-````markdown
 # Data Model
 
 The Intelligence Center uses the industry standard STIX ([version 2.1](https://oasis-open.github.io/cti-documentation/stix/intro.html)) to represent information.
