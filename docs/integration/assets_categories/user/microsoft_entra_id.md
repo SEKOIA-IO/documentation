@@ -66,7 +66,8 @@ The app registration must have the following permissions to successfully fetch E
         "Group.Read.All",
         "GroupMember.Read.All",
         "Directory.Read.All",
-        "UserAuthenticationMethod.Read.All"
+        "UserAuthenticationMethod.Read.All",
+        "AuditLog.Read.All"
     ]
 }
 ```
