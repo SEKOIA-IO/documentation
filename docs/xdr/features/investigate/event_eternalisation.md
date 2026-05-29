@@ -16,7 +16,15 @@ When a detection rule triggers an alert, the following sequence occurs:
 !!! note
     The alert is only made visible **after** its events have been successfully eternalised. This means eternalisation is a mandatory step before you can see and investigate an alert.
 
+!!! warning
+    Events linked to anomaly rules are not eternalized (there is no event tab in an Anomaly Alert).
+
+
 ## What This Means for Analysts
+
+### Eternalised Events Have Extended Accessibility
+
+Unlike raw events, which are subject to your standard retention policy, eternalised events are stored in a **dedicated, durable index**. This means you can always return to an alert and review its associated events, even after the raw logs would have expired.
 
 ### Alerts may appear with a delay
 
@@ -24,14 +32,10 @@ Because eternalisation must complete before an alert is published, any slowdown 
 
 ### Events may be missing from an Alert
 
-If eternalisation partially fails, an alert may be published with **fewer events than expected** â€” or none at all. This can make investigation difficult, as the supporting evidence is incomplete.
+If eternalisation partially fails, an alert may be published with **fewer events than expected**, or none at all. This can make investigation difficult, as the supporting evidence is incomplete.
 
 !!! warning
     If you open an alert and find that events are missing or the alert seems incomplete, this may be the result of an eternalisation issue. Contact your platform administrator so the events can be replayed and reindexed.
-
-### Eternalised Events Have Extended Accessibility
-
-Unlike raw events, which are subject to your standard retention policy, eternalised events are stored in a **dedicated, durable index**. This means you can always return to an alert and review its associated events, even after the raw logs would have expired.
 
 ## What to do if you suspect an issue
 
@@ -46,5 +50,5 @@ If you observe alerts with missing events or unexpected delays:
 
 ## Further Reading
 
-- [Alerts â€“ Sekoia.io Documentation](https://docs.sekoia.io/xdr/features/investigate/alerts/)
-- [Events â€“ Sekoia.io Documentation](https://docs.sekoia.io/xdr/features/investigate/events/)
+- [Learn lore about Alerts](/xdr/features/investigate/alerts.md)
+- [Learnn more about Events](/xdr/features/investigate/events.md)
