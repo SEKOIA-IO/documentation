@@ -47,17 +47,6 @@ To understand the difference between an indicator (an object type) and an observ
 - They are exported in the CTI feed (API / TAXII / MISP, etc.) to allow a contextualized detection
 - They raise real-time alerts in [Sekoia.io](http://Sekoia.io) XDR but also in the past through retro hunting which depends on the validity period of the indicator and the log retention duration
 
-### Decision guide: Observable or Indicator?
-
-The following diagram can help analysts determine how to handle a piece of intelligence:
-
-```mermaid
-flowchart TD
-    A[Is the observable linked to a known threat?] -->|No| B[It is an Observable — not an Indicator.\nTag it for context.]
-    A -->|Yes| C{Is it validated with confidence ≥ 2\nand source reliability ≥ B?}
-    C -->|Yes| D[Treat as actionable Indicator.\nEnable IOC detection.]
-    C -->|No| E[Flag for review.\nDo not block without additional corroboration.]
-```
 
 ## External Sources
 
