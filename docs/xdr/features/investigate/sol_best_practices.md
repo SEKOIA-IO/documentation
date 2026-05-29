@@ -113,6 +113,34 @@ Use this table to identify which operations can be pushed down to the datasource
 | `countif` aggregation function | ❌ Never |
 | Row-level functions (e.g. `coalesce`, `extract`, `iff`, `tolower`) | ❌ Never |
 
+### Filter operator performance hierarchy
+
+Not all filter operators perform equally. When writing `| where` conditions, prefer operators that are higher in this hierarchy to maximize pushdown efficiency and minimize scan cost:
+
+| Rank | Operator | Example | Performance | Notes |
+| --- | --- | --- | --- | --- |
+| 1 | `==`, `!=` | `event.category == "authentication"` | ⚡ Fastest | Exact match; fully index-compatible and always pushed down |
+| 2 | `in`, `!in` | `source.ip in ("1.2.3.4", "5.6.7.8")` | ⚡ Fast | Set membership check; index-compatible |
+| 3 | `startswith` | `url.original startswith "https"` | 🔵 Good | Prefix match; can leverage prefix indexes |
+| 4 | `endswith` | `file.name endswith ".exe"` | 🔵 Good | Suffix match; slightly less efficient than `startswith` |
+| 5 | `contains` | `message contains "failed"` | 🟡 Moderate | Case-sensitive substring scan; no index benefit, full field scan |
+| 6 | `contains~` | `message contains~ "Failed"` | 🟠 Slower | Case-insensitive variant of `contains`; adds normalization overhead on top of full scan |
+| 7 | `match` (regex) | `url.original match @"https?://.*\.exe$"` | 🔴 Slowest | Full regex evaluation on every row; avoid on high-volume fields |
+
+**Key takeaway**: prefer `==` or `in` whenever possible. Only use `contains~` or `match` when the use case strictly requires it, and make sure to apply more selective filters before them in the pipeline.
+
+```
+// Good: exact match first, then regex only on the remaining rows
+events
+| where timestamp > ago(1h)
+| where event.category == "network"
+| where url.original match @".*malicious.*"
+
+// Bad: regex applied on the full dataset
+events
+| where url.original match @".*malicious.*"
+```
+
 ## SOL Engine Limitations
 
 ### Internal Fetch Limit
