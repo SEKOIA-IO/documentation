@@ -123,7 +123,7 @@ When this limit is hit, a warning is displayed and only partial results are retu
 
 !!! example
     !!! warning
-        There were too many rows to process, please refine your query. Partial results are displayed.For more information about this warning, refer to the documentation.
+        There were too many rows to process, please refine your query. Partial results are displayed. For more information about this warning, refer to the documentation.
 
 If your query legitimately requires more rows, you can raise the limit up to **1 000 000** by adding the following at the top of your query:
 
