@@ -24,9 +24,8 @@ When you create a case, you need to configure it by filling the fields:
 - `Right` - the right part of your expression after the comparison element
 - `Name` - Name of your case
 
-**Example**:
-
-In this exemple, a condition is created to check if the rule name that triggered the playbook - `{{ node.1['rule']['name'] }}` - is the `SEKOIA Intelligence Feed` rule.
+!!! example
+    In this exemple, a condition is created to check if the rule name that triggered the playbook - `{{ node.1['rule']['name'] }}` - is the `SEKOIA Intelligence Feed` rule.
 
 ![Sekoia.io Operations Center Condition Example](/assets/operation_center/playbooks/condition_example_case.png){: style="max-width:60%"}
 
@@ -68,13 +67,15 @@ For instance, if the `Foreach` is the node `3` and you want to get the reference
 
 The `Any` operator is used to **join diverging branches** of a playbook. When an action splits execution into multiple parallel branches, `Any` resumes execution as soon as **at least one** of those branches completes — without waiting for the others to finish.
 
-**Example**: If an action starts two parallel enrichment tasks, the playbook continues past `Any` as soon as the first enrichment result is available, regardless of whether the second has finished.
+!!! example
+    If an action starts two parallel enrichment tasks, the playbook continues past `Any` as soon as the first enrichment result is available, regardless of whether the second has finished.
 
 ### All
 
 The `All` operator is also used to **join diverging branches** of a playbook. Unlike `Any`, `All` waits for **every** parallel branch to complete before resuming execution.
 
-**Example**: If an action starts two parallel enrichment tasks, the playbook only continues past `All` once both enrichment results are available.
+!!! example
+    If an action starts two parallel enrichment tasks, the playbook only continues past `All` once both enrichment results are available.
 
 ### Store
 
@@ -93,9 +94,8 @@ To configure your modification, you need to fill 3 fields :
 
 To retrieve information from the store in a module, you need to specify the key associated to it.
 
-**Example**:
-
-To retrieve the list of IPs stored in the key `ip`: use `{{ store.ip }}`.
+!!! example
+    To retrieve the list of IPs stored in the key `ip`: use `{{ store.ip }}`.
 
 #### Types of store
 
