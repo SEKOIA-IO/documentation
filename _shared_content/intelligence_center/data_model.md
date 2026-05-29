@@ -70,7 +70,7 @@ As an example, here is a complete `Indicator` object illustrating how `confidenc
 
   "x_inthreat_sources_refs": [
     "identity--357447d7-9229-4ce1-b7fa-f1b83587048e",  # SEKOIA
-    "identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5"   # The MITRE Corporation
+    "identity--d4e6daf6-6e06-4904-bf82-76d331ba491c"   # PhishTank
   ]
 }
 ```
