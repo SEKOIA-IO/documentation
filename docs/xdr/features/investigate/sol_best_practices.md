@@ -120,25 +120,28 @@ Not all filter operators perform equally. When writing `| where` conditions, pre
 | Rank | Operator | Example | Performance | Notes |
 | --- | --- | --- | --- | --- |
 | 1 | `==`, `!=` | `event.category == "authentication"` | ⚡ Fastest | Exact match; fully index-compatible and always pushed down |
-| 2 | `in`, `!in` | `source.ip in ("1.2.3.4", "5.6.7.8")` | ⚡ Fast | Set membership check; index-compatible |
-| 3 | `startswith` | `url.original startswith "https"` | 🔵 Good | Prefix match; can leverage prefix indexes |
-| 4 | `endswith` | `file.name endswith ".exe"` | 🔵 Good | Suffix match; slightly less efficient than `startswith` |
-| 5 | `contains` | `message contains "failed"` | 🟡 Moderate | Case-sensitive substring scan; no index benefit, full field scan |
-| 6 | `contains~` | `message contains~ "Failed"` | 🟠 Slower | Case-insensitive variant of `contains`; adds normalization overhead on top of full scan |
-| 7 | `match` (regex) | `url.original match @"https?://.*\.exe$"` | 🔴 Slowest | Full regex evaluation on every row; avoid on high-volume fields |
+| 2 | `in`, `!in` | `source.ip in ("1.2.3.4", "5.6.7.8")` | ⚡ Fast | Case-sensitive set membership check; index-compatible |
+| 3 | `in~`, `!in~` | `event.category in~ ("Authentication", "NETWORK")` | 🔵 Good | Case-insensitive set membership check; slight overhead over `in` |
+| 4 | `startswith` | `url.original startswith "https"` | 🔵 Good | Case-sensitive prefix match; can leverage prefix indexes |
+| 5 | `startswith~` | `url.original startswith~ "Https"` | 🔵 Good | Case-insensitive variant of `startswith`; minor normalization overhead |
+| 6 | `endswith` | `file.name endswith ".exe"` | 🔵 Good | Case-sensitive suffix match; slightly less efficient than `startswith` |
+| 7 | `endswith~` | `file.name endswith~ ".EXE"` | 🔵 Good | Case-insensitive variant of `endswith`; minor normalization overhead |
+| 8 | `contains` | `message contains "failed"` | 🟡 Moderate | Case-sensitive substring scan; no index benefit, full field scan |
+| 9 | `contains~` | `message contains~ "Failed"` | 🟠 Slower | Case-insensitive variant of `contains`; adds normalization overhead on top of full scan |
+| 10 | `matches regex` | `url.original matches regex @"https?://.*\.exe$"` | 🔴 Slowest | Full regex evaluation on every row; avoid on high-volume fields |
 
-**Key takeaway**: prefer `==` or `in` whenever possible. Only use `contains~` or `match` when the use case strictly requires it, and make sure to apply more selective filters before them in the pipeline.
+**Key takeaway**: prefer `==` or `in` whenever possible. Only use `contains~` or `matches regex` when the use case strictly requires it, and make sure to apply more selective filters before them in the pipeline.
 
 ```
 // Good: exact match first, then regex only on the remaining rows
 events
 | where timestamp > ago(1h)
 | where event.category == "network"
-| where url.original match @".*malicious.*"
+| where url.original matches regex @".*malicious.*"
 
 // Bad: regex applied on the full dataset
 events
-| where url.original match @".*malicious.*"
+| where url.original matches regex @".*malicious.*"
 ```
 
 ## SOL Engine Limitations
