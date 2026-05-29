@@ -133,15 +133,17 @@ Not all filter operators perform equally. When writing `| where` conditions, pre
 **Key takeaway**: prefer `==` or `in` whenever possible. Only use `contains~` or `matches regex` when the use case strictly requires it, and make sure to apply more selective filters before them in the pipeline.
 
 ```
-// Good: exact match first, then regex only on the remaining rows
+// Good: use endswith for a simple file extension check
 events
 | where timestamp > ago(1h)
-| where event.category == "network"
-| where url.original matches regex @".*malicious.*"
+| where event.category == "file"
+| where file.name endswith ".exe"
 
-// Bad: regex applied on the full dataset
+// Bad: matches regex used where endswith would suffice
 events
-| where url.original matches regex @".*malicious.*"
+| where timestamp > ago(1h)
+| where event.category == "file"
+| where file.name matches regex "\.exe$"
 ```
 
 ## SOL Engine Limitations
