@@ -1114,6 +1114,7 @@ Rules catalog includes **1066 built-in detection rules** ([_last update on 2026-
     
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
         - 04/04/2024 - major - Rule's pattern field changed
+        - 01/06/2026 - major - selection improvements to better align with the detection objective
             
 **Replication Through Removable Media**
 
@@ -1654,6 +1655,10 @@ Rules catalog includes **1066 built-in detection rules** ([_last update on 2026-
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 01/06/2026 - minor - Adding more filter and review group-by clause to reduce false positives
+            
 ??? abstract "Okta Phishing Detection with FastPass Origin Check"
     
     Okta's FastPass prevents known phishing sites.
@@ -6503,6 +6508,7 @@ Rules catalog includes **1066 built-in detection rules** ([_last update on 2026-
     
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
         - 04/04/2024 - major - Rule's pattern field changed
+        - 01/06/2026 - major - selection improvements to better align with the detection objective
             
 **Account Manipulation**
 
@@ -6696,6 +6702,7 @@ Rules catalog includes **1066 built-in detection rules** ([_last update on 2026-
     
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
         - 04/04/2024 - major - Rule's pattern field changed
+        - 01/06/2026 - major - selection improvements to better align with the detection objective
             
 ??? abstract "Varonis Many Accounts Disabled"
     
@@ -8482,6 +8489,7 @@ Rules catalog includes **1066 built-in detection rules** ([_last update on 2026-
     
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
         - 04/04/2024 - major - Rule's pattern field changed
+        - 01/06/2026 - major - selection improvements to better align with the detection objective
             
 **Account Manipulation**
 
@@ -8675,6 +8683,7 @@ Rules catalog includes **1066 built-in detection rules** ([_last update on 2026-
     
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
         - 04/04/2024 - major - Rule's pattern field changed
+        - 01/06/2026 - major - selection improvements to better align with the detection objective
             
 ??? abstract "Varonis Many Accounts Disabled"
     
@@ -10294,6 +10303,7 @@ Rules catalog includes **1066 built-in detection rules** ([_last update on 2026-
     
         - 04/12/2023 - major - Added `Login:login` request type with a filter for codes indicating failure
         - 10/04/2025 - minor - Exclude more error codes to reduce false positives
+        - 01/06/2026 - minor - Adding filter on user_type code to reduce false positives
             
 ??? abstract "Multiple Authentication On Microsoft 365 (Office 365) Portal From Two IP Addresses"
     
@@ -10301,6 +10311,10 @@ Rules catalog includes **1066 built-in detection rules** ([_last update on 2026-
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 01/06/2026 - minor - Adding more filter and review group-by clause to reduce false positives
+            
 ??? abstract "Okta MFA Bypass Attempt"
     
     A bypass of MFA may have been attempted.
@@ -10626,6 +10640,7 @@ Rules catalog includes **1066 built-in detection rules** ([_last update on 2026-
     
         - 04/12/2023 - major - Added `Login:login` request type with a filter for codes indicating failure
         - 10/04/2025 - minor - Exclude more error codes to reduce false positives
+        - 01/06/2026 - minor - Adding filter on user_type code to reduce false positives
             
 ??? abstract "Multiple Authentication On Microsoft 365 (Office 365) Portal From Two IP Addresses"
     
@@ -10633,6 +10648,10 @@ Rules catalog includes **1066 built-in detection rules** ([_last update on 2026-
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 01/06/2026 - minor - Adding more filter and review group-by clause to reduce false positives
+            
 ??? abstract "Possible RottenPotato Attack"
     
     Detects logon events that have characteristics of events generated during an attack leveraging RottenPotato.
@@ -11924,6 +11943,7 @@ Rules catalog includes **1066 built-in detection rules** ([_last update on 2026-
     
         - 04/12/2023 - major - Added `Login:login` request type with a filter for codes indicating failure
         - 10/04/2025 - minor - Exclude more error codes to reduce false positives
+        - 01/06/2026 - minor - Adding filter on user_type code to reduce false positives
             
 ??? abstract "Multiple Authentication On Microsoft 365 (Office 365) Portal From Two IP Addresses"
     
@@ -11931,6 +11951,10 @@ Rules catalog includes **1066 built-in detection rules** ([_last update on 2026-
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 01/06/2026 - minor - Adding more filter and review group-by clause to reduce false positives
+            
 ??? abstract "Possible RottenPotato Attack"
     
     Detects logon events that have characteristics of events generated during an attack leveraging RottenPotato.
