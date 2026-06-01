@@ -329,6 +329,7 @@ Rules catalog includes **1066 built-in detection rules** ([_last update on 2026-
         - 14/10/2024 - minor - The error codes 70043, 50173, 70008, 700082, 9002341 have been excluded as they are not related to login failures that we want to detect and caused several false positives.
         - 28/11/2024 - minor - Adding error codes as filters to reduce false positives.
         - 25/02/2026 - minor - Adding error code 500011 as filters to reduce false positives.
+        - 01/06/2026 - minor - Adding error code as filters to reduce false positives.
             
 ??? abstract "Login Brute-Force Successful On Jumpcloud Portal"
     
@@ -501,6 +502,7 @@ Rules catalog includes **1066 built-in detection rules** ([_last update on 2026-
         - 14/10/2024 - minor - The error codes 70043, 50173, 70008, 700082, 9002341 have been excluded as they are not related to login failures that we want to detect and caused several false positives.
         - 28/11/2024 - minor - Adding error codes as filters to reduce false positives.
         - 25/02/2026 - minor - Adding error code 500011 as filters to reduce false positives.
+        - 01/06/2026 - minor - Adding error code as filters to reduce false positives.
             
 ??? abstract "Login Brute-Force Successful On Jumpcloud Portal"
     
@@ -1688,20 +1690,32 @@ Rules catalog includes **1066 built-in detection rules** ([_last update on 2026-
     
     An email was classified as malware with a threat score greater than 0 by Proofpoint TAP but was not blocked. The threshold on the Threat Score has been defined to avoid a high amount of false positives.
     
-    - **Effort:** advanced
+    - **Effort:** master
     
+    - **Changelog:**
+    
+        - 01/06/2026 - major - Adding a new selection for "click" events as they do not have a threat score. Effort level adapted as well since this is now an integration rule.
+            
 ??? abstract "Proofpoint TAP Email Classified As Phishing But Allowed"
     
     An email was classified as phishing with a threat score greater than 50 by Proofpoint TAP but was not blocked. The threshold on the Threat Score has been defined to avoid a high amount of false positives.
     
-    - **Effort:** advanced
+    - **Effort:** master
     
+    - **Changelog:**
+    
+        - 01/06/2026 - major - Adding a new selection for "click" events as they do not have a threat score. Effort level adapted as well since this is now an integration rule.
+            
 ??? abstract "Proofpoint TAP Email Classified As Spam But Allowed"
     
     An email was classified as spam with a threat score greater than 50 by Proofpoint TAP but was not blocked. The threshold on the Threat Score has been defined to avoid a high amount of false positives.
     
-    - **Effort:** advanced
+    - **Effort:** master
     
+    - **Changelog:**
+    
+        - 01/06/2026 - major - Adding a new selection for "click" events as they do not have a threat score. Effort level adapted as well since this is now an integration rule.
+            
 ??? abstract "RDP Configuration File From Mail Process"
     
     Detects RDP configuration file being created or executed by a Mail-related process like Outlook. RDP configuration file will allow, when opened, an user to connect to the configured server easily. Attackers use this to trick victims in order to get a shared drive and potentially retrieve the data from that drive, but also drop a malicious file on the drive to establish persistence. Using RDP can also expose the victim's credential and clipboard data on some cases.
@@ -10945,6 +10959,7 @@ Rules catalog includes **1066 built-in detection rules** ([_last update on 2026-
     - **Changelog:**
     
         - 18/09/2025 - minor - Similarity strategy updated.
+        - 01/06/2025 - minor - Added a condition for process executable.
             
 ??? abstract "Anomaly Internal Port Connection"
     
