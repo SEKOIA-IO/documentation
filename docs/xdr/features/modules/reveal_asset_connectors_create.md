@@ -31,6 +31,9 @@ The asset connectors panel opens and lists your existing connectors.
 
 ### Step 3: Fill in the connector form
 
+!!! note "Reusing accounts"
+    You can reuse an existing account. Any account created here is shared with the account list, alongside those created for event connectors and playbook modules.
+
 Enter the required fields for the selected integration. The fields vary by integration type and typically include a connector name, and an Account to synchronize.
 
 ![!Asset connectors configuration form](docs/assets/connector_config.png){: style="width: 100%; max-width: 100%"} 
@@ -40,7 +43,7 @@ Enter the required fields for the selected integration. The fields vary by integ
 Select **Test connector** to validate your credentials before saving.
 
 !!! note "What the test checks"
-    The test validates your credentials only. It does not retrieve assets or logs. A successful test confirms that Sekoia can authenticate with the external system.
+    A successful test confirms that the credentials you entered are valid.
 
 ### Step 5: Create the connector
 
