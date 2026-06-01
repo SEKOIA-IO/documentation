@@ -1,4 +1,4 @@
-Rules catalog includes **1064 built-in detection rules** ([_last update on 2026-05-12_](rules_changelog.md)).
+Rules catalog includes **1066 built-in detection rules** ([_last update on 2026-06-01_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Identity Information**
 
@@ -2785,6 +2785,7 @@ Rules catalog includes **1064 built-in detection rules** ([_last update on 2026-
     
         - 06/06/2025 - major - Review heuristic and change level effort
         - 23/06/2025 - minor - improve filter
+        - 13/05/2026 - minor - remove deprecated value in filter
             
 ??? abstract "Powershell Web Request And Windows Script"
     
@@ -4426,6 +4427,12 @@ Rules catalog includes **1064 built-in detection rules** ([_last update on 2026-
     
     - **Effort:** intermediate
     
+??? abstract "Palo Alto Cortex XDR (EDR) Alert (Critical Severity)"
+    
+    A Palo Alto Cortex XDR (EDR) agent has raised an alert of critical severity (only DETECTED and not SCANNED status).
+    
+    - **Effort:** master
+    
 ??? abstract "Palo Alto Cortex XDR (EDR) Alert Not Blocked (High Severity)"
     
     A Palo Alto Cortex XDR (EDR) agent has raised an alert of high severity that was not blocked.
@@ -4462,6 +4469,12 @@ Rules catalog includes **1064 built-in detection rules** ([_last update on 2026-
         - 25/02/2026 - minor - Update rule type to integration
         - 04/03/2026 - minor - Similarity strategy updated to caseID
             
+??? abstract "Registry Value Changed Via Windows Run Dialog"
+    
+    Detects when a user enters a suspicious url command in the windows run dialog. Could be linked to ClickFix. For this rule, you will need to add auditing permissions to this specific key and enable audit registry.
+    
+    - **Effort:** master
+    
 ??? abstract "SentinelOne EDR Agent Disabled"
     
     A SentinelOne EDR agent has been disabled according to SentinelOne logs.
