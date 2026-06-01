@@ -52,7 +52,7 @@ When the test is conclusive, select **Create asset connector**.
 The connector starts retrieving asset data from the external system. Asset retrieval is progressive. Depending on the size of your environment and the integration, the first assets may take several minutes to appear.
 
 !!! note "Where to find your assets"
-    All assets retrieved by connectors are available on the **Assets** page. You can monitor connector health from the asset context panel under the **Security controls** tab.
+    All assets retrieved by connectors are available on the **Assets** page. You can monitor connector health from the asset context panel under the **Security controls** tab. In the listing, you can filter assets by connector.
 
 ## Manage existing connectors
 
