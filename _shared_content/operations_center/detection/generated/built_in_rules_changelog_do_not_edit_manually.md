@@ -10,6 +10,14 @@ Changelog _last update on 2026-06-01_
   - 16/08/2024 - minor - The error code 50078 has been excluded as it is not a specific error code related to a login failure that we want to detect and caused several false positives.
   - 23/03/2023 - minor - The error code 50076 has been excluded as it is not a specific error code related to a login failure that we want to detect and caused several false positives.
     
+### Microsoft 365 Sign-in With No User Agent
+  - 01/06/2026 - minor - Adding filter on user_type code to reduce false positives
+  - 10/04/2025 - minor - Exclude more error codes to reduce false positives
+  - 04/12/2023 - major - Added `Login:login` request type with a filter for codes indicating failure
+    
+### Multiple Authentication On Microsoft 365 (Office 365) Portal From Two IP Addresses
+  - 01/06/2026 - minor - Adding more filter and review group-by clause to reduce false positives
+    
 ### Proofpoint TAP Email Classified As Phishing But Allowed
   - 01/06/2026 - major - Adding a new selection for "click" events as they do not have a threat score. Effort level adapted as well since this is now an integration rule.
     
@@ -18,6 +26,11 @@ Changelog _last update on 2026-06-01_
     
 ### Proofpoint TAP Email Classified As Spam But Allowed
   - 01/06/2026 - major - Adding a new selection for "click" events as they do not have a threat score. Effort level adapted as well since this is now an integration rule.
+    
+### User Added to Local Administrators
+  - 01/06/2026 - major - selection improvements to better align with the detection objective
+  - 04/04/2024 - major - Rule's pattern field changed
+  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
     
 ### Powershell Web Request
   - 13/05/2026 - minor - remove deprecated value in filter
@@ -749,10 +762,6 @@ Changelog _last update on 2026-06-01_
 ### Suspicious DLL Loading By Ordinal
   - 14/04/2025 - minor - Adding similarity.
     
-### Microsoft 365 Sign-in With No User Agent
-  - 10/04/2025 - minor - Exclude more error codes to reduce false positives
-  - 04/12/2023 - major - Added `Login:login` request type with a filter for codes indicating failure
-    
 ### Entra ID Password Compromised By Known Credential Testing Tool
   - 09/04/2025 - minor - Add more correlation IDs, change similarity strategy to user.id to workaround email capitalisation inconsistencies.
   - 03/01/2025 - minor - Add more correlation IDs
@@ -1357,10 +1366,6 @@ Changelog _last update on 2026-06-01_
     
 ### Webshell Creation
   - 04/04/2024 - major - Rule's pattern field changed
-    
-### User Added to Local Administrators
-  - 04/04/2024 - major - Rule's pattern field changed
-  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
     
 ### External Disk Drive Or USB Storage Device
   - 04/04/2024 - major - Rule's pattern field changed
