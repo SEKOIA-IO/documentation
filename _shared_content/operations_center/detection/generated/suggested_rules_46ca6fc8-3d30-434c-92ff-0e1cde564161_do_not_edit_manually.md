@@ -109,19 +109,19 @@ The following Sekoia.io built-in rules match the intake **Proofpoint TAP**. This
     
     An email was classified as malware with a threat score greater than 0 by Proofpoint TAP but was not blocked. The threshold on the Threat Score has been defined to avoid a high amount of false positives.
     
-    - **Effort:** advanced
+    - **Effort:** master
 
 ??? abstract "Proofpoint TAP Email Classified As Phishing But Allowed"
     
     An email was classified as phishing with a threat score greater than 50 by Proofpoint TAP but was not blocked. The threshold on the Threat Score has been defined to avoid a high amount of false positives.
     
-    - **Effort:** advanced
+    - **Effort:** master
 
 ??? abstract "Proofpoint TAP Email Classified As Spam But Allowed"
     
     An email was classified as spam with a threat score greater than 50 by Proofpoint TAP but was not blocked. The threshold on the Threat Score has been defined to avoid a high amount of false positives.
     
-    - **Effort:** advanced
+    - **Effort:** master
 
 ??? abstract "ProxyShell Microsoft Exchange Suspicious Paths"
     

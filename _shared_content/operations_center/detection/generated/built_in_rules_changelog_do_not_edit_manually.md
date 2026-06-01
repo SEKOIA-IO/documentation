@@ -2,6 +2,23 @@ Changelog _last update on 2026-06-01_
 
 ## Changelog
 
+### Login Brute-Force Successful On AzureAD From Single IP Address
+  - 01/06/2026 - minor - Adding error code as filters to reduce false positives.
+  - 25/02/2026 - minor - Adding error code 500011 as filters to reduce false positives.
+  - 28/11/2024 - minor - Adding error codes as filters to reduce false positives.
+  - 14/10/2024 - minor - The error codes 70043, 50173, 70008, 700082, 9002341 have been excluded as they are not related to login failures that we want to detect and caused several false positives.
+  - 16/08/2024 - minor - The error code 50078 has been excluded as it is not a specific error code related to a login failure that we want to detect and caused several false positives.
+  - 23/03/2023 - minor - The error code 50076 has been excluded as it is not a specific error code related to a login failure that we want to detect and caused several false positives.
+    
+### Proofpoint TAP Email Classified As Phishing But Allowed
+  - 01/06/2026 - major - Adding a new selection for "click" events as they do not have a threat score. Effort level adapted as well since this is now an integration rule.
+    
+### Proofpoint TAP Email Classified As Malware But Allowed
+  - 01/06/2026 - major - Adding a new selection for "click" events as they do not have a threat score. Effort level adapted as well since this is now an integration rule.
+    
+### Proofpoint TAP Email Classified As Spam But Allowed
+  - 01/06/2026 - major - Adding a new selection for "click" events as they do not have a threat score. Effort level adapted as well since this is now an integration rule.
+    
 ### Powershell Web Request
   - 13/05/2026 - minor - remove deprecated value in filter
   - 23/06/2025 - minor - improve filter
@@ -277,13 +294,6 @@ Changelog _last update on 2026-06-01_
   - 27/02/2026 - minor - Update rule type to integration
   - 28/03/2024 - minor - Rule effort was updated to master
   - 29/01/2024 - minor - Rework detection pattern to focus on compliance issues
-    
-### Login Brute-Force Successful On AzureAD From Single IP Address
-  - 25/02/2026 - minor - Adding error code 500011 as filters to reduce false positives.
-  - 28/11/2024 - minor - Adding error codes as filters to reduce false positives.
-  - 14/10/2024 - minor - The error codes 70043, 50173, 70008, 700082, 9002341 have been excluded as they are not related to login failures that we want to detect and caused several false positives.
-  - 16/08/2024 - minor - The error code 50078 has been excluded as it is not a specific error code related to a login failure that we want to detect and caused several false positives.
-  - 23/03/2023 - minor - The error code 50076 has been excluded as it is not a specific error code related to a login failure that we want to detect and caused several false positives.
     
 ### Trend Micro Cloud One High Intrusion
   - 25/02/2026 - minor - Update rule type to integration
@@ -597,6 +607,7 @@ Changelog _last update on 2026-06-01_
     
 ### Advanced IP Scanner
   - 18/09/2025 - minor - Similarity strategy updated.
+  - 01/06/2025 - minor - Added a condition for process executable.
     
 ### In-memory PowerShell
   - 05/09/2025 - minor - Filter some FPs
