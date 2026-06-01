@@ -42,7 +42,7 @@ If the issue is caused by a misconfiguration or expired credentials:
 1. Close the logs panel.
 2. On the connector tile, select **...**.
 3. Select **Edit**.
-4. Update the relevant fields such as the API key, client ID, or scope.
+4. Update the relevant fields such as the API key, client ID, etc.
 5. Select **Test connector** to validate the updated credentials.
 6. When the test is conclusive, select **Edit asset connector**.
 
