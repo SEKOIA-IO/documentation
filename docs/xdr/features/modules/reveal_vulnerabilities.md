@@ -1,5 +1,7 @@
 # Vulnerability enrichment
 
+_**[Reveal module](/xdr/features/modules/reveal_index.md)** — This feature requires the Reveal add-on module._ 
+
 Vulnerability enrichment aggregates known CVE exposures from connected vulnerability scanners and cloud or IaaS APIs and surfaces them on asset records in Sekoia. Analysts can review an asset's exposure directly in the asset context panel without switching to a separate vulnerability management tool.
 
 Vulnerability data is available in the asset context panel under the **Vulnerabilities** tab and summarized in the **Health check** card on the **Overview** tab.
