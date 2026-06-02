@@ -1,5 +1,7 @@
 # Endpoint Hygiene
 
+_**[Reveal module](/xdr/features/modules/reveal_index.md)** — This feature requires the Reveal add-on module._ 
+
 Endpoint Hygiene shows the security posture and configuration health of host assets in Sekoia. It surfaces whether key protections such as the firewall and disk encryption are active, giving analysts immediate visibility into whether an endpoint is properly protected at the time of investigation.
 
 Hygiene data is available in the asset context panel under the **Hygiene** tab and summarized in the **Health check** card **Misconfigurations** tile on the **Overview** tab.
