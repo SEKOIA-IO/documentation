@@ -1,5 +1,7 @@
 # Create an asset connector
 
+_**[Reveal module](/xdr/features/modules/reveal_index.md)** — This feature requires the Reveal add-on module._ 
+
 Asset connectors link external systems to Sekoia so that asset records can be created, merged, and enriched with structured data from sources such as EDR tools, vulnerability scanners, identity providers, and CMDBs. This article explains how to create a new asset connector and verify that it is working.
 
 ## Before you begin
