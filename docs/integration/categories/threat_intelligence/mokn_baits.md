@@ -76,3 +76,13 @@ Collected events include the main attempt metadata exposed by MokN, including:
 - Credential check history
 
 The integration emits MokN bait attempts with the event action `mokn_bait_attempt` and the dataset `mokn.bait_attempt`.
+
+### Instruction on Sekoia
+
+{!_shared_content/operations_center/integrations/generated/1a1502f5-5a93-44b4-b0b5-359bbcb14902_sample.md!}
+
+{!_shared_content/integration/detection_section.md!}
+
+{!_shared_content/operations_center/detection/generated/suggested_rules_1a1502f5-5a93-44b4-b0b5-359bbcb14902_do_not_edit_manually.md!}
+
+{!_shared_content/operations_center/integrations/generated/1a1502f5-5a93-44b4-b0b5-359bbcb14902.md!}
