@@ -1,5 +1,7 @@
 # Security controls
 
+_**[Reveal module](/xdr/features/modules/reveal_index.md)** — This feature requires the Reveal add-on module._ 
+
 The Security controls tab in the asset context panel shows which detection and protection technologies are actively covering an asset. Use it to confirm that the right tools are in place, identify visibility gaps, and understand which response actions are available before taking containment steps.
 
 ## How Security controls works
