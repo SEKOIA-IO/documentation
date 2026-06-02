@@ -2,7 +2,7 @@
 
 Endpoint Hygiene shows the security posture and configuration health of host assets in Sekoia. It surfaces whether key protections such as the firewall and disk encryption are active, giving analysts immediate visibility into whether an endpoint is properly protected at the time of investigation.
 
-Hygiene data is available in the asset context panel under the **Hygiene** tab and summarized in the **Health check** card on the **Overview** tab.
+Hygiene data is available in the asset context panel under the **Hygiene** tab and summarized in the **Health check** card **Misconfigurations** tile on the **Overview** tab.
 
 ## How Endpoint Hygiene works
 
@@ -22,7 +22,7 @@ The following signals are currently available for host assets.
 
 Additional signals may be available depending on the capabilities of the connected source.
 
-> 📸 [SCREENSHOT SUGGESTION: Hygiene tab showing firewall status as enabled and disk encryption showing one encrypted volume and one unencrypted volume. | ALT TEXT: Hygiene tab displaying firewall and per-volume disk encryption status for a host asset.]
+[!Hygiene tab displaying firewall and per-volume disk encryption status for a host asset.](/assets/Hygiene_tab.png){: style="width: 100%; max-width: 100%"}
 
 ## How to use Endpoint Hygiene during an investigation
 
