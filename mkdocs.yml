@@ -204,12 +204,22 @@ nav:
       - Swimlane Turbine: xdr/features/integrations/swimlane_turbine.md
   - Asset Intelligence (Reveal):
       - Reveal overview: xdr/features/modules/reveal_index.md
-      - Get started with Reveal: xdr/features/modules/reveal_getting_started.md
-      - Explore assets context: xdr/features/modules/reveal_asset_context_panel.md
-      - Visualize attack paths: xdr/features/investigate/attack_path_visualization.md
-      - Discover Points of Interest: xdr/features/detect/points_of_interest.md
-      - Check asset connector health: xdr/features/collect/asset_connector_health.md
-      - Reveal enablement matrix: xdr/features/modules/reveal_feature_enablement.md
+      - Get started with Reveal:
+        - Reveal quick start guide: xdr/features/modules/reveal_getting_started.md
+        - Reveal enablement matrix: xdr/features/modules/reveal_feature_enablement.md
+      - Asset connectors: 
+        - Create asset connectors: xdr/features/modules/reveal_asset_connectors_create.md
+        - Check asset connector health: xdr/features/collect/asset_connector_health.md
+        - Troubleshoot asset connectors: xdr/features/modules/reveal_asset_connectors_troubleshoot.md
+      - Investigate assets:
+        - Explore assets context: xdr/features/modules/reveal_asset_context_panel.md
+        - Visualize attack paths: xdr/features/investigate/attack_path_visualization.md
+        - Discover Points of Interest: xdr/features/detect/points_of_interest.md
+        - Check Endpoint Hygiene: xdr/features/modules/reveal_hygiene.md
+        - Leverage Vulnerability Enrichment: xdr/features/modules/reveal_vulnerabilities.md
+        - Rely on Security Controls: xdr/features/modules/reveal_security_controls.md
+
+
 
 - Usecases:
   - Export large volumes of events: xdr/usecases/massive_export.md
