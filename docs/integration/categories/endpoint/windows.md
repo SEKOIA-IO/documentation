@@ -105,7 +105,8 @@ To get started with NXLog, follow these steps:
 
   Exec to_syslog_ietf();
   Exec $raw_event = replace($raw_event, '[NXLOG@', '[SEKOIA@53288 intake_key="YOUR_INTAKE_KEY"][NXLOG@', 1);
-  OutputType Syslog_TLS #Only for TCP, not UDP
+  #Only for TCP, not UDP :
+  OutputType Syslog_TLS 
 </Output>
 
 <Route eventlog_to_sekoia_intake>
@@ -152,8 +153,8 @@ To get started, follow these steps:
  ## Please set the ROOT to the folder your nxlog was installed into,
  ## otherwise it will not start.
 
- #define ROOT C:\Program Files\nxlog
- define ROOT C:\Program Files (x86)\nxlog
+ #define ROOT C:\Program Files (x86)\nxlog
+ define ROOT C:\Program Files\nxlog
  define CERTDIR %ROOT%\cert
 
  Moduledir %ROOT%\modules
@@ -180,7 +181,8 @@ To get started, follow these steps:
   Module om_tcp
   Host RSYSLOG_HOST
   Port 514
-  OutputType Syslog_TLS #Only for TCP, not UDP
+  #Only for TCP, not UDP :
+  OutputType Syslog_TLS 
 
   Exec to_syslog_ietf();
 </Output>
