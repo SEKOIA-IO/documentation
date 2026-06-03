@@ -1,6 +1,6 @@
 # FLINT Reports
 
-FLINT (Flash threat INTelligence) reports are threat intelligence publications produced by the [Sekoia TDR team](#about-the-TDR-team). They cover ongoing campaigns, tracked threat actors, malware analysis, and threat intelligence from both technical and strategic perspectives.
+FLINT (Flash threat INTelligence) reports are threat intelligence publications produced by the [Sekoia TDR team](#about-the-tdr-team). They cover ongoing campaigns, tracked threat actors, malware analysis, and threat intelligence from both technical and strategic perspectives.
 
 FLINTs directly feed the indicators, objects, and context available across the platform.
 
