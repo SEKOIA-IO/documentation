@@ -2,7 +2,7 @@
 
 OSINT reports are publications from external sources, collected and made available directly in the platform. They cover ongoing campaigns, intrusion sets, attack techniques, and threat activity across sectors and geographies.
 
-They complement the TDR-produced [FLINT reports](./flints.md) by bringing in third-party intelligence to broaden situational awareness.
+They complement the TDR-produced [FLINT reports](flints.md) by bringing in third-party intelligence to broaden situational awareness.
 
 ## Overview
 
@@ -33,7 +33,7 @@ Reports open in **PDF view** by default, rendering the original source article. 
 
 You can scope the reports list to a specific feed to focus on the threat intelligence most relevant to your environment or use case. Select a feed from the filter bar at the top of the reports list to apply it.
 
-Feeds can be configured to filter by source, sector, geography, and more. See [Feeds](../feeds.md) <!-- TODO: confirm path --> for instructions on how to create and configure a feed.
+Feeds can be configured to filter by source, sector, geography, and more. See [Feeds](feeds.md) for instructions on how to create and configure a feed.
 
 ### Explore linked intelligence
 
