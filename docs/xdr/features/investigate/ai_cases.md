@@ -32,7 +32,7 @@ AI Cases automatically processes security alerts and creates cases based on rela
 * Dynamic priority rating
 * Continuous updates over a 7-day period
 
-## 
+## AI Case Creation and Alert Correlation
 ### Alert Correlation Criteria
 AI Cases correlates alerts based on two main criteria:
 
