@@ -596,12 +596,15 @@ Each optimization rule is composed of:
 - An UUID defining the unique identifier of the rule.
 - An action code defining the action to apply.
     - Inside the agent, only the action to ignore an event is supported (`action: 1`).
-- A list of filters defining the conditions to match an event. All filters must match for the rule to match.
+- A list of filters defining the conditions to match an event.
   Each filter is composed of:
     - A field name: `field`
     - An operator: `operator`
     - A value: `value`
 
+!!! WARNING
+	A rule applies only if ALL filters match the event (AND).
+	
 !!! note
     String comparisons are case-sensitive.
 
