@@ -23,7 +23,7 @@
         input {
             padding: 4px;
             font-size: 15px;
-            border: 1px solid #12005e;
+            border: 1px solid #212223;
             border-radius: 4px;
             margin: 2px 12px;
             flex: 1;
@@ -54,7 +54,7 @@
             height: 36px;
             font-weight: 600;
             font-family: 'Inter', sans-serif;
-            border-radius: 8px;
+            border-radius: 4px;
             padding: 0px 16px;
             cursor: pointer;
             transition: background 6e2ms;
@@ -76,7 +76,7 @@
 
     .results {
         >pre {
-            border-radius: 8px !important;
+            border-radius: 4px !important;
             scrollbar-width: thin;
             scrollbar-color: transparent transparent;
 

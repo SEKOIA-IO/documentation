@@ -77,7 +77,7 @@ main .md-content>article:not(#openapi) {
                 user-select: none;
 
                 li {
-                    color: #2d2e83;
+                    color: #6F7376;
                     background: white;
                     border-top: 4px solid transparent;
                     opacity: 0.6;
@@ -89,9 +89,9 @@ main .md-content>article:not(#openapi) {
 
                     &.active {
                         opacity: 1;
-                        border-top: 4px solid #12005e;
-                        background: #e2e2e9;
-                        color: #12005e;
+                        border-top: 4px solid #212223;
+                        background: #F0F3F6;
+                        color: #212223;
                         border-top-left-radius: 8px;
                         border-top-right-radius: 8px;
                     }
@@ -104,7 +104,7 @@ main .md-content>article:not(#openapi) {
 
             .jhTHfM,
             h3 {
-                color: #12005e;
+                color: #212223;
                 font-weight: bold;
                 font-size: 14px;
             }
@@ -129,7 +129,7 @@ main .md-content>article:not(#openapi) {
                     height: 36px;
                     font-weight: 600;
                     font-family: 'Inter', sans-serif;
-                    border-radius: 8px;
+                    border-radius: 4px;
                     padding: 0px 16px;
                     float: right;
                     cursor: pointer;
@@ -152,7 +152,7 @@ main .md-content>article:not(#openapi) {
                 input {
                     padding: 4px;
                     font-size: 15px;
-                    border: 1px solid #12005e;
+                    border: 1px solid #212223;
                     border-radius: 4px;
                     margin: 2px 12px;
                 }
@@ -180,7 +180,7 @@ main .md-content>article:not(#openapi) {
                     min-width: 100%;
                     width: 100%;
                     display: block;
-                    border-radius: 8px;
+                    border-radius: 4px;
                     color: white;
                     font-family: monospace;
                     font-size: 11px;
@@ -214,7 +214,7 @@ main .md-content>article:not(#openapi) {
                             transition: all 90ms ease-in-out;
 
                             &:hover {
-                                color: #12005e;
+                                color: #212223;
                             }
 
                             &.selected {
@@ -237,7 +237,7 @@ main .md-content>article:not(#openapi) {
                             min-width: 100%;
                             width: 100%;
                             display: block;
-                            border-radius: 8px;
+                            border-radius: 4px;
                             color: white;
                             font-family: monospace;
                             font-size: 11px;
@@ -258,9 +258,6 @@ main .md-content>article:not(#openapi) {
 
     }
 
-    h2::after {
-        border-bottom: 2px solid #2d2e83 !important;
-    }
 
 }
 
@@ -335,7 +332,7 @@ main {
 
     div[data-role='search:results'] {
         background: #F5F5FA;
-        border-radius: 8px;
+        border-radius: 4px;
     }
 
     div[role=search] {
@@ -395,7 +392,7 @@ main {
 
                             .sc-eyvILC {
                                 font-size: 13px;
-                                color: #21225F;
+                                color: #212223;
                             }
                         }
                     }
@@ -426,7 +423,7 @@ main {
         span.sc-eyvILC.cyMuFj {
             font-size: 14px;
             font-weight: normal;
-            color: #21225F;
+            color: #212223;
         }
 
         &.active {
@@ -445,7 +442,7 @@ main {
     }
 
     h2.copjkU {
-        color: #2d2e83;
+        color: #6F7376;
         font-size: 20px;
         margin-top: 30px;
         font-weight: bold;
@@ -468,7 +465,7 @@ main {
         &.active {
             border-top-left-radius: 8px;
             border-bottom-left-radius: 8px;
-            border-right: 4px solid #2d2e83;
+            border-right: 4px solid #6F7376;
             background: #F5F5FA;
         }
     }
@@ -477,7 +474,7 @@ main {
         &.active {
             border-top-left-radius: 8px;
             border-bottom-left-radius: 8px;
-            border-right: 4px solid #2d2e83;
+            border-right: 4px solid #6F7376;
             background: #F5F5FA;
         }
 
@@ -489,16 +486,16 @@ main {
     }
 
     .bOFhJE {
-        background-color: #e2e2e9;
+        background-color: #F0F3F6;
 
         button.sc-iEXKAA {
-            border-radius: 8px;
+            border-radius: 4px;
         }
     }
 
     .cJteCP {
         >.react-tabs__tab-panel.react-tabs__tab-panel--selected {
-            border-radius: 8px;
+            border-radius: 4px;
             border-top-left-radius: 0px;
         }
 
@@ -555,10 +552,10 @@ select {
     -moz-appearance: none !important;
     -webkit-appearance: none !important;
     appearance: none !important;
-    border: 1px solid #cbcfe1;
+    border: 1px solid #DADCDE;
     line-height: 1.5;
-    color: #21225f;
-    border-radius: 8px;
+    color: #212223;
+    border-radius: 4px;
 }
 
 .api-info {
