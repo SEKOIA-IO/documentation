@@ -38,7 +38,7 @@ AI Cases correlates alerts based on two main criteria:
 
 **Asset-based Correlation:**
 
-* The main grouping criterion is that alerts must involve the same verified/reviewed asset (account or host).
+* Alerts must involve the same verified/reviewed asset (account or host).
 
 **Threat-based Correlation:**
 
