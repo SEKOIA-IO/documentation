@@ -603,7 +603,7 @@ Each optimization rule is composed of:
     - A value: `value`
 
 !!! WARNING
-	A rule applies only if ALL filters match the event (AND).
+	A rule applies only if ALL filters match the event (AND). To do an OR do separate rules
 
 !!! note
     String comparisons are case-sensitive.
