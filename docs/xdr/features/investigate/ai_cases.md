@@ -32,13 +32,13 @@ AI Cases automatically processes security alerts and creates cases based on rela
 * Dynamic priority rating
 * Continuous updates over a 7-day period
 
-## AI Case Creation and Alert Correlation
+## 
 ### Alert Correlation Criteria
 AI Cases correlates alerts based on two main criteria:
 
 **Asset-based Correlation:**
 
-* Alerts targeting the same asset (account or host)
+* The main grouping criterion is that alerts must involve the same verified/reviewed asset (account or host).
 
 **Threat-based Correlation:**
 
