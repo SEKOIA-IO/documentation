@@ -174,18 +174,23 @@ This table explains the main actions that can be done for each of these fields:
 
 When searching through your event logs, you will often find events valuable to your current investigation. You can add these events to a case to keep track of them and use them as potential pivots.
 
-To add an event to a case:
+You can add several events to a case at once:
 
-1. Click on the `Add to Case` icon on the left of the event line.
-2. Select the target case or create a new one.
+1. Select the events you want to add using the checkboxes on the left of each event line. A counter shows how many events are selected.
+   You can also select every event on the current page by clicking the checkbox in the table header.
+2. Click the `Add to case` button.
+3. In the modal that opens, you can:
+    - Select an existing case from the list
+    - Search for an existing case by name
+    - Create a new case
 
-![add-event-to-case](/assets/operation_center/add-event-to-case-events.png){: style="max-width:70%"}
+![add-events-to-case-modal](/assets/operation_center/events/add-events-to-case-modal.png){: style="max-width:100%"}
 
-![active-case](/assets/operation_center/cases-in-event.png){ align=right }
+!!! note
+    A maximum of 1 000 events can be added to a case in a single operation.
 
-After adding an event to a case, you will notice that the selected case becomes active and appears at the top of the events table. Step 2 is no longer necessary: you can now add (or remove) an event to a case with a single click.
-
-To deselect the active case, click on the `X` next to its name.
+!!! note
+    Events selected from different sub-communities cannot be added together. In that case, the `Add to case` button is disabled and a tooltip explains the reason.
 
 
 ### Export the results of a search
