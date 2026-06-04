@@ -35,7 +35,7 @@ Each dataset is displayed as an information card containing:
 - **Upload Date**: When the dataset was imported (e.g., "09/30/2025 12:07:56")
 - **Author**: User who uploaded the dataset (e.g., "John Doe")
 - **File Size**: Dataset size in MB (e.g., "10MB")
-- **Actions**: Delete option
+- **Actions**: Open the dataset to view its details and update its content, or delete it
 
 The interface supports:
 
@@ -89,6 +89,31 @@ The interface supports:
 1. The system processes the CSV file
 2. Dataset appears in the SOL Datasets panel
 3. Dataset is immediately available for use in SOL queries
+
+## Updating an existing dataset
+
+You can replace the content of an existing SOL Dataset without changing its table name. Because the table name is preserved, all SOL queries already using the dataset keep working with the refreshed data.
+
+**Step 1: Open the dataset**
+
+1. In the SOL Datasets panel, click on the dataset you want to update
+2. A modal opens, displaying the dataset's table name and a preview of its current data
+
+![sol-update](/assets/operation_center/events/sol-update.png){: style="max-width:100%"}
+
+**Step 2: Replace the file**
+
+1. Click the **Replace file** button
+2. The familiar import interface opens: drag and drop your CSV file or click **Upload a file**
+3. Select your CSV file and click **Import**
+
+!!! warning "CSV Import Requirements"
+    The new file must meet the same [requirements](#file-requirements) as the original import (snake_case unique column names, UTF-8 or ASCII encoding, max 100 MB).
+
+**Step 3: Review and save**
+
+1. A preview of the new file's data is displayed for verification
+2. Review the changes and click **Save** to replace the dataset content
 
 ## Multi-tenancy and access control
 
