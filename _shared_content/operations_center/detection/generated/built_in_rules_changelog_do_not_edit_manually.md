@@ -1,7 +1,29 @@
-Changelog _last update on 2026-06-01_
+Changelog _last update on 2026-06-04_
 
 ## Changelog
 
+### Microsoft Defender XDR Alert
+  - 03/06/2026 - major - Added a new condition to match only on alerts to avoid false positives.
+  - 13/09/2024 - major - Update service name value following Microsoft change
+    
+### Microsoft Defender XDR Entra ID Protection Alert
+  - 03/06/2026 - major - Added a new condition to match only on alerts to avoid false positives.
+  - 12/11/2025 - minor - Update rule type to integration
+    
+### Microsoft Defender XDR Cloud App Security Alert
+  - 03/06/2026 - major - Added a new condition to match only on alerts to avoid false positives.
+  - 13/09/2024 - major - Update service name value following Microsoft change
+    
+### Microsoft Defender XDR Endpoint Alert
+  - 03/06/2026 - major - Added a new condition to match only on alerts to avoid false positives.
+    
+### Microsoft Defender XDR Data Loss Prevention Alert
+  - 03/06/2026 - major - Added a new condition to match only on alerts to avoid false positives.
+  - 12/11/2025 - minor - Update rule type to integration
+    
+### Microsoft Defender XDR Office 365 Alert
+  - 03/06/2026 - major - Added a new condition to match only on alerts to avoid false positives.
+    
 ### Login Brute-Force Successful On AzureAD From Single IP Address
   - 01/06/2026 - minor - Adding error code as filters to reduce false positives.
   - 25/02/2026 - minor - Adding error code 500011 as filters to reduce false positives.
@@ -555,15 +577,9 @@ Changelog _last update on 2026-06-01_
 ### Threat Detected By Hornetsecurity 365 Total Protection
   - 12/11/2025 - minor - Update rule type to integration
     
-### Microsoft Defender XDR Entra ID Protection Alert
-  - 12/11/2025 - minor - Update rule type to integration
-    
 ### Vectra General Threat Detection
   - 12/11/2025 - minor - Update rule type to integration
   - 06/10/2025 - minor - Update sources link
-    
-### Microsoft Defender XDR Data Loss Prevention Alert
-  - 12/11/2025 - minor - Update rule type to integration
     
 ### Windows Suspicious Service Creation
   - 28/10/2025 - minor - improve detection by adding pattern
@@ -1132,12 +1148,6 @@ Changelog _last update on 2026-06-01_
     
 ### Suspicious URL Requested By Curl Or Wget Commands
   - 23/09/2024 - major - Fixed an issue with the detection pattern.
-    
-### Microsoft Defender XDR Alert
-  - 13/09/2024 - major - Update service name value following Microsoft change
-    
-### Microsoft Defender XDR Cloud App Security Alert
-  - 13/09/2024 - major - Update service name value following Microsoft change
     
 ### DCSync Attack
   - 05/09/2024 - minor - Changing name of elements.
