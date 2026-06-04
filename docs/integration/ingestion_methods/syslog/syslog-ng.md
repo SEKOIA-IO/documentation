@@ -801,3 +801,11 @@ It will automatically configure your syslog-ng server to collect and forward Win
     ```bash
     sudo systemctl restart syslog-ng.service
     ```
+
+## Further readings
+
+- [syslog-ng Open Source Edition documentation](https://www.syslog-ng.com/technical-documents/list/syslog-ng-open-source-edition)
+- [syslog-ng macros reference](https://www.syslog-ng.com/technical-documents/doc/syslog-ng-open-source-edition/3.38/administration-guide/macros)
+- [Working around Linux capabilities problems for syslog-ng](https://www.syslog-ng.com/community/b/blog/posts/working-around-linux-capabilities-problems-for-syslog-ng)
+- [Installing syslog-ng](https://syslog-ng.github.io/admin-guide/030_Installing_syslog-ng/README.html)
+- [Configuring TLS on syslog-ng clients](https://syslog-ng.github.io/admin-guide/100_TLS-encrypted_message_transfer/001_Encrypting_log_messages_with_TLS/000_Configuring_TLS_client.html)
