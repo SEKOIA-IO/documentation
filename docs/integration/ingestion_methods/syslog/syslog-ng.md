@@ -35,6 +35,16 @@ After receiving the IDs to connect to the Linux server, the main activities are 
         sudo apt install -y syslog-ng syslog-ng-mod-tls openssl wget
         ```
 
+    === "Alpine Linux"
+
+        ```bash
+        sudo apk update
+        sudo apk add syslog-ng syslog-ng-scl openssl wget
+        ```
+
+        !!!note
+            On Alpine, TLS support is built into the main `syslog-ng` package (no separate TLS module). Alpine uses OpenRC instead of systemd, so manage the service with `rc-update add syslog-ng` and `rc-service syslog-ng restart` instead of the `systemctl` commands shown later.
+
     === "Fedora, Red Hat, CentOS (yum)"
 
         ```bash
@@ -809,3 +819,4 @@ It will automatically configure your syslog-ng server to collect and forward Win
 - [Working around Linux capabilities problems for syslog-ng](https://www.syslog-ng.com/community/b/blog/posts/working-around-linux-capabilities-problems-for-syslog-ng)
 - [Installing syslog-ng](https://syslog-ng.github.io/admin-guide/030_Installing_syslog-ng/README.html)
 - [Configuring TLS on syslog-ng clients](https://syslog-ng.github.io/admin-guide/100_TLS-encrypted_message_transfer/001_Encrypting_log_messages_with_TLS/000_Configuring_TLS_client.html)
+- [syslog-ng on Alpine Linux (package index)](https://pkgs.alpinelinux.org/packages?name=syslog-ng*&branch=edge&repo=main)
