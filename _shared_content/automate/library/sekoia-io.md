@@ -1542,7 +1542,7 @@ find alerts that match your filters
 | `has_more` | `boolean` |  |
 | `items` | `array` |  |
 
-### List Assets
+### [DEPRECATED] List Assets
 
 Return a list of assets according to the filters
 

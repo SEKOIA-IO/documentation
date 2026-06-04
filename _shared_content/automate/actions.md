@@ -16,13 +16,13 @@ The Actions Library lists all available actions in playbooks with their detailed
 
 ### Getters
 
-| Name | Description |
-| --- | --- |
+| Name                                                                                                | Description |
+|-----------------------------------------------------------------------------------------------------| --- |
 | [Get Event Field Common Values](/integration/action_library/sekoia-io.md#get-event-field-common-values) | Retrieve the most common values of an ECS field based on the time window |
-| [List Assets](/integration/action_library/sekoia-io.md#list-assets) | Retrieve detailed information about assets based on a filter |
-| [Search Alerts](/integration/action_library/sekoia-io.md#search-alerts) | Retrieve detailed information about alerts (such as the urgency, name of the rule, etc… except events) based on a filter. |
-| [Get Alert](/integration/action_library/sekoia-io.md#get-alert) | Retrieve detailed alert information such as the urgency, name of the rule, pattern, etc… except events. |
-| [Get Events](/integration/action_library/sekoia-io.md#get-events) | Retrieve events based on a search. This action is equivalent to a search on the event page and takes into consideration 3 parameters: a query with filters (`source.ip=xx.xxx.xx`), and earliest time/latest time: two dates to determine the date range of the search. |
+| [List Assets](/integration/action_library/sekoia-io.md#list-assets-v2)                       | Retrieve detailed information about assets based on a filter |
+| [Search Alerts](/integration/action_library/sekoia-io.md#search-alerts)                             | Retrieve detailed information about alerts (such as the urgency, name of the rule, etc… except events) based on a filter. |
+| [Get Alert](/integration/action_library/sekoia-io.md#get-alert)                                     | Retrieve detailed alert information such as the urgency, name of the rule, pattern, etc… except events. |
+| [Get Events](/integration/action_library/sekoia-io.md#get-events)                                   | Retrieve events based on a search. This action is equivalent to a search on the event page and takes into consideration 3 parameters: a query with filters (`source.ip=xx.xxx.xx`), and earliest time/latest time: two dates to determine the date range of the search. |
 
 !!!note
 	`Get Events` can be used to retrieve events from an alert. Events associated to an alert contain the key `alert_short_ids` with the value of the ID of the alert.
