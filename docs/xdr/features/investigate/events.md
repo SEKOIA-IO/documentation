@@ -190,7 +190,7 @@ You can add several events to a case at once:
     A maximum of 1 000 events can be added to a case in a single operation.
 
 !!! note
-    Events selected from different sub-communities cannot be added together. In that case, the `Add to case` button is disabled and a tooltip explains the reason.
+    Events selected from different communities cannot be added together. In that case, the `Add to case` button is disabled and a tooltip explains the reason.
 
 
 ### Export the results of a search
