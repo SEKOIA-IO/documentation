@@ -420,6 +420,7 @@ nav:
       - Jizo AI / Sesame Jizo NDR: integration/categories/network/sesameit_jizo.md
       - Umbrella DNS Logs: integration/categories/network/umbrella_dns.md
       - Unbound: integration/categories/network/unbound.md
+      - Zimperium MTD - Threats: integration/categories/network/zimperium_mtd.md
     - Network Security:
       - Akamai Guardicore On-Premises: integration/categories/network_security/akamai_guardicore_onprem.md
       - Akamai Guardicore Saas: integration/categories/network_security/akamai_guardicore_saas.md
