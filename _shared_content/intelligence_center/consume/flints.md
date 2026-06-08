@@ -1,14 +1,14 @@
 # FLINT Reports
 
-FLINT (FLash INTelligence) reports are threat intelligence publications produced by the [Sekoia TDR team](#about-the-tdr-team). They cover ongoing campaigns, tracked threat actors, malware analysis, and threat intelligence from both technical and strategic perspectives.
+FLINT (FLash INTelligence) Reports are threat intelligence publications produced by the [Sekoia TDR team](#about-the-tdr-team). They cover ongoing campaigns, active intrusion sets, distributed malware, and more, from both technical and strategic perspectives.
 
 FLINTs directly feed the indicators, objects, and context available across the platform.
 
 ## Overview
 
-The FLINT reports page lets you read, browse, and explore intelligence reports produced by TDR analysts. Each report is available in PDF and text format and is linked to STIX objects and observables in the platform, allowing you to pivot from a report directly into your investigation workflows.
+The FLINT Reports page enables you to read, browse, and explore intelligence publications produced by TDR analysts. Reports are available in both PDF and text format and are linked to relevant STIX objects and observables within the platform. This allows you to directly pivot from a report into your investigation workflows.
 
-New FLINTs are published every month. The number of reports available to you depends on your subscription.
+Over 50 FLINTs are published annually. The number of reports available to you depends on your subscription.
 
 !!! info "Access by subscription"
     - **Defend**: Access to the last 4 FLINT reports via the Threat Landscape page. 
@@ -19,7 +19,7 @@ New FLINTs are published every month. The number of reports available to you dep
 You can reach the FLINT reports page from two entry points:
 
 - Navigate to **Reports** in the left-hand menu, then select **FLINTs** in the filter bar.
-- From the **Threat Landscape** page, click **See more** on the *FLINT reports* widget.
+- From the **Threat Landscape** page, click **See more** in the *FLINT Reports* widget.
 
 ## What you can do
 
@@ -29,7 +29,7 @@ By default, reports open in **PDF view**. You can:
 
 - Zoom in and out to adjust readability.
 - Switch to **text view** using the toggle at the top of the report if you prefer plain text.
-- Download the PDF to your machine.
+- Download the PDF to your device.
 - Resize the report list panel on the left to give more space to the reading area.
 
 ### Explore linked intelligence
