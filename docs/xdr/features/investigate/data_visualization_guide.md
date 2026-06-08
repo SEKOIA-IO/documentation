@@ -66,6 +66,7 @@ The Sankey Chart visualizes flows between entities, making it ideal for mapping 
     events
     | where timestamp > ago(1h)
     | aggregate count() by source.ip, destination.ip
+    | limit 50
     | render sankey with (source=source.ip, target=destination.ip, value=count())
     ```
 

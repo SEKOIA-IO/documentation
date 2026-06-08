@@ -648,6 +648,7 @@ For the `sankey` chart, the syntax uses `source`, `target`, and `value` paramete
         events
         | where timestamp > ago(1h)
         | aggregate count() by source.ip, destination.ip
+        | limit 50
         | render sankey with (source=source.ip, target=destination.ip, value=count())
 
         ```
