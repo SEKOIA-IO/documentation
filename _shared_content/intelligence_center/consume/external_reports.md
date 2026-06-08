@@ -1,8 +1,8 @@
-# OSINT Reports
+# External Reports
 
-OSINT reports are publications from external sources, collected and made available directly in the platform. They cover ongoing campaigns, intrusion sets, attack techniques, and threat activity across sectors and geographies.
+External Reports are publications from external sources, collected and modelled directly in the platform. They cover ongoing campaigns, intrusion sets, attack techniques, and threat activity across sectors and geographies.
 
-They complement the TDR-produced [FLINT reports](flints.md) by bringing in third-party intelligence to broaden situational awareness.
+They complement the TDR-produced [FLINT reports](flints.md) by incorporating third-party intelligence perspectives into the platform, helping analysts broaden their situational awareness and gain additional context on emerging threats. 
 
 ## Overview
 
@@ -10,11 +10,11 @@ The Reports page lets you browse and explore external threat intelligence collec
 
 Each report renders the original web publication directly in the platform. A text summary is available for most reports. Where available, reports are also linked to STIX objects and observables in the platform, allowing you to pivot from a report into your investigation workflows.
 
-Sources are curated by the Sekoia team and include government CERTs, national cybersecurity agencies, security vendors, and independent research organizations. They publish in multiple languages and cover a broad spectrum of industries, threat actors, and attack techniques. <!-- TODO: add a representative list of sources -->
+Sources are curated by the Sekoia team and include government CERTs, national cybersecurity agencies, security vendors, and independent research organizations. They publish in multiple languages and cover a broad spectrum of industries, threat actors, and attack techniques. 
 
 ## How to access
 
-Navigate to **Reports** in the left-hand menu. OSINT reports are listed alongside FLINTs and can be filtered independently using the filter bar.
+Navigate to **Reports** in the left-hand menu. External Reports are listed alongside FLINTs and can be filtered independently using the filter bar.
 
 ## What you can do
 
