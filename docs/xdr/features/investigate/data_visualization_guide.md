@@ -2,7 +2,7 @@
 
 The Query Builder offers various options for displaying your results depending on your analytical needs. These visualizations help you transform raw data into actionable insights for reporting and threat hunting.
 
-The query builder offers six visualization options, grouped into two categories:
+The query builder offers seven visualization options, grouped into two categories:
 
 1. **Total values**: Focuses on comparing values across different categories at a specific point in time.
 2. **Time series**: Highlights how data evolves over time, enabling the analysis of trends and changes.
@@ -48,6 +48,26 @@ To ensure a clear display, the maximum number of values allowed is limited to 80
 * In the **Y-axis**, select the column representing numeric values (numeric data only).
 
  ![bar chart](/assets/operation_center/events/qb-bar-chart.png){: style="max-width:100%"}
+
+### Sankey Chart
+The Sankey Chart visualizes flows between entities, making it ideal for mapping relationships such as network traffic, user activity paths, or any directional data between two sets of values.
+
+**Configuration**:
+
+* In the **Source** field, select the column representing the origin of the flow (e.g., source IP, user, process).
+* In the **Target** field, select the column representing the destination of the flow (e.g., destination IP, asset, URL).
+* In the **Value** field, optionally select a numeric column representing the flow magnitude (e.g., count, bytes). If omitted, each row is counted as 1.
+
+!!! tip "SOL syntax"
+
+    Use `render sankey with (source=<column>, target=<column>, value=<column>)` to generate a Sankey chart directly from a SOL query.
+
+    ```
+    events
+    | where timestamp > ago(1h)
+    | aggregate count() by source.ip, destination.ip
+    | render sankey with (source=source.ip, target=destination.ip, value=count())
+    ```
 
 ## Time series visualizations
 
