@@ -37,5 +37,3 @@ Fetch Imperva WAF logs
 
 
 ## Extra
-
-Module **`Imperva` v1.20.0**
