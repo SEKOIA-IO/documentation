@@ -11,7 +11,7 @@ Imperva Module
 | `base_url` | `string` | Imperva API base URL |
 | `api_id` | `string` | Imperva API ID |
 | `api_key` | `string` | Imperva API key |
-| `keys` | `object` | Encryption keys. Each key object should contain a `private_key_pem` field with the RSA private key in PEM format used to decrypt the AES symmetric key embedded in each encrypted log file |
+| `keys` | `object` | Encryption keys |
 
 ## Triggers
 
