@@ -96,7 +96,7 @@ nav:
       - Graph Explorations: cti/features/consume/graph_explorations.md
       - Reports: 
           - FLINT Reports: cti/features/consume/flints.md
-          - OSINT Reports: cti/features/consume/osint_reports.md
+          - External Reports: cti/features/consume/external_reports.md
       - Export: cti/features/consume/export.md
       - IOCs Collections: cti/features/consume/ioccollections.md
     - Monitor:
