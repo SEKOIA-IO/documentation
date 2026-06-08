@@ -104,6 +104,57 @@ In this section, you will find examples of raw logs as generated natively by the
 
 
 
+=== "globalprotect"
+
+
+    ```json
+	{
+        "AttemptedGateways": null,
+        "AuthMethod": "Cookie",
+        "ConnectionError": "Cannot decrypt cookie",
+        "ConnectionErrorID": 10,
+        "ConnectionMethod": null,
+        "CountOfRepeats": 1,
+        "Description": "Login to: 1.2.3.4",
+        "DeviceName": "DEVICE_test",
+        "DeviceSN": "no-serial",
+        "EndpointDeviceName": null,
+        "EndpointOSType": "Windows",
+        "EndpointOSVersion": "Microsoft Windows 10 Pro 64-bit",
+        "EndpointSN": null,
+        "EventIDValue": "gateway-auth",
+        "EventStatus": "failure",
+        "Gateway": null,
+        "GatewayPriority": null,
+        "GatewaySelectionType": "",
+        "GlobalProtectClientVersion": "0.0.-1",
+        "GlobalProtectGatewayLocation": null,
+        "HostID": null,
+        "LogSubtype": "globalprotect",
+        "LogType": "GLOBALPROTECT",
+        "LoginDuration": 0,
+        "Portal": "GlobalProtect_External_Gateway",
+        "PrivateIPv4": "",
+        "PrivateIPv6": "",
+        "PublicIPv4": "10.20.30.40",
+        "PublicIPv6": "",
+        "QuarantineReason": null,
+        "RepeatCount": 1,
+        "SSLResponseTime": -1,
+        "SequenceNo": 1234567890123456789,
+        "SourceRegion": "FR",
+        "SourceUserName": "admin",
+        "Stage": "login",
+        "Subtype": "globalprotect",
+        "TimeGenerated": "2026-06-01T05:33:50.000000Z",
+        "TimeGeneratedHighResolution": "2026-06-01T05:33:51.698000Z",
+        "TimeReceived": "2026-06-01T05:34:04.000000Z",
+        "TunnelType": null
+    }
+    ```
+
+
+
 === "globalprotect_cef"
 
 
@@ -2074,6 +2125,15 @@ In this section, you will find examples of raw logs as generated natively by the
         "TunneledApplication": "untunneled",
         "ThreatNameFirewall": "VBScript File"
     }
+    ```
+
+
+
+=== "test_threat_missing_fields"
+
+
+    ```json
+	1,2026/02/20 19:06:10,111111111111,THREAT,virus,2817,2026/02/20 19:05:53,192.0.2.4,198.51.100.8,203.0.113.1,203.0.113.5,USERS-WIFI,,,web-browsing,vsys1,ES-WIFI,Internet,ethernet1/3.32,ethernet1/7,default,2026/02/20 19:05:56,111288,1,59825,80,16013,80,0x402000,tcp,reset-server,"chromelevator.bin",trojan/Win32.marte.tt(761892252),any,medium,server-to-client,7596009052954502110,0x8000000000000000,10.0.0.0-10.255.255.255,Netherlands,,,0,,,1,,,,,,,,0,21,25,0,0,,FW-AA-BBB,,,,,0,,0,,N/A,pe,Antivirus-5468-5995,0x0,0,4294967295,,,72cc2298-083d-4e8c-80ed-2735621e4313,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0,2026-02-20T19:05:56.585+01:00,,justification_sample,,internet-utility,general-internet,browser-based,4,"used-by-malware,able-to-transfer-file,has-known-vulnerability,tunnel-other-application,pervasive-use",,web-browsing,no,no,,,NonProxyTraffic
     ```
 
 
