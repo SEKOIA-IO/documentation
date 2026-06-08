@@ -77,6 +77,9 @@ This integration supports the following event types:
 
 ### Instruction on Sekoia
 
+!!! Note
+    If you have enabled log encryption in Imperva (by uploading your public key), you must provide the corresponding **RSA private key in PEM format** in the connector configuration under the `private_key_pem` field. This private key is used to decrypt the AES symmetric key embedded in each encrypted log file, allowing Sekoia.io to properly process your logs.
+
 {!_shared_content/integration/intake_configuration.md!}
 
 {!_shared_content/integration/connector_configuration.md!}
