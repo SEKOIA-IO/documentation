@@ -43,7 +43,7 @@ When you create or edit a feed, you select an output format. The table below sum
 
 | Format | Best suited for | Max objects per call |
 | --- | --- | --- |
-| JSON / STIX | CTI platforms | 10,000 |
+| JSON / STIX | CTI platforms | 2,000 |
 | Text | Firewall EDLs (one object per line) | 10,000 |
 | CSV | Customizable spreadsheet exports | 2,000 |
 | Custom | User-defined templates using variables such as `$tlp`, `$id`, `$name`, and `$observables` | 2,000 |
