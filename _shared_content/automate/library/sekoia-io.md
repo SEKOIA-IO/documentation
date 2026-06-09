@@ -2270,4 +2270,4 @@ Update a rule
 
 ## Extra
 
-Module **`Sekoia.io` v2.72.3**
+Module **`Sekoia.io` v2.72.4**
