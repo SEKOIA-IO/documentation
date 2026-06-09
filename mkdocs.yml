@@ -554,6 +554,7 @@ nav:
       - Microsoft Active Directory: integration/action_library/microsoft-active-directory.md
       - Microsoft Entra ID: integration/action_library/microsoft-entra-id.md
     - Network:
+      - DNS: integration/action_library/dns.md
       - Fortigate Firewalls: integration/action_library/fortigate-firewalls.md
       - Sophos: integration/action_library/sophos.md
       - Stormshield: integration/action_library/stormshield.md
