@@ -53,7 +53,7 @@ The following table provides estimated hardware footprints per deployment size.
 | Size | Incoming data | Assets (approx.) | Compute nodes | GPU nodes | S3 storage |
 | :--- | :---: | :---: | :---: | :---: | :---: |
 | Small | 500 GB/day | ~5,000 | 6 | 1 | 200 TB |
-| Medium | 1.4 TB/day | ~15,000 | 14 | 2 | 600 TB |
+| Medium | 2 TB/day | ~20,000 | 24 | 2 | 800 TB |
 | Large | 5 TB/day | ~50,000 | 60 | 2 | 2,000 TB |
 
 **What is an asset?** An asset is any monitored entity (server, endpoint, network device) that generates log events sent to the platform. The asset counts above are approximations. Actual capacity depends on the size and frequency of ingested log messages.
