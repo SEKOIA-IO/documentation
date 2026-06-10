@@ -554,6 +554,7 @@ nav:
       - Microsoft Active Directory: integration/action_library/microsoft-active-directory.md
       - Microsoft Entra ID: integration/action_library/microsoft-entra-id.md
     - Network:
+      - DNS: integration/action_library/dns.md
       - Fortigate Firewalls: integration/action_library/fortigate-firewalls.md
       - Sophos: integration/action_library/sophos.md
       - Stormshield: integration/action_library/stormshield.md
@@ -631,6 +632,7 @@ plugins:
       getting_started/first_steps.md: getting_started/index.md
       getting_started/inviting_users_to_join_your_community.md: getting_started/invite_users.md
       integration/categories/network/beyondtrust_pra_sessions.md: integration/categories/iam/beyondtrust_pra_sessions.md
+      integration/categories/network_security/ubika_cloud_protector_next_gen.md: integration/categories/network_security/ubika_cloud_protector_next_gen_alerts.md
       intelligence_center.md: cti/index.md
       intelligence_center/dashboard.md: cti/features/monitor/dashboard.md
       intelligence_center/data_export.md: cti/features/consume/export.md
@@ -843,8 +845,6 @@ plugins:
       xdr/features/collect/integrations/network/wallix.md: integration/categories/iam/wallix.md
       xdr/features/collect/integrations/network/watchguard_firebox.md: integration/categories/network_security/watchguard_firebox.md
       xdr/features/investigate/dork_language.md: xdr/features/investigate/events_query_language.md
-      integration/categories/network/beyondtrust_pra_sessions.md: integration/categories/iam/beyondtrust_pra_sessions.md
-      integration/categories/network_security/ubika_cloud_protector_next_gen.md: integration/categories/network_security/ubika_cloud_protector_next_gen_alerts.md
       xdr/features/investigate/sekoia_operating_language.md: xdr/features/investigate/sol_overview.md
 - integration_by_uuid
 - sass
