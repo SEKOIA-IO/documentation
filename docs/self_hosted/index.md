@@ -1,54 +1,86 @@
-# Sekoia Self Hosted
+# Sekoia Self-Hosted
 
-Sekoia Self-Hosted is a customer-operated deployment of the Sekoia AI SOC platform designed for environments with high regulatory, sovereignty, or connectivity constraints. It provides cloud-grade detection and automation capabilities while keeping data processing and infrastructure entirely under your authority. 
+Sekoia Self-Hosted is a customer-operated deployment of the Sekoia AI SOC platform for environments with strict regulatory, sovereignty, or connectivity constraints. It delivers cloud-grade detection and automation capabilities while keeping data processing and infrastructure entirely under your authority.
 
-## Purpose and logic
+## Why Sekoia Self-Hosted exists
 
-Highly regulated sectors often operate under legal or technical constraints that make standard SaaS models impractical. Sekoia Self-Hosted addresses these challenges by allowing you to maintain full control over your security operations.The platform ensures:
+Highly regulated sectors operate under legal or technical constraints that make standard SaaS models impractical: classified or restricted networks with no external connectivity, national sovereignty requirements that limit reliance on foreign cloud providers, public procurement frameworks that impose strict hosting conditions, and mission-critical environments demanding full infrastructure control.
 
-The platform ensures:
+Sekoia Self-Hosted addresses these constraints with a self-managed, all-in-one platform you can deploy anywhere: public or private cloud, virtual machines, or fully air-gapped on-premises. You control installation, upgrades, monitoring, and supervision while running the same capabilities as Sekoia SaaS.
 
-* **Data Sovereignty**: Data remains within your infrastructure to meet residency and sovereignty laws.
-* **Network Independence**: Operations can run in restricted or fully air-gapped networks with no external connectivity.
-* **Infrastructure Control**: You manage the deployment, monitoring, and lifecycle of the platform on your own infrastructure.
+!!! warning "Customer-operated platform"
+    Sekoia Self-Hosted is a fully self-managed solution. Sekoia does not deploy or operate it. Your team, or a certified MSSP, is solely responsible for installation, updates, and ongoing platform management.
 
-## Key benefits
+## Key capabilities
 
-* **Regulatory Compliance**: The platform is compatible with national and sector-specific regulations, including public procurement frameworks.
-* **Enterprise-Grade Operations**: You can provision and scale environments with automated orchestration and built-in autoscaling.
-* **High Availability**: The architecture includes redundancy and self-healing capabilities to ensure continuous security operations.
-* **Continuous Protection**: The business layer is decoupled from the technical foundation, allowing you to receive daily updates for threat intelligence, security rules, integrations, and automations. This ensures your detection capabilities improve continuously without requiring platform upgrades or service disruption.
+| Capability | Description |
+| :--- | :--- |
+| Data sovereignty | Data stays within your infrastructure to meet residency and regulatory requirements. |
+| Air-gap compatibility | Full deployment and operation in restricted or fully disconnected environments. |
+| Automated orchestration | A single CLI (Self-Hosted Controller) handles provisioning, configuration, scaling, and lifecycle. |
+| Built-in observability | Integrated Grafana, Prometheus and Loki stack for real-time monitoring. |
+| Built-in diagnostics | On-demand health checks for the cluster, applications, databases, and resources via the SHC CLI. |
+| High availability | A 6-node minimum cluster eliminates single points of failure. Kubernetes self-healing ensures continuous operations. |
 
 ## Intended audience
 
-Sekoia Self-Hosted is specifically designed for organizations that require maximum control over their security stack.
+Sekoia Self-Hosted targets organizations that require maximum control over their security stack and have the operational capacity to run it. Typical deployments include:
 
-Target organizations include:
+- Highly regulated industries (finance, government, healthcare).
+- Air-gapped or classified infrastructures (defense, critical national infrastructure).
+- Organizations with strict national data sovereignty requirements.
+- Large enterprises running dedicated security operations.
+- Organizations working with MSSPs or sovereign service providers.
 
-* **Highly Regulated Industries**: Sectors such as finance, government, and healthcare.
-* **Sovereign Entities**: Organizations with strict national data requirements or those using sovereign service providers.
-* **Restricted Environments**: Teams operating in air-gapped or classified infrastructures.
-* **Large Enterprises**: Organizations running dedicated security operations with an internal platform team or a trusted MSSP.
+The platform requires a minimum of **5,000 supervised assets** and **500 GB/day** of ingested data.
 
-!!! note "Operational Responsibility"
-    Sekoia Self-Hosted requires a dedicated operations team to manage the end-to-end lifecycle, including deployment, configuration, and monitoring.
+!!! note "Incompatible use cases"
+    Sekoia Self-Hosted is not designed for small organizations without a dedicated platform operations team, short-term or temporary projects, or purely cloud-native companies with no on-premises requirements.
 
 ## Documentation map
 
-Use the following links to navigate the technical documentation and manage your deployment lifecycle.
-
 ### Architecture
-* [Reference Architecture](architecture/architecture.md): Explore the technical design, component interactions, and data flow of the self-hosted solution.
+
+| Document | What you will find |
+| :--- | :--- |
+| [Reference architecture](architecture/architecture.md) | Platform components, infrastructure topology, node roles, high availability design, and data workflow. |
 
 ### Deployment
-* [Deployment Process](deployment/deployment_process.md): Understand the high-level stages of a standard installation.
-* [Deployment Prerequisites](deployment/deployment_prerequisites.md): Verify hardware, software, and network requirements before you begin.
-* [Deployment Guide](deployment/deployment_guide.md): Follow step-by-step instructions to install and initialize the platform.
-* [Deployment Configuration](deployment/deployment_configuration.md): Consult the comprehensive reference for the `config.yml` manifest parameters.
 
-### Operations and Support
-* [Monitoring Guide](monitoring/monitoring_guide.md): Learn how to observe platform health and performance metrics.
-* [Debug Tool](troubleshooting/debug_tool.md): Use the built-in diagnostic tools to identify and resolve common issues.
+| Document | What you will find |
+| :--- | :--- |
+| [Technical requirements](deployment/deployment_prerequisites.md) | Hardware, OS, storage, network, and operational requirements before you begin. |
+| [Network requirements](deployment/network_requirements.md) | Full table of required network flows, ports, and protocols. |
+| [The deployment process](deployment/deployment_process.md) | High-level overview of the deployment engine, execution modes, and lifecycle operations. |
+| [Deploy the platform](deployment/deployment_guide.md) | Step-by-step installation: download, verification, initialization, and post-deployment validation. |
+| [Deployment configuration reference](deployment/deployment_configuration.md) | Complete `config.yml` parameter reference with required and optional field indicators. |
 
-### Release updates
-* [Release Notes](release_notes/0.0.1.md): Review the latest features, improvements, and fixes included in each version.
+### Operations
+
+| Document | What you will find |
+| :--- | :--- |
+| [Set up the first administrator account](operations/first_login.md) | How to provision the first administrator account and configure initial access. |
+
+### Monitoring and troubleshooting
+
+| Document | What you will find |
+| :--- | :--- |
+| [Monitor your platform](monitoring/monitoring_guide.md) | Observability stack overview, daily monitoring workflows, and SHC diagnostic command reference. |
+| [Debug your deployment](troubleshooting/debug_tool.md) | Full SHC debug command reference with remediation guidance and log collection for support. |
+
+### Release information
+
+| Document | What you will find |
+| :--- | :--- |
+| [Release notes v0.0.1](release_notes/0.0.1.md) | MVP feature scope, functional limitations, known issues, and support lifecycle. |
+
+## Quick start path
+
+If you are new to Sekoia Self-Hosted, follow this sequence:
+
+1. Read the [Reference architecture](architecture/architecture.md) to understand the platform topology.
+2. Validate your infrastructure against the [Technical requirements](deployment/deployment_prerequisites.md) and [Network requirements](deployment/network_requirements.md).
+3. Prepare your `config.yml` using the [Deployment configuration reference](deployment/deployment_configuration.md).
+4. Follow the [Deploy the platform](deployment/deployment_guide.md) guide.
+5. Create your first user with the [Set up the first administrator account](operations/first_login.md) guide.
+6. Set up continuous monitoring using the [Monitor your platform](monitoring/monitoring_guide.md) guide.

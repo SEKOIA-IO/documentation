@@ -80,14 +80,16 @@ nav:
   - Architecture: 
     - Reference Architecture: self_hosted/architecture/architecture.md
   - Deployment: 
-    - Deployment Process: self_hosted/deployment/deployment_process.md
-    - Deployment Prerequisites: self_hosted/deployment/deployment_prerequisites.md
-    - Deployment Guide: self_hosted/deployment/deployment_guide.md
-    - Deployment Configuration: self_hosted/deployment/deployment_configuration.md
-  - Monitoring: 
-    - Monitoring Guide: self_hosted/monitoring/monitoring_guide.md
-  - Troubleshooting:
-    - Debug Tool: self_hosted/troubleshooting/debug_tool.md
+    - Technical requirements: self_hosted/deployment/deployment_prerequisites.md
+    - Network requirements: self_hosted/deployment/network_requirements.md
+    - The deployment process: self_hosted/deployment/deployment_process.md
+    - Deploy the platform: self_hosted/deployment/deployment_guide.md
+    - Deployment configuration reference: self_hosted/deployment/deployment_configuration.md
+  - Operations: 
+    - Set up the first administrator account: self_hosted/operations/first_login.md
+  - Monitoring and troubleshooting: 
+    - Monitor your platform: self_hosted/monitoring/monitoring_guide.md
+    - Debug your deployment: self_hosted/troubleshooting/debug_tool.md
   - Release Notes: 
     - 0.0.1: self_hosted/release_notes/0.0.1.md
 - Sekoia Defend (XDR):

@@ -1,254 +1,286 @@
-# Troubleshooting and Debugging
+# Debug your deployment
 
-A centralized set of diagnostic tools is available through the Self-Hosted Controller (SHC). These commands let you validate your configuration, inspect the health of your deployment, audit secrets, diagnose database issues, and identify resource pressure on the cluster.
+The Self-Hosted Controller (SHC) provides a set of diagnostic commands that let you validate configuration, inspect cluster health, audit secrets, diagnose database issues, and analyse resource usage. This article is a full reference for those commands, including expected outputs and remediation steps.
 
-All commands below are executed via the `run-shc.sh` wrapper script using the `exec` subcommand, which instantiates the named module inside the controller container and runs it to completion.
+All commands are executed from the **orchestration node** using the `exec` subcommand:
 
----
+```bash
+./run-shc.sh exec <COMMAND>
+```
 
-## Configuration Validation
+## Configuration validation
 
-### Validate the local configuration file
+### CheckLocalConfig
+
+Validates every key in your `config.yml` against the SHC schema.
 
 ```bash
 ./run-shc.sh exec CheckLocalConfig
 ```
 
-Loads `config.yml` and validates every key against the schema defined in `help.yaml`. The check covers:
+The check reports:
 
-- **Missing required fields** — any key marked `required: true` in the schema that is absent from your config will be reported with an error log line.
-- **Format mismatches** — values that do not match the expected regex pattern are flagged individually.
-- **Schema integrity** — ensures no required key is hidden from the help output (which would indicate an authoring error in `help.yaml`).
+- Missing required fields.
+- Values that do not match the expected format or regex.
 
-If all checks pass, the command exits cleanly with:
+??? example "Expected output (no errors)"
+    ```
+    Validating configuration...
+    Configuration is valid entries_checked=42
+    ```
 
-```
-Validating configuration...
-Configuration is valid   entries_checked=<N>
-```
+??? example "Example failure output"
+    ```
+    Missing required config key=global.version.platform.version
+    Format mismatch key=utils.oci_registry.url value=registry.lab expected_format=^https?://
+    Configuration validation failed: 2 error(s) found
+    ```
 
-If errors are found, each is logged individually before the command exits with a non-zero status:
+**What to do after a failure:** Review each error line. Add any missing required keys to `config.yml`. Fix values that do not match the expected format, for example a URL missing the `https://` scheme.
 
-```
-Missing required config   key=global.version.platform.version
-Format mismatch           key=utils.oci_registry.url  value=…  expected_format=^https?://…
-Configuration validation failed: 2 error(s) found
-```
-
-### Inspect resolved environment variables (verbose mode)
+To inspect all resolved environment variable values before the schema check runs, add the `-v` flag:
 
 ```bash
 ./run-shc.sh -v exec CheckLocalConfig
 ```
 
-Adding `-v` enables debug-level logging. Before running the schema validation, the controller dumps the **fully resolved** in-memory config tree — including every `env.VAR_NAME` value substituted with its actual environment variable content. This is the most reliable way to confirm that secrets injected via environment variables (e.g. `REGISTRY_PASSWORD`, `SERVERS_SSH_KEY`) are correctly loaded into the controller process.
+The verbose output includes the fully resolved in-memory config tree, including every `env.VAR_NAME` value substituted with its actual content. Use this to confirm that secrets injected via environment variables are correctly loaded.
 
----
+## Infrastructure connectivity
 
-## Infrastructure Connectivity
+### CheckServersAreReachable
 
-### Check SSH connectivity to all servers
+Tests SSH connectivity to all nodes listed in `utils.ansible.inventory`.
 
 ```bash
 ./run-shc.sh exec CheckServersAreReachable
 ```
 
-Uses Ansible to run a `ping` playbook against all hosts declared in `utils.ansible.inventory`. This confirms that the controller can open an SSH connection to every node, which is a prerequisite for any Ansible-based operation (installation, node reboots, etc.).
+??? example "Expected output"
+    ```
+    Pinging all configured servers via Ansible...
+    All configured servers are reachable
+    ```
 
-On success:
+**What to do after a failure:**
 
-```
-Pinging all configured servers via Ansible...
-All configured servers are reachable
-```
+- Verify the SSH key path in `utils.ansible.ssh-key` is correct and exported in your environment.
+- Confirm the target node is running and reachable from the orchestration node on TCP port 22.
+- Verify the username in `utils.ansible.user` has SSH access to the node.
+- If you use password-based sudo, confirm `SERVERS_SUDO_PASSWORD` is set correctly.
 
-On failure, the Ansible output is surfaced and the command exits with a non-zero status indicating which host(s) could not be reached.
+### CheckKubernetesCluster
 
-### Check Kubernetes cluster health
+Connects to the Kubernetes API and verifies that every node has a `Ready=True` condition and that the actual node count matches your Ansible inventory.
 
 ```bash
 ./run-shc.sh exec CheckKubernetesCluster
 ```
 
-Fetches the kubeconfig, connects to the cluster API, and verifies:
+??? example "Expected output"
+    ```
+    Kubernetes cluster is healthy nodes=6 expected=6
+    ```
 
-- The number of nodes in the cluster matches the number of unique hosts in the Ansible inventory.
-- Every node has a `Ready=True` condition.
+**What to do after a failure:**
 
-On success:
+- Run `kubectl get nodes` to identify which nodes are not `Ready`.
+- Run `kubectl describe node <node-name>` and look for taints, conditions, or resource pressure.
+- Check K3s system logs on the failing node: `journalctl -u k3s -n 100`.
 
-```
-Kubernetes cluster is healthy   nodes=3  expected=3
-```
+## Local artifact checks
 
-Fails immediately if any node is not Ready, or if the node count does not match the inventory (which may indicate a node that joined or was evicted without being reflected in the config).
+### CheckLocalReleaseFiles
 
----
-
-## Local Artifact Checks
-
-### Verify release files on disk
+Verifies that every asset declared under `global.version` exists in the expected directory on the orchestration node.
 
 ```bash
 ./run-shc.sh exec CheckLocalReleaseFiles
 ```
 
-Iterates over every entry under `global.version` in your config (e.g. `platform`, `data.detection-rules`) and checks that:
+**What to do after a failure:** Confirm that the release archive was fully extracted and that `global.version.platform.path` points to the correct directory.
 
-1. The base directory (`path`) exists.
-2. The version subdirectory (`path/<version>`) exists and is non-empty.
+### CheckLocalGit
 
-Useful after a `DownloadReleaseFiles` run to confirm that all expected archives are present before attempting an installation or update.
-
-### Verify git repository access
+Clones the repository configured in `utils.git.repo_url` and tests both pull and push access.
 
 ```bash
 ./run-shc.sh exec CheckLocalGit
 ```
 
-Clones the configured `utils.git.repo_url` into a temporary directory and tests both **pull** and **push** access using the configured credentials. Use this to validate that the git token has sufficient permissions before running any module that writes ArgoCD stacks to the repository.
+**What to do after a failure:**
 
-### Verify OCI registry access
+- Verify `GIT_HTTP_USERNAME` and `GIT_HTTP_PASSWORD` are set correctly.
+- Confirm the repository exists and is reachable from the orchestration node.
+- Ensure the user has both read and write permissions on the repository.
+
+### CheckLocalOCIRegistry
+
+Tests push, pull, and delete access to your OCI registry. If push fails, pull and delete are skipped and reported as untested.
 
 ```bash
 ./run-shc.sh exec CheckLocalOCIRegistry
 ```
 
-Connects to `utils.oci_registry.url` and verifies **push**, **pull**, and **delete** access. Push is tested first; if it fails, pull and delete are skipped and reported as untested. Use this to confirm registry credentials before pushing Helm charts or images.
+**What to do after a failure:**
 
----
+- Verify `REGISTRY_USERNAME` and `REGISTRY_PASSWORD` are set correctly.
+- Confirm the registry URL is reachable from the orchestration node.
+- Verify the `check_repo` path in `utils.oci_registry.check_repo` points to an existing image in your registry.
 
-## Service and Application Health
+## Application health
 
-### ArgoCD status dashboard
+### DebugArgoCD
+
+Renders a three-panel status dashboard for all ArgoCD repositories, the root application, and every managed application.
 
 ```bash
 ./run-shc.sh exec DebugArgoCD
 ```
 
-Connects to the ArgoCD API and renders three tables in the terminal:
+**Reading the application table:**
 
-| Table | Content |
-|---|---|
-| **Repositories** | Name, URL, and type of every registered ArgoCD repository |
-| **Root Application** | Sync and health status of the root app-of-apps |
-| **Applications** | Per-application sync status and health status, sorted alphabetically |
+| Sync status | Health status | Action |
+| :--- | :--- | :--- |
+| Synced | Healthy | No action required. |
+| Synced | Progressing | Wait 2-3 minutes, then re-run. Normal during deployments. |
+| OutOfSync | Any | Run `DebugArgoCDSyncAll` to force re-synchronization. |
+| Any | Degraded or Missing | Inspect pod logs and run `DebugDatabases`. See remediation below. |
 
-Sync statuses are colour-coded: `Synced` in green, `OutOfSync` in red. Health statuses: `Healthy` in green, `Progressing` in yellow, `Degraded`/`Missing` in red.
+**What to do for Degraded or Missing applications:**
 
-This is the first command to run when investigating a broken or partially deployed platform.
+- Run `kubectl get pods -n <namespace>` to identify failing pods.
+- Run `kubectl logs -n <namespace> <pod-name>` to view pod logs.
+- Run `kubectl get events -n <namespace> --sort-by='.lastTimestamp'` to view recent events.
 
-### Force a full re-synchronisation
+### DebugArgoCDSyncAll
+
+Forces a three-phase full re-synchronization of all ArgoCD applications in parallel.
 
 ```bash
 ./run-shc.sh exec DebugArgoCDSyncAll
 ```
 
-Triggers a three-phase synchronisation of **all** ArgoCD applications in parallel:
+The three phases are:
 
-1. **Partial sync** — for each application, syncs only resources whose `kind` matches a configurable regex (default: `secretgenerator|configmap`). This refreshes ConfigMaps and SecretGenerator objects before secrets are regenerated.
-2. **Operator restart** — rolls out the `sekoiaio-secret-operator` deployment in the `support` namespace and waits for it to come back up (default: 60 s), ensuring it picks up the refreshed SecretGenerators.
-3. **Full sync** — syncs every application in its entirety.
+1. Partial sync of `secretgenerator` and `configmap` resources to refresh secrets before regeneration.
+2. Restart of the `sekoiaio-secret-operator` deployment to pick up refreshed SecretGenerators.
+3. Full sync of every application.
 
-Use this when applications are stuck in `OutOfSync`, after a manual change to the ArgoCD git repository, or after a platform upgrade.
+!!! note "Sync behavior"
+    The sync timeout per application defaults to 300 seconds. Up to 32 applications are synced concurrently. Override these values in `config.yml` under `modules.debug_argocd_sync_all`.
 
-> **Note:** The sync timeout per application defaults to 300 s and up to 32 applications are synced concurrently. Both values can be overridden in `config.yml` under `modules.debug_argocd_sync_all`.
+Use this command when applications are stuck in `OutOfSync`, after a manual change to the ArgoCD repository, or after a platform upgrade.
 
----
+## Secret diagnostics
 
-## Secret Diagnostics
+### DebugMissingSecrets
 
-### Audit missing or incomplete secrets
+Compares declared `SecretGenerator` CRDs against actual Kubernetes `Secret` objects and reports:
+
+- Secrets that are entirely missing.
+- Secrets that exist but have incomplete keys.
+- The Vault path expected for each missing secret.
 
 ```bash
 ./run-shc.sh exec DebugMissingSecrets
 ```
 
-Compares the desired state (every `SecretGenerator` CRD declared via `secretoperator.sekoia.io/v1alpha1`) against the actual Kubernetes `Secret` objects present in the cluster, and reports:
+**What to do after a failure:**
 
-- Secrets that are entirely missing (the CRD exists but no `Secret` was created).
-- Secrets that exist but have incomplete keys.
-- For each missing key: the vault path where the value is expected to come from.
+- Check the `sekoiaio-secret-operator` status: `kubectl get pods -n support | grep secret-operator`.
+- Run `DebugArgoCDSyncAll` to restart the operator and trigger secret regeneration.
+- If specific Vault paths are missing, contact Sekoia support with the full command output.
 
-Additionally, the module runs a `platform-installer dumpconfig` job and cross-references each missing secret against the platform-installer configuration, helping distinguish between secrets that were never defined versus secrets that failed to be generated.
+### DebugKustomizeStacksTemplates
 
-### Scan ArgoCD stacks for unrendered template placeholders
+Clones the ArgoCD Git repository and scans every YAML file for unrendered `SH_TMPL` template placeholders. For each match, it reports the file path, resource type, and the YAML field that was not substituted.
 
 ```bash
 ./run-shc.sh exec DebugKustomizeStacksTemplates
 ```
 
-Clones (or pulls) the ArgoCD git repository and recursively scans every YAML file for values that still contain the `SH_TMPL` marker — the sentinel string used by the stack templater to indicate a value that should have been substituted. For each match, the following is logged:
+**What to do after a failure:**
 
-- File path and document index within a multi-document YAML file
-- Kubernetes `kind` and `metadata.name` of the affected object
-- Dot-separated YAML path to the offending field and its current value
+- Each unrendered placeholder corresponds to a missing or incorrect value in `config.yml`.
+- Correct the relevant parameter in `config.yml` and re-run `PushArgoStacks` to regenerate the stack manifests.
 
-A summary of occurrences per YAML path (sorted by frequency) is printed at the end. Use this when services fail to start due to misconfigured values that were not properly rendered during installation.
+## Database diagnostics
 
----
+### DebugDatabases
 
-## Database Diagnostics
-
-### Inspect database pod health
+Inspects all StatefulSets and CloudNativePG clusters in the `support` namespace.
 
 ```bash
 ./run-shc.sh exec DebugDatabases
 ```
 
-Inspects the `support` namespace and renders two tables:
+**Status definitions:**
 
-**StatefulSets** — covers non-CNPG databases (e.g. Redis, ClickHouse):
+| Status | Meaning |
+| :--- | :--- |
+| Healthy | All replicas are running and ready with no recent restarts. |
+| Warning | All replicas running, but recent restarts or waiting containers detected. Monitor and re-run. |
+| Unhealthy | One or more replicas are not ready. Investigate immediately. |
 
-| Column | Description |
-|---|---|
-| Name | StatefulSet name |
-| Expected / Ready | Declared vs. ready replica count |
-| Status | `Healthy` / `Warning` / `Unhealthy` (colour-coded) |
-| Restarts | Total container restarts across all pods |
-| Last Restart | Human-readable age of the most recent restart (e.g. `5m ago`) |
-| Issues | Per-pod issues: `not ready`, `waiting (CrashLoopBackOff)`, `crashed Xm ago`, etc. |
+**What to do for Unhealthy status:**
 
-**CNPG Clusters** — same columns for all CloudNativePG `postgresql.cnpg.io/v1` clusters (e.g. the platform PostgreSQL instances).
+- For a pod in `CrashLoopBackOff`: `kubectl logs -n support <pod-name> --previous`
+- For a pod in `Pending` state: `kubectl describe pod -n support <pod-name>` and check for resource pressure or missing PVCs.
+- For CNPG clusters: `kubectl describe cluster -n support <cluster-name>`
 
-A pod is flagged as having a **recent restart** if its last termination timestamp is within the past 10 minutes. Status is `Unhealthy` if any replica is not ready or not in `Running` phase; `Warning` if all replicas are running but recent restarts or waiting containers were detected.
+## Resource management
 
----
+### DebugResourceAllocation
 
-## Cluster Resource Management
-
-### RAM allocation waste report
+Queries the Kubernetes Metrics API and compares live memory consumption against declared memory requests for every pod.
 
 ```bash
 ./run-shc.sh exec DebugResourceAllocation
 ```
 
-Queries the Kubernetes Metrics API (`metrics.k8s.io/v1beta1`) for live memory consumption across all namespaces, then compares it against each pod's declared memory `requests`. The output is two tables:
+!!! note "Metrics Server required"
+    This command requires the Kubernetes Metrics Server. If the Metrics API is unavailable, the command exits with an error. Run the `HelmInstall` module to deploy it.
 
-**RAM Allocation — Waste Report** — all pods that declare a memory request, sorted by wasted RAM descending:
+The output shows:
 
-| Column | Description |
-|---|---|
-| Namespace / Pod | Pod identity |
-| Request | Declared memory request |
-| Usage | Live memory consumption from the Metrics API |
-| Waste | `request − usage` |
-| Waste % | Colour-coded: green < 50 %, yellow ≥ 50 %, red ≥ 80 % |
+- A **waste report** for all pods with a memory request, sorted by wasted RAM. Red rows indicate 80% or more waste.
+- A **list of pods without memory requests**, alongside their live usage. These pods present a scheduling risk.
 
-**Pods Without Memory Requests** — pods for which no `resources.requests.memory` is set, shown with their current usage. These pods are a scheduling risk as Kubernetes cannot make informed placement decisions for them.
+## Platform installer debug
 
-> **Prerequisites:** The Metrics Server must be deployed in the cluster. If the Metrics API is unavailable, the command exits with an error suggesting you run the `HelmInstall` module first.
+### DebugPlatformInstallation
 
----
-
-## Platform Installer Debug
-
-### Launch a paused installer job
+Deploys the `platform-installer` Helm chart with a `pause` command override, creating a pod that stays alive without performing any changes. Use this to open an interactive shell inside the installer container and inspect its runtime environment, mounted secrets, and configuration files.
 
 ```bash
 ./run-shc.sh exec DebugPlatformInstallation
 ```
 
-Deploys the `platform-installer` Helm chart with a `pause` command override instead of the normal install/update sequence. The job pod starts and stays alive without performing any changes, giving you an interactive shell to inspect the installer environment, mounted secrets, and configuration files. Any stale release from a previous debug session is cleaned up automatically before deploying.
+Any previous debug session is cleaned up automatically before the new pod is created.
 
-Use this when you need to manually inspect or test the platform-installer's runtime context without triggering a full installation.
+## Collecting logs for a support ticket
+
+When you escalate an issue to Sekoia L3 support, include the following in your request:
+
+1. Generate a diagnostic bundle:
+
+    ```bash
+    ./run-shc.sh exec diagnose
+    ```
+
+2. Copy the full terminal output of the failing command.
+
+3. Share your `config.yml` with all secrets redacted (replace all passwords and keys with `***`).
+
+4. Collect K3s system logs from the affected nodes:
+
+    ```bash
+    journalctl -u k3s -n 500 --no-pager > k3s.log
+    ```
+
+## Related links
+
+- [Monitor your platform](../monitoring/monitoring_guide.md): Continuous monitoring with Grafana and on-demand diagnostic workflows.
+- [Deploy the platform](../deployment/deployment_guide.md): Post-deployment validation commands.
+- [Deployment configuration reference](../deployment/deployment_configuration.md): How to fix configuration errors flagged by `CheckLocalConfig`.

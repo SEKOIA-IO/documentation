@@ -1,259 +1,344 @@
 # Deployment configuration reference
 
-The `config.yml` file is the central manifest used to describe your environment and service requirements. It dictates how the self-hosted controller orchestrates infrastructure deployment and application settings.
+The `config.yml` file is the central manifest used to describe your environment, credentials, and service settings. The Self-Hosted Controller (SHC) reads this file at runtime to drive every deployment and lifecycle operation.
 
-## Configuration example
+## Configuration template
 
-You can use this complete example as a template for your own deployment. Ensure you replace the placeholders and environment variable references with your actual values.
+Use this template as a starting point. Replace all placeholder values before running the SHC.
 
-```yaml
-global:
-  dev: false
-  emit_mm_notif: false
-  host: "app.sekoia.local"
-  alternative_hosts: "api.sekoia.local"
-  version:
-    platform:
-      version: "v0.0.1"
-      path: /opt/sekoia/platform/
-      skip_existing_local: false
-      skip_existing_manifest: false
-      manifest_max_age: 300
-      push_workers: 4
-    data:
-      detection-rules:
-        version: "010126"
-        path: /opt/sekoia/data/
-      intake-formats:
-        version: "010126"
-        path: /opt/sekoia/data/
-      playbook-library:
-        version: "010126"
-        path: /opt/sekoia/data/
-      cti:
-        version: "010126"
-        path: /opt/sekoia/data/
-utils:
-  ansible:
-    datadir: "resources/ansible"
-    ssh-key: env.SERVERS_SSH_KEY
-    user: root
-    password: env.SERVERS_SUDO_PASSWORD
-    inventory:
-      managers:
-        - 10.0.0.1
-      workers:
-        - 10.0.0.2
-        - 10.0.0.3
-  git:
-    auth_method: "http"
-    repo_url: ""
-    http:
-      username: env.GIT_HTTP_USERNAME
-      password: env.GIT_HTTP_PASSWORD
-      proxy: ""
-    ssh:
-      key_path: env.GIT_SSH_KEY_PATH
-  kubernetes:
-    kubeconfig_path: "/tmp/self-hosted-controller/kubeconfig.yml"
-    autologin: false
-  oci_registry:
-    url: env.OCI_REGISTRY_URL
-    username: env.OCI_REGISTRY_USERNAME
-    password: env.OCI_REGISTRY_PASSWORD
-    check_repo: "my-project/shc-probe"
-    chart_repo: "my-project/charts"
-    image_repo: "my-project/images"
-  prometheus:
-    url: env.PROMETHEUS_URL
-    query_window: "1h"
-    query_timeout: 10
-    default_label_filters: {
-      "platform": "app.dev1.sekoia.io"
-    }
-  argocd:
-    namespace: "argocd"
-    root_app_name: "root"
-  notification:
-    url: "http://localhost:6666"
-    channel: "mi-self-hosted"
-    thread_id: "deploy-job"
-  platform_installer:
-    image: "registry.sekoia.io/sekoialab/platform-installer:self-hosted-v0.14.0"
-
-modules:
-  k3s_install:
-    k3s_release: "v1.31.12+k3s1"
-    k3s_tls_san: []
-    kube_manager_fqdn: "10.0.0.1"
-    k3s_extra_args: ""
-    k3s_extra_labels: {}
-    k3s_extra_taints: []
-    registry_url: https://registry.sekoia.io
-    registry_subpath: ""
-    registry_username: env.REGISTRY_USERNAME
-    registry_password: env.REGISTRY_PASSWORD
-    pull_images_with_proxy: false
-    k3s_http_proxy: ""
-    k3s_https_proxy: ""
-    k3s_no_proxy: "127.0.0.0/8,10.0.0.0/8,172.16.0.0/12,192.168.0.0/16,.svc,.cluster.local,.lab"
-    reboot_after_install: false
-  push_argo_stacks:
-    repo_path: "/tmp/argo-stacks"
-  helm_install:
-    kube_manager_fqdn: "10.0.0.1"
-    forward_dns: "10.X.X.X"
-  wipe_storage:
-    enabled: false
-  kube_crash_recovery:
-    pod_ready_timeout: 300
-    poll_interval: 10
-  platform_configuration:
-    config:
-      global:
-        host: "app.sekoia.local"
-        alternative_hosts: "api.sekoia.local"
-        delivery_host: "app.sekoia.local"
-      proxy:
-        http_proxy: "http://proxy.lab:3128"
-        https_proxy: "http://proxy.lab:3128"
-        no_proxy: "127.0.0.0/8,10.0.0.0/8,172.16.0.0/12,192.168.0.0/16,.svc,.cluster.local,.lab"
-      grafana:
-        root_url: "https://app.sekoia.local/grafana"
-      email:
-        email_sender: "noreply@sekoia.local"
-        smtp:
-          host: "mail.server.local"
-          user: "smtp-user"
-          password: "smtp-password"
-          port: "25"
-          tls: "False"
-          starttls: "True"
-      local_argocd:
-        repo_name: ""
+??? example "Complete config.yml template"
+    ```yaml
+    global:
+      dev: false
+      emit_mm_notif: false
+      host: "app.sekoia.local"
+      alternative_hosts: "api.sekoia.local"
+      version:
+        platform:
+          version: "v0.0.1"
+          path: /opt/sekoia/platform/
+          skip_existing_local: false
+          skip_existing_manifest: false
+          manifest_max_age: 300
+          push_workers: 4
+        data:
+          detection-rules:
+            version: "010126"
+            path: /opt/sekoia/data/
+          intake-formats:
+            version: "010126"
+            path: /opt/sekoia/data/
+          playbook-library:
+            version: "010126"
+            path: /opt/sekoia/data/
+          cti:
+            version: "010126"
+            path: /opt/sekoia/data/
+    utils:
+      ansible:
+        datadir: "resources/ansible"
+        ssh-key: env.SERVERS_SSH_KEY
+        user: root
+        password: env.SERVERS_SUDO_PASSWORD
+        inventory:
+          managers:
+            - 10.0.0.1
+          workers:
+            - 10.0.0.2
+            - 10.0.0.3
+      git:
+        auth_method: "http"
         repo_url: ""
-        helm_repo_url: ""
-        git_username: env.GIT_HTTP_USERNAME
-        git_password: env.GIT_HTTP_PASSWORD
-        oci_username: env.REGISTRY_USERNAME
-        oci_password: env.REGISTRY_PASSWORD
-```
+        http:
+          username: env.GIT_HTTP_USERNAME
+          password: env.GIT_HTTP_PASSWORD
+          proxy: ""
+        ssh:
+          key_path: env.GIT_SSH_KEY_PATH
+      kubernetes:
+        kubeconfig_path: "/tmp/self-hosted-controller/kubeconfig.yml"
+        autologin: false
+      oci_registry:
+        url: env.OCI_REGISTRY_URL
+        username: env.OCI_REGISTRY_USERNAME
+        password: env.OCI_REGISTRY_PASSWORD
+        check_repo: "your-project/shc-probe"
+        chart_repo: "your-project/charts"
+        image_repo: "your-project/images"
+      prometheus:
+        url: env.PROMETHEUS_URL
+        query_window: "1h"
+        query_timeout: 10
+        default_label_filters:
+          platform: "app.sekoia.local"
+      argocd:
+        namespace: "argocd"
+        root_app_name: "root"
+      notification:
+        url: "http://localhost:6666"
+        channel: "mi-self-hosted"
+        thread_id: "deploy-job"
+      platform_installer:
+        image: "registry.sekoia.io/sekoialab/platform-installer:self-hosted-v0.14.0"
+    modules:
+      k3s_install:
+        k3s_release: "v1.31.12+k3s1"
+        k3s_tls_san: []
+        kube_manager_fqdn: "10.0.0.1"
+        k3s_extra_args: ""
+        k3s_extra_labels: {}
+        k3s_extra_taints: []
+        registry_url: https://registry.sekoia.io
+        registry_subpath: ""
+        registry_username: env.REGISTRY_USERNAME
+        registry_password: env.REGISTRY_PASSWORD
+        pull_images_with_proxy: false
+        k3s_http_proxy: ""
+        k3s_https_proxy: ""
+        k3s_no_proxy: "127.0.0.0/8,10.0.0.0/8,172.16.0.0/12,192.168.0.0/16,.svc,.cluster.local,.lab"
+        reboot_after_install: false
+      push_argo_stacks:
+        repo_path: "/tmp/argo-stacks"
+      helm_install:
+        kube_manager_fqdn: "10.0.0.1"
+        forward_dns: "10.0.0.53"
+      wipe_storage:
+        enabled: false
+      kube_crash_recovery:
+        pod_ready_timeout: 300
+        poll_interval: 10
+      platform_configuration:
+        config:
+          global:
+            host: "app.sekoia.local"
+            alternative_hosts: "api.sekoia.local"
+            delivery_host: "app.sekoia.local"
+          proxy:
+            http_proxy: ""
+            https_proxy: ""
+            no_proxy: "127.0.0.0/8,10.0.0.0/8,172.16.0.0/12,192.168.0.0/16,.svc,.cluster.local,.lab"
+          grafana:
+            root_url: "https://app.sekoia.local/grafana"
+          email:
+            email_sender: "noreply@sekoia.local"
+            smtp:
+              host: "mail.server.local"
+              user: "smtp-user"
+              password: "smtp-password"
+              port: "25"
+              tls: "False"
+              starttls: "True"
+          local_argocd:
+            repo_name: ""
+            repo_url: ""
+            helm_repo_url: ""
+            git_username: env.GIT_HTTP_USERNAME
+            git_password: env.GIT_HTTP_PASSWORD
+            oci_username: env.REGISTRY_USERNAME
+            oci_password: env.REGISTRY_PASSWORD
+    ```
 
-## Manifest parameters
+## global
 
-### 1. Global
-This section defines the platform identity, notification behavior, and how the controller fetches release assets from remote storage.
+Defines platform identity, notification behavior, and how the SHC locates release assets.
 
-* **global.dev** (boolean): Enables development mode behaviors, such as verbose logging and extended error reporting.
-* **global.emit_mm_notif** (boolean): Enables the sending of installation progress notifications to Mattermost.
-* **global.host** (string): The primary FQDN used to access the Sekoia.io platform.
-* **global.alternative_hosts** (string): Secondary FQDNs used for API access or auxiliary services.
+| Parameter | Required | Type | Description |
+| :--- | :---: | :--- | :--- |
+| `global.dev` | No | boolean | Enables development mode (verbose logging, extended error reporting). Default: `false`. |
+| `global.emit_mm_notif` | No | boolean | Sends installation progress notifications to Mattermost. Requires `utils.notification` to be set. Default: `false`. |
+| `global.host` | Yes | string | Primary FQDN for platform access (e.g., `app.sekoia.local`). Must match a DNS A record pointing to your Load Balancer. |
+| `global.alternative_hosts` | No | string | Secondary FQDNs for API access or auxiliary services (e.g., `api.sekoia.local`). |
 
-#### global.version.fetch (optional: online deployment only)
-* **global.version.fetch.access-key** (string): S3 access key required to authenticate with the release bucket.
-* **global.version.fetch.secret-key** (string): S3 secret key required to authenticate with the release bucket.
-* **global.version.fetch.endpoint** (string): The S3 API endpoint URL (e.g., Linode, AWS, or MinIO).
-* **global.version.fetch.region** (string): The geographical region of the S3 bucket.
-* **global.version.fetch.bucket** (string): The name of the S3 bucket containing the self-hosted release assets.
+### global.version.fetch
 
-#### global.version.platform
-* **global.version.platform.version** (string): The specific version tag of the platform to deploy.
-* **global.version.platform.path** (string): Local absolute path on the admin node where the release archive is stored.
-* **global.version.platform.skip_existing_local** (boolean): If `true`, the controller skips downloading files already present on the local disk.
-* **global.version.platform.skip_existing_manifest** (boolean): If `true`, the controller always uses the local manifest copy, bypassing age checks.
-* **global.version.platform.manifest_max_age** (integer): Time in seconds before the local manifest is considered expired and re-downloaded.
-* **global.version.platform.push_workers** (integer): Number of parallel threads used to push images and Helm charts to the local registry.
+This section is required only for online deployments where the SHC fetches release assets from Sekoia's remote S3 bucket. Omit it in air-gapped deployments.
 
-#### global.version.data
-* **global.version.data.detection-rules** (object): Version and local path for the detection logic bundle.
-* **global.version.data.intake-formats** (object): Version and local path for log parsing formats.
-* **global.version.data.playbook-library** (object): Version and local path for automation playbooks.
-* **global.version.data.cti** (object): Version and local path for Cyber Threat Intelligence data.
+| Parameter | Required | Description |
+| :--- | :---: | :--- |
+| `global.version.fetch.access-key` | Yes | S3 access key for the Sekoia release bucket. |
+| `global.version.fetch.secret-key` | Yes | S3 secret key for the Sekoia release bucket. |
+| `global.version.fetch.endpoint` | Yes | S3 API endpoint URL. |
+| `global.version.fetch.region` | Yes | S3 bucket region. |
+| `global.version.fetch.bucket` | Yes | Name of the S3 bucket containing release assets. |
 
-### 2. Utils
-This section configures the underlying tools (Ansible, Git, Kubernetes) and external service integrations required for the deployment.
+### global.version.platform
 
-#### utils.ansible
-* **utils.ansible.datadir** (string): Path to the directory containing Ansible playbooks, roles, and inventories.
-* **utils.ansible.ssh-key** (string): Path or environment variable for the SSH private key used to manage nodes.
-* **utils.ansible.user** (string): The remote user used for SSH connections (e.g., `root` or `debian`).
-* **utils.ansible.password** (string): The sudo password or environment variable for privilege escalation.
-* **utils.ansible.inventory.managers** (list): IP addresses or FQDNs of the Kubernetes manager nodes.
-* **utils.ansible.inventory.workers** (list): IP addresses or FQDNs of the Kubernetes worker nodes.
+| Parameter | Required | Description |
+| :--- | :---: | :--- |
+| `global.version.platform.version` | Yes | Version tag to deploy (e.g., `v0.0.1`). |
+| `global.version.platform.path` | Yes | Absolute path on the orchestration node to the extracted release directory. |
+| `global.version.platform.skip_existing_local` | No | If `true`, skips downloading files already present locally. Default: `false`. |
+| `global.version.platform.skip_existing_manifest` | No | If `true`, uses the local manifest without checking its age. Default: `false`. |
+| `global.version.platform.manifest_max_age` | No | Seconds before the local manifest is considered stale and re-downloaded. Default: `300`. |
+| `global.version.platform.push_workers` | No | Number of parallel threads for pushing images and charts to the registry. Default: `4`. |
 
-#### utils.git
-* **utils.git.auth_method** (string): Protocol used to authenticate with Git repositories (`http` or `ssh`).
-* **utils.git.repo_url** (string): The remote URL of the Git repository containing environment manifests.
-* **utils.git.http.username** (string): Username for HTTP-based Git authentication.
-* **utils.git.http.password** (string): Password or Token for HTTP-based Git authentication.
-* **utils.git.http.proxy** (string): Optional proxy URL specifically for Git HTTP operations.
-* **utils.git.ssh.key_path** (string): Path to the SSH key for Git authentication.
+### global.version.data
 
-#### utils.kubernetes
-* **utils.kubernetes.kubeconfig_path** (string): Destination path where the generated cluster `kubeconfig` will be stored.
-* **utils.kubernetes.autologin** (boolean): If `true`, automatically performs a CLI login to the cluster after deployment.
+Defines the version and local path for each security content bundle. Every bundle is shipped with the platform release.
 
-#### utils.oci_registry
-* **utils.oci_registry.url** (string): The full URL of the OCI-compliant container registry.
-* **utils.oci_registry.username** (string): Registry authentication username.
-* **utils.oci_registry.password** (string): Registry authentication password.
-* **utils.oci_registry.check_repo** (string): Full path to an image used for registry health-check probes.
-* **utils.oci_registry.chart_repo** (string): Base repository path for Helm chart storage.
-* **utils.oci_registry.image_repo** (string): Base repository path for Docker image storage.
+!!! note "Version string format"
+    Data bundle versions use the format `DDMMYY`. For example, `010126` represents January 1st, 2026. This is a content publication date, not a semantic version. Check the release notes or the archive manifest to find valid version strings for a given release.
 
-#### utils.prometheus
-* **utils.prometheus.url** (string): The endpoint URL for the Prometheus monitoring server.
-* **utils.prometheus.query_window** (string): The default time window applied to metric queries (e.g., `1h`).
-* **utils.prometheus.query_timeout** (integer): Maximum duration in seconds for a Prometheus query to complete.
-* **utils.prometheus.default_label_filters** (object): Set of default labels used to filter all outgoing Prometheus queries.
+| Parameter | Required | Description |
+| :--- | :---: | :--- |
+| `global.version.data.detection-rules` | Yes | Version and local path for the detection rules bundle. |
+| `global.version.data.intake-formats` | Yes | Version and local path for log parsing formats. |
+| `global.version.data.playbook-library` | Yes | Version and local path for automation playbooks. |
+| `global.version.data.cti` | Yes | Version and local path for Cyber Threat Intelligence data. |
 
-#### utils.argocd
-* **utils.argocd.namespace** (string): The Kubernetes namespace where ArgoCD services are deployed.
-* **utils.argocd.root_app_name** (string): The name assigned to the "App-of-Apps" root manifest.
+## utils
 
-#### utils.notification
-* **utils.notification.url** (string): Base URL for the internal notification service.
-* **utils.notification.channel** (string): The Mattermost channel identifier for posting updates.
-* **utils.notification.thread_id** (string): A logical identifier used to group notification messages into threads.
+Configures the underlying tools and external service integrations.
 
-#### utils.platform_installer
-* **utils.platform_installer.image** (string): The full Docker image URI for the Sekoia.io platform installer.
+### utils.ansible
 
-### 3. Modules
-This section provides granular configuration for each functional phase of the platform installation.
+| Parameter | Required | Description |
+| :--- | :---: | :--- |
+| `utils.ansible.datadir` | Yes | Path to the directory containing Ansible playbooks, roles, and inventories. |
+| `utils.ansible.ssh-key` | Yes | SSH private key used to manage nodes. Accepts `env.VAR_NAME` references. |
+| `utils.ansible.user` | Yes | Remote user for SSH connections (e.g., `root` or `debian`). |
+| `utils.ansible.password` | No | Sudo password for privilege escalation. Required only if your SSH configuration uses password-based sudo. |
+| `utils.ansible.inventory.managers` | Yes | IP addresses or FQDNs of Kubernetes manager nodes. At least 1 required. |
+| `utils.ansible.inventory.workers` | Yes | IP addresses or FQDNs of Kubernetes worker nodes. |
 
-#### modules.k3s_install
-* **modules.k3s_install.k3s_release** (string): The Kubernetes version tag to be installed.
-* **modules.k3s_install.k3s_tls_san** (list): List of additional SANs (Subject Alternative Names) for the API server certificate.
-* **modules.k3s_install.kube_manager_fqdn** (string): The FQDN or IP of the primary manager node used for cluster orchestration.
-* **modules.k3s_install.k3s_extra_args** (string): Additional command-line arguments passed to the K3s server/agent process.
-* **modules.k3s_install.k3s_extra_labels** (object): Key-value pairs to be applied as labels to the Kubernetes nodes.
-* **modules.k3s_install.k3s_extra_taints** (list): List of taints to be applied to the Kubernetes nodes.
-* **modules.k3s_install.registry_url** (string): The private registry URL used by the nodes to pull images.
-* **modules.k3s_install.registry_subpath** (string): Optional prefix path for rewriting registry image locations.
-* **modules.k3s_install.pull_images_with_proxy** (boolean): Enables the use of an HTTP proxy for `containerd` image pulls.
-* **modules.k3s_install.k3s_http_proxy** (string): The HTTP proxy URL for the K3s runtime.
-* **modules.k3s_install.k3s_https_proxy** (string): The HTTPS proxy URL for the K3s runtime.
-* **modules.k3s_install.k3s_no_proxy** (string): List of CIDRs and domains that bypass the proxy.
-* **modules.k3s_install.reboot_after_install** (boolean): If `true`, the host nodes are rebooted immediately following the K3s installation.
+### utils.git
 
-#### modules.push_argo_stacks
-* **modules.push_argo_stacks.repo_path** (string): Local directory path where the ArgoCD manifest repositories are synchronized.
+| Parameter | Required | Description |
+| :--- | :---: | :--- |
+| `utils.git.auth_method` | Yes | Authentication protocol: `http` or `ssh`. |
+| `utils.git.repo_url` | Yes | Remote URL of the Git repository for ArgoCD stacks. |
+| `utils.git.http.username` | Conditional | Username for HTTP Git authentication. Required if `auth_method` is `http`. |
+| `utils.git.http.password` | Conditional | Password or token for HTTP Git authentication. Required if `auth_method` is `http`. |
+| `utils.git.http.proxy` | No | Proxy URL for Git HTTP operations. |
+| `utils.git.ssh.key_path` | Conditional | Path to the SSH key. Required if `auth_method` is `ssh`. |
 
-#### modules.helm_install
-* **modules.helm_install.kube_manager_fqdn** (string): FQDN or IP of the manager node for Helm deployment tasks.
-* **modules.helm_install.forward_dns** (string): The upstream DNS server IP used by the cluster's CoreDNS.
+### utils.kubernetes
 
-#### modules.wipe_storage
-* **modules.wipe_storage.enabled** (boolean): Authorizes the controller to format and wipe disks (required for Ceph/Rook storage setup).
+| Parameter | Required | Description |
+| :--- | :---: | :--- |
+| `utils.kubernetes.kubeconfig_path` | Yes | Path where the generated cluster kubeconfig will be stored. |
+| `utils.kubernetes.autologin` | No | If `true`, performs a CLI login to the cluster after deployment. Default: `false`. |
 
-#### modules.kube_crash_recovery
-* **modules.kube_crash_recovery.pod_ready_timeout** (integer): Seconds to wait for all pods to reach the `Ready` state before a deployment phase times out.
-* **modules.kube_crash_recovery.poll_interval** (integer): Frequency in seconds for checking pod status during recovery phases.
+### utils.oci_registry
 
-#### modules.platform_configuration
-* **modules.platform_configuration.config.global** (object): Duplication of platform FQDNs for internal application context.
-* **modules.platform_configuration.config.proxy** (object): Application-layer HTTP/HTTPS/NO_PROXY settings.
-* **modules.platform_configuration.config.grafana.root_url** (string): The external URL used to access the Grafana dashboard.
-* **modules.platform_configuration.config.email.smtp** (object): SMTP server details (`host`, `port`, `user`, `password`, `tls`, `starttls`) for platform alerts and notifications.
-* **modules.platform_configuration.config.local_argocd** (object): Git and OCI credentials specifically for the ArgoCD instance to sync internal application manifests.
+| Parameter | Required | Description |
+| :--- | :---: | :--- |
+| `utils.oci_registry.url` | Yes | Full URL of the OCI-compliant container registry. |
+| `utils.oci_registry.username` | Yes | Registry authentication username. |
+| `utils.oci_registry.password` | Yes | Registry authentication password. |
+| `utils.oci_registry.check_repo` | Yes | Image path used for registry health-check probes (e.g., `your-project/shc-probe`). Must point to an existing image in your registry. |
+| `utils.oci_registry.chart_repo` | Yes | Base path for Helm chart storage (e.g., `your-project/charts`). |
+| `utils.oci_registry.image_repo` | Yes | Base path for Docker image storage (e.g., `your-project/images`). |
+
+### utils.prometheus
+
+Required only if you use SHC commands that query Prometheus (e.g., `DebugResourceAllocation`).
+
+| Parameter | Required | Description |
+| :--- | :---: | :--- |
+| `utils.prometheus.url` | Conditional | Prometheus server endpoint URL. |
+| `utils.prometheus.query_window` | No | Default time window for metric queries (e.g., `1h`). |
+| `utils.prometheus.query_timeout` | No | Maximum query duration in seconds. |
+| `utils.prometheus.default_label_filters` | No | Default label filters for all queries. Set `platform` to your actual platform FQDN. |
+
+### utils.argocd
+
+| Parameter | Required | Description |
+| :--- | :---: | :--- |
+| `utils.argocd.namespace` | Yes | Kubernetes namespace where ArgoCD is deployed. Default: `argocd`. |
+| `utils.argocd.root_app_name` | Yes | Name of the ArgoCD App-of-Apps root manifest. Default: `root`. |
+
+### utils.platform_installer
+
+| Parameter | Required | Description |
+| :--- | :---: | :--- |
+| `utils.platform_installer.image` | Yes | Full Docker image URI for the Sekoia platform installer. Provided by Sekoia in the release notes. |
+
+## modules
+
+Granular configuration for each installation phase.
+
+### modules.k3s_install
+
+| Parameter | Required | Description |
+| :--- | :---: | :--- |
+| `k3s_release` | Yes | Kubernetes version tag (e.g., `v1.31.12+k3s1`). Use the version specified in the release notes. |
+| `kube_manager_fqdn` | Yes | FQDN or IP of the primary manager node. |
+| `registry_url` | Yes | URL of the private registry used by nodes to pull images. |
+| `registry_username` | Yes | Registry username for containerd image pulls. |
+| `registry_password` | Yes | Registry password for containerd image pulls. |
+| `k3s_tls_san` | No | Additional SANs for the API server TLS certificate. |
+| `k3s_extra_args` | No | Additional CLI arguments passed to the K3s process. |
+| `k3s_extra_labels` | No | Key-value labels applied to Kubernetes nodes. |
+| `k3s_extra_taints` | No | Taints applied to Kubernetes nodes. |
+| `pull_images_with_proxy` | No | Enables HTTP proxy for containerd image pulls. Default: `false`. |
+| `k3s_http_proxy` / `k3s_https_proxy` | No | Proxy URLs for the K3s runtime. |
+| `k3s_no_proxy` | No | CIDR and domain bypass list for the proxy. |
+| `reboot_after_install` | No | If `true`, reboots nodes after K3s installation. Default: `false`. |
+
+### modules.helm_install
+
+| Parameter | Required | Description |
+| :--- | :---: | :--- |
+| `kube_manager_fqdn` | Yes | FQDN or IP of the manager node used for Helm deployment tasks. |
+| `forward_dns` | Yes | Upstream DNS server IP used by the cluster's CoreDNS (e.g., `10.0.0.53`). Replace with your actual internal DNS resolver. |
+
+### modules.wipe_storage
+
+!!! warning "Destructive operation"
+    Setting `enabled: true` authorizes the SHC to format and wipe disks. Enable this only if Sekoia explicitly instructs you to do so for your storage configuration.
+
+| Parameter | Required | Description |
+| :--- | :---: | :--- |
+| `enabled` | Yes | Authorizes disk wipe and format. Default: `false`. |
+
+### modules.platform_configuration
+
+| Parameter | Required | Description |
+| :--- | :---: | :--- |
+| `config.global.host` | Yes | Must match `global.host`. |
+| `config.global.alternative_hosts` | Yes | Must match `global.alternative_hosts`. |
+| `config.global.delivery_host` | Yes | FQDN used for internal content delivery services. |
+| `config.proxy.http_proxy` / `https_proxy` | No | Application-layer proxy settings. Required if your environment uses a forward proxy. |
+| `config.proxy.no_proxy` | No | CIDR and domain bypass list for the application proxy. |
+| `config.grafana.root_url` | Yes | External URL for the Grafana dashboard (e.g., `https://app.sekoia.local/grafana`). |
+| `config.email.email_sender` | Yes | Sender address for platform notification emails. |
+| `config.email.smtp.host` | Yes | SMTP server hostname or IP. |
+| `config.email.smtp.port` | Yes | SMTP server port (e.g., `25`, `465`, `587`). |
+| `config.email.smtp.user` | Yes | SMTP authentication username. |
+| `config.email.smtp.password` | Yes | SMTP authentication password. |
+| `config.email.smtp.tls` | Yes | Enable SMTP over TLS (SMTPS). Accepts `"True"` or `"False"` as a string. |
+| `config.email.smtp.starttls` | Yes | Enable STARTTLS upgrade. Accepts `"True"` or `"False"` as a string. |
+
+!!! warning "SMTP boolean values"
+    The `tls` and `starttls` fields accept **string values**, not YAML booleans. Use `"True"` or `"False"` (with quotes). Using unquoted `true` or `false` will cause a runtime error.
+
+    ```yaml
+    tls: "False"      # Correct
+    starttls: "True"  # Correct
+    tls: false        # Incorrect — will cause a runtime error
+    ```
+
+| Parameter | Required | Description |
+| :--- | :---: | :--- |
+| `config.local_argocd.repo_url` | Yes | Git repository URL for ArgoCD synchronization. |
+| `config.local_argocd.helm_repo_url` | Yes | Helm chart repository URL for ArgoCD. |
+| `config.local_argocd.git_username` | Yes | Git credentials for ArgoCD. |
+| `config.local_argocd.git_password` | Yes | Git password or token for ArgoCD. |
+| `config.local_argocd.oci_username` | Yes | OCI registry credentials for ArgoCD image pulls. |
+| `config.local_argocd.oci_password` | Yes | OCI registry password for ArgoCD. |
+
+### modules.debug_argocd_sync_all
+
+Controls the behavior of the `DebugArgoCDSyncAll` command.
+
+| Parameter | Required | Description |
+| :--- | :---: | :--- |
+| `sync_timeout` | No | Maximum seconds per application sync. Default: `300`. |
+| `concurrent_syncs` | No | Maximum number of applications synced in parallel. Default: `32`. |
+
+## Related links
+
+- [Deploy the platform](./deployment_guide.md): Step-by-step installation instructions.
+- [The deployment process](./deployment_process.md): How the SHC executes the configuration.
+- [Debug your deployment](../troubleshooting/debug_tool.md): How to validate your configuration with `CheckLocalConfig`.
