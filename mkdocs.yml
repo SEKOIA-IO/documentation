@@ -637,6 +637,7 @@ nav:
   - Monitoring and troubleshooting: 
     - Monitor your platform: self_hosted/monitoring/monitoring_guide.md
     - Debug your deployment: self_hosted/troubleshooting/debug_tool.md
+    - Common issues: self_hosted/troubleshooting/common_issues.md
   - Release Notes: 
     - 0.0.1: self_hosted/release_notes/0.0.1.md
 - API Documentation: developer/api.md

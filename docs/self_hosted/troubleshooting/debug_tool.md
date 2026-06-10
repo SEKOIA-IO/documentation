@@ -329,3 +329,4 @@ When you escalate an issue to Sekoia L3 support, include the following in your r
 - [Monitor your platform](../monitoring/monitoring_guide.md): Continuous monitoring with Grafana and on-demand diagnostic workflows.
 - [Deploy the platform](../deployment/deployment_guide.md): Post-deployment validation commands.
 - [Deployment configuration reference](../deployment/deployment_configuration.md): How to fix configuration errors flagged by `CheckLocalConfig`.
+- [Common issues](./common_issues.md): Known recurring issues and their resolutions.
