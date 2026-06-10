@@ -155,7 +155,7 @@ Use this option when your environment requires manual validation or approval bet
 To validate the environment before any changes are made, run:
 
 ```bash
-./run-shc.sh exec CheckRequiredConfigItems
+./run-shc.sh exec CheckLocalConfig
 ./run-shc.sh exec CheckLocalGit
 ./run-shc.sh exec CheckLocalOCIRegistry
 ./run-shc.sh exec CheckLocalReleaseFiles
@@ -166,7 +166,15 @@ To validate the environment before any changes are made, run:
 !!! warning "Preflight block"
     The SHC will not proceed if any critical validation check fails. Each failure is logged with an actionable error message. Resolve all errors before continuing.
 
-**Step 2: Provision local registries.**
+**Step 2: Configure servers.**
+
+To prepare the operating system and install required packages on all nodes, run:
+
+```bash
+./run-shc.sh exec ConfigureServersWithAnsible
+```
+
+**Step 3: Provision local registries.**
 
 To push all Docker images, Helm charts, and ArgoCD stack manifests to your local repositories, run:
 
@@ -176,7 +184,7 @@ To push all Docker images, Helm charts, and ArgoCD stack manifests to your local
 ./run-shc.sh exec PushArgoStacks
 ```
 
-**Step 3: Install the Kubernetes stack.**
+**Step 4: Install the Kubernetes stack.**
 
 To install K3s and deploy the cluster services, run:
 
@@ -187,12 +195,14 @@ To install K3s and deploy the cluster services, run:
 ./run-shc.sh exec CheckKubernetesCluster
 ```
 
-**Step 4: Deploy the Sekoia platform.**
+**Step 5: Deploy the Sekoia platform.**
 
-To trigger the ArgoCD synchronization that deploys all Sekoia microservices, run:
+To generate the platform configuration, run the installer job, and retrieve the initial access credentials, run:
 
 ```bash
-./run-shc.sh exec sekoia
+./run-shc.sh exec PlatformConfigurationFile
+./run-shc.sh exec PlatformInstallation
+./run-shc.sh exec PlatformAccess
 ```
 
 ## Post-deployment validation

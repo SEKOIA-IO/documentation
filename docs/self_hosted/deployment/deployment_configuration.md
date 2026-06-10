@@ -145,21 +145,22 @@ Defines platform identity, notification behavior, and how the SHC locates releas
 | Parameter | Required | Type | Description |
 | :--- | :---: | :--- | :--- |
 | `global.dev` | No | boolean | Enables development mode (verbose logging, extended error reporting). Default: `false`. |
-| `global.emit_mm_notif` | No | boolean | Sends installation progress notifications to Mattermost. Requires `utils.notification` to be set. Default: `false`. |
+| `global.emit_mm_notif` | No | boolean | Sends installation progress notifications to Mattermost. Requires both `global.dev: true` and `utils.notification` to be configured. Default: `false`. |
 | `global.host` | Yes | string | Primary FQDN for platform access (e.g., `app.sekoia.local`). Must match a DNS A record pointing to your Load Balancer. |
 | `global.alternative_hosts` | No | string | Secondary FQDNs for API access or auxiliary services (e.g., `api.sekoia.local`). |
 
 ### global.version.fetch
 
-This section is required only for online deployments where the SHC fetches release assets from Sekoia's remote S3 bucket. Omit it in air-gapped deployments.
+This section controls how the SHC fetches release assets from Sekoia's remote S3 bucket.
 
 | Parameter | Required | Description |
 | :--- | :---: | :--- |
-| `global.version.fetch.access-key` | Yes | S3 access key for the Sekoia release bucket. |
-| `global.version.fetch.secret-key` | Yes | S3 secret key for the Sekoia release bucket. |
-| `global.version.fetch.endpoint` | Yes | S3 API endpoint URL. |
-| `global.version.fetch.region` | Yes | S3 bucket region. |
-| `global.version.fetch.bucket` | Yes | Name of the S3 bucket containing release assets. |
+| `global.version.fetch.offline` | No | Set to `true` to skip all S3 downloads and operate in fully offline mode. Default: `false`. Use for air-gapped deployments where all files are pre-staged locally. |
+| `global.version.fetch.access-key` | Conditional | S3 access key for the Sekoia release bucket. Required when `offline` is `false`. |
+| `global.version.fetch.secret-key` | Conditional | S3 secret key for the Sekoia release bucket. Required when `offline` is `false`. |
+| `global.version.fetch.endpoint` | Conditional | S3 API endpoint URL. Required when `offline` is `false`. |
+| `global.version.fetch.region` | Conditional | S3 bucket region. Required when `offline` is `false`. |
+| `global.version.fetch.bucket` | Conditional | Name of the S3 bucket containing release assets. Required when `offline` is `false`. |
 
 ### global.version.platform
 
@@ -167,6 +168,7 @@ This section is required only for online deployments where the SHC fetches relea
 | :--- | :---: | :--- |
 | `global.version.platform.version` | Yes | Version tag to deploy (e.g., `v0.0.1`). |
 | `global.version.platform.path` | Yes | Absolute path on the orchestration node to the extracted release directory. |
+| `global.version.platform.fail_on_missing_data_files` | No | If `true`, treats missing or empty data bundle directories as errors instead of warnings. Default: `false`. |
 | `global.version.platform.skip_existing_local` | No | If `true`, skips downloading files already present locally. Default: `false`. |
 | `global.version.platform.skip_existing_manifest` | No | If `true`, uses the local manifest without checking its age. Default: `false`. |
 | `global.version.platform.manifest_max_age` | No | Seconds before the local manifest is considered stale and re-downloaded. Default: `300`. |
@@ -296,19 +298,21 @@ Granular configuration for each installation phase.
 
 | Parameter | Required | Description |
 | :--- | :---: | :--- |
+| `platform_installer_command` | No | Platform-installer subcommand to run inside the Kubernetes job. Default: `install`. Use `install --skip-provisioners` to skip data provisioners on subsequent runs. |
 | `config.global.host` | Yes | Must match `global.host`. |
-| `config.global.alternative_hosts` | Yes | Must match `global.alternative_hosts`. |
+| `config.global.alternative_hosts` | No | Must match `global.alternative_hosts`. |
 | `config.global.delivery_host` | Yes | FQDN used for internal content delivery services. |
+| `config.global.instance_public_key` | Yes | Base64-encoded public key used to validate Sekoia licenses. Set via `env.SEKOIA_INSTANCE_PUBLIC_KEY`. Provided by Sekoia at contract time. |
 | `config.proxy.http_proxy` / `https_proxy` | No | Application-layer proxy settings. Required if your environment uses a forward proxy. |
 | `config.proxy.no_proxy` | No | CIDR and domain bypass list for the application proxy. |
-| `config.grafana.root_url` | Yes | External URL for the Grafana dashboard (e.g., `https://app.sekoia.local/grafana`). |
-| `config.email.email_sender` | Yes | Sender address for platform notification emails. |
-| `config.email.smtp.host` | Yes | SMTP server hostname or IP. |
-| `config.email.smtp.port` | Yes | SMTP server port (e.g., `25`, `465`, `587`). |
-| `config.email.smtp.user` | Yes | SMTP authentication username. |
-| `config.email.smtp.password` | Yes | SMTP authentication password. |
-| `config.email.smtp.tls` | Yes | Enable SMTP over TLS (SMTPS). Accepts `"True"` or `"False"` as a string. |
-| `config.email.smtp.starttls` | Yes | Enable STARTTLS upgrade. Accepts `"True"` or `"False"` as a string. |
+| `config.grafana.root_url` | No | External URL for the Grafana dashboard (e.g., `https://app.sekoia.local/grafana`). |
+| `config.email.email_sender` | No | Sender address for platform notification emails. |
+| `config.email.smtp.host` | No | SMTP server hostname or IP. |
+| `config.email.smtp.port` | No | SMTP server port (e.g., `25`, `465`, `587`). Default: `25`. |
+| `config.email.smtp.user` | No | SMTP authentication username. |
+| `config.email.smtp.password` | No | SMTP authentication password. |
+| `config.email.smtp.tls` | No | Enable SMTP over TLS (SMTPS). Accepts `"True"` or `"False"` as a string. Default: `"False"`. |
+| `config.email.smtp.starttls` | No | Enable STARTTLS upgrade. Accepts `"True"` or `"False"` as a string. Default: `"True"`. |
 
 !!! warning "SMTP boolean values"
     The `tls` and `starttls` fields accept **string values**, not YAML booleans. Use `"True"` or `"False"` (with quotes). Using unquoted `true` or `false` will cause a runtime error.
@@ -321,12 +325,38 @@ Granular configuration for each installation phase.
 
 | Parameter | Required | Description |
 | :--- | :---: | :--- |
-| `config.local_argocd.repo_url` | Yes | Git repository URL for ArgoCD synchronization. |
-| `config.local_argocd.helm_repo_url` | Yes | Helm chart repository URL for ArgoCD. |
-| `config.local_argocd.git_username` | Yes | Git credentials for ArgoCD. |
-| `config.local_argocd.git_password` | Yes | Git password or token for ArgoCD. |
-| `config.local_argocd.oci_username` | Yes | OCI registry credentials for ArgoCD image pulls. |
-| `config.local_argocd.oci_password` | Yes | OCI registry password for ArgoCD. |
+| `config.local_argocd.repo_url` | No | Git repository URL for ArgoCD synchronization. |
+| `config.local_argocd.helm_repo_url` | No | Helm chart repository URL for ArgoCD (bare host/path without `oci://` scheme). |
+| `config.local_argocd.git_username` | No | Git credentials for ArgoCD. |
+| `config.local_argocd.git_password` | No | Git password or token for ArgoCD. |
+| `config.local_argocd.oci_username` | No | OCI registry credentials for ArgoCD image pulls. |
+| `config.local_argocd.oci_password` | No | OCI registry password for ArgoCD. |
+
+### modules.platform_configuration.config.traefik
+
+Optional. Configure a custom TLS certificate for the Traefik ingress controller. If omitted, Traefik generates a self-signed certificate.
+
+| Parameter | Required | Description |
+| :--- | :---: | :--- |
+| `config.traefik.custom_cert.crt` | No | Public certificate in PEM format. Accepts `env.TRAEFIK_PUBKEY`. |
+| `config.traefik.custom_cert.key` | No | Private key in PEM format. Accepts `env.TRAEFIK_PRIVKEY`. |
+
+### modules.platform_configuration.config.quickwit
+
+Configures the Quickwit event indexer that backs the SOL query engine.
+
+| Parameter | Required | Description |
+| :--- | :---: | :--- |
+| `config.quickwit.host` | Yes | Quickwit internal FQDN (e.g., `quickwit.sekoia.local`). |
+| `config.quickwit.storage.s3.region` | No | S3 region for Quickwit storage. |
+| `config.quickwit.storage.s3.endpoint` | No | S3 endpoint URL for Quickwit storage. |
+| `config.quickwit.storage.s3.access_key` | No | S3 access key. Accepts `env.QW_S3_ACCESS_KEY`. |
+| `config.quickwit.storage.s3.secret_key` | No | S3 secret key. Accepts `env.QW_S3_SECRET_KEY`. |
+| `config.quickwit.storage.s3.force_path_style_access` | No | Use path-style S3 access. Required for some S3-compatible providers. Default: `false`. |
+| `config.quickwit.indexer.replicaCount` | No | Number of Quickwit indexer replicas. Default: `2`. |
+| `config.quickwit.indexer.persistentVolume.size` | No | Persistent volume size for the indexer (e.g., `150Gi`). |
+| `config.quickwit.indexer.persistentVolume.storageClass` | No | Storage class for the indexer PV. Default: `rook-ceph-block`. |
+| `config.quickwit.searcher.replicaCount` | No | Number of Quickwit searcher replicas. Default: `2`. |
 
 ### modules.debug_argocd_sync_all
 
@@ -334,8 +364,11 @@ Controls the behavior of the `DebugArgoCDSyncAll` command.
 
 | Parameter | Required | Description |
 | :--- | :---: | :--- |
-| `sync_timeout` | No | Maximum seconds per application sync. Default: `300`. |
-| `concurrent_syncs` | No | Maximum number of applications synced in parallel. Default: `32`. |
+| `sync_timeout` | No | Maximum seconds to wait per application sync. Default: `300`. |
+| `max_workers` | No | Maximum number of applications synced in parallel. Default: `32`. |
+| `match_regex` | No | Regex for resource kinds to sync in the partial-sync phase (phase 1). Default: `(secretgenerator\|configmap)`. |
+| `require_healthy` | No | If `true`, the post-sync check also requires `Health: Healthy` in addition to `Sync: Synced`. Default: `true`. |
+| `operator_restart_wait` | No | Seconds to wait after restarting the `sekoiaio-secret-operator` before the full sync begins. Default: `60`. |
 
 ## Related links
 

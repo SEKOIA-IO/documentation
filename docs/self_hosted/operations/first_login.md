@@ -1,68 +1,110 @@
 # Set up the first administrator account
 
-After a successful deployment, no administrator account exists by default. This guide walks you through provisioning the first administrator account and preparing the platform for your users.
+After a successful deployment, the Self-Hosted Controller displays the platform access credentials directly in the terminal. This guide walks you through retrieving those credentials, logging in, creating your first community, and allocating your subscription.
 
 ## Before you begin
 
 - You completed the post-deployment validation steps in [Deploy the platform](../deployment/deployment_guide.md).
-- Your SMTP server is reachable and the `config.yml` email settings are correct.
-- You have the primary platform URL configured in `global.host` (e.g., `https://app.sekoia.local`).
+- You have the platform URL configured in `global.host` (e.g., `https://app.sekoia.local`).
+- You have the license file provided by Sekoia for your subscription.
 
-!!! warning "SMTP is required"
-    The platform provisions accounts exclusively through email invitations. If your SMTP server is not reachable, the invitation email cannot be sent and you cannot complete this setup. Verify SMTP connectivity before continuing.
+## Retrieve the initial credentials
 
-## Provision the first administrator
+At the end of a successful installation, the SHC displays a credentials table in the terminal output.
 
-1. Open your browser and navigate to your platform URL (e.g., `https://app.sekoia.local`).
-2. The platform runs a bootstrap process on first access to initialize the default community. Follow the on-screen instructions.
-3. Enter the email address of the first administrator when prompted.
-4. Select **Send invitation**.
-5. Check the inbox of the email address you entered. Open the invitation email from Sekoia.
-6. Select the invitation link in the email.
-7. Enter your full name and create a password.
-8. Select **Confirm** to activate the account.
+??? example "Example credentials table"
+    ```
+                                       Platform Access Credentials
 
-The first user is provisioned as a community administrator with full access to platform settings.
+    ┏━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+    ┃ Service  ┃ URL                           ┃ User                    ┃ Password / Token                 ┃
+    ┡━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┩
+    │ argocd   │ http://localhost:8080         │ admin                   │                                  │
+    ├──────────┼───────────────────────────────┼─────────────────────────┼──────────────────────────────────┤
+    │ grafana  │ http://localhost:3000         │ admin                   │                                  │
+    ├──────────┼───────────────────────────────┼─────────────────────────┼──────────────────────────────────┤
+    │ sekoiaio │ https://app.sekoia.local/user │ instanceadmin@sekoia.io │                                  │
+    └──────────┴───────────────────────────────┴─────────────────────────┴──────────────────────────────────┘
+    ```
 
-> 📸 [SCREENSHOT SUGGESTION: The first-login bootstrap screen showing the email address input field and Send invitation button. | ALT TEXT: Sekoia Self-Hosted first administrator setup screen.]
+The table provides credentials for three services: the Sekoia platform (`sekoiaio`), the ArgoCD GitOps console (`argocd`), and the Grafana observability dashboard (`grafana`). Save all three sets of credentials in a secure location.
 
-## Invite additional users
+!!! warning "Credentials are auto-generated"
+    Passwords and tokens are randomly generated at installation time. They are displayed once at the end of the installation. If you did not save them, use the command in the next step to redisplay them.
 
-Once the first administrator account is active, you can invite other users from the platform settings.
+To redisplay the credentials at any time, run:
 
-1. Log in to the platform with your administrator account.
-2. Navigate to **Settings > Members**.
-3. Select **Invite a member**.
-4. Enter the user's email address.
-5. Assign a role to the user.
-6. Select **Send invitation**.
+```bash
+./run-shc.sh exec PlatformAccess
+```
 
-The invited user receives an email and follows the same account-creation steps as above.
+## Log in to the platform
 
-> 📸 [SCREENSHOT SUGGESTION: The Members settings page showing the Invite a member button and the existing members list. | ALT TEXT: Sekoia platform Members settings page.]
+1. Open your browser and navigate to the `sekoiaio` URL from the credentials table (e.g., `https://app.sekoia.local/user`).
+2. Enter the `sekoiaio` username (`instanceadmin@sekoia.io`) in the **Email** field.
+3. Enter the corresponding password in the **Password** field.
+4. Select **Log in**.
+
+You are now logged in to the **Administration Community**. This community is dedicated to managing users and communities across your entire instance. It is not a workspace for security operations.
+
+!!! note "Community overview"
+    Your instance contains two built-in communities after installation:
+
+    | Community | Purpose |
+    | :--- | :--- |
+    | Administration Community | Manages users and communities across the instance. Use this community for administrative tasks only. |
+    | sekoia community | Reserved for internal platform operations. Do not use or modify this community. |
+
+    You must create a separate community to run your security operations.
+
+## Create your community
+
+![communities](/assets/self_hosted/communities.png)
+
+1. Select **Communities** in the left navigation panel.
+2. Select **+ Create** in the top right corner.
+3. Enter a name for your community in the **Name** field.
+4. Enter a description in the **Description** field (optional).
+5. In the **Administrators** field, add `instanceadmin@sekoia.io` as a community administrator.
+6. Select **Create**.
+
+Your new community appears in the list alongside the two built-in communities.
+
+## Allocate your subscription
+
+Your community has no active subscription until you import the license file provided by Sekoia.
+
+![allocate](/assets/self_hosted/allocate.png)
+
+
+1. Select your community from the list.
+2. Select the **Subscriptions** tab.
+3. Select **Allocate a subscription**.
+4. Select **Import a subscription**.
+5. Select the license file provided by Sekoia for your deployment.
+6. Select **Import**.
+
+Your subscription appears in the **Subscriptions** tab with its tier name, validity period, asset limit, and storage option.
+
+![subscription](/assets/self_hosted/subscription.png)
+
+## Connect to your community
+
+1. Select the workspace selector in the top left corner of the interface.
+2. Select your community from the list.
+
+You are now connected to your community and have access to the full Sekoia platform capabilities within your subscription scope.
 
 ## Configure SSO (optional)
 
-Sekoia Self-Hosted supports Single Sign-On via OpenID Connect. SSO is configured per community and must be set up after the first administrator account is active.
+Sekoia Self-Hosted supports Single Sign-On via OpenID Connect. You configure SSO per community after the initial setup.
 
-1. Log in with your administrator account.
+1. Log in to your community.
 2. Navigate to **Settings > SSO**.
 3. Enter your identity provider's client ID, client secret, and authorization endpoint.
 4. Select **Save**.
 
 Full OpenID Connect configuration documentation is available at [https://docs.sekoia.io/getting_started/sso/openid_connect/](https://docs.sekoia.io/getting_started/sso/openid_connect/).
-
-## Understand your license limits
-
-Your platform license defines three operational limits:
-
-| Limit | Behavior when reached |
-| :--- | :--- |
-| Expiration date | Platform generates alerts. Functionality may degrade if the license is not renewed. |
-| Maximum supervised assets | Platform generates alerts. Contact your Sekoia sales representative to extend the limit. |
-| Maximum daily event-ingest capacity | Platform generates alerts. Contact your Sekoia sales representative to extend the limit. |
-
-To view current license status, navigate to **Settings > License** after logging in.
 
 ## Related links
 

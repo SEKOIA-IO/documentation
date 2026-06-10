@@ -251,32 +251,77 @@ The output shows:
 
 ### DebugPlatformInstallation
 
-Deploys the `platform-installer` Helm chart with a `pause` command override, creating a pod that stays alive without performing any changes. Use this to open an interactive shell inside the installer container and inspect its runtime environment, mounted secrets, and configuration files.
+Deploys the `platform-installer` Helm chart with a `pause` command override, creating a pod that stays alive without performing any changes. The command returns as soon as the Helm install succeeds; it does **not** wait for the pod to start.
+
+Use this to open an interactive shell inside the installer container and inspect its runtime environment, mounted secrets, and configuration files.
 
 ```bash
 ./run-shc.sh exec DebugPlatformInstallation
 ```
 
+Once the pod is running, open a shell with:
+
+```bash
+kubectl exec -it -n support <pod-name> -- /bin/bash
+```
+
 Any previous debug session is cleaned up automatically before the new pod is created.
+
+## Operations
+
+### RebootNodes
+
+Reboots all nodes listed in `utils.ansible.inventory` and waits for them to come back online.
+
+```bash
+./run-shc.sh exec RebootNodes
+```
+
+Use this when patching the OS or applying kernel updates. The playbook waits for SSH to become available again on each node before reporting success.
+
+### KubeCrashRecovery
+
+Restarts all pods across the cluster in ordered namespace phases and waits for each phase to become healthy before moving to the next. Use this after an unexpected node crash or manual cluster restart that left pods stuck in a failed state.
+
+```bash
+./run-shc.sh exec KubeCrashRecovery
+```
+
+The phases run in this order: `kube*` namespaces → `rook-ceph` → `vault` → `*system*` → `support` → all remaining namespaces. Each phase waits up to `modules.kube_crash_recovery.pod_ready_timeout` seconds (default: `300`) before giving up.
+
+**What to do after a timeout:** Run `kubectl get pods -A --field-selector=status.phase!=Running,status.phase!=Succeeded` to identify the stuck pods. Check their events and logs, then re-run `KubeCrashRecovery`.
+
+### WipeStorageDisks
+
+Detects and wipes disks previously used by Ceph. Only runs when `modules.wipe_storage.enabled` is `true`.
+
+!!! warning "Destructive and irreversible"
+    This command permanently destroys all data on detected Ceph disks. Only run this when explicitly instructed by Sekoia, for example during a full cluster reinstallation.
+
+```bash
+./run-shc.sh exec WipeStorageDisks
+```
 
 ## Collecting logs for a support ticket
 
 When you escalate an issue to Sekoia L3 support, include the following in your request:
 
-1. Generate a diagnostic bundle:
+1. Copy the full terminal output of the failing command.
 
-    ```bash
-    ./run-shc.sh exec diagnose
-    ```
+2. Share your `config.yml` with all secrets redacted (replace all passwords and keys with `***`).
 
-2. Copy the full terminal output of the failing command.
-
-3. Share your `config.yml` with all secrets redacted (replace all passwords and keys with `***`).
-
-4. Collect K3s system logs from the affected nodes:
+3. Collect K3s system logs from the affected nodes:
 
     ```bash
     journalctl -u k3s -n 500 --no-pager > k3s.log
+    ```
+
+4. If applications are degraded, collect ArgoCD and pod logs:
+
+    ```bash
+    ./run-shc.sh exec DebugArgoCD
+    kubectl get pods -A --field-selector=status.phase!=Running,status.phase!=Succeeded
+    kubectl logs -n <namespace> <pod-name> --previous
     ```
 
 ## Related links

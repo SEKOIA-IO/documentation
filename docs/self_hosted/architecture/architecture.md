@@ -56,8 +56,6 @@ The Sekoia platform logic runs as a set of decoupled microservices deployed in t
 
 The platform spans the following infrastructure components, all provisioned and managed by the customer.
 
-> 📸 [SCREENSHOT SUGGESTION: High-level infrastructure diagram showing: orchestration node, load balancer, K3s cluster (manager + workers), S3 storage, Git and OCI registries, and Sekoia Forwarder as an optional external component. Use arrows to indicate network flows between components. | ALT TEXT: Sekoia Self-Hosted infrastructure topology diagram.]
-
 ### Node roles
 
 | Role | Minimum count | Function |

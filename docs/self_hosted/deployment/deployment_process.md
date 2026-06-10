@@ -31,30 +31,42 @@ To display the full list of SHC commands and their descriptions, run:
     ```
     Available commands:
 
-      Install                       Run the full installation workflow (bundle)
-      CheckRequiredConfigItems      Validate the configuration file schema
-      CheckLocalGit                 Test Git repository access (push and pull)
-      CheckLocalOCIRegistry         Test OCI registry access (push, pull, and delete)
-      CheckLocalReleaseFiles        Verify release files are present on disk
-      CheckServersAreReachable      Test SSH connectivity to all inventory nodes
-      CheckServerSpec               Validate node hardware meets minimum requirements
-      CheckKubernetesCluster        Verify all K8s nodes are Ready
-      CheckLocalConfig              Validate config.yml against the schema
-      PushImages                    Push Docker images to the local registry
-      PushCharts                    Push Helm charts to the local registry
-      PushArgoStacks                Push ArgoCD manifests to the Git repository
-      K3SInstall                    Install K3s on all inventory nodes
-      GetKubeconfig                 Retrieve the cluster kubeconfig
-      HelmInstall                   Deploy Helm charts to the cluster
-      sekoia                        Deploy the Sekoia platform via ArgoCD sync
-      DebugArgoCD                   Display ArgoCD application status dashboard
-      DebugArgoCDSyncAll            Force re-synchronization of all ArgoCD apps
-      DebugDatabases                Inspect database pod health
-      DebugResourceAllocation       Report memory allocation vs. actual usage
-      DebugMissingSecrets           Audit missing or incomplete Kubernetes secrets
-      DebugKustomizeStacksTemplates Scan ArgoCD stacks for unrendered placeholders
-      DebugPlatformInstallation     Launch a paused installer job for debugging
-      diagnose                      Generate a diagnostic bundle for support
+      Install                       Run the full installation workflow
+      DownloadReleaseFiles          Download release files from S3 to local storage
+
+      CheckLocalConfig              Validate the local controller configuration file
+      CheckLocalGit                 Verify connectivity and access to the git repository
+      CheckLocalOCIRegistry         Verify push/pull/delete access to the OCI registry
+      CheckLocalReleaseFiles        Verify that all release files are present on disk
+      CheckServersAreReachable      Check SSH connectivity to all configured servers
+      CheckServerSpec               Check that servers meet hardware and OS requirements
+      CheckKubernetesCluster        Check the Kubernetes cluster is reachable and all nodes are Ready
+
+      ConfigureServersWithAnsible   Configure servers using Ansible playbooks
+      PushImages                    Push Docker image archives to the OCI registry
+      PushCharts                    Push Helm chart archives to the OCI registry
+      PushArgoStacks                Sync ArgoCD application stacks to the git repository
+
+      K3SInstall                    Install a K3s cluster on managers and workers via Ansible
+      K3SUninstall                  Uninstall K3s from all nodes via Ansible
+      GetKubeconfig                 Retrieve kubeconfig from the first K3s manager node
+      HelmInstall                   Install Helm and deploy offline charts via Ansible
+
+      PlatformConfigurationFile     Generate the platform-installer Helm values file
+      PlatformInstallation          Run the platform installation via a single installer job
+      PlatformAccess                Display platform access credentials (URLs, users, passwords)
+
+      RebootNodes                   Reboot all nodes in the inventory
+      KubeCrashRecovery             Restart all pods in ordered namespace phases
+      WipeStorageDisks              Wipe disks previously used by Ceph (requires modules.wipe_storage.enabled)
+
+      DebugArgoCD                   Display ArgoCD status dashboard (repositories, root app, applications)
+      DebugArgoCDSyncAll            Sync all ArgoCD applications (partial → restart operator → full sync)
+      DebugDatabases                Report health of StatefulSets and CNPG Clusters in support namespace
+      DebugResourceAllocation       Show per-pod RAM request vs actual usage, sorted by waste
+      DebugMissingSecrets           Check SecretGenerator objects for missing or incomplete secrets
+      DebugKustomizeStacksTemplates Scan ArgoCD stacks for leftover template placeholders
+      DebugPlatformInstallation     Create a platform-installer pause job for debugging
     ```
 
 ## Lifecycle operations
@@ -66,9 +78,10 @@ The SHC handles the full platform lifecycle beyond initial installation.
 | Post-deployment health check | `CheckKubernetesCluster`, `DebugArgoCD` |
 | Database diagnostics | `DebugDatabases` |
 | Resource usage analysis | `DebugResourceAllocation` |
-| Platform configuration re-apply | `sekoia` |
+| Platform configuration re-apply | `PlatformConfigurationFile`, `PlatformInstallation` |
 | Full ArgoCD re-synchronization | `DebugArgoCDSyncAll` |
-| Diagnostic bundle for support | `diagnose` |
+| Graceful node reboot | `RebootNodes` |
+| Recover from a node crash or cluster restart | `KubeCrashRecovery` |
 
 ## Related links
 
