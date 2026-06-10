@@ -347,7 +347,7 @@ The following Sekoia.io built-in rules match the intake **Imperva WAF**. This do
 
 ??? abstract "WAF Block Rule"
     
-    Detects when one of WAF rule blocked an HTTP request 
+    Detects when one of WAF rule blocked an HTTP request. This rule often needs fine tuning according to the environment.
     
     - **Effort:** master
 

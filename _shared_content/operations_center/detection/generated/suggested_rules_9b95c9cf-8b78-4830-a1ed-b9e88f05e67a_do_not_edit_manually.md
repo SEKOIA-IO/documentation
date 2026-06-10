@@ -1107,6 +1107,12 @@ The following Sekoia.io built-in rules match the intake **Palo Alto Cortex XDR (
     
     - **Effort:** advanced
 
+??? abstract "Palo Alto Cortex XDR (EDR) Alert (Critical Severity)"
+    
+    A Palo Alto Cortex XDR (EDR) agent has raised an alert of critical severity (only DETECTED and not SCANNED status).
+    
+    - **Effort:** master
+
 ??? abstract "Palo Alto Cortex XDR (EDR) Alert Not Blocked (High Severity)"
     
     A Palo Alto Cortex XDR (EDR) agent has raised an alert of high severity that was not blocked.

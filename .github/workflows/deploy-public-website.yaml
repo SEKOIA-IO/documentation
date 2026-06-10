@@ -5,17 +5,21 @@ on:
     branches:
     - main
 
+permissions: {}
+
 jobs:
   build_and_upload_website:
+    permissions:
+      contents: read  # for actions/checkout to fetch code
     name: Build and upload public version of the website
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout main
-        uses: actions/checkout@v6
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
 
       - name: Setup Python
-        uses: actions/setup-python@v6
+        uses: actions/setup-python@a309ff8b426b58ec0e2a45f0f869d46889d02405 # v6.2.0
         id: setup-python
         with:
           python-version: '3.14'
@@ -24,7 +28,7 @@ jobs:
         run: mkdir -vp docs/stylesheets/
 
       - name: Install uv
-        uses: astral-sh/setup-uv@v7
+        uses: astral-sh/setup-uv@5a095e7a2014a4212f075830d4f7277575a9d098 # v7.3.1
         with:
           enable-cache: true
 
@@ -38,7 +42,7 @@ jobs:
 
       - name: Delete old content on remote storage
         run: |
-          swift list sekoiaio-public-documentation -j | jq -r ".[].name" | while read remote_file; do
+          swift list sekoiaio-public-documentation -j | jq -r ".[].name" | while read -r remote_file; do
               if [ ! -f "site/${remote_file}" ]; then
                   swift delete sekoiaio-public-documentation "$remote_file" --object-threads 5
               fi

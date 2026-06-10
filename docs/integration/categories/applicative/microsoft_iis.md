@@ -16,6 +16,10 @@ Microsoft Internet Information Services (IIS) is a web server software for Windo
 
 This setup guide will show you how to forward your Microsoft IIS logs to Sekoia.io by means of a syslog transport channel.
 
+!!! Warning
+    To avoid time offset issues when events are parsed by Sekoia.io (e.g. events appearing to happen in the future), you *must* configure your server's timezone to **UTC**. 
+    You can find more information in the [Sekoia timezone requirements document](https://docs.sekoia.io/xdr/FAQ/datetime/).
+
 ### Create your intake
 
 1. Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a new intake from the `Microsoft IIS`.

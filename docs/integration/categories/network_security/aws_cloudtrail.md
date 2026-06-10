@@ -37,7 +37,10 @@ Activate the logging on the trail through the switch button (On/Off) located at 
 #### Create your intake
 
 1. Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a new intake from the `AWS CloudTrail`.
-2. Set up the intake account configuration with the [AWS Access Key](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html), the secret key and the region name. Set up the intake configuration with the name of the SQS queue
+2. Set up the intake account configuration with the **AWS Region** and either:
+    - The **AWS Role ARN** (for OIDC authentication — recommended)
+    - The **AWS Access Key** and **Secret Access Key** (for static credentials)
+3. Set up the intake configuration with the name of the SQS queue.
 
 
 !!!important

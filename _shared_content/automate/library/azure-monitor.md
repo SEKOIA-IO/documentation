@@ -77,4 +77,4 @@ Execute an Analytics query
 
 ## Extra
 
-Module **`Azure Monitor` v1.0.1**
+Module **`Azure Monitor` v1.1.0**

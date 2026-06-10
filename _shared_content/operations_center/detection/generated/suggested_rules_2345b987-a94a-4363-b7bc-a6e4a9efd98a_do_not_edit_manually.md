@@ -495,6 +495,12 @@ The following Sekoia.io built-in rules match the intake **Trend Micro Vision One
     
     - **Effort:** advanced
 
+??? abstract "Evil Winrm Modules Execution"
+    
+    This rule detects suspicious PowerShell activity consistent with the Evil-WinRM remote shell being executed via the Windows Remote Management host process
+    
+    - **Effort:** intermediate
+
 ??? abstract "Exchange Mailbox Export"
     
     Detection of a standard Exchange Mailbox export, which stores all mails from a user in a pst file, from command line or PowerShell script.
@@ -1406,6 +1412,12 @@ The following Sekoia.io built-in rules match the intake **Trend Micro Vision One
     Detects when shells PID are listed and injected in another process. It can be performed to reuse sudo token related to shell in order to elevate privilege and maintain persistence.
     
     - **Effort:** intermediate
+
+??? abstract "Sigma Intelligence ErrTraffic PowerShell Command Line"
+    
+    Detects powershell script executed via ErrTraffic infection chain
+    
+    - **Effort:** elementary
 
 ??? abstract "Socat Relaying Socket"
     

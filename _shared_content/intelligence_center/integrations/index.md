@@ -6,6 +6,7 @@ Intelligence Center data can be consumed using several third party integrations.
 - [Cortex Analyzer](./thehive.md)
 - [Microsoft Sentinel](./microsoft-sentinel.md)
 - [MISP Feed](./misp.md)
+- [MISP - Import to IOC Collection](./misp_ids_to_ioc_collection.md)
 - [OpenCTI - Import Connector](./opencti.md)
 - [PaloAlto Cortex XSOAR](./paloalto_xsoar.md)
 - [Splunk](./splunk.md)

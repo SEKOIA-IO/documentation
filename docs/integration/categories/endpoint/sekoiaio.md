@@ -68,6 +68,10 @@ The Sekoia.io Endpoint Agent uses the HTTPS protocol to send its events and has 
     * <https://intake.usa1.sekoia.io/>
     * <https://app.usa1.sekoia.io/>
 
+=== "SGP1"
+    * <https://intake.sgp1.sekoia.io/>
+    * <https://app.sgp1.sekoia.io/>
+
 
 ## Installation
 
@@ -568,9 +572,14 @@ Once the configuration file is modified, restart the agent:
 
 ### Ignoring events
 
+To optimize your consumption, Sekoia.io recommends a hierarchy of filtering. By applying filters early in the data pipeline, you reduce unnecessary noise before it impacts platform performance or costs. [Read more about Log volume reduction strategies](/xdr/usecases/playbook/log_volume_reduction_strategies.md)
+
+
+**This sections explains how to create an optimization rule at the forwarder level. If this method proves insufficient, we invite you to consult our guide to filter logs when they reach the Sekoia.io platform : [Create optimization rules–(/xdr/features/collect/create_optimization_rule.md).
+**
+
 !!! INFO
     This feature is currently in beta
-	Optimization rules can be used plateform-wide on any integration
 
 The agent allows you to ignore specific events based on their field values.
 To achieve this, it relies on the concept of optimization rules that we also have in the platform.
@@ -587,11 +596,15 @@ Each optimization rule is composed of:
 - An UUID defining the unique identifier of the rule.
 - An action code defining the action to apply.
     - Inside the agent, only the action to ignore an event is supported (`action: 1`).
-- A list of filters defining the conditions to match an event. All filters must match for the rule to match.
+- A list of filters defining the conditions to match an event.
   Each filter is composed of:
     - A field name: `field`
     - An operator: `operator`
     - A value: `value`
+
+!!! WARNING
+	A rule applies only if ALL filters match the event (AND). To have an OR behavior, separate elements in 2 dedicated rules.
+	
 
 !!! note
     String comparisons are case-sensitive.
@@ -1153,7 +1166,15 @@ Please find options and arguments available for Sekoia Agent by typing
 ## Resources footprint
 
 We monitor the agent metrics and try to keep its footprint as small as possible.
-Our agent uses, on average, less than 1% of CPU and around 36MB of RAM.
+Our agent uses, on average, **less than 1% of CPU** and around **36MB of RAM**.
+
+### Disk Space
+1. Installation : The agent as well as every new agent download, is around **15MB** and the config file takes a few KB. 
+2. Operations: For normal operation you have to take into account the space taken by logs. By default log files are rotated when they reached 100MB and Sekoia keep up to 5 old log files (those file are compressed).
+
+!!! tip
+    Those logging settings can be tweaked, [read the section dedicated to agent customization](#customize-agents-log-file-rotation)
+
 
 ## Troubleshoot
 The first step to troubleshooting your Sekoia agent installation is to check the logs.

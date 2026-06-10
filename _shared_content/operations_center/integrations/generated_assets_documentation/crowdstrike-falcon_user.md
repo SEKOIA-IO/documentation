@@ -71,46 +71,37 @@ The following table shows how source data is mapped to OCSF model fields:
 
 | Source Field | OCSF Field Path | Description | Data Type | Logic |
 |--------------|-----------------|-------------|-----------|-------|
-| `entityId` | `user.uid` | User unique identifier from CrowdStrike Identity Protection | `string` | Direct mapping of CrowdStrike entity unique ID |
-| `primaryDisplayName` | `user.name` | User display name (username) | `string` | Direct mapping of primary display name |
-| `primaryDisplayName + secondaryDisplayName` | `user.full_name` | User full name | `string` | Concatenate primaryDisplayName and secondaryDisplayName with space; trim whitespace; fallback to primaryDisplayName if secondaryDisplayName is empty |
-| `emailAddresses[0]` | `user.email_addr` | Primary email address | `string` | Extract first email from emailAddresses array; null if empty or array is missing |
-| `emailAddresses[]` | `user.email_addresses` | All email addresses associated with user | `array[string]` | Direct mapping of all email addresses; empty array if none or field missing |
-| `accounts[0]` | `user.account` | Primary user account | `object` | Map primary account (first entry in accounts array); use sub-mappings below for account fields |
-| `accounts[0].samAccountName || primaryDisplayName` | `user.account.name` | Account username (SAM account name) | `string` | Direct mapping of SAM account name; fallback to primaryDisplayName if empty or missing |
-| `accounts[0].objectSid || accounts[0].objectGuid || entityId` | `user.account.uid` | Account unique identifier (SID or GUID) | `string` | Fallback chain: objectSid → objectGuid → entityId |
-| `accounts[0].domain` | `user.account.domain` | Account domain or realm | `string` | Direct mapping of domain/realm name |
-| `accounts[0].dataSource` | `user.account.type` | Account type (LDAP, Azure AD, etc.) | `string` | Map dataSource: 'ACTIVE_DIRECTORY'→'LDAP Account', 'AZURE_AD'→'Azure AD Account', else→'Other' |
-| `accounts[0].dataSource` | `user.account.type_id` | OCSF account type ID | `integer` | Map account type to OCSF ID: LDAP→11, AzureAD→12, Other→15 |
-| `accounts[0].enabled` | `user.is_enabled` | Whether account is enabled/active | `boolean` | Direct mapping; default to true if not specified |
-| `accounts[0].description` | `user.account.desc` | Account description or notes | `string` | Direct mapping of account description field; null if empty or missing |
-| `accounts[0].cn` | `user.cn` | Active Directory common name | `string` | Direct mapping of Distinguished Name common name (AD specific); null if missing |
-| `accounts[0].title` | `user.title` | User job title (from AD attributes) | `string` | Direct mapping of job title; null if empty or missing |
-| `accounts[0].department` | `user.department` | User department (from AD attributes) | `string` | Direct mapping of department; null if empty or missing |
-| `roles[]` | `user.roles` | User roles and group memberships | `array[string]` | Extract all role types from roles array (e.g., 'BuiltinAdministratorRole', 'ProgrammaticUserAccountRole') |
-| `roles[] | filter(ADMIN)` | `user.type` | User type (Admin or regular User) | `string` | If any role contains 'ADMIN' (case-insensitive), type='Admin'; else type='User' |
-| `roles[] | filter(ADMIN)` | `user.type_id` | OCSF user type ID | `integer` | If any role contains 'ADMIN', type_id=1; else type_id=2 (OCSF User type mapping) |
-| `riskScore` | `user.risk_score` | Risk score for user (0-100 scale) | `integer` | Multiply riskScore (0-1 decimal) by 100 to get 0-100 scale; round to nearest integer |
-| `riskScoreSeverity` | `user.risk_level` | Risk severity level | `string` | Direct mapping: 'CRITICAL'→'Critical', 'HIGH'→'High', 'MEDIUM'→'Medium', 'LOW'→'Low', 'INFO'→'Info' |
-| `riskScoreSeverity` | `user.risk_level_id` | OCSF risk level ID | `integer` | Map severity to OCSF RiskLevelId: Critical→1, High→2, Medium→3, Low→4, Info→5 |
-| `learned` | `user.learned` | Whether user was learned by Identity Protection | `boolean` | Direct mapping; indicates if user was auto-discovered or manually defined |
-| `hasRole` | `user.has_role` | Whether user has assigned roles | `boolean` | Direct mapping; indicates if user has assigned roles |
-| `creationTime` | `user.created_time` | User creation timestamp | `timestamp` | Convert ISO 8601 to Unix epoch |
-| `creationTime` | `time` | OCSF event timestamp | `timestamp` | Convert ISO 8601 to Unix epoch; use for OCSF event timestamp |
-| `primaryDisplayName + riskScoreSeverity` | `user.desc` | User description with risk information | `string` | Concatenate as '<primaryDisplayName> - Risk: <riskScoreSeverity>' (e.g., 'administrateur - Risk: MEDIUM') |
-| `static: CrowdStrike Falcon` | `metadata.product.name` | Source product name | `string` | Always 'CrowdStrike Falcon' |
-| `static: Identity Protection` | `metadata.product.version` | Product module version | `string` | Always 'Identity Protection' (module version) |
-| `static: 1.6.0` | `metadata.version` | OCSF schema version | `string` | Fixed OCSF schema version |
 | `static: 2` | `activity_id` | OCSF activity ID for inventory collection | `integer` | Always 2 for 'Collect' activity |
-| `static: Collect` | `activity_name` | OCSF activity name | `string` | Always 'Collect' |
+| `static: Collect` | `activity_name` | OCSF activity name | `string` | Always 'Collect' for asset inventory |
 | `static: Discovery` | `category_name` | OCSF category name | `string` | Always 'Discovery' |
 | `static: 5` | `category_uid` | OCSF category UID | `integer` | Always 5 for Discovery category |
 | `static: User Inventory Info` | `class_name` | OCSF class name | `string` | Always 'User Inventory Info' |
 | `static: 5003` | `class_uid` | OCSF class UID | `integer` | Always 5003 for User Inventory Info |
-| `computed: 500300 + activity_id` | `type_uid` | OCSF type UID | `integer` | Base 500300 + activity_id (2 = 500302) |
-| `computed: class_name + ': ' + activity_name` | `type_name` | OCSF type name | `string` | Concatenate 'User Inventory Info: Collect' |
+| `static: 500302` | `type_uid` | OCSF type UID | `integer` | Always 500302 for User Inventory Info: Collect type |
+| `static: User Inventory` | `type_name` | OCSF type name | `string` | Always 'User Inventory' for this specific event type |
 | `static: Informational` | `severity` | Event severity level | `string` | Always 'Informational' for inventory events |
 | `static: 1` | `severity_id` | OCSF severity ID | `integer` | Always 1 for Informational severity |
+| `creationTime` | `time` | OCSF event timestamp | `timestamp` | Convert ISO 8601 to Unix epoch; use for OCSF event timestamp |
+| `static: Crowdstrike Falcon` | `metadata.product.name` | Source product name | `string` | Always 'Crowdstrike Falcon' |
+| `static: N/A` | `metadata.product.version` | Product version | `string` | CrowdStrike Identity Protection API does not provide a product version field; using 'N/A' |
+| `static: 1.6.0` | `metadata.version` | OCSF schema version | `string` | Fixed OCSF schema version |
+| `entityId` | `user.uid` | User unique identifier from CrowdStrike Identity Protection | `string` | Direct mapping of CrowdStrike entity unique ID |
+| `primaryDisplayName` | `user.name` | User display name (username) | `string` | Direct mapping of primary display name |
+| `primaryDisplayName + secondaryDisplayName` | `user.full_name` | User full name | `string` | Concatenate primaryDisplayName and secondaryDisplayName with space; trim whitespace; fallback to primaryDisplayName if secondaryDisplayName is empty |
+| `emailAddresses[0]` | `user.email_addr` | Primary email address | `string` | Extract first email from emailAddresses array; null if empty or array is missing |
+| `accounts[0].domain` | `user.domain` | User domain or realm (from AD account) | `string` | Direct mapping of domain from primary account |
+| `roles[] | filter(ADMIN)` | `user.type` | User type (Admin or regular User) | `string` | If any role type contains 'ADMIN' (case-insensitive), type='Admin'; else type='User' |
+| `roles[] | filter(ADMIN)` | `user.type_id` | OCSF user type ID | `integer` | If any role type contains 'ADMIN', type_id=2; else type_id=1 (OCSF User type mapping) |
+| `riskScore` | `user.risk_score` | Risk score for user (0-100 scale) | `integer` | Multiply riskScore (0-1 decimal) by 100 to get 0-100 scale; round to nearest integer |
+| `riskScoreSeverity` | `user.risk_level` | Risk severity level | `string` | Direct mapping: 'CRITICAL'→'Critical', 'HIGH'→'High', 'MEDIUM'→'Medium', 'LOW'→'Low', 'INFO'→'Info' |
+| `riskScoreSeverity` | `user.risk_level_id` | OCSF risk level ID | `integer` | Map severity to OCSF RiskLevelId: Critical→1, High→2, Medium→3, Low→4, Info→5 |
+| `accounts[0].samAccountName || primaryDisplayName` | `user.account.name` | Account username (SAM account name) | `string` | Direct mapping of SAM account name; fallback to primaryDisplayName if empty or missing |
+| `accounts[0].objectSid || accounts[0].objectGuid || entityId` | `user.account.uid` | Account unique identifier (SID or GUID) | `string` | Fallback chain: objectSid → objectGuid → entityId |
+| `accounts[0].dataSource` | `user.account.type` | Account type (LDAP, Azure AD, etc.) | `string` | Map dataSource: 'ACTIVE_DIRECTORY' or objectSid present→'LDAP Account', 'AZURE_AD'→'Azure AD Account', else→'Other' |
+| `accounts[0].dataSource` | `user.account.type_id` | OCSF account type ID | `integer` | Map account type to OCSF ID: LDAP Account→11, Azure AD Account→12, Other→15 |
+| `static: account_details` | `enrichments[0].name` | Enrichment name for account details | `string` | Always 'account_details' for this enrichment type |
+| `accounts[0].dataSource` | `enrichments[0].value` | Enrichment value: resolved account type string | `string` | Resolved account type string (e.g., 'LDAP Account', 'Azure AD Account', 'Other') |
+| `accounts[0].enabled` | `enrichments[0].data.is_enabled` | Whether the account is enabled/active | `boolean` | Direct mapping of account enabled status; null if field absent |
 
 
 

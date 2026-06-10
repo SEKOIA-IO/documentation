@@ -7,7 +7,7 @@ In this section, you will find examples of raw logs as generated natively by the
 === "connexion1"
 
     ```
-	Connexion au portail web org:example, user:jdoe@local, ip:1.2.3.4
+	Connexion au portail web org:example, user:jdoe@example.com, ip:1.2.3.4
     ```
 
 
@@ -15,7 +15,7 @@ In this section, you will find examples of raw logs as generated natively by the
 === "connexion2"
 
     ```
-	Connexion d'un plugin utilisateur org:example, user:jdoe@local, ip:1.2.3.4
+	Connexion d'un plugin utilisateur org:example, user:jdoe@example.com, ip:1.2.3.4
     ```
 
 
@@ -23,7 +23,7 @@ In this section, you will find examples of raw logs as generated natively by the
 === "connexion3"
 
     ```
-	Connexion au portail web org:example, user:toto@ORGANIZATION, ip:1.1.1.1
+	Connexion au portail web org:example, user:user1@example.com, ip:1.1.1.1
     ```
 
 
@@ -47,7 +47,7 @@ In this section, you will find examples of raw logs as generated natively by the
 === "deconnexion2"
 
     ```
-	Déconnexion d'un plugin utilisateur org:example, user:jdoe@local, ip:10.48.178.33
+	Déconnexion d'un plugin utilisateur org:example, user:jdoe@example.com, ip:10.48.178.33
     ```
 
 
@@ -55,7 +55,7 @@ In this section, you will find examples of raw logs as generated natively by the
 === "deconnexion3"
 
     ```
-	Déconnexion du portail web org:example, user:toto@ORGANIZATION, ip:1.1.1.1
+	Déconnexion du portail web org:example, user:user1@example.com, ip:1.1.1.1
     ```
 
 
@@ -71,7 +71,7 @@ In this section, you will find examples of raw logs as generated natively by the
 === "echec1"
 
     ```
-	Echec de la connexion &#224; la console d&#39;administration org:example, user:toto@example, ip:1.1.1.1 17b82585-3f88-4500-baf4-bb95ca7c3344
+	Echec de la connexion &#224; la console d&#39;administration org:example, user:user1@example, ip:1.1.1.1 17b82585-3f88-4500-baf4-bb95ca7c3344
     ```
 
 
@@ -79,7 +79,7 @@ In this section, you will find examples of raw logs as generated natively by the
 === "fermeture1"
 
     ```
-	Fermeture d'une application SSH (Secure Shell) : MultiTOTOAPP org:example, user:titi@ORGANIZATION, ip:1.1.1.1
+	Fermeture d'une application SSH (Secure Shell) : MultiTOTOAPP org:example, user:user1@example.com, ip:1.1.1.1
     ```
 
 
@@ -87,7 +87,7 @@ In this section, you will find examples of raw logs as generated natively by the
 === "lancement1"
 
     ```
-	Lancement d'une application Web : MultiTOTOAPP org:example, user:toto@ORGANIZATION, ip:1.1.1.1
+	Lancement d'une application Web : MultiTOTOAPP org:example, user:user1@example.com, ip:1.1.1.1
     ```
 
 
@@ -108,6 +108,14 @@ In this section, you will find examples of raw logs as generated natively by the
 
 
 
+=== "recording_test"
+
+    ```
+	Recording in progress user1@example.com
+    ```
+
+
+
 === "session"
 
     ```
@@ -119,7 +127,7 @@ In this section, you will find examples of raw logs as generated natively by the
 === "user_first_new_process"
 
     ```
-	johndoe@local New process: "C:\Windows\System32\RuntimeBroker.exe"
+	johndoe@example.com New process: "C:\Windows\System32\RuntimeBroker.exe"
     ```
 
 
@@ -127,7 +135,7 @@ In this section, you will find examples of raw logs as generated natively by the
 === "user_first_other_1"
 
     ```
-	john.doe@Azure SSO idle saved.
+	john.doe@example.com SSO idle saved.
     ```
 
 
@@ -135,7 +143,7 @@ In this section, you will find examples of raw logs as generated natively by the
 === "user_first_other_2"
 
     ```
-	john.doe@Azure SSO Window closed: "G:\ - TreeSize Professional"
+	john.doe@example.com SSO Window closed: "G:\ - TreeSize Professional"
     ```
 
 
@@ -143,7 +151,7 @@ In this section, you will find examples of raw logs as generated natively by the
 === "user_first_other_3"
 
     ```
-	john.doe@Azure SSO key sequence :"<BACK<BACK"
+	john.doe@example.com SSO key sequence :"<BACK<BACK"
     ```
 
 
@@ -151,7 +159,7 @@ In this section, you will find examples of raw logs as generated natively by the
 === "user_first_process_end_1"
 
     ```
-	johndoe@local Process end: "dllhost.exe"
+	johndoe@example.com Process end: "dllhost.exe"
     ```
 
 
@@ -159,7 +167,7 @@ In this section, you will find examples of raw logs as generated natively by the
 === "user_first_process_end_2"
 
     ```
-	johndoe@local Process end: "backgroundTaskHost.exe"
+	johndoe@example.com Process end: "backgroundTaskHost.exe"
     ```
 
 

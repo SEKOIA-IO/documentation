@@ -232,4 +232,4 @@ Search an analysis for a given sha256 input file
 
 ## Extra
 
-Module **`GLIMPS` v1.14.3**
+Module **`GLIMPS` v1.15.0**

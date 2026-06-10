@@ -106,6 +106,7 @@ Get the current time according to the timezone
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
+| `selectedNamedTimezone` | `string` | Named timezone (e.g. Europe/Paris) |
 | `selectedTimezone` | `string` |  |
 
 
@@ -129,4 +130,4 @@ Wait
 
 ## Extra
 
-Module **`Utils` v1.4.3**
+Module **`Utils` v1.4.7**

@@ -279,6 +279,12 @@ The following Sekoia.io built-in rules match the intake **Cybereason EDR activit
     
     - **Effort:** elementary
 
+??? abstract "Correlation Post Exploitation Patterns Via Winrm"
+    
+    This rule detects a sequence of post exploitation commands (e.g., whoami, net, ipconfig) executed via WinRM on host within a short timeframe
+    
+    - **Effort:** intermediate
+
 ??? abstract "Credential Harvesting Via Vaultcmd.exe"
     
     Detects when the process vaultcmd is used for credential harvesting.
@@ -1094,6 +1100,12 @@ The following Sekoia.io built-in rules match the intake **Cybereason EDR activit
     This event can be a sign of Kerberos replay attack or, among other things, network device configuration or routing problems.
     
     - **Effort:** master
+
+??? abstract "Potential macOS SSH Brute Force Detected"
+    
+    Detects a potential ssh bruteforce to gain access to accounts.
+    
+    - **Effort:** advanced
 
 ??? abstract "PowerCat Function Loading"
     

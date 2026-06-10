@@ -4,32 +4,33 @@ on:
   repository_dispatch:
     types: [rebuild-intake-documentation]
 
-permissions:
-  contents: write
-  pull-requests: write
+permissions: {}
 
 jobs:
   build:
+    permissions:
+      contents: write  # for peter-evans/create-pull-request to create branch
+      pull-requests: write  # for peter-evans/create-pull-request to create a PR
     runs-on: ubuntu-latest
     steps:
     - name: Checkout `documentation` repository under `main/`
-      uses: actions/checkout@v6
+      uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
       with:
         path: main
 
     - name: Checkout `intake-formats` repository under `intakes/`
-      uses: actions/checkout@v6
+      uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
       with:
         repository: SEKOIA-IO/intake-formats
         path: intakes
 
     - name: Install uv
-      uses: astral-sh/setup-uv@v7
+      uses: astral-sh/setup-uv@5a095e7a2014a4212f075830d4f7277575a9d098 # v7.3.1
       with:
         enable-cache: true
 
     - name: Setup Python
-      uses: actions/setup-python@v6
+      uses: actions/setup-python@a309ff8b426b58ec0e2a45f0f869d46889d02405 # v6.2.0
       id: setup-python
       with:
         python-version: '3.14'
@@ -37,11 +38,11 @@ jobs:
     - name: Refresh intakes documentation
       run: |
         rm -rf ../../_shared_content/operations_center/integrations/generated/*.md
-        uv run python update_mkdocs.py $GITHUB_WORKSPACE/intakes $GITHUB_WORKSPACE/main
+        uv run python update_mkdocs.py "$GITHUB_WORKSPACE/intakes" "$GITHUB_WORKSPACE/main"
       working-directory: ./main/scripts/update_mkdocs
 
     - name: Create Pull Request
-      uses: peter-evans/create-pull-request@v8
+      uses: peter-evans/create-pull-request@c0f553fe549906ede9cf27b5156039d195d2ece0 # v8.1.0
       with:
         commit-message: Refresh intakes documentation
         delete-branch: true

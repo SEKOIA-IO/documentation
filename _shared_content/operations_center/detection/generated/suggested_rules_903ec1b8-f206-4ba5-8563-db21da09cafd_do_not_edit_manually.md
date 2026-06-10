@@ -429,6 +429,12 @@ The following Sekoia.io built-in rules match the intake **Palo Alto NGFW**. This
     
     - **Effort:** master
 
+??? abstract "WAF Block Rule"
+    
+    Detects when one of WAF rule blocked an HTTP request. This rule often needs fine tuning according to the environment.
+    
+    - **Effort:** master
+
 ??? abstract "WAF Correlation Block Multiple Destinations"
     
     Detection of multiple block actions (more than 10) by the Web Application Firewall (WAF) triggered by the same source to mutliple destinations

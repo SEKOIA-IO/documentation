@@ -53,7 +53,10 @@ Select **Set as homepage** to make this Dashboard your default landing page.
 
 ## Managing time ranges
 
-Managing the time range is essential for analyzing trends over specific periods. The Dashboard offers flexible options for configuring the time range for each Widget or the overall view.
+Managing the time range is essential for analyzing trends over specific periods. The Dashboard offers flexible options for configuring the time range for each Widget or the overall view. 
+
+!!! note
+    You can pin the widget's time filter to the dashboard and apply the new time filter to the whole dashboard. More information in our [Filter data in dashboards article](https://docs.sekoia.io/xdr/features/report/dashboards_filters/#:~:text=Apply%20filters%20to%20all%20widgets%20in%20the%20dashboard%20to%20synchronize%20changes,-The%20primary%20benefit)
 
 ### Dashboard date range
 For Built-in Widgets, you can synchronize the time range with the overall Dashboard's date range.

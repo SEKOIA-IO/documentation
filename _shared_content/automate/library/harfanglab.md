@@ -171,6 +171,27 @@ Get the hostname of a machine by its IP address
 | --------- | ------- | --------------------------- |
 | `hostnames` | `array` | Hostnames |
 
+### [DEPRECATED] List named pipes
+
+Get the list of named pipe on the systems (deprecated)
+
+**Arguments**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `target_agents` | `string` | Targeted agents identifier |
+| `target_groups` | `string` | Targeted groups identifier |
+
+
+**Outputs**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `id` | `string` | Identifier of the job |
+| `action` | `string` | Name of job action |
+| `creationtime` | `string` | Creation date of the job |
+| `parameters` | `object` | Parameters of the job |
+
 ### List named pipes
 
 Get the list of named pipe on the systems
@@ -181,6 +202,29 @@ Get the list of named pipe on the systems
 | --------- | ------- | --------------------------- |
 | `target_agents` | `string` | Targeted agents identifier |
 | `target_groups` | `string` | Targeted groups identifier |
+| `save_to_file` | `boolean` | Save results to file |
+
+
+**Outputs**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `results` | `array` | The results |
+| `file_path` | `string` | Path of the file with results |
+
+### [DEPRECATED] List processes
+
+Get the list of processes on the systems (deprecated)
+
+**Arguments**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `target_agents` | `string` | Targeted agents identifier |
+| `target_groups` | `string` | Targeted groups identifier |
+| `get_connections_list` | `boolean` | Get list of connections (listening and connected sockets) |
+| `get_handles_list` | `boolean` | Get list of open handles |
+| `get_signatures_list` | `boolean` | Get signature info of processes and DLLs |
 
 
 **Outputs**
@@ -205,16 +249,15 @@ Get the list of processes on the systems
 | `get_connections_list` | `boolean` | Get list of connections (listening and connected sockets) |
 | `get_handles_list` | `boolean` | Get list of open handles |
 | `get_signatures_list` | `boolean` | Get signature info of processes and DLLs |
+| `save_to_file` | `boolean` | Save results to file |
 
 
 **Outputs**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
-| `id` | `string` | Identifier of the job |
-| `action` | `string` | Name of job action |
-| `creationtime` | `string` | Creation date of the job |
-| `parameters` | `object` | Parameters of the job |
+| `results` | `array` | The results |
+| `file_path` | `string` | Path of the file with results |
 
 ### Update Threat status
 
@@ -231,4 +274,4 @@ Update Threat status
 
 ## Extra
 
-Module **`HarfangLab` v1.28.11**
+Module **`HarfangLab` v1.29.5**

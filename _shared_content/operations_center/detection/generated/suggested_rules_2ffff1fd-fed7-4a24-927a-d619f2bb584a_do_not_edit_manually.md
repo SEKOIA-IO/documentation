@@ -57,6 +57,12 @@ The following Sekoia.io built-in rules match the intake **ESET Protect**. This d
     
     - **Effort:** intermediate
 
+??? abstract "Correlation Post Exploitation Patterns Via Winrm"
+    
+    This rule detects a sequence of post exploitation commands (e.g., whoami, net, ipconfig) executed via WinRM on host within a short timeframe
+    
+    - **Effort:** intermediate
+
 ??? abstract "Correlation Priv Esc Via Remote Thread"
     
     Detect a process that obtains system privilege via a remote thread
@@ -302,6 +308,12 @@ The following Sekoia.io built-in rules match the intake **ESET Protect**. This d
     Detects specific process executable path used by the Phorpiex botnet to masquerade its system process network activity. It looks for a pattern of a system process executable name that is not legitimate and running from a folder that is created via a random algorithm 13-15 numbers long.
     
     - **Effort:** elementary
+
+??? abstract "Potential macOS SSH Brute Force Detected"
+    
+    Detects a potential ssh bruteforce to gain access to accounts.
+    
+    - **Effort:** advanced
 
 ??? abstract "Powershell Web Request"
     

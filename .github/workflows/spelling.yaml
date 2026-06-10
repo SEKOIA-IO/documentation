@@ -1,8 +1,5 @@
 name: Spelling
 
-permissions:
-  contents: read
-
 on:
   pull_request:
     types: [opened, synchronize, reopened]
@@ -13,8 +10,13 @@ on:
 env:
   CLICOLOR: 1
 
+permissions: {}
+
 jobs:
   spelling:
+    permissions:
+      contents: read  # for actions/checkout to fetch code
+      pull-requests: read  # for tj-actions/changed-files to list changed files via pulls.listFiles API
     name: Spell Check with Typos
     runs-on: ubuntu-latest
     steps:
@@ -25,7 +27,7 @@ jobs:
 
       - name: Get changed files
         id: changed-files
-        uses: tj-actions/changed-files@7dee1b0c1557f278e5c7dc244927139d78c0e22a # v47.0.4
+        uses: tj-actions/changed-files@22103cc46bda19c2b464ffe86db46df6922fd323 # v47.0.5
         with:
           use_rest_api: true
           files: |
@@ -33,6 +35,6 @@ jobs:
             !docs/assets/**/*
 
       - name: Spell Check Repo
-        uses: crate-ci/typos@57b11c6b7e54c402ccd9cda953f1072ec4f78e33 # v1.43.5
+        uses: crate-ci/typos@631208b7aac2daa8b707f55e7331f9112b0e062d # v1.44.0
         with:
           files: ${{ steps.changed-files.outputs.all_changed_files }}

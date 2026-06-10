@@ -75,6 +75,48 @@ A new Alert was created in the Operation Center
 | `last_seen_at` | `string` |  |
 
 
+### Alert Events Threshold
+
+Trigger playbooks only when alert event accumulation meets configurable thresholds (volume-based or time-based)
+
+**Arguments**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `rule_filter` | `string` | Filter by rule name or UUID (single rule only) |
+| `rule_names_filter` | `array` | Filter by multiple rule names |
+| `event_count_threshold` | `integer` | Minimum number of new events to trigger (volume-based) |
+| `time_window_hours` | `integer` | Time window in hours for time-based triggering (max 7 days) |
+| `enable_volume_threshold` | `boolean` | Enable volume-based threshold (>= N events) |
+| `enable_time_threshold` | `boolean` | Enable time-based threshold (triggers if there is activity in last N hours, checked periodically) |
+| `state_cleanup_days` | `integer` | Remove state entries for alerts older than N days |
+| `fetch_events` | `boolean` | Whether to fetch and include events in the trigger output |
+| `fetch_all_events` | `boolean` | If true, fetch all events from the alert. If false, fetch only new events since last trigger |
+| `max_events_per_fetch` | `integer` | Maximum number of events to fetch per trigger execution |
+
+
+**Outputs**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `file_path` | `string` | File path to the alert on disk. |
+| `event_type` | `string` | Action that triggered this Sekoia.io Alert notification. |
+| `alert_uuid` | `string` | Unique identifier of the Alert (UUID string). |
+| `short_id` | `string` | Unique short identifier of the Alert. |
+| `status` | `object` | Status of the Alert (object containing status description and name). |
+| `created_at` | `integer` | Creation date of the Alert (timestamp). |
+| `urgency` | `integer` | Current urgency of the Alert. |
+| `entity` | `object` | Description of the entity involved with this Alert (object containing entity UUID and name). |
+| `alert_type` | `object` | Category of the Alert |
+| `rule` | `object` |  |
+| `first_seen_at` | `string` |  |
+| `last_seen_at` | `string` |  |
+| `events_count` | `integer` | Total number of events in the alert |
+| `trigger_context` | `object` | Threshold-specific context about why this alert triggered |
+| `events_file_path` | `string` | File path to the events JSON file on disk (only present if fetch_events is enabled) |
+| `fetched_events_count` | `integer` | Number of events fetched and saved (only present if fetch_events is enabled) |
+
+
 ### Alert Status Changed
 
 The status of an existing alert was changed
@@ -364,6 +406,7 @@ Add indicators to an IOC Collection
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
+| `indicator` | `string` | Single indicator to add to an IOC collection. |
 | `indicators` | `array` | List of indicators to add to an IOC collection |
 | `indicators_path` | `string` | Path of the indicators file to add to an IOC collection |
 | `ioc_collection_id` | `string` | Identifier of the IOC collection |
@@ -524,6 +567,17 @@ Creates a new case
 | `custom_priority` | `object` |  |
 | `number_of_alerts` | `integer` |  |
 | `alerts` | `array` |  |
+
+### Create Dataset
+
+Create a new dataset
+
+**Arguments**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `name` | `string` | Name of the dataset to create. |
+| `dataset` | `string` | The content of the dataset to create, in CSV format. |
 
 ### Create rule
 
@@ -715,6 +769,17 @@ Delete a case
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
 | `case_uuid` | `string` |  |
+
+### Delete Dataset
+
+Delete an existing dataset
+
+**Arguments**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `name` | `string` | Name of the dataset to delete. |
+| `uuid` | `string` | Identifier of the dataset to delete. |
 
 ### Delete rule
 
@@ -934,6 +999,28 @@ Enable a rule
 | `available_for_subcommunities` | `boolean` | Is the rule available for subcommunities (if applicable) ? |
 | `instance_uuid` | `string` | The identifier of the instance of the rule |
 
+### Execute a query
+
+Execute a saved query in Sekoia and retrieve the results.
+
+**Arguments**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `query_name` | `string` | Name of the saved query to execute. Either 'query_name' or 'query_uuid' must be provided. |
+| `query_uuid` | `string` | UUID of the saved query to execute. Either 'query_uuid' or 'query_name' must be provided. |
+| `parameters` | `object` | Query parameters for the query execution. |
+| `result_format` | `string` | Format of the query result to download. Supported formats are 'jsonl' and 'csv'. |
+| `to_file` | `boolean` | Whether the query result should be saved in a file or sent directly. |
+
+
+**Outputs**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `query_result` | `string` | The result of the query execution. |
+| `output_path` | `string` | Path to the file with the content |
+
 ### Get aggregation query
 
 Make an aggregation query
@@ -969,8 +1056,8 @@ Retrieve the definition of an alert
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
-| `uuid` | `string` |  |
-| `stix` | `boolean` |  |
+| `uuid` | `string` | UUID of the alert to retrieve. |
+| `stix` | `boolean` | If true, include the full STIX 2 bundle in the response (default: false). |
 | `cases` | `boolean` | Fetch the cases associated with this alert in addition (default: false) |
 
 
@@ -979,39 +1066,42 @@ Retrieve the definition of an alert
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
 | `urgency` | `object` |  |
-| `history` | `array` |  |
+| `history` | `array` | Ordered list of modifications made to the alert (status changes, field updates, assignments, etc.). |
 | `is_incident` | `boolean` |  |
-| `assets` | `array` |  |
-| `countermeasures` | `array` |  |
-| `updated_at` | `integer` |  |
-| `comments` | `array` |  |
-| `ttps` | `array` |  |
-| `number_of_unseen_comments` | `integer` |  |
-| `status` | `object` |  |
-| `created_by` | `string` |  |
-| `updated_by` | `string` |  |
-| `source` | `string` |  |
-| `community_uuid` | `string` |  |
-| `number_of_total_comments` | `integer` |  |
-| `uuid` | `string` |  |
-| `rule` | `object` |  |
-| `adversaries` | `array` |  |
-| `short_id` | `string` |  |
-| `first_seen_at` | `string` |  |
-| `last_seen_at` | `string` |  |
+| `assets` | `array` | UUIDs of the assets involved in the alert. |
+| `countermeasures` | `array` | Response actions (countermeasures) recommended or applied in reaction to the alert. Each countermeasure has a name, a description, a list of concrete action steps to execute, and a lifecycle status (pending → activated or denied). They can originate from three sources, reflected in the `type` field: `text` (free-form analyst note, e.g. 'Isolate the affected host'), `intelligence_center` (a course of action sourced from SEKOIA.IO's threat intelligence, e.g. 'Block IOC X on your firewall'), or `openc2` (a machine-readable OpenC2 command sent to a security actuator). Included by default; opt out with `?countermeasures=false`. |
+| `updated_at` | `integer` | Unix timestamp (whole seconds) of the last update to the alert. |
+| `comments` | `array` | Comments left by analysts on the alert. Each entry carries an `unseen` flag for the current user. |
+| `ttps` | `array` | MITRE ATT&CK techniques, tactics and procedures (TTPs) associated with the alert, as minimal STIX objects. |
+| `number_of_unseen_comments` | `integer` | Number of comments on the alert not yet seen by the current user. |
+| `status` | `object` | Current workflow status of the alert (e.g. `Pending`, `Acknowledged`, `Ongoing`, `Closed`). |
+| `custom_status_uuid` | `string` | UUID of the custom status associated to the alert |
+| `custom_status` | `object` |  |
+| `verdict` | `object` |  |
+| `created_by` | `string` | UUID of the profile that created the alert. |
+| `updated_by` | `string` | UUID of the profile that last updated the alert. |
+| `source` | `string` | Source of the suspicious activity (e.g. an IP address or hostname). |
+| `community_uuid` | `string` | UUID of the community the alert belongs to. |
+| `number_of_total_comments` | `integer` | Total number of comments on the alert. |
+| `uuid` | `string` | Unique identifier of the alert. |
+| `rule` | `object` | Detection rule that triggered the alert. |
+| `adversaries` | `array` | Threat actors or adversary groups attributed to the alert, as minimal STIX Domain Objects (for example, `threat-actor`). |
+| `short_id` | `string` | Human-readable short identifier for the alert (e.g. `ALa1b2c3d4e5`). |
+| `first_seen_at` | `string` | Timestamp of the first event that contributed to this alert. |
+| `last_seen_at` | `string` | Timestamp of the most recent event that contributed to this alert. |
 | `event_uuids` | `array` |  |
-| `kill_chain_short_id` | `string` |  |
-| `similar` | `integer` |  |
-| `alert_type` | `object` |  |
-| `details` | `string` |  |
-| `stix` | `object` |  |
-| `created_by_type` | `string` |  |
-| `entity` | `object` |  |
-| `created_at` | `integer` |  |
-| `updated_by_type` | `string` |  |
-| `title` | `string` |  |
-| `target` | `string` |  |
-| `cases` | `array` |  |
+| `kill_chain_short_id` | `string` | Short identifier of the MITRE ATT&CK tactic associated with the alert (e.g. `TA0001` for Initial Access). |
+| `similar` | `integer` | Number of similar alerts detected by the platform's deduplication mechanism. |
+| `alert_type` | `object` | Category and value describing the type of threat (e.g. category `malware`, value `ransomware`). |
+| `details` | `string` | Free-text field providing additional analyst context or notes about the alert. |
+| `stix` | `object` | Full STIX 2 bundle describing the alert and its related objects. Only populated when `?stix=true` is passed. |
+| `created_by_type` | `string` | Type of the profile that created the alert (e.g. `application`, `avatar`). |
+| `entity` | `object` | Entity (asset group) targeted by the alert. |
+| `created_at` | `integer` | Unix timestamp in whole seconds when the alert was created. |
+| `updated_by_type` | `string` | Type of the profile that last updated the alert (e.g. `application`, `avatar`). |
+| `title` | `string` | Human-readable title of the alert. |
+| `target` | `string` | Target of the suspicious activity (e.g. an IP address or hostname). |
+| `cases` | `array` | Cases this alert has been grouped into. Only populated when `?cases=true` is passed. |
 
 ### [DEPRECATED] Get Asset (V2)
 
@@ -1496,7 +1586,7 @@ find alerts that match your filters
 | `has_more` | `boolean` |  |
 | `items` | `array` |  |
 
-### List Assets
+### [DEPRECATED] List Assets
 
 Return a list of assets according to the filters
 
@@ -1581,6 +1671,57 @@ List all comments of a case
 | `items` | `array` |  |
 | `total` | `integer` |  |
 
+### List Queries
+
+List the existing saved SOL queries.
+
+**Arguments**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `match_uuid` | `string` | Filter queries by UUID. |
+| `match_name` | `string` | Filter queries by name. |
+| `match_visualization` | `string` | Filter queries by visualization type. |
+| `match_isshared` | `boolean` | Filter queries by shared status. |
+| `match_created_by` | `string` | Filter queries by the UUID of the creator. |
+| `parameters` | `string` | Filter queries by the parameters they use |
+
+
+**Outputs**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `queries` | `array` |  |
+
+### Search Cases
+
+find cases that match your filters
+
+**Arguments**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `match[community_uuid]` | `string` |  |
+| `match[status_uuid]` | `string` |  |
+| `match[status_name]` | `string` |  |
+| `date[created_at]` | `string` |  |
+| `match[created_by]` | `string` |  |
+| `match[tags]` | `string` |  |
+| `match[assignees]` | `string` |  |
+| `limit` | `integer` |  |
+| `offset` | `integer` |  |
+| `sort` | `string` |  |
+| `direction` | `string` |  |
+
+
+**Outputs**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `total` | `integer` |  |
+| `has_more` | `boolean` |  |
+| `items` | `array` |  |
+
 ### Edit Alert
 
 Edit the details of an alert
@@ -1596,6 +1737,8 @@ Edit the details of an alert
 | `urgency` | `integer` | The urgency of the alert |
 | `kill_chain_short_id` | `string` | The ID of the kill chain step this alert denotes |
 | `title` | `string` | Title of the alert |
+| `verdict_uuid` | `string` | Verdict of the alert |
+| `custom_status_uuid` | `string` | Custom status of the alert |
 
 
 **Outputs**
@@ -1609,6 +1752,10 @@ Edit the details of an alert
 | `ttps` | `array` |  |
 | `number_of_unseen_comments` | `integer` |  |
 | `status` | `object` |  |
+| `custom_status_uuid` | `string` | UUID of the custom status associated to the alert |
+| `custom_status` | `object` |  |
+| `verdict_uuid` | `string` | UUID of the verdict associated to the alert |
+| `verdict` | `object` |  |
 | `created_by` | `string` |  |
 | `updated_by` | `string` |  |
 | `source` | `string` |  |
@@ -2123,4 +2270,4 @@ Update a rule
 
 ## Extra
 
-Module **`Sekoia.io` v2.68.16**
+Module **`Sekoia.io` v2.72.4**

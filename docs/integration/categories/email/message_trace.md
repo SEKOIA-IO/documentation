@@ -1,8 +1,13 @@
 uuid: 8461aabe-6eba-4044-ad7f-a0c39a2b2279
-name: Office 365 Message Trace
+name: Office 365 Message Trace (deprecated)
 type: intake
 
 ## Overview
+
+!!! Warning
+    This integration is deprecated in favor of [Office 365 Message Trace (Graph API)](message_trace_graph_api.md) and will be removed next.
+    The legacy Office 365 Message Trace Reporting service, used by this integration, will be deprecated on April 8, 2026 by Microsoft (see [announcement](https://techcommunity.microsoft.com/blog/exchange/announcing-general-availability-ga-of-the-new-message-trace-in-exchange-online/4420243))
+
 - **Vendor**: Microsoft
 - **Supported environment**: Cloud
 - **Version compatibility**:
@@ -10,7 +15,6 @@ type: intake
 - **Supported application or feature**:
 
 Microsoft 365 Message trace follows email messages as they travel through your Exchange Online organization. You can determine if a message was received, rejected, deferred, or delivered by the service. It also shows what actions were taken on the message before it reached its final status. You can use the information from message trace to efficiently answer user questions about what happened to messages, troubleshoot mail flow issues, and validate policy changes ([More information on microsoft.com](https://docs.microsoft.com/en-us/previous-versions/office/developer/o365-enterprise-developers/jj984335%28v%3Doffice.15%29#rest-uris)).
-
 
 
 ## Prerequisite

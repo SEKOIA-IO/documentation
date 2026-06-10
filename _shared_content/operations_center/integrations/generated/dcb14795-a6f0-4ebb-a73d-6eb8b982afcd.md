@@ -32,7 +32,7 @@ This section demonstrates how the raw logs will be transformed by our parsers. I
     ```json
 	
     {
-        "message": "Connexion au portail web org:example, user:jdoe@local, ip:1.2.3.4",
+        "message": "Connexion au portail web org:example, user:jdoe@example.com, ip:1.2.3.4",
         "event": {
             "category": [
                 "session"
@@ -63,7 +63,7 @@ This section demonstrates how the raw logs will be transformed by our parsers. I
             "ip": "1.2.3.4"
         },
         "user": {
-            "domain": "local",
+            "domain": "example.com",
             "name": "jdoe"
         }
     }
@@ -76,7 +76,7 @@ This section demonstrates how the raw logs will be transformed by our parsers. I
     ```json
 	
     {
-        "message": "Connexion d'un plugin utilisateur org:example, user:jdoe@local, ip:1.2.3.4",
+        "message": "Connexion d'un plugin utilisateur org:example, user:jdoe@example.com, ip:1.2.3.4",
         "event": {
             "category": [
                 "session"
@@ -107,7 +107,7 @@ This section demonstrates how the raw logs will be transformed by our parsers. I
             "ip": "1.2.3.4"
         },
         "user": {
-            "domain": "local",
+            "domain": "example.com",
             "name": "jdoe"
         }
     }
@@ -120,7 +120,7 @@ This section demonstrates how the raw logs will be transformed by our parsers. I
     ```json
 	
     {
-        "message": "Connexion au portail web org:example, user:toto@ORGANIZATION, ip:1.1.1.1",
+        "message": "Connexion au portail web org:example, user:user1@example.com, ip:1.1.1.1",
         "event": {
             "category": [
                 "session"
@@ -143,7 +143,7 @@ This section demonstrates how the raw logs will be transformed by our parsers. I
                 "1.1.1.1"
             ],
             "user": [
-                "toto"
+                "user1"
             ]
         },
         "source": {
@@ -151,8 +151,8 @@ This section demonstrates how the raw logs will be transformed by our parsers. I
             "ip": "1.1.1.1"
         },
         "user": {
-            "domain": "ORGANIZATION",
-            "name": "toto"
+            "domain": "example.com",
+            "name": "user1"
         }
     }
     	
@@ -244,7 +244,7 @@ This section demonstrates how the raw logs will be transformed by our parsers. I
     ```json
 	
     {
-        "message": "D\u00e9connexion d'un plugin utilisateur org:example, user:jdoe@local, ip:10.48.178.33",
+        "message": "D\u00e9connexion d'un plugin utilisateur org:example, user:jdoe@example.com, ip:10.48.178.33",
         "event": {
             "category": [
                 "session"
@@ -275,7 +275,7 @@ This section demonstrates how the raw logs will be transformed by our parsers. I
             "ip": "10.48.178.33"
         },
         "user": {
-            "domain": "local",
+            "domain": "example.com",
             "name": "jdoe"
         }
     }
@@ -288,7 +288,7 @@ This section demonstrates how the raw logs will be transformed by our parsers. I
     ```json
 	
     {
-        "message": "D\u00e9connexion du portail web org:example, user:toto@ORGANIZATION, ip:1.1.1.1",
+        "message": "D\u00e9connexion du portail web org:example, user:user1@example.com, ip:1.1.1.1",
         "event": {
             "category": [
                 "session"
@@ -311,7 +311,7 @@ This section demonstrates how the raw logs will be transformed by our parsers. I
                 "1.1.1.1"
             ],
             "user": [
-                "toto"
+                "user1"
             ]
         },
         "source": {
@@ -319,8 +319,8 @@ This section demonstrates how the raw logs will be transformed by our parsers. I
             "ip": "1.1.1.1"
         },
         "user": {
-            "domain": "ORGANIZATION",
-            "name": "toto"
+            "domain": "example.com",
+            "name": "user1"
         }
     }
     	
@@ -369,7 +369,7 @@ This section demonstrates how the raw logs will be transformed by our parsers. I
     ```json
 	
     {
-        "message": "Echec de la connexion &#224; la console d&#39;administration org:example, user:toto@example, ip:1.1.1.1 17b82585-3f88-4500-baf4-bb95ca7c3344",
+        "message": "Echec de la connexion &#224; la console d&#39;administration org:example, user:user1@example, ip:1.1.1.1 17b82585-3f88-4500-baf4-bb95ca7c3344",
         "event": {
             "category": [
                 "session"
@@ -392,7 +392,7 @@ This section demonstrates how the raw logs will be transformed by our parsers. I
                 "1.1.1.1"
             ],
             "user": [
-                "toto"
+                "user1"
             ]
         },
         "source": {
@@ -401,7 +401,7 @@ This section demonstrates how the raw logs will be transformed by our parsers. I
         },
         "user": {
             "domain": "example",
-            "name": "toto"
+            "name": "user1"
         }
     }
     	
@@ -413,7 +413,7 @@ This section demonstrates how the raw logs will be transformed by our parsers. I
     ```json
 	
     {
-        "message": "Fermeture d'une application SSH (Secure Shell) : MultiTOTOAPP org:example, user:titi@ORGANIZATION, ip:1.1.1.1",
+        "message": "Fermeture d'une application SSH (Secure Shell) : MultiTOTOAPP org:example, user:user1@example.com, ip:1.1.1.1",
         "event": {
             "category": [
                 "process"
@@ -436,7 +436,7 @@ This section demonstrates how the raw logs will be transformed by our parsers. I
                 "1.1.1.1"
             ],
             "user": [
-                "titi"
+                "user1"
             ]
         },
         "source": {
@@ -444,8 +444,8 @@ This section demonstrates how the raw logs will be transformed by our parsers. I
             "ip": "1.1.1.1"
         },
         "user": {
-            "domain": "ORGANIZATION",
-            "name": "titi"
+            "domain": "example.com",
+            "name": "user1"
         }
     }
     	
@@ -457,7 +457,7 @@ This section demonstrates how the raw logs will be transformed by our parsers. I
     ```json
 	
     {
-        "message": "Lancement d'une application Web : MultiTOTOAPP org:example, user:toto@ORGANIZATION, ip:1.1.1.1",
+        "message": "Lancement d'une application Web : MultiTOTOAPP org:example, user:user1@example.com, ip:1.1.1.1",
         "event": {
             "category": [
                 "process"
@@ -480,7 +480,7 @@ This section demonstrates how the raw logs will be transformed by our parsers. I
                 "1.1.1.1"
             ],
             "user": [
-                "toto"
+                "user1"
             ]
         },
         "source": {
@@ -488,8 +488,8 @@ This section demonstrates how the raw logs will be transformed by our parsers. I
             "ip": "1.1.1.1"
         },
         "user": {
-            "domain": "ORGANIZATION",
-            "name": "toto"
+            "domain": "example.com",
+            "name": "user1"
         }
     }
     	
@@ -584,6 +584,39 @@ This section demonstrates how the raw logs will be transformed by our parsers. I
 	```
 
 
+=== "recording_test.json"
+
+    ```json
+	
+    {
+        "message": "Recording in progress user1@example.com",
+        "event": {
+            "action": "recording",
+            "category": [
+                "session"
+            ],
+            "type": [
+                "info"
+            ]
+        },
+        "observer": {
+            "product": "Systancia Cleanroom",
+            "vendor": "Systancia"
+        },
+        "related": {
+            "user": [
+                "user1"
+            ]
+        },
+        "user": {
+            "domain": "example.com",
+            "name": "user1"
+        }
+    }
+    	
+	```
+
+
 === "session.json"
 
     ```json
@@ -633,7 +666,7 @@ This section demonstrates how the raw logs will be transformed by our parsers. I
     ```json
 	
     {
-        "message": "johndoe@local New process: \"C:\\Windows\\System32\\RuntimeBroker.exe\"",
+        "message": "johndoe@example.com New process: \"C:\\Windows\\System32\\RuntimeBroker.exe\"",
         "event": {
             "category": [
                 "process"
@@ -657,7 +690,7 @@ This section demonstrates how the raw logs will be transformed by our parsers. I
             ]
         },
         "user": {
-            "domain": "local",
+            "domain": "example.com",
             "name": "johndoe"
         }
     }
@@ -670,7 +703,7 @@ This section demonstrates how the raw logs will be transformed by our parsers. I
     ```json
 	
     {
-        "message": "john.doe@Azure SSO idle saved.",
+        "message": "john.doe@example.com SSO idle saved.",
         "event": {
             "category": [
                 "session"
@@ -690,7 +723,7 @@ This section demonstrates how the raw logs will be transformed by our parsers. I
             ]
         },
         "user": {
-            "domain": "Azure",
+            "domain": "example.com",
             "name": "john.doe"
         }
     }
@@ -703,7 +736,7 @@ This section demonstrates how the raw logs will be transformed by our parsers. I
     ```json
 	
     {
-        "message": "john.doe@Azure SSO Window closed: \"G:\\ - TreeSize Professional\"",
+        "message": "john.doe@example.com SSO Window closed: \"G:\\ - TreeSize Professional\"",
         "event": {
             "category": [
                 "session"
@@ -723,7 +756,7 @@ This section demonstrates how the raw logs will be transformed by our parsers. I
             ]
         },
         "user": {
-            "domain": "Azure",
+            "domain": "example.com",
             "name": "john.doe"
         }
     }
@@ -736,7 +769,7 @@ This section demonstrates how the raw logs will be transformed by our parsers. I
     ```json
 	
     {
-        "message": "john.doe@Azure SSO key sequence :\"<BACK<BACK\"",
+        "message": "john.doe@example.com SSO key sequence :\"<BACK<BACK\"",
         "event": {
             "category": [
                 "session"
@@ -756,7 +789,7 @@ This section demonstrates how the raw logs will be transformed by our parsers. I
             ]
         },
         "user": {
-            "domain": "Azure",
+            "domain": "example.com",
             "name": "john.doe"
         }
     }
@@ -769,7 +802,7 @@ This section demonstrates how the raw logs will be transformed by our parsers. I
     ```json
 	
     {
-        "message": "johndoe@local Process end: \"dllhost.exe\"",
+        "message": "johndoe@example.com Process end: \"dllhost.exe\"",
         "event": {
             "category": [
                 "process"
@@ -793,7 +826,7 @@ This section demonstrates how the raw logs will be transformed by our parsers. I
             ]
         },
         "user": {
-            "domain": "local",
+            "domain": "example.com",
             "name": "johndoe"
         }
     }
@@ -806,7 +839,7 @@ This section demonstrates how the raw logs will be transformed by our parsers. I
     ```json
 	
     {
-        "message": "johndoe@local Process end: \"backgroundTaskHost.exe\"",
+        "message": "johndoe@example.com Process end: \"backgroundTaskHost.exe\"",
         "event": {
             "category": [
                 "process"
@@ -830,7 +863,7 @@ This section demonstrates how the raw logs will be transformed by our parsers. I
             ]
         },
         "user": {
-            "domain": "local",
+            "domain": "example.com",
             "name": "johndoe"
         }
     }
@@ -847,6 +880,7 @@ The following table lists the fields that are extracted, normalized under the EC
 
 | Name | Type | Description                |
 | ---- | ---- | ---------------------------|
+|`event.action` | `keyword` | The action captured by the event. |
 |`event.category` | `keyword` | Event category. The second categorization field in the hierarchy. |
 |`event.outcome` | `keyword` | The outcome of the event. The lowest level categorization field in the hierarchy. |
 |`event.reason` | `keyword` | Reason why this event happened, according to the source |

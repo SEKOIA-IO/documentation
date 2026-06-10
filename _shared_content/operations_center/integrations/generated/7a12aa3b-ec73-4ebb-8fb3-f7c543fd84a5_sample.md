@@ -37,6 +37,30 @@ In this section, you will find examples of raw logs as generated natively by the
 
 
 
+=== "test_event_aut23278"
+
+    ```
+	id=firewall time="2025-09-29 07:44:12" pri=6 fw=1.2.3.4 vpn=VPN-TEST ivs=Default Network user=john.doe@company.fr realm="Realm_TEST_Integration" roles="" sessionID="" proto= src=1.2.3.4 dst= dstname= type=vpn op= arg="" result= sent= rcvd= agent="" duration= msg="AUT23278: Host Checker realm restrictions successfully passed for john.doe@company.fr/Realm_TEST_Integration , with certificate 'serialNumber=11111111-1111-1111-1111-111111111111, GN=John, SN=DOE, CN=DOE John, OU=0002 111111111, organizationIdentifier=IDFR-111111111, O=ORGA, C=FR'"
+    ```
+
+
+
+=== "test_event_aut24326"
+
+    ```
+	id=firewall time="2025-09-29 07:44:12" pri=6 fw=1.2.3.4 vpn=VPN-TEST ivs=Default Network user=john.doe@company.fr realm="Realm_TEST_Integration" roles="" sessionID="" proto=auth src=1.2.3.4 dst= dstname= type=vpn op= arg="" result= sent= rcvd= agent="Pulse-Secure/22.8.1.31437 (Windows 10) Pulse/22.8.1.31437" duration= msg="AUT24326: Primary authentication successful for john.doe@company.fr/DomainName from 1.2.3.4"
+    ```
+
+
+
+=== "test_event_aut24414"
+
+    ```
+	id=firewall time="2025-09-29 07:44:12" pri=6 fw=1.2.3.4 vpn=VPN-NAME ivs=Default Network user=john.doe@company.fr realm="Realm_TEST_Integration" roles="Role_Test-Integration" sessionID="1111111111" proto=auth src=1.2.3.4 dst= dstname= type=vpn op= arg="" result= sent= rcvd= agent="Pulse-Secure/22.8.1.31437 (Windows 10) Pulse/22.8.1.31437" duration= msg="AUT24414: Agent login succeeded for john.doe@company.fr/Realm_TEST_Integration (session:sid1111111111111111111111111111111111111111111111111) from 1.2.3.4 with Pulse-Secure/22.8.1.31437 (Windows 10) Pulse/22.8.1.31437."
+    ```
+
+
+
 === "test_event_aut24604"
 
     ```
@@ -47,11 +71,59 @@ In this section, you will find examples of raw logs as generated natively by the
 
 
 
+=== "test_event_aut32033"
+
+    ```
+	id=firewall time="2025-09-29 07:44:12" pri=6 fw=1.2.3.4 vpn=VPN-NAME ivs=Default Network user=john.doe@company.fr realm="Realm_TEST_Integration" roles="Role_Test-integration" sessionID="1111111111" proto=auth src=1.2.3.4 dst= dstname= type=vpn op= arg="" result= sent= rcvd= agent="Pulse-Secure/22.8.1.31437 (Windows 10) Pulse/22.8.1.31437" duration= msg="AUT32033: Session created for user: [john.doe@company.fr/Realm_TEST_Integration] from [1.2.3.4] with primary auth-server type: [Certificate Server], primary auth-server name: [CertServerAuthServer], secondary auth-server type: [], secondary auth-servername: [], secondary auth-server user: [], mac-address: [11-22-33-44-55-66]."
+    ```
+
+
+
+=== "test_event_aut32051"
+
+    ```
+	id=firewall time="2025-09-29 07:44:19" pri=6 fw=10.253.17.22 vpn=VPN-TEST ivs=Default Network user=john.doe@company.fr realm="Realm_TEST_Integration" roles="Role_Test_integration" sessionID="1111111111" proto=auth src=1.2.3.4 dst= dstname= type=vpn op= arg="" result= sent= rcvd= agent="Pulse-Secure/22.8.1.31437 (Windows 10) Pulse/22.8.1.31437" duration= msg="AUT32051: Established connection with type: [ESP]"
+    ```
+
+
+
 === "test_event_lic30499"
 
     ```
 	id=firewall time="2023-10-17 18:18:12" pri=6 fw=3.4.5.6 vpn=EX023-V6 ivs=Root user=System realm="" roles="" type=mgmt proto= src=1.2.3.4 dst= dstname= sent= rcvd= msg="LIC30499: Leased 0 units of 'Virtual CPUs' from 1.2.3.4 - reserved: 0 maximum: 0 incremental quantum: 0"
 
+    ```
+
+
+
+=== "test_event_nwc23464"
+
+    ```
+	id=firewall time="2025-09-29 07:44:12" pri=6 fw=1.2.3.4 vpn=VPN-NAME ivs=Default Network user=john.doe@company.fr realm="Realm_TEST_Integration" roles="Role_Test-integration" sessionID="1111111111" proto= src=1.2.3.4 dst= dstname= type=vpn op= arg="" result= sent= rcvd= agent="Pulse-Secure/22.8.1.31437 (Windows 10) Pulse/22.8.1.31437" duration= msg="NWC23464: VPN Tunneling: Session started for user  (session: sid111111111111111111111111111111111111111111111111) with IPv4 address 5.6.7.8, hostname HOSTNAME"
+    ```
+
+
+
+=== "test_event_nwc23508"
+
+    ```
+	id=firewall time="2025-09-29 09:20:20" pri=6 fw=10.20.30.40 vpn=VPN-TEST-INTEGRATION ivs=Default Network user=john.doe@company.fr realm="Realm_TEST_Realm" roles="Role_Test_integration" sessionID="1111111111" proto= src=1.2.3.4 dst= dstname= type=vpn op= arg="" result= sent= rcvd= agent="Pulse-Secure/22.8.1.31437 (Windows 10) Pulse/22.8.1.31437" duration= msg="NWC23508: Key Exchange number 7 occurred for user with NCIP 1.2.3.4 "
+    ```
+
+
+
+=== "test_event_nwc23508_2"
+
+    ```
+	id=firewall time="2025-09-29 08:00:19" pri=6 fw=1.2.3.4 vpn=VPN-TEST ivs=Default Network user=john.doe@company.fr realm="Realm_TEST_Integration" roles="Role_Test_integration" sessionID="1111111111" proto= src=5.6.7.8 dst= dstname= type=vpn op= arg="" result= sent= rcvd= agent="Pulse-Secure/22.8.1.31437 (Windows 10) Pulse/22.8.1.31437" duration= msg="NWC23508: Key Exchange number 2 occurred for user with NCIP 10.20.30.40 "
+    ```
+
+
+
+=== "test_event_nwc30477"
+
+    ```
+	id=firewall time="2025-09-29 07:44:19" pri=6 fw=1.2.3.4 vpn=VPN-NAME ivs=Default Network user=john.doe@company.fr realm="Realm_Test-integration" roles="Role_Test-integration" sessionID="1111111111" proto= src=1.2.3.4 dst= dstname= type=vpn op= arg="" result= sent= rcvd= agent="Pulse-Secure/22.8.1.31437 (Windows 10) Pulse/22.8.1.31437" duration= msg="NWC30477: VPN Tunneling: User with IP 5.6.7.8 connected with ESP transport mode. "
     ```
 
 

@@ -18,6 +18,26 @@ Cortex XDR is the detection and response app that natively integrates network, e
 
 ## Actions
 
+### [BETA] Abort Scan endpoints
+
+
+
+**Arguments**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `incident_id` | `string` | Incident ID. When included in the request, the Cancel Scan Endpoints action will appear in the Cortex XDR Incident View Timeline tab |
+| `filter_endpoint_id_list` | `array` | List of endpoint IDs |
+| `filter_dist_name` | `array` | List of the distribution list |
+| `filter_group_name` | `array` | List of endpoint groups |
+| `filter_ip_list` | `array` | List of IP addresses |
+| `filter_alias` | `array` | List of endpoint aliases to select |
+| `filter_hostname` | `array` | List of hostnames to select |
+| `filter_username` | `array` | List of usernames to select |
+| `filter_platform` | `array` | List of platforms to select (Possible values: windows, linux, macos, android) |
+| `filter_isolate` | `array` | List of isolation states to select (Possible values: isolated, unisolated) |
+| `filter_scan_status` | `array` | List of scan statuses to select (Possible values: none, pending, in_progress, canceled, aborted, pending_cancellation, success, error) |
+
 ### Block malicious files
 
 
@@ -52,6 +72,9 @@ Cortex XDR is the detection and response app that natively integrates network, e
 | `endpoint_id` | `string` | Endpoint ID. |
 | `incident_id` | `string` | Incident ID. |
 
+### [BETA] List endpoints
+
+
 ### Quarantine the file
 
 
@@ -63,6 +86,26 @@ Cortex XDR is the detection and response app that natively integrates network, e
 | `file_path` | `string` | Path to the file to be quarantined. |
 | `file_hash` | `string` | Hash of the file to be quarantined. |
 | `endpoint_ids` | `array` | List of endpoint IDs to filter by. |
+
+### [BETA] Scan endpoints
+
+
+
+**Arguments**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `incident_id` | `string` | Incident ID. When included in the request, the Cancel Scan Endpoints action will appear in the Cortex XDR Incident View Timeline tab |
+| `filter_endpoint_id_list` | `array` | List of endpoint IDs |
+| `filter_dist_name` | `array` | List of the distribution list |
+| `filter_group_name` | `array` | List of endpoint groups |
+| `filter_ip_list` | `array` | List of IP addresses |
+| `filter_alias` | `array` | List of endpoint aliases to select |
+| `filter_hostname` | `array` | List of hostnames to select |
+| `filter_username` | `array` | List of usernames to select |
+| `filter_platform` | `array` | List of platforms to select (Possible values: windows, linux, macos, android) |
+| `filter_isolate` | `array` | List of isolation states to select (Possible values: isolated, unisolated) |
+| `filter_scan_status` | `array` | List of scan statuses to select (Possible values: none, pending, in_progress, canceled, aborted, pending_cancellation, success, error) |
 
 ### Unisolate endpoint
 
@@ -104,4 +147,4 @@ Cortex XDR is the detection and response app that natively integrates network, e
 
 ## Extra
 
-Module **`Palo Alto Cortex XDR (EDR)` v1.3.8**
+Module **`Palo Alto Cortex XDR (EDR)` v1.3.11**

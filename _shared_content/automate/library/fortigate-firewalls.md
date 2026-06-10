@@ -60,7 +60,17 @@ Add a new IP Address object to a Fortigate Firewall
 | `associated-interface` | `string` | The associated interface of the firewall leave blank for 'Any' (default: Any). |
 | `comment` | `string` | A commentary to be displayed in the Fortigate GUI (default none). |
 
+### Disable Fortigate local user account
+
+Disable a local user account of a Fortigate Firewall
+
+**Arguments**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `name` | `string` | The name of the local account to disable. |
+
 
 ## Extra
 
-Module **`Fortigate Firewalls` v1.29.1**
+Module **`Fortigate Firewalls` v1.30.0**

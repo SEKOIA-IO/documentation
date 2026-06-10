@@ -231,6 +231,31 @@ In this section, you will find examples of raw logs as generated natively by the
 
 
 
+=== "test_audit_event_9"
+
+
+    ```json
+	{
+        "occured": "20-Apr-2026 08:38:29",
+        "domain": "Mapped account",
+        "action": "Logout",
+        "result": "Success",
+        "user": "REDACTED",
+        "target": "REDACTED",
+        "detail": "Logging out mapped account ''REDACTED''.",
+        "ipv4": "",
+        "ipv6": "",
+        "hostname": "",
+        "os_name": "",
+        "group_name": "",
+        "group_description": "",
+        "event_type": "Audit_Event",
+        "severity": "Information"
+    }
+    ```
+
+
+
 === "test_firewall_1"
 
 

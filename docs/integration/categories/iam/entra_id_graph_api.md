@@ -31,6 +31,11 @@ type: intake
     5. Total logs/day: 250,000 – 1,500,000
 
     If your environment exceeds these numbers, we strongly recommend to use the Microsoft Entra ID / Azure AD integration (see [Microsoft Entra ID](entra_id.md))
+
+
+!!! warning
+	This integration will **only** collect `Interactive user sign-in events`, `Federated sign-in events`, `Provisioning events` and `Audit logs`. 
+	If you need to collect more event types, please use the [Microsoft Entra ID (Azure AD)](entra_id.md).
     
 
 ## Configure

@@ -1,83 +1,70 @@
-# Outgoing Feeds
-A feed allows you to filter CTI objects from your database.
+# Feeds
 
-## Feeds listing
+A feed is a filtered, scoped view of Cyber Threat Intelligence (CTI) objects from the Sekoia.io database. Feeds let you distribute threat intelligence to external security tools or use it as a dynamic filter within the platform.
 
-The feeds’ page is accessible in the main menu. The page lists all feeds that are available to your community and the table has columns based on our available filters.
+Feeds are shared across all users within the community that created them, ensuring consistent intelligence scoping across your organization.
 
-The available filters are:
+## What feeds are used for
 
-- Types
-- TLPs
-- Targeted sectors of activity
-- Targeted locations
-- Sources
-- Observable types
+Feeds serve as versatile components for both internal analysis and external integration.
 
-A feed can be consumed by all users belonging to the community that creates it.
+**Filter reports and intelligence views** — You can use a feed as a filter on the **Reports** page to display only content matching specific criteria, such as industry sectors or geographic regions.
 
-## Consume a feed
+**Scope the intelligence database** — To visualize the exact contents of a feed, navigate to the **Intelligence Database**, click **Filters**, select **Feeds**, and choose your feed.
 
-To consume a feed, you have to click on the dropdown icon next to the name of the feed in the first column of the table.
+**Create detection rules** — If you have a Defend subscription, you can link a feed to a CTI detection rule to automatically match indicators of compromise (IOCs) against telemetry.
 
-You can then:
+**Distribute to external tools** — You can share filtered data with firewalls, SIEMs, or TIPs using dedicated API or TAXII endpoints.
 
-- Copy the feed ID
-- Copy the API URL
-- Copy the TAXII URL
+## The default feed
 
-## Feed format
+Every community with an Intelligence subscription has a **Default Feed** available out of the box, with no configuration required. It covers the entire Sekoia CTI database with no filters applied. The Default Feed is always accessible and cannot be deleted.
 
-When creating a feed, you have different formats to choose from.
+Use the following Feed ID to access it programmatically: `d6092c37-d8d7-45c3-8aff-c4dc26030608`
 
-The available formats are:
+!!! tip "Creating scoped feeds"
+    Create additional feeds whenever you need a filtered, scoped view — for a specific TLP level, source, or object type.
 
-- **JSON**: The default format
-- **CSV**: It is possible to choose which attributes you want to see in the feed
-- **Text**: The content for this format will be a raw text with, on each line, either the name of the object or the observable from the pattern.
-- **Custom**: A template string is needed to specify the way the data must be formatted.
-    - The template variables must follow the format: `$name` where `name` is the name of the attribute
-    - Example: `ID: $id, name: $name, Observables: $observables`
+## Feeds page columns
 
-### Default Feed
+The **Feeds** page displays all feeds available in your community. Each feed appears as a row with the following columns.
 
-A default feed with no filters is available in all communities without having to create it.
+| Column | Description |
+| --- | --- |
+| **Name** | The title of the feed |
+| **Format** | The export format: JSON/STIX, Text, CSV, or Custom |
+| **Created by** | The community that created the feed |
+| **Filters** | Active filters applied to the feed: object types, sources, TLP levels, and observables |
+| **Actions (⋯)** | Available actions: **Disseminate**, **Edit**, **Duplicate**, or **Delete**. These actions are unavailable on the Default Feed. |
 
-The special feed ID to use is `d6092c37-d8d7-45c3-8aff-c4dc26030608`.
+## Feed formats
 
-### Create new feed
+When you create or edit a feed, you select an output format. The table below summarizes the available formats and their constraints.
 
-There are two ways to create a feed: either from the TIP interface or by using the `POST /api/v2/inthreat/feeds` API endpoint.
+| Format | Best suited for | Max objects per call |
+| --- | --- | --- |
+| JSON / STIX | CTI platforms | 10,000 |
+| Text | Firewall EDLs (one object per line) | 2,000 |
+| CSV | Customizable spreadsheet exports | 2,000 |
+| Custom | User-defined templates using variables such as `$tlp`, `$id`, `$name`, and `$observables` | 2,000 |
 
-To create a new feed:
+## Dissemination links
 
-1. Click on the `+ Feed` button on the right of the page
-2. Provide a title (mandatory)
-3. Select objects type, observables type, sectors, TLP, sources, etc... based on your preferences
-4. Choose a feed format
-5. Save your changes
+When you select **Disseminate** from the **Actions (⋯)** menu of a feed, you access three integration links. A single feed can be consumed simultaneously through all three.
 
-!!! note
-    Filter categories are combined together with a logical AND. Different values in the same filter category are combined together with a logical OR. This means you can define a feed with values matching ((Locations: France OR Germany) AND (Sectors: Financial Services OR Industrial).
+| Link | Use |
+| --- | --- |
+| **Public Feed ID** | Fetch or update the collection programmatically |
+| **Public API URL** | Direct API calls and integrations (`https://app.sekoia.io/api/v2/inthreat/collections/...`) |
+| **Public TAXII URL** | TAXII-compatible systems and platforms (`https://app.sekoia.io/api/v2/inthreat/taxii-server/...`) |
 
-### Edit a feed
+## Relationship handling
 
-To edit an existing feed:
+Feeds include only the object types you select in the **Object type** filters. Relationships between objects are not included. If you leave the object type filter empty, all object types are included.
 
-1. Go to the feeds’ listing page
-2. Select the feed you want to edit or delete
-3. Click on the `edit` button in the right of the table
-4. Edit your feed
-5. Save your changes
+## Related articles
 
-### Delete a feed
-
-To delete an existing feed:
-
-1. Go to the feeds’ listing page
-2. Select the feed you want to delete
-3. Click on the `delete` button in the right of the table
-4. Confirm deletion in the modal
-
-!!! note
-    Beware, deleting a feed is a permanent action as you will not be able to access or edit it afterwards.
+- [Create a feed](/cti/features/consume/create_feed.md): Configure and activate a new feed by selecting object types, sources, TLP levels, and output format.
+- [Manage feeds](/cti/features/consume/manage_feeds.md): Consume, edit, duplicate, or delete an existing feed.
+- [Create a detection rule from a feed](/cti/features/consume/create_detection_rule_from_feed.md): Link a feed to a CTI detection rule to automatically match IOCs against your telemetry. Requires a Defend subscription.
+ 

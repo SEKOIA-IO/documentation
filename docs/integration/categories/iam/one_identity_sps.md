@@ -6,9 +6,6 @@ type: intake
 
 One Identity Safeguard for Privileged Sessions (SPS) is a core module of the One Identity Safeguard suite that focuses on securing, monitoring, and auditing privileged access to critical systems. It acts as a transparent gateway between administrators and target systems, enabling organizations to control who accesses sensitive resources, record all activity, and detect suspicious behavior in real time.
 
-!!! Warning
-    Important note - This format is currently in beta. We highly value your feedback to improve its performance.
-
 - **Vendor**: One Identity
 - **Supported environment**: On prem
 - **Version compatibility**: 7.4 and later
