@@ -432,9 +432,9 @@ To verify that everything works well, connect to [Sekoia.io Events' page](https:
 If you would like to filter on specific intakes:
 
 - Go to [Sekoia.io Intakes page](https://app.sekoia.io/operations/intakes)
-- Copy your Intake Key. In this example, it can be: `88EYbSaG55YbVaTne8Gu93wKQbLE4axZ`
+- Copy your Intake Key.
 - Come back to [Sekoia.io Events' page](https://app.sekoia.io/operations/events)
-- Query the following in the search bar: `sekoiaio.intake.key:"88EYbSaG55YbVaTne8Gu93wKQbLE4axZ"` and press `Enter`
+- Query the following in the search bar: `sekoiaio.intake.key: "intake_key"` and press `Enter`
 
 ## How to forward logs reliably using disk-buffer
 
