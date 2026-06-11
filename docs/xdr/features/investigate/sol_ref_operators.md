@@ -601,11 +601,21 @@ Use the `render` operator to display results in a chart to identify more easily 
 - `columnchart`
 - `barchart`
 - `linechart`
+- `sankey`
 
 ``` shell
 <table name>
 | aggregate <function> by <column name>
 | render <chart_type> with (x=<column name>, y=<column name>, breakdown_by=<column name>, mode=<grouped | stacked>)
+
+```
+
+For the `sankey` chart, the syntax uses `source`, `target`, and `value` parameters instead:
+
+``` shell
+<table name>
+| aggregate <function> by <source column>, <target column>
+| render sankey with (source=<source column>, target=<target column>, value=<value column>)
 
 ```
 
@@ -629,6 +639,23 @@ Use the `render` operator to display results in a chart to identify more easily 
         | laptop-6a1ec62f         | 16    |
         | laptop-chris            | 525   |
         | laptop-b3205bc2         | 517   |
+
+!!! example "Visualize network flows between source and destination IPs as a Sankey chart"
+
+    === "Query"
+
+        ``` shell
+        events
+        | where timestamp > ago(1h)
+        | aggregate count() by source.ip, destination.ip
+        | limit 50
+        | render sankey with (source=source.ip, target=destination.ip, value=count)
+
+        ```
+
+    === "Results"
+
+        A Sankey chart showing the volume of connections from each source IP to each destination IP.
 
 ## Join tables
 
