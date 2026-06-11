@@ -4,7 +4,7 @@ type: intake
 
 ## Overview
 
-Flare Events provides exposure intelligence from clear, deep and dark web sources, including chat channels, forums, marketplaces, leaks, stealer logs, and lookalike domains. The intake normalizes Flare tenant feed events into ECS for correlation and detection in SEKOIA.io.
+Flare Events provides exposure intelligence from clear, deep and dark web sources, including chat channels, forums, marketplaces, leaks, stealer logs, and lookalike domains. The intake normalizes Flare tenant feed events into ECS for correlation and detection in sekoia.io.
 
 ## Architecture
 
@@ -58,7 +58,7 @@ Before configuring the integration, ensure you have:
 
 - An active Flare tenant
 - A Flare API key with read access to tenant events
-- Permissions in SEKOIA.io to create and manage intakes
+- Permissions in sekoia.io to create and manage intakes
 - Outbound HTTPS access to `https://api.flare.io`
 
 ### Create Flare credentials
@@ -75,7 +75,7 @@ For details on Flare authentication and token lifecycle, see the [Flare Python S
 If your API key is scoped to multiple tenants, you can set `tenant_id` in the connector configuration.
 
 - In the Flare web console URL, the tenant identifier appears in the tenant context (for example in tenant-scoped paths after selecting a tenant).
-- Use that numeric value as `tenant_id` in SEKOIA.io.
+- Use that numeric value as `tenant_id` in sekoia.io.
 
 ### How collection works
 
@@ -94,7 +94,7 @@ Pagination and checkpoint behavior:
 
 The connector also applies client-side throttling and relies on SDK retry logic for transient API errors (including HTTP 429).
 
-### Create your intake in SEKOIA.io
+### Create your intake in sekoia.io
 
 1. Go to the [Intakes page](https://app.sekoia.io/operations/intakes).
 2. Click `+ Intake`.
