@@ -665,6 +665,8 @@ Available `join` types are:
 
 - **inner join**: Returns records that have matching values in both tables (default)
 - **left join**: Returns all records from the left table, and the matched records from the right table
+- **leftanti join**: Returns only records from the left table that have **no match** in the right table
+- **rightanti join**: Returns only records from the right table that have **no match** in the left table
 
 ``` shell
 <left table name>
@@ -770,6 +772,64 @@ This `model` object (similar to a class Object in code development) contains a s
         | ------------------ |
         | HQ - London Office |
         | Cambridge Campus   |
+
+### Anti-join
+
+Anti-join operators (`leftanti join` and `rightanti join`) are used to find rows that have **no match** in the other table. They are particularly useful for anomaly detection and threat hunting: detecting new, unknown, or unexpected values by comparing against a known baseline.
+
+Unlike `inner` or `left` joins, anti-joins do **not** produce a `model` object — they simply filter rows.
+
+!!! warning
+    Fields used in the `on` clause should not contain `null` values. Rows where a join field is `null` will not match and will always appear in the anti-join result. Filter them out beforehand with `| where <field> != null`.
+
+!!! example "Detect source IPs not seen in a known intake (leftanti)"
+
+    Find all source IPs that appear in your events in the last 24 hours but **not** in a specific intake — useful to spot unexpected data sources.
+
+    ``` shell
+    let known_ips = events
+    | where timestamp > ago(24h)
+    | where sekoiaio.intake.dialect_uuid == "1a1502f5-5a93-44b4-b0b5-359bbcb14902"
+    | distinct source.ip;
+
+    events
+    | where timestamp > ago(24h)
+    | distinct source.ip
+    | leftanti join known_ips on source.ip
+    ```
+
+!!! example "Detect new (host, user) pairs not seen in the past 7 days (leftanti)"
+
+    Compare the last 24 hours of activity against the previous 7 days to surface new host/user combinations — useful to detect lateral movement.
+
+    ``` shell
+    let baseline = events
+    | where timestamp between (ago(7d) .. ago(1d))
+    | where host.name != null and user.name != null
+    | distinct host.name, user.name;
+
+    events
+    | where timestamp > ago(1d)
+    | where host.name != null and user.name != null
+    | distinct host.name, user.name
+    | leftanti join baseline on host.name, user.name
+    ```
+
+!!! example "Find IPs seen globally but absent from a specific source (rightanti)"
+
+    The `rightanti` variant returns rows from the **right** table with no match on the left. Useful when the reference dataset is your starting point.
+
+    ``` shell
+    let all_ips = events
+    | where timestamp > ago(24h)
+    | distinct source.ip;
+
+    events
+    | where timestamp > ago(24h)
+    | where sekoiaio.intake.dialect_uuid == "1a1502f5-5a93-44b4-b0b5-359bbcb14902"
+    | distinct source.ip
+    | rightanti join all_ips on source.ip
+    ```
 
 ## Lookup
 
