@@ -1,6 +1,6 @@
 # Built-in detection rules, EventIDs and EventProviders relations
 SEKOIA.IO provides built-in detection rules to illuminate intrusions, adversarial behaviours and suspicious activity escalation chains so you can immediately take steps to remediate. Built-in rules can be customized to your context and according to your security posture.
-This page aims at helping partners & customers in having their detection coverage by knowing which Event IDs and [Event Providers](https://learn.microsoft.com/en-us/windows/win32/etw/providing-events) are used by rule. **Please note this was retrieved automatically from our tests samples when generating attacks that triggered the rules. It might not be exhaustive and concerns mostly Windows-related rules.** _Last update on 2026-06-01_
+This page aims at helping partners & customers in having their detection coverage by knowing which Event IDs and [Event Providers](https://learn.microsoft.com/en-us/windows/win32/etw/providing-events) are used by rule. **Please note this was retrieved automatically from our tests samples when generating attacks that triggered the rules. It might not be exhaustive and concerns mostly Windows-related rules.** _Last update on 2026-06-04_
 
 The colors of the EventIDs in this page should be interpreted as follow:
 
@@ -440,6 +440,7 @@ The colors of the EventIDs in this page should be interpreted as follow:
 | Microsoft Office Startup Add-In | elementary | <span style="color:#5865d3"><a href='https://learn.microsoft.com/en-us/sysinternals/downloads/sysmon#events' style='color: inherit;'>11</a></span> | Microsoft-Windows-Sysmon |
 | Suspicious VBS Execution Parameter | elementary | <span style="color:#5865d3"><a href='https://learn.microsoft.com/en-us/sysinternals/downloads/sysmon#events' style='color: inherit;'>1</a></span> | Microsoft-Windows-Sysmon |
 | Raccine Uninstall | elementary | <span style="color:#5865d3"><a href='https://learn.microsoft.com/en-us/sysinternals/downloads/sysmon#events' style='color: inherit;'>1</a></span> | Microsoft-Windows-Sysmon |
+| Sigma Intelligence ErrTraffic PowerShell Command Line | elementary | <span style="color:#D89462">4104</span> | Microsoft-Windows-PowerShell |
 | IcedID Execution Using Excel | elementary | <span style="color:#5865d3"><a href='https://learn.microsoft.com/en-us/sysinternals/downloads/sysmon#events' style='color: inherit;'>1</a></span> | Microsoft-Windows-Sysmon |
 | Microsoft Defender Antivirus Signatures Removed With MpCmdRun | elementary | <span style="color:#5865d3"><a href='https://learn.microsoft.com/en-us/sysinternals/downloads/sysmon#events' style='color: inherit;'>1</a></span> | Microsoft-Windows-Sysmon |
 | RedMimicry Winnti Playbook Dropped File | elementary | <span style="color:#5865d3"><a href='https://learn.microsoft.com/en-us/sysinternals/downloads/sysmon#events' style='color: inherit;'>11</a></span> | Microsoft-Windows-Sysmon |
@@ -493,17 +494,17 @@ The colors of the EventIDs in this page should be interpreted as follow:
 | Copying Browser Files With Credentials | elementary | <span style="color:#5865d3"><a href='https://learn.microsoft.com/en-us/sysinternals/downloads/sysmon#events' style='color: inherit;'>1</a></span> | Microsoft-Windows-Sysmon |
 
 ## EventIDs occurrences in rules
-| EventID | Number of rules concerned | Percentage of rules concerned (Total rules: 479) |
+| EventID | Number of rules concerned | Percentage of rules concerned (Total rules: 480) |
 | ------- | ------------------------- | ------------------------------------------------------ |
-| 1 | 236 | 49.27 % |
-| 13 | 52 | 10.86 % |
-| 4104 | 47 | 9.81 % |
-| 5 | 35 | 7.31 % |
-| 11 | 27 | 5.64 % |
-| 7 | 15 | 3.13 % |
-| 5145 | 15 | 3.13 % |
-| 7045 | 11 | 2.3 % |
-| 4688 | 10 | 2.09 % |
+| 1 | 236 | 49.17 % |
+| 13 | 52 | 10.83 % |
+| 4104 | 48 | 10.0 % |
+| 5 | 35 | 7.29 % |
+| 11 | 27 | 5.62 % |
+| 7 | 15 | 3.12 % |
+| 5145 | 15 | 3.12 % |
+| 7045 | 11 | 2.29 % |
+| 4688 | 10 | 2.08 % |
 | 4656 | 8 | 1.67 % |
 | 4697 | 7 | 1.46 % |
 | 15 | 7 | 1.46 % |
@@ -514,12 +515,12 @@ The colors of the EventIDs in this page should be interpreted as follow:
 | 5136 | 6 | 1.25 % |
 | 10 | 6 | 1.25 % |
 | 1116 | 5 | 1.04 % |
-| 3 | 4 | 0.84 % |
-| 4625 | 4 | 0.84 % |
-| 22 | 3 | 0.63 % |
-| 4720 | 3 | 0.63 % |
-| 4103 | 3 | 0.63 % |
-| 8 | 3 | 0.63 % |
+| 3 | 4 | 0.83 % |
+| 4625 | 4 | 0.83 % |
+| 22 | 3 | 0.62 % |
+| 4720 | 3 | 0.62 % |
+| 4103 | 3 | 0.62 % |
+| 8 | 3 | 0.62 % |
 | 5007 | 2 | 0.42 % |
 | 4657 | 2 | 0.42 % |
 | 4738 | 2 | 0.42 % |
@@ -600,14 +601,14 @@ The colors of the EventIDs in this page should be interpreted as follow:
 | 4673 | 1 | 0.21 % |
 
 ## EventProviders occurrences in rules
-| EventProvider | Number of rules concerned | Percentage of rules concerned (Total rules: 479) |
+| EventProvider | Number of rules concerned | Percentage of rules concerned (Total rules: 480) |
 | ------- | ------------------------- | ------------------------------------------------------ |
-| Microsoft-Windows-Sysmon | 288 | 60.13 % |
-| Microsoft-Windows-Security-Auditing | 87 | 18.16 % |
-| Kernel-Process | 65 | 13.57 % |
-| Microsoft-Windows-PowerShell | 51 | 10.65 % |
-| Service Control Manager | 11 | 2.3 % |
-| Microsoft-Windows-Kernel-File | 10 | 2.09 % |
+| Microsoft-Windows-Sysmon | 288 | 60.0 % |
+| Microsoft-Windows-Security-Auditing | 87 | 18.12 % |
+| Kernel-Process | 65 | 13.54 % |
+| Microsoft-Windows-PowerShell | 52 | 10.83 % |
+| Service Control Manager | 11 | 2.29 % |
+| Microsoft-Windows-Kernel-File | 10 | 2.08 % |
 | Microsoft-Windows-Windows Defender | 9 | 1.88 % |
 | Microsoft-Windows-DNS-Client | 2 | 0.42 % |
 | Microsoft-Windows-Kernel-Network | 2 | 0.42 % |
@@ -624,9 +625,9 @@ The colors of the EventIDs in this page should be interpreted as follow:
 | Microsoft-Windows-DNS-Server-Service | 1 | 0.21 % |
 
 ## EffortLevel x EventIDs
-| Effort Level | EventIDs | Number of related rules | Percentage of related rules (Total rules: 479 |
+| Effort Level | EventIDs | Number of related rules | Percentage of related rules (Total rules: 480 |
 | ------------ | -------- | ----------------------- | ------------------------------------------------------- |
-| master | , 1, 10, 1013, 11, 1116, 12, 13, 150, 17, 22, 25, 3, 4104, 4611, 4624, 4625, 4649, 4656, 4657, 4661, 4662, 4663, 4673, 4674, 4688, 4698, 4720, 4726, 4727, 4728, 4729, 4730, 4732, 4743, 4754, 4756, 4757, 4758, 4764, 4768, 5, 5007, 5140, 5145, 7, 770, 771, 8001 | 125 | 26.1 % |
-| advanced | , 1, 10, 1006, 1007, 1008, 1015, 11, 1116, 1117, 1118, 1119, 1125, 1126, 1127, 13, 15, 17, 19, 20, 2013, 21, 22, 23, 3, 4103, 4104, 4624, 4625, 4656, 4662, 4688, 4706, 4707, 4776, 4799, 5, 5001, 5010, 5012, 5101, 5145, 5154, 5156, 6, 6416, 7, 7045, 8 | 115 | 24.01 % |
-| intermediate | 1, 10, 1000, 1031, 1032, 1033, 1034, 11, 1102, 12, 13, 15, 16, 17, 20, 3, 4103, 4104, 4624, 4656, 4657, 4658, 4662, 4663, 4688, 4697, 4703, 4720, 4738, 4741, 4742, 4768, 4781, 4794, 4799, 4825, 5, 5136, 5145, 517, 524, 7, 7045, 8 | 154 | 32.15 % |
-| elementary | 1, 10, 1011, 11, 1116, 13, 15, 17, 325, 4103, 4104, 4625, 4656, 4663, 4688, 4697, 4704, 4720, 4738, 4886, 4887, 5, 5136, 5145, 6, 7, 7045 | 85 | 17.75 % |
+| master | , 1, 10, 1013, 11, 1116, 12, 13, 150, 17, 22, 25, 3, 4104, 4611, 4624, 4625, 4649, 4656, 4657, 4661, 4662, 4663, 4673, 4674, 4688, 4698, 4720, 4726, 4727, 4728, 4729, 4730, 4732, 4743, 4754, 4756, 4757, 4758, 4764, 4768, 5, 5007, 5140, 5145, 7, 770, 771, 8001 | 125 | 26.04 % |
+| advanced | , 1, 10, 1006, 1007, 1008, 1015, 11, 1116, 1117, 1118, 1119, 1125, 1126, 1127, 13, 15, 17, 19, 20, 2013, 21, 22, 23, 3, 4103, 4104, 4624, 4625, 4656, 4662, 4688, 4706, 4707, 4776, 4799, 5, 5001, 5010, 5012, 5101, 5145, 5154, 5156, 6, 6416, 7, 7045, 8 | 115 | 23.96 % |
+| intermediate | 1, 10, 1000, 1031, 1032, 1033, 1034, 11, 1102, 12, 13, 15, 16, 17, 20, 3, 4103, 4104, 4624, 4656, 4657, 4658, 4662, 4663, 4688, 4697, 4703, 4720, 4738, 4741, 4742, 4768, 4781, 4794, 4799, 4825, 5, 5136, 5145, 517, 524, 7, 7045, 8 | 154 | 32.08 % |
+| elementary | 1, 10, 1011, 11, 1116, 13, 15, 17, 325, 4103, 4104, 4625, 4656, 4663, 4688, 4697, 4704, 4720, 4738, 4886, 4887, 5, 5136, 5145, 6, 7, 7045 | 86 | 17.92 % |
