@@ -116,8 +116,8 @@
         }
 
         h1 {
-            font-weight: bold;
-            font-family: 'ABCOtto', sans-serif;
+            font-weight: 400;
+            font-family: 'ABCOtto', Georgia, sans-serif;
         }
 
         a {
@@ -227,16 +227,17 @@
 
             h1 {
                 color: #212223;
-                font-weight: bold;
+                font-weight: 400;
                 font-size: 48px;
                 font-family: 'ABCOtto', sans-serif;
-                line-height: 52px;
+                line-height: 1.05;
             }
 
             p {
                 color: #212223;
-                font-size: 24px;
-                line-height: 32px;
+                font-size: 16px;
+                font-weight: 400;
+                line-height: 1.5;
             }
         }
     }
@@ -266,6 +267,7 @@
 
             h2 {
                 color: #212223;
+                font-family: 'ABCOtto', Georgia, sans-serif;
                 font-size: 40px;
                 line-height: 48px;
             }
@@ -307,6 +309,7 @@
 
         h2 {
             color: #212223;
+            font-family: 'ABCOtto', Georgia, sans-serif;
             font-size: 24px;
             line-height: 36px;
         }
@@ -366,7 +369,7 @@
 		color: #212223;
 	    }
 	    p {
-		color: #212223;
+		color: #6f7376;
 	    }
 	    ul {
 		list-style-type: none;
@@ -404,8 +407,12 @@
 
 
         h3 {
-            color: #212223;
+            color: #6f7376;
+            font-size: 14px;
+            font-weight: 500;
+            font-family: 'lost', helvetica, sans-serif;
             margin-bottom: 16px;
+            text-transform: uppercase;
         }
 
     }
