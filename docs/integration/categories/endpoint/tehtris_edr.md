@@ -68,7 +68,7 @@ In this method, TEHTRIS Level 3 support configures their platform to push logs d
     - **Root certificate**: `https://letsencrypt.org/certs/isrgrootx1.pem`
     - **Message format**:
       ```
-      1 %timestamp:::date-rfc3339% %hostname% %app-name% %procid% LOG [SEKOIA@53288 intake_key="YOUR_INTAKE_KEY"] RAW_MESSAGE
+      <%pri%>1 %timestamp:::date-rfc3339% %hostname% %app-name% %procid% LOG [SEKOIA@53288 intake_key="YOUR_INTAKE_KEY"] RAW_MESSAGE
       ```
       Replace `YOUR_INTAKE_KEY` with the intake key you noted earlier.
     - **Log filter**: define the severity levels and the products to send (e.g. `Severity 4 to 9`, `Products: EDR`)
