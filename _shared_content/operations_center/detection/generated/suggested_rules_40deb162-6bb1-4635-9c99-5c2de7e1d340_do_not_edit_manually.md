@@ -1899,6 +1899,12 @@ The following Sekoia.io built-in rules match the intake **SentinelOne Cloud Funn
     
     - **Effort:** intermediate
 
+??? abstract "Sigma Intelligence ErrTraffic PowerShell Command Line"
+    
+    Detects powershell script executed via ErrTraffic infection chain
+    
+    - **Effort:** elementary
+
 ??? abstract "Sliver DNS Beaconing"
     
     Detects suspicious DNS queries known from Sliver beaconing 

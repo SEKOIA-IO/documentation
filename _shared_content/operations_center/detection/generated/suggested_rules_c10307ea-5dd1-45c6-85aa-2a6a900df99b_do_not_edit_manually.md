@@ -1911,6 +1911,12 @@ The following Sekoia.io built-in rules match the intake **Elastic Winlogbeat**. 
     
     - **Effort:** master
 
+??? abstract "Sigma Intelligence ErrTraffic PowerShell Command Line"
+    
+    Detects powershell script executed via ErrTraffic infection chain
+    
+    - **Effort:** elementary
+
 ??? abstract "Sliver DNS Beaconing"
     
     Detects suspicious DNS queries known from Sliver beaconing 
@@ -2408,12 +2414,6 @@ The following Sekoia.io built-in rules match the intake **Elastic Winlogbeat**. 
     Detects the use of different commands to add a user to an admin group.
     
     - **Effort:** advanced
-
-??? abstract "User Added to Local Administrators"
-    
-    Detects when user accounts are added which could be legitimate activity or a sign of privilege escalation activity, Potential False-Positives Legitimate administrative activity WinRM clients
-    
-    - **Effort:** master
 
 ??? abstract "VSCode Tunnel Shell Exec"
     

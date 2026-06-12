@@ -1,4 +1,4 @@
-Rules catalog includes **1066 built-in detection rules** ([_last update on 2026-06-01_](rules_changelog.md)).
+Rules catalog includes **1067 built-in detection rules** ([_last update on 2026-06-04_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Identity Information**
 
@@ -1114,6 +1114,7 @@ Rules catalog includes **1066 built-in detection rules** ([_last update on 2026-
     
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
         - 04/04/2024 - major - Rule's pattern field changed
+        - 01/06/2026 - major - selection improvements to better align with the detection objective
             
 **Replication Through Removable Media**
 
@@ -1654,6 +1655,10 @@ Rules catalog includes **1066 built-in detection rules** ([_last update on 2026-
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 01/06/2026 - minor - Adding more filter and review group-by clause to reduce false positives
+            
 ??? abstract "Okta Phishing Detection with FastPass Origin Check"
     
     Okta's FastPass prevents known phishing sites.
@@ -2620,6 +2625,7 @@ Rules catalog includes **1066 built-in detection rules** ([_last update on 2026-
     - **Changelog:**
     
         - 13/09/2024 - major - Update service name value following Microsoft change
+        - 03/06/2026 - major - Added a new condition to match only on alerts to avoid false positives.
             
 ??? abstract "Microsoft Defender XDR Cloud App Security Alert"
     
@@ -2630,6 +2636,7 @@ Rules catalog includes **1066 built-in detection rules** ([_last update on 2026-
     - **Changelog:**
     
         - 13/09/2024 - major - Update service name value following Microsoft change
+        - 03/06/2026 - major - Added a new condition to match only on alerts to avoid false positives.
             
 ??? abstract "Microsoft Defender XDR Data Loss Prevention Alert"
     
@@ -2640,6 +2647,7 @@ Rules catalog includes **1066 built-in detection rules** ([_last update on 2026-
     - **Changelog:**
     
         - 12/11/2025 - minor - Update rule type to integration
+        - 03/06/2026 - major - Added a new condition to match only on alerts to avoid false positives.
             
 ??? abstract "Microsoft Defender XDR Endpoint Alert"
     
@@ -2647,6 +2655,10 @@ Rules catalog includes **1066 built-in detection rules** ([_last update on 2026-
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 03/06/2026 - major - Added a new condition to match only on alerts to avoid false positives.
+            
 ??? abstract "Microsoft Defender XDR Entra ID Protection Alert"
     
     Microsoft Defender XDR has raised an alert for Microsoft Entra ID Protection. The alert info and evidence events are grouped with the similarity into the same Sekoia.io alert.
@@ -2656,6 +2668,7 @@ Rules catalog includes **1066 built-in detection rules** ([_last update on 2026-
     - **Changelog:**
     
         - 12/11/2025 - minor - Update rule type to integration
+        - 03/06/2026 - major - Added a new condition to match only on alerts to avoid false positives.
             
 ??? abstract "Microsoft Defender XDR Office 365 Alert"
     
@@ -2663,6 +2676,10 @@ Rules catalog includes **1066 built-in detection rules** ([_last update on 2026-
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 03/06/2026 - major - Added a new condition to match only on alerts to avoid false positives.
+            
 ??? abstract "Microsoft Office Creating Suspicious File"
     
     Detects Microsoft Office process (word, excel, powerpoint) creating a suspicious file which corresponds to a script or an executable. This behavior highly corresponds to an executed macro which loads an installation script or a malware payload. The rule requires to log for File Creations to work properly, which can be done through Sysmon Event ID 11.
@@ -2998,6 +3015,12 @@ Rules catalog includes **1066 built-in detection rules** ([_last update on 2026-
         - 24/03/2023 - minor - Adjusting displayed columns when the rule triggers an alert. Now timestamp and username will be displayed.
         - 02/02/2026 - minor - Update rule type to integration
             
+??? abstract "Sigma Intelligence ErrTraffic PowerShell Command Line"
+    
+    Detects powershell script executed via ErrTraffic infection chain
+    
+    - **Effort:** elementary
+    
 ??? abstract "Socat Relaying Socket"
     
     Socat is a linux tool used to relay local socket or internal network connection, this technics is often used by attacker to bypass security equipment such as firewall
@@ -4349,6 +4372,7 @@ Rules catalog includes **1066 built-in detection rules** ([_last update on 2026-
     - **Changelog:**
     
         - 13/09/2024 - major - Update service name value following Microsoft change
+        - 03/06/2026 - major - Added a new condition to match only on alerts to avoid false positives.
             
 ??? abstract "Microsoft Defender XDR Cloud App Security Alert"
     
@@ -4359,6 +4383,7 @@ Rules catalog includes **1066 built-in detection rules** ([_last update on 2026-
     - **Changelog:**
     
         - 13/09/2024 - major - Update service name value following Microsoft change
+        - 03/06/2026 - major - Added a new condition to match only on alerts to avoid false positives.
             
 ??? abstract "Microsoft Defender XDR Data Loss Prevention Alert"
     
@@ -4369,6 +4394,7 @@ Rules catalog includes **1066 built-in detection rules** ([_last update on 2026-
     - **Changelog:**
     
         - 12/11/2025 - minor - Update rule type to integration
+        - 03/06/2026 - major - Added a new condition to match only on alerts to avoid false positives.
             
 ??? abstract "Microsoft Defender XDR Endpoint Alert"
     
@@ -4376,6 +4402,10 @@ Rules catalog includes **1066 built-in detection rules** ([_last update on 2026-
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 03/06/2026 - major - Added a new condition to match only on alerts to avoid false positives.
+            
 ??? abstract "Microsoft Defender XDR Entra ID Protection Alert"
     
     Microsoft Defender XDR has raised an alert for Microsoft Entra ID Protection. The alert info and evidence events are grouped with the similarity into the same Sekoia.io alert.
@@ -4385,6 +4415,7 @@ Rules catalog includes **1066 built-in detection rules** ([_last update on 2026-
     - **Changelog:**
     
         - 12/11/2025 - minor - Update rule type to integration
+        - 03/06/2026 - major - Added a new condition to match only on alerts to avoid false positives.
             
 ??? abstract "Microsoft Defender XDR Office 365 Alert"
     
@@ -4392,6 +4423,10 @@ Rules catalog includes **1066 built-in detection rules** ([_last update on 2026-
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 03/06/2026 - major - Added a new condition to match only on alerts to avoid false positives.
+            
 ??? abstract "Microsoft Office Creating Suspicious File"
     
     Detects Microsoft Office process (word, excel, powerpoint) creating a suspicious file which corresponds to a script or an executable. This behavior highly corresponds to an executed macro which loads an installation script or a malware payload. The rule requires to log for File Creations to work properly, which can be done through Sysmon Event ID 11.
@@ -5299,6 +5334,7 @@ Rules catalog includes **1066 built-in detection rules** ([_last update on 2026-
     - **Changelog:**
     
         - 13/09/2024 - major - Update service name value following Microsoft change
+        - 03/06/2026 - major - Added a new condition to match only on alerts to avoid false positives.
             
 ??? abstract "Microsoft Defender XDR Cloud App Security Alert"
     
@@ -5309,6 +5345,7 @@ Rules catalog includes **1066 built-in detection rules** ([_last update on 2026-
     - **Changelog:**
     
         - 13/09/2024 - major - Update service name value following Microsoft change
+        - 03/06/2026 - major - Added a new condition to match only on alerts to avoid false positives.
             
 ??? abstract "Microsoft Defender XDR Data Loss Prevention Alert"
     
@@ -5319,6 +5356,7 @@ Rules catalog includes **1066 built-in detection rules** ([_last update on 2026-
     - **Changelog:**
     
         - 12/11/2025 - minor - Update rule type to integration
+        - 03/06/2026 - major - Added a new condition to match only on alerts to avoid false positives.
             
 ??? abstract "Microsoft Defender XDR Endpoint Alert"
     
@@ -5326,6 +5364,10 @@ Rules catalog includes **1066 built-in detection rules** ([_last update on 2026-
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 03/06/2026 - major - Added a new condition to match only on alerts to avoid false positives.
+            
 ??? abstract "Microsoft Defender XDR Entra ID Protection Alert"
     
     Microsoft Defender XDR has raised an alert for Microsoft Entra ID Protection. The alert info and evidence events are grouped with the similarity into the same Sekoia.io alert.
@@ -5335,6 +5377,7 @@ Rules catalog includes **1066 built-in detection rules** ([_last update on 2026-
     - **Changelog:**
     
         - 12/11/2025 - minor - Update rule type to integration
+        - 03/06/2026 - major - Added a new condition to match only on alerts to avoid false positives.
             
 ??? abstract "Microsoft Defender XDR Office 365 Alert"
     
@@ -5342,6 +5385,10 @@ Rules catalog includes **1066 built-in detection rules** ([_last update on 2026-
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 03/06/2026 - major - Added a new condition to match only on alerts to avoid false positives.
+            
 ??? abstract "Mshta Command From A Scheduled Task"
     
     Detects when an attacker leverage the Microsoft Windows Scheduled task feature to run the mshta.exe process. This is a common usage of a living-off-the-land binary, frequently abused for malicous purposes and not common nowadays in IT administration.
@@ -6503,6 +6550,7 @@ Rules catalog includes **1066 built-in detection rules** ([_last update on 2026-
     
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
         - 04/04/2024 - major - Rule's pattern field changed
+        - 01/06/2026 - major - selection improvements to better align with the detection objective
             
 **Account Manipulation**
 
@@ -6696,6 +6744,7 @@ Rules catalog includes **1066 built-in detection rules** ([_last update on 2026-
     
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
         - 04/04/2024 - major - Rule's pattern field changed
+        - 01/06/2026 - major - selection improvements to better align with the detection objective
             
 ??? abstract "Varonis Many Accounts Disabled"
     
@@ -8482,6 +8531,7 @@ Rules catalog includes **1066 built-in detection rules** ([_last update on 2026-
     
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
         - 04/04/2024 - major - Rule's pattern field changed
+        - 01/06/2026 - major - selection improvements to better align with the detection objective
             
 **Account Manipulation**
 
@@ -8675,6 +8725,7 @@ Rules catalog includes **1066 built-in detection rules** ([_last update on 2026-
     
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
         - 04/04/2024 - major - Rule's pattern field changed
+        - 01/06/2026 - major - selection improvements to better align with the detection objective
             
 ??? abstract "Varonis Many Accounts Disabled"
     
@@ -10294,6 +10345,7 @@ Rules catalog includes **1066 built-in detection rules** ([_last update on 2026-
     
         - 04/12/2023 - major - Added `Login:login` request type with a filter for codes indicating failure
         - 10/04/2025 - minor - Exclude more error codes to reduce false positives
+        - 01/06/2026 - minor - Adding filter on user_type code to reduce false positives
             
 ??? abstract "Multiple Authentication On Microsoft 365 (Office 365) Portal From Two IP Addresses"
     
@@ -10301,6 +10353,10 @@ Rules catalog includes **1066 built-in detection rules** ([_last update on 2026-
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 01/06/2026 - minor - Adding more filter and review group-by clause to reduce false positives
+            
 ??? abstract "Okta MFA Bypass Attempt"
     
     A bypass of MFA may have been attempted.
@@ -10626,6 +10682,7 @@ Rules catalog includes **1066 built-in detection rules** ([_last update on 2026-
     
         - 04/12/2023 - major - Added `Login:login` request type with a filter for codes indicating failure
         - 10/04/2025 - minor - Exclude more error codes to reduce false positives
+        - 01/06/2026 - minor - Adding filter on user_type code to reduce false positives
             
 ??? abstract "Multiple Authentication On Microsoft 365 (Office 365) Portal From Two IP Addresses"
     
@@ -10633,6 +10690,10 @@ Rules catalog includes **1066 built-in detection rules** ([_last update on 2026-
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 01/06/2026 - minor - Adding more filter and review group-by clause to reduce false positives
+            
 ??? abstract "Possible RottenPotato Attack"
     
     Detects logon events that have characteristics of events generated during an attack leveraging RottenPotato.
@@ -11924,6 +11985,7 @@ Rules catalog includes **1066 built-in detection rules** ([_last update on 2026-
     
         - 04/12/2023 - major - Added `Login:login` request type with a filter for codes indicating failure
         - 10/04/2025 - minor - Exclude more error codes to reduce false positives
+        - 01/06/2026 - minor - Adding filter on user_type code to reduce false positives
             
 ??? abstract "Multiple Authentication On Microsoft 365 (Office 365) Portal From Two IP Addresses"
     
@@ -11931,6 +11993,10 @@ Rules catalog includes **1066 built-in detection rules** ([_last update on 2026-
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 01/06/2026 - minor - Adding more filter and review group-by clause to reduce false positives
+            
 ??? abstract "Possible RottenPotato Attack"
     
     Detects logon events that have characteristics of events generated during an attack leveraging RottenPotato.

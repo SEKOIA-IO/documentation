@@ -2349,6 +2349,12 @@ The following Sekoia.io built-in rules match the intake **Sekoia.io Endpoint Age
     
     - **Effort:** master
 
+??? abstract "Sigma Intelligence ErrTraffic PowerShell Command Line"
+    
+    Detects powershell script executed via ErrTraffic infection chain
+    
+    - **Effort:** elementary
+
 ??? abstract "Sliver DNS Beaconing"
     
     Detects suspicious DNS queries known from Sliver beaconing 

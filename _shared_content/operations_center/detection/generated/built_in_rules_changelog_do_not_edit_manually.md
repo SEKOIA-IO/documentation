@@ -1,7 +1,29 @@
-Changelog _last update on 2026-06-01_
+Changelog _last update on 2026-06-04_
 
 ## Changelog
 
+### Microsoft Defender XDR Alert
+  - 03/06/2026 - major - Added a new condition to match only on alerts to avoid false positives.
+  - 13/09/2024 - major - Update service name value following Microsoft change
+    
+### Microsoft Defender XDR Entra ID Protection Alert
+  - 03/06/2026 - major - Added a new condition to match only on alerts to avoid false positives.
+  - 12/11/2025 - minor - Update rule type to integration
+    
+### Microsoft Defender XDR Cloud App Security Alert
+  - 03/06/2026 - major - Added a new condition to match only on alerts to avoid false positives.
+  - 13/09/2024 - major - Update service name value following Microsoft change
+    
+### Microsoft Defender XDR Endpoint Alert
+  - 03/06/2026 - major - Added a new condition to match only on alerts to avoid false positives.
+    
+### Microsoft Defender XDR Data Loss Prevention Alert
+  - 03/06/2026 - major - Added a new condition to match only on alerts to avoid false positives.
+  - 12/11/2025 - minor - Update rule type to integration
+    
+### Microsoft Defender XDR Office 365 Alert
+  - 03/06/2026 - major - Added a new condition to match only on alerts to avoid false positives.
+    
 ### Login Brute-Force Successful On AzureAD From Single IP Address
   - 01/06/2026 - minor - Adding error code as filters to reduce false positives.
   - 25/02/2026 - minor - Adding error code 500011 as filters to reduce false positives.
@@ -9,6 +31,14 @@ Changelog _last update on 2026-06-01_
   - 14/10/2024 - minor - The error codes 70043, 50173, 70008, 700082, 9002341 have been excluded as they are not related to login failures that we want to detect and caused several false positives.
   - 16/08/2024 - minor - The error code 50078 has been excluded as it is not a specific error code related to a login failure that we want to detect and caused several false positives.
   - 23/03/2023 - minor - The error code 50076 has been excluded as it is not a specific error code related to a login failure that we want to detect and caused several false positives.
+    
+### Microsoft 365 Sign-in With No User Agent
+  - 01/06/2026 - minor - Adding filter on user_type code to reduce false positives
+  - 10/04/2025 - minor - Exclude more error codes to reduce false positives
+  - 04/12/2023 - major - Added `Login:login` request type with a filter for codes indicating failure
+    
+### Multiple Authentication On Microsoft 365 (Office 365) Portal From Two IP Addresses
+  - 01/06/2026 - minor - Adding more filter and review group-by clause to reduce false positives
     
 ### Proofpoint TAP Email Classified As Phishing But Allowed
   - 01/06/2026 - major - Adding a new selection for "click" events as they do not have a threat score. Effort level adapted as well since this is now an integration rule.
@@ -18,6 +48,11 @@ Changelog _last update on 2026-06-01_
     
 ### Proofpoint TAP Email Classified As Spam But Allowed
   - 01/06/2026 - major - Adding a new selection for "click" events as they do not have a threat score. Effort level adapted as well since this is now an integration rule.
+    
+### User Added to Local Administrators
+  - 01/06/2026 - major - selection improvements to better align with the detection objective
+  - 04/04/2024 - major - Rule's pattern field changed
+  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
     
 ### Powershell Web Request
   - 13/05/2026 - minor - remove deprecated value in filter
@@ -542,15 +577,9 @@ Changelog _last update on 2026-06-01_
 ### Threat Detected By Hornetsecurity 365 Total Protection
   - 12/11/2025 - minor - Update rule type to integration
     
-### Microsoft Defender XDR Entra ID Protection Alert
-  - 12/11/2025 - minor - Update rule type to integration
-    
 ### Vectra General Threat Detection
   - 12/11/2025 - minor - Update rule type to integration
   - 06/10/2025 - minor - Update sources link
-    
-### Microsoft Defender XDR Data Loss Prevention Alert
-  - 12/11/2025 - minor - Update rule type to integration
     
 ### Windows Suspicious Service Creation
   - 28/10/2025 - minor - improve detection by adding pattern
@@ -748,10 +777,6 @@ Changelog _last update on 2026-06-01_
     
 ### Suspicious DLL Loading By Ordinal
   - 14/04/2025 - minor - Adding similarity.
-    
-### Microsoft 365 Sign-in With No User Agent
-  - 10/04/2025 - minor - Exclude more error codes to reduce false positives
-  - 04/12/2023 - major - Added `Login:login` request type with a filter for codes indicating failure
     
 ### Entra ID Password Compromised By Known Credential Testing Tool
   - 09/04/2025 - minor - Add more correlation IDs, change similarity strategy to user.id to workaround email capitalisation inconsistencies.
@@ -1124,12 +1149,6 @@ Changelog _last update on 2026-06-01_
 ### Suspicious URL Requested By Curl Or Wget Commands
   - 23/09/2024 - major - Fixed an issue with the detection pattern.
     
-### Microsoft Defender XDR Alert
-  - 13/09/2024 - major - Update service name value following Microsoft change
-    
-### Microsoft Defender XDR Cloud App Security Alert
-  - 13/09/2024 - major - Update service name value following Microsoft change
-    
 ### DCSync Attack
   - 05/09/2024 - minor - Changing name of elements.
   - 26/03/2024 - major - Rule's pattern field changed
@@ -1357,10 +1376,6 @@ Changelog _last update on 2026-06-01_
     
 ### Webshell Creation
   - 04/04/2024 - major - Rule's pattern field changed
-    
-### User Added to Local Administrators
-  - 04/04/2024 - major - Rule's pattern field changed
-  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
     
 ### External Disk Drive Or USB Storage Device
   - 04/04/2024 - major - Rule's pattern field changed
