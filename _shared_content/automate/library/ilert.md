@@ -61,7 +61,7 @@ Forward Sekoia.io alerts to Ilert via the `Trigger Alert` action so your on-call
 
 6. In Sekoia.io, open `Integrations` from the sidebar.
 
-    ![Step 6](/assets/playbooks/library/setup/Ilert/Step06.png)
+    ![Step 6](/assets/playbooks/library/setup/ilert/Step06.png)
 
 7. Search for `Ilert` and select the Ilert integration from the results.
 
