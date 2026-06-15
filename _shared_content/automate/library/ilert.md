@@ -2,7 +2,7 @@ uuid: 4970d347-495b-4f40-8e66-244abec12d8b
 name: ilert
 type: playbook
 
-# ilert
+# Ilert
 
 ![ilert](/assets/playbooks/library/ilert.png){ align=right width=150 }
 
