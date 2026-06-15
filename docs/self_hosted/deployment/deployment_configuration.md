@@ -2,9 +2,132 @@
 
 The `config.yml` file is the central manifest used to describe your environment, credentials, and service settings. The Self-Hosted Controller (SHC) reads this file at runtime to drive every deployment and lifecycle operation.
 
+## Minimal airgap configuration
+
+For an air-gapped deployment, only the parameters below are strictly required. The SHC `common.yaml` provides sensible defaults for everything else. Fill in all values marked with `# REQUIRED` before running the SHC.
+
+Credentials that must never be stored in the file itself are resolved from environment variables using the `env.VAR_NAME` syntax. Set those variables in the shell environment before invoking the SHC.
+
+```yaml
+global:
+  host: "app.example.com"                   # REQUIRED — primary FQDN of the platform
+  alternative_hosts: "api.example.com"      # alternative FQDN (API access)
+  version:
+    fetch:
+      offline: true                         # REQUIRED for airgap — disables remote S3 download
+    platform:
+      version: "v0.0.1"                     # REQUIRED — release version to deploy
+      path: /opt/sekoia/platform/           # local directory where release files are stored
+    data:
+      detection-rules:
+        version: "010126"                   # REQUIRED — data bundle version
+        path: /opt/sekoia/data/
+      intake-formats:
+        version: "010126"                   # REQUIRED
+        path: /opt/sekoia/data/
+      playbook-library:
+        version: "010126"                   # REQUIRED
+        path: /opt/sekoia/data/
+      cti:
+        version: "010126"                   # REQUIRED
+        path: /opt/sekoia/data/
+
+utils:
+  ansible:
+    ssh-key: env.SERVERS_SSH_KEY            # REQUIRED — SSH private key for node provisioning
+    inventory:
+      managers:
+        - 10.0.0.1                          # REQUIRED — IP of the first Kubernetes manager node
+      workers:
+        - 10.0.0.2
+        - 10.0.0.3
+  git:
+    auth_method: "http"
+    repo_url: "https://git.example.com/sekoia/argo-stacks.git"  # REQUIRED — internal git repository
+    http:
+      username: env.GIT_HTTP_USERNAME
+      password: env.GIT_HTTP_PASSWORD
+  oci_registry:
+    url: env.OCI_REGISTRY_URL               # REQUIRED — internal OCI registry URL
+    username: env.REGISTRY_USERNAME         # REQUIRED
+    password: env.REGISTRY_PASSWORD         # REQUIRED
+    check_repo: "sekoia/shc-probe"
+    chart_repo: "sekoia/charts"
+    image_repo: "sekoia/images"
+
+modules:
+  k3s_install:
+    kube_manager_fqdn: "10.0.0.1"          # REQUIRED — IP/FQDN of the first manager node
+    registry_url: "https://registry.example.com"  # REQUIRED — internal registry for containerd
+    registry_username: env.REGISTRY_USERNAME
+    registry_password: env.REGISTRY_PASSWORD
+
+  helm_install:
+    kube_manager_fqdn: "10.0.0.1"          # REQUIRED — same as above
+    forward_dns: "10.0.0.1"                # REQUIRED — upstream DNS forwarded by CoreDNS
+
+  platform_configuration:
+    platform_installer_command: "install"
+    config:
+      global:
+        host: "app.example.com"            # REQUIRED — must match global.host
+        alternative_hosts: "api.example.com"
+        delivery_host: "admin.example.com" # REQUIRED — admin interface FQDN
+        instance_public_key: env.SEKOIA_INSTANCE_PUBLIC_KEY  # REQUIRED — base64-encoded license key
+      traefik:
+        custom_cert:
+          crt: env.TRAEFIK_PUBKEY          # TLS certificate for the platform ingress
+          key: env.TRAEFIK_PRIVKEY
+      quickwit:
+        host: "quickwit.example.com"       # REQUIRED — S3 FQDN
+        storage:
+          s3:
+            region: "us-east-1"
+            endpoint: "https://s3.example.com"  # internal S3-compatible endpoint
+            access_key: env.QW_S3_ACCESS_KEY
+            secret_key: env.QW_S3_SECRET_KEY
+            force_path_style_access: true
+        indexer:
+          replicaCount: 2
+          persistentVolume:
+            size: "150Gi"
+            storageClass: "rook-ceph-block"
+        searcher:
+          replicaCount: 2
+        database:
+          instances: 3
+          storage:
+            size: "50Gi"
+            storageClass: "rook-ceph-block"
+      local_argocd:
+        repo_url: "https://git.example.com/sekoia/argo-stacks.git"
+        helm_repo_url: "oci://registry.example.com/sekoia/charts"
+        git_username: env.GIT_HTTP_USERNAME
+        git_password: env.GIT_HTTP_PASSWORD
+        oci_username: env.REGISTRY_USERNAME
+        oci_password: env.REGISTRY_PASSWORD
+```
+
+!!! tip "Environment variables"
+    The following environment variables must be set before invoking the SHC:
+
+    | Variable | Purpose |
+    | :--- | :--- |
+    | `SERVERS_SSH_KEY` | SSH private key (PEM) for Ansible node provisioning |
+    | `OCI_REGISTRY_URL` | Internal OCI registry URL |
+    | `REGISTRY_USERNAME` | OCI registry auth username |
+    | `REGISTRY_PASSWORD` | OCI registry auth password |
+    | `GIT_HTTP_USERNAME` | Git server auth username |
+    | `GIT_HTTP_PASSWORD` | Git server auth password |
+    | `SEKOIA_INSTANCE_PUBLIC_KEY` | Base64-encoded license public key (provided by Sekoia) |
+    | `TRAEFIK_PUBKEY` | PEM-encoded TLS certificate for the platform ingress |
+    | `TRAEFIK_PRIVKEY` | PEM-encoded TLS private key for the platform ingress |
+    | `QW_S3_ACCESS_KEY` | S3 access key for Quickwit object storage |
+    | `QW_S3_SECRET_KEY` | S3 secret key for Quickwit object storage |
+
 ## Configuration template
 
-Use this template as a starting point. Replace all placeholder values before running the SHC.
+Use this template as a starting point for a full configuration. Replace all placeholder values before running the SHC.
 
 ??? example "Complete config.yml template"
     ```yaml
