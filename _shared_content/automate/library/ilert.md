@@ -6,7 +6,7 @@ type: playbook
 
 ![ilert](/assets/playbooks/library/ilert.png){ align=right width=150 }
 
-ilert is an incident management platform. This module triggers alerts and manages incidents.
+Ilert is an incident management platform. This module triggers alerts and manages incidents.
 
 ## Configuration
 
@@ -19,7 +19,7 @@ ilert is an incident management platform. This module triggers alerts and manage
 
 ### Trigger Alert
 
-Trigger alert to ilert
+Trigger alert to Ilert
 
 **Arguments**
 
@@ -33,9 +33,9 @@ Trigger alert to ilert
 
 ## Configuration
 
-Forward Sekoia.io alerts to ilert via the `Trigger Alert` action so your on-call teams are notified and security incidents are tracked through to resolution.
+Forward Sekoia.io alerts to Ilert via the `Trigger Alert` action so your on-call teams are notified and security incidents are tracked through to resolution.
 
-### In ilert: Create a Sekoia.io alert source
+### In Ilert: Create a Sekoia.io alert source
 
 1. Go to `Alert sources` > `Alert sources` and click `Create new alert source`.
 
@@ -57,13 +57,13 @@ Forward Sekoia.io alerts to ilert via the `Trigger Alert` action so your on-call
 
     ![Step 5](/assets/playbooks/library/setup/ilert/Step05.png)
 
-### In Sekoia.io: Connect the ilert integration
+### In Sekoia.io: Connect the Ilert integration
 
 6. In Sekoia.io, open `Integrations` from the sidebar.
 
-    ![Step 6](/assets/playbooks/library/setup/ilert/Step06.png)
+    ![Step 6](/assets/playbooks/library/setup/Ilert/Step06.png)
 
-7. Search for `ilert` and select the ilert integration from the results.
+7. Search for `Ilert` and select the Ilert integration from the results.
 
     ![Step 7](/assets/playbooks/library/setup/ilert/Step07.png)
 
@@ -83,14 +83,14 @@ Forward Sekoia.io alerts to ilert via the `Trigger Alert` action so your on-call
 
 ### In Sekoia.io: Use the Trigger Alert action in a playbook
 
-10. Open or create a playbook in Sekoia.io, then add the `Trigger Alert` action from the ilert integration. In the `Account` tab, select the ilert account you just connected, configure the action input, and save the playbook.
+10. Open or create a playbook in Sekoia.io, then add the `Trigger Alert` action from the Ilert integration. In the `Account` tab, select the Ilert account you just connected, configure the action input, and save the playbook.
 
     ![Step 10](/assets/playbooks/library/setup/ilert/Step10.png)
 
-Whenever the playbook runs the `Trigger Alert` action, a new alert is created on the corresponding Sekoia.io alert source in ilert.
+Whenever the playbook runs the `Trigger Alert` action, a new alert is created on the corresponding Sekoia.io alert source in Ilert.
 
-> `Note:` If a Sekoia.io event is sent with the `status` key set to `resolved` or `closed`, the corresponding ilert alert is resolved automatically. If the `status` key is set to `acknowledged`, the alert is acknowledged automatically.
+> `Note:` If a Sekoia.io event is sent with the `status` key set to `resolved` or `closed`, the corresponding Ilert alert is resolved automatically. If the `status` key is set to `acknowledged`, the alert is acknowledged automatically.
 
 ## Extra
 
-Module **`ilert` v1.0.0**
+Module **`Ilert` v1.0.0**
