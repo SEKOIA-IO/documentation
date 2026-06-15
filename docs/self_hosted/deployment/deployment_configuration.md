@@ -38,9 +38,12 @@ utils:
     inventory:
       managers:
         - 10.0.0.1                          # REQUIRED — IP of the first Kubernetes manager node
-      workers:
         - 10.0.0.2
         - 10.0.0.3
+      workers:
+        - 10.0.0.4
+        - 10.0.0.5
+        - 10.0.0.6
   git:
     auth_method: "http"
     repo_url: "https://git.example.com/sekoia/argo-stacks.git"  # REQUIRED — internal git repository
