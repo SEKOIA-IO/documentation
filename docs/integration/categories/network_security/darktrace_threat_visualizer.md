@@ -49,14 +49,14 @@ This setup guide describes how to forward logs from Darktrace Threat visualizer 
 
 {!_shared_content/integration/intake_configuration.md!}
 
-#### For Cloud version only
-
-{!_shared_content/integration/connector_configuration.md!}
-
 !!! warning "On-Premise version — connector not required"
     For the **On-Premise** version, a connector is **not** needed. Logs are forwarded via a self-managed syslog forwarder (see below).
 
     However, due to how the intake format is currently integrated, the Sekoia interface may still prompt you to fill in connector information even when creating an On-Premise intake. As a workaround, **enter placeholder (fake) data** in the connector fields and **disable the connector** afterwards.
+
+#### For Cloud version only
+
+{!_shared_content/integration/connector_configuration.md!}
 
 ### Instructions on the 3rd party solution
 #### For Cloud version - Acquire your public and private key
