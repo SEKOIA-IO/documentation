@@ -27,7 +27,7 @@ Akamai Web Application Firewall (WAF) is a cloud-based security solution designe
    
    ![step 3](/assets/operation_center/integration_catalog/network_security/akamai_waf/create_api_client_button.png){: style="max-width:100%"}
 
-4. Click Show additional details to review and verify your accessible APIs and search if you have `SIEM` permission using the `Filter` field before creating this api key.
+4. Click `Show additional details` to review your accessible APIs, then use the `Filter` field to confirm you have the `SIEM` permission before creating this API key.
 
    ![step 4](/assets/operation_center/integration_catalog/network_security/akamai_waf/siem_permission.png){: style="max-width:100%"}
 
@@ -43,7 +43,7 @@ Akamai Web Application Firewall (WAF) is a cloud-based security solution designe
 
     ![step 2](/assets/operation_center/integration_catalog/network_security/akamai_waf/edit_configuration_button.png){: style="max-width:100%"}
 
-3. On the current version, under `Advanced settings`. Set `Data collection` for SIEM integration option to on and click on activate.
+3. On the current version, under `Advanced settings`, turn `Data collection for SIEM integration` on and click `Activate`.
 
     ![step 3](/assets/operation_center/integration_catalog/network_security/akamai_waf/data_collection_siem.png){: style="max-width:100%"}
 
