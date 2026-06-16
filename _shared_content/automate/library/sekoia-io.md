@@ -792,9 +792,9 @@ Delete a rule
 | `uuid` | `string` |  |
 | `community_uuid` | `string` |  |
 
-### Delete an asset
+### [DEPRECATED] Delete an asset
 
-Delete the requested asset
+(deprecated — use Revoke an asset (V2)) Delete the requested asset
 
 **Arguments**
 
@@ -802,9 +802,9 @@ Delete the requested asset
 | --------- | ------- | --------------------------- |
 | `uuid` | `string` | The identifier of the asset |
 
-### Delete an asset (V2)
+### [DEPRECATED] Delete an asset (V2)
 
-Delete the requested asset
+(deprecated — use Revoke an asset (V2)) Delete the requested asset
 
 **Arguments**
 
@@ -2009,6 +2009,52 @@ Return an asset according to its identifier
 | `criticity` | `['object', 'null']` | The criticality of the asset |
 | `asset_type` | `['object', 'null']` | The type of the asset |
 
+### Revoke an asset (V2)
+
+Revoke the requested asset (soft-delete). Replaces the deprecated Delete an asset actions.
+
+**Arguments**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `uuid` | `string` | The identifier of the asset |
+
+
+**Outputs**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `uuid` | `string` | The identifier of the asset |
+| `entity_uuid` | `` |  |
+| `community_uuid` | `string` | The community of the asset |
+| `name` | `string` | The name of the asset |
+| `type` | `string` | The type of the asset |
+| `category` | `['object', 'string', 'null']` | The category of the asset |
+| `criticality` | `['integer', 'null']` |  |
+| `created_at` | `` | The creation date of the asset |
+| `created_by` | `` |  |
+| `created_by_type` | `['string', 'null']` |  |
+| `updated_at` | `` | The modification date of the asset |
+| `first_seen` | `` |  |
+| `last_seen` | `` |  |
+| `nb_events` | `['integer', 'null']` |  |
+| `nb_alerts` | `['integer', 'null']` |  |
+| `nb_atoms` | `integer` |  |
+| `atoms` | `['object', 'null']` |  |
+| `props` | `['object', 'null']` |  |
+| `tags` | `array` |  |
+| `revoked` | `boolean` |  |
+| `revoked_at` | `` |  |
+| `revoked_by` | `` |  |
+| `reviewed` | `boolean` |  |
+| `reviewed_at` | `` |  |
+| `reviewed_by` | `` |  |
+| `source` | `string` |  |
+| `rule_uuid` | `` |  |
+| `rule_version` | `['string', 'null']` |  |
+| `criticity` | `['object', 'null']` | The criticality of the asset |
+| `asset_type` | `['object', 'null']` | The type of the asset |
+
 ### Synchronize Assets with AD
 
 Create, merge and edit asset to synchronize asset with ad
@@ -2270,4 +2316,4 @@ Update a rule
 
 ## Extra
 
-Module **`Sekoia.io` v2.72.4**
+Module **`Sekoia.io` v2.73.3**
