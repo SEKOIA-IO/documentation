@@ -59,10 +59,6 @@ After creating the app registration, you need to generate a client secret for au
 
 The app registration must have the following application permissions:
 
-| API | Permission | Description |
-|-----|------------|-------------|
-| WindowsDefenderATP | `Machine.Read.All` | Read all machine information from Microsoft Defender for Endpoint |
-| Microsoft Graph | `DeviceManagementManagedDevices.Read.All` | Read Microsoft Intune managed device data |
 
 ### How to grant API permissions
 
