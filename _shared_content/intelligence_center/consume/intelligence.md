@@ -202,7 +202,7 @@ To remove a filter, just click on the `cross` inside the tag. To remove all filt
 
 ## Threat Context
 
-When you open an object from the Intelligence page, the **Threat Context tab** shows all objects related to it. T
+When you open an object from the Intelligence page, the **Threat Context tab** shows all objects related to it.
 
 ### What you can do
 
