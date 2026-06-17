@@ -1,5 +1,7 @@
 :root {
     --md-default-fg-color: #212223;
+    --md-primary-fg-color: #212223;
+    --md-accent-fg-color: #45BFFF;
     --md-text-font: 'Inter', sans-serif;
     --md-code-font: 'Inter', sans-serif;
     --md-footer-fg-color--light: #212223;
@@ -50,14 +52,27 @@
 
 .md-sidebar--primary {
 
-    .md-nav__title, .md-nav__link {
-        color: #212223;
-    }
+    .md-nav__title {
+        font-weight: 400;
+  }
+
+  .md-nav__link {
+        font-weight: 500;
+        font-size: .875rem;
+        font-family: 'Inter', Helvetica, sans-serif;
+
+  }
 
     .md-nav__link:hover {
         color: #6F7376;
     }
 
+}
+
+.md-nav__item {
+    color: #6f7376;
+    font-weight: 400;
+    font-size: .875rem;
 }
 
 .md-sidebar__scrollwrap:hover {
@@ -85,7 +100,6 @@
     }
 
     .md-nav__title {
-        text-transform: uppercase;
         color: #212223;
     }
 
@@ -106,6 +120,14 @@
     .md-tabs {
         background-color: #ffffff;
         color: #212223;
+
+        .md-tabs__list {
+            border-bottom: 1px solid #c2c9d4;
+        }
+
+        .md-tabs__link:focus {
+            text-decoration: underline;
+        }
     }
 
     main .md-main__inner {
@@ -131,7 +153,7 @@
 
         pre {
             background: #F0F3F6;
-            border-radius: 3px;
+            border-radius: 4px;
 
             code {
                 color: #212223;
@@ -278,7 +300,7 @@
                 margin: 12px 38px 8px 33px;
                 height: 36px;
                 border: 1px solid #c2c9d4;
-                border-radius: 3px;
+                border-radius: 4px;
                 background: #ffffff;
                 max-width: 500px;
                 margin: 0 auto;
