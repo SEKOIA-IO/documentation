@@ -25,6 +25,9 @@ Traces capture the full set of actions behind the verdict, including the queries
 
 > 📸 [SCREENSHOT SUGGESTION: Traces panel showing a phase such as "Performing alert triage" expanded into a list of "Search events" actions, each with a duration, and one action flagged with an error icon. | ALT TEXT: Traces timeline showing nested Search events actions with durations and an error flag.]
 
+!!! note "Trace retention"
+    Traces are retained for 30 days. After that period, they are no longer available for the investigation.
+
 ## Inspect an action
 
 1. Select an action, such as a **Search events** step, to expand it.

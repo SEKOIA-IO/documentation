@@ -29,9 +29,7 @@ You can reduce consumption without disabling Elevate entirely by restricting whi
 
 ## Run management for MSSPs
 
-If you manage multiple communities, your sub-tenants draw from a shared workspace run pack. From the Usage page you can review each community's consumption and set per-community caps so a single noisy sub-tenant cannot consume the whole pack.
-
-[PLACEHOLDER: Confirm how MSSPs set per-community caps on the Usage page, whether caps may exceed the workspace pack (oversubscription), and how the binding limit (community cap vs. workspace pack) is enforced.]
+If you manage multiple communities, your sub-tenants draw from a shared workspace run pack. From the Usage page you can review each community's consumption against the pack. To keep a single noisy sub-tenant from consuming a disproportionate share, disable or limit auto-analysis for that community. See [Override Elevate settings for a community](/xdr/features/modules/elevate_community_override.md) and [Limit auto-analysis to specific rules](/xdr/features/modules/elevate_rule_filter.md).
 
 ## What happens when the run pack is exhausted
 

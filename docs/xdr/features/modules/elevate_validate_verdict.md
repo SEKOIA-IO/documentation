@@ -18,7 +18,7 @@ To override the verdict, select a different verdict from the **Select a verdict*
 > 📸 [SCREENSHOT SUGGESTION: Alert detail view header showing the "Select a verdict" dropdown open, listing the available verdicts grouped under the True Positive and False Positive categories, including custom verdicts. | ALT TEXT: Alert header with the verdict dropdown open showing the available verdicts grouped by category.]
 
 !!! note "Your verdict always takes precedence"
-    Once you select a verdict, the sparkle icon disappears from the alert list. The alert reflects your analyst verdict, not the AI attribution. The original AI verdict and its reasoning remain accessible in the alert details for reference.
+    Once you select a verdict, the sparkle icon disappears from the alert list. The alert reflects your analyst verdict, not the AI attribution. The AI verdict is not retained after you override it.
 
 ## Result
 
