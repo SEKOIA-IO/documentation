@@ -1,6 +1,6 @@
-# Add custom instructions for Elevate agents
+# Add custom instructions for an Elevate agent
 
-Elevate investigation results can be refined by adding custom instructions to the agent. This article explains how to provide contextual instructions at the workspace or community level, and how to customize the reasoning questions embedded in a detection rule's runbook.
+Custom instructions give the Elevate agent environment-specific context it cannot infer from telemetry alone. This article explains how to provide contextual instructions at the workspace or community level so the agent produces more relevant verdicts.
 
 ## Prerequisites
 
@@ -12,9 +12,9 @@ Contextual instructions tell the agent what is normal or expected in your enviro
 
 To add instructions for a specific community:
 
-1. Navigate to **Settings > AI agent**.
+1. Navigate to **Settings > AI agents**.
 2. Select the community where you want the instructions to apply.
-3. Select **Agent/Alert case investigation**.
+3. Select **Alert/Case Investigation** agent.
 4. Select the **Instructions** tab.
 5. Enter your custom instructions.
 6. Select **Save**.
@@ -24,30 +24,11 @@ To add instructions for a specific community:
 
 > 📸 [SCREENSHOT SUGGESTION: AI agent settings panel with the Instructions tab open, showing a free-text field containing example instructions. | ALT TEXT: Instructions tab in the AI agent settings panel with a text input field.]
 
-## Customize the reasoning questions of a detection rule
+To customize how the agent reasons for a specific detection rule rather than for your environment as a whole, edit the rule's runbook instead. See [Customize a detection rule's runbook](/xdr/features/modules/elevate_customize_runbook.md).
 
-The reasoning questions are the structured questions the agent answers during its investigation of an alert. They are defined in the rule's runbook and drive the findings the agent collects.
+## Related articles
 
-!!! tip "Custom rules vs. Sekoia rules"
-    You can edit the reasoning questions of any detection rule you created. If the triggering rule was built by Sekoia, you can duplicate it and edit the runbook on the copy, but the duplicated rule will not receive automatic updates from Sekoia.
-
-To modify the reasoning questions of a detection rule:
-
-1. Open an alert triggered by the rule you want to customize.
-2. In the **Triggered rule** section, select **Runbook**.
-3. At the bottom of the runbook panel, select **Edit runbook**.
-4. Modify the reasoning questions according to your needs.
-5. Select **Save runbook**.
-
-> 📸 [SCREENSHOT SUGGESTION: Runbook panel open from an alert's Triggered rule section, showing the Edit runbook button at the bottom and the Reasoning questions section visible above it. | ALT TEXT: Runbook panel showing the Edit runbook button and the Reasoning questions section.]
-
-From the next alert triggered by this rule, the agent applies your updated reasoning questions.
-
-!!! note "Scope of runbook changes"
-    Runbook modifications apply to all communities in your workspace.
-
-## Related links
-
-- [Write effective instructions for Elevate](/xdr/usecases/elevate_instructions_best_practices.md): Use case guidance and examples for writing instructions that improve investigation quality.
+- [Write effective instructions for Elevate](/xdr/features/modules/elevate_instructions_best_practices.md): Guidance and examples for writing instructions that improve investigation quality.
+- [Customize a detection rule's runbook](/xdr/features/modules/elevate_customize_runbook.md): How to edit the Detection Rational, legitimate scenarios and investigation questions of a runbook.
 - [Activate Elevate on a workspace](/xdr/features/modules/elevate_activate.md): How to enable the Elevate agent and configure auto-analysis.
 - [Elevate](/xdr/features/modules/elevate_overview.md): Concept overview of how Elevate works and its key concepts.

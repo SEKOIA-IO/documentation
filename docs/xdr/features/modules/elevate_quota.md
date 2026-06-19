@@ -1,20 +1,25 @@
-# Manage your Elevate investigation quota
+# Manage your Elevate runs
 
-Elevate operates on a monthly investigation quota. Each alert analyzed by the agent, whether automatically or manually triggered, consumes one unit. This article explains how to monitor your quota and how to optimize usage to avoid reaching the limit before the end of your billing cycle.
+Elevate operates on a monthly run pack. Each investigation the agent runs, whether automatic or manually triggered, consumes one run. This article explains how to monitor your runs and how to optimize consumption so you do not exhaust your run pack before the end of the month.
 
 ## Prerequisites
 
-[PLACEHOLDER: Confirm required role to view and manage quota, e.g. administrator.]
+[PLACEHOLDER: Confirm the required role to view and manage runs, for example administrator.]
 
-## Monitor your quota
+## Monitor your runs
 
-[PLACEHOLDER: Confirm the exact location of the quota view, e.g. Settings > Usage or a dedicated Elevate dashboard. Add screenshot placeholder once confirmed.]
+Track your run consumption from the Usage page. Navigate to **Settings > Usage** to view consumed runs against your monthly run pack, your daily burn, and, for MSSPs, the consumption of each community.
 
-Your quota usage is displayed as a progress bar showing consumed units against your monthly allocation (for example, 1000/1000). When the limit is reached, the agent stops analyzing new alerts and displays the **AI limit reached** state on any alert it cannot process.
+[PLACEHOLDER: Confirm the exact location and name of the Elevate runs view on the Usage page, then add a screenshot placeholder.]
 
-## Optimize quota usage
+When the run pack is exhausted, the agent stops analyzing new alerts and displays the **AI monthly quota limit reached** state on any alert it cannot process.
 
-You can reduce quota consumption without disabling Elevate entirely by restricting which alerts the agent analyzes.
+!!! note "Runs reset monthly"
+    Runs reset at the start of each month and do not roll over. Unused runs from one month are not added to the next.
+
+## Optimize run consumption
+
+You can reduce consumption without disabling Elevate entirely by restricting which alerts the agent analyzes.
 
 **Filter by detection rule** to focus the agent on alert types where AI investigation adds the most value and skip categories already handled by playbooks. See [Limit auto-analysis to specific rules](/xdr/features/modules/elevate_rule_filter.md).
 
@@ -22,25 +27,27 @@ You can reduce quota consumption without disabling Elevate entirely by restricti
 
 **Use manual analysis selectively** to trigger investigations only on alerts that warrant deeper review. See [Trigger a manual Elevate analysis](/xdr/features/modules/elevate_manual_analysis.md).
 
-## Quota management for MSSPs
+## Run management for MSSPs
 
-[PLACEHOLDER: Describe how MSSPs manage and distribute investigation quotas across sub-tenants. Include whether quotas are set per community or at the workspace level, and how overages are handled.]
+If you manage multiple communities, your sub-tenants draw from a shared workspace run pack. From the Usage page you can review each community's consumption and set per-community caps so a single noisy sub-tenant cannot consume the whole pack.
 
-## What happens when the quota is exhausted
+[PLACEHOLDER: Confirm how MSSPs set per-community caps on the Usage page, whether caps may exceed the workspace pack (oversubscription), and how the binding limit (community cap vs. workspace pack) is enforced.]
 
-When your monthly quota is reached:
+## What happens when the run pack is exhausted
+
+When your monthly run pack is reached:
 
 - The agent stops analyzing new alerts automatically.
-- Alerts that cannot be analyzed display the **AI limit reached** state in the **Verdict** column.
-- Manual analysis via Roy is also blocked until the quota resets.
+- Alerts that cannot be analyzed display the **AI monthly quota limit reached** state in the **Verdict** column.
+- Manual analysis via Roy is also blocked until your runs reset.
 
-To resume analysis before the next billing cycle, contact your administrator to upgrade your plan.
+Runs reset automatically at the start of next month.
 
-[PLACEHOLDER: Confirm whether self-serve quota top-up is available and add the relevant steps if so.]
+[PLACEHOLDER: Confirm whether a self-serve run top-up or a larger run pack is available before the monthly reset, and add the relevant steps if so.]
 
-## Related links
+## Related articles
 
 - [Elevate](/xdr/features/modules/elevate_overview.md): Concept overview of how Elevate works and its key concepts.
 - [Elevate analysis states](/xdr/features/modules/elevate_analysis_states.md): Reference table of all possible AI analysis states including AI limit reached.
-- [Limit auto-analysis to specific rules](/xdr/features/modules/elevate_rule_filter.md): How to restrict which alerts Elevate analyzes to control quota usage.
+- [Limit auto-analysis to specific rules](/xdr/features/modules/elevate_rule_filter.md): How to restrict which alerts Elevate analyzes to control consumption.
 - [Override Elevate settings for a community](/xdr/features/modules/elevate_community_override.md): How to disable Elevate for specific communities to reduce consumption.

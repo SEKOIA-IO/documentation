@@ -204,17 +204,25 @@ nav:
       - Swimlane Turbine: xdr/features/integrations/swimlane_turbine.md
   - AI Agents (Elevate):
       - Elevate overview: xdr/features/modules/elevate_overview.md
+      - Use cases: xdr/features/modules/elevate_use_cases.md
+      - The investigation method: xdr/features/modules/elevate_investigation_method.md
       - Elevate kick start guide: 
         - Activate Elevate:  xdr/features/modules/elevate_activate.md
         - Elevate analysis states:  xdr/features/modules/elevate_analysis_states.md
       - Investigate with Elevate:  
         - Investigate an alert:  xdr/features/modules/elevate_investigate_alert.md
-        - Validate or override a verdict:  xdr/features/modules/elevate_validate_verdict.md
-        - Trigger an analysis:  xdr/features/modules/manual_analysis.md
+        - Investigate a case:  xdr/features/modules/elevate_investigate_case.md
+        - Audit with Traces:  xdr/features/modules/elevate_traces.md
+        - Override a verdict:  xdr/features/modules/elevate_validate_verdict.md
+        - Trigger an analysis:  xdr/features/modules/elevate_manual_analysis.md
+      - Tune Elevate agents:
+        - Add custom instructions: xdr/features/modules/elevate_custom_instructions.md
+        - Customize a detection rule's runbook: xdr/features/modules/elevate_customize_runbook.md
+        - Write effective instructions: xdr/features/modules/elevate_instructions_best_practices.md
       - Manage Elevate: 
         - Override community settings:  xdr/features/modules/elevate_community_override.md
-        - Elevate Quota:  xdr/features/modules/elevate_quota.md
-        - Limit auto-analysis: xdr/features/modules/elevate_rule_filter.md
+        - Limit auto-analysis to specific rules: xdr/features/modules/elevate_rule_filter.md
+        - Manage Elevate runs: xdr/features/modules/elevate_quota.md
   - Asset Intelligence (Reveal):
       - Reveal overview: xdr/features/modules/reveal_index.md
       - Get started with Reveal: xdr/features/modules/reveal_getting_started.md

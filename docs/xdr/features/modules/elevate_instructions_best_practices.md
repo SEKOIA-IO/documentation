@@ -69,10 +69,11 @@ Document recurring false positive patterns specific to your environment that the
 
 If your workspace serves multiple customers or business units with different environments, write separate instructions per community rather than combining all context into a single workspace-level instruction block. Community-level instructions are more precise and prevent context from one tenant influencing the analysis of another.
 
-See [Add custom instructions for Elevate agents](/xdr/features/modules/elevate_custom_instructions.md) for the configuration steps.
+See [Add custom instructions for an Elevate agent](/xdr/features/modules/elevate_custom_instructions.md) for the configuration steps.
 
-## Related links
+## Related articles
 
-- [Add custom instructions for Elevate agents](/xdr/features/modules/elevate_custom_instructions.md): Step-by-step instructions for adding contextual instructions and customizing runbook reasoning questions.
+- [Add custom instructions for an Elevate agent](/xdr/features/modules/elevate_custom_instructions.md): Step-by-step instructions for adding contextual instructions at the workspace or community level.
+- [Customize a detection rule's runbook](/xdr/features/modules/elevate_customize_runbook.md): How to edit the runbook that drives the agent's investigation for a detection rule.
 - [Elevate](/xdr/features/modules/elevate_overview.md): Concept overview of how Elevate works and its key concepts.
 - [Investigate an alert with Elevate](/xdr/features/modules/elevate_investigate_alert.md): How to read an AI investigation report and assess whether instructions are influencing findings as expected.

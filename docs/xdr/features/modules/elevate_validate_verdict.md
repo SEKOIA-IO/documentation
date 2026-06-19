@@ -1,29 +1,30 @@
-# Validate or override an Elevate verdict
+# Override an Elevate verdict
 
-This article explains how to confirm the AI verdict on an alert or replace it with your own judgment.
+This article explains how to override an Elevate verdict when it is incorrect or inaccurate, and what happens to the alert when you do.
 
 ## Prerequisites
 
 - The alert has an AI-generated verdict. AI verdicts are marked with a sparkle icon in the **Verdict** column of the alert list.
-- You have reviewed the investigation report. See [Investigate an alert with Elevate](/xdr/features/modules/elevate_investigate_alert.md).
+- You have reviewed the investigation. See [Investigate an alert with Elevate](/xdr/features/modules/elevate_investigate_alert.md).
 
-## Set a verdict
+## When to override
 
-To validate or override the AI verdict, select your verdict from the **Select a verdict** dropdown in the alert header.
+There is no separate step to validate an Elevate verdict. If the verdict is correct, leave it as is: the alert keeps the AI verdict and its sparkle icon. If the verdict is incorrect or inaccurate, override it with your own judgment.
 
-- To **validate** the AI conclusion, select the same verdict the agent produced.
-- To **override** the AI conclusion, select a different verdict.
+## Override a verdict
 
-> 📸 [SCREENSHOT SUGGESTION: Alert detail view header showing the "Select a verdict" dropdown open with True Positive and False Positive options visible. | ALT TEXT: Alert header with the verdict dropdown open showing available verdict options.]
+To override the verdict, select a different verdict from the **Select a verdict** dropdown in the alert header.
+
+> 📸 [SCREENSHOT SUGGESTION: Alert detail view header showing the "Select a verdict" dropdown open, listing the available verdicts grouped under the True Positive and False Positive categories, including custom verdicts. | ALT TEXT: Alert header with the verdict dropdown open showing the available verdicts grouped by category.]
 
 !!! note "Your verdict always takes precedence"
-    Once you select a verdict, the sparkle icon disappears from the alert list. The alert reflects your analyst verdict, not the AI attribution. The original AI verdict and its reasoning remain accessible in the **AI Investigation** tab for reference.
+    Once you select a verdict, the sparkle icon disappears from the alert list. The alert reflects your analyst verdict, not the AI attribution. The original AI verdict and its reasoning remain accessible in the alert details for reference.
 
 ## Result
 
-The alert verdict is updated immediately. The **Verdict** column in the alert list displays your selection without the sparkle icon, indicating an analyst-confirmed verdict.
+The alert verdict is updated immediately. The **Verdict** column in the alert list displays your selection without the sparkle icon, indicating an analyst-set verdict.
 
-## Related links
+## Related articles
 
 - [Investigate an alert with Elevate](/xdr/features/modules/elevate_investigate_alert.md): How to read the AI investigation report before setting a verdict.
 - [Elevate analysis states](/xdr/features/modules/elevate_analysis_states.md): Reference table of all possible AI analysis states and their meaning.
