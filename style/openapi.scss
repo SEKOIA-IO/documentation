@@ -571,3 +571,26 @@ select {
         display: none;
     }
 }
+
+// Color overrides (applied over bundle-injected styles)
+#openapi-viewer {
+    h2 { color: #212223 !important; }
+    h4 { color: #212223 !important; }
+
+    .menu .loader { color: #212223 !important; }
+
+    ul > li > ul > li > a { color: #212223 !important; }
+    ul > li > ul > li > ul > li a { color: #212223 !important; }
+    ul > li > a { color: #212223 !important; }
+
+    .endpoint .content a { color: #212223 !important; }
+
+    h5 { color: #6F7376 !important; }
+    .tags label { color: #6F7376 !important; }
+
+    .menu input.doc-input,
+    .menu button.doc-input { color: #212223 !important; }
+    .menu .doc-filter button { color: #212223 !important; }
+    .menu .doc-filter b { color: #212223 !important; }
+    .menu .select-region { color: #212223 !important; }
+}
