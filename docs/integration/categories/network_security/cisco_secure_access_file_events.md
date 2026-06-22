@@ -15,6 +15,7 @@ The Cisco Secure Access File Events log shows your organization's traffic events
 
 ## Configure
 
+{!_shared_content/operations_center/integrations/cisco_secure_access_forwarding.md!}
 
 {!_shared_content/operations_center/integrations/generated/52093a43-6b0d-44d1-83b8-5d1a4f34265f.md!}
 

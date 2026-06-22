@@ -15,6 +15,7 @@ The Cisco Secure Access Web logs show your organization's traffic through the Se
 
 ## Configure
 
+{!_shared_content/operations_center/integrations/cisco_secure_access_forwarding.md!}
 
 {!_shared_content/operations_center/integrations/generated/7bd92a1f-9cb9-4a65-a51c-dfddc0bf691f.md!}
 

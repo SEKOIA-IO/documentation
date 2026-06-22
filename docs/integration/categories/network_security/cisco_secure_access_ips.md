@@ -15,6 +15,7 @@ The Cisco Secure Access IPS logs show the traffic, events, and possible threats 
 
 ## Configure
 
+{!_shared_content/operations_center/integrations/cisco_secure_access_forwarding.md!}
 
 {!_shared_content/operations_center/integrations/generated/5937865a-fd37-4ec2-9f91-54f51865e53d.md!}
 

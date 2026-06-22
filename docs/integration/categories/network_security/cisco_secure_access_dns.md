@@ -15,6 +15,7 @@ The Cisco Secure Access DNS logs show your organization's traffic through the Se
 
 ## Configure
 
+{!_shared_content/operations_center/integrations/cisco_secure_access_forwarding.md!}
 
 {!_shared_content/operations_center/integrations/generated/ff7b9f84-43ab-4717-81b6-92bd0f7662fa.md!}
 

@@ -15,6 +15,7 @@ Cloud firewall logs show traffic that has been handled by Secure Access cloud-de
 
 ## Configure
 
+{!_shared_content/operations_center/integrations/cisco_secure_access_forwarding.md!}
 
 {!_shared_content/operations_center/integrations/generated/2c159df8-019a-4217-899f-d1a3a0d51121.md!}
 
