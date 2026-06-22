@@ -17,11 +17,11 @@ Darktrace monitors all people and digital assets across your entire ecosystem.
 ### Prerequisites
 
 For On Premise version:
-- **Resource**:
+- **Resource:**
     - Self-managed syslog forwarder
-- **Network**:
+- **Network:**
     - Outbound traffic allowed
-- **Permissions**:
+- **Permissions:**
     - Administrator privileges on the Darktrace appliance
     - Root access to the Linux server with the syslog forwarder
 
