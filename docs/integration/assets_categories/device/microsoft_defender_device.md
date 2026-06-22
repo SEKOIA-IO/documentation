@@ -1,4 +1,4 @@
-uuid: d5e4f3c2-1b8a-4e9c-9d7f-6a5b8c2e1f4d
+uuid: a423222d-e8cc-4ad0-a266-8776f8993feb
 name: Microsoft Defender for Endpoint Device
 type: asset
 
