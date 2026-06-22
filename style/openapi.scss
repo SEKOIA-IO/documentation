@@ -588,8 +588,12 @@ select {
     h5 { color: #6F7376 !important; }
     .tags label { color: #6F7376 !important; }
 
-    .menu input.doc-input,
-    .menu button.doc-input { color: #212223 !important; }
+    .wrapper .menu input.doc-input,
+    .wrapper .menu button.doc-input {
+        color: #212223 !important;
+        border: 1px solid #DADCDE !important;
+        border-radius: 4px !important;
+    }
     .menu .doc-filter button { color: #212223 !important; }
     .menu .doc-filter b { color: #212223 !important; }
     .menu .select-region { color: #212223 !important; }
