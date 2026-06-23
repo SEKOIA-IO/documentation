@@ -163,7 +163,7 @@ The OCSF DeviceOCSFModel produced after transformation
   "metadata": {
     "product": { "name": "ESET EDR", "version": "9.1.2500.0" },
     "version": "1.5.0"
-  }
+  },
   "device": {
     "uid": "550e8400-e29b-41d4-a716-446655440000",
     "hostname": "DESKTOP-ABC123",
