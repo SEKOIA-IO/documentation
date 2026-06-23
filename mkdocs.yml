@@ -11,6 +11,7 @@ extra:
   - icon: fontawesome/brands/mastodon
     link: https://infosec.exchange/@sekoia_io
 extra_css:
+- stylesheets/fonts.css
 - stylesheets/sekoiaio.css
 - stylesheets/lightgallery.min.css
 - stylesheets/poppins.min.css
