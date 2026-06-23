@@ -9,7 +9,7 @@ ESET EDR monitors, detects and mitigates threats on endpoints. It reduces the at
 This setup guide shows how to forward device assets from ESET to Sekoia.io.
 
 - **Vendor**: ESET
-- **Product**: ESET Protect Hub / ESET Business Account
+- **Product**: ESET PROTECT Hub / ESET Business Account
 - **Supported environment**: Cloud
 
 ## Configure
