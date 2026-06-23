@@ -41,7 +41,7 @@ To create a new optimization rule, send a POST request to the configuration endp
     This command ignores NetFlow events based on parsed fields (for example, specific ports or datasets).
     ```bash
     curl --request POST \
-    --url [https://api.sekoia.io/v1/sic/conf/intakes/optimization_rules](https://api.sekoia.io/v1/sic/conf/intakes/optimization_rules) \
+    --url https://api.sekoia.io/v1/sic/conf/intakes/optimization_rules \
     --header 'Authorization: Bearer YOUR_TOKEN' \
     --header 'Content-Type: application/json' \
     --data '{
@@ -52,6 +52,21 @@ To create a new optimization rule, send a POST request to the configuration endp
         { "field": "event.dataset", "operator": "==", "value": "netflow" },
         { "field": "destination.port", "operator": "==", "value": 389 }
       ]
+    }'
+    ```
+
+??? example "Example: Ignore unparsed events on a specific intake"
+    Use action `8` (Ignore Useless Event) to silently drop events that your parser could not extract any data from.
+    No filters are needed — the rule relies on the parser's internal detection of empty results.
+    ```bash
+    curl --request POST \
+    --url https://api.sekoia.io/v1/sic/conf/intakes/optimization_rules \
+    --header 'Authorization: Bearer YOUR_TOKEN' \
+    --header 'Content-Type: application/json' \
+    --data '{
+      "action": 8,
+      "description": "Ignore events with no parsed data",
+      "intake_uuid": "YOUR_INTAKE_UUID"
     }'
     ```
 
