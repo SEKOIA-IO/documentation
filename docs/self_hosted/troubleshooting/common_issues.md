@@ -6,7 +6,7 @@ This article documents known issues that can occur during or after installation,
 
 ## ArangoDB provisioning failure during `PlatformInstallation`
 
-**Affects:** v0.0.1  
+**Affects:** v0.0.1
 **Fix scheduled:** Next release
 
 ### Symptom
@@ -78,6 +78,34 @@ kubectl delete cm -n support arangodb-operator-feature-config-map
 ```
 
 If the installation fails again at the same `ArangoDB` step, repeat step 2 and step 3.
+
+---
+
+## "Customer does not exist" error when creating an Entity
+
+**Affects:** v0.0.1
+**Fix scheduled:** Next release
+
+### Symptom
+
+When creating a new Entity in the platform interface, the following error is displayed:
+
+```
+Customer does not exist
+```
+
+### Cause
+
+The community was not fully initialized during creation. The initialization process occasionally fails to complete, leaving the community in an inconsistent state.
+
+### Resolution
+
+1. Navigate to **Settings > General** in your community.
+2. Add or modify the community description (any change is sufficient).
+3. Select **Save**. A **"Community edited"** confirmation message should appear.
+4. Wait a few minutes for the re-initialization process to complete.
+
+You can then retry creating the Entity.
 
 ---
 

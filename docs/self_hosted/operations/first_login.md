@@ -14,16 +14,16 @@ At the end of a successful installation, the SHC displays a credentials table in
 
 ??? example "Example credentials table"
     ```
-                                       Platform Access Credentials
+    Platform Access Credentials
 
     ┏━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
     ┃ Service  ┃ URL                           ┃ User                    ┃ Password / Token                 ┃
     ┡━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┩
-    │ argocd   │ http://localhost:8080         │ admin                   │                                  │
+    │ argocd   │ http://localhost:8080         │ admin                   │ <password>                       │
     ├──────────┼───────────────────────────────┼─────────────────────────┼──────────────────────────────────┤
-    │ grafana  │ http://localhost:3000         │ admin                   │                                  │
+    │ grafana  │ http://localhost:3000         │ admin                   │ <password>                       │
     ├──────────┼───────────────────────────────┼─────────────────────────┼──────────────────────────────────┤
-    │ sekoiaio │ https://app.sekoia.local/user │ instanceadmin@sekoia.io │                                  │
+    │ sekoiaio │ https://app.sekoia.local/user │ instanceadmin@sekoia.io │ <password>                       │
     └──────────┴───────────────────────────────┴─────────────────────────┴──────────────────────────────────┘
     ```
 
@@ -50,10 +50,10 @@ You are now logged in to the **Administration Community**. This community is ded
 !!! note "Community overview"
     Your instance contains two built-in communities after installation:
 
-    | Community | Purpose |
-    | :--- | :--- |
+    | Community                | Purpose                                                                                          |
+    | :---                     | :---                                                                                             |
     | Administration Community | Manages users and communities across the instance. Use this community for administrative tasks only. |
-    | sekoia community | Reserved for internal platform operations. Do not use or modify this community. |
+    | sekoia community         | Reserved for internal platform operations. Do not use or modify this community.                  |
 
     You must create a separate community to run your security operations.
 
@@ -76,7 +76,6 @@ Your community has no active subscription until you import the license file prov
 
 ![allocate](/assets/self_hosted/allocate.png)
 
-
 1. Select your community from the list.
 2. Select the **Subscriptions** tab.
 3. Select **Allocate a subscription**.
@@ -97,12 +96,63 @@ You are now connected to your community and have access to the full Sekoia platf
 
 ## Configure SSO (optional)
 
-Sekoia Self-Hosted supports Single Sign-On via OpenID Connect. You configure SSO per community after the initial setup.
+Sekoia Self-Hosted supports Single Sign-On via OpenID Connect. SSO is configured per community and requires two steps: registering the SSO domain via API, then configuring your identity provider in the community settings.
 
-1. Log in to your community.
-2. Navigate to **Settings > SSO**.
-3. Enter your identity provider's client ID, client secret, and authorization endpoint.
-4. Select **Save**.
+### Step 1: Retrieve your community UUID
+
+1. Connect to your target community.
+2. Navigate to **Settings > General**.
+3. Look at the URL in your browser. The community UUID is the segment between `/communities/` and `/community-details`.
+
+    ```
+    https://app.sekoia.local/communities/<community-uuid>/community-details
+    ```
+
+    Copy and save this UUID.
+
+### Step 2: Retrieve the platform API key
+
+On the orchestration node, run:
+
+```bash
+./run-shc.sh exec PlatformAccess
+```
+
+The command displays the platform credentials table. Copy the API key shown in the `sekoiaio` row.
+
+### Step 3: Register the SSO domain
+
+Run the following API call from the orchestration node, replacing the placeholders with your values:
+
+```bash
+curl 'https://<PLATFORM-DOMAIN>/api/v1/communities/<COMMUNITY-UUID>/domains' \
+  -X 'PUT' \
+  -H 'Authorization: Bearer <API-KEY>' \
+  -H 'Content-Type: application/json' \
+  --data-raw '{"domain":"<SSO-DOMAIN>","validated":false}' \
+  --insecure
+```
+
+| Placeholder          | Value                                                                           |
+| :---                 | :---                                                                            |
+| `<PLATFORM-DOMAIN>`  | The FQDN configured in `global.host` (e.g., `app.sekoia.local`)                |
+| `<COMMUNITY-UUID>`   | The UUID retrieved in step 1                                                    |
+| `<API-KEY>`          | The API key retrieved in step 2                                                 |
+| `<SSO-DOMAIN>`       | The domain name to register for SSO (e.g., `example.com`)                      |
+
+!!! note "`--insecure` flag"
+    The `--insecure` flag disables TLS certificate verification. It is needed when the platform uses a self-signed certificate, which is common in air-gapped deployments. If your platform is configured with a certificate signed by a trusted CA, you can omit this flag.
+
+### Step 4: Verify the domain registration
+
+1. Navigate to **Settings > Security** in your community.
+2. Confirm that your domain appears in the list with its validation status.
+
+### Step 5: Configure your identity provider
+
+1. Navigate to **Settings > SSO** in your community.
+2. Enter your identity provider's client ID, client secret, and authorization endpoint.
+3. Select **Save**.
 
 Full OpenID Connect configuration documentation is available at [https://docs.sekoia.io/getting_started/sso/openid_connect/](https://docs.sekoia.io/getting_started/sso/openid_connect/).
 
