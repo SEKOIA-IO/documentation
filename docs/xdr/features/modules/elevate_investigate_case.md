@@ -15,7 +15,7 @@ Roy is the Elevate investigation agent. Assigning a case to Roy triggers an imme
 3. Select the **Assignee** field in the case header.
 4. Select **Roy**.
 
-> 📸 [SCREENSHOT SUGGESTION: Case detail view showing the Assignee dropdown open with Roy listed as an available option. | ALT TEXT: Case assignee dropdown with Roy as a selectable option to trigger an Elevate investigation.]
+![Case assignee dropdown with Roy as a selectable option to trigger an Elevate investigation](/assets/elevate/case-assign-roy.png){: style="max-width:100%"}
 
 ## Result
 

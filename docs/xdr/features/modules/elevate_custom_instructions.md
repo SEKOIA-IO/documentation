@@ -22,7 +22,7 @@ To add instructions for a specific community:
 !!! note "Applying instructions to all communities"
     To apply instructions across all communities, select your workspace instead of a specific community in step 2.
 
-> 📸 [SCREENSHOT SUGGESTION: AI agent settings panel with the Instructions tab open, showing a free-text field containing example instructions. | ALT TEXT: Instructions tab in the AI agent settings panel with a text input field.]
+![Instructions tab in the AI agent settings panel with a text input field](/assets/elevate/custom-instructions.png){: style="max-width:100%"}
 
 To customize how the agent reasons for a specific detection rule rather than for your environment as a whole, edit the rule's runbook instead. See [Customize a detection rule's runbook](/xdr/features/modules/elevate_customize_runbook.md).
 

@@ -22,7 +22,7 @@ Rule filtering is useful when you already have playbooks reliably handling certa
 4. Use the search bar to find the rules you want to include.
 5. Select each rule you want the agent to analyze.
 
-> 📸 [SCREENSHOT SUGGESTION: AI agent settings panel with the "Limit auto-analyze to specific rules" option expanded, showing a search bar and a selectable list of detection rules. | ALT TEXT: Rule filter configuration panel showing a list of detection rules that can be selected for Elevate auto-analysis.]
+![Rule filter configuration panel showing a list of detection rules that can be selected for Elevate auto-analysis](/assets/elevate/settings-rule.png){: style="max-width:100%"}
 
 ## Result
 

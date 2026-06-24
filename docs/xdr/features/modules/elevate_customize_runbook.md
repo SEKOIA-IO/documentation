@@ -28,7 +28,7 @@ Sekoia Elevate generates a runbook automatically for every detection rule, inclu
 4. Edit the **Detection Rational**, **Legitimate scenarios** or **Investigation questions** according to your needs.
 5. Select **Save runbook**.
 
-> 📸 [SCREENSHOT SUGGESTION: Runbook panel open from an alert's Triggered rule section, showing the Detection Rational, Legitimate scenarios and Investigation questions sections with the Edit runbook button. | ALT TEXT: Runbook panel showing its three sections and the Edit runbook button.]
+![Runbook panel showing its three sections and the Edit runbook button](/assets/elevate/runbook-from-alert.png){: style="max-width:100%"}
 
 !!! note "Scope of runbook changes"
     Runbook modifications apply to all communities in your workspace. From the next alert triggered by this rule, the agent applies your updated runbook.

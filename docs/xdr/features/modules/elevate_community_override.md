@@ -15,7 +15,7 @@ When Elevate is activated at the workspace level, all communities inherit that c
 4. Select **Override**.
 5. Toggle **Auto-analyze alerts** to the desired state for this community.
 
-> 📸 [SCREENSHOT SUGGESTION: AI agent settings panel for a specific community, showing the Override button and the Auto-analyze alerts toggle in a custom state with an indicator confirming that the community uses its own settings. | ALT TEXT: Community-level AI agent settings with the Override option active and a custom auto-analyze toggle state.]
+![Community-level AI agent settings with the Override option](/assets/elevate/settings-override.png){: style="max-width:100%"}
 
 An indicator confirms that this community now uses its own settings and no longer inherits the workspace-level configuration.
 

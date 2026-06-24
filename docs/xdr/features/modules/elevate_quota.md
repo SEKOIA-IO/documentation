@@ -4,11 +4,11 @@ Elevate operates on a monthly run pack. Each investigation the agent runs, wheth
 
 ## Prerequisites
 
-[PLACEHOLDER: Confirm the required role to view and manage runs, for example administrator.]
+Admin role required.
 
 ## Monitor your runs
 
-Track your run consumption from the Usage page. Navigate to **Settings > Usage** to view consumed runs against your monthly run pack, your daily burn, and, for MSSPs, the consumption of each community.
+Track your run consumption from the Usage page. Navigate to **Settings > Usage > AI** to view consumed runs against your monthly run pack, your daily burn, and, for MSSPs, the consumption of each community.
 
 [PLACEHOLDER: Confirm the exact location and name of the Elevate runs view on the Usage page, then add a screenshot placeholder.]
 
@@ -40,8 +40,6 @@ When your monthly run pack is reached:
 - Manual analysis via Roy is also blocked until your runs reset.
 
 Runs reset automatically at the start of next month.
-
-[PLACEHOLDER: Confirm whether a self-serve run top-up or a larger run pack is available before the monthly reset, and add the relevant steps if so.]
 
 ## Related articles
 

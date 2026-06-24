@@ -20,7 +20,7 @@ To activate the agent:
 2. Select **Alert/Case Investigation** agent under the **Workspace** section.
 3. Toggle **Auto-analyze alerts** to enabled.
 
-> 📸 [SCREENSHOT SUGGESTION: Settings > AI agent panel showing the Investigation agent section with the Auto-analyze alerts toggle switched to the enabled position. | ALT TEXT: AI agent settings panel with the Auto-analyze alerts toggle enabled.]
+![AI agent settings panel with the Auto-analyze alerts toggle enabled](/assets/elevate/auto-analyze-enabled.png){: style="max-width:100%"}
 
 Once enabled, the agent analyzes every new alert that arrives across all communities in the workspace.
 

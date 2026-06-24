@@ -2,7 +2,7 @@
 
 The **Verdict** column in the alert list displays the current state of the Elevate AI investigation for each alert. This article describes every possible state and what it means.
 
-> 📸 [SCREENSHOT SUGGESTION: Alert list view with the Verdict column highlighted, showing a variety of AI analysis states including "In progress", "True Positive", "False Positive", "AI analysis failed", "AI analysis timeout", and "AI limit reached". | ALT TEXT: Alert list showing different Elevate verdict states in the Verdict column.]
+![Alert list showing different Elevate verdict states in the Verdict column](/assets/elevate/verdicts-states.png){: style="max-width:100%"}
 
 ## States reference
 

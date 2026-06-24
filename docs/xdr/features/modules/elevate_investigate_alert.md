@@ -38,7 +38,7 @@ To review the findings in the alert details:
 
 Consulting the query behind a finding lets you immediately understand and confirm the information. It is also a learning tool: analysts can draw on the way the agents carry out their triage.
 
-> 📸 [SCREENSHOT SUGGESTION: Findings section of the alert details with several finding cards expanded, each displaying a plain-language observation. | ALT TEXT: Findings section showing expandable evidence cards.]
+![Findings section showing expandable evidence cards](/assets/elevate/alert-timeline.png){: style="max-width:100%"}
 
 ### Switch to the Findings view
 
@@ -46,7 +46,7 @@ For a quick summary of everything the agent found, switch to the **Findings** vi
 
 [PLACEHOLDER: Confirm the exact label and location of the Findings view toggle in the alert details.]
 
-> 📸 [SCREENSHOT SUGGESTION: Alert details with the Findings view selected, showing a consolidated list of evidence items collected by the Elevate agent. | ALT TEXT: Findings view in the alert details showing a summary of AI-collected evidence items.]
+![Findings view in the alert details showing a summary of AI-collected evidence items](/assets/elevate/alert-findings.png){: style="max-width:100%"}
 
 ## Discover the reasoning questions
 

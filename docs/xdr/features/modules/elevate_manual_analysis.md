@@ -16,7 +16,7 @@ Roy is the Elevate investigation agent. Assigning an alert to Roy triggers an im
 3. Select the **Assignee** field in the alert header.
 4. Select **Roy**.
 
-> 📸 [SCREENSHOT SUGGESTION: Alert detail view showing the Assignee dropdown open with Roy listed as an available option. | ALT TEXT: Alert assignee dropdown with Roy as a selectable option to trigger a manual Elevate analysis.]
+![Alert assignee dropdown with Roy as a selectable option to trigger a manual Elevate analysis](/assets/elevate/alert-assign-roy.png){: style="max-width:100%"}
 
 ## Result
 
