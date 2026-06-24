@@ -1,4 +1,4 @@
-Rules catalog includes **1067 built-in detection rules** ([_last update on 2026-06-17_](rules_changelog.md)).
+Rules catalog includes **1074 built-in detection rules** ([_last update on 2026-06-24_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Identity Information**
 
@@ -4363,6 +4363,24 @@ Rules catalog includes **1067 built-in detection rules** ([_last update on 2026-
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
         - 26/03/2024 - major - Rule's pattern field changed
             
+??? abstract "Microsoft Defender For Identity High Severity Alert"
+    
+    Microsoft Defender For Identity raised an alert as High severity. The alert info and evidence events are grouped with the similarity into the same Sekoia.io alert.
+    
+    - **Effort:** master
+    
+??? abstract "Microsoft Defender For Identity Low Severity Alert"
+    
+    Microsoft Defender For Identity raised an alert as Low severity. The alert info and evidence events are grouped with the similarity into the same Sekoia.io alert.
+    
+    - **Effort:** master
+    
+??? abstract "Microsoft Defender For Identity Medium Severity Alert"
+    
+    Microsoft Defender For Identity raised an alert as Medium severity. The alert info and evidence events are grouped with the similarity into the same Sekoia.io alert.
+    
+    - **Effort:** master
+    
 ??? abstract "Microsoft Defender XDR Alert"
     
     Microsoft Defender XDR has raised an alert. The alert info and evidence events are grouped with the similarity into the same Sekoia.io alert.
@@ -4451,6 +4469,24 @@ Rules catalog includes **1067 built-in detection rules** ([_last update on 2026-
     Detects Microsoft Office process (word, excel, powerpoint) spawning wscript.exe or cscript.exe. This typically indicates the parent process launched a malicious macro, or run an exploit. This infection vector is very common and could lead to the deployment of harmful malware. 
     
     - **Effort:** intermediate
+    
+??? abstract "Microsoft Sentinel High Severity New Alert"
+    
+    Microsoft Sentinel raised an High severity new alert.
+    
+    - **Effort:** master
+    
+??? abstract "Microsoft Sentinel Low Severity New Alert"
+    
+    Microsoft Sentinel raised an Low severity new alert.
+    
+    - **Effort:** master
+    
+??? abstract "Microsoft Sentinel Medium Severity New Alert"
+    
+    Microsoft Sentinel raised an Medium severity new alert.
+    
+    - **Effort:** master
     
 ??? abstract "Mimecast Email Security Malicious QRCode Not Denied"
     
