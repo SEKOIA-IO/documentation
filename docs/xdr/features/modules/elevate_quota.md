@@ -10,8 +10,6 @@ Admin role required.
 
 Track your run consumption from the Usage page. Navigate to **Settings > Usage > AI** to view consumed runs against your monthly run pack, your daily burn, and, for MSSPs, the consumption of each community.
 
-[PLACEHOLDER: Confirm the exact location and name of the Elevate runs view on the Usage page, then add a screenshot placeholder.]
-
 When the run pack is exhausted, the agent stops analyzing new alerts and displays the **AI monthly quota limit reached** state on any alert it cannot process.
 
 !!! note "Runs reset monthly"
