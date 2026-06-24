@@ -36,5 +36,5 @@ To ensure consistency and ease of use, each detailed page of an integration foll
 To enhance your experience and keep you informed about our latest developments, we recommend exploring the following resources:
 
 - **Integration Roadmap**: Stay updated on upcoming integrations and features by visiting our [Integration Roadmap](https://roadmap-integrations.sekoia.io/tabs/18-coming-next/tabs/5-under-consideration). Here, you can see what’s coming next.
-- **Integrations Changelog**: Keep track of new integrations, improvements, and bug fixes with our [Integrations Changelog](https://changelog.sekoia.io/?type=t650d50f380b21).
+- **Integrations Changelog**: Keep track of new integrations, improvements, and bug fixes with our [Integrations Changelog](https://changelog.sekoia.com/?type=t650d50f380b21).
 - **Intake Catalog GitHub Repository**: Access our intake formats (Parser, Smart description, metadata, tests) and contribute to the project on GitHub. Check out the repository [here](https://github.com/SEKOIA-IO/intake-formats).
