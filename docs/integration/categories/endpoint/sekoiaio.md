@@ -42,7 +42,7 @@ The Endpoint Detection Agent supports the following operating systems, **on 64-b
 
 ## New features
 
-To find out about the changes between each version please check the [agent's changelog](https://changelog.sekoia.io/changelog?type=t6527b1484d556)
+To find out about the changes between each version please check the [agent's changelog](https://changelog.sekoia.com/changelog?type=t6527b1484d556)
 
 ## Prerequisites
 The Sekoia.io Endpoint Agent uses the HTTPS protocol to send its events and has an automatic update mechanism. As a prerequisite, it's necessary to open the following streams:
