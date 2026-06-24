@@ -2,3 +2,14 @@
 ignore-hidden = true
 ignore-dot = true
 extend-exclude = ["docs/assets", "docs/javascript"]
+
+[default]
+# Ignore whole lines containing UUIDs to avoid false positives on UUID fragments
+# (e.g. `dbe` from `...-5dbe-...` in generated include paths).
+extend-ignore-re = [
+	"(?mi)^.*[0-9a-f]{8}(?:-[0-9a-f]{4}){3}-[0-9a-f]{12}.*$",
+]
+# Also treat UUID-shaped identifiers as valid tokens when parsed as identifiers.
+extend-ignore-identifiers-re = [
+	"(?i)\\b[0-9a-f]{8}(?:-[0-9a-f]{4}){3}-[0-9a-f]{12}\\b",
+]

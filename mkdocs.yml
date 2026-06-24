@@ -1,4 +1,4 @@
-copyright: Copyright &copy; 2026 - Sekoia.io
+copyright: Copyright &copy; 2026 - Sekoia
 edit_uri: edit/main/docs/
 extra:
   social:
@@ -11,6 +11,7 @@ extra:
   - icon: fontawesome/brands/mastodon
     link: https://infosec.exchange/@sekoia_io
 extra_css:
+- stylesheets/fonts.css
 - stylesheets/sekoiaio.css
 - stylesheets/lightgallery.min.css
 - stylesheets/poppins.min.css
@@ -592,6 +593,7 @@ nav:
       - AWS EC2: integration/assets_categories/device/aws_ec2_device.md
       - Crowdstrike Falcon: integration/assets_categories/device/crowdstrike_falcon_device.md
       - Harfanglab EDR: integration/assets_categories/device/harfanglab_edr.md
+      - Microsoft Defender XDR (Microsoft 365 Defender): integration/assets_categories/device/microsoft_defender_device.md
       - Okta: integration/assets_categories/device/okta_device.md
       - SentinelOne EDR: integration/assets_categories/device/sentinelone_edr.md
       - Sophos EDR: integration/assets_categories/device/sophos_edr.md

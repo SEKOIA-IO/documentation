@@ -21,7 +21,7 @@
         user-select: none;
 
         >* {
-            color: #2d2e83;
+            color: #6F7376;
             background: white;
             border-top: 4px solid transparent;
             opacity: 0.6;
@@ -32,9 +32,9 @@
 
             &.active {
                 opacity: 1;
-                border-top: 4px solid #12005e;
-                background: #e2e2e9;
-                color: #12005e;
+                border-top: 4px solid #212223;
+                background: #F0F3F6;
+                color: #212223;
                 border-top-left-radius: 8px;
                 border-top-right-radius: 8px;
             }
@@ -45,7 +45,7 @@
 
 
     >div {
-        background: #e2e2e9;
+        background: #F0F3F6;
         border-radius: 20px;
         border-top-left-radius: 0px;
         border-top-right-radius: 0px;
@@ -55,7 +55,7 @@
 
     .path {
         background-color: rgb(17, 23, 26);
-        border-radius: 8px;
+        border-radius: 4px;
         color: white;
         display: flex;
         align-items: center;
@@ -95,7 +95,7 @@
     }
 
     h3 {
-        color: #12005e;
+        color: #212223;
         font-weight: bold;
         font-size: 14px;
         padding: 12px 0px;
@@ -125,7 +125,7 @@
                 transition: all 90ms ease-in-out;
 
                 &:hover {
-                    color: #12005e;
+                    color: #212223;
                 }
 
                 &.selected {
@@ -144,7 +144,7 @@
         min-width: 100%;
         width: 100%;
         display: block;
-        border-radius: 8px;
+        border-radius: 4px;
         color: white;
         font-family: monospace;
         font-size: 11px;
