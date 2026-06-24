@@ -87,8 +87,8 @@ Each events search performed is listed in the `Search History` for 30 days. You 
 
 It is accessible by clicking on the following button (a panel will be displayed with the previous searches)
 
-<!-- image à changer -->
-<img width="58" alt="image" src="https://user-images.githubusercontent.com/101662967/187888092-84499da5-6fea-46e3-b21c-e6e859aed8e5.png">
+![event-history-button](/assets/operation_center/events/event-history-button.png)
+
 
 When you are creating a new search, results are available instantly for 30 minutes by default.
 
