@@ -37,6 +37,10 @@ To create a new optimization rule, send a POST request to the configuration endp
 
     Optimization rules only support parsed fields. Enriched fields (like sekoiaio.tags.*) are not usable in this context.
 
+!!! warning "Sekoia Endpoint Agent intakes"
+
+    For an intake collected by the Sekoia Endpoint Agent, optimization rules are applied on the agent itself. The agent only applies rules that match its format, so you must set the **format_uuid** to the Sekoia Endpoint Agent format (or set **agent_id**, which sets it automatically). A rule created on an agent intake without a **format_uuid** will not be applied on the agent.
+
 ??? example "Example: Ignore LDAP traffic on NetFlow"
     This command ignores NetFlow events based on parsed fields (for example, specific ports or datasets).
     ```bash
