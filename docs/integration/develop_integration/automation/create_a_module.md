@@ -7,6 +7,7 @@ A module can contain several components of the following types:
 * **Action**: custom code executed by Sekoia in a Playbook.
 * **Connector**: custom code executed by Sekoia to collect and ingest events.
 * **Trigger**: custom code executed by Sekoia as an entrypoint of a Playbook.
+* **Asset Connector**: custom code executed by Sekoia to collect and ingest assets (devices, users, software, vulnerabilities).
 
 
 ## Technical Requirements
@@ -129,7 +130,7 @@ You may be prompted to enter your GitHub username and password or a Personal Acc
 
 ## Create your component
 
-Depending on your needs, you can choose to create an **Action**, a **Connector**, or a **Trigger**. Each section below provides detailed instructions for implementing the respective component. Select the one that best fits your use case and follow the steps provided.
+Depending on your needs, you can choose to create an **Action**, a **Connector**, a **Trigger**, or an **Asset Connector**. Each section below provides detailed instructions for implementing the respective component. Select the one that best fits your use case and follow the steps provided.
 
 === "Action"
     Our action will take three arguments:
@@ -686,6 +687,190 @@ Depending on your needs, you can choose to create an **Action**, a **Connector**
     1. Our trigger is imported.
     2. Trigger is registered. The first argument of `module.register` is our action class and the second is the `docker_parameter` that is specified in our trigger's manifest.
 
+
+=== "Asset Connector"
+    An asset connector is a Python code file executed by Sekoia to collect **assets** — devices, users, software, or vulnerabilities — from an external source and synchronize them into your Sekoia.io asset inventory. Unlike an event Connector (which pushes raw events to an intake), an asset connector pushes structured **OCSF** asset records to the Asset API.
+
+    !!! note
+        Asset connectors require `sekoia-automation-sdk` version `1.22.5` or newer.
+
+    **How it works**
+
+    You inherit from the `AssetConnector` base class and implement only **two** methods:
+
+    * `get_assets()`: fetch assets from the external API and `yield` them as OCSF models.
+    * `update_checkpoint()`: persist your progress so the next run does not re-fetch the same assets.
+
+    Everything else is handled for you by the base class, which provides:
+
+    * `run()` and `asset_fetch_cycle()`: the main loop that calls `get_assets()`, batches the results (using `batch_size` and `frequency`), pushes each batch, and sleeps until the next cycle.
+    * `push_assets_to_sekoia()`: sends a batch of assets to the Sekoia.io Asset API (authentication, retries, and error handling included). It calls your `update_checkpoint()` after each successful push.
+
+    **Supported asset types**
+
+    Assets are described using the [OCSF](https://schema.ocsf.io) schema. The SDK provides one model per category, importable from `sekoia_automation.asset_connector.models.ocsf`:
+
+    | Asset type | OCSF model | Typical capability |
+    | --- | --- | --- |
+    | Device | `DeviceOCSFModel` | `host_detection` |
+    | User | `UserOCSFModel` | `user_detection` |
+    | Software | `SoftwareOCSFModel` | `software_inventory` |
+    | Vulnerability | `VulnerabilityOCSFModel` | `vulnerability_enrichment` |
+
+    **Add the configuration**
+
+    Asset connectors define their own configuration. The base `DefaultAssetConnectorConfiguration` already provides `sekoia_base_url`, `sekoia_api_key`, `frequency`, and `batch_size`. Add your own credentials (such as the vendor API key) in the module's `models.py`:
+
+    ```python
+    from pydantic.v1 import BaseModel, Field
+
+
+    class TesthttpModuleConfiguration(BaseModel):
+        api_key: str = Field(..., description="API Key", secret=True)
+    ```
+
+    **Add the code**
+
+    Create a new file named `asset_connector.py` in the `testhttp_modules` directory:
+
+    ```python
+    from collections.abc import Generator
+    from datetime import datetime
+
+    import requests
+    from sekoia_automation.asset_connector import AssetConnector  # (1)!
+    from sekoia_automation.asset_connector.models.ocsf.base import Metadata, Product
+    from sekoia_automation.asset_connector.models.ocsf.device import Device, DeviceOCSFModel
+    from sekoia_automation.storage import PersistentJSON
+
+    from . import TesthttpModule
+
+
+    class TesthttpAssetConnector(AssetConnector):
+        module: TesthttpModule
+
+        # OCSF Device Inventory Info classification (see https://schema.ocsf.io)
+        ACTIVITY_ID = 2
+        ACTIVITY_NAME = "Collect"
+        CATEGORY_NAME = "Discovery"
+        CATEGORY_UID = 5
+        CLASS_NAME = "Device Inventory Info"
+        CLASS_UID = 5001
+        TYPE_NAME = "Device Inventory Info: Collect"
+        TYPE_UID = 500102
+
+        def __init__(self, *args, **kwargs) -> None:
+            super().__init__(*args, **kwargs)
+            # Used to remember what we already collected between runs
+            self.context = PersistentJSON("testhttp_context.json", self._data_path)
+            self._latest_time: str | None = None
+
+        def map_device(self, raw: dict) -> DeviceOCSFModel:  # (2)!
+            return DeviceOCSFModel(
+                activity_id=self.ACTIVITY_ID,
+                activity_name=self.ACTIVITY_NAME,
+                category_name=self.CATEGORY_NAME,
+                category_uid=self.CATEGORY_UID,
+                class_name=self.CLASS_NAME,
+                class_uid=self.CLASS_UID,
+                type_name=self.TYPE_NAME,
+                type_uid=self.TYPE_UID,
+                time=datetime.now().astimezone().timestamp(),
+                metadata=Metadata(
+                    product=Product(name="TestHTTP", version="1.0.0"),
+                    version="1.5.0",  # OCSF schema version
+                ),
+                device=Device(
+                    uid=raw["id"],
+                    hostname=raw["hostname"],
+                    ip=raw.get("ip"),
+                ),
+            )
+
+        def get_assets(self) -> Generator[DeviceOCSFModel, None, None]:  # (3)!
+            response = requests.get(
+                "https://testhttp.example/api/devices",
+                headers={"Authorization": f"Bearer {self.module.configuration.api_key}"},
+                timeout=60,
+            )
+            response.raise_for_status()
+
+            for raw_device in response.json():
+                yield self.map_device(raw_device)
+
+            # Remember the high-water mark for the next cycle
+            self._latest_time = datetime.now().astimezone().isoformat()
+
+        def update_checkpoint(self) -> None:  # (4)!
+            if self._latest_time:
+                with self.context as cache:
+                    cache["most_recent_date_seen"] = self._latest_time
+    ```
+
+    1. We import the base `AssetConnector` class from the Sekoia.io automation SDK. It inherits all the runtime plumbing (loop, batching, push, retries).
+    2. A small helper that maps one raw record to an OCSF `DeviceOCSFModel`. The `activity`, `category`, `class`, and `type` identifiers come from the [OCSF schema](https://schema.ocsf.io) for the asset category you collect.
+    3. `get_assets` is the only data-fetching method you must implement. It is a generator that yields OCSF models. The base class takes care of batching and pushing them.
+    4. `update_checkpoint` persists your progress. It is called automatically after each successful push so an interrupted run resumes where it left off.
+
+    **Generate the manifest and entrypoint**
+
+    Now that the code has been created, generate the manifest and update the entrypoint by calling
+
+    ```shell
+    sekoia-automation generate-files-from-code
+    ```
+
+    **Generated manifest**
+
+    The previous step generated a `connector_*.json` manifest. Edit it to declare the asset connector by adding the `"type": "asset"` field and the matching `"capability"`:
+
+    ```json
+    {
+      "name": "TestHTTP Devices",
+      "description": "Fetch TestHTTP device assets",
+      "uuid": "8a7acb0b-0004-5e17-9ab0-4c110cea795b",
+      "docker_parameters": "testhttp_asset_connector",
+      "type": "asset",            // (1)!
+      "capability": "host_detection",  // (2)!
+      "arguments": {
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "type": "object",
+        "properties": {
+          "sekoia_base_url": { "type": "string", "description": "Sekoia base URL" },
+          "sekoia_api_key": { "type": "string", "description": "Sekoia API key" },
+          "frequency": { "type": "integer", "minimum": 10800, "default": 21600 },
+          "batch_size": { "type": "integer", "minimum": 1, "default": 100 }
+        },
+        "required": ["sekoia_api_key"],
+        "secrets": ["sekoia_api_key"]
+      }
+    }
+    ```
+
+    1. `"type": "asset"` identifies this component as an asset connector (instead of an event connector).
+    2. `"capability"` declares what the connector collects: `host_detection` (devices), `user_detection` (users), `software_inventory` (software), or `vulnerability_enrichment` (vulnerabilities).
+
+    **Generated entrypoint**
+
+    The `main.py` entrypoint file is updated as well. It now registers our asset connector.
+
+    ```python
+    from testhttp_modules import TesthttpModule
+
+    from testhttp_modules.asset_connector import TesthttpAssetConnector  # (1)!
+
+
+    if __name__ == "__main__":
+        module = TesthttpModule()
+        module.register(TesthttpAssetConnector, "testhttp_asset_connector")  # (2)!
+        module.run()
+    ```
+
+    1. Our asset connector is imported.
+    2. The asset connector is registered. The second argument is the `docker_parameters` value declared in the manifest.
+
+    !!! note
+        To learn which asset categories and OCSF fields Sekoia.io consumes, see the [Asset categories overview](../../assets_categories/overview.md). Once deployed, asset connectors can be monitored from [Asset Connector Health](../../../xdr/features/collect/asset_connector_health.md).
 
 
 ## Test your code (optional)
