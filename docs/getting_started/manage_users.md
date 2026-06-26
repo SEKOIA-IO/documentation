@@ -1,44 +1,97 @@
+---
+title: "Manage users"
+description: "View, edit, deactivate, and remove user accounts in your Sekoia workspace."
+keywords: [users, manage, deactivate, delete, roles, admin, workspace, account management]
+audience: admin
+module: all
+type: task
+---
+
 # Manage users
 
-You can manage users in your workspace from the Workspace section in the Settings. To manage users, you must have the Admin role.
+After your team has been invited to Sekoia, you may need to update user roles, deactivate accounts for departing employees, or remove users from your workspace. All user management actions are available from the workspace settings.
 
-## User information
+## Before you begin
 
-Each user profile includes:
+- You must have the **Admin** role to manage users.
 
-- Name
-- Date of registration
-- Assigned role
+## View the user list
 
-In the user listing, you can see:
+1. Navigate to **Settings > Workspace > Users**.
+2. Use the search bar to find a specific user by name or email.
+3. Use the **Filter by Status** dropdown to filter by active or deactivated accounts.
 
-- Role
-- Email
-- Date of Registration
-- Authentication Method
+The user list shows each user's name, email address, role, registration date, and authentication method.
 
-A search bar allows you to quickly find a member, and quick actions like deactivating or deleting a user can be performed directly from the table.
+## Edit a user's roles
 
-## Actions 
+To change the roles assigned to a user:
 
-To access the detailed page of a user: 
+1. Navigate to **Settings > Workspace > Users**.
+2. Click the user's name to open their detail page.
+3. In the **Roles** section, click **Add role** to assign a new role or click the **Delete** icon next to a role to remove it.
+4. Save your changes.
 
-1. Go to the Users page in Settings
-2. Click on the name of the user
+A user can hold multiple roles simultaneously. Their effective permissions are the union of all assigned roles.
 
-From this page, there are various actions available to you:
+## Deactivate a user account
 
-- Add new roles: Assign additional roles to the user
-- View permissions: See the permissions attached to each assigned role
-- Access assigned roles: View the list of roles assigned to the user
-- Delete roles: Remove assigned roles from the user
-- Deactivate account: Temporarily disable the user's account
-- Delete user: Permanently remove the user from the community
+Deactivating an account suspends access without deleting the user's data. Use this when an employee leaves the organization or when you need to temporarily suspend access.
 
-Roles have attached permissions that determine a user's access, visibility of pages, and usage of features.
+To deactivate an account, you have two options:
 
-!!! note 
-    To learn more about roles and permissions, see [this section of the documentation](roles.md). 
+**From the user list:**
 
+1. Locate the user in the **Settings > Workspace > Users** list.
+2. Click **...** to the right of the user's name.
+3. Select **Deactivate**.
 
+**From the user detail page:**
 
+1. Click the user's name to open their detail page.
+2. Click **Deactivate account**.
+
+Deactivated users appear in the user list with a **Deactivated** status. Filter by **Status > Deactivated** to list only inactive accounts.
+
+## Reactivate a user account
+
+!!! warning "Time-sensitive reactivation"
+    After reactivation, the user must log in at least once before midnight on the same day. If they do not log in in time, their account is automatically deactivated again.
+
+To reactivate a deactivated account:
+
+1. Navigate to **Settings > Workspace > Users**.
+2. Filter by **Status > Deactivated** to locate the account.
+3. Click **...** to the right of the user's name.
+4. Select **Reactivate** and confirm.
+
+Notify the user immediately after reactivation so they can log in within the required window.
+
+## Delete a user
+
+Deleting a user permanently removes them from the community. This action cannot be undone.
+
+!!! warning "Permanent action"
+    Deleting a user removes all their community memberships and assigned roles. Consider deactivating instead if you may need to restore access later.
+
+To delete a user:
+
+1. Click the user's name to open their detail page.
+2. Click **Delete user**.
+3. Confirm the deletion.
+
+## Automatic deactivation for inactive accounts
+
+To comply with PCI/DSS requirements, Sekoia can automatically deactivate accounts that have been inactive for 90 days.
+
+To enable this setting:
+
+1. Navigate to **Settings > Workspace > Workspace Security**.
+2. Find the **Deactivate inactive accounts** section.
+3. Enable the toggle and confirm.
+
+## Related links
+
+- [Invite users](/getting_started/invite_users) — How to add new users to a workspace or community.
+- [Roles and permissions](/getting_started/roles_and_permissions) — Overview of role types and permission levels.
+- [Secure your account](/getting_started/secure_your_account) — How to reset a user's two-factor authentication.

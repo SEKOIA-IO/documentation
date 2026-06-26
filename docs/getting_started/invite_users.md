@@ -1,27 +1,53 @@
-# Invite users to join your workspace
+---
+title: "Invite users"
+description: "Add users to a Sekoia workspace or community by sending them an email invitation."
+keywords: [invite, users, workspace, community, email, onboarding, admin, sso, okta]
+audience: admin
+module: all
+type: task
+---
 
-To invite users to a workspace or a community, you need to send them an invitation to join you on Sekoia.io. You can invite as many users as needed as soon as you are an Administrator of the workspace/community.
+# Invite users
 
-However, depending on the [type of community](concepts.md) you are in, the invitation process can differ.
+To give a team member access to Sekoia, you send them an invitation from the workspace settings. They receive an email with a link to set their password and join the workspace or community. This article explains how to invite new users and how automatic user creation works with SSO.
 
-In this documentation, you will learn how to add news users to a workspace or a community.
+## Before you begin
 
-## Add new users to a workspace
+- You must have the **Admin** role to invite users.
+- Decide which community the user should join and which role they should receive. See [Roles and permissions](/getting_started/roles_and_permissions) if you need help choosing.
 
-To invite new users to a workspace, follow these steps:
+## Invite a user by email
 
-1. Navigate to the `Settings` page from the menu
-2. On the `Users` page, click the `Add new users` button
-3. Enter the email addresses of the users you want to invite, separating each with a comma
-4. Select the communities you want to add them to
-5. Assign roles to your guests. You can either select the default ones or create custom roles based on chosen permissions. Check this documentation to learn how to [create custom roles](/getting_started/roles.md).
+1. Navigate to **Settings > Workspace > Users**.
+2. Click **Add new users**.
+3. Enter the email addresses of the users you want to invite. Separate multiple addresses with a comma.
+4. Select the communities you want to add the users to.
+5. Assign a role for each community.
+6. Click **Send invitation**.
 
-These steps are the same whether you want to invite new users to a workspace or to a community.
-In case it's a multi-tenant workspace, the invited user will only have access to the selected community, not the whole workspace.
+Invited users receive a welcome email with a link to set their password. The link is valid for 24 hours.
 
-!!! note
-     A welcome email with a password set link is sent only to new users on Sekoia.io (excluding existing members in other communities).
+!!! note "Existing Sekoia users"
+    If an invited user already has a Sekoia account in another workspace, they do not receive a password setup email. They can access the new community immediately using their existing credentials.
 
-## Automatic creation of users with SSO Okta
+!!! note "Multi-tenant workspaces"
+    In a multi-tenant workspace, an invited user only has access to the specific communities you selected during invitation. They do not have access to the workspace as a whole or to other communities.
 
-As mentioned on [this page](sso/openid_connect.md): Workspace admins who have enabled SSO with Okta can configure an option to automatically create new users accounts in their workspace. When a user logs-in for the first time, their account will be automatically created. You can set the default role for newly created users, and you can choose the default role among all the roles available in your community.
+## Set up automatic user creation with SSO Okta
+
+If your workspace uses SSO with Okta, you can configure Sekoia to automatically create a user account the first time someone from your organization logs in.
+
+When automatic creation is enabled:
+
+- A new user account is created on first login without requiring a manual invitation.
+- You can set the default role assigned to automatically created users.
+
+To configure this option, navigate to **Settings > Workspace > Security > SSO** and enable **Automatic user creation**.
+
+See the SSO configuration guide for the full setup procedure.
+
+## Related links
+
+- [Manage users](/getting_started/manage_users) — How to edit roles, deactivate accounts, and remove users after they have been invited.
+- [Roles and permissions](/getting_started/roles_and_permissions) — Overview of built-in and custom roles to help you choose the right access level.
+- [Workspace setup overview](/getting_started/workspace_setup_overview) — Full admin checklist for configuring a workspace.
