@@ -11,6 +11,18 @@ type: concept
 
 Sekoia is available in several plans that determine which products and features your team can access. This article explains the plan structure, the add-on modules, and how to interpret the information on your Subscriptions page.
 
+## Who can access this page
+
+Navigate to **Settings > Workspace > Subscriptions**.
+
+| Role | View subscriptions | Allocate or manage subscriptions |
+|---|---|---|
+| **Admin** | Yes | Yes |
+| **Analyst** | Yes | No |
+| **Guest** | Yes | No |
+
+To allocate a subscription or trial to a community, your account must also have the **Manage community licenses** permission enabled on your role.
+
 ## Products and plans
 
 Sekoia offers two core products, which are sold and licensed separately.
