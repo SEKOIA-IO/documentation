@@ -38,6 +38,14 @@ Notification rules let you receive alerts through your preferred channel when a 
 Your rule is now active and appears in your personal notification list.
 
 > 📸 [SCREENSHOT SUGGESTION: The notification creation form showing the Trigger dropdown selected, a Conditions section with urgency filter, and the Action section with email delivery selected. | ALT TEXT: Notification creation form with trigger, conditions, and email delivery options configured.]
+>
+
+!!! info "Find your incoming webhook URL"
+   If you have not set up an incoming webhook for your messaging platform yet:
+
+   - **Slack:** [Sending messages using Incoming Webhooks](https://api.slack.com/messaging/webhooks)
+   - **Microsoft Teams:** [Create incoming webhooks](https://learn.microsoft.com/en-us/microsoftteams/platform/webhooks-and-connectors/how-to/add-incoming-webhook)
+   - **Mattermost:** [Mattermost incoming webhooks](https://developers.mattermost.com/integrate/webhooks/incoming/)
 
 ## Example: High-urgency alert on a production asset
 
