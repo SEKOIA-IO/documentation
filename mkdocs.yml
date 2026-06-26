@@ -39,48 +39,61 @@ markdown_extensions:
 - plugins.custom_lightgallery
 nav:
 - Getting started:
-  - Overview: getting_started/index.md
-  - Where to start: getting_started/concepts.md
-  - Trainings:
-    - Training offer overview: getting_started/training_overview.md
-    - Register for a training course: getting_started/register_training.md
-  - Workspace setup:
-    - Join workspace: getting_started/join_community.md
-    - Create and manage communities: getting_started/create_community.md
-  - Account setup:
-    - Create account: getting_started/create_account.md
-    - Setup account: getting_started/account_settings.md
-  - Security and access:
-    - Account security:
-      - Two-Factor Authentication: getting_started/account_security.md
+  - Welcome to Sekoia: getting_started/index.md
+  - Understand Sekoia:
+    - What is Sekoia: getting_started/what_is_sekoia.md
+    - Workspace and communities: getting_started/workspace_and_communities.md
+    - Navigate the platform: getting_started/navigate_the_platform.md
+    - Glossary: getting_started/glossary.md
+  - Set up your account:
+    - Log in for the first time: getting_started/log_in_for_the_first_time.md
+    - Secure your account: getting_started/secure_your_account.md
+    - Customize your interface: getting_started/customize_your_interface.md
+  - Set up your workspace (Admin):
+    - Workspace setup overview: getting_started/workspace_setup_overview.md
+    - Understand your subscription: getting_started/understand_your_subscription.md
+    - Invite users: getting_started/invite_users.md
+    - Manage users: getting_started/manage_users.md
+    - Roles and permissions: getting_started/roles_and_permissions.md
+    - Manage API keys: getting_started/manage_api_keys.md
+    - Notifications:
+      - Notification system overview: getting_started/notification_system_overview.md
+      - Create a notification: getting_started/create_a_notification.md
+      - Manage notifications: getting_started/manage_notifications.md
+      - Notification examples: getting_started/notification_examples.md
+    - Advanced configuration:
       - Security tokens: getting_started/securitytokens.md
-      - Password Management Policy: getting_started/password_management_policy.md
-    - Workspace security:
-      - Session duration: getting_started/session_duration.md
-      - Two-Factor Authentication: getting_started/twofactor_workspace.md
+      - Password management policy: getting_started/password_management_policy.md
+      - Workspace session duration: getting_started/session_duration.md
+      - Workspace two-factor authentication: getting_started/twofactor_workspace.md
       - SSO with OpenID Connect: getting_started/sso/openid_connect.md
       - SSO with Microsoft Entra ID (Azure AD): getting_started/sso/azure.md
       - SSO with Okta: getting_started/sso/okta.md
-  - Users and roles:
-    - Invite users: getting_started/invite_users.md
-    - Manage users: getting_started/manage_users.md
-    - Deactivate inactive users: getting_started/inactive_users.md
-    - Roles and permissions:
-      - Built-in roles: getting_started/roles.md
+      - Deactivate inactive users: getting_started/inactive_users.md
       - Custom roles: getting_started/custom_roles.md
-      - Intake Restricted roles: getting_started/intake_restricted_roles.md
-  - Notifications:
-    - Notification system: getting_started/notification_concept.md
-    - Create notifications: getting_started/notifications-Listing_Creation.md
-    - Manage notifications: getting_started/manage_notifications.md
-    - Notification examples: getting_started/notifications-Examples.md
-  - API Keys: getting_started/manage_api_keys.md
-  - Subscriptions: getting_started/subscriptions.md
-  - Usage: getting_started/usage.md
-  - Sekoia regions: getting_started/regions.md
-  - Roy AI Assistant: getting_started/ai_assistant.md
-  - Best practices: getting_started/best_practices.md
-  - Troubleshooting tips: getting_started/get_troubleshooting_tips.md
+      - Intake restricted roles: getting_started/intake_restricted_roles.md
+  - Quick starts:
+    - 'Quick start: Defend':
+      - Getting started with Defend: getting_started/quick_start_defend.md
+      - 'Step 1: Connect a data source': getting_started/defend_step1_connect_data_source.md
+      - 'Step 2: Verify event reception': getting_started/defend_step2_verify_event_reception.md
+      - 'Step 3: Activate detection rules': getting_started/defend_step3_activate_detection_rules.md
+      - 'Step 4: Triage your first alert': getting_started/defend_step4_triage_first_alert.md
+      - 'Step 5: Automate with playbooks': getting_started/defend_step5_automate_with_playbooks.md
+    - 'Quick start: Intelligence':
+      - Getting started with Intelligence: getting_started/quick_start_intelligence.md
+      - 'Step 1: Explore the threat database': getting_started/intelligence_step1_explore_threat_database.md
+      - 'Step 2: Read threat reports': getting_started/intelligence_step2_read_threat_reports.md
+    - 'Quick start: Reveal': getting_started/quick_start_reveal.md
+    - 'Quick start: Elevate': getting_started/quick_start_elevate.md
+  - Training:
+    - Training offer overview: getting_started/training_overview.md
+    - Register for a training course: getting_started/register_training.md
+  - Get help:
+    - Roy AI Assistant: getting_started/ai_assistant.md
+    - Support and resources: getting_started/support_and_resources.md
+    - Troubleshoot common issues: getting_started/troubleshooting_common_issues.md
+
 - Sekoia Solutions:
   - Threat Context (Intelligence):
     - Intelligence overview: cti/index.md
@@ -215,6 +228,7 @@ nav:
     - Check asset connector health: xdr/features/collect/asset_connector_health.md
     - Reveal enablement matrix: xdr/features/modules/reveal_feature_enablement.md
 - Usecases:
+  - Best practices: getting_started/best_practices.md
   - Export large volumes of events: xdr/usecases/massive_export.md
   - Implement a blocklist in Sekoia.io: xdr/usecases/playbook/implement_blocklist.md
   - Synchronize Alerts with an external tool: xdr/usecases/playbook/synchronize_alerts.md
@@ -224,6 +238,7 @@ nav:
   - Investigate overusage: xdr/usecases/playbook/investigate_overusage.md
   - Log volume reduction strategies: xdr/usecases/playbook/log_volume_reduction_strategies.md
 - FAQ and troubleshooting:
+  - FAQ and troubleshooting:
   - General: xdr/FAQ.md
   - Alerts: xdr/FAQ/Alerts_qa.md
   - Events:
@@ -245,9 +260,13 @@ nav:
   - Subscriptions:
     - Allocate trial subscription: xdr/FAQ/subscriptions/allocate_trial_subscription.md
     - Subscriptions notifications: xdr/FAQ/subscriptions/subscriptions_notifications.md
+    - Subscriptions reference: getting_started/subscriptions.md
+    - Usage: getting_started/usage.md
   - Sekoia.io Endpoint agent: xdr/FAQ/SEKOIA_Endpoint_Agent.md
   - Datetime representation: xdr/FAQ/datetime.md
   - Reveal troubleshooting: xdr/features/modules/reveal_troubleshoot.md
+  - Sekoia regions: getting_started/regions.md
+  
 - Integrations:
   - Introduction: integration/index.md
   - Ingestion methods:
@@ -854,6 +873,18 @@ plugins:
       xdr/features/collect/integrations/network/watchguard_firebox.md: integration/categories/network_security/watchguard_firebox.md
       xdr/features/investigate/dork_language.md: xdr/features/investigate/events_query_language.md
       xdr/features/investigate/sekoia_operating_language.md: xdr/features/investigate/sol_overview.md
+      getting_started/concepts.md: getting_started/what_is_sekoia.md
+      getting_started/join_community.md: getting_started/workspace_and_communities.md
+      getting_started/create_community.md: getting_started/workspace_and_communities.md
+      getting_started/create_account.md: getting_started/log_in_for_the_first_time.md
+      getting_started/account_settings.md: getting_started/log_in_for_the_first_time.md
+      getting_started/account_security.md: getting_started/secure_your_account.md
+      getting_started/roles.md: getting_started/roles_and_permissions.md
+      getting_started/notification_concept.md: getting_started/notification_system_overview.md
+      getting_started/notifications-Listing_Creation.md: getting_started/create_a_notification.md
+      getting_started/notifications-Examples.md: getting_started/notification_examples.md
+      getting_started/get_troubleshooting_tips.md: getting_started/troubleshooting_common_issues.md
+
 - integration_by_uuid
 - sass
 repo_url: https://github.com/SEKOIA-IO/documentation
