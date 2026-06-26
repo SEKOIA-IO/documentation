@@ -60,6 +60,18 @@ Contact your workspace administrator. They can reactivate your account from **Se
 
 **What to do:**
 
+!!! tips "HAR archive step"
+   If the net-export log file does not provide enough detail, generate a HAR (HTTP Archive) file to capture the full request and response trace:
+
+   1. Open Chrome DevTools (F12) and select the **Network** tab.
+   2. Check **Preserve log**.
+   3. Reproduce the connectivity issue in the Sekoia tab.
+   4. Right-click on any request in the Network tab and select **Save all as HAR with content**.
+   5. Attach the `.har` file to your support ticket.
+
+!!! note "Other browsers"
+    If you are not using Chrome, contact [support.sekoia.io](https://support.sekoia.io) and describe your browser. The support team will guide you through the equivalent steps.
+
 1. Contact your network administrator and ask them to verify that WebSocket connections are permitted to `wss://app.sekoia.io/live`.
 2. If the problem persists, collect network logs for investigation:
     1. Open Google Chrome and navigate to `chrome://net-export/`.
