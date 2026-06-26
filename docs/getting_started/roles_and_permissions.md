@@ -74,6 +74,26 @@ To change a user's role after they have been invited:
 
 A user can hold multiple roles simultaneously. Their effective permissions are the union of all assigned roles.
 
+??? note "Legacy role names (pre-2024 API reference)"
+    If you use the Sekoia API directly or maintain older scripts, you may encounter these internal role identifiers. They correspond to the current role system as follows.
+
+    | Legacy name | Description |
+    |---|---|
+    | `admin` | Community administrator |
+    | `symphony_operator` | Playbook usage |
+    | `ic_viewer` | Intelligence read-only |
+    | `oc_viewer` | View operation center data (read-only) |
+    | `oc_contributor` | View and comment on alerts |
+    | `oc_operator` | Manage alerts and incidents |
+    | `oc_administrator` | Manage rules, templates, entities, countermeasures |
+    | `manage_api_keys` | Manage API keys of the community |
+    | `manage_community` | Any action on community settings |
+    | `manage_roles` | Create, update, delete, and assign roles |
+    | `manage_members` | Add and remove users from the community |
+
+    You can view all current permissions directly in the platform under **Settings > Workspace Roles**.
+
+
 ## Related links
 
 - [Invite users](/getting_started/invite_users) — How to add users and assign roles during the invitation process.
