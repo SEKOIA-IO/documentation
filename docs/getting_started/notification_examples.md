@@ -77,6 +77,46 @@ Receive an alert when an existing alert changes status or is updated by another 
 | **Conditions** | Filter by urgency, asset, entity, or new status (optional) |
 | **Action** | In-app or email |
 
+## Webhook payload reference
+
+When a notification fires to a custom webhook, Sekoia sends a JSON payload to your endpoint.
+
+!!! warning "Webhooks are not for direct delivery to Slack or Telegram"
+    The webhook action sends a raw JSON payload to an HTTP server. It cannot push formatted messages directly to Slack or Telegram. Use the dedicated Slack or Teams actions for those channels, or use a playbook with an HTTP action as an intermediary.
+
+### Example payload
+
+```json
+{
+  "type": "alert",
+  "action": "created",
+  "attributes": {
+    "uuid": "5696845f-9ecf-4431-9f0f-48ee0ee2eff1",
+    "short_id": "ALEY4fqz8moo"
+  },
+  "metadata": {
+    "version": 2,
+    "created_at": "2022-01-14T15:06:57.398005+00:00",
+    "community_uuid": "d6cea089-0f36-46c4-a10a-0e4c2e20fb10",
+    "avatar_uuid": null,
+    "user_uuid": null,
+    "permissions": []
+  }
+}
+```
+
+### Payload fields
+
+| Field | Always present | Description |
+|---|---|---|
+| `type` | Yes | Event type. Can be `alert` or `content-proposal` (reports). More types will be added. |
+| `action` | Yes | Action that occurred. Can be `created`, `updated`, or `deleted`. |
+| `attributes` | Yes | Identifiers for the object that triggered the notification. |
+| `metadata` | Yes | Context about the notification event itself. |
+| `metadata.version` | Yes | Payload schema version. Currently `2`. |
+| `metadata.created_at` | Yes | ISO 8601 timestamp of when the event occurred. |
+| `metadata.community_uuid` | Yes | UUID of the community where the event occurred. |
+
 ## Playbook error
 
 Receive an alert when a playbook encounters an error during execution.
