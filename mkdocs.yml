@@ -238,7 +238,6 @@ nav:
   - Investigate overusage: xdr/usecases/playbook/investigate_overusage.md
   - Log volume reduction strategies: xdr/usecases/playbook/log_volume_reduction_strategies.md
 - FAQ and troubleshooting:
-  - FAQ and troubleshooting:
   - General: xdr/FAQ.md
   - Alerts: xdr/FAQ/Alerts_qa.md
   - Events:
