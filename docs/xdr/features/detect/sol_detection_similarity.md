@@ -6,7 +6,7 @@ Alert similarity controls how the matches of a SOL detection rule are grouped in
 
 A similarity strategy is a list of fields. Alerts that share the same values for every field in the strategy are considered similar: instead of raising a new alert, the platform attaches the new match to the existing alert and increments its occurrence counter. This keeps repeated detections of the same condition in one place rather than flooding the alert list.
 
-Similarity applies across the platform, not only to SOL rules. For the full model, including how similarity interacts with alert status and the occurrence counter, see [Alert similarity](/xdr/features/operation_center/alerts.md#alert-similarity).
+Similarity applies across the platform, not only to SOL rules. For the full model, including how similarity interacts with alert status and the occurrence counter, see [Alert similarity](/xdr/features/investigate/alerts.md#alert-similarity).
 
 ## Why SOL rules have no default similarity strategy
 

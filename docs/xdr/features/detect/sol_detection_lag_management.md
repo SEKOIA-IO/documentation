@@ -34,7 +34,7 @@ To prevent this, the engine deduplicates the overlapping results before any aler
 Using the same example, an event timestamped 10:12 that arrived on time was already evaluated by the 10:15 run. It falls inside the 10:10 to 10:15 overlap that the 10:30 run re-reads, so the 10:30 run discards it during deduplication and does not raise a second alert for it.
 
 !!! note "Different from alert similarity"
-    Overlap deduplication is a row-level safeguard internal to rule execution: it removes results the rule has already evaluated. It is not the same as alert similarity, which groups similar events from different matches into a single alert as occurrences. The two work at different layers. For how matches are grouped into an alert, see [Alert similarity](/xdr/features/operation_center/alerts.md#alert-similarity).
+    Overlap deduplication is a row-level safeguard internal to rule execution: it removes results the rule has already evaluated. It is not the same as alert similarity, which groups similar events from different matches into a single alert as occurrences. The two work at different layers. For how matches are grouped into an alert, see [Alert similarity](/xdr/features/investigate/alerts.md#alert-similarity).
 
 ## Related articles
 
