@@ -108,11 +108,7 @@ The following table shows how source data is mapped to OCSF model fields:
 | `lastSeenAt` | `device.last_seen_time` | Last seen date | `timestamp` | - |
 | `static: True` | `device.is_managed` | Always true – device is enrolled in Sophos Central | `boolean` | - |
 | `health.overall` | `device.is_compliant` | Device health / compliance status | `boolean` | good→True, bad/suspicious→False, else None |
-| `health.overall + isolation.status + tamperProtectionEnabled` | `device.is_trusted` | Computed trust status based on isolation, health and tamper protection | `boolean` | isolated → False
-health==good AND tamperProtectionEnabled==true → True
-health==bad or suspicious → False
-else → None
- |
+| `health.overall + isolation.status + tamperProtectionEnabled` | `device.is_trusted` | Computed trust status based on isolation, health and tamper protection | `boolean` | isolated → False<br>health==good AND tamperProtectionEnabled==true → True<br>health==bad or suspicious → False<br>else → None |
 | `lastSeenAt (max across all items in collection run)` | `context.last_seen_cursor` | Incremental collection checkpoint | `string` | The most recent lastSeenAt ISO string seen during a collection run is persisted as the checkpoint. On the next run, this value is passed as lastSeenAfter query parameter to avoid re-fetching already-seen devices. |
 | `tamperProtectionEnabled` | `enrichments[0].data.Firewall_status` | Tamper-protection / firewall-like status | `string` | true→Enabled, false→Disabled; used as proxy for endpoint protection status |
 | `static: compliance` | `enrichments[0].name` | Enrichment type name | `string` | - |
