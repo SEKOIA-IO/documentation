@@ -14,10 +14,10 @@ An intake is the connection between one of your data sources (a firewall, an EDR
 ## Before you begin
 
 - You need the **Admin** role or a custom role with intake management permissions to create an intake.
-- Identify at least one data source you want to connect. If you are unsure where to start, refer to the [best practices for intake configuration](/xdr/operations/best-practices) for recommendations on which sources to prioritize.
+- Identify at least one data source you want to connect. If you are unsure where to start, refer to the [best practices for intake configuration](/xdr/operations/best-practices.md) for recommendations on which sources to prioritize.
 
 !!! note "No admin access?"
-    If you do not have permission to create intakes, share this article with your administrator and ask them to create the intake. Once it is created, you can continue from [Step 2: Verify event reception](/getting_started/defend_step2_verify_event_reception).
+    If you do not have permission to create intakes, share this article with your administrator and ask them to create the intake. Once it is created, you can continue from [Step 2: Verify event reception](/getting_started/defend_step2_verify_event_reception.md).
 
 ## Understand intake types
 
@@ -32,12 +32,12 @@ For pull intakes, you start and stop collection using an On/Off toggle. For push
 
 ## Create an intake
 
-1. In the navigation menu, select **Collect > Intakes**.
-2. Click **+ Intake**.
+1. In the navigation menu, select **Configure > Intakes**.
+2. On the top right corner, click **+ New Intake**.
 3. In the integration catalog, search for your data source technology or browse by category.
 4. Click **Create** on the matching integration card.
-5. Enter a descriptive name for the intake (for example, `Windows Workstations - Paris Office`).
-6. Select the **entity** this intake belongs to. Entities help organize your data sources by infrastructure group or business unit.
+5. Enter a descriptive ***Name** for the intake (for example, `Windows Workstations - Paris Office`).
+6. Select the **Entity** this intake belongs to. Entities help organize your data sources by infrastructure group or business unit.
 7. Click **Create**.
 
 For pull intakes, an additional configuration step appears. Enter the credentials or API parameters required to connect to the source.
@@ -56,7 +56,7 @@ To copy the intake key:
 1. Click **...** on the intake card.
 2. Select **Copy intake key**.
 
-Deploy the intake key on your data source following the technology-specific setup guide available in the [integration catalog](/integration/categories/).
+Deploy the intake key on your data source following the technology-specific setup guide available in the [integration catalog](https://docs.sekoia.io/integration/).
 
 ## What to expect after creating an intake
 
@@ -66,6 +66,6 @@ For **pull intakes**, the intake is inactive by default. To start data collectio
 
 ## Related links
 
-- [Step 2: Verify event reception](/getting_started/defend_step2_verify_event_reception) — Confirm that logs are arriving and being parsed correctly.
-- [Integration catalog](/integration/categories/) — Technology-specific setup guides for each supported data source.
-- [Notification system overview](/getting_started/notification_system_overview) — How to set up alerts when an intake stops receiving data.
+- [Step 2: Verify event reception](/getting_started/defend_step2_verify_event_reception.md) — Confirm that logs are arriving and being parsed correctly.
+- [Integration catalog](https://docs.sekoia.io/integration/) — Technology-specific setup guides for each supported data source.
+- [Notification system overview](/getting_started/notification_system_overview.md) — How to set up alerts when an intake stops receiving data.
