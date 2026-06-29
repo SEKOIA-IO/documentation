@@ -26,19 +26,19 @@ Notification rules let you receive alerts through your preferred channel when a 
     If you have no existing rules, the listing page appears empty with a **+ Notification** button instead. Click it to start.
 
 4. Enter a descriptive name in the **Notification name** field (for example, `High-urgency alerts on production assets`).
-5. Select the event type from the **Trigger** dropdown. See [Notification system overview](/getting_started/notification_system_overview) for the full list of available triggers.
-6. In the **Conditions** section, define filters to narrow down which events qualify. Conditions are optional but strongly recommended to avoid noise.
-7. In the **Action to perform** section, select your delivery method:
-    - **In-app notification** — Displays in the Sekoia notification panel.
-    - **Email** — Enter the recipient email address. Enable **Enrich email with contextual info** to include event details in the message body.
-    - **Slack**, **Teams**, or **Mattermost** — Paste your incoming webhook URL.
+5. Select the event type from the **Select a trigger** dropdown. See [Notification system overview](/getting_started/notification_system_overview.md) for the full list of available triggers.
+6. In the **And** section, define filters to narrow down which events qualify. Conditions are optional but strongly recommended to avoid noise.
+7. In the **Then** section, select your delivery method:
+    - **Notification**: Displays in the Sekoia notification panel.
+    - **E-mail**: Enter the recipient email address. Enable **Enrich email with contextual info** to include event details in the message body.
+    - **Slack**, **Teams**, or **Mattermost**: Paste your incoming webhook URL.
     - **Webhook** — Enter the URL of your HTTP endpoint to receive a JSON payload.
 8. Click **Save**.
 
 Your rule is now active and appears in your personal notification list.
 
-> 📸 [SCREENSHOT SUGGESTION: The notification creation form showing the Trigger dropdown selected, a Conditions section with urgency filter, and the Action section with email delivery selected. | ALT TEXT: Notification creation form with trigger, conditions, and email delivery options configured.]
->
+
+![!Notification creation form with trigger, conditions, and email delivery options configured](docs/assets/operation_center/quick_start/notification_creation.png){: style="width: 100%; max-width: 100%"}
 
 !!! info "Find your incoming webhook URL"
    If you have not set up an incoming webhook for your messaging platform yet:
@@ -64,6 +64,6 @@ This example shows how to set up a notification that fires when a critical asset
 
 ## Related links
 
-- [Notification system overview](/getting_started/notification_system_overview) — Full list of available triggers and delivery channels.
-- [Manage notifications](/getting_started/manage_notifications) — How to edit, disable, or delete an existing notification rule.
-- [Notification examples](/getting_started/notification_examples) — Ready-to-use templates for intake monitoring, alerts, playbooks, and reports.
+- [Notification system overview](/getting_started/notification_system_overview.md) — Full list of available triggers and delivery channels.
+- [Manage notifications](/getting_started/manage_notifications.md) — How to edit, disable, or delete an existing notification rule.
+- [Notification examples](/getting_started/notification_examples.md) — Ready-to-use templates for intake monitoring, alerts, playbooks, and reports.
