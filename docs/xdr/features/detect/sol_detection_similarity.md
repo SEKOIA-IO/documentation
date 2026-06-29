@@ -42,5 +42,5 @@ This lets you choose between a single consolidated alert for the whole rule and 
 
 * [SOL detection rules](/xdr/features/detect/sol_detection_rule.md): Conceptual overview of the SOL and Event Drop detection patterns, how they work, and when to use them.
 * [Create a SOL detection rule](/xdr/features/detect/create_sol_detection_rule.md): Step-by-step instructions to configure and activate a SOL or Event Drop detection rule, including the similarity strategy.
-* [Alert similarity](/xdr/features/operation_center/alerts.md): The platform-wide similarity model, occurrence counter, and how similarity interacts with alert status.
+* [Alert similarity](/xdr/features/investigate/alerts.md#similarity-strategies): The platform-wide similarity model, occurrence counter, and how similarity interacts with alert status.
 * [Lag management for SOL detection rules](/xdr/features/detect/sol_detection_lag_management.md): How rules handle late-arriving events through a fixed run overlap and deduplication.

@@ -40,4 +40,4 @@ Using the same example, an event timestamped 10:12 that arrived on time was alre
 
 * [SOL detection rules](/xdr/features/detect/sol_detection_rule.md): Conceptual overview of the SOL and Event Drop detection patterns, how they work, and when to use them.
 * [Create a SOL detection rule](/xdr/features/detect/create_sol_detection_rule.md): Step-by-step instructions to configure and activate a SOL or Event Drop detection rule.
-* [Alert similarity](/xdr/features/operation_center/alerts.md): How the platform groups similar events into a single alert as occurrences.
+* [Alert similarity](/xdr/features/investigate/alerts.md#similarity-strategies): How the platform groups similar events into a single alert as occurrences.
