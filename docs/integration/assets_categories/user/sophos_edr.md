@@ -18,7 +18,7 @@ This setup guide shows how to forward user assets from Sophos EDR to Sekoia.io.
 ### Create Sophos EDR credentials
 
 !!! Warning
-    If you have a "Partner" or "Organization" entity, you need to do the following procedure on every tenant attached to it. Please find more information on the [official documentation](https://developer.sophos.com/intro)
+    If you have a "Partner" or "Organization" entity, you need to do the following procedure on every tenant attached to it. Please find more information in the [official documentation](https://developer.sophos.com/intro).
 
 In the Sophos Central Admin console:
 
