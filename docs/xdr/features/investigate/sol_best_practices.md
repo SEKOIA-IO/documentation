@@ -113,6 +113,39 @@ Use this table to identify which operations can be pushed down to the datasource
 | `countif` aggregation function | ❌ Never |
 | Row-level functions (e.g. `coalesce`, `extract`, `iff`, `tolower`) | ❌ Never |
 
+### Filter operator performance hierarchy
+
+Not all filter operators perform equally. When writing `| where` conditions, prefer operators that are higher in this hierarchy to maximize pushdown efficiency and minimize scan cost:
+
+| Rank | Operator | Example | Performance | Notes |
+| --- | --- | --- | --- | --- |
+| 1 | `==`, `!=` | `event.category == "authentication"` | ⚡ Fastest | Exact match; fully index-compatible and always pushed down |
+| 2 | `in`, `!in` | `source.ip in ("1.2.3.4", "5.6.7.8")` | ⚡ Fast | Case-sensitive set membership check; index-compatible |
+| 3 | `in~`, `!in~` | `event.category in~ ("Authentication", "NETWORK")` | 🔵 Good | Case-insensitive set membership check; slight overhead over `in` |
+| 4 | `startswith` | `url.original startswith "https"` | 🔵 Good | Case-sensitive prefix match; can leverage prefix indexes |
+| 5 | `startswith~` | `url.original startswith~ "Https"` | 🔵 Good | Case-insensitive variant of `startswith`; minor normalization overhead |
+| 6 | `endswith` | `file.name endswith ".exe"` | 🔵 Good | Case-sensitive suffix match; slightly less efficient than `startswith` |
+| 7 | `endswith~` | `file.name endswith~ ".EXE"` | 🔵 Good | Case-insensitive variant of `endswith`; minor normalization overhead |
+| 8 | `contains` | `message contains "failed"` | 🟡 Moderate | Case-sensitive substring scan; no index benefit, full field scan |
+| 9 | `contains~` | `message contains~ "Failed"` | 🟠 Slower | Case-insensitive variant of `contains`; adds normalization overhead on top of full scan |
+| 10 | `matches regex` | `url.original matches regex @"https?://.*\.exe$"` | 🔴 Slowest | Full regex evaluation on every row; avoid on high-volume fields |
+
+**Key takeaway**: prefer `==` or `in` whenever possible. Only use `contains~` or `matches regex` when the use case strictly requires it, and make sure to apply more selective filters before them in the pipeline.
+
+```
+// Good: use endswith for a simple file extension check
+events
+| where timestamp > ago(1h)
+| where event.category == "file"
+| where file.name endswith ".exe"
+
+// Bad: matches regex used where endswith would suffice
+events
+| where timestamp > ago(1h)
+| where event.category == "file"
+| where file.name matches regex "\.exe$"
+```
+
 ## SOL Engine Limitations
 
 ### Internal Fetch Limit
