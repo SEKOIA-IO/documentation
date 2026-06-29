@@ -10,62 +10,76 @@ This guide walks you through the full installation of Sekoia Self-Hosted, from d
 
 ## Preparation 
 
-### Step 1: Download the release archive
+### Step 1: Download and verify the release archive
 
-Sekoia provides access to a dedicated S3 bucket containing the release archive. You receive the bucket credentials (endpoint, access key, secret key, and bucket name) from Sekoia after contract validation.
-
-To download the archive to your orchestration node, run:
-
-```bash
-aws s3 cp s3://<SEKOIA_BUCKET>/v0.0.1/sekoia-archive.tar.gz ./sekoia-archive.tar.gz \
-  --endpoint-url <S3_ENDPOINT>
-```
-
-Replace `<SEKOIA_BUCKET>` and `<S3_ENDPOINT>` with the values Sekoia provided.
-
-!!! note "S3 client alternatives"
-    You can use any S3-compatible client (rclone, MinIO client, s3cmd) to download the archive. The `aws` CLI example above is provided for reference.
-
-
-### Step 2: Verify the archive integrity
+Sekoia provides access to a dedicated object storage bucket containing the release archive and its SHA-256 checksum. You receive the bucket credentials (endpoint, access key, and secret key) from Sekoia after contract validation.
 
 !!! warning "Verify before you extract"
     Always verify the checksum before extracting the archive. A mismatch indicates a corrupted or incomplete download. Do not proceed if verification fails. Download the archive again before retrying.
 
-A SHA-256 checksum file is provided alongside the archive in the S3 bucket. Download it and run the verification:
+Download the archive and its checksum file, then verify integrity. Fill in your credentials where indicated.
 
-```bash
-aws s3 cp s3://<SEKOIA_BUCKET>/v0.0.1/sekoia-archive.tar.gz.sha256 . \
-  --endpoint-url <S3_ENDPOINT>
+??? example "AWS CLI"
+    ```bash
+    export AWS_ACCESS_KEY_ID=""
+    export AWS_SECRET_ACCESS_KEY=""
+    export AWS_DEFAULT_REGION="fr-par"
+    export ENDPOINT="https://fr-par-13.linodeobjects.com"
+    export BUCKET="self-hosted"
+    export KEY="archives/sekoia-self-hosted-v0.0.1.tar"
+    export OUT="sekoia-self-hosted-v0.0.1.tar"
+    export AWS_REQUEST_CHECKSUM_CALCULATION=WHEN_REQUIRED
+    export AWS_RESPONSE_CHECKSUM_VALIDATION=WHEN_REQUIRED
 
-sha256sum -c sekoia-archive.tar.gz.sha256
-```
+    aws --endpoint-url "$ENDPOINT" s3 cp "s3://$BUCKET/$KEY" "$OUT"
+    aws --endpoint-url "$ENDPOINT" s3 cp "s3://$BUCKET/$KEY.sha256" "$OUT.sha256"
 
-Expected output: `sekoia-archive.tar.gz: OK`
+    sha256sum -c "$OUT.sha256"
+    ```
 
-### Step 3: Transfer and extract the archive
+    !!! note "AWS CLI v2 checksum compatibility"
+        `AWS_REQUEST_CHECKSUM_CALCULATION=WHEN_REQUIRED` and `AWS_RESPONSE_CHECKSUM_VALIDATION=WHEN_REQUIRED` disable the automatic checksum behavior introduced in AWS CLI v2, which is incompatible with non-AWS S3-compatible providers.
+
+??? example "rclone"
+    ```bash
+    export RCLONE_CONFIG_SEKOIA_TYPE="s3"
+    export RCLONE_CONFIG_SEKOIA_PROVIDER="Other"
+    export RCLONE_CONFIG_SEKOIA_ACCESS_KEY_ID=""
+    export RCLONE_CONFIG_SEKOIA_SECRET_ACCESS_KEY=""
+    export RCLONE_CONFIG_SEKOIA_ENDPOINT="https://fr-par-13.linodeobjects.com"
+    export RCLONE_CONFIG_SEKOIA_REGION="fr-par"
+
+    rclone copyto sekoia:self-hosted/archives/sekoia-self-hosted-v0.0.1.tar ./sekoia-self-hosted-v0.0.1.tar
+    rclone copyto sekoia:self-hosted/archives/sekoia-self-hosted-v0.0.1.tar.sha256 ./sekoia-self-hosted-v0.0.1.tar.sha256
+
+    sha256sum -c sekoia-self-hosted-v0.0.1.tar.sha256
+    ```
+
+Expected output: `sekoia-self-hosted-v0.0.1.tar: OK`
+
+### Step 2: Transfer and extract the archive
 
 To transfer the archive to the orchestration node if you downloaded it on a separate machine, run:
 
 ```bash
-scp sekoia-archive.tar.gz user@<ORCHESTRATION_NODE>:$SEKOIA_LOCAL_DIR
+scp sekoia-self-hosted-v0.0.1.tar user@<ORCHESTRATION_NODE>:$SEKOIA_LOCAL_DIR
 ```
 
 !!! note "Disk space"
-    Ensure at least 100 GB of available disk space at the destination before extracting.
+    Ensure at least 150 GB of available disk space at the destination before extracting.
 
 To extract the archive on the orchestration node, run:
 
 ```bash
-tar -xvf sekoia-archive.tar.gz -C $SEKOIA_LOCAL_DIR
+tar -xvf sekoia-self-hosted-v0.0.1.tar -C $SEKOIA_LOCAL_DIR
 ```
 
-### Step 4: Load the SHC Docker image
+### Step 3: Load the SHC Docker image
 
 For the first installation, the SHC image is not yet available on the orchestration node. Load it manually from the extracted archive:
 
 ```bash
-docker load -i $SEKOIA_LOCAL_DIR/v0.0.1/images/self-hosted-controller.tgz
+docker load -i $SEKOIA_LOCAL_DIR/v0.0.1/images/registry.sekoia.io_sekoialab_platform-installer-self-hosted-v0.0.1.tar.gz
 ```
 
 To confirm the image loaded successfully, run:
@@ -84,7 +98,7 @@ docker images | grep self-hosted-controller
 
     Replace `<IMAGE_ID>` with the image ID returned by `docker images`.
 
-### Step 5: Create the execution script
+### Step 4: Create the execution script
 
 The execution script `run-shc.sh` wraps all SHC invocations, injects credentials from environment variables, and mounts your config file into the container.
 
