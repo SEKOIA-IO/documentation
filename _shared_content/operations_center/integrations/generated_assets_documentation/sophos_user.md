@@ -14,7 +14,7 @@
 
 ## Information Collected
 
-The Sophos EDR Users fetches comprehensive information and transforms it into the OCSF (Open Cybersecurity Schema Framework) format for standardized security monitoring and asset management.
+The Sophos EDR Users fetch comprehensive information and transform it into the OCSF (Open Cybersecurity Schema Framework) format for standardized security monitoring and asset management.
 
 
 ### API Response Examples
