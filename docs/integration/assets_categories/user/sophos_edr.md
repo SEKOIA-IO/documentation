@@ -25,7 +25,7 @@ In the Sophos Central Admin console:
 1. On the left panel, go to `Global Settings` and select `API Credentials Management`.
 2. Click on `Add Credential` to create a credential dedicated to Sekoia.io.
 3. Give it a name, select the role `Service Principal ReadOnly` and click on `Add`.
-4. In the `API credential Summary`, copy the `Client ID` and the `Client Secret`. It will be used later in Sekoia.io to retrieve the events.
+4. In the `API credential Summary`, copy the `Client ID` and the `Client Secret`. It will be used later in Sekoia.io to retrieve the assets.
 
 ### Create your asset connector
 
