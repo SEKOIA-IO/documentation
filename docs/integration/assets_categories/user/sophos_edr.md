@@ -47,11 +47,11 @@ To start getting your Sophos assets into Sekoia.io, you need to create an asset 
     - **API Host**: The API host URL of your Sophos EDR instance (default: `https://api.central.sophos.com`).
     - **OAuth2 authorization URL**: The Sophos OAuth2 token endpoint (default: `https://id.sophos.com/api/v2/oauth2/token`).
 
-    ![Sophos EDR connector configuration form](/assets/operation_center/asset_connectors/device/sophos/sophos_connector.png)
+    ![Sophos EDR connector configuration form](/assets/operation_center/asset_connectors/user/sophos/sophos_connector.png)
 
 4. Test the connection by clicking the **Test connector** button.
 
-    ![Connector test result and Create asset connector button highlighted](/assets/operation_center/asset_connectors/device/sophos/sophos_test.png)
+    ![Connector test result and Create asset connector button highlighted](/assets/operation_center/asset_connectors/user/sophos/sophos_test.png)
 
 5. Click the **Create asset connector** button.
 
