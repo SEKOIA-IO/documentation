@@ -40,7 +40,7 @@ A Sophos directory user with full name and email address
 ```
 
 #### Windows local account
-A Sophos directory user representing a Windows local account (DOMAIN\username)
+A Sophos directory user representing a Windows local account (`DOMAIN\username`)
 
 ```json
 {
