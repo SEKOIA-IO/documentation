@@ -1,7 +1,12 @@
-Changelog _last update on 2026-06-24_
+Changelog _last update on 2026-06-29_
 
 ## Changelog
 
+### Netskope DLP Alert
+  - 29/06/2026 - minor - Update rule similarity
+  - 27/02/2026 - minor - Update rule type to integration
+  - 28/03/2024 - minor - Rule effort was updated to master
+    
 ### Microsoft Defender XDR Alert
   - 03/06/2026 - major - Added a new condition to match only on alerts to avoid false positives.
   - 13/09/2024 - major - Update service name value following Microsoft change
@@ -260,10 +265,6 @@ Changelog _last update on 2026-06-24_
 ### Netskope Admin Audit High Severity
   - 27/02/2026 - minor - Update rule type to integration
   - 29/01/2025 - minor - Rework pattern for high severity events only and filter out authentication events.
-  - 28/03/2024 - minor - Rule effort was updated to master
-    
-### Netskope DLP Alert
-  - 27/02/2026 - minor - Update rule type to integration
   - 28/03/2024 - minor - Rule effort was updated to master
     
 ### Varonis Data Security Intrusion Detection High Severity Alert

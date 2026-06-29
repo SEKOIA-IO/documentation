@@ -1,4 +1,4 @@
-Rules catalog includes **1074 built-in detection rules** ([_last update on 2026-06-24_](rules_changelog.md)).
+Rules catalog includes **1074 built-in detection rules** ([_last update on 2026-06-29_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Identity Information**
 
@@ -11207,6 +11207,7 @@ Rules catalog includes **1074 built-in detection rules** ([_last update on 2026-
     
         - 28/03/2024 - minor - Rule effort was updated to master
         - 27/02/2026 - minor - Update rule type to integration
+        - 29/06/2026 - minor - Update rule similarity
             
 **Account Discovery**
 
@@ -11933,6 +11934,7 @@ Rules catalog includes **1074 built-in detection rules** ([_last update on 2026-
     
         - 28/03/2024 - minor - Rule effort was updated to master
         - 27/02/2026 - minor - Update rule type to integration
+        - 29/06/2026 - minor - Update rule similarity
             
 **Adversary-in-the-Middle**
 
