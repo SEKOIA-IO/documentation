@@ -23,7 +23,12 @@ When no similarity strategy is configured, all of a rule's matches are grouped i
 
 ## Configuring a similarity strategy
 
+## Configuring a similarity strategy
+
 To group a rule's matches into separate alerts, configure one or more similarity strategies on the rule. You select the fields that define similarity. Matches that share the same values for those fields are grouped into one alert; matches with different values are raised as separate alerts.
+
+!!! note "Available fields depend on your query"
+    The fields listed in the similarity strategy selector reflect what your query actually returns. If your query targets `events` without a `select` clause, all event fields are available. If your query uses a `select` on specific fields (for example, `select events.id, source.ip`), only those selected fields are listed. This ensures you can only configure similarity on data the rule will actually produce.
 
 You can also group fields that are interchangeable so their values can be swapped when matching. Interchangeable fields are written as a nested list, for example `[source.ip, destination.ip]`, following the same notation used elsewhere for similarity strategies.
 
