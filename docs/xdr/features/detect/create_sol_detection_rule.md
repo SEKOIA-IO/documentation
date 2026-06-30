@@ -5,7 +5,7 @@ SOL detection rules let you operationalize your SOL investigation queries as sta
 ## Prerequisites
 
 - You have an active Sekoia.io account with permissions to create detection rules.
-- You have a valid SOL query ready to use as your detection logic.
+- You are familiar with SOL query syntax or have an existing query you want to reuse.
 - For Event Drop rules: you have identified the source to monitor (all incoming events, a specific intake, or a specific asset).
 
 ## Create a SOL detection rule
@@ -43,17 +43,33 @@ In the **Query** field, enter your SOL query. This is the query that will execut
 
 In the **Run query every** field, enter a value and select the time unit: minutes, hours, or days. The rule then runs at that frequency.
 
+!!! warning "Minimum schedule interval"
+    The minimum accepted schedule is every 5 minutes. Cron expressions that define a more frequent interval are not supported.
+
+??? example "Common cron expressions"
+    | Expression | Meaning |
+    |---|---|
+    | `*/5 * * * *` | Every 5 minutes (minimum interval) |
+    | `*/15 * * * *` | Every 15 minutes |
+    | `0 * * * *` | Every hour |
+    | `0 8 * * *` | Every day at 08:00 UTC |
+
 !!! note "Late-arriving events"
     You do not need to widen the schedule to account for ingestion lag. The platform automatically extends each run 5 minutes into the past to catch events that arrive after their timestamp, and deduplicates overlapping results so the same alert is not raised twice. See [Lag management for SOL detection rules](/xdr/features/detect/sol_detection_lag_management.md).
 
 ### Step 5: Configure the similarity strategy (optional)
 
-By default, all of a rule's matches are grouped into a single alert: each new match increments that alert's occurrence counter instead of creating a separate alert. You do not need to configure anything to get this behavior.
+### Step 5: Configure event grouping and similarity (optional)
 
-To split matches into separate alerts, configure a similarity strategy by selecting one or more fields. Matches that share the same values for those fields are grouped into one alert, and matches with different values are raised as separate alerts. You can also group interchangeable fields, written as `[source.ip, destination.ip]`, so their values can be swapped when matching.
+If you want multiple result rows from a single execution to be grouped into one alert instead of generating separate alerts, enable the **Group events** option.
+
+!!! warning "Incompatibility with similarity strategy"
+    **Group events** and **Similarity strategy** are mutually exclusive. Enabling **Group events** disables the similarity strategy for this rule.
+
+If you do not enable **Group events**, you can configure a **Similarity strategy** to control how the platform deduplicates alerts across executions.
 
 !!! note "Similarity for SOL rules"
-    SOL detection rules apply no default similarity strategy based on the datasource, because a SOL rule can query any datasource. See [Alert similarity for SOL detection rules](/xdr/features/detect/sol_detection_similarity.md) to understand the default grouping and when to configure a strategy.
+   The fields available in the **Similarity strategy** selector depend on your query.  SOL detection rules apply no default similarity strategy based on the datasource, because a SOL rule can query any datasource. See [Alert similarity for SOL detection rules](/xdr/features/detect/sol_detection_similarity.md) to understand the default grouping and when to configure a strategy.
 
 ### Step 6: Complete the rule metadata
 
