@@ -38,8 +38,37 @@ Cisco Secure Access can export your logs to a Cisco-managed Amazon S3 bucket. Ci
 
 {!_shared_content/integration/connector_configuration.md!}
 
+When selecting the trigger, choose **Fetch new logs on S3 (without SQS)**.
+
+Before configuring the connector, retrieve the **Data path** from the Cisco Secure Access **Amazon S3 Summary** page. It looks like this:
+
+```text
+s3://cisco-managed-eu-central-1/1234567_a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0
+```
+
+From this path:
+
+- the **bucket name** is the first segment after `s3://` — here, `cisco-managed-eu-central-1`.
+- the **base prefix** is the second segment — here, `1234567_a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0`. Cisco stores each log type in a dedicated subfolder under this prefix.
+
 In the connector configuration, set the following fields:
 
-- **AWS Region** (`aws_region_name`): the region you selected when configuring the S3 bucket in Cisco Secure Access.
+- **AWS Region** (`aws_region_name`): the region you selected when configuring the S3 bucket in Cisco Secure Access (for example, `eu-central-1`).
 - **AWS Access Key** (`aws_access_key`): the Access Key copied from the Cisco Secure Access Amazon S3 Summary page.
 - **AWS Secret Access Key** (`aws_secret_access_key`): the Secret Key copied from the Cisco Secure Access Amazon S3 Summary page.
+- **Bucket** (`bucket`): the bucket name extracted from the Data path (for example, `cisco-managed-eu-central-1`).
+- **Prefix filter** (`prefix_filter`): the base prefix followed by the subfolder matching the log type you want to collect. Since the bucket holds several log types, this filter ensures the connector only ingests the logs for this intake.
+- **Intake key** (`intake_key`): the intake key generated when you created the intake in [Step 2](#step-2-create-the-intake).
+
+Cisco Secure Access stores each log type in a dedicated subfolder under the base prefix. Set the **Prefix filter** to `<base_prefix>/<subfolder>`, using the subfolder that matches the intake you are configuring:
+
+| Intake | Subfolder | Example prefix filter |
+| --- | --- | --- |
+| Cisco Secure Access - DNS | `dnslogs` | `1234567_a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0/dnslogs` |
+| Cisco Secure Access - Web | `proxylogs` | `1234567_a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0/proxylogs` |
+| Cisco Secure Access - Cloud Firewall | `firewalllogs` | `1234567_a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0/firewalllogs` |
+| Cisco Secure Access - IPS | `intrusionlogs` | `1234567_a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0/intrusionlogs` |
+| Cisco Secure Access - File Events | `fileeventlogs` | `1234567_a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0/fileeventlogs` |
+
+!!! Note
+    Replace `1234567_a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0` with the base prefix extracted from your own Cisco Secure Access Data path.
