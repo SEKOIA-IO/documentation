@@ -57,8 +57,6 @@ In the **Run query every** field, enter a value and select the time unit: minute
 !!! note "Late-arriving events"
     You do not need to widen the schedule to account for ingestion lag. The platform automatically extends each run 5 minutes into the past to catch events that arrive after their timestamp, and deduplicates overlapping results so the same alert is not raised twice. See [Lag management for SOL detection rules](/xdr/features/detect/sol_detection_lag_management.md).
 
-### Step 5: Configure the similarity strategy (optional)
-
 ### Step 5: Configure event grouping and similarity (optional)
 
 If you want multiple result rows from a single execution to be grouped into one alert instead of generating separate alerts, enable the **Group events** option.
