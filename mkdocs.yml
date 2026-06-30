@@ -95,9 +95,9 @@ nav:
         - Manage feeds: cti/features/consume/manage_feeds.md
         - Create a detection rule from a feed: cti/features/consume/create_detection_rule_from_feed.md
       - Graph Explorations: cti/features/consume/graph_explorations.md
-      - Reports: 
-          - FLINT Reports: cti/features/consume/flints.md
-          - External Reports: cti/features/consume/external_reports.md
+      - Reports:
+        - FLINT Reports: cti/features/consume/flints.md
+        - External Reports: cti/features/consume/external_reports.md
       - Export: cti/features/consume/export.md
       - IOCs Collections: cti/features/consume/ioccollections.md
     - Monitor:
