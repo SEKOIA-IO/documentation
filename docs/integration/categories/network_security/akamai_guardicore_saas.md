@@ -64,7 +64,7 @@ Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a n
 
     intake.usa1.sekoia.io:10514
 
-    You can find your region’s domain here: [https://docs.sekoia.io/getting_started/regions/](https://docs.sekoia.io/getting_started/regions/)
+    You can find your region’s domain here: [https://docs.sekoia.com/getting_started/regions/](https://docs.sekoia.com/getting_started/regions/)
 
 - In the `Exporting options` section:
     - Enable `Export incidents`
@@ -113,7 +113,7 @@ Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a n
 
     intake.usa1.sekoia.io:10514
 
-    You can find your region’s domain here: [https://docs.sekoia.io/getting_started/regions/](https://docs.sekoia.io/getting_started/regions/)
+    You can find your region’s domain here: [https://docs.sekoia.com/getting_started/regions/](https://docs.sekoia.com/getting_started/regions/)
 
 - In the `Exporting options` section:
     - Click `+ Add`

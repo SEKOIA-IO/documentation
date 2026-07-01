@@ -33,7 +33,7 @@ You can freely use this open specification to share and publish playbook templat
             "type": {
               "type": "string",
               "enum": ["trigger", "action", "operator"],
-              "description": "Type of the node, see https://docs.sekoia.io/xdr/features/automate/"
+              "description": "Type of the node, see https://docs.sekoia.com/xdr/features/automate/"
             },
             "icon": {
               "type": "string",
@@ -113,7 +113,7 @@ You can freely use this open specification to share and publish playbook templat
 
 ### Upload a JSON playbook to your Sekoia.io community
 
-Active Sekoia.io Defend subscribers can upload a playbook to their community from any source via [a POST API endpoint](https://docs.sekoia.io/xdr/develop/rest_api/playbooks/#tag/Playbooks/operation/post_playbooks_resource) or via copy-paste in the Code tab:
+Active Sekoia.io Defend subscribers can upload a playbook to their community from any source via [a POST API endpoint](https://docs.sekoia.com/xdr/develop/rest_api/playbooks/#tag/Playbooks/operation/post_playbooks_resource) or via copy-paste in the Code tab:
 
 ![](img/playbook_code.png){: style="max-width:100%"}
 

@@ -20,7 +20,7 @@ On the "SIEM Integration" page in the "System" menu, you can set up the routing 
 !!! Warning
     This page is only displayed when the "SIEM" functionality is associated with the license key.
 
-To set up routing via the syslog server you previously setup, such as the [Sekoia.io Forwarder](https://docs.sekoia.io/integration/ingestion_methods/syslog/sekoiaio_forwarder/), enter the following information:
+To set up routing via the syslog server you previously setup, such as the [Sekoia.io Forwarder](https://docs.sekoia.com/integration/ingestion_methods/syslog/sekoiaio_forwarder/), enter the following information:
 
 - server IP address or FQDN,
 - transmission protocol (UDP or TCP),
@@ -45,7 +45,7 @@ Logs will then be sent to the selected IP address, port and transmission protoco
 
 ### Configure the syslog server
 
-Please consult the [Sekoia.io Forwarder](https://docs.sekoia.io/integration/ingestion_methods/syslog/sekoiaio_forwarder/) documentation to forward these logs to Sekoia.io.
+Please consult the [Sekoia.io Forwarder](https://docs.sekoia.com/integration/ingestion_methods/syslog/sekoiaio_forwarder/) documentation to forward these logs to Sekoia.io.
 
 {!_shared_content/operations_center/integrations/generated/6b8cb346-6605-4240-ac15-3828627ba899_sample.md!}
 
