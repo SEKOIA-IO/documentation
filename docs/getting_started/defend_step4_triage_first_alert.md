@@ -13,11 +13,11 @@ An alert is raised when an incoming event matches an active detection rule. Tria
 
 ## Before you begin
 
-- You have completed [Step 3: Activate detection rules](/getting_started/defend_step3_activate_detection_rules) and rules are active.
+- You have completed [Step 3: Activate detection rules](/getting_started/defend_step3_activate_detection_rules.md) and rules are active.
 - At least one alert has been raised in your community.
 
 !!! note "No alerts yet?"
-    If no alerts have appeared after your rules are active, your intakes may need more time to generate matching events. Check that your intake is receiving events (see [Step 2](/getting_started/defend_step2_verify_event_reception)) and that the corresponding rules are enabled. You can also lower the effort level filter to see if Elementary rules are active.
+    If no alerts have appeared after your rules are active, your intakes may need more time to generate matching events. Check that your intake is receiving events (see [Step 2](/getting_started/defend_step2_verify_event_reception.md)) and that the corresponding rules are enabled. You can also lower the effort level filter to see if Elementary rules are active.
 
 ## Open the alerts page
 
@@ -93,16 +93,19 @@ After reviewing the alert, update its status to reflect your analysis.
 
 If the alert is a false positive and you expect the same rule to trigger repeatedly on the same benign activity, create an alert filter to suppress future occurrences.
 
-1. In the **Events** tab, click **Toggle value selection** in the top right of the events list.
+1. In the **Events** tab, click **Toggle value selection** icon in the top right of the events list.
 2. Select the field values that identify this specific false positive pattern.
-3. Click **Create an alert filter**.
+3. Click **New alert filter** icon.
 4. Enter a name for the filter (required) and an optional description.
 5. The filter pattern is pre-filled from your selected values. Review it.
-6. Click **Add**.
+6. To reject the current alert (optional), select the "Reject current alert" option, and select a status and verdict to apply.
+7. Click **Create alert filter**.
 
-By default, the current alert is also rejected when the filter is created. The filter takes effect immediately for future matching events.
+The filter takes effect immediately for future matching events. 
+
+
 
 ## Related links
 
-- [Step 5: Automate with playbooks](/getting_started/defend_step5_automate_with_playbooks) — Set up automated enrichment and response workflows for your alerts.
-- [Notification system overview](/getting_started/notification_system_overview) — Receive an email or Slack message when a high-urgency alert is raised.
+- [Step 5: Automate with playbooks](/getting_started/defend_step5_automate_with_playbooks.md) — Set up automated enrichment and response workflows for your alerts.
+- [Notification system overview](/getting_started/notification_system_overview.md) — Receive an email or Slack message when a high-urgency alert is raised.
