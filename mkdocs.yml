@@ -135,6 +135,11 @@ nav:
       - Sigma: xdr/features/detect/sigma.md
       - Anomaly Detection: xdr/features/detect/anomaly.md
       - IOCs Collections: xdr/features/detect/ioccollections.md
+      - SOL detection rules: xdr/features/detect/sol_detection_rule.md
+            - Create a SOL detection rule: xdr/features/detect/create_sol_detection_rule.md
+            - Create an Event Drop rule: xdr/features/detect/create_event_drop_from_source.md
+            - Alert similarity: xdr/features/detect/sol_detection_similarity.md
+            - Lag management: xdr/features/detect/sol_detection_lag_management.md
     - Investigate:
       - Alerts: xdr/features/investigate/alerts.md
       - Events page: xdr/features/investigate/events.md
@@ -170,9 +175,13 @@ nav:
       - Sekoia Operating Language:
         - SOL overview: xdr/features/investigate/sol_overview.md
         - Getting started: xdr/features/investigate/sol_getting_started.md
+        - SOL detection rules: xdr/features/detect/sol_detection_rule.md
+            - Create a SOL detection rule
+        - Create an Event Drop rule: xdr/features/detect/create_event_drop_from_source.md
         - Understand SOL performance: xdr/features/investigate/sol_best_practices.md
         - How-to guides: xdr/features/investigate/sol_how_to_guides.md
         - SOL Datasets: xdr/features/investigate/sol_datasets.md
+        - SOL detection rules: xdr/features/detect/sol_detection_rule.md
         - Query examples: xdr/features/investigate/sol_query_examples.md
         - "Reference: Datasources": xdr/features/investigate/sol_ref_datasources.md
         - "Reference: Operators": xdr/features/investigate/sol_ref_operators.md
