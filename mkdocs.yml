@@ -603,6 +603,8 @@ nav:
       - Okta: integration/assets_categories/device/okta_device.md
       - SentinelOne EDR: integration/assets_categories/device/sentinelone_edr.md
       - Sophos EDR: integration/assets_categories/device/sophos_edr.md
+    - Software:
+      - HarfangLab Software Assets: integration/assets_categories/software/harfanglab_software.md
     - User:
       - AWS IAM: integration/assets_categories/user/aws_iam_user.md
       - Microsoft Active Directory: integration/assets_categories/user/microsoft_ad_user.md
