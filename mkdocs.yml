@@ -135,7 +135,8 @@ nav:
       - Sigma: xdr/features/detect/sigma.md
       - Anomaly Detection: xdr/features/detect/anomaly.md
       - IOCs Collections: xdr/features/detect/ioccollections.md
-      - SOL detection rules: xdr/features/detect/sol_detection_rule.md
+      - SOL detection rules: 
+            - SOL detection rules overview: xdr/features/detect/sol_detection_rule.md
             - Create a SOL detection rule: xdr/features/detect/create_sol_detection_rule.md
             - Create an Event Drop rule: xdr/features/detect/create_event_drop_from_source.md
             - Alert similarity: xdr/features/detect/sol_detection_similarity.md
