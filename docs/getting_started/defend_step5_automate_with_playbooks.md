@@ -33,24 +33,22 @@ For your first playbook, use the **Alert created** trigger with a condition to l
 
 Sekoia provides a library of ready-made playbook templates for common use cases.
 
-1. In the navigation menu, select **Automate > Playbooks**.
-2. Click **+ Playbook**.
+1. In the navigation menu, select **Configure > Playbooks**.
+2. Click **+ New playbook**.
 3. Select **Use a template**.
 4. Browse the template library or search by keyword.
 5. Select a template that matches your use case (for example, **Enrich alert with VirusTotal** or **Send Slack notification on new alert**).
-6. Click **Use this template**.
+6. Click **Create**.
 7. Review the template configuration. Update any credentials or parameters required by the template (for example, an API key for a third-party service).
 8. Set a condition on the trigger to limit when the playbook runs (for example, only for alerts with urgency above 70).
 9. Click **Save**.
-10. Toggle the playbook to **Active**.
-
-> 📸 [SCREENSHOT SUGGESTION: The playbook template library showing a grid of available templates with names and descriptions. | ALT TEXT: Playbook template library with available automation templates listed as cards.]
+10. Toggle the playbook to **On**.
 
 ## Verify a playbook run
 
 After activating the playbook, wait for a new alert that matches the trigger condition. Then verify the playbook ran correctly.
 
-1. Navigate to **Automate > Playbooks**.
+1. Navigate to **Configure > Playbooks**.
 2. Click the playbook name to open its detail page.
 3. Select the **Runs** tab.
 4. Check the most recent run. A **Success** status confirms the playbook executed without errors.
@@ -58,7 +56,7 @@ After activating the playbook, wait for a new alert that matches the trigger con
 If the run shows an error, click the run to inspect the step where it failed and review the error message.
 
 !!! tip "Monitor playbook health"
-    Set up a notification to alert you when a playbook encounters an error. Navigate to **Settings > Notifications**, create a new rule, and select **A playbook has encountered an error** as the trigger.
+    Set up a notification to alert you when a playbook encounters an error. Navigate to **Settings > Notifications**, create a new rule, and select **A playbook encountered an error** as the trigger.
 
 ## Keep your playbooks efficient
 
@@ -73,5 +71,5 @@ For detailed guidance on designing and optimizing your playbook library, see the
 
 ## Related links
 
-- [Quick start: Defend](/getting_started/quick_start_defend) — Return to the overview of all five steps.
-- [Notification system overview](/getting_started/notification_system_overview) — Configure alerts for playbook errors and other operational events.
+- [Quick start: Defend](/getting_started/quick_start_defend.md) — Return to the overview of all five steps.
+- [Notification system overview](/getting_started/notification_system_overview.md) — Configure alerts for playbook errors and other operational events.
