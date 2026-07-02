@@ -88,8 +88,8 @@ Depending on your role and subscription, here is what you can achieve right away
 
 ## Related links
 
-- [Workspace and communities](/getting_started/workspace_and_communities) — How Sekoia organizes your environment and what each level controls.
-- [Glossary](/getting_started/glossary) — Definitions of key platform and cybersecurity terms.
-- [Quick start: Defend](/getting_started/quick_start_defend) — Five-step guide to start using Sekoia Defend.
-- [Quick start: Intelligence](/getting_started/quick_start_intelligence) — Two-step guide to start using Sekoia Intelligence.
-- [Quick start: Reveal](/getting_started/quick_start_reveal) — Setup guide for the Reveal asset intelligence module.
+- [Workspace and communities](/getting_started/workspace_and_communities.md) — How Sekoia organizes your environment and what each level controls.
+- [Glossary](/getting_started/glossary.md) — Definitions of key platform and cybersecurity terms.
+- [Quick start: Defend](/getting_started/quick_start_defend.md) — Five-step guide to start using Sekoia Defend.
+- [Quick start: Intelligence](/getting_started/quick_start_intelligence.md) — Two-step guide to start using Sekoia Intelligence.
+- [Quick start: Reveal](/getting_started/quick_start_reveal.md) — Setup guide for the Reveal asset intelligence module.
