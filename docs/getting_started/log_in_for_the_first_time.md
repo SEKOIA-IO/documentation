@@ -77,6 +77,6 @@ On your first login, review your profile settings:
 
 ## Related links
 
-- [Secure your account](/getting_started/secure_your_account) — Enable two-factor authentication and configure your account security settings.
-- [Workspace and communities](/getting_started/workspace_and_communities) — Understand the environment you have joined.
-- [Troubleshooting common issues](/getting_started/troubleshooting_common_issues) — Solutions for connectivity and login problems.
+- [Secure your account](/getting_started/secure_your_account.md) — Enable two-factor authentication and configure your account security settings.
+- [Workspace and communities](/getting_started/workspace_and_communities.md) — Understand the environment you have joined.
+- [Troubleshooting common issues](/getting_started/troubleshooting_common_issues.md) — Solutions for connectivity and login problems.
