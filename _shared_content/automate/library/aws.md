@@ -13,10 +13,10 @@ This module provides triggers to collect events from AWS
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
-| `aws_access_key` | `string` | The identifier of the access key (leave empty when using `aws_role_arn`) |
-| `aws_secret_access_key` | `string` | The secret associated to the access key (leave empty when using `aws_role_arn`) |
+| `aws_role_arn` | `string` | The ARN of the AWS role to assume |
+| `aws_access_key` | `string` | The identifier of the access key |
+| `aws_secret_access_key` | `string` | The secret associated to the access key |
 | `aws_region_name` | `string` | The area hosting the AWS resources |
-| `aws_role_arn` | `string` | The ARN of the IAM Role to assume via OIDC (leave empty when using static access keys) |
 
 ## Triggers
 
@@ -66,4 +66,4 @@ Get the last records from FlowLog (deprecated in flavor of Fetch new logs on S3)
 
 ## Extra
 
-Module **`AWS` v1.33.17**
+Module **`AWS` v1.37.0**
