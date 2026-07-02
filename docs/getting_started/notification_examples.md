@@ -11,7 +11,7 @@ type: reference
 
 This article provides ready-to-use templates for the most common notification scenarios in Sekoia. For each example, the trigger, recommended conditions, and suggested delivery action are listed. Use these as a starting point and adjust the conditions to match your environment.
 
-For setup instructions, see [Create a notification](/getting_started/create_a_notification).
+For setup instructions, see [Create a notification](/getting_started/create_a_notification.md).
 
 ## Intake monitoring
 
@@ -129,6 +129,6 @@ Receive an alert when a playbook encounters an error during execution.
 
 ## Related links
 
-- [Notification system overview](/getting_started/notification_system_overview) — Full list of available triggers and delivery channels.
-- [Create a notification](/getting_started/create_a_notification) — Step-by-step procedure to set up a notification rule.
-- [Manage notifications](/getting_started/manage_notifications) — How to edit, disable, or delete existing rules.
+- [Notification system overview](/getting_started/notification_system_overview.md) — Full list of available triggers and delivery channels.
+- [Create a notification](/getting_started/create_a_notification.md) — Step-by-step procedure to set up a notification rule.
+- [Manage notifications](/getting_started/manage_notifications.md) — How to edit, disable, or delete existing rules.
