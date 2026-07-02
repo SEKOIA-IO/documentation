@@ -29,10 +29,10 @@ To change the roles assigned to a user:
 
 1. Navigate to **Settings > Workspace > Users**.
 2. Click the user's name to open their detail page.
-3. In the **Roles** section, click **Add role** to assign a new role or click the **Delete** icon next to a role to remove it.
+3. In the **Roles** section, click **Manage roles** to assign a new role.
 4. Save your changes.
 
-A user can hold multiple roles simultaneously. Their effective permissions are the union of all assigned roles.
+A user can hold multiple custom or one built-in roles simultaneously. Their effective permissions are the union of all assigned roles.
 
 ## Deactivate a user account
 
@@ -77,7 +77,7 @@ Deleting a user permanently removes them from the community. This action cannot 
 To delete a user:
 
 1. Click the user's name to open their detail page.
-2. Click **Delete user**.
+2. Click **Delete from community**.
 3. Confirm the deletion.
 
 ## Automatic deactivation for inactive accounts
@@ -86,12 +86,12 @@ To comply with PCI/DSS requirements, Sekoia can automatically deactivate account
 
 To enable this setting:
 
-1. Navigate to **Settings > Workspace > Workspace Security**.
-2. Find the **Deactivate inactive accounts** section.
+1. Navigate to **Settings > Workspace > Security**.
+2. Find the **Inactive accounts deactivation** section.
 3. Enable the toggle and confirm.
 
 ## Related links
 
-- [Invite users](/getting_started/invite_users) — How to add new users to a workspace or community.
-- [Roles and permissions](/getting_started/roles_and_permissions) — Overview of role types and permission levels.
-- [Secure your account](/getting_started/secure_your_account) — How to reset a user's two-factor authentication.
+- [Invite users](/getting_started/invite_users.md) — How to add new users to a workspace or community.
+- [Roles and permissions](/getting_started/roles_and_permissions.md) — Overview of role types and permission levels.
+- [Secure your account](/getting_started/secure_your_account.md) — How to reset a user's two-factor authentication.
