@@ -21,35 +21,35 @@ You have received an invitation to join a workspace. Your goal is to understand 
 
 | Step | What to do |
 |---|---|
-| 1 | [Understand the platform](/getting_started/what_is_sekoia) — Learn what Sekoia is and how its products work together. |
-| 2 | [Set up your account](/getting_started/log_in_for_the_first_time) — Log in, secure your account, and customize your interface. |
-| 3 | Start using Sekoia — Follow the quick start guide for your product: [Defend](/getting_started/quick_start_defend), [Intelligence](/getting_started/quick_start_intelligence), [Reveal](/getting_started/quick_start_reveal). |
+| 1 | [Understand the platform](/getting_started/what_is_sekoia.md) — Learn what Sekoia is and how its products work together. |
+| 2 | [Set up your account](/getting_started/log_in_for_the_first_time.md) — Log in, secure your account, and customize your interface. |
+| 3 | Start using Sekoia — Follow the quick start guide for your product: [Defend](/getting_started/quick_start_defend.md), [Intelligence](/getting_started/quick_start_intelligence.md), [Reveal](/getting_started/quick_start_reveal.md). |
 
 ### You are an administrator
 
 You are responsible for setting up Sekoia for your team. Your goal is to configure the workspace, invite users, and make the platform ready for operations.
 
 !!! note "Admin tasks"
-    The [Set up your workspace](/getting_started/workspace_setup_overview) section is intended for administrators. It covers subscription management, user and role configuration, API keys, and notifications.
+    The [Set up your workspace](/getting_started/workspace_setup_overview.md) section is intended for administrators. It covers subscription management, user and role configuration, API keys, and notifications.
 
 | Step | What to do |
 |---|---|
-| 1 | [Understand the platform](/getting_started/what_is_sekoia) — Learn what Sekoia is and how its products work together. |
-| 2 | [Set up your account](/getting_started/log_in_for_the_first_time) — Log in and secure your account. |
-| 3 | [Set up your workspace](/getting_started/workspace_setup_overview) — Configure your subscription, invite users, assign roles, and prepare the environment. |
-| 4 | [Start protecting your organization](/getting_started/quick_start_defend) — Follow the Defend quick start alongside your analysts. |
+| 1 | [Understand the platform](/getting_started/what_is_sekoia.md) — Learn what Sekoia is and how its products work together. |
+| 2 | [Set up your account](/getting_started/log_in_for_the_first_time.md) — Log in and secure your account. |
+| 3 | [Set up your workspace](/getting_started/workspace_setup_overview.md) — Configure your subscription, invite users, assign roles, and prepare the environment. |
+| 4 | [Start protecting your organization](/getting_started/quick_start_defend.md) — Follow the Defend quick start alongside your analysts. |
 
 ## What you will find in this documentation
 
 | Section | What it covers |
 |---|---|
-| [Understand Sekoia](/getting_started/what_is_sekoia) | Platform overview, key concepts, navigation, glossary |
-| [Set up your account](/getting_started/log_in_for_the_first_time) | First login, two-factor authentication, interface customization |
-| [Set up your workspace](/getting_started/workspace_setup_overview) (Admin) | Subscription, users, roles, API keys, notifications |
-| [Quick start: Defend](/getting_started/quick_start_defend) | Connect data sources, activate detection rules, triage alerts, automate responses |
-| [Quick start: Intelligence](/getting_started/quick_start_intelligence) | Explore the threat database, read reports, set up feeds |
-| [Quick start: Reveal](/getting_started/quick_start_reveal) | Asset intelligence setup |
-| [Get help](/getting_started/support_and_resources) | Support portal, Academy, community, troubleshooting |
+| [Understand Sekoia](/getting_started/what_is_sekoia.md) | Platform overview, key concepts, navigation, glossary |
+| [Set up your account](/getting_started/log_in_for_the_first_time.md) | First login, two-factor authentication, interface customization |
+| [Set up your workspace](/getting_started/workspace_setup_overview.md) (Admin) | Subscription, users, roles, API keys, notifications |
+| [Quick start: Defend](/getting_started/quick_start_defend.md) | Connect data sources, activate detection rules, triage alerts, automate responses |
+| [Quick start: Intelligence](/getting_started/quick_start_intelligence.md) | Explore the threat database, read reports, set up feeds |
+| [Quick start: Reveal](/getting_started/quick_start_reveal.md) | Asset intelligence setup |
+| [Get help](/getting_started/support_and_resources.md) | Support portal, Academy, community, troubleshooting |
 
 ## Your onboarding journey
 
@@ -64,6 +64,6 @@ After you receive your invitation email, follow these steps to get started:
 
 ## Related links
 
-- [What is Sekoia](/getting_started/what_is_sekoia) — Overview of the Sekoia AI SOC platform and its product suite.
-- [Glossary](/getting_started/glossary) — Definitions of key terms used across the platform.
-- [Get help](/getting_started/support_and_resources) — Support portal, Academy, and community resources.
+- [What is Sekoia](/getting_started/what_is_sekoia.md) — Overview of the Sekoia AI SOC platform and its product suite.
+- [Glossary](/getting_started/glossary.md) — Definitions of key terms used across the platform.
+- [Get help](/getting_started/support_and_resources.md) — Support portal, Academy, and community resources.
