@@ -19,11 +19,11 @@ To give a team member access to Sekoia, you send them an invitation from the wor
 ## Invite a user by email
 
 1. Navigate to **Settings > Workspace > Users**.
-2. Click **Add new users**.
+2. Click **+ New users**.
 3. Enter the email addresses of the users you want to invite. Separate multiple addresses with a comma.
 4. Select the communities you want to add the users to.
 5. Assign a role for each community.
-6. Click **Send invitation**.
+6. Click **Add new users**.
 
 Invited users receive a welcome email with a link to set their password. The link is valid for 24 hours.
 
@@ -42,12 +42,12 @@ When automatic creation is enabled:
 - A new user account is created on first login without requiring a manual invitation.
 - You can set the default role assigned to automatically created users.
 
-To configure this option, navigate to **Settings > Workspace > Security > SSO** and enable **Automatic user creation**.
+To configure this option, navigate to **Settings > Workspace > Security > SSO > Configure** and enable **Automatic user creation**.
 
 See the SSO configuration guide for the full setup procedure.
 
 ## Related links
 
-- [Manage users](/getting_started/manage_users) — How to edit roles, deactivate accounts, and remove users after they have been invited.
-- [Roles and permissions](/getting_started/roles_and_permissions) — Overview of built-in and custom roles to help you choose the right access level.
-- [Workspace setup overview](/getting_started/workspace_setup_overview) — Full admin checklist for configuring a workspace.
+- [Manage users](/getting_started/manage_users.md) — How to edit roles, deactivate accounts, and remove users after they have been invited.
+- [Roles and permissions](/getting_started/roles_and_permissions.md) — Overview of built-in and custom roles to help you choose the right access level.
+- [Workspace setup overview](/getting_started/workspace_setup_overview.md) — Full admin checklist for configuring a workspace.
