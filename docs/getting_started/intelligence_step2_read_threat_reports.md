@@ -13,13 +13,13 @@ Sekoia analysts publish regular threat reports, including FLINT (Flash Intellige
 
 ## Before you begin
 
-- You have completed [Step 1: Explore the threat intelligence database](/getting_started/intelligence_step1_explore_threat_database).
+- You have completed [Step 1: Explore the threat intelligence database](/getting_started/intelligence_step1_explore_threat_database.md).
 
 ## Find threat reports
 
 ### Search for reports
 
-1. In the navigation menu, select **Intelligence**.
+1. In the navigation menu, select **Observe** > **Intelligence**.
 2. Enter a topic in the search bar (for example, a threat actor name, a malware family, or a sector).
 3. In the results, open the **Objects** tab.
 4. Filter by **Type > Report** to display only reports.
@@ -30,7 +30,7 @@ To see all available reports:
 
 1. Open the filter panel on the Intelligence page.
 2. Set **Type** to **Report**.
-3. Sort by **Last edited** to see the most recent reports first.
+3. By default the table is sorted by **Last edited** to see the most recent reports firt.
 
 ## Understand FLINT reports
 
@@ -67,8 +67,8 @@ A feed is a filtered, personalized view of the Intelligence database that shows 
 
 To create a feed:
 
-1. In the navigation menu, select **Intelligence > Feeds**.
-2. Click **+ Feed**.
+1. In the navigation menu, select **Observe > Feeds**.
+2. Click **+ New Feed**.
 3. Enter a name for the feed (for example, `Finance sector threats`).
 4. Set filters based on your interests: sector, geography, threat type, or TLP level.
 5. Save the feed.
@@ -88,10 +88,10 @@ To be notified whenever a new report matching your criteria is published:
 
 You now receive an alert each time Sekoia publishes a relevant new report.
 
-See: [Create a notification](/getting_started/create_a_notification) for the full procedure.
+See: [Create a notification](/getting_started/create_a_notification.md) for the full procedure.
 
 ## Related links
 
-- [Quick start: Intelligence](/getting_started/quick_start_intelligence) — Return to the overview of the Intelligence quick start.
-- [Create a notification](/getting_started/create_a_notification) — Full procedure for setting up notification rules.
-- [Glossary](/getting_started/glossary) — Definitions of FLINT, IOC, TLP, indicator, and feed.
+- [Quick start: Intelligence](/getting_started/quick_start_intelligence.md) — Return to the overview of the Intelligence quick start.
+- [Create a notification](/getting_started/create_a_notification.md) — Full procedure for setting up notification rules.
+- [Glossary](/getting_started/glossary.md) — Definitions of FLINT, IOC, TLP, indicator, and feed.
