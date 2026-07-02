@@ -28,12 +28,14 @@ API keys are required for:
 Only users with the Admin role can create API keys.
 
 1. Navigate to **Settings > Workspace > API Keys**.
-2. Click **+ API key**.
+2. Click **+ New API key**.
 3. Enter a descriptive name for the key (for example, `VirusTotal enrichment - Playbooks`).
 4. Enter a description of at least 10 characters explaining what the key is used for.
 5. Set an expiration date: 30 days, 180 days, 365 days, a custom duration up to one year, or no expiration.
 6. Select the permissions the key requires.
-7. Click **Save**.
+7. Click **Next**.
+8. Search and select permissions for your API key.
+9. Click **Save**.
 
 !!! warning "Copy the key immediately"
     The API key is displayed only once, immediately after creation. Copy it and store it in a secure vault before closing the window. Sekoia cannot display the key value again after you navigate away.
@@ -64,8 +66,8 @@ Revoking a key permanently disables it. This action cannot be undone.
 To revoke an API key:
 
 1. Navigate to **Settings > Workspace > API Keys**.
-2. Click **Edit** next to the key you want to revoke.
-3. Click **Revoke**.
+2. Click the line of the key you want to revoke.
+3. Click **Revoke API Key**.
 4. Confirm the action.
 
 ## Best practices
@@ -77,5 +79,5 @@ To revoke an API key:
 
 ## Related links
 
-- [Workspace setup overview](/getting_started/workspace_setup_overview) — Full admin checklist for configuring your workspace.
-- [Roles and permissions](/getting_started/roles_and_permissions) — How user roles differ from API key permissions.
+- [Workspace setup overview](/getting_started/workspace_setup_overview.md) — Full admin checklist for configuring your workspace.
+- [Roles and permissions](/getting_started/roles_and_permissions.md) — How user roles differ from API key permissions.
