@@ -42,7 +42,7 @@ _Please find below the explanation of the fields to be configured_
 **Optional**
 
 - `Sekoia API url`: the default url is https://api.sekoia.io
-- `Feed ID`: default feed is used by default. For custom feed, add the feed ID. Please find [more information on this documentation](https://docs.sekoia.io/cti/features/consume/feeds/#feeds-listing)
+- `Feed ID`: default feed is used by default. For custom feed, add the feed ID. Please find [more information on this documentation](https://docs.sekoia.com/cti/features/consume/feeds/#feeds-listing)
 - `Proxy URL` - Here are 2 ways to configure a proxy:
     1. If you need the Sekoia application for Splunk to connect directly through a proxy, this field needs to be filled on the installation page (To connect, in a Web browser, type and replace `username`, `password`,`host` and `port` by their values: http://[username:password@]host:port)
     2. If you don't want to distinguish the Sekoia application for Splunk network configuration from the configuration of your Splunk instance, the Sekoia application for Splunk takes into account the global Splunk proxy configuration provided by means of the `HTTP_PROXY` and `HTTPS_PROXY` environment variables.
@@ -93,13 +93,13 @@ An IOC is an observable that represents a malicious activity. For more informati
 2. Sightings will be displayed on a section
 ![Sekoia.io App for Splunk](/assets/intelligence_center/splunk.png)
 
-Please refer to [our documentation to search IOCs in Intelligence page](https://docs.sekoia.io/cti/features/consume/intelligence/#search-for-objects) for more information.
+Please refer to [our documentation to search IOCs in Intelligence page](https://docs.sekoia.com/cti/features/consume/intelligence/#search-for-objects) for more information.
 
 ## 5. Troubleshoot
 
 ### 1. False positive
 
-Compare Sekoia IOCs valid date in [Sekoia Intelligence](https://docs.sekoia.io/cti/features/consume/intelligence/#search-bars).
+Compare Sekoia IOCs valid date in [Sekoia Intelligence](https://docs.sekoia.com/cti/features/consume/intelligence/#search-bars).
 
 ### 2. Splunk issues
 

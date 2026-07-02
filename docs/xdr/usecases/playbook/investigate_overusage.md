@@ -15,7 +15,7 @@ To begin your investigation, you must confirm which community is exceeding its l
 2. Compare the monthly community usage against the fair use threshold.
 
 !!! note "Reference documentation"
-    For more information on reading usage metrics, see the [Usage page documentation](https://docs.sekoia.io/getting_started/usage/).
+    For more information on reading usage metrics, see the [Usage page documentation](https://docs.sekoia.com/getting_started/usage/).
 
 ## Identify the top-consuming intakes
 

@@ -315,7 +315,7 @@ print("Import finished")
 3. One IOC per line. Hashes belonging to the same IOC can be added on the same line separated by a comma
 4. It is possible to link the created indicators to several threats by providing their ids inside the `x_ic_related_threat_refs` field.
 5. When importing indicators various attributes can be provided like the validity dates, a description, the kill chain phases, ... 
-To get information about them check [the documentation about this endpoint](https://docs.sekoia.io/cti/develop/rest_api/intelligence/#tag/IOC-Collections/operation/post_collection_indicators_text_resource)
+To get information about them check [the documentation about this endpoint](https://docs.sekoia.com/cti/develop/rest_api/intelligence/#tag/IOC-Collections/operation/post_collection_indicators_text_resource)
 6. Connect to `LiveAPI` using a websocket to be notified in real time of events happening in the community
 7. Keep only messages that are about our task
 
@@ -412,6 +412,6 @@ Several values can be specified separated by commas.
 Several values can be specified separated by commas. i.e. `Phishing,APT-29`
 9.  If the first line contains the columns names we can ignore it when processing the file
 10.  When importing indicators various attributes can be provided like the validity dates, a description, the kill chain phases, ... 
-To get information about them check [the documentation about this endpoint](https://docs.sekoia.io/cti/develop/rest_api/intelligence/#tag/IOC-Collections/operation/post_collection_indicators_text_resource)
+To get information about them check [the documentation about this endpoint](https://docs.sekoia.com/cti/develop/rest_api/intelligence/#tag/IOC-Collections/operation/post_collection_indicators_text_resource)
 11.   Connect to `LiveAPI` using a websocket to be notified in real time of events happening in the community
 12.    Keep only messages that are about our task

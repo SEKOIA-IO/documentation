@@ -1,6 +1,6 @@
 # Reveal
 
-Reveal is a Sekoia add-on module that adds asset intelligence to your investigation workflows. It enriches the [asset context panel](https://docs.sekoia.io/xdr/features/investigate/asset_context_panel/) with vulnerability data, endpoint hygiene, behavioral signals, and attack path analysis.
+Reveal is a Sekoia add-on module that adds asset intelligence to your investigation workflows. It enriches the [asset context panel](https://docs.sekoia.com/xdr/features/investigate/asset_context_panel/) with vulnerability data, endpoint hygiene, behavioral signals, and attack path analysis.
 
 Use Reveal to answer questions that alerts alone cannot answer:
 

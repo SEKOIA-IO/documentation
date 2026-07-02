@@ -174,7 +174,7 @@ Please find below two python code examples, one with a `GET` request with `query
 
 ### Retrieving information with Query Parameters
 
-Let's delve into an example where we retrieve details about the rule titled "Suspicious Windows Defender Exclusion Command." To find this information, we can leverage the [List Rules](https://docs.sekoia.io/develop/rest_api/operation_center/configuration/#tag/rules-catalog/operation/get_rules_resource) endpoint.
+Let's delve into an example where we retrieve details about the rule titled "Suspicious Windows Defender Exclusion Command." To find this information, we can leverage the [List Rules](https://docs.sekoia.com/develop/rest_api/operation_center/configuration/#tag/rules-catalog/operation/get_rules_resource) endpoint.
 
 The documentation means that no parameters are mandatory for this request to execute successfully. However, to fulfill our specific requirement, we opt to use the `match[name]` parameter, designed to "Match rules by their name (separated by commas)."
 
@@ -221,7 +221,7 @@ if __name__ == '__main__':
 
 ### Create a SIGMA Rule with a POST Request and JSON Body
 
-In this example, we will create a simple SIGMA rule named "My custom SIGMA rule", so it will be a `POST` request. According to [this documentation](https://docs.sekoia.io/xdr/develop/rest_api/configuration/#tag/rules-catalog/operation/post_rules_resource) in order to create a new rule we must provide the request with a minimum of mandatory fields. You will find in the following table what we will use in the Python script:
+In this example, we will create a simple SIGMA rule named "My custom SIGMA rule", so it will be a `POST` request. According to [this documentation](https://docs.sekoia.com/xdr/develop/rest_api/configuration/#tag/rules-catalog/operation/post_rules_resource) in order to create a new rule we must provide the request with a minimum of mandatory fields. You will find in the following table what we will use in the Python script:
 
 
 In this scenario, we aim to create a SIGMA rule named "My custom SIGMA rule" through a **POST request**. Referring to the relevant documentation, some mandatory fields must be provided to successfully create a new rule. Below, you will find a summary of the key fields used in the Python script:
@@ -284,14 +284,14 @@ To address the asynchronous nature of event searches, Sekoia.io introduces the c
 
 We outline three essential steps involved in executing a search job:
 
-* [Create an event search job](https://docs.sekoia.io/xdr/develop/rest_api/configuration/#tag/events/operation/post_event_search_resource) - This step requires to provide the search query and the time window. The endpoint returns a `job UUID` which will be used in the next steps.
-* [Get an event search job](https://docs.sekoia.io/xdr/develop/rest_api/configuration/#tag/events/operation/get_event_search_job_info_resource) - This step is used to get information about the status of a job by providing its UUID. Jobs can have five statuses:
+* [Create an event search job](https://docs.sekoia.com/xdr/develop/rest_api/configuration/#tag/events/operation/post_event_search_resource) - This step requires to provide the search query and the time window. The endpoint returns a `job UUID` which will be used in the next steps.
+* [Get an event search job](https://docs.sekoia.com/xdr/develop/rest_api/configuration/#tag/events/operation/get_event_search_job_info_resource) - This step is used to get information about the status of a job by providing its UUID. Jobs can have five statuses:
     * `0`: the job is not started
     * `1`: the job is in progress
     * `2`: the job is done (events can be retrieved)
     * `3`: the job is canceled
     * `4`: the job has failed
-* [Get the events found by an event search job in descending order](https://docs.sekoia.io/xdr/develop/rest_api/configuration/#tag/events/operation/get_event_search_job_events_resource) - This steps is used to retrieved the events when the job is done (status `2`). It gives you the events in descending order (latest events first) and by default the limit is set to 100 events (up to 1000). An offset can be specified to get more of them.
+* [Get the events found by an event search job in descending order](https://docs.sekoia.com/xdr/develop/rest_api/configuration/#tag/events/operation/get_event_search_job_events_resource) - This steps is used to retrieved the events when the job is done (status `2`). It gives you the events in descending order (latest events first) and by default the limit is set to 100 events (up to 1000). An offset can be specified to get more of them.
 
 #### Python3 script
 This Python script uses these 3 actions to perform a search and print the events to STDOUT. Only the latest 100 are printed.
