@@ -14,11 +14,11 @@ The Sekoia Intelligence database contains hundreds of thousands of threat object
 ## Before you begin
 
 - You have an active Sekoia Intelligence subscription.
-- Familiarize yourself with the key terms: see [Glossary](/getting_started/glossary) for definitions of indicator, observable, IOC, STIX, and TLP.
+- Familiarize yourself with the key terms: see [Glossary](/getting_started/glossary.md) for definitions of indicator, observable, IOC, STIX, and TLP.
 
 ## Open the intelligence database
 
-In the navigation menu, select **Intelligence**.
+In the navigation menu, select **Observe** > **Intelligence**.
 
 The Intelligence page contains a main search bar and a results table. You can search from this page or from the search bar embedded in the navigation menu, which is accessible from any page in the platform.
 
@@ -102,5 +102,5 @@ To refine your search, open the filter panel on the right side of the results ta
 
 ## Related links
 
-- [Step 2: Read and act on threat reports](/getting_started/intelligence_step2_read_threat_reports) — Find and interpret FLINT reports and set up feeds.
-- [Glossary](/getting_started/glossary) — Definitions of key CTI terms.
+- [Step 2: Read and act on threat reports](/getting_started/intelligence_step2_read_threat_reports.md) — Find and interpret FLINT reports and set up feeds.
+- [Glossary](/getting_started/glossary.md) — Definitions of key CTI terms.
