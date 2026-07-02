@@ -78,10 +78,10 @@ To access the Subscriptions page, navigate to **Settings > Workspace > Subscript
 
 For each subscription, you can see:
 
-- The plan type (Defend Core, Defend Prime, or Intelligence)
+- The plan type (Defend Core, Defend Prime, Intelligence, etc)
 - The subscription period and expiration date
 - The region, number of defended assets, and storage retention values
-- The remaining days on the subscription
+- The remaining days on the subscription or a Pay As You Go (PAYG) badge depending of your billing model.
 
 !!! warning "Expired subscriptions"
     Communities with no active subscription are flagged with a red indicator in the multi-tenant community list. An expired subscription does not delete your data, but it may limit your access to platform features.
@@ -94,5 +94,5 @@ To view a comparison of available plans directly in the platform, click **Compar
 
 ## Related links
 
-- [Workspace setup overview](/getting_started/workspace_setup_overview) — Full checklist for configuring your workspace before your team starts.
-- [Invite users](/getting_started/invite_users) — How to add team members once your subscription is confirmed.
+- [Workspace setup overview](/getting_started/workspace_setup_overview.md) — Full checklist for configuring your workspace before your team starts.
+- [Invite users](/getting_started/invite_users.md) — How to add team members once your subscription is confirmed.
