@@ -9,7 +9,7 @@ type: task
 
 # Troubleshoot common issues
 
-This article covers the most common issues you may encounter when using Sekoia and provides first steps to resolve them. If a solution does not resolve your problem, contact support at [support.sekoia.io](https://support.sekoia.io).
+This article covers the most common issues you may encounter when using Sekoia and provides first steps to resolve them. If a solution does not resolve your problem, contact support at [support.sekoia.com](https://support.sekoia.com).
 
 ## Login and account issues
 
@@ -19,7 +19,7 @@ This article covers the most common issues you may encounter when using Sekoia a
 
 **What to do:**
 
-1. Verify your region URL with your administrator. Each Sekoia region has a different app URL (see [Log in for the first time](/getting_started/log_in_for_the_first_time) for the full table).
+1. Verify your region URL with your administrator. Each Sekoia region has a different app URL (see [Log in for the first time](/getting_started/log_in_for_the_first_time.md) for the full table).
 2. Try accessing the URL directly in your browser instead of using a saved bookmark.
 3. Check that your network does not block access to `*.sekoia.io`.
 
@@ -42,7 +42,7 @@ This article covers the most common issues you may encounter when using Sekoia a
 2. Wait for your authenticator app to generate a new code before trying again.
 3. If the problem persists, contact your workspace administrator and ask them to reset your 2FA.
 
-See: [Secure your account](/getting_started/secure_your_account) for the administrator reset procedure.
+See: [Secure your account](/getting_started/secure_your_account.md) for the administrator reset procedure.
 
 ### Your account has been deactivated
 
@@ -56,7 +56,7 @@ Contact your workspace administrator. They can reactivate your account from **Se
 
 **Symptom:** A network connectivity error banner appears at the top of the page, and data in the interface does not update without a manual page refresh.
 
-**Cause:** Your browser cannot maintain a WebSocket connection to `app.sekoia.io/live`.
+**Cause:** Your browser cannot maintain a WebSocket connection to `app.sekoia.com/live`.
 
 **What to do:**
 
@@ -70,7 +70,7 @@ Contact your workspace administrator. They can reactivate your account from **Se
    5. Attach the `.har` file to your support ticket.
 
 !!! note "Other browsers"
-    If you are not using Chrome, contact [support.sekoia.io](https://support.sekoia.io) and describe your browser. The support team will guide you through the equivalent steps.
+    If you are not using Chrome, contact [support.sekoia.com](https://support.sekoia.com) and describe your browser. The support team will guide you through the equivalent steps.
 
 1. Contact your network administrator and ask them to verify that WebSocket connections are permitted to `wss://app.sekoia.io/live`.
 2. If the problem persists, collect network logs for investigation:
@@ -78,7 +78,7 @@ Contact your workspace administrator. They can reactivate your account from **Se
     2. Click **Start Logging to Disk** and save the file.
     3. In a new tab, open your Sekoia workspace and reproduce the issue.
     4. Return to `chrome://net-export/` and click **Stop Logging**.
-    5. Attach the log file when opening a support ticket at [support.sekoia.io](https://support.sekoia.io).
+    5. Attach the log file when opening a support ticket at [support.sekoia.com](https://support.sekoia.com).
 
 ### API requests are blocked or return a 429 error
 
@@ -103,7 +103,7 @@ Contact your workspace administrator. They can reactivate your account from **Se
 
 Allow up to 30 minutes after configuration before concluding that no events are arriving.
 
-See: [Verify event reception](/getting_started/defend_step2_verify_event_reception) for the full verification procedure.
+See: [Verify event reception](/getting_started/defend_step2_verify_event_reception.md) for the full verification procedure.
 
 ### Your intake shows a high rate of warning or invalid events
 
@@ -111,19 +111,19 @@ See: [Verify event reception](/getting_started/defend_step2_verify_event_recepti
 
 1. Open the intake detail page.
 2. In the **Events** section, filter by **Warning** or **Invalid** to view the parsing error messages.
-3. Cross-reference the error with the technology-specific setup guide in the [integration catalog](/integration/categories/).
+3. Cross-reference the error with the technology-specific setup guide in the [integration catalog](https://docs.sekoia.com/integration/).
 4. If the issue is not covered in the guide, open a support ticket.
 
 ## Still need help?
 
 If none of the steps above resolve your issue, contact the Sekoia support team:
 
-- Open a ticket at [support.sekoia.io](https://support.sekoia.io).
+- Open a ticket at [support.sekoia.com](https://support.sekoia.com).
 - Include your workspace name, the region, the affected feature, and a description of the steps you already tried.
 
 ## Related links
 
-- [Support and resources](/getting_started/support_and_resources) — Full list of support and learning resources.
-- [Log in for the first time](/getting_started/log_in_for_the_first_time) — Region URL reference and invitation troubleshooting.
-- [Secure your account](/getting_started/secure_your_account) — 2FA reset procedure for administrators.
-- [Verify event reception](/getting_started/defend_step2_verify_event_reception) — Intake health checks and monitoring setup.
+- [Support and resources](/getting_started/support_and_resources.md) — Full list of support and learning resources.
+- [Log in for the first time](/getting_started/log_in_for_the_first_time.md) — Region URL reference and invitation troubleshooting.
+- [Secure your account](/getting_started/secure_your_account.md) — 2FA reset procedure for administrators.
+- [Verify event reception](/getting_started/defend_step2_verify_event_reception.md) — Intake health checks and monitoring setup.
