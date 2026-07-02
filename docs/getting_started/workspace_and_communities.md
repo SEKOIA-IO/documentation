@@ -69,11 +69,11 @@ If you are not sure whether a setting belongs to the workspace or the community,
 
 To switch to a different workspace, click your current workspace name at the top of the navigation menu and select another workspace from the dropdown.
 
-To switch to a different community in a multi-tenant workspace, click the **Communities** button in the breadcrumb and select the community you want to access.
+To switch to a different community in a multi-tenant workspace, click the **Communities** button at the top of one page and select the community (or communities) you want to access.
 
 ## Related links
 
-- [Navigate the platform](/getting_started/navigate_the_platform) — How to use the Sekoia interface, including the workspace and community switcher.
-- [Workspace setup overview](/getting_started/workspace_setup_overview) — Step-by-step guide for administrators to configure a new workspace.
-- [Roles and permissions](/getting_started/roles_and_permissions) — How access is controlled at the workspace and community level.
-- [Invite users](/getting_started/invite_users) — How to add users to a workspace or community.
+- [Navigate the platform](/getting_started/navigate_the_platform.md) — How to use the Sekoia interface, including the workspace and community switcher.
+- [Workspace setup overview](/getting_started/workspace_setup_overview.md) — Step-by-step guide for administrators to configure a new workspace.
+- [Roles and permissions](/getting_started/roles_and_permissions.md) — How access is controlled at the workspace and community level.
+- [Invite users](/getting_started/invite_users.md) — How to add users to a workspace or community.
