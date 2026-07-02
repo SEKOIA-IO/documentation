@@ -30,7 +30,7 @@ To see all available reports:
 
 1. Open the filter panel on the Intelligence page.
 2. Set **Type** to **Report**.
-3. By default the table is sorted by **Last edited** to see the most recent reports firt.
+3. By default the table is sorted by **Last edited** to see the most recent reports first.
 
 ## Understand FLINT reports
 
