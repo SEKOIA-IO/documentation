@@ -14,7 +14,7 @@ After you create notification rules, you can update them at any time to reflect 
 ## Before you begin
 
 - You must be logged in to Sekoia with any role.
-- You must have at least one existing notification rule. See [Create a notification](/getting_started/create_a_notification) if you have not set one up yet.
+- You must have at least one existing notification rule. See [Create a notification](/getting_started/create_a_notification.md) if you have not set one up yet.
 
 !!! note "Personal visibility"
     Notification rules are personal. You can only view and manage the rules you created. Rules created by other users in your community are not visible to you.
@@ -33,7 +33,7 @@ The listing page displays all your notification rules for the current community,
 To change the trigger, conditions, or delivery action of an existing rule:
 
 1. On the **Notifications** settings page, locate the rule you want to update.
-2. Click the rule name or the **Edit** icon to the right of the rule.
+2. Click the rule line.
 3. Update the fields you want to change:
     - **Name** — Update the rule name to reflect its new purpose.
     - **Trigger** — Change the event type that activates the rule.
@@ -50,7 +50,7 @@ Disabling a rule pauses it without deleting it. Use this option when you want to
 To disable a rule:
 
 1. On the **Notifications** settings page, locate the rule you want to pause.
-2. Click the toggle in the **Status** column to switch it from enabled to disabled.
+2. Click the toggle to switch it from enabled to disabled.
 
 The rule remains visible in the listing with a disabled status and stops firing until you re-enable it.
 
@@ -59,7 +59,7 @@ The rule remains visible in the listing with a disabled status and stops firing 
 To re-enable a disabled rule:
 
 1. On the **Notifications** settings page, locate the disabled rule.
-2. Click the toggle in the **Status** column to switch it back to enabled.
+2. Click the toggle to switch it back to enabled.
 
 The rule resumes firing immediately for matching events.
 
@@ -81,6 +81,6 @@ The rule is removed immediately from your listing and stops firing.
 
 ## Related links
 
-- [Notification system overview](/getting_started/notification_system_overview) — How the notification system works and what triggers and delivery channels are available.
-- [Create a notification](/getting_started/create_a_notification) — Step-by-step procedure to set up a new notification rule.
-- [Notification examples](/getting_started/notification_examples) — Ready-to-use templates for common monitoring scenarios.
+- [Notification system overview](/getting_started/notification_system_overview.md) — How the notification system works and what triggers and delivery channels are available.
+- [Create a notification](/getting_started/create_a_notification.md) — Step-by-step procedure to set up a new notification rule.
+- [Notification examples](/getting_started/notification_examples.md) — Ready-to-use templates for common monitoring scenarios.
