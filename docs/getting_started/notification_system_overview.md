@@ -100,6 +100,6 @@ Notification rules are personal. A rule you create is only visible to you and ap
 
 ## Related links
 
-- [Create a notification](/getting_started/create_a_notification) — Step-by-step procedure to set up your first notification rule.
-- [Manage notifications](/getting_started/manage_notifications) — How to edit, disable, or delete existing rules.
-- [Notification examples](/getting_started/notification_examples) — Ready-to-use templates for common notification scenarios.
+- [Create a notification](/getting_started/create_a_notification.md) — Step-by-step procedure to set up your first notification rule.
+- [Manage notifications](/getting_started/manage_notifications.md) — How to edit, disable, or delete existing rules.
+- [Notification examples](/getting_started/notification_examples.md) — Ready-to-use templates for common notification scenarios.
