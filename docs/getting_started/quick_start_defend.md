@@ -23,7 +23,7 @@ After completing this guide, you will be able to:
 ## Prerequisites
 
 - You have logged in to Sekoia and your account is active.
-- Your workspace administrator has confirmed your subscription is active (see [Understand your subscription](/getting_started/understand_your_subscription)).
+- Your workspace administrator has confirmed your subscription is active (see [Understand your subscription](/getting_started/understand_your_subscription.md)).
 - You have the **Analyst** or **Admin** role in your community.
 
 !!! note "Admin access required for Step 1"
@@ -33,11 +33,11 @@ After completing this guide, you will be able to:
 
 | Step | What you do | Time estimate |
 |---|---|---|
-| [Step 1](/getting_started/defend_step1_connect_data_source) | Connect a data source | 10-20 min |
-| [Step 2](/getting_started/defend_step2_verify_event_reception) | Verify event reception | 5-10 min |
-| [Step 3](/getting_started/defend_step3_activate_detection_rules) | Activate detection rules | 10-15 min |
-| [Step 4](/getting_started/defend_step4_triage_first_alert) | Triage your first alert | 15-30 min |
-| [Step 5](/getting_started/defend_step5_automate_with_playbooks) | Automate with playbooks | 15-20 min |
+| [Step 1](/getting_started/defend_step1_connect_data_source.md) | Connect a data source | 10-20 min |
+| [Step 2](/getting_started/defend_step2_verify_event_reception.md) | Verify event reception | 5-10 min |
+| [Step 3](/getting_started/defend_step3_activate_detection_rules.md) | Activate detection rules | 10-15 min |
+| [Step 4](/getting_started/defend_step4_triage_first_alert.md) | Triage your first alert | 15-30 min |
+| [Step 5](/getting_started/defend_step5_automate_with_playbooks.md) | Automate with playbooks | 15-20 min |
 
 ## Outcome
 
@@ -45,13 +45,13 @@ When you complete all five steps, you will have a functioning Sekoia Defend envi
 
 ## Prefer to learn with video?
 
-Each step in this guide is also covered in the Sekoia Academy. Visit the [Academy](https://academy.sekoia.io) to follow along with video tutorials.
+Each step in this guide is also covered in the Sekoia Academy. Visit the [Academy](https://training.sekoia.com/) to follow along with video tutorials.
 
 ## Related links
 
-- [Step 1: Connect a data source](/getting_started/defend_step1_connect_data_source) — Create your first intake and connect a log source.
-- [Step 2: Verify event reception](/getting_started/defend_step2_verify_event_reception) — Confirm that events are flowing into the platform.
-- [Step 3: Activate detection rules](/getting_started/defend_step3_activate_detection_rules) — Enable rules from the catalog and review your MITRE ATT&CK coverage.
-- [Step 4: Triage your first alert](/getting_started/defend_step4_triage_first_alert) — Investigate and close your first security alert.
-- [Step 5: Automate with playbooks](/getting_started/defend_step5_automate_with_playbooks) — Set up an automated response workflow.
-- [Workspace setup overview](/getting_started/workspace_setup_overview) — Admin checklist to prepare the workspace before this guide.
+- [Step 1: Connect a data source](/getting_started/defend_step1_connect_data_source.md) — Create your first intake and connect a log source.
+- [Step 2: Verify event reception](/getting_started/defend_step2_verify_event_reception.md) — Confirm that events are flowing into the platform.
+- [Step 3: Activate detection rules](/getting_started/defend_step3_activate_detection_rules.md) — Enable rules from the catalog and review your MITRE ATT&CK coverage.
+- [Step 4: Triage your first alert](/getting_started/defend_step4_triage_first_alert.md) — Investigate and close your first security alert.
+- [Step 5: Automate with playbooks](/getting_started/defend_step5_automate_with_playbooks.md) — Set up an automated response workflow.
+- [Workspace setup overview](/getting_started/workspace_setup_overview.md) — Admin checklist to prepare the workspace before this guide.
