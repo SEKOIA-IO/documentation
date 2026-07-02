@@ -62,10 +62,10 @@ asset_telemetry
 
 The entry point determines the rule name, the datasource and the field used in the condition:
 
-| Source | Entry point | Rule name | Datasource | Condition field | Default bin |
-|---|---|---|---|---|---|
-| Intake | **Create event drop alerting** in the intake more options menu | `Event drop for intake "<name>"` | `event_telemetry` | `intake_uuid` | 2 hours |
-| Asset | **Configure an event drop alert** button on the asset page | `Event drop for asset "<name>"` | `asset_telemetry` | `asset_uuid` | 1 day |
+| Source | Entry point | Rule name | Datasource | Condition field |
+|---|---|---|---|---|
+| Intake | **Create event drop alerting** in the intake more options menu | `Event drop for intake "<name>"` | `event_telemetry` | `intake_uuid` |
+| Asset | **Configure an event drop alert** button on the asset page | `Event drop for asset "<name>"` | `asset_telemetry` | `asset_uuid` |
 
 Both pre-filled patterns also bound the query with `?time.start` and `?time.end`, the time conditions required by every SOL rule.
 

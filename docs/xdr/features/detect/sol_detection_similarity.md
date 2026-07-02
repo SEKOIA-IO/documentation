@@ -23,8 +23,6 @@ When no similarity strategy is configured, all of a rule's matches are grouped i
 
 ## Configuring a similarity strategy
 
-## Configuring a similarity strategy
-
 To group a rule's matches into separate alerts, configure one or more similarity strategies on the rule. You select the fields that define similarity. Matches that share the same values for those fields are grouped into one alert; matches with different values are raised as separate alerts.
 
 !!! note "Available fields depend on your query"
