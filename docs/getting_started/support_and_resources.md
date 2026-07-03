@@ -17,7 +17,7 @@ Sekoia offers several channels to help you get answers, learn new skills, and st
 
 The Sekoia support portal is the primary channel for reporting bugs, asking technical questions, and opening tickets.
 
-Access the support portal at [support.sekoia.io](https://support.sekoia.io).
+Access the support portal at [support.sekoia.com](https://support.sekoia.com).
 
 Use the support portal when:
 
@@ -37,7 +37,7 @@ The status page lists the operational health of all platform components by regio
 
 The Sekoia Academy provides self-paced video courses and practical exercises for analysts and administrators.
 
-Access the Academy at [academy.sekoia.io](https://academy.sekoia.io).
+Access the Academy at [academy.sekoia.com](https://academy.sekoia.com).
 
 The Academy covers:
 
@@ -60,7 +60,7 @@ Join the community at [github.com/SEKOIA-IO/Community](https://github.com/SEKOIA
 
 The Sekoia changelog lists new features, improvements, and bug fixes across all products.
 
-Access the changelog at [changelog.sekoia.io](https://changelog.sekoia.io).
+Access the changelog at [changelog.sekoia.com](https://changelog.sekoia.com).
 
 Subscribe to the changelog to receive weekly or monthly summaries of platform updates.
 
@@ -80,5 +80,5 @@ The full documentation repository is available at [github.com/SEKOIA-IO/document
 
 ## Related links
 
-- [Troubleshooting common issues](/getting_started/troubleshooting_common_issues) — First-level solutions for login, connectivity, and intake problems.
-- [Log in for the first time](/getting_started/log_in_for_the_first_time) — Includes region URL reference if you cannot reach the login page.
+- [Troubleshooting common issues](/getting_started/troubleshooting_common_issues.md) — First-level solutions for login, connectivity, and intake problems.
+- [Log in for the first time](/getting_started/log_in_for_the_first_time.md) — Includes region URL reference if you cannot reach the login page.
