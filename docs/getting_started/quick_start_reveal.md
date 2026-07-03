@@ -61,5 +61,5 @@ Once Reveal is configured, open any alert and click on an affected asset to open
 ## Related links
 
 - [Getting started with Reveal](/xdr/features/modules/reveal_getting_started/) — Full setup guide with step-by-step instructions for all data source types.
-- [Workspace setup overview](/getting_started/workspace_setup_overview) — Admin checklist for enabling modules and preparing your workspace.
-- [Glossary](/getting_started/glossary) — Definitions of asset, atom, point of interest, and vulnerability enrichment.
+- [Workspace setup overview](/getting_started/workspace_setup_overview.md) — Admin checklist for enabling modules and preparing your workspace.
+- [Glossary](/getting_started/glossary.md) — Definitions of asset, atom, point of interest, and vulnerability enrichment.
