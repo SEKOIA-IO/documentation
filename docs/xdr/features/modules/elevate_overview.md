@@ -15,7 +15,7 @@ For each alert, the agent:
 - Enriches findings with threat intelligence and contextual signals
 - Produces a complete, audit-ready investigation report with a verdict and a confidence score
 
-Elevate also investigates cases. Assign a case to Roy, the Elevate investigation agent, and it produces the same verdict, findings and reasoning questions at the case level. See [Investigate a case with Elevate](/xdr/features/modules/elevate_investigate_case.md).
+Elevate also investigates cases. Assign a case to Roy, the Elevate investigation agent, and it produces the same verdict, findings and reasoning questions at the case level.
 
 ## What makes Elevate different
 
@@ -27,7 +27,7 @@ Elevate also investigates cases. Assign a case to Roy, the Elevate investigation
 
 ## Use cases
 
-Elevate supports a range of SOC scenarios: enabling noisy detection rules instead of muting them, maintaining investigation coverage outside business hours, focusing analysts on real incidents, and helping MSSPs grow without adding headcount, among others. See [Elevate use cases](/xdr/features/modules/elevate_use_cases.md) for the full list and the features behind each one.
+Elevate supports a range of SOC scenarios: enabling noisy detection rules instead of muting them, maintaining investigation coverage outside business hours, focusing analysts on real incidents, and helping MSSPs grow without adding headcount, among others. 
 
 ## Key concepts
 
