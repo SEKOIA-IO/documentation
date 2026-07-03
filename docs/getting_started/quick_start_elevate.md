@@ -36,7 +36,7 @@ Full setup instructions, runbook configuration guidance, and analyst workflow do
 
 In the meantime, you can:
 
-- Read the [Elevate overview article](/xdr/features/modules/elevate_index/) for an early look at the module's capabilities.
+- Read the [Elevate overview article](https://docs.sekoia.com/xdr/features/modules/elevate_overview/) for an early look at the module's capabilities.
 - Set up your [workspace](/getting_started/workspace_setup_overview.md) and ensure Defend is fully operational using the [Defend quick start](/getting_started/quick_start_defend.md).
 
 ## Related links
