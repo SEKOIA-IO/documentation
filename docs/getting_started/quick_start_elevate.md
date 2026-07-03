@@ -12,7 +12,7 @@ type: tutorial
 Sekoia Elevate is an AI-powered add-on module that autonomously triages security alerts. For each alert it processes, Elevate analyzes the available context, executes a runbook, and produces a verdict with supporting evidence, reducing the volume of repetitive manual triage work for your analysts.
 
 !!! note "Documentation in progress"
-    The Elevate module is currently being finalized. This quick start guide will be updated with full setup instructions when the module becomes generally available. Check the [changelog](https://changelog.sekoia.io) for release announcements.
+    The Elevate module is currently being finalized. This quick start guide will be updated with full setup instructions when the module becomes generally available. Check the [changelog](https://changelog.sekoia.com) for release announcements.
 
 ## What Elevate does
 
@@ -37,9 +37,9 @@ Full setup instructions, runbook configuration guidance, and analyst workflow do
 In the meantime, you can:
 
 - Read the [Elevate overview article](/xdr/features/modules/elevate_index/) for an early look at the module's capabilities.
-- Set up your [workspace](/getting_started/workspace_setup_overview) and ensure Defend is fully operational using the [Defend quick start](/getting_started/quick_start_defend).
+- Set up your [workspace](/getting_started/workspace_setup_overview.md) and ensure Defend is fully operational using the [Defend quick start](/getting_started/quick_start_defend.md).
 
 ## Related links
 
-- [Quick start: Defend](/getting_started/quick_start_defend) — Prerequisite for Elevate: ensure Defend is set up and generating alerts.
-- [Support and resources](/getting_started/support_and_resources) — Contact support or check the Academy for early access materials.
+- [Quick start: Defend](/getting_started/quick_start_defend.md) — Prerequisite for Elevate: ensure Defend is set up and generating alerts.
+- [Support and resources](/getting_started/support_and_resources.md) — Contact support or check the Academy for early access materials.
