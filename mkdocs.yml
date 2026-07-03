@@ -206,14 +206,36 @@ nav:
       - FortiSOAR: xdr/features/integrations/fortisoar.md
       - Palo Alto Cortex XSOAR: xdr/features/integrations/interconnect_sekoia_with_xsoar.md
       - Swimlane Turbine: xdr/features/integrations/swimlane_turbine.md
+  - AI Agents (Elevate):
+      - Elevate overview: xdr/features/modules/elevate_overview.md
+      - The investigation method: xdr/features/modules/elevate_investigation_method.md
+      - Elevate kick start guide: 
+        - Activate Elevate:  xdr/features/modules/elevate_activate.md
+        - Elevate analysis states:  xdr/features/modules/elevate_analysis_states.md
+      - Investigate with Elevate:  
+        - Investigate an alert:  xdr/features/modules/elevate_investigate_alert.md
+        - Investigate a case:  xdr/features/modules/elevate_investigate_case.md
+        - Audit with Traces:  xdr/features/modules/elevate_traces.md
+        - Override a verdict:  xdr/features/modules/elevate_validate_verdict.md
+        - Trigger an analysis:  xdr/features/modules/elevate_manual_analysis.md
+      - Tune Elevate agents:
+        - Add custom instructions: xdr/features/modules/elevate_custom_instructions.md
+        - Customize a detection rule's runbook: xdr/features/modules/elevate_customize_runbook.md
+        - Write effective instructions: xdr/features/modules/elevate_instructions_best_practices.md
+      - Manage Elevate: 
+        - Override community settings:  xdr/features/modules/elevate_community_override.md
+        - Limit auto-analysis to specific rules: xdr/features/modules/elevate_rule_filter.md
+        - Manage Elevate runs: xdr/features/modules/elevate_quota.md
   - Asset Intelligence (Reveal):
-    - Reveal overview: xdr/features/modules/reveal_index.md
-    - Get started with Reveal: xdr/features/modules/reveal_getting_started.md
-    - Explore assets context: xdr/features/modules/reveal_asset_context_panel.md
-    - Visualize attack paths: xdr/features/investigate/attack_path_visualization.md
-    - Discover Points of Interest: xdr/features/detect/points_of_interest.md
-    - Check asset connector health: xdr/features/collect/asset_connector_health.md
-    - Reveal enablement matrix: xdr/features/modules/reveal_feature_enablement.md
+      - Reveal overview: xdr/features/modules/reveal_index.md
+      - Get started with Reveal: xdr/features/modules/reveal_getting_started.md
+      - Explore assets context: xdr/features/modules/reveal_asset_context_panel.md
+      - Visualize attack paths: xdr/features/investigate/attack_path_visualization.md
+      - Discover Points of Interest: xdr/features/detect/points_of_interest.md
+      - Check asset connector health: xdr/features/collect/asset_connector_health.md
+      - Reveal enablement matrix: xdr/features/modules/reveal_feature_enablement.md
+    
+
 - Usecases:
   - Export large volumes of events: xdr/usecases/massive_export.md
   - Implement a blocklist in Sekoia.io: xdr/usecases/playbook/implement_blocklist.md
