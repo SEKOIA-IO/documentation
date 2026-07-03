@@ -96,6 +96,6 @@ A user can hold multiple roles simultaneously. Their effective permissions are t
 
 ## Related links
 
-- [Invite users](/getting_started/invite_users) — How to add users and assign roles during the invitation process.
-- [Manage users](/getting_started/manage_users) — How to view and modify user access after onboarding.
-- [Workspace setup overview](/getting_started/workspace_setup_overview) — Full checklist for configuring your workspace.
+- [Invite users](/getting_started/invite_users.md) — How to add users and assign roles during the invitation process.
+- [Manage users](/getting_started/manage_users.md) — How to view and modify user access after onboarding.
+- [Workspace setup overview](/getting_started/workspace_setup_overview.md) — Full checklist for configuring your workspace.
