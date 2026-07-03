@@ -50,7 +50,6 @@ Elevate operates on a monthly run pack. Each investigation the agent runs, wheth
 ## Related articles
 
 - [The Elevate investigation method](/xdr/features/modules/elevate_investigation_method.md): How runbooks, reasoning questions, findings and verdicts work together.
-- [Elevate use cases](/xdr/features/modules/elevate_use_cases.md): Common scenarios where Elevate adds value and the features that support them.
 - [Elevate analysis states](/xdr/features/modules/elevate_analysis_states.md): Reference table of all possible AI analysis states and their meaning.
 - [Activate Elevate on a workspace](/xdr/features/modules/elevate_activate.md): How to enable the Elevate agent and configure auto-analysis.
 - [Investigate an alert with Elevate](/xdr/features/modules/elevate_investigate_alert.md): How to read an AI investigation report and interpret findings.
