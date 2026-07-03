@@ -29,8 +29,8 @@ After completing this guide, you will be able to:
 
 | Step | What you do | Time estimate |
 |---|---|---|
-| [Step 1](/getting_started/intelligence_step1_explore_threat_database) | Explore the threat intelligence database | 15-20 min |
-| [Step 2](/getting_started/intelligence_step2_read_threat_reports) | Read and act on threat reports | 15-20 min |
+| [Step 1](/getting_started/intelligence_step1_explore_threat_database.md) | Explore the threat intelligence database | 15-20 min |
+| [Step 2](/getting_started/intelligence_step2_read_threat_reports.md) | Read and act on threat reports | 15-20 min |
 
 ## How Intelligence integrates with Defend
 
@@ -42,10 +42,10 @@ If your organization also uses Sekoia Defend, the two products work together aut
 
 ## Prefer to learn with video?
 
-Visit the [Sekoia Academy](https://academy.sekoia.io) for video tutorials on using Sekoia Intelligence.
+Visit the [Sekoia Academy](https://training.sekoia.com/)) for video tutorials on using Sekoia Intelligence.
 
 ## Related links
 
-- [Step 1: Explore the threat intelligence database](/getting_started/intelligence_step1_explore_threat_database) — Search for threat objects and understand the data model.
-- [Step 2: Read and act on threat reports](/getting_started/intelligence_step2_read_threat_reports) — Navigate reports, understand their structure, and set up feeds.
-- [Glossary](/getting_started/glossary) — Definitions of CTI terms including indicator, observable, IOC, STIX, TLP, and FLINT.
+- [Step 1: Explore the threat intelligence database](/getting_started/intelligence_step1_explore_threat_database.md) — Search for threat objects and understand the data model.
+- [Step 2: Read and act on threat reports](/getting_started/intelligence_step2_read_threat_reports.md) — Navigate reports, understand their structure, and set up feeds.
+- [Glossary](/getting_started/glossary.md) — Definitions of CTI terms including indicator, observable, IOC, STIX, TLP, and FLINT.
