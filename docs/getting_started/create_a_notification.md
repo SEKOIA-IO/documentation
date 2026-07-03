@@ -38,7 +38,7 @@ Notification rules let you receive alerts through your preferred channel when a 
 Your rule is now active and appears in your personal notification list.
 
 
-![!Notification creation form with trigger, conditions, and email delivery options configured](docs/assets/operation_center/quick_start/notification_creation.png){: style="width: 100%; max-width: 100%"}
+![!Notification creation form with trigger, conditions, and email delivery options configured](/assets/operation_center/quick_start/notification_creation.png){: style="width: 100%; max-width: 100%"}
 
 !!! info "Find your incoming webhook URL"
    If you have not set up an incoming webhook for your messaging platform yet:
