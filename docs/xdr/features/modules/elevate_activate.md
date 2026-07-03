@@ -30,8 +30,6 @@ The **Instructions** field lets you provide contextual guidance the agent takes 
 
 For step-by-step configuration and examples, see [Add custom instructions for an Elevate agent](/xdr/features/modules/elevate_custom_instructions.md) and [Write effective instructions for Elevate](/xdr/features/modules/elevate_instructions_best_practices.md).
 
-[PLACEHOLDER: Confirm field format, character limit, and add 1-2 examples of effective instructions.]
-
 ## Result
 
 New incoming alerts are automatically analyzed by the Elevate agent. The **Verdict** column in the alert list updates as each investigation completes.

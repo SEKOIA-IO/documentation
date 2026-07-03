@@ -14,7 +14,7 @@ This article explains how to open an alert and read the Elevate investigation, i
 
 The alert details open with the Elevate investigation: a summary of the outcome and confidence at the top, followed by the findings and the reasoning questions.
 
-> 📸 [SCREENSHOT SUGGESTION: Alert detail view showing the Elevate investigation, with the Verdict section at the top and the Findings section below. | ALT TEXT: Alert details showing the verdict and findings sections of an Elevate investigation.]
+![Alert details showing the verdict and findings sections of an Elevate investigation](/assets/elevate/alert-verdict.png){: style="max-width:100%"}
 
 ## Read the verdict
 
@@ -23,9 +23,6 @@ The **Verdict** section at the top of the alert details contains:
 - The **classification**: True Positive or False Positive
 - The **confidence score**: a percentage expressing the agent's certainty in its conclusion
 - A **plain-language explanation** summarizing the key evidence and reasoning behind the classification
-
-??? example "Example verdict: False Positive at 85% confidence"
-    The spike involved four distinct hosts and included an external source IP, but there were no authentication failures, new processes, data exfiltration, privileged account usage, IoC matches, or corroborating alerts from other sensors. The lack of any malicious indicators suggests the activity is benign and therefore a false positive.
 
 ## Read the findings
 
@@ -43,8 +40,6 @@ Consulting the query behind a finding lets you immediately understand and confir
 ### Switch to the Findings view
 
 For a quick summary of everything the agent found, switch to the **Findings** view in the alert details. It lists all the evidence items the agent collected in one place, which helps you quickly understand what is going on.
-
-[PLACEHOLDER: Confirm the exact label and location of the Findings view toggle in the alert details.]
 
 ![Findings view in the alert details showing a summary of AI-collected evidence items](/assets/elevate/alert-findings.png){: style="max-width:100%"}
 

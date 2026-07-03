@@ -21,7 +21,7 @@ Elevate also investigates cases. Assign a case to Roy, the Elevate investigation
 
 **Detection-specific AI runbooks** embed expert investigation logic directly at the rule level. Rather than applying generic playbooks across all alert types, the agent follows tailored guidance for each detection.
 
-**Human-in-the-loop by design** keeps analysts in full control. Every finding is reviewable, every verdict is overridable, and every automated decision is fully traceable. There are no black boxes.
+**Human on the loop by design** lets the agent investigate and reach a verdict autonomously, while analysts keep oversight and the final say. Every finding is reviewable, every verdict is overridable and every automated decision is fully traceable. There are no black boxes.
 
 **Private by architecture** keeps all AI computation on Sekoia-hosted infrastructure. No data is sent to external LLM providers, which makes Elevate suitable for regulated environments and sensitive data contexts.
 
