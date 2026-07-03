@@ -50,7 +50,7 @@ The full setup guide is available in the Sekoia Defend documentation. It walks y
 3. Configure asset connectors to enrich assets with structured data
 4. Deploy the Sekoia Endpoint Agent for direct endpoint visibility
 
-Follow the complete guide here: [Getting started with Reveal](/xdr/features/modules/reveal_getting_started/)
+Follow the complete guide here: [Getting started with Reveal](https://docs.sekoia.com/xdr/features/modules/reveal_index/)
 
 ## What to do after setup
 
@@ -60,6 +60,6 @@ Once Reveal is configured, open any alert and click on an affected asset to open
 
 ## Related links
 
-- [Getting started with Reveal](/xdr/features/modules/reveal_getting_started/) — Full setup guide with step-by-step instructions for all data source types.
+- [Getting started with Reveal](https://docs.sekoia.com/xdr/features/modules/reveal_index/) — Full setup guide with step-by-step instructions for all data source types.
 - [Workspace setup overview](/getting_started/workspace_setup_overview.md) — Admin checklist for enabling modules and preparing your workspace.
 - [Glossary](/getting_started/glossary.md) — Definitions of asset, atom, point of interest, and vulnerability enrichment.
