@@ -14,7 +14,7 @@ To give a team member access to Sekoia, you send them an invitation from the wor
 ## Before you begin
 
 - You must have the **Admin** role to invite users.
-- Decide which community the user should join and which role they should receive. See [Roles and permissions](/getting_started/roles_and_permissions) if you need help choosing.
+- Decide which community the user should join and which role they should receive. See [Roles and permissions](/getting_started/roles_and_permissions.md) if you need help choosing.
 
 ## Invite a user by email
 
