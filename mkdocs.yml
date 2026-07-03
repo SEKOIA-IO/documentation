@@ -208,7 +208,6 @@ nav:
       - Swimlane Turbine: xdr/features/integrations/swimlane_turbine.md
   - AI Agents (Elevate):
       - Elevate overview: xdr/features/modules/elevate_overview.md
-      - Use cases: xdr/features/modules/elevate_use_cases.md
       - The investigation method: xdr/features/modules/elevate_investigation_method.md
       - Elevate kick start guide: 
         - Activate Elevate:  xdr/features/modules/elevate_activate.md
