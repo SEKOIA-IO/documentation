@@ -90,5 +90,5 @@ To change the order of sections in the navigation menu:
 
 ## Related links
 
-- [Workspace and communities](/getting_started/workspace_and_communities) — Explanation of the workspace and community structure and what each level controls.
-- [Customize your interface](/getting_started/customize_your_interface) — Additional display preferences you can configure for your account.
+- [Workspace and communities](/getting_started/workspace_and_communities.md) — Explanation of the workspace and community structure and what each level controls.
+- [Customize your interface](/getting_started/customize_your_interface.md) — Additional display preferences you can configure for your account.
