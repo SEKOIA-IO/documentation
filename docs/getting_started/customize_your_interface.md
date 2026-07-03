@@ -58,8 +58,6 @@ Your column configuration is saved per page.
 
 ## Set a preferred authentication method
 
-## Set a preferred authentication method
-
 Sekoia supports two authentication methods: password combined with a one-time code from an authenticator app (TOTP), or single sign-on (SSO) if your administrator has configured it for your workspace.
 
 To select your preferred method:
