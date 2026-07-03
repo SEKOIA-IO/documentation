@@ -97,6 +97,6 @@ The user receives an email notification informing them that their 2FA has been r
 
 ## Related links
 
-- [Log in for the first time](/getting_started/log_in_for_the_first_time) — How to accept your invitation and access the platform.
-- [Troubleshooting common issues](/getting_started/troubleshooting_common_issues) — What to do if you are locked out of your account.
-- [Workspace setup overview](/getting_started/workspace_setup_overview) — How administrators configure workspace-level security policies.
+- [Log in for the first time](/getting_started/log_in_for_the_first_time.md) — How to accept your invitation and access the platform.
+- [Troubleshooting common issues](/getting_started/troubleshooting_common_issues.md) — What to do if you are locked out of your account.
+- [Workspace setup overview](/getting_started/workspace_setup_overview.md) — How administrators configure workspace-level security policies.
