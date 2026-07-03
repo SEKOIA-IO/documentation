@@ -14,7 +14,7 @@ An intake is the connection between one of your data sources (a firewall, an EDR
 ## Before you begin
 
 - You need the **Admin** role or a custom role with intake management permissions to create an intake.
-- Identify at least one data source you want to connect. If you are unsure where to start, refer to the [best practices for intake configuration](docs/getting_started/best_practices.md) for recommendations on which sources to prioritize.
+- Identify at least one data source you want to connect. If you are unsure where to start, refer to the [best practices for intake configuration](/getting_started/best_practices.md) for recommendations on which sources to prioritize.
 
 !!! note "No admin access?"
     If you do not have permission to create intakes, share this article with your administrator and ask them to create the intake. Once it is created, you can continue from [Step 2: Verify event reception](/getting_started/defend_step2_verify_event_reception.md).
