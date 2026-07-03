@@ -36,7 +36,7 @@ To reorder a section:
 
 > 📸 [SCREENSHOT SUGGESTION: The left-hand navigation menu with a section header being dragged to a new position, showing the drag handle and drop zone. | ALT TEXT: Navigation menu showing a section being moved by drag and drop.]
 
-![Navigation menu showing a section being moved by drag and drop.](docs/assets/getting_started/reorder_menu_gif.gif){: style="width: 100%; max-width: 100%"}
+![Navigation menu showing a section being moved by drag and drop.](/assets/getting_started/reorder_menu_gif.gif){: style="width: 100%; max-width: 100%"}
 
 
 ## Customize table columns
