@@ -123,6 +123,12 @@ The following Sekoia.io built-in rules match the intake **WALLIX Bastion**. This
     
     - **Effort:** intermediate
 
+??? abstract "Cobalt Strike Default Beacons Names"
+    
+    Detects the default names of Cobalt Strike beacons / payloads.
+    
+    - **Effort:** intermediate
+
 ??? abstract "Commonly Used Commands To Stop Services And Remove Backups"
     
     Detects specific commands used regularly by ransomwares to stop services or remove backups
@@ -180,6 +186,12 @@ The following Sekoia.io built-in rules match the intake **WALLIX Bastion**. This
 ??? abstract "Correlation Potential DNS Tunnel"
     
     Detects domain name which is longer than 62 characters and requested at least 50 times in a 10 minutes range time. Long domain names are distinctive of DNS tunnels.
+    
+    - **Effort:** advanced
+
+??? abstract "Credential Dump Tools Related Files"
+    
+    Detects processes or file names related to credential dumping tools and the dropped files they generate by default.
     
     - **Effort:** advanced
 
@@ -303,9 +315,21 @@ The following Sekoia.io built-in rules match the intake **WALLIX Bastion**. This
     
     - **Effort:** master
 
+??? abstract "HTA Infection Chains"
+    
+    Detect the creation of a ZIP file and an HTA file as it is often used in infection chains. Furthermore it also detects the use of suspicious processes launched by explorer.exe combined with the creation of an HTA file, since it is also often used in infection chains (LNK - HTA for instance).
+    
+    - **Effort:** advanced
+
 ??? abstract "HTML Smuggling Suspicious Usage"
     
     Based on several samples from different botnets, this rule aims at detecting HTML infection chain by looking for HTML created files followed by suspicious files being executed.
+    
+    - **Effort:** advanced
+
+??? abstract "HackTools Suspicious Names"
+    
+    Quick-win rule to detect the default process names or file names of several HackTools.
     
     - **Effort:** advanced
 
@@ -326,6 +350,12 @@ The following Sekoia.io built-in rules match the intake **WALLIX Bastion**. This
     Detects suspicious icacls command granting access to all, used by the ransomware Ryuk to delete every access-based restrictions on files and directories. ICacls is a built-in Windows command to interact with the Discretionary Access Control Lists (DACLs) which can grand adversaries higher permissions on specific files and folders.
     
     - **Effort:** elementary
+
+??? abstract "ISO LNK Infection Chain"
+    
+    Detection of an ISO (or any other similar archive file) downloaded file, followed by a child-process of explorer, which is characteristic of an infection using an ISO containing an LNK file. For events with `host.name`.
+    
+    - **Effort:** master
 
 ??? abstract "Inhibit System Recovery Deleting Backups"
     
@@ -483,6 +513,12 @@ The following Sekoia.io built-in rules match the intake **WALLIX Bastion**. This
     
     - **Effort:** elementary
 
+??? abstract "NTDS.dit File In Suspicious Directory"
+    
+    The file NTDS.dit is supposed to be located mainly in C:\Windows\NTDS. The rule checks whether the file is in a legitimate directory or not (through file creation events). This is usually really suspicious and could indicate an attacker trying copy the file to then look for users password hashes.
+    
+    - **Effort:** advanced
+
 ??? abstract "NTDS.dit File Interaction Through Command Line"
     
     Detects interaction with the file NTDS.dit through command line. This is usually really suspicious and could indicate an attacker trying copy the file to then look for users password hashes.
@@ -512,6 +548,12 @@ The following Sekoia.io built-in rules match the intake **WALLIX Bastion**. This
     Detects netsh commands that configure a port forwarding of port 3389 used for RDP. This is commonly used by attackers during lateralization on windows environments.
     
     - **Effort:** elementary
+
+??? abstract "Network Share Discovery"
+    
+    Adversaries may look for folders and drives shared on remote systems as a means of identifying sources of information to gather as a precursor for Collection and to identify potential systems of interest for Lateral Movement. Networks often contain shared network drives and folders that enable users to access file directories on various systems across a network. File sharing over a Windows network occurs over the SMB protocol. This technique is frequently leveraged by threat actors such as APT32, APT41, Wizard Spider. But also, through the use of some malware such as Cobalt Strike, Empire, PlugX and Ramsay.
+    
+    - **Effort:** master
 
 ??? abstract "New DLL Added To AppCertDlls Registry Key"
     
@@ -555,6 +597,12 @@ The following Sekoia.io built-in rules match the intake **WALLIX Bastion**. This
     
     - **Effort:** elementary
 
+??? abstract "OneNote Embedded File"
+    
+    Detects creation or uses of OneNote embedded files with unusual extensions.  
+    
+    - **Effort:** intermediate
+
 ??? abstract "Outlook Registry Access"
     
     Detection of accesses to Microsoft Outlook registry hive, which might contain sensitive information.
@@ -566,6 +614,12 @@ The following Sekoia.io built-in rules match the intake **WALLIX Bastion**. This
     Detects Pandemic Windows Implant through registry keys or specific command lines. Prerequisites: Logging for Registry events is needed, which can be done in the Sysmon configuration (events 12 and 13).
     
     - **Effort:** master
+
+??? abstract "PasswordDump SecurityXploded Tool"
+    
+    Detects the execution of the PasswordDump SecurityXploded Tool
+    
+    - **Effort:** elementary
 
 ??? abstract "Phorpiex DriveMgr Command"
     
@@ -693,6 +747,12 @@ The following Sekoia.io built-in rules match the intake **WALLIX Bastion**. This
     
     - **Effort:** intermediate
 
+??? abstract "RTLO Character"
+    
+    Detects RTLO (Right-To-Left character) in file and process names.
+    
+    - **Effort:** elementary
+
 ??? abstract "Raccine Uninstall"
     
     Detects commands that indicate a Raccine removal from an end system. Raccine is a free ransomware protection tool.
@@ -762,6 +822,12 @@ The following Sekoia.io built-in rules match the intake **WALLIX Bastion**. This
 ??? abstract "Scheduled Task Creation By Non Privileged User"
     
     Detects scheduled task creation, either executed by a non-system user or a user who is not administrator (the user ID is not S-1-5-18 or S-1-5-18-*). This detection rule doesn't match Sysmon EventID 1 because the user SID is always set to S-1-5-18. 
+    
+    - **Effort:** master
+
+??? abstract "Sekoia.io Activity Logs Rule Deactivation Bulk"
+    
+    Detects a massive rule deactivation observed threw Sekoia.io activity logs.
     
     - **Effort:** master
 
@@ -837,6 +903,12 @@ The following Sekoia.io built-in rules match the intake **WALLIX Bastion**. This
     
     - **Effort:** intermediate
 
+??? abstract "Suspicious File Name"
+    
+    Detects suspicious file name possibly linked to malicious tool.
+    
+    - **Effort:** advanced
+
 ??? abstract "Suspicious Microsoft Defender Antivirus Exclusion Command"
     
     Detects PowerShell commands aiming to exclude path, process, IP address, or extension from scheduled and real-time scanning. These commands can be used by attackers or malware to avoid being detected by Windows Defender. Depending on the environment and the installed software, this detection rule could raise false positives. We recommend customizing this rule by filtering legitimate processes that use Windows Defender exclusion command in your environment.
@@ -848,6 +920,12 @@ The following Sekoia.io built-in rules match the intake **WALLIX Bastion**. This
     Detects persitence via netsh helper. Netsh interacts with other operating system components using dynamic-link library (DLL) files. Adversaries may establish persistence by executing malicious content triggered by Netsh Helper DLLs.
     
     - **Effort:** elementary
+
+??? abstract "Suspicious PROCEXP152.sys File Created In Tmp"
+    
+    Detects the creation of the PROCEXP152.sys file in the application-data local temporary folder. This driver is used by Sysinternals Process Explorer but also by KDU (https://github.com/hfiref0x/KDU) or Ghost-In-The-Logs (https://github.com/bats3c/Ghost-In-The-Logs), which uses KDU. Note - Clever attackers may easily bypass this detection by just renaming the driver filename. Therefore just Medium-level and don't rely on it.
+    
+    - **Effort:** advanced
 
 ??? abstract "Suspicious PowerShell Invocations - Generic"
     
@@ -963,6 +1041,12 @@ The following Sekoia.io built-in rules match the intake **WALLIX Bastion**. This
     
     - **Effort:** intermediate
 
+??? abstract "WCE wceaux.dll Creation"
+    
+    Detects wceaux.dll creation while Windows Credentials Editor (WCE) is executed.
+    
+    - **Effort:** intermediate
+
 ??? abstract "WMI Fingerprint Commands"
     
     Detects attacker fingerprint activities based on the correlation of specific WMIC commands. This has been observed with Aurora malware.
@@ -998,6 +1082,12 @@ The following Sekoia.io built-in rules match the intake **WALLIX Bastion**. This
     Detects modification of the Windows Registry value of HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\WDigest\UseLogonCredential. This technique is used to extract passwords in clear-text using WDigest. The rule requires to log for Registry Events, which can be done using Sysmon Event IDs 12, 13 and 14.
     
     - **Effort:** elementary
+
+??? abstract "Webshell Creation"
+    
+    Detects possible webshell file creation. It requires File Creation monitoring, which can be done using Sysmon's Event ID 11. However the recommended SwiftOnSecurity configuration does not fully cover the needs for this rule, it needs to be updated with the proper file names extensions.
+    
+    - **Effort:** master
 
 ??? abstract "WiFi Credentials Harvesting Using Netsh"
     
@@ -1044,5 +1134,11 @@ The following Sekoia.io built-in rules match the intake **WALLIX Bastion**. This
 ??? abstract "XCopy Suspicious Usage"
     
     Detects the usage of xcopy with suspicious command line options (used by Judgment Panda APT in the past). The rule is based on command line only in case xcopy is renamed.
+    
+    - **Effort:** advanced
+
+??? abstract "ZIP LNK Infection Chain"
+    
+    Detection of an ZIP download followed by a child-process of explorer, followed by multiple Windows processes.This is widely used as an infection chain mechanism.
     
     - **Effort:** advanced

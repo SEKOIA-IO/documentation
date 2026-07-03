@@ -42,7 +42,7 @@ The Endpoint Detection Agent supports the following operating systems, **on 64-b
 
 ## New features
 
-To find out about the changes between each version please check the [agent's changelog](https://changelog.sekoia.io/changelog?type=t6527b1484d556)
+To find out about the changes between each version please check the [agent's changelog](https://changelog.sekoia.com/changelog?type=t6527b1484d556)
 
 ## Prerequisites
 The Sekoia.io Endpoint Agent uses the HTTPS protocol to send its events and has an automatic update mechanism. As a prerequisite, it's necessary to open the following streams:
@@ -596,11 +596,15 @@ Each optimization rule is composed of:
 - An UUID defining the unique identifier of the rule.
 - An action code defining the action to apply.
     - Inside the agent, only the action to ignore an event is supported (`action: 1`).
-- A list of filters defining the conditions to match an event. All filters must match for the rule to match.
+- A list of filters defining the conditions to match an event.
   Each filter is composed of:
     - A field name: `field`
     - An operator: `operator`
     - A value: `value`
+
+!!! WARNING
+	A rule applies only if ALL filters match the event (AND). To have an OR behavior, separate elements in 2 dedicated rules.
+	
 
 !!! note
     String comparisons are case-sensitive.

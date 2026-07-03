@@ -134,7 +134,7 @@ By default, the memory queue is distributed across all intakes (`MEMORY_MESSAGES
     ```yaml
     services:
       rsyslog:
-        image: ghcr.io/sekoia-io/sekoiaio-docker-concentrator:2.7.2
+        image: ghcr.io/sekoia-io/sekoiaio-docker-concentrator:latest
         environment:
           - MEMORY_MESSAGES=2000000
           - DISK_SPACE=180g
@@ -261,7 +261,7 @@ Add the shared port mapping and the `extended_conf` volume mount:
 ```yaml
 services:
   rsyslog:
-    image: ghcr.io/sekoia-io/sekoiaio-docker-concentrator:2.7.2
+    image: ghcr.io/sekoia-io/sekoiaio-docker-concentrator:latest
     environment:
       - MEMORY_MESSAGES=2000000
       - DISK_SPACE=180g
@@ -742,7 +742,7 @@ If no events appear, verify the following:
 The image version is defined in the `image` line of `docker-compose.yml`:
 
 ```
-image: ghcr.io/sekoia-io/sekoiaio-docker-concentrator:2.7.2
+image: ghcr.io/sekoia-io/sekoiaio-docker-concentrator:latest
 ```
 
 To update, change the version tag and recreate the container:

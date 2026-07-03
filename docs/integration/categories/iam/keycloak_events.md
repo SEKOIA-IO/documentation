@@ -12,10 +12,6 @@ Keycloak is an open-source identity and access management solution that enables 
 - **Supported application or feature**: User Events
 
 
-!!! Warning
-	Important note - This format is currently in beta. We highly value your feedback to improve its performance.
-
-
 ## Supported events
 
 This integration supports the following event types:

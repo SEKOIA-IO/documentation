@@ -117,6 +117,12 @@ The following Sekoia.io built-in rules match the intake **Kaspersky Endpoint Sec
     
     - **Effort:** master
 
+??? abstract "Sekoia.io Activity Logs Rule Deactivation Bulk"
+    
+    Detects a massive rule deactivation observed threw Sekoia.io activity logs.
+    
+    - **Effort:** master
+
 ??? abstract "Suspicious ADSI-Cache Usage By Unknown Tool"
     
     Detects the usage of ADSI (LDAP) operations by tools. This may also detect tools like LDAPFragger. It needs file monitoring capabilities (Sysmon Event ID 11 with .sch file creation logging).

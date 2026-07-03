@@ -200,6 +200,28 @@ This table lists all filters for objects in the Intelligence page.
 
 To remove a filter, just click on the `cross` inside the tag. To remove all filters, click on `Clear filters` next to the tags’ list or in the bottom of the filters’ panel.
 
+## Threat Context
+
+When you open an object from the Intelligence page, the **Threat Context tab** shows all objects related to it.
+
+### What you can do
+
+**Search and filter**
+
+- Use the **search bar** to find a related object by name without scrolling through large result sets
+- **Filter by IOC type** to scope the view to a specific category (IP addresses, domains, file hashes, and more)
+- Use the **Last updated** filter to limit results to relationships updated in the last 30 days
+
+**Understand relationships at a glance**
+
+The **object distribution cards** show how many objects are related to the current threat, what relationships exist, and what types they are (downloads, drops, uses, targets, and others). This gives you an immediate structural overview before you explore individual links. Click a card to filter by that relationship type.
+
+**Manage columns**
+
+- Add **First Seen** and **Last Seen** columns alongside the existing Valid From and Valid Until columns
+- Reorder columns to match your workflow
+- Column state persists across sessions
+  
 ## Search for observables
 
 ### How the search engine works

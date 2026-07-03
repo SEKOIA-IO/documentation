@@ -27,7 +27,7 @@ Each indicator inside the collection can have the following properties:
 
 | Field                 | Description                                                                                                          |
 |-----------------------|----------------------------------------------------------------------------------------------------------------------|
-| Observable            | This is the actual IOC value (can be an IP address, a domain name, a URL, a file hash (MD5, SHA-1, SHA-256, SHA-512) or an email address) |
+| Observable <a id="observable-field"></a>           | This is the actual IOC value (can be an IP address (IPv4 or IPv6), a MAC address,  a domain name, a URL, a file hash (MD5, SHA-1, SHA-256, SHA-512) or an email address) |
 | Related Threats       | A list of threats that are related to this indicator. These threats have to exist inside the Intelligence Center        |
 | Valid From            | The date from which this indicator should be considered valid                                                       |
 | Valid Until           | The date from which this indicator should no longer be considered valid                                              |
@@ -48,6 +48,9 @@ Text Import can be used when you want to import a list of IOCs (typically one IO
 
 Add all your IOCs in the text field, then click on `Next`. 
 
+!!! note
+    You can only use IOC types listed into the [Observable description](#observable-field). 
+
 ![collectiontypes](/assets/operation_center/IOCscollections/ioc-types.png){: style="max-width:100%"}
 
 On the next screen, select the additional properties to add intelligence context to your indicators. All fields are optional here:
@@ -59,6 +62,9 @@ Finally, click on `Import` to add indicators to your collection. Depending on th
 ### File Import
 
 IOCs are commonly shared in tabular files where each indicator has its own row and additional context appears in different columns. File Import can be used with CSV, XLS and XLSX files to directly import indicators from these files.
+
+!!! note
+    You can only use IOC types listed into the [Observable description](#observable-field).
 
 1. Upload the file you would like to process
 2. The application will display the first 10 lines of the file, which a suggestion on how each column should be mapped to an indicator’s properties

@@ -37,11 +37,15 @@ To create a new optimization rule, send a POST request to the configuration endp
 
     Optimization rules only support parsed fields. Enriched fields (like sekoiaio.tags.*) are not usable in this context.
 
+!!! warning "Sekoia Endpoint Agent intakes"
+
+    For an intake collected by the Sekoia Endpoint Agent, optimization rules are applied on the agent itself. The agent only applies rules that match its format, so you must set the **format_uuid** to the Sekoia Endpoint Agent format (or set **agent_id**, which sets it automatically). A rule created on an agent intake without a **format_uuid** will not be applied on the agent.
+
 ??? example "Example: Ignore LDAP traffic on NetFlow"
     This command ignores NetFlow events based on parsed fields (for example, specific ports or datasets).
     ```bash
     curl --request POST \
-    --url [https://api.sekoia.io/v1/sic/conf/intakes/optimization_rules](https://api.sekoia.io/v1/sic/conf/intakes/optimization_rules) \
+    --url https://api.sekoia.io/v1/sic/conf/intakes/optimization_rules \
     --header 'Authorization: Bearer YOUR_TOKEN' \
     --header 'Content-Type: application/json' \
     --data '{
@@ -52,6 +56,21 @@ To create a new optimization rule, send a POST request to the configuration endp
         { "field": "event.dataset", "operator": "==", "value": "netflow" },
         { "field": "destination.port", "operator": "==", "value": 389 }
       ]
+    }'
+    ```
+
+??? example "Example: Ignore unparsed events on a specific intake"
+    Use action `8` (Ignore Useless Event) to silently drop events that your parser could not extract any data from.
+    No filters are needed — the rule relies on the parser's internal detection of empty results.
+    ```bash
+    curl --request POST \
+    --url https://api.sekoia.io/v1/sic/conf/intakes/optimization_rules \
+    --header 'Authorization: Bearer YOUR_TOKEN' \
+    --header 'Content-Type: application/json' \
+    --data '{
+      "action": 8,
+      "description": "Ignore events with no parsed data",
+      "intake_uuid": "YOUR_INTAKE_UUID"
     }'
     ```
 

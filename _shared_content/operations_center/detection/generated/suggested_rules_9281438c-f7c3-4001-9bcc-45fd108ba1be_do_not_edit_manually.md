@@ -2433,6 +2433,12 @@ The following Sekoia.io built-in rules match the intake **Windows**. This docume
     
     - **Effort:** master
 
+??? abstract "Registry Value Changed Via Windows Run Dialog"
+    
+    Detects when a user enters a suspicious url command in the windows run dialog. Could be linked to ClickFix. For this rule, you will need to add auditing permissions to this specific key and enable audit registry.
+    
+    - **Effort:** master
+
 ??? abstract "Remote Access Tool Domain"
     
     Detects traffic toward a domain flagged as a Remote Administration Tool (RAT).
@@ -2618,6 +2624,12 @@ The following Sekoia.io built-in rules match the intake **Windows**. This docume
     Detects when shells PID are listed and injected in another process. It can be performed to reuse sudo token related to shell in order to elevate privilege and maintain persistence.
     
     - **Effort:** intermediate
+
+??? abstract "Sigma Intelligence ErrTraffic PowerShell Command Line"
+    
+    Detects powershell script executed via ErrTraffic infection chain
+    
+    - **Effort:** elementary
 
 ??? abstract "Sliver DNS Beaconing"
     
