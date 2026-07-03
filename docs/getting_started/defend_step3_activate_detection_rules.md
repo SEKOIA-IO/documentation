@@ -82,7 +82,7 @@ To open the full matrix:
 
 Darker cells indicate more rules covering that technique. White cells indicate gaps in your coverage. Use this view to identify which areas of the attack chain you are not yet monitoring.
 
-![MITRE ATT&CK matrix showing detection rule coverage with color-coded cells.](docs/assets/getting_started/mitre_matrix.png){: style="width: 100%; max-width: 100%"}
+📸 [SCREENSHOT SUGGESTION:![MITRE ATT&CK matrix showing detection rule coverage with color-coded cells.]
 
 
 ## Related links
