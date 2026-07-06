@@ -36,7 +36,7 @@ Configure a [Logpush job](https://developers.cloudflare.com/logs/reference/logpu
 
     https://app.usa1.sekoia.io/api/v1/intake-http
 
-    You can find your region’s domain here: [https://docs.sekoia.io/getting_started/regions/](https://docs.sekoia.io/getting_started/regions/)
+    You can find your region’s domain here: [https://docs.sekoia.com/getting_started/regions/](https://docs.sekoia.com/getting_started/regions/)
 
 To do so, you can manage Logpush with cURL:
 

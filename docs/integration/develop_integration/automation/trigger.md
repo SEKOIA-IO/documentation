@@ -1,6 +1,6 @@
 # Trigger
 
-A trigger monitors events and launches a playbook when a new event is detected (see [definition](https://docs.sekoia.io/xdr/features/automate/triggers/)).
+A trigger monitors events and launches a playbook when a new event is detected (see [definition](https://docs.sekoia.com/xdr/features/automate/triggers/)).
 
 - A manifest file in the root directory of the module. The manifest of an action is prefixed with the string `trigger_`.
   This document contains:

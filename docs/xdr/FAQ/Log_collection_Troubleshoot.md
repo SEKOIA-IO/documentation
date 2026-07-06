@@ -35,7 +35,7 @@ Please consult our documentation for each technology used
 3. For most intakes, it is possible to test through `intakes page > + new intake > <intake name>` and click on `See format`
 ![Intake parser access](/assets/operation_center/intakes/Intake_parser_access.png){: style="max-width:100%"}
 
-4. Paste log and check the field `sekoia.intake.parsing_error`, please refer to [this section to test your log](https://docs.sekoia.io/xdr/features/collect/intakes/#panel-overview)
+4. Paste log and check the field `sekoia.intake.parsing_error`, please refer to [this section to test your log](https://docs.sekoia.com/xdr/features/collect/intakes/#panel-overview)
 
 **Fields to observe**
 

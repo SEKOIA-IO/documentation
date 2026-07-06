@@ -885,8 +885,8 @@ plugins:
 - integration_by_uuid
 - sass
 repo_url: https://github.com/SEKOIA-IO/documentation
-site_name: Sekoia.io Documentation
-site_url: https://docs.sekoia.io
+site_name: Sekoia Documentation
+site_url: https://docs.sekoia.com
 theme:
   custom_dir: theme
   favicon: assets/favicon.png

@@ -2,14 +2,14 @@
 
 ## A Sekoia.io rule was changed, how can I be notified when there is any change in the Rules Catalog?
 
-You can easily stay informed about changes in the Rules Catalog. We provide a [dedicated Rules changelog page](https://docs.sekoia.io/xdr/features/detect/rules_changelog/) where you can find details about what changes were made to existing rules.
+You can easily stay informed about changes in the Rules Catalog. We provide a [dedicated Rules changelog page](https://docs.sekoia.com/xdr/features/detect/rules_changelog/) where you can find details about what changes were made to existing rules.
 
 For new rules, you can directly enable notifications within the Sekoia.io platform to receive alerts. Go to the Notifications tool, create a new notification and select `A new rule is added to the Rules Catalog by Sekoia.io` as the trigger. 
 
 
 ## I want to map the EventIDs with the rules from Sekoia.io to know which ones I need to collect or not, where can I find this information?
 
-Easily find the mapping between EventIDs, rules, and EventProviders in our comprehensive guide: [Built-in detection rules, EventIDs and EventProviders relations](https://docs.sekoia.io/xdr/features/detect/built_in_detection_rules_eventids/). This page provides a clear overview of which EventIDs are associated with specific rules and their corresponding sources.
+Easily find the mapping between EventIDs, rules, and EventProviders in our comprehensive guide: [Built-in detection rules, EventIDs and EventProviders relations](https://docs.sekoia.com/xdr/features/detect/built_in_detection_rules_eventids/). This page provides a clear overview of which EventIDs are associated with specific rules and their corresponding sources.
 
 Please note that this information is automatically generated, so double-check for any discrepancies.
     
