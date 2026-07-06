@@ -615,6 +615,7 @@ nav:
   - List of Asset Connectors:
     - Overview: integration/assets_categories/overview.md
     - Vulnerability:
+      - ESET Vulnerability: integration/assets_categories/vulnerability/eset_vulnerability.md
       - Tenable.io: integration/assets_categories/vulnerability/tenable_io.md
     - Device:
       - AWS EC2: integration/assets_categories/device/aws_ec2_device.md
@@ -627,6 +628,7 @@ nav:
       - Sophos EDR: integration/assets_categories/device/sophos_edr.md
     - User:
       - AWS IAM: integration/assets_categories/user/aws_iam_user.md
+      - ESET User: integration/assets_categories/user/eset_user.md
       - Microsoft Active Directory: integration/assets_categories/user/microsoft_ad_user.md
       - Microsoft Entra ID: integration/assets_categories/user/microsoft_entra_id.md
       - Okta: integration/assets_categories/user/okta_user.md
