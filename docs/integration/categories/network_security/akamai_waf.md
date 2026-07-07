@@ -24,12 +24,8 @@ Akamai Web Application Firewall (WAF) is a cloud-based security solution designe
      ![step 2](/assets/operation_center/integration_catalog/network_security/akamai_waf/create_api_button.png){: style="max-width:100%"}
 
 3. Select the `Quick` option to automatically generate an API client.
-   
-   ![step 3](/assets/operation_center/integration_catalog/network_security/akamai_waf/create_api_client_button.png){: style="max-width:100%"}
 
 4. Click `Show additional details` to review your accessible APIs, then use the `Filter` field to confirm you have the `SIEM` permission before creating this API key.
-
-   ![step 4](/assets/operation_center/integration_catalog/network_security/akamai_waf/siem_permission.png){: style="max-width:100%"}
 
 5. Copy and securely save the information displayed in the `Credentials` section.
 
