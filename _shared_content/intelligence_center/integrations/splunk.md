@@ -6,7 +6,17 @@ Sekoia is providing an application for Splunk to detect threats in your logs bas
 
 - An operational Splunk instance with administrator privileges (**Enterprise** for OnPrem or **Cloud** for the SaaS version)
 - An active Sekoia.io license with access to the CTI
-- An access to Sekoia.io User Center with the role that contains the permission to [create an API key](/getting_started/manage_api_keys.md) (e.g. Built-in [Analyst Role](/getting_started/roles.md#functionality-of-built-in-roles) or create a custom role with [ic_viewer permissions](/getting_started/roles.md#legacy-roles) <a name="api_key"></a>
+- An access to Sekoia.io User Center with the role that contains the permission to [create an API key](/getting_started/manage_api_keys.md) (e.g. Built-in [Analyst Role](/getting_started/roles.md#functionality-of-built-in-roles)) or create a custom role with [ic_viewer permissions](/getting_started/roles.md#legacy-roles) <a name="api_key"></a>
+
+!!!note
+    Only permissions are selectable when creating an API key, not [built-in roles](/getting_started/roles.md#functionality-of-built-in-roles)
+
+    Here are the selectable permissions corresponding to the `Analyst Role`:
+    - `CTI > View feeds`
+    - `CTI > View intelligence`
+    - `CTI > View labels`
+    - `CTI > View observables`
+    - `CTI > View graph explorations`
 
 !!!note
     This following guide is for Splunk solutions (**Enterprise** (OnPrem) or Splunk **Cloud** (Cloud)).
@@ -16,10 +26,10 @@ Sekoia is providing an application for Splunk to detect threats in your logs bas
 1. In a Web browser, type the following and replace `server_ip` and `port` by their values:
    http://server_ip:port
 
-   !!!note
-       For Cloud version, only the next step is required
+!!!note
+    For Cloud version, only the next step is required
 
-   2. Enter your login and password of your Splunk Enterprise instance
+2. Enter your login and password of your Splunk Enterprise instance
 ![Splunk-Login](/assets/intelligence_center/Splunk/Splunk-Login.png){: style="width: 60%; max-width: 60%"}
 
 ## 2.  Install and configure your Sekoia application for Splunk
@@ -38,6 +48,13 @@ _Please find below the explanation of the fields to be configured_
 **Required**
 
 - `SEKOIA.IO API Key`: Sekoia API Key to be created as stated in the [Prerequisites](#api_key)
+
+!!!warning
+    **[Deprecation Warning]** The API key field description on the Splunk Enterprise portal may mention that it must be configured at least with the `Intelligence Center - Read Only` role
+
+    This role is now deprecated and has been renamed `Analyst Role`
+    
+    The corresponding permissions selectable for the API key are listed above, in the [Prerequisites](#api_key) section
 
 **Optional**
 
