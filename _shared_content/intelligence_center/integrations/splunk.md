@@ -8,8 +8,8 @@ Sekoia is providing an application for Splunk to detect threats in your logs bas
 - An active Sekoia.io license with access to the CTI
 - An access to Sekoia.io User Center with the role that contains the permission to [create an API key](/getting_started/manage_api_keys.md) (e.g. Built-in [Analyst Role](/getting_started/roles.md#functionality-of-built-in-roles)) or create a custom role with [ic_viewer permissions](/getting_started/roles.md#legacy-roles) <a name="api_key"></a>
 
-!!!note
-    Only permissions are selectable when creating an API key, not [built-in roles](/getting_started/roles.md#functionality-of-built-in-roles)
+!!! note
+    When creating an API key, only permissions are selectable, not [built-in roles](/getting_started/roles.md#functionality-of-built-in-roles)
 
     Here are the selectable permissions corresponding to the `Analyst Role`:
     - `CTI > View feeds`
@@ -18,7 +18,7 @@ Sekoia is providing an application for Splunk to detect threats in your logs bas
     - `CTI > View observables`
     - `CTI > View graph explorations`
 
-!!!note
+!!! note
     This following guide is for Splunk solutions (**Enterprise** (OnPrem) or Splunk **Cloud** (Cloud)).
 
 ## 1. Connect to Splunk Enterprise
@@ -26,10 +26,10 @@ Sekoia is providing an application for Splunk to detect threats in your logs bas
 1. In a Web browser, type the following and replace `server_ip` and `port` by their values:
    http://server_ip:port
 
-!!!note
-    For Cloud version, only the next step is required
+    !!! note
+        For Cloud version, only the next step is required
 
-2. Enter your login and password of your Splunk Enterprise instance
+2. Enter your login and password for your Splunk Enterprise instance
 ![Splunk-Login](/assets/intelligence_center/Splunk/Splunk-Login.png){: style="width: 60%; max-width: 60%"}
 
 ## 2.  Install and configure your Sekoia application for Splunk
@@ -49,7 +49,7 @@ _Please find below the explanation of the fields to be configured_
 
 - `SEKOIA.IO API Key`: Sekoia API Key to be created as stated in the [Prerequisites](#api_key)
 
-!!!warning
+!!! warning
     **[Deprecation Warning]** The API key field description on the Splunk Enterprise portal may mention that it must be configured at least with the `Intelligence Center - Read Only` role
 
     This role is now deprecated and has been renamed `Analyst Role`
@@ -65,7 +65,7 @@ _Please find below the explanation of the fields to be configured_
     2. If you don't want to distinguish the Sekoia application for Splunk network configuration from the configuration of your Splunk instance, the Sekoia application for Splunk takes into account the global Splunk proxy configuration provided by means of the `HTTP_PROXY` and `HTTPS_PROXY` environment variables.
 
 !!! note
-     After the launch of Sekoia application for Splunk, only valid IOCs of [these types](#sourcetype) will be downloaded and updated on Splunk from current date.
+    After the launch of Sekoia application for Splunk, only valid IOCs of [these types](#sourcetype) will be downloaded and updated on Splunk from current date.
 
 ## 3. Sekoia Intelligence in Splunk
 
@@ -83,9 +83,9 @@ In the following section, here are the Sekoia IOC types available in Splunk: <a 
 An IOC is an observable that represents a malicious activity. For more information, please consult [this page](/cti/features/consume/observables.md).
 
 !!! note
-     Only these Sekoia Indicator types will be updated.
+    Only these Sekoia Indicator types will be updated.
 
-     Update is **scheduled every night** to ensure that valid IOCs are used to detect threats.
+    Update is **scheduled every night** to ensure that valid IOCs are used to detect threats.
 
 ## 4. Search Sekoia Intelligence and match with IOCs in Splunk
 
@@ -99,7 +99,7 @@ An IOC is an observable that represents a malicious activity. For more informati
 ### Search and compare Sekoia IOCs with logs in Splunk
 
 !!! note
-     Logs have to be collected in Splunk. Please consult [Splunk documentation](https://www.splunk.com/en_us/blog/learn/centralized-logging.html).
+    Logs have to be collected in Splunk. Please consult [Splunk documentation](https://www.splunk.com/en_us/blog/learn/centralized-logging.html).
 
 1. Setup a lookup table
 
