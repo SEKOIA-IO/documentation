@@ -12,6 +12,9 @@ The "Custom format" feature allows you to easily develop your own Intake. It giv
 !!!note
     In order to use this feature, you need to have the `SIC_WRITE_INTAKE` permission associated to your Sekoia.io account. This permission also allows you to create an existing Intake.
 
+!!! tip "Generate the parser with AI"
+    Rather than building the parser stage by stage, you can upload sample logs and let an AI agent write and self-test the parser for you. See [Generate a parser with AI](/xdr/features/collect/generate_a_parser_with_ai.md).
+
 The creation of an empty Custom format is the first step to develop your own Intake.
 
 After that, you will be able to create an instance of this Intake and start sending your logs. No event will be parsed but you will be able to see the evolution of your parser while you are developing it.
