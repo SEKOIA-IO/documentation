@@ -73,7 +73,7 @@ To edit a case:
 * [Cases](/xdr/features/investigate/cases.md): Overview of what cases are and how they are structured.
 * [Create a case](/xdr/features/investigate/create_a_case.md): Step-by-step instructions to open a new case and attach alerts to it.
 * [Case details](/xdr/features/investigate/case_details.md): Reference for every tab and field available on the case details page.
-* [Case custom fields](/xdr/features/investigate/case_custom_fields.md): How to filter cases by custom field values and manage field definitions.
+* [Custom fields](/xdr/features/investigate/custom_fields.md): How to filter alerts and cases by custom field values and manage field definitions.
 * [Alerts](/xdr/features/investigate/alerts.md): How alerts are created and how to manage them before grouping them into cases.
 * [Playbooks](/xdr/features/automate/index.md): How to automate case workflows and trigger actions based on case updates.
 * [Dashboards](/xdr/features/report/dashboards.md): How to monitor case activity and investigation KPIs across your community.

@@ -92,6 +92,7 @@ You can query **event_telemetry** in the SOL query builder and combine it with o
 | cases                     | List of cases associated to the alert.                                                       |
 | assets                    | List of assets associated to the alert.                                                      |
 | threats                   | List of threats associated the alert.                                                        |
+| custom_fields             | Structured metadata attached to the alert. Access a field with `custom_fields.<field_name>`. |
 
 ## cases
 
@@ -111,6 +112,7 @@ You can query **event_telemetry** in the SOL query builder and combine it with o
 | updated_by_type           | The type of user that last updated the case.                                               |
 | first_seen_at             | The date and time when the case was first detected.                                        |
 | last_seen_at              | The date and time when the case was last observed or updated.                              |
+| custom_fields             | Structured metadata attached to the case. Access a field with `custom_fields.<field_name>`. |
 
 ## custom_statuses
 
