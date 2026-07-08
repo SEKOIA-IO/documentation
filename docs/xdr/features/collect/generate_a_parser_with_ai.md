@@ -69,7 +69,7 @@ Everything the agent produced remains editable. The generated stages behave exac
 
 ## Related articles
 
-- [AI intake parser](/xdr/features/collect/ai_intake_parser.md): What the agent does, how the generate and self-test loop works, and when to use it.
+- [AI intake parser overview](/xdr/features/collect/ai_intake_parser_overview.md): What the agent does, how the generate and self-test loop works, and when to use it.
 - [Intakes](/xdr/features/collect/intakes.md): How to create an intake, monitor its health, and inspect invalid or warning events.
 - [Create a Format](/integration/develop_integration/formats/create_a_format.md): How to build a custom format manually, on the platform or through the intake-formats repository.
 - [How to write a parser](/integration/develop_integration/formats/parser.md): Reference for parser stages, filters, conditions and the fields manager.

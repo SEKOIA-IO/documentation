@@ -1,4 +1,4 @@
-# AI intake parser
+# AI intake parser overview
 
 The AI intake parser generates a custom intake parser for you from sample logs, instead of requiring you to build it stage by stage. An AI agent analyzes the logs you upload, writes a parser that maps them to the Elastic Common Schema (ECS), and tests that parser against your samples before handing it back.
 
