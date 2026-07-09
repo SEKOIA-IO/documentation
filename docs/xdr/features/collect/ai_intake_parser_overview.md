@@ -19,13 +19,13 @@ When the agent finishes, the popup closes and the parser appears in the parser b
 
 ## What the agent produces
 
-The agent produces an ordinary Sekoia parser. It is the same chain of stages you would have written by hand: stages that pattern-match the raw event, extract its values, and reshape them into structured ECS fields.
+The agent produces an standard Sekoia parser. It is the same chain of stages you would have written by hand: stages that pattern-match the raw event, extract its values, and reshape them into structured ECS fields.
 
-Nothing about the result is locked or opaque. The generated stages are visible in the parser builder, you can edit any of them, and you can keep testing the parser against a sample event in **Test your parser**. The agent gives you a working starting point rather than a black box.
+The generated stages are visible in the parser builder, you can edit any of them, and you can keep testing the parser against a sample event in **Test your parser**. The agent gives you a working starting point rather than a black box.
 
 ## When to use it
 
-Building a parser by hand demands the Sekoia parser training course, a working knowledge of stage chaining, familiarity with ECS field mapping, and several rounds of trial and error against sample logs. The AI intake parser removes that barrier for the cases where custom parsing is unavoidable:
+Building a parser by hand requires the Sekoia parser training course, a working knowledge of stage chaining, familiarity with ECS field mapping, and several rounds of trial and error against sample logs. The AI intake parser removes that barrier for the cases where custom parsing is unavoidable:
 
 - **Sources absent from the catalog.** Proprietary in-house applications and niche security appliances that the 300+ built-in intakes do not cover.
 - **Migration to Sekoia.** Legacy parsers carried over from a previous platform, which otherwise have to be rebuilt one by one before the migration can complete.
