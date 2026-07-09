@@ -138,6 +138,7 @@ nav:
     - Investigate:
       - Alerts: xdr/features/investigate/alerts.md
       - Events page: xdr/features/investigate/events.md
+      - Eternal events: xdr/features/investigate/eternal_events.md
       - Massive event export:
         - Understand massive event export: xdr/features/investigate/event_export.md
         - Export events with CLI: xdr/features/investigate/export_event_cli.md
