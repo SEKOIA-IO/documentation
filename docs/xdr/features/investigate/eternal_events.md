@@ -14,6 +14,8 @@ Eternal events remove that risk. As soon as an alert is raised or an event is ad
 * **No tier requirement.** It applies whatever retention you have purchased.
 * **No expiry.** Eternal events outlive your retention window, however long an investigation takes to reopen.
 
+Preservation is bounded, though. See [Scope and limits](#scope-and-limits).
+
 ## What is stored eternally
 
 Two kinds of events are preserved:
@@ -33,6 +35,15 @@ Coverage depends on the detection type of the rule that raised the alert:
 | SOL | No |
 | Event Drop | No |
 
+## Scope and limits
+
+Eternal events preserve the narrow context around an incident: the events that raised an alert, and the events you deliberately add to a case. They are not a general purpose archive of your telemetry.
+
+Sekoia.io applies throttling when a disproportionate share of your ingested events would be preserved this way. Past that point, the excess events are not preserved. The alert itself is unaffected and remains fully usable, but some of the events behind it will no longer be available once your retention window has elapsed.
+
+!!! warning "Keep your detection rules specific"
+    A rule whose pattern matches a large fraction of your telemetry preserves a correspondingly large volume of events, and can trigger throttling. Specific rule patterns keep the volume proportionate and the evidence behind each alert complete.
+
 ## How to access eternal events
 
 Eternal events are reachable in two ways, depending on whether you are working from an alert or writing your own query.
@@ -45,7 +56,10 @@ This is transparent. There is no switch to flip, no separate view, and no differ
 
 ### With a SOL query
 
-To query preserved events directly, use the `eternal_events` datasource in the [Query Builder](/xdr/features/investigate/query_builder.md). This is the right datasource when the alert or case you are investigating has passed your retention window, and its events are no longer returned by the `events` datasource or the **Events** page.
+To query preserved events directly, use the `eternal_events` datasource in the [Query Builder](/xdr/features/investigate/query_builder.md). Reach for it in two situations:
+
+* **The events have passed your retention window.** They are no longer returned by the `events` datasource or the **Events** page, and `eternal_events` is the only place they still exist.
+* **You want to scope a query to alert or case evidence.** Even while the events are still within your retention window, `eternal_events` holds nothing but the events attached to an alert or a case. There is no full telemetry search to narrow down, which makes it the natural datasource for investigating a given alert or building metrics over the events that raised your alerts.
 
 ```shell
 eternal_events

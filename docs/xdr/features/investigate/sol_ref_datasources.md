@@ -66,7 +66,7 @@ You can query **event_telemetry** in the SOL query builder and combine it with o
 
 The **eternal_events** data source gives you access to the events attached to an alert or a case. These events are stored permanently, whatever your retention subscription, so they remain queryable long after the same events have expired from the `events` data source.
 
-Query **eternal_events** when the alert or case you are investigating has passed your retention window, or when you want to build metrics over the events that raised your alerts.
+Query **eternal_events** when the alert or case you are investigating has passed your retention window. It is also the natural data source whenever you want to scope a query to alert or case evidence, even within your retention window, since it contains nothing else: use it to investigate a given alert or to build metrics over the events that raised your alerts.
 
 **eternal_events** shares the same schema as `events`. The filters, aggregations and functions you use against `events` apply here without change.
 
