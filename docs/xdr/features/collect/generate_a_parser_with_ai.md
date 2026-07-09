@@ -7,7 +7,7 @@ This article explains how to generate a custom intake parser from sample logs, u
 
 ## Prerequisites
 
-- You have the `SIC_WRITE_INTAKE` permission associated to your Sekoia.io account.
+- You have the `SIC_WRITE_INTAKE` permission associated to your Sekoia account.
 - You have sample logs from the source you want to ingest, saved as files you can upload.
 - The samples cover every event type the source emits. The agent tests the parser only against the samples you provide.
 
@@ -15,7 +15,8 @@ This article explains how to generate a custom intake parser from sample logs, u
 
 ### Step 1: Open the custom intake creation page
 
-Navigate to **Intakes**, click **+ Intake**, then select **Custom format**. The **Create new custom intake** page opens on the **Parser** tab.
+Navigate to **Intakes** > **+ Intake** > **Custom format**. 
+The **Create new custom intake** page opens on the **Parser** tab.
 
 ### Step 2: Start the agent
 
@@ -48,14 +49,16 @@ Review the stages and the fields they extract. To confirm the behavior on an eve
 
 ### Step 6: Save the intake
 
-Enter a **Name** and a **Description**, select a **Connector** and the **Datasources** associated with your events, then click **Save**.
+1. Enter a **Name** and a **Description**.
+2. Select a **Connector** and the **Datasources** associated with your events
+3. Click **Save**.
 
 ## Update an existing parser
 
 The agent also updates a parser that already exists. Use this when a source starts emitting an event type that your current parser does not handle.
 
 1. Open the custom intake whose parser you want to extend.
-2. Click **Generate parser** in the **Build your parser** section.
+2. In the **Build your parser** section, click **Generate parser**.
 3. Import samples of the logs that are not parsed yet.
 4. Click **Generate parser**.
 
