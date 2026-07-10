@@ -27,7 +27,7 @@ An event is invalid when the data does not match the expected format (JSON, Key 
 #### Event in warning
 A warning can be generated in 2 cases:
 
-- The parsing of the event was a success but no data were extracted — this is not an error, but may be worth investigating if unexpected
+- The parsing of the event was a success but no data were extracted ; this is not an error, but may be worth investigating if unexpected
 - Some values were incompatibles with their expected data type and could not be extracted
 
 ### Events date range
