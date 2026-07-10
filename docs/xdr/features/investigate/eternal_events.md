@@ -1,6 +1,6 @@
 # Eternal events
 
-Eternal events are the security events attached to your alerts and cases, stored permanently whatever your retention subscription. They remain available for investigation long after the same events have expired from your standard retention window.
+Eternal events are the security events attached to your alerts and cases, kept independently of your retention subscription. They remain available for investigation after the same events have expired from your standard retention window.
 
 ## Why eternal events matter
 
@@ -8,11 +8,11 @@ Your retention window governs how long ingested events stay searchable. Once an 
 
 Investigations rarely respect that deadline. A breach discovered in November may hinge on evidence collected in March. An auditor, a regulator or an insurer can ask you to substantiate an incident months after it closed. A post-incident review is often the moment you most need the events that triggered the original alert.
 
-Eternal events remove that risk. As soon as an alert is raised or an event is added to a case, the underlying evidence is copied to a permanent store. It stays there indefinitely, independently of your retention subscription:
+Eternal events remove that risk. As soon as an alert is raised or an event is added to a case, the underlying evidence is copied to a permanent store. It is kept independently of your retention subscription:
 
 * **Nothing to configure.** Preservation is automatic.
 * **No tier requirement.** It applies whatever retention you have purchased.
-* **No expiry.** Eternal events outlive your retention window, however long an investigation takes to reopen.
+* **Not governed by your retention window.** Eternal events outlive your retention window, however long an investigation takes to reopen.
 
 Preservation is bounded, though. See [Scope and limits](#scope-and-limits).
 
@@ -70,7 +70,7 @@ eternal_events
 Eternal events share the same schema as events, so the filters, aggregations and functions you already use against `events` work here too.
 
 !!! tip "Scope your queries"
-    Because eternal events are never deleted, the datasource spans your entire history. Filter on an alert, a case or a time range rather than scanning everything.
+    Because eternal events are not subject to automatic time-based deletion, the datasource spans your entire history. Filter on an alert, a case or a time range rather than scanning everything.
 
 ## Eternal events and the events datasource
 
@@ -79,7 +79,7 @@ The two datasources answer different questions:
 | | `events` | `eternal_events` |
 |---|---|---|
 | Scope | Every ingested event | Only events attached to an alert or a case |
-| Retention | Your subscription's retention window | Permanent |
+| Retention | Your subscription's retention window | Not subject to automatic time-based deletion |
 | Best for | Threat hunting across all your telemetry | Investigating alerts and cases beyond retention |
 
 Eternal events live in a store of their own rather than being folded into `events`. Keeping the two separate is deliberate: each store is optimized for the way it is queried, which is what allows a search across your full alert history to stay fast.
@@ -93,7 +93,7 @@ If your workspace uses the Hot/Cold storage model, you can also [restore data fr
 | Coverage | Events attached to an alert or a case | All events over a requested timespan |
 | Access | Immediate, in the interface or with SOL | Request to Sekoia.io Support |
 | Delay | None | From 48 working hours |
-| Lifetime | Permanent | Deleted after 30 days |
+| Lifetime | Not subject to automatic time-based deletion | Deleted after 30 days |
 
 Use eternal events when you need the evidence behind a specific alert or case. Use a cold storage restore when you need the full picture of everything that happened during a period, including events that never raised an alert.
 
