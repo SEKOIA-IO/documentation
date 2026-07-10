@@ -6,7 +6,7 @@
 |-------------|-------------|-----------|
 | `events` | Security events | Threat hunting, incident investigation, SOC reporting. You will receive events that are retained for the duration of your hot storage |
 | [event_telemetry](#event_telemetry) | Telemetry on events | Analytics on your ingestion pipelines |
-| `eternal_events` | Security events related to alerts or cases | Extract metrics from events related to alerts/cases. Access events related to an alert that are beyond your hot storage retention period |
+| [eternal_events](#eternal_events) | Security events related to alerts or cases | Extract metrics from events related to alerts/cases. Access events related to an alert that are beyond your hot storage retention period |
 | [alerts](#alerts) | Security alerts and detections | SOC monitoring, alert pattern analysis |
 | [cases](#cases) | Security incidents and cases | Case management, incident correlation |
 | [custom_statuses](#custom_statuses) | Alerts and cases custom statuses | Reporting |
@@ -61,6 +61,16 @@ You can query **event_telemetry** in the SOL query builder and combine it with o
 | max_processing_lag      | Maximum processing time (in seconds) taken by Sekoia.io to process an event.                 |
 | min_processing_lag      | Minimum processing time (in seconds) taken by Sekoia.io to process an event.                 |
 | total_processing_lag    | Total accumulated processing time (in seconds) for all events in the bucket.                 |
+
+## eternal_events
+
+The **eternal_events** data source gives you access to the events attached to an alert or a case. These events are stored permanently, whatever your retention subscription, so they remain queryable long after the same events have expired from the `events` data source.
+
+Query **eternal_events** when the alert or case you are investigating has passed your retention window. It is also the natural data source whenever you want to scope a query to alert or case evidence, even within your retention window, since it contains nothing else: use it to investigate a given alert or to build metrics over the events that raised your alerts.
+
+**eternal_events** shares the same schema as `events`. The filters, aggregations and functions you use against `events` apply here without change.
+
+For a full explanation of what is preserved and how to reach it from the interface, see [Eternal events](/xdr/features/investigate/eternal_events.md).
 
 ## alerts
 
