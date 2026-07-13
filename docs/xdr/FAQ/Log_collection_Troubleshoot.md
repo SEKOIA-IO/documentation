@@ -50,7 +50,7 @@ Please consult our documentation for each technology used
 
 ## Event size limit and rejection behavior
 
-Events exceeding 250 KiB in size are rejected by Sekoia's ingestion pipeline. They are not truncated.
+Events exceeding 250 KiB are rejected by Sekoia's ingestion pipeline.
 
 !!! warning "Events larger than 250 KiB are rejected"
     Sekoia drops any event that exceeds 250 KiB. These events are never ingested, parsed, or visible in the platform. Truncating oversized events is not possible, as it would produce malformed payloads (for example, broken JSON) that the parser cannot process.
