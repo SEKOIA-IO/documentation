@@ -547,6 +547,7 @@ nav:
       - Zscaler Internet Access: integration/categories/network_security/zscaler_zia.md
       - Zscaler Private Access: integration/categories/network_security/zscaler_zpa.md
     - Threat Intelligence:
+      - Flare Events: integration/categories/threat_intelligence/flare_events.md
       - MokN - Baits: integration/categories/threat_intelligence/mokn_baits.md
       - Prodaft USTA: integration/categories/threat_intelligence/prodaft_usta.md
   - List of Playbooks Actions:
