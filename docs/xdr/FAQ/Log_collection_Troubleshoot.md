@@ -62,7 +62,7 @@ The feedback you receive depends on the ingestion method:
 | Ingestion method | Rejection behavior |
 |---|---|
 | `intake.sekoia.io` (single event) | Returns an HTTP `413` error |
-| `intake.sekoia.io` (batch) | Returns a per-event ingestion status in the response body |
+| `intake.sekoia.io` (batch) | Returns a per-event ingestion status in the response body and an HTTP `413` error when all the events in the batch are rejected |
 | Syslog | Events are dropped silently, no feedback is returned |
 
 ### What to do when events are rejected
