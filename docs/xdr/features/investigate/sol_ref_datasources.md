@@ -286,12 +286,22 @@ The **rule_definitions** data source provides the list of detection rule definit
 
 It allows you to audit your detection coverage, report on rule types and origins, and cross-reference with rule instances to understand what is deployed in your communities.
 
+The `format_uuid` property can be joined with the [intake_formats](#intake_formats) data source to identify the integration a rule targets.
+
 | **Property** | **Description** |
 | --- | --- |
 | uuid | A unique identifier for the rule definition. |
 | name | The name of the detection rule. |
-| source | The origin of the rule (e.g., `Sekoia`, `Custom`). |
+| community_uuid | A unique identifier for the community related to the rule definition. Empty for Sekoia-managed rules available to all communities. |
+| source | The origin of the rule (e.g., `SEKOIA`, `Custom`). |
 | type | The type of rule (e.g., `sigma`, `cti`, `anomaly`). |
+| format_uuid | A unique identifier for the intake format the rule targets. Only filled for Integration rules, i.e., rules written for a specific integration tool such as Microsoft Sentinel. |
+| created_at | The date and time when the rule definition was created. |
+| created_by | The user or system that created the rule definition. |
+| created_by_type | The type of entity that created the rule definition (e.g., avatar, application). |
+| updated_at | The date and time when the rule definition was last updated. |
+| updated_by | The user or system that last updated the rule definition. |
+| updated_by_type | The type of entity that last updated the rule definition. |
 
 ## rule_instances
 
@@ -303,8 +313,14 @@ It can be joined with `rule_definitions` to produce reports on which rules are e
 | --- | --- |
 | uuid | A unique identifier for the rule instance. |
 | rule_definition_uuid | UUID of the related rule definition (used for `lookup` joins). |
-| enabled | Whether the rule is currently enabled (`True` / `False`). |
-| community_uuid | UUID of the community where the rule instance is applied. |
+| community_uuid | A unique identifier for the community where the rule instance is applied. |
+| enabled | Whether the rule is currently enabled (`true` / `false`). |
+| created_at | The date and time when the rule instance was created. |
+| created_by | The user or system that created the rule instance. |
+| created_by_type | The type of entity that created the rule instance (e.g., avatar, application). |
+| updated_at | The date and time when the rule instance was last updated. |
+| updated_by | The user or system that last updated the rule instance. |
+| updated_by_type | The type of entity that last updated the rule instance. |
 
 ??? example 
     The following query generates a breakdown of detection rules by source and type, with the count of enabled rules per category — useful for monthly client reporting or coverage monitoring:
