@@ -79,7 +79,7 @@ tar -xvf sekoia-self-hosted-v0.0.1.tar -C $SEKOIA_LOCAL_DIR
 For the first installation, the SHC image is not yet available on the orchestration node. Load it manually from the extracted archive:
 
 ```bash
-docker load -i $SEKOIA_LOCAL_DIR/v0.0.1/images/registry.sekoia.io_sekoialab_platform-installer-self-hosted-v0.0.1.tar.gz
+docker load -i $SEKOIA_LOCAL_DIR/v0.0.1/images/registry.sekoia.io_sekoialab_self-hosted-controller-cli-v0.0.1.tar.gz
 ```
 
 To confirm the image loaded successfully, run:
