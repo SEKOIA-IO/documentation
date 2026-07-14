@@ -29,9 +29,14 @@ If you need to edit a query that has been shared with your community, you must d
 1. Navigate to the **Queries** page.
 2. Locate the shared query you wish to modify.
 3. Click the **...** (three dots) icon associated with the query.
-4. Select **Duplicate**.
+4. Select **Duplicate query**.
+    
+    !!! warning "Query validation"
+        By duplicating the query, you will lose access to filter and SOL datasets attached to that query. That could impact the good run of the query and require some improvement.
+
 5. Enter a new name for the duplicated query.
-6. Click **Save**.
+6. Resolve duplication issue
+7. Click **Save**.
 
 !!! tip "Customization"
 
