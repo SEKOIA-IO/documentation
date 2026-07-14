@@ -10,7 +10,7 @@ jobs:
   build:
     permissions:
       contents: write  # for peter-evans/create-pull-request to create branch
-      pull-requests: write  # for peter-evans/create-pull-request to create a PR
+      pull-requests: write  # for peter-evans/create-pull-request to create a PR and gh to approve and merge the PR
     runs-on: ubuntu-latest
     steps:
     - name: Checkout `documentation` repository under `main/`
@@ -43,6 +43,7 @@ jobs:
 
     - name: Create Pull Request
       uses: peter-evans/create-pull-request@c0f553fe549906ede9cf27b5156039d195d2ece0 # v8.1.0
+      id: create_pr
       with:
         commit-message: Refresh intakes documentation
         delete-branch: true
@@ -52,3 +53,17 @@ jobs:
         branch: update-intake-documentation
         body: |
           Refresh intakes documentation
+
+    - name: Approve the PR
+      if: steps.create_pr.outputs.pull-request-operation == 'created'
+      run: gh pr review ${STEPS_CREATE_PR_OUTPUTS_PULL_REQUEST_NUMBER} --repo "${{ github.repository }}" --approve
+      env:
+        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        STEPS_CREATE_PR_OUTPUTS_PULL_REQUEST_NUMBER: ${{ steps.create_pr.outputs.pull-request-number }}
+
+    - name: Merge the PR
+      if: steps.create_pr.outputs.pull-request-operation == 'created'
+      run: gh pr merge ${STEPS_CREATE_PR_OUTPUTS_PULL_REQUEST_NUMBER} --repo "${{ github.repository }}" --merge
+      env:
+        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        STEPS_CREATE_PR_OUTPUTS_PULL_REQUEST_NUMBER: ${{ steps.create_pr.outputs.pull-request-number }}
