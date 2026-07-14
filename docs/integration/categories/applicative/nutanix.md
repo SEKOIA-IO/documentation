@@ -1,0 +1,97 @@
+---
+uuid: 9a7f6d4e-3b2a-4c1d-8f9e-0a1b2c3d4e5f
+name: Nutanix
+type: intake
+---
+
+## Nutanix (Prism) [BETA]
+
+!!! warning "Beta"
+	This integration is currently in beta. Features, field names and suggested rules may change.
+	Validate parsing and detection rules before deploying to production.
+
+This page explains how to collect Nutanix logs (Prism Central / Prism Element) and forward them to Sekoia.io using Syslog (recommended), API, or object storage exports.
+
+### Overview
+
+- Product: Nutanix Prism (Prism Central / Prism Element)
+- Use cases: administrative audits, infrastructure events, Security Policy Hit Logs, and Flow service logs for troubleshooting.
+
+## Overview
+
+- **Vendor**: Nutanix
+- **Supported environment**: On-premises (Prism Central / Prism Element)
+- **Detection based on**: Audit logs, policy hit logs, and service telemetry
+
+Nutanix Prism provides system and audit logs that are useful for security monitoring (administrative actions, infrastructure changes, and network policy hits).
+
+## Specification
+
+### Prerequisites
+
+- Administrative access to Prism Central (or Prism Element for local configurations)
+- Network connectivity from Prism to your log concentrator or Sekoia.io forwarder
+- Intake key on Sekoia.io for the target intake
+
+### Transport Protocol/Method
+
+- Syslog (UDP/TCP)
+- RELP (optional) for improved reliability
+- TLS (between sources and concentrator) when configured in `intakes.yaml`
+- API exports and object storage (S3) exports for offline/batch ingestion
+
+### Logs details
+
+- Supported formats: JSON payloads (API_AUDIT / AUDIT), and RFC5424 syslog lines for hit logs and service messages.
+- Supported verbosity: INFO for audits (recommended), DEBUG only when troubleshooting.
+
+## Step-by-Step Configuration Procedure
+
+### Configure Prism Central (UI)
+
+1. Log in to Prism Central as an administrator.
+2. Navigate to Admin Center → Settings → Syslog Server.
+3. Click Add Syslog Server and provide server name, IP, port, transport (UDP/TCP) and optional RELP.
+4. On Data Sources, select `API_AUDIT`, `AUDIT`, `Security Policy Hit Logs` and set severity to `INFO` for audits.
+5. Save and verify propagation to Prism Elements if desired.
+
+### Configure via nCLI (illustrative)
+
+```
+# Example (verify exact syntax for your version)
+ncli cluster add-remote-syslog-server server-name="sekoia" server-ip="10.0.0.10" server-port=514 transport=udp
+ncli cluster update-remote-syslog-server server-name="sekoia" modules=API_AUDIT,AUDIT,SECURITY_POLICY_HIT_LOGS severity=INFO
+```
+
+### Create the intake
+
+Go to the intake page and create a new intake using the Nutanix format on Sekoia.io: https://app.sekoia.io/operations/intakes
+
+### Configure a forwarder
+
+To forward events using syslog to Sekoia.io, you need to update the syslog header with the intake key you previously created.
+Here is an example of your message before the forwarder
+```
+<%pri%>1 %timestamp:::date-rfc3339% %hostname% %app-name% %procid% LOG RAW_MESSAGE
+```
+and after
+```
+<%pri%>1 %timestamp:::date-rfc3339% %hostname% %app-name% %procid% LOG [SEKOIA@53288 intake_key="YOUR_INTAKE_KEY"] RAW_MESSAGE
+```
+
+To achieve this you can:
+
+- Use the [Sekoia.io forwarder](/integration/ingestion_methods/syslog/sekoiaio_forwarder.md) which is the official supported way to collect data using the syslog protocol in Sekoia.io. In charge of centralizing data coming from many equipments/sources and forwarding them to Sekoia.io with the appropriated format, it is a prepackaged option. You only have to provide your intake key as parameter.
+- Use your own [Syslog service](/integration/ingestion_methods/syslog/syslog_service.md) instance. Maybe you already have an instance of one of these components on your side and want to reuse it in order to centralize data before forwarding them to Sekoia.io. When using this mode, you have to configure and maintain your component in order to respect the expected Sekoia.io format.
+
+
+!!! warning
+	Only the Sekoia.io forwarder is officially supported. Other options are documented for reference purposes but do not have official support.
+
+{!_shared_content/operations_center/integrations/generated/nutanix_sample.md!}
+
+{!_shared_content/operations_center/detection/generated/suggested_rules_9a7f6d4e-3b2a-4c1d-8f9e-0a1b2c3d4e5f_do_not_edit_manually.md!}
+
+{!_shared_content/integration/detection_section.md!}
+
+
