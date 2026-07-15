@@ -14,122 +14,20 @@ By default, alerts use the following five statuses:
 
 | Status | Description | Possible actions to do |
 | --- | --- | --- |
-| **Pending** | As soon as an alert is triggered, it is placed in 'Pending' status. If the generation mode for this alert is 'Automatic', this status changes automatically to 'Ongoing'. | Acknowledge, Reject, Validate |
+| **Pending** | As soon as an alert is triggered, it is placed in 'Pending' status. If the [alert generation mode](/xdr/features/collect/entities.md#alert-generation-mode) for this alert is 'Automatic', the alert is instead set on creation to the second custom status enabled in the In progress stage. | Acknowledge, Reject, Validate |
 | **Acknowledged** | This status is used when an analysis is ongoing. If the analyst can decide if an alert is a true or a false positive quickly, this status can be optional, time to acknowledge used in statistics will be set to time to change to Ongoing or Rejected status. | Validate, Reject |
-| **Ongoing** | Alert is considered as true positive and countermeasures have not yet been applied. This status is the first one seen in case of automatic mode. | Close (countermeasures have been applied, no more alert), Reject (after more analysis, this alert was a false positive) |
+| **Ongoing** | Alert is considered as true positive and countermeasures have not yet been applied. On the default configuration, this is the status applied to alerts created in automatic mode, as the second status in the In progress stage. | Close (countermeasures have been applied, no more alert), Reject (after more analysis, this alert was a false positive) |
 | **Closed** | All necessary actions have been applied to the alert. This status is a final status. | No action accepted |
 | **Rejected** | The alert was a false positive. This status is a final status. |  No action accepted |
 
-#### Managing Custom Statuses
+#### Configuring Custom Statuses and Verdicts
 
-Custom statuses allow you to tailor the alert lifecycle to your SOC team's specific processes. You can create, edit, and organize statuses to match your organization's workflow requirements.
+You configure custom statuses and custom verdicts in **Settings > Custom Statuses**. The same statuses and verdicts serve alerts and cases, so the vocabulary stays consistent across the investigation chain.
 
-##### Status Stages
-
-Each custom status belongs to one of three stages that define its position in the alert lifecycle:
-
-- **Open**: Initial stage for new or unprocessed alerts
-- **In Progress**: Intermediate stage for alerts under investigation or awaiting action
-- **Closed**: Final stage for alerts that have been resolved or dismissed
-
-These stages determine the overall state of an alert and affect features such as search filters and similarity.
-
-##### Creating and Editing Custom Statuses
-
-To manage custom statuses for alerts:
-
-1. Navigate to the Custom Statuses configuration page
-2. Click on `+` to create a new custom status in the appropriate stage
-3. Provide the following information:
-   - **Name**: A clear, descriptive name for the status (e.g., "Under Investigation", "Awaiting User Response")
-   - **Description**: Additional context about when this status should be used
-
-To edit an existing custom status:
-
-1. Click on the status you want to modify
-2. Update the name and/or description as needed
-3. Save your changes
-
-![Custom Statuses Configuration](/assets/operation_center/alerts/custom-statuses-config.png){: style="max-width:100%"}
-
-!!! note
-    Modifying a custom status name or description does not affect historical data. Previously recorded status changes will continue to display the original values in alert timelines and case histories.
-
-##### Reordering Statuses
-
-You can reorder custom statuses to match your preferred workflow sequence:
-
-1. In the Custom Statuses configuration page, use the drag handle on each status
-2. Drag and drop statuses to your desired order
-3. The new order will be reflected in status dropdowns throughout the platform
-
-##### Enabling Statuses for Alerts and Cases
-
-A unique feature of custom statuses is the ability to use the same status across both alerts and cases, ensuring consistency across your SOC platform.
-
-To enable a status for alerts and/or cases:
-
-1. In the Custom Statuses configuration, locate the status you want to configure
-2. Use the checkboxes in the **Alert** and **Case** columns to enable the status for each context
-3. A status can be enabled for:
-   - Alerts only
-   - Cases only
-   - Both alerts and cases (unified status)
-
-This unified approach allows you to maintain consistent terminology and processes across different investigation contexts.
-
-##### Deleting Custom Statuses
-
-Custom statuses can be deleted only if they are not currently in use:
-
-- If a status has been applied to any alert or case, it cannot be deleted
-- To delete a status that is in use, you must first change all alerts and cases using that status to a different status
-- Once no alerts or cases use the status, you can delete it from the configuration page
-
-!!! warning
-    Before deleting a custom status, ensure that your team no longer needs it, as this action will remove it from all status selection menus.
-
-#### Custom Verdicts
-
-Custom verdicts enable SOC teams to define and standardize their classifications of alerts and cases beyond simple true positive or false positive determinations. This feature helps clarify your team's stance on incident outcomes and improves communication within the team and with stakeholders.
-
-##### Verdict Categories
-
-Each custom verdict belongs to one of two categories:
-
-- **True Positive**: Verdicts that confirm the alert represents a genuine security threat or incident
-- **False Positive**: Verdicts that indicate the alert was triggered incorrectly or does not represent a real threat
-
-SOC teams often have different definitions and nuances for what constitutes a true or false positive. Custom verdicts allow you to capture these distinctions (e.g., "True Positive - Confirmed Malware", "False Positive - Misconfiguration", "True Positive - Policy Violation").
-
-##### Creating and Editing Custom Verdicts
-
-To manage custom verdicts for alerts and cases:
-
-1. Navigate to the Analyst verdict section
-2. Click on `+` to create a new custom verdict in the appropriate category
-3. Provide the following information:
-   - **Name**: A clear, descriptive name for the verdict (e.g., "Confirmed Malware", "Benign Activity", "Policy Violation")
-   - **Description**: Additional context about when this verdict should be used and what it signifies
-
-To edit an existing custom verdict:
-
-1. Click on the verdict you want to modify
-2. Update the name and/or description as needed
-3. Save your changes
-
-![Custom Verdicts Configuration](/assets/operation_center/alerts/custom-verdicts-config.png){: style="max-width:100%"}
-
-##### Deleting Custom Verdicts
-
-Custom verdicts follow the same deletion rules as custom statuses:
-
-- A verdict cannot be deleted if it has been applied to any alert or case
-- To delete a verdict that is in use, you must first remove or change the verdict on all alerts and cases using it
-- Once the verdict is no longer in use, you can delete it from the configuration page
-
-!!! tip
-    Custom verdicts help avoid miscommunication by establishing clear, documented definitions for alert and case outcomes. This is particularly valuable when multiple analysts work on the same alerts or when reporting to stakeholders.
+* [Custom statuses](/xdr/features/investigate/custom_statuses.md): What custom statuses are, the three stages, and how one status serves both alerts and cases.
+* [Manage custom statuses](/xdr/features/investigate/manage_custom_statuses.md): How to create, edit, reorder and enable custom statuses.
+* [Migrate custom statuses](/xdr/features/investigate/migrate_custom_statuses.md): How to disable or delete a status that alerts and cases already use.
+* [Custom verdicts](/xdr/features/investigate/custom_verdicts.md): How to standardize the classification of alert and case outcomes.
 
 ### Alerts Workflow (Legacy)
 
