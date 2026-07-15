@@ -27,9 +27,45 @@ The following Sekoia.io built-in rules match the intake **GraphAPI for Microsoft
     
     - **Effort:** elementary
 
+??? abstract "Entra ID Sign-In Via Known AiTM Phishing Kit (CEPHAS 2FA)"
+    
+    Detects a sign-in attempt with known characteristics of the adversary-in-the-middle phishing kit CEPHAS 2FA.
+    
+    - **Effort:** elementary
+
+??? abstract "Entra ID Sign-In Via Known AiTM Phishing Kit (Gabagool)"
+    
+    Detects a sign-in attempt with known characteristics of the adversary-in-the-middle phishing kit Gabagool. The `filter_password_spraying` exclusion corresponds to a password spraying tool which is already detected by the rule `Entra ID Password Compromised By Known Credential Testing Tool`.
+    
+    - **Effort:** elementary
+
+??? abstract "Entra ID Sign-In Via Known AiTM Phishing Kit (Greatness)"
+    
+    Detects a sign-in attempt with known characteristics of the adversary-in-the-middle phishing kit Greatness.
+    
+    - **Effort:** elementary
+
 ??? abstract "Entra ID Sign-In Via Known AiTM Phishing Kit (Mamba 2FA)"
     
     Detects a sign-in attempt with known characteristics of the adversary-in-the-middle phishing kit tracked by Sekoia.io as Mamba 2FA.
+    
+    - **Effort:** elementary
+
+??? abstract "Entra ID Sign-In Via Known AiTM Phishing Kit (Rockstar 2FA)"
+    
+    Detects a sign-in attempt with known characteristics of the adversary-in-the-middle phishing kit Rockstar 2FA.
+    
+    - **Effort:** elementary
+
+??? abstract "Entra ID Sign-In Via Known AiTM Phishing Kit (Sneaky 2FA)"
+    
+    Detects a sign-in attempt with an impossible device shift characteristic of the adversary-in-the-middle phishing kit Sneaky 2FA.
+    
+    - **Effort:** elementary
+
+??? abstract "Entra ID Sign-In Via Known AiTM Phishing Kit (Tycoon 2FA)"
+    
+    Detects a sign-in attempt with known characteristics of the adversary-in-the-middle phishing kit Tycoon 2FA.
     
     - **Effort:** elementary
 
@@ -38,6 +74,24 @@ The following Sekoia.io built-in rules match the intake **GraphAPI for Microsoft
     Detects traffic toward a domain flagged as a possible exfiltration vector.
     
     - **Effort:** master
+
+??? abstract "Login Brute-Force Successful On AzureAD From Single IP Address"
+    
+    A user has attempted to login several times (brute-force) on AzureAD and succeeded to login, all from the same source IP address and in a timerange of 5 minutes.
+    
+    - **Effort:** advanced
+
+??? abstract "Microsoft Entra ID (Azure AD) Login Failed Brute-Force From Single IP Address"
+    
+    A user has attempted to login several times (brute-force) on AzureAD and failed every time, all from the same source IP address and in a timerange of 5 minutes.
+    
+    - **Effort:** advanced
+
+??? abstract "Microsoft Entra ID (Azure AD) Successful Password Spraying From Single IP Address"
+    
+    An IP address performed several failed logins on multiple users to then have a successful login on one of them. Note that even if the sign-in was blocked by MFA (error 50074/50076/50158) or conditional access (error 50097/53003), these verifications only occur after the correct password was submitted. The account's password must still be considered compromised, and be changed.
+    
+    - **Effort:** advanced
 
 ??? abstract "Nimbo-C2 User Agent"
     
