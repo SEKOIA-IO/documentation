@@ -50,7 +50,7 @@ input(type="imtcp" port="PORT" ruleset="remoteVmwarevCenter")
 
 template(name="SEKOIAIOTemplate" type="string" string="<%pri%>1 %timestamp:::date-rfc3339% %hostname% %app-name% %procid% LOG [SEKOIA@53288 intake_key=\"YOUR_INTAKE_KEY\"] %msg%\n")
 ruleset(name="remoteVmwarevCenter"){
-  if($programname == "vpxd") then {
+  if($programname == "vpxd" or $programname == "vpxd-main") then {
     action(
         type="omfwd"
         protocol="tcp"
