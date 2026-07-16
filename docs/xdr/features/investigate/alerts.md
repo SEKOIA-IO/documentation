@@ -10,15 +10,14 @@ Sekoia.io allows you to customize alert statuses to adapt them to your SOC team'
 
 #### Default Alert Statuses
 
-By default, alerts use the following five statuses:
+By default, alerts use the following four statuses:
 
 | Status | Description | Possible actions to do |
 | --- | --- | --- |
-| **Pending** | As soon as an alert is triggered, it is placed in 'Pending' status. If the [alert generation mode](/xdr/features/collect/entities.md#alert-generation-mode) for this alert is 'Automatic', the alert is instead set on creation to the second custom status enabled in the In progress stage. | Acknowledge, Reject, Validate |
-| **Acknowledged** | This status is used when an analysis is ongoing. If the analyst can decide if an alert is a true or a false positive quickly, this status can be optional, time to acknowledge used in statistics will be set to time to change to Ongoing or Rejected status. | Validate, Reject |
-| **Ongoing** | Alert is considered as true positive and countermeasures have not yet been applied. On the default configuration, this is the status applied to alerts created in automatic mode, as the second status in the In progress stage. | Close (countermeasures have been applied, no more alert), Reject (after more analysis, this alert was a false positive) |
-| **Closed** | All necessary actions have been applied to the alert. This status is a final status. | No action accepted |
-| **Rejected** | The alert was a false positive. This status is a final status. |  No action accepted |
+| **Pending** | As soon as an alert is triggered, it is placed in 'Pending' status. If the [alert generation mode](/xdr/features/collect/entities.md#alert-generation-mode) for this alert is 'Automatic', the alert is instead set on creation to the second custom status enabled in the In progress stage. | Acknowledge, Validate, Close with a False positive verdict |
+| **Acknowledged** | This status is used when an analysis is ongoing. If the analyst can decide if an alert is a true or a false positive quickly, this status can be optional, time to acknowledge used in statistics will be set to time to change to Ongoing or Closed status. | Validate, Close with a False positive verdict |
+| **Ongoing** | Alert is considered as true positive and countermeasures have not yet been applied. On the default configuration, this is the status applied to alerts created in automatic mode, as the second status in the In progress stage. | Close (countermeasures have been applied, no more alert), Close with a False positive verdict (after more analysis, this alert was a false positive) |
+| **Closed** | All necessary actions have been applied to the alert. Closing an alert now requires setting a custom verdict in the **True positive** or **False positive** category. This verdict replaces the legacy Rejected status. This status is a final status. | No action accepted |
 
 #### Configuring Custom Statuses and Verdicts
 
@@ -116,7 +115,7 @@ If there is no similarity forced by the rule or by the event, you can rely on Se
 #### Similarity and alert status
 As long as there is an existing similar alert with a status in the **Open** or **In Progress** stage (such as Pending, Acknowledged, or Ongoing in the default configuration), new matches are added to the alert as occurrences.
 
-If only alerts with statuses in the **Closed** stage (such as Closed or Rejected in the default configuration) are similar, a new alert is created. Similar alerts with closed-stage statuses are listed inside the [Similar Alerts](#similar-alerts) tab.
+If only alerts with statuses in the **Closed** stage (such as Closed in the default configuration) are similar, a new alert is created. Similar alerts with closed-stage statuses are listed inside the [Similar Alerts](#similar-alerts) tab.
 ## Alert types and categories
 The Alert type is associated with the rule that triggered it but can be changed with the value associated to specific indicators in case of CTI rules.
 The Alert type is defined according to a custom set of values derived from the Reference Incident Classification Taxonomy of ENISA.
@@ -190,7 +189,7 @@ Here is the updated list of all available filters.
 | Entity | Select entities where alerts happened that are listed in your alert table |
 | Rule | Lists all rules that have raised alerts. You can also filter by a specific value by hovering on a value in the Source column in the table and clicking on the "+" button |
 | Source | Lists all alert sources. You can also filter by a specific value by hovering on a value in the Source column in the table and clicking on the "+" button  |
-| Status | Lists all configured alert statuses. Default statuses include: Acknowledged, Closed, Ongoing, Pending, and Rejected |
+| Status | Lists all configured alert statuses. Default statuses include: Acknowledged, Closed, Ongoing, and Pending |
 | Target | Lists all alert targets. You can also filter by a specific value by hovering on a value in the Source column in the table and clicking on the "+" button  |
 | Threat | Lists all threats that are related to alerts.  |
 | Type | Lists all types of alerts present in the table. The type of rule is defined by the detection rule that triggered the alert.  |
