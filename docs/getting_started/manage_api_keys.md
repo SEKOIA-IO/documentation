@@ -1,67 +1,83 @@
+---
+title: "Manage API keys"
+description: "Create, configure, and revoke API keys to enable programmatic access and integrations in Sekoia."
+keywords: [api key, authentication, integration, permissions, revoke, expire, automation, playbook, cti]
+audience: admin
+module: all
+type: task
+---
+
 # Manage API keys
 
-## Overview
+API keys provide programmatic access to Sekoia without requiring a user session. They are used to connect external tools, run automated integrations, and execute playbook actions that interact with the platform or third-party services. This article explains when to use API keys and how to create, configure, and revoke them.
 
-API keys are a crucial component of the Sekoia.io platform, enabling users to automate actions and provide technical access without needing to navigate through the UI.
+## When you need an API key
 
-An API key serves as both a unique identifier and a secret token for authentication. It allows for specific access tailored to the identity associated with it, ensuring secure and controlled interactions with the platform.
+API keys are required for:
 
-### Uses of API Keys
+- Connecting external tools to the Sekoia API (SIEM, ticketing systems, SOAR platforms)
+- Playbooks that call Sekoia's API as part of their action chain
+- CTI interconnection with third-party threat intelligence platforms
+- Automated scripts or pipelines that query the platform
 
-- **Automation**: Streamline various tasks and workflows within the platform, enhancing efficiency and productivity.
-- **Technical access**: Facilitate technical access for integrations and interactions without relying on the UI.
-- **Specific access control**: Grant precise permissions and access levels specific to the API key’s associated identity, ensuring that only authorized actions are performed.
-
-
-### Required for certain features
-
-Some features within the app require the creation of an API key, including:
-
-- CTI interconnection: Connect with third-party tools for Cyber Threat Intelligence (CTI) sharing and integration.
-- Playbooks: Utilize API keys within playbooks to execute automated responses and processes.
-
-By leveraging API keys, users can seamlessly integrate with Sekoia.io and fully exploit its capabilities, ensuring secure and efficient operations.
-
-!!! Note
-    Sekoia API keys are permissions-based, not role-based.
-
-## API keys listing
-
-To access the list of generated API keys in your community, you have to go to Settings > Workspace > API Keys.
-
-In this view, you can:
-
-- Search for an API key using the search bar on top of the table
-- Filter your API keys by status: `Active`, `Revoked`, `Expired`, `All`
-- Add a new API Key by clicking on the button `+ API key`
-
-API keys are listed by creation date (Most recently created). 
-
-!!! note 
-    Only users with admin roles and permissions have the right to create API keys. 
+!!! note "Permissions-based, not role-based"
+    Sekoia API keys are permissions-based. When you create a key, you select exactly which permissions it carries, independent of any user role. Always apply the principle of least privilege: grant only the permissions the integration actually needs.
 
 ## Create an API key
 
-To create a new API key, follow these steps:
+Only users with the Admin role can create API keys.
 
-1. Click on the `+ API key` button
-2. Give a name and a description to your key (description should be more than 10 characters and less than 100 characters)
-3. Set an **expiration date**: Choose the desired expiration period from the available options (30 days, 180 days, 365 days, custom up to 1 year, or no expiration)
-4. **Select permissions**: Specify the permissions you want to assign to the API key to ensure it has only the necessary access
-5. Click on `Save`
+1. Navigate to **Settings > Workspace > API Keys**.
+2. Click **+ New API key**.
+3. Enter a descriptive name for the key (for example, `VirusTotal enrichment - Playbooks`).
+4. Enter a description of at least 10 characters explaining what the key is used for.
+5. Set an expiration date: 30 days, 180 days, 365 days, a custom duration up to one year, or no expiration.
+6. Select the permissions the key requires.
+7. Click **Next**.
+8. Search and select permissions for your API key.
+9. Click **Save**.
 
-!!! Note
-    The key will only be displayed once. We recommend you to save it into a vault.
+!!! warning "Copy the key immediately"
+    The API key is displayed only once, immediately after creation. Copy it and store it in a secure vault before closing the window. Sekoia cannot display the key value again after you navigate away.
 
-!!! Note 
-    The length of the API key will not exceed 100 characters. 
+The maximum length of an API key is 100 characters.
 
-## Revoke an API Key
+## View and filter your API keys
 
-Revoking an API key will make it unusable. It’s rather easy to do but keep in mind that it’s an action that cannot be reversed.
+To view the list of API keys for your community, navigate to **Settings > Workspace > API Keys**.
 
-To revoke an API key, please proceed with the following steps:
+You can filter keys by status:
 
-1. Go to Settings > Workspace > API Keys 
-2. Click on the `Edit` button next to your API Key 
-3. Revoke the API key by clicking on the button `Revoke`
+| Status | Meaning |
+|---|---|
+| **Active** | The key is valid and can be used |
+| **Revoked** | The key has been manually revoked and can no longer be used |
+| **Expired** | The key reached its expiration date and can no longer be used |
+
+Keys are listed by creation date, most recent first.
+
+## Revoke an API key
+
+Revoking a key permanently disables it. This action cannot be undone.
+
+!!! warning "Irreversible action"
+    Revoking an API key immediately breaks any integration or automation that relies on it. Before revoking, confirm that the key is no longer in use or that a replacement key has been deployed.
+
+To revoke an API key:
+
+1. Navigate to **Settings > Workspace > API Keys**.
+2. Click the line of the key you want to revoke.
+3. Click **Revoke API Key**.
+4. Confirm the action.
+
+## Best practices
+
+- Give each key a clear, descriptive name that identifies its purpose and the system it connects.
+- Set expiration dates on all keys used for integrations. Rotate keys regularly.
+- Store all API keys in a secrets management vault, never in plain text files or source code.
+- Revoke keys immediately when an integration is decommissioned or a team member with key access leaves.
+
+## Related links
+
+- [Workspace setup overview](/getting_started/workspace_setup_overview.md) — Full admin checklist for configuring your workspace.
+- [Roles and permissions](/getting_started/roles_and_permissions.md) — How user roles differ from API key permissions.
