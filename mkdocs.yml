@@ -623,6 +623,7 @@ nav:
   - List of Asset Connectors:
     - Overview: integration/assets_categories/overview.md
     - Vulnerability:
+      - ESET Vulnerability: integration/assets_categories/vulnerability/eset_vulnerability.md
       - Tenable.io: integration/assets_categories/vulnerability/tenable_io.md
     - Device:
       - AWS EC2: integration/assets_categories/device/aws_ec2_device.md
