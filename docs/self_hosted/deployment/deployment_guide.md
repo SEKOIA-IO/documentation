@@ -115,6 +115,7 @@ docker run --rm \
   -e REGISTRY_PASSWORD="$REGISTRY_PASSWORD" \
   -e GIT_HTTP_USERNAME="$GIT_HTTP_USERNAME" \
   -e GIT_HTTP_PASSWORD="$GIT_HTTP_PASSWORD" \
+  -e SEKOIA_INSTANCE_PUBLIC_KEY="$SEKOIA_INSTANCE_PUBLIC_KEY" \
   --network=host \
   -v $SEKOIA_CONFIG_FILE:/tmp/config.yaml \
   -v $SEKOIA_LOCAL_DIR:/opt/sekoia \
@@ -134,6 +135,7 @@ Set the following environment variables on the orchestration node before running
 | `GIT_HTTP_PASSWORD` | Yes | Password or token for your local code repository. |
 | `SERVERS_SUDO_PASSWORD` | No | Sudo password for target nodes, if required by your SSH configuration. |
 | `DOCKER_IMAGE` | No | Override the SHC Docker image reference. Required in air-gapped environments. |
+| `SEKOIA_INSTANCE_PUBLIC_KEY` | Yes | Public key for the SEKOIA instance. |
 
 To make the script executable and verify the SHC responds, run:
 
