@@ -9,6 +9,9 @@ Custom fields let you attach structured metadata to individual alerts and cases.
 
 Custom field definitions must exist in your workspace before you can use them. If no fields are available, ask your administrator to create definitions in **Settings > Custom fields**.
 
+!!! tips "Definition creation"
+    [Read more about custom field definition creation in our dedicated article.](https://docs.sekoia.com/xdr/features/investigate/manage_custom_field_definitions/)
+
 ## Add a custom field
 
 The screenshot below shows the **Custom fields** section on a case. The section looks and behaves identically on the alert details page.
