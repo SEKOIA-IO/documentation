@@ -169,6 +169,12 @@ nav:
           - Use custom fields in cases: xdr/features/investigate/use_custom_fields_in_cases.md
           - Manage custom field definition: xdr/features/investigate/manage_custom_field_definitions.md
           - Query custom fields: xdr/features/investigate/query_custom_fields.md
+      - Custom statuses:
+        - Custom statuses overview: xdr/features/investigate/custom_statuses.md
+        - Manage custom statuses: xdr/features/investigate/manage_custom_statuses.md
+        - Migrate custom statuses: xdr/features/investigate/migrate_custom_statuses.md
+        - Custom verdicts: xdr/features/investigate/custom_verdicts.md
+        - Custom priorities: xdr/features/investigate/custom_priorities.md
       - Asset Context Panel: xdr/features/investigate/asset_context_panel.md
       - Events Query Language: xdr/features/investigate/events_query_language.md
       - Querying Events: xdr/features/investigate/querying_events.md
