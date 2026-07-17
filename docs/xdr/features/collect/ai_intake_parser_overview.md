@@ -5,6 +5,9 @@ The AI intake parser generates a custom intake parser for you from sample logs, 
 !!! note "Early Access"
     This feature is currently in Early Access and is only available for Beta testers. Sekoia.io plans to roll out this functionality to all environments soon.
 
+!!! note "Availability note"
+    This feature is available to all users during the Early Access Program (EAP). After EAP, it will be available on the Prime subscription only.
+
 ## How the agent works
 
 You start the agent from the **Generate parser** button on a custom intake, and you give it one or more files of sample logs. From there the agent works on its own.
