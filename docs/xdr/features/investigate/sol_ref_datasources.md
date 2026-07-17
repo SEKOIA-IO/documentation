@@ -19,7 +19,7 @@
 | [asset_properties](#asset_properties) | Listing known properties related to the Asset | Asset Investigations |
 | [asset_partitions](#asset_partitions) | Partitions on a per Asset basis and Hygiene related to these | Understand and improve Hygiene state Note: Part of the Reveal plan |
 | [asset_accounts](#asset_accounts) | Listing local users accounts related to the Asset | Impact analysis and incident correlation Note: Part of the Reveal plan |
-| [asset_applications](#asset_applications) | Software and applications installed on assets | Application discovery, software inventory, unsigned binary detection |
+| [asset_applications](#asset_applications) | Software and applications installed on assets | Application discovery, software inventory, unsigned binary detection. Note: Part of the Reveal plan |
 | [asset_vulnerabilities](#asset_vulnerabilities) | CVE-based vulnerabilities associated with assets, enriched from NVD | Vulnerability management, risk prioritization, patch tracking. Note: Part of the Reveal plan |
 | [asset_poi](#asset_poi) | Points of interest detected on assets (UEBA, notable activity) | Threat hunting, behavioral analysis, MITRE ATT&CK mapping. Note: Part of the Reveal plan |
 
@@ -292,36 +292,41 @@ For example queries using tags, see [Assets query examples](sol_query_examples.m
 
 ## asset_applications
 
+*This data source is part of the Reveal plan.*
+
 The **asset_applications** data source lists software and applications installed on assets discovered across your environment. Each record represents a unique application instance on a given asset, including version, signing status, and execution metadata.
 
 Use this data source to build software inventories, detect unsigned binaries, and identify applications with known vulnerabilities via their CPE identifier.
 
-| **Property**      | **Description**                                                        |
-|-------------------|------------------------------------------------------------------------|
-| community_uuid    | UUID of the community the asset belongs to                             |
-| asset_uuid        | Unique identifier of the asset                                         |
-| name              | Application name                                                       |
-| version           | Application version                                                    |
-| author            | Vendor or author of the application                                    |
-| filename          | Executable filename                                                    |
-| install_date      | Date the application was installed                                     |
-| install_path      | Installation path on the asset                                         |
-| last_execution    | Last time the application was executed                                 |
-| last_user_name    | Last user who ran the application                                      |
-| signed            | Whether the binary is digitally signed                                 |
-| signer_cn         | Common name of the signer                                              |
-| hash              | File hash                                                              |
-| os                | Operating system the application runs on                               |
-| cpe               | CPE identifier, used for vulnerability matching                        |
-| architecture      | CPU architecture                                                       |
-| created_at        | Timestamp when this application was first recorded                     |
-| updated_at        | Last update timestamp                                                  |
+| **Property**      | **Description**                                                                                   |
+|-------------------|---------------------------------------------------------------------------------------------------|
+| uuid              | Unique identifier of the application record                                                       |
+| community_uuid    | UUID of the community the asset belongs to                                                        |
+| asset_uuid        | Unique identifier of the asset                                                                    |
+| name              | Application name                                                                                  |
+| version           | Application version                                                                               |
+| author            | Vendor or author of the application                                                               |
+| filename          | Executable filename                                                                               |
+| install_date      | Date the application was installed                                                                |
+| install_path      | Installation path on the asset                                                                    |
+| last_execution    | Last time the application was executed                                                            |
+| last_user_name    | Last user who ran the application                                                                 |
+| signed            | Whether the binary is digitally signed                                                            |
+| signer_cn         | Common name of the signer                                                                         |
+| hash              | File hash                                                                                         |
+| os                | Operating system the application runs on                                                          |
+| cpe               | CPE identifier, used for vulnerability matching                                                   |
+| purl              | Package URL (PURL) identifier for the application                                                 |
+| architecture      | CPU architecture                                                                                  |
+| created_at        | Timestamp when this application was first recorded                                                |
+| updated_at        | Last update timestamp                                                                             |
+| deleted_at        | Timestamp when the application was removed. Applications are soft-deleted and remain in the data source after removal. Filter on `isnull(deleted_at)` to query active applications only. |
 
 ??? example "Count unsigned applications across assets"
 
     ```
     asset_applications
-    | where signed == false
+    | where signed == false and isnull(deleted_at)
     | aggregate count_distinct(asset_uuid)
     ```
 
@@ -329,35 +334,41 @@ Use this data source to build software inventories, detect unsigned binaries, an
 
     ```
     asset_applications
+    | where isnull(deleted_at)
     | aggregate asset_count = count_distinct(asset_uuid) by name, version
     | top 20 by asset_count
     ```
 
 ## asset_vulnerabilities
 
-!!! note "Reveal plan required"
-    This data source is only available as part of the Reveal plan.
+*This data source is part of the Reveal plan.*
 
 The **asset_vulnerabilities** data source exposes CVE-based vulnerabilities associated with your assets, enriched from the National Vulnerability Database (NVD). Each record links a vulnerability to the affected asset and the specific application version involved.
 
 Use this data source to track open vulnerabilities, prioritize remediation by CVSS score, and measure your exposure over time.
 
-| **Property**       | **Description**                                                                       |
-|--------------------|---------------------------------------------------------------------------------------|
-| community_uuid     | UUID of the community the asset belongs to                                            |
-| asset_uuid         | Unique identifier of the affected asset                                               |
-| title              | Vulnerability title, usually the CVE ID                                               |
-| description        | Vulnerability description                                                             |
-| cve_ids            | List of CVE identifiers                                                               |
-| source_cve_id      | Primary CVE ID used for deduplication                                                 |
-| cvss_score         | CVSS base score                                                                       |
-| status             | Vulnerability status: `open`, `accepted_risk`, `false_positive`, or `remediated`     |
-| application_uuid   | UUID of the related application                                                       |
-| software           | Name of the vulnerable software                                                       |
-| version            | Version of the vulnerable software                                                    |
-| created_at         | Date the vulnerability was first recorded                                             |
-| updated_at         | Last update timestamp                                                                 |
-| closed_at          | Date the vulnerability was closed                                                     |
+| **Property**              | **Description**                                                                       |
+|---------------------------|---------------------------------------------------------------------------------------|
+| uuid                      | Unique identifier of the vulnerability record                                         |
+| community_uuid            | UUID of the community the asset belongs to                                            |
+| asset_uuid                | Unique identifier of the affected asset                                               |
+| title                     | Vulnerability title, usually the CVE ID                                               |
+| description               | Vulnerability description                                                             |
+| cve_ids                   | List of CVE identifiers                                                               |
+| cwe                       | CWE identifier associated with the vulnerability                                      |
+| cvss_score                | CVSS base score                                                                       |
+| unified_risk_score        | Unified risk score combining CVSS and contextual signals                              |
+| unified_risk_score_str    | Human-readable label for the unified risk score (e.g., Critical, High)               |
+| status                    | Vulnerability status: `open`, `accepted_risk`, `false_positive`, or `remediated`     |
+| software                  | Name of the vulnerable software                                                       |
+| version                   | Version of the vulnerable software                                                    |
+| external_reference_id     | External identifier for the vulnerability in a third-party system                    |
+| source_connector_uuid     | UUID of the connector that sourced this vulnerability                                 |
+| created_at                | Date the vulnerability was first recorded                                             |
+| updated_at                | Last update timestamp                                                                 |
+| closed_at                 | Date the vulnerability was closed                                                     |
+| closed_by                 | User or system that closed the vulnerability                                          |
+| closed_by_type            | Type of entity that closed the vulnerability (e.g., avatar, apikey)                  |
 
 ??? example "Count assets with at least one open critical vulnerability (CVSS >= 9)"
 
@@ -378,15 +389,15 @@ Use this data source to track open vulnerabilities, prioritize remediation by CV
 
 ## asset_poi
 
-!!! note "Reveal plan required"
-    This data source is only available as part of the Reveal plan.
+*This data source is part of the Reveal plan.*
 
 The **asset_poi** data source exposes points of interest (POIs) detected on assets, derived from UEBA analysis and notable activity detection. Each record is linked to a MITRE ATT&CK phase, giving you a structured view of behavioral signals across your asset inventory.
 
-Use this data source to surface suspicious activity, map behavioral patterns to MITRE ATT&CK, and prioritize assets for investigation.
+Use this data source to surface suspicious activity, map behavioral patterns to MITRE ATT&CK, and prioritize assets for investigation. For a functional overview of how points of interest work, see [Points of interest](/xdr/features/detect/points_of_interest.md).
 
 | **Property**          | **Description**                                                          |
 |-----------------------|--------------------------------------------------------------------------|
+| uuid                  | Unique identifier of the POI record                                      |
 | community_uuid        | UUID of the community the asset belongs to                               |
 | asset_uuid            | Unique identifier of the asset                                           |
 | poi_name              | Name of the point of interest                                            |
@@ -395,6 +406,9 @@ Use this data source to surface suspicious activity, map behavioral patterns to 
 | severity              | Severity score from 0 (lowest) to 100 (highest)                         |
 | description           | Description of the POI                                                   |
 | created_at            | Timestamp when the POI was created                                       |
+
+!!! tip "Coming soon"
+    The `notable_activity` value for `poi_type` is not yet available. Queries filtering on `poi_type == "notable_activity"` will return no results until this capability is released.
 
 ??? example "Top 20 assets with the most points of interest"
 
