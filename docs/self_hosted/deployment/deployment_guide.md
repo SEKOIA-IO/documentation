@@ -79,7 +79,7 @@ tar -xvf sekoia-self-hosted-v0.0.1.tar -C $SEKOIA_LOCAL_DIR
 For the first installation, the SHC image is not yet available on the orchestration node. Load it manually from the extracted archive:
 
 ```bash
-docker load -i $SEKOIA_LOCAL_DIR/v0.0.1/images/registry.sekoia.io_sekoialab_platform-installer-self-hosted-v0.0.1.tar.gz
+docker load -i $SEKOIA_LOCAL_DIR/v0.0.1/images/registry.sekoia.io_sekoialab_self-hosted-controller-cli-v0.0.1.tar.gz
 ```
 
 To confirm the image loaded successfully, run:
@@ -115,6 +115,7 @@ docker run --rm \
   -e REGISTRY_PASSWORD="$REGISTRY_PASSWORD" \
   -e GIT_HTTP_USERNAME="$GIT_HTTP_USERNAME" \
   -e GIT_HTTP_PASSWORD="$GIT_HTTP_PASSWORD" \
+  -e SEKOIA_INSTANCE_PUBLIC_KEY="$SEKOIA_INSTANCE_PUBLIC_KEY" \
   --network=host \
   -v $SEKOIA_CONFIG_FILE:/tmp/config.yaml \
   -v $SEKOIA_LOCAL_DIR:/opt/sekoia \
@@ -134,6 +135,7 @@ Set the following environment variables on the orchestration node before running
 | `GIT_HTTP_PASSWORD` | Yes | Password or token for your local code repository. |
 | `SERVERS_SUDO_PASSWORD` | No | Sudo password for target nodes, if required by your SSH configuration. |
 | `DOCKER_IMAGE` | No | Override the SHC Docker image reference. Required in air-gapped environments. |
+| `SEKOIA_INSTANCE_PUBLIC_KEY` | Yes | Public key for the SEKOIA instance. |
 
 To make the script executable and verify the SHC responds, run:
 
