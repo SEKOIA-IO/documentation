@@ -87,5 +87,5 @@ The **Graph investigation** tab provides an interactive visualization of the cas
 * [Create a case](/xdr/features/investigate/create_a_case.md): Step-by-step instructions to open a new case and attach alerts to it.
 * [Manage cases](/xdr/features/investigate/manage_cases.md): How to filter, sort, bulk-edit, and edit cases.
 * [Graph investigation](/xdr/features/investigate/graph_investigation.md): How to use the interactive graph to correlate observables and threat intelligence.
-* [Case custom fields](/xdr/features/investigate/case_custom_fields.md): How to add and manage structured metadata fields on a case.
+* [Custom fields](/xdr/features/investigate/custom_fields.md): How to add and manage structured metadata fields on a case.
 * [Events](/xdr/features/investigate/events.md): How to explore events and run contextual searches.

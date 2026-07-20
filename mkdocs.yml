@@ -164,11 +164,11 @@ nav:
           - Investigate case details: xdr/features/investigate/case_details.md
           - Graph investigation: xdr/features/investigate/graph_investigation.md
           - AI Cases: xdr/features/investigate/ai_cases.md
-        - Using cases custom fields:
-          - Cases custom fields overview: xdr/features/investigate/case_custom_fields.md
-          - Use custom fields in cases: xdr/features/investigate/use_custom_fields_in_cases.md
-          - Manage custom field definition: xdr/features/investigate/manage_custom_field_definitions.md
-          - Query custom fields: xdr/features/investigate/query_custom_fields.md
+      - Custom fields:
+        - Custom fields overview: xdr/features/investigate/custom_fields.md
+        - Use custom fields: xdr/features/investigate/use_custom_fields.md
+        - Manage custom field definitions: xdr/features/investigate/manage_custom_field_definitions.md
+        - Query custom fields: xdr/features/investigate/query_custom_fields.md
       - Asset Context Panel: xdr/features/investigate/asset_context_panel.md
       - Events Query Language: xdr/features/investigate/events_query_language.md
       - Querying Events: xdr/features/investigate/querying_events.md
@@ -886,8 +886,10 @@ plugins:
       xdr/features/collect/integrations/network/vectra.md: integration/categories/network_security/vectra.md
       xdr/features/collect/integrations/network/wallix.md: integration/categories/iam/wallix.md
       xdr/features/collect/integrations/network/watchguard_firebox.md: integration/categories/network_security/watchguard_firebox.md
+      xdr/features/investigate/case_custom_fields.md: xdr/features/investigate/custom_fields.md
       xdr/features/investigate/dork_language.md: xdr/features/investigate/events_query_language.md
       xdr/features/investigate/sekoia_operating_language.md: xdr/features/investigate/sol_overview.md
+      xdr/features/investigate/use_custom_fields_in_cases.md: xdr/features/investigate/use_custom_fields.md
 - integration_by_uuid
 - sass
 repo_url: https://github.com/SEKOIA-IO/documentation
