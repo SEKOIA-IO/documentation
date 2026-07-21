@@ -70,14 +70,14 @@ This setup guide will show you how to forward your Fortigate logs to Sekoia.io b
     - **Configure Fortigate:**
       - The first step is to configure Fortigate to log the awaited traffic.
       - You can configure FortiOS to send log messages to remote syslog servers in standard, CSV, or CEF (Common Event Format) format. These three formats are accepted by the Sekoia.io intake.
-      - To enable syslog, log into the CLI and enter the following commands:
+      - To enable syslog, log into the CLI and enter the following commands. Replace the IP address and port with your syslog forwarder values:
 
         ```bash
         config log syslogd setting
         set status enable
-        set port 514
+        set port [syslog forwarder port]
         set mode reliable
-        set server [IP address of syslog server]
+        set server [IP address of syslog forwarder]
         set facility user
         set format rfc5424
         end
@@ -96,7 +96,6 @@ This setup guide will show you how to forward your Fortigate logs to Sekoia.io b
         set forward-traffic enable
         set local-traffic enable
         set multicast-traffic enable
-        ....
         set vpn enable
         set web enable
         set url-filter enable
@@ -104,6 +103,7 @@ This setup guide will show you how to forward your Fortigate logs to Sekoia.io b
         ```
 
       - With some Fortigate appliances, it may not be possible to do the above configuration through the command line. An alternative method is to use the graphical interface and go to the `Log Settings` menu. From there you can choose every logging option within `Event Logging` and `Local Traffic Log` except for the `Denied` options.
+      - To open the CLI console from the GUI, click the `>_` icon in the top-right corner, then run the CLI commands from this guide.
 
       - To use the CEF format, use the following commands:
 
