@@ -8,7 +8,8 @@ Asset connectors link external systems to Sekoia so that asset records can be cr
 
 Confirm that the following conditions are met:
 
-- The Reveal add-on module is enabled for your community.
+- The Reveal add-on module is enabled for your community. For MSSP setups, it must be enabled on each community that should discover assets.
+- Some integrations require specific permissions or scopes on the external system. Refer to the integration's documentation to check what the account you use needs.
 - You have the credentials required by the integration you want to connect (API key, client ID, service account, or equivalent).
 
 ## Create an asset connector
@@ -66,6 +67,9 @@ From the asset connector list, you can perform the following actions on any conn
 | Edit configuration | Select **...** then select **Edit** |
 | View logs | Select **...** then select **View logs** |
 | Delete | Select **...** then select **Delete** |
+
+!!! note "After deleting a connector"
+    The connector stops syncing within a few minutes. Assets it already discovered remain in your inventory.
 
 ## Related links
 
