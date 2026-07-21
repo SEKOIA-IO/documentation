@@ -1,4 +1,4 @@
-Rules catalog includes **1074 built-in detection rules** ([_last update on 2026-07-15_](rules_changelog.md)).
+Rules catalog includes **1076 built-in detection rules** ([_last update on 2026-07-21_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Identity Information**
 
@@ -2714,6 +2714,12 @@ Rules catalog includes **1074 built-in detection rules** ([_last update on 2026-
     
     - **Effort:** intermediate
     
+??? abstract "Palo Alto NGFW Threat Detection Critical"
+    
+    Palo Alto Next-Generation Firewall raised an alert for a threat detection with critical severity.
+    
+    - **Effort:** master
+    
 ??? abstract "Phorpiex DriveMgr Command"
     
     Detects specific command used by the Phorpiex botnet to execute a copy of the loader during its self-spreading stage. As described by Microsoft, this behavior is unique and easily identifiable due to the use of folders named with underscores "__" and the PE name "DriveMgr.exe".
@@ -4554,6 +4560,12 @@ Rules catalog includes **1074 built-in detection rules** ([_last update on 2026-
         - 25/02/2026 - minor - Update rule type to integration
         - 04/03/2026 - minor - Similarity strategy updated to caseID
             
+??? abstract "Palo Alto NGFW Threat Detection Critical"
+    
+    Palo Alto Next-Generation Firewall raised an alert for a threat detection with critical severity.
+    
+    - **Effort:** master
+    
 ??? abstract "Registry Value Changed Via Windows Run Dialog"
     
     Detects when a user enters a suspicious url command in the windows run dialog. Could be linked to ClickFix. For this rule, you will need to add auditing permissions to this specific key and enable audit registry.
@@ -5447,6 +5459,12 @@ Rules catalog includes **1074 built-in detection rules** ([_last update on 2026-
     
         - 15/04/2024 - minor - Changing effort level and adding new filters to reduce false positives.
             
+??? abstract "Palo Alto NGFW Threat Detection Critical"
+    
+    Palo Alto Next-Generation Firewall raised an alert for a threat detection with critical severity.
+    
+    - **Effort:** master
+    
 ??? abstract "PsExec Process"
     
     Detects PsExec execution, command line which contains pstools or installation of the PsExec service. PsExec is a SysInternals which can be used to execute a program on another computer. The tool is as much used by attackers as by administrators. 
@@ -10239,6 +10257,12 @@ Rules catalog includes **1074 built-in detection rules** ([_last update on 2026-
         - 06/10/2023 - minor - renaming and tunn filters to limit False Positive
         - 03/02/2025 - minor - Update pattern to ECS field only
             
+??? abstract "MokN High Threat Bait Attempt"
+    
+    Detects when MokN raises a high threat bait login attempt.
+    
+    - **Effort:** master
+    
 ??? abstract "Netskope Potential Brute Force On Protected Applications"
     
     Detects potential brute force on Netskope protected applications with more than 10 failures in 5 minutes for the same user name and application.
