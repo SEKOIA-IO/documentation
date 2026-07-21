@@ -43,6 +43,6 @@ Like custom statuses, you can enable verdicts for cases, alerts, or both.
 * [Manage cases](/xdr/features/investigate/manage_cases.md): How to filter, sort, and perform bulk actions on cases from the listing page.
 * [Case details](/xdr/features/investigate/case_details.md): Reference for every tab and field available on the case details page.
 * [Graph investigation](/xdr/features/investigate/graph_investigation.md): How to use the interactive graph to correlate observables and threat intelligence.
-* [Case custom fields](/xdr/features/investigate/case_custom_fields.md): How to extend cases with structured, typed metadata fields.
+* [Custom fields](/xdr/features/investigate/custom_fields.md): How to extend alerts and cases with structured, typed metadata fields.
 * [AI Cases](/xdr/features/investigate/ai_cases.md): How Sekoia.io automatically correlates alerts into cases using AI.
 * [Alerts](/xdr/features/investigate/alerts.md): How alerts are created and how to manage them before grouping them into cases.

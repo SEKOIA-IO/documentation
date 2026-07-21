@@ -3,7 +3,10 @@
 !!! note "Early Access"
     This feature is currently in Early Access and is only available for Beta testers. Sekoia.io plans to roll out this functionality to all environments soon.
 
-Custom field definitions determine which structured metadata fields are available across all cases in your workspace. This article explains how to create, edit, and delete those definitions from the workspace settings.
+Custom field definitions determine which structured metadata fields are available across all alerts and cases in your workspace. This article explains how to create, edit, and delete those definitions from the workspace settings.
+
+!!! note "Definitions are shared between alerts and cases"
+    A definition you create here can be attached to alerts, to cases, or to both. You do not need to create the same field twice.
 
 ## Prerequisites
 
@@ -28,9 +31,12 @@ To create a new custom field definition:
 4. Enter an optional **Description** to help users understand the field's purpose.
 5. Select a **Type** from the dropdown menu.
 6. Choose a **Color** for visual identification.
-7. Enable **Auto-add to new cases** if you want this field to appear automatically on all new cases.
-8. For **Single select** and **Multi select** types, define the available options.
-9. Click **Save**.
+7. Enable **Auto-add to new alerts** to add this field automatically to every new alert.
+8. Enable **Auto-add to new cases** to add this field automatically to every new case.
+9. For **Single select** and **Multi select** types, define the available options.
+10. Click **Save**.
+
+The two auto-add options are independent. Leave both disabled if you want analysts to add the field manually when they need it.
 
 ## Edit a custom field
 
@@ -47,7 +53,7 @@ To modify an existing custom field definition:
 ## Delete a custom field
 
 !!! warning "Permanent data loss"
-    Deleting a custom field definition removes the field and all its values from every case in your workspace. This action cannot be undone.
+    Deleting a custom field definition removes the field and all its values from every alert and case in your workspace. This action cannot be undone.
 
 To remove a custom field definition:
 
@@ -58,7 +64,7 @@ To remove a custom field definition:
 
 ## Related articles
 
-* [Case custom fields](/xdr/features/investigate/case_custom_fields.md): Overview of custom field types, multi-tenancy behavior, and workspace limits.
-* [Use custom fields in cases](/xdr/features/investigate/use_custom_fields_in_cases.md): How to add and edit custom field values on individual cases.
-* [Query custom fields](/xdr/features/investigate/query_custom_fields.md): SOL syntax and examples for filtering and aggregating cases by custom field values.
+* [Custom fields](/xdr/features/investigate/custom_fields.md): Overview of custom field types, shared definitions, multi-tenancy behavior, and workspace limits.
+* [Use custom fields](/xdr/features/investigate/use_custom_fields.md): How to add and edit custom field values on individual alerts and cases.
+* [Query custom fields](/xdr/features/investigate/query_custom_fields.md): SOL syntax and examples for filtering and aggregating alerts and cases by custom field values.
 * [Case details](/xdr/features/investigate/case_details.md): Reference for every tab and field available on the case details page.

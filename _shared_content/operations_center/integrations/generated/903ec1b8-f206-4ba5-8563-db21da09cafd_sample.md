@@ -104,6 +104,57 @@ In this section, you will find examples of raw logs as generated natively by the
 
 
 
+=== "globalprotect"
+
+
+    ```json
+	{
+        "AttemptedGateways": null,
+        "AuthMethod": "Cookie",
+        "ConnectionError": "Cannot decrypt cookie",
+        "ConnectionErrorID": 10,
+        "ConnectionMethod": null,
+        "CountOfRepeats": 1,
+        "Description": "Login to: 1.2.3.4",
+        "DeviceName": "DEVICE_test",
+        "DeviceSN": "no-serial",
+        "EndpointDeviceName": null,
+        "EndpointOSType": "Windows",
+        "EndpointOSVersion": "Microsoft Windows 10 Pro 64-bit",
+        "EndpointSN": null,
+        "EventIDValue": "gateway-auth",
+        "EventStatus": "failure",
+        "Gateway": null,
+        "GatewayPriority": null,
+        "GatewaySelectionType": "",
+        "GlobalProtectClientVersion": "0.0.-1",
+        "GlobalProtectGatewayLocation": null,
+        "HostID": null,
+        "LogSubtype": "globalprotect",
+        "LogType": "GLOBALPROTECT",
+        "LoginDuration": 0,
+        "Portal": "GlobalProtect_External_Gateway",
+        "PrivateIPv4": "",
+        "PrivateIPv6": "",
+        "PublicIPv4": "10.20.30.40",
+        "PublicIPv6": "",
+        "QuarantineReason": null,
+        "RepeatCount": 1,
+        "SSLResponseTime": -1,
+        "SequenceNo": 1234567890123456789,
+        "SourceRegion": "FR",
+        "SourceUserName": "admin",
+        "Stage": "login",
+        "Subtype": "globalprotect",
+        "TimeGenerated": "2026-06-01T05:33:50.000000Z",
+        "TimeGeneratedHighResolution": "2026-06-01T05:33:51.698000Z",
+        "TimeReceived": "2026-06-01T05:34:04.000000Z",
+        "TunnelType": null
+    }
+    ```
+
+
+
 === "globalprotect_cef"
 
 
@@ -1692,6 +1743,24 @@ In this section, you will find examples of raw logs as generated natively by the
 
 
 
+=== "test_system_event_16"
+
+
+    ```json
+	1,2026/05/13 15:33:28,ANONYMIZED,SYSTEM,auth,2817,2026/05/13 15:33:29,,auth-success,Azure-NEW,0,0,general,informational,"SAML SSO authenticated for user 'john.doe@example.com'.   auth profile 'Azure-NEW', vsys 'vsys1', server profile 'Azure-Auth-NEW', IdP entityID 'https://sts.windows.net/11111111-1111-1111-1111-111111111111/', From: 1.2.3.4.",1234567890,0x8000000000000000,0,0,0,0,,REDACTED,0,0,2026-05-13T15:33:29.251+02:00
+    ```
+
+
+
+=== "test_system_event_17"
+
+
+    ```json
+	1,2026/05/13 15:29:47,ANONYMIZED,SYSTEM,auth,2817,2026/05/13 15:29:48,,auth-fail,Azure-NEW,0,0,general,medium,"failed authentication for user 'john.doe@example.com'.  Reason: Internal error, e.g. network connection, DNS failure or remote server down. auth profile 'Azure-NEW', vsys 'vsys1', From: 1.2.3.4.",1234567890,0x8000000000000000,0,0,0,0,,REDACTED,0,0,2026-05-13T15:29:48.068+02:00
+    ```
+
+
+
 === "test_system_event_1_json"
 
 
@@ -2056,6 +2125,15 @@ In this section, you will find examples of raw logs as generated natively by the
         "TunneledApplication": "untunneled",
         "ThreatNameFirewall": "VBScript File"
     }
+    ```
+
+
+
+=== "test_threat_missing_fields"
+
+
+    ```json
+	1,2026/02/20 19:06:10,111111111111,THREAT,virus,2817,2026/02/20 19:05:53,192.0.2.4,198.51.100.8,203.0.113.1,203.0.113.5,USERS-WIFI,,,web-browsing,vsys1,ES-WIFI,Internet,ethernet1/3.32,ethernet1/7,default,2026/02/20 19:05:56,111288,1,59825,80,16013,80,0x402000,tcp,reset-server,"chromelevator.bin",trojan/Win32.marte.tt(761892252),any,medium,server-to-client,7596009052954502110,0x8000000000000000,10.0.0.0-10.255.255.255,Netherlands,,,0,,,1,,,,,,,,0,21,25,0,0,,FW-AA-BBB,,,,,0,,0,,N/A,pe,Antivirus-5468-5995,0x0,0,4294967295,,,72cc2298-083d-4e8c-80ed-2735621e4313,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0,2026-02-20T19:05:56.585+01:00,,justification_sample,,internet-utility,general-internet,browser-based,4,"used-by-malware,able-to-transfer-file,has-known-vulnerability,tunnel-other-application,pervasive-use",,web-browsing,no,no,,,NonProxyTraffic
     ```
 
 
@@ -2479,6 +2557,15 @@ In this section, you will find examples of raw logs as generated natively by the
 
     ```json
 	1,2025/08/06 15:11:22,016301005120,SYSTEM,auth,2817,2025/08/06 15:11:23,,auth-success,Auth_Seq_RAH,0,0,general,informational,"Kerberos SSO authenticated for user 'johndoe'. realm 'RXX-R.XXXX', auth profile 'Auth_Seq_RAL', vsys 'shared',",7512418093042533211,0x0,0,0,0,0,,HOST_01,0,0,2025-08-06T15:11:23.221+02:00
+    ```
+
+
+
+=== "test_username2"
+
+
+    ```json
+	1,2026/04/28 13:38:24,111111111111111,SYSTEM,auth,2817,2026/04/28 13:38:25,,auth-success,Auth_Seq_NAME,0,0,general,informational,"Kerberos SSO authenticated for user 'test01@DOMAIN'. realm 'DOMAIN',  auth profile 'Auth_Seq_NAME', vsys 'shared',",1234567890123456789,0x0,0,0,0,0,,HOSTNAME,0,0,2026-04-28T13:38:25.366+02:00
     ```
 
 

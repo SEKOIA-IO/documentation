@@ -411,6 +411,12 @@ The following Sekoia.io built-in rules match the intake **Palo Alto Cortex XDR (
     
     - **Effort:** advanced
 
+??? abstract "Disabling SmartScreen Via Registry"
+    
+    Detects when a user disables smartscreen.
+    
+    - **Effort:** elementary
+
 ??? abstract "Discovery Commands Correlation"
     
     Detects some frequent discovery commands used by some ransomware operators.
@@ -939,6 +945,12 @@ The following Sekoia.io built-in rules match the intake **Palo Alto Cortex XDR (
     
     - **Effort:** master
 
+??? abstract "NetNTLM Downgrade Attack"
+    
+    Detects changes in Windows Registry key (LMCompatibilityLevel, NTLMMinClientSec or RestrictSendingNTLMTraffic) which can lead to NetNTLM downgrade attack. The rule requires to log registry keys creation or update, it can be done using Sysmon's Event ID 12,13 and 14.
+    
+    - **Effort:** intermediate
+
 ??? abstract "NetSh Used To Disable Windows Firewall"
     
     Detects NetSh commands used to disable the Windows Firewall
@@ -1107,6 +1119,12 @@ The following Sekoia.io built-in rules match the intake **Palo Alto Cortex XDR (
     
     - **Effort:** advanced
 
+??? abstract "Palo Alto Cortex XDR (EDR) Alert (Critical Severity)"
+    
+    A Palo Alto Cortex XDR (EDR) agent has raised an alert of critical severity (only DETECTED and not SCANNED status).
+    
+    - **Effort:** master
+
 ??? abstract "Palo Alto Cortex XDR (EDR) Alert Not Blocked (High Severity)"
     
     A Palo Alto Cortex XDR (EDR) agent has raised an alert of high severity that was not blocked.
@@ -1160,6 +1178,12 @@ The following Sekoia.io built-in rules match the intake **Palo Alto Cortex XDR (
     Detects domain name which is longer than 62 characters. Long domain names are distinctive of DNS tunnels.
     
     - **Effort:** advanced
+
+??? abstract "Potential Persistence Via Outlook LoadMacroProviderOnBoot Setting"
+    
+    Detects the modification of Outlook setting "LoadMacroProviderOnBoot" which if enabled allows the automatic loading of any configured VBA project/module. Logging for Registry events is needed, it can be done in the Sysmon configuration (events 12 and 13).
+    
+    - **Effort:** master
 
 ??? abstract "PowerCat Function Loading"
     
@@ -1454,6 +1478,12 @@ The following Sekoia.io built-in rules match the intake **Palo Alto Cortex XDR (
     Detects the addition of a SSP to the registry. This is commonly used for persistence. Upon a reboot or API call, SSP DLLs gain access to encrypted and plaintext passwords stored in Windows. Logging for Registry events is needed for this rule to work (this can be done through Sysmon EventIDs 12 and 13).
     
     - **Effort:** elementary
+
+??? abstract "Sekoia.io Activity Logs Rule Deactivation Bulk"
+    
+    Detects a massive rule deactivation observed threw Sekoia.io activity logs.
+    
+    - **Effort:** master
 
 ??? abstract "Sekoia.io EICAR Detection"
     
@@ -1808,6 +1838,12 @@ The following Sekoia.io built-in rules match the intake **Palo Alto Cortex XDR (
     Detects changes to HKCU\Software\Classes\exefile\shell\runas\command\isolatedCommand by an attacker in order to bypass User Account Control (UAC)
     
     - **Effort:** elementary
+
+??? abstract "UAC Bypass via Event Viewer"
+    
+    Detects UAC bypass method using Windows event viewer. 
+    
+    - **Effort:** intermediate
 
 ??? abstract "Ursnif Registry Key"
     

@@ -66,7 +66,8 @@ The app registration must have the following permissions to successfully fetch E
         "Group.Read.All",
         "GroupMember.Read.All",
         "Directory.Read.All",
-        "UserAuthenticationMethod.Read.All"
+        "UserAuthenticationMethod.Read.All",
+        "AuditLog.Read.All"
     ]
 }
 ```
@@ -78,6 +79,7 @@ The app registration must have the following permissions to successfully fetch E
 - `GroupMember.Read.All`: Read group memberships
 - `Directory.Read.All`: Read directory data
 - `UserAuthenticationMethod.Read.All`: Read user authentication methods
+- `AuditLog.Read.All`: Read Sign-in for users
 
 ### How to grant API permissions
 
@@ -100,6 +102,7 @@ To grant the required permissions to your app registration:
       - `GroupMember.Read.All`
       - `Directory.Read.All`
       - `UserAuthenticationMethod.Read.All`
+      - `AuditLog.Read.All`
 
     ![Application permissions selection](/assets/operation_center/asset_connectors/user/microsoft/entra_id/entra_id_application_10.png)
 

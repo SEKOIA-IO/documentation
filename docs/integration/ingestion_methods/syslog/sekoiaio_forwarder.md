@@ -40,6 +40,7 @@ Select the host address that matches your Sekoia.io region:
 | MCO1 | `intake.mco1.sekoia.io` | `10514` |
 | UAE1 | `intake.uae1.sekoia.io` | `10514` |
 | USA1 | `intake.usa1.sekoia.io` | `10514` |
+| SGP1 | `intake.sgp1.sekoia.io` | `10514` |
 
 ## Configure the concentrator
 
@@ -133,7 +134,7 @@ By default, the memory queue is distributed across all intakes (`MEMORY_MESSAGES
     ```yaml
     services:
       rsyslog:
-        image: ghcr.io/sekoia-io/sekoiaio-docker-concentrator:2.7.2
+        image: ghcr.io/sekoia-io/sekoiaio-docker-concentrator:latest
         environment:
           - MEMORY_MESSAGES=2000000
           - DISK_SPACE=180g
@@ -260,7 +261,7 @@ Add the shared port mapping and the `extended_conf` volume mount:
 ```yaml
 services:
   rsyslog:
-    image: ghcr.io/sekoia-io/sekoiaio-docker-concentrator:2.7.2
+    image: ghcr.io/sekoia-io/sekoiaio-docker-concentrator:latest
     environment:
       - MEMORY_MESSAGES=2000000
       - DISK_SPACE=180g
@@ -741,7 +742,7 @@ If no events appear, verify the following:
 The image version is defined in the `image` line of `docker-compose.yml`:
 
 ```
-image: ghcr.io/sekoia-io/sekoiaio-docker-concentrator:2.7.2
+image: ghcr.io/sekoia-io/sekoiaio-docker-concentrator:latest
 ```
 
 To update, change the version tag and recreate the container:

@@ -10,9 +10,6 @@ Azure Activity Logs deliver a subscription-level audit trail of
 control-plane events—resource creations, modifications, deletions and
 service health incidents.
 
-!!! Warning
-    Important note - This format is currently in beta. We highly value your feedback to improve its performance.
-
 - **Supported environment**: SaaS
 - **Detection based on**: Telemetry, Alerts, Audit
 - **Supported application or feature**:

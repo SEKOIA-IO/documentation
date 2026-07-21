@@ -1,4 +1,4 @@
-name: Preview docs.sekoia.io
+name: Preview docs.sekoia.com
 on:
   pull_request:
 
@@ -8,7 +8,7 @@ jobs:
   build:
     permissions:
       contents: read  # for actions/checkout to fetch code
-    name: Preview docs.sekoia.io
+    name: Preview docs.sekoia.com
     runs-on: ubuntu-latest
     steps:
 

@@ -1115,6 +1115,121 @@ This section demonstrates how the raw logs will be transformed by our parsers. I
 	```
 
 
+=== "ioc_view_query8.json"
+
+    ```json
+	
+    {
+        "message": "{\"upload_size\":22996,\"record_identifier\":\"1111111111111111111111111111111111111111111111111111111111111111\",\"ioc_severity\":4,\"path\":\"/path/proc/self/exe\",\"alert_description\":\"Unprivileged Unshare Detected\",\"handler_verdicts_case_descriptions\":{\"default\":\"{\\\"correlated_reason_id\\\":\\\"\\\",\\\"created_reason_id\\\":\\\"\\\"}\"},\"folded\":0,\"meta_mac_address\":\"00:11:22:33:44:55\",\"endpoint_id\":\"11111111-1111-1111-1111-111111111111\",\"handler_verdict_suppression_mdr\":false,\"meta_public_ip_country_code\":\"FR\",\"event_timestamp\":\"2026-06-05T10:05:56.897280587+02:00\",\"schema_version\":\"24\",\"uid\":1002,\"threat_type\":\"Suspicious Behaviour\",\"ioc_detection_mitre_attack\":\"[{\\\"tactic\\\":{\\\"id\\\":\\\"T11111\\\",\\\"name\\\":\\\"Privilege Escalation\\\",\\\"techniques\\\":[{\\\"id\\\":\\\"T2222\\\",\\\"name\\\":\\\"Exploitation for Privilege Escalation\\\"}]}}]\",\"handler_verdicts_entities\":\"[{\\\"attributes\\\":{\\\"domain_controller\\\":\\\"False\\\",\\\"endpoint_type\\\":\\\"server\\\",\\\"hostname\\\":\\\"SRV-01\\\",\\\"id\\\":\\\"11111111-1111-1111-1111-111111111111\\\",\\\"mac_address\\\":\\\"00:11:22:33:44:55\\\",\\\"os_platform\\\":\\\"debian\\\",\\\"os_type\\\":\\\"\\\"},\\\"category\\\":\\\"impacted\\\",\\\"id\\\":\\\"2222222222222222222222222222222222222222222222222222222222222222\\\",\\\"integration_id\\\":\\\"11111111-1111-1111-1111-111111111111\\\",\\\"source_system\\\":\\\"osquery\\\",\\\"type\\\":\\\"device\\\"},{\\\"attributes\\\":{\\\"address\\\":\\\"1.2.3.4\\\",\\\"external\\\":true,\\\"id\\\":\\\"3333333333333333333333333333333333333333333333333333333333333333\\\",\\\"type\\\":\\\"ipv4\\\"},\\\"category\\\":\\\"impacted\\\",\\\"id\\\":\\\"4444444444444444444444444444444444444444444444444444444444444444\\\",\\\"integration_id\\\":\\\"11111111-1111-1111-1111-111111111111\\\",\\\"source_system\\\":\\\"osquery\\\",\\\"type\\\":\\\"ip_address\\\"},{\\\"attributes\\\":{\\\"address\\\":\\\"10.20.30.40\\\",\\\"external\\\":false,\\\"id\\\":\\\"5555555555555555555555555555555555555555555555555555555555555555\\\",\\\"type\\\":\\\"ipv4\\\"},\\\"category\\\":\\\"impacted\\\",\\\"id\\\":\\\"6666666666666666666666666666666666666666666666666666666666666666\\\",\\\"integration_id\\\":\\\"11111111-1111-1111-1111-111111111111\\\",\\\"source_system\\\":\\\"osquery\\\",\\\"type\\\":\\\"ip_address\\\"},{\\\"attributes\\\":{\\\"domain\\\":null,\\\"id\\\":\\\"7777777777777777777777777777777777777777777777777777777777777777\\\",\\\"sub_type\\\":\\\"process_owner\\\",\\\"user_id\\\":null,\\\"username\\\":\\\"svc-docker\\\"},\\\"category\\\":\\\"impacted\\\",\\\"id\\\":\\\"8888888888888888888888888888888888888888888888888888888888888888\\\",\\\"integration_id\\\":\\\"11111111-1111-1111-1111-111111111111\\\",\\\"source_system\\\":\\\"osquery\\\",\\\"type\\\":\\\"user\\\"},{\\\"attributes\\\":{\\\"domain\\\":null,\\\"id\\\":\\\"9999999999999999999999999999999999999999999999999999999999999999\\\",\\\"sub_type\\\":\\\"logged_in_user\\\",\\\"user_id\\\":null,\\\"username\\\":\\\"\\\"},\\\"category\\\":\\\"impacted\\\",\\\"id\\\":\\\"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\\\",\\\"integration_id\\\":\\\"11111111-1111-1111-1111-111111111111\\\",\\\"source_system\\\":\\\"osquery\\\",\\\"type\\\":\\\"user\\\"}]\",\"meta_licence\":\"\",\"ioc_detection_experiment_level\":0,\"ioc_created_at\":\"2026-06-05T08:06:00.463Z\",\"cmdline\":\"[\\\"runc\\\",\\\"init\\\"]\",\"process_name\":\"/path/proc/self/exe\",\"image\":\"N/A\",\"ingestion_timestamp\":\"2026-06-05T08:05:57.055Z\",\"ioc_detection_attack\":\"Unprivileged Unshare Detected\",\"numerics\":false,\"meta_public_ip\":\"1.2.3.4\",\"title\":\"Unprivileged Unshare Detected\",\"scope\":\"Process\",\"counter\":0,\"detection_id_dedup\":\"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\",\"message\":\"The non-root program \\\"/path/proc/self/exe\\\" used the unshare syscall with flags 0.\",\"meta_hostname\":\"SRV-01\",\"parent_pid\":\"666666\",\"ioc_worker_name\":\"Security Event Service\",\"ioc_detection_type\":\"Threat\",\"ioc_detection_category\":\"Threat\",\"ioc_unix_time\":\"2026-06-05T08:05:56.000Z\",\"epoch\":0,\"meta_ip_mask\":\"255.255.255.0\",\"ioc_worker_id\":\"security-event-service\",\"parent_name\":\"runc\",\"handler_verdict_suppression_xdr\":false,\"unix_time\":\"2026-06-05T08:05:56.000Z\",\"ioc_log_type\":\"summary\",\"query_source\":\"xdr_only\",\"sophos_pid\":\"111111:11111111111111111\",\"host_identifier\":\"aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa\",\"partition_bucket\":\"27\",\"meta_public_ip_country\":\"France\",\"meta_boot_time\":1780614018,\"handler_verdicts_detection_descriptions\":{\"default\":\"{\\\"created_reason_id\\\":\\\"LNX-DET-UNPRIVILEGED-UNSHARE-DETECTED\\\",\\\"significance_id\\\":\\\"LNX-DET-UNPRIVILEGED-UNSHARE-DETECTED\\\"}\"},\"meta_os_name\":\"Debian GNU/Linux\",\"osquery_action\":\"added\",\"parent_path\":\"/usr/bin/runc\",\"meta_query_pack_version\":\"1.6.0\",\"handler_verdict_suppression\":false,\"calendar_time\":\"2026-06-05T08:05:56.000Z\",\"meta_eid\":\"11111111-1111-1111-1111-111111111111\",\"meta_public_ip_longitude\":2.0,\"ioc_detection_id\":\"LNX-DET-UNPRIVILEGED-UNSHARE-DETECTED\",\"meta_os_platform\":\"debian\",\"meta_username\":\"\",\"detection_identifier\":\"1111111111111111111111111111111111111111111111111111111111111111_aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\",\"handler_verdict_escalation\":false,\"query_name\":\"sophos_runtime_detections_linux\",\"meta_os_type\":\"\",\"meta_os_version\":\"13 (trixie)\",\"parent_cmdline\":\"[\\\"runc\\\",\\\"--root\\\",\\\"/run/user/1002/docker/runtime-runc/moby\\\",\\\"--log\\\",\\\"/run/user/1002/docker/containerd/daemon/io.containerd.runtime.v2.task/moby/bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb/log.json\\\",\\\"--log-format\\\",\\\"json\\\",\\\"--systemd-cgroup\\\",\\\"exec\\\",\\\"--process\\\",\\\"/run/user/1002/runc-process2282629169\\\",\\\"--detach\\\",\\\"--pid-file\\\",\\\"/run/user/1002/docker/containerd/daemon/io.containerd.runtime.v2.task/moby/bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb/cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc.pid\\\",\\\"bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb\\\"]\",\"meta_public_ip_latitude\":50.5,\"ioc_detection_licenses\":\"[\\\"MTR\\\",\\\"XDR\\\"]\",\"parent_sophos_pid\":\"666666:77777777777777777\",\"name\":\"Behavioral\",\"subcategory\":\"Alert\",\"description\":\"The unshare syscall can be used to create new namespaces in which a normally unprivileged user/program can get elevated capabilities, potentially allowing additional attacks on the kernel. Alerts when a non-root process uses the unshare syscall.\",\"meta_aggressive_activity\":\"False\",\"meta_ip_address\":\"10.20.30.40\",\"container\":\"N/A\",\"handler_verdicts\":\"{\\\"default\\\":{\\\"correlation\\\":{\\\"correlate\\\":false,\\\"correlation_ids\\\":null,\\\"id\\\":\\\"aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaaeeeeeeee-eeee-eeee-eeee-eeeeeeeeeeee\\\"},\\\"escalation\\\":false,\\\"labels\\\":[],\\\"matched_rules\\\":[{\\\"description\\\":\\\"Define the mutation data structure for subsequent mutation rules to reference\\\",\\\"kb\\\":\\\"mutation\\\",\\\"name\\\":\\\"define_mutation_structure\\\"},{\\\"description\\\":\\\"Update the description in handler verdicts to add detection id\\\",\\\"kb\\\":\\\"mutation\\\",\\\"name\\\":\\\"add_detection_id\\\"},{\\\"description\\\":\\\"rule to normalize osquery detections\\\",\\\"kb\\\":\\\"mutation\\\",\\\"name\\\":\\\"normalize_osquery_detections\\\"},{\\\"description\\\":\\\"Correlate Osquery detections on customer ID and host ID\\\",\\\"kb\\\":\\\"correlation\\\",\\\"name\\\":\\\"osquery_correlation_id\\\"}],\\\"mutations\\\":{\\\"descriptions\\\":{\\\"case_descriptions\\\":{\\\"correlated_reason_id\\\":\\\"\\\",\\\"created_reason_id\\\":\\\"\\\"},\\\"detection_descriptions\\\":{\\\"created_reason_id\\\":\\\"LNX-DET-UNPRIVILEGED-UNSHARE-DETECTED\\\",\\\"significance_id\\\":\\\"LNX-DET-UNPRIVILEGED-UNSHARE-DETECTED\\\"}},\\\"entities\\\":[{\\\"attributes\\\":{\\\"domain_controller\\\":\\\"False\\\",\\\"endpoint_type\\\":\\\"server\\\",\\\"hostname\\\":\\\"SRV-01\\\",\\\"id\\\":\\\"11111111-1111-1111-1111-111111111111\\\",\\\"mac_address\\\":\\\"00:11:22:33:44:55\\\",\\\"os_platform\\\":\\\"debian\\\",\\\"os_type\\\":\\\"\\\"},\\\"category\\\":\\\"impacted\\\",\\\"id\\\":\\\"2222222222222222222222222222222222222222222222222222222222222222\\\",\\\"integration_id\\\":\\\"11111111-1111-1111-1111-111111111111\\\",\\\"source_system\\\":\\\"osquery\\\",\\\"type\\\":\\\"device\\\"},{\\\"attributes\\\":{\\\"address\\\":\\\"1.2.3.4\\\",\\\"external\\\":true,\\\"id\\\":\\\"3333333333333333333333333333333333333333333333333333333333333333\\\",\\\"type\\\":\\\"ipv4\\\"},\\\"category\\\":\\\"impacted\\\",\\\"id\\\":\\\"4444444444444444444444444444444444444444444444444444444444444444\\\",\\\"integration_id\\\":\\\"11111111-1111-1111-1111-111111111111\\\",\\\"source_system\\\":\\\"osquery\\\",\\\"type\\\":\\\"ip_address\\\"},{\\\"attributes\\\":{\\\"address\\\":\\\"10.20.30.40\\\",\\\"external\\\":false,\\\"id\\\":\\\"5555555555555555555555555555555555555555555555555555555555555555\\\",\\\"type\\\":\\\"ipv4\\\"},\\\"category\\\":\\\"impacted\\\",\\\"id\\\":\\\"6666666666666666666666666666666666666666666666666666666666666666\\\",\\\"integration_id\\\":\\\"11111111-1111-1111-1111-111111111111\\\",\\\"source_system\\\":\\\"osquery\\\",\\\"type\\\":\\\"ip_address\\\"},{\\\"attributes\\\":{\\\"domain\\\":null,\\\"id\\\":\\\"7777777777777777777777777777777777777777777777777777777777777777\\\",\\\"sub_type\\\":\\\"process_owner\\\",\\\"user_id\\\":null,\\\"username\\\":\\\"svc-docker\\\"},\\\"category\\\":\\\"impacted\\\",\\\"id\\\":\\\"8888888888888888888888888888888888888888888888888888888888888888\\\",\\\"integration_id\\\":\\\"11111111-1111-1111-1111-111111111111\\\",\\\"source_system\\\":\\\"osquery\\\",\\\"type\\\":\\\"user\\\"},{\\\"attributes\\\":{\\\"domain\\\":null,\\\"id\\\":\\\"9999999999999999999999999999999999999999999999999999999999999999\\\",\\\"sub_type\\\":\\\"logged_in_user\\\",\\\"user_id\\\":null,\\\"username\\\":\\\"\\\"},\\\"category\\\":\\\"impacted\\\",\\\"id\\\":\\\"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\\\",\\\"integration_id\\\":\\\"11111111-1111-1111-1111-111111111111\\\",\\\"source_system\\\":\\\"osquery\\\",\\\"type\\\":\\\"user\\\"}],\\\"labels\\\":[]},\\\"rule_hits\\\":[],\\\"rule_hits_summary\\\":{\\\"correlation\\\":[\\\"osquery_correlation_id\\\"],\\\"escalation\\\":[],\\\"mutation\\\":[\\\"define_mutation_structure\\\",\\\"normalize_osquery_detections\\\",\\\"add_detection_id\\\"],\\\"suppression\\\":[]},\\\"suppression\\\":false},\\\"mdr\\\":{\\\"correlation\\\":{\\\"correlate\\\":false,\\\"correlation_ids\\\":null,\\\"id\\\":\\\"\\\"},\\\"escalation\\\":false,\\\"labels\\\":[],\\\"matched_rules\\\":[{\\\"description\\\":\\\"Define the mutation data structure for subsequent mutation rules to reference\\\",\\\"kb\\\":\\\"mutation\\\",\\\"name\\\":\\\"define_mutation_structure\\\"}],\\\"mutations\\\":{\\\"descriptions\\\":{\\\"case_descriptions\\\":{\\\"correlated_reason_id\\\":\\\"\\\",\\\"created_reason_id\\\":\\\"\\\"},\\\"detection_descriptions\\\":{\\\"created_reason_id\\\":\\\"\\\",\\\"significance_id\\\":\\\"\\\"}},\\\"entities\\\":[],\\\"labels\\\":[]},\\\"rule_hits\\\":[],\\\"rule_hits_summary\\\":{\\\"correlation\\\":[],\\\"escalation\\\":[],\\\"mutation\\\":[\\\"define_mutation_structure\\\"],\\\"suppression\\\":[]},\\\"suppression\\\":false},\\\"xdr\\\":{\\\"correlation\\\":{\\\"correlate\\\":false,\\\"id\\\":\\\"\\\",\\\"correlation_ids\\\":null},\\\"mutations\\\":{},\\\"matched_rules\\\":[],\\\"labels\\\":[],\\\"rule_hits\\\":[],\\\"rule_hits_summary\\\":{\\\"correlation\\\":[],\\\"escalation\\\":[],\\\"mutation\\\":[],\\\"suppression\\\":[]},\\\"escalation\\\":false,\\\"suppression\\\":false}}\",\"ingest_date\":\"2026-06-05\",\"meta_endpoint_type\":\"server\",\"meta_domain_controller\":\"False\",\"customer_id\":\"eeeeeeee-eeee-eeee-eeee-eeeeeeeeeeee\",\"ioc_detection_description\":\"The unshare syscall can be used to create new namespaces in which a normally unprivileged user/program can get elevated capabilities, potentially allowing additional attacks on the kernel. Alerts when a non-root process uses the unshare syscall.\",\"message_identifier\":\"a4e5a5300658ae8e61345e0d0b4da274c37c1f5a3dc42d594cecf2d0163e0d1a\",\"ioc_attack_type\":\"Security Event Service Detections\",\"ioc_detection_weight\":4,\"threat_name\":\"Unprivileged Unshare Detected\",\"category\":\"Runtime\"}",
+        "event": {
+            "code": "LNX-DET-UNPRIVILEGED-UNSHARE-DETECTED",
+            "ingested": "2026-06-05T08:05:57.055000Z",
+            "reason": "The unshare syscall can be used to create new namespaces in which a normally unprivileged user/program can get elevated capabilities, potentially allowing additional attacks on the kernel. Alerts when a non-root process uses the unshare syscall.",
+            "severity": 4
+        },
+        "@timestamp": "2026-06-05T08:05:56Z",
+        "host": {
+            "id": "aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa",
+            "name": "SRV-01",
+            "os": {
+                "full": "Debian GNU/Linux",
+                "name": "debian",
+                "version": "13 (trixie)"
+            }
+        },
+        "process": {
+            "args": [
+                "init",
+                "runc"
+            ],
+            "name": "Security Event Service",
+            "parent": {
+                "command_line": [
+                    "--detach",
+                    "--log",
+                    "--log-format",
+                    "--pid-file",
+                    "--process",
+                    "--root",
+                    "--systemd-cgroup",
+                    "/run/user/1002/docker/containerd/daemon/io.containerd.runtime.v2.task/moby/bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb/cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc.pid",
+                    "/run/user/1002/docker/containerd/daemon/io.containerd.runtime.v2.task/moby/bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb/log.json",
+                    "/run/user/1002/docker/runtime-runc/moby",
+                    "/run/user/1002/runc-process2282629169",
+                    "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+                    "exec",
+                    "json",
+                    "runc"
+                ],
+                "executable": "/usr/bin/runc",
+                "name": "runc"
+            }
+        },
+        "related": {
+            "ip": [
+                "1.2.3.4",
+                "10.20.30.40"
+            ]
+        },
+        "sophos": {
+            "threat_center": {
+                "aggressive_activity": "False",
+                "detection_id_dedup": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                "endpoint": {
+                    "type": "server"
+                },
+                "id": "11111111-1111-1111-1111-111111111111",
+                "ioc": {
+                    "attack_type": "Security Event Service Detections",
+                    "detection": {
+                        "attack": "Unprivileged Unshare Detected",
+                        "category": "Threat",
+                        "licences": [
+                            "MTR",
+                            "XDR"
+                        ],
+                        "type": "Threat",
+                        "weight": "4"
+                    },
+                    "log_type": "summary",
+                    "unix_time": "2026-06-05T08:05:56.000000Z"
+                },
+                "message": {
+                    "id": "a4e5a5300658ae8e61345e0d0b4da274c37c1f5a3dc42d594cecf2d0163e0d1a"
+                },
+                "query": {
+                    "action": "added",
+                    "name": "sophos_runtime_detections_linux",
+                    "pack_version": "1.6.0",
+                    "source": "xdr_only"
+                },
+                "record_identifier": "1111111111111111111111111111111111111111111111111111111111111111",
+                "threat_type": "Suspicious Behaviour",
+                "worker": {
+                    "id": "security-event-service"
+                }
+            }
+        },
+        "source": {
+            "address": "10.20.30.40",
+            "bytes": 22996,
+            "geo": {
+                "country_name": "France"
+            },
+            "ip": "10.20.30.40",
+            "mac": "00:11:22:33:44:55",
+            "nat": {
+                "ip": "1.2.3.4"
+            }
+        },
+        "vulnerability": {
+            "description": "The unshare syscall can be used to create new namespaces in which a normally unprivileged user/program can get elevated capabilities, potentially allowing additional attacks on the kernel. Alerts when a non-root process uses the unshare syscall."
+        }
+    }
+    	
+	```
+
+
 
 
 
@@ -1143,6 +1258,7 @@ The following table lists the fields that are extracted, normalized under the EC
 |`host.os.full` | `keyword` | Operating system name, including the version or code name. |
 |`host.os.name` | `keyword` | Operating system name, without the version. |
 |`host.os.version` | `keyword` | Operating system version as a raw string. |
+|`process.args` | `keyword` | Array of process arguments. |
 |`process.code_signature.exists` | `boolean` | Boolean to capture if a signature is present. |
 |`process.command_line` | `wildcard` | Full command line that started the process. |
 |`process.hash.sha1` | `keyword` | SHA1 hash. |

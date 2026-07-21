@@ -10,10 +10,6 @@ New Relic is a cloud-native observability platform for real-time monitoring of a
 It offers unified dashboards, AI-powered alerts, and distributed tracing to quickly detect and resolve anomalies.
 Teams use New Relic to optimize performance, reliability, and user experience across digital environments.
 
-
-!!! Warning
-    Important note - This format is currently in beta. We highly value your feedback to improve its performance.
-
 - **Supported environment**: SaaS
 - **Detection based on**: Alerts
 - **Supported application or feature**:
@@ -44,7 +40,7 @@ Teams use New Relic to optimize performance, reliability, and user experience ac
 
     https://app.usa1.sekoia.io/api/v1/intake-http
 
-    You can find your region’s domain here: [https://docs.sekoia.io/getting_started/regions/](https://docs.sekoia.io/getting_started/regions/)
+    You can find your region’s domain here: [https://docs.sekoia.com/getting_started/regions/](https://docs.sekoia.com/getting_started/regions/)
 
 - Select `Basic authorization` as authorization method
 - Type any username (NewRelic requires a non-empty username to validate the form)

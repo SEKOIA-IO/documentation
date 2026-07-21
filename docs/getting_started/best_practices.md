@@ -51,7 +51,7 @@ The quality of events is crucial for accurate and effective detection. Here are 
 Our product is designed to focus on high-priority threats, enabling expert resources to conduct a manageable number of quality investigations each day. By creating alert filters, you can ensure that alerts are raised for the right reasons, enhancing the efficiency and effectiveness of your security operations.
 
 - **Monitor the average number of Alerts per Intake** to identify intakes generating too many or too few alerts.
-- **Limit the number of Daily New Alerts** at a manageable level for your team (by experience, around 6 to 8 per day per analyst, or 60 per day) and prioritise the [tuning of a rule](https://docs.sekoia.io/xdr/features/investigate/alerts/#create-an-alert-filter) over automating its status change if no defensive action is to be taken.
+- **Limit the number of Daily New Alerts** at a manageable level for your team (by experience, around 6 to 8 per day per analyst, or 60 per day) and prioritise the [tuning of a rule](https://docs.sekoia.com/xdr/features/investigate/alerts/#create-an-alert-filter) over automating its status change if no defensive action is to be taken.
 - **Track the Weekly and Monthly volume of New Alerts** to evaluate the evolution of threats and the performance of detection rules.
 - **Assess the number of Daily New Cases** to understand workload and the effectiveness of response processes. In general, the number of case(s) per day does not exceed 1, as it is considered as a very important incident.
 - **Ensure no sleeping alert is older than 1 week** without status "Closed" or "Rejected".
@@ -67,7 +67,7 @@ Playbooks complement operational optimization by automating various types of man
 - **Keep the number of playbook executions per day low**: Aim for less than 60 executions per playbook per day, aligning with the number of raised alerts. Each playbook should have a specific objective to meet a particular need.
 - **Design playbooks with simplicity in mind**: On average, each playbook should be composed of less than 15 modules, including:
     - **1 [Trigger](/xdr/features/automate/triggers.md)** such as the “Manual trigger” or “Alert created” trigger **with a filter condition** to start the playbook only for relevant cases.
-    - **Some [Operator](/xdr/features/automate/operators.md) modules** like "[Condition](https://docs.sekoia.io/xdr/features/automate/operators/#condition)" and "[Foreach](/xdr/features/automate/operators.md#foreach)" to halt the playbook execution if new information gathered during the process indicates that the playbook is unnecessary in the current context.
+    - **Some [Operator](/xdr/features/automate/operators.md) modules** like "[Condition](https://docs.sekoia.com/xdr/features/automate/operators/#condition)" and "[Foreach](/xdr/features/automate/operators.md#foreach)" to halt the playbook execution if new information gathered during the process indicates that the playbook is unnecessary in the current context.
     - **A majority of [Action](/xdr/features/automate/actions.md) modules** making it easily understandable for new team members and maintainable over time. To give you more details on the top 10 most used playbook Actions, here is a list:
 
         1. [Read JSON File](/xdr/features/automate/library/fileutils.md#read-json-file)
