@@ -212,6 +212,7 @@ nav:
     - External integrations:
       - FortiSOAR: xdr/features/integrations/fortisoar.md
       - Palo Alto Cortex XSOAR: xdr/features/integrations/interconnect_sekoia_with_xsoar.md
+      - Qevlar: xdr/features/integrations/qevlar.md
       - Swimlane Turbine: xdr/features/integrations/swimlane_turbine.md
   - AI Agents (Elevate):
     - Elevate overview: xdr/features/modules/elevate_overview.md
