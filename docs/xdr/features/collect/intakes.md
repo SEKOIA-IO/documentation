@@ -62,4 +62,4 @@ Monitoring both regularly helps ensure your data collection remains healthy and 
 
 - [Turn on notifications](/getting_started/notifications-Listing_Creation.md): How to configure notification channels and triggers for intake inactivity alerts.
 
-- [Integrations](/integration/): Full catalog of supported data source integrations and their setup documentation.
+- [Integrations](/integration/index.md): Full catalog of supported data source integrations and their setup documentation.
