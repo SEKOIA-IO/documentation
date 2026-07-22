@@ -30,7 +30,7 @@ The asset connectors panel opens and lists your existing connectors.
 1. Select **New connector**.
 2. In the integration catalog, select the integration you want to configure.
 
-![!Integration catalog for asset connector]( docs/assets/connector_choice.png){: style="width: 100%; max-width: 100%"}
+![!Integration catalog for asset connector](/assets/connector_choice.png){: style="width: 100%; max-width: 100%"}
 
 ### Step 3: Fill in the connector form
 
@@ -39,7 +39,7 @@ The asset connectors panel opens and lists your existing connectors.
 
 Enter the required fields for the selected integration. The fields vary by integration type and typically include a connector name, and an Account to synchronize.
 
-![!Asset connectors configuration form](docs/assets/connector_config.png){: style="width: 100%; max-width: 100%"} 
+![!Asset connectors configuration form](/assets/connector_config.png){: style="width: 100%; max-width: 100%"} 
 
 ### Step 4: Test the connector
 
@@ -76,5 +76,5 @@ From the asset connector list, you can perform the following actions on any conn
 - [Troubleshoot asset connectors](/xdr/features/modules/reveal_asset_connectors_troubleshoot.md) — How to diagnose and resolve connector errors using error indicators and logs.
 - [Reveal feature enablement matrix](/xdr/features/modules/reveal_feature_enablement.md) — Which data sources are required or optional for each Reveal capability.
 - [Getting started with Reveal](/xdr/features/modules/reveal_getting_started.md) — Recommended setup order for all Reveal data sources.
-- [Integration — Asset categories](/xdr/integration/assets_categories/overview.md) — Reference for available connector categories and integration setup.
+- [Integration — Asset categories](/integration/assets_categories/overview.md) — Reference for available connector categories and integration setup.
 - [Security controls](/xdr/features/modules/reveal_security_controls.md) — How to verify connector coverage from the asset context panel.
