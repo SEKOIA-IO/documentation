@@ -7,7 +7,7 @@ This article explains how to generate a custom intake parser from sample logs, u
 
 ## Prerequisites
 
-- You have the `SIC_WRITE_INTAKE` permission associated to your Sekoia account.
+- You have the `Manage intakes` permission associated to your Sekoia account.
 - You have sample logs from the source you want to ingest, saved as files you can upload.
 - The samples cover every event type the source emits. The agent tests the parser only against the samples you provide.
 
