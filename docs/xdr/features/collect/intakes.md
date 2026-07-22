@@ -1,310 +1,65 @@
 # Intakes
-Intakes correspond to data sources sent to Sekoia.io. They are identified by a name, an intake format, an entity and an intake key.
 
-You can configure as much intakes as you need in order to increase Sekoia.io knowledge of your infrastructure.
+Intakes are data source connections that forward logs to Sekoia for centralized security monitoring. Each intake is identified by a name, a format, an entity, and an intake key.
 
-All features related to intakes are visible through the “Intakes” menu.
+## What is an intake
 
-## Intakes listing
-The intakes homepage allows you to view and manage the list of intakes already created within the community but also to create new intakes.
+An intake represents a single data source feeding logs into Sekoia. It acts as the entry point for log collection, linking a specific technology (such as a firewall, endpoint agent, or cloud service) to a Sekoia entity.
 
-![intakes_listing](/assets/operation_center/intakes/intakes-listing.png){: style="max-width:100%"}
+You can create as many intakes as your infrastructure requires. Two organization strategies are available:
 
-On this page, you can find:
+- **One intake per technology**: a single intake collects logs from all devices of the same type within an entity (for example, all Fortigate firewalls in a given entity)
+- **One intake per device**: a dedicated intake is created for each individual device
 
-- The created intakes in your community with their associated entity
-- The number of `valid events`
-- The number of `invalid events`
-- The number of `events in warning`
+Both strategies are valid. The right choice depends on how granular you need your monitoring and reporting to be.
 
-![intakes_card](/assets/operation_center/intakes/intakes-card.png){: style="max-width:100%"}
+All intake management features are accessible through the **Intakes** menu in the Operations Center.
 
-### Event types
+## How intakes connect to Sekoia
 
-#### Invalid event
-An event is invalid when the data does not match the expected format (JSON, Key value, Grok, Date, Delimiter separated value).
+Intakes collect logs in two ways:
 
-#### Event in warning
-A warning can be generated in 2 cases:
+- **Push intakes**: your infrastructure sends logs directly to Sekoia using the intake key as an authentication token
+- **Pull intakes**: Sekoia runs a connector that actively fetches logs from your data source on a defined schedule
 
-- The parsing of the event was a success but no data were extracted ; this is not an error, but may be worth investigating if unexpected
-- Some values were incompatibles with their expected data type and could not be extracted
+Pull intakes expose additional features not available for push intakes, including connector configuration parameters and connector execution logs.
 
-### Events date range
-Use the date range selector to view the number of events in different timeframes (24h, 7 days or 30 days). This date range selector will help you to assess if the volume of ingested logs has the expected behavior.
+## Event types
 
-![intakes_date_selector](/assets/operation_center/intakes/intakes-date-selector.png){: style="max-width:100%"}
+Each ingested event receives one of the following statuses based on how it was processed by the parsing pipeline.
 
-### Intake types
+### Valid events
 
-The Integration catalog contains two different types of intakes. These 2 types differs on the method of collecting the events.
+A valid event was successfully received and parsed by Sekoia. It is available for detection, correlation, and investigation.
 
-#### Push intake
+### Invalid events
 
-With Push intakes, logs must be forwarded by the user to Sekoia with one of our forwarding methods (Syslog, Sekoia concentrator, etc..).
+An event is invalid when its data does not match the expected format (JSON, Key-value, Grok, Date, or Delimiter-separated value). Invalid events are not parsed and are not available for detection.
 
-#### Pull intake
+### Events in warning
 
-With Pull intakes, logs are collected directly by Sekoia with a connector. The connector usually uses a REST API to collect data. In other words Sekoia SOC platform is fetching the logs for the user this case.
+An event generates a warning in the following cases:
 
-![intakes_list_diff](/assets/operation_center/intakes/intakes-list-diff.png){: style="max-width:100%"}
+- The parsing succeeded but no data was extracted. This is not an error, but may indicate an unexpected configuration.
+- Some values were incompatible with their expected data type and could not be extracted.
 
-Pull intakes are distinguishable by their On/Off button and Connect log tab.
+Warning events are parsed but may be missing fields, which can affect detection quality.
 
-##### Start/Stop a Pull intake
+## Why monitoring intakes matters
 
-![intakes_running](/assets/operation_center/intakes/intakes-running.png){: style="max-width:100%"}
+An intake that stops sending events creates blind spots in your security coverage. Sekoia provides two mechanisms to stay informed:
 
-Pull intakes have a On/Off button which allows you to enable or disable the collection of data. Pull intakes have a `connector` that regularly pulls the logs from your data source.
+- **Event delivery metrics**: available on the intake details page, these indicators let you assess whether events are arriving within expected timeframes
+- **Inactivity notifications**: configurable alerts that trigger when an intake has not received events for a set period
 
-##### Error status
+Monitoring both regularly helps ensure your data collection remains healthy and your detection coverage stays complete.
 
-When a Pull intake is fetching logs, it can encounter different kind of issues. The error status will help you understand the current state of the `connector`.
+## Related articles
 
-![intakes_error](/assets/operation_center/intakes/intakes-error.png){: style="max-width:100%"}
+- [Intake details page](/xdr/features/collect/intakes_details.md): Reference for all metrics, indicators, and menu options available on the intake details page, including a full explanation of the event delivery metric.
 
-![intakes_critical](/assets/operation_center/intakes/intakes-critical.png){: style="max-width:100%"}
+- [Manage intakes](/xdr/features/collect/manage_intakes.md): Step-by-step procedures for creating, configuring, renaming, and deleting intakes.
 
-| Status | Description |
-| --- | --- |
-| **Error during data collection** | Some errors were encountered during data collection but the connector is still running. **A verification by the user may be needed to fix the issues**. |
-| **Stopped by critical error** | The connector was stopped because of a critical error. **An urgent action is required by the user to investigate and fix the issues**. Note that if too many errors are encountered, the connector will consider them as a critical error. |
+- [Turn on notifications](/getting_started/notifications-Listing_Creation.md): How to configure notification channels and triggers for intake inactivity alerts.
 
-To troubleshoot the origin of these errors and restore data collection, you can use the `connector log` tab.
-
-### Filters
-
-Multiple filters are available to search for specific intakes.
-
-| Filter | Description |
-| --- | --- |
-| Created at | Filter intakes by their date of creation (date range, relative dates…) |
-| Entity | Filter intakes by associated entities |
-| Intake format | Filter intakes by their intake formats. An intake format corresponds to a specific product |
-| Intake key | Filter intakes by their intake key. An intake key is the unique identifier used to identify to which intake a log belong |
-| Status | Filter intakes by their status. Available status are: Running, Stopped, Error during data collection and Stopped by critical error |
-| UUID | Filter intakes by their UUID. A UUID is a unique identifier of an intake. |
-
-### Ordering
-
-The list of intakes can be ordered by:
-
-- Creation date (in descending order)
-- Error status (in this order: Stopped by critical error, Error during data collection)
-- Name (in alphabetical order)
-
-![intakes_list_order](/assets/operation_center/intakes/intakes-list-order.png){: style="max-width:100%"}
-
-## Create an intake from our integrations catalog
-To configure a new data source in your community, you can rely on our list of continuously growing integrations that are constantly developed and enhanced by Sekoia.io’s team.
-![intakes_list_card](/assets/operation_center/intakes/intakes-list-card.png){: style="max-width:100%"}
-
-To create an intake, you have to:
-
-1. Click on the `+ Intake` from the Intakes homepage
-2. Choose the data source that suits your needs (you can filter these data sources by clicking on the categories’ tags)
-3. Click on the `Create` button in the card
-4. Provide an intelligible name
-5. Select the entity to which you want to associate the corresponding data
-6. Click on `Create`
-7. (optional) For Pull intakes which requires a connector, you will need to provide configuration parameters to access the data source
-
-![intakes_creation](/assets/operation_center/intakes/modal-intake-creation.png){: style="max-width:100%"}
-
-!!! Note
-    The documentation about the integration of your data sources is also available in the [integrations](/integration/index.md) page.
-Pin
-## Configure a notification to report on inactive intake
-An inactive intake may have devastating consequences on your security monitoring. To prevent incidents from happening, you can set up notifications to get alerted when an intake stops sending events to Sekoia.io.
-
-To set up your notification, you can:
-
-1. Go to the Intakes listing page and click on:  ![Card menu](/assets/operation_center/intakes/intakes-card-menu.png){: style="max-width:10%"} on the right side of the card and click on the `Notifications` menu
-2. Specify how long the intake should be inactive before sending a notification. The duration can go from 15 min to 24 hours.
-3. Select how you want to be notified. Triggered actions that are available are mentioned in the page [Turn on notifications](/getting_started/notifications-Listing_Creation.md).
-
-!!! note
-     You can also set up this notification from the **intake details page** or the **User Center** > Notifications by selecting the trigger `No events are received`.
-
-![Create notification](/assets/operation_center/intakes/intakes-list-notification.png){: style="max-width:100%"}
-
-## Create a custom intake
-
-To learn more about how to create a custom intake, please refer to this [section.](/integration/develop_integration/formats/create_a_format.md)
-
-## Intake details page
-
-The details page of an intake provides key infos to check the health state of your data source collection. These infos are:
-
-- The volume of ingested events in a visual graph
-- The volume of events invalid or in warning
-- An event delivery metric which indicates the lag of event delivery
-- The latest ingested events
-- The logs of the connector (for Pull intakes only)
-
-![intakes_details](/assets/operation_center/intakes/intakes-details.png){: style="max-width:100%"}
-
-### Events graph
-
-![intakes_graph](/assets/operation_center/intakes/intakes-graph.png){: style="max-width:100%"}
-
-The events graph provide metrics on the ingestion of your logs. The metrics are calculated on the selected period (24h, 7 days or 30 days).
-
-!!! warning
-    Events are displayed by their **reception date** in the graph. By using the reception date, you are guaranteed to see events received recently in graph and avoid issues with wrongly dated events or events with important lags.
-
-- **Events**: total number of events ingested in the selected period
-- **Events in warning**: number of events in warning
-- **Invalid events**: number of invalid events
-- **Valid events**: number of valid events
-- **Event delivery**: represents the **average** difference between the `event.created` field (the time the event was originally generated at the source) and the `timestamp` field (the time Sekoia received and indexed the event). This metric measures **end-to-end latency from the source**, not Sekoia's internal processing speed.
-
-!!! tip
-    Hover the mouse on the graph to view the number of events per time unit.
-
-![intakes_graph_hover](/assets/operation_center/intakes/intakes-graph-hover.png){: style="max-width:100%"}
-
-#### Event delivery
-
-#### Event delivery
-
-The event delivery metric is a lag indicator that computes the **average** difference between:
-
-- `event.created`: the time the event was originally generated at the source
-- `timestamp`: the time the event was received and indexed by Sekoia
-
-This metric measures **end-to-end latency from the source to Sekoia**. It does not reflect Sekoia's internal processing speed.
-
-!!! warning
-    A high event delivery value does **not** necessarily indicate a problem on Sekoia's side. It reflects cumulative delays along the entire path from the source to Sekoia, including any buffering on the partner's infrastructure or on the endpoint itself.
-
-!!! tip
-    Because this metric is an **average**, a small number of heavily delayed events can significantly inflate the displayed value — even if the vast majority of events are delivered in near real-time. For example, if an endpoint was offline for several hours and reconnects while sending all its buffered events at once, the resulting average will appear high even though Sekoia's collection pipeline is working normally.
-
-Different factors can lead to an abnormal value:
-
-| Potential issue | Description |
-| --- | --- |
-| Event wrongly dated | If events in the data source are wrongly dated, the event delivery indicator can have a high value or negative value |
-| Data source timezone | A timezone issue can be at the origin of a high value or negative value |
-| Data source unavailable | If the data source is unavailable for a long time, the lag value will increase because of the delay to collect events |
-| Network/Bandwidth issues | Network and bandwidth issues will generate higher lag |
-| Events burst | An unusual high burst of events can overload the ingestion and increase lag |
-| Upstream buffering | For pull intakes relying on partner infrastructure (e.g., cloud security products routing events through an Event Hub or similar relay), events may be buffered upstream before reaching Sekoia. This typically happens when an endpoint was offline and reconnects, sending all buffered events at once. The high delivery time reflects a delay introduced outside of Sekoia's control. |
-
-**How to diagnose a high event delivery value:**
-
-1. Check the **Connector log** tab (for Pull intakes): if the connector shows no errors and is running normally, the latency is likely introduced upstream, not by Sekoia.
-2. Check the **event timestamps**: if recent events in the event list have old `event.created` dates, the source or an intermediary is buffering events.
-3. If in doubt, contact your support team. Sekoia's internal collection pipeline metrics are monitored separately and are not exposed in the UI.
-   
-### List of recent events
-
-Below the events graph, you have access to the list of recents events. This list help you verify that you received your expected events and allow you to check the content and parsing of these events. Events are displayed by their reception date. Click on the `Show more` button to display additional events.
-
-#### Invalid & Warning messages
-
-![intakes_event_filter](/assets/operation_center/intakes/intakes-event-filter.png){: style="max-width:100%"}
-
-Use the filter above the list of recent events to display the list of invalid or warning messages. This list contains the different type of parsing issues encountered. For each issue is displayed:
-
-- The issue parsing message
-- The last date when the issue was seen
-- The number of occurrence of the issue
-
-The last occurrence of the event can be consulted to troubleshoot issues.
-
-![intakes_details_error](/assets/operation_center/intakes/intakes-details-error.png){: style="max-width:100%"}
-
-!!! info
-    To preserve storage cost, only last occurrence of invalid event is stored in Sekoia.
-
-### Connector log
-
-The `Connector log` tab is only available for Pull intakes.
-
-![intakes_connector](/assets/operation_center/intakes/intakes-connector.png){: style="max-width:100%"}
-
-In this tab, you will find the latest logs of the connector. These logs help you check that the connector is functioning properly by checking the `Info` level messages.
-But they also help you troubleshoot issues by checking the `Error` level messages.
-
-Use the filter button to filter `Error` logs.
-
-![intakes_log_error](/assets/operation_center/intakes/intakes-log-error.png){: style="max-width:100%"}
-
-If the error is related to a configuration issue, read the next section to modify the configuration of the connector.
-
-### Intake menu
-
-The intake menu allows you to perform different kind of actions:
-
-- Edit intake entity
-- Configure connector parameters (only for Pull intakes)
-- Configure notifications on the intake
-- Rename the intake
-- Search events of the intake in the Events page
-- Consult the documentation page of the intake
-- Copy the intake key
-- Copy the intake UUID
-- Delete the intake
-
-![intakes_details_menu](/assets/operation_center/intakes/intakes-details-menu.png){: style="max-width:100%"}
-
-#### Edit entity
-
-To modify the entity of the intake:
-
-1. Click on `Edit entity` in the menu
-2. Select a new entity in the list
-3. Save your modification
-
-![intakes_details_entity](/assets/operation_center/intakes/intakes-details-entity.png){: style="max-width:100%"}
-
-#### Configure pull intakes
-
-This menu is only available for Pull intakes. Use this menu to modify the parameters of the connector. You can change the account used for authentication or change parameter values.
-
-1. Click on `Configure` in the menu
-2. Modify the configuration
-3. Save your modification
-
-![intakes_details_configure](/assets/operation_center/intakes/intakes-details-configure.png){: style="max-width:100%"}
-
-!!! info
-    The modifications are applied instantly. You do not need to restart the connector to take your modifications into account.
-
-#### Notifications
-
-To create a new notification on the intake:
-
-1. Click on `Notifications` in the menu
-2. Configure the notification settings
-3. Save your modification
-
-#### Rename intake
-
-To rename the intake:
-
-1. Click on `Rename` in the menu
-2. Enter the new name of the intake
-3. Save your modification
-
-![intakes_details_rename](/assets/operation_center/intakes/intakes-details-rename.png){: style="max-width:100%"}
-
-#### Delete intake
-
-To delete the intake:
-
-1. Click on `Delete` in the menu
-2. Confirm the deletion
-
-!!! warning
-    The deletion of an intake do not remove the events already ingested. However, note that the intake key will no longer be usable. You will need to deploy a new intake key in your infrastructure if you wish to restore the same kind of intake.
-
----
-
-!!! note
-    Do not hesitate to contact your support if:
-
-    - The settings’ recommendations provided are not sufficient or not applicable to your system. We can then see with you how to transfer your events in the best conditions.
-    - The format of the logs you want to send us is not in the list. We regularly add new formats and we can let you know when yours is available in our catalog.
+- [Integrations](/integration/): Full catalog of supported data source integrations and their setup documentation.
