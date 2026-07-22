@@ -22,7 +22,7 @@ Each column represents a data source. Each row represents a Reveal capability.
 - [Troubleshoot Reveal](/xdr/features/modules/reveal_troubleshoot.md): General troubleshooting for missing Reveal data.
 - [Create an asset connector](/xdr/features/modules/reveal_asset_connectors_create.md): How to configure a connector from the integration catalog.
 - [Asset context panel](/xdr/features/investigate/asset_context_panel.md): Core investigation surface for all clients.
-- [Points of Interest](/xdr/features/modules/reveal_points_of_interest.md): How Reveal surfaces behavioral anomalies on assets.
+- [Points of Interest](/xdr/features/detect/reveal_points_of_interest.md): How Reveal surfaces behavioral anomalies on assets.
 - [Endpoint Hygiene](/xdr/features/modules/reveal_hygiene.md): How to read and interpret hygiene signals.
 - [Vulnerability enrichment](/xdr/features/modules/reveal_vulnerabilities.md): How CVE exposure data is aggregated and scored.
 - [Attack Path Visualization](/xdr/features/investigate/attack_path_visualization.md): How to navigate the attack path graph.
