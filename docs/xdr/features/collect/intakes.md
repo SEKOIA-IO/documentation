@@ -132,6 +132,8 @@ To set up your notification, you can:
 
 To learn more about how to create a custom intake, please refer to this [section.](/integration/develop_integration/formats/create_a_format.md)
 
+Instead of building the parser stage by stage, you can let an AI agent generate it from sample logs. See [AI intake parser overview](/xdr/features/collect/ai_intake_parser_overview.md) for how the agent works, and [Generate a parser with AI](/xdr/features/collect/generate_a_parser_with_ai.md) for the procedure.
+
 ## Intake details page
 
 The details page of an intake provides key infos to check the health state of your data source collection. These infos are:
