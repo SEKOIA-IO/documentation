@@ -157,7 +157,7 @@ The events graph provide metrics on the ingestion of your logs. The metrics are 
 - **Events in warning**: number of events in warning
 - **Invalid events**: number of invalid events
 - **Valid events**: number of valid events
-- **Event delivery**: represents the average latency between the **creation date** of the original event and the **reception date** of the event at Sekoia
+- **Event delivery**: represents the **average** difference between the `event.created` field (the time the event was originally generated at the source) and the `timestamp` field (the time Sekoia received and indexed the event). This metric measures **end-to-end latency from the source**, not Sekoia's internal processing speed.
 
 !!! tip
     Hover the mouse on the graph to view the number of events per time unit.
@@ -166,7 +166,21 @@ The events graph provide metrics on the ingestion of your logs. The metrics are 
 
 #### Event delivery
 
-The event delivery metric is a lag indicator that computes an average value based on the elapse time between the moment the event is created in the data source and the moment it is received in Sekoia.
+#### Event delivery
+
+The event delivery metric is a lag indicator that computes the **average** difference between:
+
+- `event.created`: the time the event was originally generated at the source
+- `timestamp`: the time the event was received and indexed by Sekoia
+
+This metric measures **end-to-end latency from the source to Sekoia**. It does not reflect Sekoia's internal processing speed.
+
+!!! warning
+    A high event delivery value does **not** necessarily indicate a problem on Sekoia's side. It reflects cumulative delays along the entire path from the source to Sekoia, including any buffering on the partner's infrastructure or on the endpoint itself.
+
+!!! tip
+    Because this metric is an **average**, a small number of heavily delayed events can significantly inflate the displayed value — even if the vast majority of events are delivered in near real-time. For example, if an endpoint was offline for several hours and reconnects while sending all its buffered events at once, the resulting average will appear high even though Sekoia's collection pipeline is working normally.
+
 Different factors can lead to an abnormal value:
 
 | Potential issue | Description |
@@ -176,7 +190,14 @@ Different factors can lead to an abnormal value:
 | Data source unavailable | If the data source is unavailable for a long time, the lag value will increase because of the delay to collect events |
 | Network/Bandwidth issues | Network and bandwidth issues will generate higher lag |
 | Events burst | An unusual high burst of events can overload the ingestion and increase lag |
+| Upstream buffering | For pull intakes relying on partner infrastructure (e.g., cloud security products routing events through an Event Hub or similar relay), events may be buffered upstream before reaching Sekoia. This typically happens when an endpoint was offline and reconnects, sending all buffered events at once. The high delivery time reflects a delay introduced outside of Sekoia's control. |
 
+**How to diagnose a high event delivery value:**
+
+1. Check the **Connector log** tab (for Pull intakes): if the connector shows no errors and is running normally, the latency is likely introduced upstream, not by Sekoia.
+2. Check the **event timestamps**: if recent events in the event list have old `event.created` dates, the source or an intermediary is buffering events.
+3. If in doubt, contact your support team. Sekoia's internal collection pipeline metrics are monitored separately and are not exposed in the UI.
+   
 ### List of recent events
 
 Below the events graph, you have access to the list of recents events. This list help you verify that you received your expected events and allow you to check the content and parsing of these events. Events are displayed by their reception date. Click on the `Show more` button to display additional events.
