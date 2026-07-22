@@ -20,15 +20,9 @@ To connect Holm Security to Sekoia.io, you need an API token created by an admin
 
 1. Sign in to the Holm Security console with an administrator account.
 
-    ![Holm Security login page](/assets/operation_center/asset_connectors/device/holm_security/login.png)
-
 2. Open **Settings** and select the **API tokens** section.
 
-    ![Navigation to API tokens in Holm Security settings](/assets/operation_center/asset_connectors/device/holm_security/api_tokens.png)
-
 3. Click **Generate token**, give it a descriptive name, and confirm.
-
-    ![Generate token button in Holm Security](/assets/operation_center/asset_connectors/device/holm_security/generate_token.png)
 
 4. Copy the token to a safe place and use it in Sekoia.io.
 
@@ -42,11 +36,7 @@ To start getting your Holm Security assets into Sekoia.io, you need to create an
 
 1. Click the **Asset connectors** button to create a new connector.
 
-    ![Asset connectors button highlighted](/assets/operation_center/asset_connectors/vulnerability/common/create_asset_connector_button.png)
-
 2. Click the **+ New connector** button.
-
-    ![New connector button highlighted](/assets/operation_center/asset_connectors/vulnerability/common/create_asset_connector_1.png)
 
 3. Choose **Holm Security Devices**, give it a name, and fill the required fields:
 
