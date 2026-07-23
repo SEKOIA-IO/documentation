@@ -71,7 +71,7 @@ In this section, you will find examples of raw logs as generated natively by the
 === "test_events_content_filtering_block"
 
     ```
-	1673541348.531136002 FW_MX_01 events content_filtering_block url='https://docs.sekoia.com/...' server='1.2.3.4:443' client_mac='AA:BB:CC:DD:EE:FF'
+	1673541348.531136002 FW_MX_01 events content_filtering_block url='https://docs.sekoia.io/...' server='1.2.3.4:443' client_mac='AA:BB:CC:DD:EE:FF'
     ```
 
 
@@ -191,7 +191,7 @@ In this section, you will find examples of raw logs as generated natively by the
 === "test_urls_3"
 
     ```
-	1673277244.416181683 FW_MX_01 urls src=1.2.3.4:55566 dst=5.6.7.8:80 mac=AA:BB:CC:DD:EE:FF agent='Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36' request: GET http://docs.sekoia.com/xdr/features/collect/integrations/network/cisco_meraki/
+	1673277244.416181683 FW_MX_01 urls src=1.2.3.4:55566 dst=5.6.7.8:80 mac=AA:BB:CC:DD:EE:FF agent='Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36' request: GET http://docs.sekoia.io/xdr/features/collect/integrations/network/cisco_meraki/
     ```
 
 

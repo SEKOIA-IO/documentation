@@ -289,6 +289,7 @@ Here is the updated list of all available filters.
 | --- | --- |
 | Asset | Lists impacted assets within the alert |
 | Created at | Select a date of creation (date range, relative dates…) |
+| Custom fields | Filters by any custom field defined in your community. See [Custom fields](/xdr/features/investigate/custom_fields.md) |
 | Entity | Select entities where alerts happened that are listed in your alert table |
 | Rule | Lists all rules that have raised alerts. You can also filter by a specific value by hovering on a value in the Source column in the table and clicking on the "+" button |
 | Source | Lists all alert sources. You can also filter by a specific value by hovering on a value in the Source column in the table and clicking on the "+" button  |
@@ -401,6 +402,9 @@ The first column contains the following items:
 - The Kill Chain phase (can be edited on hover)
 - Details about the rule that was triggered
 - Details from the Intelligence Center about all threats linked to this alert
+- The custom fields attached to the alert
+
+Custom fields let you capture structured, typed metadata on the alert, such as the number of impacted users or the attack vector. Their definitions are shared with cases, so a field created once can be used on both. See [Custom fields](/xdr/features/investigate/custom_fields.md) for the supported data types, and [Use custom fields](/xdr/features/investigate/use_custom_fields.md) to add a value to an alert.
 
 The second column is the `timeline`. It contains all items that constitute the history of the alert:
 

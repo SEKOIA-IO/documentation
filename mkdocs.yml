@@ -125,6 +125,7 @@ nav:
     - Quick start guide: xdr/xdr_quick_start.md
     - Collect:
       - Integrations: xdr/features/collect/integrations_hub.md
+      - Update a custom integration: xdr/features/collect/update_a_custom_integration.md
       - Intakes: xdr/features/collect/intakes.md
       - Entities: xdr/features/collect/entities.md
       - Assets: xdr/features/collect/assets.md
@@ -139,12 +140,12 @@ nav:
       - Sigma: xdr/features/detect/sigma.md
       - Anomaly Detection: xdr/features/detect/anomaly.md
       - IOCs Collections: xdr/features/detect/ioccollections.md
-      - SOL detection rules: 
-            - SOL detection rules overview: xdr/features/detect/sol_detection_rule.md
-            - Create a SOL detection rule: xdr/features/detect/create_sol_detection_rule.md
-            - Create an Event Drop rule: xdr/features/detect/create_event_drop_from_source.md
-            - Alert similarity: xdr/features/detect/sol_detection_similarity.md
-            - Lag management: xdr/features/detect/sol_detection_lag_management.md
+      - SOL detection rules:
+        - SOL detection rules overview: xdr/features/detect/sol_detection_rule.md
+        - Create a SOL detection rule: xdr/features/detect/create_sol_detection_rule.md
+        - Create an Event Drop rule: xdr/features/detect/create_event_drop_from_source.md
+        - Alert similarity: xdr/features/detect/sol_detection_similarity.md
+        - Lag management: xdr/features/detect/sol_detection_lag_management.md
     - Investigate:
       - Alerts: xdr/features/investigate/alerts.md
       - Events page: xdr/features/investigate/events.md
@@ -164,11 +165,11 @@ nav:
           - Investigate case details: xdr/features/investigate/case_details.md
           - Graph investigation: xdr/features/investigate/graph_investigation.md
           - AI Cases: xdr/features/investigate/ai_cases.md
-        - Using cases custom fields:
-          - Cases custom fields overview: xdr/features/investigate/case_custom_fields.md
-          - Use custom fields in cases: xdr/features/investigate/use_custom_fields_in_cases.md
-          - Manage custom field definition: xdr/features/investigate/manage_custom_field_definitions.md
-          - Query custom fields: xdr/features/investigate/query_custom_fields.md
+      - Custom fields:
+        - Custom fields overview: xdr/features/investigate/custom_fields.md
+        - Use custom fields: xdr/features/investigate/use_custom_fields.md
+        - Manage custom field definitions: xdr/features/investigate/manage_custom_field_definitions.md
+        - Query custom fields: xdr/features/investigate/query_custom_fields.md
       - Asset Context Panel: xdr/features/investigate/asset_context_panel.md
       - Events Query Language: xdr/features/investigate/events_query_language.md
       - Querying Events: xdr/features/investigate/querying_events.md
@@ -214,35 +215,33 @@ nav:
       - Palo Alto Cortex XSOAR: xdr/features/integrations/interconnect_sekoia_with_xsoar.md
       - Swimlane Turbine: xdr/features/integrations/swimlane_turbine.md
   - AI Agents (Elevate):
-      - Elevate overview: xdr/features/modules/elevate_overview.md
-      - The investigation method: xdr/features/modules/elevate_investigation_method.md
-      - Elevate kick start guide: 
-        - Activate Elevate:  xdr/features/modules/elevate_activate.md
-        - Elevate analysis states:  xdr/features/modules/elevate_analysis_states.md
-      - Investigate with Elevate:  
-        - Investigate an alert:  xdr/features/modules/elevate_investigate_alert.md
-        - Investigate a case:  xdr/features/modules/elevate_investigate_case.md
-        - Audit with Traces:  xdr/features/modules/elevate_traces.md
-        - Override a verdict:  xdr/features/modules/elevate_validate_verdict.md
-        - Trigger an analysis:  xdr/features/modules/elevate_manual_analysis.md
-      - Tune Elevate agents:
-        - Add custom instructions: xdr/features/modules/elevate_custom_instructions.md
-        - Customize a detection rule's runbook: xdr/features/modules/elevate_customize_runbook.md
-        - Write effective instructions: xdr/features/modules/elevate_instructions_best_practices.md
-      - Manage Elevate: 
-        - Override community settings:  xdr/features/modules/elevate_community_override.md
-        - Limit auto-analysis to specific rules: xdr/features/modules/elevate_rule_filter.md
-        - Manage Elevate runs: xdr/features/modules/elevate_quota.md
+    - Elevate overview: xdr/features/modules/elevate_overview.md
+    - The investigation method: xdr/features/modules/elevate_investigation_method.md
+    - Elevate kick start guide:
+      - Activate Elevate: xdr/features/modules/elevate_activate.md
+      - Elevate analysis states: xdr/features/modules/elevate_analysis_states.md
+    - Investigate with Elevate:
+      - Investigate an alert: xdr/features/modules/elevate_investigate_alert.md
+      - Investigate a case: xdr/features/modules/elevate_investigate_case.md
+      - Audit with Traces: xdr/features/modules/elevate_traces.md
+      - Override a verdict: xdr/features/modules/elevate_validate_verdict.md
+      - Trigger an analysis: xdr/features/modules/elevate_manual_analysis.md
+    - Tune Elevate agents:
+      - Add custom instructions: xdr/features/modules/elevate_custom_instructions.md
+      - Customize a detection rule's runbook: xdr/features/modules/elevate_customize_runbook.md
+      - Write effective instructions: xdr/features/modules/elevate_instructions_best_practices.md
+    - Manage Elevate:
+      - Override community settings: xdr/features/modules/elevate_community_override.md
+      - Limit auto-analysis to specific rules: xdr/features/modules/elevate_rule_filter.md
+      - Manage Elevate runs: xdr/features/modules/elevate_quota.md
   - Asset Intelligence (Reveal):
-      - Reveal overview: xdr/features/modules/reveal_index.md
-      - Get started with Reveal: xdr/features/modules/reveal_getting_started.md
-      - Explore assets context: xdr/features/modules/reveal_asset_context_panel.md
-      - Visualize attack paths: xdr/features/investigate/attack_path_visualization.md
-      - Discover Points of Interest: xdr/features/detect/points_of_interest.md
-      - Check asset connector health: xdr/features/collect/asset_connector_health.md
-      - Reveal enablement matrix: xdr/features/modules/reveal_feature_enablement.md
-    
-
+    - Reveal overview: xdr/features/modules/reveal_index.md
+    - Get started with Reveal: xdr/features/modules/reveal_getting_started.md
+    - Explore assets context: xdr/features/modules/reveal_asset_context_panel.md
+    - Visualize attack paths: xdr/features/investigate/attack_path_visualization.md
+    - Discover Points of Interest: xdr/features/detect/points_of_interest.md
+    - Check asset connector health: xdr/features/collect/asset_connector_health.md
+    - Reveal enablement matrix: xdr/features/modules/reveal_feature_enablement.md
 - Usecases:
   - Export large volumes of events: xdr/usecases/massive_export.md
   - Implement a blocklist in Sekoia.io: xdr/usecases/playbook/implement_blocklist.md
@@ -890,8 +889,10 @@ plugins:
       xdr/features/collect/integrations/network/vectra.md: integration/categories/network_security/vectra.md
       xdr/features/collect/integrations/network/wallix.md: integration/categories/iam/wallix.md
       xdr/features/collect/integrations/network/watchguard_firebox.md: integration/categories/network_security/watchguard_firebox.md
+      xdr/features/investigate/case_custom_fields.md: xdr/features/investigate/custom_fields.md
       xdr/features/investigate/dork_language.md: xdr/features/investigate/events_query_language.md
       xdr/features/investigate/sekoia_operating_language.md: xdr/features/investigate/sol_overview.md
+      xdr/features/investigate/use_custom_fields_in_cases.md: xdr/features/investigate/use_custom_fields.md
 - integration_by_uuid
 - sass
 repo_url: https://github.com/SEKOIA-IO/documentation
