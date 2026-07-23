@@ -434,6 +434,7 @@ nav:
       - Cloudflare Gateway HTTP: integration/categories/network/cloudflare-gateway-http.md
       - Cloudflare Gateway Network: integration/categories/network/cloudflare-gateway-network.md
       - Cloudflare HTTP requests: integration/categories/network/cloudflare-http-requests.md
+      - Cloudflare Zero Trust Network Session Logs: integration/categories/network/cloudflare-zero-trust-network-session-logs.md
       - EfficientIP SOLIDServer DDI: integration/categories/network/efficientip_solidserver_ddi.md
       - Ekinops OneOS: integration/categories/network/ekinops_oneos.md
       - F5 BIG-IP: integration/categories/network/f5-big-ip.md
@@ -769,6 +770,7 @@ plugins:
       xdr/features/collect/integrations/cloud_and_saas/cloudflare/cloudflare-gateway-http.md: integration/categories/network/cloudflare-gateway-http.md
       xdr/features/collect/integrations/cloud_and_saas/cloudflare/cloudflare-gateway-network.md: integration/categories/network/cloudflare-gateway-network.md
       xdr/features/collect/integrations/cloud_and_saas/cloudflare/cloudflare-http-requests.md: integration/categories/network/cloudflare-http-requests.md
+      xdr/features/collect/integrations/cloud_and_saas/cloudflare/cloudflare-zero-trust-network-session-logs.md: integration/categories/network/cloudflare-zero-trust-network-session-logs.md
       xdr/features/collect/integrations/cloud_and_saas/datadome_protection.md: integration/categories/network_security/datadome_protection.md
       xdr/features/collect/integrations/cloud_and_saas/digital_shadows.md: integration/categories/network_security/digital_shadows.md
       xdr/features/collect/integrations/cloud_and_saas/extrahop_revealx_360.md: integration/categories/network_security/extrahop_revealx_360.md
