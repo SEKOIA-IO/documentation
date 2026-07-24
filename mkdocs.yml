@@ -361,6 +361,7 @@ nav:
       - Lookout Mobile Endpoint Security: integration/categories/endpoint/lookout_mes.md
       - Microsoft Defender XDR (Microsoft 365 Defender): integration/categories/endpoint/microsoft_365_defender.md
       - Microsoft Defender XDR (Graph API): integration/categories/endpoint/microsoft_365_defender_graphapi.md
+      - Microsoft Defender XDR Incidents (Graph API): integration/categories/endpoint/microsoft_365_defender_graphapi_incidents.md
       - Microsoft Intune: integration/categories/endpoint/microsoft_intune.md
       - Nozomi Central Management Console: integration/categories/endpoint/nozomi_cmc.md
       - Nucleon EDR: integration/categories/endpoint/nucleon_edr.md
@@ -789,6 +790,7 @@ plugins:
       xdr/features/collect/integrations/cloud_and_saas/nozomi/nozomi_vantage.md: integration/categories/network_security/nozomi_vantage.md
       xdr/features/collect/integrations/cloud_and_saas/office365/message_trace.md: integration/categories/email/message_trace.md
       xdr/features/collect/integrations/cloud_and_saas/office365/microsoft_365_defender.md: integration/categories/endpoint/microsoft_365_defender.md
+      xdr/features/collect/integrations/cloud_and_saas/office365/microsoft_365_defender_graphapi_incidents.md: integration/categories/endpoint/microsoft_365_defender_graphapi_incidents.md
       xdr/features/collect/integrations/cloud_and_saas/office365/o365.md: integration/categories/email/o365.md
       xdr/features/collect/integrations/cloud_and_saas/ogo_shield.md: integration/categories/network_security/ogo_shield.md
       xdr/features/collect/integrations/cloud_and_saas/okta_system_log.md: integration/categories/iam/okta_system_log.md
