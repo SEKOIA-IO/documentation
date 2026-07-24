@@ -1,5 +1,10 @@
 # Sekoia Intelligence (CTI)
 
+!!! note 
+
+    Sekoia intelligence is available on Sekoia SOC platform with a Defend licence or as a standalone product thanks to API integration. 
+
+
 Cyber Threat Intelligence is at the core of cybersecurity operations. Everyone can trigger indicators when damage has already happened.
 Conversely, showcasing high volumes of indicators is easy when these are long expired. Contrary to other threat intel tools, every single bit of information presented on our feed is framed within explicit validity timestamps and constantly updated, so that you are presented with relevant intelligence, just in time.
 
@@ -8,6 +13,12 @@ Through our publications and access to the database of the Intelligence Center, 
 Our 500+ sources of information help us track over 200 attackers groups and their attack infrastructures over the entire world. This information is thoroughly processed, cross-analysed and contextualised by our analysts, in order to provide you with trustworthy intelligence about real threats, with global coverage wherever your assets are located, and whatever industry you are operating in.
 
 At Sekoia.io, the **Intelligence Center** is a Threat Intelligence knowledge base that is being constantly updated by Sekoia.io's analysts.
+
+  <script async src="https://js.storylane.io/js/v2/storylane.js"></script>
+  <div class="sl-embed" style="position:relative;padding-bottom:56.25%;width:100%;height:0;transform:scale(1)">
+    <iframe loading="lazy" class="sl-demo" src="https://sekoia.storylane.io/demo/z0zg8xyww00d?embed=popup" name="sl-embed" allow="fullscreen" allowfullscreen style="position:absolute;top:0;left:0;width:100%!important;height:100%!important;border:1px solid rgba(63,95,172,0.35);box-shadow: 0px 0px 18px rgba(26, 19, 72, 0.15);border-radius:10px;box-sizing:border-box;"></iframe>
+
+
 
 ## Product Features
 
