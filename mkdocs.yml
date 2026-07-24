@@ -539,6 +539,7 @@ nav:
       - Umbrella IP Logs: integration/categories/network_security/umbrella_ip.md
       - Umbrella Proxy Logs: integration/categories/network_security/umbrella_proxy.md
       - Varonis Data Security: integration/categories/network_security/varonis_data_security.md
+      - Varonis Data Security - SaaS: integration/categories/network_security/varonis_data_security_saas.md
       - Vectra Cognito Detect: integration/categories/network_security/vectra.md
       - Vectra Respond UX - Entity Scoring: integration/categories/network_security/vectra_respond_ux_entity_scoring.md
       - WatchGuard Firebox: integration/categories/network_security/watchguard_firebox.md
