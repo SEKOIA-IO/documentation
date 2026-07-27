@@ -3,7 +3,11 @@ name: Varonis Data Security SaaS
 type: intake
 
 ## Overview
+
 Varonis offers solutions to track and protect data.
+
+!!! Warning
+    Important note - This format is currently in beta. We highly value your feedback to improve its performance.
 
 - **Vendor**: Varonis
 - **Supported environment**: SaaS
