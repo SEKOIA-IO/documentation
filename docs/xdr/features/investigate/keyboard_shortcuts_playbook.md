@@ -43,5 +43,5 @@ The playbook canvas supports keyboard shortcuts for selecting, editing, and navi
 
 ## Related articles
 
-- [Build a playbook](/xdr/features/automate/playbooks.md): How to create and configure nodes in the playbook canvas.
-- [Manage playbooks](/xdr/features/automate/manage_playbooks.md): How to organize, duplicate, and version playbooks.
+- [Build a playbook](/_shared_content/automate/build-playbooks.md): How to create and configure nodes in the playbook canvas.
+- [Navigate playbooks](/_shared_content/automate/build-playbooks.md): Learn how to navigate playbooks interface.
