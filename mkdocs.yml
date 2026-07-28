@@ -161,6 +161,10 @@ nav:
         - Create and manage cases:
           - Create a case: xdr/features/investigate/create_a_case.md
           - Manage cases: xdr/features/investigate/manage_cases.md
+        - Case templates:
+          - Case templates overview: xdr/features/investigate/case_templates.md
+          - Create a case template: xdr/features/investigate/create_a_case_template.md
+          - Apply a case template: xdr/features/investigate/apply_a_case_template.md
         - Investigate cases:
           - Investigate case details: xdr/features/investigate/case_details.md
           - Graph investigation: xdr/features/investigate/graph_investigation.md
