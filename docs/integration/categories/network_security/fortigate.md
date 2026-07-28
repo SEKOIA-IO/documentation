@@ -102,8 +102,10 @@ This setup guide will show you how to forward your Fortigate logs to Sekoia.io b
         end
         ```
 
-      - With some Fortigate appliances, it may not be possible to do the above configuration through the command line. An alternative method is to use the graphical interface and go to the `Log Settings` menu. From there you can choose every logging option within `Event Logging` and `Local Traffic Log` except for the `Denied` options.
-      - To open the CLI console from the GUI, click the `>_` icon in the top-right corner, then run the CLI commands from this guide.
+      !!! warning
+          With some Fortigate appliances, it may not be possible to do the above configuration through the command line. An alternative method is to use the graphical interface and go to the `Log Settings` menu. From there you can choose every logging option within `Event Logging` and `Local Traffic Log` except for the `Denied` options.
+
+          To open the CLI console from the GUI, click the `>_` icon in the top-right corner, then run the CLI commands from this guide.
 
       - To use the CEF format, use the following commands:
 
