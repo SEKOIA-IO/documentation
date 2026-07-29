@@ -19,9 +19,9 @@ The **Create new rule** panel opens with the **Event Drop** pattern selected. Th
 
 ```
 event_telemetry
-| where timestamp between (?time.start .. ?time.end)
-| aggregate count() by bin(timestamp, 2h)
-| where intake_uuid == "<intake uuid>"
+| where bucket_start_date between (?time.start .. ?time.end)
+    and intake_uuid == ""
+| aggregate count() by bin(bucket_start_date, 2h)
 | where count < 500
 ```
 

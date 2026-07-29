@@ -11,11 +11,11 @@ In this section, you will find examples of raw logs as generated natively by the
 	{
         "alertName": "Alert Name",
         "content": "content",
-        "domain": "domain",
+        "domain": "example.com",
         "score": "1.0",
         "timestamp": "2026-03-24T10:09:27Z",
         "title": "Title",
-        "url": "url"
+        "url": "/path/"
     }
     ```
 
@@ -32,7 +32,7 @@ In this section, you will find examples of raw logs as generated natively by the
         "score": "1.0",
         "timestamp": "2026-03-24T10:09:27Z",
         "title": "Title",
-        "url": "url"
+        "url": "/path/"
     }
     ```
 

@@ -102,6 +102,7 @@ For a full explanation of what is preserved and how to reach it from the interfa
 | cases                     | List of cases associated to the alert.                                                       |
 | assets                    | List of assets associated to the alert.                                                      |
 | threats                   | List of threats associated the alert.                                                        |
+| custom_fields             | Structured metadata attached to the alert. Access a field with `custom_fields.<field_name>`. |
 
 ## cases
 
@@ -121,6 +122,7 @@ For a full explanation of what is preserved and how to reach it from the interfa
 | updated_by_type           | The type of user that last updated the case.                                               |
 | first_seen_at             | The date and time when the case was first detected.                                        |
 | last_seen_at              | The date and time when the case was last observed or updated.                              |
+| custom_fields             | Structured metadata attached to the case. Access a field with `custom_fields.<field_name>`. |
 
 ## custom_statuses
 
