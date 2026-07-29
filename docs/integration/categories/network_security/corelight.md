@@ -19,7 +19,7 @@ Corelight is an Open NDR (Network Detection and Response) platform built on Zeek
 - **Resource:**
     - A Corelight Sensor (physical or virtual) or a Corelight Fleet Manager
 - **Network:**
-    - Outbound HTTPS traffic allowed from the sensor to `https://intake.sekoia.io`
+    - Outbound HTTPS traffic allowed from the sensor to your region HTTP Intake endpoint (for FRA1: `https://intake.sekoia.io`)
 - **Permissions:**
     - Administrator access to the Corelight Sensor or Fleet Manager to configure an exporter
 
@@ -72,6 +72,14 @@ The following steps describe the configuration through the Corelight Fleet Manag
 | Method        | `POST`                                                                                         |
 | HTTP Headers  | Add a header — key: `X-SEKOIAIO-INTAKE-KEY`, value: the `intake key` generated on Sekoia.io    |
 | Compression   | `gzip` (default) — optional                                                                    |
+
+!!! warning
+    The URI above works for the FRA1 region. For any other region, replace `https://intake.sekoia.io` with your region's HTTP Intake endpoint.
+
+    Example for USA1:
+    `https://app.usa1.sekoia.io/api/v1/intake-http`
+
+    You can find your region endpoint here: [https://docs.sekoia.com/getting_started/regions/](https://docs.sekoia.com/getting_started/regions/)
 
 3. (Recommended) Limit the volume by selecting the high-value log types for the SOC via **Exporter Log Filters** or **Zeek Logs to Include**: `conn`, `dns`, `http`, `ssl`, `files`, `notice`, `intel`, `suricata_corelight`.
 4. Save the policy and apply it to the sensor.
