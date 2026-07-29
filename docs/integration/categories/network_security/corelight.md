@@ -6,6 +6,9 @@ type: intake
 
 Corelight is an Open NDR (Network Detection and Response) platform built on Zeek and Suricata. Corelight sensors transform raw network traffic into rich, structured JSON logs (connections, DNS, HTTP, SSL/TLS, files, notices) and Suricata IDS alerts, providing network ground-truth evidence for threat detection, threat hunting and incident response. In this documentation we will explain how to collect and send Corelight Sensor logs to Sekoia.io.
 
+!!! Warning
+    Important note - This format is currently in beta. We highly value your feedback to improve its performance.
+
 - **Vendor**: Corelight
 - **Supported environment**: On premise (physical or virtual sensor)
 - **Version compatibility**: Sensor / Fleet Manager 28.3.1 or above (HTTP export), 28.4 or above (Syslog export)
@@ -19,7 +22,7 @@ Corelight is an Open NDR (Network Detection and Response) platform built on Zeek
 - **Resource:**
     - A Corelight Sensor (physical or virtual) or a Corelight Fleet Manager
 - **Network:**
-    - Outbound HTTPS traffic allowed from the sensor to `https://intake.sekoia.io`
+    - Outbound HTTPS traffic allowed from the sensor to your region HTTP Intake endpoint (for FRA1: `https://intake.sekoia.io`)
 - **Permissions:**
     - Administrator access to the Corelight Sensor or Fleet Manager to configure an exporter
 
@@ -44,11 +47,6 @@ This setup guide describes how to forward logs from a Corelight Sensor to Sekoia
 
 {!_shared_content/integration/intake_configuration.md!}
 
-!!! warning "Push mode — connector not required"
-    Corelight sends its events to Sekoia.io in **push** mode. A connector is **not** needed for this integration.
-
-    The `intake key` generated when you create the intake must be provided to the Corelight sensor (see below), where it is added as a custom HTTP header. The intake key identifies your community and routes the events to the correct intake. Do not modify its value: Sekoia.io rejects events carrying an altered intake key.
-
 !!! Note
     Corelight includes the emitting sensor name in every event (`_system_name`, mapped to `observer.name`). A single intake key can therefore be shared across a whole fleet: each event remains attributable to its source sensor, and you can filter events per sensor in Sekoia.io.
 
@@ -72,6 +70,14 @@ The following steps describe the configuration through the Corelight Fleet Manag
 | Method        | `POST`                                                                                         |
 | HTTP Headers  | Add a header — key: `X-SEKOIAIO-INTAKE-KEY`, value: the `intake key` generated on Sekoia.io    |
 | Compression   | `gzip` (default) — optional                                                                    |
+
+!!! warning
+    The URI above works for the FRA1 region. For any other region, replace `https://intake.sekoia.io` with your region's HTTP Intake endpoint.
+
+    Example for USA1:
+    `https://app.usa1.sekoia.io/api/v1/intake-http`
+
+    You can find your region endpoint here: [https://docs.sekoia.com/getting_started/regions/](https://docs.sekoia.com/getting_started/regions/)
 
 3. (Recommended) Limit the volume by selecting the high-value log types for the SOC via **Exporter Log Filters** or **Zeek Logs to Include**: `conn`, `dns`, `http`, `ssl`, `files`, `notice`, `intel`, `suricata_corelight`.
 4. Save the policy and apply it to the sensor.
