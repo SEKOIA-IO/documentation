@@ -44,11 +44,6 @@ This setup guide describes how to forward logs from a Corelight Sensor to Sekoia
 
 {!_shared_content/integration/intake_configuration.md!}
 
-!!! warning "Push mode — connector not required"
-    Corelight sends its events to Sekoia.io in **push** mode. A connector is **not** needed for this integration.
-
-    The `intake key` generated when you create the intake must be provided to the Corelight sensor (see below), where it is added as a custom HTTP header. The intake key identifies your community and routes the events to the correct intake. Do not modify its value: Sekoia.io rejects events carrying an altered intake key.
-
 !!! Note
     Corelight includes the emitting sensor name in every event (`_system_name`, mapped to `observer.name`). A single intake key can therefore be shared across a whole fleet: each event remains attributable to its source sensor, and you can filter events per sensor in Sekoia.io.
 
