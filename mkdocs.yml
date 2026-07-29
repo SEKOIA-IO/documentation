@@ -286,6 +286,7 @@ nav:
       - AWS S3: integration/ingestion_methods/cloud_saas/aws.md
       - Azure Event Hub: integration/ingestion_methods/cloud_saas/azure.md
       - Google Pub/Sub: integration/ingestion_methods/cloud_saas/gcp.md
+      - ilert: integration/action_library/ilert.md
     - HTTPS:
       - Overview: integration/ingestion_methods/https/overview.md
       - Formatting options: integration/ingestion_methods/https/format.md
@@ -557,8 +558,6 @@ nav:
       - Mattermost: integration/action_library/mattermost.md
       - New Relic: integration/action_library/new-relic.md
       - PagerDuty: integration/action_library/pagerduty.md
-    - Cloud and Saas:
-      - ilert: integration/action_library/ilert.md
     - Cloud Providers:
       - AWS: integration/action_library/aws.md
       - Azure Monitor: integration/action_library/azure-monitor.md
