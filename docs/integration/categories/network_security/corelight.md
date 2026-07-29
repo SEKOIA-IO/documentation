@@ -6,6 +6,9 @@ type: intake
 
 Corelight is an Open NDR (Network Detection and Response) platform built on Zeek and Suricata. Corelight sensors transform raw network traffic into rich, structured JSON logs (connections, DNS, HTTP, SSL/TLS, files, notices) and Suricata IDS alerts, providing network ground-truth evidence for threat detection, threat hunting and incident response. In this documentation we will explain how to collect and send Corelight Sensor logs to Sekoia.io.
 
+!!! Warning
+    Important note - This format is currently in beta. We highly value your feedback to improve its performance.
+
 - **Vendor**: Corelight
 - **Supported environment**: On premise (physical or virtual sensor)
 - **Version compatibility**: Sensor / Fleet Manager 28.3.1 or above (HTTP export), 28.4 or above (Syslog export)
