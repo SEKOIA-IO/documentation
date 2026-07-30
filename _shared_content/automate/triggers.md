@@ -98,6 +98,6 @@ Logs are retained for different durations depending on their severity:
 
 [Run a playbook from a case](/xdr/features/investigate/run_playbook_case.md): How to start a playbook directly from a case and read the run results.
 
-[Playbooks](/xdr/features/automate/playbooks.md): Overview of the playbook builder, including operators and actions.
+[Playbooks](/xdr/features/automate/build-playbooks.md): Overview of the playbook builder, including operators and actions.
 
 [Cases](/xdr/features/investigate/cases.md): Overview of the case management workflow in Sekoia.
