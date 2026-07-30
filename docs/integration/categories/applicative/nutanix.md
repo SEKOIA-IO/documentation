@@ -1,5 +1,5 @@
 ---
-uuid: 9a7f6d4e-3b2a-4c1d-8f9e-0a1b2c3d4e5f
+uuid: 4b84d5b6-dee1-460a-8595-e9cfaeebf045
 name: Nutanix
 type: intake
 ---
@@ -90,7 +90,7 @@ To achieve this you can:
 
 {!_shared_content/operations_center/integrations/generated/nutanix_sample.md!}
 
-{!_shared_content/operations_center/detection/generated/suggested_rules_9a7f6d4e-3b2a-4c1d-8f9e-0a1b2c3d4e5f_do_not_edit_manually.md!}
+{!_shared_content/operations_center/detection/generated/suggested_rules_4b84d5b6-dee1-460a-8595-e9cfaeebf045_do_not_edit_manually.md!}
 
 {!_shared_content/integration/detection_section.md!}
 
