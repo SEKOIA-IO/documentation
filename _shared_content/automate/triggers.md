@@ -41,6 +41,14 @@ By using these triggers, you can get:
 
 The `Manual trigger` can be found in the Triggers listing by clicking on Sekoia.io. It allows users to automatically trigger actions once a human has raised and removed a doubt on an alert.
 
+### Manual Trigger for Case
+
+The `Manual Trigger for Case` can be found in the Triggers listing by clicking on Sekoia.io. It allows analysts to launch a playbook from a case, without leaving the investigation.
+
+Once a playbook uses this trigger as its entry node and is set to `On`, it is listed in the `Available playbooks for this case` panel of every case of the community. The playbook receives the case as its triggering event, so the run is identified by `Sekoia.io Case: <case ID>` in the `Runs` tab. Chain the trigger with the `Get case` action to retrieve the content of the case.
+
+To trigger a playbook from a case and read its results, see [Run a playbook from a case](/xdr/features/investigate/run_playbook_case.md).
+
 ### Cron
 
 The `Cron` trigger allows users to periodically launch an automatic action that should be defined and created by a user.
