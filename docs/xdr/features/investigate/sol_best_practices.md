@@ -115,24 +115,33 @@ Use this table to identify which operations can be pushed down to the datasource
 
 ### Filter operator performance hierarchy
 
-Not all filter operators perform equally. When writing `| where` conditions, prefer operators that are higher in this hierarchy to maximize pushdown efficiency and minimize scan cost:
+Not all filter operators perform equally. Performance also varies across the three underlying datastores (ClickHouse, PostgreSQL via SQLAlchemy, and Elasticsearch). The ranking below reflects general guidance that applies across all three. Where behavior differs significantly by datasource, a note is provided.
+
+When writing `| where` conditions, prefer operators that rank higher in this table to maximize pushdown efficiency and minimize scan cost:
 
 | Rank | Operator | Example | Performance | Notes |
 | --- | --- | --- | --- | --- |
 | 1 | `==`, `!=` | `event.category == "authentication"` | ⚡ Fastest | Exact match; fully index-compatible and always pushed down |
-| 2 | `in`, `!in` | `source.ip in ("1.2.3.4", "5.6.7.8")` | ⚡ Fast | Case-sensitive set membership check; index-compatible |
-| 3 | `in~`, `!in~` | `event.category in~ ("Authentication", "NETWORK")` | 🔵 Good | Case-insensitive set membership check; slight overhead over `in` |
+| 2 | `in`, `!in` | `source.ip in ("1.2.3.4", "5.6.7.8")` | ⚡ Fast | Case-sensitive set membership; index-compatible |
+| 3 | `in~`, `!in~` | `event.category in~ ("Authentication", "NETWORK")` | 🔵 Good | Case-insensitive set membership; slight overhead over `in` |
 | 4 | `startswith` | `url.original startswith "https"` | 🔵 Good | Case-sensitive prefix match; can leverage prefix indexes |
-| 5 | `startswith~` | `url.original startswith~ "Https"` | 🔵 Good | Case-insensitive variant of `startswith`; minor normalization overhead |
-| 6 | `endswith` | `file.name endswith ".exe"` | 🔵 Good | Case-sensitive suffix match; slightly less efficient than `startswith` |
-| 7 | `endswith~` | `file.name endswith~ ".EXE"` | 🔵 Good | Case-insensitive variant of `endswith`; minor normalization overhead |
-| 8 | `contains` | `message contains "failed"` | 🟡 Moderate | Case-sensitive substring scan; no index benefit, full field scan |
-| 9 | `contains~` | `message contains~ "Failed"` | 🟠 Slower | Case-insensitive variant of `contains`; adds normalization overhead on top of full scan |
-| 10 | `matches regex` | `url.original matches regex @"https?://.*\.exe$"` | 🔴 Slowest | Full regex evaluation on every row; avoid on high-volume fields |
+| 5 | `startswith~` | `url.original startswith~ "Https"` | 🔵 Good | Case-insensitive prefix; minor normalization overhead |
+| 6 | `contains` | `message contains "failed"` | 🟡 Moderate | Case-sensitive substring scan; no index benefit, full field scan |
+| 7 | `endswith` | `file.name endswith ".exe"` | 🟡 Moderate | Case-sensitive suffix match; comparable cost to `contains` |
+| 8 | `contains~` | `message contains~ "Failed"` | 🟠 Slower | Case-insensitive substring scan; normalization overhead on top of full scan |
+| 9 | `endswith~` | `file.name endswith~ ".EXE"` | 🟠 Slower | Case-insensitive suffix; comparable cost to `contains~` |
+| 10 | `matches regex` | `url.original matches regex @"https?://.*\.exe$"` | 🔴 Slowest / varies | Full regex evaluation per row; behavior and support level differ by datasource — see note below |
 
-**Key takeaway**: prefer `==` or `in` whenever possible. Only use `contains~` or `matches regex` when the use case strictly requires it, and make sure to apply more selective filters before them in the pipeline.
+!!! note "`matches regex`: datasource behavior"
+    Support and cost for `matches regex` depend on the underlying datasource:
 
-```
+    - **ClickHouse**: not supported.
+    - **PostgreSQL (SQLAlchemy)**: supported; regex evaluation is moderately costly.
+    - **Elasticsearch**: supported, but case-insensitive regex modifiers do not work.
+
+**Key takeaway**: prefer `==` or `in` whenever possible. Only use `contains~` or `matches regex` when your use case strictly requires it, and always apply more selective filters earlier in the pipeline.
+
+```shell
 // Good: use endswith for a simple file extension check
 events
 | where timestamp > ago(1h)
