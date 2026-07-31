@@ -7,6 +7,9 @@ You can create an Event Drop detection rule directly from an intake or an asset,
 - You have permissions to create detection rules.
 - You are on the details page of the intake or asset you want to monitor for missing data.
 
+!!! warning "Hourly telemetry granularity"
+    `event_telemetry` and `asset_telemetry` are aggregated hourly, so an Event Drop rule on an intake or asset cannot go below a 1-hour granularity. Set both the time bin and the run schedule to 1 hour or more. Sub-hour values return empty or partial buckets and the rule does not monitor the source as expected.
+
 ## Start from an intake
 
 To create an Event Drop rule that monitors a specific intake:
@@ -25,8 +28,8 @@ event_telemetry
 | where count < 500
 ```
 
-4. Adjust the time bin and the threshold if the defaults do not match the intake's expected volume.
-5. Set the schedule and complete any remaining fields.
+4. Adjust the time bin, 1 hour minimum, and the threshold if the defaults do not match the intake's expected volume.
+5. Set the schedule, 1 hour minimum, and complete any remaining fields.
 6. Click **Create**.
 
 ![Intake actions menu with Create event drop alerting](/assets/operation_center/rules_catalog/sol-intake-drop.png){: style="max-width:100%"}
@@ -50,8 +53,8 @@ asset_telemetry
 | where count < 1000000
 ```
 
-3. Adjust the time bin and the threshold if the defaults do not match the asset's expected volume.
-4. Set the schedule and complete any remaining fields.
+3. Adjust the time bin, 1 hour minimum, and the threshold if the defaults do not match the asset's expected volume.
+4. Set the schedule, 1 hour minimum, and complete any remaining fields.
 5. Click **Create**.
 
 ![Asset details with the Configure an event drop alert button](/assets/operation_center/rules_catalog/sol-asset-drop.png){: style="max-width:100%"}
