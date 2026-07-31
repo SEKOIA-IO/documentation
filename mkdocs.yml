@@ -116,6 +116,7 @@ nav:
       - Splunk: cti/features/integrations/splunk.md
       - Splunk SOAR: cti/features/integrations/splunk_soar.md
       - Swimlane Turbine: cti/features/integrations/swimlane_turbine.md
+      - Harven: cti/features/integrations/harven.md
       - Anomali ThreatStream: cti/features/integrations/anomali.md
       - PaloAlto Cortex XSOAR: cti/features/integrations/paloalto_xsoar.md
       - PaloAlto Cortex XSIAM: cti/features/integrations/paloalto_xsiam.md
