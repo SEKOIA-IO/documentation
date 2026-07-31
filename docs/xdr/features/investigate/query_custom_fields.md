@@ -3,11 +3,11 @@
 !!! note "Early Access"
     This feature is currently in Early Access and is only available for Beta testers. Sekoia.io plans to roll out this functionality to all environments soon.
 
-Custom fields are queryable through the Sekoia Operating Language (SOL), enabling you to filter cases, build aggregations, and create dashboard widgets based on structured metadata values. This reference describes the column naming convention and provides ready-to-use query examples.
+Custom fields are queryable through the Sekoia Operating Language (SOL), enabling you to filter alerts and cases, build aggregations, and create dashboard widgets based on structured metadata values. This reference describes the column naming convention and provides ready-to-use query examples.
 
 ## Column naming convention
 
-Custom fields are accessible in SOL through the `custom_fields` prefix. The field name is automatically converted to snake_case to form the column name:
+Custom fields are accessible in SOL through the `custom_fields` prefix, on both the `alerts` and the `cases` datasources. The field name is automatically converted to snake_case to form the column name:
 
 | Field name | SOL column |
 |---|---|
@@ -22,35 +22,67 @@ Custom fields are accessible in SOL through the `custom_fields` prefix. The fiel
 
 ## Query examples
 
+Each example is shown against both datasources. The syntax is identical, only the datasource on the first line changes.
+
 ### Filter by a numeric field
 
-To retrieve cases where a numeric custom field exceeds a given value:
+To retrieve alerts or cases where a numeric custom field exceeds a given value:
 
-```
-cases
-| where created_at > ago(90d) and custom_fields.number_of_impacted_users != null
-| where custom_fields.number_of_impacted_users > 2
-```
+=== "Alerts"
+
+    ```
+    alerts
+    | where created_at > ago(90d) and custom_fields.number_of_impacted_users != null
+    | where custom_fields.number_of_impacted_users > 2
+    ```
+
+=== "Cases"
+
+    ```
+    cases
+    | where created_at > ago(90d) and custom_fields.number_of_impacted_users != null
+    | where custom_fields.number_of_impacted_users > 2
+    ```
 
 ### Filter by a multi select field
 
-To retrieve cases where a multi select field contains specific values:
+To retrieve alerts or cases where a multi select field contains specific values:
 
-```
-cases
-| where created_at > ago(90d)
-| where custom_fields.impacted_teams in ["HR", "Finance"]
-```
+=== "Alerts"
+
+    ```
+    alerts
+    | where created_at > ago(90d)
+    | where custom_fields.impacted_teams in ["HR", "Finance"]
+    ```
+
+=== "Cases"
+
+    ```
+    cases
+    | where created_at > ago(90d)
+    | where custom_fields.impacted_teams in ["HR", "Finance"]
+    ```
 
 ### Aggregate by a custom field
 
-To count cases grouped by a custom field value:
+To count alerts or cases grouped by a custom field value:
 
-```
-cases
-| where created_at > ago(90d)
-| aggregate count() by custom_fields.impacted_teams
-```
+=== "Alerts"
+
+    ```
+    alerts
+    | where created_at > ago(90d)
+    | aggregate count() by custom_fields.impacted_teams
+    ```
+
+=== "Cases"
+
+    ```
+    cases
+    | where created_at > ago(90d)
+    | aggregate count() by custom_fields.impacted_teams
+    ```
 
 ![SOL query results aggregated by custom field](/assets/operation_center/cases/sol-query-result-custom-fields.png){: style="max-width:100%"}
 
@@ -60,8 +92,9 @@ You can use any custom field query as the data source for a dashboard widget. Fo
 
 ## Related articles
 
-* [Case custom fields](/xdr/features/investigate/case_custom_fields.md): Overview of custom field types, multi-tenancy behavior, and workspace limits.
+* [Custom fields](/xdr/features/investigate/custom_fields.md): Overview of custom field types, shared definitions, multi-tenancy behavior, and workspace limits.
 * [Manage custom field definitions](/xdr/features/investigate/manage_custom_field_definitions.md): How to create, edit, and delete custom field definitions.
-* [Use custom fields in cases](/xdr/features/investigate/use_custom_fields_in_cases.md): How to add and edit custom field values on individual cases.
+* [Use custom fields](/xdr/features/investigate/use_custom_fields.md): How to add and edit custom field values on individual alerts and cases.
+* [Reference: Datasources](/xdr/features/investigate/sol_ref_datasources.md): Every property exposed by the `alerts` and `cases` datasources.
 * [Manage cases](/xdr/features/investigate/manage_cases.md): How to filter cases by custom field values from the listing page.
 * [Dashboards](/xdr/features/report/add_widgets_dashboards.md): How to build widgets and visualizations from SOL queries including custom field data.

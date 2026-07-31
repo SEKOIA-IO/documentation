@@ -22,6 +22,8 @@
 | [asset_applications](#asset_applications) | Software and applications installed on assets | Application discovery, software inventory, unsigned binary detection. Note: Part of the Reveal plan |
 | [asset_vulnerabilities](#asset_vulnerabilities) | CVE-based vulnerabilities associated with assets, enriched from NVD | Vulnerability management, risk prioritization, patch tracking. Note: Part of the Reveal plan |
 | [asset_poi](#asset_poi) | Points of interest detected on assets (UEBA, notable activity) | Threat hunting, behavioral analysis, MITRE ATT&CK mapping. Note: Part of the Reveal plan |
+| [rule_definitions](#rule_definitions) | Detection rule definitions (Sigma, CTI, Anomaly...) | Rules coverage reporting, audit of detection catalog |
+| [rule_instances](#rule_instances) | Instances of detection rules per community | Monitor enabled/disabled rules, compliance reporting |
 
 ## event_telemetry
 
@@ -105,6 +107,7 @@ For a full explanation of what is preserved and how to reach it from the interfa
 | cases                     | List of cases associated to the alert.                                                       |
 | assets                    | List of assets associated to the alert.                                                      |
 | threats                   | List of threats associated the alert.                                                        |
+| custom_fields             | Structured metadata attached to the alert. Access a field with `custom_fields.<field_name>`. |
 
 ## cases
 
@@ -124,6 +127,7 @@ For a full explanation of what is preserved and how to reach it from the interfa
 | updated_by_type           | The type of user that last updated the case.                                               |
 | first_seen_at             | The date and time when the case was first detected.                                        |
 | last_seen_at              | The date and time when the case was last observed or updated.                              |
+| custom_fields             | Structured metadata attached to the case. Access a field with `custom_fields.<field_name>`. |
 
 ## custom_statuses
 
