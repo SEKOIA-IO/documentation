@@ -13,7 +13,7 @@ Review the connector list. A connector with an issue displays an error message i
 !!! note "Zero assets warning"
     If a connector tile shows 0 assets, this may indicate a synchronization issue even if no error message is visible. Inspect the logs to confirm.
 
-[!Defective connector with message Error during data collection](/assets/connector_error_mesg.png){: style="width: 100%; max-width: 100%"}
+![!Defective connector with message Error during data collection](/assets/connector_error_mesg.png){: style="width: 100%; max-width: 100%"}
 
 ## Step 2: Open the connector logs
 
@@ -22,7 +22,7 @@ Review the connector list. A connector with an issue displays an error message i
 
 The full log list opens.
 
-[!Asset connector log list with error entries](/assets/connector_logs.png){: style="width: 100%; max-width: 100%"}
+![!Asset connector log list with error entries](/assets/connector_logs.png){: style="width: 100%; max-width: 100%"}
 
 ## Step 3: Diagnose the issue
 
