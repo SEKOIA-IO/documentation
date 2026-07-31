@@ -120,6 +120,7 @@ nav:
       - PaloAlto Cortex XSOAR: cti/features/integrations/paloalto_xsoar.md
       - PaloAlto Cortex XSIAM: cti/features/integrations/paloalto_xsiam.md
       - ThreatQuotient: cti/features/integrations/threatquotient.md
+      - Torq: cti/features/integrations/torq.md
   - Detect, Hunt and Respond (Defend):
     - Defend overview: xdr/index.md
     - Quick start guide: xdr/xdr_quick_start.md
