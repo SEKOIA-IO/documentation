@@ -1,4 +1,4 @@
-# External Integration: Torq
+# External Integrations: Torq
 
 Torq provides an integration with Sekoia Intelligence.
 
