@@ -24,7 +24,7 @@ The following signals are currently available for host assets.
 
 Additional signals may be available depending on the capabilities of the connected source.
 
-[!Hygiene tab displaying firewall and per-volume disk encryption status for a host asset.](/assets/Hygiene_tab.png){: style="width: 100%; max-width: 100%"}
+![!Hygiene tab displaying firewall and per-volume disk encryption status for a host asset.](/assets/Hygiene_tab.png){: style="width: 100%; max-width: 100%"}
 
 ## How to use Endpoint Hygiene during an investigation
 
