@@ -1,6 +1,6 @@
 # Alerts
 
-Alerts are created by the Operations Center when an incoming event matches a detection rule and a threat is detected. Each alert represents a discrete security signal, enriched with context about the impacted assets, the rule that fired, and the associated threat intelligence.
+Alerts are created when an incoming event matches a detection rule and a threat is detected. Each alert represents a discrete security signal, enriched with context about the impacted assets, the rule that fired, and the associated threat intelligence.
 
 ## Alert urgency
 
