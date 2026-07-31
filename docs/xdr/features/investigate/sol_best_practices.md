@@ -115,7 +115,7 @@ Use this table to identify which operations can be pushed down to the datasource
 
 ### Filter operator performance hierarchy
 
-Not all filter operators perform equally. Performance also varies across the three underlying datastores (ClickHouse, PostgreSQL via SQLAlchemy, and Elasticsearch). The ranking below reflects general guidance that applies across all three. Where behavior differs significantly by datasource, a note is provided.
+Not all filter operators perform equally. Performance also varies across the three underlying datastores: ClickHouse (all telemetry datasources), Elasticsearch (`events`), and PostgreSQL via SQLAlchemy (all other datasources). The ranking below reflects general guidance that applies across all three. Where behavior differs significantly by datasource, a note is provided.
 
 When writing `| where` conditions, prefer operators that rank higher in this table to maximize pushdown efficiency and minimize scan cost:
 
@@ -135,9 +135,9 @@ When writing `| where` conditions, prefer operators that rank higher in this tab
 !!! note "`matches regex`: datasource behavior"
     Support and cost for `matches regex` depend on the underlying datasource:
 
-    - **ClickHouse**: not supported.
-    - **PostgreSQL (SQLAlchemy)**: supported; regex evaluation is moderately costly.
-    - **Elasticsearch**: supported, but case-insensitive regex modifiers do not work.
+    - **ClickHouse** (all telemetry datasources): not supported.
+    - **Elasticsearch** (`events`): supported, but case-insensitive regex modifiers do not work.
+    - **PostgreSQL via SQLAlchemy** (all other datasources): supported; regex evaluation is moderately costly.
 
 **Key takeaway**: prefer `==` or `in` whenever possible. Only use `contains~` or `matches regex` when your use case strictly requires it, and always apply more selective filters earlier in the pipeline.
 
