@@ -6,7 +6,7 @@
 |-------------|-------------|-----------|
 | `events` | Security events | Threat hunting, incident investigation, SOC reporting. You will receive events that are retained for the duration of your hot storage |
 | [event_telemetry](#event_telemetry) | Telemetry on events | Analytics on your ingestion pipelines |
-| `eternal_events` | Security events related to alerts or cases | Extract metrics from events related to alerts/cases. Access events related to an alert that are beyond your hot storage retention period |
+| [eternal_events](#eternal_events) | Security events related to alerts or cases | Extract metrics from events related to alerts/cases. Access events related to an alert that are beyond your hot storage retention period |
 | [alerts](#alerts) | Security alerts and detections | SOC monitoring, alert pattern analysis |
 | [cases](#cases) | Security incidents and cases | Case management, incident correlation |
 | [custom_statuses](#custom_statuses) | Alerts and cases custom statuses | Reporting |
@@ -19,6 +19,8 @@
 | [asset_properties](#asset_properties) | Listing known properties related to the Asset | Asset Investigations |
 | [asset_partitions](#asset_partitions) | Partitions on a per Asset basis and Hygiene related to these | Understand and improve Hygiene state Note: Part of the Reveal plan |
 | [asset_accounts](#asset_accounts) | Listing local users accounts related to the Asset | Impact analysis and incident correlation Note: Part of the Reveal plan |
+| [rule_definitions](#rule_definitions) | Detection rule definitions (Sigma, CTI, Anomaly...) | Rules coverage reporting, audit of detection catalog |
+| [rule_instances](#rule_instances) | Instances of detection rules per community | Monitor enabled/disabled rules, compliance reporting |
 
 ## event_telemetry
 
@@ -62,6 +64,16 @@ You can query **event_telemetry** in the SOL query builder and combine it with o
 | min_processing_lag      | Minimum processing time (in seconds) taken by Sekoia.io to process an event.                 |
 | total_processing_lag    | Total accumulated processing time (in seconds) for all events in the bucket.                 |
 
+## eternal_events
+
+The **eternal_events** data source gives you access to the events attached to an alert or a case. These events are stored permanently, whatever your retention subscription, so they remain queryable long after the same events have expired from the `events` data source.
+
+Query **eternal_events** when the alert or case you are investigating has passed your retention window. It is also the natural data source whenever you want to scope a query to alert or case evidence, even within your retention window, since it contains nothing else: use it to investigate a given alert or to build metrics over the events that raised your alerts.
+
+**eternal_events** shares the same schema as `events`. The filters, aggregations and functions you use against `events` apply here without change.
+
+For a full explanation of what is preserved and how to reach it from the interface, see [Eternal events](/xdr/features/investigate/eternal_events.md).
+
 ## alerts
 
 | **Alert Property**        | **Description**                                                                              |
@@ -92,6 +104,7 @@ You can query **event_telemetry** in the SOL query builder and combine it with o
 | cases                     | List of cases associated to the alert.                                                       |
 | assets                    | List of assets associated to the alert.                                                      |
 | threats                   | List of threats associated the alert.                                                        |
+| custom_fields             | Structured metadata attached to the alert. Access a field with `custom_fields.<field_name>`. |
 
 ## cases
 
@@ -111,6 +124,7 @@ You can query **event_telemetry** in the SOL query builder and combine it with o
 | updated_by_type           | The type of user that last updated the case.                                               |
 | first_seen_at             | The date and time when the case was first detected.                                        |
 | last_seen_at              | The date and time when the case was last observed or updated.                              |
+| custom_fields             | Structured metadata attached to the case. Access a field with `custom_fields.<field_name>`. |
 
 ## custom_statuses
 
@@ -276,6 +290,63 @@ For example queries using tags, see [Assets query examples](sol_query_examples.m
 | bad_password_count        | Number of failed logon attempts                                                            |
 | number_of_logons          | Total number of logons recorded                                                            |
 | account_type              | Type of account (LocalUser, MicrosoftAccount, ...)                                         |
+
+
+## rule_definitions
+
+The **rule_definitions** data source provides the list of detection rule definitions available in your catalog, including Sekoia-managed and custom rules.
+
+It allows you to audit your detection coverage, report on rule types and origins, and cross-reference with rule instances to understand what is deployed in your communities.
+
+The `format_uuid` property can be joined with the [intake_formats](#intake_formats) data source to identify the integration a rule targets.
+
+| **Property** | **Description** |
+| --- | --- |
+| uuid | A unique identifier for the rule definition. |
+| name | The name of the detection rule. |
+| community_uuid | A unique identifier for the community related to the rule definition. Empty for Sekoia-managed rules available to all communities. |
+| source | The origin of the rule (e.g., `SEKOIA`, `Custom`). |
+| type | The type of rule (e.g., `sigma`, `cti`, `anomaly`). |
+| format_uuid | A unique identifier for the intake format the rule targets. Only filled for Integration rules, i.e., rules written for a specific integration tool such as Microsoft Sentinel. |
+| created_at | The date and time when the rule definition was created. |
+| created_by | The user or system that created the rule definition. |
+| created_by_type | The type of entity that created the rule definition (e.g., avatar, application). |
+| updated_at | The date and time when the rule definition was last updated. |
+| updated_by | The user or system that last updated the rule definition. |
+| updated_by_type | The type of entity that last updated the rule definition. |
+
+## rule_instances
+
+The **rule_instances** data source provides the list of rule instances per community, i.e., the actual deployment state of each detection rule.
+
+It can be joined with `rule_definitions` to produce reports on which rules are enabled or disabled, by type and origin.
+
+| **Property** | **Description** |
+| --- | --- |
+| uuid | A unique identifier for the rule instance. |
+| rule_definition_uuid | UUID of the related rule definition (used for `lookup` joins). |
+| community_uuid | A unique identifier for the community where the rule instance is applied. |
+| enabled | Whether the rule is currently enabled (`true` / `false`). |
+| created_at | The date and time when the rule instance was created. |
+| created_by | The user or system that created the rule instance. |
+| created_by_type | The type of entity that created the rule instance (e.g., avatar, application). |
+| updated_at | The date and time when the rule instance was last updated. |
+| updated_by | The user or system that last updated the rule instance. |
+| updated_by_type | The type of entity that last updated the rule instance. |
+
+??? example 
+    The following query generates a breakdown of detection rules by source and type, with the count of enabled rules per category — useful for monthly client reporting or coverage monitoring:
+
+    ```
+    rule_definitions
+    | lookup rule_instances on uuid == rule_definition_uuid into rule
+    | aggregate 
+        rules_count = count(),
+        enabled_rules_count = count(iff(rule.enabled == True, True, null))
+        by source = coalesce(source, "Custom"), type
+    | order by source, type
+    | select source, type, rules_count, enabled_rules_count
+    ```
 
 ## Related articles
 

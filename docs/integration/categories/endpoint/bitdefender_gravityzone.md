@@ -172,7 +172,7 @@ So you can setup it in two ways:
             parser = argparse.ArgumentParser(prog=sys.argv[0], description='activate the forwarding of events to Sekoia.io')
             parser.add_argument('apikey')
             parser.add_argument('intake_key')
-            parser.add_argument('--base-url', default='https://intake.sekoia.io', help='The base URL to the Sekoia.io region (see https://docs.sekoia.io/getting_started/regions/ for more information; default to FRA1)')
+            parser.add_argument('--base-url', default='https://intake.sekoia.io', help='The base URL to the Sekoia.io region (see https://docs.sekoia.com/getting_started/regions/ for more information; default to FRA1)')
             args = parser.parse_args()
             activate_forwarding(args.apikey, args.intake_key, args.base_url)
       ```
@@ -186,7 +186,7 @@ So you can setup it in two ways:
         ```bash
         $ /tmp/venv/bin/python3 bitdefender_activate_forwarding.py "${BITDEFENDER_APIKEY}" "${SEKOIAIO_INTAKE_KEY}" --base-url "https://app.usa1.sekoia.io/api/v1/intake-http"
         ```
-        See [Regions documentation](https://docs.sekoia.io/getting_started/regions/) for more information about the regions.
+        See [Regions documentation](https://docs.sekoia.com/getting_started/regions/) for more information about the regions.
 
 === "Manual"
 
@@ -195,7 +195,7 @@ So you can setup it in two ways:
       ```bash
         $ export BITDEFENDER_APIKEY="your_api_key"
         $ export SEKOIAIO_INTAKE_KEY="your_intake_key"
-        $ export SEKOIA_BASE_URL="https://intake.sekoia.io" # adapt according to your region, see https://docs.sekoia.io/getting_started/regions/
+        $ export SEKOIA_BASE_URL="https://intake.sekoia.io" # adapt according to your region, see https://docs.sekoia.com/getting_started/regions/
       ```
     3. Convert the Bitdefender APIKey into base64: 
       ```bash

@@ -1035,8 +1035,23 @@ Select the way who develop your parse to find the appropriate documentation: wit
     |`dirname`      | returns the directory name of a path (support unix and windows path)   |
     |`to_rfc3339(value: Any, format=None)`| converts and formats any date as rfc3339 string  |
     |`to_iso8601(value: Any, format=None)`| converts and formats any date as iso8601 string  |
-    |`re_match`     | tests the value against an regular expression (the whole value)        |
+    |`re_match`     | tests the value against a regular expression (the whole value)        |
     |`re_search`    | tests if a subset of the value match the regular expression            |
+    |`is_ipaddress` | tests if the value is a valid IP address (v4 or v6)                   |
+    |`is_ipv4`      | tests if the value is a valid IPv4 address                            |
+    |`is_ipv6`      | tests if the value is a valid IPv6 address                            |
+    |`is_url`       | tests if the value is a valid URL                                     |
+    |`from_json`    | deserializes a JSON string into a dict                                |
+    |`to_json`      | serializes a value into a JSON string                                 |
+    |`to_mac_address`| normalizes a MAC address to EUI-48 format (e.g. `AA:BB:CC:DD:EE:FF`)|
+
+    #### Test operators
+
+    Ingest also exposes Jinja2 test operators, usable with the `is` keyword in `{%if %}` blocks:
+
+    | operator                  | description                                                                        |
+    |---------------------------|------------------------------------------------------------------------------------|
+    |`btiwise_has_flag(flag)`   | tests if a bitwise flag is set in an integer value (e.g. `{% if value is btiwise_has_flag(4) %}`)|
 
     ### delete
 

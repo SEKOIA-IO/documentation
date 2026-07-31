@@ -16,7 +16,7 @@ However, the information of the intake associated can be found by clicking on an
 !!! note
      For example, a source IP is a field that will be discovered as an atom extracted from an event.
      This atom can be attached to one or several assets (seen in the Atoms tab).
-     Please consult [this documentation about atoms](https://docs.sekoia.io/xdr/features/collect/assets/#what-is-an-atom).
+     Please consult [this documentation about atoms](https://docs.sekoia.com/xdr/features/collect/assets/#what-is-an-atom).
 
 ## Is there any impact on the assets set as "Reviewed" ?
 
@@ -47,4 +47,4 @@ We suggest to users to manage their assets and keep the ones that are relevant.
 
 Assets are being enriched and updated according to detection rules.
 
-Please find more information [here](https://docs.sekoia.io/xdr/features/collect/assets/#asset-discovery-rules).
+Please find more information [here](https://docs.sekoia.com/xdr/features/collect/assets/#asset-discovery-rules).
