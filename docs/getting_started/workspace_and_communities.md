@@ -52,7 +52,7 @@ In single-tenant mode, the workspace and the community effectively represent the
 In multi-tenant mode, each community represents a separate client or business unit. Workspace administrators can view and manage all communities from a centralized panel, including subscriptions, user access, and alert volumes.
 
 !!! note "Community switcher"
-    In multi-tenant workspaces, a **Communities** button appears in the breadcrumb at the top of the page. Use it to switch between communities or select multiple communities to display aggregated data across all of them.
+    In multi-tenant workspaces, a **Communities** button appears in the breadcrumb at the top of the page. Use it to filter the platform based on a specific community or select multiple communities to view aggregated data for all of them.
 
 ## What you configure at each level
 
@@ -61,7 +61,7 @@ In multi-tenant mode, each community represents a separate client or business un
 | **Workspace** | SSO provider, workspace security policies, inactive account rules, subscription management |
 | **Community** | Intakes, detection rules, alerts, playbooks, notifications, API keys, entities |
 
-If you are not sure whether a setting belongs to the workspace or the community, check the **Settings** menu. Workspace-level settings appear under a **Workspace** section, and community-level settings appear under the community name.
+If you are not sure whether a setting belongs to the workspace or the community, check the **Settings** menu. Workspace-level settings appear at the top of the listing (**Workspace** label), and community-level settings appear just below it (**Communities you manage** label).
 
 > 📸 [SCREENSHOT SUGGESTION: The Settings page showing the Workspace and Community sections side by side in the left navigation. | ALT TEXT: Settings navigation showing workspace and community configuration sections.]
 
@@ -69,11 +69,11 @@ If you are not sure whether a setting belongs to the workspace or the community,
 
 To switch to a different workspace, click your current workspace name at the top of the navigation menu and select another workspace from the dropdown.
 
-To switch to a different community in a multi-tenant workspace, click the **Communities** button at the top of one page and select the community (or communities) you want to access.
+To filter on a specific community in a multi-tenant workspace, click the **Communities** button in the breadcrumb at the top of the page and select the community (or communities) you want to access.
 
 ## Related links
 
-- [Navigate the platform](/getting_started/navigate_the_platform.md) — How to use the Sekoia interface, including the workspace and community switcher.
-- [Workspace setup overview](/getting_started/workspace_setup_overview.md) — Step-by-step guide for administrators to configure a new workspace.
-- [Roles and permissions](/getting_started/roles_and_permissions.md) — How access is controlled at the workspace and community level.
-- [Invite users](/getting_started/invite_users.md) — How to add users to a workspace or community.
+- [Navigate the platform](/getting_started/navigate_the_platform): How to use the Sekoia interface, including the workspace and community switcher.
+- [Workspace setup overview](/getting_started/workspace_setup_overview): Step-by-step guide for administrators to configure a new workspace.
+- [Roles and permissions](/getting_started/roles_and_permissions): How access is controlled at the workspace and community level.
+- [Invite users](/getting_started/invite_users): How to add users to a workspace or community.

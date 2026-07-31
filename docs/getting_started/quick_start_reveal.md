@@ -1,7 +1,7 @@
 ---
 title: "Quick start: Reveal"
-description: "Get started with Sekoia Reveal, the asset intelligence add-on module that brings asset context, vulnerability data, and attack path visualization into your investigation workflows."
-keywords: [reveal, asset intelligence, quick start, asset context, vulnerability, points of interest, hygiene, attack path]
+description: "Get oriented with Sekoia Reveal, the asset intelligence add-on module that adds asset context, vulnerability data, and attack path visualization to your investigation workflows."
+keywords: [reveal, asset intelligence, quick start, asset context, vulnerability, points of interest, attack path]
 audience: analyst
 module: reveal
 type: tutorial
@@ -9,57 +9,39 @@ type: tutorial
 
 # Quick start: Reveal
 
-Sekoia Reveal is an add-on module that adds an asset intelligence layer to your Sekoia Defend environment. It continuously discovers and contextualizes assets from your event data, endpoint agents, and connected tools, and surfaces this context directly inside your alert and case investigation workflows. This article explains what Reveal enables and how to get started.
+Sekoia Reveal is an add-on module that adds an asset intelligence layer to your Sekoia Defend environment. It enriches your alerts with asset context so you can triage faster and investigate with more precision.
 
 ## What Reveal adds to your workflow
 
-Without Reveal, an alert tells you that an event matched a detection rule. With Reveal, the same alert immediately answers:
+Without Reveal, an alert tells you what happened. Reveal helps you understand what it means for your organization, how urgently it should be investigated, and what to prioritize next.
 
-- What is this asset, and how critical is it to my organization?
-- Is it vulnerable to known CVEs?
-- What unusual activity has occurred on it recently?
-- Which other assets could it reach or put at risk?
+From any alert, you can quickly determine:
 
-Reveal surfaces this context through the **asset context panel**, which is accessible from any alert, case, event, or asset view.
+- What asset is involved, who it belongs to, and how critical it is to the organization.
+- Which applications, vulnerabilities, and known CVEs increase its exposure.
+- What risk signals, unusual behaviors, or Points of Interest have recently been observed.
+- Why the asset is considered risky and which factors contribute to its risk score.
+- Which connected assets or systems could also be exposed.
 
-## Key capabilities
+This context is surfaced through the **asset context panel**, available within alerts, cases, events, and asset views. Analysts get the information they need without leaving their investigation workflow.
 
-| Capability | What it does |
-|---|---|
-| **Asset context panel** | Shows asset identity, vulnerabilities, hygiene signals, and behavioral history in one place during triage |
-| **Points of Interest** | Surfaces behavioral anomalies on assets (unusual authentication, rare locations) without requiring a separate alert |
-| **Attack Path Visualization** | Maps relationships between assets to identify lateral movement paths during an active investigation |
-| **Endpoint Hygiene** | Shows posture signals for endpoints (firewall status, disk encryption) when the Sekoia Endpoint Agent or a supported connector is deployed |
-| **Vulnerability enrichment** | Shows which CVEs affect an asset, drawn from connected vulnerability scanners |
+## Before you start
 
-## Prerequisites
+- The **Reveal module** must be enabled for your community. Contact your account manager if it is not already active.
+- Connect at least one data source:
+    - **Telemetry sources** enable passive asset discovery as events are ingested.
+    - **Asset connectors** synchronize asset data from supported third-party platforms for richer context.
 
-Before you can start using Reveal:
+You do not need every source to start. Reveal becomes more capable as you add sources over time.
 
-- The **Reveal module** must be enabled for your community. Contact your account manager if it is not active.
-- At least one supported telemetry source must be sending events to Sekoia. Passive asset discovery starts automatically as soon as events arrive.
+## Set up Reveal
 
-You do not need all data sources to begin. Each source you add unlocks additional Reveal capabilities.
+The full setup guide covers telemetry onboarding, asset connector configuration, and Sekoia Endpoint Agent deployment.
 
-## How to set up Reveal
-
-The full setup guide is available in the Sekoia Defend documentation. It walks you through four steps:
-
-1. Onboard telemetry to start passive asset discovery
-2. Validate event data coverage for activity-based features
-3. Configure asset connectors to enrich assets with structured data
-4. Deploy the Sekoia Endpoint Agent for direct endpoint visibility
-
-Follow the complete guide here: [Getting started with Reveal](https://docs.sekoia.com/xdr/features/modules/reveal_index/)
-
-## What to do after setup
-
-Once Reveal is configured, open any alert and click on an affected asset to open the asset context panel. Review the asset's identity, recent activity timeline, hygiene signals, and vulnerability list directly within your investigation.
-
-> 📸 [SCREENSHOT SUGGESTION: The asset context panel open within an alert, showing asset identity, vulnerability list, and recent activity timeline. | ALT TEXT: Asset context panel showing asset details, vulnerabilities, and activity history during alert investigation.]
+Follow the complete guide: [Getting started with Reveal](/xdr/features/modules/reveal_getting_started/)
 
 ## Related links
 
-- [Getting started with Reveal](https://docs.sekoia.com/xdr/features/modules/reveal_index/) — Full setup guide with step-by-step instructions for all data source types.
-- [Workspace setup overview](/getting_started/workspace_setup_overview.md) — Admin checklist for enabling modules and preparing your workspace.
-- [Glossary](/getting_started/glossary.md) — Definitions of asset, atom, point of interest, and vulnerability enrichment.
+- [Getting started with Reveal](/xdr/features/modules/reveal_getting_started/): Full step-by-step setup guide for all data source types.
+- [Workspace setup overview](/getting_started/workspace_setup_overview): Admin checklist for enabling modules and preparing your workspace.
+- [Glossary](/getting_started/glossary): Definitions for asset, point of interest, and vulnerability enrichment.

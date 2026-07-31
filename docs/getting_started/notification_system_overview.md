@@ -25,17 +25,6 @@ A notification rule has three components:
 
 When an event in your workspace matches a rule's trigger and conditions, the system executes the defined action immediately.
 
-## Scope by workspace mode
-
-The scope of your notification rules depends on your workspace configuration.
-
-| Mode | Scope |
-|---|---|
-| **Single-tenant** | Notification rules monitor the single community attached to your workspace. |
-| **Multi-tenant** | Notification rules monitor the community where you created them. You cannot create a rule that spans multiple communities from a single notification configuration. |
-
-In multi-tenant workspaces, administrators who need coverage across all communities must create equivalent rules in each community separately.
-
 ## Available triggers
 
 You can create notification rules for the following event categories:
@@ -49,7 +38,6 @@ You can create notification rules for the following event categories:
 | An automated case is created | A new case is generated automatically |
 | An automated case is edited | An automated case is modified |
 | A detection rule entered rate-limited state | A rule is generating too many alerts and has been throttled |
-| An automated case is edited | An existing automated case is updated |
 
 ### Intelligence
 
@@ -59,7 +47,6 @@ You can create notification rules for the following event categories:
 | A rule is scheduled for deprecation | A rule approaches its end-of-life date |
 | A rule is deprecated | A rule's validity date has passed |
 | A report is available | A new CTI report is published |
-| A rule from the Rules Catalog is deprecated | A rule reaches its end-of-life date and is removed from the catalog |
 
 ### Operations
 
@@ -100,6 +87,6 @@ Notification rules are personal. A rule you create is only visible to you and ap
 
 ## Related links
 
-- [Create a notification](/getting_started/create_a_notification.md) — Step-by-step procedure to set up your first notification rule.
-- [Manage notifications](/getting_started/manage_notifications.md) — How to edit, disable, or delete existing rules.
-- [Notification examples](/getting_started/notification_examples.md) — Ready-to-use templates for common notification scenarios.
+- [Create a notification](/getting_started/create_a_notification): Step-by-step procedure to set up your first notification rule.
+- [Manage notifications](/getting_started/manage_notifications): How to edit, disable, or delete existing rules.
+- [Notification examples](/getting_started/notification_examples): Ready-to-use templates for common notification scenarios.

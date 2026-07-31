@@ -9,21 +9,30 @@ type: reference
 
 # Support and resources
 
-Sekoia offers several channels to help you get answers, learn new skills, and stay informed. This article lists all available resources and explains when to use each one.
+Sekoia offers several channels to help you get answers, learn new skills, and stay informed. This article lists each resource and explains when to use it.
 
-## Get support
+## Choose the right resource
+
+Use the following order when you need help:
+
+1. Check the documentation for product concepts, procedures, and configuration guidance.
+2. Contact your Customer Success Manager (CSM) for guidance about your specific situation, use case, or adoption plan when your account includes a CSM.
+3. Contact Support for a technical issue, a bug, unexpected platform behavior, or an improvement request.
+
+Small accounts may not include a CSM. In that case, use the documentation for product questions and contact Support for technical issues, bugs, and improvement requests.
 
 ### Support portal
 
-The Sekoia support portal is the primary channel for reporting bugs, asking technical questions, and opening tickets.
+The Sekoia support portal handles technical challenges, bugs, unexpected platform behavior, and improvement requests. It is not the primary channel for questions already covered by the documentation.
 
-Access the support portal at [support.sekoia.com](https://support.sekoia.com).
+Access the support portal at [support.sekoia.io](https://support.sekoia.io).
 
 Use the support portal when:
 
-- You encounter a bug or unexpected platform behavior
-- You need help with a configuration that is not covered in the documentation
-- You need to escalate an issue that is affecting your operations
+- You encounter a bug or unexpected platform behavior.
+- A technical issue prevents you from using the platform as expected.
+- You need to submit an improvement request.
+- You need to escalate a technical issue affecting your operations.
 
 ### Status page
 
@@ -37,7 +46,7 @@ The status page lists the operational health of all platform components by regio
 
 The Sekoia Academy provides self-paced video courses and practical exercises for analysts and administrators.
 
-Access the Academy at [academy.sekoia.com](https://academy.sekoia.com).
+Access the Academy at [academy.sekoia.io](https://academy.sekoia.io).
 
 The Academy covers:
 
@@ -60,7 +69,7 @@ Join the community at [github.com/SEKOIA-IO/Community](https://github.com/SEKOIA
 
 The Sekoia changelog lists new features, improvements, and bug fixes across all products.
 
-Access the changelog at [changelog.sekoia.com](https://changelog.sekoia.com).
+Access the changelog at [changelog.sekoia.io](https://changelog.sekoia.io).
 
 Subscribe to the changelog to receive weekly or monthly summaries of platform updates.
 
@@ -80,5 +89,5 @@ The full documentation repository is available at [github.com/SEKOIA-IO/document
 
 ## Related links
 
-- [Troubleshooting common issues](/getting_started/troubleshooting_common_issues.md) — First-level solutions for login, connectivity, and intake problems.
-- [Log in for the first time](/getting_started/log_in_for_the_first_time.md) — Includes region URL reference if you cannot reach the login page.
+- [Troubleshooting common issues](/getting_started/troubleshooting_common_issues): First-level solutions for login, connectivity, and intake problems.
+- [Log in for the first time](/getting_started/log_in_for_the_first_time): Includes region URL reference if you cannot reach the login page.

@@ -13,18 +13,62 @@ Sekoia's interface is built around a persistent left-hand navigation menu that g
 
 ## The navigation menu
 
-The left-hand menu is organized into sections that map to the main operational areas of the platform. The sections available to you depend on your subscription and assigned role.
+The left-hand menu is organized into three collapsible sections, plus fixed items at the top and bottom. The items available to you depend on your subscription and assigned role.
 
-| Section | What you find there |
+**Top area**
+
+| Item | What it does |
 |---|---|
-| **Collect** | Intakes, entities, assets |
-| **Detect** | Rules catalog |
-| **Investigate** | Alerts, event history, cases |
-| **Automate** | Playbooks |
-| **Intelligence** | Threat intelligence database, feeds, reports |
-| **Settings** | Workspace and community configuration |
+| **Community name** | Shows your active community. Click to switch communities (multi-tenant only). |
+| **Search for IOCs** | Search the Intelligence database for observables and indicators. |
+| **Ask Roy** | Open the Roy AI assistant panel. |
+| **Notifications** | Access your personal notification history. |
+| **Homepage** | The platform home page with summary widgets. |
+| **Tasks** | Your assigned investigation tasks. |
+| **Dashboards** | Preconfigured and custom security dashboards. |
+| **Threat Landscape** | Overview of the threat landscape relevant to your organization. |
 
-> 📸 [SCREENSHOT SUGGESTION: The full left-hand navigation menu in an active Sekoia session, showing all main sections. | ALT TEXT: Sekoia left-hand navigation menu with sections Collect, Detect, Investigate, Automate, Intelligence, and Settings.]
+**Investigate section**
+
+| Item | What you find there |
+|---|---|
+| **Cases** | Security cases grouping related alerts and investigations |
+| **Events** | Full event history from all connected data sources |
+| **Notebooks** | Collaborative investigation notebooks |
+| **Alerts** | Active security alerts raised by detection rules |
+| **Queries** | Saved and ad-hoc event queries |
+
+**Observe section**
+
+| Item | What you find there |
+|---|---|
+| **Intelligence** | Threat intelligence database (threat actors, malware, campaigns, indicators) |
+| **Feeds** | Custom CTI feeds filtered by sector, geography, or threat type |
+| **Reports** | FLINT threat reports and analytical content |
+| **IoC Collections** | Curated indicator collections for detection |
+| **Graph Explorations** | Visual relationship maps between threat objects |
+
+**Configure section**
+
+| Item | What you find there |
+|---|---|
+| **Rules Catalog** | Detection rules mapped to the MITRE ATT&CK framework |
+| **Intakes** | Data source connectors for log ingestion |
+| **Entities** | Logical groupings of assets for scoping detection |
+| **Assets** | Inventory of discovered assets in your environment |
+| **Playbooks** | Automation workflows for alert enrichment and response |
+| **Integrations** | Installed integration connectors and their status |
+
+**Bottom area**
+
+| Item | What it does |
+|---|---|
+| **Your name** | Access your profile, security settings, and display preferences. |
+| **Settings** | Workspace and community configuration (admin). |
+| **Early features** | Preview features not yet in general availability. |
+| **Help & support** | Documentation, Academy, and support portal. |
+
+> 📸 [SCREENSHOT SUGGESTION: The full left-hand navigation menu in an active Sekoia session, showing the Investigate, Observe, and Configure collapsible sections. | ALT TEXT: Sekoia left-hand navigation menu with collapsible sections Investigate, Observe, and Configure, plus fixed items at the top and bottom.]
 
 ## Switch between workspaces and communities
 
@@ -37,17 +81,17 @@ To move to a different workspace:
 
 ### Switch community
 
-To switch between communities in a multi-tenant workspace:
+To filter on a specific community in a multi-tenant workspace:
 
 1. Click the **Communities** button in the breadcrumb at the top of the page.
-2. Select one or more communities from the list to display their combined data.
+2. Select one or more communities from the list to display their data.
 
 !!! note "Single-tenant workspaces"
     The **Communities** button only appears in multi-tenant workspaces. In single-tenant mode, your workspace contains one community and no switcher is displayed.
 
 ## Use filters
 
-Most data pages, including Alerts, Rules Catalog, Intakes, Playbooks, and Intelligence, include a filter panel. Use it to narrow down results based on multiple criteria.
+Most data pages, including **Alerts**, **Rules Catalog**, **Intakes**, **Playbooks**, and **Intelligence**, include a filter panel. Use it to narrow down results based on multiple criteria.
 
 To open the filter panel:
 
@@ -90,5 +134,5 @@ To change the order of sections in the navigation menu:
 
 ## Related links
 
-- [Workspace and communities](/getting_started/workspace_and_communities.md) — Explanation of the workspace and community structure and what each level controls.
-- [Customize your interface](/getting_started/customize_your_interface.md) — Additional display preferences you can configure for your account.
+- [Workspace and communities](/getting_started/workspace_and_communities): Explanation of the workspace and community structure and what each level controls.
+- [Customize your interface](/getting_started/customize_your_interface): Additional display preferences you can configure for your account.

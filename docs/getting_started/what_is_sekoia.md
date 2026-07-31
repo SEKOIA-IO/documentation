@@ -51,8 +51,8 @@ Add-on modules are purchased separately and extend Defend with specialized capab
 
 | Module | What it adds |
 |---|---|
-| **Reveal** | Adds an asset intelligence layer: a unified asset inventory enriched with vulnerability data, endpoint hygiene signals, behavioral anomalies, and attack path visualization, surfaced directly inside alert and case investigation workflows |
-| **Elevate** | Adds AI-powered agentic triage: Elevate autonomously analyzes alerts, generates a verdict, and executes runbook steps, reducing the volume of repetitive triage work for your analysts |
+| **[Reveal](/getting_started/quick_start_reveal)** | Adds an asset intelligence layer: a unified asset inventory enriched with vulnerability data, endpoint hygiene signals, behavioral anomalies, and attack path visualization, surfaced directly inside alert and case investigation workflows |
+| **[Elevate](/getting_started/quick_start_elevate)** | Adds AI-powered agentic triage: Elevate autonomously analyzes alerts, generates a verdict, and executes runbook steps, reducing the volume of repetitive triage work for your analysts |
 
 ## How Sekoia differs from traditional tools
 
@@ -60,8 +60,8 @@ Security teams often operate multiple tools that do not communicate well with ea
 
 | Traditional tool | What it does | How Sekoia covers it |
 |---|---|---|
-| SIEM | Collects and organizes logs, detects threats using static rules | Sekoia Defend (Collect + Detect) |
-| SOAR | Automates incident response workflows | Sekoia Defend (Automate — Playbooks) |
+| SIEM (Security Information and Event Management) | Collects and organizes logs, detects threats using static rules | Sekoia Defend (Collect + Detect) |
+| SOAR (Security Orchestration, Automation and Response) | Automates incident response workflows | Sekoia Defend (Automate, Playbooks) |
 | CTI platform | Provides threat intelligence feeds and analysis | Sekoia Intelligence |
 | Asset inventory | Tracks and categorizes infrastructure assets | Sekoia Reveal (add-on) |
 
@@ -82,14 +82,14 @@ Roy does not retain query history or personal data between sessions.
 
 Depending on your role and subscription, here is what you can achieve right away:
 
-- **Defend analyst** — Connect a data source, activate detection rules, and receive your first security alert within hours.
-- **Intelligence analyst** — Search the threat database, read the latest threat reports, and set up a feed for your sector.
-- **Admin** — Configure your workspace, invite your team, assign roles, and create API keys for integrations.
+- **Defend analyst**: Connect a data source, activate detection rules, and receive your first security alert within hours. Follow the [Quick start: Defend](/getting_started/quick_start_defend) guide.
+- **Intelligence analyst**: Search the threat database, read the latest threat reports, and set up a feed for your sector. Follow the [Quick start: Intelligence](/getting_started/quick_start_intelligence) guide.
+- **Admin**: Configure your workspace, invite your team, assign roles, and create API keys for integrations. Follow the [Workspace setup overview](/getting_started/workspace_setup_overview).
 
 ## Related links
 
-- [Workspace and communities](/getting_started/workspace_and_communities.md) — How Sekoia organizes your environment and what each level controls.
-- [Glossary](/getting_started/glossary.md) — Definitions of key platform and cybersecurity terms.
-- [Quick start: Defend](/getting_started/quick_start_defend.md) — Five-step guide to start using Sekoia Defend.
-- [Quick start: Intelligence](/getting_started/quick_start_intelligence.md) — Two-step guide to start using Sekoia Intelligence.
-- [Quick start: Reveal](/getting_started/quick_start_reveal.md) — Setup guide for the Reveal asset intelligence module.
+- [Workspace and communities](/getting_started/workspace_and_communities): How Sekoia organizes your environment and what each level controls.
+- [Glossary](/getting_started/glossary): Definitions of key platform and cybersecurity terms.
+- [Quick start: Defend](/getting_started/quick_start_defend): Five-step guide to start using Sekoia Defend.
+- [Quick start: Intelligence](/getting_started/quick_start_intelligence): Two-step guide to start using Sekoia Intelligence.
+- [Quick start: Reveal](/getting_started/quick_start_reveal): Setup guide for the Reveal asset intelligence module.

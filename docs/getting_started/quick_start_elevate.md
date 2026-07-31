@@ -1,7 +1,7 @@
 ---
 title: "Quick start: Elevate"
-description: "Get started with Sekoia Elevate, the AI-powered agentic triage module that autonomously analyzes alerts and generates verdicts."
-keywords: [elevate, ai triage, agentic, quick start, alert triage, verdict, runbook, automation]
+description: "Get oriented with Sekoia Elevate, the AI-powered agentic triage module that autonomously investigates alerts and generates verdicts so analysts can focus on confirmed threats."
+keywords: [elevate, agentic triage, ai agents, alert investigation, verdict, runbook, findings, quick start]
 audience: analyst
 module: elevate
 type: tutorial
@@ -9,37 +9,58 @@ type: tutorial
 
 # Quick start: Elevate
 
-Sekoia Elevate is an AI-powered add-on module that autonomously triages security alerts. For each alert it processes, Elevate analyzes the available context, executes a runbook, and produces a verdict with supporting evidence, reducing the volume of repetitive manual triage work for your analysts.
-
-!!! note "Documentation in progress"
-    The Elevate module is currently being finalized. This quick start guide will be updated with full setup instructions when the module becomes generally available. Check the [changelog](https://changelog.sekoia.com) for release announcements.
+Sekoia Elevate is the AI layer of the Sekoia platform. When a new alert arrives, the Elevate investigation agent (Roy) runs a full investigation autonomously without waiting for an analyst to open the alert. It produces a verdict, a confidence score, and a complete audit trail, so analysts can focus on confirmed threats rather than repetitive triage.
 
 ## What Elevate does
 
-Elevate acts as an autonomous analyst that works alongside your team. For each alert it handles, Elevate:
+For each incoming alert, the Elevate agent:
 
-1. Collects relevant context from the alert, the associated asset, and threat intelligence
-2. Executes a runbook that defines the investigation logic for that alert type
-3. Produces a verdict (true positive or false positive) with a written explanation
-4. Surfaces the result in the alert for human review
+- Assesses whether the alert is a true positive or a false positive.
+- Collects and correlates evidence across all your ingested data sources.
+- Enriches findings with threat intelligence and contextual signals.
+- Produces a verdict with a confidence score and a plain-language explanation.
+- Logs every action and reasoning step so analysts can review and override at any time.
 
-Analysts review Elevate's output and either accept the verdict or override it based on their judgment.
+Elevate also investigates cases. Assign a case to Roy and it produces a verdict, findings, and reasoning questions at the case level.
 
-## Prerequisites
+!!! note "Private by architecture"
+    All AI computation runs on Sekoia infrastructure. No data is sent to external LLM providers, which makes Elevate suitable for regulated environments.
 
-- The **Elevate module** must be enabled for your community.
-- You have an active Sekoia Defend subscription.
+## Key concepts
 
-## What comes next
+| Concept | Definition |
+|---|---|
+| **Verdict** | The outcome of the investigation: True Positive or False Positive, with a confidence score and explanation. Analysts can override any verdict. |
+| **Findings** | Individual evidence items the agent collected. Each finding links to the exact query or search the agent ran to reach it. |
+| **Runbook** | The investigation guide tied to a detection rule. It defines what the detection catches, likely false positive scenarios, and the reasoning questions the agent works through. Sekoia generates one runbook per detection rule automatically. |
+| **Runs** | Each investigation consumes one run from your monthly run pack. Runs reset at the start of each month. |
 
-Full setup instructions, runbook configuration guidance, and analyst workflow documentation will be available here once Elevate is released.
+## Before you start
 
-In the meantime, you can:
+- The **Elevate module** must be included in your Sekoia subscription. Verify in **Settings > Subscriptions**.
+- You must have administrator access to activate the agent.
+- At least one intake must be configured and sending events to Sekoia.
 
-- Read the [Elevate overview article](https://docs.sekoia.com/xdr/features/modules/elevate_overview/) for an early look at the module's capabilities.
-- Set up your [workspace](/getting_started/workspace_setup_overview.md) and ensure Defend is fully operational using the [Defend quick start](/getting_started/quick_start_defend.md).
+## Activate Elevate
+
+The Elevate agent is disabled by default. Enabling it starts automatic analysis of all new incoming alerts.
+
+!!! warning "Run consumption starts immediately"
+    Enabling auto-analyze triggers analysis of all new incoming alerts across all communities. Each analysis consumes one run from your monthly run pack. Review your run pack before activating.
+
+For step-by-step activation, see [Activate Elevate on a workspace](/xdr/features/modules/elevate_activate/).
+
+## Go further
+
+Once Elevate is active, explore these guides to tune and get the most out of it:
+
+- [Elevate overview](/xdr/features/modules/elevate_overview/): Full concept guide covering the investigation method, runbooks, verdicts, and key concepts.
+- [Investigate an alert with Elevate](/xdr/features/modules/elevate_investigate_alert/): How to read a verdict, findings, and reasoning questions.
+- [Add custom instructions](/xdr/features/modules/elevate_custom_instructions/): Teach the agent about your environment to improve verdict accuracy.
+- [Manage your Elevate runs](/xdr/features/modules/elevate_quota/): Monitor consumption and optimize your monthly run pack.
 
 ## Related links
 
-- [Quick start: Defend](/getting_started/quick_start_defend.md) — Prerequisite for Elevate: ensure Defend is set up and generating alerts.
-- [Support and resources](/getting_started/support_and_resources.md) — Contact support or check the Academy for early access materials.
+- [Workspace setup overview](/getting_started/workspace_setup_overview): Admin checklist for enabling modules and preparing your workspace.
+- [Quick start: Defend](/getting_started/quick_start_defend): Complete the Defend quick start before setting up Elevate.
+- [Glossary](/getting_started/glossary): Definitions for alert, verdict, runbook, and agentic triage.
