@@ -147,7 +147,12 @@ nav:
         - Alert similarity: xdr/features/detect/sol_detection_similarity.md
         - Lag management: xdr/features/detect/sol_detection_lag_management.md
     - Investigate:
-      - Alerts: xdr/features/investigate/alerts.md
+      - Alerts: 
+        - Alerts overview: xdr/features/investigate/alerts.md
+        - Alerts listing: xdr/features/investigate/alerts_listing.md
+        - Alerts details: xdr/features/investigate/alert_details.md
+        - Configure custom statuses: xdr/features/investigate/configure_custom_statuses.md
+        - Configure custom verdicts: xdr/features/investigate/configure_custom_verdicts.md
       - Events page: xdr/features/investigate/events.md
       - Eternal events: xdr/features/investigate/eternal_events.md
       - Massive event export:
