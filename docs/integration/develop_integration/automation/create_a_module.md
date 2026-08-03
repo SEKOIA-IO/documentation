@@ -66,6 +66,9 @@ cd TestHTTP
 poetry add requests
 ```
 
+!!! note
+    New projects are scaffolded with `uv`. If you are using a project scaffolded with `uv`, use `uv add requests` instead.
+
 As a result you should see the `requests` package added in the dependencies section of the `pyproject.toml` file. 
 
 ### Add a .gitignore file to ignore temporary files
@@ -733,12 +736,15 @@ def test_get_request(requests_mock):
   assert result.text == mock_response['text']
 ```
 
-To effectively manage dependencies and run your tests, you should use Poetry: 
+To effectively manage dependencies and run your tests, you should use Poetry:
 
 ```shell
 poetry run pytest -v -s tests/
 ```
 For more detailed information, you can check the [Poetry documentation](https://python-poetry.org/docs/). Additionally, you can look at the tests in the existing module.
+
+!!! note
+    New projects are scaffolded with `uv`. If you are using a project scaffolded with `uv`, use `uv run pytest -v -s tests/` instead.
 
 ## Lint and format your code (optional)
 
@@ -815,12 +821,12 @@ To publish a new automation in the Sekoia.io integration catalog, you must follo
 
 This step will enable you to verify different components of the module and detect any errors. Before proceeding, ensure all test dependencies are installed by running the following command in the /_utils directory:
 ``` shell
-poetry install 
+poetry install
 ```
 To check the correctness of the module the following command should be run :
 
 ```shell
-poetry run python3 compliance check --module modules\<module_name> 
+poetry run python3 compliance check --module modules\<module_name>
 ```
 
 ### Homologation request 
