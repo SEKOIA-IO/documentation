@@ -7,7 +7,7 @@ You retire a status in two ways, and both go through the same migration:
 * **Disabling** it for alerts or for cases removes it from that context only. The status stays available in the other context.
 * **Deleting** it removes the status from your workspace entirely.
 
-The **New status** list offers the statuses that belong to the same stage as the one you are retiring. A status in the In progress stage is therefore replaced by another In progress status, which keeps your alerts and cases at the same point of the lifecycle and preserves the behavior that depends on the stage, such as alert similarity and case editing.
+The **New status** list offers the statuses that belong to the same stage as the one you are retiring. A status in the **In progress** stage is therefore replaced by another **In progress** status, which keeps your alerts and cases at the same point of the lifecycle and preserves the behavior that depends on the stage, such as alert similarity and case editing.
 
 !!! note "A replacement status is mandatory"
     An alert or a case always carries a status, so there is no way to retire a status without saying where its items should go. The **New status** field is required in both flows.

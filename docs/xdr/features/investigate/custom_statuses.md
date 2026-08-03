@@ -14,7 +14,8 @@ Every custom status belongs to one of three stages. The stage defines where the 
 | **In progress** | Intermediate stage for items under investigation or awaiting action. |
 | **Closed** | Final stage for items that have been resolved or dismissed. |
 
-Stages are not cosmetic. They determine the overall state of an alert or a case, and features such as search filters, alert similarity and case editing rely on them. Alerts whose status is in the Open or In progress stage keep collecting similar occurrences, while a status in the Closed stage causes a new alert to be created instead. Cases in the Closed stage cannot be edited.
+!!! info
+    Stages are not cosmetic. They determine the overall state of an alert or a case, and features such as search filters, alert similarity and case editing rely on them. Alerts whose status is in the Open or In progress stage keep collecting similar occurrences, while a status in the Closed stage causes a new alert to be created instead. Cases in the Closed stage cannot be edited.
 
 ## One status, two contexts
 

@@ -6,8 +6,6 @@ Custom priorities define how urgent a case is, using the levels and the vocabula
 
 ## Default priorities
 
-A workspace starts with four levels.
-
 | Priority | Description |
 |---|---|
 | **Critical** | The case is critical |
@@ -32,6 +30,9 @@ To reorder priorities, drag a level by its handle and drop it where you want it.
 5. Select a color.
 6. Click **Save**.
 
+!!! warning "Priorities have no migration flow"
+    Unlike custom statuses, a priority that is in use cannot be deleted by reassigning its cases to another priority. You have to change the priority on every case first. Only statuses offer the reassignment described in [Migrate custom statuses](/xdr/features/investigate/migrate_custom_statuses.md).
+
 ## Edit a custom priority
 
 Editing happens inline on the priority row.
@@ -49,13 +50,7 @@ The color you pick is the one analysts see on the priority badge in the cases li
 A priority can be deleted only if no case currently carries it.
 
 1. Change the priority on every case that uses it.
-2. Once the priority is no longer in use, click the delete icon on the priority row.
-
-!!! warning "Priorities have no migration flow"
-    Unlike custom statuses, a priority that is in use cannot be deleted by reassigning its cases to another priority. You have to change the priority on every case first. Only statuses offer the reassignment described in [Migrate custom statuses](/xdr/features/investigate/migrate_custom_statuses.md).
-
-!!! note "AI Cases follow your scale"
-    AI Cases assign a priority by mapping the highest alert urgency in the case onto the levels you have configured. The scale adapts to your setup, so adding or removing a level changes how AI Cases distribute priorities across your cases.
+2. Once the priority is no longer in use, in Settings > Custom Statuses > Priority section, click the delete icon on the priority row.
 
 ## Where priorities appear
 
