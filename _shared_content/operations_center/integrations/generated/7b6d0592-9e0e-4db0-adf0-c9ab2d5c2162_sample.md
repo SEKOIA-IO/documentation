@@ -28,3 +28,11 @@ In this section, you will find examples of raw logs as generated natively by the
 
 
 
+=== "test_new_event"
+
+    ```
+	2026-06-16,12:05:39,60625,11755,14784,192.0.2.1,198.51.100.1,j.doe@example.com,-,-,-,-,-,-,-,ecs.internal.test,ecs.internal.test,-,443,-,0,Client,-,US,32.8392,-101.4883,Lamesa,Texas,98073,FR,48.8558,2.3494,Paris,Île-de-France,75001,-,-,-,-,-,1781611539,0,192.0.2.1,Unavailable,-,Technology,"SSL Bypass for unsupported TLS version [inc MSTeams],All Categories - Custom,Technology",http_transaction,-,-,412639066082553277,0,ecs.internal.test,-,-,-,-,-,0b112dab5f1fb1449dbad43ba62678df,NotAvailable,Yes,SSL Do Not Decrypt Bypass Policy Matched,NotChecked,NotChecked,-,-,NotChecked,NotChecked,NotChecked,NotChecked,NotChecked,NotChecked,NotChecked,NotChecked,No,No,NotChecked,NotChecked,NotChecked,No,Bypass,SSL Do Not Decrypt Bypass Policy Matched,None,NotEstablished,192.0.2.1,198.51.100.1,ecs.internal.test,Sni,Technology;All Categories - Custom;SSL Bypass for unsupported TLS version [inc MSTeams];Application Suite,DoNotDecrypt,[DND] Unsupported TLS based on SNI or IP destination,-,-,NotChecked,NotChecked,62.23.59.98,FR-PAR2,192.0.2.1,12111,198.51.100.1,443,-,-,198.51.100.1,443,-,-,-,-,-,-,-,HTTP1.1,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,http,-,allow_default,DefaultAction,192.0.2.1,198.51.100.1,ecs.internal.test,Sni,-,-,-,3029,11755,Allow,ssl-bypass-policy,j.doe@example.com,NSClient-Tunnel,Tunnel,-,-,-,-,-,-,HOSTNAME,00000000-0000-0000-0000-000000000000,MacOS,Mac OSX 26.5.0,138.0.2.2681,Skopefy-Admins,Skopefy-Admins,managed;Skopefy-Compliant,DTLS,onedrive,10801,-,-,NotChecked,-,-,-,-,-,NotChecked,-,SSL Bypass for unsupported TLS version [inc MSTeams];All Categories - Custom;Technology,-,-,US,32.8392,-101.4883,Lamesa,Texas,98073,Internal,-,No,-,-,-,-,24955,3029
+    ```
+
+
+
