@@ -1,6 +1,19 @@
 # Optimization rules overview
 
+!!! note "This article covers platform-level optimization rules"
+    Platform-level optimization rules filter events after they reach Sekoia, at the intake level. If you use the Sekoia Endpoint Agent, a separate set of agent-level optimization rules lets you filter events before transmission. See [Reduce event volume with the Sekoia Endpoint Agent](/integration/categories/endpoint/reduce_event_volume_endpoint_agent.md).
+
 Intake optimization rules allow you to control the processing and handling of incoming events before they are subjected to detection. These rules can be tailored to specific needs using filters and actions to effectively manage event data.
+
+## When to use platform-level optimization rules
+
+Platform-level optimization rules are appropriate when:
+
+- You cannot modify the log source configuration (source-level filtering is not possible).
+- You do not use the Sekoia Endpoint Agent, or the event type does not support agent-level filtering.
+- You need to filter a non-endpoint source (firewall, cloud service, SIEM connector).
+
+If you use the Sekoia Endpoint Agent, configure [agent-level rules](/integration/categories/endpoint/reduce_event_volume_endpoint_agent.md) first. If you are unsure which approach fits your situation, start with the [log volume reduction strategies playbook](/xdr/usecases/playbook/log_volume_reduction_strategies.md).
 
 ## Logic and execution
 
