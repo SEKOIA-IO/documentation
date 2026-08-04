@@ -10,7 +10,7 @@ Both the Sekoia Endpoint Agent and the Sekoia platform support optimization rule
 |---|---|---|
 | **Where filtering happens** | On the host, before transmission | At the Sekoia intake, after reception |
 | **Volume impact** | Reduces network usage and ingestion volume | Reduces storage and detection load only |
-| **Configuration method** | API only | Platform UI or API |
+| **Configuration method** | API only | API |
 | **Applicable sources** | Sekoia Endpoint Agent intakes only | Any intake |
 | **Field availability** | Parsed fields only | Parsed fields only |
 
