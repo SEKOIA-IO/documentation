@@ -386,7 +386,16 @@ nav:
       - Pradeo MTD: integration/categories/endpoint/pradeo_mtd.md
       - SentinelOne: integration/categories/endpoint/sentinelone.md
       - SentinelOne Cloud Funnel 2.0: integration/categories/endpoint/sentinelone_cloudfunnel2.0.md
-      - Sekoia.io Endpoint Agent: integration/categories/endpoint/sekoiaio.md
+      - Sekoia Endpoint Agent: 
+      - Sekoia Endpoint Agent:
+        - Overview: integration/categories/endpoint/sekoiaio.md
+        - Install: integration/categories/endpoint/install_sekoia_endpoint_agent.md
+        - Configure: integration/categories/endpoint/configure_sekoia_endpoint_agent.md
+        - Update and uninstall: integration/categories/endpoint/update_uninstall_sekoia_endpoint_agent.md
+        - Reduce event volume: integration/categories/endpoint/reduce_event_volume_endpoint_agent.md
+        - Troubleshoot: integration/categories/endpoint/troubleshoot_sekoia_endpoint_agent.md
+        - Events and fields reference: integration/categories/endpoint/sekoia_endpoint_agent_events_reference.md
+        - Built-in detection rules: integration/categories/endpoint/sekoia_endpoint_agent_rules_reference.md
       - Sophos EDR: integration/categories/endpoint/sophos_edr.md
       - Stormshield SES: integration/categories/endpoint/stormshield_ses.md
       - Symantec Endpoint Protection: integration/categories/endpoint/symantec_epp.md
