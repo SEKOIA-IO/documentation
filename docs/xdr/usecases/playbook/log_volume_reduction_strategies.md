@@ -29,5 +29,5 @@ Sekoia.io recommends following this hierarchy, ordered from most efficient to le
 * **Troubleshooting**: Temporarily increasing verbosity for a specific asset while keeping other sources filtered.
 
 ## Related articles: 
-[Understand log volume and fair use](/docs/getting_started/log_volume_and_fair_use.md)
+[Understand log volume and fair use](/getting_started/log_volume_and_fair_use.md)
 [Learn how to investigate your usage](/xdr/usecases/playbook/investigate_overusage.md)
