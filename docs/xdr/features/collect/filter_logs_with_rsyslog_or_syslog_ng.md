@@ -4,7 +4,7 @@ Rsyslog and Syslog-ng let you drop unwanted events at the forwarder level, befor
 
 ## Prerequisites
 
-- A working Sekoia Forwarder deployment using Rsyslog or Syslog-ng. See [Sekoia Forwarder documentation](/integration/ingestion_methods/syslog/sekoiaio_forwarder/) for setup instructions.
+- A working Sekoia Forwarder deployment using Rsyslog or Syslog-ng. See [Sekoia Forwarder documentation](/integration/ingestion_methods/sekoiaio_forwarder.md) for setup instructions.
 - Access to the host running the forwarder.
 - Familiarity with the event structure of the log source you want to filter.
 
@@ -169,7 +169,7 @@ After applying a filter, confirm the reduction is working as expected:
 
 ## Related articles
 
-- [Log volume and fair use](/xdr/getting_started/log_volume_and_fair_use.md): Overview of volume allowances and when to apply each filtering level.
+- [Log volume and fair use](/docs/getting_started/log_volume_and_fair_use.md): Overview of volume allowances and when to apply each filtering level.
 - [Log volume reduction strategies](/xdr/usecases/playbook/log_volume_reduction_strategies.md): How to choose the right filtering level for your situation.
 - [Reduce event volume with the Sekoia Endpoint Agent](/integration/categories/endpoint/reduce_event_volume_endpoint_agent.md): How to filter events at the agent level for endpoint sources.
 - [Create an optimization rule](/xdr/features/collect/create_optimization_rule.md): How to create a platform-level optimization rule when forwarder-level filtering is not applicable.
