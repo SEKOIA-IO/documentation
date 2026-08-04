@@ -33,6 +33,12 @@ The following Sekoia.io built-in rules match the intake **MokN - Baits**. This d
     
     - **Effort:** master
 
+??? abstract "MokN High Threat Bait Attempt"
+    
+    Detects when MokN raises a high threat bait login attempt.
+    
+    - **Effort:** master
+
 ??? abstract "Nimbo-C2 User Agent"
     
     Nimbo-C2 Uses an unusual User-Agent format in its implants.

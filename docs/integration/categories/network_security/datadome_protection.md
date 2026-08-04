@@ -33,7 +33,7 @@ This setup guide will show you how to forward your Datadome Protection logs to S
 
     https://app.usa1.sekoia.io/api/v1/intake-http
 
-    You can find your region’s domain here: [https://docs.sekoia.io/getting_started/regions/](https://docs.sekoia.io/getting_started/regions/)
+    You can find your region’s domain here: [https://docs.sekoia.com/getting_started/regions/](https://docs.sekoia.com/getting_started/regions/)
 
 7. Select `Default` as the payload format
 8. Select `All threats` as threats

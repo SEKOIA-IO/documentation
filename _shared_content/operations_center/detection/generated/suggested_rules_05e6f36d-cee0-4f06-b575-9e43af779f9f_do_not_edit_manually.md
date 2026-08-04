@@ -1083,6 +1083,24 @@ The following Sekoia.io built-in rules match the intake **Microsoft Defender XDR
     
     - **Effort:** elementary
 
+??? abstract "Microsoft Defender For Identity High Severity Alert"
+    
+    Microsoft Defender For Identity raised an alert as High severity. The alert info and evidence events are grouped with the similarity into the same Sekoia.io alert.
+    
+    - **Effort:** master
+
+??? abstract "Microsoft Defender For Identity Low Severity Alert"
+    
+    Microsoft Defender For Identity raised an alert as Low severity. The alert info and evidence events are grouped with the similarity into the same Sekoia.io alert.
+    
+    - **Effort:** master
+
+??? abstract "Microsoft Defender For Identity Medium Severity Alert"
+    
+    Microsoft Defender For Identity raised an alert as Medium severity. The alert info and evidence events are grouped with the similarity into the same Sekoia.io alert.
+    
+    - **Effort:** master
+
 ??? abstract "Microsoft Defender XDR Alert"
     
     Microsoft Defender XDR has raised an alert. The alert info and evidence events are grouped with the similarity into the same Sekoia.io alert.
@@ -1808,6 +1826,12 @@ The following Sekoia.io built-in rules match the intake **Microsoft Defender XDR
     Detects the addition of a SSP to the registry. This is commonly used for persistence. Upon a reboot or API call, SSP DLLs gain access to encrypted and plaintext passwords stored in Windows. Logging for Registry events is needed for this rule to work (this can be done through Sysmon EventIDs 12 and 13).
     
     - **Effort:** elementary
+
+??? abstract "Sekoia.io Activity Logs Rule Deactivation Bulk"
+    
+    Detects a massive rule deactivation observed threw Sekoia.io activity logs.
+    
+    - **Effort:** master
 
 ??? abstract "Sekoia.io EICAR Detection"
     

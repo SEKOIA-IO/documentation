@@ -1,0 +1,17 @@
+@font-face {
+    font-family: 'ABCOtto';
+    font-weight: 400;
+    font-style: normal;
+    src: url(../assets/fonts/ABCOtto-Regular.woff2) format('woff2'),
+         url(../assets/fonts/ABCOtto-Regular.woff) format('woff'),
+         url(../assets/fonts/ABCOtto-Regular.otf) format('opentype');
+}
+
+@font-face {
+    font-family: 'Lost';
+    font-weight: 400;
+    font-style: normal;
+    src: url(../assets/fonts/205TF-Lost-SemiCondensed.woff2) format('woff2'),
+         url(../assets/fonts/205TF-Lost-SemiCondensed.woff) format('woff'),
+         url(../assets/fonts/205TF-Lost-SemiCondensed.otf) format('opentype');
+}

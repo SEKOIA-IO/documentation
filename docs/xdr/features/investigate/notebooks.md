@@ -119,7 +119,7 @@ The `default` notebook template will be suggested for use in cases and alerts, e
 
 ### Query Builder Editor
 * Display data in tables
-* Create various data visualizations, including pie charts, line charts, bar charts, column charts, and numeric displays
+* Create various data visualizations, including pie charts, line charts, bar charts, column charts, Sankey charts, and numeric displays
 
 ![notebook_viz](/assets/operation_center/notebook_viz.png){: style="max-width:100%"}
 

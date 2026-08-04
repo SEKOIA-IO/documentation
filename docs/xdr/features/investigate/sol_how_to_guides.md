@@ -203,6 +203,7 @@ Use the `render` operator to display query results as charts. Supported chart ty
 - `columnchart` — Vertical bar chart
 - `barchart` — Horizontal bar chart
 - `linechart` — Line chart
+- `sankey` — Flow chart
 
 ### Basic chart
 

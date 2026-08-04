@@ -2,7 +2,7 @@ name: Upload preview to OVH Object Storage
 
 on:
   workflow_run:
-    workflows: ["Preview docs.sekoia.io"]
+    workflows: ["Preview docs.sekoia.com"]
     types:
       - completed
 
