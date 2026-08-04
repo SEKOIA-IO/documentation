@@ -170,6 +170,7 @@ nav:
           - Investigate case details: xdr/features/investigate/case_details.md
           - Graph investigation: xdr/features/investigate/graph_investigation.md
           - AI Cases: xdr/features/investigate/ai_cases.md
+          - Run a playbook from a case: xdr/features/investigate/run_playbook_case.md
       - Custom fields:
         - Custom fields overview: xdr/features/investigate/custom_fields.md
         - Use custom fields: xdr/features/investigate/use_custom_fields.md
