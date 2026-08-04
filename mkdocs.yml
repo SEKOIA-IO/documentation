@@ -315,7 +315,7 @@ nav:
       - Third-party syslog services: integration/ingestion_methods/syslog/syslog_service.md
       - Rsyslog: integration/ingestion_methods/syslog/rsyslog.md
       - Syslog NG: integration/ingestion_methods/syslog/syslog-ng.md
-      - Filter logs with Rsyslog or Syslog-ng: docs/xdr/features/collect/filter_logs_with_rsyslog_or_syslog_ng.md
+      - Filter logs with Rsyslog or Syslog-ng: xdr/features/collect/filter_logs_with_rsyslog_or_syslog_ng.md
       - Secured forwarding: integration/ingestion_methods/syslog/secured_forwarding.md
     - NetFlow:
       - Sekoia.io NetFlow Concentrator: integration/ingestion_methods/netflow/sekoiaio_netflow_concentrator.md
