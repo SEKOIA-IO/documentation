@@ -199,7 +199,7 @@ If matching events are still arriving after 15 minutes, check the agent logs for
 
 ## Related articles
 
-- [Log volume and fair use](/xdr/getting_started/log_volume_and_fair_use.md): Overview of volume allowances and when to apply each filtering level.
+- [Log volume and fair use](/docs/getting_started/log_volume_and_fair_use.md): Overview of volume allowances and when to apply each filtering level.
 - [Log volume reduction strategies](/xdr/usecases/playbook/log_volume_reduction_strategies.md): How to choose the right filtering level for your situation.
 - [Optimization rules overview](/xdr/features/collect/optimization_rules_overview.md): Overview of platform-level optimization rules and how they differ from agent-level rules.
 - [Create an optimization rule](/xdr/features/collect/create_optimization_rule.md): How to create a platform-level optimization rule when agent-level filtering is not sufficient.
