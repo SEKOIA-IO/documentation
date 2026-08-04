@@ -111,8 +111,6 @@ The following lists show a non-exhaustive sample of events the agent detects. Th
     * Passwd operations
     * Suspicious activity (curl, Wireshark, and similar tools)
 
-{!_shared_content/operations_center/integrations/generated/250e4095-fa08-4101-bb02-e72f870fcbd1.md!}
-
 ## Resource footprint
 
 The agent is designed to minimize impact on monitored systems.
@@ -131,8 +129,6 @@ The agent is designed to minimize impact on monitored systems.
 
 For a full list of changes between versions, see the [agent changelog](https://changelog.sekoia.com/changelog?type=t6527b1484d556).
 
-{!_shared_content/operations_center/detection/generated/suggested_rules_250e4095-fa08-4101-bb02-e72f870fcbd1_do_not_edit_manually.md!}
-
 ## Related articles
 
 [Install the Sekoia Endpoint Agent](/integration/categories/endpoint/install_sekoia_endpoint_agent.md): How to create an intake, download, and install the agent on Windows, Linux, and macOS.
@@ -145,3 +141,6 @@ For a full list of changes between versions, see the [agent changelog](https://c
 
 [Troubleshoot the Sekoia Endpoint Agent](/integration/categories/endpoint/troubleshoot_sekoia_endpoint_agent.md): How to read agent logs and resolve common errors.
 
+[Sekoia Endpoint Agent — events and fields reference](/integration/categories/endpoint/sekoia_endpoint_agent_events_reference.md): Reference for data source categories, event samples, and extracted ECS fields.
+
+[Sekoia Endpoint Agent — built-in detection rules](/integration/categories/endpoint/sekoia_endpoint_agent_rules_reference.md): Reference for all built-in detection rules that match this intake.
