@@ -68,7 +68,7 @@ To push one event, just POST content to `https://intake.sekoia.io/plain`
     ```python
     import requests
 
-    auth = request.auth.HTTPBasicAuth(None, "YOUR_INTAKE_KEY")
+    auth = requests.auth.HTTPBasicAuth(None, "YOUR_INTAKE_KEY")
     content = "[764008:0] info: 198.51.100.10 example.org. A IN"
     response = requests.post("https://intake.sekoia.io/plain", data=content, auth=auth)
     print(response.text) # (1)
@@ -110,7 +110,7 @@ For numerous events, you can use the alternative endpoint `/plain/batch`. The ev
     ```python
     import requests
 
-    auth = request.auth.HTTPBasicAuth(None, "YOUR_INTAKE_KEY")
+    auth = requests.auth.HTTPBasicAuth(None, "YOUR_INTAKE_KEY")
     events = ["[764008:0] info: 198.51.100.10 example.org. A IN", "[764023:0] info: 2.34.100.56 text.org. A IN"]
     content = "\n".join(events)
     response = requests.post("https://intake.sekoia.io/plain/batch", data=content, auth=auth)
@@ -177,7 +177,7 @@ Use the endpoint `/jsons`. This endpoint accepts a set of events:
     ```python
     import requests
 
-    auth = request.auth.HTTPBasicAuth(None, "YOUR_INTAKE_KEY")
+    auth = requests.auth.HTTPBasicAuth(None, "YOUR_INTAKE_KEY")
     events = ["[764008:0] info: 198.51.100.10 example.org. A IN", "[764023:0] info: 2.34.100.56 text.org. A IN"]
     response = requests.post("https://intake.sekoia.io/jsons", json=events, auth=auth)
     print(response.text) # (1)
@@ -221,7 +221,7 @@ If your events are enclosed in a JSON object, use the endpoint `/jsons` and prov
     ```python
     import requests
 
-    auth = request.auth.HTTPBasicAuth(None, "YOUR_INTAKE_KEY")
+    auth = requests.auth.HTTPBasicAuth(None, "YOUR_INTAKE_KEY")
     events = ["[764008:0] info: 198.51.100.10 example.org. A IN", "[764023:0] info: 2.34.100.56 text.org. A IN"]
     content = {"path": {"to": {"events": events}}}
     response = requests.post("https://intake.sekoia.io/jsons?path=$.path.to.events", json=content, auth=auth)
