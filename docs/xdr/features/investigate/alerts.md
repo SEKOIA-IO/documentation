@@ -80,6 +80,6 @@ The alert type is determined by the rule that triggered the alert but can be ove
 
 - [Alerts listing](/xdr/features/investigate/alerts_listing.md): How to browse, filter, sort, and take bulk actions on alerts.
 - [Alert details](/xdr/features/investigate/alert_details.md): How to investigate an individual alert across its details, events, and graph investigation tabs.
-- [Configure custom statuses](/xdr/features/investigate/configure_custom_statuses.md): How to create and manage the alert and case statuses used in your SOC workflow.
-- [Configure custom verdicts](/xdr/features/investigate/configure_custom_verdicts.md): How to create and manage analyst verdicts for alert and case outcomes.
+- [Custom statuses](/xdr/features/investigate/custom_statuses.md): What custom statuses are, the three stages, and how one status serves both alerts and cases.
+- [Custom verdicts](/xdr/features/investigate/custom_verdicts.md): How to standardize the classification of alert and case outcomes.
 - [Rules catalog](/xdr/features/detect/rules_catalog.md): Reference for detection rules, including how to configure custom similarity strategies.
