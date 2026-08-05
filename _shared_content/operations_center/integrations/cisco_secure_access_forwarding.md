@@ -339,6 +339,7 @@ Cisco Secure Access can export your logs either to a Cisco-managed Amazon S3 buc
 
     - **AWS SQS queue name** (`queue_name`): the name of the SQS queue you created in Step 1 to receive S3 object creation notifications.
     - **Intake key** (`intake_key`): the intake key generated when you created the intake in [Step 2](#step-2-create-the-intake).
+    - **Prefix filter** (`prefix_filter`): optional but recommended to restrict ingestion to one log type subfolder (for example `dnslogs`).
 
     Cisco Secure Access stores each log type in a dedicated subfolder at the root of your bucket. Since your bucket may hold several log types, you can restrict the connector to a single one with a **Prefix filter** (`prefix_filter`) matching the subfolder of the intake you are configuring:
 
