@@ -100,6 +100,6 @@ By default, the agent updates itself automatically. To disable this behavior, ap
 
 [Install the Sekoia Endpoint Agent](/integration/categories/endpoint/install_sekoia_endpoint_agent.md): How to create an intake, download, and install the agent on Windows, Linux, and macOS.
 
-[Sekoia Endpoint Agent](/integration/categories/endpoint/sekoia_endpoint_agent.md): Overview of the agent, supported OS versions, prerequisites, and resource footprint.
+[Sekoia Endpoint Agent](/integration/categories/endpoint/sekoiaio.md): Overview of the agent, supported OS versions, prerequisites, and resource footprint.
 
 [Troubleshoot the Sekoia Endpoint Agent](/integration/categories/endpoint/troubleshoot_sekoia_endpoint_agent.md): How to read agent logs and resolve common errors.
