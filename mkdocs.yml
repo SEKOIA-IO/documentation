@@ -386,7 +386,6 @@ nav:
       - Pradeo MTD: integration/categories/endpoint/pradeo_mtd.md
       - SentinelOne: integration/categories/endpoint/sentinelone.md
       - SentinelOne Cloud Funnel 2.0: integration/categories/endpoint/sentinelone_cloudfunnel2.0.md
-      - Sekoia Endpoint Agent: 
       - Sekoia Endpoint Agent:
         - Overview: integration/categories/endpoint/sekoiaio.md
         - Install: integration/categories/endpoint/install_sekoia_endpoint_agent.md
