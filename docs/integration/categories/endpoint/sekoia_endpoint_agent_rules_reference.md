@@ -6,7 +6,7 @@ This page lists all built-in detection rules that match the Sekoia Endpoint Agen
 
 ## Related articles
 
-[Sekoia Endpoint Agent](/integration/categories/endpoint/sekoia_endpoint_agent.md): Overview of the agent, supported OS versions, prerequisites, and resource footprint.
+[Sekoia Endpoint Agent](/integration/categories/endpoint/sekoiaio.md): Overview of the agent, supported OS versions, prerequisites, and resource footprint.
 
 [Sekoia Endpoint Agent — events and fields reference](/integration/categories/endpoint/sekoia_endpoint_agent_events_reference.md): Reference for data source categories, event samples, and extracted ECS fields.
 
