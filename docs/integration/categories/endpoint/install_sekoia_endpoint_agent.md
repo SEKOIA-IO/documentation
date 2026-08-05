@@ -4,7 +4,7 @@ This article explains how to install the Sekoia Endpoint Agent on Windows, Linux
 
 ## Prerequisites
 
-Before installing the agent, make sure the required network streams are open for your region. See [Sekoia Endpoint Agent](/integration/categories/endpoint/sekoia_endpoint_agent.md#prerequisites) for the full list.
+Before installing the agent, make sure the required network streams are open for your region. See [Sekoia Endpoint Agent](/integration/categories/endpoint/sekoiaio.md#prerequisites) for the full list.
 
 !!! warning "Hosts with an EDR installed"
     If the target host already runs an EDR, the EDR's threat detection actions generate events that the Sekoia Endpoint Agent collects. This may trigger false positive alerts from detection rules at effort levels 3 and 4. Fine-tune those rules to reduce false positives after deployment.
@@ -216,7 +216,7 @@ Append the `--compliance-collector` flag to the install command:
 
 ## Related articles
 
-[Sekoia Endpoint Agent](/integration/categories/endpoint/sekoia_endpoint_agent.md): Overview of the agent, supported OS versions, prerequisites, and resource footprint.
+[Sekoia Endpoint Agent](/integration/categories/endpoint/sekoiaio.md): Overview of the agent, supported OS versions, prerequisites, and resource footprint.
 
 [Configure the Sekoia Endpoint Agent](/integration/categories/endpoint/configure_sekoia_endpoint_agent.md): How to set up log file collection, proxy, retention, and optional features.
 
