@@ -147,7 +147,10 @@ nav:
         - Alert similarity: xdr/features/detect/sol_detection_similarity.md
         - Lag management: xdr/features/detect/sol_detection_lag_management.md
     - Investigate:
-      - Alerts: xdr/features/investigate/alerts.md
+      - Alerts:
+        - Alerts overview: xdr/features/investigate/alerts.md
+        - Alerts listing: xdr/features/investigate/alerts_listing.md
+        - Alerts details: xdr/features/investigate/alert_details.md
       - Events page: xdr/features/investigate/events.md
       - Eternal events: xdr/features/investigate/eternal_events.md
       - Massive event export:
@@ -165,6 +168,7 @@ nav:
           - Investigate case details: xdr/features/investigate/case_details.md
           - Graph investigation: xdr/features/investigate/graph_investigation.md
           - AI Cases: xdr/features/investigate/ai_cases.md
+          - Run a playbook from a case: xdr/features/investigate/run_playbook_case.md
       - Custom fields:
         - Custom fields overview: xdr/features/investigate/custom_fields.md
         - Use custom fields: xdr/features/investigate/use_custom_fields.md
@@ -242,24 +246,21 @@ nav:
       - Limit auto-analysis to specific rules: xdr/features/modules/elevate_rule_filter.md
       - Manage Elevate runs: xdr/features/modules/elevate_quota.md
   - Asset Intelligence (Reveal):
-      - Reveal overview: xdr/features/modules/reveal_index.md
-      - Get started with Reveal:
-        - Reveal quick start guide: xdr/features/modules/reveal_getting_started.md
-        - Reveal enablement matrix: xdr/features/modules/reveal_feature_enablement.md
-      - Asset connectors: 
-        - Create asset connectors: xdr/features/modules/reveal_asset_connectors_create.md
-        - Check asset connector health: xdr/features/collect/asset_connector_health.md
-        - Troubleshoot asset connectors: xdr/features/modules/reveal_asset_connectors_troubleshoot.md
-      - Investigate assets:
-        - Explore assets context: xdr/features/modules/reveal_asset_context_panel.md
-        - Visualize attack paths: xdr/features/investigate/attack_path_visualization.md
-        - Discover Points of Interest: xdr/features/detect/points_of_interest.md
-        - Check Endpoint Hygiene: xdr/features/modules/reveal_hygiene.md
-        - Leverage Vulnerability Enrichment: xdr/features/modules/reveal_vulnerabilities.md
-        - Rely on Security Controls: xdr/features/modules/reveal_security_controls.md
-
-
-
+    - Reveal overview: xdr/features/modules/reveal_index.md
+    - Get started with Reveal:
+      - Reveal quick start guide: xdr/features/modules/reveal_getting_started.md
+      - Reveal enablement matrix: xdr/features/modules/reveal_feature_enablement.md
+    - Asset connectors:
+      - Create asset connectors: xdr/features/modules/reveal_asset_connectors_create.md
+      - Check asset connector health: xdr/features/collect/asset_connector_health.md
+      - Troubleshoot asset connectors: xdr/features/modules/reveal_asset_connectors_troubleshoot.md
+    - Investigate assets:
+      - Explore assets context: xdr/features/modules/reveal_asset_context_panel.md
+      - Visualize attack paths: xdr/features/investigate/attack_path_visualization.md
+      - Discover Points of Interest: xdr/features/detect/points_of_interest.md
+      - Check Endpoint Hygiene: xdr/features/modules/reveal_hygiene.md
+      - Leverage Vulnerability Enrichment: xdr/features/modules/reveal_vulnerabilities.md
+      - Rely on Security Controls: xdr/features/modules/reveal_security_controls.md
 - Usecases:
   - Export large volumes of events: xdr/usecases/massive_export.md
   - Implement a blocklist in Sekoia.io: xdr/usecases/playbook/implement_blocklist.md
@@ -570,6 +571,7 @@ nav:
       - Zscaler Internet Access: integration/categories/network_security/zscaler_zia.md
       - Zscaler Private Access: integration/categories/network_security/zscaler_zpa.md
     - Threat Intelligence:
+      - Flare Events: integration/categories/threat_intelligence/flare_events.md
       - MokN - Baits: integration/categories/threat_intelligence/mokn_baits.md
       - Prodaft USTA: integration/categories/threat_intelligence/prodaft_usta.md
   - List of Playbooks Actions:
@@ -694,6 +696,8 @@ plugins:
 - search: null
 - redirects:
     redirect_maps:
+      xdr/features/investigate/configure_custom_statuses.md: xdr/features/investigate/custom_statuses.md
+      xdr/features/investigate/configure_custom_verdicts.md: xdr/features/investigate/custom_verdicts.md
       getting_started/2fa.md: getting_started/account_security.md
       getting_started/apikey_creation.md: getting_started/manage_api_keys.md
       getting_started/first_steps.md: getting_started/index.md
