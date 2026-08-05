@@ -6,7 +6,7 @@ This page lists the data source categories, transformed event samples, and extra
 
 ## Related articles
 
-[Sekoia Endpoint Agent](/integration/categories/endpoint/sekoia_endpoint_agent.md): Overview of the agent, supported OS versions, prerequisites, and resource footprint.
+[Sekoia Endpoint Agent](/integration/categories/endpoint/sekoiaio.md): Overview of the agent, supported OS versions, prerequisites, and resource footprint.
 
 [Sekoia Endpoint Agent — built-in detection rules](/integration/categories/endpoint/sekoia_endpoint_agent_rules_reference.md): Reference for all built-in detection rules that match this intake.
 
