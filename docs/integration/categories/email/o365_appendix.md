@@ -18,7 +18,7 @@ These changes have to be made from the Azure web portal ([https://portal.azure.c
 
 ### A. Event Hubs
 
-As a prerequisite you need an `Event Hub` (e.g. company-eventhub) and to choose an existing `resourceGroup` or create a new one (e.g. company-resource-group).
+As a prerequisite you need an `Event Hubs namespace` (e.g. company-eventhub) and to choose an existing `resourceGroup` or create a new one (e.g. company-resource-group).
 You also need your `Subscription ID` if you don't have a default one.
 
 Navigate to: `Home > Cost Management + Billing > Subscriptions`. From there, copy the relevant `Subscription ID` that will be used in the command line (e.g. uuid).
