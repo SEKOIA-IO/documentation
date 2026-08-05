@@ -134,7 +134,7 @@ Cisco Secure Access can export your logs either to a Cisco-managed Amazon S3 buc
         !!! Important
             Keep in mind that you have to create the SQS queue in the same region as the S3 bucket you want to watch.
 
-    **Set up AWS authentication**
+    **AWS Authentication Setup**
 
     Sekoia.io supports two authentication methods to access your AWS resources. Choose the one that best fits your security requirements:
 
