@@ -276,8 +276,8 @@ Cisco Secure Access can export your logs either to a Cisco-managed Amazon S3 buc
         In the Sekoia.io connector configuration, set the following fields:
 
         - **AWS Region** (`aws_region_name`): the AWS region where your resources are deployed (e.g. `eu-west-1`)
-        - **Access Key** (`aws_access_key`): the access key ID of your IAM user
-        - **Secret Access Key** (`aws_secret_access_key`): the secret access key of your IAM user
+        - **AWS Access Key** (`aws_access_key`): the access key ID of your IAM user
+        - **AWS Secret Access Key** (`aws_secret_access_key`): the secret access key of your IAM user
 
         Leave the **AWS Role ARN** field empty — it is not used with this method.
 
