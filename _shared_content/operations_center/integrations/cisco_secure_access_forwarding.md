@@ -229,7 +229,7 @@ Cisco Secure Access can export your logs either to a Cisco-managed Amazon S3 buc
         - **AWS Region** (`aws_region_name`): the AWS region where your resources are deployed (e.g. `eu-west-1`)
         - **AWS Role ARN** (`aws_role_arn`): the ARN of the role you created above
 
-        Leave the **Access Key** and **Secret Access Key** fields empty — they are not used with this method.
+        Leave the **AWS Access Key** and **AWS Secret Access Key** fields empty — they are not used with this method.
 
     === "Static Access Keys"
 
