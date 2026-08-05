@@ -233,7 +233,7 @@ Cisco Secure Access can export your logs either to a Cisco-managed Amazon S3 buc
 
     === "Static AWS Access Keys"
 
-        This method authenticates using a dedicated IAM user with a static access key and secret access key stored in Sekoia.io.
+        This method authenticates using a dedicated IAM user with a static AWS access key and AWS secret access key stored in Sekoia.io.
 
         **Step 1 — Create a dedicated IAM user**
 
