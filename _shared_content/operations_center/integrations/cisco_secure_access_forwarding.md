@@ -237,7 +237,7 @@ Cisco Secure Access can export your logs either to a Cisco-managed Amazon S3 buc
 
         **Step 1 — Create a dedicated IAM user**
 
-        Create a dedicated IAM user in the [IAM console](https://console.aws.amazon.com/iam/) and generate programmatic access credentials (access key ID and secret access key) for that user.
+        Create a dedicated IAM user in the [IAM console](https://console.aws.amazon.com/iam/) and generate programmatic access credentials (AWS access key ID and AWS secret access key) for that user.
 
         **Step 2 — Attach a resource-based policy to your SQS queue and S3 bucket**
 
