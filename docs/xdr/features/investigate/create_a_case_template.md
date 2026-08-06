@@ -12,7 +12,7 @@ You need access to **Settings** to create and manage case templates. Contact you
 2. Under **Configuration**, select **Case Templates**.
 3. Select **New case template**.
 
-> 📸 [SCREENSHOT SUGGESTION: The Case Templates list page showing the "New case template" button in the top-right corner and the list of existing templates. | ALT TEXT: Case templates list page with a "New case template" button.]
+![Case templates list page with a "New case template" button](/assets/operation_center/cases/case-templates.png){: style="max-width:100%"}
 
 4. In the **Template name** field, enter a clear, descriptive name for the template (for example, `Standard phishing investigation`).
 5. In the **Description** field, enter a short explanation of when to use this template. A good description helps analysts choose the right template and allows AI to automatically match it with relevant cases.
@@ -23,9 +23,9 @@ You need access to **Settings** to create and manage case templates. Contact you
 
 7. Under **Tasks**, select **+ Add a task** to add investigation steps. For each task, enter a name. Optionally, add a description to provide guidance for the analyst.
 8. Under **Notebook template**, select **Choose notebook templates** and pick the investigation notebook to attach.
-9. Select **Save** (or the equivalent confirmation button) to create the template.
+9. Select **Save** to create the template.
 
-> 📸 [SCREENSHOT SUGGESTION: The "Create a case template" panel showing the Template name, Description, Custom fields, Tasks, and Notebook template fields. | ALT TEXT: Create a case template side panel with fields for name, description, custom fields, tasks, and notebook template.]
+![Create a case template](/assets/operation_center/cases/create-case-template.png){: style="max-width:100%"}
 
 ## Edit, duplicate, or delete a template
 

@@ -31,7 +31,7 @@ You can apply a template in two ways:
 
 Applying a second template to a case that already has one does not replace the existing structure. Templates stack additively:
 
-- **Custom fields:** fields from the new template are added to the case. If a field already exists and contains a value, that value is preserved.
+- **Custom fields:** fields from the new template are added to the case. If a field is already on the case with a value, that value is preserved. If the field is empty, the template's value fills it.
 - **Tasks:** tasks from the new template are appended to the existing task list.
 - **Notebook template:** the new notebook template is added alongside any existing one.
 
