@@ -10,32 +10,38 @@ Once your pull request is created, a Sekoia.io reviewer will take responsibility
 
 ## Test locally
 
-### Back
+### Set up
 
-This project is managed by `uv` that should be installed first before you can test locally the doc. Please refer to the [“Installing uv”](https://docs.astral.sh/uv/getting-started/installation/) documentation to install this tool.
+This project is managed by [mise-en-place](https://mise.jdx.dev/). Please refer to the [Getting Started](https://mise.jdx.dev/getting-started.html) to install this tool.
 
-The service relies on the [MkDocs](https://www.mkdocs.org/) Python framework helped by [MkDocs-Material](https://squidfunk.github.io/mkdocs-material/). To serve the documentation on the port `8000` of your computer, you should create a Python virtual environment, install the few requirements detailed in `pyproject.toml` and trigger the execution of the MkDocs server:
+After having installed mise-en-place, set up the project:
 
 ```shell
-$ uv run mkdocs serve --strict
+$ mise run install
+```
+
+### Back
+
+The service relies on the [MkDocs](https://www.mkdocs.org/) Python framework helped by [MkDocs-Material](https://squidfunk.github.io/mkdocs-material/). To serve the documentation on the port `8000` of your computer, you should trigger the execution of the MkDocs server:
+
+```shell
+$ mise run doc:serve
 ```
 
 ### Front
 
-The front end is placed in `./lib/openapi-viewer`. You need node and yarn installed.
-To serve the doc locally, you need to load the back end service upper.
+The front end is placed in `./lib/openapi-viewer`. To serve the doc locally, you need to load the back end service upper.
 
-Install yarn
+Start the back:
 
 ```shell
-$ npm install yarn -g
+$ mise run doc:serve
 ```
 
-Launch the front
+In another shell, Launch the front
 
 ```shell
-$ yarn install
-$ yarn start
+$ mise run openapi:dev
 ```
 
 Go to http://127.0.0.1:8080/developer/api/
