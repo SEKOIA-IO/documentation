@@ -4,12 +4,7 @@ Sekoia licenses include a monthly data volume allowance per defended asset. Unde
 
 ## How the volume allowance works
 
-Each license tier defines a maximum monthly ingestion volume, calculated per defended asset:
-
-| License tier | Allowance |
-|---|---|
-| Core | 3 GB per asset per month |
-| Prime | 5 GB per asset per month |
+Your license define a maximum monthly ingestion volume.
 
 **Defended asset** means the higher of (users or workstations) plus servers in the monitored information system:
 
