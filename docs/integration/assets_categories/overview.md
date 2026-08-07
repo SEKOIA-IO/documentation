@@ -12,6 +12,8 @@ The Asset Categories section is organized into several sub-categories, each repr
 
 - **Vulnerability**: Asset connectors for vulnerability management and exposure platforms. This includes:
 
+- **Software**: Asset connectors for software inventory management, providing visibility into applications installed across your endpoints. This includes:
+
 Each category contains detailed pages for individual asset connectors, including configuration steps, required permissions, and integration guides.
 
 ## What are Asset Connectors?
