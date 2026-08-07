@@ -1,4 +1,4 @@
-Rules catalog includes **1076 built-in detection rules** ([_last update on 2026-07-21_](rules_changelog.md)).
+Rules catalog includes **1076 built-in detection rules** ([_last update on 2026-08-07_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Identity Information**
 
@@ -2944,6 +2944,7 @@ Rules catalog includes **1076 built-in detection rules** ([_last update on 2026-
     
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
         - 02/02/2026 - minor - Update rule type to integration
+        - 24/07/2026 - minor - Update rule similarity to threatId.
             
 ??? abstract "SentinelOne EDR Threat Detected (Suspicious)"
     
@@ -2955,6 +2956,7 @@ Rules catalog includes **1076 built-in detection rules** ([_last update on 2026-
     
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
         - 02/02/2026 - minor - Update rule type to integration
+        - 24/07/2026 - minor - Update rule similarity to threatId.
             
 ??? abstract "SentinelOne EDR Threat Mitigation Report Kill Success"
     
@@ -4647,6 +4649,7 @@ Rules catalog includes **1076 built-in detection rules** ([_last update on 2026-
     
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
         - 02/02/2026 - minor - Update rule type to integration
+        - 24/07/2026 - minor - Update rule similarity to threatId.
             
 ??? abstract "SentinelOne EDR Threat Detected (Suspicious)"
     
@@ -4658,6 +4661,7 @@ Rules catalog includes **1076 built-in detection rules** ([_last update on 2026-
     
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
         - 02/02/2026 - minor - Update rule type to integration
+        - 24/07/2026 - minor - Update rule similarity to threatId.
             
 ??? abstract "SentinelOne EDR Threat Mitigation Report Kill Success"
     
@@ -5604,6 +5608,7 @@ Rules catalog includes **1076 built-in detection rules** ([_last update on 2026-
     
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
         - 02/02/2026 - minor - Update rule type to integration
+        - 24/07/2026 - minor - Update rule similarity to threatId.
             
 ??? abstract "SentinelOne EDR Threat Detected (Suspicious)"
     
@@ -5615,6 +5620,7 @@ Rules catalog includes **1076 built-in detection rules** ([_last update on 2026-
     
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
         - 02/02/2026 - minor - Update rule type to integration
+        - 24/07/2026 - minor - Update rule similarity to threatId.
             
 ??? abstract "SentinelOne EDR Threat Mitigation Report Kill Success"
     
