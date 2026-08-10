@@ -389,9 +389,9 @@ nav:
       - Sekoia Endpoint Agent:
         - Overview: integration/categories/endpoint/sekoiaio.md
         - Install: integration/categories/endpoint/install_sekoia_endpoint_agent.md
+        - Deploy at scale: integration/categories/endpoint/deploy_sekoia_endpoint_agent_enterprise.md
         - Configure: integration/categories/endpoint/configure_sekoia_endpoint_agent.md
         - Update and uninstall: integration/categories/endpoint/update_uninstall_sekoia_endpoint_agent.md
-        - Reduce event volume: integration/categories/endpoint/reduce_event_volume_endpoint_agent.md
         - Troubleshoot: integration/categories/endpoint/troubleshoot_sekoia_endpoint_agent.md
         - Events and fields reference: integration/categories/endpoint/sekoia_endpoint_agent_events_reference.md
         - Built-in detection rules: integration/categories/endpoint/sekoia_endpoint_agent_rules_reference.md
