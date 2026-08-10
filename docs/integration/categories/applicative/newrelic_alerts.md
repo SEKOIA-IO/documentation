@@ -40,7 +40,7 @@ Teams use New Relic to optimize performance, reliability, and user experience ac
 
     https://app.usa1.sekoia.io/api/v1/intake-http
 
-    You can find your region’s domain here: [https://docs.sekoia.io/getting_started/regions/](https://docs.sekoia.io/getting_started/regions/)
+    You can find your region’s domain here: [https://docs.sekoia.com/getting_started/regions/](https://docs.sekoia.com/getting_started/regions/)
 
 - Select `Basic authorization` as authorization method
 - Type any username (NewRelic requires a non-empty username to validate the form)

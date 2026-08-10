@@ -25,7 +25,7 @@
             "type": {
               "type": "string",
               "enum": ["trigger", "action", "operator"],
-              "description": "Type of the node, see https://docs.sekoia.io/xdr/features/automate/"
+              "description": "Type of the node, see https://docs.sekoia.com/xdr/features/automate/"
             },
             "icon": {
               "type": "string",

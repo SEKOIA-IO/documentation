@@ -1,28 +1,57 @@
-Changelog _last update on 2026-06-24_
+Changelog _last update on 2026-08-07_
 
 ## Changelog
 
-### Microsoft Defender XDR Alert
-  - 03/06/2026 - major - Added a new condition to match only on alerts to avoid false positives.
-  - 13/09/2024 - major - Update service name value following Microsoft change
+### SentinelOne EDR Threat Detected (Malicious)
+  - 24/07/2026 - minor - Update rule similarity to threatId.
+  - 02/02/2026 - minor - Update rule type to integration
+  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+    
+### SentinelOne EDR Threat Detected (Suspicious)
+  - 24/07/2026 - minor - Update rule similarity to threatId.
+  - 02/02/2026 - minor - Update rule type to integration
+  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+    
+### Netskope DLP Alert
+  - 29/06/2026 - minor - Update rule similarity
+  - 27/02/2026 - minor - Update rule type to integration
+  - 28/03/2024 - minor - Rule effort was updated to master
     
 ### Microsoft Defender XDR Endpoint Alert
-  - 03/06/2026 - major - Added a new condition to match only on alerts to avoid false positives.
-    
-### Microsoft Defender XDR Entra ID Protection Alert
-  - 03/06/2026 - major - Added a new condition to match only on alerts to avoid false positives.
-  - 12/11/2025 - minor - Update rule type to integration
-    
-### Microsoft Defender XDR Office 365 Alert
   - 03/06/2026 - major - Added a new condition to match only on alerts to avoid false positives.
     
 ### Microsoft Defender XDR Data Loss Prevention Alert
   - 03/06/2026 - major - Added a new condition to match only on alerts to avoid false positives.
   - 12/11/2025 - minor - Update rule type to integration
     
+### Microsoft Defender XDR Alert
+  - 03/06/2026 - major - Added a new condition to match only on alerts to avoid false positives.
+  - 13/09/2024 - major - Update service name value following Microsoft change
+    
+### Microsoft Defender XDR Office 365 Alert
+  - 03/06/2026 - major - Added a new condition to match only on alerts to avoid false positives.
+    
 ### Microsoft Defender XDR Cloud App Security Alert
   - 03/06/2026 - major - Added a new condition to match only on alerts to avoid false positives.
   - 13/09/2024 - major - Update service name value following Microsoft change
+    
+### Microsoft Defender XDR Entra ID Protection Alert
+  - 03/06/2026 - major - Added a new condition to match only on alerts to avoid false positives.
+  - 12/11/2025 - minor - Update rule type to integration
+    
+### Proofpoint TAP Email Classified As Malware But Allowed
+  - 01/06/2026 - major - Adding a new selection for "click" events as they do not have a threat score. Effort level adapted as well since this is now an integration rule.
+    
+### Proofpoint TAP Email Classified As Spam But Allowed
+  - 01/06/2026 - major - Adding a new selection for "click" events as they do not have a threat score. Effort level adapted as well since this is now an integration rule.
+    
+### Proofpoint TAP Email Classified As Phishing But Allowed
+  - 01/06/2026 - major - Adding a new selection for "click" events as they do not have a threat score. Effort level adapted as well since this is now an integration rule.
+    
+### User Added to Local Administrators
+  - 01/06/2026 - major - selection improvements to better align with the detection objective
+  - 04/04/2024 - major - Rule's pattern field changed
+  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
     
 ### Multiple Authentication On Microsoft 365 (Office 365) Portal From Two IP Addresses
   - 01/06/2026 - minor - Adding more filter and review group-by clause to reduce false positives
@@ -40,20 +69,6 @@ Changelog _last update on 2026-06-24_
   - 16/08/2024 - minor - The error code 50078 has been excluded as it is not a specific error code related to a login failure that we want to detect and caused several false positives.
   - 23/03/2023 - minor - The error code 50076 has been excluded as it is not a specific error code related to a login failure that we want to detect and caused several false positives.
     
-### Proofpoint TAP Email Classified As Phishing But Allowed
-  - 01/06/2026 - major - Adding a new selection for "click" events as they do not have a threat score. Effort level adapted as well since this is now an integration rule.
-    
-### Proofpoint TAP Email Classified As Spam But Allowed
-  - 01/06/2026 - major - Adding a new selection for "click" events as they do not have a threat score. Effort level adapted as well since this is now an integration rule.
-    
-### Proofpoint TAP Email Classified As Malware But Allowed
-  - 01/06/2026 - major - Adding a new selection for "click" events as they do not have a threat score. Effort level adapted as well since this is now an integration rule.
-    
-### User Added to Local Administrators
-  - 01/06/2026 - major - selection improvements to better align with the detection objective
-  - 04/04/2024 - major - Rule's pattern field changed
-  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
-    
 ### Powershell Web Request
   - 13/05/2026 - minor - remove deprecated value in filter
   - 23/06/2025 - minor - improve filter
@@ -67,17 +82,19 @@ Changelog _last update on 2026-06-24_
   - 21/06/2024 - major - Update detection pattern for ECS fields/value compliance
   - 16/05/2024 - minor - add pattern to extend and improve detection
     
+### Broadcom/Symantec Endpoint Security Event Cleaned
+  - 18/03/2026 - minor - Update rule type to integration
+    
+### Broadcom/Symantec Endpoint Security Event Terminate
+  - 18/03/2026 - minor - Update rule type to integration
+    
 ### Sophos EDR Application Detected
   - 18/03/2026 - minor - Update rule type to integration
     
-### WithSecure Elements Warning Severity
-  - 18/03/2026 - minor - Update rule type to integration
-  - 07/04/2025 - minor - Similarity strategy changed to avoid too much grouping
-    
-### Stormshield Ses Critical Not Block
+### Broadcom/Symantec Endpoint Security Event Blocked
   - 18/03/2026 - minor - Update rule type to integration
     
-### Sophos EDR CorePUA Clean
+### Broadcom/Symantec Endpoint Security Event Quarantined
   - 18/03/2026 - minor - Update rule type to integration
     
 ### Stormshield Ses Critical Block
@@ -89,29 +106,51 @@ Changelog _last update on 2026-06-24_
 ### Bitdefender GravityZone Endpoint Detection
   - 18/03/2026 - minor - Update rule type to integration
     
-### Broadcom/Symantec Endpoint Security Event Cleaned
+### Stormshield Ses Critical Not Block
   - 18/03/2026 - minor - Update rule type to integration
+    
+### Sophos EDR CorePUA Clean
+  - 18/03/2026 - minor - Update rule type to integration
+    
+### WithSecure Elements Warning Severity
+  - 18/03/2026 - minor - Update rule type to integration
+  - 07/04/2025 - minor - Similarity strategy changed to avoid too much grouping
     
 ### Sophos EDR CorePUA Detection
-  - 18/03/2026 - minor - Update rule type to integration
-    
-### Broadcom/Symantec Endpoint Security Event Quarantined
-  - 18/03/2026 - minor - Update rule type to integration
-    
-### Broadcom/Symantec Endpoint Security Event Terminate
   - 18/03/2026 - minor - Update rule type to integration
     
 ### Sophos EDR Application Blocked
   - 18/03/2026 - minor - Update rule type to integration
     
-### Broadcom/Symantec Endpoint Security Event Blocked
-  - 18/03/2026 - minor - Update rule type to integration
+### HarfangLab EDR High Threat
+  - 12/03/2026 - minor - Update rule type to integration
+  - 16/01/2025 - minor - Adding format field to improve rules mapping
+  - 23/12/2024 - minor - Change alert severity
+    
+### HarfangLab EDR Medium Level Rule Detection
+  - 12/03/2026 - minor - Update rule type to integration
+  - 16/01/2025 - minor - Adding format field to improve rules mapping
+  - 23/05/2024 - minor - Added filter to exclude threat dataset
     
 ### HarfangLab EDR Low Threat
   - 12/03/2026 - minor - Update rule type to integration
   - 16/01/2025 - minor - Adding format field to improve rules mapping
     
-### HarfangLab EDR Low Level Rule Detection
+### HarfangLab EDR Medium Threat
+  - 12/03/2026 - minor - Update rule type to integration
+  - 16/01/2025 - minor - Adding format field to improve rules mapping
+    
+### HarfangLab EDR Suspicious Process Behavior Has Been Detected
+  - 12/03/2026 - minor - Update rule type to integration
+  - 16/01/2025 - minor - Adding format field to improve rules mapping
+    
+### HarfangLab EDR Process Execution Blocked (HL-AI engine)
+  - 12/03/2026 - minor - Update rule type to integration
+  - 16/01/2025 - minor - Adding format field to improve rules mapping
+  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+  - 10/01/2024 - major - Account for all blocks instead of only "Startup blocked". Rule name explicitly mentions HL-AI engine.
+    
+### HarfangLab EDR Critical Level Rule Detection
   - 12/03/2026 - minor - Update rule type to integration
   - 16/01/2025 - minor - Adding format field to improve rules mapping
   - 23/05/2024 - minor - Added filter to exclude threat dataset
@@ -121,65 +160,68 @@ Changelog _last update on 2026-06-24_
   - 16/01/2025 - minor - Adding format field to improve rules mapping
   - 23/05/2024 - minor - Added filter to exclude threat dataset
     
-### HarfangLab EDR Suspicious Process Behavior Has Been Detected
-  - 12/03/2026 - minor - Update rule type to integration
-  - 16/01/2025 - minor - Adding format field to improve rules mapping
-    
-### HarfangLab EDR Critical Level Rule Detection
-  - 12/03/2026 - minor - Update rule type to integration
-  - 16/01/2025 - minor - Adding format field to improve rules mapping
-  - 23/05/2024 - minor - Added filter to exclude threat dataset
-    
-### HarfangLab EDR Medium Level Rule Detection
-  - 12/03/2026 - minor - Update rule type to integration
-  - 16/01/2025 - minor - Adding format field to improve rules mapping
-  - 23/05/2024 - minor - Added filter to exclude threat dataset
-    
-### HarfangLab EDR Process Execution Blocked (HL-AI engine)
-  - 12/03/2026 - minor - Update rule type to integration
-  - 16/01/2025 - minor - Adding format field to improve rules mapping
-  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
-  - 10/01/2024 - major - Account for all blocks instead of only "Startup blocked". Rule name explicitly mentions HL-AI engine.
-    
-### HarfangLab EDR High Threat
+### HarfangLab EDR Critical Threat
   - 12/03/2026 - minor - Update rule type to integration
   - 16/01/2025 - minor - Adding format field to improve rules mapping
   - 23/12/2024 - minor - Change alert severity
     
-### HarfangLab EDR Medium Threat
+### HarfangLab EDR Low Level Rule Detection
   - 12/03/2026 - minor - Update rule type to integration
   - 16/01/2025 - minor - Adding format field to improve rules mapping
+  - 23/05/2024 - minor - Added filter to exclude threat dataset
     
 ### HarfangLab EDR Hlai Engine Detection
   - 12/03/2026 - minor - Update rule type to integration
   - 16/01/2025 - minor - Adding format field to improve rules mapping
   - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
     
-### HarfangLab EDR Critical Threat
-  - 12/03/2026 - minor - Update rule type to integration
-  - 16/01/2025 - minor - Adding format field to improve rules mapping
-  - 23/12/2024 - minor - Change alert severity
+### Gatewatcher AionIQ V103 Sigflow Alert
+  - 05/03/2026 - minor - Update rule type to integration
+    
+### Gatewatcher AionIQ V103 Malicious Powershell Detect
+  - 05/03/2026 - minor - Update rule type to integration
+    
+### Gatewatcher AionIQ V103 Active CTI
+  - 05/03/2026 - minor - Update rule type to integration
+    
+### Gatewatcher AionIQ V103 Beacon Detect
+  - 05/03/2026 - minor - Update rule type to integration
     
 ### Daspren Parad Malicious Behavior
   - 05/03/2026 - minor - Update rule type to integration
     
-### Gatewatcher AionIQ V103 Dga Detect
-  - 05/03/2026 - minor - Update rule type to integration
-    
-### Claroty xDome Network Threat Detection Alert
-  - 05/03/2026 - minor - Update rule type to integration
-    
-### Suricata Attempted Administrator Privilege Gain High Severity Alert
-  - 05/03/2026 - minor - Update rule type to integration
-    
-### Gatewatcher AionIQ V103 Network Behavior Analytics
+### Gatewatcher AionIQ Malware Alert
   - 05/03/2026 - minor - Update rule type to integration
     
 ### Gatewatcher AionIQ V103 Retrohunt
   - 05/03/2026 - minor - Update rule type to integration
   - 30/06/2025 - minor - Changing similarity on threat name.
     
-### Gatewatcher AionIQ Malware Alert
+### Suricata Web Application Attack High Severity Alert
+  - 05/03/2026 - minor - Update rule type to integration
+    
+### Datadome Protection Intrusion Detection
+  - 05/03/2026 - minor - Update rule type to integration
+    
+### Claroty xDome Network Threat Detection Alert
+  - 05/03/2026 - minor - Update rule type to integration
+    
+### Gatewatcher AionIQ V103 Network Behavior Analytics
+  - 05/03/2026 - minor - Update rule type to integration
+    
+### Gatewatcher AionIQ V103 Dga Detect
+  - 05/03/2026 - minor - Update rule type to integration
+    
+### Suricata Exploit Kit Activity Detected High Severity Alert
+  - 05/03/2026 - minor - Update rule type to integration
+    
+### Gatewatcher AionIQ V103 Shellcode Detect
+  - 05/03/2026 - minor - Update rule type to integration
+    
+### Darktrace Threat Visualizer Threat Critical Alert
+  - 05/03/2026 - minor - Update rule type to integration
+    
+### Gatewatcher AionIQ Network Alert
   - 05/03/2026 - minor - Update rule type to integration
     
 ### Gatewatcher AionIQ V103 Malcore
@@ -187,48 +229,22 @@ Changelog _last update on 2026-06-24_
   - 27/01/2025 - minor - Changing field and adding filter to reduce false positives.
   - 24/01/2025 - minor - Adding filter to reduce false positives.
     
-### Suricata Exploit Kit Activity Detected High Severity Alert
-  - 05/03/2026 - minor - Update rule type to integration
-    
-### Gatewatcher AionIQ V103 Malicious Powershell Detect
-  - 05/03/2026 - minor - Update rule type to integration
-    
-### Gatewatcher AionIQ V103 Beacon Detect
-  - 05/03/2026 - minor - Update rule type to integration
-    
-### Darktrace Threat Visualizer Threat Suspicious Alert
-  - 05/03/2026 - minor - Update rule type to integration
-    
-### Gatewatcher AionIQ V103 Shellcode Detect
-  - 05/03/2026 - minor - Update rule type to integration
-    
-### Alert High Severity Sesame it Jizo NDR
-  - 05/03/2026 - minor - Update rule type to integration
-    
-### Gatewatcher AionIQ Network Alert
-  - 05/03/2026 - minor - Update rule type to integration
-    
-### Datadome Protection Intrusion Detection
-  - 05/03/2026 - minor - Update rule type to integration
-    
-### Suricata Web Application Attack High Severity Alert
-  - 05/03/2026 - minor - Update rule type to integration
-    
-### Gatewatcher AionIQ V103 Active CTI
-  - 05/03/2026 - minor - Update rule type to integration
-    
-### Gatewatcher AionIQ V103 Sigflow Alert
+### Suricata Attempted Administrator Privilege Gain High Severity Alert
   - 05/03/2026 - minor - Update rule type to integration
     
 ### Gatewatcher AionIQ V103 Ransomware Detect
   - 05/03/2026 - minor - Update rule type to integration
     
-### Darktrace Threat Visualizer Threat Critical Alert
+### Alert High Severity Sesame it Jizo NDR
   - 05/03/2026 - minor - Update rule type to integration
     
-### WAF Block Rule
-  - 04/03/2026 - major - Removing intakes from the rule to make it more generic and match all WAF products. The sources and description fields were updated accordingly.
-  - 15/11/2023 - minor - Adding support for Ubika
+### Darktrace Threat Visualizer Threat Suspicious Alert
+  - 05/03/2026 - minor - Update rule type to integration
+    
+### Palo Alto Cortex XDR (EDR) Alert Not Blocked (High Severity)
+  - 04/03/2026 - minor - Similarity strategy updated to caseID
+  - 25/02/2026 - minor - Update rule type to integration
+  - 10/03/2025 - minor - Update severity to match the severity level from the editor
     
 ### Palo Alto Cortex XDR (EDR) Alert Not Blocked (Medium Severity)
   - 04/03/2026 - minor - Similarity strategy updated to caseID
@@ -240,54 +256,32 @@ Changelog _last update on 2026-06-24_
   - 25/02/2026 - minor - Update rule type to integration
   - 10/03/2025 - minor - Update severity to match the severity level from the editor
     
-### Palo Alto Cortex XDR (EDR) Alert Not Blocked (High Severity)
-  - 04/03/2026 - minor - Similarity strategy updated to caseID
-  - 25/02/2026 - minor - Update rule type to integration
-  - 10/03/2025 - minor - Update severity to match the severity level from the editor
-    
 ### SeEnableDelegationPrivilege Granted To User Or Machine In Active Directory
   - 04/03/2026 - minor - Fix small typo in rule name.
   - 04/04/2024 - major - Rule's pattern field changed
     
-### Tenable Identity Exposure / Alsid Critical Severity Alert
+### WAF Block Rule
+  - 04/03/2026 - major - Removing intakes from the rule to make it more generic and match all WAF products. The sources and description fields were updated accordingly.
+  - 15/11/2023 - minor - Adding support for Ubika
+    
+### WIZ Issues Critical Alert Raised
   - 27/02/2026 - minor - Update rule type to integration
-  - 20/01/2025 - minor - Removing event fields to use the smart description
     
 ### AWS GuardDuty Medium Severity Alert
   - 27/02/2026 - minor - Update rule type to integration
   - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+    
+### Netskope Alerts Compliance
+  - 27/02/2026 - minor - Update rule type to integration
+  - 28/03/2024 - minor - Rule effort was updated to master
+  - 29/01/2024 - minor - Rework detection pattern to focus on compliance issues
     
 ### Netskope Admin Audit High Severity
   - 27/02/2026 - minor - Update rule type to integration
   - 29/01/2025 - minor - Rework pattern for high severity events only and filter out authentication events.
   - 28/03/2024 - minor - Rule effort was updated to master
     
-### Netskope DLP Alert
-  - 27/02/2026 - minor - Update rule type to integration
-  - 28/03/2024 - minor - Rule effort was updated to master
-    
-### Varonis Data Security Intrusion Detection High Severity Alert
-  - 27/02/2026 - minor - Update rule type to integration
-    
-### Varonis Data Security Intrusion Detection Medium Severity Alert
-  - 27/02/2026 - minor - Update rule type to integration
-    
-### Lacework Cloud Security Critical Severity Alert
-  - 27/02/2026 - minor - Update rule type to integration
-    
-### Fastly Next-Gen WAF Audit Threat Alert
-  - 27/02/2026 - minor - Update rule type to integration
-    
-### WIZ Issues Critical Alert Raised
-  - 27/02/2026 - minor - Update rule type to integration
-    
 ### Netskope Malware Patient Zero Detected
-  - 27/02/2026 - minor - Update rule type to integration
-    
-### Lacework Cloud Security High Severity Alert
-  - 27/02/2026 - minor - Update rule type to integration
-    
-### Lacework Cloud Security Low Severity Alert
   - 27/02/2026 - minor - Update rule type to integration
     
 ### Varonis Data Security Email High Severity Alert
@@ -296,12 +290,45 @@ Changelog _last update on 2026-06-24_
 ### Netskope Malware Detected
   - 27/02/2026 - minor - Update rule type to integration
     
-### Netskope Alerts Compliance
+### Fastly Next-Gen WAF Audit Threat Alert
   - 27/02/2026 - minor - Update rule type to integration
-  - 28/03/2024 - minor - Rule effort was updated to master
-  - 29/01/2024 - minor - Rework detection pattern to focus on compliance issues
+    
+### Varonis Data Security Intrusion Detection Medium Severity Alert
+  - 27/02/2026 - minor - Update rule type to integration
+    
+### Lacework Cloud Security Critical Severity Alert
+  - 27/02/2026 - minor - Update rule type to integration
+    
+### Darktrace Threat Visualizer Model Breach Critical Activity
+  - 27/02/2026 - minor - Update rule type to integration
+  - 02/07/2025 - minor - Update similarity
+  - 12/11/2024 - minor - Update name, description, similarity and severity
+    
+### Darktrace Threat Visualizer Model Breach Suspicious Activity
+  - 27/02/2026 - minor - Update rule type to integration
+  - 02/07/2025 - minor - Update similarity
+  - 12/11/2024 - minor - Update name, description, similarity and severity
+    
+### Tenable Identity Exposure / Alsid Critical Severity Alert
+  - 27/02/2026 - minor - Update rule type to integration
+  - 20/01/2025 - minor - Removing event fields to use the smart description
+    
+### Lacework Cloud Security Low Severity Alert
+  - 27/02/2026 - minor - Update rule type to integration
+    
+### Varonis Data Security Intrusion Detection High Severity Alert
+  - 27/02/2026 - minor - Update rule type to integration
+    
+### Lacework Cloud Security Medium Severity Alert
+  - 27/02/2026 - minor - Update rule type to integration
+    
+### Lacework Cloud Security High Severity Alert
+  - 27/02/2026 - minor - Update rule type to integration
     
 ### AWS GuardDuty Low Severity Alert
+  - 27/02/2026 - minor - Update rule type to integration
+    
+### Varonis Data Security Intrusion Detection Low Severity Alert
   - 27/02/2026 - minor - Update rule type to integration
     
 ### Netskope Web Isolation On Suspicious Domain
@@ -311,61 +338,45 @@ Changelog _last update on 2026-06-24_
   - 27/02/2026 - minor - Update rule type to integration
   - 20/01/2025 - minor - Removing event fields to use the smart description
     
-### Lacework Cloud Security Medium Severity Alert
-  - 27/02/2026 - minor - Update rule type to integration
-    
 ### Varonis Data Security Email Medium Severity Alert
   - 27/02/2026 - minor - Update rule type to integration
     
-### Darktrace Threat Visualizer Model Breach Suspicious Activity
-  - 27/02/2026 - minor - Update rule type to integration
-  - 02/07/2025 - minor - Update similarity
-  - 12/11/2024 - minor - Update name, description, similarity and severity
-    
-### Varonis Data Security Intrusion Detection Low Severity Alert
-  - 27/02/2026 - minor - Update rule type to integration
-    
-### Darktrace Threat Visualizer Model Breach Critical Activity
-  - 27/02/2026 - minor - Update rule type to integration
-  - 02/07/2025 - minor - Update similarity
-  - 12/11/2024 - minor - Update name, description, similarity and severity
-    
 ### Trend Micro Apex One Data Loss Prevention Alert
-  - 25/02/2026 - minor - Update rule type to integration
-  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
-    
-### Trend Micro Vision One Workbench high Severity Alert
-  - 25/02/2026 - minor - Update rule type to integration
-    
-### Trend Micro Vision One Workbench Low Severity Alert
-  - 25/02/2026 - minor - Update rule type to integration
-    
-### TEHTRIS EDR Alert
-  - 25/02/2026 - minor - Update rule type to integration
-    
-### Cybereason EDR Alert
   - 25/02/2026 - minor - Update rule type to integration
   - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
     
 ### Trend Micro Cloud One Low Intrusion
   - 25/02/2026 - minor - Update rule type to integration
     
-### Trend Micro Vision One Workbench Medium Severity Alert
+### Trend Micro Apex One Malware Alert
   - 25/02/2026 - minor - Update rule type to integration
-    
-### Trend Micro Vision One Workbench Critical Severity Alert
-  - 25/02/2026 - minor - Update rule type to integration
-    
-### Trend Micro Cloud One Medium Intrusion
-  - 25/02/2026 - minor - Update rule type to integration
+  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
     
 ### Trend Micro Apex One Intrusion Detection Alert
   - 25/02/2026 - minor - Update rule type to integration
   - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
     
-### Trend Micro Apex One Malware Alert
+### Trend Micro Vision One Workbench Low Severity Alert
+  - 25/02/2026 - minor - Update rule type to integration
+    
+### Cybereason EDR Alert
   - 25/02/2026 - minor - Update rule type to integration
   - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+    
+### Trend Micro Cloud One Medium Intrusion
+  - 25/02/2026 - minor - Update rule type to integration
+    
+### Trend Micro Vision One Workbench Medium Severity Alert
+  - 25/02/2026 - minor - Update rule type to integration
+    
+### TEHTRIS EDR Alert
+  - 25/02/2026 - minor - Update rule type to integration
+    
+### Trend Micro Vision One Workbench high Severity Alert
+  - 25/02/2026 - minor - Update rule type to integration
+    
+### Trend Micro Vision One Workbench Critical Severity Alert
+  - 25/02/2026 - minor - Update rule type to integration
     
 ### Trend Micro Cloud One High Intrusion
   - 25/02/2026 - minor - Update rule type to integration
@@ -373,51 +384,13 @@ Changelog _last update on 2026-06-24_
 ### Antivirus Exploitation Framework Detection
   - 16/02/2026 - minor - Filtering out Event ID 1011 which caused false positives. The rule fired at the deletion of a quarantined file by Defender which was not the wanted behaviour.
     
-### CrowdStrike Falcon Intrusion Detection Critical Severity
-  - 10/02/2026 - minor - Update rule type to integration
-  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
-    
-### CrowdStrike Falcon Intrusion Detection High Severity EppDetection
-  - 10/02/2026 - minor - Update rule type to integration
-  - 02/10/2025 - minor - Alert severity updated to match Crowdstrike's values and sekoia rule CrowdStrike Falcon Intrusion Detection High Severity
-  - 05/08/2025 - minor - Alert severity updated to match Crowdstrike's values
-    
-### CrowdStrike Falcon Intrusion Detection Low Severity
-  - 10/02/2026 - minor - Update rule type to integration
-  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
-    
-### CrowdStrike Falcon Intrusion Detection Informational Severity
-  - 10/02/2026 - minor - Update rule type to integration
-  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
-    
-### CrowdStrike Falcon Identity Protection Detection Low Severity
-  - 10/02/2026 - minor - Update rule type to integration
-  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
-    
-### CrowdStrike Falcon Identity Protection Detection Informational Severity
-  - 10/02/2026 - minor - Update rule type to integration
-  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
-    
-### CrowdStrike Falcon Intrusion Detection Informational Severity EppDetection
-  - 10/02/2026 - minor - Update rule type to integration
-  - 05/08/2025 - minor - Alert severity updated to match Crowdstrike's values
-    
-### CrowdStrike Falcon Intrusion Detection Medium Severity
-  - 10/02/2026 - minor - Update rule type to integration
-  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
-    
-### CrowdStrike Falcon Identity Protection Detection Medium Severity
-  - 10/02/2026 - minor - Update rule type to integration
-  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
-    
-### CrowdStrike Falcon Intrusion Detection
-  - 10/02/2026 - minor - Update rule type to integration
-  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
-    
 ### CrowdStrike Falcon Mobile Detection High Severity
   - 10/02/2026 - minor - Update rule type to integration
     
-### CrowdStrike Falcon Intrusion Detection EppDetection
+### CrowdStrike Falcon Mobile Detection Informational Severity
+  - 10/02/2026 - minor - Update rule type to integration
+    
+### CrowdStrike Falcon Intrusion Detection Low Severity EppDetection
   - 10/02/2026 - minor - Update rule type to integration
   - 05/08/2025 - minor - Alert severity updated to match Crowdstrike's values
     
@@ -429,65 +402,78 @@ Changelog _last update on 2026-06-24_
   - 10/02/2026 - minor - Update rule type to integration
   - 05/08/2025 - minor - Alert severity updated to match Crowdstrike's values
     
-### CrowdStrike Falcon Mobile Detection Low Severity
+### CrowdStrike Falcon Intrusion Detection EppDetection
   - 10/02/2026 - minor - Update rule type to integration
+  - 05/08/2025 - minor - Alert severity updated to match Crowdstrike's values
+    
+### CrowdStrike Falcon Identity Protection Detection Low Severity
+  - 10/02/2026 - minor - Update rule type to integration
+  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+    
+### CrowdStrike Falcon Intrusion Detection Informational Severity EppDetection
+  - 10/02/2026 - minor - Update rule type to integration
+  - 05/08/2025 - minor - Alert severity updated to match Crowdstrike's values
+    
+### CrowdStrike Falcon Intrusion Detection
+  - 10/02/2026 - minor - Update rule type to integration
+  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+    
+### CrowdStrike Falcon Mobile Detection Critical Severity
+  - 10/02/2026 - minor - Update rule type to integration
+    
+### CrowdStrike Falcon Intrusion Detection Low Severity
+  - 10/02/2026 - minor - Update rule type to integration
+  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+    
+### CrowdStrike Falcon Intrusion Detection Medium Severity
+  - 10/02/2026 - minor - Update rule type to integration
+  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
     
 ### CrowdStrike Falcon Identity Protection Detection High Severity
   - 10/02/2026 - minor - Update rule type to integration
   - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
     
-### CrowdStrike Falcon Mobile Detection Informational Severity
+### CrowdStrike Falcon Intrusion Detection Critical Severity
   - 10/02/2026 - minor - Update rule type to integration
+  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
     
-### CrowdStrike Falcon Intrusion Detection Critical Severity EppDetection
+### CrowdStrike Falcon Identity Protection Detection Informational Severity
   - 10/02/2026 - minor - Update rule type to integration
+  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
     
-### CrowdStrike Falcon Mobile Detection Medium Severity
+### CrowdStrike Falcon Identity Protection Detection Medium Severity
   - 10/02/2026 - minor - Update rule type to integration
+  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
     
-### CrowdStrike Falcon Mobile Detection Critical Severity
+### CrowdStrike Falcon Intrusion Detection Informational Severity
   - 10/02/2026 - minor - Update rule type to integration
+  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
     
 ### CrowdStrike Falcon Identity Protection Detection Critical Severity
   - 10/02/2026 - minor - Update rule type to integration
   - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
     
-### CrowdStrike Falcon Intrusion Detection Low Severity EppDetection
+### CrowdStrike Falcon Intrusion Detection High Severity EppDetection
   - 10/02/2026 - minor - Update rule type to integration
+  - 02/10/2025 - minor - Alert severity updated to match Crowdstrike's values and sekoia rule CrowdStrike Falcon Intrusion Detection High Severity
   - 05/08/2025 - minor - Alert severity updated to match Crowdstrike's values
     
-### SentinelOne EDR Threat Mitigation Report Quarantine Success
-  - 02/02/2026 - minor - Update rule type to integration
-  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+### CrowdStrike Falcon Mobile Detection Low Severity
+  - 10/02/2026 - minor - Update rule type to integration
     
-### SentinelOne EDR Threat Detected (Malicious)
-  - 02/02/2026 - minor - Update rule type to integration
-  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+### CrowdStrike Falcon Mobile Detection Medium Severity
+  - 10/02/2026 - minor - Update rule type to integration
     
-### SentinelOne EDR User Logged In To The Management Console
-  - 02/02/2026 - minor - Update rule type to integration
-  - 24/03/2023 - minor - Adjusting displayed columns when the rule triggers an alert. Now timestamp and username will be displayed.
+### CrowdStrike Falcon Intrusion Detection Critical Severity EppDetection
+  - 10/02/2026 - minor - Update rule type to integration
     
-### SentinelOne EDR Threat Mitigation Report Kill Success
-  - 02/02/2026 - minor - Update rule type to integration
-  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+### Download Files From Non-Legitimate TLDs
+  - 02/02/2026 - minor - Improved selection to avoid false positives by forcing the destination.ip field.
+  - 06/10/2025 - minor - Improve filter to avoid false positives
+  - 05/08/2025 - minor - Improve filter to avoid false positives
+  - 28/07/2025 - major - Improve filter and similarity strategy.
     
-### SentinelOne EDR User Failed To Log In To The Management Console
-  - 02/02/2026 - minor - Update rule type to integration
-    
-### SentinelOne EDR Threat Mitigation Report Remediate Success
-  - 02/02/2026 - minor - Update rule type to integration
-  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
-    
-### SentinelOne EDR Malicious Threat Detected And Mitigated Preemptively
-  - 02/02/2026 - minor - Update rule type to integration
-  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
-    
-### SentinelOne EDR Threat Detected (Suspicious)
-  - 02/02/2026 - minor - Update rule type to integration
-  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
-    
-### SentinelOne EDR Custom Rule Alert
+### SentinelOne EDR Threat Mitigation Report Quarantine Failed
   - 02/02/2026 - minor - Update rule type to integration
   - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
     
@@ -499,42 +485,59 @@ Changelog _last update on 2026-06-24_
   - 02/02/2026 - minor - Update rule type to integration
   - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
     
-### SentinelOne EDR Suspicious Threat Not Mitigated (Medium Confidence)
+### SentinelOne EDR User Failed To Log In To The Management Console
   - 02/02/2026 - minor - Update rule type to integration
-  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
-    
-### SentinelOne EDR Threat Mitigation Report Quarantine Failed
-  - 02/02/2026 - minor - Update rule type to integration
-  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
     
 ### SentinelOne EDR Agent Disabled
   - 02/02/2026 - minor - Update rule type to integration
     
-### Download Files From Non-Legitimate TLDs
-  - 02/02/2026 - minor - Improved selection to avoid false positives by forcing the destination.ip field.
-  - 06/10/2025 - minor - Improve filter to avoid false positives
-  - 05/08/2025 - minor - Improve filter to avoid false positives
-  - 28/07/2025 - major - Improve filter and similarity strategy.
+### SentinelOne EDR Malicious Threat Detected And Mitigated Preemptively
+  - 02/02/2026 - minor - Update rule type to integration
+  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+    
+### SentinelOne EDR Threat Mitigation Report Remediate Success
+  - 02/02/2026 - minor - Update rule type to integration
+  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+    
+### SentinelOne EDR Custom Rule Alert
+  - 02/02/2026 - minor - Update rule type to integration
+  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+    
+### SentinelOne EDR Suspicious Threat Not Mitigated (Medium Confidence)
+  - 02/02/2026 - minor - Update rule type to integration
+  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+    
+### SentinelOne EDR Threat Mitigation Report Kill Success
+  - 02/02/2026 - minor - Update rule type to integration
+  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+    
+### SentinelOne EDR Threat Mitigation Report Quarantine Success
+  - 02/02/2026 - minor - Update rule type to integration
+  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+    
+### SentinelOne EDR User Logged In To The Management Console
+  - 02/02/2026 - minor - Update rule type to integration
+  - 24/03/2023 - minor - Adjusting displayed columns when the rule triggers an alert. Now timestamp and username will be displayed.
     
 ### Cybereason EDR Malware Detection
   - 30/01/2026 - minor - Updating similarity to use malop id.
   - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
-    
-### Suspicious desktop.ini Action
-  - 06/01/2026 - minor - Adding some filters
-  - 30/04/2024 - minor - Adding some filters
     
 ### Suspicious Download Links From Legitimate Services
   - 06/01/2026 - minor - Update filter to reduce false positives.
   - 15/10/2024 - minor - Adding filter to reduce false positives.
   - 13/06/2024 - minor - Adding similarity strategy and changing effort level.
     
-### Entra ID Sign-In Via Known AiTM Phishing Kit (Tycoon 2FA)
-  - 31/12/2025 - major - Change the similarity strategy to user.id instead of user.email.
-  - 01/10/2024 - major - Update the pattern following changes in the phishing kit.
+### Suspicious desktop.ini Action
+  - 06/01/2026 - minor - Adding some filters
+  - 30/04/2024 - minor - Adding some filters
     
 ### Microsoft 365 Email Forwarding To Privacy Email Address
   - 31/12/2025 - minor - Add a domain name to the pattern
+    
+### Entra ID Sign-In Via Known AiTM Phishing Kit (Tycoon 2FA)
+  - 31/12/2025 - major - Change the similarity strategy to user.id instead of user.email.
+  - 01/10/2024 - major - Update the pattern following changes in the phishing kit.
     
 ### Csrss Child Found
   - 23/12/2025 - minor - Rule was moved to advanced effort level considering the number of alerts and addtional filters were added.
@@ -544,42 +547,42 @@ Changelog _last update on 2026-06-24_
   - 18/12/2025 - major - Deleting elements to reduce false positives.
   - 20/06/2024 - minor - Adding new elements to increase detection.
     
-### Scheduled Task Creation By Non Privileged User
-  - 03/12/2025 - minor - Change rule effort level and update of rule name
-    
 ### Windows Suspicious Scheduled Task Creation
   - 03/12/2025 - major - Change rule effort level according to sigthings
   - 24/04/2025 - minor - Adding similarity strategy.
+    
+### Scheduled Task Creation By Non Privileged User
+  - 03/12/2025 - minor - Change rule effort level and update of rule name
     
 ### Vectra General Threat Detection
   - 12/11/2025 - minor - Update rule type to integration
   - 06/10/2025 - minor - Update sources link
     
-### Threat Detected By Hornetsecurity 365 Total Protection
-  - 12/11/2025 - minor - Update rule type to integration
-    
 ### Varonis Data Security Network Medium Severity Alert
-  - 12/11/2025 - minor - Update rule type to integration
-  - 06/10/2025 - minor - Update similarity strategy for more granularity
-    
-### Varonis Data Security Network High Severity Alert
   - 12/11/2025 - minor - Update rule type to integration
   - 06/10/2025 - minor - Update similarity strategy for more granularity
     
 ### Advanced Threat Detected By Hornetsecurity 365 Total Protection
   - 12/11/2025 - minor - Update rule type to integration
     
-### AWS GuardDuty High Severity Alert
+### Threat Detected By Hornetsecurity 365 Total Protection
   - 12/11/2025 - minor - Update rule type to integration
-  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+    
+### Spam Detected By Hornetsecurity 365 Total Protection
+  - 12/11/2025 - minor - Update rule type to integration
     
 ### Varonis Data Security Network Low Severity Alert
   - 12/11/2025 - minor - Update rule type to integration
   - 06/10/2025 - minor - Update similarity strategy for more granularity
   - 14/05/2025 - major - Fix pattern where severity level was missing
     
-### Spam Detected By Hornetsecurity 365 Total Protection
+### Varonis Data Security Network High Severity Alert
   - 12/11/2025 - minor - Update rule type to integration
+  - 06/10/2025 - minor - Update similarity strategy for more granularity
+    
+### AWS GuardDuty High Severity Alert
+  - 12/11/2025 - minor - Update rule type to integration
+  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
     
 ### Windows Suspicious Service Creation
   - 28/10/2025 - minor - improve detection by adding pattern
@@ -588,6 +591,10 @@ Changelog _last update on 2026-06-24_
   - 20/10/2025 - minor - Adding COM registering detection pattern and filtering some DLL to avoid false positives.
   - 21/09/2023 - minor - Extend to some usage without dll filename
     
+### Brute-Force On Fortinet Firewall Login
+  - 15/10/2025 - minor - Update pattern to match intake format change
+  - 20/01/2025 - minor - Update pattern to ECS field and add intake field format
+    
 ### Login Brute-Force On Fortinet Firewall From Internet
   - 15/10/2025 - minor - Update pattern to match intake format change
   - 03/02/2025 - minor - Update pattern to ECS field only and intake format
@@ -595,10 +602,6 @@ Changelog _last update on 2026-06-24_
 ### Fortigate Firewall Login In Failure
   - 15/10/2025 - minor - Update pattern to match intake format change
   - 20/01/2025 - minor - Update pattern to ECS field only
-    
-### Brute-Force On Fortinet Firewall Login
-  - 15/10/2025 - minor - Update pattern to match intake format change
-  - 20/01/2025 - minor - Update pattern to ECS field and add intake field format
     
 ### Microsoft Office Product Spawning Windows Shell
   - 10/10/2025 - minor - Adding parent process command line as a newly displayed field in the alert.
@@ -624,15 +627,15 @@ Changelog _last update on 2026-06-24_
 ### Okta User Logged In From Multiple Countries
   - 24/09/2025 - minor - Improving selection in order to reduce false positives
     
+### AdFind Usage
+  - 23/09/2025 - minor - Improving selection in order to reduce false positives.
+  - 12/10/2023 - minor - Slight change to a condition in order to reduce false positives.
+    
 ### Mimikatz LSASS Memory Access
   - 23/09/2025 - minor - Adding filters to avoid false positives.
   - 26/03/2024 - major - Rule's pattern field changed
   - 21/06/2023 - minor - Whitelisted lsm.exe that triggered too many false positives.
   - 06/04/2023 - minor - Whitelisted another SourceImage as it triggered too many false positives.
-    
-### AdFind Usage
-  - 23/09/2025 - minor - Improving selection in order to reduce false positives.
-  - 12/10/2023 - minor - Slight change to a condition in order to reduce false positives.
     
 ### Advanced IP Scanner
   - 18/09/2025 - minor - Similarity strategy updated.
@@ -669,38 +672,6 @@ Changelog _last update on 2026-06-24_
   - 18/08/2025 - major - Effort level moved to master. Pattern changed to enhance the detection scope. Filters were added to reduce false positives.
   - 11/01/2024 - minor - Adding filtering for some FPs
     
-### AWS CloudTrail EC2 DeleteKeyPair
-  - 14/08/2025 - minor - Similarity strategy modified to group alerts by user ID and instance ID
-    
-### AWS CloudTrail EC2 CreateKeyPair
-  - 14/08/2025 - minor - Similarity strategy modified to group alerts by user ID and instance ID.
-    
-### AWS CloudTrail EC2 Security Group Modified
-  - 14/08/2025 - minor - Similarity strategy modified to group alerts by user ID and instance ID
-    
-### AWS CloudTrail EC2 CreateVPC
-  - 14/08/2025 - minor - Similarity strategy modified to group alerts by user ID and instance ID
-    
-### AWS CloudTrail EC2 Instance Connect SendSerialConsoleSSHPublicKey
-  - 14/08/2025 - minor - Similarity strategy modified to group alerts by user ID and instance ID
-    
-### AWS CloudTrail EC2 Instance Connect SendSSHPublicKey
-  - 14/08/2025 - minor - Similarity strategy modified to group alerts by user ID and instance ID
-    
-### AWS CloudTrail EC2 VM Export Failure
-  - 14/08/2025 - minor - Similarity strategy modified to group alerts by user ID and instance ID
-    
-### AWS CloudTrail EC2 Enable Serial Console Access
-  - 14/08/2025 - minor - Similarity strategy modified to group alerts by user ID and instance ID
-    
-### AWS CloudTrail EC2 Startup Script Changed
-  - 14/08/2025 - minor - Similarity strategy modified to group alerts by user ID and instance ID
-    
-### Suspicious PowerShell Invocations - Generic
-  - 14/08/2025 - minor - Excluded new paths to reduce false positives.
-  - 13/03/2025 - major - Change effort and excluded some commonly observed false positives.
-  - 28/03/2023 - minor - Excluded some commonly observed false positives.
-    
 ### TOR Usage Generic Rule
   - 14/08/2025 - minor - Adding NTP filter to reduce false positives.
   - 02/08/2024 - minor - Small pattern to change to match only the real tags related to TOR.
@@ -714,16 +685,48 @@ Changelog _last update on 2026-06-24_
   - 30/08/2024 - minor - improve filter to avoid false positives
   - 27/07/2024 - major - review filter to avoid false positives
     
+### Suspicious PowerShell Invocations - Generic
+  - 14/08/2025 - minor - Excluded new paths to reduce false positives.
+  - 13/03/2025 - major - Change effort and excluded some commonly observed false positives.
+  - 28/03/2023 - minor - Excluded some commonly observed false positives.
+    
+### AWS CloudTrail EC2 Instance Connect SendSSHPublicKey
+  - 14/08/2025 - minor - Similarity strategy modified to group alerts by user ID and instance ID
+    
+### AWS CloudTrail EC2 Startup Script Changed
+  - 14/08/2025 - minor - Similarity strategy modified to group alerts by user ID and instance ID
+    
+### AWS CloudTrail EC2 VM Export Failure
+  - 14/08/2025 - minor - Similarity strategy modified to group alerts by user ID and instance ID
+    
+### AWS CloudTrail EC2 Security Group Modified
+  - 14/08/2025 - minor - Similarity strategy modified to group alerts by user ID and instance ID
+    
+### AWS CloudTrail EC2 CreateVPC
+  - 14/08/2025 - minor - Similarity strategy modified to group alerts by user ID and instance ID
+    
+### AWS CloudTrail EC2 Instance Connect SendSerialConsoleSSHPublicKey
+  - 14/08/2025 - minor - Similarity strategy modified to group alerts by user ID and instance ID
+    
+### AWS CloudTrail EC2 Enable Serial Console Access
+  - 14/08/2025 - minor - Similarity strategy modified to group alerts by user ID and instance ID
+    
+### AWS CloudTrail EC2 CreateKeyPair
+  - 14/08/2025 - minor - Similarity strategy modified to group alerts by user ID and instance ID.
+    
+### AWS CloudTrail EC2 DeleteKeyPair
+  - 14/08/2025 - minor - Similarity strategy modified to group alerts by user ID and instance ID
+    
+### Potential Azure AD Phishing Page (Adversary-in-the-Middle)
+  - 13/08/2025 - minor - Exclude additional legitimate domains and common benign positives.
+  - 02/08/2024 - minor - Exclude an additionnal legitimate domain.
+    
 ### Cobalt Strike Default Beacons Names
   - 13/08/2025 - minor - Added new filters to reduce false positives.
   - 20/09/2024 - minor - Added new filters to reduce false positives.
   - 27/05/2024 - minor - Added new filters to reduce false positives.
   - 21/11/2023 - minor - Added new filters to reduce false positives.
   - 08/11/2023 - minor - Added filter to reduce false positives
-    
-### Potential Azure AD Phishing Page (Adversary-in-the-Middle)
-  - 13/08/2025 - minor - Exclude additional legitimate domains and common benign positives.
-  - 02/08/2024 - minor - Exclude an additionnal legitimate domain.
     
 ### Suspicious Windows DNS Queries
   - 21/07/2025 - minor - Updating pattern with new field and new filter to avoid false positives.
@@ -772,11 +775,11 @@ Changelog _last update on 2026-06-24_
   - 22/04/2025 - minor - Added filter to reduce false positives and change effort level.
   - 15/01/2024 - minor - Added filter to reduce false positives.
     
-### Commonly Used Commands To Stop Services And Remove Backups
-  - 14/04/2025 - major - Reviewing pattern and condition to reduce false positives, adding similarity strategy and changing effort level.
-    
 ### Suspicious DLL Loading By Ordinal
   - 14/04/2025 - minor - Adding similarity.
+    
+### Commonly Used Commands To Stop Services And Remove Backups
+  - 14/04/2025 - major - Reviewing pattern and condition to reduce false positives, adding similarity strategy and changing effort level.
     
 ### Entra ID Password Compromised By Known Credential Testing Tool
   - 09/04/2025 - minor - Add more correlation IDs, change similarity strategy to user.id to workaround email capitalisation inconsistencies.
@@ -811,16 +814,16 @@ Changelog _last update on 2026-06-24_
   - 26/03/2025 - major - Change effort level and added filters.
   - 11/12/2024 - minor - Added a default similarity based on host name and user name to avoid too many alerts.
     
-### Successful Overpass The Hash Attempt
-  - 25/03/2025 - minor - Changing pattern, adding similarity and changing effort level.
-  - 26/03/2024 - major - Rule's pattern field changed
+### Discord Suspicious Download
+  - 25/03/2025 - major - Change the rule effort and similarity strategy.
+  - 05/08/2023 - minor - Added filters for commonly observed files extensions.
     
 ### Suspicious Windows Installer Execution
   - 25/03/2025 - major - Adding many filters and a similarity strategy. Effort was also updated to master.
     
-### Discord Suspicious Download
-  - 25/03/2025 - major - Change the rule effort and similarity strategy.
-  - 05/08/2023 - minor - Added filters for commonly observed files extensions.
+### Successful Overpass The Hash Attempt
+  - 25/03/2025 - minor - Changing pattern, adding similarity and changing effort level.
+  - 26/03/2024 - major - Rule's pattern field changed
     
 ### Write To File In Systemd
   - 24/03/2025 - major - Added filter to reduce false positives, change effort and add similarity strategy.
@@ -834,17 +837,14 @@ Changelog _last update on 2026-06-24_
 ### Network Connection Via Certutil
   - 21/03/2025 - major - Review rule to reduce false positives and increases detection scope.
     
-### Microsoft Entra ID (Azure AD) Unfamiliar Features
-  - 20/03/2025 - major - Change effort level
-    
-### NetSh Used To Disable Windows Firewall
-  - 20/03/2025 - minor - Adding similarity and change effort level.
+### Powershell UploadString Function
+  - 20/03/2025 - major - Change effort level and add filter to reduce false positives
     
 ### Pandemic Windows Implant
   - 20/03/2025 - major - Rule's effort level has been changed to master, similarity and filter added.
     
-### Powershell UploadString Function
-  - 20/03/2025 - major - Change effort level and add filter to reduce false positives
+### NetSh Used To Disable Windows Firewall
+  - 20/03/2025 - minor - Adding similarity and change effort level.
     
 ### ISO LNK Infection Chain
   - 20/03/2025 - major - Change effort level
@@ -862,26 +862,29 @@ Changelog _last update on 2026-06-24_
   - 20/03/2025 - major - Effort level changed, similarity strategy added, and filters improved to reduce false positives.
   - 02/01/2024 - minor - Rule was improved to have broader detection and filters were added.
     
+### Microsoft Entra ID (Azure AD) Unfamiliar Features
+  - 20/03/2025 - major - Change effort level
+    
 ### Searchprotocolhost Child Found
   - 17/03/2025 - major - Rule changed to effort master, and filter added to reduce false positives.
-    
-### Microsoft Entra ID (Azure AD) Domain Trust Modification
-  - 14/03/2025 - minor - Rule's pattern update following o365 parser change
     
 ### Address Space Layout Randomization (ASLR) Alteration
   - 14/03/2025 - minor - Excluded some commonly observed false positives.
     
-### CMSTP UAC Bypass via COM Object Access
-  - 13/03/2025 - minor - Adding filters to reduce false positives and adding similarity.
-  - 28/05/2024 - minor - Add pattern to selection to improve coverage
+### Microsoft Entra ID (Azure AD) Domain Trust Modification
+  - 14/03/2025 - minor - Rule's pattern update following o365 parser change
+    
+### Powershell Winlogon Helper DLL
+  - 13/03/2025 - major - Adding new filter and similarity strategy to reduce false positives. Changing effort level.
+  - 04/04/2024 - major - Rule's pattern field changed
     
 ### TrustedInstaller Impersonation
   - 13/03/2025 - major - Adding filters to reduce false positives and adding similarity.
   - 05/08/2023 - major - Filters were added to reduce false positives and effort level was modified.
     
-### Powershell Winlogon Helper DLL
-  - 13/03/2025 - major - Adding new filter and similarity strategy to reduce false positives. Changing effort level.
-  - 04/04/2024 - major - Rule's pattern field changed
+### CMSTP UAC Bypass via COM Object Access
+  - 13/03/2025 - minor - Adding filters to reduce false positives and adding similarity.
+  - 28/05/2024 - minor - Add pattern to selection to improve coverage
     
 ### Okta Suspicious Use of a Session Cookie
   - 03/03/2025 - minor - Improve detection pattern group-by, value field and timespan, update rule name
@@ -893,8 +896,9 @@ Changelog _last update on 2026-06-24_
   - 13/02/2025 - minor - Adding new filters to reduce false positives.
   - 13/08/2024 - minor - Adding elements to filter to reduce false positives and changing effort level.
     
-### Login Brute-Force Successful On Jumpcloud Workstation
+### Login Brute-Force Successful Linux
   - 03/02/2025 - minor - Update pattern to ECS field only
+  - 06/10/2023 - minor - renaming and tunn filters to limit False Positive
     
 ### Login Brute-Force Successful On Jumpcloud Portal
   - 03/02/2025 - minor - Update pattern to ECS field only
@@ -902,9 +906,8 @@ Changelog _last update on 2026-06-24_
 ### Correlation Jumpcloud User Logged In From Multiple Countries
   - 03/02/2025 - minor - Update pattern to ECS field only
     
-### Login Brute-Force Successful Linux
+### Login Brute-Force Successful On Jumpcloud Workstation
   - 03/02/2025 - minor - Update pattern to ECS field only
-  - 06/10/2023 - minor - renaming and tunn filters to limit False Positive
     
 ### PowerShell Malicious Nishang PowerShell Commandlets
   - 31/01/2025 - major - update keywords to improve detection coverage and remove false positives
@@ -918,30 +921,30 @@ Changelog _last update on 2026-06-24_
 ### Microsoft Windows Active Directory Module Commandlets
   - 30/01/2025 - minor - Adding filters to reduce false positives.
     
-### Microsoft Entra ID (Azure AD) Self Service Password Reset In Failure
-  - 20/01/2025 - minor - Update pattern to ECS field and specific intake field
-    
-### Python Offensive Tools and Packages
-  - 20/01/2025 - major - Rule's pattern changed to reduce false positives.
-  - 02/10/2024 - major - Rule's pattern changed
-    
-### Setuid Or Setgid Usage
-  - 20/01/2025 - minor - Update pattern to ECS field only
-    
-### Write To File In Sudoers.d Folder
-  - 20/01/2025 - minor - Update pattern to ECS field only
-    
 ### Potential DNS Tunnel
   - 20/01/2025 - major - Update regex pattern to improve detection, and add more filters to avoid false positives
   - 19/07/2023 - major - New regex pattern and new filters.
   - 22/06/2023 - minor - Filter some domains to reduce false positives.
     
-### Fortigate Firewall Successful External Login
-  - 20/01/2025 - minor - Update pattern to ECS field only
-    
 ### Correlation Potential DNS Tunnel
   - 20/01/2025 - major - Update regex pattern to improve detection, decrease count number, and add more filters to avoid false positives
   - 19/07/2023 - major - New regex pattern and new filters.
+    
+### Fortigate Firewall Successful External Login
+  - 20/01/2025 - minor - Update pattern to ECS field only
+    
+### Setuid Or Setgid Usage
+  - 20/01/2025 - minor - Update pattern to ECS field only
+    
+### Python Offensive Tools and Packages
+  - 20/01/2025 - major - Rule's pattern changed to reduce false positives.
+  - 02/10/2024 - major - Rule's pattern changed
+    
+### Write To File In Sudoers.d Folder
+  - 20/01/2025 - minor - Update pattern to ECS field only
+    
+### Microsoft Entra ID (Azure AD) Self Service Password Reset In Failure
+  - 20/01/2025 - minor - Update pattern to ECS field and specific intake field
     
 ### Socat Reverse Shell Detection
   - 17/01/2025 - major - Complete rewrite of the rule to reduce false positives.
@@ -954,14 +957,14 @@ Changelog _last update on 2026-06-24_
 ### Rare Logonui Child Found
   - 17/01/2025 - minor - Adding filter to reduce false positives.
     
-### AWS CloudTrail KMS CMK Key Deleted
-  - 16/01/2025 - minor - Similarity strategy was changed to have better alerts grouping.
+### Phishing Detected By Vade For M365 And Not Blocked
+  - 16/01/2025 - minor - Adding filter to reduce false positives.
     
 ### Autorun Keys Modification
   - 16/01/2025 - minor - Added filters to reduce false positives.
     
-### Phishing Detected By Vade For M365 And Not Blocked
-  - 16/01/2025 - minor - Adding filter to reduce false positives.
+### AWS CloudTrail KMS CMK Key Deleted
+  - 16/01/2025 - minor - Similarity strategy was changed to have better alerts grouping.
     
 ### SecurityScorecard Vulnerability Assessment Scanner New Issues
   - 15/01/2025 - minor - Adding format field to improve rules mapping
@@ -1005,17 +1008,34 @@ Changelog _last update on 2026-06-24_
 ### CVE-2019-0604 SharePoint
   - 04/11/2024 - minor - Added filter to reduce false positives
     
-### Taskhostw Wrong Parent
-  - 17/10/2024 - major - Removed a filter on a specific intake, the rule now works fine for every intake. Filters were also added to reduce false positives.
+### Lsass Wrong Parent
+  - 17/10/2024 - major - The rule has been reworked for a specific intake to allow our customers to activate the rule for this intake which was not the case before.
   - 19/03/2024 - major - Added filter to reduce false positives
   - 20/11/2023 - minor - Rule's effort level has been changed to advanced as it was too dependent on the environment.
   - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
   - 04/07/2023 - major - Added filter to reduce false positives
     
-### Wininit Wrong Parent
-  - 17/10/2024 - major - Removed a filter on a specific intake, the rule now works fine for every intake. A filter was also added to reduce false positives.
+### Winlogon wrong parent
+  - 17/10/2024 - major - Removed a filter on a specific intake, the rule now works fine for every intake. Filter was also added to reduce false positives.
+  - 19/03/2024 - major - Added filter to reduce false positives
+  - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
+  - 04/07/2023 - major - Added filter to reduce false positives
+    
+### Mshta Suspicious Child Process
+  - 17/10/2024 - minor - Adding similarity_strategy and enforce selection
+    
+### Searchprotocolhost Wrong Parent
+  - 17/10/2024 - major - Removed a filter on a specific intake, the rule now works fine for every intake
+  - 12/03/2024 - minor - Added filter to reduce false positives
+  - 20/11/2023 - minor - Rule's effort level has been changed to advanced as it was too dependent on the environment.
+  - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
+  - 04/07/2023 - major - Added filter to reduce false positives
+    
+### Wsmprovhost Wrong Parent
+  - 17/10/2024 - major - Removed a filter on a specific intake, the rule now works fine for every intake.
   - 19/03/2024 - major - Added filter to reduce false positives
   - 20/11/2023 - minor - Rule's effort level has been changed to advanced as it was too dependent on the environment.
+  - 25/10/2023 - minor - Adding filter to reduce false positives.
   - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
   - 04/07/2023 - major - Added filter to reduce false positives
     
@@ -1026,25 +1046,17 @@ Changelog _last update on 2026-06-24_
   - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
   - 04/07/2023 - major - Added filter to reduce false positives
     
-### Searchprotocolhost Wrong Parent
-  - 17/10/2024 - major - Removed a filter on a specific intake, the rule now works fine for every intake
-  - 12/03/2024 - minor - Added filter to reduce false positives
-  - 20/11/2023 - minor - Rule's effort level has been changed to advanced as it was too dependent on the environment.
-  - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
-  - 04/07/2023 - major - Added filter to reduce false positives
-    
-### Lsass Wrong Parent
-  - 17/10/2024 - major - The rule has been reworked for a specific intake to allow our customers to activate the rule for this intake which was not the case before.
+### Svchost Wrong Parent
+  - 17/10/2024 - major - Removed a filter on a specific intake, the rule now works fine for every intake. A filter has also been added to reduce false positives.
   - 19/03/2024 - major - Added filter to reduce false positives
-  - 20/11/2023 - minor - Rule's effort level has been changed to advanced as it was too dependent on the environment.
+  - 31/01/2024 - minor - Adding filters to reduce false positives
   - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
-  - 04/07/2023 - major - Added filter to reduce false positives
+  - 04/07/2023 - minor - Added filter to reduce false positives
     
-### Wsmprovhost Wrong Parent
+### Searchindexer Wrong Parent
   - 17/10/2024 - major - Removed a filter on a specific intake, the rule now works fine for every intake.
   - 19/03/2024 - major - Added filter to reduce false positives
   - 20/11/2023 - minor - Rule's effort level has been changed to advanced as it was too dependent on the environment.
-  - 25/10/2023 - minor - Adding filter to reduce false positives.
   - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
   - 04/07/2023 - major - Added filter to reduce false positives
     
@@ -1061,35 +1073,20 @@ Changelog _last update on 2026-06-24_
   - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
   - 04/07/2023 - major - Added filter to reduce false positives
     
-### Svchost Wrong Parent
-  - 17/10/2024 - major - Removed a filter on a specific intake, the rule now works fine for every intake. A filter has also been added to reduce false positives.
-  - 19/03/2024 - major - Added filter to reduce false positives
-  - 31/01/2024 - minor - Adding filters to reduce false positives
-  - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
-  - 04/07/2023 - minor - Added filter to reduce false positives
-    
-### Dllhost Wrong Parent
-  - 17/10/2024 - major - Removed a filter on a specific intake, the rule now works fine for every intake. Some filters on parent process names were also added to reduce false positives.
+### Smss Wrong Parent
+  - 17/10/2024 - major - Removed a filter on a specific intake, the rule now works fine for every intake
+  - 05/04/2024 - major - Added filter to reduce false positives
   - 19/03/2024 - major - Added filter to reduce false positives
   - 20/11/2023 - minor - Rule's effort level has been changed to advanced as it was too dependent on the environment.
   - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
   - 04/07/2023 - major - Added filter to reduce false positives
     
-### Winlogon wrong parent
-  - 17/10/2024 - major - Removed a filter on a specific intake, the rule now works fine for every intake. Filter was also added to reduce false positives.
-  - 19/03/2024 - major - Added filter to reduce false positives
-  - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
-  - 04/07/2023 - major - Added filter to reduce false positives
-    
-### Searchindexer Wrong Parent
-  - 17/10/2024 - major - Removed a filter on a specific intake, the rule now works fine for every intake.
+### Wininit Wrong Parent
+  - 17/10/2024 - major - Removed a filter on a specific intake, the rule now works fine for every intake. A filter was also added to reduce false positives.
   - 19/03/2024 - major - Added filter to reduce false positives
   - 20/11/2023 - minor - Rule's effort level has been changed to advanced as it was too dependent on the environment.
   - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
   - 04/07/2023 - major - Added filter to reduce false positives
-    
-### Suspicious Mshta Execution
-  - 17/10/2024 - minor - Adding similarity_strategy
     
 ### Logonui Wrong Parent
   - 17/10/2024 - major - Removed a filter on a specific intake, the rule now works fine for every intake
@@ -1099,23 +1096,29 @@ Changelog _last update on 2026-06-24_
   - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
   - 04/07/2023 - major - Added filter to reduce false positives
     
-### Smss Wrong Parent
-  - 17/10/2024 - major - Removed a filter on a specific intake, the rule now works fine for every intake
-  - 05/04/2024 - major - Added filter to reduce false positives
-  - 19/03/2024 - major - Added filter to reduce false positives
-  - 20/11/2023 - minor - Rule's effort level has been changed to advanced as it was too dependent on the environment.
-  - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
-  - 04/07/2023 - major - Added filter to reduce false positives
-    
-### Mshta Suspicious Child Process
-  - 17/10/2024 - minor - Adding similarity_strategy and enforce selection
-    
 ### Taskhost Wrong Parent
   - 17/10/2024 - major - Removed a filter on a specific intake, the rule now works fine for every intake.
   - 19/03/2024 - major - Added filter to reduce false positives
   - 20/11/2023 - minor - Rule's effort level has been changed to advanced as it was too dependent on the environment.
   - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
   - 04/07/2023 - major - Added filter to reduce false positives
+    
+### Dllhost Wrong Parent
+  - 17/10/2024 - major - Removed a filter on a specific intake, the rule now works fine for every intake. Some filters on parent process names were also added to reduce false positives.
+  - 19/03/2024 - major - Added filter to reduce false positives
+  - 20/11/2023 - minor - Rule's effort level has been changed to advanced as it was too dependent on the environment.
+  - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
+  - 04/07/2023 - major - Added filter to reduce false positives
+    
+### Taskhostw Wrong Parent
+  - 17/10/2024 - major - Removed a filter on a specific intake, the rule now works fine for every intake. Filters were also added to reduce false positives.
+  - 19/03/2024 - major - Added filter to reduce false positives
+  - 20/11/2023 - minor - Rule's effort level has been changed to advanced as it was too dependent on the environment.
+  - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
+  - 04/07/2023 - major - Added filter to reduce false positives
+    
+### Suspicious Mshta Execution
+  - 17/10/2024 - minor - Adding similarity_strategy
     
 ### Active Directory Replication User Backdoor
   - 15/10/2024 - major - Update pattern to avoid false positives and change rule effort
@@ -1125,15 +1128,15 @@ Changelog _last update on 2026-06-24_
   - 14/10/2024 - minor - Added filter to the rule to reduce false positives.
   - 19/06/2023 - minor - Added filter to the rule to reduce false positives.
     
-### Web Application Launching Shell
-  - 10/10/2024 - major - Adding new elements and filters to increase detection and reduce false positives.
+### Microsoft IIS Module Installation
+  - 10/10/2024 - major - Adding new commands with powershell and changing effort level.
     
 ### NlTest Usage
   - 10/10/2024 - minor - Adding new elements and filters to increase detection and reduce false positives.
   - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
     
-### Microsoft IIS Module Installation
-  - 10/10/2024 - major - Adding new commands with powershell and changing effort level.
+### Web Application Launching Shell
+  - 10/10/2024 - major - Adding new elements and filters to increase detection and reduce false positives.
     
 ### Opening Of a Password File
   - 07/10/2024 - minor - Modified similarity strategy.
@@ -1156,11 +1159,11 @@ Changelog _last update on 2026-06-24_
 ### Correlation Multi Service Disable
   - 21/08/2024 - minor - Adding a space to reduce false positives.
     
-### Veeam Backup & Replication Malware Detection
-  - 13/08/2024 - major - Restrict to only one type of event following customer feedback
-    
 ### Microsoft Exchange PowerShell Snap-Ins To Export Exchange Mailbox Data
   - 13/08/2024 - minor - Added filter to reduce false positives
+    
+### Veeam Backup & Replication Malware Detection
+  - 13/08/2024 - major - Restrict to only one type of event following customer feedback
     
 ### Wdigest Enable UseLogonCredential
   - 08/08/2024 - major - Rule's pattern field changed and pattern improved to cause less false positives.
@@ -1168,12 +1171,12 @@ Changelog _last update on 2026-06-24_
 ### Credential Dump Tools Related Files
   - 07/08/2024 - major - Effort level was changed. Rule pattern initial field was changed to be ECS compliant and match on more intakes. A process was excluded and a filter was added, both to avoid generating too much false positives.
     
+### Impacket Addcomputer
+  - 05/08/2024 - major - improve selection to extend detection
+    
 ### Suspicious Outbound Kerberos Connection
   - 05/08/2024 - major - Rule reworked to match more intakes and have less false positives (filters were added).
   - 04/04/2024 - major - Rule's pattern field changed
-    
-### Impacket Addcomputer
-  - 05/08/2024 - major - improve selection to extend detection
     
 ### Rclone Process
   - 05/08/2024 - major - Edited pattern of the rule to reduce false positives.
@@ -1192,8 +1195,8 @@ Changelog _last update on 2026-06-24_
 ### Audit CVE Event
   - 15/07/2024 - major - review filter and improve similarity
     
-### Account Removed From A Security Enabled Group
-  - 12/07/2024 - minor - Add similarity strategy
+### Account Added To A Security Enabled Group
+  - 12/07/2024 - minor - add similarity strategy
   - 26/03/2024 - major - Rule's pattern field changed
     
 ### Anomaly Bruteforce - User Enumeration
@@ -1201,14 +1204,14 @@ Changelog _last update on 2026-06-24_
   - 13/06/2024 - minor - Adding fields to be displayed in alerts.
   - 09/04/2024 - major - change field on aggregation
     
-### Account Added To A Security Enabled Group
-  - 12/07/2024 - minor - add similarity strategy
-  - 26/03/2024 - major - Rule's pattern field changed
-    
 ### User Account Created
   - 12/07/2024 - minor - Changing similarity strategy.
   - 10/07/2024 - minor - Adding filter and new elements to reduce false positives.
   - 04/04/2024 - major - Rule's pattern field changed
+    
+### Account Removed From A Security Enabled Group
+  - 12/07/2024 - minor - Add similarity strategy
+  - 26/03/2024 - major - Rule's pattern field changed
     
 ### Dynamic Linker Hijacking From Environment Variable
   - 11/07/2024 - minor - Added filter to reduce false positvives
@@ -1219,12 +1222,12 @@ Changelog _last update on 2026-06-24_
 ### Compress Data for Exfiltration via Archiver
   - 09/07/2024 - major - Reviewing detection to reduce false positives.
     
-### Microsoft Defender Antivirus Disable Scheduled Tasks
-  - 04/07/2024 - minor - Adding new commands to increase detection.
-    
 ### Anomaly Internal Port Connection
   - 04/07/2024 - minor - Reviewing query.
   - 12/06/2024 - minor - Adding field to be displayed in the alerts and changing the query.
+    
+### Microsoft Defender Antivirus Disable Scheduled Tasks
+  - 04/07/2024 - minor - Adding new commands to increase detection.
     
 ### Suspicious Kerberos Ticket
   - 03/07/2024 - major - Add filter to cover a second case to improve rule coverage
@@ -1238,25 +1241,25 @@ Changelog _last update on 2026-06-24_
   - 25/06/2024 - major - Fix pattern selection
   - 21/06/2024 - major - Update detection pattern for ECS fields/value compliance
     
-### Sticky Key Like Backdoor Usage
+### OceanLotus Registry Activity
   - 21/06/2024 - major - Update detection pattern for ECS fields/value compliance
     
-### Usage Of Sysinternals Tools
+### Sticky Key Like Backdoor Usage
   - 21/06/2024 - major - Update detection pattern for ECS fields/value compliance
     
 ### Leviathan Registry Key Activity
   - 21/06/2024 - major - Update detection pattern for ECS fields/value compliance
     
-### UAC Bypass Using Fodhelper
-  - 21/06/2024 - major - Update detection pattern for ECS fields/value compliance
-    
 ### Disable Workstation Lock
   - 21/06/2024 - major - Update detection pattern for ECS fields/value compliance
     
-### OceanLotus Registry Activity
+### UAC Bypass Using Fodhelper
   - 21/06/2024 - major - Update detection pattern for ECS fields/value compliance
     
 ### Security Support Provider (SSP) Added to LSA Configuration
+  - 21/06/2024 - major - Update detection pattern for ECS fields/value compliance
+    
+### Usage Of Sysinternals Tools
   - 21/06/2024 - major - Update detection pattern for ECS fields/value compliance
     
 ### Google Workspace Password Change
@@ -1265,11 +1268,6 @@ Changelog _last update on 2026-06-24_
 ### Scam Detected By Vade For M365 And Not Blocked
   - 18/06/2024 - minor - Adding filter when whitelisted.
     
-### Process Memory Dump Using Comsvcs
-  - 13/06/2024 - minor - Adding similarity strategy and changing effort level.
-  - 10/04/2024 - minor - Rule description was changed due to some mistakes
-  - 26/03/2024 - major - Filter improved to reduce false positives. On the other hand, some selections were added to improve detection.
-    
 ### Anomaly Possible Sysvol Dump
   - 13/06/2024 - minor - Adding fields to be displayed in alerts.
   - 08/04/2024 - minor - change field name on query
@@ -1277,23 +1275,28 @@ Changelog _last update on 2026-06-24_
 ### PowerShell AMSI Deactivation Bypass Using .NET Reflection
   - 13/06/2024 - minor - Changing effort level and adding similarity strategy to regroup alerts.
     
-### Google Workspace Anomaly File Downloads
-  - 12/06/2024 - minor - Changing effort level and adding field to alert.
+### Process Memory Dump Using Comsvcs
+  - 13/06/2024 - minor - Adding similarity strategy and changing effort level.
+  - 10/04/2024 - minor - Rule description was changed due to some mistakes
+  - 26/03/2024 - major - Filter improved to reduce false positives. On the other hand, some selections were added to improve detection.
+    
+### Anomaly Secret Store Access
+  - 12/06/2024 - minor - Adding new fields to be displayed in alerts.
+  - 08/04/2024 - minor - change field name on query
     
 ### Lateral Movement Remote Named Pipe
   - 12/06/2024 - minor - Fix filter selection
   - 03/04/2024 - major - Rule's pattern field changed
   - 26/03/2024 - minor - Filter was improved to reduce false positives
     
-### Anomaly Secret Store Access
-  - 12/06/2024 - minor - Adding new fields to be displayed in alerts.
-  - 08/04/2024 - minor - change field name on query
-    
-### Anomaly New PowerShell Remote Session
-  - 11/06/2024 - minor - Adding fields to be displayed in the alert.
+### Google Workspace Anomaly File Downloads
+  - 12/06/2024 - minor - Changing effort level and adding field to alert.
     
 ### Anomaly Multiple Host Port Scan
   - 11/06/2024 - minor - Adding fields to be displayed in the alert and changing effort level.
+    
+### Anomaly New PowerShell Remote Session
+  - 11/06/2024 - minor - Adding fields to be displayed in the alert.
     
 ### NjRat Registry Changes
   - 07/06/2024 - major - Update pattern to reduce false positives
@@ -1309,14 +1312,14 @@ Changelog _last update on 2026-06-24_
 ### Suspicious PowerShell Keywords
   - 23/05/2024 - minor - Added filter to reduce false positives and new suspicious keywords.
     
-### Login Brute-Force On Sekoia.io
-  - 22/05/2024 - minor - Switch the group-by clause to a sekoiaio uuid field.
+### Google Workspace Admin Creation
+  - 22/05/2024 - minor - Adding new element to increase detection.
     
 ### Password Reset Error Brute-Force On AzureAD
   - 22/05/2024 - minor - Switch the group-by clause to a sekoiaio uuid field.
     
-### Google Workspace Admin Creation
-  - 22/05/2024 - minor - Adding new element to increase detection.
+### Login Brute-Force On Sekoia.io
+  - 22/05/2024 - minor - Switch the group-by clause to a sekoiaio uuid field.
     
 ### Microsoft 365 Email Forwarding To Consumer Email Address
   - 22/04/2024 - minor - Add zohomail.com
@@ -1327,225 +1330,141 @@ Changelog _last update on 2026-06-24_
 ### OneNote Suspicious Children Process
   - 15/04/2024 - minor - Changing effort level and adding new filters to reduce false positives.
     
-### Suspicious Access To Sensitive File Extensions
-  - 04/04/2024 - major - Rule's pattern field changed
-    
-### Remote Registry Management Using Reg Utility
-  - 04/04/2024 - major - Rule's pattern field changed
-    
-### Secure Deletion With SDelete
-  - 04/04/2024 - major - Rule's pattern field changed
-    
-### SysKey Registry Keys Access
-  - 04/04/2024 - major - Rule's pattern field changed
-    
-### User Account Deleted
-  - 04/04/2024 - major - Rule's pattern field changed
-    
-### Remote Privileged Group Enumeration
-  - 04/04/2024 - major - Rule's pattern field changed
-  - 18/04/2023 - minor - Exclude events from the Local System session that cause false positives.
-    
-### User Couldn't Call A Privileged Service LsaRegisterLogonProcess
-  - 04/04/2024 - major - Rule's pattern field changed
-    
-### SCM Database Handle Failure
-  - 04/04/2024 - major - Rule's pattern field changed
-    
-### DHCP Server Loaded the CallOut DLL
-  - 04/04/2024 - major - Rule's pattern field changed
-    
-### SAM Registry Hive Handle Request
-  - 04/04/2024 - major - Rule's pattern field changed
-    
-### Account Tampering - Suspicious Failed Logon Reasons
-  - 04/04/2024 - major - Rule's pattern field changed
-  - 01/08/2023 - minor - Similarity strategy for the rule has changed and is now based on the user.target.name field.
-    
-### Suspicious Windows ANONYMOUS LOGON Local Account Created
-  - 04/04/2024 - major - Rule's pattern field changed
-    
-### Credential Dumping By LaZagne
-  - 04/04/2024 - major - Rule's pattern field changed
-    
 ### Suspicious SAM Dump
   - 04/04/2024 - major - Rule's pattern field changed
     
-### Suspect Svchost Memory Access
-  - 04/04/2024 - major - Rule's pattern field changed
-    
-### Suspicious Hostname
-  - 04/04/2024 - major - Rule's pattern field changed
-    
-### Remote Service Activity Via SVCCTL Named Pipe
-  - 04/04/2024 - major - Rule's pattern field changed
-  - 21/03/2024 - minor - change filter to ACL hex value and adapt effort
-    
-### Suspicious LDAP-Attributes Used
-  - 04/04/2024 - major - Rule's pattern field changed
-    
-### Microsoft Malware Protection Engine Crash
-  - 04/04/2024 - major - Rule's pattern field changed
-    
-### External Disk Drive Or USB Storage Device
-  - 04/04/2024 - major - Rule's pattern field changed
-    
-### Webshell Creation
+### CVE-2019-0708 Scan
   - 04/04/2024 - major - Rule's pattern field changed
     
 ### DPAPI Domain Backup Key Extraction
   - 04/04/2024 - major - Rule's pattern field changed
     
-### WMI Event Subscription
+### TUN/TAP Driver Installation
+  - 04/04/2024 - major - Rule's pattern field changed
+    
+### SysKey Registry Keys Access
   - 04/04/2024 - major - Rule's pattern field changed
     
 ### RDP Login From Localhost
   - 04/04/2024 - major - Rule's pattern field changed
   - 24/11/2023 - minor - Effort level changed to advanced.
     
-### TUN/TAP Driver Installation
-  - 04/04/2024 - major - Rule's pattern field changed
-    
-### Successful Brute Force Login From Internet
-  - 04/04/2024 - major - Rule's pattern field changed
-    
 ### DNS Server Error Failed Loading The ServerLevelPluginDLL
-  - 04/04/2024 - major - Rule's pattern field changed
-    
-### MSBuild Abuse
-  - 04/04/2024 - major - Rule's pattern field changed
-    
-### DHCP Server Error Failed Loading the CallOut DLL
-  - 04/04/2024 - major - Rule's pattern field changed
-    
-### CVE-2019-0708 Scan
   - 04/04/2024 - major - Rule's pattern field changed
     
 ### Suspicious PsExec Execution
   - 04/04/2024 - major - Rule's pattern field changed
     
+### SCM Database Handle Failure
+  - 04/04/2024 - major - Rule's pattern field changed
+    
+### User Couldn't Call A Privileged Service LsaRegisterLogonProcess
+  - 04/04/2024 - major - Rule's pattern field changed
+    
+### Remote Privileged Group Enumeration
+  - 04/04/2024 - major - Rule's pattern field changed
+  - 18/04/2023 - minor - Exclude events from the Local System session that cause false positives.
+    
+### Remote Registry Management Using Reg Utility
+  - 04/04/2024 - major - Rule's pattern field changed
+    
+### MSBuild Abuse
+  - 04/04/2024 - major - Rule's pattern field changed
+    
+### Credential Dumping By LaZagne
+  - 04/04/2024 - major - Rule's pattern field changed
+    
+### DHCP Server Error Failed Loading the CallOut DLL
+  - 04/04/2024 - major - Rule's pattern field changed
+    
+### Suspicious Hostname
+  - 04/04/2024 - major - Rule's pattern field changed
+    
+### Suspicious Windows ANONYMOUS LOGON Local Account Created
+  - 04/04/2024 - major - Rule's pattern field changed
+    
+### Successful Brute Force Login From Internet
+  - 04/04/2024 - major - Rule's pattern field changed
+    
+### Microsoft Malware Protection Engine Crash
+  - 04/04/2024 - major - Rule's pattern field changed
+    
+### Suspicious LDAP-Attributes Used
+  - 04/04/2024 - major - Rule's pattern field changed
+    
+### User Account Deleted
+  - 04/04/2024 - major - Rule's pattern field changed
+    
+### Secure Deletion With SDelete
+  - 04/04/2024 - major - Rule's pattern field changed
+    
+### WMI Event Subscription
+  - 04/04/2024 - major - Rule's pattern field changed
+    
+### External Disk Drive Or USB Storage Device
+  - 04/04/2024 - major - Rule's pattern field changed
+    
+### Account Tampering - Suspicious Failed Logon Reasons
+  - 04/04/2024 - major - Rule's pattern field changed
+  - 01/08/2023 - minor - Similarity strategy for the rule has changed and is now based on the user.target.name field.
+    
+### Suspect Svchost Memory Access
+  - 04/04/2024 - major - Rule's pattern field changed
+    
+### SAM Registry Hive Handle Request
+  - 04/04/2024 - major - Rule's pattern field changed
+    
+### Suspicious Access To Sensitive File Extensions
+  - 04/04/2024 - major - Rule's pattern field changed
+    
+### DHCP Server Loaded the CallOut DLL
+  - 04/04/2024 - major - Rule's pattern field changed
+    
+### Webshell Creation
+  - 04/04/2024 - major - Rule's pattern field changed
+    
+### Remote Service Activity Via SVCCTL Named Pipe
+  - 04/04/2024 - major - Rule's pattern field changed
+  - 21/03/2024 - minor - change filter to ACL hex value and adapt effort
+    
 ### Outlook Registry Access
   - 02/04/2024 - major - Updating the pattern and adding filter selection
   - 19/02/2024 - minor - Effort level was adapted according to the observed hits for the rule
     
-### WAF Correlation Block actions
+### Cloudflare WAF Correlation Alerts
   - 28/03/2024 - minor - Rule effort was updated to master
     
 ### WAF Correlation Block Multiple Destinations
   - 28/03/2024 - minor - Rule effort was updated to master
     
-### Cloudflare WAF Correlation Alerts
+### WAF Correlation Block actions
   - 28/03/2024 - minor - Rule effort was updated to master
     
+### Creation or Modification of a GPO Scheduled Task
+  - 26/03/2024 - major - Rule's pattern field changed
+    
 ### Domain Trust Created Or Removed
-  - 26/03/2024 - major - Rule's pattern field changed
-    
-### Dynwrapx Module Loading
-  - 26/03/2024 - major - Rule's pattern field changed
-    
-### Python Opening Ports
-  - 26/03/2024 - major - Rule's pattern field changed
-    
-### Process Hollowing Detection
-  - 26/03/2024 - major - Rule's pattern field changed
-    
-### Active Directory Database Dump Via Ntdsutil
-  - 26/03/2024 - major - Rule's pattern field changed
-    
-### Password Dumper Activity On LSASS
-  - 26/03/2024 - major - Rule's pattern field changed
-    
-### Admin Share Access
-  - 26/03/2024 - major - Rule's pattern field changed
-    
-### PsExec Process
-  - 26/03/2024 - major - Rule's pattern field changed
-    
-### Potential RDP Connection To Non-Domain Host
-  - 26/03/2024 - major - Rule's pattern field changed
-    
-### Backup Catalog Deleted
-  - 26/03/2024 - major - Rule's pattern field changed
-    
-### Microsoft Defender Antivirus Tampering Detected
-  - 26/03/2024 - major - Rule's pattern field changed
-  - 07/08/2023 - minor - Rule effort changed from intermediate to advanced considering the number of false positives observed.
-    
-### NetNTLM Downgrade Attack
-  - 26/03/2024 - major - Rule's pattern field changed
-    
-### Eventlog Cleared
-  - 26/03/2024 - major - Rule's pattern field changed
-    
-### Active Directory Replication from Non Machine Account
-  - 26/03/2024 - major - Rule's pattern field changed
-    
-### Cobalt Strike Default Service Creation Usage
-  - 26/03/2024 - major - Rule's pattern field changed
-    
-### Active Directory User Backdoors
-  - 26/03/2024 - major - Rule's pattern field changed
-  - 06/04/2023 - minor - Removed a selection as it triggered too many false positives, and the detection was not part of the main goal of this rule.
-    
-### Malware Outbreak
-  - 26/03/2024 - major - Rule's pattern field changed
-    
-### AD Privileged Users Or Groups Reconnaissance
-  - 26/03/2024 - major - Rule's pattern field changed
-    
-### Chafer (APT 39) Activity
-  - 26/03/2024 - major - Rule's pattern field changed
-    
-### Microsoft Defender Antivirus Threat Detected
-  - 26/03/2024 - major - Rule's pattern field changed
-  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
-    
-### DC Shadow via Service Principal Name (SPN) creation
-  - 26/03/2024 - major - Rule's pattern field changed
-    
-### Privileged AD Builtin Group Modified
-  - 26/03/2024 - major - Rule's pattern field changed
-  - 10/07/2023 - minor - Added AD groups and change to effort master.
-    
-### StoneDrill Service Install
-  - 26/03/2024 - major - Rule's pattern field changed
-    
-### Admin User RDP Remote Logon
-  - 26/03/2024 - major - Rule's pattern field changed
-    
-### LSASS Access From Non System Account
   - 26/03/2024 - major - Rule's pattern field changed
     
 ### Smbexec.py Service Installation
   - 26/03/2024 - major - Rule's pattern field changed
     
-### LSASS Memory Dump
+### StoneDrill Service Install
   - 26/03/2024 - major - Rule's pattern field changed
-  - 06/04/2023 - minor - Rule effort has been upgraded to master considering the number of different false positives the rule can trigger.
     
-### Microsoft Defender Antivirus History Deleted
+### Potential RDP Connection To Non-Domain Host
+  - 26/03/2024 - major - Rule's pattern field changed
+    
+### APT29 Fake Google Update Service Install
   - 26/03/2024 - major - Rule's pattern field changed
     
 ### Putty Sessions Listing
   - 26/03/2024 - major - Rule's pattern field changed
     
-### Denied Access To Remote Desktop
-  - 26/03/2024 - major - Rule's pattern field changed
-  - 19/10/2023 - minor - Minor change in selection to reduce false positives.
-    
-### Impacket Secretsdump.py Tool
+### Dynwrapx Module Loading
   - 26/03/2024 - major - Rule's pattern field changed
     
-### AD User Enumeration
-  - 26/03/2024 - major - Rule's pattern field changed
-    
-### Creation or Modification of a GPO Scheduled Task
-  - 26/03/2024 - major - Rule's pattern field changed
-    
-### Active Directory Delegate To KRBTGT Service
-  - 26/03/2024 - major - Rule's pattern field changed
-    
-### Detection of default Mimikatz banner
+### AD Privileged Users Or Groups Reconnaissance
   - 26/03/2024 - major - Rule's pattern field changed
     
 ### Password Change On Directory Service Restore Mode (DSRM) Account
@@ -1554,32 +1473,116 @@ Changelog _last update on 2026-06-24_
 ### CVE-2017-11882 Microsoft Office Equation Editor Vulnerability
   - 26/03/2024 - major - Rule's pattern field changed
     
-### Malicious Service Installations
+### Admin User RDP Remote Logon
   - 26/03/2024 - major - Rule's pattern field changed
     
-### Possible Replay Attack
+### LSASS Memory Dump
+  - 26/03/2024 - major - Rule's pattern field changed
+  - 06/04/2023 - minor - Rule effort has been upgraded to master considering the number of different false positives the rule can trigger.
+    
+### Process Herpaderping
   - 26/03/2024 - major - Rule's pattern field changed
     
-### Computer Account Deleted
+### Active Directory User Backdoors
+  - 26/03/2024 - major - Rule's pattern field changed
+  - 06/04/2023 - minor - Removed a selection as it triggered too many false positives, and the detection was not part of the main goal of this rule.
+    
+### Chafer (APT 39) Activity
+  - 26/03/2024 - major - Rule's pattern field changed
+    
+### Python Opening Ports
   - 26/03/2024 - major - Rule's pattern field changed
     
 ### Possible RottenPotato Attack
   - 26/03/2024 - major - Rule's pattern field changed
     
-### APT29 Fake Google Update Service Install
+### Process Hollowing Detection
   - 26/03/2024 - major - Rule's pattern field changed
     
-### Process Herpaderping
+### Active Directory Replication from Non Machine Account
   - 26/03/2024 - major - Rule's pattern field changed
     
-### Microsoft Entra ID (Azure AD) Login Failed Brute-Force From Single IP Address
-  - 22/03/2024 - major - More precise list of error codes to reduce false positives.
+### Microsoft Defender Antivirus History Deleted
+  - 26/03/2024 - major - Rule's pattern field changed
+    
+### DC Shadow via Service Principal Name (SPN) creation
+  - 26/03/2024 - major - Rule's pattern field changed
+    
+### Computer Account Deleted
+  - 26/03/2024 - major - Rule's pattern field changed
+    
+### Active Directory Database Dump Via Ntdsutil
+  - 26/03/2024 - major - Rule's pattern field changed
+    
+### Impacket Secretsdump.py Tool
+  - 26/03/2024 - major - Rule's pattern field changed
+    
+### Eventlog Cleared
+  - 26/03/2024 - major - Rule's pattern field changed
+    
+### Malicious Service Installations
+  - 26/03/2024 - major - Rule's pattern field changed
+    
+### Cobalt Strike Default Service Creation Usage
+  - 26/03/2024 - major - Rule's pattern field changed
+    
+### PsExec Process
+  - 26/03/2024 - major - Rule's pattern field changed
+    
+### Password Dumper Activity On LSASS
+  - 26/03/2024 - major - Rule's pattern field changed
+    
+### NetNTLM Downgrade Attack
+  - 26/03/2024 - major - Rule's pattern field changed
+    
+### Admin Share Access
+  - 26/03/2024 - major - Rule's pattern field changed
+    
+### Backup Catalog Deleted
+  - 26/03/2024 - major - Rule's pattern field changed
+    
+### Microsoft Defender Antivirus Threat Detected
+  - 26/03/2024 - major - Rule's pattern field changed
+  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+    
+### Denied Access To Remote Desktop
+  - 26/03/2024 - major - Rule's pattern field changed
+  - 19/10/2023 - minor - Minor change in selection to reduce false positives.
+    
+### Active Directory Delegate To KRBTGT Service
+  - 26/03/2024 - major - Rule's pattern field changed
+    
+### Microsoft Defender Antivirus Tampering Detected
+  - 26/03/2024 - major - Rule's pattern field changed
+  - 07/08/2023 - minor - Rule effort changed from intermediate to advanced considering the number of false positives observed.
+    
+### Privileged AD Builtin Group Modified
+  - 26/03/2024 - major - Rule's pattern field changed
+  - 10/07/2023 - minor - Added AD groups and change to effort master.
+    
+### Detection of default Mimikatz banner
+  - 26/03/2024 - major - Rule's pattern field changed
+    
+### AD User Enumeration
+  - 26/03/2024 - major - Rule's pattern field changed
+    
+### Possible Replay Attack
+  - 26/03/2024 - major - Rule's pattern field changed
+    
+### Malware Outbreak
+  - 26/03/2024 - major - Rule's pattern field changed
+    
+### LSASS Access From Non System Account
+  - 26/03/2024 - major - Rule's pattern field changed
+    
+### Impacket Wmiexec Module
+  - 22/03/2024 - minor - improve filter to extand detection
     
 ### Microsoft Entra ID (Azure AD) Successful Password Spraying From Single IP Address
   - 22/03/2024 - major - More precise list of error codes for success and failure to reduce false positives.
     
-### Impacket Wmiexec Module
-  - 22/03/2024 - minor - improve filter to extand detection
+### Microsoft Entra ID (Azure AD) Login Failed Brute-Force From Single IP Address
+  - 22/03/2024 - major - More precise list of error codes to reduce false positives.
     
 ### Remote Task Creation Via ATSVC Named Pipe
   - 21/03/2024 - minor - change filter to ACL hex value
@@ -1603,54 +1606,54 @@ Changelog _last update on 2026-06-24_
 ### Non-Legitimate Executable Using AcceptEula Parameter
   - 19/02/2024 - minor - Update filter and effort level according to the observed hits for the rule.
     
-### Sekoia.io EICAR Detection
+### Login Failed Brute-Force On SentinelOne EDR Management Console
   - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
     
-### Okta Phishing Detection with FastPass Origin Check
+### Login Brute-Force Successful On SentinelOne EDR Management Console
+  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+    
+### CVE-2021-21985 VMware vCenter
+  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+    
+### WithSecure Elements Critical Severity
+  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+    
+### Netsh Port Forwarding
+  - 15/02/2024 - minor - Added filter to reduce false positives
+    
+### MS Office Product Spawning Exe in User Dir
+  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+  - 10/08/2023 - minor - Rule modified and filter added to reduce false positives.
+    
+### Microsoft Defender Antivirus Disabled Base64 Encoded
   - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
     
 ### Microsoft Defender for Office 365 Low Severity AIR Alert Requires Action
+  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+    
+### Okta MFA Disabled
+  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+    
+### Sekoia.io EICAR Detection
+  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+    
+### Microsoft Defender for Office 365 Medium Severity AIR Alert
+  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+    
+### AWS CloudTrail GuardDuty Detector Suspended
   - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
     
 ### AWS CloudTrail GuardDuty Detector Deleted
   - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
   - 08/11/2023 - minor - Added filter to reduce false positives
     
-### AWS CloudTrail GuardDuty Detector Suspended
-  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
-    
-### Okta MFA Disabled
-  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
-    
-### Microsoft Defender for Office 365 High Severity AIR Alert
-  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
-    
-### Microsoft Defender for Office 365 Medium Severity AIR Alert
+### Okta Phishing Detection with FastPass Origin Check
   - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
     
 ### Microsoft Defender for Office 365 Low Severity AIR Alert Handled Automatically
   - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
     
-### Login Brute-Force Successful On SentinelOne EDR Management Console
-  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
-    
-### Login Failed Brute-Force On SentinelOne EDR Management Console
-  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
-    
-### WithSecure Elements Critical Severity
-  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
-    
-### Microsoft Defender Antivirus Disabled Base64 Encoded
-  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
-    
-### MS Office Product Spawning Exe in User Dir
-  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
-  - 10/08/2023 - minor - Rule modified and filter added to reduce false positives.
-    
-### Netsh Port Forwarding
-  - 15/02/2024 - minor - Added filter to reduce false positives
-    
-### CVE-2021-21985 VMware vCenter
+### Microsoft Defender for Office 365 High Severity AIR Alert
   - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
     
 ### WMIC Uninstall Product
@@ -1678,28 +1681,28 @@ Changelog _last update on 2026-06-24_
 ### BITSAdmin Download
   - 06/12/2023 - minor - Adding key words to increase detection.
     
-### Netsh Program Allowed With Suspicious Location
-  - 29/11/2023 - minor - Update regex pattern to insensitive case
-    
 ### PowerShell Download From URL
   - 29/11/2023 - minor - Added a filter to the rule as some false positives were observed.
   - 26/05/2023 - minor - Added a filter to the rule as some false positives were observed.
     
+### Netsh Program Allowed With Suspicious Location
+  - 29/11/2023 - minor - Update regex pattern to insensitive case
+    
 ### Suspicious Regsvr32 Execution
   - 23/11/2023 - major - Extended detection and added filter
     
-### WiFi Credentials Harvesting Using Netsh
-  - 21/11/2023 - minor - Rule's effort level has been changed to advanced as it was highly dependent on the environment.
-    
-### AD Object WriteDAC Access
-  - 21/11/2023 - minor - Rule's effort level has been changed to advanced as legitimate administrator actions can trigger the rule.
+### Suspicious Double Extension
+  - 21/11/2023 - minor - Rule's effort level has been changed to advanced as it was too dependent on the environment.
     
 ### UAC Bypass via Event Viewer
   - 21/11/2023 - minor - Improve filter to reduce false positives and clarified the rule pattern.
   - 21/09/2023 - minor - Improve filter to reduce false positives
     
-### Suspicious Double Extension
-  - 21/11/2023 - minor - Rule's effort level has been changed to advanced as it was too dependent on the environment.
+### AD Object WriteDAC Access
+  - 21/11/2023 - minor - Rule's effort level has been changed to advanced as legitimate administrator actions can trigger the rule.
+    
+### WiFi Credentials Harvesting Using Netsh
+  - 21/11/2023 - minor - Rule's effort level has been changed to advanced as it was highly dependent on the environment.
     
 ### PowerShell Credential Prompt
   - 20/11/2023 - minor - Rule's effort level has been changed to advanced as it was too dependent on the environment.
@@ -1707,26 +1710,26 @@ Changelog _last update on 2026-06-24_
 ### AWS CloudTrail Remove Flow logs
   - 15/11/2023 - minor - Changing effort level.
     
-### ETW Tampering
-  - 08/11/2023 - minor - Added filter to reduce false positives
-    
 ### NTDS.dit File Interaction Through Command Line
   - 08/11/2023 - minor - Added filter to reduce false positives
     
-### Domain Trust Discovery Through LDAP
-  - 19/10/2023 - minor - improve filter to reduce false positives
+### ETW Tampering
+  - 08/11/2023 - minor - Added filter to reduce false positives
     
 ### CMSTP Execution
   - 19/10/2023 - minor - Slight change in selection to reduce false positives. Adding similarity.
+    
+### Domain Trust Discovery Through LDAP
+  - 19/10/2023 - minor - improve filter to reduce false positives
     
 ### Transferring Files With Credential Data Via Network Shares
   - 17/10/2023 - minor - Improve selection to reduce false positives
   - 04/03/2023 - minor - Fixed small typos.
     
-### Microsoft 365 (Office 365) Potential Ransomware Activity Detected
+### Microsoft 365 (Office 365) Mass Download By A Single User
   - 09/10/2023 - major - Fix field names to match the current parser.
     
-### Microsoft 365 (Office 365) Mass Download By A Single User
+### Microsoft 365 (Office 365) Potential Ransomware Activity Detected
   - 09/10/2023 - major - Fix field names to match the current parser.
     
 ### Microsoft 365 (Office 365) Unusual Volume Of File Deletion

@@ -156,6 +156,7 @@ nav:
       - IOCs Detection: xdr/features/detect/iocdetection.md
       - Rules Catalog: xdr/features/detect/rules_catalog.md
       - Built-in Rules: xdr/features/detect/built_in_detection_rules.md
+      - Built-in Geolocalisation: xdr/features/detect/built_in_geolocalisation.md
       - Sigma: xdr/features/detect/sigma.md
       - Anomaly Detection: xdr/features/detect/anomaly.md
       - IOCs Collections: xdr/features/detect/ioccollections.md
@@ -166,7 +167,10 @@ nav:
         - Alert similarity: xdr/features/detect/sol_detection_similarity.md
         - Lag management: xdr/features/detect/sol_detection_lag_management.md
     - Investigate:
-      - Alerts: xdr/features/investigate/alerts.md
+      - Alerts:
+        - Alerts overview: xdr/features/investigate/alerts.md
+        - Alerts listing: xdr/features/investigate/alerts_listing.md
+        - Alerts details: xdr/features/investigate/alert_details.md
       - Events page: xdr/features/investigate/events.md
       - Eternal events: xdr/features/investigate/eternal_events.md
       - Massive event export:
@@ -184,11 +188,18 @@ nav:
           - Investigate case details: xdr/features/investigate/case_details.md
           - Graph investigation: xdr/features/investigate/graph_investigation.md
           - AI Cases: xdr/features/investigate/ai_cases.md
+          - Run a playbook from a case: xdr/features/investigate/run_playbook_case.md
       - Custom fields:
         - Custom fields overview: xdr/features/investigate/custom_fields.md
         - Use custom fields: xdr/features/investigate/use_custom_fields.md
         - Manage custom field definitions: xdr/features/investigate/manage_custom_field_definitions.md
         - Query custom fields: xdr/features/investigate/query_custom_fields.md
+      - Custom statuses:
+        - Custom statuses overview: xdr/features/investigate/custom_statuses.md
+        - Manage custom statuses: xdr/features/investigate/manage_custom_statuses.md
+        - Migrate custom statuses: xdr/features/investigate/migrate_custom_statuses.md
+        - Custom verdicts: xdr/features/investigate/custom_verdicts.md
+        - Custom priorities: xdr/features/investigate/custom_priorities.md
       - Asset Context Panel: xdr/features/investigate/asset_context_panel.md
       - Events Query Language: xdr/features/investigate/events_query_language.md
       - Querying Events: xdr/features/investigate/querying_events.md
@@ -256,12 +267,20 @@ nav:
       - Manage Elevate runs: xdr/features/modules/elevate_quota.md
   - Asset Intelligence (Reveal):
     - Reveal overview: xdr/features/modules/reveal_index.md
-    - Get started with Reveal: xdr/features/modules/reveal_getting_started.md
-    - Explore assets context: xdr/features/modules/reveal_asset_context_panel.md
-    - Visualize attack paths: xdr/features/investigate/attack_path_visualization.md
-    - Discover Points of Interest: xdr/features/detect/points_of_interest.md
-    - Check asset connector health: xdr/features/collect/asset_connector_health.md
-    - Reveal enablement matrix: xdr/features/modules/reveal_feature_enablement.md
+    - Get started with Reveal:
+      - Reveal quick start guide: xdr/features/modules/reveal_getting_started.md
+      - Reveal enablement matrix: xdr/features/modules/reveal_feature_enablement.md
+    - Asset connectors:
+      - Create asset connectors: xdr/features/modules/reveal_asset_connectors_create.md
+      - Check asset connector health: xdr/features/collect/asset_connector_health.md
+      - Troubleshoot asset connectors: xdr/features/modules/reveal_asset_connectors_troubleshoot.md
+    - Investigate assets:
+      - Explore assets context: xdr/features/modules/reveal_asset_context_panel.md
+      - Visualize attack paths: xdr/features/investigate/attack_path_visualization.md
+      - Discover Points of Interest: xdr/features/detect/points_of_interest.md
+      - Check Endpoint Hygiene: xdr/features/modules/reveal_hygiene.md
+      - Leverage Vulnerability Enrichment: xdr/features/modules/reveal_vulnerabilities.md
+      - Rely on Security Controls: xdr/features/modules/reveal_security_controls.md
 - Usecases:
   - Export large volumes of events: xdr/usecases/massive_export.md
   - Implement a blocklist in Sekoia.io: xdr/usecases/playbook/implement_blocklist.md
@@ -337,6 +356,7 @@ nav:
       - LockSelf LockPass/LockTransfer/LockFiles: integration/categories/applicative/lockself.md
       - Microsoft IIS: integration/categories/applicative/microsoft_iis.md
       - Microsoft Sentinel: integration/categories/applicative/microsoft_sentinel.md
+      - Nutanix: integration/categories/applicative/nutanix.md
       - New Relic Alerts: integration/categories/applicative/newrelic_alerts.md
       - Salesforce: integration/categories/applicative/salesforce.md
       - Sekoia.io activity logs: integration/categories/applicative/sekoiaio_activity_logs.md
@@ -381,6 +401,7 @@ nav:
       - Lookout Mobile Endpoint Security: integration/categories/endpoint/lookout_mes.md
       - Microsoft Defender XDR (Microsoft 365 Defender): integration/categories/endpoint/microsoft_365_defender.md
       - Microsoft Defender XDR (Graph API): integration/categories/endpoint/microsoft_365_defender_graphapi.md
+      - Microsoft Defender XDR Incidents (Graph API): integration/categories/endpoint/microsoft_365_defender_graphapi_incidents.md
       - Microsoft Intune: integration/categories/endpoint/microsoft_intune.md
       - Nozomi Central Management Console: integration/categories/endpoint/nozomi_cmc.md
       - Nucleon EDR: integration/categories/endpoint/nucleon_edr.md
@@ -504,6 +525,7 @@ nav:
       - Claroty xDome: integration/categories/network_security/claroty_xdome.md
       - Clavister Next-Gen Firewall: integration/categories/network_security/clavister_ng_fw.md
       - Cloudflare WAF / Firewall Events: integration/categories/network_security/cloudflare-firewall-events.md
+      - Corelight: integration/categories/network_security/corelight.md
       - Cyberwatch Detection: integration/categories/network_security/cyberwatch_detection.md
       - Darktrace Threat Visualizer: integration/categories/network_security/darktrace_threat_visualizer.md
       - Datadome Protection: integration/categories/network_security/datadome_protection.md
@@ -569,6 +591,7 @@ nav:
       - Zscaler Internet Access: integration/categories/network_security/zscaler_zia.md
       - Zscaler Private Access: integration/categories/network_security/zscaler_zpa.md
     - Threat Intelligence:
+      - Flare Events: integration/categories/threat_intelligence/flare_events.md
       - MokN - Baits: integration/categories/threat_intelligence/mokn_baits.md
       - Prodaft USTA: integration/categories/threat_intelligence/prodaft_usta.md
   - List of Playbooks Actions:
@@ -650,6 +673,7 @@ nav:
       - Crowdstrike Falcon: integration/assets_categories/device/crowdstrike_falcon_device.md
       - ESET EDR: integration/assets_categories/device/eset_edr.md
       - Harfanglab EDR: integration/assets_categories/device/harfanglab_edr.md
+      - Holm Security: integration/assets_categories/device/holm_security.md
       - Microsoft Defender XDR (Microsoft 365 Defender): integration/assets_categories/device/microsoft_defender_device.md
       - Okta: integration/assets_categories/device/okta_device.md
       - SentinelOne EDR: integration/assets_categories/device/sentinelone_edr.md
@@ -710,7 +734,9 @@ plugins:
       getting_started/subscriptions.md: getting_started/understand_your_subscription.md
       getting_started/usage.md: getting_started/monitor_your_usage.md
       getting_started/roles.md: getting_started/roles_and_permissions.md
-      getting_started/2fa.md: getting_started/account_security.md
+      xdr/features/investigate/configure_custom_statuses.md: xdr/features/investigate/custom_statuses.md
+      xdr/features/investigate/configure_custom_verdicts.md: xdr/features/investigate/custom_verdicts.md
+      getting_started/2fa.md: getting_started/secure_your_account.md
       getting_started/apikey_creation.md: getting_started/manage_api_keys.md
       getting_started/first_steps.md: getting_started/index.md
       getting_started/inviting_users_to_join_your_community.md: getting_started/invite_users.md
@@ -827,6 +853,7 @@ plugins:
       xdr/features/collect/integrations/cloud_and_saas/nozomi/nozomi_vantage.md: integration/categories/network_security/nozomi_vantage.md
       xdr/features/collect/integrations/cloud_and_saas/office365/message_trace.md: integration/categories/email/message_trace.md
       xdr/features/collect/integrations/cloud_and_saas/office365/microsoft_365_defender.md: integration/categories/endpoint/microsoft_365_defender.md
+      xdr/features/collect/integrations/cloud_and_saas/office365/microsoft_365_defender_graphapi_incidents.md: integration/categories/endpoint/microsoft_365_defender_graphapi_incidents.md
       xdr/features/collect/integrations/cloud_and_saas/office365/o365.md: integration/categories/email/o365.md
       xdr/features/collect/integrations/cloud_and_saas/ogo_shield.md: integration/categories/network_security/ogo_shield.md
       xdr/features/collect/integrations/cloud_and_saas/okta_system_log.md: integration/categories/iam/okta_system_log.md

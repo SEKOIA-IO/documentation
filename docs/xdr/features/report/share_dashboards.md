@@ -17,7 +17,7 @@ Before you start make sure that:
 3. Select the communities you want to share the dashboard with.
     
     !!! warning "Query validation"
-        Review all queries within the dashboard to ensure the logic and data exposure are appropriate for the target communities.
+        Review all queries within the dashboard to ensure the logic and data exposure (filters and Sol Dataset) are appropriate for the target communities.
 
 4. Click **Save**.
 

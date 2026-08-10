@@ -252,6 +252,14 @@ In this section, you will find examples of raw logs as generated natively by the
 
 
 
+=== "test_admin_login_allowed_2"
+
+    ```
+	2026-07-16 09:15:53.317Z [adminsec]: Login_Allowed - - to=AdminConnector ip=192.0.2.4 auth=LOCAL group=GROUP-TEST apparently_via=API
+    ```
+
+
+
 === "test_cef_dns_query_a"
 
     ```
@@ -380,6 +388,14 @@ In this section, you will find examples of raw logs as generated natively by the
 
 
 
+=== "test_dhcp_bootrequest"
+
+    ```
+	BOOTREQUEST from 11:22:33:44:55:66 via 192.0.2.4: BOOTP from dynamic client and no dynamic leases
+    ```
+
+
+
 === "test_dhcp_expire"
 
     ```
@@ -436,10 +452,42 @@ In this section, you will find examples of raw logs as generated natively by the
 
 
 
+=== "test_dhcpack"
+
+    ```
+	DHCPACK on 192.0.2.4 to 11:22:33:44:55:66 (ABCDE1234) via bond0 relay 203.0.113.40 lease-duration 43200 (RENEW) uid 01:11:22:33:44:55:66
+    ```
+
+
+
+=== "test_dhcprequest"
+
+    ```
+	DHCPREQUEST for 192.0.2.4 (203.0.113.40) from 11:22:33:44:55:66 (ABCD1234) via 198.51.100.8 TransID 11111111 uid 01:11:22:33:44:55:66
+    ```
+
+
+
 === "test_dns_bind_update_rejected"
 
     ```
 	bind update on 192.0.2.27 from DHCP-FAILOVER(1770103776p) rejected: incoming update is less critical than outgoing update
+    ```
+
+
+
+=== "test_dns_bind_update_rejected_2"
+
+    ```
+	bind update on 192.0.2.4 from TESTORG-DHCP-FAILOVER(1784109718p) rejected: incoming update is less critical than outgoing update
+    ```
+
+
+
+=== "test_dns_format_error"
+
+    ```
+	DNS format error 192.0.2.4#53 resolving ns1.example.net/NS for 198.51.100.8#40815: Name test.net (SOA) not subdomain of zone example.net --invalid response
     ```
 
 

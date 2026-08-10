@@ -67,7 +67,7 @@ To configure F5 Distributed Cloud to send Security, Request, DNS or Audit logs, 
 
     https://app.usa1.sekoia.io/api/v1/intake-http
 
-    You can find your region’s domain here: [https://docs.sekoia.io/getting_started/regions/](https://docs.sekoia.io/getting_started/regions/)
+    You can find your region’s domain here: [https://docs.sekoia.com/getting_started/regions/](https://docs.sekoia.com/getting_started/regions/)
 
 Please find more information on how to configure remote logging [here](https://docs.cloud.f5.com/docs-v2/multi-cloud-network-connect/how-tos/others/global-log-streaming?searchQuery=global%20log%20receiver).
 
