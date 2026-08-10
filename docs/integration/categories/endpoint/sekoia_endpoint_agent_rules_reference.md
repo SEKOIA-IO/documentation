@@ -10,4 +10,3 @@ This page lists all built-in detection rules that match the Sekoia Endpoint Agen
 
 [Sekoia Endpoint Agent — events and fields reference](/integration/categories/endpoint/sekoia_endpoint_agent_events_reference.md): Reference for data source categories, event samples, and extracted ECS fields.
 
-[Reduce event volume from the Sekoia Endpoint Agent](/integration/categories/endpoint/reduce_event_volume_endpoint_agent.md): How to filter events at the agent level using optimization rules.
