@@ -27,10 +27,15 @@ The first step in troubleshooting is to check the agent log file.
 !!! note
     Always use the latest version of the Sekoia Endpoint Agent. Enabling automatic updates is recommended.
 
-If you contact Sekoia support, include the following information:
+If you contact Sekoia Support, include the following information:
 
-1. The full stack trace from the failed setup request, along with your machine configuration.
+1. The exact error message and, if available, the full stack trace.
 2. The agent log file.
+3. The operating system and version on which the agent is installed.
+4. The agent version.
+5. The steps that reproduce the issue and any relevant configuration details.
+
+For network or TLS-related issues, Support may also request a network capture (PCAP). Only provide a PCAP when needed, and handle it according to your organization's security and data-handling policies.
 
 ## CLI reference
 
