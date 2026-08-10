@@ -8,7 +8,7 @@ Before deploying at scale:
 
 1. Create a dedicated intake in Sekoia. See [Install the Sekoia Endpoint Agent](/integration/categories/endpoint/install_sekoia_endpoint_agent.md#step-1-create-an-intake).
 2. Retrieve your intake key from the intake configuration page.
-3. Verify that the required network streams are open on your endpoints. See [Sekoia Endpoint Agent](/integration/categories/endpoint/sekoia_endpoint_agent.md#prerequisites).
+3. Verify that the required network streams are open on your endpoints. See [Sekoia Endpoint Agent](/integration/categories/endpoint/sekoiaio.md#prerequisites).
 
 ## Deploy on macOS via Microsoft Intune
 
@@ -298,7 +298,7 @@ To enable Host Hygiene collection at install time, append `--compliance-collecto
 - Check **Event Viewer > Windows Logs > Application** for PowerShell execution errors.
 - Verify the service exists: `Get-Service SEKOIAEndpointAgent`.
 - Run the installer interactively as SYSTEM using [PsExec](https://learn.microsoft.com/en-us/sysinternals/downloads/psexec): `psexec -s -i powershell.exe`.
-- Confirm outbound HTTPS (TCP 443) is allowed to the intake and API endpoints for your region. See [Sekoia Endpoint Agent](/integration/categories/endpoint/sekoia_endpoint_agent.md#prerequisites).
+- Confirm outbound HTTPS (TCP 443) is allowed to the intake and API endpoints for your region. See [Sekoia Endpoint Agent](/integration/categories/endpoint/sekoiaio.md#prerequisites).
 
 For general agent log paths and CLI reference, see [Troubleshoot the Sekoia Endpoint Agent](/integration/categories/endpoint/troubleshoot_sekoia_endpoint_agent.md).
 
@@ -308,6 +308,6 @@ For general agent log paths and CLI reference, see [Troubleshoot the Sekoia Endp
 
 [Configure the Sekoia Endpoint Agent](/integration/categories/endpoint/configure_sekoia_endpoint_agent.md): How to set up log file collection, proxy, retention, and optional features.
 
-[Sekoia Endpoint Agent](/integration/categories/endpoint/sekoia_endpoint_agent.md): Overview of the agent, supported OS versions, prerequisites, and resource footprint.
+[Sekoia Endpoint Agent](/integration/categories/endpoint/sekoiaio.md): Overview of the agent, supported OS versions, prerequisites, and resource footprint.
 
 [Troubleshoot the Sekoia Endpoint Agent](/integration/categories/endpoint/troubleshoot_sekoia_endpoint_agent.md): How to read agent logs and resolve common errors.
