@@ -158,7 +158,7 @@ Depending on your needs, you can choose to create an **Action**, a **Connector**
     ```python
     from typing import Literal
 
-    from pydantic.v1 import BaseModel, HttpUrl
+    from pydantic import BaseModel, HttpUrl
     import requests
     from sekoia_automation.action import Action  # (1)!
 
@@ -376,7 +376,7 @@ Depending on your needs, you can choose to create an **Action**, a **Connector**
 
     To create the parameter `api_key` in the module, modify the file named `models.py` located in the  `testhttp_modules` directory with the following content:
     ```python
-    from pydantic.v1 import BaseModel, Field
+    from pydantic import BaseModel, Field
 
 
     class TesthttpModuleConfiguration(BaseModel):
@@ -392,7 +392,7 @@ Depending on your needs, you can choose to create an **Action**, a **Connector**
     ```python
     import json
     import time
-    from pydantic.v1 import Field
+    from pydantic import Field
     from sekoia_automation.connector import Connector, DefaultConnectorConfiguration
     import requests
 
@@ -528,7 +528,7 @@ Depending on your needs, you can choose to create an **Action**, a **Connector**
     ```python
     import time
 
-    from pydantic.v1 import BaseModel, HttpUrl
+    from pydantic import BaseModel, HttpUrl
     import requests
     from requests import HTTPError
     from sekoia_automation.trigger import Trigger  # (1)!
