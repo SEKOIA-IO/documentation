@@ -27,15 +27,15 @@ The first step in troubleshooting is to check the agent log file.
 !!! note
     Always use the latest version of the Sekoia Endpoint Agent. Enabling automatic updates is recommended.
 
-If you contact Sekoia Support, include the following information:
+If you contact Sekoia support, include the following information:
 
 1. The exact error message and, if available, the full stack trace.
 2. The agent log file.
-3. The operating system and version on which the agent is installed.
-4. The agent version.
+3. The operating system and version on the affected host.
+4. The agent version (`agent -h` or `.\agent-latest.exe --version`).
 5. The steps that reproduce the issue and any relevant configuration details.
 
-For network or TLS-related issues, Support may also request a network capture (PCAP). Only provide a PCAP when needed, and handle it according to your organization's security and data-handling policies.
+For network or TLS-related issues, support may also request a network capture (PCAP). Only provide a PCAP when needed, and handle it according to your organization's data-handling policies.
 
 ## CLI reference
 
@@ -94,7 +94,27 @@ To list all available options and commands, run:
 | `update` | Update the agent |
 | `uninstall` | Uninstall the agent |
 
-## Common errors
+## Common issues
+
+### The agent does not start on Linux
+
+The Sekoia Endpoint Agent uses the Linux audit framework. It cannot operate correctly when `auditd` is still running or when another service is holding the audit socket.
+
+Check the status of potentially conflicting services:
+
+```shell
+sudo systemctl status auditd
+sudo systemctl status systemd-journald-audit.socket
+```
+
+If either service is running, follow the steps in [Install the Sekoia Endpoint Agent](/integration/categories/endpoint/install_sekoia_endpoint_agent.md#step-3-install-the-agent) to stop and disable them. Then restart the agent:
+
+```shell
+sudo systemctl restart SEKOIAEndpointAgent.service
+sudo systemctl status SEKOIAEndpointAgent.service
+```
+
+If the agent still does not start, check the agent log file for additional errors.
 
 ### ERR HTTP request to send logs to SEKOIA.IO failed StatusCode=422
 
@@ -105,7 +125,7 @@ This error indicates a problem with the intake key or the community subscription
 
 ## Related articles
 
-[Sekoia Endpoint Agent](/integration/categories/endpoint/sekoiaio.md): Overview of the agent, supported OS versions, prerequisites, and resource footprint.
+[Sekoia Endpoint Agent](/integration/categories/endpoint/sekoia_endpoint_agent.md): Overview of the agent, supported OS versions, prerequisites, and resource footprint.
 
 [Install the Sekoia Endpoint Agent](/integration/categories/endpoint/install_sekoia_endpoint_agent.md): How to create an intake, download, and install the agent on Windows, Linux, and macOS.
 
