@@ -137,8 +137,6 @@ For a full list of changes between versions, see the [agent changelog](https://c
 
 [Update and uninstall the Sekoia Endpoint Agent](/integration/categories/endpoint/update_uninstall_sekoia_endpoint_agent.md): How to update the agent manually and remove it from a host.
 
-[Reduce event volume from the Sekoia Endpoint Agent](/integration/categories/endpoint/reduce_event_volume_endpoint_agent.md): How to filter events at the agent level using optimization rules.
-
 [Troubleshoot the Sekoia Endpoint Agent](/integration/categories/endpoint/troubleshoot_sekoia_endpoint_agent.md): How to read agent logs and resolve common errors.
 
 [Sekoia Endpoint Agent — events and fields reference](/integration/categories/endpoint/sekoia_endpoint_agent_events_reference.md): Reference for data source categories, event samples, and extracted ECS fields.
