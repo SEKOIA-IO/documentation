@@ -6,14 +6,14 @@ type: playbook
 
 ![Nextron Valhalla Sigma Rules](/assets/playbooks/library/nextron-valhalla-sigma-rules.svg){ align=right width=150 }
 
-Syncs the [Nextron Valhalla](https://valhalla.nextron-systems.com) Sigma feed into the Sekoia Rules Catalog so the rules execute in Sekoia's detection engine.
+Syncs the [Nextron Valhalla](https://valhalla.nextron-systems.com) Sigma feed into the Sekoia Rules Catalog so the rules can be used in Sekoia's detection engine.
 
 ## Configuration
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
 | `valhalla_api_key` | `string` | API key from valhalla.nextron-systems.com. The default is the public demo key (community feed only); a paid key unlocks the full ruleset. |
-| `sekoia_api_key` | `string` | Sekoia bearer token from Settings → Workspace → API Keys. Needs write access to the Rules Catalog. |
+| `sekoia_api_key` | `string` | Sekoia bearer token from Settings → Workspace → API Keys. Needs the following permissions: Manage rules and alert filters, View Rules Catalog, Manage rule settings. |
 | `sekoia_base_url` | `string` | Region-specific Sekoia API base URL. Default `https://api.sekoia.io` (FRA1). For FRA2/MCO1/UAE1 use `https://app.<region>.sekoia.io/api`. |
 
 ## Triggers
