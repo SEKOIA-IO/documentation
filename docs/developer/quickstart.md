@@ -14,11 +14,11 @@ The base URL depends on the region where your Sekoia.io subscription is hosted.
     </tr>
   </thead>
   <tbody>
-    <tr><td>FRA1 (default)</td><td><code>https://api.sekoia.io</code></td></tr>
-    <tr><td>FRA2</td><td><code>https://app.fra2.sekoia.io/api</code></td></tr>
-    <tr><td>MCO1</td><td><code>https://app.mco1.sekoia.io/api</code></td></tr>
-    <tr><td>UAE1</td><td><code>https://app.uae1.sekoia.io/api</code></td></tr>
-    <tr><td>USA1</td><td><code>https://app.usa1.sekoia.io/api</code></td></tr>
+    <tr><td>FRA1 (default)</td><td style="white-space: nowrap"><code>https://api.sekoia.io</code></td></tr>
+    <tr><td>FRA2</td><td style="white-space: nowrap"><code>https://app.fra2.sekoia.io/api</code></td></tr>
+    <tr><td>MCO1</td><td style="white-space: nowrap"><code>https://app.mco1.sekoia.io/api</code></td></tr>
+    <tr><td>UAE1</td><td style="white-space: nowrap"><code>https://app.uae1.sekoia.io/api</code></td></tr>
+    <tr><td>USA1</td><td style="white-space: nowrap"><code>https://app.usa1.sekoia.io/api</code></td></tr>
   </tbody>
 </table>
 
