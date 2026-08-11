@@ -13,7 +13,7 @@ After creating an intake and deploying the intake key or starting a pull connect
 
 ## Before you begin
 
-- You have completed [Step 1: Connect a data source](/getting_started/defend_step1_connect_data_source).
+- You have completed [Step 1: Connect a data source](/getting_started/defend_step1_connect_data_source.md).
 - For push intakes: your data source has been configured to forward logs to the Sekoia intake endpoint using the intake key.
 - For pull intakes: you have toggled the intake to **On**.
 
@@ -62,7 +62,7 @@ If your intake shows zero valid events after 30 minutes:
 | **Push** | Confirm the intake key is deployed correctly on your data source. Verify that firewall or network rules allow outbound connections to the Sekoia intake endpoint. |
 | **Pull** | Open the **Connector log** tab on the intake detail page. Look for error messages that indicate an authentication failure or a connectivity issue with the source API. |
 
-For region-specific intake endpoint URLs, refer to [Log in for the first time](/getting_started/log_in_for_the_first_time).
+For region-specific intake endpoint URLs, refer to [Log in for the first time](/getting_started/log_in_for_the_first_time.md).
 
 ## Set up an intake monitoring notification
 
@@ -75,7 +75,7 @@ To receive an alert when your intake stops sending events:
 
 This ensures you are informed immediately if a critical data source goes silent.
 
-See: [Create a notification](/getting_started/create_a_notification) for the full procedure.
+See: [Create a notification](/getting_started/create_a_notification.md) for the full procedure.
 
 ## Acceptable thresholds
 
@@ -84,10 +84,10 @@ See: [Create a notification](/getting_started/create_a_notification) for the ful
 | Warning events | Less than 3% of total events per intake |
 | Invalid events | Less than 1% of total events per intake |
 
-If warning or invalid rates exceed these thresholds, review the technology-specific setup guide for your intake in the [integration catalog](/integration/categories/).
+If warning or invalid rates exceed these thresholds, review the technology-specific setup guide for your intake in the [integration catalog](/integration/categories/index.md).
 
 ## Related links
 
-- [Step 3: Activate detection rules](/getting_started/defend_step3_activate_detection_rules): Start enabling rules once your events are flowing correctly.
-- [Create a notification](/getting_started/create_a_notification): Set up alerts for intake monitoring and other triggers.
-- [Troubleshooting common issues](/getting_started/troubleshooting_common_issues): Solutions for connectivity and ingestion problems.
+- [Step 3: Activate detection rules](/getting_started/defend_step3_activate_detection_rules.md): Start enabling rules once your events are flowing correctly.
+- [Create a notification](/getting_started/create_a_notification.md): Set up alerts for intake monitoring and other triggers.
+- [Troubleshooting common issues](/getting_started/troubleshooting_common_issues.md): Solutions for connectivity and ingestion problems.

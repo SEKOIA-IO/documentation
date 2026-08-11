@@ -13,11 +13,11 @@ An alert is raised when an incoming event matches an active detection rule. Tria
 
 ## Before you begin
 
-- You have completed [Step 3: Activate detection rules](/getting_started/defend_step3_activate_detection_rules) and rules are active.
+- You have completed [Step 3: Activate detection rules](/getting_started/defend_step3_activate_detection_rules.md) and rules are active.
 - At least one alert has been raised in your community.
 
 !!! note "No alerts yet?"
-    If no alerts have appeared after your rules are active, your intakes may need more time to generate matching events. Check that your intake is receiving events (see [Step 2](/getting_started/defend_step2_verify_event_reception)) and that the corresponding rules are enabled. You can also lower the effort level filter to see if Elementary rules are active.
+    If no alerts have appeared after your rules are active, your intakes may need more time to generate matching events. Check that your intake is receiving events (see [Step 2](/getting_started/defend_step2_verify_event_reception.md)) and that the corresponding rules are enabled. You can also lower the effort level filter to see if Elementary rules are active.
 
 ## Open the alerts page
 
@@ -104,5 +104,5 @@ By default, the current alert is also rejected when the filter is created. The f
 
 ## Related links
 
-- [Step 5: Automate with playbooks](/getting_started/defend_step5_automate_with_playbooks): Set up automated enrichment and response workflows for your alerts.
-- [Notification system overview](/getting_started/notification_system_overview): Receive an email or Slack message when a high-urgency alert is raised.
+- [Step 5: Automate with playbooks](/getting_started/defend_step5_automate_with_playbooks.md): Set up automated enrichment and response workflows for your alerts.
+- [Notification system overview](/getting_started/notification_system_overview.md): Receive an email or Slack message when a high-urgency alert is raised.

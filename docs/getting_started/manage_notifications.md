@@ -14,7 +14,7 @@ After you create notification rules, you can update them at any time to reflect 
 ## Before you begin
 
 - You must be logged in to Sekoia with any role.
-- You must have at least one existing notification rule. See [Create a notification](/getting_started/create_a_notification) if you have not set one up yet.
+- You must have at least one existing notification rule. See [Create a notification](/getting_started/create_a_notification.md) if you have not set one up yet.
 
 !!! note "Personal visibility"
     Notification rules are personal. You can only view and manage the rules you created. Rules created by other users in your community are not visible to you.
@@ -81,6 +81,6 @@ The rule is removed immediately from your listing and stops firing.
 
 ## Related links
 
-- [Notification system overview](/getting_started/notification_system_overview): How the notification system works and what triggers and delivery channels are available.
-- [Create a notification](/getting_started/create_a_notification): Step-by-step procedure to set up a new notification rule.
-- [Notification examples](/getting_started/notification_examples): Ready-to-use templates for common monitoring scenarios.
+- [Notification system overview](/getting_started/notification_system_overview.md): How the notification system works and what triggers and delivery channels are available.
+- [Create a notification](/getting_started/create_a_notification.md): Step-by-step procedure to set up a new notification rule.
+- [Notification examples](/getting_started/notification_examples.md): Ready-to-use templates for common monitoring scenarios.

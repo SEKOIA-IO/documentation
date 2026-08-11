@@ -782,7 +782,7 @@ plugins:
       searching/search_events.md: xdr/features/investigate/events.md
       user_center.md: getting_started/index.md
       user_center/apikeys.md: getting_started/manage_api_keys.md
-      user_center/multi_factor_authentication.md: getting_started/account_security.md
+      user_center/multi_factor_authentication.md: getting_started/secure_your_account.md
       xdr/features/collect/ingestion_methods/https/format.md: integration/ingestion_methods/https/format.md
       xdr/features/collect/ingestion_methods/index.md: integration/ingestion_methods/index.md
       xdr/features/collect/ingestion_methods/sekoiaio_forwarder.md: integration/ingestion_methods/syslog/sekoiaio_forwarder.md

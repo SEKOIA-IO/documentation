@@ -73,7 +73,7 @@ temporarily hide the message.
 
 ## Related links
 
-- [Subscriptions](/getting_started/subscriptions.md): An overview of the Subscriptions page, including access requirements, 
+- [Subscriptions](/getting_started/understand_your_subscription.md): An overview of the Subscriptions page, including access requirements, 
 subscription details, and trial specifications for single-tenant and MSSP communities.
 - [Allocate a trial subscription](/xdr/FAQ/subscriptions/allocate_trial_subscription.md): Step-by-step instructions for manually 
 assigning a trial subscription to a community from the MSSP workspace.

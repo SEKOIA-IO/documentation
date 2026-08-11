@@ -13,7 +13,7 @@ Playbooks are automated workflows that execute a sequence of actions when a trig
 
 ## Before you begin
 
-- You have completed [Step 4: Triage your first alert](/getting_started/defend_step4_triage_first_alert).
+- You have completed [Step 4: Triage your first alert](/getting_started/defend_step4_triage_first_alert.md).
 - You have the **Analyst** or **Admin** role.
 
 ## Understand playbook triggers
@@ -69,9 +69,9 @@ As your library of playbooks grows, keep these principles in mind:
 - Aim for playbooks that complete in under one minute.
 - Limit each playbook to fewer than 15 modules (trigger + operators + actions).
 
-For detailed guidance on designing and optimizing your playbook library, see the [best practices guide](/xdr/operations/best-practices).
+For detailed guidance on designing and optimizing your playbook library, see the [best practices guide](/getting_started/best_practices.md).
 
 ## Related links
 
-- [Quick start: Defend](/getting_started/quick_start_defend): Return to the overview of all five steps.
-- [Notification system overview](/getting_started/notification_system_overview): Configure alerts for playbook errors and other operational events.
+- [Quick start: Defend](/getting_started/quick_start_defend.md): Return to the overview of all five steps.
+- [Notification system overview](/getting_started/notification_system_overview.md): Configure alerts for playbook errors and other operational events.

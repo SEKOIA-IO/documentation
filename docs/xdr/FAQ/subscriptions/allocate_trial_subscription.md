@@ -30,7 +30,7 @@ new trial status.
 
 ## Related links
 
-- [Subscriptions](/getting_started/subscriptions.md): An overview of the Subscriptions page, including access requirements, 
+- [Subscriptions](/getting_started/understand_your_subscription.md): An overview of the Subscriptions page, including access requirements, 
 subscription details, and trial specifications for single-tenant and MSSP communities.
 - [Subscription notifications](/xdr/FAQ/subscriptions/subscriptions_notifications.md): How Sekoia notifies administrators about 
 upcoming and expired licenses, including email and in-app banner behavior.

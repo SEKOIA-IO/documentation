@@ -14,7 +14,7 @@ To give a team member access to Sekoia, you send them an invitation from the wor
 ## Before you begin
 
 - You must have the **Admin** role to invite users.
-- Decide which community the user should join and which role they should receive. See [Roles and permissions](/getting_started/roles_and_permissions) if you need help choosing.
+- Decide which community the user should join and which role they should receive. See [Roles and permissions](/getting_started/roles_and_permissions.md) if you need help choosing.
 
 ## Invite a user by email
 
@@ -48,6 +48,6 @@ See the SSO configuration guide for the full setup procedure.
 
 ## Related links
 
-- [Manage users](/getting_started/manage_users): How to edit roles, deactivate accounts, and remove users after they have been invited.
-- [Roles and permissions](/getting_started/roles_and_permissions): Overview of built-in and custom roles to help you choose the right access level.
-- [Workspace setup overview](/getting_started/workspace_setup_overview): Full admin checklist for configuring a workspace.
+- [Manage users](/getting_started/manage_users.md): How to edit roles, deactivate accounts, and remove users after they have been invited.
+- [Roles and permissions](/getting_started/roles_and_permissions.md): Overview of built-in and custom roles to help you choose the right access level.
+- [Workspace setup overview](/getting_started/workspace_setup_overview.md): Full admin checklist for configuring a workspace.

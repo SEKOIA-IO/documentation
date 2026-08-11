@@ -77,5 +77,5 @@ To revoke an API key:
 
 ## Related links
 
-- [Workspace setup overview](/getting_started/workspace_setup_overview): Full admin checklist for configuring your workspace.
-- [Roles and permissions](/getting_started/roles_and_permissions): How user roles differ from API key permissions.
+- [Workspace setup overview](/getting_started/workspace_setup_overview.md): Full admin checklist for configuring your workspace.
+- [Roles and permissions](/getting_started/roles_and_permissions.md): How user roles differ from API key permissions.

@@ -15,11 +15,11 @@ This glossary defines key terms used across Sekoia documentation and the broader
 
 **Alert**
 A security notification generated when an incoming event matches an active detection rule. Alerts have an urgency score, a lifecycle (from Pending to Closed), and contain the events that triggered them. Alerts are the primary unit of work for SOC analysts in Sekoia Defend.
-See: [Triage your first alert](/getting_started/defend_step4_triage_first_alert)
+See: [Triage your first alert](/getting_started/defend_step4_triage_first_alert.md)
 
 **API key**
 An authentication token that grants programmatic access to the Sekoia platform. API keys are permissions-based (not role-based) and are used to connect external tools, run integrations, and operate playbooks. A key is only displayed once at creation and must be stored securely.
-See: [Manage API keys](/getting_started/manage_api_keys)
+See: [Manage API keys](/getting_started/manage_api_keys.md)
 
 **Asset**
 Any device, user account, or network element that is part of your monitored infrastructure. Assets in Sekoia have a criticality score that influences alert urgency. They are discovered automatically from event data or added manually.
@@ -37,7 +37,7 @@ A container used to group related alerts and document an ongoing investigation. 
 
 **Community**
 An operational subdivision within a workspace. Communities allow separate configurations, intakes, detection rules, alerts, and user access for different teams or clients. Most day-to-day security operations happen at the community level.
-See: [Workspace and communities](/getting_started/workspace_and_communities)
+See: [Workspace and communities](/getting_started/workspace_and_communities.md)
 
 **CVE (Common Vulnerabilities and Exposures)**
 A standardized identifier for a publicly known software vulnerability. CVEs are tracked in the Sekoia Intelligence database and can be surfaced in the Reveal module when a vulnerable asset is involved in an alert.
@@ -46,7 +46,7 @@ A standardized identifier for a publicly known software vulnerability. CVEs are 
 
 **Detection rule**
 A logic pattern that Sekoia applies to your event stream in real time to identify suspicious activity. Detection rules can be Sigma-based (pattern matching), CTI-based (indicator matching), or anomaly-based (statistical deviation). Sekoia provides over 1,000 verified rules mapped to the MITRE ATT&CK framework.
-See: [Activate detection rules](/getting_started/defend_step3_activate_detection_rules)
+See: [Activate detection rules](/getting_started/defend_step3_activate_detection_rules.md)
 
 ## E
 
@@ -61,7 +61,7 @@ An organizational grouping for intakes within a community. Entities help you str
 
 **Event**
 A normalized log entry ingested from one of your data sources via an intake. Events are the raw material on which detection rules operate. Sekoia normalizes events to the Elastic Common Schema (ECS) to enable technology-agnostic detection.
-See: [Verify event reception](/getting_started/defend_step2_verify_event_reception)
+See: [Verify event reception](/getting_started/defend_step2_verify_event_reception.md)
 
 ## F
 
@@ -78,7 +78,7 @@ A threat intelligence object that represents a specific pattern known to be asso
 
 **Intake**
 A configured data source connection in Sekoia Defend. An intake defines how logs from a specific technology (firewall, EDR, cloud service, etc.) are collected and normalized. Each intake has a unique intake key used to route incoming data. Intakes can be push-based (you forward logs to Sekoia) or pull-based (Sekoia fetches logs from a source API).
-See: [Connect a data source](/getting_started/defend_step1_connect_data_source)
+See: [Connect a data source](/getting_started/defend_step1_connect_data_source.md)
 
 **IOC (Indicator of Compromise)**
 A technical artifact, such as a file hash, IP address, domain name, or URL, that provides evidence that a system has been compromised or is in contact with a known threat. In Sekoia Intelligence, an observable becomes an IOC when it is clearly associated with malicious activity and linked to a threat.
@@ -103,7 +103,7 @@ A technical artifact extracted from threat intelligence sources, such as an IP a
 
 **Playbook**
 An automated workflow in Sekoia Defend that executes a sequence of actions in response to a trigger, such as a new alert. Playbooks are used to enrich alerts with external data, change alert statuses automatically, send notifications, or interact with third-party tools.
-See: [Automate with playbooks](/getting_started/defend_step5_automate_with_playbooks)
+See: [Automate with playbooks](/getting_started/defend_step5_automate_with_playbooks.md)
 
 **Point of Interest (PoI)**
 A behavioral signal surfaced by the Reveal module that highlights anomalous activity on an asset, such as unusual authentication patterns or access from unexpected locations. Points of Interest appear during triage and investigation without requiring a separate alert.
@@ -115,7 +115,7 @@ An analytical document published in the Sekoia Intelligence database by Sekoia a
 
 **Role**
 A set of permissions assigned to a user that determines what they can view and do within a workspace or community. Sekoia has three built-in roles (Guest, Analyst, Admin) and supports custom and restricted roles.
-See: [Roles and permissions](/getting_started/roles_and_permissions)
+See: [Roles and permissions](/getting_started/roles_and_permissions.md)
 
 ## S
 
@@ -158,14 +158,14 @@ A score between 0 and 100 assigned to each alert in Sekoia Defend. Urgency is ca
 
 **Workspace**
 The top-level environment in Sekoia that contains all communities, users, and configuration for your organization. Each workspace is isolated and has its own subscription and security settings.
-See: [Workspace and communities](/getting_started/workspace_and_communities)
+See: [Workspace and communities](/getting_started/workspace_and_communities.md)
 
 **XDR (Extended Detection and Response)**
 A security platform that unifies log collection, threat detection, investigation, and automated response across all layers of an organization's environment (endpoints, networks, cloud, applications). Sekoia Defend is an XDR platform.
 
 ## Related links
 
-- [What is Sekoia](/getting_started/what_is_sekoia): Overview of the Sekoia platform and its product suite.
-- [Workspace and communities](/getting_started/workspace_and_communities): How Sekoia organizes your environment.
-- [Roles and permissions](/getting_started/roles_and_permissions): How user access is structured in Sekoia.
-- [Quick start: Elevate](/getting_started/quick_start_elevate): Get started with AI-powered alert triage.
+- [What is Sekoia](/getting_started/what_is_sekoia.md): Overview of the Sekoia platform and its product suite.
+- [Workspace and communities](/getting_started/workspace_and_communities.md): How Sekoia organizes your environment.
+- [Roles and permissions](/getting_started/roles_and_permissions.md): How user access is structured in Sekoia.
+- [Quick start: Elevate](/getting_started/quick_start_elevate.md): Get started with AI-powered alert triage.

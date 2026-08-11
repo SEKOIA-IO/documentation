@@ -92,6 +92,6 @@ To enable this setting:
 
 ## Related links
 
-- [Invite users](/getting_started/invite_users): How to add new users to a workspace or community.
-- [Roles and permissions](/getting_started/roles_and_permissions): Overview of role types and permission levels.
-- [Secure your account](/getting_started/secure_your_account): How to reset a user's two-factor authentication.
+- [Invite users](/getting_started/invite_users.md): How to add new users to a workspace or community.
+- [Roles and permissions](/getting_started/roles_and_permissions.md): Overview of role types and permission levels.
+- [Secure your account](/getting_started/secure_your_account.md): How to reset a user's two-factor authentication.

@@ -13,7 +13,7 @@ Detection rules are the logic that transforms raw events into security alerts. S
 
 ## Before you begin
 
-- You have completed [Step 2: Verify event reception](/getting_started/defend_step2_verify_event_reception) and your intake is receiving valid events.
+- You have completed [Step 2: Verify event reception](/getting_started/defend_step2_verify_event_reception.md) and your intake is receiving valid events.
 
 ## Open the rules catalog
 
@@ -83,5 +83,5 @@ Darker cells indicate more rules covering that technique. White cells indicate g
 
 ## Related links
 
-- [Step 4: Triage your first alert](/getting_started/defend_step4_triage_first_alert): What to do when detection rules start generating alerts.
-- [Notification system overview](/getting_started/notification_system_overview): Set up a notification to be informed when new rules are added to the catalog.
+- [Step 4: Triage your first alert](/getting_started/defend_step4_triage_first_alert.md): What to do when detection rules start generating alerts.
+- [Notification system overview](/getting_started/notification_system_overview.md): Set up a notification to be informed when new rules are added to the catalog.
