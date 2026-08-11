@@ -38,15 +38,20 @@ export function scrollToAnchor(hash) {
     // scroll until the anchor position is stable and reached.
     const targetTop = () => el.getBoundingClientRect().top + window.scrollY - 150
     let lastTop = null
+    let lastY = null
     let attempts = 0
     const settle = () => {
         const top = targetTop()
         suppressScrollSpyUntil = Date.now() + 400
         if (Math.abs(window.scrollY - top) < 2) return
-        if (lastTop === null || Math.abs(top - lastTop) > 1) {
+        // Re-issue when the anchor moved, or when the browser dropped the
+        // scroll animation (scrollY stalled away from the target).
+        const stalled = lastY !== null && Math.abs(window.scrollY - lastY) < 1
+        if (lastTop === null || Math.abs(top - lastTop) > 1 || stalled) {
             window.scrollTo({ top, behavior: attempts === 0 ? 'smooth' : 'auto' })
             lastTop = top
         }
+        lastY = window.scrollY
         if (++attempts < 40) setTimeout(settle, 150)
     }
     settle()
