@@ -11,9 +11,9 @@ Event searches can take time to process. The Sekoia.io API handles this with an 
 
 The workflow involves three steps:
 
-1. **Create a search job** — submit your query and time window, get back a job `uuid`
-2. **Poll the job status** — check until the job is done
-3. **Retrieve the events** — fetch results when status is `2` (done)
+1. **Create a search job**: submit your query and time window, get back a job `uuid`
+2. **Poll the job status**: check until the job is done
+3. **Retrieve the events**: fetch results when status is `2` (done)
 
 Job statuses:
 

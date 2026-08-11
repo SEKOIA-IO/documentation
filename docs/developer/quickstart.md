@@ -2,7 +2,7 @@
 
 The Sekoia.io REST API lets you access platform data, trigger actions, and build integrations or automations on top of Sekoia.io. The GUI itself is built on this API, so anything you can do in the interface, you can do via the API.
 
-## Step 1 — Find your base URL
+## Step 1: Find your base URL
 
 The base URL depends on the region where your Sekoia.io subscription is hosted.
 
@@ -24,7 +24,7 @@ The base URL depends on the region where your Sekoia.io subscription is hosted.
 
 If you are unsure of your region, look at the URL you use to access the Sekoia.io application. For example, if you log in via `https://app.mco1.sekoia.io/`, your API base URL is `https://app.mco1.sekoia.io/api`.
 
-## Step 2 — Create an API key
+## Step 2: Create an API key
 
 All API requests are authenticated with an API key. To create one:
 
@@ -33,7 +33,7 @@ All API requests are authenticated with an API key. To create one:
 3. Give your key a name and a description.
 4. Set an expiration date (30 days, 180 days, 365 days, or custom up to 1 year).
 5. Select the permissions your key needs.
-6. Click **Save** and copy the key immediately — it will only be shown once.
+6. Click **Save** and copy the key immediately. It will only be shown once.
 
 !!! tip
     Start with read-only permissions. You can always create a second key with write permissions when you need to perform write operations.
@@ -41,7 +41,7 @@ All API requests are authenticated with an API key. To create one:
 !!! note
     Only users with admin roles can create API keys.
 
-## Step 3 — Make your first API call
+## Step 3: Make your first API call
 
 To verify that your key works, retrieve your user profile. This endpoint requires no special permissions beyond a valid key.
 
@@ -75,7 +75,7 @@ If you can see your email and UUID, your setup is working.
 
 ## Next steps
 
-- [Search for rules](tutorials/search_rules.md) — filter and retrieve detection rules from your catalog
-- [Create a SIGMA rule](tutorials/create_sigma_rule.md) — create a detection rule programmatically
-- [Search events](tutorials/search_events.md) — run an asynchronous event search and retrieve results
-- [Filtering](filtering.md) — filter and paginate API results with `match[<field>]`, date ranges and cursors
+- [Search for rules](tutorials/search_rules.md): filter and retrieve detection rules from your catalog
+- [Create a SIGMA rule](tutorials/create_sigma_rule.md): create a detection rule programmatically
+- [Search events](tutorials/search_events.md): run an asynchronous event search and retrieve results
+- [Filtering](filtering.md): filter and paginate API results with `match[<field>]`, date ranges and cursors
