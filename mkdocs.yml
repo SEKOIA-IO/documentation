@@ -637,6 +637,7 @@ nav:
       - IPtoASN: integration/action_library/iptoasn.md
       - MISP: integration/action_library/misp.md
       - MWDB: integration/action_library/mwdb.md
+      - Nextron Valhalla Sigma Rules: integration/action_library/nextron-valhalla-sigma-rules.md
       - OSINT: integration/action_library/osint.md
       - Onyphe: integration/action_library/onyphe.md
       - Public Suffix: integration/action_library/public-suffix.md
