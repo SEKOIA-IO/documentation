@@ -28,6 +28,12 @@ POST /v1/sic/conf/rules-catalog/rules
 
 ## Create the rule
 
+To create the rule:
+
+1. Build the JSON body using the required fields above. The `payload` field carries the SIGMA detection logic as a YAML string: escape the newlines (`\n`) if you write it inline.
+2. Send it with a `POST` request, replacing `YOUR_API_KEY` with your own key.
+3. Keep the `uuid` returned in the response: it identifies your rule for any later update or lookup.
+
 === "curl"
 
     ```bash
