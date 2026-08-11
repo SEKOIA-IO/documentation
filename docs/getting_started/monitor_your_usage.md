@@ -14,7 +14,7 @@ The Usage page shows how your communities consume the resources covered by your 
 ## Before you begin
 
 - You must have access to **Settings > Usage**.
-- You must know the license type and limits assigned to your community. See [Understand your subscription](/getting_started/understand_your_subscription).
+- You must know the license type and limits assigned to your community. See [Understand your subscription](/getting_started/understand_your_subscription.md).
 
 !!! note "Usage and permissions"
     If the **Usage** page is not available in your **Settings** menu, ask your workspace administrator to confirm your consumption and license limits.
@@ -58,12 +58,12 @@ Review the Usage page:
 - After enabling detection rules or playbooks that can increase processing or action volume.
 - Before the end of each month, to compare current and projected consumption.
 
-If consumption approaches a limit, review [Investigate overusage](/xdr/usecases/playbook/investigate_overusage/), the [Optimization rules overview](/xdr/features/collect/optimization_rules_overview/), and [Log volume reduction strategies](/xdr/usecases/playbook/log_volume_reduction_strategies/). Ask your workspace administrator or Customer Success Manager (CSM) about contract-specific limits and options when relevant.
+If consumption approaches a limit, review [Investigate overusage](/xdr/usecases/playbook/investigate_overusage.md), the [Optimization rules overview](/xdr/features/collect/optimization_rules_overview.md), and [Log volume reduction strategies](/xdr/usecases/playbook/log_volume_reduction_strategies.md). Ask your workspace administrator or Customer Success Manager (CSM) about contract-specific limits and options when relevant.
 
 ## Related links
 
-- [Understand your subscription](/getting_started/understand_your_subscription): Identify your license type, retention settings, and limits.
-- [Investigate overusage](/xdr/usecases/playbook/investigate_overusage/): Identify the causes of usage above your expected volume.
-- [Optimization rules overview](/xdr/features/collect/optimization_rules_overview/): Configure rules that reduce unnecessary event processing.
-- [Log volume reduction strategies](/xdr/usecases/playbook/log_volume_reduction_strategies/): Review practical ways to control data volume.
-- [Workspace setup overview](/getting_started/workspace_setup_overview): Complete the administrator setup checklist.
+- [Understand your subscription](/getting_started/understand_your_subscription.md): Identify your license type, retention settings, and limits.
+- [Investigate overusage](/xdr/usecases/playbook/investigate_overusage.md): Identify the causes of usage above your expected volume.
+- [Optimization rules overview](/xdr/features/collect/optimization_rules_overview.md): Configure rules that reduce unnecessary event processing.
+- [Log volume reduction strategies](/xdr/usecases/playbook/log_volume_reduction_strategies.md): Review practical ways to control data volume.
+- [Workspace setup overview](/getting_started/workspace_setup_overview.md): Complete the administrator setup checklist.

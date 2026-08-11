@@ -48,19 +48,19 @@ The Elevate agent is disabled by default. Enabling it starts automatic analysis 
 !!! warning "Run consumption starts immediately"
     Enabling auto-analyze triggers analysis of all new incoming alerts across all communities. Each analysis consumes one run from your monthly run pack. Review your run pack before activating.
 
-For step-by-step activation, see [Activate Elevate on a workspace](/xdr/features/modules/elevate_activate/).
+For step-by-step activation, see [Activate Elevate on a workspace](/xdr/features/modules/elevate_activate.md).
 
 ## Go further
 
 Once Elevate is active, explore these guides to tune and get the most out of it:
 
-- [Elevate overview](/xdr/features/modules/elevate_overview/): Full concept guide covering the investigation method, runbooks, verdicts, and key concepts.
-- [Investigate an alert with Elevate](/xdr/features/modules/elevate_investigate_alert/): How to read a verdict, findings, and reasoning questions.
-- [Add custom instructions](/xdr/features/modules/elevate_custom_instructions/): Teach the agent about your environment to improve verdict accuracy.
-- [Manage your Elevate runs](/xdr/features/modules/elevate_quota/): Monitor consumption and optimize your monthly run pack.
+- [Elevate overview](/xdr/features/modules/elevate_overview.md): Full concept guide covering the investigation method, runbooks, verdicts, and key concepts.
+- [Investigate an alert with Elevate](/xdr/features/modules/elevate_investigate_alert.md): How to read a verdict, findings, and reasoning questions.
+- [Add custom instructions](/xdr/features/modules/elevate_custom_instructions.md): Teach the agent about your environment to improve verdict accuracy.
+- [Manage your Elevate runs](/xdr/features/modules/elevate_quota.md): Monitor consumption and optimize your monthly run pack.
 
 ## Related links
 
-- [Workspace setup overview](/getting_started/workspace_setup_overview): Admin checklist for enabling modules and preparing your workspace.
-- [Quick start: Defend](/getting_started/quick_start_defend): Complete the Defend quick start before setting up Elevate.
-- [Glossary](/getting_started/glossary): Definitions for alert, verdict, runbook, and agentic triage.
+- [Workspace setup overview](/getting_started/workspace_setup_overview.md): Admin checklist for enabling modules and preparing your workspace.
+- [Quick start: Defend](/getting_started/quick_start_defend.md): Complete the Defend quick start before setting up Elevate.
+- [Glossary](/getting_started/glossary.md): Definitions for alert, verdict, runbook, and agentic triage.

@@ -38,10 +38,10 @@ You do not need every source to start. Reveal becomes more capable as you add so
 
 The full setup guide covers telemetry onboarding, asset connector configuration, and Sekoia Endpoint Agent deployment.
 
-Follow the complete guide: [Getting started with Reveal](/xdr/features/modules/reveal_getting_started/)
+Follow the complete guide: [Getting started with Reveal](/xdr/features/modules/reveal_getting_started.md)
 
 ## Related links
 
-- [Getting started with Reveal](/xdr/features/modules/reveal_getting_started/): Full step-by-step setup guide for all data source types.
-- [Workspace setup overview](/getting_started/workspace_setup_overview): Admin checklist for enabling modules and preparing your workspace.
-- [Glossary](/getting_started/glossary): Definitions for asset, point of interest, and vulnerability enrichment.
+- [Getting started with Reveal](/xdr/features/modules/reveal_getting_started.md): Full step-by-step setup guide for all data source types.
+- [Workspace setup overview](/getting_started/workspace_setup_overview.md): Admin checklist for enabling modules and preparing your workspace.
+- [Glossary](/getting_started/glossary.md): Definitions for asset, point of interest, and vulnerability enrichment.

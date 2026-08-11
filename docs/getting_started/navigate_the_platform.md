@@ -9,7 +9,7 @@ type: task
 
 # Navigate the platform
 
-Sekoia's interface is built around a persistent left-hand navigation menu that gives you access to all features within your current workspace and community. This article explains how to move around the platform, switch between environments, apply filters, and personalize your view.
+Sekoia's interface is built around a persistent left-hand navigation menu that gives you access to all features within your current workspace and community. This article explains how to move around the platform, switch between environments, and apply filters.
 
 ## The navigation menu
 
@@ -111,28 +111,11 @@ Once the filter panel is open:
 
 ## Personalize your menu
 
-You can adjust the navigation menu to match your daily workflow.
+You can pin pages to favorites and reorder navigation sections to match your daily workflow.
 
-### Add a page to favorites
-
-To pin a page to the top of the navigation menu:
-
-1. Hover over the page name in the navigation menu.
-2. Click the star icon that appears next to the page name.
-
-The page appears pinned at the top of the menu for quick access.
-
-### Reorder menu sections
-
-To change the order of sections in the navigation menu:
-
-1. Click and hold the header of the section you want to move.
-2. Drag the section to the desired position in the menu.
-3. Release to drop it in its new location.
-
-> 📸 [SCREENSHOT SUGGESTION: The navigation menu with a section header being dragged to a new position, showing the drag handle. | ALT TEXT: Navigation menu with a section being reordered by drag and drop.]
+See [Customize your interface](/getting_started/customize_your_interface.md) for the step-by-step procedures.
 
 ## Related links
 
-- [Workspace and communities](/getting_started/workspace_and_communities): Explanation of the workspace and community structure and what each level controls.
-- [Customize your interface](/getting_started/customize_your_interface): Additional display preferences you can configure for your account.
+- [Workspace and communities](/getting_started/workspace_and_communities.md): Explanation of the workspace and community structure and what each level controls.
+- [Customize your interface](/getting_started/customize_your_interface.md): Add pages to favorites, reorder menu sections, and configure table columns.

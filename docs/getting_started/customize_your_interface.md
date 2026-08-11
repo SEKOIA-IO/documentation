@@ -62,7 +62,9 @@ To set your preferred method:
 2. Select **Profile and security**.
 3. In the **Security** section, select your preferred authentication method.
 
+To set up or change your authentication configuration, see [Secure your account](/getting_started/secure_your_account.md).
+
 ## Related links
 
-- [Navigate the platform](/getting_started/navigate_the_platform): How the navigation menu is structured and how to use filters.
-- [Secure your account](/getting_started/secure_your_account): Enable two-factor authentication and manage your authentication settings.
+- [Navigate the platform](/getting_started/navigate_the_platform.md): How the navigation menu is structured and how to use filters.
+- [Secure your account](/getting_started/secure_your_account.md): Enable two-factor authentication and manage your authentication settings.

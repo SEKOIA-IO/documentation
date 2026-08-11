@@ -89,5 +89,5 @@ The full documentation repository is available at [github.com/SEKOIA-IO/document
 
 ## Related links
 
-- [Troubleshooting common issues](/getting_started/troubleshooting_common_issues): First-level solutions for login, connectivity, and intake problems.
-- [Log in for the first time](/getting_started/log_in_for_the_first_time): Includes region URL reference if you cannot reach the login page.
+- [Troubleshooting common issues](/getting_started/troubleshooting_common_issues.md): First-level solutions for login, connectivity, and intake problems.
+- [Log in for the first time](/getting_started/log_in_for_the_first_time.md): Includes region URL reference if you cannot reach the login page.

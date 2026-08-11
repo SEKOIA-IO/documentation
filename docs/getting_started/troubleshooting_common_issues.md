@@ -19,7 +19,7 @@ This article covers the most common issues you may encounter when using Sekoia a
 
 **What to do:**
 
-1. Verify your region URL with your administrator. Each Sekoia region has a different app URL (see [Log in for the first time](/getting_started/log_in_for_the_first_time) for the full table).
+1. Verify your region URL with your administrator. Each Sekoia region has a different app URL (see [Log in for the first time](/getting_started/log_in_for_the_first_time.md) for the full table).
 2. Try accessing the URL directly in your browser instead of using a saved bookmark.
 3. Check that your network does not block access to `*.sekoia.io`.
 
@@ -49,7 +49,7 @@ This article covers the most common issues you may encounter when using Sekoia a
 2. Wait for your authenticator app to generate a new code before trying again.
 3. If the problem persists, contact your workspace administrator and ask them to reset your 2FA.
 
-See: [Secure your account](/getting_started/secure_your_account) for the administrator reset procedure.
+See: [Secure your account](/getting_started/secure_your_account.md) for the administrator reset procedure.
 
 ### Your account has been deactivated
 
@@ -100,9 +100,9 @@ Contact your workspace administrator. They can reactivate your account from **Se
 Allow up to 30 minutes after configuration before concluding that no events are arriving.
 
 !!! tip "Using the Sekoia Forwarder?"
-    If you are using the Sekoia.io Forwarder to send events, consult the [Forwarder troubleshooting guide](/integration/ingestion_methods/syslog/sekoiaio_forwarder/) for specific diagnostic steps.
+    If you are using the Sekoia.io Forwarder to send events, consult the [Forwarder troubleshooting guide](/integration/ingestion_methods/syslog/sekoiaio_forwarder.md) for specific diagnostic steps.
 
-See: [Verify event reception](/getting_started/defend_step2_verify_event_reception) for the full verification procedure.
+See: [Verify event reception](/getting_started/defend_step2_verify_event_reception.md) for the full verification procedure.
 
 ### Your intake shows a high rate of warning or invalid events
 
@@ -112,7 +112,7 @@ See: [Verify event reception](/getting_started/defend_step2_verify_event_recepti
 2. In the **Events** section, filter by **Warning** or **Invalid** to view the parsing error messages.
 3. Check the **Raw event** tab for the affected events to verify that the log format matches what the intake expects. If the format is different from what Sekoia expects (for example, an unknown header or unexpected structure), the log is considered malformed.
 4. If the format is malformed, review your entire ingestion chain and the configuration of the third-party application sending the log.
-5. If the format is correct but Sekoia does not extract fields relevant to detection, cross-reference the issue with the technology-specific setup guide in the [integration catalog](/integration/categories/) and open a support ticket with a copy of the raw event if the issue is not covered.
+5. If the format is correct but Sekoia does not extract fields relevant to detection, cross-reference the issue with the technology-specific setup guide in the [integration catalog](/integration/categories/index.md) and open a support ticket with a copy of the raw event if the issue is not covered.
 
 !!! tip "Checking log format"
     In the intake documentation for your technology, the **Raw event** section shows an example of the expected log format. Compare it with what your source is sending to identify formatting differences.
@@ -126,7 +126,7 @@ If none of the steps above resolve your issue, contact the Sekoia support team:
 
 ## Related links
 
-- [Support and resources](/getting_started/support_and_resources): Full list of support and learning resources.
-- [Log in for the first time](/getting_started/log_in_for_the_first_time): Region URL reference and invitation troubleshooting.
-- [Secure your account](/getting_started/secure_your_account): 2FA reset procedure for administrators.
-- [Verify event reception](/getting_started/defend_step2_verify_event_reception): Intake health checks and monitoring setup.
+- [Support and resources](/getting_started/support_and_resources.md): Full list of support and learning resources.
+- [Log in for the first time](/getting_started/log_in_for_the_first_time.md): Region URL reference and invitation troubleshooting.
+- [Secure your account](/getting_started/secure_your_account.md): 2FA reset procedure for administrators.
+- [Verify event reception](/getting_started/defend_step2_verify_event_reception.md): Intake health checks and monitoring setup.

@@ -98,9 +98,9 @@ In a multi-tenant workspace, the Subscriptions page shows all managed communitie
 
 Review your usage from the beginning of your subscription, not only when you approach a limit. The **Usage** page shows the consumption associated with your communities, including analyzed bytes and executed playbook actions.
 
-Navigate to **Settings > Usage** and select the relevant month. Compare your current consumption with the projected volume and the limits shown on your subscription. See [Monitor your usage](/getting_started/monitor_your_usage) for the details of each metric and the recommended monitoring routine.
+Navigate to **Settings > Usage** and select the relevant month. Compare your current consumption with the projected volume and the limits shown on your subscription. See [Monitor your usage](/getting_started/monitor_your_usage.md) for the details of each metric and the recommended monitoring routine.
 
-If your consumption approaches the limit, review [Investigate overusage](/xdr/usecases/playbook/investigate_overusage/), the [Optimization rules overview](/xdr/features/collect/optimization_rules_overview/), and [Log volume reduction strategies](/xdr/usecases/playbook/log_volume_reduction_strategies/) before changing your data collection configuration.
+If your consumption approaches the limit, review [Investigate overusage](/xdr/usecases/playbook/investigate_overusage.md), the [Optimization rules overview](/xdr/features/collect/optimization_rules_overview.md), and [Log volume reduction strategies](/xdr/usecases/playbook/log_volume_reduction_strategies.md) before changing your data collection configuration.
 
 ## Compare plans
 
@@ -108,9 +108,9 @@ To view a comparison of available plans directly in the platform, click **Compar
 
 ## Related links
 
-- [Workspace setup overview](/getting_started/workspace_setup_overview): Full checklist for configuring your workspace before your team starts.
-- [Monitor your usage](/getting_started/monitor_your_usage): How to review consumption and detect changes before they affect operations.
-- [Investigate overusage](/xdr/usecases/playbook/investigate_overusage/): Identify the causes of usage above your expected volume.
-- [Optimization rules overview](/xdr/features/collect/optimization_rules_overview/): How optimization rules reduce unnecessary event processing.
-- [Log volume reduction strategies](/xdr/usecases/playbook/log_volume_reduction_strategies/): Practical strategies for controlling data volume.
-- [Invite users](/getting_started/invite_users): How to add team members once your subscription is confirmed.
+- [Workspace setup overview](/getting_started/workspace_setup_overview.md): Full checklist for configuring your workspace before your team starts.
+- [Monitor your usage](/getting_started/monitor_your_usage.md): How to review consumption and detect changes before they affect operations.
+- [Investigate overusage](/xdr/usecases/playbook/investigate_overusage.md): Identify the causes of usage above your expected volume.
+- [Optimization rules overview](/xdr/features/collect/optimization_rules_overview.md): How optimization rules reduce unnecessary event processing.
+- [Log volume reduction strategies](/xdr/usecases/playbook/log_volume_reduction_strategies.md): Practical strategies for controlling data volume.
+- [Invite users](/getting_started/invite_users.md): How to add team members once your subscription is confirmed.
