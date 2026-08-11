@@ -78,3 +78,4 @@ If you can see your email and UUID, your setup is working.
 - [Search for rules](tutorials/search_rules.md) — filter and retrieve detection rules from your catalog
 - [Create a SIGMA rule](tutorials/create_sigma_rule.md) — create a detection rule programmatically
 - [Search events](tutorials/search_events.md) — run an asynchronous event search and retrieve results
+- [Filtering](filtering.md) — filter and paginate API results with `match[<field>]`, date ranges and cursors
