@@ -105,6 +105,12 @@ The following Sekoia.io built-in rules match the intake **CrowdStrike Falcon**. 
     
     - **Effort:** advanced
 
+??? abstract "Bazar Loader DGA (Domain Generation Algorithm)"
+    
+    Detects Bazar Loader domains based on the Bazar Loader DGA
+    
+    - **Effort:** elementary
+
 ??? abstract "BazarLoader Persistence Using Schtasks"
     
     Detects possible BazarLoader persistence using schtasks. BazarLoader will create a Scheduled Task using a specific command line to establish its persistence.
@@ -602,6 +608,18 @@ The following Sekoia.io built-in rules match the intake **CrowdStrike Falcon**. 
     Detects attempts to gather information on domain trust relationships that may be used to identify lateral movement opportunities. "trustedDomain" which is detected here is a Microsoft Active Directory ObjectClass Type that represents a domain that is trusted by, or trusting, the local AD DOMAIN. Several tools are using LDAP queries in the end to get the information (DSQuery, sometimes ADFind as well, etc.)
     
     - **Effort:** elementary
+
+??? abstract "Download File On Cloud Storage Through Command Line"
+    
+    Detects commonly used commands like curl or wget used to download files on a Cloud Storage URL like a Google Drive URL.
+    
+    - **Effort:** intermediate
+
+??? abstract "Download Files From Non-Legitimate TLDs"
+    
+    Detects file downloads from non-legitimate TLDs. Additional legitimates TLDs should be filtered according to the business habits.
+    
+    - **Effort:** master
 
 ??? abstract "Dscl Authonly"
     
@@ -1419,6 +1437,12 @@ The following Sekoia.io built-in rules match the intake **CrowdStrike Falcon**. 
     
     - **Effort:** intermediate
 
+??? abstract "Potential macOS SSH Brute Force Detected"
+    
+    Detects a potential ssh bruteforce to gain access to accounts.
+    
+    - **Effort:** advanced
+
 ??? abstract "PowerCat Function Loading"
     
     Detect a basic execution of PowerCat. PowerCat is a PowerShell function allowing to do basic connections, file transfer, shells, relays, generate payloads.
@@ -1734,6 +1758,12 @@ The following Sekoia.io built-in rules match the intake **CrowdStrike Falcon**. 
 ??? abstract "Searchprotocolhost Wrong Parent"
     
     Detects if the Search Protocol Host process was executed by a non-legitimate parent process. Search Protocol Host is part of the Windows Indexing Service, a service indexing files on the local drive making them easier to search.
+    
+    - **Effort:** master
+
+??? abstract "Sekoia.io Activity Logs Rule Deactivation Bulk"
+    
+    Detects a massive rule deactivation observed threw Sekoia.io activity logs.
     
     - **Effort:** master
 
@@ -2120,6 +2150,12 @@ The following Sekoia.io built-in rules match the intake **CrowdStrike Falcon**. 
     Detects when the utility tmutil is used to exclude paths from backups.
     
     - **Effort:** master
+
+??? abstract "TrevorC2 HTTP Communication"
+    
+    Detects TrevorC2 HTTP communication based on the HTTP request URI and the user-agent. 
+    
+    - **Effort:** elementary
 
 ??? abstract "Trickbot Malware Activity"
     

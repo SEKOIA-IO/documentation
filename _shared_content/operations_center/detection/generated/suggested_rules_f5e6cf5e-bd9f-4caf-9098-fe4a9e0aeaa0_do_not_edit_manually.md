@@ -1455,6 +1455,12 @@ The following Sekoia.io built-in rules match the intake **Stormshield SES**. Thi
     
     - **Effort:** master
 
+??? abstract "Potential macOS SSH Brute Force Detected"
+    
+    Detects a potential ssh bruteforce to gain access to accounts.
+    
+    - **Effort:** advanced
+
 ??? abstract "PowerCat Function Loading"
     
     Detect a basic execution of PowerCat. PowerCat is a PowerShell function allowing to do basic connections, file transfer, shells, relays, generate payloads.
@@ -1814,6 +1820,12 @@ The following Sekoia.io built-in rules match the intake **Stormshield SES**. Thi
     Detects the addition of a SSP to the registry. This is commonly used for persistence. Upon a reboot or API call, SSP DLLs gain access to encrypted and plaintext passwords stored in Windows. Logging for Registry events is needed for this rule to work (this can be done through Sysmon EventIDs 12 and 13).
     
     - **Effort:** elementary
+
+??? abstract "Sekoia.io Activity Logs Rule Deactivation Bulk"
+    
+    Detects a massive rule deactivation observed threw Sekoia.io activity logs.
+    
+    - **Effort:** master
 
 ??? abstract "Sekoia.io EICAR Detection"
     

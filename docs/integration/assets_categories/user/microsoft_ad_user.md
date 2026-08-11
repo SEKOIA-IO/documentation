@@ -33,7 +33,19 @@ To connect your on-premise Active Directory to Sekoia.io, ensure the following r
         - Read All Properties on User objects
         - No write, delete, or modify permissions
 
-2. `Network Connectivity`: Ensure port 636 (LDAPS) is open between your network and the Sekoia.io ingestion point to allow secure communication.
+2. `Network Connectivity`: This connector establishes an outbound **LDAPS (port 636)** connection **from Sekoia.io to your Active Directory server**. Allow inbound TCP/636 to your AD server from the Sekoia.io source IP addresses for your region:
+
+    | Region                      | Source IP address list                                                             |
+    |-----------------------------|------------------------------------------------------------------------------------|
+    | FRA1 (France)               | [https://api.sekoia.io/outgoing-ips](https://api.sekoia.io/outgoing-ips)           |
+    | FRA2 (France SecNumCloud)   | [https://api.fra2.sekoia.io/outgoing-ips](https://api.fra2.sekoia.io/outgoing-ips) |
+    | MCO1 (Monaco)               | [https://api.mco1.sekoia.io/outgoing-ips](https://api.mco1.sekoia.io/outgoing-ips) |
+    | UAE1 (United Arab Emirates) | [https://api.uae1.sekoia.io/outgoing-ips](https://api.uae1.sekoia.io/outgoing-ips) |
+    | USA1 (United States)        | [https://api.usa1.sekoia.io/outgoing-ips](https://api.usa1.sekoia.io/outgoing-ips) |
+    | SGP1 (Singapore)            | [https://api.sgp1.sekoia.io/outgoing-ips](https://api.sgp1.sekoia.io/outgoing-ips) |
+
+    !!! note
+        These IP addresses are published per region and may change. Sekoia.io provides at least two weeks' advance notice of any change. For details, see [Outgoing IP addresses](/xdr/FAQ.md#outgoing-ip-addresses-for-playbooks-runs-and-connectors).
 
 
 ### Create connector configuration

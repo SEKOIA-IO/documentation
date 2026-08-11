@@ -1467,6 +1467,12 @@ The following Sekoia.io built-in rules match the intake **SentinelOne Cloud Funn
     
     - **Effort:** master
 
+??? abstract "Potential macOS SSH Brute Force Detected"
+    
+    Detects a potential ssh bruteforce to gain access to accounts.
+    
+    - **Effort:** advanced
+
 ??? abstract "PowerCat Function Loading"
     
     Detect a basic execution of PowerCat. PowerCat is a PowerShell function allowing to do basic connections, file transfer, shells, relays, generate payloads.
@@ -1875,6 +1881,12 @@ The following Sekoia.io built-in rules match the intake **SentinelOne Cloud Funn
     
     - **Effort:** elementary
 
+??? abstract "Sekoia.io Activity Logs Rule Deactivation Bulk"
+    
+    Detects a massive rule deactivation observed threw Sekoia.io activity logs.
+    
+    - **Effort:** master
+
 ??? abstract "Sekoia.io EICAR Detection"
     
     Detects observables in Sekoia.io CTI tagged as EICAR, which are fake samples meant to test detection.
@@ -1892,6 +1904,12 @@ The following Sekoia.io built-in rules match the intake **SentinelOne Cloud Funn
     Detects when shells PID are listed and injected in another process. It can be performed to reuse sudo token related to shell in order to elevate privilege and maintain persistence.
     
     - **Effort:** intermediate
+
+??? abstract "Sigma Intelligence ErrTraffic PowerShell Command Line"
+    
+    Detects powershell script executed via ErrTraffic infection chain
+    
+    - **Effort:** elementary
 
 ??? abstract "Sliver DNS Beaconing"
     

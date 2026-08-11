@@ -8,7 +8,7 @@ has expired. Notifications are delivered by email and, in some cases, through in
     Notifications are not sent in real time, except when triggered by a manual operation.
 
 !!! note "Admin-only notifications"
-    Only users with the **Admin** role receive subscription-related email notifications.
+    Only users with the (built-in) **Admin** role receive subscription-related email notifications.
 
 ## Expired license notifications
 

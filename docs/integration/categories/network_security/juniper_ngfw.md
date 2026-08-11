@@ -11,9 +11,6 @@ Juniper Next-Generation Firewall (NGFW) services provide a set of cyber defenses
 - **Detection based on**: Telemetry
 - **Supported application or feature**: Firewall logs
 
-!!! Warning
-    Important note - This format is currently in beta. We highly value your feedback to improve its performance.
-
 ## High-Level Architecture Diagram
 
 - **Type of integration**: Outbound (PUSH to Sekoia.io)

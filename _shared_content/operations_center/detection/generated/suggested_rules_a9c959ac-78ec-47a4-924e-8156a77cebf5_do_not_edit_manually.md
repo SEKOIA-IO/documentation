@@ -1419,6 +1419,12 @@ The following Sekoia.io built-in rules match the intake **OCSF**. This documenta
     
     - **Effort:** intermediate
 
+??? abstract "Potential macOS SSH Brute Force Detected"
+    
+    Detects a potential ssh bruteforce to gain access to accounts.
+    
+    - **Effort:** advanced
+
 ??? abstract "PowerCat Function Loading"
     
     Detect a basic execution of PowerCat. PowerCat is a PowerShell function allowing to do basic connections, file transfer, shells, relays, generate payloads.
@@ -1700,6 +1706,12 @@ The following Sekoia.io built-in rules match the intake **OCSF**. This documenta
     Detect cmd or powershell remote execution cmdline via ScreenConnect
     
     - **Effort:** intermediate
+
+??? abstract "Sekoia.io Activity Logs Rule Deactivation Bulk"
+    
+    Detects a massive rule deactivation observed threw Sekoia.io activity logs.
+    
+    - **Effort:** master
 
 ??? abstract "Sekoia.io EICAR Detection"
     

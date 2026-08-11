@@ -21,6 +21,12 @@ The following Sekoia.io built-in rules match the intake **Infoblox DDI**. This d
     
     - **Effort:** advanced
 
+??? abstract "Cron Files Alteration"
+    
+    Cron Files and Cron Directory alteration used by attacker for persistency or privilege escalation. To ensure full performance on this rule, `auditbeat` intake must be configure with the module `file_integrity` containing path mentionned in the pattern.
+    
+    - **Effort:** advanced
+
 ??? abstract "Cryptomining"
     
     Detection of domain names potentially related to cryptomining activities.
@@ -63,6 +69,12 @@ The following Sekoia.io built-in rules match the intake **Infoblox DDI**. This d
     
     - **Effort:** advanced
 
+??? abstract "Process Trace Alteration"
+    
+    PTrace syscall provides a means by which one process ("tracer") may observe and control the execution of another process ("tracee") and examine and change the tracee's memory and registers. Attacker might want to abuse ptrace functionnality to analyse memory process. It requires to be admin or set ptrace_scope to 0 to allow all user to trace any process.
+    
+    - **Effort:** advanced
+
 ??? abstract "Remote Access Tool Domain"
     
     Detects traffic toward a domain flagged as a Remote Administration Tool (RAT).
@@ -87,6 +99,12 @@ The following Sekoia.io built-in rules match the intake **Infoblox DDI**. This d
     
     - **Effort:** elementary
 
+??? abstract "Sekoia.io Activity Logs Rule Deactivation Bulk"
+    
+    Detects a massive rule deactivation observed threw Sekoia.io activity logs.
+    
+    - **Effort:** master
+
 ??? abstract "Sekoia.io EICAR Detection"
     
     Detects observables in Sekoia.io CTI tagged as EICAR, which are fake samples meant to test detection.
@@ -98,6 +116,12 @@ The following Sekoia.io built-in rules match the intake **Infoblox DDI**. This d
     Detects suspicious DNS queries known from Sliver beaconing 
     
     - **Effort:** intermediate
+
+??? abstract "Suspicious PROCEXP152.sys File Created In Tmp"
+    
+    Detects the creation of the PROCEXP152.sys file in the application-data local temporary folder. This driver is used by Sysinternals Process Explorer but also by KDU (https://github.com/hfiref0x/KDU) or Ghost-In-The-Logs (https://github.com/bats3c/Ghost-In-The-Logs), which uses KDU. Note - Clever attackers may easily bypass this detection by just renaming the driver filename. Therefore just Medium-level and don't rely on it.
+    
+    - **Effort:** advanced
 
 ??? abstract "Suspicious TOR Gateway"
     

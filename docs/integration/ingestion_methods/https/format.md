@@ -1,18 +1,44 @@
 # Formatting options
 
-To forward logs to Sekoia.io, several options format are available:
+To forward logs to Sekoia.io, several formatting options are available:
 
 - Send your events as line-oriented records
 - Send your events as a JSON object
 - Send your events as a structured payload
 
-For each option, we will have to supply an intake key. The collector endpoint of Sekoia.io will provide event identifiers within the Sekoia.io detection workflow in the form of a JSON payload.
+For each option, we have to supply an intake key. The collector endpoint of Sekoia.io will provide event identifiers within the Sekoia.io detection workflow in the form of a JSON payload.
+
+## Select the intake endpoint for your region
+
+Sekoia.io supports multiple regions for HTTP ingestion.
+
+FRA1 keeps the historical URL scheme, while all other regions use the new API-prefixed scheme.
+
+!!! tip
+    Learn more about region and code in [our dedicated article](/getting_started/regions.md).
+
+Endpoints must be built from regional base URLs:
+
+- FRA1 base URL: `https://intake.sekoia.io`
+- Other regions base URL: `https://intake.<region>.sekoia.io/api/v1/intake-http`
+
+Then append the path `/<path>` (e.g., `/plain`, `/plain/batch`, `/jsons`, `/batch`, `/array`, etc.) to the corresponding regional base URL.
+
+Examples:
+
+- `https://intake.sekoia.io/batch`
+- `https://intake.fra2.sekoia.io/api/v1/intake-http/batch`
+- `https://intake.mco1.sekoia.io/api/v1/intake-http/jsons`
+- `https://intake.uae1.sekoia.io/api/v1/intake-http/plain/batch`
+
+!!! warning
+    The examples below use FRA1 URLs for readability. For other regions, replace the base URL with your regional endpoint.
 
 ## Push our events to Sekoia.io as line-oriented records
 
 To forward events as plain records, you can use the `/plain` endpoint.
 
-The following headers are handled by Sekoia.io’S HTTPS log collector:
+The following headers are handled by Sekoia.io's HTTPS log collector:
 
 | Header                       | Mandatory? | Type     | Description                                                                            |
 |------------------------------|------------|----------|----------------------------------------------------------------------------------------|
@@ -20,7 +46,7 @@ The following headers are handled by Sekoia.io’S HTTPS log collector:
 | `X-SEKOIAIO-EVENT-TIMESTAMP` | No         | Datetime | Event date if you want to push your own date (fallback is to use the reception’s date) |
 
 
-Supply the intake key as the header `X-SEKOIAIO-INTAKE-KEY`, as password in the HTTP Basic authentication mechanism or as a parameter in the querystring.
+Supply the intake key as the header `X-SEKOIAIO-INTAKE-KEY`, as password in the HTTP Basic authentication mechanism, or as a parameter in the query string.
 
 To push one event, just POST content to `https://intake.sekoia.io/plain`
 
@@ -42,7 +68,7 @@ To push one event, just POST content to `https://intake.sekoia.io/plain`
     ```python
     import requests
 
-    auth = request.auth.HTTPBasicAuth(None, "YOUR_INTAKE_KEY")
+    auth = requests.auth.HTTPBasicAuth(None, "YOUR_INTAKE_KEY")
     content = "[764008:0] info: 198.51.100.10 example.org. A IN"
     response = requests.post("https://intake.sekoia.io/plain", data=content, auth=auth)
     print(response.text) # (1)
@@ -84,7 +110,7 @@ For numerous events, you can use the alternative endpoint `/plain/batch`. The ev
     ```python
     import requests
 
-    auth = request.auth.HTTPBasicAuth(None, "YOUR_INTAKE_KEY")
+    auth = requests.auth.HTTPBasicAuth(None, "YOUR_INTAKE_KEY")
     events = ["[764008:0] info: 198.51.100.10 example.org. A IN", "[764023:0] info: 2.34.100.56 text.org. A IN"]
     content = "\n".join(events)
     response = requests.post("https://intake.sekoia.io/plain/batch", data=content, auth=auth)
@@ -121,7 +147,7 @@ curl -X POST -H "X-SEKOIAIO-INTAKE-KEY: REPLACE_BY_INTAKE_KEY" --data-binary @ev
 
 To send us events as a JSON list, you should set `Content-Type` HTTP header to `application/json`.
 
-The following headers are handled by Sekoia.io’S HTTPS log collector:
+The following headers are handled by Sekoia.io's HTTPS log collector:
 
 | Header                       | Mandatory? | Type     | Description                                                                            |
 |------------------------------|------------|----------|----------------------------------------------------------------------------------------|
@@ -129,7 +155,7 @@ The following headers are handled by Sekoia.io’S HTTPS log collector:
 | `X-SEKOIAIO-EVENT-TIMESTAMP` | No         | Datetime | Event date if you want to push your own date (fallback is to use the reception’s date) |
 
 
-Supply the intake key as the header `X-SEKOIAIO-INTAKE-KEY`, as password in the HTTP Basic authentication mechanism or as a parameter in the querystring.
+Supply the intake key as the header `X-SEKOIAIO-INTAKE-KEY`, as password in the HTTP Basic authentication mechanism, or as a parameter in the query string.
 
 Use the endpoint `/jsons`. This endpoint accepts a set of events:
 
@@ -151,7 +177,7 @@ Use the endpoint `/jsons`. This endpoint accepts a set of events:
     ```python
     import requests
 
-    auth = request.auth.HTTPBasicAuth(None, "YOUR_INTAKE_KEY")
+    auth = requests.auth.HTTPBasicAuth(None, "YOUR_INTAKE_KEY")
     events = ["[764008:0] info: 198.51.100.10 example.org. A IN", "[764023:0] info: 2.34.100.56 text.org. A IN"]
     response = requests.post("https://intake.sekoia.io/jsons", json=events, auth=auth)
     print(response.text) # (1)
@@ -195,7 +221,7 @@ If your events are enclosed in a JSON object, use the endpoint `/jsons` and prov
     ```python
     import requests
 
-    auth = request.auth.HTTPBasicAuth(None, "YOUR_INTAKE_KEY")
+    auth = requests.auth.HTTPBasicAuth(None, "YOUR_INTAKE_KEY")
     events = ["[764008:0] info: 198.51.100.10 example.org. A IN", "[764023:0] info: 2.34.100.56 text.org. A IN"]
     content = {"path": {"to": {"events": events}}}
     response = requests.post("https://intake.sekoia.io/jsons?path=$.path.to.events", json=content, auth=auth)
@@ -223,11 +249,11 @@ If your events are enclosed in a JSON object, use the endpoint `/jsons` and prov
 
 To send us events, you should set `Content-Type` HTTP header to `application/json`.
 
-The following fields are currently handled by Sekoia.io’S HTTPS log collector:
+The following fields are currently handled by Sekoia.io's HTTPS log collector:
 
 | Field         | Mandatory? | Type     | Description                                                                                            |
 |---------------|------------|----------|--------------------------------------------------------------------------------------------------------|
-| `intakey_key` | Yes        | String   | Intake to which you would like to push events to                                                       |
+| `intake_key`  | Yes        | String   | Intake to which you would like to push events to                                                       |
 | `json`        | Yes        | String   | The actual log payload. If you want to push structured JSON logs, please send them as quoted JSON here |
 | `@timestamp`  | No         | Datetime | Event date if you want to push your own date (fallback is to use the reception’s date)                 |
 

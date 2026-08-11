@@ -16,7 +16,7 @@ Sekoia.io supports the following log collecting methods:
 - [NetFlow](/integration/ingestion_methods/netflow/sekoiaio_netflow_concentrator.md): collect and forward NetFlow data from network devices using our NetFlow concentrator.
 - [Cloud hosting and API polling](/integration/ingestion_methods/cloud_saas/overview.md): configure Sekoia.io to regularly retrieve your logs.
 
-If these solutions do not meet your needs, contact our support.
+If these solutions do not meet your needs, contact your Technical Account Manager.
 
 ## Syslog / Relp integration
 

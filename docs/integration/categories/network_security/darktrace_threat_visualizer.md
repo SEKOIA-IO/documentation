@@ -17,11 +17,11 @@ Darktrace monitors all people and digital assets across your entire ecosystem.
 ### Prerequisites
 
 For On Premise version:
-- **Resource**:
+- **Resource:**
     - Self-managed syslog forwarder
-- **Network**:
+- **Network:**
     - Outbound traffic allowed
-- **Permissions**:
+- **Permissions:**
     - Administrator privileges on the Darktrace appliance
     - Root access to the Linux server with the syslog forwarder
 
@@ -48,6 +48,11 @@ This setup guide describes how to forward logs from Darktrace Threat visualizer 
 ### Instruction on Sekoia
 
 {!_shared_content/integration/intake_configuration.md!}
+
+!!! warning "On-Premise version — connector not required"
+    For the **On-Premise** version, a connector is **not** needed. Logs are forwarded via a self-managed syslog forwarder (see below).
+
+    However, due to how the intake format is currently integrated, the Sekoia interface may still prompt you to fill in connector information even when creating an On-Premise intake. As a workaround, **enter placeholder (fake) data** in the connector fields and **disable the connector** afterwards.
 
 #### For Cloud version only
 

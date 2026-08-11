@@ -14,7 +14,7 @@ The Sekoia.io REST API allows you to programmatically trigger event exports and 
     ```
     https://api.usa1.sekoia.io/v1/sic/conf/events/search/jobs/{job_uuid}/export
     ```
-    For a complete list of regions, see the [Sekoia.io Regions Documentation](https://docs.sekoia.io/getting_started/regions/).
+    For a complete list of regions, see the [Sekoia.io Regions Documentation](https://docs.sekoia.com/getting_started/regions/).
 
 
 ### Step 1: Trigger the export

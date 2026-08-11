@@ -309,6 +309,12 @@ The following Sekoia.io built-in rules match the intake **ESET Protect**. This d
     
     - **Effort:** elementary
 
+??? abstract "Potential macOS SSH Brute Force Detected"
+    
+    Detects a potential ssh bruteforce to gain access to accounts.
+    
+    - **Effort:** advanced
+
 ??? abstract "Powershell Web Request"
     
     Detects the use of various web request methods executed remotely via Windows PowerShell.
@@ -402,6 +408,12 @@ The following Sekoia.io built-in rules match the intake **ESET Protect**. This d
 ??? abstract "Searchprotocolhost Wrong Parent"
     
     Detects if the Search Protocol Host process was executed by a non-legitimate parent process. Search Protocol Host is part of the Windows Indexing Service, a service indexing files on the local drive making them easier to search.
+    
+    - **Effort:** master
+
+??? abstract "Sekoia.io Activity Logs Rule Deactivation Bulk"
+    
+    Detects a massive rule deactivation observed threw Sekoia.io activity logs.
     
     - **Effort:** master
 

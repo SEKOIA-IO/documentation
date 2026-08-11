@@ -160,6 +160,48 @@ Use the `where` operator to filter rows by a list of conditions. Use parenthesis
         | 2026-03-26T14:20:15.441Z | Android                |
         | 2026-03-26T14:19:47.883Z | Mac                    |
 
+### Checking for non-null properties
+
+Many event fields are optional and may not be present in every event. Use `!= null` to keep only rows where a field has a value, or `== null` to find rows where the field is absent.
+
+!!! example "Retrieve events where `user.name` is present"
+
+    === "Query"
+
+        ``` shell
+        events
+        | where timestamp > ago(24h) and user.name != null
+        | select timestamp, host.name, user.name
+        | limit 100
+
+        ```
+
+    === "Results"
+
+        | timestamp                | host.name    | user.name      |
+        | ------------------------ | ------------ | -------------- |
+        | 2026-03-26T14:22:03.120Z | laptop-chris | ada_lovelace   |
+        | 2026-03-26T14:19:47.883Z | laptop-chris | grace_hopper   |
+
+!!! example "Find events where `process.command_line` is missing"
+
+    === "Query"
+
+        ``` shell
+        events
+        | where timestamp > ago(24h) and process.name != null and process.command_line == null
+        | select timestamp, host.name, process.name
+        | limit 100
+
+        ```
+
+    === "Results"
+
+        | timestamp                | host.name       | process.name |
+        | ------------------------ | --------------- | ------------ |
+        | 2026-03-26T14:20:15.441Z | laptop-6a1ec62f | svchost.exe  |
+        | 2026-03-26T14:17:31.554Z | laptop-b3205bc2 | lsass.exe    |
+
 ## Nested query
 
 Use the `in` operator to use the results of a previous query.
@@ -559,11 +601,21 @@ Use the `render` operator to display results in a chart to identify more easily 
 - `columnchart`
 - `barchart`
 - `linechart`
+- `sankey`
 
 ``` shell
 <table name>
 | aggregate <function> by <column name>
 | render <chart_type> with (x=<column name>, y=<column name>, breakdown_by=<column name>, mode=<grouped | stacked>)
+
+```
+
+For the `sankey` chart, the syntax uses `source`, `target`, and `value` parameters instead:
+
+``` shell
+<table name>
+| aggregate <function> by <source column>, <target column>
+| render sankey with (source=<source column>, target=<target column>, value=<value column>)
 
 ```
 
@@ -588,6 +640,23 @@ Use the `render` operator to display results in a chart to identify more easily 
         | laptop-chris            | 525   |
         | laptop-b3205bc2         | 517   |
 
+!!! example "Visualize network flows between source and destination IPs as a Sankey chart"
+
+    === "Query"
+
+        ``` shell
+        events
+        | where timestamp > ago(1h)
+        | aggregate count() by source.ip, destination.ip
+        | limit 50
+        | render sankey with (source=source.ip, target=destination.ip, value=count)
+
+        ```
+
+    === "Results"
+
+        A Sankey chart showing the volume of connections from each source IP to each destination IP.
+
 ## Join tables
 
 Use the `join` operator to combine data from multiple tables, enriching the data context, filtering more accurately data.
@@ -596,6 +665,8 @@ Available `join` types are:
 
 - **inner join**: Returns records that have matching values in both tables (default)
 - **left join**: Returns all records from the left table, and the matched records from the right table
+- **leftanti join**: Returns only records from the left table that have **no match** in the right table
+- **rightanti join**: Returns only records from the right table that have **no match** in the left table
 
 ``` shell
 <left table name>
@@ -701,6 +772,64 @@ This `model` object (similar to a class Object in code development) contains a s
         | ------------------ |
         | HQ - London Office |
         | Cambridge Campus   |
+
+### Anti-join
+
+Anti-join operators (`leftanti join` and `rightanti join`) are used to find rows that have **no match** in the other table. They are particularly useful for anomaly detection and threat hunting: detecting new, unknown, or unexpected values by comparing against a known baseline.
+
+Unlike `inner` or `left` joins, anti-joins do **not** produce a `model` object — they simply filter rows.
+
+!!! warning
+    Fields used in the `on` clause should not contain `null` values. Rows where a join field is `null` will not match and will always appear in the anti-join result. Filter them out beforehand with `| where <field> != null`.
+
+!!! example "Detect source IPs not seen in a known intake (leftanti)"
+
+    Find all source IPs that appear in your events in the last 24 hours but **not** in a specific intake — useful to spot unexpected data sources.
+
+    ``` shell
+    let known_ips = events
+    | where timestamp > ago(24h)
+    | where sekoiaio.intake.dialect_uuid == "1a1502f5-5a93-44b4-b0b5-359bbcb14902"
+    | distinct source.ip;
+
+    events
+    | where timestamp > ago(24h)
+    | distinct source.ip
+    | leftanti join known_ips on source.ip
+    ```
+
+!!! example "Detect new (host, user) pairs not seen in the past 7 days (leftanti)"
+
+    Compare the last 24 hours of activity against the previous 7 days to surface new host/user combinations — useful to detect lateral movement.
+
+    ``` shell
+    let baseline = events
+    | where timestamp between (ago(7d) .. ago(1d))
+    | where host.name != null and user.name != null
+    | distinct host.name, user.name;
+
+    events
+    | where timestamp > ago(1d)
+    | where host.name != null and user.name != null
+    | distinct host.name, user.name
+    | leftanti join baseline on host.name, user.name
+    ```
+
+!!! example "Find IPs seen globally but absent from a specific source (rightanti)"
+
+    The `rightanti` variant returns rows from the **right** table with no match on the left. Useful when the reference dataset is your starting point.
+
+    ``` shell
+    let all_ips = events
+    | where timestamp > ago(24h)
+    | distinct source.ip;
+
+    events
+    | where timestamp > ago(24h)
+    | where sekoiaio.intake.dialect_uuid == "1a1502f5-5a93-44b4-b0b5-359bbcb14902"
+    | distinct source.ip
+    | rightanti join all_ips on source.ip
+    ```
 
 ## Lookup
 
@@ -1054,6 +1183,20 @@ Use the `matches regex` operator to filter the rows based on a regex pattern.
 | `(...)` | Forms a group. You can use a group to treat part of the expression as a single character | `abc(def)?` matches 'abc' and 'abcdef' but not 'abcd' |
 | `[...]` | Match one of the character in the brackets<br>Inside the brackets, `-` indicates a range unless `-` is the first character or escaped<br>A `^` before a character in the brackets negates the character or range  | `[abc]` matches 'a', 'b', 'c'<br>`[-abc]` matches '-', 'a', 'b', 'c'<br>`[^abc]` matches any character except 'a', 'b', or 'c' |
 
+The `matches regex` operator uses a restricted regex syntax.
+
+### Unsupported constructs
+
+The following constructs are **not supported**. Using them will return no results without an error message.
+
+| Unsupported construct | Example |
+|---|---|
+| Non-capturing groups | `(?:pattern)` |
+| Named capture groups | `(?P<name>pattern)` |
+| Inline flags | `(?i)`, `(?m)`, `(?s)` |
+| Lookaheads / lookbehinds | `(?=...)`, `(?!...)`, `(?<=...)`, `(?<!...)` |
+| Backreferences | `\1`, `\k<name>` |
+
 !!! info
     Some characters are reserved as operators: `.` `?` `+` `*` `|` `{` `}` `[` `]` `(` `)` `"` `\` .<br>Escape reserved operators with a preceding backslash `\` or surround them with double quotes `""`.<br>`\@` renders as a literal '@'.<br>`\\` renders as a literal '\'.<br>`"john@smith.com"` renders as 'john@smith.com'.
 
@@ -1079,6 +1222,7 @@ Use the `matches regex` operator to filter the rows based on a regex pattern.
         | 2026-03-26T14:22:03.120Z | deploy.sh           |
         | 2026-03-26T14:19:47.883Z | cleanup.sh          |
         | 2026-03-26T14:17:31.554Z | install_agent.sh    |
+        
 
 ## Variables
 

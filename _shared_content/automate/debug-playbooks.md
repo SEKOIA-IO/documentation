@@ -32,4 +32,4 @@ After a playbook run is executed, it is possible to switch modes after selecting
 ## Playbook deactivation
 
 If a playbook consecutively faces 5 technical errors, it is automatically turned off to avoid infinite failing. 
-One can create a dedicated notification to be alerted when a playbook crashed on a specific community. To do so, please follow [this documentation)(https://docs.sekoia.io/getting_started/notifications-Listing_Creation/#playbooks-notifications).
+One can create a dedicated notification to be alerted when a playbook crashed on a specific community. To do so, please follow [this documentation)(https://docs.sekoia.com/getting_started/notifications-Listing_Creation/#playbooks-notifications).
