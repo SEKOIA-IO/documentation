@@ -11,6 +11,8 @@ type: tutorial
 
 Sekoia Intelligence is a continuously updated cyber threat intelligence (CTI) knowledge base maintained by Sekoia analysts. In two steps, you will learn how to search the intelligence database and investigate and disseminate threat reports that are relevant to your organization. By the end of this guide, you will be able to use Sekoia Intelligence as a daily operational resource.
 
+The intelligence is produced by a team of over 25 analysts with backgrounds in military, national cyber agencies, and private industry, and is built on open standards such as STIX 2.1 and MITRE ATT&CK. Sekoia's team collaborates with organizations including Europol, NATO, and the FBI. Over half of the indicators of compromise in the database come from Sekoia's own research; the rest are curated from open-source intelligence (OSINT) and validated before publication. All threat objects are connected in a single knowledge graph, which is what the [threat context](/getting_started/intelligence_step1_explore_threat_database.md#use-the-threat-context) feature lets you explore.
+
 ## What Sekoia Intelligence is used for
 
 Sekoia Intelligence supports five main use cases:

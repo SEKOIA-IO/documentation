@@ -72,18 +72,19 @@ Each notification rule can send alerts through one or more channels simultaneous
 !!! note "Email rate limit"
     Each email recipient can receive a maximum of 10 emails per hour for a single notification rule.
 
-## Workspace modes and notification scope
+## Notification scope
 
-The scope of a notification rule depends on your workspace type.
+When you create a notification rule, the **it concerns** field lets you choose which communities the rule monitors:
 
-| Workspace type | Notification scope |
-|---|---|
-| **Single-tenant** | Rules apply to the current community only |
-| **Multi-tenant** | Rules can monitor all managed communities or specific ones, configurable per rule |
+- **All communities**: the rule monitors the trigger across every community you have access to.
+- **A specific community**: the rule only monitors the community you select.
+
+!!! note "Exception: intake monitoring"
+    The **No events are received** trigger must be configured for one specific community. This trigger requires selecting the intake to monitor, and an intake always belongs to a single community.
 
 ## Personal visibility
 
-Notification rules are personal. A rule you create is only visible to you and applies only within the community where you created it. Other users in the same community cannot see or manage your rules.
+Notification rules are personal: only the user who created a rule can see or manage it. Other users, including in the same community, cannot see your rules.
 
 ## Related links
 

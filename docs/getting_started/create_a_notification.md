@@ -27,13 +27,18 @@ Notification rules let you receive alerts through your preferred channel when a 
 
 4. Enter a descriptive name in the **Notification name** field (for example, `High-urgency alerts on production assets`).
 5. Select the event type from the **Trigger** dropdown. See [Notification system overview](/getting_started/notification_system_overview.md) for the full list of available triggers.
-6. In the **Conditions** section, define filters to narrow down which events qualify. Conditions are optional but strongly recommended to avoid noise.
-7. In the **Action to perform** section, select your delivery method:
+6. In the **it concerns** field, select which communities the rule monitors: **All communities**, or a specific one.
+
+    !!! note "Exception: intake monitoring"
+        If you selected the **No events are received** trigger, you must select one specific community, since this trigger requires choosing an intake to monitor and an intake always belongs to a single community.
+
+7. In the **Conditions** section, define filters to narrow down which events qualify. Conditions are optional but strongly recommended to avoid noise.
+8. In the **Action to perform** section, select your delivery method:
     - **In-app notification**: Displays in the Sekoia notification panel.
     - **Email**: Enter the recipient email address. Enable **Enrich email with contextual info** to include event details in the message body.
     - **Slack**, **Teams**, or **Mattermost**: Paste your incoming webhook URL.
     - **Webhook**: Enter the URL of your HTTP endpoint to receive a JSON payload.
-8. Click **Save**.
+9. Click **Save**.
 
 Your rule is now active and appears in your personal notification list.
 

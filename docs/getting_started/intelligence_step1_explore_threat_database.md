@@ -92,7 +92,7 @@ Alongside the main description, every object detail page includes a **Threat con
 
 The threat context is particularly useful to understand what surrounds an object: for example, the countries targeted by an attacker group, or the malware families used in a specific campaign.
 
-> 📸 [SCREENSHOT SUGGESTION: The threat context panel on an object detail page, showing linked objects such as related malware, campaigns, and targeted countries. | ALT TEXT: Threat context panel showing objects linked to the object being viewed.]
+![Threat context panel showing objects linked to the object being viewed](/assets/threat_context_panel.png){: style="max-width:100%"}
 
 ### Other tabs on an object page
 
