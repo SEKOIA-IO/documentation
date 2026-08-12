@@ -1,27 +1,29 @@
 # Explore a location
 
-Use the Location page to review a country profile, inspect associated reports, and analyze relationships with other intelligence objects. In Sekoia’s data model, a country is represented as a `Location` object. The page provides details, relationship data, a graph view, and a complete report list from the same object. For general Intelligence search guidance, see the [Intelligence documentation](https://docs.sekoia.io/cti/features/consume/intelligence/).
+A **Location** is a geographic area, such as a country, region, or part of the world, associated with a threat’s origin or with the victims’ origin it targets. Locations are used to contextualize Threat Actors, Intrusion Sets, Campaigns, and other objects based on geographic targeting or provenance.
+
+Use the Location page to review a geographic profile, inspect associated reports, and analyze relationships with other intelligence objects. The page provides details, relationship data, a graph view, and a complete report list from the same object. For general Intelligence search guidance, see the [Intelligence documentation](https://docs.sekoia.io/cti/features/consume/intelligence/).
 
 ## Prerequisites
 
 Before you start, make sure that:
 
-- you have an **Intelligence** subscription;
+- you can access **Intelligence**;
 - your role includes access to the reports and relationship data you need.
 
 ## Review the Location
 
-1. Open the country’s Location object from **Intelligence**. You can search by the country name or by its two-letter ISO 3166-1 country code, as described in the [Intelligence documentation](https://docs.sekoia.io/cti/features/consume/intelligence/#search-for-a-country).
+1. Open the Location object from **Intelligence**. For a country, you can search by its name or by its two-letter ISO 3166-1 country code, as described in the [Intelligence documentation](https://docs.sekoia.io/cti/features/consume/intelligence/#search-for-a-country).
 
     The page opens with the object header and the **Details** tab.
 
 2. Review the object header.
 
-    Confirm the country name, TLP label, object type, confidence value, creation date, and modification date. The header also shows the object actions available to you, including edit, **Revoke**, and **Export**.
+    Confirm the Location name, TLP label, object type, confidence value, creation date, and modification date. The header also shows the object actions available to you, including edit, **Revoke**, and **Export**.
 
-3. Read the country description.
+3. Read the Location profile.
 
-    Use the description to establish the initial context for the country. The text can include formatted sections covering cyber posture, operations, defensive capabilities, sectors, geopolitical context, or associated intrusion sets.
+    Use the profile to establish the initial context for the geographic area. For a country, the text can include formatted sections covering cyber posture, operations, defensive capabilities, sectors, geopolitical context, or associated intrusion sets.
 
 4. Review the latest reports.
 
@@ -80,7 +82,7 @@ Before you start, make sure that:
 
 ## Result
 
-You can use the Location page to establish country context, identify related intelligence objects, inspect supporting sources, and review the complete set of associated reports without leaving the Location object.
+You can use the Location page to establish geographic context, identify related intelligence objects, inspect supporting sources, and review the complete set of associated reports without leaving the Location object.
 
 ## Related articles
 
