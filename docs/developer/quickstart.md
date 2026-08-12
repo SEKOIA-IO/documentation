@@ -45,6 +45,9 @@ All API requests are authenticated with an API key.
 To create a key:
 
 1. In Sekoia, go to **Settings > Workspace > API Keys**.
+
+    ![API Keys entry in the Settings menu](/assets/develop/api_keys_menu.png){: style="max-width:260px"}
+
 2. Click **+ API key**.
 3. Give your key a name and a description.
 4. Set an expiration date (30 days, 180 days, 365 days, or custom up to 1 year).
