@@ -2,14 +2,6 @@
 
 Intake optimization rules allow you to control the processing and handling of incoming events before they are subjected to detection. These rules can be tailored to specific needs using filters and actions to effectively manage event data.
 
-!!! note "This article covers platform-level optimization rules"
-    Platform-level rules filter events after they reach Sekoia, at the intake level. The Sekoia Endpoint Agent has its own agent-level optimization rules that filter before transmission. See [Reduce event volume with the Endpoint Agent](/integration/categories/endpoint/reduce_event_volume_endpoint_agent.md).
-
-
-## When to use platform-level optimization rules
-
-Use platform-level rules when you cannot filter at the source or forwarder level, or when your source is not the Sekoia Endpoint Agent. If you are unsure which approach fits your situation, start with [Log volume reduction strategies](/xdr/usecases/playbook/log_volume_reduction_strategies.md).
-
 ## Logic and execution
 
 Optimization rules act as a pre-processing layer. When an event enters the platform, the system evaluates it against your defined rules before any detection logic or long-term storage occurs.
@@ -24,8 +16,6 @@ A rule is defined by the following components:
 
 * **Scope**: You can target specific intakes using a **Community UUID**, **Dialect UUID**, or **Intake UUID**.
 * **Filters**: A rule can accept several filters. All defined filters of a rule must match an existing field to apply.
-!!! warning "Enriched fields are not available in filters"
-    Rules are evaluated at parsing time, before enrichment runs. Fields added during enrichment, such as `sekoiaio.tags.*`, are not available when rules are evaluated and will never match. Use only fields present in the raw parsed event.
 * **Action**: This specifies the particular operation executed to optimize the event.
 
 ## Benefits
