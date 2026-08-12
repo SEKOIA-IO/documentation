@@ -1,10 +1,18 @@
-# Getting Started with the Sekoia.io API
+# Getting Started with the Sekoia API
 
-The Sekoia.io REST API lets you access platform data, trigger actions, and build integrations or automations on top of Sekoia.io. The GUI itself is built on this API, so anything you can do in the interface, you can do via the API.
+The Sekoia REST API lets you access platform data, trigger actions, and build integrations or automations on top of Sekoia. The GUI itself is built on this API, so anything you can do in the interface, you can do via the API.
+
+With the API you can, among other things:
+
+- retrieve and manage **alerts**, **cases** and **detection rules**
+- search **events** and query **telemetry**
+- manage **assets**, **intakes** and **playbooks**
+
+All endpoints exchange JSON over HTTPS and are authenticated with an API key sent as a Bearer token. The full list of endpoints is available in the [API Reference](api.md).
 
 ## Step 1: Find your base URL
 
-The base URL depends on the region where your Sekoia.io subscription is hosted.
+The base URL depends on the region where your Sekoia subscription is hosted.
 
 <table>
   <thead>
@@ -26,20 +34,22 @@ If you are unsure of your region, look at the URL you use to access the Sekoia.i
 
 ## Step 2: Create an API key
 
-All API requests are authenticated with an API key. To create one:
+All API requests are authenticated with an API key.
 
-1. In Sekoia.io, go to **Settings > Workspace > API Keys**.
+!!! note
+    Only users with admin roles can create API keys.
+
+!!! tip
+    Start with read-only permissions. You can always create a second key with write permissions when you need to perform write operations.
+
+To create a key:
+
+1. In Sekoia, go to **Settings > Workspace > API Keys**.
 2. Click **+ API key**.
 3. Give your key a name and a description.
 4. Set an expiration date (30 days, 180 days, 365 days, or custom up to 1 year).
 5. Select the permissions your key needs.
 6. Click **Save** and copy the key immediately. It will only be shown once.
-
-!!! tip
-    Start with read-only permissions. You can always create a second key with write permissions when you need to perform write operations.
-
-!!! note
-    Only users with admin roles can create API keys.
 
 ## Step 3: Make your first API call
 

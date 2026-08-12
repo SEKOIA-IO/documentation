@@ -1,6 +1,6 @@
 # Filtering
 
-Many API methods accept filtering and matching parameters. A client can request specific content from the Sekoia.io API by specifying a set of filters.
+Many API methods accept filtering and matching parameters. A client can request specific content from the Sekoia API by specifying a set of filters.
 
 ## Match
 
@@ -26,7 +26,7 @@ Example of date range parameter: `date[created_at]=2025-09-22T01:20:00.000Z,2025
 
 ## Pagination
 
-Many Sekoia.io API endpoints return large collections (alerts, assets, rules, events, intelligence objects, …). These endpoints are paginated. Depending on the product area, two main styles are used:
+Many Sekoia API endpoints return large collections (alerts, assets, rules, events, intelligence objects, …). These endpoints are paginated. Depending on the product area, two main styles are used:
 
 * **Offset / page-based pagination** (most XDR and Operations Center endpoints)
     * Use the `limit` query parameter to control how many items are returned in a single response.

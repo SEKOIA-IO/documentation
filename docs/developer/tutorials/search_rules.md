@@ -1,6 +1,6 @@
 # Search for rules
 
-This tutorial shows how to search for detection rules using the Sekoia.io API. It uses a `GET` request with query parameters to filter results by name.
+This tutorial shows how to search for detection rules using the Sekoia API. It uses a `GET` request with query parameters to filter results by name.
 
 ## Prerequisites
 
@@ -8,6 +8,8 @@ This tutorial shows how to search for detection rules using the Sekoia.io API. I
 - `curl` or Python 3 installed
 
 ## Endpoint
+
+All the requests in this tutorial target the rules catalog endpoint:
 
 ```
 GET /v1/sic/conf/rules-catalog/rules

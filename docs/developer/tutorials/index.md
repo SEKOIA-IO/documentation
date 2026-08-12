@@ -1,6 +1,6 @@
 # Tutorials
 
-Step-by-step examples to help you get the most out of the Sekoia.io API.
+Step-by-step examples to help you get the most out of the Sekoia API.
 
 <div class="grid cards" markdown>
 

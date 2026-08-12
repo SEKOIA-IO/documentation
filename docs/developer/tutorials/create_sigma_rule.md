@@ -9,6 +9,8 @@ This tutorial shows how to create a detection rule programmatically using a `POS
 
 ## Endpoint
 
+Rules are created by posting their definition to the rules catalog endpoint:
+
 ```
 POST /v1/sic/conf/rules-catalog/rules
 ```

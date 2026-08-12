@@ -1,6 +1,6 @@
 # Search events
 
-Event searches can take time to process. The Sekoia.io API handles this with an asynchronous **search job**: you create a job, poll its status, and retrieve results once it is done.
+Event searches can take time to process. The Sekoia API handles this with an asynchronous **search job**: you create a job, poll its status, and retrieve results once it is done.
 
 ## Prerequisites
 
@@ -15,6 +15,9 @@ The workflow involves three steps:
 2. **Poll the job status**: check until the job is done
 3. **Retrieve the events**: fetch results when status is `2` (done)
 
+!!! note
+    By default the API returns up to **100 events**. Pass `?limit=1000` on the results endpoint to retrieve more (maximum 1000). Dates accept the ISO8601 format (`2025-01-01T00:00:00Z`) or a relative format (`-30d`, `now`).
+
 Job statuses:
 
 | Status | Meaning |
@@ -26,6 +29,8 @@ Job statuses:
 | `4` | Failed |
 
 ## Python script
+
+The script below chains the three steps. Save it as `search_events.py`, then run it as shown in the [Usage](#usage) section.
 
 ```python
 #!/usr/bin/env python3
@@ -95,8 +100,8 @@ def main(apikey: str, earliest: str, latest: str, query: str, verbose: bool):
 
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description="Search Sekoia.io events")
-    parser.add_argument("APIKEY", help="Sekoia.io API key")
+    parser = argparse.ArgumentParser(description="Search Sekoia events")
+    parser.add_argument("APIKEY", help="Sekoia API key")
     parser.add_argument("--earliest", required=True, help="Start of the time window (ISO8601 or relative, e.g. -30d)")
     parser.add_argument("--latest", required=True, help="End of the time window (ISO8601 or relative, e.g. now)")
     parser.add_argument("--query", required=True, help="Search query in Dork format")
@@ -115,8 +120,5 @@ python search_events.py YOUR_API_KEY \
   --query='source.ip: "1.2.3.4"'
 ```
 
-## Notes
-
-- By default the API returns up to **100 events**. Pass `?limit=1000` on the results endpoint to retrieve more (maximum 1000).
-- Dates can be in ISO8601 format (`2025-01-01T00:00:00Z`) or relative format (`-30d`, `now`).
-- The script retries up to 10 times with a 1-second delay between attempts. For long-running searches, increase `retries`.
+!!! note
+    The script retries up to 10 times with a 1-second delay between attempts. For long-running searches, increase `retries`.
