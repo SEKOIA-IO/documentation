@@ -6,8 +6,7 @@ Use the Location page to review a country profile, inspect associated reports, a
 
 Before you start, make sure that:
 
-- you can access **Intelligence**;
-- you can open the Location object you want to review;
+- you have an **Intelligence** subscription;
 - your role includes access to the reports and relationship data you need.
 
 ## Review the Location
