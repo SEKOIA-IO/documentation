@@ -48,7 +48,14 @@ This setup guide will show you how to pull events produced by SentinelOne Singul
 
 ### Create the intake in Sekoia.io
 
-Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a new intake from the format `SentinelOne Identity`. Copy the intake key.
+Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a new intake from the format `SentinelOne Identity`.
+Select the Name and the Entity, and click on Next 
+Select an account
+<img width="917" height="387" alt="Capture d’écran 2025-09-04 à 17 49 44" src="https://github.com/user-attachments/assets/660a2026-ca87-4685-8593-a49b8147fc81" />
+Click on the Edit pen
+<img width="800" height="565" alt="Capture d’écran 2025-09-04 à 17 31 00" src="https://github.com/user-attachments/assets/6b4c14c1-9f7d-4c71-a528-c18e242f0dbf" />
+Add as hostname: `heuce1-103.sentinelone.net`
+Select again the Account and Save
 
 {!_shared_content/operations_center/integrations/generated/b502e522-6996-4b12-9538-f69326b68243.md!}
 
