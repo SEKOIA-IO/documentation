@@ -1,10 +1,12 @@
 # Location pages
 
-Location pages give you a consolidated view of a country in [Sekoia Intelligence](https://docs.sekoia.io/cti/features/consume/intelligence/). They combine object metadata, a country description, related reports, threat-context relationships, and graph exploration in one place. In the Sekoia data model, a country is represented as a `Location` object.
+A **Location** is a geographic area, such as a country, region, or part of the world, associated with a threat’s origin or with the victims’ origin it targets. Locations are used to contextualize Threat Actors, Intrusion Sets, Campaigns, and other objects based on geographic targeting or provenance.
+
+Location pages give you a consolidated view of a Location in [Sekoia Intelligence](https://docs.sekoia.io/cti/features/consume/intelligence/). They combine object metadata, a geographic profile, related reports, threat-context relationships, and graph exploration in one place.
 
 ## Purpose
 
-A Location page helps you build an initial understanding of a country without opening several separate views. You can review the country profile, inspect reports linked to the Location, examine related objects, and explore relationships in the knowledge graph.
+A Location page helps you build an initial understanding of a geographic area without opening several separate views. You can review the Location profile, inspect reports linked to it, examine related objects, and explore relationships in the knowledge graph.
 
 This view supports CTI analysts who prepare briefings and MSSP operators who need a sourced starting point for a client deliverable.
 
@@ -14,8 +16,8 @@ A Location page contains the following areas:
 
 | Area | What it contains |
 |---|---|
-| Header | The country name, object type, TLP, confidence, creation date, modification date, and object actions |
-| **Details** | The country description and a preview of the latest reports |
+| Header | The Location name, object type, TLP, confidence, creation date, modification date, and object actions |
+| **Details** | The Location profile and a preview of the latest reports |
 | **Threat Context** | Counts and relationships for objects associated with the Location |
 | **Graph exploration** | A graph view of the Location and its relationships |
 | **Reports** | The complete paginated list of reports associated with the Location |
@@ -26,8 +28,8 @@ A Location page contains the following areas:
 
 The header identifies the Location and provides access to object actions. It displays:
 
-- the country icon or flag;
-- the country name;
+- the geographic icon or flag, when available;
+- the Location name;
 - the Traffic Light Protocol (TLP) label, such as **WHITE**;
 - the object type, shown as **Location**;
 - the confidence value;
@@ -43,11 +45,11 @@ TLP labels are displayed as color-coded badges throughout the page. Sekoia docum
 
 ## Details
 
-The **Details** tab provides the country description and a short list of recent reports.
+The **Details** tab provides the Location profile and a short list of recent reports.
 
-### Country description
+### Location profile
 
-The description provides context about the country. It can cover the country’s cyber posture, known operations, defensive capabilities, sectors of interest, geopolitical context, or associated intrusion sets.
+The profile provides geographic and threat context about the Location. For a country, it can cover the country’s cyber posture, known operations, defensive capabilities, sectors of interest, geopolitical context, or associated intrusion sets.
 
 The description can contain headings and formatted text. Use it as the starting point for understanding the Location before reviewing relationships or reports.
 
