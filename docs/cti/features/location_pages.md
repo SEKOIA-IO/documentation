@@ -2,137 +2,198 @@
 
 A **Location** is a geographic area, such as a country, region, or part of the world, associated with a threat’s origin or with the victims’ origin it targets. Locations are used to contextualize Threat Actors, Intrusion Sets, Campaigns, and other objects based on geographic targeting or provenance.
 
-Location pages give you a consolidated view of a Location in [Sekoia Intelligence](https://docs.sekoia.io/cti/features/consume/intelligence/). They combine object metadata, a geographic profile, related reports, threat-context relationships, and graph exploration in one place.
+A Location page brings together the profile of a geographic area, related campaigns, threat-landscape information, reports, relationships, and graph exploration in one place. The examples in this article use Spain, but the same interface applies to any Location available in Sekoia Intelligence.
 
-## Purpose
-
-A Location page helps you build an initial understanding of a geographic area without opening several separate views. You can review the Location profile, inspect reports linked to it, examine related objects, and explore relationships in the knowledge graph.
-
-This view supports CTI analysts who prepare briefings and MSSP operators who need a sourced starting point for a client deliverable.
+For general object search, see [Intelligence](https://docs.sekoia.io/cti/features/consume/intelligence/). For the object and relationship model, see the [Data model](https://docs.sekoia.io/cti/features/data_model/).
 
 ## Page structure
 
-A Location page contains the following areas:
+A Location page contains the following tabs:
 
-| Area | What it contains |
-|---|---|
-| Header | The Location name, object type, TLP, confidence, creation date, modification date, and object actions |
-| **Details** | The Location profile and a preview of the latest reports |
-| **Threat Context** | Counts and relationships for objects associated with the Location |
-| **Graph exploration** | A graph view of the Location and its relationships |
-| **Reports** | The complete paginated list of reports associated with the Location |
+| Tab | Purpose |
+| --- | --- |
+| **Overview** | Review the Location profile, latest campaigns, latest reports, and threat-landscape widgets. |
+| **Threat Context** | Review related objects, relationships, metadata, and sources. |
+| **Graph exploration** | Explore the Location and its relationships in a visual graph. |
+| **Reports** | Browse the complete list of reports associated with the Location. |
 
-> 📸 [SCREENSHOT SUGGESTION: Location page with the France object header and the Details tab selected. Show the description and Latest reports panel. | ALT TEXT: France Location page displaying object metadata, a country description, and recent reports.]
+The content is dynamic. Counts, campaigns, reports, sectors, and dates vary according to the selected Location and the selected timeframe.
 
 ## Header
 
-The header identifies the Location and provides access to object actions. It displays:
+The header displays the Location icon or flag and the Location name. It also provides object actions.
 
-- the geographic icon or flag, when available;
-- the Location name;
-- the Traffic Light Protocol (TLP) label, such as **WHITE**;
-- the object type, shown as **Location**;
-- the confidence value;
-- the creation date;
-- the modification date.
+The available actions depend on the community type:
 
-The header also contains object actions, including edit, **Revoke**, and **Export**. The actions available to you depend on the object state and your permissions.
+- In a Sekoia community, the header can include edit, **Revoke**, and **Export**.
+- In a customer community, the header can include **See the Json**, **Request revocation**, and **Export**.
 
-!!! note "Confidence values"
-    Confidence values use the Admiralty Credibility scale documented in the [Sekoia data model](https://docs.sekoia.io/cti/features/data_model/). A value of `1` means **confirmed by other sources**. This is different from source reliability, which uses a letter scale.
+### Edit
 
-TLP labels are displayed as color-coded badges throughout the page. Sekoia documents TLP as an indication of information sensitivity, with White, Green, Amber, and Red levels. See the [Intelligence page](https://docs.sekoia.io/cti/features/consume/intelligence/) for the object table and TLP conventions. The same visual treatment appears in the report list.
+The edit form can include the following fields:
 
-## Details
+- **Name**;
+- **Region**;
+- **Country**;
+- **Description**, with rich-text formatting controls;
+- **Object type**;
+- **TLP**;
+- **Confidence**;
+- **Sources**;
+- **External references**, with a name, description, and URL.
 
-The **Details** tab provides the Location profile and a short list of recent reports.
+The confidence control displays both the value and its meaning. For example, the value `1` is displayed as **Confirmed by other sources**. Source reliability is shown separately, using a letter rating such as `A`, with a corresponding label such as **Completely reliable**.
 
-### Location profile
+For more information about confidence and source reliability, see the [Sekoia data model](https://docs.sekoia.io/cti/features/data_model/).
 
-The profile provides geographic and threat context about the Location. For a country, it can cover the country’s cyber posture, known operations, defensive capabilities, sectors of interest, geopolitical context, or associated intrusion sets.
+### Revoke
 
-The description can contain headings and formatted text. Use it as the starting point for understanding the Location before reviewing relationships or reports.
+**Revoke** permanently revokes the object. A confirmation dialog warns that the object will no longer trigger detections and that the action cannot be reversed.
+
+Select **Cancel** to close the dialog without revoking the object, or **Revoke** to confirm.
+
+### Export
+
+**Export** opens the **Export related objects** dialog. You can choose to export:
+
+- **All threat context**;
+- **Selected categories**.
+
+You can then select one of the following formats:
+
+- CSV;
+- JSON lines;
+- Text.
+
+For more information, see [Data Export](https://docs.sekoia.io/cti/features/consume/export/).
+
+## Overview
+
+The **Overview** tab provides the main intelligence summary for the Location.
+
+### Latest campaigns
+
+The **Latest campaigns** section lists recent campaigns associated with the Location.
+
+Use the segmented control to switch between:
+
+- **Targeting [Location]**, for campaigns targeting the Location;
+- **Originating [Location]**, for campaigns originating from the Location.
+
+The section displays up to ten campaigns for the selected view and the last 12 months. Each row can show:
+
+- the campaign name;
+- the campaign objective;
+- the associated intrusion set;
+- the associated malware;
+- the number of tools;
+- the number of IOCs.
+
+Select a campaign, intrusion set, or malware name to open the corresponding object when it is available. Select **View all** to open the complete campaign list.
 
 ### Latest reports
 
-The **Latest reports** panel provides a short preview of reports associated with the Location. Each entry shows the report title, a relative publication date, and its source. Select **View more** to open the complete report list.
+The **Latest reports** section lists reports associated with the Location. A report row can show its TLP, title, publication date, and source.
 
-The preview can contain [Sekoia FLINTs](https://docs.sekoia.io/cti/features/consume/flints/) and [External Reports](https://docs.sekoia.io/cti/features/consume/external_reports/). FLINTs are produced by the Sekoia TDR team, while External Reports come from curated third-party sources. The report source is shown below the title, for example **Sekoia** or an external website.
+Select a report title or source to open the related content when a link is available. Select **View all** to open the complete report list in the **Reports** tab.
+
+The list can include [FLINT Reports](https://docs.sekoia.io/cti/features/consume/flints/) from the Sekoia TDR team and [External Reports](https://docs.sekoia.io/cti/features/consume/external_reports/) from curated third-party sources.
+
+### Threat Landscape
+
+The **Threat Landscape** section summarizes the activity associated with the Location. Use the timeframe selector to update the widgets together. The available options are:
+
+- **Over the last 12 months**;
+- **Over the last 24 months**;
+- **Over the last 36 months**.
+
+The default selection shown in the delivered interface is **Over the last 12 months**.
+
+#### Most active Intrusions Set
+
+This widget ranks intrusion sets by their appearances in campaigns associated with the Location.
+
+Use the segmented control to switch between **Targeting [Location]** and **Originating [Location]**. Each row can show the intrusion-set name, the number of campaigns, and how long ago the activity was observed.
+
+The widget is ordered by the most appearances among the campaigns in the selected timeframe.
+
+#### Most used Malware and Tools
+
+This widget lists the malware and tools most frequently associated with campaigns targeting the Location. Each row can show the object name, its type icon, the number of campaigns, and how long ago the activity was observed.
+
+The ranking is based on campaign appearances. A malware or tool can be used in multiple campaigns.
+
+#### Most impacted sectors
+
+This widget shows the sectors most frequently associated with campaigns targeting the Location. Each row displays a sector, its campaign count, and a proportional bar.
+
+A campaign can target multiple sectors. Percentages therefore represent the share of the total campaign appearances shown by the widget, not mutually exclusive categories.
 
 ## Threat Context
 
-The **Threat Context** tab shows how the Location relates to other objects in Sekoia Intelligence. Its object distribution and relationship table follow the concepts described in the [Intelligence documentation](https://docs.sekoia.io/cti/features/consume/intelligence/#threat-context) and the [STIX-based data model](https://docs.sekoia.io/cti/features/data_model/).
+The **Threat Context** tab shows the objects and relationships associated with the Location. See [Threat Context in the Intelligence documentation](https://docs.sekoia.io/cti/features/consume/intelligence/#threat-context) for the general workflow.
 
 ### Object distribution
 
-The object distribution cards summarize the number of related objects by type. The interface can display counts for categories such as:
+The object-distribution cards summarize the number of related objects by type. The available categories can include identities, threat actors, intrusion sets, attack patterns, campaigns, and malware.
 
-- Identities;
-- Threat Actors;
-- Campaigns;
-- Intrusion Sets;
-- Attack Patterns;
-- Malware.
+### Relationships table
 
-The counts are specific to the selected Location and can change as the underlying intelligence changes.
+Use **Filters** to restrict the displayed relationships and **Search objects** to find a specific object.
 
-### Relationship table
+The table can include:
 
-The relationship table lists the links between the Location and related objects. The visible columns are:
+- source object;
+- relationship;
+- target object;
+- confidence;
+- sources;
+- created at;
+- last edited;
+- first seen;
+- last seen;
+- valid from;
+- valid until.
 
-| Column | Description |
-|---|---|
-| Source object | The object at the start of the relationship |
-| Relationship | The relationship type, such as `targets`, `originates-from`, or `located-at` |
-| Target object | The object at the end of the relationship |
-| Confidence | The confidence value associated with the relationship |
-| Sources | The sources supporting the relationship |
+Relationship names can include `targets`, `originates-from`, and `located-at`. Select an object name to pivot to the related object when a link is available.
 
-Use **Filters** to limit the displayed relationships. Use the object search field to find a specific object in the current context.
-
-> 📸 [SCREENSHOT SUGGESTION: Threat Context tab showing object distribution cards, Filters, the object search field, and the relationship table. | ALT TEXT: Threat Context for France showing related object counts and campaign relationships.]
+The object relationship view can also group relationships by type. Expand or collapse a group to review its related objects, and use the pagination controls to change the number of items displayed.
 
 ## Graph exploration
 
-The **Graph exploration** tab presents the Location and its relationships as a visual graph. For the broader graph workflow, see [Graph Explorations](https://docs.sekoia.io/cti/features/consume/graph_explorations/).
+The **Graph exploration** tab displays the Location and its relationships as a visual graph. A side panel provides object details or relationships, while the main area displays the graph.
 
-The view contains:
+The graph interface can include:
 
-- a side panel with the selected object;
-- **Details** and **Relationships** sub-tabs in the side panel;
-- a graph canvas containing the selected object and related objects;
-- a layer control;
-- a graph search field;
-- controls for layout, zoom, fitting the graph to the available space, and expanding the view.
+- layer selection;
+- object search;
+- layout and graph controls;
+- zoom controls;
+- fit-to-view;
+- fullscreen mode.
 
-The side panel can list relationship groups such as `originates-from`, `located-at`, and `targets`. Select a related object to continue the investigation from that object.
-
-> 📸 [SCREENSHOT SUGGESTION: Graph exploration tab showing France in the graph canvas and the Relationships sub-tab in the side panel. | ALT TEXT: Graph exploration view for France with related objects listed in the side panel.]
+For the general graph workflow, see [Graph Explorations](https://docs.sekoia.io/cti/features/consume/graph_explorations/).
 
 ## Reports
 
-The **Reports** tab provides the complete list of reports associated with the Location.
+The **Reports** tab displays the complete list of reports associated with the Location.
 
-The table contains:
+The table includes:
 
-| Column | Description |
-|---|---|
-| TLP | The report’s Traffic Light Protocol label |
-| Name | The report title |
-| Published at | The publication date and time |
-| Sources | The source or sources associated with the report |
+- **TLP**;
+- **Name**;
+- **Published at**;
+- **Sources**.
 
-Report names and sources are presented as links when a destination is available. The list supports pagination. Use **Items per page** to change the number of entries shown, then use the pagination controls to move between result pages. For exporting related objects from an object page, see [Data Export](https://docs.sekoia.io/cti/features/consume/export/).
+Report titles and sources are clickable when a destination is available. Use **Items per page** to change the number of rows displayed, then use the pagination controls to navigate through the results.
 
-The Reports tab displays publication timestamps in the format shown by the interface, for example `05/06/2026 - 07:09:59`.
-
-> 📸 [SCREENSHOT SUGGESTION: Reports tab showing TLP badges, report names, publication timestamps, sources, and pagination controls. | ALT TEXT: Paginated report list for France with TLP, publication date, and source columns.]
+The delivered interface displays publication dates with the date and time, for example `22/06/2026 - 12:00:00`.
 
 ## Related articles
 
-- [Explore a location](./explore_a_location.md): How to review a Location, its reports, relationships, and graph.
+- [Explore a location](./explore_a_location.md): How to review a Location and use its tabs.
 - [Intelligence](https://docs.sekoia.io/cti/features/consume/intelligence/): Search for Location objects and use Threat Context.
-- [Data model](https://docs.sekoia.io/cti/features/data_model/): Understand STIX objects, relationships, sources, and confidence.
-- [Graph Explorations](https://docs.sekoia.io/cti/features/consume/graph_explorations/): Build and save graph-based investigations.
-- [Data Export](https://docs.sekoia.io/cti/features/consume/export/): Export related items from an object page.
+- [Data model](https://docs.sekoia.io/cti/features/data_model/): Understand objects, relationships, sources, and confidence.
+- [Graph Explorations](https://docs.sekoia.io/cti/features/consume/graph_explorations/): Explore and save graph-based investigations.
+- [Data Export](https://docs.sekoia.io/cti/features/consume/export/): Export related objects.
 - [FLINT Reports](https://docs.sekoia.io/cti/features/consume/flints/) and [External Reports](https://docs.sekoia.io/cti/features/consume/external_reports/): Learn more about the report types shown on a Location page.

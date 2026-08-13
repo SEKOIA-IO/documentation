@@ -1,93 +1,155 @@
 # Explore a location
 
+Use a Location page to review a geographic area, understand its associated threat activity, inspect related objects, and open the reports connected to it.
+
 A **Location** is a geographic area, such as a country, region, or part of the world, associated with a threat’s origin or with the victims’ origin it targets. Locations are used to contextualize Threat Actors, Intrusion Sets, Campaigns, and other objects based on geographic targeting or provenance.
 
-Use the Location page to review a geographic profile, inspect associated reports, and analyze relationships with other intelligence objects. The page provides details, relationship data, a graph view, and a complete report list from the same object. For general Intelligence search guidance, see the [Intelligence documentation](https://docs.sekoia.io/cti/features/consume/intelligence/).
+## Before you start
 
-## Prerequisites
+Make sure that:
 
-Before you start, make sure that:
+- your community has the **Intelligence** plan;
+- you have access to the **Intelligence** module;
+- you have permission to read objects.
 
-- you can access **Intelligence**;
-- your role includes access to the reports and relationship data you need.
+No specific role is required. Users can open a Location and view its reports and relationships when their community has the required plan and permissions.
 
-## Review the Location
+## Open a Location
 
-1. Open the Location object from **Intelligence**. For a country, you can search by its name or by its two-letter ISO 3166-1 country code, as described in the [Intelligence documentation](https://docs.sekoia.io/cti/features/consume/intelligence/#search-for-a-country).
+1. Open **Intelligence**.
+2. Search for the Location by name. For a country, you can also search by its two-letter ISO 3166-1 country code, as described in the [Intelligence documentation](https://docs.sekoia.io/cti/features/consume/intelligence/#search-for-a-country).
+3. Select the Location from the search results.
 
-    The page opens with the object header and the **Details** tab.
+The page opens with the object header and the **Overview** tab.
 
-2. Review the object header.
+## Review the header
 
-    Confirm the Location name, TLP label, object type, confidence value, creation date, and modification date. The header also shows the object actions available to you, including edit, **Revoke**, and **Export**.
+The header displays the Location icon or flag and the Location name. The available actions depend on your community type:
 
-3. Read the Location profile.
+- In a Sekoia community, the header can include edit, **Revoke**, and **Export**.
+- In a customer community, the header can include **See the Json**, **Request revocation**, and **Export**.
 
-    Use the profile to establish the initial context for the geographic area. For a country, the text can include formatted sections covering cyber posture, operations, defensive capabilities, sectors, geopolitical context, or associated intrusion sets.
+### Edit a Location
 
-4. Review the latest reports.
+Select the edit action to open the edit form. Depending on the object, the form can include:
 
-    In the **Latest reports** panel, review the report titles, relative publication dates, and sources. The list can include [FLINT Reports](https://docs.sekoia.io/cti/features/consume/flints/) from the Sekoia TDR team and [External Reports](https://docs.sekoia.io/cti/features/consume/external_reports/) from curated third-party sources.
+- name;
+- region;
+- country;
+- description;
+- object type;
+- TLP;
+- confidence;
+- sources;
+- external references.
 
-5. Open the complete report list.
+The confidence control displays both a value and its meaning. For example, `1` is displayed as **Confirmed by other sources**. Source reliability is shown separately, using a letter rating such as `A`.
 
-    To review all reports associated with the Location, click **View more**.
+Select **Save** to apply the changes.
 
-6. Open the threat context.
+### Revoke a Location
 
-    To review related objects and their relationships, click **Threat Context**. See [Threat Context in the Intelligence documentation](https://docs.sekoia.io/cti/features/consume/intelligence/#threat-context) for the general workflow.
+Select **Revoke** to open the confirmation dialog. The dialog warns that the object will no longer trigger detections because it will be permanently revoked, and that the action cannot be reversed.
 
-7. Review object distribution.
+Select **Cancel** to close the dialog, or **Revoke** to confirm.
 
-    Use the distribution cards to see how many related objects are available for categories such as Campaigns, Intrusion Sets, Malware, Threat Actors, Identities, and Attack Patterns.
+### Export related objects
 
-8. Filter the relationships.
+Select **Export** to open the **Export related objects** dialog. Choose either:
 
-    To narrow the relationship table, click **Filters** and select the filters you need.
+- **All threat context**;
+- **Selected categories**.
 
-9. Search for an object.
+Then select an export format:
 
-    To find a specific object in the current threat context, enter its name in the object search field.
+- CSV;
+- JSON lines;
+- Text.
 
-10. Inspect a relationship.
+Select **Export** to download the selected data. For more information, see [Data Export](https://docs.sekoia.io/cti/features/consume/export/).
 
-    Review the source object, relationship, target object, confidence, and supporting sources. Relationship values can include `targets`, `originates-from`, and `located-at`.
+## Review the Overview tab
 
-11. Open graph exploration.
+### Review latest campaigns
 
-    To view the Location and its relationships as a graph, click **Graph exploration**. For the full graph workflow, see [Graph Explorations](https://docs.sekoia.io/cti/features/consume/graph_explorations/).
+In **Latest campaigns**, use the segmented control to switch between:
 
-12. Search or adjust the graph.
+- **Targeting [Location]**;
+- **Originating [Location]**.
 
-    Use the graph search field and the graph controls to change the layout, zoom, fit the graph to the available space, or expand the view.
+The section displays up to ten campaigns for the selected view and the last 12 months. Review the campaign name, objective, associated intrusion set, malware, tools, and IOCs when available.
 
-13. Review related objects in the side panel.
+Select a linked campaign, intrusion set, or malware to pivot to its object page. Select **View all** to open the complete campaign list.
 
-    Use the **Details** and **Relationships** sub-tabs to inspect the selected object and its relationship groups. Select a related object when you want to continue the investigation from that object.
+### Review latest reports
 
-14. Open the Reports tab.
+In the **Latest reports** section, review the reports associated with the Location. A report can show its TLP, title, publication date, and source.
 
-    To work with the complete report list directly, click **Reports**.
+Select a report title or source to open the related content when a link is available. Select **View all** to open the complete report list in the **Reports** tab.
 
-15. Change the number of displayed reports.
+The list can include [FLINT Reports](https://docs.sekoia.io/cti/features/consume/flints/) from the Sekoia TDR team and [External Reports](https://docs.sekoia.io/cti/features/consume/external_reports/) from curated third-party sources.
 
-    Select a value from **Items per page**.
+### Review the Threat Landscape
 
-16. Move between report pages.
+The **Threat Landscape** section contains three widgets. Use the timeframe selector to update them together:
 
-    Use the pagination controls to display the next or previous set of reports.
+- **Over the last 12 months**;
+- **Over the last 24 months**;
+- **Over the last 36 months**.
 
-!!! note "Confidence values"
-    Confidence values use the Admiralty Credibility scale described in the [Sekoia data model](https://docs.sekoia.io/cti/features/data_model/). A value of `1` means **confirmed by other sources**. Source reliability uses a separate letter-based scale.
+The delivered interface defaults to **Over the last 12 months**.
 
-## Result
+Review:
 
-You can use the Location page to establish geographic context, identify related intelligence objects, inspect supporting sources, and review the complete set of associated reports without leaving the Location object.
+- **Most active Intrusions Set**, which ranks intrusion sets by campaign appearances and lets you switch between targeting and originating activity;
+- **Most used Malware and Tools**, which ranks malware and tools by campaign appearances;
+- **Most impacted sectors**, which displays sectors with proportional campaign bars.
+
+A campaign can target multiple sectors, so sector percentages are not mutually exclusive.
+
+## Inspect Threat Context
+
+1. Select **Threat Context**.
+2. Review the object-distribution cards to see the number of related objects by type.
+3. Use **Filters** to restrict the results.
+4. Use **Search objects** to find a specific related object.
+5. Review the relationship table.
+
+The table can include the source object, relationship, target object, confidence, sources, creation and editing dates, first-seen and last-seen dates, and validity dates.
+
+Select a related object to pivot to its object page. For the general workflow, see [Threat Context in the Intelligence documentation](https://docs.sekoia.io/cti/features/consume/intelligence/#threat-context).
+
+## Explore relationships
+
+In the relationship view, relationships can be grouped by type, such as `originates-from`, `targets`, and `located-at`.
+
+- Expand or collapse a relationship group.
+- Select a related object to open it.
+- Use **Items per page** to change the number of displayed objects.
+- Use the pagination controls to move through the results.
+
+## Explore the graph
+
+1. Select **Graph exploration**.
+2. Use the side panel to review the Location details or relationships.
+3. Use the search field to find objects in the graph.
+4. Use the layer, layout, zoom, fit-to-view, and fullscreen controls as needed.
+
+For the general graph workflow, see [Graph Explorations](https://docs.sekoia.io/cti/features/consume/graph_explorations/).
+
+## Browse all reports
+
+1. Select **Reports**.
+2. Review the columns **TLP**, **Name**, **Published at**, and **Sources**.
+3. Select a report title or source to open it when a link is available.
+4. Use **Items per page** and the pagination controls to browse the list.
+
+The delivered interface displays publication dates with the date and time, for example `22/06/2026 - 12:00:00`.
 
 ## Related articles
 
-- [Location pages](./location_pages.md): Overview of the Location page structure and its visible data.
+- [Location pages](./location_pages.md): Overview of the Location page structure and visible data.
 - [Intelligence](https://docs.sekoia.io/cti/features/consume/intelligence/): Search for Location objects and use Threat Context.
-- [Data model](https://docs.sekoia.io/cti/features/data_model/): Understand STIX objects, relationships, sources, and confidence.
+- [Data model](https://docs.sekoia.io/cti/features/data_model/): Understand objects, relationships, sources, and confidence.
 - [Graph Explorations](https://docs.sekoia.io/cti/features/consume/graph_explorations/): Explore and save graph-based investigations.
-- [Data Export](https://docs.sekoia.io/cti/features/consume/export/): Export related items from an object page.
+- [Data Export](https://docs.sekoia.io/cti/features/consume/export/): Export related objects.
