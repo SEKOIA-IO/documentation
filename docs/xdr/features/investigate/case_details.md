@@ -28,7 +28,7 @@ The **Details** tab contains the following:
 * A timeline of analyst comments.
 
 !!! note
-    A case can contain a maximum of 500 comments. Once the limit is reached, no new comment can be added to the case.
+    A case can contain a maximum of 500 comments. Once the limit is reached, no new comment can be added to the case. To make room for new comments, delete existing ones. A comment can only be deleted by its author.
 
 ### Alerts tab
 
