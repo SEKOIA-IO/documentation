@@ -1,71 +1,91 @@
-# Location pages
+# Location page
 
-A **Location** is a geographic area, such as a country, region, or part of the world, associated with a threat’s origin or with the victims’ origin it targets. Locations are used to contextualize Threat Actors, Intrusion Sets, Campaigns, and other objects based on geographic targeting or provenance.
+A **Location** is a geographic area, such as a country, region, or part of the world, associated with a threat’s origin or with the origin of the victims it targets. Locations contextualize Threat Actors, Intrusion Sets, Campaigns, and other objects according to geographic targeting or provenance.
 
-A Location page brings together the profile of a geographic area, related campaigns, threat-landscape information, reports, relationships, and graph exploration in one place. The examples in this article use Spain, but the same interface applies to any Location available in Sekoia Intelligence.
+The Location page brings together the profile of a geographic area, related campaigns, threat-landscape information, reports, relationships, and graph exploration. The examples in this article use Spain, but the same interface applies to any Location available in Sekoia Intelligence.
 
-For general object search, see [Intelligence](https://docs.sekoia.io/cti/features/consume/intelligence/). For the object and relationship model, see the [Data model](https://docs.sekoia.io/cti/features/data_model/).
+## Use cases
+
+Use the Location page to:
+
+- prepare a briefing about activity associated with a country or region;
+- review campaigns that target or originate from a geographic area;
+- identify the most active intrusion sets, malware, tools, and sectors linked to that activity;
+- find reports associated with a Location;
+- inspect relationships and pivot to related objects;
+- export related objects for further analysis.
+
+For general object search, see [Intelligence](/cti/features/consume/intelligence.md). For the object and relationship model, see the [Data model](/cti/features/data_model.md).
 
 ## Page structure
 
 A Location page contains the following tabs:
 
 | Tab | Purpose |
-| --- | --- |
+|---|---|
 | **Overview** | Review the Location profile, latest campaigns, latest reports, and threat-landscape widgets. |
 | **Threat Context** | Review related objects, relationships, metadata, and sources. |
 | **Graph exploration** | Explore the Location and its relationships in a visual graph. |
 | **Reports** | Browse the complete list of reports associated with the Location. |
 
-The content is dynamic. Counts, campaigns, reports, sectors, and dates vary according to the selected Location and the selected timeframe.
+Counts, campaigns, reports, sectors, and dates vary according to the selected Location and timeframe.
 
-## Header
+> 📸 [SCREENSHOT SUGGESTION: Location page for Spain with the Overview tab selected. Show the header, Latest campaigns section, and Threat Landscape section. | ALT TEXT: Spain Location page showing latest campaigns and threat-landscape widgets.]
 
-The header displays the Location icon or flag and the Location name. It also provides object actions.
+## Header and object actions
 
-The available actions depend on the community type:
+The header displays the Location icon or flag and the Location name. It also contains the actions available for the object.
 
-- In a Sekoia community, the header can include edit, **Revoke**, and **Export**.
-- In a customer community, the header can include **See the Json**, **Request revocation**, and **Export**.
+**Edit** and **Revoke** are only available for objects that your community has created. These actions are not available for an object created by Sekoia.
 
-### Edit
+Depending on the community and your permissions, the header can also include:
 
-The edit form can include the following fields:
+- **See the Json**;
+- **Request revocation**;
+- **Export**.
 
-- **Name**;
-- **Region**;
-- **Country**;
-- **Description**, with rich-text formatting controls;
-- **Object type**;
-- **TLP**;
-- **Confidence**;
-- **Sources**;
-- **External references**, with a name, description, and URL.
+### Export related objects
 
-The confidence control displays both the value and its meaning. For example, the value `1` is displayed as **Confirmed by other sources**. Source reliability is shown separately, using a letter rating such as `A`, with a corresponding label such as **Completely reliable**.
-
-For more information about confidence and source reliability, see the [Sekoia data model](https://docs.sekoia.io/cti/features/data_model/).
-
-### Revoke
-
-**Revoke** permanently revokes the object. A confirmation dialog warns that the object will no longer trigger detections and that the action cannot be reversed.
-
-Select **Cancel** to close the dialog without revoking the object, or **Revoke** to confirm.
-
-### Export
-
-**Export** opens the **Export related objects** dialog. You can choose to export:
+Select **Export** to open the **Export related objects** dialog. Choose the scope of the export:
 
 - **All threat context**;
 - **Selected categories**.
 
-You can then select one of the following formats:
+Then select a format:
 
-- CSV;
-- JSON lines;
-- Text.
+- **CSV**;
+- **JSON lines**;
+- **Text**.
 
-For more information, see [Data Export](https://docs.sekoia.io/cti/features/consume/export/).
+Select **Export** to download the selected data. For more information, see [Data Export](/cti/features/consume/export.md).
+
+### Edit a Location
+
+Select the edit action to open the **Edit an object** form. The form shown in the delivered interface contains:
+
+| Field | Description |
+|---|---|
+| **Name** | The name of the Location. |
+| **Region** | The geographic region associated with the Location. |
+| **Country** | The country associated with the Location, when applicable. |
+| **Description** | A rich-text description of the Location. |
+| **Object type** | The object type, shown as **Location**. |
+| **TLP** | The Traffic Light Protocol level. |
+| **Confidence** | A value and its corresponding credibility description. |
+| **Sources** | The sources that support the object, including source reliability. |
+| **External references** | References with a name, description, and URL. |
+
+The confidence control displays the value and its meaning. For example, the value `1` is displayed as **Confirmed by other sources**. Source reliability is shown separately, using a letter rating such as `A` with a description such as **Completely reliable**.
+
+Select **Save** to apply the changes.
+
+For more information about confidence and source reliability, see the [Data model](/cti/features/data_model.md).
+
+### Revoke an object
+
+Select **Revoke** to open the confirmation dialog. Revocation is permanent. The dialog warns that the object will no longer trigger detections and that the action cannot be reversed.
+
+Select **Cancel** to close the dialog without revoking the object. Select **Revoke** to confirm.
 
 ## Overview
 
@@ -73,14 +93,12 @@ The **Overview** tab provides the main intelligence summary for the Location.
 
 ### Latest campaigns
 
-The **Latest campaigns** section lists recent campaigns associated with the Location.
-
-Use the segmented control to switch between:
+The **Latest campaigns** section lists recent campaigns associated with the Location. The section displays activity for the last 12 months and includes a segmented control with two views:
 
 - **Targeting [Location]**, for campaigns targeting the Location;
 - **Originating [Location]**, for campaigns originating from the Location.
 
-The section displays up to ten campaigns for the selected view and the last 12 months. Each row can show:
+The delivered interface displays up to ten campaigns for the selected view. A campaign row can include:
 
 - the campaign name;
 - the campaign objective;
@@ -89,7 +107,7 @@ The section displays up to ten campaigns for the selected view and the last 12 m
 - the number of tools;
 - the number of IOCs.
 
-Select a campaign, intrusion set, or malware name to open the corresponding object when it is available. Select **View all** to open the complete campaign list.
+Select a linked campaign, intrusion set, or malware to open its object page when a link is available. Select **View all** to open the complete campaign list.
 
 ### Latest reports
 
@@ -97,17 +115,17 @@ The **Latest reports** section lists reports associated with the Location. A rep
 
 Select a report title or source to open the related content when a link is available. Select **View all** to open the complete report list in the **Reports** tab.
 
-The list can include [FLINT Reports](https://docs.sekoia.io/cti/features/consume/flints/) from the Sekoia TDR team and [External Reports](https://docs.sekoia.io/cti/features/consume/external_reports/) from curated third-party sources.
+The list can include [FLINT Reports](/cti/features/consume/flints.md) from the Sekoia TDR team and [External Reports](/cti/features/consume/external_reports.md) from curated third-party sources.
 
 ### Threat Landscape
 
-The **Threat Landscape** section summarizes the activity associated with the Location. Use the timeframe selector to update the widgets together. The available options are:
+The **Threat Landscape** section summarizes activity associated with the Location. Use the timeframe selector to update the widgets together. The available options are:
 
 - **Over the last 12 months**;
 - **Over the last 24 months**;
 - **Over the last 36 months**.
 
-The default selection shown in the delivered interface is **Over the last 12 months**.
+The delivered interface selects **Over the last 12 months** by default.
 
 #### Most active Intrusions Set
 
@@ -115,7 +133,7 @@ This widget ranks intrusion sets by their appearances in campaigns associated wi
 
 Use the segmented control to switch between **Targeting [Location]** and **Originating [Location]**. Each row can show the intrusion-set name, the number of campaigns, and how long ago the activity was observed.
 
-The widget is ordered by the most appearances among the campaigns in the selected timeframe.
+The footer indicates that the list is ordered by campaign appearances for the selected timeframe.
 
 #### Most used Malware and Tools
 
@@ -125,39 +143,52 @@ The ranking is based on campaign appearances. A malware or tool can be used in m
 
 #### Most impacted sectors
 
-This widget shows the sectors most frequently associated with campaigns targeting the Location. Each row displays a sector, its campaign count, and a proportional bar.
+This widget shows the sectors most frequently associated with campaigns targeting the Location. Each row displays a sector, its campaign count, and a proportional horizontal bar.
 
-A campaign can target multiple sectors. Percentages therefore represent the share of the total campaign appearances shown by the widget, not mutually exclusive categories.
+A campaign can target multiple sectors. The footer explains that sector percentages represent the share of the total campaigns and are not mutually exclusive categories.
+
+> 📸 [SCREENSHOT SUGGESTION: Overview tab showing Latest campaigns, the Threat Landscape timeframe selector, and the three threat-landscape widgets. | ALT TEXT: Location overview showing campaigns, active intrusion sets, malware and tools, and impacted sectors.]
 
 ## Threat Context
 
-The **Threat Context** tab shows the objects and relationships associated with the Location. See [Threat Context in the Intelligence documentation](https://docs.sekoia.io/cti/features/consume/intelligence/#threat-context) for the general workflow.
+The **Threat Context** tab shows the objects and relationships associated with the Location. See [Threat Context in the Intelligence documentation](/cti/features/consume/intelligence.md#threat-context) for the general workflow.
 
 ### Object distribution
 
-The object-distribution cards summarize the number of related objects by type. The available categories can include identities, threat actors, intrusion sets, attack patterns, campaigns, and malware.
+The object-distribution cards summarize the number of related objects by type. The available categories can include:
+
+- Identities;
+- Threat Actors;
+- Intrusion Sets;
+- Attack Patterns;
+- Campaigns;
+- Malware.
 
 ### Relationships table
 
-Use **Filters** to restrict the displayed relationships and **Search objects** to find a specific object.
+Use **Filters** to restrict the displayed relationships. Use **Search objects** to find a specific object.
 
 The table can include:
 
-- source object;
-- relationship;
-- target object;
-- confidence;
-- sources;
-- created at;
-- last edited;
-- first seen;
-- last seen;
-- valid from;
-- valid until.
+| Column | Description |
+|---|---|
+| Source object | The object at the start of the relationship. |
+| Relationship | The relationship type, such as `targets`, `originates-from`, or `located-at`. |
+| Target object | The object at the end of the relationship. |
+| Confidence | The confidence value associated with the relationship. |
+| Sources | The sources supporting the relationship. |
+| Created at | When the relationship was created. |
+| Last edited | When the relationship was last edited. |
+| First seen | When the relationship was first observed. |
+| Last seen | When the relationship was most recently observed. |
+| Valid from | When the relationship became valid, when available. |
+| Valid until | When the relationship stops being valid, when available. |
 
-Relationship names can include `targets`, `originates-from`, and `located-at`. Select an object name to pivot to the related object when a link is available.
+Select an object name to pivot to the related object when a link is available.
 
-The object relationship view can also group relationships by type. Expand or collapse a group to review its related objects, and use the pagination controls to change the number of items displayed.
+The relationship view can group entries by relationship type. Expand or collapse a group to review its related objects. Use **Items per page** and the pagination controls to change the displayed results.
+
+> 📸 [SCREENSHOT SUGGESTION: Threat Context tab showing object-distribution cards, the expanded relationship table, filters, search, metadata columns, and pagination. | ALT TEXT: Spain Threat Context showing related object counts and detailed campaign relationships.]
 
 ## Graph exploration
 
@@ -172,7 +203,11 @@ The graph interface can include:
 - fit-to-view;
 - fullscreen mode.
 
-For the general graph workflow, see [Graph Explorations](https://docs.sekoia.io/cti/features/consume/graph_explorations/).
+The side panel includes **Details** and **Relationships**. Relationship groups can include `originates-from`, `targets`, and `located-at`. Use the group pagination controls when a relationship group contains multiple entries.
+
+For the general graph workflow, see [Graph Explorations](/cti/features/consume/graph_explorations.md).
+
+> 📸 [SCREENSHOT SUGGESTION: Graph exploration tab showing the Location in the graph canvas and the Relationships side panel with grouped relationship types. | ALT TEXT: Spain graph exploration view with relationship groups in the side panel.]
 
 ## Reports
 
@@ -180,20 +215,27 @@ The **Reports** tab displays the complete list of reports associated with the Lo
 
 The table includes:
 
-- **TLP**;
-- **Name**;
-- **Published at**;
-- **Sources**.
+| Column | Description |
+|---|---|
+| **TLP** | The report’s Traffic Light Protocol level. |
+| **Name** | The report title. |
+| **Published at** | The publication date and time. |
+| **Sources** | The source or sources associated with the report. |
 
-Report titles and sources are clickable when a destination is available. Use **Items per page** to change the number of rows displayed, then use the pagination controls to navigate through the results.
+Report titles and sources are clickable when a destination is available. Use **Items per page** and the pagination controls to browse the list.
 
 The delivered interface displays publication dates with the date and time, for example `22/06/2026 - 12:00:00`.
 
 ## Related articles
 
-- [Explore a location](./explore_a_location.md): How to review a Location and use its tabs.
-- [Intelligence](https://docs.sekoia.io/cti/features/consume/intelligence/): Search for Location objects and use Threat Context.
-- [Data model](https://docs.sekoia.io/cti/features/data_model/): Understand objects, relationships, sources, and confidence.
-- [Graph Explorations](https://docs.sekoia.io/cti/features/consume/graph_explorations/): Explore and save graph-based investigations.
-- [Data Export](https://docs.sekoia.io/cti/features/consume/export/): Export related objects.
-- [FLINT Reports](https://docs.sekoia.io/cti/features/consume/flints/) and [External Reports](https://docs.sekoia.io/cti/features/consume/external_reports/): Learn more about the report types shown on a Location page.
+[Intelligence](/cti/features/consume/intelligence.md): How to search for intelligence objects and use Threat Context.
+
+[Data model](/cti/features/data_model.md): Reference for objects, relationships, sources, and confidence.
+
+[Graph Explorations](/cti/features/consume/graph_explorations.md): How to explore and save graph-based investigations.
+
+[Data Export](/cti/features/consume/export.md): How to export related objects.
+
+[FLINT Reports](/cti/features/consume/flints.md): Overview of Sekoia FLINT reports.
+
+[External Reports](/cti/features/consume/external_reports.md): Overview of reports from external sources.
