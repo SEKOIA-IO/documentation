@@ -242,4 +242,4 @@ The trajectory graph shows the Asset Risk Score on the Y-axis and time on the X-
 - [Asset context panel](/xdr/features/investigate/asset_context_panel.md): Overview of the asset investigation surface and its core tabs.
 - [Asset context panel, Reveal capabilities](/xdr/features/modules/reveal_asset_context_panel.md): Overview of Reveal-specific asset context, including hygiene, vulnerabilities, Points of Interest, and security controls.
 - [Assets](/xdr/features/collect/assets.md): Reference for asset categories, criticality, and asset management.
-- [Interpret asset risk scores](/xdr/features/investigate/interpret_asset_risk_scores.md): How to read and use the score during an investigation.
+- [Interpret asset risk scores](/xdr/features/modules/interpret_asset_risk_scores.md): How to read and use the score during an investigation.
