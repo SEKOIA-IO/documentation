@@ -15,60 +15,28 @@ Use Reveal to answer questions that alerts alone cannot answer:
   </div>
 </div>
 
+Security teams investigate in two directions. Reactive investigations start from an alert, case, or detection. Proactive investigations start from a risk or exposure question. Reveal supports both by giving analysts the context they need to understand what an asset is, how it is protected, and what it connects to.
 
-## How Reveal works
 
-Reveal builds asset context from multiple sources and surfaces it where analysts already work.
-
-| Source | What it provides |
+### What Reveal provides
+ 
+| Capability | Description |
 |---|---|
-| Passive Asset Discovery | Creates and lightly enriches assets from identifiers observed in supported telemetry. Starts automatically when telemetry is ingested. |
-| Event data | Powers timelines, Points of Interest, Attack Path Visualization, and alert and case context. |
-| Asset Connectors | Creates and deeply enriches assets with structured data from identity providers, endpoint tools, vulnerability scanners, and asset inventories. |
-| Sekoia Endpoint Agent | Creates and enriches endpoint assets with direct endpoint visibility and hygiene signals. |
-
-You do not need all four sources to start. Each source unlocks additional capabilities.
-
-
-## Key capabilities
-### Asset context panel
-
-The asset context panel is the primary investigation surface. Reveal extends it with vulnerability data, hygiene status, and behavioral signals.
-
-→ [Asset context panel](/xdr/features/modules/reveal_asset_context_panel.md)
-
-### Attack Path Visualization
-
-Attack Path Visualization maps relationships between assets. Use it to identify lateral movement paths, intermediary assets, and connected security activity.
-
-→ [Attack Path Visualization](/xdr/features/investigate/attack_path_visualization.md)
-
-### Points of Interest
-
-Points of Interest surface behavioral anomalies on assets, such as unusual authentication patterns or rare locations. They appear during triage and investigation without requiring a separate alert.
-
-→ [Points of Interest](/xdr/features/detect/points_of_interest.md)
-
-### Endpoint Hygiene
-
-Endpoint Hygiene shows posture signals for endpoints, such as whether the firewall or disk encryption is enabled. It requires the Sekoia Endpoint Agent or a supported connector.
-
-→ [Hygiene tab](/xdr/features/modules/reveal_asset_context_panel.md#hygiene-tab)
-
-### Vulnerability enrichment
-
-Vulnerability enrichment shows whether an asset is affected by known CVEs. It requires a connected vulnerability scanner.
-
-→ [Vulnerability list and score](/xdr/features/modules/reveal_asset_context_panel.md#vulnerabilities-tab)
-
-## When to use Reveal
-
-Use Reveal when you need asset context that your alerts do not provide. Typical situations include:
-
-- Triaging an alert on an asset you do not recognize.
-- Assessing whether a compromised asset can reach sensitive systems.
-- Identifying assets that are vulnerable or poorly protected before an incident occurs.
-- Investigating lateral movement during an active case.
+| [Asset context panel](/xdr/features/modules/reveal_asset_context_panel.md)| Extends the core panel with hygiene, vulnerabilities, security controls, points of interest, and attack path visualization |
+| [Asset Connectors](/xdr/features/modules/reveal_asset_connectors_create.md) | Connects external systems such as EDR tools, vulnerability scanners, and identity providers to create and enrich asset records |
+| [Points of Interest](/xdr/features/detect/points_of_interest.md) | Surfaces behavioral anomalies on assets that may not trigger alerts, such as unusual authentication patterns or rare locations |
+| [Endpoint Hygiene](/xdr/features/modules/reveal_hygiene.md) | Shows firewall and disk encryption status for host assets |
+| [Vulnerability enrichment](/xdr/features/modules/reveal_vulnerabilities.md) | Lists known CVE exposures affecting an asset, aggregated from connected scanners |
+| [Security controls](/xdr/features/modules/reveal_security_controls.md) | Shows which detection and protection technologies cover an asset and where gaps exist |
+| [Attack Path Visualization](/xdr/features/investigate/attack_path_visualization.md) | Maps relationships between assets to help analysts assess lateral movement risk and blast radius |
+ 
+## How Reveal fits into your workflows
+ 
+Reveal is designed to enrich the workflows analysts already use.
+ 
+During a **reactive investigation**, an analyst starts from an alert or case. Reveal adds context about the involved asset: its identity, posture, exposure, recent activity, and relationships, so the analyst can assess priority, scope, and impact without pivoting to external tools.
+ 
+During a **proactive investigation**, an analyst looks for assets that may require attention before an incident occurs. Reveal surfaces vulnerable, poorly protected, or unusually active assets so teams can prioritize remediation early.
 
 ## Get started
 
