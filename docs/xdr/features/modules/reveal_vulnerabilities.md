@@ -6,6 +6,10 @@ Vulnerability enrichment aggregates known CVE exposures from connected vulnerabi
 
 Vulnerability data is available in the asset context panel under the **Vulnerabilities** tab and summarized in the **Health check** card on the **Overview** tab.
 
+!!! note "Different from Asset Risk Score"
+
+    The Unified risk score helps compare individual vulnerabilities from different sources. It is not the same as the host-level Asset Risk Score, which prioritizes the asset using multiple signal types.
+
 ## How vulnerability enrichment works
 
 Reveal collects vulnerability data from connected asset connectors that support vulnerability scanning. Each connector synchronizes its findings and maps them to the relevant asset record in Sekoia.
