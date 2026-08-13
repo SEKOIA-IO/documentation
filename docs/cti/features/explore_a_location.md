@@ -9,8 +9,6 @@ A **Location** is a geographic area, such as a country, region, or part of the w
 Make sure that:
 
 - your community has the **Intelligence** plan;
-- you have access to the **Intelligence** module;
-- you have permission to read objects.
 
 No specific role is required. Users can open a Location and view its reports and relationships when their community has the required plan and permissions.
 
@@ -26,7 +24,7 @@ The page opens with the object header and the **Overview** tab.
 
 The header displays the Location icon or flag and the Location name. The available actions depend on your community type:
 
-- In a Sekoia community, the header can include edit, **Revoke**, and **Export**.
+- In a Sekoia community, the header can include **See the Json** **Edit**, **Revoke**, and **Export**.
 - In a customer community, the header can include **See the Json**, **Request revocation**, and **Export**.
 
 ### Edit a Location
@@ -49,9 +47,8 @@ Select **Save** to apply the changes.
 
 ### Revoke a Location
 
-Select **Revoke** to open the confirmation dialog. The dialog warns that the object will no longer trigger detections because it will be permanently revoked, and that the action cannot be reversed.
-
-Select **Cancel** to close the dialog, or **Revoke** to confirm.
+1. On the top right corner of the page, select **Revoke** to open the confirmation dialog. The dialog warns that the object will no longer trigger detections because it will be permanently revoked, and that the action cannot be reversed.
+2. Select **Cancel** to close the dialog, or **Revoke** to confirm.
 
 ### Export related objects
 
