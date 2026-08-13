@@ -27,6 +27,9 @@ The **Details** tab contains the following:
 * A Markdown-enabled description field.
 * A timeline of analyst comments.
 
+!!! note
+    A case can contain a maximum of 500 comments. Once the limit is reached, no new comment can be added to the case.
+
 ### Alerts tab
 
 The **Alerts** tab lists all alerts attached to the case. From this tab you can:

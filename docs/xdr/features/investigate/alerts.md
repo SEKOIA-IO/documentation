@@ -412,6 +412,9 @@ The second column is the `timeline`. It contains all items that constitute the h
 
 It is possible to filter the timeline to display only items of a certain type.
 
+!!! note
+    An alert can contain a maximum of 500 comments. Once the limit is reached, no new comment can be added to the alert.
+
 ### Tasks
 
 The Tasks tabs lists tasks and subtasks that are associated with the alert.
