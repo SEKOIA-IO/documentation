@@ -1,5 +1,7 @@
 # Interpret asset risk scores
 
+_**[Reveal module](/xdr/features/modules/reveal_index.md)** — This feature requires the Reveal add-on module._ 
+
 Use the Asset Risk Score to prioritize host assets during triage and investigation. Review the score breakdown, contributing views, and score trajectory together before deciding what to investigate or remediate.
 
 !!! note "Read the scoring model first"
