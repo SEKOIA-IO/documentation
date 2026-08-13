@@ -46,6 +46,9 @@ The right column is the **timeline**, which records the complete history of the 
 
 You can filter the timeline to display only items of a specific type.
 
+!!! note
+    An alert can contain a maximum of 500 comments. Once the limit is reached, no new comment can be added to the alert. To make room for new comments, delete existing ones. A comment can only be deleted by its author.
+
 ## Tasks tab
 
 The **Tasks** tab lists all tasks and subtasks associated with the alert.
