@@ -257,6 +257,9 @@ nav:
       - Troubleshoot asset connectors: xdr/features/modules/reveal_asset_connectors_troubleshoot.md
     - Investigate assets:
       - Explore assets context: xdr/features/modules/reveal_asset_context_panel.md
+      - Asset risk scoring: 
+        - Asset risque scoring overview: xdr/features/modules/asset_risk_scoring.md
+        - Interpret asset risk scores: xdr/features/modules/interpret_asset_risk_scores.md
       - Visualize attack paths: xdr/features/investigate/attack_path_visualization.md
       - Discover Points of Interest: xdr/features/detect/points_of_interest.md
       - Check Endpoint Hygiene: xdr/features/modules/reveal_hygiene.md
