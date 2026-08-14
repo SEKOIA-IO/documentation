@@ -27,6 +27,24 @@ The following Sekoia.io built-in rules match the intake **Akamai Guardicore On-P
     
     - **Effort:** master
 
+??? abstract "Akamai Guardicore Medium On-Prem Severity Security Incident"
+    
+    Akamai Guardicore has detected a medium severity security incident, indicating suspicious activity that warrants analyst review. This may include unusual lateral movement patterns, policy violations, or communication with suspicious but unconfirmed malicious endpoints.
+    
+    - **Effort:** master
+
+??? abstract "Akamai Guardicore On-Prem High Severity Security Incident"
+    
+    Akamai Guardicore has detected a high severity security incident, indicating a likely confirmed threat such as communication with a known malicious IP, active malware beaconing, or exploitation of a vulnerable asset. Immediate triage is required.
+    
+    - **Effort:** master
+
+??? abstract "Akamai Guardicore On-Prem Low Severity Security Incident"
+    
+    Akamai Guardicore has detected a low severity security incident, such as a connection attempt to an IP address with a bad reputation identified by the Guardicore Reputation Service.
+    
+    - **Effort:** master
+
 ??? abstract "Aspnet Compiler"
     
     Detects the starts of aspnet compiler.
