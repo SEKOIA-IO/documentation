@@ -40,9 +40,7 @@ The configuration alternates between the two products: you set the Sekoia URL in
 5. Leave `Intake Key` empty for now, it is created in the next step
 6. Click `Save and connect` and check that the result reported is a success, not an error
 
-<!-- Screenshot to add in docs/assets/integration/application/blacknoise/, then uncomment:
 ![connector_api_url.png](/assets/integration/application/blacknoise/connector_api_url.png)
--->
 
 !!! note
     This URL is the only Sekoia address BlackNoise asks you for: it derives the intake it pushes to (`https://intake.sekoia.io/batch` for FRA1, `https://intake.<region>.sekoia.io/api/v1/intake-http/batch` otherwise) and the links displayed on your adversarial actions from it. The result message lists both derived addresses, so check them to confirm that BlackNoise is aimed at your region. Regions and their codes are listed in [our dedicated article](/getting_started/regions.md).
@@ -64,9 +62,7 @@ Once the intake is created, copy the `Intake key` displayed in the intake detail
 2. Paste the key copied above in the `Intake Key` field, leaving the `API URL` untouched
 3. Click `Save and connect`
 
-<!-- Screenshot to add in docs/assets/integration/application/blacknoise/, then uncomment:
 ![connector_intake_key.png](/assets/integration/application/blacknoise/connector_intake_key.png)
--->
 
 BlackNoise now reports two results instead of one: the `API URL`, whose form is validated without sending any request, and the `Intake connection`, which is validated by ingesting one test event into your intake.
 
@@ -79,9 +75,7 @@ BlackNoise now reports two results instead of one: the `API URL`, whose form is 
 2. In the connectors step of the campaign, select `Sekoia`
 3. Launch the simulation
 
-<!-- Screenshot to add in docs/assets/integration/application/blacknoise/, then uncomment:
 ![campaign_connectors.png](/assets/integration/application/blacknoise/campaign_connectors.png)
--->
 
 Only the campaigns the connector is selected on forward their events. Each event is sent as soon as its action finishes executing, so events arrive during the campaign run rather than at its end.
 
@@ -102,6 +96,4 @@ Useful filters:
 
 To jump to the Sekoia event of a given action without typing its identifier, open the campaign in BlackNoise, go to its `Kill chain` tab, click the action, then scroll down to the `Connectors` section of the panel and click `View this event in Sekoia`. The link opens Sekoia filtered on that execution identifier and on the execution window.
 
-<!-- Screenshot to add in docs/assets/integration/application/blacknoise/, then uncomment:
 ![event_connectors_link.png](/assets/integration/application/blacknoise/event_connectors_link.png)
--->
