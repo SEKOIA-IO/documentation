@@ -8,7 +8,7 @@ type: intake
 
 BlackNoise is an agentless Adversarial Exposure Validation (AEV) platform. It safely executes real attack techniques across the information system and correlates each adversarial action with the detections it triggered, so security teams can measure and continuously improve their real MTTD and MTTR.
 
-Once the connector is configured, BlackNoise forwards every adversarial action it executes to a Sekoia intake, as soon as the action finishes running. Your simulation activity then sits next to your real telemetry: you can search it, correlate it with your detections, and confirm that what BlackNoise executed was actually visible to your SOC. Each action displayed in the BlackNoise console also links to the matching event in Sekoia.
+Once the connector is configured, BlackNoise forwards every adversarial action it executes to a Sekoia intake, as soon as the action finishes running. Your simulation activity then sits next to your real telemetry: you can search it, correlate it with your detections, and confirm that what BlackNoise executed was actually visible to your SOC. Each action displayed in BlackNoise also links to the matching event in Sekoia.
 
 - **Vendor**: BlackNoise
 - **Supported environment**: SaaS
@@ -33,7 +33,7 @@ The configuration alternates between the two products: you set the Sekoia URL in
 
 ### Set the Sekoia API URL in BlackNoise
 
-1. Log in to the BlackNoise console
+1. Log in to BlackNoise
 2. In the `Resources` section of the navigation, open `Connectors`
 3. On the `Sekoia` connector, click `Configure` — the `Edit connector` window opens
 4. Fill the `API URL` field with the API base URL of your region: `https://api.sekoia.io` for FRA1, `https://app.<region>.sekoia.io/api` otherwise
@@ -45,7 +45,7 @@ The configuration alternates between the two products: you set the Sekoia URL in
 -->
 
 !!! note
-    This URL is the only Sekoia address BlackNoise asks you for: it derives the intake it pushes to (`https://intake.sekoia.io/batch` for FRA1, `https://intake.<region>.sekoia.io/api/v1/intake-http/batch` otherwise) and the console links from it. The result message lists both derived addresses, so check them to confirm that BlackNoise is aimed at your region. Regions and their codes are listed in [our dedicated article](/getting_started/regions.md).
+    This URL is the only Sekoia address BlackNoise asks you for: it derives the intake it pushes to (`https://intake.sekoia.io/batch` for FRA1, `https://intake.<region>.sekoia.io/api/v1/intake-http/batch` otherwise) and the links displayed on your adversarial actions from it. The result message lists both derived addresses, so check them to confirm that BlackNoise is aimed at your region. Regions and their codes are listed in [our dedicated article](/getting_started/regions.md).
 
 !!! warning
     The expected value is the API base URL, not a page of the Sekoia web application: an address such as `https://app.sekoia.io/intakes/…` is rejected by the connection test.
@@ -54,13 +54,13 @@ The configuration alternates between the two products: you set the Sekoia URL in
 
 {!_shared_content/integration/intake_configuration.md!}
 
-Search the catalog for `BlackNoise` and select the `BlackNoise AEV` format, then attach the intake to the entity your adversarial actions belong to.
+Search the intake catalog for `BlackNoise` and select the `BlackNoise AEV` format, then attach the intake to the entity your adversarial actions belong to.
 
 Once the intake is created, copy the `Intake key` displayed in the intake details window before closing it: the next step needs it.
 
 ### Set the intake key in BlackNoise
 
-1. Back in the BlackNoise console, open `Resources` > `Connectors` and click `Configure` on the `Sekoia` connector again
+1. Back in BlackNoise, open `Resources` > `Connectors` and click `Configure` on the `Sekoia` connector again
 2. Paste the key copied above in the `Intake Key` field, leaving the `API URL` untouched
 3. Click `Save and connect`
 
@@ -105,13 +105,3 @@ To jump to the Sekoia event of a given action without typing its identifier, ope
 <!-- Screenshot to add in docs/assets/integration/application/blacknoise/, then uncomment:
 ![event_connectors_link.png](/assets/integration/application/blacknoise/event_connectors_link.png)
 -->
-
-#### Enjoy your events on the [Events page](https://app.sekoia.io/operations/events)
-
-{!_shared_content/operations_center/integrations/generated/1540e5d1-e475-5b21-b774-689de0cb941e_sample.md!}
-
-{!_shared_content/integration/detection_section.md!}
-
-{!_shared_content/operations_center/detection/generated/suggested_rules_1540e5d1-e475-5b21-b774-689de0cb941e_do_not_edit_manually.md!}
-
-{!_shared_content/operations_center/integrations/generated/1540e5d1-e475-5b21-b774-689de0cb941e.md!}
