@@ -97,3 +97,11 @@ Useful filters:
 To jump to the Sekoia event of a given action without typing its identifier, open the campaign in BlackNoise, go to its `Kill chain` tab, click the action, then scroll down to the `Connectors` section of the panel and click `View this event in Sekoia`. The link opens Sekoia filtered on that execution identifier and on the execution window.
 
 ![event_connectors_link.png](/assets/integration/application/blacknoise/event_connectors_link.png)
+
+{!_shared_content/operations_center/integrations/generated/1540e5d1-e475-5b21-b774-689de0cb941e_sample.md!}
+
+{!_shared_content/integration/detection_section.md!}
+
+{!_shared_content/operations_center/detection/generated/suggested_rules_1540e5d1-e475-5b21-b774-689de0cb941e_do_not_edit_manually.md!}
+
+{!_shared_content/operations_center/integrations/generated/1540e5d1-e475-5b21-b774-689de0cb941e.md!}
