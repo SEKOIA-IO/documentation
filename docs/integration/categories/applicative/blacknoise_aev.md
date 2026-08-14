@@ -98,6 +98,8 @@ To jump to the Sekoia event of a given action without typing its identifier, ope
 
 ![event_connectors_link.png](/assets/integration/application/blacknoise/event_connectors_link.png)
 
+#### Enjoy your events on the [Events page](https://app.sekoia.io/operations/events)
+
 {!_shared_content/operations_center/integrations/generated/1540e5d1-e475-5b21-b774-689de0cb941e_sample.md!}
 
 {!_shared_content/integration/detection_section.md!}
