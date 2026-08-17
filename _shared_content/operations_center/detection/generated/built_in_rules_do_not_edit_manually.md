@@ -1,4 +1,4 @@
-Rules catalog includes **1081 built-in detection rules** ([_last update on 2026-08-14_](rules_changelog.md)).
+Rules catalog includes **1085 built-in detection rules** ([_last update on 2026-08-17_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Identity Information**
 
@@ -4770,6 +4770,18 @@ Rules catalog includes **1081 built-in detection rules** ([_last update on 2026-
         - 24/03/2023 - minor - Adjusting displayed columns when the rule triggers an alert. Now timestamp and username will be displayed.
         - 02/02/2026 - minor - Update rule type to integration
             
+??? abstract "Sigma Intelligence Pangolin8RAT Working Directory File Artifacts"
+    
+    Detects access to filesystem artifacts associated with Pangolin8RAT.
+    
+    - **Effort:** intermediate
+    
+??? abstract "Sigma Intelligence Windows DRILLAPP Malware"
+    
+    Sigma RULE to detect DrillAPP or other malicious launch of edge to disable security measures and abuse permissions.
+    
+    - **Effort:** intermediate
+    
 ??? abstract "Sophos EDR Application Blocked"
     
     Sophos EDR detected a potentially malicious application and blocked it.
@@ -7907,6 +7919,12 @@ Rules catalog includes **1081 built-in detection rules** ([_last update on 2026-
     
         - 21/06/2024 - major - Update detection pattern for ECS fields/value compliance
             
+??? abstract "Sigma Intelligence Nanocore Persistence Key"
+    
+    Nanocore artefacts detection
+    
+    - **Effort:** intermediate
+    
 ??? abstract "Suspicious desktop.ini Action"
     
     Detects unusual processes accessing desktop.ini, which can be leveraged to alter how Explorer displays a folder's content (i.e. renaming files) without changing them on disk.
@@ -9583,6 +9601,12 @@ Rules catalog includes **1081 built-in detection rules** ([_last update on 2026-
     
         - 21/06/2024 - major - Update detection pattern for ECS fields/value compliance
             
+??? abstract "Sigma Intelligence Nanocore Persistence Key"
+    
+    Nanocore artefacts detection
+    
+    - **Effort:** intermediate
+    
 ??? abstract "Suspicious desktop.ini Action"
     
     Detects unusual processes accessing desktop.ini, which can be leveraged to alter how Explorer displays a folder's content (i.e. renaming files) without changing them on disk.
@@ -12486,6 +12510,12 @@ Rules catalog includes **1081 built-in detection rules** ([_last update on 2026-
 ??? abstract "SEKOIA.IO Intelligence Feed"
     
     Detect threats based on indicators of compromise (IOCs) collected by SEKOIA's Threat and Detection Research team.
+    
+    - **Effort:** elementary
+    
+??? abstract "Sigma Intelligence Arcane Stealer HTTP Communication"
+    
+    Detects potential Arcane Stealer communications through the User-Agent.
     
     - **Effort:** elementary
     

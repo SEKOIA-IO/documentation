@@ -2625,11 +2625,35 @@ The following Sekoia.io built-in rules match the intake **Windows**. This docume
     
     - **Effort:** intermediate
 
+??? abstract "Sigma Intelligence Arcane Stealer HTTP Communication"
+    
+    Detects potential Arcane Stealer communications through the User-Agent.
+    
+    - **Effort:** elementary
+
 ??? abstract "Sigma Intelligence ErrTraffic PowerShell Command Line"
     
     Detects powershell script executed via ErrTraffic infection chain
     
     - **Effort:** elementary
+
+??? abstract "Sigma Intelligence Nanocore Persistence Key"
+    
+    Nanocore artefacts detection
+    
+    - **Effort:** intermediate
+
+??? abstract "Sigma Intelligence Pangolin8RAT Working Directory File Artifacts"
+    
+    Detects access to filesystem artifacts associated with Pangolin8RAT.
+    
+    - **Effort:** intermediate
+
+??? abstract "Sigma Intelligence Windows DRILLAPP Malware"
+    
+    Sigma RULE to detect DrillAPP or other malicious launch of edge to disable security measures and abuse permissions.
+    
+    - **Effort:** intermediate
 
 ??? abstract "Sliver DNS Beaconing"
     
