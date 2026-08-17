@@ -141,6 +141,12 @@ The following Sekoia.io built-in rules match the intake **Varonis Data Security*
     
     - **Effort:** master
 
+??? abstract "Sigma Intelligence Pangolin8RAT Working Directory File Artifacts"
+    
+    Detects access to filesystem artifacts associated with Pangolin8RAT.
+    
+    - **Effort:** intermediate
+
 ??? abstract "Suspicious Email Attachment Received"
     
     Detects email containing a suspicious file as an attachment, based on its extension.
