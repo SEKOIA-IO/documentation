@@ -1,4 +1,4 @@
-uuid: cc64de36-d998-4f9a-b354-bc1fa3f340b4
+uuid: fd96d670-553f-4ca8-abc6-3fa2d790a1f2
 name: Vigidomain
 type: intake
 
