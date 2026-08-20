@@ -440,6 +440,7 @@ nav:
       - Wallix: integration/categories/iam/wallix.md
     - Network:
       - Amazon VPC Flow Logs: integration/categories/network/aws_flow_logs.md
+      - Amazon VPC Flow Logs (Parquet): integration/categories/network/aws_flow_logs_parquet.md
       - Azure Application Gateway: integration/categories/network/azure_application_gateway.md
       - ArubaOS Switch: integration/categories/network/arubaos.md
       - BIND: integration/categories/network/bind.md
