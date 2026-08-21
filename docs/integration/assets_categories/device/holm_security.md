@@ -2,6 +2,8 @@ uuid: 4df342f5-9fb0-4d45-97c0-bdae48e2e7c2
 name: Holm Security Devices
 type: asset
 
+_**[Reveal module](/xdr/features/modules/reveal_index.md)**  — This feature requires the Reveal add-on module._
+
 ## Overview
 
 Holm Security is a cloud-hosted vulnerability and attack surface management platform for system and network security. Its agent-managed devices provide rich operating system, state, and vulnerability metadata. This setup guide shows how to forward the device assets enrolled in Holm Security to Sekoia.io.
@@ -9,6 +11,11 @@ Holm Security is a cloud-hosted vulnerability and attack surface management plat
 - **Vendor**: Holm Security
 - **Product**: Holm Security System & Network Security
 - **Supported environment**: Cloud
+
+!!! note
+    This asset connector is currently in beta. Enable the `reveal-beta-connectors` feature flag to display it.
+
+The asset connector calls `GET /v2/devices` and `GET /v2/net-assets` on the Holm Security API (`https://se-api.holmsecurity.com`), paginates through every agent-managed device, and transforms each record into an OCSF Device Inventory Info object.
 
 ## Configure
 
