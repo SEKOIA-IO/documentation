@@ -1,0 +1,147 @@
+
+### Raw Events Samples
+
+In this section, you will find examples of raw logs as generated natively by the source. These examples are provided to help integrators understand the data format before ingestion into Sekoia.io. It is crucial for setting up the correct parsing stages and ensuring that all relevant information is captured.
+
+
+=== "accept"
+
+
+    ```json
+	2 1111111111 eni-0f06a40fc9be596f6 198.51.100.1 10.0.0.96 123 123 17 2 152 1599665193 1599665488 ACCEPT OK
+    ```
+
+
+
+=== "accept_ok_v5"
+
+
+    ```json
+	5 1111111111 eni-1235b8ca123456789 5.6.7.8 1.2.3.4 50188 4433 6 1 44 1739865042 1739865042 ACCEPT OK vpc-1 subnet-1 - 2 IPv4 5.6.7.8 1.2.3.4 eu-west-1 euw1-az2 - - - - ingress -
+    ```
+
+
+
+=== "accept_structured"
+
+
+    ```json
+	{
+        "version": 2,
+        "account_id": "1111111111",
+        "interface_id": "eni-0f06a40fc9be596f6",
+        "srcaddr": "5.6.7.8",
+        "dstaddr": "1.2.3.4",
+        "srcport": 4712,
+        "dstport": 53205,
+        "protocol": 6,
+        "packets": 12,
+        "bytes": 2610,
+        "start": 1661950735,
+        "end": 1661950746,
+        "action": "ACCEPT",
+        "log_status": "OK"
+    }
+    ```
+
+
+
+=== "custom"
+
+
+    ```json
+	5 1111111111 eni-1235b8ca123456789 198.51.100.1 10.0.0.71 46945 53 17 1 73 1658131186 1658131216 ACCEPT OK vpc-abcdefab012345678 subnet-aaaaaaaa012345678 - 0 IPv4 198.51.100.1 10.0.0.71 eu-west-1 euw1-az3 - - - - egress 8
+    ```
+
+
+
+=== "ipv6traffic"
+
+
+    ```json
+	2 1111111111 eni-1235b8ca123456789 2001:db8:1234:a100:8d6e:3477:df66:f105 2001:db8:1234:a102:3304:8879:34cf:4071 34892 22 6 54 8855 1477913708 1477913820 ACCEPT OK
+    ```
+
+
+
+=== "network_traffic"
+
+
+    ```json
+	{
+        "version": 5,
+        "account_id": "1111111111",
+        "interface_id": "eni-1235b8ca123456789",
+        "srcaddr": "1.2.3.4",
+        "dstaddr": "5.6.7.8",
+        "srcport": 25238.0,
+        "dstport": 8080.0,
+        "protocol": 6.0,
+        "packets": 5.0,
+        "bytes": 412.0,
+        "start": 1726491185,
+        "end": 1726491211,
+        "action": "ACCEPT",
+        "log_status": "OK",
+        "vpc_id": "vpc-0123456789abcdefg",
+        "subnet_id": "subnet-0123456789abcdefg",
+        "instance_id": "-",
+        "tcp_flags": 3.0,
+        "type": "IPv4",
+        "pkt_srcaddr": "1.2.3.4",
+        "pkt_dstaddr": "5.6.7.8",
+        "region": "eu-west-1",
+        "az_id": "euw1-az3",
+        "sublocation_type": "-",
+        "sublocation_id": "-",
+        "pkt_src_aws_service": "-",
+        "pkt_dst_aws_service": "-",
+        "flow_direction": "ingress",
+        "traffic_path": null
+    }
+    ```
+
+
+
+=== "nodata"
+
+
+    ```json
+	2 1111111111 eni-1235b8ca123456789 - - - - - - - 1431280876 1431280934 - NODATA
+    ```
+
+
+
+=== "reject"
+
+
+    ```json
+	2 1111111111 eni-0f06a40fc9be596f6 198.51.100.1 10.0.0.96 53996 20248 6 1 40 1599665374 1599665428 REJECT OK
+    ```
+
+
+
+=== "reject_structured"
+
+
+    ```json
+	{
+        "version": 2,
+        "account_id": "1111111111",
+        "interface_id": "eni-0f06a40fc9be596f6",
+        "srcaddr": "1.2.3.4",
+        "dstaddr": "5.6.7.8",
+        "srcport": 53094,
+        "dstport": 2323,
+        "protocol": 6,
+        "packets": 1,
+        "bytes": 40,
+        "start": 1661950735,
+        "end": 1661950746,
+        "action": "REJECT",
+        "log_status": "OK"
+    }
+    ```
+
+
+
