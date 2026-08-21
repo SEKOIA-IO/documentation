@@ -21,19 +21,18 @@ The asset connector calls `GET /v2/devices` and `GET /v2/net-assets` on the Holm
 
 ### How to create an API token
 
-To connect Holm Security to Sekoia.io, you need an API token created by an administrator in the Holm Security web console. Follow these steps:
+To connect Holm Security to Sekoia.io, you need an API token in the Holm Security web console. Follow these steps:
 
-1. Sign in to the Holm Security console with an administrator account.
+1. Sign in to the Holm Security console, open the **main menu** (hamburger icon ≡) on the left panel, and select **API**.
 
-2. Open **Settings** and select the **API tokens** section.
+2. Enable the **API**.
 
-3. Click **Generate token**, give it a descriptive name, and confirm.
+3. Click Create **API Token**, give it a name, set the permission to Read, and enable scope for `Network assets`, `Web assets`, and `Tags`.
 
 4. Copy the token to a safe place and use it in Sekoia.io.
 
 !!! warning
-    - The API token is displayed only once at creation. Save it securely; if you lose it, you must generate a new one.
-    - Use an administrator account, otherwise the `GET /v2/devices` endpoint returns an authorization error.
+    - The API token is displayed only once upon creation. Store it securely; if lost, you will need to generate a new one.
 
 ### Create your asset
 
@@ -41,14 +40,22 @@ To start getting your Holm Security assets into Sekoia.io, you need to create an
 
 1. Click the **Asset connectors** button to create a new connector.
 
+    ![Asset connectors button highlighted](/assets/operation_center/asset_connectors/vulnerability/common/create_asset_connector_button.png)
+
 2. Click the **+ New connector** button.
+    
+    ![create_asset_step_2.png](/assets/operation_center/asset_connectors/vulnerability/common/create_asset_connector_1.png)
 
 3. Choose **Holm Security Devices**, give it a name, and fill the required fields:
 
     - `base_url`: the base URL of the Holm Security API (default `https://se-api.holmsecurity.com`).
     - `api_token`: the API token generated in the previous section.
+   
+    ![Holm security connector configuration form](/assets/operation_center/asset_connectors/device/holm_security/holm_security_connector.png)
 
 4. Test the connection by clicking the **Test connector** button.
+
+    ![Connector test result and Create asset connector button highlighted](/assets/operation_center/asset_connectors/device/holm_security/holm_security_test.png)
 
 5. Click the **Create asset connector** button.
 

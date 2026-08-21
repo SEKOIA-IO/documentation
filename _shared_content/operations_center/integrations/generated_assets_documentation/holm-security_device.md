@@ -90,7 +90,6 @@ Single scanned network asset from GET /v2/net-assets.
 
 
 
-
 ### Data Mapping Table
 
 The following table shows how source data is mapped to OCSF model fields:
@@ -245,5 +244,4 @@ Transformed Holm Security network asset to OCSF Device Inventory Info event
 }
 
 ```
-
 
