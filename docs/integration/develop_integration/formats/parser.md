@@ -326,7 +326,7 @@ Select the way who develop your parse to find the appropriate documentation: wit
     |`strip`| returns the variable removed from heading and leading whitespaces
     |`upper`| returns the value all uppercase
 
-    The custom format editor and the Expert mode use the same Jinja templating layer. In addition to the built-in filters above, custom ingest filters are available:
+    Ingest extends these built-in filters with a set of custom filters that are especially useful when normalizing parser output:
 
     | filter        | description                                                            |
     |---------------|------------------------------------------------------------------------|
