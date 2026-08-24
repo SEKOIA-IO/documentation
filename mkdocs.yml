@@ -918,8 +918,8 @@ plugins:
       xdr/features/collect/integrations/network/sesameit_jizo.md: integration/categories/network/sesameit_jizo.md
       xdr/features/collect/integrations/network/skyhigh_secure_web_gateway.md: integration/categories/network_security/skyhigh_secure_web_gateway_on_prem.md
       xdr/features/collect/integrations/network/sonicwall_fw.md: integration/categories/network_security/sonicwall_fw.md
-      xdr/features/collect/integrations/network/sonicwall_sma_100_series.md: integration/categories/network_security/sonicwall_sma_100_series.md
       xdr/features/collect/integrations/network/sonicwall_sma_1000_series.md: integration/categories/network_security/sonicwall_sma_1000_series.md
+      xdr/features/collect/integrations/network/sonicwall_sma_100_series.md: integration/categories/network_security/sonicwall_sma_100_series.md
       xdr/features/collect/integrations/network/sophos_fw.md: integration/categories/network_security/sophos_fw.md
       xdr/features/collect/integrations/network/squid.md: integration/categories/network/squid.md
       xdr/features/collect/integrations/network/stormshield_network_security.md: integration/categories/network_security/stormshield_network_security.md
