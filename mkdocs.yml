@@ -547,7 +547,8 @@ nav:
       - Seckiot Citadelle: integration/categories/network_security/seckiot_citadelle.md
       - Security Scorecard Vunerability Assessment Scanner: integration/categories/network_security/securityscorecard_vas.md
       - SonicWall Firewall: integration/categories/network_security/sonicwall_fw.md
-      - SonicWall SMA: integration/categories/network_security/sonicwall_sma.md
+      - SonicWall SMA 100 Series (deprecated): integration/categories/network_security/sonicwall_sma_100_series.md
+      - SonicWall SMA 1000 Series: integration/categories/network_security/sonicwall_sma_1000_series.md
       - Sophos Firewall: integration/categories/network_security/sophos_fw.md
       - Sophos Threat Analysis Center: integration/categories/network_security/sophos_threat_analysis_center.md
       - Stormshield Network Security: integration/categories/network_security/stormshield_network_security.md
