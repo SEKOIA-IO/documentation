@@ -35,7 +35,7 @@ This setup guide will show you how to forward your SonicWall SMA 100 Series logs
 
 ### Create the intake
 
-Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a new intake from the format SonicWall SMA 100 Series.
+Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a new intake from the SonicWall SMA 100 Series format.
 
 ### Forward logs to Sekoia.io
 
@@ -43,9 +43,7 @@ Please consult the [Syslog Forwarding](/integration/ingestion_methods/syslog/sek
 
 {!_shared_content/operations_center/integrations/generated/622999fe-d383-4d41-9f2d-eed5013fe463_sample.md!}
 
-
 {!_shared_content/integration/detection_section.md!}
 
 {!_shared_content/operations_center/detection/generated/suggested_rules_622999fe-d383-4d41-9f2d-eed5013fe463_do_not_edit_manually.md!}
 {!_shared_content/operations_center/integrations/generated/622999fe-d383-4d41-9f2d-eed5013fe463.md!}
-
