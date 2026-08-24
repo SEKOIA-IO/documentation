@@ -132,6 +132,22 @@ In this section, you will find examples of raw logs as generated natively by the
 
 
 
+=== "test_manage_user_host_names_passed_authentication"
+
+    ```
+	0002108212 9 0 2026-08-11 14:15:26.242 +02:00 0079500372 5200 NOTICE Passed-Authentication: Authentication succeeded, ConfigVersionId=16, Device IP Address=198.51.100.2, DestinationIPAddress=198.51.100.83, DestinationPort=1812, UserName=HOST-EXAMPLE-01, Protocol=Radius, NetworkDeviceName=SWITCH-GROUP-01, User-Name=host/HOST-EXAMPLE-01, NAS-Port=585, State=64CPMSessionID=000000000000000000000000\;36SessionID=HOST-01/000000000/000000\;, Called-Station-ID=40-9e-a4-0c-bd-80, Calling-Station-ID=70-b5-e8-bc-40-e7, NAS-Identifier=SW01-EDGE, Acct-Session-Id=0000000000000000, NAS-Port-Type=Ethernet, Tunnel-Private-Group-ID=(tag=0) 1, NAS-Port-Id=ge-0/0/31.0, EAP-Key-Name=00:, NetworkDeviceProfileName=Cisco, NetworkDeviceProfileId=00000000-0000-0000-0000-000000000000, IsThirdPartyDeviceFlow=false, SSID=40-9e-a4-0c-bd-80, AcsSessionID=HOST-01/000000000/000000, AuthenticationMethod=x509_PKI,
+    ```
+
+
+
+=== "test_manage_user_host_names_radius_accounting"
+
+    ```
+	0002108191 2 0 2026-08-11 14:14:31.415 +02:00 0079499344 3000 NOTICE Radius-Accounting: RADIUS Accounting start request, ConfigVersionId=16, Device IP Address=198.51.100.2, UserName=HOST-LOOKUP-01, NetworkDeviceName=SWITCH-GROUP-01, User-Name=HOST-LOOKUP-01, NAS-Port=603, Service-Type=Call Check, Framed-MTU=1514, Class=CACS:000000000000000000000000:HOST-01/000000000/000000, Session-Timeout=3600, Called-Station-ID=40-9e-a4-0c-bd-80, Calling-Station-ID=02-00-00-00-00-02, NAS-Identifier=SW01-EDGE, Acct-Status-Type=Start, Acct-Session-Id=0000000000000000, Acct-Authentic=RADIUS, Event-Timestamp=1786450471, Tunnel-Private-Group-ID=(tag=0) 1, NAS-Port-Id=ge-0/0/5.0, QuickResponseSent=false, AcsSessionID=HOST-01/000000000/000000, SelectedAccessService=Default Network Access, UseCase=Host Lookup, RequestLatency=1, Step=11004, Step=11017, Step=11027, Step=15049, Step=15008, Step=15048, Step=22095, Step=11005,
+    ```
+
+
+
 === "test_miscellaneous"
 
     ```
