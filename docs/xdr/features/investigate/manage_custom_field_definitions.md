@@ -1,8 +1,5 @@
 # Manage custom field definitions
 
-!!! note "Early Access"
-    This feature is currently in Early Access and is only available for Beta testers. Sekoia.io plans to roll out this functionality to all environments soon.
-
 Custom field definitions determine which structured metadata fields are available across all alerts and cases in your workspace. This article explains how to create, edit, and delete those definitions from the workspace settings.
 
 !!! note "Definitions are shared between alerts and cases"

@@ -1,8 +1,5 @@
 # Use custom fields
 
-!!! note "Early Access"
-    This feature is currently in Early Access and is only available for Beta testers. Sekoia.io plans to roll out this functionality to all environments soon.
-
 Custom fields let you attach structured metadata to individual alerts and cases. This article explains how to add custom field values to an alert or a case, and how to update them during an investigation.
 
 ## Prerequisites

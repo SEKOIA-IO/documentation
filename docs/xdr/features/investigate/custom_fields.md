@@ -1,8 +1,5 @@
 # Custom fields
 
-!!! note "Early Access"
-    This feature is currently in Early Access and is only available for Beta testers. Sekoia.io plans to roll out this functionality to all environments soon.
-
 Custom fields extend the standard alert and case properties with typed, structured metadata specific to your organization. They provide a consistent way to capture and query information across all alerts and cases, enabling better filtering, reporting, and dashboard creation.
 
 ## Supported data types
