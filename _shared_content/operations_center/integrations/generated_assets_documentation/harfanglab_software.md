@@ -73,7 +73,7 @@ The following table shows how source data is mapped to OCSF model fields:
 | `static: 502002` | `type_uid` | OCSF type UID | `integer` | Always 502002 for Software Inventory Info: Collect |
 | `static: Software Inventory Info: Collect` | `type_name` | OCSF type name | `string` | Always 'Software Inventory Info: Collect' for this event type |
 | `agent.firstseen` | `time` | OCSF event timestamp | `timestamp` | Convert ISO 8601 to Unix epoch from the parent agent; use for OCSF event timestamp |
-| `static: Harfanglab EDR` | `metadata.product.name` | Source product name | `string` | Always 'Harfanglab EDR' |
+| `static: HarfangLab EDR` | `metadata.product.name` | Source product name | `string` | Always 'HarfangLab EDR' |
 | `static: 24.12` | `metadata.product.version` | Product version | `string` | Fixed HarfangLab product version |
 | `static: 1.5.0` | `metadata.version` | OCSF schema version | `string` | Fixed OCSF schema version |
 | `static: 2` | `device.type_id` | Device type ID | `integer` | Direct mapping of type to desktop type ID |
