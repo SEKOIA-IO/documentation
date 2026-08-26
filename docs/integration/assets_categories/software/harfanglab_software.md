@@ -14,7 +14,7 @@ HarfangLab EDR is a European EDR for Windows, macOS, and Linux that delivers rea
 
 ### How to create an API token
 
-To connect HarfangLab to Sekoia.io, you need to create an API key in your HarfangLab console. Follow these steps:
+To connect HarfangLab to Sekoia.io, you need to generate an API token in your HarfangLab console. Follow these steps:
 
 1. Click on **Users** under administration panel.
 
