@@ -98,7 +98,7 @@ The following table shows how source data is mapped to OCSF model fields:
 ### OCSF Model Structure
 
 #### Software Inventory Info: Collect
-Transformed HarfangLab api response to OCSF Software Inventory Info event
+Transformed HarfangLab API response to an OCSF Software Inventory Info event
 
 ```json
 {
