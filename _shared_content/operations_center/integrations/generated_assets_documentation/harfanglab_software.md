@@ -20,7 +20,7 @@ The HarfangLab Software Assets connector fetches comprehensive information and t
 ### API Response Examples
 
 #### HarfangLab Software Inventory Sample
-Agent data sample for harfanglab api response (used to build the device context).
+Agent data sample from the HarfangLab API response (used to build the device context).
 
 ```json
 {
