@@ -447,6 +447,43 @@ Returns the modified string with all non-overlapping matches replaced. If no mat
         | 2026-03-26T15:35:04.539Z | grace@example.com |
 
 
+## Network: cidr_match()
+
+Returns `true` when an IPv4 address belongs to an IPv4 CIDR range.
+
+**Syntax**
+
+``` shell
+cidr_match(<ip>, <cidr_or_cidrs>)
+```
+
+**Parameters**
+
+- `ip`: An IPv4 address string or `null`.
+- `cidr_or_cidrs`: An IPv4 CIDR string, an array of IPv4 CIDR strings, or `null`.
+
+**Return Value**
+
+Returns `true` if `ip` belongs to at least one valid CIDR supplied in `cidr_or_cidrs`; otherwise returns `false`. The function supports IPv4 only. Invalid IP addresses, invalid CIDRs, `null` values, and non-string array elements do not match. CIDRs with host bits are accepted and normalized.
+
+!!! example "Filter events by an IPv4 CIDR range"
+
+    === "Query"
+
+        ``` shell
+        events
+        | where cidr_match(source.ip, "80.94.95.0/24")
+        | select source.ip
+        | limit 100
+        ```
+
+    An array can be used to match against multiple ranges:
+
+    ``` shell
+    cidr_match(source.ip, ["80.94.95.0/24", "198.51.100.0/24"])
+    ```
+
+
 ## Math: round()
 
 **Description**
