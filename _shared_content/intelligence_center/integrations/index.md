@@ -13,5 +13,6 @@ Intelligence Center data can be consumed using several third party integrations.
 - [ThreatQuotient](./threatquotient.md)
 - [Torq](./torq.md)
 - [OpenCTI - Stream Connector](./opencti-stream-connector.md)
+- [Harven](./harven.md)
 
 You can also directly [use the API](api.md) to retrieve data and feeds from Sekoia.io CTI.
