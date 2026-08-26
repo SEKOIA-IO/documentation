@@ -19,7 +19,7 @@ ilert is an incident management platform. This module triggers alerts and manage
 
 ### Trigger Alert
 
-Trigger alert to ilert
+Trigger an alert in ilert
 
 **Arguments**
 
