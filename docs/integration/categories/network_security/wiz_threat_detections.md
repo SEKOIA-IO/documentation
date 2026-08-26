@@ -19,7 +19,7 @@ As a SaaS platform, Wiz integrates with CI/CD pipelines and cloud services for c
 
 By default, Sekoia.io polls Wiz every **60 seconds** for this intake.
 
-The polling interval can be adjusted in the trigger configuration. End-to-end visibility can vary depending on Wiz event availability and API response times.
+The polling interval can be adjusted in the intake connector configuration. End-to-end latency can vary depending on Wiz event availability and API response times.
 
 ## Configure
 
