@@ -441,6 +441,12 @@ The following Sekoia.io built-in rules match the intake **Fortinet FortiGate**. 
     
     - **Effort:** elementary
 
+??? abstract "Sign-In Via Known AiTM Phishing Kit"
+    
+    Detects a sign-in attempt from an IP address belonging to a known adversary-in-the-middle phishing kit.
+    
+    - **Effort:** elementary
+
 ??? abstract "Sliver DNS Beaconing"
     
     Detects suspicious DNS queries known from Sliver beaconing 
