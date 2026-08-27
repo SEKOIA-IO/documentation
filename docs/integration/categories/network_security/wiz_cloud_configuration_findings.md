@@ -15,6 +15,12 @@ They deliver prioritized, actionable remediation guidance to ensure secure, stan
 - **Supported application or feature**:
     - Cloud Configuration Findings
 
+### Data collection latency
+
+By default, Sekoia.io polls Wiz every **60 seconds** for this intake.
+
+The polling interval can be adjusted in the intake connector configuration. End-to-end latency can vary depending on Wiz event availability and API response times.
+
 ## Configure
 
 ### Pre-requisite
