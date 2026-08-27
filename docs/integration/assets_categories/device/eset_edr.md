@@ -68,7 +68,7 @@ To start getting your ESET assets into Sekoia.io, you need to create an asset co
 
     ![create_asset_step_2.png](/assets/operation_center/asset_connectors/vulnerability/common/create_asset_connector_1.png)
 
-3. Choose **ESET EDR**, give it a name, and fill in the required fields:
+3. Choose **ESET Device**, give it a name, and fill in the required fields:
 
     - **Username**: The username (email) of the dedicated API user account you created.
     - **Password**: The password of the dedicated API user account.
