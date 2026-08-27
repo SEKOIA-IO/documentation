@@ -27,9 +27,6 @@ You can sort the listing by:
 
 ## Perform bulk actions on cases
 
-!!! note "Early Access"
-    This feature is currently in Early Access and is only available for Beta testers. Sekoia.io plans to roll out this functionality to all environments soon.
-
 You can act on multiple cases simultaneously from the listing page. This is useful for triaging large volumes of cases or reassigning incidents at scale.
 
 ![Case listing with bulk actions](/assets/operation_center/cases/cases-bulk-actions.png){: style="max-width:100%"}
