@@ -2,6 +2,8 @@ uuid: 3e5f8c2a-7d4b-4e6f-a891-c0d2e3f4a5b6
 name: HarfangLab Software Assets
 type: asset
 
+_**[Reveal module](/xdr/features/modules/reveal_index.md)**  — This feature requires the Reveal add-on module._
+
 ## Overview
 
 HarfangLab EDR is a European EDR for Windows, macOS, and Linux that delivers real-time telemetry, ATT&CK-mapped detections, and rapid response (host isolation, process kill, quarantine). This setup guide shows how to forward software assets — the list of applications installed on endpoints monitored by HarfangLab EDR — to Sekoia.io.
@@ -9,6 +11,9 @@ HarfangLab EDR is a European EDR for Windows, macOS, and Linux that delivers rea
 - **Vendor**: HarfangLab
 - **Product**: HarfangLab EDR
 - **Supported environment**: SaaS
+
+!!! note
+    This asset connector is currently in beta. Enable the `reveal-beta-connectors` feature flag to display it.
 
 ## Configure
 
