@@ -9,7 +9,7 @@
 
 
 
-**OCSF Version:** `1.5.0`
+**OCSF Version:** `1.6.0`
 
 
 ## Information Collected
