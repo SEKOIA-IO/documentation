@@ -33,6 +33,12 @@ The following Sekoia.io built-in rules match the intake **MokN - Baits**. This d
     
     - **Effort:** master
 
+??? abstract "MokN High Threat Bait Attempt"
+    
+    Detects when MokN raises a high threat bait login attempt.
+    
+    - **Effort:** master
+
 ??? abstract "Nimbo-C2 User Agent"
     
     Nimbo-C2 Uses an unusual User-Agent format in its implants.
@@ -74,6 +80,12 @@ The following Sekoia.io built-in rules match the intake **MokN - Baits**. This d
     Detects observables in Sekoia.io CTI tagged as EICAR, which are fake samples meant to test detection.
     
     - **Effort:** master
+
+??? abstract "Sigma Intelligence Arcane Stealer HTTP Communication"
+    
+    Detects potential Arcane Stealer communications through the User-Agent.
+    
+    - **Effort:** elementary
 
 ??? abstract "Sign-In Via Known AiTM Phishing Kit"
     

@@ -363,6 +363,12 @@ The following Sekoia.io built-in rules match the intake **Palo Alto Prisma acces
     
     - **Effort:** master
 
+??? abstract "Sigma Intelligence Pangolin8RAT Working Directory File Artifacts"
+    
+    Detects access to filesystem artifacts associated with Pangolin8RAT.
+    
+    - **Effort:** intermediate
+
 ??? abstract "Sign-In Via Known AiTM Phishing Kit"
     
     Detects a sign-in attempt from an IP address belonging to a known adversary-in-the-middle phishing kit.
