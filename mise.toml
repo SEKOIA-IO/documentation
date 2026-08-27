@@ -1,0 +1,45 @@
+[tools]
+node = "22"
+python = "3.14"
+uv = "0.11.8"
+yarn = "1.22.22"
+
+[settings]
+python.uv_venv_auto = "create|source"
+
+[env]
+OPENAPI_VIEWER_DIR = "lib/openapi-viewer"
+
+[tasks.install]
+description = "Setup the project"
+run = '''
+uv sync
+yarn --cwd ${OPENAPI_VIEWER_DIR} install
+'''
+
+[tasks."doc:serve"]
+description = "Serve the documentation"
+run = "uv run mkdocs serve -s"
+
+[tasks."doc:check"]
+description = "Validate the documentation"
+run = "uv run mkdocs build -s"
+
+[tasks."doc:dev"]
+description = "Start the documentation server"
+run = "uv run mkdocs serve --watch docs"
+
+[tasks."openapi:dev"]
+description = "Serve the OpenAPI viewer"
+run = "yarn run start"
+dir = "{{env.OPENAPI_VIEWER_DIR}}"
+
+[tasks."openapi:build"]
+description = "Build the OpenAPI viewer"
+run = "yarn run build"
+dir = "{{env.OPENAPI_VIEWER_DIR}}"
+
+[tasks."openapi:check"]
+description = "Validate the OpenAPI viewer"
+run = "yarn run lint"
+dir = "{{env.OPENAPI_VIEWER_DIR}}"
