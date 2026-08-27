@@ -33,6 +33,7 @@ Delete an app in azure AD. Requires the Application.ReadWrite.OwnedBy or Applica
 ### Disable User
 
 Disable an Azure Active Directory user. Requires the User.ReadWrite.All permission.
+!!! note "Extra permission might be required"
 Depending on subscription/account type, the permission User.EnableDisableAccount.All might be required.
 
 
