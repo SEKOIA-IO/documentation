@@ -184,6 +184,8 @@ Promtail agents run on every node and ship all container logs to a Loki cluster.
 
 ## Use SHC commands for on-demand diagnostics
 
+For targeted checks on specifics services or layers of the platform using Prometheus metrics, follow [Run platform diagnostics](run_diagnostics.md).
+
 ### Check cluster node health
 
 To confirm all Kubernetes nodes are ready, run:
@@ -263,14 +265,18 @@ When an alert fires or a dashboard shows degradation, run the following commands
 
 # 4. Review resource allocation
 ./run-shc.sh exec DebugResourceAllocation
+
+# 4. Check the affected platform service
+./run-shc.sh exec Diagnostic
 ```
 
-This sequence moves from infrastructure layer to application layer to database layer to resource layer. Each step scopes the investigation before you move on.
+This sequence moves from infrastructure layer to application layer to database layer to resource layer to service layer. Each step scopes the investigation before you move on.
 
 If applications show `OutOfSync` or `Degraded` after running `DebugArgoCD`, continue with [Debug your deployment](../troubleshooting/debug_tool.md).
 
 ## Related links
 
+- [Run platform diagnostics](run_diagnostics.md): Targeted Prometheus health checks for platform services.
 - [Debug your deployment](../troubleshooting/debug_tool.md): Full SHC debug command reference with remediation steps.
 - [Deploy the platform](../deployment/deployment_guide.md): Post-deployment validation commands.
 - [Technical requirements](../deployment/deployment_prerequisites.md): Compute node and S3 storage requirements.
