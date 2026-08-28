@@ -335,6 +335,7 @@ nav:
       - Azure Activity Logs: integration/categories/applicative/azure_activity_logs.md
       - Azure Files: integration/categories/applicative/azure_files.md
       - Azure MySQL: integration/categories/applicative/azure_mysql.md
+      - BlackNoise AEV: integration/categories/applicative/blacknoise_aev.md
       - Cloudflare Audit Logs: integration/categories/applicative/cloudflare-audit-logs.md
       - Fastly WAF Audit logs: integration/categories/applicative/fastly_audit_waf.md
       - Github Audit Logs: integration/categories/applicative/github_audit_logs.md
