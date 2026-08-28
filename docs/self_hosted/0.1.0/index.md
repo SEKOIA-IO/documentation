@@ -33,6 +33,7 @@ For what Sekoia Self-Hosted is and who it is for, see the [section introduction]
 | Document | What you will find |
 | :--- | :--- |
 | [Monitor your platform](monitoring/monitoring_guide.md) | Observability stack overview, daily monitoring workflows, and SHC diagnostic command reference. |
+| [Run platform diagnostics](monitoring/run_diagnostics.md) | How to run targeted Prometheus health checks for platform services. |
 | [Debug your deployment](troubleshooting/debug_tool.md) | Full SHC debug command reference with remediation guidance and log collection for support. |
 
 ### Release information
@@ -51,3 +52,4 @@ If you are new to Sekoia Self-Hosted, follow this sequence:
 4. Follow the [Deploy the platform](deployment/deployment_guide.md) guide.
 5. Create your first user with the [Set up the first administrator account](operations/first_login.md) guide.
 6. Set up continuous monitoring using the [Monitor your platform](monitoring/monitoring_guide.md) guide.
+7. Run [platform diagnostics](monitoring/run_diagnostics.md) to validate service health.

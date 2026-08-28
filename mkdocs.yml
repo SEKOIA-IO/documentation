@@ -722,6 +722,7 @@ nav:
       - Set up the first administrator account: self_hosted/0.1.0/operations/first_login.md
     - Monitoring and troubleshooting:
       - Monitor your platform: self_hosted/0.1.0/monitoring/monitoring_guide.md
+      - Run platform diagnostics: self_hosted/0.1.0/monitoring/run_diagnostics.md
       - Debug your deployment: self_hosted/0.1.0/troubleshooting/debug_tool.md
       - Common issues: self_hosted/0.1.0/troubleshooting/common_issues.md
     - Release notes: self_hosted/0.1.0/release_notes.md
