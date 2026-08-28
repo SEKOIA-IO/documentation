@@ -10,7 +10,7 @@ This EDR reduces the attack surface and prevents attacks by using anti-exploit, 
 This setup guide shows how to forward device assets from Sophos EDR to Sekoia.io.
 
 - **Vendor**: Sophos
-- **Product**: SentinelOne EDR
+- **Product**: Sophos EDR
 - **Supported environment**: Cloud
 
 ## Configure
@@ -43,8 +43,9 @@ To start getting your Sophos assets into Sekoia.io, you need to create an asset 
 
     - **Account name**: The name of the Sophos EDR account you want to connect to.
     - **Client ID**: The client ID of the API credential you created in the Sophos Central Admin console.
-    - **Client Secret**: The client secret of the API credential you created in the Sophos Central Admin console
-    - **API Host**: The API host URL of your Sophos EDR instance. 
+    - **Client Secret**: The client secret of the API credential you created in the Sophos Central Admin console.
+    - **API Host**: The API host URL of your Sophos EDR instance (default: `https://api.central.sophos.com`).
+    - **OAuth2 authorization URL**: The Sophos OAuth2 token endpoint (default: `https://id.sophos.com/api/v2/oauth2/token`).
 
     ![Sophos EDR connector configuration form](/assets/operation_center/asset_connectors/device/sophos/sophos_connector.png)
 

@@ -1089,7 +1089,6 @@ Retrieve the definition of an alert
 | `short_id` | `string` | Human-readable short identifier for the alert (e.g. `ALa1b2c3d4e5`). |
 | `first_seen_at` | `string` | Timestamp of the first event that contributed to this alert. |
 | `last_seen_at` | `string` | Timestamp of the most recent event that contributed to this alert. |
-| `event_uuids` | `array` |  |
 | `kill_chain_short_id` | `string` | Short identifier of the MITRE ATT&CK tactic associated with the alert (e.g. `TA0001` for Initial Access). |
 | `similar` | `integer` | Number of similar alerts detected by the platform's deduplication mechanism. |
 | `alert_type` | `object` | Category and value describing the type of threat (e.g. category `malware`, value `ransomware`). |

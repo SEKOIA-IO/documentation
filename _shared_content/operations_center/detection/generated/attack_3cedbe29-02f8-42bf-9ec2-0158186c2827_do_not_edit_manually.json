@@ -1,0 +1,1 @@
+{"name": "SEKOIA.IO x Pradeo MTD", "versions": {"attack": "13", "layer": "4.4", "navigator": "4.8.2"}, "domain": "enterprise-attack", "techniques": [{"techniqueID": "T1685.003", "score": 100, "comment": "Rules: Sekoia.io Activity Logs Rule Deactivation Bulk"}, {"techniqueID": "T1685", "score": 100, "comment": "Rules: Sekoia.io Activity Logs Rule Deactivation Bulk"}]}

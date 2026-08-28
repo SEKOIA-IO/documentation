@@ -384,6 +384,35 @@ In this section, you will find examples of raw logs as generated natively by the
 
 
 
+=== "test_heartbeat"
+
+
+    ```json
+	HEARTBEAT
+    ```
+
+
+
+=== "test_heartbeat_bom"
+
+
+    ```json
+	﻿HEARTBEAT
+
+    ```
+
+
+
+=== "test_heartbeat_leading_newline"
+
+
+    ```json
+	
+    HEARTBEAT
+    ```
+
+
+
 === "test_hips_1"
 
 

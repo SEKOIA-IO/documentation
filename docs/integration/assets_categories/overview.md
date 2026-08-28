@@ -28,6 +28,6 @@ Asset connectors automatically synchronize your IT assets from various sources i
 To enhance your experience and keep you informed about our latest developments, we recommend exploring the following resources:
 
 - **Integration Roadmap**: Stay updated on upcoming integrations and features by visiting our [Integration Roadmap](https://roadmap-integrations.sekoia.io/tabs/18-coming-next/tabs/5-under-consideration). Here, you can see what's coming next.
-- **Integrations Changelog**: Keep track of new integrations, improvements, and bug fixes with our [Integrations Changelog](https://changelog.sekoia.io/?type=t650d50f380b21).
+- **Integrations Changelog**: Keep track of new integrations, improvements, and bug fixes with our [Integrations Changelog](https://changelog.sekoia.com/?type=t650d50f380b21).
 - **Assets Management**: Learn more about managing your assets in the [Assets page](https://app.sekoia.io/assets) of the Sekoia.io platform.
 - **Automation Library GitHub Repository**: Explore our automation modules or contribute your own, by visiting the [Automation Library on GitHub](https://github.com/SEKOIA-IO/automation-library).

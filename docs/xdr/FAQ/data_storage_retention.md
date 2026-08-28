@@ -58,6 +58,9 @@ You can verify the storage durations included in your subscription directly in t
 !!! warning "Permanent data deletion"
     Sekoia.io cannot retrieve data that exceeds your defined storage thresholds. If your total retention is 120 days, any data older than this limit is permanently deleted and cannot be recovered.
 
+!!! note "Events attached to an alert or a case"
+    Events that raised an alert, and events added to a case, are the exception. They are preserved permanently as [eternal events](/xdr/features/investigate/eternal_events.md), whatever your retention subscription, and stay available for investigation after your retention window has elapsed.
+
 Retention periods are strictly governed by your contractual agreement.
 
 ---

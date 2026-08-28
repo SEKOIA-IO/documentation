@@ -1,80 +1,103 @@
 # Triggers
 
-To create a playbook, you need a `Trigger` to launch its execution.
+A trigger is the entry node of a playbook: it starts the execution and passes data to the operators and actions that follow. Every playbook requires exactly one trigger.
 
-## Types of Triggers
+## Access triggers
 
-To access triggers:
+To find available triggers in the Actions library:
 
-1. Go to a `Playbook` graph
-2. In the `Actions Library`, right under the search bar are two checkboxes: Actions and Triggers
-3. Select `Triggers`
+1. Open a playbook graph.
+2. In the **Actions library**, locate the two checkboxes below the search bar: **Actions** and **Triggers**.
+3. Select **Triggers**.
 
-The `Triggers` collect data that will be used by the Operators and Actions to answer a specific need.
+## Trigger types
 
-### Alerts
+### Alert triggers
 
-The `Security alerts` triggers are made by Sekoia.io and allow users to collect information about alerts. To find them in the listing, filter by `Triggers` and click on Sekoia.io.
+Alert triggers are provided by Sekoia and collect information about security alerts. To find them, filter by **Triggers** and select **Sekoia** as the provider.
 
-There you can find the following triggers:
+The following alert triggers are available:
 
-- Alert comment created
-- Alert created
-- Alert status changed
-- Alert updated
+- **Alert comment created**
+- **Alert created**
+- **Alert status changed**
+- **Alert updated**
 
-The trigger named `Any Alert Update` regroups all of the triggers cited above.
+The **Any alert update** trigger combines all four triggers listed above.
 
-By using these triggers, you can get:
+Each alert trigger passes the following fields to subsequent actions:
 
-- An alert UUID `alert_uuid`
-- Its date of creation (`created_at`),
-- Its category (`alert_type`),
-- Its `urgency`
-- The action that triggered the alert notification (`event_type`)
+| Field | Description |
+|---|---|
+| `alert_uuid` | Unique identifier of the alert |
+| `created_at` | Date the alert was created |
+| `alert_type` | Category of the alert |
+| `urgency` | Urgency level of the alert |
+| `event_type` | Action that triggered the alert notification |
 
-!!! note
-    This trigger is only applicable in the Operations Center.
-
+!!! note "Operations Center only"
+    Alert triggers are only available in the Operations Center.
 
 ### Manual trigger (webhook)
 
-The `Manual trigger` can be found in the Triggers listing by clicking on Sekoia.io. It allows users to automatically trigger actions once a human has raised and removed a doubt on an alert.
+The **Manual trigger** is provided by Sekoia. It starts a playbook automatically once an analyst has reviewed an alert and cleared a doubt.
 
-### Cron
+### Manual trigger for case
 
-The `Cron` trigger allows users to periodically launch an automatic action that should be defined and created by a user.
+The **Manual trigger for case** lets analysts start a playbook directly from a case without leaving their investigation.
 
-## Logs and errors in triggers
+Once a playbook uses this trigger as its entry node and is set to **On**, it appears in the **Available playbooks for this case** panel of every case in the community. The playbook receives the case as its triggering event, and the run is identified as **Sekoia Case: \<case ID\>** in the **Runs** tab.
 
-Some configuration errors in triggers can be hard to understand. We display all logs so it's easier to understand what can be improved and why the playbook is not working properly.
+Chain this trigger with the **Get case** action to retrieve the case content.
 
-### Logs
+To start a playbook from a case and read its results, see [Run a playbook from a case](/xdr/features/investigate/run_playbook_case.md).
 
-In the playbooks listing page, you can identify a playbook with configuration errors via an error message in the playbook card.
+### Cron trigger
 
-In a playbook page with configuration errors in a trigger node, you can see if the state of the node is in error.
+The **Cron** trigger starts a playbook on a recurring schedule. You define and configure the schedule when setting up the trigger.
 
-Click on this node and go to the tab `Errors` or `Logs` to see all messages.
+## Logs and errors
 
-### Levels and retention
+Sekoia displays all trigger logs to help you understand configuration errors and diagnose playbooks that are not running as expected.
 
-There are five possible types of log messages :
+### View logs
 
-* `Debug` : used to find the reason in case your program is not working as expected or an exception has occurred
-* `Info` : used to log the information your program is working as expected
-* `Warning` : will not stop anything, but is there to tell you that something happened that is not expected (or there may be a potential issue) and it's not critical enough to terminate or stop the app/process
-* `Error` : informs you that you actually did something wrong, describes the problem, and stops the process/app
-* `Critical error` : a serious error that forces the program to stop and it becomes impossible for the running program, operating system or software to continue working normally
+To view logs for a trigger node:
 
-Each error message has details that you can display by clicking on the log line.
+1. On the playbooks listing page, locate a playbook that shows an error message on its card.
+2. Open the playbook and click the trigger node that is in an error state.
+3. Select the **Errors** or **Logs** tab to view all messages.
 
-The logs of a trigger have a retention period that depends on the severity of the log. The following retention periods are currently applied:
+Click a log line to expand its details.
+
+### Log levels
+
+Each log message has one of five severity levels:
+
+| Level | Description |
+|---|---|
+| `Debug` | Detailed diagnostic information for troubleshooting unexpected behavior or exceptions |
+| `Info` | Confirmation that the playbook is running as expected |
+| `Warning` | An unexpected condition occurred that is not critical and does not stop the process |
+| `Error` | A configuration or runtime error that stopped the current process |
+| `Critical` | A serious error that forced the program to stop entirely |
+
+### Log retention
+
+Logs are retained for different durations depending on their severity:
 
 | Severity | Retention period |
-| --- | --- |
+|---|---|
 | Debug | 1 hour |
 | Info | 1 day |
 | Warning | 7 days |
 | Error | 7 days |
 | Critical | 1 month |
+
+## Related articles
+
+[Run a playbook from a case](/xdr/features/investigate/run_playbook_case.md): How to start a playbook directly from a case and read the run results.
+
+[Playbooks](/xdr/features/automate/build-playbooks.md): Overview of the playbook builder, including operators and actions.
+
+[Cases](/xdr/features/investigate/cases.md): Overview of the case management workflow in Sekoia.

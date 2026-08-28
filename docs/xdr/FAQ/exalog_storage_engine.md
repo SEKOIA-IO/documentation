@@ -8,7 +8,7 @@ For information on which regions and workspaces use ExaLog, see [Data storage an
 
 ExaLog provides a unified retention window: there is no distinction between recent and older events within the retention period. All data is indexed in a single layer and available for immediate search.
 
-Events linked to alerts or cases are preserved in dedicated indexes beyond the standard retention window, ensuring that forensic data remains available for investigation even after the original retention period expires.
+Events linked to alerts or cases are preserved as [eternal events](/xdr/features/investigate/eternal_events.md) in dedicated indexes beyond the standard retention window, ensuring that forensic data remains available for investigation even after the original retention period expires.
 
 ## Capabilities
 
@@ -32,7 +32,7 @@ Detection rules and correlation logic operate over the full ExaLog retention win
 | Benefit | Description |
 |---|---|
 | Unified retention | All events within the retention window are immediately searchable with no rehydration required |
-| Extended retention for alert-related events | Events linked to alerts or cases are preserved beyond the standard retention window |
+| Extended retention for alert-related events | Events linked to alerts or cases are preserved beyond the standard retention window as [eternal events](/xdr/features/investigate/eternal_events.md) |
 | Search performance | Search performance is equivalent to or better than the Hot/Cold storage model |
 | Cost efficiency | The storage model reduces indexing and storage costs, enabling Sekoia.io to offer competitive retention pricing |
 | Encryption | Data is encrypted at rest; Sekoia.io manages the encryption keys |

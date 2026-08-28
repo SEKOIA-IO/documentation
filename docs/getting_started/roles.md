@@ -43,7 +43,7 @@ You can discover all permissions associated either to built-in or custom roles d
 
 ## Legacy roles
 
-To create your own roles, please refer to this [section](https://docs.sekoia.io/getting_started/manage_users/#create-custom-roles).
+To create your own roles, please refer to this [section](https://docs.sekoia.com/getting_started/manage_users/#create-custom-roles).
 
 | Name              | Description                                                                 |
 | ----------------- | --------------------------------------------------------------------------- |

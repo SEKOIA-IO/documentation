@@ -153,7 +153,7 @@ To delete a community from a playbook, a “…” button can be found on commun
 | Name | The name of your operator that can be edited  |
 | Modifications | List of modifications to make. To add a modification, hover over the title and click on one of the buttons that appear (`Use variable`, `add one entry to array`) |
 | Use a variable | Field where you can paste the value of a variable |
-| Add form | A form with 3 main items to fill: `key`, `type` and `value` (more details [here](https://docs.sekoia.io/tip/features/automate/operators/#store)) |
+| Add form | A form with 3 main items to fill: `key`, `type` and `value` (more details [here](https://docs.sekoia.com/tip/features/automate/operators/#store)) |
 
 ##### Action
 

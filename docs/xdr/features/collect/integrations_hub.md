@@ -69,3 +69,9 @@ Connect and sync your GitHub or GitLab repository to import your integration onc
 - **Connect your repository:** Enter your repository URL in the designated field and click `Connect` to test the connection.
 
 Once you've connected your repository and initiated the import, the platform automatically performs a series of checks on your integration's code. If all pre-requisites and development steps are successfully accomplished, indicated by a "green check" status, your custom integration will be officially created within Sekoia.io. At this point, it will become accessible from the main Integrations Catalog listing and can be used just like any other pre-built integration.
+
+### How to update your integration
+
+When you push a change to your integration's repository, use **Check for updates** and **Update** on the integration page to bring that change into the platform. Connector configurations and triggers that are currently running are restarted automatically with the new version.
+
+See [Update a custom integration](/xdr/features/collect/update_a_custom_integration.md) for the full procedure, the restart behavior of connectors and triggers, and troubleshooting.

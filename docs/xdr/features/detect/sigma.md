@@ -1,6 +1,10 @@
 # Sigma Rules
 
 Sigma is a generic and open format you can use to write signatures that will be applied to your event stream in real-time. This format makes it easy to write rules applicable to any field available in normalized events. Rules are documents using the YAML format.
+
+!!! Warning
+    Do not use comments `# My comment on a line ...` to build your rules, they are not supported
+
 ## Detection Object
 Each rule should contain a `detection` object using a set of `Search-Identifier`s to define a matching `condition`:
 ```yaml
@@ -135,6 +139,10 @@ A correlation document has the following attributes:
 - `timespan` defines a time period in which the correlation should be applied (such as `5m` or `1h`). This value can currently be set up to a maximum of `24h`.
 
 Further fields might be required depending on the correlation type.
+
+### Late-arriving events
+
+Sigma correlation can group events that arrive in Sekoia less than three hours apart. This tolerance is based on the events' reception time, not on their timestamps. For example, events that all arrive together 15 days after they occurred can still be correlated.
 
 ### Correlation Types
 

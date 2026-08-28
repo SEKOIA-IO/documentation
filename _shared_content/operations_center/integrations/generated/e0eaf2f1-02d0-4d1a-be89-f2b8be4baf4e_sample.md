@@ -679,6 +679,80 @@ In this section, you will find examples of raw logs as generated natively by the
 
 
 
+=== "test_msgparts_deleted_true_1"
+
+
+    ```json
+	{
+        "msgParts": {
+            "detectedName": "sample_attachment_01.bat",
+            "structureId": "1:0",
+            "sha256": "cbdcf45881be99e1634dc5a1c401d5310662520e6fae3a6a57ca07f078ef97f9",
+            "labeledCharset": "",
+            "md5": "467699238eebb0c09421df956c0b910e",
+            "disposition": "attached",
+            "sandboxStatus": "NOT_SUPPORTED",
+            "labeledName": "sample_attachment_01.bat",
+            "detectedSizeBytes": 4592,
+            "dataBase64": "U0NBTEFSKDB4NDNiZTljOCk=\n",
+            "detectedExt": "BAT",
+            "isDeleted": true,
+            "metadata": {},
+            "isVirtual": true,
+            "detectedMime": "application/octet-stream",
+            "labeledMime": "",
+            "textExtracted": "U0NBTEFSKDB4N2VmYzlkOWFhZGM4KQ==\n",
+            "sizeDecodedBytes": 4592,
+            "detectedCharset": "",
+            "labeledExt": "bat"
+        },
+        "guid": "4xGDbNlpYWn7dhYw7qNM6eU5lq5TC_AS",
+        "type": "msgParts",
+        "ts": "2026-06-04T12:05:23.358403+0200",
+        "uuid": "b3e1f659-7462-4bf2-860a-721df94e6fbe",
+        "disposition": "continue"
+    }
+    ```
+
+
+
+=== "test_msgparts_deleted_true_2"
+
+
+    ```json
+	{
+        "msgParts": {
+            "labeledExt": "bat",
+            "detectedExt": "BAT",
+            "disposition": "attached",
+            "dataBase64": "U0NBTEFSKDB4NDNiZTljOCk=\n",
+            "sizeDecodedBytes": 4592,
+            "detectedCharset": "",
+            "sandboxStatus": "NOT_SUPPORTED",
+            "labeledCharset": "",
+            "detectedName": "sample_attachment_02.bat",
+            "textExtracted": "U0NBTEFSKDB4N2ZkMWJkOGQzMWUwKQ==\n",
+            "sha256": "cbdcf45881be99e1634dc5a1c401d5310662520e6fae3a6a57ca07f078ef97f9",
+            "md5": "467699238eebb0c09421df956c0b910e",
+            "isVirtual": true,
+            "detectedSizeBytes": 4592,
+            "labeledMime": "",
+            "metadata": {},
+            "isDeleted": true,
+            "labeledName": "sample_attachment_02.bat",
+            "structureId": "1:0",
+            "detectedMime": "application/octet-stream"
+        },
+        "guid": "sMJTlXAtwtB_c-Mwgk3Z9wGcM9WAcW-P",
+        "type": "msgParts",
+        "ts": "2026-06-04T12:05:23.353863+0200",
+        "uuid": "39fdd9f7-9774-45e1-b8f9-dafe2fadac6e",
+        "disposition": "continue"
+    }
+    ```
+
+
+
 === "test_msgparts_metadata"
 
 
