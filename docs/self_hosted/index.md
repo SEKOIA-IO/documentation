@@ -1,5 +1,8 @@
 # Sekoia Self-Hosted
 
+!!! info "Who this section is for"
+    This section covers Sekoia deployed and operated on your own infrastructure. If you use Sekoia SaaS, none of it applies to you: go to [Getting started](../getting_started/index.md).
+
 Sekoia Self-Hosted is a customer-operated deployment of the Sekoia AI SOC platform for environments with strict regulatory, sovereignty, or connectivity constraints. It delivers cloud-grade detection and automation capabilities while keeping data processing and infrastructure entirely under your authority.
 
 ## Why Sekoia Self-Hosted exists
@@ -37,50 +40,8 @@ The platform requires a minimum of **5,000 supervised assets** and **500 GB/day*
 !!! note "Incompatible use cases"
     Sekoia Self-Hosted is not designed for small organizations without a dedicated platform operations team, short-term or temporary projects, or purely cloud-native companies with no on-premises requirements.
 
-## Documentation map
+## Documentation
 
-### Architecture
+The documentation is published per platform version. The navigation menu always shows the **current** version.
 
-| Document | What you will find |
-| :--- | :--- |
-| [Reference architecture](architecture/architecture.md) | Platform components, infrastructure topology, node roles, high availability design, and data workflow. |
-
-### Deployment
-
-| Document | What you will find |
-| :--- | :--- |
-| [Technical requirements](deployment/deployment_prerequisites.md) | Hardware, OS, storage, network, and operational requirements before you begin. |
-| [Network requirements](deployment/network_requirements.md) | Full table of required network flows, ports, and protocols. |
-| [The deployment process](deployment/deployment_process.md) | High-level overview of the deployment engine, execution modes, and lifecycle operations. |
-| [Deploy the platform](deployment/deployment_guide.md) | Step-by-step installation: download, verification, initialization, and post-deployment validation. |
-| [Deployment configuration reference](deployment/deployment_configuration.md) | Complete `config.yml` parameter reference with required and optional field indicators. |
-
-### Operations
-
-| Document | What you will find |
-| :--- | :--- |
-| [Set up the first administrator account](operations/first_login.md) | How to provision the first administrator account and configure initial access. |
-
-### Monitoring and troubleshooting
-
-| Document | What you will find |
-| :--- | :--- |
-| [Monitor your platform](monitoring/monitoring_guide.md) | Observability stack overview, daily monitoring workflows, and SHC diagnostic command reference. |
-| [Debug your deployment](troubleshooting/debug_tool.md) | Full SHC debug command reference with remediation guidance and log collection for support. |
-
-### Release information
-
-| Document | What you will find |
-| :--- | :--- |
-| [Release notes v0.0.1](release_notes/0.0.1.md) | MVP feature scope, functional limitations, known issues, and support lifecycle. |
-
-## Quick start path
-
-If you are new to Sekoia Self-Hosted, follow this sequence:
-
-1. Read the [Reference architecture](architecture/architecture.md) to understand the platform topology.
-2. Validate your infrastructure against the [Technical requirements](deployment/deployment_prerequisites.md) and [Network requirements](deployment/network_requirements.md).
-3. Prepare your `config.yml` using the [Deployment configuration reference](deployment/deployment_configuration.md).
-4. Follow the [Deploy the platform](deployment/deployment_guide.md) guide.
-5. Create your first user with the [Set up the first administrator account](operations/first_login.md) guide.
-6. Set up continuous monitoring using the [Monitor your platform](monitoring/monitoring_guide.md) guide.
+Start with the [documentation for version 0.1.0](0.1.0/index.md), or see [all documentation versions](versions.md) if you run an earlier release.

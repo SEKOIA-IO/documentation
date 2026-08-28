@@ -1,3 +1,8 @@
+---
+search:
+  exclude: true
+---
+
 # Release notes v0.0.1
 
 This is the initial release of Sekoia Self-Hosted (MVP), introducing the core deployment and operational foundation for air-gapped and regulated environments. This article covers the feature scope, functional constraints, known issues, and support lifecycle for this version.
@@ -83,10 +88,10 @@ The following issues do not occur systematically. They are intermittent and may 
 | Automatic upgrade and rollback not available | Version updates are manual. | Follow the manual update procedure when a new release is published. |
 | Content update UI not available | Detection rules and intake format updates require a new release. | Intelligence updates are delivered daily via the signed release mechanism. |
 | Backup restore not yet documented | You cannot perform a tested restore from backup. | Contact Sekoia support for restore guidance specific to v0.0.1. |
-| ArangoDB provisioning failure on first install | Platform installation fails intermittently at the `ArangoDB` step. | Wait 1 hour for auto-recovery, then follow the [ArangoDB troubleshooting procedure](../troubleshooting/common_issues.md#arangodb-provisioning-failure-during-platforminstallation). |
-| "Customer does not exist" error when creating an Entity | Creating a new Entity fails intermittently with a "Customer does not exist" error in the interface. | Navigate to **Settings > General**, edit the community description, and save. Wait a few minutes for the re-initialization to complete. See [Common issues](../troubleshooting/common_issues.md#customer-does-not-exist-error-when-creating-an-entity). |
+| ArangoDB provisioning failure on first install | Platform installation fails intermittently at the `ArangoDB` step. | Wait 1 hour for auto-recovery, then follow the [ArangoDB troubleshooting procedure](troubleshooting/common_issues.md#arangodb-provisioning-failure-during-platforminstallation). |
+| "Customer does not exist" error when creating an Entity | Creating a new Entity fails intermittently with a "Customer does not exist" error in the interface. | Navigate to **Settings > General**, edit the community description, and save. Wait a few minutes for the re-initialization to complete. See [Common issues](troubleshooting/common_issues.md#customer-does-not-exist-error-when-creating-an-entity). |
 
 ## Related links
 
-- [Technical requirements](../deployment/deployment_prerequisites.md): Hardware and network prerequisites.
-- [Deploy the platform](../deployment/deployment_guide.md): Step-by-step installation instructions.
+- [Technical requirements](deployment/deployment_prerequisites.md): Hardware and network prerequisites.
+- [Deploy the platform](deployment/deployment_guide.md): Step-by-step installation instructions.

@@ -1,3 +1,8 @@
+---
+search:
+  exclude: true
+---
+
 # Common issues
 
 This article documents known issues that can occur during or after installation, along with their resolution procedure.
@@ -113,4 +118,4 @@ You can then retry creating the Entity.
 
 - [Debug your deployment](./debug_tool.md): Full SHC debug command reference.
 - [Deploy the platform](../deployment/deployment_guide.md): Installation steps and post-deployment validation.
-- [Release notes v0.0.1](../release_notes/0.0.1.md): Known issues and limitations for this version.
+- [Release notes v0.0.1](../release_notes.md): Known issues and limitations for this version.

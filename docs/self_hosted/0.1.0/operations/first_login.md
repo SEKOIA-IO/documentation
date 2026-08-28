@@ -160,4 +160,4 @@ Full OpenID Connect configuration documentation is available at [https://docs.se
 
 - [Deploy the platform](../deployment/deployment_guide.md): Deployment steps and post-deployment validation.
 - [Monitor your platform](../monitoring/monitoring_guide.md): How to set up alerts and dashboards for daily operations.
-- [Release notes v0.0.1](../release_notes/0.0.1.md): Feature scope and known limitations.
+- [Release notes v0.1.0](../release_notes.md): Feature scope and known limitations.

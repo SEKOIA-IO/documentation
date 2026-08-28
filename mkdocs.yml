@@ -707,22 +707,24 @@ nav:
       - Bug VS Improvement Requests: integration/faq/general_questions/bug_and_improvement_requests.md
 - Sekoia Self Hosted:
   - Introduction: self_hosted/index.md
-  - Architecture: 
-    - Reference Architecture: self_hosted/architecture/architecture.md
-  - Deployment: 
-    - Technical requirements: self_hosted/deployment/deployment_prerequisites.md
-    - Network requirements: self_hosted/deployment/network_requirements.md
-    - The deployment process: self_hosted/deployment/deployment_process.md
-    - Deploy the platform: self_hosted/deployment/deployment_guide.md
-    - Deployment configuration reference: self_hosted/deployment/deployment_configuration.md
-  - Operations: 
-    - Set up the first administrator account: self_hosted/operations/first_login.md
-  - Monitoring and troubleshooting: 
-    - Monitor your platform: self_hosted/monitoring/monitoring_guide.md
-    - Debug your deployment: self_hosted/troubleshooting/debug_tool.md
-    - Common issues: self_hosted/troubleshooting/common_issues.md
-  - Release Notes: 
-    - 0.0.1: self_hosted/release_notes/0.0.1.md
+  - Documentation versions: self_hosted/versions.md
+  - v0.1.0:
+    - Overview: self_hosted/0.1.0/index.md
+    - Architecture:
+      - Reference Architecture: self_hosted/0.1.0/architecture/architecture.md
+    - Deployment:
+      - Technical requirements: self_hosted/0.1.0/deployment/deployment_prerequisites.md
+      - Network requirements: self_hosted/0.1.0/deployment/network_requirements.md
+      - The deployment process: self_hosted/0.1.0/deployment/deployment_process.md
+      - Deploy the platform: self_hosted/0.1.0/deployment/deployment_guide.md
+      - Deployment configuration reference: self_hosted/0.1.0/deployment/deployment_configuration.md
+    - Operations:
+      - Set up the first administrator account: self_hosted/0.1.0/operations/first_login.md
+    - Monitoring and troubleshooting:
+      - Monitor your platform: self_hosted/0.1.0/monitoring/monitoring_guide.md
+      - Debug your deployment: self_hosted/0.1.0/troubleshooting/debug_tool.md
+      - Common issues: self_hosted/0.1.0/troubleshooting/common_issues.md
+    - Release notes: self_hosted/0.1.0/release_notes.md
 - API Documentation:
   - API Reference: developer/api.md
   - Quickstart: developer/quickstart.md
