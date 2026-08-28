@@ -705,7 +705,7 @@ nav:
     - Overview: integration/faq/overview.md
     - General Questions:
       - Bug VS Improvement Requests: integration/faq/general_questions/bug_and_improvement_requests.md
-- Sekoia Self Hosted:
+- Self-hosted deployment:
   - Introduction: self_hosted/index.md
   - Documentation versions: self_hosted/versions.md
   - v0.1.0:
