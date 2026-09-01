@@ -240,7 +240,6 @@ nav:
       - Elevate analysis states: xdr/features/modules/elevate_analysis_states.md
     - Investigate with Elevate:
       - Investigate an alert: xdr/features/modules/elevate_investigate_alert.md
-      - Investigate a case: xdr/features/modules/elevate_investigate_case.md
       - Audit with Traces: xdr/features/modules/elevate_traces.md
       - Override a verdict: xdr/features/modules/elevate_validate_verdict.md
       - Trigger an analysis: xdr/features/modules/elevate_manual_analysis.md
@@ -970,3 +969,5 @@ validation:
   links:
     absolute_links: relative_to_docs
   omitted_files: ignore
+exclude_docs: |
+  xdr/features/modules/elevate_investigate_case.md
