@@ -25,11 +25,8 @@ The agent begins analyzing the alert. The **Verdict** column updates to **In pro
 !!! note "Run consumption"
     A manually triggered analysis consumes one run from your monthly run pack, the same as an automatic analysis.
 
-To investigate a case instead of an alert, assign the case to Roy. See [Investigate a case with Elevate](/xdr/features/modules/elevate_investigate_case.md).
-
 ## Related articles
 
 - [Investigate an alert with Elevate](/xdr/features/modules/elevate_investigate_alert.md): How to read the AI investigation report once the analysis is complete.
-- [Investigate a case with Elevate](/xdr/features/modules/elevate_investigate_case.md): How to trigger an Elevate investigation on a case by assigning it to Roy.
 - [Elevate analysis states](/xdr/features/modules/elevate_analysis_states.md): Reference table of all possible AI analysis states and their meaning.
 - [Manage your Elevate runs](/xdr/features/modules/elevate_quota.md): How to monitor and optimize your monthly run pack.
