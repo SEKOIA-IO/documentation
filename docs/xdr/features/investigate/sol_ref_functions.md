@@ -460,7 +460,7 @@ cidr_match(<ip>, <cidr_or_cidrs>)
 **Parameters**
 
 - `ip`: An IPv4 address string or `null`.
-- `cidr_or_cidrs`: An IPv4 CIDR string, an array of IPv4 CIDR strings, or `null`.
+- `cidr_or_cidrs`: An IPv4 CIDR string, an array of IPv4 CIDR strings (including an array derived from a table using `select`), or `null`.
 
 **Return Value**
 
@@ -481,6 +481,17 @@ Returns `true` if `ip` belongs to at least one valid CIDR supplied in `cidr_or_c
 
     ``` shell
     cidr_match(source.ip, ["80.94.95.0/24", "198.51.100.0/24"])
+    ```
+
+    A table-derived array can also be used:
+
+    ```shell
+    let cidrs = cidr_dataset_test
+    | select cidr;
+    events
+    | where cidr_match(source.ip, cidrs)
+    | select source.ip
+    | limit 100
     ```
 
 
