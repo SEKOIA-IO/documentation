@@ -27,6 +27,7 @@ For what Sekoia Self-Hosted is and who it is for, see the [section introduction]
 | Document | What you will find |
 | :--- | :--- |
 | [Set up the first administrator account](operations/first_login.md) | How to provision the first administrator account and configure initial access. |
+| [Use the controller interface](operations/controller_interface.md) | The interactive SHC interface: command input, node, cluster and storage views, and diagnostics. |
 
 ### Monitoring and troubleshooting
 
@@ -53,3 +54,4 @@ If you are new to Sekoia Self-Hosted, follow this sequence:
 5. Create your first user with the [Set up the first administrator account](operations/first_login.md) guide.
 6. Set up continuous monitoring using the [Monitor your platform](monitoring/monitoring_guide.md) guide.
 7. Run [platform diagnostics](monitoring/run_diagnostics.md) to validate service health.
+8. Get familiar with the [controller interface](operations/controller_interface.md) for day-to-day operations.

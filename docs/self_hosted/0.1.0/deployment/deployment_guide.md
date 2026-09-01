@@ -26,8 +26,8 @@ Download the archive and its checksum file, then verify integrity. Fill in your 
     export AWS_DEFAULT_REGION="fr-par"
     export ENDPOINT="https://fr-par-13.linodeobjects.com"
     export BUCKET="self-hosted"
-    export KEY="archives/sekoia-self-hosted-v0.0.1.tar"
-    export OUT="sekoia-self-hosted-v0.0.1.tar"
+    export KEY="archives/sekoia-self-hosted-v0.1.0.tar"
+    export OUT="sekoia-self-hosted-v0.1.0.tar"
     export AWS_REQUEST_CHECKSUM_CALCULATION=WHEN_REQUIRED
     export AWS_RESPONSE_CHECKSUM_VALIDATION=WHEN_REQUIRED
 
@@ -49,20 +49,20 @@ Download the archive and its checksum file, then verify integrity. Fill in your 
     export RCLONE_CONFIG_SEKOIA_ENDPOINT="https://fr-par-13.linodeobjects.com"
     export RCLONE_CONFIG_SEKOIA_REGION="fr-par"
 
-    rclone copyto sekoia:self-hosted/archives/sekoia-self-hosted-v0.0.1.tar ./sekoia-self-hosted-v0.0.1.tar
-    rclone copyto sekoia:self-hosted/archives/sekoia-self-hosted-v0.0.1.tar.sha256 ./sekoia-self-hosted-v0.0.1.tar.sha256
+    rclone copyto sekoia:self-hosted/archives/sekoia-self-hosted-v0.1.0.tar ./sekoia-self-hosted-v0.1.0.tar
+    rclone copyto sekoia:self-hosted/archives/sekoia-self-hosted-v0.1.0.tar.sha256 ./sekoia-self-hosted-v0.1.0.tar.sha256
 
-    sha256sum -c sekoia-self-hosted-v0.0.1.tar.sha256
+    sha256sum -c sekoia-self-hosted-v0.1.0.tar.sha256
     ```
 
-Expected output: `sekoia-self-hosted-v0.0.1.tar: OK`
+Expected output: `sekoia-self-hosted-v0.1.0.tar: OK`
 
 ### Step 2: Transfer and extract the archive
 
 To transfer the archive to the orchestration node if you downloaded it on a separate machine, run:
 
 ```bash
-scp sekoia-self-hosted-v0.0.1.tar user@<ORCHESTRATION_NODE>:$SEKOIA_LOCAL_DIR
+scp sekoia-self-hosted-v0.1.0.tar user@<ORCHESTRATION_NODE>:$SEKOIA_LOCAL_DIR
 ```
 
 !!! note "Disk space"
@@ -71,7 +71,7 @@ scp sekoia-self-hosted-v0.0.1.tar user@<ORCHESTRATION_NODE>:$SEKOIA_LOCAL_DIR
 To extract the archive on the orchestration node, run:
 
 ```bash
-tar -xvf sekoia-self-hosted-v0.0.1.tar -C $SEKOIA_LOCAL_DIR
+tar -xvf sekoia-self-hosted-v0.1.0.tar -C $SEKOIA_LOCAL_DIR
 ```
 
 ### Step 3: Load the SHC Docker image
@@ -79,7 +79,7 @@ tar -xvf sekoia-self-hosted-v0.0.1.tar -C $SEKOIA_LOCAL_DIR
 For the first installation, the SHC image is not yet available on the orchestration node. Load it manually from the extracted archive:
 
 ```bash
-docker load -i $SEKOIA_LOCAL_DIR/v0.0.1/images/registry.sekoia.io_sekoialab_self-hosted-controller-cli-v0.0.1.tar.gz
+docker load -i $SEKOIA_LOCAL_DIR/v0.1.0/images/registry.sekoia.io_sekoialab_self-hosted-controller-cli-v0.1.0.tar.gz
 ```
 
 To confirm the image loaded successfully, run:
@@ -92,8 +92,8 @@ docker images | grep self-hosted-controller
     In air-gapped environments, the SHC image is always loaded from the local archive. After loading, tag the image and export its reference to override the default `DOCKER_IMAGE` value used by the execution script:
 
     ```bash
-    docker tag <IMAGE_ID> sekoialab/self-hosted-controller-cli:v0.0.1
-    export DOCKER_IMAGE="sekoialab/self-hosted-controller-cli:v0.0.1"
+    docker tag <IMAGE_ID> sekoialab/self-hosted-controller-cli:v0.1.0
+    export DOCKER_IMAGE="sekoialab/self-hosted-controller-cli:v0.1.0"
     ```
 
     Replace `<IMAGE_ID>` with the image ID returned by `docker images`.
@@ -108,7 +108,12 @@ Create a file named `run-shc.sh` with the following content:
 #!/bin/bash
 DOCKER_IMAGE="${DOCKER_IMAGE:-sekoialab/self-hosted-controller-cli:latest}"
 
-docker run --rm \
+# Allocate a TTY when the script runs in a terminal, so the interactive
+# interface can render. Skipped in non-interactive contexts such as CI.
+TTY_FLAGS=""
+[ -t 0 ] && [ -t 1 ] && TTY_FLAGS="-it"
+
+docker run --rm $TTY_FLAGS \
   -e SERVERS_SUDO_PASSWORD="$SERVERS_SUDO_PASSWORD" \
   -e SERVERS_SSH_KEY="$SERVERS_SSH_KEY" \
   -e REGISTRY_USERNAME="$REGISTRY_USERNAME" \
@@ -146,6 +151,9 @@ chmod +x run-shc.sh
 
 A successful run displays the full list of available SHC commands.
 
+!!! note "Interactive interface"
+    Running `./run-shc.sh` with no command opens the interactive interface of the SHC instead of returning a one-shot result. See [Use the controller interface](../operations/controller_interface.md).
+
 ## Deployment
 
 Choose one of the two deployment options below.
@@ -181,6 +189,8 @@ To validate the environment before any changes are made, run:
 
 !!! warning "Preflight block"
     The SHC will not proceed if any critical validation check fails. Each failure is logged with an actionable error message. Resolve all errors before continuing.
+
+`CheckServerSpec` fails the installation when a manager or worker node does not have 44 CPU cores and 120 GiB of RAM, does not run Debian 12 or later, has no unused 200 GB block device, shares its hostname with another node, or has no synchronized clock. See [CheckServerSpec](../troubleshooting/debug_tool.md#checkserverspec) for each failure message and its remediation.
 
 **Step 2: Configure servers.**
 
@@ -221,6 +231,17 @@ To generate the platform configuration, run the installer job, and retrieve the 
 ./run-shc.sh exec PlatformAccess
 ```
 
+**Step 6: Bootstrap and scale the platform.**
+
+To provision the default storage and the per-community Quickwit indexes, then scale the ingestion and detection workers to their configured replica count, run:
+
+```bash
+./run-shc.sh exec InstanceBootstrap
+./run-shc.sh exec ScaleServices
+```
+
+Run these two modules in this order. Until `InstanceBootstrap` completes, the Quickwit metastore holds no index and the indexers write nothing to your S3 bucket. See [Post-installation bootstrap](./deployment_process.md#post-installation-bootstrap) for what each module provisions.
+
 ## Post-deployment validation
 
 After the installation completes, run the following checks to confirm the platform is healthy before directing users to it.
@@ -260,7 +281,17 @@ To confirm all database StatefulSets and CNPG clusters are ready, run:
 
 All entries must report `Healthy` status with the expected number of ready replicas.
 
-**Step 4: Access the platform.**
+**Step 4: Check the health of the platform services.**
+
+To run every bundled diagnostic target against the platform's Prometheus metrics, run:
+
+```bash
+./run-shc.sh exec Diagnostic
+```
+
+Every check must report `OK`. A `CRIT` or `WARN` result names the affected service, its likely causes, and the remediation actions. See [Run platform diagnostics](../monitoring/run_diagnostics.md).
+
+**Step 5: Access the platform.**
 
 To open the Sekoia interface, navigate to the URL set in `global.host` of your `config.yml` (for example, `https://app.sekoia.local`).
 
@@ -273,3 +304,5 @@ To open the Sekoia interface, navigate to the URL set in `global.host` of your `
 - [Deployment configuration reference](./deployment_configuration.md): Full `config.yml` parameter reference.
 - [Debug your deployment](../troubleshooting/debug_tool.md): Troubleshooting commands and remediation steps.
 - [Set up the first administrator account](../operations/first_login.md): Post-installation user provisioning.
+- [Use the controller interface](../operations/controller_interface.md): Follow the installation and inspect the cluster from the interactive interface.
+- [Run platform diagnostics](../monitoring/run_diagnostics.md): Targeted Prometheus health checks per platform area.

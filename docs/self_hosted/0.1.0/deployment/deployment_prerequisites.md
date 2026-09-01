@@ -24,15 +24,43 @@ The orchestration node must run **Debian 12** with **Python 3.11** installed. Py
 
 Every Kubernetes worker node must meet the following minimum hardware requirements.
 
-| Resource | Minimum requirement |
-| :--- | :--- |
-| CPU | 44 vCPUs at 3.2 GHz minimum |
-| RAM | 128 GB |
-| Storage | 4 TB SSD |
-| Operating system | Debian 11 (Bullseye) |
+| Resource | Minimum requirement | Enforced by `CheckServerSpec` |
+| :--- | :--- | :--- |
+| CPU | 44 vCPUs at 3.2 GHz minimum | 44 cores |
+| RAM | 128 GB | 120 GiB |
+| Storage | 4 TB SSD | Not checked |
+| Dedicated storage disk | One unused block device of 200 GB or more | 200 GB |
+| Operating system | Debian 12 (Bookworm) | Debian 12 or later |
+| Hostname | Unique across all manager and worker nodes | Uniqueness |
+| Time synchronization | NTP enabled and clock synchronized | Both |
+
+The `CheckServerSpec` command blocks the installation when a manager or worker node fails any of the checks in the last column. See [CheckServerSpec](../troubleshooting/debug_tool.md#checkserverspec) for the failure messages and their remediation.
 
 !!! warning "SSD usage"
     The 4 TB SSD on each compute node is reserved for Kubernetes runtime and system use. Do not store long-term event data on compute node disks. Event data requires a dedicated S3-compatible bucket (see [Storage](#storage) below).
+
+### Dedicated storage disk
+
+Ceph and Longhorn provision persistent volumes from a dedicated block device on every node. Each manager and worker node must expose at least one whole disk that meets all of the following conditions:
+
+- 200 GB or larger.
+- No partition table and no filesystem.
+- Not read-only.
+
+Attach the disk and leave it unformatted before you start the installation. `CheckServerSpec` skips this check once K3s is installed, because Ceph and Longhorn have consumed the disk by then.
+
+!!! warning "Do not partition or format the storage disk"
+    A disk that already carries a filesystem or a partition table is not counted as eligible. If the node exposes no other eligible disk, the preflight fails and the installation does not start.
+
+### Node hostnames
+
+Every manager and worker node must have a unique hostname. Kubernetes registers nodes by hostname, so two nodes sharing one hostname collapse into a single cluster member and lose their workloads.
+
+To rename a node before the installation, run:
+
+```bash
+hostnamectl set-hostname <NEW_HOSTNAME>
+```
 
 ### GPU nodes (optional)
 
@@ -87,6 +115,15 @@ For NTP, ensure that:
 
 - All nodes synchronize against a customer-provided NTP server.
 - Clock skew between nodes stays below 1 second at all times.
+- A time-sync service (`systemd-timesyncd` or `chrony`) is installed and enabled on every node.
+
+`CheckServerSpec` reads `timedatectl show` on each node and fails when NTP is disabled or the clock is not synchronized. To enable NTP on a node, run:
+
+```bash
+timedatectl set-ntp true
+```
+
+If NTP is enabled but the clock is not synchronized, verify that the node can reach your NTP servers, then restart the time-sync service with `systemctl restart systemd-timesyncd` or `systemctl restart chrony`.
 
 For a complete list of required ports and protocols, see [Network requirements](./network_requirements.md).
 
@@ -102,4 +139,5 @@ For a complete list of required ports and protocols, see [Network requirements](
 
 - [Network requirements](./network_requirements.md): Full table of required network ports and protocols.
 - [Reference architecture](../architecture/architecture.md): Platform components and node roles.
+- [Debug your deployment](../troubleshooting/debug_tool.md): `CheckServerSpec` output and remediation for each failed requirement.
 - [Deploy the platform](./deployment_guide.md): Step-by-step installation instructions.

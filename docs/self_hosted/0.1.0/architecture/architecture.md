@@ -91,7 +91,7 @@ The following terms are used consistently throughout this documentation.
 
 | Term | Definition |
 | :--- | :--- |
-| Self-Hosted Controller (SHC) | The orchestration CLI tool (`run-shc.sh`). Previously referred to as Deployer in some documents. |
+| Self-Hosted Controller (SHC) | The orchestration tool (`run-shc.sh`), exposing a one-shot CLI and an interactive interface. Previously referred to as Deployer in some documents. |
 | Orchestration node | The machine where you execute the SHC. Also called admin node in some contexts. |
 | Compute node | A Kubernetes worker node running Sekoia microservices. |
 | Forwarder | An optional Sekoia component installed on a customer VM, used to collect and forward logs to the platform. Not part of the standard release. |
@@ -102,3 +102,4 @@ The following terms are used consistently throughout this documentation.
 - [Technical requirements](../deployment/deployment_prerequisites.md): Hardware, OS, and network prerequisites for each node role.
 - [Network requirements](../deployment/network_requirements.md): Full table of required network flows and ports.
 - [The deployment process](../deployment/deployment_process.md): How the SHC orchestrates the installation.
+- [Use the controller interface](../operations/controller_interface.md): The interactive interface of the SHC.

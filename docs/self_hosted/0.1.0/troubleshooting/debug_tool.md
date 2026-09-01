@@ -69,6 +69,45 @@ Tests SSH connectivity to all nodes listed in `utils.ansible.inventory`.
 - Verify the username in `utils.ansible.user` has SSH access to the node.
 - If you use password-based sudo, confirm `SERVERS_SUDO_PASSWORD` is set correctly.
 
+### CheckServerSpec
+
+Runs the `check_servers_spec` Ansible playbook against every manager and worker node in `utils.ansible.inventory`, and reports the first requirement each node fails.
+
+```bash
+./run-shc.sh exec CheckServerSpec
+```
+
+The command checks the following, in this order.
+
+| Check | Requirement | Applies |
+| :--- | :--- | :--- |
+| Unique hostnames | No two nodes share a hostname | Always |
+| OS family | Debian-based | Always |
+| OS version | Debian 12 or later | Always |
+| CPU | 44 cores or more per node | Unless `global.dev` is enabled |
+| RAM | 120 GiB or more per node | Unless `global.dev` is enabled |
+| NTP enabled | `timedatectl` reports `NTP=yes` | Always |
+| Clock synchronized | `timedatectl` reports `NTPSynchronized=yes` | Always |
+| Port availability | TCP 80, 443, 2379, 2380, 4240, 4250, 6443, 10514, and 11514 can be bound | Before K3s is installed |
+| Dedicated storage disk | One unused block device of 200 GB or more, with no partition table and no filesystem | Before K3s is installed |
+
+The last two checks are skipped once K3s is installed on the node. After the installation, the ports are bound by the cluster and the storage disk is consumed by Ceph and Longhorn, so requiring them to be free would fail every re-run.
+
+!!! warning "Dev mode instances are not supported"
+    When `global.dev` is enabled, the command skips the CPU and RAM checks and logs a warning. Sekoia.io does not support instances installed below the minimum hardware specification and cannot guarantee their behavior.
+
+**What to do after a failure:**
+
+| Failure | Remediation |
+| :--- | :--- |
+| Duplicate hostnames | The error lists the inventory host to hostname mapping. Rename the affected nodes with `hostnamectl set-hostname <NEW_HOSTNAME>`, then re-run the command. |
+| Debian version too old | Reinstall the node on Debian 12 or later. See [Technical requirements](../deployment/deployment_prerequisites.md#compute-node-specification). |
+| CPU or RAM below the minimum | Resize the node. The error reports the detected value. |
+| NTP not enabled | Install and enable `systemd-timesyncd` or `chrony`, then run `timedatectl set-ntp true`. |
+| Clock not synchronized | Verify that the node reaches your NTP servers, then run `systemctl restart systemd-timesyncd` or `systemctl restart chrony`. |
+| A required port is already bound | Run `ss -tlnp` on the node to identify the process holding the port, then stop it or reconfigure it to another port. |
+| No unused extra disk | Attach a block device of 200 GB or more to the node and leave it unformatted, with no partition table. A disk that already carries a filesystem or partitions is rejected. |
+
 ### CheckKubernetesCluster
 
 Connects to the Kubernetes API and verifies that every node has a `Ready=True` condition and that the actual node count matches your Ansible inventory.
@@ -302,6 +341,18 @@ Detects and wipes disks previously used by Ceph. Only runs when `modules.wipe_st
 ./run-shc.sh exec WipeStorageDisks
 ```
 
+## Service diagnostics
+
+### Diagnostic
+
+Evaluates rule-based health checks against the platform's Prometheus metrics and reports the state of each platform area.
+
+```bash
+./run-shc.sh exec Diagnostic
+```
+
+Use this command once the infrastructure and application layers are healthy but a platform feature misbehaves, for example alerts that stop being created or assets that stop being discovered. For the available targets, the output formats, and how to read a result, see [Run platform diagnostics](../monitoring/run_diagnostics.md).
+
 ## Collecting logs for a support ticket
 
 When you escalate an issue to Sekoia L3 support, include the following in your request:
@@ -329,4 +380,6 @@ When you escalate an issue to Sekoia L3 support, include the following in your r
 - [Monitor your platform](../monitoring/monitoring_guide.md): Continuous monitoring with Grafana and on-demand diagnostic workflows.
 - [Deploy the platform](../deployment/deployment_guide.md): Post-deployment validation commands.
 - [Deployment configuration reference](../deployment/deployment_configuration.md): How to fix configuration errors flagged by `CheckLocalConfig`.
+- [Run platform diagnostics](../monitoring/run_diagnostics.md): Targeted Prometheus health checks per platform area.
+- [Use the controller interface](../operations/controller_interface.md): Run commands and diagnostics from the interactive interface.
 - [Common issues](./common_issues.md): Known recurring issues and their resolutions.

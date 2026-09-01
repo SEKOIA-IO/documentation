@@ -1,11 +1,23 @@
-# Release notes v0.0.1
+# Release notes v0.1.0
 
-This is the initial release of Sekoia Self-Hosted (MVP), introducing the core deployment and operational foundation for air-gapped and regulated environments. This article covers the feature scope, functional constraints, known issues, and support lifecycle for this version.
+Sekoia Self-Hosted 0.1.0 builds on the 0.0.1 MVP with a hardened preflight, an automated post-installation bootstrap, and diagnostics for the alerts, asset, and telemetry pipelines. This article covers what changed in this release, the feature scope, functional constraints, and known issues.
 
-## What's new
+## What's new in 0.1.0
+
+**Hardened preflight.** `CheckServerSpec` now blocks the installation when a manager or worker node shares its hostname with another node, has fewer than 44 CPU cores or less than 120 GiB of RAM, has no dedicated unused block device of 200 GB or more for Ceph and Longhorn, or has NTP disabled or an unsynchronized clock. Each failure names the offending node and the remediation. See [CheckServerSpec](troubleshooting/debug_tool.md#checkserverspec).
+
+**Automated post-installation bootstrap.** The `Install` execution plan ends with two new modules. `InstanceBootstrap` declares the default storage backend and reconciles the per-community Quickwit indexes, which a freshly-installed region does not have. `ScaleServices` then scales the ingestion and detection workers to their configured replica count. Both are idempotent. See [Post-installation bootstrap](deployment/deployment_process.md#post-installation-bootstrap).
+
+**Diagnostics for the alerts, asset, and telemetry pipelines.** The `Diagnostic` module gains four targets covering the alerts pipeline, asset discovery, asset management, and telemetry, with per-rule likely causes and remediation. See [Run platform diagnostics](monitoring/run_diagnostics.md).
+
+**Interactive controller interface.** The SHC interface adds a Diagnostics tab that runs a target rule by rule with live status, sortable result tables, and clipboard copy, and shows a live progress bar while the platform installation runs. See [Use the controller interface](operations/controller_interface.md).
+
+**Debian 12 on compute nodes.** The certified node operating system is Debian 12 (Bookworm), which `CheckServerSpec` enforces. See [Technical requirements](deployment/deployment_prerequisites.md).
+
+## Carried over from 0.0.1
 
 - **Air-gap deployment support.** You can deploy and operate the full platform in restricted or fully disconnected environments with no external connectivity.
-- **Self-Hosted Controller (SHC).** A unified orchestration CLI to install, configure, diagnose, and manage the platform lifecycle.
+- **Self-Hosted Controller (SHC).** A unified orchestration tool to install, configure, diagnose, and manage the platform lifecycle.
 - **Built-in observability.** Grafana, Prometheus, Loki, Alertmanager, and Promtail are deployed as part of every installation.
 - **Built-in diagnostics.** On-demand health checks for cluster nodes, ArgoCD applications, databases, secrets, and resource allocation.
 
@@ -14,7 +26,7 @@ This is the initial release of Sekoia Self-Hosted (MVP), introducing the core de
 | Attribute              | Value                         |
 | :---                   | :---                          |
 | Kubernetes distribution | K3s                          |
-| Certified node OS      | Debian 11 (Bullseye)          |
+| Certified node OS      | Debian 12 (Bookworm)          |
 | GitOps engine          | ArgoCD                        |
 | Secret management      | HashiCorp Vault               |
 | Relational database    | PostgreSQL via CloudNativePG  |
@@ -78,11 +90,11 @@ The following issues do not occur systematically. They are intermittent and may 
 
 | Issue | Impact | Workaround |
 | :--- | :--- | :--- |
-| No upgrade path documented | You cannot upgrade from v0.0.1 to a future version via the SHC. | An upgrade procedure will be provided in the next release notes. |
+| No upgrade path documented | You cannot upgrade an existing v0.0.1 deployment to v0.1.0 via the SHC. | Contact Sekoia before you plan an upgrade. |
 | No UI for platform administration | Infrastructure management is CLI-only. | Use the SHC CLI and `config.yml` for all administrative operations. |
 | Automatic upgrade and rollback not available | Version updates are manual. | Follow the manual update procedure when a new release is published. |
-| Content update UI not available | Detection rules and intake format updates require a new release. | Intelligence updates are delivered daily via the signed release mechanism. |
-| Backup restore not yet documented | You cannot perform a tested restore from backup. | Contact Sekoia support for restore guidance specific to v0.0.1. |
+| Content updates are not functional | Detection rules, intake formats, and the playbook library cannot be updated after the installation, from the interface or from the SHC. The content of your deployment stays at the version embedded in the release archive. | None. Contact Sekoia if your deployment requires updated detection content before the next release. |
+| Backup restore not yet documented | You cannot perform a tested restore from backup. | Contact Sekoia support for restore guidance specific to v0.1.0. |
 | ArangoDB provisioning failure on first install | Platform installation fails intermittently at the `ArangoDB` step. | Wait 1 hour for auto-recovery, then follow the [ArangoDB troubleshooting procedure](troubleshooting/common_issues.md#arangodb-provisioning-failure-during-platforminstallation). |
 | "Customer does not exist" error when creating an Entity | Creating a new Entity fails intermittently with a "Customer does not exist" error in the interface. | Navigate to **Settings > General**, edit the community description, and save. Wait a few minutes for the re-initialization to complete. See [Common issues](troubleshooting/common_issues.md#customer-does-not-exist-error-when-creating-an-entity). |
 
@@ -90,3 +102,5 @@ The following issues do not occur systematically. They are intermittent and may 
 
 - [Technical requirements](deployment/deployment_prerequisites.md): Hardware and network prerequisites.
 - [Deploy the platform](deployment/deployment_guide.md): Step-by-step installation instructions.
+- [The deployment process](deployment/deployment_process.md): The installation execution plan and the post-installation bootstrap.
+- [Use the controller interface](operations/controller_interface.md): The interactive interface of the SHC.
