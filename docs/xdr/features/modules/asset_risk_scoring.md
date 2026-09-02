@@ -1,6 +1,6 @@
 # Asset risk scoring
 
-Asset risk scoring gives each host asset a current security priority based on persistent exposure, recent asset-linked security activity, and configured asset criticality. The score helps you understand which assets need attention now and why, but it does not represent breach probability, compromise likelihood, or organization-wide security posture.
+Asset risk scoring gives each host and account asset a current security priority based on persistent exposure, recent asset-linked security activity, and configured asset criticality. The score helps you understand which assets need attention now and why, but it does not represent breach probability, compromise likelihood, or organization-wide security posture.
 
 !!! note "Reveal requirement"
 
