@@ -2,6 +2,9 @@
 
 Sekoia Self-Hosted 0.1.0 builds on the 0.0.1 MVP with a hardened preflight, an automated post-installation bootstrap, and diagnostics for the alerts, asset, and telemetry pipelines. This article covers what changed in this release, the feature scope, functional constraints, and known issues.
 
+!!! warning "Threat intelligence is not included in this release"
+    The Sekoia CTI database is not embedded in Sekoia Self-Hosted 0.1.0, and the SHC does not retrieve it. Every feature that reads threat intelligence is unavailable. See [Threat intelligence](#threat-intelligence).
+
 ## What's new in 0.1.0
 
 **Hardened preflight.** `CheckServerSpec` now blocks the installation when a manager or worker node shares its hostname with another node, has fewer than 44 CPU cores or less than 120 GiB of RAM, has no dedicated unused block device of 200 GB or more for Ceph and Longhorn, or has NTP disabled or an unsynchronized clock. Each failure names the offending node and the remediation. See [CheckServerSpec](troubleshooting/debug_tool.md#checkserverspec).
@@ -41,7 +44,7 @@ The functional scope aligns with the **Defend Core** subscription tier. Defend C
 | :--- | :---: | :--- |
 | Meta-playbooks | Yes | |
 | OC Notifications | Yes | |
-| Observable Tags Enrichment | No | Requires live CTI connectivity. Not available in air-gapped environments. |
+| Observable Tags Enrichment | No | Requires threat intelligence, which is not included in this release. |
 | Cloud-to-Cloud Ingestion | No | Not supported in air-gapped deployments. |
 | Encrypted ingestion (Syslog TLS, RELP TLS, HTTPS) | Yes | |
 | Custom Intake Formats | Yes | |
@@ -53,7 +56,7 @@ The functional scope aligns with the **Defend Core** subscription tier. Defend C
 | Case Management | Yes | |
 | Hot Storage | Yes | |
 | Sekoia Endpoint Agent | Yes | |
-| Contextualized Alerts | No | Requires live CTI. Not available in air-gapped environments. |
+| Contextualized Alerts | No | Requires threat intelligence, which is not included in this release. |
 | SOL Query Builder | Yes | |
 | Detection Rules | Yes | Full rules catalog embedded in the release. |
 | Event Drop Detection | Yes | |
@@ -72,13 +75,22 @@ The functional scope aligns with the **Defend Core** subscription tier. Defend C
 | Subscription Management | Yes | |
 | Region Threat Telemetry | Yes | |
 
-## Air-gapped environment constraints
+## Functional constraints
 
 ### Threat intelligence
 
-The Threat Intelligence (CTI) research module is not available in air-gapped deployments because it requires live cloud connectivity for manual threat actor and observable exploration.
+The Sekoia CTI database is not included in Sekoia Self-Hosted 0.1.0. No release artifact carries it, and no SHC module downloads or installs it. This is not a connectivity limitation: even a deployment with full internet access has no threat intelligence in this release.
 
-Detection capabilities remain fully operational. All Sekoia detection rules and integration connectors are embedded in every release.
+The following capabilities are therefore unavailable:
+
+- The Threat Intelligence research module, used to explore threat actors, campaigns, and observables.
+- Observable tags enrichment.
+- Contextualized alerts.
+
+Detection capabilities remain fully operational. The Sekoia detection rules catalog and the integration connectors are embedded in the release archive, and they do not depend on the CTI database.
+
+!!! note "CTI configuration keys"
+    `config.yml` still declares a `global.version.data.cti` section, and `global.version.data.cti.version` is still a required key that `CheckLocalConfig` enforces. Set it to pass validation. No module consumes it in this release.
 
 ### Sekoia Forwarder
 
@@ -93,6 +105,7 @@ The following issues do not occur systematically. They are intermittent and may 
 | No upgrade path documented | You cannot upgrade an existing v0.0.1 deployment to v0.1.0 via the SHC. | Contact Sekoia before you plan an upgrade. |
 | No UI for platform administration | Infrastructure management is CLI-only. | Use the SHC CLI and `config.yml` for all administrative operations. |
 | Automatic upgrade and rollback not available | Version updates are manual. | Follow the manual update procedure when a new release is published. |
+| Threat intelligence not included | Every feature that reads the CTI database is unavailable, including the Threat Intelligence research module, observable tags enrichment, and contextualized alerts. Detection rules are unaffected. | None. Contact Sekoia if your deployment requires threat intelligence. |
 | Content updates are not functional | Detection rules, intake formats, and the playbook library cannot be updated after the installation, from the interface or from the SHC. The content of your deployment stays at the version embedded in the release archive. | None. Contact Sekoia if your deployment requires updated detection content before the next release. |
 | Backup restore not yet documented | You cannot perform a tested restore from backup. | Contact Sekoia support for restore guidance specific to v0.1.0. |
 | ArangoDB provisioning failure on first install | Platform installation fails intermittently at the `ArangoDB` step. | Wait 1 hour for auto-recovery, then follow the [ArangoDB troubleshooting procedure](troubleshooting/common_issues.md#arangodb-provisioning-failure-during-platforminstallation). |
