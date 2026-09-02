@@ -1,6 +1,6 @@
 # The deployment process
 
-The Self-Hosted Controller (SHC) is the orchestration CLI that manages every phase of the Sekoia Self-Hosted platform lifecycle, from initial installation to day-to-day operations. This article explains how the SHC works, what commands it exposes, and how it handles different deployment environments.
+The Self-Hosted Controller (SHC) manages every phase of the Sekoia Self-Hosted platform lifecycle, from initial installation to day-to-day operations. It provides an interactive terminal user interface (TUI) for operators and a one-shot command-line interface (CLI) for scripts and unattended runs. This article explains how the SHC works, what commands it exposes, and how it handles different deployment environments.
 
 ## Core principles
 
@@ -21,7 +21,9 @@ The SHC is built on three design pillars.
 
 ## Available commands
 
-To display the full list of SHC commands and their descriptions, run:
+Run `./run-shc.sh` without a command to open the TUI. Use it for streamed command output, installation progress, and live Machines, Kubernetes, Storage, and Diagnostics views. See [Use the controller interface](../operations/controller_interface.md).
+
+To display the full list of SHC modules in one-shot CLI mode, run:
 
 ```bash
 ./run-shc.sh list

@@ -100,7 +100,7 @@ The following issues do not occur systematically. They are intermittent and may 
 | Issue | Impact | Workaround |
 | :--- | :--- | :--- |
 | No upgrade path documented | You cannot upgrade an existing v0.0.1 deployment to v0.1.0 via the SHC. | Contact Sekoia before you plan an upgrade. |
-| No UI for platform administration | Infrastructure management is CLI-only. | Use the SHC CLI and `config.yml` for all administrative operations. |
+| No graphical or web UI for platform administration | Infrastructure management is available only from the orchestration node. | Use the SHC terminal interface or one-shot CLI together with `config.yml` for administrative operations. |
 | Automatic upgrade and rollback not available | Version updates are manual. | Follow the manual update procedure when a new release is published. |
 | Threat intelligence not included | Every feature that reads the CTI database is unavailable, including the Threat Intelligence research module, observable tags enrichment, and contextualized alerts. Detection rules are unaffected. | None. Contact Sekoia if your deployment requires threat intelligence. |
 | Content updates are not functional | Detection rules, intake formats, and the playbook library cannot be updated after the installation, from the interface or from the SHC. The content of your deployment stays at the version embedded in the release archive. | None. Contact Sekoia if your deployment requires updated detection content before the next release. |
