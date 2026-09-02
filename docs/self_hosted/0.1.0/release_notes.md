@@ -108,8 +108,6 @@ The following issues do not occur systematically. They are intermittent and may 
 | Threat intelligence not included | Every feature that reads the CTI database is unavailable, including the Threat Intelligence research module, observable tags enrichment, and contextualized alerts. Detection rules are unaffected. | None. Contact Sekoia if your deployment requires threat intelligence. |
 | Content updates are not functional | Detection rules, intake formats, and the playbook library cannot be updated after the installation, from the interface or from the SHC. The content of your deployment stays at the version embedded in the release archive. | None. Contact Sekoia if your deployment requires updated detection content before the next release. |
 | Backup restore not yet documented | You cannot perform a tested restore from backup. | Contact Sekoia support for restore guidance specific to v0.1.0. |
-| ArangoDB provisioning failure on first install | Platform installation fails intermittently at the `ArangoDB` step. | Wait 1 hour for auto-recovery, then follow the [ArangoDB troubleshooting procedure](troubleshooting/common_issues.md#arangodb-provisioning-failure-during-platforminstallation). |
-| "Customer does not exist" error when creating an Entity | Creating a new Entity fails intermittently with a "Customer does not exist" error in the interface. | Navigate to **Settings > General**, edit the community description, and save. Wait a few minutes for the re-initialization to complete. See [Common issues](troubleshooting/common_issues.md#customer-does-not-exist-error-when-creating-an-entity). |
 
 ## Related links
 

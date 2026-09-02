@@ -382,4 +382,3 @@ When you escalate an issue to Sekoia L3 support, include the following in your r
 - [Deployment configuration reference](../deployment/deployment_configuration.md): How to fix configuration errors flagged by `CheckLocalConfig`.
 - [Run platform diagnostics](../monitoring/run_diagnostics.md): Targeted Prometheus health checks per platform area.
 - [Use the controller interface](../operations/controller_interface.md): Run commands and diagnostics from the interactive interface.
-- [Common issues](./common_issues.md): Known recurring issues and their resolutions.
