@@ -9,7 +9,7 @@ Sekoia Self-Hosted 0.1.0 builds on the 0.0.1 MVP with a hardened preflight, an a
 
 **Hardened preflight.** `CheckServerSpec` now blocks the installation when a manager or worker node shares its hostname with another node, has fewer than 44 CPU cores or less than 120 GiB of RAM, has no dedicated unused block device of 200 GB or more for Ceph and Longhorn, or has NTP disabled or an unsynchronized clock. Each failure names the offending node and the remediation. See [CheckServerSpec](troubleshooting/debug_tool.md#checkserverspec).
 
-**Automated post-installation bootstrap.** The `Install` execution plan ends with two new modules. `InstanceBootstrap` declares the default storage backend and reconciles the per-community Quickwit indexes, which a freshly-installed region does not have. `ScaleServices` then scales the ingestion and detection workers to their configured replica count. Both are idempotent. See [Post-installation bootstrap](deployment/deployment_process.md#post-installation-bootstrap).
+**Automated post-installation bootstrap.** The `Install` execution plan ends with two new modules. `InstanceBootstrap` declares the default storage backend and reconciles the per-community ExaLog indexes, which a freshly-installed region does not have. `ScaleServices` then scales the ingestion and detection workers to their configured replica count. Both are idempotent. See [Post-installation bootstrap](deployment/deployment_process.md#post-installation-bootstrap).
 
 **Diagnostics for the alerts, asset, and telemetry pipelines.** The `Diagnostic` module gains four targets covering the alerts pipeline, asset discovery, asset management, and telemetry, with per-rule likely causes and remediation. See [Run platform diagnostics](monitoring/run_diagnostics.md).
 
@@ -88,9 +88,6 @@ The following capabilities are therefore unavailable:
 - Contextualized alerts.
 
 Detection capabilities remain fully operational. The Sekoia detection rules catalog and the integration connectors are embedded in the release archive, and they do not depend on the CTI database.
-
-!!! note "CTI configuration keys"
-    `config.yml` still declares a `global.version.data.cti` section, and `global.version.data.cti.version` is still a required key that `CheckLocalConfig` enforces. Set it to pass validation. No module consumes it in this release.
 
 ### Sekoia Forwarder
 

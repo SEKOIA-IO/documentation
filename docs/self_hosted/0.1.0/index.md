@@ -20,7 +20,7 @@ For what Sekoia Self-Hosted is and who it is for, see the [section introduction]
 | [Network requirements](deployment/network_requirements.md) | Full table of required network flows, ports, and protocols. |
 | [The deployment process](deployment/deployment_process.md) | High-level overview of the deployment engine, execution modes, and lifecycle operations. |
 | [Deploy the platform](deployment/deployment_guide.md) | Step-by-step installation: download, verification, initialization, and post-deployment validation. |
-| [Deployment configuration reference](deployment/deployment_configuration.md) | Complete `config.yml` parameter reference with required and optional field indicators. |
+| [Configure the deployment](deployment/deployment_configuration.md) | Copyable `config.yml` starter configuration and explanations for every required field. |
 
 ### Operations
 

@@ -61,4 +61,4 @@ The orchestration node does not need internet access after you stage the release
 
 - [Technical requirements](./deployment_prerequisites.md): Hardware, OS, and operational prerequisites.
 - [Deploy the platform](./deployment_guide.md): Step-by-step installation instructions.
-- [Deployment configuration reference](./deployment_configuration.md): How to configure proxy and registry settings in `config.yml`.
+- [Configure the deployment](./deployment_configuration.md): Required platform storage, registry, DNS, and endpoint settings.

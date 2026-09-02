@@ -56,7 +56,7 @@ To display the full list of SHC commands and their descriptions, run:
       PlatformConfigurationFile     Generate the platform-installer Helm values file
       PlatformInstallation          Run the platform installation via a single installer job
       PlatformAccess                Display platform access credentials (URLs, users, passwords)
-      InstanceBootstrap             Bootstrap default storage and per-community Quickwit indexes
+      InstanceBootstrap             Bootstrap default storage and per-community ExaLog indexes
       ScaleServices                 Scale Deployments to their configured replica count
 
       RebootNodes                   Reboot all nodes in the inventory
@@ -83,7 +83,7 @@ The `Install` command runs every module below, in order, grouped into five stage
 | `server_config` | `ConfigureServersWithAnsible` | Prepares the operating system and installs the required packages on all nodes. |
 | `push` | `PushImages`, `PushCharts`, `PushArgoStacks` | Publishes the images, the charts, and the ArgoCD stacks to your registries. |
 | `kubernetes` | `K3SInstall`, `GetKubeconfig`, `HelmInstall`, `CheckKubernetesCluster` | Installs the K3s cluster and the cluster services, then verifies that every node is `Ready`. |
-| `platform` | `PlatformConfigurationFile`, `PlatformInstallation`, `PlatformAccess`, `InstanceBootstrap`, `ScaleServices` | Renders the installer values, runs the platform installer, returns the access credentials, provisions the default storage and Quickwit indexes, and scales the workers to their target replica count. |
+| `platform` | `PlatformConfigurationFile`, `PlatformInstallation`, `PlatformAccess`, `InstanceBootstrap`, `ScaleServices` | Renders the installer values, runs the platform installer, returns the access credentials, provisions the default storage and ExaLog indexes, and scales the workers to their target replica count. |
 
 ### Post-installation bootstrap
 
@@ -92,9 +92,9 @@ The last two modules of the `platform` stage bring a freshly-installed region in
 `InstanceBootstrap` provisions the storage layer the platform needs before it can write events:
 
 1. Declares the default storage backend on the `communityapi` deployment in the `common` namespace.
-2. Reconciles the per-community Quickwit indexes and their Kafka sources on the `storage-manager` deployment in the `sic` namespace.
+2. Reconciles the per-community ExaLog indexes and their Kafka sources on the `storage-manager` deployment in the `sic` namespace.
 
-On a new region the Quickwit metastore holds no index, so without this step the indexers stay idle and never write to your S3 bucket.
+On a new region ExaLog has no index, so without this step the indexers stay idle and never write to your S3-compatible storage.
 
 `ScaleServices` then scales the ingestion and detection Deployments (for example `ingestworker1` and `sigma-workflow-worker1`) to their configured replica count. Deployments already at their target count are left untouched. The module runs last so the workers start consuming only once the storage layer is ready.
 
@@ -117,7 +117,7 @@ The SHC handles the full platform lifecycle beyond initial installation.
 ## Related links
 
 - [Deploy the platform](./deployment_guide.md): Step-by-step installation instructions.
-- [Deployment configuration reference](./deployment_configuration.md): Full `config.yml` parameter reference.
+- [Configure the deployment](./deployment_configuration.md): Starter configuration and required-field reference.
 - [Debug your deployment](../troubleshooting/debug_tool.md): Full SHC debug command reference.
 - [Use the controller interface](../operations/controller_interface.md): The interactive interface of the SHC.
 - [Run platform diagnostics](../monitoring/run_diagnostics.md): Targeted Prometheus health checks per platform area.

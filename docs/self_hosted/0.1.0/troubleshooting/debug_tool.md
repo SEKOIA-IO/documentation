@@ -32,11 +32,11 @@ The check reports:
 ??? example "Example failure output"
     ```
     Missing required config key=global.version.platform.version
-    Format mismatch key=utils.oci_registry.url value=registry.lab expected_format=^https?://
+    Format mismatch key=utils.oci_registry.host value=https://registry.lab expected_format=^[a-zA-Z0-9]
     Configuration validation failed: 2 error(s) found
     ```
 
-**What to do after a failure:** Review each error line. Add any missing required keys to `config.yml`. Fix values that do not match the expected format, for example a URL missing the `https://` scheme.
+**What to do after a failure:** Review each error line. Add any missing required keys to `config.yml`. Fix values that do not match the expected format. For example, `utils.oci_registry.host` must be a bare hostname with no `http://` or `https://` scheme.
 
 To inspect all resolved environment variable values before the schema check runs, add the `-v` flag:
 
@@ -44,7 +44,7 @@ To inspect all resolved environment variable values before the schema check runs
 ./run-shc.sh -v exec CheckLocalConfig
 ```
 
-The verbose output includes the fully resolved in-memory config tree, including every `env.VAR_NAME` value substituted with its actual content. Use this to confirm that secrets injected via environment variables are correctly loaded.
+The verbose output includes the fully resolved in-memory config tree, including every `${env.VAR_NAME}` value substituted with its actual content. Use this to confirm that secrets injected via environment variables are correctly loaded.
 
 ## Infrastructure connectivity
 
@@ -79,22 +79,19 @@ Runs the `check_servers_spec` Ansible playbook against every manager and worker 
 
 The command checks the following, in this order.
 
-| Check | Requirement | Applies |
-| :--- | :--- | :--- |
-| Unique hostnames | No two nodes share a hostname | Always |
-| OS family | Debian-based | Always |
-| OS version | Debian 12 or later | Always |
-| CPU | 44 cores or more per node | Unless `global.dev` is enabled |
-| RAM | 120 GiB or more per node | Unless `global.dev` is enabled |
-| NTP enabled | `timedatectl` reports `NTP=yes` | Always |
-| Clock synchronized | `timedatectl` reports `NTPSynchronized=yes` | Always |
-| Port availability | TCP 80, 443, 2379, 2380, 4240, 4250, 6443, 10514, and 11514 can be bound | Before K3s is installed |
-| Dedicated storage disk | One unused block device of 200 GB or more, with no partition table and no filesystem | Before K3s is installed |
+| Check | Requirement |
+| :--- | :--- |
+| Unique hostnames | No two nodes share a hostname |
+| OS family | Debian-based |
+| OS version | Debian 12 or later |
+| CPU | 44 cores or more per node |
+| RAM | 120 GiB or more per node |
+| NTP enabled | `timedatectl` reports `NTP=yes` |
+| Clock synchronized | `timedatectl` reports `NTPSynchronized=yes` |
+| Port availability | TCP 80, 443, 2379, 2380, 4240, 4250, 6443, 10514, and 11514 can be bound before K3s is installed |
+| Dedicated storage disk | One unused block device of 200 GB or more, with no partition table and no filesystem, before K3s is installed |
 
 The last two checks are skipped once K3s is installed on the node. After the installation, the ports are bound by the cluster and the storage disk is consumed by Ceph and Longhorn, so requiring them to be free would fail every re-run.
-
-!!! warning "Dev mode instances are not supported"
-    When `global.dev` is enabled, the command skips the CPU and RAM checks and logs a warning. Sekoia.io does not support instances installed below the minimum hardware specification and cannot guarantee their behavior.
 
 **What to do after a failure:**
 

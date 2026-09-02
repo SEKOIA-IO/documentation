@@ -94,8 +94,8 @@ End-to-end view of the event processing pipeline. Each panel represents one stag
 | sigma-workflow | Sigma rule matching and enrichment. |
 | Correlation Worker | Correlation engine throughput. |
 | eventindexer-ls | Event indexing (`sic.enriched-event` → `sic.event`). |
-| Quickwit forwarder | Forwarding enriched events to Quickwit (`workflow.enriched-events`). |
-| Quickwit Indexation realtime | Real-time Quickwit indexation rate. |
+| ExaLog forwarder | Forwarding enriched events to ExaLog (`workflow.enriched-events`). |
+| ExaLog indexation realtime | Real-time ExaLog indexation rate. |
 | Alerts | Alert generation rate. |
 | Rate-limited alerts | Alerts rate-limited by community and rule. |
 | Telemetry | Telemetry pipeline throughput. |
@@ -244,7 +244,7 @@ The output surfaces pods with over-provisioned memory requests (highlighted in r
 ## Recommended daily monitoring workflow
 
 1. Open the **Default** dashboard in Grafana. Review the **Global info** row: check that no pods are failed or pending, that the API error rate and event-to-alert delay are within normal bounds, and that PVC and filesystem usage are not approaching saturation.
-2. Expand the **Global workflow** row. Verify that ingestion, pre-parsing, sigma-workflow, and Quickwit indexation are all processing events at the expected rate and that no stage shows a backlog.
+2. Expand the **Global workflow** row. Verify that ingestion, pre-parsing, sigma-workflow, and ExaLog indexation are all processing events at the expected rate and that no stage shows a backlog.
 3. Expand the **Kafka** row. Confirm consumer lag is stable and no topics have offline or underreplicated partitions.
 4. Expand the **Ceph** row. Check disk usage percentage, estimated days before capacity is reached, and confirm no slow disks are reported.
 5. Review active alerts in Prometheus. Acknowledge or escalate as needed.

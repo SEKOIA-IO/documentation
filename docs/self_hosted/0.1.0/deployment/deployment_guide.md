@@ -116,6 +116,10 @@ TTY_FLAGS=""
 docker run --rm $TTY_FLAGS \
   -e SERVERS_SUDO_PASSWORD="$SERVERS_SUDO_PASSWORD" \
   -e SERVERS_SSH_KEY="$SERVERS_SSH_KEY" \
+  -e STORAGE_S3_REGION="$STORAGE_S3_REGION" \
+  -e STORAGE_S3_ENDPOINT="$STORAGE_S3_ENDPOINT" \
+  -e STORAGE_S3_ACCESS_KEY="$STORAGE_S3_ACCESS_KEY" \
+  -e STORAGE_S3_SECRET_KEY="$STORAGE_S3_SECRET_KEY" \
   -e REGISTRY_USERNAME="$REGISTRY_USERNAME" \
   -e REGISTRY_PASSWORD="$REGISTRY_PASSWORD" \
   -e GIT_HTTP_USERNAME="$GIT_HTTP_USERNAME" \
@@ -134,6 +138,10 @@ Set the following environment variables on the orchestration node before running
 | `SEKOIA_LOCAL_DIR` | Yes | Absolute path to the directory where you extracted the release archive. |
 | `SEKOIA_CONFIG_FILE` | Yes | Absolute path to your `config.yml` manifest on the orchestration node. |
 | `SERVERS_SSH_KEY` | Yes | SSH private key used to connect to Kubernetes nodes. |
+| `STORAGE_S3_REGION` | Yes | Region of the S3-compatible platform storage. |
+| `STORAGE_S3_ENDPOINT` | Yes | Endpoint of the S3-compatible platform storage. |
+| `STORAGE_S3_ACCESS_KEY` | Yes | Access key for the S3-compatible platform storage. |
+| `STORAGE_S3_SECRET_KEY` | Yes | Secret key for the S3-compatible platform storage. |
 | `REGISTRY_USERNAME` | Yes | Username for your local OCI registry. |
 | `REGISTRY_PASSWORD` | Yes | Password for your local OCI registry. |
 | `GIT_HTTP_USERNAME` | Yes | Username for your local code repository. |
@@ -233,14 +241,14 @@ To generate the platform configuration, run the installer job, and retrieve the 
 
 **Step 6: Bootstrap and scale the platform.**
 
-To provision the default storage and the per-community Quickwit indexes, then scale the ingestion and detection workers to their configured replica count, run:
+To provision the default storage and the per-community ExaLog indexes, then scale the ingestion and detection workers to their configured replica count, run:
 
 ```bash
 ./run-shc.sh exec InstanceBootstrap
 ./run-shc.sh exec ScaleServices
 ```
 
-Run these two modules in this order. Until `InstanceBootstrap` completes, the Quickwit metastore holds no index and the indexers write nothing to your S3 bucket. See [Post-installation bootstrap](./deployment_process.md#post-installation-bootstrap) for what each module provisions.
+Run these two modules in this order. Until `InstanceBootstrap` completes, ExaLog has no index and cannot write events to your S3-compatible storage. See [Post-installation bootstrap](./deployment_process.md#post-installation-bootstrap) for what each module provisions.
 
 ## Post-deployment validation
 
@@ -301,7 +309,7 @@ To open the Sekoia interface, navigate to the URL set in `global.host` of your `
 ## Related links
 
 - [Technical requirements](./deployment_prerequisites.md): Hardware and network prerequisites.
-- [Deployment configuration reference](./deployment_configuration.md): Full `config.yml` parameter reference.
+- [Configure the deployment](./deployment_configuration.md): Starter configuration and required-field reference.
 - [Debug your deployment](../troubleshooting/debug_tool.md): Troubleshooting commands and remediation steps.
 - [Set up the first administrator account](../operations/first_login.md): Post-installation user provisioning.
 - [Use the controller interface](../operations/controller_interface.md): Follow the installation and inspect the cluster from the interactive interface.
