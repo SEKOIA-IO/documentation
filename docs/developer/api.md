@@ -188,8 +188,7 @@ template: overrides/openapi.html
                         "Rules",
                         "Alert filters",
                         "Assets",
-                        "Playbooks",
-                            "Automation statistics", // => Playbooks
+                        "Automation statistics",
                         "AI assistant",
                         "Statistics", // ?
                     ]
