@@ -116,7 +116,6 @@ nav:
       - Splunk: cti/features/integrations/splunk.md
       - Splunk SOAR: cti/features/integrations/splunk_soar.md
       - Swimlane Turbine: cti/features/integrations/swimlane_turbine.md
-      - Harven: cti/features/integrations/harven.md
       - Anomali ThreatStream: cti/features/integrations/anomali.md
       - PaloAlto Cortex XSOAR: cti/features/integrations/paloalto_xsoar.md
       - PaloAlto Cortex XSIAM: cti/features/integrations/paloalto_xsiam.md
@@ -229,6 +228,7 @@ nav:
       - Playbooks JSON Schema: xdr/features/automate/playbooks_format_json_schema.md
     - External integrations:
       - FortiSOAR: xdr/features/integrations/fortisoar.md
+      - Harven: xdr/features/integrations/harven.md
       - Palo Alto Cortex XSOAR: xdr/features/integrations/interconnect_sekoia_with_xsoar.md
       - Qevlar: xdr/features/integrations/qevlar.md
       - Swimlane Turbine: xdr/features/integrations/swimlane_turbine.md
