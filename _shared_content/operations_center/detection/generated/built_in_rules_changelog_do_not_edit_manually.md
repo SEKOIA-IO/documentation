@@ -1,7 +1,16 @@
-Changelog _last update on 2026-08-27_
+Changelog _last update on 2026-09-03_
 
 ## Changelog
 
+### Active Directory Replication from Non Machine Account
+  - 03/09/2026 - major - Effort level and severity changed.
+  - 26/03/2024 - major - Rule's pattern field changed
+    
+### DCSync Attack
+  - 03/09/2026 - major - Effort level and severity changed.
+  - 05/09/2024 - minor - Changing name of elements.
+  - 26/03/2024 - major - Rule's pattern field changed
+    
 ### SentinelOne EDR Threat Detected (Malicious)
   - 24/07/2026 - minor - Update rule similarity to threatId.
   - 02/02/2026 - minor - Update rule type to integration
@@ -1152,10 +1161,6 @@ Changelog _last update on 2026-08-27_
 ### Suspicious URL Requested By Curl Or Wget Commands
   - 23/09/2024 - major - Fixed an issue with the detection pattern.
     
-### DCSync Attack
-  - 05/09/2024 - minor - Changing name of elements.
-  - 26/03/2024 - major - Rule's pattern field changed
-    
 ### Correlation Multi Service Disable
   - 21/08/2024 - minor - Adding a space to reduce false positives.
     
@@ -1517,9 +1522,6 @@ Changelog _last update on 2026-08-27_
   - 26/03/2024 - major - Rule's pattern field changed
     
 ### Dynwrapx Module Loading
-  - 26/03/2024 - major - Rule's pattern field changed
-    
-### Active Directory Replication from Non Machine Account
   - 26/03/2024 - major - Rule's pattern field changed
     
 ### Eventlog Cleared

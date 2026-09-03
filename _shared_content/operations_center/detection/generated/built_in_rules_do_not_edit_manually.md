@@ -1,4 +1,4 @@
-Rules catalog includes **1085 built-in detection rules** ([_last update on 2026-08-27_](rules_changelog.md)).
+Rules catalog includes **1085 built-in detection rules** ([_last update on 2026-09-03_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Identity Information**
 
@@ -9762,11 +9762,12 @@ Rules catalog includes **1085 built-in detection rules** ([_last update on 2026-
     
     Detects potential abuse of Active Directory Replication Service (ADRS) from a non machine account to request credentials. It requires a configuration step where the legit service account should be added to the exclusion list.
     
-    - **Effort:** advanced
+    - **Effort:** master
     
     - **Changelog:**
     
         - 26/03/2024 - major - Rule's pattern field changed
+        - 03/09/2026 - major - Effort level and severity changed.
             
 ??? abstract "Cmdkey Cached Credentials Recon"
     
@@ -9822,12 +9823,13 @@ Rules catalog includes **1085 built-in detection rules** ([_last update on 2026-
     
     Detects DCSync attack, it is highly likely that the post-exploitation tool Mimikatz was executed.
     
-    - **Effort:** intermediate
+    - **Effort:** master
     
     - **Changelog:**
     
         - 26/03/2024 - major - Rule's pattern field changed
         - 05/09/2024 - minor - Changing name of elements.
+        - 03/09/2026 - major - Effort level and severity changed.
             
 ??? abstract "DPAPI Domain Backup Key Extraction"
     
