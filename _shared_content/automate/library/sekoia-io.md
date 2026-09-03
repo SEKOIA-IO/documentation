@@ -212,6 +212,36 @@ Alerts have been added to or removed from a case
 | `deleted_alerts` | `array` | List of Unique identifier of removed alerts (UUID string). |
 
 
+### Case Comment Created
+
+A comment was added to an existing Case
+
+**Arguments**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `mode_filter` | `string` | Create a run only for cases matching a mode (automatic or manual) |
+| `priority_uuids_filter` | `array` | Create a run only for cases matching a list of priority uuids |
+| `assignees_filter` | `array` | Create a run only for cases matching a list of assignees |
+| `case_uuids_filter` | `array` | Create a run only for cases matching a list of case uuids/short ids |
+
+
+**Outputs**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `comment` | `object` | Case comment (object containing comment uuid, content, author, date). |
+| `uuid` | `string` | Unique identifier of the Case (UUID string). |
+| `short_id` | `string` | Unique short identifier of the Case. |
+| `status_uuid` | `string` | Unique identifier of the Status (UUID string). |
+| `priority_uuid` | `string` | Unique identifier of the Priority (UUID string). |
+| `verdict_uuid` | `['string', 'null']` | Unique identifier of the Verdict (UUID string). |
+| `created_at` | `string` | Creation date of the Case. |
+| `updated_at` | `string` | Updated date of the Case. |
+| `title` | `string` | Title of the Case. |
+| `description` | `string` | Description of the Case. |
+
+
 ### Case Created
 
 A new Case was created in the Operation Center
@@ -273,6 +303,17 @@ An existing case was updated
 | `status_uuid` | `string` | Unique identifier of the Status (UUID string). |
 | `priority_uuid` | `string` | Unique identifier of the Priority (UUID string). |
 | `verdict_uuid` | `string` | Unique identifier of the Verdict (UUID string). |
+
+
+### Manual Trigger for Case
+
+Webhook Trigger to receive specific Sekoia.io Cases
+
+**Outputs**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `case_uuid` | `string` | Unique identifier of the Case (UUID string). |
 
 
 ### Feed Consumption
@@ -400,18 +441,17 @@ Add events to a case
 
 ### Add IOC to IOC Collection
 
-Add indicators to an IOC Collection
+Add indicators to an IOC collection.
 
 **Arguments**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
-| `indicator` | `string` | Single indicator to add to an IOC collection. |
-| `indicators` | `array` | List of indicators to add to an IOC collection |
-| `indicators_path` | `string` | Path of the indicators file to add to an IOC collection |
-| `ioc_collection_id` | `string` | Identifier of the IOC collection |
-| `indicator_type` | `string` | Type of IOC |
-| `valid_for` | `integer` | Validity period for the created indicators (in days) |
+| `indicator` | `string` | Single indicator to add to an IOC collection. For IP address type, provide a plain IPv4 or IPv6 value (CIDR is not supported). |
+| `indicators` | `array` | List of indicators to add to an IOC collection. For IP address type, provide plain IPv4 or IPv6 values (CIDR is not supported). |
+| `ioc_collection_id` | `string` | Identifier of the target IOC collection. |
+| `indicator_type` | `string` | Type of indicator to add. For IP address type, only plain IPv4 or IPv6 values are supported (CIDR is not supported). |
+| `valid_for` | `integer` | Validity period in days for the created indicators. |
 
 ### Add attribute to Asset
 
@@ -792,9 +832,9 @@ Delete a rule
 | `uuid` | `string` |  |
 | `community_uuid` | `string` |  |
 
-### Delete an asset
+### [DEPRECATED] Delete an asset
 
-Delete the requested asset
+(deprecated — use Revoke an asset (V2)) Delete the requested asset
 
 **Arguments**
 
@@ -802,9 +842,9 @@ Delete the requested asset
 | --------- | ------- | --------------------------- |
 | `uuid` | `string` | The identifier of the asset |
 
-### Delete an asset (V2)
+### [DEPRECATED] Delete an asset (V2)
 
-Delete the requested asset
+(deprecated — use Revoke an asset (V2)) Delete the requested asset
 
 **Arguments**
 
@@ -1056,7 +1096,7 @@ Retrieve the definition of an alert
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
-| `uuid` | `string` | UUID of the alert to retrieve. |
+| `uuid` | `string` | The identifier (UUID or short id) of the alert to retrieve. |
 | `stix` | `boolean` | If true, include the full STIX 2 bundle in the response (default: false). |
 | `cases` | `boolean` | Fetch the cases associated with this alert in addition (default: false) |
 
@@ -1089,6 +1129,7 @@ Retrieve the definition of an alert
 | `short_id` | `string` | Human-readable short identifier for the alert (e.g. `ALa1b2c3d4e5`). |
 | `first_seen_at` | `string` | Timestamp of the first event that contributed to this alert. |
 | `last_seen_at` | `string` | Timestamp of the most recent event that contributed to this alert. |
+| `event_uuids` | `array` |  |
 | `kill_chain_short_id` | `string` | Short identifier of the MITRE ATT&CK tactic associated with the alert (e.g. `TA0001` for Initial Access). |
 | `similar` | `integer` | Number of similar alerts detected by the platform's deduplication mechanism. |
 | `alert_type` | `object` | Category and value describing the type of threat (e.g. category `malware`, value `ransomware`). |
@@ -1631,6 +1672,7 @@ Return a list of assets according to the filters
 | `source` | `['string', 'null']` | Filter by comma-separated list of asset sources |
 | `reviewed` | `['boolean', 'null']` | Filter reviewed assets only |
 | `criticality` | `['integer', 'null']` | Filter assets with higher criticality |
+| `include_revoked` | `['boolean', 'null']` | Include revoked assets in the search results |
 | `sort` | `` | Sort criterion |
 | `direction` | `` | Sort order |
 | `rule_uuid` | `['string', 'null']` | Rule Uuid |
@@ -2008,6 +2050,52 @@ Return an asset according to its identifier
 | `criticity` | `['object', 'null']` | The criticality of the asset |
 | `asset_type` | `['object', 'null']` | The type of the asset |
 
+### Revoke an asset (V2)
+
+Revoke the requested asset (soft-delete). Replaces the deprecated Delete an asset actions.
+
+**Arguments**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `uuid` | `string` | The identifier of the asset |
+
+
+**Outputs**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `uuid` | `string` | The identifier of the asset |
+| `entity_uuid` | `` |  |
+| `community_uuid` | `string` | The community of the asset |
+| `name` | `string` | The name of the asset |
+| `type` | `string` | The type of the asset |
+| `category` | `['object', 'string', 'null']` | The category of the asset |
+| `criticality` | `['integer', 'null']` |  |
+| `created_at` | `` | The creation date of the asset |
+| `created_by` | `` |  |
+| `created_by_type` | `['string', 'null']` |  |
+| `updated_at` | `` | The modification date of the asset |
+| `first_seen` | `` |  |
+| `last_seen` | `` |  |
+| `nb_events` | `['integer', 'null']` |  |
+| `nb_alerts` | `['integer', 'null']` |  |
+| `nb_atoms` | `integer` |  |
+| `atoms` | `['object', 'null']` |  |
+| `props` | `['object', 'null']` |  |
+| `tags` | `array` |  |
+| `revoked` | `boolean` |  |
+| `revoked_at` | `` |  |
+| `revoked_by` | `` |  |
+| `reviewed` | `boolean` |  |
+| `reviewed_at` | `` |  |
+| `reviewed_by` | `` |  |
+| `source` | `string` |  |
+| `rule_uuid` | `` |  |
+| `rule_version` | `['string', 'null']` |  |
+| `criticity` | `['object', 'null']` | The criticality of the asset |
+| `asset_type` | `['object', 'null']` | The type of the asset |
+
 ### Synchronize Assets with AD
 
 Create, merge and edit asset to synchronize asset with ad
@@ -2056,7 +2144,7 @@ Triggers an action on an alert to update its status by name
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
 | `uuid` | `string` | The UUID of the alert to update |
-| `status` | `string` | Name of the status to update the alert to |
+| `status` | `string` | Name or UUID of the status to update the alert to (native or custom) |
 | `comment` | `string` | A comment to describe why the alert status has changed |
 
 
@@ -2269,4 +2357,4 @@ Update a rule
 
 ## Extra
 
-Module **`Sekoia.io` v2.72.4**
+Module **`Sekoia.io` v2.76.3**

@@ -1,5 +1,8 @@
 copyright: Copyright &copy; 2026 - Sekoia
 edit_uri: edit/main/docs/
+exclude_docs: 'xdr/features/modules/elevate_investigate_case.md
+
+  '
 extra:
   social:
   - icon: fontawesome/brands/x-twitter
@@ -625,6 +628,7 @@ nav:
       - OpenAI: integration/action_library/openai.md
       - RSS: integration/action_library/rss.md
       - Sekoia.io: integration/action_library/sekoia-io.md
+      - Sekoia.io: integration/action_library/sekoia-io.md
       - Utils: integration/action_library/utils.md
     - IAM:
       - Microsoft Active Directory: integration/action_library/microsoft-active-directory.md
@@ -969,5 +973,3 @@ validation:
   links:
     absolute_links: relative_to_docs
   omitted_files: ignore
-exclude_docs: |
-  xdr/features/modules/elevate_investigate_case.md
