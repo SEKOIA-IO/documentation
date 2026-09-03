@@ -2,6 +2,9 @@
 
 This is the documentation for Sekoia Self-Hosted **0.1.0**. It describes the configuration keys, CLI commands, and behavior of this release only.
 
+!!! warning "Pre-release version"
+    Sekoia Self-Hosted 0.1.0 is currently in pre-release and may contain bugs. Report every bug to Sekoia in a separate report so that each issue can be tracked independently.
+
 For what Sekoia Self-Hosted is and who it is for, see the [section introduction](../index.md). To check whether a more recent release is available, see [Documentation versions](../versions.md).
 
 ## Documentation map

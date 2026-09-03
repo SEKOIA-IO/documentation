@@ -708,7 +708,7 @@ nav:
 - Self-hosted deployment:
   - Introduction: self_hosted/index.md
   - Documentation versions: self_hosted/versions.md
-  - v0.1.0:
+  - v0.1.0 (pre-release):
     - Overview: self_hosted/0.1.0/index.md
     - Architecture:
       - Reference Architecture: self_hosted/0.1.0/architecture/architecture.md
