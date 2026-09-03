@@ -74,7 +74,7 @@ To extract the archive on the orchestration node, run:
 tar -xvf sekoia-self-hosted-v0.1.0.tar -C $SEKOIA_LOCAL_DIR
 ```
 
-### Step 3: Load the SHC Docker image
+### Step 3: Load the self-hosted-controller (SHC) Docker image
 
 For the first installation, the SHC image is not yet available on the orchestration node. Load it manually from the extracted archive:
 
@@ -116,6 +116,10 @@ TTY_FLAGS=""
 docker run --rm $TTY_FLAGS \
   -e SERVERS_SUDO_PASSWORD="$SERVERS_SUDO_PASSWORD" \
   -e SERVERS_SSH_KEY="$SERVERS_SSH_KEY" \
+  -e STORAGE_S3_REGION="$STORAGE_S3_REGION" \
+  -e STORAGE_S3_ENDPOINT="$STORAGE_S3_ENDPOINT" \
+  -e STORAGE_S3_ACCESS_KEY="$STORAGE_S3_ACCESS_KEY" \
+  -e STORAGE_S3_SECRET_KEY="$STORAGE_S3_SECRET_KEY" \
   -e REGISTRY_USERNAME="$REGISTRY_USERNAME" \
   -e REGISTRY_PASSWORD="$REGISTRY_PASSWORD" \
   -e GIT_HTTP_USERNAME="$GIT_HTTP_USERNAME" \
@@ -134,12 +138,16 @@ Set the following environment variables on the orchestration node before running
 | `SEKOIA_LOCAL_DIR` | Yes | Absolute path to the directory where you extracted the release archive. |
 | `SEKOIA_CONFIG_FILE` | Yes | Absolute path to your `config.yml` manifest on the orchestration node. |
 | `SERVERS_SSH_KEY` | Yes | SSH private key used to connect to Kubernetes nodes. |
+| `STORAGE_S3_REGION` | Yes | Region of the S3-compatible platform storage. |
+| `STORAGE_S3_ENDPOINT` | Yes | Endpoint of the S3-compatible platform storage. |
+| `STORAGE_S3_ACCESS_KEY` | Yes | Access key for the S3-compatible platform storage. |
+| `STORAGE_S3_SECRET_KEY` | Yes | Secret key for the S3-compatible platform storage. |
 | `REGISTRY_USERNAME` | Yes | Username for your local OCI registry. |
 | `REGISTRY_PASSWORD` | Yes | Password for your local OCI registry. |
 | `GIT_HTTP_USERNAME` | Yes | Username for your local code repository. |
 | `GIT_HTTP_PASSWORD` | Yes | Password or token for your local code repository. |
 | `SERVERS_SUDO_PASSWORD` | No | Sudo password for target nodes, if required by your SSH configuration. |
-| `DOCKER_IMAGE` | No | Override the SHC Docker image reference. Required in air-gapped environments. |
+| `DOCKER_IMAGE` | No | Override the self-hosted-controller (SHC) Docker image reference. Required in air-gapped environments. |
 | `SEKOIA_INSTANCE_PUBLIC_KEY` | Yes | Public key for the SEKOIA instance. |
 
 To make the script executable and verify the SHC responds, run:
@@ -151,8 +159,11 @@ chmod +x run-shc.sh
 
 A successful run displays the full list of available SHC commands.
 
+!!! note "Commands in this documentation"
+    Commands elsewhere in this documentation omit the `./run-shc.sh` prefix. Enter them as shown in the TUI, or prefix them with `./run-shc.sh` to run them in one-shot CLI mode.
+
 !!! note "Interactive interface"
-    Running `./run-shc.sh` with no command opens the interactive interface of the SHC instead of returning a one-shot result. See [Use the controller interface](../operations/controller_interface.md).
+    Running `./run-shc.sh` with no command opens the interactive interface of the SHC instead of returning a one-shot result. See [Use the SHC interface](../operations/controller_interface.md).
 
 ## Deployment
 
@@ -165,10 +176,13 @@ The bundle command runs all installation steps sequentially. This is the simples
 To run the full installation, enter:
 
 ```bash
-./run-shc.sh exec Install
+exec Install
 ```
 
-Wait for the final convergence report before proceeding to [Post-deployment validation](#post-deployment-validation).
+The platform installation is normally the longest stage. Leave the command running while it continues to emit progress messages, then wait for the final convergence report before proceeding to [Post-deployment validation](#post-deployment-validation).
+
+!!! note "Pre-release installation logs"
+    Warning-level log messages can be normal while Self-Hosted 0.1.0 remains in pre-release. Do not interrupt an installation only because a warning appears while the workflow continues to make progress. The installation has completed when the terminal `Install.start terminated` message reports `success=True` and the [post-deployment validation](#post-deployment-validation) passes. Investigate a terminal `success=False` result, exhausted retries, or a workflow that stops making progress.
 
 ### Option 2: Step-by-step deployment
 
@@ -179,12 +193,13 @@ Use this option when your environment requires manual validation or approval bet
 To validate the environment before any changes are made, run:
 
 ```bash
-./run-shc.sh exec CheckLocalConfig
-./run-shc.sh exec CheckLocalGit
-./run-shc.sh exec CheckLocalOCIRegistry
-./run-shc.sh exec CheckLocalReleaseFiles
-./run-shc.sh exec CheckServersAreReachable
-./run-shc.sh exec CheckServerSpec
+exec CheckLocalConfig
+exec CheckLocalGit
+exec CheckLocalOCIRegistry
+exec CheckLocalReleaseFiles
+exec CheckServersAreReachable
+exec CheckServerSpec
+exec CheckLocalTools
 ```
 
 !!! warning "Preflight block"
@@ -194,31 +209,37 @@ To validate the environment before any changes are made, run:
 
 **Step 2: Configure servers.**
 
-To prepare the operating system and install required packages on all nodes, run:
+Run the server-configuration stage:
 
 ```bash
-./run-shc.sh exec ConfigureServersWithAnsible
+exec ConfigureServersWithAnsible
 ```
+
+!!! note "0.1.0 pre-release behavior"
+    In the 0.1.0 pre-release, `ConfigureServersWithAnsible` is a placeholder and may complete immediately without changing the nodes. Provision the operating system and packages required by [Technical requirements](./deployment_prerequisites.md) before continuing.
 
 **Step 3: Provision local registries.**
 
-To push all Docker images, Helm charts, and ArgoCD stack manifests to your local repositories, run:
+First resolve the versioned detection-rules, intake-formats, and playbook-library bundles. Then push all Docker images, Helm charts, and ArgoCD stack manifests to your local repositories:
 
 ```bash
-./run-shc.sh exec PushImages
-./run-shc.sh exec PushCharts
-./run-shc.sh exec PushArgoStacks
+exec DownloadDataFiles
+exec PushImages
+exec PushCharts
+exec PushArgoStacks
 ```
+
+Each push module runs `DownloadReleaseFiles` as an automatic prerequisite. In online mode, it downloads missing release artifacts; in air-gapped mode, it uses the artifacts staged locally. Repeated runs skip release files and images already present, and `PushArgoStacks` succeeds without a commit when the generated manifests are unchanged.
 
 **Step 4: Install the Kubernetes stack.**
 
 To install K3s and deploy the cluster services, run:
 
 ```bash
-./run-shc.sh exec K3SInstall
-./run-shc.sh exec GetKubeconfig
-./run-shc.sh exec HelmInstall
-./run-shc.sh exec CheckKubernetesCluster
+exec K3SInstall
+exec GetKubeconfig
+exec HelmInstall
+exec CheckKubernetesCluster
 ```
 
 **Step 5: Deploy the Sekoia platform.**
@@ -226,21 +247,24 @@ To install K3s and deploy the cluster services, run:
 To generate the platform configuration, run the installer job, and retrieve the initial access credentials, run:
 
 ```bash
-./run-shc.sh exec PlatformConfigurationFile
-./run-shc.sh exec PlatformInstallation
-./run-shc.sh exec PlatformAccess
+exec PlatformConfigurationFile
+exec PlatformInstallation
+exec PlatformAccess
 ```
 
 **Step 6: Bootstrap and scale the platform.**
 
-To provision the default storage and the per-community Quickwit indexes, then scale the ingestion and detection workers to their configured replica count, run:
+To provision the default storage and the per-community ExaLog indexes, then scale the ingestion and detection workers to their configured replica count, run:
 
 ```bash
-./run-shc.sh exec InstanceBootstrap
-./run-shc.sh exec ScaleServices
+exec InstanceBootstrap
+exec ScaleServices
 ```
 
-Run these two modules in this order. Until `InstanceBootstrap` completes, the Quickwit metastore holds no index and the indexers write nothing to your S3 bucket. See [Post-installation bootstrap](./deployment_process.md#post-installation-bootstrap) for what each module provisions.
+Run these two modules in this order. Until `InstanceBootstrap` completes, ExaLog has no index and cannot write events to your S3-compatible storage. See [Post-installation bootstrap](./deployment_process.md#post-installation-bootstrap) for what each module provisions.
+
+!!! note "Repeated prerequisite modules"
+    The SHC automatically retrieves a current kubeconfig before cluster and platform operations. `PlatformInstallation` and `PlatformAccess` also regenerate the platform configuration before running. Repeated `GetKubeconfig` and `PlatformConfigurationFile` entries in the log are expected and allow each module to run independently.
 
 ## Post-deployment validation
 
@@ -251,7 +275,7 @@ After the installation completes, run the following checks to confirm the platfo
 To confirm all nodes joined the cluster and are ready, run:
 
 ```bash
-./run-shc.sh exec CheckKubernetesCluster
+exec CheckKubernetesCluster
 ```
 
 ??? example "Expected output"
@@ -266,7 +290,7 @@ If the node count does not match, check `kubectl get nodes` to identify which no
 To inspect every ArgoCD application, run:
 
 ```bash
-./run-shc.sh exec DebugArgoCD
+exec DebugArgoCD
 ```
 
 Every application must show `Sync: Synced` and `Health: Healthy`. `Progressing` is normal for a few minutes immediately after deployment. `Degraded` or `OutOfSync` requires investigation. See [Debug your deployment](../troubleshooting/debug_tool.md).
@@ -276,7 +300,7 @@ Every application must show `Sync: Synced` and `Health: Healthy`. `Progressing` 
 To confirm all database StatefulSets and CNPG clusters are ready, run:
 
 ```bash
-./run-shc.sh exec DebugDatabases
+exec DebugDatabases
 ```
 
 All entries must report `Healthy` status with the expected number of ready replicas.
@@ -286,7 +310,7 @@ All entries must report `Healthy` status with the expected number of ready repli
 To run every bundled diagnostic target against the platform's Prometheus metrics, run:
 
 ```bash
-./run-shc.sh exec Diagnostic
+exec Diagnostic
 ```
 
 Every check must report `OK`. A `CRIT` or `WARN` result names the affected service, its likely causes, and the remediation actions. See [Run platform diagnostics](../monitoring/run_diagnostics.md).
@@ -296,13 +320,13 @@ Every check must report `OK`. A `CRIT` or `WARN` result names the affected servi
 To open the Sekoia interface, navigate to the URL set in `global.host` of your `config.yml` (for example, `https://app.sekoia.local`).
 
 !!! note "First login"
-    The platform does not create a default administrator account. You must provision the first user via an email invitation. See [Set up the first administrator account](../operations/first_login.md).
+    `PlatformAccess` returns the generated instance-administrator credentials at the end of the installation. Store them securely, then use them to create your first operational community. See [Set up the first administrator account](../operations/first_login.md).
 
 ## Related links
 
 - [Technical requirements](./deployment_prerequisites.md): Hardware and network prerequisites.
-- [Deployment configuration reference](./deployment_configuration.md): Full `config.yml` parameter reference.
+- [Configure the deployment](./deployment_configuration.md): Starter configuration and required-field reference.
 - [Debug your deployment](../troubleshooting/debug_tool.md): Troubleshooting commands and remediation steps.
 - [Set up the first administrator account](../operations/first_login.md): Post-installation user provisioning.
-- [Use the controller interface](../operations/controller_interface.md): Follow the installation and inspect the cluster from the interactive interface.
+- [Use the SHC interface](../operations/controller_interface.md): Follow the installation and inspect the cluster from the interactive interface.
 - [Run platform diagnostics](../monitoring/run_diagnostics.md): Targeted Prometheus health checks per platform area.

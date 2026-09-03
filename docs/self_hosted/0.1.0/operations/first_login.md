@@ -1,6 +1,6 @@
 # Set up the first administrator account
 
-After a successful deployment, the Self-Hosted Controller displays the platform access credentials directly in the terminal. This guide walks you through retrieving those credentials, logging in, creating your first community, and allocating your subscription.
+After a successful deployment, the self-hosted-controller (SHC) displays the platform access credentials directly in the terminal. This guide walks you through retrieving those credentials, logging in, creating your first community, and allocating your subscription.
 
 ## Before you begin
 
@@ -35,7 +35,7 @@ The table provides credentials for three services: the Sekoia platform (`sekoiai
 To redisplay the credentials at any time, run:
 
 ```bash
-./run-shc.sh exec PlatformAccess
+exec PlatformAccess
 ```
 
 ## Log in to the platform
@@ -115,7 +115,7 @@ Sekoia Self-Hosted supports Single Sign-On via OpenID Connect. SSO is configured
 On the orchestration node, run:
 
 ```bash
-./run-shc.sh exec PlatformAccess
+exec PlatformAccess
 ```
 
 The command displays the platform credentials table. Copy the API key shown in the `sekoiaio` row.

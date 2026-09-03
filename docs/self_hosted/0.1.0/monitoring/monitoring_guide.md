@@ -6,7 +6,7 @@ Sekoia Self-Hosted ships with a complete observability stack and a set of on-dem
 
 - You completed the deployment and validated post-deployment checks in [Deploy the platform](../deployment/deployment_guide.md).
 - You have access to the Grafana interface at `https://<global.host>/grafana`.
-- For SHC diagnostic commands, you must run them from the orchestration node provisioned during installation.
+- For self-hosted-controller (SHC) diagnostic commands, you must run them from the orchestration node provisioned during installation.
 
 ## Monitoring layers
 
@@ -15,7 +15,7 @@ Sekoia Self-Hosted provides two complementary monitoring layers.
 | Layer | Tools | Purpose |
 | :--- | :--- | :--- |
 | Continuous monitoring | Grafana, Loki, Prometheus | Real-time dashboards, log search and metric collection. |
-| On-demand diagnostics | Self-Hosted Controller (SHC) CLI | Targeted health checks on the cluster, applications, databases, and resources. |
+| On-demand diagnostics | self-hosted-controller (SHC) CLI | Targeted health checks on the cluster, applications, databases, and resources. |
 
 Use Grafana for daily operations and trend analysis. Use SHC commands for incident triage, post-deployment validation, and structured platform snapshots.
 
@@ -94,8 +94,8 @@ End-to-end view of the event processing pipeline. Each panel represents one stag
 | sigma-workflow | Sigma rule matching and enrichment. |
 | Correlation Worker | Correlation engine throughput. |
 | eventindexer-ls | Event indexing (`sic.enriched-event` → `sic.event`). |
-| Quickwit forwarder | Forwarding enriched events to Quickwit (`workflow.enriched-events`). |
-| Quickwit Indexation realtime | Real-time Quickwit indexation rate. |
+| ExaLog forwarder | Forwarding enriched events to ExaLog (`workflow.enriched-events`). |
+| ExaLog indexation realtime | Real-time ExaLog indexation rate. |
 | Alerts | Alert generation rate. |
 | Rate-limited alerts | Alerts rate-limited by community and rule. |
 | Telemetry | Telemetry pipeline throughput. |
@@ -191,7 +191,7 @@ For targeted checks on specifics services or layers of the platform using Promet
 To confirm all Kubernetes nodes are ready, run:
 
 ```bash
-./run-shc.sh exec CheckKubernetesCluster
+exec CheckKubernetesCluster
 ```
 
 ??? example "Expected output"
@@ -206,7 +206,7 @@ Run this command first when investigating any platform issue. A mismatch between
 To inspect every ArgoCD application's sync and health state, run:
 
 ```bash
-./run-shc.sh exec DebugArgoCD
+exec DebugArgoCD
 ```
 
 The command renders three panels: registered repositories, root application status, and a per-application table.
@@ -223,7 +223,7 @@ The command renders three panels: registered repositories, root application stat
 To inspect all database StatefulSets and PostgreSQL clusters, run:
 
 ```bash
-./run-shc.sh exec DebugDatabases
+exec DebugDatabases
 ```
 
 All entries must report `Healthy` status with the expected number of ready replicas. A `Warning` status indicates recent restarts. An `Unhealthy` status indicates one or more replicas are not ready.
@@ -233,7 +233,7 @@ All entries must report `Healthy` status with the expected number of ready repli
 To review memory requests versus actual consumption across all pods, run:
 
 ```bash
-./run-shc.sh exec DebugResourceAllocation
+exec DebugResourceAllocation
 ```
 
 !!! note "Metrics Server required"
@@ -244,7 +244,7 @@ The output surfaces pods with over-provisioned memory requests (highlighted in r
 ## Recommended daily monitoring workflow
 
 1. Open the **Default** dashboard in Grafana. Review the **Global info** row: check that no pods are failed or pending, that the API error rate and event-to-alert delay are within normal bounds, and that PVC and filesystem usage are not approaching saturation.
-2. Expand the **Global workflow** row. Verify that ingestion, pre-parsing, sigma-workflow, and Quickwit indexation are all processing events at the expected rate and that no stage shows a backlog.
+2. Expand the **Global workflow** row. Verify that ingestion, pre-parsing, sigma-workflow, and ExaLog indexation are all processing events at the expected rate and that no stage shows a backlog.
 3. Expand the **Kafka** row. Confirm consumer lag is stable and no topics have offline or underreplicated partitions.
 4. Expand the **Ceph** row. Check disk usage percentage, estimated days before capacity is reached, and confirm no slow disks are reported.
 5. Review active alerts in Prometheus. Acknowledge or escalate as needed.
@@ -255,19 +255,19 @@ When an alert fires or a dashboard shows degradation, run the following commands
 
 ```bash
 # 1. Confirm all cluster nodes are ready
-./run-shc.sh exec CheckKubernetesCluster
+exec CheckKubernetesCluster
 
 # 2. Check application sync and health
-./run-shc.sh exec DebugArgoCD
+exec DebugArgoCD
 
 # 3. Inspect database availability
-./run-shc.sh exec DebugDatabases
+exec DebugDatabases
 
 # 4. Review resource allocation
-./run-shc.sh exec DebugResourceAllocation
+exec DebugResourceAllocation
 
 # 4. Check the affected platform service
-./run-shc.sh exec Diagnostic
+exec Diagnostic
 ```
 
 This sequence moves from infrastructure layer to application layer to database layer to resource layer to service layer. Each step scopes the investigation before you move on.
@@ -277,7 +277,7 @@ If applications show `OutOfSync` or `Degraded` after running `DebugArgoCD`, cont
 ## Related links
 
 - [Run platform diagnostics](run_diagnostics.md): Targeted Prometheus health checks for platform services.
-- [Use the controller interface](../operations/controller_interface.md): Live node, cluster, storage, and diagnostics views in the interactive SHC interface.
+- [Use the SHC interface](../operations/controller_interface.md): Live node, cluster, storage, and diagnostics views in the interactive SHC interface.
 - [Debug your deployment](../troubleshooting/debug_tool.md): Full SHC debug command reference with remediation steps.
 - [Deploy the platform](../deployment/deployment_guide.md): Post-deployment validation commands.
 - [Technical requirements](../deployment/deployment_prerequisites.md): Compute node and S3 storage requirements.

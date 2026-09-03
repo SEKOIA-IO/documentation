@@ -1,11 +1,11 @@
 # Debug your deployment
 
-The Self-Hosted Controller (SHC) provides a set of diagnostic commands that let you validate configuration, inspect cluster health, audit secrets, diagnose database issues, and analyse resource usage. This article is a full reference for those commands, including expected outputs and remediation steps.
+The self-hosted-controller (SHC) provides a set of diagnostic commands that let you validate configuration, inspect cluster health, audit secrets, diagnose database issues, and analyse resource usage. This article is a full reference for those commands, including expected outputs and remediation steps.
 
 All commands are executed from the **orchestration node** using the `exec` subcommand:
 
 ```bash
-./run-shc.sh exec <COMMAND>
+exec <COMMAND>
 ```
 
 ## Configuration validation
@@ -15,7 +15,7 @@ All commands are executed from the **orchestration node** using the `exec` subco
 Validates every key in your `config.yml` against the SHC schema.
 
 ```bash
-./run-shc.sh exec CheckLocalConfig
+exec CheckLocalConfig
 ```
 
 The check reports:
@@ -32,19 +32,19 @@ The check reports:
 ??? example "Example failure output"
     ```
     Missing required config key=global.version.platform.version
-    Format mismatch key=utils.oci_registry.url value=registry.lab expected_format=^https?://
+    Format mismatch key=utils.oci_registry.host value=https://registry.lab expected_format=^[a-zA-Z0-9]
     Configuration validation failed: 2 error(s) found
     ```
 
-**What to do after a failure:** Review each error line. Add any missing required keys to `config.yml`. Fix values that do not match the expected format, for example a URL missing the `https://` scheme.
+**What to do after a failure:** Review each error line. Add any missing required keys to `config.yml`. Fix values that do not match the expected format. For example, `utils.oci_registry.host` must be a bare hostname with no `http://` or `https://` scheme.
 
 To inspect all resolved environment variable values before the schema check runs, add the `-v` flag:
 
 ```bash
-./run-shc.sh -v exec CheckLocalConfig
+-v exec CheckLocalConfig
 ```
 
-The verbose output includes the fully resolved in-memory config tree, including every `env.VAR_NAME` value substituted with its actual content. Use this to confirm that secrets injected via environment variables are correctly loaded.
+The verbose output includes the fully resolved in-memory config tree, including every `${env.VAR_NAME}` value substituted with its actual content. Use this to confirm that secrets injected via environment variables are correctly loaded.
 
 ## Infrastructure connectivity
 
@@ -53,7 +53,7 @@ The verbose output includes the fully resolved in-memory config tree, including 
 Tests SSH connectivity to all nodes listed in `utils.ansible.inventory`.
 
 ```bash
-./run-shc.sh exec CheckServersAreReachable
+exec CheckServersAreReachable
 ```
 
 ??? example "Expected output"
@@ -74,27 +74,24 @@ Tests SSH connectivity to all nodes listed in `utils.ansible.inventory`.
 Runs the `check_servers_spec` Ansible playbook against every manager and worker node in `utils.ansible.inventory`, and reports the first requirement each node fails.
 
 ```bash
-./run-shc.sh exec CheckServerSpec
+exec CheckServerSpec
 ```
 
 The command checks the following, in this order.
 
-| Check | Requirement | Applies |
-| :--- | :--- | :--- |
-| Unique hostnames | No two nodes share a hostname | Always |
-| OS family | Debian-based | Always |
-| OS version | Debian 12 or later | Always |
-| CPU | 44 cores or more per node | Unless `global.dev` is enabled |
-| RAM | 120 GiB or more per node | Unless `global.dev` is enabled |
-| NTP enabled | `timedatectl` reports `NTP=yes` | Always |
-| Clock synchronized | `timedatectl` reports `NTPSynchronized=yes` | Always |
-| Port availability | TCP 80, 443, 2379, 2380, 4240, 4250, 6443, 10514, and 11514 can be bound | Before K3s is installed |
-| Dedicated storage disk | One unused block device of 200 GB or more, with no partition table and no filesystem | Before K3s is installed |
+| Check | Requirement |
+| :--- | :--- |
+| Unique hostnames | No two nodes share a hostname |
+| OS family | Debian-based |
+| OS version | Debian 12 or later |
+| CPU | 44 cores or more per node |
+| RAM | 120 GiB or more per node |
+| NTP enabled | `timedatectl` reports `NTP=yes` |
+| Clock synchronized | `timedatectl` reports `NTPSynchronized=yes` |
+| Port availability | TCP 80, 443, 2379, 2380, 4240, 4250, 6443, 10514, and 11514 can be bound before K3s is installed |
+| Dedicated storage disk | One unused block device of 200 GB or more, with no partition table and no filesystem, before K3s is installed |
 
 The last two checks are skipped once K3s is installed on the node. After the installation, the ports are bound by the cluster and the storage disk is consumed by Ceph and Longhorn, so requiring them to be free would fail every re-run.
-
-!!! warning "Dev mode instances are not supported"
-    When `global.dev` is enabled, the command skips the CPU and RAM checks and logs a warning. Sekoia.io does not support instances installed below the minimum hardware specification and cannot guarantee their behavior.
 
 **What to do after a failure:**
 
@@ -113,7 +110,7 @@ The last two checks are skipped once K3s is installed on the node. After the ins
 Connects to the Kubernetes API and verifies that every node has a `Ready=True` condition and that the actual node count matches your Ansible inventory.
 
 ```bash
-./run-shc.sh exec CheckKubernetesCluster
+exec CheckKubernetesCluster
 ```
 
 ??? example "Expected output"
@@ -134,7 +131,7 @@ Connects to the Kubernetes API and verifies that every node has a `Ready=True` c
 Verifies that every asset declared under `global.version` exists in the expected directory on the orchestration node.
 
 ```bash
-./run-shc.sh exec CheckLocalReleaseFiles
+exec CheckLocalReleaseFiles
 ```
 
 **What to do after a failure:** Confirm that the release archive was fully extracted and that `global.version.platform.path` points to the correct directory.
@@ -144,7 +141,7 @@ Verifies that every asset declared under `global.version` exists in the expected
 Clones the repository configured in `utils.git.repo_url` and tests both pull and push access.
 
 ```bash
-./run-shc.sh exec CheckLocalGit
+exec CheckLocalGit
 ```
 
 **What to do after a failure:**
@@ -158,7 +155,7 @@ Clones the repository configured in `utils.git.repo_url` and tests both pull and
 Tests push, pull, and delete access to your OCI registry. If push fails, pull and delete are skipped and reported as untested.
 
 ```bash
-./run-shc.sh exec CheckLocalOCIRegistry
+exec CheckLocalOCIRegistry
 ```
 
 **What to do after a failure:**
@@ -174,7 +171,7 @@ Tests push, pull, and delete access to your OCI registry. If push fails, pull an
 Renders a three-panel status dashboard for all ArgoCD repositories, the root application, and every managed application.
 
 ```bash
-./run-shc.sh exec DebugArgoCD
+exec DebugArgoCD
 ```
 
 **Reading the application table:**
@@ -197,7 +194,7 @@ Renders a three-panel status dashboard for all ArgoCD repositories, the root app
 Forces a three-phase full re-synchronization of all ArgoCD applications in parallel.
 
 ```bash
-./run-shc.sh exec DebugArgoCDSyncAll
+exec DebugArgoCDSyncAll
 ```
 
 The three phases are:
@@ -222,7 +219,7 @@ Compares declared `SecretGenerator` CRDs against actual Kubernetes `Secret` obje
 - The Vault path expected for each missing secret.
 
 ```bash
-./run-shc.sh exec DebugMissingSecrets
+exec DebugMissingSecrets
 ```
 
 **What to do after a failure:**
@@ -236,7 +233,7 @@ Compares declared `SecretGenerator` CRDs against actual Kubernetes `Secret` obje
 Clones the ArgoCD Git repository and scans every YAML file for unrendered `SH_TMPL` template placeholders. For each match, it reports the file path, resource type, and the YAML field that was not substituted.
 
 ```bash
-./run-shc.sh exec DebugKustomizeStacksTemplates
+exec DebugKustomizeStacksTemplates
 ```
 
 **What to do after a failure:**
@@ -251,7 +248,7 @@ Clones the ArgoCD Git repository and scans every YAML file for unrendered `SH_TM
 Inspects all StatefulSets and CloudNativePG clusters in the `support` namespace.
 
 ```bash
-./run-shc.sh exec DebugDatabases
+exec DebugDatabases
 ```
 
 **Status definitions:**
@@ -275,7 +272,7 @@ Inspects all StatefulSets and CloudNativePG clusters in the `support` namespace.
 Queries the Kubernetes Metrics API and compares live memory consumption against declared memory requests for every pod.
 
 ```bash
-./run-shc.sh exec DebugResourceAllocation
+exec DebugResourceAllocation
 ```
 
 !!! note "Metrics Server required"
@@ -295,7 +292,7 @@ Deploys the `platform-installer` Helm chart with a `pause` command override, cre
 Use this to open an interactive shell inside the installer container and inspect its runtime environment, mounted secrets, and configuration files.
 
 ```bash
-./run-shc.sh exec DebugPlatformInstallation
+exec DebugPlatformInstallation
 ```
 
 Once the pod is running, open a shell with:
@@ -313,7 +310,7 @@ Any previous debug session is cleaned up automatically before the new pod is cre
 Reboots all nodes listed in `utils.ansible.inventory` and waits for them to come back online.
 
 ```bash
-./run-shc.sh exec RebootNodes
+exec RebootNodes
 ```
 
 Use this when patching the OS or applying kernel updates. The playbook waits for SSH to become available again on each node before reporting success.
@@ -323,7 +320,7 @@ Use this when patching the OS or applying kernel updates. The playbook waits for
 Restarts all pods across the cluster in ordered namespace phases and waits for each phase to become healthy before moving to the next. Use this after an unexpected node crash or manual cluster restart that left pods stuck in a failed state.
 
 ```bash
-./run-shc.sh exec KubeCrashRecovery
+exec KubeCrashRecovery
 ```
 
 The phases run in this order: `kube*` namespaces → `rook-ceph` → `vault` → `*system*` → `support` → all remaining namespaces. Each phase waits up to `modules.kube_crash_recovery.pod_ready_timeout` seconds (default: `300`) before giving up.
@@ -338,7 +335,7 @@ Detects and wipes disks previously used by Ceph. Only runs when `modules.wipe_st
     This command permanently destroys all data on detected Ceph disks. Only run this when explicitly instructed by Sekoia, for example during a full cluster reinstallation.
 
 ```bash
-./run-shc.sh exec WipeStorageDisks
+exec WipeStorageDisks
 ```
 
 ## Service diagnostics
@@ -348,7 +345,7 @@ Detects and wipes disks previously used by Ceph. Only runs when `modules.wipe_st
 Evaluates rule-based health checks against the platform's Prometheus metrics and reports the state of each platform area.
 
 ```bash
-./run-shc.sh exec Diagnostic
+exec Diagnostic
 ```
 
 Use this command once the infrastructure and application layers are healthy but a platform feature misbehaves, for example alerts that stop being created or assets that stop being discovered. For the available targets, the output formats, and how to read a result, see [Run platform diagnostics](../monitoring/run_diagnostics.md).
@@ -370,7 +367,7 @@ When you escalate an issue to Sekoia L3 support, include the following in your r
 4. If applications are degraded, collect ArgoCD and pod logs:
 
     ```bash
-    ./run-shc.sh exec DebugArgoCD
+    exec DebugArgoCD
     kubectl get pods -A --field-selector=status.phase!=Running,status.phase!=Succeeded
     kubectl logs -n <namespace> <pod-name> --previous
     ```
@@ -381,4 +378,4 @@ When you escalate an issue to Sekoia L3 support, include the following in your r
 - [Deploy the platform](../deployment/deployment_guide.md): Post-deployment validation commands.
 - [Deployment configuration reference](../deployment/deployment_configuration.md): How to fix configuration errors flagged by `CheckLocalConfig`.
 - [Run platform diagnostics](../monitoring/run_diagnostics.md): Targeted Prometheus health checks per platform area.
-- [Use the controller interface](../operations/controller_interface.md): Run commands and diagnostics from the interactive interface.
+- [Use the SHC interface](../operations/controller_interface.md): Run commands and diagnostics from the interactive interface.

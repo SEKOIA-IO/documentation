@@ -1,30 +1,32 @@
 # The deployment process
 
-The Self-Hosted Controller (SHC) is the orchestration CLI that manages every phase of the Sekoia Self-Hosted platform lifecycle, from initial installation to day-to-day operations. This article explains how the SHC works, what commands it exposes, and how it handles different deployment environments.
+The self-hosted-controller (SHC) manages every phase of the Sekoia Self-Hosted platform lifecycle, from initial installation to day-to-day operations. It provides an interactive terminal user interface (TUI) for operators and a one-shot command-line interface (CLI) for scripts and unattended runs. This article explains how the SHC works, what commands it exposes, and how it handles different deployment environments.
 
 ## Core principles
 
 The SHC is built on three design pillars.
 
-**Preflight validation.** Before executing any change, the SHC runs a comprehensive set of checks: OS versions, network connectivity, configuration schema, file checksums, and repository access. Execution is blocked until every check passes.
+**Preflight validation.** Before executing any change, the SHC runs a comprehensive set of checks: OS versions, network connectivity, configuration schema, local release directories, required tools, and repository access. Execution is blocked until every check passes.
 
 **Declarative configuration.** The `config.yml` manifest is the single source of truth for the entire platform state: infrastructure settings (node IPs, load balancers, DNS), service configuration (SMTP, feature toggles), and scaling parameters (node counts, resource quotas). The SHC computes the difference between the actual and desired state and executes only the tasks required to converge.
 
-**Idempotency.** Every SHC command can be re-run safely. If a step already completed successfully, the SHC skips it and continues from where it left off.
+**Idempotency.** Installation modules can be re-run safely. Existing artifacts and already-converged resources are skipped or reconciled, so the workflow can continue from where it left off. Destructive lifecycle commands, such as `K3SUninstall` and `WipeStorageDisks`, are exceptions and must be used only for their documented purpose.
 
 ## Execution modes
 
 | Mode | Description | When to use |
 | :--- | :--- | :--- |
-| Online | The SHC fetches release artifacts from Sekoia's authorized S3 bucket. Requires internet access. Configured via `global.version.fetch` in `config.yml`. | Standard internet-connected deployments. |
-| Air-gapped | The SHC operates in fully disconnected mode using a pre-staged release archive and locally cached manifests. All registry operations point to customer-managed repositories. | Restricted or classified environments with no external connectivity. |
+| Online | The self-hosted-controller (SHC) fetches release artifacts from Sekoia's authorized S3 bucket. Requires internet access. Configured via `global.version.fetch` in `config.yml`. | Standard internet-connected deployments. |
+| Air-gapped | The self-hosted-controller (SHC) operates in fully disconnected mode using a pre-staged release archive and locally cached manifests. All registry operations point to customer-managed repositories. | Restricted or classified environments with no external connectivity. |
 
 ## Available commands
 
-To display the full list of SHC commands and their descriptions, run:
+Run `./run-shc.sh` without a command to open the TUI. Use it for streamed command output, installation progress, and live Machines, Kubernetes, Storage, and Diagnostics views. See [Use the SHC interface](../operations/controller_interface.md).
+
+To display the full list of SHC modules in one-shot CLI mode, run:
 
 ```bash
-./run-shc.sh list
+list
 ```
 
 ??? example "Example output"
@@ -33,11 +35,13 @@ To display the full list of SHC commands and their descriptions, run:
 
       Install                       Run the full installation workflow
       DownloadReleaseFiles          Download release files from S3 to local storage
+      DownloadDataFiles             Download security content bundles to local storage
 
       CheckLocalConfig              Validate the local controller configuration file
       CheckLocalGit                 Verify connectivity and access to the git repository
       CheckLocalOCIRegistry         Verify push/pull/delete access to the OCI registry
-      CheckLocalReleaseFiles        Verify that all release files are present on disk
+      CheckLocalReleaseFiles        Verify that configured release directories are present
+      CheckLocalTools               Validate the tools required by the installation workflow
       CheckServersAreReachable      Check SSH connectivity to all configured servers
       CheckServerSpec               Check that servers meet hardware and OS requirements
       CheckKubernetesCluster        Check the Kubernetes cluster is reachable and all nodes are Ready
@@ -56,7 +60,7 @@ To display the full list of SHC commands and their descriptions, run:
       PlatformConfigurationFile     Generate the platform-installer Helm values file
       PlatformInstallation          Run the platform installation via a single installer job
       PlatformAccess                Display platform access credentials (URLs, users, passwords)
-      InstanceBootstrap             Bootstrap default storage and per-community Quickwit indexes
+      InstanceBootstrap             Bootstrap default storage and per-community ExaLog indexes
       ScaleServices                 Scale Deployments to their configured replica count
 
       RebootNodes                   Reboot all nodes in the inventory
@@ -79,11 +83,24 @@ The `Install` command runs every module below, in order, grouped into five stage
 
 | Stage | Modules | What the stage does |
 | :--- | :--- | :--- |
-| `checks` | `CheckLocalConfig`, `CheckLocalGit`, `CheckLocalOCIRegistry`, `CheckLocalReleaseFiles`, `CheckServersAreReachable`, `CheckServerSpec` | Validates the configuration, the repositories, the local artifacts, and every node against the hardware, OS, storage, hostname, and time-sync requirements. |
-| `server_config` | `ConfigureServersWithAnsible` | Prepares the operating system and installs the required packages on all nodes. |
-| `push` | `PushImages`, `PushCharts`, `PushArgoStacks` | Publishes the images, the charts, and the ArgoCD stacks to your registries. |
+| `checks` | `CheckLocalConfig`, `CheckLocalGit`, `CheckLocalOCIRegistry`, `CheckLocalReleaseFiles`, `CheckServersAreReachable`, `CheckServerSpec`, `CheckLocalTools` | Validates the configuration, the repositories, the local release directories, the controller tools, and every node against the hardware, OS, storage, hostname, and time-sync requirements. |
+| `server_config` | `ConfigureServersWithAnsible` | Runs the server-configuration stage. In the 0.1.0 pre-release, this module is a placeholder and may complete without changing the nodes; provision the required OS and packages before installation. |
+| `push` | `DownloadDataFiles`, `PushImages`, `PushCharts`, `PushArgoStacks` | Resolves the security content bundles and publishes the images, charts, and ArgoCD stacks to your local repositories. |
 | `kubernetes` | `K3SInstall`, `GetKubeconfig`, `HelmInstall`, `CheckKubernetesCluster` | Installs the K3s cluster and the cluster services, then verifies that every node is `Ready`. |
-| `platform` | `PlatformConfigurationFile`, `PlatformInstallation`, `PlatformAccess`, `InstanceBootstrap`, `ScaleServices` | Renders the installer values, runs the platform installer, returns the access credentials, provisions the default storage and Quickwit indexes, and scales the workers to their target replica count. |
+| `platform` | `PlatformConfigurationFile`, `PlatformInstallation`, `PlatformAccess`, `InstanceBootstrap`, `ScaleServices` | Renders the installer values, runs the platform installer, returns the access credentials, provisions the default storage and ExaLog indexes, and scales the workers to their target replica count. |
+
+### Automatic prerequisites and repeated modules
+
+Some modules invoke their prerequisites every time they run. Consequently, the log contains more module executions than the five-stage table:
+
+- Each of `PushImages`, `PushCharts`, and `PushArgoStacks` invokes `DownloadReleaseFiles` first.
+- `CheckKubernetesCluster` retrieves a current kubeconfig before checking the nodes.
+- `PlatformInstallation` and `PlatformAccess` retrieve a current kubeconfig and regenerate the platform configuration before running.
+- `InstanceBootstrap` and `ScaleServices` each retrieve a current kubeconfig before changing platform resources.
+
+These repeated executions are expected. They ensure that a module also works when you run it directly instead of through `Install`.
+
+Artifact operations are also cache-aware. `DownloadReleaseFiles` skips files already present, `PushImages` skips images already available in the target registry, and `PushArgoStacks` does not create a commit when the generated manifests are unchanged. These outcomes indicate successful convergence, not an incomplete installation.
 
 ### Post-installation bootstrap
 
@@ -92,9 +109,9 @@ The last two modules of the `platform` stage bring a freshly-installed region in
 `InstanceBootstrap` provisions the storage layer the platform needs before it can write events:
 
 1. Declares the default storage backend on the `communityapi` deployment in the `common` namespace.
-2. Reconciles the per-community Quickwit indexes and their Kafka sources on the `storage-manager` deployment in the `sic` namespace.
+2. Reconciles the per-community ExaLog indexes and their Kafka sources on the `storage-manager` deployment in the `sic` namespace.
 
-On a new region the Quickwit metastore holds no index, so without this step the indexers stay idle and never write to your S3 bucket.
+On a new region ExaLog has no index, so without this step the indexers stay idle and never write to your S3-compatible storage.
 
 `ScaleServices` then scales the ingestion and detection Deployments (for example `ingestworker1` and `sigma-workflow-worker1`) to their configured replica count. Deployments already at their target count are left untouched. The module runs last so the workers start consuming only once the storage layer is ready.
 
@@ -102,7 +119,7 @@ On a new region the Quickwit metastore holds no index, so without this step the 
 
 The SHC handles the full platform lifecycle beyond initial installation.
 
-| Operation | SHC command |
+| Operation | self-hosted-controller (SHC) command |
 | :--- | :--- |
 | Post-deployment health check | `CheckKubernetesCluster`, `DebugArgoCD` |
 | Database diagnostics | `DebugDatabases` |
@@ -117,7 +134,7 @@ The SHC handles the full platform lifecycle beyond initial installation.
 ## Related links
 
 - [Deploy the platform](./deployment_guide.md): Step-by-step installation instructions.
-- [Deployment configuration reference](./deployment_configuration.md): Full `config.yml` parameter reference.
+- [Configure the deployment](./deployment_configuration.md): Starter configuration and required-field reference.
 - [Debug your deployment](../troubleshooting/debug_tool.md): Full SHC debug command reference.
-- [Use the controller interface](../operations/controller_interface.md): The interactive interface of the SHC.
+- [Use the SHC interface](../operations/controller_interface.md): The interactive interface of the SHC.
 - [Run platform diagnostics](../monitoring/run_diagnostics.md): Targeted Prometheus health checks per platform area.
