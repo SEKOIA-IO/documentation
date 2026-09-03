@@ -179,7 +179,10 @@ To run the full installation, enter:
 exec Install
 ```
 
-Wait for the final convergence report before proceeding to [Post-deployment validation](#post-deployment-validation).
+The platform installation is normally the longest stage. Leave the command running while it continues to emit progress messages, then wait for the final convergence report before proceeding to [Post-deployment validation](#post-deployment-validation).
+
+!!! note "Pre-release installation logs"
+    Warning-level log messages can be normal while Self-Hosted 0.1.0 remains in pre-release. Do not interrupt an installation only because a warning appears while the workflow continues to make progress. The installation has completed when the terminal `Install.start terminated` message reports `success=True` and the [post-deployment validation](#post-deployment-validation) passes. Investigate a terminal `success=False` result, exhausted retries, or a workflow that stops making progress.
 
 ### Option 2: Step-by-step deployment
 
@@ -196,6 +199,7 @@ exec CheckLocalOCIRegistry
 exec CheckLocalReleaseFiles
 exec CheckServersAreReachable
 exec CheckServerSpec
+exec CheckLocalTools
 ```
 
 !!! warning "Preflight block"
@@ -205,21 +209,27 @@ exec CheckServerSpec
 
 **Step 2: Configure servers.**
 
-To prepare the operating system and install required packages on all nodes, run:
+Run the server-configuration stage:
 
 ```bash
 exec ConfigureServersWithAnsible
 ```
 
+!!! note "0.1.0 pre-release behavior"
+    In the 0.1.0 pre-release, `ConfigureServersWithAnsible` is a placeholder and may complete immediately without changing the nodes. Provision the operating system and packages required by [Technical requirements](./deployment_prerequisites.md) before continuing.
+
 **Step 3: Provision local registries.**
 
-To push all Docker images, Helm charts, and ArgoCD stack manifests to your local repositories, run:
+First resolve the versioned detection-rules, intake-formats, and playbook-library bundles. Then push all Docker images, Helm charts, and ArgoCD stack manifests to your local repositories:
 
 ```bash
+exec DownloadDataFiles
 exec PushImages
 exec PushCharts
 exec PushArgoStacks
 ```
+
+Each push module runs `DownloadReleaseFiles` as an automatic prerequisite. In online mode, it downloads missing release artifacts; in air-gapped mode, it uses the artifacts staged locally. Repeated runs skip release files and images already present, and `PushArgoStacks` succeeds without a commit when the generated manifests are unchanged.
 
 **Step 4: Install the Kubernetes stack.**
 
@@ -252,6 +262,9 @@ exec ScaleServices
 ```
 
 Run these two modules in this order. Until `InstanceBootstrap` completes, ExaLog has no index and cannot write events to your S3-compatible storage. See [Post-installation bootstrap](./deployment_process.md#post-installation-bootstrap) for what each module provisions.
+
+!!! note "Repeated prerequisite modules"
+    The SHC automatically retrieves a current kubeconfig before cluster and platform operations. `PlatformInstallation` and `PlatformAccess` also regenerate the platform configuration before running. Repeated `GetKubeconfig` and `PlatformConfigurationFile` entries in the log are expected and allow each module to run independently.
 
 ## Post-deployment validation
 
@@ -307,7 +320,7 @@ Every check must report `OK`. A `CRIT` or `WARN` result names the affected servi
 To open the Sekoia interface, navigate to the URL set in `global.host` of your `config.yml` (for example, `https://app.sekoia.local`).
 
 !!! note "First login"
-    The platform does not create a default administrator account. You must provision the first user via an email invitation. See [Set up the first administrator account](../operations/first_login.md).
+    `PlatformAccess` returns the generated instance-administrator credentials at the end of the installation. Store them securely, then use them to create your first operational community. See [Set up the first administrator account](../operations/first_login.md).
 
 ## Related links
 

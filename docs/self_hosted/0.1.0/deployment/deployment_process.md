@@ -6,11 +6,11 @@ The self-hosted-controller (SHC) manages every phase of the Sekoia Self-Hosted p
 
 The SHC is built on three design pillars.
 
-**Preflight validation.** Before executing any change, the SHC runs a comprehensive set of checks: OS versions, network connectivity, configuration schema, file checksums, and repository access. Execution is blocked until every check passes.
+**Preflight validation.** Before executing any change, the SHC runs a comprehensive set of checks: OS versions, network connectivity, configuration schema, local release directories, required tools, and repository access. Execution is blocked until every check passes.
 
 **Declarative configuration.** The `config.yml` manifest is the single source of truth for the entire platform state: infrastructure settings (node IPs, load balancers, DNS), service configuration (SMTP, feature toggles), and scaling parameters (node counts, resource quotas). The SHC computes the difference between the actual and desired state and executes only the tasks required to converge.
 
-**Idempotency.** Every SHC command can be re-run safely. If a step already completed successfully, the SHC skips it and continues from where it left off.
+**Idempotency.** Installation modules can be re-run safely. Existing artifacts and already-converged resources are skipped or reconciled, so the workflow can continue from where it left off. Destructive lifecycle commands, such as `K3SUninstall` and `WipeStorageDisks`, are exceptions and must be used only for their documented purpose.
 
 ## Execution modes
 
@@ -35,11 +35,13 @@ list
 
       Install                       Run the full installation workflow
       DownloadReleaseFiles          Download release files from S3 to local storage
+      DownloadDataFiles             Download security content bundles to local storage
 
       CheckLocalConfig              Validate the local controller configuration file
       CheckLocalGit                 Verify connectivity and access to the git repository
       CheckLocalOCIRegistry         Verify push/pull/delete access to the OCI registry
-      CheckLocalReleaseFiles        Verify that all release files are present on disk
+      CheckLocalReleaseFiles        Verify that configured release directories are present
+      CheckLocalTools               Validate the tools required by the installation workflow
       CheckServersAreReachable      Check SSH connectivity to all configured servers
       CheckServerSpec               Check that servers meet hardware and OS requirements
       CheckKubernetesCluster        Check the Kubernetes cluster is reachable and all nodes are Ready
@@ -81,11 +83,24 @@ The `Install` command runs every module below, in order, grouped into five stage
 
 | Stage | Modules | What the stage does |
 | :--- | :--- | :--- |
-| `checks` | `CheckLocalConfig`, `CheckLocalGit`, `CheckLocalOCIRegistry`, `CheckLocalReleaseFiles`, `CheckServersAreReachable`, `CheckServerSpec` | Validates the configuration, the repositories, the local artifacts, and every node against the hardware, OS, storage, hostname, and time-sync requirements. |
-| `server_config` | `ConfigureServersWithAnsible` | Prepares the operating system and installs the required packages on all nodes. |
-| `push` | `PushImages`, `PushCharts`, `PushArgoStacks` | Publishes the images, the charts, and the ArgoCD stacks to your registries. |
+| `checks` | `CheckLocalConfig`, `CheckLocalGit`, `CheckLocalOCIRegistry`, `CheckLocalReleaseFiles`, `CheckServersAreReachable`, `CheckServerSpec`, `CheckLocalTools` | Validates the configuration, the repositories, the local release directories, the controller tools, and every node against the hardware, OS, storage, hostname, and time-sync requirements. |
+| `server_config` | `ConfigureServersWithAnsible` | Runs the server-configuration stage. In the 0.1.0 pre-release, this module is a placeholder and may complete without changing the nodes; provision the required OS and packages before installation. |
+| `push` | `DownloadDataFiles`, `PushImages`, `PushCharts`, `PushArgoStacks` | Resolves the security content bundles and publishes the images, charts, and ArgoCD stacks to your local repositories. |
 | `kubernetes` | `K3SInstall`, `GetKubeconfig`, `HelmInstall`, `CheckKubernetesCluster` | Installs the K3s cluster and the cluster services, then verifies that every node is `Ready`. |
 | `platform` | `PlatformConfigurationFile`, `PlatformInstallation`, `PlatformAccess`, `InstanceBootstrap`, `ScaleServices` | Renders the installer values, runs the platform installer, returns the access credentials, provisions the default storage and ExaLog indexes, and scales the workers to their target replica count. |
+
+### Automatic prerequisites and repeated modules
+
+Some modules invoke their prerequisites every time they run. Consequently, the log contains more module executions than the five-stage table:
+
+- Each of `PushImages`, `PushCharts`, and `PushArgoStacks` invokes `DownloadReleaseFiles` first.
+- `CheckKubernetesCluster` retrieves a current kubeconfig before checking the nodes.
+- `PlatformInstallation` and `PlatformAccess` retrieve a current kubeconfig and regenerate the platform configuration before running.
+- `InstanceBootstrap` and `ScaleServices` each retrieve a current kubeconfig before changing platform resources.
+
+These repeated executions are expected. They ensure that a module also works when you run it directly instead of through `Install`.
+
+Artifact operations are also cache-aware. `DownloadReleaseFiles` skips files already present, `PushImages` skips images already available in the target registry, and `PushArgoStacks` does not create a commit when the generated manifests are unchanged. These outcomes indicate successful convergence, not an incomplete installation.
 
 ### Post-installation bootstrap
 
