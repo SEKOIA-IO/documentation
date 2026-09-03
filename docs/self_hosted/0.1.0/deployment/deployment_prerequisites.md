@@ -6,19 +6,19 @@ This article lists all infrastructure, hardware, software, storage, and network 
 
 You must provision and manage the following components outside the Kubernetes cluster.
 
-| Component | CPU | RAM | Storage | Notes |
+| Component | CPU | RAM | Storage / throughput | Notes |
 | :--- | :---: | :---: | :---: | :--- |
-| Load Balancer (e.g., HAProxy, Nginx) | 4 | 8 GB | 50 MB/s | Required. Validate throughput against your actual ingest volume. |
-| Orchestration node | 4 | 8 GB | 100 GB | Required. Runs the self-hosted-controller (SHC) CLI. See OS requirements below. |
+| TCP Load Balancer (e.g., HAProxy, Nginx) | 4 | 8 GB | 100 Mbps (12.5 MB/s) | Required minimum throughput. Scale according to your actual ingest volume. |
+| Orchestration node | 4 | 8 GB | 200 GB | Required. Runs the self-hosted-controller (SHC). See requirements below. |
 | Local image registry (e.g., Harbor, JFrog, Nexus) | 4 | 8 GB | 5 TB | Required for air-gapped deployments. |
-| Local code registry (e.g., GitLab, Gitea, ForgeJo) | 4 | 8 GB | 100 GB | Required for air-gapped deployments. |
+| Local code registry (e.g., GitLab, Gitea, ForgeJo) | 1 | 4 GB | Less than 10 GB | Required for air-gapped deployments. |
 
-### Orchestration node OS requirements
+### Orchestration node requirements
 
-The orchestration node must run **Debian 12** with **Python 3.11** installed. Python is required by the Ansible component of the SHC.
+The orchestration node only requires Docker to run the SHC container image. It does not require Python or Ansible to be installed directly on the host.
 
 !!! note "Orchestration node role"
-    The orchestration node does not join the Kubernetes cluster. It drives Ansible playbooks and runs the SHC CLI. It must have SSH access to all compute nodes on TCP port 22.
+    The orchestration node does not join the Kubernetes cluster. The SHC performs preflight checks, installs the complete Kubernetes cluster, manages the platform deployment through Helm and ArgoCD, and downloads deployment resources when internet access is available. The node must have SSH access to all Kubernetes nodes on TCP port 22.
 
 ## Compute node specification
 
@@ -28,8 +28,7 @@ Every Kubernetes worker node must meet the following minimum hardware requiremen
 | :--- | :--- | :--- |
 | CPU | 44 vCPUs at 3.2 GHz minimum | 44 cores |
 | RAM | 128 GB | 120 GiB |
-| Storage | 4 TB SSD | Not checked |
-| Dedicated storage disk | One unused block device of 200 GB or more | 200 GB |
+| Dedicated storage disk | One unused SSD of 200 GB or more; 4 TB per worker node for deployments handling data | 200 GB |
 | Operating system | Debian 12 (Bookworm) | Debian 12 or later |
 | Hostname | Unique across all manager and worker nodes | Uniqueness |
 | Time synchronization | NTP enabled and clock synchronized | Both |
@@ -37,7 +36,7 @@ Every Kubernetes worker node must meet the following minimum hardware requiremen
 The `CheckServerSpec` command blocks the installation when a manager or worker node fails any of the checks in the last column. See [CheckServerSpec](../troubleshooting/debug_tool.md#checkserverspec) for the failure messages and their remediation.
 
 !!! warning "SSD usage"
-    The 4 TB SSD on each compute node is reserved for Kubernetes runtime and system use. Do not store long-term event data on compute node disks. Event data requires a dedicated S3-compatible bucket (see [Storage](#storage) below).
+    `CheckServerSpec` enforces a 200 GB dedicated-disk minimum to support ultra-tight deployments. Any deployment that handles customer data must provision 4 TB per worker node. How quickly that capacity is consumed depends on the customer's use of the platform. Do not use these disks for long-term event retention; event data requires dedicated S3-compatible storage (see [Storage](#storage) below).
 
 ### Dedicated storage disk
 
@@ -88,7 +87,7 @@ The following table provides estimated hardware footprints per deployment size.
 
 **S3 storage calculation:** Total S3 capacity = daily ingest (GB) x retention period (days). The table above assumes 365 days of retention.
 
-**Node roles:** Each cluster requires at least 1 manager node (Kubernetes control plane). The remaining nodes are workers. For production high-availability, use 3 manager nodes to tolerate 1 failure. Worker count corresponds to the Compute nodes column above.
+**Node roles:** Each cluster requires exactly 3 manager nodes (Kubernetes control plane), which is the only supported manager-node topology. The **Compute nodes** column above corresponds to the number of worker nodes.
 
 ## Storage
 
@@ -98,6 +97,16 @@ An S3-compatible bucket is required for event data storage and platform backups.
 | :--- | :--- |
 | Event storage | Long-term data lake for all ingested events. Customer-managed. See sizing table above. |
 
+The S3-compatible storage must meet the following performance requirements:
+
+| Benchmark | Required performance |
+| :--- | :---: |
+| GET throughput | — MB/s |
+| PUT throughput | — MB/s |
+| DELETE/STAT metadata operations | — operations/s |
+
+!!! note "S3 benchmarks in progress"
+    S3 performance benchmarks are ongoing. The required values will be available by the GA release.
 
 ## Network requirements
 
@@ -106,10 +115,13 @@ DNS management, NTP synchronization, and SMTP configuration are your responsibil
 For DNS, ensure that:
 
 - All Sekoia application servers can resolve each other by hostname and communicate freely.
-- All nodes can resolve and reach the code and artifact repositories.
+- All nodes can resolve and reach the Git repository and OCI registry.
 - All nodes can resolve and connect to the designated SMTP server.
 - The orchestration node can resolve and access every Kubernetes node by hostname.
-- DNS records exist for the values you set in `global.host` and `global.alternative_hosts` before deployment.
+- DNS records exist for `global.host` and `global.delivery_host` before deployment.
+- When `global.kube_manager_host` is configured as a hostname, its DNS record exists before deployment.
+
+See [Platform endpoints](./deployment_configuration.md#platform-endpoints) for the complete configuration reference for these values.
 
 For NTP, ensure that:
 

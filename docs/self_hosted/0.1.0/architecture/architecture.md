@@ -102,8 +102,8 @@ The following terms are used consistently throughout this documentation.
 
 | Term | Definition |
 | :--- | :--- |
-| self-hosted-controller (SHC) | The orchestration tool (`run-shc.sh`), exposing a one-shot CLI and an interactive interface. Previously referred to as Deployer in some documents. |
-| Orchestration node | The machine where you execute the self-hosted-controller (SHC). Also called admin node in some contexts. |
+| self-hosted-controller (SHC) | The orchestration tool (`run-shc.sh`), exposing a one-shot CLI and an interactive interface. |
+| Orchestration node | The machine where you execute the self-hosted-controller (SHC). |
 | Compute node | A Kubernetes worker node running Sekoia microservices. |
 | Forwarder | An optional Sekoia component installed on a customer VM, used to collect and forward logs to the platform. Not part of the standard release. |
 | Asset | Any monitored entity (server, endpoint, network device) that generates log events ingested by the platform. |
