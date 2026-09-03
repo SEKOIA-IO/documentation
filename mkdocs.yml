@@ -704,6 +704,27 @@ nav:
     - Overview: integration/faq/overview.md
     - General Questions:
       - Bug VS Improvement Requests: integration/faq/general_questions/bug_and_improvement_requests.md
+- Self-hosted deployment:
+  - Introduction: self_hosted/index.md
+  - Documentation versions: self_hosted/versions.md
+  - v0.1.0 (pre-release):
+    - Overview: self_hosted/0.1.0/index.md
+    - Architecture:
+      - Reference Architecture: self_hosted/0.1.0/architecture/architecture.md
+    - Deployment:
+      - Technical requirements: self_hosted/0.1.0/deployment/deployment_prerequisites.md
+      - Network requirements: self_hosted/0.1.0/deployment/network_requirements.md
+      - The deployment process: self_hosted/0.1.0/deployment/deployment_process.md
+      - Deploy the platform: self_hosted/0.1.0/deployment/deployment_guide.md
+      - Deployment configuration reference: self_hosted/0.1.0/deployment/deployment_configuration.md
+    - Operations:
+      - Set up the first administrator account: self_hosted/0.1.0/operations/first_login.md
+      - Use the SHC interface: self_hosted/0.1.0/operations/controller_interface.md
+    - Monitoring and troubleshooting:
+      - Monitor your platform: self_hosted/0.1.0/monitoring/monitoring_guide.md
+      - Run platform diagnostics: self_hosted/0.1.0/monitoring/run_diagnostics.md
+      - Debug your deployment: self_hosted/0.1.0/troubleshooting/debug_tool.md
+    - Release notes: self_hosted/0.1.0/release_notes.md
 - API Documentation:
   - API Reference: developer/api.md
   - Quickstart: developer/quickstart.md
