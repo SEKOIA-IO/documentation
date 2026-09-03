@@ -1,6 +1,6 @@
 # Configure the deployment
 
-The `config.yml` file describes the environment that the Self-Hosted Controller (SHC) deploys. For Sekoia Self-Hosted 0.1.0, start from a built-in sizing profile and provide the site-specific values described on this page.
+The `config.yml` file describes the environment that the self-hosted-controller (SHC) deploys. For Sekoia Self-Hosted 0.1.0, start from a built-in sizing profile and provide the site-specific values described on this page.
 
 The SHC combines the built-in defaults, the selected sizing profile, and your `config.yml` into one computed configuration. It validates the result before installation and rejects missing required fields, invalid values, and unsupported keys.
 
@@ -113,7 +113,7 @@ ExaLog storage configuration is derived from `global.platform_storage`. Some com
 
 | Field | Description |
 | :--- | :--- |
-| `utils.ansible.ssh-key` | Private key used by the SHC to connect to and configure every Kubernetes node. Use an environment-variable reference. |
+| `utils.ansible.ssh-key` | Private key used by the self-hosted-controller (SHC) to connect to and configure every Kubernetes node. Use an environment-variable reference. |
 | `utils.ansible.user` | SSH user used on every Kubernetes node. The account must meet the privilege requirements in the [technical requirements](./deployment_prerequisites.md). |
 | `utils.ansible.inventory.managers` | List of manager-node IP addresses or resolvable hostnames. At least one manager is required. |
 
@@ -123,7 +123,7 @@ Worker nodes are configured under `utils.ansible.inventory.workers`. The field i
 
 | Field | Description |
 | :--- | :--- |
-| `utils.git.repo_url` | URL of the customer-managed Git repository in which the SHC publishes the ArgoCD stack manifests. |
+| `utils.git.repo_url` | URL of the customer-managed Git repository in which the self-hosted-controller (SHC) publishes the ArgoCD stack manifests. |
 
 If the repository requires authentication, use `config help utils.git` to inspect the supported HTTP and SSH authentication settings.
 
@@ -132,7 +132,7 @@ If the repository requires authentication, use `config help utils.git` to inspec
 | Field | Description |
 | :--- | :--- |
 | `utils.oci_registry.host` | Registry hostname, with an optional port and without a URL scheme, for example `registry.example.com` or `registry.example.com:5000`. |
-| `utils.oci_registry.project` | Registry project or namespace in which the SHC publishes Sekoia artifacts, for example `sekoia-self-hosted`. |
+| `utils.oci_registry.project` | Registry project or namespace in which the self-hosted-controller (SHC) publishes Sekoia artifacts, for example `sekoia-self-hosted`. |
 | `utils.oci_registry.username` | Username with push, pull, and delete permissions in the registry project. Use an environment-variable reference. |
 | `utils.oci_registry.password` | Password or token for the registry account. Use an environment-variable reference. |
 
@@ -187,5 +187,5 @@ The command reports missing required values, invalid formats, and unsupported ke
 ## Related links
 
 - [Deploy the platform](./deployment_guide.md): Prepare the SHC execution script and install the platform.
-- [Use the controller interface](../operations/controller_interface.md): Run configuration commands from the interactive interface.
+- [Use the SHC interface](../operations/controller_interface.md): Run configuration commands from the interactive interface.
 - [Debug your deployment](../troubleshooting/debug_tool.md): Resolve configuration and connectivity failures.

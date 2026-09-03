@@ -62,9 +62,9 @@ exec Diagnostic --set modules.diagnostic.format=json --set modules.diagnostic.hi
 
 The `json` and `text` formats apply to the terminal output. API callers receive the complete result set, including successful checks, regardless of the `hide_ok` setting.
 
-## Run a diagnostic from the controller interface
+## Run a diagnostic from the SHC interface
 
-The interactive interface of the SHC exposes the same targets on its Diagnostics tab, with one collapsible panel per rule, live status, sortable result tables, and clipboard copy. See [Run a diagnostic from the Diagnostics tab](../operations/controller_interface.md#run-a-diagnostic-from-the-diagnostics-tab).
+The interactive interface of the self-hosted-controller (SHC) exposes the same targets on its Diagnostics tab, with one collapsible panel per rule, live status, sortable result tables, and clipboard copy. See [Run a diagnostic from the Diagnostics tab](../operations/controller_interface.md#run-a-diagnostic-from-the-diagnostics-tab).
 
 ## Result
 
@@ -75,4 +75,4 @@ You have a diagnostic report for the selected platform areas. Use a `CRIT` resul
 - [Monitor your platform](monitoring_guide.md): Daily monitoring and incident-response workflows.
 - [Debug your deployment](../troubleshooting/debug_tool.md): Additional SHC diagnostic commands and log collection guidance.
 - [Deploy the platform](../deployment/deployment_guide.md): Post-deployment validation procedure.
-- [Use the controller interface](../operations/controller_interface.md): Run the same diagnostics from the interactive interface.
+- [Use the SHC interface](../operations/controller_interface.md): Run the same diagnostics from the interactive interface.

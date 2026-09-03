@@ -1,6 +1,6 @@
 # The deployment process
 
-The Self-Hosted Controller (SHC) manages every phase of the Sekoia Self-Hosted platform lifecycle, from initial installation to day-to-day operations. It provides an interactive terminal user interface (TUI) for operators and a one-shot command-line interface (CLI) for scripts and unattended runs. This article explains how the SHC works, what commands it exposes, and how it handles different deployment environments.
+The self-hosted-controller (SHC) manages every phase of the Sekoia Self-Hosted platform lifecycle, from initial installation to day-to-day operations. It provides an interactive terminal user interface (TUI) for operators and a one-shot command-line interface (CLI) for scripts and unattended runs. This article explains how the SHC works, what commands it exposes, and how it handles different deployment environments.
 
 ## Core principles
 
@@ -16,12 +16,12 @@ The SHC is built on three design pillars.
 
 | Mode | Description | When to use |
 | :--- | :--- | :--- |
-| Online | The SHC fetches release artifacts from Sekoia's authorized S3 bucket. Requires internet access. Configured via `global.version.fetch` in `config.yml`. | Standard internet-connected deployments. |
-| Air-gapped | The SHC operates in fully disconnected mode using a pre-staged release archive and locally cached manifests. All registry operations point to customer-managed repositories. | Restricted or classified environments with no external connectivity. |
+| Online | The self-hosted-controller (SHC) fetches release artifacts from Sekoia's authorized S3 bucket. Requires internet access. Configured via `global.version.fetch` in `config.yml`. | Standard internet-connected deployments. |
+| Air-gapped | The self-hosted-controller (SHC) operates in fully disconnected mode using a pre-staged release archive and locally cached manifests. All registry operations point to customer-managed repositories. | Restricted or classified environments with no external connectivity. |
 
 ## Available commands
 
-Run `./run-shc.sh` without a command to open the TUI. Use it for streamed command output, installation progress, and live Machines, Kubernetes, Storage, and Diagnostics views. See [Use the controller interface](../operations/controller_interface.md).
+Run `./run-shc.sh` without a command to open the TUI. Use it for streamed command output, installation progress, and live Machines, Kubernetes, Storage, and Diagnostics views. See [Use the SHC interface](../operations/controller_interface.md).
 
 To display the full list of SHC modules in one-shot CLI mode, run:
 
@@ -104,7 +104,7 @@ On a new region ExaLog has no index, so without this step the indexers stay idle
 
 The SHC handles the full platform lifecycle beyond initial installation.
 
-| Operation | SHC command |
+| Operation | self-hosted-controller (SHC) command |
 | :--- | :--- |
 | Post-deployment health check | `CheckKubernetesCluster`, `DebugArgoCD` |
 | Database diagnostics | `DebugDatabases` |
@@ -121,5 +121,5 @@ The SHC handles the full platform lifecycle beyond initial installation.
 - [Deploy the platform](./deployment_guide.md): Step-by-step installation instructions.
 - [Configure the deployment](./deployment_configuration.md): Starter configuration and required-field reference.
 - [Debug your deployment](../troubleshooting/debug_tool.md): Full SHC debug command reference.
-- [Use the controller interface](../operations/controller_interface.md): The interactive interface of the SHC.
+- [Use the SHC interface](../operations/controller_interface.md): The interactive interface of the SHC.
 - [Run platform diagnostics](../monitoring/run_diagnostics.md): Targeted Prometheus health checks per platform area.

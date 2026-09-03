@@ -6,7 +6,7 @@ Sekoia Self-Hosted ships with a complete observability stack and a set of on-dem
 
 - You completed the deployment and validated post-deployment checks in [Deploy the platform](../deployment/deployment_guide.md).
 - You have access to the Grafana interface at `https://<global.host>/grafana`.
-- For SHC diagnostic commands, you must run them from the orchestration node provisioned during installation.
+- For self-hosted-controller (SHC) diagnostic commands, you must run them from the orchestration node provisioned during installation.
 
 ## Monitoring layers
 
@@ -15,7 +15,7 @@ Sekoia Self-Hosted provides two complementary monitoring layers.
 | Layer | Tools | Purpose |
 | :--- | :--- | :--- |
 | Continuous monitoring | Grafana, Loki, Prometheus | Real-time dashboards, log search and metric collection. |
-| On-demand diagnostics | Self-Hosted Controller (SHC) CLI | Targeted health checks on the cluster, applications, databases, and resources. |
+| On-demand diagnostics | self-hosted-controller (SHC) CLI | Targeted health checks on the cluster, applications, databases, and resources. |
 
 Use Grafana for daily operations and trend analysis. Use SHC commands for incident triage, post-deployment validation, and structured platform snapshots.
 
@@ -277,7 +277,7 @@ If applications show `OutOfSync` or `Degraded` after running `DebugArgoCD`, cont
 ## Related links
 
 - [Run platform diagnostics](run_diagnostics.md): Targeted Prometheus health checks for platform services.
-- [Use the controller interface](../operations/controller_interface.md): Live node, cluster, storage, and diagnostics views in the interactive SHC interface.
+- [Use the SHC interface](../operations/controller_interface.md): Live node, cluster, storage, and diagnostics views in the interactive SHC interface.
 - [Debug your deployment](../troubleshooting/debug_tool.md): Full SHC debug command reference with remediation steps.
 - [Deploy the platform](../deployment/deployment_guide.md): Post-deployment validation commands.
 - [Technical requirements](../deployment/deployment_prerequisites.md): Compute node and S3 storage requirements.

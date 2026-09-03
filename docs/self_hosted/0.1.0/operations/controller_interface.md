@@ -1,6 +1,6 @@
-# Use the controller interface
+# Use the SHC interface
 
-The Self-Hosted Controller (SHC) opens an interactive terminal user interface (TUI) when you start it without a command. The TUI is the main interface for interactive operations in Self-Hosted 0.1.0: it runs SHC commands and adds live views of your machines, Kubernetes cluster, storage, and platform diagnostics.
+The self-hosted-controller (SHC) opens an interactive terminal user interface (TUI) when you start it without a command. The TUI is the main interface for interactive operations in Self-Hosted 0.1.0: it runs SHC commands and adds live views of your machines, Kubernetes cluster, storage, and platform diagnostics.
 
 The one-shot command-line interface (CLI) remains fully supported. Both interfaces run the same SHC modules, but they serve different workflows:
 
@@ -134,7 +134,7 @@ To return to the target list, press `Escape`.
 !!! note "No diagnostics listed"
     When the tab reports that no diagnostics were found, the rule files are missing from the SHC image. Verify the image reference you set in `DOCKER_IMAGE`, then contact Sekoia support with the path shown in the warning.
 
-When you escalate a diagnostic result, copy the full report and attach the timestamped controller log shown at the bottom of the TUI. Include the target name and the time at which you ran it.
+When you escalate a diagnostic result, copy the full report and attach the timestamped SHC log shown at the bottom of the TUI. Include the target name and the time at which you ran it.
 
 ## Result
 

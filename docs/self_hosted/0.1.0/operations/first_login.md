@@ -1,6 +1,6 @@
 # Set up the first administrator account
 
-After a successful deployment, the Self-Hosted Controller displays the platform access credentials directly in the terminal. This guide walks you through retrieving those credentials, logging in, creating your first community, and allocating your subscription.
+After a successful deployment, the self-hosted-controller (SHC) displays the platform access credentials directly in the terminal. This guide walks you through retrieving those credentials, logging in, creating your first community, and allocating your subscription.
 
 ## Before you begin
 

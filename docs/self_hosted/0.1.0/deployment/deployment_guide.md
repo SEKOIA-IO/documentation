@@ -74,7 +74,7 @@ To extract the archive on the orchestration node, run:
 tar -xvf sekoia-self-hosted-v0.1.0.tar -C $SEKOIA_LOCAL_DIR
 ```
 
-### Step 3: Load the SHC Docker image
+### Step 3: Load the self-hosted-controller (SHC) Docker image
 
 For the first installation, the SHC image is not yet available on the orchestration node. Load it manually from the extracted archive:
 
@@ -147,7 +147,7 @@ Set the following environment variables on the orchestration node before running
 | `GIT_HTTP_USERNAME` | Yes | Username for your local code repository. |
 | `GIT_HTTP_PASSWORD` | Yes | Password or token for your local code repository. |
 | `SERVERS_SUDO_PASSWORD` | No | Sudo password for target nodes, if required by your SSH configuration. |
-| `DOCKER_IMAGE` | No | Override the SHC Docker image reference. Required in air-gapped environments. |
+| `DOCKER_IMAGE` | No | Override the self-hosted-controller (SHC) Docker image reference. Required in air-gapped environments. |
 | `SEKOIA_INSTANCE_PUBLIC_KEY` | Yes | Public key for the SEKOIA instance. |
 
 To make the script executable and verify the SHC responds, run:
@@ -163,7 +163,7 @@ A successful run displays the full list of available SHC commands.
     Commands elsewhere in this documentation omit the `./run-shc.sh` prefix. Enter them as shown in the TUI, or prefix them with `./run-shc.sh` to run them in one-shot CLI mode.
 
 !!! note "Interactive interface"
-    Running `./run-shc.sh` with no command opens the interactive interface of the SHC instead of returning a one-shot result. See [Use the controller interface](../operations/controller_interface.md).
+    Running `./run-shc.sh` with no command opens the interactive interface of the SHC instead of returning a one-shot result. See [Use the SHC interface](../operations/controller_interface.md).
 
 ## Deployment
 
@@ -315,5 +315,5 @@ To open the Sekoia interface, navigate to the URL set in `global.host` of your `
 - [Configure the deployment](./deployment_configuration.md): Starter configuration and required-field reference.
 - [Debug your deployment](../troubleshooting/debug_tool.md): Troubleshooting commands and remediation steps.
 - [Set up the first administrator account](../operations/first_login.md): Post-installation user provisioning.
-- [Use the controller interface](../operations/controller_interface.md): Follow the installation and inspect the cluster from the interactive interface.
+- [Use the SHC interface](../operations/controller_interface.md): Follow the installation and inspect the cluster from the interactive interface.
 - [Run platform diagnostics](../monitoring/run_diagnostics.md): Targeted Prometheus health checks per platform area.

@@ -1,6 +1,6 @@
 # Debug your deployment
 
-The Self-Hosted Controller (SHC) provides a set of diagnostic commands that let you validate configuration, inspect cluster health, audit secrets, diagnose database issues, and analyse resource usage. This article is a full reference for those commands, including expected outputs and remediation steps.
+The self-hosted-controller (SHC) provides a set of diagnostic commands that let you validate configuration, inspect cluster health, audit secrets, diagnose database issues, and analyse resource usage. This article is a full reference for those commands, including expected outputs and remediation steps.
 
 All commands are executed from the **orchestration node** using the `exec` subcommand:
 
@@ -378,4 +378,4 @@ When you escalate an issue to Sekoia L3 support, include the following in your r
 - [Deploy the platform](../deployment/deployment_guide.md): Post-deployment validation commands.
 - [Deployment configuration reference](../deployment/deployment_configuration.md): How to fix configuration errors flagged by `CheckLocalConfig`.
 - [Run platform diagnostics](../monitoring/run_diagnostics.md): Targeted Prometheus health checks per platform area.
-- [Use the controller interface](../operations/controller_interface.md): Run commands and diagnostics from the interactive interface.
+- [Use the SHC interface](../operations/controller_interface.md): Run commands and diagnostics from the interactive interface.

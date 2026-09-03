@@ -720,7 +720,7 @@ nav:
       - Deployment configuration reference: self_hosted/0.1.0/deployment/deployment_configuration.md
     - Operations:
       - Set up the first administrator account: self_hosted/0.1.0/operations/first_login.md
-      - Use the controller interface: self_hosted/0.1.0/operations/controller_interface.md
+      - Use the SHC interface: self_hosted/0.1.0/operations/controller_interface.md
     - Monitoring and troubleshooting:
       - Monitor your platform: self_hosted/0.1.0/monitoring/monitoring_guide.md
       - Run platform diagnostics: self_hosted/0.1.0/monitoring/run_diagnostics.md

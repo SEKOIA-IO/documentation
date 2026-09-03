@@ -3,7 +3,7 @@
 Sekoia Self-Hosted documentation is published per platform version. Each version is a frozen snapshot: it describes the configuration keys, CLI commands, and behavior of that release only.
 
 !!! warning "Check your version before following any procedure"
-    Configuration keys and CLI commands change between releases. Running a procedure from the wrong version can break your deployment. Check your installed version with `shc version` before you start.
+    Configuration keys and CLI commands change between releases. Running a procedure from the wrong version can break your deployment.
 
 ## Available versions
 

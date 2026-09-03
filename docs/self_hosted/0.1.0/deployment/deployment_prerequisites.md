@@ -9,7 +9,7 @@ You must provision and manage the following components outside the Kubernetes cl
 | Component | CPU | RAM | Storage | Notes |
 | :--- | :---: | :---: | :---: | :--- |
 | Load Balancer (e.g., HAProxy, Nginx) | 4 | 8 GB | 50 MB/s | Required. Validate throughput against your actual ingest volume. |
-| Orchestration node | 4 | 8 GB | 100 GB | Required. Runs the SHC CLI. See OS requirements below. |
+| Orchestration node | 4 | 8 GB | 100 GB | Required. Runs the self-hosted-controller (SHC) CLI. See OS requirements below. |
 | Local image registry (e.g., Harbor, JFrog, Nexus) | 4 | 8 GB | 5 TB | Required for air-gapped deployments. |
 | Local code registry (e.g., GitLab, Gitea, ForgeJo) | 4 | 8 GB | 100 GB | Required for air-gapped deployments. |
 
