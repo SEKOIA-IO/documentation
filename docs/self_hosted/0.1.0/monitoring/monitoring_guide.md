@@ -191,7 +191,7 @@ For targeted checks on specifics services or layers of the platform using Promet
 To confirm all Kubernetes nodes are ready, run:
 
 ```bash
-./run-shc.sh exec CheckKubernetesCluster
+exec CheckKubernetesCluster
 ```
 
 ??? example "Expected output"
@@ -206,7 +206,7 @@ Run this command first when investigating any platform issue. A mismatch between
 To inspect every ArgoCD application's sync and health state, run:
 
 ```bash
-./run-shc.sh exec DebugArgoCD
+exec DebugArgoCD
 ```
 
 The command renders three panels: registered repositories, root application status, and a per-application table.
@@ -223,7 +223,7 @@ The command renders three panels: registered repositories, root application stat
 To inspect all database StatefulSets and PostgreSQL clusters, run:
 
 ```bash
-./run-shc.sh exec DebugDatabases
+exec DebugDatabases
 ```
 
 All entries must report `Healthy` status with the expected number of ready replicas. A `Warning` status indicates recent restarts. An `Unhealthy` status indicates one or more replicas are not ready.
@@ -233,7 +233,7 @@ All entries must report `Healthy` status with the expected number of ready repli
 To review memory requests versus actual consumption across all pods, run:
 
 ```bash
-./run-shc.sh exec DebugResourceAllocation
+exec DebugResourceAllocation
 ```
 
 !!! note "Metrics Server required"
@@ -255,19 +255,19 @@ When an alert fires or a dashboard shows degradation, run the following commands
 
 ```bash
 # 1. Confirm all cluster nodes are ready
-./run-shc.sh exec CheckKubernetesCluster
+exec CheckKubernetesCluster
 
 # 2. Check application sync and health
-./run-shc.sh exec DebugArgoCD
+exec DebugArgoCD
 
 # 3. Inspect database availability
-./run-shc.sh exec DebugDatabases
+exec DebugDatabases
 
 # 4. Review resource allocation
-./run-shc.sh exec DebugResourceAllocation
+exec DebugResourceAllocation
 
 # 4. Check the affected platform service
-./run-shc.sh exec Diagnostic
+exec Diagnostic
 ```
 
 This sequence moves from infrastructure layer to application layer to database layer to resource layer to service layer. Each step scopes the investigation before you move on.

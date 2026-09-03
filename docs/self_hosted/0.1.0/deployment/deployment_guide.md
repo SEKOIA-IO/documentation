@@ -159,6 +159,9 @@ chmod +x run-shc.sh
 
 A successful run displays the full list of available SHC commands.
 
+!!! note "Commands in this documentation"
+    Commands elsewhere in this documentation omit the `./run-shc.sh` prefix. Enter them as shown in the TUI, or prefix them with `./run-shc.sh` to run them in one-shot CLI mode.
+
 !!! note "Interactive interface"
     Running `./run-shc.sh` with no command opens the interactive interface of the SHC instead of returning a one-shot result. See [Use the controller interface](../operations/controller_interface.md).
 
@@ -173,7 +176,7 @@ The bundle command runs all installation steps sequentially. This is the simples
 To run the full installation, enter:
 
 ```bash
-./run-shc.sh exec Install
+exec Install
 ```
 
 Wait for the final convergence report before proceeding to [Post-deployment validation](#post-deployment-validation).
@@ -187,12 +190,12 @@ Use this option when your environment requires manual validation or approval bet
 To validate the environment before any changes are made, run:
 
 ```bash
-./run-shc.sh exec CheckLocalConfig
-./run-shc.sh exec CheckLocalGit
-./run-shc.sh exec CheckLocalOCIRegistry
-./run-shc.sh exec CheckLocalReleaseFiles
-./run-shc.sh exec CheckServersAreReachable
-./run-shc.sh exec CheckServerSpec
+exec CheckLocalConfig
+exec CheckLocalGit
+exec CheckLocalOCIRegistry
+exec CheckLocalReleaseFiles
+exec CheckServersAreReachable
+exec CheckServerSpec
 ```
 
 !!! warning "Preflight block"
@@ -205,7 +208,7 @@ To validate the environment before any changes are made, run:
 To prepare the operating system and install required packages on all nodes, run:
 
 ```bash
-./run-shc.sh exec ConfigureServersWithAnsible
+exec ConfigureServersWithAnsible
 ```
 
 **Step 3: Provision local registries.**
@@ -213,9 +216,9 @@ To prepare the operating system and install required packages on all nodes, run:
 To push all Docker images, Helm charts, and ArgoCD stack manifests to your local repositories, run:
 
 ```bash
-./run-shc.sh exec PushImages
-./run-shc.sh exec PushCharts
-./run-shc.sh exec PushArgoStacks
+exec PushImages
+exec PushCharts
+exec PushArgoStacks
 ```
 
 **Step 4: Install the Kubernetes stack.**
@@ -223,10 +226,10 @@ To push all Docker images, Helm charts, and ArgoCD stack manifests to your local
 To install K3s and deploy the cluster services, run:
 
 ```bash
-./run-shc.sh exec K3SInstall
-./run-shc.sh exec GetKubeconfig
-./run-shc.sh exec HelmInstall
-./run-shc.sh exec CheckKubernetesCluster
+exec K3SInstall
+exec GetKubeconfig
+exec HelmInstall
+exec CheckKubernetesCluster
 ```
 
 **Step 5: Deploy the Sekoia platform.**
@@ -234,9 +237,9 @@ To install K3s and deploy the cluster services, run:
 To generate the platform configuration, run the installer job, and retrieve the initial access credentials, run:
 
 ```bash
-./run-shc.sh exec PlatformConfigurationFile
-./run-shc.sh exec PlatformInstallation
-./run-shc.sh exec PlatformAccess
+exec PlatformConfigurationFile
+exec PlatformInstallation
+exec PlatformAccess
 ```
 
 **Step 6: Bootstrap and scale the platform.**
@@ -244,8 +247,8 @@ To generate the platform configuration, run the installer job, and retrieve the 
 To provision the default storage and the per-community ExaLog indexes, then scale the ingestion and detection workers to their configured replica count, run:
 
 ```bash
-./run-shc.sh exec InstanceBootstrap
-./run-shc.sh exec ScaleServices
+exec InstanceBootstrap
+exec ScaleServices
 ```
 
 Run these two modules in this order. Until `InstanceBootstrap` completes, ExaLog has no index and cannot write events to your S3-compatible storage. See [Post-installation bootstrap](./deployment_process.md#post-installation-bootstrap) for what each module provisions.
@@ -259,7 +262,7 @@ After the installation completes, run the following checks to confirm the platfo
 To confirm all nodes joined the cluster and are ready, run:
 
 ```bash
-./run-shc.sh exec CheckKubernetesCluster
+exec CheckKubernetesCluster
 ```
 
 ??? example "Expected output"
@@ -274,7 +277,7 @@ If the node count does not match, check `kubectl get nodes` to identify which no
 To inspect every ArgoCD application, run:
 
 ```bash
-./run-shc.sh exec DebugArgoCD
+exec DebugArgoCD
 ```
 
 Every application must show `Sync: Synced` and `Health: Healthy`. `Progressing` is normal for a few minutes immediately after deployment. `Degraded` or `OutOfSync` requires investigation. See [Debug your deployment](../troubleshooting/debug_tool.md).
@@ -284,7 +287,7 @@ Every application must show `Sync: Synced` and `Health: Healthy`. `Progressing` 
 To confirm all database StatefulSets and CNPG clusters are ready, run:
 
 ```bash
-./run-shc.sh exec DebugDatabases
+exec DebugDatabases
 ```
 
 All entries must report `Healthy` status with the expected number of ready replicas.
@@ -294,7 +297,7 @@ All entries must report `Healthy` status with the expected number of ready repli
 To run every bundled diagnostic target against the platform's Prometheus metrics, run:
 
 ```bash
-./run-shc.sh exec Diagnostic
+exec Diagnostic
 ```
 
 Every check must report `OK`. A `CRIT` or `WARN` result names the affected service, its likely causes, and the remediation actions. See [Run platform diagnostics](../monitoring/run_diagnostics.md).

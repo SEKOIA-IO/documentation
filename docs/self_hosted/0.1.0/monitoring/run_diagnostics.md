@@ -16,7 +16,7 @@ The Diagnostic module runs targeted health checks against the platform's Prometh
 To run every bundled diagnostic target, run:
 
 ```bash
-./run-shc.sh exec Diagnostic
+exec Diagnostic
 ```
 
 The module runs these targets in alphabetical order:
@@ -35,13 +35,13 @@ By default, the terminal report hides successful checks. Failed or warning check
 To investigate one platform area, set `modules.diagnostic.targets` to its target name:
 
 ```bash
-./run-shc.sh exec Diagnostic --set modules.diagnostic.targets=alerts
+exec Diagnostic --set modules.diagnostic.targets=alerts
 ```
 
 To run more than one target, separate their names with commas:
 
 ```bash
-./run-shc.sh exec Diagnostic --set modules.diagnostic.targets=alerts,telemetry
+exec Diagnostic --set modules.diagnostic.targets=alerts,telemetry
 ```
 
 The module continues with the remaining targets when one target cannot be loaded or queried. Review the terminal error for each target that does not produce results.
@@ -51,13 +51,13 @@ The module continues with the remaining targets when one target cannot be loaded
 To display successful checks as well as warnings and critical checks, set `modules.diagnostic.hide_ok` to `false`:
 
 ```bash
-./run-shc.sh exec Diagnostic --set modules.diagnostic.targets=alerts --set modules.diagnostic.hide_ok=false
+exec Diagnostic --set modules.diagnostic.targets=alerts --set modules.diagnostic.hide_ok=false
 ```
 
 To send the report to another tool, set `modules.diagnostic.format` to `text` or `json`:
 
 ```bash
-./run-shc.sh exec Diagnostic --set modules.diagnostic.format=json --set modules.diagnostic.hide_ok=false
+exec Diagnostic --set modules.diagnostic.format=json --set modules.diagnostic.hide_ok=false
 ```
 
 The `json` and `text` formats apply to the terminal output. API callers receive the complete result set, including successful checks, regardless of the `hide_ok` setting.

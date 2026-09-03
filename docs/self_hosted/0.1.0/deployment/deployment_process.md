@@ -26,7 +26,7 @@ Run `./run-shc.sh` without a command to open the TUI. Use it for streamed comman
 To display the full list of SHC modules in one-shot CLI mode, run:
 
 ```bash
-./run-shc.sh list
+list
 ```
 
 ??? example "Example output"

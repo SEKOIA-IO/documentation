@@ -151,26 +151,26 @@ Use the SHC itself to discover supported optional fields and verify the computed
 To list supported configuration fields, run:
 
 ```bash
-./run-shc.sh config help
+config help
 ```
 
 Add a prefix to focus on one section:
 
 ```bash
-./run-shc.sh config help global.platform_storage
-./run-shc.sh config help utils.oci_registry
+config help global.platform_storage
+config help utils.oci_registry
 ```
 
 To display the configuration after defaults, inheritance, environment references, and derived values have been resolved, run:
 
 ```bash
-./run-shc.sh config show
+config show
 ```
 
 You can also display one section:
 
 ```bash
-./run-shc.sh config show global.platform_storage
+config show global.platform_storage
 ```
 
 !!! warning "Protect resolved secrets"
@@ -179,7 +179,7 @@ You can also display one section:
 Finally, validate the configuration before starting an installation:
 
 ```bash
-./run-shc.sh exec CheckLocalConfig
+exec CheckLocalConfig
 ```
 
 The command reports missing required values, invalid formats, and unsupported keys. Correct every error before continuing.

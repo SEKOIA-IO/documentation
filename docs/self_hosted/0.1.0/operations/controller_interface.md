@@ -17,7 +17,7 @@ The one-shot command-line interface (CLI) remains fully supported. Both interfac
 - For the Kubernetes, Storage, and Diagnostics tabs, the cluster is installed and the SHC holds a valid kubeconfig. Run `GetKubeconfig` if it does not.
 
 !!! note "Same commands, two interfaces"
-    The TUI and one-shot CLI share the same command implementation. For example, `./run-shc.sh exec CheckKubernetesCluster` in the CLI and `exec CheckKubernetesCluster` in the TUI run the same module.
+    The TUI and one-shot CLI share the same command implementation. For example, `exec CheckKubernetesCluster` runs the same module in both interfaces.
 
 ## Open the interface
 
