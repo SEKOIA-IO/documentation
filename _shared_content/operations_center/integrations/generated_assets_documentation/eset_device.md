@@ -9,7 +9,7 @@
 
 
 
-**OCSF Version:** `1.5.0`
+**OCSF Version:** `1.6.0`
 
 
 ## Information Collected
@@ -33,8 +33,9 @@ A sample device from the ESET EDR GET /v1/devices endpoint
   "isMaster": true,
   "isMobile": false,
   "isMuted": false,
-  "lastSyncTime": "2025-05-21T10:00:00Z",
+  "lastSyncTime": "2026-05-21T10:00:00Z",
   "managementDomain": "eu.automation.eset.systems",
+  "parentGroupUuid": "group-uuid-1",
   "primaryLocalIpAddress": "192.168.1.42",
   "publicIpAddress": "203.0.113.10",
   "tags": ["finance", "windows"],
@@ -125,17 +126,17 @@ The following table shows how source data is mapped to OCSF model fields:
 | `displayName` | `device.hostname` | Device display name used as hostname | `string` | displayName is used as the OCSF hostname; falls back to originalDisplayName then uuid |
 | `displayName` | `device.name` | Human-readable device name | `string` | Direct mapping |
 | `description` | `device.desc` | Optional device description | `string` | Direct mapping |
-| `deviceType / isMobile` | `device.type / device.type_id` | OCSF device type classification | `string / integer` | `isMobile=true` → Mobile (5); `deviceType` contains SERVER → Server (1); contains VIRTUAL → Virtual (6); default → Desktop (2) |
+| `deviceType / isMobile` | `device.type / device.type_id` | OCSF device type classification | `string / integer` | isMobile=true → MOBILE (5); deviceType contains SERVER → SERVER (1); contains VIRTUAL → VIRTUAL (6); default → DESKTOP (2) |
 | `operatingSystem.familyId` | `device.os.type / device.os.type_id` | OCSF OS type derived from ESET OS family ID | `string / integer` | 1 → windows/100, 2 → macos/300, 3 → linux/200, 4 → android/201, 5 → ios/301, null → unknown/0, other → other/99 |
 | `operatingSystem.displayName` | `device.os.name` | Operating system display name | `string` | Direct mapping; falls back to operatingSystem.version.name |
 | `primaryLocalIpAddress` | `device.ip` | Primary local IP address of the device | `string` | Direct mapping |
-| `primaryLocalIpAddress + publicIpAddress + hardwareProfiles[].networkAdapters[].macAddress` | `device.network_interfaces` | List of OCSF network interfaces | `list[NetworkInterface]` | First NetworkInterface is built from primaryLocalIpAddress (type=Wired).<br>MAC address from the first hardware profile adapter enriches it.<br>Additional adapters create extra NetworkInterface entries.<br>publicIpAddress (if different from primaryLocalIpAddress) is added as a separate NetworkInterface with type=Unknown. |
+| `primaryLocalIpAddress + publicIpAddress + hardwareProfiles[].networkAdapters[].macAddress` | `device.network_interfaces` | List of OCSF network interfaces | `list[NetworkInterface]` | First NetworkInterface built from primaryLocalIpAddress (type=Wired). MAC address from first hardware profile adapter enriches it. Additional adapters create extra NetworkInterface entries. publicIpAddress (if different from primaryLocalIpAddress) is added as a separate NetworkInterface with type=Unknown. |
 | `managementDomain` | `device.domain` | Management domain of the device | `string` | Direct mapping |
 | `hardwareProfiles[0].manufacturer` | `device.vendor_name` | Hardware vendor/manufacturer name | `string` | Manufacturer taken from the first hardware profile if present |
 | `lastSyncTime` | `device.last_seen_time` | Epoch timestamp of last device sync | `timestamp (Unix epoch float)` | ISO 8601 string parsed with dateutil.isoparse(), converted to .timestamp() |
 | `lastSyncTime` | `time` | Event time (top-level OCSF field) | `timestamp (Unix epoch float)` | Same as last_seen_time; falls back to datetime.utcnow() if null |
 | `hardwareProfiles[0].model` | `device.model` | Device hardware model | `string` | Model taken from the first hardware profile if present |
-| `parentGroupUuid → deviceGroups` | `device.groups` | OCSF groups the device belongs to | `list[Group]` | Pre-loaded group map (from /v1/device_groups) is keyed by uuid.<br>If device.parentGroupUuid matches a group, that group is added as an OCSF Group<br>with name=displayName and uid=uuid. |
+| `parentGroupUuid → deviceGroups` | `device.groups` | OCSF groups the device belongs to | `list[Group]` | Pre-loaded group map (from /v1/device_groups) is keyed by uuid. If device.parentGroupUuid matches a group, that group is added as an OCSF Group with name=displayName and uid=uuid. |
 | `static: true` | `device.is_managed` | Whether the device is managed | `boolean` | All devices returned by the ESET API are managed devices |
 | `static: ESET EDR` | `metadata.product.name` | Product name in OCSF metadata | `string` | Static value |
 | `static: 2 / Collect` | `activity_id / activity_name` | OCSF activity classification | `integer / string` | Device inventory collection maps to OCSF activity Collect (2) |
@@ -204,3 +205,5 @@ The OCSF DeviceOCSFModel produced after transformation
 }
 
 ```
+
+

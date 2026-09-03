@@ -602,6 +602,7 @@ Use the `render` operator to display results in a chart to identify more easily 
 - `barchart`
 - `linechart`
 - `sankey`
+- `geomap`
 
 ``` shell
 <table name>
@@ -618,6 +619,24 @@ For the `sankey` chart, the syntax uses `source`, `target`, and `value` paramete
 | render sankey with (source=<source column>, target=<target column>, value=<value column>)
 
 ```
+
+For the `geomap` chart, use one of the following syntaxes:
+
+``` shell
+<table name>
+| aggregate <function> by <country column>
+| render geomap with (country=<country column>, value=<value column>)
+
+```
+
+``` shell
+<table name>
+| aggregate <function> by <latitude column>, <longitude column>
+| render geomap with (lat=<latitude column>, lon=<longitude column>, label=<label column>, value=<value column>)
+
+```
+
+The `country` parameter accepts ISO 3166-1 alpha-2 country codes and full English country names. Use either `country` or the `lat` and `lon` parameters; they cannot be combined. The `label` and `value` parameters are optional.
 
 !!! example "Count the number of events per asset in the events table and render it in a bar chart"
 
@@ -656,6 +675,23 @@ For the `sankey` chart, the syntax uses `source`, `target`, and `value` paramete
     === "Results"
 
         A Sankey chart showing the volume of connections from each source IP to each destination IP.
+
+!!! example "Visualize authentication failures by source country on a map"
+
+    === "Query"
+
+        ``` shell
+        events
+        | where timestamp > ago(24h)
+        | where event.category == "authentication" and action.outcome == "failure"
+        | aggregate count() by source.geo.country_iso_code
+        | render geomap with (country=source.geo.country_iso_code, value=count)
+
+        ```
+
+    === "Results"
+
+        A world map in which each country is colored according to the number of authentication failures originating from it.
 
 ## Join tables
 

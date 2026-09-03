@@ -495,6 +495,18 @@ The following Sekoia.io built-in rules match the intake **BeyondTrust PRA Team [
     
     - **Effort:** master
 
+??? abstract "Sigma Intelligence Nanocore Persistence Key"
+    
+    Nanocore artefacts detection
+    
+    - **Effort:** intermediate
+
+??? abstract "Sigma Intelligence Pangolin8RAT Working Directory File Artifacts"
+    
+    Detects access to filesystem artifacts associated with Pangolin8RAT.
+    
+    - **Effort:** intermediate
+
 ??? abstract "Sticky Key Like Backdoor Usage"
     
     Detects the usage and installation of a backdoor that uses an option to register a malicious debugger for built-in tools that are accessible in the login screen. Prerequisites are logging for Registry events, which can be done with Sysmon (events 12 and 13).

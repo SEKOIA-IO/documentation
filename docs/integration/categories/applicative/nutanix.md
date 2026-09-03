@@ -88,6 +88,8 @@ To achieve this you can:
 !!! warning
 	Only the Sekoia.io forwarder is officially supported. Other options are documented for reference purposes but do not have official support.
 
+{!_shared_content/operations_center/integrations/generated/4b84d5b6-dee1-460a-8595-e9cfaeebf045_sample.md!}
+
 {!_shared_content/operations_center/integrations/generated/nutanix_sample.md!}
 
 {!_shared_content/operations_center/detection/generated/suggested_rules_4b84d5b6-dee1-460a-8595-e9cfaeebf045_do_not_edit_manually.md!}

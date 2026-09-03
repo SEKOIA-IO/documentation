@@ -120,6 +120,7 @@ nav:
       - PaloAlto Cortex XSOAR: cti/features/integrations/paloalto_xsoar.md
       - PaloAlto Cortex XSIAM: cti/features/integrations/paloalto_xsiam.md
       - ThreatQuotient: cti/features/integrations/threatquotient.md
+      - Torq: cti/features/integrations/torq.md
   - Detect, Hunt and Respond (Defend):
     - Defend overview: xdr/index.md
     - Quick start guide: xdr/xdr_quick_start.md
@@ -137,6 +138,7 @@ nav:
       - IOCs Detection: xdr/features/detect/iocdetection.md
       - Rules Catalog: xdr/features/detect/rules_catalog.md
       - Built-in Rules: xdr/features/detect/built_in_detection_rules.md
+      - Built-in Geolocalisation: xdr/features/detect/built_in_geolocalisation.md
       - Sigma: xdr/features/detect/sigma.md
       - Anomaly Detection: xdr/features/detect/anomaly.md
       - IOCs Collections: xdr/features/detect/ioccollections.md
@@ -147,7 +149,10 @@ nav:
         - Alert similarity: xdr/features/detect/sol_detection_similarity.md
         - Lag management: xdr/features/detect/sol_detection_lag_management.md
     - Investigate:
-      - Alerts: xdr/features/investigate/alerts.md
+      - Alerts:
+        - Alerts overview: xdr/features/investigate/alerts.md
+        - Alerts listing: xdr/features/investigate/alerts_listing.md
+        - Alerts details: xdr/features/investigate/alert_details.md
       - Events page: xdr/features/investigate/events.md
       - Eternal events: xdr/features/investigate/eternal_events.md
       - Massive event export:
@@ -161,15 +166,26 @@ nav:
         - Create and manage cases:
           - Create a case: xdr/features/investigate/create_a_case.md
           - Manage cases: xdr/features/investigate/manage_cases.md
+        - Case templates:
+          - Case templates overview: xdr/features/investigate/case_templates.md
+          - Create a case template: xdr/features/investigate/create_a_case_template.md
+          - Apply a case template: xdr/features/investigate/apply_a_case_template.md
         - Investigate cases:
           - Investigate case details: xdr/features/investigate/case_details.md
           - Graph investigation: xdr/features/investigate/graph_investigation.md
           - AI Cases: xdr/features/investigate/ai_cases.md
+          - Run a playbook from a case: xdr/features/investigate/run_playbook_case.md
       - Custom fields:
         - Custom fields overview: xdr/features/investigate/custom_fields.md
         - Use custom fields: xdr/features/investigate/use_custom_fields.md
         - Manage custom field definitions: xdr/features/investigate/manage_custom_field_definitions.md
         - Query custom fields: xdr/features/investigate/query_custom_fields.md
+      - Custom statuses:
+        - Custom statuses overview: xdr/features/investigate/custom_statuses.md
+        - Manage custom statuses: xdr/features/investigate/manage_custom_statuses.md
+        - Migrate custom statuses: xdr/features/investigate/migrate_custom_statuses.md
+        - Custom verdicts: xdr/features/investigate/custom_verdicts.md
+        - Custom priorities: xdr/features/investigate/custom_priorities.md
       - Asset Context Panel: xdr/features/investigate/asset_context_panel.md
       - Events Query Language: xdr/features/investigate/events_query_language.md
       - Querying Events: xdr/features/investigate/querying_events.md
@@ -224,7 +240,6 @@ nav:
       - Elevate analysis states: xdr/features/modules/elevate_analysis_states.md
     - Investigate with Elevate:
       - Investigate an alert: xdr/features/modules/elevate_investigate_alert.md
-      - Investigate a case: xdr/features/modules/elevate_investigate_case.md
       - Audit with Traces: xdr/features/modules/elevate_traces.md
       - Override a verdict: xdr/features/modules/elevate_validate_verdict.md
       - Trigger an analysis: xdr/features/modules/elevate_manual_analysis.md
@@ -238,12 +253,20 @@ nav:
       - Manage Elevate runs: xdr/features/modules/elevate_quota.md
   - Asset Intelligence (Reveal):
     - Reveal overview: xdr/features/modules/reveal_index.md
-    - Get started with Reveal: xdr/features/modules/reveal_getting_started.md
-    - Explore assets context: xdr/features/modules/reveal_asset_context_panel.md
-    - Visualize attack paths: xdr/features/investigate/attack_path_visualization.md
-    - Discover Points of Interest: xdr/features/detect/points_of_interest.md
-    - Check asset connector health: xdr/features/collect/asset_connector_health.md
-    - Reveal enablement matrix: xdr/features/modules/reveal_feature_enablement.md
+    - Get started with Reveal:
+      - Reveal quick start guide: xdr/features/modules/reveal_getting_started.md
+      - Reveal enablement matrix: xdr/features/modules/reveal_feature_enablement.md
+    - Asset connectors:
+      - Create asset connectors: xdr/features/modules/reveal_asset_connectors_create.md
+      - Check asset connector health: xdr/features/collect/asset_connector_health.md
+      - Troubleshoot asset connectors: xdr/features/modules/reveal_asset_connectors_troubleshoot.md
+    - Investigate assets:
+      - Explore assets context: xdr/features/modules/reveal_asset_context_panel.md
+      - Visualize attack paths: xdr/features/investigate/attack_path_visualization.md
+      - Discover Points of Interest: xdr/features/detect/points_of_interest.md
+      - Check Endpoint Hygiene: xdr/features/modules/reveal_hygiene.md
+      - Leverage Vulnerability Enrichment: xdr/features/modules/reveal_vulnerabilities.md
+      - Rely on Security Controls: xdr/features/modules/reveal_security_controls.md
 - Usecases:
   - Export large volumes of events: xdr/usecases/massive_export.md
   - Implement a blocklist in Sekoia.io: xdr/usecases/playbook/implement_blocklist.md
@@ -371,6 +394,7 @@ nav:
       - Palo Alto Cortex XDR (EDR): integration/categories/endpoint/paloalto_cortex_edr.md
       - Panda Security Aether: integration/categories/endpoint/panda_security_aether.md
       - Pradeo MTD: integration/categories/endpoint/pradeo_mtd.md
+      - Proxmox VE: integration/categories/endpoint/proxmox_ve.md
       - SentinelOne: integration/categories/endpoint/sentinelone.md
       - SentinelOne Cloud Funnel 2.0: integration/categories/endpoint/sentinelone_cloudfunnel2.0.md
       - Sekoia.io Endpoint Agent: integration/categories/endpoint/sekoiaio.md
@@ -422,6 +446,7 @@ nav:
       - Wallix: integration/categories/iam/wallix.md
     - Network:
       - Amazon VPC Flow Logs: integration/categories/network/aws_flow_logs.md
+      - Amazon VPC Flow Logs (Parquet): integration/categories/network/aws_flow_logs_parquet.md
       - Azure Application Gateway: integration/categories/network/azure_application_gateway.md
       - ArubaOS Switch: integration/categories/network/arubaos.md
       - BIND: integration/categories/network/bind.md
@@ -458,6 +483,7 @@ nav:
       - Jizo AI / Sesame Jizo NDR: integration/categories/network/sesameit_jizo.md
       - Umbrella DNS Logs: integration/categories/network/umbrella_dns.md
       - Unbound: integration/categories/network/unbound.md
+      - Vigidomain: integration/categories/network/vigidomain.md
       - Zimperium MTD - Threats: integration/categories/network/zimperium_mtd.md
     - Network Security:
       - Akamai Guardicore On-Premises: integration/categories/network_security/akamai_guardicore_onprem.md
@@ -527,7 +553,8 @@ nav:
       - Seckiot Citadelle: integration/categories/network_security/seckiot_citadelle.md
       - Security Scorecard Vunerability Assessment Scanner: integration/categories/network_security/securityscorecard_vas.md
       - SonicWall Firewall: integration/categories/network_security/sonicwall_fw.md
-      - SonicWall SMA: integration/categories/network_security/sonicwall_sma.md
+      - SonicWall SMA 100 Series (deprecated): integration/categories/network_security/sonicwall_sma_100_series.md
+      - SonicWall SMA 1000 Series: integration/categories/network_security/sonicwall_sma_1000_series.md
       - Sophos Firewall: integration/categories/network_security/sophos_fw.md
       - Sophos Threat Analysis Center: integration/categories/network_security/sophos_threat_analysis_center.md
       - Stormshield Network Security: integration/categories/network_security/stormshield_network_security.md
@@ -543,6 +570,7 @@ nav:
       - Ubika WAAP Gateway: integration/categories/network_security/ubika_waap.md
       - Umbrella IP Logs: integration/categories/network_security/umbrella_ip.md
       - Umbrella Proxy Logs: integration/categories/network_security/umbrella_proxy.md
+      - Upwind: integration/categories/network_security/upwind.md
       - Varonis Data Security: integration/categories/network_security/varonis_data_security.md
       - Vectra Cognito Detect: integration/categories/network_security/vectra.md
       - Vectra Respond UX - Entity Scoring: integration/categories/network_security/vectra_respond_ux_entity_scoring.md
@@ -554,6 +582,7 @@ nav:
       - Zscaler Internet Access: integration/categories/network_security/zscaler_zia.md
       - Zscaler Private Access: integration/categories/network_security/zscaler_zpa.md
     - Threat Intelligence:
+      - Flare Events: integration/categories/threat_intelligence/flare_events.md
       - MokN - Baits: integration/categories/threat_intelligence/mokn_baits.md
       - Prodaft USTA: integration/categories/threat_intelligence/prodaft_usta.md
   - List of Playbooks Actions:
@@ -563,7 +592,7 @@ nav:
       - Mattermost: integration/action_library/mattermost.md
       - New Relic: integration/action_library/new-relic.md
       - PagerDuty: integration/action_library/pagerduty.md
-      - Ilert: integration/action_library/ilert.md
+      - ilert: integration/action_library/ilert.md
     - Cloud Providers:
       - AWS: integration/action_library/aws.md
       - Azure Monitor: integration/action_library/azure-monitor.md
@@ -629,6 +658,8 @@ nav:
   - List of Asset Connectors:
     - Overview: integration/assets_categories/overview.md
     - Vulnerability:
+      - ESET EDR: integration/assets_categories/vulnerability/eset_vulnerability.md
+      - Holm Security: integration/assets_categories/vulnerability/holm_security.md
       - Tenable.io: integration/assets_categories/vulnerability/tenable_io.md
     - Device:
       - AWS EC2: integration/assets_categories/device/aws_ec2_device.md
@@ -673,7 +704,15 @@ nav:
     - Overview: integration/faq/overview.md
     - General Questions:
       - Bug VS Improvement Requests: integration/faq/general_questions/bug_and_improvement_requests.md
-- API Documentation: developer/api.md
+- API Documentation:
+  - API Reference: developer/api.md
+  - Quickstart: developer/quickstart.md
+  - Filtering: developer/filtering.md
+  - Tutorials:
+    - Overview: developer/tutorials/index.md
+    - Search for rules: developer/tutorials/search_rules.md
+    - Create a SIGMA rule: developer/tutorials/create_sigma_rule.md
+    - Search events: developer/tutorials/search_events.md
 plugins:
 - search: null
 - redirects:
@@ -887,7 +926,8 @@ plugins:
       xdr/features/collect/integrations/network/sesameit_jizo.md: integration/categories/network/sesameit_jizo.md
       xdr/features/collect/integrations/network/skyhigh_secure_web_gateway.md: integration/categories/network_security/skyhigh_secure_web_gateway_on_prem.md
       xdr/features/collect/integrations/network/sonicwall_fw.md: integration/categories/network_security/sonicwall_fw.md
-      xdr/features/collect/integrations/network/sonicwall_sma.md: integration/categories/network_security/sonicwall_sma.md
+      xdr/features/collect/integrations/network/sonicwall_sma_1000_series.md: integration/categories/network_security/sonicwall_sma_1000_series.md
+      xdr/features/collect/integrations/network/sonicwall_sma_100_series.md: integration/categories/network_security/sonicwall_sma_100_series.md
       xdr/features/collect/integrations/network/sophos_fw.md: integration/categories/network_security/sophos_fw.md
       xdr/features/collect/integrations/network/squid.md: integration/categories/network/squid.md
       xdr/features/collect/integrations/network/stormshield_network_security.md: integration/categories/network_security/stormshield_network_security.md
@@ -898,6 +938,8 @@ plugins:
       xdr/features/collect/integrations/network/wallix.md: integration/categories/iam/wallix.md
       xdr/features/collect/integrations/network/watchguard_firebox.md: integration/categories/network_security/watchguard_firebox.md
       xdr/features/investigate/case_custom_fields.md: xdr/features/investigate/custom_fields.md
+      xdr/features/investigate/configure_custom_statuses.md: xdr/features/investigate/custom_statuses.md
+      xdr/features/investigate/configure_custom_verdicts.md: xdr/features/investigate/custom_verdicts.md
       xdr/features/investigate/dork_language.md: xdr/features/investigate/events_query_language.md
       xdr/features/investigate/sekoia_operating_language.md: xdr/features/investigate/sol_overview.md
       xdr/features/investigate/use_custom_fields_in_cases.md: xdr/features/investigate/use_custom_fields.md
@@ -927,3 +969,5 @@ validation:
   links:
     absolute_links: relative_to_docs
   omitted_files: ignore
+exclude_docs: |
+  xdr/features/modules/elevate_investigate_case.md

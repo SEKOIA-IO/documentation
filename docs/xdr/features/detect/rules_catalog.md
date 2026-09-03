@@ -241,6 +241,11 @@ The Sigma Pattern Testing feature allows SOC analysts to validate detection rule
 
     For more information about time-based detection in Sigma rules, see the [Sigma documentation](sigma.md#detection-on-specific-time-range).
 
+!!! warning
+    Some fields (eg. `process.command_line`) can grow very large. Beyond a certain size, they are not indexed in our storage system, so they cannot be queried and the Pattern Testing Feature won't match against them.
+
+    This only affects querying: the live detection system still evaluates the full field value, so the rule will match incoming events as expected.
+
 Pattern testing provides two distinct testing modes:
 
 - **Rule Testing**: Validate new or existing Sigma detection patterns against historical event data

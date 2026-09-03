@@ -345,6 +345,12 @@ The following Sekoia.io built-in rules match the intake **Suricata**. This docum
     
     - **Effort:** elementary
 
+??? abstract "Sigma Intelligence Arcane Stealer HTTP Communication"
+    
+    Detects potential Arcane Stealer communications through the User-Agent.
+    
+    - **Effort:** elementary
+
 ??? abstract "Sliver DNS Beaconing"
     
     Detects suspicious DNS queries known from Sliver beaconing 

@@ -50,6 +50,42 @@ Single device record from GET /v2/devices.
 
 ```
 
+#### Holm Security Network Asset Sample
+Single scanned network asset from GET /v2/net-assets.
+
+```json
+{
+  "uuid": "00000000-0000-0000-0000-000000000000",
+  "name": "host-example01.example.com",
+  "hostname": "host-example01.example.com",
+  "ip": "192.0.2.20",
+  "ip_range": null,
+  "type": "host",
+  "operating_system": "Ubuntu 22.04",
+  "details": "",
+  "created": "2026-07-01T16:37:00.667844Z",
+  "last_detected": "2026-07-03T08:47:33Z",
+  "business_impact": "neutral",
+  "hosts_personal_data": false,
+  "auth_status": "not_configured",
+  "vulnerabilities_count": 231,
+  "risk_score": 100,
+  "severity": {
+    "critical": 19,
+    "high": 32,
+    "medium": 26,
+    "low": 5,
+    "info": 70
+  },
+  "tags": [
+    {"uuid": "00000000-0000-0000-0000-00000000000a", "name": "Web servers"}
+  ],
+  "open_ports": [
+    {"proto": "tcp", "port": 443}
+  ]
+}
+
+```
 
 
 
@@ -87,6 +123,23 @@ The following table shows how source data is mapped to OCSF model fields:
 | `network.ip_address_v6` | `device.network_interfaces[1].ip` | Secondary network interface IPv6 address | `string` | Secondary IPv6 interface; created only when ip_address_v6 is present |
 | `created` | `device.created_time` | Device creation timestamp | `timestamp` | Convert ISO 8601 created to Unix epoch |
 | `last_sync` | `device.last_seen_time` | Device last seen timestamp | `timestamp` | Convert ISO 8601 last_sync to Unix epoch |
+| `max_severity` | `device.risk_level` | Highest vulnerability severity found on the device | `string` | Normalize via MAX_SEVERITY_MAP to OCSF RiskLevelStr; unknown values -> null |
+| `max_severity` | `device.risk_level_id` | OCSF risk level ID | `integer` | Normalize via MAX_SEVERITY_MAP to OCSF RiskLevelId; unknown values -> null |
+| `risk_score` | `device.risk_score` | Device risk score | `integer` | Direct mapping; omitted when 0 |
+| `net_assets.uuid` | `device.uid` | Network asset unique identifier | `string` | Direct mapping of the network asset UUID |
+| `net_assets.name` | `device.name` | Network asset name | `string` | Direct mapping of the asset name |
+| `net_assets.hostname` | `device.hostname` | Network asset hostname | `string` | Direct mapping of hostname; empty string fallback if missing |
+| `net_assets.type` | `device.type / device.type_id` | Device type | `string` | 'host' -> 'Unknown' (0), 'network' -> 'Other' (99); Holm exposes no server/desktop signal for scanned assets |
+| `net_assets.ip` | `device.ip` | Network asset IP address | `string` | Direct mapping of the asset IP address |
+| `net_assets.operating_system` | `device.os.name` | Operating system name | `string` | Direct mapping of the free-form operating system label |
+| `net_assets.operating_system` | `device.os.type / device.os.type_id` | Operating system type | `string` | Derived from known keywords via OS_NAME_KEYWORDS (e.g. 'Ubuntu 22.04' -> linux/200); unrecognized -> 'other' (99) |
+| `net_assets.details` | `device.desc` | Network asset description | `string` | Direct mapping; omitted when empty |
+| `net_assets.created` | `device.created_time` | Network asset creation timestamp | `timestamp` | Convert ISO 8601 created to Unix epoch |
+| `net_assets.last_detected` | `device.last_seen_time` | Network asset last detection timestamp | `timestamp` | Convert ISO 8601 last_detected to Unix epoch |
+| `net_assets.last_detected` | `time` | OCSF event timestamp | `timestamp` | Convert ISO 8601 last_detected to Unix epoch; fall back to created if last_detected is null |
+| `net_assets.severity` | `device.risk_level / device.risk_level_id` | Highest vulnerability severity found on the asset | `string` | Most severe non-empty bucket of the severity breakdown (critical > high > medium > low > info); all empty -> null |
+| `net_assets.risk_score` | `device.risk_score` | Network asset risk score | `integer` | Direct mapping; omitted when 0 |
+| `static: false` | `device.is_managed` | Whether the asset is agent-managed | `boolean` | Always false: network assets are discovered by a scan, not by an agent |
 
 
 
@@ -147,4 +200,48 @@ Transformed Holm Security device record to OCSF Device Inventory Info event
 
 ```
 
+#### Device Inventory Info: Collect (network asset)
+Transformed Holm Security network asset to OCSF Device Inventory Info event
+
+```json
+{
+  "activity_id": 2,
+  "activity_name": "Collect",
+  "category_name": "Discovery",
+  "category_uid": 5,
+  "class_name": "Device Inventory Info",
+  "class_uid": 5001,
+  "type_name": "Device Inventory Info: Collect",
+  "type_uid": 500102,
+  "time": 1751532453.0,
+  "metadata": {
+    "product": {
+      "name": "Holm Security",
+      "version": "v2"
+    },
+    "version": "1.5.0"
+  },
+  "device": {
+    "uid": "00000000-0000-0000-0000-000000000000",
+    "name": "host-example01.example.com",
+    "hostname": "host-example01.example.com",
+    "type": "Unknown",
+    "type_id": 0,
+    "ip": "192.0.2.20",
+    "created_time": 1751387820.667844,
+    "last_seen_time": 1751532453.0,
+    "is_managed": false,
+    "vendor_name": "Holm Security",
+    "risk_score": 100,
+    "risk_level": "Critical",
+    "risk_level_id": 4,
+    "os": {
+      "name": "Ubuntu 22.04",
+      "type": "linux",
+      "type_id": 200
+    }
+  }
+}
+
+```
 

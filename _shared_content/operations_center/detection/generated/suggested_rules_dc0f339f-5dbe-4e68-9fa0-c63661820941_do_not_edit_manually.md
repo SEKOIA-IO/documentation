@@ -399,6 +399,12 @@ The following Sekoia.io built-in rules match the intake **Zscaler Internet Acces
     
     - **Effort:** elementary
 
+??? abstract "Sigma Intelligence Arcane Stealer HTTP Communication"
+    
+    Detects potential Arcane Stealer communications through the User-Agent.
+    
+    - **Effort:** elementary
+
 ??? abstract "Sign-In Via Known AiTM Phishing Kit"
     
     Detects a sign-in attempt from an IP address belonging to a known adversary-in-the-middle phishing kit.

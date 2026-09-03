@@ -97,7 +97,7 @@ The following Sekoia.io built-in rules match the intake **Sekoia.io Endpoint Age
     
     Detects potential abuse of Active Directory Replication Service (ADRS) from a non machine account to request credentials. It requires a configuration step where the legit service account should be added to the exclusion list.
     
-    - **Effort:** advanced
+    - **Effort:** master
 
 ??? abstract "Active Directory Shadow Credentials"
     
@@ -553,7 +553,7 @@ The following Sekoia.io built-in rules match the intake **Sekoia.io Endpoint Age
     
     Detects DCSync attack, it is highly likely that the post-exploitation tool Mimikatz was executed.
     
-    - **Effort:** intermediate
+    - **Effort:** master
 
 ??? abstract "DHCP Callout DLL Installation"
     
@@ -2360,6 +2360,24 @@ The following Sekoia.io built-in rules match the intake **Sekoia.io Endpoint Age
     Detects powershell script executed via ErrTraffic infection chain
     
     - **Effort:** elementary
+
+??? abstract "Sigma Intelligence Nanocore Persistence Key"
+    
+    Nanocore artefacts detection
+    
+    - **Effort:** intermediate
+
+??? abstract "Sigma Intelligence Pangolin8RAT Working Directory File Artifacts"
+    
+    Detects access to filesystem artifacts associated with Pangolin8RAT.
+    
+    - **Effort:** intermediate
+
+??? abstract "Sigma Intelligence Windows DRILLAPP Malware"
+    
+    Sigma RULE to detect DrillAPP or other malicious launch of edge to disable security measures and abuse permissions.
+    
+    - **Effort:** intermediate
 
 ??? abstract "Sliver DNS Beaconing"
     

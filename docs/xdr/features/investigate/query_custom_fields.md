@@ -1,8 +1,5 @@
 # Query custom fields
 
-!!! note "Early Access"
-    This feature is currently in Early Access and is only available for Beta testers. Sekoia.io plans to roll out this functionality to all environments soon.
-
 Custom fields are queryable through the Sekoia Operating Language (SOL), enabling you to filter alerts and cases, build aggregations, and create dashboard widgets based on structured metadata values. This reference describes the column naming convention and provides ready-to-use query examples.
 
 ## Column naming convention

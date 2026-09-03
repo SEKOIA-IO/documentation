@@ -69,6 +69,12 @@ The following Sekoia.io built-in rules match the intake **Microsoft Defender XDR
     
     - **Effort:** advanced
 
+??? abstract "Aspnet Compiler"
+    
+    Detects the starts of aspnet compiler.
+    
+    - **Effort:** advanced
+
 ??? abstract "Attempt to Disable Gatekeeper Execution Control"
     
     Detects attempts to disable Gatekeeper through the command line. Gatekeeper is a macOS feature designed to ensure that only trusted, signed software can be executed.
@@ -1848,6 +1854,24 @@ The following Sekoia.io built-in rules match the intake **Microsoft Defender XDR
 ??? abstract "Shell PID Injection"
     
     Detects when shells PID are listed and injected in another process. It can be performed to reuse sudo token related to shell in order to elevate privilege and maintain persistence.
+    
+    - **Effort:** intermediate
+
+??? abstract "Sigma Intelligence Arcane Stealer HTTP Communication"
+    
+    Detects potential Arcane Stealer communications through the User-Agent.
+    
+    - **Effort:** elementary
+
+??? abstract "Sigma Intelligence Nanocore Persistence Key"
+    
+    Nanocore artefacts detection
+    
+    - **Effort:** intermediate
+
+??? abstract "Sigma Intelligence Windows DRILLAPP Malware"
+    
+    Sigma RULE to detect DrillAPP or other malicious launch of edge to disable security measures and abuse permissions.
     
     - **Effort:** intermediate
 
