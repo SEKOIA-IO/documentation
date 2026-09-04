@@ -46,7 +46,7 @@ $ curl -X POST https://api.cloudflare.com/client/v4/accounts/<CLOUDFLARE_ACCOUNT
     "enabled": true,
     "max_upload_bytes": 5000000,
     "max_upload_records": 1000,
-    "logpull_options":"fields=AccountID,Action,Datetime,DestinationIP,DestinationPort,DeviceID,DeviceName,Email,OverrideIP,OverridePort,PolicyID,PolicyName,SNI,SessionID,SourceIP,SourceInternalIP,SourcePort,Transport,UserID&timestamps=rfc3339",
+    "output_options":"timestamp_format=rfc3339",
     "destination_conf": "https://intake.sekoia.io/plain/batch?header_X-SEKOIAIO-INTAKE-KEY=<YOUR_INTAKE_KEY>"
 }' # (1)
 ```
@@ -65,7 +65,7 @@ $ curl -X POST https://api.cloudflare.com/client/v4/accounts/<CLOUDFLARE_ACCOUNT
     "max_upload_records": 1000,
     "enabled": true,
     "name": null,
-    "logpull_options": "fields=<LIST_OF_FIELDS>",
+    "output_options":"timestamp_format=rfc3339",
     "destination_conf": "https://intake.sekoia.io/plain/batch?header_X-SEKOIAIO-INTAKE-KEY=<YOUR_INTAKE_KEY>",
     "last_complete": null,
     "last_error": null,
