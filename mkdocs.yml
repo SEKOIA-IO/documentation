@@ -82,6 +82,7 @@ nav:
   - Best practices: getting_started/best_practices.md
   - Troubleshooting tips: getting_started/get_troubleshooting_tips.md
 - Sekoia Solutions:
+  - Sekoia's environment: xdr/sekoia_solutions.md
   - Threat Context (Intelligence):
     - Intelligence overview: cti/index.md
     - Data Models: cti/features/data_model.md
@@ -717,6 +718,8 @@ plugins:
 - search: null
 - redirects:
     redirect_maps:
+      index.md: xdr/sekoia_solutions.md
+      xdr/features/investigate/sekoia_operating_language.md: xdr/features/investigate/sol_overview.md
       getting_started/2fa.md: getting_started/account_security.md
       getting_started/apikey_creation.md: getting_started/manage_api_keys.md
       getting_started/first_steps.md: getting_started/index.md
