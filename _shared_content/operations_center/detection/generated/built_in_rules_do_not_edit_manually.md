@@ -1,4 +1,4 @@
-Rules catalog includes **1085 built-in detection rules** ([_last update on 2026-09-03_](rules_changelog.md)).
+Rules catalog includes **1086 built-in detection rules** ([_last update on 2026-09-04_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Identity Information**
 
@@ -2640,6 +2640,12 @@ Rules catalog includes **1085 built-in detection rules** ([_last update on 2026-
     
     - **Effort:** master
     
+??? abstract "Microsoft Defender XDR (Graph API) Endpoint Alert"
+    
+    Microsoft Defender XDR has raised an alert for Microsoft Defender For Endpoint. The alert info and evidence events are grouped with the similarity into the same Sekoia.io alert.
+    
+    - **Effort:** master
+    
 ??? abstract "Microsoft Defender XDR (GraphAPI) Entra ID Protection Alert"
     
     Microsoft Defender XDR has raised an alert for Microsoft Entra ID Protection. The alert info and evidence events are grouped with the similarity into the same Sekoia.io alert.
@@ -4425,6 +4431,12 @@ Rules catalog includes **1085 built-in detection rules** ([_last update on 2026-
     
     - **Effort:** master
     
+??? abstract "Microsoft Defender XDR (Graph API) Endpoint Alert"
+    
+    Microsoft Defender XDR has raised an alert for Microsoft Defender For Endpoint. The alert info and evidence events are grouped with the similarity into the same Sekoia.io alert.
+    
+    - **Effort:** master
+    
 ??? abstract "Microsoft Defender XDR (GraphAPI) Entra ID Protection Alert"
     
     Microsoft Defender XDR has raised an alert for Microsoft Entra ID Protection. The alert info and evidence events are grouped with the similarity into the same Sekoia.io alert.
@@ -5434,6 +5446,12 @@ Rules catalog includes **1085 built-in detection rules** ([_last update on 2026-
 ??? abstract "Microsoft Defender XDR (Graph API) Data Loss Prevention Alert"
     
     Microsoft Defender XDR has raised an alert for Data Loss Prevention. The alert info and evidence events are grouped with the similarity into the same Sekoia.io alert.
+    
+    - **Effort:** master
+    
+??? abstract "Microsoft Defender XDR (Graph API) Endpoint Alert"
+    
+    Microsoft Defender XDR has raised an alert for Microsoft Defender For Endpoint. The alert info and evidence events are grouped with the similarity into the same Sekoia.io alert.
     
     - **Effort:** master
     
