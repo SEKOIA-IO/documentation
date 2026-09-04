@@ -617,6 +617,7 @@ plugins:
 - search: null
 - redirects:
     redirect_maps:
+      index.md: xdr/sekoia_solutions.md
       xdr/features/investigate/sekoia_operating_language.md: xdr/features/investigate/sol_overview.md
       getting_started/2fa.md: getting_started/account_security.md
       getting_started/apikey_creation.md: getting_started/manage_api_keys.md
