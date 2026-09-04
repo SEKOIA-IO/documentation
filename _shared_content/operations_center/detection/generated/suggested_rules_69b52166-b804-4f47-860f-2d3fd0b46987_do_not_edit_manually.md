@@ -273,6 +273,12 @@ The following Sekoia.io built-in rules match the intake **Azure Front Door**. Th
     
     - **Effort:** elementary
 
+??? abstract "Sekoia.io Activity Logs Rule Deactivation Bulk"
+    
+    Detects a massive rule deactivation observed threw Sekoia.io activity logs.
+    
+    - **Effort:** master
+
 ??? abstract "Sekoia.io EICAR Detection"
     
     Detects observables in Sekoia.io CTI tagged as EICAR, which are fake samples meant to test detection.
@@ -282,6 +288,12 @@ The following Sekoia.io built-in rules match the intake **Azure Front Door**. Th
 ??? abstract "SharePoint Authenticated SSRF"
     
     Detects succesful SSRF from an authenticated SharePoint user.
+    
+    - **Effort:** elementary
+
+??? abstract "Sigma Intelligence Arcane Stealer HTTP Communication"
+    
+    Detects potential Arcane Stealer communications through the User-Agent.
     
     - **Effort:** elementary
 

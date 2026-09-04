@@ -69,6 +69,12 @@ The following Sekoia.io built-in rules match the intake **Microsoft Defender XDR
     
     - **Effort:** advanced
 
+??? abstract "Aspnet Compiler"
+    
+    Detects the starts of aspnet compiler.
+    
+    - **Effort:** advanced
+
 ??? abstract "Attempt to Disable Gatekeeper Execution Control"
     
     Detects attempts to disable Gatekeeper through the command line. Gatekeeper is a macOS feature designed to ensure that only trusted, signed software can be executed.
@@ -1083,6 +1089,24 @@ The following Sekoia.io built-in rules match the intake **Microsoft Defender XDR
     
     - **Effort:** elementary
 
+??? abstract "Microsoft Defender For Identity High Severity Alert"
+    
+    Microsoft Defender For Identity raised an alert as High severity. The alert info and evidence events are grouped with the similarity into the same Sekoia.io alert.
+    
+    - **Effort:** master
+
+??? abstract "Microsoft Defender For Identity Low Severity Alert"
+    
+    Microsoft Defender For Identity raised an alert as Low severity. The alert info and evidence events are grouped with the similarity into the same Sekoia.io alert.
+    
+    - **Effort:** master
+
+??? abstract "Microsoft Defender For Identity Medium Severity Alert"
+    
+    Microsoft Defender For Identity raised an alert as Medium severity. The alert info and evidence events are grouped with the similarity into the same Sekoia.io alert.
+    
+    - **Effort:** master
+
 ??? abstract "Microsoft Defender XDR Alert"
     
     Microsoft Defender XDR has raised an alert. The alert info and evidence events are grouped with the similarity into the same Sekoia.io alert.
@@ -1424,6 +1448,12 @@ The following Sekoia.io built-in rules match the intake **Microsoft Defender XDR
     Detects LemonDuck user agent. The format used two sets of alphabetical characters separated by dashes, for example "User-Agent: Lemon-Duck-[A-Z]-[A-Z]".
     
     - **Effort:** elementary
+
+??? abstract "Potential macOS SSH Brute Force Detected"
+    
+    Detects a potential ssh bruteforce to gain access to accounts.
+    
+    - **Effort:** advanced
 
 ??? abstract "PowerCat Function Loading"
     
@@ -1803,6 +1833,12 @@ The following Sekoia.io built-in rules match the intake **Microsoft Defender XDR
     
     - **Effort:** elementary
 
+??? abstract "Sekoia.io Activity Logs Rule Deactivation Bulk"
+    
+    Detects a massive rule deactivation observed threw Sekoia.io activity logs.
+    
+    - **Effort:** master
+
 ??? abstract "Sekoia.io EICAR Detection"
     
     Detects observables in Sekoia.io CTI tagged as EICAR, which are fake samples meant to test detection.
@@ -1818,6 +1854,24 @@ The following Sekoia.io built-in rules match the intake **Microsoft Defender XDR
 ??? abstract "Shell PID Injection"
     
     Detects when shells PID are listed and injected in another process. It can be performed to reuse sudo token related to shell in order to elevate privilege and maintain persistence.
+    
+    - **Effort:** intermediate
+
+??? abstract "Sigma Intelligence Arcane Stealer HTTP Communication"
+    
+    Detects potential Arcane Stealer communications through the User-Agent.
+    
+    - **Effort:** elementary
+
+??? abstract "Sigma Intelligence Nanocore Persistence Key"
+    
+    Nanocore artefacts detection
+    
+    - **Effort:** intermediate
+
+??? abstract "Sigma Intelligence Windows DRILLAPP Malware"
+    
+    Sigma RULE to detect DrillAPP or other malicious launch of edge to disable security measures and abuse permissions.
     
     - **Effort:** intermediate
 

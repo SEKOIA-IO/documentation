@@ -66,10 +66,10 @@
                 -moz-appearance: none !important;
                 -webkit-appearance: none !important;
                 appearance: none !important;
-                border: 1px solid #cbcfe1;
+                border: 1px solid #DADCDE;
                 line-height: 1.5;
-                color: #21225f;
-                border-radius: 8px;
+                color: #212223;
+                border-radius: 4px;
             }
 
             input[name=search-tags] {
@@ -89,7 +89,7 @@
             .doc-filter {
 
                 button {
-                    color: #21225f;
+                    color: #212223;
                     font-weight: bold;
                     background: url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20fill%3D%22currentColor%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20fill-rule%3D%22evenodd%22%20d%3D%22M6%2012a1%201%200%200%201%201-1h10a1%201%200%201%201%200%202H7a1%201%200%200%201-1-1ZM9%2017a1%201%200%200%201%201-1h4a1%201%200%201%201%200%202h-4a1%201%200%200%201-1-1ZM3%207a1%201%200%200%201%201-1h16a1%201%200%201%201%200%202H4a1%201%200%200%201-1-1Z%22%20clip-rule%3D%22evenodd%22%3E%3C%2Fpath%3E%3C%2Fsvg%3E') no-repeat white;
                     transition: background 125ms ease-in-out;
@@ -98,13 +98,13 @@
 
                     &:hover,
                     &:active {
-                        background-color: #f1f2f9;
+                        background-color: #EEF0F2;
                     }
                 }
 
                 b {
                     margin: 0px 12px;
-                    color: #12005e;
+                    color: #212223;
                 }
             }
 
@@ -135,7 +135,7 @@
 
                     >a {
                         font-weight: bold;
-                        color: #12005e;
+                        color: #212223;
                         margin-bottom: 4px;
                         display: block;
                     }
@@ -163,7 +163,7 @@
                                 justify-content: space-between;
                                 padding: 2px 0;
                                 font-weight: normal;
-                                color: #1b18cd;
+                                color: #212223;
 
                                 &:hover {
                                     font-weight: bold;
@@ -197,7 +197,7 @@
                                     a {
                                         cursor: pointer;
                                         font-weight: normal;
-                                        color: #12005e;
+                                        color: #212223;
                                         font-size: 13px;
                                         display: flex;
                                         align-items: flex-start;
@@ -236,7 +236,7 @@
 .filter-dropdown {
     background: white;
     border: 1px solid #e2e4f0;
-    border-radius: 8px;
+    border-radius: 4px;
     box-shadow: rgba(45, 46, 131, 0.16) 0px 2px 8px 0px;
     padding: 8px;
 
@@ -265,7 +265,7 @@
             display: flex;
             align-items: center;
             transition: background 125ms ease-in-out;
-            color: #21225f;
+            color: #212223;
 
             &:hover {
                 background: #f8f9fc;
@@ -280,7 +280,7 @@
     }
 
     b {
-        color: #21225f;
+        color: #212223;
         display: block;
         text-align: left;
         padding-left: 32px;

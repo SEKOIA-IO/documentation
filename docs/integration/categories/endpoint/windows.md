@@ -23,7 +23,7 @@ Additionally, this documentation will offer guidance on collecting and forwardin
     Please be advised that this documentation assumes the use of the 64-bit version of NXLog. If you are using the 32-bit version, it is crucial that you replace all references to `C:\Program Files\nxlog\` in the commands and configuration files with `C:\Program Files (x86)\nxlog\`. Failure to make this adjustment may result in errors.
 
 !!! Warning
-    Please be advised that collecting Windows events with NXLog on certain Windows languages that contain accents (such as French for "Système" keyword), are not correctly encoded by NXLog and results in an error of interpretation on our product. In such case, please consider the installation of our [agent](https://docs.sekoia.io/integration/integrations/endpoint/sekoiaio/) on the supported OS.
+    Please be advised that collecting Windows events with NXLog on certain Windows languages that contain accents (such as French for "Système" keyword), are not correctly encoded by NXLog and results in an error of interpretation on our product. In such case, please consider the installation of our [agent](https://docs.sekoia.com/integration/integrations/endpoint/sekoiaio/) on the supported OS.
 
 ## Windows Event logs
 
@@ -105,7 +105,8 @@ To get started with NXLog, follow these steps:
 
   Exec to_syslog_ietf();
   Exec $raw_event = replace($raw_event, '[NXLOG@', '[SEKOIA@53288 intake_key="YOUR_INTAKE_KEY"][NXLOG@', 1);
-  OutputType Syslog_TLS #Only for TCP, not UDP
+  #Only for TCP, not UDP :
+  OutputType Syslog_TLS 
 </Output>
 
 <Route eventlog_to_sekoia_intake>
@@ -152,8 +153,8 @@ To get started, follow these steps:
  ## Please set the ROOT to the folder your nxlog was installed into,
  ## otherwise it will not start.
 
- #define ROOT C:\Program Files\nxlog
- define ROOT C:\Program Files (x86)\nxlog
+ #define ROOT C:\Program Files (x86)\nxlog
+ define ROOT C:\Program Files\nxlog
  define CERTDIR %ROOT%\cert
 
  Moduledir %ROOT%\modules
@@ -180,7 +181,8 @@ To get started, follow these steps:
   Module om_tcp
   Host RSYSLOG_HOST
   Port 514
-  OutputType Syslog_TLS #Only for TCP, not UDP
+  #Only for TCP, not UDP :
+  OutputType Syslog_TLS 
 
   Exec to_syslog_ietf();
 </Output>
@@ -199,7 +201,7 @@ To get started, follow these steps:
 
 !!! Note
     The iso8859-1 character encoding is limited to 256 characters, which is not enough to represent all French characters. This means that some French characters might not be correctly interpreted or displayed when using iso8859-1 encoding. For example, iso8859-1 does not include characters such as é, è, ê, and ë.
-    In order to correctly represent these characters, it is recommended to install the [Sekoia.io agent](https://docs.sekoia.io/integration/integrations/endpoint/sekoiaio/). This endpoint agent is specifically designed to handle such issues, ensuring the accurate and secure transmission of data.
+    In order to correctly represent these characters, it is recommended to install the [Sekoia.io agent](https://docs.sekoia.com/integration/integrations/endpoint/sekoiaio/). This endpoint agent is specifically designed to handle such issues, ensuring the accurate and secure transmission of data.
 
 Restart the NXLog service through the Services tool as Administrator or use this Powershell command line as admin:
 

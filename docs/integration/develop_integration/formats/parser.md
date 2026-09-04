@@ -326,6 +326,36 @@ Select the way who develop your parse to find the appropriate documentation: wit
     |`strip`| returns the variable removed from heading and leading whitespaces
     |`upper`| returns the value all uppercase
 
+    Ingest extends these built-in filters with a set of custom filters that are especially useful when normalizing parser output:
+
+    | filter        | description                                                            |
+    |---------------|------------------------------------------------------------------------|
+    |`basename`     | returns the base name of a path (support unix and windows path)        |
+    |`dirname`      | returns the directory name of a path (support unix and windows path)   |
+    |`to_rfc3339(value: Any, format=None)`| converts and formats any date as rfc3339 string  |
+    |`to_iso8601(value: Any, format=None)`| converts and formats any date as iso8601 string  |
+    |`re_match`     | tests the value against a regular expression (the whole value)         |
+    |`re_search`    | tests if a subset of the value match the regular expression            |
+    |`is_ipaddress` | tests if the value is a valid IP address (v4 or v6)                   |
+    |`is_ipv4`      | tests if the value is a valid IPv4 address                            |
+    |`is_ipv6`      | tests if the value is a valid IPv6 address                            |
+    |`is_url`       | tests if the value is a valid URL                                     |
+    |`from_json`    | deserializes a JSON string into a dict                                |
+    |`to_json`      | serializes a value into a JSON string                                 |
+    |`from_hex`     | decodes a hexadecimal string into text                                |
+    |`to_hex`       | encodes a value as a hexadecimal string                               |
+    |`to_mac_address`| normalizes a MAC address to EUI-48 format (e.g. `AA:BB:CC:DD:EE:FF`)|
+
+    `from_hex` is useful when a parsed field contains a hexadecimal-encoded value, such as auditd `proctitle` or `cmd`. Decoded auditd values may contain NUL separators (`\x00`) between arguments, so you may want to replace them with spaces before storing the final value.
+
+    Example:
+
+    ```yaml
+    process.command_line: "{{stage1.message.proctitle | from_hex | replace('\x00', ' ') | strip}}"
+    ```
+
+    Use `to_hex` when you need to emit a hexadecimal representation again, for example `{{stage1.message.command | to_hex}}`.
+
     ## Conditions
 
     The structure of events often varies depending on certain conditions such as the type of data (network, audit, security...) and it can be interesting to set up stages that only run when certain conditions are met.
@@ -1027,7 +1057,7 @@ Select the way who develop your parse to find the appropriate documentation: wit
     | `strip`      | returns the variable removed from heading and leading whitespaces |
     | `upper`      | returns the value all uppercase                                   |
 
-    Ingest extends these built-in filters with a set of custom filters:
+    Ingest extends these built-in filters with a set of custom filters that are especially useful when normalizing parser output:
 
     | filter        | description                                                            |
     |---------------|------------------------------------------------------------------------|
@@ -1035,8 +1065,36 @@ Select the way who develop your parse to find the appropriate documentation: wit
     |`dirname`      | returns the directory name of a path (support unix and windows path)   |
     |`to_rfc3339(value: Any, format=None)`| converts and formats any date as rfc3339 string  |
     |`to_iso8601(value: Any, format=None)`| converts and formats any date as iso8601 string  |
-    |`re_match`     | tests the value against an regular expression (the whole value)        |
+    |`re_match`     | tests the value against a regular expression (the whole value)         |
     |`re_search`    | tests if a subset of the value match the regular expression            |
+    |`is_ipaddress` | tests if the value is a valid IP address (v4 or v6)                   |
+    |`is_ipv4`      | tests if the value is a valid IPv4 address                            |
+    |`is_ipv6`      | tests if the value is a valid IPv6 address                            |
+    |`is_url`       | tests if the value is a valid URL                                     |
+    |`from_json`    | deserializes a JSON string into a dict                                |
+    |`to_json`      | serializes a value into a JSON string                                 |
+    |`from_hex`     | decodes a hexadecimal string into text                                |
+    |`to_hex`       | encodes a value as a hexadecimal string                               |
+    |`to_mac_address`| normalizes a MAC address to EUI-48 format (e.g. `AA:BB:CC:DD:EE:FF`)|
+
+    `from_hex` is useful for parser authors dealing with sources that encode values as hexadecimal strings, such as auditd `proctitle` or `cmd` fields. Decoded auditd values may contain NUL separators (`\x00`) between arguments, so you may want to replace them with spaces before storing the final value.
+
+    Example:
+
+    ```yaml
+    - set:
+        process.command_line: "{{parsed_event.proctitle | from_hex | replace('\x00', ' ') | strip}}"
+    ```
+
+    Use `to_hex` when you need to emit a hexadecimal representation again, for example `{{parsed_event.command | to_hex}}`.
+
+    #### Test operators
+
+    Ingest also exposes Jinja2 test operators, usable with the `is` keyword in `{%if %}` blocks:
+
+    | operator                  | description                                                                        |
+    |---------------------------|------------------------------------------------------------------------------------|
+    |`btiwise_has_flag(flag)`   | tests if a bitwise flag is set in an integer value (e.g. `{% if value is btiwise_has_flag(4) %}`)|
 
     ### delete
 

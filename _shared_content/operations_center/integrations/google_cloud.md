@@ -52,6 +52,7 @@ This intake consumes records from Google Pubsub and pushes them to Sekoia.io.
 |project_id| Project id|
 |token_uri| token server endpoint URI `https://oauth2.googleapis.com/token`|
 |type|Activity type `service_account`|
+|universe_domain| The domain name of the Google Cloud Services provider (default to `googleapis.com`, i.e Google Cloud Platform) |
 
 To start sending Logs to SEKOIA.IO, please create a [Logs Router Sinks](https://cloud.google.com/logging/docs/export/configure_export_v2?hl=en#creating_sink) with an [Inclusion Filter](https://cloud.google.com/logging/docs/view/logging-query-language) that fits your needs (Read the documentation dedicated to the product you want to monitor).
 

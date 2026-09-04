@@ -1155,6 +1155,12 @@ The following Sekoia.io built-in rules match the intake **SentinelOne Singularit
     
     - **Effort:** advanced
 
+??? abstract "Potential macOS SSH Brute Force Detected"
+    
+    Detects a potential ssh bruteforce to gain access to accounts.
+    
+    - **Effort:** advanced
+
 ??? abstract "PowerCat Function Loading"
     
     Detect a basic execution of PowerCat. PowerCat is a PowerShell function allowing to do basic connections, file transfer, shells, relays, generate payloads.
@@ -1464,6 +1470,12 @@ The following Sekoia.io built-in rules match the intake **SentinelOne Singularit
 ??? abstract "Shell PID Injection"
     
     Detects when shells PID are listed and injected in another process. It can be performed to reuse sudo token related to shell in order to elevate privilege and maintain persistence.
+    
+    - **Effort:** intermediate
+
+??? abstract "Sigma Intelligence Windows DRILLAPP Malware"
+    
+    Sigma RULE to detect DrillAPP or other malicious launch of edge to disable security measures and abuse permissions.
     
     - **Effort:** intermediate
 

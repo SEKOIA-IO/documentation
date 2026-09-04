@@ -97,7 +97,7 @@ The following Sekoia.io built-in rules match the intake **Windows**. This docume
     
     Detects potential abuse of Active Directory Replication Service (ADRS) from a non machine account to request credentials. It requires a configuration step where the legit service account should be added to the exclusion list.
     
-    - **Effort:** advanced
+    - **Effort:** master
 
 ??? abstract "Active Directory Shadow Credentials"
     
@@ -649,7 +649,7 @@ The following Sekoia.io built-in rules match the intake **Windows**. This docume
     
     Detects DCSync attack, it is highly likely that the post-exploitation tool Mimikatz was executed.
     
-    - **Effort:** intermediate
+    - **Effort:** master
 
 ??? abstract "DHCP Callout DLL Installation"
     
@@ -2073,6 +2073,12 @@ The following Sekoia.io built-in rules match the intake **Windows**. This docume
     
     - **Effort:** master
 
+??? abstract "Potential macOS SSH Brute Force Detected"
+    
+    Detects a potential ssh bruteforce to gain access to accounts.
+    
+    - **Effort:** advanced
+
 ??? abstract "PowerCat Function Loading"
     
     Detect a basic execution of PowerCat. PowerCat is a PowerShell function allowing to do basic connections, file transfer, shells, relays, generate payloads.
@@ -2427,6 +2433,12 @@ The following Sekoia.io built-in rules match the intake **Windows**. This docume
     
     - **Effort:** master
 
+??? abstract "Registry Value Changed Via Windows Run Dialog"
+    
+    Detects when a user enters a suspicious url command in the windows run dialog. Could be linked to ClickFix. For this rule, you will need to add auditing permissions to this specific key and enable audit registry.
+    
+    - **Effort:** master
+
 ??? abstract "Remote Access Tool Domain"
     
     Detects traffic toward a domain flagged as a Remote Administration Tool (RAT).
@@ -2610,6 +2622,36 @@ The following Sekoia.io built-in rules match the intake **Windows**. This docume
 ??? abstract "Shell PID Injection"
     
     Detects when shells PID are listed and injected in another process. It can be performed to reuse sudo token related to shell in order to elevate privilege and maintain persistence.
+    
+    - **Effort:** intermediate
+
+??? abstract "Sigma Intelligence Arcane Stealer HTTP Communication"
+    
+    Detects potential Arcane Stealer communications through the User-Agent.
+    
+    - **Effort:** elementary
+
+??? abstract "Sigma Intelligence ErrTraffic PowerShell Command Line"
+    
+    Detects powershell script executed via ErrTraffic infection chain
+    
+    - **Effort:** elementary
+
+??? abstract "Sigma Intelligence Nanocore Persistence Key"
+    
+    Nanocore artefacts detection
+    
+    - **Effort:** intermediate
+
+??? abstract "Sigma Intelligence Pangolin8RAT Working Directory File Artifacts"
+    
+    Detects access to filesystem artifacts associated with Pangolin8RAT.
+    
+    - **Effort:** intermediate
+
+??? abstract "Sigma Intelligence Windows DRILLAPP Malware"
+    
+    Sigma RULE to detect DrillAPP or other malicious launch of edge to disable security measures and abuse permissions.
     
     - **Effort:** intermediate
 

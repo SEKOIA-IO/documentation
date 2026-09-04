@@ -867,6 +867,24 @@ The following Sekoia.io built-in rules match the intake **Microsoft Defender XDR
     
     - **Effort:** elementary
 
+??? abstract "Microsoft Defender XDR (Graph API) Data Loss Prevention Alert"
+    
+    Microsoft Defender XDR has raised an alert for Data Loss Prevention. The alert info and evidence events are grouped with the similarity into the same Sekoia.io alert.
+    
+    - **Effort:** master
+
+??? abstract "Microsoft Defender XDR (Graph API) Endpoint Alert"
+    
+    Microsoft Defender XDR has raised an alert for Microsoft Defender For Endpoint. The alert info and evidence events are grouped with the similarity into the same Sekoia.io alert.
+    
+    - **Effort:** master
+
+??? abstract "Microsoft Defender XDR (GraphAPI) Entra ID Protection Alert"
+    
+    Microsoft Defender XDR has raised an alert for Microsoft Entra ID Protection. The alert info and evidence events are grouped with the similarity into the same Sekoia.io alert.
+    
+    - **Effort:** master
+
 ??? abstract "Microsoft Exchange PowerShell Snap-Ins To Export Exchange Mailbox Data"
     
     Detects PowerShell SnapIn command line or PowerShell script, often used with Get-Mailbox to export Exchange mailbox data.
@@ -1452,6 +1470,24 @@ The following Sekoia.io built-in rules match the intake **Microsoft Defender XDR
 ??? abstract "Shell PID Injection"
     
     Detects when shells PID are listed and injected in another process. It can be performed to reuse sudo token related to shell in order to elevate privilege and maintain persistence.
+    
+    - **Effort:** intermediate
+
+??? abstract "Sigma Intelligence Nanocore Persistence Key"
+    
+    Nanocore artefacts detection
+    
+    - **Effort:** intermediate
+
+??? abstract "Sigma Intelligence Pangolin8RAT Working Directory File Artifacts"
+    
+    Detects access to filesystem artifacts associated with Pangolin8RAT.
+    
+    - **Effort:** intermediate
+
+??? abstract "Sigma Intelligence Windows DRILLAPP Malware"
+    
+    Sigma RULE to detect DrillAPP or other malicious launch of edge to disable security measures and abuse permissions.
     
     - **Effort:** intermediate
 

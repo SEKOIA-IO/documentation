@@ -231,6 +231,31 @@ In this section, you will find examples of raw logs as generated natively by the
 
 
 
+=== "test_audit_event_9"
+
+
+    ```json
+	{
+        "occured": "20-Apr-2026 08:38:29",
+        "domain": "Mapped account",
+        "action": "Logout",
+        "result": "Success",
+        "user": "REDACTED",
+        "target": "REDACTED",
+        "detail": "Logging out mapped account ''REDACTED''.",
+        "ipv4": "",
+        "ipv6": "",
+        "hostname": "",
+        "os_name": "",
+        "group_name": "",
+        "group_description": "",
+        "event_type": "Audit_Event",
+        "severity": "Information"
+    }
+    ```
+
+
+
 === "test_firewall_1"
 
 
@@ -355,6 +380,35 @@ In this section, you will find examples of raw logs as generated natively by the
         "threat_name": "Win32/RiskWare.Meterpreter.A",
         "aggregate_count": 1
     }
+    ```
+
+
+
+=== "test_heartbeat"
+
+
+    ```json
+	HEARTBEAT
+    ```
+
+
+
+=== "test_heartbeat_bom"
+
+
+    ```json
+	﻿HEARTBEAT
+
+    ```
+
+
+
+=== "test_heartbeat_leading_newline"
+
+
+    ```json
+	
+    HEARTBEAT
     ```
 
 

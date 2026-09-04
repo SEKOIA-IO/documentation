@@ -423,11 +423,29 @@ The following Sekoia.io built-in rules match the intake **Fortinet FortiGate**. 
     
     - **Effort:** elementary
 
+??? abstract "Sekoia.io Activity Logs Rule Deactivation Bulk"
+    
+    Detects a massive rule deactivation observed threw Sekoia.io activity logs.
+    
+    - **Effort:** master
+
 ??? abstract "Sekoia.io EICAR Detection"
     
     Detects observables in Sekoia.io CTI tagged as EICAR, which are fake samples meant to test detection.
     
     - **Effort:** master
+
+??? abstract "Sigma Intelligence Arcane Stealer HTTP Communication"
+    
+    Detects potential Arcane Stealer communications through the User-Agent.
+    
+    - **Effort:** elementary
+
+??? abstract "Sign-In Via Known AiTM Phishing Kit"
+    
+    Detects a sign-in attempt from an IP address belonging to a known adversary-in-the-middle phishing kit.
+    
+    - **Effort:** elementary
 
 ??? abstract "Sliver DNS Beaconing"
     

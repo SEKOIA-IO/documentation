@@ -11,13 +11,13 @@ In this documentation, we will dive into the different parts that constitute the
 - The [aggregation](#aggregation) feature and how to create an [anomaly detection rule](#create-anomaly-detection-rule-from-the-aggregation-view) from your query
 
 !!! note
-    To send your logs to Sekoia.io, please refer to this [section](https://docs.sekoia.io/integration/ingestion_methods/).
+    To send your logs to Sekoia.io, please refer to this [section](https://docs.sekoia.com/integration/ingestion_methods/).
 
 ## Search bar
 
 You can search among the list of events by using the dedicated query language. A complete documentation on how to use this language is available [here](events_query_language.md).
 
-Fields you can use to narrow down your events search are listed [here](https://docs.sekoia.io/xdr/features/investigate/querying_events/).
+Fields you can use to narrow down your events search are listed [here](https://docs.sekoia.com/xdr/features/investigate/querying_events/).
 
 ![search-bar-events](/assets/operation_center/events/events-search.png){: style="max-width:100%"}
 
@@ -87,8 +87,8 @@ Each events search performed is listed in the `Search History` for 30 days. You 
 
 It is accessible by clicking on the following button (a panel will be displayed with the previous searches)
 
-<!-- image à changer -->
-<img width="58" alt="image" src="https://user-images.githubusercontent.com/101662967/187888092-84499da5-6fea-46e3-b21c-e6e859aed8e5.png">
+![event-history-button](/assets/operation_center/events/event-history-button.png)
+
 
 When you are creating a new search, results are available instantly for 30 minutes by default.
 
@@ -174,18 +174,23 @@ This table explains the main actions that can be done for each of these fields:
 
 When searching through your event logs, you will often find events valuable to your current investigation. You can add these events to a case to keep track of them and use them as potential pivots.
 
-To add an event to a case:
+You can add several events to a case at once:
 
-1. Click on the `Add to Case` icon on the left of the event line.
-2. Select the target case or create a new one.
+1. Select the events you want to add using the checkboxes on the left of each event line. A counter shows how many events are selected.
+   You can also select every event on the current page by clicking the checkbox in the table header.
+2. Click the `Add to case` button.
+3. In the modal that opens, you can:
+    - Select an existing case from the list
+    - Search for an existing case by name
+    - Create a new case
 
-![add-event-to-case](/assets/operation_center/add-event-to-case-events.png){: style="max-width:70%"}
+![add-events-to-case-modal](/assets/operation_center/events/add-events-to-case-modal.png){: style="max-width:100%"}
 
-![active-case](/assets/operation_center/cases-in-event.png){ align=right }
+!!! note
+    A maximum of 1 000 events can be added to a case in a single operation.
 
-After adding an event to a case, you will notice that the selected case becomes active and appears at the top of the events table. Step 2 is no longer necessary: you can now add (or remove) an event to a case with a single click.
-
-To deselect the active case, click on the `X` next to its name.
+!!! note
+    Events selected from different communities cannot be added together. In that case, the `Add to case` button is disabled and a tooltip explains the reason.
 
 
 ### Export the results of a search
@@ -214,7 +219,7 @@ You can toggle values in your logs by clicking on the button `Toggle value selec
 
 Go through your events and click on values of interest. All similar values will be selected and highlighted in the events list.
 
-Once you’ve selected these values, you can either perform a search on these values OR create a [Sigma Rule](https://docs.sekoia.io/xdr/features/detect/sigma/) with a pattern based on selected values.
+Once you’ve selected these values, you can either perform a search on these values OR create a [Sigma Rule](https://docs.sekoia.com/xdr/features/detect/sigma/) with a pattern based on selected values.
 
 ![toggle-value-selection](/assets/operation_center/events/toggle-value.png){: style="max-width:100%"}
 
@@ -222,7 +227,7 @@ Once you’ve selected these values, you can either perform a search on these va
 
 Event enrichment consists of adding contextualization data to the standardized event. The objective is to increase the reliability of detection and qualification.
 
-Two sources are used by Sekoia.io XDR to systematically enrich each event: [Observables](https://docs.sekoia.io/cti/features/consume/observables/) and [Assets](https://docs.sekoia.io/xdr/features/collect/assets/).
+Two sources are used by Sekoia.io XDR to systematically enrich each event: [Observables](https://docs.sekoia.com/cti/features/consume/observables/) and [Assets](https://docs.sekoia.com/xdr/features/collect/assets/).
 
 The first source gathers all the technical artefacts, also called observables, collected by Sekoia.io analysts during their investigations. Consisting of tens of millions of objects, this database allows us to provide legitimate and/or malicious context to each event. For example, observables are used to geolocate public IP addresses and recognize all legitimate binaries according to Microsoft Windows.
 
@@ -245,13 +250,13 @@ Aggregation is a new (beta) feature on Sekoia.io!
 
 By using line charts, you can now visualize change in your logs over a continuous range. Visualizing change with a line chart allows the overall trend to be displayed at once, and multiple trends to be compared simultaneously. This new view on the events page can be useful to visualize events during a hunting phase or incident response.
 
-The aggregation-based hunting feature is often the first step in the journey path taken by the user to [create an anomaly detection rule.](https://docs.sekoia.io/xdr/features/detect/anomaly/)
+The aggregation-based hunting feature is often the first step in the journey path taken by the user to [create an anomaly detection rule.](https://docs.sekoia.com/xdr/features/detect/anomaly/)
 
 Users can now compute aggregations on the results of any search query in the events list. The aggregated values will be displayed over time, depending on the date range chosen.
 
 To compute aggregations on a list of events, you’ll have to:
 
-1. Search in your log list by following this [documentation](https://docs.sekoia.io/xdr/features/investigate/events/)
+1. Search in your log list by following this [documentation](https://docs.sekoia.com/xdr/features/investigate/events/)
 2. Open the new tab `Aggregation (Beta)` that is accessible on the upper left of the page
 3. Select an aggregation method from the list
 4. Select an aggregation field if needed
@@ -288,4 +293,4 @@ You can create anomaly detection rules directly from this view.
 
 If you select `count` as aggregation method, a `Create new rule` button shows up next to the fields and the Rule Creation panel opens up with detection patterns automatically set to Anomaly, and with your events’ query and the chosen aggregation method.
 
-Learn more about Anomaly Detection rules in [this section](https://docs.sekoia.io/xdr/features/detect/anomaly/).
+Learn more about Anomaly Detection rules in [this section](https://docs.sekoia.com/xdr/features/detect/anomaly/).

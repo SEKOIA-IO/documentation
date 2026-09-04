@@ -171,6 +171,12 @@ The following Sekoia.io built-in rules match the intake **Sophos Analysis Threat
     
     - **Effort:** master
 
+??? abstract "CVE-2021-4034 Polkit's pkexec"
+    
+    Detection of Polkit's pkexec exploit
+    
+    - **Effort:** intermediate
+
 ??? abstract "Capture a network trace with netsh.exe"
     
     Detects capture a network trace via netsh.exe trace functionality
@@ -426,6 +432,12 @@ The following Sekoia.io built-in rules match the intake **Sophos Analysis Threat
 ??? abstract "Disabled IE Security Features"
     
     Detects from the command lines or the registry, changes that indicate unwanted modifications to registry keys that disable important Internet Explorer security features. This has been used by attackers during Operation Ke3chang.
+    
+    - **Effort:** advanced
+
+??? abstract "Disabled Service"
+    
+    Service disabling can be abused by attacker to deny security mecanisms (eg: firewall, EDR, ect) and it is also often used by cryptominer to exploit as much RAM & CPU as possible on infected host. The prerequisites are to enable monitoring of the truncate, rename and unlink syscalls using Auditbeat.
     
     - **Effort:** advanced
 
@@ -1275,6 +1287,12 @@ The following Sekoia.io built-in rules match the intake **Sophos Analysis Threat
     
     - **Effort:** master
 
+??? abstract "Potential macOS SSH Brute Force Detected"
+    
+    Detects a potential ssh bruteforce to gain access to accounts.
+    
+    - **Effort:** advanced
+
 ??? abstract "PowerCat Function Loading"
     
     Detect a basic execution of PowerCat. PowerCat is a PowerShell function allowing to do basic connections, file transfer, shells, relays, generate payloads.
@@ -1545,6 +1563,12 @@ The following Sekoia.io built-in rules match the intake **Sophos Analysis Threat
     
     - **Effort:** elementary
 
+??? abstract "SELinux Disabling"
+    
+    An attacker can disable SELinux to make workstation or server compromise easier as it disables several protections.
+    
+    - **Effort:** intermediate
+
 ??? abstract "SOCKS Tunneling Tool"
     
     Detects the usage of a SOCKS tunneling tool, often used by threat actors. These tools often use the socks5 commandline argument, however socks4 can sometimes be used as well. Unfortunately, socks alone (without any number) triggered too many false positives. 
@@ -1602,6 +1626,18 @@ The following Sekoia.io built-in rules match the intake **Sophos Analysis Threat
 ??? abstract "Shell PID Injection"
     
     Detects when shells PID are listed and injected in another process. It can be performed to reuse sudo token related to shell in order to elevate privilege and maintain persistence.
+    
+    - **Effort:** intermediate
+
+??? abstract "Sigma Intelligence Pangolin8RAT Working Directory File Artifacts"
+    
+    Detects access to filesystem artifacts associated with Pangolin8RAT.
+    
+    - **Effort:** intermediate
+
+??? abstract "Sigma Intelligence Windows DRILLAPP Malware"
+    
+    Sigma RULE to detect DrillAPP or other malicious launch of edge to disable security measures and abuse permissions.
     
     - **Effort:** intermediate
 

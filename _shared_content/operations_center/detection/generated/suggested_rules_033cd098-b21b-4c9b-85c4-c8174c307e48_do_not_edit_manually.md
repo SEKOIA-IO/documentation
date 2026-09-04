@@ -1371,6 +1371,12 @@ The following Sekoia.io built-in rules match the intake **WithSecure Elements**.
     
     - **Effort:** elementary
 
+??? abstract "Sekoia.io Activity Logs Rule Deactivation Bulk"
+    
+    Detects a massive rule deactivation observed threw Sekoia.io activity logs.
+    
+    - **Effort:** master
+
 ??? abstract "Sekoia.io EICAR Detection"
     
     Detects observables in Sekoia.io CTI tagged as EICAR, which are fake samples meant to test detection.
@@ -1382,6 +1388,18 @@ The following Sekoia.io built-in rules match the intake **WithSecure Elements**.
     Detects command line used to create and list shadow copies. An adversary may attempt to get information on shadow volumes to perform deletion or extract password hashes from the ntds.dit file. This rule requires command line logging or Windows PowerShell events (4104).
     
     - **Effort:** master
+
+??? abstract "Sigma Intelligence Pangolin8RAT Working Directory File Artifacts"
+    
+    Detects access to filesystem artifacts associated with Pangolin8RAT.
+    
+    - **Effort:** intermediate
+
+??? abstract "Sigma Intelligence Windows DRILLAPP Malware"
+    
+    Sigma RULE to detect DrillAPP or other malicious launch of edge to disable security measures and abuse permissions.
+    
+    - **Effort:** intermediate
 
 ??? abstract "Socat Relaying Socket"
     

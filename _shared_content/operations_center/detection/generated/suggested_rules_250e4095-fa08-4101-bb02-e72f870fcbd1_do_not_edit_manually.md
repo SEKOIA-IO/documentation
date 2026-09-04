@@ -97,7 +97,7 @@ The following Sekoia.io built-in rules match the intake **Sekoia.io Endpoint Age
     
     Detects potential abuse of Active Directory Replication Service (ADRS) from a non machine account to request credentials. It requires a configuration step where the legit service account should be added to the exclusion list.
     
-    - **Effort:** advanced
+    - **Effort:** master
 
 ??? abstract "Active Directory Shadow Credentials"
     
@@ -553,7 +553,7 @@ The following Sekoia.io built-in rules match the intake **Sekoia.io Endpoint Age
     
     Detects DCSync attack, it is highly likely that the post-exploitation tool Mimikatz was executed.
     
-    - **Effort:** intermediate
+    - **Effort:** master
 
 ??? abstract "DHCP Callout DLL Installation"
     
@@ -2139,6 +2139,12 @@ The following Sekoia.io built-in rules match the intake **Sekoia.io Endpoint Age
     
     - **Effort:** master
 
+??? abstract "Registry Value Changed Via Windows Run Dialog"
+    
+    Detects when a user enters a suspicious url command in the windows run dialog. Could be linked to ClickFix. For this rule, you will need to add auditing permissions to this specific key and enable audit registry.
+    
+    - **Effort:** master
+
 ??? abstract "Remote Access Tool Domain"
     
     Detects traffic toward a domain flagged as a Remote Administration Tool (RAT).
@@ -2229,6 +2235,12 @@ The following Sekoia.io built-in rules match the intake **Sekoia.io Endpoint Age
     
     - **Effort:** master
 
+??? abstract "SEKOIA.IO Intelligence Feed"
+    
+    Detect threats based on indicators of compromise (IOCs) collected by SEKOIA's Threat and Detection Research team.
+    
+    - **Effort:** elementary
+
 ??? abstract "SOCKS Tunneling Tool"
     
     Detects the usage of a SOCKS tunneling tool, often used by threat actors. These tools often use the socks5 commandline argument, however socks4 can sometimes be used as well. Unfortunately, socks alone (without any number) triggered too many false positives. 
@@ -2313,6 +2325,12 @@ The following Sekoia.io built-in rules match the intake **Sekoia.io Endpoint Age
     
     - **Effort:** elementary
 
+??? abstract "Sekoia.io Activity Logs Rule Deactivation Bulk"
+    
+    Detects a massive rule deactivation observed threw Sekoia.io activity logs.
+    
+    - **Effort:** master
+
 ??? abstract "Sekoia.io EICAR Detection"
     
     Detects observables in Sekoia.io CTI tagged as EICAR, which are fake samples meant to test detection.
@@ -2336,6 +2354,30 @@ The following Sekoia.io built-in rules match the intake **Sekoia.io Endpoint Age
     Detects command line used to create and list shadow copies. An adversary may attempt to get information on shadow volumes to perform deletion or extract password hashes from the ntds.dit file. This rule requires command line logging or Windows PowerShell events (4104).
     
     - **Effort:** master
+
+??? abstract "Sigma Intelligence ErrTraffic PowerShell Command Line"
+    
+    Detects powershell script executed via ErrTraffic infection chain
+    
+    - **Effort:** elementary
+
+??? abstract "Sigma Intelligence Nanocore Persistence Key"
+    
+    Nanocore artefacts detection
+    
+    - **Effort:** intermediate
+
+??? abstract "Sigma Intelligence Pangolin8RAT Working Directory File Artifacts"
+    
+    Detects access to filesystem artifacts associated with Pangolin8RAT.
+    
+    - **Effort:** intermediate
+
+??? abstract "Sigma Intelligence Windows DRILLAPP Malware"
+    
+    Sigma RULE to detect DrillAPP or other malicious launch of edge to disable security measures and abuse permissions.
+    
+    - **Effort:** intermediate
 
 ??? abstract "Sliver DNS Beaconing"
     

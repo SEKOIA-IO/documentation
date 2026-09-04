@@ -32,7 +32,7 @@ Configure a [Logpush job](https://developers.cloudflare.com/logs/reference/logpu
 
     https://app.usa1.sekoia.io/api/v1/intake-http
 
-    You can find your region’s domain here: [https://docs.sekoia.io/getting_started/regions/](https://docs.sekoia.io/getting_started/regions/)
+    You can find your region’s domain here: [https://docs.sekoia.com/getting_started/regions/](https://docs.sekoia.com/getting_started/regions/)
 
 To do so, you can manage Logpush with cURL:
 
@@ -45,7 +45,7 @@ $ curl -X POST 'https://api.cloudflare.com/client/v4/accounts/<CLOUDFLARE_ACCOUN
     "enabled": true,
     "max_upload_bytes": 5000000,
     "max_upload_records": 1000,
-    "logpull_options":"fields=ApplicationID,ColoCode,ColoID,Datetime,DeviceID,DeviceName,DstIP,DstPort,Email,Location,LocationID,MatchedCategoryIDs,MatchedCategoryNames,Policy,PolicyID,Protocol,QueryCategoryIDs,QueryCategoryNames,QueryName,QueryNameReversed,QuerySize,QueryType,QueryTypeName,RCode,RData,ResolvedIPs,ResolverDecision,SrcIP,SrcPort,TimeZone,TimeZoneInferredMethod,UserID&timestamps=rfc3339",
+    "output_options":"timestamp_format=rfc3339",
     "destination_conf": "https://intake.sekoia.io/plain/batch?header_X-SEKOIAIO-INTAKE-KEY=<YOUR_INTAKE_KEY>"
     }' # (1)
 ```
@@ -64,7 +64,7 @@ $ curl -X POST 'https://api.cloudflare.com/client/v4/accounts/<CLOUDFLARE_ACCOUN
     "max_upload_records": 1000,
     "enabled": true,
     "name": "<DOMAIN_NAME>",
-    "logpull_options": "fields=<LIST_OF_FIELDS>",
+    "output_options":"timestamp_format=rfc3339",
     "destination_conf": "https://intake.sekoia.io/plain/batch?header_X-SEKOIAIO-INTAKE-KEY=<YOUR_INTAKE_KEY>",
     "last_complete": null,
     "last_error": null,

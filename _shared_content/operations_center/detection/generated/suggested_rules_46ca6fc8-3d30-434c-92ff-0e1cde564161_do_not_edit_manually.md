@@ -109,19 +109,19 @@ The following Sekoia.io built-in rules match the intake **Proofpoint TAP**. This
     
     An email was classified as malware with a threat score greater than 0 by Proofpoint TAP but was not blocked. The threshold on the Threat Score has been defined to avoid a high amount of false positives.
     
-    - **Effort:** advanced
+    - **Effort:** master
 
 ??? abstract "Proofpoint TAP Email Classified As Phishing But Allowed"
     
     An email was classified as phishing with a threat score greater than 50 by Proofpoint TAP but was not blocked. The threshold on the Threat Score has been defined to avoid a high amount of false positives.
     
-    - **Effort:** advanced
+    - **Effort:** master
 
 ??? abstract "Proofpoint TAP Email Classified As Spam But Allowed"
     
     An email was classified as spam with a threat score greater than 50 by Proofpoint TAP but was not blocked. The threshold on the Threat Score has been defined to avoid a high amount of false positives.
     
-    - **Effort:** advanced
+    - **Effort:** master
 
 ??? abstract "ProxyShell Microsoft Exchange Suspicious Paths"
     
@@ -153,11 +153,23 @@ The following Sekoia.io built-in rules match the intake **Proofpoint TAP**. This
     
     - **Effort:** elementary
 
+??? abstract "Sekoia.io Activity Logs Rule Deactivation Bulk"
+    
+    Detects a massive rule deactivation observed threw Sekoia.io activity logs.
+    
+    - **Effort:** master
+
 ??? abstract "Sekoia.io EICAR Detection"
     
     Detects observables in Sekoia.io CTI tagged as EICAR, which are fake samples meant to test detection.
     
     - **Effort:** master
+
+??? abstract "Sigma Intelligence Arcane Stealer HTTP Communication"
+    
+    Detects potential Arcane Stealer communications through the User-Agent.
+    
+    - **Effort:** elementary
 
 ??? abstract "Suspicious Download Links From Legitimate Services"
     

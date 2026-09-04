@@ -45,7 +45,7 @@ Set the destination url to `https://intake.sekoia.io/plain?intake_key=<intake_ke
 
     https://app.usa1.sekoia.io/api/v1/intake-http
 
-    You can find your region’s domain here: [https://docs.sekoia.io/getting_started/regions/](https://docs.sekoia.io/getting_started/regions/)
+    You can find your region’s domain here: [https://docs.sekoia.com/getting_started/regions/](https://docs.sekoia.com/getting_started/regions/)
 
 
 {!_shared_content/operations_center/integrations/generated/8f472113-ba5b-45b9-9a2c-944834396333_sample.md!}

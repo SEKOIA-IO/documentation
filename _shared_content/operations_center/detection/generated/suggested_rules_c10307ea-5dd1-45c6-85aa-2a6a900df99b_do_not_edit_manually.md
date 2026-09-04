@@ -1485,6 +1485,12 @@ The following Sekoia.io built-in rules match the intake **Elastic Winlogbeat**. 
     
     - **Effort:** master
 
+??? abstract "Potential macOS SSH Brute Force Detected"
+    
+    Detects a potential ssh bruteforce to gain access to accounts.
+    
+    - **Effort:** advanced
+
 ??? abstract "PowerCat Function Loading"
     
     Detect a basic execution of PowerCat. PowerCat is a PowerShell function allowing to do basic connections, file transfer, shells, relays, generate payloads.
@@ -1893,6 +1899,12 @@ The following Sekoia.io built-in rules match the intake **Elastic Winlogbeat**. 
     
     - **Effort:** elementary
 
+??? abstract "Sekoia.io Activity Logs Rule Deactivation Bulk"
+    
+    Detects a massive rule deactivation observed threw Sekoia.io activity logs.
+    
+    - **Effort:** master
+
 ??? abstract "Sekoia.io EICAR Detection"
     
     Detects observables in Sekoia.io CTI tagged as EICAR, which are fake samples meant to test detection.
@@ -1904,6 +1916,30 @@ The following Sekoia.io built-in rules match the intake **Elastic Winlogbeat**. 
     Detects command line used to create and list shadow copies. An adversary may attempt to get information on shadow volumes to perform deletion or extract password hashes from the ntds.dit file. This rule requires command line logging or Windows PowerShell events (4104).
     
     - **Effort:** master
+
+??? abstract "Sigma Intelligence ErrTraffic PowerShell Command Line"
+    
+    Detects powershell script executed via ErrTraffic infection chain
+    
+    - **Effort:** elementary
+
+??? abstract "Sigma Intelligence Nanocore Persistence Key"
+    
+    Nanocore artefacts detection
+    
+    - **Effort:** intermediate
+
+??? abstract "Sigma Intelligence Pangolin8RAT Working Directory File Artifacts"
+    
+    Detects access to filesystem artifacts associated with Pangolin8RAT.
+    
+    - **Effort:** intermediate
+
+??? abstract "Sigma Intelligence Windows DRILLAPP Malware"
+    
+    Sigma RULE to detect DrillAPP or other malicious launch of edge to disable security measures and abuse permissions.
+    
+    - **Effort:** intermediate
 
 ??? abstract "Sliver DNS Beaconing"
     
@@ -2402,12 +2438,6 @@ The following Sekoia.io built-in rules match the intake **Elastic Winlogbeat**. 
     Detects the use of different commands to add a user to an admin group.
     
     - **Effort:** advanced
-
-??? abstract "User Added to Local Administrators"
-    
-    Detects when user accounts are added which could be legitimate activity or a sign of privilege escalation activity, Potential False-Positives Legitimate administrative activity WinRM clients
-    
-    - **Effort:** master
 
 ??? abstract "VSCode Tunnel Shell Exec"
     

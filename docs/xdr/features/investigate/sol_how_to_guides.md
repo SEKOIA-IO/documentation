@@ -203,6 +203,8 @@ Use the `render` operator to display query results as charts. Supported chart ty
 - `columnchart` — Vertical bar chart
 - `barchart` — Horizontal bar chart
 - `linechart` — Line chart
+- `sankey` — Flow chart
+- `geomap` — Geographic visualization
 
 ### Basic chart
 
@@ -248,6 +250,29 @@ Use `breakdown_by` to split data into series, and `mode` to control stacking:
 
 For the full operator reference, see [Render results in chart](sol_ref_operators.md#render-results-in-chart).
 
+### Geographic visualization
+
+Use `geomap` to visualize event distribution by country or geographic coordinates. For a country-based map, provide a country column containing ISO 3166-1 alpha-2 codes or full English country names. For a coordinate-based map, provide latitude and longitude columns instead.
+
+=== "By country"
+
+    ```shell
+    events
+    | where timestamp > ago(24h)
+    | where event.category == "authentication" and action.outcome == "failure"
+    | aggregate count() by source.geo.country_iso_code
+    | render geomap with (country=source.geo.country_iso_code, value=count)
+    ```
+
+=== "By coordinates"
+
+    ```shell
+    events
+    | where timestamp > ago(24h)
+    | aggregate count() by source.geo.location.lat, source.geo.location.lon
+    | render geomap with (lat=source.geo.location.lat, lon=source.geo.location.lon, label=source.geo.city_name, value=count)
+    ```
+
 
 ## How to use external data with SOL Datasets
 
@@ -273,6 +298,77 @@ SOL Datasets allow you to import CSV files and use them in your queries. This is
         | 2026-03-26T15:35:03.740Z | 192.168.2.22 | www.princeton.edu     |
 
 For the full guide on importing CSVs, multi-tenancy rules, and advanced query patterns, see the dedicated [SOL Datasets](sol_datasets.md) page.
+
+
+## How to check for non-null properties
+
+Many event fields are optional and may be absent from some records. Use `!= null` to keep only rows where a field is present, or `== null` to find rows where a field is missing.
+
+### Filter out rows with a missing field
+
+=== "Query"
+
+    ```shell
+    events
+    | where timestamp > ago(24h) and user.name != null
+    | select timestamp, host.name, user.name
+    | order by timestamp desc
+    | limit 100
+    ```
+
+=== "Results"
+
+    | timestamp                | host.name    | user.name    |
+    | ------------------------ | ------------ | ------------ |
+    | 2026-03-26T15:35:14.738Z | laptop-chris | ada_lovelace |
+    | 2026-03-26T15:30:02.110Z | laptop-chris | grace_hopper |
+
+### Find rows where a field is absent
+
+Checking for `== null` is useful to detect incomplete or unparsed events:
+
+=== "Query"
+
+    ```shell
+    events
+    | where timestamp > ago(24h) and process.name != null and process.command_line == null
+    | select timestamp, host.name, process.name
+    | order by timestamp desc
+    | limit 100
+    ```
+
+=== "Results"
+
+    | timestamp                | host.name       | process.name |
+    | ------------------------ | --------------- | ------------ |
+    | 2026-03-26T14:20:15.441Z | laptop-6a1ec62f | svchost.exe  |
+    | 2026-03-26T14:17:31.554Z | laptop-b3205bc2 | lsass.exe    |
+
+### Combine multiple null checks
+
+You can combine null checks with other conditions in the same `where` clause:
+
+=== "Query"
+
+    ```shell
+    events
+    | where timestamp >= ago(24h)
+          and event.action == 'blocked'
+          and user.name != null
+          and url.domain != null
+    | select timestamp, user.name, url.domain
+    | order by timestamp desc
+    | limit 100
+    ```
+
+=== "Results"
+
+    | timestamp                | user.name    | url.domain      |
+    | ------------------------ | ------------ | --------------- |
+    | 2026-03-26T15:35:14.738Z | ada_lovelace | www.example.com |
+    | 2026-03-26T15:30:02.110Z | grace_hopper | www.test.org    |
+
+For the full reference, see [Where](sol_ref_operators.md#where).
 
 
 ## How to build a query library

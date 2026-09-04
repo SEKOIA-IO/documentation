@@ -9,6 +9,12 @@ The following Sekoia.io built-in rules match the intake **Akamai WAF**. This doc
     
     - **Effort:** elementary
 
+??? abstract "Covenant Default HTTP Beaconing"
+    
+    Detects potential Covenant communications through the user-agent and specific urls
+    
+    - **Effort:** intermediate
+
 ??? abstract "Cryptomining"
     
     Detection of domain names potentially related to cryptomining activities.
@@ -45,15 +51,45 @@ The following Sekoia.io built-in rules match the intake **Akamai WAF**. This doc
     
     - **Effort:** intermediate
 
+??? abstract "Nimbo-C2 User Agent"
+    
+    Nimbo-C2 Uses an unusual User-Agent format in its implants.
+    
+    - **Effort:** intermediate
+
 ??? abstract "Potential Azure AD Phishing Page (Adversary-in-the-Middle)"
     
     Detects an HTTP request to an URL typical of the Azure AD authentication flow, but towards a domain that is not one the legitimate Microsoft domains used for Azure AD authentication.
     
     - **Effort:** intermediate
 
+??? abstract "Potential Bazar Loader User-Agents"
+    
+    Detects potential Bazar loader communications through the user-agent
+    
+    - **Effort:** elementary
+
+??? abstract "Potential Lemon Duck User-Agent"
+    
+    Detects LemonDuck user agent. The format used two sets of alphabetical characters separated by dashes, for example "User-Agent: Lemon-Duck-[A-Z]-[A-Z]".
+    
+    - **Effort:** elementary
+
 ??? abstract "Remote Access Tool Domain"
     
     Detects traffic toward a domain flagged as a Remote Administration Tool (RAT).
+    
+    - **Effort:** master
+
+??? abstract "Remote Monitoring and Management Software - AnyDesk"
+    
+    Detect artifacts related to the installation or execution of the Remote Monitoring and Management tool AnyDesk.
+    
+    - **Effort:** master
+
+??? abstract "Sekoia.io Activity Logs Rule Deactivation Bulk"
+    
+    Detects a massive rule deactivation observed threw Sekoia.io activity logs.
     
     - **Effort:** master
 
@@ -62,6 +98,12 @@ The following Sekoia.io built-in rules match the intake **Akamai WAF**. This doc
     Detects observables in Sekoia.io CTI tagged as EICAR, which are fake samples meant to test detection.
     
     - **Effort:** master
+
+??? abstract "Sigma Intelligence Arcane Stealer HTTP Communication"
+    
+    Detects potential Arcane Stealer communications through the User-Agent.
+    
+    - **Effort:** elementary
 
 ??? abstract "TOR Usage Generic Rule"
     

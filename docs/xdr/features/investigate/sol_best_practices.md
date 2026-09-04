@@ -113,6 +113,48 @@ Use this table to identify which operations can be pushed down to the datasource
 | `countif` aggregation function | ❌ Never |
 | Row-level functions (e.g. `coalesce`, `extract`, `iff`, `tolower`) | ❌ Never |
 
+### Filter operator performance hierarchy
+
+Not all filter operators perform equally. Performance also varies across the underlying datastores (telemetry datasource, events datasource, and all other datasources). The ranking below reflects general guidance that applies across all three. Where behavior differs significantly by datasource, a note is provided.
+
+When writing `| where` conditions, prefer operators that rank higher in this table to maximize pushdown efficiency and minimize scan cost:
+
+| Rank | Operator | Example | Performance | Notes |
+| --- | --- | --- | --- | --- |
+| 1 | `==`, `!=` | `event.category == "authentication"` | ⚡ Fastest | Exact match; fully index-compatible and always pushed down |
+| 2 | `in`, `!in` | `source.ip in ("1.2.3.4", "5.6.7.8")` | ⚡ Fast | Case-sensitive set membership; index-compatible |
+| 3 | `in~`, `!in~` | `event.category in~ ("Authentication", "NETWORK")` | 🔵 Good | Case-insensitive set membership; slight overhead over `in` |
+| 4 | `startswith` | `url.original startswith "https"` | 🔵 Good | Case-sensitive prefix match; can leverage prefix indexes |
+| 5 | `startswith~` | `url.original startswith~ "Https"` | 🔵 Good | Case-insensitive prefix; minor normalization overhead |
+| 6 | `contains` | `message contains "failed"` | 🟡 Moderate | Case-sensitive substring scan; no index benefit, full field scan |
+| 7 | `endswith` | `file.name endswith ".exe"` | 🟡 Moderate | Case-sensitive suffix match; comparable cost to `contains` |
+| 8 | `contains~` | `message contains~ "Failed"` | 🟠 Slower | Case-insensitive substring scan; normalization overhead on top of full scan |
+| 9 | `endswith~` | `file.name endswith~ ".EXE"` | 🟠 Slower | Case-insensitive suffix; comparable cost to `contains~` |
+| 10 | `matches regex` | `url.original matches regex @"https?://.*\.exe$"` | 🔴 Slowest / varies | Full regex evaluation per row; behavior and support level differ by datasource — see note below |
+
+!!! note "`matches regex`: datasource behavior"
+    Support and cost for `matches regex` depend on the underlying datasource:
+
+    - **Telemetry datasource**: not supported.
+    - **Events datasource**: supported, but case-insensitive regex modifiers do not work.
+    - **All other datasources**: supported; regex evaluation is moderately costly.
+
+**Key takeaway**: prefer `==` or `in` whenever possible. Only use `contains~` or `matches regex` when your use case strictly requires it, and always apply more selective filters earlier in the pipeline.
+
+```shell
+// Good: use endswith for a simple file extension check
+events
+| where timestamp > ago(1h)
+| where event.category == "file"
+| where file.name endswith ".exe"
+
+// Bad: matches regex used where endswith would suffice
+events
+| where timestamp > ago(1h)
+| where event.category == "file"
+| where file.name matches regex "\.exe$"
+```
+
 ## SOL Engine Limitations
 
 ### Internal Fetch Limit
@@ -123,7 +165,7 @@ When this limit is hit, a warning is displayed and only partial results are retu
 
 !!! example
     !!! warning
-        There were too many rows to process (> 10 000), please refine your query. Partial results are displayed.
+        There were too many rows to process, please refine your query. Partial results are displayed. For more information about this warning, refer to the documentation.
 
 If your query legitimately requires more rows, you can raise the limit up to **1 000 000** by adding the following at the top of your query:
 

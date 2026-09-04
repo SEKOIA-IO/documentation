@@ -29,7 +29,7 @@ type: intake
 
 ## Configure
 
-To forward **Microsoft Entra ID (Azure AD) ** events from Azure to Sekoia.io you need to send your event to an Azure **Event Hub** where Sekoia.io will collect the events.
+To forward **Microsoft Entra ID (Azure AD)** events from Azure to Sekoia.io you need to first send your events to an Azure **Event Hub** , from which Sekoia.io will collect the events.
 <div style="text-align: center;">
     <img width="100%" alt="image" src="/assets/integration/cloud_and_saas/event_hub/consume_azure_logs.png">
 </div>

@@ -6,17 +6,17 @@ SOL Datasets is a powerful CSV import feature that enables SOC analysts to enric
 
 SOL Datasets addresses critical challenges in security operations:
 
-- **Enhanced Investigation Context**: Import custom threat intelligence, critical security context, list of approved software and other contextual data
-- **Eliminates Manual Lookups**: Replace time-consuming manual data correlation with automated joins
-- **Flexible Data Integration**: Combine external data with events, alerts, and cases using SOL's powerful query language
+- **Enhanced Investigation Context**: Import custom threat intelligence, critical security context, list of approved software and other contextual data.
+- **Eliminates Manual Lookups**: Replace time-consuming manual data correlation with automated joins.
+- **Flexible Data Integration**: Combine external data with events, alerts, and cases using SOL's powerful query language.
 
 ## Accessing SOL Datasets
 
 SOL Datasets can be accessed from the Queries page in the SOL query builder interface:
 
-1. Navigate to **Investigate** > **Queries** in the main navigation
-2. Click the **SOL Datasets** button in the interface toolbar
-3. The SOL Datasets panel opens laterally, displaying available datasets
+1. Navigate to **Investigate** > **Queries** in the main navigation.
+2. Click the **SOL Datasets** button in the interface toolbar.
+3. The SOL Datasets panel opens laterally, displaying available datasets.
 
 ![sol-list](/assets/operation_center/events/sol-list.gif){: style="max-width:100%"}
 
@@ -35,7 +35,7 @@ Each dataset is displayed as an information card containing:
 - **Upload Date**: When the dataset was imported (e.g., "09/30/2025 12:07:56")
 - **Author**: User who uploaded the dataset (e.g., "John Doe")
 - **File Size**: Dataset size in MB (e.g., "10MB")
-- **Actions**: Delete option
+- **Actions**: Open the dataset to view its details and update its content, or delete it
 
 The interface supports:
 
@@ -59,36 +59,61 @@ The interface supports:
 
 **Step 1: Initiate import**
 
-1. Click **+ New dataset** in the SOL Datasets panel
-2. The import modal opens with file selection interface
+1. Click **+ New dataset** in the SOL Datasets panel.
+2. The import modal opens with file selection interface.
 
 **Step 2: File selection**
 
-1. Drag and drop your CSV file or click **Upload a file**
-2. Browse and select your CSV file from the file system
-3. The system validates file format and requirements
+1. Drag and drop your CSV file or click **Upload a file**.
+2. Browse and select your CSV file from the file system.
+3. The system validates file format and requirements.
 
 ![sol-import](/assets/operation_center/events/sol-import.png){: style="max-width:100%"}
 
 **Step 3: File preview and validation**
 
-1. After selection, the system displays file details and any validation errors
-2. Preview shows first 100 rows of data for verification
-3. Column names are automatically detected
+1. After selection, the system displays file details and any validation errors.
+2. Preview shows first 100 rows of data for verification.
+3. Column names are automatically detected.
 
 ![sol-preview](/assets/operation_center/events/sol-preview.png){: style="max-width:100%"}
 
 **Step 4: Dataset configuration**
 
-1. **Dataset Name**: Defaults to filename
-2. **Community**: Select target community (for multi-tenancy)
-3. Review settings and click **Import**
+1. **Dataset Name**: Defaults to filename.
+2. **Community**: Select target community (for multi-tenancy).
+3. Review settings and click **Import**.
 
 **Step 5: Import completion**
 
-1. The system processes the CSV file
-2. Dataset appears in the SOL Datasets panel
-3. Dataset is immediately available for use in SOL queries
+1. The system processes the CSV file.
+2. Dataset appears in the SOL Datasets panel.
+3. Dataset is immediately available for use in SOL queries.
+
+## Updating an existing dataset
+
+You can replace the content of an existing SOL Dataset without changing its table name. Because the table name is preserved, all SOL queries already using the dataset keep working with the refreshed data.
+
+**Step 1: Open the dataset**
+
+1. In the SOL Datasets panel, click on the dataset you want to update.
+2. A modal opens, displaying the dataset's table name and a preview of its current data.
+
+![sol-update](/assets/operation_center/events/sol-update.png){: style="max-width:100%"}
+
+**Step 2: Replace the file**
+
+1. Click the **Replace file** button.
+2. The familiar import interface opens: drag and drop your CSV file or click **Upload a file**.
+3. Select your CSV file and click **Import**.
+
+!!! warning "CSV Import Requirements"
+    The new file must meet the same [requirements](#file-requirements) as the original import (snake_case unique column names, UTF-8 or ASCII encoding, max 100 MB).
+
+**Step 3: Review and save**
+
+1. A preview of the new file's data is displayed for verification.
+2. Review the changes and click **Save** to replace the dataset content.
 
 ## Multi-tenancy and access control
 
@@ -118,9 +143,9 @@ SOL Datasets support multi-tenant environments with the following access pattern
 
 SOL provides autocomplete functionality for imported datasets:
 
-1. Start typing in the SOL query editor
-2. Imported datasets appear in autocomplete suggestions
-3. Select the dataset name to include it in your query
+1. Start typing in the SOL query editor.
+2. Imported datasets appear in autocomplete suggestions.
+3. Select the dataset name to include it in your query.
 
 ### Query integration
 
@@ -188,15 +213,15 @@ Imported datasets can be used like any other SOL data source:
 
 **Performance optimization**
 
-- Use `lookup` instead of `join` when the imported dataset is small (< 10,000 rows)
-- Apply filters to main tables before joining with datasets
-- Limit result sets using `limit` operator
+- Use `lookup` instead of `join` when the imported dataset is small (< 10,000 rows).
+- Apply filters to main tables before joining with datasets.
+- Limit result sets using `limit` operator.
 
 **Data quality**
 
-- Validate data consistency before importing
-- Use consistent naming conventions across datasets
-- Handle null values appropriately in join conditions
+- Validate data consistency before importing.
+- Use consistent naming conventions across datasets.
+- Handle null values appropriately in join conditions.
 
 **Query structure**
 

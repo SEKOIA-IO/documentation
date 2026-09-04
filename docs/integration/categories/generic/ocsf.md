@@ -47,7 +47,7 @@ Select or create an account with the [AWS Access Key](https://docs.aws.amazon.co
 !!!important
     In the configuration settings of your OCSF intake, we recommend using the following configuration by default: chunk_size = `10000` and frequency = `10`.
 
-[Start the intake](https://docs.sekoia.io/xdr/features/collect/intakes/#startstop-a-pull-intake) and enjoy your events.
+[Start the intake](https://docs.sekoia.com/xdr/features/collect/intakes/#startstop-a-pull-intake) and enjoy your events.
 
 {!_shared_content/operations_center/integrations/generated/a9c959ac-78ec-47a4-924e-8156a77cebf5_sample.md!}
 
