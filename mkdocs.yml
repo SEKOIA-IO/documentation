@@ -704,6 +704,14 @@ nav:
     - Overview: integration/faq/overview.md
     - General Questions:
       - Bug VS Improvement Requests: integration/faq/general_questions/bug_and_improvement_requests.md
+- MCP Server:
+  - Overview: mcp/mcp_overview.md
+  - Getting started: mcp/getting_started.md
+  - SOC how-to guides: mcp/how_to_soc.md
+  - Threat intelligence how-to guides: mcp/how_to_cti.md
+  - Connect Claude Desktop: mcp/connect_claude_desktop.md
+  - Connect Claude Code: mcp/connect_claude_code.md
+  - 'Reference: Tools': mcp/tools_reference.md
 - API Documentation:
   - API Reference: developer/api.md
   - Quickstart: developer/quickstart.md
