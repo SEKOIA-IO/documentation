@@ -1,4 +1,4 @@
-Rules catalog includes **1086 built-in detection rules** ([_last update on 2026-09-04_](rules_changelog.md)).
+Rules catalog includes **1086 built-in detection rules** ([_last update on 2026-09-07_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Identity Information**
 
@@ -2559,6 +2559,10 @@ Rules catalog includes **1086 built-in detection rules** ([_last update on 2026-
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 07/09/2026 - minor - Added filters to reduce false positives
+            
 ??? abstract "Login Brute-Force Successful On SentinelOne EDR Management Console"
     
     A user has attempted to login several times (brute-force) on the SentinelOne EDR Management Console and succeeded to login.
