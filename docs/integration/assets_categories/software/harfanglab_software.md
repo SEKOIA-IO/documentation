@@ -1,4 +1,4 @@
-uuid: 3e5f8c2a-7d4b-4e6f-a891-c0d2e3f4a5b6
+uuid: 4cf1749a-b36e-478c-827f-5e2ff11f0a70
 name: HarfangLab Software Assets
 type: asset
 
