@@ -865,7 +865,7 @@ events
     into matched_cidr
 ```
 
-See [Enrich events using a CIDR dataset](/xdr/features/investigate/sol_datasets.md#enrich-events-using-a-cidr-dataset) for a performant query that filters events before this lookup.
+For a complete example of enriching events with a CIDR dataset, including event filtering before the lookup, see [Enrich events using a CIDR dataset](/xdr/features/investigate/sol_datasets.md#enrich-events-using-a-cidr-dataset).
 
 
 ## Compare
