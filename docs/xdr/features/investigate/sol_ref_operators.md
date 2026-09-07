@@ -835,22 +835,37 @@ Unlike `inner` or `left` joins, anti-joins do **not** produce a `model` object â
 
 
 
-Use the `lookup` operator to extend a table. Extends the current table with values looked-up in another table.
-Prefer the `lookup` operator over `join` when the right table is small enough to fit into memory to improve query performance.
+Use the `lookup` operator to extend a table with values from another table. Prefer `lookup` over `join` when the right table is small enough to fit into memory to improve query performance.
 
 !!! info
-    The result doesn't repeat columns from the `right` table that are the basis for the join operation.
-    The `lookup` operator only supports `left join`.
+    A lookup is a left lookup: all rows from the left table remain in the result. For an unmatched row, the `into` output is empty. When multiple rows in the right table match, the result includes an enriched row for each match.
+
+An indexed lookup compares one field from each table. This legacy syntax remains supported:
 
 ``` shell
 <left table name>
 | lookup <right table name> on <left column name> == <right column name>
-| aggregate <function> by <column name>
-| order by <column name>
-
 ```
 
-Similarly to `join` operator, `lookup` will inject the right table into a `model` object.
+For a non-trivial condition, use a predicate lookup:
+
+``` shell
+<left table name>
+| lookup <right table name>
+    on <predicate>
+    into <output>
+```
+
+In a non-trivial predicate, explicitly qualify every field from the left table with `$left.` and every field from the right table with `$right.`. For example:
+
+``` shell
+events
+| lookup cidr_dataset_test
+    on cidr_match($left.source.ip, $right.cidr)
+    into matched_cidr
+```
+
+See [Enrich events using a CIDR dataset](/xdr/features/investigate/sol_datasets.md#enrich-events-using-a-cidr-dataset) for a performant query that filters events before this lookup.
 
 
 ## Compare
