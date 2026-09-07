@@ -2677,6 +2677,7 @@ Rules catalog includes **1086 built-in detection rules** ([_last update on 2026-
     
         - 13/09/2024 - major - Update service name value following Microsoft change
         - 03/06/2026 - major - Added a new condition to match only on alerts to avoid false positives.
+        - 07/09/2026 - major - Added a new condition to match only on alerts to avoid false positives.
             
 ??? abstract "Microsoft Defender XDR Data Loss Prevention Alert"
     
@@ -4468,6 +4469,7 @@ Rules catalog includes **1086 built-in detection rules** ([_last update on 2026-
     
         - 13/09/2024 - major - Update service name value following Microsoft change
         - 03/06/2026 - major - Added a new condition to match only on alerts to avoid false positives.
+        - 07/09/2026 - major - Added a new condition to match only on alerts to avoid false positives.
             
 ??? abstract "Microsoft Defender XDR Data Loss Prevention Alert"
     
@@ -5486,6 +5488,7 @@ Rules catalog includes **1086 built-in detection rules** ([_last update on 2026-
     
         - 13/09/2024 - major - Update service name value following Microsoft change
         - 03/06/2026 - major - Added a new condition to match only on alerts to avoid false positives.
+        - 07/09/2026 - major - Added a new condition to match only on alerts to avoid false positives.
             
 ??? abstract "Microsoft Defender XDR Data Loss Prevention Alert"
     
