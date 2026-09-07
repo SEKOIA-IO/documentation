@@ -1,5 +1,8 @@
 copyright: Copyright &copy; 2026 - Sekoia
 edit_uri: edit/main/docs/
+exclude_docs: 'xdr/features/modules/elevate_investigate_case.md
+
+  '
 extra:
   social:
   - icon: fontawesome/brands/x-twitter
@@ -610,6 +613,7 @@ nav:
       - CrowdStrike Falcon: integration/action_library/crowdstrike-falcon.md
       - Eset: integration/action_library/eset.md
       - HarfangLab: integration/action_library/harfanglab.md
+      - HarfangLab: integration/action_library/harfanglab.md
       - Microsoft Windows Server: integration/action_library/microsoft-windows-server.md
       - MicrosoftDefenderXDR: integration/action_library/microsoftdefenderxdr.md
       - Palo Alto Cortex XDR (EDR): integration/action_library/palo-alto-cortex-xdr-edr.md
@@ -971,5 +975,3 @@ validation:
   links:
     absolute_links: relative_to_docs
   omitted_files: ignore
-exclude_docs: |
-  xdr/features/modules/elevate_investigate_case.md
