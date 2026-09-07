@@ -1,5 +1,8 @@
 copyright: Copyright &copy; 2026 - Sekoia
 edit_uri: edit/main/docs/
+exclude_docs: 'xdr/features/modules/elevate_investigate_case.md
+
+  '
 extra:
   social:
   - icon: fontawesome/brands/x-twitter
@@ -971,5 +974,3 @@ validation:
   links:
     absolute_links: relative_to_docs
   omitted_files: ignore
-exclude_docs: |
-  xdr/features/modules/elevate_investigate_case.md
