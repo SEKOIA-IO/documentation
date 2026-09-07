@@ -15,7 +15,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
                     target="_blank"
                     rel="noopener"
                 >
-                    Blog
+                    BLOG
                 </a>
                 <a
                     class="sekoia-header-link"
@@ -23,7 +23,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
                     target="_blank"
                     rel="noopener"
                 >
-                    Community
+                    COMMUNITY
                 </a>
                 <a
                     class="sekoia-header-link sekoia-header-link--primary"
@@ -31,7 +31,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
                     target="_blank"
                     rel="noopener"
                 >
-                    Book a demo
+                   GET A DEMO
                 </a>
             </nav>
             `
