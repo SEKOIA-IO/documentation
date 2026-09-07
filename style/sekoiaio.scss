@@ -50,6 +50,55 @@
     }
 }
 
+.sekoia-header-links {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    margin-left: 0.4rem;
+    white-space: nowrap;
+
+    .sekoia-header-link {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 2.2rem;
+        padding: 0 0.75rem;
+        border: 1px solid #DADCDE;
+        border-radius: 1px;
+        background-color: #ffffff;
+        color: #212223;
+        font-size: 0.7rem;
+        font-weight: 500;
+        line-height: 1;
+        text-decoration: none;
+        transition:
+            background-color 120ms ease,
+            border-color 120ms ease,
+            color 120ms ease;
+
+        &:hover,
+        &:focus {
+            border-color: #c2c9d4;
+            background-color: #EEF0F2;
+            color: #212223;
+        }
+
+        &--primary {
+            border-color: #212223;
+            background-color: #212223;
+            color: #ffffff;
+            font-weight: 600;
+
+            &:hover,
+            &:focus {
+                border-color: #000000;
+                background-color: #000000;
+                color: #ffffff;
+            }
+        }
+    }
+}
+
 .md-sidebar--primary {
 
   .md-nav__title {
