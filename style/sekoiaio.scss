@@ -8,23 +8,23 @@
     --md-footer-fg-color--lighter: #212223;
     --md-footer-fg-color: #6F7376;
 
+    // Sekoia brand colors (Notion "Color palettes")
+    --sekoia-night-blue: #04286A;
+    --sekoia-candy-pink: #E8A3E8;
 }
 
 .md-search__inner  {
-
     .md-search__form {
         background-color: #ffffff;
         border: 1px solid #c2c9d4;
         border-radius: 4px;
     }
-
 }
 
 @media screen and (min-width: 60em) {
     .md-search__input + .md-search__icon {
         color: #212223;
     }
-
     .md-search__input::placeholder {
         color: #6F7376;
     }
@@ -50,21 +50,76 @@
     }
 }
 
+.sekoia-header-links {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    margin-left: 0.4rem;
+    white-space: nowrap;
+
+    .sekoia-header-link {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 8px 12px;
+
+        font-family: 'Lost', sans-serif;
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 120%;
+        text-transform: uppercase;
+        text-decoration: none;
+
+        color: #212223;
+        background-color: #ffffff;
+        border: 1px solid #DADCDE;
+        border-radius: 4px;
+
+        &:hover,
+        &:focus-visible {
+            color: #212223;
+            background-color: #EEF0F2;
+            border-color: #DADCDE;
+        }
+
+        &--primary {
+            color: #ffffff;
+            background-color: #000;
+            border-color: #000;
+            font-weight: 500;
+
+            &:hover,
+            &:focus-visible {
+                color: #212223;
+                background-color: var(--sekoia-candy-pink);
+                border-color: var(--sekoia-candy-pink);
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 60em) {
+    .sekoia-header-links {
+        gap: 0.2rem;
+
+        .sekoia-header-link {
+            padding: 8px;
+            font-size: 12px;
+        }
+    }
+}
+
 .md-sidebar--primary {
-
-  .md-nav__title {
+    .md-nav__title {
         font-weight: 400;
-  }
-
-  .md-nav__link {
+    }
+    .md-nav__link {
         font-size: 14px;
         font-family: 'Inter', Helvetica, sans-serif;
-  }
-
+    }
     .md-nav__link:hover {
         color: #6F7376;
     }
-
 }
 
 .md-nav__item {
@@ -114,7 +169,6 @@
 
 // Main content
 .md-container {
-
     .md-tabs {
         background-color: #ffffff;
         color: #212223;
@@ -144,10 +198,9 @@
             color: #197AB4;
 
             &:hover {
-	        color: #6F7376;
+                color: #6F7376;
             }
         }
-
 
         pre {
             background: #F0F3F6;
@@ -193,6 +246,7 @@
             margin-right: 0;
             max-width: 100%;
         }
+
         .md-footer-meta {
             background-color: #ffffff;
 
@@ -202,15 +256,14 @@
                 display: inherit;
 
                 & div::after {
-                    content: " ";
+                    content: " ";
                     display: inline;
                 }
 
                 & a::before {
-                    content: " ";
+                    content: " ";
                 }
             }
-
         }
     }
 }
@@ -235,15 +288,14 @@
     .maindescription {
         background: url("../assets/background-main.jpg") no-repeat;
         background-size: cover;
-
         padding-top: 5em;
         padding-bottom: 5em;
         text-align: left;
 
         .maindescription__inner {
-	    margin-left: auto;
-	    margin-right: auto;
-	    max-width: 61rem;
+            margin-left: auto;
+            margin-right: auto;
+            max-width: 61rem;
 
             h1 {
                 color: #212223;
@@ -265,16 +317,13 @@
     .search {
         padding-top: 3em;
         background-color: #ffffff;
-
         display: flex;
         align-items: center;
         margin-top: 24px;
-
         /* flex-direction: row; */
         justify-content: center;
         align-items: flex-start;
         /* padding: 40px 148px; */
-
 
         img.search-image {
             width: 433px;
@@ -282,7 +331,6 @@
 
         .search__inner {
             /* flex: 1 1; */
-
             margin: 5em;
 
             h2 {
@@ -313,7 +361,6 @@
                 }
             }
         }
-
     }
 
     .categories {
@@ -321,7 +368,6 @@
         padding-top: 1em;
         padding-bottom: 3em;
         background-color: white;
-
         flex: 1;
         display: flex;
         flex-direction: column;
@@ -340,7 +386,6 @@
             column-gap: 24px;
             row-gap: 24px;
             grid-template-columns: repeat(auto-fit, 230px);
-
             flex-direction: row;
             justify-content: center;
             align-items: flex-start;
@@ -358,12 +403,11 @@
                 padding: 8px 0;
                 text-transform: uppercase;
 
-		&:hover {
-		    background-color: #EEF0F2;
-		    color: #212223;
-		    border-color: #DADCDE;
-		}
-
+                &:hover {
+                    background-color: #EEF0F2;
+                    color: #212223;
+                    border-color: #DADCDE;
+                }
             }
         }
     }
@@ -373,57 +417,59 @@
         padding-bottom: 3em;
         background-color: #F0F3F6;
 
-	.support__inner {
-	    margin-left: auto;
-	    margin-right: auto;
-	    max-width: 61rem;
-	    display: flex;
+        .support__inner {
+            margin-left: auto;
+            margin-right: auto;
+            max-width: 61rem;
+            display: flex;
 
-	    .col {
-		flex: 33%;
-		text-align:left;
-		margin: 8px;
-	    }
-	    a {
-		color: #212223;
-	    }
-	    p {
-		color: #6f7376;
-	    }
-	    ul {
-		list-style-type: none;
-		padding: 0px;
-		margin: 0px;
-		li {
-		    margin-top: 8px;
-		}
-	    }
+            .col {
+                flex: 33%;
+                text-align:left;
+                margin: 8px;
+            }
 
-	}
+            a {
+                color: #212223;
+            }
 
-	.button {
+            p {
+                color: #6f7376;
+            }
+
+            ul {
+                list-style-type: none;
+                padding: 0px;
+                margin: 0px;
+
+                li {
+                    margin-top: 8px;
+                }
+            }
+        }
+
+        .button {
             font-family:'Lost', sans-serif;
             font-weight: 500;
-	        text-align:center;
+            text-align:center;
             font-size: 14px;
             line-height: 120%;
             text-decoration: none;
             color: #212223;
             border: 1px solid #DADCDE;
-	        background-color: #ffffff;
+            background-color: #ffffff;
             border-radius: 4px;
             width: 220px;
             display: block;
             padding: 8px 0;
             text-transform: uppercase;
 
-	    &:hover {
-		background-color: #EEF0F2;
-		color: #212223;
-		border-color: #DADCDE;
-	    }
-	}
-
+            &:hover {
+                background-color: #EEF0F2;
+                color: #212223;
+                border-color: #DADCDE;
+            }
+        }
 
         h3 {
             color: #6f7376;
@@ -433,7 +479,6 @@
             margin-bottom: 16px;
             text-transform: uppercase;
         }
-
     }
 
     & + .md-main {
@@ -449,7 +494,6 @@
 .sek-two-columns {
     flex: 50%;
 }
-
 
 .sek-cards {
     grid-template-columns: repeat(auto-fill,minmax(400px,400px));
@@ -481,6 +525,7 @@
     text-decoration: none;
     color: #212223;
 }
+
 .sek-card a:hover {
     background: #EEF0F2;
 }
@@ -494,7 +539,6 @@
     }
 }
 
-
 .sek-submenu-api {
     background-color: #992a85;
     margin: 0;
@@ -505,82 +549,73 @@
     line-height: 40px;
 
     ul {
-	margin: 0px;
-	padding: 0px;
+        margin: 0px;
+        padding: 0px;
 
-	li {
-	    list-style-type: none;
-	    display: inline;
-	}
+        li {
+            list-style-type: none;
+            display: inline;
+        }
 
-	li:not(:first-child):before {
-	    content: " | ";
-	}
-
+        li:not(:first-child):before {
+            content: " | ";
+        }
     }
 }
 
 .md-typeset {
-
-  // Tabbed container
-  .tabbed-set {
-    > input {
-
-
-      // Tab label states
-      @for $i from 100 through 21 {
-        &:nth-child(#{$i}) {
-
-          // Tab is active
-          &:checked {
-
-            // Tab label
-            ~ .tabbed-labels > :nth-child(#{$i}) {
-              @extend %tabbed-label;
+    // Tabbed container
+    .tabbed-set {
+        > input {
+            // Tab label states
+            @for $i from 100 through 21 {
+                &:nth-child(#{$i}) {
+                    // Tab is active
+                    &:checked {
+                        // Tab label
+                        ~ .tabbed-labels > :nth-child(#{$i}) {
+                            @extend %tabbed-label;
+                        }
+                        // Tab content
+                        ~ .tabbed-content > :nth-child(#{$i}) {
+                            @extend %tabbed-content;
+                        }
+                    }
+                    // Tab label on keyboard focus
+                    &.focus-visible ~ .tabbed-labels > :nth-child(#{$i}) {
+                        @extend %tabbed-label-focus-visible;
+                    }
+                }
             }
-
-            // Tab content
-            ~ .tabbed-content > :nth-child(#{$i}) {
-              @extend %tabbed-content;
-            }
-          }
-
-          // Tab label on keyboard focus
-          &.focus-visible ~ .tabbed-labels > :nth-child(#{$i}) {
-            @extend %tabbed-label-focus-visible;
-          }
         }
-      }
     }
-  }
 }
 
 %tabbed-label {
+    // [screen]: Show active state
+    @media screen {
+        color: var(--md-default-fg-color);
 
-  // [screen]: Show active state
-  @media screen {
-    color: var(--md-default-fg-color);
+        // [no-js]: Show border (indicator is animated with JavaScript)
+        .no-js & {
+            border-color: var(--md-default-fg-color);
+        }
 
-    // [no-js]: Show border (indicator is animated with JavaScript)
-    .no-js & {
-      border-color: var(--md-default-fg-color);
+        // Show border for tabs in tooltips
+        [role="dialog"] & {
+            border-color: var(--md-default-fg-color);
+        }
     }
-
-    // Show border for tabs in tooltips
-    [role="dialog"] & {
-      border-color: var(--md-default-fg-color);
-    }
-  }
 }
 
 // Tab label on keyboard focus placeholder
 %tabbed-label-focus-visible {
-  color: var(--md-accent-fg-color);
+    color: var(--md-accent-fg-color);
 }
 
 // Tab content placeholder
 %tabbed-content {
-  display: block;
+    display: block;
 }
 
 .md-banner {
