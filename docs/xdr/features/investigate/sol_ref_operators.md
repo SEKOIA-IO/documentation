@@ -840,14 +840,14 @@ Use the `lookup` operator to extend a table with values from another table. Pref
 !!! info
     A lookup is a left lookup: all rows from the left table remain in the result. For an unmatched row, the `into` output is empty. When multiple rows in the right table match, the result includes an enriched row for each match.
 
-An indexed lookup compares one field from each table. This legacy syntax remains supported:
+For simple equality lookups, use a field comparison:
 
 ``` shell
 <left table name>
 | lookup <right table name> on <left column name> == <right column name>
 ```
 
-For a non-trivial condition, use a predicate lookup:
+Use a predicate lookup for more complex matching conditions, such as function calls or range comparisons:
 
 ``` shell
 <left table name>
@@ -856,7 +856,7 @@ For a non-trivial condition, use a predicate lookup:
     into <output>
 ```
 
-In a non-trivial predicate, explicitly qualify every field from the left table with `$left.` and every field from the right table with `$right.`. For example:
+In a predicate lookup, explicitly qualify every field from the left table with `$left.` and every field from the right table with `$right.`. For example:
 
 ``` shell
 events
