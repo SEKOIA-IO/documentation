@@ -4,6 +4,7 @@ The Sekoia AI SOC Platform is an open, cloud-native security operations ecosyste
 
 By leveraging an "Agentic SOC" approach, Sekoia enables security teams to automate repetitive tasks and focus on complex threat hunting, significantly reducing both Mean Time to Detect (MTTR) and operational overhead.
 
+![SEKOIA Licence system Overview](/assets/sekoia_system.png){: style="max-width:100%"}
 
 ## Platform Architecture & Modules
 
@@ -17,8 +18,12 @@ The platform is modular, allowing organizations to deploy specific capabilities 
 * **Reveal (Asset Intelligence):** An exclusive module for Defend that provides continuous asset discovery and inventory. It contextualizes alerts by mapping them to specific organizational assets, ensuring visibility across shadow IT and ephemeral cloud resources.
 * **Elevate (Agentic SOC):** A specialized AI module that deploys intelligent agents to assist analysts. Elevate autonomously connects disparate incidents, enriches alerts with active CTI, and prioritizes critical threats to streamline the decision-making process.
 
-![SEKOIA Licence system Overview](/assets/sekoia_system.png){: style="max-width:100%"}
-
+<div>
+  <script async src="https://js.storylane.io/js/v2/storylane.js" data-verify-origin=""></script>
+  <div class="sl-embed" style="position:relative;padding-bottom:calc(51.95% + 25px);width:100%;height:0;transform:scale(1)">
+    <iframe loading="lazy" class="sl-demo" src="https://app.storylane.io/demo/nyxpygn2vyiw?embed=inline" name="sl-embed" allow="fullscreen" allowfullscreen style="position:absolute;top:0;left:0;width:100%!important;height:100%!important;border:1px solid rgba(63,95,172,0.35);box-shadow: 0px 0px 18px rgba(26, 19, 72, 0.15);border-radius:10px;box-sizing:border-box;"></iframe>
+  </div>
+</div>
 
 ## Engineering Principles
 
