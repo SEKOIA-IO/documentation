@@ -41,50 +41,8 @@ markdown_extensions:
 - pymdownx.snippets
 - plugins.custom_lightgallery
 nav:
-- Getting started:
-  - Overview: getting_started/index.md
-  - Where to start: getting_started/concepts.md
-  - Trainings:
-    - Training offer overview: getting_started/training_overview.md
-    - Register for a training course: getting_started/register_training.md
-  - Workspace setup:
-    - Join workspace: getting_started/join_community.md
-    - Create and manage communities: getting_started/create_community.md
-  - Account setup:
-    - Create account: getting_started/create_account.md
-    - Setup account: getting_started/account_settings.md
-  - Security and access:
-    - Account security:
-      - Two-Factor Authentication: getting_started/account_security.md
-      - Security tokens: getting_started/securitytokens.md
-      - Password Management Policy: getting_started/password_management_policy.md
-    - Workspace security:
-      - Session duration: getting_started/session_duration.md
-      - Two-Factor Authentication: getting_started/twofactor_workspace.md
-      - SSO with OpenID Connect: getting_started/sso/openid_connect.md
-      - SSO with Microsoft Entra ID (Azure AD): getting_started/sso/azure.md
-      - SSO with Okta: getting_started/sso/okta.md
-  - Users and roles:
-    - Invite users: getting_started/invite_users.md
-    - Manage users: getting_started/manage_users.md
-    - Deactivate inactive users: getting_started/inactive_users.md
-    - Roles and permissions:
-      - Built-in roles: getting_started/roles.md
-      - Custom roles: getting_started/custom_roles.md
-      - Intake Restricted roles: getting_started/intake_restricted_roles.md
-  - Notifications:
-    - Notification system: getting_started/notification_concept.md
-    - Create notifications: getting_started/notifications-Listing_Creation.md
-    - Manage notifications: getting_started/manage_notifications.md
-    - Notification examples: getting_started/notifications-Examples.md
-  - API Keys: getting_started/manage_api_keys.md
-  - Subscriptions: getting_started/subscriptions.md
-  - Usage: getting_started/usage.md
-  - Sekoia regions: getting_started/regions.md
-  - Roy AI Assistant: getting_started/ai_assistant.md
-  - Best practices: getting_started/best_practices.md
-  - Troubleshooting tips: getting_started/get_troubleshooting_tips.md
 - Sekoia Solutions:
+  - The Sekoia AI SOC Platform: xdr/sekoia_solutions.md
   - Threat Context (Intelligence):
     - Intelligence overview: cti/index.md
     - Data Models: cti/features/data_model.md
@@ -270,6 +228,49 @@ nav:
       - Check Endpoint Hygiene: xdr/features/modules/reveal_hygiene.md
       - Leverage Vulnerability Enrichment: xdr/features/modules/reveal_vulnerabilities.md
       - Rely on Security Controls: xdr/features/modules/reveal_security_controls.md
+- Getting started:
+  - Overview: getting_started/index.md
+  - Where to start: getting_started/concepts.md
+  - Trainings:
+    - Training offer overview: getting_started/training_overview.md
+    - Register for a training course: getting_started/register_training.md
+  - Workspace setup:
+    - Join workspace: getting_started/join_community.md
+    - Create and manage communities: getting_started/create_community.md
+  - Account setup:
+    - Create account: getting_started/create_account.md
+    - Setup account: getting_started/account_settings.md
+  - Security and access:
+    - Account security:
+      - Two-Factor Authentication: getting_started/account_security.md
+      - Security tokens: getting_started/securitytokens.md
+      - Password Management Policy: getting_started/password_management_policy.md
+    - Workspace security:
+      - Session duration: getting_started/session_duration.md
+      - Two-Factor Authentication: getting_started/twofactor_workspace.md
+      - SSO with OpenID Connect: getting_started/sso/openid_connect.md
+      - SSO with Microsoft Entra ID (Azure AD): getting_started/sso/azure.md
+      - SSO with Okta: getting_started/sso/okta.md
+  - Users and roles:
+    - Invite users: getting_started/invite_users.md
+    - Manage users: getting_started/manage_users.md
+    - Deactivate inactive users: getting_started/inactive_users.md
+    - Roles and permissions:
+      - Built-in roles: getting_started/roles.md
+      - Custom roles: getting_started/custom_roles.md
+      - Intake Restricted roles: getting_started/intake_restricted_roles.md
+  - Notifications:
+    - Notification system: getting_started/notification_concept.md
+    - Create notifications: getting_started/notifications-Listing_Creation.md
+    - Manage notifications: getting_started/manage_notifications.md
+    - Notification examples: getting_started/notifications-Examples.md
+  - API Keys: getting_started/manage_api_keys.md
+  - Subscriptions: getting_started/subscriptions.md
+  - Usage: getting_started/usage.md
+  - Sekoia regions: getting_started/regions.md
+  - Roy AI Assistant: getting_started/ai_assistant.md
+  - Best practices: getting_started/best_practices.md
+  - Troubleshooting tips: getting_started/get_troubleshooting_tips.md
 - Usecases:
   - Export large volumes of events: xdr/usecases/massive_export.md
   - Implement a blocklist in Sekoia.io: xdr/usecases/playbook/implement_blocklist.md
@@ -722,6 +723,8 @@ plugins:
 - search: null
 - redirects:
     redirect_maps:
+      index.md: xdr/sekoia_solutions.md
+      xdr/features/investigate/sekoia_operating_language.md: xdr/features/investigate/sol_overview.md
       getting_started/2fa.md: getting_started/account_security.md
       getting_started/apikey_creation.md: getting_started/manage_api_keys.md
       getting_started/first_steps.md: getting_started/index.md
