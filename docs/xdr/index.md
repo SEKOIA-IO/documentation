@@ -1,10 +1,10 @@
-# Sekoia Defend 
+# Sekoia Defend
 
-!!! note "Licensing & Ecosystem"
-    Sekoia Defend is the foundational module of the Sekoia AI SOC Platform. It operates as a **standalone product** for detection and response. Its capabilities can be seamlessly extended by integrating **Sekoia Intelligence** (also available standalone), or by activating the **Reveal** and **Elevate** modules.
+!!! note "Licensing and ecosystem"
 
-    
-Sekoia Defend makes it possible to easily integrate and analyze the events produced by your applications, endpoints, cloud and SaaS perimeters in real time, and we designed it with the sole purpose of protecting your assets from potential cyber threats.
+    Sekoia Defend is the core detection and response module of the [Sekoia SOC platform](sekoia_solutions.md). It can operate as a **standalone product** and expand with [Sekoia Intelligence](/cti/index.md), [Reveal for Asset Intelligence](features/modules/reveal_index.md), and [Sekoia Elevate](features/modules/elevate_overview.md) for AI-assisted SOC workflows.
+
+Defend collects and analyzes security events from applications, endpoints, cloud services, and SaaS environments. It gives security teams the tools to detect suspicious activity, investigate incidents, automate response actions, and report on their security operations.
 
 <div>
   <script async src="https://js.storylane.io/js/v2/storylane.js"></script>
@@ -12,52 +12,44 @@ Sekoia Defend makes it possible to easily integrate and analyze the events produ
     <iframe loading="lazy" class="sl-demo" src="https://sekoia.storylane.io/demo/8zdjfok9atpn?embed=popup" name="sl-embed" allow="fullscreen" allowfullscreen style="position:absolute;top:0;left:0;width:100%!important;height:100%!important;border:1px solid rgba(63,95,172,0.35);box-shadow: 0px 0px 18px rgba(26, 19, 72, 0.15);border-radius:10px;box-sizing:border-box;"></iframe>
 </div>
 
-## Product Features
+## Product features
 
-### Collect
+### Collect security data
 
-To defend your business, you need to know what's going on. Monitoring your assets is a prerequisite for their security.
-Sekoia.io is able to collect logs via various mechanisms, setting it up on your end is easy!
+Sekoia Defend supports multiple ingestion methods for bringing security data into the platform. Teams can connect applications, endpoints, cloud services, and SaaS environments, then organize and enrich the events they collect.
 
-1. Find out the supported [ingestion methods](/integration/ingestion_methods/index.md).
-2. Take a look at our pre-defined [Integrations](/integration/categories/index.md)' list that keeps growing to suit all of your needs.
-3. Configure your [Intakes](features/collect/intakes.md) to collect your logs.
-4. Organize your intakes in [Entities](features/collect/entities.md).
-5. Enrich your events with your [Assets](features/collect/assets.md).
+The collection workflow includes:
 
-### Detect
+1. **Choose an ingestion method:** Select the method that fits the data source and deployment model. See the supported [ingestion methods](/integration/ingestion_methods/index.md).
+2. **Connect an integration:** Use the supported [Integrations](/integration/categories/index.md) catalog to collect data from security and business applications.
+3. **Configure Intakes:** Set up the [Intakes](features/collect/intakes.md) that receive and process incoming logs.
+4. **Organize Intakes into Entities:** Structure data sources around the systems, environments, or business units they represent with [Entities](features/collect/entities.md).
+5. **Enrich events with Assets:** Add [asset](features/collect/assets.md) context to help analysts understand which systems and resources are involved.
 
-Sekoia.io combines Cyber Threat Intelligence, anomaly detection and advanced Threat detection scenarios to effectively detect attacks, intrusions and compromises. By design, Sekoia.io is built to protect your organization against the most aggressive and advanced threats.
+### Detect threats
 
-1. Discover the [Rules Catalog](features/detect/rules_catalog.md).
-2. Create your [own detection rules](features/detect/sigma.md).
+Sekoia Defend combines Cyber Threat Intelligence (CTI), anomaly detection, and detection scenarios to identify suspicious activity, intrusions, and compromises.
 
-### Investigate
+Security teams can:
 
-Sekoia Defend (XDR) allows you to conduct investigations on malicious activities directly from an alert or by means of the event history.
-Case management makes it possible to reconcile alerts with each other and to document the associated analyzes and results.
+- Review detection logic in the [Rules Catalog](features/detect/rules_catalog.md).
+- Create and manage [custom detection rules](features/detect/sigma.md).
+- Use [Sigma rules](features/detect/sigma.md) to make detection logic more portable across tools.
 
-1. Review [Security Alerts](features/investigate/alerts.md) raised by Sekoia.io and investigate on their malicious activities.
-2. Hunt down the intruders with the [Event History](features/investigate/events.md) and its drill down capabilities.
-3. Use [Case Management](features/investigate/cases.md) to centralize your observations on an incident and collaborate with other stake holders.
+### Investigate alerts and incidents
 
-### Automate
+Analysts can investigate activity directly from a security alert or through the event history. Case management helps teams connect related alerts, document findings, and collaborate throughout an investigation.
 
-Automating your security improves your cybersecurity operations by consolidating your procedures. SOC Automation combines security tools, processes and people to accelerate the execution of your security responses while ensuring their repeatability and auditability.
+Defend supports:
 
-- Manage your [Playbooks](features/automate/index.md) to automate your SOC.
+- **Security alert investigation:** Review [alerts](features/investigate/alerts.md) and examine the activity behind them.
+- **Event history and threat hunting:** Search historical [events](features/investigate/events.md) and drill down into relevant activity.
+- **Case management:** Centralize observations, evidence, and investigation results around an incident with [Case Management](features/investigate/cases.md).
 
-### Report
+### Automate response
 
-- Review your Security with dedicated [Dashboards](features/report/dashboards.md) or build your own control center.
+Sekoia Defend includes Security Orchestration, Automation and Response (SOAR) capabilities for repeatable response actions. Teams can use [Playbooks](features/automate/index.md) to automate parts of their SOC workflows, coordinate actions across security tools, and maintain an auditable record of what happened.
 
-### Reveal (Asset Visibility & Inventory)
+### Report on security operations
 
-Reveal is an add-on module that continuously discovers, unifies, and contextualizes your assets (hosts, accounts, networks). It merges data from third-party asset inventories, vulnerability management tools, the sekoia endpoint agent and passive asset identification into a single, unified Asset Inventory.  
-
-Each asset is enriched with a context such as, Timeline, Hygiene posture, Vulnerabilities, and Points of Interest. Open the Asset Context Panel from Alerts, Cases, Events, or Assets to see identity, activity, and risk in place — speeding up triage and decisions.  
-
-#### Get started
-1. Connect sources: Deploy the [Sekoia Endpoint Agent](https://docs.sekoia.com/integration/categories/endpoint/sekoiaio/#enabling-host-hygiene-collection) and integrate your [asset inventory](https://docs.sekoia.com/xdr/features/collect/integrations_hub/) and [vulnerability management](https://docs.sekoia.com/xdr/features/collect/integrations_hub/) tools.  
-2. Curate inventory: Assign criticality, tags; resolve duplicates and address coverage gaps through your [asset inventory](https://docs.sekoia.com/xdr/features/collect/assets/#your-asset-inventory).  
-3. Investigate: Use the Asset Context Panel (coming soon) anywhere to view your assets with context.
+Use dedicated [Dashboards](features/report/dashboards.md) or create custom views to monitor security activity and operational metrics. Teams can build dashboards around the measures that matter to their SOC, including alert activity, investigation status, and response performance.
