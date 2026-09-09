@@ -1,4 +1,7 @@
-# The Sekoia AI SOC Platform
+# Welcome to Sekoia's documentation
+
+
+## The Sekoia AI SOC Platform
 
 The Sekoia SOC platform brings threat detection, investigation, and response into one open, cloud-native platform. It connects high-fidelity **Cyber Threat Intelligence (CTI)**, security telemetry, and **Asset Intelligence** to give analysts a clearer view of what's happening across their environment.
 
