@@ -840,6 +840,15 @@ Use the `lookup` operator to extend a table with values from another table. Pref
 !!! info
     A lookup is a left lookup: all rows from the left table remain in the result. For an unmatched row, the `into` output is empty. When multiple rows in the right table match, the result includes an enriched row for each match.
 
+!!! warning "Multiple matches and aggregations"
+    When a lookup predicate matches multiple rows in the right table, the lookup
+    returns one enriched row for each match. Subsequent aggregations can therefore
+    count the same source row more than once.
+
+    When you need to count source events uniquely, use `count_distinct()` with an
+    event identifier. A timestamp can be used only when it uniquely identifies an
+    event in the queried data.
+
 For simple equality lookups, use a field comparison:
 
 ``` shell
