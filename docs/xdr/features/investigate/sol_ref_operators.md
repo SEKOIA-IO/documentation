@@ -846,8 +846,7 @@ Use the `lookup` operator to extend a table with values from another table. Pref
     count the same source row more than once.
 
     When you need to count source events uniquely, use `count_distinct()` with an
-    event identifier. A timestamp can be used only when it uniquely identifies an
-    event in the queried data.
+    event identifier.
 
 For simple equality lookups, use a field comparison:
 
