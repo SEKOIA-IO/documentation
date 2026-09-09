@@ -10,7 +10,7 @@ Both the Sekoia Endpoint Agent and the Sekoia platform support optimization rule
 |---|---|---|
 | **Where filtering happens** | On the host, before transmission | At the Sekoia intake, after reception |
 | **Volume impact** | Reduces network usage and ingestion volume | Reduces storage and detection load only |
-| **Configuration method** | API only | API |
+| **Configuration method** | API or agent configuration file | API only|
 | **Applicable sources** | Sekoia Endpoint Agent intakes only | Any intake |
 | **Field availability** | Parsed fields only | Parsed fields only |
 
@@ -20,7 +20,7 @@ Both the Sekoia Endpoint Agent and the Sekoia platform support optimization rule
 ## Prerequisites
 
 - At least one Sekoia Endpoint Agent deployed and sending events.
-- API access to your Sekoia community (an API key with the `SIC_WRITE_CONF_INTAKES` permission).
+- - API access to your Sekoia community if you use the API configuration method. The API key must have the `SIC_WRITE_CONF_INTAKES` permission.
 - The `format_uuid` for the Sekoia Endpoint Agent format: `250e4095-fa08-4101-bb02-e72f870fcbd1`.
 
 ## Understand what to filter
@@ -36,7 +36,7 @@ To find the highest-volume event types, use **Events > Search** in Sekoia, filte
 
 ## Create an agent-level optimization rule
 
-Agent-level optimization rules are created via the Sekoia API. The endpoint is:
+Agent-level optimization rules can be configured through the Sekoia API or an agent configuration file. The following examples use the Sekoia API. The endpoint is:
 
 ```
 POST https://api.sekoia.io/v1/sic/conf/intakes/optimization_rules/
@@ -177,7 +177,7 @@ Use only fields that appear in the raw parsed event. To check which fields are a
 
 ## Allow the agent to fetch rules
 
-After you create a rule via the API, the agent must be allowed to fetch its configuration. Check your agent deployment policy to confirm the agent can reach the Sekoia API endpoint `api.sekoia.io` on port 443. The agent fetches updated rules at its next configuration poll cycle. A restart of the agent is not required, but forces an immediate fetch:
+When you configure a rule through the API, the agent must be allowed to fetch its configuration. Check your agent deployment policy to confirm the agent can reach the Sekoia API endpoint `api.sekoia.io` on port 443. The agent fetches updated rules at its next configuration poll cycle. A restart of the agent is not required, but forces an immediate fetch:
 
 ```bash
 # Restart the agent service (Linux)
