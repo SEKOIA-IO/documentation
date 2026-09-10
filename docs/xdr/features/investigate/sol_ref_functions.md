@@ -448,7 +448,9 @@ Returns the modified string with all non-overlapping matches replaced. If no mat
 
 ## String: split()
 
-Splits a string using a delimiter. Optionally returns the item at a requested zero-based index.
+**Description**
+
+Splits a string on a delimiter and returns the resulting items as an array. Pass an index to keep only one item, for example to extract the value that follows a known command-line flag.
 
 **Syntax**
 
@@ -458,37 +460,63 @@ split(<source>, <delimiter>[, <requested_index>])
 
 **Parameters**
 
-- `source`: The string to split (required).
-- `delimiter`: The string that separates items in `source` (required).
-- `requested_index`: The zero-based index of the item to return (optional).
+- `source`: The string to split (required)
+- `delimiter`: The string that separates the items in `source` (required)
+- `requested_index`: The zero-based index of the single item to return (optional)
 
 **Return Value**
 
-Returns an array of strings. Without `requested_index`, the array contains every item produced by the split. With `requested_index`, the array contains the item at that index, or is empty (`[]`) when the index has no matching item.
+Returns an array of strings, even when `requested_index` is set. Without `requested_index`, the array holds every item. With `requested_index`, the array holds one item, or is empty (`[]`) when the index is out of range or the delimiter is absent from `source`.
 
-!!! example "Split a PowerShell command line"
+!!! note "Read a single item with `[0]`"
+    Because the function always returns an array, append `[0]` to get the item as a string: `split(process.command_line, "-EncodedCommand ", 1)[0]`. On an empty array, `[0]` returns `null`.
+
+!!! example "Split a command line into tokens"
 
     === "Query"
 
         ``` shell
-        let command_line = "pwsh.exe -NoLogo -NoExit -EncodedCommand SGVsbG8=";
-
-        let tokens = split(command_line, " ");
-        let encoded_command = split(command_line, "-EncodedCommand ", 1);
+        events
+        | where timestamp > ago(24h)
+        | where process.command_line != null
+        | extend tokens = split(process.command_line, " ")
+        | select process.command_line, tokens
+        | limit 100
         ```
 
     === "Results"
 
-        | variable        | result                                                     |
-        | --------------- | ---------------------------------------------------------- |
-        | `tokens`        | `["pwsh.exe", "-NoLogo", "-NoExit", "-EncodedCommand", "SGVsbG8="]` |
-        | `encoded_command` | `["SGVsbG8="]`                                           |
+        | process.command_line                                 | tokens                                                                   |
+        | ---------------------------------------------------- | ------------------------------------------------------------------------ |
+        | `pwsh.exe -NoLogo -NoExit -EncodedCommand SGVsbG8=`  | `["pwsh.exe", "-NoLogo", "-NoExit", "-EncodedCommand", "SGVsbG8="]`      |
+        | `cmd.exe /c whoami`                                  | `["cmd.exe", "/c", "whoami"]`                                            |
 
-    When `-EncodedCommand ` is absent, or the requested index is out of range, `split(command_line, "-EncodedCommand ", 1)` returns `[]`.
+!!! example "Extract the value that follows a flag"
+
+    Splitting on the flag itself, including its trailing space, puts the value at index `1`.
+
+    === "Query"
+
+        ``` shell
+        events
+        | where timestamp > ago(24h)
+        | where process.command_line contains "-EncodedCommand "
+        | extend encoded_command = split(process.command_line, "-EncodedCommand ", 1)[0]
+        | select process.command_line, encoded_command
+        | limit 100
+        ```
+
+    === "Results"
+
+        | process.command_line                                 | encoded_command |
+        | ---------------------------------------------------- | --------------- |
+        | `pwsh.exe -NoLogo -NoExit -EncodedCommand SGVsbG8=`  | `SGVsbG8=`      |
 
 ## String: base64_encode()
 
-Encodes a string as Base64 using its UTF-8 representation.
+**Description**
+
+Encodes a string as Base64. The string is first converted to its UTF-8 bytes.
 
 **Syntax**
 
@@ -498,7 +526,7 @@ base64_encode(<value>)
 
 **Parameters**
 
-- `value`: The string to encode (required).
+- `value`: The string to encode (required)
 
 **Return Value**
 
@@ -506,15 +534,26 @@ Returns the Base64-encoded string. Returns `null` when `value` is `null`.
 
 !!! example "Encode a string"
 
-    ``` shell
-    base64_encode("Hello from SOL")
-    ```
+    === "Query"
 
-    Returns `SGVsbG8gZnJvbSBTT0w=`.
+        ``` shell
+        events
+        | limit 1
+        | extend encoded = base64_encode("Hello from SOL")
+        | select encoded
+        ```
+
+    === "Results"
+
+        | encoded                |
+        | ---------------------- |
+        | `SGVsbG8gZnJvbSBTT0w=` |
 
 ## String: base64_decode()
 
-Decodes a Base64 string to a string using the specified character encoding. UTF-8 is used by default.
+**Description**
+
+Decodes a Base64 string and interprets the resulting bytes with a character encoding. UTF-8 is the default. Use `utf-16le` to decode PowerShell `-EncodedCommand` payloads.
 
 **Syntax**
 
@@ -524,33 +563,58 @@ base64_decode(<base64_value>[, <encoding>])
 
 **Parameters**
 
-- `base64_value`: The Base64-encoded string to decode (required).
-- `encoding`: A recognized Python codec name for the decoded bytes (optional, defaults to `utf-8`).
+- `base64_value`: The Base64-encoded string to decode (required)
+- `encoding`: The character encoding of the decoded bytes, such as `utf-8`, `utf-16le` or `latin-1` (optional, defaults to `utf-8`)
 
 **Return Value**
 
-Returns the decoded string using `encoding`, or UTF-8 when no encoding is specified. Returns `null` when `base64_value` is `null`, when it is not valid Base64, or when the decoded bytes are not valid for the selected encoding. An unknown encoding causes a query error.
+Returns the decoded string. The table below lists the other outcomes.
+
+| Condition                                              | Result       |
+| ------------------------------------------------------ | ------------ |
+| `base64_value` is `null`                               | `null`       |
+| `base64_value` is not valid Base64                     | `null`       |
+| The decoded bytes are not valid for `encoding`         | `null`       |
+| `encoding` is not a recognized encoding name           | Query error  |
 
 !!! example "Decode a UTF-8 Base64 string"
 
-    ``` shell
-    base64_decode("SGVsbG8gZnJvbSBTT0w=")
-    ```
+    === "Query"
 
-    Returns `Hello from SOL`.
+        ``` shell
+        events
+        | limit 1
+        | extend decoded = base64_decode("SGVsbG8gZnJvbSBTT0w=")
+        | select decoded
+        ```
 
-!!! example "Decode a PowerShell command"
+    === "Results"
 
-    ``` shell
-    let command_line = "pwsh.exe -NoLogo -NoExit -EncodedCommand VwByAGkAdABlAC0ATwB1AHQAcAB1AHQAIAAnAEgAZQBsAGwAbwAgAGYAcgBvAG0AIABQAG8AdwBlAHIAUwBoAGUAbABsACcA";
-    events
-    | limit 1
-    | extend encoded_command = split(command_line, "-EncodedCommand ", 1)[0]
-    | extend decoded_command = base64_decode(encoded_command, "utf-16le")
-    | project command_line, encoded_command, decoded_command
-    ```
+        | decoded          |
+        | ---------------- |
+        | `Hello from SOL` |
 
-    The `decoded_command` output is `Write-Output 'Hello from PowerShell'`.
+!!! example "Decode a PowerShell encoded command"
+
+    PowerShell encodes `-EncodedCommand` payloads as UTF-16LE. Extract the payload with `split()`, then decode it with the `utf-16le` encoding.
+
+    === "Query"
+
+        ``` shell
+        events
+        | where timestamp > ago(24h)
+        | where process.command_line contains "-EncodedCommand "
+        | extend encoded_command = split(process.command_line, "-EncodedCommand ", 1)[0]
+        | extend decoded_command = base64_decode(encoded_command, "utf-16le")
+        | select process.command_line, decoded_command
+        | limit 100
+        ```
+
+    === "Results"
+
+        | process.command_line                                                                                                                                     | decoded_command                        |
+        | -------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------- |
+        | `pwsh.exe -NoLogo -NoExit -EncodedCommand VwByAGkAdABlAC0ATwB1AHQAcAB1AHQAIAAnAEgAZQBsAGwAbwAgAGYAcgBvAG0AIABQAG8AdwBlAHIAUwBoAGUAbABsACcA` | `Write-Output 'Hello from PowerShell'` |
 
 
 ## Math: round()
