@@ -869,24 +869,51 @@ Unlike `inner` or `left` joins, anti-joins do **not** produce a `model` object â
 
 ## Lookup
 
+Use the `lookup` operator to extend a table with values from another table. Prefer `lookup` over `join` when the right table is small enough to fit into memory to improve query performance.
 
+Like `join`, `lookup` injects the right table into a `model` object. The `into` clause names that object. Without `into`, the object takes a default name derived from the right table name, as for `join`. The result does not repeat the right table columns used in the matching condition.
 
-Use the `lookup` operator to extend a table. Extends the current table with values looked-up in another table.
-Prefer the `lookup` operator over `join` when the right table is small enough to fit into memory to improve query performance.
+!!! note "A lookup is always a left lookup"
+    All rows from the left table remain in the result. For an unmatched row, the `model` object is empty. When several rows of the right table match, the result contains one enriched row per match.
 
-!!! info
-    The result doesn't repeat columns from the `right` table that are the basis for the join operation.
-    The `lookup` operator only supports `left join`.
+!!! warning "Multiple matches and aggregations"
+    When a lookup condition matches several rows in the right table, the lookup returns one enriched row per match. A subsequent `aggregate` can therefore count the same source row more than once. The same applies to `join`.
+
+    To count source events uniquely, use `count_distinct()` on an event identifier.
+
+For an equality lookup, compare one column of each table:
 
 ``` shell
 <left table name>
-| lookup <right table name> on <left column name> == <right column name>
-| aggregate <function> by <column name>
-| order by <column name>
-
+| lookup <right table name> on <left column name> == <right column name> into <model object name>
 ```
 
-Similarly to `join` operator, `lookup` will inject the right table into a `model` object.
+For more complex matching conditions, such as a function call or a range comparison, use a predicate lookup:
+
+``` shell
+<left table name>
+| lookup <right table name>
+    on <predicate>
+    into <model object name>
+```
+
+In a predicate lookup, qualify every field of the left table with `$left.` and every field of the right table with `$right.`.
+
+!!! example "Enrich events with the label of a matching CIDR range"
+
+    The `known_scanner_ranges` dataset holds `cidr` and `label` columns.
+
+    ``` shell
+    events
+    | where timestamp > ago(24h)
+    | lookup known_scanner_ranges
+        on cidr_match($left.source.ip, $right.cidr)
+        into matched_range
+    | select timestamp, source.ip, matched_range.label
+    | limit 100
+    ```
+
+A predicate lookup is not pushed down to the datasource. For the complete pattern, which filters events with `cidr_match()` before the lookup, see [Enrich events using a CIDR dataset](/xdr/features/investigate/sol_datasets.md#enrich-events-using-a-cidr-dataset).
 
 
 ## Compare

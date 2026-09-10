@@ -447,6 +447,96 @@ Returns the modified string with all non-overlapping matches replaced. If no mat
         | 2026-03-26T15:35:04.539Z | grace@example.com |
 
 
+## Network: cidr_match()
+
+**Description**
+
+Returns `true` when an IPv4 address belongs to an IPv4 CIDR range. Use it to filter events by network range, or to match events against a list of ranges held in a variable or a SOL dataset.
+
+**Syntax**
+
+``` shell
+cidr_match(<ip>, <cidr_or_cidrs>)
+```
+
+**Parameters**
+
+- `ip`: The IPv4 address to test, as a string (required)
+- `cidr_or_cidrs`: An IPv4 CIDR string, or an array of IPv4 CIDR strings. The array can be a literal or derived from a table with `select` (required)
+
+**Return Value**
+
+Returns `true` if `ip` belongs to at least one valid CIDR in `cidr_or_cidrs`, otherwise `false`. The function supports IPv4 only. The following inputs never match: invalid IP addresses, invalid CIDRs, `null` values and array elements that are not strings.
+
+!!! note "Host bits are normalized"
+    A CIDR whose host bits are set is accepted and normalized to its network address. For example, `10.1.2.3/24` is treated as `10.1.2.0/24`.
+
+!!! tip "Push-down"
+    A `where cidr_match(...)` filter is pushed down to the `events` datasource. Apply it before a `lookup` or `join` so that only matching events reach the in-memory step. See [Enrich events using a CIDR dataset](/xdr/features/investigate/sol_datasets.md#enrich-events-using-a-cidr-dataset).
+
+!!! example "Filter events by an IPv4 CIDR range"
+
+    === "Query"
+
+        ``` shell
+        events
+        | where timestamp > ago(24h)
+        | where cidr_match(source.ip, "80.94.95.0/24")
+        | select timestamp, source.ip, destination.ip
+        | limit 100
+        ```
+
+    === "Results"
+
+        | timestamp                | source.ip    | destination.ip |
+        | ------------------------ | ------------ | -------------- |
+        | 2026-03-26T15:35:14.738Z | 80.94.95.12  | 192.168.2.10   |
+        | 2026-03-26T15:35:03.740Z | 80.94.95.201 | 192.168.2.22   |
+        | 2026-03-26T15:35:04.539Z | 80.94.95.12  | 192.168.2.10   |
+
+!!! example "Match against several ranges"
+
+    === "Query"
+
+        ``` shell
+        events
+        | where timestamp > ago(24h)
+        | where cidr_match(source.ip, ["80.94.95.0/24", "198.51.100.0/24"])
+        | select timestamp, source.ip
+        | limit 100
+        ```
+
+    === "Results"
+
+        | timestamp                | source.ip      |
+        | ------------------------ | -------------- |
+        | 2026-03-26T15:35:14.738Z | 80.94.95.12    |
+        | 2026-03-26T15:35:03.740Z | 198.51.100.47  |
+
+!!! example "Match against the ranges of a SOL dataset"
+
+    The `known_scanner_ranges` dataset holds a `cidr` column. The `let` statement turns that column into an array.
+
+    === "Query"
+
+        ``` shell
+        let cidrs = known_scanner_ranges | select cidr;
+
+        events
+        | where timestamp > ago(24h)
+        | where cidr_match(source.ip, cidrs)
+        | select timestamp, source.ip
+        | limit 100
+        ```
+
+    === "Results"
+
+        | timestamp                | source.ip      |
+        | ------------------------ | -------------- |
+        | 2026-03-26T15:35:14.738Z | 80.94.95.12    |
+        | 2026-03-26T15:35:03.740Z | 198.51.100.47  |
+
+
 ## Math: round()
 
 **Description**

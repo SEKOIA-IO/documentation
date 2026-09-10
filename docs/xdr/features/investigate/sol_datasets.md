@@ -271,6 +271,35 @@ Instantly correlate your alerts with external threat intelligence feeds to disti
     | SEKOIA Intelligence Feed | 143.198.133.245 | malware_c2         | high               |
     | Suspicious DNS Query     | 185.220.101.47 | tor_exit_node       | medium             |
 
+### Enrich events using a CIDR dataset
+
+Tag events whose source IP belongs to one of your known IPv4 ranges, such as VPN pools, partner networks or internet scanners. The dataset holds a `cidr` column and a `label` column.
+
+The `lookup` predicate uses `cidr_match()` and is not pushed down to the datasource. The `where cidr_match(source.ip, cidrs)` filter is optional but pushed down: it keeps only events that match a range before the in-memory lookup runs, which reduces the rows the lookup must process. Keep the dataset small enough to fit in memory.
+
+=== "Query"
+
+    ```shell
+    let cidrs = known_scanner_ranges | select cidr;
+
+    events
+    | where timestamp between (?time.start .. ?time.end)
+    | where cidr_match(source.ip, cidrs)
+    | lookup known_scanner_ranges
+        on cidr_match($left.source.ip, $right.cidr)
+        into matched_range
+    | select timestamp, source.ip, matched_range.cidr, matched_range.label
+    | limit 100
+    ```
+
+=== "Results"
+
+    | timestamp                | source.ip     | matched_range.cidr | matched_range.label |
+    | ------------------------ | ------------- | ------------------ | ------------------- |
+    | 2026-03-26T15:35:14.738Z | 80.94.95.12   | 80.94.95.0/24      | Internet scanner    |
+    | 2026-03-26T15:35:03.740Z | 198.51.100.47 | 198.51.100.0/24    | Partner network     |
+    | 2026-03-26T15:35:04.539Z | 80.94.95.201  | 80.94.95.0/24      | Internet scanner    |
+
 ### Understand event patterns across business units and system criticality
 
 Transform raw security events into business-aware insights by correlating them with your asset inventory. Quickly identify which departments or critical systems are generating the most security events, enabling targeted investigation and resource allocation.
