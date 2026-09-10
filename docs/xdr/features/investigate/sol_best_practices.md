@@ -107,7 +107,7 @@ Use this table to identify which operations can be pushed down to the datasource
 | `\| aggregate <aggregations>` | When `<aggregations>` operate on simple field references. Only the first `aggregate` command can be pushed down |
 | `\| limit ...` | ✅ Always |
 | `\| top X by <definitions>` | When `<definitions>` are simple field references. For the `events` and `eternal_events` datasources, `top` cannot be pushed down after an aggregation |
-| `\| where <conditions>` | When `<conditions>` are simple comparison expressions over simple field references, or a `cidr_match()` predicate over a supported IP field |
+| `\| where <conditions>` | When `<conditions>` are simple comparison expressions over simple field references, or a `cidr_match()` predicate over a simple IP field reference such as `source.ip` (see [cidr_match()](/xdr/features/investigate/sol_ref_functions.md#network-cidr_match)) |
 | Constants and time functions (e.g. `now()`, `ago(24h)`) | ✅ Always |
 | Group-by time functions (`bin`, `year`, `month`, `week`) | ✅ Always |
 | `countif` aggregation function | ❌ Never |
