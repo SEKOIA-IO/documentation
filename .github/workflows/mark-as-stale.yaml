@@ -33,9 +33,12 @@ jobs:
       # staled-issues-prs holds only the items this run newly labelled, not every
       # already-stale one, so each preview is deleted exactly once. Warn rather than
       # fail if it is unparsable: the label is applied by now, so this run will never
-      # be retried and a hard failure would strand the previews either way.
+      # be retried and a hard failure would strand the previews either way. Same
+      # reasoning for always(): if actions/stale fails after labelling some PRs, their
+      # previews must still be deleted.
       - name: Extract stale PR numbers
         id: extract-prs
+        if: always()
         env:
           STALED: ${{ steps.stale.outputs.staled-issues-prs }}
         run: |
@@ -47,7 +50,8 @@ jobs:
   delete-stale-previews:
     name: Delete preview for stale PR ${{ matrix.pr }}
     needs: mark-stale
-    if: fromJson(needs.mark-stale.outputs.stale-prs)[0] != null
+    # The empty-string guard is needed because fromJson('') is an expression error, not null.
+    if: always() && needs.mark-stale.outputs.stale-prs != '' && fromJson(needs.mark-stale.outputs.stale-prs)[0] != null
     permissions:
       contents: read  # for actions/checkout to fetch code
       issues: write  # for ./.github/actions/delete-preview (peter-evans/create-or-update-comment) to create or update comment
