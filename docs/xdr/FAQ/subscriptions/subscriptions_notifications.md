@@ -75,5 +75,5 @@ temporarily hide the message.
 
 - [Subscriptions](/getting_started/subscriptions.md): An overview of the Subscriptions page, including access requirements, 
 subscription details, and trial specifications for single-tenant and MSSP communities.
-- [Allocate a trial subscription](/xdr/FAQ/subscriptions/allocate_trial_subscription.md): Step-by-step instructions for manually 
+- [Assign a trial subscription](/getting_started/assign_a_subscription.md): Step-by-step instructions for manually 
 assigning a trial subscription to a community from the MSSP workspace.
