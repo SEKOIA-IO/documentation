@@ -19,8 +19,6 @@ When a new community receives a trial automatically, you do not need to assign i
 5. Select the subscription that you want to assign.
 6. Click **Assign**.
 
-![Assignment list showing the subscriptions available to the community](/assets/self_service/03_assign_subscription.png)
-
 ## Review the available subscriptions
 
 The assignment list can display the information below to help you select the correct subscription.
