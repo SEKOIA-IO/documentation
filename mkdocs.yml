@@ -265,7 +265,12 @@ nav:
     - Manage notifications: getting_started/manage_notifications.md
     - Notification examples: getting_started/notifications-Examples.md
   - API Keys: getting_started/manage_api_keys.md
-  - Subscriptions: getting_started/subscriptions.md
+  - Subscriptions: 
+    - Subscriptions overview: getting_started/subscriptions.md
+    - Create a subscription: getting_started/create_a_subscription.md
+    - Assign a subscription: getting_started/assign_a_subscription.md
+    - Subscriptions notifications: xdr/FAQ/subscriptions/subscriptions_notifications.md
+  - Usage: getting_started/usage.md
   - Usage: getting_started/usage.md
   - Sekoia regions: getting_started/regions.md
   - Roy AI Assistant: getting_started/ai_assistant.md
@@ -299,9 +304,6 @@ nav:
   - Assets: xdr/FAQ/Assets_qa.md
   - Ingestion:
     - Delay with event ingestion or alert creation: xdr/FAQ/ingestion/ingestion_delay.md
-  - Subscriptions:
-    - Allocate trial subscription: xdr/FAQ/subscriptions/allocate_trial_subscription.md
-    - Subscriptions notifications: xdr/FAQ/subscriptions/subscriptions_notifications.md
   - Sekoia.io Endpoint agent: xdr/FAQ/SEKOIA_Endpoint_Agent.md
   - Datetime representation: xdr/FAQ/datetime.md
   - Reveal troubleshooting: xdr/features/modules/reveal_troubleshoot.md
@@ -734,6 +736,7 @@ plugins:
       getting_started/apikey_creation.md: getting_started/manage_api_keys.md
       getting_started/first_steps.md: getting_started/index.md
       getting_started/inviting_users_to_join_your_community.md: getting_started/invite_users.md
+      xdr/FAQ/subscriptions/allocate_trial_subscription.md: getting_started/assign_a_subscription.md
       integration/categories/network/beyondtrust_pra_sessions.md: integration/categories/iam/beyondtrust_pra_sessions.md
       integration/categories/network_security/ubika_cloud_protector_next_gen.md: integration/categories/network_security/ubika_cloud_protector_next_gen_alerts.md
       intelligence_center.md: cti/index.md

@@ -1,81 +1,75 @@
 # Subscriptions
 
-The Subscriptions page gives you a centralized view of all active and inactive licenses across your communities. 
-You can use it to monitor subscription status, track expiration dates, and manage trial periods.
+The **Subscriptions** page gives you a centralized view of the subscriptions attached to your communities. From this page, you can review subscription status, compare plans, assign an existing subscription, or create a new subscription when Self-Service is enabled for your partner.
 
 ## Access requirements
 
-The following roles can access the Subscriptions page:
+You need access to the workspace and the permissions required to manage community subscriptions.
 
-| Role | View subscriptions | Allocate trials and subscriptions |
-|---|---|---|
-| Admin | ✅ | ✅ |
-| Analyst | ✅ | ❌ |
-| Guest | ✅ | ❌ |
+| Role | View subscriptions | Assign subscriptions | Create subscriptions |
+| --- | --- | --- | --- |
+| Admin | ✅|✅ | Depends on partner enablement and permissions |
+| Analyst | ✅ | ❌ |❌ |
+| Guest | ✅ | ❌ | ❌ |
 
-You must also have the following permissions:
+The exact actions available to you depend on your role, permissions, workspace configuration, and the community state.
 
-- Read community licenses
-- Manage community licenses
+You also need the following permissions to manage community subscriptions:
 
-## Subscription information
+- **Read community licenses** to view subscriptions.
+- **Manage community licenses** to assign subscriptions.
 
-Regardless of your community type, the Subscriptions page displays:
+Creating a subscription also requires Self-Service to be enabled for your workspace.
 
-- Current subscriptions
-- Expired subscriptions
+## Review subscriptions
 
-For each subscription, you can view:
+The page displays active and inactive subscriptions for the selected community. Depending on the subscription, you can review the following information:
 
-- The plan type (e.g., Defend Core, Defend Prime, Intelligence)
-- The subscription period, region, number of defended assets, and retention durations
-- The remaining days on the subscription
+- Module and plan.
+- Subscription period.
+- Region.
+- Number of assets or subscribed volume.
+- Hot storage or other retention options.
+- Remaining time on the subscription.
 
-To compare available plans, click **Compare plans**. To contact the Sekoia team, click **Contact us**.
+![Subscriptions page displaying active subscriptions and available actions](/assets/self_service/06_create_subscription_terms.pngg)
 
-## Single-tenant communities
+Use **Compare plans** to review the available plans. Use **Contact us** when you need a subscription or plan that is not available in the interface.
 
-If you manage a single-tenant community, the Subscriptions page shows the subscriptions attached to that community.
+## Add a subscription
 
-![subscription page showing the different active modules and remaining days](/assets/subscription_page.png){: style="max-width:100%"}
+Click **Add subscription** to open the subscription management options.
 
+![Add subscription modal with the assignment and creation options](/assets/self_service/02_add_subscription_modal.png)
 
-## MSSP (multi-tenant) communities
+The modal provides two separate workflows.
 
-If you manage a multi-tenant workspace, the Subscriptions page gives you visibility across all your managed communities.
+| Workflow | Use it when |
+| --- | --- |
+| **Assign a subscription** | A trial or purchased subscription is already available and must be attached to the community. |
+| **Create a subscription** | You need to configure a new subscription through the Self-Service wizard. |
 
-A double navigation panel lets you switch between communities quickly. The community list displays each community 
-name alongside its subscription status. A red icon indicates that a community has no active subscription.
+The previous **Allocate** terminology may still appear in older documentation. In the current workflow, use **Assign** for an existing subscription and **Create** for a new subscription.
 
+## Self-Service availability
 
-### Community subscriptions overview
+Sekoia enables subscription creation manually for eligible workspaces after the applicable commercial and legal checks are complete. The **Add subscription** entry point remains available to users who can manage subscriptions, but its options depend on the partner configuration.
 
-From the workspace, you can get a consolidated view of all managed community subscriptions. You can:
+If **Create a subscription** is not displayed, you can still assign an existing subscription when you have the required permissions. Contact Sekoia if you need Self-Service enabled or if a subscription is missing from the assignment list.
 
-- View the full list of communities and their subscription status
-- Filter by: Trial, nearly expired, not active
-- Search for a specific community using the search bar
+Self-Service is additive. It does not remove existing trials, subscriptions purchased in advance, or legacy subscription workflows.
 
-## Trial subscriptions
+## Subscription lifecycle
 
-A trial is a temporary subscription that gives you access to platform features for a limited period, with no 
-financial commitment.
+The subscription experience includes three stages.
 
-When you create a new community, a trial subscription is automatically made available.
+1. A subscription is made available through a trial, a purchase, or the Self-Service catalog.
+2. You assign an existing subscription or create a new one for the target community.
+3. The subscription appears on the **Subscriptions** page, where you can monitor its period, plan, capacity, and remaining time.
 
-The trial subscription includes:
+For details about each action, see the task articles below.
 
-| Property | Value |
-|---|---|
-| Duration | 45 days |
-| Plan | Defend Prime |
-| Number of assets | Up to 1,000 |
-| Hot storage | 7 days |
-| Archiving duration | 0 days |
+## Related articles
 
-## Related links
-
-- [Allocate a trial subscription](/xdr/FAQ/subscriptions/allocate_trial_subscription.md): Step-by-step instructions for manually 
-assigning a trial subscription to a community from the MSSP workspace.
-- [Subscription notifications](/xdr/FAQ/subscriptions/subscriptions_notifications.md): How Sekoia notifies administrators about 
-upcoming and expired licenses, including email and in-app banner behavior.
+- [Create a subscription](/getting_started/create_a_subscription.md): How to configure and confirm a new subscription with the Self-Service wizard.
+- [Assign a subscription](/getting_started/assign_a_subscription.md): How to attach an existing trial or purchased subscription to a community.
