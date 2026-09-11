@@ -32,7 +32,7 @@ The page displays active and inactive subscriptions for the selected community. 
 - Hot storage or other retention options.
 - Remaining time on the subscription.
 
-![Subscriptions page displaying active subscriptions and available actions](/assets/self_service/01_subscriptions_list.png)
+![Subscriptions page displaying active subscriptions and available actions](/assets/self_service/06_create_subscription_terms.pngg)
 
 Use **Compare plans** to review the available plans. Use **Contact us** when you need a subscription or plan that is not available in the interface.
 
