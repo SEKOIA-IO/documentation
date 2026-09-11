@@ -40,9 +40,6 @@ For the **Volume-based** model, configure the data volume supported by the selec
 !!! warning "Check the capacity"
     Verify the asset count or data volume before continuing. These values define the included capacity and can affect usage billing or overage charges.
 
-![Usage step with Defend asset-based capacity settings](/assets/self_service/07_create_subscription_usage.png)
-
-![Usage step before capacity values are entered](/assets/self_service/08_create_subscription_usage_empty.png)
 
 !!! info "Save the configuration for future Subscription creations".
 You can select **Save as template**, in order to reuse the configuration for another subscription. Check the dates and community-specific capacity for every new subscription.
