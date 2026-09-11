@@ -354,6 +354,7 @@ nav:
       - Salesforce: integration/categories/applicative/salesforce.md
       - Sekoia.io activity logs: integration/categories/applicative/sekoiaio_activity_logs.md
       - Sekoia.io forwarder logs: integration/categories/applicative/sekoiaio_forwarder_logs.md
+      - Slack Audit Logs: integration/categories/applicative/slack_audit_logs.md
       - Systancia Cleanroom: integration/categories/applicative/systancia_cleanroom.md
       - Veeam Backup: integration/categories/applicative/veeam_backup.md
       - Wiz Audit Logs: integration/categories/applicative/wiz_audit_logs.md
