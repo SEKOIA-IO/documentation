@@ -1,7 +1,63 @@
-Changelog _last update on 2026-09-07_
+Changelog _last update on 2026-09-11_
 
 ## Changelog
 
+### Microsoft 365 (Office 365) MCAS New Country
+  - 09/09/2026 - minor - Update rule type to integration
+    
+### Microsoft 365 (Office 365) AtpDetection
+  - 09/09/2026 - minor - Update rule type to integration
+    
+### Microsoft 365 (Office 365) MCAS Repeated Delete
+  - 09/09/2026 - minor - Update rule type to integration
+    
+### Microsoft Entra ID (Azure AD) Suspicious Browser
+  - 09/09/2026 - minor - Update rule type to integration
+    
+### Microsoft Entra ID (Azure AD) Anonymous IP
+  - 09/09/2026 - minor - Update rule type to integration
+    
+### Microsoft 365 (Office 365) MCAS Inbox Hiding
+  - 09/09/2026 - minor - Update rule type to integration
+    
+### Microsoft 365 (Office 365) MCAS Risky IP
+  - 09/09/2026 - minor - Update rule type to integration
+    
+### Microsoft Entra ID (Azure AD) Abnormal Token
+  - 09/09/2026 - minor - Update rule type to integration
+    
+### Microsoft Entra ID (Azure AD) Password Spray
+  - 09/09/2026 - minor - Update rule type to integration
+    
+### Microsoft Entra ID (Azure AD) Sign-in From Unlikely Country
+  - 09/09/2026 - minor - Update rule type to integration
+    
+### Microsoft Entra ID (Azure AD) Leaked Credentials
+  - 09/09/2026 - minor - Update rule type to integration
+    
+### Microsoft Entra ID (Azure AD) Threat Intelligence
+  - 09/09/2026 - minor - Update rule type to integration
+    
+### Microsoft Entra ID (Azure AD) Unfamiliar Features
+  - 09/09/2026 - minor - Update rule type to integration
+  - 20/03/2025 - major - Change effort level
+    
+### Microsoft 365 (Office 365) MCAS Repeated Failed Login
+  - 09/09/2026 - minor - Update rule type to integration
+    
+### SecurityScorecard Vulnerability Assessment Scanner New Issues
+  - 09/09/2026 - minor - Update rule type to integration
+  - 15/01/2025 - minor - Adding format field to improve rules mapping
+    
+### Microsoft Entra ID (Azure AD) Suspicious IP
+  - 09/09/2026 - minor - Update rule type to integration
+    
+### Microsoft Entra ID (Azure AD) Impossible Travel
+  - 09/09/2026 - minor - Update rule type to integration
+    
+### Microsoft 365 (Office 365) MCAS Detection Velocity
+  - 09/09/2026 - minor - Update rule type to integration
+    
 ### Linux Bash Reverse Shell
   - 07/09/2026 - minor - Added filters to reduce false positives
     
@@ -875,9 +931,6 @@ Changelog _last update on 2026-09-07_
 ### Powershell UploadString Function
   - 20/03/2025 - major - Change effort level and add filter to reduce false positives
     
-### Microsoft Entra ID (Azure AD) Unfamiliar Features
-  - 20/03/2025 - major - Change effort level
-    
 ### Searchprotocolhost Child Found
   - 17/03/2025 - major - Rule changed to effort master, and filter added to reduce false positives.
     
@@ -978,9 +1031,6 @@ Changelog _last update on 2026-09-07_
     
 ### AWS CloudTrail KMS CMK Key Deleted
   - 16/01/2025 - minor - Similarity strategy was changed to have better alerts grouping.
-    
-### SecurityScorecard Vulnerability Assessment Scanner New Issues
-  - 15/01/2025 - minor - Adding format field to improve rules mapping
     
 ### RSA SecurID Failed Authentification
   - 14/01/2025 - minor - Adding format field to improve rules mapping
