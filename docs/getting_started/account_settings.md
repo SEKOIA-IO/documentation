@@ -25,9 +25,6 @@ To change the theme of your workspace, follow these steps:
 
 You can choose how dates are displayed across the platform, so timestamps match the convention you read most naturally.
 
-!!! note "Early Access"
-    US Date Format is currently in Early Access. To enable it, go to the `Early Access Features` menu and turn on `US Date Format`.
-
 Once the feature is enabled, set your preferred date format:
 
 1. Go to **Settings**

@@ -52,7 +52,6 @@ The agent analyzes each question and answers it using the data and tools availab
 ## Related articles
 
 - [The Elevate investigation method](/xdr/features/modules/elevate_investigation_method.md): How runbooks, reasoning questions, findings and verdicts work together.
-- [Investigate a case with Elevate](/xdr/features/modules/elevate_investigate_case.md): How Elevate investigates a case when you assign it to Roy.
 - [Override an Elevate verdict](/xdr/features/modules/elevate_validate_verdict.md): How to override the AI verdict once you have reviewed the investigation.
 - [Audit an Elevate investigation with Traces](/xdr/features/modules/elevate_traces.md): How to review the full timeline of actions the agent performed.
 - [Elevate analysis states](/xdr/features/modules/elevate_analysis_states.md): Reference table of all possible AI analysis states and their meaning.

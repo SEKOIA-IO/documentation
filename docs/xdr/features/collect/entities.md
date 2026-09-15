@@ -14,8 +14,15 @@ All fields of entities are editable and mandatory.
 ### Alert generation mode
 The **Alert generation mode** affects the alert processing workflow. There are two generation modes:
 
-- `automatic`: for which the alerts proceed to the status `Ongoing` immediately after their creation
-- `manual`: for which the alerts remain in the status `Pending` until a manual action.
+!!! warning
+    Because automatic mode selects the status by its position, adding a status to the **In progress** stage or reordering that stage changes which status new automatic alerts receive. Keep the status you want automatically generated alerts to use in second position in the **In progress** stage.
+
+- `automatic`: the alert is set on creation to the second custom status enabled in the **In progress** stage. On the default configuration that status is `Ongoing`.
+- `manual`: the alert stays in the `Pending` status until an analyst acts on it.
+
+The status applied in automatic mode is resolved by position, not by name. It is always the second custom status enabled in the **In progress** stage. For details on stages and how statuses are ordered, see [Custom statuses](/xdr/features/investigate/custom_statuses.md).
+
+
 
 ## Entities listing
 
@@ -36,7 +43,7 @@ To create a new entity:
 1. Go the the Entities page in the menu
 2. Click on the `+ New Entity` button
 3. Give your entity a name, an entity ID and a description. All these fields are mandatory
-4. Choose your Alert generation mode (A default value for alert generation mode is defined for each entity but can be overridden in each detection rule)
+4. Choose your Alert generation mode (A default value for alert generation mode is defined for each entity)
 5. Save your settings
 
 ## Entity details

@@ -45,7 +45,7 @@ To get Roy's help in the Rules Catalog, follow these steps:
 
 In the context of Events and logs, Roy can assist you with the explanation of some complex event attributes.
 
-Here is the list of event attributes fields where you can find a “Get help with Roy” button: 
+Here is the list of event attributes fields where you can find an “Explain with Roy” button: 
 
 - `url.domain`
 - `process.command_line`
@@ -85,6 +85,7 @@ Roy Assistant is continuously updated with the latest threat intelligence coming
 
 Roy Assistant is designed with user privacy and data security as top priorities. It does not memorize queries or retain any information provided by users. This ensures that **your interactions remain confidential.**
 
-When using the chat feature, messages are sent to Sekoia servers for processing. However, **Roy does not have access to your personal data**; instead, it orchestrates the web interface to assist you.
+The chat feature does not have access to your personal data. It orchestrates the web interface directly to assist you.
 
-For use cases that require data processing, such as AI Cases or explaining event attributes, Roy uses models hosted on Sekoia's secure servers.
+!!! note "Private by architecture"
+    Roy runs entirely on Sekoia-hosted infrastructure. The models behind the chat, the event attribute explanations and AI Cases all run on Sekoia's own servers, and no data is sent to external LLM providers. This makes Roy suitable for regulated environments and sensitive data contexts.

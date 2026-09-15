@@ -8,9 +8,6 @@ When an alert arrives, the Elevate agent runs a detailed analysis workflow to de
 
 The investigation is driven by a **runbook** tied to the detection rule that raised the alert. The runbook tells the agent what the detection is meant to catch, which legitimate situations could explain it, and which questions to answer. The agent works through those questions, gathers evidence as **findings**, and consolidates everything into a **verdict**.
 
-!!! note "Investigating cases"
-    Elevate can also investigate a case when you assign it to Roy. The investigation is performed at the case level: it produces a single case-level verdict, findings and reasoning questions, not separate verdicts for the individual alerts in the case. See [Investigate a case with Elevate](/xdr/features/modules/elevate_investigate_case.md).
-
 ## Runbooks
 
 Runbooks define the way agents reason and carry out their investigations. Sekoia Elevate generates a runbook **automatically for every detection rule**, including your custom rules, and analysts can edit it at any time for fine tuning.
@@ -59,7 +56,6 @@ Two sources of expert knowledge shape every investigation:
 
 - [Elevate](/xdr/features/modules/elevate_overview.md): Overview of how Elevate works and its key concepts.
 - [Investigate an alert with Elevate](/xdr/features/modules/elevate_investigate_alert.md): How to read an AI investigation report and interpret findings.
-- [Investigate a case with Elevate](/xdr/features/modules/elevate_investigate_case.md): How to trigger a case investigation by assigning the case to Roy.
 - [Audit an Elevate investigation with Traces](/xdr/features/modules/elevate_traces.md): How to review the full timeline of actions the agent performed.
 - [Customize a detection rule's runbook](/xdr/features/modules/elevate_customize_runbook.md): How to edit the Detection Rational, legitimate scenarios and investigation questions of a runbook.
 - [Add custom instructions for an Elevate agent](/xdr/features/modules/elevate_custom_instructions.md): How to give the agent environment-specific context.

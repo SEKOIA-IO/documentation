@@ -59,12 +59,15 @@ TestHTTP
 Our connector, trigger, and action will use the `requests` library to send HTTP requests.
 The first step is to add this package to our requirements.
 
-Poetry can be used to add the requirements by simply running in the `TestHTTP` root directory:
+Use `uv` to add the requirements by simply running in the `TestHTTP` root directory:
 
 ```shell
 cd TestHTTP
-poetry add requests
+uv add requests
 ```
+
+!!! note
+    If you are using an older project scaffolded with Poetry, you can use `poetry add requests` instead.
 
 As a result you should see the `requests` package added in the dependencies section of the `pyproject.toml` file. 
 
@@ -155,7 +158,7 @@ Depending on your needs, you can choose to create an **Action**, a **Connector**
     ```python
     from typing import Literal
 
-    from pydantic.v1 import BaseModel, HttpUrl
+    from pydantic import BaseModel, HttpUrl
     import requests
     from sekoia_automation.action import Action  # (1)!
 
@@ -373,7 +376,7 @@ Depending on your needs, you can choose to create an **Action**, a **Connector**
 
     To create the parameter `api_key` in the module, modify the file named `models.py` located in the  `testhttp_modules` directory with the following content:
     ```python
-    from pydantic.v1 import BaseModel, Field
+    from pydantic import BaseModel, Field
 
 
     class TesthttpModuleConfiguration(BaseModel):
@@ -389,7 +392,7 @@ Depending on your needs, you can choose to create an **Action**, a **Connector**
     ```python
     import json
     import time
-    from pydantic.v1 import Field
+    from pydantic import Field
     from sekoia_automation.connector import Connector, DefaultConnectorConfiguration
     import requests
 
@@ -525,7 +528,7 @@ Depending on your needs, you can choose to create an **Action**, a **Connector**
     ```python
     import time
 
-    from pydantic.v1 import BaseModel, HttpUrl
+    from pydantic import BaseModel, HttpUrl
     import requests
     from requests import HTTPError
     from sekoia_automation.trigger import Trigger  # (1)!
@@ -733,12 +736,15 @@ def test_get_request(requests_mock):
   assert result.text == mock_response['text']
 ```
 
-To effectively manage dependencies and run your tests, you should use Poetry: 
+To effectively manage dependencies and run your tests, you should use `uv`:
 
 ```shell
-poetry run pytest -v -s tests/
+uv run pytest -v -s tests/
 ```
-For more detailed information, you can check the [Poetry documentation](https://python-poetry.org/docs/). Additionally, you can look at the tests in the existing module.
+For more detailed information, you can look at the tests in the existing module.
+
+!!! note
+    If you are using an older project scaffolded with Poetry, you can use `poetry run pytest -v -s tests/` instead. See the [Poetry documentation](https://python-poetry.org/docs/) for more details.
 
 ## Lint and format your code (optional)
 
@@ -769,7 +775,7 @@ To check your module for type correctness and compliance with Sekoia's standards
 To check your code, please use `mypy` with the following command in the working copy of the `automation-library` repository:
 
 ```shell
-poetry run mypy  --install-types --non-interactive --ignore-missing-imports --show-column-numbers --hide-error-context .
+uv run mypy  --install-types --non-interactive --ignore-missing-imports --show-column-numbers --hide-error-context .
 ```
 
 ### Check compliance
@@ -777,7 +783,7 @@ poetry run mypy  --install-types --non-interactive --ignore-missing-imports --sh
 In the working copy of the `automation-library` repository, to check the automation module against compliance rules:
 
 ```shell
-poetry -C _utils run python compliance check --changes
+uv --directory _utils run python compliance check --changes
 ```
 
 ## Deploy your module
@@ -815,12 +821,12 @@ To publish a new automation in the Sekoia.io integration catalog, you must follo
 
 This step will enable you to verify different components of the module and detect any errors. Before proceeding, ensure all test dependencies are installed by running the following command in the /_utils directory:
 ``` shell
-poetry install 
+uv sync
 ```
-To check the correctness of the module the following command should be run :
+To check the correctness of the module the following command should be run:
 
 ```shell
-poetry run python3 compliance check --module modules\<module_name> 
+uv run python3 compliance check --module modules\<module_name>
 ```
 
 ### Homologation request 

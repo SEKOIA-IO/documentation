@@ -56,31 +56,36 @@ The following steps describe the configuration through the Corelight Fleet Manag
 
 #### Enable dynamic exporters
 
-1. In the Fleet Manager (or sensor UI), go to **Configuration › Advanced › Advanced Configuration**.
-2. Enable the setting `bro.exporters.dynamic.enable`.
+On sensor versions where the setting exists, go to **Configuration › Advanced › Advanced Configuration** and enable `bro.exporters.dynamic.enable`. On version 29.0 and above the dynamic exporters are always available and the setting is no longer exposed: go directly to the next step.
 
 #### Configure the HTTP Exporter
 
-1. Go to **Policies › [your policy] › Export** and add a new **HTTP Exporter**.
+1. Go to **Policies › [your policy] › Export › Log export** and create a new **HTTP** exporter.
 2. Configure the exporter with the following values:
 
 | Field         | Value                                                                                          |
 |---------------|------------------------------------------------------------------------------------------------|
-| URI           | `https://intake.sekoia.io`                                                                     |
+| URI           | `https://intake.sekoia.io/jsons`                                                               |
 | Method        | `POST`                                                                                         |
 | HTTP Headers  | Add a header — key: `X-SEKOIAIO-INTAKE-KEY`, value: the `intake key` generated on Sekoia.io    |
 | Compression   | `gzip` (default) — optional                                                                    |
 
+!!! warning "The `/jsons` path is required"
+    The Corelight HTTP Exporter always sends a batch as a **JSON array** of events (`[{...},{...}]`), even when the batch contains a single event. The `/jsons` endpoint accepts that array and creates one event per array item.
+
+    Do not point the exporter at `https://intake.sekoia.io` or at `https://intake.sekoia.io/plain/batch`: the whole array is then ingested as a single event and the parsing fails.
+
 !!! warning
-    The URI above works for the FRA1 region. For any other region, replace `https://intake.sekoia.io` with your region's HTTP Intake endpoint.
+    The URI above works for the FRA1 region. For any other region, replace `https://intake.sekoia.io` with your region's HTTP Intake endpoint and keep the `/jsons` path.
 
     Example for USA1:
-    `https://app.usa1.sekoia.io/api/v1/intake-http`
+    `https://intake.usa1.sekoia.io/api/v1/intake-http/jsons`
 
     You can find your region endpoint here: [https://docs.sekoia.com/getting_started/regions/](https://docs.sekoia.com/getting_started/regions/)
 
-3. (Recommended) Limit the volume by selecting the high-value log types for the SOC via **Exporter Log Filters** or **Zeek Logs to Include**: `conn`, `dns`, `http`, `ssl`, `files`, `notice`, `intel`, `suricata_corelight`.
-4. Save the policy and apply it to the sensor.
+3. (Recommended) Limit the volume by selecting the log types supported by this intake with **Zeek Logs to Include** set to **Include**: `conn`, `dns`, `http`, `ssl`, `files`, `notice`, `intel`, `suricata_corelight`.
+4. Keep the default batching settings (`Batch Max Events` 5000, `Batch Timeout Seconds` 1, `Batch Max Size` 10000000).
+5. Save the policy and apply it to the sensor.
 
 Once applied, the sensor starts pushing JSON events to Sekoia.io over HTTPS.
 

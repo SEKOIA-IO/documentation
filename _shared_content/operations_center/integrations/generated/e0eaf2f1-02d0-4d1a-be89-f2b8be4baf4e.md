@@ -473,7 +473,8 @@ This section demonstrates how the raw logs will be transformed by our parsers. I
         "proofpoint": {
             "pod": {
                 "msgpart": {
-                    "id": "eb99b626-c278-4af3-96f8-5a194e016a43"
+                    "id": "eb99b626-c278-4af3-96f8-5a194e016a43",
+                    "is_deleted": false
                 },
                 "urls": [
                     "http://docs.yahoo.com/info/terms/",
@@ -502,6 +503,136 @@ This section demonstrates how the raw logs will be transformed by our parsers. I
             "scheme": "http",
             "subdomain": "us.adserver",
             "top_level_domain": "com"
+        }
+    }
+    	
+	```
+
+
+=== "test_msgparts_deleted_true_1.json"
+
+    ```json
+	
+    {
+        "message": "{\"msgParts\":{\"detectedName\":\"sample_attachment_01.bat\",\"structureId\":\"1:0\",\"sha256\":\"cbdcf45881be99e1634dc5a1c401d5310662520e6fae3a6a57ca07f078ef97f9\",\"labeledCharset\":\"\",\"md5\":\"467699238eebb0c09421df956c0b910e\",\"disposition\":\"attached\",\"sandboxStatus\":\"NOT_SUPPORTED\",\"labeledName\":\"sample_attachment_01.bat\",\"detectedSizeBytes\":4592,\"dataBase64\":\"U0NBTEFSKDB4NDNiZTljOCk=\\n\",\"detectedExt\":\"BAT\",\"isDeleted\":true,\"metadata\":{},\"isVirtual\":true,\"detectedMime\":\"application/octet-stream\",\"labeledMime\":\"\",\"textExtracted\":\"U0NBTEFSKDB4N2VmYzlkOWFhZGM4KQ==\\n\",\"sizeDecodedBytes\":4592,\"detectedCharset\":\"\",\"labeledExt\":\"bat\"},\"guid\":\"4xGDbNlpYWn7dhYw7qNM6eU5lq5TC_AS\",\"type\":\"msgParts\",\"ts\":\"2026-06-04T12:05:23.358403+0200\",\"uuid\":\"b3e1f659-7462-4bf2-860a-721df94e6fbe\",\"disposition\":\"continue\"}",
+        "event": {
+            "action": "continue",
+            "category": [
+                "email"
+            ],
+            "dataset": "msgParts",
+            "type": [
+                "info"
+            ]
+        },
+        "@timestamp": "2026-06-04T10:05:23.358403Z",
+        "email": {
+            "attachments": [
+                {
+                    "file": {
+                        "extension": "bat",
+                        "hash": {
+                            "md5": "467699238eebb0c09421df956c0b910e",
+                            "sha256": "cbdcf45881be99e1634dc5a1c401d5310662520e6fae3a6a57ca07f078ef97f9"
+                        },
+                        "mime_type": "application/octet-stream",
+                        "name": "sample_attachment_01.bat",
+                        "size": 4592
+                    }
+                }
+            ],
+            "local_id": "4xGDbNlpYWn7dhYw7qNM6eU5lq5TC_AS"
+        },
+        "file": {
+            "hash": {
+                "md5": "467699238eebb0c09421df956c0b910e",
+                "sha256": "cbdcf45881be99e1634dc5a1c401d5310662520e6fae3a6a57ca07f078ef97f9"
+            },
+            "name": "sample_attachment_01.bat"
+        },
+        "observer": {
+            "product": "ProofPoint On Demand",
+            "vendor": "ProofPoint"
+        },
+        "proofpoint": {
+            "pod": {
+                "msgpart": {
+                    "id": "b3e1f659-7462-4bf2-860a-721df94e6fbe",
+                    "is_deleted": true
+                },
+                "urls": []
+            }
+        },
+        "related": {
+            "hash": [
+                "467699238eebb0c09421df956c0b910e",
+                "cbdcf45881be99e1634dc5a1c401d5310662520e6fae3a6a57ca07f078ef97f9"
+            ]
+        }
+    }
+    	
+	```
+
+
+=== "test_msgparts_deleted_true_2.json"
+
+    ```json
+	
+    {
+        "message": "{\"msgParts\":{\"labeledExt\":\"bat\",\"detectedExt\":\"BAT\",\"disposition\":\"attached\",\"dataBase64\":\"U0NBTEFSKDB4NDNiZTljOCk=\\n\",\"sizeDecodedBytes\":4592,\"detectedCharset\":\"\",\"sandboxStatus\":\"NOT_SUPPORTED\",\"labeledCharset\":\"\",\"detectedName\":\"sample_attachment_02.bat\",\"textExtracted\":\"U0NBTEFSKDB4N2ZkMWJkOGQzMWUwKQ==\\n\",\"sha256\":\"cbdcf45881be99e1634dc5a1c401d5310662520e6fae3a6a57ca07f078ef97f9\",\"md5\":\"467699238eebb0c09421df956c0b910e\",\"isVirtual\":true,\"detectedSizeBytes\":4592,\"labeledMime\":\"\",\"metadata\":{},\"isDeleted\":true,\"labeledName\":\"sample_attachment_02.bat\",\"structureId\":\"1:0\",\"detectedMime\":\"application/octet-stream\"},\"guid\":\"sMJTlXAtwtB_c-Mwgk3Z9wGcM9WAcW-P\",\"type\":\"msgParts\",\"ts\":\"2026-06-04T12:05:23.353863+0200\",\"uuid\":\"39fdd9f7-9774-45e1-b8f9-dafe2fadac6e\",\"disposition\":\"continue\"}",
+        "event": {
+            "action": "continue",
+            "category": [
+                "email"
+            ],
+            "dataset": "msgParts",
+            "type": [
+                "info"
+            ]
+        },
+        "@timestamp": "2026-06-04T10:05:23.353863Z",
+        "email": {
+            "attachments": [
+                {
+                    "file": {
+                        "extension": "bat",
+                        "hash": {
+                            "md5": "467699238eebb0c09421df956c0b910e",
+                            "sha256": "cbdcf45881be99e1634dc5a1c401d5310662520e6fae3a6a57ca07f078ef97f9"
+                        },
+                        "mime_type": "application/octet-stream",
+                        "name": "sample_attachment_02.bat",
+                        "size": 4592
+                    }
+                }
+            ],
+            "local_id": "sMJTlXAtwtB_c-Mwgk3Z9wGcM9WAcW-P"
+        },
+        "file": {
+            "hash": {
+                "md5": "467699238eebb0c09421df956c0b910e",
+                "sha256": "cbdcf45881be99e1634dc5a1c401d5310662520e6fae3a6a57ca07f078ef97f9"
+            },
+            "name": "sample_attachment_02.bat"
+        },
+        "observer": {
+            "product": "ProofPoint On Demand",
+            "vendor": "ProofPoint"
+        },
+        "proofpoint": {
+            "pod": {
+                "msgpart": {
+                    "id": "39fdd9f7-9774-45e1-b8f9-dafe2fadac6e",
+                    "is_deleted": true
+                },
+                "urls": []
+            }
+        },
+        "related": {
+            "hash": [
+                "467699238eebb0c09421df956c0b910e",
+                "cbdcf45881be99e1634dc5a1c401d5310662520e6fae3a6a57ca07f078ef97f9"
+            ]
         }
     }
     	
@@ -563,7 +694,8 @@ This section demonstrates how the raw logs will be transformed by our parsers. I
                     "modified": "2025-11-20 21:38:41"
                 },
                 "msgpart": {
-                    "id": "11111111-1111-1111-1111-111111111111"
+                    "id": "11111111-1111-1111-1111-111111111111",
+                    "is_deleted": false
                 },
                 "urls": []
             }
@@ -621,6 +753,7 @@ The following table lists the fields that are extracted, normalized under the EC
 |`proofpoint.pod.file_metadata.wordcount` | `keyword` |  |
 |`proofpoint.pod.modules` | `array` | The list of modules which processed the message |
 |`proofpoint.pod.msgpart.id` | `keyword` | The identifier of the message part |
+|`proofpoint.pod.msgpart.is_deleted` | `boolean` | Indicates whether the message part was deleted |
 |`proofpoint.pod.routes` | `array` | The policy route triggered by the message |
 |`proofpoint.pod.smtp.recipients` | `array` | The SMTP recipients |
 |`proofpoint.pod.smtp.sender` | `keyword` | The SMTP sender |

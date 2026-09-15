@@ -140,6 +140,10 @@ A correlation document has the following attributes:
 
 Further fields might be required depending on the correlation type.
 
+### Late-arriving events
+
+Sigma correlation can group events that arrive in Sekoia less than three hours apart. This tolerance is based on the events' reception time, not on their timestamps. For example, events that all arrive together 15 days after they occurred can still be correlated.
+
 ### Correlation Types
 
 #### Event Count (`event_count`)

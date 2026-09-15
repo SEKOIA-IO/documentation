@@ -15,13 +15,20 @@ The agent supports the following operating systems on 64-bit versions only.
 
 === "Windows"
 
-    * Windows 8
+    Modern release line:
+
     * Windows 10
     * Windows 11
     * Windows Server 2016
     * Windows Server 2019
     * Windows Server 2022
     * Windows Server 2025
+
+    Legacy release line (limited support):
+
+    * Windows 8 and 8.1
+    * Windows Server 2012 and 2012 R2
+    * Windows Server 2008 and 2008 R2
 
 === "Linux"
 
@@ -35,6 +42,19 @@ The agent supports the following operating systems on 64-bit versions only.
 === "macOS"
 
     * macOS 13 Ventura and newer
+
+### Legacy Windows release line
+
+Windows systems older than Windows 10 (build lower than 10240) are automatically served a dedicated legacy build of the agent. This covers Windows 8 and 8.1, Windows Server 2012 and 2012 R2, and Windows Server 2008 and 2008 R2.
+
+!!! note "Automatic routing"
+    You do not need to do anything. Modern and legacy systems install with the same command, and the platform serves each host the build that matches its operating system. Existing installations keep working.
+
+The legacy release line receives bug fixes and security fixes so these hosts stay compatible and protected. It does not receive new feature enhancements, which ship only to the modern release line on Windows 10, Windows 11 and the current Windows Server versions.
+
+## New features
+
+To find out about the changes between each version please check the [agent's changelog](https://changelog.sekoia.com/changelog?type=t6527b1484d556)
 
 ## Prerequisites
 

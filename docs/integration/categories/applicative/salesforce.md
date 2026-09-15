@@ -71,6 +71,9 @@ This setup guide will show you how to provide an integration between Salesforce 
 
 	Salesforce generates Events Log Files hourly. It can take up to an hour for your logs to arrive. See [this documentation](https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/event_log_file_hourly_overview.htm) for more details
 
+!!! note
+
+	Do not forget the `https://` in the Base url configuration
 
 {!_shared_content/operations_center/integrations/generated/d2725f97-0c7b-4942-a847-983f38efb8ff_sample.md!}
 
