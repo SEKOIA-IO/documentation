@@ -42,7 +42,7 @@ For the **Volume-based** model, configure the data volume supported by the selec
 
 
 !!! info "Save the configuration for future Subscription creations".
-You can select **Save as template**, in order to reuse the configuration for another subscription. Check the dates and community-specific capacity for every new subscription.
+    You can select **Save as template**, in order to reuse the configuration for another subscription. Check the dates and community-specific capacity for every new subscription.
 
 
 ### Review and confirm
