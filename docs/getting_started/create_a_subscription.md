@@ -41,7 +41,7 @@ For the **Volume-based** model, configure the data volume supported by the selec
     Verify the asset count or data volume before continuing. These values define the included capacity and can affect usage billing or overage charges.
 
 
-!!! info "Save the configuration for future Subscription creations".
+!!! info "Save the configuration for future Subscription creations"
     You can select **Save as template**, in order to reuse the configuration for another subscription. Check the dates and community-specific capacity for every new subscription.
 
 
