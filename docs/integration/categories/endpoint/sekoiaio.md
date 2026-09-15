@@ -4,7 +4,7 @@ type: intake
 
 # Sekoia Endpoint Agent
 
-The Sekoia Endpoint Agent collects security-related events from Windows, Linux, and macOS endpoints and sends them directly to Sekoia. It requires minimal configuration and preserves the integrity of all logs collected from the operating system event log without modification.
+The Sekoia Endpoint Agent collects security-related events from Windows, Linux, and macOS endpoints and sends them directly to Sekoia.
 
 !!! note "Log integrity"
     The Sekoia Endpoint Agent does not modify or rewrite logs collected from the operating system event log.
