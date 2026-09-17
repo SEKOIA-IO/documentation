@@ -448,6 +448,7 @@ nav:
       - CyberArk Identity Audit Logs: integration/categories/iam/cyberark_identity_audit_logs.md
       - Delinea Platform Audit Logs: integration/categories/iam/delinea_audit_logs.md
       - FreeRADIUS: integration/categories/iam/freeradius.md
+      - Hodor Activity: integration/categories/iam/hodor_activity.md
       - Jumpcloud Directory Insights: integration/categories/iam/jumpcloud_directory_insights.md
       - Keycloak Events: integration/categories/iam/keycloak_events.md
       - ManageEngine ADAudit Plus: integration/categories/iam/manageengine_adauditplus.md
