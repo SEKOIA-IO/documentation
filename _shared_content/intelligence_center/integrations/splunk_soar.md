@@ -13,7 +13,7 @@ For the moment there are just three actions for the SEKOIA CTI API :
 ## Prerequisite
 
 On Sekoia.io CTI, create an API KEY with the following permission:
-- `INTHREAT_READ_OBJECTS` (`8d9901dc-0508-4472-b3c1-5ad5efc96032`): Read objects from InThreat
+- `View intelligence` (`8d9901dc-0508-4472-b3c1-5ad5efc96032`): Read objects from InThreat
 
 [More information on API KEY creation](../../../getting_started/manage_api_keys.md)
 
