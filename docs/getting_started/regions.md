@@ -247,7 +247,7 @@ SGP1 is our south Asia region hosted in OVH/Akamai.
         </tr>
         <tr>
             <td>HTTP Intake</td>
-            <td><a href="https://intake.sgp1.sekoia.io">https://intake.sgp1.sekoia.io</a></td>
+            <td><a href="https://intake.sgp1.sekoia.io/api/v1/intake-http">https://intake.sgp1.sekoia.io/api/v1/intake-http</a></td>
         </tr>
         <tr>
             <td>Syslog Intake</td>
