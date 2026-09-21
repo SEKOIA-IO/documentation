@@ -13,7 +13,8 @@ You can find what you need in the knowledge base in two ways:
 1. Use the search bar embedded in the menu. It’s accessible from any page of the app and enables a quick search in the database.
 2. Click `Intelligence` from the app menu and use the main search bar to browse the knowledge you need.
 
-![Intelligence-search](/assets/intelligence_center/intelligence%20search.png){: style="max-width:100%"}
+![Intelligence-search](intelligence_search.png){: style="max-width:100%"}
+
 
 You can search for **multiple items at the same time**. To skip a line and paste multiple items, press `Shift-Enter` and paste your content.
 
@@ -173,36 +174,11 @@ To show or hide these columns, click on the icon on the top right of the table a
 
 ### Quick filters
 
-On the **Objects** tab, the **Locations** and **Sectors** buttons provide shortcuts for filtering by object type. They appear next to **Filters**.
+On the **Objects** and observables tabs, the **Filters** buttons provide shortcuts for filtering by object type. 
 
-Select **Locations** or **Sectors** to apply the corresponding object-type filter directly. The resulting filter badge is the same as the badge created through **Filters > Object types**:
+![intelligence page. Filter dropdown list opened. Showing selection between object type, IOC types, sources, created at, confidence level, Feeds, last update and TLP)](intelligence_filter.png){: style="max-width:100%"}
 
-- `Object types is Location`;
-- `Object types is Sector`.
-
-When you reopen the filter menu, the selected object type is already checked. Select **Clear filters** or remove the filter from its badge to reset the results.
-
-### Object icons
-
-The Objects table uses dedicated icons for Location, Sector, and Source objects:
-
-- Location objects without a country use the Location map-pin icon;
-- Sector objects use the Sector icon;
-- Source objects use the open-book icon.
-
-Location objects with a country display the corresponding country flag in the **Type** column. Flags use rounded corners for consistent rendering.
-
-### Pagination
-
-Depending on your screen size, you can change the pagination of this data table. It is set to 25 results per page by default, but you can increase or decrease this number to 10, 15, 50 or 100.
-
-### Revoked objects
-
-When an object name is red in the table, it means that the object has been revoked.
-
-### Filters for objects
-
-To filter results in the Intelligence table, select **Filters**. When a filter is selected, a filter chip is added above the table. The filter menu includes:
+When a filter is selected, a filter chip is added above the table. The filter menu includes:
 
 | Filter | Description |
 |---|---|
@@ -216,6 +192,26 @@ To filter results in the Intelligence table, select **Filters**. When a filter i
 | **TLP** | Filter objects by their Traffic Light Protocol level. |
 
 Select **Clear filters** to remove all active filters. You can also remove an individual filter from its chip.
+
+### Icons
+
+The Objects and Observables tables uses dedicated icons to help you navigate. For example:
+
+- Location objects without a country use the Location map-pin icon;
+- Sector objects use the Sector icon;
+- Source objects use the open-book icon.
+
+!!! info
+    Location objects with a country display the corresponding country flag in the **Type** column. Flags use rounded corners for consistent rendering.
+
+### Pagination
+
+Depending on your screen size, you can change the pagination of this data table. It is set to 25 results per page by default, but you can increase or decrease this number to 10, 15, 50 or 100.
+
+### Revoked objects
+
+When an object name is red in the table, it means that the object has been revoked.
+
 
 ## Object details page
 
@@ -305,6 +301,8 @@ For object types other than Locations and Sectors, the first tab is **Details**.
 
 The **Overview** tab provides the main intelligence summary for the object. It is currently available for **Locations** and **Sectors** only; other object types show the [Details tab](#details-tab) instead.
 
+!(intelligence_overview.png){: style="max-width:100%"}
+
 #### Latest campaigns
 
 The **Latest campaigns** section lists recent campaigns associated with the object over the last 12 months. For Locations and Sectors, it includes a segmented control with two views:
@@ -329,7 +327,24 @@ The **Latest reports** section lists reports associated with the object. A repor
 
 Select a report title or source to open the related content when a link is available. Select **View all** to open the complete report list in the **Reports** tab.
 
+### Reports tab
+
+The **Reports** tab displays the complete list of reports associated with the object.
+
+The table includes:
+
+| Column | Description |
+|---|---|
+| **TLP** | The report’s Traffic Light Protocol level. |
+| **Name** | The report title. |
+| **Published at** | The publication date and time, for example `22/06/2026 - 12:00:00`. |
+| **Sources** | The source or sources associated with the report. |
+
+Report titles and sources are clickable when a destination is available. Use **Items per page** and the pagination controls to browse the list.
+
 The list can include [FLINT Reports](/cti/features/consume/flints.md) from the Sekoia TDR team and [External Reports](/cti/features/consume/external_reports.md) from curated third-party sources.
+
+![alt text](intelligence_reports.png){: style="max-width:100%"}
 
 #### Threat Landscape
 
@@ -343,7 +358,7 @@ The **Threat Landscape** section summarizes activity associated with the object.
 
 The widgets shown in this section depend on the object type; see [Location pages](#location-pages) and [Sector pages](#sector-pages) for details.
 
-> 📸 [SCREENSHOT SUGGESTION: Overview tab showing Latest campaigns, the Threat Landscape timeframe selector, and the threat-landscape widgets. | ALT TEXT: Object overview showing campaigns, active intrusion sets, malware and tools, and impacted sectors.]
+!(intelligence_threat_landscape.png){: style="max-width:100%"}
 
 ### Threat Context tab
 
@@ -367,8 +382,6 @@ The **object distribution cards** show how many objects are related to the curre
 - Reorder columns to match your workflow
 - Column state persists across sessions
 
-> 📸 [SCREENSHOT SUGGESTION: Threat Context tab showing object-distribution cards, the expanded relationship table, filters, search, metadata columns, and pagination. | ALT TEXT: Threat Context showing related object counts and detailed campaign relationships.]
-
 ### Graph exploration tab
 
 The **Graph exploration** tab displays the object and its relationships as a visual graph. A side panel provides object details or relationships, while the main area displays the graph.
@@ -384,22 +397,6 @@ The graph interface can include:
 
 For the general graph workflow, see [Graph Explorations](/cti/features/consume/graph_explorations.md).
 
-> 📸 [SCREENSHOT SUGGESTION: Graph exploration tab showing the object in the graph canvas and the Relationships side panel with grouped relationship types. | ALT TEXT: Graph exploration view with relationship groups in the side panel.]
-
-### Reports tab
-
-The **Reports** tab displays the complete list of reports associated with the object.
-
-The table includes:
-
-| Column | Description |
-|---|---|
-| **TLP** | The report’s Traffic Light Protocol level. |
-| **Name** | The report title. |
-| **Published at** | The publication date and time, for example `22/06/2026 - 12:00:00`. |
-| **Sources** | The source or sources associated with the report. |
-
-Report titles and sources are clickable when a destination is available. Use **Items per page** and the pagination controls to browse the list.
 
 ### Location pages
 
@@ -423,12 +420,6 @@ In addition to the generic Overview sections, the **Threat Landscape** of a Loca
 **Most used Malware and Tools** lists the malware and tools most frequently associated with campaigns targeting the Location. Each row can show the object name, its type icon, the number of campaigns, and how long ago the activity was observed. A malware or tool can be used in multiple campaigns.
 
 **Most impacted sectors** shows the sectors most frequently associated with campaigns targeting the Location. Each row displays a sector, its campaign count, and a proportional horizontal bar. A campaign can target multiple sectors, so sector percentages represent the share of total campaigns and are not mutually exclusive categories.
-
-> 📸 [SCREENSHOT SUGGESTION: Location page for Spain with the Overview tab selected. Show the header, Latest campaigns section, and Threat Landscape section. | ALT TEXT: Spain Location page showing latest campaigns and threat-landscape widgets.]
-
-### Sector pages
-
-<!-- Placeholder: document the redesigned Sector page here when it ships. It follows the same structure as Location pages, with widgets for the most active intrusion sets, most used malware and tools, most used MITRE ATT&CK techniques, and recently exploited vulnerabilities. -->
 
 ## Search for observables
 
