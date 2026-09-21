@@ -229,7 +229,7 @@ Timeline entries can include vulnerability state changes, hygiene changes, alert
 
 The trajectory graph shows the Asset Risk Score on the Y-axis and time on the X-axis. It reflects exposure, recent activity, and criticality changes without adding a marker for every score recalculation.
 
-![sset timeline with a risk score trajectory and contributing security events.](/assets/reveal/timeline.png){: style="width: 100%; max-width: 100%"}
+![sset timeline with a risk score trajectory and contributing security events.](/assets/reveal/asset_risk_timeline.png){: style="width: 100%; max-width: 100%"}
 
 
 
