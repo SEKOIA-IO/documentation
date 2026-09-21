@@ -55,7 +55,7 @@ The functional scope aligns with the **Defend Core** subscription tier. Defend C
 | Anomaly Detection Engine | Yes | |
 | Case Management | Yes | |
 | Hot Storage | Yes | |
-| Sekoia Endpoint Agent | Yes | |
+| Sekoia Endpoint Agent | No | The `xdr-agent-api` service is not installed in this release. |
 | Contextualized Alerts | No | Requires threat intelligence, which is not included in this release. |
 | SOL Query Builder | Yes | |
 | Detection Rules | Yes | Full rules catalog embedded in the release. |
@@ -75,6 +75,21 @@ The functional scope aligns with the **Defend Core** subscription tier. Defend C
 | Subscription Management | Yes | |
 | Region Threat Telemetry | Yes | |
 
+## Reveal functional scope
+
+Reveal is available with Sekoia Self-Hosted 0.1.0 under a dedicated subscription, in addition to Defend. The table below lists the Reveal features supported in this release compared with the SaaS platform.
+
+| Feature | Available | Notes |
+| :--- | :---: | :--- |
+| Asset Context Panel | Yes | |
+| Asset Timeline | Yes | |
+| Points of Interest | Yes | |
+| Attack Path Visualization | Yes | |
+| Endpoint Hygiene | No | Requires the `xdr-agent-api` service, which is not installed in this release. |
+| Vulnerability Enrichment | No | Requires NVD enrichment, which is not supported in this release. |
+| Asset creation, enrichment, and unification | Yes | The asset connector pipeline operates as expected. |
+| Defense Coverage | Yes | |
+
 ## Functional constraints
 
 ### Threat intelligence
@@ -88,6 +103,16 @@ The following capabilities are therefore unavailable:
 - Contextualized alerts.
 
 Detection capabilities remain fully operational. The Sekoia detection rules catalog and the integration connectors are embedded in the release archive, and they do not depend on the CTI database.
+
+### AI features
+
+The AI capabilities of the Sekoia platform are not available in Sekoia Self-Hosted 0.1.0. They rely on generative AI inference that this release does not provide.
+
+The following capabilities are therefore unavailable:
+
+- The AI Assistant (ROY), which helps analysts write detection rules, triage alerts, and drive response.
+- AI Cases, which groups related alerts in real time into AI-powered incidents.
+- The Elevate module, whose AI agents investigate alerts autonomously and produce audit-ready investigation reports.
 
 ### Sekoia Forwarder
 
