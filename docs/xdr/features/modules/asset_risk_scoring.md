@@ -53,7 +53,8 @@ An asset has an Exposure Score of `32` and a Recent Activity Score of `18`.
 
 The displayed result is **63, High**. The criticality adjustment increases the score because the asset has a high configured criticality.
 
-> 📸 [SCREENSHOT SUGGESTION: Asset risk breakdown showing Exposure 32/40, Recent activity 18/40, Base score 50, Criticality x1.26, and Final score 63. | ALT TEXT: Asset risk breakdown with exposure, recent activity, base score, criticality factor, and final score.]
+![Asset risk breakdown with exposure, recent activity, base score, criticality factor, and final score](/assets/reveal/asset_risk_breakdown.png){: style="width: 100%; max-width: 100%"}
+
 
 ## Understand the score bands
 
@@ -75,8 +76,6 @@ The Exposure Score contains persistent signals that remain relevant until their 
 `Exposure Score = Vulnerability Contribution + Hygiene Contribution`
 
 Exposure is capped at `40`.
-
-> 📸 [SCREENSHOT SUGGESTION: Exposure tooltip showing that the score is calculated from Vulnerabilities and Hygiene, is capped at 40, and requires confirmation within the last 30 days. | ALT TEXT: Exposure score tooltip describing vulnerability, hygiene, cap, and confirmation rules.]
 
 A persistent signal continues contributing while it has been confirmed within the previous 30 days. If the platform does not receive a confirmation for more than 30 days, the signal is treated as no longer confirmed and contributes `0` until it is confirmed again.
 
@@ -124,8 +123,6 @@ The Recent Activity Score represents time-sensitive operational evidence linked 
 - Points of Interest.
 
 Recent Activity is capped at `40`. Contributions decay according to the lifecycle and age of each signal.
-
-> 📸 [SCREENSHOT SUGGESTION: Recent activity tooltip showing that the score is calculated from cases, alerts, and POIs, is capped at 40, and represents time-sensitive activity. | ALT TEXT: Recent activity tooltip describing cases, alerts, POIs, and the score cap.]
 
 When a case is linked to an alert, the case takes precedence. The case contributes according to the case rules, and the linked alert contributes `0`. Reinforcement of an already correlated signal refreshes its timer but does not create another full-strength contribution.
 
@@ -221,8 +218,6 @@ The overview can also identify the dominant component, for example, **Score most
 
 Criticality does not add technical evidence. A high criticality increases business priority, while a low criticality reduces prioritization. The underlying exposure and activity remain visible in the Base Score and its breakdown.
 
-> 📸 [SCREENSHOT SUGGESTION: Criticality factor tooltip showing the 0–100 criticality range, the five criticality bands, and their linear factor ranges. | ALT TEXT: Criticality factor tooltip describing criticality bands and multiplier ranges.]
-
 ## Follow score changes over time
 
 The asset context panel provides two complementary views:
@@ -234,7 +229,8 @@ Timeline entries can include vulnerability state changes, hygiene changes, alert
 
 The trajectory graph shows the Asset Risk Score on the Y-axis and time on the X-axis. It reflects exposure, recent activity, and criticality changes without adding a marker for every score recalculation.
 
-> 📸 [SCREENSHOT SUGGESTION: Timeline tab showing the Risk score trajectory graph above timeline entries for vulnerabilities, alerts, cases, and Points of Interest. | ALT TEXT: Asset timeline with a risk score trajectory and contributing security events.]
+![sset timeline with a risk score trajectory and contributing security events.](/assets/reveal/timeline.png){: style="width: 100%; max-width: 100%"}
+
 
 
 ## Related articles

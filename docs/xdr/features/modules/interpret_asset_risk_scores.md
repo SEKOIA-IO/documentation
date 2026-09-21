@@ -73,9 +73,10 @@ The **Unified risk score** belongs to the individual vulnerability. It is distin
 
 For the rules that determine how vulnerabilities and hygiene findings affect Exposure, see [Understand the Exposure Score](/xdr/features/modules/asset_risk_scoring.md#understand-the-exposure-score).
 
-> 📸 [SCREENSHOT SUGGESTION: Vulnerabilities tab showing the asset tabs, open vulnerability count, status, CVE ID, title, CVSS severity, CWE, and Unified risk score columns. | ALT TEXT: Asset vulnerabilities table with open CVE findings and severity details.]
+![Asset vulnerabilities table with open CVE findings and severity details](/assets/reveal/asset_risk_vuln_tab.png){: style="width: 100%; max-width: 100%"}
 
-> 📸 [SCREENSHOT SUGGESTION: Hygiene tab showing Firewall and Storage encryption statuses, with the asset tabs visible above. | ALT TEXT: Host hygiene view showing firewall and storage encryption controls.]
+![Host hygiene view showing firewall and storage encryption controls.](/assets/reveal/asset_risk_hygiene_tab.png){: style="width: 100%; max-width: 100%"}
+
 
 ## Inspect recent activity
 
@@ -99,7 +100,7 @@ For the decay and correlation rules, see [Understand the Recent Activity Score](
 
 The **Related events** count represents events associated with the asset. It is not a count of installed applications.
 
-> 📸 [SCREENSHOT SUGGESTION: Related events tab showing the event query, time range, event chart, and event list. | ALT TEXT: Related events view for a host asset showing event counts and associated event records.]
+![Related events view for a host asset showing event counts and associated event records](/assets/reveal/asset_risk_relatedevent_tab.png){: style="width: 100%; max-width: 100%"}
 
 ## Check the criticality adjustment
 
@@ -128,7 +129,8 @@ Change criticality when the asset's business importance has changed or the curre
 
 The updated criticality changes the final prioritization. It does not create or remove vulnerabilities, hygiene findings, alerts, cases, or POIs.
 
-> 📸 [SCREENSHOT SUGGESTION: Edit a host asset panel showing the Criticality control and Save button. | ALT TEXT: Host asset edit panel with the criticality control.]
+![Host asset edit panel with the criticality control](/assets/reveal/asset_risk_edit_host.png){: style="width: 100%; max-width: 100%"}
+
 
 ## Review the score trajectory
 
