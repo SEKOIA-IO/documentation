@@ -50,7 +50,7 @@ Observables are the raw technical artifacts collected from investigations, sandb
 | ![Domain name](</assets/intelligence/icons/Size=24px, Name=domain-name.png>)<br>**Domain name** | A human-readable network location string, mapped to one or more IP addresses. Frequently monitored to track malicious infrastructure or phishing sites. |
 | ![Organization](</assets/intelligence/icons/Size=24px, Name=organizations.png>)<br>**Organization** | The name of a company, association, or other entity, tracked as an observable identity. |
 | ![User account](</assets/intelligence/icons/Size=24px, Name=user account.png>)<br>**User account** | An instance of a user account on any system. Monitored to detect credential stuffing, lateral movement, or unauthorized administrative access. |
-| ![Crypto wallet](</assets/intelligence/icons/Size=24px, Name=crypto wallet.png>)<br>**Crypto wallet** | TO DO (currently adding the “Crypto wallet” observable type in the platform) |
+| ![Crypto wallet](</assets/intelligence/icons/Size=24px, Name=crypto wallet.png>)<br>**Crypto wallet** | Coming soon |
 
 <!-- TODO: Confirm whether this article should include the complete list of observable tags and the link to the observable tag documentation. -->
 
