@@ -191,7 +191,7 @@ The following Sekoia.io built-in rules match the intake **Sekoia.io activity log
 
 ??? abstract "Sekoia.io Activity Logs Rule Deactivation Bulk"
     
-    Detects a massive rule deactivation observed threw Sekoia.io activity logs.
+    Detects a massive rule deactivation observed through Sekoia.io activity logs.
     
     - **Effort:** master
 
