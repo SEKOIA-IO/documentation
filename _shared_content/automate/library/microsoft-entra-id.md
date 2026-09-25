@@ -161,7 +161,7 @@ Resets a user's password by patching passwordProfile. Requires User-PasswordProf
 
 ### Revoke Sign in
 
-Invalidates all the refresh tokens issued to applications for a user. Requires the User.ReadWrite.All or Directory.ReadWrite.All permissions.
+Invalidates all the refresh tokens issued to applications for a user. Requires the User.ReadWrite.All permissions.
 
 **Arguments**
 
@@ -205,9 +205,8 @@ Invalidates all the refresh tokens issued to applications for a user. Requires t
     1. `Application.ReadWrite.OwnedBy` or `Application.ReadWrite.All.`
     2. `User.ReadWrite.All`
     3. `UserAuthenticationMethod.ReadWrite.All`
-    4. `Directory.ReadWrite.All`
-    5. `AuditLog.Read.All`
-    6. `User-PasswordProfile.ReadWrite.All`
+    4. `AuditLog.Read.All`
+    5. `User-PasswordProfile.ReadWrite.All`
 7. Click `Add permissions`
 8. In the `API permissions` page, click `Grant admin consent for TENANT_NAME`
 9. Click `Yes` in the `Grant admin consent confirmation` modal
