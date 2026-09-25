@@ -33,16 +33,18 @@ For your first playbook, use the **Alert created** trigger with a condition to l
 
 Sekoia provides a library of ready-made playbook templates for common use cases.
 
-1. In the navigation menu, select **Automate > Playbooks**.
-2. Click **+ Playbook**.
-3. Select **Use a template**.
-4. Browse the template library or search by keyword.
-5. Select a template that matches your use case (for example, **Enrich alert with VirusTotal** or **Send Slack notification on new alert**).
-6. Click **Use this template**.
-7. Review the template configuration. Update any credentials or parameters required by the template (for example, an API key for a third-party service).
-8. Set a condition on the trigger to limit when the playbook runs (for example, only for alerts with urgency above 70).
-9. Click **Save**.
-10. Toggle the playbook to **Active**.
+1. In the navigation menu, select **Configure > Playbooks**.
+2. Click **+ New playbook**.
+3. Choose a community.
+4. Click **Create**.
+5. Select **Start from a template**.
+6. Browse the template library or search by keyword.
+7. Select a template that matches your use case (for example, **Enrich alert with VirusTotal** or **Send Slack notification on new alert**).
+8. Click **Use this template**.
+9. Review the template configuration. Update any credentials or parameters required by the template (for example, an API key for a third-party service).
+10. Set a condition on the trigger to limit when the playbook runs (for example, only for alerts with urgency above 70).
+11. Click **Save**.
+12. Toggle the playbook to **Active**.
 
 > 📸 [SCREENSHOT SUGGESTION: The playbook template library showing a grid of available templates with names and descriptions. | ALT TEXT: Playbook template library with available automation templates listed as cards.]
 
