@@ -6,6 +6,11 @@ The SHC combines the built-in defaults, the selected sizing profile, and your `c
 
 This page explains every required field. To inspect supported optional settings, use the [SHC configuration commands](#inspect-the-configuration-with-the-shc).
 
+!!! warning "Check the correct"
+    The SHC validates the configuration in the `CheckLocalConfig` Pre-Flight check. The SHC does not however check that all variable are provided in full and correctly. For exemple a variable passed as an empty string may still be considered valid and cause the deployment to fail at later phases.
+    
+    To assure that the configuration is correct, please us the `config show` command to inspect the computed configuration and verify that all required values are present and correct.
+
 ## Create the configuration file
 
 Use the following configuration as a starting point. Replace every example value before running the SHC.
