@@ -2,15 +2,17 @@
 template: overrides/openapi.html
 ---
 
-# Sekoia.io API documentation
+# Sekoia API documentation
 
 {!docs/developer/quickstart.md!}
+
+{!docs/developer/filtering.md!}
 
 
 <script>
     window.onload = ()=> {
         OpenAPIViewer.init({
-            title:"Sekoia.io API Documentation",
+            title:"Sekoia API Documentation",
             regions: [
                 "FRA1",
                 "FRA2",
@@ -49,9 +51,7 @@ template: overrides/openapi.html
             },
             intro: [
                 "Quickstart",
-                "Authentication",
-                "Organization",
-                "Code examples",
+                "Filtering",
             ],
             menu:[
                 {
@@ -188,8 +188,7 @@ template: overrides/openapi.html
                         "Rules",
                         "Alert filters",
                         "Assets",
-                        "Playbooks",
-                            "Automation statistics", // => Playbooks
+                        "Automation statistics",
                         "AI assistant",
                         "Statistics", // ?
                     ]

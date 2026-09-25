@@ -2040,6 +2040,15 @@ In this section, you will find examples of raw logs as generated natively by the
 
 
 
+=== "test_system_event_audit_subtype_csv"
+
+
+    ```json
+	111111111111,2026/08/13 10:45:58,audit,2817,log-critical-activity,,"type=GRP_MGMT msg=audit(1786610758.972:3047882): pid=420 uid=0 auid=4294967295 ses=4294967295 subj=system_u:system_r:useradd_t:s0 msg='op=delete-shadow-group grp=""_svcuser"" acct=""_svcuser"" exe=""/usr/sbin/userdel"" hostname=? addr=? terminal=console res=success'",success
+    ```
+
+
+
 === "test_threat"
 
 

@@ -423,6 +423,12 @@ The following Sekoia.io built-in rules match the intake **ESET Protect**. This d
     
     - **Effort:** master
 
+??? abstract "Sigma Intelligence Pangolin8RAT Working Directory File Artifacts"
+    
+    Detects access to filesystem artifacts associated with Pangolin8RAT.
+    
+    - **Effort:** intermediate
+
 ??? abstract "Smss Wrong Parent"
     
     Detects if the Smss process was executed by a non-legitimate parent process. Session Manager Subsystem (smss) process is a component of the Microsoft Windows NT family of operating systems.

@@ -135,6 +135,12 @@ The following Sekoia.io built-in rules match the intake **ManageEngine ADAudit P
     
     - **Effort:** master
 
+??? abstract "Sigma Intelligence Pangolin8RAT Working Directory File Artifacts"
+    
+    Detects access to filesystem artifacts associated with Pangolin8RAT.
+    
+    - **Effort:** intermediate
+
 ??? abstract "Suspicious File Name"
     
     Detects suspicious file name possibly linked to malicious tool.

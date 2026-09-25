@@ -52,6 +52,14 @@ In this section, you will find examples of raw logs as generated natively by the
 
 
 
+=== "test_iptables_dropped"
+
+    ```
+	[12345.67890] IPTables Packet Dropped: IN=eth0 OUT= MAC=02:00:00:00:00:01:02:00:00:00:00:02:08:00 SRC=2.2.2.2 DST=1.1.1.1 LEN=52 TOS=0x02 PREC=0x00 TTL=128 ID=4591 DF PROTO=TCP SPT=65057 DPT=23 WINDOW=64240 RES=0x00 CWR ECE SYN URGP=0
+    ```
+
+
+
 === "test_security_policy_hit_1"
 
     ```

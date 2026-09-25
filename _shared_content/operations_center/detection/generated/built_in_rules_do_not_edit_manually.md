@@ -1,4 +1,4 @@
-Rules catalog includes **1076 built-in detection rules** ([_last update on 2026-08-07_](rules_changelog.md)).
+Rules catalog includes **1086 built-in detection rules** ([_last update on 2026-09-07_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Identity Information**
 
@@ -1214,6 +1214,24 @@ Rules catalog includes **1076 built-in detection rules** ([_last update on 2026-
             
 **Exploit Public-Facing Application**
 
+??? abstract "Akamai Guardicore Medium On-Prem Severity Security Incident"
+    
+    Akamai Guardicore has detected a medium severity security incident, indicating suspicious activity that warrants analyst review. This may include unusual lateral movement patterns, policy violations, or communication with suspicious but unconfirmed malicious endpoints.
+    
+    - **Effort:** master
+    
+??? abstract "Akamai Guardicore On-Prem High Severity Security Incident"
+    
+    Akamai Guardicore has detected a high severity security incident, indicating a likely confirmed threat such as communication with a known malicious IP, active malware beaconing, or exploitation of a vulnerable asset. Immediate triage is required.
+    
+    - **Effort:** master
+    
+??? abstract "Akamai Guardicore On-Prem Low Severity Security Incident"
+    
+    Akamai Guardicore has detected a low severity security incident, such as a connection attempt to an IP address with a bad reputation identified by the Guardicore Reputation Service.
+    
+    - **Effort:** master
+    
 ??? abstract "CVE-2018-11776 Apache Struts2"
     
     Apache Struts versions 2.3 to 2.3.34 and 2.5 to 2.5.16 suffer from possible Remote Code Execution when alwaysSelectFullNamespace is true (either by user or a plugin like Convention Plugin) and then: results are used with no namespace and in same time, its upper package have no or wildcard namespace and similar to results, same possibility when using url tag which doesn't have value and action set and in same time, its upper package have no or wildcard namespace.
@@ -2541,6 +2559,10 @@ Rules catalog includes **1076 built-in detection rules** ([_last update on 2026-
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 07/09/2026 - minor - Added filters to reduce false positives
+            
 ??? abstract "Login Brute-Force Successful On SentinelOne EDR Management Console"
     
     A user has attempted to login several times (brute-force) on the SentinelOne EDR Management Console and succeeded to login.
@@ -2616,6 +2638,24 @@ Rules catalog includes **1076 built-in detection rules** ([_last update on 2026-
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
         - 26/03/2024 - major - Rule's pattern field changed
             
+??? abstract "Microsoft Defender XDR (Graph API) Data Loss Prevention Alert"
+    
+    Microsoft Defender XDR has raised an alert for Data Loss Prevention. The alert info and evidence events are grouped with the similarity into the same Sekoia.io alert.
+    
+    - **Effort:** master
+    
+??? abstract "Microsoft Defender XDR (Graph API) Endpoint Alert"
+    
+    Microsoft Defender XDR has raised an alert for Microsoft Defender For Endpoint. The alert info and evidence events are grouped with the similarity into the same Sekoia.io alert.
+    
+    - **Effort:** master
+    
+??? abstract "Microsoft Defender XDR (GraphAPI) Entra ID Protection Alert"
+    
+    Microsoft Defender XDR has raised an alert for Microsoft Entra ID Protection. The alert info and evidence events are grouped with the similarity into the same Sekoia.io alert.
+    
+    - **Effort:** master
+    
 ??? abstract "Microsoft Defender XDR Alert"
     
     Microsoft Defender XDR has raised an alert. The alert info and evidence events are grouped with the similarity into the same Sekoia.io alert.
@@ -2637,6 +2677,7 @@ Rules catalog includes **1076 built-in detection rules** ([_last update on 2026-
     
         - 13/09/2024 - major - Update service name value following Microsoft change
         - 03/06/2026 - major - Added a new condition to match only on alerts to avoid false positives.
+        - 07/09/2026 - major - Added a new condition to match only on alerts to avoid false positives.
             
 ??? abstract "Microsoft Defender XDR Data Loss Prevention Alert"
     
@@ -4389,6 +4430,24 @@ Rules catalog includes **1076 built-in detection rules** ([_last update on 2026-
     
     - **Effort:** master
     
+??? abstract "Microsoft Defender XDR (Graph API) Data Loss Prevention Alert"
+    
+    Microsoft Defender XDR has raised an alert for Data Loss Prevention. The alert info and evidence events are grouped with the similarity into the same Sekoia.io alert.
+    
+    - **Effort:** master
+    
+??? abstract "Microsoft Defender XDR (Graph API) Endpoint Alert"
+    
+    Microsoft Defender XDR has raised an alert for Microsoft Defender For Endpoint. The alert info and evidence events are grouped with the similarity into the same Sekoia.io alert.
+    
+    - **Effort:** master
+    
+??? abstract "Microsoft Defender XDR (GraphAPI) Entra ID Protection Alert"
+    
+    Microsoft Defender XDR has raised an alert for Microsoft Entra ID Protection. The alert info and evidence events are grouped with the similarity into the same Sekoia.io alert.
+    
+    - **Effort:** master
+    
 ??? abstract "Microsoft Defender XDR Alert"
     
     Microsoft Defender XDR has raised an alert. The alert info and evidence events are grouped with the similarity into the same Sekoia.io alert.
@@ -4410,6 +4469,7 @@ Rules catalog includes **1076 built-in detection rules** ([_last update on 2026-
     
         - 13/09/2024 - major - Update service name value following Microsoft change
         - 03/06/2026 - major - Added a new condition to match only on alerts to avoid false positives.
+        - 07/09/2026 - major - Added a new condition to match only on alerts to avoid false positives.
             
 ??? abstract "Microsoft Defender XDR Data Loss Prevention Alert"
     
@@ -4728,6 +4788,18 @@ Rules catalog includes **1076 built-in detection rules** ([_last update on 2026-
         - 24/03/2023 - minor - Adjusting displayed columns when the rule triggers an alert. Now timestamp and username will be displayed.
         - 02/02/2026 - minor - Update rule type to integration
             
+??? abstract "Sigma Intelligence Pangolin8RAT Working Directory File Artifacts"
+    
+    Detects access to filesystem artifacts associated with Pangolin8RAT.
+    
+    - **Effort:** intermediate
+    
+??? abstract "Sigma Intelligence Windows DRILLAPP Malware"
+    
+    Sigma RULE to detect DrillAPP or other malicious launch of edge to disable security measures and abuse permissions.
+    
+    - **Effort:** intermediate
+    
 ??? abstract "Sophos EDR Application Blocked"
     
     Sophos EDR detected a potentially malicious application and blocked it.
@@ -5377,6 +5449,24 @@ Rules catalog includes **1076 built-in detection rules** ([_last update on 2026-
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
         - 26/03/2024 - major - Rule's pattern field changed
             
+??? abstract "Microsoft Defender XDR (Graph API) Data Loss Prevention Alert"
+    
+    Microsoft Defender XDR has raised an alert for Data Loss Prevention. The alert info and evidence events are grouped with the similarity into the same Sekoia.io alert.
+    
+    - **Effort:** master
+    
+??? abstract "Microsoft Defender XDR (Graph API) Endpoint Alert"
+    
+    Microsoft Defender XDR has raised an alert for Microsoft Defender For Endpoint. The alert info and evidence events are grouped with the similarity into the same Sekoia.io alert.
+    
+    - **Effort:** master
+    
+??? abstract "Microsoft Defender XDR (GraphAPI) Entra ID Protection Alert"
+    
+    Microsoft Defender XDR has raised an alert for Microsoft Entra ID Protection. The alert info and evidence events are grouped with the similarity into the same Sekoia.io alert.
+    
+    - **Effort:** master
+    
 ??? abstract "Microsoft Defender XDR Alert"
     
     Microsoft Defender XDR has raised an alert. The alert info and evidence events are grouped with the similarity into the same Sekoia.io alert.
@@ -5398,6 +5488,7 @@ Rules catalog includes **1076 built-in detection rules** ([_last update on 2026-
     
         - 13/09/2024 - major - Update service name value following Microsoft change
         - 03/06/2026 - major - Added a new condition to match only on alerts to avoid false positives.
+        - 07/09/2026 - major - Added a new condition to match only on alerts to avoid false positives.
             
 ??? abstract "Microsoft Defender XDR Data Loss Prevention Alert"
     
@@ -7853,6 +7944,12 @@ Rules catalog includes **1076 built-in detection rules** ([_last update on 2026-
     
         - 21/06/2024 - major - Update detection pattern for ECS fields/value compliance
             
+??? abstract "Sigma Intelligence Nanocore Persistence Key"
+    
+    Nanocore artefacts detection
+    
+    - **Effort:** intermediate
+    
 ??? abstract "Suspicious desktop.ini Action"
     
     Detects unusual processes accessing desktop.ini, which can be leveraged to alter how Explorer displays a folder's content (i.e. renaming files) without changing them on disk.
@@ -9529,6 +9626,12 @@ Rules catalog includes **1076 built-in detection rules** ([_last update on 2026-
     
         - 21/06/2024 - major - Update detection pattern for ECS fields/value compliance
             
+??? abstract "Sigma Intelligence Nanocore Persistence Key"
+    
+    Nanocore artefacts detection
+    
+    - **Effort:** intermediate
+    
 ??? abstract "Suspicious desktop.ini Action"
     
     Detects unusual processes accessing desktop.ini, which can be leveraged to alter how Explorer displays a folder's content (i.e. renaming files) without changing them on disk.
@@ -9684,11 +9787,12 @@ Rules catalog includes **1076 built-in detection rules** ([_last update on 2026-
     
     Detects potential abuse of Active Directory Replication Service (ADRS) from a non machine account to request credentials. It requires a configuration step where the legit service account should be added to the exclusion list.
     
-    - **Effort:** advanced
+    - **Effort:** master
     
     - **Changelog:**
     
         - 26/03/2024 - major - Rule's pattern field changed
+        - 03/09/2026 - major - Effort level and severity changed.
             
 ??? abstract "Cmdkey Cached Credentials Recon"
     
@@ -9744,12 +9848,13 @@ Rules catalog includes **1076 built-in detection rules** ([_last update on 2026-
     
     Detects DCSync attack, it is highly likely that the post-exploitation tool Mimikatz was executed.
     
-    - **Effort:** intermediate
+    - **Effort:** master
     
     - **Changelog:**
     
         - 26/03/2024 - major - Rule's pattern field changed
         - 05/09/2024 - minor - Changing name of elements.
+        - 03/09/2026 - major - Effort level and severity changed.
             
 ??? abstract "DPAPI Domain Backup Key Extraction"
     
@@ -11585,6 +11690,24 @@ Rules catalog includes **1076 built-in detection rules** ([_last update on 2026-
     
         - 26/03/2024 - major - Rule's pattern field changed
             
+??? abstract "Akamai Guardicore Medium On-Prem Severity Security Incident"
+    
+    Akamai Guardicore has detected a medium severity security incident, indicating suspicious activity that warrants analyst review. This may include unusual lateral movement patterns, policy violations, or communication with suspicious but unconfirmed malicious endpoints.
+    
+    - **Effort:** master
+    
+??? abstract "Akamai Guardicore On-Prem High Severity Security Incident"
+    
+    Akamai Guardicore has detected a high severity security incident, indicating a likely confirmed threat such as communication with a known malicious IP, active malware beaconing, or exploitation of a vulnerable asset. Immediate triage is required.
+    
+    - **Effort:** master
+    
+??? abstract "Akamai Guardicore On-Prem Low Severity Security Incident"
+    
+    Akamai Guardicore has detected a low severity security incident, such as a connection attempt to an IP address with a bad reputation identified by the Guardicore Reputation Service.
+    
+    - **Effort:** master
+    
 ??? abstract "Cobalt Strike Default Service Creation Usage"
     
     Detects Cobalt Strike usage from an existing beacon when attacker tries to elevate or move laterally through a service creation.
@@ -12147,6 +12270,24 @@ Rules catalog includes **1076 built-in detection rules** ([_last update on 2026-
             
 **Application Layer Protocol**
 
+??? abstract "Akamai Guardicore Medium On-Prem Severity Security Incident"
+    
+    Akamai Guardicore has detected a medium severity security incident, indicating suspicious activity that warrants analyst review. This may include unusual lateral movement patterns, policy violations, or communication with suspicious but unconfirmed malicious endpoints.
+    
+    - **Effort:** master
+    
+??? abstract "Akamai Guardicore On-Prem High Severity Security Incident"
+    
+    Akamai Guardicore has detected a high severity security incident, indicating a likely confirmed threat such as communication with a known malicious IP, active malware beaconing, or exploitation of a vulnerable asset. Immediate triage is required.
+    
+    - **Effort:** master
+    
+??? abstract "Akamai Guardicore On-Prem Low Severity Security Incident"
+    
+    Akamai Guardicore has detected a low severity security incident, such as a connection attempt to an IP address with a bad reputation identified by the Guardicore Reputation Service.
+    
+    - **Effort:** master
+    
 ??? abstract "Bazar Loader DGA (Domain Generation Algorithm)"
     
     Detects Bazar Loader domains based on the Bazar Loader DGA
@@ -12396,6 +12537,12 @@ Rules catalog includes **1076 built-in detection rules** ([_last update on 2026-
 ??? abstract "SEKOIA.IO Intelligence Feed"
     
     Detect threats based on indicators of compromise (IOCs) collected by SEKOIA's Threat and Detection Research team.
+    
+    - **Effort:** elementary
+    
+??? abstract "Sigma Intelligence Arcane Stealer HTTP Communication"
+    
+    Detects potential Arcane Stealer communications through the User-Agent.
     
     - **Effort:** elementary
     

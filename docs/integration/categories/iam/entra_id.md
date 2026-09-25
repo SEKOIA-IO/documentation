@@ -29,7 +29,7 @@ type: intake
 
 ## Configure
 
-To forward **Microsoft Entra ID (Azure AD)** events from Azure to Sekoia.io you need to send your event to an Azure **Event Hub** where Sekoia.io will collect the events.
+To forward **Microsoft Entra ID (Azure AD)** events from Azure to Sekoia.io you need to first send your events to an Azure **Event Hub** , from which Sekoia.io will collect the events.
 <div style="text-align: center;">
     <img width="100%" alt="image" src="/assets/integration/cloud_and_saas/event_hub/consume_azure_logs.png">
 </div>
@@ -40,12 +40,12 @@ You must have Contributor write on Azure to perform the following installation.
 
 {!_shared_content/operations_center/integrations/event_hub.md!}
 
-### Send logs from Microsoft Entra ID (Azure AD)  to Azure Event Hub
+### Send logs from Microsoft Entra ID (Azure AD) to Azure Event Hub
 
 When you have an **Event Hub** follow this guide to send your **Microsoft Entra ID (Azure AD) ** events from Azure to the **Event Hub**:
 
-You need to activate and configure the **Microsoft Entra ID (Azure AD) ** diagnostic settings (e.g. `company-ad`),
-to receive logs from the **Microsoft Entra ID (Azure AD) ** into your **Event Hub**.
+You need to activate and configure the **Microsoft Entra ID (Azure AD)** diagnostic settings (e.g. `company-ad`),
+to receive logs from the **Microsoft Entra ID (Azure AD)** into your **Event Hub**.
 
 Navigate to [Home > Microsoft Entra ID (Azure AD)  (e.g. `company-ad`) > Monitoring > Diagnostic settings](https://portal.azure.com/#view/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/~/DiagnosticSettings):
 

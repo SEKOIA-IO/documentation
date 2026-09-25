@@ -13,9 +13,13 @@ To create a new case:
 5. Select an **Assignee**.
 6. Set a **Priority**.
 7. Add **Tags** if needed.
-8. Click **Create**.
+8. To pre-structure the case, select a **Case template** from the dropdown.
+9. Click **Create**.
 
 The new case opens immediately so you can start adding alerts and tasks.
+
+!!! tip "Apply a template after creation"
+    Selecting a template at creation is optional. You can apply or change a template at any point during the investigation from the **Case template** button in the top-right corner of the case.
 
 ## Add alerts to a case
 
@@ -47,3 +51,6 @@ You can attach alerts to a case immediately after creation or at any point durin
 * [Case details](/xdr/features/investigate/case_details.md): Reference for every tab and field available on the case details page.
 * [Alerts](/xdr/features/investigate/alerts.md): How alerts are created and how to manage them before grouping them into cases.
 * [AI Cases](/xdr/features/investigate/ai_cases.md): How Sekoia.io automatically correlates alerts into cases using AI.
+* [Case templates](/xdr/features/investigate/case_templates.md): Overview of what case templates are and how they work.
+* [Create a case template](/xdr/features/investigate/create_a_case_template.md): How to build and configure a reusable template in Settings.
+* [Apply a case template to a case](/xdr/features/investigate/apply_a_case_template.md): How to apply a template at case creation or on an existing case.

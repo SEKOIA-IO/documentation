@@ -155,7 +155,7 @@ By default, the memory queue is distributed across all intakes (`MEMORY_MESSAGES
 |----------|--------|-------------|
 | `MEMORY_MESSAGES` | Recommended | Maximum number of messages stored in memory across all queues. Example: `2,000,000 × 1.2 KB = 2.4 GB` of RAM. |
 | `DISK_SPACE` | Recommended | Total disk space allocated to on-disk queues across all intakes. |
-| `REGION` | Required | Target region. Accepted values: `FRA1`, `FRA2`, `MCO1`, `UAE1`, `USA1`. |
+| `REGION` | Required | Target region. Accepted values: `FRA1`, `FRA2`, `MCO1`, `UAE1`, `USA1`, `SGP1` . |
 | `RELP_OUTPUT` | Optional | Set to `True` to send logs via RELP instead of the default TCP syslog mode. |
 
 #### Ports

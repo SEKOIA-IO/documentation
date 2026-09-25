@@ -111,6 +111,12 @@ The following Sekoia.io built-in rules match the intake **Infoblox DDI**. This d
     
     - **Effort:** master
 
+??? abstract "Sigma Intelligence Pangolin8RAT Working Directory File Artifacts"
+    
+    Detects access to filesystem artifacts associated with Pangolin8RAT.
+    
+    - **Effort:** intermediate
+
 ??? abstract "Sliver DNS Beaconing"
     
     Detects suspicious DNS queries known from Sliver beaconing 

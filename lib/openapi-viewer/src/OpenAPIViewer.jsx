@@ -1,7 +1,7 @@
 import { Teleport, createApp, reactive } from "vue";
 import { fetch_and_merge_openapi_schemas } from "./openapi/openapi"
 import { Examples } from "./Examples";
-import { tagEncode, Chevron, debounce, scrollToAnchor, capitalize } from "./utils"
+import { tagEncode, Chevron, debounce, scrollToAnchor, isScrollSpySuppressed, capitalize } from "./utils"
 import { Markdown } from "./Markdown"
 import { Parameters } from "./Parameters"
 import { Response } from "./Response"
@@ -197,6 +197,7 @@ export const OpenAPIViewer = {
 
         /** Called when the window is scrolled to sync the selected menu item */
         function onScroll() {
+            if (isScrollSpySuppressed()) return
             const el = getVisibleEndpoint()
             const [_, level0, level1, level2] = el.id.split("/")
             if (!level0) return;
@@ -466,7 +467,7 @@ const Endpoint = (id, endpoint, tag) => {
     const errors = Object.entries(endpoint.responses || {}).filter(([code]) => code >= 400)
     return <><div class='endpoint' id={id}>
         <div class="content">
-            <a href={`#${id}`} onClick={() => console.log(toRaw(endpoint))}><h4 id={id}>
+            <a href={`#${id}`} onClick={() => console.log(toRaw(endpoint))}><h4>
                 <span class='method' class={endpoint.method}>{endpoint.method}</span>
                 {endpoint.summary}
                 <span class='alink' />

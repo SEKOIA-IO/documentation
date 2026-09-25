@@ -1,5 +1,8 @@
 copyright: Copyright &copy; 2026 - Sekoia
 edit_uri: edit/main/docs/
+exclude_docs: 'xdr/features/modules/elevate_investigate_case.md
+
+  '
 extra:
   social:
   - icon: fontawesome/brands/x-twitter
@@ -101,6 +104,7 @@ nav:
     - Reference:
       - Sekoia regions: getting_started/regions.md
 - Sekoia Solutions:
+  - The Sekoia AI SOC Platform: xdr/sekoia_solutions.md
   - Threat Context (Intelligence):
     - Intelligence overview: cti/index.md
     - Data Models: cti/features/data_model.md
@@ -139,6 +143,7 @@ nav:
       - PaloAlto Cortex XSOAR: cti/features/integrations/paloalto_xsoar.md
       - PaloAlto Cortex XSIAM: cti/features/integrations/paloalto_xsiam.md
       - ThreatQuotient: cti/features/integrations/threatquotient.md
+      - Torq: cti/features/integrations/torq.md
   - Detect, Hunt and Respond (Defend):
     - Defend overview: xdr/index.md
     - Quick start guide: xdr/xdr_quick_start.md
@@ -184,6 +189,10 @@ nav:
         - Create and manage cases:
           - Create a case: xdr/features/investigate/create_a_case.md
           - Manage cases: xdr/features/investigate/manage_cases.md
+        - Case templates:
+          - Case templates overview: xdr/features/investigate/case_templates.md
+          - Create a case template: xdr/features/investigate/create_a_case_template.md
+          - Apply a case template: xdr/features/investigate/apply_a_case_template.md
         - Investigate cases:
           - Investigate case details: xdr/features/investigate/case_details.md
           - Graph investigation: xdr/features/investigate/graph_investigation.md
@@ -242,6 +251,7 @@ nav:
       - Playbooks JSON Schema: xdr/features/automate/playbooks_format_json_schema.md
     - External integrations:
       - FortiSOAR: xdr/features/integrations/fortisoar.md
+      - Harven: xdr/features/integrations/harven.md
       - Palo Alto Cortex XSOAR: xdr/features/integrations/interconnect_sekoia_with_xsoar.md
       - Qevlar: xdr/features/integrations/qevlar.md
       - Swimlane Turbine: xdr/features/integrations/swimlane_turbine.md
@@ -253,7 +263,6 @@ nav:
       - Elevate analysis states: xdr/features/modules/elevate_analysis_states.md
     - Investigate with Elevate:
       - Investigate an alert: xdr/features/modules/elevate_investigate_alert.md
-      - Investigate a case: xdr/features/modules/elevate_investigate_case.md
       - Audit with Traces: xdr/features/modules/elevate_traces.md
       - Override a verdict: xdr/features/modules/elevate_validate_verdict.md
       - Trigger an analysis: xdr/features/modules/elevate_manual_analysis.md
@@ -281,6 +290,54 @@ nav:
       - Check Endpoint Hygiene: xdr/features/modules/reveal_hygiene.md
       - Leverage Vulnerability Enrichment: xdr/features/modules/reveal_vulnerabilities.md
       - Rely on Security Controls: xdr/features/modules/reveal_security_controls.md
+- Getting started:
+  - Overview: getting_started/index.md
+  - Where to start: getting_started/concepts.md
+  - Trainings:
+    - Training offer overview: getting_started/training_overview.md
+    - Register for a training course: getting_started/register_training.md
+  - Workspace setup:
+    - Join workspace: getting_started/join_community.md
+    - Create and manage communities: getting_started/create_community.md
+  - Account setup:
+    - Create account: getting_started/create_account.md
+    - Setup account: getting_started/account_settings.md
+  - Security and access:
+    - Account security:
+      - Two-Factor Authentication: getting_started/account_security.md
+      - Security tokens: getting_started/securitytokens.md
+      - Password Management Policy: getting_started/password_management_policy.md
+    - Workspace security:
+      - Session duration: getting_started/session_duration.md
+      - Two-Factor Authentication: getting_started/twofactor_workspace.md
+      - SSO with OpenID Connect: getting_started/sso/openid_connect.md
+      - SSO with Microsoft Entra ID (Azure AD): getting_started/sso/azure.md
+      - SSO with Okta: getting_started/sso/okta.md
+  - Users and roles:
+    - Invite users: getting_started/invite_users.md
+    - Manage users: getting_started/manage_users.md
+    - Deactivate inactive users: getting_started/inactive_users.md
+    - Roles and permissions:
+      - Built-in roles: getting_started/roles.md
+      - Custom roles: getting_started/custom_roles.md
+      - Intake Restricted roles: getting_started/intake_restricted_roles.md
+  - Notifications:
+    - Notification system: getting_started/notification_concept.md
+    - Create notifications: getting_started/notifications-Listing_Creation.md
+    - Manage notifications: getting_started/manage_notifications.md
+    - Notification examples: getting_started/notifications-Examples.md
+  - API Keys: getting_started/manage_api_keys.md
+  - Subscriptions: 
+    - Subscriptions overview: getting_started/subscriptions.md
+    - Create a subscription: getting_started/create_a_subscription.md
+    - Assign a subscription: getting_started/assign_a_subscription.md
+    - Subscriptions notifications: xdr/FAQ/subscriptions/subscriptions_notifications.md
+  - Usage: getting_started/usage.md
+  - Usage: getting_started/usage.md
+  - Sekoia regions: getting_started/regions.md
+  - Roy AI Assistant: getting_started/ai_assistant.md
+  - Best practices: getting_started/best_practices.md
+  - Troubleshooting tips: getting_started/get_troubleshooting_tips.md
 - Usecases:
   - Export large volumes of events: xdr/usecases/massive_export.md
   - Implement a blocklist in Sekoia.io: xdr/usecases/playbook/implement_blocklist.md
@@ -309,9 +366,6 @@ nav:
   - Assets: xdr/FAQ/Assets_qa.md
   - Ingestion:
     - Delay with event ingestion or alert creation: xdr/FAQ/ingestion/ingestion_delay.md
-  - Subscriptions:
-    - Allocate trial subscription: xdr/FAQ/subscriptions/allocate_trial_subscription.md
-    - Subscriptions notifications: xdr/FAQ/subscriptions/subscriptions_notifications.md
   - Sekoia.io Endpoint agent: xdr/FAQ/SEKOIA_Endpoint_Agent.md
   - Datetime representation: xdr/FAQ/datetime.md
   - Reveal troubleshooting: xdr/features/modules/reveal_troubleshoot.md
@@ -334,9 +388,12 @@ nav:
     - Syslog:
       - Overview: integration/ingestion_methods/syslog/overview.md
       - Sekoia.io Forwarder: integration/ingestion_methods/syslog/sekoiaio_forwarder.md
+      - Reduce volume in the Sekoia Forwarder: integration/ingestion_methods/syslog/filter_logs_with_sekoia_forwarder.md
       - Third-party syslog services: integration/ingestion_methods/syslog/syslog_service.md
       - Rsyslog: integration/ingestion_methods/syslog/rsyslog.md
+      - Filter logs with Rsyslog: integration/ingestion_methods/syslog/filter_logs_with_rsyslog.md
       - Syslog NG: integration/ingestion_methods/syslog/syslog-ng.md
+      - Filter logs with Syslog-ng: integration/ingestion_methods/syslog/filter_logs_with_syslog_ng.md
       - Secured forwarding: integration/ingestion_methods/syslog/secured_forwarding.md
     - NetFlow:
       - Sekoia.io NetFlow Concentrator: integration/ingestion_methods/netflow/sekoiaio_netflow_concentrator.md
@@ -408,9 +465,19 @@ nav:
       - Palo Alto Cortex XDR (EDR): integration/categories/endpoint/paloalto_cortex_edr.md
       - Panda Security Aether: integration/categories/endpoint/panda_security_aether.md
       - Pradeo MTD: integration/categories/endpoint/pradeo_mtd.md
+      - Proxmox VE: integration/categories/endpoint/proxmox_ve.md
       - SentinelOne: integration/categories/endpoint/sentinelone.md
       - SentinelOne Cloud Funnel 2.0: integration/categories/endpoint/sentinelone_cloudfunnel2.0.md
-      - Sekoia.io Endpoint Agent: integration/categories/endpoint/sekoiaio.md
+      - Sekoia Endpoint Agent:
+        - Overview: integration/categories/endpoint/sekoiaio.md
+        - Install: integration/categories/endpoint/install_sekoia_endpoint_agent.md
+        - Deploy at scale: integration/categories/endpoint/deploy_sekoia_endpoint_agent_enterprise.md
+        - Configure: integration/categories/endpoint/configure_sekoia_endpoint_agent.md
+        - Update and uninstall: integration/categories/endpoint/update_uninstall_sekoia_endpoint_agent.md
+        - Troubleshoot: integration/categories/endpoint/troubleshoot_sekoia_endpoint_agent.md
+        - Events and fields reference: integration/categories/endpoint/sekoia_endpoint_agent_events_reference.md
+        - Built-in detection rules: integration/categories/endpoint/sekoia_endpoint_agent_rules_reference.md
+        - Reduce event volume with the Endpoint Agent: integration/categories/endpoint/reduce_event_volume_endpoint_agent.md
       - Sophos EDR: integration/categories/endpoint/sophos_edr.md
       - Stormshield SES: integration/categories/endpoint/stormshield_ses.md
       - Symantec Endpoint Protection: integration/categories/endpoint/symantec_epp.md
@@ -459,6 +526,7 @@ nav:
       - Wallix: integration/categories/iam/wallix.md
     - Network:
       - Amazon VPC Flow Logs: integration/categories/network/aws_flow_logs.md
+      - Amazon VPC Flow Logs (Parquet): integration/categories/network/aws_flow_logs_parquet.md
       - Azure Application Gateway: integration/categories/network/azure_application_gateway.md
       - ArubaOS Switch: integration/categories/network/arubaos.md
       - BIND: integration/categories/network/bind.md
@@ -495,6 +563,7 @@ nav:
       - Jizo AI / Sesame Jizo NDR: integration/categories/network/sesameit_jizo.md
       - Umbrella DNS Logs: integration/categories/network/umbrella_dns.md
       - Unbound: integration/categories/network/unbound.md
+      - Vigidomain: integration/categories/network/vigidomain.md
       - Zimperium MTD - Threats: integration/categories/network/zimperium_mtd.md
     - Network Security:
       - Akamai Guardicore On-Premises: integration/categories/network_security/akamai_guardicore_onprem.md
@@ -564,7 +633,8 @@ nav:
       - Seckiot Citadelle: integration/categories/network_security/seckiot_citadelle.md
       - Security Scorecard Vunerability Assessment Scanner: integration/categories/network_security/securityscorecard_vas.md
       - SonicWall Firewall: integration/categories/network_security/sonicwall_fw.md
-      - SonicWall SMA: integration/categories/network_security/sonicwall_sma.md
+      - SonicWall SMA 100 Series (deprecated): integration/categories/network_security/sonicwall_sma_100_series.md
+      - SonicWall SMA 1000 Series: integration/categories/network_security/sonicwall_sma_1000_series.md
       - Sophos Firewall: integration/categories/network_security/sophos_fw.md
       - Sophos Threat Analysis Center: integration/categories/network_security/sophos_threat_analysis_center.md
       - Stormshield Network Security: integration/categories/network_security/stormshield_network_security.md
@@ -580,6 +650,7 @@ nav:
       - Ubika WAAP Gateway: integration/categories/network_security/ubika_waap.md
       - Umbrella IP Logs: integration/categories/network_security/umbrella_ip.md
       - Umbrella Proxy Logs: integration/categories/network_security/umbrella_proxy.md
+      - Upwind: integration/categories/network_security/upwind.md
       - Varonis Data Security: integration/categories/network_security/varonis_data_security.md
       - Vectra Cognito Detect: integration/categories/network_security/vectra.md
       - Vectra Respond UX - Entity Scoring: integration/categories/network_security/vectra_respond_ux_entity_scoring.md
@@ -601,7 +672,7 @@ nav:
       - Mattermost: integration/action_library/mattermost.md
       - New Relic: integration/action_library/new-relic.md
       - PagerDuty: integration/action_library/pagerduty.md
-      - Ilert: integration/action_library/ilert.md
+      - ilert: integration/action_library/ilert.md
     - Cloud Providers:
       - AWS: integration/action_library/aws.md
       - Azure Monitor: integration/action_library/azure-monitor.md
@@ -667,6 +738,8 @@ nav:
   - List of Asset Connectors:
     - Overview: integration/assets_categories/overview.md
     - Vulnerability:
+      - ESET EDR: integration/assets_categories/vulnerability/eset_vulnerability.md
+      - Holm Security: integration/assets_categories/vulnerability/holm_security.md
       - Tenable.io: integration/assets_categories/vulnerability/tenable_io.md
     - Device:
       - AWS EC2: integration/assets_categories/device/aws_ec2_device.md
@@ -678,6 +751,8 @@ nav:
       - Okta: integration/assets_categories/device/okta_device.md
       - SentinelOne EDR: integration/assets_categories/device/sentinelone_edr.md
       - Sophos EDR: integration/assets_categories/device/sophos_edr.md
+    - Software:
+      - HarfangLab EDR: integration/assets_categories/software/harfanglab_software.md
     - User:
       - AWS IAM: integration/assets_categories/user/aws_iam_user.md
       - Microsoft Active Directory: integration/assets_categories/user/microsoft_ad_user.md
@@ -711,7 +786,15 @@ nav:
     - Overview: integration/faq/overview.md
     - General Questions:
       - Bug VS Improvement Requests: integration/faq/general_questions/bug_and_improvement_requests.md
-- API Documentation: developer/api.md
+- API Documentation:
+  - API Reference: developer/api.md
+  - Quickstart: developer/quickstart.md
+  - Filtering: developer/filtering.md
+  - Tutorials:
+    - Overview: developer/tutorials/index.md
+    - Search for rules: developer/tutorials/search_rules.md
+    - Create a SIGMA rule: developer/tutorials/create_sigma_rule.md
+    - Search events: developer/tutorials/search_events.md
 plugins:
 - search: null
 - redirects:
@@ -740,9 +823,11 @@ plugins:
       getting_started/apikey_creation.md: getting_started/manage_api_keys.md
       getting_started/first_steps.md: getting_started/index.md
       getting_started/inviting_users_to_join_your_community.md: getting_started/invite_users.md
+      xdr/FAQ/subscriptions/allocate_trial_subscription.md: getting_started/assign_a_subscription.md
       integration/categories/network/beyondtrust_pra_sessions.md: integration/categories/iam/beyondtrust_pra_sessions.md
       integration/categories/network_security/ubika_cloud_protector_next_gen.md: integration/categories/network_security/ubika_cloud_protector_next_gen_alerts.md
       intelligence_center.md: cti/index.md
+      cti/develop/rest_api/edl-gateway.md: cti/features/integrations/api.md
       intelligence_center/dashboard.md: cti/features/monitor/dashboard.md
       intelligence_center/data_export.md: cti/features/consume/export.md
       intelligence_center/data_model.md: cti/features/data_model.md
@@ -945,7 +1030,8 @@ plugins:
       xdr/features/collect/integrations/network/sesameit_jizo.md: integration/categories/network/sesameit_jizo.md
       xdr/features/collect/integrations/network/skyhigh_secure_web_gateway.md: integration/categories/network_security/skyhigh_secure_web_gateway_on_prem.md
       xdr/features/collect/integrations/network/sonicwall_fw.md: integration/categories/network_security/sonicwall_fw.md
-      xdr/features/collect/integrations/network/sonicwall_sma.md: integration/categories/network_security/sonicwall_sma.md
+      xdr/features/collect/integrations/network/sonicwall_sma_1000_series.md: integration/categories/network_security/sonicwall_sma_1000_series.md
+      xdr/features/collect/integrations/network/sonicwall_sma_100_series.md: integration/categories/network_security/sonicwall_sma_100_series.md
       xdr/features/collect/integrations/network/sophos_fw.md: integration/categories/network_security/sophos_fw.md
       xdr/features/collect/integrations/network/squid.md: integration/categories/network/squid.md
       xdr/features/collect/integrations/network/stormshield_network_security.md: integration/categories/network_security/stormshield_network_security.md
@@ -956,6 +1042,8 @@ plugins:
       xdr/features/collect/integrations/network/wallix.md: integration/categories/iam/wallix.md
       xdr/features/collect/integrations/network/watchguard_firebox.md: integration/categories/network_security/watchguard_firebox.md
       xdr/features/investigate/case_custom_fields.md: xdr/features/investigate/custom_fields.md
+      xdr/features/investigate/configure_custom_statuses.md: xdr/features/investigate/custom_statuses.md
+      xdr/features/investigate/configure_custom_verdicts.md: xdr/features/investigate/custom_verdicts.md
       xdr/features/investigate/dork_language.md: xdr/features/investigate/events_query_language.md
       xdr/features/investigate/sekoia_operating_language.md: xdr/features/investigate/sol_overview.md
       xdr/features/investigate/use_custom_fields_in_cases.md: xdr/features/investigate/use_custom_fields.md

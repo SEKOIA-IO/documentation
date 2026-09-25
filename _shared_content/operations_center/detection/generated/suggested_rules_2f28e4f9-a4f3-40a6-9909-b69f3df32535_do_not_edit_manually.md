@@ -213,6 +213,12 @@ The following Sekoia.io built-in rules match the intake **Gatewatcher AionIQ V10
     
     - **Effort:** master
 
+??? abstract "Sigma Intelligence Arcane Stealer HTTP Communication"
+    
+    Detects potential Arcane Stealer communications through the User-Agent.
+    
+    - **Effort:** elementary
+
 ??? abstract "Suspicious Email Attachment Received"
     
     Detects email containing a suspicious file as an attachment, based on its extension.

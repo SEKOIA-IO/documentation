@@ -598,3 +598,11 @@ select {
     .menu .doc-filter b { color: #212223 !important; }
     .menu .select-region { color: #212223 !important; }
 }
+#openapi-viewer .quickstart a {
+  color: #5d4ff2 !important;
+  text-decoration: underline;
+
+  &:hover {
+    color: #3b00bd !important;
+  }
+}

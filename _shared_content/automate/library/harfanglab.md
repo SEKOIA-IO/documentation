@@ -270,8 +270,9 @@ Update Threat status
 | `threat_ids` | `array` | Threats IDs |
 | `new_status` | `string` | New status |
 | `update_by_query` | `boolean` | Update by query |
+| `tag_security_events` | `boolean` | Tag security events |
 
 
 ## Extra
 
-Module **`HarfangLab` v1.29.5**
+Module **`HarfangLab` v1.31.10**
