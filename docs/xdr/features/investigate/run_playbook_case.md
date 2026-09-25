@@ -6,7 +6,7 @@ You can trigger a playbook directly from a case, without leaving the investigati
 
 The playbook you want to run must use the **Manual Trigger for Case** trigger and be active. Playbooks built on any other trigger do not appear in the case panel. See [Make a playbook available in cases](#make-a-playbook-available-in-cases) below.
 
-You need the **Analyst** or **Admin** built-in role. The **Guest** role is read-only and cannot trigger a playbook. See [Built-in roles](/getting_started/roles.md) for what each role covers.
+You need the **Analyst** or **Admin** built-in role. The **Guest** role is read-only and cannot trigger a playbook. See [Built-in roles](/getting_started/roles_and_permissions.md) for what each role covers.
 
 ## Make a playbook available in cases
 
@@ -71,4 +71,4 @@ The run is identified by its triggering case, `Sekoia Case: <case short ID>`, so
 * [Build playbooks](/xdr/features/automate/build-playbooks.md): How to create a playbook from a template or from scratch.
 * [Triggers](/xdr/features/automate/triggers.md): The trigger types available to launch a playbook.
 * [Navigate playbooks' interface](/xdr/features/automate/navigate-playbooks.md): How to read the playbook listing, workflow, runs and trigger logs.
-* [Built-in roles](/getting_started/roles.md): The default Guest, Analyst and Admin roles and what each one allows.
+* [Built-in roles](/getting_started/roles_and_permissions.md): The default Guest, Analyst and Admin roles and what each one allows.

@@ -6,10 +6,10 @@ Sekoia is providing an application for Splunk to detect threats in your logs bas
 
 - An operational Splunk instance with administrator privileges (**Enterprise** for OnPrem or **Cloud** for the SaaS version)
 - An active Sekoia.io license with access to the CTI
-- An access to Sekoia.io User Center with the role that contains the permission to [create an API key](/getting_started/manage_api_keys.md) (e.g. Built-in [Analyst Role](/getting_started/roles.md#functionality-of-built-in-roles)) or create a custom role with [ic_viewer permissions](/getting_started/roles.md#legacy-roles) <a name="api_key"></a>
+- An access to Sekoia.io User Center with the role that contains the permission to [create an API key](/getting_started/manage_api_keys.md) (e.g. Built-in [Analyst Role](/getting_started/roles_and_permissions.md#built-in-roles)) or create a custom role with [custom role with the equivalent CTI permissions](/getting_started/roles_and_permissions.md#custom-roles) <a name="api_key"></a>
 
 !!! note
-    When creating an API key, only permissions are selectable, not [built-in roles](/getting_started/roles.md#functionality-of-built-in-roles)
+    When creating an API key, only permissions are selectable, not [built-in roles](/getting_started/roles_and_permissions.md#built-in-roles)
 
     Here are the selectable permissions corresponding to the `Analyst Role`:
     - `CTI > View feeds`

@@ -41,8 +41,75 @@ markdown_extensions:
 - pymdownx.snippets
 - plugins.custom_lightgallery
 nav:
+- Getting started:
+  - Welcome to Sekoia: getting_started/index.md
+  - Understand Sekoia:
+    - What is Sekoia: getting_started/what_is_sekoia.md
+    - Workspace and communities: getting_started/workspace_and_communities.md
+    - Navigate the platform: getting_started/navigate_the_platform.md
+    - Glossary: getting_started/glossary.md
+  - Set up your account:
+    - Log in for the first time: getting_started/log_in_for_the_first_time.md
+    - Secure your account: getting_started/secure_your_account.md
+    - Customize your interface: getting_started/customize_your_interface.md
+  - Understand your subscription and usage:
+    - Understand your subscription: getting_started/understand_your_subscription.md
+    - Monitor your usage: getting_started/monitor_your_usage.md
+  - Set up your workspace (Admin):
+    - Workspace setup overview: getting_started/workspace_setup_overview.md
+    - Users and roles:
+      - Invite users: getting_started/invite_users.md
+      - Manage users: getting_started/manage_users.md
+      - Roles and permissions: getting_started/roles_and_permissions.md
+    - Manage API keys: getting_started/manage_api_keys.md
+    - Notifications:
+      - Notification system overview: getting_started/notification_system_overview.md
+      - Create a notification: getting_started/create_a_notification.md
+      - Manage notifications: getting_started/manage_notifications.md
+      - Notification examples: getting_started/notification_examples.md
+  - Quick starts:
+    - Defend:
+      - "Quick start: Defend": getting_started/quick_start_defend.md
+      - "Step 1: Connect a data source": getting_started/defend_step1_connect_data_source.md
+      - "Step 2: Verify event reception": getting_started/defend_step2_verify_event_reception.md
+      - "Step 3: Activate detection rules": getting_started/defend_step3_activate_detection_rules.md
+      - "Step 4: Triage your first alert": getting_started/defend_step4_triage_first_alert.md
+      - "Step 5: Automate with playbooks": getting_started/defend_step5_automate_with_playbooks.md
+    - Intelligence:
+      - "Quick start: Intelligence": getting_started/quick_start_intelligence.md
+      - "Step 1: Explore the threat intelligence database": getting_started/intelligence_step1_explore_threat_database.md
+      - "Step 2: Read and act on threat reports": getting_started/intelligence_step2_read_threat_reports.md
+    - Reveal:
+      - "Quick start: Reveal": getting_started/quick_start_reveal.md
+    - Elevate:
+      - "Quick start: Elevate": getting_started/quick_start_elevate.md
+  - Training:
+    - Training offer overview: getting_started/training_overview.md
+    - Register for a training course: getting_started/register_training.md
+  - Get help:
+    - Roy AI assistant: getting_started/ai_assistant.md
+    - Support and resources: getting_started/support_and_resources.md
+    - Troubleshoot common issues: getting_started/troubleshooting_common_issues.md
+  - Advanced configuration:
+    - Security and access:
+      - Security tokens: getting_started/securitytokens.md
+      - Password management policy: getting_started/password_management_policy.md
+      - Session duration: getting_started/session_duration.md
+      - Workspace two-factor authentication: getting_started/twofactor_workspace.md
+      - SSO with OpenID Connect: getting_started/sso/openid_connect.md
+      - SSO with Microsoft Entra ID: getting_started/sso/azure.md
+      - SSO with Okta: getting_started/sso/okta.md
+    - User lifecycle:
+      - Deactivate inactive users: getting_started/inactive_users.md
+    - Reference:
+      - Sekoia regions: getting_started/regions.md
 - Sekoia Solutions:
   - The Sekoia AI SOC Platform: xdr/sekoia_solutions.md
+    - Subscriptions:
+      - Subscriptions overview: getting_started/subscriptions.md
+      - Create a subscription: getting_started/create_a_subscription.md
+      - Assign a subscription: getting_started/assign_a_subscription.md
+      - Subscription notifications: xdr/FAQ/subscriptions/subscriptions_notifications.md
   - Threat Context (Intelligence):
     - Intelligence overview: cti/index.md
     - Data Models: cti/features/data_model.md
@@ -737,9 +804,27 @@ plugins:
 - search: null
 - redirects:
     redirect_maps:
-      index.md: xdr/sekoia_solutions.md
-      xdr/features/investigate/sekoia_operating_language.md: xdr/features/investigate/sol_overview.md
-      getting_started/2fa.md: getting_started/account_security.md
+      getting_started/account_security.md: getting_started/secure_your_account.md
+      getting_started/account_settings.md: getting_started/customize_your_interface.md
+      getting_started/authentication.md: getting_started/log_in_for_the_first_time.md
+      getting_started/concepts.md: getting_started/what_is_sekoia.md
+      getting_started/create_account.md: getting_started/log_in_for_the_first_time.md
+      getting_started/create_community.md: getting_started/workspace_and_communities.md
+      getting_started/custom_roles.md: getting_started/roles_and_permissions.md
+      getting_started/get_troubleshooting_tips.md: getting_started/troubleshooting_common_issues.md
+      getting_started/intake_restricted_roles.md: getting_started/roles_and_permissions.md
+      getting_started/join_community.md: getting_started/workspace_and_communities.md
+      getting_started/navigation.md: getting_started/navigate_the_platform.md
+      getting_started/notification_concept.md: getting_started/notification_system_overview.md
+      getting_started/notifications-Examples.md: getting_started/notification_examples.md
+      getting_started/notifications-Listing_Creation.md: getting_started/create_a_notification.md
+      getting_started/restricted_roles.md: getting_started/roles_and_permissions.md
+      getting_started/subscriptions.md: getting_started/understand_your_subscription.md
+      getting_started/usage.md: getting_started/monitor_your_usage.md
+      getting_started/roles.md: getting_started/roles_and_permissions.md
+      xdr/features/investigate/configure_custom_statuses.md: xdr/features/investigate/custom_statuses.md
+      xdr/features/investigate/configure_custom_verdicts.md: xdr/features/investigate/custom_verdicts.md
+      getting_started/2fa.md: getting_started/secure_your_account.md
       getting_started/apikey_creation.md: getting_started/manage_api_keys.md
       getting_started/first_steps.md: getting_started/index.md
       getting_started/inviting_users_to_join_your_community.md: getting_started/invite_users.md
@@ -787,7 +872,7 @@ plugins:
       searching/search_events.md: xdr/features/investigate/events.md
       user_center.md: getting_started/index.md
       user_center/apikeys.md: getting_started/manage_api_keys.md
-      user_center/multi_factor_authentication.md: getting_started/account_security.md
+      user_center/multi_factor_authentication.md: getting_started/secure_your_account.md
       xdr/features/collect/ingestion_methods/https/format.md: integration/ingestion_methods/https/format.md
       xdr/features/collect/ingestion_methods/index.md: integration/ingestion_methods/index.md
       xdr/features/collect/ingestion_methods/sekoiaio_forwarder.md: integration/ingestion_methods/syslog/sekoiaio_forwarder.md
