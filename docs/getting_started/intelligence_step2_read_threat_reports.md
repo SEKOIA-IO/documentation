@@ -49,7 +49,9 @@ A FLINT report typically contains:
 | **Indicators of compromise** | File hashes, IP addresses, domains, and other artifacts for detection |
 | **Recommended actions** | Steps to detect, contain, or remediate the threat |
 
-> 📸 [SCREENSHOT SUGGESTION: A FLINT report detail page showing the executive summary section, MITRE ATT&CK mapping, and a list of indicators of compromise. | ALT TEXT: FLINT report page with executive summary, MITRE mapping, and IOC list.]
+
+![FLINT report page with executive summary, MITRE mapping, and IOC list](/assets/getting_started/flint.gif){: style="width: 100%; max-width: 100%"}
+
 
 ## Act on report indicators
 

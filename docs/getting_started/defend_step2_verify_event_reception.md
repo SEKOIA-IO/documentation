@@ -33,7 +33,8 @@ Each intake card shows three event counters for the selected time period:
 !!! tip "Change the time range"
     Use the date range selector on the intakes page to view event counts for the last 24 hours, 7 days, or 30 days. For a new intake, start with the 24-hour view.
 
-> 📸 [SCREENSHOT SUGGESTION: An intake card showing valid event count, warning count, and invalid event count, with the date selector visible. | ALT TEXT: Intake card displaying event reception metrics including valid, warning, and invalid event counts.]
+![ntake card displaying event reception metrics including valid, warning, and invalid event counts](/assets/getting_started/intake_card.png){: style="width: 100%; max-width: 100%"}
+
 
 ## Inspect the intake detail page
 

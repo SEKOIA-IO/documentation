@@ -26,7 +26,6 @@ After you create notification rules, you can update them at any time to reflect 
 
 The listing page displays all your notification rules for the current community, with their name, trigger type, delivery channel, and current status (enabled or disabled).
 
-> 📸 [SCREENSHOT SUGGESTION: The Notifications settings page showing a list of notification rules with their names, trigger types, delivery channels, and enabled/disabled status toggles. | ALT TEXT: Notifications listing page showing personal notification rules with status toggles.]
 
 ## Edit a notification rule
 

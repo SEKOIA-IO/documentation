@@ -84,7 +84,8 @@ The detail page shows:
 - Relationships to other objects (for example, a malware linked to a threat actor, or an indicator linked to a campaign)
 - The source and last update date
 
-> 📸 [SCREENSHOT SUGGESTION: An Intelligence object detail page for a threat actor, showing description, TLP badge, confidence level, related objects, and the relationship graph. | ALT TEXT: Threat actor detail page with description, TLP level, confidence score, and related CTI objects.]
+![Threat actor detail page with description, TLP level, confidence score, and related CTI object](/assets/getting_started/threat_actor_page.png){: style="width: 100%; max-width: 100%"}
+
 
 ### Use the threat context
 

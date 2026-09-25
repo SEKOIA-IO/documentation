@@ -21,7 +21,8 @@ In the navigation menu, select **Detect > Rules Catalog**.
 
 The catalog lists all rules available to your community. Each rule shows its name, effort level, type, associated threats, and compatible intake formats.
 
-> 📸 [SCREENSHOT SUGGESTION: The rules catalog page showing a list of rules with effort level badges, type indicators, and the MITRE ATT&CK matrix preview. | ALT TEXT: Rules catalog showing detection rules with effort levels and MITRE ATT&CK coverage matrix.]
+![Rules catalog showing detection rules with effort levels and MITRE ATT&CK coverage matrix](/assets/getting_started/rules_catalog.png){: style="width: 100%; max-width: 100%"}
+
 
 ## Understand effort levels
 
@@ -79,7 +80,8 @@ To open the full matrix:
 
 Darker cells indicate more rules covering that technique. White cells indicate gaps in your coverage. Use this view to identify which areas of the attack chain you are not yet monitoring.
 
-> 📸 [SCREENSHOT SUGGESTION: The MITRE ATT&CK matrix with colored cells indicating detection coverage, showing darker cells where multiple rules exist and white cells for uncovered techniques. | ALT TEXT: MITRE ATT&CK matrix showing detection rule coverage with color-coded cells.]
+![MITRE ATT&CK matrix showing detection rule coverage with color-coded cells](/assets/getting_started/mitre.png){: style="width: 100%; max-width: 100%"}
+
 
 ## Related links
 

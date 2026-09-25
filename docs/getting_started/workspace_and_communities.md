@@ -63,7 +63,6 @@ In multi-tenant mode, each community represents a separate client or business un
 
 If you are not sure whether a setting belongs to the workspace or the community, check the **Settings** menu. Workspace-level settings appear at the top of the listing (**Workspace** label), and community-level settings appear just below it (**Communities you manage** label).
 
-> 📸 [SCREENSHOT SUGGESTION: The Settings page showing the Workspace and Community sections side by side in the left navigation. | ALT TEXT: Settings navigation showing workspace and community configuration sections.]
 
 ## Switching between workspaces and communities
 

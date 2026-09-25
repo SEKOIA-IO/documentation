@@ -46,7 +46,8 @@ Sekoia provides a library of ready-made playbook templates for common use cases.
 11. Click **Save**.
 12. Toggle the playbook to **Active**.
 
-> 📸 [SCREENSHOT SUGGESTION: The playbook template library showing a grid of available templates with names and descriptions. | ALT TEXT: Playbook template library with available automation templates listed as cards.]
+![Playbook template library with available automation templates listed as cards](/assets/getting_started/playbook_template_catalog.png){: style="width: 100%; max-width: 100%"}
+
 
 ## Verify a playbook run
 

@@ -41,8 +41,8 @@ Notification rules let you receive alerts through your preferred channel when a 
 9. Click **Save**.
 
 Your rule is now active and appears in your personal notification list.
+![Notification creation form with trigger, conditions, and email delivery options configured](assets/getting_started/notification_form.png){: style="width: 100%; max-width: 100%"}
 
-> 📸 [SCREENSHOT SUGGESTION: The notification creation form showing the Trigger dropdown selected, a Conditions section with urgency filter, and the Action section with email delivery selected. | ALT TEXT: Notification creation form with trigger, conditions, and email delivery options configured.]
 
 ## Example: High-urgency alert on a production asset
 

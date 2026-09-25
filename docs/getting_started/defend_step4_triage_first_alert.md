@@ -70,7 +70,9 @@ You can interact with individual field values to:
 - Filter for or filter out that value within the alert's events
 - Search across all events in the platform for that value
 
-> 📸 [SCREENSHOT SUGGESTION: The alert detail page showing the Details tab with urgency score, affected asset, and timeline on the right, and the Events tab visible in the navigation. | ALT TEXT: Alert detail page with urgency score, asset information, and event timeline.]
+![Alert detail page with urgency score, asset information, and event timeline](/assets/getting_started/alert_detail.png){: style="width: 100%; max-width: 100%"}
+
+
 
 ## Change the alert status
 
