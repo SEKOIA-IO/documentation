@@ -32,7 +32,7 @@ For pull intakes, you start and stop collection using an On/Off toggle. For push
 
 ## Create an intake
 
-1. In the navigation menu, select **Collect > Intakes**.
+1. In the navigation menu, select **Configure > Intakes**.
 2. Click **+ Intake**.
 3. In the integration catalog, search for your data source technology or browse by category.
 4. Click **Create** on the matching integration card.
@@ -42,7 +42,8 @@ For pull intakes, you start and stop collection using an On/Off toggle. For push
 
 For pull intakes, an additional configuration step appears. Enter the credentials or API parameters required to connect to the source.
 
-> 📸 [SCREENSHOT SUGGESTION: The intake creation modal showing the name field, entity selector, and Create button. | ALT TEXT: Intake creation modal with fields for name and entity selection.]
+![Intake creation modal with fields for name and entity selection](/assets/getting_started/intake_creation_modal.png){: style="width: 100%; max-width: 100%"}
+
 
 ## Copy and deploy the intake key
 
