@@ -105,6 +105,11 @@ nav:
       - Sekoia regions: getting_started/regions.md
 - Sekoia Solutions:
   - The Sekoia AI SOC Platform: xdr/sekoia_solutions.md
+    - Subscriptions:
+      - Subscriptions overview: getting_started/subscriptions.md
+      - Create a subscription: getting_started/create_a_subscription.md
+      - Assign a subscription: getting_started/assign_a_subscription.md
+      - Subscription notifications: xdr/FAQ/subscriptions/subscriptions_notifications.md
   - Threat Context (Intelligence):
     - Intelligence overview: cti/index.md
     - Data Models: cti/features/data_model.md
