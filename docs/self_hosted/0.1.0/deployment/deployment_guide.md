@@ -23,10 +23,10 @@ Download the archive and its checksum file, then verify integrity. Fill in your 
     ```bash
     export AWS_ACCESS_KEY_ID=""
     export AWS_SECRET_ACCESS_KEY=""
-    export AWS_DEFAULT_REGION="fr-par"
-    export ENDPOINT="https://fr-par-13.linodeobjects.com"
+    export AWS_DEFAULT_REGION="fr-par-2"
+    export ENDPOINT="https://self-hosted.delivery.sekoia.io"
     export BUCKET="self-hosted"
-    export KEY="archives/sekoia-self-hosted-v0.1.0.tar"
+    export KEY="platform/v0.1.0/archives/v0.1.0.tar"
     export OUT="sekoia-self-hosted-v0.1.0.tar"
     export AWS_REQUEST_CHECKSUM_CALCULATION=WHEN_REQUIRED
     export AWS_RESPONSE_CHECKSUM_VALIDATION=WHEN_REQUIRED
@@ -46,11 +46,11 @@ Download the archive and its checksum file, then verify integrity. Fill in your 
     export RCLONE_CONFIG_SEKOIA_PROVIDER="Other"
     export RCLONE_CONFIG_SEKOIA_ACCESS_KEY_ID=""
     export RCLONE_CONFIG_SEKOIA_SECRET_ACCESS_KEY=""
-    export RCLONE_CONFIG_SEKOIA_ENDPOINT="https://fr-par-13.linodeobjects.com"
-    export RCLONE_CONFIG_SEKOIA_REGION="fr-par"
+    export RCLONE_CONFIG_SEKOIA_ENDPOINT="https://self-hosted.delivery.sekoia.io"
+    export RCLONE_CONFIG_SEKOIA_REGION="fr-par-2"
 
-    rclone copyto sekoia:self-hosted/archives/sekoia-self-hosted-v0.1.0.tar ./sekoia-self-hosted-v0.1.0.tar
-    rclone copyto sekoia:self-hosted/archives/sekoia-self-hosted-v0.1.0.tar.sha256 ./sekoia-self-hosted-v0.1.0.tar.sha256
+    rclone copyto sekoia:self-hosted/platform/v0.1.0/archives/v0.1.0.tar ./sekoia-self-hosted-v0.1.0.tar
+    rclone copyto sekoia:self-hosted/platform/v0.1.0/archives/v0.1.0.tar.sha256 ./sekoia-self-hosted-v0.1.0.tar.sha256
 
     sha256sum -c sekoia-self-hosted-v0.1.0.tar.sha256
     ```
