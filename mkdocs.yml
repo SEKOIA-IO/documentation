@@ -55,6 +55,7 @@ nav:
   - Understand your subscription and usage:
     - Understand your subscription: getting_started/understand_your_subscription.md
     - Monitor your usage: getting_started/monitor_your_usage.md
+    - Log volume and fair use: getting_started/log_volume_and_fair_use.md
   - Set up your workspace (Admin):
     - Workspace setup overview: getting_started/workspace_setup_overview.md
     - Users and roles:
@@ -78,7 +79,7 @@ nav:
     - Intelligence:
       - "Quick start: Intelligence": getting_started/quick_start_intelligence.md
       - "Step 1: Explore the threat intelligence database": getting_started/intelligence_step1_explore_threat_database.md
-      - "Step 2: Read and act on threat reports": getting_started/intelligence_step2_read_threat_reports.md
+      - "Step 2: Investigate and disseminate threat intelligence": getting_started/intelligence_step2_read_threat_reports.md
     - Reveal:
       - "Quick start: Reveal": getting_started/quick_start_reveal.md
     - Elevate:
@@ -105,11 +106,11 @@ nav:
       - Sekoia regions: getting_started/regions.md
 - Sekoia Solutions:
   - The Sekoia AI SOC Platform: xdr/sekoia_solutions.md
-  - Subscriptions:
-    - Subscriptions overview: getting_started/subscriptions.md
-    - Create a subscription: getting_started/create_a_subscription.md
-    - Assign a subscription: getting_started/assign_a_subscription.md
-    - Subscription notifications: xdr/FAQ/subscriptions/subscriptions_notifications.md
+     - Subscriptions:
+      - Subscriptions overview: getting_started/subscriptions.md
+      - Create a subscription: getting_started/create_a_subscription.md
+      - Assign a subscription: getting_started/assign_a_subscription.md
+      - Subscription notifications: xdr/FAQ/subscriptions/subscriptions_notifications.md
   - Threat Context (Intelligence):
     - Intelligence overview: cti/index.md
     - Data Models: cti/features/data_model.md
@@ -306,7 +307,6 @@ nav:
   - Log volume reduction strategies: xdr/usecases/playbook/log_volume_reduction_strategies.md
 - FAQ and troubleshooting:
   - General: xdr/FAQ.md
-  - Sekoia regions: getting_started/regions.md
   - Alerts: xdr/FAQ/Alerts_qa.md
   - Events:
     - Events FAQ: xdr/FAQ/get_events.md
@@ -772,7 +772,6 @@ plugins:
       getting_started/notifications-Examples.md: getting_started/notification_examples.md
       getting_started/notifications-Listing_Creation.md: getting_started/create_a_notification.md
       getting_started/restricted_roles.md: getting_started/roles_and_permissions.md
-      getting_started/subscriptions.md: getting_started/understand_your_subscription.md
       getting_started/usage.md: getting_started/monitor_your_usage.md
       getting_started/roles.md: getting_started/roles_and_permissions.md
       xdr/features/investigate/configure_custom_statuses.md: xdr/features/investigate/custom_statuses.md
