@@ -68,7 +68,7 @@ The left-hand menu is organized into three collapsible sections, plus fixed item
 | **Early features** | Preview features not yet in general availability. |
 | **Help & support** | Documentation, Academy, and support portal. |
 
-![Sekoia left-hand navigation menu with collapsible sections Investigate, Observe, and Configure, plus fixed items at the top and bottom](/assets/getting_started/menu.gif){: style="width: 100%; max-width: 100%"}
+![Sekoia left-hand navigation menu with collapsible sections Investigate, Observe, and Configure, plus fixed items at the top and bottom](/assets/getting_started/menu.gif){: style="width: 30%; max-width: 30%"}
 
 ## Switch between workspaces and communities
 
