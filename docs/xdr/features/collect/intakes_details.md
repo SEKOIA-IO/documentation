@@ -135,6 +135,6 @@ The intake menu is accessible from the intake details page. It exposes all manag
 
 - [Manage intakes](/xdr/features/collect/manage_intakes.md): Step-by-step procedures for creating, configuring, renaming, and deleting intakes.
 
-- [Turn on notifications](/getting_started/notifications-Listing_Creation.md): How to configure notification channels and triggers for intake inactivity alerts.
+- [Turn on notifications](/getting_started/create_a_notification.md): How to configure notification channels and triggers for intake inactivity alerts.
 
 - [Integrations](/integration/index.md): Full catalog of supported data source integrations and their setup documentation.

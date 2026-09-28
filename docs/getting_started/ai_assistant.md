@@ -1,28 +1,28 @@
-# What is Roy?
+# Roy AI assistant
 
-Roy Assistant is an **AI-powered companion** designed specifically for the Sekoia platform users. It leverages advanced natural language processing to provide a conversational experience that accelerates workflows and enhances decision-making in security operations. 
+Roy is Sekoia's built-in AI assistant. It is available across the platform and responds to natural language queries to help analysts work faster without switching context.
 
-With Roy, analysts can quickly access threat intelligence, documentation, and platform data to deepen their investigations, troubleshoot issues, and uncover operational insights.
+Roy can:
 
-This revolutionary tool transforms the way analysts interact with security data. Whether you're seeking to explain event fields, obtain a summary of an alert, or dive deeper into specific incidents, Roy simplifies these processes by **reducing the time and effort required**. 
+- Write and refine Sigma detection rules from a plain-language description
+- Explain complex event attribute fields directly in the Events page
+- Build Query Builder queries from natural language
+- Answer questions about platform features using the live documentation
+- Provide context on current threats using the Intelligence database
 
-One of the standout features of Roy is its ability to understand and respond in multiple languages, including English, French, and even Polish. This multilingual support empowers analysts to interact with Roy in their native language, making it easier to convey complex security concepts and queries.
+Roy responds in English, French, and Polish.
 
-Whether you need to analyze alerts, gather contextual information, or create Sigma rules, Roy Assistant is here to help. 
+!!! note "Availability"
+    Roy must be enabled for your community before the **Ask Roy** button appears in the navigation menu. Contact your workspace administrator if Roy is not visible.
 
-# Where to find Roy?
+!!! warning "Verify critical information"
+    Roy's responses are AI-generated. Always verify outputs before acting on them in a production environment, particularly for detection rules and queries.
 
-## Chat with Roy from the Menu
+## Access Roy
 
-Once ROY is available in your community, you’ll notice a vibrant purple-pink button labeled `Ask Roy` appearing in the menu. This button allows you to access Roy from any page, making its assistance just a click away.
+Click the **Ask Roy** button in the left-hand navigation menu to open the chat panel. The panel is accessible from any page in the platform.
 
-From this panel, you can engage in direct conversations with Roy on a wide range of topics that interest you. Whether you need insights on security alerts, explanations of event fields, or assistance with building complex queries, Roy is equipped to provide the information you need.
-
-To help you get started, the product includes a variety of examples showcasing possible use cases for Roy. These examples serve as a guide to maximize your interaction and leverage Roy's capabilities effectively.
-
-We strongly encourage you to use the thumbs up and down feedback options to rate the answers provided by Roy. This feedback mechanism is crucial for the assistant's learning process and will help us improve its responses over time.
-
-While Roy can assist you, it's important to remember that the AI assistant is not infallible. We recommend double-checking any critical information before acting on it to ensure accuracy and reliability in your security operations.
+From the panel, you can type a question or select one of the suggested prompts to get started. Use the thumbs up and down icons to rate Roy's responses; this feedback is used to improve future answers.
 
 ## Roy can assist with writing Sigma rules
 
