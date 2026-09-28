@@ -81,6 +81,9 @@ To disable 2FA:
 
 Administrators can reset the 2FA of any user in their community. This generates a single-use recovery code valid for 24 hours.
 
+!!! note
+    An Admin with SSO only authentificathion can not reset the 2FA of other users.
+
 1. Navigate to **Settings > Workspace > Users**.
 2. Locate the user whose 2FA you want to reset.
 3. Click the **...** button to the right of the user's name.
@@ -94,6 +97,8 @@ The user receives an email notification informing them that their 2FA has been r
 
 !!! note "Resetting both password and 2FA simultaneously"
     If a user needs both their password and their 2FA reset at the same time, contact Sekoia support directly.
+
+
 
 ## Related links
 

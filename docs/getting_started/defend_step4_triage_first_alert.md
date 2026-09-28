@@ -81,6 +81,9 @@ After reviewing the alert, update its status to reflect your analysis.
 1. Click the **Alert Status** button at the top of the alert detail page.
 2. Select the appropriate status.
 
+!!! note "Default statuses"
+    Alert statuses can be customized. The following statuses are the default ones.
+
 | Status | When to use it |
 |---|---|
 | **Acknowledged** | You have started analysis but have not yet determined the outcome |

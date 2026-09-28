@@ -33,6 +33,9 @@ Invited users receive a welcome email with a link to set their password. The lin
 !!! note "Multi-tenant workspaces"
     In a multi-tenant workspace, an invited user only has access to the specific communities you selected during invitation. They do not have access to the workspace as a whole or to other communities.
 
+!!! note "Not responding user"
+    A user who has already been invited and didn't click the password setup link won't be invited again if you delete and re-add them. Use the **Re-send invitation** button for this purpose.
+
 ## Set up automatic user creation with SSO Okta
 
 If your workspace uses SSO with Okta, you can configure Sekoia to automatically create a user account the first time someone from your organization logs in.

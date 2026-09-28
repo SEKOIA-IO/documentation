@@ -16,8 +16,9 @@ Sekoia offers several channels to help you get answers, learn new skills, and st
 Use the following order when you need help:
 
 1. Check the documentation for product concepts, procedures, and configuration guidance.
-2. Contact your Customer Success Manager (CSM) for guidance about your specific situation, use case, or adoption plan when your account includes a CSM.
+2. Contact your Customer Success Manager (CSM), Technical Account Manager (TAM) for guidance about your specific situation, use case, or adoption plan when your account includes a CSM.
 3. Contact Support for a technical issue, a bug, unexpected platform behavior, or an improvement request.
+4. Subscribe to a professional service for help creating a custom setting.
 
 Small accounts may not include a CSM. In that case, use the documentation for product questions and contact Support for technical issues, bugs, and improvement requests.
 
@@ -31,7 +32,7 @@ Use the support portal when:
 
 - You encounter a bug or unexpected platform behavior.
 - A technical issue prevents you from using the platform as expected.
-- You need to submit an improvement request.
+- You need to submit an improvement request to your TAM or CSM.
 - You need to escalate a technical issue affecting your operations.
 
 ### Status page
