@@ -37,6 +37,9 @@ Use the support portal when:
 
 ### Status page
 
+!!! info
+    Our status page is always the most up-to-date source of information. Opening a support ticket will not provide faster updates regarding ongoing issues.
+
 To check whether Sekoia services are experiencing an incident or scheduled maintenance, visit the [Sekoia status page](https://status.sekoia.io).
 
 The status page lists the operational health of all platform components by region. Subscribe to status updates to receive notifications about incidents and maintenance windows.
