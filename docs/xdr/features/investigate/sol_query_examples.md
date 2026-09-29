@@ -352,6 +352,28 @@
     | b1ee47a2-dae2-4a6a-b4fa-ed8a56382f94 | 904df422-adf9-4be8-b2b6-d027c0d68184 | User network  | [{"tag":"Backup"}] |
 
 
+### Find hosts that no asset connector reports
+
+Hosts seen by Sekoia Asset Discovery and by no configured asset connector, such as an EDR or a CMDB, are candidates for Shadow IT.
+
+=== "Query"
+
+    ``` shell
+    assets
+    | where type == "host" and source == "automatic" and not connectors.connector_uuid
+    | limit 100
+    ```
+
+To keep only the hosts that Sekoia Asset Discovery did see:
+
+=== "Query"
+
+    ``` shell
+    assets
+    | where connectors.uuid == "e0437ab0-5e38-4bd3-b922-c500644889c3" and not connectors.connector_uuid
+    | limit 100
+    ```
+
 ### List all distinct tags
 
 === "Query"
