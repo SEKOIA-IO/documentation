@@ -177,15 +177,41 @@ Use only fields that appear in the raw parsed event. To check which fields are a
 
 ## Allow the agent to fetch rules
 
-When you configure a rule through the API, the agent must be allowed to fetch its configuration. Check your agent deployment policy to confirm the agent can reach the Sekoia API endpoint `api.sekoia.io` on port 443. The agent fetches updated rules at its next configuration poll cycle. A restart of the agent is not required, but forces an immediate fetch:
+## Allow the agent to fetch rules
+
+API-created optimization rules are remote rules. The agent does not fetch these rules unless remote optimization rule fetching is enabled.
+
+Enable remote rule fetching at installation time by passing the `--remote-optimization-rules` flag:
 
 ```bash
-# Restart the agent service (Linux)
-sudo systemctl restart sekoia-endpoint-agent
-
-# Restart the agent service (Windows, run as Administrator)
-Restart-Service -Name "SekoiaEndpointAgent"
+./agent install --intake-key <INTAKE_KEY> --remote-optimization-rules
 ```
+
+For an existing installation, set `RemoteOptimizationRules` to `true` in the agent configuration file:
+
+```yaml
+RemoteOptimizationRules: true
+```
+
+Restart the agent after changing the configuration file. A restart is not required for a routine rule update, but it forces an immediate configuration fetch.
+
+!!! note "Network access"
+    The agent must be able to connect to the Sekoia API server over HTTPS on port 443. For the default server, allow outbound access to `api.sekoia.io`.
+
+When remote rule fetching is enabled, the agent periodically requests its configuration from the Sekoia API:
+
+```http
+GET {server_url}/v1/xdr-agent/agents/config
+Sekoia-Agent-ID: <AGENT_ID>
+Authorization: IntakeKey <INTAKE_KEY>
+```
+
+The response includes the `OptimizationRules` assigned to the agent. The agent loads these remote rules together with any optimization rules defined in its local configuration.
+
+!!! note "Local and remote rules"
+    `RemoteOptimizationRules` is required only for optimization rules configured through the Sekoia API. Rules defined in the local agent configuration do not require this setting.
+
+To verify that a remote rule loaded successfully, check the agent logs for `Optimization rule loaded`. If the agent cannot compile a rule, inspect the logs for the corresponding compilation error.
 
 ## Validate the impact
 
