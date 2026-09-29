@@ -27,6 +27,7 @@ The base URL depends on the region where your Sekoia subscription is hosted.
     <tr><td>MCO1</td><td style="white-space: nowrap"><code>https://app.mco1.sekoia.io/api</code></td></tr>
     <tr><td>UAE1</td><td style="white-space: nowrap"><code>https://app.uae1.sekoia.io/api</code></td></tr>
     <tr><td>USA1</td><td style="white-space: nowrap"><code>https://app.usa1.sekoia.io/api</code></td></tr>
+    <tr><td>SGP1</td><td style="white-space: nowrap"><code>https://app.sgp1.sekoia.io/api</code></td></tr>
   </tbody>
 </table>
 
