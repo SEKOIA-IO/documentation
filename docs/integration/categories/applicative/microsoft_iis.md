@@ -201,7 +201,7 @@ Please read the dedicated documentation for each concentrator:
 - [Logstash](https://www.notion.so/ingestion_methods/logstash/)
 - [Syslog-ng](https://www.notion.so/ingestion_methods/syslog-ng/)
 - [Graylog](https://www.notion.so/ingestion_methods/graylog/)
-- [Sekoia.io docker concentrator](https://www.notion.so/ingestion_methods/sekoiaio_forwarder/)
+- [Sekoia.io Forwarder](/integration/ingestion_methods/syslog/sekoiaio_forwarder.md)
 
 !!! Note
     While [Sekoia.io](http://sekoia.io/) docker concentrator is highly recommended, you are free to use the one that you are most comfortable with.
