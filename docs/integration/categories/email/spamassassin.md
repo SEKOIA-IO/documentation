@@ -76,7 +76,6 @@ This setup guide will show you how to forward logs produced by your SpamAssassin
             File="/var/log/spamd.log"
             Facility="local5"
             Severity="notice"
-            StateFile="stat-apache-spamassassin"
             PersistStateInterval="200"
             Ruleset="spamassassin-logs"
         )
