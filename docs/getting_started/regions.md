@@ -231,7 +231,7 @@ SGP1 is our Southeast Asia region hosted in OVH/Akamai.
         </tr>
         <tr>
             <td>Location</td>
-            <td>🇸🇬Singapore</td>
+            <td>🇸🇬 Singapore / East</td>
         </tr>
         <tr>
             <td>Infrastructure</td>
