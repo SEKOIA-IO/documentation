@@ -2,6 +2,12 @@ uuid: a423222d-e8cc-4ad0-a266-8776f8993feb
 name: Microsoft Defender for Endpoint Device
 type: asset
 
+_**[Reveal module](/xdr/features/modules/reveal_index.md)**  — This feature requires the Reveal add-on module._
+
+!!! info
+    This article describes the **device** integration, which collects the inventory of your devices (hostname, OS, IP addresses, risk and exposure levels, Intune management data...) from Microsoft Defender for Endpoint.
+    If you want to collect the **vulnerabilities (CVEs)** detected on your devices by Microsoft Defender Vulnerability Management, please read our dedicated article: [Microsoft Defender Vulnerability](../vulnerability/microsoft_defender.md).
+
 ## Overview
 
 Microsoft Defender for Endpoint is a cloud-based endpoint security platform that provides advanced threat protection, detection, investigation, and response capabilities for enterprise devices. This connector retrieves device inventory information from the Microsoft Defender for Endpoint API and enriches it with device management data from Microsoft Intune via the Microsoft Graph API.
