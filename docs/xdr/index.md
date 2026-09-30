@@ -2,7 +2,7 @@
 
 !!! note "Licensing and ecosystem"
 
-    Sekoia Defend is the core detection and response module of the [Sekoia SOC platform](index.md). It can operate as a **standalone product** and expand with [Sekoia Intelligence](/cti/index.md), [Reveal for Asset Intelligence](features/modules/reveal_index.md), and [Sekoia Elevate](features/modules/elevate_overview.md) for AI-assisted SOC workflows.
+    Sekoia Defend is the core detection and response module of the [Sekoia SOC platform](/index.md). It can operate as a **standalone product** and expand with [Sekoia Intelligence](/cti/index.md), [Reveal for Asset Intelligence](features/modules/reveal_index.md), and [Sekoia Elevate](features/modules/elevate_overview.md) for AI-assisted SOC workflows.
 
 Defend collects and analyzes security events from applications, endpoints, cloud services, and SaaS environments. It gives security teams the tools to detect suspicious activity, investigate incidents, automate response actions, and report on their security operations.
 
