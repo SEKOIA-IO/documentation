@@ -1,5 +1,5 @@
 ---
-- title: Sekoia documentation
+title: Sekoia documentation
 ---
 
 # Welcome to Sekoia's documentation
