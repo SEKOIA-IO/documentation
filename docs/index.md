@@ -1,3 +1,7 @@
+---
+- title: Sekoia documentation
+---
+
 # Welcome to Sekoia's documentation
 
 
