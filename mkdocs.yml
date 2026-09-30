@@ -699,6 +699,7 @@ nav:
     - Vulnerability:
       - ESET EDR: integration/assets_categories/vulnerability/eset_vulnerability.md
       - Holm Security: integration/assets_categories/vulnerability/holm_security.md
+      - Microsoft Defender XDR (Microsoft 365 Defender): integration/assets_categories/vulnerability/microsoft_defender.md
       - Tenable.io: integration/assets_categories/vulnerability/tenable_io.md
     - Device:
       - AWS EC2: integration/assets_categories/device/aws_ec2_device.md

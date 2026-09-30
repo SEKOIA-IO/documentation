@@ -2,6 +2,8 @@ uuid: a423222d-e8cc-4ad0-a266-8776f8993feb
 name: Microsoft Defender for Endpoint Device
 type: asset
 
+_**[Reveal module](/xdr/features/modules/reveal_index.md)**  — This feature requires the Reveal add-on module._
+
 ## Overview
 
 Microsoft Defender for Endpoint is a cloud-based endpoint security platform that provides advanced threat protection, detection, investigation, and response capabilities for enterprise devices. This connector retrieves device inventory information from the Microsoft Defender for Endpoint API and enriches it with device management data from Microsoft Intune via the Microsoft Graph API.
