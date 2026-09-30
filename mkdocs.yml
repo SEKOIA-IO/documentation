@@ -759,6 +759,7 @@ plugins:
 - search: null
 - redirects:
     redirect_maps:
+      xdr/sekoia_solutions.md: index.md
       getting_started/account_security.md: getting_started/secure_your_account.md
       getting_started/account_settings.md: getting_started/customize_your_interface.md
       getting_started/authentication.md: getting_started/log_in_for_the_first_time.md
