@@ -277,6 +277,7 @@ If applications show `OutOfSync` or `Degraded` after running `DebugArgoCD`, cont
 ## Related links
 
 - [Run platform diagnostics](run_diagnostics.md): Targeted Prometheus health checks for platform services.
+- [Platform alerts reference](alerts_reference.md): Full list of Prometheus alert groups, their trigger conditions, and their impact.
 - [Use the SHC interface](../operations/controller_interface.md): Live node, cluster, storage, and diagnostics views in the interactive SHC interface.
 - [Debug your deployment](../troubleshooting/debug_tool.md): Full SHC debug command reference with remediation steps.
 - [Deploy the platform](../deployment/deployment_guide.md): Post-deployment validation commands.
