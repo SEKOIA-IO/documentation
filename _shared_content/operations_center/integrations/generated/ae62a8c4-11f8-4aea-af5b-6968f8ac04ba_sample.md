@@ -14,7 +14,7 @@ In this section, you will find examples of raw logs as generated natively by the
         "operationName": "CertificateCreate",
         "resultType": "Success",
         "correlationId": "1216de2d-b866-4950-983f-46775e7fe659",
-        "callerIpAddress": "147.161.0.0",
+        "callerIpAddress": "192.0.2.1",
         "identity": {
             "claim": {
                 "oid": "d4ba3e84-0444-4841-aaf7-XXXX",
@@ -23,16 +23,16 @@ In this section, you will find examples of raw logs as generated natively by the
                 "appidacr": "0",
                 "xms_az_nwperimid": [],
                 "upn": "john.doe@dummy.onmicrosoft.com",
-                "ipaddr": "147.161.0.0",
+                "ipaddr": "192.0.2.1",
                 "unique_name": "john.doe@dummy.onmicrosoft.com",
                 "amr": "pwd"
             }
         },
         "properties": {
-            "id": "https://testpermissionvault.vault.azure.net/certificates/fdfdffffd",
+            "id": "https://test.vault.azure.net/certificates/fdfdffffd",
             "clientInfo": "Mozilla/5.0 (X11; Ubuntu; Linux x86_64) Firefox/12.0",
             "httpStatusCode": 202,
-            "requestUri": "https://testpermissionvault.vault.azure.net/certificates/fdfdffffd/create?api-version=7.0",
+            "requestUri": "https://test.vault.azure.net/certificates/fdfdffffd/create?api-version=7.0",
             "isAccessPolicyMatch": true,
             "certificateProperties": {
                 "attributes": {
@@ -62,7 +62,7 @@ In this section, you will find examples of raw logs as generated natively by the
             },
             "tlsVersion": "TLS1_3"
         },
-        "resourceId": "/SUBSCRIPTIONS/F40A1F1D-F2C6-4444-XXXX/RESOURCEGROUPS/INTEGRATION/PROVIDERS/MICROSOFT.KEYVAULT/VAULTS/TESTPERMISSIONVAULT",
+        "resourceId": "/SUBSCRIPTIONS/00000000-0000-0000-0000/RESOURCEGROUPS/INTEGRATION/PROVIDERS/MICROSOFT.KEYVAULT/VAULTS/TEST",
         "operationVersion": "7.0",
         "resultSignature": "Accepted",
         "durationMs": "575"
@@ -82,7 +82,7 @@ In this section, you will find examples of raw logs as generated natively by the
         "resultType": "Success",
         "resultDescription": "Private key is not specified in the specified X.509 PEM certificate content. Please specify private key in the X.509 PEM certificate content.",
         "correlationId": "1de288da-53e4-4563-8b1a-626cbf008d8d",
-        "callerIpAddress": "147.161.0.0",
+        "callerIpAddress": "192.0.2.1",
         "identity": {
             "claim": {
                 "oid": "d4ba3e84-0444-4841-aaf7-XXXXXXXXXXXX",
@@ -97,10 +97,10 @@ In this section, you will find examples of raw logs as generated natively by the
             }
         },
         "properties": {
-            "id": "https://myright3.vault.azure.net/certificates/mycertiii",
+            "id": "https://test.vault.azure.net/certificates/mycertiii",
             "clientInfo": "Mozilla/5.0 (X11; Ubuntu; Linux x86_64) Firefox/12.0",
             "httpStatusCode": 400,
-            "requestUri": "https://myright3.vault.azure.net/certificates/mycertiii/import?api-version=7.0",
+            "requestUri": "https://test.vault.azure.net/certificates/mycertiii/import?api-version=7.0",
             "isAccessPolicyMatch": true,
             "certificatePolicyProperties": {
                 "secretProperties": {
@@ -109,7 +109,7 @@ In this section, you will find examples of raw logs as generated natively by the
             },
             "tlsVersion": "TLS1_3"
         },
-        "resourceId": "/SUBSCRIPTIONS/F40A1F1D-F2C6-4444-92A6-XXXX/RESOURCEGROUPS/INTEGRATION/PROVIDERS/MICROSOFT.KEYVAULT/VAULTS/MYRIGHT3",
+        "resourceId": "/SUBSCRIPTIONS/00000000-0000-0000-0000-0000/RESOURCEGROUPS/INTEGRATION/PROVIDERS/MICROSOFT.KEYVAULT/VAULTS/TEST",
         "operationVersion": "7.0",
         "resultSignature": "Bad Request",
         "durationMs": "16"
@@ -128,7 +128,7 @@ In this section, you will find examples of raw logs as generated natively by the
         "operationName": "CertificateImport",
         "resultType": "Success",
         "correlationId": "fa80015d-9a44-4786-bf2f-1024a83c63cd",
-        "callerIpAddress": "147.161.0.0",
+        "callerIpAddress": "192.0.2.1",
         "identity": {
             "claim": {
                 "oid": "d4ba3e84-0444-4841-aaf7-XXXXXXXXXXXX",
@@ -143,10 +143,10 @@ In this section, you will find examples of raw logs as generated natively by the
             }
         },
         "properties": {
-            "id": "https://myright3.vault.azure.net/certificates/yfuffuygu",
+            "id": "https://test.vault.azure.net/certificates/yfuffuygu",
             "clientInfo": "Mozilla/5.0 (X11; Ubuntu; Linux x86_64) Firefox/12.0",
             "httpStatusCode": 200,
-            "requestUri": "https://myright3.vault.azure.net/certificates/yfuffuygu/import?api-version=7.0",
+            "requestUri": "https://test.vault.azure.net/certificates/yfuffuygu/import?api-version=7.0",
             "isAccessPolicyMatch": true,
             "keyProperties": {
                 "type": "RSA",
@@ -172,7 +172,7 @@ In this section, you will find examples of raw logs as generated natively by the
             },
             "tlsVersion": "TLS1_3"
         },
-        "resourceId": "/SUBSCRIPTIONS/F40A1F1D-F2C6-4444-92A6-XXXX/RESOURCEGROUPS/INTEGRATION/PROVIDERS/MICROSOFT.KEYVAULT/VAULTS/MYRIGHT3",
+        "resourceId": "/SUBSCRIPTIONS/00000000-0000-0000-0000-0000/RESOURCEGROUPS/INTEGRATION/PROVIDERS/MICROSOFT.KEYVAULT/VAULTS/TEST",
         "operationVersion": "7.0",
         "resultSignature": "OK",
         "durationMs": "222"
@@ -200,20 +200,20 @@ In this section, you will find examples of raw logs as generated natively by the
                 "appidacr": "0",
                 "xms_az_nwperimid": [],
                 "upn": "john.doe@dummy.onmicrosoft.com",
-                "ipaddr": "147.161.0.0",
+                "ipaddr": "192.0.2.1",
                 "unique_name": "john.doe@dummy.onmicrosoft.com",
                 "amr": "pwd"
             }
         },
         "properties": {
-            "id": "https://testpermissionvault.vault.azure.net/certificates/fdfdffffd/2b5dd56d53254413811cb3d3ea2529f1",
+            "id": "https://test.vault.azure.net/certificates/fdfdffffd/2b5dd56d53254413811cb3d3ea2529f1",
             "clientInfo": "Mozilla/5.0 (X11; Ubuntu; Linux x86_64)Firefox/12.0",
             "httpStatusCode": 200,
-            "requestUri": "https://testpermissionvault.vault.azure.net/certificates/fdfdffffd/2b5dd56d53254413811cb3d3ea2529f1?api-version=7.0",
+            "requestUri": "https://test.vault.azure.net/certificates/fdfdffffd/2b5dd56d53254413811cb3d3ea2529f1?api-version=7.0",
             "isAccessPolicyMatch": true,
             "tlsVersion": "TLS1_3"
         },
-        "resourceId": "/SUBSCRIPTIONS/F40A1F1D-F2C6-4444-92A6-93068B9DE034/RESOURCEGROUPS/INTEGRATION/PROVIDERS/MICROSOFT.KEYVAULT/VAULTS/TESTPERMISSIONVAULT",
+        "resourceId": "/SUBSCRIPTIONS/F40A1F1D-F2C6-4444-92A6-93068B9DE034/RESOURCEGROUPS/INTEGRATION/PROVIDERS/MICROSOFT.KEYVAULT/VAULTS/TEST",
         "operationVersion": "7.0",
         "resultSignature": "OK",
         "durationMs": "92"
@@ -232,7 +232,7 @@ In this section, you will find examples of raw logs as generated natively by the
         "operationName": "KeyBackup",
         "resultType": "Success",
         "correlationId": "49c05377-7187-4f18-8374-0e101bba261d",
-        "callerIpAddress": "147.161.0.0",
+        "callerIpAddress": "192.0.2.1",
         "identity": {
             "claim": {
                 "oid": "d4ba3e84-0444-4841-aaf7-XXXXXX",
@@ -241,16 +241,16 @@ In this section, you will find examples of raw logs as generated natively by the
                 "appidacr": "0",
                 "xms_az_nwperimid": [],
                 "upn": "john.doe@dummy.onmicrosoft.com",
-                "ipaddr": "147.161.0.0",
+                "ipaddr": "192.0.2.1",
                 "unique_name": "john.doe@dummy.onmicrosoft.com",
                 "amr": "pwd"
             }
         },
         "properties": {
-            "id": "https://testpermissionvault.vault.azure.net/keys/egzghfgrrg",
+            "id": "https://test.vault.azure.net/keys/egzghfgrrg",
             "clientInfo": "Mozilla/5.0 (X11; Ubuntu; Linux x86_64) Firefox/12.0",
             "httpStatusCode": 200,
-            "requestUri": "https://testpermissionvault.vault.azure.net/keys/egzghfgrrg/backup?api-version=7.3",
+            "requestUri": "https://test.vault.azure.net/keys/egzghfgrrg/backup?api-version=7.3",
             "isAccessPolicyMatch": true,
             "keyProperties": {
                 "type": "RSA",
@@ -260,7 +260,7 @@ In this section, you will find examples of raw logs as generated natively by the
             },
             "tlsVersion": "TLS1_3"
         },
-        "resourceId": "/SUBSCRIPTIONS/F40a1f1d-f2c6-4444-92a6-XXXXXXXXXX/RESOURCEGROUPS/INTEGRATION/PROVIDERS/MICROSOFT.KEYVAULT/VAULTS/TESTPERMISSIONVAULT",
+        "resourceId": "/SUBSCRIPTIONS/00000000-0000-0000-0000-0000XXXXXX/RESOURCEGROUPS/INTEGRATION/PROVIDERS/MICROSOFT.KEYVAULT/VAULTS/TEST",
         "operationVersion": "7.3",
         "resultSignature": "OK",
         "durationMs": "46"
@@ -279,7 +279,7 @@ In this section, you will find examples of raw logs as generated natively by the
         "operationName": "KeyDelete",
         "resultType": "Success",
         "correlationId": "1822451f-ce87-4d9e-96bc-a723af8b5748",
-        "callerIpAddress": "147.161.0.0",
+        "callerIpAddress": "192.0.2.1",
         "identity": {
             "claim": {
                 "oid": "d4ba3e84-0444-4841-aaf7-XXXXXX",
@@ -288,16 +288,16 @@ In this section, you will find examples of raw logs as generated natively by the
                 "appidacr": "0",
                 "xms_az_nwperimid": [],
                 "upn": "john.doe@dummy.onmicrosoft.com",
-                "ipaddr": "147.161.0.0",
+                "ipaddr": "192.0.2.1",
                 "unique_name": "john.doe@dummy.onmicrosoft.com",
                 "amr": "pwd"
             }
         },
         "properties": {
-            "id": "https://testpermissionvault.vault.azure.net/keys/egzghfgrrg",
+            "id": "https://test.vault.azure.net/keys/egzghfgrrg",
             "clientInfo": "Mozilla/5.0 (X11; Ubuntu; Linux x86_64) Firefox/12.0",
             "httpStatusCode": 200,
-            "requestUri": "https://testpermissionvault.vault.azure.net/keys/egzghfgrrg?api-version=7.3",
+            "requestUri": "https://test.vault.azure.net/keys/egzghfgrrg?api-version=7.3",
             "isAccessPolicyMatch": true,
             "keyProperties": {
                 "type": "RSA",
@@ -307,7 +307,7 @@ In this section, you will find examples of raw logs as generated natively by the
             },
             "tlsVersion": "TLS1_3"
         },
-        "resourceId": "/SUBSCRIPTIONS/F40a1f1d-f2c6-4444-92a6-XXXXXXXXXX/RESOURCEGROUPS/INTEGRATION/PROVIDERS/MICROSOFT.KEYVAULT/VAULTS/TESTPERMISSIONVAULT",
+        "resourceId": "/SUBSCRIPTIONS/00000000-0000-0000-0000-0000XXXXXX/RESOURCEGROUPS/INTEGRATION/PROVIDERS/MICROSOFT.KEYVAULT/VAULTS/TEST",
         "operationVersion": "7.3",
         "resultSignature": "OK",
         "durationMs": "44"
@@ -326,7 +326,7 @@ In this section, you will find examples of raw logs as generated natively by the
         "operationName": "KeyDelete",
         "resultType": "Success",
         "correlationId": "1822451f-ce87-4d9e-96bc-a723af8b5748",
-        "callerIpAddress": "147.161.0.0",
+        "callerIpAddress": "192.0.2.1",
         "identity": {
             "claim": {
                 "oid": "d4ba3e84-0444-4841-aaf7-XXXXXX",
@@ -335,16 +335,16 @@ In this section, you will find examples of raw logs as generated natively by the
                 "appidacr": "0",
                 "xms_az_nwperimid": [],
                 "upn": "john.doe@dummy.onmicrosoft.com",
-                "ipaddr": "147.161.0.0",
+                "ipaddr": "192.0.2.1",
                 "unique_name": "john.doe@dummy.onmicrosoft.com",
                 "amr": "pwd"
             }
         },
         "properties": {
-            "id": "https://testpermissionvault.vault.azure.net/keys/egzghfgrrg",
+            "id": "https://test.vault.azure.net/keys/egzghfgrrg",
             "clientInfo": "Mozilla/5.0 (X11; Ubuntu; Linux x86_64) Firefox/12.0",
             "httpStatusCode": 200,
-            "requestUri": "https://testpermissionvault.vault.azure.net/keys/egzghfgrrg?api-version=7.3",
+            "requestUri": "https://test.vault.azure.net/keys/egzghfgrrg?api-version=7.3",
             "isAccessPolicyMatch": true,
             "keyProperties": {
                 "type": "RSA",
@@ -354,7 +354,7 @@ In this section, you will find examples of raw logs as generated natively by the
             },
             "tlsVersion": "TLS1_3"
         },
-        "resourceId": "/SUBSCRIPTIONS/F40a1f1d-f2c6-4444-92a6-XXXXXXXXXX/RESOURCEGROUPS/INTEGRATION/PROVIDERS/MICROSOFT.KEYVAULT/VAULTS/TESTPERMISSIONVAULT",
+        "resourceId": "/SUBSCRIPTIONS/00000000-0000-0000-0000-0000XXXXXX/RESOURCEGROUPS/INTEGRATION/PROVIDERS/MICROSOFT.KEYVAULT/VAULTS/TEST",
         "operationVersion": "7.3",
         "resultSignature": "OK",
         "durationMs": "44"
@@ -374,7 +374,7 @@ In this section, you will find examples of raw logs as generated natively by the
         "resultType": "Success",
         "resultDescription": "A key with (name/id) egzghfgrrg was not found in this key vault. If you recently deleted this key you may be able to recover it using the correct recovery command. For help resolving this issue, please see https://go.microsoft.com/fwlink/?linkid=2125182",
         "correlationId": "afabe187-cad6-4ca1-9698-e4ed73479b7c",
-        "callerIpAddress": "147.161.0.0",
+        "callerIpAddress": "192.0.2.1",
         "identity": {
             "claim": {
                 "oid": "d4ba3e84-0444-4841-aaf7-XXXX",
@@ -383,20 +383,20 @@ In this section, you will find examples of raw logs as generated natively by the
                 "appidacr": "0",
                 "xms_az_nwperimid": [],
                 "upn": "john.doe@dummy.onmicrosoft.com",
-                "ipaddr": "147.161.0.0",
+                "ipaddr": "192.0.2.1",
                 "unique_name": "john.doe@dummy.onmicrosoft.com",
                 "amr": "pwd"
             }
         },
         "properties": {
-            "id": "https://testpermissionvault.vault.azure.net/keys/egzghfgrrg",
+            "id": "https://test.vault.azure.net/keys/egzghfgrrg",
             "clientInfo": "Mozilla/5.0 (X11; Ubuntu; Linux x86_64) Firefox/12.0",
             "httpStatusCode": 404,
-            "requestUri": "https://testpermissionvault.vault.azure.net/keys/egzghfgrrg?api-version=7.3&x-ms-include-der=true&_=1712126805788",
+            "requestUri": "https://test.vault.azure.net/keys/egzghfgrrg?api-version=7.3&x-ms-include-der=true&_=1712126805788",
             "isAccessPolicyMatch": true,
             "tlsVersion": "TLS1_3"
         },
-        "resourceId": "/SUBSCRIPTIONS/F40A1F1D-F2C6-4444-XXXX/RESOURCEGROUPS/INTEGRATION/PROVIDERS/MICROSOFT.KEYVAULT/VAULTS/TESTPERMISSIONVAULT",
+        "resourceId": "/SUBSCRIPTIONS/00000000-0000-0000-0000/RESOURCEGROUPS/INTEGRATION/PROVIDERS/MICROSOFT.KEYVAULT/VAULTS/TEST",
         "operationVersion": "7.3",
         "resultSignature": "Not Found",
         "durationMs": "22"
@@ -415,7 +415,7 @@ In this section, you will find examples of raw logs as generated natively by the
         "operationName": "KeyGet",
         "resultType": "Success",
         "correlationId": "425dd404-f29a-4e68-9b88-2c3643b4462e",
-        "callerIpAddress": "147.161.0.0",
+        "callerIpAddress": "192.0.2.1",
         "identity": {
             "claim": {
                 "oid": "d4ba3e84-0444-4841-aaf7-XXXXX",
@@ -424,16 +424,16 @@ In this section, you will find examples of raw logs as generated natively by the
                 "appidacr": "0",
                 "xms_az_nwperimid": [],
                 "upn": "john.doe@dummy.onmicrosoft.com",
-                "ipaddr": "147.161.0.0",
+                "ipaddr": "192.0.2.1",
                 "unique_name": "john.doe@dummy.onmicrosoft.com",
                 "amr": "pwd"
             }
         },
         "properties": {
-            "id": "https://testpermissionvault.vault.azure.net/keys/MyFirstKey",
+            "id": "https://test.vault.azure.net/keys/MyFirstKey",
             "clientInfo": "Mozilla/5.0 (X11; Ubuntu; Linux x86_64) Firefox/12.0",
             "httpStatusCode": 200,
-            "requestUri": "https://testpermissionvault.vault.azure.net/keys/MyFirstKey?api-version=7.3&x-ms-include-der=true&_=1712127259288",
+            "requestUri": "https://test.vault.azure.net/keys/MyFirstKey?api-version=7.3&x-ms-include-der=true&_=1712127259288",
             "isAccessPolicyMatch": true,
             "keyProperties": {
                 "type": "RSA",
@@ -443,7 +443,7 @@ In this section, you will find examples of raw logs as generated natively by the
             },
             "tlsVersion": "TLS1_3"
         },
-        "resourceId": "/SUBSCRIPTIONS/F40A1F1D-F2C6-4444-92A6-XXXXX/RESOURCEGROUPS/INTEGRATION/PROVIDERS/MICROSOFT.KEYVAULT/VAULTS/TESTPERMISSIONVAULT",
+        "resourceId": "/SUBSCRIPTIONS/00000000-0000-0000-0000-0000X/RESOURCEGROUPS/INTEGRATION/PROVIDERS/MICROSOFT.KEYVAULT/VAULTS/TEST",
         "operationVersion": "7.3",
         "resultSignature": "OK",
         "durationMs": "12"
@@ -462,7 +462,7 @@ In this section, you will find examples of raw logs as generated natively by the
         "operationName": "KeyList",
         "resultType": "Success",
         "correlationId": "e6f5733d-2c7d-4d66-94bb-7d77a434a44c",
-        "callerIpAddress": "147.161.0.0",
+        "callerIpAddress": "192.0.2.1",
         "identity": {
             "claim": {
                 "oid": "d4ba3e84-0444-4841-aaf7-XXXXXX",
@@ -471,7 +471,7 @@ In this section, you will find examples of raw logs as generated natively by the
                 "appidacr": "0",
                 "xms_az_nwperimid": [],
                 "upn": "john.doe@dummy.onmicrosoft.com",
-                "ipaddr": "147.161.0.0",
+                "ipaddr": "192.0.2.1",
                 "unique_name": "john.doe@dummy.onmicrosoft.com",
                 "amr": "pwd"
             }
@@ -479,11 +479,11 @@ In this section, you will find examples of raw logs as generated natively by the
         "properties": {
             "clientInfo": "Mozilla/5.0 (X11; Ubuntu; Linux x86_64) Firefox/12.0",
             "httpStatusCode": 200,
-            "requestUri": "https://testpermissionvault.vault.azure.net/keys?api-version=7.3&maxresults=25&_=1712126805807",
+            "requestUri": "https://test.vault.azure.net/keys?api-version=7.3&maxresults=25&_=1712126805807",
             "isAccessPolicyMatch": true,
             "tlsVersion": "TLS1_3"
         },
-        "resourceId": "/SUBSCRIPTIONS/F40a1f1d-f2c6-4444-92a6-XXXXXXXXXX/RESOURCEGROUPS/INTEGRATION/PROVIDERS/MICROSOFT.KEYVAULT/VAULTS/TESTPERMISSIONVAULT",
+        "resourceId": "/SUBSCRIPTIONS/00000000-0000-0000-0000-0000XXXXXX/RESOURCEGROUPS/INTEGRATION/PROVIDERS/MICROSOFT.KEYVAULT/VAULTS/TEST",
         "operationVersion": "7.3",
         "resultSignature": "OK",
         "durationMs": "57"
@@ -503,7 +503,7 @@ In this section, you will find examples of raw logs as generated natively by the
         "resultType": "Success",
         "resultDescription": "Caller is not authorized to perform action on resource.",
         "correlationId": "4f1a71d0-6490-49dd-a720-1fa8adfef495",
-        "callerIpAddress": "147.161.0.0",
+        "callerIpAddress": "192.0.2.1",
         "identity": {
             "claim": {
                 "oid": "d4ba3e84-0444-4841-aaf7-XXXXX",
@@ -512,7 +512,7 @@ In this section, you will find examples of raw logs as generated natively by the
                 "appidacr": "0",
                 "xms_az_nwperimid": [],
                 "upn": "john.doe@dummy.onmicrosoft.com",
-                "ipaddr": "147.161.0.0",
+                "ipaddr": "192.0.2.1",
                 "unique_name": "john.doe@dummy.onmicrosoft.com",
                 "amr": "pwd"
             }
@@ -524,7 +524,7 @@ In this section, you will find examples of raw logs as generated natively by the
             "isRbacAuthorized": false,
             "tlsVersion": "TLS1_3"
         },
-        "resourceId": "/SUBSCRIPTIONS/F40A1F1D-F2C6-4444-XXXX/RESOURCEGROUPS/INTEGRATION/PROVIDERS/MICROSOFT.KEYVAULT/VAULTS/KEYTESTINT",
+        "resourceId": "/SUBSCRIPTIONS/00000000-0000-0000-0000/RESOURCEGROUPS/INTEGRATION/PROVIDERS/MICROSOFT.KEYVAULT/VAULTS/KEYTESTINT",
         "operationVersion": "7.3",
         "resultSignature": "Forbidden",
         "durationMs": "22"
@@ -543,7 +543,7 @@ In this section, you will find examples of raw logs as generated natively by the
         "operationName": "KeyListDeleted",
         "resultType": "Success",
         "correlationId": "733c65c4-338c-4ef5-9d95-25ae18b46fda",
-        "callerIpAddress": "147.161.0.0",
+        "callerIpAddress": "192.0.2.1",
         "identity": {
             "claim": {
                 "oid": "d4ba3e84-0444-4841-aaf7-XXXXXX",
@@ -552,7 +552,7 @@ In this section, you will find examples of raw logs as generated natively by the
                 "appidacr": "0",
                 "xms_az_nwperimid": [],
                 "upn": "john.doe@dummy.onmicrosoft.com",
-                "ipaddr": "147.161.0.0",
+                "ipaddr": "192.0.2.1",
                 "unique_name": "john.doe@dummy.onmicrosoft.com",
                 "amr": "pwd"
             }
@@ -560,11 +560,11 @@ In this section, you will find examples of raw logs as generated natively by the
         "properties": {
             "clientInfo": "Mozilla/5.0 (X11; Ubuntu; Linux x86_64) Firefox/12.0",
             "httpStatusCode": 200,
-            "requestUri": "https://testpermissionvault.vault.azure.net/deletedkeys?api-version=7.0",
+            "requestUri": "https://test.vault.azure.net/deletedkeys?api-version=7.0",
             "isAccessPolicyMatch": true,
             "tlsVersion": "TLS1_3"
         },
-        "resourceId": "/SUBSCRIPTIONS/F40a1f1d-f2c6-4444-92a6-XXXXXXXXXX/RESOURCEGROUPS/INTEGRATION/PROVIDERS/MICROSOFT.KEYVAULT/VAULTS/TESTPERMISSIONVAULT",
+        "resourceId": "/SUBSCRIPTIONS/00000000-0000-0000-0000-0000XXXXXX/RESOURCEGROUPS/INTEGRATION/PROVIDERS/MICROSOFT.KEYVAULT/VAULTS/TEST",
         "operationVersion": "7.0",
         "resultSignature": "OK",
         "durationMs": "46"
@@ -583,7 +583,7 @@ In this section, you will find examples of raw logs as generated natively by the
         "operationName": "KeyListVersions",
         "resultType": "Success",
         "correlationId": "e8f90224-0296-424e-99ba-c5dd9870d362",
-        "callerIpAddress": "147.161.0.0",
+        "callerIpAddress": "192.0.2.1",
         "identity": {
             "claim": {
                 "oid": "d4ba3e84-0444-4841-aaf7-XXXXXX",
@@ -592,20 +592,20 @@ In this section, you will find examples of raw logs as generated natively by the
                 "appidacr": "0",
                 "xms_az_nwperimid": [],
                 "upn": "john.doe@dummy.onmicrosoft.com",
-                "ipaddr": "147.161.0.0",
+                "ipaddr": "192.0.2.1",
                 "unique_name": "john.doe@dummy.onmicrosoft.com",
                 "amr": "pwd"
             }
         },
         "properties": {
-            "id": "https://testpermissionvault.vault.azure.net/keys/egzghfgrrg",
+            "id": "https://test.vault.azure.net/keys/egzghfgrrg",
             "clientInfo": "Mozilla/5.0 (X11; Ubuntu; Linux x86_64) Firefox/12.0",
             "httpStatusCode": 200,
-            "requestUri": "https://testpermissionvault.vault.azure.net/keys/egzghfgrrg/versions?api-version=7.3&maxresults=25&_=1712127259287",
+            "requestUri": "https://test.vault.azure.net/keys/egzghfgrrg/versions?api-version=7.3&maxresults=25&_=1712127259287",
             "isAccessPolicyMatch": true,
             "tlsVersion": "TLS1_3"
         },
-        "resourceId": "/SUBSCRIPTIONS/F40a1f1d-f2c6-4444-92a6-XXXXXXXXXX/RESOURCEGROUPS/INTEGRATION/PROVIDERS/MICROSOFT.KEYVAULT/VAULTS/TESTPERMISSIONVAULT",
+        "resourceId": "/SUBSCRIPTIONS/00000000-0000-0000-0000-0000XXXXXX/RESOURCEGROUPS/INTEGRATION/PROVIDERS/MICROSOFT.KEYVAULT/VAULTS/TEST",
         "operationVersion": "7.3",
         "resultSignature": "OK",
         "durationMs": "18"
@@ -625,7 +625,7 @@ In this section, you will find examples of raw logs as generated natively by the
         "resultType": "Success",
         "resultDescription": "The user, group or application 'appid=3686488a-04fc-4d8a-b967-61f98ec41efe;oid=d4ba3e84-0444-4841-aaf7-XXXXXX;numgroups=2;iss=https://sts.windows.net/d91d59da-80cd-4224-baef-XXXXXXXX/' does not have keys purge permission on key vault 'testPermissionVault;location=francecentral'. For help resolving this issue, please see https://go.microsoft.com/fwlink/?linkid=2125287",
         "correlationId": "3cff8050-bd18-4acd-94ba-c6196ffa3ad4",
-        "callerIpAddress": "147.161.0.0",
+        "callerIpAddress": "192.0.2.1",
         "identity": {
             "claim": {
                 "oid": "d4ba3e84-0444-4841-aaf7-XXXXXX",
@@ -634,20 +634,20 @@ In this section, you will find examples of raw logs as generated natively by the
                 "appidacr": "0",
                 "xms_az_nwperimid": [],
                 "upn": "john.doe@dummy.onmicrosoft.com",
-                "ipaddr": "147.161.0.0",
+                "ipaddr": "192.0.2.1",
                 "unique_name": "john.doe@dummy.onmicrosoft.com",
                 "amr": "pwd"
             }
         },
         "properties": {
-            "id": "https://testpermissionvault.vault.azure.net/deletedkeys/MyFirstKey",
+            "id": "https://test.vault.azure.net/deletedkeys/MyFirstKey",
             "clientInfo": "Mozilla/5.0 (X11; Ubuntu; Linux x86_64) Firefox/12.0",
             "httpStatusCode": 403,
-            "requestUri": "https://testpermissionvault.vault.azure.net/deletedkeys/MyFirstKey?api-version=7.0",
+            "requestUri": "https://test.vault.azure.net/deletedkeys/MyFirstKey?api-version=7.0",
             "isAccessPolicyMatch": false,
             "tlsVersion": "TLS1_3"
         },
-        "resourceId": "/SUBSCRIPTIONS/F40a1f1d-f2c6-4444-92a6-XXXXXXXXXX/RESOURCEGROUPS/INTEGRATION/PROVIDERS/MICROSOFT.KEYVAULT/VAULTS/TESTPERMISSIONVAULT",
+        "resourceId": "/SUBSCRIPTIONS/00000000-0000-0000-0000-0000XXXXXX/RESOURCEGROUPS/INTEGRATION/PROVIDERS/MICROSOFT.KEYVAULT/VAULTS/TEST",
         "operationVersion": "7.0",
         "resultSignature": "Forbidden",
         "durationMs": "4"
@@ -667,7 +667,7 @@ In this section, you will find examples of raw logs as generated natively by the
         "resultType": "Success",
         "resultDescription": "The user, group or application 'appid=3686488a-04fc-4d8a-b967-XXXXXXX;oid=d4ba3e84-0444-4841-aaf7-XXXXX;numgroups=2;iss=https://sts.windows.net/d91d59da-80cd-4224-baef-10f72c103fc1/' does not have keys purge permission on key vault 'testPermissionVault;location=francecentral'. For help resolving this issue, please see https://go.microsoft.com/fwlink/?linkid=2125287",
         "correlationId": "3cff8050-bd18-4acd-94ba-c6196ffa3ad4",
-        "callerIpAddress": "147.161.0.0",
+        "callerIpAddress": "192.0.2.1",
         "identity": {
             "claim": {
                 "oid": "d4ba3e84-0444-4841-aaf7-XXXXX",
@@ -676,20 +676,20 @@ In this section, you will find examples of raw logs as generated natively by the
                 "appidacr": "0",
                 "xms_az_nwperimid": [],
                 "upn": "john.doe@dummy.onmicrosoft.com",
-                "ipaddr": "147.161.0.0",
+                "ipaddr": "192.0.2.1",
                 "unique_name": "john.doe@dummy.onmicrosoft.com",
                 "amr": "pwd"
             }
         },
         "properties": {
-            "id": "https://testpermissionvault.vault.azure.net/deletedkeys/MyFirstKey",
+            "id": "https://test.vault.azure.net/deletedkeys/MyFirstKey",
             "clientInfo": "Mozilla/5.0 (X11; Ubuntu; Linux x86_64) Firefox/12.0",
             "httpStatusCode": 403,
-            "requestUri": "https://testpermissionvault.vault.azure.net/deletedkeys/MyFirstKey?api-version=7.0",
+            "requestUri": "https://test.vault.azure.net/deletedkeys/MyFirstKey?api-version=7.0",
             "isAccessPolicyMatch": false,
             "tlsVersion": "TLS1_3"
         },
-        "resourceId": "/SUBSCRIPTIONS/F40A1F1D-F2C6-4444-92A6-XXXXX/RESOURCEGROUPS/INTEGRATION/PROVIDERS/MICROSOFT.KEYVAULT/VAULTS/TESTPERMISSIONVAULT",
+        "resourceId": "/SUBSCRIPTIONS/00000000-0000-0000-0000-0000X/RESOURCEGROUPS/INTEGRATION/PROVIDERS/MICROSOFT.KEYVAULT/VAULTS/TEST",
         "operationVersion": "7.0",
         "resultSignature": "Forbidden",
         "durationMs": "4"
@@ -708,7 +708,7 @@ In this section, you will find examples of raw logs as generated natively by the
         "operationName": "KeyUpdate",
         "resultType": "Success",
         "correlationId": "bbd1b29d-5b8b-4639-9980-XXXXX",
-        "callerIpAddress": "147.161.0.0",
+        "callerIpAddress": "192.0.2.1",
         "identity": {
             "claim": {
                 "oid": "d4ba3e84-0444-4841-aaf7-XXXXXXXXXXXX",
@@ -723,10 +723,10 @@ In this section, you will find examples of raw logs as generated natively by the
             }
         },
         "properties": {
-            "id": "https://myright3.vault.azure.net/keys/iiii/c0d4c7ec6efb4fbeaec16a3872519399",
+            "id": "https://test.vault.azure.net/keys/iiii/c0d4c7ec6efb4fbeaec16a3872519399",
             "clientInfo": "Mozilla/5.0 (X11; Ubuntu; Linux x86_64) Firefox/12.0",
             "httpStatusCode": 200,
-            "requestUri": "https://myright3.vault.azure.net/keys/iiii/c0d4c7ec6efb4fbeaec16a3872519399?api-version=7.3",
+            "requestUri": "https://test.vault.azure.net/keys/iiii/c0d4c7ec6efb4fbeaec16a3872519399?api-version=7.3",
             "isAccessPolicyMatch": true,
             "keyProperties": {
                 "type": "RSA",
@@ -744,7 +744,7 @@ In this section, you will find examples of raw logs as generated natively by the
             },
             "tlsVersion": "TLS1_3"
         },
-        "resourceId": "/SUBSCRIPTIONS/F40A1F1D-F2C6-4444-92A6-XXXX/RESOURCEGROUPS/INTEGRATION/PROVIDERS/MICROSOFT.KEYVAULT/VAULTS/MYRIGHT3",
+        "resourceId": "/SUBSCRIPTIONS/00000000-0000-0000-0000-0000/RESOURCEGROUPS/INTEGRATION/PROVIDERS/MICROSOFT.KEYVAULT/VAULTS/TEST",
         "operationVersion": "7.3",
         "resultSignature": "OK",
         "durationMs": "66"
@@ -763,7 +763,7 @@ In this section, you will find examples of raw logs as generated natively by the
         "operationName": "SecretBackup",
         "resultType": "Success",
         "correlationId": "1062c64b-12ce-4202-aa9f-c60599f19b29",
-        "callerIpAddress": "147.161.0.0",
+        "callerIpAddress": "192.0.2.1",
         "identity": {
             "claim": {
                 "oid": "d4ba3e84-0444-4841-aaf7-XXXXXX",
@@ -772,20 +772,20 @@ In this section, you will find examples of raw logs as generated natively by the
                 "appidacr": "0",
                 "xms_az_nwperimid": [],
                 "upn": "john.doe@dummy.onmicrosoft.com",
-                "ipaddr": "147.161.0.0",
+                "ipaddr": "192.0.2.1",
                 "unique_name": "john.doe@dummy.onmicrosoft.com",
                 "amr": "pwd"
             }
         },
         "properties": {
-            "id": "https://testpermissionvault.vault.azure.net/secrets/keykey",
+            "id": "https://test.vault.azure.net/secrets/keykey",
             "clientInfo": "Mozilla/5.0 (X11; Ubuntu; Linux x86_64) Firefox/12.0",
             "httpStatusCode": 200,
-            "requestUri": "https://testpermissionvault.vault.azure.net/secrets/keykey/backup?api-version=7.0",
+            "requestUri": "https://test.vault.azure.net/secrets/keykey/backup?api-version=7.0",
             "isAccessPolicyMatch": true,
             "tlsVersion": "TLS1_3"
         },
-        "resourceId": "/SUBSCRIPTIONS/F40a1f1d-f2c6-4444-92a6-XXXXXXXXXX/RESOURCEGROUPS/INTEGRATION/PROVIDERS/MICROSOFT.KEYVAULT/VAULTS/TESTPERMISSIONVAULT",
+        "resourceId": "/SUBSCRIPTIONS/00000000-0000-0000-0000-0000XXXXXX/RESOURCEGROUPS/INTEGRATION/PROVIDERS/MICROSOFT.KEYVAULT/VAULTS/TEST",
         "operationVersion": "7.0",
         "resultSignature": "OK",
         "durationMs": "43"
@@ -804,7 +804,7 @@ In this section, you will find examples of raw logs as generated natively by the
         "operationName": "SecretDelete",
         "resultType": "Success",
         "correlationId": "7c8262f7-6f52-4887-8eb2-fa32ec32409a",
-        "callerIpAddress": "147.161.0.0",
+        "callerIpAddress": "192.0.2.1",
         "identity": {
             "claim": {
                 "oid": "d4ba3e84-0444-4841-aaf7-XXXXXX",
@@ -813,20 +813,20 @@ In this section, you will find examples of raw logs as generated natively by the
                 "appidacr": "0",
                 "xms_az_nwperimid": [],
                 "upn": "john.doe@dummy.onmicrosoft.com",
-                "ipaddr": "147.161.0.0",
+                "ipaddr": "192.0.2.1",
                 "unique_name": "john.doe@dummy.onmicrosoft.com",
                 "amr": "pwd"
             }
         },
         "properties": {
-            "id": "https://testpermissionvault.vault.azure.net/secrets/keykey",
+            "id": "https://test.vault.azure.net/secrets/keykey",
             "clientInfo": "Mozilla/5.0 (X11; Ubuntu; Linux x86_64) Firefox/12.0",
             "httpStatusCode": 200,
-            "requestUri": "https://testpermissionvault.vault.azure.net/secrets/keykey?api-version=7.0",
+            "requestUri": "https://test.vault.azure.net/secrets/keykey?api-version=7.0",
             "isAccessPolicyMatch": true,
             "tlsVersion": "TLS1_3"
         },
-        "resourceId": "/SUBSCRIPTIONS/F40a1f1d-f2c6-4444-92a6-XXXXXXXXXX/RESOURCEGROUPS/INTEGRATION/PROVIDERS/MICROSOFT.KEYVAULT/VAULTS/TESTPERMISSIONVAULT",
+        "resourceId": "/SUBSCRIPTIONS/00000000-0000-0000-0000-0000XXXXXX/RESOURCEGROUPS/INTEGRATION/PROVIDERS/MICROSOFT.KEYVAULT/VAULTS/TEST",
         "operationVersion": "7.0",
         "resultSignature": "OK",
         "durationMs": "73"
@@ -846,7 +846,7 @@ In this section, you will find examples of raw logs as generated natively by the
         "resultType": "Success",
         "resultDescription": "A secret with (name/id) keykey was not found in this key vault. If you recently deleted this secret you may be able to recover it using the correct recovery command. For help resolving this issue, please see https://go.microsoft.com/fwlink/?linkid=2125182",
         "correlationId": "c86f2715-79c5-433f-937c-ed76ddde840c",
-        "callerIpAddress": "147.161.0.0",
+        "callerIpAddress": "192.0.2.1",
         "identity": {
             "claim": {
                 "oid": "d4ba3e84-0444-4841-aaf7-XXXXXXXX",
@@ -855,20 +855,20 @@ In this section, you will find examples of raw logs as generated natively by the
                 "appidacr": "0",
                 "xms_az_nwperimid": [],
                 "upn": "john.doe@dummy.onmicrosoft.com",
-                "ipaddr": "147.161.0.0",
+                "ipaddr": "192.0.2.1",
                 "unique_name": "john.doe@dummy.onmicrosoft.com",
                 "amr": "pwd"
             }
         },
         "properties": {
-            "id": "https://testpermissionvault.vault.azure.net/secrets/keykey",
+            "id": "https://test.vault.azure.net/secrets/keykey",
             "clientInfo": "Mozilla/5.0 (X11; Ubuntu; Linux x86_64) Firefox/12.0",
             "httpStatusCode": 404,
-            "requestUri": "https://testpermissionvault.vault.azure.net/secrets/keykey?api-version=7.0&_=1712126805801",
+            "requestUri": "https://test.vault.azure.net/secrets/keykey?api-version=7.0&_=1712126805801",
             "isAccessPolicyMatch": true,
             "tlsVersion": "TLS1_3"
         },
-        "resourceId": "/SUBSCRIPTIONS/F40a1f1d-f2c6-4444-92a6-XXXXXXXXXX/RESOURCEGROUPS/INTEGRATION/PROVIDERS/MICROSOFT.KEYVAULT/VAULTS/TESTPERMISSIONVAULT",
+        "resourceId": "/SUBSCRIPTIONS/00000000-0000-0000-0000-0000XXXXXX/RESOURCEGROUPS/INTEGRATION/PROVIDERS/MICROSOFT.KEYVAULT/VAULTS/TEST",
         "operationVersion": "7.0",
         "resultSignature": "Not Found",
         "durationMs": "183"
@@ -886,9 +886,9 @@ In this section, you will find examples of raw logs as generated natively by the
         "category": "AuditEvent",
         "operationName": "SecretGet",
         "resultType": "Success",
-        "resultDescription": "Caller is not authorized to perform action on resource.\nIf role assignments, deny assignments or role definitions were changed recently, please observe propagation time.\nCaller: appid=3686488a-04fc-4d8a-b967-XXXXX;oid=d4ba3e84-0444-4841-aaf7-XXXXX;iss=https://sts.windows.net/d91d59da-80cd-4224-baef-XXXXXXXX/\nAction: 'Microsoft.KeyVault/vaults/secrets/getSecret/action'\nResource: '/subscriptions/F40A1F1D-F2C6-4444-XXXX/resourcegroups/integration/providers/microsoft.keyvault/vaults/keytestint/secrets/a'\nAssignment: (not found)\nDenyAssignmentId: null\nDecisionReason: null \nVault: keyTestInt;location=francecentral",
+        "resultDescription": "Caller is not authorized to perform action on resource.\nIf role assignments, deny assignments or role definitions were changed recently, please observe propagation time.\nCaller: appid=3686488a-04fc-4d8a-b967-XXXXX;oid=d4ba3e84-0444-4841-aaf7-XXXXX;iss=https://sts.windows.net/d91d59da-80cd-4224-baef-XXXXXXXX/\nAction: 'Microsoft.KeyVault/vaults/secrets/getSecret/action'\nResource: '/subscriptions/00000000-0000-0000-0000/resourcegroups/integration/providers/microsoft.keyvault/vaults/keytestint/secrets/a'\nAssignment: (not found)\nDenyAssignmentId: null\nDecisionReason: null \nVault: keyTestInt;location=francecentral",
         "correlationId": "1b3aa393-f142-4329-8b1f-c5222119ae35",
-        "callerIpAddress": "147.161.0.0",
+        "callerIpAddress": "192.0.2.1",
         "identity": {
             "claim": {
                 "oid": "d4ba3e84-0444-4841-aaf7-XXXXX",
@@ -897,7 +897,7 @@ In this section, you will find examples of raw logs as generated natively by the
                 "appidacr": "0",
                 "xms_az_nwperimid": [],
                 "upn": "john.doe@dummy.onmicrosoft.com",
-                "ipaddr": "147.161.0.0",
+                "ipaddr": "192.0.2.1",
                 "unique_name": "john.doe@dummy.onmicrosoft.com",
                 "amr": "pwd"
             }
@@ -910,7 +910,7 @@ In this section, you will find examples of raw logs as generated natively by the
             "isRbacAuthorized": false,
             "tlsVersion": "TLS1_3"
         },
-        "resourceId": "/SUBSCRIPTIONS/F40A1F1D-F2C6-4444-XXXX/RESOURCEGROUPS/INTEGRATION/PROVIDERS/MICROSOFT.KEYVAULT/VAULTS/KEYTESTINT",
+        "resourceId": "/SUBSCRIPTIONS/00000000-0000-0000-0000/RESOURCEGROUPS/INTEGRATION/PROVIDERS/MICROSOFT.KEYVAULT/VAULTS/KEYTESTINT",
         "operationVersion": "7.0",
         "resultSignature": "Forbidden",
         "durationMs": "27"
@@ -929,7 +929,7 @@ In this section, you will find examples of raw logs as generated natively by the
         "operationName": "SecretList",
         "resultType": "Success",
         "correlationId": "58127e84-c72e-4f7c-9cd6-a68b8a5da547",
-        "callerIpAddress": "147.161.0.0",
+        "callerIpAddress": "192.0.2.1",
         "identity": {
             "claim": {
                 "oid": "d4ba3e84-0444-4841-aaf7-XXXXXX",
@@ -938,7 +938,7 @@ In this section, you will find examples of raw logs as generated natively by the
                 "appidacr": "0",
                 "xms_az_nwperimid": [],
                 "upn": "john.doe@dummy.onmicrosoft.com",
-                "ipaddr": "147.161.0.0",
+                "ipaddr": "192.0.2.1",
                 "unique_name": "john.doe@dummy.onmicrosoft.com",
                 "amr": "pwd"
             }
@@ -946,11 +946,11 @@ In this section, you will find examples of raw logs as generated natively by the
         "properties": {
             "clientInfo": "Mozilla/5.0 (X11; Ubuntu; Linux x86_64) Firefox/12.0",
             "httpStatusCode": 200,
-            "requestUri": "https://testpermissionvault.vault.azure.net/secrets?api-version=7.0&maxresults=25&_=1712127259280",
+            "requestUri": "https://test.vault.azure.net/secrets?api-version=7.0&maxresults=25&_=1712127259280",
             "isAccessPolicyMatch": true,
             "tlsVersion": "TLS1_3"
         },
-        "resourceId": "/SUBSCRIPTIONS/F40a1f1d-f2c6-4444-92a6-XXXXXXXXXX/RESOURCEGROUPS/INTEGRATION/PROVIDERS/MICROSOFT.KEYVAULT/VAULTS/TESTPERMISSIONVAULT",
+        "resourceId": "/SUBSCRIPTIONS/00000000-0000-0000-0000-0000XXXXXX/RESOURCEGROUPS/INTEGRATION/PROVIDERS/MICROSOFT.KEYVAULT/VAULTS/TEST",
         "operationVersion": "7.0",
         "resultSignature": "OK",
         "durationMs": "76"
@@ -969,7 +969,7 @@ In this section, you will find examples of raw logs as generated natively by the
         "operationName": "SecretListDeleted",
         "resultType": "Success",
         "correlationId": "d5f5868e-5280-41ba-a2e8-17bb3740ec1e",
-        "callerIpAddress": "147.161.0.0",
+        "callerIpAddress": "192.0.2.1",
         "identity": {
             "claim": {
                 "oid": "d4ba3e84-0444-4841-aaf7-XXXXXX",
@@ -978,7 +978,7 @@ In this section, you will find examples of raw logs as generated natively by the
                 "appidacr": "0",
                 "xms_az_nwperimid": [],
                 "upn": "john.doe@dummy.onmicrosoft.com",
-                "ipaddr": "147.161.0.0",
+                "ipaddr": "192.0.2.1",
                 "unique_name": "john.doe@dummy.onmicrosoft.com",
                 "amr": "pwd"
             }
@@ -986,11 +986,11 @@ In this section, you will find examples of raw logs as generated natively by the
         "properties": {
             "clientInfo": "Mozilla/5.0 (X11; Ubuntu; Linux x86_64) Firefox/12.0",
             "httpStatusCode": 200,
-            "requestUri": "https://testpermissionvault.vault.azure.net/deletedsecrets?api-version=7.0",
+            "requestUri": "https://test.vault.azure.net/deletedsecrets?api-version=7.0",
             "isAccessPolicyMatch": true,
             "tlsVersion": "TLS1_3"
         },
-        "resourceId": "/SUBSCRIPTIONS/F40a1f1d-f2c6-4444-92a6-XXXXXXXXXX/RESOURCEGROUPS/INTEGRATION/PROVIDERS/MICROSOFT.KEYVAULT/VAULTS/TESTPERMISSIONVAULT",
+        "resourceId": "/SUBSCRIPTIONS/00000000-0000-0000-0000-0000XXXXXX/RESOURCEGROUPS/INTEGRATION/PROVIDERS/MICROSOFT.KEYVAULT/VAULTS/TEST",
         "operationVersion": "7.0",
         "resultSignature": "OK",
         "durationMs": "30"
@@ -1010,7 +1010,7 @@ In this section, you will find examples of raw logs as generated natively by the
         "resultType": "Success",
         "resultDescription": "The user, group or application 'appid=3686488a-04fc-4d8a-b967-61f98ec41efe;oid=d4ba3e84-0444-4841-aaf7-XXXXXX;numgroups=2;iss=https://sts.windows.net/d91d59da-80cd-4224-baef-XXXXXXXX/' does not have secrets purge permission on key vault 'testPermissionVault;location=francecentral'. For help resolving this issue, please see https://go.microsoft.com/fwlink/?linkid=2125287",
         "correlationId": "524974e7-1a6f-4a01-aded-a0b846311986",
-        "callerIpAddress": "147.161.0.0",
+        "callerIpAddress": "192.0.2.1",
         "identity": {
             "claim": {
                 "oid": "d4ba3e84-0444-4841-aaf7-XXXXXX",
@@ -1019,20 +1019,20 @@ In this section, you will find examples of raw logs as generated natively by the
                 "appidacr": "0",
                 "xms_az_nwperimid": [],
                 "upn": "john.doe@dummy.onmicrosoft.com",
-                "ipaddr": "147.161.0.0",
+                "ipaddr": "192.0.2.1",
                 "unique_name": "john.doe@dummy.onmicrosoft.com",
                 "amr": "pwd"
             }
         },
         "properties": {
-            "id": "https://testpermissionvault.vault.azure.net/deletedsecrets/mysecret",
+            "id": "https://test.vault.azure.net/deletedsecrets/mysecret",
             "clientInfo": "Mozilla/5.0 (X11; Ubuntu; Linux x86_64) Firefox/12.0",
             "httpStatusCode": 403,
-            "requestUri": "https://testpermissionvault.vault.azure.net/deletedsecrets/mysecret?api-version=7.0",
+            "requestUri": "https://test.vault.azure.net/deletedsecrets/mysecret?api-version=7.0",
             "isAccessPolicyMatch": false,
             "tlsVersion": "TLS1_3"
         },
-        "resourceId": "/SUBSCRIPTIONS/F40a1f1d-f2c6-4444-92a6-XXXXXXXXXX/RESOURCEGROUPS/INTEGRATION/PROVIDERS/MICROSOFT.KEYVAULT/VAULTS/TESTPERMISSIONVAULT",
+        "resourceId": "/SUBSCRIPTIONS/00000000-0000-0000-0000-0000XXXXXX/RESOURCEGROUPS/INTEGRATION/PROVIDERS/MICROSOFT.KEYVAULT/VAULTS/TEST",
         "operationVersion": "7.0",
         "resultSignature": "Forbidden",
         "durationMs": "17"
@@ -1052,7 +1052,7 @@ In this section, you will find examples of raw logs as generated natively by the
         "resultType": "Success",
         "resultDescription": "The user, group or application 'appid=3686488a-04fc-4d8a-b967-XXXXXXX;oid=d4ba3e84-0444-4841-aaf7-XXXXX;numgroups=2;iss=https://sts.windows.net/d91d59da-80cd-4224-baef-10f72c103fc1/' does not have secrets purge permission on key vault 'testPermissionVault;location=francecentral'. For help resolving this issue, please see https://go.microsoft.com/fwlink/?linkid=2125287",
         "correlationId": "ef7f13ed-3382-4838-990f-5947bd778835",
-        "callerIpAddress": "147.161.0.0",
+        "callerIpAddress": "192.0.2.1",
         "identity": {
             "claim": {
                 "oid": "d4ba3e84-0444-4841-aaf7-XXXXX",
@@ -1061,20 +1061,20 @@ In this section, you will find examples of raw logs as generated natively by the
                 "appidacr": "0",
                 "xms_az_nwperimid": [],
                 "upn": "john.doe@dummy.onmicrosoft.com",
-                "ipaddr": "147.161.0.0",
+                "ipaddr": "192.0.2.1",
                 "unique_name": "john.doe@dummy.onmicrosoft.com",
                 "amr": "pwd"
             }
         },
         "properties": {
-            "id": "https://testpermissionvault.vault.azure.net/deletedsecrets/mysecret",
+            "id": "https://test.vault.azure.net/deletedsecrets/mysecret",
             "clientInfo": "Mozilla/5.0 (X11; Ubuntu; Linux x86_64) Firefox/12.0",
             "httpStatusCode": 403,
-            "requestUri": "https://testpermissionvault.vault.azure.net/deletedsecrets/mysecret?api-version=7.0",
+            "requestUri": "https://test.vault.azure.net/deletedsecrets/mysecret?api-version=7.0",
             "isAccessPolicyMatch": false,
             "tlsVersion": "TLS1_3"
         },
-        "resourceId": "/SUBSCRIPTIONS/F40A1F1D-F2C6-4444-92A6-XXXXX/RESOURCEGROUPS/INTEGRATION/PROVIDERS/MICROSOFT.KEYVAULT/VAULTS/TESTPERMISSIONVAULT",
+        "resourceId": "/SUBSCRIPTIONS/00000000-0000-0000-0000-0000X/RESOURCEGROUPS/INTEGRATION/PROVIDERS/MICROSOFT.KEYVAULT/VAULTS/TEST",
         "operationVersion": "7.0",
         "resultSignature": "Forbidden",
         "durationMs": "10"
@@ -1092,9 +1092,9 @@ In this section, you will find examples of raw logs as generated natively by the
         "category": "AuditEvent",
         "operationName": "SecretRestore",
         "resultType": "Success",
-        "resultDescription": "There was a conflict restoring the secret 'https://testpermissionvault.vault.azure.net/secrets/keykey/8fbb0accbfbe4ee4b025649ebabae465'. This can happen if either: a second secret with the same name was created after the first secret was deleted; thus trying to restore a secret whose name is already in use. To fix this, rename the second secret to something else so that the restore works. The second probable cause of this exception is when multiple operations are performed in parallel against the secret. To avoid this error, perform operations against a secret in a sequential manner.",
+        "resultDescription": "There was a conflict restoring the secret 'https://test.vault.azure.net/secrets/keykey/8fbb0accbfbe4ee4b025649ebabae465'. This can happen if either: a second secret with the same name was created after the first secret was deleted; thus trying to restore a secret whose name is already in use. To fix this, rename the second secret to something else so that the restore works. The second probable cause of this exception is when multiple operations are performed in parallel against the secret. To avoid this error, perform operations against a secret in a sequential manner.",
         "correlationId": "00f4eafb-43a6-412f-a908-fd20d5aef64c",
-        "callerIpAddress": "147.161.0.0",
+        "callerIpAddress": "192.0.2.1",
         "identity": {
             "claim": {
                 "oid": "d4ba3e84-0444-4841-aaf7-XXXXXX",
@@ -1103,20 +1103,20 @@ In this section, you will find examples of raw logs as generated natively by the
                 "appidacr": "0",
                 "xms_az_nwperimid": [],
                 "upn": "john.doe@dummy.onmicrosoft.com",
-                "ipaddr": "147.161.0.0",
+                "ipaddr": "192.0.2.1",
                 "unique_name": "john.doe@dummy.onmicrosoft.com",
                 "amr": "pwd"
             }
         },
         "properties": {
-            "id": "https://testpermissionvault.vault.azure.net/secrets/keykey",
+            "id": "https://test.vault.azure.net/secrets/keykey",
             "clientInfo": "Mozilla/5.0 (X11; Ubuntu; Linux x86_64) Firefox/12.0",
             "httpStatusCode": 409,
-            "requestUri": "https://testpermissionvault.vault.azure.net/secrets/restore?api-version=7.0",
+            "requestUri": "https://test.vault.azure.net/secrets/restore?api-version=7.0",
             "isAccessPolicyMatch": true,
             "tlsVersion": "TLS1_3"
         },
-        "resourceId": "/SUBSCRIPTIONS/F40a1f1d-f2c6-4444-92a6-XXXXXXXXXX/RESOURCEGROUPS/INTEGRATION/PROVIDERS/MICROSOFT.KEYVAULT/VAULTS/TESTPERMISSIONVAULT",
+        "resourceId": "/SUBSCRIPTIONS/00000000-0000-0000-0000-0000XXXXXX/RESOURCEGROUPS/INTEGRATION/PROVIDERS/MICROSOFT.KEYVAULT/VAULTS/TEST",
         "operationVersion": "7.0",
         "resultSignature": "Conflict",
         "durationMs": "63"
@@ -1135,7 +1135,7 @@ In this section, you will find examples of raw logs as generated natively by the
         "operationName": "SecretUpdate",
         "resultType": "Success",
         "correlationId": "0394c72d-e46d-4888-980a-434efc5bca3e",
-        "callerIpAddress": "147.161.0.0",
+        "callerIpAddress": "192.0.2.1",
         "identity": {
             "claim": {
                 "oid": "d4ba3e84-0444-4841-aaf7-XXXXXXXX",
@@ -1144,16 +1144,16 @@ In this section, you will find examples of raw logs as generated natively by the
                 "appidacr": "0",
                 "xms_az_nwperimid": [],
                 "upn": "john.doe@dummy.onmicrosoft.com",
-                "ipaddr": "147.161.0.0",
+                "ipaddr": "192.0.2.1",
                 "unique_name": "john.doe@dummy.onmicrosoft.com",
                 "amr": "pwd"
             }
         },
         "properties": {
-            "id": "https://testpermissionvault.vault.azure.net/secrets/keykey/8fbb0accbfbe4ee4b025649ebabae465",
+            "id": "https://test.vault.azure.net/secrets/keykey/8fbb0accbfbe4ee4b025649ebabae465",
             "clientInfo": "Mozilla/5.0 (X11; Ubuntu; Linux x86_64) Firefox/12.0",
             "httpStatusCode": 200,
-            "requestUri": "https://testpermissionvault.vault.azure.net/secrets/keykey/8fbb0accbfbe4ee4b025649ebabae465?api-version=7.0",
+            "requestUri": "https://test.vault.azure.net/secrets/keykey/8fbb0accbfbe4ee4b025649ebabae465?api-version=7.0",
             "isAccessPolicyMatch": true,
             "secretProperties": {
                 "attributes": {
@@ -1163,7 +1163,7 @@ In this section, you will find examples of raw logs as generated natively by the
             },
             "tlsVersion": "TLS1_3"
         },
-        "resourceId": "/SUBSCRIPTIONS/F40a1f1d-f2c6-4444-92a6-XXXXXXXXXX/RESOURCEGROUPS/INTEGRATION/PROVIDERS/MICROSOFT.KEYVAULT/VAULTS/TESTPERMISSIONVAULT",
+        "resourceId": "/SUBSCRIPTIONS/00000000-0000-0000-0000-0000XXXXXX/RESOURCEGROUPS/INTEGRATION/PROVIDERS/MICROSOFT.KEYVAULT/VAULTS/TEST",
         "operationVersion": "7.0",
         "resultSignature": "OK",
         "durationMs": "79"
@@ -1182,7 +1182,7 @@ In this section, you will find examples of raw logs as generated natively by the
         "operationName": "VaultGet",
         "resultType": "Success",
         "correlationId": "78d31457-b2b7-4da4-a76d-56bac62c1687",
-        "callerIpAddress": "147.161.0.0",
+        "callerIpAddress": "192.0.2.1",
         "identity": {
             "claim": {
                 "http://schemas.microsoft.com/identity/claims/objectidentifier": "d4ba3e84-0444-4841-aaf7-XXXXX",
@@ -1194,7 +1194,7 @@ In this section, you will find examples of raw logs as generated natively by the
         "properties": {
             "id": "https://keytestint.vault.azure.net/",
             "clientInfo": "Mozilla/5.0",
-            "requestUri": "https://management.azure.com/subscriptions/F40A1F1D-F2C6-4444-XXXX/resourceGroups/Integration/providers/Microsoft.KeyVault/vaults/keyTestInt?api-version=2023-08-01-preview",
+            "requestUri": "https://management.azure.com/subscriptions/00000000-0000-0000-0000/resourceGroups/Integration/providers/Microsoft.KeyVault/vaults/keyTestInt?api-version=2023-08-01-preview",
             "httpStatusCode": 200,
             "properties": {
                 "sku": {
@@ -1213,7 +1213,7 @@ In this section, you will find examples of raw logs as generated natively by the
                 "enablePurgeProtection": null
             }
         },
-        "resourceId": "/SUBSCRIPTIONS/F40A1F1D-F2C6-4444-XXXX/RESOURCEGROUPS/INTEGRATION/PROVIDERS/MICROSOFT.KEYVAULT/VAULTS/KEYTESTINT",
+        "resourceId": "/SUBSCRIPTIONS/00000000-0000-0000-0000/RESOURCEGROUPS/INTEGRATION/PROVIDERS/MICROSOFT.KEYVAULT/VAULTS/KEYTESTINT",
         "operationVersion": "2023-08-01-preview",
         "resultSignature": "OK",
         "durationMs": "16"
@@ -1242,7 +1242,7 @@ In this section, you will find examples of raw logs as generated natively by the
         "properties": {
             "id": "https://keytestint.vault.azure.net/",
             "clientInfo": "AzureResourceGraph.IngestionWorkerService.global/1.2.3.4",
-            "requestUri": "https://brazilsouth.management.azure.com/subscriptions/xxxxxxxx/resourceGroups/Integration/providers/Microsoft.KeyVault/vaults/keyTestInt?api-version=2023-07-01&MaskCMKEnabledProperties=true",
+            "requestUri": "https://redacted.management.azure.com/subscriptions/xxxxxxxx/resourceGroups/Integration/providers/Microsoft.KeyVault/vaults/keyTestInt?api-version=2023-07-01&MaskCMKEnabledProperties=true",
             "httpStatusCode": 200,
             "properties": {
                 "sku": {
@@ -1276,7 +1276,7 @@ In this section, you will find examples of raw logs as generated natively by the
     ```json
 	{
         "time": "2016-01-05T01:32:01.2691226Z",
-        "resourceId": "/SUBSCRIPTIONS/361DA5D4-A47A-4C79-AFDD-XXXXXXXXXXXX/RESOURCEGROUPS/CONTOSOGROUP/PROVIDERS/MICROSOFT.KEYVAULT/VAULTS/CONTOSOKEYVAULT",
+        "resourceId": "/SUBSCRIPTIONS/00000000-0000-0000-0000-0000/RESOURCEGROUPS/CONTOSOGROUP/PROVIDERS/MICROSOFT.KEYVAULT/VAULTS/CONTOSOKEYVAULT",
         "operationName": "VaultGet",
         "operationVersion": "2015-06-01",
         "category": "AuditEvent",
@@ -1284,7 +1284,7 @@ In this section, you will find examples of raw logs as generated natively by the
         "resultSignature": "OK",
         "resultDescription": "",
         "durationMs": "78",
-        "callerIpAddress": "104.40.82.76",
+        "callerIpAddress": "192.0.2.1",
         "correlationId": "",
         "identity": {
             "claim": {
@@ -1295,7 +1295,7 @@ In this section, you will find examples of raw logs as generated natively by the
         },
         "properties": {
             "clientInfo": "azure-resource-manager/2.0",
-            "requestUri": "https://control-prod-wus.vaultcore.azure.net/subscriptions/361da5d4-a47a-4c79-afdd-XXXXXXXXXXXX/resourcegroups/contosoresourcegroup/providers/Microsoft.KeyVault/vaults/contosokeyvault?api-version=2015-06-01",
+            "requestUri": "https://test.vaultcore.azure.net/subscriptions/00000000-0000-0000-0000-0000/resourcegroups/contosoresourcegroup/providers/Microsoft.KeyVault/vaults/contosokeyvault?api-version=2015-06-01",
             "id": "https://contosokeyvault.vault.azure.net/",
             "httpStatusCode": 200
         }
@@ -1310,7 +1310,7 @@ In this section, you will find examples of raw logs as generated natively by the
     ```json
 	{
         "time": "2016-01-05T01:32:01.2691226Z",
-        "resourceId": "/SUBSCRIPTIONS/361DA5D4-A47A-4C79-AFDD-XXXXXXXXXXXX/RESOURCEGROUPS/CONTOSOGROUP/PROVIDERS/MICROSOFT.KEYVAULT/VAULTS/CONTOSOKEYVAULT",
+        "resourceId": "/SUBSCRIPTIONS/00000000-0000-0000-0000-0000/RESOURCEGROUPS/CONTOSOGROUP/PROVIDERS/MICROSOFT.KEYVAULT/VAULTS/CONTOSOKEYVAULT",
         "operationName": "VaultGet",
         "operationVersion": "2015-06-01",
         "category": "AuditEvent",
@@ -1318,7 +1318,7 @@ In this section, you will find examples of raw logs as generated natively by the
         "resultSignature": "Forbidden",
         "resultDescription": "",
         "durationMs": "78",
-        "callerIpAddress": "104.40.82.76",
+        "callerIpAddress": "192.0.2.1",
         "correlationId": "",
         "identity": {
             "claim": {
@@ -1329,7 +1329,7 @@ In this section, you will find examples of raw logs as generated natively by the
         },
         "properties": {
             "clientInfo": "azure-resource-manager/2.0",
-            "requestUri": "https://control-prod-wus.vaultcore.azure.net/subscriptions/361da5d4-a47a-4c79-afdd-XXXXXXXXXXXX/resourcegroups/contosoresourcegroup/providers/Microsoft.KeyVault/vaults/contosokeyvault?api-version=2015-06-01",
+            "requestUri": "https://test.vaultcore.azure.net/subscriptions/00000000-0000-0000-0000-0000/resourcegroups/contosoresourcegroup/providers/Microsoft.KeyVault/vaults/contosokeyvault?api-version=2015-06-01",
             "id": "https://contosokeyvault.vault.azure.net/",
             "httpStatusCode": 200
         }
@@ -1401,7 +1401,7 @@ In this section, you will find examples of raw logs as generated natively by the
         "operationName": "VaultPatch",
         "resultType": "Success",
         "correlationId": "eb6f7f30-b6ae-4ba6-a6cf-fbe90d4d5121",
-        "callerIpAddress": "147.161.0.0",
+        "callerIpAddress": "192.0.2.1",
         "identity": {
             "claim": {
                 "http://schemas.microsoft.com/identity/claims/objectidentifier": "d4ba3e84-0444-4841-aaf7-XXXXXXXXXXXX",
@@ -1411,7 +1411,7 @@ In this section, you will find examples of raw logs as generated natively by the
             }
         },
         "properties": {
-            "id": "https://myright3.vault.azure.net/",
+            "id": "https://test.vault.azure.net/",
             "clientInfo": "Mozilla/5.0",
             "requestUri": "https://management.azure.com/subscriptions/f40a1f1d-f2c6-4444-92a6-XXXX/resourceGroups/Integration/providers/Microsoft.KeyVault/vaults/myright3?api-version=2023-08-01-preview",
             "httpStatusCode": 200,
@@ -1435,7 +1435,7 @@ In this section, you will find examples of raw logs as generated natively by the
                 "enablePurgeProtection": null
             }
         },
-        "resourceId": "/SUBSCRIPTIONS/F40A1F1D-F2C6-4444-92A6-XXXX/RESOURCEGROUPS/INTEGRATION/PROVIDERS/MICROSOFT.KEYVAULT/VAULTS/MYRIGHT3",
+        "resourceId": "/SUBSCRIPTIONS/00000000-0000-0000-0000-0000/RESOURCEGROUPS/INTEGRATION/PROVIDERS/MICROSOFT.KEYVAULT/VAULTS/TEST",
         "operationVersion": "2023-08-01-preview",
         "resultSignature": "OK",
         "durationMs": "78"
