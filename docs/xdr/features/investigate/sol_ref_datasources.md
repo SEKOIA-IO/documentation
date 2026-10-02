@@ -256,8 +256,13 @@ For example queries using intake_formats, see [Join examples](sol_query_examples
 | reviewed                  | Indicates if the asset has been reviewed                                                   |
 | atoms                     | List of related names/identifiers (e.g., hostname, IPs, etc.)                              |
 | tags                      | List of tags associated with the asset                                                     |
+| source                    | How the asset was created: `automatic` (discovered) or `manual` (created by a user)        |
+| connectors.uuid           | UUIDs of the asset connector configurations that reported the asset                        |
+| connectors.connector_uuid | UUIDs of the asset connector types that reported the asset                                 |
 
-For example queries using tags, see [Assets query examples](sol_query_examples.md#assets-query-examples).
+Sekoia Asset Discovery is listed in `connectors` like any other connector, with the configuration UUID `e0437ab0-5e38-4bd3-b922-c500644889c3` and no `connector_uuid`. So `not connectors.connector_uuid` keeps the assets that no configured asset connector reported.
+
+For example queries using tags or connectors, see [Assets query examples](sol_query_examples.md#assets-query-examples).
 
 ## asset_properties
 
