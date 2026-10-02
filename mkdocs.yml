@@ -277,6 +277,7 @@ nav:
       - Discover Points of Interest: xdr/features/detect/points_of_interest.md
       - Check Endpoint Hygiene: xdr/features/modules/reveal_hygiene.md
       - Leverage Vulnerability Enrichment: xdr/features/modules/reveal_vulnerabilities.md
+      - Discover installed Applications status: xdr/features/modules/reveal_applications.md
       - Rely on Security Controls: xdr/features/modules/reveal_security_controls.md
   - Settings:
     - Subscriptions:
