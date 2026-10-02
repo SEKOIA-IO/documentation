@@ -63,7 +63,7 @@ Collect your Tenant ID from your [Azure Portal](https://portal.azure.com/#view/M
 
 Go to your Sekoia.io [Intakes page](https://app.sekoia.io/operations/intakes), and follow these steps:
 
-1. Click `+ Intake` button to create a new one
+1. Click `+ Intake` button to create a new one.
 2. Choose `Microsoft Defender XDR (Graph API)`, give it a name and choose the relevant Entity
 3. Edit the intake configuration:
     - Type the `Application (client) ID` in the `client id` field
