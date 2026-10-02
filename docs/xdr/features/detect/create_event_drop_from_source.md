@@ -2,6 +2,9 @@
 
 You can create an Event Drop detection rule directly from an intake or an asset, without starting from a blank rule in the catalog. The rule creation panel opens with the Event Drop pattern selected and the SOL pattern pre-filled with a condition on the source, so you only set the schedule and create the rule.
 
+!!! note "Early Access"
+    This feature is currently in Early Access and is only available for Beta testers. Sekoia.io plans to roll out this functionality to all environments soon.
+    
 ## Prerequisites
 
 - You have permissions to create detection rules.
