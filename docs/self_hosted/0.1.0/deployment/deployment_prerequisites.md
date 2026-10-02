@@ -61,6 +61,13 @@ To rename a node before the installation, run:
 hostnamectl set-hostname <NEW_HOSTNAME>
 ```
 
+### Air-gapped deployments
+
+In air-gapped environments, nodes cannot download packages during the installation. Install the following packages on every compute node before you start:
+
+- `lvm2`: required for the K3s installation.
+- `gettext-base`: required for the Helm installation.
+
 ### GPU nodes (optional)
 
 AI features require dedicated GPU nodes. GPU nodes are optional for the MVP release.
