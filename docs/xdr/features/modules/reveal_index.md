@@ -28,6 +28,7 @@ Security teams investigate in two directions. Reactive investigations start from
 | [Endpoint Hygiene](/xdr/features/modules/reveal_hygiene.md) | Shows firewall and disk encryption status for host assets |
 | [Vulnerability enrichment](/xdr/features/modules/reveal_vulnerabilities.md) | Lists known CVE exposures affecting an asset, aggregated from connected scanners |
 | [Security controls](/xdr/features/modules/reveal_security_controls.md) | Shows which detection and protection technologies cover an asset and where gaps exist |
+| [Application discovery](/xdr/features/modules/reveal_applications.md) | Lists software installed on an asset and maps each application to the CVEs that affect it |
 | [Attack Path Visualization](/xdr/features/investigate/attack_path_visualization.md) | Maps relationships between assets to help analysts assess lateral movement risk and blast radius |
  
 ## How Reveal fits into your workflows
