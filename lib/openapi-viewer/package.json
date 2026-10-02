@@ -15,7 +15,7 @@
     "codemirror": "^5.49.2",
     "dompurify": "^3.2.1",
     "marked": "^15.0.2",
-    "moment": "^2.30.1",
+    "moment": "^2.31.0",
     "vue": "^3.2.41",
     "vue-router": "^4.1.5",
     "vue-tippy": "^6.5.0"
