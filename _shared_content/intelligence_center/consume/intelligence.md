@@ -10,7 +10,7 @@ Use the Intelligence page to search Sekoia’s database for objects and observab
 
     You can search for an object name, report title, domain, IP address, hash, observable value, or other indexed content.
 
-![Intelligence-search](intelligence_search.png){: style="max-width:100%"}
+![Intelligence-search](/assets/intelligence/intelligence_search.png){: style="max-width:100%"}
 
 ## Run a search
 
