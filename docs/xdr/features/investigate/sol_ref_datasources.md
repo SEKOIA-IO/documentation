@@ -22,6 +22,8 @@
 | [asset_applications](#asset_applications) | Software and applications installed on assets | Application discovery, software inventory, unsigned binary detection. Note: Part of the Reveal plan |
 | [asset_vulnerabilities](#asset_vulnerabilities) | CVE-based vulnerabilities associated with assets, enriched from NVD | Vulnerability management, risk prioritization, patch tracking. Note: Part of the Reveal plan |
 | [asset_poi](#asset_poi) | Points of interest detected on assets (UEBA, notable activity) | Threat hunting, behavioral analysis, MITRE ATT&CK mapping. Note: Part of the Reveal plan |
+| [asset_risk_scores](#asset_risk_scores) | Current risk score for each asset | Current risk reporting and prioritization |
+| [asset_risk_score_history](#asset_risk_score_history) | Events that affected an asset risk score | Risk trajectory and score-driver analysis |
 | [rule_definitions](#rule_definitions) | Detection rule definitions (Sigma, CTI, Anomaly...) | Rules coverage reporting, audit of detection catalog |
 | [rule_instances](#rule_instances) | Instances of detection rules per community | Monitor enabled/disabled rules, compliance reporting |
 
@@ -428,6 +430,148 @@ Use this data source to surface suspicious activity, map behavioral patterns to 
     asset_poi
     | aggregate count() by mitre_attack_phase
     | sort by count desc
+    ```
+
+
+## asset_risk_scores
+
+*This data source is part of the Reveal plan.*
+
+The `asset_risk_scores` data source contains the current risk score for each asset. It contains one row per asset, and `asset_uuid` is unique across the platform.
+
+Sekoia rewrites the row each time it recomputes the score. This data source therefore represents the current state only. Use `asset_risk_score_history` to analyze the events that affected the score over time.
+
+These data sources are already scoped to the communities available to the user through the associated assets. To filter results for a specific community, use a lookup on the `assets` data source and filter on `community_uuid`.
+
+The score is computed from the two sub-scores below:
+
+- `exposure_score` measures persistent exposure from open vulnerabilities and hygiene issues. It is capped at 40.
+- `recent_activity_score` measures recent alerts, cases and points of interest. Its value decreases over time and is capped at 40.
+
+Their sum forms `base_score`. A factor derived from the asset criticality is then applied to the base score.
+
+The calculation is expressed as follows:
+
+```text
+base_score = exposure_score + recent_activity_score
+final_score = round(min(100, base_score × criticality_factor))
+criticality_adjustment = final_score - base_score
+```
+
+The criticality factor increases linearly within each criticality band:
+
+| Criticality value | Criticality band | Factor |
+| --- | --- | --- |
+| 0 | Not set | 1.00 |
+| 1 to 24 | Low | 0.80 to 1.00 |
+| 25 to 49 | High | 1.05 to 1.12 |
+| 50 to 74 | Severe | 1.13 to 1.22 |
+| 75 to 100 | Critical | 1.23 to 1.35 |
+
+The risk bands displayed in the Sekoia interface are:
+
+| Band | Score range |
+| --- | --- |
+| Low | 0 to 24 |
+| Moderate | 25 to 49 |
+| High | 50 to 74 |
+| Critical | 75 to 100 |
+
+| **Field** | **Description** |
+| --- | --- |
+| `uuid` | Unique identifier of the score record |
+| `asset_uuid` | Unique identifier of the asset |
+| `exposure_score` | Persistent risk sub-score based on open vulnerabilities and hygiene issues, such as a disabled firewall or an unencrypted disk. Capped at 40 |
+| `recent_activity_score` | Time-decaying risk sub-score based on recent alerts, cases and points of interest. Capped at 40 |
+| `base_score` | Sum of `exposure_score` and `recent_activity_score`, before the criticality factor is applied |
+| `criticality_value` | Criticality of the asset at the time of computation, from 0 to 100. A value of 0 means that no criticality is set |
+| `criticality_adjustment` | Difference between `final_score` and `base_score`, calculated after rounding. It represents the points added or removed by the criticality factor |
+| `final_score` | Current asset risk score, from 0 to 100. It is calculated by applying the cap before rounding to the nearest integer |
+| `last_updated` | Date and time when the score was last recomputed |
+
+## asset_risk_score_history
+
+*This data source is part of the Reveal plan.*
+
+The `asset_risk_score_history` data source records the events that affected an asset risk score. It feeds the risk trajectory displayed in the asset timeline.
+
+Each row represents one event and that event's individual contribution. The `contribution` field is not the asset's aggregate risk score.
+
+History entries and points of interest are retained for 90 days. For `hygiene` and `criticality` events, the latest entry older than 90 days is retained for each asset and event type because the risk score engine uses it as a baseline for future calculations.
+
+The `final_score` field is the score recalculated at the entry's `event_date`, immediately after the event. It is populated during the next score recomputation and can therefore remain empty for less than one hour while the recomputation is queued. It does not represent the asset's current score.
+
+| **Field** | **Description** |
+| --- | --- |
+| `id` | Sequential identifier of the history entry |
+| `asset_uuid` | Unique identifier of the asset |
+| `type` | Type of event. Possible values are `alert`, `case`, `poi`, `vulnerability`, `hygiene` and `criticality` |
+| `title` | Human-readable title of the event, such as `Alert created`, `Firewall disabled` or `Criticality changed to high` |
+| `event_date` | Date and time when the event occurred |
+| `contribution` | Contribution of the event to the score. It is expressed as points for a `delta` contribution or as a factor for a `multiplier` contribution |
+| `contribution_type` | Type of contribution. `delta` adds or removes points from a sub-score. `multiplier` applies a criticality factor to the base score |
+| `level` | Severity or criticality level of the event. For alerts and cases, possible values are `informational`, `low`, `medium`, `high` and `critical`. For vulnerabilities, possible values are `low`, `medium`, `high` and `critical`. For criticality events, possible values are `low`, `high`, `severe` and `critical`. This field is empty for hygiene and POI entries |
+| `criticality` | New criticality of the asset, from 0 to 100. Set only for `criticality` entries |
+| `previous_criticality` | Criticality of the asset before the change, from 0 to 100. Set only for `criticality` entries |
+| `final_score` | Risk score recalculated at `event_date`, immediately after the event. It can be empty until the next score recomputation and does not represent the current score |
+| `event_uuid` | UUID of the source alert, case or point of interest. Empty for hygiene, vulnerability and criticality entries |
+| `created_at` | Date and time when the history row was written |
+
+## rule_definitions
+
+The **rule_definitions** data source provides the list of detection rule definitions available in your catalog, including Sekoia-managed and custom rules.
+
+It allows you to audit your detection coverage, report on rule types and origins, and cross-reference with rule instances to understand what is deployed in your communities.
+
+The `format_uuid` property can be joined with the [intake_formats](#intake_formats) data source to identify the integration a rule targets.
+
+| **Property**              | **Description**                                                                            |
+|---------------------------|--------------------------------------------------------------------------------------------|
+| uuid                      | A unique identifier for the rule definition.                                               |
+| name                      | The name of the detection rule.                                                            |
+| community_uuid            | A unique identifier for the community related to the rule definition. Empty for Sekoia-managed rules available to all communities. |
+| source                    | The origin of the rule (e.g., `SEKOIA`, `Custom`).                                         |
+| type                      | The type of rule (e.g., `sigma`, `cti`, `anomaly`).                                        |
+| format_uuid               | A unique identifier for the intake format the rule targets. Only filled for Integration rules, i.e., rules written for a specific integration tool such as Microsoft Sentinel. |
+| created_at                | The date and time when the rule definition was created.                                    |
+| created_by                | The user or system that created the rule definition.                                       |
+| created_by_type           | The type of entity that created the rule definition (e.g., avatar, application).           |
+| updated_at                | The date and time when the rule definition was last updated.                               |
+| updated_by                | The user or system that last updated the rule definition.                                  |
+| updated_by_type           | The type of entity that last updated the rule definition.                                  |
+
+## rule_instances
+
+The **rule_instances** data source provides the list of rule instances per community, i.e., the actual deployment state of each detection rule.
+
+It can be joined with `rule_definitions` to produce reports on which rules are enabled or disabled, by type and origin.
+
+| **Property**              | **Description**                                                                            |
+|---------------------------|--------------------------------------------------------------------------------------------|
+| uuid                      | A unique identifier for the rule instance.                                                 |
+| rule_definition_uuid      | UUID of the related rule definition (used for `lookup` joins).                             |
+| community_uuid            | A unique identifier for the community where the rule instance is applied.                  |
+| enabled                   | Whether the rule is currently enabled (`true` / `false`).                                  |
+| created_at                | The date and time when the rule instance was created.                                      |
+| created_by                | The user or system that created the rule instance.                                         |
+| created_by_type           | The type of entity that created the rule instance (e.g., avatar, application).             |
+| updated_at                | The date and time when the rule instance was last updated.                                 |
+| updated_by                | The user or system that last updated the rule instance.                                    |
+| updated_by_type           | The type of entity that last updated the rule instance.                                    |
+
+??? example "Breakdown of detection rules by source and type, with enabled rules count"
+
+    The following query generates a breakdown of detection rules by source and type, with the count of enabled rules per category. It is useful for monthly client reporting or coverage monitoring:
+
+    ```
+    rule_definitions
+    | lookup rule_instances on uuid == rule_definition_uuid into rule
+    | aggregate
+        rules_count = count(),
+        enabled_rules_count = count(iff(rule.enabled == True, True, null))
+      by source = coalesce(source, "Custom"), type
+    | order by source, type
+    | select source, type, rules_count, enabled_rules_count
     ```
 
 ## Related articles
