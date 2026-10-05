@@ -81,13 +81,13 @@ After Control D confirms activation:
 
 Raw messages arriving on the intake are not sufficient proof: the fields above must be populated, which shows that the event was parsed by the Control D DNS format.
 
-{!_shared_content/operations_center/integrations/generated/aa41faca-ae2c-487a-b8a0-7035e5dc1441_sample.md!}
+{!_shared_content/operations_center/integrations/generated/42d6254d-ab93-4ed5-b966-00a5a0486f11_sample.md!}
 
 {!_shared_content/integration/detection_section.md!}
 
-{!_shared_content/operations_center/detection/generated/suggested_rules_aa41faca-ae2c-487a-b8a0-7035e5dc1441_do_not_edit_manually.md!}
+{!_shared_content/operations_center/detection/generated/suggested_rules_42d6254d-ab93-4ed5-b966-00a5a0486f11_do_not_edit_manually.md!}
 
-{!_shared_content/operations_center/integrations/generated/aa41faca-ae2c-487a-b8a0-7035e5dc1441.md!}
+{!_shared_content/operations_center/integrations/generated/42d6254d-ab93-4ed5-b966-00a5a0486f11.md!}
 
 ## Troubleshooting
 
