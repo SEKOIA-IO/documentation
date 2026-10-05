@@ -1,7 +1,7 @@
 # Secure forwarder inputs with TLS
 
-The Sekoia.io Forwarder encrypts traffic between the forwarder and Sekoia with TLS by default. You can also enable TLS between a log source and a specific forwarder input by configuring a certificate and setting the intake protocol to `tls`.
-
+**The Sekoia.io Forwarder encrypts traffic between the forwarder and Sekoia with TLS by default. You can also enable TLS between a log source and a specific forwarder input by configuring a certificate and setting the intake protocol to `tls`.
+**
 ## Prerequisites
 
 Before you start, make sure that:
