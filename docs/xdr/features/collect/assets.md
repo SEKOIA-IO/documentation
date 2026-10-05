@@ -43,6 +43,7 @@ This value contributes to the [urgency score of alerts](/xdr/features/investigat
 
 
 ### Asset risk score
+_This feature is part of the Reveal plan._
 
 The asset risk score indicates the current level of security risk associated with an asset. It combines persistent exposure and recent activity, then adjusts the result according to the asset's criticality.
 
