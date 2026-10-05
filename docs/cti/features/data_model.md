@@ -10,7 +10,7 @@ Objects represent the structural building blocks of Sekoia's intelligence knowle
 
 | Type | Definition |
 | :---: | :--- |
-| ![Attack Pattern](</assets/intelligence/icons/Size=24px, Name=attack-pattern.png>)<br>**Attack Pattern** | A specific technique or behavior an adversary uses to achieve a tactical goal during an attack (for example, exploiting a public-facing application). Sekoia maps each Attack Pattern to recognized TTP (tactics, techniques and procedures) frameworks such as [MITRE ATT&CK](https://attack.mitre.org/) and the Cyber Kill Chain, making it ready to use for behavior-based detection. |
+| ![Attack Pattern](</assets/intelligence/icons/Size=24px, Name=attack-pattern.png>)<br>**Attack Pattern** | A specific technique or behavior an adversary uses to achieve a tactical goal (for example, exploiting a public-facing application). Sekoia maps each Attack Pattern to recognized TTP (tactics, techniques and procedures) frameworks such as [MITRE ATT&CK](https://attack.mitre.org/) and the Cyber Kill Chain, making it ready to use for behavior-based detection. |
 | ![Campaign](</assets/intelligence/icons/Size=24px, Name=campaign.png>)<br>**Campaign** | A set of malicious activities or coordinated attacks conducted over a defined period of time to achieve a specific objective, usually impacting specific industries, regions, or assets. A Campaign ties together the malware, infrastructure, and TTPs used in that particular wave of attacks, distinguishing it from the intrusion set's activity as a whole. |
 | ![Course of Action](</assets/intelligence/icons/Size=24px, Name=courses-of-actions.png>)<br>**Course of Action** | A recommended measure that could be taken in regard to a threat: a remediation, mitigation, or defensive action (for example, patching a vulnerability). |
 | ![Identity](</assets/intelligence/icons/Size=24px, Name=identity.png>)<br>**Identity** | An individual, organization, group, or class of entities, such as an industry sector (for example, the finance sector). In Sekoia, an Identity serves two roles: it can represent a victim or target of an attack, or a source that produces intelligence (Sekoia itself is represented as an Identity). |
@@ -60,7 +60,7 @@ Observables are the raw technical artifacts collected from investigations, sandb
 | --- | --- | --- |
 | **What it is** | A raw technical artifact | An evidence of malicious activity, built on Observable(s) and enriched with context |
 | **Inherently malicious?** | No, for example, [google.com](http://google.com) is a valid, benign observable | Yes, always tied to a specific threat |
-| **Comes with** | Optional tags for context | Confidence score, validity period, and a Kill Chain phase |
+| **Comes with** | Optional tags for context | A confidence score, a validity period, and a Kill Chain phase |
 | **Exported in CTI feeds?** | No | Yes |
 | **Triggers real-time alerts in Sekoia?** | Not directly, only via tag-based detection rules | Yes, including retro-hunting across historical logs, bounded by its validity period and log retention |
 
