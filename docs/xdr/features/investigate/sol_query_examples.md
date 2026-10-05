@@ -744,6 +744,89 @@
     | 27.997688794 | Zscaler      |
     | 27.989695219 | Zscaler ZIA  |
 
+## Asset applications query examples
+
+!!! note
+    Removed applications stay in `asset_applications` with `deleted_at` set. Add `isnull(deleted_at)` to query installed applications only.
+
+### Count assets with unsigned applications
+
+=== "Query"
+
+    ``` shell
+    asset_applications
+    | where signed == false and isnull(deleted_at)
+    | aggregate count_distinct(asset_uuid)
+    ```
+
+This query counts the assets with at least one unsigned application installed.
+
+### Top 20 most widespread applications
+
+=== "Query"
+
+    ``` shell
+    asset_applications
+    | where isnull(deleted_at)
+    | aggregate asset_count = count_distinct(asset_uuid) by name, version
+    | top 20 by asset_count
+    ```
+
+This query returns the 20 applications and versions installed on the most assets.
+
+### Versions of an application across assets
+
+=== "Query"
+
+    ``` shell
+    asset_applications
+    | where name == "Google Chrome" and isnull(deleted_at)
+    | aggregate asset_count = count_distinct(asset_uuid) by version
+    | order by asset_count desc
+    ```
+
+This query shows how many assets run each version of an application, to spot outdated versions.
+
+### Top 20 publishers
+
+=== "Query"
+
+    ``` shell
+    asset_applications
+    | where isnull(deleted_at)
+    | aggregate asset_count = count_distinct(asset_uuid) by publisher
+    | top 20 by asset_count
+    ```
+
+This query returns the 20 publishers whose applications are installed on the most assets.
+
+### Applications recently seen for the first time
+
+=== "Query"
+
+    ``` shell
+    asset_applications
+    | where created_at > ago(7d) and isnull(deleted_at)
+    | aggregate asset_count = count_distinct(asset_uuid) by name, publisher
+    | top 20 by asset_count
+    ```
+
+This query returns the applications first recorded during the last seven days. `created_at` is the date Sekoia first saw the application, use `install_date` for the date reported by the asset.
+
+### Applications removed during the last 7 days
+
+=== "Query"
+
+    ``` shell
+    asset_applications
+    | where deleted_at > ago(7d)
+    | lookup assets on asset_uuid == uuid
+    | select asset.name, name, version, deleted_at
+    | order by deleted_at desc
+    ```
+
+This query lists the applications removed from assets during the last seven days, with the asset name.
+
 ## Related articles
 
 ### Getting Started & Overview

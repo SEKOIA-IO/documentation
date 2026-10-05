@@ -302,6 +302,8 @@ The **asset_applications** data source lists software and applications installed
 
 Use this data source to build software inventories, detect unsigned binaries, and identify applications with known vulnerabilities via their CPE identifier.
 
+Applications reported by the Sekoia agent are refreshed at each inventory. When the agent keeps reporting an asset but no longer lists an application for 14 days, the application is considered removed and `deleted_at` is set. An application reported again is restored and its `deleted_at` is emptied. An agent that stops reporting, for example on a machine turned off, leaves its last inventory unchanged.
+
 | **Property**      | **Description**                                                                                   |
 |-------------------|---------------------------------------------------------------------------------------------------|
 | uuid              | Unique identifier of the application record                                                       |
@@ -309,7 +311,7 @@ Use this data source to build software inventories, detect unsigned binaries, an
 | asset_uuid        | Unique identifier of the asset                                                                    |
 | name              | Application name                                                                                  |
 | version           | Application version                                                                               |
-| author            | Vendor or author of the application                                                               |
+| publisher         | Vendor or publisher of the application                                                            |
 | filename          | Executable filename                                                                               |
 | install_date      | Date the application was installed                                                                |
 | install_path      | Installation path on the asset                                                                    |
@@ -324,7 +326,7 @@ Use this data source to build software inventories, detect unsigned binaries, an
 | architecture      | CPU architecture                                                                                  |
 | created_at        | Timestamp when this application was first recorded                                                |
 | updated_at        | Last update timestamp                                                                             |
-| deleted_at        | Timestamp when the application was removed. Applications are soft-deleted and remain in the data source after removal. Filter on `isnull(deleted_at)` to query active applications only. |
+| deleted_at        | Timestamp when the application was considered removed from the asset. Removed applications remain in the data source. Filter on `isnull(deleted_at)` to query installed applications only. |
 
 ??? example "Count unsigned applications across assets"
 
