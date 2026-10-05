@@ -61,7 +61,7 @@ To configure the Clavister cOS to forward logs using the CLI, follow these steps
 
 #### Web interface
 
-To configure the Clavister cOS to forward logs using the web interface, follow these steps:
+To configure the Clavister cOS to forward logs using the web interface, you can follow these steps:
 
 1. Log into the interface
 2. Go to `System` > `Device` > `Log Receivers` > `Add` > `Syslog Receiver`
