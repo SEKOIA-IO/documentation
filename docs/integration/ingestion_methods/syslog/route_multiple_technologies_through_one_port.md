@@ -266,6 +266,16 @@ sudo docker compose exec rsyslog tail -f /tmp/debug-paloalto.log
 
     The file is stored inside the container, is not persistent, and continues to consume disk space until you remove the action.
 
+!!! tip "Use Forwarder debug logs"
+    For a regular intake declared in `intakes.yaml`, temporarily add `debug: True` to the intake configuration. Then inspect the container logs:
+
+    ````bash
+    sudo docker compose logs -f
+    ````
+
+    The debug output includes `[Input INTAKE_KEY]` and `[Output INTAKE_KEY]` messages. Use these messages to confirm that the Forwarder receives and forwards events.
+    For a shared port managed through `extended_conf`, keep the temporary file output described below to verify that the routing rule matches the expected source.
+
 ### The container does not start
 
 Check the rsyslog output:
