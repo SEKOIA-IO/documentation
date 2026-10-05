@@ -104,6 +104,14 @@ In this section, you will find examples of raw logs as generated natively by the
 
 
 
+=== "test_event_nwc23464_harmonized_mapping"
+
+    ```
+	id=firewall time="2026-09-22 07:38:14" pri=6 fw=203.0.113.26 vpn=ISA8000V-CID ivs=Default Network user=test.user@example.org realm="Realm_TEST_Integration" roles="Role_TEST_Integration" sessionID="4b8c853c05" proto= src=198.51.100.111 dst= dstname= type=vpn op= arg="" result= sent= rcvd= agent="Pulse-Secure/22.8.1.31437 (Windows 11) Pulse/22.8.1.31437" duration= msg="NWC23464: VPN Tunneling: Session started for user  (session: sid6bece5ef81d18db9daf58b957c3883a35729ce200000000) with IPv4 address 192.0.2.40, hostname HOST-TEST"
+    ```
+
+
+
 === "test_event_nwc23508"
 
     ```
