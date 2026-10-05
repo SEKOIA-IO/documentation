@@ -25,6 +25,13 @@ Fields you can use to narrow down your events search are listed [here](https://d
 
 It is possible to further restrict the scope of your events search by using filters. Filters are combined together and with the search query with a logical AND.
 
+!!! note
+    There is one exception: multiple equality (`=`) filters on the **dialect**
+    field (`sekoiaio.intake.dialect`) are combined with a logical `OR`. This
+    lets you show events from technology A or technology B in the same search.
+    The dialect filters are combined with the rest of your filters and query
+    using `AND`.
+
 You can easily add filters by using the icon buttons provided when hovering over a value inside a `Smart Description` or an event's `Details`:
 
 - Use the `Filter for value` button to only see events with this value
@@ -54,6 +61,33 @@ Each filter is added as a badge below the `Search Bar`. A filter can be removed 
 * Temporarily disable or re-enable a filter
 
 To clear current filters, you can use the `Clear all` button at the end of the filters.
+
+### Filter by dialect
+
+Use the **All dialects** dropdown above the event list to filter events by the
+technologies, or dialects, available in the selected community. You do not need
+to know an intake key, intake UUID, or the events query language.
+
+![All dialects filter](/assets/xdr/events-dialects-filter.png){: style="max-width:100%"}
+
+The dropdown includes a search field to help you find a dialect. Select one or
+more dialects:
+
+- Each selection adds a filter badge below the search bar.
+- When you select multiple dialects, the search returns events matching any of
+  them. The equality filters on the dialect field are combined with a logical
+  `OR`.
+- Selecting a dialect includes events from all intakes associated with that
+  dialect.
+
+The filter badges created from the dropdown work like other filter badges. You
+can edit, invert, temporarily disable, re-enable, or remove them. To remove all
+filters, click **Clear all**.
+
+!!! note
+    In a Managed Security Service Provider (MSSP) context, the dialect list
+    follows the selected community scope. When you select several child
+    communities, the dropdown displays a consolidated list for that scope.
 
 ### Save search query
 
@@ -124,7 +158,7 @@ You can select a date range by clicking on the histogram and dragging the cursor
 The columns by default are:
 
 - `Timestamp`: Event date
-- `Event.dialect`: Type of intake that sent the event
+- `Event.dialect`: Type of intake that sent the event. To filter on one or more technologies by name, use the [All dialects filter](#filter-by-dialect).
 - `Description`: Smart description with clickable links formatted by Sekoia.io to show the most important elements and make them easily accessible, such as IP address, type or entity
 
 !!! note
@@ -294,3 +328,10 @@ You can create anomaly detection rules directly from this view.
 If you select `count` as aggregation method, a `Create new rule` button shows up next to the fields and the Rule Creation panel opens up with detection patterns automatically set to Anomaly, and with your events’ query and the chosen aggregation method.
 
 Learn more about Anomaly Detection rules in [this section](https://docs.sekoia.com/xdr/features/detect/anomaly/).
+
+## Related articles
+
+- [Querying events](/xdr/features/investigate/querying_events.md): Learn about the fields available for event searches and queries.
+- [Events query language](/xdr/features/investigate/events_query_language.md): Learn how to write queries for event searches.
+- [Case details](/xdr/features/investigate/case_details.md): Review events associated with a case.
+- [Alert details](/xdr/features/investigate/alert_details.md): Review events that triggered an alert.
