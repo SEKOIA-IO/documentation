@@ -68,7 +68,7 @@ Use the **All dialects** dropdown above the event list to filter events by the
 technologies, or dialects, available in the selected community. You do not need
 to know an intake key, intake UUID, or the events query language.
 
-![All dialects filter](/assets/xdr/events-dialects-filter.png){: style="max-width:100%"}
+![All dialects filter](/assets/dialect_filter.png){: style="max-width:100%"}
 
 The dropdown includes a search field to help you find a dialect. Select one or
 more dialects:
