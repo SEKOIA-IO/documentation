@@ -1,6 +1,6 @@
 # Data model
 
-The Sekoia Intelligence platform models all Cyber Threat Intelligence (CTI) using STIX 2.1 (Structured Threat Information eXpression), the OASIS standard for describing and exchanging threat intelligence. Sekoia is an active member of the OASIS CTI Technical Committee.
+The Sekoia Intelligence platform models all Cyber Threat Intelligence (CTI) using [STIX 2.1](https://docs.oasis-open.org/cti/stix/v2.1/os/stix-v2.1-os.html) (Structured Threat Information eXpression), which is the OASIS standard for describing and exchanging threat intelligence. Sekoia is an active member of the OASIS CTI Technical Committee.
 
 ## Objects
 
@@ -10,18 +10,18 @@ Objects represent the structural building blocks of Sekoia's intelligence knowle
 
 | Type | Definition |
 | :---: | :--- |
-| ![Attack Pattern](</assets/intelligence/icons/Size=24px, Name=attack-pattern.png>)<br>**Attack Pattern** | A description of a specific technique or behavior an adversary uses to achieve a tactical goal during an attack (for example, exploiting a public-facing application). Attack Patterns in Sekoia are aligned with recognized frameworks such as MITRE ATT&CK and the Cyber Kill Chain, so they can be used directly to drive behavior-based detection. |
-| ![Campaign](</assets/intelligence/icons/Size=24px, Name=campaign.png>)<br>**Campaign** | A set of malicious activities or coordinated attacks conducted over a defined period, usually impacting specific industries, regions, or assets. A Campaign ties together the malware, infrastructure, and TTPs used in that particular wave of attacks, distinguishing it from the intrusion set's activity as a whole. |
+| ![Attack Pattern](</assets/intelligence/icons/Size=24px, Name=attack-pattern.png>)<br>**Attack Pattern** | A specific technique or behavior an adversary uses to achieve a tactical goal during an attack (for example, exploiting a public-facing application). Sekoia maps each Attack Pattern to recognized TTP (tactics, techniques and procedures) frameworks such as [MITRE ATT&CK](https://attack.mitre.org/) and the Cyber Kill Chain, making it ready to use for behavior-based detection. |
+| ![Campaign](</assets/intelligence/icons/Size=24px, Name=campaign.png>)<br>**Campaign** | A set of malicious activities or coordinated attacks conducted over a defined period of time to achieve a specific objective, usually impacting specific industries, regions, or assets. A Campaign ties together the malware, infrastructure, and TTPs used in that particular wave of attacks, distinguishing it from the intrusion set's activity as a whole. |
 | ![Course of Action](</assets/intelligence/icons/Size=24px, Name=courses-of-actions.png>)<br>**Course of Action** | A recommended measure that could be taken in regard to a threat: a remediation, mitigation, or defensive action (for example, patching a vulnerability). |
-| ![Identity](</assets/intelligence/icons/Size=24px, Name=identity.png>)<br>**Identity** | An organization, group, or class of actors, including sectors of activity (for example, the finance sector), victims of an attack, internal or external sources that produce intelligence (Sekoia itself is represented as an Identity). |
-| ![Indicator](</assets/intelligence/icons/Size=24px, Name=indicator.png>)<br>**Indicator** | A pattern that indicates suspicious or malicious activity, built on top of one or more Observables. Unlike a raw Observable, an Indicator is always contextualized: it carries a validity period, a confidence score, and a link to the threat it relates to (malware, campaign, intrusion set, *etc.*). Indicators are the objects exported through Sekoia's CTI feeds to trigger detection. |
-| ![Infrastructure](</assets/intelligence/icons/Size=24px, Name=infrastructure.png>)<br>**Infrastructure** | The systems, software services, and virtual or physical resources used to support an operation, for example, Command-and-Control (C2) servers, proxies, or hosting used by an adversary. |
-| ![Intrusion Set](</assets/intelligence/icons/Size=24px, Name=intrusion set.png>)<br>**Intrusion Set** | A structured set of adversarial behaviors, tools, and resources believed to be orchestrated by a single organization, pursuing one or multiple goals over time. An Intrusion Set is broader than a single Campaign, representing the persistent activity of an attacker group. Intrusion Set entries within Sekoia intelligence are attributed in a vendor-agnostic way and list known aliases used across the industry. |
-| ![Report](</assets/intelligence/icons/Size=24px, Name=report.png>)<br>**Report** | A collection of threat intelligence covering a specific topic, for example, the profile of a threat actor, an intrusion, a malware family, or an attack technique. Beyond its narrative text, a Report contains structured references to all the STIX Objects it discusses. |
-| ![Location](</assets/intelligence/icons/Size=24px, Name=location.png>)<br>**Location** | A geographic area (a country, region, or part of the world) associated with a threat's origin or with the victims it targets. Locations are used to contextualize Threat Actors, Campaigns, and other objects based on geographic targeting or provenance. |
-| ![Threat Actor](</assets/intelligence/icons/Size=24px, Name=threat actor.png>)<br>**Threat Actor** | A specific individual, group, or organization, including nation-state sponsors, believed to be acting with malicious intent, capability, and the specific intent to execute cyberattacks. |
-| ![Vulnerability](</assets/intelligence/icons/Size=24px, Name=vulnerability.png>)<br>**Vulnerability** | A flaw, bug, or misconfiguration in software or hardware that can be directly exploited by an adversary to compromise a system or network, for example, a CVE. Vulnerabilities connect to the threats that exploit them. |
-| ![Malware](</assets/intelligence/icons/Size=24px, Name=malware.png>)<br>**Malware** | A malicious code designed to compromise the confidentiality, integrity, or availability of a system: ransomware, spyware, backdoors, rootkits, *etc.* A malware is contextualized with its Kill Chain and MITRE ATT&CK mapping, related intrusion Sets, Campaigns, and exportable Indicators. |
+| ![Identity](</assets/intelligence/icons/Size=24px, Name=identity.png>)<br>**Identity** | An individual, organization, group, or class of entities, such as an industry sector (for example, the finance sector). In Sekoia, an Identity serves two roles: it can represent a victim or target of an attack, or a source that produces intelligence (Sekoia itself is represented as an Identity). |
+| ![Indicator](</assets/intelligence/icons/Size=24px, Name=indicator.png>)<br>**Indicator** | A technical artifact that indicates suspicious or malicious activity, built on top of one or more Observables. Unlike a raw Observable, an Indicator is always contextualized: it carries a validity period, a confidence score, and a link to the threat it relates to (malware, campaign, intrusion set, etc.). Indicators are the objects exported through Sekoia's CTI feeds to trigger detection. |
+| ![Infrastructure](</assets/intelligence/icons/Size=24px, Name=infrastructure.png>)<br>**Infrastructure** | The systems, software services, and virtual or physical resources used to support an operation (for example, Command-and-Control (C2) servers, proxies, or hosting used by an adversary). |
+| ![Intrusion Set](</assets/intelligence/icons/Size=24px, Name=intrusion set.png>)<br>**Intrusion Set** | A structured set of adversarial behaviors, tools, and resources pursuing one or multiple goals over time. An Intrusion Set is broader than a single Campaign, representing the persistent activity of an attacker group. Intrusion Set entries within Sekoia intelligence are named in a vendor-agnostic way and list the known aliases used across the industry. |
+| ![Report](</assets/intelligence/icons/Size=24px, Name=report.png>)<br>**Report** | A finished intelligence product (most often an investigation or an analysis) focused on one or several topics (for example, the profile of a threat actor, an intrusion, a malware family, or an attack technique). Beyond its narrative text, a Report contains structured references to all the STIX Objects it covers. |
+| ![Location](</assets/intelligence/icons/Size=24px, Name=location.png>)<br>**Location** | A geographic area (a country, region, or part of the world) indicating the origin of a threat or the location of its victims. Locations add geographic context to Intrusion Sets, Campaigns, and other objects based on their provenance or targeting. |
+| ![Threat Actor](</assets/intelligence/icons/Size=24px, Name=threat actor.png>)<br>**Threat Actor** | A specific individual, group, or organization (including nation-state agencies that commission cyber operations) believed to act with malicious intent and the capability to execute cyberattacks. Unlike an Intrusion Set, which describes observed activity, a Threat Actor often refers to the entity behind it. |
+| ![Vulnerability](</assets/intelligence/icons/Size=24px, Name=vulnerability.png>)<br>**Vulnerability** | A flaw, bug, or misconfiguration in software or hardware that an adversary can directly exploit to compromise a system or network (for example, a CVE). In Sekoia, vulnerabilities are linked to the threats known to exploit them. |
+| ![Malware](</assets/intelligence/icons/Size=24px, Name=malware.png>)<br>**Malware** | A malicious code designed to compromise the confidentiality, integrity, or availability of a system, such as ransomware, spyware, backdoors, rootkits, etc. A malware is contextualized with its Kill Chain and MITRE ATT&CK mapping, related intrusion Sets, Campaigns, and exportable Indicators. |
 | ![Tool](</assets/intelligence/icons/Size=24px, Name=tool.png>)<br>**Tool** | A legitimate software (utility or dual-use program not inherently malicious) that adversaries repurpose to carry out attacks, such as remote administration tools used for lateral movement. A tool's presence isn't malicious by itself, but its use in a given context can be. |
 
 ## Observables
@@ -50,15 +50,15 @@ Observables are the raw technical artifacts collected from investigations, sandb
 | ![Domain name](</assets/intelligence/icons/Size=24px, Name=domain-name.png>)<br>**Domain name** | A human-readable network location string, mapped to one or more IP addresses. Frequently monitored to track malicious infrastructure or phishing sites. |
 | ![Organization](</assets/intelligence/icons/Size=24px, Name=organizations.png>)<br>**Organization** | The name of a company, association, or other entity, tracked as an observable identity. |
 | ![User account](</assets/intelligence/icons/Size=24px, Name=user account.png>)<br>**User account** | An instance of a user account on any system. Monitored to detect credential stuffing, lateral movement, or unauthorized administrative access. |
-| ![Crypto wallet](</assets/intelligence/icons/Size=24px, Name=crypto wallet.png>)<br>**Crypto wallet** | Coming soon |
+| ![Crypto wallet](</assets/intelligence/icons/Size=24px, Name=crypto wallet.png>)<br>**Crypto wallet** | TO DO (currently adding the “Crypto wallet” observable type in the platform) |
 
-<!-- TODO: Confirm whether this article should include the complete list of observable tags and the link to the observable tag documentation. -->
+<!-- TODO: Confirm the complete Observable tag list. See [Observables](/cti/features/consume/observables.md). -->
 
 ## Indicator versus Observable
 
-|  | Observable | Indicator |
+|  | Observable | Indicator (IOC) |
 | --- | --- | --- |
-| **What it is** | A raw technical artifact | A pattern built on Observable(s), wrapped with context |
+| **What it is** | A raw technical artifact | An evidence of malicious activity, built on Observable(s) and enriched with context |
 | **Inherently malicious?** | No, for example, [google.com](http://google.com) is a valid, benign observable | Yes, always tied to a specific threat |
 | **Comes with** | Optional tags for context | Confidence score, validity period, and a Kill Chain phase |
 | **Exported in CTI feeds?** | No | Yes |
@@ -114,6 +114,14 @@ Next to the source, represented by the `Identity` object type, the `confidence` 
 | D | Not usually reliable | Significant doubt about authenticity, trustworthiness, or competency but has provided valid information in the past |
 | E | Unreliable | Lacking in authenticity, trustworthiness, and competency; history of invalid information |
 | F | Reliability cannot be judged | No basis exists for evaluating the reliability of the source |
+
+## Sources
+
+- [STIX 2.1 specification](https://docs.oasis-open.org/cti/stix/v2.1/os/stix-v2.1-os.html)
+- [STIX walkthrough](https://oasis-open.github.io/cti-documentation/stix/walkthrough)
+- [STIX examples](https://oasis-open.github.io/cti-documentation/stix/examples)
+- [Observables](/cti/features/consume/observables.md): Overview of observable data in Sekoia.
+- [OpenCTI documentation](https://docs.opencti.io/latest/usage/exploring-threats/): Additional information about exploring threat intelligence.
 
 ## Related articles
 
