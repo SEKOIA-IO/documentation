@@ -38,7 +38,7 @@ The vulnerability list shows the following columns:
 | CVE ID | Common Vulnerabilities and Exposures identifier — the unique identifier assigned to a publicly known vulnerability. Linked to Sekoia CTI for additional threat intelligence context |
 | Title | Short title of the vulnerability |
 | Severity (CVSS) | Common Vulnerability Scoring System score, which rates the technical severity of the vulnerability (CVSS v4) |
-| Exploitation | Known exploitation status for the vulnerability, when available |
+| Exploitation | Whether the CVE is flagged as **Known exploited** (`Yes` / `No`), when this status is available. Use the **Known exploited** filter to narrow the list |
 | CWE | Common Weakness Enumeration — the underlying software flaw behind the vulnerability |
 | Unified risk score | Normalized score from 1 to 100 (see [Unified risk score](#unified-risk-score)) |
 
@@ -62,15 +62,19 @@ Select a vulnerability row to expand it and view the full detail. Reveal combine
 |---|---|
 | Closed by | Who or what closed the vulnerability, or `Not remediated yet` when it is still open |
 | Description | Full CVE description |
+| Known Exploited Vulnerability name | Name of the vulnerability in the CISA KEV catalog. Shown only when the CVE is flagged as known exploited |
+| Known Exploited Vulnerability catalog date | Date the vulnerability was added to the CISA KEV catalog |
+| Known Exploited Vulnerability CISA due date | Date by which CISA requires the vulnerability to be remediated |
+| Known Exploited Vulnerability required action | Remediation action required by CISA for the vulnerability |
 | CVSS version | CVSS version used to score the vulnerability (for example, `3.1`) |
 | CVSS assessment source | Identifier of the source that provided the CVSS assessment |
-| CVSS vector | Full CVSS vector string (for example, `CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N`), with a copy action |
+| CVSS vector | Full CVSS vector string (for example, `CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H`), with a copy action |
 | Attack vector | Context in which exploitation is possible (for example, `Network`) |
 | Attack complexity | Conditions beyond the attacker's control required to exploit (for example, `High`) |
 | Privileges required | Privileges an attacker needs before exploitation (for example, `None`) |
 | User interaction | Whether a separate user must participate for exploitation (for example, `Required`) |
 | Source | Authority that published the CVE record (for example, the vendor CNA) |
-| References | External links categorized with tags such as `Release Notes`, `Vendor Advisory`, `Exploit`, `Issue Tracking`, and `Third Party Advisory` |
+| References | External links categorized with tags such as `Release Notes`, `Vendor Advisory`, `Exploit`, `Issue Tracking`, `Third Party Advisory`, and `US Government Resource` (for example, a link to the CISA Known Exploited Vulnerabilities catalog) |
 | Detection source | Connector or capability that detected the vulnerability on the asset (for example, Sekoia Asset Discovery) |
 | Confirmed by | Source that confirmed the vulnerability on the asset |
 | First seen | First time the vulnerability was observed on the asset |
@@ -81,6 +85,10 @@ Select a vulnerability row to expand it and view the full detail. Reveal combine
 !!! note "NIST NVD enrichment"
 
     The CVSS vector, attack vector, attack complexity, privileges required, user interaction, references, and description are sourced from the NIST National Vulnerability Database. This context helps analysts assess exploitability without leaving Sekoia.
+
+!!! note "CISA Known Exploited Vulnerabilities (KEV)"
+
+    When a CVE is listed in the [CISA Known Exploited Vulnerabilities catalog](https://www.cisa.gov/known-exploited-vulnerabilities-catalog), Reveal flags it as **Known exploited** in the Exploitation column and adds the KEV name, catalog date, CISA due date, and required action to the detail. Use the **Known exploited** filter to focus on these actively exploited vulnerabilities.
 
 > 📸 [SCREENSHOT SUGGESTION: Vulnerabilities tab with one CVE row expanded, showing the description, CVSS vector, attack vector, privileges required, references, and detection source fields. | ALT TEXT: Expanded vulnerability row showing NIST NVD enrichment fields including CVSS vector and references.]
 
