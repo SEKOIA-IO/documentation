@@ -80,6 +80,8 @@ The tab contains two sections:
 
 The **Events** tab lists the events that triggered the alert, using the same display as the [Events page](/xdr/features/investigate/events.md).
 
+You can also use the **All dialects** dropdown to filter the alert events by one or more technologies. For details, see [Filter by dialect](/xdr/features/investigate/events.md#filter-by-dialect).
+
 ![events](/assets/operation_center/alerts/alert-events.png){: style="max-width:100%"}
 
 When interacting with an individual field value, you can:
