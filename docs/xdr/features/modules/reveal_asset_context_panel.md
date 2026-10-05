@@ -63,8 +63,8 @@ The **Vulnerabilities** tab lists known CVE exposures affecting the asset, aggre
 | Status | Open, Closed: Accepted risk, Closed: False positive, or Closed: Remediated |
 | CVE ID | Unique identifier of the publicly known vulnerability, linked to Sekoia CTI |
 | Title | Short title of the vulnerability |
-| Severity (CVSS) | CVSS score rating the technical severity (CVSS v4) |
-| Exploitation | Known exploitation status for the vulnerability, when available |
+| Severity (CVSS) | CVSS score rating the technical severity (CVSS v3.1) |
+| Exploitation | Whether the CVE is listed in the CISA Known Exploited Vulnerabilities (KEV) catalog (shown as Known exploited), when available. Filterable via the **Known exploited** filter |
 | CWE | Weakness category (Common Weakness Enumeration) |
 | Unified risk score | Normalized score from 1 to 100 (see below) |
 
@@ -82,6 +82,8 @@ For the full field reference, score bands, and status workflow, see [Vulnerabili
 
 ![Vulnerabilities tab example](https://github.com/user-attachments/assets/300d5842-379d-4c09-9827-331217ac4357)
 
+
+## Applications tab
 
 ## Applications tab
 
@@ -111,8 +113,6 @@ Select an application row to expand it and view the install path, installation d
 The **CVE Count** badge is a shortcut into the Vulnerabilities tab: select it (the **Click to see vulnerabilities** tooltip appears on hover) to open the CVEs affecting that application.
 
 For the full reference, see [Application discovery](/xdr/features/modules/reveal_applications.md).
-
-> 📸 [SCREENSHOT SUGGESTION: Applications tab (Beta) showing the Vulnerable / Installed counters and the application list with CVE Count badges. | ALT TEXT: Applications tab listing installed applications with CVE counts.]
 
 
 ## Security controls tab
