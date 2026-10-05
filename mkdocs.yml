@@ -88,6 +88,7 @@ nav:
     - Consume:
       - Intelligence: cti/features/consume/intelligence.md
       - Observables: cti/features/consume/observables.md
+      - Investigate an object: cti/features/consume/investigate_an_object.md
       - Telemetry: cti/features/consume/telemetry.md
       - Feeds:
         - Understand the feeds: cti/features/consume/feeds.md
