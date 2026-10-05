@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="90"
+   height="89.999954"
+   viewBox="0 0 23.8125 23.812489"
+   version="1.1"
+   id="svg12"
+   inkscape:version="1.2.2 (b0a8486541, 2022-12-01)"
+   sodipodi:docname="valhalla-logo-master.svg"
+   inkscape:export-filename="Exports/poc-logo-text.svg"
+   inkscape:export-xdpi="106.66666"
+   inkscape:export-ydpi="106.66666"
+   inkscape:label="Logo Symbol"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview14"
+     pagecolor="#191919"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="true"
+     inkscape:document-units="px"
+     showgrid="false"
+     inkscape:zoom="1.08"
+     inkscape:cx="170.83333"
+     inkscape:cy="30.555556"
+     inkscape:window-width="2560"
+     inkscape:window-height="1371"
+     inkscape:window-x="1920"
+     inkscape:window-y="32"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer9"
+     showguides="true"
+     inkscape:guide-bbox="true"
+     inkscape:snap-bbox="true"
+     inkscape:bbox-paths="true"
+     inkscape:bbox-nodes="true"
+     inkscape:snap-bbox-edge-midpoints="true"
+     inkscape:snap-bbox-midpoints="true"
+     inkscape:object-paths="true"
+     inkscape:snap-intersection-paths="true"
+     inkscape:snap-smooth-nodes="true"
+     inkscape:snap-midpoints="true"
+     inkscape:snap-object-midpoints="true"
+     inkscape:snap-center="true"
+     inkscape:snap-text-baseline="true"
+     inkscape:snap-page="true"
+     inkscape:lockguides="true"
+     inkscape:snap-grids="true"
+     inkscape:snap-global="true"
+     inkscape:snap-to-guides="true"
+     inkscape:snap-others="true"
+     inkscape:object-nodes="true"
+     inkscape:snap-nodes="true"
+     units="px"
+     height="1210px"
+     inkscape:showpageshadow="true"
+     showborder="true"
+     borderlayer="false"
+     inkscape:deskcolor="#191919">
+    <inkscape:grid
+       type="xygrid"
+       id="grid143" />
+    <sodipodi:guide
+       position="23.8125,23.812501"
+       orientation="1,0"
+       id="guide1691"
+       inkscape:locked="true" />
+    <sodipodi:guide
+       position="29.1042,11.906267"
+       orientation="1,0"
+       id="guide1693"
+       inkscape:locked="true" />
+    <sodipodi:guide
+       position="11.906374,11.906262"
+       orientation="1,0"
+       id="guide12795"
+       inkscape:locked="true" />
+    <sodipodi:guide
+       position="11.906374,11.906262"
+       orientation="0,-1"
+       id="guide15432"
+       inkscape:locked="true" />
+    <sodipodi:guide
+       position="7.9379998,15.875001"
+       orientation="1,0"
+       id="guide9299"
+       inkscape:locked="true" />
+    <sodipodi:guide
+       position="7.9379996,-2.8187637"
+       orientation="0,-1"
+       id="guide9301"
+       inkscape:locked="true" />
+    <sodipodi:guide
+       position="7.9379996,26.14706"
+       orientation="0,-1"
+       id="guide9303"
+       inkscape:locked="true" />
+    <sodipodi:guide
+       position="-2.1616285,-2.8187638"
+       orientation="1,0"
+       id="guide9305"
+       inkscape:locked="true" />
+    <sodipodi:guide
+       position="15.874751,23.812501"
+       orientation="1,0"
+       id="guide9307"
+       inkscape:locked="true" />
+  </sodipodi:namedview>
+  <defs
+     id="defs9" />
+  <g
+     inkscape:groupmode="layer"
+     id="layer9"
+     inkscape:label="Layer 1"
+     style="display:inline">
+    <g
+       id="g138989"
+       inkscape:label="Logo"
+       style="display:inline"
+       transform="translate(0,-333.37503)">
+      <rect
+         style="display:inline;fill:#4ebdd7;fill-opacity:1;fill-rule:evenodd;stroke-width:0.128"
+         id="rect2919"
+         width="23.8125"
+         height="23.81249"
+         x="5.8471743e-15"
+         y="333.37503"
+         inkscape:label="BG" />
+      <g
+         id="g7433"
+         transform="matrix(0.08819444,0,0,-0.08819444,-3.2057456,333.63198)"
+         inkscape:label="Symbol"
+         style="display:inline">
+        <path
+           d="m 81.348617,-42.08664 h 60.000003 l 60,-120 -30,-60 z"
+           style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+           id="path7429"
+           inkscape:label="Bottom Left" />
+        <path
+           d="m 201.34862,-42.08664 30,-60 30,60 z"
+           style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+           id="path7431"
+           inkscape:label="Top Right" />
+      </g>
+    </g>
+  </g>
+</svg>
