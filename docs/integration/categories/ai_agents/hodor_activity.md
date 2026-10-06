@@ -103,9 +103,9 @@ Retries or replays can produce more than one Sekoia event for the same Hodor act
 
 The following samples use synthetic data. They show the Hodor envelope received by the parser after the HTTPS intake removes its transport wrapper.
 
-{!_shared_content/operations_center/integrations/generated/85a8611f-5389-402a-bfa0-932718101fc4_sample.md!}
+{!_shared_content/operations_center/integrations/generated/7e14d2c2-56cf-43a9-b5d8-703f2640dee7_sample.md!}
 
-{!_shared_content/operations_center/integrations/generated/85a8611f-5389-402a-bfa0-932718101fc4.md!}
+{!_shared_content/operations_center/integrations/generated/7e14d2c2-56cf-43a9-b5d8-703f2640dee7.md!}
 
 ## Further reading
 
