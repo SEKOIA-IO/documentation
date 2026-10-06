@@ -70,20 +70,20 @@ nav:
       - Notification examples: getting_started/notification_examples.md
   - Quick starts:
     - Defend:
-      - "Quick start: Defend": getting_started/quick_start_defend.md
-      - "Step 1: Connect a data source": getting_started/defend_step1_connect_data_source.md
-      - "Step 2: Verify event reception": getting_started/defend_step2_verify_event_reception.md
-      - "Step 3: Activate detection rules": getting_started/defend_step3_activate_detection_rules.md
-      - "Step 4: Triage your first alert": getting_started/defend_step4_triage_first_alert.md
-      - "Step 5: Automate with playbooks": getting_started/defend_step5_automate_with_playbooks.md
+      - 'Quick start: Defend': getting_started/quick_start_defend.md
+      - 'Step 1: Connect a data source': getting_started/defend_step1_connect_data_source.md
+      - 'Step 2: Verify event reception': getting_started/defend_step2_verify_event_reception.md
+      - 'Step 3: Activate detection rules': getting_started/defend_step3_activate_detection_rules.md
+      - 'Step 4: Triage your first alert': getting_started/defend_step4_triage_first_alert.md
+      - 'Step 5: Automate with playbooks': getting_started/defend_step5_automate_with_playbooks.md
     - Intelligence:
-      - "Quick start: Intelligence": getting_started/quick_start_intelligence.md
-      - "Step 1: Explore the threat intelligence database": getting_started/intelligence_step1_explore_threat_database.md
-      - "Step 2: Investigate and disseminate threat intelligence": getting_started/intelligence_step2_read_threat_reports.md
+      - 'Quick start: Intelligence': getting_started/quick_start_intelligence.md
+      - 'Step 1: Explore the threat intelligence database': getting_started/intelligence_step1_explore_threat_database.md
+      - 'Step 2: Investigate and disseminate threat intelligence': getting_started/intelligence_step2_read_threat_reports.md
     - Reveal:
-      - "Quick start: Reveal": getting_started/quick_start_reveal.md
+      - 'Quick start: Reveal': getting_started/quick_start_reveal.md
     - Elevate:
-      - "Quick start: Elevate": getting_started/quick_start_elevate.md
+      - 'Quick start: Elevate': getting_started/quick_start_elevate.md
   - Training:
     - Training offer overview: getting_started/training_overview.md
     - Register for a training course: getting_started/register_training.md
@@ -768,35 +768,31 @@ plugins:
 - search: null
 - redirects:
     redirect_maps:
-      xdr/sekoia_solutions.md: index.md
+      cti/develop/rest_api/edl-gateway.md: cti/features/integrations/api.md
+      getting_started/2fa.md: getting_started/secure_your_account.md
       getting_started/account_security.md: getting_started/secure_your_account.md
       getting_started/account_settings.md: getting_started/customize_your_interface.md
+      getting_started/apikey_creation.md: getting_started/manage_api_keys.md
       getting_started/authentication.md: getting_started/log_in_for_the_first_time.md
       getting_started/concepts.md: getting_started/what_is_sekoia.md
       getting_started/create_account.md: getting_started/log_in_for_the_first_time.md
       getting_started/create_community.md: getting_started/workspace_and_communities.md
       getting_started/custom_roles.md: getting_started/roles_and_permissions.md
+      getting_started/first_steps.md: getting_started/index.md
       getting_started/get_troubleshooting_tips.md: getting_started/troubleshooting_common_issues.md
       getting_started/intake_restricted_roles.md: getting_started/roles_and_permissions.md
+      getting_started/inviting_users_to_join_your_community.md: getting_started/invite_users.md
       getting_started/join_community.md: getting_started/workspace_and_communities.md
       getting_started/navigation.md: getting_started/navigate_the_platform.md
       getting_started/notification_concept.md: getting_started/notification_system_overview.md
       getting_started/notifications-Examples.md: getting_started/notification_examples.md
       getting_started/notifications-Listing_Creation.md: getting_started/create_a_notification.md
       getting_started/restricted_roles.md: getting_started/roles_and_permissions.md
-      getting_started/usage.md: getting_started/monitor_your_usage.md
       getting_started/roles.md: getting_started/roles_and_permissions.md
-      xdr/features/investigate/configure_custom_statuses.md: xdr/features/investigate/custom_statuses.md
-      xdr/features/investigate/configure_custom_verdicts.md: xdr/features/investigate/custom_verdicts.md
-      getting_started/2fa.md: getting_started/secure_your_account.md
-      getting_started/apikey_creation.md: getting_started/manage_api_keys.md
-      getting_started/first_steps.md: getting_started/index.md
-      getting_started/inviting_users_to_join_your_community.md: getting_started/invite_users.md
-      xdr/FAQ/subscriptions/allocate_trial_subscription.md: getting_started/assign_a_subscription.md
+      getting_started/usage.md: getting_started/monitor_your_usage.md
       integration/categories/network/beyondtrust_pra_sessions.md: integration/categories/iam/beyondtrust_pra_sessions.md
       integration/categories/network_security/ubika_cloud_protector_next_gen.md: integration/categories/network_security/ubika_cloud_protector_next_gen_alerts.md
       intelligence_center.md: cti/index.md
-      cti/develop/rest_api/edl-gateway.md: cti/features/integrations/api.md
       intelligence_center/dashboard.md: cti/features/monitor/dashboard.md
       intelligence_center/data_export.md: cti/features/consume/export.md
       intelligence_center/data_model.md: cti/features/data_model.md
@@ -837,6 +833,7 @@ plugins:
       user_center.md: getting_started/index.md
       user_center/apikeys.md: getting_started/manage_api_keys.md
       user_center/multi_factor_authentication.md: getting_started/secure_your_account.md
+      xdr/FAQ/subscriptions/allocate_trial_subscription.md: getting_started/assign_a_subscription.md
       xdr/features/collect/ingestion_methods/https/format.md: integration/ingestion_methods/https/format.md
       xdr/features/collect/ingestion_methods/index.md: integration/ingestion_methods/index.md
       xdr/features/collect/ingestion_methods/sekoiaio_forwarder.md: integration/ingestion_methods/syslog/sekoiaio_forwarder.md
@@ -1016,6 +1013,7 @@ plugins:
       xdr/features/investigate/dork_language.md: xdr/features/investigate/events_query_language.md
       xdr/features/investigate/sekoia_operating_language.md: xdr/features/investigate/sol_overview.md
       xdr/features/investigate/use_custom_fields_in_cases.md: xdr/features/investigate/use_custom_fields.md
+      xdr/sekoia_solutions.md: index.md
 - integration_by_uuid
 - sass
 repo_url: https://github.com/SEKOIA-IO/documentation
