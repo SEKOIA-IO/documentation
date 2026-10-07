@@ -82,7 +82,7 @@ For example, a Location page can include:
 
 The content shown on a Location or Sector page should not be assumed to be available for other object types.
 
-![!Location object with the Overview tab selected, showing the Intelligence Brief and latest reports.](location_page.png){: style="max-width:100%"}
+![!Location object with the Overview tab selected, showing the Intelligence Brief and latest reports.](/assets/intelligence_center/location_page.png){: style="max-width:100%"}
 
 ### Read an Intelligence Brief
 

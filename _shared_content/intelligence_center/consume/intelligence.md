@@ -10,7 +10,7 @@ Use the Intelligence page to search Sekoia’s database for objects and observab
 
     You can search for an object name, report title, domain, IP address, hash, observable value, or other indexed content.
 
-![Intelligence-search](/assets/intelligence/intelligence_search.png){: style="max-width:100%"}
+![!Intelligence page with the search bar and results tabs.](/assets/intelligence_center/intelligence_search.png){: style="max-width:100%"}
 
 ## Run a search
 
@@ -81,9 +81,13 @@ After you select a shortcut, the active filter appears above the table as a chip
 
 When you reopen the filter menu, the selected object type is already checked. Select **Clear filters** to remove the shortcut filter.
 
-![Intelligence-filter](cti_filters.png){: style="max-width:100%"}
-![Intelligence-observable_filter](cti_observable_filters.png){: style="max-width:100%"}
+The **Filters** menu lists the available filter categories:
 
+![!Filters menu listing the available filter categories.](/assets/intelligence_center/cti_filters.png){: style="max-width:100%"}
+
+The **Object types** filter with **Location** selected:
+
+![!Object types filter with Location checked and the Clear filters button displayed.](/assets/intelligence_center/cti_object_types_filter.png){: style="max-width:100%"}
 
 ## Review search results
 
@@ -107,7 +111,6 @@ For Location objects:
 Use the sort selector to change the order. **Pertinence** is the default sort option in the delivered interface.
 
 Use the column selector to show or hide columns. Use **Items per page** and the pagination controls to browse the results.
-
 
 ## Copy observables
 
