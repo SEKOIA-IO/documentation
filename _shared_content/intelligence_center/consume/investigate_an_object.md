@@ -67,7 +67,7 @@ Depending on the object type, it can include:
 
 For example, a Campaign page can display its source, objective, first seen date, and description. A **Latest reports** section can appear alongside the object details when reports are associated with the object.
 
-![!Campaign object with the Details tab selected, showing metadata, description, and latest reports.](/assets/intelligence_center/investigate_an_object/campaign_details.png){: style="max-width:100%"}
+![!Campaign object with the Details tab selected, showing metadata, description, and latest reports.](/assets/intelligence_center/campaign_details.png){: style="max-width:100%"}
 
 ## Read the Overview tab
 
@@ -82,7 +82,7 @@ For example, a Location page can include:
 
 The content shown on a Location or Sector page should not be assumed to be available for other object types.
 
-![!Location object with the Overview tab selected, showing the Intelligence Brief and latest reports.](/assets/intelligence_center/investigate_an_object/location_overview.png){: style="max-width:100%"}
+![!Location object with the Overview tab selected, showing the Intelligence Brief and latest reports.](location_page.png){: style="max-width:100%"}
 
 ### Read an Intelligence Brief
 
