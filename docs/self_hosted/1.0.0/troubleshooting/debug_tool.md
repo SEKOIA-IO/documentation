@@ -153,7 +153,10 @@ The check is skipped when K3s is installed on every node. When K3s is installed 
 
 ### CheckS3Performance
 
-Benchmarks the S3-compatible platform storage from every worker node and compares the results with minimum thresholds. The command is not part of `Install`: run it on demand, once the Kubernetes cluster is installed.
+Benchmarks the S3-compatible platform storage from every worker node and compares the results with minimum thresholds. The command is not part of `Install`.
+
+!!! warning "Run it only when Sekoia asks you to"
+    The benchmark generates a sustained load on your S3-compatible storage and creates buckets on it. Run it only at the request of Sekoia support, for example to investigate slow indexation, once the Kubernetes cluster is installed.
 
 ```bash
 exec CheckS3Performance

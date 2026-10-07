@@ -115,7 +115,7 @@ The S3-compatible storage must meet the following minimum performance. The `Chec
 | Request latency (90th percentile) | 200 ms or less |
 | Time to first byte for GET and PUT (90th percentile) | 100 ms or less |
 
-To benchmark your storage once the Kubernetes cluster is installed, run `exec CheckS3Performance`. See [CheckS3Performance](../troubleshooting/debug_tool.md#checks3performance).
+If Sekoia support asks you to verify these values, use the `CheckS3Performance` benchmark. See [CheckS3Performance](../troubleshooting/debug_tool.md#checks3performance).
 
 ## Network requirements
 

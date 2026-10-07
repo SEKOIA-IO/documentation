@@ -160,7 +160,7 @@ The SHC handles the full platform lifecycle beyond initial installation.
 | Recover from a node crash or cluster restart | `KubeCrashRecovery` |
 | Live node resource usage | `GetServerStatus` |
 | Service health check per platform area | `Diagnostic` |
-| Object storage performance benchmark | `CheckS3Performance` |
+| Object storage performance benchmark, at the request of Sekoia support | `CheckS3Performance` |
 | Clean up interrupted Helm operations | `CleanupHelmReleases` |
 | Redeploy the detection rules catalog and the intake formats | `SyncRulesCatalog`, `SyncIntakeFormats` |
 | Delete the platform workloads and keep the cluster | `PlatformScaleDown`. See [Reset or destroy the platform](../operations/reset_platform.md). |
