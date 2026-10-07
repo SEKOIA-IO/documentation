@@ -59,6 +59,18 @@ If a **built-in** rule generates excessive false positives but remains useful, y
 
 On the rule's page, navigate to the **alert filters** section. Here, you can view the number of alerts filtered in the last 30 days and check the expiration details of your alert filters.
 
+## Why does Test pattern show results from other communities?
+
+The **Community** filter in the Rules Catalog controls which detections are displayed. It does not currently restrict **Test pattern** when you test an existing detection.
+
+For an existing detection, **Test pattern** can include historical events from other communities where the detection is enabled. The test does not currently provide an independent community selector.
+
+The community selector in **Rule Details > Rule scope** applies to alert filters. It does not control the scope of **Test pattern**.
+
+For example, if a detection is enabled for Communities A, B, and C, selecting only Community A in the Rules Catalog can still return test results from Communities B and C.
+
+For the rule-testing procedure, see [Rules Catalog](/xdr/features/detect/rules_catalog.md#community-scope-for-existing-detections).
+
 
 ## How to distinguish between OR and AND logic in Sigma patterns:
 
