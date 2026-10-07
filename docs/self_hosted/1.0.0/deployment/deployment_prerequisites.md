@@ -104,16 +104,18 @@ An S3-compatible bucket is required for event data storage and platform backups.
 | :--- | :--- |
 | Event storage | Long-term data lake for all ingested events. Customer-managed. See sizing table above. |
 
-The S3-compatible storage must meet the following performance requirements:
+The S3-compatible storage must meet the following minimum performance. The `CheckS3Performance` benchmark measures these values from every worker node and compares their median across the nodes with the thresholds below.
 
-| Benchmark | Required performance |
+| Benchmark | Minimum performance |
 | :--- | :---: |
-| GET throughput | — MB/s |
-| PUT throughput | — MB/s |
-| DELETE/STAT metadata operations | — operations/s |
+| GET throughput | 50 MiB/s |
+| PUT throughput | 50 MiB/s |
+| STAT operations | 100 operations/s |
+| DELETE operations | 100 operations/s |
+| Request latency (90th percentile) | 200 ms or less |
+| Time to first byte for GET and PUT (90th percentile) | 100 ms or less |
 
-!!! note "S3 benchmarks in progress"
-    S3 performance benchmarks are ongoing. The required values will be available by the GA release.
+To benchmark your storage once the Kubernetes cluster is installed, run `exec CheckS3Performance`. See [CheckS3Performance](../troubleshooting/debug_tool.md#checks3performance).
 
 ## Network requirements
 

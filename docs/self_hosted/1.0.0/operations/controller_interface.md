@@ -21,6 +21,9 @@ The one-shot command-line interface (CLI) remains fully supported. Both interfac
 
 ## Open the interface
 
+!!! note "Interactive terminal required"
+    The SHC opens the interface only when an interactive terminal is attached to the container. Both stdin and stdout must be terminals, `TERM` must hold a usable value such as `xterm-256color`, and the terminal must answer the SHC within one second. Otherwise, the SHC displays a warning and the CLI help, then exits. Run the container with `-it`: `-t` alone is not enough. The `SHC_FORCE_TUI=1` environment variable skips these checks, but it does not restore a disconnected input.
+
 To open the interface, run the execution script with no command:
 
 ```bash

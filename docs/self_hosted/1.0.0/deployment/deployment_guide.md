@@ -4,6 +4,7 @@ This guide walks you through the full installation of Sekoia Self-Hosted, from d
 
 ## Prerequisites
 - All nodes meet the requirements listed in [Technical requirements](./deployment_prerequisites.md).
+- The operating system and the packages listed in [Technical requirements](./deployment_prerequisites.md) are installed on every node. The SHC does not configure the node operating system.
 - Firewall rules allow the flows listed in [Network requirements](./network_requirements.md).
 - Your `config.yml` manifest is ready. See [Deployment configuration reference](./deployment_configuration.md).
 - Docker is installed on the orchestration node.
@@ -74,12 +75,24 @@ To extract the archive on the orchestration node, run:
 tar -xvf sekoia-self-hosted-v1.0.0.tar -C $SEKOIA_LOCAL_DIR
 ```
 
+The archive contains the platform release and the latest security content bundles:
+
+| Directory | Content |
+| :--- | :--- |
+| `$SEKOIA_LOCAL_DIR/platform/v1.0.0/` | Release manifest, Docker images, Helm charts, and ArgoCD stacks. |
+| `$SEKOIA_LOCAL_DIR/data/<TYPE>/` | One security content bundle per type (`detection-rules`, `intake-formats`, and `playbook-library`), with a `latest` file that names the bundle to use. |
+
+The execution script mounts `$SEKOIA_LOCAL_DIR` on `/opt/sekoia` in the SHC container, which matches the default values of `global.version.platform.path` (`/opt/sekoia/platform/`) and `global.version.data.<TYPE>.path` (`/opt/sekoia/data/`). Keep this layout unless you also change these paths.
+
+!!! warning "Air-gapped deployments"
+    Set `global.version.fetch.offline` to `true` in your `config.yml`. With this setting, `DownloadReleaseFiles` and `DownloadDataFiles` use the extracted files and make no request to the Sekoia S3 bucket. Without it, they try to download the release again and fail without internet access. See [Release download and security content](./deployment_configuration.md#release-download-and-security-content).
+
 ### Step 3: Load the self-hosted-controller (SHC) Docker image
 
 For the first installation, the SHC image is not yet available on the orchestration node. Load it manually from the extracted archive:
 
 ```bash
-docker load -i $SEKOIA_LOCAL_DIR/v1.0.0/images/registry.sekoia.io_sekoialab_self-hosted-controller-cli-v1.0.0.tar.gz
+docker load -i $SEKOIA_LOCAL_DIR/platform/v1.0.0/images/registry.sekoia.io_sekoialab_self-hosted-controller-cli-v1.0.0.tar.gz
 ```
 
 To confirm the image loaded successfully, run:
@@ -125,6 +138,8 @@ docker run --rm $TTY_FLAGS \
   -e GIT_HTTP_USERNAME="$GIT_HTTP_USERNAME" \
   -e GIT_HTTP_PASSWORD="$GIT_HTTP_PASSWORD" \
   -e SEKOIA_INSTANCE_PUBLIC_KEY="$SEKOIA_INSTANCE_PUBLIC_KEY" \
+  -e S3_ACCESS_KEY="$S3_ACCESS_KEY" \
+  -e S3_SECRET_KEY="$S3_SECRET_KEY" \
   --network=host \
   -v $SEKOIA_CONFIG_FILE:/tmp/config.yaml \
   -v $SEKOIA_LOCAL_DIR:/opt/sekoia \
@@ -148,7 +163,9 @@ Set the following environment variables on the orchestration node before running
 | `GIT_HTTP_PASSWORD` | Yes | Password or token for your local code repository. |
 | `SERVERS_SUDO_PASSWORD` | No | Sudo password for target nodes, if required by your SSH configuration. |
 | `DOCKER_IMAGE` | No | Override the self-hosted-controller (SHC) Docker image reference. Required in air-gapped environments. |
-| `SEKOIA_INSTANCE_PUBLIC_KEY` | Yes | Public key for the SEKOIA instance. |
+| `SEKOIA_INSTANCE_PUBLIC_KEY` | Yes | Public key for the Sekoia instance. |
+| `S3_ACCESS_KEY` | Online mode only | Access key for the Sekoia release bucket, provided by Sekoia. |
+| `S3_SECRET_KEY` | Online mode only | Secret key for the Sekoia release bucket, provided by Sekoia. |
 
 To make the script executable and verify the SHC responds, run:
 
@@ -200,6 +217,7 @@ exec CheckLocalReleaseFiles
 exec CheckServersAreReachable
 exec CheckServerSpec
 exec CheckLocalTools
+exec CheckNodePortReachability
 ```
 
 !!! warning "Preflight block"
@@ -207,31 +225,23 @@ exec CheckLocalTools
 
 `CheckServerSpec` fails the installation when a manager or worker node does not have 44 CPU cores and 120 GiB of RAM, does not run Debian 12 or later, has no unused 200 GB block device, shares its hostname with another node, or has no synchronized clock. See [CheckServerSpec](../troubleshooting/debug_tool.md#checkserverspec) for each failure message and its remediation.
 
-**Step 2: Configure servers.**
+`CheckNodePortReachability` fails when a node cannot reach another node on one of the cluster ports. See [CheckNodePortReachability](../troubleshooting/debug_tool.md#checknodeportreachability).
 
-Run the server-configuration stage:
+**Step 2: Provision local registries.**
 
-```bash
-exec ConfigureServersWithAnsible
-```
-
-!!! note "Server configuration stage"
-    In Sekoia Self-Hosted 1.0.0, `ConfigureServersWithAnsible` is a placeholder and completes immediately without changing the nodes. Provision the operating system and packages required by [Technical requirements](./deployment_prerequisites.md) before continuing.
-
-**Step 3: Provision local registries.**
-
-First resolve the versioned detection-rules, intake-formats, and playbook-library bundles. Then push all Docker images, Helm charts, and ArgoCD stack manifests to your local repositories:
+First resolve the versioned detection-rules, intake-formats, and playbook-library bundles. Then push the Docker images, the Helm charts, the detection rules and intake formats bundles, and the ArgoCD stack manifests to your local repositories:
 
 ```bash
 exec DownloadDataFiles
 exec PushImages
 exec PushCharts
+exec PushDataBundles
 exec PushArgoStacks
 ```
 
-Each push module runs `DownloadReleaseFiles` as an automatic prerequisite. In online mode, it downloads missing release artifacts; in air-gapped mode, it uses the artifacts staged locally. Repeated runs skip release files and images already present, and `PushArgoStacks` succeeds without a commit when the generated manifests are unchanged.
+`PushImages`, `PushCharts`, and `PushArgoStacks` run `DownloadReleaseFiles` as an automatic prerequisite, and `PushDataBundles` runs `DownloadDataFiles`. In online mode, they download the release artifacts and the content bundles; in air-gapped mode, they use the files extracted from the archive. Run `PushDataBundles` before `PushArgoStacks`: `PushArgoStacks` points the content updaters to the bundles only once they are in your registry. A bundle that cannot be pushed is reported as a warning and skipped, and the platform keeps the content version shipped with the release. Repeated runs skip release files and images already present, and `PushArgoStacks` succeeds without a commit when the generated manifests are unchanged.
 
-**Step 4: Install the Kubernetes stack.**
+**Step 3: Install the Kubernetes stack.**
 
 To install K3s and deploy the cluster services, run:
 
@@ -242,17 +252,21 @@ exec HelmInstall
 exec CheckKubernetesCluster
 ```
 
-**Step 5: Deploy the Sekoia platform.**
+**Step 4: Deploy the Sekoia platform.**
 
-To generate the platform configuration, run the installer job, and retrieve the initial access credentials, run:
+To generate the platform configuration, run the installer job, deploy the detection rules catalog and the intake formats, and retrieve the initial access credentials, run:
 
 ```bash
 exec PlatformConfigurationFile
 exec PlatformInstallation
+exec SyncRulesCatalog
+exec SyncIntakeFormats
 exec PlatformAccess
 ```
 
-**Step 6: Bootstrap and scale the platform.**
+`SyncRulesCatalog` and `SyncIntakeFormats` synchronize their ArgoCD applications and wait for the job that loads the content to succeed, for up to 900 seconds each. To allow more time for a large catalog, add `--set modules.sync_rules_catalog.sync_timeout=<SECONDS>` or `--set modules.sync_intake_formats.sync_timeout=<SECONDS>`.
+
+**Step 5: Bootstrap and scale the platform.**
 
 To provision the default storage and the per-community ExaLog indexes, then scale the ingestion and detection workers to their configured replica count, run:
 

@@ -7,7 +7,7 @@ Sekoia Self-Hosted 1.0.0 is the first generally available release of Sekoia Self
 
 ## What's new in 1.0.0
 
-**Node-to-node network preflight.** The `checks` stage of the `Install` execution plan now runs `CheckNodePortReachability` before K3s is installed. Each node briefly listens on the cluster TCP ports (Kubernetes API 6443, etcd, Cilium, and intake) while the other nodes probe it. A blocked path is reported as an explicit `host:port` pair, with `timeout` when packets are filtered and `refused` when the path is open but nothing listens. The check works with any firewall backend and also catches routing blocks upstream of the nodes. It is skipped once K3s is installed. See [Network requirements](deployment/network_requirements.md).
+**Node-to-node network preflight.** The `checks` stage of the `Install` execution plan now runs `CheckNodePortReachability` before K3s is installed. Each node briefly listens on the cluster TCP ports (Kubernetes API 6443, etcd, Cilium, and intake) while the other nodes probe it. A blocked path is reported with the destination node, the port, and the reason: `timeout` when packets are silently dropped, `refused` when a firewall rule rejects the connection. The check works with any firewall backend and also catches blocks in security groups and network firewalls upstream of the nodes. It is skipped once K3s is installed on every node. See [Network requirements](deployment/network_requirements.md).
 
 **Detection rules and intake formats deployed at installation.** The `push` stage now runs `PushDataBundles`, which publishes the detection rules and intake formats bundles to your local OCI registry, tagged with their release ID. After the platform installation, `SyncRulesCatalog` and `SyncIntakeFormats` synchronize the corresponding ArgoCD applications and wait for their PostSync jobs to succeed. The rules catalog is populated when the installation ends, with no manual ArgoCD synchronization. See [The deployment process](deployment/deployment_process.md).
 
@@ -19,18 +19,18 @@ Sekoia Self-Hosted 1.0.0 is the first generally available release of Sekoia Self
 | `kafka` | The Kafka cluster and its ZooKeeper ensemble: ready brokers, broker data volume usage, `kafka-exporter` availability, abnormal controller state, offline and under-replicated partitions, and ZooKeeper availability. |
 | `clickhouse` | The ClickHouse cluster and its keeper ensemble: shards with no ready replica, replicas not ready, keeper availability, read-only tables, data volume usage, and the distributed insert backlog. |
 | `ingest` | The syslog and HTTP ingestion chains: intakes ingesting far above their own baseline, plan-based throttling to the dead-letter queue, accepted events not published to Kafka, and a community whose ingestion collapses below its own baseline. Each result names the community and, where available, the intake key. |
-| `indexation` | The ExaLog indexation pipeline: an indexer that stopped consuming, object storage that is slow or returns errors, indexer local disk usage, and ready indexation nodes. |
+| `indexation` | The ExaLog indexation pipeline: an indexer that stopped consuming, object storage that returns errors, indexer local disk usage, and ready indexation nodes. |
 | `sigma_workflow` | The detection and correlation pipeline: uneven partition assignment across matcher workers, KeyDB key count disparity between replicas, growing consumer lag, correlation and rule compilation failures, correlation latency, deployments with no available replica, matchers not consuming events, alert-storm protection dropping sightings, and stalled sighting creation or sending. |
 | `symphony` | Playbook execution: playbook pod and job counts by state, excess ConfigMaps, per-playbook job activity, action worker availability, and Celery queue backlog, retry, and API server error rates. |
 
-**Volume-safe platform destruction.** Two new modules reset a dedicated cluster. `PlatformScaleDown` deletes every platform namespace except the protected infrastructure namespaces, then checks on every node that the client volumes are released. `PlatformDestroy` runs the full sequence: Cilium cleanup preparation, `PlatformScaleDown`, `K3SUninstall`, and `WipeStorageDisks`. `K3SUninstall` now removes Cilium networking on dedicated nodes and verifies the cleanup, and `CleanupCilium` recovers a node where K3s is already uninstalled. When a phase fails, the error lists the completed phases, the phases not attempted, and the next safe step.
+**Volume-safe platform destruction.** Two new modules reset a dedicated cluster. `PlatformScaleDown` deletes every platform namespace except the protected infrastructure namespaces, then checks on every node that the client volumes are released. `PlatformDestroy` runs the full sequence: Cilium cleanup preparation, `PlatformScaleDown`, `K3SUninstall`, and `WipeStorageDisks`. `K3SUninstall` now removes Cilium networking on dedicated nodes and verifies the cleanup, and `CleanupCilium` recovers a node where K3s is already uninstalled. When a phase fails, the error lists the completed phases, the phases not attempted, and the next safe step. See [Reset or destroy the platform](operations/reset_platform.md).
 
 !!! warning "Irreversible operations"
     `PlatformScaleDown` and `PlatformDestroy` permanently delete platform data. Both are disabled by default: `PlatformScaleDown` requires `modules.platform_scale_down.enabled` set to `true`, and `PlatformDestroy` also requires `modules.wipe_storage.enabled` set to `true`.
 
 **Cleaner installation logs.** The platform installer no longer prints selected internal provisioning warnings. Other warnings and errors are unchanged.
 
-**Faster failure on an unresponsive download endpoint.** In online mode, every S3 request now uses a 10-second connect timeout, a 60-second read timeout, and three attempts. A misconfigured `global.version.fetch` endpoint fails quickly with an error instead of hanging for minutes. See [Deployment configuration reference](deployment/deployment_configuration.md).
+**Faster failure on an unresponsive download endpoint.** In online mode, every S3 request now uses a 10-second connect timeout, a 60-second read timeout, and three attempts. A misconfigured `global.version.fetch` endpoint fails quickly with an error instead of hanging for minutes. See [Release download and security content](deployment/deployment_configuration.md#release-download-and-security-content).
 
 ## Configuration changes
 
@@ -46,9 +46,15 @@ Sekoia Self-Hosted 1.0.0 is the first generally available release of Sekoia Self
 | `modules.platform_scale_down.timeout` | New. Overall deadline in seconds for the cleanup and the volume release. Default: `600`. |
 | `modules.platform_scale_down.poll_interval` | New. Seconds between two cleanup and volume release checks. Default: `5`. |
 | `utils.port_forward.keep_alive_interval` | Removed. |
+| `utils.prometheus.query_window` | Removed. |
+| `utils.prometheus.default_label_filters` | Removed. |
 
 !!! warning "Remove deleted keys from your configuration"
-    `CheckLocalConfig` rejects any key that is not documented. If your `config.yml` sets `utils.port_forward.keep_alive_interval`, remove it before you run the installation.
+    `CheckLocalConfig` rejects any key that is not documented. If your `config.yml` sets `utils.port_forward.keep_alive_interval`, `utils.prometheus.query_window`, or `utils.prometheus.default_label_filters`, remove them before you run the installation.
+
+## Removed in 1.0.0
+
+- **Server configuration stage.** The `server_config` stage and its `ConfigureServersWithAnsible` module, which did not change the nodes, are removed from the `Install` execution plan. The plan now has four stages: `checks`, `push`, `kubernetes`, and `platform`.
 
 ## Fixed in 1.0.0
 
@@ -57,7 +63,7 @@ Sekoia Self-Hosted 1.0.0 is the first generally available release of Sekoia Self
 - **Diagnostic queries failing through the Prometheus tunnel.** The tunnel to `svc/prometheus-server` targeted the wrong pod port, so every `Diagnostic` query failed with "Server disconnected without sending a response". The tunnel now resolves the Service port to its target port, and each target closes its tunnel when it ends.
 - **Interrupted Helm operations blocking a rerun.** A new `CleanupHelmReleases` prerequisite runs before `HelmInstall` and `PlatformInstallation`. It removes the pending, failed, and uninstalling Helm revisions left by an interrupted run, and preserves the deployed history and the chart-managed resources.
 - **SHC interface started without an interactive terminal.** `shc` no longer starts its interface when no interactive terminal is attached, for example when you run the container without `-it`. It shows a warning and the CLI help instead.
-- **Ceph disk wiping after K3s uninstall.** `WipeStorageDisks` failed with `wipefs: Device or resource busy` because of leftover OSD mappings. It now deactivates the unused Ceph LVM volume groups on the detected disks before wiping, and refuses mounted, open, or shared devices.
+- **Ceph disk wiping after K3s uninstall.** `WipeStorageDisks` failed with `wipefs: Device or resource busy` because of leftover OSD mappings. It now deactivates the unused Ceph LVM volume groups on the detected disks before wiping, and refuses mounted, open, or shared devices. It also removes the Rook host state, `/var/lib/rook`, on every node, once it has verified that K3s and Ceph are stopped and that nothing is mounted under that directory.
 - **Existing images pushed again.** With `skip_existing_local` enabled, `PushImages` now recognizes OCI image indexes, cosign bundles with attestations, Docker manifests, and manifest lists already in the registry, and skips them.
 
 ## Carried over from the pre-releases
@@ -67,7 +73,7 @@ Sekoia Self-Hosted 1.0.0 is the first generally available release of Sekoia Self
 - **Hardened preflight.** `CheckServerSpec` blocks the installation when a node shares its hostname with another node, has fewer than 44 CPU cores or less than 120 GiB of RAM, has no dedicated unused block device of 200 GB or more for Ceph and Longhorn, or has NTP disabled or an unsynchronized clock. See [CheckServerSpec](troubleshooting/debug_tool.md#checkserverspec).
 - **Automated post-installation bootstrap.** `InstanceBootstrap` declares the default storage backend and reconciles the per-community ExaLog indexes, then `ScaleServices` scales the ingestion and detection workers to their configured replica count. See [Post-installation bootstrap](deployment/deployment_process.md#post-installation-bootstrap).
 - **Interactive SHC interface.** A terminal interface with a Diagnostics tab that runs a target rule by rule with live status, and a live progress bar during the platform installation. See [Use the SHC interface](operations/controller_interface.md).
-- **Built-in observability.** Grafana, Prometheus, Loki, Alertmanager, and Promtail are deployed as part of every installation.
+- **Built-in observability.** Grafana, Prometheus, Loki, and Promtail are deployed as part of every installation.
 - **Built-in diagnostics.** On-demand health checks for cluster nodes, ArgoCD applications, databases, secrets, and resource allocation.
 - **Debian 12 on compute nodes.** The certified node operating system is Debian 12 (Bookworm), which `CheckServerSpec` enforces. See [Technical requirements](deployment/deployment_prerequisites.md).
 
@@ -81,7 +87,7 @@ Sekoia Self-Hosted 1.0.0 is the first generally available release of Sekoia Self
 | Secret management      | HashiCorp Vault               |
 | Relational database    | PostgreSQL via CloudNativePG  |
 | Columnar storage       | ClickHouse                    |
-| Observability stack    | Grafana, Prometheus, Loki, Alertmanager |
+| Observability stack    | Grafana, Prometheus, Loki     |
 
 ## Functional scope
 
@@ -174,7 +180,7 @@ The following limitations apply to Sekoia Self-Hosted 1.0.0.
 | No upgrade path from the pre-releases | You cannot upgrade an existing 0.0.1 or 0.1.0 deployment to 1.0.0 with the self-hosted-controller (SHC). | Contact Sekoia to plan the migration of a pre-release deployment. |
 | No graphical or web UI for platform administration | Infrastructure management is available only from the orchestration node. | Use the self-hosted-controller (SHC) terminal interface or one-shot CLI together with `config.yml` for administrative operations. |
 | Automatic upgrade and rollback not available | Version updates are manual. | Follow the manual update procedure when a new release is published. |
-| Server configuration not automated | The `ConfigureServersWithAnsible` module is a placeholder and does not configure the nodes. | Provision the operating system and packages listed in [Technical requirements](deployment/deployment_prerequisites.md) before you start the installation. |
+| Node operating system not configured by the SHC | The SHC does not install the operating system packages of the nodes. | Provision the operating system and packages listed in [Technical requirements](deployment/deployment_prerequisites.md) before you start the installation. |
 | Threat intelligence not included | Every feature that reads the CTI database is unavailable, including the Threat Intelligence research module, observable tags enrichment, and contextualized alerts. Detection rules are unaffected. | None. Contact Sekoia if your deployment requires threat intelligence. |
 | No content update procedure | Detection rules, intake formats, and the playbook library stay at the version deployed during the installation. No procedure covers their update after the installation. | Contact Sekoia if your deployment requires updated detection content before the next release. |
 | Backup restore not yet documented | You cannot perform a tested restore from backup. | Contact Sekoia support for restore guidance specific to 1.0.0. |
@@ -187,3 +193,4 @@ The following limitations apply to Sekoia Self-Hosted 1.0.0.
 - [The deployment process](deployment/deployment_process.md): The installation execution plan and the post-installation bootstrap.
 - [Run platform diagnostics](monitoring/run_diagnostics.md): Health checks per platform area.
 - [Use the SHC interface](operations/controller_interface.md): The interactive interface of the SHC.
+- [Reset or destroy the platform](operations/reset_platform.md): Volume-safe platform destruction.

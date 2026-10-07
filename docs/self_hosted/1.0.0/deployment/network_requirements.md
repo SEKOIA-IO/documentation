@@ -58,6 +58,9 @@ Allow these flows on the private network between Kubernetes nodes. Do not expose
 | Cilium VXLAN | Encapsulated pod-to-pod traffic | All manager and worker nodes | All manager and worker nodes | UDP | 8472 |
 | ICMP | Path MTU discovery and network diagnostics | All manager and worker nodes | All manager and worker nodes | ICMP | N/A |
 
+!!! warning "Preflight check of the node-to-node ports"
+    Before K3s is installed, the `CheckNodePortReachability` preflight check probes TCP 6443, 2379, 2380, 4240, 4250, 10514, and 11514 from every node to every other node, whatever its role. Allow these ports between all manager and worker nodes, or the check blocks the installation. See [CheckNodePortReachability](../troubleshooting/debug_tool.md#checknodeportreachability).
+
 The standard deployment disables Flannel and installs Cilium with VXLAN tunneling. Ensure host firewalls also permit forwarding for the pod network (`10.42.0.0/16` by default) and do not apply network address translation between cluster nodes.
 
 ## Outbound flows to infrastructure services
@@ -72,7 +75,7 @@ These services may be inside the customer network. Use the port from the configu
 | Git over HTTPS | SHC checks and manifest pushes; ArgoCD synchronization | Orchestration node and ArgoCD workloads | `utils.git.repo_url` | TCP | 443 |
 | OCI registry over HTTPS | Image and chart pushes and pulls | Orchestration node, all Kubernetes nodes, and ArgoCD workloads | `utils.oci_registry.host` | TCP | 443 |
 | Platform S3 storage over HTTPS | Event indexing, backups, and miscellaneous object storage | Platform workloads | `global.platform_storage.endpoint` | TCP | 443 |
-| Release storage over HTTPS | Release archive download when files are not staged locally | Orchestration node | Configured release endpoint | TCP | 443 |
+| Release storage over HTTPS | Release archive download when files are not staged locally | Orchestration node | `self-hosted.delivery.sekoia.io` | TCP | 443 |
 | Debian package repositories | Installation of required host packages | All Kubernetes nodes | Customer package mirror or Debian repositories | TCP | 80, 443 |
 
 SMTP port 25 is the default. Allow the configured port instead when your server uses implicit TLS, STARTTLS, or a custom port, commonly TCP 465 or 587.

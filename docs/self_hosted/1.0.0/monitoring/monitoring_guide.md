@@ -5,7 +5,7 @@ Sekoia Self-Hosted ships with a complete observability stack and a set of on-dem
 ## Before you begin
 
 - You completed the deployment and validated post-deployment checks in [Deploy the platform](../deployment/deployment_guide.md).
-- You have access to the Grafana interface at `https://<global.host>/grafana`.
+- You have access to the Grafana interface at `https://<global.delivery_host>/grafana`.
 - For self-hosted-controller (SHC) diagnostic commands, you must run them from the orchestration node provisioned during installation.
 
 ## Monitoring layers
@@ -25,7 +25,7 @@ Use Grafana for daily operations and trend analysis. Use SHC commands for incide
 
 To access Grafana:
 
-1. Open `https://<global.host>/grafana` in your browser.
+1. Open `https://<global.delivery_host>/grafana` in your browser.
 2. Select **Dashboards** from the left navigation panel.
 3. Open the **Default** dashboard.
 
@@ -56,17 +56,17 @@ A row of summary statistics at the top of the dashboard provides an at-a-glance 
 | Kube | Kubernetes pod health summary. |
 | PVC Usage | Persistent Volume Claim capacity utilization. |
 | Clickhouse Status | ClickHouse cluster availability. |
-| Alertmanager status | *(Alertmanager is not deployed in Self-Hosted — ignore.)* |
+| Alertmanager status | *(Alertmanager is not deployed in Self-Hosted. Ignore this panel.)* |
 | Storage used (!= Ceph) | Storage consumption for non-Ceph volumes. |
 | API Error Rate | Proportion of API requests returning 5xx errors. |
 | Event to alert delay | End-to-end latency from event ingestion to alert creation. |
 | Ingestion | Current event ingestion rate (EPS). |
 | FS Usage | Filesystem usage per node. |
 | Pods Failed / Pending / Unknown | Count of pods not in a running state. |
-| AVG P75 event to ES | *(Elasticsearch — ignore.)* |
-| ES cluster health | *(Elasticsearch — ignore.)* |
-| Ceph cluster health | *(Ceph is not deployed in Self-Hosted — ignore.)* |
-| Storage used (Ceph) | *(Ceph is not deployed in Self-Hosted — ignore.)* |
+| AVG P75 event to ES | *(Elasticsearch is not used in Self-Hosted. Ignore this panel.)* |
+| ES cluster health | *(Elasticsearch is not used in Self-Hosted. Ignore this panel.)* |
+| Ceph cluster health | *(Ceph metrics are not collected in Self-Hosted. Ignore this panel.)* |
+| Storage used (Ceph) | *(Ceph metrics are not collected in Self-Hosted. Ignore this panel.)* |
 
 #### Resource observations of ingest
 
