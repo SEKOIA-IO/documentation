@@ -510,7 +510,7 @@ The `final_score` field is the score recalculated at the entry's `event_date`, i
 | `event_date` | Date and time when the event occurred |
 | `contribution` | Contribution of the event to the score. It is expressed as points for a `delta` contribution or as a factor for a `multiplier` contribution |
 | `contribution_type` | Type of contribution. `delta` adds or removes points from a sub-score. `multiplier` applies a criticality factor to the base score |
-| `level` | Severity or criticality level of the event. For alerts and cases, possible values are `informational`, `low`, `medium`, `high` and `critical`. For vulnerabilities, possible values are `low`, `medium`, `high` and `critical`. For criticality events, possible values are `low`, `high`, `severe` and `critical`. This field is empty for hygiene and POI entries |
+| `level` | Severity or criticality level of the event. For alerts and cases, possible values are `informational`, `low`, `medium`, `high` and `critical`. For vulnerabilities, possible values are `low`, `medium`, `high` and `critical`. For criticality events, possible values are `low`, `high`, `severe` and `critical`. This field is empty for hygiene and POI entries, and when a criticality event resets the asset criticality to 0 |
 | `criticality` | New criticality of the asset, from 0 to 100. Set only for `criticality` entries |
 | `previous_criticality` | Criticality of the asset before the change, from 0 to 100. Set only for `criticality` entries |
 | `final_score` | Risk score recalculated at `event_date`, immediately after the event. It can be empty until the next score recomputation and does not represent the current score |
