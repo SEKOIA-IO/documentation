@@ -41,15 +41,38 @@ In the **Query** field, enter your SOL query. This is the query that will execut
 
 ### Step 4: Set the run schedule
 
-In the **Run query every** field, enter a value and select the time unit: minutes, hours, or days. The rule then runs at that frequency.
+In the **Query Run Scheduling** section, enter a value in the **Run query every** field and select the time unit: minutes, hours, or days. The rule then runs at that frequency. By default, each run only checks the events received since the last run, as summarized in the information banner: "Runs every **5 hours**, only checking events since the last run."
 
 !!! warning "Minimum schedule interval"
     The minimum accepted schedule is every 5 minutes.
 
 !!! note "Late-arriving events"
-    You do not need to widen the schedule to account for ingestion lag. The platform automatically extends each run 5 minutes into the past to catch events that arrive after their timestamp, and deduplicates overlapping results so the same alert is not raised twice. See [Lag management for SOL detection rules](/xdr/features/detect/sol_detection_lag_management.md).
+    You do not need to widen the schedule or the search window to account for ingestion lag. The platform automatically extends each run 5 minutes into the past to catch events that arrive after their timestamp, and deduplicates overlapping results so the same alert is not raised twice. See [Lag management for SOL detection rules](/xdr/features/detect/sol_detection_lag_management.md).
 
-### Step 5: Configure the similarity strategy (optional)
+### Step 5: Widen the search window (optional)
+
+The search window is the period of events each run checks. You can set it independently of the schedule, so a rule can run every few hours while looking back over a longer period. This is useful when your detection logic needs more history than the run interval, such as an aggregation or a threshold computed over the last 24 hours.
+
+!!! note "Hourly schedules only"
+    The search window option is available for schedules between 1 hour and 24 hours. When the schedule is set in minutes or days, the **Search a wider window than the schedule** toggle is disabled and a tooltip explains why.
+
+To widen the search window:
+
+1. To search a period wider than the schedule, turn on **Search a wider window than the schedule**. The **Search window** slider appears.
+2. To set how far back each run looks, drag the **Search window** slider to a value between 1 hour and 24 hours.
+3. To confirm the configuration, read the summary in the information banner. For example, with a 5-hour schedule and a 1-day search window, it reads: "Runs every **5 hours**, checking the last **1 day** of events each time. If an alert was already raised for an event, later runs won't raise a duplicate."
+
+![Query Run Scheduling section with the search window set to 1 day](/assets/operation_center/rules_catalog/sol-search-window.png){: style="max-width:100%"}
+
+| Search a wider window than the schedule | Events checked on each run | Duplicate alerts |
+|---|---|---|
+| Off | The events received since the last run | Not applicable, runs do not overlap beyond the 5-minute lag overlap |
+| On | The last 1 to 24 hours of events, as set with the **Search window** slider | Not raised: if an alert was already raised for an event, later runs do not raise it again |
+
+!!! warning "Search window shorter than the schedule"
+    The slider also accepts a search window shorter than the schedule. In that case, each run only checks the end of the period since the last run, and events in the rest of that period are never evaluated. For example, with a 5-hour schedule and a 1-hour search window, the banner reads: "Runs every **5 hours** but only checks the last **1 hour** of events." Set a search window at least as long as the schedule to cover every event.
+
+### Step 6: Configure the similarity strategy (optional)
 
 By default, all of a rule's matches are grouped into a single alert: each new match increments that alert's occurrence counter instead of creating a separate alert. You do not need to configure anything to get this behavior.
 
@@ -58,7 +81,7 @@ To split matches into separate alerts, configure a similarity strategy by select
 !!! note "Similarity for SOL rules"
    The fields available in the **Similarity strategy** selector depend on your query.  SOL detection rules apply no default similarity strategy based on the datasource, because a SOL rule can query any datasource. See [Alert similarity for SOL detection rules](/xdr/features/detect/sol_detection_similarity.md) to understand the default grouping and when to configure a strategy.
 
-### Step 6: Complete the rule metadata
+### Step 7: Complete the rule metadata
 
 Fill in the remaining rule fields:
 
@@ -71,7 +94,7 @@ Fill in the remaining rule fields:
 | **Description** | A summary of what the rule detects and why |
 | **Tags** | Optional labels to help organize and filter rules |
 
-### Step 7: Save and activate the rule
+### Step 8: Save and activate the rule
 
 Click **Create** and enable the rule to start executing on the defined schedule.
 
@@ -80,15 +103,7 @@ Click **Create** and enable the rule to start executing on the defined schedule.
 Event Drop rules follow the same creation flow as SOL rules, with the following differences:
 
 - Select the **Event Drop** detection pattern at step 2.
-- In the **Query** field, enter the SOL pattern targeting the events, intake or asset you want to monitor for missing data. Like any SOL pattern, it must bound the query with `?time.start` and `?time.end`:
-
-    ```
-    events
-    | where timestamp between (?time.start .. ?time.end)
-    | aggregate count() by bin(timestamp, 1d)
-    | where count < 1000000
-    ```
-
+- In the **Query** field, enter the SOL pattern targeting the events, intake or asset you want to monitor for missing data. Like any SOL pattern, it must bound the query with `?time.start` and `?time.end`.
 - The **Threats** and security alert classification fields are not available for Event Drop rules, as they apply to threat detection rather than availability monitoring. The **Effort** field remains available.
 
 !!! tip "Create from an intake or asset"
