@@ -1,6 +1,6 @@
 # Manage custom statuses
 
-This article explains how to create, edit, reorder and enable custom statuses from the configuration page. All of it happens in **Settings > Custom Statuses**, under the **Status** section.
+This article explains how to create, edit, reorder and enable custom statuses from the configuration page, and how to set the default status of automatically generated alerts. All of it happens in **Settings > Custom Statuses**, under the **Status** section.
 
 ## Create a custom status
 
@@ -46,9 +46,26 @@ Selecting both gives you a unified status, so your team uses the same vocabulary
 
 Clearing a checkbox on a status that alerts or cases already carry starts a migration, because those items need somewhere to go. See [Migrate custom statuses](/xdr/features/investigate/migrate_custom_statuses.md).
 
+## Set the alert default status
+
+When an entity uses the `automatic` alert generation mode, its new alerts are created directly in a status of the **In progress** stage. Because this stage can hold several statuses, you choose which one these alerts receive. Alerts from entities in `manual` mode stay in **Pending**.
+
+The **Alert default status** section sits below the status table and is collapsed by default.
+
+![Alert default status section collapsed](/assets/operation_center/alerts/alert-default-status-collapsed.png){: style="max-width:100%"}
+
+1. Navigate to **Settings > Custom Statuses**.
+2. Expand the **Alert default status** section.
+3. In **Default status**, select a status. Only statuses of the **In progress** stage enabled for alerts are proposed.
+
+![Alert default status section expanded](/assets/operation_center/alerts/alert-default-status-expanded.png){: style="max-width:100%"}
+
+The generation mode is set per entity. See [Entities](/xdr/features/collect/entities.md#alert-generation-mode).
+
 ## Related articles
 
 * [Custom statuses](/xdr/features/investigate/custom_statuses.md): What custom statuses are, the three stages, and how one status serves both alerts and cases.
 * [Migrate custom statuses](/xdr/features/investigate/migrate_custom_statuses.md): How to disable or delete a status that is already in use by reassigning its alerts and cases.
 * [Custom verdicts](/xdr/features/investigate/custom_verdicts.md): How to standardize the classification of alert and case outcomes.
 * [Custom priorities](/xdr/features/investigate/custom_priorities.md): How case priority levels are configured and ordered.
+* [Entities](/xdr/features/collect/entities.md): How to set the alert generation mode of an entity.

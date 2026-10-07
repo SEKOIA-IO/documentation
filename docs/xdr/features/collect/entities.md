@@ -14,15 +14,8 @@ All fields of entities are editable and mandatory.
 ### Alert generation mode
 The **Alert generation mode** affects the alert processing workflow. There are two generation modes:
 
-!!! warning
-    Because automatic mode selects the status by its position, adding a status to the **In progress** stage or reordering that stage changes which status new automatic alerts receive. Keep the status you want automatically generated alerts to use in second position in the **In progress** stage.
-
-- `automatic`: the alert is set on creation to the second custom status enabled in the **In progress** stage. On the default configuration that status is `Ongoing`.
+- `automatic`: the alert is set on creation to the **Alert default status** configured in **Settings > Custom Statuses**. See [Set the alert default status](/xdr/features/investigate/manage_custom_statuses.md#set-the-alert-default-status).
 - `manual`: the alert stays in the `Pending` status until an analyst acts on it.
-
-The status applied in automatic mode is resolved by position, not by name. It is always the second custom status enabled in the **In progress** stage. For details on stages and how statuses are ordered, see [Custom statuses](/xdr/features/investigate/custom_statuses.md).
-
-
 
 ## Entities listing
 
