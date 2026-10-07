@@ -146,7 +146,7 @@ If the repository requires authentication, use `config help utils.git` to inspec
 | `utils.oci_registry.username` | Username with push, pull, and delete permissions in the registry project. Use an environment-variable reference. |
 | `utils.oci_registry.password` | Password or token for the registry account. Use an environment-variable reference. |
 
-The SHC derives the registry URL and the repositories used for checks, charts, and images from these values. Do not set the derived `url`, `check_repo`, `chart_repo`, or `image_repo` fields directly for a standard deployment. Override them only for a special registry layout or while debugging with guidance from Sekoia.
+The registry must serve HTTPS: ArgoCD pulls the Helm charts over HTTPS, even when `utils.oci_registry.scheme` is `http`. The SHC derives the registry URL and the repositories used for checks, charts, and images from these values. Do not set the derived `url`, `check_repo`, `chart_repo`, or `image_repo` fields directly for a standard deployment. Override them only for a special registry layout or while debugging with guidance from Sekoia.
 
 ### Instance license
 
@@ -264,7 +264,10 @@ To serve the platform with a certificate issued by your own certificate authorit
 
 2. Add `-e TRAEFIK_PUBKEY="$TRAEFIK_PUBKEY"` and `-e TRAEFIK_PRIVKEY="$TRAEFIK_PRIVKEY"` to the `docker run` command of the [execution script](./deployment_guide.md#step-4-create-the-execution-script).
 
-The certificate must be valid for every hostname the platform serves: `global.host`, `global.delivery_host`, and `global.alternative_hosts`.
+The certificate must be valid for every hostname the platform serves: `global.host`, `global.delivery_host`, and `global.alternative_hosts`. Traefik serves it on HTTPS and on the syslog and RELP intake ports.
+
+!!! warning "Without a custom certificate"
+    When `TRAEFIK_PUBKEY` and `TRAEFIK_PRIVKEY` are not set, the certificate secret of Traefik is empty and Traefik serves its own self-signed default certificate. Browsers, API clients, and event forwarders then report an untrusted certificate.
 
 ### Proxy
 
@@ -272,11 +275,9 @@ Configure these fields when the platform, the container runtime, or the SHC reac
 
 | Field | Description | Default |
 | :--- | :--- | :--- |
-| `modules.platform_configuration.config.proxy.http_proxy` | HTTP proxy URL used by the platform components. | Empty |
+| `modules.platform_configuration.config.proxy.http_proxy` | HTTP proxy URL used by the platform components that reach external services: ArgoCD, ExaLog indexing, the threat intelligence backend, and playbook actions. | Empty |
 | `modules.platform_configuration.config.proxy.https_proxy` | HTTPS proxy URL used by the platform components. | Empty |
 | `modules.platform_configuration.config.proxy.no_proxy` | Comma-separated destinations that the platform components reach without the proxy. | `127.0.0.0/8,10.0.0.0/8,172.16.0.0/12,192.168.0.0/16,.svc,.cluster.local,.lab` |
-| `modules.platform_configuration.config.proxy.additional_no_proxy` | Extra entries appended to `no_proxy`. | Empty |
-| `modules.platform_configuration.config.proxy.no_proxy_include_platform_domain` | Appends `global.host`, `global.alternative_hosts`, and `global.delivery_host` to `no_proxy`. | `true` |
 | `modules.k3s_install.pull_images_with_proxy` | Routes the container image pulls of the Kubernetes nodes through a proxy. | `false` |
 | `modules.k3s_install.k3s_http_proxy` | HTTP proxy URL used for image pulls when `pull_images_with_proxy` is `true`. | Empty |
 | `modules.k3s_install.k3s_https_proxy` | HTTPS proxy URL used for image pulls when `pull_images_with_proxy` is `true`. | Empty |
@@ -284,7 +285,7 @@ Configure these fields when the platform, the container runtime, or the SHC reac
 | `utils.git.http.proxy` | Proxy URL used by the SHC for Git operations over HTTP or HTTPS. | Empty |
 
 !!! tip "Keep the default exclusions"
-    To exclude more destinations from the proxy, add them to `additional_no_proxy` instead of replacing `no_proxy`. The default list keeps the cluster-internal and private addresses out of the proxy.
+    To exclude more destinations from the proxy, append them to the default `no_proxy` value instead of replacing it. The default list keeps the cluster-internal and private addresses out of the proxy. Add your Git, OCI registry, and S3 hostnames when they are reachable without the proxy: an address range does not match a hostname.
 
 ## Inspect the configuration with the SHC
 

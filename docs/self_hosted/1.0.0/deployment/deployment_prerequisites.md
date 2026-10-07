@@ -65,6 +65,7 @@ hostnamectl set-hostname <NEW_HOSTNAME>
 
 In air-gapped environments, nodes cannot download packages during the installation. Install the following packages on every compute node before you start:
 
+- `python3`: required by the SHC to run its checks and operations on the node.
 - `lvm2`: required for the K3s installation.
 - `gettext-base`: required for the Helm installation.
 
