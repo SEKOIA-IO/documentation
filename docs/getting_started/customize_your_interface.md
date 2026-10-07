@@ -24,6 +24,21 @@ The page now appears pinned at the top of the navigation menu.
 
 To remove a page from your favorites, hover over it and click the star icon again.
 
+## Change the appearance
+
+You can customize the appearance of the Sekoia interface from your profile settings.
+
+1. Navigate to **Settings > Account > Profile**.
+2. In the **Appearance** section, select a **Theme**:
+    - **Light**
+    - **Dark**
+    - **System**, to follow your operating system preference
+3. Select an **Accent color** to choose the main color used across the interface.
+4. Optionally enable **Contrast** to increase the contrast of the interface.
+Your appearance preferences are saved to your account and apply across your Sekoia sessions.
+
+![!Profile appearance settings showing theme, accent color, and contrast options](/assets/getting_started/settings_profile.png)
+
 ## Reorder menu sections
 
 You can rearrange the sections in the navigation menu to reflect the order in which you use them.
@@ -34,7 +49,7 @@ To reorder a section:
 2. Drag it to the desired position in the menu.
 3. Release to place it in the new position.
 
-![Navigation menu showing a section being moved by drag and drop](/assets/getting_started/reorder_menu_gif.gif)
+![!Navigation menu showing a section being moved by drag and drop](/assets/getting_started/reorder_menu_gif.gif)
 
 ## Customize table columns
 

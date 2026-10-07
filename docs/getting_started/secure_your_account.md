@@ -82,7 +82,7 @@ To disable 2FA:
 Administrators can reset the 2FA of any user in their community. This generates a single-use recovery code valid for 24 hours.
 
 !!! note
-    An Admin with SSO only authentificathion can not reset the 2FA of other users.
+    An Admin with SSO-only authentication cannot reset another user's 2FA.
 
 1. Navigate to **Settings > Workspace > Users**.
 2. Locate the user whose 2FA you want to reset.

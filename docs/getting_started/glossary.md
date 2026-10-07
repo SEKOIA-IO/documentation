@@ -17,6 +17,10 @@ This glossary defines key terms used across Sekoia documentation and the broader
 A security notification generated when an incoming event matches an active detection rule. Alerts have an urgency score, a lifecycle (from Pending to Closed), and contain the events that triggered them. Alerts are the primary unit of work for SOC analysts in Sekoia Defend.
 See: [Triage your first alert](/getting_started/defend_step4_triage_first_alert.md)
 
+**Alert filter**
+An alert filter suppresses or limits future alerts that match a known false-positive pattern. Alert filters affect alert generation or handling, whereas filters used on the Events page only change which events are displayed.
+See: [Create an alert filter](/xdr/features/investigate/alert_details.md#create-an-alert-filter)
+
 **API key**
 An authentication token that grants programmatic access to the Sekoia platform. API keys are permissions-based (not role-based) and are used to connect external tools, run integrations, and operate playbooks. A key is only displayed once at creation and must be stored securely.
 See: [Manage API keys](/getting_started/manage_api_keys.md)
@@ -63,6 +67,10 @@ An organizational grouping for intakes within a community. Entities help you str
 A normalized log entry ingested from one of your data sources via an intake. Events are the raw material on which detection rules operate. Sekoia normalizes events to the Elastic Common Schema (ECS) to enable technology-agnostic detection.
 See: [Verify event reception](/getting_started/defend_step2_verify_event_reception.md)
 
+**Event search filter**
+A filter used to narrow the events displayed in an event search. Event search filters do not change alert generation or detection rules.
+See: [Filter events](/xdr/features/investigate/events.md#filters) and [Querying events](/xdr/features/investigate/querying_events.md).
+
 ## F
 
 **Feed**
@@ -93,6 +101,12 @@ A publicly available knowledge base of adversary tactics and techniques observed
 
 **Malware**
 Software designed to disrupt, damage, or gain unauthorized access to a system. Malware types tracked in Sekoia Intelligence include ransomware, trojans, spyware, rootkits, and more.
+
+## N
+
+**Notification**
+A rule that sends a message through one or more channels when a configured event occurs. A notification is different from an alert: an alert is a security detection, while a notification informs you about an event such as a new alert, a published report, or an intake that stopped receiving events.
+See: [Notification system overview](/getting_started/notification_system_overview.md), [Create a notification](/getting_started/create_a_notification.md), and [Notification examples](/getting_started/notification_examples.md).
 
 ## O
 
