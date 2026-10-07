@@ -1,6 +1,6 @@
 # Manage case custom views
 
-This article explains how to create a custom view on the cases listing page, configure its filters, columns and sort order, and save it. It also covers how to edit, rename, duplicate, delete and reorder your views.
+This article explains how to create a custom view on the cases listing page, configure its filters, columns, sort order and search text, and save it. It also covers how to edit, rename, duplicate, delete and reorder your views.
 
 !!! note "Early Access"
     This feature is currently in Early Access and is only available for Beta testers. Sekoia.io plans to roll out this functionality to all environments soon.
@@ -26,7 +26,7 @@ The new view appears in the views bar and opens on all cases. You can now config
 
 ## Configure a view
 
-A view stores filters, columns and sort order. Configure any of them, then save the view.
+A view stores filters, columns, sort order and search text. Configure any of them, then save the view.
 
 ### Add filters
 
@@ -51,6 +51,13 @@ The filter appears as a chip above the list. To add another filter, click `+` ne
 
 1. Click the sort menu, set to **Last edition** by default.
 2. Select **Last edition**, **Creation date** or **By highest priority**.
+
+### Search the cases
+
+1. Click the **Search** bar.
+2. Enter the text to match.
+
+The list narrows to the matching cases. As with a filter change, **Reset** and the save button appear so you can update the view, see [Save a view](#save-a-view).
 
 ## Save a view
 
@@ -78,19 +85,19 @@ To keep the original view unchanged and save your changes as a separate view, us
 4. Under **Visibility**, select **Private** or **Share to the community**.
 5. Click **Create**.
 
-The new view appears in the views bar with your current filters, columns and sort order.
+The new view appears in the views bar with your current filters, columns, sort order and search text.
 
 ![Save for everyone button with its menu open, showing Save as new view](/assets/operation_center/cases/case-custom-views-save-as-new.png){: style="max-width:100%"}
 
 ## Edit a view
 
 1. In the views bar, select the view you want to edit.
-2. Change the filters, the columns or the sort order.
+2. Change the filters, the columns, the sort order or the search text.
 3. Save the view as described in [Save a view](#save-a-view).
 
 ## Discard changes to a view
 
-When you modify a saved view, your changes apply to the list right away but the view keeps its saved settings until you save it. To cancel your modifications and return to the saved filters, columns and sort order, click **Reset**.
+When you modify a saved view, your changes apply to the list right away but the view keeps its saved settings until you save it. To cancel your modifications and return to the saved filters, columns, sort order and search text, click **Reset**.
 
 ![My cases view with modified filters, the Reset button and the Save button](/assets/operation_center/cases/case-custom-views-reset.png){: style="max-width:100%"}
 
@@ -116,7 +123,7 @@ Duplicating a view is useful to start from an existing shared queue and adapt it
 2. Click the arrow next to its name.
 3. Click **Duplicate**.
 
-The copy appears in the views bar with the same filters, columns, sort order and visibility, and the suffix *(copy)* added to its name, for example **Business impact (copy)**. To rename it or change its visibility, see [Change the properties of a view](#change-the-properties-of-a-view).
+The copy appears in the views bar with the same filters, columns, sort order, search text and visibility, and the suffix *(copy)* added to its name, for example **Business impact (copy)**. To rename it or change its visibility, see [Change the properties of a view](#change-the-properties-of-a-view).
 
 ![Views bar showing the Business impact view and its duplicate Business impact (copy)](/assets/operation_center/cases/case-custom-views-duplicate.png){: style="max-width:100%"}
 

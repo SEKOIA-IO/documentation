@@ -79,4 +79,4 @@ To edit a case:
 * [Alerts](/xdr/features/investigate/alerts.md): How alerts are created and how to manage them before grouping them into cases.
 * [Playbooks](/xdr/features/automate/index.md): How to automate case workflows and trigger actions based on case updates.
 * [Dashboards](/xdr/features/report/dashboards.md): How to monitor case activity and investigation KPIs across your community.
-* [Case custom views](/xdr/features/investigate/case_custom_views.md): How to save and share filters, columns and sort order as named views.
+* [Case custom views](/xdr/features/investigate/case_custom_views.md): How to save and share filters, columns, sort order and search text as named views.

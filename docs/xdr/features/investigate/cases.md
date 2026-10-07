@@ -36,7 +36,7 @@ For more details, see [Case templates](/xdr/features/investigate/case_templates.
 
 ## Case custom views
 
-A case custom view saves the filters, columns and sort order of the cases listing page under a name, so you open the same queue in one click at every session. You keep a view private or share it with every user of your community, for example as a team **L1 queue**.
+A case custom view saves the filters, columns, sort order and search text of the cases listing page under a name, so you open the same queue in one click at every session. You keep a view private or share it with every user of your community, for example as a team **L1 queue**.
 
 For more details, see [Case custom views](/xdr/features/investigate/case_custom_views.md).
 
@@ -58,4 +58,4 @@ For more details, see [Case custom views](/xdr/features/investigate/case_custom_
 * [Case templates](/xdr/features/investigate/case_templates.md): Overview of what case templates are and how they work.
 * [Create a case template](/xdr/features/investigate/create_a_case_template.md): How to build and configure a reusable template in Settings.
 * [Apply a case template to a case](/xdr/features/investigate/apply_a_case_template.md): How to apply a template at case creation or on an existing case.
-* [Case custom views](/xdr/features/investigate/case_custom_views.md): How to save and share filters, columns and sort order on the cases listing page.
+* [Case custom views](/xdr/features/investigate/case_custom_views.md): How to save and share filters, columns, sort order and search text on the cases listing page.

@@ -13,19 +13,20 @@ A custom view turns a filter combination into a permanent, named queue. Analysts
 
 ## What a view contains
 
-A view stores three settings of the cases listing page:
+A view stores four settings of the cases listing page:
 
 | Setting | Description |
 |---|---|
 | Filters | Any combination of the case filters, for example **Custom fields** is *Business Impact* and **Priority** is *Medium*. |
 | Columns | The columns displayed in the table and their order, configured in **Show/hide table columns**. |
 | Sort order | The order of the listing: **Last edition**, **Creation date** or **By highest priority**. |
+| Search | The text entered in the search bar, which narrows the list to the matching cases. |
 
 ## The views bar
 
 Views appear as tabs in a bar above the cases list. The **All cases** tab shows every case without saved filters. Your private views and the views shared with your community follow it, in the order you set. The **+ New view** button at the end of the bar creates a new view.
 
-Selecting a view applies its filters, columns and sort order immediately. When you change any of these settings on an open view, **Reset** and a save button appear so you can discard or keep your changes. The save button reads **Save** on a private view and **Save for everyone** on a shared view.
+Selecting a view applies its filters, columns, sort order and search text immediately. When you change any of these settings on an open view, including the search text, **Reset** and a save button appear so you can discard or keep your changes. The save button reads **Save** on a private view and **Save for everyone** on a shared view.
 
 ![Cases listing page with the views bar showing All cases, the private view My cases, the shared views Open and New Today, and the New view button](/assets/operation_center/cases/case-custom-views-bar.png){: style="max-width:100%"}
 
