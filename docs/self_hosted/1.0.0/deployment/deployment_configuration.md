@@ -102,7 +102,7 @@ Use `config show` to review the result after inheritance, and `config help` to i
 
 ### Platform storage
 
-The platform uses S3-compatible object storage for ExaLog and other platform data. These credentials must allow the platform to create and use its required buckets.
+The platform stores the ExaLog indexes in S3-compatible object storage. These credentials must allow the platform to use the event buckets listed in [Storage](./deployment_prerequisites.md#storage).
 
 | Field | Description |
 | :--- | :--- |

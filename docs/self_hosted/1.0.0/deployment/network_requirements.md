@@ -85,7 +85,7 @@ These services may be inside the customer network. Use the port from the configu
 | SMTP | Mail notifications and user invitation emails | All Kubernetes nodes | Configured SMTP server | TCP | 25 |
 | Git over HTTPS | SHC checks and manifest pushes; ArgoCD synchronization | Orchestration node and all Kubernetes nodes | `utils.git.repo_url` | TCP | 443 |
 | OCI registry over HTTPS | Image and chart pushes and pulls | Orchestration node and all Kubernetes nodes | `utils.oci_registry.host` | TCP | 443 |
-| Platform S3 storage over HTTPS | Event indexing, backups, and miscellaneous object storage | All Kubernetes nodes | `global.platform_storage.endpoint` | TCP | 443 |
+| Platform S3 storage over HTTPS | Event storage of the ExaLog indexes | All Kubernetes nodes | `global.platform_storage.endpoint` | TCP | 443 |
 | Release storage over HTTPS | Release archive download when files are not staged locally | Orchestration node | `self-hosted.delivery.sekoia.io` | TCP | 443 |
 | Debian package repositories | Installation of `lvm2` on every node and `gettext-base` on the first manager node, when they are missing | All Kubernetes nodes | Customer package mirror or Debian repositories | TCP | 80, 443 |
 

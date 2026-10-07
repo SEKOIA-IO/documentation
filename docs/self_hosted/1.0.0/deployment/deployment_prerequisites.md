@@ -10,8 +10,9 @@ You must provision and manage the following components outside the Kubernetes cl
 | :--- | :---: | :---: | :---: | :--- |
 | TCP Load Balancer (e.g., HAProxy, Nginx) | 4 | 8 GB | 100 Mbps (12.5 MB/s) | Required minimum throughput. Scale according to your actual ingest volume. |
 | Orchestration node | 4 | 8 GB | 200 GB | Required. Runs the self-hosted-controller (SHC). See requirements below. |
-| Local image registry (e.g., Harbor, JFrog, Nexus) | 4 | 8 GB | 1 TB | Required for air-gapped deployments. |
-| Local code registry (e.g., GitLab, Gitea, ForgeJo) | 1 | 4 GB | Less than 10 GB | Required for air-gapped deployments. |
+| Local image registry (e.g., Harbor, JFrog, Nexus) | 4 | 8 GB | 1 TB | Required. The SHC publishes the images and Helm charts to it, and the Kubernetes nodes pull them from it. Must serve HTTPS. |
+| Local code registry (e.g., GitLab, Gitea, ForgeJo) | 1 | 4 GB | Less than 10 GB | Required. The SHC publishes the ArgoCD stack manifests to it, and ArgoCD reads them from it. |
+| S3-compatible object storage | | | See [Storage](#storage) | Required. Stores the indexed events. |
 
 ### Orchestration node requirements
 
@@ -22,7 +23,7 @@ The orchestration node only requires Docker to run the SHC container image. It d
 
 ## Compute node specification
 
-Every Kubernetes worker node must meet the following minimum hardware requirements.
+Every Kubernetes node, manager or worker, must meet the following minimum hardware requirements. `CheckServerSpec` applies the same checks to both roles.
 
 | Resource | Minimum requirement | Enforced by `CheckServerSpec` |
 | :--- | :--- | :--- |
@@ -69,14 +70,9 @@ In air-gapped environments, nodes cannot download packages during the installati
 - `lvm2`: required for the K3s installation.
 - `gettext-base`: required for the Helm installation.
 
-### GPU nodes (optional)
+### GPU nodes
 
-AI features require dedicated GPU nodes. GPU nodes are optional in Sekoia Self-Hosted 1.0.0.
-
-| Resource | Requirement |
-| :--- | :--- |
-| GPU model | NVIDIA H100 |
-| Purpose | AI inference and anomaly detection workloads |
+The AI features of the platform, which run on GPU nodes, are not available in Sekoia Self-Hosted 1.0.0. Do not provision GPU nodes for this release. See the [release notes](../release_notes.md#ai-features).
 
 ## Cluster sizing
 
@@ -85,38 +81,54 @@ The following table provides estimated hardware footprints per deployment size.
 !!! note "Sizing guidance"
     These figures are indicative. Contact Sekoia before deployment to validate requirements against your specific workload and asset profile.
 
-| Size | Incoming data | Assets (approx.) | Compute nodes | GPU nodes | S3 storage |
-| :--- | :---: | :---: | :---: | :---: | :---: |
-| Small | 500 GB/day | ~5,000 | 6 | 1 | 200 TB |
-| Medium | 2 TB/day | ~20,000 | 24 | 2 | 800 TB |
-| Large | 5 TB/day | ~50,000 | 60 | 2 | 2,000 TB |
+| Size | Incoming data | Assets (approx.) | Worker nodes | Object storage to provision (365 days) |
+| :--- | :---: | :---: | :---: | :---: |
+| Small | 500 GB/day | ~5,000 | 6 | 159 TB |
+| Medium | 2 TB/day | ~20,000 | 24 | 635 TB |
+| Large | 5 TB/day | ~50,000 | 60 | 1,588 TB |
 
 **What is an asset?** An asset is any monitored entity (server, endpoint, network device) that generates log events sent to the platform. The asset counts above are approximations. Actual capacity depends on the size and frequency of ingested log messages.
 
-**S3 storage calculation:** Total S3 capacity = daily ingest (GB) x retention period (days). The table above assumes 365 days of retention.
+**Object storage:** The table applies the formulas in [Size the object storage](#size-the-object-storage) with 365 days of retention.
 
-**Node roles:** Each cluster requires exactly 3 manager nodes (Kubernetes control plane), which is the only supported manager-node topology. The **Compute nodes** column above corresponds to the number of worker nodes.
+**Node roles:** Each cluster requires exactly 3 manager nodes (Kubernetes control plane), which is the only supported manager-node topology. The **Worker nodes** column above does not include them, and the manager nodes must meet the same [compute node specification](#compute-node-specification) as the worker nodes.
 
 ## Storage
 
-An S3-compatible bucket is required for event data storage and platform backups. You must provision this bucket before deployment.
+An S3-compatible object storage is required for the event data lake. ExaLog writes the indexed events of every community to it. You must provision it before deployment.
 
-| Use | Notes |
+| Requirement | Details |
 | :--- | :--- |
-| Event storage | Long-term data lake for all ingested events. Customer-managed. See sizing table above. |
+| Protocol | S3 API, reached at `global.platform_storage.endpoint`. The scheme and the port come from the endpoint URL. |
+| Addressing | Path-style requests by default (`global.platform_storage.force_path_style_access`), so bucket names do not need DNS records. |
+| Buckets | 16 buckets, named `exalog-self-hosted-events-0` to `exalog-self-hosted-events-f`. The prefix `exalog-` comes from `modules.platform_configuration.config.storage-manager.s3_bucket_prefix`. |
+| Credentials | One access key with read, write, list, and delete permissions on these buckets. See [Platform storage](./deployment_configuration.md#platform-storage). |
 
-The S3-compatible storage must meet the following minimum performance. The `CheckS3Performance` benchmark measures these values from every worker node and compares their median across the nodes with the thresholds below.
+### Size the object storage
 
-| Benchmark | Minimum performance |
-| :--- | :---: |
-| GET throughput | 50 MiB/s |
-| PUT throughput | 50 MiB/s |
-| STAT operations | 100 operations/s |
-| DELETE operations | 100 operations/s |
-| Request latency (90th percentile) | 200 ms or less |
-| Time to first byte for GET and PUT (90th percentile) | 100 ms or less |
+Size the capacity and the throughput of the object storage with the following formulas.
 
-If Sekoia support asks you to verify these values, use the `CheckS3Performance` benchmark. See [CheckS3Performance](../troubleshooting/debug_tool.md#checks3performance).
+| Variable | Meaning | Value |
+| :--- | :--- | :--- |
+| D | Raw data ingested per day, in TB | Your daily ingestion volume |
+| R | Retention, in days | Your retention period |
+| A | Parsing and enrichment amplification | 2.9 |
+| C | Compression ratio | 0.2 |
+
+| Metric | Formula | Example: D = 0.5 TB/day, R = 90 days |
+| :--- | :--- | :--- |
+| Active storage used (S), in TB | S = D x A x R x C | 0.5 x 2.9 x 90 x 0.2 = 26.1 TB |
+| Object storage to provision | 1.5 x S | 39 TB |
+| Write capacity, in PUT requests per second | 0.35 x D x A | 0.5 PUT/s |
+| Write throughput, in MB/s | 23 x D x A | 33.4 MB/s |
+| Read capacity, in GET requests per second | S | 26.1 GET/s |
+| Read throughput, in MB/s | 8 x S | 208 MB/s |
+
+Validate the result with Sekoia before you order the storage.
+
+### Storage performance check
+
+On request from Sekoia support, the `CheckS3Performance` benchmark measures the storage from every worker node and compares the median across the nodes with the following minimums: 50 MiB/s for GET and PUT throughput, 100 operations/s for STAT and DELETE, 200 ms for the request latency, and 100 ms for the time to first byte, both at the 90th percentile. See [CheckS3Performance](../troubleshooting/debug_tool.md#checks3performance).
 
 ## Network requirements
 
