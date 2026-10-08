@@ -60,7 +60,8 @@ The **Alert default status** section sits below the status table and is collapse
 
 ![Alert default status section expanded](/assets/operation_center/alerts/alert-default-status-expanded.png){: style="max-width:100%"}
 
-The generation mode is set per entity. See [Entities](/xdr/features/collect/entities.md#alert-generation-mode).
+!!! note
+    The generation mode is set per entity. See [Entities](/xdr/features/collect/entities.md#alert-generation-mode).
 
 ## Related articles
 
