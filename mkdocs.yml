@@ -775,6 +775,7 @@ nav:
     - Monitoring and troubleshooting:
       - Monitor your platform: self_hosted/1.0.0/monitoring/monitoring_guide.md
       - Run platform diagnostics: self_hosted/1.0.0/monitoring/run_diagnostics.md
+      - Platform alerts reference: self_hosted/1.0.0/monitoring/platform_alerts.md
       - Debug your deployment: self_hosted/1.0.0/troubleshooting/debug_tool.md
     - Release notes: self_hosted/1.0.0/release_notes.md
 - API Documentation:

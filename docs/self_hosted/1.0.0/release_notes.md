@@ -73,7 +73,7 @@ Sekoia Self-Hosted 1.0.0 is the first generally available release of Sekoia Self
 - **Hardened preflight.** `CheckServerSpec` blocks the installation when a node shares its hostname with another node, has fewer than 44 CPU cores or less than 120 GiB of RAM, has no dedicated unused block device of 200 GB or more for Ceph and Longhorn, or has NTP disabled or an unsynchronized clock. See [CheckServerSpec](troubleshooting/debug_tool.md#checkserverspec).
 - **Automated post-installation bootstrap.** `InstanceBootstrap` declares the default storage backend and reconciles the per-community ExaLog indexes, then `ScaleServices` scales the ingestion and detection workers to their configured replica count. See [Post-installation bootstrap](deployment/deployment_process.md#post-installation-bootstrap).
 - **Interactive SHC interface.** A terminal interface with a Diagnostics tab that runs a target rule by rule with live status, and a live progress bar during the platform installation. See [Use the SHC interface](operations/controller_interface.md).
-- **Built-in observability.** Grafana, Prometheus, Loki, and Promtail are deployed as part of every installation.
+- **Built-in observability.** Grafana, Prometheus, Loki, Alertmanager, and Promtail are deployed as part of every installation.
 - **Built-in diagnostics.** On-demand health checks for cluster nodes, ArgoCD applications, databases, secrets, and resource allocation.
 - **Debian 12 on compute nodes.** The certified node operating system is Debian 12 (Bookworm), which `CheckServerSpec` enforces. See [Technical requirements](deployment/deployment_prerequisites.md).
 
@@ -87,7 +87,7 @@ Sekoia Self-Hosted 1.0.0 is the first generally available release of Sekoia Self
 | Secret management      | HashiCorp Vault               |
 | Relational database    | PostgreSQL via CloudNativePG  |
 | Columnar storage       | ClickHouse                    |
-| Observability stack    | Grafana, Prometheus, Loki     |
+| Observability stack    | Grafana, Prometheus, Loki, Alertmanager |
 
 ## Functional scope
 

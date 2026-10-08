@@ -89,6 +89,7 @@ You have a diagnostic report for the selected platform areas. Use a `CRIT` resul
 ## Related links
 
 - [Monitor your platform](monitoring_guide.md): Daily monitoring and incident-response workflows.
+- [Platform alerts reference](platform_alerts.md): Platform alerts by type, and the diagnostic to run for each type.
 - [Debug your deployment](../troubleshooting/debug_tool.md): Additional SHC diagnostic commands and log collection guidance.
 - [Deploy the platform](../deployment/deployment_guide.md): Post-deployment validation procedure.
 - [Use the SHC interface](../operations/controller_interface.md): Run the same diagnostics from the interactive interface.

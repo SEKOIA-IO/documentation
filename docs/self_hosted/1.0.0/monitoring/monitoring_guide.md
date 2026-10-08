@@ -56,7 +56,7 @@ A row of summary statistics at the top of the dashboard provides an at-a-glance 
 | Kube | Kubernetes pod health summary. |
 | PVC Usage | Persistent Volume Claim capacity utilization. |
 | Clickhouse Status | ClickHouse cluster availability. |
-| Alertmanager status | *(Alertmanager is not deployed in Self-Hosted. Ignore this panel.)* |
+| Alertmanager status | Rate of notifications that the local Alertmanager drops because its queue is full. A value above zero means that alerts are lost. |
 | Storage used (!= Ceph) | Storage consumption for non-Ceph volumes. |
 | API Error Rate | Proportion of API requests returning 5xx errors. |
 | Event to alert delay | End-to-end latency from event ingestion to alert creation. |
