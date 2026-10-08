@@ -11,6 +11,7 @@ See the [dedicated FAQ page](/xdr/FAQ/intelligence/detection_rules.md) related t
 Sekoia supports the following detection types:
 
 - **Sigma**: signature rules using the [Sigma detection language](/xdr/features/detect/sigma.md)
+- **SOL**: detection rules that execute a Sekoia Operating Language (SOL) query on a defined schedule and generate alerts when the query returns results. You can reuse existing SOL investigation queries as detections without converting them to another rule language. See the [SOL detection rules overview](/xdr/features/detect/sol_detection_rule.md).
 - **CTI**: rules based on Indicators Of Compromise (IOCs) coming from a Threat Intelligence feed. These rules automatically detect thousands of known malicious indicators (such as domain names, URLs, IP addresses, etc.). A CTI rule "SEKOIA Intelligence Feed" is already built-in to detect malicious activity based on a list of indicators from Sekoia's own Intelligence feed, continuously updated by our Threat & Detection Research team
 - **Anomaly**: [univariate anomaly detection rules](/xdr/features/detect/anomaly.md).
 
