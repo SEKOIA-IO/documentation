@@ -376,7 +376,7 @@ In this section, you will find examples of raw logs as generated natively by the
             },
             "severity": "Minor"
         },
-        "company_uuid": "399e55d6-eab2-438d-84cd-fb0d0b967fcd",
+        "company_uuid": "org-12345678",
         "details": {
             "cvss": {
                 "base": [
@@ -459,7 +459,7 @@ In this section, you will find examples of raw logs as generated natively by the
             },
             "severity": "Minor"
         },
-        "company_uuid": "399e55d6-eab2-438d-84cd-fb0d0b967fcd",
+        "company_uuid": "org-12345678",
         "details": {
             "cvss": {
                 "base": [

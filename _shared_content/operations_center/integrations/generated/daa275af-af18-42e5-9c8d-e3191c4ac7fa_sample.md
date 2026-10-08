@@ -10,7 +10,7 @@ In this section, you will find examples of raw logs as generated natively by the
     ```json
 	{
         "time": 1748052015,
-        "host": "CiscoolBox",
+        "host": "host.example.com",
         "source": "HTTP_GET",
         "sourcetype": "_json",
         "event": {
@@ -211,14 +211,14 @@ In this section, you will find examples of raw logs as generated natively by the
     ```json
 	{
         "time": 1748073000,
-        "host": "CiscoolBox",
+        "host": "host.example.com",
         "source": "NTP_REQUEST",
         "sourcetype": "_json",
         "event": {
             "timezone": "+00:00",
             "device": "honeypot",
             "client": {
-                "ip": "148.170.245.211",
+                "ip": "198.51.100.92",
                 "port": 33372,
                 "geo": {
                     "continent": "Europe",
@@ -265,7 +265,7 @@ In this section, you will find examples of raw logs as generated natively by the
             },
             "related": {
                 "ip": [
-                    "148.170.245.211",
+                    "198.51.100.92",
                     "0.0.0.0"
                 ],
                 "user": []
@@ -282,14 +282,14 @@ In this section, you will find examples of raw logs as generated natively by the
     ```json
 	{
         "time": 1748073209,
-        "host": "CiscoolBox",
+        "host": "host.example.com",
         "source": "POSTGRES_LOGIN_ATTEMPT",
         "sourcetype": "_json",
         "event": {
             "timezone": "+00:00",
             "device": "honeypot",
             "client": {
-                "ip": "8.98.145.113",
+                "ip": "198.51.100.94",
                 "port": 55086,
                 "geo": {
                     "continent": "North America",
@@ -313,11 +313,11 @@ In this section, you will find examples of raw logs as generated natively by the
                 "port": 5432
             },
             "user": {
-                "name": "postgres"
+                "name": "User1"
             },
             "credential": {
-                "username": "postgres",
-                "password": "postgres",
+                "username": "User1",
+                "password": "User1",
                 "compromised": true
             },
             "session": {
@@ -331,7 +331,7 @@ In this section, you will find examples of raw logs as generated natively by the
             "protocol_number": "6",
             "sql": {
                 "client_encoding": "UTF8",
-                "database": "postgres"
+                "database": "User1"
             },
             "mitre": {
                 "tactic": "Persistence, Initial Access",
@@ -340,11 +340,11 @@ In this section, you will find examples of raw logs as generated natively by the
             },
             "related": {
                 "ip": [
-                    "8.98.145.113",
+                    "198.51.100.94",
                     "192.168.1.132"
                 ],
                 "user": [
-                    "postgres"
+                    "User1"
                 ]
             }
         }
@@ -359,14 +359,14 @@ In this section, you will find examples of raw logs as generated natively by the
     ```json
 	{
         "time": 1748075181,
-        "host": "CiscoolBox",
+        "host": "host.example.com",
         "source": "RDP_LOGIN_ATTEMPT",
         "sourcetype": "_json",
         "event": {
             "timezone": "+00:00",
             "device": "honeypot",
             "client": {
-                "ip": "152.111.92.207",
+                "ip": "198.51.100.90",
                 "port": 60892,
                 "geo": {
                     "continent": "Asia",
@@ -417,7 +417,7 @@ In this section, you will find examples of raw logs as generated natively by the
             },
             "related": {
                 "ip": [
-                    "152.111.92.207",
+                    "198.51.100.90",
                     "192.168.1.132"
                 ],
                 "user": [
@@ -436,14 +436,14 @@ In this section, you will find examples of raw logs as generated natively by the
     ```json
 	{
         "time": 1748070903,
-        "host": "CiscoolBox",
+        "host": "host.example.com",
         "source": "SSH_LOGIN_ATTEMPT",
         "sourcetype": "_json",
         "event": {
             "timezone": "+00:00",
             "device": "honeypot",
             "client": {
-                "ip": "158.94.46.176",
+                "ip": "198.51.100.93",
                 "port": 41958,
                 "geo": {
                     "continent": "Asia",
@@ -502,7 +502,7 @@ In this section, you will find examples of raw logs as generated natively by the
             },
             "related": {
                 "ip": [
-                    "158.94.46.176",
+                    "198.51.100.93",
                     "192.168.1.132"
                 ],
                 "user": [
@@ -521,14 +521,14 @@ In this section, you will find examples of raw logs as generated natively by the
     ```json
 	{
         "time": 1748074463,
-        "host": "CiscoolBox",
+        "host": "host.example.com",
         "source": "TFTP_READ_ATTEMPT",
         "sourcetype": "_json",
         "event": {
             "timezone": "+00:00",
             "device": "honeypot",
             "client": {
-                "ip": "22.163.115.179",
+                "ip": "198.51.100.91",
                 "port": 49037,
                 "geo": {
                     "continent": "Europe",
@@ -575,7 +575,7 @@ In this section, you will find examples of raw logs as generated natively by the
             },
             "related": {
                 "ip": [
-                    "22.163.115.179",
+                    "198.51.100.91",
                     "0.0.0.0"
                 ],
                 "user": []
@@ -592,7 +592,7 @@ In this section, you will find examples of raw logs as generated natively by the
     ```json
 	{
         "time": 1748072722,
-        "host": "CiscoolBox",
+        "host": "host.example.com",
         "source": "VNC_LOGIN_ATTEMPT",
         "sourcetype": "_json",
         "event": {

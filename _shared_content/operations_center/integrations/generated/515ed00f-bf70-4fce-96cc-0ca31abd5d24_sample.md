@@ -24,7 +24,7 @@ In this section, you will find examples of raw logs as generated natively by the
             },
             "dest_vpc": {
                 "vpc_name": "foo",
-                "project_id": "hazel-aria-348413",
+                "project_id": "my-project",
                 "subnetwork_name": "foo"
             },
             "start_time": "2022-06-03T12:09:42.501046130Z",
@@ -32,7 +32,7 @@ In this section, you will find examples of raw logs as generated natively by the
             "bytes_sent": "1872",
             "reporter": "DEST",
             "connection": {
-                "src_ip": "34.118.64.229",
+                "src_ip": "198.51.100.74",
                 "dest_port": 45950,
                 "dest_ip": "10.0.0.4",
                 "src_port": 443,
@@ -41,8 +41,8 @@ In this section, you will find examples of raw logs as generated natively by the
             "dest_instance": {
                 "region": "europe-central2",
                 "zone": "europe-central2-a",
-                "vm_name": "gke-cluster-3-default-pool-4e355575-tdhx",
-                "project_id": "hazel-aria-348413"
+                "vm_name": "host.example.com",
+                "project_id": "my-project"
             },
             "packets_sent": "16"
         },
@@ -51,12 +51,12 @@ In this section, you will find examples of raw logs as generated natively by the
             "labels": {
                 "subnetwork_id": "7449846049104218257",
                 "subnetwork_name": "foo",
-                "project_id": "hazel-aria-348413",
+                "project_id": "my-project",
                 "location": "europe-central2-a"
             }
         },
         "timestamp": "2022-06-03T12:09:43.654174991Z",
-        "logName": "projects/hazel-aria-348413/logs/compute.googleapis.com%2Fvpc_flows",
+        "logName": "projects/my-project/logs/compute.googleapis.com%2Fvpc_flows",
         "receiveTimestamp": "2022-06-03T12:09:43.654174991Z"
     }
     ```
@@ -81,14 +81,14 @@ In this section, you will find examples of raw logs as generated natively by the
             "dest_vpc": {
                 "subnetwork_name": "foo",
                 "vpc_name": "foo",
-                "project_id": "hazel-aria-348413"
+                "project_id": "my-project"
             },
             "bytes_sent": "33792",
             "reporter": "DEST",
             "dest_instance": {
                 "region": "europe-central2",
-                "project_id": "hazel-aria-348413",
-                "vm_name": "gke-cluster-3-default-pool-4e355575-k1w8",
+                "project_id": "my-project",
+                "vm_name": "host.example.com",
                 "zone": "europe-central2-a"
             },
             "dest_gke_details": {
@@ -100,7 +100,7 @@ In this section, you will find examples of raw logs as generated natively by the
             "connection": {
                 "protocol": 6,
                 "dest_ip": "10.0.0.3",
-                "src_ip": "34.118.64.229",
+                "src_ip": "198.51.100.74",
                 "src_port": 443,
                 "dest_port": 41834
             }
@@ -108,14 +108,14 @@ In this section, you will find examples of raw logs as generated natively by the
         "resource": {
             "type": "gce_subnetwork",
             "labels": {
-                "project_id": "hazel-aria-348413",
+                "project_id": "my-project",
                 "subnetwork_name": "foo",
                 "subnetwork_id": "7449846049104218257",
                 "location": "europe-central2-a"
             }
         },
         "timestamp": "2022-06-03T12:09:52.418604934Z",
-        "logName": "projects/hazel-aria-348413/logs/compute.googleapis.com%2Fvpc_flows",
+        "logName": "projects/my-project/logs/compute.googleapis.com%2Fvpc_flows",
         "receiveTimestamp": "2022-06-03T12:09:52.418604934Z"
     }
     ```

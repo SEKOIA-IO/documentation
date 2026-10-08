@@ -12,12 +12,12 @@ In this section, you will find examples of raw logs as generated natively by the
         "id": "abcdefgh",
         "date": "2024-01-31T10:11:13.974Z",
         "sender_ip": "1.2.3.4",
-        "from": "user@test.fr",
-        "from_header": "user user@test.fr",
-        "to": "destuser@test.fr",
+        "from": "user@example.com",
+        "from_header": "user user@example.com",
+        "to": "user@example.com",
         "to_header": "header stuff",
         "subject": "subject",
-        "message_id": "ABCDEF",
+        "message_id": "<test-message-id@example.com>",
         "urls": [
             {
                 "url": "https://www.test.com/"
@@ -95,7 +95,7 @@ In this section, you will find examples of raw logs as generated natively by the
         "to": "test@vadesecure.com",
         "to_header": "\"test@vadesecure.com\" <test@vadesecure.com>",
         "subject": "Lorem ipsum dolor",
-        "message_id": "<01de2305-f75b-49db-8c61-f661bd498e63.protection.outlook.com>",
+        "message_id": "<test-message-id@example.com>",
         "urls": [
             {
                 "url": "https://sekoia.io"
@@ -139,10 +139,10 @@ In this section, you will find examples of raw logs as generated natively by the
         "sender_ip": "1.2.3.4",
         "from": "jd@doe.fr",
         "from_header": "John Doe<jd@doe.fr>",
-        "to": "alan.smithee@doe.fr",
+        "to": "user@example.com",
         "to_header": "Alan.smithee@doe.fr",
         "subject": "Informations",
-        "message_id": "<d0a5da95-4028-439b-b9d5-a4f220c59022@protection.outlook.com>",
+        "message_id": "<test-message-id@example.com>",
         "urls": [],
         "attachments": [],
         "status": "LEGIT",
@@ -183,13 +183,13 @@ In this section, you will find examples of raw logs as generated natively by the
 	{
         "id": "ch34aoqub3glupige13g",
         "date": "2023-04-24T09:01:23.666Z",
-        "sender_ip": "163.172.240.104",
+        "sender_ip": "198.51.100.156",
         "from": "test@sekoia.io",
         "from_header": "Test SEKOIA.IO <test@sekoia.io>",
         "to": "test@vadesecure.com",
         "to_header": "\"test@vadesecure.com\" <test@vadesecure.com>",
         "subject": "OneDrive- Document No.: 1928578 - VadeSecure",
-        "message_id": "<5b13d2f4-6078-4ae6-afa9-0d023b89e85a@MR2FRA01FT001.eop-fra01.prod.protection.outlook.com>",
+        "message_id": "<test-message-id@example.com>",
         "urls": [
             {
                 "url": "https://www.facebo\u1ecdk.com/login.php"
@@ -259,13 +259,13 @@ In this section, you will find examples of raw logs as generated natively by the
 	{
         "id": "cgrqlp83v5prkopmecf0",
         "date": "2023-04-13T07:10:29.191Z",
-        "sender_ip": "163.172.240.104",
+        "sender_ip": "198.51.100.156",
         "from": "test@sekoia.io",
         "from_header": "Test SEKOIA.IO <test@sekoia.io>",
         "to": "test@vadesecure.com",
         "to_header": "\"test@vadesecure.com\" <test@vadesecure.com>",
         "subject": "Lorem ipsum dolor",
-        "message_id": "<d0a5da95-4028-439b-b9d5-a4f220c59022@protection.outlook.com>",
+        "message_id": "<test-message-id@example.com>",
         "urls": [],
         "attachments": [
             {
@@ -313,10 +313,10 @@ In this section, you will find examples of raw logs as generated natively by the
         "sender_ip": "1.2.3.4",
         "from": "john.doe@mail.fr",
         "from_header": "John DOE <john.doe@mail.fr>",
-        "to": "alan.smithee@company.fr",
-        "to_header": "Alan Smithee <alan.smithee@company.fr>",
+        "to": "user@example.com",
+        "to_header": "Alan Smithee <user@example.com>",
         "subject": "Re: Your mail",
-        "message_id": "<D0a5da95-4028-439b-b9d5-a4f220c59022@protection.outlook.com>",
+        "message_id": "<test-message-id@example.com>",
         "urls": [
             {
                 "url": "http://www.company.fr/"

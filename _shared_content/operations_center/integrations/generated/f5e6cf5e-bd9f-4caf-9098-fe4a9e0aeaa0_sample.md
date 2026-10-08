@@ -150,7 +150,7 @@ In this section, you will find examples of raw logs as generated natively by the
             "Duration": 50000,
             "UserNameLookup": "JOHNDOE",
             "UserDomainLookup": "TEST",
-            "User": "S-1-5-21-2222222-33333333-44444444-555"
+            "User": "S-1-2-3"
         }
     }
     ```
@@ -179,7 +179,7 @@ In this section, you will find examples of raw logs as generated natively by the
             "ErrorCode": 5,
             "UserNameLookup": "JOHNDOE",
             "UserDomainLookup": "TEST",
-            "User": "S-1-5-21-2222222-33333333-44444444-555"
+            "User": "S-1-2-3"
         }
     }
     ```
@@ -207,7 +207,7 @@ In this section, you will find examples of raw logs as generated natively by the
         "SpecificData": {
             "UserNameLookup": null,
             "UserDomainLookup": null,
-            "User": "S-1-5-21-2222222-33333333-44444444-555"
+            "User": "S-1-2-3"
         }
     }
     ```
@@ -236,7 +236,7 @@ In this section, you will find examples of raw logs as generated natively by the
             "ErrorCode": 5,
             "UserNameLookup": null,
             "UserDomainLookup": null,
-            "User": "S-1-5-21-2222222-33333333-44444444-555"
+            "User": "S-1-2-3"
         }
     }
     ```
@@ -291,7 +291,7 @@ In this section, you will find examples of raw logs as generated natively by the
         "SpecificData": {
             "UserNameLookup": "JOHNDOE",
             "UserDomainLookup": "TEST",
-            "User": "S-1-5-21-2222222-33333333-44444444-555"
+            "User": "S-1-2-3"
         }
     }
     ```
@@ -326,7 +326,7 @@ In this section, you will find examples of raw logs as generated natively by the
                     "Operating system"
                 ],
                 "ProcessCommandLine": "C:\\WINDOWS\\system32\\svchost.exe-knetsvcs-p-swlidsvc",
-                "User": "S-1-5-21-2222222-33333333-44444444-555",
+                "User": "S-1-2-3",
                 "UserNameLookup": "JOHNDOE",
                 "UserDomainLookup": "TEST",
                 "IntegrityLevel": "S-1-16-16384",
@@ -415,7 +415,7 @@ In this section, you will find examples of raw logs as generated natively by the
                     "Operating system"
                 ],
                 "ProcessCommandLine": "C:\\WINDOWS\\Explorer.EXE",
-                "User": "S-1-5-21-2222222-33333333-44444444-555",
+                "User": "S-1-2-3",
                 "UserNameLookup": "JOHNDOE",
                 "UserDomainLookup": "TEST",
                 "IntegrityLevel": "S-1-16-8192",
@@ -489,7 +489,7 @@ In this section, you will find examples of raw logs as generated natively by the
                     "Operating system"
                 ],
                 "ProcessCommandLine": "\"C:\\ProgramData\\Microsoft\\Windows Defender\\Platform\\4.18.24050.7-0\\MsMpEng.exe\"",
-                "User": "S-1-5-21-2222222-33333333-44444444-555",
+                "User": "S-1-2-3",
                 "UserNameLookup": "JOHNDOE",
                 "UserDomainLookup": "TEST",
                 "IntegrityLevel": "S-1-16-16384",
@@ -599,7 +599,7 @@ In this section, you will find examples of raw logs as generated natively by the
                     "Operating system"
                 ],
                 "ProcessCommandLine": "\"C:\\WINDOWS\\regedit.exe\"",
-                "User": "S-1-5-21-2222222-33333333-44444444-555",
+                "User": "S-1-2-3",
                 "UserNameLookup": "JOHNDOE",
                 "UserDomainLookup": "TEST",
                 "IntegrityLevel": "S-1-16-8192",
@@ -683,7 +683,7 @@ In this section, you will find examples of raw logs as generated natively by the
                     "Operating system"
                 ],
                 "ProcessCommandLine": "C:\\Windows\\Explorer.EXE",
-                "User": "S-1-5-21-2222222-33333333-44444444-555",
+                "User": "S-1-2-3",
                 "UserNameLookup": "JOHNDOE",
                 "UserDomainLookup": "TEST",
                 "IntegrityLevel": "S-1-16-8192",
@@ -728,7 +728,7 @@ In this section, you will find examples of raw logs as generated natively by the
                     "Operating system"
                 ],
                 "ProcessCommandLine": "\"C:\\Windows\\system32\\notepad.exe\"",
-                "User": "S-1-5-21-2222222-33333333-44444444-555",
+                "User": "S-1-2-3",
                 "UserNameLookup": "JOHNDOE",
                 "UserDomainLookup": "Test",
                 "IntegrityLevel": "S-1-16-8192",
@@ -763,7 +763,7 @@ In this section, you will find examples of raw logs as generated natively by the
                     "Operating system"
                 ],
                 "ProcessCommandLine": "C:\\Windows\\Explorer.EXE",
-                "User": "S-1-5-21-2222222-33333333-44444444-555",
+                "User": "S-1-2-3",
                 "UserNameLookup": "JOHNDOE",
                 "UserDomainLookup": "Test",
                 "IntegrityLevel": "S-1-16-8192",
@@ -827,7 +827,7 @@ In this section, you will find examples of raw logs as generated natively by the
                 "HashSha1": "AC9F34399C7C5A9372EFE0FA16F33DA4116016C6",
                 "HashSha256": "1247766F6B5AD11E5C97167B5A452374E22876136FC7B44F79BE14AD9A7FA3E7",
                 "UserNameLookup": "JOHNDOE",
-                "User": "S-1-5-21-2222222-33333333-44444444-555",
+                "User": "S-1-2-3",
                 "UserDomainLookup": "TEST",
                 "CertificateSignatureState": 5,
                 "Certificates": null,
@@ -889,7 +889,7 @@ In this section, you will find examples of raw logs as generated natively by the
                     "Operating system"
                 ],
                 "ProcessCommandLine": "\"C:\\WINDOWS\\regedit.exe\"",
-                "User": "S-1-5-21-2222222-33333333-44444444-555",
+                "User": "S-1-2-3",
                 "UserNameLookup": "JOHNDOE",
                 "UserDomainLookup": "TEST",
                 "IntegrityLevel": "S-1-16-8192",
@@ -964,7 +964,7 @@ In this section, you will find examples of raw logs as generated natively by the
                     "Operatingsystem"
                 ],
                 "ProcessCommandLine": "\"C:\\WINDOWS\\regedit.exe\"",
-                "User": "S-1-5-21-2222222-33333333-44444444-555",
+                "User": "S-1-2-3",
                 "UserNameLookup": "JOHNDOE",
                 "UserDomainLookup": "TEST",
                 "IntegrityLevel": "S-1-16-8192",
@@ -1020,7 +1020,7 @@ In this section, you will find examples of raw logs as generated natively by the
             "AgentGroupGuid": "{61B578F4-289D-4B97-A331-DDDCB80C6427}",
             "AgentGroupName": "Desktop",
             "AgentGuid": "{0000000000000000000000000000000000}",
-            "AgentName": "DST-001",
+            "AgentName": "host.example.com",
             "CategoryName": "Registry",
             "IncidentGuid": null,
             "Message": "The'svchost.exe'processcreatedtheregistryvalue'Element'",
@@ -1064,7 +1064,7 @@ In this section, you will find examples of raw logs as generated natively by the
                 "HashSha1": "726C9D759C5F02080FA003B50466A3BE0C959865",
                 "HashSha256": "ED5F36137D09E1CFC0CCF2675FB5D460E7EED135BA36D3259D2C510592047F28",
                 "UserNameLookup": "JOHNDOE",
-                "User": "S-1-5-21-2222222-33333333-44444444-555",
+                "User": "S-1-2-3",
                 "UserDomainLookup": "TEST",
                 "CertificateSignatureState": 1,
                 "Certificates": [
@@ -1133,7 +1133,7 @@ In this section, you will find examples of raw logs as generated natively by the
                     "Operating system"
                 ],
                 "ProcessCommandLine": "\"C:\\ProgramData\\Microsoft\\Windows Defender\\Platform\\4.18.24050.7-0\\MsMpEng.exe\"",
-                "User": "S-1-5-21-2222222-33333333-44444444-555",
+                "User": "S-1-2-3",
                 "UserNameLookup": "JOHNDOE",
                 "UserDomainLookup": "TEST",
                 "IntegrityLevel": "S-1-16-16384",
@@ -1242,7 +1242,7 @@ In this section, you will find examples of raw logs as generated natively by the
                     "Operating system"
                 ],
                 "ProcessCommandLine": "\"C:\\WINDOWS\\regedit.exe\"",
-                "User": "S-1-5-21-2222222-33333333-44444444-555",
+                "User": "S-1-2-3",
                 "UserNameLookup": "JOHNDOE",
                 "UserDomainLookup": "TEST",
                 "IntegrityLevel": "S-1-16-8192",
@@ -1321,7 +1321,7 @@ In this section, you will find examples of raw logs as generated natively by the
                 "HashSha1": "0C9F34399C7C5A9372EFE0F6E6F33DA4116016C6",
                 "HashSha256": "2347766F6B5AD11E5C97167B5A452374EFF876136FC7B44F79BE14AD9A7FA3E7",
                 "UserNameLookup": "JOHNDOE",
-                "User": "S-1-5-21-2222222-33333333-44444444-555",
+                "User": "S-1-2-3",
                 "UserDomainLookup": "TEST",
                 "CertificateSignatureState": 8,
                 "Certificates": [
@@ -1390,7 +1390,7 @@ In this section, you will find examples of raw logs as generated natively by the
                     "Operating system"
                 ],
                 "ProcessCommandLine": "\"C:\\ragnarlocker.exe\" ",
-                "User": "S-1-5-21-1111111111-22222222-3333333333-000",
+                "User": "S-1-2-3",
                 "UserNameLookup": "Administrator",
                 "UserDomainLookup": "EXAMPLE",
                 "IntegrityLevel": "S-1-16-11111",
@@ -1426,7 +1426,7 @@ In this section, you will find examples of raw logs as generated natively by the
                     "Operating system"
                 ],
                 "ProcessCommandLine": "cmd.exe /c vssadmin delete shadows /all /quiet",
-                "User": "S-1-5-21-1111111111-22222222-3333333333-000",
+                "User": "S-1-2-3",
                 "UserNameLookup": "Administrator",
                 "UserDomainLookup": "EXAMPLE",
                 "IntegrityLevel": "S-1-16-11111",
@@ -1461,7 +1461,7 @@ In this section, you will find examples of raw logs as generated natively by the
                     "Operating system"
                 ],
                 "ProcessCommandLine": "\"C:\\ragnarlocker.exe\" ",
-                "User": "S-1-5-21-1111111111-22222222-3333333333-000",
+                "User": "S-1-2-3",
                 "UserNameLookup": "Administrator",
                 "UserDomainLookup": "EXAMPLE",
                 "IntegrityLevel": "S-1-16-11111",
@@ -1486,7 +1486,7 @@ In this section, you will find examples of raw logs as generated natively by the
             "AgentGroupGuid": "{00000000-0000-0000-0000-000000000000}",
             "AgentGroupName": "Default group",
             "AgentGuid": "{0000000000000000000000000000000000}",
-            "AgentName": "WINSERVER2012",
+            "AgentName": "host.example.com",
             "CategoryName": "Process",
             "IncidentGuid": "{12CA4135-575E-49DE-89AD-4CD35EE2EB3B}",
             "Message": "The 'ragnarlocker.exe' process attempted to run the 'cmd.exe' process",
@@ -1527,8 +1527,8 @@ In this section, you will find examples of raw logs as generated natively by the
                 ],
                 "ProcessCommandLine": "C:\\WINDOWS\\system32\\svchost.exe -k DcomLaunch -p",
                 "User": "S-1-5-18",
-                "UserNameLookup": "redacted-system",
-                "UserDomainLookup": "REDACTED-DOMAIN-A",
+                "UserNameLookup": "User1",
+                "UserDomainLookup": "host.example.com",
                 "IntegrityLevel": "S-1-16-16384",
                 "IntegrityLevelNameLookup": "Niveau obligatoire syst\u00e8me",
                 "IntegrityLevelDomainLookup": "\u00c9tiquette obligatoire",
@@ -1573,9 +1573,9 @@ In this section, you will find examples of raw logs as generated natively by the
                     "Operating system"
                 ],
                 "ProcessCommandLine": "\"C:\\WINDOWS\\SystemApps\\Microsoft.Windows.StartMenuExperienceHost_cw5n1h2txyewy\\StartMenuExperienceHost.exe\" -ServerName:App.AppXywbrabmsek0gm3tkwpr5kwzbs55tkqay.mca",
-                "User": "S-1-5-21-1111111111-2222222222-3333333333-1001",
-                "UserNameLookup": "redacted-user",
-                "UserDomainLookup": "REDACTED-DOMAIN-B",
+                "User": "S-1-2-3",
+                "UserNameLookup": "User1",
+                "UserDomainLookup": "host.example.com",
                 "IntegrityLevel": "S-1-16-4096",
                 "IntegrityLevelNameLookup": "Niveau obligatoire faible",
                 "IntegrityLevelDomainLookup": "\u00c9tiquette obligatoire",
@@ -1609,8 +1609,8 @@ In this section, you will find examples of raw logs as generated natively by the
                 ],
                 "ProcessCommandLine": "C:\\WINDOWS\\system32\\svchost.exe -k DcomLaunch -p",
                 "User": "S-1-5-18",
-                "UserNameLookup": "redacted-system",
-                "UserDomainLookup": "REDACTED-DOMAIN-A",
+                "UserNameLookup": "User1",
+                "UserDomainLookup": "host.example.com",
                 "IntegrityLevel": "S-1-16-16384",
                 "IntegrityLevelNameLookup": "Niveau obligatoire syst\u00e8me",
                 "IntegrityLevelDomainLookup": "\u00c9tiquette obligatoire",
@@ -1643,7 +1643,7 @@ In this section, you will find examples of raw logs as generated natively by the
             "AgentGroupGuid": "{00000000-0000-0000-0000-000000000000}",
             "AgentGroupName": "Default group",
             "AgentGuid": "{66666666-6666-6666-6666-666666666666}",
-            "AgentName": "REDACTED-HOST",
+            "AgentName": "host.example.com",
             "AttackCVEId": null,
             "AttackMitreTacticId": null,
             "AttackMitreTacticName": null,
@@ -1691,7 +1691,7 @@ In this section, you will find examples of raw logs as generated natively by the
                     "Computer Boot"
                 ],
                 "ProcessCommandLine": "C:\\Windows\\Explorer.EXE",
-                "User": "S-1-5-21-2222222-33333333-44444444-555",
+                "User": "S-1-2-3",
                 "UserNameLookup": "JOHNDOE",
                 "UserDomainLookup": "TEST",
                 "IntegrityLevel": "S-1-16-8192",
@@ -1836,7 +1836,7 @@ In this section, you will find examples of raw logs as generated natively by the
                 "EnrollGuid": "6b8a636d-a508-442e-835f-0538392c904e",
                 "FootprintFileState": 0
             },
-            "FileOwner": "S-1-5-21-2222222-33333333-44444444-555",
+            "FileOwner": "S-1-2-3",
             "FileObjectType": 1,
             "FileObjectTypeComputedMap": "DIRECTORY",
             "MatchingPath": "c:\\tmp\\file2.txt",
@@ -1859,7 +1859,7 @@ In this section, you will find examples of raw logs as generated natively by the
                 "HashSha1": "AC9F34399C7C5A9372EFE0FA16F33D12116016C6",
                 "HashSha256": "1247766F6B5AD11E5C97167B5A452374E13976136FC7B44F79BE14AD9A7FA3E7",
                 "UserNameLookup": "JOHNDOE",
-                "User": "S-1-5-21-2222222-33333333-44444444-555",
+                "User": "S-1-2-3",
                 "UserDomainLookup": "TEST",
                 "CertificateSignatureState": 1,
                 "Certificates": null,
@@ -1919,7 +1919,7 @@ In this section, you will find examples of raw logs as generated natively by the
                     "Operating system"
                 ],
                 "ProcessCommandLine": "C:\\Windows\\system32\\SearchIndexer.exe/Embedding",
-                "User": "S-1-5-21-2222222-33333333-44444444-555",
+                "User": "S-1-2-3",
                 "UserNameLookup": "JOHNDOE",
                 "UserDomainLookup": "TEST",
                 "IntegrityLevel": "S-1-16-16384",
@@ -2033,7 +2033,7 @@ In this section, you will find examples of raw logs as generated natively by the
                     "Operating system"
                 ],
                 "ProcessCommandLine": "C:\\Windows\\system32\\SearchIndexer.exe/Embedding",
-                "User": "S-1-5-21-2222222-33333333-44444444-555",
+                "User": "S-1-2-3",
                 "UserNameLookup": "JOHNDOE",
                 "UserDomainLookup": "TEST",
                 "IntegrityLevel": "S-1-16-16384",
@@ -2181,7 +2181,7 @@ In this section, you will find examples of raw logs as generated natively by the
                 "EnrollGuid": "bf93de07-e0e0-45c9-bfc1-3dfd4fb68ef2",
                 "FootprintFileState": 5
             },
-            "FileOwner": "S-1-5-21-2222222-33333333-44444444-555",
+            "FileOwner": "S-1-2-3",
             "FileObjectType": 0,
             "FileObjectTypeComputedMap": "FILE",
             "MatchingPath": "c:\\tmp\\file2.txt",
@@ -2218,7 +2218,7 @@ In this section, you will find examples of raw logs as generated natively by the
                 "HashSha1": "AC9F34399C7C5A9372EFE0FA16F33DA4116016C6",
                 "HashSha256": "1247766F6B5AD11E5C97167B5A452374E22876136FC7B44F79BE14AD9A7FA3E7",
                 "UserNameLookup": "JOHNDOE",
-                "User": "S-1-5-21-2222222-33333333-44444444-555",
+                "User": "S-1-2-3",
                 "UserDomainLookup": "TEST",
                 "CertificateSignatureState": 5,
                 "Certificates": null,
@@ -2947,7 +2947,7 @@ In this section, you will find examples of raw logs as generated natively by the
         "SpecificData": {
             "UserNameLookup": "JOHNDOE",
             "UserDomainLookup": "TEST",
-            "User": "S-1-5-21-2222222-33333333-44444444-555"
+            "User": "S-1-2-3"
         }
     }
     ```
@@ -3047,7 +3047,7 @@ In this section, you will find examples of raw logs as generated natively by the
         "SpecificData": {
             "UserNameLookup": "JOHNDOE",
             "UserDomainLookup": "TEST",
-            "User": "S-1-5-21-2222222-33333333-44444444-555",
+            "User": "S-1-2-3",
             "Result": 5
         }
     }
@@ -3076,7 +3076,7 @@ In this section, you will find examples of raw logs as generated natively by the
         "SpecificData": {
             "UserNameLookup": "JOHNDOE",
             "UserDomainLookup": "TEST",
-            "User": "S-1-5-21-2222222-33333333-44444444-555"
+            "User": "S-1-2-3"
         }
     }
     ```
@@ -3234,7 +3234,7 @@ In this section, you will find examples of raw logs as generated natively by the
             "Manual": true,
             "UserNameLookup": "JOHNDOE",
             "UserDomainLookup": "TEST",
-            "User": "S-1-5-21-2222222-33333333-44444444-555",
+            "User": "S-1-2-3",
             "ChallengeAction": 0
         }
     }
@@ -3549,7 +3549,7 @@ In this section, you will find examples of raw logs as generated natively by the
         "SpecificData": {
             "UserNameLookup": "JOHNDOE",
             "UserDomainLookup": "TEST",
-            "User": "S-1-5-21-2222222-33333333-44444444-555"
+            "User": "S-1-2-3"
         }
     }
     ```
@@ -3689,7 +3689,7 @@ In this section, you will find examples of raw logs as generated natively by the
                 "HashSha1": "AC9F34399C7C5A9372EFE0FA16F33D12116016C6",
                 "HashSha256": "1247766F6B5AD11E5C97167B5A452374E13976136FC7B44F79BE14AD9A7FA3E7",
                 "UserNameLookup": "JOHNDOE",
-                "User": "S-1-5-21-2222222-33333333-44444444-555",
+                "User": "S-1-2-3",
                 "UserDomainLookup": "TEST",
                 "CertificateSignatureState": 1,
                 "Certificates": null,
@@ -3810,9 +3810,9 @@ In this section, you will find examples of raw logs as generated natively by the
                 "IntegrityLevel": "S-1-16-8192",
                 "PID": 4904,
                 "CertificateSignatureState": 1,
-                "User": "S-1-5-21-2222222-33333333-44444444-555",
+                "User": "S-1-2-3",
                 "ProcessGuid": "{10C09418-9E9C-40E2-B7F7-20D70068CB34}",
-                "ProcessCommandLine": "certutil-decode\"C:\\Users\\Arkoon\\Desktop\\certutil-decode.cmd\"\"C:\\Users\\Arkoon\\AppData\\Local\\Temp\\pwned.exe\"",
+                "ProcessCommandLine": "certutil-decode\"C:\\Users\\User1\\Desktop\\certutil-decode.cmd\"\"C:\\Users\\User1\\AppData\\Local\\Temp\\pwned.exe\"",
                 "IntegrityLevelNameLookup": "Niveauobligatoiremoyen",
                 "ProcessStartTimeRaw": 133311398192631277,
                 "CertificateSignatureStateComputedMap": "SignatureStateTrusted",
@@ -3845,9 +3845,9 @@ In this section, you will find examples of raw logs as generated natively by the
                 "IntegrityLevel": "S-1-16-8192",
                 "PID": 6808,
                 "CertificateSignatureState": 1,
-                "User": "S-1-5-21-2222222-33333333-44444444-555",
+                "User": "S-1-2-3",
                 "ProcessGuid": "{387F337F-56ED-4924-B1CC-96357B1E27B3}",
-                "ProcessCommandLine": "C:\\WINDOWS\\system32\\cmd.exe/c\"\"C:\\Users\\Arkoon\\Desktop\\certutil-decode.cmd\"\"",
+                "ProcessCommandLine": "C:\\WINDOWS\\system32\\cmd.exe/c\"\"C:\\Users\\User1\\Desktop\\certutil-decode.cmd\"\"",
                 "IntegrityLevelNameLookup": "Niveauobligatoiremoyen",
                 "ProcessStartTimeRaw": 133311398190311777,
                 "CertificateSignatureStateComputedMap": "SignatureStateTrusted",
@@ -3864,8 +3864,8 @@ In this section, you will find examples of raw logs as generated natively by the
                 "IsProtectedOrCritical": false,
                 "HashSha256": "B99D61D874728EDC0918CA0EB10EAB93D381E7367E377406E65963366C874450"
             },
-            "SourceFilePath": "C:\\Users\\Arkoon\\Desktop\\certutil-decode.cmd",
-            "DestinationFilePath": "C:\\Users\\Arkoon\\AppData\\Local\\Temp\\pwned.exe",
+            "SourceFilePath": "C:\\Users\\User1\\Desktop\\certutil-decode.cmd",
+            "DestinationFilePath": "C:\\Users\\User1\\AppData\\Local\\Temp\\pwned.exe",
             "FileContentType": 0,
             "FileContentTypeComputedMap": "Unknown",
             "FileContent": "406563686F206F66660D0A0D0A0D0A6563686F2E4465636F64696E6720656D6265646465642070726F6772616D2E2E2E0D0A7365742022544D505F46494C455F4E414D453D2554454D50255C70776E65"
@@ -3894,7 +3894,7 @@ In this section, you will find examples of raw logs as generated natively by the
         "TimestampRaw": 133232826000000000,
         "GenerateIncident": false,
         "SpecificData": {
-            "DownloadUrl": "http://sample.xyz/malicious.encoded",
+            "DownloadUrl": "http://example.com/malicious.encoded",
             "DestinationFilePath": "c:\\malicious\\malicious.encoded",
             "ParentProcess": {
                 "PID": 2,
@@ -3902,12 +3902,12 @@ In this section, you will find examples of raw logs as generated natively by the
                 "UserSID": null,
                 "SessionID": 2,
                 "ProcessGuid": "92c248f1-0acd-11ea-a38a-00155d099004",
-                "ProcessCommandLine": "\"C:\\Windows\\system32\\NOTEPAD.EXE\" C:\\Users\\arkoon\\Desktop\\_test\\test.totot",
+                "ProcessCommandLine": "\"C:\\Windows\\system32\\NOTEPAD.EXE\" C:\\Users\\User1\\Desktop\\_test\\test.totot",
                 "HashMd5": "F1139811BBF61362915958806AD30211",
                 "HashSha1": "D487580502354C61808C7180D1A336BEB7AD4624",
                 "HashSha256": "F1D62648EF915D85CB4FC140359E925395D315C70F3566B63BB3E21151CB2CE3",
                 "UserNameLookup": "JOHNDOE",
-                "User": "S-1-5-21-2222222-33333333-44444444-555",
+                "User": "S-1-2-3",
                 "UserDomainLookup": "TEST",
                 "CertificateSignatureState": 0,
                 "Certificates": [
@@ -3947,7 +3947,7 @@ In this section, you will find examples of raw logs as generated natively by the
                 "HashSha1": "CF970FA39BA72CC531133EC327203EAD801DA846",
                 "HashSha256": "A6AACEDC3F1E866A4ED815595F8FFA6AD99F6AEA7EC937E6AAA9EB4E68B39737",
                 "UserNameLookup": "JOHNDOE",
-                "User": "S-1-5-21-2222222-33333333-44444444-555",
+                "User": "S-1-2-3",
                 "UserDomainLookup": "TEST",
                 "CertificateSignatureState": 4,
                 "Certificates": [
@@ -4123,7 +4123,7 @@ In this section, you will find examples of raw logs as generated natively by the
                     }
                 ],
                 "HashSha256": "B99D61D874728EDC0918CA0EB10EAB93D381E7367E377406E65963366C874450",
-                "User": "S-1-5-21-2222222-33333333-44444444-555",
+                "User": "S-1-2-3",
                 "ProcessImageName": "C:\\Windows\\System32\\cmd.exe",
                 "ProcessStartTimeRaw": 133203492157056139,
                 "UserDomainLookup": "TEST",
@@ -4158,7 +4158,7 @@ In this section, you will find examples of raw logs as generated natively by the
                     }
                 ],
                 "HashSha256": "53E000F5AA9B3A00934319DB8080BB99CB323BF48FC628A64F75D7847C265606",
-                "User": "S-1-5-21-2222222-33333333-44444444-555",
+                "User": "S-1-2-3",
                 "ProcessImageName": "C:\\Windows\\System32\\ipconfig.exe",
                 "ProcessStartTimeRaw": 133203492215762286,
                 "UserDomainLookup": "TEST",
@@ -4200,7 +4200,7 @@ In this section, you will find examples of raw logs as generated natively by the
             "UninstallAttemptDateTime": "2020-07-07T09:29:06.066110400Z",
             "UserNameLookup": "JOHNDOE",
             "UserDomainLookup": "TEST",
-            "User": "S-1-5-21-2222222-33333333-44444444-555"
+            "User": "S-1-2-3"
         }
     }
     ```
@@ -4385,7 +4385,7 @@ In this section, you will find examples of raw logs as generated natively by the
                 "IntegrityLevelNameLookup": "HighMandatoryLevel",
                 "ProcessCommandLine": "\"C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe\"",
                 "ProcessStartTime": "2023-03-06T15:20:43.4012095+01:00",
-                "User": "S-1-5-21-2222222-33333333-44444444-555",
+                "User": "S-1-2-3",
                 "CertificateSignatureState": 1,
                 "IsProtectedOrCritical": false,
                 "SessionID": 2,
@@ -4623,7 +4623,7 @@ In this section, you will find examples of raw logs as generated natively by the
                     "Operating system"
                 ],
                 "ProcessCommandLine": "C:\\Windows\\Explorer.EXE",
-                "User": "S-1-5-21-2222222-33333333-44444444-555",
+                "User": "S-1-2-3",
                 "UserNameLookup": "JOHNDOE",
                 "UserDomainLookup": "TEST",
                 "IntegrityLevel": "S-1-16-8192",
@@ -4750,7 +4750,7 @@ In this section, you will find examples of raw logs as generated natively by the
                     "Operating system"
                 ],
                 "ProcessCommandLine": "\"C:\\ProgramFiles\\Notepad++\\notepad++.exe\"",
-                "User": "S-1-5-21-2222222-33333333-44444444-555",
+                "User": "S-1-2-3",
                 "UserNameLookup": "JOHNDOE",
                 "UserDomainLookup": "TEST",
                 "IntegrityLevel": "S-1-16-8192",
@@ -4981,7 +4981,7 @@ In this section, you will find examples of raw logs as generated natively by the
                 "HashSha1": "0C9F34399C7C5A9372EFE0F6E6F33DA4116016C6",
                 "HashSha256": "2347766F6B5AD11E5C97167B5A452374EFF876136FC7B44F79BE14AD9A7FA3E7",
                 "UserNameLookup": "JOHNDOE",
-                "User": "S-1-5-21-2222222-33333333-44444444-555",
+                "User": "S-1-2-3",
                 "UserDomainLookup": "TEST",
                 "CertificateSignatureState": 8,
                 "Certificates": [
@@ -5017,7 +5017,7 @@ In this section, you will find examples of raw logs as generated natively by the
                 "HashSha1": "141C964905C4CA2110AD8FBFC3D17C960A9B9A54",
                 "HashSha256": "70D7571253E091F646F78A4DD078CE7FE8D796625BFA3C0A466DF03971175FB4",
                 "UserNameLookup": "JOHNDOE",
-                "User": "S-1-5-21-2222222-33333333-44444444-555",
+                "User": "S-1-2-3",
                 "UserDomainLookup": "TEST",
                 "CertificateSignatureState": 0,
                 "Certificates": [],
@@ -5049,7 +5049,7 @@ In this section, you will find examples of raw logs as generated natively by the
                 "HashSha1": "AC9F34399C7C5A6324EFE0FA16F33DA4116016C6",
                 "HashSha256": "1247766F6B5AD11E5C97167B5A452374E22876136FC7A23F79BE14AD9A7FA3E7",
                 "UserNameLookup": "JOHNDOE",
-                "User": "S-1-5-21-2222222-33333333-44444444-555",
+                "User": "S-1-2-3",
                 "UserDomainLookup": "TEST",
                 "CertificateSignatureState": 7,
                 "Certificates": null,
@@ -5102,7 +5102,7 @@ In this section, you will find examples of raw logs as generated natively by the
         "SpecificData": {
             "UserNameLookup": null,
             "UserDomainLookup": null,
-            "User": "S-1-5-21-2222222-33333333-44444444-555"
+            "User": "S-1-2-3"
         }
     }
     ```
@@ -5130,7 +5130,7 @@ In this section, you will find examples of raw logs as generated natively by the
         "SpecificData": {
             "UserNameLookup": "JOHNDOE",
             "UserDomainLookup": "TEST",
-            "User": "S-1-5-21-2222222-33333333-44444444-555"
+            "User": "S-1-2-3"
         }
     }
     ```
@@ -5158,7 +5158,7 @@ In this section, you will find examples of raw logs as generated natively by the
         "SpecificData": {
             "UserNameLookup": null,
             "UserDomainLookup": null,
-            "User": "S-1-5-21-2222222-33333333-44444444-555"
+            "User": "S-1-2-3"
         }
     }
     ```
@@ -5186,7 +5186,7 @@ In this section, you will find examples of raw logs as generated natively by the
         "SpecificData": {
             "UserNameLookup": "JOHNDOE",
             "UserDomainLookup": "TEST",
-            "User": "S-1-5-21-2222222-33333333-44444444-555"
+            "User": "S-1-2-3"
         }
     }
     ```
@@ -5214,7 +5214,7 @@ In this section, you will find examples of raw logs as generated natively by the
         "SpecificData": {
             "UserNameLookup": "JOHNDOE",
             "UserDomainLookup": "TEST",
-            "User": "S-1-5-21-2222222-33333333-44444444-555",
+            "User": "S-1-2-3",
             "Result": 5
         }
     }
@@ -5675,7 +5675,7 @@ In this section, you will find examples of raw logs as generated natively by the
                     "Operating system"
                 ],
                 "ProcessCommandLine": "\"c:\\python37\\python.exe\"\"C:\\Python37\\Scripts\\robot.exe\"--loglevelTRACE--debugfiledebug.txt--outputdirC:\\frigg_report_level_3\\20230309143015[f49af303-d075-419a-966a-4235bf2fb16f]_[AT-10X64PRO]_[AnalysisOnFileACL]--includeScenarioIOCOnDetectionANDAgentANDAnalysisOnFileACL--variableLVL3_TAGFAMILY:ScenarioIOCOnDetectionANDAgentANDAnalysisOnFileACL--variableLVL3_REPORT_LINK:file://///192.168.131.17/frigg_level_3_for_user/20230309143015[f49af303-d075-419a-966a-4235bf2fb16f]_[AT-10X64PRO]_[AnalysisOnFileACL]/log.html--variableLVL1_UUID:SES_v2.4.0_Evolution__2023-03-09_14-24-40--variableLVL2_UUID:f49af303-d075-419a-966a-4235bf2fb16f--variableFRIGG_COMMIT:8d570fe75a2ae31e1553b4d26c78cdd06b980f12--variableINFRASTRUCTURE:primary--pythonpathC:\\Frigg\\src--suitestatlevel4--variableSECTION_TAG:SECTION_IOCC:\\Frigg\\src\\frigg\\poolsrf\\Scenarios\\IOCOnDetection",
-                "User": "S-1-5-21-2222222-33333333-44444444-555",
+                "User": "S-1-2-3",
                 "UserNameLookup": "JOHNDOE",
                 "UserDomainLookup": "TEST",
                 "IntegrityLevel": "S-1-16-12288",
@@ -5959,7 +5959,7 @@ In this section, you will find examples of raw logs as generated natively by the
                     "Operating system"
                 ],
                 "ProcessCommandLine": "\"C:\\tmp\\qa_custom_dll_caller.exe\"",
-                "User": "S-1-5-21-2222222-33333333-44444444-555",
+                "User": "S-1-2-3",
                 "UserNameLookup": "JOHNDOE",
                 "UserDomainLookup": "TEST",
                 "IntegrityLevel": "S-1-16-12288",
@@ -6034,7 +6034,7 @@ In this section, you will find examples of raw logs as generated natively by the
                     "Operating system"
                 ],
                 "ProcessCommandLine": "C:\\Windows\\Explorer.EXE",
-                "User": "S-1-5-21-2222222-33333333-44444444-555",
+                "User": "S-1-2-3",
                 "UserNameLookup": "JOHNDOE",
                 "UserDomainLookup": "TEST",
                 "IntegrityLevel": "S-1-16-8192",
@@ -6137,7 +6137,7 @@ In this section, you will find examples of raw logs as generated natively by the
                     "Operating system"
                 ],
                 "ProcessCommandLine": "\"C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe\"",
-                "User": "S-1-5-21-2222222-33333333-44444444-555",
+                "User": "S-1-2-3",
                 "UserNameLookup": "JOHNDOE",
                 "UserDomainLookup": "TEST",
                 "IntegrityLevel": "S-1-16-12288",
@@ -6701,8 +6701,8 @@ In this section, you will find examples of raw logs as generated natively by the
                 "VolumeZoneComputedBitMap": [
                     "Operatingsystem"
                 ],
-                "ProcessCommandLine": "\"powershell.exe\"C:\\Frigg\\src\\frigg\\tools\\PowershellScript\\Protection\\AccessVolumeRaw\\AccessVolumeRaw.ps1C:\\Users\\Public\\20bedfd0-fbde-48e5-ab3b-8e3522b8a61e.jsonC:\\Users\\Public\\8648cd4c-4237-4122-a67e-9216bf42bf62.txt",
-                "User": "S-1-5-21-2222222-33333333-44444444-555",
+                "ProcessCommandLine": "\"powershell.exe\"C:\\Frigg\\src\\frigg\\tools\\PowershellScript\\Protection\\AccessVolumeRaw\\AccessVolumeRaw.ps1C:\\Users\\TestUser\\20bedfd0-fbde-48e5-ab3b-8e3522b8a61e.jsonC:\\Users\\TestUser\\8648cd4c-4237-4122-a67e-9216bf42bf62.txt",
+                "User": "S-1-2-3",
                 "UserNameLookup": "JOHNDOE",
                 "UserDomainLookup": "TEST",
                 "IntegrityLevel": "S-1-16-12288",
@@ -6789,7 +6789,7 @@ In this section, you will find examples of raw logs as generated natively by the
                 "HashSha1": "AC9F34399C7C5A6324EFE0FA16F33DA4116016C6",
                 "HashSha256": "1247766F6B5AD11E5C97167B5A452374E22876136FC7A23F79BE14AD9A7FA3E7",
                 "UserNameLookup": "JOHNDOE",
-                "User": "S-1-5-21-2222222-33333333-44444444-555",
+                "User": "S-1-2-3",
                 "UserDomainLookup": "TEST",
                 "CertificateSignatureState": 7,
                 "Certificates": null,
@@ -6931,7 +6931,7 @@ In this section, you will find examples of raw logs as generated natively by the
                     "Operating system"
                 ],
                 "ProcessCommandLine": ".\\NetworkTesterServer.exe--tcp--port5001--infinite-lc",
-                "User": "S-1-5-21-2222222-33333333-44444444-555",
+                "User": "S-1-2-3",
                 "UserNameLookup": "JOHNDOE",
                 "UserDomainLookup": "TEST",
                 "IntegrityLevel": "S-1-16-12288",
@@ -7011,7 +7011,7 @@ In this section, you will find examples of raw logs as generated natively by the
                 "HashSha1": "AC9F34399C7C5A9372EFE0F6E6F33DA4116016C6",
                 "HashSha256": "1247766F6B5AD11E5C97167B5A452374EFF876136FC7B44F79BE14AD9A7FA3E7",
                 "UserNameLookup": "JOHNDOE",
-                "User": "S-1-5-21-2222222-33333333-44444444-555",
+                "User": "S-1-2-3",
                 "UserDomainLookup": "TEST",
                 "CertificateSignatureState": 1,
                 "Certificates": null,
@@ -7074,7 +7074,7 @@ In this section, you will find examples of raw logs as generated natively by the
                 "HashSha1": "CF970FA39BA72CC531133EC327203EAD801DA846",
                 "HashSha256": "A6AACEDC3F1E866A4ED815595F8FFA6AD99F6AEA7EC937E6AAA9EB4E68B39737",
                 "UserNameLookup": "JOHNDOE",
-                "User": "S-1-5-21-2222222-33333333-44444444-555",
+                "User": "S-1-2-3",
                 "UserDomainLookup": "TEST",
                 "CertificateSignatureState": 4,
                 "Certificates": [
@@ -7110,7 +7110,7 @@ In this section, you will find examples of raw logs as generated natively by the
                 "HashSha1": "CF970FA39BA72CC531133EC327203EAD801DA846",
                 "HashSha256": "A6AACEDC3F1E866A4ED815595F8FFA6AD99F6AEA7EC937E6AAA9EB4E68B39737",
                 "UserNameLookup": "JOHNDOE",
-                "User": "S-1-5-21-2222222-33333333-44444444-555",
+                "User": "S-1-2-3",
                 "UserDomainLookup": "TEST",
                 "CertificateSignatureState": 4,
                 "Certificates": [
@@ -7181,7 +7181,7 @@ In this section, you will find examples of raw logs as generated natively by the
                 "HashSha1": "AC9F34399C7C5A6324EFE0FA16F33DA4116016C6",
                 "HashSha256": "1247766F6B5AD11E5C97167B5A452374E22876136FC7A23F79BE14AD9A7FA3E7",
                 "UserNameLookup": "JOHNDOE",
-                "User": "S-1-5-21-2222222-33333333-44444444-555",
+                "User": "S-1-2-3",
                 "UserDomainLookup": "TEST",
                 "CertificateSignatureState": 7,
                 "Certificates": null,
@@ -7234,7 +7234,7 @@ In this section, you will find examples of raw logs as generated natively by the
         "SpecificData": {
             "FileOwnerNameLookup": "User1",
             "FileOwnerDomainLookup": "sshield1",
-            "FileOwner": "S-1-5-21-2222222-33333333-44444444-555",
+            "FileOwner": "S-1-2-3",
             "Path": "C:\\Windows\\malicious.dll",
             "SourceProcess": {
                 "PID": 3,
@@ -7247,7 +7247,7 @@ In this section, you will find examples of raw logs as generated natively by the
                 "HashSha1": "141C964905C4CA2110AD8FBFC3D17C960A9B9A54",
                 "HashSha256": "70D7571253E091F646F78A4DD078CE7FE8D796625BFA3C0A466DF03971175FB4",
                 "UserNameLookup": "JOHNDOE",
-                "User": "S-1-5-21-2222222-33333333-44444444-555",
+                "User": "S-1-2-3",
                 "UserDomainLookup": "TEST",
                 "CertificateSignatureState": 0,
                 "Certificates": [],
@@ -7302,7 +7302,7 @@ In this section, you will find examples of raw logs as generated natively by the
             "CorruptingDriverPath": "CorruptingDriver",
             "FileOwnerNameLookup": "User1",
             "FileOwnerDomainLookup": "sshield1",
-            "FileOwner": "S-1-5-21-2222222-33333333-44444444-555",
+            "FileOwner": "S-1-2-3",
             "SourceProcess": {
                 "PID": 3,
                 "ProcessImageName": "C:\\Windows\\System32\\services.exe",
@@ -7314,7 +7314,7 @@ In this section, you will find examples of raw logs as generated natively by the
                 "HashSha1": "141C964905C4CA2110AD8FBFC3D17C960A9B9A54",
                 "HashSha256": "70D7571253E091F646F78A4DD078CE7FE8D796625BFA3C0A466DF03971175FB4",
                 "UserNameLookup": "JOHNDOE",
-                "User": "S-1-5-21-2222222-33333333-44444444-555",
+                "User": "S-1-2-3",
                 "UserDomainLookup": "TEST",
                 "CertificateSignatureState": 0,
                 "Certificates": [],
@@ -7379,7 +7379,7 @@ In this section, you will find examples of raw logs as generated natively by the
                 "HashSha1": "AC9F34399C7C5A9372EFE0F6E6F33DA4116016C6",
                 "HashSha256": "1247766F6B5AD11E5C97167B5A452374EFF876136FC7B44F79BE14AD9A7FA3E7",
                 "UserNameLookup": "JOHNDOE",
-                "User": "S-1-5-21-2222222-33333333-44444444-555",
+                "User": "S-1-2-3",
                 "UserDomainLookup": "TEST",
                 "CertificateSignatureState": 1,
                 "Certificates": null,
@@ -7439,7 +7439,7 @@ In this section, you will find examples of raw logs as generated natively by the
                     "Operating system"
                 ],
                 "ProcessCommandLine": ".\\TokenGuardTester.exetokenmodify",
-                "User": "S-1-5-21-2222222-33333333-44444444-555",
+                "User": "S-1-2-3",
                 "UserNameLookup": "JOHNDOE",
                 "UserDomainLookup": "TEST",
                 "IntegrityLevel": "S-1-16-12288",
@@ -7559,7 +7559,7 @@ In this section, you will find examples of raw logs as generated natively by the
                     "Operating system"
                 ],
                 "ProcessCommandLine": "\"C:\\windows\\system32\\rundll32.exe\"Shell32.dll,Control_RunDLL\"C:\\Windows\\System32\\ncpa.cpl\",",
-                "User": "S-1-5-21-2222222-33333333-44444444-555",
+                "User": "S-1-2-3",
                 "UserNameLookup": "JOHNDOE",
                 "UserDomainLookup": "TEST",
                 "IntegrityLevel": "S-1-16-8192",
@@ -7604,7 +7604,7 @@ In this section, you will find examples of raw logs as generated natively by the
                     "Operating system"
                 ],
                 "ProcessCommandLine": "C:\\windows\\Explorer.EXE",
-                "User": "S-1-5-21-2222222-33333333-44444444-555",
+                "User": "S-1-2-3",
                 "UserNameLookup": "JOHNDOE",
                 "UserDomainLookup": "TEST",
                 "IntegrityLevel": "S-1-16-8192",
@@ -7668,7 +7668,7 @@ In this section, you will find examples of raw logs as generated natively by the
                 "HashSha1": "AC9F34399C7C5A6324EFE0FA16F33DA4116016C6",
                 "HashSha256": "1247766F6B5AD11E5C97167B5A452374E22876136FC7A23F79BE14AD9A7FA3E7",
                 "UserNameLookup": "JOHNDOE",
-                "User": "S-1-5-21-2222222-33333333-44444444-555",
+                "User": "S-1-2-3",
                 "UserDomainLookup": "TEST",
                 "CertificateSignatureState": 7,
                 "Certificates": null,
@@ -7726,12 +7726,12 @@ In this section, you will find examples of raw logs as generated natively by the
                 "UserSID": null,
                 "SessionID": 2,
                 "ProcessGuid": "92c248f1-0acd-11ea-a38a-00155d099004",
-                "ProcessCommandLine": "\"C:\\Windows\\system32\\NOTEPAD.EXE\" C:\\Users\\arkoon\\Desktop\\_test\\test.totot",
+                "ProcessCommandLine": "\"C:\\Windows\\system32\\NOTEPAD.EXE\" C:\\Users\\User1\\Desktop\\_test\\test.totot",
                 "HashMd5": "F1139811BBF61362915958806AD30211",
                 "HashSha1": "D487580502354C61808C7180D1A336BEB7AD4624",
                 "HashSha256": "F1D62648EF915D85CB4FC140359E925395D315C70F3566B63BB3E21151CB2CE3",
                 "UserNameLookup": "JOHNDOE",
-                "User": "S-1-5-21-2222222-33333333-44444444-555",
+                "User": "S-1-2-3",
                 "UserDomainLookup": "TEST",
                 "CertificateSignatureState": 0,
                 "Certificates": [
@@ -7802,7 +7802,7 @@ In this section, you will find examples of raw logs as generated natively by the
                 "HashSha1": "141C964905C4CA2110AD8FBFC3D17C960A9B9A54",
                 "HashSha256": "70D7571253E091F646F78A4DD078CE7FE8D796625BFA3C0A466DF03971175FB4",
                 "UserNameLookup": "JOHNDOE",
-                "User": "S-1-5-21-2222222-33333333-44444444-555",
+                "User": "S-1-2-3",
                 "UserDomainLookup": "TEST",
                 "CertificateSignatureState": 0,
                 "Certificates": [],
@@ -7829,7 +7829,7 @@ In this section, you will find examples of raw logs as generated natively by the
                 "HashSha1": "AC9F34399C7C5A9372EFE0FA16F33D12116016C6",
                 "HashSha256": "1247766F6B5AD11E5C97167B5A452374E13976136FC7B44F79BE14AD9A7FA3E7",
                 "UserNameLookup": "JOHNDOE",
-                "User": "S-1-5-21-2222222-33333333-44444444-555",
+                "User": "S-1-2-3",
                 "UserDomainLookup": "TEST",
                 "CertificateSignatureState": 1,
                 "Certificates": null,
@@ -7891,7 +7891,7 @@ In this section, you will find examples of raw logs as generated natively by the
                 "ProcessCommandLine": "C:\\Windows\\system32\\wbem\\wmiprvse.exe -Embedding",
                 "User": "S-1-5-18",
                 "UserNameLookup": "SYSTEM",
-                "UserDomainLookup": "NT AUTHORITY",
+                "UserDomainLookup": "host.example.com",
                 "IntegrityLevel": "S-1-16-11111",
                 "IntegrityLevelNameLookup": "System Mandatory Level",
                 "IntegrityLevelDomainLookup": "Mandatory Label",
@@ -7936,7 +7936,7 @@ In this section, you will find examples of raw logs as generated natively by the
                 "ProcessCommandLine": "C:\\Windows\\system32\\lsass.exe",
                 "User": "S-1-5-18",
                 "UserNameLookup": "SYSTEM",
-                "UserDomainLookup": "NT AUTHORITY",
+                "UserDomainLookup": "host.example.com",
                 "IntegrityLevel": "S-1-16-16384",
                 "IntegrityLevelNameLookup": "System Mandatory Level",
                 "IntegrityLevelDomainLookup": "Mandatory Label",
@@ -8011,7 +8011,7 @@ In this section, you will find examples of raw logs as generated natively by the
                 "HashSha1": "0C9F34399C7C5A9372EFE0F6E6F33DA4116016C6",
                 "HashSha256": "2347766F6B5AD11E5C97167B5A452374EFF876136FC7B44F79BE14AD9A7FA3E7",
                 "UserNameLookup": "JOHNDOE",
-                "User": "S-1-5-21-2222222-33333333-44444444-555",
+                "User": "S-1-2-3",
                 "UserDomainLookup": "TEST",
                 "CertificateSignatureState": 8,
                 "Certificates": [
@@ -8080,7 +8080,7 @@ In this section, you will find examples of raw logs as generated natively by the
                     "Operating system"
                 ],
                 "ProcessCommandLine": "C:\\Windows\\Explorer.EXE",
-                "User": "S-1-5-21-2222222-33333333-44444444-555",
+                "User": "S-1-2-3",
                 "UserNameLookup": "JOHNDOE",
                 "UserDomainLookup": "TEST",
                 "IntegrityLevel": "S-1-16-8192",
@@ -8153,7 +8153,7 @@ In this section, you will find examples of raw logs as generated natively by the
                     "Operating system"
                 ],
                 "ProcessCommandLine": "\"C:\\ProgramFiles\\Apoint2K\\Apoint.exe\"",
-                "User": "S-1-5-21-2222222-33333333-44444444-555",
+                "User": "S-1-2-3",
                 "UserNameLookup": "JOHNDOE",
                 "UserDomainLookup": "TEST",
                 "IntegrityLevel": "S-1-16-8192",
@@ -8214,7 +8214,7 @@ In this section, you will find examples of raw logs as generated natively by the
                     "Operating system"
                 ],
                 "ProcessCommandLine": "C:\\Windows\\Explorer.EXE",
-                "User": "S-1-5-21-2222222-33333333-44444444-555",
+                "User": "S-1-2-3",
                 "UserNameLookup": "JOHNDOE",
                 "UserDomainLookup": "TEST",
                 "IntegrityLevel": "S-1-16-8192",
@@ -8281,7 +8281,7 @@ In this section, you will find examples of raw logs as generated natively by the
                 "HashSha1": "726C9D759C5F02080FA003B50466A3BE0C959865",
                 "HashSha256": "ED5F36137D09E1CFC0CCF2675FB5D460E7EED135BA36D3259D2C510592047F28",
                 "UserNameLookup": "JOHNDOE",
-                "User": "S-1-5-21-2222222-33333333-44444444-555",
+                "User": "S-1-2-3",
                 "UserDomainLookup": "TEST",
                 "CertificateSignatureState": 1,
                 "Certificates": [
@@ -8317,7 +8317,7 @@ In this section, you will find examples of raw logs as generated natively by the
                 "HashSha1": "AC9F34399C7C5A6324EFE0FA16F33DA4116016C6",
                 "HashSha256": "1247766F6B5AD11E5C97167B5A452374E22876136FC7A23F79BE14AD9A7FA3E7",
                 "UserNameLookup": "JOHNDOE",
-                "User": "S-1-5-21-2222222-33333333-44444444-555",
+                "User": "S-1-2-3",
                 "UserDomainLookup": "TEST",
                 "CertificateSignatureState": 7,
                 "Certificates": null,
@@ -8373,13 +8373,13 @@ In this section, you will find examples of raw logs as generated natively by the
             "SourceProcess": {
                 "PID": 464,
                 "ProcessGuid": "{A8E8DCB5-B340-4417-89A6-893B299DD5F1}",
-                "ProcessImageName": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\2\\ps_ReadOnly.exe",
+                "ProcessImageName": "C:\\Users\\User1\\AppData\\Local\\Temp\\2\\ps_ReadOnly.exe",
                 "VolumeZone": 1,
                 "VolumeZoneComputedBitMap": [
                     "Operating system"
                 ],
-                "ProcessCommandLine": "\"C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\2\\ps_ReadOnly.exe\"-ExecutionPolicyUnrestricted-File\"C:\\tmp\\ProcessAccess\\Duplicate\\Attacker.ps1\"-OutputFileLog\"c:\\tmp\\a.jsonAttackerReadOnly\"-OutputExr\"c:\\tmp\\a.txtReadOnly\"-TargetProcessHandleValue2388-TargetThreadHandleValue2540-TargetProcessHandle3980-SASAT\"c:\\tmp\\ProcessAccess\\WSASA\\NtObjectManager\\NtObjectManager.psd1\"",
-                "User": "S-1-5-21-2222222-33333333-44444444-555",
+                "ProcessCommandLine": "\"C:\\Users\\User1\\AppData\\Local\\Temp\\2\\ps_ReadOnly.exe\"-ExecutionPolicyUnrestricted-File\"C:\\tmp\\ProcessAccess\\Duplicate\\Attacker.ps1\"-OutputFileLog\"c:\\tmp\\a.jsonAttackerReadOnly\"-OutputExr\"c:\\tmp\\a.txtReadOnly\"-TargetProcessHandleValue2388-TargetThreadHandleValue2540-TargetProcessHandle3980-SASAT\"c:\\tmp\\ProcessAccess\\WSASA\\NtObjectManager\\NtObjectManager.psd1\"",
+                "User": "S-1-2-3",
                 "UserNameLookup": "JOHNDOE",
                 "UserDomainLookup": "TEST",
                 "IntegrityLevel": "S-1-16-12288",
@@ -8424,7 +8424,7 @@ In this section, you will find examples of raw logs as generated natively by the
                     "Operating system"
                 ],
                 "ProcessCommandLine": "\"C:\\Windows\\TEMP\\ps_Target.exe\"-ExecutionPolicyUnrestricted-File\"C:\\tmp\\ProcessAccess\\Duplicate\\Target.ps1\"-OutputFileLog\"c:\\tmp\\a.jsonTarget\"-SASAT\"c:\\tmp\\ProcessAccess\\WSASA\\NtObjectManager\\NtObjectManager.psd1\"",
-                "User": "S-1-5-21-2222222-33333333-44444444-555",
+                "User": "S-1-2-3",
                 "UserNameLookup": "JOHNDOE",
                 "UserDomainLookup": "TEST",
                 "IntegrityLevel": "S-1-16-12288",
@@ -8493,13 +8493,13 @@ In this section, you will find examples of raw logs as generated natively by the
             "DuplicatingProcess": {
                 "PID": 464,
                 "ProcessGuid": "{A8E8DCB5-B340-4417-89A6-893B299DD5F1}",
-                "ProcessImageName": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\2\\ps_ReadOnly.exe",
+                "ProcessImageName": "C:\\Users\\User1\\AppData\\Local\\Temp\\2\\ps_ReadOnly.exe",
                 "VolumeZone": 1,
                 "VolumeZoneComputedBitMap": [
                     "Operating system"
                 ],
-                "ProcessCommandLine": "\"C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\2\\ps_ReadOnly.exe\"-ExecutionPolicyUnrestricted-File\"C:\\tmp\\ProcessAccess\\Duplicate\\Attacker.ps1\"-OutputFileLog\"c:\\tmp\\a.jsonAttackerReadOnly\"-OutputExr\"c:\\tmp\\a.txtReadOnly\"-TargetProcessHandleValue2388-TargetThreadHandleValue2540-TargetProcessHandle3980-SASAT\"c:\\tmp\\ProcessAccess\\WSASA\\NtObjectManager\\NtObjectManager.psd1\"",
-                "User": "S-1-5-21-2222222-33333333-44444444-555",
+                "ProcessCommandLine": "\"C:\\Users\\User1\\AppData\\Local\\Temp\\2\\ps_ReadOnly.exe\"-ExecutionPolicyUnrestricted-File\"C:\\tmp\\ProcessAccess\\Duplicate\\Attacker.ps1\"-OutputFileLog\"c:\\tmp\\a.jsonAttackerReadOnly\"-OutputExr\"c:\\tmp\\a.txtReadOnly\"-TargetProcessHandleValue2388-TargetThreadHandleValue2540-TargetProcessHandle3980-SASAT\"c:\\tmp\\ProcessAccess\\WSASA\\NtObjectManager\\NtObjectManager.psd1\"",
+                "User": "S-1-2-3",
                 "UserNameLookup": "JOHNDOE",
                 "UserDomainLookup": "TEST",
                 "IntegrityLevel": "S-1-16-12288",
