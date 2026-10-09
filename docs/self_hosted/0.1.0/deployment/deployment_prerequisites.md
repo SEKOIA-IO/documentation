@@ -98,7 +98,7 @@ The following table provides estimated hardware footprints per deployment size.
 
 ## Storage
 
-An S3-compatible bucket is required for event data storage and platform backups. You must provision this bucket before deployment.
+S3-compatible storage is required for event data storage and platform backups. You must provision it before deployment.
 
 | Use | Notes |
 | :--- | :--- |
@@ -114,6 +114,21 @@ The S3-compatible storage must meet the following performance requirements:
 
 !!! note "S3 benchmarks in progress"
     S3 performance benchmarks are ongoing. The required values will be available by the GA release.
+
+### Event storage buckets
+
+ExaLog stores events across 16 dedicated buckets. The platform does not create these buckets, so bucket creation is your responsibility. Before you start the installation, create one bucket per hexadecimal digit on your S3-compatible storage, named `exalog-self-hosted-events-<digit>`, where `<digit>` is `0` to `9` and `a` to `f`:
+
+```text
+exalog-self-hosted-events-0
+exalog-self-hosted-events-1
+exalog-self-hosted-events-2
+...
+exalog-self-hosted-events-e
+exalog-self-hosted-events-f
+```
+
+The buckets do not need individual quotas. Provision all 16 buckets on a single storage pool sized according to [Cluster sizing](#cluster-sizing).
 
 ## Network requirements
 
