@@ -287,6 +287,20 @@ Configure these fields when the platform, the container runtime, or the SHC reac
 !!! tip "Keep the default exclusions"
     To exclude more destinations from the proxy, append them to the default `no_proxy` value instead of replacing it. The default list keeps the cluster-internal and private addresses out of the proxy. Add your Git, OCI registry, and S3 hostnames when they are reachable without the proxy: an address range does not match a hostname.
 
+### Database storage
+
+These fields set the disk size of each instance of the PostgreSQL clusters whose data grows with platform usage. Each cluster runs three instances.
+
+!!! warning "Storage size can only increase"
+    CloudNativePG cannot shrink a volume. Set a value equal to or larger than the current size of the cluster volumes.
+
+| Field | Description | Default |
+| :--- | :--- | :--- |
+| `modules.platform_configuration.config.assetmanagement.database.storage.size` | Storage size of the asset management database. | `50Gi` |
+| `modules.platform_configuration.config.sicalertapi.database.storage.size` | Storage size of the alerts database. | `50Gi` |
+| `modules.platform_configuration.config.hatchet.database.storage.size` | Storage size of the workflow engine database. | `30Gi` |
+| `modules.platform_configuration.config.symphony.database.storage.size` | Storage size of the playbooks database. | `30Gi` |
+
 ## Inspect the configuration with the SHC
 
 Use the SHC itself to discover supported optional fields and verify the computed configuration.
