@@ -1,105 +1,101 @@
 # Observables
 
-## What is interesting about the Observables page?
+An observable is a piece of technical information that can help identify or investigate a potential threat. When an observable clearly represents malicious activity and has threat context, Sekoia can treat it as an indicator of compromise (IoC).
 
-An observable is a technical information that can detect a potential threat.
-They are derived from all data contained in the Intelligence Center but are not always contextualized.
-If an observable cleary represents a malicious activity, then it is considered as an IoC.
+Use observables to investigate technical values such as IP addresses, domains, URLs, file hashes, and email addresses.
 
-This page provides a quick and efficient search engine for all the technical information available within the Intelligence Center, observables and IoC.
+## Find an observable
 
-## Use Case
+Use the [Intelligence search workflow](/cti/features/consume/intelligence.md) to search for one or more observable values.
 
-A classic use case is when you are looking for any information regarding an IP address, domain name, url or file hash. It will give you an answer with the potential related threat or/and associated tag.
+When you paste multiple values, review the **Known** and **Unknown** result views. The **Known** view contains values available in the Intelligence database. The **Unknown** view contains values that Sekoia has not identified.
 
-## Tag
+Select an observable to open its details page.
 
-Tag information has a time validity and provides some technical enrichment depending of the type of the observable: geolocation, internet provider, reputation (e.g. scanner)
+## Observable types
 
-## How are the observables produced?
+Sekoia can store observables such as:
 
-Technical information is automatically extracted from various sources: public, subscriptions, partners, SEKOIA internal analysis.
+| Type | Examples |
+|---|---|
+| Network | IPv4 address, IPv6 address, autonomous system, MAC address |
+| Web | Domain name, URL, email address |
+| File | File, filename, file hash |
+| Certificate | X.509 certificate |
+| System | Directory, mutex, Windows registry key |
+| Organization | Organization name |
+| Text | Text value |
 
-Depending of the source, a tag name could be associated with a `valid_from` and `valid_until` timestamp, providing an up-to-date technical information directly integrated to the Intelligence Center database: an IP address could be enriched with the tag `scanner` once, then have the tag expired if that IP address scanning activity is no longer observed.
+## Sources and enrichment
 
-An observable also has relationships with other observables: an IP address could `belongs-to` an subnet object, and have a url `hosted-on`. It could become an indicator of compromise with its associated threat (e.g. malware, campaign).
+Observables can come from public sources, subscriptions, partners, and Sekoia internal analysis.
 
-## The main features of the observables page
+Sources and enrichment can provide context such as:
 
-### Type (examples)
+- geolocation;
+- Internet service provider;
+- reputation;
+- scanning activity;
+- cloud provider or hosting information;
+- security reports.
 
-* Autonomous system
-* x509 Certificate
-* Directory
-* Domain name
-* Email addr
-* File
-* Filename
-* Ipv4 addr
-* Ipv6 addr
-* Mac addr
-* Mutex
-* Organization
-* Text
-* URL
-* Windows registry key
+## Tags and validity
 
-### Source (examples)
+Tags add context to an observable. Examples include tags for cloud providers, country ranges, scanning activity, URL shorteners, sinkholes, and newly observed domains.
 
-* SEKOIA
-* SEKOIA C2 Tracker
-* SEKOIA Malware Watcher
-* Tria.ge
-* URLHaus
-* PhishTank
-* MalwareBazaar
+Tags can include validity dates:
 
-### Tag (examples)
+- **Valid from** indicates when the information became valid;
+- **Valid until** indicates when the information expires.
 
-* amazon_aws (Amazon AWS IP Ranges)
-* cloudflare (Cloudflare IPv4)
-* country:*	(Country)
-* crl or ocsp (CRL and OCSP Domain Names)
-* cryptomining (Domain Names related to Cryptomining activity)
-* disposable_email	(List of domain names providing disposable email services)
-* domains_top_1_000_000 (Top 1M domain names)
-* domains_top_100_000 (Top 100k domain names)
-* domains_top_10_000 (Top 10k domain names)
-* dynamic-dns (Top 5000 dynamic malicious domains)
-* google (Domain Names used by Google products)
-* googlebot	(IP Addresses used by Google Bot)
-* iplookup (IP Lookup Services)
-* multicast	(RFC 5771 multicast CIDR blocks)
-* nod:1month (Newly Observed Domains discovered within the past month)
-* nod:4months (Newly Observed Domains discovered within the past 4 months)
-* nod:12months (Newly Observed Domains discovered within the past 12 months)
-* office365	(Office 365 IP Ranges and Domains)
-* ovh_webhosting (Addresses IP OVH Web Hosting - Shared)
-* rfc1918 (RFC1918 - Private Addresses)
-* rfc5735 (RFC5735 - Special Use Addresses)
-* rfc6598 (RFC6598 - Shared Address Space)
-* rfc6761 (RFC6761 - Special Use Domain Names)
-* scanner:*	(Hosts involved in mass scanning and/or exploitation attempts)
-* security_vendor (Security Vendor Blogs)
-* sinkhole (Brakmic Sinkholes)
-* tor (Tor Exit Nodes)
-* university (University Domain Names and Websites)
-* url_shortener (URL Shorteners)
+Review the validity dates before using a tag as current evidence. A tag with an expired validity period remains part of the observable history but no longer represents current enrichment.
 
-### Searches
+## Observable relationships
 
-You could proceed with bulk research, one observable on each line.
-![!Intelligence Center Observable research](/assets/intelligence_center/observables_search.png){: style="width: 100%; max-width: 100%"}
+An observable can relate to other observables and intelligence objects. For example:
 
-The result page will give you two tabs, one for the known the other for the unknown with the potential associated tags, threats related.
+- an IP address can belong to a subnet;
+- a URL can be hosted on a domain;
+- an observable can be associated with a malware, campaign, or intrusion set;
+- an observable can become an IoC when its threat context confirms malicious activity.
 
-When clicking on an Observable, a dedicated page will display information, raw object and sometimes relationships as shown bellow:
-![!Intelligence Center Observable result](/assets/intelligence_center/observables_results_relationships.png){: style="width: 100%; max-width: 100%"}
+Use these relationships to move from a technical value to the wider threat context. For relationship workflows, see [Investigate an object](/cti/features/consume/investigate_an_object.md).
 
-## Example Use Case
+## Review observable details
 
-You found some domain names during an investigation and you want to know if those observables are known in the Intelligence Center and if there is more context to it.
+An observable details page can include:
 
-Simply paste the domain names into the search fields and hit enter.
+- the observable value;
+- its type;
+- TLP and confidence;
+- sources;
+- tags and validity dates;
+- related objects;
+- external references;
+- the raw object when available.
 
-In the `Known` tab you will find observables known in the Intelligence Center and some context over it if there is some. The `Unknown` tab will contain the observables never seen in the Intelligence Center.
+Use the details page to validate the value, review its enrichment, and decide whether its related threat context is relevant to your investigation.
+
+## Example workflow
+
+You find several domains during an investigation and want to check whether Sekoia has already seen them.
+
+1. Search for the domains in **Intelligence**.
+
+2. Review the **Known** results.
+
+3. Check the sources, tags, and validity dates for each known observable.
+
+4. Open an observable to review its related malware, campaigns, or other objects.
+
+5. Review the **Unknown** results separately. An unknown observable is not evidence that the value is benign. It means that Sekoia has not identified it in the searched data.
+
+## Related articles
+
+[Intelligence](/cti/features/consume/intelligence.md): How to search and filter objects and observables.
+
+[Investigate an object](/cti/features/consume/investigate_an_object.md): How to review an object’s context, relationships, graph, and reports.
+
+[Data model](/cti/features/data_model.md): Reference for objects, observables, relationships, sources, and confidence.
+
+[Graph Explorations](/cti/features/consume/graph_explorations.md): How to explore relationships in a visual graph.
