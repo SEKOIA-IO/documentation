@@ -54,37 +54,66 @@ Use this tab to validate that protections are in place during triage, identify w
 
 ## Vulnerabilities tab
 
-The **Vulnerabilities** tab lists known CVE exposures affecting the asset, aggregated from connected vulnerability scanners and cloud or IaaS APIs.
+The **Vulnerabilities** tab lists known CVE exposures affecting the asset, aggregated from connected vulnerability scanners and cloud or IaaS APIs. Each CVE is enriched with reference data from the NIST National Vulnerability Database (NVD).
 
 ### Vulnerability list
 
 | Column | Description |
 |---|---|
 | Status | Open, Closed: Accepted risk, Closed: False positive, or Closed: Remediated |
-| CVE ID | Linked to Sekoia CTI |
-| Severity | CVSS score (v3 or v4 when available) |
-| CWE | Weakness category |
+| CVE ID | Unique identifier of the publicly known vulnerability, linked to Sekoia CTI |
+| Title | Short title of the vulnerability |
+| Severity (CVSS) | CVSS score rating the technical severity (CVSS v3.1) |
+| Exploitation | Whether the CVE is listed in the CISA Known Exploited Vulnerabilities (KEV) catalog (shown as Known exploited), when available. Filterable via the **Known exploited** filter |
+| CWE | Weakness category (Common Weakness Enumeration) |
 | Unified risk score | Normalized score from 1 to 100 (see below) |
-| Software / Version | Affected product and version |
 
-Select a row to expand it and view the full description, the connector that identified the vulnerability, the user or process that closed it if applicable, and first and last seen dates.
+Select a row to expand it and view the full description, the CVSS vector and exploitability characteristics (attack vector, attack complexity, privileges required, user interaction), external references, the detection and confirmation source, first and last seen dates, and the record UUID.
 
 ### Unified risk score
 
-Different vulnerability scanners use different scoring scales. The unified risk score translates each source into a single comparable value from 1 to 100.
+!!! note "Asset score and vulnerability score"
 
-The score is calculated as follows:
+    The **Unified risk score** applies to an individual vulnerability. The **Asset Risk Score** applies to the host asset and combines exposure, recent activity, and criticality.
 
-1. Normalize the vendor score to a 0–100 range.
-2. Invert the direction if the source scores safety rather than risk, so that 100 always represents the highest risk.
-3. Clamp and round to the 1–100 range. Missing or invalid scores display as N/A.
+Different vulnerability scanners use different scoring scales. The unified risk score translates each source into a single comparable value from 1 to 100, where 100 always represents the highest risk. Missing or invalid scores display as N/A. It reflects contextual risk and is not the same as CVSS.
 
-The unified risk score reflects contextual risk and is not the same as CVSS.
+For the full field reference, score bands, and status workflow, see [Vulnerability enrichment](/xdr/features/modules/reveal_vulnerabilities.md).
 
-!!! example "Exploit alignment during a web server incident"
-    A *remote file inclusion* alert (ATT&CK T1190) targets a web server. The vulnerabilities tab shows **CVE-2023-28432** on the same application version with a high unified risk score. The recommended action is to isolate the host, patch urgently, and document exploit alignment in the case.
+![Vulnerabilities tab example](https://github.com/user-attachments/assets/300d5842-379d-4c09-9827-331217ac4357)
 
-<img width="515" height="396" alt="Vulnerabilities tab example" src="https://github.com/user-attachments/assets/300d5842-379d-4c09-9827-331217ac4357" />
+
+## Applications tab
+
+## Applications tab
+
+## Applications tab
+
+!!! note "Beta"
+
+    The Applications tab is currently in **Beta**. Fields and behavior may change as the feature evolves.
+
+The **Applications** tab lists the software discovered on a host asset and maps each application to the known CVE exposures that affect it. Two counters summarize the footprint: **Vulnerable Applications** (installed applications with at least one matching CVE) and **Installed Applications** (total discovered).
+
+Use the **All / vulnerable** toggle, the **Filters** (Publisher, Application, Architecture, Signed), or the search box to narrow the list.
+
+| Column | Description |
+|---|---|
+| Publisher | Vendor or author of the application |
+| Application | Application name |
+| CVE Count | Number of known CVEs affecting the installed version. Select the badge to jump to the matching vulnerabilities |
+| Architecture | Target architecture of the installed binary, when reported |
+| Version | Installed version of the application |
+| Signed | Whether the binary is digitally signed (`True` / `False`) |
+| Signed by | Signing authority, when the binary is signed |
+| Filename | File name of the application binary, when reported |
+
+Select an application row to expand it and view the install path, installation date, first and last seen dates, last username, source, SHA-256 and MD5 hashes, CPE, and PURL.
+
+The **CVE Count** badge is a shortcut into the Vulnerabilities tab: select it (the **Click to see vulnerabilities** tooltip appears on hover) to open the CVEs affecting that application.
+
+For the full reference, see [Application discovery](/xdr/features/modules/reveal_applications.md).
+
 
 ## Security controls tab
 
