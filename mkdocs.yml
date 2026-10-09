@@ -722,6 +722,7 @@ nav:
       - Okta: integration/assets_categories/device/okta_device.md
       - SentinelOne EDR: integration/assets_categories/device/sentinelone_edr.md
       - Sophos EDR: integration/assets_categories/device/sophos_edr.md
+      - WithSecure Elements: integration/assets_categories/device/withsecure_elements.md
     - Software:
       - HarfangLab EDR: integration/assets_categories/software/harfanglab_software.md
     - User:
