@@ -29,10 +29,10 @@ In this section, you will find examples of raw logs as generated natively by the
             }
         },
         "properties": {
-            "id": "https://test.vault.azure.net/certificates/fdfdffffd",
+            "id": "https://host.example.com/certificates/fdfdffffd",
             "clientInfo": "Mozilla/5.0 (X11; Ubuntu; Linux x86_64) Firefox/12.0",
             "httpStatusCode": 202,
-            "requestUri": "https://test.vault.azure.net/certificates/fdfdffffd/create?api-version=7.0",
+            "requestUri": "https://example.com/certificates/fdfdffffd/create?api-version=7.0",
             "isAccessPolicyMatch": true,
             "certificateProperties": {
                 "attributes": {
@@ -62,7 +62,7 @@ In this section, you will find examples of raw logs as generated natively by the
             },
             "tlsVersion": "TLS1_3"
         },
-        "resourceId": "/SUBSCRIPTIONS/00000000-0000-0000-0000/RESOURCEGROUPS/INTEGRATION/PROVIDERS/MICROSOFT.KEYVAULT/VAULTS/TEST",
+        "resourceId": "/SUBSCRIPTIONS/00000000-0000-0000-0000-000000000000/RESOURCEGROUPS/test/PROVIDERS/MICROSOFT.KEYVAULT/VAULTS/test",
         "operationVersion": "7.0",
         "resultSignature": "Accepted",
         "durationMs": "575"
@@ -97,10 +97,10 @@ In this section, you will find examples of raw logs as generated natively by the
             }
         },
         "properties": {
-            "id": "https://test.vault.azure.net/certificates/mycertiii",
+            "id": "https://host.example.com/certificates/mycertiii",
             "clientInfo": "Mozilla/5.0 (X11; Ubuntu; Linux x86_64) Firefox/12.0",
             "httpStatusCode": 400,
-            "requestUri": "https://test.vault.azure.net/certificates/mycertiii/import?api-version=7.0",
+            "requestUri": "https://example.com/certificates/mycertiii/import?api-version=7.0",
             "isAccessPolicyMatch": true,
             "certificatePolicyProperties": {
                 "secretProperties": {
@@ -109,7 +109,7 @@ In this section, you will find examples of raw logs as generated natively by the
             },
             "tlsVersion": "TLS1_3"
         },
-        "resourceId": "/SUBSCRIPTIONS/00000000-0000-0000-0000-0000/RESOURCEGROUPS/INTEGRATION/PROVIDERS/MICROSOFT.KEYVAULT/VAULTS/TEST",
+        "resourceId": "/SUBSCRIPTIONS/00000000-0000-0000-0000-000000000000/RESOURCEGROUPS/test/PROVIDERS/MICROSOFT.KEYVAULT/VAULTS/test",
         "operationVersion": "7.0",
         "resultSignature": "Bad Request",
         "durationMs": "16"
@@ -143,10 +143,10 @@ In this section, you will find examples of raw logs as generated natively by the
             }
         },
         "properties": {
-            "id": "https://test.vault.azure.net/certificates/yfuffuygu",
+            "id": "https://host.example.com/certificates/yfuffuygu",
             "clientInfo": "Mozilla/5.0 (X11; Ubuntu; Linux x86_64) Firefox/12.0",
             "httpStatusCode": 200,
-            "requestUri": "https://test.vault.azure.net/certificates/yfuffuygu/import?api-version=7.0",
+            "requestUri": "https://example.com/certificates/yfuffuygu/import?api-version=7.0",
             "isAccessPolicyMatch": true,
             "keyProperties": {
                 "type": "RSA",
@@ -172,7 +172,7 @@ In this section, you will find examples of raw logs as generated natively by the
             },
             "tlsVersion": "TLS1_3"
         },
-        "resourceId": "/SUBSCRIPTIONS/00000000-0000-0000-0000-0000/RESOURCEGROUPS/INTEGRATION/PROVIDERS/MICROSOFT.KEYVAULT/VAULTS/TEST",
+        "resourceId": "/SUBSCRIPTIONS/00000000-0000-0000-0000-000000000000/RESOURCEGROUPS/test/PROVIDERS/MICROSOFT.KEYVAULT/VAULTS/test",
         "operationVersion": "7.0",
         "resultSignature": "OK",
         "durationMs": "222"
@@ -191,7 +191,7 @@ In this section, you will find examples of raw logs as generated natively by the
         "operationName": "CertificateUpdate",
         "resultType": "Success",
         "correlationId": "0beabe33-25ee-4b8f-91de-4c7e47645d7b",
-        "callerIpAddress": "147.161.246.101",
+        "callerIpAddress": "198.51.100.1",
         "identity": {
             "claim": {
                 "oid": "d4ba3e84-0444-4841-aaf7-XXXXXX",
@@ -206,14 +206,14 @@ In this section, you will find examples of raw logs as generated natively by the
             }
         },
         "properties": {
-            "id": "https://test.vault.azure.net/certificates/fdfdffffd/2b5dd56d53254413811cb3d3ea2529f1",
+            "id": "https://host.example.com/certificates/fdfdffffd/2b5dd56d53254413811cb3d3ea2529f1",
             "clientInfo": "Mozilla/5.0 (X11; Ubuntu; Linux x86_64)Firefox/12.0",
             "httpStatusCode": 200,
-            "requestUri": "https://test.vault.azure.net/certificates/fdfdffffd/2b5dd56d53254413811cb3d3ea2529f1?api-version=7.0",
+            "requestUri": "https://example.com/certificates/fdfdffffd/2b5dd56d53254413811cb3d3ea2529f1?api-version=7.0",
             "isAccessPolicyMatch": true,
             "tlsVersion": "TLS1_3"
         },
-        "resourceId": "/SUBSCRIPTIONS/F40A1F1D-F2C6-4444-92A6-93068B9DE034/RESOURCEGROUPS/INTEGRATION/PROVIDERS/MICROSOFT.KEYVAULT/VAULTS/TEST",
+        "resourceId": "/SUBSCRIPTIONS/00000000-0000-0000-0000-000000000000/RESOURCEGROUPS/test/PROVIDERS/MICROSOFT.KEYVAULT/VAULTS/test",
         "operationVersion": "7.0",
         "resultSignature": "OK",
         "durationMs": "92"
@@ -247,10 +247,10 @@ In this section, you will find examples of raw logs as generated natively by the
             }
         },
         "properties": {
-            "id": "https://test.vault.azure.net/keys/egzghfgrrg",
+            "id": "https://host.example.com/keys/egzghfgrrg",
             "clientInfo": "Mozilla/5.0 (X11; Ubuntu; Linux x86_64) Firefox/12.0",
             "httpStatusCode": 200,
-            "requestUri": "https://test.vault.azure.net/keys/egzghfgrrg/backup?api-version=7.3",
+            "requestUri": "https://example.com/keys/egzghfgrrg/backup?api-version=7.3",
             "isAccessPolicyMatch": true,
             "keyProperties": {
                 "type": "RSA",
@@ -260,7 +260,7 @@ In this section, you will find examples of raw logs as generated natively by the
             },
             "tlsVersion": "TLS1_3"
         },
-        "resourceId": "/SUBSCRIPTIONS/00000000-0000-0000-0000-0000XXXXXX/RESOURCEGROUPS/INTEGRATION/PROVIDERS/MICROSOFT.KEYVAULT/VAULTS/TEST",
+        "resourceId": "/SUBSCRIPTIONS/00000000-0000-0000-0000-000000000000/RESOURCEGROUPS/test/PROVIDERS/MICROSOFT.KEYVAULT/VAULTS/test",
         "operationVersion": "7.3",
         "resultSignature": "OK",
         "durationMs": "46"
@@ -294,10 +294,10 @@ In this section, you will find examples of raw logs as generated natively by the
             }
         },
         "properties": {
-            "id": "https://test.vault.azure.net/keys/egzghfgrrg",
+            "id": "https://host.example.com/keys/egzghfgrrg",
             "clientInfo": "Mozilla/5.0 (X11; Ubuntu; Linux x86_64) Firefox/12.0",
             "httpStatusCode": 200,
-            "requestUri": "https://test.vault.azure.net/keys/egzghfgrrg?api-version=7.3",
+            "requestUri": "https://example.com/keys/egzghfgrrg?api-version=7.3",
             "isAccessPolicyMatch": true,
             "keyProperties": {
                 "type": "RSA",
@@ -307,7 +307,7 @@ In this section, you will find examples of raw logs as generated natively by the
             },
             "tlsVersion": "TLS1_3"
         },
-        "resourceId": "/SUBSCRIPTIONS/00000000-0000-0000-0000-0000XXXXXX/RESOURCEGROUPS/INTEGRATION/PROVIDERS/MICROSOFT.KEYVAULT/VAULTS/TEST",
+        "resourceId": "/SUBSCRIPTIONS/00000000-0000-0000-0000-000000000000/RESOURCEGROUPS/test/PROVIDERS/MICROSOFT.KEYVAULT/VAULTS/test",
         "operationVersion": "7.3",
         "resultSignature": "OK",
         "durationMs": "44"
@@ -341,10 +341,10 @@ In this section, you will find examples of raw logs as generated natively by the
             }
         },
         "properties": {
-            "id": "https://test.vault.azure.net/keys/egzghfgrrg",
+            "id": "https://host.example.com/keys/egzghfgrrg",
             "clientInfo": "Mozilla/5.0 (X11; Ubuntu; Linux x86_64) Firefox/12.0",
             "httpStatusCode": 200,
-            "requestUri": "https://test.vault.azure.net/keys/egzghfgrrg?api-version=7.3",
+            "requestUri": "https://example.com/keys/egzghfgrrg?api-version=7.3",
             "isAccessPolicyMatch": true,
             "keyProperties": {
                 "type": "RSA",
@@ -354,7 +354,7 @@ In this section, you will find examples of raw logs as generated natively by the
             },
             "tlsVersion": "TLS1_3"
         },
-        "resourceId": "/SUBSCRIPTIONS/00000000-0000-0000-0000-0000XXXXXX/RESOURCEGROUPS/INTEGRATION/PROVIDERS/MICROSOFT.KEYVAULT/VAULTS/TEST",
+        "resourceId": "/SUBSCRIPTIONS/00000000-0000-0000-0000-000000000000/RESOURCEGROUPS/test/PROVIDERS/MICROSOFT.KEYVAULT/VAULTS/test",
         "operationVersion": "7.3",
         "resultSignature": "OK",
         "durationMs": "44"
@@ -389,14 +389,14 @@ In this section, you will find examples of raw logs as generated natively by the
             }
         },
         "properties": {
-            "id": "https://test.vault.azure.net/keys/egzghfgrrg",
+            "id": "https://host.example.com/keys/egzghfgrrg",
             "clientInfo": "Mozilla/5.0 (X11; Ubuntu; Linux x86_64) Firefox/12.0",
             "httpStatusCode": 404,
-            "requestUri": "https://test.vault.azure.net/keys/egzghfgrrg?api-version=7.3&x-ms-include-der=true&_=1712126805788",
+            "requestUri": "https://example.com/keys/egzghfgrrg?api-version=7.3&x-ms-include-der=true&_=1712126805788",
             "isAccessPolicyMatch": true,
             "tlsVersion": "TLS1_3"
         },
-        "resourceId": "/SUBSCRIPTIONS/00000000-0000-0000-0000/RESOURCEGROUPS/INTEGRATION/PROVIDERS/MICROSOFT.KEYVAULT/VAULTS/TEST",
+        "resourceId": "/SUBSCRIPTIONS/00000000-0000-0000-0000-000000000000/RESOURCEGROUPS/test/PROVIDERS/MICROSOFT.KEYVAULT/VAULTS/test",
         "operationVersion": "7.3",
         "resultSignature": "Not Found",
         "durationMs": "22"
@@ -430,10 +430,10 @@ In this section, you will find examples of raw logs as generated natively by the
             }
         },
         "properties": {
-            "id": "https://test.vault.azure.net/keys/MyFirstKey",
+            "id": "https://host.example.com/keys/MyFirstKey",
             "clientInfo": "Mozilla/5.0 (X11; Ubuntu; Linux x86_64) Firefox/12.0",
             "httpStatusCode": 200,
-            "requestUri": "https://test.vault.azure.net/keys/MyFirstKey?api-version=7.3&x-ms-include-der=true&_=1712127259288",
+            "requestUri": "https://example.com/keys/MyFirstKey?api-version=7.3&x-ms-include-der=true&_=1712127259288",
             "isAccessPolicyMatch": true,
             "keyProperties": {
                 "type": "RSA",
@@ -443,7 +443,7 @@ In this section, you will find examples of raw logs as generated natively by the
             },
             "tlsVersion": "TLS1_3"
         },
-        "resourceId": "/SUBSCRIPTIONS/00000000-0000-0000-0000-0000X/RESOURCEGROUPS/INTEGRATION/PROVIDERS/MICROSOFT.KEYVAULT/VAULTS/TEST",
+        "resourceId": "/SUBSCRIPTIONS/00000000-0000-0000-0000-000000000000/RESOURCEGROUPS/test/PROVIDERS/MICROSOFT.KEYVAULT/VAULTS/test",
         "operationVersion": "7.3",
         "resultSignature": "OK",
         "durationMs": "12"
@@ -479,11 +479,11 @@ In this section, you will find examples of raw logs as generated natively by the
         "properties": {
             "clientInfo": "Mozilla/5.0 (X11; Ubuntu; Linux x86_64) Firefox/12.0",
             "httpStatusCode": 200,
-            "requestUri": "https://test.vault.azure.net/keys?api-version=7.3&maxresults=25&_=1712126805807",
+            "requestUri": "https://example.com/keys?api-version=7.3&maxresults=25&_=1712126805807",
             "isAccessPolicyMatch": true,
             "tlsVersion": "TLS1_3"
         },
-        "resourceId": "/SUBSCRIPTIONS/00000000-0000-0000-0000-0000XXXXXX/RESOURCEGROUPS/INTEGRATION/PROVIDERS/MICROSOFT.KEYVAULT/VAULTS/TEST",
+        "resourceId": "/SUBSCRIPTIONS/00000000-0000-0000-0000-000000000000/RESOURCEGROUPS/test/PROVIDERS/MICROSOFT.KEYVAULT/VAULTS/test",
         "operationVersion": "7.3",
         "resultSignature": "OK",
         "durationMs": "57"
@@ -520,11 +520,11 @@ In this section, you will find examples of raw logs as generated natively by the
         "properties": {
             "clientInfo": "3686488a-04fc-4d8a-b967-61f98ec41efe",
             "httpStatusCode": 403,
-            "requestUri": "https://keytestint.vault.azure.net/keys?api-version=7.3&maxresults=25&_=1712042263953",
+            "requestUri": "https://example.com/keys?api-version=7.3&maxresults=25&_=1712042263953",
             "isRbacAuthorized": false,
             "tlsVersion": "TLS1_3"
         },
-        "resourceId": "/SUBSCRIPTIONS/00000000-0000-0000-0000/RESOURCEGROUPS/INTEGRATION/PROVIDERS/MICROSOFT.KEYVAULT/VAULTS/KEYTESTINT",
+        "resourceId": "/SUBSCRIPTIONS/00000000-0000-0000-0000-000000000000/RESOURCEGROUPS/test/PROVIDERS/MICROSOFT.KEYVAULT/VAULTS/test",
         "operationVersion": "7.3",
         "resultSignature": "Forbidden",
         "durationMs": "22"
@@ -560,11 +560,11 @@ In this section, you will find examples of raw logs as generated natively by the
         "properties": {
             "clientInfo": "Mozilla/5.0 (X11; Ubuntu; Linux x86_64) Firefox/12.0",
             "httpStatusCode": 200,
-            "requestUri": "https://test.vault.azure.net/deletedkeys?api-version=7.0",
+            "requestUri": "https://example.com/deletedkeys?api-version=7.0",
             "isAccessPolicyMatch": true,
             "tlsVersion": "TLS1_3"
         },
-        "resourceId": "/SUBSCRIPTIONS/00000000-0000-0000-0000-0000XXXXXX/RESOURCEGROUPS/INTEGRATION/PROVIDERS/MICROSOFT.KEYVAULT/VAULTS/TEST",
+        "resourceId": "/SUBSCRIPTIONS/00000000-0000-0000-0000-000000000000/RESOURCEGROUPS/test/PROVIDERS/MICROSOFT.KEYVAULT/VAULTS/test",
         "operationVersion": "7.0",
         "resultSignature": "OK",
         "durationMs": "46"
@@ -598,14 +598,14 @@ In this section, you will find examples of raw logs as generated natively by the
             }
         },
         "properties": {
-            "id": "https://test.vault.azure.net/keys/egzghfgrrg",
+            "id": "https://host.example.com/keys/egzghfgrrg",
             "clientInfo": "Mozilla/5.0 (X11; Ubuntu; Linux x86_64) Firefox/12.0",
             "httpStatusCode": 200,
-            "requestUri": "https://test.vault.azure.net/keys/egzghfgrrg/versions?api-version=7.3&maxresults=25&_=1712127259287",
+            "requestUri": "https://example.com/keys/egzghfgrrg/versions?api-version=7.3&maxresults=25&_=1712127259287",
             "isAccessPolicyMatch": true,
             "tlsVersion": "TLS1_3"
         },
-        "resourceId": "/SUBSCRIPTIONS/00000000-0000-0000-0000-0000XXXXXX/RESOURCEGROUPS/INTEGRATION/PROVIDERS/MICROSOFT.KEYVAULT/VAULTS/TEST",
+        "resourceId": "/SUBSCRIPTIONS/00000000-0000-0000-0000-000000000000/RESOURCEGROUPS/test/PROVIDERS/MICROSOFT.KEYVAULT/VAULTS/test",
         "operationVersion": "7.3",
         "resultSignature": "OK",
         "durationMs": "18"
@@ -640,14 +640,14 @@ In this section, you will find examples of raw logs as generated natively by the
             }
         },
         "properties": {
-            "id": "https://test.vault.azure.net/deletedkeys/MyFirstKey",
+            "id": "https://host.example.com/deletedkeys/MyFirstKey",
             "clientInfo": "Mozilla/5.0 (X11; Ubuntu; Linux x86_64) Firefox/12.0",
             "httpStatusCode": 403,
-            "requestUri": "https://test.vault.azure.net/deletedkeys/MyFirstKey?api-version=7.0",
+            "requestUri": "https://example.com/deletedkeys/MyFirstKey?api-version=7.0",
             "isAccessPolicyMatch": false,
             "tlsVersion": "TLS1_3"
         },
-        "resourceId": "/SUBSCRIPTIONS/00000000-0000-0000-0000-0000XXXXXX/RESOURCEGROUPS/INTEGRATION/PROVIDERS/MICROSOFT.KEYVAULT/VAULTS/TEST",
+        "resourceId": "/SUBSCRIPTIONS/00000000-0000-0000-0000-000000000000/RESOURCEGROUPS/test/PROVIDERS/MICROSOFT.KEYVAULT/VAULTS/test",
         "operationVersion": "7.0",
         "resultSignature": "Forbidden",
         "durationMs": "4"
@@ -682,14 +682,14 @@ In this section, you will find examples of raw logs as generated natively by the
             }
         },
         "properties": {
-            "id": "https://test.vault.azure.net/deletedkeys/MyFirstKey",
+            "id": "https://host.example.com/deletedkeys/MyFirstKey",
             "clientInfo": "Mozilla/5.0 (X11; Ubuntu; Linux x86_64) Firefox/12.0",
             "httpStatusCode": 403,
-            "requestUri": "https://test.vault.azure.net/deletedkeys/MyFirstKey?api-version=7.0",
+            "requestUri": "https://example.com/deletedkeys/MyFirstKey?api-version=7.0",
             "isAccessPolicyMatch": false,
             "tlsVersion": "TLS1_3"
         },
-        "resourceId": "/SUBSCRIPTIONS/00000000-0000-0000-0000-0000X/RESOURCEGROUPS/INTEGRATION/PROVIDERS/MICROSOFT.KEYVAULT/VAULTS/TEST",
+        "resourceId": "/SUBSCRIPTIONS/00000000-0000-0000-0000-000000000000/RESOURCEGROUPS/test/PROVIDERS/MICROSOFT.KEYVAULT/VAULTS/test",
         "operationVersion": "7.0",
         "resultSignature": "Forbidden",
         "durationMs": "4"
@@ -723,10 +723,10 @@ In this section, you will find examples of raw logs as generated natively by the
             }
         },
         "properties": {
-            "id": "https://test.vault.azure.net/keys/iiii/c0d4c7ec6efb4fbeaec16a3872519399",
+            "id": "https://host.example.com/keys/iiii/c0d4c7ec6efb4fbeaec16a3872519399",
             "clientInfo": "Mozilla/5.0 (X11; Ubuntu; Linux x86_64) Firefox/12.0",
             "httpStatusCode": 200,
-            "requestUri": "https://test.vault.azure.net/keys/iiii/c0d4c7ec6efb4fbeaec16a3872519399?api-version=7.3",
+            "requestUri": "https://example.com/keys/iiii/c0d4c7ec6efb4fbeaec16a3872519399?api-version=7.3",
             "isAccessPolicyMatch": true,
             "keyProperties": {
                 "type": "RSA",
@@ -744,7 +744,7 @@ In this section, you will find examples of raw logs as generated natively by the
             },
             "tlsVersion": "TLS1_3"
         },
-        "resourceId": "/SUBSCRIPTIONS/00000000-0000-0000-0000-0000/RESOURCEGROUPS/INTEGRATION/PROVIDERS/MICROSOFT.KEYVAULT/VAULTS/TEST",
+        "resourceId": "/SUBSCRIPTIONS/00000000-0000-0000-0000-000000000000/RESOURCEGROUPS/test/PROVIDERS/MICROSOFT.KEYVAULT/VAULTS/test",
         "operationVersion": "7.3",
         "resultSignature": "OK",
         "durationMs": "66"
@@ -778,14 +778,14 @@ In this section, you will find examples of raw logs as generated natively by the
             }
         },
         "properties": {
-            "id": "https://test.vault.azure.net/secrets/keykey",
+            "id": "https://host.example.com/secrets/keykey",
             "clientInfo": "Mozilla/5.0 (X11; Ubuntu; Linux x86_64) Firefox/12.0",
             "httpStatusCode": 200,
-            "requestUri": "https://test.vault.azure.net/secrets/keykey/backup?api-version=7.0",
+            "requestUri": "https://example.com/secrets/keykey/backup?api-version=7.0",
             "isAccessPolicyMatch": true,
             "tlsVersion": "TLS1_3"
         },
-        "resourceId": "/SUBSCRIPTIONS/00000000-0000-0000-0000-0000XXXXXX/RESOURCEGROUPS/INTEGRATION/PROVIDERS/MICROSOFT.KEYVAULT/VAULTS/TEST",
+        "resourceId": "/SUBSCRIPTIONS/00000000-0000-0000-0000-000000000000/RESOURCEGROUPS/test/PROVIDERS/MICROSOFT.KEYVAULT/VAULTS/test",
         "operationVersion": "7.0",
         "resultSignature": "OK",
         "durationMs": "43"
@@ -819,14 +819,14 @@ In this section, you will find examples of raw logs as generated natively by the
             }
         },
         "properties": {
-            "id": "https://test.vault.azure.net/secrets/keykey",
+            "id": "https://host.example.com/secrets/keykey",
             "clientInfo": "Mozilla/5.0 (X11; Ubuntu; Linux x86_64) Firefox/12.0",
             "httpStatusCode": 200,
-            "requestUri": "https://test.vault.azure.net/secrets/keykey?api-version=7.0",
+            "requestUri": "https://example.com/secrets/keykey?api-version=7.0",
             "isAccessPolicyMatch": true,
             "tlsVersion": "TLS1_3"
         },
-        "resourceId": "/SUBSCRIPTIONS/00000000-0000-0000-0000-0000XXXXXX/RESOURCEGROUPS/INTEGRATION/PROVIDERS/MICROSOFT.KEYVAULT/VAULTS/TEST",
+        "resourceId": "/SUBSCRIPTIONS/00000000-0000-0000-0000-000000000000/RESOURCEGROUPS/test/PROVIDERS/MICROSOFT.KEYVAULT/VAULTS/test",
         "operationVersion": "7.0",
         "resultSignature": "OK",
         "durationMs": "73"
@@ -861,14 +861,14 @@ In this section, you will find examples of raw logs as generated natively by the
             }
         },
         "properties": {
-            "id": "https://test.vault.azure.net/secrets/keykey",
+            "id": "https://host.example.com/secrets/keykey",
             "clientInfo": "Mozilla/5.0 (X11; Ubuntu; Linux x86_64) Firefox/12.0",
             "httpStatusCode": 404,
-            "requestUri": "https://test.vault.azure.net/secrets/keykey?api-version=7.0&_=1712126805801",
+            "requestUri": "https://example.com/secrets/keykey?api-version=7.0&_=1712126805801",
             "isAccessPolicyMatch": true,
             "tlsVersion": "TLS1_3"
         },
-        "resourceId": "/SUBSCRIPTIONS/00000000-0000-0000-0000-0000XXXXXX/RESOURCEGROUPS/INTEGRATION/PROVIDERS/MICROSOFT.KEYVAULT/VAULTS/TEST",
+        "resourceId": "/SUBSCRIPTIONS/00000000-0000-0000-0000-000000000000/RESOURCEGROUPS/test/PROVIDERS/MICROSOFT.KEYVAULT/VAULTS/test",
         "operationVersion": "7.0",
         "resultSignature": "Not Found",
         "durationMs": "183"
@@ -903,14 +903,14 @@ In this section, you will find examples of raw logs as generated natively by the
             }
         },
         "properties": {
-            "id": "https://keytestint.vault.azure.net/secrets/a",
+            "id": "https://host.example.com/secrets/a",
             "clientInfo": "3686488a-04fc-4d8a-b967-61f98ec41efe",
             "httpStatusCode": 403,
-            "requestUri": "https://keytestint.vault.azure.net/secrets/a?api-version=7.0&_=1712042263922",
+            "requestUri": "https://example.com/secrets/a?api-version=7.0&_=1712042263922",
             "isRbacAuthorized": false,
             "tlsVersion": "TLS1_3"
         },
-        "resourceId": "/SUBSCRIPTIONS/00000000-0000-0000-0000/RESOURCEGROUPS/INTEGRATION/PROVIDERS/MICROSOFT.KEYVAULT/VAULTS/KEYTESTINT",
+        "resourceId": "/SUBSCRIPTIONS/00000000-0000-0000-0000-000000000000/RESOURCEGROUPS/test/PROVIDERS/MICROSOFT.KEYVAULT/VAULTS/test",
         "operationVersion": "7.0",
         "resultSignature": "Forbidden",
         "durationMs": "27"
@@ -946,11 +946,11 @@ In this section, you will find examples of raw logs as generated natively by the
         "properties": {
             "clientInfo": "Mozilla/5.0 (X11; Ubuntu; Linux x86_64) Firefox/12.0",
             "httpStatusCode": 200,
-            "requestUri": "https://test.vault.azure.net/secrets?api-version=7.0&maxresults=25&_=1712127259280",
+            "requestUri": "https://example.com/secrets?api-version=7.0&maxresults=25&_=1712127259280",
             "isAccessPolicyMatch": true,
             "tlsVersion": "TLS1_3"
         },
-        "resourceId": "/SUBSCRIPTIONS/00000000-0000-0000-0000-0000XXXXXX/RESOURCEGROUPS/INTEGRATION/PROVIDERS/MICROSOFT.KEYVAULT/VAULTS/TEST",
+        "resourceId": "/SUBSCRIPTIONS/00000000-0000-0000-0000-000000000000/RESOURCEGROUPS/test/PROVIDERS/MICROSOFT.KEYVAULT/VAULTS/test",
         "operationVersion": "7.0",
         "resultSignature": "OK",
         "durationMs": "76"
@@ -986,11 +986,11 @@ In this section, you will find examples of raw logs as generated natively by the
         "properties": {
             "clientInfo": "Mozilla/5.0 (X11; Ubuntu; Linux x86_64) Firefox/12.0",
             "httpStatusCode": 200,
-            "requestUri": "https://test.vault.azure.net/deletedsecrets?api-version=7.0",
+            "requestUri": "https://example.com/deletedsecrets?api-version=7.0",
             "isAccessPolicyMatch": true,
             "tlsVersion": "TLS1_3"
         },
-        "resourceId": "/SUBSCRIPTIONS/00000000-0000-0000-0000-0000XXXXXX/RESOURCEGROUPS/INTEGRATION/PROVIDERS/MICROSOFT.KEYVAULT/VAULTS/TEST",
+        "resourceId": "/SUBSCRIPTIONS/00000000-0000-0000-0000-000000000000/RESOURCEGROUPS/test/PROVIDERS/MICROSOFT.KEYVAULT/VAULTS/test",
         "operationVersion": "7.0",
         "resultSignature": "OK",
         "durationMs": "30"
@@ -1025,14 +1025,14 @@ In this section, you will find examples of raw logs as generated natively by the
             }
         },
         "properties": {
-            "id": "https://test.vault.azure.net/deletedsecrets/mysecret",
+            "id": "https://host.example.com/deletedsecrets/mysecret",
             "clientInfo": "Mozilla/5.0 (X11; Ubuntu; Linux x86_64) Firefox/12.0",
             "httpStatusCode": 403,
-            "requestUri": "https://test.vault.azure.net/deletedsecrets/mysecret?api-version=7.0",
+            "requestUri": "https://example.com/deletedsecrets/mysecret?api-version=7.0",
             "isAccessPolicyMatch": false,
             "tlsVersion": "TLS1_3"
         },
-        "resourceId": "/SUBSCRIPTIONS/00000000-0000-0000-0000-0000XXXXXX/RESOURCEGROUPS/INTEGRATION/PROVIDERS/MICROSOFT.KEYVAULT/VAULTS/TEST",
+        "resourceId": "/SUBSCRIPTIONS/00000000-0000-0000-0000-000000000000/RESOURCEGROUPS/test/PROVIDERS/MICROSOFT.KEYVAULT/VAULTS/test",
         "operationVersion": "7.0",
         "resultSignature": "Forbidden",
         "durationMs": "17"
@@ -1067,14 +1067,14 @@ In this section, you will find examples of raw logs as generated natively by the
             }
         },
         "properties": {
-            "id": "https://test.vault.azure.net/deletedsecrets/mysecret",
+            "id": "https://host.example.com/deletedsecrets/mysecret",
             "clientInfo": "Mozilla/5.0 (X11; Ubuntu; Linux x86_64) Firefox/12.0",
             "httpStatusCode": 403,
-            "requestUri": "https://test.vault.azure.net/deletedsecrets/mysecret?api-version=7.0",
+            "requestUri": "https://example.com/deletedsecrets/mysecret?api-version=7.0",
             "isAccessPolicyMatch": false,
             "tlsVersion": "TLS1_3"
         },
-        "resourceId": "/SUBSCRIPTIONS/00000000-0000-0000-0000-0000X/RESOURCEGROUPS/INTEGRATION/PROVIDERS/MICROSOFT.KEYVAULT/VAULTS/TEST",
+        "resourceId": "/SUBSCRIPTIONS/00000000-0000-0000-0000-000000000000/RESOURCEGROUPS/test/PROVIDERS/MICROSOFT.KEYVAULT/VAULTS/test",
         "operationVersion": "7.0",
         "resultSignature": "Forbidden",
         "durationMs": "10"
@@ -1092,7 +1092,7 @@ In this section, you will find examples of raw logs as generated natively by the
         "category": "AuditEvent",
         "operationName": "SecretRestore",
         "resultType": "Success",
-        "resultDescription": "There was a conflict restoring the secret 'https://test.vault.azure.net/secrets/keykey/8fbb0accbfbe4ee4b025649ebabae465'. This can happen if either: a second secret with the same name was created after the first secret was deleted; thus trying to restore a secret whose name is already in use. To fix this, rename the second secret to something else so that the restore works. The second probable cause of this exception is when multiple operations are performed in parallel against the secret. To avoid this error, perform operations against a secret in a sequential manner.",
+        "resultDescription": "There was a conflict restoring the secret 'https://host.example.com/secrets/keykey/8fbb0accbfbe4ee4b025649ebabae465'. This can happen if either: a second secret with the same name was created after the first secret was deleted; thus trying to restore a secret whose name is already in use. To fix this, rename the second secret to something else so that the restore works. The second probable cause of this exception is when multiple operations are performed in parallel against the secret. To avoid this error, perform operations against a secret in a sequential manner.",
         "correlationId": "00f4eafb-43a6-412f-a908-fd20d5aef64c",
         "callerIpAddress": "192.0.2.1",
         "identity": {
@@ -1109,14 +1109,14 @@ In this section, you will find examples of raw logs as generated natively by the
             }
         },
         "properties": {
-            "id": "https://test.vault.azure.net/secrets/keykey",
+            "id": "https://host.example.com/secrets/keykey",
             "clientInfo": "Mozilla/5.0 (X11; Ubuntu; Linux x86_64) Firefox/12.0",
             "httpStatusCode": 409,
-            "requestUri": "https://test.vault.azure.net/secrets/restore?api-version=7.0",
+            "requestUri": "https://example.com/secrets/restore?api-version=7.0",
             "isAccessPolicyMatch": true,
             "tlsVersion": "TLS1_3"
         },
-        "resourceId": "/SUBSCRIPTIONS/00000000-0000-0000-0000-0000XXXXXX/RESOURCEGROUPS/INTEGRATION/PROVIDERS/MICROSOFT.KEYVAULT/VAULTS/TEST",
+        "resourceId": "/SUBSCRIPTIONS/00000000-0000-0000-0000-000000000000/RESOURCEGROUPS/test/PROVIDERS/MICROSOFT.KEYVAULT/VAULTS/test",
         "operationVersion": "7.0",
         "resultSignature": "Conflict",
         "durationMs": "63"
@@ -1150,10 +1150,10 @@ In this section, you will find examples of raw logs as generated natively by the
             }
         },
         "properties": {
-            "id": "https://test.vault.azure.net/secrets/keykey/8fbb0accbfbe4ee4b025649ebabae465",
+            "id": "https://host.example.com/secrets/keykey/8fbb0accbfbe4ee4b025649ebabae465",
             "clientInfo": "Mozilla/5.0 (X11; Ubuntu; Linux x86_64) Firefox/12.0",
             "httpStatusCode": 200,
-            "requestUri": "https://test.vault.azure.net/secrets/keykey/8fbb0accbfbe4ee4b025649ebabae465?api-version=7.0",
+            "requestUri": "https://example.com/secrets/keykey/8fbb0accbfbe4ee4b025649ebabae465?api-version=7.0",
             "isAccessPolicyMatch": true,
             "secretProperties": {
                 "attributes": {
@@ -1163,7 +1163,7 @@ In this section, you will find examples of raw logs as generated natively by the
             },
             "tlsVersion": "TLS1_3"
         },
-        "resourceId": "/SUBSCRIPTIONS/00000000-0000-0000-0000-0000XXXXXX/RESOURCEGROUPS/INTEGRATION/PROVIDERS/MICROSOFT.KEYVAULT/VAULTS/TEST",
+        "resourceId": "/SUBSCRIPTIONS/00000000-0000-0000-0000-000000000000/RESOURCEGROUPS/test/PROVIDERS/MICROSOFT.KEYVAULT/VAULTS/test",
         "operationVersion": "7.0",
         "resultSignature": "OK",
         "durationMs": "79"
@@ -1194,7 +1194,7 @@ In this section, you will find examples of raw logs as generated natively by the
         "properties": {
             "id": "https://keytestint.vault.azure.net/",
             "clientInfo": "Mozilla/5.0",
-            "requestUri": "https://management.azure.com/subscriptions/00000000-0000-0000-0000/resourceGroups/Integration/providers/Microsoft.KeyVault/vaults/keyTestInt?api-version=2023-08-01-preview",
+            "requestUri": "https://example.com/subscriptions/00000000-0000-0000-0000/resourceGroups/Integration/providers/Microsoft.KeyVault/vaults/keyTestInt?api-version=2023-08-01-preview",
             "httpStatusCode": 200,
             "properties": {
                 "sku": {
@@ -1213,7 +1213,7 @@ In this section, you will find examples of raw logs as generated natively by the
                 "enablePurgeProtection": null
             }
         },
-        "resourceId": "/SUBSCRIPTIONS/00000000-0000-0000-0000/RESOURCEGROUPS/INTEGRATION/PROVIDERS/MICROSOFT.KEYVAULT/VAULTS/KEYTESTINT",
+        "resourceId": "/SUBSCRIPTIONS/00000000-0000-0000-0000-000000000000/RESOURCEGROUPS/test/PROVIDERS/MICROSOFT.KEYVAULT/VAULTS/test",
         "operationVersion": "2023-08-01-preview",
         "resultSignature": "OK",
         "durationMs": "16"
@@ -1242,7 +1242,7 @@ In this section, you will find examples of raw logs as generated natively by the
         "properties": {
             "id": "https://keytestint.vault.azure.net/",
             "clientInfo": "AzureResourceGraph.IngestionWorkerService.global/1.2.3.4",
-            "requestUri": "https://redacted.management.azure.com/subscriptions/xxxxxxxx/resourceGroups/Integration/providers/Microsoft.KeyVault/vaults/keyTestInt?api-version=2023-07-01&MaskCMKEnabledProperties=true",
+            "requestUri": "https://example.com/subscriptions/xxxxxxxx/resourceGroups/Integration/providers/Microsoft.KeyVault/vaults/keyTestInt?api-version=2023-07-01&MaskCMKEnabledProperties=true",
             "httpStatusCode": 200,
             "properties": {
                 "sku": {
@@ -1261,7 +1261,7 @@ In this section, you will find examples of raw logs as generated natively by the
                 "enablePurgeProtection": null
             }
         },
-        "resourceId": "/SUBSCRIPTIONS/xxxxxx/xxxxx/xxxxxxx/xxxxx/MICROSOFT.KEYVAULT/VAULTS/xxxxxxx",
+        "resourceId": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/test/providers/Microsoft.KeyVault/vaults/test",
         "operationVersion": "2023-07-01",
         "resultSignature": "OK",
         "durationMs": "17"
@@ -1276,7 +1276,7 @@ In this section, you will find examples of raw logs as generated natively by the
     ```json
 	{
         "time": "2016-01-05T01:32:01.2691226Z",
-        "resourceId": "/SUBSCRIPTIONS/00000000-0000-0000-0000-0000/RESOURCEGROUPS/CONTOSOGROUP/PROVIDERS/MICROSOFT.KEYVAULT/VAULTS/CONTOSOKEYVAULT",
+        "resourceId": "/SUBSCRIPTIONS/00000000-0000-0000-0000-000000000000/RESOURCEGROUPS/test/PROVIDERS/MICROSOFT.KEYVAULT/VAULTS/test",
         "operationName": "VaultGet",
         "operationVersion": "2015-06-01",
         "category": "AuditEvent",
@@ -1295,7 +1295,7 @@ In this section, you will find examples of raw logs as generated natively by the
         },
         "properties": {
             "clientInfo": "azure-resource-manager/2.0",
-            "requestUri": "https://test.vaultcore.azure.net/subscriptions/00000000-0000-0000-0000-0000/resourcegroups/contosoresourcegroup/providers/Microsoft.KeyVault/vaults/contosokeyvault?api-version=2015-06-01",
+            "requestUri": "https://example.com/subscriptions/00000000-0000-0000-0000-0000/resourcegroups/contosoresourcegroup/providers/Microsoft.KeyVault/vaults/contosokeyvault?api-version=2015-06-01",
             "id": "https://contosokeyvault.vault.azure.net/",
             "httpStatusCode": 200
         }
@@ -1310,7 +1310,7 @@ In this section, you will find examples of raw logs as generated natively by the
     ```json
 	{
         "time": "2016-01-05T01:32:01.2691226Z",
-        "resourceId": "/SUBSCRIPTIONS/00000000-0000-0000-0000-0000/RESOURCEGROUPS/CONTOSOGROUP/PROVIDERS/MICROSOFT.KEYVAULT/VAULTS/CONTOSOKEYVAULT",
+        "resourceId": "/SUBSCRIPTIONS/00000000-0000-0000-0000-000000000000/RESOURCEGROUPS/test/PROVIDERS/MICROSOFT.KEYVAULT/VAULTS/test",
         "operationName": "VaultGet",
         "operationVersion": "2015-06-01",
         "category": "AuditEvent",
@@ -1329,7 +1329,7 @@ In this section, you will find examples of raw logs as generated natively by the
         },
         "properties": {
             "clientInfo": "azure-resource-manager/2.0",
-            "requestUri": "https://test.vaultcore.azure.net/subscriptions/00000000-0000-0000-0000-0000/resourcegroups/contosoresourcegroup/providers/Microsoft.KeyVault/vaults/contosokeyvault?api-version=2015-06-01",
+            "requestUri": "https://example.com/subscriptions/00000000-0000-0000-0000-0000/resourcegroups/contosoresourcegroup/providers/Microsoft.KeyVault/vaults/contosokeyvault?api-version=2015-06-01",
             "id": "https://contosokeyvault.vault.azure.net/",
             "httpStatusCode": 200
         }
@@ -1360,7 +1360,7 @@ In this section, you will find examples of raw logs as generated natively by the
         "properties": {
             "id": "https://testkey.vault.azure.net/",
             "clientInfo": "Mozilla/5.0",
-            "requestUri": "https://management.azure.com/subscriptions/xxxxxxxxxxxxxxxx/resourceGroups/Integration/providers/Microsoft.KeyVault/vaults/testkey?api-version=2023-08-01-preview",
+            "requestUri": "https://example.com/subscriptions/xxxxxxxxxxxxxxxx/resourceGroups/Integration/providers/Microsoft.KeyVault/vaults/testkey?api-version=2023-08-01-preview",
             "httpStatusCode": 200,
             "properties": {
                 "sku": {
@@ -1382,7 +1382,7 @@ In this section, you will find examples of raw logs as generated natively by the
                 "enablePurgeProtection": null
             }
         },
-        "resourceId": "/SUBSCRIPTIONS/xxxxxxxxxxxxxxxx/RESOURCEGROUPS/INTEGRATION/PROVIDERS/MICROSOFT.KEYVAULT/VAULTS/testkey",
+        "resourceId": "/SUBSCRIPTIONS/00000000-0000-0000-0000-000000000000/RESOURCEGROUPS/test/PROVIDERS/MICROSOFT.KEYVAULT/VAULTS/test",
         "operationVersion": "2023-08-01-preview",
         "resultSignature": "OK",
         "durationMs": "29"
@@ -1413,7 +1413,7 @@ In this section, you will find examples of raw logs as generated natively by the
         "properties": {
             "id": "https://test.vault.azure.net/",
             "clientInfo": "Mozilla/5.0",
-            "requestUri": "https://management.azure.com/subscriptions/f40a1f1d-f2c6-4444-92a6-XXXX/resourceGroups/Integration/providers/Microsoft.KeyVault/vaults/myright3?api-version=2023-08-01-preview",
+            "requestUri": "https://example.com/subscriptions/f40a1f1d-f2c6-4444-92a6-XXXX/resourceGroups/Integration/providers/Microsoft.KeyVault/vaults/myright3?api-version=2023-08-01-preview",
             "httpStatusCode": 200,
             "properties": {
                 "sku": {
@@ -1435,7 +1435,7 @@ In this section, you will find examples of raw logs as generated natively by the
                 "enablePurgeProtection": null
             }
         },
-        "resourceId": "/SUBSCRIPTIONS/00000000-0000-0000-0000-0000/RESOURCEGROUPS/INTEGRATION/PROVIDERS/MICROSOFT.KEYVAULT/VAULTS/TEST",
+        "resourceId": "/SUBSCRIPTIONS/00000000-0000-0000-0000-000000000000/RESOURCEGROUPS/test/PROVIDERS/MICROSOFT.KEYVAULT/VAULTS/test",
         "operationVersion": "2023-08-01-preview",
         "resultSignature": "OK",
         "durationMs": "78"

@@ -33,7 +33,7 @@ This section demonstrates how the raw logs will be transformed by our parsers. I
     ```json
 	
     {
-        "message": "{\n    \"id\": \"eabe0685-19ac-4c93-929d-12f92aa6a1bc\",\n    \"action\": \"CreateSAMLUser\",\n    \"requestId\": \"4a6d5d7d-85ba-49c6-aa0d-93bfe3e49049\",\n    \"status\": \"SUCCESS\",\n    \"timestamp\": \"2025-02-06T13:39:25.30484Z\",\n    \"actionParameters\": {\n      \"after\": null,\n      \"filterBy\": {\n        \"search\": \"Test_UzbhTWx26DwpBUcU_\"\n      },\n      \"first\": 500,\n      \"selection\": [\n        {\n          \"nodes\": [\n            \"id\",\n            \"name\",\n            \"createdAt\",\n            {\n              \"lastRun\": [\n                \"url\",\n                \"status\",\n                \"runAt\"\n              ]\n            }\n          ]\n        },\n        {\n          \"pageInfo\": [\n            \"hasNextPage\",\n            \"endCursor\"\n          ]\n        }\n      ]\n    },\n    \"userAgent\": \"python-requests/2.31.0\",\n    \"sourceIP\": \"1.2.3.4\",\n    \"serviceAccount\": {\n      \"id\": \"xNgww7tONKtQK6zw\",\n      \"name\": \"ax-us\"\n    },\n    \"user\": null\n  }",
+        "message": "{\n    \"id\": \"eabe0685-19ac-4c93-929d-12f92aa6a1bc\",\n    \"action\": \"CreateSAMLUser\",\n    \"requestId\": \"4a6d5d7d-85ba-49c6-aa0d-93bfe3e49049\",\n    \"status\": \"SUCCESS\",\n    \"timestamp\": \"2025-02-06T13:39:25.30484Z\",\n    \"actionParameters\": {\n      \"after\": null,\n      \"filterBy\": {\n        \"search\": \"Test_UzbhTWx26DwpBUcU_\"\n      },\n      \"first\": 500,\n      \"selection\": [\n        {\n          \"nodes\": [\n            \"id\",\n            \"name\",\n            \"createdAt\",\n            {\n              \"lastRun\": [\n                \"url\",\n                \"status\",\n                \"runAt\"\n              ]\n            }\n          ]\n        },\n        {\n          \"pageInfo\": [\n            \"hasNextPage\",\n            \"endCursor\"\n          ]\n        }\n      ]\n    },\n    \"userAgent\": \"python-requests/2.31.0\",\n    \"sourceIP\": \"1.2.3.4\",\n    \"serviceAccount\": {\n      \"id\": \"User1\",\n      \"name\": \"User1\"\n    },\n    \"user\": null\n  }",
         "event": {
             "action": "CreateSAMLUser",
             "category": [
@@ -54,7 +54,7 @@ This section demonstrates how the raw logs will be transformed by our parsers. I
                 "1.2.3.4"
             ],
             "user": [
-                "ax-us"
+                "User1"
             ]
         },
         "source": {
@@ -62,8 +62,8 @@ This section demonstrates how the raw logs will be transformed by our parsers. I
             "ip": "1.2.3.4"
         },
         "user": {
-            "id": "xNgww7tONKtQK6zw",
-            "name": "ax-us"
+            "id": "User1",
+            "name": "User1"
         },
         "user_agent": {
             "device": {
@@ -219,7 +219,7 @@ This section demonstrates how the raw logs will be transformed by our parsers. I
     ```json
 	
     {
-        "message": "{\n    \"id\": \"eabe0685-19ac-4c93-929d-12f92aa6a1bc\",\n    \"action\": \"Reports\",\n    \"requestId\": \"4a6d5d7d-85ba-49c6-aa0d-93bfe3e49049\",\n    \"status\": \"SUCCESS\",\n    \"timestamp\": \"2025-02-06T13:39:25.30484Z\",\n    \"actionParameters\": {\n      \"after\": null,\n      \"filterBy\": {\n        \"search\": \"Test_UzbhTWx26DwpBUcU_\"\n      },\n      \"first\": 500,\n      \"selection\": [\n        {\n          \"nodes\": [\n            \"id\",\n            \"name\",\n            \"createdAt\",\n            {\n              \"lastRun\": [\n                \"url\",\n                \"status\",\n                \"runAt\"\n              ]\n            }\n          ]\n        },\n        {\n          \"pageInfo\": [\n            \"hasNextPage\",\n            \"endCursor\"\n          ]\n        }\n      ]\n    },\n    \"userAgent\": \"python-requests/2.31.0\",\n    \"sourceIP\": \"1.2.3.4\",\n    \"serviceAccount\": {\n      \"id\": \"xNgww7tONKtQK6zw\",\n      \"name\": \"ax-us\"\n    },\n    \"user\": null\n  }",
+        "message": "{\n    \"id\": \"eabe0685-19ac-4c93-929d-12f92aa6a1bc\",\n    \"action\": \"Reports\",\n    \"requestId\": \"4a6d5d7d-85ba-49c6-aa0d-93bfe3e49049\",\n    \"status\": \"SUCCESS\",\n    \"timestamp\": \"2025-02-06T13:39:25.30484Z\",\n    \"actionParameters\": {\n      \"after\": null,\n      \"filterBy\": {\n        \"search\": \"Test_UzbhTWx26DwpBUcU_\"\n      },\n      \"first\": 500,\n      \"selection\": [\n        {\n          \"nodes\": [\n            \"id\",\n            \"name\",\n            \"createdAt\",\n            {\n              \"lastRun\": [\n                \"url\",\n                \"status\",\n                \"runAt\"\n              ]\n            }\n          ]\n        },\n        {\n          \"pageInfo\": [\n            \"hasNextPage\",\n            \"endCursor\"\n          ]\n        }\n      ]\n    },\n    \"userAgent\": \"python-requests/2.31.0\",\n    \"sourceIP\": \"1.2.3.4\",\n    \"serviceAccount\": {\n      \"id\": \"User1\",\n      \"name\": \"User1\"\n    },\n    \"user\": null\n  }",
         "event": {
             "action": "Reports",
             "category": [
@@ -240,7 +240,7 @@ This section demonstrates how the raw logs will be transformed by our parsers. I
                 "1.2.3.4"
             ],
             "user": [
-                "ax-us"
+                "User1"
             ]
         },
         "source": {
@@ -248,8 +248,8 @@ This section demonstrates how the raw logs will be transformed by our parsers. I
             "ip": "1.2.3.4"
         },
         "user": {
-            "id": "xNgww7tONKtQK6zw",
-            "name": "ax-us"
+            "id": "User1",
+            "name": "User1"
         },
         "user_agent": {
             "device": {
@@ -280,7 +280,7 @@ This section demonstrates how the raw logs will be transformed by our parsers. I
     ```json
 	
     {
-        "message": "{\n    \"id\": \"842d4a00-6e04-4e52-8119-8053f0743409\",\n    \"action\": \"RerunReport\",\n    \"requestId\": \"da7ab45f-9c57-4af6-859d-797b60a919dd\",\n    \"status\": \"SUCCESS\",\n    \"timestamp\": \"2025-02-06T13:39:25.502963Z\",\n    \"actionParameters\": {\n      \"input\": {\n        \"id\": \"b8ad5ae3-ffea-444f-8d80-175a49e14894\"\n      },\n      \"selection\": [\n        {\n          \"report\": [\n            \"id\"\n          ]\n        }\n      ]\n    },\n    \"userAgent\": \"python-requests/2.31.0\",\n    \"sourceIP\": \"1.2.3.4\",\n    \"serviceAccount\": {\n      \"id\": \"xNgww7tONKtQK6zw\",\n      \"name\": \"ax-us\"\n    },\n    \"user\": null\n  }",
+        "message": "{\n    \"id\": \"842d4a00-6e04-4e52-8119-8053f0743409\",\n    \"action\": \"RerunReport\",\n    \"requestId\": \"da7ab45f-9c57-4af6-859d-797b60a919dd\",\n    \"status\": \"SUCCESS\",\n    \"timestamp\": \"2025-02-06T13:39:25.502963Z\",\n    \"actionParameters\": {\n      \"input\": {\n        \"id\": \"b8ad5ae3-ffea-444f-8d80-175a49e14894\"\n      },\n      \"selection\": [\n        {\n          \"report\": [\n            \"id\"\n          ]\n        }\n      ]\n    },\n    \"userAgent\": \"python-requests/2.31.0\",\n    \"sourceIP\": \"1.2.3.4\",\n    \"serviceAccount\": {\n      \"id\": \"User1\",\n      \"name\": \"User1\"\n    },\n    \"user\": null\n  }",
         "event": {
             "action": "RerunReport",
             "category": [
@@ -301,7 +301,7 @@ This section demonstrates how the raw logs will be transformed by our parsers. I
                 "1.2.3.4"
             ],
             "user": [
-                "ax-us"
+                "User1"
             ]
         },
         "source": {
@@ -309,8 +309,8 @@ This section demonstrates how the raw logs will be transformed by our parsers. I
             "ip": "1.2.3.4"
         },
         "user": {
-            "id": "xNgww7tONKtQK6zw",
-            "name": "ax-us"
+            "id": "User1",
+            "name": "User1"
         },
         "user_agent": {
             "device": {
@@ -341,7 +341,7 @@ This section demonstrates how the raw logs will be transformed by our parsers. I
     ```json
 	
     {
-        "message": "{\n    \"id\": \"eabe0685-19ac-4c93-929d-12f92aa6a1bc\",\n    \"action\": \"RevokeSessions\",\n    \"requestId\": \"4a6d5d7d-85ba-49c6-aa0d-93bfe3e49049\",\n    \"status\": \"SUCCESS\",\n    \"timestamp\": \"2025-02-06T13:39:25.30484Z\",\n    \"actionParameters\": {\n      \"after\": null,\n      \"filterBy\": {\n        \"search\": \"Test_UzbhTWx26DwpBUcU_\"\n      },\n      \"first\": 500,\n      \"selection\": [\n        {\n          \"nodes\": [\n            \"id\",\n            \"name\",\n            \"createdAt\",\n            {\n              \"lastRun\": [\n                \"url\",\n                \"status\",\n                \"runAt\"\n              ]\n            }\n          ]\n        },\n        {\n          \"pageInfo\": [\n            \"hasNextPage\",\n            \"endCursor\"\n          ]\n        }\n      ]\n    },\n    \"userAgent\": \"python-requests/2.31.0\",\n    \"sourceIP\": \"1.2.3.4\",\n    \"serviceAccount\": {\n      \"id\": \"xNgww7tONKtQK6zw\",\n      \"name\": \"ax-us\"\n    },\n    \"user\": null\n  }",
+        "message": "{\n    \"id\": \"eabe0685-19ac-4c93-929d-12f92aa6a1bc\",\n    \"action\": \"RevokeSessions\",\n    \"requestId\": \"4a6d5d7d-85ba-49c6-aa0d-93bfe3e49049\",\n    \"status\": \"SUCCESS\",\n    \"timestamp\": \"2025-02-06T13:39:25.30484Z\",\n    \"actionParameters\": {\n      \"after\": null,\n      \"filterBy\": {\n        \"search\": \"Test_UzbhTWx26DwpBUcU_\"\n      },\n      \"first\": 500,\n      \"selection\": [\n        {\n          \"nodes\": [\n            \"id\",\n            \"name\",\n            \"createdAt\",\n            {\n              \"lastRun\": [\n                \"url\",\n                \"status\",\n                \"runAt\"\n              ]\n            }\n          ]\n        },\n        {\n          \"pageInfo\": [\n            \"hasNextPage\",\n            \"endCursor\"\n          ]\n        }\n      ]\n    },\n    \"userAgent\": \"python-requests/2.31.0\",\n    \"sourceIP\": \"1.2.3.4\",\n    \"serviceAccount\": {\n      \"id\": \"User1\",\n      \"name\": \"User1\"\n    },\n    \"user\": null\n  }",
         "event": {
             "action": "RevokeSessions",
             "category": [
@@ -362,7 +362,7 @@ This section demonstrates how the raw logs will be transformed by our parsers. I
                 "1.2.3.4"
             ],
             "user": [
-                "ax-us"
+                "User1"
             ]
         },
         "source": {
@@ -370,8 +370,8 @@ This section demonstrates how the raw logs will be transformed by our parsers. I
             "ip": "1.2.3.4"
         },
         "user": {
-            "id": "xNgww7tONKtQK6zw",
-            "name": "ax-us"
+            "id": "User1",
+            "name": "User1"
         },
         "user_agent": {
             "device": {
@@ -402,7 +402,7 @@ This section demonstrates how the raw logs will be transformed by our parsers. I
     ```json
 	
     {
-        "message": "{\"id\":\"11111111-1111-1111-1111-111111111111\",\"action\":\"Login\",\"requestId\":\"11111111-1111-1111-1111-111111111111\",\"status\":\"SUCCESS\",\"timestamp\":\"2025-04-09T14:09:11.559605Z\",\"actionParameters\":{\"clientID\":\"aaaaaaaaaaaaaaaaaaaaaaaaaa\",\"error\":\"\",\"groups\":null,\"name\":\"user_name\",\"products\":[\"\"],\"role\":\"\",\"scopes\":[\"\"],\"sourceIP\":\"1.2.3.4\",\"userEmail\":\"john.doe@company.fr\",\"userID\":\"1111111111111111111111111111111111111111111111111111\",\"userPoolType\":\"sa\",\"userpoolID\":\"eu-west-1_AAAAAAAAA\"},\"userAgent\":\"wiz-sensor/1.0.6349\",\"sourceIP\":\"1.2.3.4\",\"serviceAccount\":{\"id\":\"1111111111111111111111111111111111111111111111111111\",\"name\":\"user_name\"},\"user\":null}",
+        "message": "{\"id\":\"11111111-1111-1111-1111-111111111111\",\"action\":\"Login\",\"requestId\":\"11111111-1111-1111-1111-111111111111\",\"status\":\"SUCCESS\",\"timestamp\":\"2025-04-09T14:09:11.559605Z\",\"actionParameters\":{\"clientID\":\"aaaaaaaaaaaaaaaaaaaaaaaaaa\",\"error\":\"\",\"groups\":null,\"name\":\"User1\",\"products\":[\"\"],\"role\":\"\",\"scopes\":[\"\"],\"sourceIP\":\"1.2.3.4\",\"userEmail\":\"john.doe@company.fr\",\"userID\":\"1111111111111111111111111111111111111111111111111111\",\"userPoolType\":\"sa\",\"userpoolID\":\"eu-west-1_AAAAAAAAA\"},\"userAgent\":\"wiz-sensor/1.0.6349\",\"sourceIP\":\"1.2.3.4\",\"serviceAccount\":{\"id\":\"1111111111111111111111111111111111111111111111111111\",\"name\":\"User1\"},\"user\":null}",
         "event": {
             "action": "Login",
             "category": [
@@ -423,7 +423,7 @@ This section demonstrates how the raw logs will be transformed by our parsers. I
                 "1.2.3.4"
             ],
             "user": [
-                "user_name"
+                "User1"
             ]
         },
         "source": {
@@ -432,7 +432,7 @@ This section demonstrates how the raw logs will be transformed by our parsers. I
         },
         "user": {
             "id": "1111111111111111111111111111111111111111111111111111",
-            "name": "user_name"
+            "name": "User1"
         },
         "user_agent": {
             "device": {
@@ -473,7 +473,7 @@ This section demonstrates how the raw logs will be transformed by our parsers. I
     ```json
 	
     {
-        "message": "{\n    \"id\": \"eabe0685-19ac-4c93-929d-12f92aa6a1bc\",\n    \"action\": \"TokenRefresh\",\n    \"requestId\": \"4a6d5d7d-85ba-49c6-aa0d-93bfe3e49049\",\n    \"status\": \"SUCCESS\",\n    \"timestamp\": \"2025-02-06T13:39:25.30484Z\",\n    \"actionParameters\": {\n      \"after\": null,\n      \"filterBy\": {\n        \"search\": \"Test_UzbhTWx26DwpBUcU_\"\n      },\n      \"first\": 500,\n      \"selection\": [\n        {\n          \"nodes\": [\n            \"id\",\n            \"name\",\n            \"createdAt\",\n            {\n              \"lastRun\": [\n                \"url\",\n                \"status\",\n                \"runAt\"\n              ]\n            }\n          ]\n        },\n        {\n          \"pageInfo\": [\n            \"hasNextPage\",\n            \"endCursor\"\n          ]\n        }\n      ]\n    },\n    \"userAgent\": \"python-requests/2.31.0\",\n    \"sourceIP\": \"1.2.3.4\",\n    \"serviceAccount\": {\n      \"id\": \"xNgww7tONKtQK6zw\",\n      \"name\": \"ax-us\"\n    },\n    \"user\": null\n  }",
+        "message": "{\n    \"id\": \"eabe0685-19ac-4c93-929d-12f92aa6a1bc\",\n    \"action\": \"TokenRefresh\",\n    \"requestId\": \"4a6d5d7d-85ba-49c6-aa0d-93bfe3e49049\",\n    \"status\": \"SUCCESS\",\n    \"timestamp\": \"2025-02-06T13:39:25.30484Z\",\n    \"actionParameters\": {\n      \"after\": null,\n      \"filterBy\": {\n        \"search\": \"Test_UzbhTWx26DwpBUcU_\"\n      },\n      \"first\": 500,\n      \"selection\": [\n        {\n          \"nodes\": [\n            \"id\",\n            \"name\",\n            \"createdAt\",\n            {\n              \"lastRun\": [\n                \"url\",\n                \"status\",\n                \"runAt\"\n              ]\n            }\n          ]\n        },\n        {\n          \"pageInfo\": [\n            \"hasNextPage\",\n            \"endCursor\"\n          ]\n        }\n      ]\n    },\n    \"userAgent\": \"python-requests/2.31.0\",\n    \"sourceIP\": \"1.2.3.4\",\n    \"serviceAccount\": {\n      \"id\": \"User1\",\n      \"name\": \"User1\"\n    },\n    \"user\": null\n  }",
         "event": {
             "action": "TokenRefresh",
             "category": [
@@ -494,7 +494,7 @@ This section demonstrates how the raw logs will be transformed by our parsers. I
                 "1.2.3.4"
             ],
             "user": [
-                "ax-us"
+                "User1"
             ]
         },
         "source": {
@@ -502,8 +502,8 @@ This section demonstrates how the raw logs will be transformed by our parsers. I
             "ip": "1.2.3.4"
         },
         "user": {
-            "id": "xNgww7tONKtQK6zw",
-            "name": "ax-us"
+            "id": "User1",
+            "name": "User1"
         },
         "user_agent": {
             "device": {
@@ -534,7 +534,7 @@ This section demonstrates how the raw logs will be transformed by our parsers. I
     ```json
 	
     {
-        "message": "{\n    \"id\": \"842d4a00-6e04-4e52-8119-8053f0743409\",\n    \"action\": \"RerunReport\",\n    \"requestId\": \"da7ab45f-9c57-4af6-859d-797b60a919dd\",\n    \"status\": \"SUCCESS\",\n    \"timestamp\": \"2025-02-06T13:39:25.502963Z\",\n    \"actionParameters\": {\n      \"input\": {\n        \"id\": \"b8ad5ae3-ffea-444f-8d80-175a49e14894\"\n      },\n      \"selection\": [\n        {\n          \"report\": [\n            \"id\"\n          ]\n        }\n      ]\n    },\n    \"userAgent\": \"python-requests/2.31.0\",\n    \"sourceIP\": \"1.2.3.4\",\n    \"serviceAccount\": {\n      \"id\": \"xNgww7tONKtQK6zw\",\n      \"name\": \"ax-us\"\n    },\n    \"user\": null\n  }",
+        "message": "{\n    \"id\": \"842d4a00-6e04-4e52-8119-8053f0743409\",\n    \"action\": \"RerunReport\",\n    \"requestId\": \"da7ab45f-9c57-4af6-859d-797b60a919dd\",\n    \"status\": \"SUCCESS\",\n    \"timestamp\": \"2025-02-06T13:39:25.502963Z\",\n    \"actionParameters\": {\n      \"input\": {\n        \"id\": \"b8ad5ae3-ffea-444f-8d80-175a49e14894\"\n      },\n      \"selection\": [\n        {\n          \"report\": [\n            \"id\"\n          ]\n        }\n      ]\n    },\n    \"userAgent\": \"python-requests/2.31.0\",\n    \"sourceIP\": \"1.2.3.4\",\n    \"serviceAccount\": {\n      \"id\": \"User1\",\n      \"name\": \"User1\"\n    },\n    \"user\": null\n  }",
         "event": {
             "action": "RerunReport",
             "category": [
@@ -555,7 +555,7 @@ This section demonstrates how the raw logs will be transformed by our parsers. I
                 "1.2.3.4"
             ],
             "user": [
-                "ax-us"
+                "User1"
             ]
         },
         "source": {
@@ -563,8 +563,8 @@ This section demonstrates how the raw logs will be transformed by our parsers. I
             "ip": "1.2.3.4"
         },
         "user": {
-            "id": "xNgww7tONKtQK6zw",
-            "name": "ax-us"
+            "id": "User1",
+            "name": "User1"
         },
         "user_agent": {
             "device": {
@@ -595,7 +595,7 @@ This section demonstrates how the raw logs will be transformed by our parsers. I
     ```json
 	
     {
-        "message": "{\n    \"id\": \"eabe0685-19ac-4c93-929d-12f92aa6a1bc\",\n    \"action\": \"UpdateUser\",\n    \"requestId\": \"4a6d5d7d-85ba-49c6-aa0d-93bfe3e49049\",\n    \"status\": \"SUCCESS\",\n    \"timestamp\": \"2025-02-06T13:39:25.30484Z\",\n    \"actionParameters\": {\n      \"after\": null,\n      \"filterBy\": {\n        \"search\": \"Test_UzbhTWx26DwpBUcU_\"\n      },\n      \"first\": 500,\n      \"selection\": [\n        {\n          \"nodes\": [\n            \"id\",\n            \"name\",\n            \"createdAt\",\n            {\n              \"lastRun\": [\n                \"url\",\n                \"status\",\n                \"runAt\"\n              ]\n            }\n          ]\n        },\n        {\n          \"pageInfo\": [\n            \"hasNextPage\",\n            \"endCursor\"\n          ]\n        }\n      ]\n    },\n    \"userAgent\": \"python-requests/2.31.0\",\n    \"sourceIP\": \"1.2.3.4\",\n    \"serviceAccount\": {\n      \"id\": \"xNgww7tONKtQK6zw\",\n      \"name\": \"ax-us\"\n    },\n    \"user\": null\n  }",
+        "message": "{\n    \"id\": \"eabe0685-19ac-4c93-929d-12f92aa6a1bc\",\n    \"action\": \"UpdateUser\",\n    \"requestId\": \"4a6d5d7d-85ba-49c6-aa0d-93bfe3e49049\",\n    \"status\": \"SUCCESS\",\n    \"timestamp\": \"2025-02-06T13:39:25.30484Z\",\n    \"actionParameters\": {\n      \"after\": null,\n      \"filterBy\": {\n        \"search\": \"Test_UzbhTWx26DwpBUcU_\"\n      },\n      \"first\": 500,\n      \"selection\": [\n        {\n          \"nodes\": [\n            \"id\",\n            \"name\",\n            \"createdAt\",\n            {\n              \"lastRun\": [\n                \"url\",\n                \"status\",\n                \"runAt\"\n              ]\n            }\n          ]\n        },\n        {\n          \"pageInfo\": [\n            \"hasNextPage\",\n            \"endCursor\"\n          ]\n        }\n      ]\n    },\n    \"userAgent\": \"python-requests/2.31.0\",\n    \"sourceIP\": \"1.2.3.4\",\n    \"serviceAccount\": {\n      \"id\": \"User1\",\n      \"name\": \"User1\"\n    },\n    \"user\": null\n  }",
         "event": {
             "action": "UpdateUser",
             "category": [
@@ -616,7 +616,7 @@ This section demonstrates how the raw logs will be transformed by our parsers. I
                 "1.2.3.4"
             ],
             "user": [
-                "ax-us"
+                "User1"
             ]
         },
         "source": {
@@ -624,8 +624,8 @@ This section demonstrates how the raw logs will be transformed by our parsers. I
             "ip": "1.2.3.4"
         },
         "user": {
-            "id": "xNgww7tONKtQK6zw",
-            "name": "ax-us"
+            "id": "User1",
+            "name": "User1"
         },
         "user_agent": {
             "device": {

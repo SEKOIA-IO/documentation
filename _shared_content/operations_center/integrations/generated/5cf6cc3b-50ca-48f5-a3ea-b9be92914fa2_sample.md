@@ -7,7 +7,7 @@ In this section, you will find examples of raw logs as generated natively by the
 === "test-umbrella-ip"
 
     ```
-	 "2020-06-12 14:31:52","FR123","1.1.1.1","54128","2.2.2.2","443","","Roaming Computers"
+	 "2020-06-12 14:31:52","host.example.com","1.1.1.1","54128","2.2.2.2","443","","Roaming Computers"
     ```
 
 

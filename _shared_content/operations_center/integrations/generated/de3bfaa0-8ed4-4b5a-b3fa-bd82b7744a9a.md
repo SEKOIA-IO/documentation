@@ -538,7 +538,7 @@ This section demonstrates how the raw logs will be transformed by our parsers. I
     ```json
 	
     {
-        "message": "{\"id\": \"eventId1\", \"sourceRule\": {\"__typename\": \"Control\", \"id\": \"sourceRuleId1\", \"name\": \"Publicly Exposed Assets with DataFindings \", \"controlDescription\": \"\", \"resolutionRecommendation\": \"\", \"securitySubCategories\": [{\"title\": \"Data Security\", \"category\": {\"name\": \"8 Data Security\"}}]}, \"createdAt\": \"2023-08-23T07:56:09.903743Z\", \"updatedAt\": \"2023-09-12T08:33:16.327851Z\", \"dueAt\": null, \"type\": \"TOXIC_COMBINATION\", \"resolvedAt\": null, \"statusChangedAt\": \"2023-08-30T08:17:54.613564Z\", \"status\": \"OPEN\", \"severity\": \"HIGH\", \"entitySnapshot\": {\"name\": \"MyDBServer\", \"type\": \"DB_SERVER\"}}",
+        "message": "{\"id\": \"eventId1\", \"sourceRule\": {\"__typename\": \"Control\", \"id\": \"sourceRuleId1\", \"name\": \"Publicly Exposed Assets with DataFindings \", \"controlDescription\": \"\", \"resolutionRecommendation\": \"\", \"securitySubCategories\": [{\"title\": \"Data Security\", \"category\": {\"name\": \"8 Data Security\"}}]}, \"createdAt\": \"2023-08-23T07:56:09.903743Z\", \"updatedAt\": \"2023-09-12T08:33:16.327851Z\", \"dueAt\": null, \"type\": \"TOXIC_COMBINATION\", \"resolvedAt\": null, \"statusChangedAt\": \"2023-08-30T08:17:54.613564Z\", \"status\": \"OPEN\", \"severity\": \"HIGH\", \"entitySnapshot\": {\"name\": \"host.example.com\", \"type\": \"DB_SERVER\"}}",
         "event": {
             "category": [
                 "intrusion_detection"
@@ -551,7 +551,7 @@ This section demonstrates how the raw logs will be transformed by our parsers. I
         },
         "@timestamp": "2023-08-23T07:56:09.903743Z",
         "host": {
-            "name": "MyDBServer"
+            "name": "host.example.com"
         },
         "log": {
             "level": "HIGH"
@@ -566,7 +566,7 @@ This section demonstrates how the raw logs will be transformed by our parsers. I
         "wiz": {
             "issues": {
                 "entitySnapshot": {
-                    "name": "MyDBServer",
+                    "name": "host.example.com",
                     "type": "DB_SERVER"
                 },
                 "id": "eventId1",
@@ -589,7 +589,7 @@ This section demonstrates how the raw logs will be transformed by our parsers. I
     ```json
 	
     {
-        "message": "{\"id\": \"eventId1\", \"sourceRule\": {\"__typename\": \"Control\", \"id\": \"sourceRuleId1\", \"name\": \"Publicly Exposed Assets with DataFindings \", \"controlDescription\": \"\", \"resolutionRecommendation\": \"\", \"securitySubCategories\": [{\"title\": \"Data Security\", \"category\": {\"name\": \"8 Data Security\"}}]}, \"createdAt\": \"2023-08-23T07:56:09.903743Z\", \"updatedAt\": \"2023-09-12T08:33:16.327851Z\", \"dueAt\": null, \"type\": \"TOXIC_COMBINATION\", \"resolvedAt\": null, \"statusChangedAt\": \"2023-08-30T08:17:54.613564Z\", \"status\": \"OPEN\", \"severity\": \"HIGH\", \"entitySnapshot\": {\"name\": \"EXAMPLE-AGW001-SharedServices\", \"type\": \"LOAD_BALANCER\"}}",
+        "message": "{\"id\": \"eventId1\", \"sourceRule\": {\"__typename\": \"Control\", \"id\": \"sourceRuleId1\", \"name\": \"Publicly Exposed Assets with DataFindings \", \"controlDescription\": \"\", \"resolutionRecommendation\": \"\", \"securitySubCategories\": [{\"title\": \"Data Security\", \"category\": {\"name\": \"8 Data Security\"}}]}, \"createdAt\": \"2023-08-23T07:56:09.903743Z\", \"updatedAt\": \"2023-09-12T08:33:16.327851Z\", \"dueAt\": null, \"type\": \"TOXIC_COMBINATION\", \"resolvedAt\": null, \"statusChangedAt\": \"2023-08-30T08:17:54.613564Z\", \"status\": \"OPEN\", \"severity\": \"HIGH\", \"entitySnapshot\": {\"name\": \"host.example.com\", \"type\": \"LOAD_BALANCER\"}}",
         "event": {
             "category": [
                 "intrusion_detection"
@@ -602,7 +602,7 @@ This section demonstrates how the raw logs will be transformed by our parsers. I
         },
         "@timestamp": "2023-08-23T07:56:09.903743Z",
         "host": {
-            "name": "EXAMPLE-AGW001-SharedServices"
+            "name": "host.example.com"
         },
         "log": {
             "level": "HIGH"
@@ -617,7 +617,7 @@ This section demonstrates how the raw logs will be transformed by our parsers. I
         "wiz": {
             "issues": {
                 "entitySnapshot": {
-                    "name": "EXAMPLE-AGW001-SharedServices",
+                    "name": "host.example.com",
                     "type": "LOAD_BALANCER"
                 },
                 "id": "eventId1",
@@ -640,7 +640,7 @@ This section demonstrates how the raw logs will be transformed by our parsers. I
     ```json
 	
     {
-        "message": "{\"id\": \"eventId1\", \"sourceRule\": {\"__typename\": \"Control\", \"id\": \"sourceRuleId1\", \"name\": \"Publicly Exposed Assets with DataFindings \", \"controlDescription\": \"\", \"resolutionRecommendation\": \"\", \"securitySubCategories\": [{\"title\": \"Data Security\", \"category\": {\"name\": \"8 Data Security\"}}]}, \"createdAt\": \"2023-08-23T07:56:09.903743Z\", \"updatedAt\": \"2023-09-12T08:33:16.327851Z\", \"dueAt\": null, \"type\": \"TOXIC_COMBINATION\", \"resolvedAt\": null, \"statusChangedAt\": \"2023-08-30T08:17:54.613564Z\", \"status\": \"OPEN\", \"severity\": \"HIGH\", \"entitySnapshot\": {\"name\": \"test-allincluded\", \"type\": \"VIRTUAL_WORKSTATION\"}}",
+        "message": "{\"id\": \"eventId1\", \"sourceRule\": {\"__typename\": \"Control\", \"id\": \"sourceRuleId1\", \"name\": \"Publicly Exposed Assets with DataFindings \", \"controlDescription\": \"\", \"resolutionRecommendation\": \"\", \"securitySubCategories\": [{\"title\": \"Data Security\", \"category\": {\"name\": \"8 Data Security\"}}]}, \"createdAt\": \"2023-08-23T07:56:09.903743Z\", \"updatedAt\": \"2023-09-12T08:33:16.327851Z\", \"dueAt\": null, \"type\": \"TOXIC_COMBINATION\", \"resolvedAt\": null, \"statusChangedAt\": \"2023-08-30T08:17:54.613564Z\", \"status\": \"OPEN\", \"severity\": \"HIGH\", \"entitySnapshot\": {\"name\": \"host.example.com\", \"type\": \"VIRTUAL_WORKSTATION\"}}",
         "event": {
             "category": [
                 "intrusion_detection"
@@ -653,7 +653,7 @@ This section demonstrates how the raw logs will be transformed by our parsers. I
         },
         "@timestamp": "2023-08-23T07:56:09.903743Z",
         "host": {
-            "name": "test-allincluded"
+            "name": "host.example.com"
         },
         "log": {
             "level": "HIGH"
@@ -668,7 +668,7 @@ This section demonstrates how the raw logs will be transformed by our parsers. I
         "wiz": {
             "issues": {
                 "entitySnapshot": {
-                    "name": "test-allincluded",
+                    "name": "host.example.com",
                     "type": "VIRTUAL_WORKSTATION"
                 },
                 "id": "eventId1",
