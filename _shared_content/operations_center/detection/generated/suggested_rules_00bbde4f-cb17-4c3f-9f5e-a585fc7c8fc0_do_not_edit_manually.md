@@ -681,12 +681,6 @@ The following Sekoia.io built-in rules match the intake **Google Kubernetes Engi
     
     - **Effort:** intermediate
 
-??? abstract "Sekoia.io Activity Logs Rule Deactivation Bulk"
-    
-    Detects a massive rule deactivation observed threw Sekoia.io activity logs.
-    
-    - **Effort:** master
-
 ??? abstract "Sigma Intelligence Windows DRILLAPP Malware"
     
     Sigma RULE to detect DrillAPP or other malicious launch of edge to disable security measures and abuse permissions.

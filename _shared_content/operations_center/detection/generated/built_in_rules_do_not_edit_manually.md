@@ -1,4 +1,4 @@
-Rules catalog includes **1086 built-in detection rules** ([_last update on 2026-09-07_](rules_changelog.md)).
+Rules catalog includes **1090 built-in detection rules** ([_last update on 2026-10-09_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Identity Information**
 
@@ -13,6 +13,12 @@ Rules catalog includes **1086 built-in detection rules** ([_last update on 2026-
         - 08/04/2024 - minor - change field name on query
         - 13/06/2024 - minor - Adding fields to be displayed in alerts.
             
+??? abstract "Flare Events Critical Severity Threat Exposure"
+    
+    Detects a high critical Flare exposure event from clear, deep, or dark web monitoring. This indicates a critical-risk threat indicator that requires rapid triage.
+    
+    - **Effort:** master
+    
 **Gather Victim Network Information**
 
 ??? abstract "ACLight Discovering Privileged Accounts"
@@ -78,6 +84,14 @@ Rules catalog includes **1086 built-in detection rules** ([_last update on 2026-
     Detects system network connections discovery via powershell and cmd.
     
     - **Effort:** advanced
+    
+**Gather Victim Org Information**
+
+??? abstract "Flare Events Suspicious Phishing Dark Web Chatter"
+    
+    Detects a Flare chat message event flagged with a sensitive content classification, indicating threat actor chatter on illicit channels referencing phishing material tied to the monitored organization.
+    
+    - **Effort:** master
     
 **Gather Victim Host Information**
 
@@ -286,6 +300,12 @@ Rules catalog includes **1086 built-in detection rules** ([_last update on 2026-
             
 **Phishing for Information**
 
+??? abstract "Flare Events Suspicious Phishing Dark Web Chatter"
+    
+    Detects a Flare chat message event flagged with a sensitive content classification, indicating threat actor chatter on illicit channels referencing phishing material tied to the monitored organization.
+    
+    - **Effort:** master
+    
 ??? abstract "Gatewatcher AionIQ V103 Active CTI"
     
     Detects whan an event related to CTI is raised by Gatewatcher V103. An attacker may be gathering information with this event.
@@ -375,24 +395,40 @@ Rules catalog includes **1086 built-in detection rules** ([_last update on 2026-
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 09/09/2026 - minor - Update rule type to integration
+            
 ??? abstract "Microsoft Entra ID (Azure AD) Anonymous IP"
     
     Detects when Microsoft Entra ID (Azure AD) identifies sign-ins from a risky IP address, for example, using an anonymous browser or VPN. To use this feature, you must have an Microsoft Entra ID (Azure AD) Premium P2 license (https://docs.microsoft.com/en-us/azure/active-directory/identity-protection/overview-identity-protection).
     
     - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 09/09/2026 - minor - Update rule type to integration
+            
 ??? abstract "Microsoft Entra ID (Azure AD) Impossible Travel"
     
     Detects when Microsoft Entra ID (Azure AD) identifies two user activities (a single or multiple sessions) originating from geographically distant locations within a time period shorter than the time it would have taken the user to travel from the first location to the second. To use this feature, you must have an Microsoft Entra ID (Azure AD) Premium P2 license (https://docs.microsoft.com/en-us/azure/active-directory/identity-protection/overview-identity-protection).
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 09/09/2026 - minor - Update rule type to integration
+            
 ??? abstract "Microsoft Entra ID (Azure AD) Leaked Credentials"
     
     Detects when Microsoft Entra ID (Azure AD) identifies that the user's valid credentials have been leaked. This sharing is typically done by posting publicly on the dark web, paste sites, or by trading and selling the credentials on the black market. To use this feature, you must have an Microsoft Entra ID (Azure AD) Premium P2 license (https://docs.microsoft.com/en-us/azure/active-directory/identity-protection/overview-identity-protection).
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 09/09/2026 - minor - Update rule type to integration
+            
 ??? abstract "Microsoft Entra ID (Azure AD) Login Failed Brute-Force From Single IP Address"
     
     A user has attempted to login several times (brute-force) on AzureAD and failed every time, all from the same source IP address and in a timerange of 5 minutes.
@@ -419,12 +455,20 @@ Rules catalog includes **1086 built-in detection rules** ([_last update on 2026-
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 09/09/2026 - minor - Update rule type to integration
+            
 ??? abstract "Microsoft Entra ID (Azure AD) Sign-in From Unlikely Country"
     
     Detects when Microsoft Entra ID (Azure AD) identifies sign-ins originating from geographically distant locations, where at least one of the locations may also be atypical for the user, given past behavior. To use this feature, you must have an Microsoft Entra ID (Azure AD) Premium P2 license (https://docs.microsoft.com/en-us/azure/active-directory/identity-protection/overview-identity-protection).
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 09/09/2026 - minor - Update rule type to integration
+            
 ??? abstract "Microsoft Entra ID (Azure AD) Successful Password Spraying From Single IP Address"
     
     An IP address performed several failed logins on multiple users to then have a successful login on one of them. Note that even if the sign-in was blocked by MFA (error 50074/50076/50158) or conditional access (error 50097/53003), these verifications only occur after the correct password was submitted. The account's password must still be considered compromised, and be changed.
@@ -441,12 +485,20 @@ Rules catalog includes **1086 built-in detection rules** ([_last update on 2026-
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 09/09/2026 - minor - Update rule type to integration
+            
 ??? abstract "Microsoft Entra ID (Azure AD) Suspicious IP"
     
     Detects when Microsoft Entra ID (Azure AD) identifies a suspicious IP address. An IP address is considered suspicious based on high failure rates because of invalid credentials received from the IP address or other IP reputation sources. To use this feature, you must have an Microsoft Entra ID (Azure AD) Premium P2 license (https://docs.microsoft.com/en-us/azure/active-directory/identity-protection/overview-identity-protection).
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 09/09/2026 - minor - Update rule type to integration
+            
 ??? abstract "Microsoft Entra ID (Azure AD) Suspicious Inbox Forwarding"
     
     Detects when Microsoft Entra ID (Azure AD) identifies suspicious email forwarding rules, for example, if a user created an inbox rule that forwards a copy of all emails to an external address. To use this feature, you must have an Microsoft Entra ID (Azure AD) Premium P2 license (https://docs.microsoft.com/en-us/azure/active-directory/identity-protection/overview-identity-protection).
@@ -459,6 +511,10 @@ Rules catalog includes **1086 built-in detection rules** ([_last update on 2026-
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 09/09/2026 - minor - Update rule type to integration
+            
 ??? abstract "Microsoft Entra ID (Azure AD) Token Issuer Anomaly"
     
     Detects when Microsoft Entra ID (Azure AD) indicates that The SAML token issuer for the associated SAML token is potentially compromised. The claims included in the token are unusual or match known attacker patterns. To use this feature, you must have an Microsoft Entra ID (Azure AD) Premium P2 license (https://docs.microsoft.com/en-us/azure/active-directory/identity-protection/overview-identity-protection).
@@ -474,6 +530,7 @@ Rules catalog includes **1086 built-in detection rules** ([_last update on 2026-
     - **Changelog:**
     
         - 20/03/2025 - major - Change effort level
+        - 09/09/2026 - minor - Update rule type to integration
             
 ??? abstract "Okta MFA Brute-Force Successful"
     
@@ -548,24 +605,40 @@ Rules catalog includes **1086 built-in detection rules** ([_last update on 2026-
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 09/09/2026 - minor - Update rule type to integration
+            
 ??? abstract "Microsoft Entra ID (Azure AD) Anonymous IP"
     
     Detects when Microsoft Entra ID (Azure AD) identifies sign-ins from a risky IP address, for example, using an anonymous browser or VPN. To use this feature, you must have an Microsoft Entra ID (Azure AD) Premium P2 license (https://docs.microsoft.com/en-us/azure/active-directory/identity-protection/overview-identity-protection).
     
     - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 09/09/2026 - minor - Update rule type to integration
+            
 ??? abstract "Microsoft Entra ID (Azure AD) Impossible Travel"
     
     Detects when Microsoft Entra ID (Azure AD) identifies two user activities (a single or multiple sessions) originating from geographically distant locations within a time period shorter than the time it would have taken the user to travel from the first location to the second. To use this feature, you must have an Microsoft Entra ID (Azure AD) Premium P2 license (https://docs.microsoft.com/en-us/azure/active-directory/identity-protection/overview-identity-protection).
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 09/09/2026 - minor - Update rule type to integration
+            
 ??? abstract "Microsoft Entra ID (Azure AD) Leaked Credentials"
     
     Detects when Microsoft Entra ID (Azure AD) identifies that the user's valid credentials have been leaked. This sharing is typically done by posting publicly on the dark web, paste sites, or by trading and selling the credentials on the black market. To use this feature, you must have an Microsoft Entra ID (Azure AD) Premium P2 license (https://docs.microsoft.com/en-us/azure/active-directory/identity-protection/overview-identity-protection).
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 09/09/2026 - minor - Update rule type to integration
+            
 ??? abstract "Microsoft Entra ID (Azure AD) Login Failed Brute-Force From Single IP Address"
     
     A user has attempted to login several times (brute-force) on AzureAD and failed every time, all from the same source IP address and in a timerange of 5 minutes.
@@ -592,12 +665,20 @@ Rules catalog includes **1086 built-in detection rules** ([_last update on 2026-
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 09/09/2026 - minor - Update rule type to integration
+            
 ??? abstract "Microsoft Entra ID (Azure AD) Sign-in From Unlikely Country"
     
     Detects when Microsoft Entra ID (Azure AD) identifies sign-ins originating from geographically distant locations, where at least one of the locations may also be atypical for the user, given past behavior. To use this feature, you must have an Microsoft Entra ID (Azure AD) Premium P2 license (https://docs.microsoft.com/en-us/azure/active-directory/identity-protection/overview-identity-protection).
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 09/09/2026 - minor - Update rule type to integration
+            
 ??? abstract "Microsoft Entra ID (Azure AD) Successful Password Spraying From Single IP Address"
     
     An IP address performed several failed logins on multiple users to then have a successful login on one of them. Note that even if the sign-in was blocked by MFA (error 50074/50076/50158) or conditional access (error 50097/53003), these verifications only occur after the correct password was submitted. The account's password must still be considered compromised, and be changed.
@@ -614,12 +695,20 @@ Rules catalog includes **1086 built-in detection rules** ([_last update on 2026-
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 09/09/2026 - minor - Update rule type to integration
+            
 ??? abstract "Microsoft Entra ID (Azure AD) Suspicious IP"
     
     Detects when Microsoft Entra ID (Azure AD) identifies a suspicious IP address. An IP address is considered suspicious based on high failure rates because of invalid credentials received from the IP address or other IP reputation sources. To use this feature, you must have an Microsoft Entra ID (Azure AD) Premium P2 license (https://docs.microsoft.com/en-us/azure/active-directory/identity-protection/overview-identity-protection).
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 09/09/2026 - minor - Update rule type to integration
+            
 ??? abstract "Microsoft Entra ID (Azure AD) Suspicious Inbox Forwarding"
     
     Detects when Microsoft Entra ID (Azure AD) identifies suspicious email forwarding rules, for example, if a user created an inbox rule that forwards a copy of all emails to an external address. To use this feature, you must have an Microsoft Entra ID (Azure AD) Premium P2 license (https://docs.microsoft.com/en-us/azure/active-directory/identity-protection/overview-identity-protection).
@@ -632,6 +721,10 @@ Rules catalog includes **1086 built-in detection rules** ([_last update on 2026-
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 09/09/2026 - minor - Update rule type to integration
+            
 ??? abstract "Microsoft Entra ID (Azure AD) Token Issuer Anomaly"
     
     Detects when Microsoft Entra ID (Azure AD) indicates that The SAML token issuer for the associated SAML token is potentially compromised. The claims included in the token are unusual or match known attacker patterns. To use this feature, you must have an Microsoft Entra ID (Azure AD) Premium P2 license (https://docs.microsoft.com/en-us/azure/active-directory/identity-protection/overview-identity-protection).
@@ -647,6 +740,7 @@ Rules catalog includes **1086 built-in detection rules** ([_last update on 2026-
     - **Changelog:**
     
         - 20/03/2025 - major - Change effort level
+        - 09/09/2026 - minor - Update rule type to integration
             
 ??? abstract "Okta MFA Brute-Force Successful"
     
@@ -919,6 +1013,12 @@ Rules catalog includes **1086 built-in detection rules** ([_last update on 2026-
         - 29/05/2024 - major - Adding new field and switching to correlation rule.
         - 04/04/2024 - major - Rule's pattern field changed
             
+??? abstract "Flare Events Critical Severity Threat Exposure"
+    
+    Detects a high critical Flare exposure event from clear, deep, or dark web monitoring. This indicates a critical-risk threat indicator that requires rapid triage.
+    
+    - **Effort:** master
+    
 ??? abstract "Fortigate Firewall Successful External Login"
     
     Detects succesfull access to administration console of firewall from another IP address than 127.0.0.1. Prerequisites, check that the firewall logs format corresponds to the rule
@@ -1170,6 +1270,7 @@ Rules catalog includes **1086 built-in detection rules** ([_last update on 2026-
     - **Changelog:**
     
         - 15/01/2025 - minor - Adding format field to improve rules mapping
+        - 09/09/2026 - minor - Update rule type to integration
             
 ??? abstract "Trend Micro Apex One Intrusion Detection Alert"
     
@@ -1501,6 +1602,10 @@ Rules catalog includes **1086 built-in detection rules** ([_last update on 2026-
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 09/09/2026 - minor - Update rule type to integration
+            
 ??? abstract "Microsoft 365 (Office 365) DLP Policy Removed"
     
     Detects when a DLP (Data Loss Prevention) policy is removed in Microsoft 365 (Office 365). DLP policies defines which resources can be shared and with whom, preventing sensitive information from being leaked.
@@ -1513,36 +1618,60 @@ Rules catalog includes **1086 built-in detection rules** ([_last update on 2026-
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 09/09/2026 - minor - Update rule type to integration
+            
 ??? abstract "Microsoft 365 (Office 365) MCAS Inbox Hiding"
     
     Detects when Microsoft Cloud App Security identifies that a suspicious inbox rule was set on a user’s inbox. This may indicate that the user account is compromised, and that the mailbox is being used to distribute spam and malware in your organization. To use this feature, you must have an Microsoft 365 (Office 365) E5 license (https://docs.microsoft.com/en-us/defender-cloud-apps/get-started?culture=fr-fr&country=FR).
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 09/09/2026 - minor - Update rule type to integration
+            
 ??? abstract "Microsoft 365 (Office 365) MCAS New Country"
     
     Detects when Microsoft Cloud App Security identifies a sign-in from a country where it has never connected. To use this feature, you must have an Microsoft 365 (Office 365) E5 license (https://docs.microsoft.com/en-us/defender-cloud-apps/get-started?culture=fr-fr&country=FR).
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 09/09/2026 - minor - Update rule type to integration
+            
 ??? abstract "Microsoft 365 (Office 365) MCAS Repeated Delete"
     
     Detects when Microsoft Cloud App Security identifies that a user has deleted an unusually large volume of files. To use this feature, you must have an Microsoft 365 (Office 365) E5 license (https://docs.microsoft.com/en-us/defender-cloud-apps/get-started?culture=fr-fr&country=FR).
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 09/09/2026 - minor - Update rule type to integration
+            
 ??? abstract "Microsoft 365 (Office 365) MCAS Repeated Failed Login"
     
     Detects when Microsoft Cloud App Security identifies a large number of failed login attempts which may indicate a brute-force attempt. To use this feature, you must have an Microsoft 365 (Office 365) E5 license (https://docs.microsoft.com/en-us/defender-cloud-apps/get-started?culture=fr-fr&country=FR).
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 09/09/2026 - minor - Update rule type to integration
+            
 ??? abstract "Microsoft 365 (Office 365) MCAS Risky IP"
     
     Detects when Microsoft Cloud App Security identifies sign-ins from a risky IP address, for example, using an anonymous browser or VPN. To use this feature, you must have an Microsoft 365 (Office 365) E5 license (https://docs.microsoft.com/en-us/defender-cloud-apps/get-started?culture=fr-fr&country=FR).
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 09/09/2026 - minor - Update rule type to integration
+            
 ??? abstract "Microsoft 365 (Office 365) MailBoxAuditBypassAssociation Option Implementation"
     
     Detects the implementation of a MailBoxAuditBypassAssociation option in Microsoft 365 (Office 365). This option is used when you configure a user or computer account to bypass mailbox audit logging, access or actions taken by the user or computer account to any mailbox isn't logged.
@@ -2228,6 +2357,10 @@ Rules catalog includes **1086 built-in detection rules** ([_last update on 2026-
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 09/10/2026 - minor - Rule improvement to detect more use cases
+            
 ??? abstract "CrowdStrike Falcon Identity Protection Detection Critical Severity"
     
     CrowdStrike Falcon raised an alert for an Identity-based detection with critical severity
@@ -4287,6 +4420,10 @@ Rules catalog includes **1086 built-in detection rules** ([_last update on 2026-
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 09/09/2026 - minor - Update rule type to integration
+            
 ??? abstract "Microsoft 365 (Office 365) DLP Policy Removed"
     
     Detects when a DLP (Data Loss Prevention) policy is removed in Microsoft 365 (Office 365). DLP policies defines which resources can be shared and with whom, preventing sensitive information from being leaked.
@@ -4299,36 +4436,60 @@ Rules catalog includes **1086 built-in detection rules** ([_last update on 2026-
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 09/09/2026 - minor - Update rule type to integration
+            
 ??? abstract "Microsoft 365 (Office 365) MCAS Inbox Hiding"
     
     Detects when Microsoft Cloud App Security identifies that a suspicious inbox rule was set on a user’s inbox. This may indicate that the user account is compromised, and that the mailbox is being used to distribute spam and malware in your organization. To use this feature, you must have an Microsoft 365 (Office 365) E5 license (https://docs.microsoft.com/en-us/defender-cloud-apps/get-started?culture=fr-fr&country=FR).
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 09/09/2026 - minor - Update rule type to integration
+            
 ??? abstract "Microsoft 365 (Office 365) MCAS New Country"
     
     Detects when Microsoft Cloud App Security identifies a sign-in from a country where it has never connected. To use this feature, you must have an Microsoft 365 (Office 365) E5 license (https://docs.microsoft.com/en-us/defender-cloud-apps/get-started?culture=fr-fr&country=FR).
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 09/09/2026 - minor - Update rule type to integration
+            
 ??? abstract "Microsoft 365 (Office 365) MCAS Repeated Delete"
     
     Detects when Microsoft Cloud App Security identifies that a user has deleted an unusually large volume of files. To use this feature, you must have an Microsoft 365 (Office 365) E5 license (https://docs.microsoft.com/en-us/defender-cloud-apps/get-started?culture=fr-fr&country=FR).
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 09/09/2026 - minor - Update rule type to integration
+            
 ??? abstract "Microsoft 365 (Office 365) MCAS Repeated Failed Login"
     
     Detects when Microsoft Cloud App Security identifies a large number of failed login attempts which may indicate a brute-force attempt. To use this feature, you must have an Microsoft 365 (Office 365) E5 license (https://docs.microsoft.com/en-us/defender-cloud-apps/get-started?culture=fr-fr&country=FR).
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 09/09/2026 - minor - Update rule type to integration
+            
 ??? abstract "Microsoft 365 (Office 365) MCAS Risky IP"
     
     Detects when Microsoft Cloud App Security identifies sign-ins from a risky IP address, for example, using an anonymous browser or VPN. To use this feature, you must have an Microsoft 365 (Office 365) E5 license (https://docs.microsoft.com/en-us/defender-cloud-apps/get-started?culture=fr-fr&country=FR).
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 09/09/2026 - minor - Update rule type to integration
+            
 ??? abstract "Microsoft 365 (Office 365) MailBoxAuditBypassAssociation Option Implementation"
     
     Detects the implementation of a MailBoxAuditBypassAssociation option in Microsoft 365 (Office 365). This option is used when you configure a user or computer account to bypass mailbox audit logging, access or actions taken by the user or computer account to any mailbox isn't logged.
@@ -6506,6 +6667,12 @@ Rules catalog includes **1086 built-in detection rules** ([_last update on 2026-
         - 29/05/2024 - major - Adding new field and switching to correlation rule.
         - 04/04/2024 - major - Rule's pattern field changed
             
+??? abstract "Flare Events Critical Severity Threat Exposure"
+    
+    Detects a high critical Flare exposure event from clear, deep, or dark web monitoring. This indicates a critical-risk threat indicator that requires rapid triage.
+    
+    - **Effort:** master
+    
 ??? abstract "Fortigate Firewall Successful External Login"
     
     Detects succesfull access to administration console of firewall from another IP address than 127.0.0.1. Prerequisites, check that the firewall logs format corresponds to the rule
@@ -7125,6 +7292,7 @@ Rules catalog includes **1086 built-in detection rules** ([_last update on 2026-
     - **Changelog:**
     
         - 15/01/2025 - minor - Adding format field to improve rules mapping
+        - 09/09/2026 - minor - Update rule type to integration
             
 ??? abstract "Trend Micro Apex One Intrusion Detection Alert"
     
@@ -8493,6 +8661,12 @@ Rules catalog includes **1086 built-in detection rules** ([_last update on 2026-
         - 29/05/2024 - major - Adding new field and switching to correlation rule.
         - 04/04/2024 - major - Rule's pattern field changed
             
+??? abstract "Flare Events Critical Severity Threat Exposure"
+    
+    Detects a high critical Flare exposure event from clear, deep, or dark web monitoring. This indicates a critical-risk threat indicator that requires rapid triage.
+    
+    - **Effort:** master
+    
 ??? abstract "Fortigate Firewall Successful External Login"
     
     Detects succesfull access to administration console of firewall from another IP address than 127.0.0.1. Prerequisites, check that the firewall logs format corresponds to the rule
@@ -10706,6 +10880,18 @@ Rules catalog includes **1086 built-in detection rules** ([_last update on 2026-
     
     - **Effort:** advanced
     
+??? abstract "Flare Events Stealer Log Malware Infection"
+    
+    Detects a Flare stealer log event with an identified malware family, indicating credentials or host data were likely collected by infostealer malware.
+    
+    - **Effort:** master
+    
+??? abstract "Flare Events Suspicious Forum Post"
+    
+    Detects a Flare forum post event, indicating credentials or host data were likely collected by infostealer malware.
+    
+    - **Effort:** master
+    
 ??? abstract "Generic Password Discovery"
     
     Detects when the security utility is used to access passwords in a keychain.
@@ -11920,6 +12106,18 @@ Rules catalog includes **1086 built-in detection rules** ([_last update on 2026-
     
         - 14/08/2025 - minor - Similarity strategy modified to group alerts by user ID and instance ID
             
+??? abstract "Flare Events Stealer Log Malware Infection"
+    
+    Detects a Flare stealer log event with an identified malware family, indicating credentials or host data were likely collected by infostealer malware.
+    
+    - **Effort:** master
+    
+??? abstract "Flare Events Suspicious Forum Post"
+    
+    Detects a Flare forum post event, indicating credentials or host data were likely collected by infostealer malware.
+    
+    - **Effort:** master
+    
 ??? abstract "Formbook File Creation DB1"
     
     Detects specific file creation (Users\*\AppData\Local\Temp\DB1) to store data to exfiltrate (Formbook behavior). Logging for Sysmon event 11 is usually used for this detection. 
