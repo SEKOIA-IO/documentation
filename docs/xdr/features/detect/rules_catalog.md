@@ -281,17 +281,25 @@ Rule testing allows you to evaluate how a Sigma pattern performs against histori
 
 ##### Community scope for existing detections
 
-The **Community** filter in the Rules Catalog filters the detections displayed in the list. It does not define the community scope of **Test pattern** when you test an existing detection.
+For an MSSP community, **Test pattern** evaluates events according to the detection rule's status:
 
-For an existing detection, **Test pattern** can include historical events from other communities where the detection is enabled. The test does not currently provide an independent community selector.
+| Detection rule status | Communities evaluated |
+| --- | --- |
+| Disabled | Events from all communities |
+| Enabled for a list of communities | Events from the communities where the detection is enabled |
+
+The **Community** filter in the Rules Catalog only filters the detections displayed in the list. It does not change the communities evaluated by **Test pattern**, and the test does not currently provide an independent community selector.
 
 !!! warning "The Rules Catalog community filter does not scope Test pattern"
 
-    Selecting one community in the Rules Catalog does not guarantee that **Test pattern** evaluates events only from that community. Results can include events from other communities where the detection is enabled.
+    Selecting one community in the Rules Catalog does not guarantee that **Test pattern** evaluates events only from that community.
 
     The community selector in **Rule Details > Rule scope** applies to alert filters. It does not control the scope of **Test pattern**.
 
-For example, if a detection is enabled for Communities A, B, and C, selecting only Community A in the Rules Catalog can still return test results from Communities B and C.
+For example:
+
+- If the detection rule is disabled, **Test pattern** evaluates events from all communities, even when the Rules Catalog is filtered to one community.
+- If the detection rule is enabled for Communities B and C, **Test pattern** evaluates events from Communities B and C. It does not evaluate Community A unless the detection is also enabled there.
 
 For related answers, see [Questions about detection rules](/xdr/FAQ/intelligence/detection_rules.md#why-does-test-pattern-show-results-from-other-communities).
 
