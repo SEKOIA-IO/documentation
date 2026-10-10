@@ -29,6 +29,7 @@ Security teams investigate in two directions. Reactive investigations start from
 | [Vulnerability enrichment](/xdr/features/modules/reveal_vulnerabilities.md) | Lists known CVE exposures affecting an asset, aggregated from connected scanners |
 | [Security controls](/xdr/features/modules/reveal_security_controls.md) | Shows which detection and protection technologies cover an asset and where gaps exist |
 | [Attack Path Visualization](/xdr/features/investigate/attack_path_visualization.md) | Maps relationships between assets to help analysts assess lateral movement risk and blast radius |
+| [Asset risk scoring](/xdr/features/modules/asset_risk_scoring.md) | Calculates an asset-level security priority from persistent exposure, recent activity, and configured asset criticality. |
  
 ## How Reveal fits into your workflows
  
