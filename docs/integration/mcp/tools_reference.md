@@ -1,9 +1,9 @@
 # MCP tools
 
-This page lists every tool exposed by the Sekoia MCP Server, with its parameters, the permission it requires and an example prompt. All tools are read-only; your MCP client calls them on your behalf when a prompt needs Sekoia.io data.
+This page lists every tool exposed by the Sekoia MCP Server, with its parameters, the permission it requires and an example prompt. All tools are read-only; your MCP client calls them on your behalf when a prompt needs Sekoia data.
 
 !!! note "Early Access"
-    This feature is currently in Early Access and is only available for Beta testers. Sekoia.io plans to roll out this functionality to all environments soon.
+    This feature is currently in Early Access and is only available for Beta testers. Sekoia plans to roll out this functionality to all environments soon.
 
 With the [Sekoia plugins for Claude Code](/integration/mcp/plugins_skills.md), the skills choose and chain these tools for you. This page is useful to understand what they call, or to use the tools from another MCP client.
 
@@ -204,7 +204,7 @@ Retrieves the reports referencing an object.
 
 ??? example "Example prompt"
     ```
-    List the reports Sekoia.io published about this malware family, most recent first.
+    List the reports Sekoia published about this malware family, most recent first.
     ```
 
 ### search_observables
@@ -222,7 +222,7 @@ Looks up observables (IP addresses, domains, URLs, file hashes and more) in the 
 
 ??? example "Example prompt"
     ```
-    Are 198.51.100.23 and onenote2.exe.lnk known to Sekoia.io, and which threat are they linked to?
+    Are 198.51.100.23 and onenote2.exe.lnk known to Sekoia, and which threat are they linked to?
     ```
 
 ## Related articles

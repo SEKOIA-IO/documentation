@@ -3,7 +3,7 @@
 This page shows what the `sekoia-soc` plugin does for SOC analysts in Claude Code: gather everything on an alert, summarise a case and query your data in plain language. Each guide gives the permissions it needs, an example prompt, the result and the tools the skill calls.
 
 !!! note "Early Access"
-    This feature is currently in Early Access and is only available for Beta testers. Sekoia.io plans to roll out this functionality to all environments soon.
+    This feature is currently in Early Access and is only available for Beta testers. Sekoia plans to roll out this functionality to all environments soon.
 
 The guides assume the `sekoia-soc` plugin is installed. See [Install the Sekoia plugins in Claude Code](/integration/mcp/install_claude_code.md). The prompts are examples: write your own, Claude Code picks the matching skill.
 
@@ -15,7 +15,7 @@ The guides assume the `sekoia-soc` plugin is installed. See [Install the Sekoia 
 
 ## Get everything on an alert
 
-Collect the full factual record of one alert so that an analyst can decide: what the rule matched, which entities are involved and what Sekoia.io intelligence says about the threats.
+Collect the full factual record of one alert so that an analyst can decide: what the rule matched, which entities are involved and what Sekoia intelligence says about the threats.
 
 Permissions: `View alerts`, `View events`, `View Rules Catalog`. Add `View query builder data sources` and `Execute query` for the linked cases and assets, and `View intelligence` for the threat profiles.
 
@@ -32,7 +32,7 @@ Permissions: `View alerts`, `View events`, `View Rules Catalog`. Add `View query
     - the alert status, urgency, detection type, first and last seen and number of occurrences;
     - the rule, its source and its type: behavioral detection, vendor verdict pass-through or threat intelligence match, with its documented false positives;
     - the entities from the events: hosts, users, files and hashes, process and parent with the command line, network values;
-    - the threats with their Sekoia.io intelligence context, the matched indicator for a threat intelligence alert, and the ATT&CK techniques;
+    - the threats with their Sekoia intelligence context, the matched indicator for a threat intelligence alert, and the ATT&CK techniques;
     - the linked cases and assets, and the next pivots.
 
 === "Tools called"

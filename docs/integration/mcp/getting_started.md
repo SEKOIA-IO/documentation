@@ -1,13 +1,13 @@
 # Getting started with the Sekoia MCP Server
 
-This tutorial walks you through a first investigation with the Sekoia plugins in Claude Code. By the end, you will have investigated an alert end to end in plain language: gathered everything on the alert, checked its indicators against Sekoia.io threat intelligence, followed the user in your events and summarised the case.
+This tutorial walks you through a first investigation with the Sekoia plugins in Claude Code. By the end, you will have investigated an alert end to end in plain language: gathered everything on the alert, checked its indicators against Sekoia threat intelligence, followed the user in your events and summarised the case.
 
 !!! note "Early Access"
-    This feature is currently in Early Access and is only available for Beta testers. Sekoia.io plans to roll out this functionality to all environments soon.
+    This feature is currently in Early Access and is only available for Beta testers. Sekoia plans to roll out this functionality to all environments soon.
 
 ## Scenario
 
-A SentinelOne alert, `AL2h7Kq9pXmW`, was raised on a laptop in your community. You want to know what the EDR flagged, who is impacted, whether the indicators are known to Sekoia.io and what the user did afterwards. You will do all of it from your terminal.
+A SentinelOne alert, `AL2h7Kq9pXmW`, was raised on a laptop in your community. You want to know what the EDR flagged, who is impacted, whether the indicators are known to Sekoia and what the user did afterwards. You will do all of it from your terminal.
 
 The prompts below are examples. Write your own: Claude Code picks the skill that matches your question, and the skill calls the tools.
 
@@ -32,7 +32,7 @@ For this tutorial, your API key needs the `View alerts`, `View cases`, `View eve
     - **The alert**: title (for example *SentinelOne EDR Threat Detected (Malicious)*), status, urgency, detection type, first and last seen.
     - **The rule**: what it matches and whether it is a behavioral detection, a pass-through of the EDR verdict or a threat intelligence match, with its documented false positives.
     - **The entities from the events**: host `laptop-a1b2c3`, user `alex.martin`, a zero-byte `.lnk` file written by `onenote.exe` in a temporary folder, and the mitigation status of the agent.
-    - **The threats** with their Sekoia.io intelligence context, the ATT&CK techniques and the linked case.
+    - **The threats** with their Sekoia intelligence context, the ATT&CK techniques and the linked case.
 
     It ends with the next pivots: the linked case, a hunt on the host or the user.
 
@@ -46,7 +46,7 @@ For this tutorial, your API key needs the `View alerts`, `View cases`, `View eve
 
 === "Result"
 
-    The `query` skill looks up the observables, then profiles the threat they indicate. It answers in a few sentences with the object IDs, the confidence, the dates and the Sekoia.io source of the evidence, and says plainly when a value is not in Sekoia.io intelligence.
+    The `query` skill looks up the observables, then profiles the threat they indicate. It answers in a few sentences with the object IDs, the confidence, the dates and the Sekoia source of the evidence, and says plainly when a value is not in Sekoia intelligence.
 
 !!! tip "Pivot further"
     Ask which malware and tools the threat uses, or which reports cover it, to build a short brief without leaving the session.
@@ -101,7 +101,7 @@ For this tutorial, your API key needs the `View alerts`, `View cases`, `View eve
 In five prompts you have:
 
 - Gathered the alert, its rule, its events and its entities
-- Checked the indicators against Sekoia.io threat intelligence
+- Checked the indicators against Sekoia threat intelligence
 - Reconstructed the user's activity after the alert
 - Produced a case summary you can share with the next shift
 

@@ -6,7 +6,7 @@ Welcome to the Integrations section of our documentation! This section is design
 
 ### MCP Server
 
-The [Sekoia MCP Server](/integration/mcp/overview.md) connects AI assistants such as Claude Code to your Sekoia.io data. Install the Sekoia plugins to explore threat intelligence, produce intelligence reports, check your telemetry, and work alerts, cases and SOL queries in plain language.
+The [Sekoia MCP Server](/integration/mcp/overview.md) connects AI assistants such as Claude Code to your Sekoia data. Install the Sekoia plugins to explore threat intelligence, produce intelligence reports, check your telemetry, and work alerts, cases and SOL queries in plain language.
 
 ### Ingestion Methods
 

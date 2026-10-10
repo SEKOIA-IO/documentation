@@ -1,27 +1,27 @@
 # Threat intelligence how-to guides
 
-This page shows what the `sekoia-cti` plugin does in Claude Code. It follows the analyst's path: explore what Sekoia.io knows, write it up as a report, then check whether the threat touches your own telemetry. Each guide gives the permissions it needs, an example prompt, the result and the tools the skill calls.
+This page shows what the `sekoia-cti` plugin does in Claude Code. It follows the analyst's path: explore what Sekoia knows, write it up as a report, then check whether the threat touches your own telemetry. Each guide gives the permissions it needs, an example prompt, the result and the tools the skill calls.
 
 !!! note "Early Access"
-    This feature is currently in Early Access and is only available for Beta testers. Sekoia.io plans to roll out this functionality to all environments soon.
+    This feature is currently in Early Access and is only available for Beta testers. Sekoia plans to roll out this functionality to all environments soon.
 
 The guides assume the `sekoia-cti` plugin is installed. See [Install the Sekoia plugins in Claude Code](/integration/mcp/install_claude_code.md). The prompts are examples: write your own, Claude Code picks the matching skill.
 
 | Step | Use case | Skill |
 |---|---|---|
-| 1 | [Explore Sekoia.io threat intelligence](#explore-sekoiaio-threat-intelligence) | `query` |
+| 1 | [Explore Sekoia threat intelligence](#explore-sekoia-threat-intelligence) | `query` |
 | 2 | [Produce intelligence reports](#produce-intelligence-reports) | `exposure-assessment`, `threat-horizon-assessment`, `intelligence-delta` |
 | 3 | [Check whether you were exposed to a threat](#check-whether-you-were-exposed-to-a-threat) | `query` |
 | 3 | [Hunt the behaviours of a FLINT report](#hunt-the-behaviours-of-a-flint-report) | `report-hunt` |
 
-## Explore Sekoia.io threat intelligence
+## Explore Sekoia threat intelligence
 
 Ask about actors, malware, indicators, vulnerabilities, sectors, campaigns and reports in plain language. The `query` skill picks the tool sequence and answers in a few sentences with the evidence behind it:
 
 - the object IDs and links to the platform;
 - the relationship confidence, read relationship by relationship;
 - the dates that matter: activity dates on indicators, and the date of the latest relationship for the freshness of an actor or a malware;
-- the Sekoia.io source of the evidence: Sekoia.io itself, its C2 Tracker, Honeypot or Malware Watcher, or a third-party report;
+- the Sekoia source of the evidence: Sekoia itself, its C2 Tracker, Honeypot or Malware Watcher, or a third-party report;
 - what was searched and not found.
 
 Permissions: `View intelligence`.
@@ -36,7 +36,7 @@ Permissions: `View intelligence`.
 
 === "Result"
 
-    A short profile: aliases, activity window, goals, the malware and tools linked to the actor with the confidence of each relationship, and the reports by publication date, Sekoia.io FLINT reports flagged as such.
+    A short profile: aliases, activity window, goals, the malware and tools linked to the actor with the confidence of each relationship, and the reports by publication date, Sekoia FLINT reports flagged as such.
 
 === "Tools called"
 
@@ -55,7 +55,7 @@ Permissions: `View intelligence`.
 
 === "Result"
 
-    For each value: known or not, its validity period, the threat it indicates and the Sekoia.io source that produced it. A match whose validity has expired is reported as historical context, not as a current finding. You can pass several values at once.
+    For each value: known or not, its validity period, the threat it indicates and the Sekoia source that produced it. A match whose validity has expired is reported as historical context, not as a current finding. You can pass several values at once.
 
 === "Tools called"
 
@@ -117,7 +117,7 @@ Permissions: `View intelligence`.
 
 ## Produce intelligence reports
 
-Turn Sekoia.io evidence into a document you can share. Three report skills each produce a markdown report, an evidence manifest, a self-contained HTML rendering in the Sekoia Intelligence design and a PDF printed from it.
+Turn Sekoia evidence into a document you can share. Three report skills each produce a markdown report, an evidence manifest, a self-contained HTML rendering in the Sekoia Intelligence design and a PDF printed from it.
 
 Permissions: `View intelligence`.
 
@@ -125,9 +125,9 @@ Permissions: `View intelligence`.
 |---|---|
 | `exposure-assessment` | How an actor or a campaign exposes a sector or an organisation, and sector technical RFIs |
 | `threat-horizon-assessment` | How a threat theme will evolve over 3 to 12 months, and what to watch |
-| `intelligence-delta` | What Sekoia.io adds that a generic feed does not, demonstrated on one finding |
+| `intelligence-delta` | What Sekoia adds that a generic feed does not, demonstrated on one finding |
 
-All three apply the `evidence-protocol` skill. Every claim is typed (fact, calculated result, assessment, exposure model) and traced to a Sekoia.io object or relationship ID. Clusters are never merged, dates are never borrowed between objects, and the boundaries of the evidence are stated. The evidence manifest ships next to the report so that a reviewer can audit every claim.
+All three apply the `evidence-protocol` skill. Every claim is typed (fact, calculated result, assessment, exposure model) and traced to a Sekoia object or relationship ID. Clusters are never merged, dates are never borrowed between objects, and the boundaries of the evidence are stated. The evidence manifest ships next to the report so that a reviewer can audit every claim.
 
 === "Exposure assessment"
 
@@ -159,7 +159,7 @@ The PDF is printed with a local Chrome or Chromium. Without one, the markdown, t
 
 Turn "are we exposed to this actor?" into a check on your own community. The `query` skill takes the threat it retrieved and asks your telemetry two questions:
 
-1. **Has Sekoia.io intelligence already fired here?** Sekoia.io [IOC detection](/xdr/features/detect/iocdetection.md) raises alerts that carry the ID of the threat behind the matched indicator. The skill counts those alerts for the actor and its infrastructure, malware and tools, by threat and status.
+1. **Has Sekoia intelligence already fired here?** Sekoia [IOC detection](/xdr/features/detect/iocdetection.md) raises alerts that carry the ID of the threat behind the matched indicator. The skill counts those alerts for the actor and its infrastructure, malware and tools, by threat and status.
 2. **Do its indicators appear in your events?** The skill sweeps the indicators over a bounded window, by host and log source.
 
 Permissions: `View intelligence`, `View query builder data sources`, `Execute query`.
@@ -172,7 +172,7 @@ Permissions: `View intelligence`, `View query builder data sources`, `Execute qu
 
 === "Result"
 
-    Three labelled parts: what Sekoia.io intelligence records about the threat, which IDs and indicators were checked, and what your community returned over which window, with the alert short IDs and the hosts found.
+    Three labelled parts: what Sekoia intelligence records about the threat, which IDs and indicators were checked, and what your community returned over which window, with the alert short IDs and the hosts found.
 
 === "Queries run"
 
@@ -198,9 +198,9 @@ Permissions: `View intelligence`, `View query builder data sources`, `Execute qu
 
 ## Hunt the behaviours of a FLINT report
 
-Indicators are already covered by Sekoia.io IOC detection. What a FLINT report adds is behaviour: the techniques and procedures it describes. The `report-hunt` skill turns them into a hunt pack for your community:
+Indicators are already covered by Sekoia IOC detection. What a FLINT report adds is behaviour: the techniques and procedures it describes. The `report-hunt` skill turns them into a hunt pack for your community:
 
-- the alerts Sekoia.io intelligence already raised on the report's threats;
+- the alerts Sekoia intelligence already raised on the report's threats;
 - each behaviour of the report, paired with the procedure it describes and the ATT&CK technique;
 - which of your log sources can see it, and the gaps when none can;
 - the built-in rules that already cover it, and whether they are enabled;
@@ -234,4 +234,4 @@ The hunt pack carries the strictest TLP marking of the material it uses. A hit i
 * [Plugins and skills](/integration/mcp/plugins_skills.md): Every skill, what it is for and the permissions it needs.
 * [MCP tools](/integration/mcp/tools_reference.md): Parameters, permissions and examples for every tool.
 * [Getting started with the Sekoia MCP Server](/integration/mcp/getting_started.md): Investigate an alert end to end from Claude Code.
-* [IOC detection](/xdr/features/detect/iocdetection.md): How Sekoia.io intelligence raises alerts on your events.
+* [IOC detection](/xdr/features/detect/iocdetection.md): How Sekoia intelligence raises alerts on your events.

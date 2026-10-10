@@ -1,13 +1,13 @@
 # Install the Sekoia plugins in Claude Code
 
-This article explains how to connect Claude Code, Anthropic's command-line agent, to the Sekoia MCP Server with the Sekoia plugins. The plugins come from the Sekoia marketplace for Claude Code. Each one connects the server and adds skills that guide the assistant through Sekoia.io data.
+This article explains how to connect Claude Code, Anthropic's command-line agent, to the Sekoia MCP Server with the Sekoia plugins. The plugins come from the Sekoia marketplace for Claude Code. Each one connects the server and adds skills that guide the assistant through Sekoia data.
 
 !!! note "Early Access"
-    This feature is currently in Early Access and is only available for Beta testers. Sekoia.io plans to roll out this functionality to all environments soon.
+    This feature is currently in Early Access and is only available for Beta testers. Sekoia plans to roll out this functionality to all environments soon.
 
 | Plugin | For | Skills |
 |---|---|---|
-| `sekoia-cti` | CTI analysts, detection engineers, anyone who needs Sekoia.io threat intelligence | `query`, `exposure-assessment`, `threat-horizon-assessment`, `intelligence-delta`, `evidence-protocol`, `report-hunt` |
+| `sekoia-cti` | CTI analysts, detection engineers, anyone who needs Sekoia threat intelligence | `query`, `exposure-assessment`, `threat-horizon-assessment`, `intelligence-delta`, `evidence-protocol`, `report-hunt` |
 | `sekoia-soc` | SOC analysts working alerts, cases and hunts on their community | `alert-details`, `case-summary`, `sol-hunt` |
 
 Install the plugin that matches your work, or both. See [Plugins and skills](/integration/mcp/plugins_skills.md) for what each skill does.
@@ -15,7 +15,7 @@ Install the plugin that matches your work, or both. See [Plugins and skills](/in
 ## Prerequisites
 
 - Claude Code installed and authenticated.
-- A Sekoia.io API key with the permissions of the plugin you install (see below). Only admins can create keys; see [Manage API keys](/getting_started/manage_api_keys.md).
+- A Sekoia API key with the permissions of the plugin you install (see below). Only admins can create keys; see [Manage API keys](/getting_started/manage_api_keys.md).
 
 ## Permissions
 
