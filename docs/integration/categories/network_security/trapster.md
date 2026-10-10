@@ -14,6 +14,9 @@ Trapster deploys honeypots across your network to detect lateral movements, mali
 - **Detection based on**: Alert
 - **Supported application or feature**: Honeypot alerts (lateral movement, scans, honeytokens, breadcrumbs, threats)
 
+[![Integrating Trapster with Sekoia: a practical guide. Complementary guide by Trapster](/assets/integration/sekoia-cta-trapster-hero.png){: style="width: 100%; max-width: 100%"}](https://trapster.cloud/en/blog/trapster-sekoia-integration)
+
+
 ## Configure
 
 This setup guide describes how to forward events from Trapster to Sekoia.io via webhook.

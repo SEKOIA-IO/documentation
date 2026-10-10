@@ -1,4 +1,4 @@
-Rules catalog includes **1085 built-in detection rules** ([_last update on 2026-08-17_](rules_changelog.md)).
+Rules catalog includes **1086 built-in detection rules** ([_last update on 2026-09-07_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Identity Information**
 
@@ -2559,6 +2559,10 @@ Rules catalog includes **1085 built-in detection rules** ([_last update on 2026-
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 07/09/2026 - minor - Added filters to reduce false positives
+            
 ??? abstract "Login Brute-Force Successful On SentinelOne EDR Management Console"
     
     A user has attempted to login several times (brute-force) on the SentinelOne EDR Management Console and succeeded to login.
@@ -2640,6 +2644,12 @@ Rules catalog includes **1085 built-in detection rules** ([_last update on 2026-
     
     - **Effort:** master
     
+??? abstract "Microsoft Defender XDR (Graph API) Endpoint Alert"
+    
+    Microsoft Defender XDR has raised an alert for Microsoft Defender For Endpoint. The alert info and evidence events are grouped with the similarity into the same Sekoia.io alert.
+    
+    - **Effort:** master
+    
 ??? abstract "Microsoft Defender XDR (GraphAPI) Entra ID Protection Alert"
     
     Microsoft Defender XDR has raised an alert for Microsoft Entra ID Protection. The alert info and evidence events are grouped with the similarity into the same Sekoia.io alert.
@@ -2667,6 +2677,7 @@ Rules catalog includes **1085 built-in detection rules** ([_last update on 2026-
     
         - 13/09/2024 - major - Update service name value following Microsoft change
         - 03/06/2026 - major - Added a new condition to match only on alerts to avoid false positives.
+        - 07/09/2026 - major - Added a new condition to match only on alerts to avoid false positives.
             
 ??? abstract "Microsoft Defender XDR Data Loss Prevention Alert"
     
@@ -4425,6 +4436,12 @@ Rules catalog includes **1085 built-in detection rules** ([_last update on 2026-
     
     - **Effort:** master
     
+??? abstract "Microsoft Defender XDR (Graph API) Endpoint Alert"
+    
+    Microsoft Defender XDR has raised an alert for Microsoft Defender For Endpoint. The alert info and evidence events are grouped with the similarity into the same Sekoia.io alert.
+    
+    - **Effort:** master
+    
 ??? abstract "Microsoft Defender XDR (GraphAPI) Entra ID Protection Alert"
     
     Microsoft Defender XDR has raised an alert for Microsoft Entra ID Protection. The alert info and evidence events are grouped with the similarity into the same Sekoia.io alert.
@@ -4452,6 +4469,7 @@ Rules catalog includes **1085 built-in detection rules** ([_last update on 2026-
     
         - 13/09/2024 - major - Update service name value following Microsoft change
         - 03/06/2026 - major - Added a new condition to match only on alerts to avoid false positives.
+        - 07/09/2026 - major - Added a new condition to match only on alerts to avoid false positives.
             
 ??? abstract "Microsoft Defender XDR Data Loss Prevention Alert"
     
@@ -5437,6 +5455,12 @@ Rules catalog includes **1085 built-in detection rules** ([_last update on 2026-
     
     - **Effort:** master
     
+??? abstract "Microsoft Defender XDR (Graph API) Endpoint Alert"
+    
+    Microsoft Defender XDR has raised an alert for Microsoft Defender For Endpoint. The alert info and evidence events are grouped with the similarity into the same Sekoia.io alert.
+    
+    - **Effort:** master
+    
 ??? abstract "Microsoft Defender XDR (GraphAPI) Entra ID Protection Alert"
     
     Microsoft Defender XDR has raised an alert for Microsoft Entra ID Protection. The alert info and evidence events are grouped with the similarity into the same Sekoia.io alert.
@@ -5464,6 +5488,7 @@ Rules catalog includes **1085 built-in detection rules** ([_last update on 2026-
     
         - 13/09/2024 - major - Update service name value following Microsoft change
         - 03/06/2026 - major - Added a new condition to match only on alerts to avoid false positives.
+        - 07/09/2026 - major - Added a new condition to match only on alerts to avoid false positives.
             
 ??? abstract "Microsoft Defender XDR Data Loss Prevention Alert"
     
@@ -9762,11 +9787,12 @@ Rules catalog includes **1085 built-in detection rules** ([_last update on 2026-
     
     Detects potential abuse of Active Directory Replication Service (ADRS) from a non machine account to request credentials. It requires a configuration step where the legit service account should be added to the exclusion list.
     
-    - **Effort:** advanced
+    - **Effort:** master
     
     - **Changelog:**
     
         - 26/03/2024 - major - Rule's pattern field changed
+        - 03/09/2026 - major - Effort level and severity changed.
             
 ??? abstract "Cmdkey Cached Credentials Recon"
     
@@ -9822,12 +9848,13 @@ Rules catalog includes **1085 built-in detection rules** ([_last update on 2026-
     
     Detects DCSync attack, it is highly likely that the post-exploitation tool Mimikatz was executed.
     
-    - **Effort:** intermediate
+    - **Effort:** master
     
     - **Changelog:**
     
         - 26/03/2024 - major - Rule's pattern field changed
         - 05/09/2024 - minor - Changing name of elements.
+        - 03/09/2026 - major - Effort level and severity changed.
             
 ??? abstract "DPAPI Domain Backup Key Extraction"
     

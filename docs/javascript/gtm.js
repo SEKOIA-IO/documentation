@@ -1,5 +1,1 @@
-(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-5KLDCK4R');
+(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s);j.async=true;j.src="https://ksxk.sekoia.com/4j0bfgtunkswv.js?"+i;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','bvoy7=HxNOLDo4WSk1OUBcP0BSEUtFXVpIERpaBRIYBAcUWgQZGg%3D%3D');

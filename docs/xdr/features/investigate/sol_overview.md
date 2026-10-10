@@ -11,7 +11,7 @@ Sekoia.io provides two ways to search and analyze your security data:
 | **Interface** | UI-based search with filters and buttons | Code-based query editor |
 | **Best for** | Quick searches, viewing individual logs, adding events to cases | Complex analytics, aggregations, cross-table joins, dashboards |
 | **Query language** | [Events Query Language](events_query_language.md) with filter badges | SOL with full operator and function support |
-| **Visualization** | Histogram with basic aggregation | Charts (bar, line, pie, column) with full render control |
+| **Visualization** | Histogram with basic aggregation | Charts (bar, line, pie, column, Sankey, geo map) with full render control |
 | **Data sources** | Events only | Events, alerts, cases, assets, intakes, communities, and more |
 | **Saving & sharing** | Browser-based saved queries | Persistent saved queries, shared across team, dashboard widgets |
 

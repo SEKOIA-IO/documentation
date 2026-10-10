@@ -1,16 +1,18 @@
 # Asset Categories Overview
 
-Welcome to the Asset Categories section of our documentation! This section is designed to help you find and utilize various asset connectors that bring your IT infrastructure visibility directly into the Sekoia.io SOC Platform. Whether you're looking to manage devices, users, or vulnerabilities, you'll find the resources and guidance you need here, categorized by the type of asset they represent.
+Welcome to the Asset Categories section of our documentation! This section is designed to help you find and utilize various asset connectors that bring your IT infrastructure visibility directly into the Sekoia.io SOC Platform. Whether you're looking to manage devices, users, vulnerabilities, or software inventory, you'll find the resources and guidance you need here, categorized by the type of asset they represent.
 
 ## Structure of the Asset Categories Section
 
 The Asset Categories section is organized into several sub-categories, each representing a different type of asset. Below is the structure of the folder:
 
-- **Device**: Asset connectors for endpoint devices, workstations, and compute instances across different platforms. This includes:
+- **Device**: Asset connectors for endpoint devices, workstations, and compute instances across different platforms.
 
-- **User**: Asset connectors for identity and access management systems. This includes:
+- **User**: Asset connectors for identity and access management systems.
 
-- **Vulnerability**: Asset connectors for vulnerability management and exposure platforms. This includes:
+- **Vulnerability**: Asset connectors for vulnerability management and exposure platforms.
+
+- **Software**: Asset connectors for software inventory management, providing visibility into applications installed across your endpoints.
 
 Each category contains detailed pages for individual asset connectors, including configuration steps, required permissions, and integration guides.
 

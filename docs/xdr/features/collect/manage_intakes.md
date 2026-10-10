@@ -105,6 +105,6 @@ Reach out to Sekoia support in the following situations:
 
 - [Intake details page](/xdr/features/collect/intakes_details.md): Reference for all metrics, indicators, and menu options available on the intake details page, including a full explanation of the event delivery metric.
 
-- [Turn on notifications](/getting_started/notifications-Listing_Creation.md): How to configure notification channels and triggers for intake inactivity alerts.
+- [Turn on notifications](/getting_started/create_a_notification.md): How to configure notification channels and triggers for intake inactivity alerts.
 
 - [Create a format](/integration/develop_integration/formats/create_a_format.md): How to build a custom intake format for unsupported log sources.

@@ -1,0 +1,3 @@
+User-agent: *
+Disallow: /search/
+Sitemap: https://docs.sekoia.com/sitemap.xml

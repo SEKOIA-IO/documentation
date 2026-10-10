@@ -207,7 +207,7 @@ In this section, you will find examples of raw logs as generated natively by the
 === "webfilter"
 
     ```
-	time=14:19:19 devname="fortiproxyunit" devid="OIDL03VZRZEDKKD" logid="1000234512" type="utm" subtype="webfilter" eventtype="ftgd_allow" level="notice" vd="root" eventtime=1631179959 policyid=5 sessionid=10000000 user="john" group="groupname" srcip=192.168.1.2 srcport=10000 srcintf="eth" srcintfrole="undefined" dstip=1.1.1.1 dstport=443 dstintf="eth" dstintfrole="undefined" proto=6 service="HTTPS" hostname="example.com" profile="standard" action="passthrough" reqtype="referral" url="/foo/bar.html?id=1"
+	time=14:19:19 devname="fortiproxyunit" devid="OIDL03VZRZEDKKD" logid="1000234512" type="utm" subtype="webfilter" eventtype="ftgd_allow" level="notice" vd="root" eventtime=1631179959 policyid=5 sessionid=10000000 user="User1" group="groupname" srcip=192.168.1.2 srcport=10000 srcintf="eth" srcintfrole="undefined" dstip=1.1.1.1 dstport=443 dstintf="eth" dstintfrole="undefined" proto=6 service="HTTPS" hostname="example.com" profile="standard" action="passthrough" reqtype="referral" url="/foo/bar.html?id=1"
     ```
 
 

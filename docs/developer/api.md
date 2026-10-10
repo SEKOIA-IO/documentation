@@ -18,7 +18,8 @@ template: overrides/openapi.html
                 "FRA2",
                 "MCO1",
                 "UAE1",
-                "USA1"
+                "USA1",
+                "SGP1"
             ],
             urls: [
                 "https://app.sekoia.io/api/v1/dashboard/swagger.json?context=public",
@@ -188,8 +189,7 @@ template: overrides/openapi.html
                         "Rules",
                         "Alert filters",
                         "Assets",
-                        "Playbooks",
-                            "Automation statistics", // => Playbooks
+                        "Automation statistics",
                         "AI assistant",
                         "Statistics", // ?
                     ]

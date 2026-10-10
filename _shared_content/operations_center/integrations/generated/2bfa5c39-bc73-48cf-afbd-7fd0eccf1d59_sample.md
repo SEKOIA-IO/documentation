@@ -7,7 +7,7 @@ In this section, you will find examples of raw logs as generated natively by the
 === "AuthAccept"
 
     ```
-	AuthAccept HOST_XXX [23/Jul/2025:09:42:41 +0200] "2.2.2.2 uid=toto,ou=Internal,ou=People,o=group" "domain.com GET /affwebservices/redirectjsp/redirect.jsp?RelayState=https%3A%2F%2Fproxy-auth.xxxxgroup.com%2Fmwg-internal%2Fde5fs23hu73ds%2Fplugin%3Ftarget%3DAuth%26reason%3DAuth%26ClientID%3D3664958249%26ttl%3D28800%26url%3DaHR0cHM6Ly9zcHJkYi5lc28taW8uY29tOjQ0Mw%2C%2C%26rnd%3D1753256545.1343803810.NIYDKGKubm1JCVNw4hvLJWZnoE9zPvw2tZ5DCvRz0LA%2C&SAMLRequest=fZLLcpswFIZfxaNFVzYIgQyoxh0CpraD09Zpk7E3HRUrhlZIVBc78dOXkOk0XbTL%2F1z%2FOd%2BZadryjqTW1GLLflqmzeix5UKTIZEAqwSRVDeaCNoyTUxFbtNNSZADSaekkZXkYJRqzZRppMik0LZl6papU1OxL9syAbUxnSau25c%2FPk1ov8oxNeVMH5W0nVPJ1m3Px0kjDFOCcvfA8INGfm1D%2F6DdjttjI94Zqo7MJM9G39C2e6sY1VL80RlvmDCrPPGn0yDGEQriIW4MT1AUQTgoq3hCl1tYLTfT8im%2BVMv1j12DeYUiQ%2B8ju0Ox%2BfD9E9ycx%2BOXNeKQeCH2EZ7iADueH%2FgR9CMPOjerXX79%2Ftp%2Ba711dndzDupTub7fC7mILx9PZ2T2OM9O2wss0zEYFVJVbLhyAh4o1wyMeq%2Fg6yJEMQwL7IfRIvPCqyhOiyDL0ysY5mGBir5Ma8tWQhsqTAIQRHgCwwnyP8OQBIggvAejO6Z0f%2Fw%2B7UAwnz2jI0OfegXz%2Fyzpb4Jg%2Fm9OM%2FfV6PmL%2Bvt55r8A&SMPORTALURL=https%3A%2F%2Fsso-idp.corp.xxxx%2Faffwebservices%2Fpublic%2Fsaml2sso" [idletime=18000;maxtime=18000;authlevel=5;] [0]  [] []
+	AuthAccept HOST_XXX [23/Jul/2025:09:42:41 +0200] "2.2.2.2 uid=toto,host.example.com" "domain.com GET /affwebservices/redirectjsp/redirect.jsp?RelayState=https%3A%2F%2Fproxy-auth.xxxxgroup.com%2Fmwg-internal%2Fde5fs23hu73ds%2Fplugin%3Ftarget%3DAuth%26reason%3DAuth%26ClientID%3D3664958249%26ttl%3D28800%26url%3DaHR0cHM6Ly9zcHJkYi5lc28taW8uY29tOjQ0Mw%2C%2C%26rnd%3D1753256545.1343803810.NIYDKGKubm1JCVNw4hvLJWZnoE9zPvw2tZ5DCvRz0LA%2C&SAMLRequest=fZLLcpswFIZfxaNFVzYIgQyoxh0CpraD09Zpk7E3HRUrhlZIVBc78dOXkOk0XbTL%2F1z%2FOd%2BZadryjqTW1GLLflqmzeix5UKTIZEAqwSRVDeaCNoyTUxFbtNNSZADSaekkZXkYJRqzZRppMik0LZl6papU1OxL9syAbUxnSau25c%2FPk1ov8oxNeVMH5W0nVPJ1m3Px0kjDFOCcvfA8INGfm1D%2F6DdjttjI94Zqo7MJM9G39C2e6sY1VL80RlvmDCrPPGn0yDGEQriIW4MT1AUQTgoq3hCl1tYLTfT8im%2BVMv1j12DeYUiQ%2B8ju0Ox%2BfD9E9ycx%2BOXNeKQeCH2EZ7iADueH%2FgR9CMPOjerXX79%2Ftp%2Ba711dndzDupTub7fC7mILx9PZ2T2OM9O2wss0zEYFVJVbLhyAh4o1wyMeq%2Fg6yJEMQwL7IfRIvPCqyhOiyDL0ysY5mGBir5Ma8tWQhsqTAIQRHgCwwnyP8OQBIggvAejO6Z0f%2Fw%2B7UAwnz2jI0OfegXz%2Fyzpb4Jg%2Fm9OM%2FfV6PmL%2Bvt55r8A&SMPORTALURL=https%3A%2F%2Fsso-idp.corp.xxxx%2Faffwebservices%2Fpublic%2Fsaml2sso" [idletime=18000;maxtime=18000;authlevel=5;] [0]  [] []
     ```
 
 
@@ -15,7 +15,7 @@ In this section, you will find examples of raw logs as generated natively by the
 === "AuthAttempt"
 
     ```
-	AuthAttempt HOST_XXX [23/Jul/2025:07:01:48 +0200] "10.33.110.2 T0316290@xxxxgroup.com" "domain.com GET /affwebservices/redirectjsp/redirect_unique.jsp?SAMLRequest=nZJfS8MwFMXf%2FRQl72uzrl23sA7GhlBQmU588C3NblkgTWpuotu3N61%2FmAgTfEtubs65v5MskLeqYyvvDvoBXjygi6JjqzSy4aQk3mpmOEpkmreAzAm2W93esDSmrLPGGWEUuao2JcG0ridZPs%2Fq%2BVhkKWTjWV7TIuXTYp7ls6JIm3AynQpKoiewKI0uSZAhUYXoodLouHahRNN8RItROnmkOaOUZbNnEm3CaFJzN9w6ONchSxJEM5L7LhbGdrE7cAWY8KZ5gxrBvkoRtp2vlRRJT5OGdhJdGytgAC5JwxVC77%2FliPIVvisrDAK919po9C3Y3YdepfdwLMmMLK8WvSQbRrdnkV1OjH%2FpkqU7IJ72XggvWjru4rCKpW4s%2FwRZJGcGn3YduwuS1WZrAtPpPy%2FV47fcXe7uK3I%2FaoZW5izXKEE7Eu22vf%2B950o2EmxJ%2FoIISSpl3tYWuAvpOuuBLD%2FIfrIEwOT3X1y%2BAw%3D%3D&RelayState=s2bb34594b91c42e4185b072a679458772fb9166c0&SMPORTALURL=https%3A%2F%2Fsso-idp.corp.xxxx%2Faffwebservices%2Fpublic%2Fsaml2sso" [] [0]  [] []
+	AuthAttempt HOST_XXX [23/Jul/2025:07:01:48 +0200] "10.33.110.2 User1@host.example.com" "domain.com GET /affwebservices/redirectjsp/redirect_unique.jsp?SAMLRequest=nZJfS8MwFMXf%2FRQl72uzrl23sA7GhlBQmU588C3NblkgTWpuotu3N61%2FmAgTfEtubs65v5MskLeqYyvvDvoBXjygi6JjqzSy4aQk3mpmOEpkmreAzAm2W93esDSmrLPGGWEUuao2JcG0ridZPs%2Fq%2BVhkKWTjWV7TIuXTYp7ls6JIm3AynQpKoiewKI0uSZAhUYXoodLouHahRNN8RItROnmkOaOUZbNnEm3CaFJzN9w6ONchSxJEM5L7LhbGdrE7cAWY8KZ5gxrBvkoRtp2vlRRJT5OGdhJdGytgAC5JwxVC77%2FliPIVvisrDAK919po9C3Y3YdepfdwLMmMLK8WvSQbRrdnkV1OjH%2FpkqU7IJ72XggvWjru4rCKpW4s%2FwRZJGcGn3YduwuS1WZrAtPpPy%2FV47fcXe7uK3I%2FaoZW5izXKEE7Eu22vf%2B950o2EmxJ%2FoIISSpl3tYWuAvpOuuBLD%2FIfrIEwOT3X1y%2BAw%3D%3D&RelayState=s2bb34594b91c42e4185b072a679458772fb9166c0&SMPORTALURL=https%3A%2F%2Fsso-idp.corp.xxxx%2Faffwebservices%2Fpublic%2Fsaml2sso" [] [0]  [] []
     ```
 
 
@@ -23,7 +23,7 @@ In this section, you will find examples of raw logs as generated natively by the
 === "AuthLogout"
 
     ```
-	AuthLogout HOST_XXX [23/Jul/2025:09:41:19 +0200] "2.2.2.2 uid=toto,ou=Internal,ou=People,o=group" "HOST_YYY  " [] [41]  [] []
+	AuthLogout HOST_XXX [23/Jul/2025:09:41:19 +0200] "2.2.2.2 uid=toto,host.example.com" "HOST_YYY  " [] [41]  [] []
     ```
 
 
@@ -39,7 +39,7 @@ In this section, you will find examples of raw logs as generated natively by the
 === "AzAccept"
 
     ```
-	AzAccept HOST_XXX [23/Jul/2025:09:42:49 +0200] "2.2.2.2 uid=toto,ou=Internal,ou=People,o=group"  "domain.com PUT /BFC5SAISIE/api/v1/application/session/renew" [000000000000000000000000339e210a-bd76-68809279-da7f4700-0a1e3005fa49] [0]  [] []
+	AzAccept HOST_XXX [23/Jul/2025:09:42:49 +0200] "2.2.2.2 uid=toto,host.example.com"  "domain.com PUT /BFC5SAISIE/api/v1/application/session/renew" [000000000000000000000000339e210a-bd76-68809279-da7f4700-0a1e3005fa49] [0]  [] []
     ```
 
 
@@ -47,7 +47,7 @@ In this section, you will find examples of raw logs as generated natively by the
 === "AzReject"
 
     ```
-	AzReject HOST_XXX [23/Jul/2025:09:41:34 +0200] "2.2.2.2 uid=toto,ou=Internal,ou=People,o=group" "finance.corp.xxxx_agent DELETE /BFC5CONSO/api/v1/user/killsessions" [000000000000000000000000329e210a-cdf8-6880922e-e4ff9700-14d51f4008be] [0]  [] []
+	AzReject HOST_XXX [23/Jul/2025:09:41:34 +0200] "2.2.2.2 uid=toto,host.example.com" "finance.corp.xxxx_agent DELETE /BFC5CONSO/api/v1/user/killsessions" [000000000000000000000000329e210a-cdf8-6880922e-e4ff9700-14d51f4008be] [0]  [] []
     ```
 
 
@@ -55,7 +55,7 @@ In this section, you will find examples of raw logs as generated natively by the
 === "ValidateAccept"
 
     ```
-	ValidateAccept HOST_XXX [23/Jul/2025:09:42:50 +0200] "2.2.2.2 uid=toto,ou=Internal,ou=People,o=group" "domain.com POST /otdsws/rb_dc719c57-85e7-499c-9886-ef5d0d8299d7?type=js3&sn=v_4_srv_10_sn_C6CA31A6988BF09671ADE5FF4D2E1748_perc_100000_ol_0_mul_1_app-3A3b3e336b48aebb25_1&svrid=10&flavor=post&vi=ALLPGLGCBVPLHPHLRUCHHALDSUOFBADW-0&modifiedSince=1753116005271&bp=3&app=3b3e336b48aebb25&crc=3525654176&en=ql84hk9p&end=1" [idletime=18000;maxtime=18000;authlevel=5;] [0]  [] []
+	ValidateAccept HOST_XXX [23/Jul/2025:09:42:50 +0200] "2.2.2.2 uid=toto,host.example.com" "domain.com POST /otdsws/rb_dc719c57-85e7-499c-9886-ef5d0d8299d7?type=js3&sn=v_4_srv_10_sn_C6CA31A6988BF09671ADE5FF4D2E1748_perc_100000_ol_0_mul_1_app-3A3b3e336b48aebb25_1&svrid=10&flavor=post&vi=ALLPGLGCBVPLHPHLRUCHHALDSUOFBADW-0&modifiedSince=1753116005271&bp=3&app=3b3e336b48aebb25&crc=3525654176&en=ql84hk9p&end=1" [idletime=18000;maxtime=18000;authlevel=5;] [0]  [] []
     ```
 
 
@@ -63,7 +63,7 @@ In this section, you will find examples of raw logs as generated natively by the
 === "ressource_filename"
 
     ```
-	ValidateAccept HOST_XXX [23/Jul/2025:09:42:31 +0200] "2.2.2.2 uid=toto,ou=Internal,ou=People,o=group" "domain.com GET /livelink/llisapi.dll/11111111/News_Text_EN.html?func=doc.Fetch&nodeid=1111111" [idletime=18000;maxtime=18000;authlevel=5;] [0]  [] []
+	ValidateAccept HOST_XXX [23/Jul/2025:09:42:31 +0200] "2.2.2.2 uid=toto,host.example.com" "domain.com GET /livelink/llisapi.dll/11111111/News_Text_EN.html?func=doc.Fetch&nodeid=1111111" [idletime=18000;maxtime=18000;authlevel=5;] [0]  [] []
     ```
 
 
@@ -71,7 +71,7 @@ In this section, you will find examples of raw logs as generated natively by the
 === "ressource_func"
 
     ```
-	AzAccept host_01 [22/Sep/2025:13:29:26 +0200] "192.168.1.1 uid=toto,ou=Internal,ou=People,o=group" "subdomain.corp.xxxxx_agent GET /livelink/livelink.exe?func=multifile.downloadfile&objAction=Browse&objId=1111111111&cacheid=2222222222&nodeid=3333333333" [000000000000000000000000d111100a-496c-68d11111-111c-01057c71] [0]  [] []
+	AzAccept host_01 [22/Sep/2025:13:29:26 +0200] "192.168.1.1 uid=toto,host.example.com" "subdomain.corp.xxxxx_agent GET /livelink/livelink.exe?func=multifile.downloadfile&objAction=Browse&objId=1111111111&cacheid=2222222222&nodeid=3333333333" [000000000000000000000000d111100a-496c-68d11111-111c-01057c71] [0]  [] []
     ```
 
 

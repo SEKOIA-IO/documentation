@@ -2,6 +2,9 @@
 
 You can create an Event Drop detection rule directly from an intake or an asset, without starting from a blank rule in the catalog. The rule creation panel opens with the Event Drop pattern selected and the SOL pattern pre-filled with a condition on the source, so you only set the schedule and create the rule.
 
+!!! note "Early Access"
+    This feature is currently in Early Access and is only available for Beta testers. Sekoia.io plans to roll out this functionality to all environments soon.
+    
 ## Prerequisites
 
 - You have permissions to create detection rules.
@@ -18,23 +21,13 @@ To create an Event Drop rule that monitors a specific intake:
 2. Open the more options menu (the `...` button) in the intake header.
 3. Select **Create event drop alerting**.
 
-The **Create new rule** panel opens with the **Event Drop** pattern selected. The rule name is set to `Event drop for intake "<intake name>"`, and the pattern targets the intake UUID:
-
-```
-event_telemetry
-| where bucket_start_date between (?time.start .. ?time.end)
-    and intake_uuid == ""
-| aggregate count() by bin(bucket_start_date, 2h)
-| where count < 500
-```
+The **Create new rule** panel opens with the **Event Drop** pattern selected. The rule name is set to `Event drop for intake "<intake name>"`, and the pattern targets the intake UUID.
 
 4. Adjust the time bin, 1 hour minimum, and the threshold if the defaults do not match the intake's expected volume.
 5. Set the schedule, 1 hour minimum, and complete any remaining fields.
 6. Click **Create**.
 
 ![Intake actions menu with Create event drop alerting](/assets/operation_center/rules_catalog/sol-intake-drop.png){: style="max-width:100%"}
-
-![Pre-filled Event Drop rule panel for an intake](/assets/operation_center/rules_catalog/sol-intake-drop-panel.png){: style="max-width:100%"}
 
 ## Start from an asset
 
@@ -43,23 +36,13 @@ To create an Event Drop rule that monitors a specific asset:
 1. Open the details page of the asset.
 2. Click **Configure an event drop alert**.
 
-The **Create new rule** panel opens with the **Event Drop** pattern selected. The rule name is set to `Event drop for asset "<asset name>"`, and the pattern targets the asset UUID:
-
-```
-asset_telemetry
-| where timestamp between (?time.start .. ?time.end)
-| aggregate count() by bin(timestamp, 1d)
-| where asset_uuid == "<asset uuid>"
-| where count < 1000000
-```
+The **Create new rule** panel opens with the **Event Drop** pattern selected. The rule name is set to `Event drop for asset "<asset name>"`, and the pattern targets the asset UUID.
 
 3. Adjust the time bin, 1 hour minimum, and the threshold if the defaults do not match the asset's expected volume.
 4. Set the schedule, 1 hour minimum, and complete any remaining fields.
 5. Click **Create**.
 
 ![Asset details with the Configure an event drop alert button](/assets/operation_center/rules_catalog/sol-asset-drop.png){: style="max-width:100%"}
-
-![Pre-filled Event Drop rule panel for an asset](/assets/operation_center/rules_catalog/sol-asset-drop-panel.png){: style="max-width:100%"}
 
 ## What gets pre-filled
 

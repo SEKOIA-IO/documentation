@@ -10,8 +10,8 @@ In this section, you will find examples of raw logs as generated natively by the
     ```json
 	{
         "Action": "block",
-        "ClientIP": "113.206.179.28",
-        "ClientRequestHost": "foo-bar-baz.xyz",
+        "ClientIP": "198.51.100.33",
+        "ClientRequestHost": "host.example.com",
         "ClientRequestMethod": "GET",
         "ClientRequestPath": "/static/favicon.ico",
         "ClientRequestQuery": "",
@@ -38,7 +38,7 @@ In this section, you will find examples of raw logs as generated natively by the
         "ClientRefererPath": "",
         "ClientRefererQuery": "",
         "ClientRefererScheme": "",
-        "ClientRequestHost": "foo-bar-baz.xyz",
+        "ClientRequestHost": "host.example.com",
         "ClientRequestMethod": "GET",
         "ClientRequestPath": "/.env",
         "ClientRequestProtocol": "HTTP/1.1",

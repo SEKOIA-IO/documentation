@@ -41,5 +41,7 @@ To learn more, consult the following resources:
 
 {!_shared_content/integration/detection_section.md!}
 
+{!_shared_content/operations_center/detection/generated/suggested_rules_00bbde4f-cb17-4c3f-9f5e-a585fc7c8fc0_do_not_edit_manually.md!}
+
 {!_shared_content/operations_center/integrations/generated/00bbde4f-cb17-4c3f-9f5e-a585fc7c8fc0.md!}
 

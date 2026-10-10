@@ -4,11 +4,11 @@ Traces show the complete timeline of actions the Elevate agent performed during 
 
 ## Prerequisites
 
-- The alert or case has been analyzed by Elevate. A verdict is present and the analysis is complete.
+- The alert has been analyzed by Elevate. A verdict is present and the analysis is complete.
 
 ## Open the Traces panel
 
-1. Open an alert or case that Elevate has analyzed.
+1. Open an alert that Elevate has analyzed.
 2. In the **Verdict** panel, select **Traces**.
 
 The **Traces** side panel opens, showing the timeline of actions the agent performed during the investigation.
@@ -44,5 +44,4 @@ Use the **Search in logs** field at the top of the panel to find a specific acti
 ## Related articles
 
 - [Investigate an alert with Elevate](/xdr/features/modules/elevate_investigate_alert.md): How to read the verdict, findings and reasoning questions of an investigation.
-- [Investigate a case with Elevate](/xdr/features/modules/elevate_investigate_case.md): How Elevate investigates a case when you assign it to Roy.
 - [The Elevate investigation method](/xdr/features/modules/elevate_investigation_method.md): How runbooks, reasoning questions, findings and verdicts work together.

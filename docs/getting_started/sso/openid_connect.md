@@ -40,14 +40,14 @@ You can choose to enable the automatic creation of users' accounts in your commu
 
 By using this feature, when a user logs-in for the first time, their account will be automatically created. You can set the default role for newly created users, and you can choose the default role among all the roles available in your community.
 
-If you don't enable "just-in-time" account creation, you will have to manually create user accounts. You can learn more about how to create user accounts in the article [Invite users](/getting_started/invite_users.md)".
+If you don't enable "just-in-time" account creation, you will have to manually create user accounts. You can learn more about how to create user accounts in the article: [Invite users](/getting_started/invite_users.md).
 
 
 ## Login method
 
 Once you have completed your configuration of OpenID Connect SSO, users will be able to log in via SSO.
 
-Users who created their account via SSO, can only log in via this method.
+Users who created their account via SSO can only log in via this method.
 
 Only users who create their account via invitation and set up username/password can use both methods to log-in: SSO and username/password.
 

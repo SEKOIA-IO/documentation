@@ -15,7 +15,7 @@ In this section, you will find examples of raw logs as generated natively by the
             "type": "TenantReporting.MessageTrace"
         },
         "Organization": "examplecorp.onmicrosoft.com",
-        "MessageId": "<user53780@example.com>",
+        "MessageId": "<test-message-id@example.com>",
         "Received": "/Date(1658751973240)/",
         "SenderAddress": "user1752@example.com",
         "RecipientAddress": "user30544@example.com",
@@ -44,7 +44,7 @@ In this section, you will find examples of raw logs as generated natively by the
             "type": "TenantReporting.MessageTrace"
         },
         "Organization": "abc.onmicrosoft.com",
-        "MessageId": "<user65566@example.com>",
+        "MessageId": "<test-message-id@example.com>",
         "Received": "/Date(1661344992170)/",
         "SenderAddress": "user75576@example.com",
         "RecipientAddress": "user29346@example.com",

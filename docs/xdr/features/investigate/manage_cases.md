@@ -25,6 +25,8 @@ You can sort the listing by:
 * **Creation date**
 * **Highest priority**
 
+To keep a filter, column and sort combination and share it with your team, save it as a [case custom view](/xdr/features/investigate/case_custom_views.md).
+
 ## Perform bulk actions on cases
 
 !!! note "Early Access"
@@ -52,9 +54,31 @@ Once you select at least one case, the bulk action toolbar replaces the **Filter
 | Action | Description |
 |---|---|
 | Change priority | Updates the priority for all selected cases. |
-| Change status | Updates the status for all selected cases. |
+| Change status | Updates the status for all selected cases. Opens the **Close cases** modal when the new status is in the **Closed** stage. |
 | Change verdict | Updates the verdict for all selected cases. |
 | Change assignee | Reassigns all selected cases to a specific user. |
+
+### Close cases in bulk
+
+When you change the status of the selected cases to a status in the **Closed** stage, the **Close cases** modal opens. If the new status belongs to another stage, the status is applied directly and no modal appears.
+
+![Close cases modal](/assets/operation_center/cases/cases-bulk-close-modal.png){: style="max-width:60%"}
+
+!!! warning
+    Once closed, a case no longer receives alerts.
+
+To close the selected cases:
+
+1. In **Add comment**, optionally write a comment. It is added to each case being closed.
+2. In **Verdict**, select the verdict for the cases. This field is required.
+3. In **Apply a status to alerts**, select the status to apply to the alerts in the cases. Only custom statuses from the **Closed** stage are proposed. To leave the alert statuses unchanged, click the **X** in the field to clear it.
+4. Click **Close**.
+
+Each alert whose status changes receives a new comment in its timeline that records the change and the case it comes from, for example:
+
+> This alert was Closed following a status change in case ID [CA55URAvSYLG], with the following message: User comment
+
+The status name, the case ID and the message reflect your selection and the comment you entered.
 
 ## Edit a case
 
@@ -77,3 +101,4 @@ To edit a case:
 * [Alerts](/xdr/features/investigate/alerts.md): How alerts are created and how to manage them before grouping them into cases.
 * [Playbooks](/xdr/features/automate/index.md): How to automate case workflows and trigger actions based on case updates.
 * [Dashboards](/xdr/features/report/dashboards.md): How to monitor case activity and investigation KPIs across your community.
+* [Case custom views](/xdr/features/investigate/case_custom_views.md): How to save and share filters, columns, sort order and search text as named views.

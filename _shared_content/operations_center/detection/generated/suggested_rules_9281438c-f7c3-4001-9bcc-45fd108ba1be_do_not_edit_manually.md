@@ -97,7 +97,7 @@ The following Sekoia.io built-in rules match the intake **Windows**. This docume
     
     Detects potential abuse of Active Directory Replication Service (ADRS) from a non machine account to request credentials. It requires a configuration step where the legit service account should be added to the exclusion list.
     
-    - **Effort:** advanced
+    - **Effort:** master
 
 ??? abstract "Active Directory Shadow Credentials"
     
@@ -649,7 +649,7 @@ The following Sekoia.io built-in rules match the intake **Windows**. This docume
     
     Detects DCSync attack, it is highly likely that the post-exploitation tool Mimikatz was executed.
     
-    - **Effort:** intermediate
+    - **Effort:** master
 
 ??? abstract "DHCP Callout DLL Installation"
     

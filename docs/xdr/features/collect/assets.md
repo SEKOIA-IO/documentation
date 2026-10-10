@@ -112,13 +112,13 @@ This approach ensures maximum coverage of your environment, reduces blind spots,
 
 The three supported asset discovery methods are:  
 
-1. **Asset Collection via Asset Connectors** (coming soon)
+1. **Asset Collection via Asset Connectors**
 2. **Automatic Asset Discovery (via Events)**  
 3. **Manual Asset Creation**  
 
 Each method has unique strengths. Together, they deliver complete asset visibility.
 
-#### Asset Collection via Asset Connectors (coming soon)
+#### Asset Collection via Asset Connectors
 
 **How it works**  
 Asset Connectors ingest structured asset data from external sources such as:  

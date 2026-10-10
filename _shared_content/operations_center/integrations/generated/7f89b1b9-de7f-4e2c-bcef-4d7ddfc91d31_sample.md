@@ -46,8 +46,8 @@ In this section, you will find examples of raw logs as generated natively by the
         "userAgent": "python-requests/2.31.0",
         "sourceIP": "1.2.3.4",
         "serviceAccount": {
-            "id": "xNgww7tONKtQK6zw",
-            "name": "ax-us"
+            "id": "User1",
+            "name": "User1"
         },
         "user": null
     }
@@ -172,8 +172,8 @@ In this section, you will find examples of raw logs as generated natively by the
         "userAgent": "python-requests/2.31.0",
         "sourceIP": "1.2.3.4",
         "serviceAccount": {
-            "id": "xNgww7tONKtQK6zw",
-            "name": "ax-us"
+            "id": "User1",
+            "name": "User1"
         },
         "user": null
     }
@@ -206,8 +206,8 @@ In this section, you will find examples of raw logs as generated natively by the
         "userAgent": "python-requests/2.31.0",
         "sourceIP": "1.2.3.4",
         "serviceAccount": {
-            "id": "xNgww7tONKtQK6zw",
-            "name": "ax-us"
+            "id": "User1",
+            "name": "User1"
         },
         "user": null
     }
@@ -257,8 +257,8 @@ In this section, you will find examples of raw logs as generated natively by the
         "userAgent": "python-requests/2.31.0",
         "sourceIP": "1.2.3.4",
         "serviceAccount": {
-            "id": "xNgww7tONKtQK6zw",
-            "name": "ax-us"
+            "id": "User1",
+            "name": "User1"
         },
         "user": null
     }
@@ -280,7 +280,7 @@ In this section, you will find examples of raw logs as generated natively by the
             "clientID": "aaaaaaaaaaaaaaaaaaaaaaaaaa",
             "error": "",
             "groups": null,
-            "name": "user_name",
+            "name": "User1",
             "products": [
                 ""
             ],
@@ -298,7 +298,7 @@ In this section, you will find examples of raw logs as generated natively by the
         "sourceIP": "1.2.3.4",
         "serviceAccount": {
             "id": "1111111111111111111111111111111111111111111111111111",
-            "name": "user_name"
+            "name": "User1"
         },
         "user": null
     }
@@ -348,8 +348,8 @@ In this section, you will find examples of raw logs as generated natively by the
         "userAgent": "python-requests/2.31.0",
         "sourceIP": "1.2.3.4",
         "serviceAccount": {
-            "id": "xNgww7tONKtQK6zw",
-            "name": "ax-us"
+            "id": "User1",
+            "name": "User1"
         },
         "user": null
     }
@@ -382,8 +382,8 @@ In this section, you will find examples of raw logs as generated natively by the
         "userAgent": "python-requests/2.31.0",
         "sourceIP": "1.2.3.4",
         "serviceAccount": {
-            "id": "xNgww7tONKtQK6zw",
-            "name": "ax-us"
+            "id": "User1",
+            "name": "User1"
         },
         "user": null
     }
@@ -433,8 +433,8 @@ In this section, you will find examples of raw logs as generated natively by the
         "userAgent": "python-requests/2.31.0",
         "sourceIP": "1.2.3.4",
         "serviceAccount": {
-            "id": "xNgww7tONKtQK6zw",
-            "name": "ax-us"
+            "id": "User1",
+            "name": "User1"
         },
         "user": null
     }

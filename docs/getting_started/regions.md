@@ -1,6 +1,6 @@
 # Sekoia regions
 
-Sekoia is currently available in several European and Middle-Eastern regions. Each of them will enable you to meet advanced legal or safety constraints.
+Sekoia is currently available in several regions across Europe, the Middle East, North America and Southeast Asia. Each of them will enable you to meet advanced legal or safety constraints.
 
 ## Watch out for region-specific URLS
 
@@ -221,7 +221,7 @@ USA1 is our northern america region hosted in OVH (USA East, Virginia).
 
 ## Singapore - SGP1
 
-SGP1 is our south Asia region hosted in OVH/Akamai. 
+SGP1 is our Southeast Asia region hosted in OVH/Akamai. 
 
 <table style="width:100%">
     <tbody>
@@ -247,7 +247,7 @@ SGP1 is our south Asia region hosted in OVH/Akamai.
         </tr>
         <tr>
             <td>HTTP Intake</td>
-            <td><a href="https://intake.sgp1.sekoia.io">https://intake.sgp1.sekoia.io</a></td>
+            <td><a href="https://intake.sgp1.sekoia.io/api/v1/intake-http">https://intake.sgp1.sekoia.io/api/v1/intake-http</a></td>
         </tr>
         <tr>
             <td>Syslog Intake</td>

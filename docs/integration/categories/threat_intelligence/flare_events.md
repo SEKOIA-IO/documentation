@@ -64,8 +64,8 @@ Before configuring the integration, ensure you have:
 ### Create Flare credentials
 
 1. Sign in to the [Flare console](https://app.flare.io/).
-2. Go to `Settings` > `API Keys`.
-3. Create an API key with read scope on tenant events.
+2. Go to `Account` > `Profile` and then scroll down to `API keys`.
+3. Name the API key with a distinguished name and click `Generate key`.
 4. Copy and store the API key securely.
 
 For details on Flare authentication and token lifecycle, see the [Flare Python SDK authentication guide](https://api.docs.flare.io/sdk/python).

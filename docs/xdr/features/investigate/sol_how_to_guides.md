@@ -204,6 +204,7 @@ Use the `render` operator to display query results as charts. Supported chart ty
 - `barchart` — Horizontal bar chart
 - `linechart` — Line chart
 - `sankey` — Flow chart
+- `geomap` — Geographic visualization
 
 ### Basic chart
 
@@ -248,6 +249,29 @@ Use `breakdown_by` to split data into series, and `mode` to control stacking:
     | 2026-03-21T00:00:00.000Z | network        | 1734  |
 
 For the full operator reference, see [Render results in chart](sol_ref_operators.md#render-results-in-chart).
+
+### Geographic visualization
+
+Use `geomap` to visualize event distribution by country or geographic coordinates. For a country-based map, provide a country column containing ISO 3166-1 alpha-2 codes or full English country names. For a coordinate-based map, provide latitude and longitude columns instead.
+
+=== "By country"
+
+    ```shell
+    events
+    | where timestamp > ago(24h)
+    | where event.category == "authentication" and action.outcome == "failure"
+    | aggregate count() by source.geo.country_iso_code
+    | render geomap with (country=source.geo.country_iso_code, value=count)
+    ```
+
+=== "By coordinates"
+
+    ```shell
+    events
+    | where timestamp > ago(24h)
+    | aggregate count() by source.geo.location.lat, source.geo.location.lon
+    | render geomap with (lat=source.geo.location.lat, lon=source.geo.location.lon, label=source.geo.city_name, value=count)
+    ```
 
 
 ## How to use external data with SOL Datasets

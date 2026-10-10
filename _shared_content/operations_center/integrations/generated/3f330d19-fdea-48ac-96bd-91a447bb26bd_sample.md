@@ -470,7 +470,7 @@ In this section, you will find examples of raw logs as generated natively by the
             "ip": "1.1.1.1"
         },
         "customer_id": "22222222-2222-2222-2222-222222222222",
-        "name": "Access was blocked to \"www.example.com\" because of \"Rulename\".",
+        "name": "Access was blocked to \"host.example.com\" because of \"Rulename\".",
         "id": "11111111-1111-1111-1111-111111111111",
         "group": "WEB",
         "datastream": "event",
@@ -502,7 +502,7 @@ In this section, you will find examples of raw logs as generated natively by the
         "rt": "2026-01-30T10:23:51.021Z",
         "severity": "low",
         "end": "2026-01-30T10:23:42.000Z",
-        "name": "Access was blocked to \"example.com\" because of \"Mal/JSInject-AC\".",
+        "name": "Access was blocked to \"host.example.com\" because of \"Mal/JSInject-AC\".",
         "dhost": "HOSTNAME",
         "suser": "John Doe"
     }

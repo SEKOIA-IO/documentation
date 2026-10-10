@@ -15,8 +15,6 @@ For each alert, the agent:
 - Enriches findings with threat intelligence and contextual signals
 - Produces a complete, audit-ready investigation report with a verdict and a confidence score
 
-Elevate also investigates cases. Assign a case to Roy, the Elevate investigation agent, and it produces the same verdict, findings and reasoning questions at the case level.
-
 ## What makes Elevate different
 
 **Detection-specific AI runbooks** embed expert investigation logic directly at the rule level. Rather than applying generic playbooks across all alert types, the agent follows tailored guidance for each detection.
@@ -53,5 +51,4 @@ Elevate operates on a monthly run pack. Each investigation the agent runs, wheth
 - [Elevate analysis states](/xdr/features/modules/elevate_analysis_states.md): Reference table of all possible AI analysis states and their meaning.
 - [Activate Elevate on a workspace](/xdr/features/modules/elevate_activate.md): How to enable the Elevate agent and configure auto-analysis.
 - [Investigate an alert with Elevate](/xdr/features/modules/elevate_investigate_alert.md): How to read an AI investigation report and interpret findings.
-- [Investigate a case with Elevate](/xdr/features/modules/elevate_investigate_case.md): How to trigger an Elevate investigation on a case by assigning it to Roy.
 - [Audit an Elevate investigation with Traces](/xdr/features/modules/elevate_traces.md): How to review the full timeline of actions the agent performed.
