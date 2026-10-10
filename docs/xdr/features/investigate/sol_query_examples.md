@@ -446,6 +446,118 @@
 
 
 
+
+## Asset risk score query examples
+
+!!! note
+    `asset_risk_scores` and `asset_risk_score_history` are already scoped to the communities available to the user. To filter results for a specific community, use a lookup on `assets` and filter on `community_uuid`. Filter the `assets` data source before the lookup to avoid the 10,000-row limit on the right side of a lookup.
+
+### Top 20 assets with a critical risk score in a specific community
+
+=== "Query"
+
+    ``` shell
+    asset_risk_scores
+    | lookup (assets | where community_uuid == "<community_uuid>") on asset_uuid == uuid
+    | top 20 by final_score
+    ```
+
+This query returns the 20 assets with the highest current risk score in the specified community.
+
+### Count assets with a critical risk score
+
+=== "Query"
+
+    ``` shell
+    asset_risk_scores
+    | where final_score >= 75
+    | aggregate count_distinct(asset_uuid)
+    ```
+
+This query counts the assets in the Critical risk band.
+
+### Top 20 assets by risk score
+
+=== "Query"
+
+    ``` shell
+    asset_risk_scores
+    | top 20 by final_score
+    ```
+
+This query returns the 20 assets with the highest current risk score.
+
+### Count assets whose score is mostly driven by recent activity
+
+=== "Query"
+
+    ``` shell
+    asset_risk_scores
+    | where recent_activity_score > exposure_score
+    | aggregate count_distinct(asset_uuid)
+    ```
+
+This query counts assets for which recent alerts, cases and points of interest contribute more than persistent exposure factors.
+
+### Count assets with a configured criticality and a score above 50
+
+=== "Query"
+
+    ``` shell
+    asset_risk_scores
+    | where criticality_value > 0 and final_score > 50
+    | aggregate count_distinct(asset_uuid)
+    ```
+
+This query counts assets with a configured criticality and a risk score above 50.
+
+### Count score-affecting events by type
+
+=== "Query"
+
+    ``` shell
+    asset_risk_score_history
+    | where event_date > ago(7d)
+    | aggregate event_count = count() by type
+    | order by event_count desc
+    ```
+
+This query counts the events that affected asset risk scores during the last seven days, grouped by event type.
+
+### Top 20 assets by alerts and cases
+
+=== "Query"
+
+    ``` shell
+    asset_risk_score_history
+    | where event_date > ago(30d) and type in ["alert", "case"]
+    | aggregate event_count = count_distinct(event_uuid) by asset_uuid
+    | top 20 by event_count
+    ```
+
+This query returns the 20 assets with the highest number of distinct alerts and cases contributing to their risk history during the last 30 days. The history can contain several entries for the same alert or case as its contribution decays over time, so `count_distinct(event_uuid)` counts source alerts and cases rather than history entries.
+
+### List criticality changes
+
+=== "Query"
+
+    ``` shell
+    asset_risk_score_history
+    | where type == "criticality" and event_date > ago(30d)
+    | order by event_date desc
+    ```
+
+This query lists criticality changes recorded during the last 30 days, starting with the most recent event.
+
+!!! note
+    `asset_risk_scores` contains the current score only. Use `asset_risk_score_history` to analyze the events that affected the score or the risk trajectory.
+
+!!! note
+    Rows older than 90 days are deleted daily from `asset_risk_score_history`. For each asset and event type, the latest `hygiene` and `criticality` entry older than 90 days is retained for baseline reconstruction.
+
+!!! warning
+    `final_score` can be empty on newly created history rows until the next score recomputation.
+
 ## Events query examples
 
 ### Number of unique command lines per host.name
