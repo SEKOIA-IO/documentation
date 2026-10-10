@@ -5,6 +5,8 @@ This page lists every tool exposed by the Sekoia MCP Server, with its parameters
 !!! note "Early Access"
     This feature is currently in Early Access and is only available for Beta testers. Sekoia.io plans to roll out this functionality to all environments soon.
 
+With the [Sekoia plugins for Claude Code](/integration/mcp/plugins_skills.md), the skills choose and chain these tools for you. This page is useful to understand what they call, or to use the tools from another MCP client.
+
 ## Summary
 
 The server only lists the tools your API key is allowed to use. The permission names below are the labels shown in **Settings > Workspace > API Keys** when you create a key.
@@ -50,8 +52,9 @@ Retrieves a case by its short ID, with its alerts and their events. Alerts are s
 | Parameter | Type | Required | Description |
 | --- | --- | --- | --- |
 | `case_short_id` | string | Yes | The case short ID, for example `CA4mN8xQ2rTz` |
+| `include_events` | boolean | No | Load the events linked to the case. Default `true`. Pass `false` for a faster answer when only the case and its alerts are needed: the events are then empty, not missing |
 
-**Returns** the case details, the list of alerts and the associated events.
+**Returns** the case details, the list of alerts and, unless `include_events` is `false`, the associated events.
 
 ??? example "Example prompt"
     ```
@@ -106,8 +109,11 @@ Runs a Sekoia Operating Language (SOL) query and returns the results with execut
 
 **Returns** the query, a run UUID and the result rows.
 
-!!! tip "Bound your queries"
-    Add a time filter and a `limit` to every query. A wide result set can exceed what your assistant can process in one response.
+!!! warning "Bound queries on events"
+    Queries on the `events` and `eternal_events` tables must be bounded in time at both ends, for example `where timestamp between (ago(30d) .. now())`. A query with only `timestamp > ago(30d)` is rejected without running. Queries on `alerts` and `cases` accept `where created_at > ago(7d)`.
+
+!!! tip "Keep results small"
+    Aggregate before listing and add a `limit` to every query. A wide result set can exceed what your assistant can process in one response, and a query processes at most 10,000 rows.
 
 ??? example "Example prompt"
     ```
@@ -118,7 +124,7 @@ Runs a Sekoia Operating Language (SOL) query and returns the results with execut
 
     ```shell
     events
-    | where timestamp > ago(30d)
+    | where timestamp between (ago(30d) .. now())
     | where user.name == 'alex.martin' and event.category == 'authentication'
     | where action.outcome == 'success'
     | order by timestamp desc
@@ -194,7 +200,7 @@ Retrieves the reports referencing an object.
 | --- | --- | --- | --- |
 | `object_id` | string | Yes | The STIX ID of the object |
 
-**Returns** the reports, with their name, publication date, external references and attached files.
+**Returns** the reports, with their name, publication date, description, linked objects, external references and attached files. For FLINT reports, the description is the introduction or the key takeaways; the full report is available as a PDF in the platform.
 
 ??? example "Example prompt"
     ```
@@ -216,16 +222,15 @@ Looks up observables (IP addresses, domains, URLs, file hashes and more) in the 
 
 ??? example "Example prompt"
     ```
-    Are 193.51.166.168 and onenote2.exe.lnk known to Sekoia.io, and which threat are they linked to?
+    Are 198.51.100.23 and onenote2.exe.lnk known to Sekoia.io, and which threat are they linked to?
     ```
 
 ## Related articles
 
-* [Sekoia MCP Server](/mcp/mcp_overview.md): What the server exposes, how access control works and its current limits.
-* [SOC how-to guides](/mcp/how_to_soc.md): Recipes for alerts, cases, rules and SOL queries.
-* [Threat intelligence how-to guides](/mcp/how_to_cti.md): Recipes for exposure checks, indicator enrichment and threat briefs.
-* [Getting started with the Sekoia MCP Server](/mcp/getting_started.md): A first investigation using these tools.
-* [Connect Claude Desktop to the Sekoia MCP Server](/mcp/connect_claude_desktop.md): Configure Claude Desktop.
-* [Connect Claude Code to the Sekoia MCP Server](/mcp/connect_claude_code.md): Configure Claude Code.
+* [Sekoia MCP Server](/integration/mcp/overview.md): Use cases, how the server works, access control and limits.
+* [Plugins and skills](/integration/mcp/plugins_skills.md): The skills that call these tools for you.
+* [SOC how-to guides](/integration/mcp/how_to_soc.md): Alerts, cases and SOL queries in plain language.
+* [Threat intelligence how-to guides](/integration/mcp/how_to_cti.md): Explore, report and check your telemetry.
+* [Install in Claude Code](/integration/mcp/install_claude_code.md): Install the Sekoia plugins and connect the server.
 * [Sekoia Operating Language (SOL)](/xdr/features/investigate/sol_overview.md): The query language behind `run_sol_query`.
 * [Manage API keys](/getting_started/manage_api_keys.md): Create, scope and revoke API keys.
