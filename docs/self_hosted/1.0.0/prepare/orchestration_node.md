@@ -9,7 +9,7 @@ The orchestration node runs the self-hosted-controller (SHC) in a Docker contain
 - The node **MUST** reach the Git server, the OCI registry and the DNS servers. See [Network requirements](../deployment/network_requirements.md#flows-from-the-orchestration-node).
 - Docker **MUST** be installed and running.
 - The user who runs the SHC **MUST** be a member of the `docker` group.
-- The node **MUST** have 150 GB of free disk space for the release archive. It **SHOULD** have **300 GB** on a dedicated disk: the archive (about 100 GB) and its extracted files (about 100 GB) then fit together.
+- The node **MUST** have 150 GB of free disk space for the release archive. It **SHOULD** have **300 GB** on a dedicated disk: the Sekoia lab keeps the archive and its extracted files together on a 300 GB disk.
 - The Docker network (`172.17.0.0/16` by default) **SHOULD NOT** overlap one of your networks.
 - The SSH private key used by the SHC **MUST NOT** have a passphrase.
 
@@ -24,7 +24,7 @@ The orchestration node runs the self-hosted-controller (SHC) in a Docker contain
 
 === "Docker CE (Docker repository)"
 
-    **Validation status:** validated in the Sekoia lab (Debian 13).
+    **Validation status:** validated in the Sekoia lab (Debian 13). The lab installs `docker-ce`, `docker-ce-cli` and `containerd.io`; `docker-compose-plugin` comes with them as a recommended package. The command below names it explicitly.
 
     1. Install the tools that `apt` needs to add the Docker repository:
 
@@ -178,7 +178,7 @@ The SHC connects to every Kubernetes node with an SSH key. Create the key on the
 
 ## Step 5: Create the SHC working directory
 
-The SHC container runs as its own user (`shc`, user ID 1000). It writes the Kubernetes configuration file (`kubeconfig.yml`) and its logs in a working directory. Create this directory on the host, so that the files stay after the container stops:
+The SHC container runs as its own user (`shc`, user ID 1000). It writes the Kubernetes configuration file (`kubeconfig.yml`) in a working directory. Create this directory on the host, so that the file stays after the container stops:
 
 ```bash
 mkdir -p ~/shc && chmod 777 ~/shc
@@ -373,7 +373,7 @@ This table lists every input of the container and when it is needed.
 | :--- | :--- | :--- | :--- |
 | `$SEKOIA_CONFIG_FILE` | `/tmp/config.yaml` | Always | Your configuration file. |
 | `$SEKOIA_LOCAL_DIR` | `/opt/sekoia` | Always | The extracted release and the content bundles. |
-| `$HOME/shc` | `/tmp/self-hosted-controller` | Always (recommended) | `kubeconfig.yml` and the SHC logs. Without it, they are lost when the container stops. |
+| `$HOME/shc` | `/tmp/self-hosted-controller` | Always (recommended) | `kubeconfig.yml`. Without it, the file is lost when the container stops. |
 
 ## Checklist
 

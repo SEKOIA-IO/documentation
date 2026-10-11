@@ -37,7 +37,7 @@ The `run-shc.sh` script already passes `GIT_HTTP_USERNAME` and `GIT_HTTP_PASSWOR
 | The orchestration node reaches Git through a proxy | In `config.yml`, set `utils.git.http.proxy: "http://<PROXY_HOST>:<PROXY_PORT>"`. |
 | The Kubernetes nodes reach Git through a proxy | In `config.yml`, set the platform proxy: see [Proxy](../deployment/deployment_configuration.md#proxy). |
 | The Kubernetes nodes reach Git **without** a proxy, but a proxy is configured for the platform | Add the Git host name to `modules.platform_configuration.config.proxy.no_proxy`. An IP range does not match a host name. |
-| The repository is shared with other projects | No change. The SHC creates and updates its own files only. |
+| The repository is shared with other projects | No change. The SHC writes only in the `argocd/` directory of the repository, and **replaces this whole directory** at each run: never put other files in it. |
 
 ### Not supported
 

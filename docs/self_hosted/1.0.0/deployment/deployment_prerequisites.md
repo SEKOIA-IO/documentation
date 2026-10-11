@@ -67,7 +67,7 @@ hostnamectl set-hostname <NEW_HOSTNAME>
 
 ### Operating system packages
 
-The following packages are required on every compute node, in every deployment. The SHC installs `lvm2` and `gettext-base` with `apt` when they are missing, so `apt` must work on every node. It does not install `python3`. See [Prepare the Kubernetes nodes](../prepare/kubernetes_nodes.md#step-3-install-the-packages).
+The following packages are required on every compute node, in every deployment. The SHC installs `lvm2` on every node and `gettext-base` on the first manager node with `apt` when they are missing, so `apt` must work on every node. It does not install `python3`. See [Prepare the Kubernetes nodes](../prepare/kubernetes_nodes.md#step-3-install-the-packages).
 
 In air-gapped environments, nodes cannot download packages during the installation. Install all of them before you start:
 

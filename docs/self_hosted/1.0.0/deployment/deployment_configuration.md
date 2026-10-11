@@ -70,8 +70,8 @@ Set these environment variables before running the SHC:
 | `SERVERS_SSH_KEY` | SSH private key used to configure the Kubernetes nodes. |
 | `REGISTRY_USERNAME` | Username for the OCI registry. |
 | `REGISTRY_PASSWORD` | Password for the OCI registry. |
-| `GIT_HTTP_USERNAME` | Username for the Git repository. Read by default from `utils.git.http.username`. |
-| `GIT_HTTP_PASSWORD` | Password or access token for the Git repository. Read by default from `utils.git.http.password`. |
+| `GIT_HTTP_USERNAME` | Username for the Git repository. `utils.git.http.username` reads this variable by default. |
+| `GIT_HTTP_PASSWORD` | Password or access token for the Git repository. `utils.git.http.password` reads this variable by default. |
 | `SEKOIA_INSTANCE_PUBLIC_KEY` | Base64-encoded instance public key provided by Sekoia. |
 
 The [deployment guide](./deployment_guide.md#step-4-create-the-execution-script) shows how to pass these variables to the SHC container.

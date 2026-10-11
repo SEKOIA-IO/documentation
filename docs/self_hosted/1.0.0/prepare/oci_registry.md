@@ -34,7 +34,7 @@ Three programs use the registry:
 
 | SHOULD rule not followed | What you must change |
 | :--- | :--- |
-| Less than 1 TB of storage | No configuration change. Each release adds about 100 GB of images. Delete old releases in the registry before it is full. |
+| Less than 1 TB of storage | No configuration change. Each release adds its images to the registry: delete the images of old releases before the registry is full. |
 | The Kubernetes nodes reach the registry through a proxy | In `config.yml`, set `modules.k3s_install.pull_images_with_proxy: true`, `modules.k3s_install.k3s_http_proxy` and `modules.k3s_install.k3s_https_proxy`. See [Proxy](../deployment/deployment_configuration.md#proxy). |
 | A platform proxy is configured, and the nodes reach the registry **without** it | Add the registry host name to `modules.platform_configuration.config.proxy.no_proxy` and to `modules.k3s_install.k3s_no_proxy`. |
 

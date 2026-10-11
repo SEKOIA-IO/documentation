@@ -31,7 +31,7 @@ Each tab starts with a **validation status**:
 If your product has no tab, it is **not validated**. It can work if it follows every MUST rule of the page, but contact Sekoia before you use it.
 
 !!! note "About the lab"
-    The Sekoia lab runs on virtual machines with Debian 13. The IP addresses, names and passwords in the examples are placeholders: replace every value in angle brackets, for example `<REGISTRY_IP>`, with your own value.
+    The Sekoia lab runs on OpenStack virtual machines with Debian 13. It validates the **procedures**, not the hardware sizes: the lab nodes have 32 vCPUs and about 115 GiB of RAM, below the [compute node specification](../deployment/deployment_prerequisites.md#compute-node-specification), and use the `sizing/minimal.yaml` profile. The IP addresses, names and passwords in the examples are placeholders: replace every value in angle brackets, for example `<REGISTRY_IP>`, with your own value.
 
 ### Placeholders used in this section
 
@@ -63,7 +63,7 @@ When every checklist is done, continue with [Deploy the platform](../deployment/
 
 ## What the minimal configuration expects
 
-The starter `config.yml` in [Configure the deployment](../deployment/deployment_configuration.md#create-the-configuration-file) contains only the required fields. It works **without any other field** when your infrastructure follows every **MUST** and every **SHOULD** rule of this section.
+The starter `config.yml` in [Configure the deployment](../deployment/deployment_configuration.md#create-the-configuration-file) contains only the required fields. When your infrastructure follows every **MUST** and every **SHOULD** rule of this section, you add only **one** field to it: the release mode (see the last row of the table below).
 
 The table below summarizes what the minimal configuration expects from each service. The pages give the details.
 
@@ -76,3 +76,4 @@ The table below summarizes what the minimal configuration expects from each serv
 | Load balancer | A TCP load balancer that forwards ports 80, 443, 10514 and 11514 to the nodes. |
 | DNS | Records for `global.host`, `global.delivery_host` and `global.alternative_hosts` that point to the load balancer. |
 | Certificate | None: the platform then uses a self-signed certificate. You SHOULD provide your own certificate. |
+| Release | Add `global.version.fetch.offline: true` when you extract the release archive yourself, as in [Deploy the platform](../deployment/deployment_guide.md#step-2-transfer-and-extract-the-archive). Otherwise add `global.version.fetch.endpoint`: see [Release download and security content](../deployment/deployment_configuration.md#release-download-and-security-content). |

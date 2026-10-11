@@ -201,15 +201,15 @@ The system disk holds the operating system **and** the Kubernetes data: containe
 
 === "One root partition (simple)"
 
-    **Validation status:** validated in the Sekoia lab.
+    **Validation status:** validated in the Sekoia lab, with a 400 GB system disk, one root partition, no swap, and the `sizing/minimal.yaml` profile.
 
-    - System disk of **600 GB or more**.
+    - System disk of **600 GB or more** for a production sizing profile. This value comes from the space budget of the LVM layout (other tab).
     - In the Debian installer: **Guided - use entire disk**, then **All files in one partition**.
     - The installer also creates a swap partition. The lab nodes have no swap: an installation with swap is not validated.
 
 === "LVM layout (hardened)"
 
-    **Validation status:** validated in the Sekoia lab (production disk sizes).
+    **Validation status:** validated in the Sekoia lab with these volume sizes. In the lab, `/` and `/boot` stay on a separate root disk: the `lv-root` row and the 1 GB `/boot` partition are the values planned for a physical server.
 
     Use this layout when your security policy requires one partition per system directory. Create a volume group named `vg-os` on the system disk (about **700 GB**) and these logical volumes, with an `ext4` filesystem, in the Debian installer (**Manual** partitioning) or after the installation.
 
@@ -263,12 +263,19 @@ Run these commands on each node and compare with the expected result.
 | `hostname` | The unique name of the node, lowercase. |
 | `nproc` | `44` or more. |
 | `free -g` | `total` of the `Mem:` line: `120` or more. |
-| `df -h /var` | `Avail` of 400 GB or more (simple layout), or the LVM layout above. |
+| `df -h /var/lib/rancher` | Simple layout: the `Avail` column of `/` shows most of the system disk. LVM layout: the line shows `vg--os-lv--varlibrancher`. |
 | `python3 --version` | `Python 3.x`. |
 | `sudo -n true && echo SUDO-OK` | `SUDO-OK`. |
 | `timedatectl show -p NTPSynchronized` | `NTPSynchronized=yes` (see [Time](./dns_time_certificates.md#time-ntp)). |
-| `sudo ss -tlnp \| grep -E ':(80\|443\|2379\|2380\|4240\|4250\|6443\|10514\|11514\|10901) '` | **Nothing.** A line means a program uses a port that Kubernetes needs: stop it. |
 | `lsblk -o NAME,SIZE,FSTYPE` | The data disk has no `FSTYPE` and no partition. |
+
+Then check that the ports that Kubernetes needs are free:
+
+```bash
+sudo ss -tlnp | grep -E ':(80|443|2379|2380|4240|4250|6443|10514|11514|10901) '
+```
+
+**Expected result:** nothing. A line means that a program uses a port that Kubernetes needs: stop this program.
 
 ## Checklist
 
