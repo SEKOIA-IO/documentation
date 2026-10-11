@@ -2,6 +2,9 @@
 
 This article lists all infrastructure, hardware, software, storage, and network requirements for a Sekoia Self-Hosted deployment. Verify every requirement before starting the installation.
 
+!!! tip "Step-by-step preparation"
+    [Prepare the infrastructure](../prepare/index.md) turns these requirements into rules (MUST, SHOULD) and step-by-step procedures, with the commands validated in the Sekoia lab.
+
 ## Infrastructure components
 
 You must provision and manage the following components outside the Kubernetes cluster.
@@ -62,9 +65,11 @@ To rename a node before the installation, run:
 hostnamectl set-hostname <NEW_HOSTNAME>
 ```
 
-### Air-gapped deployments
+### Operating system packages
 
-In air-gapped environments, nodes cannot download packages during the installation. Install the following packages on every compute node before you start:
+The following packages are required on every compute node, in every deployment. The SHC installs `lvm2` and `gettext-base` with `apt` when they are missing, so `apt` must work on every node. It does not install `python3`. See [Prepare the Kubernetes nodes](../prepare/kubernetes_nodes.md#step-3-install-the-packages).
+
+In air-gapped environments, nodes cannot download packages during the installation. Install all of them before you start:
 
 - `python3`: required by the SHC to run its checks and operations on the node.
 - `lvm2`: required for the K3s installation.

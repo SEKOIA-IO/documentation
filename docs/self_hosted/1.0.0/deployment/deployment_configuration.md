@@ -70,6 +70,8 @@ Set these environment variables before running the SHC:
 | `SERVERS_SSH_KEY` | SSH private key used to configure the Kubernetes nodes. |
 | `REGISTRY_USERNAME` | Username for the OCI registry. |
 | `REGISTRY_PASSWORD` | Password for the OCI registry. |
+| `GIT_HTTP_USERNAME` | Username for the Git repository. Read by default from `utils.git.http.username`. |
+| `GIT_HTTP_PASSWORD` | Password or access token for the Git repository. Read by default from `utils.git.http.password`. |
 | `SEKOIA_INSTANCE_PUBLIC_KEY` | Base64-encoded instance public key provided by Sekoia. |
 
 The [deployment guide](./deployment_guide.md#step-4-create-the-execution-script) shows how to pass these variables to the SHC container.
@@ -124,10 +126,10 @@ ExaLog storage configuration is derived from `global.platform_storage`. Some com
 | Field | Description |
 | :--- | :--- |
 | `utils.ansible.ssh-key` | Private key used by the self-hosted-controller (SHC) to connect to and configure every Kubernetes node. Use an environment-variable reference. |
-| `utils.ansible.user` | SSH user used on every Kubernetes node. The account must meet the privilege requirements in the [technical requirements](./deployment_prerequisites.md). |
+| `utils.ansible.user` | SSH user used on every Kubernetes node. The account must exist on every node, accept SSH key authentication on port 22, and run `sudo`. See [User account](../prepare/kubernetes_nodes.md#user-account). |
 | `utils.ansible.inventory.managers` | List of manager-node IP addresses or resolvable hostnames. At least one manager is required. |
 
-Worker nodes are configured under `utils.ansible.inventory.workers`. The field is not required by the configuration validator, but production sizing profiles normally require workers to provide the expected capacity.
+Worker nodes are configured under `utils.ansible.inventory.workers`. The field is not required by the configuration validator, but production sizing profiles normally require workers to provide the expected capacity. Always write `workers` in your `config.yml`, with the list of worker nodes.
 
 ### Git repository
 

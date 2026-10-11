@@ -765,6 +765,15 @@ nav:
     - Deployment:
       - Technical requirements: self_hosted/1.0.0/deployment/deployment_prerequisites.md
       - Network requirements: self_hosted/1.0.0/deployment/network_requirements.md
+      - Prepare the infrastructure:
+        - Overview: self_hosted/1.0.0/prepare/index.md
+        - Prepare the Kubernetes nodes: self_hosted/1.0.0/prepare/kubernetes_nodes.md
+        - Prepare the orchestration node: self_hosted/1.0.0/prepare/orchestration_node.md
+        - Prepare the load balancer: self_hosted/1.0.0/prepare/load_balancer.md
+        - Prepare the Git repository: self_hosted/1.0.0/prepare/git_repository.md
+        - Prepare the OCI registry: self_hosted/1.0.0/prepare/oci_registry.md
+        - Prepare the S3 object storage: self_hosted/1.0.0/prepare/object_storage.md
+        - Prepare DNS, time, email and certificates: self_hosted/1.0.0/prepare/dns_time_certificates.md
       - The deployment process: self_hosted/1.0.0/deployment/deployment_process.md
       - Deploy the platform: self_hosted/1.0.0/deployment/deployment_guide.md
       - Deployment configuration reference: self_hosted/1.0.0/deployment/deployment_configuration.md

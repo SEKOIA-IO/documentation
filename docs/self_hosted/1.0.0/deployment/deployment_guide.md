@@ -8,6 +8,7 @@ This guide walks you through the full installation of Sekoia Self-Hosted, from d
 - Firewall rules allow the flows listed in [Network requirements](./network_requirements.md).
 - Your `config.yml` manifest is ready. See [Deployment configuration reference](./deployment_configuration.md).
 - Docker is installed on the orchestration node.
+- Every checklist of [Prepare the infrastructure](../prepare/index.md) is complete.
 
 ## Preparation 
 
@@ -111,7 +112,27 @@ docker images | grep self-hosted-controller
 
     Replace `<IMAGE_ID>` with the image ID returned by `docker images`.
 
+!!! tip "The image has no name after `docker load`"
+    If `docker load` prints two `Loaded image ID: sha256:...` lines and `docker images | grep self-hosted-controller` prints nothing, the archive contains the image and its signature, both without a name. Tag the image whose operating system is `linux`:
+
+    ```bash
+    docker load -i $SEKOIA_LOCAL_DIR/platform/v1.0.0/images/registry.sekoia.io_sekoialab_self-hosted-controller-cli-v1.0.0.tar.gz | tee /tmp/shc-load.log
+    ```
+
+    ```bash
+    IMG=$(grep -o 'sha256:[0-9a-f]*' /tmp/shc-load.log | while read id; do docker image inspect --format '{{.Os}} {{.Id}}' "$id"; done | awk '$1=="linux"{print $2; exit}')
+    ```
+
+    ```bash
+    docker tag "$IMG" sekoialab/self-hosted-controller-cli:v1.0.0
+    ```
+
+    Then set `DOCKER_IMAGE="sekoialab/self-hosted-controller-cli:v1.0.0"` in `env.rc`.
+
 ### Step 4: Create the execution script
+
+!!! tip "Already done"
+    If you followed [Prepare the orchestration node](../prepare/orchestration_node.md#step-9-create-the-execution-script), you already have a complete `run-shc.sh`. It also passes the certificate variables and keeps the SHC working directory. Use it and go to the `./run-shc.sh list` test below.
 
 The execution script `run-shc.sh` wraps all SHC invocations, injects credentials from environment variables, and mounts your config file into the container.
 

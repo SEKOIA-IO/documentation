@@ -10,12 +10,13 @@ If you are new to Sekoia Self-Hosted, follow this sequence:
 
 1. Read the [Reference architecture](architecture/architecture.md) to understand the platform topology.
 2. Validate your infrastructure against the [Technical requirements](deployment/deployment_prerequisites.md) and [Network requirements](deployment/network_requirements.md).
-3. Prepare your `config.yml` using the [Deployment configuration reference](deployment/deployment_configuration.md).
-4. Follow the [Deploy the platform](deployment/deployment_guide.md) guide.
-5. Create your first user with the [Set up the first administrator account](operations/first_login.md) guide.
-6. Get familiar with the [self-hosted-controller (SHC) interface](operations/controller_interface.md) for day-to-day interactive operations.
-7. Set up continuous monitoring using the [Monitor your platform](monitoring/monitoring_guide.md) guide.
-8. Run [platform diagnostics](monitoring/run_diagnostics.md) to validate service health.
+3. Prepare the servers and the services step by step with [Prepare the infrastructure](prepare/index.md).
+4. Prepare your `config.yml` using the [Deployment configuration reference](deployment/deployment_configuration.md).
+5. Follow the [Deploy the platform](deployment/deployment_guide.md) guide.
+6. Create your first user with the [Set up the first administrator account](operations/first_login.md) guide.
+7. Get familiar with the [self-hosted-controller (SHC) interface](operations/controller_interface.md) for day-to-day interactive operations.
+8. Set up continuous monitoring using the [Monitor your platform](monitoring/monitoring_guide.md) guide.
+9. Run [platform diagnostics](monitoring/run_diagnostics.md) to validate service health.
 
 ## Documentation map
 
@@ -31,6 +32,7 @@ If you are new to Sekoia Self-Hosted, follow this sequence:
 | :--- | :--- |
 | [Technical requirements](deployment/deployment_prerequisites.md) | Hardware, OS, storage, network, and operational requirements before you begin. |
 | [Network requirements](deployment/network_requirements.md) | Full table of required network flows, ports, and protocols. |
+| [Prepare the infrastructure](prepare/index.md) | Rules (MUST, SHOULD) and step-by-step procedures for the nodes, the orchestration node, the load balancer, Git, the OCI registry, S3, DNS, time, email and certificates, with one tab per validated technology. |
 | [The deployment process](deployment/deployment_process.md) | High-level overview of the deployment engine, execution modes, and lifecycle operations. |
 | [Deploy the platform](deployment/deployment_guide.md) | Step-by-step installation: download, verification, initialization, and post-deployment validation. |
 | [Configure the deployment](deployment/deployment_configuration.md) | Copyable `config.yml` starter configuration and explanations for every required field. |
