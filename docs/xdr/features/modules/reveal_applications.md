@@ -81,10 +81,9 @@ This pivot lets analysts move from "what is installed and vulnerable on this hos
 
 **During root cause analysis:** identify outdated or unsigned software that may have been the entry point or enabler of a compromise.
 
-**For proactive review:** use the **vulnerable** filter to surface hosts running applications with high CVE counts (for example, an end-of-life browser or a legacy web server) and prioritize remediation before an incident occurs.
+**For proactive review:** use the **vulnerable** quick filter to surface hosts running applications with high CVE counts (for example, an end-of-life browser or a legacy web server) and prioritize remediation before an incident occurs.
 
 ??? example "Vulnerable application triage"
-
     A host asset shows **Apache Tomcat 9.0.30** with a CVE Count of 38 and **Apache Log4j 2.14.1** with a CVE Count of 10. Selecting the Tomcat CVE badge opens the Vulnerabilities tab filtered to that application, where the analyst confirms several high-severity CVEs. The recommended action is to prioritize upgrading Tomcat and Log4j and document the exposure in the case.
 
 ## Related links
