@@ -1,11 +1,28 @@
 # Import the CTI database
 
-The self-hosted-controller (SHC) imports the Sekoia CTI database into the ArangoDB database of your platform with the `ImportArangoCollection` command. It downloads the latest CTI export from the Sekoia release bucket and loads the STIX objects and relationships it contains.
+The self-hosted-controller (SHC) imports the Sekoia CTI database into the ArangoDB database of your platform with the `ImportArangoCollection` command. It reads the latest CTI export from the Sekoia release bucket in online mode, or from the orchestration node in air-gapped mode, and loads the STIX objects and relationships it contains.
 
 ## Prerequisites
 
 - The platform is installed and the SHC can retrieve its kubeconfig.
-- The `S3_ACCESS_KEY` and `S3_SECRET_KEY` environment variables hold the Sekoia release bucket credentials provided by Sekoia, and `global.version.fetch` points to the Sekoia release bucket, as described in [Configure the deployment](../deployment/deployment_configuration.md#release-download-and-security-content).
+- In online mode, the `S3_ACCESS_KEY` and `S3_SECRET_KEY` environment variables hold the Sekoia release bucket credentials provided by Sekoia, and `global.version.fetch` points to the Sekoia release bucket, as described in [Configure the deployment](../deployment/deployment_configuration.md#release-download-and-security-content).
+- In air-gapped mode, `global.version.fetch.offline` is `true` and the CTI export provided by Sekoia is copied on the orchestration node, as described in [Prepare the CTI export in air-gapped mode](#prepare-the-cti-export-in-air-gapped-mode).
+
+## Prepare the CTI export in air-gapped mode
+
+In air-gapped mode, the SHC reads each collection from `<global.version.data.cti.path>/cti/<collection>/`. With the default path and the [execution script](../deployment/deployment_guide.md#step-4-create-the-execution-script), this is `$SEKOIA_LOCAL_DIR/data/cti/` on the orchestration node.
+
+To prepare the export, copy the CTI export provided by Sekoia so that each collection keeps its `latest.json` file and its export folders:
+
+```text
+$SEKOIA_LOCAL_DIR/data/cti/
+├── stix_objects/
+│   ├── latest.json
+│   └── <export folder>/
+└── stix_relationships/
+    ├── latest.json
+    └── <export folder>/
+```
 
 ## Import the CTI database
 
