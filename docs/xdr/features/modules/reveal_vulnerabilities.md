@@ -18,8 +18,6 @@ The asset context panel displays the asset's Risk score header and its investiga
 
     CVSS and Unified risk score describe individual vulnerability findings. The Asset Risk Score prioritizes the asset using exposure, recent activity, and criticality.
 
-![Asset vulnerabilities tab](assets/asset_vuln_expanded.png){: style="max-width:100%"}
-
 ## Filter and search findings
 
 Use **Filters** to narrow the vulnerability list. When filters are active, Reveal displays them as filter chips. Select **Clear filters** to remove the active filters.
@@ -82,6 +80,8 @@ The Unified risk score normalizes vulnerability scores from different sources to
 A finding can show `-` when no normalized score is available.
 
 ## Expand a vulnerability
+
+![Asset vulnerabilities tab](/assets/asset_vuln_expanded.png){: style="max-width:100%"}
 
 Expand a vulnerability row to inspect the available details:
 

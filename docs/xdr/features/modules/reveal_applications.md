@@ -18,6 +18,8 @@ Use this interface path:
 
 The asset context panel displays the asset's Risk score header and its investigation tabs. The Applications tab can display a count of installed applications.
 
+
+
 ## How application inventory works
 
 Reveal collects application inventory from connected asset sources, such as endpoint and asset connectors. The source reports the application name, version, and available technical details.
@@ -55,8 +57,6 @@ Select **Filters** to filter by:
 
 The filter menu includes a search field for the selected filter.
 
-![!Applications tab showing vulnerable and installed application counters, quick views, filters, and the application list.](assets/asset_app_expanded.png){: style="max-width:100%"}
-
 ## Application fields
 
 | Field | Description |
@@ -88,6 +88,8 @@ Expand an application row to view additional details:
 - PURL.
 
 A field can display `-` when the source does not provide the value.
+
+![!Applications tab showing vulnerable and installed application counters, quick views, filters, and the application list](/assets/asset_app_expanded.png){: style="max-width:100%"}
 
 ## Open related vulnerabilities
 
