@@ -120,10 +120,11 @@ The Sekoia Forwarder supports disconnected deployments but is an optional add-on
 
 ## Known issues and limitations
 
-The following issues do not occur systematically. They are intermittent and may not affect every deployment.
+The following issues and limitations are known in this release. For issues with a resolution procedure, see [Common issues](troubleshooting/common_issues.md).
 
 | Issue | Impact | Workaround |
 | :--- | :--- | :--- |
+| Correlation rules never raise alerts | Correlation rules (`event_count`, `value_count`, `temporal`, and chained correlations) match but never raise an alert. The `sigma-workflow-sighting-creator` worker reads the matched events from an Elasticsearch cluster that is not deployed on Sekoia Self-Hosted. Rules that match a single event are unaffected. | Configure the worker to read events from Quickwit. See [Correlation rules never raise alerts](troubleshooting/common_issues.md#correlation-rules-never-raise-alerts). |
 | No upgrade path documented | You cannot upgrade an existing v0.0.1 deployment to v0.1.0 via the self-hosted-controller (SHC). | Contact Sekoia before you plan an upgrade. |
 | No graphical or web UI for platform administration | Infrastructure management is available only from the orchestration node. | Use the self-hosted-controller (SHC) terminal interface or one-shot CLI together with `config.yml` for administrative operations. |
 | Automatic upgrade and rollback not available | Version updates are manual. | Follow the manual update procedure when a new release is published. |
@@ -138,3 +139,4 @@ The following issues do not occur systematically. They are intermittent and may 
 - [Deploy the platform](deployment/deployment_guide.md): Step-by-step installation instructions.
 - [The deployment process](deployment/deployment_process.md): The installation execution plan and the post-installation bootstrap.
 - [Use the SHC interface](operations/controller_interface.md): The interactive interface of the SHC.
+- [Common issues](troubleshooting/common_issues.md): Known issues and their resolution procedure.
