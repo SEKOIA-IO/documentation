@@ -15,7 +15,18 @@ Create a [new intake associated with the Sekoia Endpoint Agent](https://app.seko
 
 ## Step 2: Download the agent
 
-Use the download link provided in the intake description in the Sekoia interface.
+Use the download link provided in the intake description in the Sekoia interface. Pick the binary that matches the processor architecture of the host:
+
+| Operating system | Architecture | Binary |
+|------------------|--------------|--------|
+| Windows | x86-64 | `agent-latest.exe` |
+| Windows | ARM64 (agent 1.12.0 and newer) | `agent-latest-arm64.exe` |
+| Linux | x86-64 | `agent-latest` |
+| Linux | ARM64 | `agent-linux-latest-arm64` |
+| macOS | Apple Silicon | `agent-latest.zip` |
+| macOS | Intel | `agent-latest-x86.zip` |
+
+The commands below use the x86-64 binary names: replace them with the ARM64 name on an ARM64 host.
 
 ## Step 3: Install the agent
 

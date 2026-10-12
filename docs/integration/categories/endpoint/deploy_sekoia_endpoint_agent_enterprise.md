@@ -149,6 +149,9 @@ The agent ships as a self-contained `.exe` installer that supports silent, unatt
 
 Create a folder named `SekoiaAgentPackage` containing `agent-latest.exe` and the two following scripts.
 
+!!! note "ARM64 devices"
+    For Windows on ARM64 devices, package `agent-latest-arm64.exe` instead (agent 1.12.0 and newer). A fleet with both architectures needs one package per architecture, each assigned to the matching devices.
+
 `install.ps1`:
 
 ```powershell
@@ -228,7 +231,7 @@ if (-not $svc) {
 ```
 
 !!! tip "Network share permissions"
-    Store `agent-latest.exe` on a network share accessible to all target machines (for example, `\\<fileserver>\NETLOGON\SekoiaAgent`). Grant Read access to **computer accounts**, not just user accounts, because startup scripts run before logon.
+    Store `agent-latest.exe` on a network share accessible to all target machines (for example, `\\<fileserver>\NETLOGON\SekoiaAgent`). Grant Read access to **computer accounts**, not just user accounts, because startup scripts run before logon. For ARM64 machines, store `agent-latest-arm64.exe` next to it and point their script at it.
 
 ### Option B: GPO scheduled task (recommended)
 
