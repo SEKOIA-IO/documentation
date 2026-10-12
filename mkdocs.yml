@@ -76,6 +76,7 @@ nav:
       - "Step 3: Activate detection rules": getting_started/defend_step3_activate_detection_rules.md
       - "Step 4: Triage your first alert": getting_started/defend_step4_triage_first_alert.md
       - "Step 5: Automate with playbooks": getting_started/defend_step5_automate_with_playbooks.md
+      - "Defend best practices": getting_started/best_practices.md
     - Intelligence:
       - "Quick start: Intelligence": getting_started/quick_start_intelligence.md
       - "Step 1: Explore the threat intelligence database": getting_started/intelligence_step1_explore_threat_database.md

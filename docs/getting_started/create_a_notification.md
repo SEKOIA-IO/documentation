@@ -32,7 +32,7 @@ Notification rules let you receive alerts through your preferred channel when a 
     !!! note "Exception: intake monitoring"
         If you selected the **No events are received** trigger, you must select one specific community, since this trigger requires choosing an intake to monitor and an intake always belongs to a single community.
     
-    !!! note "**No event are received** trigger"
+    !!! note "**No events are received** trigger"
         If you use the trigger **No events are received** it will start working from the moment a first event is received.
 
 7. In the **Conditions** section, define filters to narrow down which events qualify. Conditions are optional but strongly recommended to avoid noise.
