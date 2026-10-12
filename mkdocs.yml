@@ -470,6 +470,7 @@ nav:
     - IAM:
       - Tenable Identity Exposure / Alsid: integration/categories/iam/alsid.md
       - Azure Key Vault: integration/categories/iam/azure_key_vault.md
+      - Bitwarden Event Logs: integration/categories/iam/bitwarden_event_logs.md
       - BeyondTrust PRA Sessions: integration/categories/iam/beyondtrust_pra_sessions.md
       - BeyondTrust PRA Syslog: integration/categories/iam/beyondtrust_syslog.md
       - BeyondTrust PRA Team: integration/categories/iam/beyondtrust_pra_team_activity.md
