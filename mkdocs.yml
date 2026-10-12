@@ -89,6 +89,7 @@ nav:
     - Metrics: self_hosted/monitoring/metrics.md
   - Troubleshooting:
     - Debug Tool: self_hosted/troubleshooting/debug_tool.md
+    - Known Issues: self_hosted/troubleshooting/known_issues.md
   - Release Notes: 
     - 0.1.0: self_hosted/release_notes/0.1.0.md
 - Sekoia Defend (XDR):
