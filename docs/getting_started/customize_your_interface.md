@@ -35,6 +35,7 @@ You can customize the appearance of the Sekoia interface from your profile setti
     - **System**, to follow your operating system preference
 3. Select an **Accent color** to choose the main color used across the interface.
 4. Optionally enable **Contrast** to increase the contrast of the interface.
+
 Your appearance preferences are saved to your account and apply across your Sekoia sessions.
 
 ![!Profile appearance settings showing theme, accent color, and contrast options](/assets/getting_started/settings_profile.png)
