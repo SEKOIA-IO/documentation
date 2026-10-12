@@ -55,7 +55,7 @@ Select **Filters** to filter by:
 
 The filter menu includes a search field for the selected filter.
 
-> 📸 [SCREENSHOT SUGGESTION: Use a real asset from the Legacy XDR + Reveal tenant. Show the Applications tab marked Beta, the Vulnerable Applications and Installed Applications counters, the All and vulnerable quick views, the Filters menu, and the application table. Do not use the mock asset for this general screenshot. | ALT TEXT: Applications tab showing vulnerable and installed application counters, quick views, filters, and the application list.]
+![!Applications tab showing vulnerable and installed application counters, quick views, filters, and the application list.](assets/asset_app_expanded.png){: style="max-width:100%"}
 
 ## Application fields
 

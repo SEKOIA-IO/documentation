@@ -18,6 +18,8 @@ The asset context panel displays the asset's Risk score header and its investiga
 
     CVSS and Unified risk score describe individual vulnerability findings. The Asset Risk Score prioritizes the asset using exposure, recent activity, and criticality.
 
+![Asset vulnerabilities tab](assets/asset_vuln_expanded.png){: style="max-width:100%"}
+
 ## Filter and search findings
 
 Use **Filters** to narrow the vulnerability list. When filters are active, Reveal displays them as filter chips. Select **Clear filters** to remove the active filters.
@@ -63,7 +65,8 @@ When a finding is associated with the CISA Known Exploited Vulnerabilities catal
 - Known Exploited Vulnerability CISA due date.
 - Known Exploited Vulnerability required action.
 
-> 📸 [SCREENSHOT SUGGESTION: Use the mock asset only for this Known exploited use case. Show the Exploitation column with Known exploited and the expanded CISA KEV fields. Do not use this asset to illustrate general vulnerability counts or normal asset data. | ALT TEXT: Expanded known exploited vulnerability showing CISA catalog metadata, CVSS details, references, and detection source.]
+
+![!Expanded known exploited vulnerability showing CISA catalog metadata, CVSS details, references, and detection source.](/assets/asset_vuln_exploited.png){: style="max-width:100%"}
 
 ## Unified risk score
 
