@@ -31,7 +31,7 @@ Each tab starts with a **validation status**:
 If your product has no tab, it is **not validated**. It can work if it follows every MUST rule of the page, but contact Sekoia before you use it.
 
 !!! note "About the lab"
-    The Sekoia lab runs on OpenStack virtual machines with Debian 13. It validates the **procedures**, not the hardware sizes: the lab nodes have 32 vCPUs and about 115 GiB of RAM, below the [compute node specification](../deployment/deployment_prerequisites.md#compute-node-specification), and use the `sizing/minimal.yaml` profile. The IP addresses, names and passwords in the examples are placeholders: replace every value in angle brackets, for example `<REGISTRY_IP>`, with your own value.
+    The Sekoia lab runs on OpenStack virtual machines with Debian 13. It validates the **procedures**, not the hardware sizes: the lab nodes have 32 vCPUs and about 115 GiB of RAM, below the [compute node specification](../deployment/deployment_prerequisites.md#compute-node-specification), and use the `sizing/minimal.yaml` profile. Sekoia has also validated installations on Debian 12 and on nodes that meet the compute node specification. The IP addresses, names and passwords in the examples are placeholders: replace every value in angle brackets, for example `<REGISTRY_IP>`, with your own value.
 
 ### Placeholders used in this section
 
