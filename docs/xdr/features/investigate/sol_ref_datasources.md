@@ -22,6 +22,7 @@
 | [asset_applications](#asset_applications) | Software and applications installed on assets | Application discovery, software inventory, unsigned binary detection. Note: Part of the Reveal plan |
 | [asset_vulnerabilities](#asset_vulnerabilities) | CVE-based vulnerabilities associated with assets, enriched from NVD | Vulnerability management, risk prioritization, patch tracking. Note: Part of the Reveal plan |
 | [asset_poi](#asset_poi) | Points of interest detected on assets (UEBA, notable activity) | Threat hunting, behavioral analysis, MITRE ATT&CK mapping. Note: Part of the Reveal plan |
+| [asset_intake_telemetry](#asset_intake_telemetry) | Assets seen in the events of each intake | Find which sources see an asset, spot assets no asset connector reports |
 | [rule_definitions](#rule_definitions) | Detection rule definitions (Sigma, CTI, Anomaly...) | Rules coverage reporting, audit of detection catalog |
 | [rule_instances](#rule_instances) | Instances of detection rules per community | Monitor enabled/disabled rules, compliance reporting |
 
@@ -433,6 +434,35 @@ Use this data source to surface suspicious activity, map behavioral patterns to 
     asset_poi
     | aggregate count() by mitre_attack_phase
     | sort by count desc
+    ```
+
+## asset_intake_telemetry
+
+The **asset_intake_telemetry** data source tells which intakes saw each asset in their events. Each record counts, for one hour, the events of an intake that mention an asset.
+
+Use it to find the sources that see an asset, or to spot assets that only appear in events and that no asset connector reports.
+
+| **Property**          | **Description**                                                          |
+|-----------------------|--------------------------------------------------------------------------|
+| community_uuid        | UUID of the community the asset belongs to                               |
+| asset_uuid            | Unique identifier of the asset                                           |
+| intake_uuid           | UUID of the intake whose events mention the asset                        |
+| intake_format_uuid    | UUID of the intake format of that intake                                 |
+| type                  | Type of the asset                                                        |
+| name                  | Name of the asset                                                        |
+| bucket_start_date     | Start of the hour                                                        |
+| occurrences           | Number of events of the intake that mention the asset in that hour       |
+
+??? example "Assets no asset connector reports, by the intake format that saw them"
+
+    ```
+    assets
+    | where not connectors.connector_uuid
+    | join (asset_intake_telemetry | where bucket_start_date > ago(30d)) on uuid == asset_uuid
+    | aggregate assets = count_distinct(asset_uuid) by intake_format_uuid
+    | join intake_formats on intake_format_uuid == uuid
+    | select name, assets
+    | sort by assets desc
     ```
 
 ## Related articles
