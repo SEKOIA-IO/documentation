@@ -2,8 +2,8 @@
 
 Custom field definitions determine which structured metadata fields are available across all alerts and cases in your workspace. This article explains how to create, edit, and delete those definitions from the workspace settings.
 
-!!! note "Definitions are shared between alerts and cases"
-    A definition you create here can be attached to alerts, to cases, or to both. You do not need to create the same field twice.
+!!! note "Definitions are shared between alerts, cases and playbooks"
+    A definition you create here can be attached to alerts, to cases, or to both. Playbooks use the same definitions. You do not need to create the same field twice.
 
 ## Prerequisites
 

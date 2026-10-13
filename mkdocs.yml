@@ -236,6 +236,8 @@ nav:
       - Manage accounts: xdr/features/automate/manage-accounts.md
       - Navigate playbooks: xdr/features/automate/navigate-playbooks.md
       - Build playbooks: xdr/features/automate/build-playbooks.md
+      - Organize playbooks with custom fields: xdr/features/automate/organize_playbooks_with_custom_fields.md
+      - Restore a playbook version: xdr/features/automate/restore_a_playbook_version.md
       - Triggers: xdr/features/automate/triggers.md
       - Operators: xdr/features/automate/operators.md
       - Actions: xdr/features/automate/actions.md

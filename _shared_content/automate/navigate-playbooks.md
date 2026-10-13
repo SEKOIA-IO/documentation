@@ -1,25 +1,65 @@
 # Navigate playbooks' interface
 
-## Playbooks listing
+## Playbooks list
 
-In the playbooks’ homepage are listed all playbooks created within your community. These playbooks are listed by order of **last edited** and there are multiple filters made available to navigate this page with ease.
+The **Playbooks** page lists every playbook of your community in a table, sorted by last update. From this page, you can create playbooks, manage the accounts they use and follow their runs.
 
-![playbooks-listing](/assets/operation_center/playbooks/playbook-listing.png){: style="max-width:100%"}
+![Playbooks list in table view](/assets/operation_center/playbooks/playbook-listing.png){: style="max-width:100%"}
 
-From this page, you can:
+The page header gives access to the following buttons:
 
-- Create a new `playbook` or `meta-playbook` (impacting multiple communities)
-- Search for available playbooks
-- Filter available playbooks by Activation (enabled/disabled)
-- Delete a playbook
-- Access to playbook runs by status: `all`, `in progress`, `error` and `succeeded`
-- Review playbook statuses : `ready to start`, `configuration issues`, `partially activated`, `failed runs`, `trigger crashed`. Status tags also allowed to access to its details directly
+| Button | Action |
+| --- | --- |
+| **Local runners** | Manage the runners that execute playbook actions in your own infrastructure. See [Playbooks On-premises](/xdr/features/automate/playbooks-on-premises.md). |
+| **Connected accounts** | Manage the accounts that playbooks use to connect to third-party services. See [Manage accounts](/xdr/features/automate/manage-accounts.md). |
+| **New playbook** | Create a playbook. See [Build playbooks](/xdr/features/automate/build-playbooks.md). |
 
-----
+The **Playbooks** tab lists the playbooks. The **Runs** tab lists the runs of all playbooks.
+
+### Table columns
+
+| Column | Content |
+| --- | --- |
+| **Name** | Name of the playbook. Click it to open the playbook. |
+| **Status** | Status badges of the playbook: `Ready to start`, `Configuration issues`, `Partially activated`, `Failed runs` and `Trigger crashed`. Click a badge to open the matching tab of the playbook. |
+| **Runs**, **In progress**, **Succeeded**, **Failed** | Run counters of the playbook. |
+| **Custom fields** | Custom field values of the playbook. See [Organize playbooks with custom fields](/xdr/features/automate/organize_playbooks_with_custom_fields.md). |
+| **Communities** | Communities where the playbook runs. |
+| **Author** | User who created the playbook. |
+| **Updated at** | Date of the last change to the playbook. |
+| **Activated** | Toggle to activate or deactivate the playbook. |
+| **Actions** | The **...** menu, with **Duplicate playbook** and **Delete**. |
+
+The **Name** and **Status** columns are always displayed, and the **Actions** column is always the last one. To choose and reorder the other columns, click **Show/Hide table columns**, then select the columns and drag them into the order you want. Sekoia.io saves your selection for the current community in your browser.
+
+### Search, filter and sort
+
+- To find a playbook by name, use the search bar.
+- To filter the list, click **Filters** and select **Activation**, **Integrations used**, **Trigger** or **Updated at**. Active filters are kept in the URL, so you can bookmark or share a filtered view.
+- To sort the list, click the **Name**, **Activated** or **Updated at** column header.
+
+### Group playbooks
+
+To group the table by activation, by community or by custom field, click **Group by**. See [Organize playbooks with custom fields](/xdr/features/automate/organize_playbooks_with_custom_fields.md).
+
+### Activate, duplicate or delete a playbook
+
+These actions require the permission to edit playbooks.
+
+!!! warning "Deactivating a playbook"
+    Deactivating a playbook stops it in all its communities and ends its runs in progress.
+
+- To activate or deactivate a playbook, click the toggle in the **Activated** column.
+- To duplicate a playbook, click **...** at the end of its row, then select **Duplicate playbook**.
+- To delete a playbook, deactivate it first, then click **...** at the end of its row and select **Delete**.
+
+### Card view
+
+The playbooks list is also available as cards. To switch between the two views, click **Card view** or **Table view** next to the search bar. Sekoia.io remembers your choice in your browser. **Group by** and **Show/Hide table columns** are available in the table view only.
 
 ## Playbook details
 
-To access the detailed view of a playbook just simply click on the applicable playbook card. Once on the playbook page, you should now see some ‘warning’ icons on tabs and inside configuration panel. These icons are here to guide you when there are some issues to resolve before the playbook can be activated.
+To open a playbook, click its name in the playbooks list. Once on the playbook page, you should now see some ‘warning’ icons on tabs and inside configuration panel. These icons are here to guide you when there are some issues to resolve before the playbook can be activated.
 
 You can also now save your playbook from any tab, the save button is now in the header part of the playbook
 
@@ -46,23 +86,30 @@ This tab `Overview` lists all information related to the playbook:
 - Date of the last activation of the playbook
 - Description of the playbook
 - Community details, including the ability to add or remove communities, activate or deactivate communities for a given playbook, and review playbook statuses by community (e.g. configuration issues, failed rules or crashed triggers)
+- Custom fields of the playbook. See [Organize playbooks with custom fields](/xdr/features/automate/organize_playbooks_with_custom_fields.md)
+
+![Overview tab of a playbook](/assets/operation_center/playbooks/playbook_custom_fields.png){: style="max-width:100%"}
 
 ### Workflow
 
 The workflow view is composed of three main sections:
 
-#### Actions library
+#### Module menu
 
-Accessible in a side panel that appears when clicking on the `+` on the left of the screen, this library provides you with a set of [triggers](/xdr/features/automate/triggers.md), [actions](/xdr/features/automate/actions.md) and [operators](/xdr/features/automate/operators.md) to help automate your workflow.
+The module menu gives access to the [triggers](/xdr/features/automate/triggers.md), [actions](/xdr/features/automate/actions.md) and [operators](/xdr/features/automate/operators.md) you can add to your workflow. It is a bar of buttons on the graph area: **Triggers**, **Actions**, **Integrations** and **Operators**. Click a button to open its panel, and click it again to close the panel.
 
-These actions are regrouped in apps and services that are interconnected with Sekoia.io.
+| Panel | Content |
+| --- | --- |
+| **Triggers** | A search bar, the **Built-in** triggers such as Cron, then the triggers grouped by integration. |
+| **Actions** | A search bar, then the actions grouped by integration, with the number of actions of each integration. |
+| **Integrations** | The list of integrations connected to Sekoia.io. Click an integration to see its triggers and actions. |
+| **Operators** | The Condition, Foreach, Store, All and Any operators. |
 
-To find actions in the listing, you can either:
+To add a module to your workflow, click it or drag it to the graph area. The module becomes a **block**.
 
-- Use the search bar inside the panel
-- Use filters to list only Actions or Triggers
+To insert a block between two blocks, click the **+** on the link that connects them, then select **Add an action** or **Add an operator**. The matching panel opens.
 
-To add these actions to your graph, click on the dots next to the action name and drag it to the graph area. Dropping actions into this area will form a **block**.
+![Module menu with the Actions panel open on an empty playbook](/assets/operation_center/playbooks/playbook_module_menu.png){: style="max-width:100%"}
 
 !!! note
     Configuration for each of these blocks is detailed in the [Library section](/xdr/features/automate/library/aws.md) of this documentation.
@@ -186,6 +233,8 @@ The issue panel has been enhanced to give details about the configuration issues
 
 The code section is where you can find your playbook in JSON. You may use [JINJA 3.](https://jinja.palletsprojects.com/en/3.0.x/templates/) to fill variable fields.
 
+From this tab, you can also compare the JSON of a previous version with the current one. See [Restore a playbook version](/xdr/features/automate/restore_a_playbook_version.md#compare-a-version-with-the-current-one).
+
 It is possible to test your JINJA code on a JSON file:
 
 - Copy/paste the code of your playbook
@@ -247,4 +296,15 @@ To switch back to run results, click on the button `Switch to run results` butto
 This tab allows user to see all logs from a trigger configuration. It is usefull to quickly see configuration errors and to know why playbook is not working properly.
 
 This tab includes filters for sorting by Level (e.g. Critical, Debug, Info, etc.). Additionally, 'Meta-Playbooks' allows for filtering based on specific Communities.
+
+### Version history
+
+The **...** menu of the playbook header gives access to **Version history**. This panel lists the last 30 saved versions of the playbook, with their date and author. You can preview a version, compare it with the current one and restore it. See [Restore a playbook version](/xdr/features/automate/restore_a_playbook_version.md).
+
+## Related articles
+
+* [Build playbooks](/xdr/features/automate/build-playbooks.md): How to create a playbook from a template or from scratch.
+* [Organize playbooks with custom fields](/xdr/features/automate/organize_playbooks_with_custom_fields.md): How to add custom fields to playbooks and group the playbooks list.
+* [Restore a playbook version](/xdr/features/automate/restore_a_playbook_version.md): How to preview, compare and restore a previous version of a playbook.
+* [Debug playbooks](/xdr/features/automate/debug-playbooks.md): How to investigate failed runs and trigger errors.
 
