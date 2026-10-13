@@ -360,7 +360,9 @@ Hosts seen by Sekoia Asset Discovery and by no configured asset connector, such 
 
     ``` shell
     assets
-    | where type == "host" and source == "automatic" and not connectors.connector_uuid
+    | where type == "host"
+      and source == "automatic" // Discovered, not created by a user
+      and not connectors.connector_uuid // No connector type UUID: not seen by any configured Asset Connector
     | limit 100
     ```
 
@@ -370,7 +372,8 @@ To keep only the hosts that Sekoia Asset Discovery did see:
 
     ``` shell
     assets
-    | where connectors.uuid == "e0437ab0-5e38-4bd3-b922-c500644889c3" and not connectors.connector_uuid
+    | where connectors.uuid == "e0437ab0-5e38-4bd3-b922-c500644889c3" // Seen by Sekoia Asset Discovery (built-in configuration UUID)
+      and not connectors.connector_uuid // No connector type UUID: not seen by any configured Asset Connector
     | limit 100
     ```
 
