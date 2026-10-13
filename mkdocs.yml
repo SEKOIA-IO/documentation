@@ -266,6 +266,7 @@ nav:
       - Override community settings: xdr/features/modules/elevate_community_override.md
       - Limit auto-analysis to specific rules: xdr/features/modules/elevate_rule_filter.md
       - Manage Elevate runs: xdr/features/modules/elevate_quota.md
+      - Measure Elevate impact: xdr/features/modules/elevate_analytics.md
   - Asset Intelligence (Reveal):
     - Reveal overview: xdr/features/modules/reveal_index.md
     - Get started with Reveal:
