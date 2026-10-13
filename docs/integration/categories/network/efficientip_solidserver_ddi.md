@@ -50,7 +50,7 @@ The SOLIDserver syslog forwarding for this integration must use the UDP protocol
 
 5. Select `dns` from the `Services` drop-down and `udp` as the transport protocol.
 
-6. In the `Target server`, fill the address of the log concentrator and a dedicated listening port.
+6. In the `Target server`, enter the address of the log concentrator and a dedicated listening port.
 
     You can configure the target with either:
     - a hostname (for example: `syslog.internal.example`)
