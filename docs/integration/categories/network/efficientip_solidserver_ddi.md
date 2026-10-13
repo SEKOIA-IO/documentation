@@ -48,9 +48,7 @@ The SOLIDserver syslog forwarding for this integration must use the UDP protocol
 
     ![syslog](/assets/integration/network/efficientip_solidserver/03 - syslog.png)
 
-5. In the `Services` drop-down, select the following services:
-	- `dns`
-	- `udp` as transport protocol
+5. Select `dns` from the `Services` drop-down and `udp` as the transport protocol.
 
 6. In the `Target server`, fill the address of the log concentrator and a dedicated listening port.
 
