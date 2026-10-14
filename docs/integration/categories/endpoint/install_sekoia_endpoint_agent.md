@@ -190,6 +190,7 @@ Append the `--compliance-collector` flag to the install command:
     roles:
       - event-collector
       - compliance-collector
+      - software-collector
     ```
 
 3. Restart the agent:
