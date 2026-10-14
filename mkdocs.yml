@@ -328,7 +328,9 @@ nav:
     - Delay with event ingestion or alert creation: xdr/FAQ/ingestion/ingestion_delay.md
   - Sekoia.io Endpoint agent: xdr/FAQ/SEKOIA_Endpoint_Agent.md
   - Datetime representation: xdr/FAQ/datetime.md
-  - Reveal troubleshooting: xdr/features/modules/reveal_troubleshoot.md
+  - Reveal troubleshooting: 
+    - Troubleshoot Reveal module first steps: xdr/features/modules/reveal_troubleshoot.md
+    - Troubleshoot application inventory: xdr/FAQ/troubleshoot_application_inventory.md
 - Integrations:
   - Introduction: integration/index.md
   - Ingestion methods:
