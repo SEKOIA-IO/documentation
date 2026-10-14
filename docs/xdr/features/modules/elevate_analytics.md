@@ -9,7 +9,7 @@ The Analytics page shows the impact and return on investment of Elevate across y
 
 ## Open the Analytics page
 
-Navigate to **Delegate > Analytics**.
+In the left menu, open the **Delegate** section, which sits above **Investigate** by default, and select **Analytics**.
 
 The page has three parts:
 
