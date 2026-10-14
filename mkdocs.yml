@@ -202,6 +202,7 @@ nav:
         - Custom verdicts: xdr/features/investigate/custom_verdicts.md
         - Custom priorities: xdr/features/investigate/custom_priorities.md
       - Asset Context Panel: xdr/features/investigate/asset_context_panel.md
+      - Interpret asset risk scores: xdr/features/modules/interpret_asset_risk_scores.md
       - Events Query Language: xdr/features/investigate/events_query_language.md
       - Querying Events: xdr/features/investigate/querying_events.md
       - Query Builder:
@@ -279,10 +280,12 @@ nav:
       - Troubleshoot asset connectors: xdr/features/modules/reveal_asset_connectors_troubleshoot.md
     - Investigate assets:
       - Explore assets context: xdr/features/modules/reveal_asset_context_panel.md
+      - Asset risk scoring: xdr/features/modules/asset_risk_scoring.md
       - Visualize attack paths: xdr/features/investigate/attack_path_visualization.md
       - Discover Points of Interest: xdr/features/detect/points_of_interest.md
       - Check Endpoint Hygiene: xdr/features/modules/reveal_hygiene.md
       - Leverage Vulnerability Enrichment: xdr/features/modules/reveal_vulnerabilities.md
+      - Discover installed Applications status: xdr/features/modules/reveal_applications.md
       - Rely on Security Controls: xdr/features/modules/reveal_security_controls.md
   - Settings:
     - Subscriptions:
@@ -333,7 +336,9 @@ nav:
     - Delay with event ingestion or alert creation: xdr/FAQ/ingestion/ingestion_delay.md
   - Sekoia.io Endpoint agent: xdr/FAQ/SEKOIA_Endpoint_Agent.md
   - Datetime representation: xdr/FAQ/datetime.md
-  - Reveal troubleshooting: xdr/features/modules/reveal_troubleshoot.md
+  - Reveal troubleshooting: 
+    - Troubleshoot Reveal module first steps: xdr/features/modules/reveal_troubleshoot.md
+    - Troubleshoot application inventory: xdr/FAQ/troubleshoot_application_inventory.md
 - Integrations:
   - Introduction: integration/index.md
   - Ingestion methods:
