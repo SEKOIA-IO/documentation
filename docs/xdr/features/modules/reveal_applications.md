@@ -8,6 +8,20 @@ _**[Reveal module](/xdr/features/modules/reveal_index.md)**. This feature requir
 
 The Applications tab lists software associated with a host asset and shows which applications have associated CVE findings. You can review the application inventory, filter vulnerable applications, and click an application's CVE count to review its related vulnerabilities from the asset context panel.
 
+## Prerequisites
+
+To collect software inventory with the Sekoia Endpoint Agent, enable the host hygiene collection roles:
+
+Enable these three roles:
+
+- `event-collector`
+- `compliance-collector`
+- `software-collector`
+
+For the Endpoint Agent installation and host hygiene configuration, see [Install the Sekoia Endpoint Agent](https://docs.sekoia.com/integration/categories/endpoint/install_sekoia_endpoint_agent/#enable-host-hygiene-collection).
+
+The Applications tab lists software associated with a host asset and shows which applications have associated CVE findings. You can review the application inventory, filter vulnerable applications, and click an application's CVE count to review its related vulnerabilities from the asset context panel.
+
 ## Open the Applications tab
 
 Open the asset context panel and select **Applications**.
