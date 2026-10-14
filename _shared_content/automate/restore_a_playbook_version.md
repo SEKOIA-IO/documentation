@@ -61,6 +61,6 @@ The restored workflow replaces the current one and is saved as a new version. Th
 
 ## Related articles
 
-* [Navigate playbooks](/xdr/features/automate/navigate-playbooks.md): Reference for the playbooks list and every tab of a playbook.
-* [Build playbooks](/xdr/features/automate/build-playbooks.md): How to create a playbook from a template or from scratch.
+* [Navigate playbooks](/xdr/features/automate/navigate_playbooks.md): Reference for the playbooks list and every tab of a playbook.
+* [Build playbooks](/xdr/features/automate/build_playbooks.md): How to create a playbook from a template or from scratch.
 * [Debug playbooks](/xdr/features/automate/debug-playbooks.md): How to investigate failed runs and trigger errors.

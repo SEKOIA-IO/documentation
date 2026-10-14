@@ -88,7 +88,7 @@ A playbook combines the following building blocks:
 2. [Operators](/xdr/features/automate/operators.md): Condition, Foreach, and Store operators.
 3. [Actions](/xdr/features/automate/actions.md): Getters, setters, external data enrichers, and notifications.
 
-For more information about the module menu, see [Navigate playbooks](/xdr/features/automate/navigate-playbooks.md#module-menu).
+For more information about the module menu, see [Navigate playbooks](/xdr/features/automate/navigate_playbooks.md#module-menu).
 
 You can also refer to the [playbook templates](https://github.com/SEKOIA-IO/Community/tree/main/playbooks/templates) and [playbook use cases](/xdr/usecases/playbook/synchronize_alerts.md) for examples.
 
@@ -115,7 +115,7 @@ Choose whether users from this community can access the playbook, then click **C
 
 ## Related articles
 
-* [Navigate playbooks](/xdr/features/automate/navigate-playbooks.md): Reference for the playbooks list and the playbook interface.
+* [Navigate playbooks](/xdr/features/automate/navigate_playbooks.md): Reference for the playbooks list and the playbook interface.
 * [Organize playbooks with custom fields](/xdr/features/automate/organize_playbooks_with_custom_fields.md): How to add custom fields to playbooks and group the playbooks list.
 * [Restore a playbook version](/xdr/features/automate/restore_a_playbook_version.md): How to preview, compare, and restore a previous version of a playbook.
 * [Debug playbooks](/xdr/features/automate/debug-playbooks.md): How to investigate failed runs and trigger errors.

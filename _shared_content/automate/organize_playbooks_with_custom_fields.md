@@ -66,6 +66,6 @@ Search, filters and sort apply inside each group. Sekoia.io remembers your group
 
 ## Related articles
 
-* [Navigate playbooks](/xdr/features/automate/navigate-playbooks.md): Reference for the playbooks list and every tab of a playbook.
+* [Navigate playbooks](/xdr/features/automate/navigate_playbooks.md): Reference for the playbooks list and every tab of a playbook.
 * [Custom fields](/xdr/features/investigate/custom_fields.md): Overview of custom field types, shared definitions, multi-tenancy behavior and workspace limits.
 * [Manage custom field definitions](/xdr/features/investigate/manage_custom_field_definitions.md): How to create, edit and delete custom field definitions in workspace settings.

@@ -14,7 +14,7 @@ The **Playbooks** page lists the playbooks available in your community, sorted b
 | --- | --- |
 | **Local runners** | Manage the runners that execute playbook actions in your own infrastructure. See [Playbooks On-premises](/xdr/features/automate/playbooks-on-premises.md). |
 | **Connected accounts** | Manage the accounts that playbooks use to connect to third-party services. See [Manage accounts](/xdr/features/automate/manage-accounts.md). |
-| **New playbook** | Create a playbook. See [Build playbooks](/xdr/features/automate/build-playbooks.md). |
+| **New playbook** | Create a playbook. See [Build playbooks](/xdr/features/automate/build_playbooks.md). |
 
 The **Playbooks** tab lists playbooks. The **Runs** tab lists the runs of all playbooks.
 
@@ -303,7 +303,7 @@ The **...** menu in the playbook header gives access to **Version history**. The
 
 ## Related articles
 
-* [Build playbooks](/xdr/features/automate/build-playbooks.md): How to create a playbook from a template or from scratch.
+* [Build playbooks](/xdr/features/automate/build_playbooks.md): How to create a playbook from a template or from scratch.
 * [Organize playbooks with custom fields](/xdr/features/automate/organize_playbooks_with_custom_fields.md): How to add custom fields to playbooks and group the playbooks list.
 * [Restore a playbook version](/xdr/features/automate/restore_a_playbook_version.md): How to preview, compare, and restore a previous version of a playbook.
 * [Debug playbooks](/xdr/features/automate/debug-playbooks.md): How to investigate failed runs and trigger errors.
