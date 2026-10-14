@@ -88,10 +88,6 @@ For the full field reference, score bands, and status workflow, see [Vulnerabili
 
 ## Applications tab
 
-## Applications tab
-
-## Applications tab
-
 !!! note "Beta"
 
     The Applications tab is currently in **Beta**. Fields and behavior may change as the feature evolves.
