@@ -111,8 +111,6 @@ Include the following information when reporting an issue:
 
 ## Related articles
 
-## Related articles
-
 [Application inventory](/xdr/features/modules/reveal_applications.md): Overview of the Applications tab, its coverage, and its relationship with vulnerability enrichment.
 
 [Review applications](/xdr/features/modules/reveal_applications.md): How to use the Applications tab and inspect application records.
