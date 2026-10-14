@@ -15,7 +15,10 @@ Install the plugin that matches your work, or both. See [Plugins and skills](/in
 ## Prerequisites
 
 - Claude Code installed and authenticated.
-- A Sekoia API key with the permissions of the plugin you install (see below). Only admins can create keys; see [Manage API keys](/getting_started/manage_api_keys.md).
+- A Sekoia API key with the permissions of the plugin you install. See [Permissions](#permissions).
+
+!!! note "Only admins can create API keys"
+    If you are not an admin, ask one to create the key for you. See [Manage API keys](/getting_started/manage_api_keys.md).
 
 ## Permissions
 
@@ -37,20 +40,24 @@ A key with fewer permissions still works: the skills say which step they skipped
     export SEKOIA_API_KEY="YOUR_API_KEY"
     ```
 
-2. Start Claude Code, then add the Sekoia marketplace:
+2. Start Claude Code.
+
+3. Add the Sekoia marketplace, the catalogue that distributes the Sekoia plugins:
 
     ```
     /plugin marketplace add SEKOIA-IO/claude-marketplace
     ```
 
-3. Install one or both plugins:
+4. Install one or both plugins:
 
     ```
     /plugin install sekoia-cti@sekoia
     /plugin install sekoia-soc@sekoia
     ```
 
-4. Restart Claude Code to load the plugins.
+    Not sure which one you need? See the [SOC how-to guides](/integration/mcp/how_to_soc.md) for `sekoia-soc` and the [Threat intelligence how-to guides](/integration/mcp/how_to_cti.md) for `sekoia-cti`.
+
+5. Restart Claude Code to load the plugins.
 
 Installing both plugins registers the server once per plugin. This is harmless: the tools are namespaced per plugin.
 
@@ -78,7 +85,7 @@ See the [SOC how-to guides](/integration/mcp/how_to_soc.md) and the [Threat inte
 
 ## Update the plugins
 
-Refresh the marketplace, then update each installed plugin. From a terminal:
+From a terminal, refresh the marketplace and update each installed plugin:
 
 ```bash
 claude plugin marketplace update sekoia
@@ -86,7 +93,11 @@ claude plugin update sekoia-cti@sekoia
 claude plugin update sekoia-soc@sekoia
 ```
 
-Inside Claude Code, run `/plugin marketplace update sekoia`, then open `/plugin manage` to update the installed plugins. Restart Claude Code to load the new version.
+Inside Claude Code:
+
+1. Run `/plugin marketplace update sekoia`.
+2. Open `/plugin manage` and update the installed plugins.
+3. Restart Claude Code to load the new version.
 
 ## Remove the plugins
 

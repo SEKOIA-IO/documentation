@@ -26,13 +26,6 @@ The recommended client is Claude Code with the **Sekoia plugins**. One install c
 | [Summarise a case](/integration/mcp/how_to_soc.md#summarise-a-case) | A timeline of the case's alerts, the entities involved, its priority and a five-line narrative | `case-summary` |
 | [Query your data in plain language](/integration/mcp/how_to_soc.md#query-your-data-in-plain-language) | A bounded SOL query written and run for you, shown so you can rerun it, with the result read back in words | `sol-hunt` |
 
-## Get started
-
-1. [Install the Sekoia plugins in Claude Code](/integration/mcp/install_claude_code.md).
-2. Follow [Getting started with the Sekoia MCP Server](/integration/mcp/getting_started.md) for a first investigation.
-
-Any other MCP client that can send a custom `Authorization` header can connect to the endpoint below. It gets the tools, not the skills.
-
 ## How it works
 
 The server is a remote MCP endpoint hosted by Sekoia. Nothing runs in your environment except the MCP client you already use.
@@ -51,6 +44,13 @@ The server is a remote MCP endpoint hosted by Sekoia. Nothing runs in your envir
 When a client connects, the server lists the tools your API key is allowed to use. The client calls those tools as needed to answer your prompts, and the results come back into your conversation. See [MCP tools](/integration/mcp/tools_reference.md) for the full list.
 
 All tools are read-only. The server does not change alert or case status, add comments, run playbooks or modify any configuration.
+
+## Get started
+
+1. [Install the Sekoia plugins in Claude Code](/integration/mcp/install_claude_code.md).
+2. Follow [Getting started with the Sekoia MCP Server](/integration/mcp/getting_started.md) for a first investigation.
+
+Any other MCP client that can send a custom `Authorization` header can connect to the endpoint above. It gets the tools, not the skills.
 
 ## Access control
 

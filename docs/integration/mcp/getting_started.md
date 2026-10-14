@@ -5,11 +5,10 @@ This tutorial walks you through a first investigation with the Sekoia plugins in
 !!! note "Early Access"
     This feature is currently in Early Access and is only available for Beta testers. Sekoia plans to roll out this functionality to all environments soon.
 
-## Scenario
+!!! example "Scenario"
+    A SentinelOne alert, `AL2h7Kq9pXmW`, was raised on the laptop `laptop-a1b2c3` of the user `alex.martin`. You want to know what the EDR flagged, who is impacted, whether the indicators are known to Sekoia and what the user did afterwards. You will do all of it from your terminal.
 
-A SentinelOne alert, `AL2h7Kq9pXmW`, was raised on a laptop in your community. You want to know what the EDR flagged, who is impacted, whether the indicators are known to Sekoia and what the user did afterwards. You will do all of it from your terminal.
-
-The prompts below are examples. Write your own: Claude Code picks the skill that matches your question, and the skill calls the tools.
+The alert, host and user in this tutorial are fictitious. To follow along, pick an alert from your own community and use its ID in Step 2. The later prompts refer to "this alert", so they work on yours as written. The wording of the prompts is also an example: Claude Code picks the skill that matches your question, and the skill calls the tools.
 
 ## Step 1: Install the plugins
 
@@ -36,6 +35,8 @@ For this tutorial, your API key needs the `View alerts`, `View cases`, `View eve
 
     It ends with the next pivots: the linked case, a hunt on the host or the user.
 
+For more ways to ask about an alert, see [Get everything on an alert](/integration/mcp/how_to_soc.md#get-everything-on-an-alert).
+
 ## Step 3: Check the indicators against threat intelligence
 
 === "Prompt"
@@ -50,6 +51,8 @@ For this tutorial, your API key needs the `View alerts`, `View cases`, `View eve
 
 !!! tip "Pivot further"
     Ask which malware and tools the threat uses, or which reports cover it, to build a short brief without leaving the session.
+
+For more on indicator lookups, see [Enrich an indicator](/integration/mcp/how_to_cti.md#enrich-an-indicator).
 
 ## Step 4: Follow the user in your events
 
@@ -84,6 +87,8 @@ For this tutorial, your API key needs the `View alerts`, `View cases`, `View eve
 
     For example: a successful login from the internal network, followed by ordinary process creations and DNS resolutions. Each count comes with its time window; an empty result reads "no rows for that filter in that window", never "it never happened".
 
+For more questions you can ask about your events, see [Query your data in plain language](/integration/mcp/how_to_soc.md#query-your-data-in-plain-language).
+
 ## Step 5: Summarise the case
 
 === "Prompt"
@@ -95,6 +100,8 @@ For this tutorial, your API key needs the `View alerts`, `View cases`, `View eve
 === "Result"
 
     The `case-summary` skill returns the case status and priority, a timeline of its alerts in chronological order with the host, user and rule of each, the entities involved and a five-line narrative of facts. Its assessment, if any, is labelled as such.
+
+For more on case summaries, see [Summarise a case](/integration/mcp/how_to_soc.md#summarise-a-case).
 
 ## Outcome
 
