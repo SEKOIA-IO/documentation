@@ -7,7 +7,7 @@ In this section, you will find examples of raw logs as generated natively by the
 === "AUD_It"
 
     ```
-	AUD_It audit Pipin root OK 16 sep 2022 15:42:41.885007 No associated roles cmd: 1 arg: 0
+	AUD_It User1 Pipin root OK 16 sep 2022 15:42:41.885007 No associated roles cmd: 1 arg: 0
     ```
 
 
@@ -39,7 +39,7 @@ In this section, you will find examples of raw logs as generated natively by the
 === "FILE_Link"
 
     ```
-	FILE_Link dad root root OK 31 jul 2022 14:02:33.696402 No associated roles linkname /usr/bin/cdax/bsh filename /usr/bin/cdax/ksh93
+	FILE_Link User1 root root OK 31 jul 2022 14:02:33.696402 No associated roles linkname /usr/bin/cdax/bsh filename /usr/bin/cdax/ksh93
     ```
 
 
@@ -47,7 +47,7 @@ In this section, you will find examples of raw logs as generated natively by the
 === "FILE_Link2"
 
     ```
-	filename /bin/cdax/ksh FILE_Link dad root root OK 31 jul 2022 15:02:33.597401 No associated roles
+	filename /bin/cdax/ksh FILE_Link User1 root root OK 31 jul 2022 15:02:33.597401 No associated roles
     ```
 
 
@@ -55,7 +55,7 @@ In this section, you will find examples of raw logs as generated natively by the
 === "FILE_Pipe"
 
     ```
-	  FILE_Pipe Pipin root admin OK 10 Nov 2022 09:21:53.955363 No associated roles read: 7 write: 8
+	  FILE_Pipe User1 root admin OK 10 Nov 2022 09:21:53.955363 No associated roles read: 7 write: 8
     ```
 
 
@@ -71,7 +71,7 @@ In this section, you will find examples of raw logs as generated natively by the
 === "FILE_Rename"
 
     ```
-	FILE_Rename BESClient root root OK 25 sep 2022 22:33:21.081155 No associated roles frompath: /var/opt/BESClient/besclient.config.tmp topath: /var/opt/BESClient/besclient.config
+	FILE_Rename User1 root root OK 25 sep 2022 22:33:21.081155 No associated roles frompath: /var/opt/User1/besclient.config.tmp topath: /var/opt/User1/besclient.config
     ```
 
 
@@ -87,7 +87,7 @@ In this section, you will find examples of raw logs as generated natively by the
 === "FILE_Unlink"
 
     ```
-	FILE_Unlink Pipin root root OK 25 sep 2022 23:14:20.756159 No associated roles filename /var/adm/nim/glock
+	FILE_Unlink User1 root root OK 25 sep 2022 23:14:20.756159 No associated roles filename /var/adm/nim/glock
     ```
 
 
@@ -103,7 +103,7 @@ In this section, you will find examples of raw logs as generated natively by the
 === "FS_Mkdir"
 
     ```
-	FS_Mkdir Pipin root root OK 25 sep 2022 23:04:23.825394 No associated roles mode: 755 dir: /var/adm/nim/6292044
+	FS_Mkdir User1 root root OK 25 sep 2022 23:04:23.825394 No associated roles mode: 755 dir: /var/adm/nim/6292044
     ```
 
 
@@ -127,7 +127,7 @@ In this section, you will find examples of raw logs as generated natively by the
 === "PROC_Execute"
 
     ```
-	PROC_Execute    sh                              root     Pipin FAIL          22 Nov 2022 10:20:32.056053  No associated roles                      euid: 503 egid: 403 epriv: 0:0 name sh -c /app/DB2/11.1/instance/db2iset -i Pipin DB2AUTOSTART 2>&1 
+	PROC_Execute    sh                              root     User1 FAIL          22 Nov 2022 10:20:32.056053  No associated roles                      euid: 111 egid: 403 epriv: 0:0 name sh -c /app/DB2/11.1/instance/db2iset -i User1 DB2AUTOSTART 2>&1 
     ```
 
 
@@ -191,7 +191,7 @@ In this section, you will find examples of raw logs as generated natively by the
 === "S_PASSWD_READ"
 
     ```
-	S_PASSWD_READ cron root root OK 25 sep 2022 23:10:00.924334 No associated roles audit object read event detected /etc/security/passwd
+	S_PASSWD_READ User1 root root OK 25 sep 2022 23:10:00.924334 No associated roles audit object read event detected /etc/security/passwd
     ```
 
 
@@ -199,7 +199,7 @@ In this section, you will find examples of raw logs as generated natively by the
 === "S_USER_WRITE"
 
     ```
-	S_USER_WRITE vi Pipin root OK 21 sep 2022 10:26:12.893117 No associated roles audit object write event detected /etc/security/user
+	S_USER_WRITE vi User1 root OK 21 sep 2022 10:26:12.893117 No associated roles audit object write event detected /etc/security/user
     ```
 
 
@@ -207,7 +207,7 @@ In this section, you will find examples of raw logs as generated natively by the
 === "TCP_kaccept"
 
     ```
-	TCP_kaccept Pipin root root OK 25 sep 2022 23:09:25.544152 No associated roles fd14 Port 10.30.134.100 1022 kx5frsip01-a nimaux
+	TCP_kaccept User1 root root OK 25 sep 2022 23:09:25.544152 No associated roles fd14 Port 10.30.134.100 1022 kx5frsip01-a nimaux
     ```
 
 
@@ -215,7 +215,7 @@ In this section, you will find examples of raw logs as generated natively by the
 === "TCP_kbind"
 
     ```
-	TCP_kbind Pipin root root OK 25 sep 2022 23:14:20.826159 No associated roles fd11 /dev/.SRC-unix/SRC0006292046YEya
+	TCP_kbind User1 root root OK 25 sep 2022 23:14:20.826159 No associated roles fd11 /dev/.SRC-unix/SRC0006292046YEya
     ```
 
 
@@ -223,7 +223,7 @@ In this section, you will find examples of raw logs as generated natively by the
 === "TCP_klisten"
 
     ```
-	TCP_klisten Pipin root root OK 31 jul 2022 10:21:24.798402 0 fd15 qlimit 1
+	TCP_klisten User1 root root OK 31 jul 2022 10:21:24.798402 0 fd15 qlimit 1
     ```
 
 
@@ -231,7 +231,7 @@ In this section, you will find examples of raw logs as generated natively by the
 === "USER_1"
 
     ```
-	from hostname: unix: The privilege command /usr/sbin/lspath, is executed by user with id 501
+	from hostname: unix: The privilege command /usr/sbin/lspath, is executed by user with id 111
     ```
 
 
@@ -247,7 +247,7 @@ In this section, you will find examples of raw logs as generated natively by the
 === "USER_Login2"
 
     ```
-	USER_Login      db2ckpw                         root     Pipin OK          22 Nov 2022 13:41:34.586022  No associated roles                      user: Pipin tty: #012
+	USER_Login      db2ckpw                         root     User1 OK          22 Nov 2022 13:41:34.586022  No associated roles                      user: User1 tty: #012
     ```
 
 

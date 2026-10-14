@@ -76,6 +76,7 @@ nav:
       - "Step 3: Activate detection rules": getting_started/defend_step3_activate_detection_rules.md
       - "Step 4: Triage your first alert": getting_started/defend_step4_triage_first_alert.md
       - "Step 5: Automate with playbooks": getting_started/defend_step5_automate_with_playbooks.md
+      - "Defend best practices": getting_started/best_practices.md
     - Intelligence:
       - "Quick start: Intelligence": getting_started/quick_start_intelligence.md
       - "Step 1: Explore the threat intelligence database": getting_started/intelligence_step1_explore_threat_database.md
@@ -98,6 +99,7 @@ nav:
     - Data Models: cti/features/data_model.md
     - Consume:
       - Intelligence: cti/features/consume/intelligence.md
+      - Investigate an object: cti/features/consume/investigate_an_object.md
       - Observables: cti/features/consume/observables.md
       - Telemetry: cti/features/consume/telemetry.md
       - Feeds:
@@ -177,6 +179,8 @@ nav:
         - Create and manage cases:
           - Create a case: xdr/features/investigate/create_a_case.md
           - Manage cases: xdr/features/investigate/manage_cases.md
+          - Case custom views: xdr/features/investigate/case_custom_views.md
+          - Manage case custom views: xdr/features/investigate/manage_case_custom_views.md
         - Case templates:
           - Case templates overview: xdr/features/investigate/case_templates.md
           - Create a case template: xdr/features/investigate/create_a_case_template.md
@@ -198,6 +202,7 @@ nav:
         - Custom verdicts: xdr/features/investigate/custom_verdicts.md
         - Custom priorities: xdr/features/investigate/custom_priorities.md
       - Asset Context Panel: xdr/features/investigate/asset_context_panel.md
+      - Interpret asset risk scores: xdr/features/modules/interpret_asset_risk_scores.md
       - Events Query Language: xdr/features/investigate/events_query_language.md
       - Querying Events: xdr/features/investigate/querying_events.md
       - Query Builder:
@@ -273,6 +278,7 @@ nav:
       - Troubleshoot asset connectors: xdr/features/modules/reveal_asset_connectors_troubleshoot.md
     - Investigate assets:
       - Explore assets context: xdr/features/modules/reveal_asset_context_panel.md
+      - Asset risk scoring: xdr/features/modules/asset_risk_scoring.md
       - Visualize attack paths: xdr/features/investigate/attack_path_visualization.md
       - Discover Points of Interest: xdr/features/detect/points_of_interest.md
       - Check Endpoint Hygiene: xdr/features/modules/reveal_hygiene.md
@@ -349,8 +355,12 @@ nav:
       - Logstash: integration/ingestion_methods/https/logstash.md
     - Syslog:
       - Overview: integration/ingestion_methods/syslog/overview.md
-      - Sekoia.io Forwarder: integration/ingestion_methods/syslog/sekoiaio_forwarder.md
+      - Configure the Sekoia.io Forwarder: integration/ingestion_methods/syslog/sekoiaio_forwarder.md
+      - Route multiple technologies through one port: integration/ingestion_methods/syslog/route_multiple_technologies_through_one_port.md
+      - Secure forwarder inputs with TLS: integration/ingestion_methods/syslog/secure_forwarder_inputs_with_tls.md
+      - Monitor the Sekoia.io Forwarder: integration/ingestion_methods/syslog/monitor_the_sekoiaio_forwarder.md
       - Reduce volume in the Sekoia Forwarder: integration/ingestion_methods/syslog/filter_logs_with_sekoia_forwarder.md
+      - Troubleshoot the Sekoia.io Forwarder: integration/ingestion_methods/syslog/troubleshoot_the_sekoiaio_forwarder.md
       - Third-party syslog services: integration/ingestion_methods/syslog/syslog_service.md
       - Rsyslog: integration/ingestion_methods/syslog/rsyslog.md
       - Filter logs with Rsyslog: integration/ingestion_methods/syslog/filter_logs_with_rsyslog.md
@@ -361,6 +371,8 @@ nav:
       - Sekoia.io NetFlow Concentrator: integration/ingestion_methods/netflow/sekoiaio_netflow_concentrator.md
   - List of Intakes:
     - Overview: integration/categories/overview.md
+    - AI Agents:
+      - Hodor Activity: integration/categories/ai_agents/hodor_activity.md
     - Applicative:
       - 1Password EPM: integration/categories/applicative/1password_epm.md
       - Apache HTTP Server: integration/categories/applicative/apache.md
@@ -505,6 +517,7 @@ nav:
       - Cloudflare Gateway Network: integration/categories/network/cloudflare-gateway-network.md
       - Cloudflare HTTP requests: integration/categories/network/cloudflare-http-requests.md
       - Cloudflare Zero Trust Network Session Logs: integration/categories/network/cloudflare-zero-trust-network-session-logs.md
+      - Control D DNS: integration/categories/network/control_d_dns.md
       - EfficientIP SOLIDServer DDI: integration/categories/network/efficientip_solidserver_ddi.md
       - Ekinops OneOS: integration/categories/network/ekinops_oneos.md
       - F5 BIG-IP: integration/categories/network/f5-big-ip.md
@@ -615,6 +628,7 @@ nav:
       - Umbrella Proxy Logs: integration/categories/network_security/umbrella_proxy.md
       - Upwind: integration/categories/network_security/upwind.md
       - Varonis Data Security: integration/categories/network_security/varonis_data_security.md
+      - Varonis Data Security - SaaS: integration/categories/network_security/varonis_data_security_saas.md
       - Vectra Cognito Detect: integration/categories/network_security/vectra.md
       - Vectra Respond UX - Entity Scoring: integration/categories/network_security/vectra_respond_ux_entity_scoring.md
       - WatchGuard Firebox: integration/categories/network_security/watchguard_firebox.md

@@ -10,7 +10,7 @@ In this section, you will find examples of raw logs as generated natively by the
     ```json
 	{
         "initiated_by": {
-            "id": "61e536ebdbbe784cb2e55fb5",
+            "id": "User1",
             "type": "admin",
             "email": "john.doe@sekoia.io"
         },
@@ -59,9 +59,9 @@ In this section, you will find examples of raw logs as generated natively by the
     ```json
 	{
         "initiated_by": {
-            "id": "61e536ebdbbe784cb2e55fb5",
+            "id": "User1",
             "type": "admin",
-            "email": "maurice.moss@sekoia.io"
+            "email": "user@example.com"
         },
         "geoip": {
             "country_code": "FR",
@@ -111,7 +111,7 @@ In this section, you will find examples of raw logs as generated natively by the
         "success": true,
         "organization": "641b3db57090821c0b2f8183",
         "@version": "1",
-        "client_ip": "176.161.221.161",
+        "client_ip": "198.51.100.83",
         "id": "64930a6d00466f31842811a1",
         "timestamp": "2023-06-21T14:34:21.089Z"
     }
@@ -159,7 +159,7 @@ In this section, you will find examples of raw logs as generated natively by the
         "service": "radius",
         "organization": "641b3db57090821c0b2f8183",
         "@version": "1",
-        "client_ip": "13.14.15.16",
+        "client_ip": "198.51.100.81",
         "id": "E5223E70-F3DB-3CB4-B452-96FC2259B9EE",
         "timestamp": "2023-06-15T15:16:41Z",
         "username": "john.doe"
@@ -206,7 +206,7 @@ In this section, you will find examples of raw logs as generated natively by the
         "success": true,
         "organization": "641b3db57090821c0b2f8183",
         "@version": "1",
-        "client_ip": "20.21.22.23",
+        "client_ip": "198.51.100.82",
         "id": "842B7B84-FE16-32AF-B257-9D508FB22D22",
         "username": "jane.doe",
         "timestamp": "2023-06-15T15:17:41Z"
@@ -221,7 +221,7 @@ In this section, you will find examples of raw logs as generated natively by the
     ```json
 	{
         "initiated_by": {
-            "id": "619294e65bb5c23fb2b1ce09",
+            "id": "User1",
             "type": "user",
             "username": "jane.doe"
         },
@@ -289,7 +289,7 @@ In this section, you will find examples of raw logs as generated natively by the
     ```json
 	{
         "initiated_by": {
-            "id": "627e7e94c17c5a34e72b862a",
+            "id": "User1",
             "type": "user",
             "username": "john.doe"
         },
@@ -342,7 +342,7 @@ In this section, you will find examples of raw logs as generated natively by the
         "service": "sso",
         "organization": "641b3db57090821c0b2f8183",
         "@version": "1",
-        "client_ip": "9.10.11.12",
+        "client_ip": "198.51.100.6",
         "id": "648b24c48eae32f4adabc27e",
         "idp_initiated": false,
         "timestamp": "2023-06-15T14:48:36.495420839Z"
@@ -357,7 +357,7 @@ In this section, you will find examples of raw logs as generated natively by the
     ```json
 	{
         "initiated_by": {
-            "id": "611d175820c84b11c28262e2",
+            "id": "User1",
             "type": "user",
             "username": "john.doe"
         },
@@ -433,9 +433,9 @@ In this section, you will find examples of raw logs as generated natively by the
     ```json
 	{
         "initiated_by": {
-            "id": "603e0c284295c570a179ef4a",
+            "id": "User1",
             "type": "admin",
-            "email": "maurice.moss@sekoia.io"
+            "email": "user@example.com"
         },
         "geoip": {
             "country_code": "IE",
@@ -447,7 +447,7 @@ In this section, you will find examples of raw logs as generated natively by the
             "longitude": -6.2591
         },
         "resource": {
-            "id": "6127579ec58b6d6144c06492",
+            "id": "User1",
             "type": "user",
             "username": "jane.doe"
         },
@@ -500,9 +500,9 @@ In this section, you will find examples of raw logs as generated natively by the
 	{
         "initiated_by": {
             "source": "scim",
-            "id": "5bf6defbdcd8233029e0c599",
+            "id": "User1",
             "type": "admin",
-            "email": "maurice.moss@sekoia.io"
+            "email": "user@example.com"
         },
         "geoip": {
             "country_code": "IE",
@@ -514,7 +514,7 @@ In this section, you will find examples of raw logs as generated natively by the
             "longitude": -6.2591
         },
         "resource": {
-            "id": "627232d9c2bb20373d84eb63",
+            "id": "User1",
             "type": "user",
             "username": "jane.doe"
         },
@@ -603,7 +603,7 @@ In this section, you will find examples of raw logs as generated natively by the
         "success": true,
         "organization": "641b3db57090821c0b2f8183",
         "@version": "1",
-        "client_ip": "4.5.6.7",
+        "client_ip": "198.51.100.42",
         "id": "64907cb6e968be7fe5b14d80",
         "message_chain": {},
         "timestamp": "2023-06-19T16:05:10.657Z"
@@ -618,10 +618,10 @@ In this section, you will find examples of raw logs as generated natively by the
     ```json
 	{
         "initiated_by": {
-            "id": "5bf6defbdcd8233029e0c599",
+            "id": "User1",
             "source": "scim",
             "type": "admin",
-            "email": "maurice.moss@sekoia.io"
+            "email": "user@example.com"
         },
         "geoip": {
             "country_code": "IE",
@@ -633,9 +633,9 @@ In this section, you will find examples of raw logs as generated natively by the
             "region_code": "L"
         },
         "resource": {
-            "id": "628cf9c0d6f4831f8192fa8d",
+            "id": "User1",
             "type": "user",
-            "username": "john.wick"
+            "username": "User1"
         },
         "changes": [
             {

@@ -7,7 +7,7 @@ In this section, you will find examples of raw logs as generated natively by the
 === "host_checker_policy_failed"
 
     ```
-	id=firewall time="2021-01-28 13:46:08" pri=6 fw=172.16.128.22 vpn=CB2XXPCS02 ivs=Root user=bob realm="SEKOIA_User" roles="VDI-Pulse_User_Role" proto=auth src=176.134.164.62 dst= dstname= type=vpn op= arg="" result= sent= rcvd= agent="" duration= msg="AUT24804: Host Checker policy 'Sekoia_Host Checker' failed on host '176.134.164.62' address '00-d8-61-35-80-81' for user 'bob' reason 'Rule-Antivirus_Check:Le logiciel antivirus indiqué dans les exigences de sécurité n'est pas installé.'."
+	id=firewall time="2021-01-28 13:46:08" pri=6 fw=172.16.128.22 vpn=CB2XXPCS02 ivs=Root user=bob realm="host.example.com" roles="VDI-Pulse_User_Role" proto=auth src=198.51.100.79 dst= dstname= type=vpn op= arg="" result= sent= rcvd= agent="" duration= msg="AUT24804: Host Checker policy 'Sekoia_Host Checker' failed on host '198.51.100.79' address '02:00:00:00:00:43' for user 'bob' reason 'Rule-Antivirus_Check:Le logiciel antivirus indiqué dans les exigences de sécurité n'est pas installé.'."
     ```
 
 
@@ -15,7 +15,7 @@ In this section, you will find examples of raw logs as generated natively by the
 === "host_checker_policy_success"
 
     ```
-	id=firewall time="2021-01-28 13:46:05" pri=6 fw=172.16.128.22 vpn=CB2XXPCS02 ivs=Root user=alice realm="SEKOIA_User" roles="SEKOIA_User_Role" proto=auth src=19.160.74.9 dst= dstname= type=vpn op= arg="" result= sent= rcvd= agent="" duration= msg="AUT24803: Host Checker policy 'Sekoia_Host Checker' passed on host '19.160.74.9' address '60-f2-62-ea-2d-a1' for user 'alice'."
+	id=firewall time="2021-01-28 13:46:05" pri=6 fw=172.16.128.22 vpn=CB2XXPCS02 ivs=Root user=alice realm="host.example.com" roles="host.example.com_Role" proto=auth src=198.51.100.78 dst= dstname= type=vpn op= arg="" result= sent= rcvd= agent="" duration= msg="AUT24803: Host Checker policy 'Sekoia_Host Checker' passed on host '198.51.100.78' address '02:00:00:00:00:42' for user 'alice'."
     ```
 
 
@@ -23,7 +23,7 @@ In this section, you will find examples of raw logs as generated natively by the
 === "login_failed"
 
     ```
-	id=firewall time="2021-01-28 14:14:04" pri=6 fw=172.16.128.22 vpn=CB2XXPCS02 ivs=Default Network user=bob realm="SEKOIA_User" roles="" proto=auth src=176.168.192.159 dst= dstname= type=vpn op= arg="" result= sent= rcvd= agent="" duration= msg="AUT23457: Login failed using auth server RSA (ACE Server).  Reason: Failed"
+	id=firewall time="2021-01-28 14:14:04" pri=6 fw=172.16.128.22 vpn=CB2XXPCS02 ivs=Default Network user=bob realm="host.example.com" roles="" proto=auth src=198.51.100.77 dst= dstname= type=vpn op= arg="" result= sent= rcvd= agent="" duration= msg="AUT23457: Login failed using auth server RSA (ACE Server).  Reason: Failed"
     ```
 
 
@@ -31,7 +31,7 @@ In this section, you will find examples of raw logs as generated natively by the
 === "test_event_aut20920"
 
     ```
-	id=firewall time="2023-10-17 10:21:15" pri=6 fw=3.4.5.6 vpn=EX023-V6 user=MYDomain\\johndoe realm="Example" roles="Example_Sales" type=mgmt proto=auth src=1.2.3.4 dst= dstname= sent= rcvd= msg="AUT20920: Connection from IP 1.2.3.4 not authenticated yet (URL=/cgi/pal?tm=26&key=1234567890)"
+	id=firewall time="2023-10-17 10:21:15" pri=6 fw=3.4.5.6 vpn=EX023-V6 user=User1 realm="Example" roles="Example_Sales" type=mgmt proto=auth src=1.2.3.4 dst= dstname= sent= rcvd= msg="AUT20920: Connection from IP 1.2.3.4 not authenticated yet (URL=/cgi/pal?tm=26&key=1234567890)"
 
     ```
 
@@ -40,7 +40,7 @@ In this section, you will find examples of raw logs as generated natively by the
 === "test_event_aut23278"
 
     ```
-	id=firewall time="2025-09-29 07:44:12" pri=6 fw=1.2.3.4 vpn=VPN-TEST ivs=Default Network user=john.doe@company.fr realm="Realm_TEST_Integration" roles="" sessionID="" proto= src=1.2.3.4 dst= dstname= type=vpn op= arg="" result= sent= rcvd= agent="" duration= msg="AUT23278: Host Checker realm restrictions successfully passed for john.doe@company.fr/Realm_TEST_Integration , with certificate 'serialNumber=11111111-1111-1111-1111-111111111111, GN=John, SN=DOE, CN=DOE John, OU=0002 111111111, organizationIdentifier=IDFR-111111111, O=ORGA, C=FR'"
+	id=firewall time="2025-09-29 07:44:12" pri=6 fw=1.2.3.4 vpn=VPN-TEST ivs=Default Network user=john.doe@company.fr realm="host.example.com" roles="" sessionID="" proto= src=1.2.3.4 dst= dstname= type=vpn op= arg="" result= sent= rcvd= agent="" duration= msg="AUT23278: Host Checker realm restrictions successfully passed for john.doe@company.fr/host.example.com , with certificate 'serialNumber=11111111-1111-1111-1111-111111111111, GN=John, SN=DOE, CN=DOE John, OU=0002 111111111, organizationIdentifier=IDFR-111111111, O=ORGA, C=FR'"
     ```
 
 
@@ -48,7 +48,7 @@ In this section, you will find examples of raw logs as generated natively by the
 === "test_event_aut24326"
 
     ```
-	id=firewall time="2025-09-29 07:44:12" pri=6 fw=1.2.3.4 vpn=VPN-TEST ivs=Default Network user=john.doe@company.fr realm="Realm_TEST_Integration" roles="" sessionID="" proto=auth src=1.2.3.4 dst= dstname= type=vpn op= arg="" result= sent= rcvd= agent="Pulse-Secure/22.8.1.31437 (Windows 10) Pulse/22.8.1.31437" duration= msg="AUT24326: Primary authentication successful for john.doe@company.fr/DomainName from 1.2.3.4"
+	id=firewall time="2025-09-29 07:44:12" pri=6 fw=1.2.3.4 vpn=VPN-TEST ivs=Default Network user=john.doe@company.fr realm="host.example.com" roles="" sessionID="" proto=auth src=1.2.3.4 dst= dstname= type=vpn op= arg="" result= sent= rcvd= agent="Pulse-Secure/22.8.1.31437 (Windows 10) Pulse/22.8.1.31437" duration= msg="AUT24326: Primary authentication successful for john.doe@company.fr/DomainName from 1.2.3.4"
     ```
 
 
@@ -56,7 +56,7 @@ In this section, you will find examples of raw logs as generated natively by the
 === "test_event_aut24414"
 
     ```
-	id=firewall time="2025-09-29 07:44:12" pri=6 fw=1.2.3.4 vpn=VPN-NAME ivs=Default Network user=john.doe@company.fr realm="Realm_TEST_Integration" roles="Role_Test-Integration" sessionID="1111111111" proto=auth src=1.2.3.4 dst= dstname= type=vpn op= arg="" result= sent= rcvd= agent="Pulse-Secure/22.8.1.31437 (Windows 10) Pulse/22.8.1.31437" duration= msg="AUT24414: Agent login succeeded for john.doe@company.fr/Realm_TEST_Integration (session:sid1111111111111111111111111111111111111111111111111) from 1.2.3.4 with Pulse-Secure/22.8.1.31437 (Windows 10) Pulse/22.8.1.31437."
+	id=firewall time="2025-09-29 07:44:12" pri=6 fw=1.2.3.4 vpn=VPN-NAME ivs=Default Network user=john.doe@company.fr realm="host.example.com" roles="Role_Test-Integration" sessionID="1111111111" proto=auth src=1.2.3.4 dst= dstname= type=vpn op= arg="" result= sent= rcvd= agent="Pulse-Secure/22.8.1.31437 (Windows 10) Pulse/22.8.1.31437" duration= msg="AUT24414: Agent login succeeded for john.doe@company.fr/host.example.com (session:User1) from 1.2.3.4 with Pulse-Secure/22.8.1.31437 (Windows 10) Pulse/22.8.1.31437."
     ```
 
 
@@ -74,7 +74,7 @@ In this section, you will find examples of raw logs as generated natively by the
 === "test_event_aut32033"
 
     ```
-	id=firewall time="2025-09-29 07:44:12" pri=6 fw=1.2.3.4 vpn=VPN-NAME ivs=Default Network user=john.doe@company.fr realm="Realm_TEST_Integration" roles="Role_Test-integration" sessionID="1111111111" proto=auth src=1.2.3.4 dst= dstname= type=vpn op= arg="" result= sent= rcvd= agent="Pulse-Secure/22.8.1.31437 (Windows 10) Pulse/22.8.1.31437" duration= msg="AUT32033: Session created for user: [john.doe@company.fr/Realm_TEST_Integration] from [1.2.3.4] with primary auth-server type: [Certificate Server], primary auth-server name: [CertServerAuthServer], secondary auth-server type: [], secondary auth-servername: [], secondary auth-server user: [], mac-address: [11-22-33-44-55-66]."
+	id=firewall time="2025-09-29 07:44:12" pri=6 fw=1.2.3.4 vpn=VPN-NAME ivs=Default Network user=john.doe@company.fr realm="host.example.com" roles="Role_Test-integration" sessionID="1111111111" proto=auth src=1.2.3.4 dst= dstname= type=vpn op= arg="" result= sent= rcvd= agent="Pulse-Secure/22.8.1.31437 (Windows 10) Pulse/22.8.1.31437" duration= msg="AUT32033: Session created for user: [john.doe@company.fr/host.example.com] from [1.2.3.4] with primary auth-server type: [Certificate Server], primary auth-server name: [CertServerAuthServer], secondary auth-server type: [], secondary auth-servername: [], secondary auth-server user: [], mac-address: [02:00:00:00:00:44]."
     ```
 
 
@@ -82,7 +82,7 @@ In this section, you will find examples of raw logs as generated natively by the
 === "test_event_aut32051"
 
     ```
-	id=firewall time="2025-09-29 07:44:19" pri=6 fw=10.253.17.22 vpn=VPN-TEST ivs=Default Network user=john.doe@company.fr realm="Realm_TEST_Integration" roles="Role_Test_integration" sessionID="1111111111" proto=auth src=1.2.3.4 dst= dstname= type=vpn op= arg="" result= sent= rcvd= agent="Pulse-Secure/22.8.1.31437 (Windows 10) Pulse/22.8.1.31437" duration= msg="AUT32051: Established connection with type: [ESP]"
+	id=firewall time="2025-09-29 07:44:19" pri=6 fw=10.253.17.22 vpn=VPN-TEST ivs=Default Network user=john.doe@company.fr realm="host.example.com" roles="Role_Test_integration" sessionID="1111111111" proto=auth src=1.2.3.4 dst= dstname= type=vpn op= arg="" result= sent= rcvd= agent="Pulse-Secure/22.8.1.31437 (Windows 10) Pulse/22.8.1.31437" duration= msg="AUT32051: Established connection with type: [ESP]"
     ```
 
 
@@ -99,7 +99,15 @@ In this section, you will find examples of raw logs as generated natively by the
 === "test_event_nwc23464"
 
     ```
-	id=firewall time="2025-09-29 07:44:12" pri=6 fw=1.2.3.4 vpn=VPN-NAME ivs=Default Network user=john.doe@company.fr realm="Realm_TEST_Integration" roles="Role_Test-integration" sessionID="1111111111" proto= src=1.2.3.4 dst= dstname= type=vpn op= arg="" result= sent= rcvd= agent="Pulse-Secure/22.8.1.31437 (Windows 10) Pulse/22.8.1.31437" duration= msg="NWC23464: VPN Tunneling: Session started for user  (session: sid111111111111111111111111111111111111111111111111) with IPv4 address 5.6.7.8, hostname HOSTNAME"
+	id=firewall time="2025-09-29 07:44:12" pri=6 fw=1.2.3.4 vpn=VPN-NAME ivs=Default Network user=john.doe@company.fr realm="host.example.com" roles="Role_Test-integration" sessionID="1111111111" proto= src=1.2.3.4 dst= dstname= type=vpn op= arg="" result= sent= rcvd= agent="Pulse-Secure/22.8.1.31437 (Windows 10) Pulse/22.8.1.31437" duration= msg="NWC23464: VPN Tunneling: Session started for user  (session:User1) with IPv4 address 5.6.7.8, hostname HOSTNAME"
+    ```
+
+
+
+=== "test_event_nwc23464_harmonized_mapping"
+
+    ```
+	id=firewall time="2026-09-22 07:38:14" pri=6 fw=203.0.113.26 vpn=ISA8000V-CID ivs=Default Network user=test.user@example.org realm="host.example.com" roles="Role_TEST_Integration" sessionID="4b8c853c05" proto= src=198.51.100.111 dst= dstname= type=vpn op= arg="" result= sent= rcvd= agent="Pulse-Secure/22.8.1.31437 (Windows 11) Pulse/22.8.1.31437" duration= msg="NWC23464: VPN Tunneling: Session started for user  (session:User1) with IPv4 address 192.0.2.40, hostname host.example.com"
     ```
 
 
@@ -107,7 +115,7 @@ In this section, you will find examples of raw logs as generated natively by the
 === "test_event_nwc23508"
 
     ```
-	id=firewall time="2025-09-29 09:20:20" pri=6 fw=10.20.30.40 vpn=VPN-TEST-INTEGRATION ivs=Default Network user=john.doe@company.fr realm="Realm_TEST_Realm" roles="Role_Test_integration" sessionID="1111111111" proto= src=1.2.3.4 dst= dstname= type=vpn op= arg="" result= sent= rcvd= agent="Pulse-Secure/22.8.1.31437 (Windows 10) Pulse/22.8.1.31437" duration= msg="NWC23508: Key Exchange number 7 occurred for user with NCIP 1.2.3.4 "
+	id=firewall time="2025-09-29 09:20:20" pri=6 fw=10.20.30.40 vpn=VPN-TEST-INTEGRATION ivs=Default Network user=john.doe@company.fr realm="host.example.com" roles="Role_Test_integration" sessionID="1111111111" proto= src=1.2.3.4 dst= dstname= type=vpn op= arg="" result= sent= rcvd= agent="Pulse-Secure/22.8.1.31437 (Windows 10) Pulse/22.8.1.31437" duration= msg="NWC23508: Key Exchange number 7 occurred for user with NCIP 1.2.3.4 "
     ```
 
 
@@ -115,7 +123,7 @@ In this section, you will find examples of raw logs as generated natively by the
 === "test_event_nwc23508_2"
 
     ```
-	id=firewall time="2025-09-29 08:00:19" pri=6 fw=1.2.3.4 vpn=VPN-TEST ivs=Default Network user=john.doe@company.fr realm="Realm_TEST_Integration" roles="Role_Test_integration" sessionID="1111111111" proto= src=5.6.7.8 dst= dstname= type=vpn op= arg="" result= sent= rcvd= agent="Pulse-Secure/22.8.1.31437 (Windows 10) Pulse/22.8.1.31437" duration= msg="NWC23508: Key Exchange number 2 occurred for user with NCIP 10.20.30.40 "
+	id=firewall time="2025-09-29 08:00:19" pri=6 fw=1.2.3.4 vpn=VPN-TEST ivs=Default Network user=john.doe@company.fr realm="host.example.com" roles="Role_Test_integration" sessionID="1111111111" proto= src=5.6.7.8 dst= dstname= type=vpn op= arg="" result= sent= rcvd= agent="Pulse-Secure/22.8.1.31437 (Windows 10) Pulse/22.8.1.31437" duration= msg="NWC23508: Key Exchange number 2 occurred for user with NCIP 10.20.30.40 "
     ```
 
 
@@ -123,7 +131,7 @@ In this section, you will find examples of raw logs as generated natively by the
 === "test_event_nwc30477"
 
     ```
-	id=firewall time="2025-09-29 07:44:19" pri=6 fw=1.2.3.4 vpn=VPN-NAME ivs=Default Network user=john.doe@company.fr realm="Realm_Test-integration" roles="Role_Test-integration" sessionID="1111111111" proto= src=1.2.3.4 dst= dstname= type=vpn op= arg="" result= sent= rcvd= agent="Pulse-Secure/22.8.1.31437 (Windows 10) Pulse/22.8.1.31437" duration= msg="NWC30477: VPN Tunneling: User with IP 5.6.7.8 connected with ESP transport mode. "
+	id=firewall time="2025-09-29 07:44:19" pri=6 fw=1.2.3.4 vpn=VPN-NAME ivs=Default Network user=john.doe@company.fr realm="host.example.com" roles="Role_Test-integration" sessionID="1111111111" proto= src=1.2.3.4 dst= dstname= type=vpn op= arg="" result= sent= rcvd= agent="Pulse-Secure/22.8.1.31437 (Windows 10) Pulse/22.8.1.31437" duration= msg="NWC30477: VPN Tunneling: User with IP 5.6.7.8 connected with ESP transport mode. "
     ```
 
 
@@ -166,7 +174,7 @@ In this section, you will find examples of raw logs as generated natively by the
 === "unauthenticated_request"
 
     ```
-	id=firewall time="2021-03-04 17:05:15" pri=6 fw=172.16.128.22 vpn=CB2XXPCS02 ivs=Default Network user=System realm="" roles="" proto= src=93.19.66.118 dst= dstname= type=vpn op= arg="" result= sent= rcvd= agent="" duration= msg="AUT31556: Unauthenticated request url /dana/js?prot=1&svc=4 came from IP 93.19.66.118."
+	id=firewall time="2021-03-04 17:05:15" pri=6 fw=172.16.128.22 vpn=CB2XXPCS02 ivs=Default Network user=System realm="" roles="" proto= src=198.51.100.80 dst= dstname= type=vpn op= arg="" result= sent= rcvd= agent="" duration= msg="AUT31556: Unauthenticated request url /dana/js?prot=1&svc=4 came from IP 93.19.66.118."
     ```
 
 

@@ -234,7 +234,7 @@ In this section, you will find examples of raw logs as generated natively by the
 
     ```json
 	{
-        "AccountID": "1d1e650b3385b95db72bba7cfb1287e9",
+        "AccountID": "00000000-0000-0000-0000-000000000000",
         "Action": "block",
         "BlockedFileHash": "7accd179e8a6b2fc907e7e8d087c52a7f48084852724b03d25bebcada1acbca5",
         "BlockedFileName": "",
@@ -242,10 +242,10 @@ In this section, you will find examples of raw logs as generated natively by the
         "BlockedFileSize": 0,
         "BlockedFileType": "",
         "Datetime": "2023-05-02T12:43:26Z",
-        "DestinationIP": "185.199.109.133",
+        "DestinationIP": "198.51.100.38",
         "DestinationPort": 443,
         "DeviceID": "b72ac397-e5c3-913e-11ed-03face9f2b6b",
-        "DeviceName": "DESKTOP-ABCDEF",
+        "DeviceName": "host.example.com",
         "DownloadedFileNames": [
             "mimikatz_trunk.zip"
         ],
@@ -261,23 +261,23 @@ In this section, you will find examples of raw logs as generated natively by the
                 }
             ]
         },
-        "HTTPHost": "objects.githubusercontent.com",
+        "HTTPHost": "host.example.com",
         "HTTPMethod": "GET",
         "HTTPStatusCode": 200,
         "HTTPVersion": "HTTP/2",
         "IsIsolated": false,
         "PolicyID": "",
         "PolicyName": "",
-        "Referer": "https://github.com/gentilkiwi/mimikatz/releases",
+        "Referer": "https://example.com/gentilkiwi/mimikatz/releases",
         "RequestID": "184ee7e16800003d0d86472000000001",
-        "SourceIP": "15.188.186.81",
+        "SourceIP": "198.51.100.34",
         "SourceInternalIP": "",
         "SourcePort": 49907,
-        "URL": "https://objects.githubusercontent.com/github-production-release-asset-2e65be/18496166/28e3acb5-ca66-40d5-bc68-f76f5bfabecf?X-Amz-Algorithm=AWS4-HMAC-SHA256&response-content-disposition=attachment%3B%20filename%3Dmimikatz_trunk.zip",
+        "URL": "https://example.com/github-production-release-asset-2e65be/18496166/28e3acb5-ca66-40d5-bc68-f76f5bfabecf?X-Amz-Algorithm=AWS4-HMAC-SHA256&response-content-disposition=attachment%3B%20filename%3Dmimikatz_trunk.zip",
         "UntrustedCertificateAction": "none",
         "UploadedFileNames": [],
         "UserAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36 Edg/112.0.1722.64",
-        "UserID": "2c46cdd9-92e3-5e5f-b3cf-67965d7c33e3"
+        "UserID": "00000000-0000-0000-0000-000000000000"
     }
     ```
 
@@ -288,7 +288,7 @@ In this section, you will find examples of raw logs as generated natively by the
 
     ```json
 	{
-        "AccountID": "1d1e650b3385b95db72bba7cfb1287e9",
+        "AccountID": "00000000-0000-0000-0000-000000000000",
         "Action": "allow",
         "BlockedFileHash": "",
         "BlockedFileName": "",
@@ -307,7 +307,7 @@ In this section, you will find examples of raw logs as generated natively by the
         "FileInfo": {
             "files": []
         },
-        "HTTPHost": "www.facebook.com",
+        "HTTPHost": "host.example.com",
         "HTTPMethod": "GET",
         "HTTPVersion": "HTTP/2",
         "IsIsolated": false,
@@ -315,9 +315,9 @@ In this section, you will find examples of raw logs as generated natively by the
         "PolicyName": "",
         "Referer": "",
         "RequestID": "1725de5f0b000021551771e400000001",
-        "SourceIP": "15.188.186.81",
+        "SourceIP": "198.51.100.34",
         "SourcePort": 39998,
-        "URL": "https://www.facebook.com/",
+        "URL": "https://example.com/",
         "UntrustedCertificateAction": "none",
         "UploadedFileNames": [],
         "UserAgent": "curl/7.81.0",
@@ -338,7 +338,7 @@ In this section, you will find examples of raw logs as generated natively by the
         "DestinationIP": "1.2.3.4",
         "DestinationPort": 443,
         "DeviceID": "11111111-1111-1111-1111-111111111111",
-        "DeviceName": "Device01",
+        "DeviceName": "host.example.com",
         "Email": "john.doe@mail.com",
         "OverrideIP": "",
         "OverridePort": 0,

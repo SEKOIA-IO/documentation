@@ -4,7 +4,7 @@ Rsyslog and Syslog-ng let you drop unwanted events at the forwarder level, befor
 
 ## Prerequisites
 
-- A working Sekoia Forwarder deployment using Rsyslog or Syslog-ng. See [Sekoia Forwarder documentation](/integration/ingestion_methods/sekoiaio_forwarder.md) for setup instructions.
+- A working Sekoia Forwarder deployment using Rsyslog or Syslog-ng. See [Sekoia Forwarder documentation](/integration/ingestion_methods/syslog/sekoiaio_forwarder.md) for setup instructions.
 - Access to the host running the forwarder.
 - Familiarity with the event structure of the log source you want to filter.
 

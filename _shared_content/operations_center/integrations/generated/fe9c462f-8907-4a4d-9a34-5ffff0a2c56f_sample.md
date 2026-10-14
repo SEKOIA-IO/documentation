@@ -7,7 +7,7 @@ In this section, you will find examples of raw logs as generated natively by the
 === "test_auth_access_1"
 
     ```
-	Info     EXAMPLE LOGIN ATTEMPT: boxconfig[50357]: Login localhost_EXAMPLE from 127.0.0.1 : Allowed.
+	Info     EXAMPLE LOGIN ATTEMPT: boxconfig[50357]: Login User1_EXAMPLE from 127.0.0.1 : Allowed.
     ```
 
 
@@ -15,7 +15,7 @@ In this section, you will find examples of raw logs as generated natively by the
 === "test_auth_access_2"
 
     ```
-	Info     EXAMPLE boxconfig[50512]: Session localhost_EXAMPLE: Closed
+	Info     EXAMPLE boxconfig[50512]: Session User1_EXAMPLE: Closed
     ```
 
 
@@ -31,7 +31,7 @@ In this section, you will find examples of raw logs as generated natively by the
 === "test_auth_service_1"
 
     ```
-	Info     MACHINE-F380 Received 3 users from EXAMPLEVPN (DC1 IP = 1.2.3.4).
+	Info     MACHINE-F380 Received 3 users from host.example.com (DC1 IP = 1.2.3.4).
     ```
 
 
@@ -159,7 +159,7 @@ In this section, you will find examples of raw logs as generated natively by the
 === "test_event_1"
 
     ```
-	Info     MACHINE-F380 event: [1071065] Insert Event from 127.0.0.1:56405 - (D|3|boxfw|3|firewall|4015|9.10.11.12:443|MACHINE-F380_5-4_1|1740029102|TCP 5.6.7.8:80 (bond0.21) -> 9.10.11.12:443)
+	Info     MACHINE-F380 event: [1071065] Insert Event from 127.0.0.1:56405 - (D|3|boxfw|3|firewall|4015|198.51.100.6:443|MACHINE-F380_5-4_1|1740029102|TCP 5.6.7.8:80 (bond0.21) -> 198.51.100.6:443)
     ```
 
 
@@ -199,7 +199,7 @@ In this section, you will find examples of raw logs as generated natively by the
 === "test_firewall_activity_1"
 
     ```
-	Info     MACHINE-F380 Allow: LOUT|UDP|bond0.603|1.2.3.4|61988|00:11:22:33:44:55|5.6.7.8|53|domain||RULENAME|0|9.10.11.12|5.6.7.8|0|1|0|0|0|0||||||
+	Info     MACHINE-F380 Allow: LOUT|UDP|bond0.603|1.2.3.4|61988|02:00:00:00:00:03|5.6.7.8|53|domain||RULENAME|0|198.51.100.6|5.6.7.8|0|1|0|0|0|0||||||
     ```
 
 
@@ -207,7 +207,7 @@ In this section, you will find examples of raw logs as generated natively by the
 === "test_firewall_activity_2"
 
     ```
-	Security EXAMPLE LocalBlock: <cumulative>|UDP|eth0|5.6.7.8|0|00:00:00:00:00:00|9.10.11.12|811|||<no-match>|4003|||0|24|0|0|0|0||||||
+	Security EXAMPLE LocalBlock: <cumulative>|UDP|eth0|5.6.7.8|0|02:00:00:00:00:04|198.51.100.6|811|||<no-match>|4003|||0|24|0|0|0|0||||||
     ```
 
 
@@ -215,7 +215,7 @@ In this section, you will find examples of raw logs as generated natively by the
 === "test_firewall_threats_1"
 
     ```
-	Warning  MACHINE-F380 firewall: [Request] Allow:   IPS ALLIP(0) 9.10.11.12 -> 1.2.3.4:0 |[ID: 5000002 TCPIP Port or IP Address Scan]||3|Probing
+	Warning  MACHINE-F380 firewall: [Request] Allow:   IPS ALLIP(0) 198.51.100.6 -> 1.2.3.4:0 |[ID: 5000002 TCPIP Port or IP Address Scan]||3|Probing
     ```
 
 

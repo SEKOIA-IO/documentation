@@ -14,9 +14,9 @@ In this section, you will find examples of raw logs as generated natively by the
         "source": 8903162277747742819,
         "seen_at": 1764596280793,
         "source_ip": "192.0.2.0",
-        "source_mac": "00:1A:2B:3C:4D:5E",
+        "source_mac": "02:00:00:00:00:48",
         "dest_ip": "198.51.100.0",
-        "dest_mac": "00:1A:2B:3C:4D:5E",
+        "dest_mac": "02:00:00:00:00:48",
         "proto_path": "/Ethernet/Ipv4/Tcp/Http/",
         "network_protocol": "http"
     }

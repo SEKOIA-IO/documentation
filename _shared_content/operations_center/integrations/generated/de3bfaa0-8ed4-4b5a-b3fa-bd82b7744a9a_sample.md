@@ -442,7 +442,7 @@ In this section, you will find examples of raw logs as generated natively by the
         "status": "OPEN",
         "severity": "HIGH",
         "entitySnapshot": {
-            "name": "MyDBServer",
+            "name": "host.example.com",
             "type": "DB_SERVER"
         }
     }
@@ -480,7 +480,7 @@ In this section, you will find examples of raw logs as generated natively by the
         "status": "OPEN",
         "severity": "HIGH",
         "entitySnapshot": {
-            "name": "EXAMPLE-AGW001-SharedServices",
+            "name": "host.example.com",
             "type": "LOAD_BALANCER"
         }
     }
@@ -518,7 +518,7 @@ In this section, you will find examples of raw logs as generated natively by the
         "status": "OPEN",
         "severity": "HIGH",
         "entitySnapshot": {
-            "name": "test-allincluded",
+            "name": "host.example.com",
             "type": "VIRTUAL_WORKSTATION"
         }
     }

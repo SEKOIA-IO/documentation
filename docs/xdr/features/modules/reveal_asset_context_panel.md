@@ -52,6 +52,12 @@ Use this tab to validate that protections are in place during triage, identify w
 
 <img width="389" height="465" alt="Hygiene tab example" src="https://github.com/user-attachments/assets/8e476aa6-2bb5-4284-8f71-374042bd936f" />
 
+## Asset risk scoring
+
+The **Overview** tab displays an Asset Risk Score that represents the current security priority of the host asset. The score combines persistent exposure, recent activity, and configured asset criticality.
+
+For the scoring model and calculation rules, see [Asset risk scoring](/xdr/features/modules/asset_risk_scoring.md). For interface guidance, see [Interpret asset risk scores](/xdr/features/modules/interpret_asset_risk_scores.md).
+
 ## Vulnerabilities tab
 
 The **Vulnerabilities** tab lists known CVE exposures affecting the asset, aggregated from connected vulnerability scanners and cloud or IaaS APIs. Each CVE is enriched with reference data from the NIST National Vulnerability Database (NVD).
@@ -73,7 +79,11 @@ Select a row to expand it and view the full description, the CVSS vector and exp
 !!! note Exploitability 
     Exploitability is determined by the presence of cisaExploitAdd. This field may be missing or delayed due to synchronization or enrichment gaps.
     
+
 ### Unified risk score
+!!! note "Asset score and vulnerability score"
+
+    The **Unified risk score** applies to an individual vulnerability. The **Asset Risk Score** applies to the host asset and combines exposure, recent activity, and criticality.
 
 !!! note "Asset score and vulnerability score"
 

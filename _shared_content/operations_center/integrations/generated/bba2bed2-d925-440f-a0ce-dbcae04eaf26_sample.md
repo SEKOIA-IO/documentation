@@ -63,7 +63,7 @@ In this section, you will find examples of raw logs as generated natively by the
     ```json
 	{
         "event_type": "dga",
-        "domain_name": "pgoadcmgqfacj.com",
+        "domain_name": "host.example.com",
         "timestamp_detected": "2023-03-22T10:25:54.903Z",
         "uuid": "4e4b3104-06ba-4277-899e-149a74a0671c",
         "severity": 1,
@@ -135,12 +135,12 @@ In this section, you will find examples of raw logs as generated natively by the
             "http_port": 8080,
             "protocol": "HTTP/1.1",
             "status": 200,
-            "hostname": "tsevid-synonymi.justdanceatsea.com",
+            "hostname": "host.example.com",
             "url": "/6SuCHKKkf8Sf1aFXJPqD0R6r3oEDCrbwHFm23EU-Af2zwWdHgpn6mEGu5XlxFust",
             "length": 77068,
             "http_content_type": "application/x-shockwave-flash",
             "http_user_agent": "Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 6.1; Trident/4.0; SLCC2; .NET CLR 2.0.50727; .NET CLR 3.5.30729; .NET CLR 3.0.30729)",
-            "http_refer": "http://tsevid-synonymi.justdanceatsea.com:8080/ndf4xx22ci.php"
+            "http_refer": "http://host.example.com:8080/ndf4xx22ci.php"
         },
         "type": "malcore",
         "in_iface": "monvirt",
@@ -250,7 +250,7 @@ In this section, you will find examples of raw logs as generated natively by the
 	{
         "external_links": [
             {
-                "url": "https://urlhaus.abuse.ch/url/2269068/",
+                "url": "https://host.example.com/url/2269068/",
                 "source_name": "URLHaus Abuse.ch"
             }
         ],
@@ -344,9 +344,9 @@ In this section, you will find examples of raw logs as generated natively by the
 	{
         "event_type": "alert",
         "http": {
-            "url": "/bsb/debugnosso/index.php?N=GO-GO-GADGET-PC-inspector-gadget%20=%20%20%20%20Iniciou%20o%20executar%20%20http://65.181.125.193/a35new/w7.zip%7Chttp://65.181.125.193/a35new/w7.zip%7C32%7Chttp://65.181.125.193/a35new/dll.dll",
+            "url": "//example.com/bsb/debugnosso/index.php?N=GO-GO-GADGET-PC-inspector-gadget%20=%20%20%20%20Iniciou%20o%20executar%20%20http://example.com/a35new/w7.zip%7Chttp://example.com/a35new/w7.zip%7C32%7Chttp://example.com/a35new/dll.dll",
             "protocol": "HTTP/1.1",
-            "hostname": "www.devyatinskiy.ru",
+            "hostname": "host.example.com",
             "length": 0,
             "http_method": "GET"
         },
@@ -388,13 +388,13 @@ In this section, you will find examples of raw logs as generated natively by the
         },
         "tx_id": 5,
         "ether": {
-            "dest_mac": "90:e2:ba:a6:a4:90",
-            "src_mac": "90:e2:ba:a6:a4:91"
+            "dest_mac": "02:00:00:00:00:28",
+            "src_mac": "02:00:00:00:00:29"
         },
         "payload": "R0VUIC9kb3dubG9hZC9RanRHRGx0bWNlLzE2MDgyMDE2dmVjTzdPa0wzeUxQSUNsZW96aWJLRS52YnM/ZHNpZD1ndjVucTMuNDAwYjg2YzcxOTZmOWU4Y2NkZTM1MzcwZWIwYTU0Yjkmc2Jzcj0yZjViMmRmMGFlMGE4Yzc1NTFjN2RmMGJjNDZhOWQ3OTk4MCZsZ2ZwPTMwMDAgSFRUUC8xLjENCkFjY2VwdDogdGV4dC9odG1sLCBhcHBsaWNhdGlvbi94aHRtbCt4bWwsICovKg0KQWNjZXB0LUxhbmd1YWdlOiBlbi1VUw0KVXNlci1BZ2VudDogTW96aWxsYS81LjAgKFdpbmRvd3MgTlQgNi4xOyBXT1c2NDsgVHJpZGVudC83LjA7IHJ2OjExLjApIGxpa2UgR2Vja28NCkFjY2VwdC1FbmNvZGluZzogZ3ppcCwgZGVmbGF0ZQ0KSG9zdDogZGM1MjQuNHNoYXJlZC5jb20NCkNvbm5lY3Rpb246IEtlZXAtQWxpdmUNCkNvb2tpZTogZGF5MWhvc3Q9aA0KDQpHRVQgL3dlYi9jZG4vcG9wdWxhci9kb3dubG9hZC9RanRHRGx0bWNlP2NvbnREaXNwPWF0dGFjaG1lbnQlM0IrZmlsZW5hbWUlM0QlMjIxNjA4MjAxNnZlY083T2tMM3lMUElDbGVvemliS0VIYTg2MUh6aDlHRi52YnMlMjIlM0IrZmlsZW5hbWUqJTNEdXRmLTglMjclMjcxNjA4MjAxNnZlY083T2tMM3lMUElDbGVvemliS0VIYTg2MUh6aDlHRi52YnMmY29udFR5cGU9QVBQTElDQVRJT04lMkZPQ1RFVC1TVFJFQU0mY2RuaD03YTc0NTUzYTA1N2VhNTVmYzU2OGI4MGU2MGNkN2ZhMiZkM2M9ZmRzUWp0R0RsdG1jZSUzRElOSVRJQUxJWkVEJTNCK2RvbWFpbiUzRC40c2hhcmVkLmNvbSUzQitleHBpcmVzJTNEV2VkJTJDKzE3LUF1Zy0yMDE2KzAxJTNBMzYlM0E0NCtHTVQlM0IrcGF0aCUzRCUyRiBIVFRQLzEuMQ0KQWNjZXB0OiB0ZXh0L2h0bWwsIGFwcGxpY2F0aW9uL3hodG1sK3htbCwgKi8qDQpBY2NlcHQtTGFuZ3VhZ2U6IGVuLVVTDQpVc2VyLUFnZW50OiBNb3ppbGxhLzUuMCAoV2luZG93cyBOVCA2LjE7IFdPVzY0OyBUcmlkZW50LzcuMDsgcnY6MTEuMCkgbGlrZSBHZWNrbw0KQWNjZXB0LUVuY29kaW5nOiBnemlwLCBkZWZsYXRlDQpDb29raWU6IGRheTFob3N0PWgNCkNvbm5lY3Rpb246IEtlZXAtQWxpdmUNCkhvc3Q6IGNkbmZpbGVzLjRzaGFyZWQuY29tDQoNCkdFVCAvYTM1bmV3L3c3LnR4dCBIVFRQLzEuMQ0KSG9zdDogNjUuMTgxLjEyNS4xOTMNCkNvbm5lY3Rpb246IEtlZXAtQWxpdmUNCg0KR0VUIC9hMzVuZXcvYXc3LnRpZmYgSFRUUC8xLjENCkhvc3Q6IDY1LjE4MS4xMjUuMTkzDQoNCkdFVCAvYnNiL2luZmVjdHMvaW5kZXgucGhwP049R08tR08tR0FER0VULVBDLWluc3BlY3Rvci1nYWRnZXQlMjA9JTIwJTIwJTIwJTIwV2luZG93cyUyMDclMjBIb21lJTIwUHJlbWl1bSUyMCUyMCUyMCUyMD0lMjAlMjAlMjAlMjAlMjAlMjAlMjBOL0EgSFRUUC8xLjENCkhvc3Q6IHd3dy5kZXZ5YXRpbnNraXkucnUNCkNvbm5lY3Rpb246IEtlZXAtQWxpdmUNCg0KR0VUIC9ic2IvZGVidWdub3Nzby9pbmRleC5waHA/Tj1HTy1HTy1HQURHRVQtUEMtaW5zcGVjdG9yLWdhZGdldCUyMD0lMjAlMjAlMjAlMjBJbmljaW91JTIwbyUyMGV4ZWN1dGFyJTIwJTIwaHR0cDovLzY1LjE4MS4xMjUuMTkzL2EzNW5ldy93Ny56aXAlN0NodHRwOi8vNjUuMTgxLjEyNS4xOTMvYTM1bmV3L3c3LnppcCU3QzMyJTdDaHR0cDovLzY1LjE4MS4xMjUuMTkzL2EzNW5ldy9kbGwuZGxsIEhUVFAvMS4xDQpIb3N0OiB3d3cuZGV2eWF0aW5za2l5LnJ1DQoNCg==",
         "@version": "1",
         "gcenter": "gcenter-xxxxxxxx.domain.local",
-        "payload_printable": "GET /download/QjtGDltmce/16082016vecO7OkL3yLPICleozibKE.vbs?dsid=gv5nq3.400b86c7196f9e8ccde35370eb0a54b9&sbsr=2f5b2df0ae0a8c7551c7df0bc46a9d79980&lgfp=3000 HTTP/1.1\r\nAccept: text/html, application/xhtml+xml, */*\r\nAccept-Language: en-US\r\nUser-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; Trident/7.0; rv:11.0) like Gecko\r\nAccept-Encoding: gzip, deflate\r\nHost: dc524.4shared.com\r\nConnection: Keep-Alive\r\nCookie: day1host=h\r\n\r\nGET /web/cdn/popular/download/QjtGDltmce?contDisp=attachment%3B+filename%3D%2216082016vecO7OkL3yLPICleozibKEHa861Hzh9GF.vbs%22%3B+filename*%3Dutf-8%27%2716082016vecO7OkL3yLPICleozibKEHa861Hzh9GF.vbs&contType=APPLICATION%2FOCTET-STREAM&cdnh=7a74553a057ea55fc568b80e60cd7fa2&d3c=fdsQjtGDltmce%3DINITIALIZED%3B+domain%3D.4shared.com%3B+expires%3DWed%2C+17-Aug-2016+01%3A36%3A44+GMT%3B+path%3D%2F HTTP/1.1\r\nAccept: text/html, application/xhtml+xml, */*\r\nAccept-Language: en-US\r\nUser-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; Trident/7.0; rv:11.0) like Gecko\r\nAccept-Encoding: gzip, deflate\r\nCookie: day1host=h\r\nConnection: Keep-Alive\r\nHost: cdnfiles.4shared.com\r\n\r\nGET /a35new/w7.txt HTTP/1.1\r\nHost: 65.181.125.193\r\nConnection: Keep-Alive\r\n\r\nGET /a35new/aw7.tiff HTTP/1.1\r\nHost: 65.181.125.193\r\n\r\nGET /bsb/infects/index.php?N=GO-GO-GADGET-PC-inspector-gadget%20=%20%20%20%20Windows%207%20Home%20Premium%20%20%20%20=%20%20%20%20%20%20%20N/A HTTP/1.1\r\nHost: www.devyatinskiy.ru\r\nConnection: Keep-Alive\r\n\r\nGET /bsb/debugnosso/index.php?N=GO-GO-GADGET-PC-inspector-gadget%20=%20%20%20%20Iniciou%20o%20executar%20%20http://65.181.125.193/a35new/w7.zip%7Chttp://65.181.125.193/a35new/w7.zip%7C32%7Chttp://65.181.125.193/a35new/dll.dll HTTP/1.1\r\nHost: www.devyatinskiy.ru\r\n\r\n",
+        "payload_printable": "GET /download/QjtGDltmce/16082016vecO7OkL3yLPICleozibKE.vbs?dsid=gv5nq3.400b86c7196f9e8ccde35370eb0a54b9&sbsr=2f5b2df0ae0a8c7551c7df0bc46a9d79980&lgfp=3000 HTTP/1.1\r\nAccept: text/html, application/xhtml+xml, */*\r\nAccept-Language: en-US\r\nUser-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; Trident/7.0; rv:11.0) like Gecko\r\nAccept-Encoding: gzip, deflate\r\nHost: dc524.4shared.com\r\nConnection: Keep-Alive\r\nCookie: day1host=h\r\n\r\nGET /web/cdn/popular/download/QjtGDltmce?contDisp=attachment%3B+filename%3D%2216082016vecO7OkL3yLPICleozibKEHa861Hzh9GF.vbs%22%3B+filename*%3Dutf-8%27%2716082016vecO7OkL3yLPICleozibKEHa861Hzh9GF.vbs&contType=APPLICATION%2FOCTET-STREAM&cdnh=7a74553a057ea55fc568b80e60cd7fa2&d3c=fdsQjtGDltmce%3DINITIALIZED%3B+domain%3D.4shared.com%3B+expires%3DWed%2C+17-Aug-2016+01%3A36%3A44+GMT%3B+path%3D%2F HTTP/1.1\r\nAccept: text/html, application/xhtml+xml, */*\r\nAccept-Language: en-US\r\nUser-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; Trident/7.0; rv:11.0) like Gecko\r\nAccept-Encoding: gzip, deflate\r\nCookie: day1host=h\r\nConnection: Keep-Alive\r\nHost: cdnfiles.4shared.com\r\n\r\nGET /a35new/w7.txt HTTP/1.1\r\nHost: 65.181.125.193\r\nConnection: Keep-Alive\r\n\r\nGET /a35new/aw7.tiff HTTP/1.1\r\nHost: 65.181.125.193\r\n\r\nGET /bsb/infects/index.php?N=GO-GO-GADGET-PC-inspector-gadget%20=%20%20%20%20Windows%207%20Home%20Premium%20%20%20%20=%20%20%20%20%20%20%20N/A HTTP/1.1\r\nHost: host.example.com\r\nConnection: Keep-Alive\r\n\r\nGET //example.com/bsb/debugnosso/index.php?N=GO-GO-GADGET-PC-inspector-gadget%20=%20%20%20%20Iniciou%20o%20executar%20%20http://example.com/a35new/w7.zip%7Chttp://example.com/a35new/w7.zip%7C32%7Chttp://example.com/a35new/dll.dll HTTP/1.1\r\nHost: host.example.com\r\n\r\n",
         "alert": {
             "signature": "ETPRO TROJAN MSIL/Bazidow.A HTTP C2",
             "category": "A Network Trojan was detected",
@@ -445,7 +445,7 @@ In this section, you will find examples of raw logs as generated natively by the
         "http": {
             "protocol": "HTTP/1.1",
             "url": "/web/cdn/popular/download/QjtGDltmce?contDisp=attachment%3B+filename%3D%2216082016vecO7OkL3yLPICleozibKEHa861Hzh9GF.vbs%22%3B+filename*%3Dutf-8%27%2716082016vecO7OkL3yLPICleozibKEHa861Hzh9GF.vbs&contType=APPLICATION%2FOCTET-STREAM&cdnh=7a74553a057ea55fc568b80e60cd7fa2&d3c=fdsQjtGDltmce%3DINITIALIZED%3B+domain%3D.4shared.com%3B+expires%3DWed%2C+17-Aug-2016+01%3A36%3A44+GMT%3B+path%3D%2F",
-            "hostname": "cdnfiles.4shared.com",
+            "hostname": "host.example.com",
             "status": 200,
             "length": 1088,
             "http_content_type": "APPLICATION/OCTET-STREAM",
@@ -497,7 +497,7 @@ In this section, you will find examples of raw logs as generated natively by the
             "accept": "text/html, application/xhtml+xml, */*",
             "url": "/download/QjtGDltmce/16082016vecO7OkL3yLPICleozibKE.vbs?dsid=gv5nq3.400b86c7196f9e8ccde35370eb0a54b9&sbsr=2f5b2df0ae0a8c7551c7df0bc46a9d79980&lgfp=3000",
             "protocol": "HTTP/1.1",
-            "hostname": "dc524.4shared.com",
+            "hostname": "host.example.com",
             "accept_language": "en-US",
             "location": "http://cdnfiles.4shared.com/web/cdn/popular/download/QjtGDltmce?contDisp=attachment%3B+filename%3D%2216082016vecO7OkL3yLPICleozibKEHa861Hzh9GF.vbs%22%3B+filename*%3Dutf-8%27%2716082016vecO7OkL3yLPICleozibKEHa861Hzh9GF.vbs&contType=APPLICATION%2FOCTET-STREAM&cdnh=7a74553a057ea55fc568b80e60cd7fa2&d3c=fdsQjtGDltmce%3DINITIALIZED%3B+domain%3D.4shared.com%3B+expires%3DWed%2C+17-Aug-2016+01%3A36%3A44+GMT%3B+path%3D%2F",
             "length": 0,
@@ -526,8 +526,8 @@ In this section, you will find examples of raw logs as generated natively by the
         "proto": "TCP",
         "tx_id": 0,
         "ether": {
-            "dest_mac": "90:e2:ba:a6:a4:90",
-            "src_mac": "90:e2:ba:a6:a4:91"
+            "dest_mac": "02:00:00:00:00:28",
+            "src_mac": "02:00:00:00:00:29"
         },
         "@version": "1",
         "gcenter": "gcenter-xxxxxxxxxx.domain.local"
@@ -542,7 +542,7 @@ In this section, you will find examples of raw logs as generated natively by the
     ```json
 	{
         "uuid": "b96777f9-6409-4864-b8a1-452094a93c5d",
-        "host": "gcap-xxxxxxxxx.domain.local",
+        "host": "host.example.com",
         "ether": {
             "dest_mac": "e6:43:7e:91:1b:92",
             "src_mac": "82:df:ee:4f:81:af"
@@ -568,7 +568,7 @@ In this section, you will find examples of raw logs as generated natively by the
         },
         "@version": "1",
         "proto": "TCP",
-        "gcap": "gcap-xxxxxxxxx.domain.local",
+        "gcap": "host.example.com",
         "@timestamp": "2024-11-21T13:02:44.291Z"
     }
     ```

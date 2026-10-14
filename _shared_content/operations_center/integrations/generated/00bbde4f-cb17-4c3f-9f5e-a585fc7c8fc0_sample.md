@@ -22,7 +22,7 @@ In this section, you will find examples of raw logs as generated natively by the
             "MESSAGE": "time=\"2022-06-01T14:01:35.371006269Z\" level=info msg=\"StopContainer for \\\"4c2b21624d4488ea8305bec91bb58135e840ab50b779da3db19ddf87864a760e\\\" with timeout 30 (s)\"",
             "_CMDLINE": "/usr/bin/containerd",
             "_STREAM_ID": "949cd6779ed34897a1b74883881ddfe8",
-            "_HOSTNAME": "gke-cluster-1-default-pool-476246ab-wnl7",
+            "_HOSTNAME": "host.example.com",
             "_COMM": "containerd",
             "SYSLOG_IDENTIFIER": "containerd",
             "_MACHINE_ID": "3fa273bf9f602a2286f55eac7ffa6d36",
@@ -36,13 +36,13 @@ In this section, you will find examples of raw logs as generated natively by the
             "type": "k8s_node",
             "labels": {
                 "cluster_name": "cluster-1",
-                "project_id": "hazel-aria-348413",
-                "node_name": "gke-cluster-1-default-pool-476246ab-wnl7",
+                "project_id": "my-project",
+                "node_name": "host.example.com",
                 "location": "europe-west1-c"
             }
         },
         "timestamp": "2022-06-01T14:01:35.371492Z",
-        "logName": "projects/hazel-aria-348413/logs/container-runtime",
+        "logName": "User1",
         "receiveTimestamp": "2022-06-01T14:01:36.219094561Z"
     }
     ```
@@ -65,7 +65,7 @@ In this section, you will find examples of raw logs as generated natively by the
             "apiVersion": "v1",
             "type": "Normal",
             "source": {
-                "host": "gke-cluster-1-default-pool-476246ab-wnl7",
+                "host": "host.example.com",
                 "component": "kubelet"
             },
             "metadata": {
@@ -114,12 +114,12 @@ In this section, you will find examples of raw logs as generated natively by the
                 "namespace_name": "kube-system",
                 "cluster_name": "cluster-1",
                 "pod_name": "kube-dns-56494768b7-544n6",
-                "project_id": "hazel-aria-348413"
+                "project_id": "my-project"
             }
         },
         "timestamp": "2022-06-01T14:05:30Z",
         "severity": "INFO",
-        "logName": "projects/hazel-aria-348413/logs/events",
+        "logName": "User1",
         "receiveTimestamp": "2022-06-01T14:05:39.683992581Z"
     }
     ```
@@ -139,7 +139,7 @@ In this section, you will find examples of raw logs as generated natively by the
             "reportingComponent": "",
             "metadata": {
                 "resourceVersion": "960",
-                "name": "kube-dns.16f484369d214dae",
+                "name": "host.example.com",
                 "namespace": "kube-system",
                 "uid": "828b8cd3-1eec-4093-95fb-907ebeab0efa",
                 "creationTimestamp": "2022-06-01T14:05:33Z",
@@ -186,12 +186,12 @@ In this section, you will find examples of raw logs as generated natively by the
             "labels": {
                 "cluster_name": "cluster-1",
                 "location": "europe-west1-c",
-                "project_id": "hazel-aria-348413"
+                "project_id": "my-project"
             }
         },
         "timestamp": "2022-06-01T14:05:33Z",
         "severity": "WARNING",
-        "logName": "projects/hazel-aria-348413/logs/events",
+        "logName": "User1",
         "receiveTimestamp": "2022-06-01T14:05:39.683992581Z"
     }
     ```
@@ -251,7 +251,7 @@ In this section, you will find examples of raw logs as generated natively by the
             "reason": "Created",
             "type": "Normal",
             "source": {
-                "host": "gke-cluster-1-default-pool-476246ab-wnl7",
+                "host": "host.example.com",
                 "component": "kubelet"
             },
             "reportingComponent": ""
@@ -259,7 +259,7 @@ In this section, you will find examples of raw logs as generated natively by the
         "resource": {
             "type": "k8s_pod",
             "labels": {
-                "project_id": "hazel-aria-348413",
+                "project_id": "my-project",
                 "namespace_name": "kube-system",
                 "cluster_name": "cluster-1",
                 "pod_name": "kube-dns-56494768b7-544n6",
@@ -268,7 +268,7 @@ In this section, you will find examples of raw logs as generated natively by the
         },
         "timestamp": "2022-06-01T14:05:32Z",
         "severity": "INFO",
-        "logName": "projects/hazel-aria-348413/logs/events",
+        "logName": "User1",
         "receiveTimestamp": "2022-06-01T14:05:39.683992581Z"
     }
     ```
@@ -286,8 +286,8 @@ In this section, you will find examples of raw logs as generated natively by the
             "eventTime": null,
             "involvedObject": {
                 "kind": "Node",
-                "name": "gke-cluster-1-default-pool-eb66079e-k3zf",
-                "uid": "gke-cluster-1-default-pool-eb66079e-k3zf"
+                "name": "host.example.com",
+                "uid": "host.example.com"
             },
             "kind": "Event",
             "message": "{\"unmanaged\": {\"net.netfilter.nf_conntrack_buckets\": \"32768\"}}",
@@ -325,18 +325,18 @@ In this section, you will find examples of raw logs as generated natively by the
             "reportingInstance": "",
             "source": {
                 "component": "sysctl-monitor",
-                "host": "gke-cluster-1-default-pool-eb66079e-k3zf"
+                "host": "host.example.com"
             },
             "type": "Warning"
         },
-        "logName": "projects/hazel-aria-348413/logs/events",
+        "logName": "User1",
         "receiveTimestamp": "2022-06-15T01:55:52.012275121Z",
         "resource": {
             "labels": {
                 "cluster_name": "cluster-1",
                 "location": "europe-central2-a",
-                "node_name": "gke-cluster-1-default-pool-eb66079e-k3zf",
-                "project_id": "hazel-aria-348413"
+                "node_name": "host.example.com",
+                "project_id": "my-project"
             },
             "type": "k8s_node"
         },
@@ -353,13 +353,13 @@ In this section, you will find examples of raw logs as generated natively by the
     ```json
 	{
         "insertId": "1wtrhknf2gg14w",
-        "logName": "projects/hazel-aria-348413/logs/events",
+        "logName": "User1",
         "receiveTimestamp": "2022-06-16T09:42:59.259491841Z",
         "resource": {
             "labels": {
                 "cluster_name": "cluster-1",
                 "location": "europe-central2-a",
-                "project_id": "hazel-aria-348413"
+                "project_id": "my-project"
             },
             "type": "k8s_cluster"
         },
@@ -398,7 +398,7 @@ In this section, you will find examples of raw logs as generated natively by the
             "logging.gke.io/top_level_controller_name": "test-integration-eu-3-3-0",
             "logging.gke.io/top_level_controller_type": "Deployment"
         },
-        "logName": "projects/test/logs/stdout",
+        "logName": "User1",
         "receiveTimestamp": "2026-03-09T08:20:46.852786133Z",
         "resource": {
             "labels": {
@@ -448,7 +448,7 @@ In this section, you will find examples of raw logs as generated natively by the
             "logging.gke.io/top_level_controller_name": "inference-consumer",
             "logging.gke.io/top_level_controller_type": "Deployment"
         },
-        "logName": "projects/test/logs/stdout",
+        "logName": "User1",
         "receiveTimestamp": "2026-03-09T08:49:02.892865366Z",
         "resource": {
             "labels": {

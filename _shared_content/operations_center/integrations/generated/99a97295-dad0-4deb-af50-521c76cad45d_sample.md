@@ -12,7 +12,7 @@ In this section, you will find examples of raw logs as generated natively by the
         "time": "2025-04-30T09:07:40.986182+00:00",
         "flowLogVersion": 4,
         "flowLogGUID": "flowLogGUID1",
-        "macAddress": "112233445566",
+        "macAddress": "02:00:00:00:00:02",
         "operationName": "FlowLogFlowEvent",
         "aclID": "aclID1",
         "rule": "DefaultRule_AllowInternetOutBound",
@@ -30,7 +30,7 @@ In this section, you will find examples of raw logs as generated natively by the
         "time": "2025-04-30T09:07:40.986182+00:00",
         "flowLogVersion": 4,
         "flowLogGUID": "flowLogGUID1",
-        "macAddress": "112233445566",
+        "macAddress": "02:00:00:00:00:02",
         "operationName": "FlowLogFlowEvent",
         "aclID": "aclID1",
         "rule": "DefaultRule_AllowInternetOutBound",
@@ -48,7 +48,7 @@ In this section, you will find examples of raw logs as generated natively by the
         "time": "2025-04-30T09:07:40.986182+00:00",
         "flowLogVersion": 4,
         "flowLogGUID": "flowLogGUID1",
-        "macAddress": "112233445566",
+        "macAddress": "02:00:00:00:00:02",
         "operationName": "FlowLogFlowEvent",
         "aclID": "aclID2",
         "rule": "BlockHighRiskTCPPortsFromInternet",
@@ -66,11 +66,11 @@ In this section, you will find examples of raw logs as generated natively by the
         "time": "2025-04-30T09:07:40.986182+00:00",
         "flowLogVersion": 4,
         "flowLogGUID": "flowLogGUID1",
-        "macAddress": "112233445566",
+        "macAddress": "02:00:00:00:00:02",
         "operationName": "FlowLogFlowEvent",
         "aclID": "aclID2",
         "rule": "BlockHighRiskTCPPortsFromInternet",
-        "flow.0": "1663146005503,2.3.4.5,1.2.3.4,35276,119,6,I,D,NX,0,0,0,0"
+        "flow.0": "1663146005503,198.51.100.3,1.2.3.4,35276,119,6,I,D,NX,0,0,0,0"
     }
     ```
 
@@ -84,7 +84,7 @@ In this section, you will find examples of raw logs as generated natively by the
         "time": "2025-04-30T09:07:40.986182+00:00",
         "flowLogVersion": 4,
         "flowLogGUID": "flowLogGUID1",
-        "macAddress": "112233445566",
+        "macAddress": "02:00:00:00:00:02",
         "operationName": "FlowLogFlowEvent",
         "aclID": "aclID2",
         "rule": "Internet",
@@ -102,11 +102,11 @@ In this section, you will find examples of raw logs as generated natively by the
         "time": "2025-04-30T09:07:40.986182+00:00",
         "flowLogVersion": 4,
         "flowLogGUID": "flowLogGUID1",
-        "macAddress": "112233445566",
+        "macAddress": "02:00:00:00:00:02",
         "operationName": "FlowLogFlowEvent",
         "aclID": "aclID2",
         "rule": "Internet",
-        "flow.0": "1663145989679,1.2.3.81,1.2.3.4,62797,35945,6,I,D,NX,0,0,0,0"
+        "flow.0": "1663145989679,198.51.100.4,1.2.3.4,62797,35945,6,I,D,NX,0,0,0,0"
     }
     ```
 

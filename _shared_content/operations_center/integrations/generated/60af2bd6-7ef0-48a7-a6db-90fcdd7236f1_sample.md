@@ -23,7 +23,7 @@ In this section, you will find examples of raw logs as generated natively by the
 === "event"
 
     ```
-	time=17:07:46.124 device_id=FEVM020000087260 log_id=00000 type=event subtype=smtp pri=information  user=mail ui=mail action=NONE status=N/A session_id="1Z11R1T1" msg="from=person.fr, size=26135, class=0, nrcpts=1, msgid=something.com, proto=ESMTP, daemon=SMTP_MTA, relay=notifications [1.1.1.1]"
+	time=17:07:46.124 device_id=FEVM020000087260 log_id=00000 type=event subtype=smtp pri=information  user=mail ui=mail action=NONE status=N/A session_id="1Z11R1T1" msg="from=user@example.com, size=26135, class=0, nrcpts=1, msgid=something.com, proto=ESMTP, daemon=SMTP_MTA, relay=host.example.com [1.1.1.1]"
     ```
 
 
@@ -31,7 +31,7 @@ In this section, you will find examples of raw logs as generated natively by the
 === "event_smpt_from_1"
 
     ```
-	time=05:25:47.932 device_id=TestDeviceId log_id=0003014907 type=event subtype=smtp pri=information  user=mail ui=mail action=NONE status=N/A session_id="testsessionid" msg="from=<info@testtest-error.art>, size=0, class=0, nrcpts=0, proto=SMTP, daemon=SMTP_MTA, relay=[1.2.3.4]"
+	time=05:25:47.932 device_id=TestDeviceId log_id=0003014907 type=event subtype=smtp pri=information  user=mail ui=mail action=NONE status=N/A session_id="testsessionid" msg="from=<user@example.com>, size=0, class=0, nrcpts=0, proto=SMTP, daemon=SMTP_MTA, relay=[1.2.3.4]"
     ```
 
 
@@ -39,7 +39,7 @@ In this section, you will find examples of raw logs as generated natively by the
 === "event_smpt_to_1"
 
     ```
-	time=18:33:35.615 device_id=xcvfg log_id=0003007072 type=event subtype=smtp pri=information  user=mail ui=mail action=NONE status=N/A session_id="13KGXMHI007058-13KGXMHK007058" msg="to=<contact@example.com>, delay=00:00:06, xdelay=00:00:06, mailer=esmtp, pri=165917, relay= [188.165.36.237], dsn=2.0.0, stat=Sent (Ok: queued as 4T9pxY2qZtz2XPBPX)"
+	time=18:33:35.615 device_id=xcvfg log_id=0003007072 type=event subtype=smtp pri=information  user=mail ui=mail action=NONE status=N/A session_id="13KGXMHI007058-13KGXMHK007058" msg="to=<contact@example.com>, delay=00:00:06, xdelay=00:00:06, mailer=esmtp, pri=165917, relay= [198.51.100.61], dsn=2.0.0, stat=Sent (Ok: queued as 4T9pxY2qZtz2XPBPX)"
     ```
 
 
@@ -47,7 +47,7 @@ In this section, you will find examples of raw logs as generated natively by the
 === "event_smpt_to_2"
 
     ```
-	time=18:33:35.615 device_id=xcvfg log_id=0003007072 type=event subtype=smtp pri=information  user=mail ui=mail action=NONE status=N/A session_id="13KGXMHI007058-13KGXMHK007058" msg="to=<contact@example.com>, delay=00:00:06, xdelay=00:00:06, mailer=esmtp, pri=165917, relay=smtp.example.org [188.165.36.237], dsn=2.0.0, stat=Sent (Ok: queued as 4T9pxY2qZtz2XPBPX)"
+	time=18:33:35.615 device_id=xcvfg log_id=0003007072 type=event subtype=smtp pri=information  user=mail ui=mail action=NONE status=N/A session_id="13KGXMHI007058-13KGXMHK007058" msg="to=<contact@example.com>, delay=00:00:06, xdelay=00:00:06, mailer=esmtp, pri=165917, relay=smtp.example.org [198.51.100.61], dsn=2.0.0, stat=Sent (Ok: queued as 4T9pxY2qZtz2XPBPX)"
     ```
 
 
@@ -55,7 +55,7 @@ In this section, you will find examples of raw logs as generated natively by the
 === "event_smtp_STARTTLS"
 
     ```
-	time=18:33:36.601 device_id=123456 log_id=0003007110 type=event subtype=smtp pri=information  user=mail ui=mail action=NONE status=N/A session_id="12345" msg="STARTTLS=server, relay=something.com [1.1.1.1], version=TLSv1.2, verify=NO, cipher=ECDHE-RSA-something, bits=256/256"
+	time=18:33:36.601 device_id=123456 log_id=0003007110 type=event subtype=smtp pri=information  user=mail ui=mail action=NONE status=N/A session_id="12345" msg="STARTTLS=server, relay=host.example.com [1.1.1.1], version=TLSv1.2, verify=NO, cipher=ECDHE-RSA-something, bits=256/256"
     ```
 
 
@@ -63,7 +63,7 @@ In this section, you will find examples of raw logs as generated natively by the
 === "event_smtp_to"
 
     ```
-	time=18:33:35.615 device_id=xcvfg log_id=0003007072 type=event subtype=smtp pri=information  user=mail ui=mail action=NONE status=N/A session_id="13KGXMHI007058-13KGXMHK007058" msg="to=<mh.fr>, delay=00:00:13, xdelay=00:00:12, mailer=esmtp, pri=50733, relay=email.fr. [1.1.1.1], dsn=2.0.0, stat=Sent (Ok: queued as C41457FCE6)"
+	time=18:33:35.615 device_id=xcvfg log_id=0003007072 type=event subtype=smtp pri=information  user=mail ui=mail action=NONE status=N/A session_id="13KGXMHI007058-13KGXMHK007058" msg="to=<user@example.com>, delay=00:00:13, xdelay=00:00:12, mailer=esmtp, pri=50733, relay=host.example.com [1.1.1.1], dsn=2.0.0, stat=Sent (Ok: queued as C41457FCE6)"
     ```
 
 
@@ -71,7 +71,7 @@ In this section, you will find examples of raw logs as generated natively by the
 === "event_smtp_to_bis"
 
     ```
-	time=15:12:29.013 device_id=FEVM020000087260 log_id=0003014581 type=event subtype=smtp pri=information  user=mail ui=mail action=NONE status=N/A session_id="13RDCREi014579-13RDCREj014579" msg="to=<sjira.eu>, delay=00:00:02, xdelay=00:00:01, mailer=esmtp, pri=40733, relay=mail.eu. [1.1.1.1], dsn=2.0.0, stat=Sent (<email.fr> [InternalId=96830037688413, Hostname=sphinx] 12426 bytes in 0.118, 102,604 KB/sec Queued mail for delivery)"
+	time=15:12:29.013 device_id=FEVM020000087260 log_id=0003014581 type=event subtype=smtp pri=information  user=mail ui=mail action=NONE status=N/A session_id="13RDCREi014579-13RDCREj014579" msg="to=<user@example.com>, delay=00:00:02, xdelay=00:00:01, mailer=esmtp, pri=40733, relay=host.example.com [1.1.1.1], dsn=2.0.0, stat=Sent (<email.fr> [InternalId=96830037688413, Hostname=sphinx] 12426 bytes in 0.118, 102,604 KB/sec Queued mail for delivery)"
     ```
 
 
@@ -95,7 +95,7 @@ In this section, you will find examples of raw logs as generated natively by the
 === "relay_ip_only"
 
     ```
-	time=15:03:24.344 device_id=FFFF log_id=YY type=event subtype=smtp pri=information  user=mail ui=mail action=NONE status=N/A session_id="AAA-BBB" msg="to=<johndoe>, delay=00:00:01, xdelay=00:00:01, mailer=esmtp, pri=2290731, relay= [1.2.3.4], dsn=2.0.0, stat=Sent (ok:  Message 88943067 accepted)"
+	time=15:03:24.344 device_id=FFFF log_id=YY type=event subtype=smtp pri=information  user=mail ui=mail action=NONE status=N/A session_id="AAA-BBB" msg="to=<user@example.com>, delay=00:00:01, xdelay=00:00:01, mailer=esmtp, pri=2290731, relay= [1.2.3.4], dsn=2.0.0, stat=Sent (ok:  Message 88943067 accepted)"
     ```
 
 
@@ -127,7 +127,7 @@ In this section, you will find examples of raw logs as generated natively by the
 === "smtp_event_to_user_unknown"
 
     ```
-	time=10:50:36.931 device_id=FEVM020000087260 log_id=0003008733 type=event subtype=smtp pri=information  user=mail ui=mail action=NONE status=N/A session_id="1548fVq5008733-1548fVq5008733" msg="to=postmaster, delay=00:00:50, mailer=local, pri=58900, dsn=5.1.1, stat=User unknown(Reason from remote:550 5.1.1 User unknown)"
+	time=10:50:36.931 device_id=FEVM020000087260 log_id=0003008733 type=event subtype=smtp pri=information  user=mail ui=mail action=NONE status=N/A session_id="1548fVq5008733-1548fVq5008733" msg="to=user@example.com, delay=00:00:50, mailer=local, pri=58900, dsn=5.1.1, stat=User unknown(Reason from remote:550 5.1.1 User unknown)"
     ```
 
 
@@ -135,7 +135,7 @@ In this section, you will find examples of raw logs as generated natively by the
 === "spam"
 
     ```
-	time=16:01:46.183 device_id=123 log_id=123 type=spam subtype=default pri=information  session_id="00000" client_name="mail.outlook.com" client_ip="2.2.2.2" dst_ip="1.1.1.1" from="" to="mail.fr" subject="Détail de votre quarantaine: [ 1 message(s) en quarantaine entre le jeu. 15 avr. 2021 14 h 00 +0200 et le jeu. 15 avr. 2021 16 h 00 +0200 ]" msg="File name: icon_deleteall.png, scanned by Antivirus Scanner(clean)"
+	time=16:01:46.183 device_id=123 log_id=123 type=spam subtype=default pri=information  session_id="00000" client_name="mail.outlook.com" client_ip="2.2.2.2" dst_ip="1.1.1.1" from="" to="user@example.com" subject="Détail de votre quarantaine: [ 1 message(s) en quarantaine entre le jeu. 15 avr. 2021 14 h 00 +0200 et le jeu. 15 avr. 2021 16 h 00 +0200 ]" msg="File name: icon_deleteall.png, scanned by Antivirus Scanner(clean)"
     ```
 
 
@@ -143,7 +143,7 @@ In this section, you will find examples of raw logs as generated natively by the
 === "spam_antispam_url"
 
     ```
-	time=15:08:03.466 device_id=device log_id=121416 type=spam subtype=default pri=information  session_id="123456" client_name="client" client_ip="2.2.2.2" dst_ip="1.1.1.1" from="whatever.com" to="something.com" subject="définitivement aimé cette idée et a pris la décision de vous la montrer" msg="FortiGuard-AntiSpam identified spam URL: http://something.something.photos/apmix"
+	time=15:08:03.466 device_id=device log_id=121416 type=spam subtype=default pri=information  session_id="123456" client_name="client" client_ip="2.2.2.2" dst_ip="1.1.1.1" from="user@example.com" to="user@example.com" subject="définitivement aimé cette idée et a pris la décision de vous la montrer" msg="FortiGuard-AntiSpam identified spam URL: http://example.com/apmix"
     ```
 
 
@@ -151,7 +151,7 @@ In this section, you will find examples of raw logs as generated natively by the
 === "spam_antivirus"
 
     ```
-	time=10:00:08.543 device_id=abc log_id=0300025551 type=spam subtype=default pri=information  session_id="123456" client_name="something.live" client_ip="2.2.2.2" dst_ip="1.1.1.1" from="nereply.live" to="info@pms-becus.com" subject="new order to UK" msg="File name: file.ppt(checksum:122452), scanned by Antivirus Scanner(detected)"
+	time=10:00:08.543 device_id=abc log_id=0300025551 type=spam subtype=default pri=information  session_id="123456" client_name="something.live" client_ip="2.2.2.2" dst_ip="1.1.1.1" from="user@example.com" to="user@example.com" subject="new order to UK" msg="File name: file.ppt(checksum:122452), scanned by Antivirus Scanner(detected)"
     ```
 
 
@@ -159,7 +159,7 @@ In this section, you will find examples of raw logs as generated natively by the
 === "spam_webfilter_url"
 
     ```
-	time=09:59:32.943 device_id=FEVM020000087260 log_id=0300025171 type=spam subtype=default pri=information  session_id="15N7xWCW025167-15N7xWCX025167" client_name="mail@sth.com" client_ip="2.2.2.2" dst_ip="1.1.1.1" from="target.fr" to="source.com" subject="Vos impressions de documents au meilleur prix !" msg="FortiGuard-WebFilter identified URL: url.fr, category: Spam URLs, id: 86."
+	time=09:59:32.943 device_id=FEVM020000087260 log_id=0300025171 type=spam subtype=default pri=information  session_id="15N7xWCW025167-15N7xWCX025167" client_name="mail@sth.com" client_ip="2.2.2.2" dst_ip="1.1.1.1" from="user@example.com" to="user@example.com" subject="Vos impressions de documents au meilleur prix !" msg="FortiGuard-WebFilter identified URL: host.example.com, category: Spam URLs, id: 86."
     ```
 
 
@@ -175,7 +175,7 @@ In this section, you will find examples of raw logs as generated natively by the
 === "statistics"
 
     ```
-	time=11:37:27.544 device_id=ABC log_id=0200017947 type=statistics pri=information  session_id="123" client_name="Address.com" client_ip="2.2.2.2" client_cc="FR" dst_ip="1.1.1.1" from="something.fr" hfrom="something.fr" to="something.fr" polid="0:1:1" domain="host.com" mailer="mta" resolved="OK" src_type="int" direction="in" virus="" disposition="Accept" classifier="Domain Safe" message_length="112389" subject=confidential subject
+	time=11:37:27.544 device_id=ABC log_id=0200017947 type=statistics pri=information  session_id="123" client_name="Address.com" client_ip="2.2.2.2" client_cc="FR" dst_ip="1.1.1.1" from="user@example.com" hfrom="user@example.com" to="user@example.com" polid="0:1:1" domain="host.example.com" mailer="mta" resolved="OK" src_type="int" direction="in" virus="" disposition="Accept" classifier="Domain Safe" message_length="112389" subject=confidential subject
     ```
 
 
@@ -183,7 +183,7 @@ In this section, you will find examples of raw logs as generated natively by the
 === "statistics_2"
 
     ```
-	<190>timestamp=1775747539 devname="FORTIMAIL1" devid="ID1234567890" vd="root" itime=1775747539 date="2026-04-09" time=17:12:19.201 device_id="ID1234567890" eventtime=1775747539201 tz=+0200 log_id="0200010651" type="statistics" pri="information" session_id="11111111111111-11111111111111" client_name="client.name" client_ip=1.2.3.4 client_cc="US" dst_ip=5.6.7.8 from="sender@company.com" hfrom="sender@company.com" to="receiver@destination.com" polid="0:1:5:destination.com" domain="destination.com" mailer="mta" resolved="OK" src_type="ext" direction="in" virus="FortiSandbox: Riskware" disposition="System Quarantine;Defer Disposition" classifier="FortiSandbox File" detail=Virus message_length=44391 subject="Subject" message_id="20260409151001.1111111111111111@company.com" recv_time= notif_delay="0" scan_time=0.015940 xfer_time=0.001187 srcfolder="" read_status=""
+	<190>timestamp=1775747539 devname="FORTIMAIL1" devid="ID1234567890" vd="root" itime=1775747539 date="2026-04-09" time=17:12:19.201 device_id="ID1234567890" eventtime=1775747539201 tz=+0200 log_id="0200010651" type="statistics" pri="information" session_id="11111111111111-11111111111111" client_name="client.name" client_ip=1.2.3.4 client_cc="US" dst_ip=5.6.7.8 from="user@example.com" hfrom="user@example.com" to="user@example.com" polid="0:1:5:host.example.com" domain="host.example.com" mailer="mta" resolved="OK" src_type="ext" direction="in" virus="FortiSandbox: Riskware" disposition="System Quarantine;Defer Disposition" classifier="FortiSandbox File" detail=Virus message_length=44391 subject="Subject" message_id="<test-message-id@example.com>" recv_time= notif_delay="0" scan_time=0.015940 xfer_time=0.001187 srcfolder="" read_status=""
     ```
 
 

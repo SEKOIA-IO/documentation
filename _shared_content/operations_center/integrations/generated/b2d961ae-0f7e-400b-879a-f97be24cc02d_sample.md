@@ -7,7 +7,7 @@ In this section, you will find examples of raw logs as generated natively by the
 === "AgentAntiMalware"
 
     ```
-	CEF:0|Trend Micro|Deep Security Agent|<Agent version>|4000000|Eicar_test_file|6|cn1=1 cn1Label=Host ID dvchost=hostname cn2=205 cn2Label=Quarantine File Size cs6=ContainerImageName | ContainerName | ContainerID cs6Label=Container filePath=C:\Users\trend\Desktop\eicar.exe act=Delete result=Delete msg=Realtime TrendMicroDsMalwareTarget=N/A TrendMicroDsMalwareTargetType=N/A TrendMicroDsFileMD5=44D88612FEA8A8F36DE82E1278ABB02F TrendMicroDsFileSHA1=3395856CE81F2B7382DEE72602F798B642F14140 TrendMicroDsFileSHA256=275A021BBFB6489E54D471899F7DB9D1663FC695EC2FE2A2C4538AABF651FD0F TrendMicroDsDetectionConfidence=95 TrendMicroDsRelevantDetectionNames=Ransom_CERBER.BZC;Ransom_CERBER.C;Ransom_CRYPNISCA.SM
+	CEF:0|Trend Micro|Deep Security Agent|<Agent version>|4000000|Eicar_test_file|6|cn1=1 cn1Label=Host ID dvchost=hostname cn2=205 cn2Label=Quarantine File Size cs6=ContainerImageName | ContainerName | ContainerID cs6Label=Container filePath=C:\Users\TestUser\Desktop\eicar.exe act=Delete result=Delete msg=Realtime TrendMicroDsMalwareTarget=N/A TrendMicroDsMalwareTargetType=N/A TrendMicroDsFileMD5=44D88612FEA8A8F36DE82E1278ABB02F TrendMicroDsFileSHA1=3395856CE81F2B7382DEE72602F798B642F14140 TrendMicroDsFileSHA256=275A021BBFB6489E54D471899F7DB9D1663FC695EC2FE2A2C4538AABF651FD0F TrendMicroDsDetectionConfidence=95 TrendMicroDsRelevantDetectionNames=Ransom_CERBER.BZC;Ransom_CERBER.C;Ransom_CRYPNISCA.SM
     ```
 
 
@@ -15,7 +15,7 @@ In this section, you will find examples of raw logs as generated natively by the
 === "ApacheDOS"
 
     ```
-	CEF:0|Trend Micro|Deep Security Agent|20.0.677|1011466|Apache HTTP Server 'mod_sed' Denial Of Service Vulnerability (CVE-2022-30522)|6|cn1=318 cn1Label=Host ID dvchost=foo.bar.fr TrendMicroDsTenant=Primary TrendMicroDsTenantId=0 dmac=22:22:22:22:22:22 smac=11:11:11:11:11:11 TrendMicroDsFrameType=IP src=2.2.2.2 dst=1.1.1.1 in=0 cs3=DF 0 cs3Label=Fragmentation Bits proto=TCP spt=58407 dpt=443 cs2=ACK cs2Label=TCP Flags cnt=2 act=IDS:Reset cn3=0 cn3Label=DPI Packet Position cs5=0 cs5Label=DPI Stream Position  cs1="CVE-2022-30522" cs1Label=DPI Note cs6=0 cs6Label=DPI Flags
+	CEF:0|Trend Micro|Deep Security Agent|20.0.677|1011466|Apache HTTP Server 'mod_sed' Denial Of Service Vulnerability (CVE-2022-30522)|6|cn1=318 cn1Label=Host ID dvchost=host.example.com TrendMicroDsTenant=Primary TrendMicroDsTenantId=0 dmac=22:22:22:22:22:22 smac=02:00:00:00:00:31 TrendMicroDsFrameType=IP src=2.2.2.2 dst=1.1.1.1 in=0 cs3=DF 0 cs3Label=Fragmentation Bits proto=TCP spt=58407 dpt=443 cs2=ACK cs2Label=TCP Flags cnt=2 act=IDS:Reset cn3=0 cn3Label=DPI Packet Position cs5=0 cs5Label=DPI Stream Position  cs1="CVE-2022-30522" cs1Label=DPI Note cs6=0 cs6Label=DPI Flags
 
 
     ```
@@ -33,7 +33,7 @@ In this section, you will find examples of raw logs as generated natively by the
 === "DeviceControl"
 
     ```
-	CEF:0|Trend Micro|Deep Security Agent|50.0.1063|7000000|Device Control DeviceControl|6|cn1=1 cn1Label=Host ID dvchost=test-hostname TrendMicroDsTenant=tenantName TrendMicroDsTenantId=1 device=deviceName processName=processName1 fileName=/tmp/some_path2 vendor=vendorName serial=aaaa-bbbb-cccc model=modelName computerName=computerName domainName=computerDomain deviceType=0 permission=0
+	CEF:0|Trend Micro|Deep Security Agent|50.0.1063|7000000|Device Control DeviceControl|6|cn1=1 cn1Label=Host ID dvchost=host.example.com TrendMicroDsTenant=tenantName TrendMicroDsTenantId=1 device=deviceName processName=processName1 fileName=/tmp/some_path2 vendor=vendorName serial=aaaa-bbbb-cccc model=modelName computerName=computerName domainName=computerDomain deviceType=0 permission=0
     ```
 
 
@@ -41,7 +41,7 @@ In this section, you will find examples of raw logs as generated natively by the
 === "FirewallEventLog"
 
     ```
-	CEF:0|Trend Micro|Deep Security Agent|<Agent version>|20|Log for TCP Port 80|0|cn1=1 cn1Label=Host ID dvc=hostname act=Log dmac=00:50:56:F5:7F:47 smac=00:0C:29:EB:35:DE TrendMicroDsFrameType=IP src=192.168.126.150 dst=72.14.204.147 out=1019 cs3=DF MF cs3Label=Fragmentation Bits proto=TCP spt=49617 dpt=80 cs2=0x00 ACK PSH cs2Label=TCP Flags cnt=1 TrendMicroDsPacketData=AFB...
+	CEF:0|Trend Micro|Deep Security Agent|<Agent version>|20|Log for TCP Port 80|0|cn1=1 cn1Label=Host ID dvc=hostname act=Log dmac=02:00:00:00:00:63 smac=02:00:00:00:00:62 TrendMicroDsFrameType=IP src=192.168.126.150 dst=198.51.100.147 out=1019 cs3=DF MF cs3Label=Fragmentation Bits proto=TCP spt=49617 dpt=80 cs2=0x00 ACK PSH cs2Label=TCP Flags cnt=1 TrendMicroDsPacketData=AFB...
     ```
 
 
@@ -57,7 +57,7 @@ In this section, you will find examples of raw logs as generated natively by the
 === "IntrusionPrevention"
 
     ```
-	CEF:0|Trend Micro|Deep Security Agent|<Agent version>|1001111|Test Intrusion Prevention Rule|3|cn1=1 cn1Label=Host ID dvchost=hostname dmac=00:50:56:F5:7F:47 smac=00:0C:29:EB:35:DE TrendMicroDsFrameType=IP src=192.168.126.150 dst=72.14.204.105 out=1093 cs3=DF MF cs3Label=Fragmentation Bits proto=TCP spt=49786 dpt=80 cs2=0x00 ACK PSH cs2Label=TCP Flags cnt=1 act=IDS:Reset cn3=10 cn3Label=Intrusion Prevention Packet Position cs5=10 cs5Label=Intrusion Prevention Stream Position cs6=8 cs6Label=Intrusion Prevention Flags TrendMicroDsPacketData=R0VUIC9zP3...
+	CEF:0|Trend Micro|Deep Security Agent|<Agent version>|1001111|Test Intrusion Prevention Rule|3|cn1=1 cn1Label=Host ID dvchost=hostname dmac=02:00:00:00:00:63 smac=02:00:00:00:00:62 TrendMicroDsFrameType=IP src=192.168.126.150 dst=198.51.100.146 out=1093 cs3=DF MF cs3Label=Fragmentation Bits proto=TCP spt=49786 dpt=80 cs2=0x00 ACK PSH cs2Label=TCP Flags cnt=1 act=IDS:Reset cn3=10 cn3Label=Intrusion Prevention Packet Position cs5=10 cs5Label=Intrusion Prevention Stream Position cs6=8 cs6Label=Intrusion Prevention Flags TrendMicroDsPacketData=R0VUIC9zP3...
     ```
 
 
@@ -65,7 +65,7 @@ In this section, you will find examples of raw logs as generated natively by the
 === "LogInspection"
 
     ```
-	CEF:0|Trend Micro|Deep Security Agent|<Agent version>|3002795|Microsoft Windows Events|8|cn1=1 cn1Label=Host ID dvchost=hostname cs1Label=LI Description cs1=Multiple Windows Logon Failures fname=Security src=127.0.0.1 duser=(no user) shost=WIN-RM6HM42G65V msg=WinEvtLog Security: AUDIT_FAILURE(4625): Microsoft-Windows-Security-Auditing: (no user): no domain: WIN-RM6HM42G65V: An account failed to log on. Subject: ..
+	CEF:0|Trend Micro|Deep Security Agent|<Agent version>|3002795|Microsoft Windows Events|8|cn1=1 cn1Label=Host ID dvchost=hostname cs1Label=LI Description cs1=Multiple Windows Logon Failures fname=Security src=127.0.0.1 duser=User1 shost=host.example.com msg=WinEvtLog Security: AUDIT_FAILURE(4625): Microsoft-Windows-Security-Auditing: User1: no domain: host.example.com: An account failed to log on. Subject: ..
     ```
 
 
@@ -81,7 +81,7 @@ In this section, you will find examples of raw logs as generated natively by the
 === "WebReputation"
 
     ```
-	CEF:0|Trend Micro|Deep Security Agent|<Agent version>|5000000|WebReputation|5|cn1=1 cn1Label=Host ID dvchost=hostname request=example.com msg=Blocked By Admin
+	CEF:0|Trend Micro|Deep Security Agent|<Agent version>|5000000|WebReputation|5|cn1=1 cn1Label=Host ID dvchost=hostname request=host.example.com msg=Blocked By Admin
     ```
 
 

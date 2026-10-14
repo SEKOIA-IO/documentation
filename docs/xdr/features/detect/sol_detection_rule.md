@@ -26,6 +26,8 @@ Two detection patterns run on SOL:
 
 When you create a SOL detection rule, the platform executes your query at the frequency you define. Each execution is logged. Each run injects its time window into the query through the `?time.start` and `?time.end` placeholders, which your SOL pattern must include. See [Create a SOL detection rule](/xdr/features/detect/create_sol_detection_rule.md) for the query requirements.
 
+By default, each run only checks the events received since the last run. For schedules between 1 hour and 24 hours, you can turn on **Search a wider window than the schedule** so that each run looks back over a longer period, up to 24 hours. When an alert was already raised for an event, later runs do not raise a duplicate. For details, see [Widen the search window](/xdr/features/detect/create_sol_detection_rule.md#step-5-widen-the-search-window-optional).
+
 By default, all of a rule's matches are grouped into a single alert, and each new match increments that alert's occurrence counter. You can configure a similarity strategy to split matches into separate alerts by field value instead. For details, see [Alert similarity for SOL detection rules](/xdr/features/detect/sol_detection_similarity.md).
 
 !!! note "Result cap"

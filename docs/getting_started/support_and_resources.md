@@ -11,6 +11,9 @@ type: reference
 
 Sekoia offers several channels to help you get answers, learn new skills, and stay informed. This article lists each resource and explains when to use it.
 
+!!! note "Integration configuration issues"
+    If an integration does not work as expected during the initial setup, first check the configuration of the source, the intake settings, and the relevant logs. Many setup issues are caused by the source system or by missing permissions and are not platform incidents.
+
 ## Choose the right resource
 
 Use the following order when you need help:
@@ -24,7 +27,7 @@ Small accounts may not include a CSM. In that case, use the documentation for pr
 
 ### Support portal
 
-The Sekoia support portal handles technical challenges, bugs, unexpected platform behavior, and improvement requests. It is not the primary channel for questions already covered by the documentation.
+The Sekoia support portal handles technical challenges, bugs, unexpected standard platform behavior, and rehydration requests. Product improvement requests should be discussed with your CSM or TAM when available. It is not the primary channel for questions already covered by the documentation.
 
 Access the support portal at [support.sekoia.io](https://support.sekoia.io).
 

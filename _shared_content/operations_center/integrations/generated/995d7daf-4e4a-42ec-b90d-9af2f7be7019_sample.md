@@ -7,7 +7,7 @@ In this section, you will find examples of raw logs as generated natively by the
 === "test_dhcp_lease"
 
     ```
-	1673516966.834663913 FW_MX_01 events dhcp lease of ip 1.2.3.4 from mx mac AA:BB:CC:DD:EE:FF for client mac 01:02:03:04:05:06 from router 5.6.7.8 on subnet 255.255.255.0 with dns 9.10.11.12
+	1673516966.834663913 FW_MX_01 events dhcp lease of ip 1.2.3.4 from mx mac AA:BB:CC:DD:EE:FF for client mac 02:00:00:00:00:14 from router 5.6.7.8 on subnet 255.255.255.0 with dns 9.10.11.12
     ```
 
 
@@ -39,7 +39,7 @@ In this section, you will find examples of raw logs as generated natively by the
 === "test_events_anyconnect_vpn_connect_1"
 
     ```
-	1673614753.814828766 FW_MX_01 events anyconnect_vpn_connect user id 'john.doe@sekoia.io' local ip 1.2.3.4 reconnected from 5.6.7.8
+	1673614753.814828766 FW_MX_01 events anyconnect_vpn_connect user id 'john.doe@host.example.com' local ip 1.2.3.4 reconnected from 5.6.7.8
     ```
 
 
@@ -47,7 +47,7 @@ In this section, you will find examples of raw logs as generated natively by the
 === "test_events_anyconnect_vpn_connect_2"
 
     ```
-	1673614753.814828766 FW_MX_01 events anyconnect_vpn_connect user id 'john.doe@sekoia.io' local ip 1.2.3.4 connected from 5.6.7.8
+	1673614753.814828766 FW_MX_01 events anyconnect_vpn_connect user id 'john.doe@host.example.com' local ip 1.2.3.4 connected from 5.6.7.8
     ```
 
 
@@ -63,7 +63,7 @@ In this section, you will find examples of raw logs as generated natively by the
 === "test_events_anyconnect_vpn_session_manager"
 
     ```
-	1673614757.517501781 FW_MX_01 events type=anyconnect_vpn_session_manager msg= 'Sess-ID[289] Peer IP=1.2.3.4 User[john.doe@sekoia.io]: Successfully added DTLS tunnel[289.4] '
+	1673614757.517501781 FW_MX_01 events type=anyconnect_vpn_session_manager msg= 'Sess-ID[289] Peer IP=1.2.3.4 User[john.doe@host.example.com]: Successfully added DTLS tunnel[289.4] '
     ```
 
 
@@ -71,7 +71,7 @@ In this section, you will find examples of raw logs as generated natively by the
 === "test_events_content_filtering_block"
 
     ```
-	1673541348.531136002 FW_MX_01 events content_filtering_block url='https://docs.sekoia.io/...' server='1.2.3.4:443' client_mac='AA:BB:CC:DD:EE:FF'
+	1673541348.531136002 FW_MX_01 events content_filtering_block url='https://example.com/...' server='1.2.3.4:443' client_mac='AA:BB:CC:DD:EE:FF'
     ```
 
 
@@ -151,7 +151,7 @@ In this section, you will find examples of raw logs as generated natively by the
 === "test_flows_with_mac"
 
     ```
-	1727862163.911654119 FW_MX_01 flows allow src=1.2.3.4 dst=5.6.7.8 mac=00:11:22:33:44:55 protocol=icmp6 type=136
+	1727862163.911654119 FW_MX_01 flows allow src=1.2.3.4 dst=5.6.7.8 mac=02:00:00:00:00:03 protocol=icmp6 type=136
     ```
 
 
@@ -159,7 +159,7 @@ In this section, you will find examples of raw logs as generated natively by the
 === "test_ip_flow_end"
 
     ```
-	1673277245.252432409 FW_MX_01 ip_flow_end src=1.2.3.4 dst=5.6.7.8 protocol=udp sport=56391 dport=53 translated_dst_ip=9.10.11.12 translated_port=53
+	1673277245.252432409 FW_MX_01 ip_flow_end src=1.2.3.4 dst=5.6.7.8 protocol=udp sport=56391 dport=53 translated_dst_ip=198.51.100.6 translated_port=53
     ```
 
 
@@ -167,7 +167,7 @@ In this section, you will find examples of raw logs as generated natively by the
 === "test_ip_flow_start"
 
     ```
-	1673277245.262063982 FW_MX_01 ip_flow_start src=1.2.3.4 dst=5.6.7.8 protocol=tcp sport=64365 dport=443 translated_src_ip=9.10.11.12 translated_port=64365
+	1673277245.262063982 FW_MX_01 ip_flow_start src=1.2.3.4 dst=5.6.7.8 protocol=tcp sport=64365 dport=443 translated_src_ip=198.51.100.6 translated_port=64365
     ```
 
 
@@ -175,7 +175,7 @@ In this section, you will find examples of raw logs as generated natively by the
 === "test_urls_1"
 
     ```
-	1673277245.257656306 FW_MX_01 urls src=1.2.3.4:51960 dst=5.6.7.8:443 mac=AA:BB:CC:DD:EE:FF request: UNKNOWN https://www.google.com/...
+	1673277245.257656306 FW_MX_01 urls src=1.2.3.4:51960 dst=5.6.7.8:443 mac=AA:BB:CC:DD:EE:FF request: UNKNOWN https://example.com/...
     ```
 
 
@@ -183,7 +183,7 @@ In this section, you will find examples of raw logs as generated natively by the
 === "test_urls_2"
 
     ```
-	1673277244.773622789 FW_MX_01 urls src=1.2.3.4:64194 dst=5.6.7.8:80 mac=AA:BB:CC:DD:EE:FF request: GET http://www.msftconnecttest.com/connecttest.txt
+	1673277244.773622789 FW_MX_01 urls src=1.2.3.4:64194 dst=5.6.7.8:80 mac=AA:BB:CC:DD:EE:FF request: GET http://example.com/connecttest.txt
     ```
 
 
@@ -191,7 +191,7 @@ In this section, you will find examples of raw logs as generated natively by the
 === "test_urls_3"
 
     ```
-	1673277244.416181683 FW_MX_01 urls src=1.2.3.4:55566 dst=5.6.7.8:80 mac=AA:BB:CC:DD:EE:FF agent='Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36' request: GET http://docs.sekoia.io/xdr/features/collect/integrations/network/cisco_meraki/
+	1673277244.416181683 FW_MX_01 urls src=1.2.3.4:55566 dst=5.6.7.8:80 mac=AA:BB:CC:DD:EE:FF agent='Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36' request: GET http://example.com/xdr/features/collect/integrations/network/cisco_meraki/
     ```
 
 
@@ -199,7 +199,7 @@ In this section, you will find examples of raw logs as generated natively by the
 === "test_urls_ipv6"
 
     ```
-	1673277244.773622789 FW_MX_01 urls src=fe80:110:8897:efab:9202:b3ff:fe1e:8329:64194 dst=fe80:110:8897:efab:9202:b3ff:fe1e:8330:80 mac=AA:BB:CC:DD:EE:FF request: GET http://www.msftconnecttest.com/connecttest.txt
+	1673277244.773622789 FW_MX_01 urls src=fe80:110:8897:efab:9202:b3ff:fe1e:8329:64194 dst=fe80:110:8897:efab:9202:b3ff:fe1e:8330:80 mac=AA:BB:CC:DD:EE:FF request: GET http://example.com/connecttest.txt
     ```
 
 

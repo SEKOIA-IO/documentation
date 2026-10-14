@@ -1,267 +1,139 @@
 # Intelligence
 
-## Introduction
+Use the Intelligence page to search Sekoia’s database for objects and observables. Filter the results, review matching records, and open a result to continue your investigation.
 
-Looking for a Threat actor? A specific Malware? A report on a topic of interest? Or a URL that looks suspicious? The Intelligence page possesses a search engine with complex filtering capabilities to navigate through millions of data. This threat knowledge base is updated on a daily basis by Sekoia.io analysts to make sure all kinds of threats are covered.
+## Open Intelligence
 
-## How to search
+1. From the application menu, select **Intelligence**.
 
-### Search bars
+2. Enter a value in the search bar.
 
-The two ways to find what you need in the knowledge base is to:
+    You can search for an object name, report title, domain, IP address, hash, observable value, or other indexed content.
 
-1. Use the search bar embedded in the menu. It’s accessible from any page of the app and enables a quick search in the database.
-2. Click `Intelligence` from the app menu and use the main search bar to browse the knowledge you need.
+![!Intelligence page with the search bar and results tabs.](/assets/intelligence_center/intelligence_search.png){: style="max-width:100%"}
 
-![Intelligence-search](/assets/intelligence_center/intelligence%20search.png){: style="max-width:100%"}
+## Run a search
 
-You can search for **multiple items at the same time**. To skip a line and paste multiple items, press `Shift-Enter` and paste your content.
+1. Enter one or more values in the search bar.
 
+2. Press **Enter** to run the search.
 
-!!! tip
-    You can easily open multiple search results in new tabs by right-clicking on an object and using your mouse, `option+click` (for Mac), or `shift+click` (for Windows).
+3. To search for multiple values at once, press **Shift+Enter** to add a new line, then paste the values.
 
+The search can match names, descriptions, aliases, report content, external references, and Location country codes.
 
-### Tabs
+To search for a Location, enter its name. Results can include countries, regions, or larger geographic areas. For example, `europe` can return **Europe**, **Southern Europe**, and other matching Locations.
 
-After you’ve typed your search and clicked on `enter`, two or three tabs appear under the search bar: one for **objects**, one for **observables** and one for **unknown observables**.
-
-You can refer to [this page](/cti/features/data_model.md) to understand what objects and observables are and how our data model works.
-
-Each tab has a counter that informs users about the **number of items** in the database for each category.
-
-For instance, if you search for `Google`, you will find numerous objects (reports, Intrusion sets, Indicators…) but only two observables.
+For a country, you can also use its two-letter country code, following the [ISO 3166-1](https://www.iso.org/obp/ui/#iso:pub:PUB500001:en) reference. For example, use `FR` for France or `CN` for China.
 
 !!! tip
-    Always check all tabs to be sure to get all information needed on a topic. Observables may not be harmful but they can be helpful in an investigation.
+    To open several results in new tabs, right-click an object or use **Option+click** on macOS or **Shift+click** on Windows.
 
-## Search for objects
+## Select a result type
 
-### How the search engine works
+Depending on your query, the results can include:
 
-When searching for a term or multiple terms, Sekoia.io will list objects with fields that match the term(s).
+- **Objects**;
+- **Observables**;
+- **Unknown Observables**.
 
-The following fields are taken into consideration by the search engine:
+Each tab displays the number of matching results. Select a tab to review its results.
 
-- Name
-- Description
-- Aliases
-- Content of a report
-- External references
-- The location’s country code (if the search term contains 2 characters)
+Use the **Known** and **Unknown** views to distinguish observables that are already in the database from values that Sekoia does not recognize.
 
-By default, search results are sorted by **pertinence**, but you can choose to display them by the **last edition date**.
+## Filter results
 
-!!! Tip
-    When the search contains multiple words, it can be useful to see the results matching exactly what has been entered. Putting the search between quotes (`" "`) will search for objects containing the exact term in one of their fields.
+The same filter workflow applies to the results available in the selected tab.
 
-!!! Note
-    The search bar is **tokenized**. It means that if the user searches for `FLINT 2022-05` it will look for `FLINT`, `2022` and `05` and then apply scoring depending on the attribute the value was found in and the number of times it was found.
+1. Select **Filters**.
 
-    To get only the item where the name starts with `FLINT 2022-05`, this dork search can be performed: `name:^"FLINT 2022-05"`
+2. Select a filter category.
 
-#### Search for specific sectors
+    Available categories can include:
 
-In the STIX format, a Sector is an **Identity object** that represents a broad business sector or industry. Sectors are used to contextualize threat actors, campaigns, and other CTI entities based on their targeting of specific sectors. For example, a Sector object could represent the Finance sector, Healthcare sector, or Government sector.
+    - **Object types**;
+    - **IOC types**;
+    - **Sources**;
+    - **Created at**;
+    - **Confidence level**;
+    - **Feeds**;
+    - **Last update**;
+    - **TLP**.
 
-The table below lists all sectors present in Sekoia.io as well as their sub-types:
+3. Select one or more values.
 
-| **Sector**                  | **Subtypes**                                  |
-|-----------------------------|-----------------------------------------------|
-| Defence                     | Defence-Military                              |
-|                             | Defence-Industry                              |
-| Education                   | Education-R&D                                 |
-|                             | Education-Institutions                        |
-| Energy                      | Energy-Electricity                            |
-|                             | Energy-Renewable                              |
-|                             | Energy-Gas                                    |
-|                             | Energy-Nuclear                                |
-|                             | Energy-Transportation                         |
-|                             | Energy-Oil                                    |
-| Entertainment               | Entertainment-Gaming                          |
-|                             | Entertainment-Culture                         |
-|                             | Entertainment-Gambling                        |
-|                             | Entertainment-Sport                           |
-| Financial-Services          | Financial-Services-Real Estate                |
-|                             | Financial-Services-Cryptocurrencies           |
-|                             | Financial-Services-Insurance                  |
-| Government                  | Government-Education                          |
-|                             | Government-Interior                           |
-|                             | Government-Local                              |
-|                             | Government-Regional                           |
-|                             | Government-Foreign Affairs                    |
-|                             | Government-Justice                            |
-|                             | Government-Intelligence and Security Services |
-|                             | Government-National                           |
-|                             | Government-Defence                            |
-| Healthcare                  | Healthcare-Pharmaceuticals                    |
-|                             | Healthcare-R&D                                |
-|                             | Healthcare-Equipment                          |
-|                             | Healthcare-Hospital                           |
-|                             | Hospitality-Leisure                           |
-| Industry                    | Industry-Semiconductor                        |
-|                             | Industry-Food and beverage                  |
-|                             | Industry-Pharmacy                             |
-|                             | Industry-Agrobusiness                         |
-|                             | Industry-Agriculture                          |
-|                             | Industry-Wholesale                            |
-|                             | Industry-Manufacturing                        |
-|                             | Industry-Mining                               |
-|                             | Industry-Construction                         |
-|                             | Industry-Retail                               |
-|                             | Industry-Chemical                             |
-|                             | Industry-Automotive                           |
-| Infrastructure              | Infrastructure-Critical                       |
-| Legal                       |                                               |
-| Media                       | Media-Social network                          |
-|                             | Media-Individual                              |
-|                             | Media-TV channel                              |
-|                             | Media-Radio                                   |
-|                             | Media-Newspaper                               |
-| NGO/Civil-Society/Political | NGO/Civil-Society/Political-Dissident         |
-|                             | NGO/Civil-Society/Political-Activist          |
-| Professional services       | Professional services-Consulting              |
-|                             | Professional services-Management              |
-|                             | Professional services-Printing                |
-|                             | Professional services-Marketing               |
-| Technology                  | Technology-High-Tech                          |
-|                             | Technology-Services                           |
-| Telecommunications          | Telecommunications-Satellite                  |
-|                             | Telecommunications-Phone                      |
-|                             | Telecommunications-Internet                   |
-| Transportation              | Transportation-Shipping                       |
-|                             | Transportation-Air                            |
-|                             | Transportation-Road                           |
-|                             | Transportation-Maritime                       |
-|                             | Transportation-Rail                           |
+    Sekoia adds the active filter above the table as a filter chip.
 
+4. Refine or remove the filter.
 
+    Reopen the filter menu to change the selected values. Select **Clear filters** to remove all active filters, or remove one filter from its chip.
 
-!!! Note
-    Note that **Media** is a subtype of Entertainement.
+The **Object types** filter lets you restrict results to a specific type, such as **Location**, **Sector**, **Source**, **Campaign**, or **Malware**.
 
-!!!tip
-    Select the object type `Identity` in the filter `By object type` on top of the Intelligence table to refine your search and list only Identity objects.
+### Use shortcut filters
 
-#### Search for a country
+On the **Objects** tab, select **Locations** or **Sectors** to apply the corresponding object-type filter directly. The buttons appear next to **Filters** and use the same filtering behavior as **Filters > Object types**.
 
-In STIX format, a Country is a **Location** object that represents a geographical region (e.g., North America), civic address (e.g. New York, US), latitude and longitude. Countries are used to contextualize threat actors, campaigns, and other CTI entities based on their geographic targeting.
+After you select a shortcut, the active filter appears above the table as a chip, for example:
 
-There are two ways to look for Intelligence related to a specific country:
+- `Object types is Location`;
+- `Object types is Sector`.
 
-- Search for the country’s name in English
-- Use the location’s country code (2 letters) following the **[ISO 3166-1](https://www.iso.org/obp/ui/#iso:pub:PUB500001:en)** referential. For instance, FR for France, AE for United Arab Emirates, NG for Nigeria...
+When you reopen the filter menu, the selected object type is already checked. Select **Clear filters** to remove the shortcut filter.
 
-### Table Columns
+The **Filters** menu lists the available filter categories:
 
-Search results are listed in a table with multiple columns. These columns can be shown or hidden in the filters panel, and users can change their order by dragging them using the `:` icon.
+![!Filters menu listing the available filter categories.](/assets/intelligence_center/cti_filters.png){: style="max-width:100%"}
 
-By default, these columns are:
+The **Object types** filter with **Location** selected:
 
-| Column | Description |
-| --- | --- |
-| TLP | How sensitive is the information. Types of TLP in Sekoia.io: White, green, amber, red |
-| Type | Type of object. Hover on the object icon to see the type of object |
-| Name | Name of object. Hover on the name to read the full name |
-| Sub-types | Some objects have sub-types like indicators, malware, reports, tool   |
-| Confidence | How confident Sekoia.io is about this object |
-| Sources | Where this object came from |
-| Last edited | Date of last edition |
-| Created | Date of creation |
-| Labels | Custom labels added from Sekoia |
+![!Object types filter with Location checked and the Clear filters button displayed.](/assets/intelligence_center/cti_object_types_filter.png){: style="max-width:100%"}
 
-To show or hide these columns, click on the icon on the top right of the table and select the ones needed.
+## Review search results
 
-### Pagination
+Search results appear in a table. The visible columns depend on the result type and workspace configuration. They can include:
 
-Depending on your screen size, you can change the pagination of this data table. It is set to 25 results per page by default, but you can increase or decrease this number to 10, 15, 50 or 100.
+- **TLP**;
+- **Type**;
+- **Name**;
+- **Subtypes**;
+- **Conf.**;
+- **Sources**;
+- **Last Edited**;
+- **Created**;
+- global or workspace telemetry.
 
-### Revoked objects
+For Location objects:
 
-When an object name is red in the table, it means that the object has been revoked.
+- a country Location displays its country flag in the **Type** column;
+- a region or other Location without a country displays the Location icon.
 
-### Filters for objects
+Use the sort selector to change the order. **Pertinence** is the default sort option in the delivered interface.
 
-To filter results in the Intelligence table, multiple filters are available to users. When a filter is selected, a tag is added on top of the table.
+Use the column selector to show or hide columns. Use **Items per page** and the pagination controls to browse the results.
 
-This table lists all filters for objects in the Intelligence page.
+## Copy observables
 
-| Filter | Description |
-| --- | --- |
-| Type | Multiselect to choose types of object to show |
-| Source | Search in more than 200 sources available. This field has autocomplete to help you select sources.  |
-| Feed | Show only objects matching a feed that was created in the Feeds page |
-| Confidence level | Show only objects equal to, higher than, below than, higher than or equal to, below or equal to a certain level of confidence |
-| Observable type | Restrict indicators to only the ones with a pattern containing the selected observable types |
-| Is a source | Display only identities that are sources of other objects |
-| Last update | Filter objects updated in the last hour, last 24h, last 7 days, last 30 days, this year, all time |
-| Creation date | Filter objects created in the last hour, last 24h, last 7 days, last 30 days, this year, all time.  |
-| TLP | Show only object with a certain TLP |
+1. Open the **Observables** tab.
 
-To remove a filter, just click on the `cross` inside the tag. To remove all filters, click on `Clear filters` next to the tags’ list or in the bottom of the filters’ panel.
+2. Select the checkbox next to each observable you want to copy.
 
-## Threat Context
+3. Select **Copy**.
 
-When you open an object from the Intelligence page, the **Threat Context tab** shows all objects related to it.
+Sekoia can identify some pasted values and leave others as unknown. Review both result views when you need to check the complete list.
 
-### What you can do
+## Open a result
 
-**Search and filter**
+Select an object or observable name to open its details page. Continue with [Investigate an object](/cti/features/consume/investigate_an_object.md) to review an object’s context, relationships, graph, and reports.
 
-- Use the **search bar** to find a related object by name without scrolling through large result sets
-- **Filter by IOC type** to scope the view to a specific category (IP addresses, domains, file hashes, and more)
-- Use the **Last updated** filter to limit results to relationships updated in the last 30 days
+## Result
 
-**Understand relationships at a glance**
+You can search objects and observables from one page, apply filters without repeating the workflow for each result type, and open a result for further investigation.
 
-The **object distribution cards** show how many objects are related to the current threat, what relationships exist, and what types they are (downloads, drops, uses, targets, and others). This gives you an immediate structural overview before you explore individual links. Click a card to filter by that relationship type.
+## Related articles
 
-**Manage columns**
+[Observables](/cti/features/consume/observables.md): Overview of observable types, tags, validity, sources, and relationships.
 
-- Add **First Seen** and **Last Seen** columns alongside the existing Valid From and Valid Until columns
-- Reorder columns to match your workflow
-- Column state persists across sessions
-  
-## Search for observables
+[Investigate an object](/cti/features/consume/investigate_an_object.md): How to review an object’s context, relationships, graph, and reports.
 
-### How the search engine works
-
-When searching for observables, Sekoia.io will investigate the field `x_inthreat_short_display`, a custom attribute that is equal to the main value of the observable (`value` for IP, `name` for organizations, ...).
-
-If the search is a hash, the search engine will consider the number of characters and look for the right hashes.
-
-| Type of Hash | Characters |
-| --- | --- |
-| MD5 | 32 |
-| SHA-1 | 40 |
-| SHA-256 | 64 |
-| SHA-512 | 128 |
-
-If the search is an IP CIDR, the search engine will look for the IPs contained in it: `185.213.83.0/24` will return `185.213.83.102`, `185.213.83.106`, ...
-
-
-### Known and unknown observables
-
-If you paste a list of observables in the search bar, chances are Sekoia.io will recognize some of them, but some may be unknown.
-
-To differentiate between the two, a tab with `Known` and `Unknown` helps understand which observables are in the database and which ones are not.
-
-### Filters
-
-| Filter | Description |
-| --- | --- |
-| By type | A multiselect to choose types of observables to show in the listing |
-| By tags | An autocomplete to filter observables list by tags |
-| By sources | Search in more than 200 sources available. This field has autocomplete to help you select sources.  |
-
-### Bulk actions
-
-When you have a list of observables in your search results, you can select two or more of them by ticking the checkbox on the left of the value. Once selected, you can copy their values using the `copy` button that appears on top of the table.
-
-### Tags on observables
-
-The validity of observables is determined by our analysts and indicated by a specific date (valid from, valid until). You can locate this date in the .json file associated with the observable, as well as on the observable's detailed page.
-
-When an observable is accompanied by a **blue tag**, it means that the observable is currently valid.
-
-On the other hand, if an observable is marked with an **orange tag**, it means that the validity date has passed, rendering the observable invalid.
+[Data model](/cti/features/data_model.md): Reference for objects, observables, relationships, sources, and confidence.

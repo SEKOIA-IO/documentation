@@ -31,7 +31,7 @@ In this section, you will find examples of raw logs as generated natively by the
 === "query_log_dhcp_1"
 
     ```
-	Option 82: received a REQUEST DHCP packet from relay-agent eth2 with a circuit-id of "01:02:03:04:05:06:07:08:09:0a:0b:0c:0d:0e:0f:10", a remote-id of "0a:0b:0c:0d" for 198.51.100.222 (00:11:22:33:44:66) lease time is undefined seconds. (NEW)
+	Option 82: received a REQUEST DHCP packet from relay-agent eth2 with a circuit-id of "01:02:03:04:05:06:07:08:09:0a:0b:0c:0d:0e:0f:10", a remote-id of "0a:0b:0c:0d" for 198.51.100.222 (02:00:00:00:00:3f) lease time is undefined seconds. (NEW)
     ```
 
 
@@ -39,7 +39,7 @@ In this section, you will find examples of raw logs as generated natively by the
 === "query_log_dhcp_10"
 
     ```
-	DHCPOFFER on 203.0.113.4 to 11:22:33:44:55:66 via eth2 relay 203.0.113.8 lease-duration 119 offered-duration 3600
+	DHCPOFFER on 203.0.113.4 to 02:00:00:00:00:00 via eth2 relay 203.0.113.8 lease-duration 119 offered-duration 3600
     ```
 
 
@@ -47,7 +47,7 @@ In this section, you will find examples of raw logs as generated natively by the
 === "query_log_dhcp_11"
 
     ```
-	DHCPDISCOVER from 11:22:33:44:55:66 (ABCDEF123) via 203.0.113.4 TransID abcd1234
+	DHCPDISCOVER from 02:00:00:00:00:00 (host.example.com) via 203.0.113.4 TransID abcd1234
     ```
 
 
@@ -55,7 +55,7 @@ In this section, you will find examples of raw logs as generated natively by the
 === "query_log_dhcp_12"
 
     ```
-	DHCPDISCOVER from 11:22:33:44:55:66 (TEST_HOSTNAME) via 203.0.113.4 TransID abcd1234 uid 01:11:22:33:44:55:66
+	DHCPDISCOVER from 02:00:00:00:00:00 (host.example.com) via 203.0.113.4 TransID abcd1234 uid 01:02:00:00:00:00:00
     ```
 
 
@@ -63,7 +63,7 @@ In this section, you will find examples of raw logs as generated natively by the
 === "query_log_dhcp_13"
 
     ```
-	DHCPDISCOVER from 11:22:33:44:55:66 via 203.0.113.4 TransID abcd1234
+	DHCPDISCOVER from 02:00:00:00:00:00 via 203.0.113.4 TransID abcd1234
     ```
 
 
@@ -71,7 +71,7 @@ In this section, you will find examples of raw logs as generated natively by the
 === "query_log_dhcp_2"
 
     ```
-	Option 82: received a REQUEST DHCP packet from relay-agent 198.51.100.53 with a circuit-id of "01:02:03:04:05:06:07:08:09:0a:0b:0c:0d:0e:0f:10", a remote-id of "0a:0b:0c:0d" for 198.51.100.53 (00:11:22:33:44:66) lease time is undefined seconds. (NEW)
+	Option 82: received a REQUEST DHCP packet from relay-agent 198.51.100.53 with a circuit-id of "01:02:03:04:05:06:07:08:09:0a:0b:0c:0d:0e:0f:10", a remote-id of "0a:0b:0c:0d" for 198.51.100.53 (02:00:00:00:00:3f) lease time is undefined seconds. (NEW)
     ```
 
 
@@ -79,7 +79,7 @@ In this section, you will find examples of raw logs as generated natively by the
 === "query_log_dhcp_3"
 
     ```
-	DHCPREQUEST for 198.51.100.107 from 00:11:22:33:44:77 via 198.51.100.107 TransID 80b994d6
+	DHCPREQUEST for 198.51.100.107 from 02:00:00:00:00:3a via 198.51.100.107 TransID 80b994d6
     ```
 
 
@@ -87,7 +87,7 @@ In this section, you will find examples of raw logs as generated natively by the
 === "query_log_dhcp_4"
 
     ```
-	DHCPREQUEST for 198.51.100.208 from 00:11:22:33:44:bb (HOST001) via eth2 TransID 823c1fa3 uid 01:00:11:22:33:44:bb (RENEW)
+	DHCPREQUEST for 198.51.100.208 from 02:00:00:00:00:41 (HOST001) via eth2 TransID 823c1fa3 uid 01:02:00:00:00:00:41 (RENEW)
     ```
 
 
@@ -95,7 +95,7 @@ In this section, you will find examples of raw logs as generated natively by the
 === "query_log_dhcp_5"
 
     ```
-	DHCPREQUEST for 198.51.100.95 (198.51.100.95) from 00:11:22:33:44:99 via 198.51.100.95 TransID ac1b72c4: lease 198.51.100.95 unavailable.
+	DHCPREQUEST for 198.51.100.95 (198.51.100.95) from 02:00:00:00:00:3d via 198.51.100.95 TransID ac1b72c4: lease 198.51.100.95 unavailable.
     ```
 
 
@@ -103,7 +103,7 @@ In this section, you will find examples of raw logs as generated natively by the
 === "query_log_dhcp_6"
 
     ```
-	DHCPREQUEST for 198.51.100.159 from 00:11:22:33:44:aa via 198.51.100.159 TransID e711c0c1: ignored (unknown subnet).
+	DHCPREQUEST for 198.51.100.159 from 02:00:00:00:00:3e via 198.51.100.159 TransID e711c0c1: ignored (unknown subnet).
     ```
 
 
@@ -111,7 +111,7 @@ In this section, you will find examples of raw logs as generated natively by the
 === "query_log_dhcp_7"
 
     ```
-	DHCPACK on 198.51.100.138 to 00:11:22:33:44:88 (HOST002) via eth2 relay 198.51.100.138 lease-duration 172800
+	DHCPACK on 198.51.100.138 to 02:00:00:00:00:3c (HOST002) via eth2 relay 198.51.100.138 lease-duration 172800
     ```
 
 
@@ -119,7 +119,7 @@ In this section, you will find examples of raw logs as generated natively by the
 === "query_log_dhcp_8"
 
     ```
-	r-l-e:198.51.100.113,Fixed,LEASE001,00:11:22:33:44:55,1732119022,1732291822,,$
+	r-l-e:198.51.100.113,Fixed,host.example.com,02:00:00:00:00:03,1732119022,1732291822,,$
     ```
 
 
@@ -127,7 +127,7 @@ In this section, you will find examples of raw logs as generated natively by the
 === "query_log_dhcp_9"
 
     ```
-	DHCPREQUEST for 203.0.113.4 from 11:22:33:44:55:66 (ABCDEFGHI) via eth2 TransID 1234abcd (RENEW)
+	DHCPREQUEST for 203.0.113.4 from 02:00:00:00:00:00 (host.example.com) via eth2 TransID 1234abcd (RENEW)
     ```
 
 
@@ -191,7 +191,7 @@ In this section, you will find examples of raw logs as generated natively by the
 === "query_log_dns_8"
 
     ```
-	28-Nov-2024 15:26:27.498 client 203.0.113.4#36615: UDP: query: host1.corp.local IN A response: NOERROR +A host1.example.test. 3600 IN A 198.51.100.201;
+	28-Nov-2024 15:26:27.498 client 203.0.113.4#36615: UDP: query: host.example.com IN A response: NOERROR +A host1.example.test. 3600 IN A 198.51.100.201;
     ```
 
 
@@ -231,7 +231,7 @@ In this section, you will find examples of raw logs as generated natively by the
 === "query_log_reverse"
 
     ```
-	client 192.0.2.66#45041 (2.0.0.192.in-addr.arpa): query: 2.0.0.192.in-addr.arpa IN PTR +E (192.0.2.102)
+	client 192.0.2.66#45041 (host.example.com): query: host.example.com IN PTR +E (192.0.2.102)
     ```
 
 
@@ -279,7 +279,7 @@ In this section, you will find examples of raw logs as generated natively by the
 === "test_cef_dns_query_ptr"
 
     ```
-	CEF:0|Infoblox|Data Connector|2.1.3|DNS Query|DNS Query IN PTR|1|dst=192.0.2.1 src=198.51.100.40 spt=37690 proto=UDP app=DNS InfobloxDNSView=Internal destinationDnsDomain=2.1.254.169.in-addr.arpa InfobloxDNSQClass=IN InfobloxDNSQType=PTR InfobloxDNSQFlags=+ InfobloxAnCount=0 InfobloxNsCount=0 InfobloxArCount=0
+	CEF:0|Infoblox|Data Connector|2.1.3|DNS Query|DNS Query IN PTR|1|dst=192.0.2.1 src=198.51.100.40 spt=37690 proto=UDP app=DNS InfobloxDNSView=Internal destinationDnsDomain=host.example.com InfobloxDNSQClass=IN InfobloxDNSQType=PTR InfobloxDNSQFlags=+ InfobloxAnCount=0 InfobloxNsCount=0 InfobloxArCount=0
     ```
 
 
@@ -311,7 +311,7 @@ In this section, you will find examples of raw logs as generated natively by the
 === "test_cef_dns_response_a_noerror_no_msg"
 
     ```
-	CEF:0|Infoblox|Data Connector|2.1.3|DNS Response|DNS Response IN A NOERROR|1|dst=192.0.2.1 src=127.0.0.1 spt=36615 proto=UDP app=DNS InfobloxDNSView=Internal destinationDnsDomain=. InfobloxDNSQClass=IN InfobloxDNSQType=A InfobloxDNSQFlags=+ InfobloxDNSRCode=NOERROR InfobloxAnCount=0 InfobloxNsCount=0 InfobloxArCount=0
+	CEF:0|Infoblox|Data Connector|2.1.3|DNS Response|DNS Response IN A NOERROR|1|dst=192.0.2.1 src=127.0.0.1 spt=36615 proto=UDP app=DNS InfobloxDNSView=Internal destinationDnsDomain=host.example.com InfobloxDNSQClass=IN InfobloxDNSQType=A InfobloxDNSQFlags=+ InfobloxDNSRCode=NOERROR InfobloxAnCount=0 InfobloxNsCount=0 InfobloxArCount=0
     ```
 
 
@@ -351,7 +351,7 @@ In this section, you will find examples of raw logs as generated natively by the
 === "test_cef_dns_response_ptr_nxdomain"
 
     ```
-	CEF:0|Infoblox|Data Connector|2.1.3|DNS Response|DNS Response IN PTR NXDOMAIN|1|dst=192.0.2.1 src=198.51.100.40 spt=37690 proto=UDP app=DNS InfobloxDNSView=Internal destinationDnsDomain=2.1.254.169.in-addr.arpa InfobloxDNSQClass=IN InfobloxDNSQType=PTR InfobloxDNSQFlags=+ InfobloxDNSRCode=NXDOMAIN InfobloxAnCount=0 InfobloxNsCount=0 InfobloxArCount=0
+	CEF:0|Infoblox|Data Connector|2.1.3|DNS Response|DNS Response IN PTR NXDOMAIN|1|dst=192.0.2.1 src=198.51.100.40 spt=37690 proto=UDP app=DNS InfobloxDNSView=Internal destinationDnsDomain=host.example.com InfobloxDNSQClass=IN InfobloxDNSQType=PTR InfobloxDNSQFlags=+ InfobloxDNSRCode=NXDOMAIN InfobloxAnCount=0 InfobloxNsCount=0 InfobloxArCount=0
     ```
 
 
@@ -391,7 +391,7 @@ In this section, you will find examples of raw logs as generated natively by the
 === "test_dhcp_bootrequest"
 
     ```
-	BOOTREQUEST from 11:22:33:44:55:66 via 192.0.2.4: BOOTP from dynamic client and no dynamic leases
+	BOOTREQUEST from 02:00:00:00:00:00 via 192.0.2.4: BOOTP from dynamic client and no dynamic leases
     ```
 
 
@@ -399,7 +399,7 @@ In this section, you will find examples of raw logs as generated natively by the
 === "test_dhcp_expire"
 
     ```
-	DHCPEXPIRE on 192.0.2.100 to 00:11:22:33:44:cc
+	DHCPEXPIRE on 192.0.2.100 to 02:00:00:00:00:40
     ```
 
 
@@ -423,7 +423,7 @@ In this section, you will find examples of raw logs as generated natively by the
 === "test_dhcp_option82_discover"
 
     ```
-	Option 82: received a DISCOVER DHCP packet from relay-agent 203.0.113.1 with a link-selection of "203.0.113.0", a server-id-override of "203.0.113.2" for 203.0.113.10 (00:11:22:33:44:dd) lease time is undefined seconds. (NEW)
+	Option 82: received a DISCOVER DHCP packet from relay-agent 203.0.113.1 with a link-selection of "203.0.113.0", a server-id-override of "203.0.113.2" for 203.0.113.10 (02:00:00:00:00:39) lease time is undefined seconds. (NEW)
     ```
 
 
@@ -431,7 +431,7 @@ In this section, you will find examples of raw logs as generated natively by the
 === "test_dhcp_option82_discover_circuit_id"
 
     ```
-	Option 82: received a DISCOVER DHCP packet from relay-agent 203.0.113.3 with a circuit-id of "00:04:01:02:03:04", a link-selection of "203.0.113.0", a server-id-override of "203.0.113.2" for 203.0.113.11 (00:11:22:33:44:dd) lease time is undefined seconds. (NEW)
+	Option 82: received a DISCOVER DHCP packet from relay-agent 203.0.113.3 with a circuit-id of "00:04:01:02:03:04", a link-selection of "203.0.113.0", a server-id-override of "203.0.113.2" for 203.0.113.11 (02:00:00:00:00:39) lease time is undefined seconds. (NEW)
     ```
 
 
@@ -439,7 +439,7 @@ In this section, you will find examples of raw logs as generated natively by the
 === "test_dhcp_option82_request_circuit_link"
 
     ```
-	Option 82: received a REQUEST DHCP packet from relay-agent 203.0.113.5 with a circuit-id of "00:04:05:06:07:08", a link-selection of "203.0.113.128", a server-id-override of "203.0.113.129" for 203.0.113.131 (00:11:22:33:44:ee) lease time is undefined seconds. (NEW)
+	Option 82: received a REQUEST DHCP packet from relay-agent 203.0.113.5 with a circuit-id of "00:04:05:06:07:08", a link-selection of "203.0.113.128", a server-id-override of "203.0.113.129" for 203.0.113.131 (02:00:00:00:00:3b) lease time is undefined seconds. (NEW)
     ```
 
 
@@ -447,7 +447,7 @@ In this section, you will find examples of raw logs as generated natively by the
 === "test_dhcp_option82_request_link_selection"
 
     ```
-	Option 82: received a REQUEST DHCP packet from relay-agent 203.0.113.4 with a link-selection of "203.0.113.128", a server-id-override of "203.0.113.129" for 203.0.113.130 (00:11:22:33:44:ee) lease time is undefined seconds. (NEW)
+	Option 82: received a REQUEST DHCP packet from relay-agent 203.0.113.4 with a link-selection of "203.0.113.128", a server-id-override of "203.0.113.129" for 203.0.113.130 (02:00:00:00:00:3b) lease time is undefined seconds. (NEW)
     ```
 
 
@@ -455,7 +455,7 @@ In this section, you will find examples of raw logs as generated natively by the
 === "test_dhcpack"
 
     ```
-	DHCPACK on 192.0.2.4 to 11:22:33:44:55:66 (ABCDE1234) via bond0 relay 203.0.113.40 lease-duration 43200 (RENEW) uid 01:11:22:33:44:55:66
+	DHCPACK on 192.0.2.4 to 02:00:00:00:00:00 (host.example.com) via bond0 relay 203.0.113.40 lease-duration 43200 (RENEW) uid 01:02:00:00:00:00:00
     ```
 
 
@@ -463,7 +463,7 @@ In this section, you will find examples of raw logs as generated natively by the
 === "test_dhcprequest"
 
     ```
-	DHCPREQUEST for 192.0.2.4 (203.0.113.40) from 11:22:33:44:55:66 (ABCD1234) via 198.51.100.8 TransID 11111111 uid 01:11:22:33:44:55:66
+	DHCPREQUEST for 192.0.2.4 (203.0.113.40) from 02:00:00:00:00:00 (host.example.com) via 198.51.100.8 TransID 11111111 uid 01:02:00:00:00:00:00
     ```
 
 
@@ -471,7 +471,7 @@ In this section, you will find examples of raw logs as generated natively by the
 === "test_dns_bind_update_rejected"
 
     ```
-	bind update on 192.0.2.27 from DHCP-FAILOVER(1770103776p) rejected: incoming update is less critical than outgoing update
+	bind update on 192.0.2.27 from host.example.com rejected: incoming update is less critical than outgoing update
     ```
 
 
@@ -479,7 +479,7 @@ In this section, you will find examples of raw logs as generated natively by the
 === "test_dns_bind_update_rejected_2"
 
     ```
-	bind update on 192.0.2.4 from TESTORG-DHCP-FAILOVER(1784109718p) rejected: incoming update is less critical than outgoing update
+	bind update on 192.0.2.4 from host.example.com rejected: incoming update is less critical than outgoing update
     ```
 
 
