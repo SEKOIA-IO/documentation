@@ -70,6 +70,9 @@ The **Vulnerabilities** tab lists known CVE exposures affecting the asset, aggre
 
 Select a row to expand it and view the full description, the CVSS vector and exploitability characteristics (attack vector, attack complexity, privileges required, user interaction), external references, the detection and confirmation source, first and last seen dates, and the record UUID.
 
+!!! note Exploitability 
+    Exploitability is determined by the presence of cisaExploitAdd. This field may be missing or delayed due to synchronization or enrichment gaps.
+    
 ### Unified risk score
 
 !!! note "Asset score and vulnerability score"
