@@ -442,6 +442,8 @@ The **asset_intake_telemetry** data source tells which intakes saw each asset in
 
 Use it to find the sources that see an asset, or to spot assets that only appear in events and that no asset connector reports.
 
+To get the asset names, join it with [assets](#assets).
+
 | **Property**          | **Description**                                                          |
 |-----------------------|--------------------------------------------------------------------------|
 | community_uuid        | UUID of the community the asset belongs to                               |
@@ -449,7 +451,6 @@ Use it to find the sources that see an asset, or to spot assets that only appear
 | intake_uuid           | UUID of the intake whose events mention the asset                        |
 | intake_format_uuid    | UUID of the intake format of that intake                                 |
 | type                  | Type of the asset                                                        |
-| name                  | Name of the asset                                                        |
 | bucket_start_date     | Start of the hour                                                        |
 | occurrences           | Number of events of the intake that mention the asset in that hour       |
 
