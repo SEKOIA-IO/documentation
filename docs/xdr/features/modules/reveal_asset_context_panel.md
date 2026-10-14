@@ -83,7 +83,7 @@ Different vulnerability scanners use different scoring scales. The unified risk 
 
 For the full field reference, score bands, and status workflow, see [Vulnerability enrichment](/xdr/features/modules/reveal_vulnerabilities.md).
 
-![Vulnerabilities tab example](https://github.com/user-attachments/assets/300d5842-379d-4c09-9827-331217ac4357)
+![!Vulnerabilities tab example](/assets/asset_vuln_exploited.png){: style="max-width:100%"}
 
 
 ## Applications tab
