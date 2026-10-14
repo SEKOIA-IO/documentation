@@ -10,15 +10,18 @@ The Applications tab lists software associated with a host asset and shows which
 
 ## Prerequisites
 
-To collect software inventory with the Sekoia Endpoint Agent, enable the host hygiene collection roles:
+To collect application inventory data, you can use either the Sekoia Endpoint Agent or Asset Connectors supporting the Application Discovery capability.
 
-Enable these three roles:
+### Enable Software Collection on the Sekoia Endpoint Agent
 
-- `event-collector`
-- `compliance-collector`
+Enable the following role in your Sekoia Endpoint Agent configuration:
 - `software-collector`
 
-For the Endpoint Agent installation and host hygiene configuration, see [Install the Sekoia Endpoint Agent](https://docs.sekoia.com/integration/categories/endpoint/install_sekoia_endpoint_agent/#enable-host-hygiene-collection).
+In addition to the recommended roles:
+- `event-collector`
+- `compliance-collector`
+
+For installation instructions and host hygiene configuration, see [Install the Sekoia Endpoint Agent](https://docs.sekoia.com/integration/categories/endpoint/install_sekoia_endpoint_agent/#enable-host-hygiene-collection).
 
 The Applications tab lists software associated with a host asset and shows which applications have associated CVE findings. You can review the application inventory, filter vulnerable applications, and click an application's CVE count to review its related vulnerabilities from the asset context panel.
 
@@ -125,11 +128,15 @@ For the vulnerability table and expanded finding details, see [Vulnerability enr
 
 ## Use application inventory during an investigation
 
+Application inventory provides visibility into the software installed across your assets, helping security teams investigate threats, assess exposure, and support compliance activities.
+
 **During alert triage:** check whether the affected asset runs an application associated with the activity under investigation, then click its CVE count to review the related findings.
 
 **During root cause analysis:** identify outdated or unsigned software that may have contributed to the compromise.
 
 **For proactive review:** use the **vulnerable** quick filter to focus on applications with associated CVE findings, then prioritize the affected versions according to the vulnerability severity and available exploitation information.
+
+**For software compliance:** review installed applications to identify unauthorized or non-compliant software against your organization's approved software policies.
 
 ## Relationship with the Asset Risk Score
 
