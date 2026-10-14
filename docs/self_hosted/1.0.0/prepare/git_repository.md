@@ -11,9 +11,10 @@ Two programs use the repository:
 
 ## Rules
 
-- The repository **MUST** exist before the installation. It **MAY** be empty.
+- The repository **MUST** exist before the installation. It **SHOULD** contain at least one commit, for example a `README` file created with the repository.
+- The repository **MAY** be private.
 - The repository **MUST** be reached over **HTTP or HTTPS**, from the orchestration node **and** from every Kubernetes node.
-- If you use HTTPS, the certificate of the Git server **MUST** be signed by a public certificate authority. A self-signed certificate or a certificate from a private authority is **not supported** for Git: use HTTP inside your network, or contact Sekoia.
+- If you use HTTPS, the certificate of the Git server **MUST** be signed by a public certificate authority. A self-signed certificate or a certificate from a private authority is **not supported** for Git in this release: use HTTP inside your network.
 - The SHC **MUST** connect with a **user name and a password** (or an access token used as the password).
 - This user **MUST** have read and write (push) rights on the repository.
 - The SHC writes to the **default branch** of the repository (often `main` or `master`). It **MUST** be able to push to this branch directly: the branch **MUST NOT** require a merge request (pull request) or a review.
@@ -37,6 +38,7 @@ The `run-shc.sh` script already passes `GIT_HTTP_USERNAME` and `GIT_HTTP_PASSWOR
 | The orchestration node reaches Git through a proxy | In `config.yml`, set `utils.git.http.proxy: "http://<PROXY_HOST>:<PROXY_PORT>"`. |
 | The Kubernetes nodes reach Git through a proxy | In `config.yml`, set the platform proxy: see [Proxy](../deployment/deployment_configuration.md#proxy). |
 | The Kubernetes nodes reach Git **without** a proxy, but a proxy is configured for the platform | Add the Git host name to `modules.platform_configuration.config.proxy.no_proxy`. An IP range does not match a host name. |
+| The repository is empty (no commit) | In `config.yml`, set `modules.push_argo_stacks.base_branch: "<BRANCH>"`, for example `"main"`. The SHC creates this branch with its first push. |
 | The repository is shared with other projects | No change. The SHC writes only in the `argocd/` directory of the repository, and **replaces this whole directory** at each run: never put other files in it. |
 
 ### Not supported
@@ -44,9 +46,12 @@ The `run-shc.sh` script already passes `GIT_HTTP_USERNAME` and `GIT_HTTP_PASSWOR
 | Situation | Result |
 | :--- | :--- |
 | Git over SSH (`git@host:...`) | ArgoCD cannot read the repository. |
-| A branch other than the default branch | ArgoCD reads the default branch only. Create a dedicated repository instead. |
+| A branch other than the default branch | Not supported in this release: ArgoCD reads the default branch only. Create a dedicated repository instead. |
 | A protected default branch (merge request or review required) | The SHC push fails. |
-| HTTPS with a self-signed or private certificate | The SHC cannot connect. |
+| HTTPS with a self-signed or private certificate | Not supported in this release: the SHC cannot connect. |
+
+<!-- SH-ISSUE #96036: review this passage when the issue is released -->
+<!-- SH-ISSUE #96029: review this passage when the issue is released -->
 | A repository without authentication | The SHC cannot push. |
 
 ## Install the Git server
@@ -189,7 +194,7 @@ The `run-shc.sh` script already passes `GIT_HTTP_USERNAME` and `GIT_HTTP_PASSWOR
     13. Before the installation, check access from the orchestration node with the SHC: `./run-shc.sh exec CheckLocalGit`.
 
     !!! note "Private repository"
-        The lab repository is created with `"private": false`, inside an isolated network. The SHC and ArgoCD always send the user name and the password, so a private repository is expected to work, but it is not validated yet.
+        The lab repository is created with `"private": false`, inside an isolated network. A private repository is supported: the SHC and ArgoCD always send the user name and the password. To create it private, write `"private":true` in step 10.
 
 <!--
 To add a technology: copy a tab, set its "Validation status" (lab or customer project, with the
@@ -201,5 +206,6 @@ Keep the "Write the values for the SHC" step: it is the link between the product
 
 - [ ] The repository exists, and `git ls-remote` works from the orchestration node.
 - [ ] Every Kubernetes node reaches the Git server on its port (for example `curl -s -o /dev/null -w '%{http_code}\n' http://<GIT_IP>:3000/` prints `200`).
+- [ ] The repository has at least one commit (or `modules.push_argo_stacks.base_branch` is set).
 - [ ] The default branch accepts a direct push from the SHC user.
 - [ ] `utils.git.repo_url` is in `config.yml`, and `GIT_HTTP_USERNAME` and `GIT_HTTP_PASSWORD` are in `env.rc`.

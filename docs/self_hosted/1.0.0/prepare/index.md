@@ -69,11 +69,11 @@ The table below summarizes what the minimal configuration expects from each serv
 
 | Service | The minimal configuration expects |
 | :--- | :--- |
-| Kubernetes nodes | Debian 12 or 13, the same Linux user on every node, SSH with a key on port 22, `sudo` without a password, an empty data disk. |
-| Git | A repository that already exists, reached over HTTP or HTTPS with a public certificate, with a user name and a password. The SHC pushes to the **default branch**. |
-| OCI registry | A registry over HTTPS (a self-signed certificate is accepted), a **project that already exists**, a user that can push, pull and delete. |
-| S3 storage | An S3-compatible endpoint, **16 buckets that already exist**, one access key, path-style URLs. |
+| Kubernetes nodes | Debian 12 or 13 in IPv4, swap disabled, the same Linux user on every node, SSH with a key on port 22, `sudo` without a password, an empty data disk. |
+| Git | A repository that already exists with at least one commit, reached over HTTP or HTTPS with a public certificate, with a user name and a password. The SHC pushes to the **default branch**. |
+| OCI registry | A registry over HTTPS (a self-signed certificate is accepted) with token (Bearer) authentication, a **project that already exists**, a user that can push, pull and delete. |
+| S3 storage | An S3-compatible endpoint with a public certificate (or HTTP), **16 buckets that already exist**, one access key that reads and writes objects, path-style URLs. |
 | Load balancer | A TCP load balancer that forwards ports 80, 443, 10514 and 11514 to the nodes. |
 | DNS | Records for `global.host`, `global.delivery_host` and `global.alternative_hosts` that point to the load balancer. |
-| Certificate | None: the platform then uses a self-signed certificate. You SHOULD provide your own certificate. |
+| Certificate | A certificate and its private key, in `TRAEFIK_PUBKEY` and `TRAEFIK_PRIVKEY`. An installation without a certificate is not supported in this release. |
 | Release | Add `global.version.fetch.offline: true` when you extract the release archive yourself, as in [Deploy the platform](../deployment/deployment_guide.md#step-2-transfer-and-extract-the-archive). Otherwise add `global.version.fetch.endpoint`: see [Release download and security content](../deployment/deployment_configuration.md#release-download-and-security-content). |

@@ -16,8 +16,10 @@ Three programs use the registry:
 - A **self-signed certificate is accepted**. The SHC, containerd and ArgoCD do not verify the certificate of the registry.
 - The registry **MUST** be reached from the orchestration node and from every Kubernetes node.
 - The orchestration node **MUST** reach the registry **without a proxy**.
+- The registry **MUST** use **token authentication (Bearer)**. When the SHC connects without a token, the registry must answer `401` with a `WWW-Authenticate: Bearer ...` header. Harbor does this by default. A registry that answers with `WWW-Authenticate: Basic ...` is rejected.
 - A **project** (also called namespace or organization) **MUST** exist before the installation. Its name **MUST** contain only letters, digits, `-` and `_`. It **MUST NOT** contain `/`.
 - The SHC user **MUST** be able to **push, pull and delete** in this project, and to create new repositories in it. The SHC creates `<project>/images/...`, `<project>/charts/...` and `<project>/shc-probe`.
+- The SHC user **SHOULD** be a **robot account** (service account) with all permissions on the project, not a personal account or the registry administrator.
 - The registry **SHOULD** have **1 TB** of storage.
 - The Kubernetes nodes **SHOULD** reach the registry without a proxy.
 
@@ -34,6 +36,7 @@ Three programs use the registry:
 
 | SHOULD rule not followed | What you must change |
 | :--- | :--- |
+| The SHC uses the registry administrator or a personal account | No configuration change. Put this account in `REGISTRY_USERNAME` and `REGISTRY_PASSWORD`. The Sekoia lab procedure below uses the Harbor `admin` account. |
 | Less than 1 TB of storage | No configuration change. Each release adds its images to the registry: delete the images of old releases before the registry is full. |
 | The Kubernetes nodes reach the registry through a proxy | In `config.yml`, set `modules.k3s_install.pull_images_with_proxy: true`, `modules.k3s_install.k3s_http_proxy` and `modules.k3s_install.k3s_https_proxy`. See [Proxy](../deployment/deployment_configuration.md#proxy). |
 | A platform proxy is configured, and the nodes reach the registry **without** it | Add the registry host name to `modules.platform_configuration.config.proxy.no_proxy` and to `modules.k3s_install.k3s_no_proxy`. |
@@ -44,13 +47,16 @@ Three programs use the registry:
 | :--- | :--- |
 | Registry over plain HTTP | ArgoCD cannot download the Helm charts. |
 | Project path with `/` (for example `group/project`) | Rejected by `CheckLocalConfig`. |
-| Orchestration node that reaches the registry only through a proxy | The SHC has no proxy setting for the registry. |
+| Orchestration node that reaches the registry only through a proxy | Not supported in this release: the SHC has no proxy setting for the registry. |
+| Registry that uses Basic authentication only | The SHC rejects it. Configure token (Bearer) authentication. |
+
+<!-- SH-ISSUE #96037: review this passage when the issue is released -->
 
 ## Install the registry
 
 === "Harbor"
 
-    **Validation status:** validated in the Sekoia lab (Debian 13, Harbor 2.15.0 offline installer, self-signed certificate on the IP address, HTTPS on port 443).
+    **Validation status:** validated in the Sekoia lab (Debian 13, Harbor 2.15.0 offline installer, self-signed certificate on the IP address, HTTPS on port 443). The Sekoia team installs with one Harbor project per lab, with any project name.
 
     In the lab, Harbor runs on a virtual machine with 8 CPUs, 30 GB of RAM and a 500 GB data disk mounted on `/opt/workspace`. Gogs runs on the same machine (see [Prepare the Git repository](./git_repository.md)).
 
@@ -214,10 +220,35 @@ Three programs use the registry:
         export REGISTRY_PASSWORD='<HARBOR_ADMIN_PASSWORD>'
         ```
 
-    12. Before the installation, check access from the orchestration node with the SHC: `./run-shc.sh exec CheckLocalOCIRegistry`.
+    12. Recommended: replace the `admin` account by a robot account. The Sekoia team uses a robot account with **all permissions** on the project.
+
+        1. Open `https://<REGISTRY_IP>` in a browser and log in as `admin`.
+        2. Open **Projects**, then the project `sekoia-self-hosted`, then the **Robot Accounts** tab.
+        3. Click **New Robot Account**, give it a name (for example `shc`), select **all permissions**, and save.
+        4. Copy the full name (it looks like `robot$sekoia-self-hosted+shc`) and the secret. Harbor shows the secret only once.
+        5. In `env.rc`, use single quotes because the name contains `$`:
+
+            ```bash
+            export REGISTRY_USERNAME='robot$sekoia-self-hosted+shc'
+            export REGISTRY_PASSWORD='<ROBOT_SECRET>'
+            ```
+
+    13. Before the installation, check access from the orchestration node with the SHC: `./run-shc.sh exec CheckLocalOCIRegistry`.
 
     !!! note "Harbor after a reboot"
         Harbor starts its containers again after a reboot of the server. If the web interface does not answer after a reboot, run `cd /opt/harbor/harbor && sudo docker compose up -d`.
+
+=== "Nexus Repository"
+
+    **Validation status:** not validated. Nexus is supported **only** when it uses token (Bearer) authentication for its Docker repository; Sekoia has not tested it yet.
+
+    Before you use Nexus, check from the orchestration node that the registry asks for a token:
+
+    ```bash
+    curl -sk -o /dev/null -D - https://<REGISTRY_HOST>/v2/ | grep -i www-authenticate
+    ```
+
+    **Expected result:** a line that starts with `WWW-Authenticate: Bearer`. If the line starts with `WWW-Authenticate: Basic`, the SHC cannot use this registry.
 
 <!--
 To add a technology: copy a tab, set its "Validation status" (lab or customer project, with the

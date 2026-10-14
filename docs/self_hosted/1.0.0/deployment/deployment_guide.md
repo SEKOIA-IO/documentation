@@ -113,7 +113,7 @@ docker images | grep self-hosted-controller
     Replace `<IMAGE_ID>` with the image ID returned by `docker images`.
 
 !!! tip "The image has no name after `docker load`"
-    If `docker load` prints two `Loaded image ID: sha256:...` lines and `docker images | grep self-hosted-controller` prints nothing, the archive contains the image and its signature, both without a name. Tag the image whose operating system is `linux`:
+    The archive contains the SHC image and its signature. `docker load` prints two `Loaded image ID: sha256:...` lines, and `docker images | grep self-hosted-controller` prints nothing: both have no name. You do not need Cosign. Tag the image whose operating system is `linux`:
 
     ```bash
     docker load -i $SEKOIA_LOCAL_DIR/platform/v1.0.0/images/registry.sekoia.io_sekoialab_self-hosted-controller-cli-v1.0.0.tar.gz | tee /tmp/shc-load.log

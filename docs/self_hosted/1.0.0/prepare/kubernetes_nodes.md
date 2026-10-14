@@ -10,19 +10,20 @@ Hardware sizes are in [Technical requirements](../deployment/deployment_prerequi
 
 - The node **MUST** have 44 logical CPUs or more. On a physical server, **enable Hyper-Threading (SMT)** in the BIOS/UEFI: the SHC counts logical CPUs, not physical cores.
 - The node **MUST** have 120 GiB of RAM or more, as seen by Linux (`free -g`). A server with 128 GB of RAM can show less if the firmware reserves memory.
-- The node **MUST** have one **data disk** of 200 GB or more, used for nothing else (4 TB per worker node for a production deployment).
+- The node **MUST** have one **data disk** of 200 GB or more, used for nothing else (4 TB per worker node for a production deployment). Ceph uses this disk. One data disk per node is enough.
 - If the server has a RAID controller, the data disk **SHOULD** be in **HBA / JBOD / passthrough** mode, not inside a RAID volume.
-- The node **MUST** have a separate **system disk** for the operating system. See [System disk](#system-disk).
+- The node **MUST** have a separate **system disk** for the operating system. It **SHOULD** have **400 GB** or more. See [System disk](#system-disk).
 
 ### Operating system
 
 - The node **MUST** run **Debian 12 or Debian 13**, 64-bit (amd64).
 - The node **MUST NOT** run a desktop environment or a web server. Ports 80 and 443 must stay free.
-- The hostname **MUST** be unique in the cluster and **MUST** contain only lowercase letters, digits and `-`. Example: `sh-mgr-1`, `sh-worker-1`.
-- The node **MUST** have a fixed IP address. The IP addresses are written in `config.yml` and must never change.
+- The hostname **MUST** be unique in the cluster. It **SHOULD** contain only lowercase letters, digits and `-`. Example: `sh-mgr-1`, `sh-worker-1`.
+- The node **MUST** have a fixed **IPv4** address. The IP addresses are written in `config.yml` and must never change. IPv6 is not supported.
+- **Swap MUST be disabled**, also after a reboot. See [Step 5: Disable swap](#step-5-disable-swap).
 - `apt` **MUST** work on the node: `sudo apt-get update` finishes without errors. The SHC installs packages with `apt` during the installation.
 - These packages **MUST** be installed: `python3`, `sudo`, `openssh-server`, `lvm2`, `gettext-base`.
-- These packages **SHOULD** be installed: `open-iscsi`, `nfs-common`, `cryptsetup`, `chrony`. The Sekoia labs install them on every node.
+- A time service **MUST** be installed: `chrony` (recommended) or `systemd-timesyncd`.
 - The clock **MUST** be synchronized with NTP. See [Prepare DNS, time, email and certificates](./dns_time_certificates.md#time-ntp).
 
 ### User account
@@ -36,18 +37,24 @@ Hardware sizes are in [Technical requirements](../deployment/deployment_prerequi
 | SHOULD rule not followed | What you must change |
 | :--- | :--- |
 | `sudo` asks for a password | In `env.rc`, set `export SERVERS_SUDO_PASSWORD='<password>'`. The script `run-shc.sh` already passes this variable to the SHC. The same password is also used if SSH asks for a password. |
-| `open-iscsi`, `nfs-common`, `cryptsetup` are not installed | No configuration change exists. Sekoia has not validated an installation without these packages: contact Sekoia. |
+| The hostname contains uppercase letters | No configuration change. No problem is known, but this case is not tested. |
+| The system disk is smaller than 400 GB | No configuration change. Watch the free space of `/var` closely: when it is full, the installation stops (`DiskPressure`). |
 | The data disk is inside a RAID volume | No configuration change exists. Storage performance and failure handling are not validated: contact Sekoia. |
 
 ### Not supported
 
 | Situation | Result |
 | :--- | :--- |
-| SSH on a port other than 22 | Not supported. |
+| SSH on a port other than 22 | Not supported in this release. |
+| SSH key with a passphrase | Not supported in this release. |
+| `su` instead of `sudo` | Not supported in this release. |
+| Access to the nodes through a jump host (bastion) | Not supported in this release: the orchestration node must reach every node directly. |
 | SSH with a password only, without a key | Not supported: the SHC requires a key. |
 | A different Linux user on some nodes | Not supported. |
-| `su` or `doas` instead of `sudo` | Not supported. |
-| Access to the nodes through a jump host (bastion) | Not supported: the orchestration node must reach every node directly. |
+| `doas` instead of `sudo` | Not supported. |
+| IPv6 addresses | Not supported. |
+
+<!-- SH-ISSUE #96028: review this passage when the issue is released -->
 
 ## Step 1: Install Debian
 
@@ -130,10 +137,10 @@ Log in to the node as `<ADMIN_USER>`.
     sudo apt-get install -y python3 sudo openssh-server lvm2 gettext-base
     ```
 
-2. Install the recommended packages:
+2. Install the time service:
 
     ```bash
-    sudo apt-get install -y open-iscsi nfs-common cryptsetup chrony
+    sudo apt-get install -y chrony
     ```
 
 3. Install the tools used in the troubleshooting pages:
@@ -176,21 +183,40 @@ Skip this step if you used the cloud image tab in Step 1.
 
 The SSH key of the orchestration node is authorized in [Prepare the orchestration node](./orchestration_node.md#step-4-authorize-the-ssh-key-on-every-node).
 
-## Step 5: Disable IPv6 if your network has no IPv6 routing
+## Step 5: Disable swap
 
-The Sekoia lab disables IPv6 on every node. When a node has an IPv6 address but no IPv6 route, some tools wait for IPv6 connections that never succeed. If your network routes IPv6 correctly, skip this step.
+Swap **MUST** be disabled on every node, also after a reboot. Sekoia does not support Kubernetes with swap.
 
-1. Create the configuration file:
+<!-- SH-ISSUE #96032: review this passage when the issue is released -->
 
-    ```bash
-    printf 'net.ipv6.conf.all.disable_ipv6 = 1\nnet.ipv6.conf.default.disable_ipv6 = 1\nnet.ipv6.conf.lo.disable_ipv6 = 1\n' | sudo tee /etc/sysctl.d/99-disable-ipv6.conf
-    ```
-
-2. Apply it now:
+1. Stop the swap now:
 
     ```bash
-    sudo sysctl --system
+    sudo swapoff -a
     ```
+
+2. Disable the swap lines of `/etc/fstab`, so that swap does not come back after a reboot. This command puts `#` at the start of every line that contains `swap`:
+
+    ```bash
+    sudo sed -i '/\sswap\s/ s/^\([^#]\)/#\1/' /etc/fstab
+    ```
+
+3. Reboot the node:
+
+    ```bash
+    sudo reboot
+    ```
+
+4. Check, after the reboot:
+
+    ```bash
+    /sbin/swapon --show=NAME --noheadings --raw
+    ```
+
+    **Expected result:** nothing. If a line is printed, a swap file, a systemd swap unit or a `zram` service is still active: disable it, then reboot and check again.
+
+!!! note "IPv6"
+    The platform is installed in IPv4 only. You do not need to disable IPv6 in the operating system. The Sekoia lab disables it on every node, with `net.ipv6.conf.all.disable_ipv6 = 1` in `/etc/sysctl.d/`; this is not a requirement.
 
 ## System disk
 
@@ -203,15 +229,15 @@ The system disk holds the operating system **and** the Kubernetes data: containe
 
     **Validation status:** validated in the Sekoia lab, with a 400 GB system disk, one root partition, no swap, and the `sizing/minimal.yaml` profile.
 
-    - System disk of **600 GB or more** for a production sizing profile. This value comes from the space budget of the LVM layout (other tab).
+    - System disk of **400 GB or more**. Sekoia plans 200 GB for the containers, 100 GB for the logs and 100 GB for the system.
     - In the Debian installer: **Guided - use entire disk**, then **All files in one partition**.
-    - The installer also creates a swap partition. The lab nodes have no swap: an installation with swap is not validated.
+    - The installer also creates a swap partition. Disable it after the installation: see [Step 5: Disable swap](#step-5-disable-swap).
 
 === "LVM layout (hardened)"
 
     **Validation status:** validated in the Sekoia lab with these volume sizes. In the lab, `/` and `/boot` stay on a separate root disk: the `lv-root` row and the 1 GB `/boot` partition are the values planned for a physical server.
 
-    Use this layout when your security policy requires one partition per system directory. Create a volume group named `vg-os` on the system disk (about **700 GB**) and these logical volumes, with an `ext4` filesystem, in the Debian installer (**Manual** partitioning) or after the installation.
+    Use this layout when your security policy requires one partition per system directory. It is larger than the 400 GB minimum: it keeps free space to grow the volumes. Create a volume group named `vg-os` on the system disk (about **700 GB**) and these logical volumes, with an `ext4` filesystem, in the Debian installer (**Manual** partitioning) or after the installation.
 
     | Logical volume | Mount point | Manager node | Worker node |
     | :--- | :--- | :---: | :---: |
@@ -260,7 +286,8 @@ Run these commands on each node and compare with the expected result.
 
 | Command | Expected result |
 | :--- | :--- |
-| `hostname` | The unique name of the node, lowercase. |
+| `hostname` | The unique name of the node. |
+| `/sbin/swapon --show=NAME --noheadings --raw` | **Nothing** (swap disabled). |
 | `nproc` | `44` or more. |
 | `free -g` | `total` of the `Mem:` line: `120` or more. |
 | `df -h /var/lib/rancher` | Simple layout: the `Avail` column of `/` shows most of the system disk. LVM layout: the line shows `vg--os-lv--varlibrancher`. |
@@ -281,7 +308,8 @@ sudo ss -tlnp | grep -E ':(80|443|2379|2380|4240|4250|6443|10514|11514|10901) '
 
 - [ ] Every node runs Debian 12 or 13, without a desktop and without a web server.
 - [ ] Every hostname is unique and lowercase.
-- [ ] Every node has a fixed IP address.
+- [ ] Every node has a fixed IPv4 address.
+- [ ] Swap is disabled on every node, also after a reboot.
 - [ ] `sudo apt-get update` works on every node.
 - [ ] `python3`, `sudo`, `openssh-server`, `lvm2`, `gettext-base` are installed on every node.
 - [ ] `<ADMIN_USER>` exists on every node and runs `sudo` without a password (or you set `SERVERS_SUDO_PASSWORD`).

@@ -131,6 +131,8 @@ ExaLog storage configuration is derived from `global.platform_storage`. Some com
 
 Worker nodes are configured under `utils.ansible.inventory.workers`. The field is not required by the configuration validator, but production sizing profiles normally require workers to provide the expected capacity. Always write `workers` in your `config.yml`, with the list of worker nodes.
 
+<!-- SH-ISSUE #96033: review this passage when the issue is released -->
+
 ### Git repository
 
 | Field | Description |

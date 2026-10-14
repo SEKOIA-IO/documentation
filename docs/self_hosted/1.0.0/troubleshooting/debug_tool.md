@@ -92,7 +92,7 @@ The command checks the following, in this order.
 | Port availability | TCP 80, 443, 2379, 2380, 4240, 4250, 6443, 10514, and 11514 can be bound before K3s is installed |
 | Dedicated storage disk | One unused block device of 200 GB or more, with no partition table and no filesystem, before K3s is installed |
 
-The last two checks are skipped once K3s is installed on the node. After the installation, the ports are bound by the cluster and the storage disk is consumed by Ceph and Longhorn, so requiring them to be free would fail every re-run.
+The last two checks are skipped once K3s is installed on the node. After the installation, the ports are bound by the cluster and the storage disk is consumed by Ceph, so requiring them to be free would fail every re-run.
 
 **What to do after a failure:**
 

@@ -33,9 +33,15 @@ Every Kubernetes node, manager or worker, must meet the following minimum hardwa
 | CPU | 44 vCPUs at 3.2 GHz minimum | 44 cores |
 | RAM | 128 GB | 120 GiB |
 | Dedicated storage disk | One unused SSD of 200 GB or more; 4 TB per worker node for deployments handling data | 200 GB |
-| Operating system | Debian 12 (Bookworm) | Debian 12 or later |
+| System disk | 400 GB recommended, separate from the dedicated storage disk | Not checked |
+| Operating system | Debian 12 (Bookworm) or Debian 13 (Trixie), IPv4 networking | Debian 12 or later |
+| Swap | Disabled, also after a reboot. See [Disable swap](../prepare/kubernetes_nodes.md#step-5-disable-swap) | See the note below the table |
 | Hostname | Unique across all manager and worker nodes | Uniqueness |
 | Time synchronization | NTP enabled and clock synchronized | Both |
+
+<!-- SH-ISSUE #96032: review this passage when the issue is released -->
+
+Swap must be disabled even when your SHC version does not check it: Sekoia does not support Kubernetes nodes with swap.
 
 The `CheckServerSpec` command blocks the installation when a manager or worker node fails any of the checks in the last column. See [CheckServerSpec](../troubleshooting/debug_tool.md#checkserverspec) for the failure messages and their remediation.
 
@@ -44,13 +50,13 @@ The `CheckServerSpec` command blocks the installation when a manager or worker n
 
 ### Dedicated storage disk
 
-Ceph and Longhorn provision persistent volumes from a dedicated block device on every node. Each manager and worker node must expose at least one whole disk that meets all of the following conditions:
+Ceph provisions persistent volumes from a dedicated block device on every node. Each manager and worker node must expose at least one whole disk that meets all of the following conditions:
 
 - 200 GB or larger.
 - No partition table and no filesystem.
 - Not read-only.
 
-Attach the disk and leave it unformatted before you start the installation. `CheckServerSpec` skips this check once K3s is installed, because Ceph and Longhorn have consumed the disk by then.
+Attach the disk and leave it unformatted before you start the installation. `CheckServerSpec` skips this check once K3s is installed, because Ceph has consumed the disk by then.
 
 !!! warning "Do not partition or format the storage disk"
     A disk that already carries a filesystem or a partition table is not counted as eligible. If the node exposes no other eligible disk, the preflight fails and the installation does not start.

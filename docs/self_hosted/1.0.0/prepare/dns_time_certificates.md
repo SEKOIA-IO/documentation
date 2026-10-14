@@ -14,7 +14,8 @@ The platform answers on three names. You choose them, and you write them in `con
 
 - `global.host`, `global.alternative_hosts` and `global.delivery_host` **MUST** resolve to the IP address of the [load balancer](./load_balancer.md), for users, API clients and log sources.
 - If `global.kube_manager_host` is a name (not an IP address), this name **MUST** resolve before the installation.
-- `global.forward_dns` **MUST** be the IP address of a DNS server that the Kubernetes nodes reach on port 53. The platform services use this server for every name outside the cluster.
+- `global.forward_dns` **MUST** be the IP address of a DNS server that the Kubernetes nodes reach on port 53. The platform services use this server for every name outside the cluster. For several DNS servers, separate the addresses with a **space**: `forward_dns: "10.0.0.10 10.0.0.11"`.
+- The Kubernetes nodes do **not** need to resolve each other by name when `utils.ansible.inventory` and `global.kube_manager_host` use IP addresses.
 - Every name that the platform uses (Git server, OCI registry, S3 storage, SMTP server) **MUST** resolve with the `global.forward_dns` server, **or** be written as an IP address in the configuration. The platform services do not read the `/etc/hosts` file of the nodes.
 - `global.alternative_hosts` **SHOULD** be set to a name of your domain. Its default value, `api.sekoia.local`, is an example.
 
@@ -49,12 +50,14 @@ The platform answers on three names. You choose them, and you write them in `con
 
     **Validation status:** validated in the Sekoia lab.
 
-    The lab has no DNS server for the platform names. Every server of the lab (orchestration node, load balancer, Kubernetes nodes) has these lines in `/etc/hosts`. The Git server, the registry and the storage are written as IP addresses in `config.yml`.
+    The lab has no DNS server for the platform names. Every server of the lab (orchestration node, load balancer, Kubernetes nodes) has these lines in `/etc/hosts`. If `global.kube_manager_host` is a name instead of an IP address, add a line for this name too. The Git server, the registry and the storage are written as IP addresses in `config.yml`.
+
+    <!-- SH-ISSUE #96035: review this passage when the issue is released -->
 
     1. On **each server**, add the lines. Replace `<LB_IP>` and the names:
 
         ```bash
-        printf '<LB_IP> app.<DOMAIN>\n<LB_IP> api.<DOMAIN>\n<LB_IP> admin.<DOMAIN>\n<LB_IP> kubernetes.<DOMAIN>\n' | sudo tee -a /etc/hosts
+        printf '<LB_IP> app.<DOMAIN>\n<LB_IP> api.<DOMAIN>\n<LB_IP> admin.<DOMAIN>\n' | sudo tee -a /etc/hosts
         ```
 
     2. On each computer that opens the web interface, add the same lines to its `hosts` file (on Windows: `C:\Windows\System32\drivers\etc\hosts`, edited as administrator).
@@ -154,9 +157,15 @@ The platform answers on three names. You choose them, and you write them in `con
 
 | SHOULD rule not followed | What happens |
 | :--- | :--- |
-| No SMTP server configured | The installation works, but the platform sends no email: no invitation, no notification. You can configure SMTP later and run `exec PlatformInstallation` again. |
+| No SMTP server configured | The installation works, but the platform sends no email: no invitation, no notification. |
 
 ### Configuration
+
+!!! warning "Known issue in this release"
+    The SMTP server set in `smtp.host` is not passed to the platform: email is not sent. Contact Sekoia support before you configure email. Changing the SMTP settings after the installation is not validated either.
+
+<!-- SH-ISSUE #96038: review this passage when the issue is released -->
+<!-- SH-ISSUE #96030: review this passage when the issue is released -->
 
 Write these fields in `config.yml`. The full reference is in [Email notifications](../deployment/deployment_configuration.md#email-notifications).
 
@@ -194,18 +203,21 @@ Traefik serves the platform over HTTPS (port 443) and receives the logs over TLS
 
 ### Rules
 
-- The platform **SHOULD** use a certificate issued by your certificate authority.
+- You **MUST** provide a certificate and its private key (`TRAEFIK_PUBKEY` and `TRAEFIK_PRIVKEY`). An installation without a certificate is not supported in this release.
+- The certificate **SHOULD** be issued by your certificate authority.
 - The certificate **MUST** be valid for `global.host`, `global.alternative_hosts` and `global.delivery_host`: these three names **MUST** be in the *Subject Alternative Name* of the certificate. A wildcard certificate (`*.<DOMAIN>`) covers them if they are all in `<DOMAIN>`.
 - The certificate and its key **MUST** be in PEM format (text that starts with `-----BEGIN`). The key **MUST NOT** have a password.
-- The certificate file **SHOULD** contain the full chain: the certificate first, then the intermediate certificates, then the root certificate.
+- The certificate file **MUST** contain the chain in this order: the server certificate first, then the intermediate certificates.
+- If your certificate authority is **private** (not a public authority), the certificate file **MUST** also contain its **root certificate**, at the end. The platform calls itself through `global.host`, and it uses this file as its list of trusted authorities.
+- The certificate file **MUST NOT** contain the private key of a certificate authority.
 
 ### If you do not follow a SHOULD rule
 
 | SHOULD rule not followed | What happens and what you must change |
 | :--- | :--- |
-| No certificate | Do not set `TRAEFIK_PUBKEY` and `TRAEFIK_PRIVKEY`. Traefik then uses a self-signed certificate: browsers show a warning, and API clients and log forwarders must accept an untrusted certificate. |
 | Self-signed certificate (lab) | Users, API clients and log forwarders must accept or trust this certificate. Use the tab "Self-signed certificate". |
-| Chain incomplete | Some clients reject the certificate. Add the intermediate certificates to `tls.crt`. |
+
+<!-- SH-ISSUE #96039: review this passage when the issue is released -->
 
 ### Install the certificate
 
@@ -213,7 +225,7 @@ Traefik serves the platform over HTTPS (port 443) and receives the logs over TLS
 
     **Validation status:** reference procedure.
 
-    1. Copy the certificate (full chain) to `~/shc/tls.crt` and the private key to `~/shc/tls.key` on the orchestration node.
+    1. Copy the certificate file to `~/shc/tls.crt` and the private key to `~/shc/tls.key` on the orchestration node. `tls.crt` contains the server certificate, then the intermediate certificates, then the root certificate if your authority is private.
 
     2. Protect the key:
 
@@ -279,4 +291,4 @@ Traefik serves the platform over HTTPS (port 443) and receives the logs over TLS
 - [ ] `global.forward_dns` is a DNS server that the nodes reach.
 - [ ] `timedatectl show -p NTPSynchronized` prints `NTPSynchronized=yes` on every server.
 - [ ] The SMTP fields are in `config.yml` (or you accept that the platform sends no email).
-- [ ] `~/shc/tls.crt` and `~/shc/tls.key` exist (or you accept the default self-signed certificate), and `env.rc` is loaded again.
+- [ ] `~/shc/tls.crt` and `~/shc/tls.key` exist, and `env.rc` is loaded again.

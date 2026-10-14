@@ -9,7 +9,7 @@ The orchestration node runs the self-hosted-controller (SHC) in a Docker contain
 - The node **MUST** reach the Git server, the OCI registry and the DNS servers. See [Network requirements](../deployment/network_requirements.md#flows-from-the-orchestration-node).
 - Docker **MUST** be installed and running.
 - The user who runs the SHC **MUST** be a member of the `docker` group.
-- The node **MUST** have 150 GB of free disk space for the release archive. It **SHOULD** have **300 GB** on a dedicated disk: the Sekoia lab keeps the archive and its extracted files together on a 300 GB disk.
+- The node **MUST** have 150 GB of free disk space for the release archive. It **SHOULD** have **300 GB** on a dedicated disk: the archive of release 1.0.0 is about 107 GB, and the Sekoia lab keeps the archive and its extracted files together on a 300 GB disk.
 - The Docker network (`172.17.0.0/16` by default) **SHOULD NOT** overlap one of your networks.
 - The SSH private key used by the SHC **MUST NOT** have a passphrase.
 
@@ -180,9 +180,23 @@ The SHC connects to every Kubernetes node with an SSH key. Create the key on the
 
 The SHC container runs as its own user (`shc`, user ID 1000). It writes the Kubernetes configuration file (`kubeconfig.yml`) in a working directory. Create this directory on the host, so that the file stays after the container stops:
 
+<!-- SH-ISSUE #96034: review this passage when the issue is released -->
+
 ```bash
 mkdir -p ~/shc && chmod 777 ~/shc
 ```
+
+### Keep the SHC logs
+
+By default, the SHC writes its log inside the container (`/tmp/self-hosted-controller.log`), and the log is lost when the container stops. To keep it, write the log in the working directory. Add this field to `config.yml`:
+
+```yaml
+global:
+  logging:
+    file: /tmp/self-hosted-controller/self-hosted-controller.log
+```
+
+Each run creates a new file in `~/shc`, with the date and time at the start of its name, for example `20261014-153000_self-hosted-controller.log`. Send these files to Sekoia support when you open a ticket.
 
 ## Step 6: Install the download tools
 
@@ -373,13 +387,13 @@ This table lists every input of the container and when it is needed.
 | :--- | :--- | :--- | :--- |
 | `$SEKOIA_CONFIG_FILE` | `/tmp/config.yaml` | Always | Your configuration file. |
 | `$SEKOIA_LOCAL_DIR` | `/opt/sekoia` | Always | The extracted release and the content bundles. |
-| `$HOME/shc` | `/tmp/self-hosted-controller` | Always (recommended) | `kubeconfig.yml`. Without it, the file is lost when the container stops. |
+| `$HOME/shc` | `/tmp/self-hosted-controller` | Always (recommended) | `kubeconfig.yml`, and the SHC logs if you set `global.logging.file` (see [Keep the SHC logs](#keep-the-shc-logs)). Without it, these files are lost when the container stops. |
 
 ## Checklist
 
 - [ ] Docker runs, and `docker ps` works without `sudo`.
 - [ ] 300 GB are free for the release (or you will delete the archive after extraction).
 - [ ] `ssh -o BatchMode=yes <ADMIN_USER>@<NODE_IP> "sudo -n true && echo OK"` prints `OK` for every node.
-- [ ] `~/shc` exists.
+- [ ] `~/shc` exists, and `global.logging.file` writes the logs in it.
 - [ ] `~/env.rc` is filled and loaded with `source ~/env.rc`.
 - [ ] `~/run-shc.sh` exists and is executable.
