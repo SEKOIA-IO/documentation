@@ -1,6 +1,8 @@
 # Troubleshoot application inventory
 
-Use this guide when the Applications tab is unavailable, the application list is empty, or an expected application is missing from an asset.
+_**[Reveal module](/xdr/features/modules/reveal_index.md)**. The Asset application tab is a feature of the Reveal add-on module._
+
+Use this guide when the Asset Applications tab is unavailable, the application list is empty, or an expected application is missing from an asset.
 
 ## The Applications tab is unavailable
 
