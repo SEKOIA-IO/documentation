@@ -18,7 +18,7 @@ Create a [new intake associated with the Sekoia Endpoint Agent](https://app.seko
 Use the download link provided in the intake description in the Sekoia interface.
 
 !!! warning "Windows 8, Windows Server 2012 and Windows Server 2008"
-    Use the dedicated download link of the intake description, which provides the legacy build (`agent-v1.11.0.exe`), and use this file name in the commands below. See [Legacy Windows release line](/integration/categories/endpoint/sekoiaio.md#legacy-windows-release-line).
+    Use the dedicated download link of the intake description, which provides the legacy build, and use the name of the downloaded file in the commands below. See [Legacy Windows release line](/integration/categories/endpoint/sekoiaio.md#legacy-windows-release-line).
 
 ## Step 3: Install the agent
 
