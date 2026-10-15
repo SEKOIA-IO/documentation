@@ -11,7 +11,7 @@ The Sekoia Endpoint Agent collects security-related events from Windows, Linux, 
 
 ## Supported OS versions
 
-The agent supports the following operating systems on 64-bit versions only.
+The agent supports the following operating systems, on 64-bit versions only. On Windows and Linux, both x86-64 and ARM64 processors are supported; on macOS, Apple Silicon and Intel.
 
 === "Windows"
 
@@ -24,7 +24,9 @@ The agent supports the following operating systems on 64-bit versions only.
     * Windows Server 2022
     * Windows Server 2025
 
-    Legacy release line (limited support):
+    Processor architectures: x86-64, and ARM64 from agent 1.12.0.
+
+    Legacy release line (limited support, x86-64 only):
 
     * Windows 8 and 8.1
     * Windows Server 2012 and 2012 R2
@@ -39,9 +41,13 @@ The agent supports the following operating systems on 64-bit versions only.
     * CentOS 7 and newer
     * Red Hat 7 and newer
 
+    Processor architectures: x86-64 and ARM64.
+
 === "macOS"
 
     * macOS 13 Ventura and newer
+
+    Processor architectures: Apple Silicon and Intel.
 
 ### Legacy Windows release line
 
