@@ -28,6 +28,9 @@ Use the download link provided in the intake description in the Sekoia interface
 
 The commands below use the x86-64 binary names: replace them with the ARM64 name on an ARM64 host.
 
+!!! warning "Windows 8, Windows Server 2012 and Windows Server 2008"
+    Use the dedicated download link of the intake description, which provides the legacy build, and use the name of the downloaded file in the commands below. See [Legacy Windows release line](/integration/categories/endpoint/sekoiaio.md#legacy-windows-release-line).
+
 ## Step 3: Install the agent
 
 === "Windows"
