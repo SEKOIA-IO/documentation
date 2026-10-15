@@ -47,8 +47,11 @@ The agent supports the following operating systems on 64-bit versions only.
 
 Windows systems older than Windows 10 (build lower than 10240) are automatically served a dedicated legacy build of the agent. This covers Windows 8 and 8.1, Windows Server 2012 and 2012 R2, and Windows Server 2008 and 2008 R2.
 
-!!! note "Automatic routing"
-    You do not need to do anything. Modern and legacy systems install with the same command, and the platform serves each host the build that matches its operating system. Existing installations keep working.
+!!! note "Existing installations"
+    You do not need to do anything for an agent already installed: when it updates, it detects the operating system and switches to the legacy release line by itself.
+
+!!! warning "New installations"
+    Since version 1.12.0, the Windows download of the intake (`agent-latest.exe`) is the modern build, which does not start on these systems. To install the agent on them, use the same download link with `agent-latest.exe` replaced by `agent-v1.11.0.exe`, then run the usual install command with this file. The agent then keeps itself up to date on the legacy release line.
 
 The legacy release line receives bug fixes and security fixes so these hosts stay compatible and protected. It does not receive new feature enhancements, which ship only to the modern release line on Windows 10, Windows 11 and the current Windows Server versions.
 
