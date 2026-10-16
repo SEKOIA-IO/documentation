@@ -22,11 +22,22 @@ Sekoia.io supports two authentication methods to access your AWS resources. Choo
     1. Open the [IAM console](https://console.aws.amazon.com/iam/) and navigate to **Identity providers**.
     2. Click **Add provider** and select **OpenID Connect**.
     3. Fill in the form:
-        - **Provider URL**: `https://app.sekoia.io/api/v1/symphony/oidc`
+        - **Provider URL**: use the URL matching your Sekoia.io region:
+
+            | Region | Provider URL |
+            |--------|--------------|
+            | FRA1 | `https://app.sekoia.io/api/v1/symphony/oidc` |
+            | FRA2 | `https://app.fra2.sekoia.io/api/v1/symphony/oidc` |
+            | MCO1 | `https://app.mco1.sekoia.io/api/v1/symphony/oidc` |
+            | UAE1 | `https://app.uae1.sekoia.io/api/v1/symphony/oidc` |
+            | USA1 | `https://app.usa1.sekoia.io/api/v1/symphony/oidc` |
+            | SGP1 | `https://app.sgp1.sekoia.io/api/v1/symphony/oidc` |
+
+            If your workspace is hosted in another region, use the equivalent `https://app.<region>.sekoia.io/api/v1/symphony/oidc` value.
         - **Audience**: `sts.amazonaws.com`
     4. Click **Add provider** to confirm.
 
-    Once created, note the **Provider ARN** (e.g. `arn:aws:iam::XXXXXXXXXXXX:oidc-provider/app.sekoia.io/api/v1/symphony/oidc`). You will need it in the steps below.
+    Once created, note the **Provider ARN** (e.g. `arn:aws:iam::XXXXXXXXXXXX:oidc-provider/app.usa1.sekoia.io/api/v1/symphony/oidc`). You will need it in the steps below.
 
     !!! Info
         If you plan to use the **Automatic** CloudFormation deployment, Steps 2–4 (IAM Role creation) are handled by the stack. You can jump directly to the **Deploy the S3 and SQS Infrastructure** section after completing Step 1.
@@ -35,7 +46,7 @@ Sekoia.io supports two authentication methods to access your AWS resources. Choo
 
     1. In the IAM console, navigate to **Roles** and click **Create role**.
     2. Select **Web identity** as the trusted entity type.
-    3. Choose the `app.sekoia.io/api/v1/symphony/oidc` identity provider you just registered and set the audience to `sts.amazonaws.com`.
+    3. Choose the `<YOUR_SEKOIA_APP_DOMAIN>/api/v1/symphony/oidc` identity provider you just registered (for example `app.usa1.sekoia.io/api/v1/symphony/oidc`) and set the audience to `sts.amazonaws.com`.
     4. Proceed to the **Trust policy** and replace its content with the following, substituting your AWS account ID, community UUID, and module configuration UUID:
 
         ```json
@@ -45,21 +56,29 @@ Sekoia.io supports two authentication methods to access your AWS resources. Choo
                 {
                     "Effect": "Allow",
                     "Principal": {
-                        "Federated": "arn:aws:iam::XXXXXXXXXXXX:oidc-provider/app.sekoia.io/api/v1/symphony/oidc"
+                        "Federated": "arn:aws:iam::XXXXXXXXXXXX:oidc-provider/<YOUR_SEKOIA_APP_DOMAIN>/api/v1/symphony/oidc"
                     },
                     "Action": "sts:AssumeRoleWithWebIdentity",
                     "Condition": {
                         "StringEquals": {
-                            "app.sekoia.io/api/v1/symphony/oidc:aud": "sts.amazonaws.com"
+                            "<YOUR_SEKOIA_APP_DOMAIN>/api/v1/symphony/oidc:aud": "sts.amazonaws.com"
                         },
                         "StringLike": {
-                            "app.sekoia.io/api/v1/symphony/oidc:sub": "community:<COMMUNITY_UUID>:modconf:<MODULE_CONFIGURATION_UUID>"
+                            "<YOUR_SEKOIA_APP_DOMAIN>/api/v1/symphony/oidc:sub": "community:<COMMUNITY_UUID>:modconf:<MODULE_CONFIGURATION_UUID_OR_*>"
                         }
                     }
                 }
             ]
         }
         ```
+
+    !!! Info
+        **When is the Module Configuration UUID available?**
+
+        The Module Configuration UUID is created when you create and save the connector configuration in Sekoia.io.
+
+        - If you already have it, use it directly in the trust policy.
+        - If you do not have it yet, use `*` temporarily (`modconf:*`) to complete the setup, then replace it with the exact UUID after the connector configuration exists.
 
     **Step 3 — Attach a permission policy to the role**
 
@@ -120,9 +139,9 @@ Sekoia.io supports two authentication methods to access your AWS resources. Choo
         - Stack name - Name of the stack in CloudFormation
         - BucketName - Name of the S3 Bucket
         - SQSName - Name of the SQS queue
-        - OIDCProviderArn - ARN of the Sekoia.io OIDC Identity Provider you created in Step 1 (e.g. `arn:aws:iam::XXXXXXXXXXXX:oidc-provider/app.sekoia.io/api/v1/symphony/oidc`)
+        - OIDCProviderArn - ARN of the Sekoia.io OIDC Identity Provider you created in Step 1 (e.g. `arn:aws:iam::XXXXXXXXXXXX:oidc-provider/app.usa1.sekoia.io/api/v1/symphony/oidc`)
         - CommunityUUID - Your Sekoia.io Community UUID (find it in the Sekoia.io platform under your community settings)
-        - ModuleConfigurationUUID - Your Sekoia.io Module Configuration UUID (find it in the connector's configuration page). Use `*` to allow all connectors within the community.
+        - ModuleConfigurationUUID - Your Sekoia.io Module Configuration UUID (available after you create and save the connector configuration). Use `*` temporarily if you need to deploy first, then replace it with the exact UUID.
 
         **Optional:**
 
