@@ -2,10 +2,12 @@
 
 Sekoia Self-Hosted 1.0.0 is the first generally available release of Sekoia Self-Hosted, with a node-to-node network preflight, detection rules and intake formats deployed at installation, diagnostics for every layer of the platform, and a volume-safe platform destruction. This article covers what changed since the 0.1.0 pre-release, the feature scope, functional constraints, and known issues.
 
-!!! warning "Threat intelligence is not included in this release"
-    The Sekoia CTI database is not part of Sekoia Self-Hosted 1.0.0. Every feature that reads threat intelligence is unavailable. See [Threat intelligence](#threat-intelligence).
+!!! note "Import the threat intelligence after the installation"
+    The installation does not deploy the Sekoia CTI database. Import it with the SHC once the platform is installed. See [Threat intelligence](#threat-intelligence).
 
 ## What's new in 1.0.0
+
+**CTI database import.** `ImportArangoCollection` imports the Sekoia CTI database from the Sekoia release bucket into the platform. See [Import the CTI database](operations/import_cti_database.md).
 
 **Node-to-node network preflight.** The `checks` stage of the `Install` execution plan now runs `CheckNodePortReachability` before K3s is installed. Each node briefly listens on the cluster TCP ports (Kubernetes API 6443, etcd, Cilium, and intake) while the other nodes probe it. A blocked path is reported with the destination node, the port, and the reason: `timeout` when packets are silently dropped, `refused` when a firewall rule rejects the connection. The check works with any firewall backend and also catches blocks in security groups and network firewalls upstream of the nodes. It is skipped once K3s is installed on every node. See [Network requirements](deployment/network_requirements.md).
 
@@ -97,7 +99,7 @@ The functional scope aligns with the **Defend Core** subscription tier. Defend C
 | :--- | :---: | :--- |
 | Meta-playbooks | Yes | |
 | OC Notifications | Yes | |
-| Observable Tags Enrichment | No | Requires threat intelligence, which is not included in this release. |
+| Observable Tags Enrichment | Yes | Requires the [CTI database import](operations/import_cti_database.md). |
 | Cloud-to-Cloud Ingestion | No | Not supported in air-gapped deployments. |
 | Encrypted ingestion (Syslog TLS, RELP TLS, HTTPS) | Yes | |
 | Custom Intake Formats | Yes | |
@@ -109,7 +111,7 @@ The functional scope aligns with the **Defend Core** subscription tier. Defend C
 | Case Management | Yes | |
 | Hot Storage | Yes | |
 | Sekoia Endpoint Agent | No | The `xdr-agent-api` service is not installed in this release. |
-| Contextualized Alerts | No | Requires threat intelligence, which is not included in this release. |
+| Contextualized Alerts | Yes | Requires the [CTI database import](operations/import_cti_database.md). |
 | SOL Query Builder | Yes | |
 | Detection Rules | Yes | Full rules catalog deployed at installation. |
 | Event Drop Detection | Yes | |
@@ -147,15 +149,9 @@ Reveal is available with Sekoia Self-Hosted 1.0.0 under a dedicated subscription
 
 ### Threat intelligence
 
-The Sekoia CTI database is not part of Sekoia Self-Hosted 1.0.0. This is not a connectivity limitation: even a deployment with full internet access has no threat intelligence in this release.
+The installation does not deploy the Sekoia CTI database. Until you [import it](operations/import_cti_database.md), every feature that reads threat intelligence is unavailable: the Threat Intelligence research module, observable tags enrichment, and contextualized alerts.
 
-The following capabilities are therefore unavailable:
-
-- The Threat Intelligence research module, used to explore threat actors, campaigns, and observables.
-- Observable tags enrichment.
-- Contextualized alerts.
-
-Detection capabilities remain fully operational. The Sekoia detection rules catalog and the integration connectors are deployed with the release, and they do not depend on the CTI database.
+The import downloads the CTI database from the Sekoia release bucket, so it requires the online mode. Detection rules and integration connectors do not depend on the CTI database.
 
 ### AI features
 
@@ -181,7 +177,7 @@ The following limitations apply to Sekoia Self-Hosted 1.0.0.
 | No graphical or web UI for platform administration | Infrastructure management is available only from the orchestration node. | Use the self-hosted-controller (SHC) terminal interface or one-shot CLI together with `config.yml` for administrative operations. |
 | Automatic upgrade and rollback not available | Version updates are manual. | Follow the manual update procedure when a new release is published. |
 | Node operating system not configured by the SHC | The SHC does not install the operating system packages of the nodes. | Provision the operating system and packages listed in [Technical requirements](deployment/deployment_prerequisites.md) before you start the installation. |
-| Threat intelligence not included | Every feature that reads the CTI database is unavailable, including the Threat Intelligence research module, observable tags enrichment, and contextualized alerts. Detection rules are unaffected. | None. Contact Sekoia if your deployment requires threat intelligence. |
+| No CTI import in air-gapped deployments | The CTI import reads from the Sekoia release bucket. An air-gapped deployment has no threat intelligence. Detection rules are unaffected. | Contact Sekoia if your air-gapped deployment requires threat intelligence. |
 | No content update procedure | Detection rules, intake formats, and the playbook library stay at the version deployed during the installation. No procedure covers their update after the installation. | Contact Sekoia if your deployment requires updated detection content before the next release. |
 | Backup restore not yet documented | You cannot perform a tested restore from backup. | Contact Sekoia support for restore guidance specific to 1.0.0. |
 
