@@ -56,7 +56,7 @@ When the run completes, its result appears in the panel.
 
 3. Click the run card to open the full result. Sekoia redirects you to the playbook details page on the **Runs** tab.
 
-The run is identified by its triggering case, `Sekoia Case: <case short ID>`, so you can tell case-triggered runs apart from runs started elsewhere. The graph displays the status of each node, and clicking a node opens its arguments, logs and errors. See [Navigate playbooks' interface](/xdr/features/automate/navigate-playbooks.md#runs) for the full description of the **Runs** tab.
+The run is identified by its triggering case, `Sekoia Case: <case short ID>`, so you can tell case-triggered runs apart from runs started elsewhere. The graph displays the status of each node, and clicking a node opens its arguments, logs and errors. See [Navigate playbooks' interface](/xdr/features/automate/navigate_playbooks.md#runs) for the full description of the **Runs** tab.
 
 ![Playbook Runs tab showing a run triggered by a case and the workflow graph with successful nodes](/assets/operation_center/cases/playbook-runs-tab.png){: style="max-width:100%"}
 
@@ -68,7 +68,7 @@ The run is identified by its triggering case, `Sekoia Case: <case short ID>`, so
 * [Cases](/xdr/features/investigate/cases.md): Overview of what cases are and how they are structured.
 * [Case details](/xdr/features/investigate/case_details.md): Reference for every tab and field available on the case details page.
 * [Playbooks](/xdr/features/automate/index.md): Overview of playbooks and how the automation engine works.
-* [Build playbooks](/xdr/features/automate/build-playbooks.md): How to create a playbook from a template or from scratch.
+* [Build playbooks](/xdr/features/automate/build_playbooks.md): How to create a playbook from a template or from scratch.
 * [Triggers](/xdr/features/automate/triggers.md): The trigger types available to launch a playbook.
-* [Navigate playbooks' interface](/xdr/features/automate/navigate-playbooks.md): How to read the playbook listing, workflow, runs and trigger logs.
+* [Navigate playbooks' interface](/xdr/features/automate/navigate_playbooks.md): How to read the playbook listing, workflow, runs and trigger logs.
 * [Built-in roles](/getting_started/roles_and_permissions.md): The default Guest, Analyst and Admin roles and what each one allows.

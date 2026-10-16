@@ -235,8 +235,10 @@ nav:
       - Playbooks: xdr/features/automate/index.md
       - Playbooks On-premises: xdr/features/automate/playbooks-on-premises.md
       - Manage accounts: xdr/features/automate/manage-accounts.md
-      - Navigate playbooks: xdr/features/automate/navigate-playbooks.md
-      - Build playbooks: xdr/features/automate/build-playbooks.md
+      - Navigate playbooks: xdr/features/automate/navigate_playbooks.md
+      - Build playbooks: xdr/features/automate/build_playbooks.md
+      - Organize playbooks with custom fields: xdr/features/automate/organize_playbooks_with_custom_fields.md
+      - Restore a playbook version: xdr/features/automate/restore_a_playbook_version.md
       - Triggers: xdr/features/automate/triggers.md
       - Operators: xdr/features/automate/operators.md
       - Actions: xdr/features/automate/actions.md
@@ -798,6 +800,8 @@ plugins:
       getting_started/roles.md: getting_started/roles_and_permissions.md
       xdr/features/investigate/configure_custom_statuses.md: xdr/features/investigate/custom_statuses.md
       xdr/features/investigate/configure_custom_verdicts.md: xdr/features/investigate/custom_verdicts.md
+      xdr/features/automate/build-playbooks.md: xdr/features/automate/build_playbooks.md
+      xdr/features/automate/navigate-playbooks.md: xdr/features/automate/navigate_playbooks.md
       getting_started/2fa.md: getting_started/secure_your_account.md
       getting_started/apikey_creation.md: getting_started/manage_api_keys.md
       getting_started/first_steps.md: getting_started/index.md

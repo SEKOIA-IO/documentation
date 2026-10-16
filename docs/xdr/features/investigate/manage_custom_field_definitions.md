@@ -1,9 +1,9 @@
 # Manage custom field definitions
 
-Custom field definitions determine which structured metadata fields are available across all alerts and cases in your workspace. This article explains how to create, edit, and delete those definitions from the workspace settings.
+Custom field definitions determine which structured metadata fields are available across alerts, cases, and **playbooks** in your workspace. This article explains how to create, edit, and delete those definitions from the workspace settings.
 
-!!! note "Definitions are shared between alerts and cases"
-    A definition you create here can be attached to alerts, to cases, or to both. You do not need to create the same field twice.
+!!! note "Definitions are shared between alerts, cases and playbooks"
+    A definition you create here can be attached to alerts, to cases, or to both. Playbooks use the same definitions. You do not need to create the same field twice.
 
 ## Prerequisites
 
@@ -50,7 +50,7 @@ To modify an existing custom field definition:
 ## Delete a custom field
 
 !!! warning "Permanent data loss"
-    Deleting a custom field definition removes the field and all its values from every alert and case in your workspace. This action cannot be undone.
+    Deleting a custom field definition removes the field and all its values from every alert, case, and **playbook** in your workspace. This action cannot be undone.
 
 To remove a custom field definition:
 
