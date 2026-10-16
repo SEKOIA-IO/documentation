@@ -265,7 +265,7 @@ nav:
       - Write effective instructions: xdr/features/modules/elevate_instructions_best_practices.md
     - Manage Elevate:
       - Override community settings: xdr/features/modules/elevate_community_override.md
-      - Limit auto-analysis to specific rules: xdr/features/modules/elevate_rule_filter.md
+      - Scope auto-analysis with filters: xdr/features/modules/elevate_rule_filter.md
       - Manage Elevate runs: xdr/features/modules/elevate_quota.md
       - Measure Elevate impact: xdr/features/modules/elevate_analytics.md
   - Asset Intelligence (Reveal):
