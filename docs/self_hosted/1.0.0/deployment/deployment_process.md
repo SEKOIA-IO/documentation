@@ -36,7 +36,7 @@ The SHC accepts the following commands, in the TUI and in one-shot CLI mode:
 | `config show [PREFIX]` | Displays the computed configuration. |
 
 !!! note "Runtime overrides"
-    A module accepts `--set` only for the keys it declares. To see them, run `help <MODULE>`. An override applies to the module and to the prerequisite modules it runs, and is never written to `config.yml`.
+    A module accepts `--set` only for the keys it declares. To see them, run `help <MODULE>`. An override applies to the module and to the prerequisite modules it runs, and is never written to `config.yml`. The values `on`, `off`, `yes`, and `no` stay text values: a boolean key accepts only `true` or `false`.
 
 To display the full list of SHC modules, run:
 
@@ -160,6 +160,7 @@ The SHC handles the full platform lifecycle beyond initial installation.
 | Recover from a node crash or cluster restart | `KubeCrashRecovery` |
 | Live node resource usage | `GetServerStatus` |
 | Service health check per platform area | `Diagnostic` |
+| Import the CTI database | `ImportArangoCollection`. See [Import the CTI database](../operations/import_cti_database.md). |
 | Object storage performance benchmark, at the request of Sekoia support | `CheckS3Performance` |
 | Clean up interrupted Helm operations | `CleanupHelmReleases` |
 | Redeploy the detection rules catalog and the intake formats | `SyncRulesCatalog`, `SyncIntakeFormats` |

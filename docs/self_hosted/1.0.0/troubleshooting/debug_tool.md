@@ -85,6 +85,7 @@ The command checks the following, in this order.
 | Unique hostnames | No two nodes share a hostname |
 | OS family | Debian-based |
 | OS version | Debian 12 or later |
+| Swap | No active swap device |
 | CPU | 44 cores or more per node |
 | RAM | 120 GiB or more per node |
 | NTP enabled | `timedatectl` reports `NTP=yes` |
@@ -92,7 +93,7 @@ The command checks the following, in this order.
 | Port availability | TCP 80, 443, 2379, 2380, 4240, 4250, 6443, 10514, and 11514 can be bound before K3s is installed |
 | Dedicated storage disk | One unused block device of 200 GB or more, with no partition table and no filesystem, before K3s is installed |
 
-The last two checks are skipped once K3s is installed on the node. After the installation, the ports are bound by the cluster and the storage disk is consumed by Ceph and Longhorn, so requiring them to be free would fail every re-run.
+The last two checks are skipped once K3s is installed on the node. After the installation, the ports are bound by the cluster and the storage disk is consumed by Ceph, so requiring them to be free would fail every re-run.
 
 **What to do after a failure:**
 
@@ -100,6 +101,7 @@ The last two checks are skipped once K3s is installed on the node. After the ins
 | :--- | :--- |
 | Duplicate hostnames | The error lists the inventory host to hostname mapping. Rename the affected nodes with `hostnamectl set-hostname <NEW_HOSTNAME>`, then re-run the command. |
 | Debian version too old | Reinstall the node on Debian 12 or later. See [Technical requirements](../deployment/deployment_prerequisites.md#compute-node-specification). |
+| Active swap | Run `sudo swapoff -a`, remove or comment out the swap entries in `/etc/fstab`, and disable any systemd swap unit or zram service that enables swap. Reboot the node, then check that `/sbin/swapon --show=NAME --noheadings --raw` returns no entry. See [Swap](../deployment/deployment_prerequisites.md#swap). |
 | CPU or RAM below the minimum | Resize the node. The error reports the detected value. |
 | NTP not enabled | Install and enable `systemd-timesyncd` or `chrony`, then run `timedatectl set-ntp true`. |
 | Clock not synchronized | Verify that the node reaches your NTP servers, then run `systemctl restart systemd-timesyncd` or `systemctl restart chrony`. |
@@ -403,6 +405,19 @@ The output shows:
 - A **list of pods without memory requests**, alongside their live usage. These pods present a scheduling risk.
 
 ## Platform installer debug
+
+### Run a custom installer command
+
+`PlatformInstallation` runs the `install` command of the platform installer by default. To run another installer command once, without changing `config.yml`, override `modules.platform_configuration.platform_installer_command`:
+
+!!! warning "Run it only when Sekoia asks you to"
+    Installer commands change the platform directly. Run only the command that Sekoia support gives you.
+
+```bash
+exec PlatformInstallation --set "modules.platform_configuration.platform_installer_command=exec Minio -m check"
+```
+
+The value is passed to the platform installer executable: it is not a shell command. The override applies to `PlatformInstallation` only, not to `Install`, and does not change later runs. The prerequisites, the log streaming, and the cleanup of the installer job are the same as for an installation. The SHC rejects an empty or malformed command with an error, and still cleans up the installer job.
 
 ### DebugPlatformInstallation
 

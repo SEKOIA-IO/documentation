@@ -102,7 +102,7 @@ Use `config show` to review the result after inheritance, and `config help` to i
 
 ### Platform storage
 
-The platform stores the ExaLog indexes in S3-compatible object storage. These credentials must allow the platform to use the event buckets listed in [Storage](./deployment_prerequisites.md#storage).
+The platform stores the ExaLog indexes in S3-compatible object storage. These credentials must allow the platform to use the ExaLog event buckets. The platform does not create these buckets; see [Event storage buckets](./deployment_prerequisites.md#event-storage-buckets).
 
 | Field | Description |
 | :--- | :--- |
@@ -135,7 +135,16 @@ Worker nodes are configured under `utils.ansible.inventory.workers`. The field i
 | :--- | :--- |
 | `utils.git.repo_url` | URL of the customer-managed Git repository in which the self-hosted-controller (SHC) publishes the ArgoCD stack manifests. |
 
-If the repository requires authentication, use `config help utils.git` to inspect the supported HTTP and SSH authentication settings.
+The SHC publishes the stacks to a branch of this repository, and ArgoCD tracks the same branch for the root and child applications. To choose the branch, set the following optional field:
+
+| Field | Description | Default |
+| :--- | :--- | :--- |
+| `modules.push_argo_stacks.base_branch` | Branch to publish the stacks to and to track in ArgoCD. Required when the repository is empty. Otherwise, the branch must already exist. | Default branch of the repository |
+
+!!! warning "Empty repository"
+    If the repository has no commit yet, set `modules.push_argo_stacks.base_branch`. Without it, `PushArgoStacks` fails. `PushArgoStacks` also fails, without overwriting anything, when its local checkout has uncommitted changes or when the local and remote branches have diverged.
+
+If the repository requires authentication, use `config help utils.git` to inspect the supported HTTP authentication settings. ArgoCD connects to the repository with a username and a password over HTTP or HTTPS.
 
 ### OCI registry
 
@@ -229,6 +238,7 @@ The SHC reads the platform release and the security content bundles from local d
 | `global.version.data.detection-rules.version` | Online mode only. Detection rules bundle to download: `latest`, or the release ID of a bundle to pin. | `latest` |
 | `global.version.data.intake-formats.version` | Online mode only. Intake formats bundle to download: `latest`, or the release ID of a bundle to pin. | `latest` |
 | `global.version.data.playbook-library.version` | Online mode only. Playbook library bundle to download: `latest`, or the release ID of a bundle to pin. | `latest` |
+| `global.version.data.cti.version` | CTI export imported by `ImportArangoCollection`: `latest`, a day such as `2026-09-03`, or an exact export such as `2026-09-03T09`. See [Import the CTI database](../operations/import_cti_database.md). | `latest` |
 | `global.version.data.<TYPE>.path` | Local directory of the bundles of each type. The bundles are stored in a `<TYPE>` subdirectory. | `/opt/sekoia/data/` |
 
 ??? example "Online mode in `config.yml`"

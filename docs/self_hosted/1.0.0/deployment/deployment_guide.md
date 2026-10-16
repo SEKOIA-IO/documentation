@@ -79,7 +79,7 @@ The archive contains the platform release and the latest security content bundle
 
 | Directory | Content |
 | :--- | :--- |
-| `$SEKOIA_LOCAL_DIR/platform/v1.0.0/` | Release manifest, Docker images, Helm charts, and ArgoCD stacks. |
+| `$SEKOIA_LOCAL_DIR/platform/v1.0.0/` | Release manifest, Docker images, Helm charts, ArgoCD stacks, and the third-party license notices in `licenses/THIRD-PARTY-NOTICES.md`. |
 | `$SEKOIA_LOCAL_DIR/data/<TYPE>/` | One security content bundle per type (`detection-rules`, `intake-formats`, and `playbook-library`), with a `latest` file that names the bundle to use. |
 
 The execution script mounts `$SEKOIA_LOCAL_DIR` on `/opt/sekoia` in the SHC container, which matches the default values of `global.version.platform.path` (`/opt/sekoia/platform/`) and `global.version.data.<TYPE>.path` (`/opt/sekoia/data/`). Keep this layout unless you also change these paths.
@@ -145,6 +145,9 @@ docker run --rm $TTY_FLAGS \
   -v $SEKOIA_LOCAL_DIR:/opt/sekoia \
   ${DOCKER_IMAGE} -c /tmp/config.yaml "$@"
 ```
+
+!!! note "Container user"
+    The SHC container runs as the `shc` user, with UID 1000. The user must be able to read `$SEKOIA_CONFIG_FILE`. In online mode, the SHC also writes the downloaded files to `$SEKOIA_LOCAL_DIR`: give UID 1000 write access to this directory, for example with `sudo chown -R 1000 $SEKOIA_LOCAL_DIR`.
 
 Set the following environment variables on the orchestration node before running the script:
 
@@ -223,7 +226,7 @@ exec CheckNodePortReachability
 !!! warning "Preflight block"
     The SHC will not proceed if any critical validation check fails. Each failure is logged with an actionable error message. Resolve all errors before continuing.
 
-`CheckServerSpec` fails the installation when a manager or worker node does not have 44 CPU cores and 120 GiB of RAM, does not run Debian 12 or later, has no unused 200 GB block device, shares its hostname with another node, or has no synchronized clock. See [CheckServerSpec](../troubleshooting/debug_tool.md#checkserverspec) for each failure message and its remediation.
+`CheckServerSpec` fails the installation when a manager or worker node does not have 44 CPU cores and 120 GiB of RAM, does not run Debian 12 or later, has an active swap device, has no unused 200 GB block device, shares its hostname with another node, or has no synchronized clock. See [CheckServerSpec](../troubleshooting/debug_tool.md#checkserverspec) for each failure message and its remediation.
 
 `CheckNodePortReachability` fails when a node cannot reach another node on one of the cluster ports. See [CheckNodePortReachability](../troubleshooting/debug_tool.md#checknodeportreachability).
 

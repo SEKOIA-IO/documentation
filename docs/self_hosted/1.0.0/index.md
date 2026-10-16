@@ -13,9 +13,10 @@ If you are new to Sekoia Self-Hosted, follow this sequence:
 3. Prepare your `config.yml` using the [Deployment configuration reference](deployment/deployment_configuration.md).
 4. Follow the [Deploy the platform](deployment/deployment_guide.md) guide.
 5. Create your first user with the [Set up the first administrator account](operations/first_login.md) guide.
-6. Get familiar with the [self-hosted-controller (SHC) interface](operations/controller_interface.md) for day-to-day interactive operations.
-7. Set up continuous monitoring using the [Monitor your platform](monitoring/monitoring_guide.md) guide.
-8. Run [platform diagnostics](monitoring/run_diagnostics.md) to validate service health.
+6. Import the threat intelligence with the [Import the CTI database](operations/import_cti_database.md) guide.
+7. Get familiar with the [self-hosted-controller (SHC) interface](operations/controller_interface.md) for day-to-day interactive operations.
+8. Set up continuous monitoring using the [Monitor your platform](monitoring/monitoring_guide.md) guide.
+9. Run [platform diagnostics](monitoring/run_diagnostics.md) to validate service health.
 
 ## Documentation map
 
@@ -49,6 +50,7 @@ If you are new to Sekoia Self-Hosted, follow this sequence:
 | :--- | :--- |
 | [Monitor your platform](monitoring/monitoring_guide.md) | Observability stack overview, daily monitoring workflows, and self-hosted-controller (SHC) diagnostic command reference. |
 | [Run platform diagnostics](monitoring/run_diagnostics.md) | How to run targeted Prometheus health checks for platform services. |
+| [Platform alerts reference](monitoring/platform_alerts.md) | Every platform alert by group, with its severity, its impact, and the diagnostic to run. |
 | [Debug your deployment](troubleshooting/debug_tool.md) | Full self-hosted-controller (SHC) debug command reference with remediation guidance and log collection for support. |
 
 ### Release information
