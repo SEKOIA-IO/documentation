@@ -231,6 +231,12 @@ The following Sekoia.io built-in rules match the intake **Stormshield SNS**. Thi
     
     - **Effort:** elementary
 
+??? abstract "Correlation Potential DNS Tunnel"
+    
+    Detects domain name which is longer than 62 characters and requested at least 50 times in a 10 minutes range time. Long domain names are distinctive of DNS tunnels.
+    
+    - **Effort:** advanced
+
 ??? abstract "Credential Harvesting Via Vaultcmd.exe"
     
     Detects when the process vaultcmd is used for credential harvesting.
@@ -921,6 +927,12 @@ The following Sekoia.io built-in rules match the intake **Stormshield SNS**. Thi
     
     - **Effort:** intermediate
 
+??? abstract "Potential DNS Tunnel"
+    
+    Detects domain name which is longer than 62 characters. Long domain names are distinctive of DNS tunnels.
+    
+    - **Effort:** advanced
+
 ??? abstract "PowerCat Function Loading"
     
     Detect a basic execution of PowerCat. PowerCat is a PowerShell function allowing to do basic connections, file transfer, shells, relays, generate payloads.
@@ -1185,6 +1197,12 @@ The following Sekoia.io built-in rules match the intake **Stormshield SNS**. Thi
     
     - **Effort:** intermediate
 
+??? abstract "Sliver DNS Beaconing"
+    
+    Detects suspicious DNS queries known from Sliver beaconing 
+    
+    - **Effort:** intermediate
+
 ??? abstract "Socat Relaying Socket"
     
     Socat is a linux tool used to relay local socket or internal network connection, this technics is often used by attacker to bypass security equipment such as firewall
@@ -1347,6 +1365,12 @@ The following Sekoia.io built-in rules match the intake **Stormshield SNS**. Thi
     
     - **Effort:** intermediate
 
+??? abstract "Suspicious TOR Gateway"
+    
+    Detects suspicious TOR gateways. Gateways are often used by the victim to pay and decrypt the encrypted files without installing TOR. Tor intercepts the network traffic from one or more apps on user’s computer, usually the user web browser, and shuffles it through a number of randomly-chosen computers before passing it on to its destination. This disguises user location, and makes it harder for servers to pick him/her out on repeat visits, or to tie together separate visits to different sites, this making tracking and surveillance more difficult. Before a network packet starts its journey, user’s computer chooses a random list of relays and repeatedly encrypts the data in multiple layers, like an onion. Each relay knows only enough to strip off the outermost layer of encryption, before passing what’s left on to the next relay in the list.
+    
+    - **Effort:** advanced
+
 ??? abstract "Suspicious Taskkill Command"
     
     Detects rare taskkill command being used. It could be related to Baby Shark malware.
@@ -1358,6 +1382,12 @@ The following Sekoia.io built-in rules match the intake **Stormshield SNS**. Thi
     Detects suspicious VBS file execution with a specific parameter by cscript. It was observed in the Operation CloudHopper.
     
     - **Effort:** elementary
+
+??? abstract "Suspicious Windows DNS Queries"
+    
+    Detects a suspicious Windows command-line process making a DNS query via known abuse text paste web services. This is based on Microsoft Windows Sysmon events (Event ID 22).
+    
+    - **Effort:** advanced
 
 ??? abstract "Suspicious Windows Installer Execution"
     
@@ -1412,6 +1442,12 @@ The following Sekoia.io built-in rules match the intake **Stormshield SNS**. Thi
     Detection of common Tactical RMM installation arguments that could be abused by some attackers.
     
     - **Effort:** elementary
+
+??? abstract "Telegram Bot API Request"
+    
+    Detects suspicious DNS queries to api.telegram.org used by Telegram Bots of any kind
+    
+    - **Effort:** advanced
 
 ??? abstract "Tmutil Delete Backups"
     

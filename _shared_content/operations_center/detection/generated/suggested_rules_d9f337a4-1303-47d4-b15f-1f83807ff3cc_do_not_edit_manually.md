@@ -171,6 +171,12 @@ The following Sekoia.io built-in rules match the intake **Imperva WAF**. This do
     
     - **Effort:** advanced
 
+??? abstract "Download Files From Non-Legitimate TLDs"
+    
+    Detects file downloads from non-legitimate TLDs. Additional legitimates TLDs should be filtered according to the business habits.
+    
+    - **Effort:** master
+
 ??? abstract "Download Files From Suspicious TLDs"
     
     Detects download of certain file types from hosts in suspicious TLDs
@@ -296,12 +302,6 @@ The following Sekoia.io built-in rules match the intake **Imperva WAF**. This do
     Detect threats based on indicators of compromise (IOCs) collected by SEKOIA's Threat and Detection Research team.
     
     - **Effort:** elementary
-
-??? abstract "Sekoia.io Activity Logs Rule Deactivation Bulk"
-    
-    Detects a massive rule deactivation observed threw Sekoia.io activity logs.
-    
-    - **Effort:** master
 
 ??? abstract "Sekoia.io EICAR Detection"
     
