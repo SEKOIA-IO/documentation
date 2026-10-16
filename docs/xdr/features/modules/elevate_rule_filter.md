@@ -11,7 +11,7 @@ By default, when auto-analysis is enabled, the Elevate agent analyzes every new 
 
 Every filter is optional. When no filter is set, the agent analyzes all new alerts. When you add one or more filters, the agent analyzes an alert only if it matches **all** of them.
 
-Filters are evaluated when an alert is raised, before any run is consumed. Alerts that do not match keep an empty verdict. You can still trigger a manual analysis on any of them at any time.
+Filters are evaluated when an alert is raised, before any run is consumed. Alerts that do not match keep an empty verdict. To have Elevate analyze one of them anyway, assign the alert to Roy. See [Trigger a manual Elevate analysis](/xdr/features/modules/elevate_manual_analysis.md).
 
 !!! note "Workspace defaults and community settings"
     Filters set on the workspace apply to every community, unless a community uses custom settings. A community with custom settings has its own filters. See [Override Elevate settings for a community](/xdr/features/modules/elevate_community_override.md).
@@ -73,8 +73,6 @@ The row lists the selected levels, for example **Elementary, Intermediate**.
 
 ![Select rules modal with a search field and a paginated list of detection rules](/assets/elevate/auto-analyze-filters-select-rules.png){: style="max-width:100%"}
 
-The selected rules appear in the row. To remove one rule, click the delete icon on that rule.
-
 The settings card lists every filter in force, one per row.
 
 ![Auto-analyze alerts settings with five filters configured](/assets/elevate/auto-analyze-filters-configured.png){: style="max-width:100%"}
@@ -84,7 +82,7 @@ The settings card lists every filter in force, one per row.
 To remove a filter, use either of these options:
 
 - Click **Filters**, then clear the checkbox of the filter.
-- Click the delete icon on the filter row.
+- On the row of the filter you want to remove, such as **Alert urgency**, click the delete icon.
 
 Once every filter is removed, the agent analyzes all new alerts again.
 
@@ -101,11 +99,11 @@ Once every filter is removed, the agent analyzes all new alerts again.
 
 ## Result
 
-The agent automatically analyzes only the alerts that match every filter you set. Other alerts are not analyzed and consume no run. You can still trigger a manual analysis on any alert.
+The agent automatically analyzes only the alerts that match every filter you set. Other alerts are not analyzed and consume no run. To have Elevate analyze any other alert, assign it to Roy.
 
 ## Related articles
 
 - [Activate Elevate on a workspace](/xdr/features/modules/elevate_activate.md): How to enable the Elevate agent on your workspace.
 - [Override Elevate settings for a community](/xdr/features/modules/elevate_community_override.md): How to give a community its own Elevate settings, including its own filters.
-- [Trigger a manual Elevate analysis](/xdr/features/modules/elevate_manual_analysis.md): How to analyze an alert that your filters exclude.
+- [Trigger a manual Elevate analysis](/xdr/features/modules/elevate_manual_analysis.md): How to have Elevate analyze an alert that your filters exclude by assigning it to Roy.
 - [Manage your Elevate runs](/xdr/features/modules/elevate_quota.md): How to monitor and optimize your monthly run pack.
