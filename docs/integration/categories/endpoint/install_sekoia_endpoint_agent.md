@@ -154,9 +154,14 @@ For example, to use the `fra2` region:
 
 You can enable Host Hygiene and Application Discovery during agent installation or by updating the agent configuration file after installation.
 Enable the corresponding roles:
-- Host Hygiene: --compliance-collector
-- Application Discovery: --software-collector
 
+**Host Hygiene:**
+
+```--compliance-collector```
+
+**Application Discovery:**
+
+```--software-collector```
 
 ### During installation
 
