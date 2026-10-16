@@ -12,8 +12,9 @@ When Elevate is activated at the workspace level, all communities inherit that c
 1. Navigate to **Settings > AI agents**.
 2. Select the community you want to configure from the community list.
 3. Select **Alert/Case Investigation** agent.
-4. Select **Override**.
-5. Toggle **Auto-analyze alerts** to the desired state for this community.
+4. Select the **Settings** tab.
+5. Select **Override**.
+6. Toggle **Auto-analyze alerts** to the desired state for this community.
 
 ![Community-level AI agent settings with the Override option](/assets/elevate/settings-override.png){: style="max-width:100%"}
 
@@ -31,5 +32,5 @@ To revert to the workspace configuration, return to the community's AI agent set
 ## Related articles
 
 - [Activate Elevate on a workspace](/xdr/features/modules/elevate_activate.md): How to enable the Elevate agent at the workspace level.
-- [Limit auto-analysis to specific rules](/xdr/features/modules/elevate_rule_filter.md): How to restrict which alerts Elevate analyzes within a workspace or community.
+- [Scope auto-analysis with filters](/xdr/features/modules/elevate_rule_filter.md): How to limit which alerts Elevate analyzes by rule, effort level, severity or urgency.
 - [Manage your Elevate runs](/xdr/features/modules/elevate_quota.md): How to monitor and optimize your monthly run pack.

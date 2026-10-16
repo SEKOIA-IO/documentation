@@ -18,7 +18,8 @@ To activate the agent:
 
 1. Navigate to **Settings > AI agents**.
 2. Select **Alert/Case Investigation** agent under the **Workspace** section.
-3. Toggle **Auto-analyze alerts** to enabled.
+3. Select the **Settings** tab.
+4. Toggle **Auto-analyze alerts** to enabled.
 
 ![AI agent settings panel with the Auto-analyze alerts toggle enabled](/assets/elevate/auto-analyze-enabled.png){: style="max-width:100%"}
 
@@ -37,6 +38,6 @@ New incoming alerts are automatically analyzed by the Elevate agent. The **Verdi
 ## Related articles
 
 - [Add custom instructions for an Elevate agent](/xdr/features/modules/elevate_custom_instructions.md): How to give the agent environment-specific context.
-- [Limit auto-analysis to specific rules](/xdr/features/modules/elevate_rule_filter.md): How to restrict which alerts Elevate analyzes to control run consumption.
+- [Scope auto-analysis with filters](/xdr/features/modules/elevate_rule_filter.md): How to limit which alerts Elevate analyzes by rule, effort level, severity or urgency.
 - [Override Elevate settings for a community](/xdr/features/modules/elevate_community_override.md): How to enable or disable Elevate independently for a specific community.
 - [Manage your Elevate runs](/xdr/features/modules/elevate_quota.md): How to monitor and optimize your monthly run pack.
