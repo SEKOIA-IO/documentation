@@ -340,6 +340,14 @@ nav:
     - Troubleshoot application inventory: xdr/FAQ/troubleshoot_application_inventory.md
 - Integrations:
   - Introduction: integration/index.md
+  - MCP Server:
+    - Overview: integration/mcp/overview.md
+    - Getting started: integration/mcp/getting_started.md
+    - Install in Claude Code: integration/mcp/install_claude_code.md
+    - SOC how-to guides: integration/mcp/how_to_soc.md
+    - Threat intelligence how-to guides: integration/mcp/how_to_cti.md
+    - Plugins and skills: integration/mcp/plugins_skills.md
+    - 'Reference: Tools': integration/mcp/tools_reference.md
   - Ingestion methods:
     - Overview: integration/ingestion_methods/index.md
     - Cloud & SaaS:
