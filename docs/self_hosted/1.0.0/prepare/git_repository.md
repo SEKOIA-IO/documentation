@@ -49,10 +49,10 @@ The `run-shc.sh` script already passes `GIT_HTTP_USERNAME` and `GIT_HTTP_PASSWOR
 | A branch other than the default branch | Not supported in this release: ArgoCD reads the default branch only. Create a dedicated repository instead. |
 | A protected default branch (merge request or review required) | The SHC push fails. |
 | HTTPS with a self-signed or private certificate | Not supported in this release: the SHC cannot connect. |
+| A repository without authentication | The SHC cannot push. |
 
 <!-- SH-ISSUE #96036: review this passage when the issue is released -->
 <!-- SH-ISSUE #96029: review this passage when the issue is released -->
-| A repository without authentication | The SHC cannot push. |
 
 ## Install the Git server
 

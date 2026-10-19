@@ -66,6 +66,8 @@ Three programs use the registry:
     - The data disk is mounted on `/opt/workspace`. Use the procedure of [Prepare the release disk](./orchestration_node.md#step-3-prepare-the-release-disk).
     - On an air-gapped site, download the Harbor offline installer (about 600 MB) **before** you go to the site.
 
+    <!-- end of the prerequisites list: keeps the steps below numbered -->
+
     1. Set the values of your installation. Replace the values, then paste the lines. The administrator password **MUST** have 8 characters or more, with at least one uppercase letter, one lowercase letter and one digit.
 
         ```bash
