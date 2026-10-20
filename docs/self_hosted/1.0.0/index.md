@@ -10,7 +10,7 @@ If you are new to Sekoia Self-Hosted, follow this sequence:
 
 1. Read the [Reference architecture](architecture/architecture.md) to understand the platform topology.
 2. Validate your infrastructure against the [Technical requirements](deployment/deployment_prerequisites.md) and [Network requirements](deployment/network_requirements.md).
-3. Prepare your `config.yml` using the [Deployment configuration reference](deployment/deployment_configuration.md).
+3. Prepare your `config.yml` using the [Configure the deployment](deployment/deployment_configuration.md).
 4. Follow the [Deploy the platform](deployment/deployment_guide.md) guide.
 5. Create your first user with the [Set up the first administrator account](operations/first_login.md) guide.
 6. Import the threat intelligence with the [Import the CTI database](operations/import_cti_database.md) guide.

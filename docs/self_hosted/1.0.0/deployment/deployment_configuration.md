@@ -315,6 +315,9 @@ These fields set the disk size of each instance of the PostgreSQL clusters whose
 
 Use the SHC itself to discover supported optional fields and verify the computed configuration.
 
+!!! note
+    These commands require the SHC Docker image and the execution script. If you have not prepared them yet, complete the [Preparation](./deployment_guide.md#preparation) steps of the deployment guide, then come back to this section before you start the installation.
+
 To list supported configuration fields, run:
 
 ```bash

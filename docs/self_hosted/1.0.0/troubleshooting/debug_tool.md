@@ -561,6 +561,6 @@ When you escalate an issue to Sekoia L3 support, include the following in your r
 
 - [Monitor your platform](../monitoring/monitoring_guide.md): Continuous monitoring with Grafana and on-demand diagnostic workflows.
 - [Deploy the platform](../deployment/deployment_guide.md): Post-deployment validation commands.
-- [Deployment configuration reference](../deployment/deployment_configuration.md): How to fix configuration errors flagged by `CheckLocalConfig`.
+- [Configure the deployment](../deployment/deployment_configuration.md): How to fix configuration errors flagged by `CheckLocalConfig`.
 - [Run platform diagnostics](../monitoring/run_diagnostics.md): Targeted Prometheus health checks per platform area.
 - [Use the SHC interface](../operations/controller_interface.md): Run commands and diagnostics from the interactive interface.
