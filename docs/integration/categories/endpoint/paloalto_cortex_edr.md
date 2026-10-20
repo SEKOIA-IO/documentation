@@ -7,7 +7,7 @@ type: intake
 
 Palo Alto Cortex XDR (EDR) is an advanced Endpoint Detection and Response solution offering real-time threat detection, investigation, and response capabilities, empowering organizations to proactively defend against sophisticated cyber threats across their endpoints.
 
-This setup guide shows how to forward EDR alerts collected on the Palo Alto Cortex XDR (EDR) platform to Sekoia.io.
+This setup guide shows how to forward EDR detections collected on the Palo Alto Cortex XDR (EDR) platform to Sekoia.io.
 
 - **Vendor**: Palo Alto
 - **Supported environment**: Cloud 
@@ -19,13 +19,17 @@ This setup guide shows how to forward EDR alerts collected on the Palo Alto Cort
 
 This integration collects the following events:
 
-- alerts
-- telemetry events related to the alerts.
+- issues (Cortex XDR Issues API)
+- telemetry events related to the issues.
+
+!!! info
+    The connector now relies on the Cortex XDR v5 Issues API (`/public_api/v1/issue/search`) and supports issue-specific fields such as `is_excluded` (mapped to `paloalto.cortex.xdr.alert.is_whitelisted` in normalized events).
 
 ## Supported versions
 
 This integration was tested against the following versions:
 
+- Palo Alto Cortex XDR (EDR) 5.x (Issues API)
 - Palo Alto Cortex XDR (EDR) 3.8
 
 ## Create API Key
@@ -62,6 +66,14 @@ Before using the **Cortex XDR** connector, you must generate an API key in Corte
 2. Create or Select a Palo Alto account with an `API Key`, `API Key ID` and `Fqdn`.
 3. Edit the intake configuration with a `chunk size` - Default is `100` and a `frequency` - Default is `60`
 
+!!! info "Migration note (legacy API to Issues API)"
+    The intake now reads data from the Cortex XDR v5 Issues API.
+
+    - Legacy model: incidents and alerts (`/public_api/v1/alerts/get_alerts_multi_events`)
+    - Current model: issues and cases (`/public_api/v1/issue/search`)
+
+    Because this connector is cloud-managed, no action is required from your side. The migration is handled automatically on Sekoia.io.
+
 
 {!_shared_content/operations_center/integrations/generated/9b95c9cf-8b78-4830-a1ed-b9e88f05e67a_sample.md!}
 
@@ -72,5 +84,6 @@ Before using the **Cortex XDR** connector, you must generate an API key in Corte
 {!_shared_content/operations_center/integrations/generated/9b95c9cf-8b78-4830-a1ed-b9e88f05e67a.md!}
 
 ## Further Readings
-- [Get start with cortex API](https://docs-cortex.paloaltonetworks.com/r/Cortex-XDR/Cortex-XDR-API-Reference/Get-Started-with-APIs)
+- [Get started with Cortex API](https://docs-cortex.paloaltonetworks.com/r/Cortex-XDR/Cortex-XDR-API-Reference/Get-Started-with-APIs)
+- [Cortex XDR Issues API (v5) - Issue search](https://cortex-docs.paloaltonetworks.com/xdr-5-api/issues-apis/issues#post-public_api-v1-issue-search)
 - [Create API KEY](https://docs-cortex.paloaltonetworks.com/r/Cortex-XPANSE/1.0/Cortex-Xpanse-User-Guide/Generate-an-API-Key-in-Cortex-XDR)
