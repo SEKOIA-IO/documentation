@@ -9,6 +9,11 @@ Palo Alto Cortex XDR (EDR) is an advanced Endpoint Detection and Response soluti
 
 This setup guide shows how to forward EDR detections collected on the Palo Alto Cortex XDR (EDR) platform to Sekoia.io.
 
+Sekoia.io supports both Cortex XDR API models:
+
+- legacy incidents/alerts model (v3 APIs)
+- issues/cases model (v5 APIs)
+
 - **Vendor**: Palo Alto
 - **Supported environment**: Cloud 
 - **Detection based on**: Telemetry / Alert
@@ -17,13 +22,10 @@ This setup guide shows how to forward EDR detections collected on the Palo Alto 
 
 ## Collected events
 
-This integration collects the following events:
-
-- issues (Cortex XDR Issues API)
-- telemetry events related to the issues.
+This integration collects EDR detections through one of the two supported Cortex API models (legacy alerts or issues), depending on the intake you choose.
 
 !!! info
-    The connector now relies on the Cortex XDR v5 Issues API (`/public_api/v1/issue/search`) and supports issue-specific fields such as `is_excluded` (mapped to `paloalto.cortex.xdr.alert.is_whitelisted` in normalized events).
+    In the v5 issues/cases model, the field `is_excluded` is supported and mapped to `paloalto.cortex.xdr.alert.is_whitelisted` in normalized events.
 
 ## Supported versions
 
@@ -62,17 +64,22 @@ Before using the **Cortex XDR** connector, you must generate an API key in Corte
 
 ### Create the intake
 
-1. Go to the [Intake page](https://app.sekoia.io/operations/intakes) and create a new `Palo Alto Cortex XDR (EDR)` intake.
+1. Go to the [Intake page](https://app.sekoia.io/operations/intakes) and create a `Palo Alto Cortex XDR (EDR)` intake.
 2. Create or Select a Palo Alto account with an `API Key`, `API Key ID` and `Fqdn`.
-3. Edit the intake configuration with a `chunk size` - Default is `100` and a `frequency` - Default is `60`
+3. Select the trigger matching your Cortex tenant model:
 
-!!! info "Migration note (legacy API to Issues API)"
-    The intake now reads data from the Cortex XDR v5 Issues API.
+    - `cortex_query_alerts` for the legacy incidents/alerts model (API v3)
+    - `cortex_query_issues` for the issues/cases model (API v5)
+
+4. Edit the intake configuration with a `chunk size` - Default is `100` and a `frequency` - Default is `60`
+
+!!! info "Migration note (v3 and v5 coexistence)"
+    Both API models are supported and available through dedicated connectors.
 
     - Legacy model: incidents and alerts (`/public_api/v1/alerts/get_alerts_multi_events`)
-    - Current model: issues and cases (`/public_api/v1/issue/search`)
+    - New model: issues and cases (`/public_api/v1/issue/search`)
 
-    Because this connector is cloud-managed, no action is required from your side. The migration is handled automatically on Sekoia.io.
+    There is no implicit migration between models: if your Cortex tenant uses the issues/cases framework, create or switch to an intake using `cortex_query_issues`.
 
 
 {!_shared_content/operations_center/integrations/generated/9b95c9cf-8b78-4830-a1ed-b9e88f05e67a_sample.md!}
@@ -85,5 +92,6 @@ Before using the **Cortex XDR** connector, you must generate an API key in Corte
 
 ## Further Readings
 - [Get started with Cortex API](https://docs-cortex.paloaltonetworks.com/r/Cortex-XDR/Cortex-XDR-API-Reference/Get-Started-with-APIs)
+- [Cortex XDR Incident management API (v3)](https://cortex-docs.paloaltonetworks.com/xdr-3-api/cortex-xdr-3.x-apis/incident-management)
 - [Cortex XDR Issues API (v5) - Issue search](https://cortex-docs.paloaltonetworks.com/xdr-5-api/issues-apis/issues#post-public_api-v1-issue-search)
 - [Create API KEY](https://docs-cortex.paloaltonetworks.com/r/Cortex-XPANSE/1.0/Cortex-Xpanse-User-Guide/Generate-an-API-Key-in-Cortex-XDR)
