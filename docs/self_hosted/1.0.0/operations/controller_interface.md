@@ -128,9 +128,15 @@ To run a target:
 1. Select the tab with `Shift+Tab` until **Diagnostics** is active.
 2. Select a target in the **Available diagnostics** list and press `Enter`.
 
+![list](/assets/self_hosted/1.0.0/diagnostic/list.png){: style="max-width:100%"}
+
 The interface opens a result view with one collapsible panel per rule of that target, in file order. Each panel starts as `NOT_STARTED`, switches to `RUNNING` while its rule is evaluated, and ends on `OK`, `WARN`, or `CRIT`. Rules are evaluated one at a time, and the first panel to reach a result is focused automatically so you can navigate from the keyboard.
 
-A completed panel holds a results table with the measured values and their labels, and a **Likely causes & remediation** section. Sort the table by selecting a column header. To copy the full report of the current run to your clipboard, right-click the result view or the table.
+![result](/assets/self_hosted/1.0.0/diagnostic/result.png){: style="max-width:100%"}
+
+A completed panel holds a results table with the measured values and their labels, and a **Likely causes & remediation** section when the status is `WARN` or `CRIT`. Sort the table by selecting a column header. To copy the full report of the current run to your clipboard, right-click the result view or the table.
+
+![explanation](/assets/self_hosted/1.0.0/diagnostic/explanation.png){: style="max-width:100%"}
 
 To return to the target list, press `Escape`.
 
