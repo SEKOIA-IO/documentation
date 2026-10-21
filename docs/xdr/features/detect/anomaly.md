@@ -23,7 +23,10 @@ Anomaly detection rules contain the configuration information necessary to perfo
 
 For a complete configuration, you need to set:
 
-- a filter query (to aggregate events from a specific area)
+- - a filter query (to aggregate events from a specific area)
++ - a filter query written in the [Events Query Language](../investigate/events_query_language.md), to aggregate events from a specific area. The query supports field filters and logical operators such as `AND`, `OR`, and `NOT`.
++
++   For example: `event.dialect:windows AND action.id:4697`
 
 ![!](/assets/xdr/rules/anomaly/172566414-fbb7ecc9-78ea-474d-b1db-f8248fb927c7.png)
 
