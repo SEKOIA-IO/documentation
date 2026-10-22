@@ -100,9 +100,9 @@ For a full explanation of what is preserved and how to reach it from the interfa
 | first_seen_at             | The date and time of the first alert occurrence.                                             |
 | last_seen_at              | The date and time of the last alert occurrence.                                              |
 | time_to_detect            | Duration taken to identify the alert from its occurrence in seconds.                         |
-| time_to_acknowledge       | Time elapsed from detection to official acknowledgment of the alert in seconds.              |
-| time_to_respond           | Duration taken to take action after acknowledgment in seconds.                               |
-| time_to_resolve           | The total time taken to completely resolve the alert in seconds.                             |
+| time_to_acknowledge       | Duration in seconds between alert creation and transition to the Acknowledged status. Remains null if no such transition has been recorded.             |
+| time_to_respond           | Duration in seconds between acknowledgement and transition to the Ongoing status. If no acknowledgement duration has been recorded, this is measured from alert creation instead. Remains null if no transition to Ongoing has been recorded.                               |
+| time_to_resolve           | Duration in seconds recorded when the alert transitions to Closed or Rejected. Computed as the time elapsed since alert creation, minus the recorded acknowledgement and response durations. This is not necessarily the total duration from creation to closure.                             |
 | time_to_ingest            | The duration from alert generation to its final ingestion into the system in seconds.        |
 | occurrences               | The number of alert occurrences                                                              |
 | rule_instance_uuid        | A unique identifier for the rule that generated the alert.                                   |
@@ -111,6 +111,23 @@ For a full explanation of what is preserved and how to reach it from the interfa
 | threats                   | List of threats associated the alert.                                                        |
 | custom_fields             | Structured metadata attached to the alert. Access a field with `custom_fields.<field_name>`. |
 
+!!! note "Using alert timing fields for SLA reporting"
+
+    Alert timing fields are populated by status transitions, not directly by comments, urgency changes, playbook executions, or remediation actions. An automated action can populate them if it performs the corresponding status transition.
+
+    - **`time_to_acknowledge`** measures the duration from alert creation to the transition to `Acknowledged`.
+    - **`time_to_respond`** measures the duration from acknowledgement to the transition to `Ongoing`. If no acknowledgement duration has been recorded, it is measured from alert creation instead.
+    - **`time_to_resolve`** is recorded when the alert transitions to `Closed` or `Rejected`. It is calculated as the duration since alert creation, minus the recorded acknowledgement and response durations. It is therefore **not necessarily the total time from creation to closure**.
+
+    A closed alert can have a `null` `time_to_respond` if it never transitioned to `Ongoing`. This does not imply that the alert was not investigated or remediated.
+
+    For SLA reporting, distinguish two indicators:
+
+    - **Time to acknowledge:** use `time_to_acknowledge` for alerts with a recorded acknowledgement.
+    - **Total time to close:** add `time_to_acknowledge`, `time_to_respond`, and `time_to_resolve`. Treat missing acknowledgement and response durations as zero, but only include alerts with a non-null `time_to_resolve`.
+
+    All durations are expressed in seconds. Report missing measurements separately: excluding null values from an SLA percentage means that the percentage covers only alerts with a recorded measurement, not all alerts.
+    
 ## cases
 
 | **Property**              | **Description**                                                                            |
