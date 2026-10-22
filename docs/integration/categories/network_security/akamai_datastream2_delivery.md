@@ -16,29 +16,66 @@ This integration allows you to ingest Akamai DataStream 2 delivery telemetry int
 !!! Warning
 	Important note - This format is currently in beta. We highly value your feedback to improve its performance.
 
-## How to create the credentials and configure the stream
+## Configure
 
-To send Akamai DataStream 2 delivery logs to Sekoia.io, create a delivery stream in Akamai and configure it to push events to a custom HTTPS endpoint that matches your Sekoia.io intake configuration.
+### Create your intake
 
-Follow the official Akamai documentation:
+1. Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a new intake from the `Akamai Datastream2 Delivery` format.
+2. Copy the intake key: it will be used as the password of the Akamai stream destination.
 
-- Create a stream: <https://techdocs.akamai.com/datastream2/docs/create-stream>
-- Stream to a custom HTTPS endpoint: <https://techdocs.akamai.com/datastream2/docs/stream-custom-https>
-- Create a security log stream (SIEM): <https://techdocs.akamai.com/datastream2/docs/create-a-security-log-stream>
+### Create a DataStream 2 stream in Akamai
 
-### Credentials and configuration steps
+1. Log in to Akamai Control Center with an account that has DataStream access.
+2. Open the main menu, then select `Analytics & monitor` > `DataStream`.
 
-1. In Akamai control center, create a new DataStream 2 stream dedicated to delivery telemetry.
-2. Select the delivery log stream type and the relevant edge property or security configuration for your environment.
-3. In the custom HTTPS configuration, enter the Sekoia.io HTTPS intake URL provided in your intake settings.
-4. Use the credentials or authentication method required by your Sekoia.io intake (for example, the token, API key, or client certificate configuration supplied by Sekoia.io).
-5. Save the stream and verify that Akamai can securely reach the Sekoia.io endpoint over HTTPS.
-6. Validate the first events in Sekoia.io to confirm that the stream is forwarding delivery logs correctly.
+    ![Akamai main menu](/assets/operation_center/integration_catalog/network_security/akamai_datastream2_delivery/datastream_menu.jpg){: style="max-width:100%"}
 
-### Notes
+3. On the `Stream list` page, click `Create stream` and select `Delivery Products`.
 
-- For a delivery use case, the stream should be configured for standard delivery logs rather than a security-only SIEM stream unless you specifically need security log output.
-- If you use a security log stream, make sure the collected events match your intended detection and monitoring scope.
+    ![Create a delivery stream](/assets/operation_center/integration_catalog/network_security/akamai_datastream2_delivery/create_stream.jpg){: style="max-width:100%"}
+
+4. In the `Configuration` step:
+    - **Display Name**: enter a name for the stream (for example, `Sekoia`).
+    - **Latency profile**: keep `Optimized for faster latency` (default) for near real-time detection.
+    - **Include groups**: select the groups that contain the properties to monitor.
+    - **Include properties**: select the properties to monitor. Only properties active on staging or production are listed, and all selected properties must belong to the same product.
+
+    Click `Next`.
+
+    ![Stream configuration](/assets/operation_center/integration_catalog/network_security/akamai_datastream2_delivery/stream_configuration.jpg){: style="max-width:100%"}
+
+5. In the `Data sets` step, select the data set fields to log (client and request metadata, response metadata, TLS, cache, EdgeWorker…). Then, in the `Log file` section, set `Log format` to `Json` and click `Next`.
+
+    ![Log format](/assets/operation_center/integration_catalog/network_security/akamai_datastream2_delivery/log_format.jpg){: style="max-width:100%"}
+
+6. In the `Delivery` step, configure the destination:
+    - **Destination**: `Custom HTTPS`
+    - **Display Name**: a name for the destination (for example, `Sekoia-endpoint`)
+    - **Authentication**: `BASIC`
+    - **Endpoint URL**: `https://intake.sekoia.io/plain/batch`
+    - **Username**: any value (for example, `Sekoia`)
+    - **Password**: your Sekoia.io intake key
+    - **Send compressed data**: checked
+
+    Click `Validate & Save`. Akamai sends a test request to the endpoint and only saves the destination if the validation succeeds.
+
+    ![Custom HTTPS destination](/assets/operation_center/integration_catalog/network_security/akamai_datastream2_delivery/custom_https_destination.jpg){: style="max-width:100%"}
+
+    !!! warning
+        The URL above works for the FRA1 region. For any other region, replace `https://intake.sekoia.io` with the HTTP intake endpoint of your region, listed on the [Regions page](https://docs.sekoia.com/getting_started/regions/).
+
+7. In the `Summary` step, review the configuration, check `Activate stream upon saving`, and save the stream.
+
+!!! note
+    Activating a stream takes about 60 minutes. For streams that rely on Property Manager (not DataStream managed streams), you must also enable the DataStream behavior on each monitored property before logs are sent.
+
+#### Enjoy your events on the [Events page](https://app.sekoia.io/operations/events)
+
+### Further readings
+
+- [Create a stream](https://techdocs.akamai.com/datastream2/docs/create-stream)
+- [Stream logs to a custom HTTPS endpoint](https://techdocs.akamai.com/datastream2/docs/stream-custom-https)
+- [Review and activate a stream](https://techdocs.akamai.com/datastream2/docs/review-activate-stream)
 
 ## Specification
 
@@ -58,7 +95,7 @@ Typical fields included in the delivery stream:
 - **Akamai account and entitlement**:
     - An Akamai Control Center account with DataStream 2 entitlement on the contract.
 - **Property configuration**:
-    - A property (Ion, Adaptive Media Delivery, Download Delivery, DSA, API Acceleration…) with the DataStream behavior enabled for delivery logs.
+    - A property (Ion, Adaptive Media Delivery, Download Delivery, DSA, API Acceleration…) active on staging or production.
 - **Stream configuration**:
     - A stream configured with a custom HTTPS endpoint destination pointing to the Sekoia HTTP intake.
 - **Network**:
