@@ -36,7 +36,7 @@ Download the archive and its checksum file, then verify integrity. Fill in your 
     aws --endpoint-url "$ENDPOINT" s3 cp "s3://$BUCKET/$KEY" "$OUT"
     aws --endpoint-url "$ENDPOINT" s3 cp "s3://$BUCKET/$KEY.sha256" "$OUT.sha256"
 
-    sha256sum -c "$OUT.sha256"
+    echo "$(cut -d' ' -f1 "$OUT.sha256")  $OUT" | sha256sum -c -
     ```
 
     !!! note "AWS CLI v2 checksum compatibility"
@@ -54,7 +54,7 @@ Download the archive and its checksum file, then verify integrity. Fill in your 
     rclone copyto sekoia:self-hosted/platform/v1.0.0/archives/v1.0.0.tar ./sekoia-self-hosted-v1.0.0.tar
     rclone copyto sekoia:self-hosted/platform/v1.0.0/archives/v1.0.0.tar.sha256 ./sekoia-self-hosted-v1.0.0.tar.sha256
 
-    sha256sum -c sekoia-self-hosted-v1.0.0.tar.sha256
+    echo "$(cut -d' ' -f1 sekoia-self-hosted-v1.0.0.tar.sha256)  sekoia-self-hosted-v1.0.0.tar" | sha256sum -c -
     ```
 
 Expected output: `sekoia-self-hosted-v1.0.0.tar: OK`
