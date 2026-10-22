@@ -766,8 +766,8 @@ nav:
       - Technical requirements: self_hosted/1.0.0/deployment/deployment_prerequisites.md
       - Network requirements: self_hosted/1.0.0/deployment/network_requirements.md
       - The deployment process: self_hosted/1.0.0/deployment/deployment_process.md
+      - Configure the deployment: self_hosted/1.0.0/deployment/deployment_configuration.md
       - Deploy the platform: self_hosted/1.0.0/deployment/deployment_guide.md
-      - Deployment configuration reference: self_hosted/1.0.0/deployment/deployment_configuration.md
     - Operations:
       - Set up the first administrator account: self_hosted/1.0.0/operations/first_login.md
       - Use the SHC interface: self_hosted/1.0.0/operations/controller_interface.md

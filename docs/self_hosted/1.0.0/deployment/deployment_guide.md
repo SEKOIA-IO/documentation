@@ -6,7 +6,7 @@ This guide walks you through the full installation of Sekoia Self-Hosted, from d
 - All nodes meet the requirements listed in [Technical requirements](./deployment_prerequisites.md).
 - The operating system and the packages listed in [Technical requirements](./deployment_prerequisites.md) are installed on every node. The SHC does not configure the node operating system.
 - Firewall rules allow the flows listed in [Network requirements](./network_requirements.md).
-- Your `config.yml` manifest is ready. See [Deployment configuration reference](./deployment_configuration.md).
+- Your `config.yml` manifest is ready. See [Configure the deployment](./deployment_configuration.md).
 - Docker is installed on the orchestration node.
 
 ## Preparation 
