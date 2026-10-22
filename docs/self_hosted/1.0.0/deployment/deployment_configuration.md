@@ -125,9 +125,9 @@ ExaLog storage configuration is derived from `global.platform_storage`. Some com
 | :--- | :--- |
 | `utils.ansible.ssh-key` | Private key used by the self-hosted-controller (SHC) to connect to and configure every Kubernetes node. Use an environment-variable reference. |
 | `utils.ansible.user` | SSH user used on every Kubernetes node. The account must meet the privilege requirements in the [technical requirements](./deployment_prerequisites.md). |
-| `utils.ansible.inventory.managers` | List of manager-node IP addresses or resolvable hostnames. At least one manager is required. |
+| `utils.ansible.inventory.managers` | List of manager-node IP addresses. At least one manager is required. Hostnames are not supported: each value is used as the Kubernetes node IP. |
 
-Worker nodes are configured under `utils.ansible.inventory.workers`. The field is not required by the configuration validator, but production sizing profiles normally require workers to provide the expected capacity.
+Worker nodes are configured under `utils.ansible.inventory.workers`, as a list of IP addresses. The field is not required by the configuration validator, but production sizing profiles normally require workers to provide the expected capacity.
 
 ### Git repository
 

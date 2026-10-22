@@ -168,7 +168,7 @@ For DNS, ensure that:
 - All Sekoia application servers can resolve each other by hostname and communicate freely.
 - All nodes can resolve and reach the Git repository and OCI registry.
 - All nodes can resolve and connect to the designated SMTP server.
-- The orchestration node can resolve and access every Kubernetes node by hostname.
+- The orchestration node can reach every Kubernetes node at the IP address declared in the inventory.
 - DNS records exist for `global.host` and `global.delivery_host` before deployment.
 - When `global.kube_manager_host` is configured as a hostname, its DNS record exists before deployment.
 
