@@ -28,6 +28,8 @@ global:
   version:
     platform:
       version: "v1.0.0"
+  logging:
+    file: /opt/sekoia/logs/self-hosted-controller.log
 
 utils:
   ansible:
@@ -319,6 +321,28 @@ Configure these fields when the platform, the container runtime, or the SHC reac
 
 !!! tip "Keep the default exclusions"
     To exclude more destinations from the proxy, append them to the default `no_proxy` value instead of replacing it. The default list keeps the cluster-internal and private addresses out of the proxy. Add your Git, OCI registry, and S3 hostnames when they are reachable without the proxy: an address range does not match a hostname.
+
+### SHC log file
+
+Every SHC run, in CLI or TUI mode, writes its log lines to a dedicated file. The SHC takes the directory and file name from `global.logging.file`, and prefixes the file name with the start time of the run, for example `20261023-153000_self-hosted-controller.log`, so that successive runs never overwrite each other. Sekoia support asks for this file when you escalate an issue.
+
+| Field | Description | Default |
+| :--- | :--- | :--- |
+| `global.logging.file` | Path of the per-run log file, inside the SHC container. Set it under `/opt/sekoia`, the mount point of `$SEKOIA_LOCAL_DIR`, to keep the file on the orchestration node. The field does not appear in `config help`. | `/tmp/self-hosted-controller.log` |
+
+!!! warning "The default path loses the file"
+    The execution script runs the container with `--rm` and mounts only `$SEKOIA_CONFIG_FILE` and `$SEKOIA_LOCAL_DIR`. With the default value, the file is written to `/tmp` inside the container and deleted when the command exits. Set the field in every deployment.
+
+??? example "Log file on the orchestration node in `config.yml`"
+    ```yaml
+    global:
+      logging:
+        file: /opt/sekoia/logs/self-hosted-controller.log
+    ```
+
+    With this value, the log of a run started on 23 October 2026 at 15:30:00 is kept at `$SEKOIA_LOCAL_DIR/logs/20261023-153000_self-hosted-controller.log` on the orchestration node.
+
+The SHC creates the directory if it does not exist. If it cannot create the file, it starts without file logging: the CLI reports nothing, and the TUI displays `log: (disabled)` at the bottom of the interface. Give UID 1000 write access to `$SEKOIA_LOCAL_DIR`, as described in the [container user](./deployment_guide.md#step-4-create-the-execution-script) note of the deployment guide.
 
 ### Database storage
 

@@ -572,15 +572,17 @@ When you escalate an issue to Sekoia L3 support, include the following in your r
 
 1. Copy the full terminal output of the failing command.
 
-2. Share your `config.yml` with all secrets redacted (replace all passwords and keys with `***`).
+2. Attach the per-run log file of the SHC. With `global.logging.file` set to `/opt/sekoia/logs/self-hosted-controller.log`, the file of each run is in `$SEKOIA_LOCAL_DIR/logs/` on the orchestration node, named after the start time of the run. In the TUI, the path is displayed at the bottom of the interface. With the default value, the file is deleted with the container: set the field, then run the failing command again. See [SHC log file](../deployment/deployment_configuration.md#shc-log-file).
 
-3. Collect K3s system logs from the affected nodes:
+3. Share your `config.yml` with all secrets redacted (replace all passwords and keys with `***`).
+
+4. Collect K3s system logs from the affected nodes:
 
     ```bash
     journalctl -u k3s -n 500 --no-pager > k3s.log
     ```
 
-4. If applications are degraded, collect ArgoCD and pod logs:
+5. If applications are degraded, collect ArgoCD and pod logs:
 
     ```bash
     exec DebugArgoCD
