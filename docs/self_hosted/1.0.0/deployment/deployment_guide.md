@@ -8,6 +8,7 @@ This guide walks you through the full installation of Sekoia Self-Hosted, from d
 - Firewall rules allow the flows listed in [Network requirements](./network_requirements.md).
 - Your `config.yml` manifest is ready. See [Configure the deployment](./deployment_configuration.md).
 - Docker is installed on the orchestration node.
+- The platform certificate and its private key are available in PEM format. See [TLS certificate](./deployment_configuration.md#tls-certificate).
 
 ## Preparation 
 
@@ -140,6 +141,8 @@ docker run --rm $TTY_FLAGS \
   -e GIT_HTTP_USERNAME="$GIT_HTTP_USERNAME" \
   -e GIT_HTTP_PASSWORD="$GIT_HTTP_PASSWORD" \
   -e SEKOIA_INSTANCE_PUBLIC_KEY="$SEKOIA_INSTANCE_PUBLIC_KEY" \
+  -e TRAEFIK_PUBKEY="$TRAEFIK_PUBKEY" \
+  -e TRAEFIK_PRIVKEY="$TRAEFIK_PRIVKEY" \
   -e S3_ACCESS_KEY="$S3_ACCESS_KEY" \
   -e S3_SECRET_KEY="$S3_SECRET_KEY" \
   --network=host \
@@ -166,9 +169,11 @@ Set the following environment variables on the orchestration node before running
 | `REGISTRY_PASSWORD` | Yes | Password for your local OCI registry. |
 | `GIT_HTTP_USERNAME` | Yes | Username for your local code repository. |
 | `GIT_HTTP_PASSWORD` | Yes | Password or token for your local code repository. |
-| `SERVERS_SUDO_PASSWORD` | No | Sudo password for target nodes, if required by your SSH configuration. |
+| `SERVERS_SUDO_PASSWORD` | No | Sudo password for target nodes, if `sudo` asks for one. The SHC also uses it when the SSH server asks for a password. |
 | `DOCKER_IMAGE` | No | Override the self-hosted-controller (SHC) Docker image reference. Required in air-gapped environments. |
 | `SEKOIA_INSTANCE_PUBLIC_KEY` | Yes | Public key for the Sekoia instance. |
+| `TRAEFIK_PUBKEY` | Yes | Platform certificate chain in PEM format. See [TLS certificate](./deployment_configuration.md#tls-certificate). |
+| `TRAEFIK_PRIVKEY` | Yes | Private key of the platform certificate in PEM format. |
 | `S3_ACCESS_KEY` | Online mode only | Access key for the Sekoia release bucket, provided by Sekoia. |
 | `S3_SECRET_KEY` | Online mode only | Secret key for the Sekoia release bucket, provided by Sekoia. |
 
