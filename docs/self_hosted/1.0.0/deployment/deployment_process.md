@@ -156,8 +156,8 @@ The SHC handles the full platform lifecycle beyond initial installation.
 | Resource usage analysis | `DebugResourceAllocation` |
 | Platform configuration re-apply | `PlatformConfigurationFile`, `PlatformInstallation` |
 | Full ArgoCD re-synchronization | `DebugArgoCDSyncAll` |
-| Graceful node reboot | `RebootNodes` |
-| Recover from a node crash or cluster restart | `KubeCrashRecovery` |
+| Cold restart of the whole cluster, with a full outage | `RebootNodes`, then `KubeCrashRecovery`. See [Run a cold restart of the whole cluster](../operations/node_maintenance.md#run-a-cold-restart-of-the-whole-cluster). |
+| Restart every pod after a crash of several nodes, with a full outage | `KubeCrashRecovery`. See [KubeCrashRecovery](../troubleshooting/debug_tool.md#kubecrashrecovery). |
 | Live node resource usage | `GetServerStatus` |
 | Service health check per platform area | `Diagnostic` |
 | Import the CTI database | `ImportArangoCollection`. See [Import the CTI database](../operations/import_cti_database.md). |
