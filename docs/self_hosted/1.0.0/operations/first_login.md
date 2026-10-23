@@ -59,7 +59,7 @@ You are now logged in to the **Administration Community**. This community is ded
 
 ## Create your community
 
-![communities](/assets/self_hosted/communities.png)
+![!communities](/assets/self_hosted/1.0.0/first_login/communities.png)
 
 1. Select **Communities** in the left navigation panel.
 2. Select **+ Create** in the top right corner.
@@ -74,7 +74,7 @@ Your new community appears in the list alongside the two built-in communities.
 
 Your community has no active subscription until you import the license file provided by Sekoia.
 
-![allocate](/assets/self_hosted/allocate.png)
+![!allocate](/assets/self_hosted/1.0.0/first_login/allocate.png)
 
 1. Select your community from the list.
 2. Select the **Subscriptions** tab.
@@ -85,7 +85,7 @@ Your community has no active subscription until you import the license file prov
 
 Your subscription appears in the **Subscriptions** tab with its tier name, validity period, asset limit, and storage option.
 
-![subscription](/assets/self_hosted/subscription.png)
+![!subscription](/assets/self_hosted/1.0.0/first_login/subscription.png)
 
 ## Connect to your community
 

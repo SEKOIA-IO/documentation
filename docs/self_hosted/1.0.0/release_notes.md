@@ -1,29 +1,36 @@
 # Release notes v1.0.0
 
-Sekoia Self-Hosted 1.0.0 is the first generally available release of Sekoia Self-Hosted, with a node-to-node network preflight, detection rules and intake formats deployed at installation, diagnostics for every layer of the platform, and a volume-safe platform destruction. This article covers what changed since the 0.1.0 pre-release, the feature scope, functional constraints, and known issues.
+Sekoia Self-Hosted 1.0.0 is the first generally available release of Sekoia Self-Hosted, with a node-to-node network preflight, detection rules and intake formats deployed at installation, diagnostics and alerts for every layer of the platform, and a volume-safe platform destruction. This article covers what changed since the 0.1.0 pre-release, the feature scope, functional constraints, and known issues.
 
 !!! note "Import the threat intelligence after the installation"
     The installation does not deploy the Sekoia CTI database. Import it with the SHC once the platform is installed. See [Threat intelligence](#threat-intelligence).
 
 ## What's new in 1.0.0
 
-**CTI database import.** `ImportArangoCollection` imports the Sekoia CTI database into the platform, from the Sekoia release bucket or, in air-gapped mode, from the orchestration node. See [Import the CTI database](operations/import_cti_database.md).
+**CTI database import.** `ImportArangoCollection` imports the Sekoia CTI database into the platform, from the Sekoia release bucket or, in air-gapped mode, from the daily CTI archive published by Sekoia. Once imported, it feeds observable tags enrichment and contextualized alerts. The installation also creates the `SEKOIA Intelligence Feed` detection rule, which matches events against the indicators of the CTI database. See [Import the CTI database](operations/import_cti_database.md).
 
 **Node-to-node network preflight.** The `checks` stage of the `Install` execution plan now runs `CheckNodePortReachability` before K3s is installed. Each node briefly listens on the cluster TCP ports (Kubernetes API 6443, etcd, Cilium, and intake) while the other nodes probe it. A blocked path is reported with the destination node, the port, and the reason: `timeout` when packets are silently dropped, `refused` when a firewall rule rejects the connection. The check works with any firewall backend and also catches blocks in security groups and network firewalls upstream of the nodes. It is skipped once K3s is installed on every node. See [Network requirements](deployment/network_requirements.md).
 
 **Detection rules and intake formats deployed at installation.** The `push` stage now runs `PushDataBundles`, which publishes the detection rules and intake formats bundles to your local OCI registry, tagged with their release ID. After the platform installation, `SyncRulesCatalog` and `SyncIntakeFormats` synchronize the corresponding ArgoCD applications and wait for their PostSync jobs to succeed. The rules catalog is populated when the installation ends, with no manual ArgoCD synchronization. See [The deployment process](deployment/deployment_process.md).
 
-**Diagnostics for every platform layer.** The `Diagnostic` module gains seven targets. Together with `alerts`, `asset_discovery`, `asset_management`, and `telemetry`, they cover the nodes, the data stores, event ingestion, indexation, detection, and playbook execution. Each failing rule comes with its likely causes and remediation. See [Run platform diagnostics](monitoring/run_diagnostics.md).
+**Diagnostics for every platform layer.** The `Diagnostic` module gains eight targets. Together with `alerts`, `asset_discovery`, `asset_management`, and `telemetry`, they cover the nodes, the data stores, access to the console, event ingestion, indexation, detection, and playbook execution. Each failing rule comes with its likely causes and remediation. See [Run platform diagnostics](monitoring/run_diagnostics.md).
 
 | Target | What it checks |
 | :--- | :--- |
 | `node` | The Kubernetes nodes and their local storage: nodes not ready or unreachable, cordoned nodes, disk and memory pressure, high memory and CPU load, clock drift, and node filesystem and orchestration volume usage, with a 24-hour fill prediction. |
-| `kafka` | The Kafka cluster and its ZooKeeper ensemble: ready brokers, broker data volume usage, `kafka-exporter` availability, abnormal controller state, offline and under-replicated partitions, and ZooKeeper availability. |
+| `kafka` | The Kafka cluster and its ZooKeeper ensemble: ready brokers, broker data volume usage, `kafka-exporter` availability, abnormal controller state, offline and under-replicated partitions, ZooKeeper availability, a topic whose consumer backlog keeps growing, and replicas that keep leaving and re-entering the in-sync set. |
 | `clickhouse` | The ClickHouse cluster and its keeper ensemble: shards with no ready replica, replicas not ready, keeper availability, read-only tables, data volume usage, and the distributed insert backlog. |
-| `ingest` | The syslog and HTTP ingestion chains: intakes ingesting far above their own baseline, plan-based throttling to the dead-letter queue, accepted events not published to Kafka, and a community whose ingestion collapses below its own baseline. Each result names the community and, where available, the intake key. |
+| `ingest` | The ingestion path: intakes ingesting far above their own baseline, plan-based throttling to the dead-letter queue, accepted events not published to Kafka, a community whose ingestion collapses below its own baseline, the TLS certificate of the ingestion endpoints, and the reception and parsing stages with no available replica. |
+| `console` | Access to the console: the credentials store (Vault), the ingress and its TLS certificate, the `front` deployment, the authentication service, and the GraphQL gateway. |
 | `indexation` | The ExaLog indexation pipeline: an indexer that stopped consuming, object storage that returns errors, indexer local disk usage, and ready indexation nodes. |
 | `sigma_workflow` | The detection and correlation pipeline: uneven partition assignment across matcher workers, KeyDB key count disparity between replicas, growing consumer lag, correlation and rule compilation failures, correlation latency, deployments with no available replica, matchers not consuming events, alert-storm protection dropping sightings, and stalled sighting creation or sending. |
 | `symphony` | Playbook execution: playbook pod and job counts by state, excess ConfigMaps, per-playbook job activity, action worker availability, and Celery queue backlog, retry, and API server error rates. |
+
+**Platform alerts for every diagnostic.** Each diagnostic target now has a matching group of Prometheus alerts, loaded at installation and sent to the local Alertmanager. Each alert is named after the diagnostic rule it mirrors, with the same query and thresholds, and points to the diagnostic to run. Alerts have three severities: `critical` when a component is down or a pipeline has stopped, `error` when a feature fails or is degraded, and `warning` for early signals. See [Platform alerts reference](monitoring/platform_alerts.md).
+
+**Swap check.** `CheckServerSpec` now fails when a manager or worker node has an active swap device. The Kubernetes nodes refuse to start with swap enabled, including after a reboot. See [Swap](deployment/deployment_prerequisites.md#swap).
+
+**Third-party license notices.** Each release ships `licenses/THIRD-PARTY-NOTICES.md` in its platform directory. It lists each third-party application with its license and source, includes the license texts, and explains how to obtain the source code of copyleft components.
 
 **Volume-safe platform destruction.** Two new modules reset a dedicated cluster. `PlatformScaleDown` deletes every platform namespace except the protected infrastructure namespaces, then checks on every node that the client volumes are released. `PlatformDestroy` runs the full sequence: Cilium cleanup preparation, `PlatformScaleDown`, `K3SUninstall`, and `WipeStorageDisks`. `K3SUninstall` now removes Cilium networking on dedicated nodes and verifies the cleanup, and `CleanupCilium` recovers a node where K3s is already uninstalled. When a phase fails, the error lists the completed phases, the phases not attempted, and the next safe step. See [Reset or destroy the platform](operations/reset_platform.md).
 
@@ -47,6 +54,12 @@ Sekoia Self-Hosted 1.0.0 is the first generally available release of Sekoia Self
 | `modules.platform_scale_down.grace_period` | New. Seconds of graceful cleanup before blocking finalizers are removed. Must be lower than `timeout`. Default: `120`. |
 | `modules.platform_scale_down.timeout` | New. Overall deadline in seconds for the cleanup and the volume release. Default: `600`. |
 | `modules.platform_scale_down.poll_interval` | New. Seconds between two cleanup and volume release checks. Default: `5`. |
+| `modules.platform_configuration.config.assetmanagement.database.storage.size` | New. Storage size of the asset management database. Default: `50Gi`. |
+| `modules.platform_configuration.config.sicalertapi.database.storage.size` | New. Storage size of the alerts database. Default: `50Gi`. |
+| `modules.platform_configuration.config.hatchet.database.storage.size` | New. Storage size of the workflow engine database. Default: `30Gi`. |
+| `modules.platform_configuration.config.symphony.database.storage.size` | New. Storage size of the playbooks database. Default: `30Gi`. |
+| `modules.push_argo_stacks.base_branch` | Changed. Also selects the branch tracked by the ArgoCD root and child applications. Required for an empty repository. Now listed by `config help`. |
+| `modules.platform_configuration.platform_installer_command` | Changed. Accepted as a `--set` override of `PlatformInstallation`, to run another installer command once. |
 | `utils.port_forward.keep_alive_interval` | Removed. |
 | `utils.prometheus.query_window` | Removed. |
 | `utils.prometheus.default_label_filters` | Removed. |
@@ -57,9 +70,15 @@ Sekoia Self-Hosted 1.0.0 is the first generally available release of Sekoia Self
 ## Removed in 1.0.0
 
 - **Server configuration stage.** The `server_config` stage and its `ConfigureServersWithAnsible` module, which did not change the nodes, are removed from the `Install` execution plan. The plan now has four stages: `checks`, `push`, `kubernetes`, and `platform`.
+- **Legacy storage backend.** Ceph is the only supported storage backend. The legacy storage panels are removed from the **Default** Grafana dashboard.
 
 ## Fixed in 1.0.0
 
+- **Platform emails not sent.** The SMTP host set in `modules.platform_configuration.config.email.smtp.host` did not reach the platform, which used a placeholder host instead, so platform emails could not be sent.
+- **Credentials in installation logs.** The platform installer now masks passwords, tokens, API keys, and intake keys in the commands and outputs it logs. ArgoCD repository and registry credentials and the generated administrator API keys used to appear in clear in the installation logs.
+- **Rebuilt images not replaced in the registry.** `PushImages` now always pushes the `latest` and `self-hosted-latest` tags, even with `skip_existing_local` enabled, so that rebuilt images replace stale ones. Other existing tags are still skipped.
+- **False critical result on fill predictions.** `node_filesystem_predicted_full` and `node_pvc_predicted_full` no longer report `No data returned` when every volume is below 60% used. They report `OK`.
+- **Text values in runtime overrides.** `--set` keeps `on`, `off`, `yes`, and `no` as text values. A boolean key accepts only `true` or `false`.
 - **Empty rules catalog after installation.** The installation now synchronizes the rules catalog itself. The manual synchronization of `rules-catalog-updater-on-self-hosted` required in 0.1.0 is no longer needed.
 - **ExaLog indexers denied access to object storage.** The indexation buckets did not follow `modules.platform_configuration.config.storage-manager.s3_bucket_prefix`, so the indexers received `403 AccessDenied` errors when uploading. The buckets and their access grants are now generated from the configured prefix.
 - **Diagnostic queries failing through the Prometheus tunnel.** The tunnel to `svc/prometheus-server` targeted the wrong pod port, so every `Diagnostic` query failed with "Server disconnected without sending a response". The tunnel now resolves the Service port to its target port, and each target closes its tunnel when it ends.
@@ -72,7 +91,7 @@ Sekoia Self-Hosted 1.0.0 is the first generally available release of Sekoia Self
 
 - **Air-gap deployment support.** You can deploy and operate the full platform in restricted or fully disconnected environments with no external connectivity.
 - **SHC.** A unified orchestration tool to install, configure, diagnose, and manage the platform lifecycle.
-- **Hardened preflight.** `CheckServerSpec` blocks the installation when a node shares its hostname with another node, has fewer than 44 CPU cores or less than 120 GiB of RAM, has no dedicated unused block device of 200 GB or more for Ceph and Longhorn, or has NTP disabled or an unsynchronized clock. See [CheckServerSpec](troubleshooting/debug_tool.md#checkserverspec).
+- **Hardened preflight.** `CheckServerSpec` blocks the installation when a node shares its hostname with another node, has fewer than 44 CPU cores or less than 120 GiB of RAM, has no dedicated unused block device of 200 GB or more for Ceph, or has NTP disabled or an unsynchronized clock. See [CheckServerSpec](troubleshooting/debug_tool.md#checkserverspec).
 - **Automated post-installation bootstrap.** `InstanceBootstrap` declares the default storage backend and reconciles the per-community ExaLog indexes, then `ScaleServices` scales the ingestion and detection workers to their configured replica count. See [Post-installation bootstrap](deployment/deployment_process.md#post-installation-bootstrap).
 - **Interactive SHC interface.** A terminal interface with a Diagnostics tab that runs a target rule by rule with live status, and a live progress bar during the platform installation. See [Use the SHC interface](operations/controller_interface.md).
 - **Built-in observability.** Grafana, Prometheus, Loki, Alertmanager, and Promtail are deployed as part of every installation.
@@ -112,6 +131,7 @@ The functional scope aligns with the **Defend Core** subscription tier. Defend C
 | Hot Storage | Yes | |
 | Sekoia Endpoint Agent | No | The `xdr-agent-api` service is not installed in this release. |
 | Contextualized Alerts | Yes | Requires the [CTI database import](operations/import_cti_database.md). |
+| Intelligence module | No | Not available in this release, even after the CTI database import. |
 | SOL Query Builder | Yes | |
 | Detection Rules | Yes | Full rules catalog deployed at installation. |
 | Event Drop Detection | Yes | |
@@ -149,9 +169,11 @@ Reveal is available with Sekoia Self-Hosted 1.0.0 under a dedicated subscription
 
 ### Threat intelligence
 
-The installation does not deploy the Sekoia CTI database. Until you [import it](operations/import_cti_database.md), every feature that reads threat intelligence is unavailable: the Threat Intelligence research module, observable tags enrichment, and contextualized alerts.
+The installation does not deploy the Sekoia CTI database. Until you [import it](operations/import_cti_database.md), observable tags enrichment, contextualized alerts, and the `SEKOIA Intelligence Feed` rule have no threat intelligence to work with.
 
-In air-gapped mode, the import reads the CTI export provided by Sekoia from the orchestration node. Detection rules and integration connectors do not depend on the CTI database.
+The Intelligence module, used to explore threat actors, campaigns, and observables, is not available in Sekoia Self-Hosted 1.0.0, even after the import.
+
+In online mode, the import downloads the CTI database from the Sekoia release bucket. In air-gapped mode, it reads the CTI archive that you download from the release bucket and extract on the orchestration node. The other detection rules and the integration connectors do not depend on the CTI database.
 
 ### AI features
 
@@ -177,6 +199,7 @@ The following limitations apply to Sekoia Self-Hosted 1.0.0.
 | No graphical or web UI for platform administration | Infrastructure management is available only from the orchestration node. | Use the self-hosted-controller (SHC) terminal interface or one-shot CLI together with `config.yml` for administrative operations. |
 | Automatic upgrade and rollback not available | Version updates are manual. | Follow the manual update procedure when a new release is published. |
 | Node operating system not configured by the SHC | The SHC does not install the operating system packages of the nodes. | Provision the operating system and packages listed in [Technical requirements](deployment/deployment_prerequisites.md) before you start the installation. |
+| Intelligence module not available | You cannot explore threat actors, campaigns, and observables in the Intelligence module, even after the CTI database import. | None. |
 | No content update procedure | Detection rules, intake formats, and the playbook library stay at the version deployed during the installation. No procedure covers their update after the installation. | Contact Sekoia if your deployment requires updated detection content before the next release. |
 | Backup restore not yet documented | You cannot perform a tested restore from backup. | Contact Sekoia support for restore guidance specific to 1.0.0. |
 
@@ -187,5 +210,6 @@ The following limitations apply to Sekoia Self-Hosted 1.0.0.
 - [Deploy the platform](deployment/deployment_guide.md): Step-by-step installation instructions.
 - [The deployment process](deployment/deployment_process.md): The installation execution plan and the post-installation bootstrap.
 - [Run platform diagnostics](monitoring/run_diagnostics.md): Health checks per platform area.
+- [Platform alerts reference](monitoring/platform_alerts.md): Alert groups, severities, and the diagnostic to run for each one.
 - [Use the SHC interface](operations/controller_interface.md): The interactive interface of the SHC.
 - [Reset or destroy the platform](operations/reset_platform.md): Volume-safe platform destruction.

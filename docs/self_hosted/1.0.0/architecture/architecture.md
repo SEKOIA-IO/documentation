@@ -50,7 +50,9 @@ The Sekoia platform logic runs as a set of decoupled microservices deployed in t
 
 | Component | Purpose |
 | :--- | :--- |
-| Prometheus | Collects system- and application-level metrics across all nodes and namespaces. |
+| Prometheus | Collects system- and application-level metrics across all nodes and namespaces, and evaluates the platform alert rules. |
+| Alertmanager | Receives the alerts fired by the platform alert rules. |
+| TLS certificate exporter | Checks the TLS certificate configured and served for the platform, for the console and ingestion diagnostics and alerts. |
 | Loki | Centralized log aggregation. |
 | Promtail | Agent running on every node, scraping container logs and forwarding them to Loki. |
 | Grafana | Visualization layer. Provides prebuilt dashboards for cluster health, throughput, error rates, and security events. Also serves as the Explore interface for Loki log queries. |

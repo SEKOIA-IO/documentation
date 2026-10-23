@@ -31,6 +31,7 @@ Every Kubernetes node, manager or worker, must meet the following minimum hardwa
 | RAM | 128 GB | 120 GiB |
 | Dedicated storage disk | One unused SSD of 200 GB or more; 4 TB per worker node for deployments handling data | 200 GB |
 | Operating system | Debian 12 (Bookworm) | Debian 12 or later |
+| Swap | Disabled, including after a reboot | No active swap device |
 | Hostname | Unique across all manager and worker nodes | Uniqueness |
 | Time synchronization | NTP enabled and clock synchronized | Both |
 
@@ -41,13 +42,13 @@ The `CheckServerSpec` command blocks the installation when a manager or worker n
 
 ### Dedicated storage disk
 
-Ceph and Longhorn provision persistent volumes from a dedicated block device on every node. Each manager and worker node must expose at least one whole disk that meets all of the following conditions:
+Ceph provisions persistent volumes from a dedicated block device on every node. Each manager and worker node must expose at least one whole disk that meets all of the following conditions:
 
 - 200 GB or larger.
 - No partition table and no filesystem.
 - Not read-only.
 
-Attach the disk and leave it unformatted before you start the installation. `CheckServerSpec` skips this check once K3s is installed, because Ceph and Longhorn have consumed the disk by then.
+Attach the disk and leave it unformatted before you start the installation. `CheckServerSpec` skips this check once K3s is installed, because Ceph has consumed the disk by then.
 
 !!! warning "Do not partition or format the storage disk"
     A disk that already carries a filesystem or a partition table is not counted as eligible. If the node exposes no other eligible disk, the preflight fails and the installation does not start.
@@ -61,6 +62,17 @@ To rename a node before the installation, run:
 ```bash
 hostnamectl set-hostname <NEW_HOSTNAME>
 ```
+
+### Swap
+
+Swap must be disabled on every manager and worker node, including after a reboot: the Kubernetes nodes refuse to start with swap enabled. `CheckServerSpec` fails when a node has an active swap device.
+
+To disable swap on a node:
+
+1. Run `sudo swapoff -a`.
+2. Remove or comment out the swap entries in `/etc/fstab`.
+3. Disable any systemd swap unit or zram service that enables swap.
+4. Reboot the node, then check that `/sbin/swapon --show=NAME --noheadings --raw` returns no entry.
 
 ### Air-gapped deployments
 
@@ -101,7 +113,7 @@ An S3-compatible object storage is required for the event data lake. ExaLog writ
 | :--- | :--- |
 | Protocol | S3 API, reached at `global.platform_storage.endpoint`. The scheme and the port come from the endpoint URL. |
 | Addressing | Path-style requests by default (`global.platform_storage.force_path_style_access`), so bucket names do not need DNS records. |
-| Buckets | 16 buckets, named `exalog-self-hosted-events-0` to `exalog-self-hosted-events-f`. The prefix `exalog-` comes from `modules.platform_configuration.config.storage-manager.s3_bucket_prefix`. |
+| Buckets | 16 buckets, named `exalog-self-hosted-events-0` to `exalog-self-hosted-events-f`. You create them before the installation: the platform does not create them. See [Event storage buckets](#event-storage-buckets). |
 | Credentials | One access key with read, write, list, and delete permissions on these buckets. See [Platform storage](./deployment_configuration.md#platform-storage). |
 
 ### Size the object storage
@@ -129,6 +141,23 @@ Validate the result with Sekoia before you order the storage.
 ### Storage performance check
 
 On request from Sekoia support, the `CheckS3Performance` benchmark measures the storage from every worker node and compares the median across the nodes with the following minimums: 50 MiB/s for GET and PUT throughput, 100 operations/s for STAT and DELETE, 200 ms for the request latency, and 100 ms for the time to first byte, both at the 90th percentile. See [CheckS3Performance](../troubleshooting/debug_tool.md#checks3performance).
+
+### Event storage buckets
+
+ExaLog stores events across 16 dedicated buckets. The platform does not create these buckets, so bucket creation is your responsibility. Before you start the installation, create one bucket per hexadecimal digit on your S3-compatible storage, named `exalog-self-hosted-events-<digit>`, where `<digit>` is `0` to `9` and `a` to `f`:
+
+```text
+exalog-self-hosted-events-0
+exalog-self-hosted-events-1
+exalog-self-hosted-events-2
+...
+exalog-self-hosted-events-e
+exalog-self-hosted-events-f
+```
+
+The buckets do not need individual quotas. Provision all 16 buckets on a single storage pool sized according to [Cluster sizing](#cluster-sizing).
+
+The prefix `exalog-` comes from `modules.platform_configuration.config.storage-manager.s3_bucket_prefix`. If you change it, name the buckets accordingly.
 
 ## Network requirements
 

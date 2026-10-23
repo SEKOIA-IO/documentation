@@ -86,7 +86,7 @@ These services may be inside the customer network. Use the port from the configu
 | Git over HTTPS | SHC checks and manifest pushes; ArgoCD synchronization | Orchestration node and all Kubernetes nodes | `utils.git.repo_url` | TCP | 443 |
 | OCI registry over HTTPS | Image and chart pushes and pulls | Orchestration node and all Kubernetes nodes | `utils.oci_registry.host` | TCP | 443 |
 | Platform S3 storage over HTTPS | Event storage of the ExaLog indexes | All Kubernetes nodes | `global.platform_storage.endpoint` | TCP | 443 |
-| Release storage over HTTPS | Release archive download when files are not staged locally | Orchestration node | `self-hosted.delivery.sekoia.io` | TCP | 443 |
+| Release storage over HTTPS | Release files download when they are not staged locally, and CTI database import | Orchestration node | `self-hosted.delivery.sekoia.io` | TCP | 443 |
 | Debian package repositories | Installation of `lvm2` on every node and `gettext-base` on the first manager node, when they are missing | All Kubernetes nodes | Customer package mirror or Debian repositories | TCP | 80, 443 |
 
 SMTP port 25 is the default. Allow the configured port instead when your server uses implicit TLS, STARTTLS, or a custom port, commonly TCP 465 or 587.

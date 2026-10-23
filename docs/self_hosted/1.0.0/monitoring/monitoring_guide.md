@@ -34,135 +34,124 @@ To access Grafana:
 
 ### Default dashboard
 
-The Default dashboard is the primary monitoring view for a Self-Hosted deployment. It is organized into collapsible rows, each covering a different layer of the platform. Expand a row to display its panels.
+The Default dashboard is the primary monitoring view for a Self-Hosted deployment. It is organized into rows, each covering a different layer of the platform. The **Global info** and **Global workflow** rows are expanded by default. Expand any other row to display its panels.
 
-!!! warning "Elasticsearch panels"
-    The **Elasticsearch** row and any individual panel referencing Elasticsearch (ES) are not applicable to Self-Hosted deployments. Elasticsearch is not deployed. Ignore those panels when they appear.
+!!! note "Panels based on Ceph metrics"
+    The Ceph metrics are not collected in Self-Hosted. Panels that read them stay empty: **Ceph cluster health** and **Storage used (Ceph)** in the **Global info** row, and the Ceph cluster panels of the **Ceph** row. To check the Ceph status, use the Storage tab of the [SHC interface](../operations/controller_interface.md).
+
+The rows appear in the following order.
+
+#### PVC usage
+
+Usage of every persistent volume claim, in percentage and in free space (GB).
+
+#### CPU/RAM reservations vs usage
+
+CPU usage relative to the CPU request, RAM usage relative to the memory limit, and the CPU and RAM reserved but not used, for every pod.
 
 #### Global info
 
-A row of summary statistics at the top of the dashboard provides an at-a-glance overview of the entire platform.
+A row of summary panels that gives an at-a-glance overview of the whole platform.
 
 | Panel | What it shows |
 | :--- | :--- |
-| Bytes In | Volume of valid events processed by the ingestion pipeline. |
-| Bits in (network) | Network-level ingestion throughput. |
-| Load all nodes | 5-minute CPU load average per node (bar gauge). |
-| RAM used % | RAM utilization percentage per node (bar gauge). |
-| Time drift > 1s | Nodes whose system clock has drifted more than one second. |
-| API Response Time | Average response time across all platform APIs. |
-| Celery Tasks | Number of pending Celery background tasks. |
-| Node Load | Aggregate node CPU load. |
-| Kube | Kubernetes pod health summary. |
-| PVC Usage | Persistent Volume Claim capacity utilization. |
-| Clickhouse Status | ClickHouse cluster availability. |
+| Ceph cluster health | Health of the Ceph cluster. Empty in Self-Hosted. |
+| Bytes In | Ingested bytes per second across the syslog chain (`oc-pre-parser`) and the HTTP chain (`sic-intake-http-rs`). |
+| Load all nodes (5 minutes) | Number of nodes in each 10% bucket of 5-minute CPU load per core, over time. |
+| RAM used % | Number of nodes in each 10% bucket of RAM usage, over time. |
+| Time drift > 1s | Nodes whose clock drifts by more than one second. |
+| Storage used (Ceph) | Space used in the Ceph cluster. Empty in Self-Hosted. |
+| API Response Time | Highest mean response time across the platform APIs, read from their logs. |
+| Celery Tasks | Highest Celery queue length, when it exceeds 1,000 tasks. |
+| Node Load | Highest 5-minute CPU load per core across the nodes. |
+| Kube | Deployments, StatefulSets, or DaemonSets that do not have all their replicas ready. |
+| PVC Usage | Highest usage of a persistent volume claim, in percentage. |
+| Clickhouse Status | ClickHouse read-only replicas, and the growth of the distributed insert backlog. |
 | Alertmanager status | Rate of notifications that the local Alertmanager drops because its queue is full. A value above zero means that alerts are lost. |
-| Storage used (!= Ceph) | Storage consumption for non-Ceph volumes. |
-| API Error Rate | Proportion of API requests returning 5xx errors. |
-| Event to alert delay | End-to-end latency from event ingestion to alert creation. |
-| Ingestion | Current event ingestion rate (EPS). |
-| FS Usage | Filesystem usage per node. |
-| Pods Failed / Pending / Unknown | Count of pods not in a running state. |
-| AVG P75 event to ES | *(Elasticsearch is not used in Self-Hosted. Ignore this panel.)* |
-| ES cluster health | *(Elasticsearch is not used in Self-Hosted. Ignore this panel.)* |
-| Ceph cluster health | *(Ceph metrics are not collected in Self-Hosted. Ignore this panel.)* |
-| Storage used (Ceph) | *(Ceph metrics are not collected in Self-Hosted. Ignore this panel.)* |
-
-#### Resource observations of ingest
-
-CPU and memory usage for the ingestion service pods, showing consumption relative to declared requests and limits.
-
-#### CPU usage vs request
-
-CPU and RAM usage relative to declared requests and limits for the main processing services: `oc-pre-parser`, `sigma-workflow`, and `eventindexer-ls`. Also includes cluster-wide CPU wasted and RAM wasted metrics.
-
-!!! note
-    The Elasticsearch panels in this row are not applicable to Self-Hosted deployments.
+| Storage used (!= Ceph) | Space used on the node disks, excluding the Ceph volumes. |
+| API Error Rate | Highest rate of 5xx responses of a platform API, when it exceeds 5, read from the API logs. |
+| Event to alert delay | Average delay between the ingestion of an event and the creation of its alert. |
+| Ingestion | Highest consumer lag on the ingestion and detection topics, when it exceeds 500 messages and keeps growing. |
+| FS Usage | Highest usage of a persistent volume claim or a node filesystem, when it exceeds 75%. |
+| Pods Failed \| Pending \| Unknown | Number of pods in the Failed, Pending, or Unknown phase, when it exceeds 15. |
 
 #### Global workflow
 
-End-to-end view of the event processing pipeline. Each panel represents one stage, from intake to alerting.
+End-to-end view of the event processing pipeline. Each panel represents one stage or service, from intake to alerting and indexation.
 
-| Panel | Stage |
+| Panel | What it shows |
 | :--- | :--- |
-| HTTP intake RS | HTTP-based event intake rate. |
-| Syslog intake | Syslog-based event intake rate. |
-| Ingest | Event parsing and normalization (`sic.intake.events_parser` → `sic.to-enrich-event`). |
-| Ingest Best Effort | Best-effort ingestion pods throughput. |
-| oc-pre-parser | Pre-parsing stage (`sic.raw-ecs2`). |
-| Pre-parser EPS per community | Events per second broken down per community. |
-| sigma-workflow | Sigma rule matching and enrichment. |
-| Correlation Worker | Correlation engine throughput. |
-| eventindexer-ls | Event indexing (`sic.enriched-event` → `sic.event`). |
-| ExaLog forwarder | Forwarding enriched events to ExaLog (`workflow.enriched-events`). |
-| ExaLog indexation realtime | Real-time ExaLog indexation rate. |
-| Alerts | Alert generation rate. |
-| Rate-limited alerts | Alerts rate-limited by community and rule. |
-| Telemetry | Telemetry pipeline throughput. |
+| sic-intake-http-rs | HTTP intake: accepted requests, rejected requests, and accepted events. |
+| ingestworker1 | Event parsing: events waiting on `sic.intake.events_parser`, consumer lag, and events processed. |
+| sigma-workflow-worker1 | Detection: incoming events, processed events, and consumer lag. |
+| sigma-workflow-correlation | Correlation: processed events, matches, and consumer lag. |
+| quickwit-forwarder | Forwarding of the enriched events to ExaLog: consumer lag, consumption rate, and forwarded messages. |
+| sic-intake-rsyslog | Syslog and RELP intake: events received. |
+| oc-pre-parser | Pre-parsing: events produced and consumed on `sic.raw-ecs2`, and consumer lag. |
+| Pre-parser EPS per community | Valid events per second, per community. |
+| sicalertapi-sightings-worker | Alert creation: sightings processed, processing errors, and discarded sightings. |
+| Rate-limited alerts by community and rule | Sightings discarded by the rate limit, per community and per detection rule. |
+| telemetryworker-events | Telemetry: incoming events, processed events, and consumer lag. |
+| Quickwit indexers - documents/sec | Documents processed per second by the ExaLog indexers, by outcome. |
+| Quickwit indexers - CPU / RAM (% of limit) | CPU and memory usage of the ExaLog indexers, relative to their limits. |
+| Quickwit indexers - throughput to S3 | Bytes uploaded to and downloaded from the object storage by the ExaLog indexers. |
+| Quickwit indexers - S3 request status | Object storage requests of the ExaLog indexers, by outcome. |
 
 #### KeyDB
 
-Cache database metrics: total items stored, commands executed per second, memory usage, replication offset, and RDB snapshot state.
+Cache database metrics: total items, commands executed per second, memory usage, replication offset of the read-only replicas, and changes since the last snapshot.
 
 #### ArangoDB
 
-ArangoDB metrics: PVC usage in percentage and GB, RAM usage in percentage and GB, and CPU consumption.
+ArangoDB metrics: PVC usage in percentage and GB, RAM usage in percentage and GB, and CPU usage.
 
 #### Symphony
 
-Symphony orchestration engine pod status (running, pending, failed).
+Playbook execution metrics: pod status, Celery tasks of the action workers by status, queued tasks, jobs per community, and task exceptions.
 
 #### Workflow
 
-Observable tag compilation throughput.
+Observable tag compilation: compiled observables, compilation failures, and time since the last update.
 
 #### Redis
 
-Redis cache metrics: total items stored, RAM utilization, and RDB snapshot state.
+Redis metrics: total items, RAM usage, and changes since the last snapshot.
 
-#### PostgreSQL
+#### PostgreSQL (CloudNativePG)
 
-Relational database metrics: CPU usage, memory usage, active connections, locks, row activity across tables, and storage consumption.
+PostgreSQL cluster metrics: instances with their role and state, CPU, memory, and storage usage relative to their limits, WAL generation rate and archive backlog, collector and operator errors, and PgBouncer client connections, server connections, and query throughput.
 
 #### APIs
 
-API service health: 500-level error rate and mean response time across all platform APIs.
+API service health, read from the API logs: rate of 5xx responses and mean response time, per service.
 
 #### Celery
 
-Background task queue metrics: tasks waiting, 95th-percentile task duration, task throughput per second, task status distribution, and exception rates per application.
+Background task metrics: queued tasks, 95th percentile task duration, tasks per second, tasks by status, and task exceptions.
 
 #### Kafka
 
-Event streaming metrics: consumer lag per topic and consumer group, Kafka log size by topic and broker, offline partitions, messages and bytes in/out per topic, CPU usage relative to pod limits, underreplicated partitions, and consumer group rebalancer activity.
-
-#### Elasticsearch
-
-!!! warning "Not applicable"
-    Elasticsearch is not deployed in Self-Hosted. All panels in this section can be ignored.
+Event streaming metrics: consumer lag per topic and consumer group, lag per detection worker, log size by topic and by broker, offline partitions, messages and bytes in and out per topic, CPU and memory usage of the brokers, bytes in per broker, partitions per topic, under-replicated partitions per topic, in-sync replica expansions, and consumer group rebalances.
 
 #### Kube
 
-Kubernetes-level resource consumption: total pod memory and CPU usage aggregated across all namespaces.
+Kubernetes resource consumption: memory and CPU usage of every pod.
 
 #### Clickhouse
 
-ClickHouse database metrics: read-only replica count and files pending insertion.
+ClickHouse metrics: read-only replicas and files waiting for distributed insertion.
 
 #### Ceph
 
-Rook/Ceph distributed storage metrics: disk I/O time per second, slow disks detection (I/O time > 0.97), CPU and RAM usage, disk usage per OSD, estimated days before 90% capacity is reached, bytes and operations read/write per second, apply latency, and monitor election activity.
+Storage metrics. The disk I/O time per device, the slow disk detection, and the CPU and RAM usage of the Ceph OSD pods work in Self-Hosted. The other panels stay empty: disk usage, estimated days before 90% usage, disk space delta, `node_disk_io_time_weighted`, usage per pool and per OSD, bytes and operations read and written, apply latency, and monitor elections.
 
-#### Longhorn
+#### ExaLog
 
-!!! note "Deployment-dependent"
-    Longhorn is not deployed in standard Self-Hosted configurations, which use Rook/Ceph. This section will show no data unless Longhorn has been explicitly configured.
+ExaLog indexation and search metrics: cluster nodes and gossip traffic, internal gRPC requests and latency, control plane shards, scheduling, and metastore errors, documents forwarded per second, ingest write-ahead log throughput and usage, active ingest shards and in-flight messages, searcher cache size and efficiency, search tasks and outcomes, object storage reads in flight, CPU and memory usage per pod, network traffic per pod, metastore connections, and HTTP requests by status.
 
-Longhorn storage metrics: disk I/O time per second, disk usage percentage, read and write IOPS, read and write throughput (bytes/s), and read and write latency.
+#### Servers $instance
 
-#### Servers (per node)
-
-Per-node Linux-level metrics with a `$instance` variable to filter by node: CPU usage, memory usage, network traffic per interface, 5-minute CPU load average, and disk free space.
+Per-node Linux metrics, filtered with the `$instance` variable: CPU usage, memory usage, network traffic per interface, 5-minute CPU load, disk free space, and the CPU and RAM consumption of the pods running on the node.
 
 ### Search logs with Loki
 
@@ -246,8 +235,8 @@ The output surfaces pods with over-provisioned memory requests (highlighted in r
 1. Open the **Default** dashboard in Grafana. Review the **Global info** row: check that no pods are failed or pending, that the API error rate and event-to-alert delay are within normal bounds, and that PVC and filesystem usage are not approaching saturation.
 2. Expand the **Global workflow** row. Verify that ingestion, pre-parsing, sigma-workflow, and ExaLog indexation are all processing events at the expected rate and that no stage shows a backlog.
 3. Expand the **Kafka** row. Confirm consumer lag is stable and no topics have offline or underreplicated partitions.
-4. Expand the **Ceph** row. Check disk usage percentage, estimated days before capacity is reached, and confirm no slow disks are reported.
-5. Review active alerts in Prometheus. Acknowledge or escalate as needed.
+4. Expand the **PVC usage** and **Ceph** rows. Check that no volume approaches saturation and that no slow disk is reported.
+5. Review the firing alerts. See [Platform alerts reference](platform_alerts.md).
 
 ## Recommended incident response workflow
 
@@ -266,7 +255,7 @@ exec DebugDatabases
 # 4. Review resource allocation
 exec DebugResourceAllocation
 
-# 4. Check the affected platform service
+# 5. Check the affected platform service
 exec Diagnostic
 ```
 

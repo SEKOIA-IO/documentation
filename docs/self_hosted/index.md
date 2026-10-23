@@ -21,8 +21,8 @@ Sekoia Self-Hosted addresses these constraints with a self-managed, all-in-one p
 | Data sovereignty | Data stays within your infrastructure to meet residency and regulatory requirements. |
 | Air-gap compatibility | Full deployment and operation in restricted or fully disconnected environments. |
 | Automated orchestration | A single CLI (Self-Hosted Controller) handles provisioning, configuration, scaling, and lifecycle. |
-| Built-in observability | Integrated Grafana, Prometheus and Loki stack for real-time monitoring. |
-| Built-in diagnostics | On-demand health checks for the cluster, applications, databases, and resources via the SHC CLI. |
+| Built-in observability | Integrated Grafana, Prometheus, Loki, and Alertmanager stack for real-time monitoring and alerting. |
+| Built-in diagnostics | On-demand health checks for the cluster, applications, databases, and resources via the SHC CLI, each matched by a group of platform alerts. |
 | High availability | A 6-node minimum cluster eliminates single points of failure. Kubernetes self-healing ensures continuous operations. |
 
 ## Intended audience
