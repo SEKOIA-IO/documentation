@@ -46,6 +46,8 @@ The TUI opens on the **Controller** tab. Passing a command instead, such as `exe
 
 Every run writes a timestamped log file, whose path is displayed at the bottom of the interface. Attach that file when you escalate an issue to Sekoia support.
 
+The path is inside the container. Set `global.logging.file` to a path under `/opt/sekoia`, such as `/opt/sekoia/logs/self-hosted-controller.log`, so that the file lands in `$SEKOIA_LOCAL_DIR` on the orchestration node. With the default value, the file is written to `/tmp` inside the container and deleted when the SHC exits. When the interface displays `log: (disabled)`, the SHC could not create the file: give UID 1000 write access to the directory. See [SHC log file](../deployment/deployment_configuration.md#shc-log-file).
+
 ## Run a command from the Controller tab
 
 The Controller tab pairs a log panel with a command input. It accepts the same commands as the one-shot CLI:

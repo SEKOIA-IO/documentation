@@ -149,7 +149,7 @@ docker run --rm $TTY_FLAGS \
 ```
 
 !!! note "Container user"
-    The SHC container runs as the `shc` user, with UID 1000. The user must be able to read `$SEKOIA_CONFIG_FILE`. In online mode, the SHC also writes the downloaded files to `$SEKOIA_LOCAL_DIR`: give UID 1000 write access to this directory, for example with `sudo chown -R 1000 $SEKOIA_LOCAL_DIR`.
+    The SHC container runs as the `shc` user, with UID 1000. This user must be able to read `$SEKOIA_CONFIG_FILE`. It must also be able to write to `$SEKOIA_LOCAL_DIR`, where the SHC stores the per-run log file and, in online mode, the downloaded release files. Give UID 1000 write access to this directory in every mode, for example with `sudo chown -R 1000 $SEKOIA_LOCAL_DIR`. Without it, the SHC starts without file logging. See [SHC log file](./deployment_configuration.md#shc-log-file).
 
 Set the following environment variables on the orchestration node before running the script:
 
