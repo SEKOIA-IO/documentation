@@ -4,10 +4,10 @@ Sekoia Self-Hosted evaluates a set of Prometheus alert rules against the platfor
 
 ## How platform alerts work
 
-Prometheus continuously evaluates the alert rules bundled with the platform and forwards any firing alert to the Alertmanager instance installed on the platform.
+Prometheus continuously evaluates the alert rules bundled with the platform and forwards any firing alert to the Alertmanager instance installed on the platform. In Sekoia Self-Hosted 1.0.0, Alertmanager has no notification receiver configured: a firing alert is not sent by email or to any external tool. Review the alerts in Grafana.
 
 !!! note "Where to check firing alerts"
-    Review active alerts from the Prometheus **Alerts** page, or from the relevant row of the **Default** Grafana dashboard, which surfaces the underlying metrics for each alert group. See [Monitor your platform](monitoring_guide.md) for the full dashboard reference.
+    Prometheus and Alertmanager are not exposed outside the cluster: only Grafana has an ingress. To review the alert rules and their state, open `https://<global.delivery_host>/grafana`, then select **Alerting > Alert rules**. The platform alerts appear as data-source-managed rules of the Prometheus data source, grouped by alert group, with their `Normal`, `Pending`, or `Firing` state. The rows of the **Default** Grafana dashboard show the underlying metrics, not the alert states. See [Monitor your platform](monitoring_guide.md) for the full dashboard reference.
 
 !!! warning "Investigate before taking action"
     A firing alert can cascade into ingestion, correlation, and alerting delays across the whole platform. Follow the [recommended incident response workflow](monitoring_guide.md#recommended-incident-response-workflow) to confirm cluster and database health before restarting or scaling affected resources.
@@ -197,6 +197,8 @@ exec Diagnostic --set modules.diagnostic.targets=kafka
 | KafkaUnderReplicatedPartitions | Warning | One or more partitions have fewer in-sync replicas than configured, for 1 minute. | Kafka keeps two copies of each partition, so the affected partitions have a single copy left. A further broker failure can cause data loss or unavailability. |
 | KafkaZookeeperUnavailable | Critical | No Zookeeper pod is ready for 1 minute. | Kafka cluster coordination and broker registration are unavailable, which can prevent the cluster from recovering from other failures. |
 | KafkaTopicBacklogGrowing | Error | The consumer backlog of a topic is high and keeps growing, for 5 minutes. | Everything downstream of the topic falls behind. |
+
+The `kafka_replica_isr_flapping` rule of the Kafka diagnostic has no matching alert. It reports replicas that keep leaving and re-entering the in-sync set, a sign of inter-node network latency or broker saturation, and is evaluated only when you run the Kafka diagnostic.
 
 ## Nodes
 

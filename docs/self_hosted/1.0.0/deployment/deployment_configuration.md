@@ -355,17 +355,25 @@ The SHC creates the directory if it does not exist. If it cannot create the file
 
 ### Database storage
 
-These fields set the disk size of each instance of the PostgreSQL clusters whose data grows with platform usage. Each cluster runs three instances.
+These fields set the disk size of each instance of the PostgreSQL clusters of the platform. Each cluster runs three instances. The asset management, alerts, workflow engine, playbooks, and ExaLog metastore databases grow with platform usage.
 
 !!! warning "Storage size can only increase"
     CloudNativePG cannot shrink a volume. Set a value equal to or larger than the current size of the cluster volumes.
 
 | Field | Description | Default |
 | :--- | :--- | :--- |
-| `modules.platform_configuration.config.assetmanagement.database.storage.size` | Storage size of the asset management database. | `50Gi` |
+| `modules.platform_configuration.config.assetmanagement.database.storage.size` | Storage size of the asset management database. | `1Ti` |
 | `modules.platform_configuration.config.sicalertapi.database.storage.size` | Storage size of the alerts database. | `50Gi` |
+| `modules.platform_configuration.config.quickwit.database.storage.size` | Storage size of the ExaLog metastore database. | `50Gi` |
 | `modules.platform_configuration.config.hatchet.database.storage.size` | Storage size of the workflow engine database. | `30Gi` |
 | `modules.platform_configuration.config.symphony.database.storage.size` | Storage size of the playbooks database. | `30Gi` |
+| `modules.platform_configuration.config.communityapi.database.storage.size` | Storage size of the community and user database. | `20Gi` |
+| `modules.platform_configuration.config.crmapi.database.storage.size` | Storage size of the `crmapi` database. | `20Gi` |
+| `modules.platform_configuration.config.dashboardapi.database.storage.size` | Storage size of the dashboards database. | `20Gi` |
+| `modules.platform_configuration.config.notificationapi.database.storage.size` | Storage size of the notifications database. | `20Gi` |
+| `modules.platform_configuration.config.taskapi.database.storage.size` | Storage size of the tasks database. | `20Gi` |
+| `modules.platform_configuration.config.ingest.database.storage.size` | Storage size of the ingestion database. | `20Gi` |
+| `modules.platform_configuration.config.xdr-agent-api.database.storage.size` | Storage size of the `xdr-agent-api` database. The service is deployed but not supported in 1.0.0. | `20Gi` |
 
 ## Inspect the configuration with the SHC
 

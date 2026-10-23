@@ -117,7 +117,7 @@ Some modules invoke their prerequisites every time they run. Consequently, the l
 
 - `PushImages` and `PushCharts` invoke `DownloadReleaseFiles` first, and `PushDataBundles` invokes `DownloadDataFiles` first.
 - `PushArgoStacks` runs `PushCharts` to publish the Helm charts, then retrieves a current kubeconfig, before it publishes the stacks.
-- `HelmInstall`, `PlatformInstallation`, `PlatformAccess`, `DebugPlatformInstallation`, `DebugMissingSecrets`, and `CheckS3Performance` first run `CleanupHelmReleases`, which retrieves a current kubeconfig. See [Interrupted Helm operations](#interrupted-helm-operations).
+- `HelmInstall`, `PlatformInstallation`, `PlatformAccess`, `DebugPlatformInstallation`, `DebugMissingSecrets`, `CheckS3Performance`, and `RunEventLoadTesting` first run `CleanupHelmReleases`, which retrieves a current kubeconfig. See [Interrupted Helm operations](#interrupted-helm-operations).
 - `PlatformInstallation`, `PlatformAccess`, `DebugPlatformInstallation`, and `DebugMissingSecrets` also regenerate the platform configuration before running.
 - `SyncRulesCatalog` and `SyncIntakeFormats` each run `SyncArgoRootApp` first, so the ArgoCD root application applies the latest application definitions before the content synchronization.
 - `CheckKubernetesCluster`, `InstanceBootstrap`, `ScaleServices`, and the `Debug` modules that read the cluster retrieve a current kubeconfig before running.

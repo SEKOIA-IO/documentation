@@ -22,7 +22,7 @@ The one-shot command-line interface (CLI) remains fully supported. Both interfac
 ## Open the interface
 
 !!! note "Interactive terminal required"
-    The SHC opens the interface only when an interactive terminal is attached to the container. Both stdin and stdout must be terminals, `TERM` must hold a usable value such as `xterm-256color`, and the terminal must answer the SHC within one second. Otherwise, the SHC displays a warning and the CLI help, then exits. Run the container with `-it`: `-t` alone is not enough. The `SHC_FORCE_TUI=1` environment variable skips these checks, but it does not restore a disconnected input.
+    The SHC opens the interface only when an interactive terminal is attached to the container. Both stdin and stdout must be terminals, `TERM` must hold a usable value such as `xterm-256color`, and the terminal must answer the SHC within one second. Otherwise, the SHC displays a warning and the CLI help, then exits. Run the container with `-it`: `-t` alone is not enough. To skip these checks, set `SHC_FORCE_TUI=1` inside the container: add `-e SHC_FORCE_TUI=1` to the `docker run` command of `run-shc.sh`, because the script does not pass the variable through. The variable does not restore a disconnected input.
 
 To open the interface, run the execution script with no command:
 
@@ -60,7 +60,7 @@ The Controller tab pairs a log panel with a command input. It accepts the same c
 | `help [<Module>]` | Show the top-level command overview, or the runtime overrides a module accepts. |
 | `config help [prefix]` | Show the configuration reference. |
 | `config show [prefix]` | Render the resolved configuration as YAML. |
-| `quit` | Close the interface. |
+| `quit` or `exit` | Close the interface. |
 
 To run a command, enter it in the input and press `Enter`. Module output and log lines are interleaved in the log panel, in real time.
 
