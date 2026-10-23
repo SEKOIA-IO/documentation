@@ -65,6 +65,9 @@ Allow these flows on the private network between Kubernetes nodes, in both direc
 !!! warning "Open the cluster ports between all nodes"
     Etcd runs only on the manager nodes, but the `CheckNodePortReachability` preflight check probes TCP 6443, 2379, 2380, 4240, 4250, 10514, and 11514 from every node to every other node, whatever its role. Allow these ports between all manager and worker nodes, or the check blocks the installation. See [CheckNodePortReachability](../troubleshooting/debug_tool.md#checknodeportreachability).
 
+!!! note "Free ports on every node"
+    The cluster binds TCP 80, 443, 2379, 2380, 4240, 4250, 6443, 10514, and 11514 on every node. `CheckServerSpec` fails when another process already listens on one of them. See [Free ports](./deployment_prerequisites.md#free-ports).
+
 The standard deployment disables Flannel and kube-proxy and installs Cilium with VXLAN tunneling. Cilium also handles the Kubernetes services, so a NodePort service answers on the IP address of every node. Ensure host firewalls permit forwarding for the pod network and do not apply network address translation between cluster nodes.
 
 The cluster uses the following fixed internal ranges. Make sure that they do not overlap a network that the nodes or the platform must reach:

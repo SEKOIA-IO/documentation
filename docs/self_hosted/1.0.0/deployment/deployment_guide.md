@@ -218,6 +218,7 @@ To validate the environment before any changes are made, run:
 exec CheckLocalConfig
 exec CheckLocalGit
 exec CheckLocalOCIRegistry
+exec DownloadReleaseFiles
 exec CheckLocalReleaseFiles
 exec CheckServersAreReachable
 exec CheckServerSpec
@@ -228,23 +229,23 @@ exec CheckNodePortReachability
 !!! warning "Preflight block"
     The SHC will not proceed if any critical validation check fails. Each failure is logged with an actionable error message. Resolve all errors before continuing.
 
+`DownloadReleaseFiles` downloads the release files from the Sekoia S3 bucket in online mode, and uses the files extracted from the archive in air-gapped mode. Run it before `CheckLocalReleaseFiles`: in online mode, the release directory does not exist until the download completes.
+
 `CheckServerSpec` fails the installation when a manager or worker node does not have 44 CPU cores and 120 GiB of RAM, does not run Debian 12 or later, has an active swap device, has no unused 200 GB block device, shares its hostname with another node, or has no synchronized clock. See [CheckServerSpec](../troubleshooting/debug_tool.md#checkserverspec) for each failure message and its remediation.
 
 `CheckNodePortReachability` fails when a node cannot reach another node on one of the cluster ports. See [CheckNodePortReachability](../troubleshooting/debug_tool.md#checknodeportreachability).
 
 **Step 2: Provision local registries.**
 
-First resolve the versioned detection-rules, intake-formats, and playbook-library bundles. Then push the Docker images, the Helm charts, the detection rules and intake formats bundles, and the ArgoCD stack manifests to your local repositories:
+First resolve the versioned detection-rules, intake-formats, and playbook-library bundles. Then push the Docker images and the detection rules and intake formats bundles to your local OCI registry:
 
 ```bash
 exec DownloadDataFiles
 exec PushImages
-exec PushCharts
 exec PushDataBundles
-exec PushArgoStacks
 ```
 
-`PushImages`, `PushCharts`, and `PushArgoStacks` run `DownloadReleaseFiles` as an automatic prerequisite, and `PushDataBundles` runs `DownloadDataFiles`. In online mode, they download the release artifacts and the content bundles; in air-gapped mode, they use the files extracted from the archive. Run `PushDataBundles` before `PushArgoStacks`: `PushArgoStacks` points the content updaters to the bundles only once they are in your registry. A bundle that cannot be pushed is reported as a warning and skipped, and the platform keeps the content version shipped with the release. Repeated runs skip release files and images already present, and `PushArgoStacks` succeeds without a commit when the generated manifests are unchanged.
+`PushImages` runs `DownloadReleaseFiles` as an automatic prerequisite, and `PushDataBundles` runs `DownloadDataFiles`. In online mode, they download the release artifacts and the content bundles; in air-gapped mode, they use the files extracted from the archive. A bundle that cannot be pushed is reported as a warning and skipped, and the platform keeps the content version shipped with the release. Repeated runs skip release files and images already present. The Helm charts and the ArgoCD stacks are published in step 4, once the cluster exists.
 
 **Step 3: Install the Kubernetes stack.**
 
@@ -259,15 +260,18 @@ exec CheckKubernetesCluster
 
 **Step 4: Deploy the Sekoia platform.**
 
-To generate the platform configuration, run the installer job, deploy the detection rules catalog and the intake formats, and retrieve the initial access credentials, run:
+To publish the Helm charts and the ArgoCD stacks, generate the platform configuration, run the installer job, deploy the detection rules catalog and the intake formats, and retrieve the initial access credentials, run:
 
 ```bash
+exec PushArgoStacks
 exec PlatformConfigurationFile
 exec PlatformInstallation
 exec SyncRulesCatalog
 exec SyncIntakeFormats
 exec PlatformAccess
 ```
+
+`PushArgoStacks` first runs `PushCharts`, which pushes the Helm charts to your OCI registry, then publishes the ArgoCD stack manifests to your Git repository. It needs the installed cluster: it retrieves the cluster credentials and synchronizes the ArgoCD root application when it already exists. Run it after `PushDataBundles`: it points the content updaters to the bundles only once they are in your registry. A repeated run succeeds without a commit when the generated manifests are unchanged.
 
 `SyncRulesCatalog` and `SyncIntakeFormats` synchronize their ArgoCD applications and wait for the job that loads the content to succeed, for up to 900 seconds each. To allow more time for a large catalog, add `--set modules.sync_rules_catalog.sync_timeout=<SECONDS>` or `--set modules.sync_intake_formats.sync_timeout=<SECONDS>`.
 
