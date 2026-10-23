@@ -82,6 +82,8 @@ The archive contains the platform release and the latest security content bundle
 | `$SEKOIA_LOCAL_DIR/platform/v1.0.0/` | Release manifest, Docker images, Helm charts, ArgoCD stacks, and the third-party license notices in `licenses/THIRD-PARTY-NOTICES.md`. |
 | `$SEKOIA_LOCAL_DIR/data/<TYPE>/` | One security content bundle per type (`detection-rules`, `intake-formats`, and `playbook-library`), with a `latest` file that names the bundle to use. |
 
+The archive does not include the Sekoia CTI database. In air-gapped mode, download its separate archive once the platform is installed. See [Import the CTI database](../operations/import_cti_database.md#prepare-the-cti-export-in-air-gapped-mode).
+
 The execution script mounts `$SEKOIA_LOCAL_DIR` on `/opt/sekoia` in the SHC container, which matches the default values of `global.version.platform.path` (`/opt/sekoia/platform/`) and `global.version.data.<TYPE>.path` (`/opt/sekoia/data/`). Keep this layout unless you also change these paths.
 
 !!! warning "Air-gapped deployments"
