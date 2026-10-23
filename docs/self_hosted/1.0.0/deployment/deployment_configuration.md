@@ -289,7 +289,9 @@ Configure these fields when the platform, the container runtime, or the SHC reac
 | :--- | :--- | :--- |
 | `modules.platform_configuration.config.proxy.http_proxy` | HTTP proxy URL used by the platform components that reach external services: ArgoCD, ExaLog indexing, the threat intelligence backend, and playbook actions. | Empty |
 | `modules.platform_configuration.config.proxy.https_proxy` | HTTPS proxy URL used by the platform components. | Empty |
-| `modules.platform_configuration.config.proxy.no_proxy` | Comma-separated destinations that the platform components reach without the proxy. | `127.0.0.0/8,10.0.0.0/8,172.16.0.0/12,192.168.0.0/16,.svc,.cluster.local,.lab` |
+| `modules.platform_configuration.config.proxy.no_proxy` | Comma-separated destinations that the platform components reach without the proxy. Keep the default value and use `additional_no_proxy` for your own entries. | `127.0.0.0/8,10.0.0.0/8,172.16.0.0/12,192.168.0.0/16,.svc,.cluster.local,.lab` |
+| `modules.platform_configuration.config.proxy.additional_no_proxy` | Comma-separated destinations appended to `no_proxy` when the SHC generates the platform configuration. Set your Git, OCI registry, and S3 hostnames here when they are reachable without the proxy. | Empty |
+| `modules.platform_configuration.config.proxy.no_proxy_include_platform_domain` | `true` to append the platform FQDNs (`global.host`, `global.alternative_hosts`, and `global.delivery_host`) to `no_proxy`, so that the platform components reach their own endpoints without the proxy. | `true` |
 | `modules.k3s_install.pull_images_with_proxy` | Routes the container image pulls of the Kubernetes nodes through a proxy. | `false` |
 | `modules.k3s_install.k3s_http_proxy` | HTTP proxy URL used for image pulls when `pull_images_with_proxy` is `true`. | Empty |
 | `modules.k3s_install.k3s_https_proxy` | HTTPS proxy URL used for image pulls when `pull_images_with_proxy` is `true`. | Empty |
@@ -297,7 +299,37 @@ Configure these fields when the platform, the container runtime, or the SHC reac
 | `utils.git.http.proxy` | Proxy URL used by the SHC for Git operations over HTTP or HTTPS. | Empty |
 
 !!! tip "Keep the default exclusions"
-    To exclude more destinations from the proxy, append them to the default `no_proxy` value instead of replacing it. The default list keeps the cluster-internal and private addresses out of the proxy. Add your Git, OCI registry, and S3 hostnames when they are reachable without the proxy: an address range does not match a hostname.
+    To exclude more destinations from the proxy, set them in `additional_no_proxy` instead of editing `no_proxy`. The default `no_proxy` list keeps the cluster-internal and private addresses out of the proxy, and the platform FQDNs are added automatically. Add your Git, OCI registry, and S3 hostnames when they are reachable without the proxy: an address range does not match a hostname.
+
+The SHC computes the final `no_proxy` value when `PlatformConfigurationFile` runs, by concatenating three lists:
+
+1. The value of `no_proxy`.
+2. The platform FQDNs, when `no_proxy_include_platform_domain` is `true`.
+3. The value of `additional_no_proxy`.
+
+Duplicate entries are removed. These three fields only apply to the platform components. The image pulls of the nodes use `modules.k3s_install.k3s_no_proxy`, which is applied as is.
+
+??? example "Proxy configuration in `config.yml`"
+    ```yaml
+    modules:
+      platform_configuration:
+        config:
+          proxy:
+            http_proxy: "http://proxy.example.com:3128"
+            https_proxy: "http://proxy.example.com:3128"
+            additional_no_proxy: "git.example.com,registry.example.com,s3.example.com"
+    ```
+
+### Traefik service IP
+
+Traefik is the HTTP entry point of the platform. The SHC gives its Kubernetes service a fixed cluster-internal IP. Inside the cluster, CoreDNS resolves the platform FQDNs to that IP: `global.host`, `global.alternative_hosts`, and `global.delivery_host`. The platform components therefore reach each other without leaving the cluster.
+
+| Field | Description | Default |
+| :--- | :--- | :--- |
+| `modules.platform_configuration.config.traefik.service_ip` | Fixed ClusterIP of the Traefik service, inside the K3s service network `10.43.0.0/16`. Leave empty to let Kubernetes assign one. | `10.43.111.111` |
+
+!!! warning "Empty value disables the internal resolution of the platform FQDNs"
+    When the field is empty, `HelmInstall` adds no entry to CoreDNS, so the platform FQDNs resolve inside the cluster through the DNS servers of `global.forward_dns` only.
 
 ### SHC log file
 
