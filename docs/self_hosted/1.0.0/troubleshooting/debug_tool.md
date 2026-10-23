@@ -454,25 +454,56 @@ The SHC runs this command automatically before `HelmInstall`, `PlatformInstallat
 
 ### RebootNodes
 
-Reboots all nodes listed in `utils.ansible.inventory` and waits for them to come back online.
+Reboots all nodes listed in `utils.ansible.inventory` and waits for them to come back online. It is the first step of a cold restart of the whole cluster, and is followed by `KubeCrashRecovery`.
+
+The nodes are not rebooted one at a time: up to five nodes reboot in parallel, without being drained and without any Ceph maintenance flag. The three managers and at least two workers are therefore down at the same time, which stops the Kubernetes API and the Ceph storage. The command waits up to 300 seconds for each node to accept SSH connections again. It does not check that K3s or the pods are running again.
+
+!!! warning "Full platform outage"
+    This command makes the whole platform unavailable. Run it only during a maintenance window, as part of the [cold restart procedure](../operations/node_maintenance.md#run-a-cold-restart-of-the-whole-cluster). To apply OS patches or kernel updates, restart the nodes one at a time instead. See [Patch the nodes one at a time](../operations/node_maintenance.md#patch-the-nodes-one-at-a-time).
+
+To reboot every node, run:
 
 ```bash
 exec RebootNodes
 ```
 
-Use this when patching the OS or applying kernel updates. The playbook waits for SSH to become available again on each node before reporting success.
+After the reboot, run `KubeCrashRecovery`.
 
 ### KubeCrashRecovery
 
-Restarts all pods across the cluster in ordered namespace phases and waits for each phase to become healthy before moving to the next. Use this after an unexpected node crash or manual cluster restart that left pods stuck in a failed state.
+Deletes every pod of the cluster in ordered namespace phases and waits for each phase to become ready before moving to the next. Run it after `RebootNodes`, or after an unexpected crash of several nodes that left pods stuck in a failed state.
+
+The phases run in this order: `kube*` namespaces → `rook-ceph` → `vault` → `*system*` → `support` → all remaining namespaces. No namespace is excluded.
+
+In the `support` phase, the command removes the finalizers of the `arangodb*` pods before deleting them, then ignores the `arango*` pods in its readiness check. It can therefore report success while ArangoDB is still down.
+
+A pod counts as ready when it is `Running` and all its containers are ready, or when it has completed.
+
+The command adjusts its timing with the following keys:
+
+| Field | Description | Default |
+| :--- | :--- | :--- |
+| `modules.kube_crash_recovery.pod_ready_timeout` | Seconds without progress before a phase fails. The countdown restarts each time the number of pods not ready decreases, so a phase can last longer than this value. | `300` |
+| `modules.kube_crash_recovery.poll_interval` | Seconds between two readiness checks. | `10` |
+
+!!! warning "Full platform outage"
+    This command restarts every service of the platform. Run it only during a maintenance window, as part of the [cold restart procedure](../operations/node_maintenance.md#run-a-cold-restart-of-the-whole-cluster).
+
+!!! note "Kubernetes API required"
+    The command stops immediately, without retrying, if the Kubernetes API is not reachable. Before you run it, check that `kubectl get nodes` lists every node as `Ready`.
+
+To restart every pod, run:
 
 ```bash
 exec KubeCrashRecovery
 ```
 
-The phases run in this order: `kube*` namespaces → `rook-ceph` → `vault` → `*system*` → `support` → all remaining namespaces. Each phase waits up to `modules.kube_crash_recovery.pod_ready_timeout` seconds (default: `300`) before giving up.
+After it completes, check the ArangoDB pods and the Vault seal status. See [Run a cold restart of the whole cluster](../operations/node_maintenance.md#run-a-cold-restart-of-the-whole-cluster).
 
-**What to do after a timeout:** Run `kubectl get pods -A --field-selector=status.phase!=Running,status.phase!=Succeeded` to identify the stuck pods. Check their events and logs, then re-run `KubeCrashRecovery`.
+**What to do after a timeout:** The error names the phase that failed. List the pods that are not ready with `kubectl get pods -A`, and look for a `READY` or a status other than `Running` or `Completed`, such as `CrashLoopBackOff`. Check their events and logs, then delete only the stuck pods with `kubectl delete pod -n <namespace> <pod-name>`.
+
+!!! warning "Re-running the command restarts every pod"
+    Re-running `KubeCrashRecovery` restarts from the first phase and deletes every pod of the cluster again, including the healthy ones. Prefer deleting only the stuck pods.
 
 ### PlatformScaleDown and PlatformDestroy
 
