@@ -999,6 +999,8 @@ Enable a rule
 | `available_for_subcommunities` | `boolean` | Is the rule available for subcommunities (if applicable) ? |
 | `instance_uuid` | `string` | The identifier of the instance of the rule |
 
+### Execute a query
+
 Execute a saved query in Sekoia and retrieve the results.
 
 For saved queries that use [SOL filters](/xdr/features/investigate/sol_how_to_guides.md#using-sol-filters-for-interactive-dashboards), provide the filter values in the `parameters` object. In the saved query, reference each filter with the `?filter_name` syntax. In the `parameters` object, use the filter name without the leading `?`.
@@ -1010,6 +1012,8 @@ For saved queries that use [SOL filters](/xdr/features/investigate/sol_how_to_gu
 | `query_name` | `string` | Name of the saved query to execute. Either `query_name` or `query_uuid` must be provided. |
 | `query_uuid` | `string` | UUID of the saved query to execute. Either `query_uuid` or `query_name` must be provided. |
 | `parameters` | `object` | Values for the SOL filters referenced in the saved query using the `?filter_name` syntax. Passed as query parameters when executing the query. |
+| `result_format` | `string` | Format of the query result to download. Supported formats are `jsonl` and `csv`. |
+| `to_file` | `boolean` | Whether the query result should be saved in a file or sent directly. |
 
 #### Example with a saved SOL query and SOL filters
 
@@ -1035,11 +1039,13 @@ Configure the action with the following arguments. The `parameters` object maps 
       "type": "free_text",
       "value": "powershell.exe"
     }
-  }
+  },
+  "result_format": "jsonl",
+  "to_file": true
 }
 ````
 
-The action executes the saved query with `process.name` set to `powershell.exe`.
+The action executes the saved query with `process.name` set to `powershell.exe` and saves the result as a JSON Lines file.
 
 The value structure follows the query execution API. Each filter entry must include `data_type`, `type`, and `value`. For example, a multiple-selection filter uses an array for `value`:
 
