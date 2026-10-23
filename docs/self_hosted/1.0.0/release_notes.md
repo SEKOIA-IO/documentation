@@ -129,7 +129,7 @@ The functional scope aligns with the **Defend Core** subscription tier. Defend C
 | Anomaly Detection Engine | Yes | |
 | Case Management | Yes | |
 | Hot Storage | Yes | |
-| Sekoia Endpoint Agent | No | The `xdr-agent-api` service is not installed in this release. |
+| Sekoia Endpoint Agent | No | The `xdr-agent-api` service and its databases are deployed with the platform, but the Sekoia Endpoint Agent is not supported in this release. Do not enroll agents. |
 | Contextualized Alerts | Yes | Requires the [CTI database import](operations/import_cti_database.md). |
 | Intelligence module | No | Not available in this release, even after the CTI database import. |
 | SOL Query Builder | Yes | |
@@ -160,7 +160,7 @@ Reveal is available with Sekoia Self-Hosted 1.0.0 under a dedicated subscription
 | Asset Timeline | Yes | |
 | Points of Interest | Yes | |
 | Attack Path Visualization | Yes | |
-| Endpoint Hygiene | No | Requires the `xdr-agent-api` service, which is not installed in this release. |
+| Endpoint Hygiene | No | Requires the Sekoia Endpoint Agent, which is not supported in this release. |
 | Vulnerability Enrichment | No | Requires NVD enrichment, which is not supported in this release. |
 | Asset creation, enrichment, and unification | Yes | The asset connector pipeline operates as expected. |
 | Defense Coverage | Yes | |

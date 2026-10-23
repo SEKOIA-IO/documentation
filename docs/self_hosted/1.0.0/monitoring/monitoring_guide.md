@@ -29,8 +29,8 @@ To access Grafana:
 2. Select **Dashboards** from the left navigation panel.
 3. Open the **Default** dashboard.
 
-!!! info "Available dashboards"
-    The platform ships with two dashboards: **Default** and **Astreinte**. The Astreinte dashboard is an internal on-call tool used by the Sekoia operations team. It is not intended for platform operators and should not be consulted during normal operations. Only the **Default** dashboard is relevant for day-to-day monitoring.
+!!! note "Available dashboards"
+    The platform ships one dashboard, **Default**, provisioned by the installer.
 
 ### Default dashboard
 
