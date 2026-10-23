@@ -7,7 +7,7 @@ Sekoia Self-Hosted 1.0.0 is the first generally available release of Sekoia Self
 
 ## What's new in 1.0.0
 
-**CTI database import.** `ImportArangoCollection` imports the Sekoia CTI database from the Sekoia release bucket into the platform. Once imported, it feeds observable tags enrichment and contextualized alerts. The installation also creates the `SEKOIA Intelligence Feed` detection rule, which matches events against the indicators of the CTI database. See [Import the CTI database](operations/import_cti_database.md).
+**CTI database import.** `ImportArangoCollection` imports the Sekoia CTI database into the platform, from the Sekoia release bucket or, in air-gapped mode, from the daily CTI archive published by Sekoia. Once imported, it feeds observable tags enrichment and contextualized alerts. The installation also creates the `SEKOIA Intelligence Feed` detection rule, which matches events against the indicators of the CTI database. See [Import the CTI database](operations/import_cti_database.md).
 
 **Node-to-node network preflight.** The `checks` stage of the `Install` execution plan now runs `CheckNodePortReachability` before K3s is installed. Each node briefly listens on the cluster TCP ports (Kubernetes API 6443, etcd, Cilium, and intake) while the other nodes probe it. A blocked path is reported with the destination node, the port, and the reason: `timeout` when packets are silently dropped, `refused` when a firewall rule rejects the connection. The check works with any firewall backend and also catches blocks in security groups and network firewalls upstream of the nodes. It is skipped once K3s is installed on every node. See [Network requirements](deployment/network_requirements.md).
 
@@ -173,7 +173,7 @@ The installation does not deploy the Sekoia CTI database. Until you [import it](
 
 The Intelligence module, used to explore threat actors, campaigns, and observables, is not available in Sekoia Self-Hosted 1.0.0, even after the import.
 
-The import downloads the CTI database from the Sekoia release bucket, so it requires the online mode. The other detection rules and the integration connectors do not depend on the CTI database.
+In online mode, the import downloads the CTI database from the Sekoia release bucket. In air-gapped mode, it reads the CTI archive that you download from the release bucket and extract on the orchestration node. The other detection rules and the integration connectors do not depend on the CTI database.
 
 ### AI features
 
@@ -199,7 +199,6 @@ The following limitations apply to Sekoia Self-Hosted 1.0.0.
 | No graphical or web UI for platform administration | Infrastructure management is available only from the orchestration node. | Use the self-hosted-controller (SHC) terminal interface or one-shot CLI together with `config.yml` for administrative operations. |
 | Automatic upgrade and rollback not available | Version updates are manual. | Follow the manual update procedure when a new release is published. |
 | Node operating system not configured by the SHC | The SHC does not install the operating system packages of the nodes. | Provision the operating system and packages listed in [Technical requirements](deployment/deployment_prerequisites.md) before you start the installation. |
-| No CTI import in air-gapped deployments | The CTI import reads from the Sekoia release bucket. An air-gapped deployment has no threat intelligence. Detection rules are unaffected. | Contact Sekoia if your air-gapped deployment requires threat intelligence. |
 | Intelligence module not available | You cannot explore threat actors, campaigns, and observables in the Intelligence module, even after the CTI database import. | None. |
 | No content update procedure | Detection rules, intake formats, and the playbook library stay at the version deployed during the installation. No procedure covers their update after the installation. | Contact Sekoia if your deployment requires updated detection content before the next release. |
 | Backup restore not yet documented | You cannot perform a tested restore from backup. | Contact Sekoia support for restore guidance specific to 1.0.0. |
