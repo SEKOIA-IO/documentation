@@ -344,7 +344,7 @@ Every check must report `OK`. A `CRIT` or `WARN` result names the affected servi
 To open the Sekoia interface, navigate to the URL set in `global.host` of your `config.yml` (for example, `https://app.sekoia.local`).
 
 !!! note "First login"
-    `PlatformAccess` returns the generated instance-administrator credentials at the end of the installation. Store them securely, then use them to create your first operational community. See [Set up the first administrator account](../operations/first_login.md).
+    `PlatformAccess` displays the generated instance-administrator credentials during the installation, before `InstanceBootstrap` and `ScaleServices` run. Scroll back in the output, or run `exec PlatformAccess` to display them again. Store them securely, then use them to create your first operational community. See [Set up the first administrator account](../operations/first_login.md).
 
 ## Related links
 
