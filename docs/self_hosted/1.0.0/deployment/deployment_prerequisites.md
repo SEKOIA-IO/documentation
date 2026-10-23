@@ -37,6 +37,7 @@ Every Kubernetes node, manager or worker, must meet the following minimum hardwa
 | Time synchronization | NTP enabled and clock synchronized | Both |
 | Free ports | TCP 80, 443, 2379, 2380, 4240, 4250, 6443, 10514, and 11514 not bound by another process | All nine ports, before K3s is installed |
 | SSH account | Key-based SSH access and full sudo privileges. See [SSH account](#ssh-account). | Not checked. `CheckServersAreReachable` fails when the connection or the privilege escalation fails. |
+| Python 3 | `python3` installed, in online and air-gapped mode alike. See [Operating system packages](#operating-system-packages). | Not checked. Every Ansible playbook, `CheckServerSpec` included, fails on a node without it. |
 
 The `CheckServerSpec` command blocks the installation when a manager or worker node fails any of the checks in the last column. See [CheckServerSpec](../troubleshooting/debug_tool.md#checkserverspec) for the failure messages and their remediation.
 
@@ -127,14 +128,30 @@ To disable swap on a node:
 
 The following packages are required on every compute node:
 
-- `python3`: required by the SHC to run its checks and operations on the node. The SHC does not install it.
+- `python3`: required by the SHC to run its checks and operations on the node. The SHC runs them with Ansible, which executes its modules with the Python interpreter of the node. The SHC never installs it, and `CheckServerSpec` reports the node as not checked when it is missing. The Debian installer includes `python3` with the standard system utilities, but check that a minimal installation provides it.
 - `lvm2`: required for the K3s installation. The SHC installs it with `apt` on every node when it is missing.
 - `gettext-base`: required for the Helm installation. The SHC installs it with `apt` on the first manager node when it is missing.
 
 Because the SHC may install packages, `apt` must work on every node: `sudo apt-get update` ends without errors.
 
 !!! note "Air-gapped deployments"
-    In air-gapped environments, nodes cannot download packages during the installation. Install the three packages on every compute node before you start, or provide an internal Debian mirror.
+    In air-gapped environments, nodes cannot download packages during the installation, so the SHC cannot install `lvm2` and `gettext-base` itself. Install the three packages on every compute node before you start, or provide an internal Debian mirror.
+
+### Changes applied by the SHC to the nodes
+
+The SHC does not install or harden the operating system of the nodes. During the `kubernetes` stage, `K3SInstall` and `HelmInstall` apply the following changes to the nodes. Review them against your hardening policy before the installation.
+
+| Change | Nodes | Purpose |
+| :--- | :--- | :--- |
+| Installs the `lvm2` package with the system package manager, when it is missing | All | Required by Ceph to manage the dedicated storage disk. |
+| Creates and enables the `lvm-vg-activate` systemd unit, which runs `vgchange -ay` at boot | All | Activates the Ceph LVM volume groups after a reboot, so that the Ceph OSDs find their disk. |
+| Writes `/etc/sysctl.d/99-k3s-inotify.conf`: `fs.inotify.max_user_instances = 8192`, `fs.inotify.max_user_watches = 1048576`, `fs.inotify.max_queued_events = 65536` | All | Raises the inotify limits required by K3s and the platform containers. |
+| Writes `/etc/sysctl.d/99-k3s-kafka.conf`: `vm.max_map_count = 262144` | All | Raises the memory map limit required by Kafka. |
+| Installs the K3s binary and installation script in `/usr/local/bin` and `/srv`, the K3s images in `/var/lib/rancher/k3s/agent/images`, the registry mirrors in `/etc/rancher/k3s/registries.yaml`, and the `k3s` or `k3s-agent` systemd unit | All | Runs the Kubernetes control plane on the managers and the Kubernetes agent on the workers. |
+| Installs the `gettext-base` package with the system package manager, when it is missing | First manager | Provides `envsubst`, used to render the Helm values of the cluster services. |
+| Copies the Helm binary to `/usr/local/bin/helm` | First manager | Installs the cluster services (Cilium, CoreDNS, cert-manager, metrics-server) from the first manager node. |
+
+The sysctl values are persistent and applied immediately. The installation does not change the bootloader, the host firewall configuration, the SSH configuration, or the user accounts of the nodes. The package installations reach the Debian repositories or your package mirror; see [Network requirements](./network_requirements.md#outbound-flows-to-infrastructure-services) for the flow.
 
 ### GPU nodes
 
@@ -157,7 +174,7 @@ The following table provides estimated hardware footprints per deployment size.
 
 **Object storage:** The table applies the formulas in [Size the object storage](#size-the-object-storage) with 365 days of retention.
 
-**Node roles:** Each cluster requires exactly 3 manager nodes (Kubernetes control plane), which is the only supported manager-node topology. The **Worker nodes** column above does not include them, and the manager nodes must meet the same [compute node specification](#compute-node-specification) as the worker nodes.
+**Node roles:** Each cluster requires exactly 3 manager nodes (Kubernetes control plane), which is the only supported manager-node topology. The SHC does not check this count: `utils.ansible.inventory.managers` accepts any number of addresses, and `CheckServerSpec` validates each node on its own. The topology is a Sekoia support requirement. The **Worker nodes** column above does not include them, and the manager nodes must meet the same [compute node specification](#compute-node-specification) as the worker nodes.
 
 ## Storage
 

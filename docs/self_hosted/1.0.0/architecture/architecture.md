@@ -4,7 +4,7 @@ Sekoia Self-Hosted is a containerized platform deployed on a customer-managed Ku
 
 ## Platform components
 
-The platform is delivered as a single digitally signed archive. It packages the following component groups.
+The platform is delivered as a single archive with a SHA-256 checksum. The container images and the data bundles inside it are signed with cosign. It packages the following component groups.
 
 ### Orchestration layer
 
@@ -14,7 +14,7 @@ The platform is delivered as a single digitally signed archive. It packages the 
 | K3s | A lightweight, certified Kubernetes distribution embedded in the platform. Manages the lifecycle of all platform containers. |
 | ArgoCD | GitOps engine that continuously reconciles the desired platform state (defined in your local Git repository) against the live cluster state. |
 | Helm | Package manager used for initial service deployment and upgrades. |
-| Ansible | Used by the self-hosted-controller (SHC) to provision compute nodes: OS configuration, K3s installation, kubeconfig retrieval. |
+| Ansible | Used by the self-hosted-controller (SHC) to provision the compute nodes: preflight checks, K3s installation, cluster services installation, and kubeconfig retrieval. It does not configure the operating system beyond the changes listed in [Changes applied by the SHC to the nodes](../deployment/deployment_prerequisites.md#changes-applied-by-the-shc-to-the-nodes). |
 | CoreDNS | Provides service discovery and DNS resolution inside the Kubernetes cluster. |
 | Cilium | Provides container networking and network policy enforcement across the cluster. |
 | Traefik | Routes external HTTP and HTTPS traffic to services running in the cluster. |
@@ -35,6 +35,7 @@ The Sekoia platform logic runs as a set of decoupled microservices deployed in t
 | Redis and KeyDB | In-memory data stores used for caching and inter-service communication. |
 | Kafka | Distributed event-streaming platform used to transport data between processing services. |
 | ZooKeeper | Coordination service used by distributed data services. |
+| RabbitMQ | Message broker of Hatchet, the workflow engine. The RabbitMQ cluster operator deploys it in the `hatchet` namespace. |
 | ExaLog | Distributed event indexing and search engine backed by the customer-provided S3-compatible storage. |
 | MinIO | Internal S3-compatible storage for low-volume files that services need to persist between runs. It is separate from the customer-provided event store. |
 
@@ -53,6 +54,7 @@ The Sekoia platform logic runs as a set of decoupled microservices deployed in t
 | Prometheus | Collects system- and application-level metrics across all nodes and namespaces, and evaluates the platform alert rules. |
 | Alertmanager | Receives the alerts fired by the platform alert rules. |
 | TLS certificate exporter | Checks the TLS certificate configured and served for the platform, for the console and ingestion diagnostics and alerts. |
+| Metric exporters | `node-exporter` exposes the Linux metrics of every node. `kafka-exporter` exposes the Kafka topics, partitions and consumer lag. `celery-exporter` exposes the Celery queues and tasks of the platform APIs. `symphony-exporter` exposes the playbook executions. |
 | Loki | Centralized log aggregation. |
 | Promtail | Agent running on every node, scraping container logs and forwarding them to Loki. |
 | Grafana | Visualization layer. Provides prebuilt dashboards for cluster health, throughput, error rates, and security events. Also serves as the Explore interface for Loki log queries. |
@@ -83,7 +85,7 @@ For hardware requirements and sizing per node role, see [Technical requirements]
 
 ## High availability
 
-The 6-node minimum cluster (3 manager + 3 workers) is a guarantee, not overhead. It ensures:
+The 6-node minimum cluster (3 manager + 3 workers) is a guarantee, not overhead. The SHC does not enforce it: `CheckServerSpec` validates each node on its own. The inventory accepts any number of managers and workers. The topology is a Sekoia support requirement, and a deployment with fewer nodes is not supported. It ensures:
 
 - No single point of failure: ingestion and detection continue even if a node fails.
 - Resource isolation: microservices are decoupled to prevent cascading failures.

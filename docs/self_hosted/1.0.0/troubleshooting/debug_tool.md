@@ -39,13 +39,13 @@ The check reports:
 
 **What to do after a failure:** Review each error line. Add any missing required keys to `config.yml`. Remove or correct the keys reported as undocumented: `config help <PREFIX>` lists the supported keys of a section. Fix values that do not match the expected format. For example, `utils.oci_registry.host` must be a bare hostname with no `http://` or `https://` scheme.
 
-To inspect all resolved environment variable values before the schema check runs, add the `-v` flag:
+To enable the debug logs of the SHC, add the `-v` flag before the command. The flag is accepted in CLI mode only: the command input of the TUI rejects it.
 
 ```bash
 -v exec CheckLocalConfig
 ```
 
-The verbose output includes the fully resolved in-memory config tree, including every `${env.VAR_NAME}` value substituted with its actual content. Use this to confirm that secrets injected via environment variables are correctly loaded.
+The verbose output does not include the resolved configuration. To confirm that the secrets injected through `${env.VAR_NAME}` references are loaded, run `config show` instead. Its output contains the resolved credentials in clear, and the per-run log file keeps a copy of everything written to the terminal: redact both before you share them. See [Inspect the configuration with the SHC](../deployment/deployment_configuration.md#inspect-the-configuration-with-the-shc).
 
 ## Infrastructure connectivity
 
@@ -445,7 +445,7 @@ Deletes the Helm revision records left in the `pending-install`, `pending-upgrad
 exec CleanupHelmReleases
 ```
 
-The SHC runs this command automatically before `HelmInstall`, `PlatformInstallation`, `PlatformAccess`, `DebugPlatformInstallation`, `DebugMissingSecrets`, and `CheckS3Performance`.
+The SHC runs this command automatically before `HelmInstall`, `PlatformInstallation`, `PlatformAccess`, `DebugPlatformInstallation`, `DebugMissingSecrets`, `CheckS3Performance`, and `RunEventLoadTesting`.
 
 !!! warning "Run it only when no Helm operation is in progress"
     The command also deletes the record of a Helm operation that is still running. Do not run it, or a module that depends on it, while another SHC session is installing or upgrading the platform.
@@ -500,7 +500,7 @@ exec KubeCrashRecovery
 
 After it completes, check the ArangoDB pods and the Vault seal status. See [Run a cold restart of the whole cluster](../operations/node_maintenance.md#run-a-cold-restart-of-the-whole-cluster).
 
-**What to do after a timeout:** The error names the phase that failed. List the pods that are not ready with `kubectl get pods -A`, and look for a `READY` or a status other than `Running` or `Completed`, such as `CrashLoopBackOff`. Check their events and logs, then delete only the stuck pods with `kubectl delete pod -n <namespace> <pod-name>`.
+**What to do after a timeout:** The error names the phase that failed. List the pods that are not ready with `kubectl get pods -A`, and look for a `READY` column not complete or a status other than `Running` or `Completed`, such as `CrashLoopBackOff`. Check their events and logs, then delete only the stuck pods with `kubectl delete pod -n <namespace> <pod-name>`.
 
 !!! warning "Re-running the command restarts every pod"
     Re-running `KubeCrashRecovery` restarts from the first phase and deletes every pod of the cluster again, including the healthy ones. Prefer deleting only the stuck pods.
