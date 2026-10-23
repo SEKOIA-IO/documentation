@@ -47,24 +47,24 @@ For a self-hosted deployment, set these variables on the Blue41 platform:
 
 Once delivery is enabled, new detections and audit records are forwarded automatically. Earlier activity is not backfilled.
 
-## Create the detection rules
+## Enable the detection rules
 
 Blue41 detections arrive as events. A Sekoia alert is raised only when an event matches a detection rule.
 
-Severity is set on a Sekoia rule, not on the matched event, so create one rule per Blue41 severity band. Request the Sigma rule definitions from Blue41. Each one matches on `event.dataset` set to `blue41.detection`, `event.kind` set to `alert`, and the `event.severity` of its band:
+The [Rules Catalog](/xdr/features/detect/rules_catalog.md) provides one built-in rule per Blue41 severity, because severity is set on a Sekoia rule rather than on the matched event:
 
-| Blue41 severity | `event.severity` | Rule |
+| Blue41 severity | `event.severity` | Built-in rule |
 | --- | --- | --- |
-| critical | `99` | critical rule |
-| error | `75` | error rule |
-| warning | `50` | warning rule |
-| info | `25` | info rule |
+| critical | `99` | Blue41 Detection Critical Severity |
+| error | `75` | Blue41 Detection Error Severity |
+| warning | `50` | Blue41 Detection Warning Severity |
+| info | `25` | Blue41 Detection Info Severity |
 
 Detections with no Blue41 severity, such as no-data detections, or with any other value score `25` and match the info rule.
 
-Set the [similarity strategy](/xdr/features/detect/rules_catalog.md#custom-similarity-strategy) of each rule to `rule.id` and `blue41.alert.fingerprint`. Blue41 detections carry no `source.ip` or `destination.ip`, so default similarity groups all detections of a severity band into one Sekoia alert. With these two fields, each Blue41 rule and matched span gets its own alert, and re-fires are added to it as occurrences while it is open.
+Search the Rules Catalog for `Blue41` and enable the four rules. Whether they are enabled automatically depends on the effort level configured for your community.
 
-See [Create custom rules](/xdr/features/detect/rules_catalog.md#create-custom-rules) for more information.
+The rules match firing and no-data detections only. Resolves and audit records never raise alerts. Each Blue41 detection gets its own Sekoia alert, grouped on `rule.id` and `blue41.alert.fingerprint`.
 
 ## Verify collection
 
@@ -117,8 +117,7 @@ A resolve carries the same `rule.id` and `blue41.alert.fingerprint` as the detec
 | No events arrive | Confirm that the intake key and regional URL match, and that a detection or audit record has occurred since delivery was enabled. On a Blue41-hosted deployment, ask the Blue41 team to check delivery errors. |
 | Sekoia returns a `422` response with `INVALID_INTAKE_KEY` | Verify the key and regional URL. If the intake was just created, allow time for activation. Blue41 retries delivery. On a Blue41-hosted deployment, ask the Blue41 team to check delivery errors. |
 | Events arrive but parsing fails | Check that the intake uses **Blue41 Detections and Audit**. Share an anonymized failing event with support. |
-| Events arrive but no alert is raised | Check that a detection rule matches the event's `event.severity` and is enabled. Resolves never raise alerts. |
-| Several Blue41 detections share one Sekoia alert | Set the rule's similarity strategy to `rule.id` and `blue41.alert.fingerprint`. |
+| Events arrive but no alert is raised | Check that the Blue41 rule for the event's `event.severity` is enabled in the Rules Catalog. Resolves and audit records never raise alerts. |
 | `event.url` is missing | On a self-hosted deployment, set `EXPORT__UI_BASE_URL`. |
 
 ## Event samples and extracted fields
@@ -126,6 +125,10 @@ A resolve carries the same `rule.id` and `blue41.alert.fingerprint` as the detec
 The following samples use synthetic data.
 
 {!_shared_content/operations_center/integrations/generated/547aa49e-c29a-4dbf-992b-c5cc0db19f17_sample.md!}
+
+{!_shared_content/integration/detection_section.md!}
+
+{!_shared_content/operations_center/detection/generated/suggested_rules_547aa49e-c29a-4dbf-992b-c5cc0db19f17_do_not_edit_manually.md!}
 
 {!_shared_content/operations_center/integrations/generated/547aa49e-c29a-4dbf-992b-c5cc0db19f17.md!}
 
