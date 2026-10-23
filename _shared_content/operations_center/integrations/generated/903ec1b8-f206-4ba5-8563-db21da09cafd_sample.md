@@ -670,6 +670,24 @@ In this section, you will find examples of raw logs as generated natively by the
 
 
 
+=== "test_config_user_001"
+
+
+    ```json
+	1,2026/09/07 15:17:11,012345678901,CONFIG,0,2817,2026/09/07 15:17:12,198.51.100.52,,set,john.doe,Web,Succeeded, config mgt-config users jane.doe,1234567890123456789,0x0,0,0,0,0,,FW-EXAMP001,0,,0,2026-09-07T15:17:12.218+02:00,/config/mgt-config/users/entry[@name='jane.doe']
+    ```
+
+
+
+=== "test_config_user_002"
+
+
+    ```json
+	1,2026/09/07 15:17:11,012345678901,CONFIG,0,2817,2026/09/07 15:17:12,198.51.100.52,,delete,john.doe,Web,Failed, config mgt-config users jane.doe,1234567890123456789,0x0,0,0,0,0,,FW-EXAMP001,0,,0,2026-09-07T15:17:12.218+02:00,/config/mgt-config/users/entry[@name='jane.doe']
+    ```
+
+
+
 === "test_decryption_csv"
 
 
@@ -2459,6 +2477,82 @@ In this section, you will find examples of raw logs as generated natively by the
 
 
 
+=== "test_traffic_event_4_json"
+
+
+    ```json
+	{
+        "TimeReceived": "2025-01-28T17:00:36.000000Z",
+        "DeviceSN": "007057000103158",
+        "LogType": "TRAFFIC",
+        "Subtype": "start",
+        "ConfigVersion": "11.1",
+        "TimeGenerated": "2025-01-28T17:01:01.000000Z",
+        "SourceAddress": "192.0.2.1",
+        "DestinationAddress": "198.51.100.2",
+        "NATSource": "",
+        "NATDestination": "",
+        "Rule": "intrazone-default",
+        "SourceUser": null,
+        "DestinationUser": null,
+        "Application": "paloalto-updates",
+        "FromZone": "OUTSIDE",
+        "ToZone": "OUTSIDE",
+        "InboundInterface": "ethernet1/1",
+        "OutboundInterface": "ethernet1/1",
+        "LogSetting": "Panorama_CDL",
+        "SessionID": 111111,
+        "RepeatCount": 1,
+        "SourcePort": 45483,
+        "DestinationPort": 443,
+        "NATSourcePort": 0,
+        "NATDestinationPort": 0,
+        "Protocol": "tcp",
+        "Action": "allow",
+        "Bytes": 797,
+        "BytesSent": 723,
+        "BytesReceived": 74,
+        "PacketsTotal": 4,
+        "SessionStartTime": "2025-01-28T17:01:02.000000Z",
+        "SessionDuration": 0,
+        "URLCategory": "computer-and-internet-info",
+        "SourceLocation": "TEST_INFRA",
+        "DestinationLocation": "US",
+        "PacketsSent": 0,
+        "PacketsReceived": "invalid",
+        "SessionEndReason": "n-a",
+        "DeviceName": "PC-01",
+        "ActionSource": "from-policy",
+        "RuleUUID": "11111111-1111-1111-1111-111111111111",
+        "SourceDeviceCategory": null,
+        "SourceDeviceProfile": null,
+        "SourceDeviceModel": null,
+        "SourceDeviceVendor": null,
+        "SourceDeviceOSFamily": null,
+        "SourceDeviceOSVersion": null,
+        "SourceDeviceHost": null,
+        "SourceDeviceMac": null,
+        "DestinationDeviceCategory": null,
+        "DestinationDeviceProfile": null,
+        "DestinationDeviceModel": null,
+        "DestinationDeviceVendor": null,
+        "DestinationDeviceOSFamily": null,
+        "DestinationDeviceOSVersion": null,
+        "DestinationDeviceHost": null,
+        "DestinationDeviceMac": null,
+        "SourceEDL": null,
+        "DestinationEDL": null,
+        "TimeGeneratedHighResolution": "2025-01-28T17:01:02.738000Z",
+        "DestinationUserName": null,
+        "SourceUserDomain": null,
+        "Users": "192.0.2.1",
+        "IsPacketCapture": false,
+        "IsPhishing": false
+    }
+    ```
+
+
+
 === "test_update_content_json"
 
 
@@ -2574,7 +2668,7 @@ In this section, you will find examples of raw logs as generated natively by the
 
 
     ```json
-	1,2026/04/28 13:38:24,111111111111111,SYSTEM,auth,2817,2026/04/28 13:38:25,,auth-success,Auth_Seq_NAME,0,0,general,informational,"Kerberos SSO authenticated for user 'user@example.com'. realm 'DOMAIN',  auth profile 'Auth_Seq_NAME', vsys 'shared',",1234567890123456789,0x0,0,0,0,0,,HOSTNAME,0,0,2026-04-28T13:38:25.366+02:00
+	1,2026/04/28 13:38:24,111111111111111,SYSTEM,auth,2817,2026/04/28 13:38:25,,auth-success,Auth_Seq_NAME,0,0,general,informational,"Kerberos SSO authenticated for user 'john.doe@example.com'. realm 'DOMAIN',  auth profile 'Auth_Seq_NAME', vsys 'shared',",1234567890123456789,0x0,0,0,0,0,,HOSTNAME,0,0,2026-04-28T13:38:25.366+02:00
     ```
 
 
