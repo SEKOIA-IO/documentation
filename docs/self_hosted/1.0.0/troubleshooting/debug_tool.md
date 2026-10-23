@@ -39,13 +39,13 @@ The check reports:
 
 **What to do after a failure:** Review each error line. Add any missing required keys to `config.yml`. Remove or correct the keys reported as undocumented: `config help <PREFIX>` lists the supported keys of a section. Fix values that do not match the expected format. For example, `utils.oci_registry.host` must be a bare hostname with no `http://` or `https://` scheme.
 
-To inspect all resolved environment variable values before the schema check runs, add the `-v` flag:
+To enable the debug logs of the SHC, add the `-v` flag before the command. The flag is accepted in CLI mode only: the command input of the TUI rejects it.
 
 ```bash
 -v exec CheckLocalConfig
 ```
 
-The verbose output includes the fully resolved in-memory config tree, including every `${env.VAR_NAME}` value substituted with its actual content. Use this to confirm that secrets injected via environment variables are correctly loaded.
+The verbose output does not include the resolved configuration. To confirm that the secrets injected through `${env.VAR_NAME}` references are loaded, run `config show` instead. Its output contains the resolved credentials in clear, and the per-run log file keeps a copy of everything written to the terminal: redact both before you share them. See [Inspect the configuration with the SHC](../deployment/deployment_configuration.md#inspect-the-configuration-with-the-shc).
 
 ## Infrastructure connectivity
 
@@ -219,7 +219,7 @@ Verifies that the platform release directory, `<global.version.platform.path>/<g
 exec CheckLocalReleaseFiles
 ```
 
-**What to do after a failure:** Confirm that the release archive was fully extracted and that `global.version.platform.path` points to the correct directory.
+**What to do after a failure:** In online mode, run `DownloadReleaseFiles` first: the release directory does not exist until the download completes, and `Install` runs the download before this check. In air-gapped mode, confirm that the release archive was fully extracted and that `global.version.platform.path` points to the correct directory.
 
 !!! note "Missing security content bundles"
     A missing or unreadable bundle in `data/<TYPE>/` does not fail the checks. `PushDataBundles` reports it as a warning and skips it, and the platform keeps the content version shipped with the release. Look for these warnings in the `push` stage output.
@@ -445,7 +445,7 @@ Deletes the Helm revision records left in the `pending-install`, `pending-upgrad
 exec CleanupHelmReleases
 ```
 
-The SHC runs this command automatically before `HelmInstall`, `PlatformInstallation`, `PlatformAccess`, `DebugPlatformInstallation`, `DebugMissingSecrets`, and `CheckS3Performance`.
+The SHC runs this command automatically before `HelmInstall`, `PlatformInstallation`, `PlatformAccess`, `DebugPlatformInstallation`, `DebugMissingSecrets`, `CheckS3Performance`, and `RunEventLoadTesting`.
 
 !!! warning "Run it only when no Helm operation is in progress"
     The command also deletes the record of a Helm operation that is still running. Do not run it, or a module that depends on it, while another SHC session is installing or upgrading the platform.
@@ -454,25 +454,56 @@ The SHC runs this command automatically before `HelmInstall`, `PlatformInstallat
 
 ### RebootNodes
 
-Reboots all nodes listed in `utils.ansible.inventory` and waits for them to come back online.
+Reboots all nodes listed in `utils.ansible.inventory` and waits for them to come back online. It is the first step of a cold restart of the whole cluster, and is followed by `KubeCrashRecovery`.
+
+The nodes are not rebooted one at a time: up to five nodes reboot in parallel, without being drained and without any Ceph maintenance flag. The three managers and at least two workers are therefore down at the same time, which stops the Kubernetes API and the Ceph storage. The command waits up to 300 seconds for each node to accept SSH connections again. It does not check that K3s or the pods are running again.
+
+!!! warning "Full platform outage"
+    This command makes the whole platform unavailable. Run it only during a maintenance window, as part of the [cold restart procedure](../operations/node_maintenance.md#run-a-cold-restart-of-the-whole-cluster). To apply OS patches or kernel updates, restart the nodes one at a time instead. See [Patch the nodes one at a time](../operations/node_maintenance.md#patch-the-nodes-one-at-a-time).
+
+To reboot every node, run:
 
 ```bash
 exec RebootNodes
 ```
 
-Use this when patching the OS or applying kernel updates. The playbook waits for SSH to become available again on each node before reporting success.
+After the reboot, run `KubeCrashRecovery`.
 
 ### KubeCrashRecovery
 
-Restarts all pods across the cluster in ordered namespace phases and waits for each phase to become healthy before moving to the next. Use this after an unexpected node crash or manual cluster restart that left pods stuck in a failed state.
+Deletes every pod of the cluster in ordered namespace phases and waits for each phase to become ready before moving to the next. Run it after `RebootNodes`, or after an unexpected crash of several nodes that left pods stuck in a failed state.
+
+The phases run in this order: `kube*` namespaces → `rook-ceph` → `vault` → `*system*` → `support` → all remaining namespaces. No namespace is excluded.
+
+In the `support` phase, the command removes the finalizers of the `arangodb*` pods before deleting them, then ignores the `arango*` pods in its readiness check. It can therefore report success while ArangoDB is still down.
+
+A pod counts as ready when it is `Running` and all its containers are ready, or when it has completed.
+
+The command adjusts its timing with the following keys:
+
+| Field | Description | Default |
+| :--- | :--- | :--- |
+| `modules.kube_crash_recovery.pod_ready_timeout` | Seconds without progress before a phase fails. The countdown restarts each time the number of pods not ready decreases, so a phase can last longer than this value. | `300` |
+| `modules.kube_crash_recovery.poll_interval` | Seconds between two readiness checks. | `10` |
+
+!!! warning "Full platform outage"
+    This command restarts every service of the platform. Run it only during a maintenance window, as part of the [cold restart procedure](../operations/node_maintenance.md#run-a-cold-restart-of-the-whole-cluster).
+
+!!! note "Kubernetes API required"
+    The command stops immediately, without retrying, if the Kubernetes API is not reachable. Before you run it, check that `kubectl get nodes` lists every node as `Ready`.
+
+To restart every pod, run:
 
 ```bash
 exec KubeCrashRecovery
 ```
 
-The phases run in this order: `kube*` namespaces → `rook-ceph` → `vault` → `*system*` → `support` → all remaining namespaces. Each phase waits up to `modules.kube_crash_recovery.pod_ready_timeout` seconds (default: `300`) before giving up.
+After it completes, check the ArangoDB pods and the Vault seal status. See [Run a cold restart of the whole cluster](../operations/node_maintenance.md#run-a-cold-restart-of-the-whole-cluster).
 
-**What to do after a timeout:** Run `kubectl get pods -A --field-selector=status.phase!=Running,status.phase!=Succeeded` to identify the stuck pods. Check their events and logs, then re-run `KubeCrashRecovery`.
+**What to do after a timeout:** The error names the phase that failed. List the pods that are not ready with `kubectl get pods -A`, and look for a `READY` or a status other than `Running` or `Completed`, such as `CrashLoopBackOff`. Check their events and logs, then delete only the stuck pods with `kubectl delete pod -n <namespace> <pod-name>`.
+
+!!! warning "Re-running the command restarts every pod"
+    Re-running `KubeCrashRecovery` restarts from the first phase and deletes every pod of the cluster again, including the healthy ones. Prefer deleting only the stuck pods.
 
 ### PlatformScaleDown and PlatformDestroy
 
@@ -541,15 +572,17 @@ When you escalate an issue to Sekoia L3 support, include the following in your r
 
 1. Copy the full terminal output of the failing command.
 
-2. Share your `config.yml` with all secrets redacted (replace all passwords and keys with `***`).
+2. Attach the per-run log file of the SHC. With `global.logging.file` set to `/opt/sekoia/logs/self-hosted-controller.log`, the file of each run is in `$SEKOIA_LOCAL_DIR/logs/` on the orchestration node, named after the start time of the run. In the TUI, the path is displayed at the bottom of the interface. With the default value, the file is deleted with the container: set the field, then run the failing command again. See [SHC log file](../deployment/deployment_configuration.md#shc-log-file).
 
-3. Collect K3s system logs from the affected nodes:
+3. Share your `config.yml` with all secrets redacted (replace all passwords and keys with `***`).
+
+4. Collect K3s system logs from the affected nodes:
 
     ```bash
     journalctl -u k3s -n 500 --no-pager > k3s.log
     ```
 
-4. If applications are degraded, collect ArgoCD and pod logs:
+5. If applications are degraded, collect ArgoCD and pod logs:
 
     ```bash
     exec DebugArgoCD

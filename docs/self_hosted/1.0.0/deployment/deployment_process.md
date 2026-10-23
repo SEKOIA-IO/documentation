@@ -104,17 +104,20 @@ The `Install` command runs every module below, in order, grouped into four stage
 
 | Stage | Modules | What the stage does |
 | :--- | :--- | :--- |
-| `checks` | `CheckLocalConfig`, `CheckLocalGit`, `CheckLocalOCIRegistry`, `CheckLocalReleaseFiles`, `CheckServersAreReachable`, `CheckServerSpec`, `CheckLocalTools`, `CheckNodePortReachability` | Validates the configuration, the repositories, the local release directories, the controller tools, every node against the hardware, OS, storage, hostname, and time-sync requirements, and the network paths between nodes on the cluster ports. |
-| `push` | `DownloadDataFiles`, `PushImages`, `PushCharts`, `PushDataBundles`, `PushArgoStacks` | Resolves the security content bundles, then publishes the images, the charts, the detection rules and intake formats bundles, and the ArgoCD stacks to your local repositories. |
+| `checks` | `CheckLocalConfig`, `CheckLocalGit`, `CheckLocalOCIRegistry`, `DownloadReleaseFiles`, `CheckLocalReleaseFiles`, `CheckServersAreReachable`, `CheckServerSpec`, `CheckLocalTools`, `CheckNodePortReachability` | Validates the configuration and the repositories, downloads the release files in online mode, then validates the local release directories, the controller tools, every node against the hardware, OS, storage, hostname, and time-sync requirements, and the network paths between nodes on the cluster ports. |
+| `push` | `DownloadDataFiles`, `PushImages`, `PushDataBundles` | Resolves the security content bundles, then publishes the images and the detection rules and intake formats bundles to your local OCI registry. |
 | `kubernetes` | `K3SInstall`, `GetKubeconfig`, `HelmInstall`, `CheckKubernetesCluster` | Installs the K3s cluster and the cluster services, then verifies that every node is `Ready`. |
-| `platform` | `PlatformConfigurationFile`, `PlatformInstallation`, `SyncRulesCatalog`, `SyncIntakeFormats`, `PlatformAccess`, `InstanceBootstrap`, `ScaleServices` | Renders the installer values, runs the platform installer, deploys the detection rules catalog and the intake formats, returns the access credentials, provisions the default storage and ExaLog indexes, and scales the workers to their target replica count. |
+| `platform` | `PushArgoStacks`, `PlatformConfigurationFile`, `PlatformInstallation`, `SyncRulesCatalog`, `SyncIntakeFormats`, `PlatformAccess`, `InstanceBootstrap`, `ScaleServices` | Publishes the Helm charts and the ArgoCD stacks to your local repositories, renders the installer values, runs the platform installer, deploys the detection rules catalog and the intake formats, returns the access credentials, provisions the default storage and ExaLog indexes, and scales the workers to their target replica count. |
+
+`DownloadReleaseFiles` runs in the `checks` stage. In online mode, it downloads the release files from the Sekoia S3 bucket, so missing or invalid bucket credentials fail the installation at this point. In air-gapped mode, it uses the files extracted from the archive. `PushArgoStacks` runs after the cluster is installed, because it retrieves the cluster credentials and synchronizes the ArgoCD root application when it already exists.
 
 ### Automatic prerequisites and repeated modules
 
 Some modules invoke their prerequisites every time they run. Consequently, the log contains more module executions than the four-stage table:
 
-- Each of `PushImages`, `PushCharts`, and `PushArgoStacks` invokes `DownloadReleaseFiles` first, and `PushDataBundles` invokes `DownloadDataFiles` first.
-- `HelmInstall`, `PlatformInstallation`, `PlatformAccess`, `DebugPlatformInstallation`, `DebugMissingSecrets`, and `CheckS3Performance` first run `CleanupHelmReleases`, which retrieves a current kubeconfig. See [Interrupted Helm operations](#interrupted-helm-operations).
+- `PushImages` and `PushCharts` invoke `DownloadReleaseFiles` first, and `PushDataBundles` invokes `DownloadDataFiles` first.
+- `PushArgoStacks` runs `PushCharts` to publish the Helm charts, then retrieves a current kubeconfig, before it publishes the stacks.
+- `HelmInstall`, `PlatformInstallation`, `PlatformAccess`, `DebugPlatformInstallation`, `DebugMissingSecrets`, `CheckS3Performance`, and `RunEventLoadTesting` first run `CleanupHelmReleases`, which retrieves a current kubeconfig. See [Interrupted Helm operations](#interrupted-helm-operations).
 - `PlatformInstallation`, `PlatformAccess`, `DebugPlatformInstallation`, and `DebugMissingSecrets` also regenerate the platform configuration before running.
 - `SyncRulesCatalog` and `SyncIntakeFormats` each run `SyncArgoRootApp` first, so the ArgoCD root application applies the latest application definitions before the content synchronization.
 - `CheckKubernetesCluster`, `InstanceBootstrap`, `ScaleServices`, and the `Debug` modules that read the cluster retrieve a current kubeconfig before running.
@@ -156,8 +159,8 @@ The SHC handles the full platform lifecycle beyond initial installation.
 | Resource usage analysis | `DebugResourceAllocation` |
 | Platform configuration re-apply | `PlatformConfigurationFile`, `PlatformInstallation` |
 | Full ArgoCD re-synchronization | `DebugArgoCDSyncAll` |
-| Graceful node reboot | `RebootNodes` |
-| Recover from a node crash or cluster restart | `KubeCrashRecovery` |
+| Cold restart of the whole cluster, with a full outage | `RebootNodes`, then `KubeCrashRecovery`. See [Run a cold restart of the whole cluster](../operations/node_maintenance.md#run-a-cold-restart-of-the-whole-cluster). |
+| Restart every pod after a crash of several nodes, with a full outage | `KubeCrashRecovery`. See [KubeCrashRecovery](../troubleshooting/debug_tool.md#kubecrashrecovery). |
 | Live node resource usage | `GetServerStatus` |
 | Service health check per platform area | `Diagnostic` |
 | Import the CTI database | `ImportArangoCollection`. See [Import the CTI database](../operations/import_cti_database.md). |

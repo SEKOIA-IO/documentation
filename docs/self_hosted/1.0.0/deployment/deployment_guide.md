@@ -4,7 +4,7 @@ This guide walks you through the full installation of Sekoia Self-Hosted, from d
 
 ## Prerequisites
 - All nodes meet the requirements listed in [Technical requirements](./deployment_prerequisites.md).
-- The operating system and the packages listed in [Technical requirements](./deployment_prerequisites.md) are installed on every node. The SHC does not configure the node operating system.
+- The operating system and the packages listed in [Technical requirements](./deployment_prerequisites.md) are installed on every node. The SHC does not install or harden the operating system. It only applies the changes listed in [Changes applied by the SHC to the nodes](./deployment_prerequisites.md#changes-applied-by-the-shc-to-the-nodes).
 - Firewall rules allow the flows listed in [Network requirements](./network_requirements.md).
 - Your `config.yml` manifest is ready. See [Configure the deployment](./deployment_configuration.md).
 - Docker is installed on the orchestration node.
@@ -35,7 +35,7 @@ Download the archive and its checksum file, then verify integrity. Fill in your 
     aws --endpoint-url "$ENDPOINT" s3 cp "s3://$BUCKET/$KEY" "$OUT"
     aws --endpoint-url "$ENDPOINT" s3 cp "s3://$BUCKET/$KEY.sha256" "$OUT.sha256"
 
-    sha256sum -c "$OUT.sha256"
+    echo "$(cut -d' ' -f1 "$OUT.sha256")  $OUT" | sha256sum -c -
     ```
 
     !!! note "AWS CLI v2 checksum compatibility"
@@ -53,7 +53,7 @@ Download the archive and its checksum file, then verify integrity. Fill in your 
     rclone copyto sekoia:self-hosted/platform/v1.0.0/archives/v1.0.0.tar ./sekoia-self-hosted-v1.0.0.tar
     rclone copyto sekoia:self-hosted/platform/v1.0.0/archives/v1.0.0.tar.sha256 ./sekoia-self-hosted-v1.0.0.tar.sha256
 
-    sha256sum -c sekoia-self-hosted-v1.0.0.tar.sha256
+    echo "$(cut -d' ' -f1 sekoia-self-hosted-v1.0.0.tar.sha256)  sekoia-self-hosted-v1.0.0.tar" | sha256sum -c -
     ```
 
 Expected output: `sekoia-self-hosted-v1.0.0.tar: OK`
@@ -149,7 +149,7 @@ docker run --rm $TTY_FLAGS \
 ```
 
 !!! note "Container user"
-    The SHC container runs as the `shc` user, with UID 1000. The user must be able to read `$SEKOIA_CONFIG_FILE`. In online mode, the SHC also writes the downloaded files to `$SEKOIA_LOCAL_DIR`: give UID 1000 write access to this directory, for example with `sudo chown -R 1000 $SEKOIA_LOCAL_DIR`.
+    The SHC container runs as the `shc` user, with UID 1000. This user must be able to read `$SEKOIA_CONFIG_FILE`. It must also be able to write to `$SEKOIA_LOCAL_DIR`, where the SHC stores the per-run log file and, in online mode, the downloaded release files. Give UID 1000 write access to this directory in every mode, for example with `sudo chown -R 1000 $SEKOIA_LOCAL_DIR`. Without it, the SHC starts without file logging. See [SHC log file](./deployment_configuration.md#shc-log-file).
 
 Set the following environment variables on the orchestration node before running the script:
 
@@ -218,6 +218,7 @@ To validate the environment before any changes are made, run:
 exec CheckLocalConfig
 exec CheckLocalGit
 exec CheckLocalOCIRegistry
+exec DownloadReleaseFiles
 exec CheckLocalReleaseFiles
 exec CheckServersAreReachable
 exec CheckServerSpec
@@ -228,23 +229,23 @@ exec CheckNodePortReachability
 !!! warning "Preflight block"
     The SHC will not proceed if any critical validation check fails. Each failure is logged with an actionable error message. Resolve all errors before continuing.
 
+`DownloadReleaseFiles` downloads the release files from the Sekoia S3 bucket in online mode, and uses the files extracted from the archive in air-gapped mode. Run it before `CheckLocalReleaseFiles`: in online mode, the release directory does not exist until the download completes.
+
 `CheckServerSpec` fails the installation when a manager or worker node does not have 44 CPU cores and 120 GiB of RAM, does not run Debian 12 or later, has an active swap device, has no unused 200 GB block device, shares its hostname with another node, or has no synchronized clock. See [CheckServerSpec](../troubleshooting/debug_tool.md#checkserverspec) for each failure message and its remediation.
 
 `CheckNodePortReachability` fails when a node cannot reach another node on one of the cluster ports. See [CheckNodePortReachability](../troubleshooting/debug_tool.md#checknodeportreachability).
 
 **Step 2: Provision local registries.**
 
-First resolve the versioned detection-rules, intake-formats, and playbook-library bundles. Then push the Docker images, the Helm charts, the detection rules and intake formats bundles, and the ArgoCD stack manifests to your local repositories:
+First resolve the versioned detection-rules, intake-formats, and playbook-library bundles. Then push the Docker images and the detection rules and intake formats bundles to your local OCI registry:
 
 ```bash
 exec DownloadDataFiles
 exec PushImages
-exec PushCharts
 exec PushDataBundles
-exec PushArgoStacks
 ```
 
-`PushImages`, `PushCharts`, and `PushArgoStacks` run `DownloadReleaseFiles` as an automatic prerequisite, and `PushDataBundles` runs `DownloadDataFiles`. In online mode, they download the release artifacts and the content bundles; in air-gapped mode, they use the files extracted from the archive. Run `PushDataBundles` before `PushArgoStacks`: `PushArgoStacks` points the content updaters to the bundles only once they are in your registry. A bundle that cannot be pushed is reported as a warning and skipped, and the platform keeps the content version shipped with the release. Repeated runs skip release files and images already present, and `PushArgoStacks` succeeds without a commit when the generated manifests are unchanged.
+`PushImages` runs `DownloadReleaseFiles` as an automatic prerequisite, and `PushDataBundles` runs `DownloadDataFiles`. In online mode, they download the release artifacts and the content bundles; in air-gapped mode, they use the files extracted from the archive. A bundle that cannot be pushed is reported as a warning and skipped, and the platform keeps the content version shipped with the release. Repeated runs skip release files and images already present. The Helm charts and the ArgoCD stacks are published in step 4, once the cluster exists.
 
 **Step 3: Install the Kubernetes stack.**
 
@@ -259,15 +260,18 @@ exec CheckKubernetesCluster
 
 **Step 4: Deploy the Sekoia platform.**
 
-To generate the platform configuration, run the installer job, deploy the detection rules catalog and the intake formats, and retrieve the initial access credentials, run:
+To publish the Helm charts and the ArgoCD stacks, generate the platform configuration, run the installer job, deploy the detection rules catalog and the intake formats, and retrieve the initial access credentials, run:
 
 ```bash
+exec PushArgoStacks
 exec PlatformConfigurationFile
 exec PlatformInstallation
 exec SyncRulesCatalog
 exec SyncIntakeFormats
 exec PlatformAccess
 ```
+
+`PushArgoStacks` first runs `PushCharts`, which pushes the Helm charts to your OCI registry, then publishes the ArgoCD stack manifests to your Git repository. It needs the installed cluster: it retrieves the cluster credentials and synchronizes the ArgoCD root application when it already exists. Run it after `PushDataBundles`: it points the content updaters to the bundles only once they are in your registry. A repeated run succeeds without a commit when the generated manifests are unchanged.
 
 `SyncRulesCatalog` and `SyncIntakeFormats` synchronize their ArgoCD applications and wait for the job that loads the content to succeed, for up to 900 seconds each. To allow more time for a large catalog, add `--set modules.sync_rules_catalog.sync_timeout=<SECONDS>` or `--set modules.sync_intake_formats.sync_timeout=<SECONDS>`.
 
@@ -339,7 +343,7 @@ Every check must report `OK`. A `CRIT` or `WARN` result names the affected servi
 To open the Sekoia interface, navigate to the URL set in `global.host` of your `config.yml` (for example, `https://app.sekoia.local`).
 
 !!! note "First login"
-    `PlatformAccess` returns the generated instance-administrator credentials at the end of the installation. Store them securely, then use them to create your first operational community. See [Set up the first administrator account](../operations/first_login.md).
+    `PlatformAccess` displays the generated instance-administrator credentials during the installation, before `InstanceBootstrap` and `ScaleServices` run. Scroll back in the output, or run `exec PlatformAccess` to display them again. Store them securely, then use them to create your first operational community. See [Set up the first administrator account](../operations/first_login.md).
 
 ## Related links
 
