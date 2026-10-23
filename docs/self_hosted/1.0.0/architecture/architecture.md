@@ -76,7 +76,8 @@ The platform spans the following infrastructure components, all provisioned and 
 | Orchestration node | 1 | Runs the self-hosted-controller (SHC) CLI, pushes images and charts to registries, drives Ansible playbooks. Does not join the K3s cluster. |
 | Manager node | 3 | Runs the Kubernetes control plane: API server, etcd, and scheduler. Three manager nodes provide control-plane fault tolerance. In tight deployments, they can also double as worker nodes. |
 | Worker node | Varies (see sizing) | Runs all platform microservices, databases, and observability components. |
-| GPU node | 0 to 2 | Optional. Required for AI features (NVIDIA H100). |
+
+Sekoia Self-Hosted 1.0.0 has no GPU node role: the AI features that run on GPU nodes are not available in this release. See [AI features](../release_notes.md#ai-features) in the release notes.
 
 For hardware requirements and sizing per node role, see [Technical requirements](../deployment/deployment_prerequisites.md).
 
