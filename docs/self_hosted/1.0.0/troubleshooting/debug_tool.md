@@ -86,7 +86,7 @@ The command checks the following, in this order.
 | OS family | Debian-based |
 | OS version | Debian 12 or later |
 | Swap | No active swap device |
-| CPU | 44 cores or more per node |
+| CPU | 44 logical CPUs or more per node |
 | RAM | 120 GiB or more per node |
 | NTP enabled | `timedatectl` reports `NTP=yes` |
 | Clock synchronized | `timedatectl` reports `NTPSynchronized=yes` |

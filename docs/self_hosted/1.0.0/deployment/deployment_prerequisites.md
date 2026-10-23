@@ -8,10 +8,10 @@ You must provision and manage the following components outside the Kubernetes cl
 
 | Component | CPU | RAM | Storage / throughput | Notes |
 | :--- | :---: | :---: | :---: | :--- |
-| TCP Load Balancer (e.g., HAProxy, Nginx) | 4 | 8 GB | 100 Mbps (12.5 MB/s) | Required minimum throughput. Scale according to your actual ingest volume. |
+| TCP Load Balancer (e.g., HAProxy, Nginx) | 4 | 8 GB | 100 Mbps (12.5 MB/s) | Required minimum throughput. Scale according to your actual ingest volume. Layer 4 only: Traefik terminates TLS. See [Network requirements](./network_requirements.md#flows-from-load-balancers-to-kubernetes-nodes). |
 | Orchestration node | 4 | 8 GB | 200 GB | Required. Runs the self-hosted-controller (SHC). See requirements below. |
-| Local image registry (e.g., Harbor, JFrog, Nexus) | 4 | 8 GB | 1 TB | Required. The SHC publishes the images and Helm charts to it, and the Kubernetes nodes pull them from it. Must serve HTTPS. |
-| Local code registry (e.g., GitLab, Gitea, ForgeJo) | 1 | 4 GB | Less than 10 GB | Required. The SHC publishes the ArgoCD stack manifests to it, and ArgoCD reads them from it. |
+| Local image registry (e.g., Harbor, JFrog, Nexus) | 4 | 8 GB | 1 TB | Required. The SHC publishes the images and Helm charts to it, and the Kubernetes nodes pull them from it. Must serve HTTPS, with token (Bearer) authentication. See [OCI registry](./deployment_configuration.md#oci-registry). |
+| Local code registry (e.g., GitLab, Gitea, ForgeJo) | 1 | 4 GB | Less than 10 GB | Required. The SHC publishes the ArgoCD stack manifests to it, and ArgoCD reads them from it. Must be reached over HTTP or HTTPS, with a username and a password. See [Git repository](./deployment_configuration.md#git-repository). |
 | S3-compatible object storage | | | See [Storage](#storage) | Required. Stores the indexed events. |
 
 ### Orchestration node requirements
@@ -27,15 +27,20 @@ Every Kubernetes node, manager or worker, must meet the following minimum hardwa
 
 | Resource | Minimum requirement | Enforced by `CheckServerSpec` |
 | :--- | :--- | :--- |
-| CPU | 44 vCPUs at 3.2 GHz minimum | 44 cores |
+| CPU | 44 vCPUs at 3.2 GHz minimum | 44 logical CPUs |
 | RAM | 128 GB | 120 GiB |
 | Dedicated storage disk | One unused SSD of 200 GB or more; 4 TB per worker node for deployments handling data | 200 GB |
-| Operating system | Debian 12 (Bookworm) | Debian 12 or later |
+| System disk | 400 GB recommended, separate from the dedicated storage disk | Not checked |
+| Operating system | Debian 12 (Bookworm) or Debian 13 (Trixie), amd64 | Debian 12 or later |
 | Swap | Disabled, including after a reboot | No active swap device |
 | Hostname | Unique across all manager and worker nodes | Uniqueness |
 | Time synchronization | NTP enabled and clock synchronized | Both |
 
 The `CheckServerSpec` command blocks the installation when a manager or worker node fails any of the checks in the last column. See [CheckServerSpec](../troubleshooting/debug_tool.md#checkserverspec) for the failure messages and their remediation.
+
+`CheckServerSpec` counts the logical CPUs that Linux reports. On a physical server, enable simultaneous multithreading (Hyper-Threading) in the firmware to expose every logical CPU.
+
+The system disk holds the operating system and the Kubernetes data under `/var`: container images, etcd, kubelet, and Ceph monitor data. Do not give `/var` a small separate partition. When `/var` fills up, Kubernetes reports `DiskPressure`, and the installation stops.
 
 !!! warning "SSD usage"
     `CheckServerSpec` enforces a 200 GB dedicated-disk minimum to support ultra-tight deployments. Any deployment that handles customer data must provision 4 TB per worker node. How quickly that capacity is consumed depends on the customer's use of the platform. Do not use these disks for long-term event retention; event data requires dedicated S3-compatible storage (see [Storage](#storage) below).
@@ -48,7 +53,7 @@ Ceph provisions persistent volumes from a dedicated block device on every node. 
 - No partition table and no filesystem.
 - Not read-only.
 
-Attach the disk and leave it unformatted before you start the installation. `CheckServerSpec` skips this check once K3s is installed, because Ceph has consumed the disk by then.
+Attach the disk and leave it unformatted before you start the installation. `CheckServerSpec` skips this check once K3s is installed, because Ceph has consumed the disk by then. On a server with a RAID controller, expose the disk in HBA, JBOD, or passthrough mode: Sekoia does not validate Ceph on a RAID volume.
 
 !!! warning "Do not partition or format the storage disk"
     A disk that already carries a filesystem or a partition table is not counted as eligible. If the node exposes no other eligible disk, the preflight fails and the installation does not start.
@@ -63,6 +68,35 @@ To rename a node before the installation, run:
 hostnamectl set-hostname <NEW_HOSTNAME>
 ```
 
+### Node access
+
+The SHC configures every manager and worker node over SSH, with Ansible. Each node must meet the following conditions:
+
+- It has a fixed IPv4 address. The inventory of `config.yml` accepts IPv4 addresses only, and the platform is installed in IPv4 only.
+- The same Linux account, set in `utils.ansible.user`, exists on every node.
+- This account accepts SSH key authentication on TCP port 22, directly from the orchestration node.
+- This account runs `sudo`. If `sudo` asks for a password, set it in `SERVERS_SUDO_PASSWORD`: the SHC also uses this password when the SSH server asks for one.
+
+The following setups are not supported in Sekoia Self-Hosted 1.0.0:
+
+| Setup | Status |
+| :--- | :--- |
+| SSH on a port other than 22 | Not supported: no setting changes the SSH port. |
+| Access through a jump host (bastion) | Not supported: the orchestration node must reach every node directly. |
+| SSH key protected by a passphrase | Not supported: the SHC cannot answer the passphrase prompt. |
+| SSH with a password only | Not supported: the SHC requires an SSH key. |
+| `su` or `doas` instead of `sudo` | Not supported. |
+| A different account on some nodes | Not supported. |
+| IPv6 addresses | Not supported. |
+
+To check the access to a node from the orchestration node, run:
+
+```bash
+ssh -o BatchMode=yes <USER>@<NODE_IP> "sudo -n true && echo OK"
+```
+
+Expected output: `OK`. If you set `SERVERS_SUDO_PASSWORD`, `sudo -n` fails: run `sudo -v` in the SSH session instead.
+
 ### Swap
 
 Swap must be disabled on every manager and worker node, including after a reboot: the Kubernetes nodes refuse to start with swap enabled. `CheckServerSpec` fails when a node has an active swap device.
@@ -74,13 +108,18 @@ To disable swap on a node:
 3. Disable any systemd swap unit or zram service that enables swap.
 4. Reboot the node, then check that `/sbin/swapon --show=NAME --noheadings --raw` returns no entry.
 
-### Air-gapped deployments
+### Operating system packages
 
-In air-gapped environments, nodes cannot download packages during the installation. Install the following packages on every compute node before you start:
+The following packages are required on every compute node:
 
-- `python3`: required by the SHC to run its checks and operations on the node.
-- `lvm2`: required for the K3s installation.
-- `gettext-base`: required for the Helm installation.
+- `python3`: required by the SHC to run its checks and operations on the node. The SHC does not install it.
+- `lvm2`: required for the K3s installation. The SHC installs it with `apt` on every node when it is missing.
+- `gettext-base`: required for the Helm installation. The SHC installs it with `apt` on the first manager node when it is missing.
+
+Because the SHC may install packages, `apt` must work on every node: `sudo apt-get update` ends without errors.
+
+!!! note "Air-gapped deployments"
+    In air-gapped environments, nodes cannot download packages during the installation. Install the three packages on every compute node before you start, or provide an internal Debian mirror.
 
 ### GPU nodes
 
@@ -111,10 +150,12 @@ An S3-compatible object storage is required for the event data lake. ExaLog writ
 
 | Requirement | Details |
 | :--- | :--- |
-| Protocol | S3 API, reached at `global.platform_storage.endpoint`. The scheme and the port come from the endpoint URL. |
+| Protocol | S3 API, reached at `global.platform_storage.endpoint` from every Kubernetes node. The scheme and the port come from the endpoint URL. |
+| TLS | HTTP or HTTPS. With HTTPS, the certificate of the storage must be signed by a public certificate authority: no setting accepts a private certificate authority for the storage. |
+| Region | Required, even when your storage has no region concept: use the value it accepts by default, for example `us-east-1`. |
 | Addressing | Path-style requests by default (`global.platform_storage.force_path_style_access`), so bucket names do not need DNS records. |
 | Buckets | 16 buckets, named `exalog-self-hosted-events-0` to `exalog-self-hosted-events-f`. You create them before the installation: the platform does not create them. See [Event storage buckets](#event-storage-buckets). |
-| Credentials | One access key with read, write, list, and delete permissions on these buckets. See [Platform storage](./deployment_configuration.md#platform-storage). |
+| Credentials | One access key with read, write, list, and delete permissions on these buckets. It does not need to create buckets, except to run the [storage performance check](#storage-performance-check). See [Platform storage](./deployment_configuration.md#platform-storage). |
 
 ### Size the object storage
 
@@ -168,7 +209,8 @@ For DNS, ensure that:
 - All Sekoia application servers can resolve each other by hostname and communicate freely.
 - All nodes can resolve and reach the Git repository and OCI registry.
 - All nodes can resolve and connect to the designated SMTP server.
-- The orchestration node can resolve and access every Kubernetes node by hostname.
+- The DNS server set in `global.forward_dns` resolves the hostnames of the Git repository, the OCI registry, the S3 storage, and the SMTP server. The platform services do not read the `/etc/hosts` file of the nodes.
+- The orchestration node can access every Kubernetes node at the IPv4 address of the inventory.
 - DNS records exist for `global.host` and `global.delivery_host` before deployment.
 - When `global.kube_manager_host` is configured as a hostname, its DNS record exists before deployment.
 

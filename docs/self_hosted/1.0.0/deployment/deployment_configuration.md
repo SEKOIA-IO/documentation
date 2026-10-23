@@ -70,7 +70,11 @@ Set these environment variables before running the SHC:
 | `SERVERS_SSH_KEY` | SSH private key used to configure the Kubernetes nodes. |
 | `REGISTRY_USERNAME` | Username for the OCI registry. |
 | `REGISTRY_PASSWORD` | Password for the OCI registry. |
+| `GIT_HTTP_USERNAME` | Username for the Git repository, read by `utils.git.http.username`. |
+| `GIT_HTTP_PASSWORD` | Password or access token for the Git repository, read by `utils.git.http.password`. |
 | `SEKOIA_INSTANCE_PUBLIC_KEY` | Base64-encoded instance public key provided by Sekoia. |
+| `TRAEFIK_PUBKEY` | Platform certificate in PEM format. See [TLS certificate](#tls-certificate). |
+| `TRAEFIK_PRIVKEY` | Private key of the platform certificate in PEM format. |
 
 The [deployment guide](./deployment_guide.md#step-4-create-the-execution-script) shows how to pass these variables to the SHC container.
 
@@ -97,8 +101,10 @@ Use `config show` to review the result after inheritance, and `config help` to i
 | :--- | :--- |
 | `global.host` | Primary FQDN used to access the Sekoia platform, for example `app.example.com`. Configure DNS and the load balancer so this hostname reaches the platform. |
 | `global.delivery_host` | Public FQDN used by delivery services, including the administrator portal, for example `admin.example.com`. |
-| `global.kube_manager_host` | IP address or hostname used to reach the Kubernetes manager endpoint. For a highly available deployment, use the address of a TCP load balancer in front of the manager nodes. |
-| `global.forward_dns` | DNS nameserver address forwarded by CoreDNS for name resolution outside the Kubernetes cluster. |
+| `global.kube_manager_host` | IP address or hostname of the Kubernetes API endpoint, without a port. The SHC, the nodes that join the cluster, and the Cilium network layer all reach the API through this address. For a highly available deployment, use the address of a TCP load balancer that forwards port 6443 to the three manager nodes. Otherwise, use the IP address of the first manager node. A hostname must resolve on every node and on the orchestration node. |
+| `global.forward_dns` | DNS server to which CoreDNS forwards every name outside the Kubernetes cluster. To use several servers, separate their addresses with a space, for example `"10.0.0.10 10.0.0.11"`. |
+
+The platform services resolve names outside the cluster only through `global.forward_dns`: they do not read the `/etc/hosts` file of the nodes. The Git repository, the OCI registry, the S3 storage, and the SMTP server must resolve through this DNS server, or be configured with their IP address.
 
 ### Platform storage
 
@@ -124,10 +130,10 @@ ExaLog storage configuration is derived from `global.platform_storage`. Some com
 | Field | Description |
 | :--- | :--- |
 | `utils.ansible.ssh-key` | Private key used by the self-hosted-controller (SHC) to connect to and configure every Kubernetes node. Use an environment-variable reference. |
-| `utils.ansible.user` | SSH user used on every Kubernetes node. The account must meet the privilege requirements in the [technical requirements](./deployment_prerequisites.md). |
-| `utils.ansible.inventory.managers` | List of manager-node IP addresses or resolvable hostnames. At least one manager is required. |
+| `utils.ansible.user` | SSH user used on every Kubernetes node. The account must meet the requirements in [Node access](./deployment_prerequisites.md#node-access). |
+| `utils.ansible.inventory.managers` | List of the IPv4 addresses of the manager nodes. Hostnames and IPv6 addresses are rejected. At least one manager is required. |
 
-Worker nodes are configured under `utils.ansible.inventory.workers`. The field is not required by the configuration validator, but production sizing profiles normally require workers to provide the expected capacity.
+Worker nodes are configured under `utils.ansible.inventory.workers`, with their IPv4 addresses. The field is not required by the configuration validator, but production sizing profiles require workers to provide the expected capacity: when you omit it, the SHC installs a cluster of manager nodes only, without any error.
 
 ### Git repository
 
@@ -146,22 +152,62 @@ The SHC publishes the stacks to a branch of this repository, and ArgoCD tracks t
 
 If the repository requires authentication, use `config help utils.git` to inspect the supported HTTP authentication settings. ArgoCD connects to the repository with a username and a password over HTTP or HTTPS.
 
+The repository must meet the following conditions:
+
+- It is reached over HTTP or HTTPS, from the orchestration node and from every Kubernetes node. Git over SSH is not supported: ArgoCD receives only the username and the password.
+- With HTTPS, its certificate is signed by a public certificate authority. The SHC has no setting to trust a private certificate authority for Git.
+- The SHC account can push directly to the branch. A protected branch that requires a merge request or a review makes `PushArgoStacks` fail.
+- The SHC owns the `argocd/` directory of the repository and replaces it at each push. Do not store other files in this directory.
+
 ### OCI registry
 
 | Field | Description |
 | :--- | :--- |
 | `utils.oci_registry.host` | Registry hostname, with an optional port and without a URL scheme, for example `registry.example.com` or `registry.example.com:5000`. |
-| `utils.oci_registry.project` | Registry project or namespace in which the self-hosted-controller (SHC) publishes Sekoia artifacts, for example `sekoia-self-hosted`. |
-| `utils.oci_registry.username` | Username with push, pull, and delete permissions in the registry project. Use an environment-variable reference. |
+| `utils.oci_registry.project` | Registry project or namespace in which the self-hosted-controller (SHC) publishes Sekoia artifacts, for example `sekoia-self-hosted`. The project must exist before the installation. Use lowercase letters, digits, `-`, and `_`, starting with a letter or a digit: `CheckLocalConfig` rejects `/` and `.`. |
+| `utils.oci_registry.username` | Username with push, pull, and delete permissions in the registry project, including the creation of new repositories in it. Use an environment-variable reference. |
 | `utils.oci_registry.password` | Password or token for the registry account. Use an environment-variable reference. |
 
 The registry must serve HTTPS: ArgoCD pulls the Helm charts over HTTPS, even when `utils.oci_registry.scheme` is `http`. The SHC derives the registry URL and the repositories used for checks, charts, and images from these values. Do not set the derived `url`, `check_repo`, `chart_repo`, or `image_repo` fields directly for a standard deployment. Override them only for a special registry layout or while debugging with guidance from Sekoia.
+
+The registry must meet the following conditions:
+
+- It uses token (Bearer) authentication. When a client connects without a token, the registry answers `401` with a `WWW-Authenticate: Bearer` header. The SHC rejects a registry that answers with `WWW-Authenticate: Basic`. To check your registry, run `curl -sk -o /dev/null -D - https://<REGISTRY_HOST>/v2/ | grep -i www-authenticate`.
+- A self-signed certificate is accepted: the SHC, the Kubernetes nodes, and ArgoCD do not verify the certificate of the registry.
+- The orchestration node reaches the registry without a proxy. The SHC has no proxy setting for the registry.
+
+The SHC publishes the images under `<project>/images/`, the Helm charts under `<project>/charts/`, and checks the account permissions with a temporary `<project>/shc-probe` image that it pushes, pulls, and deletes.
 
 ### Instance license
 
 | Field | Description |
 | :--- | :--- |
 | `modules.platform_configuration.config.global.instance_public_key` | Base64-encoded public key used to validate the Sekoia instance license. Sekoia provides this value. Use an environment-variable reference. |
+
+### TLS certificate
+
+Traefik serves the platform with your certificate on HTTPS and on the syslog and RELP intake ports. Provide the certificate and its private key in PEM format. The SHC reads them from two environment variables, and the [execution script](./deployment_guide.md#step-4-create-the-execution-script) passes both to the SHC container.
+
+| Field | Environment variable | Description |
+| :--- | :--- | :--- |
+| `modules.platform_configuration.config.traefik.custom_cert.crt` | `TRAEFIK_PUBKEY` | Certificate chain in PEM format. |
+| `modules.platform_configuration.config.traefik.custom_cert.key` | `TRAEFIK_PRIVKEY` | Private key of the certificate in PEM format, without a passphrase. |
+
+The certificate must meet the following conditions:
+
+- It is valid for every hostname the platform serves: `global.host`, `global.delivery_host`, and `global.alternative_hosts`. Each name is in its Subject Alternative Name, directly or through a wildcard.
+- The file starts with the server certificate, followed by the intermediate certificates.
+- When a private certificate authority signs it, the file ends with the root certificate of this authority. The platform services trust this file, in addition to the public authorities, when they call the platform through `global.host` and when they connect to your SMTP server. If your SMTP server uses a certificate from a private authority, append the root certificate of this authority too.
+
+To load the certificate and its key on the orchestration node, run:
+
+```bash
+export TRAEFIK_PUBKEY="$(cat /path/to/certificate.pem)"
+export TRAEFIK_PRIVKEY="$(cat /path/to/private-key.pem)"
+```
+
+!!! warning "A certificate is required"
+    Sekoia Self-Hosted 1.0.0 does not support an installation without a certificate. When `TRAEFIK_PUBKEY` is empty, the `CustomCA` step of the installation fails with `Custom CA not defined`. When the variables are not passed to the SHC container at all, the SHC only logs an `Unresolved template marker` warning: the certificate secret of Traefik then holds no valid certificate, Traefik serves its own default certificate, and the `console` and `ingest` diagnostics report the certificate secret as critical. For a test platform, generate a self-signed certificate that covers the platform hostnames.
 
 ## Settings with placeholder defaults
 
@@ -255,29 +301,6 @@ The release ID of a bundle is its file name without the `<TYPE>-` prefix and the
 
 !!! note "Bundle selection in air-gapped mode"
     In air-gapped mode, the `version` fields of the bundles are ignored. The SHC uses the bundle named in the `latest` file of each `data/<TYPE>/` directory.
-
-### Custom TLS certificate
-
-To serve the platform with a certificate issued by your own certificate authority, provide the certificate and its private key in PEM format. The SHC reads them from two environment variables.
-
-| Field | Environment variable | Description |
-| :--- | :--- | :--- |
-| `modules.platform_configuration.config.traefik.custom_cert.crt` | `TRAEFIK_PUBKEY` | Certificate in PEM format. |
-| `modules.platform_configuration.config.traefik.custom_cert.key` | `TRAEFIK_PRIVKEY` | Private key of the certificate in PEM format. |
-
-1. To load the certificate and its key on the orchestration node, run:
-
-    ```bash
-    export TRAEFIK_PUBKEY="$(cat /path/to/certificate.pem)"
-    export TRAEFIK_PRIVKEY="$(cat /path/to/private-key.pem)"
-    ```
-
-2. Add `-e TRAEFIK_PUBKEY="$TRAEFIK_PUBKEY"` and `-e TRAEFIK_PRIVKEY="$TRAEFIK_PRIVKEY"` to the `docker run` command of the [execution script](./deployment_guide.md#step-4-create-the-execution-script).
-
-The certificate must be valid for every hostname the platform serves: `global.host`, `global.delivery_host`, and `global.alternative_hosts`. Traefik serves it on HTTPS and on the syslog and RELP intake ports.
-
-!!! warning "Without a custom certificate"
-    When `TRAEFIK_PUBKEY` and `TRAEFIK_PRIVKEY` are not set, the certificate secret of Traefik is empty and Traefik serves its own self-signed default certificate. Browsers, API clients, and event forwarders then report an untrusted certificate.
 
 ### Proxy
 
