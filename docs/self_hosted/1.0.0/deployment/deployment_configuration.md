@@ -7,7 +7,7 @@ The SHC combines the built-in defaults, the selected sizing profile, and your `c
 This page explains every required field, the settings whose default value is a placeholder, and the most common optional settings. To inspect every other supported setting, use the [SHC configuration commands](#inspect-the-configuration-with-the-shc).
 
 !!! warning "Validation does not catch every incorrect value"
-    `CheckLocalConfig` rejects a required field that is missing or empty, but it does not check the optional fields that your environment needs. For example, the S3 credentials of the online mode are optional for the validator: when they are empty, the installation fails later, during the `push` stage. To confirm that every value your deployment needs is present and correct, inspect the computed configuration with `config show`.
+    `CheckLocalConfig` rejects a required field that is missing or empty, but it does not check the optional fields that your environment needs. For example, the S3 credentials of the online mode are optional for the validator: when they are empty, the installation fails later, when `DownloadReleaseFiles` runs in the `checks` stage. To confirm that every value your deployment needs is present and correct, inspect the computed configuration with `config show`.
 
 ## Create the configuration file
 

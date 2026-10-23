@@ -219,7 +219,7 @@ Verifies that the platform release directory, `<global.version.platform.path>/<g
 exec CheckLocalReleaseFiles
 ```
 
-**What to do after a failure:** Confirm that the release archive was fully extracted and that `global.version.platform.path` points to the correct directory.
+**What to do after a failure:** In online mode, run `DownloadReleaseFiles` first: the release directory does not exist until the download completes, and `Install` runs the download before this check. In air-gapped mode, confirm that the release archive was fully extracted and that `global.version.platform.path` points to the correct directory.
 
 !!! note "Missing security content bundles"
     A missing or unreadable bundle in `data/<TYPE>/` does not fail the checks. `PushDataBundles` reports it as a warning and skips it, and the platform keeps the content version shipped with the release. Look for these warnings in the `push` stage output.

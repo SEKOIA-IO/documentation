@@ -35,6 +35,8 @@ Every Kubernetes node, manager or worker, must meet the following minimum hardwa
 | Swap | Disabled, including after a reboot | No active swap device |
 | Hostname | Unique across all manager and worker nodes | Uniqueness |
 | Time synchronization | NTP enabled and clock synchronized | Both |
+| Free ports | TCP 80, 443, 2379, 2380, 4240, 4250, 6443, 10514, and 11514 not bound by another process | All nine ports, before K3s is installed |
+| SSH account | Key-based SSH access and full sudo privileges. See [SSH account](#ssh-account). | Not checked. `CheckServersAreReachable` fails when the connection or the privilege escalation fails. |
 
 The `CheckServerSpec` command blocks the installation when a manager or worker node fails any of the checks in the last column. See [CheckServerSpec](../troubleshooting/debug_tool.md#checkserverspec) for the failure messages and their remediation.
 
@@ -57,6 +59,19 @@ Attach the disk and leave it unformatted before you start the installation. `Che
 
 !!! warning "Do not partition or format the storage disk"
     A disk that already carries a filesystem or a partition table is not counted as eligible. If the node exposes no other eligible disk, the preflight fails and the installation does not start.
+
+### SSH account
+
+The SHC configures every manager and worker node over SSH, as the user set in `utils.ansible.user`, with the private key set in `utils.ansible.ssh-key`. It runs every Ansible playbook with privilege escalation, so the account needs full `sudo` privileges on every node. Grant them in one of two ways:
+
+- Passwordless sudo, with a `NOPASSWD` rule for the account.
+- Sudo with a password, passed to the SHC in the `SERVERS_SUDO_PASSWORD` environment variable. See [Create the execution script](./deployment_guide.md#step-4-create-the-execution-script).
+
+The SHC also offers the value of `SERVERS_SUDO_PASSWORD` as the SSH password of the account. Keep the two passwords identical if the account authenticates with a password instead of the key.
+
+### Free ports
+
+K3s, Traefik, etcd, Cilium, and the intake services bind TCP ports 80, 443, 2379, 2380, 4240, 4250, 6443, 10514, and 11514 on every node. `CheckServerSpec` fails when another process already listens on one of them. The check is skipped once K3s is installed, because the cluster then holds the ports itself. To identify the process that uses a port, run `sudo ss -ltnp 'sport = :<PORT>'` on the node. See [Network requirements](./network_requirements.md#kubernetes-internal-flows) for the flows on these ports.
 
 ### Node hostnames
 
