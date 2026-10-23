@@ -75,7 +75,7 @@ The cluster uses the following fixed internal ranges. Make sure that they do not
 | Range | Usage |
 | :--- | :--- |
 | `10.42.0.0/16` | Pod network. |
-| `10.43.0.0/16` | Service network. CoreDNS uses `10.43.0.10` and Traefik uses `10.43.111.111`. |
+| `10.43.0.0/16` | Service network. CoreDNS uses `10.43.0.10` and Traefik uses `10.43.111.111`, set by `modules.platform_configuration.config.traefik.service_ip`. See [Traefik service IP](./deployment_configuration.md#traefik-service-ip). |
 
 ## Outbound flows to infrastructure services
 
