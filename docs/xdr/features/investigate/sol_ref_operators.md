@@ -636,20 +636,9 @@ For the `geomap` chart, use one of the following syntaxes:
 
 ```
 
-The `country` parameter accepts ISO 3166-1 alpha-2 country codes and full English country names. Use either `country` or the `lat` and `lon` parameters; they cannot be combined. The `label` and `value` parameters are optional.
-
-!!! example "Count the number of events per asset in the events table and render it in a bar chart"
-
-    === "Query"
-
-        ``` shell
-        events
-        | where timestamp > ago(1h)
-        | aggregate count() by sekoiaio.any_asset.name
-        | render barchart with (y=sekoiaio.any_asset.name)
-        | limit 100
-
-        ```
+The `country` parameter accepts ISO 3166-1 alpha-2 country codes and full English country names. Use either `country` or the `lat` and `lon` parameters; they cannot be combined. For country maps, `value` controls the color intensity of each country. For coordinate maps, `value` controls the bubble size and `label` can identify the location. The `label` and `value` parameters are optional.
+ 
+ !!! example "Count the number of events per asset in the events table and render it in a bar chart"
 
     === "Results"
 
