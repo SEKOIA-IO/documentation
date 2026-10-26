@@ -107,7 +107,14 @@ The community selected during local runner creation determines which capabilitie
 | A community without a Reveal subscription | Playbook actions only |
 | A workspace or parent community used by an MSSP | Playbook actions only; asset inventory is not available |
 
-If the selected community does not have Reveal, the local runner displays a warning that it can execute playbooks but cannot execute asset connectors. Enable Reveal for the customer community before you use the local runner for asset collection.
+When the selected community cannot run asset connectors, the creation dialog displays the warning **Your local runner will only be able to execute playbooks.** with one of the following reasons:
+
+- **A Reveal subscription is needed to activate asset inventory capability.**
+- **A workspace cannot perform asset inventory.**
+
+Until Reveal is enabled for the customer community, the local runner can already execute playbook actions. Once Reveal is enabled, the same runner can also execute asset connector jobs: you do not need to reinstall it.
+
+Playbooks and asset connectors share the same list of local runners. The **Local runners** page is the same whether you open it from **Playbooks** or from **Configure > Assets**.
 
 > 📸 [SCREENSHOT SUGGESTION: Create a new local runner dialog showing the Community field and the warning about Reveal and workspace communities. | ALT TEXT: Local runner creation dialog with a community selector and an asset inventory warning.]
 
