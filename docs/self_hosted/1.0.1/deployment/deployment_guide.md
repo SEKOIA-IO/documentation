@@ -4,7 +4,7 @@ This guide walks you through the full installation of Sekoia Self-Hosted, from d
 
 ## Prerequisites
 - All nodes meet the requirements listed in [Technical requirements](/self_hosted/1.0.1/deployment/deployment_prerequisites.md).
-- The operating system and the packages listed in [Technical requirements](/self_hosted/1.0.1/deployment/deployment_prerequisites.md) are installed on every node. The SHC does not configure the node operating system.
+- The operating system and the packages listed in [Technical requirements](/self_hosted/1.0.1/deployment/deployment_prerequisites.md) are installed on every node. The SHC does not install or harden the operating system. It only applies the changes listed in [Changes applied by the SHC to the nodes](/self_hosted/1.0.1/deployment/deployment_prerequisites.md#changes-applied-by-the-shc-to-the-nodes).
 - Firewall rules allow the flows listed in [Network requirements](/self_hosted/1.0.1/deployment/network_requirements.md).
 - Your `config.yml` manifest is ready. See [Configure the deployment](/self_hosted/1.0.1/deployment/deployment_configuration.md).
 - Docker is installed on the orchestration node.
@@ -24,7 +24,7 @@ The checksum detects a corrupted or incomplete download: the archive itself is n
 !!! tip "Keep the credentials out of the shell history"
     Do not type the access key and the secret key on the command line, where they stay in the shell history. Write their `export` lines in a file that only your user can read, for example `~/sekoia-delivery.env` protected with `chmod 600 ~/sekoia-delivery.env`, and load it with `source` as the examples do. The examples remove the credentials from the shell with `unset` once the download completes.
 
-Download the archive and its checksum file, then verify integrity. Keep the archive file name `v1.0.1.tar`: the checksum file refers to the archive by this name.
+Download the archive and its checksum file, then verify integrity.
 
 ??? example "AWS CLI"
     ```bash
@@ -33,7 +33,7 @@ Download the archive and its checksum file, then verify integrity. Keep the arch
     export ENDPOINT="https://self-hosted.delivery.sekoia.io"
     export BUCKET="self-hosted"
     export KEY="platform/v1.0.1/archives/v1.0.1.tar"
-    export OUT="v1.0.1.tar"
+    export OUT="sekoia-self-hosted-v1.0.1.tar"
     export AWS_REQUEST_CHECKSUM_CALCULATION=WHEN_REQUIRED
     export AWS_RESPONSE_CHECKSUM_VALIDATION=WHEN_REQUIRED
 
@@ -41,7 +41,7 @@ Download the archive and its checksum file, then verify integrity. Keep the arch
     aws --endpoint-url "$ENDPOINT" s3 cp "s3://$BUCKET/$KEY.sha256" "$OUT.sha256"
     unset AWS_ACCESS_KEY_ID AWS_SECRET_ACCESS_KEY
 
-    sha256sum -c "$OUT.sha256"
+    echo "$(cut -d' ' -f1 "$OUT.sha256")  $OUT" | sha256sum -c -
     ```
 
     !!! note "AWS CLI v2 checksum compatibility"
@@ -55,24 +55,24 @@ Download the archive and its checksum file, then verify integrity. Keep the arch
     export RCLONE_CONFIG_SEKOIA_ENDPOINT="https://self-hosted.delivery.sekoia.io"
     export RCLONE_CONFIG_SEKOIA_REGION="fr-par-2"
 
-    rclone copyto sekoia:self-hosted/platform/v1.0.1/archives/v1.0.1.tar ./v1.0.1.tar
-    rclone copyto sekoia:self-hosted/platform/v1.0.1/archives/v1.0.1.tar.sha256 ./v1.0.1.tar.sha256
+    rclone copyto sekoia:self-hosted/platform/v1.0.1/archives/v1.0.1.tar ./sekoia-self-hosted-v1.0.1.tar
+    rclone copyto sekoia:self-hosted/platform/v1.0.1/archives/v1.0.1.tar.sha256 ./sekoia-self-hosted-v1.0.1.tar.sha256
     unset RCLONE_CONFIG_SEKOIA_ACCESS_KEY_ID RCLONE_CONFIG_SEKOIA_SECRET_ACCESS_KEY
 
-    sha256sum -c v1.0.1.tar.sha256
+    echo "$(cut -d' ' -f1 sekoia-self-hosted-v1.0.1.tar.sha256)  sekoia-self-hosted-v1.0.1.tar" | sha256sum -c -
     ```
 
-Expected output: `v1.0.1.tar: OK`
+Expected output: `sekoia-self-hosted-v1.0.1.tar: OK`
 
 ### Step 2: Transfer and extract the archive
 
 To transfer the archive and its checksum file to the orchestration node if you downloaded them on a separate machine, run:
 
 ```bash
-scp v1.0.1.tar v1.0.1.tar.sha256 user@<ORCHESTRATION_NODE>:<SEKOIA_LOCAL_DIR>/
+scp sekoia-self-hosted-v1.0.1.tar sekoia-self-hosted-v1.0.1.tar.sha256 user@<ORCHESTRATION_NODE>:<SEKOIA_LOCAL_DIR>/
 ```
 
-Replace `<SEKOIA_LOCAL_DIR>` with the absolute path of the release directory on the orchestration node. To check that the transfer did not alter the archive, run `sha256sum -c v1.0.1.tar.sha256` again in this directory on the orchestration node.
+Replace `<SEKOIA_LOCAL_DIR>` with the absolute path of the release directory on the orchestration node. To check that the transfer did not alter the archive, run `echo "$(cut -d' ' -f1 sekoia-self-hosted-v1.0.1.tar.sha256)  sekoia-self-hosted-v1.0.1.tar" | sha256sum -c -` again in this directory on the orchestration node.
 
 !!! note "Disk space"
     Ensure at least 150 GB of available disk space at the destination before extracting.
@@ -80,7 +80,7 @@ Replace `<SEKOIA_LOCAL_DIR>` with the absolute path of the release directory on 
 To extract the archive on the orchestration node, run:
 
 ```bash
-tar -xvf v1.0.1.tar -C $SEKOIA_LOCAL_DIR
+tar -xvf sekoia-self-hosted-v1.0.1.tar -C $SEKOIA_LOCAL_DIR
 ```
 
 The archive contains the platform release and the latest security content bundles:
@@ -162,7 +162,7 @@ docker run --rm $TTY_FLAGS \
 ```
 
 !!! note "Container user"
-    The SHC container runs as the `shc` user, with UID 1000. The user must be able to read `$SEKOIA_CONFIG_FILE`. In online mode, the SHC also writes the downloaded files to `$SEKOIA_LOCAL_DIR`: give UID 1000 write access to this directory, for example with `sudo chown -R 1000 $SEKOIA_LOCAL_DIR`.
+    The SHC container runs as the `shc` user, with UID 1000. This user must be able to read `$SEKOIA_CONFIG_FILE`. It must also be able to write to `$SEKOIA_LOCAL_DIR`, where the SHC stores the per-run log file and, in online mode, the downloaded release files. Give UID 1000 write access to this directory in every mode, for example with `sudo chown -R 1000 $SEKOIA_LOCAL_DIR`. Without it, the SHC starts without file logging. See [SHC log file](/self_hosted/1.0.1/deployment/deployment_configuration.md#shc-log-file).
 
 Set the following environment variables on the orchestration node before running the script:
 
@@ -254,13 +254,15 @@ In online mode, `DownloadReleaseFiles` downloads the release files that `CheckLo
 !!! warning "Preflight block"
     Every check is blocking: a failed check stops with an error message that names the cause. Resolve all errors before continuing. `CheckLocalConfig` does not validate the optional settings your environment needs, so some configuration errors only appear in later stages.
 
+`DownloadReleaseFiles` downloads the release files from the Sekoia S3 bucket in online mode, and uses the files extracted from the archive in air-gapped mode. Run it before `CheckLocalReleaseFiles`: in online mode, the release directory does not exist until the download completes.
+
 `CheckServerSpec` fails the installation when a manager or worker node has fewer than 44 logical CPUs or less than 120 GiB of RAM, does not run Debian 12 or later, has an active swap device, shares its hostname with another node, or has no synchronized clock. Before K3s is installed, it also fails when a required port is already in use on the node or, in the default `auto` storage mode, when the node has no unused block device of at least 200 GB. See [CheckServerSpec](/self_hosted/1.0.1/troubleshooting/debug_tool.md#checkserverspec) for each failure message and its remediation.
 
 `CheckNodePortReachability` fails when a node cannot reach another node on one of the cluster ports. See [CheckNodePortReachability](/self_hosted/1.0.1/troubleshooting/debug_tool.md#checknodeportreachability).
 
 **Step 2: Push the images and the security content.**
 
-First resolve the versioned detection-rules, intake-formats, and playbook-library bundles. Then push the Docker images and the detection rules and intake formats bundles to your OCI registry:
+First resolve the versioned detection-rules, intake-formats, and playbook-library bundles. Then push the Docker images and the detection rules and intake formats bundles to your local OCI registry:
 
 ```bash
 exec DownloadDataFiles
@@ -268,7 +270,7 @@ exec PushImages
 exec PushDataBundles
 ```
 
-`PushImages` runs `DownloadReleaseFiles` as an automatic prerequisite, and `PushDataBundles` runs `DownloadDataFiles`. In online mode, they download the release artifacts and the content bundles; in air-gapped mode, they use the files extracted from the archive. A missing bundle is reported as a warning and skipped, and a bundle that still fails after three push attempts is reported as an error and skipped. In both cases, the platform keeps the content version shipped with the release. By default, repeated runs push every image again. See [Automatic prerequisites and repeated modules](/self_hosted/1.0.1/deployment/deployment_process.md#automatic-prerequisites-and-repeated-modules).
+`PushImages` runs `DownloadReleaseFiles` as an automatic prerequisite, and `PushDataBundles` runs `DownloadDataFiles`. In online mode, they download the release artifacts and the content bundles; in air-gapped mode, they use the files extracted from the archive. A missing bundle is reported as a warning and skipped, and a bundle that still fails after three push attempts is reported as an error and skipped. In both cases, the platform keeps the content version shipped with the release. By default, repeated runs push every image again. See [Automatic prerequisites and repeated modules](/self_hosted/1.0.1/deployment/deployment_process.md#automatic-prerequisites-and-repeated-modules). The Helm charts and the ArgoCD stacks are published in step 4, once the cluster exists.
 
 **Step 3: Install the Kubernetes stack.**
 
@@ -294,7 +296,7 @@ exec SyncIntakeFormats
 exec PlatformAccess
 ```
 
-`PushArgoStacks` needs the K3s cluster installed in step 3, and runs `PushCharts` itself to publish the Helm charts to your OCI registry before it pushes the ArgoCD stack manifests to your Git repository. Run it after `PushDataBundles`: `PushArgoStacks` points the content updaters to the bundles only once they are in your registry. It succeeds without a commit when the generated manifests are unchanged.
+`PushArgoStacks` first runs `PushCharts`, which pushes the Helm charts to your OCI registry, then publishes the ArgoCD stack manifests to your Git repository. It needs the installed cluster: it retrieves the cluster credentials and synchronizes the ArgoCD root application when it already exists. Run it after `PushDataBundles`: it points the content updaters to the bundles only once they are in your registry. A repeated run succeeds without a commit when the generated manifests are unchanged.
 
 `SyncRulesCatalog` and `SyncIntakeFormats` synchronize their ArgoCD applications and wait for the job that loads the content to succeed, for up to 900 seconds each. To allow more time for a large catalog, add `--set modules.sync_rules_catalog.sync_timeout=<SECONDS>` or `--set modules.sync_intake_formats.sync_timeout=<SECONDS>`.
 
@@ -366,7 +368,7 @@ Every check must report `OK`. A `CRIT` or `WARN` result names the affected servi
 To open the Sekoia interface, navigate to the URL set in `global.host` of your `config.yml` (for example, `https://app.sekoia.local`).
 
 !!! note "First login"
-    `PlatformAccess` returns the generated instance-administrator credentials at the end of the installation. Store them securely, then use them to create your first operational community. See [Set up the first administrator account](/self_hosted/1.0.1/operations/first_login.md). To display them again, run `exec PlatformAccess`: it reads them from Vault each time. In the TUI, they are also written to the run log file, so remove them from that file before you share it.
+    `PlatformAccess` displays the generated instance-administrator credentials during the installation, before `InstanceBootstrap` and `ScaleServices` run. Scroll back in the output, or run `exec PlatformAccess` to display them again. Store them securely, then use them to create your first operational community. See [Set up the first administrator account](/self_hosted/1.0.1/operations/first_login.md). In the TUI, they are also written to the run log file, so remove them from that file before you share it.
 
 ## Related links
 

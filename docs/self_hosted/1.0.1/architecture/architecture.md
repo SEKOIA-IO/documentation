@@ -4,7 +4,7 @@ Sekoia Self-Hosted is a containerized platform deployed on a K3s Kubernetes clus
 
 ## Platform components
 
-The platform is delivered as a release archive with a SHA-256 checksum. The container images and the security content bundles of the release are signed with cosign, and the release ships the public key of the signature, `cosign.pub`. The SHC does not verify these signatures. The release packages the following component groups.
+The platform is delivered as a single archive with a SHA-256 checksum. The container images and the data bundles inside it are signed with cosign. The release ships the public key of the signature, `cosign.pub`, and the SHC does not verify these signatures. The archive packages the following component groups.
 
 ### Orchestration layer
 
@@ -14,7 +14,7 @@ The platform is delivered as a release archive with a SHA-256 checksum. The cont
 | K3s | A lightweight Kubernetes distribution, version v1.31.12+k3s1, that the SHC installs offline, from files shipped in its container image, on every manager and worker node. Runs all platform containers. |
 | ArgoCD | GitOps engine that reconciles the desired platform state, defined by the stacks the SHC publishes to your Git repository, against the live cluster state. |
 | Helm | Package manager. The SHC deploys the cluster add-ons (Cilium, CoreDNS, cert-manager, and metrics-server) with Helm, and ArgoCD deploys the platform services from the Helm charts that the SHC pushes to your OCI registry. |
-| Ansible | Used by the self-hosted-controller (SHC) to act on the compute nodes over SSH: preflight checks, K3s installation, cluster add-on deployment, kubeconfig retrieval, and node cleanup when you reset the platform. Apart from the kernel settings that K3s and Kafka need and the `lvm2` and `gettext-base` packages, the SHC does not configure the operating system. |
+| Ansible | Used by the self-hosted-controller (SHC) to provision the compute nodes: preflight checks, K3s installation, cluster services installation, and kubeconfig retrieval. It does not configure the operating system beyond the changes listed in [Changes applied by the SHC to the nodes](/self_hosted/1.0.1/deployment/deployment_prerequisites.md#changes-applied-by-the-shc-to-the-nodes). |
 | CoreDNS | Provides service discovery and DNS resolution inside the Kubernetes cluster, and forwards the other queries to the DNS servers set in `global.forward_dns`. |
 | Cilium | Provides container networking and network policy enforcement across the cluster, and replaces kube-proxy. |
 | Traefik | Runs on every node and routes the external HTTPS, Syslog, and RELP traffic to the services running in the cluster. Terminates TLS with the platform certificate you provide. |
@@ -35,6 +35,7 @@ The Sekoia platform logic runs as a set of decoupled microservices deployed in t
 | Redis and KeyDB | In-memory data stores used for caching and inter-service communication. |
 | Kafka | Distributed event-streaming platform used to transport data between processing services. |
 | ZooKeeper | Coordination service used by distributed data services. |
+| RabbitMQ | Message broker of Hatchet, the workflow engine. The RabbitMQ cluster operator deploys it in the `hatchet` namespace. |
 | ExaLog | Distributed event indexing and search engine backed by the customer-provided S3-compatible storage. ExaLog is built on Quickwit: SHC configuration keys, commands, and logs use the name `quickwit`. |
 | MinIO | In-cluster S3-compatible storage, on a Ceph volume, for the files that platform services store, such as notebook results and exported events. It is separate from the customer-provided event store. |
 
@@ -53,6 +54,7 @@ The Sekoia platform logic runs as a set of decoupled microservices deployed in t
 | Prometheus | Collects system- and application-level metrics across all nodes and namespaces, and evaluates the platform alert rules. |
 | Alertmanager | Receives the alerts fired by the platform alert rules. It has no notification receiver: connecting it to your notification channels is your responsibility. |
 | TLS certificate exporter | Checks the TLS certificate configured and served for the platform, for the console and ingestion diagnostics and alerts. |
+| Metric exporters | `node-exporter` exposes the Linux metrics of every node. `kafka-exporter` exposes the Kafka topics, partitions and consumer lag. `celery-exporter` exposes the Celery queues and tasks of the platform APIs. `symphony-exporter` exposes the playbook executions. |
 | Loki | Centralized log aggregation. Reachable without authentication on NodePort 30011 of every node: restrict that port to your monitoring clients. See [Network requirements](/self_hosted/1.0.1/deployment/network_requirements.md#nodeport-services). |
 | Promtail | Agent running on every node, scraping container logs and forwarding them to Loki. |
 | Grafana | Visualization layer. Provides the **Default** dashboard, organized in rows per platform layer. Also serves as the Explore interface for Loki log queries. |
@@ -77,11 +79,13 @@ The platform spans the following infrastructure components, all provisioned and 
 | Manager node | 3 | Runs the Kubernetes control plane (API server, etcd, and scheduler) and, like the workers, platform workloads. Three managers keep the control plane available when one of them fails. Exactly three managers is the supported production topology. |
 | Worker node | 3 (more with volume, see sizing) | Runs platform microservices, databases, and observability components, alongside the managers. |
 
+Sekoia Self-Hosted 1.0.1 has no GPU node role: the AI features that run on GPU nodes are not available in this release. See [AI features](/self_hosted/1.0.1/release_notes.md#ai-features) in the release notes.
+
 For hardware requirements and sizing per node role, see [Technical requirements](/self_hosted/1.0.1/deployment/deployment_prerequisites.md).
 
 ## High availability
 
-The minimum cluster has 6 servers: 3 managers and 3 workers. This topology provides the following:
+The minimum cluster has 6 servers: 3 managers and 3 workers. The SHC does not enforce it: `CheckServerSpec` validates each node on its own. The inventory accepts any number of managers and workers. The topology is a Sekoia support requirement, and a deployment with fewer nodes is not supported. This topology provides the following:
 
 - Control plane: etcd and the Kubernetes API server run on the 3 managers, so the cluster keeps its control plane when one manager fails.
 - Replicated storage: Ceph keeps two copies of each persistent volume on two different nodes, and Kafka replicates each partition on two brokers.

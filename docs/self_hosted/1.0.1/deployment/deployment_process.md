@@ -97,8 +97,6 @@ list
     WipeStorageDisks               Wipe auto-mode Ceph disks and Rook host state (requires modules.wipe_storage.enabled; K3s/Ceph stopped)
     ```
 
-The `list` output also shows modules that Sekoia uses for development and testing. This documentation does not describe them: do not run them on a production platform.
-
 ExaLog, the event storage and search capability, runs on Quickwit. Some module names, logs, and configuration keys keep the `quickwit` name, such as the `InstanceBootstrap` description above.
 
 ### Commands that need care
@@ -123,19 +121,19 @@ The `Install` command runs every module below, in order, grouped into four stage
 
 | Stage | Modules | What the stage does |
 | :--- | :--- | :--- |
-| `checks` | `CheckLocalConfig`, `CheckLocalGit`, `CheckLocalOCIRegistry`, `DownloadReleaseFiles`, `CheckLocalReleaseFiles`, `CheckServersAreReachable`, `CheckServerSpec`, `CheckLocalTools`, `CheckNodePortReachability` | Validates the configuration and the repositories, downloads the release files in online mode, checks the local release directories and the SSH access to every node, validates every node against the hardware, OS, storage, hostname, and time-sync requirements, checks the controller tools, and tests the network paths between nodes on the cluster ports. |
-| `push` | `DownloadDataFiles`, `PushImages`, `PushDataBundles` | Resolves the security content bundles, then publishes the images and the detection rules and intake formats bundles to your OCI registry. |
+| `checks` | `CheckLocalConfig`, `CheckLocalGit`, `CheckLocalOCIRegistry`, `DownloadReleaseFiles`, `CheckLocalReleaseFiles`, `CheckServersAreReachable`, `CheckServerSpec`, `CheckLocalTools`, `CheckNodePortReachability` | Validates the configuration and the repositories, downloads the release files in online mode, then validates the local release directories, the controller tools, every node against the hardware, OS, storage, hostname, and time-sync requirements, and the network paths between nodes on the cluster ports. |
+| `push` | `DownloadDataFiles`, `PushImages`, `PushDataBundles` | Resolves the security content bundles, then publishes the images and the detection rules and intake formats bundles to your local OCI registry. |
 | `kubernetes` | `K3SInstall`, `GetKubeconfig`, `HelmInstall`, `CheckKubernetesCluster` | Installs the K3s cluster and the cluster services, then verifies that every node is `Ready`. |
-| `platform` | `PushArgoStacks`, `PlatformConfigurationFile`, `PlatformInstallation`, `SyncRulesCatalog`, `SyncIntakeFormats`, `PlatformAccess`, `InstanceBootstrap`, `ScaleServices` | Publishes the Helm charts to your OCI registry and the ArgoCD stacks to your Git repository, renders the installer values, runs the platform installer, deploys the detection rules catalog and the intake formats, returns the access credentials, provisions the default storage and ExaLog indexes, and scales the workers to their target replica count. |
+| `platform` | `PushArgoStacks`, `PlatformConfigurationFile`, `PlatformInstallation`, `SyncRulesCatalog`, `SyncIntakeFormats`, `PlatformAccess`, `InstanceBootstrap`, `ScaleServices` | Publishes the Helm charts and the ArgoCD stacks to your local repositories, renders the installer values, runs the platform installer, deploys the detection rules catalog and the intake formats, returns the access credentials, provisions the default storage and ExaLog indexes, and scales the workers to their target replica count. |
 
-`PushArgoStacks` opens the `platform` stage because it needs a running K3s cluster: it retrieves the kubeconfig before it publishes the stacks.
+`DownloadReleaseFiles` runs in the `checks` stage. In online mode, it downloads the release files from the Sekoia S3 bucket, so missing or invalid bucket credentials fail the installation at this point. In air-gapped mode, it uses the files extracted from the archive. `PushArgoStacks` runs after the cluster is installed, because it retrieves the cluster credentials and synchronizes the ArgoCD root application when it already exists.
 
 ### Automatic prerequisites and repeated modules
 
 Some modules invoke their prerequisites every time they run. Consequently, the log contains more module executions than the four-stage table:
 
 - `PushImages` and `PushCharts` invoke `DownloadReleaseFiles` first, and `PushDataBundles` invokes `DownloadDataFiles` first.
-- `PushArgoStacks` invokes `DownloadReleaseFiles` and `GetKubeconfig` first, then runs `PushCharts` to publish the Helm charts that the stacks reference. When the ArgoCD root application already exists, it also runs `SyncArgoRootApp` after the push.
+- `PushArgoStacks` runs `PushCharts` to publish the Helm charts, then retrieves a current kubeconfig, before it publishes the stacks.
 - `HelmInstall`, `PlatformInstallation`, `PlatformAccess`, `DebugMissingSecrets`, and `CheckS3Performance` first run `CleanupHelmReleases`, which retrieves a current kubeconfig. See [Interrupted Helm operations](#interrupted-helm-operations).
 - `PlatformInstallation`, `PlatformAccess`, and `DebugMissingSecrets` also regenerate the platform configuration before running.
 - `SyncRulesCatalog` and `SyncIntakeFormats` each run `SyncArgoRootApp` first, so the ArgoCD root application applies the latest application definitions before the content synchronization.
@@ -191,8 +189,8 @@ The SHC handles the full platform lifecycle beyond initial installation.
 | Resource usage analysis | `DebugResourceAllocation` |
 | Platform configuration re-apply | `PlatformConfigurationFile`, `PlatformInstallation` |
 | Full ArgoCD re-synchronization | `DebugArgoCDSyncAll` |
-| Node reboot | `RebootNodes` |
-| Recover from a node crash or cluster restart | `KubeCrashRecovery` |
+| Cold restart of the whole cluster, with a full outage | `RebootNodes`, then `KubeCrashRecovery`. See [Run a cold restart of the whole cluster](/self_hosted/1.0.1/operations/node_maintenance.md#run-a-cold-restart-of-the-whole-cluster). |
+| Restart every pod after a crash of several nodes, with a full outage | `KubeCrashRecovery`. See [KubeCrashRecovery](/self_hosted/1.0.1/troubleshooting/debug_tool.md#kubecrashrecovery). |
 | Live node resource usage | `GetServerStatus` |
 | Service health check per platform area | `Diagnostic` |
 | Import the CTI database | `ImportArangoCollection`. See [Import the CTI database](/self_hosted/1.0.1/operations/import_cti_database.md). |

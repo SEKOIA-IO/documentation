@@ -73,7 +73,7 @@ To display successful checks as well as warnings and critical checks, set `modul
 exec Diagnostic --set modules.diagnostic.targets=alerts --set modules.diagnostic.hide_ok=false
 ```
 
-The default `rich` format prints a color-coded table, then one detail panel per rule that is not `OK`. To send the report to another tool, set `modules.diagnostic.format` to `text` (plain text, no markup) or `json`:
+By default, `modules.diagnostic.format` is `rich`: the report is rendered with colors and tables in the terminal. To send the report to another tool, set it to `text` or `json`:
 
 ```bash
 exec Diagnostic --set modules.diagnostic.format=json --set modules.diagnostic.hide_ok=false
@@ -85,7 +85,7 @@ To check which rules a target contains without querying Prometheus, set `modules
 exec Diagnostic --set modules.diagnostic.targets=node --set modules.diagnostic.dry_run=true
 ```
 
-The `rich`, `text`, and `json` formats apply to the terminal output, and `hide_ok` filters all three.
+The `format` and `hide_ok` settings apply to the terminal report of the CLI. The Diagnostics tab of the SHC interface renders one panel per rule, successful ones included, whatever these settings are.
 
 ## Run a diagnostic from the SHC interface
 

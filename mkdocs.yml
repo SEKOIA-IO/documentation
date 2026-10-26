@@ -775,6 +775,7 @@ nav:
       - Back up the platform: self_hosted/1.0.1/operations/backups.md
       - Update the security content: self_hosted/1.0.1/operations/update_security_content.md
       - Rotate the certificate and credentials: self_hosted/1.0.1/operations/rotate_certificate_and_credentials.md
+      - Patch and restart the nodes: self_hosted/1.0.1/operations/node_maintenance.md
       - Reset or destroy the platform: self_hosted/1.0.1/operations/reset_platform.md
     - Monitoring and troubleshooting:
       - Monitor your platform: self_hosted/1.0.1/monitoring/monitoring_guide.md

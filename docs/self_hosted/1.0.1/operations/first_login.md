@@ -10,10 +10,38 @@ During the installation, the self-hosted-controller (SHC) displays the platform 
 
 ## Retrieve the initial credentials
 
-The platform installer generates the administrator passwords and the API key of the instance administrator at installation time, and stores them in Vault. During `Install`, once the platform installer completes, the `PlatformAccess` step reads them from Vault and displays them in the terminal. Because `PlatformAccess` reads them from Vault each time it runs, you can display them again with the same command.
+During the installation, the `PlatformAccess` module displays the access credentials in the terminal output, under an `Instance access` title. It runs after the platform is installed, before `InstanceBootstrap` and `ScaleServices`, so the credentials are not the last lines of the installation output.
+
+The platform installer generates these credentials at installation time and stores them in Vault. `PlatformAccess` reads them from Vault each time it runs, so you can display them again with the same command.
 
 !!! warning "The output contains credentials in clear"
     The output holds the administrator passwords of the Sekoia platform, ArgoCD, and Grafana, and the API key of the instance administrator. Run the command only when you need them, on a terminal that nobody else can see, and never paste its output in a ticket, a chat, or a screenshot. In the TUI, the output is also written to the run log file. See [Use the SHC interface](/self_hosted/1.0.1/operations/controller_interface.md#navigate-the-interface).
+
+??? example "Example output"
+    ```text
+    Instance access
+
+    argocd
+      url:      https://<global.delivery_host>/argo
+      user:     admin
+      password: <password>
+
+    grafana
+      url:      https://<global.delivery_host>/grafana
+      user:     admin
+      password: <password>
+
+    sekoiaio
+      url:      https://<global.host>/user
+      user:     instanceadmin@sekoia.io
+      password: <password>
+      apikey:   <API key>
+    ```
+
+The output lists three services: the Sekoia platform (`sekoiaio`), the ArgoCD GitOps console (`argocd`), and the Grafana observability dashboard (`grafana`). The URLs come from your `config.yml`: the platform is served on `global.host`, and ArgoCD and Grafana under the `/argo` and `/grafana` paths of `global.delivery_host`. For example, with `delivery_host: "admin.example.com"`, the Grafana URL is `https://admin.example.com/grafana`. The `sekoiaio` entry also gives the `apikey` of the instance administrator, used by the API calls of this guide. Save the three sets of credentials in a secure location.
+
+!!! warning "Credentials are auto-generated"
+    Passwords and API keys are randomly generated at installation time. They are displayed once during the installation. If you did not save them, use the command in the next step to redisplay them.
 
 To display the credentials, run:
 
@@ -124,7 +152,7 @@ On the orchestration node, run:
 exec PlatformAccess
 ```
 
-The command displays the platform access credentials. Copy the `apikey` value of the `sekoiaio` entry: it is the API key of the instance administrator. Handle it as a password.
+The command displays the platform access credentials. Copy the `apikey` value of the `sekoiaio` service. Handle it as a password.
 
 ### Step 3: Register the SSO domain
 

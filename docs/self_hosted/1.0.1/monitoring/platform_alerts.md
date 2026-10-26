@@ -4,13 +4,10 @@ Sekoia Self-Hosted evaluates a set of Prometheus alert rules against the platfor
 
 ## How platform alerts work
 
-Prometheus evaluates the alert rules bundled with the platform every 15 seconds and forwards any firing alert to the Alertmanager instance installed on the platform.
-
-!!! warning "No alert notification by default"
-    The Alertmanager of the platform has no notification receiver: it sends no email, message, or page. Connecting the platform alerts to your notification channels is your responsibility.
+Prometheus evaluates the alert rules bundled with the platform every 15 seconds and forwards any firing alert to the Alertmanager instance installed on the platform. In Sekoia Self-Hosted 1.0.1, Alertmanager has no notification receiver configured: a firing alert is not sent by email or to any external tool. Review the alerts in Grafana.
 
 !!! note "Where to check firing alerts"
-    To check what an alert reports, run the diagnostic of its group, as listed in each group below, or open the relevant row of the **Default** Grafana dashboard, which surfaces the underlying metrics for each alert group. See [Monitor your platform](/self_hosted/1.0.1/monitoring/monitoring_guide.md) for the full dashboard reference.
+    Prometheus and Alertmanager are not exposed outside the cluster: only Grafana has an ingress. To review the alert rules and their state, open `https://<global.delivery_host>/grafana`, then select **Alerting > Alert rules**. The platform alerts appear as data-source-managed rules of the Prometheus data source, grouped by alert group, with their `Normal`, `Pending`, or `Firing` state. The rows of the **Default** Grafana dashboard show the underlying metrics, not the alert states. See [Monitor your platform](/self_hosted/1.0.1/monitoring/monitoring_guide.md) for the full dashboard reference.
 
 !!! warning "Investigate before taking action"
     A firing alert can cascade into ingestion, correlation, and alerting delays across the whole platform. Follow the [recommended incident response workflow](/self_hosted/1.0.1/monitoring/monitoring_guide.md#recommended-incident-response-workflow) to confirm cluster and database health before restarting or scaling affected resources.
@@ -206,6 +203,8 @@ exec Diagnostic --set modules.diagnostic.targets=kafka
 | KafkaTopicBacklogGrowing | Error | The consumer backlog of a topic exceeds 500 messages and 2 minutes of consumption, and has kept growing over the last 10 minutes, for 5 minutes. | Everything downstream of the topic falls behind. |
 
 The `kafka` diagnostic also reports replicas that keep leaving and re-entering the in-sync set. This check has no matching alert: run the diagnostic to see it.
+
+The `kafka_replica_isr_flapping` rule of the Kafka diagnostic has no matching alert. It reports replicas that keep leaving and re-entering the in-sync set, a sign of inter-node network latency or broker saturation, and is evaluated only when you run the Kafka diagnostic.
 
 ## Nodes
 

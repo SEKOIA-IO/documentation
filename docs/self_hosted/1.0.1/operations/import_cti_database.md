@@ -76,7 +76,14 @@ To import the CTI database, run:
 exec ImportArangoCollection
 ```
 
-The SHC reads the ArangoDB root password of the platform from the `arangodb-operator-dashboard` secret of the `support` namespace. You do not pass it to the SHC.
+The SHC reads the ArangoDB root password of the platform from the `arangodb-operator-dashboard` secret of the `support` namespace. You do not pass it to the SHC. To use another password or another secret, set the following optional fields in `config.yml`:
+
+| Field | Description | Default |
+| :--- | :--- | :--- |
+| `utils.arango.password` | ArangoDB password. When set, the SHC does not read the secret. | Empty |
+| `utils.arango.password_secret.namespace` | Namespace of the secret holding the ArangoDB password. | `support` |
+| `utils.arango.password_secret.name` | Name of the secret. | `arangodb-operator-dashboard` |
+| `utils.arango.password_secret.key` | Key of the password in the secret. | `password` |
 
 ## Select a CTI version
 
@@ -86,6 +93,7 @@ By default, the command imports the latest CTI export. To import another export,
 | :--- | :--- |
 | `latest` | The latest completed export. This is the default. |
 | A day, for example `2026-09-03` | The most recent completed export of that day, for each collection. |
+| An exact export, for example `2026-09-03T09` | The export of that ID, for every collection. The SHC refuses it unless its checkpoint shows a completed export. |
 
 For example, to import the export of a given day for one run:
 

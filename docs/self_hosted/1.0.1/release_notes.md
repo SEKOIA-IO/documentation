@@ -55,16 +55,24 @@ Sekoia Self-Hosted 1.0.1 is the first generally available release of Sekoia Self
 
 ## Technical foundation
 
-| Attribute              | Value                         |
-| :---                   | :---                          |
-| Kubernetes distribution | K3s v1.31.12+k3s1            |
-| Supported node OS      | Debian 12 (Bookworm) or Debian 13 (Trixie) |
-| Distributed storage    | Rook 1.9.13 with Ceph 16.2.15 |
-| GitOps engine          | ArgoCD                        |
-| Secret management      | HashiCorp Vault               |
-| Relational database    | PostgreSQL via CloudNativePG  |
-| Columnar storage       | ClickHouse                    |
-| Observability stack    | Grafana, Prometheus, Loki, Alertmanager |
+The versions below are those of the release bundle.
+
+| Attribute | Value |
+| :--- | :--- |
+| Kubernetes distribution | K3s v1.31.12+k3s1 |
+| Supported node OS | Debian 12 (Bookworm) or Debian 13 (Trixie) |
+| Container networking | Cilium 1.15.10 |
+| Cluster DNS | CoreDNS 1.11.1 |
+| HTTP entry point | Traefik v2.11.2 |
+| Certificates | cert-manager v1.15.3 |
+| Persistent storage | Rook v1.9.13 and Ceph v16.2.15 |
+| GitOps engine | ArgoCD v3.1.0 |
+| Secret management | HashiCorp Vault |
+| Relational database | PostgreSQL 17 via CloudNativePG 1.25 |
+| Columnar storage | ClickHouse 24.8.8 |
+| Event streaming | Kafka 4 managed by the Strimzi operator 0.51.0, with ZooKeeper 3.7 |
+| Other data stores | ArangoDB 3.8.9, KeyDB 6.3.4, Redis 8.4.0, MinIO |
+| Observability stack | Grafana 13.2.4, Prometheus v2.46.0, Alertmanager v0.33.1, Loki 2.8.7, Promtail 2.1.0 |
 
 ## Functional scope
 
@@ -85,7 +93,7 @@ The functional scope aligns with the **Defend Core** subscription tier. Defend C
 | Anomaly Detection Engine | Yes | |
 | Case Management | Yes | |
 | Hot Storage | Yes | |
-| Sekoia Endpoint Agent | No | The `xdr-agent-api` service is not installed in this release. |
+| Sekoia Endpoint Agent | No | The `xdr-agent-api` service and its databases are deployed with the platform, but the Sekoia Endpoint Agent is not supported in this release. Do not enroll agents. |
 | Contextualized Alerts | Yes | Requires the [CTI database import](/self_hosted/1.0.1/operations/import_cti_database.md). |
 | Intelligence module | No | Not available in this release, even after the CTI database import. |
 | SOL Query Builder | Yes | |
@@ -116,7 +124,7 @@ Reveal is available with Sekoia Self-Hosted 1.0.1 under a dedicated subscription
 | Asset Timeline | Yes | |
 | Points of Interest | Yes | |
 | Attack Path Visualization | Yes | |
-| Endpoint Hygiene | No | Requires the `xdr-agent-api` service, which is not installed in this release. |
+| Endpoint Hygiene | No | Requires the Sekoia Endpoint Agent, which is not supported in this release. |
 | Vulnerability Enrichment | No | Requires NVD enrichment, which is not supported in this release. |
 | Asset creation, enrichment, and unification | Yes | The asset connector pipeline operates as expected. |
 | Defense Coverage | Yes | |
@@ -156,10 +164,11 @@ The following limitations apply to Sekoia Self-Hosted 1.0.1.
 | Playbook library not updatable | `UpdatePlatformData` updates the detection rules and intake formats, but the playbook library stays at the version deployed during the installation. | Contact Sekoia if your deployment requires an updated playbook library before the next release. |
 | Node removal not supported | You cannot remove a node from a running cluster with the SHC. | None. |
 | No graphical or web UI for platform administration | Infrastructure management is available only from the orchestration node. | Use the self-hosted-controller (SHC) terminal interface or one-shot CLI together with `config.yml` for administrative operations. |
-| Node operating system not configured by the SHC | The SHC installs only `lvm2` and `gettext-base` when they are missing, with `apt`. It does not install or configure the rest of the operating system. | Provision the operating system and packages listed in [Technical requirements](/self_hosted/1.0.1/deployment/deployment_prerequisites.md#operating-system-packages) before you start the installation. |
+| Node operating system not managed by the SHC | The SHC does not install or harden the operating system of the nodes. During the K3s installation, it only installs `lvm2` and `gettext-base`, adds a systemd unit that activates the Ceph LVM volume groups at boot, and raises the inotify and `vm.max_map_count` kernel limits. | Provision the operating system and packages listed in [Technical requirements](/self_hosted/1.0.1/deployment/deployment_prerequisites.md) before you start the installation, and review [Changes applied by the SHC to the nodes](/self_hosted/1.0.1/deployment/deployment_prerequisites.md#changes-applied-by-the-shc-to-the-nodes). |
 | Intelligence module not available | You cannot explore threat actors, campaigns, and observables in the Intelligence module, even after the CTI database import. | None. |
 | Secrets in some SHC outputs | `config show` prints every resolved secret in clear. With the verbose option `-v`, the SHC logs the registry password during the K3s installation. | Run `config show` and verbose commands only when you need them, and do not share their output or the verbose logs. |
 | Loki reachable without authentication | Loki answers on NodePort 30011 of every node and does not require authentication. | Block port 30011 at the perimeter and open it only to your monitoring clients. See [Network requirements](/self_hosted/1.0.1/deployment/network_requirements.md#nodeport-services). |
+| Unused images in the release bundle | The release bundle still contains the 14 `longhornio/*` images of the legacy storage backend, and `PushImages` pushes them to your OCI registry, but no ArgoCD application deploys them. | None: the images take space in your registry only. |
 | Ceph panels empty in Grafana | The Ceph metrics are not collected, so the Ceph panels of the **Default** dashboard stay empty. | Check the Ceph status in the Storage tab of the [SHC interface](/self_hosted/1.0.1/operations/controller_interface.md). |
 
 ## Related links
