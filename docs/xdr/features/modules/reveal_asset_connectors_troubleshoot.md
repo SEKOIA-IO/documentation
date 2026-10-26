@@ -39,8 +39,8 @@ Review the log entries to identify the root cause. Common issues include:
 
     If the connector runs on a local runner, check the runner before changing the connector configuration.
 
-    1. Navigate to **Configure > Assets > Local runners**.
-    2. Confirm that the selected runner is **Online**.
+    1. Navigate to **Configure > Assets**, then select **Local runners**.
+    2. Confirm that the selected runner is not marked **Offline**.
     3. Check the runner's last activity, hostname, and version.
     4. If the runner is offline or cannot reach Sekoia, check the host connectivity, proxy configuration, Docker service, and Endpoint Agent logs.
 
