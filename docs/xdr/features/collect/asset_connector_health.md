@@ -6,8 +6,8 @@ The asset connectors panel provides visibility into whether a connector is exper
 
 ## Access the asset connectors panel
 
-1. Navigate to **Configure > Assets**.
-2. To open the **Asset Connectors** panel, click on the **Asset connectors** button (upper hand side of the **Assets** page).
+1. Go to **Configure > Assets**.
+2. To open the **Asset Connectors** panel, select the **Asset connectors** button (upper hand side of the **Assets** page).
 
 From this panel, you can review connector error states and open detailed logs for a specific connector.
 
@@ -15,7 +15,7 @@ From this panel, you can review connector error states and open detailed logs fo
 
     Some asset connectors run from a local runner inside your environment. The local runner and asset connector must belong to the same community, and that community must have a Reveal subscription.
 
-    If a local connector job fails or stops retrieving assets, navigate to **Configure > Assets > Local runners** and confirm that the selected runner is **Online**. Review its last activity, hostname, and version. If the runner is offline, see [Local runners](/xdr/features/automate/playbooks-on-premises.md) for proxy, Docker, and Endpoint Agent checks.
+    If a local connector job fails or stops retrieving assets, go to **Configure > Assets > Local runners** and confirm that the selected runner is **Online**. Review its last activity, hostname, and version. If the runner is offline, see [Local runners](/xdr/features/automate/playbooks-on-premises.md) for proxy, Docker, and Endpoint Agent checks.
 
 **Possible error states**
 
@@ -32,7 +32,7 @@ Connector logs help you understand what happened during a connector run. Use the
 
 ### Open connector logs
 
-1. Navigate to **Configure > Assets**.
+1. Go to **Configure > Assets**.
 2. Open the **Asset Connectors** panel.
 3. Open the **...** menu for the connector you want to inspect.
 4. Select **View logs**.
@@ -75,10 +75,10 @@ Useful information about what happened during the run, including:
 - import, update, or skip actions applied to assets
 
 
-## Related links
+## Related articles
 
-- [Asset context panel](/xdr/features/investigate/asset_context_panel.md) — Full reference for the asset context panel, which displays data enriched by asset connectors including security controls, vulnerabilities, and hygiene information.
-- [Attack path visualization](/xdr/features/investigate/attack_path_visualization.md) — How attack path graph enrichment depends on asset connectors providing relationship and exposure data.
-- [Integration — Asset categories](/integration/assets_categories/overview.md) — Reference documentation for asset connector categories and integration setup.
-- [Collect — Assets](/xdr/features/collect/assets.md) — How assets are configured and discovered in Sekoia, including the role of asset connectors in the collection pipeline.
+- [Asset context panel](/xdr/features/investigate/asset_context_panel.md): Full reference for the asset context panel, which displays data enriched by asset connectors including security controls, vulnerabilities, and hygiene information.
+- [Attack path visualization](/xdr/features/investigate/attack_path_visualization.md): How attack path graph enrichment depends on asset connectors providing relationship and exposure data.
+- [Integration — Asset categories](/integration/assets_categories/overview.md): Reference documentation for asset connector categories and integration setup.
+- [Collect — Assets](/xdr/features/collect/assets.md): How assets are configured and discovered in Sekoia, including the role of asset connectors in the collection pipeline.
 - [Local runners](/xdr/features/automate/playbooks-on-premises.md): How to check the status and connectivity of runners used for local asset connector jobs.

@@ -4,7 +4,7 @@ This article explains how to identify and resolve issues with asset connectors u
 
 ## Before you begin
 
-To access the asset connector list, navigate to **Configure > Assets > Asset connectors**.
+To access the asset connector list, go to **Configure > Assets > Asset connectors**.
 
 ## Step 1: Identify a defective connector
 
@@ -39,7 +39,10 @@ Review the log entries to identify the root cause. Common issues include:
 
     If the connector runs on a local runner, confirm that the runner and connector belong to the same community.
 
-    Navigate to **Configure > Assets > Local runners** and confirm that the selected runner is **Online**. Check the runner's last activity, hostname, and version. If the runner is offline or cannot reach Sekoia, check the host connectivity, proxy configuration, Docker service, and Endpoint Agent logs.
+     1. Go to **Configure > Assets > Local runners**.
+     2. Confirm that the selected runner is **Online**. 
+     3. Check the runner's last activity, hostname, and version. 
+     4. If the runner is offline or cannot reach Sekoia, check the host connectivity, proxy configuration, Docker service, and Endpoint Agent logs.
 
     For runner configuration and connectivity checks, see [Local runners](/xdr/features/automate/playbooks-on-premises.md). For Endpoint Agent logs, see [Troubleshoot the Sekoia Endpoint Agent](/integration/categories/endpoint/troubleshoot_sekoia_endpoint_agent.md).
 
@@ -59,11 +62,11 @@ The connector resumes synchronization with the updated configuration.
 !!! note "What the test checks"
     The test validates credentials only. It does not retrieve assets. Verify asset retrieval from the **Assets** page after saving.
 
-## Related links
+## Related articles
 
-- [Create an asset connector](/xdr/features/modules/reveal_asset_connectors_create.md) — How to configure a new asset connector from the integration catalog.
-- [Reveal feature enablement matrix](/xdr/features/modules/reveal_feature_enablement.md) — Which data sources are required for each Reveal capability.
-- [Security controls](/xdr/features/modules/reveal_security_controls.md) — How to verify connector coverage and identify visibility gaps from the asset context panel.
-- [Troubleshoot Reveal](/xdr/features/modules/reveal_troubleshoot.md) — General Reveal troubleshooting for missing data across capabilities.
+- [Create an asset connector](/xdr/features/modules/reveal_asset_connectors_create.md): How to configure a new asset connector from the integration catalog.
+- [Reveal feature enablement matrix](/xdr/features/modules/reveal_feature_enablement.md): Which data sources are required for each Reveal capability.
+- [Security controls](/xdr/features/modules/reveal_security_controls.md): How to verify connector coverage and identify visibility gaps from the asset context panel.
+- [Troubleshoot Reveal](/xdr/features/modules/reveal_troubleshoot.md): General Reveal troubleshooting for missing data across capabilities.
 - [Local runners](/xdr/features/automate/playbooks-on-premises.md): How to check runner status and troubleshoot local execution.
 - [Troubleshoot the Sekoia Endpoint Agent](/integration/categories/endpoint/troubleshoot_sekoia_endpoint_agent.md): How to collect Endpoint Agent logs and diagnose connectivity issues.

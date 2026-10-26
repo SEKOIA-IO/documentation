@@ -2,7 +2,7 @@
 
 Local runners are hosts in your environment where the Sekoia Endpoint Agent executes eligible playbook actions and asset connector jobs. The runner polls Sekoia for jobs and initiates every connection itself, so Sekoia Cloud does not need inbound access to the host where the local runner is installed.
 
-Local runners were previously called **Playbook runners**. Only the name changed. Existing runners keep their identifier and configuration, appear on the **Local runners** page, and do not need to be reinstalled. The installation command still uses the `--playbook-runner` option.
+Local runners were previously called **Playbook runners**. The name changed in the interface, but existing runners keep their identifiers and configuration, appear on the **Local runners** page, and do not need to be reinstalled. The installation command still uses the \--playbook-runner` option.`
 
 !!! warning "Asset connector requirements"
 
@@ -51,14 +51,16 @@ The local runner requires both the Docker client and the Docker engine. If Podma
 
 ### Network access
 
-All connections are outbound HTTPS connections initiated by the host. The Sekoia Endpoint Agent must be able to connect to the domains required by your region. The host needs access to the following domains in the FRA1 region:
+The local runner initiates connections to Sekoia Cloud and to the systems used by local actions and asset connectors. For installation and communication with Sekoia Cloud, the host must allow outbound HTTPS access to the domains required by your region.
+
+ The host needs access to the following domains in the FRA1 region:
 
 - `ghcr.io` and `githubusercontent.com` to download module images.
 - `sekoia.io`, `app.sekoia.io`, `api.sekoia.io`, and `minio-symphony.prod.sekoia.io` to send execution results and store files.
 
 Other regions use region-specific endpoints. The local runner installation instructions display the required domains for the selected region.
 
-Asset connector jobs also need access to the system they collect from: the vendor API for a cloud service, or an internal server for an on-premise product. These requirements depend on each connector and change as connectors evolve. Check the prerequisites in the integration documentation of each connector, from [Asset categories](/integration/assets_categories/overview.md). When a connector runs on a local runner, the connection to the source system starts from the runner host: you do not need to allow inbound connections from Sekoia.
+Asset connector jobs also need access to the systems they collect from, such as a vendor API for a cloud service or an internal server for an on-premises product. Check the prerequisites in the integration documentation for each connector in [Asset categories](/integration/assets_categories/overview.md). When a connector runs on a local runner, the connection to the source system starts from the runner host, so you do not need to allow inbound connections from Sekoia.
 
 ### Test the host
 
@@ -86,7 +88,7 @@ For more information, see [Regions](/getting_started/regions.md).
 1. Open the **Local runners** page with the **Local runners** button at the top of the **Playbooks** page or of the **Configure > Assets** page.
 2. Select **+ Local runner**.
 3. In **Name of the local runner**, enter a name.
-4. If the **Account’s community** field is displayed, select the customer community where you will install the runner. This field is displayed only from a parent community used by an MSSP.
+4. If the **Community** field is displayed, select the customer community where you will install the runner. This field is displayed only from a parent community used by an MSSP.
 5. Select **Continue**.
 6. Follow the installation instructions displayed by Sekoia.
 
@@ -124,7 +126,7 @@ Playbooks and asset connectors share the same list of local runners. The **Local
 
     Local runners execute playbook actions, not playbook triggers.
 
-A local runner executes actions, not triggers. The action must also support on-premises execution: the **On-premise** option is not available for custom integrations.
+A local runner executes actions, not triggers. The action must support on-premises execution. The **On-premise** option is not available for custom integrations.
 
 1. Open the playbook that contains the action.
 2. Add a new action or select an existing action.
@@ -148,7 +150,7 @@ Local runners can execute jobs for eligible asset connectors from inside your en
 
 ### Select a local runner for an asset connector
 
-You select the local runner in the asset connector configuration, when you create the connector or when you edit it. The runner is assigned per asset connector: different connectors of the same community can use different runners.
+Select the local runner in the asset connector configuration when you create or edit the connector. The runner is assigned per asset connector, so different connectors in the same community can use different runners.
 
 1. Create or edit the asset connector.
 2. In **How do you want to execute this action**, select **On premise**. This option is displayed only for asset connectors that support local execution.
@@ -157,13 +159,13 @@ You select the local runner in the asset connector configuration, when you creat
 
 > 📸 [SCREENSHOT SUGGESTION: Asset connector configuration with On premise selected and the local runner selector. | ALT TEXT: Asset connector configuration dialog with On premise execution and a local runner chosen.]
 
-The test connection button is not available for connectors executed on premise.
+The **Test connection** button is not available for connectors that run on-premises.
 
 You can change the selected local runner at any time. To switch a connector between **Cloud** and **On premise**, stop the connector first.
 
 ### Synchronization
 
-A connector executed on premise synchronizes once a day, and once right after it is started. If a synchronization cannot start, for example because the local runner is offline, Sekoia retries it once one hour later. A synchronization that has not finished two hours after it started is marked as failed.
+A connector that runs on-premises synchronizes once when it starts and once a day thereafter. If a synchronization cannot start, Sekoia retries it once, one hour later. A synchronization that has not finished within two hours is marked as failed.
 
 Connector logs work the same way whether the connector runs in the cloud or on a local runner: the messages that the connector logs during a synchronization appear in the connector logs panel. When a synchronization fails, Sekoia also adds an error log with the message `The sync failed:` followed by the error. See [Check asset connector health](/xdr/features/collect/asset_connector_health.md).
 
