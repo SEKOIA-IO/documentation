@@ -51,7 +51,7 @@ The local runner requires both the Docker client and the Docker engine. If Podma
 
 ### Network access
 
-The Sekoia Endpoint Agent must be able to connect to the domains required by your region. The host needs access to the following domains in the FRA1 region:
+All connections are outbound HTTPS connections initiated by the host. The Sekoia Endpoint Agent must be able to connect to the domains required by your region. The host needs access to the following domains in the FRA1 region:
 
 - `ghcr.io` and `githubusercontent.com` to download module images.
 - `sekoia.io`, `app.sekoia.io`, `api.sekoia.io`, and `minio-symphony.prod.sekoia.io` to send execution results and store files.
