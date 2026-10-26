@@ -386,4 +386,4 @@ This feature allows users to dive deeper into the specifics of each authenticati
 ### Going further
 
 * [Assets FAQ](/xdr/FAQ/Assets_qa.md): Answers to frequently asked questions about assets.
-* [Playbooks Local Runners](_shared_content/automate/playbooks-on-premises.md):Discover Local runners: Sekoia's instances that execute eligible playbook actions and asset connector jobs inside your environment. 
+* [Local runners](/xdr/features/automate/playbooks-on-premises.md): How to run eligible asset connector jobs from inside your environment
