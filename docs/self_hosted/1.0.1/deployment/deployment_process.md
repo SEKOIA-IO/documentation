@@ -137,7 +137,8 @@ Some modules invoke their prerequisites every time they run. Consequently, the l
 - `HelmInstall`, `PlatformInstallation`, `PlatformAccess`, `DebugMissingSecrets`, and `CheckS3Performance` first run `CleanupHelmReleases`, which retrieves a current kubeconfig. See [Interrupted Helm operations](#interrupted-helm-operations).
 - `PlatformInstallation`, `PlatformAccess`, and `DebugMissingSecrets` also regenerate the platform configuration before running.
 - `SyncRulesCatalog` and `SyncIntakeFormats` each run `SyncArgoRootApp` first, so the ArgoCD root application applies the latest application definitions before the content synchronization.
-- `CheckKubernetesCluster`, `Diagnostic`, `InstanceBootstrap`, `ScaleServices`, and the other modules that read the cluster retrieve a current kubeconfig before running.
+- `CheckKubernetesCluster`, `InstanceBootstrap`, `ScaleServices`, and the other modules that read the cluster retrieve a current kubeconfig before running.
+- `Diagnostic` retrieves a current kubeconfig before it queries Prometheus, except in a dry run or when `utils.prometheus.url` is set.
 
 A prerequisite runs again every time a module needs it, and its failure stops the module that depends on it. `DownloadReleaseFiles`, `DownloadDataFiles`, and `GetKubeconfig` are the exceptions: as prerequisites, they are skipped for 300 seconds after a successful run in the same SHC session, which is one CLI command or one TUI session. When you run them directly, they always run.
 

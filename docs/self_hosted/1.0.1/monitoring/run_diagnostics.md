@@ -6,7 +6,7 @@ The Diagnostic module runs targeted health checks against the platform's Prometh
 
 - You have access to the orchestration node.
 - The platform and its Prometheus service are running.
-- The SHC can connect over SSH to the first manager node. The `Diagnostic` module first runs `GetKubeconfig`, which copies the kubeconfig from that node and changes nothing on the cluster. See [Prometheus connection](#prometheus-connection).
+- The SHC can connect over SSH to the first manager node. When `utils.prometheus.url` is empty, which is the default, the `Diagnostic` module first runs `GetKubeconfig`, which copies the kubeconfig from that node and changes nothing on the cluster. See [Prometheus connection](#prometheus-connection).
 - You completed the post-deployment validation in [Deploy the platform](/self_hosted/1.0.1/deployment/deployment_guide.md).
 
 !!! warning "Run diagnostics before changing the platform"
@@ -80,7 +80,7 @@ By default, `modules.diagnostic.format` is `rich`: the report is rendered with c
 exec Diagnostic --set modules.diagnostic.format=json --set modules.diagnostic.hide_ok=false
 ```
 
-To check which rules a target contains without querying Prometheus, set `modules.diagnostic.dry_run` to `true`. The module validates each rule file and lists its rules and data sources. It still runs `GetKubeconfig` first:
+To check which rules a target contains without querying Prometheus, set `modules.diagnostic.dry_run` to `true`. The module validates each rule file and lists its rules and data sources. It does not run `GetKubeconfig` and needs no access to the cluster:
 
 ```bash
 exec Diagnostic --set modules.diagnostic.targets=node --set modules.diagnostic.dry_run=true
@@ -90,7 +90,7 @@ The `format` and `hide_ok` settings apply to the terminal report of the CLI. The
 
 ## Prometheus connection
 
-By default, the `Diagnostic` module reaches Prometheus through the Kubernetes API, it retrieves the kubeconfig with `GetKubeconfig`, then opens a port-forward to the Prometheus service of the platform for the duration of the run. When `GetKubeconfig` fails, the module stops with an error before it runs any check. As a prerequisite, `GetKubeconfig` is skipped for 300 seconds after a successful run in the same SHC session.
+By default, `utils.prometheus.url` is empty and the `Diagnostic` module reaches Prometheus through the Kubernetes API: it retrieves the kubeconfig with `GetKubeconfig`, then opens a port-forward to the Prometheus service of the platform for the duration of the run. When `GetKubeconfig` fails, the module stops with an error before it runs any check. `GetKubeconfig` is skipped for 300 seconds after a successful run in the same SHC session. When `utils.prometheus.url` is set, the module queries that URL directly and does not run `GetKubeconfig`.
 
 The following keys control the connection. They are optional, set them in your `config.yml` only to reach Prometheus at another address or to allow slower queries.
 
