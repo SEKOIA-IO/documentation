@@ -122,7 +122,7 @@ A local runner executes actions, not triggers. The action must also support on-p
 1. Open the playbook that contains the action.
 2. Add a new action or select an existing action.
 3. Set **How to execute this action** to **On-premise**.
-4. Select the local runner that should execute the action.
+4. In **Using which local runner?**, select the local runner that should execute the action.
 5. Complete the remaining action configuration.
 6. Save the playbook.
 
