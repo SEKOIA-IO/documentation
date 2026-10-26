@@ -132,13 +132,35 @@ The action runs on the host where the selected local runner is installed.
 
 Local runners can execute jobs for eligible asset connectors from inside your environment. This allows the connector to reach internal systems without requiring inbound access from Sekoia Cloud.
 
-Asset connector execution through a local runner is available only when:
-
-- The asset connector supports local execution.
-- The selected community has a Reveal subscription.
+- The asset connector supports local execution. Only some integrations support it, and custom integrations do not.
+- The community of the asset connector has a Reveal subscription.
+- The local runner belongs to the same community as the asset connector.
 - The local runner is installed in an environment that can reach the source system.
 
-The available execution settings depend on the asset connector. If a local execution option is not available for a connector, use the connector's standard execution method or check the integration documentation.
+### Select a local runner for an asset connector
+
+You select the local runner in the asset connector configuration, when you create the connector or when you edit it. The runner is assigned per asset connector: different connectors of the same community can use different runners.
+
+1. Create or edit the asset connector.
+2. In **How do you want to execute this action**, select **On premise**. This option is displayed only for asset connectors that support local execution.
+3. In **Using which local runner?**, select the local runner. The list contains the local runners of the connector's community.
+4. Complete the remaining configuration and save the connector.
+
+> 📸 [SCREENSHOT SUGGESTION: Asset connector configuration with On premise selected and the local runner selector. | ALT TEXT: Asset connector configuration dialog with On premise execution and a local runner chosen.]
+
+The test connection button is not available for connectors executed on premise.
+
+You can change the selected local runner at any time. To switch a connector between **Cloud** and **On premise**, stop the connector first.
+
+### Synchronization
+
+A connector executed on premise synchronizes once a day, and once right after it is started. If a synchronization cannot start, for example because the local runner is offline, Sekoia retries it once one hour later. A synchronization that has not finished two hours after it started is marked as failed.
+
+Connector logs work the same way whether the connector runs in the cloud or on a local runner: the messages that the connector logs during a synchronization appear in the connector logs panel. When a synchronization fails, Sekoia also adds an error log with the message `The sync failed:` followed by the error. See [Check asset connector health](/xdr/features/collect/asset_connector_health.md).
+
+### If Reveal is disabled
+
+If the community loses its Reveal subscription, Sekoia stops all its asset connectors, whether they run in the cloud or on a local runner. The connectors and the local runner are not deleted, and the runner can still execute playbook actions.
 
 ## Check the local runner status
 
