@@ -58,6 +58,8 @@ The Sekoia Endpoint Agent must be able to connect to the domains required by you
 
 Other regions use region-specific endpoints. The local runner installation instructions display the required domains for the selected region.
 
+Asset connector jobs also need access to the system they collect from: the vendor API for a cloud service, or an internal server for an on-premise product. These requirements depend on each connector and change as connectors evolve. Check the prerequisites in the integration documentation of each connector, from [Asset categories](/integration/assets_categories/overview.md). When a connector runs on a local runner, the connection to the source system starts from the runner host: you do not need to allow inbound connections from Sekoia.
+
 ### Test the host
 
 Run the following command to check Docker access and connectivity with Sekoia:
