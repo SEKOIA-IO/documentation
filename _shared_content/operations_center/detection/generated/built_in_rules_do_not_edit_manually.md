@@ -1,4 +1,4 @@
-Rules catalog includes **1090 built-in detection rules** ([_last update on 2026-10-16_](rules_changelog.md)).
+Rules catalog includes **1110 built-in detection rules** ([_last update on 2026-10-26_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Identity Information**
 
@@ -33,16 +33,29 @@ Rules catalog includes **1090 built-in detection rules** ([_last update on 2026-
     
     - **Effort:** advanced
     
-??? abstract "Gatewatcher AionIQ V103 Network Behavior Analytics"
+??? abstract "Gatewatcher AionIQ V103 Network Behavior Analytics High"
     
-    Detects when network behavior analytics were requested.
+    Detects when network behavior analytics were requested with a high severity.
     
     - **Effort:** master
     
     - **Changelog:**
     
         - 05/03/2026 - minor - Update rule type to integration
+        - 08/10/2026 - major - Update rule to add severity.
             
+??? abstract "Gatewatcher AionIQ V103 Network Behavior Analytics Low"
+    
+    Detects when network behavior analytics were requested with a low severity.
+    
+    - **Effort:** master
+    
+??? abstract "Gatewatcher AionIQ V103 Network Behavior Analytics Medium"
+    
+    Detects when network behavior analytics were requested with a medium severity.
+    
+    - **Effort:** master
+    
 ??? abstract "Internet Scanner"
     
     Detects known scanner IP addresses. Alert is only raised when the scan hits an opened port, on TCP or UDP. This could be a very noisy rule, so be careful to check your detection perimeter before activation.
@@ -306,19 +319,32 @@ Rules catalog includes **1090 built-in detection rules** ([_last update on 2026-
     
     - **Effort:** master
     
-??? abstract "Gatewatcher AionIQ V103 Active CTI"
+??? abstract "Gatewatcher AionIQ V103 Active CTI High"
     
-    Detects whan an event related to CTI is raised by Gatewatcher V103. An attacker may be gathering information with this event.
+    Detects whan an event related to CTI is raised by Gatewatcher V103 with a high severity. An attacker may be gathering information with this event.
     
     - **Effort:** master
     
     - **Changelog:**
     
         - 05/03/2026 - minor - Update rule type to integration
+        - 06/10/2026 - major - Update rule to add severity.
             
-??? abstract "Gatewatcher AionIQ V103 Retrohunt"
+??? abstract "Gatewatcher AionIQ V103 Active CTI Low"
     
-    Detects when a retrohunt event is raised by GatewatcherV103.
+    Detects when an event related to CTI is raised by Gatewatcher V103 with a low severity. An attacker may be gathering information with this event.
+    
+    - **Effort:** master
+    
+??? abstract "Gatewatcher AionIQ V103 Active CTI Medium"
+    
+    Detects when an event related to CTI is raised by Gatewatcher V103 with a medium severity. An attacker may be gathering information with this event.
+    
+    - **Effort:** master
+    
+??? abstract "Gatewatcher AionIQ V103 Retrohunt High"
+    
+    Detects when a retrohunt event is raised by GatewatcherV103 with a high severity.
     
     - **Effort:** master
     
@@ -326,7 +352,20 @@ Rules catalog includes **1090 built-in detection rules** ([_last update on 2026-
     
         - 30/06/2025 - minor - Changing similarity on threat name.
         - 05/03/2026 - minor - Update rule type to integration
+        - 08/10/2026 - major - Update rule to add severity.
             
+??? abstract "Gatewatcher AionIQ V103 Retrohunt Low"
+    
+    Detects when a retrohunt event with a low severity is raised by GatewatcherV103.
+    
+    - **Effort:** master
+    
+??? abstract "Gatewatcher AionIQ V103 Retrohunt Medium"
+    
+    Detects when a retrohunt event with a medium severity is raised by GatewatcherV103.
+    
+    - **Effort:** master
+    
 ## Resource Development
 **Acquire Infrastructure**
 
@@ -2632,16 +2671,29 @@ Rules catalog includes **1090 built-in detection rules** ([_last update on 2026-
     
     - **Effort:** master
     
-??? abstract "Gatewatcher AionIQ V103 Shellcode Detect"
+??? abstract "Gatewatcher AionIQ V103 Shellcode Detect High"
     
-    Detects when a suspicious shellcode is used.
+    Detects when a suspicious shellcode is used with a high severity.
     
     - **Effort:** master
     
     - **Changelog:**
     
         - 05/03/2026 - minor - Update rule type to integration
+        - 08/10/2026 - major - Update rule to add severity.
             
+??? abstract "Gatewatcher AionIQ V103 Shellcode Detect Low"
+    
+    Detects when a suspicious shellcode is used with a low severity.
+    
+    - **Effort:** master
+    
+??? abstract "Gatewatcher AionIQ V103 Shellcode Detect Medium"
+    
+    Detects when a suspicious shellcode is used with a medium severity.
+    
+    - **Effort:** master
+    
 ??? abstract "Generic-reverse-shell-oneliner"
     
     To bypass some security equipement or for a sack of simplicity attackers can open raw reverse shell using shell commands
@@ -4113,9 +4165,9 @@ Rules catalog includes **1090 built-in detection rules** ([_last update on 2026-
     
     - **Effort:** intermediate
     
-??? abstract "Gatewatcher AionIQ V103 Malcore"
+??? abstract "Gatewatcher AionIQ V103 Malcore High"
     
-    Detects a malcore alert by Gatewatcher AionIQ V103 related to documents with passwords.
+    Detects a malcore alert by Gatewatcher AionIQ V103 with a high severity related to documents with passwords.
     
     - **Effort:** master
     
@@ -4124,7 +4176,20 @@ Rules catalog includes **1090 built-in detection rules** ([_last update on 2026-
         - 24/01/2025 - minor - Adding filter to reduce false positives.
         - 27/01/2025 - minor - Changing field and adding filter to reduce false positives.
         - 05/03/2026 - minor - Update rule type to integration
+        - 07/10/2026 - major - Update rule to add severity.
             
+??? abstract "Gatewatcher AionIQ V103 Malcore Low"
+    
+    Detects a malcore alert by Gatewatcher AionIQ V103 with a low severity related to documents with passwords.
+    
+    - **Effort:** master
+    
+??? abstract "Gatewatcher AionIQ V103 Malcore Medium"
+    
+    Detects a malcore alert by Gatewatcher AionIQ V103 with a medium severity related to documents with passwords.
+    
+    - **Effort:** master
+    
 ??? abstract "Google Workspace Anomaly File Downloads"
     
     Detects a large number of file downloads.
@@ -13029,16 +13094,29 @@ Rules catalog includes **1090 built-in detection rules** ([_last update on 2026-
     
 **Dynamic Resolution**
 
-??? abstract "Gatewatcher AionIQ V103 Dga Detect"
+??? abstract "Gatewatcher AionIQ V103 Dga Detect High"
     
-    Detects when an event related to dga is raised by gatewatcher. An attacker can use this to generate a new domain for C2.
+    Detects when an event related to dga is raised by gatewatcher with a high severity. An attacker can use this to generate a new domain for C2.
     
     - **Effort:** master
     
     - **Changelog:**
     
         - 05/03/2026 - minor - Update rule type to integration
+        - 08/10/2026 - major - Update rule to add severity.
             
+??? abstract "Gatewatcher AionIQ V103 Dga Detect Low"
+    
+    Detects when an event related to dga is raised by gatewatcher with a low severity. An attacker can use this to generate a new domain for C2.
+    
+    - **Effort:** master
+    
+??? abstract "Gatewatcher AionIQ V103 Dga Detect Medium"
+    
+    Detects when an event related to dga is raised by gatewatcher with a medium severity. An attacker can use this to generate a new domain for C2.
+    
+    - **Effort:** master
+    
 **Non-Standard Port**
 
 ??? abstract "RDP Port Change Using Powershell"
@@ -13191,16 +13269,29 @@ Rules catalog includes **1090 built-in detection rules** ([_last update on 2026-
     
 **Scheduled Transfer**
 
-??? abstract "Gatewatcher AionIQ V103 Malicious Powershell Detect"
+??? abstract "Gatewatcher AionIQ V103 Malicious Powershell Detect High"
     
-    Detects malicious powershell by Gatewatcher V103.
+    Detects malicious powershell by Gatewatcher V103 with a high severity.
     
     - **Effort:** master
     
     - **Changelog:**
     
         - 05/03/2026 - minor - Update rule type to integration
+        - 08/10/2026 - major - Update rule to add severity.
             
+??? abstract "Gatewatcher AionIQ V103 Malicious Powershell Detect Low"
+    
+    Detects malicious powershell by Gatewatcher V103 with a low severity.
+    
+    - **Effort:** master
+    
+??? abstract "Gatewatcher AionIQ V103 Malicious Powershell Detect Medium"
+    
+    Detects malicious powershell by Gatewatcher V103 with a medium severity.
+    
+    - **Effort:** master
+    
 **Exfiltration Over C2 Channel**
 
 ??? abstract "Claroty xDome Network Threat Detection Alert"
@@ -13241,26 +13332,52 @@ Rules catalog includes **1090 built-in detection rules** ([_last update on 2026-
     
         - 05/03/2026 - minor - Update rule type to integration
             
-??? abstract "Gatewatcher AionIQ Network Alert"
+??? abstract "Gatewatcher AionIQ Network Alert High"
     
-    Forward network alerts reported by Gatewatcher AionIQ  
-    
-    - **Effort:** master
-    
-    - **Changelog:**
-    
-        - 05/03/2026 - minor - Update rule type to integration
-            
-??? abstract "Gatewatcher AionIQ V103 Beacon Detect"
-    
-    Detects a suspicious beacon.
+    Forward network alerts reported by Gatewatcher AionIQ with a high severity.
     
     - **Effort:** master
     
     - **Changelog:**
     
         - 05/03/2026 - minor - Update rule type to integration
+        - 06/10/2026 - major - Update rule to add severity.
             
+??? abstract "Gatewatcher AionIQ Network Alert Low"
+    
+    Forward network alerts reported by Gatewatcher AionIQ with a low severity.
+    
+    - **Effort:** master
+    
+??? abstract "Gatewatcher AionIQ Network Alert Medium"
+    
+    Forward network alerts reported by Gatewatcher AionIQ with a medium severity.
+    
+    - **Effort:** master
+    
+??? abstract "Gatewatcher AionIQ V103 Beacon Detect High"
+    
+    Detects a suspicious beacon with a high severity.
+    
+    - **Effort:** master
+    
+    - **Changelog:**
+    
+        - 05/03/2026 - minor - Update rule type to integration
+        - 07/10/2026 - major - Update rule to add severity.
+            
+??? abstract "Gatewatcher AionIQ V103 Beacon Detect Low"
+    
+    Detects a suspicious beacon with a low severity.
+    
+    - **Effort:** master
+    
+??? abstract "Gatewatcher AionIQ V103 Beacon Detect Medium"
+    
+    Detects a suspicious beacon with a medium severity.
+    
+    - **Effort:** master
+    
 ??? abstract "Gatewatcher AionIQ V103 Sigflow Alert"
     
     Detects a sigflow alert by Gatewatcher AionIQ V103.
@@ -13481,16 +13598,29 @@ Rules catalog includes **1090 built-in detection rules** ([_last update on 2026-
             
 **Data Encrypted for Impact**
 
-??? abstract "Gatewatcher AionIQ V103 Ransomware Detect"
+??? abstract "Gatewatcher AionIQ V103 Ransomware Detect High"
     
-    Detects when a ransomware is detected by gatewatcherV103.
+    Detects when a ransomware is detected by gatewatcherV103 with a high severity.
     
     - **Effort:** master
     
     - **Changelog:**
     
         - 05/03/2026 - minor - Update rule type to integration
+        - 08/10/2026 - major - Update rule to add severity.
             
+??? abstract "Gatewatcher AionIQ V103 Ransomware Detect Low"
+    
+    Detects when a ransomware is detected by gatewatcherV103 with a low severity.
+    
+    - **Effort:** master
+    
+??? abstract "Gatewatcher AionIQ V103 Ransomware Detect Medium"
+    
+    Detects when a ransomware is detected by gatewatcherV103 with a medium severity.
+    
+    - **Effort:** master
+    
 ??? abstract "Suncrypt Parameters"
     
     Detects SunCrypt ransomware's parameters, most of which are unique.
