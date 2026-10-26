@@ -207,7 +207,7 @@ Local runners cannot be renamed or deleted from Sekoia. To rename a runner, chan
 
 ## Configure proxy support
 
-Configure a proxy when the runner host must use a proxy to reach Sekoia or services used by local actions.
+Configure a proxy when the runner host must use a proxy to reach Sekoia or services used by local actions. The same proxy configuration applies to playbook actions and to asset connector jobs.
 
 1. Edit `/etc/endpoint-agent/config.yaml`.
 2. Add the `HTTPProxyURL` setting.
