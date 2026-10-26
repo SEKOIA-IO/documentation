@@ -81,20 +81,18 @@ For more information, see [Regions](/getting_started/regions.md).
 
 ## Create a local runner
 
-Create a local runner from the asset management area.
+1. Open the **Local runners** page with the **Local runners** button at the top of the **Playbooks** page or of the **Configure > Assets** page.
+2. Select **+ Local runner**.
+3. In **Name of the local runner**, enter a name.
+4. If the **Account’s community** field is displayed, select the customer community where you will install the runner. This field is displayed only from a parent community used by an MSSP.
+5. Select **Continue**.
+6. Follow the installation instructions displayed by Sekoia.
 
-1. In the left menu, select **Configure**.
-2. Select **Assets**.
-3. Select **Local runners**.
-4. Select **New local runner**.
-5. Enter a name for the local runner.
-6. If the **Community** field is displayed, select the customer community where you will install the runner.
-7. Select **Continue**.
-8. Follow the installation instructions displayed by Sekoia.
+    ![Installation instructions for a new local runner](img/local_runner_setup.png)
 
-After installation, return to **Local runners**. The new runner appears in the list with its status, last activity, hostname, and version.
+After installation, return to **Local runners**. The new runner appears in the list with its community, last activity, hostname, and version.
 
-> 📸 [SCREENSHOT SUGGESTION: Local runners page under Configure > Assets, showing the New local runner button and the runner list. | ALT TEXT: Local runners page showing configured runners, status, last activity, hostname, and version.]
+![Local runners page with the + Local runner button and a runner card](img/local_runners_list.png)
 
 
 ### Select the right community
