@@ -26,7 +26,7 @@
 | [rule_instances](#rule_instances) | Instances of detection rules per community | Monitor enabled/disabled rules, compliance reporting |
 | [playbooks](#playbooks) | Playbooks of your community, with their status and triggers | Automation inventory, playbook health monitoring |
 | [playbook_runs](#playbook_runs) | Executions of your playbooks | Success rate, failure analysis, detection of stuck runs |
-| [node_runs](#node_runs) | Executions of each playbook step (triggers, actions, operators) | Root cause of failed runs, module configuration health |
+| [node_runs](#node_runs) | Executions of each playbook step (triggers, actions, operators) | Root cause of failed runs, failed actions |
 
 ## event_telemetry
 
@@ -473,12 +473,15 @@ Use this data source to monitor the health of your automation: count active play
 | trigger_configurations.* | Trigger configurations of the playbook: `uuid`, `name`, `value`, `trigger_id`, and `status` (`running`, `stopped`, `starting`, or `stopping`) |
 | playbook_runs.*          | Runs of the playbook: `uuid`, `status`, `error`, `store`, `started_at`, `started_by`, `started_by_type`, `pending_at`, `running_at`, and `finished_at`. See [playbook_runs](#playbook_runs) |
 
+!!! note "Properties available in SOL"
+    This data source exposes a subset of the properties returned by the [Playbooks API](https://docs.sekoia.com/xdr/develop/rest_api/playbooks/). Properties such as `description`, `custom_fields`, `doctor_status`, `doctor_codes`, or `status_tags` are not available in SOL.
+
 !!! tip "Working with the runs of a playbook"
     Each playbook record includes the list of all its runs in the `playbook_runs.*` fields. Use `project` to return only the columns you need, for example `playbooks | project name, status`. In a `where` clause, a condition on `playbook_runs.*` matches a playbook when at least one of its runs matches.
 
 ??? example "Count activated playbooks"
 
-    ```
+    ```shell
     playbooks
     | where status == "activated"
     | aggregate active_playbooks = count()
@@ -488,7 +491,7 @@ Use this data source to monitor the health of your automation: count active play
 
     These playbooks are active but no longer run. Their trigger or the data they listen to may be broken.
 
-    ```
+    ```shell
     playbooks
     | where status == "activated"
     | where not playbook_runs.started_at > ago(7d)
@@ -497,7 +500,7 @@ Use this data source to monitor the health of your automation: count active play
 
 ??? example "List playbooks in error with the reason"
 
-    ```
+    ```shell
     playbooks
     | where status == "error"
     | project name, status_message, updated_at
@@ -535,7 +538,7 @@ Use this data source to measure the success rate of your automation, find the pl
 
     The success rate only counts ended runs: runs still pending or running are excluded.
 
-    ```
+    ```shell
     playbook_runs
     | where started_at > ago(7d)
     | aggregate successful_runs = sum(iff(status == "finished", 1, 0)), failed_runs = sum(iff(status == "error", 1, 0))
@@ -545,7 +548,7 @@ Use this data source to measure the success rate of your automation, find the pl
 
 ??? example "Daily runs by status over the last 30 days"
 
-    ```
+    ```shell
     playbook_runs
     | where started_at > ago(30d)
     | aggregate runs = count() by bin(started_at, 1d), status
@@ -555,7 +558,7 @@ Use this data source to measure the success rate of your automation, find the pl
 
 ??? example "Top 10 playbooks with the most failed runs over the last 7 days"
 
-    ```
+    ```shell
     playbook_runs
     | where started_at > ago(7d)
     | aggregate total_runs = count(), failed_runs = sum(iff(status == "error", 1, 0)) by playbook.name
@@ -566,7 +569,7 @@ Use this data source to measure the success rate of your automation, find the pl
 
 ??? example "Runs pending or running for more than one hour"
 
-    ```
+    ```shell
     playbook_runs
     | where status in ["running", "pending"]
     | where started_at < ago(1h)
@@ -578,7 +581,7 @@ Use this data source to measure the success rate of your automation, find the pl
 
 The **node_runs** data source lists the executions of each step of your playbook runs: triggers, actions, and operators. Each record represents one step execution, with its error message, its timing, and the module configuration it used.
 
-Use this data source to find the root cause of failed runs, and to identify the module configurations, such as one with an expired API key, that break several playbooks.
+Use this data source to find the root cause of failed runs, and to list the actions that failed with their error message.
 
 !!! note "Required permission"
     Querying this data source requires the **View playbook runs** permission.
@@ -593,6 +596,8 @@ Use this data source to find the root cause of failed runs, and to identify the 
 | iteration                  | For a step inside a loop, index of the iteration                                                    |
 | module_configuration_uuid  | UUID of the module configuration used by the step                                                   |
 | module_configuration_name  | Name of the module configuration used by the step                                                   |
+| action_uuid                | For an action step, UUID of the action it ran                                                       |
+| action_name                | For an action step, name of the action it ran                                                       |
 | triggered_by               | What triggered the step                                                                             |
 | arguments                  | Arguments passed to the step                                                                        |
 | outputs                    | Outputs returned by the step                                                                        |
@@ -612,7 +617,7 @@ Use this data source to find the root cause of failed runs, and to identify the 
 
 ??? example "Top 20 errors that made a run fail over the last 7 days"
 
-    ```
+    ```shell
     node_runs
     | where started_at > ago(7d)
     | where status == "error"
@@ -625,7 +630,7 @@ Use this data source to find the root cause of failed runs, and to identify the 
 
     Errors are sorted by first occurrence. A recent first occurrence often points to a change in a third-party API or in a playbook.
 
-    ```
+    ```shell
     node_runs
     | where started_at > ago(30d)
     | where status == "error"
@@ -633,15 +638,15 @@ Use this data source to find the root cause of failed runs, and to identify the 
     | sort by first_seen desc
     ```
 
-??? example "Top 10 module configurations with the most failed actions over the last 7 days"
+??? example "Failed actions over the last 24 hours"
 
-    ```
+    ```shell
     node_runs
-    | where started_at > ago(7d)
+    | where started_at > ago(24h)
     | where node_type == "action"
     | where status == "error"
-    | aggregate failed_actions = count(), impacted_playbooks = count_distinct(playbook.uuid) by module_configuration_name
-    | top 10 by failed_actions
+    | project started_at, playbook.name, action_name, error
+    | sort by started_at desc
     ```
 
 ## Related articles
