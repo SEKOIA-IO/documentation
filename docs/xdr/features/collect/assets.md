@@ -265,7 +265,7 @@ The following table lists the available fields for defining asset-based detectio
 | `sekoiaio.any_asset.criticality_value`   | Set of Integers    | `{80, 0}`                              |
 
 !!! Warning
-    Some of the fields listed above are removed from the events before indexing them, but they can be used in detection and filtering patterns. Indexed events will thus only contain `sekoiaio.assets.*.uuid`, `sekoiaio.assets.*.name`, `sekoiaio.assets.*.criticality_value`, `sekoiaio.any_asset.uuid`, `sekoiaio.any_asset.name` and `sekoiaio.any_asset.criticality_value`.
+    Some of the fields listed above are removed from the events before indexing them, but they can be used in detection and filtering patterns. Indexed events only contain `sekoiaio.any_asset.uuid`, `sekoiaio.any_asset.name`, `sekoiaio.any_asset.criticality_value` and `sekoiaio.assets.*.uuid`. In particular, `sekoiaio.any_asset.tags` cannot be used in the event search: to work on tagged assets, use a detection rule, an alert filter or a [SOL query](/xdr/features/investigate/sol_query_examples.md#search-the-events-of-assets-with-a-specific-tag) that reads the tags from the `assets` table.
 
 ##### Use Case Example
 
