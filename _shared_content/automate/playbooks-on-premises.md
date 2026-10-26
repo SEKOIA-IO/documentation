@@ -115,7 +115,7 @@ If the selected community does not have Reveal, the local runner displays a warn
 
     Local runners execute playbook actions, not playbook triggers.
 
-A local runner executes actions, not triggers. The action must also support on-premises execution.
+A local runner executes actions, not triggers. The action must also support on-premises execution: the **On-premise** option is not available for custom integrations.
 
 1. Open the playbook that contains the action.
 2. Add a new action or select an existing action.
