@@ -14,9 +14,11 @@ Confirm that the following conditions are met:
 
 !!! note "Run an asset connector with a local runner"
 
-    Eligible asset connectors can run through a local runner from inside your environment. This option is available only when the connector supports local execution and the community selected for the local runner has a Reveal subscription.
+    Eligible asset connectors can run through a local runner from inside your environment. The local runner and asset connector must belong to the same community, and that community must have a Reveal subscription.
 
-    For local runner setup, community requirements, and connectivity configuration, see [Local runners](/xdr/features/automate/playbooks-on-premises.md).
+    Asset connectors cannot be created in a workspace or parent MSSP community. To collect assets for a customer, create the connector and local runner in that customer's community.
+
+    For local runner setup and connectivity configuration, see [Local runners](/xdr/features/automate/playbooks-on-premises.md).
 
 ## Create an asset connector
 
