@@ -1,14 +1,16 @@
 # Local runners
 
-Local runners are Sekoia instances that execute eligible playbook actions and asset connector jobs inside your environment. They initiate outbound connections only, so Sekoia Cloud does not need inbound access to the host where the local runner is installed.
+Local runners are hosts in your environment where the Sekoia Endpoint Agent executes eligible playbook actions and asset connector jobs. The runner polls Sekoia for jobs and initiates every connection itself, so Sekoia Cloud does not need inbound access to the host where the local runner is installed.
 
-Local runners replace the previous **Playbook runners** name. They continue to support on-premises playbook actions and now also support local execution for eligible asset connectors.
+Local runners were previously called **Playbook runners**. Only the name changed. Existing runners keep their identifier and configuration, appear on the **Local runners** page, and do not need to be reinstalled. The installation command still uses the `--playbook-runner` option.
 
 !!! warning "Asset connector requirements"
-    A local runner can execute playbook actions without Reveal. To execute asset connector jobs, the community selected for the local runner must have a Reveal subscription.
 
-    A workspace or parent community used by an MSSP cannot perform asset inventory. Select the customer community where you want to collect assets.
+    To execute an asset connector job, the local runner and the asset connector must belong to the same community, and that community must have a Reveal subscription.
 
+    Asset connectors cannot be created in a workspace, which is the parent community an MSSP uses to manage customer communities. Assets are inventoried per customer community. To collect assets for a customer, create the asset connector and install the local runner in that customer's community.
+
+    
 ## Prerequisites
 
 ### Host requirements
@@ -94,6 +96,7 @@ After installation, return to **Local runners**. The new runner appears in the l
 
 > 📸 [SCREENSHOT SUGGESTION: Local runners page under Configure > Assets, showing the New local runner button and the runner list. | ALT TEXT: Local runners page showing configured runners, status, last activity, hostname, and version.]
 
+
 ### Select the right community
 
 The community selected during local runner creation determines which capabilities are available.
@@ -109,6 +112,10 @@ If the selected community does not have Reveal, the local runner displays a warn
 > 📸 [SCREENSHOT SUGGESTION: Create a new local runner dialog showing the Community field and the warning about Reveal and workspace communities. | ALT TEXT: Local runner creation dialog with a community selector and an asset inventory warning.]
 
 ## Execute a playbook action with a local runner
+
+!!! note "Playbook execution"
+
+    Local runners execute playbook actions, not playbook triggers.
 
 A local runner executes actions, not triggers. The action must also support on-premises execution.
 
