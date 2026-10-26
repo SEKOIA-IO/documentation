@@ -13,9 +13,6 @@ This integration allows you to ingest Akamai DataStream 2 delivery telemetry int
 - **Detection based on**: Telemetry
 - **Supported application or feature**: see section below
 
-!!! Warning
-	Important note - This format is currently in beta. We highly value your feedback to improve its performance.
-
 ## Configure
 
 ### Create your intake
