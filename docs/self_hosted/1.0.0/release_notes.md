@@ -54,7 +54,7 @@ Sekoia Self-Hosted 1.0.0 is the first generally available release of Sekoia Self
 | `modules.platform_scale_down.grace_period` | New. Seconds of graceful cleanup before blocking finalizers are removed. Must be lower than `timeout`. Default: `120`. |
 | `modules.platform_scale_down.timeout` | New. Overall deadline in seconds for the cleanup and the volume release. Default: `600`. |
 | `modules.platform_scale_down.poll_interval` | New. Seconds between two cleanup and volume release checks. Default: `5`. |
-| `modules.platform_configuration.config.assetmanagement.database.storage.size` | New. Storage size of the asset management database. Default: `50Gi`. |
+| `modules.platform_configuration.config.assetmanagement.database.storage.size` | New. Storage size of the asset management database. Default: `1Ti`. |
 | `modules.platform_configuration.config.sicalertapi.database.storage.size` | New. Storage size of the alerts database. Default: `50Gi`. |
 | `modules.platform_configuration.config.hatchet.database.storage.size` | New. Storage size of the workflow engine database. Default: `30Gi`. |
 | `modules.platform_configuration.config.symphony.database.storage.size` | New. Storage size of the playbooks database. Default: `30Gi`. |
@@ -70,7 +70,7 @@ Sekoia Self-Hosted 1.0.0 is the first generally available release of Sekoia Self
 ## Removed in 1.0.0
 
 - **Server configuration stage.** The `server_config` stage and its `ConfigureServersWithAnsible` module, which did not change the nodes, are removed from the `Install` execution plan. The plan now has four stages: `checks`, `push`, `kubernetes`, and `platform`.
-- **Legacy storage backend.** Ceph is the only supported storage backend. The legacy storage panels are removed from the **Default** Grafana dashboard.
+- **Legacy storage backend.** Ceph is the only supported storage backend. The legacy storage panels are removed from the **Default** Grafana dashboard. The 14 `longhornio/*` images of the legacy backend are still in the release bundle, and `PushImages` pushes them to your OCI registry, but no ArgoCD application deploys them.
 
 ## Fixed in 1.0.0
 
@@ -82,7 +82,7 @@ Sekoia Self-Hosted 1.0.0 is the first generally available release of Sekoia Self
 - **Empty rules catalog after installation.** The installation now synchronizes the rules catalog itself. The manual synchronization of `rules-catalog-updater-on-self-hosted` required in 0.1.0 is no longer needed.
 - **ExaLog indexers denied access to object storage.** The indexation buckets did not follow `modules.platform_configuration.config.storage-manager.s3_bucket_prefix`, so the indexers received `403 AccessDenied` errors when uploading. The buckets and their access grants are now generated from the configured prefix.
 - **Diagnostic queries failing through the Prometheus tunnel.** The tunnel to `svc/prometheus-server` targeted the wrong pod port, so every `Diagnostic` query failed with "Server disconnected without sending a response". The tunnel now resolves the Service port to its target port, and each target closes its tunnel when it ends.
-- **Interrupted Helm operations blocking a rerun.** A new `CleanupHelmReleases` prerequisite runs before `HelmInstall` and `PlatformInstallation`. It removes the pending, failed, and uninstalling Helm revisions left by an interrupted run, and preserves the deployed history and the chart-managed resources.
+- **Interrupted Helm operations blocking a rerun.** A new `CleanupHelmReleases` prerequisite runs before `HelmInstall`, `PlatformInstallation`, and every other module that runs Helm. It removes the pending, failed, and uninstalling Helm revisions left by an interrupted run, and preserves the deployed history and the chart-managed resources.
 - **SHC interface started without an interactive terminal.** `shc` no longer starts its interface when no interactive terminal is attached, for example when you run the container without `-it`. It shows a warning and the CLI help instead.
 - **Ceph disk wiping after K3s uninstall.** `WipeStorageDisks` failed with `wipefs: Device or resource busy` because of leftover OSD mappings. It now deactivates the unused Ceph LVM volume groups on the detected disks before wiping, and refuses mounted, open, or shared devices. It also removes the Rook host state, `/var/lib/rook`, on every node, once it has verified that K3s and Ceph are stopped and that nothing is mounted under that directory.
 - **Existing images pushed again.** With `skip_existing_local` enabled, `PushImages` now recognizes OCI image indexes, cosign bundles with attestations, Docker manifests, and manifest lists already in the registry, and skips them.
@@ -100,15 +100,24 @@ Sekoia Self-Hosted 1.0.0 is the first generally available release of Sekoia Self
 
 ## Technical foundation
 
-| Attribute              | Value                         |
-| :---                   | :---                          |
-| Kubernetes distribution | K3s                          |
-| Certified node OS      | Debian 12 (Bookworm)          |
-| GitOps engine          | ArgoCD                        |
-| Secret management      | HashiCorp Vault               |
-| Relational database    | PostgreSQL via CloudNativePG  |
-| Columnar storage       | ClickHouse                    |
-| Observability stack    | Grafana, Prometheus, Loki, Alertmanager |
+The versions below are those of the release bundle.
+
+| Attribute | Value |
+| :--- | :--- |
+| Kubernetes distribution | K3s v1.31.12+k3s1 |
+| Certified node OS | Debian 12 (Bookworm) |
+| Container networking | Cilium 1.15.10 |
+| Cluster DNS | CoreDNS 1.11.1 |
+| HTTP entry point | Traefik v2.11.2 |
+| Certificates | cert-manager v1.15.3 |
+| Persistent storage | Rook v1.9.13 and Ceph v16.2.15 |
+| GitOps engine | ArgoCD v3.1.0 |
+| Secret management | HashiCorp Vault |
+| Relational database | PostgreSQL 17 via CloudNativePG 1.25 |
+| Columnar storage | ClickHouse 24.8.8 |
+| Event streaming | Kafka 4 managed by the Strimzi operator 0.51.0, with ZooKeeper 3.7 |
+| Other data stores | ArangoDB 3.8.9, KeyDB 6.3.4, Redis 8.4.0, MinIO |
+| Observability stack | Grafana 13.2.4, Prometheus v2.46.0, Alertmanager v0.33.1, Loki 2.8.7, Promtail 2.1.0 |
 
 ## Functional scope
 
@@ -129,7 +138,7 @@ The functional scope aligns with the **Defend Core** subscription tier. Defend C
 | Anomaly Detection Engine | Yes | |
 | Case Management | Yes | |
 | Hot Storage | Yes | |
-| Sekoia Endpoint Agent | No | The `xdr-agent-api` service is not installed in this release. |
+| Sekoia Endpoint Agent | No | The `xdr-agent-api` service and its databases are deployed with the platform, but the Sekoia Endpoint Agent is not supported in this release. Do not enroll agents. |
 | Contextualized Alerts | Yes | Requires the [CTI database import](operations/import_cti_database.md). |
 | Intelligence module | No | Not available in this release, even after the CTI database import. |
 | SOL Query Builder | Yes | |
@@ -160,7 +169,7 @@ Reveal is available with Sekoia Self-Hosted 1.0.0 under a dedicated subscription
 | Asset Timeline | Yes | |
 | Points of Interest | Yes | |
 | Attack Path Visualization | Yes | |
-| Endpoint Hygiene | No | Requires the `xdr-agent-api` service, which is not installed in this release. |
+| Endpoint Hygiene | No | Requires the Sekoia Endpoint Agent, which is not supported in this release. |
 | Vulnerability Enrichment | No | Requires NVD enrichment, which is not supported in this release. |
 | Asset creation, enrichment, and unification | Yes | The asset connector pipeline operates as expected. |
 | Defense Coverage | Yes | |
@@ -198,7 +207,7 @@ The following limitations apply to Sekoia Self-Hosted 1.0.0.
 | No upgrade path from the pre-releases | You cannot upgrade an existing 0.0.1 or 0.1.0 deployment to 1.0.0 with the self-hosted-controller (SHC). | Contact Sekoia to plan the migration of a pre-release deployment. |
 | No graphical or web UI for platform administration | Infrastructure management is available only from the orchestration node. | Use the self-hosted-controller (SHC) terminal interface or one-shot CLI together with `config.yml` for administrative operations. |
 | Automatic upgrade and rollback not available | Version updates are manual. | Follow the manual update procedure when a new release is published. |
-| Node operating system not configured by the SHC | The SHC does not install the operating system packages of the nodes. | Provision the operating system and packages listed in [Technical requirements](deployment/deployment_prerequisites.md) before you start the installation. |
+| Node operating system not managed by the SHC | The SHC does not install or harden the operating system of the nodes. During the K3s installation, it only installs `lvm2` and `gettext-base`, adds a systemd unit that activates the Ceph LVM volume groups at boot, and raises the inotify and `vm.max_map_count` kernel limits. | Provision the operating system and packages listed in [Technical requirements](deployment/deployment_prerequisites.md) before you start the installation, and review [Changes applied by the SHC to the nodes](deployment/deployment_prerequisites.md#changes-applied-by-the-shc-to-the-nodes). |
 | Intelligence module not available | You cannot explore threat actors, campaigns, and observables in the Intelligence module, even after the CTI database import. | None. |
 | No content update procedure | Detection rules, intake formats, and the playbook library stay at the version deployed during the installation. No procedure covers their update after the installation. | Contact Sekoia if your deployment requires updated detection content before the next release. |
 | Backup restore not yet documented | You cannot perform a tested restore from backup. | Contact Sekoia support for restore guidance specific to 1.0.0. |

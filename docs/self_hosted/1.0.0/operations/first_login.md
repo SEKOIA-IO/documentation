@@ -1,6 +1,6 @@
 # Set up the first administrator account
 
-After a successful deployment, the self-hosted-controller (SHC) displays the platform access credentials directly in the terminal. This guide walks you through retrieving those credentials, logging in, creating your first community, and allocating your subscription.
+During the installation, the self-hosted-controller (SHC) displays the platform access credentials in the terminal. This guide walks you through retrieving those credentials, logging in, creating your first community, and allocating your subscription.
 
 ## Before you begin
 
@@ -10,27 +10,33 @@ After a successful deployment, the self-hosted-controller (SHC) displays the pla
 
 ## Retrieve the initial credentials
 
-At the end of a successful installation, the SHC displays a credentials table in the terminal output.
+During the installation, the `PlatformAccess` module displays the access credentials in the terminal output, under an `Instance access` title. It runs after the platform is installed, before `InstanceBootstrap` and `ScaleServices`, so the credentials are not the last lines of the installation output.
 
-??? example "Example credentials table"
+??? example "Example output"
     ```
-    Platform Access Credentials
+    Instance access
 
-    ┏━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
-    ┃ Service  ┃ URL                           ┃ User                    ┃ Password / Token                 ┃
-    ┡━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┩
-    │ argocd   │ http://localhost:8080         │ admin                   │ <password>                       │
-    ├──────────┼───────────────────────────────┼─────────────────────────┼──────────────────────────────────┤
-    │ grafana  │ http://localhost:3000         │ admin                   │ <password>                       │
-    ├──────────┼───────────────────────────────┼─────────────────────────┼──────────────────────────────────┤
-    │ sekoiaio │ https://app.sekoia.local/user │ instanceadmin@sekoia.io │ <password>                       │
-    └──────────┴───────────────────────────────┴─────────────────────────┴──────────────────────────────────┘
+    argocd
+      url:      https://<global.delivery_host>/argo
+      user:     admin
+      password: <password>
+
+    grafana
+      url:      https://<global.delivery_host>/grafana
+      user:     admin
+      password: <password>
+
+    sekoiaio
+      url:      https://<global.host>/user
+      user:     instanceadmin@sekoia.io
+      password: <password>
+      apikey:   <API key>
     ```
 
-The table provides credentials for three services: the Sekoia platform (`sekoiaio`), the ArgoCD GitOps console (`argocd`), and the Grafana observability dashboard (`grafana`). Save all three sets of credentials in a secure location.
+The output lists three services: the Sekoia platform (`sekoiaio`), the ArgoCD GitOps console (`argocd`), and the Grafana observability dashboard (`grafana`). The URLs come from your `config.yml`: the platform is served on `global.host`, and ArgoCD and Grafana under the `/argo` and `/grafana` paths of `global.delivery_host`. For example, with `delivery_host: "admin.example.com"`, the Grafana URL is `https://admin.example.com/grafana`. The `sekoiaio` entry also gives the `apikey` of the instance administrator, used by the API calls of this guide. Save the three sets of credentials in a secure location.
 
 !!! warning "Credentials are auto-generated"
-    Passwords and tokens are randomly generated at installation time. They are displayed once at the end of the installation. If you did not save them, use the command in the next step to redisplay them.
+    Passwords and API keys are randomly generated at installation time. They are displayed once during the installation. If you did not save them, use the command in the next step to redisplay them.
 
 To redisplay the credentials at any time, run:
 
@@ -40,7 +46,7 @@ exec PlatformAccess
 
 ## Log in to the platform
 
-1. Open your browser and navigate to the `sekoiaio` URL from the credentials table (e.g., `https://app.sekoia.local/user`).
+1. Open your browser and navigate to the `sekoiaio` URL from the `PlatformAccess` output (e.g., `https://app.sekoia.local/user`).
 2. Enter the `sekoiaio` username (`instanceadmin@sekoia.io`) in the **Email** field.
 3. Enter the corresponding password in the **Password** field.
 4. Select **Log in**.
@@ -118,7 +124,7 @@ On the orchestration node, run:
 exec PlatformAccess
 ```
 
-The command displays the platform credentials table. Copy the API key shown in the `sekoiaio` row.
+The command displays the platform access credentials. Copy the `apikey` value of the `sekoiaio` service.
 
 ### Step 3: Register the SSO domain
 

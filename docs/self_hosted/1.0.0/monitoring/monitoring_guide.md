@@ -19,6 +19,25 @@ Sekoia Self-Hosted provides two complementary monitoring layers.
 
 Use Grafana for daily operations and trend analysis. Use SHC commands for incident triage, post-deployment validation, and structured platform snapshots.
 
+### Metric and log retention
+
+| Component | Deployment | Retention |
+| :--- | :--- | :--- |
+| Prometheus | 2 replicas, each with a 20Gi volume | 7 days |
+| Loki | 1 replica with a 400Gi volume | 7 days (`168h`) |
+
+The installer sets these values, and no `config.yml` field changes them in this version. To keep logs longer, forward them from the Loki NodePort to your own log platform. See [NodePort services](../deployment/network_requirements.md#conditional-flows) in the network requirements.
+
+Prometheus scrapes the metrics endpoints of the platform services and databases, and the following exporters.
+
+| Exporter | Metrics |
+| :--- | :--- |
+| `node-exporter` | Linux metrics of every node. |
+| `kafka-exporter` | Kafka topics, partitions, and consumer lag. |
+| `celery-exporter` | Celery queues and tasks of the platform APIs. |
+| `symphony-exporter` | Playbook executions. |
+| TLS certificate exporter | The TLS certificate of the platform. |
+
 ## Use Grafana for continuous monitoring
 
 ### Navigate to the dashboard
@@ -29,8 +48,8 @@ To access Grafana:
 2. Select **Dashboards** from the left navigation panel.
 3. Open the **Default** dashboard.
 
-!!! info "Available dashboards"
-    The platform ships with two dashboards: **Default** and **Astreinte**. The Astreinte dashboard is an internal on-call tool used by the Sekoia operations team. It is not intended for platform operators and should not be consulted during normal operations. Only the **Default** dashboard is relevant for day-to-day monitoring.
+!!! note "Available dashboards"
+    The platform ships one dashboard, **Default**, provisioned by the installer.
 
 ### Default dashboard
 
@@ -155,7 +174,7 @@ Per-node Linux metrics, filtered with the `$instance` variable: CPU usage, memor
 
 ### Search logs with Loki
 
-Promtail agents run on every node and ship all container logs to a Loki cluster. To search logs:
+Promtail agents run on every node and ship all container logs to Loki, which runs as a single instance. To search logs:
 
 1. Select **Explore** from the left navigation panel.
 2. In the data source selector, choose **Loki**.
@@ -236,7 +255,7 @@ The output surfaces pods with over-provisioned memory requests (highlighted in r
 2. Expand the **Global workflow** row. Verify that ingestion, pre-parsing, sigma-workflow, and ExaLog indexation are all processing events at the expected rate and that no stage shows a backlog.
 3. Expand the **Kafka** row. Confirm consumer lag is stable and no topics have offline or underreplicated partitions.
 4. Expand the **PVC usage** and **Ceph** rows. Check that no volume approaches saturation and that no slow disk is reported.
-5. Review the firing alerts. See [Platform alerts reference](platform_alerts.md).
+5. Review the firing alerts in Grafana, under **Alerting > Alert rules**. See [Platform alerts reference](platform_alerts.md).
 
 ## Recommended incident response workflow
 

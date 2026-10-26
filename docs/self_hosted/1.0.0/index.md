@@ -43,6 +43,8 @@ If you are new to Sekoia Self-Hosted, follow this sequence:
 | [Set up the first administrator account](operations/first_login.md) | How to provision the first administrator account and configure initial access. |
 | [Use the self-hosted-controller (SHC) interface](operations/controller_interface.md) | The interactive self-hosted-controller (SHC) interface: command input, node, cluster and storage views, and diagnostics. |
 | [Import the CTI database](operations/import_cti_database.md) | How to import the Sekoia CTI database into the platform with the SHC. |
+| [Patch and restart the nodes](operations/node_maintenance.md) | How to patch the nodes one at a time without an outage, and how to run a cold restart of the whole cluster. |
+| [Reset or destroy the platform](operations/reset_platform.md) | How to delete the platform workloads and keep the cluster, or destroy the platform and wipe the storage disks before a reinstallation. |
 
 ### Monitoring and troubleshooting
 

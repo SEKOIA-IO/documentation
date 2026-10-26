@@ -7,7 +7,7 @@ The SHC combines the built-in defaults, the selected sizing profile, and your `c
 This page explains every required field, the settings whose default value is a placeholder, and the most common optional settings. To inspect every other supported setting, use the [SHC configuration commands](#inspect-the-configuration-with-the-shc).
 
 !!! warning "Validation does not catch every incorrect value"
-    `CheckLocalConfig` rejects a required field that is missing or empty, but it does not check the optional fields that your environment needs. For example, the S3 credentials of the online mode are optional for the validator: when they are empty, the installation fails later, during the `push` stage. To confirm that every value your deployment needs is present and correct, inspect the computed configuration with `config show`.
+    `CheckLocalConfig` rejects a required field that is missing or empty, but it does not check the optional fields that your environment needs. For example, the S3 credentials of the online mode are optional for the validator: when they are empty, the installation fails later, when `DownloadReleaseFiles` runs in the `checks` stage. To confirm that every value your deployment needs is present and correct, inspect the computed configuration with `config show`.
 
 ## Create the configuration file
 
@@ -28,6 +28,8 @@ global:
   version:
     platform:
       version: "v1.0.0"
+  logging:
+    file: /opt/sekoia/logs/self-hosted-controller.log
 
 utils:
   ansible:
@@ -310,7 +312,9 @@ Configure these fields when the platform, the container runtime, or the SHC reac
 | :--- | :--- | :--- |
 | `modules.platform_configuration.config.proxy.http_proxy` | HTTP proxy URL used by the platform components that reach external services: ArgoCD, ExaLog indexing, the threat intelligence backend, and playbook actions. | Empty |
 | `modules.platform_configuration.config.proxy.https_proxy` | HTTPS proxy URL used by the platform components. | Empty |
-| `modules.platform_configuration.config.proxy.no_proxy` | Comma-separated destinations that the platform components reach without the proxy. | `127.0.0.0/8,10.0.0.0/8,172.16.0.0/12,192.168.0.0/16,.svc,.cluster.local,.lab` |
+| `modules.platform_configuration.config.proxy.no_proxy` | Comma-separated destinations that the platform components reach without the proxy. Keep the default value and use `additional_no_proxy` for your own entries. | `127.0.0.0/8,10.0.0.0/8,172.16.0.0/12,192.168.0.0/16,.svc,.cluster.local,.lab` |
+| `modules.platform_configuration.config.proxy.additional_no_proxy` | Comma-separated destinations appended to `no_proxy` when the SHC generates the platform configuration. Set your Git, OCI registry, and S3 hostnames here when they are reachable without the proxy. | Empty |
+| `modules.platform_configuration.config.proxy.no_proxy_include_platform_domain` | `true` to append the platform FQDNs (`global.host`, `global.alternative_hosts`, and `global.delivery_host`) to `no_proxy`, so that the platform components reach their own endpoints without the proxy. | `true` |
 | `modules.k3s_install.pull_images_with_proxy` | Routes the container image pulls of the Kubernetes nodes through a proxy. | `false` |
 | `modules.k3s_install.k3s_http_proxy` | HTTP proxy URL used for image pulls when `pull_images_with_proxy` is `true`. | Empty |
 | `modules.k3s_install.k3s_https_proxy` | HTTPS proxy URL used for image pulls when `pull_images_with_proxy` is `true`. | Empty |
@@ -318,21 +322,81 @@ Configure these fields when the platform, the container runtime, or the SHC reac
 | `utils.git.http.proxy` | Proxy URL used by the SHC for Git operations over HTTP or HTTPS. | Empty |
 
 !!! tip "Keep the default exclusions"
-    To exclude more destinations from the proxy, append them to the default `no_proxy` value instead of replacing it. The default list keeps the cluster-internal and private addresses out of the proxy. Add your Git, OCI registry, and S3 hostnames when they are reachable without the proxy: an address range does not match a hostname.
+    To exclude more destinations from the proxy, set them in `additional_no_proxy` instead of editing `no_proxy`. The default `no_proxy` list keeps the cluster-internal and private addresses out of the proxy, and the platform FQDNs are added automatically. Add your Git, OCI registry, and S3 hostnames when they are reachable without the proxy: an address range does not match a hostname.
+
+The SHC computes the final `no_proxy` value when `PlatformConfigurationFile` runs, by concatenating three lists:
+
+1. The value of `no_proxy`.
+2. The platform FQDNs, when `no_proxy_include_platform_domain` is `true`.
+3. The value of `additional_no_proxy`.
+
+Duplicate entries are removed. These three fields only apply to the platform components. The image pulls of the nodes use `modules.k3s_install.k3s_no_proxy`, which is applied as is.
+
+??? example "Proxy configuration in `config.yml`"
+    ```yaml
+    modules:
+      platform_configuration:
+        config:
+          proxy:
+            http_proxy: "http://proxy.example.com:3128"
+            https_proxy: "http://proxy.example.com:3128"
+            additional_no_proxy: "git.example.com,registry.example.com,s3.example.com"
+    ```
+
+### Traefik service IP
+
+Traefik is the HTTP entry point of the platform. The SHC gives its Kubernetes service a fixed cluster-internal IP. Inside the cluster, CoreDNS resolves the platform FQDNs to that IP: `global.host`, `global.alternative_hosts`, and `global.delivery_host`. The platform components therefore reach each other without leaving the cluster.
+
+| Field | Description | Default |
+| :--- | :--- | :--- |
+| `modules.platform_configuration.config.traefik.service_ip` | Fixed ClusterIP of the Traefik service, inside the K3s service network `10.43.0.0/16`. Leave empty to let Kubernetes assign one. | `10.43.111.111` |
+
+!!! warning "Empty value disables the internal resolution of the platform FQDNs"
+    When the field is empty, `HelmInstall` adds no entry to CoreDNS, so the platform FQDNs resolve inside the cluster through the DNS servers of `global.forward_dns` only.
+
+### SHC log file
+
+Every SHC run, in CLI or TUI mode, writes its log lines to a dedicated file. The SHC takes the directory and file name from `global.logging.file`, and prefixes the file name with the start time of the run, for example `20261023-153000_self-hosted-controller.log`, so that successive runs never overwrite each other. Sekoia support asks for this file when you escalate an issue.
+
+| Field | Description | Default |
+| :--- | :--- | :--- |
+| `global.logging.file` | Path of the per-run log file, inside the SHC container. Set it under `/opt/sekoia`, the mount point of `$SEKOIA_LOCAL_DIR`, to keep the file on the orchestration node. The field does not appear in `config help`. | `/tmp/self-hosted-controller.log` |
+
+!!! warning "The default path loses the file"
+    The execution script runs the container with `--rm` and mounts only `$SEKOIA_CONFIG_FILE` and `$SEKOIA_LOCAL_DIR`. With the default value, the file is written to `/tmp` inside the container and deleted when the command exits. Set the field in every deployment.
+
+??? example "Log file on the orchestration node in `config.yml`"
+    ```yaml
+    global:
+      logging:
+        file: /opt/sekoia/logs/self-hosted-controller.log
+    ```
+
+    With this value, the log of a run started on 23 October 2026 at 15:30:00 is kept at `$SEKOIA_LOCAL_DIR/logs/20261023-153000_self-hosted-controller.log` on the orchestration node.
+
+The SHC creates the directory if it does not exist. If it cannot create the file, it starts without file logging: the CLI reports nothing, and the TUI displays `log: (disabled)` at the bottom of the interface. Give UID 1000 write access to `$SEKOIA_LOCAL_DIR`, as described in the [container user](./deployment_guide.md#step-4-create-the-execution-script) note of the deployment guide.
 
 ### Database storage
 
-These fields set the disk size of each instance of the PostgreSQL clusters whose data grows with platform usage. Each cluster runs three instances.
+These fields set the disk size of each instance of the PostgreSQL clusters of the platform. Each cluster runs three instances. The asset management, alerts, workflow engine, playbooks, and ExaLog metastore databases grow with platform usage.
 
 !!! warning "Storage size can only increase"
     CloudNativePG cannot shrink a volume. Set a value equal to or larger than the current size of the cluster volumes.
 
 | Field | Description | Default |
 | :--- | :--- | :--- |
-| `modules.platform_configuration.config.assetmanagement.database.storage.size` | Storage size of the asset management database. | `50Gi` |
+| `modules.platform_configuration.config.assetmanagement.database.storage.size` | Storage size of the asset management database. | `1Ti` |
 | `modules.platform_configuration.config.sicalertapi.database.storage.size` | Storage size of the alerts database. | `50Gi` |
+| `modules.platform_configuration.config.quickwit.database.storage.size` | Storage size of the ExaLog metastore database. | `50Gi` |
 | `modules.platform_configuration.config.hatchet.database.storage.size` | Storage size of the workflow engine database. | `30Gi` |
 | `modules.platform_configuration.config.symphony.database.storage.size` | Storage size of the playbooks database. | `30Gi` |
+| `modules.platform_configuration.config.communityapi.database.storage.size` | Storage size of the community and user database. | `20Gi` |
+| `modules.platform_configuration.config.crmapi.database.storage.size` | Storage size of the `crmapi` database. | `20Gi` |
+| `modules.platform_configuration.config.dashboardapi.database.storage.size` | Storage size of the dashboards database. | `20Gi` |
+| `modules.platform_configuration.config.notificationapi.database.storage.size` | Storage size of the notifications database. | `20Gi` |
+| `modules.platform_configuration.config.taskapi.database.storage.size` | Storage size of the tasks database. | `20Gi` |
+| `modules.platform_configuration.config.ingest.database.storage.size` | Storage size of the ingestion database. | `20Gi` |
+| `modules.platform_configuration.config.xdr-agent-api.database.storage.size` | Storage size of the `xdr-agent-api` database. The service is deployed but not supported in 1.0.0. | `20Gi` |
 
 ## Inspect the configuration with the SHC
 
