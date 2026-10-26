@@ -236,6 +236,8 @@ sudo systemctl restart SEKOIAEndpointAgent.service
 
 If these settings are not defined, the agent checks the `http_proxy`, `https_proxy`, `all_proxy`, and `no_proxy` environment variables on the host and passes them to running actions.
 
+Docker downloads the module images and does not use these settings. If the host must use a proxy to reach `ghcr.io`, also configure the proxy of the Docker daemon. See [Configure the Docker daemon to use a proxy](https://docs.docker.com/engine/daemon/proxy/).
+
 ## Configure a custom CA bundle
 
 If a proxy or internal service uses a TLS certificate signed by a custom Certification Authority, configure a CA bundle so the Endpoint Agent can validate the certificate.
